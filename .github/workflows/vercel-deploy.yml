@@ -1,0 +1,27 @@
+# Deploys production on every push to `main`.
+# One-time: add repository secret `VERCEL_TOKEN` (https://vercel.com/account/tokens)
+# with access to team `fracti-verse` / project `psw-vibelandia-sing13`.
+#
+# Native Vercel ↔ GitHub linking (`vercel git connect`) requires the Vercel GitHub App
+# installed on the org with access to this repo; this workflow gives the same deploy-on-push
+# behavior with a single token secret.
+
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Vercel (production)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: team_maBDMCkpaNwjZQ52f14MR3M4
+          VERCEL_PROJECT_ID: prj_Ocm9lo8BnghKtAL41KdSD6zxBnWo
+        run: npx vercel@latest deploy --prod --yes

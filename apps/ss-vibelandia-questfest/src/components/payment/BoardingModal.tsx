@@ -12,9 +12,10 @@ export function BoardingModal({ open, onClose, onPaid }: BoardingModalProps) {
     <div className="modal-root" role="dialog" aria-modal="true">
       <div className="modal-backdrop" onClick={onClose} />
       <div className="voxel-panel modal-card modal-card--wide">
-        <h2 className="modal-title">Passenger Registration</h2>
+        <h2 className="modal-title">Reno Swamp Vibe · Passenger Pass</h2>
         <p className="modal-body">
-          Fair Exchange <strong>$16.18/mo</strong> — choose a rail (live processors wire in next sprint).
+          Recurring Fair Exchange <strong>$16.18/mo</strong> (EGS constant) — unlock the full deck, the Solenoid
+          lifts, and 13-channel access. Pick a payment rail (live processors wire in next sprint).
         </p>
         <div className="rail-grid">
           <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => onPaid('paypal')}>

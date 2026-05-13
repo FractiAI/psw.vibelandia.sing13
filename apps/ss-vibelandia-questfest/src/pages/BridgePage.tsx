@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { usePlaylistStore } from '@/stores/playlistStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useStreamLock } from '@/hooks/useStreamLock';
@@ -12,6 +12,7 @@ import { LibrettoOverlay } from '@/components/libretto/LibrettoOverlay';
 import { useSessionStore } from '@/stores/sessionStore';
 
 export function BridgePage() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const hydrate = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const disembark = useSessionStore((s) => s.disembark);
@@ -36,6 +37,15 @@ export function BridgePage() {
   useEffect(() => {
     hydrate();
   }, [hydrate]);
+
+  useEffect(() => {
+    if (searchParams.get('checkout') !== '1') return;
+    hydrate();
+    if (!useSessionStore.getState().isPassenger) {
+      setBoardOpen(true);
+    }
+    setSearchParams({}, { replace: true });
+  }, [hydrate, searchParams, setSearchParams]);
 
   const activePlaylistId = usePlaylistStore((s) => s.activePlaylistId);
   useEffect(() => {

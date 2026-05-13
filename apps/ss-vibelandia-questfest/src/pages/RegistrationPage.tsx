@@ -41,8 +41,8 @@ export function RegistrationPage() {
           </a>
         </div>
         <p className="gate-fine">
-          External marketing domain placeholder — wire your canonical CTA button to this hatch URL:
-          <code className="gate-code">…/interfaces/questfest-bridge/#/</code>
+          Marketing sites can deep-link straight to checkout:
+          <code className="gate-code">…/interfaces/questfest-bridge/#/bridge?checkout=1</code>
         </p>
       </div>
     </div>

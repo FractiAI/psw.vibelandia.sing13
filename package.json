@@ -5,5 +5,8 @@
   "version": "0.1.0",
   "engines": {
     "node": ">=18.18.0"
+  },
+  "scripts": {
+    "build:questfest-bridge": "npm --prefix apps/ss-vibelandia-questfest ci && npm --prefix apps/ss-vibelandia-questfest run build"
   }
 }

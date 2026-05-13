@@ -16,6 +16,7 @@ voice-config.js
 # Build / output
 dist/
 build/
+interfaces/questfest-bridge/
 .vercel
 demo-output/
 

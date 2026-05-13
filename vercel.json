@@ -14,7 +14,9 @@
     { "source": "/press", "destination": "/interfaces/press-releases.html" },
     { "source": "/press/", "destination": "/interfaces/press-releases.html" },
     { "source": "/hood", "destination": "/interfaces/look-under-the-hood.html" },
-    { "source": "/hood/", "destination": "/interfaces/look-under-the-hood.html" }
+    { "source": "/hood/", "destination": "/interfaces/look-under-the-hood.html" },
+    { "source": "/sovereign-gate", "destination": "/interfaces/questfest-bridge/index.html" },
+    { "source": "/sovereign-gate/", "destination": "/interfaces/questfest-bridge/index.html" }
   ],
   "headers": [
     {

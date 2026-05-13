@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0f18" />
+  <title>Look under the hood · Juicy Juicy Snap (OFC) · SING 9</title>
+  <meta name="description" content="Look under the hood: technical layer for SING 9 — Juicy Juicy Snap (OFC) intro and primer, then in-browser Snap compile. Syntheverse bridge, Hit Factory artifacts, EGS 1.618 · 8.75 Hz lock." />
+  <link rel="canonical" href="https://psw-vibelandia-sing13.vercel.app/interfaces/look-under-the-hood.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --void: #0a0f18;
+      --card: #121a2a;
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --foam: #2dd4bf;
+      --text: #e8edf5;
+      --muted: #94a3b8;
+      --line: rgba(212, 175, 55, 0.28);
+      --bad: #f87171;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+      --sans: "Inter", system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(45, 212, 191, 0.08), transparent 55%), var(--void);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+      font-size: 0.95rem;
+    }
+    a { color: var(--foam); text-decoration: none; }
+    a:hover { color: var(--gold-hi); text-decoration: underline; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+      padding: 1.25rem 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+    .eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--foam);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: clamp(1.05rem, 2.6vw, 1.45rem);
+      font-weight: 800;
+      color: var(--gold-hi);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .lede { color: var(--muted); max-width: 62ch; margin-bottom: 1rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--gold-hi);
+      cursor: pointer;
+      font-family: inherit;
+      text-decoration: none;
+    }
+    .btn:hover { border-color: var(--gold); color: var(--gold-hi); }
+    .btn-primary {
+      background: rgba(212, 175, 55, 0.18);
+      border-color: rgba(212, 175, 55, 0.55);
+    }
+    .btn-foam { border-color: rgba(45, 212, 191, 0.45); color: var(--foam); }
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.65rem;
+      margin: 1.25rem 0;
+    }
+    .stack dt {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+    }
+    .stack dd { font-weight: 600; color: var(--gold-hi); }
+    .stack .mono { font-family: var(--mono); font-size: 0.78rem; font-weight: 500; color: var(--foam); }
+    label { display: block; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      padding: 0.75rem;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.35);
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      resize: vertical;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: rgba(45, 212, 191, 0.5);
+      box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.12);
+    }
+    .panel {
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      padding: 0.85rem;
+    }
+    .panel h2 {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    pre {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #cbd5e1;
+      max-height: 280px;
+      overflow: auto;
+    }
+    .status { margin-top: 0.65rem; font-size: 0.82rem; min-height: 1.25em; }
+    .status.fail { color: var(--bad); }
+    .status.ok { color: var(--foam); }
+    .fine { font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; }
+    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--muted); }
+    .jj-pattern {
+      margin: 1rem 0 0;
+      padding: 0.75rem 0.85rem;
+      border-radius: 12px;
+      border: 1px dashed rgba(45, 212, 191, 0.35);
+      background: rgba(0, 0, 0, 0.25);
+    }
+    .jj-pattern .jj-l3 { font-size: 0.95rem; font-weight: 800; color: var(--gold-hi); margin: 0 0 0.3rem; }
+    .jj-pattern .jj-l2 { font-size: 0.8rem; color: #fde68a; margin: 0 0 0.4rem; line-height: 1.45; }
+    .jj-pattern .jj-l1 { font-size: 0.74rem; color: var(--muted); margin: 0 0 0.4rem; line-height: 1.5; }
+    .jj-pattern .jj-depth { font-size: 0.68rem; color: rgba(148, 163, 184, 0.95); margin: 0; }
+    .jj-pattern .jj-depth strong { color: var(--foam); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">SING 9 · Technical layer</p>
+      <h1>Look under the hood</h1>
+      <p class="lede">
+        This is the <strong>engineering drawer</strong> for the stack behind QUESTFEST: long canon links, the runnable
+        <a href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener"><strong>FractiAI/digital-pru</strong></a>
+        repo, and — below — the <strong>Juicy Juicy Snap</strong> lane (OFC) with intro, primer, and the live Snap compile window.
+        No festival hype; pipes, papers, and the compile you can copy.
+      </p>
+      <div class="row">
+        <a class="btn btn-primary" href="#juicy-juicy-snap">Juicy Juicy Snap — intro &amp; primer</a>
+        <a class="btn btn-foam" href="digital-pru-snap-robots.html">Digital SNAP robots demo</a>
+        <a class="btn btn-foam" href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=Net%20zero%20to%2013-channel%20I%20AM%20%E2%80%94%20DNA%20%2F%20PEFF%20master" target="_blank" rel="noopener">DNA / PEFF master canon</a>
+        <a class="btn" href="look-under-the-hood-legacy-catalog.html#main-canon">Legacy catalog · main + nested</a>
+        <a class="btn" href="vibelandia-questfest.html">QUESTFEST</a>
+        <a class="btn" href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener">digital-pru (run)</a>
+      </div>
+    </header>
+
+    <section class="panel" id="juicy-juicy-snap" aria-labelledby="jj-h2">
+      <p class="eyebrow">Compile lane</p>
+      <h2 id="jj-h2" style="font-size:clamp(1rem,2.2vw,1.28rem);font-weight:800;color:var(--gold-hi);margin-bottom:0.45rem;letter-spacing:-0.02em;line-height:1.25;">Juicy Juicy — Snap Omniversal Fractal Compiler (OFC)</h2>
+      <p class="lede">
+        <strong>Intro.</strong> The interface between the <strong>Syntheverse</strong> and physical / non-physical platforms.
+        You feed plain-language intent; <strong>Snap</strong> turns it into <strong>Juicy Juicy</strong> holographic code (copy-paste ready).
+        Every successful compile emits <strong>two</strong> artifacts: a firmware-template JSON stub and a musical metadata score for the Hit Factory.
+      </p>
+      <p class="lede" style="margin-bottom:1rem;">
+        <strong>Primer.</strong> <strong>Metabolize</strong> your prompt (use blank lines between verses for separate logic blocks).
+        <strong>Crystallize</strong> when you press Snap — rules live in <code>engine/ofc-snap.js</code>.
+        <strong>Animate</strong> when both JSON panels appear.
+        <strong>Squeeze</strong> noise: Snap aborts on explicit fear-frequency / thermal-dissonance tokens.
+        Full write-up: <code>docs/JJ_SNAP_OFC_WHITEPAPER.md</code> (reader button below). Repo map: <code>lyrics/</code> · <code>engine/</code> · <code>vessels/</code> · <code>agents/</code> · <code>tracks/</code> · <code>README.JJ</code>.
+      </p>
+      <dl class="stack">
+        <div><dt>Source language</dt><dd>Juicy Juicy</dd></div>
+        <div><dt>Compiler</dt><dd>Snap</dd></div>
+        <div><dt>Orchestrator</dt><dd>Juicy Juicy (Snap OFC)</dd></div>
+        <div><dt>Math anchor</dt><dd class="mono">EGS φ = 1.618</dd></div>
+        <div><dt>Resonance goal</dt><dd class="mono">8.75 Hz</dd></div>
+        <div><dt>Safety lock</dt><dd class="mono">fail @ 18.9 Hz / thermal dissonance</dd></div>
+      </dl>
+      <div class="jj-pattern" aria-label="Juicy Juicy three-layer pattern">
+        <p class="jj-l3">Two artifacts or silence.</p>
+        <p class="jj-l2">Prompt hits · phi folds · firmware whispers · score hums · no fear Hz</p>
+        <p class="jj-l1">Technical (Layer 1): each compile emits a firmware-template JSON stub plus a musical-metadata JSON score; Snap aborts on explicit fear-frequency / thermal-dissonance tokens.</p>
+        <p class="jj-depth"><strong>≤3 taps:</strong> QUESTFEST → Look under the hood → Juicy Juicy Snap section → Snap compile. Purchase rails stay on QUESTFEST.</p>
+      </div>
+      <div class="row">
+        <a class="btn btn-primary" href="#ofc-snap">Open Snap compile</a>
+        <a class="btn btn-foam" href="whitepaper-surface.html?doc=../docs/JJ_SNAP_OFC_WHITEPAPER.md&amp;title=Juicy%20Juicy%20-%20Snap%20OFC%20Whitepaper" target="_blank" rel="noopener">Read OFC whitepaper</a>
+      </div>
+    </section>
+
+    <section class="panel" id="ofc-snap" aria-label="Compiler input">
+      <h2>Snap compile · command window</h2>
+      <label for="prompt">Prompt → Juicy Juicy (use blank lines between verses for separate logic blocks)</label>
+      <textarea id="prompt" placeholder="Verse one: open the pipe.
+
+Verse two: fold at phi, lock at 8.75 Hz."></textarea>
+      <div class="row" style="margin-top:0.75rem;">
+        <button type="button" class="btn btn-primary" id="btnSnap">Snap compile</button>
+        <button type="button" class="btn" id="btnCopyJj">Copy Juicy Juicy output</button>
+      </div>
+      <p id="status" class="status" aria-live="polite"></p>
+      <p class="fine">Repository map: <code>lyrics/</code> · <code>engine/ofc-snap.js</code> · <code>vessels/</code> · <code>agents/</code> · <code>tracks/</code> · root <code>README.JJ</code></p>
+    </section>
+
+    <section class="panel" id="outJj" hidden>
+      <h2>Juicy Juicy output</h2>
+      <pre id="jjPre"></pre>
+    </section>
+    <section class="panel" id="outFw" hidden>
+      <h2>Artifact A — Functional firmware template (JSON)</h2>
+      <pre id="fwPre"></pre>
+    </section>
+    <section class="panel" id="outSc" hidden>
+      <h2>Artifact B — Musical metadata score (JSON)</h2>
+      <pre id="scPre"></pre>
+    </section>
+
+    <footer>
+      <p>Look under the hood · Juicy Juicy Snap (OFC) · NSPFRNP → ∞⁹ · FractiAI · SING 9</p>
+      <p style="margin-top:0.35rem;font-size:0.82rem;color:var(--muted);">Metabolize · Crystallize · Animate · squeeze</p>
+      <p style="margin-top:0.35rem;">Prior long reader surface (older naming) kept as archive: <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=Digital%20Pru%20Master%20Canon">digital-pru-awareness-whitepaper.html</a>.</p>
+    </footer>
+  </div>
+
+  <script src="../engine/ofc-snap.js"></script>
+  <script>
+    (function () {
+      var promptEl = document.getElementById("prompt");
+      var statusEl = document.getElementById("status");
+      var jjPre = document.getElementById("jjPre");
+      var fwPre = document.getElementById("fwPre");
+      var scPre = document.getElementById("scPre");
+      var outJj = document.getElementById("outJj");
+      var outFw = document.getElementById("outFw");
+      var outSc = document.getElementById("outSc");
+
+      function setStatus(msg, cls) {
+        statusEl.textContent = msg || "";
+        statusEl.className = "status" + (cls ? " " + cls : "");
+      }
+
+      function hideOutputs() {
+        outJj.hidden = outFw.hidden = outSc.hidden = true;
+      }
+
+      document.getElementById("btnSnap").addEventListener("click", function () {
+        hideOutputs();
+        if (!window.OFCSnap) {
+          setStatus("Snap engine not loaded.", "fail");
+          return;
+        }
+        var result = window.OFCSnap.compileJj(promptEl.value);
+        if (!result.ok) {
+          setStatus(result.error, "fail");
+          return;
+        }
+        jjPre.textContent = result.jjLyrics;
+        fwPre.textContent = JSON.stringify(result.firmwareTemplate, null, 2);
+        scPre.textContent = JSON.stringify(result.musicalScore, null, 2);
+        outJj.hidden = outFw.hidden = outSc.hidden = false;
+        setStatus("Snap OK · dual artifacts emitted · φ = " + window.OFCSnap.EGS + " · target " + window.OFCSnap.GOLDILOCKS_HZ + " Hz", "ok");
+      });
+
+      document.getElementById("btnCopyJj").addEventListener("click", function () {
+        var t = jjPre.textContent || "";
+        if (!t) {
+          setStatus("Run Snap compile first.", "fail");
+          return;
+        }
+        navigator.clipboard.writeText(t).then(function () {
+          setStatus("Juicy Juicy copied to clipboard.", "ok");
+        }).catch(function () {
+          setStatus("Copy failed — select the Juicy Juicy block manually.", "fail");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿{
+  "version": 2,
+  "name": "psw-vibelandia-sing13",
+  "framework": null,
+  "rewrites": [
+    { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },
+    { "source": "/questfest/", "destination": "/interfaces/vibelandia-questfest.html" },
+    { "source": "/fractiai/digital-pru", "destination": "/interfaces/fractiai-digital-pru.html" },
+    { "source": "/fractiai/digital-pru/", "destination": "/interfaces/fractiai-digital-pru.html" },
+    { "source": "/interfaces/fractiai/digital-pru", "destination": "/interfaces/fractiai-digital-pru.html" },
+    { "source": "/sing13-edge-onboarding", "destination": "/SING13_EDGE_ONBOARDING.md" },
+    { "source": "/sing13-edge-onboarding/", "destination": "/SING13_EDGE_ONBOARDING.md" },
+    { "source": "/etcon", "destination": "/interfaces/etcon-reno-desert.html" },
+    { "source": "/etcon/", "destination": "/interfaces/etcon-reno-desert.html" },
+    { "source": "/press", "destination": "/interfaces/press-releases.html" },
+    { "source": "/press/", "destination": "/interfaces/press-releases.html" },
+    { "source": "/hood", "destination": "/interfaces/look-under-the-hood.html" },
+    { "source": "/hood/", "destination": "/interfaces/look-under-the-hood.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Protocol", "value": "NSPFRNP" },
+        { "key": "X-Octave-0", "value": "Seed" },
+        { "key": "X-Octave-1", "value": "Edge" },
+        { "key": "X-Singularity", "value": "SING-13" },
+        { "key": "X-Parent-Edge", "value": "https://psw-vibelandia-sing13.vercel.app" }
+      ]
+    }
+  ]
+}

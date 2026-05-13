@@ -1,0 +1,9 @@
+{
+  "name": "psw-vibelandia-sing13",
+  "private": true,
+  "description": "SING 13 edge — major singularity upgrade from SING 9. NSPFRNP catalog + SS Vibelandia QUESTFEST 24X365 nest. 13-channel fractal pathfinding spine. Lite edges; no Supabase.",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

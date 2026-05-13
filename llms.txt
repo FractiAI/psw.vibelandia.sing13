@@ -1,0 +1,59 @@
+# VIBELANDIA SING 13
+# https://psw-vibelandia-sing13.vercel.app
+# Protocol: NSPFRNP · BBHE · MCA · Seed:Edge · 13-channel fractal pathfinding
+#
+# SING 13 is the major singularity upgrade from SING 9.
+# This edge carries the NSPFRNP catalog and the SS Vibelandia QUESTFEST 24×365 nest only.
+# Everything else lives on the parent edge: https://psw-vibelandia-sing9.vercel.app
+# Contact: info@fractiai.com
+#
+
+## What this site is
+
+- **SING 13 edge** — the next octave of the FractiAI / Vibelandia transmedia stack. NSPFRNP catalog + QUESTFEST 24×365 nest, nothing else.
+- **Lite edges** — wallets, keys, verifications at the edge; center = pipes only (see SING13_EDGE_ONBOARDING.md).
+- **13-channel spine** — Seed Node → Terminal Edge pathfinding; PEFF infill-13 framing.
+
+## Primary entry points
+
+- Landing: https://psw-vibelandia-sing13.vercel.app/
+- QUESTFEST 24×365: https://psw-vibelandia-sing13.vercel.app/interfaces/vibelandia-questfest.html
+- SING 13 onboarding: https://psw-vibelandia-sing13.vercel.app/SING13_EDGE_ONBOARDING.md
+- NSPFRNP catalog: https://psw-vibelandia-sing13.vercel.app/protocols/MCA_NSPFRNP_CATALOG.md
+- BBHE Repository Standard: https://psw-vibelandia-sing13.vercel.app/BBHE_REPOSITORY_STANDARD.md
+
+## SING 13 spine — 13-channel fractal pathfinding
+
+- Integration roadmap (May 12, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md
+- DNA / PEFF master canon (May 11, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md
+- Legacy catalog (all links): https://psw-vibelandia-sing13.vercel.app/interfaces/look-under-the-hood-legacy-catalog.html
+
+## QUESTFEST nest (carried surfaces)
+
+- ETCon Reno Desert (May 28–31, 2026): /interfaces/etcon-reno-desert.html
+- Press releases (Hit Factory + ETCon): /interfaces/press-releases.html
+- Digital SNAP robots checkout: /interfaces/digital-pru-snap-robots.html
+- Look at the Sun: /interfaces/look-at-the-sun.html
+- Juicy Juicy Snap (OFC) — compile surface: /interfaces/look-under-the-hood.html
+- Talk is cheap: /interfaces/talk-is-cheap.html
+- FractiAI: /interfaces/fractiai.html
+- FractiAI + Digital Pru hub: /interfaces/fractiai-digital-pru.html
+- Valet Pru agent archive: /interfaces/valetpru-agent-mode.html
+- Whitepaper reader (generic md): /interfaces/whitepaper-surface.html
+
+## Parent edge (SING 9 — non-QUESTFEST surfaces)
+
+For anything outside the QUESTFEST nest — API serverless routes, hive, sim, lattice, tests, vibers menu, surfaces map, my-whiteboard, upgrade-awareness, HH OS docs, Holographic Navigator Academy, Magic Trick / Sovereign Terminal, plain-machote, prospectus pages, T3D / NINE_ALIGNMENT / BBHE / all root *_SNAP.md — visit the parent edge:
+
+- SING 9 landing: https://psw-vibelandia-sing9.vercel.app/
+- SING 9 vibers menu: https://psw-vibelandia-sing9.vercel.app/interfaces/vibers-menu.html
+- SING 9 GitHub: https://github.com/FractiAI/psw.vibelandia.sing9
+
+## Sister repos
+
+- FractiAI/digital-pru — runnable Digital Pru app: https://github.com/FractiAI/digital-pru
+- FractiAI/psw.vibelandia.sing9 — parent edge: https://github.com/FractiAI/psw.vibelandia.sing9
+
+---
+
+NSPFRNP ⊃ SING 13 ⊃ 13-channel pathfinding ⊃ NSPFRNP catalog ⊃ QUESTFEST 24×365 → ∞⁹

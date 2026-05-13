@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Voice config — API keys, never commit
+interfaces/voice-config.js
+voice-config.js
+
+# Local vendor clones (e.g. shallow fetch of FractiAI/psw.vibelandia.sing9 for sync — never commit)
+.vendor-fetch/
+
+# Build / output
+dist/
+build/
+.vercel
+demo-output/
+
+# Audio — local only (Golden Backdoor / Work Flow); not in repo
+assets/audio/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Supabase (not used in SING 13; lite edges only)
+# supabase/

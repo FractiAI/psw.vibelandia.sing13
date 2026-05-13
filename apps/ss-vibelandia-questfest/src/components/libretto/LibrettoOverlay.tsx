@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useLibrettoStore } from '@/stores/librettoStore';
 
 export function LibrettoOverlay() {
@@ -8,29 +8,16 @@ export function LibrettoOverlay() {
   const [author, setAuthor] = useState('Passenger');
   const [line, setLine] = useState('');
 
+  const ordered = useMemo(
+    () => [...posts].sort((a, b) => a.created - b.created),
+    [posts],
+  );
+
   return (
     <div className="libretto">
-      <div className="libretto-bubbles" aria-live="polite">
-        {posts.map((p) => (
-          <div
-            key={p.id}
-            className={`libretto-bubble ${p.kind === 'discharge' ? 'libretto-bubble--audio' : ''}`}
-            style={{ left: `${p.xPct}%`, top: `${p.yPct}%` }}
-          >
-            <div className="libretto-bubble-author">{p.author}</div>
-            {p.kind === 'script' && <div className="libretto-bubble-text">{p.text}</div>}
-            {p.kind === 'discharge' && p.audioUrl && (
-              <div className="libretto-bubble-audio">
-                <span className="libretto-chip">{p.durationSec.toFixed(1)}s</span>
-                <audio controls src={p.audioUrl} className="libretto-audio" />
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
       <div className="voxel-panel libretto-compose">
         <h4>The Libretto</h4>
-        <p className="libretto-hint">Script lines or ≤13s vocal discharges — bubbles float over the deck.</p>
+        <p className="libretto-hint">Script lines or ≤13s vocal discharges — chronological deck log.</p>
         <div className="libretto-row">
           <input
             className="libretto-input"
@@ -77,6 +64,29 @@ export function LibrettoOverlay() {
             }}
           />
         </div>
+      </div>
+
+      <div className="voxel-panel libretto-feed" aria-live="polite">
+        <h4 className="libretto-feed-title">Deck log</h4>
+        <ul className="libretto-list">
+          {ordered.map((p) => (
+            <li key={p.id} className={`libretto-entry ${p.kind === 'discharge' ? 'libretto-entry--audio' : ''}`}>
+              <div className="libretto-entry-meta">
+                <span className="libretto-entry-author">{p.author}</span>
+                <time className="libretto-entry-time" dateTime={new Date(p.created).toISOString()}>
+                  {new Date(p.created).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </time>
+              </div>
+              {p.kind === 'script' && <p className="libretto-entry-text">{p.text}</p>}
+              {p.kind === 'discharge' && p.audioUrl && (
+                <div className="libretto-entry-audio">
+                  <span className="libretto-chip">{p.durationSec.toFixed(1)}s discharge</span>
+                  <audio controls src={p.audioUrl} className="libretto-audio" />
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

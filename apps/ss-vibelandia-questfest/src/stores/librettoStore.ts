@@ -10,8 +10,6 @@ export interface LibrettoPost {
   /** Object URL for uploaded / recorded snippet */
   audioUrl?: string;
   durationSec: number;
-  xPct: number;
-  yPct: number;
   created: number;
 }
 
@@ -23,10 +21,6 @@ interface LibrettoState {
   addDischarge: (author: string, file: Blob, durationSec: number) => void;
 }
 
-function randPos() {
-  return { xPct: 8 + Math.random() * 72, yPct: 12 + Math.random() * 58 };
-}
-
 export const useLibrettoStore = create<LibrettoState>((set) => ({
   posts: [
     {
@@ -35,7 +29,6 @@ export const useLibrettoStore = create<LibrettoState>((set) => ({
       kind: 'script',
       text: 'All hands — the Solenoid holds until Fair Exchange clears.',
       durationSec: 0,
-      ...randPos(),
       created: Date.now() - 120_000,
     },
   ],
@@ -49,7 +42,6 @@ export const useLibrettoStore = create<LibrettoState>((set) => ({
           kind: 'script',
           text,
           durationSec: 0,
-          ...randPos(),
           created: Date.now(),
         },
       ],
@@ -66,7 +58,6 @@ export const useLibrettoStore = create<LibrettoState>((set) => ({
           kind: 'discharge',
           audioUrl: url,
           durationSec: d,
-          ...randPos(),
           created: Date.now(),
         },
       ],

@@ -394,57 +394,91 @@ a.voxel-btn {
   cursor: pointer;
 }
 
-/* --- Libretto --- */
+/* --- Libretto (deck log, no floating UI) --- */
 .libretto {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.libretto-bubbles {
-  position: relative;
-  min-height: 220px;
-  border: 3px dashed rgba(45, 232, 255, 0.25);
-  background: rgba(5, 3, 8, 0.35);
-  margin-bottom: 0.75rem;
-  overflow: hidden;
+.libretto-feed {
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 0.85rem 1rem;
 }
 
-.libretto-bubble {
-  position: absolute;
-  max-width: 220px;
-  padding: 0.45rem 0.55rem;
-  background: rgba(255, 107, 45, 0.15);
-  border: 2px solid var(--orange-fire);
-  box-shadow: 2px 2px 0 var(--ink);
-  animation: floatbob 6s ease-in-out infinite;
+.libretto-feed-title {
+  font-family: var(--font-display);
+  letter-spacing: 0.12em;
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: var(--cyan-neon);
 }
 
-.libretto-bubble--audio {
-  background: rgba(45, 232, 255, 0.12);
-  border-color: var(--cyan-neon);
+.libretto-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
-.libretto-bubble-author {
+.libretto-entry {
+  padding: 0.5rem 0.55rem;
+  border: 2px solid rgba(201, 191, 176, 0.35);
+  background: rgba(5, 3, 8, 0.45);
+}
+
+.libretto-entry--audio {
+  border-color: var(--cyan-dim);
+  background: rgba(45, 232, 255, 0.06);
+}
+
+.libretto-entry-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.libretto-entry-author {
   font-size: 0.58rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--cyan-neon);
 }
 
-.libretto-bubble-text {
-  font-size: 0.8rem;
-  margin-top: 0.2rem;
+.libretto-entry-time {
+  font-size: 0.62rem;
+  color: rgba(232, 224, 213, 0.45);
+  white-space: nowrap;
+}
+
+.libretto-entry-text {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.4;
+  color: var(--paper);
+}
+
+.libretto-entry-audio {
+  margin-top: 0.25rem;
 }
 
 .libretto-chip {
   font-size: 0.55rem;
   letter-spacing: 0.1em;
   color: var(--orange-glow);
+  display: block;
+  margin-bottom: 0.2rem;
 }
 
 .libretto-audio {
   width: 100%;
-  margin-top: 0.25rem;
-  height: 28px;
+  max-width: 320px;
+  height: 32px;
 }
 
 .libretto-compose h4 {
@@ -484,16 +518,6 @@ a.voxel-btn {
 .libretto-file {
   font-size: 0.72rem;
   color: var(--paper-dark);
-}
-
-@keyframes floatbob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
 }
 
 /* --- Modals --- */

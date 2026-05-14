@@ -11,21 +11,23 @@ export function RegistrationPage() {
     <div className="gate">
       <div className="gate-texture" aria-hidden />
       <div className="gate-inner">
-        <p className="gate-kicker">Sovereign Gate</p>
+        <p className="gate-kicker">Reno Swamp Catalog</p>
         <h1 className="gate-title">SS Vibelandia QUESTFEST</h1>
         <p className="gate-lead">
-          The whole Reno Swamp catalog is open — play anything for your first{' '}
-          <strong>30 seconds</strong> free. No paywall at the door. When a track pauses, we will
-          warmly invite you to the monthly pass for the full experience.
+          Spotify-style listen: 550+ tracks, playlists on the left, player on the bottom. Upload your
+          own audio and music videos under <strong>Upload &amp; playlists</strong>.
         </p>
         <ul className="gate-list">
-          <li>Browse and play the full catalog — 30s preview on every track.</li>
-          <li>The Libretto — scripted lines and short vocal discharges on the deck.</li>
+          <li>Listen — browse playlists, search, play (30s preview free on every track).</li>
+          <li>Upload &amp; playlists — add tracks, create playlists, reorder the broadcast.</li>
           <li>Monthly pass unlocks uninterrupted playback when you are ready.</li>
         </ul>
         <div className="gate-actions">
           <Link className="voxel-btn voxel-btn--orange" to="/bridge">
-            Gimme Some of That Reno Swamp Vibe
+            Listen to the catalog
+          </Link>
+          <Link className="voxel-btn voxel-btn--ghost" to="/dj">
+            Upload &amp; playlists
           </Link>
           <a
             className="voxel-btn voxel-btn--ghost"
@@ -37,7 +39,8 @@ export function RegistrationPage() {
           </a>
         </div>
         <p className="gate-fine">
-          Full catalog at <code className="gate-code">…/interfaces/questfest-bridge/#/bridge</code>
+          Listen: <code className="gate-code">…/questfest-bridge/#/bridge</code> · Upload:{' '}
+          <code className="gate-code">…/questfest-bridge/#/dj</code>
         </p>
       </div>
     </div>

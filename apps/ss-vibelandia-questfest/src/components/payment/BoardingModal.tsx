@@ -6,6 +6,7 @@ import {
   boardingNote,
   type LiveRail,
 } from '@/lib/paymentRails';
+import { useSessionStore } from '@/stores/sessionStore';
 
 interface BoardingModalProps {
   open: boolean;
@@ -16,10 +17,14 @@ interface BoardingModalProps {
 }
 
 export function BoardingModal({ open, onClose, onSubmit, busy, error }: BoardingModalProps) {
+  const tryCaptainPassword = useSessionStore((s) => s.tryCaptainPassword);
+  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const [step, setStep] = useState<'rail' | 'pay' | 'proof'>('rail');
   const [rail, setRail] = useState<LiveRail | null>(null);
   const [receipt, setReceipt] = useState('');
   const [contact, setContact] = useState('');
+  const [captainPw, setCaptainPw] = useState('');
+  const [captainErr, setCaptainErr] = useState<string | null>(null);
 
   if (!open) return null;
 
@@ -28,6 +33,8 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
     setRail(null);
     setReceipt('');
     setContact('');
+    setCaptainPw('');
+    setCaptainErr(null);
   };
 
   const close = () => {
@@ -43,6 +50,53 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
 
         {step === 'rail' && (
           <>
+            <details className="modal-captain-details" style={{ marginBottom: '1rem' }}>
+              <summary className="modal-body" style={{ cursor: 'pointer', userSelect: 'none' }}>
+                Are you the captain?
+              </summary>
+              <div style={{ marginTop: '0.75rem' }}>
+                {captainUnlocked ? (
+                  <p className="modal-body" style={{ margin: 0 }}>
+                    Captain access is <strong>active</strong> for this session (full play + export bypass on this
+                    device). You can still buy a monthly pass below if you want a real Passenger JWT.
+                  </p>
+                ) : (
+                  <>
+                    <p className="modal-body" style={{ margin: '0 0 0.5rem' }}>
+                      Enter the operator password to bypass preview and payment rails on this browser only.
+                    </p>
+                    <label className="boarding-field">
+                      <span>Captain password</span>
+                      <input
+                        className="libretto-input boarding-input"
+                        type="password"
+                        autoComplete="current-password"
+                        value={captainPw}
+                        onChange={(e) => setCaptainPw(e.target.value)}
+                        placeholder="Password"
+                      />
+                    </label>
+                    {captainErr && <p className="player-error">{captainErr}</p>}
+                    <button
+                      type="button"
+                      className="voxel-btn"
+                      style={{ marginTop: '0.5rem' }}
+                      onClick={() => {
+                        setCaptainErr(null);
+                        if (!tryCaptainPassword(captainPw)) {
+                          setCaptainErr('Password not recognized.');
+                          return;
+                        }
+                        setCaptainPw('');
+                        close();
+                      }}
+                    >
+                      Unlock captain access
+                    </button>
+                  </>
+                )}
+              </div>
+            </details>
             <p className="modal-body modal-body--warm">
               <strong>${EGS_MONTHLY_USD.toFixed(2)}/month</strong> — full catalog, full playback, exports
               when you need them. Pick Venmo, PayPal, or Cash App. We keep it human and old-school on

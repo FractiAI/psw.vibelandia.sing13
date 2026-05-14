@@ -3,6 +3,10 @@ export type LiveRail = 'paypal' | 'venmo' | 'cashapp';
 export const EGS_MONTHLY_USD = 16.18;
 export const EGS_EXPORT_USD = 1.61;
 
+/** Whole-playlist bulk download: 50% off the per-track export price. */
+export const PLAYLIST_BULK_EXPORT_DISCOUNT = 0.5;
+export const EGS_EXPORT_PLAYLIST_BUNDLE_PER_TRACK_USD = EGS_EXPORT_USD * PLAYLIST_BULK_EXPORT_DISCOUNT;
+
 const env = import.meta.env;
 
 export const PAYMENT_HANDLES: Record<LiveRail, string> = {

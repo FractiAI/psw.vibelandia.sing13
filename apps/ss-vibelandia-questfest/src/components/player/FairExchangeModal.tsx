@@ -4,9 +4,10 @@ interface FairExchangeModalProps {
   open: boolean;
   onClose: () => void;
   onBoard: () => void;
+  onCaptainAccess?: () => void;
 }
 
-export function FairExchangeModal({ open, onClose, onBoard }: FairExchangeModalProps) {
+export function FairExchangeModal({ open, onClose, onBoard, onCaptainAccess }: FairExchangeModalProps) {
   if (!open) return null;
   return (
     <div className="modal-root modal-root--warm" role="dialog" aria-modal="true" aria-labelledby="fe-title">
@@ -28,6 +29,11 @@ export function FairExchangeModal({ open, onClose, onBoard }: FairExchangeModalP
           <button type="button" className="voxel-btn voxel-btn--swamp-gold" onClick={onBoard}>
             Yes — get the monthly pass
           </button>
+          {onCaptainAccess && (
+            <button type="button" className="voxel-btn voxel-btn--ghost-warm" onClick={onCaptainAccess}>
+              Captain / operator — unlock with password
+            </button>
+          )}
           <button type="button" className="voxel-btn voxel-btn--ghost-warm" onClick={onClose}>
             Maybe later · keep browsing
           </button>

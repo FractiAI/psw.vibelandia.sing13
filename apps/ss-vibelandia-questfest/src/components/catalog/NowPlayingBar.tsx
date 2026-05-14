@@ -42,10 +42,12 @@ export function NowPlayingBar({
   const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
 
   const isPassenger = useSessionStore((s) => s.isPassenger);
+  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
+  const fullPlayUnlocked = isPassenger || captainUnlocked;
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const pl = getActivePlaylist();
-  const solenoidActive = pl?.kind === 'sovereign' && !isPassenger;
+  const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
   const isVideo = !!track?.videoSrc;
 
   useEffect(() => {
@@ -182,7 +184,11 @@ export function NowPlayingBar({
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
               {solenoidActive && <span className="sp-now-badge">30s preview</span>}
-              {isPassenger && <span className="sp-now-badge sp-now-badge--pass">Full play</span>}
+              {fullPlayUnlocked && (
+                <span className="sp-now-badge sp-now-badge--pass">
+                  {captainUnlocked && !isPassenger ? 'Captain · full play' : 'Full play'}
+                </span>
+              )}
             </>
           ) : (
             <p className="sp-now-empty">Pick a track to play</p>

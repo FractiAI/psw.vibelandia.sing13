@@ -17,9 +17,10 @@ interface TrackListProps {
   isPassenger: boolean;
   onDownload: (trackId: string) => void;
   onEditPlaylist?: () => void;
+  onBulkPlaylistDownload?: () => void;
 }
 
-export function TrackList({ isPassenger, onDownload, onEditPlaylist }: TrackListProps) {
+export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlaylistDownload }: TrackListProps) {
   const pl = useCatalogStore((s) => s.getActivePlaylist());
   const search = useCatalogStore((s) => s.search);
   const setSearch = useCatalogStore((s) => s.setSearch);
@@ -113,6 +114,11 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist }: TrackList
             onChange={(e) => setSearch(e.target.value)}
           />
         </label>
+        {onBulkPlaylistDownload && pl.trackIds.length > 0 && (
+          <button type="button" className="sp-hero-secondary" onClick={onBulkPlaylistDownload}>
+            Download playlist…
+          </button>
+        )}
         {canReorder && (
           <p className="sp-reorder-hint">Hold ⋮⋮ then drag to reorder</p>
         )}

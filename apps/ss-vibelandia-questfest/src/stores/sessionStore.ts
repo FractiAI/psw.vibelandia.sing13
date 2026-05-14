@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { requestBoarding } from '@/lib/api';
+import { verifyCaptainPassword } from '@/lib/captainAuth';
 import type { LiveRail } from '@/lib/paymentRails';
 import {
   clearPassToken,
@@ -9,14 +10,36 @@ import {
   writePassToken,
 } from '@/lib/mockJwt';
 
+const CAPTAIN_SESSION_KEY = 'qv-captain-unlocked';
+
+function readCaptainUnlocked(): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    return sessionStorage.getItem(CAPTAIN_SESSION_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+function writeCaptainUnlocked(on: boolean) {
+  try {
+    if (on) sessionStorage.setItem(CAPTAIN_SESSION_KEY, '1');
+    else sessionStorage.removeItem(CAPTAIN_SESSION_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
 interface SessionState {
   passToken: string | null;
   isPassenger: boolean;
   jti: string | null;
+  captainUnlocked: boolean;
   boardingBusy: boolean;
   boardingError: string | null;
   completeBoarding: (rail: LiveRail, receipt: string, contact: string) => Promise<boolean>;
   disembark: () => void;
+  tryCaptainPassword: (password: string) => boolean;
   hydrateFromStorage: () => void;
 }
 
@@ -32,6 +55,7 @@ function load(): Pick<SessionState, 'passToken' | 'isPassenger' | 'jti'> {
 
 export const useSessionStore = create<SessionState>((set) => ({
   ...load(),
+  captainUnlocked: readCaptainUnlocked(),
   boardingBusy: false,
   boardingError: null,
   completeBoarding: async (rail, receipt, contact) => {
@@ -68,7 +92,20 @@ export const useSessionStore = create<SessionState>((set) => ({
   },
   disembark: () => {
     clearPassToken();
-    set({ passToken: null, isPassenger: false, jti: null, boardingError: null });
+    writeCaptainUnlocked(false);
+    set({
+      passToken: null,
+      isPassenger: false,
+      jti: null,
+      boardingError: null,
+      captainUnlocked: false,
+    });
   },
-  hydrateFromStorage: () => set(load()),
+  tryCaptainPassword: (password: string) => {
+    if (!verifyCaptainPassword(password)) return false;
+    writeCaptainUnlocked(true);
+    set({ captainUnlocked: true });
+    return true;
+  },
+  hydrateFromStorage: () => set({ ...load(), captainUnlocked: readCaptainUnlocked() }),
 }));

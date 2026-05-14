@@ -18,6 +18,7 @@ interface ExportTrackModalProps {
   open: boolean;
   track: TrackDef | undefined;
   isPassenger: boolean;
+  captainUnlocked: boolean;
   onClose: () => void;
   onNeedPass: () => void;
 }
@@ -26,10 +27,11 @@ export function ExportTrackModal({
   open,
   track,
   isPassenger,
+  captainUnlocked,
   onClose,
   onNeedPass,
 }: ExportTrackModalProps) {
-  const [step, setStep] = useState<'gate' | 'rail' | 'pay' | 'proof' | 'done'>('gate');
+  const [step, setStep] = useState<'gate' | 'captain_bypass' | 'rail' | 'pay' | 'proof' | 'done'>('gate');
   const [rail, setRail] = useState<LiveRail | null>(null);
   const [receipt, setReceipt] = useState('');
   const [busy, setBusy] = useState(false);
@@ -40,13 +42,16 @@ export function ExportTrackModal({
 
   useEffect(() => {
     if (!open || !track) return;
-    setStep(licensed ? 'done' : isPassenger ? 'rail' : 'gate');
+    if (licensed) setStep('done');
+    else if (captainUnlocked) setStep('captain_bypass');
+    else if (isPassenger) setStep('rail');
+    else setStep('gate');
     setRail(null);
     setReceipt('');
     setBusy(false);
     setError(null);
     setMsg(null);
-  }, [open, track?.id, isPassenger, licensed]);
+  }, [open, track?.id, isPassenger, captainUnlocked, licensed]);
 
   if (!open || !track) return null;
 
@@ -60,6 +65,25 @@ export function ExportTrackModal({
     setBusy(true);
     setError(null);
     try {
+      await downloadTrackToDevice(track);
+      setMsg(`Saved “${title}” to your device. Use any player offline.`);
+      setStep('done');
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'download_failed');
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const captainGrantAndDownload = async () => {
+    setBusy(true);
+    setError(null);
+    try {
+      saveExportLicense({
+        trackId: track.id,
+        licensedAt: new Date().toISOString(),
+        licenseId: 'captain-bypass',
+      });
       await downloadTrackToDevice(track);
       setMsg(`Saved “${title}” to your device. Use any player offline.`);
       setStep('done');
@@ -125,8 +149,10 @@ export function ExportTrackModal({
         {step === 'gate' && (
           <>
             <p className="modal-body">
-              You need an <strong>active monthly pass</strong> before you can buy a track download.
-              Streaming stays on the pass; downloads are per track.
+              You need an <strong>active monthly pass</strong> or <strong>captain access</strong> before you can buy a
+              track download. Streaming stays on the pass; downloads are per track. Captain unlock lives inside{' '}
+              <strong>Get monthly pass</strong> — expand <strong>Are you the captain?</strong> there, or use the Fair
+              Exchange screen after a 30s preview (or the <strong>Captain</strong> link in the header).
             </p>
             <div className="modal-actions">
               <button type="button" className="voxel-btn voxel-btn--orange" onClick={onNeedPass}>
@@ -136,6 +162,29 @@ export function ExportTrackModal({
                 Back
               </button>
             </div>
+          </>
+        )}
+
+        {step === 'captain_bypass' && (
+          <>
+            <p className="modal-body">
+              Captain access is on for this browser session. You can save <strong>{title}</strong> without the Venmo /
+              PayPal / Cash App proof flow on this device.
+            </p>
+            <div className="modal-actions">
+              <button
+                type="button"
+                className="voxel-btn voxel-btn--orange"
+                disabled={busy}
+                onClick={() => void captainGrantAndDownload()}
+              >
+                {busy ? 'Saving…' : 'Download now'}
+              </button>
+              <button type="button" className="voxel-btn voxel-btn--ghost" onClick={close} disabled={busy}>
+                Cancel
+              </button>
+            </div>
+            {error && <p className="modal-error">{error}</p>}
           </>
         )}
 

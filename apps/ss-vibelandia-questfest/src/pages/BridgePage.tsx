@@ -6,7 +6,9 @@ import { useStreamLock } from '@/hooks/useStreamLock';
 import { FairExchangeModal } from '@/components/player/FairExchangeModal';
 import { VesselSwitchModal } from '@/components/player/VesselSwitchModal';
 import { BoardingModal } from '@/components/payment/BoardingModal';
+import { CaptainUnlockModal } from '@/components/payment/CaptainUnlockModal';
 import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
+import { PlaylistBulkExportModal } from '@/components/payment/PlaylistBulkExportModal';
 import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
 import { TrackList } from '@/components/catalog/TrackList';
 import { PlaylistLibrary } from '@/components/catalog/PlaylistLibrary';
@@ -22,6 +24,7 @@ export function BridgePage() {
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
   const boardingError = useSessionStore((s) => s.boardingError);
   const isPassenger = useSessionStore((s) => s.isPassenger);
+  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const disembark = useSessionStore((s) => s.disembark);
 
   const hydrateCatalog = useCatalogStore((s) => s.hydrate);
@@ -37,6 +40,8 @@ export function BridgePage() {
 
   const [fairOpen, setFairOpen] = useState(false);
   const [boardOpen, setBoardOpen] = useState(false);
+  const [captainModalOpen, setCaptainModalOpen] = useState(false);
+  const [bulkExportOpen, setBulkExportOpen] = useState(false);
   const [exportOpen, setExportOpen] = useState(false);
   const [exportTrackId, setExportTrackId] = useState<string | null>(null);
   const [vesselOpen, setVesselOpen] = useState(false);
@@ -184,6 +189,13 @@ export function BridgePage() {
             <button
               type="button"
               className="sp-top-link"
+              onClick={() => setCaptainModalOpen(true)}
+            >
+              Captain
+            </button>
+            <button
+              type="button"
+              className="sp-top-link"
               onClick={() => {
                 disembark();
                 usePlaybackStore.getState().setPlaying(false);
@@ -216,9 +228,10 @@ export function BridgePage() {
             <DjStudio onUploadSuccess={handleUploadSuccess} />
           ) : (
             <TrackList
-              isPassenger={isPassenger}
+              isPassenger={isPassenger || captainUnlocked}
               onDownload={handleDownloadRequest}
               onEditPlaylist={() => editPlaylist(activePlaylistId)}
+              onBulkPlaylistDownload={() => setBulkExportOpen(true)}
             />
           )}
         </main>
@@ -240,6 +253,10 @@ export function BridgePage() {
           setFairOpen(false);
           setBoardOpen(true);
         }}
+        onCaptainAccess={() => {
+          setFairOpen(false);
+          setCaptainModalOpen(true);
+        }}
       />
 
       <BoardingModal
@@ -250,10 +267,26 @@ export function BridgePage() {
         error={boardingError}
       />
 
+      <CaptainUnlockModal open={captainModalOpen} onClose={() => setCaptainModalOpen(false)} />
+
+      <PlaylistBulkExportModal
+        open={bulkExportOpen}
+        onClose={() => setBulkExportOpen(false)}
+        onNeedPass={() => {
+          setBulkExportOpen(false);
+          setBoardOpen(true);
+        }}
+        onCaptainRequest={() => {
+          setBulkExportOpen(false);
+          setCaptainModalOpen(true);
+        }}
+      />
+
       <ExportTrackModal
         open={exportOpen}
         track={exportTrack}
         isPassenger={isPassenger}
+        captainUnlocked={captainUnlocked}
         onClose={() => {
           setExportOpen(false);
           setExportTrackId(null);

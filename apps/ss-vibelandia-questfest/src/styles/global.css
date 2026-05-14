@@ -1682,7 +1682,6 @@ a.voxel-btn {
   flex-direction: column;
   min-width: 0;
   min-height: 0;
-  padding-bottom: 6rem;
 }
 
 .sp-top {
@@ -1998,11 +1997,7 @@ a.voxel-btn {
 
 .sp-now {
   grid-column: 2;
-  position: fixed;
-  left: 280px;
-  right: 0;
-  bottom: 0;
-  z-index: 30;
+  grid-row: 2;
   background: #181818;
   border-top: 1px solid #282828;
 }
@@ -2118,13 +2113,24 @@ a.voxel-btn {
 }
 
 @media (max-width: 900px) {
+  html,
+  body,
+  #root {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .sp-app {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    height: auto;
   }
 
   .sp-side {
-    grid-row: auto;
+    flex-shrink: 0;
     min-height: auto;
     max-height: none;
   }
@@ -2134,13 +2140,22 @@ a.voxel-btn {
   }
 
   .sp-main {
-    grid-column: 1;
-    grid-row: 2;
+    flex: 0 1 auto;
+    display: block;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .sp-scroll {
+    overflow: visible;
+    flex: none;
+    padding-bottom: 2rem;
   }
 
   .sp-now {
-    left: 0;
-    grid-column: 1;
+    flex-shrink: 0;
+    width: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   .sp-table-head {
@@ -2166,7 +2181,6 @@ a.voxel-btn {
 
   .sp-app {
     min-height: 100dvh;
-    grid-template-rows: auto 1fr auto;
   }
 
   .sp-side {
@@ -2207,10 +2221,6 @@ a.voxel-btn {
 
   .sp-side-section {
     display: none;
-  }
-
-  .sp-main {
-    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
   }
 
   .sp-top {
@@ -2390,6 +2400,7 @@ a.voxel-btn {
 
   .spotify-dj-grid {
     grid-template-columns: 1fr;
+    padding-bottom: 1.5rem;
   }
 
   .spotify-input,

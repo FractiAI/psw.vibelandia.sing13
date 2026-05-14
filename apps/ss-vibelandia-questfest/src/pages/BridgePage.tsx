@@ -81,10 +81,11 @@ export function BridgePage() {
 
   return (
     <div className="bridge">
-      <header className="bridge-top">
+      <header className="bridge-top bridge-top--warm">
         <div>
           <p className="bridge-eyebrow">SS Vibelandia · QUESTFEST</p>
-          <h1 className="bridge-title">Bridge — Sovereign Player</h1>
+          <h1 className="bridge-title">Reno Swamp Player &amp; Catalog</h1>
+          <p className="bridge-tagline">Everything free for 30 seconds — then stay if the vibe hits.</p>
         </div>
         <nav className="bridge-nav">
           <Link to="/" className="voxel-btn voxel-btn--ghost">
@@ -119,12 +120,12 @@ export function BridgePage() {
           </div>
         </section>
         <aside className="bridge-col bridge-aside">
-          <PlaylistDock />
           <CatalogPanel
             isPassenger={isPassenger}
             onBoard={() => setBoardOpen(true)}
             onExport={() => setExportOpen(true)}
           />
+          <PlaylistDock />
         </aside>
       </main>
 

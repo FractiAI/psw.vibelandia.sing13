@@ -38,15 +38,15 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   return (
     <div className="modal-root" role="dialog" aria-modal="true">
       <div className="modal-backdrop" onClick={close} />
-      <div className="voxel-panel modal-card modal-card--wide">
-        <h2 className="modal-title">Reno Swamp Vibe · Passenger Pass</h2>
+      <div className="voxel-panel modal-card modal-card--wide modal-card--swamp-warm">
+        <h2 className="modal-title modal-title--warm">Reno Swamp monthly pass</h2>
 
         {step === 'rail' && (
           <>
-            <p className="modal-body">
-              Fair Exchange <strong>${EGS_MONTHLY_USD.toFixed(2)}/mo</strong> (EGS φ constant) —
-              unlock full video deck, Solenoid lift, 13-channel access, and the 500+ swamp catalog
-              for advertising and projects. Pick a rail. No Stripe. Counterintuitive on purpose.
+            <p className="modal-body modal-body--warm">
+              <strong>${EGS_MONTHLY_USD.toFixed(2)}/month</strong> — full catalog, full playback, exports
+              when you need them. Pick Venmo, PayPal, or Cash App. We keep it human and old-school on
+              purpose.
             </p>
             <div className="rail-grid">
               {(Object.keys(PAYMENT_HANDLES) as LiveRail[]).map((r) => (

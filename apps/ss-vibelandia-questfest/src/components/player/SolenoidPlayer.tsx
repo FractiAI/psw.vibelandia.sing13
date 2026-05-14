@@ -202,7 +202,7 @@ export function SolenoidPlayer({
 
       <p className="player-hint">
         {pl?.kind === 'sovereign' && !isPassenger
-          ? 'Sovereign Master Playlist — first 30s only until Fair Exchange ($16.18/mo via Venmo / PayPal / Cash App).'
+          ? 'Your free 30-second taste — when it pauses, we will warmly offer the monthly pass.'
           : isPassenger
             ? `${track.channelHint} · single active stream enforced.`
             : 'Open deck — full preview on this relay.'}

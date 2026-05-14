@@ -85,9 +85,9 @@ export const INITIAL_PLAYLISTS: PlaylistDef[] = [
   },
   {
     id: 'pl-sovereign',
-    name: 'Sovereign Master Playlist',
+    name: 'Reno Swamp Catalog',
     kind: 'sovereign',
-    description: 'All tracks inherit the Solenoid Gate until Passenger status is active.',
-    trackIds: ['trk-long', 'trk-alt'],
+    description: 'The whole deck — every track free for your first 30 seconds, then the monthly pass unlocks the rest.',
+    trackIds: ['trk-long', 'trk-short', 'trk-alt'],
   },
 ];

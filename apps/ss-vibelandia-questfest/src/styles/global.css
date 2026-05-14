@@ -12,6 +12,13 @@
   --font-display: 'Bebas Neue', Impact, sans-serif;
   --font-bass: 'Archivo Black', sans-serif;
   --font-ui: 'Space Grotesk', system-ui, sans-serif;
+  --swamp-cream: #f5efe6;
+  --swamp-gold: #e8b86d;
+  --swamp-amber: #c97b4a;
+  --swamp-teal: #5fb8a8;
+  --swamp-teal-deep: #3d8f82;
+  --swamp-warm-bg: #2a1f18;
+  --swamp-warm-line: rgba(232, 184, 109, 0.45);
 }
 
 *,
@@ -690,4 +697,173 @@ a.voxel-btn {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+}
+
+/* --- Warm Reno Swamp catalog & pass offer --- */
+.bridge-top--warm .bridge-tagline {
+  font-size: 0.88rem;
+  color: var(--swamp-cream);
+  opacity: 0.88;
+  margin: 0.35rem 0 0;
+  max-width: 28rem;
+}
+
+.catalog-panel--warm {
+  background: linear-gradient(160deg, rgba(42, 31, 24, 0.96), rgba(26, 20, 16, 0.98));
+  border-color: var(--swamp-warm-line);
+  box-shadow: 4px 4px 0 rgba(20, 14, 10, 0.85);
+}
+
+.catalog-eyebrow {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--swamp-teal);
+  margin: 0 0 0.35rem;
+}
+
+.catalog-panel--warm .catalog-title {
+  color: var(--swamp-gold);
+  font-size: 1.15rem;
+}
+
+.catalog-panel--warm .catalog-lede {
+  color: var(--swamp-cream);
+  line-height: 1.55;
+}
+
+.catalog-tracks {
+  list-style: none;
+  margin: 0.75rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.catalog-track-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.55rem;
+  border: 2px solid rgba(232, 184, 109, 0.22);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.catalog-track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.catalog-track-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--swamp-cream);
+}
+
+.catalog-track-artist {
+  font-size: 0.72rem;
+  color: rgba(245, 239, 230, 0.65);
+}
+
+.catalog-free-pill,
+.catalog-pass-pill {
+  display: inline-block;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+  padding: 0.12rem 0.35rem;
+  border-radius: 999px;
+}
+
+.catalog-free-pill {
+  background: rgba(95, 184, 168, 0.2);
+  color: var(--swamp-teal);
+  border: 1px solid rgba(95, 184, 168, 0.45);
+}
+
+.catalog-pass-pill {
+  background: rgba(232, 184, 109, 0.15);
+  color: var(--swamp-gold);
+  border: 1px solid var(--swamp-warm-line);
+}
+
+.catalog-pass-offer {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--swamp-cream);
+  margin: 0.65rem 0 0;
+  padding: 0.65rem 0.7rem;
+  background: rgba(95, 184, 168, 0.08);
+  border-left: 3px solid var(--swamp-teal);
+}
+
+.voxel-btn--warm {
+  background: linear-gradient(180deg, #4a9e92, var(--swamp-teal-deep));
+  color: var(--swamp-cream);
+  border-color: #2a5f56;
+  font-size: 0.65rem;
+}
+
+.voxel-btn--swamp-gold {
+  background: linear-gradient(180deg, #f0d4a0, var(--swamp-gold));
+  color: #2a1f18;
+  border-color: var(--swamp-amber);
+}
+
+.voxel-btn--warm-teal {
+  background: linear-gradient(180deg, #7ecfc0, var(--swamp-teal));
+  color: #1a2824;
+  border-color: #3d8f82;
+}
+
+.voxel-btn--ghost-warm {
+  background: transparent;
+  border-color: var(--swamp-warm-line);
+  color: var(--swamp-gold);
+}
+
+.modal-root--warm .modal-backdrop--warm {
+  background: rgba(26, 18, 12, 0.78);
+}
+
+.modal-card--swamp-warm {
+  background: linear-gradient(165deg, #3d2e24 0%, #2a1f18 55%, #1f1814 100%);
+  border: 3px solid var(--swamp-gold);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 4px 4px 0 var(--swamp-amber);
+  max-width: 28rem;
+}
+
+.modal-eyebrow-warm {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--swamp-teal);
+  margin: 0 0 0.35rem;
+}
+
+.modal-title--warm {
+  color: var(--swamp-gold);
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.modal-body--warm {
+  color: var(--swamp-cream);
+  line-height: 1.55;
+}
+
+.modal-body--soft {
+  font-size: 0.82rem;
+  opacity: 0.9;
+  margin-top: -0.35rem;
+}
+
+.solenoid-badge {
+  color: var(--swamp-teal) !important;
 }

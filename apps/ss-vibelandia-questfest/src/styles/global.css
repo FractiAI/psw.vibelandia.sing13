@@ -793,14 +793,15 @@ a.voxel-btn {
   border: 1px solid var(--swamp-warm-line);
 }
 
-.catalog-pass-offer {
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--swamp-cream);
-  margin: 0.65rem 0 0;
-  padding: 0.65rem 0.7rem;
-  background: rgba(95, 184, 168, 0.08);
-  border-left: 3px solid var(--swamp-teal);
+.catalog-footnote {
+  font-size: 0.68rem;
+  color: rgba(245, 239, 230, 0.55);
+  margin: 0.75rem 0 0;
+  line-height: 1.45;
+}
+
+.catalog-footnote a {
+  color: var(--swamp-teal);
 }
 
 .voxel-btn--warm {

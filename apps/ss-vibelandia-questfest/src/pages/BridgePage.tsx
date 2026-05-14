@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { usePlaylistStore } from '@/stores/playlistStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useStreamLock } from '@/hooks/useStreamLock';
@@ -8,13 +8,10 @@ import { FairExchangeModal } from '@/components/player/FairExchangeModal';
 import { VesselSwitchModal } from '@/components/player/VesselSwitchModal';
 import { BoardingModal } from '@/components/payment/BoardingModal';
 import { CatalogPanel } from '@/components/payment/CatalogPanel';
-import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
-import { PlaylistDock } from '@/components/playlist/PlaylistDock';
 import { LibrettoOverlay } from '@/components/libretto/LibrettoOverlay';
 import { useSessionStore } from '@/stores/sessionStore';
 
 export function BridgePage() {
-  const [searchParams, setSearchParams] = useSearchParams();
   const hydrate = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
@@ -23,19 +20,15 @@ export function BridgePage() {
   const disembark = useSessionStore((s) => s.disembark);
 
   const getActivePlaylist = usePlaylistStore((s) => s.getActivePlaylist);
-  const getTrack = usePlaylistStore((s) => s.getTrack);
   const setTrack = usePlaybackStore((s) => s.setTrack);
   const setGain = usePlaybackStore((s) => s.setGain);
-  const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
 
   const [fairOpen, setFairOpen] = useState(false);
   const [boardOpen, setBoardOpen] = useState(false);
-  const [exportOpen, setExportOpen] = useState(false);
   const [vesselOpen, setVesselOpen] = useState(false);
   const [vesselKind, setVesselKind] = useState<'vessel_switch' | 'tab_preempt' | null>(null);
 
   const stream = useStreamLock();
-  const track = currentTrackId ? getTrack(currentTrackId) : undefined;
 
   const onFairExchange = useCallback(() => setFairOpen(true), []);
   const onVesselSwitch = useCallback((reason: 'vessel_switch' | 'tab_preempt') => {
@@ -46,15 +39,6 @@ export function BridgePage() {
   useEffect(() => {
     hydrate();
   }, [hydrate]);
-
-  useEffect(() => {
-    if (searchParams.get('checkout') !== '1') return;
-    hydrate();
-    if (!useSessionStore.getState().isPassenger) {
-      setBoardOpen(true);
-    }
-    setSearchParams({}, { replace: true });
-  }, [hydrate, searchParams, setSearchParams]);
 
   const activePlaylistId = usePlaylistStore((s) => s.activePlaylistId);
   useEffect(() => {
@@ -111,7 +95,6 @@ export function BridgePage() {
             <SolenoidPlayer
               onFairExchange={onFairExchange}
               onVesselSwitch={onVesselSwitch}
-              onExport={() => setExportOpen(true)}
               killReason={stream.killReason}
               beginSession={stream.beginSession}
               clearKill={stream.clearKill}
@@ -120,12 +103,7 @@ export function BridgePage() {
           </div>
         </section>
         <aside className="bridge-col bridge-aside">
-          <CatalogPanel
-            isPassenger={isPassenger}
-            onBoard={() => setBoardOpen(true)}
-            onExport={() => setExportOpen(true)}
-          />
-          <PlaylistDock />
+          <CatalogPanel isPassenger={isPassenger} />
         </aside>
       </main>
 
@@ -145,8 +123,6 @@ export function BridgePage() {
         busy={boardingBusy}
         error={boardingError}
       />
-
-      <ExportTrackModal open={exportOpen} track={track} onClose={() => setExportOpen(false)} />
 
       <VesselSwitchModal
         open={vesselOpen}

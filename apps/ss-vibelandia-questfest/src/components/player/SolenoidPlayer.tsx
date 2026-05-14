@@ -10,7 +10,6 @@ const FADE_START = 28.85;
 interface SolenoidPlayerProps {
   onFairExchange: () => void;
   onVesselSwitch: (reason: Exclude<KillReason, null>) => void;
-  onExport: () => void;
   killReason: KillReason;
   beginSession: () => void;
   clearKill: () => void;
@@ -19,7 +18,6 @@ interface SolenoidPlayerProps {
 export function SolenoidPlayer({
   onFairExchange,
   onVesselSwitch,
-  onExport,
   killReason,
   beginSession,
   clearKill,
@@ -194,9 +192,6 @@ export function SolenoidPlayer({
         </button>
         <button type="button" className="voxel-btn" onClick={() => setPlaying(false)}>
           Stop
-        </button>
-        <button type="button" className="voxel-btn voxel-btn--orange" onClick={onExport}>
-          Export · $1.61
         </button>
       </div>
 

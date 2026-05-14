@@ -1,15 +1,13 @@
-import { EGS_MONTHLY_USD, BOOKING_EMAIL, CATALOG_EMAIL, EGS_EXPORT_USD } from '@/lib/paymentRails';
+import { BOOKING_EMAIL, CATALOG_EMAIL } from '@/lib/paymentRails';
 import { TRACKS } from '@/lib/demoTracks';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistStore } from '@/stores/playlistStore';
 
 interface CatalogPanelProps {
-  onExport: () => void;
-  onBoard: () => void;
   isPassenger: boolean;
 }
 
-export function CatalogPanel({ onExport, onBoard, isPassenger }: CatalogPanelProps) {
+export function CatalogPanel({ isPassenger }: CatalogPanelProps) {
   const setTrack = usePlaybackStore((s) => s.setTrack);
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
@@ -28,9 +26,9 @@ export function CatalogPanel({ onExport, onBoard, isPassenger }: CatalogPanelPro
       <p className="catalog-eyebrow">Welcome in · no card required</p>
       <h3 className="catalog-title">Reno Swamp · Caliente Catalog</h3>
       <p className="catalog-lede">
-        Everything on the deck is <strong>free to taste</strong> — hit play and ride the first{' '}
-        <strong>30 seconds</strong> on us. When the music pauses, that is your cue: the monthly pass
-        keeps the swamp open all month long.
+        The whole deck is open — pick anything and ride the first <strong>30 seconds</strong> on
+        us. No signup, no paywall at the door. If the vibe lands, we will invite you to the monthly
+        pass after your free taste.
       </p>
 
       <ul className="catalog-tracks" aria-label="Catalog tracks">
@@ -53,37 +51,12 @@ export function CatalogPanel({ onExport, onBoard, isPassenger }: CatalogPanelPro
         ))}
       </ul>
 
-      <p className="catalog-pass-offer">
-        {!isPassenger ? (
-          <>
-            Love what you heard? <strong>${EGS_MONTHLY_USD.toFixed(2)}/month</strong> unlocks the full
-            catalog — swamp beats, holographic cuts, and project-ready exports. Warm Fair Exchange via
-            Venmo, PayPal, or Cash App.
-          </>
-        ) : (
-          <>You are aboard — full deck, exports, and single-stream lock are live. Thank you for riding with us.</>
-        )}
+      <p className="catalog-footnote">
+        Bookings &amp; licensing:{' '}
+        <a href={`mailto:${BOOKING_EMAIL}?subject=QUESTFEST%20Booking`}>{BOOKING_EMAIL}</a>
+        {' · '}
+        <a href={`mailto:${CATALOG_EMAIL}?subject=Catalog%20%2F%20Licensing`}>{CATALOG_EMAIL}</a>
       </p>
-
-      <div className="catalog-actions">
-        {!isPassenger && (
-          <button type="button" className="voxel-btn voxel-btn--swamp-gold" onClick={onBoard}>
-            Get the monthly pass · ${EGS_MONTHLY_USD.toFixed(2)}
-          </button>
-        )}
-        <button type="button" className="voxel-btn voxel-btn--warm-teal" onClick={onExport}>
-          Export a track · ${EGS_EXPORT_USD.toFixed(2)}
-        </button>
-        <a className="voxel-btn voxel-btn--ghost-warm" href={`mailto:${BOOKING_EMAIL}?subject=QUESTFEST%20Booking`}>
-          Bookings
-        </a>
-        <a
-          className="voxel-btn voxel-btn--ghost-warm"
-          href={`mailto:${CATALOG_EMAIL}?subject=Catalog%20%2F%20Licensing%20(500%2B)`}
-        >
-          Catalog / licensing
-        </a>
-      </div>
     </section>
   );
 }

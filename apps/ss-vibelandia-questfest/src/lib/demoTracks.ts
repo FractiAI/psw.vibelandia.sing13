@@ -77,17 +77,10 @@ export const TRACKS: Record<string, TrackDef> = {
 
 export const INITIAL_PLAYLISTS: PlaylistDef[] = [
   {
-    id: 'pl-open',
-    name: 'Open Deck Broadcast',
-    kind: 'open_deck',
-    description: 'Public relay — full preview for anonymous crew (no solenoid).',
-    trackIds: ['trk-short'],
-  },
-  {
     id: 'pl-sovereign',
     name: 'Reno Swamp Catalog',
     kind: 'sovereign',
-    description: 'The whole deck — every track free for your first 30 seconds, then the monthly pass unlocks the rest.',
+    description: 'Full deck — 30-second free taste on every track, then monthly pass for the full ride.',
     trackIds: ['trk-long', 'trk-short', 'trk-alt'],
   },
 ];

@@ -3,12 +3,9 @@ import { useSessionStore } from '@/stores/sessionStore';
 import { useEffect } from 'react';
 
 export function RegistrationPage() {
-  const hydrate = useSessionStore((s) => s.hydrateFromStorage);
-  const isPassenger = useSessionStore((s) => s.isPassenger);
-
   useEffect(() => {
-    hydrate();
-  }, [hydrate]);
+    useSessionStore.getState().hydrate();
+  }, []);
 
   return (
     <div className="gate">
@@ -17,19 +14,18 @@ export function RegistrationPage() {
         <p className="gate-kicker">Sovereign Gate</p>
         <h1 className="gate-title">SS Vibelandia QUESTFEST</h1>
         <p className="gate-lead">
-          Passenger registration for the sonic ship. The Solenoid holds anonymous ears to{' '}
-          <strong>30 seconds</strong> on the Sovereign Master Playlist until Fair Exchange clears.
+          The whole Reno Swamp catalog is open — play anything for your first{' '}
+          <strong>30 seconds</strong> free. No paywall at the door. When a track pauses, we will
+          warmly invite you to the monthly pass for the full experience.
         </p>
         <ul className="gate-list">
-          <li>Single active stream — heartbeat lock across devices.</li>
-          <li>The Libretto — 13s vocal discharges &amp; scripted lines over the deck.</li>
-          <li>
-            EGS constant <strong>$16.18/mo</strong> unlocks full playback + 13-channel access.
-          </li>
+          <li>Browse and play the full catalog — 30s preview on every track.</li>
+          <li>The Libretto — scripted lines and short vocal discharges on the deck.</li>
+          <li>Monthly pass unlocks uninterrupted playback when you are ready.</li>
         </ul>
         <div className="gate-actions">
           <Link className="voxel-btn voxel-btn--orange" to="/bridge">
-            {isPassenger ? 'Enter Bridge' : 'Enter Bridge (preview)'}
+            Gimme Some of That Reno Swamp Vibe
           </Link>
           <a
             className="voxel-btn voxel-btn--ghost"
@@ -41,8 +37,7 @@ export function RegistrationPage() {
           </a>
         </div>
         <p className="gate-fine">
-          Marketing sites can deep-link straight to checkout:
-          <code className="gate-code">…/interfaces/questfest-bridge/#/bridge?checkout=1</code>
+          Full catalog at <code className="gate-code">…/interfaces/questfest-bridge/#/bridge</code>
         </p>
       </div>
     </div>

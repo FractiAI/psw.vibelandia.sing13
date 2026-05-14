@@ -580,6 +580,12 @@ a.voxel-btn {
   margin: 0.75rem 0 0;
 }
 
+.modal-error {
+  color: #f15e6c;
+  font-size: 0.82rem;
+  margin: 0.5rem 0 0;
+}
+
 .rail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -1839,6 +1845,16 @@ a.voxel-btn {
 
 .sp-toolbar {
   margin-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.sp-reorder-hint {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #727272;
 }
 
 .sp-search-wrap {
@@ -1864,9 +1880,14 @@ a.voxel-btn {
 .sp-table-head,
 .sp-row {
   display: grid;
-  grid-template-columns: 2rem 2fr 1fr 4rem 3.5rem;
+  grid-template-columns: 2rem 2fr 1fr 4rem 2.5rem 3.5rem;
   gap: 0.5rem 1rem;
   align-items: center;
+}
+
+.sp-table-head--reorder,
+.sp-row--reorder {
+  grid-template-columns: 1.35rem 2rem 2fr 1fr 4rem 2.5rem 3.5rem;
 }
 
 .sp-table-head {
@@ -1897,6 +1918,39 @@ a.voxel-btn {
 
 .sp-row--on {
   background: rgba(30, 215, 96, 0.12);
+}
+
+.sp-row-grip {
+  border: none;
+  background: transparent;
+  color: #727272;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  font-size: 0.72rem;
+  line-height: 1;
+  padding: 0.35rem 0.15rem;
+  min-width: 1.35rem;
+  min-height: 2rem;
+  letter-spacing: -0.12em;
+}
+
+.sp-row-grip:active {
+  cursor: grabbing;
+  color: #1ed760;
+}
+
+.sp-row--dragging {
+  opacity: 0.92;
+  background: #333 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+  position: relative;
+  z-index: 4;
+}
+
+.sp-row--drop-target {
+  box-shadow: inset 0 2px 0 #1ed760;
 }
 
 .sp-row-idx {
@@ -1966,6 +2020,29 @@ a.voxel-btn {
   color: #fff;
   cursor: pointer;
   font-weight: 700;
+}
+
+.sp-row-dl {
+  font-size: 0.72rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid #535353;
+  background: transparent;
+  color: #b3b3b3;
+  cursor: pointer;
+  font-weight: 700;
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.sp-row-dl:hover {
+  color: #fff;
+  border-color: #1ed760;
+}
+
+.sp-row-dl--owned {
+  color: #1ed760;
+  border-color: rgba(30, 215, 96, 0.45);
 }
 
 .sp-empty {
@@ -2104,6 +2181,27 @@ a.voxel-btn {
   text-align: right;
   font-size: 0.78rem;
   color: #b3b3b3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.sp-now-dl {
+  border: 1px solid #535353;
+  background: transparent;
+  color: #b3b3b3;
+  border-radius: 6px;
+  min-width: 2rem;
+  min-height: 2rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.sp-now-dl:hover {
+  color: #fff;
+  border-color: #1ed760;
 }
 
 .sp-now-error {
@@ -2163,11 +2261,14 @@ a.voxel-btn {
   }
 
   .sp-row {
-    grid-template-columns: 1.5rem 1fr auto;
+    grid-template-columns: 1.5rem 1fr auto auto;
     align-items: center;
   }
 
-  .sp-row-album,
+  .sp-row--reorder {
+    grid-template-columns: 1.2rem 1.5rem 1fr auto auto auto;
+  }
+
   .sp-row-dur {
     display: none;
   }
@@ -2287,11 +2388,19 @@ a.voxel-btn {
   }
 
   .sp-row {
-    grid-template-columns: 1.75rem 1fr auto;
+    grid-template-columns: 1.75rem 1fr auto auto auto;
     grid-template-areas: none;
     align-items: center;
     padding: 0.55rem 0.35rem;
     gap: 0.35rem 0.5rem;
+  }
+
+  .sp-row--reorder {
+    grid-template-columns: 1.1rem 1.5rem 1fr auto auto auto;
+  }
+
+  .sp-row-album {
+    display: none;
   }
 
   .sp-row-idx {

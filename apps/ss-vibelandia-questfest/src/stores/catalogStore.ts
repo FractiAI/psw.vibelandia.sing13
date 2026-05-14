@@ -43,6 +43,7 @@ interface CatalogState {
   addTrackToPlaylist: (trackId: string, playlistId: string) => void;
   removeTrackFromPlaylist: (trackId: string, playlistId: string) => void;
   moveTrackInPlaylist: (playlistId: string, trackId: string, dir: -1 | 1) => void;
+  reorderTrackInPlaylist: (playlistId: string, fromIndex: number, toIndex: number) => void;
   moveTrackToPlaylist: (trackId: string, targetPlaylistId: string) => void;
   uploadTrack: (
     file: File,
@@ -256,6 +257,22 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         if (j < 0 || j >= p.trackIds.length) return p;
         const ids = [...p.trackIds];
         [ids[idx], ids[j]] = [ids[j], ids[idx]];
+        return { ...p, trackIds: ids };
+      }),
+    }));
+    get().persist();
+  },
+
+  reorderTrackInPlaylist: (playlistId, fromIndex, toIndex) => {
+    if (fromIndex === toIndex) return;
+    set((s) => ({
+      playlists: s.playlists.map((p) => {
+        if (p.id !== playlistId) return p;
+        const ids = [...p.trackIds];
+        if (fromIndex < 0 || fromIndex >= ids.length) return p;
+        const clamped = Math.max(0, Math.min(toIndex, ids.length - 1));
+        const [item] = ids.splice(fromIndex, 1);
+        ids.splice(clamped, 0, item);
         return { ...p, trackIds: ids };
       }),
     }));

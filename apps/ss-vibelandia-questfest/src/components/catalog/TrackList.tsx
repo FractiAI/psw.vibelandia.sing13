@@ -1,6 +1,9 @@
 import { useMemo } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
+import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
+import { hasExportLicense } from '@/lib/exportLicenses';
+import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 import { DEFAULT_ARTIST } from '@/lib/catalogTypes';
 
 function fmtDuration(sec?: number) {
@@ -12,35 +15,42 @@ function fmtDuration(sec?: number) {
 
 interface TrackListProps {
   isPassenger: boolean;
+  onDownload: (trackId: string) => void;
 }
 
-export function TrackList({ isPassenger }: TrackListProps) {
+export function TrackList({ isPassenger, onDownload }: TrackListProps) {
   const pl = useCatalogStore((s) => s.getActivePlaylist());
   const search = useCatalogStore((s) => s.search);
   const setSearch = useCatalogStore((s) => s.setSearch);
   const getTrack = useCatalogStore((s) => s.getTrack);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
+  const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);
 
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
   const setTrack = usePlaybackStore((s) => s.setTrack);
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
 
-  const tracks = useMemo(() => {
+  const canReorder = !search.trim() && (pl?.trackIds.length ?? 0) > 1;
+
+  const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
+    usePlaylistReorder(activePlaylistId, canReorder, reorderTrackInPlaylist);
+
+  const rows = useMemo(() => {
     const q = search.trim().toLowerCase();
     const ids = pl?.trackIds ?? [];
     return ids
-      .map((id) => getTrack(id))
-      .filter(Boolean)
-      .filter((tr) => {
+      .map((id, index) => ({ id, index, track: getTrack(id) }))
+      .filter((row): row is { id: string; index: number; track: NonNullable<ReturnType<typeof getTrack>> } => {
+        if (!row.track) return false;
         if (!q) return true;
         return (
-          tr!.title.toLowerCase().includes(q) ||
-          tr!.artist.toLowerCase().includes(q) ||
-          (tr!.description?.toLowerCase().includes(q) ?? false)
+          row.track.title.toLowerCase().includes(q) ||
+          row.track.artist.toLowerCase().includes(q) ||
+          (row.track.description?.toLowerCase().includes(q) ?? false)
         );
-      }) as NonNullable<ReturnType<typeof getTrack>>[];
+      });
   }, [pl, search, getTrack]);
 
   const play = (id: string) => {
@@ -67,12 +77,16 @@ export function TrackList({ isPassenger }: TrackListProps) {
         <div className="sp-hero-meta">
           <p className="sp-hero-type">{currentTrack ? 'Now playing' : 'Playlist'}</p>
           <h1 className="sp-hero-title">{currentTrack?.title ?? pl.name}</h1>
-          <p className="sp-hero-desc">
-            {currentTrack?.description || pl.description}
-          </p>
+          <p className="sp-hero-desc">{currentTrack?.description || pl.description}</p>
           <p className="sp-hero-stats">
             <strong>{currentTrack?.artist ?? DEFAULT_ARTIST}</strong> · {pl.trackIds.length} songs ·{' '}
             {isPassenger ? 'full play' : '30s free on each track'}
+            {isPassenger && (
+              <>
+                {' '}
+                · download ${EGS_EXPORT_USD.toFixed(2)}/track for offline
+              </>
+            )}
           </p>
           <div className="sp-hero-actions">
             <button type="button" className="sp-play-fab" onClick={playAll} aria-label="Play playlist">
@@ -93,26 +107,49 @@ export function TrackList({ isPassenger }: TrackListProps) {
             onChange={(e) => setSearch(e.target.value)}
           />
         </label>
+        {canReorder && (
+          <p className="sp-reorder-hint">Hold ⋮⋮ then drag to reorder</p>
+        )}
       </div>
 
       <div className="sp-table">
-        <div className="sp-table-head" aria-hidden>
+        <div className={`sp-table-head${canReorder ? ' sp-table-head--reorder' : ''}`} aria-hidden>
+          {canReorder && <span />}
           <span>#</span>
           <span>Title</span>
           <span>Album</span>
           <span>⏱</span>
+          <span>↓</span>
+          <span />
         </div>
-        <ol className="sp-rows">
-          {tracks.map((tr, i) => {
+        <ol className="sp-rows" ref={listRef}>
+          {rows.map((row, displayIndex) => {
+            const tr = row.track;
             const active = currentTrackId === tr.id;
+            const dragging = dragIndex === row.index;
+            const dropBefore = overIndex === row.index && dragIndex !== null && dragIndex !== row.index;
             return (
               <li
                 key={tr.id}
-                className={`sp-row${active ? ' sp-row--on' : ''}`}
+                data-reorder-idx={row.index}
+                className={`sp-row${active ? ' sp-row--on' : ''}${dragging ? ' sp-row--dragging' : ''}${dropBefore ? ' sp-row--drop-target' : ''}${canReorder ? ' sp-row--reorder' : ''}`}
                 onDoubleClick={() => play(tr.id)}
               >
+                {canReorder && (
+                  <button
+                    type="button"
+                    className="sp-row-grip"
+                    aria-label={`Reorder ${tr.title}`}
+                    onPointerDown={(e) => onGripPointerDown(row.index, e)}
+                    onPointerMove={onGripPointerMove}
+                    onPointerUp={(e) => onGripPointerUp(row.index, e)}
+                    onPointerCancel={(e) => onGripPointerUp(row.index, e)}
+                  >
+                    ⋮⋮
+                  </button>
+                )}
                 <span className="sp-row-idx">
-                  {active && isPlaying ? <span className="sp-eq">♪</span> : i + 1}
+                  {active && isPlaying ? <span className="sp-eq">♪</span> : displayIndex + 1}
                 </span>
                 <button type="button" className="sp-row-main" onClick={() => play(tr.id)}>
                   <span className="sp-row-title">{tr.title}</span>
@@ -121,6 +158,21 @@ export function TrackList({ isPassenger }: TrackListProps) {
                 </button>
                 <span className="sp-row-album">{tr.videoSrc ? 'Music video' : 'Audio'}</span>
                 <span className="sp-row-dur">{fmtDuration(tr.durationSec)}</span>
+                <button
+                  type="button"
+                  className={`sp-row-dl${hasExportLicense(tr.id) ? ' sp-row-dl--owned' : ''}`}
+                  onClick={() => onDownload(tr.id)}
+                  aria-label={`Download ${tr.title}`}
+                  title={
+                    isPassenger
+                      ? hasExportLicense(tr.id)
+                        ? 'Download again (licensed)'
+                        : `Download · $${EGS_EXPORT_USD.toFixed(2)}`
+                      : 'Monthly pass required'
+                  }
+                >
+                  {hasExportLicense(tr.id) ? '✓' : '↓'}
+                </button>
                 <button
                   type="button"
                   className="sp-row-play"
@@ -135,7 +187,7 @@ export function TrackList({ isPassenger }: TrackListProps) {
         </ol>
       </div>
 
-      {tracks.length === 0 && (
+      {rows.length === 0 && (
         <p className="sp-empty">
           {search.trim()
             ? 'No tracks match your search.'

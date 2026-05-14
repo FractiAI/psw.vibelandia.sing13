@@ -11,6 +11,7 @@ import {
   saveDeviceDirHandle,
 } from '@/lib/catalogPersistence';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
+import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
 import {
   fileSourceKey,
   pickMediaDirectory,
@@ -43,10 +44,13 @@ interface CatalogState {
   removeTrackFromPlaylist: (trackId: string, playlistId: string) => void;
   moveTrackInPlaylist: (playlistId: string, trackId: string, dir: -1 | 1) => void;
   moveTrackToPlaylist: (trackId: string, targetPlaylistId: string) => void;
-  uploadTrack: (file: File, meta: { title: string; artist: string; playlistIds: string[] }) => Promise<string>;
+  uploadTrack: (
+    file: File,
+    meta: { title: string; artist: string; description?: string; playlistIds: string[] },
+  ) => Promise<string>;
   importMediaFiles: (
     files: File[],
-    opts?: { artist?: string; playlistIds?: string[] },
+    opts?: { artist?: string; description?: string; playlistIds?: string[] },
   ) => Promise<{ added: number; skipped: number }>;
   scanDeviceLibrary: (opts?: { pickFolder?: boolean }) => Promise<{ added: number; skipped: number }>;
   deleteTrack: (trackId: string) => Promise<void>;
@@ -124,10 +128,16 @@ function stripForStorage(tracks: Record<string, TrackDef>): Record<string, Track
   return out;
 }
 
+function clampDescription(text?: string): string | undefined {
+  const t = text?.trim();
+  if (!t) return undefined;
+  return t.slice(0, TRACK_DESCRIPTION_MAX);
+}
+
 async function addFileAsTrack(
   file: File,
   existing: { tracks: Record<string, TrackDef>; sourceKeys: Set<string> },
-  meta: { title?: string; artist?: string },
+  meta: { title?: string; artist?: string; description?: string },
 ): Promise<TrackDef | null> {
   const sourceKey = fileSourceKey(file);
   if (existing.sourceKeys.has(sourceKey)) return null;
@@ -136,10 +146,12 @@ async function addFileAsTrack(
   await saveBlob(key, file);
   const url = URL.createObjectURL(file);
   const isVideo = file.type.startsWith('video/');
+  const description = clampDescription(meta.description);
   return {
     id,
     title: meta.title?.trim() || titleFromFileName(file.name),
-    artist: meta.artist?.trim() || 'Hero Jo Golden Bachdoor',
+    artist: meta.artist?.trim() || DEFAULT_ARTIST,
+    ...(description ? { description } : {}),
     src: url,
     videoSrc: isVideo ? url : undefined,
     localMediaKey: key,
@@ -267,6 +279,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   uploadTrack: async (file, meta) => {
     const result = await get().importMediaFiles([file], {
       artist: meta.artist,
+      description: meta.description,
       playlistIds: meta.playlistIds,
     });
     if (result.added === 0) {
@@ -293,6 +306,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     for (const file of files) {
       const track = await addFileAsTrack(file, existing, {
         artist: opts?.artist,
+        description: opts?.description,
       });
       if (!track) {
         skipped += 1;

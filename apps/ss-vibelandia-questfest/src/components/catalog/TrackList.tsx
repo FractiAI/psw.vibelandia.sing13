@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
+import { DEFAULT_ARTIST } from '@/lib/catalogTypes';
 
 function fmtDuration(sec?: number) {
   if (!sec) return '—';
@@ -34,7 +35,11 @@ export function TrackList({ isPassenger }: TrackListProps) {
       .filter(Boolean)
       .filter((tr) => {
         if (!q) return true;
-        return tr!.title.toLowerCase().includes(q) || tr!.artist.toLowerCase().includes(q);
+        return (
+          tr!.title.toLowerCase().includes(q) ||
+          tr!.artist.toLowerCase().includes(q) ||
+          (tr!.description?.toLowerCase().includes(q) ?? false)
+        );
       }) as NonNullable<ReturnType<typeof getTrack>>[];
   }, [pl, search, getTrack]);
 
@@ -43,6 +48,8 @@ export function TrackList({ isPassenger }: TrackListProps) {
     setTrack(id);
     setPlaying(true);
   };
+
+  const currentTrack = currentTrackId ? getTrack(currentTrackId) : undefined;
 
   const playAll = () => {
     if (!pl?.trackIds[0]) return;
@@ -60,9 +67,11 @@ export function TrackList({ isPassenger }: TrackListProps) {
         <div className="sp-hero-meta">
           <p className="sp-hero-type">Playlist</p>
           <h1 className="sp-hero-title">{pl.name}</h1>
-          <p className="sp-hero-desc">{pl.description}</p>
+          <p className="sp-hero-desc">
+            {currentTrack?.description || pl.description}
+          </p>
           <p className="sp-hero-stats">
-            <strong>Hero Jo Golden Bachdoor Hit Factory</strong> · {pl.trackIds.length} songs ·{' '}
+            <strong>{currentTrack?.artist ?? DEFAULT_ARTIST}</strong> · {pl.trackIds.length} songs ·{' '}
             {isPassenger ? 'full play' : '30s free on each track'}
           </p>
           <div className="sp-hero-actions">
@@ -108,6 +117,7 @@ export function TrackList({ isPassenger }: TrackListProps) {
                 <button type="button" className="sp-row-main" onClick={() => play(tr.id)}>
                   <span className="sp-row-title">{tr.title}</span>
                   <span className="sp-row-artist">{tr.artist}</span>
+                  {tr.description && <span className="sp-row-desc">{tr.description}</span>}
                 </button>
                 <span className="sp-row-album">{tr.videoSrc ? 'Music video' : 'Audio'}</span>
                 <span className="sp-row-dur">{fmtDuration(tr.durationSec)}</span>

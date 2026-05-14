@@ -1,9 +1,13 @@
 export type PlaylistKind = 'open_deck' | 'sovereign';
 
+export const DEFAULT_ARTIST = "Hero Jo's Golden Bachdoor Hit Factory";
+export const TRACK_DESCRIPTION_MAX = 1000;
+
 export interface TrackDef {
   id: string;
   title: string;
   artist: string;
+  description?: string;
   src: string;
   videoSrc?: string;
   posterSrc?: string;

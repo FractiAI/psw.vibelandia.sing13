@@ -1360,6 +1360,18 @@ a.voxel-btn {
   font-size: 0.82rem;
 }
 
+.spotify-textarea {
+  resize: vertical;
+  min-height: 5rem;
+  line-height: 1.45;
+}
+
+.spotify-field-hint {
+  font-size: 0.65rem;
+  color: rgba(245, 239, 230, 0.45);
+  text-align: right;
+}
+
 .spotify-check-grid {
   display: flex;
   flex-direction: column;
@@ -1924,6 +1936,17 @@ a.voxel-btn {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.sp-row-desc {
+  display: block;
+  font-size: 0.72rem;
+  color: #727272;
+  margin-top: 0.15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .sp-row-album,

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { markCreator } from '@/lib/creatorMode';
+import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
 
 interface DjStudioProps {
   onUploadSuccess?: (trackId: string) => void;
@@ -12,12 +13,17 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const listAllTracks = useCatalogStore((s) => s.listAllTracks);
 
   const [title, setTitle] = useState('');
-  const [artist, setArtist] = useState('');
+  const [artist, setArtist] = useState(DEFAULT_ARTIST);
+  const [description, setDescription] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
   markCreator();
+
+  const handleDescriptionChange = (value: string) => {
+    setDescription(value.slice(0, TRACK_DESCRIPTION_MAX));
+  };
 
   const handleUpload = async () => {
     if (!file) {
@@ -29,16 +35,22 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     try {
       const id = await uploadTrack(file, {
         title,
-        artist: artist || 'Unknown artist',
+        artist: artist.trim() || DEFAULT_ARTIST,
+        description,
         playlistIds: ['pl-main'],
       });
       setMsg(`Uploaded “${title || file.name}”. Switching to Listen…`);
       setTitle('');
-      setArtist('');
+      setArtist(DEFAULT_ARTIST);
+      setDescription('');
       setFile(null);
       onUploadSuccess?.(id);
     } catch (e) {
-      setMsg(e instanceof Error && e.message === 'duplicate' ? 'That file is already in your catalog.' : 'Upload failed. Try another file.');
+      setMsg(
+        e instanceof Error && e.message === 'duplicate'
+          ? 'That file is already in your catalog.'
+          : 'Upload failed. Try another file.',
+      );
     } finally {
       setBusy(false);
     }
@@ -71,13 +83,26 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
             />
           </label>
           <label className="spotify-field">
-            Artist (optional)
+            Artist
             <input
               className="spotify-input"
               value={artist}
               onChange={(e) => setArtist(e.target.value)}
-              placeholder="Unknown artist"
             />
+          </label>
+          <label className="spotify-field">
+            Description (optional)
+            <textarea
+              className="spotify-input spotify-textarea"
+              value={description}
+              onChange={(e) => handleDescriptionChange(e.target.value)}
+              maxLength={TRACK_DESCRIPTION_MAX}
+              rows={4}
+              placeholder="What's this track about?"
+            />
+            <span className="spotify-field-hint">
+              {description.length}/{TRACK_DESCRIPTION_MAX} characters
+            </span>
           </label>
           <label className="spotify-field">
             Audio or video

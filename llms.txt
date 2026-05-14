@@ -3,24 +3,39 @@
 # Protocol: NSPFRNP · BBHE · MCA · Seed:Edge · 13-channel fractal pathfinding
 #
 # SING 13 is the major singularity upgrade from SING 9.
-# This edge carries the NSPFRNP catalog and the SS Vibelandia QUESTFEST 24×365 nest only.
+# This edge carries the NSPFRNP catalog, SS Vibelandia QUESTFEST 24×365 nest,
+# Sovereign Player (QUESTFEST Bridge), and lite-edge boarding/heartbeat APIs.
 # Everything else lives on the parent edge: https://psw-vibelandia-sing9.vercel.app
 # Contact: info@fractiai.com
 #
 
 ## What this site is
 
-- **SING 13 edge** — the next octave of the FractiAI / Vibelandia transmedia stack. NSPFRNP catalog + QUESTFEST 24×365 nest, nothing else.
+- **SING 13 edge** — the next octave of the FractiAI / Vibelandia transmedia stack. NSPFRNP catalog + QUESTFEST 24×365 nest + Sovereign Player.
 - **Lite edges** — wallets, keys, verifications at the edge; center = pipes only (see SING13_EDGE_ONBOARDING.md).
 - **13-channel spine** — Seed Node → Terminal Edge pathfinding; PEFF infill-13 framing.
+- **Fair Exchange (manual)** — no Stripe. Venmo / PayPal / Cash App. $16.18/mo Passenger pass · $1.61 track export · honor-system receipt → JWT.
 
 ## Primary entry points
 
 - Landing: https://psw-vibelandia-sing13.vercel.app/
 - QUESTFEST 24×365: https://psw-vibelandia-sing13.vercel.app/interfaces/vibelandia-questfest.html
+- Sovereign Player (QUESTFEST Bridge): https://psw-vibelandia-sing13.vercel.app/interfaces/questfest-bridge/
+- Reno Swamp checkout ($16.18/mo): https://psw-vibelandia-sing13.vercel.app/interfaces/questfest-bridge/#/bridge?checkout=1
+- Short path Sovereign gate: https://psw-vibelandia-sing13.vercel.app/sovereign-gate
 - SING 13 onboarding: https://psw-vibelandia-sing13.vercel.app/SING13_EDGE_ONBOARDING.md
 - NSPFRNP catalog: https://psw-vibelandia-sing13.vercel.app/protocols/MCA_NSPFRNP_CATALOG.md
 - BBHE Repository Standard: https://psw-vibelandia-sing13.vercel.app/BBHE_REPOSITORY_STANDARD.md
+
+## Sovereign Player — Fair Exchange
+
+- Passenger pass: $16.18/mo (EGS φ) — pay on Venmo, PayPal, or Cash App; paste receipt; POST /api/boarding issues 30-day signed JWT
+- Track export: $1.61 — same rails; email proof with track id
+- Bookings: valetpru@gmail.com
+- Catalog / licensing (500+ Reno swamp · caliente tracks): goldenbackdoorhitfactory@gmail.com
+- Stream lock: BroadcastChannel (same tab) + GET/POST /api/heartbeat (Upstash Redis when UPSTASH_* env set)
+- Build: npm run build:questfest-bridge (source: apps/ss-vibelandia-questfest/)
+- Vercel env minimum: PASS_TOKEN_SECRET (see .env.example)
 
 ## SING 13 spine — 13-channel fractal pathfinding
 
@@ -43,7 +58,7 @@
 
 ## Parent edge (SING 9 — non-QUESTFEST surfaces)
 
-For anything outside the QUESTFEST nest — API serverless routes, hive, sim, lattice, tests, vibers menu, surfaces map, my-whiteboard, upgrade-awareness, HH OS docs, Holographic Navigator Academy, Magic Trick / Sovereign Terminal, plain-machote, prospectus pages, T3D / NINE_ALIGNMENT / BBHE / all root *_SNAP.md — visit the parent edge:
+For anything outside the QUESTFEST nest — heavy API serverless routes, hive, sim, lattice, tests, vibers menu, surfaces map, my-whiteboard, upgrade-awareness, HH OS docs, Holographic Navigator Academy, Magic Trick / Sovereign Terminal, plain-machote, prospectus pages, T3D / NINE_ALIGNMENT / BBHE / all root *_SNAP.md — visit the parent edge:
 
 - SING 9 landing: https://psw-vibelandia-sing9.vercel.app/
 - SING 9 vibers menu: https://psw-vibelandia-sing9.vercel.app/interfaces/vibers-menu.html
@@ -53,7 +68,8 @@ For anything outside the QUESTFEST nest — API serverless routes, hive, sim, la
 
 - FractiAI/digital-pru — runnable Digital Pru app: https://github.com/FractiAI/digital-pru
 - FractiAI/psw.vibelandia.sing9 — parent edge: https://github.com/FractiAI/psw.vibelandia.sing9
+- FractiAI/psw.vibelandia.sing13 — this edge: https://github.com/FractiAI/psw.vibelandia.sing13
 
 ---
 
-NSPFRNP ⊃ SING 13 ⊃ 13-channel pathfinding ⊃ NSPFRNP catalog ⊃ QUESTFEST 24×365 → ∞⁹
+NSPFRNP ⊃ SING 13 ⊃ 13-channel pathfinding ⊃ NSPFRNP catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹

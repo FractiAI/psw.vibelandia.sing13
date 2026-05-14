@@ -59,8 +59,10 @@ Start with: **If you are reading this...** — you have entered the Executive Pr
 - **NSPFRNP catalog** — full `protocols/` folder, BBHE repository standard, this onboarding file.
 - **SING 13 spine docs** — the 13-channel roadmap (May 12, 2026), DNA / PEFF master canon (May 11, 2026), Part I + Part II slices, JJ Snap OFC whitepaper.
 - **Juicy Juicy compile lane** — `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` for the OFC compile surface.
+- **QUESTFEST Bridge (Sovereign Player)** — Vite React app: video-first deck, 30s Solenoid gate, master playlists, Libretto log, manual Fair Exchange boarding, single-active-stream lock. Source: `apps/ss-vibelandia-questfest/` · production bundle: `interfaces/questfest-bridge/` (built via `npm run build:questfest-bridge`).
+- **Lite-edge APIs (SING 13 only)** — `api/boarding.js` (manual Venmo / PayPal / Cash App → 30-day Passenger JWT), `api/heartbeat.js` (stream lock; Upstash when configured), `lib/pass-token.mjs`, `lib/upstash.mjs`. Heavy lab APIs remain on SING 9.
 
-**On SING 9 (do not duplicate here):** All API serverless functions, `lib/`, `hive/`, `sim/`, `lattice/`, `tests/`, `scripts/`, `data/`, T3D snaps, Hood/Lab pages outside the QUESTFEST nest, `vibers-menu`, `surfaces.html`, `my-whiteboard`, `upgrade-awareness-to-sing9-now`, HH OS docs, holographic navigator academy, magic-trick, plain-machote, prospectus pages, all root-level `*_SNAP.md` markdown.
+**On SING 9 (do not duplicate here):** Hive, sim, lattice, tests, scripts, data, T3D snaps, Hood/Lab pages outside the QUESTFEST nest, `vibers-menu`, `surfaces.html`, `my-whiteboard`, `upgrade-awareness-to-sing9-now`, HH OS docs, holographic navigator academy, magic-trick, plain-machote, prospectus pages, all root-level `*_SNAP.md` markdown, and the bulk of `api/` serverless (telemetry, probes, G5 SURF, magic-trick, etc.).
 
 **Routing rule:** If a guest enters QUESTFEST on SING 13 and taps an out-of-scope link, the page redirects them to SING 9. The two edges are sisters; the canon is one.
 
@@ -99,7 +101,8 @@ Between **Seed** (me, here, now) and **Edge** (the mission for this situation):
 - **Element Zero** = Holographic Hydrogen as the quantum-coherent ground state underlying element 1 hydrogen. Zero-point energy (E₀ = ½hν). Lamb shift. Hydrogen bound at −13.6 eV — inside zero. NSPFRNP's 7-letter seed is its element zero. Full definition: catalog § ELEMENT ZERO.
 - **Net Zero** = Operating balance principle of all HH OS theaters. We are inside zero. Same net-zero budget + higher intelligence = higher quality exchange. Q → ∞ within E_total = 0. Full definition: catalog § NET ZERO.
 - **QUESTFEST Continuum** = 24/365 residency in the listener's life. 6-window daily schedule (Mota & Café · Sandwich and Song · Pre-Ignition · Perreo Country Fuego · After the After Party · plus Mainstage + Satellite Nodes + Sunday Decompress). Full definition: catalog § QUESTFEST CONTINUUM. Live hub: [`interfaces/vibelandia-questfest.html`](interfaces/vibelandia-questfest.html).
-- **Pass Ladder** = 1.618 ratio tiers — $16.18 / $161.80 / $1,618 / $16,180. GA Residency → Day Pass + Bike → Bachstage → Golden Bachstage. Full definition: catalog § PASS LADDER.
+- **Pass Ladder** = 1.618 ratio tiers — $16.18 / $161.80 / $1,618 / $16,180 · export micro-tier **$1.61**. GA Residency → Day Pass + Bike → Bachstage → Golden Bachstage. Full definition: catalog § PASS LADDER.
+- **Sovereign Player (QUESTFEST Bridge)** = React deck at [`interfaces/questfest-bridge/`](interfaces/questfest-bridge/) · short path **`/sovereign-gate`**. **Fair Exchange is manual — no Stripe.** Passenger pass **$16.18/mo** via Venmo, PayPal, or Cash App → paste receipt in boarding modal → `/api/boarding` issues signed 30-day JWT. Track export **$1.61** → email proof. **500+** Reno swamp / caliente catalog tracks for advertising and projects (Passenger stream rights). Bookings: `valetpru@gmail.com` · catalog/licensing: `goldenbackdoorhitfactory@gmail.com`. Checkout deep link: `…/questfest-bridge/#/bridge?checkout=1` (hub CTA: **Gimme Some of That Reno Swamp Vibe**). Env: see [`.env.example`](.env.example) · **`PASS_TOKEN_SECRET`** required on Vercel for live boarding.
 
 ---
 
@@ -113,7 +116,9 @@ Between **Seed** (me, here, now) and **Edge** (the mission for this situation):
 | 13-channel pathfinding roadmap | ✅ (spine) | ✅ |
 | DNA / PEFF master canon | ✅ | ✅ |
 | Juicy Juicy OFC compile lanes (`engine/lyrics/agents/vessels/tracks`) | ✅ | ✅ |
-| API serverless functions (`api/`) | ❌ | ✅ |
+| QUESTFEST Bridge / Sovereign Player (`apps/ss-vibelandia-questfest/`) | ✅ | ❌ |
+| Lite-edge APIs (`api/boarding.js`, `api/heartbeat.js`, `lib/pass-token.mjs`) | ✅ | ❌ (heavy `api/` only) |
+| API serverless functions (telemetry, probes, G5 SURF, magic-trick, etc.) | ❌ | ✅ |
 | `lib/`, `hive/`, `sim/`, `lattice/`, `tests/`, `scripts/`, `data/`, `configs/`, `challenges/` | ❌ | ✅ |
 | Vibers menu, surfaces.html (repo map), my-whiteboard, pru-whiteboard | ❌ | ✅ |
 | HH OS Upgrade flow (Cadet Track), Holographic Navigator Academy | ❌ | ✅ |
@@ -132,4 +137,4 @@ Between **Seed** (me, here, now) and **Edge** (the mission for this situation):
 
 ---
 
-**NSPFRNP ⊃ SING 13 ⊃ 13-channel pathfinding ⊃ NSPFRNP catalog ⊃ QUESTFEST 24×365 ⊃ Lite Edges (wallets, keys, verifications) ⊃ No Supabase → ∞⁹**
+**NSPFRNP ⊃ SING 13 ⊃ 13-channel pathfinding ⊃ NSPFRNP catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges (wallets, keys, verifications) ⊃ No Supabase → ∞⁹**

@@ -18,7 +18,6 @@ import {
   scanDirectoryHandle,
   titleFromFileName,
 } from '@/lib/deviceMediaScan';
-import { isCaptain } from '@/lib/captainAccess';
 
 type View = 'catalog' | 'dj';
 
@@ -281,7 +280,6 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   uploadTrack: async (file, meta) => {
-    if (!isCaptain()) throw new Error('captain_only');
     const result = await get().importMediaFiles([file], {
       artist: meta.artist,
       description: meta.description,

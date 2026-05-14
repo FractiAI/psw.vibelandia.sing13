@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { useCaptain } from '@/hooks/useCaptain';
 import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
 
 interface DjStudioProps {
@@ -18,8 +17,6 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const [file, setFile] = useState<File | null>(null);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
-
-  const isCapitan = useCaptain();
 
   const handleDescriptionChange = (value: string) => {
     setDescription(value.slice(0, TRACK_DESCRIPTION_MAX));
@@ -61,14 +58,6 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   };
 
   const tracks = listAllTracks();
-
-  if (!isCapitan) {
-    return (
-      <section className="spotify-main-panel spotify-dj">
-        <p className="spotify-main-desc">Upload is Capitan-only. Listeners can play published tracks.</p>
-      </section>
-    );
-  }
 
   return (
     <section className="spotify-main-panel spotify-dj">

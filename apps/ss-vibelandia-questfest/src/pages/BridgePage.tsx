@@ -11,8 +11,6 @@ import { TrackList } from '@/components/catalog/TrackList';
 import { DjStudio } from '@/components/catalog/DjStudio';
 import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { useSessionStore } from '@/stores/sessionStore';
-import { useCaptain, notifyCaptainChanged } from '@/hooks/useCaptain';
-import { tryUnlockFromSearch } from '@/lib/captainAccess';
 
 export function BridgePage() {
   const location = useLocation();
@@ -40,7 +38,6 @@ export function BridgePage() {
   const [vesselKind, setVesselKind] = useState<'vessel_switch' | 'tab_preempt' | null>(null);
 
   const stream = useStreamLock();
-  const isCapitan = useCaptain();
 
   const onFairExchange = useCallback(() => setFairOpen(true), []);
   const onVesselSwitch = useCallback((reason: 'vessel_switch' | 'tab_preempt') => {
@@ -54,27 +51,12 @@ export function BridgePage() {
   }, [hydrateSession, hydrateCatalog]);
 
   useEffect(() => {
-    const hashQ = location.hash.includes('?') ? location.hash.slice(location.hash.indexOf('?')) : '';
-    if (hashQ && tryUnlockFromSearch(hashQ)) notifyCaptainChanged();
-    if (location.search && tryUnlockFromSearch(location.search)) notifyCaptainChanged();
-  }, [location.hash, location.search]);
-
-  useEffect(() => {
-    if ((location.pathname === '/dj' || location.hash === '#/dj') && !isCapitan) {
-      setDjMode(false);
-      navigate('/bridge', { replace: true });
-      return;
-    }
-    if ((location.pathname === '/dj' || location.hash === '#/dj') && isCapitan) {
+    if (location.pathname === '/dj' || location.hash === '#/dj') {
       setDjMode(true);
     }
-  }, [location.pathname, location.hash, isCapitan, navigate, setDjMode]);
+  }, [location.pathname, location.hash, setDjMode]);
 
   const goDj = () => {
-    if (!isCapitan) {
-      navigate('/capitan');
-      return;
-    }
     setDjMode(true);
     navigate('/dj', { replace: true });
   };
@@ -124,7 +106,7 @@ export function BridgePage() {
 
   return (
     <div className="sp-app">
-      <CatalogSidebar onDjClick={goDj} showUpload={isCapitan} />
+      <CatalogSidebar onDjClick={goDj} />
 
       <div className="sp-main">
         <header className="sp-top">
@@ -138,17 +120,15 @@ export function BridgePage() {
             >
               Listen
             </button>
-            {isCapitan && (
-              <button
-                type="button"
-                role="tab"
-                aria-selected={djMode}
-                className={`sp-tab sp-tab--dj${djMode ? ' sp-tab--on' : ''}`}
-                onClick={goDj}
-              >
-                Upload
-              </button>
-            )}
+            <button
+              type="button"
+              role="tab"
+              aria-selected={djMode}
+              className={`sp-tab sp-tab--dj${djMode ? ' sp-tab--on' : ''}`}
+              onClick={goDj}
+            >
+              Upload
+            </button>
           </div>
           <nav className="sp-top-nav">
             <Link to="/" className="sp-top-link">
@@ -173,17 +153,13 @@ export function BridgePage() {
             <section className="sp-empty-catalog">
               <h2 className="sp-empty-catalog-title">No tracks yet</h2>
               <p className="sp-empty-catalog-desc">
-                {isCapitan
-                  ? 'Catalog is empty. Use Upload to add a track, then listen and press play.'
-                  : 'Catalog is empty. Check back when Capitan publishes new tracks.'}
+                Catalog is empty. Use Upload to add a track, then listen and press play.
               </p>
-              {isCapitan && (
-                <button type="button" className="sp-tab sp-tab--dj sp-tab--on" onClick={goDj}>
-                  Upload a track
-                </button>
-              )}
+              <button type="button" className="sp-tab sp-tab--dj sp-tab--on" onClick={goDj}>
+                Upload a track
+              </button>
             </section>
-          ) : djMode && isCapitan ? (
+          ) : djMode ? (
             <DjStudio onUploadSuccess={handleUploadSuccess} />
           ) : (
             <TrackList isPassenger={isPassenger} />

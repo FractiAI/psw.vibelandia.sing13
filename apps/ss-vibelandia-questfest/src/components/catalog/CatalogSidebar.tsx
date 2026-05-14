@@ -8,6 +8,7 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
   const playlists = useCatalogStore((s) => s.playlists);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
+  const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
@@ -51,7 +52,17 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
       </nav>
 
       <div className="sp-side-section">
-        <p className="sp-side-label">Your playlists</p>
+        <div className="sp-side-label-row">
+          <p className="sp-side-label">Your playlists</p>
+          <button
+            type="button"
+            className="sp-side-new"
+            onClick={() => createPlaylist('New playlist')}
+            aria-label="New playlist"
+          >
+            +
+          </button>
+        </div>
         <ul className="sp-pl-list">
           {playlists.map((pl) => (
             <li key={pl.id}>

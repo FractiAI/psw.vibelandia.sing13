@@ -6,8 +6,10 @@ import { useStreamLock } from '@/hooks/useStreamLock';
 import { FairExchangeModal } from '@/components/player/FairExchangeModal';
 import { VesselSwitchModal } from '@/components/player/VesselSwitchModal';
 import { BoardingModal } from '@/components/payment/BoardingModal';
+import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
 import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
 import { TrackList } from '@/components/catalog/TrackList';
+import { PlaylistLibrary } from '@/components/catalog/PlaylistLibrary';
 import { DjStudio } from '@/components/catalog/DjStudio';
 import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { useSessionStore } from '@/stores/sessionStore';
@@ -27,13 +29,16 @@ export function BridgePage() {
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
-  const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
+  const getTrack = useCatalogStore((s) => s.getTrack);
+  const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const setTrack = usePlaybackStore((s) => s.setTrack);
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const setGain = usePlaybackStore((s) => s.setGain);
 
   const [fairOpen, setFairOpen] = useState(false);
   const [boardOpen, setBoardOpen] = useState(false);
+  const [exportOpen, setExportOpen] = useState(false);
+  const [exportTrackId, setExportTrackId] = useState<string | null>(null);
   const [vesselOpen, setVesselOpen] = useState(false);
   const [vesselKind, setVesselKind] = useState<'vessel_switch' | 'tab_preempt' | null>(null);
 
@@ -53,8 +58,13 @@ export function BridgePage() {
   useEffect(() => {
     if (location.pathname === '/dj' || location.hash === '#/dj') {
       setDjMode(true);
+    } else if (location.pathname === '/playlists' || location.hash === '#/playlists') {
+      setDjMode(false);
     }
   }, [location.pathname, location.hash, setDjMode]);
+
+  const isPlaylistsView =
+    location.pathname === '/playlists' || location.hash === '#/playlists';
 
   const goDj = () => {
     setDjMode(true);
@@ -72,6 +82,17 @@ export function BridgePage() {
     navigate('/bridge', { replace: true });
   };
 
+  const goPlaylists = () => {
+    setDjMode(false);
+    navigate('/playlists', { replace: true });
+  };
+
+  const openPlaylist = (id: string) => {
+    setActivePlaylist(id);
+    goListen();
+  };
+
+  const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
   useEffect(() => {
     if (!hydrated) return;
@@ -82,6 +103,13 @@ export function BridgePage() {
       setTrack(pl.trackIds[0]);
     }
   }, [activePlaylistId, getActivePlaylist, hydrated, setTrack]);
+
+  const handleDownloadRequest = (trackId: string) => {
+    setExportTrackId(trackId);
+    setExportOpen(true);
+  };
+
+  const exportTrack = exportTrackId ? getTrack(exportTrackId) : undefined;
 
   const handleBoarding = async (
     rail: Parameters<typeof completeBoarding>[0],
@@ -114,11 +142,20 @@ export function BridgePage() {
             <button
               type="button"
               role="tab"
-              aria-selected={!djMode}
-              className={`sp-tab${!djMode ? ' sp-tab--on' : ''}`}
+              aria-selected={!djMode && !isPlaylistsView}
+              className={`sp-tab${!djMode && !isPlaylistsView ? ' sp-tab--on' : ''}`}
               onClick={goListen}
             >
               Listen
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={isPlaylistsView}
+              className={`sp-tab${isPlaylistsView ? ' sp-tab--on' : ''}`}
+              onClick={goPlaylists}
+            >
+              Playlists
             </button>
             <button
               type="button"
@@ -149,7 +186,7 @@ export function BridgePage() {
         </header>
 
         <main className="sp-scroll">
-          {!djMode && trackCount === 0 ? (
+          {!djMode && !isPlaylistsView && trackCount === 0 ? (
             <section className="sp-empty-catalog">
               <h2 className="sp-empty-catalog-title">No tracks yet</h2>
               <p className="sp-empty-catalog-desc">
@@ -159,10 +196,16 @@ export function BridgePage() {
                 Upload a track
               </button>
             </section>
+          ) : isPlaylistsView ? (
+            <PlaylistLibrary onOpenPlaylist={openPlaylist} />
           ) : djMode ? (
             <DjStudio onUploadSuccess={handleUploadSuccess} />
           ) : (
-            <TrackList isPassenger={isPassenger} />
+            <TrackList
+              isPassenger={isPassenger}
+              onDownload={handleDownloadRequest}
+              onEditPlaylists={goPlaylists}
+            />
           )}
         </main>
       </div>
@@ -173,6 +216,7 @@ export function BridgePage() {
         killReason={stream.killReason}
         beginSession={stream.beginSession}
         clearKill={stream.clearKill}
+        onDownload={handleDownloadRequest}
       />
 
       <FairExchangeModal
@@ -190,6 +234,20 @@ export function BridgePage() {
         onSubmit={handleBoarding}
         busy={boardingBusy}
         error={boardingError}
+      />
+
+      <ExportTrackModal
+        open={exportOpen}
+        track={exportTrack}
+        isPassenger={isPassenger}
+        onClose={() => {
+          setExportOpen(false);
+          setExportTrackId(null);
+        }}
+        onNeedPass={() => {
+          setExportOpen(false);
+          setBoardOpen(true);
+        }}
       />
 
       <VesselSwitchModal

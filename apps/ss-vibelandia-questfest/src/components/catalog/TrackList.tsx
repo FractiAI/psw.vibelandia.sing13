@@ -1,7 +1,8 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
+import { AddToPlaylistModal } from '@/components/catalog/AddToPlaylistModal';
 import { hasExportLicense } from '@/lib/exportLicenses';
 import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 import { DEFAULT_ARTIST } from '@/lib/catalogTypes';
@@ -16,9 +17,10 @@ function fmtDuration(sec?: number) {
 interface TrackListProps {
   isPassenger: boolean;
   onDownload: (trackId: string) => void;
+  onEditPlaylists?: () => void;
 }
 
-export function TrackList({ isPassenger, onDownload }: TrackListProps) {
+export function TrackList({ isPassenger, onDownload, onEditPlaylists }: TrackListProps) {
   const pl = useCatalogStore((s) => s.getActivePlaylist());
   const search = useCatalogStore((s) => s.search);
   const setSearch = useCatalogStore((s) => s.setSearch);
@@ -26,6 +28,9 @@ export function TrackList({ isPassenger, onDownload }: TrackListProps) {
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
   const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);
+  const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
+
+  const [addOpen, setAddOpen] = useState(false);
 
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
@@ -92,6 +97,14 @@ export function TrackList({ isPassenger, onDownload }: TrackListProps) {
             <button type="button" className="sp-play-fab" onClick={playAll} aria-label="Play playlist">
               ▶
             </button>
+            <button type="button" className="sp-hero-secondary" onClick={() => setAddOpen(true)}>
+              + Add songs
+            </button>
+            {onEditPlaylists && (
+              <button type="button" className="sp-hero-secondary" onClick={onEditPlaylists}>
+                Edit playlists
+              </button>
+            )}
           </div>
         </div>
       </header>
@@ -120,6 +133,7 @@ export function TrackList({ isPassenger, onDownload }: TrackListProps) {
           <span>Album</span>
           <span>⏱</span>
           <span>↓</span>
+          <span />
           <span />
         </div>
         <ol className="sp-rows" ref={listRef}>
@@ -175,6 +189,15 @@ export function TrackList({ isPassenger, onDownload }: TrackListProps) {
                 </button>
                 <button
                   type="button"
+                  className="sp-row-remove"
+                  onClick={() => removeTrackFromPlaylist(tr.id, activePlaylistId)}
+                  aria-label={`Remove ${tr.title} from playlist`}
+                  title="Remove from playlist"
+                >
+                  ×
+                </button>
+                <button
+                  type="button"
                   className="sp-row-play"
                   onClick={() => play(tr.id)}
                   aria-label={`Play ${tr.title}`}
@@ -194,6 +217,12 @@ export function TrackList({ isPassenger, onDownload }: TrackListProps) {
             : 'No tracks in this playlist yet. Creator: open Upload & playlists to scan your device or upload files.'}
         </p>
       )}
+
+      <AddToPlaylistModal
+        open={addOpen}
+        playlistId={activePlaylistId}
+        onClose={() => setAddOpen(false)}
+      />
     </section>
   );
 }

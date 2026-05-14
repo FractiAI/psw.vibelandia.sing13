@@ -39,6 +39,7 @@ interface CatalogState {
   listAllTracks: () => TrackDef[];
   createPlaylist: (name: string) => string;
   renamePlaylist: (id: string, name: string) => void;
+  updatePlaylist: (id: string, patch: { name?: string; description?: string }) => void;
   deletePlaylist: (id: string) => void;
   addTrackToPlaylist: (trackId: string, playlistId: string) => void;
   removeTrackFromPlaylist: (trackId: string, playlistId: string) => void;
@@ -212,6 +213,20 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   renamePlaylist: (id, name) => {
     set((s) => ({
       playlists: s.playlists.map((p) => (p.id === id ? { ...p, name: name.trim() || p.name } : p)),
+    }));
+    get().persist();
+  },
+
+  updatePlaylist: (id, patch) => {
+    set((s) => ({
+      playlists: s.playlists.map((p) => {
+        if (p.id !== id) return p;
+        return {
+          ...p,
+          ...(patch.name !== undefined ? { name: patch.name.trim() || p.name } : {}),
+          ...(patch.description !== undefined ? { description: patch.description } : {}),
+        };
+      }),
     }));
     get().persist();
   },

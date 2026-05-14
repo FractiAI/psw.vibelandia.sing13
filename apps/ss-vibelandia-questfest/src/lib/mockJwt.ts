@@ -5,6 +5,8 @@ export interface PassPayload {
   jti: string;
   tier: 'PASSENGER';
   iat: number;
+  exp?: number;
+  rail?: string;
   /** Fair Exchange — EGS constant */
   egsMonthlyUsd: 16.18;
 }
@@ -58,6 +60,7 @@ export function parsePassPayload(token: string | null): PassPayload | null {
     const json = atob(parts[1].replace(/-/g, '+').replace(/_/g, '/') + pad);
     const data = JSON.parse(json) as PassPayload;
     if (data.tier !== 'PASSENGER') return null;
+    if (typeof data.exp === 'number' && data.exp < Math.floor(Date.now() / 1000)) return null;
     return data;
   } catch {
     return null;

@@ -15,8 +15,8 @@ export function FairExchangeModal({ open, onClose, onBoard }: FairExchangeModalP
         </h2>
         <p className="modal-body">
           The Solenoid closed the channel. Board the ship with the EGS constant —{' '}
-          <strong>$16.18/mo</strong> — to unlock full-track playback and 13-channel access across the
-          Sovereign Master Playlist.
+          <strong>$16.18/mo</strong> — via Venmo, PayPal, or Cash App (manual Fair Exchange). Unlock
+          full-track video playback and 13-channel access across the Sovereign Master Playlist.
         </p>
         <div className="modal-actions">
           <button type="button" className="voxel-btn voxel-btn--orange" onClick={onBoard}>

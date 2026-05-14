@@ -10,6 +10,7 @@ const FADE_START = 28.85;
 interface SolenoidPlayerProps {
   onFairExchange: () => void;
   onVesselSwitch: (reason: Exclude<KillReason, null>) => void;
+  onExport: () => void;
   killReason: KillReason;
   beginSession: () => void;
   clearKill: () => void;
@@ -18,11 +19,12 @@ interface SolenoidPlayerProps {
 export function SolenoidPlayer({
   onFairExchange,
   onVesselSwitch,
+  onExport,
   killReason,
   beginSession,
   clearKill,
 }: SolenoidPlayerProps) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const mediaRef = useRef<HTMLVideoElement | HTMLAudioElement | null>(null);
   const gateArmedRef = useRef(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -42,6 +44,7 @@ export function SolenoidPlayer({
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const pl = getActivePlaylist();
   const solenoidActive = pl?.kind === 'sovereign' && !isPassenger;
+  const isVideo = !!track?.videoSrc;
 
   useEffect(() => {
     if (killReason === 'vessel_switch' || killReason === 'tab_preempt') {
@@ -50,13 +53,18 @@ export function SolenoidPlayer({
   }, [killReason, onVesselSwitch]);
 
   useEffect(() => {
-    const el = audioRef.current;
+    const el = mediaRef.current;
     if (!el || !track) return;
 
     gateArmedRef.current = true;
     setError(null);
-    el.src = track.src;
-    el.load();
+    if (isVideo && el instanceof HTMLVideoElement) {
+      el.src = track.videoSrc!;
+      el.load();
+    } else {
+      el.src = track.src;
+      el.load();
+    }
     el.volume = gain;
 
     const onTime = () => {
@@ -86,7 +94,8 @@ export function SolenoidPlayer({
     };
 
     const onEnded = () => setPlaying(false);
-    const onErr = () => setError('Audio blocked or source unreachable — try another network.');
+    const onErr = () =>
+      setError('Media blocked or source unreachable — try another network or bearing.');
 
     el.addEventListener('timeupdate', onTime);
     el.addEventListener('ended', onEnded);
@@ -97,21 +106,21 @@ export function SolenoidPlayer({
       el.removeEventListener('ended', onEnded);
       el.removeEventListener('error', onErr);
     };
-  }, [gain, onFairExchange, setDisplayTime, setPlaying, solenoidActive, track]);
+  }, [gain, isVideo, onFairExchange, setDisplayTime, setPlaying, solenoidActive, track]);
 
   useEffect(() => {
-    const el = audioRef.current;
+    const el = mediaRef.current;
     if (!el || !track) return;
     if (isPlaying) {
       beginSession();
-      el.play().catch(() => setError('Playback was blocked — tap play again.'));
+      el.play().catch(() => setError('Playback was blocked — tap transmit again.'));
     } else {
       el.pause();
     }
   }, [beginSession, isPlaying, track]);
 
   useEffect(() => {
-    const el = audioRef.current;
+    const el = mediaRef.current;
     if (el) el.volume = gain;
   }, [gain]);
 
@@ -131,12 +140,35 @@ export function SolenoidPlayer({
 
   return (
     <div className="voxel-panel player-wrap">
-      <audio ref={audioRef} preload="metadata" />
+      {isVideo ? (
+        <video
+          ref={mediaRef as React.RefObject<HTMLVideoElement>}
+          className="player-video"
+          preload="metadata"
+          playsInline
+          poster={track.posterSrc}
+        />
+      ) : (
+        <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} preload="metadata" />
+      )}
+
       <div className="player-head">
         <div>
-          <div className="player-label">Now transmitting</div>
+          <div className="player-label">Now transmitting {isVideo ? '· video' : '· audio'}</div>
           <h3 className="player-title">{track.title}</h3>
           <div className="player-artist">{track.artist}</div>
+          <div className="player-meta">
+            <span>φ {track.egsPhi}</span>
+            <span>H-line {track.hydrogenLineGhz} GHz</span>
+            <span className="channel-dots" aria-label={`Channel ${track.channelIndex} of 13`}>
+              {Array.from({ length: 13 }, (_, i) => (
+                <span
+                  key={i}
+                  className={`channel-dot${i + 1 === track.channelIndex ? ' channel-dot--on' : ''}`}
+                />
+              ))}
+            </span>
+          </div>
         </div>
         <div className="player-time">
           <span>{fmt(displayTime)}</span>
@@ -144,7 +176,10 @@ export function SolenoidPlayer({
           {isPassenger && <span className="pass-badge">PASSENGER · FULL</span>}
         </div>
       </div>
+
+      {track.lyrics && <p className="player-lyrics">{track.lyrics}</p>}
       {error && <p className="player-error">{error}</p>}
+
       <div className="player-controls">
         <button
           type="button"
@@ -160,10 +195,14 @@ export function SolenoidPlayer({
         <button type="button" className="voxel-btn" onClick={() => setPlaying(false)}>
           Stop
         </button>
+        <button type="button" className="voxel-btn voxel-btn--orange" onClick={onExport}>
+          Export · $1.61
+        </button>
       </div>
+
       <p className="player-hint">
         {pl?.kind === 'sovereign' && !isPassenger
-          ? 'Sovereign Master Playlist — first 30s only until Fair Exchange ($16.18/mo).'
+          ? 'Sovereign Master Playlist — first 30s only until Fair Exchange ($16.18/mo via Venmo / PayPal / Cash App).'
           : isPassenger
             ? `${track.channelHint} · single active stream enforced.`
             : 'Open deck — full preview on this relay.'}

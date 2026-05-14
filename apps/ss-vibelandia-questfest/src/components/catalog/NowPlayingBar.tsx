@@ -156,62 +156,57 @@ export function NowPlayingBar({
   };
 
   return (
-    <footer className={`spotify-now${expanded ? ' spotify-now--expanded' : ''}`}>
-      {expanded && track && isVideo && (
-        <video
-          ref={mediaRef as React.RefObject<HTMLVideoElement>}
-          className="spotify-now-video"
-          preload="metadata"
-          playsInline
-          poster={track.posterSrc}
-        />
+    <footer className="sp-now">
+      {track && isVideo && (
+        <div className="sp-now-visual">
+          <video
+            ref={mediaRef as React.RefObject<HTMLVideoElement>}
+            className="sp-now-video"
+            preload="metadata"
+            playsInline
+            poster={track.posterSrc}
+          />
+        </div>
       )}
-      {expanded && track && !isVideo && (
-        <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} preload="metadata" />
-      )}
-      {!expanded && track && (
-        isVideo ? (
-          <video ref={mediaRef as React.RefObject<HTMLVideoElement>} className="sr-only" preload="metadata" playsInline />
-        ) : (
-          <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} className="sr-only" preload="metadata" />
-        )
+      {track && !isVideo && (
+        <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} className="sr-only" preload="metadata" />
       )}
 
-      <div className="spotify-now-inner">
-        <div className="spotify-now-track">
+      <div className="sp-now-bar">
+        <div className="sp-now-track">
           {track ? (
             <>
-              <p className="spotify-now-title">{track.title}</p>
-              <p className="spotify-now-artist">{track.artist}</p>
-              {solenoidActive && <span className="spotify-now-badge">30s preview</span>}
-              {isPassenger && <span className="spotify-now-badge spotify-now-badge--pass">Full play</span>}
+              <p className="sp-now-title">{track.title}</p>
+              <p className="sp-now-artist">{track.artist}</p>
+              {solenoidActive && <span className="sp-now-badge">30s preview</span>}
+              {isPassenger && <span className="sp-now-badge sp-now-badge--pass">Full play</span>}
             </>
           ) : (
-            <p className="spotify-now-empty">Pick a track to play</p>
+            <p className="sp-now-empty">Pick a track to play</p>
           )}
         </div>
 
-        <div className="spotify-now-controls">
-          <button type="button" className="spotify-now-btn" onClick={playPrev} disabled={!track} aria-label="Previous">
+        <div className="sp-now-controls">
+          <button type="button" className="sp-now-btn" onClick={playPrev} disabled={!track} aria-label="Previous">
             ⏮
           </button>
           <button
             type="button"
-            className="spotify-now-btn spotify-now-btn--play"
+            className="sp-now-btn sp-now-btn--play"
             onClick={togglePlay}
             disabled={!track}
             aria-label={isPlaying ? 'Pause' : 'Play'}
           >
             {isPlaying ? '⏸' : '▶'}
           </button>
-          <button type="button" className="spotify-now-btn" onClick={playNext} disabled={!track} aria-label="Next">
+          <button type="button" className="sp-now-btn" onClick={playNext} disabled={!track} aria-label="Next">
             ⏭
           </button>
         </div>
 
-        <div className="spotify-now-time">
+        <div className="sp-now-time">
           {track && <span>{fmt(displayTime)}</span>}
-          {error && <span className="spotify-now-error">{error}</span>}
+          {error && <span className="sp-now-error">{error}</span>}
         </div>
       </div>
     </footer>

@@ -8,6 +8,6 @@
   },
   "scripts": {
     "build:questfest-bridge": "npm --prefix apps/ss-vibelandia-questfest ci && npm --prefix apps/ss-vibelandia-questfest run build",
-    "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",
+    "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs"
   }
 }

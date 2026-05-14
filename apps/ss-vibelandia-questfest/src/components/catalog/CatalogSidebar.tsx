@@ -1,6 +1,10 @@
 import { useCatalogStore } from '@/stores/catalogStore';
 
-export function CatalogSidebar() {
+interface CatalogSidebarProps {
+  onDjClick: () => void;
+}
+
+export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
   const playlists = useCatalogStore((s) => s.playlists);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
@@ -8,44 +12,63 @@ export function CatalogSidebar() {
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
 
+  const openListen = (id: string) => {
+    setDjMode(false);
+    setActive(id);
+  };
+
   return (
-    <aside className="spotify-side">
-      <div className="spotify-brand">
-        <p className="spotify-brand-eyebrow">SS Vibelandia · QUESTFEST</p>
-        <h1 className="spotify-brand-title">Reno Swamp Player</h1>
-        <p className="spotify-brand-sub">{trackCount} tracks in catalog</p>
+    <aside className="sp-side">
+      <div className="sp-side-logo">
+        <span className="sp-logo-mark" aria-hidden>♪</span>
+        <div>
+          <strong>Reno Swamp</strong>
+          <span>{trackCount} tracks</span>
+        </div>
       </div>
 
-      <nav className="spotify-nav" aria-label="Playlists">
-        <p className="spotify-nav-label">Playlists</p>
-        <ul className="spotify-nav-list">
+      <nav className="sp-side-nav">
+        <button
+          type="button"
+          className={`sp-side-link${!djMode ? ' sp-side-link--on' : ''}`}
+          onClick={() => {
+            setDjMode(false);
+            if (!activeId && playlists[0]) setActive(playlists[0].id);
+          }}
+        >
+          <span className="sp-side-icon">🏠</span> Listen
+        </button>
+        <button
+          type="button"
+          className={`sp-side-link sp-side-link--dj${djMode ? ' sp-side-link--on' : ''}`}
+          onClick={() => {
+            setDjMode(true);
+            onDjClick();
+          }}
+        >
+          <span className="sp-side-icon">⬆</span> Upload &amp; playlists
+        </button>
+      </nav>
+
+      <div className="sp-side-section">
+        <p className="sp-side-label">Your playlists</p>
+        <ul className="sp-pl-list">
           {playlists.map((pl) => (
             <li key={pl.id}>
               <button
                 type="button"
-                className={`spotify-nav-item${pl.id === activeId && !djMode ? ' spotify-nav-item--on' : ''}`}
-                onClick={() => {
-                  setDjMode(false);
-                  setActive(pl.id);
-                }}
+                className={`sp-pl-item${pl.id === activeId && !djMode ? ' sp-pl-item--on' : ''}`}
+                onClick={() => openListen(pl.id)}
               >
-                <span className="spotify-nav-name">{pl.name}</span>
-                <span className="spotify-nav-count">{pl.trackIds.length}</span>
+                <span className="sp-pl-cover" aria-hidden>🎵</span>
+                <span className="sp-pl-text">
+                  <span className="sp-pl-name">{pl.name}</span>
+                  <span className="sp-pl-count">{pl.trackIds.length} tracks</span>
+                </span>
               </button>
             </li>
           ))}
         </ul>
-      </nav>
-
-      <div className="spotify-side-foot">
-        <button
-          type="button"
-          className={`spotify-dj-btn${djMode ? ' spotify-dj-btn--on' : ''}`}
-          onClick={() => setDjMode(!djMode)}
-        >
-          {djMode ? '← Back to catalog' : 'DJ Studio · upload & edit'}
-        </button>
-        <p className="spotify-side-hint">30 seconds free on every track. Pass unlocks full play.</p>
       </div>
     </aside>
   );

@@ -8,6 +8,7 @@ export default function App() {
       <Route path="/" element={<RegistrationPage />} />
       <Route path="/register" element={<RegistrationPage />} />
       <Route path="/bridge" element={<BridgePage />} />
+      <Route path="/dj" element={<BridgePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

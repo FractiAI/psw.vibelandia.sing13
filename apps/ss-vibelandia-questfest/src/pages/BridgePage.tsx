@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useStreamLock } from '@/hooks/useStreamLock';
@@ -13,6 +13,8 @@ import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { useSessionStore } from '@/stores/sessionStore';
 
 export function BridgePage() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
@@ -23,6 +25,7 @@ export function BridgePage() {
   const hydrateCatalog = useCatalogStore((s) => s.hydrate);
   const hydrated = useCatalogStore((s) => s.hydrated);
   const djMode = useCatalogStore((s) => s.djMode);
+  const setDjMode = useCatalogStore((s) => s.setDjMode);
   const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
   const setTrack = usePlaybackStore((s) => s.setTrack);
   const setGain = usePlaybackStore((s) => s.setGain);
@@ -44,6 +47,22 @@ export function BridgePage() {
     hydrateSession();
     void hydrateCatalog();
   }, [hydrateSession, hydrateCatalog]);
+
+  useEffect(() => {
+    if (location.pathname === '/dj' || location.hash === '#/dj') {
+      setDjMode(true);
+    }
+  }, [location.pathname, location.hash, setDjMode]);
+
+  const goDj = () => {
+    setDjMode(true);
+    navigate('/dj', { replace: true });
+  };
+
+  const goListen = () => {
+    setDjMode(false);
+    navigate('/bridge', { replace: true });
+  };
 
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
   useEffect(() => {
@@ -71,38 +90,57 @@ export function BridgePage() {
 
   if (!hydrated) {
     return (
-      <div className="spotify-shell spotify-shell--loading">
+      <div className="sp-app sp-app--loading">
         <p>Loading catalog…</p>
       </div>
     );
   }
 
   return (
-    <div className="spotify-shell">
-      <CatalogSidebar />
+    <div className="sp-app">
+      <CatalogSidebar onDjClick={goDj} />
 
-      <div className="spotify-body">
-        <header className="spotify-topbar">
-          <p className="spotify-topbar-title">Hero Jo Golden Bachdoor Hit Factory · Reno Swamp Beats Caliente</p>
-          <nav className="spotify-topbar-nav">
-            <Link to="/" className="spotify-link">
+      <div className="sp-main">
+        <header className="sp-top">
+          <div className="sp-tabs" role="tablist">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={!djMode}
+              className={`sp-tab${!djMode ? ' sp-tab--on' : ''}`}
+              onClick={goListen}
+            >
+              Listen
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={djMode}
+              className={`sp-tab sp-tab--dj${djMode ? ' sp-tab--on' : ''}`}
+              onClick={goDj}
+            >
+              Upload &amp; playlists
+            </button>
+          </div>
+          <nav className="sp-top-nav">
+            <Link to="/" className="sp-top-link">
               Home
             </Link>
             <button
               type="button"
-              className="spotify-link spotify-link--btn"
+              className="sp-top-link"
               onClick={() => {
                 disembark();
                 usePlaybackStore.getState().setPlaying(false);
                 setGain(1);
               }}
             >
-              {isPassenger ? 'Sign out pass' : 'Account'}
+              {isPassenger ? 'Pass' : 'Account'}
             </button>
           </nav>
         </header>
 
-        <main className="spotify-content">
+        <main className="sp-scroll">
           {djMode ? <DjStudio /> : <TrackList isPassenger={isPassenger} />}
         </main>
       </div>

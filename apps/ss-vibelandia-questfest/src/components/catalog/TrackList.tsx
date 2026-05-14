@@ -44,79 +44,88 @@ export function TrackList({ isPassenger }: TrackListProps) {
     setPlaying(true);
   };
 
+  const playAll = () => {
+    if (!pl?.trackIds[0]) return;
+    play(pl.trackIds[0]);
+  };
+
   if (!pl) {
-    return <p className="spotify-empty">Pick a playlist on the left.</p>;
+    return <p className="sp-empty">Pick a playlist on the left.</p>;
   }
 
   return (
-    <section className="spotify-main-panel">
-      <header className="spotify-main-head">
-        <div>
-          <p className="spotify-main-eyebrow">Playlist</p>
-          <h2 className="spotify-main-title">{pl.name}</h2>
-          <p className="spotify-main-desc">{pl.description}</p>
-          <p className="spotify-main-meta">
-            {pl.trackIds.length} tracks ·{' '}
-            {isPassenger ? 'Full play (passenger)' : '30s free preview each'}
+    <section className="sp-listen">
+      <header className="sp-hero">
+        <div className="sp-hero-cover" aria-hidden>🎧</div>
+        <div className="sp-hero-meta">
+          <p className="sp-hero-type">Playlist</p>
+          <h1 className="sp-hero-title">{pl.name}</h1>
+          <p className="sp-hero-desc">{pl.description}</p>
+          <p className="sp-hero-stats">
+            <strong>Hero Jo Golden Bachdoor Hit Factory</strong> · {pl.trackIds.length} songs ·{' '}
+            {isPassenger ? 'full play' : '30s free on each track'}
           </p>
+          <div className="sp-hero-actions">
+            <button type="button" className="sp-play-fab" onClick={playAll} aria-label="Play playlist">
+              ▶
+            </button>
+          </div>
         </div>
-        <label className="spotify-search-wrap">
-          <span className="sr-only">Search tracks</span>
+      </header>
+
+      <div className="sp-toolbar">
+        <label className="sp-search-wrap">
+          <span className="sr-only">Search</span>
           <input
-            className="spotify-search"
+            className="sp-search"
             type="search"
-            placeholder="Search this playlist…"
+            placeholder="Search in playlist"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </label>
-      </header>
-
-      <div className="spotify-table-head" aria-hidden>
-        <span>#</span>
-        <span>Title</span>
-        <span>Artist</span>
-        <span>Type</span>
-        <span>Time</span>
       </div>
 
-      <ol className="spotify-track-list" aria-label={`Tracks in ${pl.name}`}>
-        {tracks.map((tr, i) => {
-          const active = currentTrackId === tr.id;
-          return (
-            <li key={tr.id} className={`spotify-track-row${active ? ' spotify-track-row--on' : ''}`}>
-              <span className="spotify-track-idx">
-                {active && isPlaying ? (
-                  <span className="spotify-eq" aria-label="Playing">
-                    ♪
-                  </span>
-                ) : (
-                  i + 1
-                )}
-              </span>
-              <button type="button" className="spotify-track-playcell" onClick={() => play(tr.id)}>
-                <span className="spotify-track-title">{tr.title}</span>
-                {tr.uploadedAt && <span className="spotify-upload-badge">New upload</span>}
-              </button>
-              <span className="spotify-track-artist">{tr.artist}</span>
-              <span className="spotify-track-type">{tr.videoSrc ? 'Video' : 'Audio'}</span>
-              <span className="spotify-track-dur">{fmtDuration(tr.durationSec)}</span>
-              <button
-                type="button"
-                className="spotify-row-play"
-                onClick={() => play(tr.id)}
-                aria-label={active && isPlaying ? `Pause ${tr.title}` : `Play ${tr.title}`}
+      <div className="sp-table">
+        <div className="sp-table-head" aria-hidden>
+          <span>#</span>
+          <span>Title</span>
+          <span>Album</span>
+          <span>⏱</span>
+        </div>
+        <ol className="sp-rows">
+          {tracks.map((tr, i) => {
+            const active = currentTrackId === tr.id;
+            return (
+              <li
+                key={tr.id}
+                className={`sp-row${active ? ' sp-row--on' : ''}`}
+                onDoubleClick={() => play(tr.id)}
               >
-                {active && isPlaying ? 'Pause' : 'Play'}
-              </button>
-            </li>
-          );
-        })}
-      </ol>
+                <span className="sp-row-idx">
+                  {active && isPlaying ? <span className="sp-eq">♪</span> : i + 1}
+                </span>
+                <button type="button" className="sp-row-main" onClick={() => play(tr.id)}>
+                  <span className="sp-row-title">{tr.title}</span>
+                  <span className="sp-row-artist">{tr.artist}</span>
+                </button>
+                <span className="sp-row-album">{tr.videoSrc ? 'Music video' : 'Audio'}</span>
+                <span className="sp-row-dur">{fmtDuration(tr.durationSec)}</span>
+                <button
+                  type="button"
+                  className="sp-row-play"
+                  onClick={() => play(tr.id)}
+                  aria-label={`Play ${tr.title}`}
+                >
+                  ▶
+                </button>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
 
-      {tracks.length === 0 && (
-        <p className="spotify-empty">No tracks match your search.</p>
-      )}
+      {tracks.length === 0 && <p className="sp-empty">No tracks match your search.</p>}
     </section>
   );
 }

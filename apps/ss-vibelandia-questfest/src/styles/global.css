@@ -1884,14 +1884,14 @@ a.voxel-btn {
 .sp-table-head,
 .sp-row {
   display: grid;
-  grid-template-columns: 2rem 2fr 1fr 4rem 2.5rem 2rem 3.5rem;
+  grid-template-columns: 2rem 2fr 1fr 4rem 2.5rem 3.5rem;
   gap: 0.5rem 1rem;
   align-items: center;
 }
 
 .sp-table-head--reorder,
 .sp-row--reorder {
-  grid-template-columns: 1.35rem 2rem 2fr 1fr 4rem 2.5rem 2rem 3.5rem;
+  grid-template-columns: 1.35rem 2rem 2fr 1fr 4rem 2.5rem 3.5rem;
 }
 
 .sp-table-head {
@@ -2349,6 +2349,285 @@ a.voxel-btn {
   min-height: 36px;
 }
 
+.sp-library-btn--primary {
+  border-color: #1ed760;
+  color: #1ed760;
+}
+
+.sp-pl-edit {
+  max-width: 640px;
+}
+
+.sp-pl-edit-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.sp-pl-edit-back,
+.sp-pl-edit-play {
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.sp-pl-edit-back {
+  background: #fff;
+  color: #121212;
+}
+
+.sp-pl-edit-play {
+  background: #1ed760;
+  color: #121212;
+}
+
+.sp-pl-edit-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.sp-pl-edit-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.sp-pl-edit-tracks {
+  border: 1px solid #282828;
+  border-radius: 12px;
+  background: #181818;
+  overflow: hidden;
+}
+
+.sp-pl-edit-tracks-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #282828;
+}
+
+.sp-pl-edit-tracks-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.sp-pl-edit-add-toggle {
+  border: none;
+  border-radius: 999px;
+  background: #1ed760;
+  color: #121212;
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  min-height: 40px;
+  flex-shrink: 0;
+}
+
+.sp-pl-edit-add-panel {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #282828;
+  background: #121212;
+}
+
+.sp-pl-edit-add-search {
+  width: 100%;
+  margin-bottom: 0.65rem;
+}
+
+.sp-pl-edit-add-empty {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #b3b3b3;
+}
+
+.sp-pl-edit-add-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: min(40vh, 280px);
+  overflow-y: auto;
+}
+
+.sp-pl-edit-add-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sp-pl-edit-add-btn {
+  border: 1px solid #535353;
+  background: transparent;
+  color: #1ed760;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 36px;
+  flex-shrink: 0;
+}
+
+.sp-pl-edit-empty {
+  margin: 0;
+  padding: 1.25rem 1rem;
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+
+.sp-pl-edit-hint {
+  margin: 0.65rem 1rem 0;
+}
+
+.sp-pl-edit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0;
+}
+
+.sp-pl-edit-row {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+  align-items: center;
+  gap: 0.5rem 0.65rem;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sp-pl-edit-row--dragging {
+  background: #333;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.sp-pl-edit-row--drop {
+  box-shadow: inset 0 2px 0 #1ed760;
+}
+
+.sp-pl-edit-idx {
+  color: #727272;
+  font-size: 0.78rem;
+  min-width: 1.25rem;
+  text-align: center;
+}
+
+.sp-pl-edit-track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.sp-pl-edit-track-info strong {
+  font-size: 0.92rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-pl-edit-track-info span {
+  font-size: 0.78rem;
+  color: #b3b3b3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-pl-edit-moves {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.sp-pl-edit-nudge {
+  border: 1px solid #535353;
+  background: transparent;
+  color: #b3b3b3;
+  border-radius: 6px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.sp-pl-edit-nudge:hover:not(:disabled) {
+  color: #fff;
+  border-color: #fff;
+}
+
+.sp-pl-edit-nudge:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.sp-pl-edit-remove {
+  border: none;
+  background: transparent;
+  color: #f15e6c;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.35rem 0.5rem;
+  min-height: 36px;
+  white-space: nowrap;
+}
+
+.sp-pl-edit-remove:hover {
+  text-decoration: underline;
+}
+
+.sp-pl-edit-foot {
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .sp-pl-edit-row {
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas:
+      'grip idx info remove'
+      'grip idx moves remove';
+  }
+
+  .sp-row-grip {
+    grid-area: grip;
+    align-self: center;
+  }
+
+  .sp-pl-edit-idx {
+    grid-area: idx;
+    align-self: center;
+  }
+
+  .sp-pl-edit-track-info {
+    grid-area: info;
+  }
+
+  .sp-pl-edit-moves {
+    grid-area: moves;
+  }
+
+  .sp-pl-edit-remove {
+    grid-area: remove;
+    align-self: center;
+  }
+}
+
 .sp-empty {
   color: #b3b3b3;
   font-size: 0.9rem;
@@ -2706,7 +2985,7 @@ a.voxel-btn {
   }
 
   .sp-row--reorder {
-    grid-template-columns: 1.1rem 1.5rem 1fr auto auto auto auto;
+    grid-template-columns: 1.1rem 1.5rem 1fr auto auto;
   }
 
   .sp-row-album {

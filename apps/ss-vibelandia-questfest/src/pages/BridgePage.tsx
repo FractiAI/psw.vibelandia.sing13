@@ -41,6 +41,7 @@ export function BridgePage() {
   const [exportTrackId, setExportTrackId] = useState<string | null>(null);
   const [vesselOpen, setVesselOpen] = useState(false);
   const [vesselKind, setVesselKind] = useState<'vessel_switch' | 'tab_preempt' | null>(null);
+  const [playlistEditId, setPlaylistEditId] = useState<string | null>(null);
 
   const stream = useStreamLock();
 
@@ -85,6 +86,11 @@ export function BridgePage() {
   const goPlaylists = () => {
     setDjMode(false);
     navigate('/playlists', { replace: true });
+  };
+
+  const editPlaylist = (id: string) => {
+    setPlaylistEditId(id);
+    goPlaylists();
   };
 
   const openPlaylist = (id: string) => {
@@ -197,14 +203,17 @@ export function BridgePage() {
               </button>
             </section>
           ) : isPlaylistsView ? (
-            <PlaylistLibrary onOpenPlaylist={openPlaylist} />
+            <PlaylistLibrary
+              onOpenPlaylist={openPlaylist}
+              initialEditId={playlistEditId}
+            />
           ) : djMode ? (
             <DjStudio onUploadSuccess={handleUploadSuccess} />
           ) : (
             <TrackList
               isPassenger={isPassenger}
               onDownload={handleDownloadRequest}
-              onEditPlaylists={goPlaylists}
+              onEditPlaylist={() => editPlaylist(activePlaylistId)}
             />
           )}
         </main>

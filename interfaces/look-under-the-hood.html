@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0f18" />
-  <title>Look under the hood · Juicy Juicy Snap (OFC) · SING 9</title>
-  <meta name="description" content="Look under the hood: technical layer for SING 9 — Juicy Juicy Snap (OFC) intro and primer, then in-browser Snap compile. Syntheverse bridge, Hit Factory artifacts, EGS 1.618 · 8.75 Hz lock." />
+  <title>Look under the hood · live demo · SING 13</title>
+  <meta name="description" content="Live operational demo: Juicy Juicy Snap compile in your browser, Reno Swamp player, and one-click deep docs. Not a simulation — use it now." />
   <link rel="canonical" href="https://psw-vibelandia-sing13.vercel.app/interfaces/look-under-the-hood.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -18,6 +18,7 @@
       --gold: #d4af37;
       --gold-hi: #fef3c7;
       --foam: #2dd4bf;
+      --live: #34d399;
       --text: #e8edf5;
       --muted: #94a3b8;
       --line: rgba(212, 175, 55, 0.28);
@@ -28,7 +29,7 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--sans);
-      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(45, 212, 191, 0.08), transparent 55%), var(--void);
+      background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(45, 212, 191, 0.07), transparent 55%), var(--void);
       color: var(--text);
       line-height: 1.55;
       min-height: 100vh;
@@ -36,218 +37,269 @@
     }
     a { color: var(--foam); text-decoration: none; }
     a:hover { color: var(--gold-hi); text-decoration: underline; }
-    .wrap { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-    .hero {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--card);
-      padding: 1.25rem 1.2rem;
-      margin-bottom: 1.25rem;
-    }
-    .eyebrow {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--foam);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      font-size: clamp(1.05rem, 2.6vw, 1.45rem);
-      font-weight: 800;
-      color: var(--gold-hi);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-      line-height: 1.25;
-    }
-    .lede { color: var(--muted); max-width: 62ch; margin-bottom: 1rem; }
-    .row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+
+    .topbar { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1rem; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.35rem;
-      padding: 0.55rem 1rem;
-      border-radius: 8px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--gold-hi);
-      cursor: pointer;
-      font-family: inherit;
-      text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.5rem 0.85rem; border-radius: 999px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04);
+      color: var(--gold-hi); text-decoration: none; font-family: inherit; cursor: pointer;
     }
-    .btn:hover { border-color: var(--gold); color: var(--gold-hi); }
-    .btn-primary {
-      background: rgba(212, 175, 55, 0.18);
-      border-color: rgba(212, 175, 55, 0.55);
+    .btn:hover { border-color: var(--gold); text-decoration: none; }
+    .btn-live { border-color: rgba(52, 211, 153, 0.5); color: var(--live); background: rgba(52, 211, 153, 0.1); }
+    .btn-gold { background: rgba(212, 175, 55, 0.18); border-color: rgba(212, 175, 55, 0.55); }
+
+    .hero {
+      border: 1px solid var(--line); border-radius: 14px;
+      background: var(--card); padding: 1.2rem 1.15rem; margin-bottom: 1.25rem;
     }
-    .btn-foam { border-color: rgba(45, 212, 191, 0.45); color: var(--foam); }
-    .stack {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.65rem;
-      margin: 1.25rem 0;
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      font-weight: 800; color: var(--live); margin-bottom: 0.5rem;
     }
-    .stack dt {
-      font-size: 0.62rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
+    .live-badge::before {
+      content: ""; width: 0.45rem; height: 0.45rem; border-radius: 50%;
+      background: var(--live); box-shadow: 0 0 8px var(--live);
+      animation: pulse 2s ease-in-out infinite;
     }
-    .stack dd { font-weight: 600; color: var(--gold-hi); }
-    .stack .mono { font-family: var(--mono); font-size: 0.78rem; font-weight: 500; color: var(--foam); }
-    label { display: block; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+    @keyframes pulse { 50% { opacity: 0.45; } }
+    h1 {
+      font-size: clamp(1.25rem, 3vw, 1.65rem); font-weight: 800;
+      color: var(--gold-hi); margin-bottom: 0.45rem; letter-spacing: -0.02em; line-height: 1.2;
+    }
+    .hero-lede { color: var(--muted); max-width: 58ch; margin-bottom: 0.75rem; }
+    .hero-lede strong { color: var(--text); }
+
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.65rem; margin-bottom: 1.25rem;
+    }
+    .step {
+      border: 1px solid var(--line); border-radius: 12px;
+      background: var(--card); padding: 0.85rem 0.9rem;
+    }
+    .step-n {
+      font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--foam); font-weight: 800; margin-bottom: 0.25rem;
+    }
+    .step h2 { font-size: 0.95rem; font-weight: 800; color: var(--gold-hi); margin-bottom: 0.35rem; }
+    .step p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+
+    .section {
+      border: 1px solid var(--line); border-radius: 12px;
+      background: var(--card); padding: 1rem; margin-bottom: 1rem;
+    }
+    .section h2 {
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 1.05rem; font-weight: 800; color: var(--gold-hi);
+      margin-bottom: 0.45rem; letter-spacing: -0.02em;
+    }
+    .section-lede { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; max-width: 62ch; }
+
+    label {
+      display: block; font-size: 0.65rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem;
+    }
     textarea {
-      width: 100%;
-      min-height: 140px;
-      padding: 0.75rem;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: rgba(0, 0, 0, 0.35);
-      color: var(--text);
-      font-family: var(--mono);
-      font-size: 0.82rem;
-      resize: vertical;
+      width: 100%; min-height: 130px; padding: 0.75rem; border-radius: 10px;
+      border: 1px solid var(--line); background: rgba(0, 0, 0, 0.35);
+      color: var(--text); font-family: var(--mono); font-size: 0.82rem; resize: vertical;
     }
     textarea:focus {
-      outline: none;
-      border-color: rgba(45, 212, 191, 0.5);
+      outline: none; border-color: rgba(45, 212, 191, 0.5);
       box-shadow: 0 0 0 2px rgba(45, 212, 191, 0.12);
     }
-    .panel {
-      margin-top: 1rem;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--card);
-      padding: 0.85rem;
-    }
-    .panel h2 {
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
+    .row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.65rem; }
+
     pre {
-      font-family: var(--mono);
-      font-size: 0.74rem;
-      white-space: pre-wrap;
-      word-break: break-word;
-      color: #cbd5e1;
-      max-height: 280px;
-      overflow: auto;
+      font-family: var(--mono); font-size: 0.74rem; white-space: pre-wrap;
+      word-break: break-word; color: #cbd5e1; max-height: 260px; overflow: auto;
     }
-    .status { margin-top: 0.65rem; font-size: 0.82rem; min-height: 1.25em; }
+    .status { margin-top: 0.6rem; font-size: 0.82rem; min-height: 1.2em; }
     .status.fail { color: var(--bad); }
     .status.ok { color: var(--foam); }
-    .fine { font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; }
-    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.78rem; color: var(--muted); }
-    .jj-pattern {
-      margin: 1rem 0 0;
-      padding: 0.75rem 0.85rem;
-      border-radius: 12px;
-      border: 1px dashed rgba(45, 212, 191, 0.35);
-      background: rgba(0, 0, 0, 0.25);
+
+    .ops-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;
     }
-    .jj-pattern .jj-l3 { font-size: 0.95rem; font-weight: 800; color: var(--gold-hi); margin: 0 0 0.3rem; }
-    .jj-pattern .jj-l2 { font-size: 0.8rem; color: #fde68a; margin: 0 0 0.4rem; line-height: 1.45; }
-    .jj-pattern .jj-l1 { font-size: 0.74rem; color: var(--muted); margin: 0 0 0.4rem; line-height: 1.5; }
-    .jj-pattern .jj-depth { font-size: 0.68rem; color: rgba(148, 163, 184, 0.95); margin: 0; }
-    .jj-pattern .jj-depth strong { color: var(--foam); }
+    .ops-card {
+      display: block; padding: 0.75rem 0.85rem; border-radius: 10px;
+      border: 1px solid rgba(45, 212, 191, 0.25); background: rgba(0, 0, 0, 0.2);
+      text-decoration: none; color: inherit;
+    }
+    .ops-card:hover { border-color: var(--foam); text-decoration: none; color: inherit; }
+    .ops-card strong { display: block; font-size: 0.82rem; color: var(--gold-hi); margin-bottom: 0.2rem; }
+    .ops-card span { font-size: 0.72rem; color: var(--muted); }
+
+    .docs-list { list-style: none; margin: 0; padding: 0; }
+    .docs-list li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.55rem 0;
+    }
+    .docs-list li:last-child { border-bottom: none; }
+    .docs-list a {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem;
+      font-weight: 600; color: var(--text);
+    }
+    .docs-list a:hover { color: var(--foam); }
+    .docs-list .doc-meta { font-size: 0.68rem; font-weight: 500; color: var(--muted); flex-shrink: 0; }
+
+    .fine { font-size: 0.72rem; color: var(--muted); margin-top: 0.65rem; line-height: 1.45; }
+    footer {
+      margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line);
+      font-size: 0.75rem; color: var(--muted);
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
+    <nav class="topbar" aria-label="Site">
+      <a class="btn" href="vibelandia-questfest.html">QUESTFEST hub</a>
+      <a class="btn" href="look-at-the-sun.html">Look at the Sun</a>
+      <a class="btn btn-live" href="#live-compile">Live compile ↓</a>
+    </nav>
+
     <header class="hero">
-      <p class="eyebrow">SING 9 · Technical layer</p>
-      <h1>Look under the hood</h1>
-      <p class="lede">
-        This is the <strong>engineering drawer</strong> for the stack behind QUESTFEST: long canon links, the runnable
-        <a href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener"><strong>FractiAI/digital-pru</strong></a>
-        repo, and — below — the <strong>Juicy Juicy Snap</strong> lane (OFC) with intro, primer, and the live Snap compile window.
-        No festival hype; pipes, papers, and the compile you can copy.
+      <p class="live-badge">Live · operational · use now</p>
+      <h1>Talk is cheap. Look under the hood.</h1>
+      <p class="hero-lede">
+        This page is a <strong>working demo</strong> — not a deck, not a theory walkthrough.
+        The Snap compiler runs <strong>in your browser</strong> right now. The player, robots, and GitHub repo are linked for real use.
+        One scroll: <strong>1 · Metabolize</strong> → <strong>2 · Crystallize</strong> → <strong>3 · Animate</strong>.
       </p>
-      <div class="row">
-        <a class="btn btn-primary" href="#juicy-juicy-snap">Juicy Juicy Snap — intro &amp; primer</a>
-        <a class="btn btn-foam" href="digital-pru-snap-robots.html">Digital SNAP robots demo</a>
-        <a class="btn btn-foam" href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=Net%20zero%20to%2013-channel%20I%20AM%20%E2%80%94%20DNA%20%2F%20PEFF%20master" target="_blank" rel="noopener">DNA / PEFF master canon</a>
-        <a class="btn" href="look-under-the-hood-legacy-catalog.html#main-canon">Legacy catalog · main + nested</a>
-        <a class="btn" href="vibelandia-questfest.html">QUESTFEST</a>
-        <a class="btn" href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener">digital-pru (run)</a>
-      </div>
     </header>
 
-    <section class="panel" id="juicy-juicy-snap" aria-labelledby="jj-h2">
-      <p class="eyebrow">Compile lane</p>
-      <h2 id="jj-h2" style="font-size:clamp(1rem,2.2vw,1.28rem);font-weight:800;color:var(--gold-hi);margin-bottom:0.45rem;letter-spacing:-0.02em;line-height:1.25;">Juicy Juicy — Snap Omniversal Fractal Compiler (OFC)</h2>
-      <p class="lede">
-        <strong>Intro.</strong> The interface between the <strong>Syntheverse</strong> and physical / non-physical platforms.
-        You feed plain-language intent; <strong>Snap</strong> turns it into <strong>Juicy Juicy</strong> holographic code (copy-paste ready).
-        Every successful compile emits <strong>two</strong> artifacts: a firmware-template JSON stub and a musical metadata score for the Hit Factory.
-      </p>
-      <p class="lede" style="margin-bottom:1rem;">
-        <strong>Primer.</strong> <strong>Metabolize</strong> your prompt (use blank lines between verses for separate logic blocks).
-        <strong>Crystallize</strong> when you press Snap — rules live in <code>engine/ofc-snap.js</code>.
-        <strong>Animate</strong> when both JSON panels appear.
-        <strong>Squeeze</strong> noise: Snap aborts on explicit fear-frequency / thermal-dissonance tokens.
-        Full write-up: <code>docs/JJ_SNAP_OFC_WHITEPAPER.md</code> (reader button below). Repo map: <code>lyrics/</code> · <code>engine/</code> · <code>vessels/</code> · <code>agents/</code> · <code>tracks/</code> · <code>README.JJ</code>.
-      </p>
-      <dl class="stack">
-        <div><dt>Source language</dt><dd>Juicy Juicy</dd></div>
-        <div><dt>Compiler</dt><dd>Snap</dd></div>
-        <div><dt>Orchestrator</dt><dd>Juicy Juicy (Snap OFC)</dd></div>
-        <div><dt>Math anchor</dt><dd class="mono">EGS φ = 1.618</dd></div>
-        <div><dt>Resonance goal</dt><dd class="mono">8.75 Hz</dd></div>
-        <div><dt>Safety lock</dt><dd class="mono">fail @ 18.9 Hz / thermal dissonance</dd></div>
-      </dl>
-      <div class="jj-pattern" aria-label="Juicy Juicy three-layer pattern">
-        <p class="jj-l3">Two artifacts or silence.</p>
-        <p class="jj-l2">Prompt hits · phi folds · firmware whispers · score hums · no fear Hz</p>
-        <p class="jj-l1">Technical (Layer 1): each compile emits a firmware-template JSON stub plus a musical-metadata JSON score; Snap aborts on explicit fear-frequency / thermal-dissonance tokens.</p>
-        <p class="jj-depth"><strong>≤3 taps:</strong> QUESTFEST → Look under the hood → Juicy Juicy Snap section → Snap compile. Purchase rails stay on QUESTFEST.</p>
-      </div>
-      <div class="row">
-        <a class="btn btn-primary" href="#ofc-snap">Open Snap compile</a>
-        <a class="btn btn-foam" href="whitepaper-surface.html?doc=../docs/JJ_SNAP_OFC_WHITEPAPER.md&amp;title=Juicy%20Juicy%20-%20Snap%20OFC%20Whitepaper" target="_blank" rel="noopener">Read OFC whitepaper</a>
-      </div>
-    </section>
+    <div class="steps" aria-label="Three steps">
+      <article class="step">
+        <p class="step-n">Step 1</p>
+        <h2>Metabolize</h2>
+        <p>Paste plain-language intent below. Blank lines separate logic blocks. Hit <strong>Snap compile</strong>.</p>
+      </article>
+      <article class="step">
+        <p class="step-n">Step 2</p>
+        <h2>Crystallize</h2>
+        <p>Snap emits <strong>two JSON artifacts</strong> or aborts on safety tokens — deterministic rules in <code>engine/ofc-snap.js</code>.</p>
+      </article>
+      <article class="step">
+        <p class="step-n">Step 3</p>
+        <h2>Animate</h2>
+        <p>Ship for real: stream the catalog, open the robots demo, clone <strong>digital-pru</strong> on GitHub.</p>
+      </article>
+    </div>
 
-    <section class="panel" id="ofc-snap" aria-label="Compiler input">
-      <h2>Snap compile · command window</h2>
-      <label for="prompt">Prompt → Juicy Juicy (use blank lines between verses for separate logic blocks)</label>
+    <section class="section" id="live-compile" aria-labelledby="compile-h">
+      <h2 id="compile-h">Live compile · steps 1 &amp; 2</h2>
+      <p class="section-title">Juicy Juicy Snap (OFC)</p>
+      <p class="section-lede">
+        Omniversal Fractal Compiler — Syntheverse bridge to firmware template + musical metadata score.
+        φ = 1.618 · target 8.75 Hz · fails closed on fear-frequency / thermal-dissonance tokens.
+      </p>
+      <label for="prompt">Your prompt</label>
       <textarea id="prompt" placeholder="Verse one: open the pipe.
 
 Verse two: fold at phi, lock at 8.75 Hz."></textarea>
-      <div class="row" style="margin-top:0.75rem;">
-        <button type="button" class="btn btn-primary" id="btnSnap">Snap compile</button>
+      <div class="row">
+        <button type="button" class="btn btn-gold" id="btnSnap">Snap compile</button>
         <button type="button" class="btn" id="btnCopyJj">Copy Juicy Juicy output</button>
+        <a class="btn" href="whitepaper-surface.html?doc=../docs/JJ_SNAP_OFC_WHITEPAPER.md&amp;title=Juicy%20Juicy%20Snap%20OFC%20whitepaper">OFC whitepaper →</a>
       </div>
       <p id="status" class="status" aria-live="polite"></p>
-      <p class="fine">Repository map: <code>lyrics/</code> · <code>engine/ofc-snap.js</code> · <code>vessels/</code> · <code>agents/</code> · <code>tracks/</code> · root <code>README.JJ</code></p>
     </section>
 
-    <section class="panel" id="outJj" hidden>
+    <section class="section" id="outJj" hidden>
       <h2>Juicy Juicy output</h2>
       <pre id="jjPre"></pre>
     </section>
-    <section class="panel" id="outFw" hidden>
-      <h2>Artifact A — Functional firmware template (JSON)</h2>
+    <section class="section" id="outFw" hidden>
+      <h2>Artifact A — firmware template (JSON)</h2>
       <pre id="fwPre"></pre>
     </section>
-    <section class="panel" id="outSc" hidden>
-      <h2>Artifact B — Musical metadata score (JSON)</h2>
+    <section class="section" id="outSc" hidden>
+      <h2>Artifact B — musical metadata score (JSON)</h2>
       <pre id="scPre"></pre>
     </section>
 
+    <section class="section" id="animate" aria-labelledby="animate-h">
+      <h2 id="animate-h">Step 3 · Animate — operational now</h2>
+      <p class="section-lede">One click each. These are live surfaces on this edge, not placeholders.</p>
+      <div class="ops-grid">
+        <a class="ops-card" href="questfest-bridge/#/bridge">
+          <strong>Reno Swamp Player</strong>
+          <span>552+ track catalog · 30s preview · DJ studio</span>
+        </a>
+        <a class="ops-card" href="digital-pru-snap-robots.html">
+          <strong>Digital Pru · Snap robots</strong>
+          <span>Browser demo · dancing robots lane</span>
+        </a>
+        <a class="ops-card" href="look-at-the-sun.html">
+          <strong>Look at the Sun</strong>
+          <span>Real NOAA / SILSO snapshot · not live-updating</span>
+        </a>
+        <a class="ops-card" href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener">
+          <strong>digital-pru on GitHub</strong>
+          <span>Clone · APIs · bench when repo is reachable</span>
+        </a>
+        <a class="ops-card" href="https://github.com/FractiAI/psw.vibelandia.sing13" target="_blank" rel="noopener">
+          <strong>This edge (sing13)</strong>
+          <span>Source for everything you see here</span>
+        </a>
+        <a class="ops-card" href="fractiai.html">
+          <strong>FractiAI hub</strong>
+          <span>Team · story · contact</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="docs" aria-labelledby="docs-h">
+      <h2 id="docs-h">Deep reads · one click</h2>
+      <p class="section-lede">Full documents open directly — no catalog hop, no second menu.</p>
+      <ul class="docs-list">
+        <li>
+          <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md&amp;title=13-channel%20roadmap%20May%202026">
+            13-channel roadmap · Seed Node (May 12, 2026)
+            <span class="doc-meta">Open →</span>
+          </a>
+        </li>
+        <li>
+          <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=DNA%20%2F%20PEFF%20master%20canon">
+            DNA / PEFF master canon (merged Part I + II)
+            <span class="doc-meta">Open →</span>
+          </a>
+        </li>
+        <li>
+          <a href="whitepaper-surface.html?doc=../docs/JJ_SNAP_OFC_WHITEPAPER.md&amp;title=Juicy%20Juicy%20Snap%20OFC">
+            Juicy Juicy Snap OFC whitepaper
+            <span class="doc-meta">Open →</span>
+          </a>
+        </li>
+        <li>
+          <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_OMNIZOAN_INFILL13_2026-05-11.md&amp;title=PEFF%20Part%20I%20%C2%B7%20OmniZoan%20Infill13">
+            PEFF Part I · OmniZoan Infill13
+            <span class="doc-meta">Open →</span>
+          </a>
+        </li>
+        <li>
+          <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_VALETPRU_BIOELECTROMAGNETIC_2026-05-11.md&amp;title=PEFF%20Part%20II%20%C2%B7%20VALETPRU">
+            PEFF Part II · VALETPRU bioelectromagnetic
+            <span class="doc-meta">Open →</span>
+          </a>
+        </li>
+      </ul>
+      <p class="fine">
+        <strong>Honesty:</strong> Long docs mix engineering targets with narrative metaphor — labeled at the top of each file.
+        The compile above is real client-side code. Silicon bench claims need measurement on your hardware.
+        Solar / ionosphere copy on this site points to NOAA for operational use.
+      </p>
+    </section>
+
     <footer>
-      <p>Look under the hood · Juicy Juicy Snap (OFC) · NSPFRNP → ∞⁹ · FractiAI · SING 9</p>
-      <p style="margin-top:0.35rem;font-size:0.82rem;color:var(--muted);">Metabolize · Crystallize · Animate · squeeze</p>
-      <p style="margin-top:0.35rem;">Prior long reader surface (older naming) kept as archive: <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=Digital%20Pru%20Master%20Canon">digital-pru-awareness-whitepaper.html</a>.</p>
+      <p>Look under the hood · SS Vibelandia QUESTFEST · SING 13 edge · NSPFRNP → ∞⁹</p>
     </footer>
   </div>
 
@@ -275,7 +327,7 @@ Verse two: fold at phi, lock at 8.75 Hz."></textarea>
       document.getElementById("btnSnap").addEventListener("click", function () {
         hideOutputs();
         if (!window.OFCSnap) {
-          setStatus("Snap engine not loaded.", "fail");
+          setStatus("Snap engine not loaded — check engine/ofc-snap.js is deployed.", "fail");
           return;
         }
         var result = window.OFCSnap.compileJj(promptEl.value);
@@ -287,7 +339,11 @@ Verse two: fold at phi, lock at 8.75 Hz."></textarea>
         fwPre.textContent = JSON.stringify(result.firmwareTemplate, null, 2);
         scPre.textContent = JSON.stringify(result.musicalScore, null, 2);
         outJj.hidden = outFw.hidden = outSc.hidden = false;
-        setStatus("Snap OK · dual artifacts emitted · φ = " + window.OFCSnap.EGS + " · target " + window.OFCSnap.GOLDILOCKS_HZ + " Hz", "ok");
+        setStatus(
+          "Crystallized · two artifacts · φ " + window.OFCSnap.EGS + " · " + window.OFCSnap.GOLDILOCKS_HZ + " Hz target",
+          "ok"
+        );
+        outJj.scrollIntoView({ behavior: "smooth", block: "nearest" });
       });
 
       document.getElementById("btnCopyJj").addEventListener("click", function () {
@@ -297,9 +353,9 @@ Verse two: fold at phi, lock at 8.75 Hz."></textarea>
           return;
         }
         navigator.clipboard.writeText(t).then(function () {
-          setStatus("Juicy Juicy copied to clipboard.", "ok");
+          setStatus("Juicy Juicy copied.", "ok");
         }).catch(function () {
-          setStatus("Copy failed — select the Juicy Juicy block manually.", "fail");
+          setStatus("Copy failed — select the output block manually.", "fail");
         });
       });
     })();

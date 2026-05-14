@@ -3,180 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Look at the Sun · plain readout</title>
-  <meta name="description" content="Weekly (UTC Monday) snapshot: GitHub commits, SoundCloud drops, play-ready minutes, mean daily sunspots, and mean F10.7 from published monthly values. Findings, chart, and table from JSON." />
+  <title>Look at the Sun · SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="Static snapshot: real sunspot and F10.7 ionospheric data aligned with studio ship weeks. Not a live feed." />
+  <link rel="canonical" href="https://psw-vibelandia-sing13.vercel.app/interfaces/look-at-the-sun.html" />
   <style>
     :root {
-      --bg: #070a12;
-      --card: #121828;
-      --line: rgba(212, 175, 55, 0.32);
+      --bg: #050810;
+      --card: #0f1524;
+      --line: rgba(212, 175, 55, 0.28);
       --gold: #d4af37;
       --gold-hi: #fef3c7;
-      --text: #e2e8f0;
-      --muted: #9aa7bd;
+      --text: #e8edf5;
+      --muted: #8b9ab5;
       --mint: #2dd4bf;
       --pink: #f472b6;
       --cyan: #67e8f9;
+      --sun-core: #fff4d0;
+      --sun-mid: #ffb347;
+      --sun-edge: #e85d04;
     }
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
       font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-      background: radial-gradient(circle at 20% 10%, rgba(212,175,55,.08), transparent 42%), var(--bg);
+      background: radial-gradient(ellipse 120% 60% at 50% -10%, rgba(232, 93, 4, 0.12), transparent 50%), var(--bg);
       color: var(--text);
+      line-height: 1.5;
     }
     a { color: var(--cyan); }
     a:hover { color: var(--gold-hi); }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 1.1rem 1rem 2rem; }
-    .topbar { display: flex; gap: .6rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 1rem 1rem 2.5rem; }
+    .topbar { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(18,24,40,.75);
-      color: var(--gold-hi);
-      text-decoration: none;
-      padding: .5rem .85rem;
-      font-size: .72rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      font-weight: 700;
+      display: inline-flex; align-items: center;
+      border-radius: 999px; border: 1px solid var(--line);
+      background: rgba(15, 21, 36, .85); color: var(--gold-hi);
+      text-decoration: none; padding: .45rem .8rem;
+      font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
     }
     .btn:hover { border-color: var(--gold); }
-    .intro {
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(140px, 180px) 1fr;
+      gap: 1.25rem;
+      align-items: center;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(18,24,40,.9);
-      padding: 1rem 1.05rem;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(18, 24, 40, .95), rgba(8, 10, 18, .98));
+      padding: 1.1rem 1.2rem;
       margin-bottom: 1rem;
+      overflow: hidden;
     }
-    .intro h1 {
-      margin: 0 0 .4rem;
-      font-size: clamp(1.2rem, 2.4vw, 1.65rem);
-      color: var(--gold-hi);
+    @media (max-width: 640px) { .hero { grid-template-columns: 1fr; text-align: center; } }
+
+    .sun-disk-wrap { display: flex; justify-content: center; }
+    .sun-disk {
+      width: 150px; height: 150px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 32%, var(--sun-core) 0%, var(--sun-mid) 35%, var(--sun-edge) 72%, #5a1800 100%);
+      box-shadow: 0 0 60px rgba(255, 140, 40, 0.45), 0 0 120px rgba(255, 100, 20, 0.2);
+      position: relative;
+    }
+    .sun-disk img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      mix-blend-mode: screen; opacity: .55;
+    }
+    .sun-disk::after {
+      content: ""; position: absolute; inset: -8%;
+      border-radius: 50%;
+      background: radial-gradient(circle, transparent 55%, rgba(255, 180, 60, .15) 100%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      margin: 0 0 .35rem;
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
       font-weight: 800;
+      color: var(--gold-hi);
       letter-spacing: .02em;
     }
-    .intro p { margin: 0 0 .55rem; font-size: .88rem; color: var(--muted); line-height: 1.55; }
-    .intro p:last-of-type { margin-bottom: 0; }
-    .intro code { font-size: .8em; background: rgba(0,0,0,.35); padding: .1rem .3rem; border-radius: 4px; color: var(--mint); }
-    .status { margin-top: .65rem; font-size: .8rem; color: var(--mint); min-height: 1.15rem; }
-    .error { color: #fca5a5; }
+    .hero .tag {
+      font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--mint); margin: 0 0 .4rem;
+    }
+    .hero .lede { margin: 0; font-size: .88rem; color: var(--muted); max-width: 52ch; }
+    .hero .lede strong { color: var(--text); }
+    .snapshot-pill {
+      display: inline-block; margin-top: .65rem;
+      font-size: .65rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: .25rem .55rem; border-radius: 999px;
+      border: 1px solid rgba(45, 212, 191, .4);
+      color: var(--mint); background: rgba(45, 212, 191, .08);
+    }
 
-    .findings {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: linear-gradient(165deg, rgba(22,30,48,.96), rgba(10,14,22,.97));
-      padding: 1rem 1.1rem;
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: .55rem;
       margin-bottom: 1rem;
     }
-    .findings h2 {
-      margin: 0 0 .55rem;
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--gold-hi);
-    }
-    .findings .lede {
-      margin: 0 0 .7rem;
-      font-size: .9rem;
-      line-height: 1.58;
-      color: #cbd5e1;
-    }
-    .findings .lede strong { color: var(--text); }
-    .findings ul {
-      margin: 0;
-      padding-left: 1.1rem;
-      font-size: .86rem;
-      line-height: 1.55;
-      color: var(--muted);
-    }
-    .findings li { margin-bottom: .4rem; }
-    .findings li:last-child { margin-bottom: 0; }
-    .findings strong { color: var(--text); font-weight: 600; }
-    .findings code { font-size: .78em; background: rgba(0,0,0,.35); padding: .06rem .25rem; border-radius: 4px; color: var(--mint); }
-
-    .chart-wrap {
+    .metric {
       border: 1px solid var(--line);
       border-radius: 12px;
       background: var(--card);
-      padding: .65rem;
-      overflow-x: auto;
+      padding: .65rem .75rem;
+    }
+    .metric-k {
+      font-size: .58rem; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 .2rem;
+    }
+    .metric-v {
+      font-size: 1.35rem; font-weight: 800; color: var(--gold-hi); margin: 0;
+      line-height: 1.1;
+    }
+    .metric-u { font-size: .68rem; color: var(--muted); margin: .15rem 0 0; }
+
+    .findings, .alignment {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(165deg, rgba(22, 30, 48, .96), rgba(10, 14, 22, .97));
+      padding: 1rem 1.1rem;
       margin-bottom: 1rem;
+    }
+    .findings h2, .alignment h2 {
+      margin: 0 0 .55rem; font-size: 1rem; font-weight: 800; color: var(--gold-hi);
+    }
+    .findings .lede, .alignment p {
+      margin: 0 0 .65rem; font-size: .88rem; line-height: 1.58; color: #cbd5e1;
+    }
+    .findings ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; color: var(--muted); }
+    .findings li { margin-bottom: .4rem; }
+    .findings strong, .alignment strong { color: var(--text); font-weight: 600; }
+    .findings code, .alignment code {
+      font-size: .78em; background: rgba(0,0,0,.35);
+      padding: .06rem .25rem; border-radius: 4px; color: var(--mint);
+    }
+
+    .chart-wrap {
+      border: 1px solid var(--line); border-radius: 12px;
+      background: var(--card); padding: .65rem; overflow-x: auto; margin-bottom: 1rem;
     }
     canvas { display: block; width: 100%; height: 340px; min-width: 720px; }
     .legend {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .65rem;
-      font-size: .72rem;
-      margin-top: .55rem;
-      color: var(--muted);
+      display: flex; flex-wrap: wrap; gap: .65rem;
+      font-size: .72rem; margin-top: .55rem; color: var(--muted);
     }
     .dot {
-      display: inline-block;
-      width: .55rem;
-      height: .55rem;
-      border-radius: 50%;
-      margin-right: .3rem;
-      vertical-align: middle;
+      display: inline-block; width: .55rem; height: .55rem;
+      border-radius: 50%; margin-right: .3rem; vertical-align: middle;
     }
     .iono-note {
-      margin-top: .5rem;
-      font-size: .72rem;
-      color: var(--muted);
-      line-height: 1.45;
-      max-width: 52rem;
+      margin-top: .5rem; font-size: .72rem; color: var(--muted);
+      line-height: 1.45; max-width: 52rem;
     }
 
     .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .76rem;
-      min-width: 720px;
-    }
+    table { width: 100%; border-collapse: collapse; font-size: .76rem; min-width: 720px; }
     th, td {
       border-bottom: 1px solid rgba(255,255,255,.07);
-      padding: .42rem .4rem;
-      text-align: right;
-      white-space: nowrap;
+      padding: .42rem .4rem; text-align: right; white-space: nowrap;
     }
     th:first-child, td:first-child { text-align: left; }
     th {
-      color: var(--gold-hi);
-      font-size: .64rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      background: rgba(255,255,255,.03);
+      color: var(--gold-hi); font-size: .64rem; letter-spacing: .06em;
+      text-transform: uppercase; background: rgba(255,255,255,.03);
     }
-    .method-note {
-      margin-top: 1rem;
-      font-size: .72rem;
-      color: var(--muted);
-      line-height: 1.45;
-    }
+    .method-note { margin-top: 1rem; font-size: .72rem; color: var(--muted); line-height: 1.45; }
+    .status { margin-top: .5rem; font-size: .8rem; color: var(--mint); min-height: 1.15rem; }
+    .error { color: #fca5a5; }
+    .credit { font-size: .62rem; color: rgba(255,255,255,.35); margin-top: .35rem; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="topbar">
-      <a class="btn" href="vibelandia-questfest.html">Back to landing</a>
+      <a class="btn" href="vibelandia-questfest.html">QUESTFEST hub</a>
       <a class="btn" href="look-under-the-hood.html">Look under the hood</a>
       <a class="btn" href="look-at-the-sun-study.json">Download JSON</a>
     </div>
 
-    <section class="intro">
-      <h1>Look at the Sun</h1>
-      <p>
-        Each <strong>UTC week</strong> (Monday start; the table column is that Monday’s date): we sum <strong>Git commits</strong> across the fixed public repo list in <code>sources.githubRepos</code>, count <strong>SoundCloud drops</strong> and <strong>play-ready minutes</strong> from the RSS <code>pubDate</code>, and plot <strong>sun</strong> and <strong>ionosphere</strong> on the <strong>same weeks</strong>.
-        <strong>Sun:</strong> mean of SWPC <strong>daily</strong> sunspot numbers for days in the week. <strong>F10.7:</strong> each day is assigned its calendar month’s <strong>published NOAA monthly</strong> 10.7&nbsp;cm flux, then we average across the week (so cross-month weeks blend; it is not sub-monthly observed daily F10.7). Weeks after the latest published NOAA month show a dash for F10.7 — not zero flux.
-      </p>
-      <p>
-        Charts and tables load from a <strong>saved snapshot</strong> on this site (<a href="look-at-the-sun-study.json"><code>look-at-the-sun-study.json</code></a>). This page does not call GitHub, SoundCloud, or NOAA in your browser.
-      </p>
-      <div id="status" class="status">Loading…</div>
-    </section>
+    <header class="hero">
+      <div class="sun-disk-wrap">
+        <div class="sun-disk" aria-hidden="true">
+          <img id="sunImg" src="" alt="" width="150" height="150" hidden />
+        </div>
+      </div>
+      <div>
+        <p class="tag">SING 13 · hydrogen-line edge · ionosphere</p>
+        <h1>Look at the Sun</h1>
+        <p class="lede">
+          A <strong>saved study</strong> — not a live dashboard. Real NOAA and SILSO sunspot and F10.7 data on the same weekly clock as public ship commits from the Vibelandia edges.
+        </p>
+        <span class="snapshot-pill" id="snapshotPill">Loading snapshot…</span>
+        <div id="status" class="status"></div>
+      </div>
+    </header>
+
+    <section class="metrics" id="metrics" hidden aria-label="Snapshot metrics"></section>
 
     <section id="findingsTop" class="findings" hidden aria-labelledby="findingsHeadline">
       <h2 id="findingsHeadline"></h2>
@@ -184,17 +207,20 @@
       <ul id="findingsList"></ul>
     </section>
 
+    <section id="alignment" class="alignment" hidden aria-labelledby="alignmentTitle">
+      <h2 id="alignmentTitle"></h2>
+      <div id="alignmentBody"></div>
+    </section>
+
     <section class="chart-wrap">
-      <canvas id="sunChart" width="1100" height="340" aria-label="Weekly series chart"></canvas>
+      <canvas id="sunChart" width="1100" height="340" aria-label="Weekly sun, ionosphere, and studio series"></canvas>
       <div class="legend">
         <span><span class="dot" style="background:#67e8f9"></span>Git commits / week</span>
-        <span><span class="dot" style="background:#2dd4bf"></span>SC drops / week</span>
-        <span><span class="dot" style="background:#f472b6"></span>Play minutes / week</span>
-        <span><span class="dot" style="background:#fef3c7"></span>Sun (mean daily SSN)</span>
-        <span><span class="dot" style="background:#d4af37"></span>Ionosphere (mean monthly F10.7 / day)</span>
+        <span><span class="dot" style="background:#fef3c7"></span>Sun — mean daily SSN</span>
+        <span><span class="dot" style="background:#d4af37"></span>Ionosphere — mean F10.7 (sfu)</span>
       </div>
       <p class="iono-note">
-        <strong>Ionosphere note:</strong> weekly F10.7 is built from NOAA’s <strong>monthly</strong> published flux, so it cannot resolve storm-scale Kp swings. It does sit on the <strong>same Monday-week axis</strong> as commits, playtime, and mean daily sunspots — useful for “slow background vs studio bursts,” not minute-by-minute propagation.
+        <strong>How to read it:</strong> sunspot number tracks active regions on the Sun; F10.7 tracks solar EUV that drives the ionosphere. Studio commits are ship-room output on the same UTC Monday weeks — correlation is observational, not causal.
       </p>
     </section>
 
@@ -204,10 +230,8 @@
           <tr>
             <th>Week (UTC Mon)</th>
             <th>Git commits</th>
-            <th>SC drops</th>
-            <th>Minutes</th>
-            <th>Sun (spots)</th>
-            <th>Ionosphere F10.7 (sfu)</th>
+            <th>Sun (SSN)</th>
+            <th>Ionosphere F10.7</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -215,6 +239,7 @@
     </section>
 
     <p id="methodNote" class="method-note"></p>
+    <p id="imgCredit" class="credit" hidden></p>
   </div>
 
   <script>
@@ -226,7 +251,14 @@
       const findingsHeadline = document.getElementById("findingsHeadline");
       const findingsLede = document.getElementById("findingsLede");
       const findingsList = document.getElementById("findingsList");
+      const alignment = document.getElementById("alignment");
+      const alignmentTitle = document.getElementById("alignmentTitle");
+      const alignmentBody = document.getElementById("alignmentBody");
       const methodNote = document.getElementById("methodNote");
+      const metrics = document.getElementById("metrics");
+      const snapshotPill = document.getElementById("snapshotPill");
+      const sunImg = document.getElementById("sunImg");
+      const imgCredit = document.getElementById("imgCredit");
 
       function setStatus(msg, isError) {
         statusEl.textContent = msg;
@@ -234,9 +266,7 @@
       }
 
       function norm(values) {
-        const finite = values
-          .map((v) => (v == null ? NaN : Number(v)))
-          .filter((n) => Number.isFinite(n));
+        const finite = values.map((v) => (v == null ? NaN : Number(v))).filter((n) => Number.isFinite(n));
         const max = finite.length ? Math.max(...finite) : 1;
         return values.map((v) => {
           const n = v == null ? NaN : Number(v);
@@ -247,160 +277,134 @@
       function liteFormat(s) {
         return String(s)
           .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-          .replace(/`([^`]+)`/g, "<code>$1</code>");
+          .replace(/`([^`]+)`/g, "<code>$1</code>")
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      }
+
+      function metricCard(k, v, u) {
+        return `<article class="metric"><p class="metric-k">${k}</p><p class="metric-v">${v}</p>${u ? `<p class="metric-u">${u}</p>` : ""}</article>`;
+      }
+
+      function renderMetrics(summary) {
+        if (!summary) return;
+        metrics.innerHTML = [
+          metricCard("Sunspots (latest day)", summary.latestSunspot ?? "—", summary.snapshotLabel),
+          metricCard("F10.7 flux", summary.latestF107 != null ? summary.latestF107.toFixed(1) : "—", "sfu · ionospheric driver"),
+          metricCard("Planetary Kp (mean)", summary.meanKp7d != null ? summary.meanKp7d.toFixed(2) : "—", "quiet &lt; 3 · stormy &gt; 5"),
+          metricCard("H-line (catalog)", summary.hydrogenLineMhz != null ? summary.hydrogenLineMhz.toFixed(3) : "1420.406", "MHz · EGS edge protocol"),
+          metricCard("Commits (52 wk)", summary.totalCommits52w ?? "—", "sing13 git + sing9 GitHub"),
+        ].join("");
+        metrics.hidden = false;
+        snapshotPill.textContent = "Snapshot · " + (summary.snapshotLabel || "frozen study");
       }
 
       function drawSeries(periods, series) {
-        const W = chart.width;
-        const H = chart.height;
+        const W = chart.width, H = chart.height;
         const pad = { l: 36, r: 10, t: 14, b: 28 };
-        const pw = W - pad.l - pad.r;
-        const ph = H - pad.t - pad.b;
-
+        const pw = W - pad.l - pad.r, ph = H - pad.t - pad.b;
         ctx.clearRect(0, 0, W, H);
-        ctx.fillStyle = "#121828";
+        ctx.fillStyle = "#0f1524";
         ctx.fillRect(0, 0, W, H);
-
         ctx.strokeStyle = "rgba(255,255,255,0.07)";
         for (let i = 0; i <= 4; i++) {
           const y = pad.t + (ph * i) / 4;
-          ctx.beginPath();
-          ctx.moveTo(pad.l, y);
-          ctx.lineTo(W - pad.r, y);
-          ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(W - pad.r, y); ctx.stroke();
         }
-
-        const n = periods.length;
-        const xStep = n > 1 ? pw / (n - 1) : pw;
+        const n = periods.length, xStep = n > 1 ? pw / (n - 1) : pw;
         function plot(values, color) {
           ctx.beginPath();
           let penDown = false;
           values.forEach((v, i) => {
-            if (!Number.isFinite(v)) {
-              penDown = false;
-              return;
-            }
-            const x = pad.l + i * xStep;
-            const y = pad.t + (1 - v) * ph;
-            if (!penDown) {
-              ctx.moveTo(x, y);
-              penDown = true;
-            } else {
-              ctx.lineTo(x, y);
-            }
+            if (!Number.isFinite(v)) { penDown = false; return; }
+            const x = pad.l + i * xStep, y = pad.t + (1 - v) * ph;
+            if (!penDown) { ctx.moveTo(x, y); penDown = true; } else ctx.lineTo(x, y);
           });
-          ctx.lineWidth = 2;
-          ctx.strokeStyle = color;
-          ctx.stroke();
+          ctx.lineWidth = 2; ctx.strokeStyle = color; ctx.stroke();
         }
-
         plot(series.commitsN, "#67e8f9");
-        plot(series.uploadsN, "#2dd4bf");
-        plot(series.minutesN, "#f472b6");
         plot(series.sunN, "#fef3c7");
         plot(series.f107N, "#d4af37");
-
         ctx.fillStyle = "rgba(255,255,255,.5)";
         ctx.font = "9px Segoe UI, sans-serif";
         const labelStep = n <= 24 ? 2 : n <= 48 ? 4 : 6;
         periods.forEach((p, i) => {
           if (i % labelStep !== 0 && i !== n - 1) return;
-          const x = pad.l + i * xStep;
-          const short = p.slice(5);
-          ctx.fillText(short, x - 10, H - 6);
+          ctx.fillText(p.slice(5), pad.l + i * xStep - 10, H - 6);
         });
       }
 
       function renderTable(periods, m) {
-        function fmtSunIon(v, decimals) {
+        function fmt(v, d) {
           if (v == null || !Number.isFinite(Number(v))) return "—";
-          return Number(v).toFixed(decimals);
+          return Number(v).toFixed(d);
         }
-        const tbody = document.querySelector("#dataTable tbody");
-        tbody.innerHTML = periods.map((period) => (
+        document.querySelector("#dataTable tbody").innerHTML = periods.map((period) =>
           `<tr>
             <td>${period}</td>
-            <td>${m.commits[period]}</td>
-            <td>${m.uploads[period]}</td>
-            <td>${Number(m.minutes[period]).toFixed(1)}</td>
-            <td>${fmtSunIon(m.sunspots[period], 1)}</td>
-            <td>${fmtSunIon(m.f107[period], 2)}</td>
+            <td>${m.commits[period] ?? 0}</td>
+            <td>${fmt(m.sunspots[period], 1)}</td>
+            <td>${fmt(m.f107[period], 1)}</td>
           </tr>`
-        )).join("");
+        ).join("");
       }
 
       function renderFromStudy(data) {
-        const periods = data.periods || data.months || [];
-        if (!periods.length) {
-          setStatus("Snapshot has no timeline.", true);
-          return;
+        const periods = data.periods || [];
+        if (!periods.length) { setStatus("Snapshot has no timeline.", true); return; }
+
+        renderMetrics(data.summary);
+
+        if (data.sources && data.sources.heroImage) {
+          sunImg.src = data.sources.heroImage;
+          sunImg.alt = data.sources.heroImageCredit || "Illustrative Sun";
+          sunImg.hidden = false;
+          if (data.sources.heroImageCredit) {
+            imgCredit.textContent = data.sources.heroImageCredit;
+            imgCredit.hidden = false;
+          }
         }
-        const commits = data.commits || {};
-        const uploads = data.uploads || {};
-        const minutes = data.minutes || {};
-        const sunspots = data.sunspots || {};
-        const f107 = data.f107 || {};
+
+        if (data.alignment) {
+          alignmentTitle.textContent = data.alignment.title || "Alignment";
+          alignmentBody.innerHTML = (data.alignment.paragraphs || []).map((p) => `<p>${liteFormat(p)}</p>`).join("");
+          alignment.hidden = false;
+        }
 
         if (data.findings) {
           findingsHeadline.textContent = data.findings.headline || "What we found";
           const lede = data.findings.lede || "";
-          if (lede) {
-            findingsLede.innerHTML = liteFormat(lede);
-            findingsLede.hidden = false;
-          } else {
-            findingsLede.innerHTML = "";
-            findingsLede.hidden = true;
-          }
+          findingsLede.innerHTML = lede ? liteFormat(lede) : "";
+          findingsLede.hidden = !lede;
           findingsList.innerHTML = (data.findings.bullets || []).map((b) => `<li>${liteFormat(b)}</li>`).join("");
           findingsTop.hidden = false;
         }
 
-        const commitsA = periods.map((p) => commits[p]);
-        const uploadsA = periods.map((p) => uploads[p]);
-        const minutesA = periods.map((p) => minutes[p]);
-        const sunA = periods.map((p) => sunspots[p]);
-        const f107A = periods.map((p) => f107[p]);
-
+        const commits = data.commits || {}, sunspots = data.sunspots || {}, f107 = data.f107 || {};
         drawSeries(periods, {
-          commitsN: norm(commitsA),
-          uploadsN: norm(uploadsA),
-          minutesN: norm(minutesA),
-          sunN: norm(sunA),
-          f107N: norm(f107A),
+          commitsN: norm(periods.map((p) => commits[p])),
+          sunN: norm(periods.map((p) => sunspots[p])),
+          f107N: norm(periods.map((p) => f107[p])),
         });
-        renderTable(periods, { commits, uploads, minutes, sunspots, f107 });
+        renderTable(periods, { commits, sunspots, f107 });
 
-        const g = data.granularity === "week" ? "Weekly" : "Series";
-        setStatus("Loaded " + g + " snapshot dated " + (data.generatedAt || "?") + ".");
+        setStatus("Frozen study generated " + (data.generatedAt || "?").slice(0, 10) + " — not updated in your browser.");
 
         if (data.sources) {
           const gh = (data.sources.githubRepos || []).join(", ");
-          let tail =
-            "Data sources in the JSON: <code>" + gh + "</code> · SoundCloud RSS · SWPC daily SSN · NOAA monthly F10.7 (expanded to days, then weekly mean).";
-          if (data.sources.weekAnchor) {
-            tail += " <strong>Week:</strong> " + String(data.sources.weekAnchor).replace(/</g, "") + ".";
-          }
-          if (data.sources.ionosphereNote) {
-            tail += " " + data.sources.ionosphereNote;
-          }
-          if (data.sources.lastNoaaMonth) {
-            tail += " Latest paired NOAA month (for published F10.7 rows): <strong>" + data.sources.lastNoaaMonth + "</strong>.";
-          }
+          let tail = "Sources: <code>" + gh + "</code> · SILSO daily SSN · SWPC F10.7 / Kp · local git + GitHub commit counts. ";
+          if (data.sources.weekAnchor) tail += String(data.sources.weekAnchor).replace(/</g, "") + " ";
+          if (data.sources.ionosphereNote) tail += data.sources.ionosphereNote;
+          if (data.sources.lastNoaaMonth) tail += " Latest NOAA monthly F10.7 month: <strong>" + data.sources.lastNoaaMonth + "</strong>.";
           methodNote.innerHTML = tail;
         }
       }
 
       fetch("look-at-the-sun-study.json", { cache: "no-store" })
-        .then((r) => {
-          if (!r.ok) throw new Error(r.status + " " + r.statusText);
-          return r.json();
-        })
+        .then((r) => { if (!r.ok) throw new Error(r.status + " " + r.statusText); return r.json(); })
         .then(renderFromStudy)
         .catch((err) => {
-          setStatus("Snapshot file missing — try again later or open the JSON link above.", true);
+          setStatus("Snapshot missing — run scripts/build-look-at-the-sun-study.mjs", true);
           findingsHeadline.textContent = "No snapshot";
-          findingsLede.innerHTML = "";
-          findingsLede.hidden = true;
           findingsList.innerHTML = "<li>" + err.message + "</li>";
           findingsTop.hidden = false;
         });

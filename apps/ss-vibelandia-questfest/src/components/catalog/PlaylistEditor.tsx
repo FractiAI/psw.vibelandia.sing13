@@ -1,6 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
+import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 
 interface PlaylistEditorProps {
   playlistId: string;
@@ -11,7 +12,6 @@ interface PlaylistEditorProps {
 export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorProps) {
   const playlists = useCatalogStore((s) => s.playlists);
   const getTrack = useCatalogStore((s) => s.getTrack);
-  const listAllTracks = useCatalogStore((s) => s.listAllTracks);
   const updatePlaylist = useCatalogStore((s) => s.updatePlaylist);
   const deletePlaylist = useCatalogStore((s) => s.deletePlaylist);
   const addTrackToPlaylist = useCatalogStore((s) => s.addTrackToPlaylist);
@@ -20,10 +20,22 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
   const moveTrackInPlaylist = useCatalogStore((s) => s.moveTrackInPlaylist);
 
   const pl = playlists.find((p) => p.id === playlistId);
-  const [name, setName] = useState(pl?.name ?? '');
-  const [description, setDescription] = useState(pl?.description ?? '');
+  const masterPl = playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
+
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [showAdd, setShowAdd] = useState(false);
   const [addSearch, setAddSearch] = useState('');
+
+  const isMaster = isMasterPlaylist(playlistId);
+
+  useEffect(() => {
+    if (!pl) return;
+    setName(pl.name);
+    setDescription(pl.description);
+    setShowAdd(false);
+    setAddSearch('');
+  }, [playlistId, pl?.id, pl?.name, pl?.description]);
 
   const canReorder = (pl?.trackIds.length ?? 0) > 1;
   const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
@@ -39,8 +51,12 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
   }, [pl, getTrack]);
 
   const availableTracks = useMemo(() => {
+    if (isMaster) return [];
     const q = addSearch.trim().toLowerCase();
-    return listAllTracks()
+    const masterIds = masterPl?.trackIds ?? [];
+    return masterIds
+      .map((id) => getTrack(id))
+      .filter((t): t is NonNullable<typeof t> => !!t)
       .filter((t) => !inPlaylist.has(t.id))
       .filter((t) => {
         if (!q) return true;
@@ -50,7 +66,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
           (t.description?.toLowerCase().includes(q) ?? false)
         );
       });
-  }, [listAllTracks, inPlaylist, addSearch]);
+  }, [isMaster, masterPl?.trackIds, getTrack, inPlaylist, addSearch]);
 
   if (!pl) {
     return (
@@ -63,6 +79,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
     );
   }
 
+  const masterTrackCount = masterPl?.trackIds.length ?? 0;
+
   const saveMeta = () => {
     updatePlaylist(playlistId, { name, description });
   };
@@ -73,8 +91,9 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
   };
 
   const handleDelete = () => {
+    if (isMaster) return;
     if (playlists.length <= 1) return;
-    if (!window.confirm('Delete this playlist? Tracks stay in your catalog.')) return;
+    if (!window.confirm('Delete this playlist? Tracks stay in All uploads.')) return;
     deletePlaylist(playlistId);
     onDone();
   };
@@ -91,6 +110,13 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
           </button>
         )}
       </header>
+
+      {isMaster && (
+        <p className="sp-pl-edit-banner">
+          <strong>All uploads</strong> — every new upload is added here automatically. Build other playlists from this
+          list with <strong>+ Add songs</strong> on those playlists.
+        </p>
+      )}
 
       <div className="sp-pl-edit-meta">
         <label className="sp-library-field">
@@ -119,31 +145,31 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
       <div className="sp-pl-edit-tracks">
         <div className="sp-pl-edit-tracks-bar">
           <h2 className="sp-pl-edit-tracks-title">{playlistTracks.length} songs</h2>
-          <button
-            type="button"
-            className="sp-pl-edit-add-toggle"
-            onClick={() => setShowAdd((v) => !v)}
-            aria-expanded={showAdd}
-          >
-            {showAdd ? 'Hide add' : '+ Add songs'}
-          </button>
+          {!isMaster && (
+            <button
+              type="button"
+              className="sp-pl-edit-add-toggle"
+              onClick={() => setShowAdd((v) => !v)}
+              aria-expanded={showAdd}
+            >
+              {showAdd ? 'Hide add' : '+ Add from All uploads'}
+            </button>
+          )}
         </div>
 
-        {showAdd && (
+        {!isMaster && showAdd && (
           <div className="sp-pl-edit-add-panel">
             <input
               className="sp-search sp-pl-edit-add-search"
               type="search"
-              placeholder="Search your catalog"
+              placeholder="Search All uploads"
               value={addSearch}
               onChange={(e) => setAddSearch(e.target.value)}
             />
-            {availableTracks.length === 0 ? (
-              <p className="sp-pl-edit-add-empty">
-                {listAllTracks().length === 0
-                  ? 'No tracks yet — upload on the Upload tab.'
-                  : 'Every catalog track is already in this playlist.'}
-              </p>
+            {masterTrackCount === 0 ? (
+              <p className="sp-pl-edit-add-empty">All uploads is empty — add tracks on the Upload tab first.</p>
+            ) : availableTracks.length === 0 ? (
+              <p className="sp-pl-edit-add-empty">Every song from All uploads is already in this playlist.</p>
             ) : (
               <ul className="sp-pl-edit-add-list">
                 {availableTracks.map((tr) => (
@@ -167,10 +193,23 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
         )}
 
         {playlistTracks.length === 0 ? (
-          <p className="sp-pl-edit-empty">No songs yet. Tap <strong>+ Add songs</strong> above.</p>
+          <p className="sp-pl-edit-empty">
+            {isMaster ? (
+              <>No uploads yet. Use the <strong>Upload</strong> tab.</>
+            ) : (
+              <>
+                No songs yet. Tap <strong>+ Add from All uploads</strong> above.
+              </>
+            )}
+          </p>
         ) : (
           <>
-            <p className="sp-reorder-hint sp-pl-edit-hint">Hold ⋮⋮ and drag, or use ↑ ↓ to move</p>
+            {!isMaster && (
+              <p className="sp-reorder-hint sp-pl-edit-hint">Hold ⋮⋮ and drag, or use ↑ ↓ to move</p>
+            )}
+            {isMaster && (
+              <p className="sp-reorder-hint sp-pl-edit-hint">Order updates when you upload. Drag to sort your library.</p>
+            )}
             <ol className="sp-pl-edit-list" ref={listRef}>
               {playlistTracks.map((row, displayIndex) => {
                 const tr = row.track;
@@ -191,6 +230,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
                       onPointerMove={onGripPointerMove}
                       onPointerUp={(e) => onGripPointerUp(row.index, e)}
                       onPointerCancel={(e) => onGripPointerUp(row.index, e)}
+                      disabled={!canReorder}
                     >
                       ⋮⋮
                     </button>
@@ -219,14 +259,16 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
                         ↓
                       </button>
                     </div>
-                    <button
-                      type="button"
-                      className="sp-pl-edit-remove"
-                      onClick={() => removeTrackFromPlaylist(tr.id, playlistId)}
-                      aria-label={`Remove ${tr.title}`}
-                    >
-                      Remove
-                    </button>
+                    {!isMaster && (
+                      <button
+                        type="button"
+                        className="sp-pl-edit-remove"
+                        onClick={() => removeTrackFromPlaylist(tr.id, playlistId)}
+                        aria-label={`Remove ${tr.title}`}
+                      >
+                        Remove
+                      </button>
+                    )}
                   </li>
                 );
               })}
@@ -235,7 +277,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
         )}
       </div>
 
-      {playlists.length > 1 && (
+      {!isMaster && playlists.length > 1 && (
         <footer className="sp-pl-edit-foot">
           <button type="button" className="sp-library-delete" onClick={handleDelete}>
             Delete playlist

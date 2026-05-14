@@ -16,8 +16,8 @@
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
 | **QUESTFEST surface** | Hub + ETCon + press + Snap robots + Look at the Sun + Juicy Juicy Snap + FractiAI + Valet Pru + i18n (10 locales) + assets | `interfaces/` |
-| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, master playlists, Libretto log, manual Fair Exchange boarding, single-active-stream lock | Source: `apps/ss-vibelandia-questfest/` · production bundle: `interfaces/questfest-bridge/` (gitignored; built in CI or via `npm run build:questfest-bridge`) |
-| **Lite-edge APIs** | Manual boarding JWT + stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/upstash.mjs` |
+| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, Libretto log, manual Fair Exchange boarding, single-active-stream lock | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
+| **Lite-edge APIs** | Manual boarding JWT, per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/upstash.mjs` |
 | **SING 13 spine docs** | 13-channel pathfinding roadmap (May 12) + DNA/PEFF master canon (May 11) + slices + JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
 
@@ -33,6 +33,12 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 | **Catalog / licensing (500+ Reno swamp · caliente tracks)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
 
 Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via BroadcastChannel (same tab) + `/api/heartbeat` (cross-device; Upstash Redis when env is set).
+
+### Catalog playlists (Bridge Listen / Playlists)
+
+- **All uploads** (`pl-main`) is the master library: every upload is kept in sync automatically; it is not deletable as a playlist.
+- **Your playlists** can be empty while you edit them (they persist in local storage); add tracks from **All uploads** in the playlist editor. The sidebar hides empty playlists unless the empty one is active, so the list stays readable on mobile.
+- **Track list (Listen)** uses a responsive grid: narrow / iPhone layouts match column counts to visible cells (duration and extra columns hidden on small screens) so rows do not overflow horizontally.
 
 Configure handles and secrets via [`.env.example`](.env.example) — copy to Vercel project env. **`PASS_TOKEN_SECRET`** is required for live boarding.
 

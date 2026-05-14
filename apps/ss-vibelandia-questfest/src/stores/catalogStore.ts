@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { buildEmptyCatalog, CATALOG_VERSION } from '@/lib/catalogSeed';
+import { buildEmptyCatalog, CATALOG_VERSION, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import {
   deleteBlob,
   loadBlob,
@@ -68,21 +68,59 @@ function cloneSnapshot(s: CatalogSnapshot): CatalogSnapshot {
   };
 }
 
+/** Master playlist = all track ids: keep existing order, append any new ids, drop missing files. */
+function syncMasterPlaylistWithTracks(
+  tracks: Record<string, TrackDef>,
+  playlists: PlaylistDef[],
+): PlaylistDef[] {
+  const idx = playlists.findIndex((p) => p.id === MASTER_PLAYLIST_ID);
+  if (idx === -1) return playlists;
+  const master = playlists[idx];
+  const valid = new Set(Object.keys(tracks));
+  const kept = master.trackIds.filter((id) => valid.has(id));
+  const inKept = new Set(kept);
+  const missing = Object.keys(tracks)
+    .filter((id) => !inKept.has(id))
+    .sort((a, b) => {
+      const ua = tracks[a].uploadedAt ?? '';
+      const ub = tracks[b].uploadedAt ?? '';
+      if (ua !== ub) return ub.localeCompare(ua);
+      return a.localeCompare(b);
+    });
+  const nextIds = [...kept, ...missing];
+  const unchanged =
+    nextIds.length === master.trackIds.length && nextIds.every((id, i) => id === master.trackIds[i]);
+  if (unchanged) return playlists;
+  const next = [...playlists];
+  next[idx] = { ...master, trackIds: nextIds };
+  return next;
+}
+
 /** Only tracks stored on this device (uploads / device scan). Removes 552 seed entries. */
 function keepLocalTracksOnly(snapshot: CatalogSnapshot): CatalogSnapshot {
   const tracks: Record<string, TrackDef> = {};
   for (const [id, tr] of Object.entries(snapshot.tracks)) {
     if (tr.localMediaKey) tracks[id] = tr;
   }
-  let playlists = snapshot.playlists
-    .map((p) => ({ ...p, trackIds: p.trackIds.filter((tid) => tracks[tid]) }))
-    .filter((p) => p.id === 'pl-main' || p.trackIds.length > 0);
+  const validIds = new Set(Object.keys(tracks));
+
+  let playlists = snapshot.playlists.map((p) => ({
+    ...p,
+    trackIds: p.trackIds.filter((tid) => validIds.has(tid)),
+  }));
+
+  if (!playlists.some((p) => p.id === MASTER_PLAYLIST_ID)) {
+    const seedMaster = buildEmptyCatalog().playlists.find((p) => p.id === MASTER_PLAYLIST_ID)!;
+    playlists = [seedMaster, ...playlists.filter((p) => p.id !== MASTER_PLAYLIST_ID)];
+  }
+
+  playlists = syncMasterPlaylistWithTracks(tracks, playlists);
 
   if (!playlists.length) {
     playlists = buildEmptyCatalog().playlists;
   }
 
-  const main = playlists.find((p) => p.id === 'pl-main') ?? playlists[0];
+  const main = playlists.find((p) => p.id === MASTER_PLAYLIST_ID) ?? playlists[0];
   const activePlaylistId = playlists.some((p) => p.id === snapshot.activePlaylistId)
     ? snapshot.activePlaylistId
     : main.id;
@@ -171,7 +209,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   djMode: false,
   tracks: {},
   playlists: [],
-  activePlaylistId: 'pl-main',
+  activePlaylistId: MASTER_PLAYLIST_ID,
   search: '',
 
   setView: (v) => set({ view: v }),
@@ -232,6 +270,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   deletePlaylist: (id) => {
+    if (id === MASTER_PLAYLIST_ID) return;
     const { playlists, activePlaylistId } = get();
     if (playlists.length <= 1) return;
     const next = playlists.filter((p) => p.id !== id);
@@ -254,6 +293,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   removeTrackFromPlaylist: (trackId, playlistId) => {
+    if (playlistId === MASTER_PLAYLIST_ID) return;
     set((s) => ({
       playlists: s.playlists.map((p) =>
         p.id === playlistId ? { ...p, trackIds: p.trackIds.filter((t) => t !== trackId) } : p,
@@ -329,7 +369,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   importMediaFiles: async (files, opts) => {
-    const playlistIds = opts?.playlistIds?.length ? opts.playlistIds : ['pl-main'];
+    const playlistIds = opts?.playlistIds?.length ? opts.playlistIds : [MASTER_PLAYLIST_ID];
     const sourceKeys = new Set(
       Object.values(get().tracks)
         .map((t) => t.sourceKey)
@@ -390,7 +430,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     }
 
     const files = await scanDirectoryHandle(handle);
-    return get().importMediaFiles(files, { playlistIds: ['pl-main'] });
+    return get().importMediaFiles(files, { playlistIds: [MASTER_PLAYLIST_ID] });
   },
 
   deleteTrack: async (trackId) => {
@@ -430,17 +470,19 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       hydrated: true,
       tracks,
       playlists: base.playlists,
-      activePlaylistId: base.activePlaylistId || base.playlists[0]?.id || 'pl-main',
+      activePlaylistId: base.activePlaylistId || base.playlists[0]?.id || MASTER_PLAYLIST_ID,
     });
     get().persist();
   },
 
   persist: () => {
-    const { tracks, playlists, activePlaylistId } = get();
+    const { tracks, activePlaylistId } = get();
+    const playlists = syncMasterPlaylistWithTracks(tracks, get().playlists);
+    set({ playlists });
     saveCatalogJson({
       version: CATALOG_VERSION,
-      tracks: stripForStorage(tracks),
-      playlists,
+      tracks: stripForStorage(get().tracks),
+      playlists: get().playlists,
       activePlaylistId,
     });
   },

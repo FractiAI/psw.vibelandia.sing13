@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
+import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 
 interface DjStudioProps {
   onUploadSuccess?: (trackId: string) => void;
@@ -38,7 +39,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         title: title.trim(),
         artist: artist.trim() || DEFAULT_ARTIST,
         description,
-        playlistIds: ['pl-main'],
+        playlistIds: [MASTER_PLAYLIST_ID],
       });
       setMsg(`Uploaded “${title.trim()}”. Switching to Listen…`);
       setTitle('');

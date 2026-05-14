@@ -1,4 +1,6 @@
 import { useCatalogStore } from '@/stores/catalogStore';
+import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { useMemo } from 'react';
 
 interface CatalogSidebarProps {
   onDjClick: () => void;
@@ -18,6 +20,22 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
     setActive(id);
   };
 
+  const sortedPls = useMemo(() => {
+    return [...playlists].sort((a, b) => {
+      if (a.id === MASTER_PLAYLIST_ID) return -1;
+      if (b.id === MASTER_PLAYLIST_ID) return 1;
+      return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+    });
+  }, [playlists]);
+
+  const sidebarPls = useMemo(
+    () =>
+      sortedPls.filter(
+        (pl) => isMasterPlaylist(pl.id) || pl.trackIds.length > 0 || pl.id === activeId,
+      ),
+    [sortedPls, activeId],
+  );
+
   return (
     <aside className="sp-side">
       <div className="sp-side-logo">
@@ -34,7 +52,11 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
           className={`sp-side-link${!djMode ? ' sp-side-link--on' : ''}`}
           onClick={() => {
             setDjMode(false);
-            if (!activeId && playlists[0]) setActive(playlists[0].id);
+            if (!activeId && playlists[0]) {
+              const first =
+                playlists.find((p) => p.id === MASTER_PLAYLIST_ID) ?? playlists[0];
+              setActive(first.id);
+            }
           }}
         >
           <span className="sp-side-icon">🏠</span> Listen
@@ -64,16 +86,20 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
           </button>
         </div>
         <ul className="sp-pl-list">
-          {playlists.map((pl) => (
+          {sidebarPls.map((pl) => (
             <li key={pl.id}>
               <button
                 type="button"
                 className={`sp-pl-item${pl.id === activeId && !djMode ? ' sp-pl-item--on' : ''}`}
                 onClick={() => openListen(pl.id)}
               >
-                <span className="sp-pl-cover" aria-hidden>🎵</span>
+                <span className="sp-pl-cover" aria-hidden>
+                  {isMasterPlaylist(pl.id) ? '📚' : '🎵'}
+                </span>
                 <span className="sp-pl-text">
-                  <span className="sp-pl-name">{pl.name}</span>
+                  <span className="sp-pl-name">
+                    {pl.name}
+                  </span>
                   <span className="sp-pl-count">{pl.trackIds.length} tracks</span>
                 </span>
               </button>

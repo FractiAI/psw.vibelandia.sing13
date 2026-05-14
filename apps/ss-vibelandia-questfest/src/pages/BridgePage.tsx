@@ -67,6 +67,10 @@ export function BridgePage() {
   const isPlaylistsView =
     location.pathname === '/playlists' || location.hash === '#/playlists';
 
+  useEffect(() => {
+    if (!isPlaylistsView) setPlaylistEditId(null);
+  }, [isPlaylistsView]);
+
   const goDj = () => {
     setDjMode(true);
     navigate('/dj', { replace: true });
@@ -206,6 +210,7 @@ export function BridgePage() {
             <PlaylistLibrary
               onOpenPlaylist={openPlaylist}
               initialEditId={playlistEditId}
+              onClearInitialEdit={() => setPlaylistEditId(null)}
             />
           ) : djMode ? (
             <DjStudio onUploadSuccess={handleUploadSuccess} />

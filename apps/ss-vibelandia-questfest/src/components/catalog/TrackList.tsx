@@ -197,7 +197,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist }: TrackList
         <p className="sp-empty">
           {search.trim()
             ? 'No tracks match your search.'
-            : 'No tracks in this playlist yet. Tap Edit playlist to add songs.'}
+            : 'No tracks in this playlist yet. Open Playlists → Edit and add songs from All uploads.'}
         </p>
       )}
     </section>

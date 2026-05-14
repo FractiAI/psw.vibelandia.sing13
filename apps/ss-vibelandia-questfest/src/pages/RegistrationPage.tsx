@@ -14,12 +14,11 @@ export function RegistrationPage() {
         <p className="gate-kicker">Reno Swamp Catalog</p>
         <h1 className="gate-title">SS Vibelandia QUESTFEST</h1>
         <p className="gate-lead">
-          Your real tracks only — playlists on the left, player on the bottom. As creator, open{' '}
-          <strong>Upload &amp; playlists</strong> to scan your device and manage the catalog.
+          Empty catalog — upload a track, then listen and play. No demo or seed tracks.
         </p>
         <ul className="gate-list">
-          <li>Listen — browse playlists and play (30s preview free on each track).</li>
-          <li>Creator — scan device for audio/video, upload, create and edit playlists.</li>
+          <li>Upload — pick an audio or video file.</li>
+          <li>Listen — play your upload from the bottom player.</li>
           <li>Monthly pass unlocks uninterrupted playback when you are ready.</li>
         </ul>
         <div className="gate-actions">

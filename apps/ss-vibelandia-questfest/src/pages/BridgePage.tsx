@@ -30,6 +30,7 @@ export function BridgePage() {
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
   const setTrack = usePlaybackStore((s) => s.setTrack);
+  const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const setGain = usePlaybackStore((s) => s.setGain);
 
   const [fairOpen, setFairOpen] = useState(false);
@@ -60,6 +61,12 @@ export function BridgePage() {
     markCreator();
     setDjMode(true);
     navigate('/dj', { replace: true });
+  };
+
+  const handleUploadSuccess = (trackId: string) => {
+    goListen();
+    setTrack(trackId);
+    setPlaying(true);
   };
 
   const goListen = () => {
@@ -148,15 +155,14 @@ export function BridgePage() {
             <section className="sp-empty-catalog">
               <h2 className="sp-empty-catalog-title">No tracks yet</h2>
               <p className="sp-empty-catalog-desc">
-                Fake seed tracks were removed. As creator, scan your device folder or upload your audio
-                and music videos — then they appear here for listening.
+                Catalog is empty. Upload an audio or video file, then listen and press play.
               </p>
               <button type="button" className="sp-tab sp-tab--dj sp-tab--on" onClick={goDj}>
                 Open Upload &amp; playlists
               </button>
             </section>
           ) : djMode ? (
-            <DjStudio />
+            <DjStudio onUploadSuccess={handleUploadSuccess} />
           ) : (
             <TrackList isPassenger={isPassenger} />
           )}

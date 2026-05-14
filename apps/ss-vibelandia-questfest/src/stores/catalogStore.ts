@@ -1,10 +1,11 @@
 import { create } from 'zustand';
-import { buildEmptyCatalog } from '@/lib/catalogSeed';
+import { buildEmptyCatalog, CATALOG_VERSION } from '@/lib/catalogSeed';
 import {
   deleteBlob,
   loadBlob,
   loadCatalogJson,
   loadDeviceDirHandle,
+  resetLocalCatalog,
   saveBlob,
   saveCatalogJson,
   saveDeviceDirHandle,
@@ -81,7 +82,7 @@ function keepLocalTracksOnly(snapshot: CatalogSnapshot): CatalogSnapshot {
     : main.id;
 
   return {
-    version: 3,
+    version: CATALOG_VERSION,
     tracks,
     playlists,
     activePlaylistId,
@@ -358,8 +359,20 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
   hydrate: async () => {
     const saved = loadCatalogJson<CatalogSnapshot>();
-    const raw = saved ? cloneSnapshot(saved) : buildEmptyCatalog();
-    const base = keepLocalTracksOnly(raw);
+    if (!saved || saved.version < CATALOG_VERSION) {
+      await resetLocalCatalog();
+      const base = buildEmptyCatalog();
+      set({
+        hydrated: true,
+        tracks: {},
+        playlists: base.playlists,
+        activePlaylistId: base.activePlaylistId,
+      });
+      get().persist();
+      return;
+    }
+
+    const base = keepLocalTracksOnly(cloneSnapshot(saved));
     const tracks = await attachBlobUrls(base.tracks);
     set({
       hydrated: true,
@@ -373,7 +386,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   persist: () => {
     const { tracks, playlists, activePlaylistId } = get();
     saveCatalogJson({
-      version: 3,
+      version: CATALOG_VERSION,
       tracks: stripForStorage(tracks),
       playlists,
       activePlaylistId,

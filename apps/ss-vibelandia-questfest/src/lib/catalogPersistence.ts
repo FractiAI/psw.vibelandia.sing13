@@ -80,7 +80,32 @@ export function saveCatalogJson(data: unknown): void {
   localStorage.setItem(LS_KEY, JSON.stringify(data));
 }
 
-/** Drop seed / remote demo tracks — keep only real local media. */
 export function clearCatalogStorage(): void {
   localStorage.removeItem(LS_KEY);
+}
+
+export async function clearAllBlobs(): Promise<void> {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(BLOB_STORE, 'readwrite');
+    tx.objectStore(BLOB_STORE).clear();
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
+export async function clearMetaStore(): Promise<void> {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(META_STORE, 'readwrite');
+    tx.objectStore(META_STORE).clear();
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+  });
+}
+
+export async function resetLocalCatalog(): Promise<void> {
+  clearCatalogStorage();
+  await clearAllBlobs();
+  await clearMetaStore();
 }

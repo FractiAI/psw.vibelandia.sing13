@@ -1,25 +1,29 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { usePlaylistStore } from '@/stores/playlistStore';
+import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useStreamLock } from '@/hooks/useStreamLock';
-import { SolenoidPlayer } from '@/components/player/SolenoidPlayer';
 import { FairExchangeModal } from '@/components/player/FairExchangeModal';
 import { VesselSwitchModal } from '@/components/player/VesselSwitchModal';
 import { BoardingModal } from '@/components/payment/BoardingModal';
-import { CatalogPanel } from '@/components/payment/CatalogPanel';
-import { LibrettoOverlay } from '@/components/libretto/LibrettoOverlay';
+import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
+import { TrackList } from '@/components/catalog/TrackList';
+import { DjStudio } from '@/components/catalog/DjStudio';
+import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { useSessionStore } from '@/stores/sessionStore';
 
 export function BridgePage() {
-  const hydrate = useSessionStore((s) => s.hydrateFromStorage);
+  const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
   const boardingError = useSessionStore((s) => s.boardingError);
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const disembark = useSessionStore((s) => s.disembark);
 
-  const getActivePlaylist = usePlaylistStore((s) => s.getActivePlaylist);
+  const hydrateCatalog = useCatalogStore((s) => s.hydrate);
+  const hydrated = useCatalogStore((s) => s.hydrated);
+  const djMode = useCatalogStore((s) => s.djMode);
+  const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
   const setTrack = usePlaybackStore((s) => s.setTrack);
   const setGain = usePlaybackStore((s) => s.setGain);
 
@@ -37,18 +41,20 @@ export function BridgePage() {
   }, []);
 
   useEffect(() => {
-    hydrate();
-  }, [hydrate]);
+    hydrateSession();
+    void hydrateCatalog();
+  }, [hydrateSession, hydrateCatalog]);
 
-  const activePlaylistId = usePlaylistStore((s) => s.activePlaylistId);
+  const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
   useEffect(() => {
+    if (!hydrated) return;
     const pl = getActivePlaylist();
     if (!pl?.trackIds.length) return;
     const cur = usePlaybackStore.getState().currentTrackId;
     if (!cur || !pl.trackIds.includes(cur)) {
       setTrack(pl.trackIds[0]);
     }
-  }, [activePlaylistId, getActivePlaylist, setTrack]);
+  }, [activePlaylistId, getActivePlaylist, hydrated, setTrack]);
 
   const handleBoarding = async (
     rail: Parameters<typeof completeBoarding>[0],
@@ -63,49 +69,51 @@ export function BridgePage() {
     }
   };
 
-  return (
-    <div className="bridge">
-      <header className="bridge-top bridge-top--warm">
-        <div>
-          <p className="bridge-eyebrow">SS Vibelandia · QUESTFEST</p>
-          <h1 className="bridge-title">Reno Swamp Player &amp; Catalog</h1>
-          <p className="bridge-tagline">Everything free for 30 seconds — then stay if the vibe hits.</p>
-        </div>
-        <nav className="bridge-nav">
-          <Link to="/" className="voxel-btn voxel-btn--ghost">
-            Passenger hatch
-          </Link>
-          <button
-            type="button"
-            className="voxel-btn"
-            onClick={() => {
-              disembark();
-              usePlaybackStore.getState().setPlaying(false);
-              usePlaybackStore.getState().setGain(1);
-            }}
-          >
-            Disembark
-          </button>
-        </nav>
-      </header>
+  if (!hydrated) {
+    return (
+      <div className="spotify-shell spotify-shell--loading">
+        <p>Loading catalog…</p>
+      </div>
+    );
+  }
 
-      <main className="bridge-main">
-        <section className="bridge-col bridge-col--wide">
-          <div className="bridge-player-stack">
-            <SolenoidPlayer
-              onFairExchange={onFairExchange}
-              onVesselSwitch={onVesselSwitch}
-              killReason={stream.killReason}
-              beginSession={stream.beginSession}
-              clearKill={stream.clearKill}
-            />
-            <LibrettoOverlay />
-          </div>
-        </section>
-        <aside className="bridge-col bridge-aside">
-          <CatalogPanel isPassenger={isPassenger} />
-        </aside>
-      </main>
+  return (
+    <div className="spotify-shell">
+      <CatalogSidebar />
+
+      <div className="spotify-body">
+        <header className="spotify-topbar">
+          <p className="spotify-topbar-title">Hero Jo Golden Bachdoor Hit Factory · Reno Swamp Beats Caliente</p>
+          <nav className="spotify-topbar-nav">
+            <Link to="/" className="spotify-link">
+              Home
+            </Link>
+            <button
+              type="button"
+              className="spotify-link spotify-link--btn"
+              onClick={() => {
+                disembark();
+                usePlaybackStore.getState().setPlaying(false);
+                setGain(1);
+              }}
+            >
+              {isPassenger ? 'Sign out pass' : 'Account'}
+            </button>
+          </nav>
+        </header>
+
+        <main className="spotify-content">
+          {djMode ? <DjStudio /> : <TrackList isPassenger={isPassenger} />}
+        </main>
+      </div>
+
+      <NowPlayingBar
+        onFairExchange={onFairExchange}
+        onVesselSwitch={onVesselSwitch}
+        killReason={stream.killReason}
+        beginSession={stream.beginSession}
+        clearKill={stream.clearKill}
+      />
 
       <FairExchangeModal
         open={fairOpen}

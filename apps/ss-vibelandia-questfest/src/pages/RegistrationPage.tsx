@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export function RegistrationPage() {
   useEffect(() => {
-    useSessionStore.getState().hydrate();
+    useSessionStore.getState().hydrateFromStorage();
   }, []);
 
   return (

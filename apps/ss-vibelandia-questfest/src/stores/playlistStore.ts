@@ -1,33 +1,7 @@
-import { create } from 'zustand';
-import { INITIAL_PLAYLISTS, TRACKS, type PlaylistDef, type TrackDef } from '@/lib/demoTracks';
+export {
+  useCatalogStore,
+  usePlaylistStore,
+} from '@/stores/catalogStore';
 
-interface PlaylistState {
-  playlists: PlaylistDef[];
-  activePlaylistId: string;
-  setActivePlaylist: (id: string) => void;
-  moveTrackToPlaylist: (trackId: string, targetPlaylistId: string) => void;
-  getActivePlaylist: () => PlaylistDef | undefined;
-  getTrack: (id: string) => TrackDef | undefined;
-}
-
-export const usePlaylistStore = create<PlaylistState>((set, get) => ({
-  playlists: INITIAL_PLAYLISTS.map((p) => ({ ...p, trackIds: [...p.trackIds] })),
-  activePlaylistId: 'pl-sovereign',
-  setActivePlaylist: (id) => set({ activePlaylistId: id }),
-  moveTrackToPlaylist: (trackId, targetPlaylistId) =>
-    set((s) => {
-      const next = s.playlists.map((pl) => ({
-        ...pl,
-        trackIds: pl.trackIds.filter((t) => t !== trackId),
-      }));
-      const i = next.findIndex((p) => p.id === targetPlaylistId);
-      if (i === -1) return s;
-      next[i] = {
-        ...next[i],
-        trackIds: [...next[i].trackIds, trackId],
-      };
-      return { playlists: next };
-    }),
-  getActivePlaylist: () => get().playlists.find((p) => p.id === get().activePlaylistId),
-  getTrack: (id) => TRACKS[id],
-}));
+export type { TrackDef, PlaylistDef, PlaylistKind } from '@/lib/catalogTypes';
+export { DEMO_LONG_MP3, DEMO_SHORT_MP3, DEMO_VIDEO_MP4, SEED_TRACK_COUNT } from '@/lib/catalogSeed';

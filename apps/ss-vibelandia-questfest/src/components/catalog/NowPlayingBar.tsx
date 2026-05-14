@@ -1,27 +1,29 @@
-import { useEffect, useRef, useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { usePlaybackStore } from '@/stores/playbackStore';
-import { usePlaylistStore } from '@/stores/playlistStore';
+import { useCatalogStore } from '@/stores/catalogStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { KillReason } from '@/hooks/useStreamLock';
 
 const GATE_SEC = 29;
 const FADE_START = 28.85;
 
-interface SolenoidPlayerProps {
+interface NowPlayingBarProps {
   onFairExchange: () => void;
   onVesselSwitch: (reason: Exclude<KillReason, null>) => void;
   killReason: KillReason;
   beginSession: () => void;
   clearKill: () => void;
+  expanded?: boolean;
 }
 
-export function SolenoidPlayer({
+export function NowPlayingBar({
   onFairExchange,
   onVesselSwitch,
   killReason,
   beginSession,
   clearKill,
-}: SolenoidPlayerProps) {
+  expanded = false,
+}: NowPlayingBarProps) {
   const mediaRef = useRef<HTMLVideoElement | HTMLAudioElement | null>(null);
   const gateArmedRef = useRef(true);
   const [error, setError] = useState<string | null>(null);
@@ -34,8 +36,8 @@ export function SolenoidPlayer({
   const setDisplayTime = usePlaybackStore((s) => s.setDisplayTime);
   const setGain = usePlaybackStore((s) => s.setGain);
 
-  const getTrack = usePlaylistStore((s) => s.getTrack);
-  const getActivePlaylist = usePlaylistStore((s) => s.getActivePlaylist);
+  const getTrack = useCatalogStore((s) => s.getTrack);
+  const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
 
   const isPassenger = useSessionStore((s) => s.isPassenger);
 
@@ -127,67 +129,91 @@ export function SolenoidPlayer({
     return `${m}:${sec.toString().padStart(2, '0')}`;
   }, []);
 
-  if (!track) {
-    return (
-      <div className="voxel-panel player-empty">
-        <p>Pick a track from the catalog.</p>
-      </div>
-    );
-  }
+  const playNext = () => {
+    if (!pl || !currentTrackId) return;
+    const idx = pl.trackIds.indexOf(currentTrackId);
+    const next = pl.trackIds[idx + 1];
+    if (next) {
+      usePlaybackStore.getState().setTrack(next);
+      setPlaying(true);
+    }
+  };
+
+  const playPrev = () => {
+    if (!pl || !currentTrackId) return;
+    const idx = pl.trackIds.indexOf(currentTrackId);
+    const prev = pl.trackIds[Math.max(0, idx - 1)];
+    if (prev) {
+      usePlaybackStore.getState().setTrack(prev);
+      setPlaying(true);
+    }
+  };
+
+  const togglePlay = () => {
+    clearKill();
+    setGain(1);
+    setPlaying(!isPlaying);
+  };
 
   return (
-    <div className="voxel-panel player-wrap">
-      {isVideo ? (
+    <footer className={`spotify-now${expanded ? ' spotify-now--expanded' : ''}`}>
+      {expanded && track && isVideo && (
         <video
           ref={mediaRef as React.RefObject<HTMLVideoElement>}
-          className="player-video"
+          className="spotify-now-video"
           preload="metadata"
           playsInline
           poster={track.posterSrc}
         />
-      ) : (
+      )}
+      {expanded && track && !isVideo && (
         <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} preload="metadata" />
       )}
+      {!expanded && track && (
+        isVideo ? (
+          <video ref={mediaRef as React.RefObject<HTMLVideoElement>} className="sr-only" preload="metadata" playsInline />
+        ) : (
+          <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} className="sr-only" preload="metadata" />
+        )
+      )}
 
-      <div className="player-head">
-        <div>
-          <div className="player-label">Now playing {isVideo ? '· video' : '· audio'}</div>
-          <h3 className="player-title">{track.title}</h3>
-          <div className="player-artist">{track.artist}</div>
+      <div className="spotify-now-inner">
+        <div className="spotify-now-track">
+          {track ? (
+            <>
+              <p className="spotify-now-title">{track.title}</p>
+              <p className="spotify-now-artist">{track.artist}</p>
+              {solenoidActive && <span className="spotify-now-badge">30s preview</span>}
+              {isPassenger && <span className="spotify-now-badge spotify-now-badge--pass">Full play</span>}
+            </>
+          ) : (
+            <p className="spotify-now-empty">Pick a track to play</p>
+          )}
         </div>
-        <div className="player-time">
-          <span>{fmt(displayTime)}</span>
-          {solenoidActive && <span className="solenoid-badge">30s preview</span>}
-          {isPassenger && <span className="pass-badge">Full play</span>}
+
+        <div className="spotify-now-controls">
+          <button type="button" className="spotify-now-btn" onClick={playPrev} disabled={!track} aria-label="Previous">
+            ⏮
+          </button>
+          <button
+            type="button"
+            className="spotify-now-btn spotify-now-btn--play"
+            onClick={togglePlay}
+            disabled={!track}
+            aria-label={isPlaying ? 'Pause' : 'Play'}
+          >
+            {isPlaying ? '⏸' : '▶'}
+          </button>
+          <button type="button" className="spotify-now-btn" onClick={playNext} disabled={!track} aria-label="Next">
+            ⏭
+          </button>
+        </div>
+
+        <div className="spotify-now-time">
+          {track && <span>{fmt(displayTime)}</span>}
+          {error && <span className="spotify-now-error">{error}</span>}
         </div>
       </div>
-
-      {error && <p className="player-error">{error}</p>}
-
-      <div className="player-controls">
-        <button
-          type="button"
-          className="voxel-btn voxel-btn--cyan"
-          onClick={() => {
-            clearKill();
-            setGain(1);
-            setPlaying(!isPlaying);
-          }}
-        >
-          {isPlaying ? 'Pause' : 'Play'}
-        </button>
-        <button type="button" className="voxel-btn" onClick={() => setPlaying(false)}>
-          Stop
-        </button>
-      </div>
-
-      <p className="player-hint">
-        {pl?.kind === 'sovereign' && !isPassenger
-          ? '30 seconds free — then we offer the monthly pass.'
-          : isPassenger
-            ? 'Full catalog unlocked.'
-            : 'Open deck — full preview on this playlist.'}
-      </p>
-    </div>
+    </footer>
   );
 }

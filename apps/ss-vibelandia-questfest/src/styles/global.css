@@ -1855,6 +1855,16 @@ a.voxel-btn {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem 1rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.sp-toolbar .sp-hero-secondary {
+  flex: 0 1 auto;
+  min-width: 0;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
 }
 
 .sp-reorder-hint {
@@ -1865,6 +1875,8 @@ a.voxel-btn {
 
 .sp-search-wrap {
   display: block;
+  flex: 1 1 12rem;
+  min-width: 0;
   max-width: 320px;
 }
 
@@ -2539,6 +2551,11 @@ a.voxel-btn {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Master playlist has no Remove column — match grid to four children */
+.sp-pl-edit-row--master {
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
+}
+
 .sp-pl-edit-row--dragging {
   background: #333;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
@@ -2634,6 +2651,13 @@ a.voxel-btn {
       'grip idx moves remove';
   }
 
+  .sp-pl-edit-row--master {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    grid-template-areas:
+      'grip idx info'
+      'grip idx moves';
+  }
+
   .sp-row-grip {
     grid-area: grip;
     align-self: center;
@@ -2646,10 +2670,12 @@ a.voxel-btn {
 
   .sp-pl-edit-track-info {
     grid-area: info;
+    min-width: 0;
   }
 
   .sp-pl-edit-moves {
     grid-area: moves;
+    justify-self: end;
   }
 
   .sp-pl-edit-remove {
@@ -2865,6 +2891,21 @@ a.voxel-btn {
     min-width: 0;
     padding-left: max(1rem, env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .sp-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sp-toolbar .sp-search-wrap {
+    max-width: none;
+    flex: none;
+    width: 100%;
+  }
+
+  .sp-toolbar .sp-hero-secondary {
+    width: 100%;
   }
 
   .sp-now {

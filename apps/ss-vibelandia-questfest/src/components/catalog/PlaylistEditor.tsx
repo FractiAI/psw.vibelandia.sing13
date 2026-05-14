@@ -220,7 +220,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
                   <li
                     key={tr.id}
                     data-reorder-idx={row.index}
-                    className={`sp-pl-edit-row${dragging ? ' sp-pl-edit-row--dragging' : ''}${dropBefore ? ' sp-pl-edit-row--drop' : ''}`}
+                    className={`sp-pl-edit-row${isMaster ? ' sp-pl-edit-row--master' : ''}${dragging ? ' sp-pl-edit-row--dragging' : ''}${dropBefore ? ' sp-pl-edit-row--drop' : ''}`}
                   >
                     <button
                       type="button"

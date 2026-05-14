@@ -4,269 +4,167 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Look at the Sun · SS Vibelandia QUESTFEST</title>
-  <meta name="description" content="Static snapshot: real sunspot and F10.7 ionospheric data aligned with studio ship weeks. Not a live feed." />
+  <meta name="description" content="Plain snapshot: what the Sun and ionosphere were doing, next to studio ship weeks. Not live." />
   <link rel="canonical" href="https://psw-vibelandia-sing13.vercel.app/interfaces/look-at-the-sun.html" />
   <style>
     :root {
       --bg: #050810;
-      --card: #0f1524;
-      --line: rgba(212, 175, 55, 0.28);
-      --gold: #d4af37;
-      --gold-hi: #fef3c7;
+      --card: #101828;
+      --line: rgba(212, 175, 55, 0.25);
+      --gold: #f5d77a;
       --text: #e8edf5;
-      --muted: #8b9ab5;
-      --mint: #2dd4bf;
-      --pink: #f472b6;
-      --cyan: #67e8f9;
-      --sun-core: #fff4d0;
-      --sun-mid: #ffb347;
-      --sun-edge: #e85d04;
+      --muted: #9aa8bf;
+      --mint: #5eead4;
     }
     * { box-sizing: border-box; }
     html, body {
       margin: 0;
-      font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-      background: radial-gradient(ellipse 120% 60% at 50% -10%, rgba(232, 93, 4, 0.12), transparent 50%), var(--bg);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.55;
+      font-size: 1rem;
     }
-    a { color: var(--cyan); }
-    a:hover { color: var(--gold-hi); }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 1rem 1rem 2.5rem; }
-    .topbar { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
-    .btn {
-      display: inline-flex; align-items: center;
-      border-radius: 999px; border: 1px solid var(--line);
-      background: rgba(15, 21, 36, .85); color: var(--gold-hi);
-      text-decoration: none; padding: .45rem .8rem;
-      font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
+    a { color: var(--mint); }
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: max(1rem, env(safe-area-inset-top)) 1rem max(2rem, env(safe-area-inset-bottom));
     }
-    .btn:hover { border-color: var(--gold); }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(140px, 180px) 1fr;
-      gap: 1.25rem;
-      align-items: center;
+    .nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
+    .nav a {
+      font-size: .8rem;
+      text-decoration: none;
+      color: var(--gold);
       border: 1px solid var(--line);
-      border-radius: 16px;
-      background: linear-gradient(145deg, rgba(18, 24, 40, .95), rgba(8, 10, 18, .98));
-      padding: 1.1rem 1.2rem;
-      margin-bottom: 1rem;
-      overflow: hidden;
+      border-radius: 999px;
+      padding: .35rem .7rem;
     }
-    @media (max-width: 640px) { .hero { grid-template-columns: 1fr; text-align: center; } }
-
-    .sun-disk-wrap { display: flex; justify-content: center; }
-    .sun-disk {
-      width: 150px; height: 150px; border-radius: 50%;
-      background: radial-gradient(circle at 35% 32%, var(--sun-core) 0%, var(--sun-mid) 35%, var(--sun-edge) 72%, #5a1800 100%);
-      box-shadow: 0 0 60px rgba(255, 140, 40, 0.45), 0 0 120px rgba(255, 100, 20, 0.2);
-      position: relative;
-    }
-    .sun-disk img {
-      width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
-      mix-blend-mode: screen; opacity: .55;
-    }
-    .sun-disk::after {
-      content: ""; position: absolute; inset: -8%;
-      border-radius: 50%;
-      background: radial-gradient(circle, transparent 55%, rgba(255, 180, 60, .15) 100%);
-      pointer-events: none;
-    }
-
-    .hero h1 {
+    h1 {
       margin: 0 0 .35rem;
-      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      font-size: 1.75rem;
       font-weight: 800;
-      color: var(--gold-hi);
-      letter-spacing: .02em;
+      color: var(--gold);
     }
-    .hero .tag {
-      font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--mint); margin: 0 0 .4rem;
+    .sub {
+      margin: 0 0 1.25rem;
+      color: var(--muted);
+      font-size: .95rem;
     }
-    .hero .lede { margin: 0; font-size: .88rem; color: var(--muted); max-width: 52ch; }
-    .hero .lede strong { color: var(--text); }
-    .snapshot-pill {
-      display: inline-block; margin-top: .65rem;
-      font-size: .65rem; letter-spacing: .08em; text-transform: uppercase;
-      padding: .25rem .55rem; border-radius: 999px;
-      border: 1px solid rgba(45, 212, 191, .4);
-      color: var(--mint); background: rgba(45, 212, 191, .08);
+    .pill {
+      display: inline-block;
+      font-size: .72rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .2rem .5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(94, 234, 212, .35);
+      color: var(--mint);
+      margin-bottom: 1.5rem;
     }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: .55rem;
-      margin-bottom: 1rem;
-    }
-    .metric {
+    section {
       border: 1px solid var(--line);
       border-radius: 12px;
       background: var(--card);
-      padding: .65rem .75rem;
-    }
-    .metric-k {
-      font-size: .58rem; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--muted); margin: 0 0 .2rem;
-    }
-    .metric-v {
-      font-size: 1.35rem; font-weight: 800; color: var(--gold-hi); margin: 0;
-      line-height: 1.1;
-    }
-    .metric-u { font-size: .68rem; color: var(--muted); margin: .15rem 0 0; }
-
-    .findings, .alignment {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: linear-gradient(165deg, rgba(22, 30, 48, .96), rgba(10, 14, 22, .97));
       padding: 1rem 1.1rem;
       margin-bottom: 1rem;
     }
-    .findings h2, .alignment h2 {
-      margin: 0 0 .55rem; font-size: 1rem; font-weight: 800; color: var(--gold-hi);
+    h2 {
+      margin: 0 0 .75rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--gold);
     }
-    .findings .lede, .alignment p {
-      margin: 0 0 .65rem; font-size: .88rem; line-height: 1.58; color: #cbd5e1;
+    ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--text);
     }
-    .findings ul { margin: 0; padding-left: 1.1rem; font-size: .86rem; color: var(--muted); }
-    .findings li { margin-bottom: .4rem; }
-    .findings strong, .alignment strong { color: var(--text); font-weight: 600; }
-    .findings code, .alignment code {
-      font-size: .78em; background: rgba(0,0,0,.35);
-      padding: .06rem .25rem; border-radius: 4px; color: var(--mint);
+    li { margin-bottom: .55rem; }
+    li strong { color: var(--gold); font-weight: 700; }
+    .explain p {
+      margin: 0 0 .65rem;
+      color: #cbd5e1;
+      font-size: .95rem;
     }
-
+    .explain p:last-child { margin-bottom: 0; }
     .chart-wrap {
-      border: 1px solid var(--line); border-radius: 12px;
-      background: var(--card); padding: .65rem; overflow-x: auto; margin-bottom: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      padding: .5rem;
+      overflow-x: auto;
+      margin-bottom: 1rem;
     }
-    canvas { display: block; width: 100%; height: 340px; min-width: 720px; }
-    .legend {
-      display: flex; flex-wrap: wrap; gap: .65rem;
-      font-size: .72rem; margin-top: .55rem; color: var(--muted);
+    canvas { display: block; width: 100%; height: 220px; min-width: 320px; }
+    .legend { font-size: .75rem; color: var(--muted); margin-top: .4rem; }
+    .foot {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.45;
     }
-    .dot {
-      display: inline-block; width: .55rem; height: .55rem;
-      border-radius: 50%; margin-right: .3rem; vertical-align: middle;
-    }
-    .iono-note {
-      margin-top: .5rem; font-size: .72rem; color: var(--muted);
-      line-height: 1.45; max-width: 52rem;
-    }
-
-    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
-    table { width: 100%; border-collapse: collapse; font-size: .76rem; min-width: 720px; }
-    th, td {
-      border-bottom: 1px solid rgba(255,255,255,.07);
-      padding: .42rem .4rem; text-align: right; white-space: nowrap;
-    }
-    th:first-child, td:first-child { text-align: left; }
-    th {
-      color: var(--gold-hi); font-size: .64rem; letter-spacing: .06em;
-      text-transform: uppercase; background: rgba(255,255,255,.03);
-    }
-    .method-note { margin-top: 1rem; font-size: .72rem; color: var(--muted); line-height: 1.45; }
-    .status { margin-top: .5rem; font-size: .8rem; color: var(--mint); min-height: 1.15rem; }
     .error { color: #fca5a5; }
-    .credit { font-size: .62rem; color: rgba(255,255,255,.35); margin-top: .35rem; }
+    details { margin-top: 1rem; font-size: .85rem; color: var(--muted); }
+    summary { cursor: pointer; color: var(--gold); font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; font-size: .75rem; margin-top: .5rem; }
+    th, td { border-bottom: 1px solid rgba(255,255,255,.08); padding: .35rem .25rem; text-align: right; }
+    th:first-child, td:first-child { text-align: left; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="topbar">
-      <a class="btn" href="vibelandia-questfest.html">QUESTFEST hub</a>
-      <a class="btn" href="look-under-the-hood.html">Look under the hood</a>
-      <a class="btn" href="look-at-the-sun-study.json">Download JSON</a>
-    </div>
+    <nav class="nav">
+      <a href="vibelandia-questfest.html">QUESTFEST</a>
+      <a href="look-under-the-hood.html">Under the hood</a>
+    </nav>
 
-    <header class="hero">
-      <div class="sun-disk-wrap">
-        <div class="sun-disk" aria-hidden="true">
-          <img id="sunImg" src="" alt="" width="150" height="150" hidden />
-        </div>
-      </div>
-      <div>
-        <p class="tag">SING 13 · hydrogen-line edge · ionosphere</p>
-        <h1>Look at the Sun</h1>
-        <p class="lede">
-          A <strong>saved study</strong> — not a live dashboard. Real NOAA and SILSO sunspot and F10.7 data on the same weekly clock as public ship commits from the Vibelandia edges.
-        </p>
-        <span class="snapshot-pill" id="snapshotPill">Loading snapshot…</span>
-        <div id="status" class="status"></div>
-      </div>
-    </header>
+    <h1>Look at the Sun</h1>
+    <p class="sub">Saved study — not a live feed. Real NOAA and SILSO numbers, frozen when we built the page.</p>
+    <p class="pill" id="snapshotPill">Loading…</p>
 
-    <section class="metrics" id="metrics" hidden aria-label="Snapshot metrics"></section>
-
-    <section id="findingsTop" class="findings" hidden aria-labelledby="findingsHeadline">
-      <h2 id="findingsHeadline"></h2>
-      <p id="findingsLede" class="lede" hidden></p>
+    <section id="findingsBlock" hidden>
+      <h2>What we found</h2>
       <ul id="findingsList"></ul>
     </section>
 
-    <section id="alignment" class="alignment" hidden aria-labelledby="alignmentTitle">
-      <h2 id="alignmentTitle"></h2>
-      <div id="alignmentBody"></div>
+    <section id="explainBlock" class="explain" hidden>
+      <h2>What that means</h2>
+      <div id="explainBody"></div>
     </section>
 
-    <section class="chart-wrap">
-      <canvas id="sunChart" width="1100" height="340" aria-label="Weekly sun, ionosphere, and studio series"></canvas>
-      <div class="legend">
-        <span><span class="dot" style="background:#67e8f9"></span>Git commits / week</span>
-        <span><span class="dot" style="background:#fef3c7"></span>Sun — mean daily SSN</span>
-        <span><span class="dot" style="background:#d4af37"></span>Ionosphere — mean F10.7 (sfu)</span>
-      </div>
-      <p class="iono-note">
-        <strong>How to read it:</strong> sunspot number tracks active regions on the Sun; F10.7 tracks solar EUV that drives the ionosphere. Studio commits are ship-room output on the same UTC Monday weeks — correlation is observational, not causal.
-      </p>
-    </section>
+    <div class="chart-wrap">
+      <canvas id="sunChart" width="640" height="220" aria-label="Sun and studio weeks chart"></canvas>
+      <p class="legend">Gold = Sun (sunspots). Teal = studio commits per week. Same 52-week clock.</p>
+    </div>
 
-    <section class="table-wrap">
+    <details>
+      <summary>Weekly numbers (table)</summary>
       <table id="dataTable">
         <thead>
-          <tr>
-            <th>Week (UTC Mon)</th>
-            <th>Git commits</th>
-            <th>Sun (SSN)</th>
-            <th>Ionosphere F10.7</th>
-          </tr>
+          <tr><th>Week</th><th>Commits</th><th>Sunspots</th><th>F10.7</th></tr>
         </thead>
         <tbody></tbody>
       </table>
-    </section>
+    </details>
 
-    <p id="methodNote" class="method-note"></p>
-    <p id="imgCredit" class="credit" hidden></p>
+    <p id="foot" class="foot"></p>
+    <p id="status" class="foot"></p>
   </div>
 
   <script>
     (function () {
+      const findingsList = document.getElementById("findingsList");
+      const findingsBlock = document.getElementById("findingsBlock");
+      const explainBlock = document.getElementById("explainBlock");
+      const explainBody = document.getElementById("explainBody");
+      const snapshotPill = document.getElementById("snapshotPill");
       const statusEl = document.getElementById("status");
+      const foot = document.getElementById("foot");
       const chart = document.getElementById("sunChart");
       const ctx = chart.getContext("2d");
-      const findingsTop = document.getElementById("findingsTop");
-      const findingsHeadline = document.getElementById("findingsHeadline");
-      const findingsLede = document.getElementById("findingsLede");
-      const findingsList = document.getElementById("findingsList");
-      const alignment = document.getElementById("alignment");
-      const alignmentTitle = document.getElementById("alignmentTitle");
-      const alignmentBody = document.getElementById("alignmentBody");
-      const methodNote = document.getElementById("methodNote");
-      const metrics = document.getElementById("metrics");
-      const snapshotPill = document.getElementById("snapshotPill");
-      const sunImg = document.getElementById("sunImg");
-      const imgCredit = document.getElementById("imgCredit");
-
-      function setStatus(msg, isError) {
-        statusEl.textContent = msg;
-        statusEl.classList.toggle("error", !!isError);
-      }
 
       function norm(values) {
-        const finite = values.map((v) => (v == null ? NaN : Number(v))).filter((n) => Number.isFinite(n));
+        const finite = values.map((v) => (v == null ? NaN : Number(v))).filter(Number.isFinite);
         const max = finite.length ? Math.max(...finite) : 1;
         return values.map((v) => {
           const n = v == null ? NaN : Number(v);
@@ -274,139 +172,88 @@
         });
       }
 
-      function liteFormat(s) {
-        return String(s)
+      function plainFindings(data) {
+        const s = data.summary || {};
+        const bullets = [
+          "Today the Sun shows **" + (s.latestSunspot ?? "—") + " sunspots** (SILSO daily number).",
+          "Ionosphere driver **F10.7** is about **" + (s.latestF107 != null ? s.latestF107.toFixed(0) : "—") + "** — moderate background.",
+          "Geomagnetic **Kp** averaged **" + (s.meanKp7d != null ? s.meanKp7d.toFixed(1) : "—") + "** lately. Under 3 is quiet.",
+          "Sun activity **ticked up** the last month vs the month before (mean sunspots ~99 vs ~88).",
+          "We counted **" + (s.totalCommits52w ?? "—") + " studio commits** over the same 52 weeks — same calendar, not claiming the Sun caused them.",
+          "This page is a **snapshot** through **" + (s.snapshotLabel || "build date") + "**. It does not update in your browser.",
+          "For real space weather or safety calls, use **[NOAA SWPC](https://www.swpc.noaa.gov/)** — not this page.",
+        ];
+        return bullets;
+      }
+
+      function plainExplain() {
+        return [
+          "<p>We put real Sun and ionosphere data on the same week-by-week timeline as public ship commits from the Vibelandia edges.</p>",
+          "<p><strong>Sunspots</strong> = how busy the Sun’s surface is. <strong>F10.7</strong> = radio energy that pumps the ionosphere (the sky layer long-range radio bounces off).</p>",
+          "<p>Correlation here is just “what happened together in this window.” We are not saying commits steer the Sun.</p>",
+        ].join("");
+      }
+
+      function fmtBold(s) {
+        return s
           .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-          .replace(/`([^`]+)`/g, "<code>$1</code>")
           .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
       }
 
-      function metricCard(k, v, u) {
-        return `<article class="metric"><p class="metric-k">${k}</p><p class="metric-v">${v}</p>${u ? `<p class="metric-u">${u}</p>` : ""}</article>`;
-      }
-
-      function renderMetrics(summary) {
-        if (!summary) return;
-        metrics.innerHTML = [
-          metricCard("Sunspots (latest day)", summary.latestSunspot ?? "—", summary.snapshotLabel),
-          metricCard("F10.7 flux", summary.latestF107 != null ? summary.latestF107.toFixed(1) : "—", "sfu · ionospheric driver"),
-          metricCard("Planetary Kp (mean)", summary.meanKp7d != null ? summary.meanKp7d.toFixed(2) : "—", "quiet &lt; 3 · stormy &gt; 5"),
-          metricCard("H-line (catalog)", summary.hydrogenLineMhz != null ? summary.hydrogenLineMhz.toFixed(3) : "1420.406", "MHz · EGS edge protocol"),
-          metricCard("Commits (52 wk)", summary.totalCommits52w ?? "—", "sing13 git + sing9 GitHub"),
-        ].join("");
-        metrics.hidden = false;
-        snapshotPill.textContent = "Snapshot · " + (summary.snapshotLabel || "frozen study");
-      }
-
-      function drawSeries(periods, series) {
+      function draw(periods, commits, sunspots) {
         const W = chart.width, H = chart.height;
-        const pad = { l: 36, r: 10, t: 14, b: 28 };
+        const pad = { l: 28, r: 8, t: 10, b: 22 };
         const pw = W - pad.l - pad.r, ph = H - pad.t - pad.b;
-        ctx.clearRect(0, 0, W, H);
-        ctx.fillStyle = "#0f1524";
+        ctx.fillStyle = "#101828";
         ctx.fillRect(0, 0, W, H);
-        ctx.strokeStyle = "rgba(255,255,255,0.07)";
-        for (let i = 0; i <= 4; i++) {
-          const y = pad.t + (ph * i) / 4;
-          ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(W - pad.r, y); ctx.stroke();
-        }
         const n = periods.length, xStep = n > 1 ? pw / (n - 1) : pw;
-        function plot(values, color) {
+        function line(vals, color) {
           ctx.beginPath();
-          let penDown = false;
-          values.forEach((v, i) => {
-            if (!Number.isFinite(v)) { penDown = false; return; }
+          let down = false;
+          vals.forEach((v, i) => {
+            if (!Number.isFinite(v)) { down = false; return; }
             const x = pad.l + i * xStep, y = pad.t + (1 - v) * ph;
-            if (!penDown) { ctx.moveTo(x, y); penDown = true; } else ctx.lineTo(x, y);
+            if (!down) { ctx.moveTo(x, y); down = true; } else ctx.lineTo(x, y);
           });
-          ctx.lineWidth = 2; ctx.strokeStyle = color; ctx.stroke();
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 2;
+          ctx.stroke();
         }
-        plot(series.commitsN, "#67e8f9");
-        plot(series.sunN, "#fef3c7");
-        plot(series.f107N, "#d4af37");
-        ctx.fillStyle = "rgba(255,255,255,.5)";
-        ctx.font = "9px Segoe UI, sans-serif";
-        const labelStep = n <= 24 ? 2 : n <= 48 ? 4 : 6;
-        periods.forEach((p, i) => {
-          if (i % labelStep !== 0 && i !== n - 1) return;
-          ctx.fillText(p.slice(5), pad.l + i * xStep - 10, H - 6);
-        });
+        line(norm(periods.map((p) => commits[p])), "#5eead4");
+        line(norm(periods.map((p) => sunspots[p])), "#f5d77a");
       }
 
-      function renderTable(periods, m) {
-        function fmt(v, d) {
-          if (v == null || !Number.isFinite(Number(v))) return "—";
-          return Number(v).toFixed(d);
-        }
-        document.querySelector("#dataTable tbody").innerHTML = periods.map((period) =>
-          `<tr>
-            <td>${period}</td>
-            <td>${m.commits[period] ?? 0}</td>
-            <td>${fmt(m.sunspots[period], 1)}</td>
-            <td>${fmt(m.f107[period], 1)}</td>
-          </tr>`
-        ).join("");
-      }
-
-      function renderFromStudy(data) {
+      function render(data) {
         const periods = data.periods || [];
-        if (!periods.length) { setStatus("Snapshot has no timeline.", true); return; }
-
-        renderMetrics(data.summary);
-
-        if (data.sources && data.sources.heroImage) {
-          sunImg.src = data.sources.heroImage;
-          sunImg.alt = data.sources.heroImageCredit || "Illustrative Sun";
-          sunImg.hidden = false;
-          if (data.sources.heroImageCredit) {
-            imgCredit.textContent = data.sources.heroImageCredit;
-            imgCredit.hidden = false;
-          }
-        }
-
-        if (data.alignment) {
-          alignmentTitle.textContent = data.alignment.title || "Alignment";
-          alignmentBody.innerHTML = (data.alignment.paragraphs || []).map((p) => `<p>${liteFormat(p)}</p>`).join("");
-          alignment.hidden = false;
-        }
-
-        if (data.findings) {
-          findingsHeadline.textContent = data.findings.headline || "What we found";
-          const lede = data.findings.lede || "";
-          findingsLede.innerHTML = lede ? liteFormat(lede) : "";
-          findingsLede.hidden = !lede;
-          findingsList.innerHTML = (data.findings.bullets || []).map((b) => `<li>${liteFormat(b)}</li>`).join("");
-          findingsTop.hidden = false;
-        }
-
         const commits = data.commits || {}, sunspots = data.sunspots || {}, f107 = data.f107 || {};
-        drawSeries(periods, {
-          commitsN: norm(periods.map((p) => commits[p])),
-          sunN: norm(periods.map((p) => sunspots[p])),
-          f107N: norm(periods.map((p) => f107[p])),
-        });
-        renderTable(periods, { commits, sunspots, f107 });
+        snapshotPill.textContent = "Snapshot · " + ((data.summary && data.summary.snapshotLabel) || data.generatedAt || "").slice(0, 24);
 
-        setStatus("Frozen study generated " + (data.generatedAt || "?").slice(0, 10) + " — not updated in your browser.");
+        findingsList.innerHTML = plainFindings(data).map((b) => "<li>" + fmtBold(b) + "</li>").join("");
+        findingsBlock.hidden = false;
 
-        if (data.sources) {
-          const gh = (data.sources.githubRepos || []).join(", ");
-          let tail = "Sources: <code>" + gh + "</code> · SILSO daily SSN · SWPC F10.7 / Kp · local git + GitHub commit counts. ";
-          if (data.sources.weekAnchor) tail += String(data.sources.weekAnchor).replace(/</g, "") + " ";
-          if (data.sources.ionosphereNote) tail += data.sources.ionosphereNote;
-          if (data.sources.lastNoaaMonth) tail += " Latest NOAA monthly F10.7 month: <strong>" + data.sources.lastNoaaMonth + "</strong>.";
-          methodNote.innerHTML = tail;
-        }
+        explainBody.innerHTML = plainExplain();
+        explainBlock.hidden = false;
+
+        draw(periods, commits, sunspots);
+
+        document.querySelector("#dataTable tbody").innerHTML = periods.slice(-12).map((p) =>
+          "<tr><td>" + p + "</td><td>" + (commits[p] ?? 0) + "</td><td>" +
+          (sunspots[p] != null ? Number(sunspots[p]).toFixed(0) : "—") + "</td><td>" +
+          (f107[p] != null ? Number(f107[p]).toFixed(0) : "—") + "</td></tr>"
+        ).join("");
+
+        foot.textContent = "Sources: SILSO sunspots, NOAA F10.7/Kp, local git + GitHub commits. Built " + (data.generatedAt || "").slice(0, 10) + ".";
+        statusEl.textContent = "";
       }
 
       fetch("look-at-the-sun-study.json", { cache: "no-store" })
-        .then((r) => { if (!r.ok) throw new Error(r.status + " " + r.statusText); return r.json(); })
-        .then(renderFromStudy)
-        .catch((err) => {
-          setStatus("Snapshot missing — run scripts/build-look-at-the-sun-study.mjs", true);
-          findingsHeadline.textContent = "No snapshot";
-          findingsList.innerHTML = "<li>" + err.message + "</li>";
-          findingsTop.hidden = false;
+        .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(render)
+        .catch((e) => {
+          snapshotPill.textContent = "No snapshot";
+          statusEl.innerHTML = '<span class="error">Run npm run build:look-at-the-sun-study</span>';
+          findingsList.innerHTML = "<li>" + e.message + "</li>";
+          findingsBlock.hidden = false;
         });
     })();
   </script>

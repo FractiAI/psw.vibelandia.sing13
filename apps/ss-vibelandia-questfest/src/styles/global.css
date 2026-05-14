@@ -2029,6 +2029,10 @@ a.voxel-btn {
   padding: 0.75rem 1.5rem;
 }
 
+.sp-now-track {
+  min-width: 0;
+}
+
 .sp-now-title {
   margin: 0;
   font-size: 0.88rem;
@@ -2145,13 +2149,258 @@ a.voxel-btn {
 
   .sp-row {
     grid-template-columns: 1.5rem 1fr auto;
-    grid-template-areas:
-      'idx title play'
-      'idx artist play';
+    align-items: center;
   }
 
   .sp-row-album,
   .sp-row-dur {
     display: none;
+  }
+}
+
+/* iPhone / narrow mobile — safe areas, touch targets, readable layout */
+@media (max-width: 480px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .sp-app {
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .sp-side {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.75rem;
+    padding: max(0.65rem, env(safe-area-inset-top)) 0.75rem 0.5rem;
+    border-bottom: 1px solid #282828;
+  }
+
+  .sp-side-logo {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .sp-side-logo strong {
+    font-size: 0.9rem;
+  }
+
+  .sp-side-logo span {
+    font-size: 0.65rem;
+  }
+
+  .sp-side-nav {
+    flex-direction: row;
+    gap: 0.25rem;
+    width: 100%;
+  }
+
+  .sp-side-link {
+    flex: 1;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.85rem;
+  }
+
+  .sp-side-section {
+    display: none;
+  }
+
+  .sp-main {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+
+  .sp-top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .sp-tabs {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .sp-tab {
+    flex: 1;
+    text-align: center;
+    min-height: 44px;
+    font-size: 0.85rem;
+  }
+
+  .sp-top-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+  }
+
+  .sp-scroll {
+    padding: 0 1rem 1.5rem;
+  }
+
+  .sp-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 0 1rem;
+    min-height: auto;
+  }
+
+  .sp-hero-cover {
+    width: 120px;
+    height: 120px;
+    font-size: 2rem;
+  }
+
+  .sp-hero-title {
+    font-size: 1.65rem;
+    line-height: 1.1;
+    word-break: break-word;
+  }
+
+  .sp-hero-desc {
+    font-size: 0.85rem;
+    max-width: none;
+  }
+
+  .sp-search-wrap {
+    max-width: none;
+  }
+
+  .sp-search {
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  .sp-row {
+    grid-template-columns: 1.75rem 1fr auto;
+    grid-template-areas: none;
+    align-items: center;
+    padding: 0.55rem 0.35rem;
+    gap: 0.35rem 0.5rem;
+  }
+
+  .sp-row-idx {
+    align-self: center;
+  }
+
+  .sp-row-main {
+    min-width: 0;
+  }
+
+  .sp-row-desc {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .sp-row-play {
+    min-height: 44px;
+    min-width: 52px;
+    padding: 0.45rem 0.65rem;
+    font-size: 0.72rem;
+  }
+
+  .sp-now {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .sp-now-visual {
+    max-height: 36vh;
+  }
+
+  .sp-now-video {
+    max-height: 36vh;
+  }
+
+  .sp-now-bar {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem 0.65rem;
+  }
+
+  .sp-now-track {
+    min-width: 0;
+    text-align: center;
+  }
+
+  .sp-now-title {
+    font-size: 0.92rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sp-now-artist {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sp-now-controls {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .sp-now-btn {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sp-now-btn--play {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+
+  .sp-now-time {
+    text-align: center;
+    font-size: 0.75rem;
+  }
+
+  .sp-empty-catalog {
+    padding: 2rem 0;
+  }
+
+  .sp-empty-catalog-title {
+    font-size: 1.5rem;
+  }
+
+  .spotify-main-panel {
+    padding: 0;
+  }
+
+  .spotify-main-head {
+    margin-bottom: 1rem;
+  }
+
+  .spotify-main-title {
+    font-size: 1.35rem;
+  }
+
+  .spotify-dj-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotify-input,
+  .spotify-textarea {
+    font-size: 16px;
+    min-height: 44px;
+  }
+
+  .spotify-btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 1rem;
   }
 }

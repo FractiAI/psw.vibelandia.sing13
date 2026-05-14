@@ -65,8 +65,8 @@ export function TrackList({ isPassenger }: TrackListProps) {
       <header className="sp-hero">
         <div className="sp-hero-cover" aria-hidden>🎧</div>
         <div className="sp-hero-meta">
-          <p className="sp-hero-type">Playlist</p>
-          <h1 className="sp-hero-title">{pl.name}</h1>
+          <p className="sp-hero-type">{currentTrack ? 'Now playing' : 'Playlist'}</p>
+          <h1 className="sp-hero-title">{currentTrack?.title ?? pl.name}</h1>
           <p className="sp-hero-desc">
             {currentTrack?.description || pl.description}
           </p>

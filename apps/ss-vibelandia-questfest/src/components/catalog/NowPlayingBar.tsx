@@ -165,6 +165,7 @@ export function NowPlayingBar({
             preload="metadata"
             playsInline
             poster={track.posterSrc}
+            aria-label={track.title}
           />
         </div>
       )}

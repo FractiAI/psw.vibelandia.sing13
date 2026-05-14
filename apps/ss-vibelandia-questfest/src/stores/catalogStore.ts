@@ -50,7 +50,7 @@ interface CatalogState {
   ) => Promise<string>;
   importMediaFiles: (
     files: File[],
-    opts?: { artist?: string; description?: string; playlistIds?: string[] },
+    opts?: { artist?: string; description?: string; title?: string; playlistIds?: string[] },
   ) => Promise<{ added: number; skipped: number }>;
   scanDeviceLibrary: (opts?: { pickFolder?: boolean }) => Promise<{ added: number; skipped: number }>;
   deleteTrack: (trackId: string) => Promise<void>;
@@ -137,7 +137,7 @@ function clampDescription(text?: string): string | undefined {
 async function addFileAsTrack(
   file: File,
   existing: { tracks: Record<string, TrackDef>; sourceKeys: Set<string> },
-  meta: { title?: string; artist?: string; description?: string },
+  meta: { title?: string; artist?: string; description?: string; useFileNameAsTitle?: boolean },
 ): Promise<TrackDef | null> {
   const sourceKey = fileSourceKey(file);
   if (existing.sourceKeys.has(sourceKey)) return null;
@@ -147,9 +147,12 @@ async function addFileAsTrack(
   const url = URL.createObjectURL(file);
   const isVideo = file.type.startsWith('video/');
   const description = clampDescription(meta.description);
+  const trimmedTitle = meta.title?.trim();
+  const displayTitle =
+    trimmedTitle || (meta.useFileNameAsTitle ? titleFromFileName(file.name) : 'Untitled');
   return {
     id,
-    title: meta.title?.trim() || titleFromFileName(file.name),
+    title: displayTitle,
     artist: meta.artist?.trim() || DEFAULT_ARTIST,
     ...(description ? { description } : {}),
     src: url,
@@ -281,6 +284,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       artist: meta.artist,
       description: meta.description,
       playlistIds: meta.playlistIds,
+      title: meta.title,
     });
     if (result.added === 0) {
       const keys = new Set(Object.values(get().tracks).map((t) => t.sourceKey).filter(Boolean));
@@ -305,8 +309,10 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
     for (const file of files) {
       const track = await addFileAsTrack(file, existing, {
+        title: opts?.title,
         artist: opts?.artist,
         description: opts?.description,
+        useFileNameAsTitle: !opts?.title?.trim(),
       });
       if (!track) {
         skipped += 1;

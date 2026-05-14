@@ -30,16 +30,20 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       setMsg('Pick an audio or video file first.');
       return;
     }
+    if (!title.trim()) {
+      setMsg('Enter a title — that is what the player shows when playing.');
+      return;
+    }
     setBusy(true);
     setMsg(null);
     try {
       const id = await uploadTrack(file, {
-        title,
+        title: title.trim(),
         artist: artist.trim() || DEFAULT_ARTIST,
         description,
         playlistIds: ['pl-main'],
       });
-      setMsg(`Uploaded “${title || file.name}”. Switching to Listen…`);
+      setMsg(`Uploaded “${title.trim()}”. Switching to Listen…`);
       setTitle('');
       setArtist(DEFAULT_ARTIST);
       setDescription('');
@@ -74,12 +78,13 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         <article className="spotify-dj-card spotify-dj-card--wide">
           <h3>1 · Pick a file</h3>
           <label className="spotify-field">
-            Title (optional)
+            Title
             <input
               className="spotify-input"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Uses file name if blank"
+              placeholder="Shown in the player when playing"
+              required
             />
           </label>
           <label className="spotify-field">

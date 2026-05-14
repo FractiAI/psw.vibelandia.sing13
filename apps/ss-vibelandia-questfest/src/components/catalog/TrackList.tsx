@@ -125,7 +125,13 @@ export function TrackList({ isPassenger }: TrackListProps) {
         </ol>
       </div>
 
-      {tracks.length === 0 && <p className="sp-empty">No tracks match your search.</p>}
+      {tracks.length === 0 && (
+        <p className="sp-empty">
+          {search.trim()
+            ? 'No tracks match your search.'
+            : 'No tracks in this playlist yet. Creator: open Upload & playlists to scan your device or upload files.'}
+        </p>
+      )}
     </section>
   );
 }

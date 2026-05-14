@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { markCreator } from '@/lib/creatorMode';
+import { supportsDirectoryPicker } from '@/lib/deviceMediaScan';
 
 export function DjStudio() {
   const playlists = useCatalogStore((s) => s.playlists);
@@ -13,20 +15,78 @@ export function DjStudio() {
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
   const moveTrackInPlaylist = useCatalogStore((s) => s.moveTrackInPlaylist);
   const uploadTrack = useCatalogStore((s) => s.uploadTrack);
+  const importMediaFiles = useCatalogStore((s) => s.importMediaFiles);
+  const scanDeviceLibrary = useCatalogStore((s) => s.scanDeviceLibrary);
   const deleteTrack = useCatalogStore((s) => s.deleteTrack);
   const listAllTracks = useCatalogStore((s) => s.listAllTracks);
 
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState('Hero Jo Golden Bachdoor');
   const [file, setFile] = useState<File | null>(null);
-  const [uploadPlaylists, setUploadPlaylists] = useState<string[]>(['pl-main', 'pl-broadcast']);
+  const [uploadPlaylists, setUploadPlaylists] = useState<string[]>(['pl-main']);
   const [busy, setBusy] = useState(false);
+  const [scanBusy, setScanBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+  const folderInputRef = useRef<HTMLInputElement>(null);
+  const scannedRef = useRef(false);
   const [newPlName, setNewPlName] = useState('');
   const [rename, setRename] = useState('');
   const [addTrackId, setAddTrackId] = useState('');
 
   const active = playlists.find((p) => p.id === activeId);
+
+  useEffect(() => {
+    markCreator();
+    if (scannedRef.current) return;
+    scannedRef.current = true;
+    void (async () => {
+      setScanBusy(true);
+      try {
+        const { added, skipped } = await scanDeviceLibrary({ pickFolder: false });
+        if (added > 0) {
+          setMsg(`Imported ${added} audio/video file${added === 1 ? '' : 's'} from your device folder.`);
+        } else if (skipped > 0) {
+          setMsg('Device folder already synced — no new files.');
+        }
+      } finally {
+        setScanBusy(false);
+      }
+    })();
+  }, [scanDeviceLibrary]);
+
+  const handlePickDeviceFolder = async () => {
+    setScanBusy(true);
+    setMsg(null);
+    try {
+      if (supportsDirectoryPicker()) {
+        const { added, skipped } = await scanDeviceLibrary({ pickFolder: true });
+        if (added > 0) {
+          setMsg(`Imported ${added} file${added === 1 ? '' : 's'} from the folder you picked.`);
+        } else if (skipped > 0) {
+          setMsg('All files in that folder are already in your catalog.');
+        } else {
+          setMsg('No audio or video files found in that folder.');
+        }
+      } else {
+        folderInputRef.current?.click();
+      }
+    } finally {
+      setScanBusy(false);
+    }
+  };
+
+  const handleFolderInput = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files?.length) return;
+    setScanBusy(true);
+    try {
+      const { added } = await importMediaFiles(Array.from(files), { playlistIds: ['pl-main'] });
+      setMsg(added > 0 ? `Imported ${added} file${added === 1 ? '' : 's'} from the folder.` : 'No new files to import.');
+    } finally {
+      setScanBusy(false);
+      e.target.value = '';
+    }
+  };
 
   const toggleUploadPl = (id: string) => {
     setUploadPlaylists((prev) =>
@@ -64,12 +124,36 @@ export function DjStudio() {
           <p className="spotify-main-eyebrow">DJ Studio</p>
           <h2 className="spotify-main-title">Upload &amp; edit playlists</h2>
           <p className="spotify-main-desc">
-            Three steps: upload a track, assign playlists, reorder the broadcast. Saved in this browser.
+            Creator only: scan this device for audio and video, upload more, and edit playlists. Listeners only hear what you put in playlists.
           </p>
         </div>
       </header>
 
       <div className="spotify-dj-grid">
+        <article className="spotify-dj-card">
+          <h3>0 · Scan your device</h3>
+          <p className="spotify-main-desc">
+            Pick your music folder once. We import every audio and video file and rescan automatically
+            next time you open this tab.
+          </p>
+          <input
+            ref={folderInputRef}
+            type="file"
+            className="sr-only"
+            multiple
+            {...({ webkitdirectory: '' } as React.InputHTMLAttributes<HTMLInputElement>)}
+            onChange={handleFolderInput}
+          />
+          <button
+            type="button"
+            className="spotify-btn spotify-btn--gold"
+            disabled={scanBusy}
+            onClick={handlePickDeviceFolder}
+          >
+            {scanBusy ? 'Scanning…' : 'Scan device folder'}
+          </button>
+        </article>
+
         <article className="spotify-dj-card">
           <h3>1 · Upload a track</h3>
           <label className="spotify-field">

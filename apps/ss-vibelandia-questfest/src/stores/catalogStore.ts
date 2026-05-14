@@ -1,13 +1,21 @@
 import { create } from 'zustand';
-import { buildSeedCatalog } from '@/lib/catalogSeed';
+import { buildEmptyCatalog } from '@/lib/catalogSeed';
 import {
   deleteBlob,
   loadBlob,
   loadCatalogJson,
+  loadDeviceDirHandle,
   saveBlob,
   saveCatalogJson,
+  saveDeviceDirHandle,
 } from '@/lib/catalogPersistence';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
+import {
+  fileSourceKey,
+  pickMediaDirectory,
+  scanDirectoryHandle,
+  titleFromFileName,
+} from '@/lib/deviceMediaScan';
 
 type View = 'catalog' | 'dj';
 
@@ -35,6 +43,11 @@ interface CatalogState {
   moveTrackInPlaylist: (playlistId: string, trackId: string, dir: -1 | 1) => void;
   moveTrackToPlaylist: (trackId: string, targetPlaylistId: string) => void;
   uploadTrack: (file: File, meta: { title: string; artist: string; playlistIds: string[] }) => Promise<string>;
+  importMediaFiles: (
+    files: File[],
+    opts?: { artist?: string; playlistIds?: string[] },
+  ) => Promise<{ added: number; skipped: number }>;
+  scanDeviceLibrary: (opts?: { pickFolder?: boolean }) => Promise<{ added: number; skipped: number }>;
   deleteTrack: (trackId: string) => Promise<void>;
   hydrate: () => Promise<void>;
   persist: () => void;
@@ -45,6 +58,33 @@ function cloneSnapshot(s: CatalogSnapshot): CatalogSnapshot {
     ...s,
     tracks: { ...s.tracks },
     playlists: s.playlists.map((p) => ({ ...p, trackIds: [...p.trackIds] })),
+  };
+}
+
+/** Only tracks stored on this device (uploads / device scan). Removes 552 seed entries. */
+function keepLocalTracksOnly(snapshot: CatalogSnapshot): CatalogSnapshot {
+  const tracks: Record<string, TrackDef> = {};
+  for (const [id, tr] of Object.entries(snapshot.tracks)) {
+    if (tr.localMediaKey) tracks[id] = tr;
+  }
+  let playlists = snapshot.playlists
+    .map((p) => ({ ...p, trackIds: p.trackIds.filter((tid) => tracks[tid]) }))
+    .filter((p) => p.id === 'pl-main' || p.trackIds.length > 0);
+
+  if (!playlists.length) {
+    playlists = buildEmptyCatalog().playlists;
+  }
+
+  const main = playlists.find((p) => p.id === 'pl-main') ?? playlists[0];
+  const activePlaylistId = playlists.some((p) => p.id === snapshot.activePlaylistId)
+    ? snapshot.activePlaylistId
+    : main.id;
+
+  return {
+    version: 3,
+    tracks,
+    playlists,
+    activePlaylistId,
   };
 }
 
@@ -81,6 +121,30 @@ function stripForStorage(tracks: Record<string, TrackDef>): Record<string, Track
     };
   }
   return out;
+}
+
+async function addFileAsTrack(
+  file: File,
+  existing: { tracks: Record<string, TrackDef>; sourceKeys: Set<string> },
+  meta: { title?: string; artist?: string },
+): Promise<TrackDef | null> {
+  const sourceKey = fileSourceKey(file);
+  if (existing.sourceKeys.has(sourceKey)) return null;
+  const id = `trk-up-${sourceKey.replace(/[^a-zA-Z0-9]+/g, '-').slice(0, 48)}-${Date.now()}`;
+  const key = `media-${id}`;
+  await saveBlob(key, file);
+  const url = URL.createObjectURL(file);
+  const isVideo = file.type.startsWith('video/');
+  return {
+    id,
+    title: meta.title?.trim() || titleFromFileName(file.name),
+    artist: meta.artist?.trim() || 'Hero Jo Golden Bachdoor',
+    src: url,
+    videoSrc: isVideo ? url : undefined,
+    localMediaKey: key,
+    uploadedAt: new Date().toISOString(),
+    sourceKey,
+  };
 }
 
 export const useCatalogStore = create<CatalogState>((set, get) => ({
@@ -200,33 +264,80 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   uploadTrack: async (file, meta) => {
-    const id = `trk-up-${Date.now()}`;
-    const key = `media-${id}`;
-    await saveBlob(key, file);
-    const url = URL.createObjectURL(file);
-    const isVideo = file.type.startsWith('video/');
-    const track: TrackDef = {
-      id,
-      title: meta.title.trim() || file.name,
-      artist: meta.artist.trim() || 'Hero Jo Golden Bachdoor',
-      src: isVideo ? url : url,
-      videoSrc: isVideo ? url : undefined,
-      localMediaKey: key,
-      uploadedAt: new Date().toISOString(),
-    };
-    set((s) => {
-      const playlists = s.playlists.map((p) =>
-        meta.playlistIds.includes(p.id) ? { ...p, trackIds: [...p.trackIds, id] } : p,
-      );
-      const main = playlists.find((p) => p.id === 'pl-main');
-      if (main && !main.trackIds.includes(id)) {
-        const i = playlists.findIndex((p) => p.id === 'pl-main');
-        playlists[i] = { ...main, trackIds: [...main.trackIds, id] };
+    const result = await get().importMediaFiles([file], {
+      artist: meta.artist,
+      playlistIds: meta.playlistIds,
+    });
+    if (result.added === 0) {
+      const keys = new Set(Object.values(get().tracks).map((t) => t.sourceKey).filter(Boolean));
+      throw new Error('duplicate');
+    }
+    const latest = Object.values(get().tracks).sort(
+      (a, b) => (b.uploadedAt ?? '').localeCompare(a.uploadedAt ?? ''),
+    )[0];
+    return latest?.id ?? '';
+  },
+
+  importMediaFiles: async (files, opts) => {
+    const playlistIds = opts?.playlistIds?.length ? opts.playlistIds : ['pl-main'];
+    const sourceKeys = new Set(
+      Object.values(get().tracks)
+        .map((t) => t.sourceKey)
+        .filter(Boolean) as string[],
+    );
+    const existing = { tracks: { ...get().tracks }, sourceKeys };
+    const newTracks: TrackDef[] = [];
+    let skipped = 0;
+
+    for (const file of files) {
+      const track = await addFileAsTrack(file, existing, {
+        artist: opts?.artist,
+      });
+      if (!track) {
+        skipped += 1;
+        continue;
       }
-      return { tracks: { ...s.tracks, [id]: track }, playlists };
+      existing.tracks[track.id] = track;
+      if (track.sourceKey) existing.sourceKeys.add(track.sourceKey);
+      newTracks.push(track);
+    }
+
+    if (!newTracks.length) return { added: 0, skipped };
+
+    set((s) => {
+      const tracks = { ...s.tracks };
+      for (const tr of newTracks) tracks[tr.id] = tr;
+      const playlists = s.playlists.map((p) => {
+        if (!playlistIds.includes(p.id)) return p;
+        const ids = [...p.trackIds];
+        for (const tr of newTracks) {
+          if (!ids.includes(tr.id)) ids.push(tr.id);
+        }
+        return { ...p, trackIds: ids };
+      });
+      return { tracks, playlists };
     });
     get().persist();
-    return id;
+    return { added: newTracks.length, skipped };
+  },
+
+  scanDeviceLibrary: async (opts) => {
+    let handle = await loadDeviceDirHandle();
+    if (opts?.pickFolder || !handle) {
+      const picked = await pickMediaDirectory();
+      if (!picked) return { added: 0, skipped: 0 };
+      handle = picked;
+      await saveDeviceDirHandle(handle);
+    } else {
+      const perm = await handle.queryPermission({ mode: 'read' });
+      if (perm !== 'granted') {
+        const req = await handle.requestPermission({ mode: 'read' });
+        if (req !== 'granted') return { added: 0, skipped: 0 };
+      }
+    }
+
+    const files = await scanDirectoryHandle(handle);
+    return get().importMediaFiles(files, { playlistIds: ['pl-main'] });
   },
 
   deleteTrack: async (trackId) => {
@@ -247,7 +358,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
   hydrate: async () => {
     const saved = loadCatalogJson<CatalogSnapshot>();
-    const base = saved?.version === 2 ? cloneSnapshot(saved) : buildSeedCatalog();
+    const raw = saved ? cloneSnapshot(saved) : buildEmptyCatalog();
+    const base = keepLocalTracksOnly(raw);
     const tracks = await attachBlobUrls(base.tracks);
     set({
       hydrated: true,
@@ -255,12 +367,13 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       playlists: base.playlists,
       activePlaylistId: base.activePlaylistId || base.playlists[0]?.id || 'pl-main',
     });
+    get().persist();
   },
 
   persist: () => {
     const { tracks, playlists, activePlaylistId } = get();
     saveCatalogJson({
-      version: 2,
+      version: 3,
       tracks: stripForStorage(tracks),
       playlists,
       activePlaylistId,

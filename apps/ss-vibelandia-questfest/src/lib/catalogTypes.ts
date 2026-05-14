@@ -11,6 +11,8 @@ export interface TrackDef {
   /** IndexedDB blob key for DJ uploads */
   localMediaKey?: string;
   uploadedAt?: string;
+  /** Dedup key from device file (name + size + modified) */
+  sourceKey?: string;
 }
 
 export interface PlaylistDef {

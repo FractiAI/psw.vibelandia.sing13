@@ -11,6 +11,7 @@ import { TrackList } from '@/components/catalog/TrackList';
 import { DjStudio } from '@/components/catalog/DjStudio';
 import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { useSessionStore } from '@/stores/sessionStore';
+import { markCreator } from '@/lib/creatorMode';
 
 export function BridgePage() {
   const location = useLocation();
@@ -55,6 +56,7 @@ export function BridgePage() {
   }, [location.pathname, location.hash, setDjMode]);
 
   const goDj = () => {
+    markCreator();
     setDjMode(true);
     navigate('/dj', { replace: true });
   };

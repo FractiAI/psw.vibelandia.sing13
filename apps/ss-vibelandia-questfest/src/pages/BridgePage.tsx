@@ -11,7 +11,8 @@ import { TrackList } from '@/components/catalog/TrackList';
 import { DjStudio } from '@/components/catalog/DjStudio';
 import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { useSessionStore } from '@/stores/sessionStore';
-import { markCreator } from '@/lib/creatorMode';
+import { useCaptain, notifyCaptainChanged } from '@/hooks/useCaptain';
+import { tryUnlockFromSearch } from '@/lib/captainAccess';
 
 export function BridgePage() {
   const location = useLocation();
@@ -39,6 +40,7 @@ export function BridgePage() {
   const [vesselKind, setVesselKind] = useState<'vessel_switch' | 'tab_preempt' | null>(null);
 
   const stream = useStreamLock();
+  const isCapitan = useCaptain();
 
   const onFairExchange = useCallback(() => setFairOpen(true), []);
   const onVesselSwitch = useCallback((reason: 'vessel_switch' | 'tab_preempt') => {
@@ -52,13 +54,27 @@ export function BridgePage() {
   }, [hydrateSession, hydrateCatalog]);
 
   useEffect(() => {
-    if (location.pathname === '/dj' || location.hash === '#/dj') {
+    const hashQ = location.hash.includes('?') ? location.hash.slice(location.hash.indexOf('?')) : '';
+    if (hashQ && tryUnlockFromSearch(hashQ)) notifyCaptainChanged();
+    if (location.search && tryUnlockFromSearch(location.search)) notifyCaptainChanged();
+  }, [location.hash, location.search]);
+
+  useEffect(() => {
+    if ((location.pathname === '/dj' || location.hash === '#/dj') && !isCapitan) {
+      setDjMode(false);
+      navigate('/bridge', { replace: true });
+      return;
+    }
+    if ((location.pathname === '/dj' || location.hash === '#/dj') && isCapitan) {
       setDjMode(true);
     }
-  }, [location.pathname, location.hash, setDjMode]);
+  }, [location.pathname, location.hash, isCapitan, navigate, setDjMode]);
 
   const goDj = () => {
-    markCreator();
+    if (!isCapitan) {
+      navigate('/capitan');
+      return;
+    }
     setDjMode(true);
     navigate('/dj', { replace: true });
   };
@@ -108,7 +124,7 @@ export function BridgePage() {
 
   return (
     <div className="sp-app">
-      <CatalogSidebar onDjClick={goDj} />
+      <CatalogSidebar onDjClick={goDj} showUpload={isCapitan} />
 
       <div className="sp-main">
         <header className="sp-top">
@@ -122,15 +138,17 @@ export function BridgePage() {
             >
               Listen
             </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={djMode}
-              className={`sp-tab sp-tab--dj${djMode ? ' sp-tab--on' : ''}`}
-              onClick={goDj}
-            >
-              Upload &amp; playlists
-            </button>
+            {isCapitan && (
+              <button
+                type="button"
+                role="tab"
+                aria-selected={djMode}
+                className={`sp-tab sp-tab--dj${djMode ? ' sp-tab--on' : ''}`}
+                onClick={goDj}
+              >
+                Upload
+              </button>
+            )}
           </div>
           <nav className="sp-top-nav">
             <Link to="/" className="sp-top-link">
@@ -155,13 +173,17 @@ export function BridgePage() {
             <section className="sp-empty-catalog">
               <h2 className="sp-empty-catalog-title">No tracks yet</h2>
               <p className="sp-empty-catalog-desc">
-                Catalog is empty. Upload an audio or video file, then listen and press play.
+                {isCapitan
+                  ? 'Catalog is empty. Use Upload to add a track, then listen and press play.'
+                  : 'Catalog is empty. Check back when Capitan publishes new tracks.'}
               </p>
-              <button type="button" className="sp-tab sp-tab--dj sp-tab--on" onClick={goDj}>
-                Open Upload &amp; playlists
-              </button>
+              {isCapitan && (
+                <button type="button" className="sp-tab sp-tab--dj sp-tab--on" onClick={goDj}>
+                  Upload a track
+                </button>
+              )}
             </section>
-          ) : djMode ? (
+          ) : djMode && isCapitan ? (
             <DjStudio onUploadSuccess={handleUploadSuccess} />
           ) : (
             <TrackList isPassenger={isPassenger} />

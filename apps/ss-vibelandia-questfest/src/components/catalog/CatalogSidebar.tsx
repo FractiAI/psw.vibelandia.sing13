@@ -2,9 +2,10 @@ import { useCatalogStore } from '@/stores/catalogStore';
 
 interface CatalogSidebarProps {
   onDjClick: () => void;
+  showUpload?: boolean;
 }
 
-export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
+export function CatalogSidebar({ onDjClick, showUpload = false }: CatalogSidebarProps) {
   const playlists = useCatalogStore((s) => s.playlists);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
@@ -38,16 +39,18 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
         >
           <span className="sp-side-icon">🏠</span> Listen
         </button>
-        <button
-          type="button"
-          className={`sp-side-link sp-side-link--dj${djMode ? ' sp-side-link--on' : ''}`}
-          onClick={() => {
-            setDjMode(true);
-            onDjClick();
-          }}
-        >
-          <span className="sp-side-icon">⬆</span> Upload &amp; playlists
-        </button>
+        {showUpload && (
+          <button
+            type="button"
+            className={`sp-side-link sp-side-link--dj${djMode ? ' sp-side-link--on' : ''}`}
+            onClick={() => {
+              setDjMode(true);
+              onDjClick();
+            }}
+          >
+            <span className="sp-side-icon">⬆</span> Upload
+          </button>
+        )}
       </nav>
 
       <div className="sp-side-section">

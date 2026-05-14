@@ -25,6 +25,7 @@ export function BridgePage() {
 
   const hydrateCatalog = useCatalogStore((s) => s.hydrate);
   const hydrated = useCatalogStore((s) => s.hydrated);
+  const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
@@ -143,7 +144,22 @@ export function BridgePage() {
         </header>
 
         <main className="sp-scroll">
-          {djMode ? <DjStudio /> : <TrackList isPassenger={isPassenger} />}
+          {!djMode && trackCount === 0 ? (
+            <section className="sp-empty-catalog">
+              <h2 className="sp-empty-catalog-title">No tracks yet</h2>
+              <p className="sp-empty-catalog-desc">
+                Fake seed tracks were removed. As creator, scan your device folder or upload your audio
+                and music videos — then they appear here for listening.
+              </p>
+              <button type="button" className="sp-tab sp-tab--dj sp-tab--on" onClick={goDj}>
+                Open Upload &amp; playlists
+              </button>
+            </section>
+          ) : djMode ? (
+            <DjStudio />
+          ) : (
+            <TrackList isPassenger={isPassenger} />
+          )}
         </main>
       </div>
 

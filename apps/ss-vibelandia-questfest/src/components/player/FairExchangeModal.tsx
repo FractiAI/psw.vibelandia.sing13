@@ -20,7 +20,8 @@ export function FairExchangeModal({ open, onClose, onBoard, onCaptainAccess }: F
         <p className="modal-body modal-body--warm">
           You just rode the first <strong>30 seconds</strong> on the house — that is how we say hello
           in Reno. The monthly pass is <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong>, keeps the full
-          catalog unlocked, and stays friendly: Venmo, PayPal, or Cash App, no cage, no surprise fees.
+          catalog unlocked, and stays friendly: Venmo, PayPal, or Cash App — confirm on the honor system
+          after you pay, no cage, no surprise fees.
         </p>
         <p className="modal-body modal-body--warm modal-body--soft">
           Stay on the free preview anytime. When you are ready, we will have the pass waiting.

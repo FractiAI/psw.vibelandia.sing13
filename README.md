@@ -16,8 +16,8 @@
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
 | **QUESTFEST surface** | Hub + ETCon + press + Snap robots + Look at the Sun + Juicy Juicy Snap + FractiAI + Valet Pru + i18n (10 locales) + assets | `interfaces/` |
-| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, Libretto log, manual Fair Exchange boarding, single-active-stream lock | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
-| **Lite-edge APIs** | Manual boarding JWT, per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/upstash.mjs` |
+| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, Libretto log, Fair Exchange **honor-system** boarding (date + email + rail), single-active-stream lock | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
+| **Lite-edge APIs** | Boarding + export JWTs (shared `api/honor-attest.js`), per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
 | **SING 13 spine docs** | 13-channel pathfinding roadmap (May 12) + DNA/PEFF master canon (May 11) + slices + JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
 
@@ -27,8 +27,8 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 | Tier | Price | How |
 |---|---|---|
-| **Passenger pass** | **$16.18/mo** (EGS φ) | Pay on a rail → paste receipt in boarding modal → `/api/boarding` issues a 30-day signed JWT |
-| **Track export / download** | **$1.61** | Pay on a rail → email proof with track id → manual file delivery |
+| **Passenger pass** | **$16.18/mo** (EGS φ) | Pay on Venmo, PayPal, or Cash App → in the boarding modal, **confirm on honor** (checkbox, **date paid**, **email**, rail already chosen) → `POST /api/boarding` issues a **30-day** signed Passenger JWT |
+| **Track export / download** | **$1.61** | Same honor attestation after payment (or legacy `receipt` string on the API); `POST /api/export` records a license id, then the client saves the file |
 | **Bookings** | Contact | `valetpru@gmail.com` |
 | **Catalog / licensing (500+ Reno swamp · caliente tracks)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
 
@@ -40,7 +40,7 @@ Passenger unlocks full video playback, Solenoid lift, 13-channel access, and cat
 - **Your playlists** can be empty while you edit them (they persist in local storage); add tracks from **All uploads** in the playlist editor. The sidebar hides empty playlists unless the empty one is active, so the list stays readable on mobile.
 - **Track list (Listen)** uses a responsive grid: narrow / iPhone layouts match column counts to visible cells (duration and extra columns hidden on small screens) so rows do not overflow horizontally.
 
-Configure handles and secrets via [`.env.example`](.env.example) — copy to Vercel project env. **`PASS_TOKEN_SECRET`** is required for live boarding.
+Configure handles via [`.env.example`](.env.example). **`PASS_TOKEN_SECRET`** (≥16 characters, or one of the alternates in `lib/pass-env.mjs`) must be set **anywhere `/api/boarding` runs**: Vercel **Production** (and Preview if you use it), and a repo-root **`.env`** for local `vercel dev`. Never commit `.env`. Preview-only escape hatch (never Production): `QUESTFEST_ALLOW_INSECURE_PASS_SIGNING=1` — see `.env.example`.
 
 ## SING 13 spine — 13-channel fractal pathfinding
 
@@ -106,16 +106,16 @@ npm run build:questfest-bridge
 
 **CI:** [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) runs the build above, then `vercel deploy --prod` (requires repo secret `VERCEL_TOKEN`). If Vercel Git integration is connected, set the project build command to the same root script so `interfaces/questfest-bridge/` exists on deploy.
 
-**Vercel env (minimum for live boarding):**
+**Vercel env (minimum for live boarding / export):**
 
 | Variable | Purpose |
 |---|---|
-| `PASS_TOKEN_SECRET` | HMAC signing for Passenger JWT (≥16 chars) |
+| `PASS_TOKEN_SECRET` | HMAC signing and verification for Passenger JWT (≥16 chars). Same secret resolves `JWT_SECRET`, `AUTH_SECRET`, or `QUESTFEST_PASS_TOKEN_SECRET` if you prefer one name — see `lib/pass-env.mjs`. |
 | `UPSTASH_REDIS_REST_URL` | Optional — fleet-wide stream lock |
 | `UPSTASH_REDIS_REST_TOKEN` | Optional — pairs with URL above |
 | `VITE_VENMO_HANDLE` etc. | Optional client overrides for payment handles |
 
-**Local dev (Bridge app):**
+**Local dev (Bridge UI only):**
 
 ```bash
 cd apps/ss-vibelandia-questfest
@@ -123,7 +123,9 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173/interfaces/questfest-bridge/#/` (matches Vite `base`). Dev build includes a **skip payment** boarding shortcut; production requires receipt + `PASS_TOKEN_SECRET` on the server.
+Open `http://localhost:5173/interfaces/questfest-bridge/#/` (matches Vite `base`). In **development** mode the app can use a **dev boarding shortcut** (`dev@local`) without calling the API.
+
+**Local dev (Bridge + `/api/boarding` and `/api/export`):** from the **repo root**, add a `.env` with `PASS_TOKEN_SECRET=…` (see `.env.example`), then run `npx vercel dev` so the Vite app and serverless routes share one origin and real JWTs are signed.
 
 ---
 

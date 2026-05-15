@@ -1,5 +1,5 @@
 /**
- * Per-track export license — requires active monthly Passenger JWT + Fair Exchange receipt.
+ * Per-track export license — active monthly Passenger JWT + Fair Exchange honor or receipt proof.
  */
 const crypto = require('node:crypto');
 
@@ -43,6 +43,8 @@ module.exports = async function handler(req, res) {
     });
   }
 
+  const { validateHonorAttestation } = require('./honor-attest.js');
+
   const body = readBody(req);
   const authHeader = String(req.headers.authorization || '');
   const passToken =
@@ -58,7 +60,6 @@ module.exports = async function handler(req, res) {
   }
 
   const rail = String(body.rail || '').toLowerCase();
-  const receipt = String(body.receipt || '').trim();
   const trackId = String(body.trackId || '').trim();
   const trackTitle = String(body.trackTitle || '').trim();
 
@@ -68,10 +69,22 @@ module.exports = async function handler(req, res) {
   if (!RAILS.has(rail)) {
     return res.status(400).json({ error: 'invalid_rail' });
   }
-  if (receipt.length < 3) {
+
+  const honorConfirm = body.honorConfirm === true || body.honorConfirm === 'true';
+  let receipt = String(body.receipt || '').trim();
+  let honorMeta = null;
+
+  if (honorConfirm) {
+    const honor = validateHonorAttestation(body);
+    if (!honor.ok) {
+      return res.status(honor.status).json({ error: honor.code, message: honor.message });
+    }
+    receipt = `honor:export:v1|${honor.paidDate}|${honor.email}|${rail}|${trackId}`;
+    honorMeta = { paidDate: honor.paidDate, email: honor.email };
+  } else if (receipt.length < 3) {
     return res.status(400).json({
       error: 'receipt_required',
-      message: 'Enter txn id, @handle, or payment note',
+      message: 'Confirm payment on the honor system, or paste txn id / @handle.',
     });
   }
 
@@ -85,6 +98,9 @@ module.exports = async function handler(req, res) {
     passengerJti: passenger.jti,
     passengerSub: passenger.sub,
     exportUsd: EXPORT_USD,
+    honor: !!honorMeta,
+    honorPaidDate: honorMeta?.paidDate ?? null,
+    honorEmail: honorMeta?.email ?? null,
     receiptLen: receipt.length,
     receiptHash: crypto.createHash('sha256').update(receipt).digest('hex').slice(0, 16),
     upstash: upstashConfigured(),

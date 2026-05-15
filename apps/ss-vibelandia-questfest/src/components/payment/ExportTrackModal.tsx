@@ -14,6 +14,12 @@ import { downloadTrackToDevice } from '@/lib/downloadTrack';
 import { hasExportLicense, saveExportLicense } from '@/lib/exportLicenses';
 import { readPassToken } from '@/lib/mockJwt';
 
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 interface ExportTrackModalProps {
   open: boolean;
   track: TrackDef | undefined;
@@ -31,9 +37,11 @@ export function ExportTrackModal({
   onClose,
   onNeedPass,
 }: ExportTrackModalProps) {
-  const [step, setStep] = useState<'gate' | 'captain_bypass' | 'rail' | 'pay' | 'proof' | 'done'>('gate');
+  const [step, setStep] = useState<'gate' | 'captain_bypass' | 'rail' | 'pay' | 'honor' | 'done'>('gate');
   const [rail, setRail] = useState<LiveRail | null>(null);
-  const [receipt, setReceipt] = useState('');
+  const [paidDate, setPaidDate] = useState(todayISO);
+  const [email, setEmail] = useState('');
+  const [honorAck, setHonorAck] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
@@ -47,7 +55,9 @@ export function ExportTrackModal({
     else if (isPassenger) setStep('rail');
     else setStep('gate');
     setRail(null);
-    setReceipt('');
+    setPaidDate(todayISO());
+    setEmail('');
+    setHonorAck(false);
     setBusy(false);
     setError(null);
     setMsg(null);
@@ -94,7 +104,7 @@ export function ExportTrackModal({
     }
   };
 
-  const submitProof = async () => {
+  const submitHonor = async () => {
     if (!rail) return;
     setBusy(true);
     setError(null);
@@ -102,7 +112,7 @@ export function ExportTrackModal({
       const passToken = readPassToken();
       if (!passToken) throw new Error('monthly_pass_required');
 
-      if (import.meta.env.DEV && receipt === 'dev-local-export') {
+      if (import.meta.env.DEV && email.trim() === 'dev@local') {
         saveExportLicense({
           trackId: track.id,
           licensedAt: new Date().toISOString(),
@@ -112,7 +122,9 @@ export function ExportTrackModal({
         const res = await requestExport({
           passToken,
           rail,
-          receipt,
+          honorConfirm: true,
+          paidDate,
+          email: email.trim(),
           trackId: track.id,
           trackTitle: title,
         });
@@ -133,7 +145,7 @@ export function ExportTrackModal({
 
   const subject = encodeURIComponent(`EXPORT ${track.id} · ${title}`);
   const body = encodeURIComponent(
-    `Track: ${title} (${track.id})\nEGS export: $${EGS_EXPORT_USD.toFixed(2)}\nPaste txn id / @handle proof below:\n\n`,
+    `Track: ${title} (${track.id})\nEGS export: $${EGS_EXPORT_USD.toFixed(2)}\nHonor confirmation: date paid, email, and app used — or paste txn proof:\n\n`,
   );
 
   return (
@@ -169,7 +181,7 @@ export function ExportTrackModal({
           <>
             <p className="modal-body">
               Captain access is on for this browser session. You can save <strong>{title}</strong> without the Venmo /
-              PayPal / Cash App proof flow on this device.
+              PayPal / Cash App honor flow on this device.
             </p>
             <div className="modal-actions">
               <button
@@ -218,8 +230,8 @@ export function ExportTrackModal({
               Send <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> on {RAIL_LABEL[rail]} to{' '}
               <code>{PAYMENT_HANDLES[rail]}</code>. Payment note: <code>{exportNote(title)}</code>
             </p>
-            <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('proof')}>
-              I paid — enter proof
+            <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('honor')}>
+              I paid — confirm on honor
             </button>
             <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('rail')}>
               Back
@@ -227,30 +239,65 @@ export function ExportTrackModal({
           </>
         )}
 
-        {step === 'proof' && rail && (
+        {step === 'honor' && rail && (
           <>
+            <p className="modal-body">
+              Confirm you sent <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> on <strong>{RAIL_LABEL[rail]}</strong> for
+              this download. We record the date, your email, and payment app — same honor system as the monthly pass.
+            </p>
+            <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
+              <input
+                type="checkbox"
+                checked={honorAck}
+                onChange={(e) => setHonorAck(e.target.checked)}
+                disabled={busy}
+                style={{ marginTop: '0.2rem' }}
+              />
+              <span>
+                I confirm I completed payment of <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> using{' '}
+                <strong>{RAIL_LABEL[rail]}</strong>.
+              </span>
+            </label>
             <label className="boarding-field">
-              Receipt / txn id / @handle
+              Date you paid
               <input
                 className="libretto-input boarding-input"
-                value={receipt}
-                onChange={(e) => setReceipt(e.target.value)}
-                placeholder="Paste proof from Venmo, PayPal, or Cash App"
+                type="date"
+                value={paidDate}
+                onChange={(e) => setPaidDate(e.target.value)}
+                disabled={busy}
+              />
+            </label>
+            <label className="boarding-field">
+              Email
+              <input
+                className="libretto-input boarding-input"
+                type="email"
+                autoComplete="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                disabled={busy}
               />
             </label>
             {import.meta.env.DEV && (
               <p className="modal-fine">
-                Dev: use receipt <code>dev-local-export</code> with an active pass.
+                Dev: use email <code>dev@local</code> with an active pass to skip the export API.
               </p>
             )}
             <div className="modal-actions">
               <button
                 type="button"
                 className="voxel-btn voxel-btn--orange"
-                disabled={busy || receipt.trim().length < 3}
-                onClick={submitProof}
+                disabled={
+                  busy || !honorAck || !EMAIL_RE.test(email.trim()) || paidDate.length < 10
+                }
+                onClick={() => void submitHonor()}
               >
                 {busy ? 'Unlocking…' : 'Unlock & download'}
+              </button>
+              <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('pay')} disabled={busy}>
+                Back
               </button>
               <a
                 className="voxel-btn"

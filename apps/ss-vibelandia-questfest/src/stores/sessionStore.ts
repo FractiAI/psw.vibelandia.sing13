@@ -1,7 +1,6 @@
 import { create } from 'zustand';
-import { requestBoarding } from '@/lib/api';
+import { requestBoarding, type BoardingRequestBody } from '@/lib/api';
 import { verifyCaptainPassword } from '@/lib/captainAuth';
-import type { LiveRail } from '@/lib/paymentRails';
 import {
   clearPassToken,
   createMockPassToken,
@@ -37,7 +36,7 @@ interface SessionState {
   captainUnlocked: boolean;
   boardingBusy: boolean;
   boardingError: string | null;
-  completeBoarding: (rail: LiveRail, receipt: string, contact: string) => Promise<boolean>;
+  completeBoarding: (input: BoardingRequestBody) => Promise<boolean>;
   disembark: () => void;
   tryCaptainPassword: (password: string) => boolean;
   hydrateFromStorage: () => void;
@@ -58,20 +57,20 @@ export const useSessionStore = create<SessionState>((set) => ({
   captainUnlocked: readCaptainUnlocked(),
   boardingBusy: false,
   boardingError: null,
-  completeBoarding: async (rail, receipt, contact) => {
+  completeBoarding: async (input) => {
     set({ boardingBusy: true, boardingError: null });
     try {
       let token: string;
-      if (import.meta.env.DEV && receipt === 'dev-local-receipt') {
+      if (import.meta.env.DEV && input.email === 'dev@local') {
         const now = Math.floor(Date.now() / 1000);
         token = createMockPassToken({
-          sub: contact || 'dev@local',
+          sub: input.email,
           iat: now,
           exp: now + 30 * 24 * 60 * 60,
-          rail,
+          rail: input.rail,
         } as never);
       } else {
-        const res = await requestBoarding({ rail, receipt, contact: contact || undefined });
+        const res = await requestBoarding(input);
         token = res.token;
       }
       writePassToken(token);

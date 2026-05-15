@@ -1,5 +1,12 @@
 import type { LiveRail } from '@/lib/paymentRails';
 
+export interface BoardingRequestBody {
+  rail: LiveRail;
+  honorConfirm: true;
+  paidDate: string;
+  email: string;
+}
+
 export interface BoardingResponse {
   ok: boolean;
   token: string;
@@ -10,11 +17,7 @@ export interface BoardingResponse {
   message?: string;
 }
 
-export async function requestBoarding(input: {
-  rail: LiveRail;
-  receipt: string;
-  contact?: string;
-}): Promise<BoardingResponse> {
+export async function requestBoarding(input: BoardingRequestBody): Promise<BoardingResponse> {
   const res = await fetch('/api/boarding', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -30,6 +33,24 @@ export async function requestBoarding(input: {
   return data;
 }
 
+export type ExportRequestBody =
+  | {
+      passToken: string;
+      rail: LiveRail;
+      trackId: string;
+      trackTitle?: string;
+      receipt: string;
+    }
+  | {
+      passToken: string;
+      rail: LiveRail;
+      trackId: string;
+      trackTitle?: string;
+      honorConfirm: true;
+      paidDate: string;
+      email: string;
+    };
+
 export interface ExportResponse {
   ok: boolean;
   licenseId: string;
@@ -39,13 +60,7 @@ export interface ExportResponse {
   message?: string;
 }
 
-export async function requestExport(input: {
-  passToken: string;
-  rail: LiveRail;
-  receipt: string;
-  trackId: string;
-  trackTitle?: string;
-}): Promise<ExportResponse> {
+export async function requestExport(input: ExportRequestBody): Promise<ExportResponse> {
   const res = await fetch('/api/export', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

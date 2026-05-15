@@ -15,13 +15,19 @@ import { downloadTrackToDevice } from '@/lib/downloadTrack';
 import { hasExportLicense, saveExportLicense } from '@/lib/exportLicenses';
 import { readPassToken } from '@/lib/mockJwt';
 
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 type Step =
   | 'idle'
   | 'need_access'
   | 'confirm'
   | 'rail'
   | 'pay'
-  | 'proof'
+  | 'honor'
   | 'working'
   | 'done'
   | 'error';
@@ -46,7 +52,9 @@ export function PlaylistBulkExportModal({
 
   const [step, setStep] = useState<Step>('idle');
   const [rail, setRail] = useState<LiveRail | null>(null);
-  const [receipt, setReceipt] = useState('');
+  const [paidDate, setPaidDate] = useState(todayISO);
+  const [email, setEmail] = useState('');
+  const [honorAck, setHonorAck] = useState(false);
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState({ done: 0, total: 0 });
   const [error, setError] = useState<string | null>(null);
@@ -73,7 +81,9 @@ export function PlaylistBulkExportModal({
   const reset = useCallback(() => {
     setStep('idle');
     setRail(null);
-    setReceipt('');
+    setPaidDate(todayISO());
+    setEmail('');
+    setHonorAck(false);
     setBusy(false);
     setProgress({ done: 0, total: 0 });
     setError(null);
@@ -148,7 +158,7 @@ export function PlaylistBulkExportModal({
     for (let i = 0; i < toLicense.length; i++) {
       const { track } = toLicense[i];
       try {
-        if (import.meta.env.DEV && receipt === 'dev-local-export') {
+        if (import.meta.env.DEV && email.trim() === 'dev@local') {
           saveExportLicense({
             trackId: track.id,
             licensedAt: new Date().toISOString(),
@@ -158,7 +168,9 @@ export function PlaylistBulkExportModal({
           const res = await requestExport({
             passToken,
             rail,
-            receipt,
+            honorConfirm: true,
+            paidDate,
+            email: email.trim(),
             trackId: track.id,
             trackTitle: track.title,
           });
@@ -274,8 +286,8 @@ export function PlaylistBulkExportModal({
           <>
             <p className="modal-body">
               One payment can cover this batch: send <strong>${totalUsd.toFixed(2)}</strong> total for{' '}
-              {toLicense.length} track(s) at the <strong>50% playlist-bundle</strong> rate, then enter the same proof
-              for each license we record.
+              {toLicense.length} track(s) at the <strong>50% playlist-bundle</strong> rate, then confirm on the honor
+              screen (same details apply to each license we record).
             </p>
             <div className="rail-grid">
               {(Object.keys(PAYMENT_HANDLES) as LiveRail[]).map((r) => (
@@ -305,8 +317,8 @@ export function PlaylistBulkExportModal({
               <code>{PAYMENT_HANDLES[rail]}</code> (bundle total — half the à la carte total). For the memo, start with{' '}
               <code>BULK EXPORT · {toLicense.length} tracks · 50pct bundle</code> — then add your note.
             </p>
-            <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('proof')}>
-              I paid — enter proof
+            <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('honor')}>
+              I paid — confirm on honor
             </button>
             <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('rail')}>
               Back
@@ -314,28 +326,59 @@ export function PlaylistBulkExportModal({
           </>
         )}
 
-        {step === 'proof' && rail && (
+        {step === 'honor' && rail && (
           <>
+            <p className="modal-body">
+              Confirm you sent <strong>${totalUsd.toFixed(2)}</strong> on <strong>{RAIL_LABEL[rail]}</strong> for this
+              bundle. We record the date, your email, and payment app for each track license.
+            </p>
+            <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
+              <input
+                type="checkbox"
+                checked={honorAck}
+                onChange={(e) => setHonorAck(e.target.checked)}
+                disabled={busy}
+                style={{ marginTop: '0.2rem' }}
+              />
+              <span>
+                I confirm I completed payment of <strong>${totalUsd.toFixed(2)}</strong> using{' '}
+                <strong>{RAIL_LABEL[rail]}</strong> for this playlist download.
+              </span>
+            </label>
             <label className="boarding-field">
-              Receipt / txn id / @handle (applies to all {toLicense.length} downloads)
+              Date you paid
               <input
                 className="libretto-input boarding-input"
-                value={receipt}
-                onChange={(e) => setReceipt(e.target.value)}
-                placeholder="Paste proof from Venmo, PayPal, or Cash App"
+                type="date"
+                value={paidDate}
+                onChange={(e) => setPaidDate(e.target.value)}
+                disabled={busy}
+              />
+            </label>
+            <label className="boarding-field">
+              Email
+              <input
+                className="libretto-input boarding-input"
+                type="email"
+                autoComplete="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
                 disabled={busy}
               />
             </label>
             {import.meta.env.DEV && (
               <p className="modal-fine">
-                Dev: use receipt <code>dev-local-export</code> with an active pass.
+                Dev: use email <code>dev@local</code> with an active pass to skip the export API.
               </p>
             )}
             <div className="modal-actions">
               <button
                 type="button"
                 className="voxel-btn voxel-btn--orange"
-                disabled={busy || receipt.trim().length < 3}
+                disabled={
+                  busy || !honorAck || !EMAIL_RE.test(email.trim()) || paidDate.length < 10
+                }
                 onClick={() => {
                   setStep('working');
                   void runPassengerDownloads();
@@ -343,10 +386,13 @@ export function PlaylistBulkExportModal({
               >
                 {busy ? 'Working…' : 'Unlock all & download'}
               </button>
+              <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('pay')} disabled={busy}>
+                Back
+              </button>
             </div>
             <a
               className="voxel-btn"
-              href={`mailto:${CATALOG_EMAIL}?subject=${encodeURIComponent(`BULK EXPORT ${toLicense.length} tracks · 50% bundle`)}&body=${encodeURIComponent(`Bundle total (50% playlist discount): $${totalUsd.toFixed(2)}\nPaste txn proof:\n\n`)}`}
+              href={`mailto:${CATALOG_EMAIL}?subject=${encodeURIComponent(`BULK EXPORT ${toLicense.length} tracks · 50% bundle`)}&body=${encodeURIComponent(`Bundle total (50% playlist discount): $${totalUsd.toFixed(2)}\nHonor confirmation or paste txn proof:\n\n`)}`}
             >
               Email proof instead
             </a>

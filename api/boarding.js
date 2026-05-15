@@ -1,6 +1,6 @@
 /**
  * Manual Fair Exchange boarding — Venmo / PayPal / Cash App (no Stripe).
- * Trust-first: receipt note unlocks 30-day Passenger JWT. Logged for human audit.
+ * Honor system: user confirms paid + date + email + rail; we issue 30-day Passenger JWT and log for audit.
  */
 const crypto = require('node:crypto');
 
@@ -43,20 +43,24 @@ module.exports = async function handler(req, res) {
     });
   }
 
+  const { validateHonorAttestation } = require('./honor-attest.js');
+
   const body = readBody(req);
   const rail = String(body.rail || '').toLowerCase();
-  const receipt = String(body.receipt || '').trim();
-  const contact = String(body.contact || '').trim();
 
   if (!RAILS.has(rail)) {
     return res.status(400).json({ error: 'invalid_rail' });
   }
-  if (receipt.length < 3) {
-    return res.status(400).json({ error: 'receipt_required', message: 'Enter txn id, @handle, or note' });
+
+  const honor = validateHonorAttestation(body);
+  if (!honor.ok) {
+    return res.status(honor.status).json({ error: honor.code, message: honor.message });
   }
 
+  const receipt = `honor:boarding:v1|${honor.paidDate}|${honor.email}|${rail}`;
+  const sub = honor.email;
+
   const jti = crypto.randomUUID();
-  const sub = contact || `anon-${jti.slice(0, 8)}`;
 
   const token = signPassToken(
     {
@@ -72,8 +76,10 @@ module.exports = async function handler(req, res) {
     ts: new Date().toISOString(),
     rail,
     jti,
-    contact: contact || null,
-    receiptLen: receipt.length,
+    honor: true,
+    paidDate: honor.paidDate,
+    email: honor.email,
+    receiptFingerprint: 'honor_boarding_v1',
     upstash: upstashConfigured(),
   });
 

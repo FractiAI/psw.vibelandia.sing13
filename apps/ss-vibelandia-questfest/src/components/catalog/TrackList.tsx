@@ -119,35 +119,32 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
             Download playlist…
           </button>
         )}
-        {canReorder && (
-          <p className="sp-reorder-hint">Hold ⋮⋮ then drag to reorder</p>
-        )}
       </div>
 
-      <div className="sp-table">
-        <div className={`sp-table-head${canReorder ? ' sp-table-head--reorder' : ''}`} aria-hidden>
-          {canReorder && <span />}
-          <span>#</span>
-          <span>Title</span>
-          <span>Album</span>
-          <span>⏱</span>
-          <span>↓</span>
-          <span />
-        </div>
-        <ol className="sp-rows" ref={listRef}>
-          {rows.map((row, displayIndex) => {
-            const tr = row.track;
-            const active = currentTrackId === tr.id;
-            const dragging = dragIndex === row.index;
-            const dropBefore = overIndex === row.index && dragIndex !== null && dragIndex !== row.index;
-            return (
-              <li
-                key={tr.id}
-                data-reorder-idx={row.index}
-                className={`sp-row${active ? ' sp-row--on' : ''}${dragging ? ' sp-row--dragging' : ''}${dropBefore ? ' sp-row--drop-target' : ''}${canReorder ? ' sp-row--reorder' : ''}`}
-                onDoubleClick={() => play(tr.id)}
-              >
-                {canReorder && (
+      {rows.length === 0 ? (
+        <p className="sp-empty">
+          {search.trim()
+            ? 'No tracks match your search.'
+            : 'No tracks in this playlist yet. Open Playlists → Edit and add songs from the Master catalog.'}
+        </p>
+      ) : (
+        <div className="sp-pl-edit-tracks sp-listen-tracks">
+          {canReorder && (
+            <p className="sp-reorder-hint sp-pl-edit-hint">Hold ⋮⋮ and drag to reorder</p>
+          )}
+          <ol className="sp-pl-edit-list" ref={listRef}>
+            {rows.map((row, displayIndex) => {
+              const tr = row.track;
+              const active = currentTrackId === tr.id;
+              const dragging = dragIndex === row.index;
+              const dropBefore = overIndex === row.index && dragIndex !== null && dragIndex !== row.index;
+              return (
+                <li
+                  key={tr.id}
+                  data-reorder-idx={row.index}
+                  className={`sp-pl-edit-row sp-pl-edit-row--listen${active ? ' sp-pl-edit-row--listen-on' : ''}${dragging ? ' sp-pl-edit-row--dragging' : ''}${dropBefore ? ' sp-pl-edit-row--drop' : ''}`}
+                  onDoubleClick={() => play(tr.id)}
+                >
                   <button
                     type="button"
                     className="sp-row-grip"
@@ -156,55 +153,53 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
                     onPointerMove={onGripPointerMove}
                     onPointerUp={(e) => onGripPointerUp(row.index, e)}
                     onPointerCancel={(e) => onGripPointerUp(row.index, e)}
+                    disabled={!canReorder}
                   >
                     ⋮⋮
                   </button>
-                )}
-                <span className="sp-row-idx">
-                  {active && isPlaying ? <span className="sp-eq">♪</span> : displayIndex + 1}
-                </span>
-                <button type="button" className="sp-row-main" onClick={() => play(tr.id)}>
-                  <span className="sp-row-title">{tr.title}</span>
-                  <span className="sp-row-artist">{tr.artist}</span>
-                  {tr.description && <span className="sp-row-desc">{tr.description}</span>}
-                </button>
-                <span className="sp-row-album">{tr.videoSrc ? 'Music video' : 'Audio'}</span>
-                <span className="sp-row-dur">{fmtDuration(tr.durationSec)}</span>
-                <button
-                  type="button"
-                  className={`sp-row-dl${hasExportLicense(tr.id) ? ' sp-row-dl--owned' : ''}`}
-                  onClick={() => onDownload(tr.id)}
-                  aria-label={`Download ${tr.title}`}
-                  title={
-                    isPassenger
-                      ? hasExportLicense(tr.id)
-                        ? 'Download again (licensed)'
-                        : `Download · $${EGS_EXPORT_USD.toFixed(2)}`
-                      : 'Monthly pass required'
-                  }
-                >
-                  {hasExportLicense(tr.id) ? '✓' : '↓'}
-                </button>
-                <button
-                  type="button"
-                  className="sp-row-play"
-                  onClick={() => play(tr.id)}
-                  aria-label={`Play ${tr.title}`}
-                >
-                  ▶
-                </button>
-              </li>
-            );
-          })}
-        </ol>
-      </div>
-
-      {rows.length === 0 && (
-        <p className="sp-empty">
-          {search.trim()
-            ? 'No tracks match your search.'
-            : 'No tracks in this playlist yet. Open Playlists → Edit and add songs from the Master catalog.'}
-        </p>
+                  <span className="sp-pl-edit-idx">
+                    {active && isPlaying ? <span className="sp-eq">♪</span> : displayIndex + 1}
+                  </span>
+                  <button
+                    type="button"
+                    className="sp-pl-edit-track-info sp-pl-edit-track-info--btn"
+                    onClick={() => play(tr.id)}
+                  >
+                    <strong>{tr.title}</strong>
+                    <span>{tr.artist}</span>
+                    <span className="sp-listen-meta">
+                      {tr.videoSrc ? 'Video' : 'Audio'} · {fmtDuration(tr.durationSec)}
+                    </span>
+                    {tr.description && <span className="sp-pl-edit-track-desc">{tr.description}</span>}
+                  </button>
+                  <button
+                    type="button"
+                    className={`sp-listen-dl${hasExportLicense(tr.id) ? ' sp-listen-dl--owned' : ''}`}
+                    onClick={() => onDownload(tr.id)}
+                    aria-label={`Download ${tr.title}`}
+                    title={
+                      isPassenger
+                        ? hasExportLicense(tr.id)
+                          ? 'Download again (licensed)'
+                          : `Download · $${EGS_EXPORT_USD.toFixed(2)}`
+                        : 'Monthly pass required'
+                    }
+                  >
+                    {hasExportLicense(tr.id) ? '✓' : '↓'}
+                  </button>
+                  <button
+                    type="button"
+                    className="sp-pl-edit-nudge sp-listen-play"
+                    onClick={() => play(tr.id)}
+                    aria-label={`Play ${tr.title}`}
+                  >
+                    ▶
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
       )}
     </section>
   );

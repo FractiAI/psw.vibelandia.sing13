@@ -20,6 +20,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
   const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);
   const moveTrackInPlaylist = useCatalogStore((s) => s.moveTrackInPlaylist);
+  const duplicatePlaylist = useCatalogStore((s) => s.duplicatePlaylist);
 
   const pl = playlists.find((p) => p.id === playlistId);
   const masterPl = playlists.find((p) => p.id === MASTER_PLAYLIST_ID);

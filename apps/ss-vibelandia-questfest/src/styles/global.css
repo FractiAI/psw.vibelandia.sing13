@@ -699,6 +699,30 @@ a.voxel-btn {
   width: 100%;
 }
 
+.boarding-honor-figure {
+  margin: 0 0 0.85rem;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid rgba(201, 191, 176, 0.28);
+  box-shadow: 3px 3px 0 rgba(20, 14, 10, 0.45);
+}
+
+.boarding-honor-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 11rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.boarding-honor-figure figcaption {
+  padding: 0.35rem 0.5rem 0.45rem;
+  font-size: 0.62rem;
+  color: rgba(232, 224, 213, 0.55);
+  background: rgba(12, 10, 8, 0.55);
+}
+
 .boarding-signout {
   margin-top: 1rem;
   padding-top: 0.75rem;
@@ -1820,9 +1844,6 @@ a.voxel-btn {
   max-width: 1100px;
   width: 100%;
   min-width: 0;
-  /* Row layout follows this pane’s width (sidebar + wide viewport used to keep a cramped grid). */
-  container-type: inline-size;
-  container-name: listen;
 }
 
 .sp-hero {
@@ -1956,55 +1977,6 @@ a.voxel-btn {
   color: #727272;
 }
 
-.sp-table {
-  width: 100%;
-  min-width: 0;
-}
-
-.sp-table-head,
-.sp-row {
-  display: grid;
-  grid-template-columns: 2rem minmax(0, 2fr) minmax(0, 1fr) 4rem 2.5rem 3.5rem;
-  gap: 0.5rem 1rem;
-  align-items: center;
-}
-
-.sp-table-head--reorder,
-.sp-row--reorder {
-  grid-template-columns: 1.35rem 2rem minmax(0, 2fr) minmax(0, 1fr) 4rem 2.5rem 3.5rem;
-}
-
-.sp-table-head {
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #b3b3b3;
-  padding: 0 0.5rem 0.5rem;
-  border-bottom: 1px solid #282828;
-  margin-bottom: 0.25rem;
-}
-
-.sp-rows {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  min-width: 0;
-}
-
-.sp-row {
-  padding: 0.4rem 0.5rem;
-  border-radius: 6px;
-  font-size: 0.88rem;
-}
-
-.sp-row:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.sp-row--on {
-  background: rgba(30, 215, 96, 0.12);
-}
-
 .sp-row-grip {
   border: none;
   background: transparent;
@@ -2021,201 +1993,18 @@ a.voxel-btn {
   letter-spacing: -0.12em;
 }
 
-.sp-row-grip:active {
+.sp-row-grip:active:not(:disabled) {
   cursor: grabbing;
   color: #1ed760;
 }
 
-.sp-row--dragging {
-  opacity: 0.92;
-  background: #333 !important;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
-  position: relative;
-  z-index: 4;
-}
-
-.sp-row--drop-target {
-  box-shadow: inset 0 2px 0 #1ed760;
-}
-
-.sp-row-idx {
-  color: #b3b3b3;
-  text-align: center;
-  font-size: 0.78rem;
+.sp-row-grip:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
 }
 
 .sp-eq {
   color: #1ed760;
-}
-
-.sp-row-main {
-  background: none;
-  border: none;
-  padding: 0;
-  text-align: left;
-  cursor: pointer;
-  color: inherit;
-  font: inherit;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.sp-row-title {
-  display: block;
-  font-weight: 500;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.sp-row-artist {
-  display: block;
-  font-size: 0.78rem;
-  color: #b3b3b3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.sp-row-desc {
-  display: block;
-  font-size: 0.72rem;
-  color: #727272;
-  margin-top: 0.15rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 100%;
-}
-
-.sp-row-album,
-.sp-row-dur {
-  color: #b3b3b3;
-  font-size: 0.78rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.sp-row-play {
-  font-size: 0.65rem;
-  padding: 0.3rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid #535353;
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.sp-row-dl {
-  font-size: 0.72rem;
-  padding: 0.3rem 0.45rem;
-  border-radius: 6px;
-  border: 1px solid #535353;
-  background: transparent;
-  color: #b3b3b3;
-  cursor: pointer;
-  font-weight: 700;
-  min-width: 2rem;
-  min-height: 2rem;
-}
-
-.sp-row-dl:hover {
-  color: #fff;
-  border-color: #1ed760;
-}
-
-.sp-row-dl--owned {
-  color: #1ed760;
-  border-color: rgba(30, 215, 96, 0.45);
-}
-
-.sp-row-remove {
-  border: none;
-  background: transparent;
-  color: #727272;
-  font-size: 1.1rem;
-  line-height: 1;
-  cursor: pointer;
-  min-width: 2rem;
-  min-height: 2rem;
-  border-radius: 6px;
-}
-
-.sp-row-remove:hover {
-  color: #f15e6c;
-  background: rgba(241, 94, 108, 0.12);
-}
-
-/* Narrow *listen pane* (e.g. desktop + sidebar): switch off grid before viewport breakpoints. */
-@container listen (max-width: 800px) {
-  .sp-table-head {
-    display: none;
-  }
-
-  .sp-row-album,
-  .sp-row-dur {
-    display: none !important;
-  }
-
-  .sp-row,
-  .sp-row--reorder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.45rem 0.55rem;
-    padding: 0.45rem 0.4rem;
-    min-width: 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .sp-row-grip {
-    flex: 0 0 auto;
-    align-self: center;
-  }
-
-  .sp-row-idx {
-    flex: 0 0 1.5rem;
-    width: 1.5rem;
-    text-align: center;
-    align-self: center;
-  }
-
-  .sp-row-main {
-    flex: 1 1 0;
-    min-width: 0;
-    max-width: none;
-    display: block;
-    align-self: center;
-    text-align: left;
-    overflow: hidden;
-  }
-
-  .sp-row-dl {
-    flex: 0 0 auto;
-    align-self: center;
-    min-width: 0;
-    width: 2.35rem;
-    height: 2.35rem;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-  }
-
-  .sp-row-play {
-    flex: 0 0 auto;
-    align-self: center;
-    min-width: 2.75rem;
-    min-height: 44px;
-    padding: 0 0.45rem;
-    box-sizing: border-box;
-  }
 }
 
 .sp-hero-secondary {
@@ -2697,6 +2486,84 @@ a.voxel-btn {
   box-shadow: inset 0 2px 0 #1ed760;
 }
 
+/* Listen tab: same grid row mechanics as playlist editor (grip · # · track · download · play) */
+.sp-pl-edit-row--listen {
+  grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+}
+
+.sp-pl-edit-row--listen-on {
+  background: rgba(30, 215, 96, 0.12);
+}
+
+.sp-pl-edit-track-info--btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.sp-pl-edit-track-info--btn:focus-visible {
+  outline: 2px solid #1ed760;
+  outline-offset: 2px;
+}
+
+.sp-listen-meta {
+  font-size: 0.7rem;
+  color: #727272;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sp-pl-edit-track-desc {
+  font-size: 0.7rem;
+  color: #727272;
+  margin-top: 0.12rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.sp-listen-tracks .sp-pl-edit-hint {
+  margin: 0.5rem 1rem 0;
+}
+
+.sp-listen-dl {
+  border: 1px solid #535353;
+  background: transparent;
+  color: #b3b3b3;
+  border-radius: 6px;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.sp-listen-dl:hover {
+  color: #fff;
+  border-color: #1ed760;
+}
+
+.sp-listen-dl--owned {
+  color: #1ed760;
+  border-color: rgba(30, 215, 96, 0.45);
+}
+
 .sp-pl-edit-idx {
   color: #727272;
   font-size: 0.78rem;
@@ -2776,43 +2643,58 @@ a.voxel-btn {
 }
 
 @media (max-width: 480px) {
-  .sp-pl-edit-row {
+  .sp-pl-edit .sp-pl-edit-row:not(.sp-pl-edit-row--listen):not(.sp-pl-edit-row--master) {
     grid-template-columns: auto auto 1fr auto;
     grid-template-areas:
       'grip idx info remove'
       'grip idx moves remove';
   }
 
-  .sp-pl-edit-row--master {
+  .sp-pl-edit .sp-pl-edit-row--master {
     grid-template-columns: auto auto minmax(0, 1fr);
     grid-template-areas:
       'grip idx info'
       'grip idx moves';
   }
 
-  .sp-row-grip {
+  .sp-pl-edit .sp-row-grip {
     grid-area: grip;
     align-self: center;
   }
 
-  .sp-pl-edit-idx {
+  .sp-pl-edit .sp-pl-edit-idx {
     grid-area: idx;
     align-self: center;
   }
 
-  .sp-pl-edit-track-info {
+  .sp-pl-edit .sp-pl-edit-track-info {
     grid-area: info;
     min-width: 0;
   }
 
-  .sp-pl-edit-moves {
+  .sp-pl-edit .sp-pl-edit-moves {
     grid-area: moves;
     justify-self: end;
   }
 
-  .sp-pl-edit-remove {
+  .sp-pl-edit .sp-pl-edit-remove {
     grid-area: remove;
     align-self: center;
+  }
+
+  .sp-listen .sp-pl-edit-row--listen {
+    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: none;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .sp-listen .sp-listen-dl,
+  .sp-listen .sp-listen-play {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
   }
 }
 
@@ -3204,75 +3086,7 @@ a.voxel-btn {
     min-height: 44px;
   }
 
-  /* Listen (TrackList): flex rows on small screens — @container fallback for older Safari; avoid width:100% on main (causes flex wrap + crushed titles). */
-  .sp-listen .sp-table-head {
-    display: none;
-  }
-
-  .sp-listen .sp-row-album,
-  .sp-listen .sp-row-dur {
-    display: none !important;
-  }
-
-  .sp-listen .sp-row,
-  .sp-listen .sp-row--reorder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.4rem 0.45rem;
-    padding: 0.45rem 0.35rem;
-    min-width: 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .sp-listen .sp-row-grip {
-    flex: 0 0 auto;
-    align-self: center;
-  }
-
-  .sp-listen .sp-row-idx {
-    flex: 0 0 1.35rem;
-    width: 1.35rem;
-    text-align: center;
-    align-self: center;
-  }
-
-  .sp-listen .sp-row-main {
-    flex: 1 1 0;
-    min-width: 0;
-    overflow: hidden;
-    display: block;
-    align-self: center;
-    text-align: left;
-  }
-
-  .sp-listen .sp-row-dl {
-    flex: 0 0 2.25rem;
-    width: 2.25rem;
-    height: 2.25rem;
-    min-width: 2.25rem;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-  }
-
-  .sp-listen .sp-row-play {
-    flex: 0 0 2.65rem;
-    min-width: 2.65rem;
-    max-width: 2.65rem;
-    min-height: 40px;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .sp-row-desc {
+  .sp-pl-edit-track-desc {
     white-space: normal;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -3281,9 +3095,13 @@ a.voxel-btn {
     word-break: break-word;
   }
 
-  .sp-row-main,
-  .sp-row-title,
-  .sp-row-artist {
+  .sp-pl-edit-track-info--btn span.sp-listen-meta {
+    color: #727272;
+  }
+
+  .sp-pl-edit-track-info--btn,
+  .sp-listen-dl,
+  .sp-listen-play {
     -webkit-tap-highlight-color: transparent;
   }
 

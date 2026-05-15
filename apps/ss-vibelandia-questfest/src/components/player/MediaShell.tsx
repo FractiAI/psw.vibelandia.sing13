@@ -10,6 +10,7 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
+import type { BoardingRequestBody } from '@/lib/api';
 
 /**
  * Lives under the app router but outside route elements so playback and media elements
@@ -56,12 +57,8 @@ export function MediaShell() {
     [showVessel],
   );
 
-  const handleBoarding = async (
-    rail: Parameters<typeof completeBoarding>[0],
-    receipt: string,
-    contact: string,
-  ) => {
-    const ok = await completeBoarding(rail, receipt, contact);
+  const handleBoarding = async (payload: BoardingRequestBody) => {
+    const ok = await completeBoarding(payload);
     if (ok) {
       setBoardingOpen(false);
       setFairOpen(false);

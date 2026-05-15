@@ -6,13 +6,20 @@ import {
   boardingNote,
   type LiveRail,
 } from '@/lib/paymentRails';
+import type { BoardingRequestBody } from '@/lib/api';
 import { useSessionStore } from '@/stores/sessionStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
+
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 interface BoardingModalProps {
   open: boolean;
   onClose: () => void;
-  onSubmit: (rail: LiveRail, receipt: string, contact: string) => Promise<void>;
+  onSubmit: (payload: BoardingRequestBody) => Promise<void>;
   busy: boolean;
   error: string | null;
 }
@@ -24,10 +31,11 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const disembark = useSessionStore((s) => s.disembark);
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const setGain = usePlaybackStore((s) => s.setGain);
-  const [step, setStep] = useState<'rail' | 'pay' | 'proof'>('rail');
+  const [step, setStep] = useState<'rail' | 'pay' | 'honor'>('rail');
   const [rail, setRail] = useState<LiveRail | null>(null);
-  const [receipt, setReceipt] = useState('');
-  const [contact, setContact] = useState('');
+  const [paidDate, setPaidDate] = useState(todayISO);
+  const [email, setEmail] = useState('');
+  const [honorAck, setHonorAck] = useState(false);
   const [captainPw, setCaptainPw] = useState('');
   const [captainErr, setCaptainErr] = useState<string | null>(null);
 
@@ -36,8 +44,9 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const reset = () => {
     setStep('rail');
     setRail(null);
-    setReceipt('');
-    setContact('');
+    setPaidDate(todayISO());
+    setEmail('');
+    setHonorAck(false);
     setCaptainPw('');
     setCaptainErr(null);
   };
@@ -53,6 +62,10 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
     setGain(1);
     close();
   };
+
+  const emailOk = EMAIL_RE.test(email.trim());
+  const canIssue =
+    !!rail && honorAck && emailOk && paidDate.length >= 10 && !busy;
 
   return (
     <div className="modal-root" role="dialog" aria-modal="true">
@@ -134,7 +147,14 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                 type="button"
                 className="voxel-btn voxel-btn--ghost"
                 style={{ marginTop: '0.5rem' }}
-                onClick={() => void onSubmit('venmo', 'dev-local-receipt', 'dev@local')}
+                onClick={() =>
+                  void onSubmit({
+                    rail: 'venmo',
+                    honorConfirm: true,
+                    paidDate: todayISO(),
+                    email: 'dev@local',
+                  })
+                }
               >
                 Dev · skip payment
               </button>
@@ -147,14 +167,14 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
             <p className="modal-body">
               Send <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong> via <strong>{RAIL_LABEL[rail]}</strong>{' '}
               to <code>{PAYMENT_HANDLES[rail]}</code>. Memo / note (exact vibe):{' '}
-              <code>{boardingNote()}</code>. Then come back and paste proof.
+              <code>{boardingNote()}</code>.
             </p>
             <p className="modal-fine boarding-counterintuitive">
               Friends &amp; family if the app asks. Do not overthink it. That is the old school part.
             </p>
             <div className="modal-actions">
-              <button type="button" className="voxel-btn voxel-btn--cyan" onClick={() => setStep('proof')}>
-                I paid · paste proof
+              <button type="button" className="voxel-btn voxel-btn--cyan" onClick={() => setStep('honor')}>
+                I paid — confirm on honor
               </button>
               <button type="button" className="voxel-btn" onClick={() => setStep('rail')}>
                 Different rail
@@ -163,29 +183,56 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
           </>
         )}
 
-        {step === 'proof' && rail && (
+        {step === 'honor' && rail && (
           <>
             <p className="modal-body">
-              Paste txn id, screenshot filename, or @handle — we issue a 30-day Passenger pass on
-              honor. Abuse revokes access.
+              Fair Exchange runs on trust. Confirm you sent <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong> on{' '}
+              <strong>{RAIL_LABEL[rail]}</strong> — we log the date, your email, and which app you used, then issue a
+              30-day Passenger pass. Abuse revokes access.
             </p>
+            <figure className="boarding-honor-figure">
+              <img
+                src={`${import.meta.env.BASE_URL}images/honor-farmstand-paybox.png`}
+                alt="Illustration of a wooden farmstand honor box with produce and a cash slot, warm sunlight."
+                width={640}
+                height={360}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>Same energy as the roadside stand — you pay, we trust you meant it.</figcaption>
+            </figure>
+            <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
+              <input
+                type="checkbox"
+                checked={honorAck}
+                onChange={(e) => setHonorAck(e.target.checked)}
+                disabled={busy}
+                style={{ marginTop: '0.2rem' }}
+              />
+              <span>
+                I confirm I completed payment of <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong> using{' '}
+                <strong>{RAIL_LABEL[rail]}</strong>.
+              </span>
+            </label>
             <label className="boarding-field">
-              <span>Receipt / proof</span>
+              <span>Date you paid</span>
               <input
                 className="libretto-input boarding-input"
-                value={receipt}
-                onChange={(e) => setReceipt(e.target.value)}
-                placeholder="txn id, last 4, @you, note text…"
+                type="date"
+                value={paidDate}
+                onChange={(e) => setPaidDate(e.target.value)}
                 disabled={busy}
               />
             </label>
             <label className="boarding-field">
-              <span>Contact (email or @)</span>
+              <span>Email (for our records)</span>
               <input
                 className="libretto-input boarding-input"
-                value={contact}
-                onChange={(e) => setContact(e.target.value)}
-                placeholder="optional but helps if we need you"
+                type="email"
+                autoComplete="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
                 disabled={busy}
               />
             </label>
@@ -194,10 +241,17 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
               <button
                 type="button"
                 className="voxel-btn voxel-btn--orange"
-                disabled={busy || receipt.trim().length < 3}
-                onClick={() => void onSubmit(rail, receipt.trim(), contact.trim())}
+                disabled={!canIssue}
+                onClick={() =>
+                  void onSubmit({
+                    rail,
+                    honorConfirm: true,
+                    paidDate,
+                    email: email.trim(),
+                  })
+                }
               >
-                {busy ? 'Issuing pass…' : 'Generate monthly access'}
+                {busy ? 'Issuing pass…' : 'Issue 30-day pass'}
               </button>
               <button type="button" className="voxel-btn" onClick={() => setStep('pay')} disabled={busy}>
                 Back

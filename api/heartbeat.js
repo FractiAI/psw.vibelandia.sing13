@@ -57,8 +57,10 @@ function readBody(req) {
 }
 
 async function optionalVerifyToken(token) {
-  const secret = process.env.PASS_TOKEN_SECRET;
-  if (!secret || !token) return true;
+  if (!token) return true;
+  const { getPassTokenSecret } = await import('../lib/pass-env.mjs');
+  const secret = getPassTokenSecret();
+  if (!secret) return true;
   const { passLib } = await libs();
   return !!passLib.verifyPassToken(String(token), secret);
 }

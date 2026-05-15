@@ -1,65 +1,35 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
-import { useStreamLock } from '@/hooks/useStreamLock';
-import { FairExchangeModal } from '@/components/player/FairExchangeModal';
-import { VesselSwitchModal } from '@/components/player/VesselSwitchModal';
-import { BoardingModal } from '@/components/payment/BoardingModal';
-import { CaptainUnlockModal } from '@/components/payment/CaptainUnlockModal';
-import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
 import { PlaylistBulkExportModal } from '@/components/payment/PlaylistBulkExportModal';
 import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
 import { TrackList } from '@/components/catalog/TrackList';
 import { PlaylistLibrary } from '@/components/catalog/PlaylistLibrary';
 import { DjStudio } from '@/components/catalog/DjStudio';
-import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { useSessionStore } from '@/stores/sessionStore';
+import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 
 export function BridgePage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
-  const completeBoarding = useSessionStore((s) => s.completeBoarding);
-  const boardingBusy = useSessionStore((s) => s.boardingBusy);
-  const boardingError = useSessionStore((s) => s.boardingError);
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
-  const disembark = useSessionStore((s) => s.disembark);
 
-  const hydrateCatalog = useCatalogStore((s) => s.hydrate);
   const hydrated = useCatalogStore((s) => s.hydrated);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
-  const getTrack = useCatalogStore((s) => s.getTrack);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const setTrack = usePlaybackStore((s) => s.setTrack);
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
-  const setGain = usePlaybackStore((s) => s.setGain);
 
-  const [fairOpen, setFairOpen] = useState(false);
-  const [boardOpen, setBoardOpen] = useState(false);
-  const [captainModalOpen, setCaptainModalOpen] = useState(false);
+  const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
+  const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
+  const openExport = useMediaChromeStore((s) => s.openExport);
+
   const [bulkExportOpen, setBulkExportOpen] = useState(false);
-  const [exportOpen, setExportOpen] = useState(false);
-  const [exportTrackId, setExportTrackId] = useState<string | null>(null);
-  const [vesselOpen, setVesselOpen] = useState(false);
-  const [vesselKind, setVesselKind] = useState<'vessel_switch' | 'tab_preempt' | null>(null);
   const [playlistEditId, setPlaylistEditId] = useState<string | null>(null);
-
-  const stream = useStreamLock();
-
-  const onFairExchange = useCallback(() => setFairOpen(true), []);
-  const onVesselSwitch = useCallback((reason: 'vessel_switch' | 'tab_preempt') => {
-    setVesselKind(reason);
-    setVesselOpen(true);
-  }, []);
-
-  useEffect(() => {
-    hydrateSession();
-    void hydrateCatalog();
-  }, [hydrateSession, hydrateCatalog]);
 
   useEffect(() => {
     if (location.pathname === '/dj' || location.hash === '#/dj') {
@@ -120,23 +90,7 @@ export function BridgePage() {
   }, [activePlaylistId, getActivePlaylist, hydrated, setTrack]);
 
   const handleDownloadRequest = (trackId: string) => {
-    setExportTrackId(trackId);
-    setExportOpen(true);
-  };
-
-  const exportTrack = exportTrackId ? getTrack(exportTrackId) : undefined;
-
-  const handleBoarding = async (
-    rail: Parameters<typeof completeBoarding>[0],
-    receipt: string,
-    contact: string,
-  ) => {
-    const ok = await completeBoarding(rail, receipt, contact);
-    if (ok) {
-      setBoardOpen(false);
-      setFairOpen(false);
-      setGain(1);
-    }
+    openExport(trackId);
   };
 
   if (!hydrated) {
@@ -186,23 +140,8 @@ export function BridgePage() {
             <Link to="/" className="sp-top-link">
               Home
             </Link>
-            <button
-              type="button"
-              className="sp-top-link"
-              onClick={() => setCaptainModalOpen(true)}
-            >
+            <button type="button" className="sp-top-link" onClick={() => setCaptainOpen(true)}>
               Captain
-            </button>
-            <button
-              type="button"
-              className="sp-top-link"
-              onClick={() => {
-                disembark();
-                usePlaybackStore.getState().setPlaying(false);
-                setGain(1);
-              }}
-            >
-              {isPassenger ? 'Pass' : 'Account'}
             </button>
           </nav>
         </header>
@@ -237,74 +176,16 @@ export function BridgePage() {
         </main>
       </div>
 
-      <NowPlayingBar
-        onFairExchange={onFairExchange}
-        onVesselSwitch={onVesselSwitch}
-        killReason={stream.killReason}
-        beginSession={stream.beginSession}
-        clearKill={stream.clearKill}
-        onDownload={handleDownloadRequest}
-      />
-
-      <FairExchangeModal
-        open={fairOpen}
-        onClose={() => setFairOpen(false)}
-        onBoard={() => {
-          setFairOpen(false);
-          setBoardOpen(true);
-        }}
-        onCaptainAccess={() => {
-          setFairOpen(false);
-          setCaptainModalOpen(true);
-        }}
-      />
-
-      <BoardingModal
-        open={boardOpen}
-        onClose={() => setBoardOpen(false)}
-        onSubmit={handleBoarding}
-        busy={boardingBusy}
-        error={boardingError}
-      />
-
-      <CaptainUnlockModal open={captainModalOpen} onClose={() => setCaptainModalOpen(false)} />
-
       <PlaylistBulkExportModal
         open={bulkExportOpen}
         onClose={() => setBulkExportOpen(false)}
         onNeedPass={() => {
           setBulkExportOpen(false);
-          setBoardOpen(true);
+          setBoardingOpen(true);
         }}
         onCaptainRequest={() => {
           setBulkExportOpen(false);
-          setCaptainModalOpen(true);
-        }}
-      />
-
-      <ExportTrackModal
-        open={exportOpen}
-        track={exportTrack}
-        isPassenger={isPassenger}
-        captainUnlocked={captainUnlocked}
-        onClose={() => {
-          setExportOpen(false);
-          setExportTrackId(null);
-        }}
-        onNeedPass={() => {
-          setExportOpen(false);
-          setBoardOpen(true);
-        }}
-      />
-
-      <VesselSwitchModal
-        open={vesselOpen}
-        kind={vesselKind}
-        onAck={() => {
-          setVesselOpen(false);
-          setVesselKind(null);
-          stream.clearKill();
-          setGain(1);
+          setCaptainOpen(true);
         }}
       />
     </div>

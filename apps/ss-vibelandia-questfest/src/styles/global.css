@@ -531,7 +531,7 @@ a.voxel-btn {
 .modal-root {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -697,6 +697,28 @@ a.voxel-btn {
 
 .boarding-input {
   width: 100%;
+}
+
+.boarding-signout {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.boarding-signout-btn {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.25rem;
+}
+
+.boarding-signout-btn:hover {
+  color: #fff;
 }
 
 .bridge-aside {
@@ -1504,7 +1526,7 @@ a.voxel-btn {
 .sp-app {
   display: grid;
   grid-template-columns: 280px 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
   min-height: 100vh;
   background: #121212;
   color: #fff;
@@ -1519,7 +1541,7 @@ a.voxel-btn {
 }
 
 .sp-side {
-  grid-row: 1 / 3;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -1607,6 +1629,35 @@ a.voxel-btn {
   min-height: 0;
   display: flex;
   flex-direction: column;
+}
+
+.sp-side-section--master {
+  flex: 0 0 auto;
+  min-height: 0;
+}
+
+.sp-side-master-hint {
+  font-size: 0.65rem;
+  color: #727272;
+  margin: -0.2rem 0 0.5rem;
+  padding: 0 0.75rem;
+  line-height: 1.35;
+}
+
+.sp-pl-item--master {
+  border: 1px solid rgba(30, 215, 96, 0.28);
+  background: rgba(30, 215, 96, 0.06);
+}
+
+.sp-pl-item--master:hover {
+  border-color: rgba(30, 215, 96, 0.45);
+  color: #fff;
+}
+
+.sp-pl-item--master.sp-pl-item--on {
+  border-color: rgba(30, 215, 96, 0.5);
+  background: rgba(30, 215, 96, 0.14);
+  color: #fff;
 }
 
 .sp-side-label {
@@ -1762,13 +1813,16 @@ a.voxel-btn {
 .sp-scroll {
   flex: 1;
   overflow-y: auto;
-  padding: 0 1.5rem 2rem;
+  padding: 0 1.5rem max(2rem, calc(5.5rem + env(safe-area-inset-bottom, 0px))) 1.5rem;
 }
 
 .sp-listen {
   max-width: 1100px;
   width: 100%;
   min-width: 0;
+  /* Row layout follows this pane’s width (sidebar + wide viewport used to keep a cramped grid). */
+  container-type: inline-size;
+  container-name: listen;
 }
 
 .sp-hero {
@@ -1777,6 +1831,12 @@ a.voxel-btn {
   gap: 1.5rem;
   padding: 2rem 0 1.5rem;
   min-height: 220px;
+  min-width: 0;
+}
+
+.sp-hero-meta {
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .sp-hero-cover {
@@ -1819,6 +1879,7 @@ a.voxel-btn {
   font-size: 0.78rem;
   color: #b3b3b3;
   margin: 0.75rem 0 0;
+  line-height: 1.45;
 }
 
 .sp-hero-actions {
@@ -1996,6 +2057,7 @@ a.voxel-btn {
   color: inherit;
   font: inherit;
   min-width: 0;
+  overflow: hidden;
 }
 
 .sp-row-title {
@@ -2084,6 +2146,76 @@ a.voxel-btn {
 .sp-row-remove:hover {
   color: #f15e6c;
   background: rgba(241, 94, 108, 0.12);
+}
+
+/* Narrow *listen pane* (e.g. desktop + sidebar): switch off grid before viewport breakpoints. */
+@container listen (max-width: 800px) {
+  .sp-table-head {
+    display: none;
+  }
+
+  .sp-row-album,
+  .sp-row-dur {
+    display: none !important;
+  }
+
+  .sp-row,
+  .sp-row--reorder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.45rem 0.55rem;
+    padding: 0.45rem 0.4rem;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sp-row-grip {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+
+  .sp-row-idx {
+    flex: 0 0 1.5rem;
+    width: 1.5rem;
+    text-align: center;
+    align-self: center;
+  }
+
+  .sp-row-main {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    display: block;
+    align-self: center;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .sp-row-dl {
+    flex: 0 0 auto;
+    align-self: center;
+    min-width: 0;
+    width: 2.35rem;
+    height: 2.35rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .sp-row-play {
+    flex: 0 0 auto;
+    align-self: center;
+    min-width: 2.75rem;
+    min-height: 44px;
+    padding: 0 0.45rem;
+    box-sizing: border-box;
+  }
 }
 
 .sp-hero-secondary {
@@ -2711,9 +2843,25 @@ a.voxel-btn {
   display: inline-block;
 }
 
+/* Fixed dock: player + modals stay mounted when navigating away from Bridge */
+.sp-media-shell {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.sp-media-shell .sp-now {
+  grid-column: unset;
+  grid-row: unset;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 .sp-now {
-  grid-column: 2;
-  grid-row: 2;
   background: #181818;
   border-top: 1px solid #282828;
 }
@@ -2887,10 +3035,11 @@ a.voxel-btn {
   .sp-scroll {
     overflow: visible;
     flex: none;
-    padding-bottom: 2rem;
     min-width: 0;
     padding-left: max(1rem, env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
+    padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+    padding-bottom: max(2rem, calc(5.5rem + env(safe-area-inset-bottom, 0px)));
   }
 
   .sp-toolbar {
@@ -2908,35 +3057,20 @@ a.voxel-btn {
     width: 100%;
   }
 
+  .sp-library {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sp-pl-edit {
+    width: 100%;
+    min-width: 0;
+  }
+
   .sp-now {
     flex-shrink: 0;
     width: 100%;
     padding-bottom: env(safe-area-inset-bottom);
-  }
-
-  .sp-table-head {
-    display: none;
-  }
-
-  /* After .sp-row-dur { display:none }: idx, main, album, dl, play */
-  .sp-row {
-    grid-template-columns: 1.75rem minmax(0, 1fr) minmax(0, 5.5rem) 2.5rem 3rem;
-    align-items: center;
-    min-width: 0;
-    width: 100%;
-  }
-
-  /* Same + grip before idx */
-  .sp-row--reorder {
-    grid-template-columns: 2rem 1.75rem minmax(0, 1fr) minmax(0, 5.5rem) 2.5rem 3rem;
-  }
-
-  .sp-row-dur {
-    display: none;
-  }
-
-  .sp-row-main {
-    max-width: 100%;
   }
 }
 
@@ -2991,6 +3125,10 @@ a.voxel-btn {
     max-height: 130px;
   }
 
+  .sp-side-section--master {
+    max-height: none;
+  }
+
   .sp-pl-list {
     max-height: 96px;
     overflow-y: auto;
@@ -3000,7 +3138,7 @@ a.voxel-btn {
     flex-direction: column;
     align-items: stretch;
     gap: 0.5rem;
-    padding: 0.65rem 1rem;
+    padding: max(0.65rem, env(safe-area-inset-top, 0px)) 1rem 0.65rem;
   }
 
   .sp-tabs {
@@ -3022,7 +3160,14 @@ a.voxel-btn {
   }
 
   .sp-scroll {
-    padding: 0 max(1rem, env(safe-area-inset-left)) 1.5rem max(1rem, env(safe-area-inset-right));
+    padding: max(1rem, env(safe-area-inset-top, 0px)) max(1rem, env(safe-area-inset-right))
+      max(1.5rem, calc(6.5rem + env(safe-area-inset-bottom, 0px))) max(1rem, env(safe-area-inset-left));
+  }
+
+  .sp-hero-stats {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    word-wrap: break-word;
   }
 
   .sp-hero {
@@ -3059,45 +3204,72 @@ a.voxel-btn {
     min-height: 44px;
   }
 
-  /* .sp-row-album + .sp-row-dur hidden → idx, main, dl, play (4 tracks) */
-  .sp-row {
-    grid-template-columns: 1.75rem minmax(0, 1fr) 2.5rem 3rem;
-    grid-template-areas: none;
-    align-items: start;
-    padding: 0.55rem 0.35rem;
-    gap: 0.35rem 0.5rem;
-    min-width: 0;
-    width: 100%;
-  }
-
-  /* + grip; album & dur hidden */
-  .sp-row--reorder {
-    grid-template-columns: 2rem 1.75rem minmax(0, 1fr) 2.5rem 3rem;
-  }
-
-  .sp-row-album {
+  /* Listen (TrackList): flex rows on small screens — @container fallback for older Safari; avoid width:100% on main (causes flex wrap + crushed titles). */
+  .sp-listen .sp-table-head {
     display: none;
   }
 
-  .sp-row-idx {
-    align-self: center;
-    padding-top: 0.2rem;
+  .sp-listen .sp-row-album,
+  .sp-listen .sp-row-dur {
+    display: none !important;
   }
 
-  .sp-row-grip {
-    align-self: center;
-  }
-
-  .sp-row-main {
+  .sp-listen .sp-row,
+  .sp-listen .sp-row--reorder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.4rem 0.45rem;
+    padding: 0.45rem 0.35rem;
     min-width: 0;
-    max-width: 100%;
-    align-self: center;
-    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .sp-row-title,
-  .sp-row-artist {
-    max-width: 100%;
+  .sp-listen .sp-row-grip {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+
+  .sp-listen .sp-row-idx {
+    flex: 0 0 1.35rem;
+    width: 1.35rem;
+    text-align: center;
+    align-self: center;
+  }
+
+  .sp-listen .sp-row-main {
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+    display: block;
+    align-self: center;
+    text-align: left;
+  }
+
+  .sp-listen .sp-row-dl {
+    flex: 0 0 2.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    min-width: 2.25rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .sp-listen .sp-row-play {
+    flex: 0 0 2.65rem;
+    min-width: 2.65rem;
+    max-width: 2.65rem;
+    min-height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .sp-row-desc {
@@ -3109,18 +3281,9 @@ a.voxel-btn {
     word-break: break-word;
   }
 
-  .sp-row-dl {
-    align-self: center;
-    justify-self: center;
-  }
-
-  .sp-row-play {
-    align-self: center;
-    justify-self: center;
-    min-height: 44px;
-    min-width: 52px;
-    padding: 0.45rem 0.65rem;
-    font-size: 0.72rem;
+  .sp-row-main,
+  .sp-row-title,
+  .sp-row-artist {
     -webkit-tap-highlight-color: transparent;
   }
 

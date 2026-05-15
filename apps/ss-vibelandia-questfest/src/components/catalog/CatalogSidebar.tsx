@@ -15,6 +15,11 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
 
+  const masterPl = useMemo(
+    () => playlists.find((p) => p.id === MASTER_PLAYLIST_ID),
+    [playlists],
+  );
+
   const openListen = (id: string) => {
     setDjMode(false);
     setActive(id);
@@ -31,10 +36,13 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
   const sidebarPls = useMemo(
     () =>
       sortedPls.filter(
-        (pl) => isMasterPlaylist(pl.id) || pl.trackIds.length > 0 || pl.id === activeId,
+        (pl) =>
+          !isMasterPlaylist(pl.id) && (pl.trackIds.length > 0 || pl.id === activeId),
       ),
     [sortedPls, activeId],
   );
+
+  const masterCount = masterPl?.trackIds.length ?? trackCount;
 
   return (
     <aside className="sp-side">
@@ -73,6 +81,24 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
         </button>
       </nav>
 
+      <div className="sp-side-section sp-side-section--master">
+        <p className="sp-side-label">Master catalog</p>
+        <p className="sp-side-master-hint">All files on this device — always listed here</p>
+        <button
+          type="button"
+          className={`sp-pl-item sp-pl-item--master${activeId === MASTER_PLAYLIST_ID && !djMode ? ' sp-pl-item--on' : ''}`}
+          onClick={() => openListen(MASTER_PLAYLIST_ID)}
+        >
+          <span className="sp-pl-cover" aria-hidden>
+            📚
+          </span>
+          <span className="sp-pl-text">
+            <span className="sp-pl-name">{masterPl?.name ?? 'Master catalog'}</span>
+            <span className="sp-pl-count">{masterCount} tracks</span>
+          </span>
+        </button>
+      </div>
+
       <div className="sp-side-section">
         <div className="sp-side-label-row">
           <p className="sp-side-label">Your playlists</p>
@@ -94,12 +120,10 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
                 onClick={() => openListen(pl.id)}
               >
                 <span className="sp-pl-cover" aria-hidden>
-                  {isMasterPlaylist(pl.id) ? '📚' : '🎵'}
+                  🎵
                 </span>
                 <span className="sp-pl-text">
-                  <span className="sp-pl-name">
-                    {pl.name}
-                  </span>
+                  <span className="sp-pl-name">{pl.name}</span>
                   <span className="sp-pl-count">{pl.trackIds.length} tracks</span>
                 </span>
               </button>

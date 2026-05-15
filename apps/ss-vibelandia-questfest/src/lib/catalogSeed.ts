@@ -6,6 +6,15 @@ export const CATALOG_VERSION = 4;
 /** Master list: every upload / device import is kept here automatically. */
 export const MASTER_PLAYLIST_ID = 'pl-main';
 
+/** Shown for the master row (persisted playlists may still use legacy name until migrated). */
+export const MASTER_PLAYLIST_DEFAULT_NAME = 'Master catalog';
+
+export const MASTER_PLAYLIST_DEFAULT_DESCRIPTION =
+  'Every file on this device (uploads and folder imports) lives here. Other playlists are views you build from this full library.';
+
+/** Legacy catalog title from older builds — migrated on load in `keepLocalTracksOnly`. */
+export const MASTER_PLAYLIST_LEGACY_NAME = 'All uploads';
+
 export function isMasterPlaylist(id: string): boolean {
   return id === MASTER_PLAYLIST_ID;
 }
@@ -17,9 +26,9 @@ export function buildEmptyCatalog(): CatalogSnapshot {
     playlists: [
       {
         id: MASTER_PLAYLIST_ID,
-        name: 'All uploads',
+        name: MASTER_PLAYLIST_DEFAULT_NAME,
         kind: 'sovereign',
-        description: 'Every upload lands here automatically. Build other playlists from this list.',
+        description: MASTER_PLAYLIST_DEFAULT_DESCRIPTION,
         trackIds: [],
       },
     ],

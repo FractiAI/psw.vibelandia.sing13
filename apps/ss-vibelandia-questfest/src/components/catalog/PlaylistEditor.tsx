@@ -7,9 +7,11 @@ interface PlaylistEditorProps {
   playlistId: string;
   onDone: () => void;
   onPlay?: () => void;
+  /** Called with the new playlist id after a successful duplicate (editor can switch to it). */
+  onDuplicated?: (newPlaylistId: string) => void;
 }
 
-export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorProps) {
+export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: PlaylistEditorProps) {
   const playlists = useCatalogStore((s) => s.playlists);
   const getTrack = useCatalogStore((s) => s.getTrack);
   const updatePlaylist = useCatalogStore((s) => s.updatePlaylist);
@@ -93,9 +95,16 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
   const handleDelete = () => {
     if (isMaster) return;
     if (playlists.length <= 1) return;
-    if (!window.confirm('Delete this playlist? Tracks stay in All uploads.')) return;
+    if (!window.confirm('Delete this playlist? Tracks stay in the Master catalog.')) return;
     deletePlaylist(playlistId);
     onDone();
+  };
+
+  const handleDuplicate = () => {
+    if (isMaster) return;
+    saveMeta();
+    const newId = duplicatePlaylist(playlistId);
+    if (newId) onDuplicated?.(newId);
   };
 
   return (
@@ -113,7 +122,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
 
       {isMaster && (
         <p className="sp-pl-edit-banner">
-          <strong>All uploads</strong> — every new upload is added here automatically. Build other playlists from this
+          <strong>Master catalog</strong> — every new file is added here automatically. Build other playlists from this
           list with <strong>+ Add songs</strong> on those playlists.
         </p>
       )}
@@ -152,7 +161,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
               onClick={() => setShowAdd((v) => !v)}
               aria-expanded={showAdd}
             >
-              {showAdd ? 'Hide add' : '+ Add from All uploads'}
+              {showAdd ? 'Hide add' : '+ Add from Master catalog'}
             </button>
           )}
         </div>
@@ -162,14 +171,14 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
             <input
               className="sp-search sp-pl-edit-add-search"
               type="search"
-              placeholder="Search All uploads"
+              placeholder="Search Master catalog"
               value={addSearch}
               onChange={(e) => setAddSearch(e.target.value)}
             />
             {masterTrackCount === 0 ? (
-              <p className="sp-pl-edit-add-empty">All uploads is empty — add tracks on the Upload tab first.</p>
+              <p className="sp-pl-edit-add-empty">Master catalog is empty — add tracks on the Upload tab first.</p>
             ) : availableTracks.length === 0 ? (
-              <p className="sp-pl-edit-add-empty">Every song from All uploads is already in this playlist.</p>
+              <p className="sp-pl-edit-add-empty">Every song from the Master catalog is already in this playlist.</p>
             ) : (
               <ul className="sp-pl-edit-add-list">
                 {availableTracks.map((tr) => (
@@ -198,7 +207,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
               <>No uploads yet. Use the <strong>Upload</strong> tab.</>
             ) : (
               <>
-                No songs yet. Tap <strong>+ Add from All uploads</strong> above.
+                No songs yet. Tap <strong>+ Add from Master catalog</strong> above.
               </>
             )}
           </p>
@@ -277,11 +286,16 @@ export function PlaylistEditor({ playlistId, onDone, onPlay }: PlaylistEditorPro
         )}
       </div>
 
-      {!isMaster && playlists.length > 1 && (
+      {!isMaster && (
         <footer className="sp-pl-edit-foot">
-          <button type="button" className="sp-library-delete" onClick={handleDelete}>
-            Delete playlist
+          <button type="button" className="sp-library-btn" onClick={handleDuplicate}>
+            Duplicate playlist
           </button>
+          {playlists.length > 1 && (
+            <button type="button" className="sp-library-delete" onClick={handleDelete}>
+              Delete playlist
+            </button>
+          )}
         </footer>
       )}
     </section>

@@ -25,6 +25,7 @@ export function PlaylistLibrary({
   const playlists = useCatalogStore((s) => s.playlists);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
+  const duplicatePlaylist = useCatalogStore((s) => s.duplicatePlaylist);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
 
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -57,6 +58,7 @@ export function PlaylistLibrary({
           onClearInitialEdit?.();
         }}
         onPlay={() => onOpenPlaylist(editingId)}
+        onDuplicated={(newId) => setEditingId(newId)}
       />
     );
   }
@@ -67,8 +69,8 @@ export function PlaylistLibrary({
         <div>
           <h1 className="sp-library-title">Your playlists</h1>
           <p className="sp-library-sub">
-            <strong>All uploads</strong> holds every file you add. Create a playlist, tap Edit, then add from that
-            master list.
+            <strong>Master catalog</strong> lists every file on this device. Create a playlist, tap Edit, then add
+            tracks from that library.
           </p>
         </div>
         <button type="button" className="sp-library-new" onClick={handleCreate}>
@@ -87,7 +89,7 @@ export function PlaylistLibrary({
                 <span className="sp-library-name">
                   {pl.name}
                   {isMasterPlaylist(pl.id) && (
-                    <span className="sp-library-badge"> master library </span>
+                    <span className="sp-library-badge"> master catalog </span>
                   )}
                 </span>
                 <span className="sp-library-count">{pl.trackIds.length} songs</span>
@@ -107,6 +109,18 @@ export function PlaylistLibrary({
               >
                 Edit
               </button>
+              {!isMasterPlaylist(pl.id) && (
+                <button
+                  type="button"
+                  className="sp-library-btn"
+                  onClick={() => {
+                    const newId = duplicatePlaylist(pl.id);
+                    if (newId) setEditingId(newId);
+                  }}
+                >
+                  Duplicate
+                </button>
+              )}
               <button type="button" className="sp-library-btn" onClick={() => onOpenPlaylist(pl.id)}>
                 Play
               </button>

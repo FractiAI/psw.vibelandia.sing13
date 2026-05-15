@@ -7,6 +7,7 @@ import {
   type LiveRail,
 } from '@/lib/paymentRails';
 import { useSessionStore } from '@/stores/sessionStore';
+import { usePlaybackStore } from '@/stores/playbackStore';
 
 interface BoardingModalProps {
   open: boolean;
@@ -19,6 +20,10 @@ interface BoardingModalProps {
 export function BoardingModal({ open, onClose, onSubmit, busy, error }: BoardingModalProps) {
   const tryCaptainPassword = useSessionStore((s) => s.tryCaptainPassword);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
+  const isPassenger = useSessionStore((s) => s.isPassenger);
+  const disembark = useSessionStore((s) => s.disembark);
+  const setPlaying = usePlaybackStore((s) => s.setPlaying);
+  const setGain = usePlaybackStore((s) => s.setGain);
   const [step, setStep] = useState<'rail' | 'pay' | 'proof'>('rail');
   const [rail, setRail] = useState<LiveRail | null>(null);
   const [receipt, setReceipt] = useState('');
@@ -40,6 +45,13 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const close = () => {
     reset();
     onClose();
+  };
+
+  const handleSignOut = () => {
+    disembark();
+    setPlaying(false);
+    setGain(1);
+    close();
   };
 
   return (
@@ -192,6 +204,13 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
               </button>
             </div>
           </>
+        )}
+        {(isPassenger || captainUnlocked) && (
+          <p className="modal-fine boarding-signout">
+            <button type="button" className="boarding-signout-btn" onClick={handleSignOut}>
+              {isPassenger ? 'Sign out · clear pass & captain' : 'Clear captain unlock'}
+            </button>
+          </p>
         )}
       </div>
     </div>

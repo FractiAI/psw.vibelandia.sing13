@@ -33,12 +33,13 @@ module.exports = async function handler(req, res) {
 
   const { verifyPassToken } = await import('../lib/pass-token.mjs');
   const { redisLpush, upstashConfigured } = await import('../lib/upstash.mjs');
+  const { getPassTokenSecret, PASS_TOKEN_SECRET_SETUP_MESSAGE } = await import('../lib/pass-env.mjs');
 
-  const secret = process.env.PASS_TOKEN_SECRET;
-  if (!secret || secret.length < 16) {
+  const secret = getPassTokenSecret();
+  if (!secret) {
     return res.status(503).json({
       error: 'export_unconfigured',
-      message: 'PASS_TOKEN_SECRET not set on server',
+      message: PASS_TOKEN_SECRET_SETUP_MESSAGE,
     });
   }
 

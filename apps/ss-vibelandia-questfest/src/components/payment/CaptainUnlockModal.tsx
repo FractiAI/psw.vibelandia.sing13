@@ -10,6 +10,7 @@ interface CaptainUnlockModalProps {
 
 export function CaptainUnlockModal({ open, onClose, onUnlocked }: CaptainUnlockModalProps) {
   const tryCaptainPassword = useSessionStore((s) => s.tryCaptainPassword);
+  const isPassenger = useSessionStore((s) => s.isPassenger);
   const [pw, setPw] = useState('');
   const [err, setErr] = useState<string | null>(null);
 
@@ -67,7 +68,9 @@ export function CaptainUnlockModal({ open, onClose, onUnlocked }: CaptainUnlockM
           </button>
         </div>
         <p className="modal-fine">
-          Session-only unlock. Use <strong>Account</strong> to sign out and clear captain access along with your pass.
+          Session-only unlock. To clear captain access and your stored monthly pass, open this monthly pass window (from
+          the player bar or after preview ends) and use{' '}
+          <strong>{isPassenger ? 'Sign out · clear pass & captain' : 'Clear captain unlock'}</strong> at the bottom.
         </p>
       </div>
     </div>

@@ -203,7 +203,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
         <p className="sp-empty">
           {search.trim()
             ? 'No tracks match your search.'
-            : 'No tracks in this playlist yet. Open Playlists → Edit and add songs from All uploads.'}
+            : 'No tracks in this playlist yet. Open Playlists → Edit and add songs from the Master catalog.'}
         </p>
       )}
     </section>

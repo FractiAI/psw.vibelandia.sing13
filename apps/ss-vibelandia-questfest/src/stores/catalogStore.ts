@@ -1,5 +1,12 @@
 import { create } from 'zustand';
-import { buildEmptyCatalog, CATALOG_VERSION, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import {
+  buildEmptyCatalog,
+  CATALOG_VERSION,
+  MASTER_PLAYLIST_DEFAULT_DESCRIPTION,
+  MASTER_PLAYLIST_DEFAULT_NAME,
+  MASTER_PLAYLIST_ID,
+  MASTER_PLAYLIST_LEGACY_NAME,
+} from '@/lib/catalogSeed';
 import {
   deleteBlob,
   loadBlob,
@@ -41,6 +48,8 @@ interface CatalogState {
   renamePlaylist: (id: string, name: string) => void;
   updatePlaylist: (id: string, patch: { name?: string; description?: string }) => void;
   deletePlaylist: (id: string) => void;
+  /** Clone a non-master playlist; returns new id or empty string if invalid. */
+  duplicatePlaylist: (id: string) => string;
   addTrackToPlaylist: (trackId: string, playlistId: string) => void;
   removeTrackFromPlaylist: (trackId: string, playlistId: string) => void;
   moveTrackInPlaylist: (playlistId: string, trackId: string, dir: -1 | 1) => void;
@@ -115,6 +124,22 @@ function keepLocalTracksOnly(snapshot: CatalogSnapshot): CatalogSnapshot {
   }
 
   playlists = syncMasterPlaylistWithTracks(tracks, playlists);
+
+  playlists = playlists.map((p) => {
+    if (p.id !== MASTER_PLAYLIST_ID) return p;
+    if (p.name === MASTER_PLAYLIST_LEGACY_NAME) {
+      return {
+        ...p,
+        name: MASTER_PLAYLIST_DEFAULT_NAME,
+        description:
+          p.description ===
+          'Every upload lands here automatically. Build other playlists from this list.'
+            ? MASTER_PLAYLIST_DEFAULT_DESCRIPTION
+            : p.description,
+      };
+    }
+    return p;
+  });
 
   if (!playlists.length) {
     playlists = buildEmptyCatalog().playlists;
@@ -279,6 +304,30 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       activePlaylistId: activePlaylistId === id ? next[0].id : activePlaylistId,
     });
     get().persist();
+  },
+
+  duplicatePlaylist: (id) => {
+    if (id === MASTER_PLAYLIST_ID) return '';
+    const s = get();
+    const src = s.playlists.find((p) => p.id === id);
+    if (!src) return '';
+    const newId = `pl-${Date.now()}`;
+    const baseName = src.name.trim() || 'Playlist';
+    set({
+      playlists: [
+        ...s.playlists,
+        {
+          id: newId,
+          name: `Copy of ${baseName}`,
+          kind: 'sovereign' as const,
+          description: src.description,
+          trackIds: [...src.trackIds],
+        },
+      ],
+      activePlaylistId: newId,
+    });
+    get().persist();
+    return newId;
   },
 
   addTrackToPlaylist: (trackId, playlistId) => {

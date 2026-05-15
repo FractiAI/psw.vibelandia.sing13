@@ -106,6 +106,8 @@ npm run build:questfest-bridge
 
 **CI:** [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) runs the build above, then `vercel deploy --prod` (requires repo secret `VERCEL_TOKEN`). If Vercel Git integration is connected, set the project build command to the same root script so `interfaces/questfest-bridge/` exists on deploy.
 
+**Canonical production hostname:** **`https://psw-vibelandia-sing13.vercel.app`** only. If a duplicate project appears (for example a hostname ending in `-nine` after the wrong GitHub repo was linked in Vercel), disconnect **FractiAI/psw.vibelandia.sing9** from that project in the Vercel dashboard, delete or archive the stray project, and keep **this** repo wired to a single project whose default domain is `psw-vibelandia-sing13.vercel.app`.
+
 **Vercel env (minimum for live boarding / export):**
 
 | Variable | Purpose |

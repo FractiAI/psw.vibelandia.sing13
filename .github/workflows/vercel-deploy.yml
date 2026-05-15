@@ -1,4 +1,7 @@
 # Deploys production on every push to `main`.
+# Target project must be the canonical SING 13 app only (default domain psw-vibelandia-sing13.vercel.app).
+# Do not point VERCEL_PROJECT_ID at a duplicate or at a project linked to psw.vibelandia.sing9.
+#
 # One-time: add repository secret `VERCEL_TOKEN` (https://vercel.com/account/tokens)
 # with access to team `fracti-verse` / project `psw-vibelandia-sing13`.
 #

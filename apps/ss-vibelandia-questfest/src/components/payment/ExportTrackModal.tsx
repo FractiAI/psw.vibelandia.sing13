@@ -13,6 +13,7 @@ import { requestExport } from '@/lib/api';
 import { downloadTrackToDevice } from '@/lib/downloadTrack';
 import { hasExportLicense, saveExportLicense } from '@/lib/exportLicenses';
 import { readPassToken } from '@/lib/mockJwt';
+import { useSessionStore } from '@/stores/sessionStore';
 
 function todayISO() {
   return new Date().toISOString().slice(0, 10);
@@ -37,6 +38,7 @@ export function ExportTrackModal({
   onClose,
   onNeedPass,
 }: ExportTrackModalProps) {
+  const localHonorOnly = useSessionStore((s) => s.localHonorOnly);
   const [step, setStep] = useState<'gate' | 'captain_bypass' | 'rail' | 'pay' | 'honor' | 'done'>('gate');
   const [rail, setRail] = useState<LiveRail | null>(null);
   const [paidDate, setPaidDate] = useState(todayISO);
@@ -110,9 +112,17 @@ export function ExportTrackModal({
     setError(null);
     try {
       const passToken = readPassToken();
-      if (!passToken) throw new Error('monthly_pass_required');
+      const devSkip = import.meta.env.DEV && email.trim() === 'dev@local';
 
-      if (import.meta.env.DEV && email.trim() === 'dev@local') {
+      if (!passToken && !devSkip) {
+        throw new Error(
+          localHonorOnly
+            ? 'This pass is saved on this browser for playback only. Use Captain unlock to export, or complete boarding when export tokens are enabled on the server.'
+            : 'monthly_pass_required',
+        );
+      }
+
+      if (devSkip) {
         saveExportLicense({
           trackId: track.id,
           licensedAt: new Date().toISOString(),
@@ -120,7 +130,7 @@ export function ExportTrackModal({
         });
       } else {
         const res = await requestExport({
-          passToken,
+          passToken: passToken!,
           rail,
           honorConfirm: true,
           paidDate,

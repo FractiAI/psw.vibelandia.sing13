@@ -1,13 +1,15 @@
 import { create } from 'zustand';
-import { requestBoarding, type BoardingRequestBody } from '@/lib/api';
+import type { BoardingRequestBody } from '@/lib/api';
 import { verifyCaptainPassword } from '@/lib/captainAuth';
 import {
-  clearPassToken,
-  createMockPassToken,
-  parsePassPayload,
-  readPassToken,
-  writePassToken,
-} from '@/lib/mockJwt';
+  clearLocalMonthlyHonor,
+  computeValidUntilFromPaidDate,
+  isHonorDateActive,
+  type LocalMonthlyHonor,
+  readLocalMonthlyHonor,
+  writeLocalMonthlyHonor,
+} from '@/lib/localMonthlyHonor';
+import { clearPassToken, parsePassPayload, readPassToken } from '@/lib/mockJwt';
 
 const CAPTAIN_SESSION_KEY = 'qv-captain-unlocked';
 
@@ -29,10 +31,60 @@ function writeCaptainUnlocked(on: boolean) {
   }
 }
 
-interface SessionState {
+function randomJti(): string {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
+  return `jti-${Date.now()}`;
+}
+
+interface SessionDerived {
   passToken: string | null;
   isPassenger: boolean;
   jti: string | null;
+  /** Pass from confirm + dates on this device only */
+  localHonorOnly: boolean;
+  honorValidUntil: string | null;
+}
+
+function load(): SessionDerived {
+  let lh = readLocalMonthlyHonor();
+  if (lh && !isHonorDateActive(lh.validUntil)) {
+    clearLocalMonthlyHonor();
+    lh = null;
+  }
+
+  const passToken = readPassToken();
+  const p = parsePassPayload(passToken);
+
+  if (lh) {
+    return {
+      passToken: null,
+      isPassenger: true,
+      jti: lh.jti,
+      localHonorOnly: true,
+      honorValidUntil: lh.validUntil,
+    };
+  }
+
+  if (p) {
+    return {
+      passToken,
+      isPassenger: true,
+      jti: p.jti,
+      localHonorOnly: false,
+      honorValidUntil: null,
+    };
+  }
+
+  return {
+    passToken: passToken || null,
+    isPassenger: false,
+    jti: null,
+    localHonorOnly: false,
+    honorValidUntil: null,
+  };
+}
+
+interface SessionState extends SessionDerived {
   captainUnlocked: boolean;
   boardingBusy: boolean;
   boardingError: string | null;
@@ -42,45 +94,40 @@ interface SessionState {
   hydrateFromStorage: () => void;
 }
 
-function load(): Pick<SessionState, 'passToken' | 'isPassenger' | 'jti'> {
-  const passToken = readPassToken();
-  const p = parsePassPayload(passToken);
-  return {
-    passToken,
-    isPassenger: !!p,
-    jti: p?.jti ?? null,
-  };
-}
-
 export const useSessionStore = create<SessionState>((set) => ({
   ...load(),
   captainUnlocked: readCaptainUnlocked(),
   boardingBusy: false,
   boardingError: null,
   completeBoarding: async (input) => {
+    if (!input.honorConfirm) {
+      set({ boardingError: 'Confirm payment on honor to continue.', boardingBusy: false });
+      return false;
+    }
     set({ boardingBusy: true, boardingError: null });
     try {
-      let token: string;
-      if (import.meta.env.DEV && input.email === 'dev@local') {
-        const now = Math.floor(Date.now() / 1000);
-        token = createMockPassToken({
-          sub: input.email,
-          iat: now,
-          exp: now + 30 * 24 * 60 * 60,
-          rail: input.rail,
-        } as never);
-      } else {
-        const res = await requestBoarding(input);
-        token = res.token;
-      }
-      writePassToken(token);
-      const p = parsePassPayload(token);
+      const rail = input.rail;
+      const paidDate = input.paidDate.trim();
+      const email = input.email.trim();
+      const validUntil = computeValidUntilFromPaidDate(paidDate);
+
+      const honor: LocalMonthlyHonor = {
+        rail,
+        email,
+        paidDate,
+        validUntil,
+        jti: randomJti(),
+      };
+
+      /** On-device honor is the source of truth; drop any stale JWT */
+      clearPassToken();
+      writeLocalMonthlyHonor(honor);
+
       set({
-        passToken: token,
-        isPassenger: !!p,
-        jti: p?.jti ?? null,
+        ...load(),
         boardingBusy: false,
         boardingError: null,
+        captainUnlocked: readCaptainUnlocked(),
       });
       return true;
     } catch (e) {
@@ -90,6 +137,7 @@ export const useSessionStore = create<SessionState>((set) => ({
     }
   },
   disembark: () => {
+    clearLocalMonthlyHonor();
     clearPassToken();
     writeCaptainUnlocked(false);
     set({
@@ -98,6 +146,8 @@ export const useSessionStore = create<SessionState>((set) => ({
       jti: null,
       boardingError: null,
       captainUnlocked: false,
+      localHonorOnly: false,
+      honorValidUntil: null,
     });
   },
   tryCaptainPassword: (password: string) => {
@@ -106,5 +156,9 @@ export const useSessionStore = create<SessionState>((set) => ({
     set({ captainUnlocked: true });
     return true;
   },
-  hydrateFromStorage: () => set({ ...load(), captainUnlocked: readCaptainUnlocked() }),
+  hydrateFromStorage: () =>
+    set({
+      ...load(),
+      captainUnlocked: readCaptainUnlocked(),
+    }),
 }));

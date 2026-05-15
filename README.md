@@ -16,10 +16,10 @@
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
 | **QUESTFEST surface** | Hub + ETCon + press + Snap robots + Look at the Sun + Juicy Juicy Snap + FractiAI + Valet Pru + i18n (10 locales) + assets | `interfaces/` |
-| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock (scrolls with page), Libretto log, Fair Exchange **honor-system** boarding (date + email + rail), single-active-stream lock, plan-gated background audio | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
+| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock (scrolls with page), Libretto log, Fair Exchange **local honor** monthly pass (checkbox + **date paid** + email + rail → **30 calendar days** on this browser; re-prompt after expiry), single-active-stream lock, plan-gated background audio | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
 | **Lite-edge APIs** | Boarding + export JWTs (shared `api/honor-attest.js`), per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
-| **SING 13 spine docs** | 13-channel pathfinding roadmap (May 12) + DNA/PEFF master canon (May 11) + slices + JJ whitepaper | `docs/` |
-| **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
+| **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper | `docs/` |
+| **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks (hood page is narrative + whitepaper CTAs; compile is not embedded) | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
 
 ## Sovereign Player — Fair Exchange (manual, no Stripe)
 
@@ -27,7 +27,7 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 | Tier | Price | How |
 |---|---|---|
-| **Passenger pass** | **$16.18/mo** (EGS φ) | Pay on Venmo, PayPal, or Cash App → in the boarding modal, **confirm on honor** (checkbox, **date paid**, **email**, rail already chosen) → `POST /api/boarding` issues a **30-day** signed Passenger JWT |
+| **Passenger pass** | **$16.18/mo** (EGS φ) | Pay on Venmo, PayPal, or Cash App → boarding modal: **confirm on honor** (checkbox, **date paid**, **email**, rail) → the app saves a **device record** and unlocks full play until **paid date + 30 days** (no `/api/boarding` call for playback). **`POST /api/boarding`** still issues a **signed Passenger JWT** when `PASS_TOKEN_SECRET` is set (exports and other server-verified flows). |
 | **Track export / download** | **$1.61** | Same honor attestation after payment (or legacy `receipt` string on the API); `POST /api/export` records a license id, then the client saves the file |
 | **Bookings** | Contact | `valetpru@gmail.com` |
 | **Catalog / licensing (500+ Reno swamp · caliente tracks)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
@@ -46,7 +46,7 @@ Passenger unlocks full video playback, Solenoid lift, 13-channel access, and cat
 - **Your playlists** can be empty while you edit them (they persist in local storage); add tracks from **All uploads** in the playlist editor. The sidebar hides empty playlists unless the empty one is active, so the list stays readable on mobile.
 - **Track list (Listen)** uses a responsive grid: narrow / iPhone layouts match column counts to visible cells (duration and extra columns hidden on small screens) so rows do not overflow horizontally.
 
-Configure handles via [`.env.example`](.env.example). **`PASS_TOKEN_SECRET`** (≥16 characters, or one of the alternates in `lib/pass-env.mjs`) must be set **anywhere `/api/boarding` runs**: Vercel **Production** (and Preview if you use it), and a repo-root **`.env`** for local `vercel dev`. Never commit `.env`. Preview-only escape hatch (never Production): `QUESTFEST_ALLOW_INSECURE_PASS_SIGNING=1` — see `.env.example`.
+Configure handles via [`.env.example`](.env.example). **`PASS_TOKEN_SECRET`** (≥16 characters, or one of the alternates in `lib/pass-env.mjs`) is required to **sign or verify** Passenger JWTs for **`/api/boarding`**, **`/api/export`**, and heartbeat token checks when a token is sent. **Playback** with the honor monthly pass works **without** it (client-side validity only). Set it on Vercel **Production** (and Preview if you use it), and in a repo-root **`.env`** for local `vercel dev` when testing real JWTs. Never commit `.env`. Preview-only escape hatch (never Production): `QUESTFEST_ALLOW_INSECURE_PASS_SIGNING=1` — see `.env.example`.
 
 ## SING 13 spine — 13-channel fractal pathfinding
 
@@ -66,7 +66,7 @@ Configure handles via [`.env.example`](.env.example). **`PASS_TOKEN_SECRET`** (�
 | 12 | Equilibrium stabilization | Consumption/waste balance |
 | 13 | Terminal edge realization | Infill collapse into manifest stack |
 
-Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md`](docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md). Companion DNA / PEFF canon: [`docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md`](docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md). **Honesty boundary applies** — narrative + roadmap, not clinical or RF claims; verify space-weather with NOAA SWPC.
+Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md`](docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md). Companion DNA / PEFF canon: [`docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md`](docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md). **Latest integrated paper (May 15, 2026):** Omniversal Magnetic Matrix & Protonic-DNA (**Hell-State jettison**) — [`docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md`](docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md). **Precursor:** Technical analysis — Paradise Game simulation — [`docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md`](docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md). **Frame:** [`docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md`](docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md). **Honesty boundary applies** — narrative + roadmap, not clinical or RF claims; verify space-weather with NOAA SWPC.
 
 ## Primary surfaces
 
@@ -76,7 +76,7 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **QUESTFEST Bridge (Sovereign Player):** [`/interfaces/questfest-bridge/#/`](interfaces/questfest-bridge/) · short rewrite **`/sovereign-gate`** → same app entry
 - **ETCon Reno Desert** (May 28–31, 2026): `/etcon` → [`interfaces/etcon-reno-desert.html`](interfaces/etcon-reno-desert.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)
-- **Juicy Juicy Snap (OFC) compile:** `/hood` → [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html)
+- **Look under the hood (engine room):** `/hood` → [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html) — narrative + whitepaper buttons; OFC compile lives in `engine/` and [`docs/JJ_SNAP_OFC_WHITEPAPER.md`](docs/JJ_SNAP_OFC_WHITEPAPER.md)
 - **FractiAI hub:** [`/interfaces/fractiai.html`](interfaces/fractiai.html) · short hub: `/fractiai/digital-pru` → [`interfaces/fractiai-digital-pru.html`](interfaces/fractiai-digital-pru.html)
 - **SING 13 onboarding:** `/sing13-edge-onboarding` → [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md)
 
@@ -118,7 +118,7 @@ npm run build:questfest-bridge
 
 | Variable | Purpose |
 |---|---|
-| `PASS_TOKEN_SECRET` | HMAC signing and verification for Passenger JWT (≥16 chars). Same secret resolves `JWT_SECRET`, `AUTH_SECRET`, or `QUESTFEST_PASS_TOKEN_SECRET` if you prefer one name — see `lib/pass-env.mjs`. |
+| `PASS_TOKEN_SECRET` | HMAC signing and verification for Passenger JWT (≥16 chars). Needed for **`/api/boarding`**, **`/api/export`**, and strict heartbeat verification — not for honor-only **playback** on the device. Same secret resolves `JWT_SECRET`, `AUTH_SECRET`, or `QUESTFEST_PASS_TOKEN_SECRET` if you prefer one name — see `lib/pass-env.mjs`. |
 | `UPSTASH_REDIS_REST_URL` | Optional — fleet-wide stream lock |
 | `UPSTASH_REDIS_REST_TOKEN` | Optional — pairs with URL above |
 | `VITE_VENMO_HANDLE` etc. | Optional client overrides for payment handles |

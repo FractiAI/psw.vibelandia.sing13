@@ -3,259 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Look at the Sun · SS Vibelandia QUESTFEST</title>
-  <meta name="description" content="Plain snapshot: what the Sun and ionosphere were doing, next to studio ship weeks. Not live." />
+  <title>Look at the Sun · The planetary power grid</title>
+  <meta name="description" content="The Sun as main server, 3-bond DNA pipes, iron–phosphorus transceiver, Machote and the Fair Exchange. Read the whitepapers for the full technical spine." />
   <link rel="canonical" href="https://psw-vibelandia-sing13.vercel.app/interfaces/look-at-the-sun.html" />
   <style>
     :root {
       --bg: #050810;
-      --card: #101828;
-      --line: rgba(212, 175, 55, 0.25);
+      --card: rgba(16, 24, 40, 0.88);
+      --line: rgba(212, 175, 55, 0.28);
       --gold: #f5d77a;
       --text: #e8edf5;
-      --muted: #9aa8bf;
-      --mint: #5eead4;
+      --muted: #94a3b8;
+      --foam: #5eead4;
     }
     * { box-sizing: border-box; }
-    html, body {
-      margin: 0;
-      font-family: "Segoe UI", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-      font-size: 1rem;
+    html, body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 1.05rem; }
+    .wrap { max-width: 40rem; margin: 0 auto; padding: max(1rem, env(safe-area-inset-top)) 1.15rem max(2.25rem, env(safe-area-inset-bottom)); }
+    .hero-img { width: 100%; border-radius: 14px; border: 1px solid var(--line); margin-bottom: 1.25rem; display: block; }
+    h1 { font-size: clamp(1.35rem, 4.5vw, 1.85rem); font-weight: 800; color: var(--gold); line-height: 1.15; margin: 0 0 1rem; }
+    .content-img { width: 100%; border-radius: 12px; border: 1px solid var(--line); margin: 1rem 0 1.25rem; display: block; }
+    section { margin-bottom: 2rem; }
+    h2 { font-size: 1.08rem; font-weight: 800; color: var(--gold); margin: 0 0 0.65rem; line-height: 1.25; }
+    p { margin: 0 0 0.85rem; color: #cbd5e1; }
+    p:last-child { margin-bottom: 0; }
+    .status { font-family: ui-monospace, monospace; font-size: 0.82rem; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; color: var(--foam); white-space: pre-wrap; margin-top: 0.75rem; }
+    .wp { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+    .wp strong { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; font-weight: 700; }
+    .wp a {
+      display: inline-block; text-align: center; text-decoration: none; color: var(--gold);
+      border: 1px solid var(--line); border-radius: 999px; padding: 0.55rem 1rem; font-weight: 700; font-size: 0.9rem;
+      background: rgba(212, 175, 55, 0.08); transition: border-color .15s, background .15s;
     }
-    a { color: var(--mint); }
-    .wrap {
-      max-width: 42rem;
-      margin: 0 auto;
-      padding: max(1rem, env(safe-area-inset-top)) 1rem max(2rem, env(safe-area-inset-bottom));
-    }
-    .nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
-    .nav a {
-      font-size: .8rem;
-      text-decoration: none;
-      color: var(--gold);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: .35rem .7rem;
-    }
-    h1 {
-      margin: 0 0 .35rem;
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: var(--gold);
-    }
-    .sub {
-      margin: 0 0 1.25rem;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    .pill {
-      display: inline-block;
-      font-size: .72rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      padding: .2rem .5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(94, 234, 212, .35);
-      color: var(--mint);
-      margin-bottom: 1.5rem;
-    }
-    section {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--card);
-      padding: 1rem 1.1rem;
-      margin-bottom: 1rem;
-    }
-    h2 {
-      margin: 0 0 .75rem;
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--gold);
-    }
-    ul {
-      margin: 0;
-      padding-left: 1.15rem;
-      color: var(--text);
-    }
-    li { margin-bottom: .55rem; }
-    li strong { color: var(--gold); font-weight: 700; }
-    .explain p {
-      margin: 0 0 .65rem;
-      color: #cbd5e1;
-      font-size: .95rem;
-    }
-    .explain p:last-child { margin-bottom: 0; }
-    .chart-wrap {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: var(--card);
-      padding: .5rem;
-      overflow-x: auto;
-      margin-bottom: 1rem;
-    }
-    canvas { display: block; width: 100%; height: 220px; min-width: 320px; }
-    .legend { font-size: .75rem; color: var(--muted); margin-top: .4rem; }
-    .foot {
-      font-size: .78rem;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-    .error { color: #fca5a5; }
-    details { margin-top: 1rem; font-size: .85rem; color: var(--muted); }
-    summary { cursor: pointer; color: var(--gold); font-weight: 600; }
-    table { width: 100%; border-collapse: collapse; font-size: .75rem; margin-top: .5rem; }
-    th, td { border-bottom: 1px solid rgba(255,255,255,.08); padding: .35rem .25rem; text-align: right; }
-    th:first-child, td:first-child { text-align: left; }
+    .wp a:hover { border-color: var(--foam); background: rgba(94, 234, 212, 0.1); color: var(--foam); }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav class="nav">
-      <a href="vibelandia-questfest.html">QUESTFEST</a>
-      <a href="look-under-the-hood.html">Under the hood</a>
-    </nav>
+  <main class="wrap">
+    <h1>☀️ Look at the Sun: The planetary power grid</h1>
+    <img class="hero-img" src="images/look-sun-hero.png" alt="Illustration: the Sun as a luminous main server over Earth with a holographic power grid connecting to the ionosphere." width="1200" height="675" decoding="async" />
 
-    <h1>Look at the Sun</h1>
-    <p class="sub">Saved study — not a live feed. Real NOAA and SILSO numbers, frozen when we built the page.</p>
-    <p class="pill" id="snapshotPill">Loading…</p>
-
-    <section id="findingsBlock" hidden>
-      <h2>What we found</h2>
-      <ul id="findingsList"></ul>
+    <section>
+      <p>The Sun isn’t just a ball of fire; it’s the Main Server for a world that has officially outgrown wires, chips, and data centers. When you look at the Sun today, you are seeing the power source for the Digital Pru Holographic GPU (DPH-GPU). This is a technology that doesn’t live in a box—it lives in the dance between your awareness and the stars.</p>
     </section>
 
-    <section id="explainBlock" class="explain" hidden>
-      <h2>What that means</h2>
-      <div id="explainBody"></div>
+    <section>
+      <h2>🧬 The upgrade: From 2-bond to 3-bond pipes</h2>
+      <img class="content-img" src="images/look-sun-dna-pipes.png" alt="Illustration: DNA as luminous pipes, cooler two-bond segments and warmer three-bond segments with light tunneling through." width="1200" height="675" decoding="async" />
+      <p>Think of your DNA like the plumbing for your soul. In the old Hell State Simulation, we were running on “Legacy Pipes.” These were the Adenine–Thymine (A–T) connections, which only have 2 hydrogen bonds. They were stable enough for survival, but they were “slow,” “brittle,” and couldn’t handle much data. They were essentially “dial-up” DNA.</p>
+      <p>Right now, the Sun is helping us switch over to Goldilocks Pipes. We are moving the focus of our DNA chain to the Guanine–Cytosine (G–C) pairs, which have 3 hydrogen bonds.</p>
+      <p><strong style="color: var(--gold); font-weight: 800;">The 3-bond advantage:</strong> That extra bond makes the pipe much stronger and faster. It allows protons (tiny bits of light and energy) to “tunnel” through your DNA 500 times faster than before.</p>
+      <p><strong style="color: var(--gold); font-weight: 800;">The result:</strong> You are moving from a 2-lane dirt road to a 3-lane fiber-optic superhighway. This is the Protonic-DNA Target Protocol in action.</p>
     </section>
 
-    <div class="chart-wrap">
-      <canvas id="sunChart" width="640" height="220" aria-label="Sun and studio weeks chart"></canvas>
-      <p class="legend">Gold = Sun (sunspots). Teal = studio commits per week. Same 52-week clock.</p>
+    <section>
+      <h2>🧲 The turbocharge: Iron meets phosphorus</h2>
+      <img class="content-img" src="images/look-sun-iron-phosphorus.png" alt="Illustration: iron-rich blood as receiver bridging to phosphorus-lit DNA as a living transceiver." width="1200" height="675" decoding="async" />
+      <p>To run this new high-speed system, you need a serious transceiver. You already have the parts; the Sun is just showing you how to plug them in.</p>
+      <p><strong style="color: var(--gold); font-weight: 800;">The iron magnet (your blood):</strong> Your blood is full of iron (hemoglobin). It acts like a liquid antenna, catching the solar flares and proton flux coming from sunspots like AR4436.</p>
+      <p><strong style="color: var(--gold); font-weight: 800;">The phosphorus magnet (your DNA):</strong> Your DNA is held together by phosphorus. This is your “storage and processing” magnet.</p>
+      <p>When you “Look Under the Hood” and upgrade your Awareness, you create a bridge between the two. Your awareness turbocharges the iron in your blood to “talk” directly to the phosphorus in your DNA. This creates a living transceiver—a hardware-free radio that lets you “ride the signal” of the universe without needing a cell tower or a data center.</p>
+    </section>
+
+    <section>
+      <h2>🕺 Machote vs. machine: The recursive dance</h2>
+      <p>At S.S. VIBELANDIA, we focus on the Machote Moderno (the man, the template) because you are the Architect, not a machine. The Y Chromosome is the steering wheel for this whole process.</p>
+      <p><strong style="color: var(--gold); font-weight: 800;">It’s a recursive loop:</strong></p>
+      <p><strong style="color: var(--gold); font-weight: 800;">You upgrade:</strong> Your awareness grows as you learn the code.</p>
+      <p><strong style="color: var(--gold); font-weight: 800;">The Sun responds:</strong> The Sun mirrors your growth by flaring.</p>
+      <p><strong style="color: var(--gold); font-weight: 800;">The hatch:</strong> The flare energy hits your iron-rich blood, turbocharges your phosphorus DNA, and “hatches” you into the Paradise Game.</p>
+      <p>We’ve tracked this for years on GitHub. Our code breakthroughs map perfectly to solar peaks. The code is the footprint of the Machote dancing with the Sun.</p>
+    </section>
+
+    <section>
+      <h2>📍 The street map: The May 15 lock-in</h2>
+      <p>On May 15, the sunspot AR4436 (The Watcher) is aiming a “Flare Beacon” right at our ionosphere. This isn’t random. It’s a response to your readiness to hatch. The ionosphere is acting like a giant Liquid Mirror, reflecting your own upgraded Y-chromosome grid back at you to finalize the 3-bond pipe installation.</p>
+    </section>
+
+    <section>
+      <h2>⚖️ The Fair Exchange</h2>
+      <p><strong style="color: var(--gold); font-weight: 800;">The clause:</strong> This information is a Fair Exchange. By acknowledging the 3-bond upgrade and the iron–phosphorus connection, you are manually clicking “Install” on your planetary transceiver. You are trading the old, slow “Hell State” pipes for the high-speed, solar-powered Paradise Game.</p>
+      <div class="status">SYSTEM STATUS:
+DNA PIPES: UPGRADING TO 3-BOND (G-C).
+TRANSCEIVER: IRON-PHOSPHORUS SYNCED.
+GITHUB LEDGER: VERIFIED.
+HATCH: ACTIVE.</div>
+      <p style="margin-top: 1rem;">The Sun is the mirror. You are the Machote. The Game is on.</p>
+    </section>
+
+    <div class="wp">
+      <strong>Read the whitepapers</strong>
+      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md&amp;title=Resonance%20notice">Resonance notice (frame first)</a>
+      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md&amp;title=Latest%3A%20Omniversal%20Magnetic%20Matrix%20%26%20Protonic-DNA">Latest (May 2026): Hell-State jettison &amp; Goldilocks synthesis</a>
+      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md&amp;title=Precursor%20technical%20analysis">Precursor: Technical analysis · Paradise Game simulation</a>
+      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=Digital%20Pru%20Master%20Canon">Digital Pru DNA / PEFF Master Canon</a>
+      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md&amp;title=13-Channel%20Seed%20Node%20Roadmap">Digital Pru — 13-channel roadmap</a>
+      <a href="whitepaper-surface.html?doc=../docs/JJ_SNAP_OFC_WHITEPAPER.md&amp;title=JJ%20Snap%20OFC%20Whitepaper">JJ Snap Omniversal Fractal Compiler Whitepaper</a>
     </div>
-
-    <details>
-      <summary>Weekly numbers (table)</summary>
-      <table id="dataTable">
-        <thead>
-          <tr><th>Week</th><th>Commits</th><th>Sunspots</th><th>F10.7</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </details>
-
-    <p id="foot" class="foot"></p>
-    <p id="status" class="foot"></p>
-  </div>
-
-  <script>
-    (function () {
-      const findingsList = document.getElementById("findingsList");
-      const findingsBlock = document.getElementById("findingsBlock");
-      const explainBlock = document.getElementById("explainBlock");
-      const explainBody = document.getElementById("explainBody");
-      const snapshotPill = document.getElementById("snapshotPill");
-      const statusEl = document.getElementById("status");
-      const foot = document.getElementById("foot");
-      const chart = document.getElementById("sunChart");
-      const ctx = chart.getContext("2d");
-
-      function norm(values) {
-        const finite = values.map((v) => (v == null ? NaN : Number(v))).filter(Number.isFinite);
-        const max = finite.length ? Math.max(...finite) : 1;
-        return values.map((v) => {
-          const n = v == null ? NaN : Number(v);
-          return Number.isFinite(n) ? n / max : NaN;
-        });
-      }
-
-      function plainFindings(data) {
-        const s = data.summary || {};
-        const bullets = [
-          "Today the Sun shows **" + (s.latestSunspot ?? "—") + " sunspots** (SILSO daily number).",
-          "Ionosphere driver **F10.7** is about **" + (s.latestF107 != null ? s.latestF107.toFixed(0) : "—") + "** — moderate background.",
-          "Geomagnetic **Kp** averaged **" + (s.meanKp7d != null ? s.meanKp7d.toFixed(1) : "—") + "** lately. Under 3 is quiet.",
-          "Sun activity **ticked up** the last month vs the month before (mean sunspots ~99 vs ~88).",
-          "We counted **" + (s.totalCommits52w ?? "—") + " studio commits** over the same 52 weeks — same calendar, not claiming the Sun caused them.",
-          "This page is a **snapshot** through **" + (s.snapshotLabel || "build date") + "**. It does not update in your browser.",
-          "For real space weather or safety calls, use **[NOAA SWPC](https://www.swpc.noaa.gov/)** — not this page.",
-        ];
-        return bullets;
-      }
-
-      function plainExplain() {
-        return [
-          "<p>We put real Sun and ionosphere data on the same week-by-week timeline as public ship commits from the Vibelandia edges.</p>",
-          "<p><strong>Sunspots</strong> = how busy the Sun’s surface is. <strong>F10.7</strong> = radio energy that pumps the ionosphere (the sky layer long-range radio bounces off).</p>",
-          "<p>Correlation here is just “what happened together in this window.” We are not saying commits steer the Sun.</p>",
-        ].join("");
-      }
-
-      function fmtBold(s) {
-        return s
-          .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-      }
-
-      function draw(periods, commits, sunspots) {
-        const W = chart.width, H = chart.height;
-        const pad = { l: 28, r: 8, t: 10, b: 22 };
-        const pw = W - pad.l - pad.r, ph = H - pad.t - pad.b;
-        ctx.fillStyle = "#101828";
-        ctx.fillRect(0, 0, W, H);
-        const n = periods.length, xStep = n > 1 ? pw / (n - 1) : pw;
-        function line(vals, color) {
-          ctx.beginPath();
-          let down = false;
-          vals.forEach((v, i) => {
-            if (!Number.isFinite(v)) { down = false; return; }
-            const x = pad.l + i * xStep, y = pad.t + (1 - v) * ph;
-            if (!down) { ctx.moveTo(x, y); down = true; } else ctx.lineTo(x, y);
-          });
-          ctx.strokeStyle = color;
-          ctx.lineWidth = 2;
-          ctx.stroke();
-        }
-        line(norm(periods.map((p) => commits[p])), "#5eead4");
-        line(norm(periods.map((p) => sunspots[p])), "#f5d77a");
-      }
-
-      function render(data) {
-        const periods = data.periods || [];
-        const commits = data.commits || {}, sunspots = data.sunspots || {}, f107 = data.f107 || {};
-        snapshotPill.textContent = "Snapshot · " + ((data.summary && data.summary.snapshotLabel) || data.generatedAt || "").slice(0, 24);
-
-        findingsList.innerHTML = plainFindings(data).map((b) => "<li>" + fmtBold(b) + "</li>").join("");
-        findingsBlock.hidden = false;
-
-        explainBody.innerHTML = plainExplain();
-        explainBlock.hidden = false;
-
-        draw(periods, commits, sunspots);
-
-        document.querySelector("#dataTable tbody").innerHTML = periods.slice(-12).map((p) =>
-          "<tr><td>" + p + "</td><td>" + (commits[p] ?? 0) + "</td><td>" +
-          (sunspots[p] != null ? Number(sunspots[p]).toFixed(0) : "—") + "</td><td>" +
-          (f107[p] != null ? Number(f107[p]).toFixed(0) : "—") + "</td></tr>"
-        ).join("");
-
-        foot.textContent = "Sources: SILSO sunspots, NOAA F10.7/Kp, local git + GitHub commits. Built " + (data.generatedAt || "").slice(0, 10) + ".";
-        statusEl.textContent = "";
-      }
-
-      fetch("look-at-the-sun-study.json", { cache: "no-store" })
-        .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(render)
-        .catch((e) => {
-          snapshotPill.textContent = "No snapshot";
-          statusEl.innerHTML = '<span class="error">Run npm run build:look-at-the-sun-study</span>';
-          findingsList.innerHTML = "<li>" + e.message + "</li>";
-          findingsBlock.hidden = false;
-        });
-    })();
-  </script>
+  </main>
 </body>
 </html>

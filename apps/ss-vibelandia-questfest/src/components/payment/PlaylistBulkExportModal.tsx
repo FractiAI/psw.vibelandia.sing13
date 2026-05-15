@@ -49,6 +49,7 @@ export function PlaylistBulkExportModal({
   const getTrack = useCatalogStore((s) => s.getTrack);
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
+  const localHonorOnly = useSessionStore((s) => s.localHonorOnly);
 
   const [step, setStep] = useState<Step>('idle');
   const [rail, setRail] = useState<LiveRail | null>(null);
@@ -147,10 +148,17 @@ export function PlaylistBulkExportModal({
   const runPassengerDownloads = async () => {
     if (!rail) return;
     const passToken = readPassToken();
-    if (!passToken) {
-      setError('Monthly pass required.');
+    const devSkip = import.meta.env.DEV && email.trim() === 'dev@local';
+
+    if (!passToken && !devSkip) {
+      setError(
+        localHonorOnly
+          ? 'This pass is for playback on this browser only. Use Captain unlock to export, or boarding with server export tokens enabled.'
+          : 'Monthly pass required.',
+      );
       return;
     }
+
     setBusy(true);
     setError(null);
     setProgress({ done: 0, total: toLicense.length });
@@ -165,6 +173,10 @@ export function PlaylistBulkExportModal({
             licenseId: 'dev-local-bulk',
           });
         } else {
+          if (!passToken) {
+            failures.push(`${track.title} (missing pass token)`);
+            continue;
+          }
           const res = await requestExport({
             passToken,
             rail,

@@ -28,6 +28,8 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const tryCaptainPassword = useSessionStore((s) => s.tryCaptainPassword);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const isPassenger = useSessionStore((s) => s.isPassenger);
+  const localHonorOnly = useSessionStore((s) => s.localHonorOnly);
+  const honorValidUntil = useSessionStore((s) => s.honorValidUntil);
   const disembark = useSessionStore((s) => s.disembark);
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const setGain = usePlaybackStore((s) => s.setGain);
@@ -67,11 +69,22 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const canIssue =
     !!rail && honorAck && emailOk && paidDate.length >= 10 && !busy;
 
+  const passUntilLabel =
+    localHonorOnly && honorValidUntil
+      ? new Date(honorValidUntil + 'T12:00:00').toLocaleDateString()
+      : '';
+
   return (
     <div className="modal-root" role="dialog" aria-modal="true">
       <div className="modal-backdrop" onClick={close} />
       <div className="voxel-panel modal-card modal-card--wide modal-card--swamp-warm">
         <h2 className="modal-title modal-title--warm">Reno Swamp monthly pass</h2>
+        {localHonorOnly && passUntilLabel && (
+          <p className="modal-fine" style={{ margin: '0 0 0.75rem', color: '#5eead4', lineHeight: 1.45 }}>
+            Monthly pass on this device through <strong>{passUntilLabel}</strong>. When that date passes, confirm again
+            here.
+          </p>
+        )}
 
         {step === 'rail' && (
           <>
@@ -83,7 +96,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                 {captainUnlocked ? (
                   <p className="modal-body" style={{ margin: 0 }}>
                     Captain access is <strong>active</strong> for this session (full play + export bypass on this
-                    device). You can still buy a monthly pass below if you want a real Passenger JWT.
+                    device). You can still start a monthly pass below for normal passenger use.
                   </p>
                 ) : (
                   <>
@@ -186,9 +199,8 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
         {step === 'honor' && rail && (
           <>
             <p className="modal-body">
-              Fair Exchange runs on trust. Confirm you sent <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong> on{' '}
-              <strong>{RAIL_LABEL[rail]}</strong> — we log the date, your email, and which app you used, then issue a
-              30-day Passenger pass. Abuse revokes access.
+              Fair Exchange runs on trust. Check the box, set the date you paid, and we unlock full play on this browser
+              for 30 days from that date. When it expires, come back and confirm again.
             </p>
             <figure className="boarding-honor-figure">
               <img

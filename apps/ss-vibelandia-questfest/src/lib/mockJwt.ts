@@ -7,17 +7,10 @@ export interface PassPayload {
   iat: number;
   exp?: number;
   rail?: string;
+  /** Legacy client-only payloads */
+  honorDeviceLocal?: boolean;
   /** Fair Exchange — EGS constant */
   egsMonthlyUsd: 16.18;
-}
-
-function b64url(obj: unknown) {
-  const s = JSON.stringify(obj);
-  return window
-    .btoa(s)
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/, '');
 }
 
 export function readPassToken(): string | null {
@@ -31,24 +24,6 @@ export function writePassToken(token: string) {
 
 export function clearPassToken() {
   localStorage.removeItem(STORAGE_KEY);
-}
-
-export function createMockPassToken(partial?: Partial<PassPayload>): string {
-  const jti =
-    typeof crypto !== 'undefined' && crypto.randomUUID
-      ? crypto.randomUUID()
-      : `jti-${Date.now()}`;
-  const payload: PassPayload = {
-    sub: 'passenger-anon',
-    jti,
-    tier: 'PASSENGER',
-    iat: Math.floor(Date.now() / 1000),
-    egsMonthlyUsd: 16.18,
-    ...partial,
-  };
-  const h = b64url({ alg: 'none', typ: 'JWT' });
-  const p = b64url(payload);
-  return `${h}.${p}.mock-signature`;
 }
 
 export function parsePassPayload(token: string | null): PassPayload | null {

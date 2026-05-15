@@ -38,6 +38,12 @@ export function MediaShell() {
     if (!catalogHydrated) void hydrateCatalog();
   }, [catalogHydrated, hydrateCatalog, hydrateSession]);
 
+  /** Re-check honor end date without reload (e.g. tab left open past midnight). */
+  useEffect(() => {
+    const id = window.setInterval(() => hydrateSession(), 60_000);
+    return () => window.clearInterval(id);
+  }, [hydrateSession]);
+
   const handleBoarding = async (payload: BoardingRequestBody) => {
     const ok = await completeBoarding(payload);
     if (ok) {

@@ -39,6 +39,9 @@
 
 ## SING 13 spine — 13-channel fractal pathfinding
 
+- Omniverse resonance notice — https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md
+- Omniversal Magnetic Matrix + Protonic-DNA (Hell-State jettison synthesis, May 15, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md
+- Omniverse precursor — Technical Analysis · Paradise Game simulation: https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md
 - Integration roadmap (May 12, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md
 - DNA / PEFF master canon (May 11, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md
 - Legacy catalog (all links): https://psw-vibelandia-sing13.vercel.app/interfaces/look-under-the-hood-legacy-catalog.html

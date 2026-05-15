@@ -60,6 +60,18 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
           className={`sp-side-link${!djMode ? ' sp-side-link--on' : ''}`}
           onClick={() => {
             setDjMode(false);
+            const st = useCatalogStore.getState();
+            const active = st.getActivePlaylist();
+            const master = st.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
+            if (
+              master &&
+              master.trackIds.length > 0 &&
+              active &&
+              active.id !== MASTER_PLAYLIST_ID &&
+              active.trackIds.length === 0
+            ) {
+              st.setActivePlaylist(MASTER_PLAYLIST_ID);
+            }
             if (!activeId && playlists[0]) {
               const first =
                 playlists.find((p) => p.id === MASTER_PLAYLIST_ID) ?? playlists[0];

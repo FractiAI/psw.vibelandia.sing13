@@ -31,3 +31,51 @@ export function boardingNote(): string {
 export function exportNote(trackTitle: string): string {
   return `EXPORT · ${trackTitle} · $1.61`;
 }
+
+/** PayPal.me slug; optional — otherwise derived from PayPal handle email local-part. */
+function paypalMeSlug(): string {
+  const slug = env.VITE_PAYPAL_PAYPALME?.trim();
+  if (slug) return slug.replace(/^\/+|\/+$/g, '');
+  const h = PAYMENT_HANDLES.paypal.trim();
+  if (h.includes('@')) {
+    const local = h.split('@')[0].replace(/[^a-zA-Z0-9-]/g, '');
+    if (local) return local;
+  }
+  return h.replace(/[^a-zA-Z0-9-]/g, '') || 'recipient';
+}
+
+export interface RailCheckoutLinks {
+  /** Primary — opens app or web checkout where supported */
+  href: string;
+  /** Secondary link when `href` is a custom scheme (e.g. Venmo app) */
+  webFallbackHref?: string;
+}
+
+/**
+ * URLs to send the listener into Venmo / PayPal / Cash App with amount + memo when the platform allows it.
+ */
+export function railCheckoutLinks(rail: LiveRail, amountUsd: number, memo: string): RailCheckoutLinks {
+  const amt = amountUsd.toFixed(2);
+  const note = encodeURIComponent(memo.trim());
+
+  switch (rail) {
+    case 'venmo': {
+      const user = PAYMENT_HANDLES.venmo.replace(/^@/, '').trim();
+      const app = `venmo://paycharge?txn=pay&recipients=${encodeURIComponent(user)}&amount=${amt}&note=${note}`;
+      const web = `https://venmo.com/${encodeURIComponent(user)}`;
+      return { href: app, webFallbackHref: web };
+    }
+    case 'cashapp': {
+      const tag = PAYMENT_HANDLES.cashapp.replace(/^\$/, '').trim();
+      return {
+        href: `https://cash.app/$${encodeURIComponent(tag)}/${amt}`,
+      };
+    }
+    case 'paypal': {
+      const slug = paypalMeSlug();
+      return {
+        href: `https://paypal.me/${encodeURIComponent(slug)}/${amt}`,
+      };
+    }
+  }
+}

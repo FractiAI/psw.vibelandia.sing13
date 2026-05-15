@@ -4,9 +4,11 @@ import {
   PAYMENT_HANDLES,
   RAIL_LABEL,
   boardingNote,
+  railCheckoutLinks,
   type LiveRail,
 } from '@/lib/paymentRails';
 import type { BoardingRequestBody } from '@/lib/api';
+import { HonorFarmstandFigure } from '@/components/payment/HonorFarmstandFigure';
 import { useSessionStore } from '@/stores/sessionStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
@@ -68,6 +70,10 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const emailOk = EMAIL_RE.test(email.trim());
   const canIssue =
     !!rail && honorAck && emailOk && paidDate.length >= 10 && !busy;
+
+  const passMemo = boardingNote();
+  const payCheckout =
+    step === 'pay' && rail ? railCheckoutLinks(rail, EGS_MONTHLY_USD, passMemo) : null;
 
   const passUntilLabel =
     localHonorOnly && honorValidUntil
@@ -175,19 +181,34 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
           </>
         )}
 
-        {step === 'pay' && rail && (
+        {step === 'pay' && rail && payCheckout && (
           <>
             <p className="modal-body">
-              Send <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong> via <strong>{RAIL_LABEL[rail]}</strong>{' '}
-              to <code>{PAYMENT_HANDLES[rail]}</code>. Memo / note (exact vibe):{' '}
-              <code>{boardingNote()}</code>.
+              Pay <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong> on <strong>{RAIL_LABEL[rail]}</strong> to{' '}
+              <code>{PAYMENT_HANDLES[rail]}</code>. Use memo / note: <code>{passMemo}</code>.
             </p>
             <p className="modal-fine boarding-counterintuitive">
-              Friends &amp; family if the app asks. Do not overthink it. That is the old school part.
+              Open your payment app first. After you send, continue below to confirm on honor.
             </p>
-            <div className="modal-actions">
-              <button type="button" className="voxel-btn voxel-btn--cyan" onClick={() => setStep('honor')}>
-                I paid — confirm on honor
+            <div className="modal-actions boarding-pay-actions">
+              <a
+                href={payCheckout.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="voxel-btn voxel-btn--cyan boarding-pay-open"
+              >
+                Open {RAIL_LABEL[rail]} · ${EGS_MONTHLY_USD.toFixed(2)}
+              </a>
+              {payCheckout.webFallbackHref && (
+                <p className="modal-fine boarding-pay-fallback">
+                  App did not open?{' '}
+                  <a href={payCheckout.webFallbackHref} target="_blank" rel="noopener noreferrer">
+                    Open {RAIL_LABEL[rail]} on the web
+                  </a>
+                </p>
+              )}
+              <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('honor')}>
+                I've paid — continue to honor confirmation
               </button>
               <button type="button" className="voxel-btn" onClick={() => setStep('rail')}>
                 Different rail
@@ -202,17 +223,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
               Fair Exchange runs on trust. Check the box, set the date you paid, and we unlock full play on this browser
               for 30 days from that date. When it expires, come back and confirm again.
             </p>
-            <figure className="boarding-honor-figure">
-              <img
-                src={`${import.meta.env.BASE_URL}images/honor-farmstand-paybox.png`}
-                alt="Illustration of a wooden farmstand honor box with produce and a cash slot, warm sunlight."
-                width={640}
-                height={360}
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>Same energy as the roadside stand — you pay, we trust you meant it.</figcaption>
-            </figure>
+            <HonorFarmstandFigure />
             <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
               <input
                 type="checkbox"

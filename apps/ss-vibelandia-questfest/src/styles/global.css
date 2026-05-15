@@ -2524,6 +2524,83 @@ a.voxel-btn {
   text-overflow: ellipsis;
 }
 
+/* Listen — title / artist / type-duration stack (readable on narrow widths) */
+.sp-listen .sp-listen-track-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.sp-listen-track-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.sp-listen-track-line2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.2rem;
+  font-size: 0.78rem;
+  color: #b3b3b3;
+  max-width: 100%;
+  line-height: 1.35;
+}
+
+.sp-listen .sp-listen-artist {
+  font-weight: 500;
+  color: #c8c8c8;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sp-listen-type-dur {
+  color: #727272;
+  flex-shrink: 0;
+}
+
+.sp-listen .sp-listen-track-desc {
+  margin-top: 0.08rem;
+}
+
+/* Override editor row span nowrap so second line can wrap on small screens */
+.sp-listen .sp-pl-edit-track-info--btn > .sp-listen-track-line2 {
+  white-space: normal;
+}
+
+.sp-listen .sp-pl-edit-track-info--btn > .sp-listen-track-line2 .sp-listen-artist {
+  white-space: nowrap;
+  max-width: min(100%, 12rem);
+}
+
+.boarding-pay-actions {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.65rem;
+}
+
+a.boarding-pay-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.boarding-pay-fallback {
+  margin: 0;
+  text-align: center;
+}
+
 .sp-pl-edit-track-desc {
   font-size: 0.7rem;
   color: #727272;
@@ -3096,7 +3173,7 @@ a.voxel-btn {
     word-break: break-word;
   }
 
-  .sp-pl-edit-track-info--btn span.sp-listen-meta {
+  .sp-listen .sp-listen-type-dur {
     color: #727272;
   }
 

@@ -163,15 +163,23 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
                   </span>
                   <button
                     type="button"
-                    className="sp-pl-edit-track-info sp-pl-edit-track-info--btn"
+                    className="sp-pl-edit-track-info sp-pl-edit-track-info--btn sp-listen-track-btn"
                     onClick={() => play(tr.id)}
                   >
-                    <strong>{tr.title}</strong>
-                    <span>{tr.artist}</span>
-                    <span className="sp-listen-meta">
-                      {tr.videoSrc ? 'Video' : 'Audio'} · {fmtDuration(tr.durationSec)}
+                    <strong className="sp-listen-track-title">{tr.title}</strong>
+                    <span className="sp-listen-track-line2">
+                      <span className="sp-listen-artist">{tr.artist}</span>
+                      <span className="sp-listen-sep" aria-hidden>
+                        {' '}
+                        ·{' '}
+                      </span>
+                      <span className="sp-listen-type-dur">
+                        {tr.videoSrc ? 'Video' : 'Audio'} · {fmtDuration(tr.durationSec)}
+                      </span>
                     </span>
-                    {tr.description && <span className="sp-pl-edit-track-desc">{tr.description}</span>}
+                    {tr.description && (
+                      <span className="sp-pl-edit-track-desc sp-listen-track-desc">{tr.description}</span>
+                    )}
                   </button>
                   <button
                     type="button"

@@ -8,6 +8,7 @@ import {
   EGS_EXPORT_PLAYLIST_BUNDLE_PER_TRACK_USD,
   PAYMENT_HANDLES,
   RAIL_LABEL,
+  railCheckoutLinks,
   type LiveRail,
 } from '@/lib/paymentRails';
 import { requestExport } from '@/lib/api';
@@ -78,6 +79,13 @@ export function PlaylistBulkExportModal({
     () => toLicense.length * EGS_EXPORT_PLAYLIST_BUNDLE_PER_TRACK_USD,
     [toLicense.length],
   );
+
+  const bulkMemo = useMemo(
+    () => `BULK EXPORT · ${toLicense.length} tracks · 50pct bundle`,
+    [toLicense.length],
+  );
+  const bulkPayCheckout =
+    step === 'pay' && rail ? railCheckoutLinks(rail, totalUsd, bulkMemo) : null;
 
   const reset = useCallback(() => {
     setStep('idle');
@@ -322,19 +330,38 @@ export function PlaylistBulkExportModal({
           </>
         )}
 
-        {step === 'pay' && rail && (
+        {step === 'pay' && rail && bulkPayCheckout && (
           <>
             <p className="modal-body">
-              Send <strong>${totalUsd.toFixed(2)}</strong> on {RAIL_LABEL[rail]} to{' '}
-              <code>{PAYMENT_HANDLES[rail]}</code> (bundle total — half the à la carte total). For the memo, start with{' '}
-              <code>BULK EXPORT · {toLicense.length} tracks · 50pct bundle</code> — then add your note.
+              Pay <strong>${totalUsd.toFixed(2)}</strong> on <strong>{RAIL_LABEL[rail]}</strong> to{' '}
+              <code>{PAYMENT_HANDLES[rail]}</code> (bundle total — half the à la carte total). Start your memo with{' '}
+              <code>{bulkMemo}</code>.
             </p>
-            <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('honor')}>
-              I paid — confirm on honor
-            </button>
-            <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('rail')}>
-              Back
-            </button>
+            <p className="modal-fine">Open your payment app first, then continue to honor confirmation.</p>
+            <div className="modal-actions boarding-pay-actions">
+              <a
+                href={bulkPayCheckout.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="voxel-btn voxel-btn--cyan boarding-pay-open"
+              >
+                Open {RAIL_LABEL[rail]} · ${totalUsd.toFixed(2)}
+              </a>
+              {bulkPayCheckout.webFallbackHref && (
+                <p className="modal-fine boarding-pay-fallback">
+                  App did not open?{' '}
+                  <a href={bulkPayCheckout.webFallbackHref} target="_blank" rel="noopener noreferrer">
+                    Open {RAIL_LABEL[rail]} on the web
+                  </a>
+                </p>
+              )}
+              <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('honor')}>
+                I've paid — continue to honor confirmation
+              </button>
+              <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('rail')}>
+                Back
+              </button>
+            </div>
           </>
         )}
 

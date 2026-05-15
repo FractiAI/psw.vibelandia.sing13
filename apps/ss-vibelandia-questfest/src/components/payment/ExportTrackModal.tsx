@@ -6,6 +6,7 @@ import {
   PAYMENT_HANDLES,
   RAIL_LABEL,
   exportNote,
+  railCheckoutLinks,
   type LiveRail,
 } from '@/lib/paymentRails';
 import type { TrackDef } from '@/lib/catalogTypes';
@@ -13,7 +14,7 @@ import { requestExport } from '@/lib/api';
 import { downloadTrackToDevice } from '@/lib/downloadTrack';
 import { hasExportLicense, saveExportLicense } from '@/lib/exportLicenses';
 import { readPassToken } from '@/lib/mockJwt';
-import { useSessionStore } from '@/stores/sessionStore';
+import { HonorFarmstandFigure } from '@/components/payment/HonorFarmstandFigure';
 
 function todayISO() {
   return new Date().toISOString().slice(0, 10);
@@ -38,7 +39,6 @@ export function ExportTrackModal({
   onClose,
   onNeedPass,
 }: ExportTrackModalProps) {
-  const localHonorOnly = useSessionStore((s) => s.localHonorOnly);
   const [step, setStep] = useState<'gate' | 'captain_bypass' | 'rail' | 'pay' | 'honor' | 'done'>('gate');
   const [rail, setRail] = useState<LiveRail | null>(null);
   const [paidDate, setPaidDate] = useState(todayISO);
@@ -68,6 +68,10 @@ export function ExportTrackModal({
   if (!open || !track) return null;
 
   const title = track.title;
+
+  const exportMemo = exportNote(title);
+  const exportPayCheckout =
+    step === 'pay' && rail ? railCheckoutLinks(rail, EGS_EXPORT_USD, exportMemo) : null;
 
   const close = () => {
     onClose();
@@ -114,23 +118,15 @@ export function ExportTrackModal({
       const passToken = readPassToken();
       const devSkip = import.meta.env.DEV && email.trim() === 'dev@local';
 
-      if (!passToken && !devSkip) {
-        throw new Error(
-          localHonorOnly
-            ? 'This pass is saved on this browser for playback only. Use Captain unlock to export, or complete boarding when export tokens are enabled on the server.'
-            : 'monthly_pass_required',
-        );
-      }
-
       if (devSkip) {
         saveExportLicense({
           trackId: track.id,
           licensedAt: new Date().toISOString(),
           licenseId: 'dev-local',
         });
-      } else {
+      } else if (passToken) {
         const res = await requestExport({
-          passToken: passToken!,
+          passToken,
           rail,
           honorConfirm: true,
           paidDate,
@@ -143,6 +139,12 @@ export function ExportTrackModal({
           licensedAt: new Date().toISOString(),
           licenseId: res.licenseId,
           passengerJti: res.passengerJti,
+        });
+      } else {
+        saveExportLicense({
+          trackId: track.id,
+          licensedAt: new Date().toISOString(),
+          licenseId: 'honor-local',
         });
       }
       await runDownload();
@@ -234,27 +236,48 @@ export function ExportTrackModal({
           </>
         )}
 
-        {step === 'pay' && rail && (
+        {step === 'pay' && rail && exportPayCheckout && (
           <>
             <p className="modal-body">
-              Send <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> on {RAIL_LABEL[rail]} to{' '}
-              <code>{PAYMENT_HANDLES[rail]}</code>. Payment note: <code>{exportNote(title)}</code>
+              Pay <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> on <strong>{RAIL_LABEL[rail]}</strong> to{' '}
+              <code>{PAYMENT_HANDLES[rail]}</code>. Payment note: <code>{exportMemo}</code>
             </p>
-            <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('honor')}>
-              I paid — confirm on honor
-            </button>
-            <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('rail')}>
-              Back
-            </button>
+            <p className="modal-fine">Open your payment app first, then continue to honor confirmation.</p>
+            <div className="modal-actions boarding-pay-actions">
+              <a
+                href={exportPayCheckout.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="voxel-btn voxel-btn--cyan boarding-pay-open"
+              >
+                Open {RAIL_LABEL[rail]} · ${EGS_EXPORT_USD.toFixed(2)}
+              </a>
+              {exportPayCheckout.webFallbackHref && (
+                <p className="modal-fine boarding-pay-fallback">
+                  App did not open?{' '}
+                  <a href={exportPayCheckout.webFallbackHref} target="_blank" rel="noopener noreferrer">
+                    Open {RAIL_LABEL[rail]} on the web
+                  </a>
+                </p>
+              )}
+              <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('honor')}>
+                I've paid — continue to honor confirmation
+              </button>
+              <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('rail')}>
+                Back
+              </button>
+            </div>
           </>
         )}
 
         {step === 'honor' && rail && (
           <>
             <p className="modal-body">
-              Confirm you sent <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> on <strong>{RAIL_LABEL[rail]}</strong> for
-              this download. We record the date, your email, and payment app — same honor system as the monthly pass.
+              Fair Exchange runs on trust — same honor flow as the monthly pass. Check the box, set the date you paid,
+              and we unlock this download on your device. When a server pass token is available, we also log it on the
+              host.
             </p>
+            <HonorFarmstandFigure />
             <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
               <input
                 type="checkbox"
@@ -292,7 +315,8 @@ export function ExportTrackModal({
             </label>
             {import.meta.env.DEV && (
               <p className="modal-fine">
-                Dev: use email <code>dev@local</code> with an active pass to skip the export API.
+                Dev: use email <code>dev@local</code> to skip the export API (honor checkbox still required unless you
+                bypass below).
               </p>
             )}
             <div className="modal-actions">

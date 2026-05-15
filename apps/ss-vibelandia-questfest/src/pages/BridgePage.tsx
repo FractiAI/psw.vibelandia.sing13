@@ -8,6 +8,7 @@ import { TrackList } from '@/components/catalog/TrackList';
 import { PlaylistLibrary } from '@/components/catalog/PlaylistLibrary';
 import { DjStudio } from '@/components/catalog/DjStudio';
 import { PlayerDock } from '@/components/player/PlayerDock';
+import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 
@@ -61,6 +62,18 @@ export function BridgePage() {
   const goListen = () => {
     setDjMode(false);
     navigate('/bridge', { replace: true });
+    const st = useCatalogStore.getState();
+    const active = st.getActivePlaylist();
+    const master = st.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
+    if (
+      master &&
+      master.trackIds.length > 0 &&
+      active &&
+      active.id !== MASTER_PLAYLIST_ID &&
+      active.trackIds.length === 0
+    ) {
+      st.setActivePlaylist(MASTER_PLAYLIST_ID);
+    }
   };
 
   const goPlaylists = () => {
@@ -138,6 +151,9 @@ export function BridgePage() {
             </button>
           </div>
           <nav className="sp-top-nav">
+            <a href="/questfest" className="sp-top-link">
+              SS Vibelandia
+            </a>
             <Link to="/" className="sp-top-link">
               Home
             </Link>

@@ -418,7 +418,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   importMediaFiles: async (files, opts) => {
-    const playlistIds = opts?.playlistIds?.length ? opts.playlistIds : [MASTER_PLAYLIST_ID];
+    const extras = opts?.playlistIds && opts.playlistIds.length > 0 ? opts.playlistIds : [];
+    const playlistIds = [...new Set([MASTER_PLAYLIST_ID, ...extras])];
     const sourceKeys = new Set(
       Object.values(get().tracks)
         .map((t) => t.sourceKey)

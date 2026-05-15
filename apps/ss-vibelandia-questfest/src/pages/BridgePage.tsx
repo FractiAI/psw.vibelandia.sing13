@@ -7,6 +7,7 @@ import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
 import { TrackList } from '@/components/catalog/TrackList';
 import { PlaylistLibrary } from '@/components/catalog/PlaylistLibrary';
 import { DjStudio } from '@/components/catalog/DjStudio';
+import { PlayerDock } from '@/components/player/PlayerDock';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 
@@ -174,6 +175,8 @@ export function BridgePage() {
             />
           )}
         </main>
+
+        <PlayerDock />
       </div>
 
       <PlaylistBulkExportModal

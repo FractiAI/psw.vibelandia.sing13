@@ -1,11 +1,8 @@
-import { useCallback, useEffect } from 'react';
-import { useStreamLock } from '@/hooks/useStreamLock';
+import { useEffect } from 'react';
 import { FairExchangeModal } from '@/components/player/FairExchangeModal';
-import { VesselSwitchModal } from '@/components/player/VesselSwitchModal';
 import { BoardingModal } from '@/components/payment/BoardingModal';
 import { CaptainUnlockModal } from '@/components/payment/CaptainUnlockModal';
 import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
-import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
@@ -13,8 +10,7 @@ import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import type { BoardingRequestBody } from '@/lib/api';
 
 /**
- * Lives under the app router but outside route elements so playback and media elements
- * stay mounted when navigating (e.g. Bridge → Home).
+ * Global modals and session hydration. The player dock lives in BridgePage (in-flow scroll).
  */
 export function MediaShell() {
   const catalogHydrated = useCatalogStore((s) => s.hydrated);
@@ -31,31 +27,16 @@ export function MediaShell() {
   const fairOpen = useMediaChromeStore((s) => s.fairOpen);
   const boardingOpen = useMediaChromeStore((s) => s.boardingOpen);
   const captainOpen = useMediaChromeStore((s) => s.captainOpen);
-  const vesselOpen = useMediaChromeStore((s) => s.vesselOpen);
-  const vesselKind = useMediaChromeStore((s) => s.vesselKind);
   const exportTrackId = useMediaChromeStore((s) => s.exportTrackId);
   const setFairOpen = useMediaChromeStore((s) => s.setFairOpen);
   const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
-  const showVessel = useMediaChromeStore((s) => s.showVessel);
-  const hideVessel = useMediaChromeStore((s) => s.hideVessel);
   const closeExport = useMediaChromeStore((s) => s.closeExport);
-
-  const stream = useStreamLock();
 
   useEffect(() => {
     hydrateSession();
     if (!catalogHydrated) void hydrateCatalog();
   }, [catalogHydrated, hydrateCatalog, hydrateSession]);
-
-  const onFairExchange = useCallback(() => setFairOpen(true), [setFairOpen]);
-
-  const onVesselSwitch = useCallback(
-    (reason: 'vessel_switch' | 'tab_preempt') => {
-      showVessel(reason);
-    },
-    [showVessel],
-  );
 
   const handleBoarding = async (payload: BoardingRequestBody) => {
     const ok = await completeBoarding(payload);
@@ -70,17 +51,6 @@ export function MediaShell() {
 
   return (
     <>
-      <div className="sp-media-shell" aria-live="polite">
-        <NowPlayingBar
-          onFairExchange={onFairExchange}
-          onVesselSwitch={onVesselSwitch}
-          killReason={stream.killReason}
-          beginSession={stream.beginSession}
-          clearKill={stream.clearKill}
-          onDownload={(trackId) => useMediaChromeStore.getState().openExport(trackId)}
-        />
-      </div>
-
       <FairExchangeModal
         open={fairOpen}
         onClose={() => setFairOpen(false)}
@@ -115,16 +85,6 @@ export function MediaShell() {
         onNeedPass={() => {
           closeExport();
           setBoardingOpen(true);
-        }}
-      />
-
-      <VesselSwitchModal
-        open={vesselOpen}
-        kind={vesselKind}
-        onAck={() => {
-          hideVessel();
-          stream.clearKill();
-          setGain(1);
         }}
       />
     </>

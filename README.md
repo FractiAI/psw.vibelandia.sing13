@@ -16,7 +16,7 @@
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
 | **QUESTFEST surface** | Hub + ETCon + press + Snap robots + Look at the Sun + Juicy Juicy Snap + FractiAI + Valet Pru + i18n (10 locales) + assets | `interfaces/` |
-| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, Libretto log, Fair Exchange **honor-system** boarding (date + email + rail), single-active-stream lock | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
+| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock (scrolls with page), Libretto log, Fair Exchange **honor-system** boarding (date + email + rail), single-active-stream lock, plan-gated background audio | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
 | **Lite-edge APIs** | Boarding + export JWTs (shared `api/honor-attest.js`), per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
 | **SING 13 spine docs** | 13-channel pathfinding roadmap (May 12) + DNA/PEFF master canon (May 11) + slices + JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
@@ -33,6 +33,12 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 | **Catalog / licensing (500+ Reno swamp · caliente tracks)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
 
 Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via BroadcastChannel (same tab) + `/api/heartbeat` (cross-device; Upstash Redis when env is set).
+
+### Playback layout and background audio
+
+- **Player dock** — `PlayerDock` sits at the bottom of the Bridge column (`sp-main`), not fixed to the viewport; the page scrolls naturally and the player moves with the content.
+- **Free (no Passenger pass)** — 30s Solenoid preview on sovereign playlists; playback **pauses** when the listener switches apps or backgrounds the browser tab.
+- **Paid (Passenger pass or Captain unlock)** — full play; audio **continues in background** via Media Session API and, for video tracks, a hidden audio handoff (`useBackgroundPlayback`). Mobile OS limits still apply on some devices.
 
 ### Catalog playlists (Bridge Listen / Playlists)
 

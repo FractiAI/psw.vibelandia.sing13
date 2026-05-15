@@ -1550,8 +1550,10 @@ a.voxel-btn {
 .sp-app {
   display: grid;
   grid-template-columns: 280px 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto;
+  align-items: start;
   min-height: 100vh;
+  height: auto;
   background: #121212;
   color: #fff;
 }
@@ -1763,6 +1765,7 @@ a.voxel-btn {
   flex-direction: column;
   min-width: 0;
   min-height: 0;
+  overflow: visible;
 }
 
 .sp-top {
@@ -1835,9 +1838,9 @@ a.voxel-btn {
 }
 
 .sp-scroll {
-  flex: 1;
-  overflow-y: auto;
-  padding: 0 1.5rem max(2rem, calc(5.5rem + env(safe-area-inset-bottom, 0px))) 1.5rem;
+  flex: none;
+  overflow: visible;
+  padding: 0 1.5rem 1.5rem;
 }
 
 .sp-listen {
@@ -2669,16 +2672,14 @@ a.voxel-btn {
   display: inline-block;
 }
 
-/* Fixed dock: player + modals stay mounted when navigating away from Bridge */
-.sp-media-shell {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
+/* In-flow player dock (scrolls with Bridge content) */
+.sp-player-dock {
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: auto;
 }
 
-.sp-media-shell .sp-now {
+.sp-player-dock .sp-now {
   grid-column: unset;
   grid-row: unset;
   width: 100%;
@@ -2865,7 +2866,7 @@ a.voxel-btn {
     padding-left: max(1rem, env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
     padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
-    padding-bottom: max(2rem, calc(5.5rem + env(safe-area-inset-bottom, 0px)));
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
   }
 
   .sp-toolbar {
@@ -2987,7 +2988,7 @@ a.voxel-btn {
 
   .sp-scroll {
     padding: max(1rem, env(safe-area-inset-top, 0px)) max(1rem, env(safe-area-inset-right))
-      max(1.5rem, calc(6.5rem + env(safe-area-inset-bottom, 0px))) max(1rem, env(safe-area-inset-left));
+      max(1rem, env(safe-area-inset-bottom, 0px)) max(1rem, env(safe-area-inset-left));
   }
 
   .sp-hero-stats {

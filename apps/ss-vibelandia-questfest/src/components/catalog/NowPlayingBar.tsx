@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { useSessionStore } from '@/stores/sessionStore';
@@ -27,6 +28,7 @@ export function NowPlayingBar({
   expanded = false,
 }: NowPlayingBarProps) {
   const mediaRef = useRef<HTMLVideoElement | HTMLAudioElement | null>(null);
+  const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
   const gateArmedRef = useRef(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -50,6 +52,16 @@ export function NowPlayingBar({
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
   const isVideo = !!track?.videoSrc;
 
+  useBackgroundPlayback({
+    mediaRef,
+    backgroundAudioRef,
+    allowBackgroundPlay: fullPlayUnlocked,
+    isPlaying,
+    track,
+    isVideo,
+    setPlaying,
+  });
+
   useEffect(() => {
     if (killReason === 'vessel_switch' || killReason === 'tab_preempt') {
       onVesselSwitch(killReason);
@@ -58,17 +70,26 @@ export function NowPlayingBar({
 
   useEffect(() => {
     const el = mediaRef.current;
-    if (!el || !track) return;
+    const bg = backgroundAudioRef.current;
+    const activeEl = el ?? bg;
+    if (!activeEl || !track) return;
 
     gateArmedRef.current = true;
     setError(null);
+    if (!el) return;
+
     if (isVideo && el instanceof HTMLVideoElement) {
       el.src = track.videoSrc!;
       el.load();
-    } else {
+      if (bg) {
+        bg.pause();
+        bg.removeAttribute('src');
+      }
+    } else if (el instanceof HTMLAudioElement) {
       el.src = track.src;
       el.load();
     }
+
     el.volume = gain;
 
     const onTime = () => {
@@ -100,27 +121,37 @@ export function NowPlayingBar({
     const onEnded = () => setPlaying(false);
     const onErr = () => setError('Could not play this file.');
 
+    const onBgEnded = () => setPlaying(false);
+
     el.addEventListener('timeupdate', onTime);
     el.addEventListener('ended', onEnded);
     el.addEventListener('error', onErr);
+    bg?.addEventListener('ended', onBgEnded);
 
     return () => {
       el.removeEventListener('timeupdate', onTime);
       el.removeEventListener('ended', onEnded);
       el.removeEventListener('error', onErr);
+      bg?.removeEventListener('ended', onBgEnded);
     };
   }, [gain, isVideo, onFairExchange, setDisplayTime, setPlaying, solenoidActive, track]);
 
   useEffect(() => {
     const el = mediaRef.current;
+    const bg = backgroundAudioRef.current;
     if (!el || !track) return;
     if (isPlaying) {
       beginSession();
-      el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
+      if (document.hidden && fullPlayUnlocked && isVideo && bg?.src) {
+        void bg.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
+      } else {
+        void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
+      }
     } else {
       el.pause();
+      bg?.pause();
     }
-  }, [beginSession, isPlaying, track]);
+  }, [beginSession, fullPlayUnlocked, isPlaying, isVideo, track]);
 
   useEffect(() => {
     const el = mediaRef.current;
@@ -175,6 +206,15 @@ export function NowPlayingBar({
       )}
       {track && !isVideo && (
         <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} className="sr-only" preload="metadata" />
+      )}
+      {track && isVideo && fullPlayUnlocked && (
+        <audio
+          ref={backgroundAudioRef}
+          className="sr-only"
+          preload="metadata"
+          aria-hidden
+          playsInline
+        />
       )}
 
       <div className="sp-now-bar">

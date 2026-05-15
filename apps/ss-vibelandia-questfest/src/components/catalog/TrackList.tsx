@@ -7,9 +7,10 @@ import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 import { DEFAULT_ARTIST } from '@/lib/catalogTypes';
 
 function fmtDuration(sec?: number) {
-  if (!sec) return '—';
-  const m = Math.floor(sec / 60);
-  const s = sec % 60;
+  if (sec == null || !Number.isFinite(sec)) return '—';
+  const total = Math.max(0, Math.floor(Number(sec)));
+  const m = Math.floor(total / 60);
+  const s = total % 60;
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 

@@ -2642,62 +2642,6 @@ a.voxel-btn {
   padding-bottom: 1rem;
 }
 
-@media (max-width: 480px) {
-  .sp-pl-edit .sp-pl-edit-row:not(.sp-pl-edit-row--listen):not(.sp-pl-edit-row--master) {
-    grid-template-columns: auto auto 1fr auto;
-    grid-template-areas:
-      'grip idx info remove'
-      'grip idx moves remove';
-  }
-
-  .sp-pl-edit .sp-pl-edit-row--master {
-    grid-template-columns: auto auto minmax(0, 1fr);
-    grid-template-areas:
-      'grip idx info'
-      'grip idx moves';
-  }
-
-  .sp-pl-edit .sp-row-grip {
-    grid-area: grip;
-    align-self: center;
-  }
-
-  .sp-pl-edit .sp-pl-edit-idx {
-    grid-area: idx;
-    align-self: center;
-  }
-
-  .sp-pl-edit .sp-pl-edit-track-info {
-    grid-area: info;
-    min-width: 0;
-  }
-
-  .sp-pl-edit .sp-pl-edit-moves {
-    grid-area: moves;
-    justify-self: end;
-  }
-
-  .sp-pl-edit .sp-pl-edit-remove {
-    grid-area: remove;
-    align-self: center;
-  }
-
-  .sp-listen .sp-pl-edit-row--listen {
-    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
-    grid-template-rows: auto;
-    grid-template-areas: none;
-    padding: 0.5rem 0.75rem;
-  }
-
-  .sp-listen .sp-listen-dl,
-  .sp-listen .sp-listen-play {
-    min-width: 44px;
-    min-height: 44px;
-    width: 44px;
-    height: 44px;
-  }
-}
-
 .sp-empty {
   color: #b3b3b3;
   font-size: 0.9rem;
@@ -3084,6 +3028,62 @@ a.voxel-btn {
   .sp-search {
     font-size: 16px;
     min-height: 44px;
+  }
+
+  /* Playlist editor rows (inside .sp-pl-edit only — does not affect Listen) */
+  .sp-pl-edit .sp-pl-edit-row:not(.sp-pl-edit-row--listen):not(.sp-pl-edit-row--master) {
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas:
+      'grip idx info remove'
+      'grip idx moves remove';
+  }
+
+  .sp-pl-edit .sp-pl-edit-row--master {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    grid-template-areas:
+      'grip idx info'
+      'grip idx moves';
+  }
+
+  .sp-pl-edit .sp-row-grip {
+    grid-area: grip;
+    align-self: center;
+  }
+
+  .sp-pl-edit .sp-pl-edit-idx {
+    grid-area: idx;
+    align-self: center;
+  }
+
+  .sp-pl-edit .sp-pl-edit-track-info {
+    grid-area: info;
+    min-width: 0;
+  }
+
+  .sp-pl-edit .sp-pl-edit-moves {
+    grid-area: moves;
+    justify-self: end;
+  }
+
+  .sp-pl-edit .sp-pl-edit-remove {
+    grid-area: remove;
+    align-self: center;
+  }
+
+  /* Listen tab — .sp-listen only; keep grid separate from editor so we never double-apply */
+  .sp-listen .sp-pl-edit-row--listen {
+    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: none;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .sp-listen .sp-listen-dl,
+  .sp-listen .sp-listen-play {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
   }
 
   .sp-pl-edit-track-desc {

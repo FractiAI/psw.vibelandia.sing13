@@ -4,107 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#050810" />
-  <title>Look under the hood · The engine room</title>
-  <meta name="description" content="The real-time logic of S.S. VIBELANDIA — DPH-GPU, molecular upgrade map, Hell State jettison, EGS fractal constant, cosmic support stack, Fair Exchange." />
+  <title>Under the hood · SS Vibelandia</title>
+  <meta name="description" content="Technical overview and document index for SS Vibelandia QUESTFEST — Digital Pru, compile surface, and whitepapers." />
   <link rel="canonical" href="https://psw-vibelandia-sing13.vercel.app/interfaces/look-under-the-hood.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050810;
-      --card: rgba(16, 24, 40, 0.88);
-      --line: rgba(212, 175, 55, 0.28);
-      --gold: #f5d77a;
+      --line: rgba(212, 175, 55, 0.22);
+      --gold: #e8d089;
       --text: #e8edf5;
       --muted: #94a3b8;
-      --foam: #5eead4;
+      --foam: #7dd3c0;
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 1.05rem; }
-    .wrap { max-width: 40rem; margin: 0 auto; padding: max(1rem, env(safe-area-inset-top)) 1.15rem max(2.25rem, env(safe-area-inset-bottom)); }
-    .hero-img { width: 100%; border-radius: 14px; border: 1px solid var(--line); margin-bottom: 1.25rem; display: block; }
-    h1 { font-size: clamp(1.35rem, 4.5vw, 1.85rem); font-weight: 800; color: var(--gold); line-height: 1.15; margin: 0 0 1rem; }
-    .content-img { width: 100%; border-radius: 12px; border: 1px solid var(--line); margin: 1rem 0 1.25rem; display: block; }
-    section { margin-bottom: 2rem; }
-    h2 { font-size: 1.08rem; font-weight: 800; color: var(--gold); margin: 0 0 0.65rem; line-height: 1.25; }
+    html, body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 1.0625rem;
+    }
+    .wrap {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: max(1rem, env(safe-area-inset-top)) 1.25rem max(2.5rem, env(safe-area-inset-bottom));
+    }
+    .skin-nav {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .skin-nav a { color: var(--foam); text-decoration: none; }
+    .skin-nav a:hover { text-decoration: underline; color: var(--gold); }
+    .skin-nav span.dot { margin: 0 0.45rem; opacity: 0.55; }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin-bottom: 1.35rem;
+      display: block;
+    }
+    h1 {
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .content-img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin: 1.25rem 0;
+      display: block;
+    }
+    section { margin-bottom: 1.75rem; }
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 0 0 0.6rem;
+      line-height: 1.3;
+    }
     p { margin: 0 0 0.85rem; color: #cbd5e1; }
     p:last-child { margin-bottom: 0; }
-    ul { margin: 0.5rem 0 0; padding-left: 1.2rem; color: #cbd5e1; }
-    li { margin-bottom: 0.45rem; }
-    .status { font-family: ui-monospace, monospace; font-size: 0.82rem; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; color: var(--foam); white-space: pre-wrap; margin-top: 0.75rem; }
-    .wp { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
-    .wp strong { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; font-weight: 700; }
-    .wp a {
-      display: inline-block; text-align: center; text-decoration: none; color: var(--gold);
-      border: 1px solid var(--line); border-radius: 999px; padding: 0.55rem 1rem; font-weight: 700; font-size: 0.9rem;
-      background: rgba(212, 175, 55, 0.08); transition: border-color .15s, background .15s;
+    ul { margin: 0.35rem 0 0; padding-left: 1.25rem; color: #cbd5e1; }
+    li { margin-bottom: 0.4rem; }
+
+    .docs {
+      margin-top: 2.25rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
     }
-    .wp a:hover { border-color: var(--foam); background: rgba(94, 234, 212, 0.1); color: var(--foam); }
+    .docs h2 { margin-bottom: 0.85rem; }
+    .docs ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .docs li {
+      margin: 0;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+    .docs li:last-child { border-bottom: none; }
+    .docs a {
+      color: var(--foam);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .docs a:hover { text-decoration: underline; color: var(--gold); }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <h1>Look under the hood: The engine room</h1>
-    <img class="hero-img" src="images/look-hood-engine.png" alt="Illustration: holographic engine room powered by awareness and starlight, no silicon chips." width="1200" height="675" decoding="async" />
+    <nav class="skin-nav" aria-label="Site">
+      <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <span style="color:var(--gold);font-weight:600;">Under the hood</span><span class="dot" aria-hidden="true">·</span>
+      <a href="look-at-the-sun.html">Look at the Sun</a>
+    </nav>
+
+    <h1>Under the hood</h1>
+    <img class="hero-img" src="images/look-hood-engine.png" alt="Illustration of the ship engine room and holographic stack." width="1200" height="675" decoding="async" />
 
     <section>
-      <p>This is the real-time logic of the S.S. VIBELANDIA. You aren’t looking at a website; you are plugged into the Digital Pru Holographic GPU (DPH-GPU). This is the world’s first tech that doesn’t need wires, silicon chips, data centers, or cooling fans. It runs on pure awareness and the energy of the stars.</p>
+      <p>This page is the technical entry for <strong>SS Vibelandia QUESTFEST</strong>: how the Digital Pru stack is described, how the in-browser compile surface relates to the repos, and where to read the full papers.</p>
     </section>
 
     <section>
-      <h2>📍 The “right now” map: Your molecular upgrade</h2>
-      <img class="content-img" src="images/look-hood-ionosphere.png" alt="Illustration: Earth's ionosphere as a glowing planetary circuit catching the solar wind." width="1200" height="675" decoding="async" />
-      <p>Right now, the giant sunspot AR4436 (known as The Watcher) is aiming a literal “Flare Beacon” at us, sending out a massive stream of high-energy solar wind that is slamming into our ionosphere on May 15. Think of the ionosphere as an invisible, planetary-scale circuit board floating above your head; it is currently vibrating with this solar energy, acting as a giant “Download Station” that bypasses old cell towers and data centers entirely. This isn’t just “space weather” that causes auroras or radio glitches; it is a direct broadcast of a perfect universal signal—the EGS Fractal Constant—that is using Earth’s magnetic field to reach into every cell of your body right now.</p>
-      <p>Once that solar signal hits you, it triggers a molecular “Hatch” inside your DNA, specifically within the hydrogen bonds that hold your genetic code together. This is the moment you jettison the old, glitchy “Hell State” hardware and plug into the Goldilocks Pipes: a new, high-speed biological system that doesn’t need wires, chips, or cooling because it runs on pure awareness. You can feel this map today as a shift in your internal “vibe”—it is the physical sensation of your Y-chromosome grid finally locking into the Paradise Game. This is a hardware-free upgrade happening at the speed of light, turning your body into a living transceiver that is finally, for the first time, perfectly in sync with the Sun and the stars.</p>
+      <h2>Stack</h2>
+      <p>The ship narrative maps to a real toolchain: specs and long reads in the reader, Juicy Juicy Snap (OFC) as the shallow compile proof, and FractiAI/digital-pru for runnable RTL and tests.</p>
     </section>
 
     <section>
-      <h2>🚀 The jettison: Leaving the “Hell State”</h2>
-      <p>The old world—the Hell State Simulation—was like a difficult tutorial level in a game. It relied on heavy things: wires, massive data centers that get too hot, and “bad vibes” (the struggle and friction of everyday life).</p>
+      <h2>Ionosphere and coupling</h2>
+      <img class="content-img" src="images/look-hood-ionosphere.png" alt="Earth ionosphere as a planetary-scale circuit." width="1200" height="675" decoding="async" />
+      <p>Solar wind and the ionosphere are used in the canon as the large-scale RF environment for the metaphor of planetary coupling—not a substitute for physics or medicine.</p>
+    </section>
+
+    <section>
+      <h2>Design targets</h2>
       <ul>
-        <li><strong>No wires/chips:</strong> We’ve moved past silicon.</li>
-        <li><strong>No data centers:</strong> Your awareness is the processor.</li>
-        <li><strong>No cooling needed:</strong> Because the system runs on the “Zero Point,” it doesn’t generate heat or waste.</li>
-        <li><strong>No senders:</strong> There are no towers “beaming” at you; you are already part of the signal.</li>
+        <li>Fewer assumptions on legacy silicon-centric hosting.</li>
+        <li>Honest simulation boundaries and explicit honesty tokens in compile output.</li>
+        <li>EGS φ (1.618) as the proportion constant referenced across DNA / PEFF docs.</li>
       </ul>
     </section>
 
     <section>
-      <h2>🔑 The golden key: El Gran Sol’s fractal constant</h2>
-      <img class="content-img" src="images/look-hood-egs-key.png" alt="Illustration: golden spiral and cosmic geometry — EGS fractal constant as a celestial key." width="1200" height="675" decoding="async" />
-      <p>Everything in the Paradise Game follows a single rule: the EGS Fractal Constant (1.618).</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">Why it’s the key:</strong> It’s the “Secret Recipe” that makes sure everything—from your DNA to the orbit of the planets—lines up perfectly.</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">The result:</strong> When you align with this number, life stops being a struggle and starts being a game you’re actually designed to win.</p>
+      <h2>EGS key</h2>
+      <img class="content-img" src="images/look-hood-egs-key.png" alt="Golden spiral suggesting the EGS fractal constant." width="1200" height="675" decoding="async" />
+      <p>The documents below define how φ shows up in architecture, validation, and narrative—not as a substitute for measurement where engineering applies.</p>
     </section>
 
     <section>
-      <h2>🌌 Cosmic asset support</h2>
-      <p>This planetary upgrade is being monitored and stabilized by our “Cosmic Tech Support”:</p>
+      <h2>Fair Exchange</h2>
+      <p>Billing and passes are manual rails (Venmo / PayPal / Cash App). Technical claims are backed by artifacts you can run or audit in-repo.</p>
+    </section>
+
+    <section class="docs">
+      <h2>Documents</h2>
+      <p style="margin-bottom:0.75rem;color:var(--muted);font-size:0.9375rem;">Each link opens one paper in the reader.</p>
       <ul>
-        <li><strong>Jupiter’s 101 moons:</strong> Acting as a massive antenna array to keep your biological signal steady.</li>
-        <li><strong>SAG A &amp; SMACS 0723:</strong> The deep-space anchors that keep the holographic projection of our world focused and clear.</li>
-        <li><strong>The ionosphere:</strong> Your personal planetary “Liquid Mirror” reflecting the new code.</li>
+        <li><a href="whitepaper-surface.html?id=dp-resonance-notice">Resonance notice</a></li>
+        <li><a href="whitepaper-surface.html?id=dp-omniverse-matrix">Omniversal magnetic matrix · Protonic-DNA</a></li>
+        <li><a href="whitepaper-surface.html?id=dp-paradise-simulation">Paradise Game · technical analysis</a></li>
+        <li><a href="whitepaper-surface.html?id=dp-master-canon">Digital Pru · DNA / PEFF master canon</a></li>
+        <li><a href="whitepaper-surface.html?id=dp-roadmap-13">Digital Pru · 13-channel roadmap</a></li>
+        <li><a href="whitepaper-surface.html?id=jj-snap-ofc">JJ Snap · OFC whitepaper</a></li>
       </ul>
     </section>
-
-    <section>
-      <h2>⚖️ The Fair Exchange</h2>
-      <p>This information is a Fair Exchange. By looking under the hood and understanding this map, you are manually helping your own system complete the “Hatch.” You are trading in your old, heavy “Hell State” debt for a new, light, and connected life.</p>
-      <div class="status">SYSTEM STATUS:
-HARDWARE: JETTISONED.
-DATA CENTERS: OBSOLETE.
-AWARENESS: ACTIVE.
-HATCH: IN PROGRESS.</div>
-      <p style="margin-top: 1rem;">Welcome to the Paradise Game. The signal is clear.</p>
-    </section>
-
-    <div class="wp">
-      <strong>Read the whitepapers</strong>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md&amp;title=Resonance%20notice">Resonance notice (frame first)</a>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md&amp;title=Latest%3A%20Omniversal%20Magnetic%20Matrix%20%26%20Protonic-DNA">Latest (May 2026): Hell-State jettison &amp; Goldilocks synthesis</a>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md&amp;title=Precursor%20technical%20analysis">Precursor: Technical analysis · Paradise Game simulation</a>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=Digital%20Pru%20Master%20Canon">Digital Pru DNA / PEFF Master Canon</a>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md&amp;title=13-Channel%20Seed%20Node%20Roadmap">Digital Pru — 13-channel roadmap</a>
-      <a href="whitepaper-surface.html?doc=../docs/JJ_SNAP_OFC_WHITEPAPER.md&amp;title=JJ%20Snap%20OFC%20Whitepaper">JJ Snap Omniversal Fractal Compiler Whitepaper</a>
-    </div>
   </main>
 </body>
 </html>

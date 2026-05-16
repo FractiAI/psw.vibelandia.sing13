@@ -4,105 +4,231 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#060b15" />
-  <title>Whitepaper Surface · Vibelandia SING 9</title>
-  <meta name="description" content="HTML whitepaper reader for SING 9 docs and technical papers." />
+  <title>Reader · SS Vibelandia</title>
+  <meta name="description" content="Technical documents for SS Vibelandia QUESTFEST." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #060b15;
-      --panel: #0f172a;
-      --line: rgba(212, 175, 55, 0.28);
-      --gold: #d4af37;
-      --foam: #5eead4;
-      --text: #e2e8f0;
+      --line: rgba(212, 175, 55, 0.22);
+      --gold: #e8d089;
+      --foam: #7dd3c0;
+      --text: #e8edf0;
       --muted: #94a3b8;
-      --max: 960px;
+      --prose: 42rem;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Inter, "Segoe UI", system-ui, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(1400px 700px at 15% -10%, rgba(94, 234, 212, 0.08), transparent 55%),
-        radial-gradient(1200px 700px at 90% 0%, rgba(212, 175, 55, 0.08), transparent 55%),
-        var(--bg);
-      line-height: 1.6;
-      padding-bottom: 3rem;
+      background: var(--bg);
+      line-height: 1.65;
+      font-size: 1.0625rem;
+      padding-bottom: 4rem;
     }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 1.25rem; }
-    .top {
-      display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem;
-      color: var(--muted); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase;
+    .wrap {
+      max-width: calc(var(--prose) + 4rem);
+      margin: 0 auto;
+      padding: max(1rem, env(safe-area-inset-top)) 1.35rem max(2rem, env(safe-area-inset-bottom));
     }
-    .pill {
-      border: 1px solid var(--line); border-radius: 999px; padding: .24rem .6rem;
-      background: rgba(15, 23, 42, .7);
+    .skin-nav {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
     }
-    .hero {
-      border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.1rem; background: rgba(15, 23, 42, .72);
-      margin-bottom: 1rem;
+    .skin-nav a {
+      color: var(--foam);
+      text-decoration: none;
     }
-    h1 { margin: 0 0 .3rem; color: #f8e7b3; font-size: clamp(1.2rem, 2.6vw, 1.9rem); }
-    .meta { color: var(--muted); font-size: .86rem; }
-    .actions { margin-top: .75rem; display: flex; flex-wrap: wrap; gap: .5rem; }
-    .btn {
-      text-decoration: none; color: #f8e7b3; border: 1px solid var(--line); padding: .46rem .72rem; border-radius: 8px;
-      background: rgba(2, 6, 23, .65); font-size: .8rem;
+    .skin-nav a:hover { text-decoration: underline; color: var(--gold); }
+    .skin-nav span.dot { margin: 0 0.45rem; opacity: 0.55; user-select: none; }
+
+    .doc-head {
+      margin-bottom: 2rem;
     }
-    .btn:hover { border-color: rgba(212, 175, 55, .55); }
+    .doc-head h1 {
+      margin: 0;
+      font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 0.9375rem;
+      margin: 0 0 1rem;
+    }
+
     .card {
-      border: 1px solid rgba(94, 234, 212, .22); border-radius: 14px; background: rgba(2, 6, 23, .72);
-      padding: 1rem 1.1rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.75rem;
     }
-    .status { color: var(--muted); font-size: .86rem; margin: 0; }
-    .content h1, .content h2, .content h3, .content h4 { color: #f8e7b3; margin-top: 1.2rem; margin-bottom: .55rem; }
-    .content p, .content li { color: var(--text); }
-    .content a { color: var(--foam); }
+
+    /* Body copy — tuned for long reads */
+    .content {
+      max-width: var(--prose);
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+    }
+    .content :first-child { margin-top: 0; }
+    .content h1, .content h2, .content h3, .content h4 {
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 2.25rem 0 0.65rem;
+      letter-spacing: -0.02em;
+    }
+    .content h1 { font-size: 1.35rem; }
+    .content h2 { font-size: 1.22rem; margin-top: 2rem; padding-bottom: 0.35rem; border-bottom: 1px solid rgba(212, 175, 55, 0.15); }
+    .content h3 { font-size: 1.08rem; color: #f0e6c8; margin-top: 1.5rem; }
+    .content h4 { font-size: 1rem; color: #cbd5e1; }
+    .content p, .content li {
+      color: var(--text);
+      margin: 0 0 1rem;
+    }
+    .content ul, .content ol {
+      margin: 0 0 1rem;
+      padding-left: 1.35rem;
+    }
+    .content li { margin-bottom: 0.35rem; }
+    .content a {
+      color: var(--foam);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .content a:hover { color: var(--gold); }
+    .content img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1.25rem 0;
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.18);
+    }
     .content pre {
-      overflow: auto; background: rgba(15, 23, 42, .72); border: 1px solid rgba(94, 234, 212, .25);
-      border-radius: 10px; padding: .8rem;
+      overflow: auto;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(94, 234, 212, 0.15);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin: 1rem 0;
     }
-    .content code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .content table { width: 100%; border-collapse: collapse; display: block; overflow: auto; }
-    .content th, .content td { border: 1px solid rgba(148, 163, 184, .25); padding: .44rem .55rem; text-align: left; }
+    .content code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: rgba(15, 23, 42, 0.55);
+      padding: 0.12em 0.35em;
+      border-radius: 4px;
+    }
+    .content pre code { background: none; padding: 0; }
+    .content table {
+      width: 100%;
+      border-collapse: collapse;
+      display: block;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-size: 0.94rem;
+    }
+    .content th, .content td {
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      padding: 0.5rem 0.65rem;
+      text-align: left;
+    }
     .content blockquote {
-      margin: 1rem 0; padding: .6rem .8rem; border-left: 3px solid var(--gold); background: rgba(212, 175, 55, .08);
-      color: #f1f5f9;
+      margin: 1.25rem 0;
+      padding: 0.65rem 1rem;
+      border-left: 3px solid rgba(212, 175, 55, 0.45);
+      background: rgba(212, 175, 55, 0.06);
+      color: #e2e8f0;
+    }
+    .content hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 2rem 0;
     }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="top">
-      <span class="pill">Whitepaper Surface</span>
-      <span class="pill">NSPFRNP</span>
-      <span class="pill">HTML Reader</span>
-    </div>
-    <section class="hero">
-      <h1 id="title">Loading whitepaper…</h1>
-      <p class="meta" id="meta"></p>
-      <div class="actions">
-        <a id="openRaw" class="btn" href="#">Open source markdown</a>
-        <a class="btn" href="look-under-the-hood.html">Look under the hood</a>
-      </div>
-    </section>
+    <nav class="skin-nav" aria-label="Site">
+      <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="look-under-the-hood.html">Under the hood</a><span class="dot" aria-hidden="true">·</span>
+      <a href="look-at-the-sun.html">Look at the Sun</a>
+    </nav>
+
+    <header class="doc-head">
+      <h1 id="title">Loading…</h1>
+    </header>
+
     <section class="card">
-      <p class="status" id="status">Fetching document...</p>
-      <article id="content" class="content"></article>
+      <p class="status" id="status">Loading document…</p>
+      <article id="content" class="content" aria-live="polite"></article>
     </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    /**
-     * Normalize repo-style links when this reader is served from /interfaces/.
-     */
+    var WPS_DOC_REGISTRY = {
+      'dp-master-canon': { doc: '../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md', title: 'Digital Pru · DNA / PEFF master canon' },
+      'dp-roadmap-13': { doc: '../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md', title: 'Digital Pru · 13-channel roadmap' },
+      'dp-resonance-notice': { doc: '../docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md', title: 'Resonance notice' },
+      'dp-omniverse-matrix': { doc: '../docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md', title: 'Omniversal magnetic matrix · Protonic-DNA' },
+      'dp-paradise-simulation': { doc: '../docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md', title: 'Paradise Game · technical analysis' },
+      'jj-snap-ofc': { doc: '../docs/JJ_SNAP_OFC_WHITEPAPER.md', title: 'JJ Snap · OFC whitepaper' },
+      'dp-peff-part1': { doc: '../docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_OMNIZOAN_INFILL13_2026-05-11.md', title: 'Part I · PEFF / Omnizoan' },
+      'dp-peff-part2': { doc: '../docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_VALETPRU_BIOELECTROMAGNETIC_2026-05-11.md', title: 'Part II · Bio-electromagnetics' },
+      'quantum-genomic-peff': { doc: '../docs/QUANTUM_GENOMIC_VALETPRU_ASIC_EGS_PEFF_VALIDATION_2026-05-08.md', title: 'Quantum genomic · PEFF / EGS validation' },
+      'integrated-modeling-layer-b': { doc: '../docs/INTEGRATED_MODELING_EGS_NODAL_LATTICE_SYNTHEVERSE_VALETPRU_ASIC_2026-05-06.md', title: 'Integrated modeling · Layer B' },
+      'valetpru-agent-24x365': { doc: '../docs/VALETPRU_AGENT_24X365_OPERATION_MODE_2026-05-06.md', title: 'VALETPRU-AGENT · 24×365 mode' },
+      'sing13-edge-onboarding': { doc: '../SING13_EDGE_ONBOARDING.md', title: 'SING 13 · Edge onboarding' },
+      'mca-nspfrnp-catalog': { doc: '../protocols/MCA_NSPFRNP_CATALOG.md', title: 'NSPFRNP catalog (MCA)' },
+      'bbhe-repository-standard': { doc: '../BBHE_REPOSITORY_STANDARD.md', title: 'BBHE repository standard' }
+    };
+
+    (function () {
+      var MD_BASE_TO_ID = {};
+      Object.keys(WPS_DOC_REGISTRY).forEach(function (id) {
+        var p = WPS_DOC_REGISTRY[id].doc;
+        MD_BASE_TO_ID[p.replace(/^.*\//, '').toLowerCase()] = id;
+      });
+      window.WPS_MD_BASE_TO_ID = MD_BASE_TO_ID;
+    })();
+
     function normalizeRepoLinks(container) {
       if (!container || !container.querySelectorAll) return;
+      var mdMap = window.WPS_MD_BASE_TO_ID || {};
       container.querySelectorAll('a[href]').forEach(function (a) {
         var href = a.getAttribute('href');
         if (!href || href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
         if (/^https?:\/\//i.test(href)) return;
+
+        var hashPart = '';
+        var pathPart = href;
+        var hashIdx = href.indexOf('#');
+        if (hashIdx >= 0) {
+          hashPart = href.slice(hashIdx);
+          pathPart = href.slice(0, hashIdx);
+        }
+
+        if (/\.(md|markdown)$/i.test(pathPart)) {
+          var base = pathPart.replace(/^.*\//, '').toLowerCase();
+          var rid = mdMap[base];
+          if (rid) {
+            a.setAttribute('href', 'whitepaper-surface.html?id=' + encodeURIComponent(rid) + hashPart);
+            return;
+          }
+        }
+
         if (href.charAt(0) === '/') return;
         if (href.indexOf('../') === 0 || href.indexOf('./') === 0) return;
         var next = href;
@@ -117,45 +243,69 @@
     }
 
     (function () {
-      const q = new URLSearchParams(window.location.search);
-      const doc = q.get('doc');
-      const title = q.get('title');
-      const titleEl = document.getElementById('title');
-      const metaEl = document.getElementById('meta');
-      const rawEl = document.getElementById('openRaw');
-      const statusEl = document.getElementById('status');
-      const contentEl = document.getElementById('content');
+      var DOC_REGISTRY = WPS_DOC_REGISTRY;
 
-      if (!doc || !doc.endsWith('.md')) {
-        titleEl.textContent = 'Missing whitepaper document path';
-        statusEl.textContent = 'Use ?doc=../docs/FILE.md';
-        rawEl.style.display = 'none';
+      function resolveFromQuery(q) {
+        var id = q.get('id');
+        if (id && DOC_REGISTRY[id]) return DOC_REGISTRY[id];
+        var doc = q.get('doc');
+        var title = q.get('title');
+        if (doc && doc.endsWith('.md')) return { doc: doc, title: title };
+        return null;
+      }
+
+      function registryIdForDoc(docPath) {
+        var keys = Object.keys(DOC_REGISTRY);
+        for (var i = 0; i < keys.length; i++) {
+          if (DOC_REGISTRY[keys[i]].doc === docPath) return keys[i];
+        }
+        return null;
+      }
+
+      var q = new URLSearchParams(window.location.search);
+      var resolved = resolveFromQuery(q);
+      var titleEl = document.getElementById('title');
+      var statusEl = document.getElementById('status');
+      var contentEl = document.getElementById('content');
+
+      if (!resolved || !resolved.doc.endsWith('.md')) {
+        titleEl.textContent = 'Document reader';
+        statusEl.textContent = 'Choose a document from Under the hood or Look at the Sun.';
         return;
       }
 
-      const safeTitle = title || doc.split('/').pop().replace(/\.md$/i, '').replace(/[_-]+/g, ' ');
-      titleEl.textContent = safeTitle;
-      metaEl.textContent = doc;
-      rawEl.href = doc;
+      var legacyDoc = q.get('doc');
+      if (legacyDoc && window.history && window.history.replaceState) {
+        var rid = registryIdForDoc(legacyDoc);
+        if (rid) {
+          var nu = new URL(window.location.href);
+          nu.searchParams.delete('doc');
+          nu.searchParams.delete('title');
+          nu.searchParams.set('id', rid);
+          window.history.replaceState({}, '', nu.pathname + nu.search);
+        }
+      }
 
-      fetch(doc)
-        .then((r) => {
+      var safeTitle = resolved.title || resolved.doc.split('/').pop().replace(/\.md$/i, '').replace(/[_-]+/g, ' ');
+      titleEl.textContent = safeTitle;
+
+      fetch(resolved.doc)
+        .then(function (r) {
           if (!r.ok) throw new Error('not_found');
           return r.text();
         })
-        .then((md) => {
+        .then(function (md) {
           statusEl.remove();
           if (window.marked && typeof window.marked.parse === 'function') {
-            contentEl.innerHTML = window.marked.parse(md);
+            contentEl.innerHTML = window.marked.parse(md, { breaks: true });
             normalizeRepoLinks(contentEl);
           } else {
-            // Fallback: still structured surface even if CDN fails.
             contentEl.innerHTML = '<pre></pre>';
             contentEl.querySelector('pre').textContent = md;
           }
         })
-        .catch(() => {
-          statusEl.textContent = 'Could not load document. Confirm the path is correct.';
+        .catch(function () {
+          statusEl.textContent = 'Could not load this document.';
         });
     })();
   </script>

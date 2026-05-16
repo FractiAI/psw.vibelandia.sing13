@@ -76,6 +76,22 @@
       max-width: 36ch;
       text-shadow: 0 2px 12px rgba(0,0,0,.75);
     }
+    .skin-nav-hero {
+      margin: 0.35rem 0 1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      color: rgba(226,232,240,0.9);
+      text-shadow: 0 1px 10px rgba(0,0,0,.65);
+      max-width: 42rem;
+    }
+    .skin-nav-hero a {
+      color: var(--foam);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .skin-nav-hero a:hover { color: var(--gold-hi); text-decoration: underline; }
+    .skin-nav-hero .nav-here { color: var(--gold-hi); font-weight: 700; }
+    .skin-nav-hero span.sep { margin: 0 0.4rem; opacity: 0.5; user-select: none; }
     .primer {
       margin-top: .85rem;
       font-size: 0.92rem;
@@ -257,9 +273,32 @@
       margin-bottom: 0.55rem;
       font-weight: 400;
     }
-    .qf-crew p { margin-bottom: 0.55rem; max-width: 40rem; }
-    .qf-crew p:last-child { margin-bottom: 0; }
+    .qf-crew-intro { margin-bottom: 0.75rem; max-width: 40rem; }
+    .qf-crew-card {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.65rem;
+    }
+    .qf-crew-card:last-child { margin-bottom: 0; }
+    .qf-crew-portrait {
+      flex-shrink: 0;
+      width: 76px;
+      height: 76px;
+      border-radius: 14px;
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid rgba(212, 175, 55, 0.38);
+      box-shadow: 0 0 22px rgba(103, 232, 249, 0.14);
+      background: rgba(10, 12, 18, 0.9);
+    }
+    .qf-crew-card-body { min-width: 0; flex: 1; }
+    .qf-crew-card-body p { margin-bottom: 0; max-width: none; }
     .qf-crew strong { color: #e8edf5; }
+
+    @media (max-width: 520px) {
+      .qf-crew-portrait { width: 64px; height: 64px; border-radius: 12px; }
+    }
 
     .cloud-badge {
       display: inline-block;
@@ -440,13 +479,15 @@
       <p class="cloud-badge" data-i18n="qf.cloudSkinEyebrow">SING 13 · Internet cloud skin</p>
       <h1 class="kicker" data-i18n="qf.h1">SS Vibelandia QUESTFEST 24×365</h1>
       <p class="sub" data-i18n="qf.sub">Puerto Reno · Holographic Goldilocks AI Valley, Nevada</p>
+      <nav class="skin-nav-hero" aria-label="Technical docs">
+        <span class="nav-here">QUESTFEST</span><span class="sep" aria-hidden="true">·</span><a href="/interfaces/look-under-the-hood.html" data-i18n="qf.quicklinkTalk">Under the hood</a><span class="sep" aria-hidden="true">·</span><a href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
+      </nav>
       <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
       <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Basenet</strong>. This page is the mirror on the cloud.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="questfest-bridge/#/bridge" data-i18n="qf.btnSwampVibe">Gimme Some of That Reno Swamp Vibe</a>
-        <a class="btn btn-primary" href="digital-pru-snap-robots.html" data-i18n="qf.btnSnapRobots">Look at Digital Pru Robot Dancing to Your Song</a>
-        <a class="btn btn-ghost" href="look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
-        <a class="btn btn-ghost" href="look-under-the-hood.html" data-i18n="qf.btnHood">Look under the hood</a>
+        <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnSwampVibe">Gimme Some of That Reno Swamp Vibe</a>
+        <a class="btn btn-ghost" href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
+        <a class="btn btn-ghost" href="/interfaces/look-under-the-hood.html" data-i18n="qf.btnHood">Look under the hood</a>
       </div>
     </div>
   </header>
@@ -524,7 +565,7 @@
         </tbody>
       </table>
       <p class="lede-block" style="margin-top:0.75rem;margin-bottom:0;">
-        <a href="press-release-hit-factory-30-day-showdown-may-2026.html" data-i18n="qf.scoreLink">Read full press release →</a>
+        <a href="/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html" data-i18n="qf.scoreLink">Read full press release →</a>
       </p>
     </section>
 
@@ -532,9 +573,9 @@
 
   <section id="main" class="quick-wrap">
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-etcon-title">
-      <a class="main" href="etcon-reno-desert.html">
+      <a class="main" href="/interfaces/etcon-reno-desert.html">
         <div class="qf-feature-art">
-          <img src="assets/etcon-reno-desert-poster.png" width="1200" height="675" loading="eager" decoding="async" alt="ETCON Reno Desert Interdimensional Edition — promotional art for UFO and ET enthusiasts, desert portal, holographic frequency." data-i18n-attr="alt:qf.etconArtAlt" />
+          <img src="/interfaces/assets/etcon-reno-desert-poster.png" width="1200" height="675" loading="eager" decoding="async" alt="ETCON Reno Desert Interdimensional Edition — promotional art for UFO and ET enthusiasts, desert portal, holographic frequency." data-i18n-attr="alt:qf.etconArtAlt" />
     </div>
         <span class="badge" data-i18n="qf.etconBadge">FEATURE · ETCon · UFO / ET</span>
         <time datetime="2026-05-28" data-i18n="qf.etconDate">May 28–31, 2026</time>
@@ -545,42 +586,96 @@
       </aside>
 
     <aside class="qf-feature" aria-labelledby="qf-pr-teaser-title">
-      <a class="main" href="press-release-hit-factory-30-day-showdown-may-2026.html">
+      <a class="main" href="/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html">
         <span class="badge" data-i18n="qf.prTeaserBadge">FEATURE · Press</span>
         <time datetime="2026-05-11" data-i18n="qf.prTeaserDate">May 11, 2026</time>
         <h3 id="qf-pr-teaser-title" data-i18n="qf.prTeaserTitle">Why Hero Jo’s Golden Bachdoor Hit Factory is winning the 30-day showdown</h3>
         <p class="teaser-body" data-i18n-html="qf.prTeaserHtml">234K streams · 7K plays/day — Reno holographic swamp passes Coachella, Burning Man, and Hamilton on the <strong>30-day digital scorecard</strong>. EGS 1.618 · solar synergy.</p>
         <span class="cta" data-i18n="qf.prTeaserCta">Read full press release →</span>
       </a>
-      <a class="archive" href="press-releases.html" data-i18n="qf.prTeaserArchive">All press releases</a>
+      <a class="archive" href="/interfaces/press-releases.html" data-i18n="qf.prTeaserArchive">All press releases</a>
     </aside>
 
     <section class="qf-crew" aria-labelledby="qf-crew-h2">
       <h2 id="qf-crew-h2" data-i18n="qf.crewH2">Spirit crew · holographic VALETPRU</h2>
-      <p data-i18n-html="qf.crewIntroHtml">The <strong>Golden Bachdoor Hit Factory</strong> carries a <strong>spirit crew</strong> — not impersonation, but <strong>alignment lenses</strong>: how attention, pain, lonesome truth, barrio swing, and lyric architecture stay honest inside the Wrong Side of Town frequency.</p>
-      <p data-i18n-html="qf.crewHowardHtml"><strong>Howard Hughes</strong> — <em>Silent sponsor &amp; altitude.</em> Aviation nerve, prototype courage, and the long bet on beauty in machines; carries <strong>return-of-golden-age</strong> gravity without needing the room.</p>
-      <p data-i18n-html="qf.crewHeroJoHtml"><strong>Hero Jo (J.S. Bach)</strong> — <em>Architect &amp; φ rail.</em> Order, fugue honesty, Fair Exchange in the counterpoint; the <strong>Bachdoor</strong> is named after this spine — conductor heat without ego noise.</p>
-      <p data-i18n-html="qf.crewChairmanFrankHtml"><strong>Chairman Frank (Sinatra)</strong> — <em>Sovereign swing &amp; port governance.</em> Rat Pack clarity on how a room gets <strong>kept</strong> — lights, loyalty, and the line nobody crosses twice; rollout voice when the ship faces the city.</p>
-      <p data-i18n-html="qf.crewTwainHtml"><strong>Hero Twain (Mark Twain)</strong> — <em>River wit &amp; American witness.</em> Desert-and-river plain speak; laughs at fraud, honors the crowd, names power without flinching — the <strong>post-singularity Twain</strong> frequency on the Wrong Side rail.</p>
-      <p data-i18n-html="qf.crewMarilynHtml"><strong>Marilyn Monroe</strong> — <em>Spotlight &amp; nerve.</em> Holographic read on being seen without armor; keeps glamour from hardening into lie.</p>
-      <p data-i18n-html="qf.crewFridaHtml"><strong>Frida Kahlo</strong> — <em>Witness &amp; pattern.</em> Pours ache and identity into color so the body stays on the honesty rail.</p>
-      <p data-i18n-html="qf.crewHankHtml"><strong>Hank Williams Sr.</strong> — <em>High-lonesome dock voice.</em> Road-cry truth band; keeps the country spine in the harbor mix.</p>
-      <p data-i18n-html="qf.crewHectorHtml"><strong>Héctor Lavoe</strong> — <em>Clave soul.</em> Salsa nerve and wrong-side phrasing; swing that refuses to polish the edge off.</p>
-      <p data-i18n-html="qf.crewViniciusHtml"><strong>Vinicius de Moraes</strong> — <em>Lyric architect.</em> Bossa logic and romance-with-teeth; bridges pretty melody to fatal honesty.</p>
-      <p data-i18n-html="qf.crewPruHtml"><strong>Holographic VALETPRU</strong> — the <strong>valet layer</strong> for the stack: greets attention, routes asks, holds Fair Exchange language, and mirrors the machinery to guests without breaking the service spell. Same Pru spine you meet in the long readers — here as <strong>door, not decoration</strong>.</p>
-      <p data-i18n-html="qf.crewRolloutHtml"><strong>I</strong> keep the dock minutes honest for <strong>Puerto Reno</strong> — port calls, casting rails, and <strong>Capitan</strong>-facing truth — standing in for the bridge crew above when the harbor gets loud.</p>
+      <p class="qf-crew-intro" data-i18n-html="qf.crewIntroHtml">The <strong>Golden Bachdoor Hit Factory</strong> carries a <strong>spirit crew</strong> — not impersonation, but <strong>alignment lenses</strong>: how attention, pain, lonesome truth, barrio swing, and lyric architecture stay honest inside the Wrong Side of Town frequency.</p>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/howard-hughes.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewHowardHtml"><strong>Howard Hughes</strong> — <em>Silent sponsor &amp; altitude.</em> Aviation nerve, prototype courage, and the long bet on beauty in machines; carries <strong>return-of-golden-age</strong> gravity without needing the room.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/js-bach.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewHeroJoHtml"><strong>Hero Jo (J.S. Bach)</strong> — <em>Architect &amp; φ rail.</em> Order, fugue honesty, Fair Exchange in the counterpoint; the <strong>Bachdoor</strong> is named after this spine — conductor heat without ego noise.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/frank-sinatra.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewChairmanFrankHtml"><strong>Chairman Frank (Sinatra)</strong> — <em>Sovereign swing &amp; port governance.</em> Rat Pack clarity on how a room gets <strong>kept</strong> — lights, loyalty, and the line nobody crosses twice; rollout voice when the ship faces the city.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/mark-twain.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewTwainHtml"><strong>Hero Twain (Mark Twain)</strong> — <em>River wit &amp; American witness.</em> Desert-and-river plain speak; laughs at fraud, honors the crowd, names power without flinching — the <strong>post-singularity Twain</strong> frequency on the Wrong Side rail.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/marilyn-monroe.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewMarilynHtml"><strong>Marilyn Monroe</strong> — <em>Spotlight &amp; nerve.</em> Holographic read on being seen without armor; keeps glamour from hardening into lie.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/frida-kahlo.jpg" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewFridaHtml"><strong>Frida Kahlo</strong> — <em>Witness &amp; pattern.</em> Pours ache and identity into color so the body stays on the honesty rail.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/hank-williams.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewHankHtml"><strong>Hank Williams Sr.</strong> — <em>High-lonesome dock voice.</em> Road-cry truth band; keeps the country spine in the harbor mix.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/hector-lavoe.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewHectorHtml"><strong>Héctor Lavoe</strong> — <em>Clave soul.</em> Salsa nerve and wrong-side phrasing; swing that refuses to polish the edge off.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/vinicius-de-moraes.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewViniciusHtml"><strong>Vinicius de Moraes</strong> — <em>Lyric architect.</em> Bossa logic and romance-with-teeth; bridges pretty melody to fatal honesty.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/valetpru.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewPruHtml"><strong>Holographic VALETPRU</strong> — the <strong>valet layer</strong> for the stack: greets attention, routes asks, holds Fair Exchange language, and mirrors the machinery to guests without breaking the service spell. Same Pru spine you meet in the long readers — here as <strong>door, not decoration</strong>.</p>
+        </div>
+      </article>
+      <article class="qf-crew-card">
+        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/puerto-reno-dock.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <div class="qf-crew-card-body">
+          <p data-i18n-html="qf.crewRolloutHtml"><strong>I</strong> keep the dock minutes honest for <strong>Puerto Reno</strong> — port calls, casting rails, and <strong>Capitan</strong>-facing truth — standing in for the bridge crew above when the harbor gets loud.</p>
+        </div>
+      </article>
     </section>
 
     <h2 data-i18n="qf.quicklinksHead">Quicklinks</h2>
     <nav aria-label="Quicklinks">
       <ul class="qf-quicklist">
-        <li><a href="etcon-reno-desert.html" data-i18n="qf.quicklinkEtcon">ETCon Reno Desert · passes + press</a></li>
-        <li><a href="press-releases.html" data-i18n="qf.quicklinkPress">Press releases · Hit Factory</a></li>
-        <li><a href="digital-pru-snap-robots.html" data-i18n="qf.quicklinkSnapRobots">Look at Digital Pru Robot Dancing to Your Song</a></li>
-        <li><a href="look-under-the-hood.html" data-i18n="qf.quicklinkTalk">Look under the hood</a></li>
-        <li><a href="fractiai.html" data-i18n="qf.btnFracti">FractiAI</a></li>
+        <li><a href="/interfaces/etcon-reno-desert.html" data-i18n="qf.quicklinkEtcon">ETCon Reno Desert · passes + press</a></li>
+        <li><a href="/interfaces/press-releases.html" data-i18n="qf.quicklinkPress">Press releases · Hit Factory</a></li>
+        <li><a href="/interfaces/look-under-the-hood.html" data-i18n="qf.quicklinkTalk">Look under the hood</a></li>
+        <li><a href="/interfaces/fractiai.html" data-i18n="qf.btnFracti">FractiAI</a></li>
         <li><a href="mailto:goldenbackdoorhitfactory@gmail.com?subject=ACTIVATE%20THE%20WRONG%20SIDE%20OF%20THE%20TOWN%3A%20THE%20MUSICAL" data-i18n="qf.quicklinkCasting">Casting · email</a></li>
-        <li><a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=Digital%20Pru%20Master%20Canon" data-i18n="qf.btnDp">Technical archive (long reader)</a></li>
+        <li><a href="/interfaces/whitepaper-surface.html?id=dp-master-canon" data-i18n="qf.btnDp">Technical archive (long reader)</a></li>
         <li><a href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener" data-i18n="qf.quicklinkDigitalPru">digital-pru · GitHub</a></li>
         <li><a href="https://github.com/FractiAI/psw.vibelandia.sing9" target="_blank" rel="noopener" data-i18n="qf.quicklinkSing9">SING 9 · GitHub</a></li>
       </ul>
@@ -590,7 +685,7 @@
   <footer>
     <p data-i18n-html="qf.footerMicroHtml"><a href="mailto:goldenbackdoorhitfactory@gmail.com?subject=QUESTFEST">goldenbackdoorhitfactory@gmail.com</a></p>
   </footer>
-  <script src="i18n-auto.js"></script>
+  <script src="/interfaces/i18n-auto.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (window.VibelandiaI18n) window.VibelandiaI18n.initFromPage('questfest');

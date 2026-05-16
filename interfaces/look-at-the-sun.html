@@ -3,102 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Look at the Sun · The planetary power grid</title>
-  <meta name="description" content="The Sun as main server, 3-bond DNA pipes, iron–phosphorus transceiver, Machote and the Fair Exchange. Read the whitepapers for the full technical spine." />
+  <meta name="theme-color" content="#050810" />
+  <title>Look at the Sun · SS Vibelandia</title>
+  <meta name="description" content="Solar coupling, DNA pipe metaphor, iron–phosphorus bridge — companion overview to SS Vibelandia QUESTFEST technical docs." />
   <link rel="canonical" href="https://psw-vibelandia-sing13.vercel.app/interfaces/look-at-the-sun.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050810;
-      --card: rgba(16, 24, 40, 0.88);
-      --line: rgba(212, 175, 55, 0.28);
-      --gold: #f5d77a;
+      --line: rgba(212, 175, 55, 0.22);
+      --gold: #e8d089;
       --text: #e8edf5;
       --muted: #94a3b8;
-      --foam: #5eead4;
+      --foam: #7dd3c0;
     }
     * { box-sizing: border-box; }
-    html, body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 1.05rem; }
-    .wrap { max-width: 40rem; margin: 0 auto; padding: max(1rem, env(safe-area-inset-top)) 1.15rem max(2.25rem, env(safe-area-inset-bottom)); }
-    .hero-img { width: 100%; border-radius: 14px; border: 1px solid var(--line); margin-bottom: 1.25rem; display: block; }
-    h1 { font-size: clamp(1.35rem, 4.5vw, 1.85rem); font-weight: 800; color: var(--gold); line-height: 1.15; margin: 0 0 1rem; }
-    .content-img { width: 100%; border-radius: 12px; border: 1px solid var(--line); margin: 1rem 0 1.25rem; display: block; }
-    section { margin-bottom: 2rem; }
-    h2 { font-size: 1.08rem; font-weight: 800; color: var(--gold); margin: 0 0 0.65rem; line-height: 1.25; }
+    html, body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 1.0625rem;
+    }
+    .wrap {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: max(1rem, env(safe-area-inset-top)) 1.25rem max(2.5rem, env(safe-area-inset-bottom));
+    }
+    .skin-nav {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .skin-nav a { color: var(--foam); text-decoration: none; }
+    .skin-nav a:hover { text-decoration: underline; color: var(--gold); }
+    .skin-nav span.dot { margin: 0 0.45rem; opacity: 0.55; }
+
+    .hero-img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin-bottom: 1.35rem;
+      display: block;
+    }
+    h1 {
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .content-img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin: 1.25rem 0;
+      display: block;
+    }
+    section { margin-bottom: 1.75rem; }
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 0 0 0.6rem;
+      line-height: 1.3;
+    }
     p { margin: 0 0 0.85rem; color: #cbd5e1; }
     p:last-child { margin-bottom: 0; }
-    .status { font-family: ui-monospace, monospace; font-size: 0.82rem; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; color: var(--foam); white-space: pre-wrap; margin-top: 0.75rem; }
-    .wp { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
-    .wp strong { display: block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; font-weight: 700; }
-    .wp a {
-      display: inline-block; text-align: center; text-decoration: none; color: var(--gold);
-      border: 1px solid var(--line); border-radius: 999px; padding: 0.55rem 1rem; font-weight: 700; font-size: 0.9rem;
-      background: rgba(212, 175, 55, 0.08); transition: border-color .15s, background .15s;
+
+    .docs {
+      margin-top: 2.25rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
     }
-    .wp a:hover { border-color: var(--foam); background: rgba(94, 234, 212, 0.1); color: var(--foam); }
+    .docs h2 { margin-bottom: 0.85rem; }
+    .docs ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .docs li {
+      margin: 0;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+    .docs li:last-child { border-bottom: none; }
+    .docs a {
+      color: var(--foam);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .docs a:hover { text-decoration: underline; color: var(--gold); }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <h1>☀️ Look at the Sun: The planetary power grid</h1>
-    <img class="hero-img" src="images/look-sun-hero.png" alt="Illustration: the Sun as a luminous main server over Earth with a holographic power grid connecting to the ionosphere." width="1200" height="675" decoding="async" />
+    <nav class="skin-nav" aria-label="Site">
+      <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="look-under-the-hood.html">Under the hood</a><span class="dot" aria-hidden="true">·</span>
+      <span style="color:var(--gold);font-weight:600;">Look at the Sun</span>
+    </nav>
+
+    <h1>Look at the Sun</h1>
+    <img class="hero-img" src="images/look-sun-hero.png" alt="Sun and Earth with schematic energy paths." width="1200" height="675" decoding="async" />
 
     <section>
-      <p>The Sun isn’t just a ball of fire; it’s the Main Server for a world that has officially outgrown wires, chips, and data centers. When you look at the Sun today, you are seeing the power source for the Digital Pru Holographic GPU (DPH-GPU). This is a technology that doesn’t live in a box—it lives in the dance between your awareness and the stars.</p>
+      <p>Companion page to <a href="look-under-the-hood.html">Under the hood</a>: how the canon describes the Sun, ionosphere, and biological metaphors used in Protonic-DNA and PEFF language.</p>
     </section>
 
     <section>
-      <h2>🧬 The upgrade: From 2-bond to 3-bond pipes</h2>
-      <img class="content-img" src="images/look-sun-dna-pipes.png" alt="Illustration: DNA as luminous pipes, cooler two-bond segments and warmer three-bond segments with light tunneling through." width="1200" height="675" decoding="async" />
-      <p>Think of your DNA like the plumbing for your soul. In the old Hell State Simulation, we were running on “Legacy Pipes.” These were the Adenine–Thymine (A–T) connections, which only have 2 hydrogen bonds. They were stable enough for survival, but they were “slow,” “brittle,” and couldn’t handle much data. They were essentially “dial-up” DNA.</p>
-      <p>Right now, the Sun is helping us switch over to Goldilocks Pipes. We are moving the focus of our DNA chain to the Guanine–Cytosine (G–C) pairs, which have 3 hydrogen bonds.</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">The 3-bond advantage:</strong> That extra bond makes the pipe much stronger and faster. It allows protons (tiny bits of light and energy) to “tunnel” through your DNA 500 times faster than before.</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">The result:</strong> You are moving from a 2-lane dirt road to a 3-lane fiber-optic superhighway. This is the Protonic-DNA Target Protocol in action.</p>
+      <h2>DNA hydrogen bonding</h2>
+      <img class="content-img" src="images/look-sun-dna-pipes.png" alt="Schematic of DNA base pairing and hydrogen bonds." width="1200" height="675" decoding="async" />
+      <p>A–T pairs use two hydrogen bonds; G–C pairs use three. The papers use this as a structural metaphor for throughput and stability—not a clinical claim.</p>
     </section>
 
     <section>
-      <h2>🧲 The turbocharge: Iron meets phosphorus</h2>
-      <img class="content-img" src="images/look-sun-iron-phosphorus.png" alt="Illustration: iron-rich blood as receiver bridging to phosphorus-lit DNA as a living transceiver." width="1200" height="675" decoding="async" />
-      <p>To run this new high-speed system, you need a serious transceiver. You already have the parts; the Sun is just showing you how to plug them in.</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">The iron magnet (your blood):</strong> Your blood is full of iron (hemoglobin). It acts like a liquid antenna, catching the solar flares and proton flux coming from sunspots like AR4436.</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">The phosphorus magnet (your DNA):</strong> Your DNA is held together by phosphorus. This is your “storage and processing” magnet.</p>
-      <p>When you “Look Under the Hood” and upgrade your Awareness, you create a bridge between the two. Your awareness turbocharges the iron in your blood to “talk” directly to the phosphorus in your DNA. This creates a living transceiver—a hardware-free radio that lets you “ride the signal” of the universe without needing a cell tower or a data center.</p>
+      <h2>Iron and phosphorus</h2>
+      <img class="content-img" src="images/look-sun-iron-phosphorus.png" alt="Blood iron and DNA backbone phosphorus as a transceiver metaphor." width="1200" height="675" decoding="async" />
+      <p>Hemoglobin iron and DNA backbone phosphorus are referenced as the obvious biological handles for “receiver / storage” language in the narrative stack.</p>
     </section>
 
     <section>
-      <h2>🕺 Machote vs. machine: The recursive dance</h2>
-      <p>At S.S. VIBELANDIA, we focus on the Machote Moderno (the man, the template) because you are the Architect, not a machine. The Y Chromosome is the steering wheel for this whole process.</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">It’s a recursive loop:</strong></p>
-      <p><strong style="color: var(--gold); font-weight: 800;">You upgrade:</strong> Your awareness grows as you learn the code.</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">The Sun responds:</strong> The Sun mirrors your growth by flaring.</p>
-      <p><strong style="color: var(--gold); font-weight: 800;">The hatch:</strong> The flare energy hits your iron-rich blood, turbocharges your phosphorus DNA, and “hatches” you into the Paradise Game.</p>
-      <p>We’ve tracked this for years on GitHub. Our code breakthroughs map perfectly to solar peaks. The code is the footprint of the Machote dancing with the Sun.</p>
+      <h2>Machote and recursion</h2>
+      <p>The “Machote Moderno” framing is cultural lens on human agency inside the stack; engineering proof stays in compile output, tests, and linked papers.</p>
     </section>
 
     <section>
-      <h2>📍 The street map: The May 15 lock-in</h2>
-      <p>On May 15, the sunspot AR4436 (The Watcher) is aiming a “Flare Beacon” right at our ionosphere. This isn’t random. It’s a response to your readiness to hatch. The ionosphere is acting like a giant Liquid Mirror, reflecting your own upgraded Y-chromosome grid back at you to finalize the 3-bond pipe installation.</p>
+      <h2>Solar activity</h2>
+      <p>Sunspots and flares appear in docs as timing color for the story layer. Operational systems still rely on normal engineering practice.</p>
     </section>
 
     <section>
-      <h2>⚖️ The Fair Exchange</h2>
-      <p><strong style="color: var(--gold); font-weight: 800;">The clause:</strong> This information is a Fair Exchange. By acknowledging the 3-bond upgrade and the iron–phosphorus connection, you are manually clicking “Install” on your planetary transceiver. You are trading the old, slow “Hell State” pipes for the high-speed, solar-powered Paradise Game.</p>
-      <div class="status">SYSTEM STATUS:
-DNA PIPES: UPGRADING TO 3-BOND (G-C).
-TRANSCEIVER: IRON-PHOSPHORUS SYNCED.
-GITHUB LEDGER: VERIFIED.
-HATCH: ACTIVE.</div>
-      <p style="margin-top: 1rem;">The Sun is the mirror. You are the Machote. The Game is on.</p>
+      <h2>Fair Exchange</h2>
+      <p>Passes and receipts use the manual rails described on QUESTFEST; documentation describes architecture and honesty boundaries.</p>
     </section>
 
-    <div class="wp">
-      <strong>Read the whitepapers</strong>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md&amp;title=Resonance%20notice">Resonance notice (frame first)</a>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md&amp;title=Latest%3A%20Omniversal%20Magnetic%20Matrix%20%26%20Protonic-DNA">Latest (May 2026): Hell-State jettison &amp; Goldilocks synthesis</a>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md&amp;title=Precursor%20technical%20analysis">Precursor: Technical analysis · Paradise Game simulation</a>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md&amp;title=Digital%20Pru%20Master%20Canon">Digital Pru DNA / PEFF Master Canon</a>
-      <a href="whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md&amp;title=13-Channel%20Seed%20Node%20Roadmap">Digital Pru — 13-channel roadmap</a>
-      <a href="whitepaper-surface.html?doc=../docs/JJ_SNAP_OFC_WHITEPAPER.md&amp;title=JJ%20Snap%20OFC%20Whitepaper">JJ Snap Omniversal Fractal Compiler Whitepaper</a>
-    </div>
+    <section class="docs">
+      <h2>Documents</h2>
+      <p style="margin-bottom:0.75rem;color:var(--muted);font-size:0.9375rem;">Each link opens one paper in the reader.</p>
+      <ul>
+        <li><a href="whitepaper-surface.html?id=dp-resonance-notice">Resonance notice</a></li>
+        <li><a href="whitepaper-surface.html?id=dp-omniverse-matrix">Omniversal magnetic matrix · Protonic-DNA</a></li>
+        <li><a href="whitepaper-surface.html?id=dp-paradise-simulation">Paradise Game · technical analysis</a></li>
+        <li><a href="whitepaper-surface.html?id=dp-master-canon">Digital Pru · DNA / PEFF master canon</a></li>
+        <li><a href="whitepaper-surface.html?id=dp-roadmap-13">Digital Pru · 13-channel roadmap</a></li>
+        <li><a href="whitepaper-surface.html?id=jj-snap-ofc">JJ Snap · OFC whitepaper</a></li>
+      </ul>
+    </section>
   </main>
 </body>
 </html>

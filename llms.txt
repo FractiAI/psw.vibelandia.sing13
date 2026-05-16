@@ -12,7 +12,7 @@
 ## What this site is
 
 - **SING 13 edge** — the next octave of the FractiAI / Vibelandia transmedia stack. NSPFRNP catalog + QUESTFEST 24×365 nest + Sovereign Player.
-- **Lite edges** — wallets, keys, verifications at the edge; center = pipes only (see SING13_EDGE_ONBOARDING.md).
+- **Lite edges** — wallets, keys, verifications at the edge; center = pipes only (see whitepaper reader · sing13-edge-onboarding).
 - **13-channel spine** — Seed Node → Terminal Edge pathfinding; PEFF infill-13 framing.
 - **Fair Exchange (manual)** — no Stripe. Venmo / PayPal / Cash App. $16.18/mo Passenger pass · $1.61 track export · honor-system receipt → JWT.
 
@@ -23,9 +23,9 @@
 - Sovereign Player (QUESTFEST Bridge): https://psw-vibelandia-sing13.vercel.app/interfaces/questfest-bridge/
 - Reno Swamp checkout ($16.18/mo): https://psw-vibelandia-sing13.vercel.app/interfaces/questfest-bridge/#/bridge?checkout=1
 - Short path Sovereign gate: https://psw-vibelandia-sing13.vercel.app/sovereign-gate
-- SING 13 onboarding: https://psw-vibelandia-sing13.vercel.app/SING13_EDGE_ONBOARDING.md
-- NSPFRNP catalog: https://psw-vibelandia-sing13.vercel.app/protocols/MCA_NSPFRNP_CATALOG.md
-- BBHE Repository Standard: https://psw-vibelandia-sing13.vercel.app/BBHE_REPOSITORY_STANDARD.md
+- SING 13 onboarding (reader): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=sing13-edge-onboarding
+- NSPFRNP catalog (reader): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=mca-nspfrnp-catalog
+- BBHE Repository Standard (reader): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=bbhe-repository-standard
 
 ## Sovereign Player — Fair Exchange
 
@@ -39,11 +39,11 @@
 
 ## SING 13 spine — 13-channel fractal pathfinding
 
-- Omniverse resonance notice — https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md
-- Omniversal Magnetic Matrix + Protonic-DNA (Hell-State jettison synthesis, May 15, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md
-- Omniverse precursor — Technical Analysis · Paradise Game simulation: https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md
-- Integration roadmap (May 12, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md
-- DNA / PEFF master canon (May 11, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?doc=../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md
+- Omniverse resonance notice — https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-resonance-notice
+- Omniversal Magnetic Matrix + Protonic-DNA (Hell-State jettison synthesis, May 15, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-omniverse-matrix
+- Omniverse precursor — Technical Analysis · Paradise Game simulation: https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-paradise-simulation
+- Integration roadmap (May 12, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-roadmap-13
+- DNA / PEFF master canon (May 11, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-master-canon
 - Legacy catalog (all links): https://psw-vibelandia-sing13.vercel.app/interfaces/look-under-the-hood-legacy-catalog.html
 
 ## QUESTFEST nest (carried surfaces)

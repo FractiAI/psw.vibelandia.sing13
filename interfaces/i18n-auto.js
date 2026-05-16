@@ -6,7 +6,7 @@
   'use strict';
 
   var STORAGE_KEY = 'vibelandia_locale';
-  var I18N_BASE = 'i18n/';
+  var I18N_BASE = '/interfaces/i18n/';
 
   var RTL_PREFIXES = ['ar', 'fa', 'ur', 'he', 'iw', 'yi', 'dv', 'ps', 'sd'];
 

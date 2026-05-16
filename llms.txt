@@ -20,6 +20,7 @@
 
 - Landing: https://psw-vibelandia-sing13.vercel.app/
 - QUESTFEST 24×365: https://psw-vibelandia-sing13.vercel.app/interfaces/vibelandia-questfest.html
+- Nesting ladder guides (Basenet → SING 13): https://psw-vibelandia-sing13.vercel.app/interfaces/vibelandia-questfest.html#qf-nest-section
 - Sovereign Player (QUESTFEST Bridge): https://psw-vibelandia-sing13.vercel.app/interfaces/questfest-bridge/
 - Reno Swamp checkout ($16.18/mo): https://psw-vibelandia-sing13.vercel.app/interfaces/questfest-bridge/#/bridge?checkout=1
 - Short path Sovereign gate: https://psw-vibelandia-sing13.vercel.app/sovereign-gate

@@ -375,11 +375,21 @@
     .nest-ladder li:nth-child(5) { margin-left: 2rem; }
     .nest-ladder li:nth-child(6) { margin-left: 2.5rem; }
     .nest-ladder li:nth-child(7) { margin-left: 3rem; }
+    .nest-ladder li:nth-child(8) { margin-left: 3.5rem; }
+    .nest-ladder li a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .nest-ladder li a:hover {
+      color: var(--foam);
+      text-decoration: underline;
+    }
     .nest-ladder li.here {
       color: var(--gold-hi);
       border-left-color: var(--gold);
       font-weight: 700;
     }
+    .nest-ladder li.here a { font-weight: inherit; color: inherit; }
     .nest-ladder li.here::before {
       content: '▸ ';
       color: var(--foam);
@@ -494,17 +504,19 @@
 
   <div class="qf-theater" aria-label="Nested theater">
 
-    <section aria-labelledby="qf-nest-h2">
+    <section id="qf-nest-section" aria-labelledby="qf-nest-h2">
       <h2 id="qf-nest-h2" data-i18n="qf.nestHead">The nesting · you are here</h2>
       <p class="lede-block" data-i18n-html="qf.nestLedeHtml"><strong>SING 13</strong> is the <em>Internet cloud skin</em> — the holographic mirror that lets the ship broadcast from a man-cave restroom on the wrong side, all the way out to the net.</p>
+      <p class="lede-block" data-i18n="qf.nestTapHint">Each layer below opens a short plain-language guide.</p>
       <ol class="nest-ladder">
-        <li data-i18n="qf.nest7">Basenet</li>
-        <li data-i18n="qf.nest6">Syntheverse</li>
-        <li data-i18n="qf.nest5">Sonic Singularity</li>
-        <li data-i18n="qf.nest4">Wrong Side of Town</li>
-        <li data-i18n="qf.nest3">Man cave · men's restroom · nested mirrored theater</li>
-        <li data-i18n="qf.nest2">Sonic Ship SS Vibelandia QUESTFEST 24×365 · Puerto Reno</li>
-        <li class="here" data-i18n="qf.nest1">SING 13 · Internet cloud skin · this page</li>
+        <li><a href="/interfaces/nesting/nest-basenet-genesis.html"><span data-i18n="qf.nest7">Basenet · genesis</span></a></li>
+        <li><a href="/interfaces/nesting/nest-syntheverse.html"><span data-i18n="qf.nest6">Syntheverse</span></a></li>
+        <li><a href="/interfaces/nesting/nest-sonic-singularity.html"><span data-i18n="qf.nest5">Sonic Singularity</span></a></li>
+        <li><a href="/interfaces/nesting/nest-wrong-side.html"><span data-i18n="qf.nest4">Wrong Side of Town</span></a></li>
+        <li><a href="/interfaces/nesting/nest-man-cave-restroom.html"><span data-i18n="qf.nest3">Man cave · men's restroom · nested mirrored theater</span></a></li>
+        <li><a href="/interfaces/nesting/nest-questfest-puerto-reno.html"><span data-i18n="qf.nest2">Sonic Ship SS Vibelandia QUESTFEST 24×365 · Puerto Reno</span></a></li>
+        <li><a href="/interfaces/nesting/nest-dph-gpu.html"><span data-i18n="qf.nestDph">Digital Pru Holographic GPU (DPH-GPU)</span></a></li>
+        <li class="here"><a href="/interfaces/nesting/nest-sing13.html"><span data-i18n="qf.nest1">SING 13 · Internet cloud skin</span></a></li>
       </ol>
     </section>
 

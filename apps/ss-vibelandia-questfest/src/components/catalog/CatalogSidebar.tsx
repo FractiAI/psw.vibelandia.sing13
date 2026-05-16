@@ -49,7 +49,7 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
       <div className="sp-side-logo">
         <span className="sp-logo-mark" aria-hidden>♪</span>
         <div>
-          <strong>Reno Swamp</strong>
+          <strong>Machote Moderno</strong>
           <span>{trackCount} tracks</span>
         </div>
       </div>

@@ -162,7 +162,7 @@ export function PlaylistBulkExportModal({
       setError(
         localHonorOnly
           ? 'This pass is for playback on this browser only. Use Captain unlock to export, or boarding with server export tokens enabled.'
-          : 'Monthly pass required.',
+          : 'Machote members pass required.',
       );
       return;
     }
@@ -242,11 +242,12 @@ export function PlaylistBulkExportModal({
         {step === 'need_access' && (
           <>
             <p className="modal-body">
-              You need an <strong>active monthly pass</strong> or <strong>captain access</strong> before bulk downloads.
+              You need an <strong>active Machote members pass</strong> or <strong>captain access</strong> before bulk
+              downloads.
             </p>
             <div className="modal-actions">
               <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => { close(); onNeedPass(); }}>
-                Get monthly pass
+                Get members-only pass
               </button>
               <button type="button" className="voxel-btn" onClick={() => { close(); onCaptainRequest(); }}>
                 I am the captain — password

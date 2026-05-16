@@ -8,6 +8,14 @@ import {
   type LiveRail,
 } from '@/lib/paymentRails';
 import type { BoardingRequestBody } from '@/lib/api';
+import {
+  MACHOTE_CATALOG_SUBTITLE,
+  MACHOTE_CATALOG_TITLE,
+  MACHOTE_MAGAZINE_NAME,
+  MACHOTE_MAGAZINE_QUALIFIER,
+  MACHOTE_MEMBERS_PASS_TITLE,
+  machoteMagazineFollowUrl,
+} from '@/lib/machoteMembership';
 import { HonorFarmstandFigure } from '@/components/payment/HonorFarmstandFigure';
 import { useSessionStore } from '@/stores/sessionStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -40,6 +48,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const [paidDate, setPaidDate] = useState(todayISO);
   const [email, setEmail] = useState('');
   const [honorAck, setHonorAck] = useState(false);
+  const [magazineFollowAck, setMagazineFollowAck] = useState(false);
   const [captainPw, setCaptainPw] = useState('');
   const [captainErr, setCaptainErr] = useState<string | null>(null);
 
@@ -51,6 +60,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
     setPaidDate(todayISO());
     setEmail('');
     setHonorAck(false);
+    setMagazineFollowAck(false);
     setCaptainPw('');
     setCaptainErr(null);
   };
@@ -69,7 +79,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
 
   const emailOk = EMAIL_RE.test(email.trim());
   const canIssue =
-    !!rail && honorAck && emailOk && paidDate.length >= 10 && !busy;
+    !!rail && honorAck && magazineFollowAck && emailOk && paidDate.length >= 10 && !busy;
 
   const passMemo = boardingNote();
   const payCheckout =
@@ -84,11 +94,11 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
     <div className="modal-root" role="dialog" aria-modal="true">
       <div className="modal-backdrop" onClick={close} />
       <div className="voxel-panel modal-card modal-card--wide modal-card--swamp-warm">
-        <h2 className="modal-title modal-title--warm">Reno Swamp monthly pass</h2>
+        <h2 className="modal-title modal-title--warm">{MACHOTE_MEMBERS_PASS_TITLE}</h2>
         {localHonorOnly && passUntilLabel && (
           <p className="modal-fine" style={{ margin: '0 0 0.75rem', color: '#5eead4', lineHeight: 1.45 }}>
-            Monthly pass on this device through <strong>{passUntilLabel}</strong>. When that date passes, confirm again
-            here.
+            Members pass active on this device through <strong>{passUntilLabel}</strong>. When that date passes,
+            confirm again here.
           </p>
         )}
 
@@ -102,7 +112,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                 {captainUnlocked ? (
                   <p className="modal-body" style={{ margin: 0 }}>
                     Captain access is <strong>active</strong> for this session (full play + export bypass on this
-                    device). You can still start a monthly pass below for normal passenger use.
+                    device). You can still get the Machote members pass below for normal catalog access.
                   </p>
                 ) : (
                   <>
@@ -142,9 +152,14 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
               </div>
             </details>
             <p className="modal-body modal-body--warm">
-              <strong>${EGS_MONTHLY_USD.toFixed(2)}/month</strong> — full catalog, full playback, exports
-              when you need them. Pick Venmo, PayPal, or Cash App. We keep it human and old-school on
-              purpose.
+              <strong>{MACHOTE_MAGAZINE_NAME}</strong> · members-only ·{' '}
+              <strong>${EGS_MONTHLY_USD.toFixed(2)}/month</strong> — unlock the full{' '}
+              <strong>{MACHOTE_CATALOG_TITLE}</strong> ({MACHOTE_CATALOG_SUBTITLE}): full playback and exports when you
+              need them. {MACHOTE_MAGAZINE_QUALIFIER}{' '}
+              <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
+                Follow the magazine
+              </a>{' '}
+              before you pay. Pick Venmo, PayPal, or Cash App — human and old-school on purpose.
             </p>
             <div className="rail-grid">
               {(Object.keys(PAYMENT_HANDLES) as LiveRail[]).map((r) => (
@@ -227,6 +242,21 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
             <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
               <input
                 type="checkbox"
+                checked={magazineFollowAck}
+                onChange={(e) => setMagazineFollowAck(e.target.checked)}
+                disabled={busy}
+                style={{ marginTop: '0.2rem' }}
+              />
+              <span>
+                I follow <strong>{MACHOTE_MAGAZINE_NAME}</strong> — my qualifier for this members-only pass.{' '}
+                <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
+                  Open magazine
+                </a>
+              </span>
+            </label>
+            <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
+              <input
+                type="checkbox"
                 checked={honorAck}
                 onChange={(e) => setHonorAck(e.target.checked)}
                 disabled={busy}
@@ -274,7 +304,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                   })
                 }
               >
-                {busy ? 'Issuing pass…' : 'Issue 30-day pass'}
+                {busy ? 'Issuing pass…' : 'Issue 30-day members pass'}
               </button>
               <button type="button" className="voxel-btn" onClick={() => setStep('pay')} disabled={busy}>
                 Back

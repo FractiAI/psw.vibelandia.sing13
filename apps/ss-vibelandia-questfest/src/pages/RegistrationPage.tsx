@@ -11,7 +11,7 @@ export function RegistrationPage() {
     <div className="gate">
       <div className="gate-texture" aria-hidden />
       <div className="gate-inner">
-        <p className="gate-kicker">Reno Swamp Catalog</p>
+        <p className="gate-kicker">Machote Moderno · Caliente Catalog</p>
         <h1 className="gate-title">SS Vibelandia QUESTFEST</h1>
         <p className="gate-lead">
           Empty catalog — upload a track, then listen and play. No demo or seed tracks.
@@ -19,7 +19,7 @@ export function RegistrationPage() {
         <ul className="gate-list">
           <li>Upload — pick an audio or video file.</li>
           <li>Listen — play your upload from the bottom player.</li>
-          <li>Monthly pass unlocks uninterrupted playback when you are ready.</li>
+          <li>Machote Magazine members pass unlocks uninterrupted playback when you are ready.</li>
         </ul>
         <div className="gate-actions">
           <Link className="voxel-btn voxel-btn--orange" to="/bridge">

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
+import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 
 interface PlaylistEditorProps {
@@ -19,7 +20,6 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const addTrackToPlaylist = useCatalogStore((s) => s.addTrackToPlaylist);
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
   const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);
-  const moveTrackInPlaylist = useCatalogStore((s) => s.moveTrackInPlaylist);
   const duplicatePlaylist = useCatalogStore((s) => s.duplicatePlaylist);
 
   const pl = playlists.find((p) => p.id === playlistId);
@@ -29,6 +29,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const [description, setDescription] = useState('');
   const [showAdd, setShowAdd] = useState(false);
   const [addSearch, setAddSearch] = useState('');
+  const [alsoAddTo, setAlsoAddTo] = useState<Set<string>>(new Set());
+  const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
 
   const isMaster = isMasterPlaylist(playlistId);
 
@@ -99,6 +101,11 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     if (!window.confirm('Delete this playlist? Tracks stay in the Master catalog.')) return;
     deletePlaylist(playlistId);
     onDone();
+  };
+
+  const addTrackWithExtras = (trackId: string) => {
+    addTrackToPlaylist(trackId, playlistId);
+    for (const id of alsoAddTo) addTrackToPlaylist(trackId, id);
   };
 
   const handleDuplicate = () => {
@@ -181,23 +188,49 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
             ) : availableTracks.length === 0 ? (
               <p className="sp-pl-edit-add-empty">Every song from the Master catalog is already in this playlist.</p>
             ) : (
-              <ul className="sp-pl-edit-add-list">
-                {availableTracks.map((tr) => (
-                  <li key={tr.id} className="sp-pl-edit-add-row">
-                    <span className="sp-pl-edit-track-info">
-                      <strong>{tr.title}</strong>
-                      <span>{tr.artist}</span>
-                    </span>
-                    <button
-                      type="button"
-                      className="sp-pl-edit-add-btn"
-                      onClick={() => addTrackToPlaylist(tr.id, playlistId)}
-                    >
-                      Add
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              <>
+                {otherPlaylists.length > 0 && (
+                  <div className="sp-pl-edit-also-add">
+                    <p className="sp-pl-edit-also-label">Also add new picks to:</p>
+                    <ul className="sp-track-pl-list sp-track-pl-list--compact">
+                      {otherPlaylists.map((op) => (
+                        <li key={op.id}>
+                          <label className="sp-track-pl-row">
+                            <input
+                              type="checkbox"
+                              checked={alsoAddTo.has(op.id)}
+                              onChange={() => {
+                                setAlsoAddTo((prev) => {
+                                  const next = new Set(prev);
+                                  if (next.has(op.id)) next.delete(op.id);
+                                  else next.add(op.id);
+                                  return next;
+                                });
+                              }}
+                            />
+                            <span className="sp-track-pl-meta">
+                              <strong>{op.name}</strong>
+                            </span>
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <ul className="sp-pl-edit-add-list">
+                  {availableTracks.map((tr) => (
+                    <li key={tr.id} className="sp-pl-edit-add-row">
+                      <span className="sp-pl-edit-track-info">
+                        <strong>{tr.title}</strong>
+                        <span>{tr.artist}</span>
+                      </span>
+                      <button type="button" className="sp-pl-edit-add-btn" onClick={() => addTrackWithExtras(tr.id)}>
+                        Add
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </>
             )}
           </div>
         )}
@@ -214,9 +247,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           </p>
         ) : (
           <>
-            {!isMaster && (
-              <p className="sp-reorder-hint sp-pl-edit-hint">Hold ⋮⋮ and drag, or use ↑ ↓ to move</p>
-            )}
+            {!isMaster && <p className="sp-reorder-hint sp-pl-edit-hint">Hold ⋮⋮ and drag to reorder</p>}
             {isMaster && (
               <p className="sp-reorder-hint sp-pl-edit-hint">Order updates when you upload. Drag to sort your library.</p>
             )}
@@ -249,36 +280,25 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                       <strong>{tr.title}</strong>
                       <span>{tr.artist}</span>
                     </span>
-                    <div className="sp-pl-edit-moves">
+                    <div className="sp-pl-edit-row-actions">
                       <button
                         type="button"
-                        className="sp-pl-edit-nudge"
-                        disabled={row.index === 0}
-                        onClick={() => moveTrackInPlaylist(playlistId, tr.id, -1)}
-                        aria-label="Move up"
+                        className="sp-pl-edit-secondary"
+                        onClick={() => setTrackPlModal({ id: tr.id, title: tr.title })}
                       >
-                        ↑
+                        Playlists
                       </button>
-                      <button
-                        type="button"
-                        className="sp-pl-edit-nudge"
-                        disabled={row.index === pl.trackIds.length - 1}
-                        onClick={() => moveTrackInPlaylist(playlistId, tr.id, 1)}
-                        aria-label="Move down"
-                      >
-                        ↓
-                      </button>
+                      {!isMaster && (
+                        <button
+                          type="button"
+                          className="sp-pl-edit-remove"
+                          onClick={() => removeTrackFromPlaylist(tr.id, playlistId)}
+                          aria-label={`Remove ${tr.title}`}
+                        >
+                          Remove
+                        </button>
+                      )}
                     </div>
-                    {!isMaster && (
-                      <button
-                        type="button"
-                        className="sp-pl-edit-remove"
-                        onClick={() => removeTrackFromPlaylist(tr.id, playlistId)}
-                        aria-label={`Remove ${tr.title}`}
-                      >
-                        Remove
-                      </button>
-                    )}
                   </li>
                 );
               })}
@@ -286,6 +306,13 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           </>
         )}
       </div>
+
+      <TrackPlaylistsModal
+        open={!!trackPlModal}
+        trackId={trackPlModal?.id ?? ''}
+        trackTitle={trackPlModal?.title ?? ''}
+        onClose={() => setTrackPlModal(null)}
+      />
 
       {!isMaster && (
         <footer className="sp-pl-edit-foot">

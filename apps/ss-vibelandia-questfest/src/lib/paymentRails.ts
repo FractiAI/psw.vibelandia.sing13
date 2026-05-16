@@ -25,7 +25,7 @@ export const RAIL_LABEL: Record<LiveRail, string> = {
 };
 
 export function boardingNote(): string {
-  return 'QUESTFEST PASS · Reno Swamp Vibe · $16.18';
+  return 'MACHOTE MAGAZINE MEMBERS · Caliente Catalog · $16.18';
 }
 
 export function exportNote(trackTitle: string): string {

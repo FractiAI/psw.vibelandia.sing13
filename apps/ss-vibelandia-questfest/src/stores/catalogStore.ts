@@ -6,6 +6,7 @@ import {
   MASTER_PLAYLIST_DEFAULT_NAME,
   MASTER_PLAYLIST_ID,
   MASTER_PLAYLIST_LEGACY_NAME,
+  isMasterPlaylist,
 } from '@/lib/catalogSeed';
 import {
   deleteBlob,
@@ -55,6 +56,8 @@ interface CatalogState {
   moveTrackInPlaylist: (playlistId: string, trackId: string, dir: -1 | 1) => void;
   reorderTrackInPlaylist: (playlistId: string, fromIndex: number, toIndex: number) => void;
   moveTrackToPlaylist: (trackId: string, targetPlaylistId: string) => void;
+  /** Set which user playlists (non-master) include this track. */
+  setTrackPlaylistMembership: (trackId: string, playlistIds: string[]) => void;
   uploadTrack: (
     file: File,
     meta: { title: string; artist: string; description?: string; playlistIds: string[] },
@@ -397,6 +400,21 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       };
       return { playlists: next };
     });
+    get().persist();
+  },
+
+  setTrackPlaylistMembership: (trackId, playlistIds) => {
+    const allowed = new Set(playlistIds);
+    set((s) => ({
+      playlists: s.playlists.map((p) => {
+        if (isMasterPlaylist(p.id)) return p;
+        const has = p.trackIds.includes(trackId);
+        const shouldHave = allowed.has(p.id);
+        if (has === shouldHave) return p;
+        if (shouldHave) return { ...p, trackIds: [...p.trackIds, trackId] };
+        return { ...p, trackIds: p.trackIds.filter((t) => t !== trackId) };
+      }),
+    }));
     get().persist();
   },
 

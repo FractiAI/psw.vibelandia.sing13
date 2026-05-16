@@ -18,6 +18,8 @@ interface StreamLockApi {
 export function useStreamLock(): StreamLockApi {
   const jti = useSessionStore((s) => s.jti);
   const isPassenger = useSessionStore((s) => s.isPassenger);
+  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
+  const fullPlay = isPassenger || captainUnlocked;
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
   const [killReason, setKillReason] = useState<KillReason>(null);
 
@@ -36,10 +38,10 @@ export function useStreamLock(): StreamLockApi {
   }, [deviceId]);
 
   const beginSession = useCallback(() => {
-    if (!isPassenger || !jti) return;
+    if (!fullPlay) return;
     sendPreempt();
-    void postHeartbeat(jti, deviceId);
-  }, [deviceId, isPassenger, jti, sendPreempt]);
+    if (isPassenger && jti) void postHeartbeat(jti, deviceId);
+  }, [deviceId, fullPlay, isPassenger, jti, sendPreempt]);
 
   const endSession = useCallback(() => {
     /* polling tied to isPlaying */
@@ -66,7 +68,7 @@ export function useStreamLock(): StreamLockApi {
   }, [deviceId]);
 
   useEffect(() => {
-    if (!isPlaying || !isPassenger || !jti) return;
+    if (!isPlaying || !isPassenger || !jti || captainUnlocked) return;
 
     sendPreempt();
     void postHeartbeat(jti, deviceId);

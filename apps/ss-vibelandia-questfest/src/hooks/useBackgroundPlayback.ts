@@ -4,7 +4,7 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 
 interface UseBackgroundPlaybackOptions {
   mediaRef: RefObject<HTMLVideoElement | HTMLAudioElement | null>;
-  /** Hidden audio used to keep sound when a video element is backgrounded (paid only). */
+  /** Hidden audio used to keep sound when the tab is backgrounded (paid only). */
   backgroundAudioRef: RefObject<HTMLAudioElement | null>;
   /** Passenger / captain — full play, may continue in background. */
   allowBackgroundPlay: boolean;
@@ -21,6 +21,7 @@ function syncMediaSession(track: TrackDef | undefined, allowBackgroundPlay: bool
       title: track.title,
       artist: track.artist,
     });
+    navigator.mediaSession.playbackState = usePlaybackStore.getState().isPlaying ? 'playing' : 'paused';
   } catch {
     /* ignore */
   }
@@ -30,16 +31,19 @@ function clearMediaSession() {
   if (!('mediaSession' in navigator)) return;
   try {
     navigator.mediaSession.metadata = null;
+    navigator.mediaSession.playbackState = 'none';
     navigator.mediaSession.setActionHandler('play', null);
     navigator.mediaSession.setActionHandler('pause', null);
+    navigator.mediaSession.setActionHandler('previoustrack', null);
+    navigator.mediaSession.setActionHandler('nexttrack', null);
   } catch {
     /* ignore */
   }
 }
 
 /**
- * Free plan: pause when the listener leaves the page / switches apps.
- * Paid (full play): keep audio in background; hand off video → hidden audio on mobile.
+ * Free plan: pause when the listener leaves the page / locks the screen.
+ * Paid (full play): keep audio in background via hidden audio + Media Session + optional Wake Lock.
  */
 export function useBackgroundPlayback({
   mediaRef,
@@ -50,7 +54,7 @@ export function useBackgroundPlayback({
   isVideo,
   setPlaying,
 }: UseBackgroundPlaybackOptions) {
-  const videoHandoffRef = useRef(false);
+  const backgroundHandoffRef = useRef(false);
   const resumeAttemptsRef = useRef(0);
 
   useEffect(() => {
@@ -75,39 +79,87 @@ export function useBackgroundPlayback({
   }, [allowBackgroundPlay, setPlaying, track]);
 
   useEffect(() => {
+    if (!('mediaSession' in navigator) || !allowBackgroundPlay) return;
+    try {
+      navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
+    } catch {
+      /* ignore */
+    }
+  }, [allowBackgroundPlay, isPlaying]);
+
+  useEffect(() => {
+    if (!allowBackgroundPlay || !isPlaying) return;
+    const wakeLock = navigator.wakeLock;
+    if (!wakeLock) return;
+
+    let sentinel: WakeLockSentinel | null = null;
+    let cancelled = false;
+
+    const acquire = async () => {
+      try {
+        sentinel = await wakeLock.request('screen');
+        sentinel?.addEventListener('release', () => {
+          if (!cancelled && usePlaybackStore.getState().isPlaying && document.visibilityState === 'visible') {
+            void acquire();
+          }
+        });
+      } catch {
+        /* denied or unsupported */
+      }
+    };
+
+    void acquire();
+
+    const onVisible = () => {
+      if (!cancelled && usePlaybackStore.getState().isPlaying && !sentinel) void acquire();
+    };
+    document.addEventListener('visibilitychange', onVisible);
+
+    return () => {
+      cancelled = true;
+      document.removeEventListener('visibilitychange', onVisible);
+      void sentinel?.release();
+    };
+  }, [allowBackgroundPlay, isPlaying]);
+
+  useEffect(() => {
     const pauseForFreeListener = () => {
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
       if (el && !el.paused) el.pause();
       bg?.pause();
-      videoHandoffRef.current = false;
+      backgroundHandoffRef.current = false;
       if (usePlaybackStore.getState().isPlaying) setPlaying(false);
     };
 
-    const startVideoAudioHandoff = () => {
+    const startBackgroundHandoff = () => {
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
-      if (!el || !bg || !track || !(el instanceof HTMLVideoElement)) return;
+      if (!el || !bg || !track) return;
 
-      videoHandoffRef.current = true;
-      bg.src = track.src;
+      const src = isVideo && el instanceof HTMLVideoElement ? track.src : track.src;
+      if (!src) return;
+
+      backgroundHandoffRef.current = true;
+      bg.src = src;
       bg.currentTime = el.currentTime;
       bg.volume = el.volume;
       el.pause();
       void bg.play().catch(() => {
-        videoHandoffRef.current = false;
+        backgroundHandoffRef.current = false;
       });
     };
 
-    const restoreVideoFromHandoff = () => {
+    const restoreFromHandoff = () => {
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
-      if (!el || !bg || !(el instanceof HTMLVideoElement)) return;
+      if (!el || !bg) return;
 
-      if (videoHandoffRef.current) {
+      if (backgroundHandoffRef.current) {
         el.currentTime = bg.currentTime;
         bg.pause();
-        videoHandoffRef.current = false;
+        bg.removeAttribute('src');
+        backgroundHandoffRef.current = false;
         if (usePlaybackStore.getState().isPlaying) {
           void el.play().catch(() => {});
         }
@@ -116,19 +168,19 @@ export function useBackgroundPlayback({
       }
     };
 
-    const resumePrimaryMedia = () => {
+    const resumePrimaryOrBackground = () => {
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
       if (!el || !usePlaybackStore.getState().isPlaying) return;
 
-      if (videoHandoffRef.current && bg) {
+      if (backgroundHandoffRef.current && bg) {
         if (bg.paused) void bg.play().catch(() => {});
         return;
       }
 
       if (el.paused) {
         resumeAttemptsRef.current += 1;
-        if (resumeAttemptsRef.current <= 5) {
+        if (resumeAttemptsRef.current <= 8) {
           void el.play().catch(() => {});
         }
       }
@@ -144,26 +196,41 @@ export function useBackgroundPlayback({
         }
         if (!usePlaybackStore.getState().isPlaying) return;
         syncMediaSession(track, true);
-        if (isVideo) startVideoAudioHandoff();
+        startBackgroundHandoff();
         return;
       }
 
       if (!allowBackgroundPlay) return;
-
-      if (isVideo) restoreVideoFromHandoff();
-      else resumePrimaryMedia();
+      restoreFromHandoff();
     };
 
-    const onPageHide = () => {
+    const onPageHide = (ev: PageTransitionEvent) => {
+      if (!allowBackgroundPlay) {
+        pauseForFreeListener();
+        return;
+      }
+      if (ev.persisted || !usePlaybackStore.getState().isPlaying) return;
+      startBackgroundHandoff();
+    };
+
+    const onFreeze = () => {
+      if (!allowBackgroundPlay) pauseForFreeListener();
+    };
+
+    const onBlur = () => {
       if (!allowBackgroundPlay) pauseForFreeListener();
     };
 
     document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pagehide', onPageHide);
+    document.addEventListener('freeze', onFreeze);
+    window.addEventListener('blur', onBlur);
 
     return () => {
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pagehide', onPageHide);
+      document.removeEventListener('freeze', onFreeze);
+      window.removeEventListener('blur', onBlur);
     };
   }, [
     allowBackgroundPlay,
@@ -179,14 +246,22 @@ export function useBackgroundPlayback({
     if (!bg || !allowBackgroundPlay) return;
 
     const onBgTime = () => {
-      if (videoHandoffRef.current) {
+      if (backgroundHandoffRef.current) {
         usePlaybackStore.getState().setDisplayTime(bg.currentTime);
       }
     };
 
+    const onBgEnded = () => {
+      if (backgroundHandoffRef.current) setPlaying(false);
+    };
+
     bg.addEventListener('timeupdate', onBgTime);
-    return () => bg.removeEventListener('timeupdate', onBgTime);
-  }, [allowBackgroundPlay, backgroundAudioRef, track?.id]);
+    bg.addEventListener('ended', onBgEnded);
+    return () => {
+      bg.removeEventListener('timeupdate', onBgTime);
+      bg.removeEventListener('ended', onBgEnded);
+    };
+  }, [allowBackgroundPlay, backgroundAudioRef, setPlaying, track?.id]);
 
   useEffect(() => {
     const el = mediaRef.current;
@@ -194,7 +269,7 @@ export function useBackgroundPlayback({
 
     const onPause = () => {
       if (!document.hidden || !usePlaybackStore.getState().isPlaying) return;
-      if (videoHandoffRef.current) {
+      if (backgroundHandoffRef.current) {
         const bg = backgroundAudioRef.current;
         if (bg?.paused) {
           window.setTimeout(() => {

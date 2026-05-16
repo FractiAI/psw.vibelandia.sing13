@@ -1,4 +1,12 @@
 import { EGS_MONTHLY_USD } from '@/lib/paymentRails';
+import {
+  MACHOTE_CATALOG_SUBTITLE,
+  MACHOTE_CATALOG_TITLE,
+  MACHOTE_CREW_LINE,
+  MACHOTE_LIFE_PITCH,
+  MACHOTE_MAGAZINE_NAME,
+  MACHOTE_MEMBERS_PASS_TITLE,
+} from '@/lib/machoteMembership';
 
 interface FairExchangeModalProps {
   open: boolean;
@@ -15,20 +23,20 @@ export function FairExchangeModal({ open, onClose, onBoard, onCaptainAccess }: F
       <div className="voxel-panel modal-card modal-card--swamp-warm">
         <p className="modal-eyebrow-warm">That was your free taste</p>
         <h2 id="fe-title" className="modal-title modal-title--warm">
-          Want the whole swamp?
+          {MACHOTE_MEMBERS_PASS_TITLE}
         </h2>
         <p className="modal-body modal-body--warm">
-          You just rode the first <strong>30 seconds</strong> on the house — that is how we say hello
-          in Reno. The monthly pass is <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong>, keeps the full
-          catalog unlocked, and stays friendly: Venmo, PayPal, or Cash App — confirm on the honor system
-          after you pay, no cage, no surprise fees.
+          You just rode the first <strong>30 seconds</strong> on the house.{' '}
+          <strong>{MACHOTE_MAGAZINE_NAME}</strong> members unlock the full{' '}
+          <strong>{MACHOTE_CATALOG_TITLE}</strong> — {MACHOTE_CATALOG_SUBTITLE} — for{' '}
+          <strong>${EGS_MONTHLY_USD.toFixed(2)}/month</strong> after you follow the magazine and pay on
+          honor (Venmo, PayPal, or Cash App).
         </p>
-        <p className="modal-body modal-body--warm modal-body--soft">
-          Stay on the free preview anytime. When you are ready, we will have the pass waiting.
-        </p>
+        <p className="modal-body modal-body--warm modal-body--soft">{MACHOTE_LIFE_PITCH}</p>
+        <p className="modal-body modal-body--warm modal-body--soft">{MACHOTE_CREW_LINE}</p>
         <div className="modal-actions">
           <button type="button" className="voxel-btn voxel-btn--swamp-gold" onClick={onBoard}>
-            Yes — get the monthly pass
+            Get the members-only pass
           </button>
           {onCaptainAccess && (
             <button type="button" className="voxel-btn voxel-btn--ghost-warm" onClick={onCaptainAccess}>

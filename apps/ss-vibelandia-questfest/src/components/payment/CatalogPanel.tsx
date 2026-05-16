@@ -24,11 +24,11 @@ export function CatalogPanel({ isPassenger }: CatalogPanelProps) {
   return (
     <section className="voxel-panel catalog-panel catalog-panel--warm">
       <p className="catalog-eyebrow">Welcome in · no card required</p>
-      <h3 className="catalog-title">Reno Swamp · Caliente Catalog</h3>
+      <h3 className="catalog-title">Machote Moderno · Caliente Catalog</h3>
       <p className="catalog-lede">
         The whole deck is open — pick anything and ride the first <strong>30 seconds</strong> on
-        us. No signup, no paywall at the door. If the vibe lands, we will invite you to the monthly
-        pass after your free taste.
+        us. No signup, no paywall at the door. If the vibe lands, follow{' '}
+        <strong>Machote Moderno Magazine</strong> and grab the members-only pass after your free taste.
       </p>
 
       <ul className="catalog-tracks" aria-label="Catalog tracks">
@@ -38,7 +38,7 @@ export function CatalogPanel({ isPassenger }: CatalogPanelProps) {
               <span className="catalog-track-title">{tr.title}</span>
               <span className="catalog-track-artist">{tr.artist}</span>
               {!isPassenger && <span className="catalog-free-pill">Free · 30s preview</span>}
-              {isPassenger && <span className="catalog-pass-pill">Passenger · full play</span>}
+              {isPassenger && <span className="catalog-pass-pill">Member · full play</span>}
             </div>
             <button
               type="button"

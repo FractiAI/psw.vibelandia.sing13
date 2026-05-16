@@ -2717,6 +2717,119 @@ a.boarding-pay-open {
   text-decoration: underline;
 }
 
+.sp-pl-edit-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+}
+
+.sp-pl-edit-secondary {
+  border: 1px solid #535353;
+  background: transparent;
+  color: #b3b3b3;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.35rem 0.55rem;
+  min-height: 36px;
+  white-space: nowrap;
+}
+
+.sp-pl-edit-secondary:hover {
+  color: #fff;
+  border-color: #1ed760;
+}
+
+.sp-pl-edit-also-add {
+  margin: 0.75rem 0 1rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #333;
+}
+
+.sp-pl-edit-also-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: #b3b3b3;
+}
+
+.sp-track-pl-modal .sp-track-pl-list {
+  max-height: min(50vh, 320px);
+  overflow-y: auto;
+  margin: 0.75rem 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.sp-track-pl-list--compact {
+  max-height: 140px;
+}
+
+.sp-track-pl-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  cursor: pointer;
+}
+
+.sp-track-pl-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.85rem;
+}
+
+.sp-track-pl-meta strong {
+  color: #fff;
+}
+
+.sp-track-pl-meta span {
+  color: #888;
+  font-size: 0.75rem;
+}
+
+.sp-listen-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.sp-listen-mini {
+  border: 1px solid #404040;
+  background: transparent;
+  color: #b3b3b3;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.3rem 0.45rem;
+  min-height: 32px;
+}
+
+.sp-listen-mini:hover {
+  color: #fff;
+  border-color: #1ed760;
+}
+
+.sp-listen-mini--danger {
+  color: #f15e6c;
+  border-color: rgba(241, 94, 108, 0.35);
+}
+
+.sp-listen-mini--danger:hover {
+  border-color: #f15e6c;
+  color: #fff;
+}
+
 .sp-pl-edit-foot {
   margin-top: 1.5rem;
   padding-bottom: 1rem;

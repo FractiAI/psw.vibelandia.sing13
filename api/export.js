@@ -55,7 +55,7 @@ module.exports = async function handler(req, res) {
   if (!passenger) {
     return res.status(401).json({
       error: 'monthly_pass_required',
-      message: 'Active monthly pass required before track download.',
+      message: 'Active Machote Magazine members pass required before track download.',
     });
   }
 

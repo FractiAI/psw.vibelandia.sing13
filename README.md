@@ -16,7 +16,7 @@
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
 | **QUESTFEST surface** | Hub + ETCon + press + Snap robots + Look at the Sun + Juicy Juicy Snap + FractiAI + Valet Pru + i18n (10 locales) + assets | `interfaces/` |
-| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock (scrolls with page), Libretto log, Fair Exchange **local honor** monthly pass (checkbox + **date paid** + email + rail → **30 calendar days** on this browser; re-prompt after expiry), single-active-stream lock, plan-gated background audio | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
+| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock (scrolls with page), Libretto log, **Machote Moderno Magazine · members-only pass** ($16.18/mo EGS φ — follow magazine + honor attestation → **30 calendar days** on this browser), single-active-stream lock, **background audio for members/captain only**, richer playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
 | **Lite-edge APIs** | Boarding + export JWTs (shared `api/honor-attest.js`), per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
 | **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks (hood page is narrative + whitepaper CTAs; compile is not embedded) | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
@@ -27,24 +27,25 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 | Tier | Price | How |
 |---|---|---|
-| **Passenger pass** | **$16.18/mo** (EGS φ) | Pay on Venmo, PayPal, or Cash App → boarding modal: **confirm on honor** (checkbox, **date paid**, **email**, rail) → the app saves a **device record** and unlocks full play until **paid date + 30 days** (no `/api/boarding` call for playback). **`POST /api/boarding`** still issues a **signed Passenger JWT** when `PASS_TOKEN_SECRET` is set (exports and other server-verified flows). |
+| **Machote Magazine members pass** | **$16.18/mo** (EGS φ) | **Qualifier:** follow **Machote Moderno Magazine** (link in boarding; override with `VITE_MACHOTE_MAGAZINE_URL`). Pay on Venmo, PayPal, or Cash App → boarding modal: **magazine-follow** + **honor** checkboxes, **date paid**, **email**, rail → **device record** unlocks full play until **paid date + 30 days** (playback honor is client-side). **`POST /api/boarding`** still issues a **signed Passenger JWT** when `PASS_TOKEN_SECRET` is set (exports and server-verified flows). |
 | **Track export / download** | **$1.61** | Same honor attestation after payment (or legacy `receipt` string on the API); `POST /api/export` records a license id, then the client saves the file |
 | **Bookings** | Contact | `valetpru@gmail.com` |
-| **Catalog / licensing (500+ Reno swamp · caliente tracks)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
+| **Catalog / licensing (Reno Holographic Swamp Beats · Caliente Catalog — Hero Jo's Golden Bachdoor Hit Factory)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
 
 Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via BroadcastChannel (same tab) + `/api/heartbeat` (cross-device; Upstash Redis when env is set).
 
 ### Playback layout and background audio
 
 - **Player dock** — `PlayerDock` sits at the bottom of the Bridge column (`sp-main`), not fixed to the viewport; the page scrolls naturally and the player moves with the content.
-- **Free (no Passenger pass)** — 30s Solenoid preview on sovereign playlists; playback **pauses** when the listener switches apps or backgrounds the browser tab.
-- **Paid (Passenger pass or Captain unlock)** — full play; audio **continues in background** via Media Session API and, for video tracks, a hidden audio handoff (`useBackgroundPlayback`). Mobile OS limits still apply on some devices.
+- **Free (no members pass)** — 30s Solenoid preview on sovereign playlists; playback **pauses** when the listener switches apps, locks the screen, or backgrounds the tab (`visibilitychange`, `pagehide`, `freeze`, `blur`).
+- **Paid (Machote members pass or Captain unlock)** — full play; audio **continues in background** via hidden audio handoff (audio + video), **Media Session** (lock-screen controls), and **Wake Lock** where supported (`useBackgroundPlayback`). Mobile OS limits still apply on some devices.
 
 ### Catalog playlists (Bridge Listen / Playlists)
 
-- **All uploads** (`pl-main`) is the master library: every upload is kept in sync automatically; it is not deletable as a playlist.
-- **Your playlists** can be empty while you edit them (they persist in local storage); add tracks from **All uploads** in the playlist editor. The sidebar hides empty playlists unless the empty one is active, so the list stays readable on mobile.
-- **Track list (Listen)** uses a responsive grid: narrow / iPhone layouts match column counts to visible cells (duration and extra columns hidden on small screens) so rows do not overflow horizontally.
+- **Master catalog** (`pl-main`) is the full library: every upload syncs automatically; tracks are not removed from master via playlist edit (only from user playlists).
+- **Your playlists** — create, rename, duplicate, delete; add from Master with optional **also add to** multi-select; per-track **Playlists** modal (checkbox all lists); **Remove** from current playlist on Listen and in editor; reorder by **press-and-hold ⋮⋮ drag** (no ↑↓ nudge buttons).
+- **Sidebar** hides empty playlists unless the empty one is active, so the list stays readable on mobile.
+- **Track list (Listen)** uses a responsive layout so rows do not overflow on narrow screens.
 
 Configure handles via [`.env.example`](.env.example). **`PASS_TOKEN_SECRET`** (≥16 characters, or one of the alternates in `lib/pass-env.mjs`) is required to **sign or verify** Passenger JWTs for **`/api/boarding`**, **`/api/export`**, and heartbeat token checks when a token is sent. **Playback** with the honor monthly pass works **without** it (client-side validity only). Set it on Vercel **Production** (and Preview if you use it), and in a repo-root **`.env`** for local `vercel dev` when testing real JWTs. Never commit `.env`. Preview-only escape hatch (never Production): `QUESTFEST_ALLOW_INSECURE_PASS_SIGNING=1` — see `.env.example`.
 
@@ -72,7 +73,7 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 
 - **Landing → QUESTFEST:** `/` redirects to [`/interfaces/vibelandia-questfest.html`](interfaces/vibelandia-questfest.html)
 - **QUESTFEST short path:** `/questfest`
-- **Reno Swamp pass (checkout):** [`/interfaces/questfest-bridge/#/bridge?checkout=1`](interfaces/questfest-bridge/) — opens **$16.18/mo** boarding flow. Linked from the QUESTFEST hub as **Gimme Some of That Reno Swamp Vibe**.
+- **Machote members pass (checkout):** [`/interfaces/questfest-bridge/#/bridge?checkout=1`](interfaces/questfest-bridge/) — opens **$16.18/mo** boarding flow. Linked from the QUESTFEST hub as **Machote Moderno Magazine · Members-only pass · $16.18/mo**.
 - **QUESTFEST Bridge (Sovereign Player):** [`/interfaces/questfest-bridge/#/`](interfaces/questfest-bridge/) · short rewrite **`/sovereign-gate`** → same app entry
 - **ETCon Reno Desert** (May 28–31, 2026): `/etcon` → [`interfaces/etcon-reno-desert.html`](interfaces/etcon-reno-desert.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)
@@ -122,6 +123,7 @@ npm run build:questfest-bridge
 | `UPSTASH_REDIS_REST_URL` | Optional — fleet-wide stream lock |
 | `UPSTASH_REDIS_REST_TOKEN` | Optional — pairs with URL above |
 | `VITE_VENMO_HANDLE` etc. | Optional client overrides for payment handles |
+| `VITE_MACHOTE_MAGAZINE_URL` | Optional — magazine follow link for members-pass qualifier (defaults to QUESTFEST hub) |
 
 **Local dev (Bridge UI only):**
 

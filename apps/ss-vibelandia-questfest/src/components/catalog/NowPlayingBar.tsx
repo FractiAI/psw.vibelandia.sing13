@@ -142,7 +142,7 @@ export function NowPlayingBar({
     if (!el || !track) return;
     if (isPlaying) {
       beginSession();
-      if (document.hidden && fullPlayUnlocked && isVideo && bg?.src) {
+      if (document.hidden && fullPlayUnlocked && bg?.src) {
         void bg.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
       } else {
         void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
@@ -207,7 +207,7 @@ export function NowPlayingBar({
       {track && !isVideo && (
         <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} className="sr-only" preload="metadata" />
       )}
-      {track && isVideo && fullPlayUnlocked && (
+      {track && fullPlayUnlocked && (
         <audio
           ref={backgroundAudioRef}
           className="sr-only"
@@ -225,8 +225,8 @@ export function NowPlayingBar({
               <p className="sp-now-artist">{track.artist}</p>
               {solenoidActive && <span className="sp-now-badge">30s preview</span>}
               {fullPlayUnlocked && (
-                <span className="sp-now-badge sp-now-badge--pass">
-                  {captainUnlocked && !isPassenger ? 'Captain · full play' : 'Full play'}
+                <span className="sp-now-badge sp-now-badge--pass" title="Keeps playing in background">
+                  {captainUnlocked && !isPassenger ? 'Captain · background OK' : 'Background play'}
                 </span>
               )}
             </>

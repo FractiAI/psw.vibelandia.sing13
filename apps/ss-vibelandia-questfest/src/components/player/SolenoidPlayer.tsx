@@ -183,7 +183,7 @@ export function SolenoidPlayer({
 
       <p className="player-hint">
         {pl?.kind === 'sovereign' && !isPassenger
-          ? '30 seconds free — then we offer the monthly pass.'
+          ? '30 seconds free — then the Machote members-only pass.'
           : isPassenger
             ? 'Full catalog unlocked.'
             : 'Open deck — full preview on this playlist.'}

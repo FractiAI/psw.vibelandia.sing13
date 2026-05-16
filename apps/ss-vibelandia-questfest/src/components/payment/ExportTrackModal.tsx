@@ -166,21 +166,21 @@ export function ExportTrackModal({
       <div className="voxel-panel modal-card modal-card--wide">
         <h2 className="modal-title">Download to device · ${EGS_EXPORT_USD.toFixed(2)}</h2>
         <p className="modal-body">
-          <strong>{title}</strong> — save the file for offline listening in any player. Monthly pass
-          holders only; each download is <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> Fair Exchange.
+          <strong>{title}</strong> — save the file for offline listening in any player. Machote Magazine
+          members pass holders only; each download is <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> Fair Exchange.
         </p>
 
         {step === 'gate' && (
           <>
             <p className="modal-body">
-              You need an <strong>active monthly pass</strong> or <strong>captain access</strong> before you can buy a
-              track download. Streaming stays on the pass; downloads are per track. Captain unlock lives inside{' '}
-              <strong>Get monthly pass</strong> — expand <strong>Are you the captain?</strong> there, or use the Fair
-              Exchange screen after a 30s preview (or the <strong>Captain</strong> link in the header).
+              You need an <strong>active Machote members pass</strong> or <strong>captain access</strong> before you can
+              buy a track download. Streaming stays on the pass; downloads are per track. Captain unlock lives inside{' '}
+              <strong>Get members-only pass</strong> — expand <strong>Are you the captain?</strong> there, or use the
+              Fair Exchange screen after a 30s preview (or the <strong>Captain</strong> link in the header).
             </p>
             <div className="modal-actions">
               <button type="button" className="voxel-btn voxel-btn--orange" onClick={onNeedPass}>
-                Get monthly pass
+                Get members-only pass
               </button>
               <button type="button" className="voxel-btn voxel-btn--ghost" onClick={close}>
                 Back
@@ -273,7 +273,7 @@ export function ExportTrackModal({
         {step === 'honor' && rail && (
           <>
             <p className="modal-body">
-              Fair Exchange runs on trust — same honor flow as the monthly pass. Check the box, set the date you paid,
+              Fair Exchange runs on trust — same honor flow as the Machote members pass. Check the box, set the date you paid,
               and we unlock this download on your device. When a server pass token is available, we also log it on the
               host.
             </p>

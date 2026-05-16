@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FairExchangeModal } from '@/components/player/FairExchangeModal';
 import { BoardingModal } from '@/components/payment/BoardingModal';
 import { CaptainUnlockModal } from '@/components/payment/CaptainUnlockModal';
 import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
+import { MachoteCampaignModal } from '@/components/payment/MachoteCampaignModal';
+import { MACHOTE_CAMPAIGN_STORAGE_KEY } from '@/lib/machoteMembership';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
@@ -33,10 +35,31 @@ export function MediaShell() {
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
   const closeExport = useMediaChromeStore((s) => s.closeExport);
 
+  const [campaignOpen, setCampaignOpen] = useState(false);
+  const [sessionReady, setSessionReady] = useState(false);
+
   useEffect(() => {
     hydrateSession();
     if (!catalogHydrated) void hydrateCatalog();
+    setSessionReady(true);
   }, [catalogHydrated, hydrateCatalog, hydrateSession]);
+
+  useEffect(() => {
+    if (!sessionReady) return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('checkout') === '1') {
+      setBoardingOpen(true);
+      return;
+    }
+    if (isPassenger || captainUnlocked) return;
+    if (sessionStorage.getItem(MACHOTE_CAMPAIGN_STORAGE_KEY)) return;
+    setCampaignOpen(true);
+  }, [sessionReady, isPassenger, captainUnlocked, setBoardingOpen]);
+
+  const dismissCampaign = () => {
+    sessionStorage.setItem(MACHOTE_CAMPAIGN_STORAGE_KEY, '1');
+    setCampaignOpen(false);
+  };
 
   /** Re-check honor end date without reload (e.g. tab left open past midnight). */
   useEffect(() => {
@@ -49,6 +72,8 @@ export function MediaShell() {
     if (ok) {
       setBoardingOpen(false);
       setFairOpen(false);
+      setCampaignOpen(false);
+      sessionStorage.setItem(MACHOTE_CAMPAIGN_STORAGE_KEY, '1');
       setGain(1);
     }
   };
@@ -57,6 +82,15 @@ export function MediaShell() {
 
   return (
     <>
+      <MachoteCampaignModal
+        open={campaignOpen}
+        onClose={dismissCampaign}
+        onGetPass={() => {
+          dismissCampaign();
+          setBoardingOpen(true);
+        }}
+      />
+
       <FairExchangeModal
         open={fairOpen}
         onClose={() => setFairOpen(false)}

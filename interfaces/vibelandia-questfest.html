@@ -479,9 +479,135 @@
     @media (prefers-reduced-motion: reduce) {
       .btn:hover { transform: none; }
     }
+
+    /* Machote members-pass campaign */
+    body.machote-campaign-open { overflow: hidden; }
+    .machote-campaign-hub {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(6, 8, 13, 0.82);
+    }
+    .machote-campaign-hub[hidden] { display: none !important; }
+    .machote-campaign-hub__card {
+      position: relative;
+      max-width: min(520px, 100%);
+      max-height: min(90vh, 720px);
+      overflow-y: auto;
+      background: linear-gradient(165deg, #3d2e24 0%, #2a1f18 55%, #1f1814 100%);
+      border: 3px solid var(--gold);
+      border-radius: 12px;
+      padding: 1.35rem 1.25rem 1.25rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+      color: var(--text);
+    }
+    .machote-campaign-hub__close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.65rem;
+      border: none;
+      background: transparent;
+      color: var(--gold);
+      font-size: 1.75rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0.15rem 0.4rem;
+    }
+    .machote-campaign-hub__close:hover { color: var(--gold-hi); }
+    .machote-campaign-hub__eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--foam);
+      margin-bottom: 0.35rem;
+    }
+    .machote-campaign-hub__title {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      color: var(--gold-hi);
+      line-height: 1.05;
+      margin-bottom: 0.65rem;
+      padding-right: 1.5rem;
+    }
+    .machote-campaign-hub__lede {
+      font-size: 0.88rem;
+      color: #c8d0dc;
+      margin-bottom: 1rem;
+      line-height: 1.45;
+    }
+    .machote-campaign-hub__reasons {
+      list-style: none;
+      margin: 0 0 1.15rem;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .machote-campaign-hub__reasons li {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+    .machote-campaign-hub__num {
+      flex-shrink: 0;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #1a120c;
+      font-weight: 800;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .machote-campaign-hub__reasons strong {
+      display: block;
+      color: var(--gold-hi);
+      margin-bottom: 0.2rem;
+    }
+    .machote-campaign-hub__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .machote-campaign-hub__actions .btn { width: 100%; text-align: center; }
   </style>
 </head>
 <body>
+  <div id="machote-campaign" class="machote-campaign-hub" role="dialog" aria-modal="true" aria-labelledby="machote-campaign-title" hidden>
+    <div class="machote-campaign-hub__card">
+      <button type="button" class="machote-campaign-hub__close" id="machote-campaign-close" aria-label="Close">×</button>
+      <p class="machote-campaign-hub__eyebrow" data-i18n="qf.campaignEyebrow">Machote Moderno · members-only</p>
+      <h2 id="machote-campaign-title" class="machote-campaign-hub__title" data-i18n="qf.campaignTitle">Machote Moderno Magazine · Members-only pass</h2>
+      <p class="machote-campaign-hub__lede" data-i18n-html="qf.campaignLede">Top 3 reasons you want the pass — follow <a href="https://www.facebook.com/profile.php?id=61587003343289" target="_blank" rel="noopener noreferrer">Machote Moderno Magazine</a> and lock in <strong>$16.18/month</strong>.</p>
+      <ol class="machote-campaign-hub__reasons">
+        <li>
+          <span class="machote-campaign-hub__num" aria-hidden="true">1</span>
+          <span data-i18n-html="qf.campaignR1"><strong>Be the one with the cool music</strong> Access the hottest Reno Swamp Beats Caliente from Hero Jo's Golden Bachdoor Hit Factory — star of the party, the drive, the vibe. Crafted with Hydrogen Line Frontiersman Machote Moderno Y-chromosome beings united in our style, tastes, interests, and way of life.</span>
+        </li>
+        <li>
+          <span class="machote-campaign-hub__num" aria-hidden="true">2</span>
+          <span data-i18n-html="qf.campaignR2"><strong>Full catalog · background play</strong> Members get the whole Reno Holographic Swamp Beats Caliente Catalog — not the 30-second teaser. Full tracks, background audio when you switch apps, exports when you need a file offline.</span>
+        </li>
+        <li>
+          <span class="machote-campaign-hub__num" aria-hidden="true">3</span>
+          <span data-i18n-html="qf.campaignR3"><strong>Follow the magazine · $16.18/mo honor pass</strong> Follow Machote Moderno Magazine on Facebook to qualify, then pay on Venmo, PayPal, or Cash App on honor. Machote Modernos keeping it raw — no corporate checkout.</span>
+        </li>
+      </ol>
+      <div class="machote-campaign-hub__actions">
+        <a class="btn btn-primary" id="machote-campaign-cta" href="/interfaces/questfest-bridge/?checkout=1#/bridge" data-i18n="qf.campaignCta">Get the members-only pass · $16.18/mo</a>
+        <button type="button" class="btn btn-ghost" id="machote-campaign-later" data-i18n="qf.campaignLater">Maybe later</button>
+      </div>
+    </div>
+  </div>
+
   <a class="skip" href="#main" data-i18n="qf.skip">Skip</a>
 
   <header class="hero">
@@ -495,7 +621,7 @@
       <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
       <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Basenet</strong>. This page is the mirror on the cloud.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnSwampVibe">Machote Moderno Magazine · Members-only pass · $16.18/mo</a>
+        <a class="btn btn-primary" href="/interfaces/questfest-bridge/?checkout=1#/bridge" data-i18n="qf.btnSwampVibe">Machote Moderno Magazine · Members-only pass · $16.18/mo</a>
         <a class="btn btn-ghost" href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
         <a class="btn btn-ghost" href="/interfaces/look-under-the-hood.html" data-i18n="qf.btnHood">Look under the hood</a>
       </div>
@@ -701,6 +827,46 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (window.VibelandiaI18n) window.VibelandiaI18n.initFromPage('questfest');
+
+      var CAMPAIGN_KEY = 'machote-members-campaign-dismissed-v1';
+      var popup = document.getElementById('machote-campaign');
+      var closeBtn = document.getElementById('machote-campaign-close');
+      var laterBtn = document.getElementById('machote-campaign-later');
+      var cta = document.getElementById('machote-campaign-cta');
+
+      function dismissCampaign() {
+        try { sessionStorage.setItem(CAMPAIGN_KEY, '1'); } catch (e) { /* ignore */ }
+        if (popup) popup.hidden = true;
+        document.body.classList.remove('machote-campaign-open');
+      }
+
+      function showCampaign() {
+        if (!popup || sessionStorage.getItem(CAMPAIGN_KEY)) return;
+        popup.hidden = false;
+        document.body.classList.add('machote-campaign-open');
+        closeBtn && closeBtn.focus();
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', dismissCampaign);
+      if (laterBtn) laterBtn.addEventListener('click', dismissCampaign);
+      if (cta) cta.addEventListener('click', dismissCampaign);
+      if (popup) {
+        popup.addEventListener('click', function (ev) {
+          if (ev.target === popup) dismissCampaign();
+        });
+      }
+      document.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Escape' && popup && !popup.hidden) dismissCampaign();
+      });
+
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('checkout') === '1') {
+        window.location.replace('/interfaces/questfest-bridge/?checkout=1#/bridge');
+        return;
+      }
+      if (params.get('campaign') === '1' || !sessionStorage.getItem(CAMPAIGN_KEY)) {
+        showCampaign();
+      }
     });
   </script>
 </body>

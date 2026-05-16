@@ -2830,6 +2830,99 @@ a.boarding-pay-open {
   color: #fff;
 }
 
+/* Machote members-pass campaign popup */
+.machote-campaign-root {
+  z-index: 1200;
+}
+
+.machote-campaign-card {
+  position: relative;
+  max-width: min(520px, 94vw);
+  max-height: min(90vh, 720px);
+  overflow-y: auto;
+}
+
+.machote-campaign-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--swamp-gold);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+}
+
+.machote-campaign-close:hover {
+  background: rgba(232, 184, 109, 0.15);
+  color: var(--swamp-cream);
+}
+
+.machote-campaign-lede {
+  margin-bottom: 0.75rem;
+}
+
+.machote-campaign-lede a {
+  color: var(--swamp-teal);
+}
+
+.machote-campaign-reasons {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.machote-campaign-reasons li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.machote-campaign-num {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #f0d4a0, var(--swamp-gold));
+  color: #1a120c;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.machote-campaign-reasons strong {
+  display: block;
+  color: var(--swamp-gold);
+  margin-bottom: 0.25rem;
+  font-size: 0.92rem;
+}
+
+.machote-campaign-reasons p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--swamp-cream);
+  opacity: 0.92;
+}
+
+.machote-campaign-actions {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.machote-campaign-actions .voxel-btn {
+  width: 100%;
+  justify-content: center;
+}
+
 .sp-pl-edit-foot {
   margin-top: 1.5rem;
   padding-bottom: 1rem;

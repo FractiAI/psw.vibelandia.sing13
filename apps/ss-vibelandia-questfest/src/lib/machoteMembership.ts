@@ -29,3 +29,23 @@ export const MACHOTE_LIFE_PITCH =
 
 export const MACHOTE_CREW_LINE =
   'For Machote Modernos — frontier explorers who kept their edge and their Y-chromosome swagger on the wrong side of town.';
+
+export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v1';
+
+export const MACHOTE_CAMPAIGN_REASONS: { title: string; body: string }[] = [
+  {
+    title: 'Be the one with the cool music',
+    body:
+      "Access the hottest Reno Swamp Beats Caliente from Hero Jo's Golden Bachdoor Hit Factory — star of the party, the drive, the vibe. All crafted with the Hydrogen Line Frontiersman Machote Moderno Y-chromosome beings from everywhere, united in our Machote Moderno style, tastes, interests, and way of life.",
+  },
+  {
+    title: 'Full catalog · background play',
+    body:
+      'Members get the whole Reno Holographic Swamp Beats Caliente Catalog — not the 30-second teaser. Full tracks, background audio when you switch apps or lock the screen, and exports when you need a file offline.',
+  },
+  {
+    title: 'Follow the magazine · $16.18/mo honor pass',
+    body:
+      'Follow Machote Moderno Magazine on Facebook to qualify, then pay $16.18/mo on Venmo, PayPal, or Cash App on honor. Machote Modernos keeping it raw — no corporate checkout, just the pass and the catalog.',
+  },
+];

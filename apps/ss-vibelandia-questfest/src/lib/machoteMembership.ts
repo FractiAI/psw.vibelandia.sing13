@@ -10,11 +10,15 @@ export const MACHOTE_CATALOG_SUBTITLE = "Hero Jo's Golden Bachdoor Hit Factory";
 
 export const MACHOTE_MEMBERS_PASS_SHORT = 'Machote Magazine members pass';
 
+/** Machote Moderno Magazine on Facebook — members-pass qualifier link. */
+export const MACHOTE_MAGAZINE_FOLLOW_URL =
+  'https://www.facebook.com/profile.php?id=61587003343289';
+
 /** Where listeners qualify by following the magazine (override with VITE_MACHOTE_MAGAZINE_URL). */
 export function machoteMagazineFollowUrl(): string {
   const env = import.meta.env.VITE_MACHOTE_MAGAZINE_URL?.trim();
   if (env) return env;
-  return '/interfaces/vibelandia-questfest.html';
+  return MACHOTE_MAGAZINE_FOLLOW_URL;
 }
 
 export const MACHOTE_MAGAZINE_QUALIFIER =

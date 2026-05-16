@@ -27,7 +27,7 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 | Tier | Price | How |
 |---|---|---|
-| **Machote Magazine members pass** | **$16.18/mo** (EGS φ) | **Qualifier:** follow **Machote Moderno Magazine** (link in boarding; override with `VITE_MACHOTE_MAGAZINE_URL`). Pay on Venmo, PayPal, or Cash App → boarding modal: **magazine-follow** + **honor** checkboxes, **date paid**, **email**, rail → **device record** unlocks full play until **paid date + 30 days** (playback honor is client-side). **`POST /api/boarding`** still issues a **signed Passenger JWT** when `PASS_TOKEN_SECRET` is set (exports and server-verified flows). |
+| **Machote Magazine members pass** | **$16.18/mo** (EGS φ) | **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/profile.php?id=61587003343289)** (linked in boarding; override with `VITE_MACHOTE_MAGAZINE_URL`). Pay on Venmo, PayPal, or Cash App → boarding modal: **magazine-follow** + **honor** checkboxes, **date paid**, **email**, rail → **device record** unlocks full play until **paid date + 30 days** (playback honor is client-side). **`POST /api/boarding`** still issues a **signed Passenger JWT** when `PASS_TOKEN_SECRET` is set (exports and server-verified flows). |
 | **Track export / download** | **$1.61** | Same honor attestation after payment (or legacy `receipt` string on the API); `POST /api/export` records a license id, then the client saves the file |
 | **Bookings** | Contact | `valetpru@gmail.com` |
 | **Catalog / licensing (Reno Holographic Swamp Beats · Caliente Catalog — Hero Jo's Golden Bachdoor Hit Factory)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
@@ -123,7 +123,7 @@ npm run build:questfest-bridge
 | `UPSTASH_REDIS_REST_URL` | Optional — fleet-wide stream lock |
 | `UPSTASH_REDIS_REST_TOKEN` | Optional — pairs with URL above |
 | `VITE_VENMO_HANDLE` etc. | Optional client overrides for payment handles |
-| `VITE_MACHOTE_MAGAZINE_URL` | Optional — magazine follow link for members-pass qualifier (defaults to QUESTFEST hub) |
+| `VITE_MACHOTE_MAGAZINE_URL` | Optional — magazine follow link for members-pass qualifier (default: [Machote Moderno Magazine on Facebook](https://www.facebook.com/profile.php?id=61587003343289)) |
 
 **Local dev (Bridge UI only):**
 

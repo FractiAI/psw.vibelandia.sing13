@@ -1,4 +1,4 @@
-const DEFAULT_MS = 8_000;
+const DEFAULT_MS = 3_000;
 
 /** fetch that rejects on timeout (AbortError) instead of hanging forever. */
 export async function fetchWithTimeout(

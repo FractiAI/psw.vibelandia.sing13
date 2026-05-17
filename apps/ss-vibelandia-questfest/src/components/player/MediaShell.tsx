@@ -4,23 +4,15 @@ import { BoardingModal } from '@/components/payment/BoardingModal';
 import { CaptainUnlockModal } from '@/components/payment/CaptainUnlockModal';
 import { MachoteCampaignModal } from '@/components/payment/MachoteCampaignModal';
 import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
-import {
-  consumeCampaignResetFromUrl,
-  dismissMachoteCampaign,
-  shouldAutoShowMachoteCampaign,
-} from '@/lib/machoteCampaignStorage';
+import { consumeCampaignResetFromUrl, dismissMachoteCampaign } from '@/lib/machoteCampaignStorage';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import type { BoardingRequestBody } from '@/lib/api';
 
-/**
- * Global modals and session hydration. The player dock lives in BridgePage (in-flow scroll).
- */
+/** Global modals and session — no blocking catalog load. */
 export function MediaShell() {
-  const catalogHydrated = useCatalogStore((s) => s.hydrated);
-  const hydrateCatalog = useCatalogStore((s) => s.hydrate);
   const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
@@ -41,49 +33,13 @@ export function MediaShell() {
   const setCampaignOpen = useMediaChromeStore((s) => s.setCampaignOpen);
   const closeExport = useMediaChromeStore((s) => s.closeExport);
 
-  const hasMembersAccess = isPassenger || captainUnlocked;
-
   useEffect(() => {
     hydrateSession();
-    if (!catalogHydrated) void hydrateCatalog();
-  }, [catalogHydrated, hydrateCatalog, hydrateSession]);
-
-  /** Re-check honor end date without reload (e.g. tab left open past midnight). */
-  useEffect(() => {
-    const id = window.setInterval(() => hydrateSession(), 60_000);
-    const onVisible = () => {
-      if (document.visibilityState === 'visible') hydrateSession();
-    };
-    const onStorage = (ev: StorageEvent) => {
-      if (ev.key === 'qv-local-monthly-honor' || ev.key === 'qv-pass-token') hydrateSession();
-    };
-    const onPageShow = () => hydrateSession();
-    document.addEventListener('visibilitychange', onVisible);
-    window.addEventListener('storage', onStorage);
-    window.addEventListener('pageshow', onPageShow);
-    return () => {
-      window.clearInterval(id);
-      document.removeEventListener('visibilitychange', onVisible);
-      window.removeEventListener('storage', onStorage);
-      window.removeEventListener('pageshow', onPageShow);
-    };
-  }, [hydrateSession]);
-
-  useEffect(() => {
     consumeCampaignResetFromUrl();
-  }, []);
-
-  /** Machote campaign · top deck (auto once per browser until dismissed). */
-  useEffect(() => {
-    if (!catalogHydrated) return;
-    if (!shouldAutoShowMachoteCampaign(hasMembersAccess)) return;
-    const t = window.setTimeout(() => setCampaignOpen(true), 500);
-    return () => window.clearTimeout(t);
-  }, [catalogHydrated, hasMembersAccess, setCampaignOpen]);
-
-  useEffect(() => {
-    if (hasMembersAccess && campaignOpen) setCampaignOpen(false);
-  }, [hasMembersAccess, campaignOpen, setCampaignOpen]);
+    window.setTimeout(() => {
+      void useCatalogStore.getState().refreshFromServer();
+    }, 0);
+  }, [hydrateSession]);
 
   const closeCampaign = (dismiss: boolean) => {
     if (dismiss) dismissMachoteCampaign();
@@ -140,9 +96,7 @@ export function MediaShell() {
         track={exportTrack}
         isPassenger={isPassenger}
         captainUnlocked={captainUnlocked}
-        onClose={() => {
-          closeExport();
-        }}
+        onClose={() => closeExport()}
         onNeedPass={() => {
           closeExport();
           const st = useSessionStore.getState();

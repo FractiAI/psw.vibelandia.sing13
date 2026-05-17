@@ -3,10 +3,9 @@ import { expectedCaptainPassword } from '@/lib/captainAuth';
 import { fetchJsonWithTimeout } from '@/lib/fetchWithTimeout';
 import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 
-/** Blob + catalog API host when the public www edge lacks upload env (FractiVerse pipe). */
+/** Upload API host when www edge has no Blob env (FractiVerse pipe). */
 const DEFAULT_CATALOG_PIPE = 'https://psw-vibelandia-sing13.vercel.app';
 
-const API_CATALOG = '/api/catalog';
 const STATIC_CATALOG = '/media/catalog/catalog.json';
 
 export function catalogPipeOrigin(): string {
@@ -25,7 +24,6 @@ function catalogApiUrl(path: string): string {
   return base ? `${base}${path}` : path;
 }
 
-/** Must match server CATALOG_UPLOAD_SECRET (or shared captain password on Vercel). */
 export function catalogUploadSecret(): string {
   const upload = import.meta.env.VITE_CATALOG_UPLOAD_SECRET;
   if (typeof upload === 'string' && upload.trim().length >= 8) return upload.trim();
@@ -54,7 +52,7 @@ function normalizeServerCatalog(raw: unknown): CatalogSnapshot {
   };
 }
 
-function mergeCatalogSnapshots(a: CatalogSnapshot, b: CatalogSnapshot): CatalogSnapshot {
+export function mergeCatalogSnapshots(a: CatalogSnapshot, b: CatalogSnapshot): CatalogSnapshot {
   const tracks = { ...a.tracks, ...b.tracks };
   const byId = new Map(a.playlists.map((p) => [p.id, { ...p, trackIds: [...p.trackIds] }]));
   for (const p of b.playlists) {
@@ -77,27 +75,21 @@ function mergeCatalogSnapshots(a: CatalogSnapshot, b: CatalogSnapshot): CatalogS
   };
 }
 
-/** Load master library from server (static JSON + API; www uses pipe for dynamic uploads). */
+/** Same-origin static manifest only — never blocks on cross-origin. */
 export async function fetchServerCatalog(): Promise<CatalogSnapshot> {
+  const staticRaw = await fetchJsonWithTimeout(STATIC_CATALOG, 2_500);
+  return staticRaw ? normalizeServerCatalog(staticRaw) : buildEmptyCatalog();
+}
+
+/** Optional remote library (pipe); call from Refresh or after upload — not on startup. */
+export async function fetchRemoteCatalog(): Promise<CatalogSnapshot | null> {
   const pipe = catalogPipeOrigin();
-
-  const staticRaw = await fetchJsonWithTimeout(STATIC_CATALOG);
-  let catalog = staticRaw ? normalizeServerCatalog(staticRaw) : buildEmptyCatalog();
-
-  if (pipe) {
-    const remoteRaw = await fetchJsonWithTimeout(catalogApiUrl(API_CATALOG));
-    if (remoteRaw) {
-      catalog = mergeCatalogSnapshots(catalog, normalizeServerCatalog(remoteRaw));
-    }
-    return catalog;
+  if (!pipe) {
+    const localRaw = await fetchJsonWithTimeout('/api/catalog', 2_500);
+    return localRaw ? normalizeServerCatalog(localRaw) : null;
   }
-
-  const localRaw = await fetchJsonWithTimeout(API_CATALOG);
-  if (localRaw) {
-    return mergeCatalogSnapshots(catalog, normalizeServerCatalog(localRaw));
-  }
-
-  return catalog;
+  const remoteRaw = await fetchJsonWithTimeout(`${pipe}/api/catalog`, 2_500);
+  return remoteRaw ? normalizeServerCatalog(remoteRaw) : null;
 }
 
 function fileToBase64(file: File): Promise<string> {
@@ -122,7 +114,6 @@ export type UploadTrackResult = {
   catalog?: CatalogSnapshot;
 };
 
-/** Upload audio to Vercel Blob + server catalog manifest. No browser storage. */
 export async function uploadTrackToServer(
   file: File,
   meta: { title?: string; artist?: string },

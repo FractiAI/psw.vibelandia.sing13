@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { getOrCreateDeviceId } from '@/lib/mockJwt';
 import { usePlaybackStore } from '@/stores/playbackStore';
-import { useSessionStore } from '@/stores/sessionStore';
 
 const CH = 'qv-vibelandia-stream';
 
@@ -14,18 +12,12 @@ interface StreamLockApi {
   clearKill: () => void;
 }
 
-/** Cross-tab + best-effort cross-device (warm serverless) stream lock */
+/** Cross-tab only: pause if another tab starts playing. No server heartbeat polling. */
 export function useStreamLock(): StreamLockApi {
-  const jti = useSessionStore((s) => s.jti);
-  const isPassenger = useSessionStore((s) => s.isPassenger);
-  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
-  const fullPlay = isPassenger || captainUnlocked;
-  const isPlaying = usePlaybackStore((s) => s.isPlaying);
   const [killReason, setKillReason] = useState<KillReason>(null);
+  const deviceId = useRefStableDeviceId();
 
   const clearKill = useCallback(() => setKillReason(null), []);
-
-  const deviceId = useRef(getOrCreateDeviceId()).current;
 
   const sendPreempt = useCallback(() => {
     try {
@@ -38,14 +30,10 @@ export function useStreamLock(): StreamLockApi {
   }, [deviceId]);
 
   const beginSession = useCallback(() => {
-    if (!fullPlay) return;
     sendPreempt();
-    if (isPassenger && jti) void postHeartbeat(jti, deviceId);
-  }, [deviceId, fullPlay, isPassenger, jti, sendPreempt]);
+  }, [sendPreempt]);
 
-  const endSession = useCallback(() => {
-    /* polling tied to isPlaying */
-  }, []);
+  const endSession = useCallback(() => {}, []);
 
   useEffect(() => {
     let bc: BroadcastChannel | null = null;
@@ -67,62 +55,25 @@ export function useStreamLock(): StreamLockApi {
     } catch {
       /* ignore */
     }
-    return () => {
-      bc?.close();
-    };
+    return () => bc?.close();
   }, [deviceId]);
-
-  useEffect(() => {
-    if (!isPlaying || !isPassenger || !jti || captainUnlocked) return;
-
-    sendPreempt();
-
-    const poll = () => {
-      if (document.hidden) return;
-      void postHeartbeat(jti, deviceId);
-      void getHeartbeat(jti, deviceId).then((res) => {
-        if (res?.kill) {
-          setKillReason('vessel_switch');
-          usePlaybackStore.getState().setPlaying(false);
-          usePlaybackStore.getState().setGain(0);
-        }
-      });
-    };
-
-    poll();
-    const id = window.setInterval(poll, 4000);
-
-    return () => window.clearInterval(id);
-  }, [captainUnlocked, deviceId, isPassenger, isPlaying, jti, sendPreempt]);
 
   return { beginSession, endSession, killReason, clearKill };
 }
 
-async function postHeartbeat(jti: string, deviceId: string) {
+function useRefStableDeviceId(): string {
+  const ref = useRef<string | null>(null);
+  if (ref.current) return ref.current;
+  const key = 'qv-device-id';
   try {
-    const token = useSessionStore.getState().passToken ?? '';
-    await fetch('/api/heartbeat', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ jti, deviceId, token }),
-    });
+    let id = sessionStorage.getItem(key) ?? '';
+    if (!id) {
+      id = crypto.randomUUID?.() ?? `dev-${Date.now()}`;
+      sessionStorage.setItem(key, id);
+    }
+    ref.current = id;
   } catch {
-    /* offline / local dev */
+    ref.current = `dev-${Date.now()}`;
   }
-}
-
-async function getHeartbeat(
-  jti: string,
-  deviceId: string,
-): Promise<{ kill: boolean; activeDeviceId?: string | null } | null> {
-  try {
-    const u = new URL('/api/heartbeat', window.location.origin);
-    u.searchParams.set('jti', jti);
-    u.searchParams.set('deviceId', deviceId);
-    const r = await fetch(u.toString(), { method: 'GET' });
-    if (!r.ok) return null;
-    return r.json() as Promise<{ kill: boolean; activeDeviceId?: string | null }>;
-  } catch {
-    return null;
-  }
+  return ref.current;
 }

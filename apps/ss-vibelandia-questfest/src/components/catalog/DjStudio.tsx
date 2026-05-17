@@ -17,7 +17,6 @@ interface DjStudioProps {
 type MsgKind = 'info' | 'success' | 'error' | 'idle';
 
 export function DjStudio({ onUploadSuccess }: DjStudioProps) {
-  const hydrated = useCatalogStore((s) => s.hydrated);
   const tracks = useCatalogStore((s) => s.tracks);
   const importMediaFiles = useCatalogStore((s) => s.importMediaFiles);
   const scanDeviceLibrary = useCatalogStore((s) => s.scanDeviceLibrary);
@@ -261,7 +260,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Shown in the player when playing"
-              disabled={busy || !hydrated}
+              disabled={busy}
             />
           </label>
           <label className="spotify-field">
@@ -270,7 +269,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               className="spotify-input"
               value={artist}
               onChange={(e) => setArtist(e.target.value)}
-              disabled={busy || !hydrated}
+              disabled={busy}
             />
           </label>
           <label className="spotify-field">
@@ -282,7 +281,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               maxLength={TRACK_DESCRIPTION_MAX}
               rows={3}
               placeholder="What's this track about?"
-              disabled={busy || !hydrated}
+              disabled={busy}
             />
             <span className="spotify-field-hint">
               {description.length}/{TRACK_DESCRIPTION_MAX} characters
@@ -296,7 +295,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               className="spotify-input"
               type="file"
               accept="audio/*,video/*"
-              disabled={busy || !hydrated}
+              disabled={busy}
               onChange={(e) => {
                 const picked = e.target.files?.[0] ?? null;
                 setFile(picked);
@@ -307,7 +306,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           <button
             type="button"
             className="spotify-btn spotify-btn--gold"
-            disabled={busy || !hydrated || !serverReady}
+            disabled={busy || !serverReady}
             onClick={() => void handleSingleUpload()}
           >
             {busy ? 'Uploading…' : 'Upload · go to Listen'}
@@ -326,14 +325,14 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               type="file"
               accept="audio/*,video/*"
               multiple
-              disabled={busy || !hydrated || !serverReady}
+              disabled={busy || !serverReady}
               onChange={(e) => void handleMultiUpload(e.target.files)}
             />
           </label>
           <button
             type="button"
             className="spotify-btn spotify-btn--ghost"
-            disabled={busy || !hydrated || !serverReady}
+            disabled={busy || !serverReady}
             onClick={() => void handleFolderImport()}
           >
             {busy ? 'Working…' : 'Import a folder…'}

@@ -13,8 +13,10 @@ import {
   saveDeviceDirHandle,
 } from '@/lib/catalogPersistence';
 import {
+  fetchRemoteCatalog,
   fetchServerCatalog,
   isServerUploadConfigured,
+  mergeCatalogSnapshots,
   uploadTrackToServer,
 } from '@/lib/serverCatalog';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
@@ -34,6 +36,7 @@ type View = 'catalog' | 'dj';
 
 interface CatalogState {
   hydrated: boolean;
+  catalogSyncing: boolean;
   view: View;
   djMode: boolean;
   tracks: Record<string, TrackDef>;
@@ -82,7 +85,7 @@ interface CatalogState {
     addedTrackIds: string[];
   }>;
   deleteTrack: (trackId: string) => Promise<void>;
-  hydrate: () => Promise<void>;
+  hydrate: () => void;
   /** Re-fetch server catalog (after upload). */
   refreshFromServer: () => Promise<void>;
   persist: () => void;
@@ -492,20 +495,18 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     get().persist();
   },
 
-  hydrate: async () => {
-    if (get().hydrated) return;
+  hydrate: () => {
+    void get().refreshFromServer();
+  },
 
+  refreshFromServer: async () => {
+    if (get().catalogSyncing) return;
+    set({ catalogSyncing: true });
     const saved = loadCatalogJson<CatalogSnapshot>();
-    const boot = applyServerCatalog(buildEmptyCatalog(), saved);
-    set({
-      hydrated: true,
-      tracks: boot.tracks,
-      playlists: boot.playlists,
-      activePlaylistId: boot.activePlaylistId,
-    });
-
     try {
-      const server = await fetchServerCatalog();
+      let server = await fetchServerCatalog();
+      const remote = await fetchRemoteCatalog();
+      if (remote) server = mergeCatalogSnapshots(server, remote);
       const applied = applyServerCatalog(server, saved);
       set({
         tracks: applied.tracks,
@@ -514,20 +515,10 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       });
       get().persist();
     } catch {
-      /* offline — keep boot state */
+      /* keep current library */
+    } finally {
+      set({ catalogSyncing: false });
     }
-  },
-
-  refreshFromServer: async () => {
-    const server = await fetchServerCatalog();
-    const saved = loadCatalogJson<CatalogSnapshot>();
-    const applied = applyServerCatalog(server, saved);
-    set({
-      tracks: applied.tracks,
-      playlists: applied.playlists,
-      activePlaylistId: applied.activePlaylistId,
-    });
-    get().persist();
   },
 
   persist: () => {

@@ -19,11 +19,13 @@ export function BridgePage() {
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
 
-  const hydrated = useCatalogStore((s) => s.hydrated);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
+  const catalogSyncing = useCatalogStore((s) => s.catalogSyncing);
+  const refreshFromServer = useCatalogStore((s) => s.refreshFromServer);
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
+  const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
   const setTrack = usePlaybackStore((s) => s.setTrack);
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
 
@@ -89,29 +91,9 @@ export function BridgePage() {
     goListen();
   };
 
-  const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
-  const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
-  useEffect(() => {
-    if (!hydrated) return;
-    const pl = getActivePlaylist();
-    if (!pl?.trackIds.length) return;
-    const cur = usePlaybackStore.getState().currentTrackId;
-    if (!cur || !pl.trackIds.includes(cur)) {
-      setTrack(pl.trackIds[0]);
-    }
-  }, [activePlaylistId, getActivePlaylist, hydrated, setTrack]);
-
   const handleDownloadRequest = (trackId: string) => {
     openExport(trackId);
   };
-
-  if (!hydrated) {
-    return (
-      <div className="sp-app sp-app--loading">
-        <p>{PLAIN.loadingCatalog}</p>
-      </div>
-    );
-  }
 
   return (
     <div className="sp-app">
@@ -149,6 +131,14 @@ export function BridgePage() {
             </button>
           </div>
           <nav className="sp-top-nav">
+            <button
+              type="button"
+              className="sp-top-link"
+              disabled={catalogSyncing}
+              onClick={() => void refreshFromServer()}
+            >
+              {catalogSyncing ? 'Syncing…' : 'Refresh library'}
+            </button>
             {showMembersOffer ? (
               <button
                 type="button"

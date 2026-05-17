@@ -1,8 +1,26 @@
 import { buildEmptyCatalog } from '@/lib/catalogSeed';
+import { expectedCaptainPassword } from '@/lib/captainAuth';
 import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
+
+/** Blob + catalog API host when the public www edge lacks upload env (FractiVerse pipe). */
+const DEFAULT_CATALOG_PIPE = 'https://psw-vibelandia-sing13.vercel.app';
 
 const API_CATALOG = '/api/catalog';
 const STATIC_CATALOG = '/media/catalog/catalog.json';
+
+export function catalogPipeOrigin(): string {
+  const fromEnv = import.meta.env.VITE_CATALOG_PIPE_ORIGIN;
+  if (typeof fromEnv === 'string' && fromEnv.trim()) return fromEnv.trim().replace(/\/$/, '');
+  if (typeof location !== 'undefined' && /ssvibelandiaquestfest24x365\.com$/i.test(location.hostname)) {
+    return DEFAULT_CATALOG_PIPE;
+  }
+  return '';
+}
+
+function catalogApiUrl(path: string): string {
+  const base = catalogPipeOrigin();
+  return base ? `${base}${path}` : path;
+}
 
 /** Must match server CATALOG_UPLOAD_SECRET (or shared captain password on Vercel). */
 export function catalogUploadSecret(): string {
@@ -10,6 +28,8 @@ export function catalogUploadSecret(): string {
   if (typeof upload === 'string' && upload.trim().length >= 8) return upload.trim();
   const captain = import.meta.env.VITE_CAPTAIN_BYPASS_PASSWORD;
   if (typeof captain === 'string' && captain.trim().length >= 8) return captain.trim();
+  const edgeDefault = expectedCaptainPassword();
+  if (edgeDefault.length >= 8) return edgeDefault;
   return '';
 }
 
@@ -33,12 +53,23 @@ function normalizeServerCatalog(raw: unknown): CatalogSnapshot {
 
 /** Load master library from server (API merges static JSON + dynamic manifest). */
 export async function fetchServerCatalog(): Promise<CatalogSnapshot> {
-  try {
-    const res = await fetch(API_CATALOG, { cache: 'no-store' });
-    if (res.ok) return normalizeServerCatalog(await res.json());
-  } catch {
-    /* offline or local dev */
+  const pipe = catalogPipeOrigin();
+  const apiPaths = pipe ? [catalogApiUrl(API_CATALOG), API_CATALOG] : [API_CATALOG, catalogApiUrl(API_CATALOG)];
+
+  for (const url of apiPaths) {
+    try {
+      const res = await fetch(url, { cache: 'no-store' });
+      if (res.ok) {
+        const remote = normalizeServerCatalog(await res.json());
+        if (pipe && url.startsWith(pipe)) return remote;
+        if (!pipe) return remote;
+        if (Object.keys(remote.tracks).length > 0) return remote;
+      }
+    } catch {
+      /* try next */
+    }
   }
+
   try {
     const res = await fetch(STATIC_CATALOG, { cache: 'no-store' });
     if (res.ok) return normalizeServerCatalog(await res.json());
@@ -90,7 +121,7 @@ export async function uploadTrackToServer(
     contentType: file.type || 'application/octet-stream',
   };
 
-  const res = await fetch('/api/catalog-upload', {
+  const res = await fetch(catalogApiUrl('/api/catalog-upload'), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

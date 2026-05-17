@@ -1,19 +1,12 @@
-# Deploys production on every push to `main`.
-# Target project: psw-vibelandia-sing13-nine (Vercel) → live at www.ssvibelandiaquestfest24x365.com.
-# Do not point VERCEL_PROJECT_ID at a duplicate or at a project linked to psw.vibelandia.sing9.
+# Optional manual deploy — production autodeploy is Vercel ↔ GitHub on push to `main`.
+# Project: fracti-verse/psw-vibelandia-sing13 · production host: psw-vibelandia-sing13-nine.vercel.app
+# Custom domain (one-time in Vercel UI): www.ssvibelandiaquestfest24x365.com
 #
-# One-time: add repository secret `VERCEL_TOKEN` (https://vercel.com/account/tokens)
-# with access to team `fracti-verse` / project `psw-vibelandia-sing13`.
-#
-# Native Vercel ↔ GitHub linking (`vercel git connect`) requires the Vercel GitHub App
-# installed on the org with access to this repo; this workflow gives the same deploy-on-push
-# behavior with a single token secret.
+# Run this workflow only if you need a CLI deploy and have VERCEL_TOKEN set in repo secrets.
 
-name: Deploy to Vercel
+name: Deploy to Vercel (manual)
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 jobs:

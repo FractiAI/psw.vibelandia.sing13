@@ -3,26 +3,6 @@
   "buildCommand": "npm run build:questfest-bridge",
   "outputDirectory": ".",
   "framework": null,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "psw-vibelandia-sing13.vercel.app" }],
-      "destination": "https://www.ssvibelandiaquestfest24x365.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "psw-vibelandia-sing13-nine.vercel.app" }],
-      "destination": "https://www.ssvibelandiaquestfest24x365.com/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "ssvibelandiaquestfest24x365.com" }],
-      "destination": "https://www.ssvibelandiaquestfest24x365.com/:path*",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },
     { "source": "/questfest/", "destination": "/interfaces/vibelandia-questfest.html" },

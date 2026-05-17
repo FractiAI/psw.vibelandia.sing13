@@ -131,15 +131,23 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 
 ## Deploy
 
-**Stack:** Static HTML/CSS/assets plus the **Vite React** QUESTFEST Bridge bundle under `interfaces/questfest-bridge/`, plus **lite-edge** serverless routes in `api/`. [`vercel.json`](vercel.json) defines short-path rewrites and NSPFRNP/Singularity response headers (`X-Singularity: SING-13`, `X-Parent-Edge: https://psw-vibelandia-sing9.vercel.app`).
+**Stack:** Static HTML/CSS/assets plus the **Vite React** QUESTFEST Bridge bundle under `interfaces/questfest-bridge/`, plus **lite-edge** serverless routes in `api/`. [`vercel.json`](vercel.json) defines the production build (`buildCommand: npm run build:questfest-bridge`), short-path rewrites, and NSPFRNP headers.
+
+**Autodeploy:** Push to **`main`** → **Vercel ↔ GitHub** builds and ships production for this repo.
+
+| | |
+|---|---|
+| **Vercel project** | [`fracti-verse/psw-vibelandia-sing13`](https://vercel.com/fracti-verse/psw-vibelandia-sing13) |
+| **Production Vercel URL** | `https://psw-vibelandia-sing13-nine.vercel.app` |
+| **Custom domain (target)** | [`https://www.ssvibelandiaquestfest24x365.com`](https://www.ssvibelandiaquestfest24x365.com) |
+
+**Link custom domain (one-time, Vercel dashboard):** [Project → Settings → Domains](https://vercel.com/fracti-verse/psw-vibelandia-sing13/settings/domains) → add **`www.ssvibelandiaquestfest24x365.com`**. If Vercel says the name is already on another project, remove it there first, then add it on **this** project only. DNS must match what the Domains tab shows (usually `www` → `cname.vercel-dns.com`).
+
+Optional manual deploy: [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) (`workflow_dispatch` only; needs `VERCEL_TOKEN`).
 
 ```bash
 npm run build:questfest-bridge
 ```
-
-**CI:** [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) runs the build above, then `vercel deploy --prod` (requires repo secret `VERCEL_TOKEN`). If Vercel Git integration is connected, set the project build command to the same root script so `interfaces/questfest-bridge/` exists on deploy.
-
-**Canonical production hostname:** **[`https://www.ssvibelandiaquestfest24x365.com`](https://www.ssvibelandiaquestfest24x365.com)** — this is where live QUESTFEST updates ship. **Vercel project for this repo:** `psw-vibelandia-sing13-nine.vercel.app` (deploy alias; [`vercel.json`](vercel.json) redirects legacy `*.vercel.app` hosts to the custom domain). **Do not** treat `psw-vibelandia-sing13.vercel.app` (no `-nine`) as this edge — that hostname is a different/stale project. Parent edge stays **SING 9** only.
 
 **Vercel env (minimum for live boarding / export):**
 

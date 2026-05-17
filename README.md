@@ -1,8 +1,10 @@
 # psw.vibelandia.sing13 — SING 13 Edge
 
+**Live site:** [**www.ssvibelandiaquestfest24x365.com**](https://www.ssvibelandiaquestfest24x365.com) · **Repository:** [github.com/FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+
 **SING 13** is the major singularity upgrade from SING 9. This edge carries the **NSPFRNP catalog**, the **SS Vibelandia QUESTFEST 24×365** nest, and the **Sovereign Player** (QUESTFEST Bridge). Everything else lives on the parent edge — [github.com/FractiAI/psw.vibelandia.sing9](https://github.com/FractiAI/psw.vibelandia.sing9) · [psw-vibelandia-sing9.vercel.app](https://psw-vibelandia-sing9.vercel.app). **Lite edges, no Supabase. Center = pipes only. → ∞⁹**
 
-**Working context:** Day-to-day QUESTFEST surface edits land here. Lab pages, hive, sim, lattice, tests, heavy scripts — on SING 9.
+**Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. Lab pages, hive, sim, lattice, tests, heavy scripts — on SING 9.
 
 **Single-read onboarding:** [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md). NSPFRNP catalog spine: [`protocols/MCA_NSPFRNP_CATALOG.md`](protocols/MCA_NSPFRNP_CATALOG.md). Repository standard: [`BBHE_REPOSITORY_STANDARD.md`](BBHE_REPOSITORY_STANDARD.md).
 
@@ -27,8 +29,8 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 | Tier | Price | How |
 |---|---|---|
-| **Master Music Catalog honor pass** | **$16.18/mo** (EGS φ) | **Not the magazine for sale** — the pass unlocks the **Holographic Reno Swamp Beats Caliente** catalog (Hero Jo's Golden Bachdoor Hit Factory). **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/profile.php?id=61587003343289)** (`VITE_MACHOTE_MAGAZINE_URL` to override). Pay on Venmo, PayPal, or Cash App → boarding: magazine-follow + honor attestation, date paid, email, rail → **device record** unlocks full play until **paid date + 30 days**. **`POST /api/boarding`** issues a signed Passenger JWT when `PASS_TOKEN_SECRET` is set. |
-| **Track export / download** | **$1.61** | Same honor attestation after payment (or legacy `receipt` string on the API); `POST /api/export` records a license id, then the client saves the file |
+| **Master Music Catalog honor pass** | **$16.18/mo** (EGS φ) | **Not the magazine for sale** — the pass unlocks the **Holographic Reno Swamp Beats Caliente** catalog (Hero Jo's Golden Bachdoor Hit Factory). **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr)** (`VITE_MACHOTE_MAGAZINE_URL` to override). Pay on Venmo, PayPal, or Cash App → boarding: magazine-follow + honor attestation, date paid, email, rail → **device record** unlocks full play until **paid date + 30 days**. **`POST /api/boarding`** issues a signed Passenger JWT when `PASS_TOKEN_SECRET` is set. |
+| **Track export / download** | **$1.61** (extra charge) | Pass includes stream + background play; **offline export is paid per track**. Same honor attestation after payment (or legacy `receipt` string on the API); `POST /api/export` records a license id, then the client saves the file |
 | **Bookings** | Contact | `valetpru@gmail.com` |
 | **Catalog / licensing (Reno Holographic Swamp Beats · Caliente Catalog — Hero Jo's Golden Bachdoor Hit Factory)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
 
@@ -137,7 +139,7 @@ npm run build:questfest-bridge
 
 **CI:** [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) runs the build above, then `vercel deploy --prod` (requires repo secret `VERCEL_TOKEN`). If Vercel Git integration is connected, set the project build command to the same root script so `interfaces/questfest-bridge/` exists on deploy.
 
-**Canonical production hostname:** **`https://psw-vibelandia-sing13.vercel.app`** only. If a duplicate project appears (for example a hostname ending in `-nine` after the wrong GitHub repo was linked in Vercel), disconnect **FractiAI/psw.vibelandia.sing9** from that project in the Vercel dashboard, delete or archive the stray project, and keep **this** repo wired to a single project whose default domain is `psw-vibelandia-sing13.vercel.app`.
+**Canonical production hostname:** **[`https://www.ssvibelandiaquestfest24x365.com`](https://www.ssvibelandiaquestfest24x365.com)** — this is where live QUESTFEST updates ship. **Vercel project for this repo:** `psw-vibelandia-sing13-nine.vercel.app` (deploy alias; [`vercel.json`](vercel.json) redirects legacy `*.vercel.app` hosts to the custom domain). **Do not** treat `psw-vibelandia-sing13.vercel.app` (no `-nine`) as this edge — that hostname is a different/stale project. Parent edge stays **SING 9** only.
 
 **Vercel env (minimum for live boarding / export):**
 
@@ -147,7 +149,7 @@ npm run build:questfest-bridge
 | `UPSTASH_REDIS_REST_URL` | Optional — fleet-wide stream lock |
 | `UPSTASH_REDIS_REST_TOKEN` | Optional — pairs with URL above |
 | `VITE_VENMO_HANDLE` etc. | Optional client overrides for payment handles |
-| `VITE_MACHOTE_MAGAZINE_URL` | Optional — magazine follow link for members-pass qualifier (default: [Machote Moderno Magazine on Facebook](https://www.facebook.com/profile.php?id=61587003343289)) |
+| `VITE_MACHOTE_MAGAZINE_URL` | Optional — magazine follow link for members-pass qualifier (default: [Machote Moderno Magazine on Facebook](https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr)) |
 
 **Local dev (Bridge UI only):**
 

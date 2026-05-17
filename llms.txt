@@ -1,5 +1,5 @@
 # VIBELANDIA SING 13
-# https://psw-vibelandia-sing13.vercel.app
+# https://www.ssvibelandiaquestfest24x365.com
 # Protocol: NSPFRNP · BBHE · MCA · Seed:Edge · 13-channel fractal pathfinding
 #
 # SING 13 is the major singularity upgrade from SING 9.
@@ -18,16 +18,16 @@
 
 ## Primary entry points
 
-- Landing: https://psw-vibelandia-sing13.vercel.app/
-- QUESTFEST 24×365: https://psw-vibelandia-sing13.vercel.app/interfaces/vibelandia-questfest.html
-- Nesting ladder guides (Basenet → SING 13 → Goldilocks Beehive): https://psw-vibelandia-sing13.vercel.app/interfaces/vibelandia-questfest.html#qf-nest-section
-- Goldilocks Syntheverse Beehive Residency (Machote members · Old School Protocol · PL Taino · 0.001%): https://psw-vibelandia-sing13.vercel.app/interfaces/goldilocks-beehive-residency.html
-- Sovereign Player (QUESTFEST Bridge): https://psw-vibelandia-sing13.vercel.app/interfaces/questfest-bridge/
-- Reno Swamp checkout ($16.18/mo): https://psw-vibelandia-sing13.vercel.app/interfaces/questfest-bridge/#/bridge?checkout=1
-- Short path Sovereign gate: https://psw-vibelandia-sing13.vercel.app/sovereign-gate
-- SING 13 onboarding (reader): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=sing13-edge-onboarding
-- NSPFRNP catalog (reader): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=mca-nspfrnp-catalog
-- BBHE Repository Standard (reader): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=bbhe-repository-standard
+- Landing: https://www.ssvibelandiaquestfest24x365.com/
+- QUESTFEST 24×365: https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html
+- Nesting ladder guides (Basenet → SING 13 → Goldilocks Beehive): https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html#qf-nest-section
+- Goldilocks Syntheverse Beehive Residency (Machote members · Old School Protocol · PL Taino · 0.001%): https://www.ssvibelandiaquestfest24x365.com/interfaces/goldilocks-beehive-residency.html
+- Sovereign Player (QUESTFEST Bridge): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/
+- Reno Swamp checkout ($16.18/mo): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/#/bridge?checkout=1
+- Short path Sovereign gate: https://www.ssvibelandiaquestfest24x365.com/sovereign-gate
+- SING 13 onboarding (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=sing13-edge-onboarding
+- NSPFRNP catalog (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=mca-nspfrnp-catalog
+- BBHE Repository Standard (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=bbhe-repository-standard
 
 ## Sovereign Player — Fair Exchange
 
@@ -41,12 +41,12 @@
 
 ## SING 13 spine — 13-channel fractal pathfinding
 
-- Omniverse resonance notice — https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-resonance-notice
-- Omniversal Magnetic Matrix + Protonic-DNA (Hell-State jettison synthesis, May 15, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-omniverse-matrix
-- Omniverse precursor — Technical Analysis · Paradise Game simulation: https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-paradise-simulation
-- Integration roadmap (May 12, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-roadmap-13
-- DNA / PEFF master canon (May 11, 2026): https://psw-vibelandia-sing13.vercel.app/interfaces/whitepaper-surface.html?id=dp-master-canon
-- Legacy catalog (all links): https://psw-vibelandia-sing13.vercel.app/interfaces/look-under-the-hood-legacy-catalog.html
+- Omniverse resonance notice — https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-resonance-notice
+- Omniversal Magnetic Matrix + Protonic-DNA (Hell-State jettison synthesis, May 15, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-omniverse-matrix
+- Omniverse precursor — Technical Analysis · Paradise Game simulation: https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-paradise-simulation
+- Integration roadmap (May 12, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-roadmap-13
+- DNA / PEFF master canon (May 11, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-master-canon
+- Legacy catalog (all links): https://www.ssvibelandiaquestfest24x365.com/interfaces/look-under-the-hood-legacy-catalog.html
 
 ## QUESTFEST nest (carried surfaces)
 

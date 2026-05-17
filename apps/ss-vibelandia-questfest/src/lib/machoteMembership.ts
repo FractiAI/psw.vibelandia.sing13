@@ -91,7 +91,7 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   {
     title: 'Full catalog ·',
     body:
-      'Pass holders get every track, background play, and exports offline. The magazine is your qualifier badge; the catalog is what you unlock. Plus option to download your favorite tracks, playlists, and even the entire catalog for your very own personal use.',
+      'Pass holders get every track, background play, and exports offline (extra charge). The magazine is your qualifier badge; the catalog is what you unlock.',
   },
   {
     title: 'Honor pass · $16.18/mo',

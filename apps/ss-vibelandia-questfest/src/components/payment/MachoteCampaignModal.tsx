@@ -1,17 +1,17 @@
 import { EGS_MONTHLY_USD } from '@/lib/paymentRails';
 import {
   MACHOTE_BEEHIVE_CAMPAIGN_BLURB,
+  MACHOTE_BEEHIVE_CAVEAT,
   MACHOTE_BEEHIVE_CTA,
   MACHOTE_BEEHIVE_RESIDENCY_PATH,
   MACHOTE_BEEHIVE_RESIDENCY_TITLE,
   MACHOTE_CAMPAIGN_CTA,
   MACHOTE_CAMPAIGN_EYEBROW,
-  MACHOTE_CAMPAIGN_LEDE,
   MACHOTE_CAMPAIGN_REASONS,
+  MACHOTE_CAMPAIGN_TITLE,
   MACHOTE_MAGAZINE_COVER_ALT,
   MACHOTE_MAGAZINE_COVER_SRC,
   MACHOTE_MAGAZINE_NAME,
-  MACHOTE_MEMBERS_PASS_TITLE,
   machoteMagazineFollowUrl,
 } from '@/lib/machoteMembership';
 
@@ -52,14 +52,16 @@ export function MachoteCampaignModal({ open, onClose, onGetPass }: MachoteCampai
         />
         <p className="modal-eyebrow-warm">{MACHOTE_CAMPAIGN_EYEBROW}</p>
         <h2 id="machote-campaign-title" className="modal-title modal-title--warm">
-          {MACHOTE_MEMBERS_PASS_TITLE}
+          {MACHOTE_CAMPAIGN_TITLE}
         </h2>
         <p className="modal-body modal-body--warm machote-campaign-lede">
-          <strong>Not the magazine for sale.</strong> {MACHOTE_CAMPAIGN_LEDE}{' '}
+          A followers-only special to stream our{' '}
+          <strong>Master Music Catalog of Holographic Reno Swamp Beats Caliente</strong>. Follow{' '}
           <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
             {MACHOTE_MAGAZINE_NAME}
           </a>{' '}
-          — then <strong>${EGS_MONTHLY_USD.toFixed(2)}/mo</strong> honor pass unlocks the catalog (not the cover).
+          to qualify — then <strong>${EGS_MONTHLY_USD.toFixed(2)}/mo</strong> honor pass unlocks the entire living,
+          constantly expanding catalog.
         </p>
         <ol className="machote-campaign-reasons">
           {MACHOTE_CAMPAIGN_REASONS.map((r, i) => (
@@ -67,14 +69,28 @@ export function MachoteCampaignModal({ open, onClose, onGetPass }: MachoteCampai
               <span className="machote-campaign-num">{i + 1}</span>
               <div>
                 <strong>{r.title}</strong>
-                <p>{r.body}</p>
+                <p>
+                  {r.body}
+                  {r.footerLinkLabel ? (
+                    <>
+                      {' '}
+                      <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
+                        {r.footerLinkLabel}
+                      </a>
+                      .
+                    </>
+                  ) : null}
+                </p>
               </div>
             </li>
           ))}
         </ol>
         <aside className="machote-campaign-beehive">
           <p className="modal-body modal-body--warm" style={{ margin: 0 }}>
-            <strong>New · Layer 9.</strong> {MACHOTE_BEEHIVE_RESIDENCY_TITLE} — {MACHOTE_BEEHIVE_CAMPAIGN_BLURB}
+            <strong>New ·</strong> {MACHOTE_BEEHIVE_RESIDENCY_TITLE} — {MACHOTE_BEEHIVE_CAMPAIGN_BLURB}
+          </p>
+          <p className="modal-body modal-body--warm machote-campaign-beehive-caveat" style={{ margin: '0.55rem 0 0' }}>
+            <strong>Caveat.</strong> {MACHOTE_BEEHIVE_CAVEAT}
           </p>
           <a className="voxel-btn voxel-btn--ghost-warm machote-campaign-beehive__cta" href={MACHOTE_BEEHIVE_RESIDENCY_PATH}>
             {MACHOTE_BEEHIVE_CTA}

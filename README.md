@@ -42,6 +42,7 @@ Exclusively for **Machote Moderno Magazine** members — targeting the **0.001%*
 |---|---|
 | **Old School Protocol** | **Interested party nodes contact [PL Taino](mailto:valetpru@gmail.com?subject=Goldilocks%20Syntheverse%20Beehive%20Residency%20%E2%80%94%20interested%20node) directly** — no corporate intake funnel. |
 | **One line** | **Goldilocks Beehive Residency** offers an **EcoReset** to your place — **2-week test drive** for all parties to gauge resonance; scale to a **month**, a **season**, or **longer** when the hive hums. |
+| **Caveat** | **Not** pet sitting, house sitting, or free labor for residency — an **EcoReset** anchoring the **hydrogen line** and **EGS fractal constant** by hosting the **Sonic Ship** and its benefits **immediately**, like a beehive. |
 | **Calendar** | Open slots for the **rest of 2026** — fills very fast; don't hesitate if the message resonates. |
 | **Walkthrough** | [`interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) · nest guide: [`interfaces/nesting/nest-goldilocks-beehive.html`](interfaces/nesting/nest-goldilocks-beehive.html) |
 

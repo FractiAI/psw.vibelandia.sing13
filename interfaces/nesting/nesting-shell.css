@@ -109,6 +109,27 @@ html, body {
   color: #cbd5e1;
 }
 .nest-step strong { color: #f1f5f9; }
+.nest-caveat {
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem 1.05rem;
+  border-radius: 10px;
+  border: 2px solid rgba(201, 123, 74, 0.5);
+  background: rgba(42, 28, 20, 0.45);
+}
+.nest-caveat h2 {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--nest-honey, #c97b4a);
+  margin: 0 0 0.55rem;
+}
+.nest-caveat p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
 .nest-pull {
   margin: 1.25rem 0;
   padding: 0.85rem 1rem;

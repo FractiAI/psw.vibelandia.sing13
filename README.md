@@ -15,7 +15,7 @@
 | **Onboarding** | Single-read edge file (SING 13 specific) | `SING13_EDGE_ONBOARDING.md` |
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
-| **QUESTFEST surface** | Hub + **9-layer nesting ladder** (plain-language guides) + **Goldilocks Synthrverse Beehive Residency** + ETCon + press + Look at the Sun / Under the hood + FractiAI + Valet Pru + i18n + assets | `interfaces/` · `interfaces/nesting/` |
+| **QUESTFEST surface** | Hub + **9-layer nesting ladder** (plain-language guides) + **Goldilocks Syntheverse Beehive Residency** + ETCon + press + Look at the Sun / Under the hood + FractiAI + Valet Pru + i18n + assets | `interfaces/` · `interfaces/nesting/` |
 | **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock, Libretto log, **Master Music Catalog** honor pass ($16.18/mo EGS φ — **not the magazine for sale**; follow **Machote Moderno Magazine** to qualify, then honor attestation → **30 calendar days** on this browser), single-active-stream lock, **background audio for members/captain only**, playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · bundle: `interfaces/questfest-bridge/` (`npm run build:questfest-bridge`) |
 | **Lite-edge APIs** | Boarding + export JWTs (shared `api/honor-attest.js`), per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
 | **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper | `docs/` |
@@ -34,14 +34,14 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via BroadcastChannel (same tab) + `/api/heartbeat` (cross-device; Upstash Redis when env is set).
 
-### Goldilocks Synthrverse Beehive Residency (Layer 9 · Machote members)
+### Goldilocks Syntheverse Beehive Residency (Layer 9 · Machote members)
 
 Exclusively for **Machote Moderno Magazine** members — targeting the **0.001%**. Invite the ecosystem back in after the fortress gets heavy: not another asset manager, a **living residency** nested inside SING 13.
 
 | Item | Detail |
 |---|---|
-| **Old School Protocol** | **Interested party nodes contact [PL Taino](mailto:valetpru@gmail.com?subject=Goldilocks%20Synthrverse%20Beehive%20Residency%20%E2%80%94%20interested%20node) directly** — no corporate intake funnel. |
-| **Terms** | **2-week test drive** for all parties to gauge resonance; scale to a **month**, a **season**, or **longer** by mutual yes. |
+| **Old School Protocol** | **Interested party nodes contact [PL Taino](mailto:valetpru@gmail.com?subject=Goldilocks%20Syntheverse%20Beehive%20Residency%20%E2%80%94%20interested%20node) directly** — no corporate intake funnel. |
+| **One line** | **Goldilocks Beehive Residency** offers an **EcoReset** to your place — **2-week test drive** for all parties to gauge resonance; scale to a **month**, a **season**, or **longer** when the hive hums. |
 | **Calendar** | Open slots for the **rest of 2026** — fills very fast; don't hesitate if the message resonates. |
 | **Walkthrough** | [`interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) · nest guide: [`interfaces/nesting/nest-goldilocks-beehive.html`](interfaces/nesting/nest-goldilocks-beehive.html) |
 
@@ -51,7 +51,7 @@ Requires magazine follow + active catalog honor pass. Bookings / residency signa
 
 Outermost → innermost on the hub (**YOU ARE HERE** marks Layer 9):
 
-1. Basenet · genesis → 2. Syntheverse → 3. Sonic Singularity → 4. Wrong Side of Town → 5. Man cave mirror → 6. QUESTFEST · Puerto Reno → 7. DPH-GPU → 8. SING 13 · cloud skin → **9. Goldilocks Synthrverse Beehive Residency**
+1. Basenet · genesis → 2. Syntheverse → 3. Sonic Singularity → 4. Wrong Side of Town → 5. Man cave mirror → 6. QUESTFEST · Puerto Reno → 7. DPH-GPU → 8. SING 13 · cloud skin → **9. Goldilocks Syntheverse Beehive Residency**
 
 Hub ladder: [`interfaces/vibelandia-questfest.html#qf-nest-section`](interfaces/vibelandia-questfest.html#qf-nest-section). Each layer has an expanded guide under `interfaces/nesting/nest-*.html`.
 
@@ -95,7 +95,7 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **Landing → QUESTFEST:** `/` redirects to [`/interfaces/vibelandia-questfest.html`](interfaces/vibelandia-questfest.html)
 - **QUESTFEST short path:** `/questfest`
 - **Nesting ladder (9 layers):** [`/interfaces/vibelandia-questfest.html#qf-nest-section`](interfaces/vibelandia-questfest.html#qf-nest-section)
-- **Goldilocks Synthrverse Beehive Residency:** [`/interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) — manifesto, Old School Protocol (contact PL Taino), 2-week test drive terms, 2026 calendar
+- **Goldilocks Syntheverse Beehive Residency:** [`/interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) — manifesto, Old School Protocol (contact PL Taino), 2-week test drive terms, 2026 calendar
 - **Master Music Catalog pass (checkout):** [`/interfaces/questfest-bridge/#/bridge?checkout=1`](interfaces/questfest-bridge/) — **$16.18/mo** honor pass (catalog access; magazine is the qualifier badge). Hub CTA: **Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass**.
 - **QUESTFEST Bridge (Sovereign Player):** [`/interfaces/questfest-bridge/#/`](interfaces/questfest-bridge/) · **`/sovereign-gate`** → same entry
 - **Look at the Sun:** [`interfaces/look-at-the-sun.html`](interfaces/look-at-the-sun.html) · **Under the hood:** [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html)
@@ -162,4 +162,4 @@ Open `http://localhost:5173/interfaces/questfest-bridge/#/` (matches Vite `base`
 
 ---
 
-**NSPFRNP ⊃ SING 13 ⊃ 9-layer nest ⊃ Goldilocks Synthrverse Beehive ⊃ Master Music Catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹**
+**NSPFRNP ⊃ SING 13 ⊃ 9-layer nest ⊃ Goldilocks Syntheverse Beehive ⊃ Master Music Catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹**

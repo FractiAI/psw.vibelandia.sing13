@@ -13,7 +13,7 @@ export const MACHOTE_CATALOG_TITLE = MACHOTE_MASTER_CATALOG_TITLE;
 
 export const MACHOTE_CATALOG_SUBTITLE = "Hero Jo's Golden Bachdoor Hit Factory";
 
-export const MACHOTE_BEEHIVE_RESIDENCY_TITLE = 'Goldilocks Synthrverse Beehive Residency';
+export const MACHOTE_BEEHIVE_RESIDENCY_TITLE = 'Goldilocks Syntheverse Beehive Residency';
 
 export const MACHOTE_BEEHIVE_RESIDENCY_TAGLINE =
   'Machote members only · call PL Taino direct · top 0.001%';
@@ -21,7 +21,7 @@ export const MACHOTE_BEEHIVE_RESIDENCY_TAGLINE =
 export const MACHOTE_BEEHIVE_PL_TAINO_EMAIL = 'valetpru@gmail.com';
 
 export const MACHOTE_BEEHIVE_MAILTO =
-  'mailto:valetpru@gmail.com?subject=Goldilocks%20Synthrverse%20Beehive%20Residency%20%E2%80%94%20interested%20node';
+  'mailto:valetpru@gmail.com?subject=Goldilocks%20Syntheverse%20Beehive%20Residency%20%E2%80%94%20interested%20node';
 
 export const MACHOTE_BEEHIVE_RESIDENCY_PATH = '/interfaces/goldilocks-beehive-residency.html';
 
@@ -70,7 +70,7 @@ export const MACHOTE_BEEHIVE_OLD_SCHOOL_PROTOCOL =
   'Old School Protocol: if this speaks to you, contact PL Taino direct. No forms, no chatbot.';
 
 export const MACHOTE_BEEHIVE_TERMS_SUMMARY =
-  'Start with a two-week test drive so everyone can feel if it fits. Then extend to a month, a season, or longer — only if both sides want it.';
+  'Goldilocks Beehive Residency offers an EcoReset to your place — a two-week test drive for all parties to gauge resonance, with room to scale to a month, a season, or longer when the hive hums.';
 
 export const MACHOTE_CAMPAIGN_REASONS: { title: string; body: string }[] = [
   {

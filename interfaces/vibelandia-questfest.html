@@ -398,88 +398,50 @@
     .nest-ladder > li:nth-child(8) { margin-left: 3.15rem; }
     .nest-ladder > li:nth-child(9) { margin-left: 3.6rem; }
 
+    .nest-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem 0.6rem;
+    }
     .nest-card__link {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      grid-template-areas:
-        'title cta'
-        'badge cta';
-      gap: 0.2rem 0.75rem;
-      align-items: center;
-      width: 100%;
-      padding: 0.7rem 0.85rem;
-      border-radius: 10px;
-      border: 1px solid rgba(212, 175, 55, 0.38);
-      background: rgba(12, 16, 24, 0.85);
-      text-decoration: none;
-      color: #e2e8f0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-      transition: border-color 0.15s ease, background 0.15s ease, transform 0.12s ease;
-      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--foam);
+      text-decoration: underline;
+      text-decoration-color: rgba(45, 212, 191, 0.65);
+      text-underline-offset: 3px;
+      transition: color 0.12s ease, text-decoration-color 0.12s ease;
     }
     .nest-card__link:hover {
-      border-color: var(--gold);
-      background: rgba(212, 175, 55, 0.1);
-      color: var(--gold-hi);
-      transform: translateX(2px);
+      color: #67e8f9;
+      text-decoration-color: #67e8f9;
     }
     .nest-card__link:focus-visible {
       outline: 2px solid var(--foam);
-      outline-offset: 2px;
-    }
-    .nest-card__title {
-      grid-area: title;
-      font-size: 0.86rem;
-      font-weight: 600;
-      line-height: 1.35;
-    }
-    .nest-card__cta {
-      grid-area: cta;
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--foam);
-      white-space: nowrap;
-      padding: 0.35rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(45, 212, 191, 0.35);
-      background: rgba(45, 212, 191, 0.08);
-    }
-    .nest-card__link:hover .nest-card__cta {
-      color: #0a0f1a;
-      background: var(--foam);
-      border-color: var(--foam);
+      outline-offset: 3px;
+      border-radius: 2px;
     }
     .nest-card__badge {
-      grid-area: badge;
-      display: none;
-      font-size: 0.6rem;
+      font-size: 0.62rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--gold-hi);
     }
-    .nest-card--here .nest-card__link {
-      border-color: var(--gold);
-      background: linear-gradient(105deg, rgba(212, 175, 55, 0.16) 0%, rgba(12, 16, 24, 0.9) 55%);
-      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2), 0 4px 14px rgba(0, 0, 0, 0.35);
+    .nest-ladder-extra {
+      margin: 1rem 0 0;
+      font-size: 0.9rem;
     }
-    .nest-card--here .nest-card__badge {
-      display: block;
+    .nest-ladder-extra a {
+      font-weight: 600;
+      color: var(--foam);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
-    .nest-card--here .nest-card__cta {
-      color: #1a120c;
-      background: var(--gold);
-      border-color: var(--gold);
-    }
-    .nest-card--here .nest-card__link:hover .nest-card__cta {
-      background: var(--gold-hi);
-      border-color: var(--gold-hi);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .nest-card__link:hover { transform: none; }
+    .nest-ladder-extra a:hover {
+      color: #67e8f9;
     }
 
     .channel-verse {
@@ -721,8 +683,8 @@
         </li>
       </ol>
       <aside class="machote-campaign-hub__beehive">
-        <p data-i18n-html="qf.campaignBeehiveHtml"><strong>New · Layer 9.</strong> <strong>Goldilocks Synthrverse Beehive Residency</strong> — Machote members only. <strong>Old School Protocol:</strong> interested party nodes contact <strong>PL Taino</strong> directly. <strong>2-week test drive</strong> for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.</p>
-        <a class="btn btn-ghost" href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta">Goldilocks Synthrverse Beehive · walkthrough</a>
+        <p data-i18n-html="qf.campaignBeehiveHtml"><strong>New · Layer 9.</strong> <strong>Goldilocks Syntheverse Beehive Residency</strong> — Machote members only. <strong>Old School Protocol:</strong> interested party nodes contact <strong>PL Taino</strong> directly. <strong>2-week test drive</strong> for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.</p>
+        <a class="btn btn-ghost" href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta">Goldilocks Syntheverse Beehive · walkthrough</a>
       </aside>
       <div class="machote-campaign-hub__actions">
         <a class="btn btn-primary" id="machote-campaign-cta" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.campaignCta">Get the catalog honor pass · $16.18/mo</a>
@@ -755,67 +717,40 @@
 
     <section id="qf-nest-section" aria-labelledby="qf-nest-h2">
       <h2 id="qf-nest-h2" data-i18n="qf.nestHead">YOU ARE HERE</h2>
-      <p class="lede-block" data-i18n-html="qf.nestLedeHtml"><strong>SING 13</strong> is the cloud mirror; <strong>Layer 9</strong> adds the Goldilocks Synthrverse Beehive Residency — Old School Protocol, contact PL Taino, 2-week test drive.</p>
+      <p class="lede-block" data-i18n-html="qf.nestLedeHtml"><strong>SING 13</strong> is the cloud mirror; <strong>Layer 9</strong> adds the Goldilocks Syntheverse Beehive Residency — Old School Protocol, contact PL Taino, 2-week test drive.</p>
       <p class="nest-ladder-intro" data-i18n="qf.nestTapHint">Select any layer below — each opens an expanded plain-language guide.</p>
       <ol class="nest-ladder" role="list">
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-basenet-genesis.html">
-            <span class="nest-card__title" data-i18n="qf.nest7">Basenet · genesis</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-basenet-genesis.html" data-i18n="qf.nest7">Basenet · the ground floor</a>
         </li>
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-syntheverse.html">
-            <span class="nest-card__title" data-i18n="qf.nest6">Syntheverse</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-syntheverse.html" data-i18n="qf.nest6">Syntheverse · where story meets code</a>
         </li>
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-sonic-singularity.html">
-            <span class="nest-card__title" data-i18n="qf.nest5">Sonic Singularity</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-sonic-singularity.html" data-i18n="qf.nest5">Sonic Singularity · sound leads</a>
         </li>
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-wrong-side.html">
-            <span class="nest-card__title" data-i18n="qf.nest4">Wrong Side of Town</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-wrong-side.html" data-i18n="qf.nest4">Wrong Side of Town · raw truth</a>
         </li>
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-man-cave-restroom.html">
-            <span class="nest-card__title" data-i18n="qf.nest3">Man cave · men's restroom · nested mirrored theater</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-man-cave-restroom.html" data-i18n="qf.nest3">Man cave restroom mirror</a>
         </li>
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-questfest-puerto-reno.html">
-            <span class="nest-card__title" data-i18n="qf.nest2">Sonic Ship SS Vibelandia QUESTFEST 24×365 · Puerto Reno</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-questfest-puerto-reno.html" data-i18n="qf.nest2">QUESTFEST ship · Puerto Reno · 24×365</a>
         </li>
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-dph-gpu.html">
-            <span class="nest-card__title" data-i18n="qf.nestDph">Digital Pru Holographic GPU (DPH-GPU)</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-dph-gpu.html" data-i18n="qf.nestDph">Broadcast machinery layer (DPH-GPU)</a>
         </li>
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-sing13.html">
-            <span class="nest-card__title" data-i18n="qf.nest1">SING 13 · Internet cloud skin</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-sing13.html" data-i18n="qf.nest1">SING 13 · this website</a>
         </li>
         <li class="nest-card nest-card--here">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-goldilocks-beehive.html" aria-label="Goldilocks Beehive Residency — latest layer. Open guide.">
-            <span class="nest-card__title" data-i18n="qf.nest0">Goldilocks Synthrverse Beehive Residency · members · 0.001%</span>
-            <span class="nest-card__badge" data-i18n="qf.nestLatestLayer">Latest layer</span>
-            <span class="nest-card__cta" data-i18n="qf.nestOpenLayer">View this layer</span>
-          </a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-goldilocks-beehive.html" data-i18n="qf.nest0">Goldilocks Beehive Residency · members only</a>
+          <span class="nest-card__badge" data-i18n="qf.nestLatestLayer">Latest layer</span>
         </li>
       </ol>
-      <p class="nest-ladder-intro" style="margin-top:1rem;margin-bottom:0">
-        <a class="btn btn-ghost" href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta" style="display:inline-block;text-decoration:none">Goldilocks Synthrverse Beehive · walkthrough</a>
+      <p class="nest-ladder-extra">
+        <a href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta">Goldilocks Syntheverse Beehive · walkthrough</a>
       </p>
     </section>
 

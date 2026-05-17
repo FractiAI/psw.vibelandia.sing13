@@ -2,6 +2,9 @@
 
 export const MACHOTE_MAGAZINE_NAME = 'Machote Moderno Magazine';
 
+/** Collector's edition cover — hub campaign popup & bridge modal. */
+export const MACHOTE_MAGAZINE_COVER_SRC = '/interfaces/assets/machote-moderno-magazine-cover.png';
+
 export const MACHOTE_MEMBERS_PASS_TITLE = 'Machote Moderno Magazine · Members-only pass';
 
 export const MACHOTE_CATALOG_TITLE = 'Reno Holographic Swamp Beats Caliente Catalog';

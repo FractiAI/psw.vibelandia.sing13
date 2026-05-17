@@ -1,6 +1,7 @@
 import { EGS_MONTHLY_USD } from '@/lib/paymentRails';
 import {
   MACHOTE_CAMPAIGN_REASONS,
+  MACHOTE_MAGAZINE_COVER_SRC,
   MACHOTE_MAGAZINE_NAME,
   MACHOTE_MEMBERS_PASS_TITLE,
   machoteMagazineFollowUrl,
@@ -32,6 +33,15 @@ export function MachoteCampaignModal({ open, onClose, onGetPass }: MachoteCampai
         >
           ×
         </button>
+        <img
+          className="machote-campaign-cover"
+          src={MACHOTE_MAGAZINE_COVER_SRC}
+          width={480}
+          height={640}
+          alt="Machote Moderno Magazine cover — SS Vibelandia Questfest collector's edition, $16.18 USD members-only pass"
+          loading="eager"
+          decoding="async"
+        />
         <p className="modal-eyebrow-warm">Machote Moderno · members-only</p>
         <h2 id="machote-campaign-title" className="modal-title modal-title--warm">
           {MACHOTE_MEMBERS_PASS_TITLE}

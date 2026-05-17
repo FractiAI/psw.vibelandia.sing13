@@ -493,6 +493,17 @@
       background: rgba(6, 8, 13, 0.82);
     }
     .machote-campaign-hub[hidden] { display: none !important; }
+    .machote-campaign-hub__cover {
+      display: block;
+      width: 100%;
+      max-height: min(42vh, 280px);
+      object-fit: contain;
+      object-position: center top;
+      margin: 0 0 0.85rem;
+      border-radius: 8px;
+      border: 2px solid rgba(212, 175, 55, 0.45);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    }
     .machote-campaign-hub__card {
       position: relative;
       max-width: min(520px, 100%);
@@ -584,6 +595,15 @@
   <div id="machote-campaign" class="machote-campaign-hub" role="dialog" aria-modal="true" aria-labelledby="machote-campaign-title" hidden>
     <div class="machote-campaign-hub__card">
       <button type="button" class="machote-campaign-hub__close" id="machote-campaign-close" aria-label="Close">×</button>
+      <img
+        class="machote-campaign-hub__cover"
+        src="assets/machote-moderno-magazine-cover.png"
+        width="480"
+        height="640"
+        alt="Machote Moderno Magazine cover — SS Vibelandia Questfest collector's edition, $16.18 USD members-only pass"
+        loading="eager"
+        decoding="async"
+      />
       <p class="machote-campaign-hub__eyebrow" data-i18n="qf.campaignEyebrow">Machote Moderno · members-only</p>
       <h2 id="machote-campaign-title" class="machote-campaign-hub__title" data-i18n="qf.campaignTitle">Machote Moderno Magazine · Members-only pass</h2>
       <p class="machote-campaign-hub__lede" data-i18n-html="qf.campaignLede">Top 3 reasons you want the pass — follow <a href="https://www.facebook.com/profile.php?id=61587003343289" target="_blank" rel="noopener noreferrer">Machote Moderno Magazine</a> and lock in <strong>$16.18/month</strong>.</p>

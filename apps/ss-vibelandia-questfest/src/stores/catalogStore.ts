@@ -26,6 +26,10 @@ import {
   scanDirectoryHandle,
   titleFromFileName,
 } from '@/lib/deviceMediaScan';
+import {
+  classifyFilesAgainstCatalog,
+  type ImportDuplicate,
+} from '@/lib/mediaImportPreflight';
 
 type View = 'catalog' | 'dj';
 
@@ -66,7 +70,11 @@ interface CatalogState {
     files: File[],
     opts?: { artist?: string; description?: string; title?: string; playlistIds?: string[] },
   ) => Promise<{ added: number; skipped: number }>;
-  scanDeviceLibrary: (opts?: { pickFolder?: boolean }) => Promise<{ added: number; skipped: number }>;
+  scanDeviceLibrary: (opts?: { pickFolder?: boolean }) => Promise<{
+    added: number;
+    skipped: number;
+    duplicates: ImportDuplicate[];
+  }>;
   deleteTrack: (trackId: string) => Promise<void>;
   hydrate: () => Promise<void>;
   persist: () => void;
@@ -430,8 +438,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       title: meta.title,
     });
     if (result.added === 0) {
-      const keys = new Set(Object.values(get().tracks).map((t) => t.sourceKey).filter(Boolean));
-      throw new Error('duplicate');
+      throw new Error('already_uploaded');
     }
     const latest = Object.values(get().tracks).sort(
       (a, b) => (b.uploadedAt ?? '').localeCompare(a.uploadedAt ?? ''),
@@ -490,19 +497,24 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     let handle = await loadDeviceDirHandle();
     if (opts?.pickFolder || !handle) {
       const picked = await pickMediaDirectory();
-      if (!picked) return { added: 0, skipped: 0 };
+      if (!picked) return { added: 0, skipped: 0, duplicates: [] };
       handle = picked;
       await saveDeviceDirHandle(handle);
     } else {
       const perm = await handle.queryPermission({ mode: 'read' });
       if (perm !== 'granted') {
         const req = await handle.requestPermission({ mode: 'read' });
-        if (req !== 'granted') return { added: 0, skipped: 0 };
+        if (req !== 'granted') return { added: 0, skipped: 0, duplicates: [] };
       }
     }
 
     const files = await scanDirectoryHandle(handle);
-    return get().importMediaFiles(files, { playlistIds: [MASTER_PLAYLIST_ID] });
+    const { newFiles, duplicates } = classifyFilesAgainstCatalog(files, get().tracks);
+    if (!newFiles.length) {
+      return { added: 0, skipped: duplicates.length, duplicates };
+    }
+    const result = await get().importMediaFiles(newFiles, { playlistIds: [MASTER_PLAYLIST_ID] });
+    return { ...result, duplicates };
   },
 
   deleteTrack: async (trackId) => {

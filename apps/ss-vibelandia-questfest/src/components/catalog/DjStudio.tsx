@@ -3,13 +3,21 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { collectMediaFiles } from '@/lib/deviceMediaScan';
+import {
+  classifyFilesAgainstCatalog,
+  formatAllDuplicatesMessage,
+  formatPartialDuplicatesMessage,
+} from '@/lib/mediaImportPreflight';
 
 interface DjStudioProps {
   onUploadSuccess?: (trackId: string) => void;
 }
 
+type MsgKind = 'info' | 'success' | 'error';
+
 export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const hydrated = useCatalogStore((s) => s.hydrated);
+  const tracks = useCatalogStore((s) => s.tracks);
   const importMediaFiles = useCatalogStore((s) => s.importMediaFiles);
   const scanDeviceLibrary = useCatalogStore((s) => s.scanDeviceLibrary);
   const deleteTrack = useCatalogStore((s) => s.deleteTrack);
@@ -26,6 +34,12 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
+  const [msgKind, setMsgKind] = useState<MsgKind>('info');
+
+  const showMsg = (text: string, kind: MsgKind) => {
+    setMsg(text);
+    setMsgKind(kind);
+  };
 
   const handleDescriptionChange = (value: string) => {
     setDescription(value.slice(0, TRACK_DESCRIPTION_MAX));
@@ -38,36 +52,47 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
 
   const runImport = async (files: File[], opts?: { title?: string }) => {
     if (!files.length) {
-      setMsg('No audio or video files found.');
+      showMsg('No audio or video files found.', 'error');
       return;
     }
+
+    const { newFiles, duplicates } = classifyFilesAgainstCatalog(files, tracks);
+
+    if (!newFiles.length) {
+      showMsg(formatAllDuplicatesMessage(duplicates), 'info');
+      resetFilePicker();
+      return;
+    }
+
     setBusy(true);
     setMsg(null);
-    setProgress(`Importing 0 / ${files.length}…`);
+    setProgress(
+      duplicates.length
+        ? `Checked: ${duplicates.length} already in catalog · uploading ${newFiles.length} new…`
+        : `Uploading ${newFiles.length} file${newFiles.length === 1 ? '' : 's'}…`,
+    );
+
     try {
-      const { added, skipped } = await importMediaFiles(files, {
+      const { added } = await importMediaFiles(newFiles, {
         title: opts?.title,
         artist: artist.trim() || DEFAULT_ARTIST,
         description: description.trim() || undefined,
         playlistIds: [MASTER_PLAYLIST_ID],
       });
       setActivePlaylist(MASTER_PLAYLIST_ID);
-      const tracks = listAllTracks();
-      const latest = tracks.sort((a, b) => (b.uploadedAt ?? '').localeCompare(a.uploadedAt ?? ''))[0];
+      const allTracks = listAllTracks();
+      const latest = allTracks.sort((a, b) => (b.uploadedAt ?? '').localeCompare(a.uploadedAt ?? ''))[0];
 
       if (added === 0) {
-        setMsg(
-          skipped > 0
-            ? `No new files added (${skipped} already in your catalog).`
-            : 'Import failed — check browser storage or try smaller files.',
+        showMsg(
+          'Nothing new was saved. If you expected a new track, free browser storage or try a smaller file.',
+          'error',
         );
         setProgress(null);
         return;
       }
 
-      setMsg(
-        `Added ${added} track${added === 1 ? '' : 's'}${skipped ? ` · ${skipped} skipped (duplicates)` : ''}. Open Listen to play.`,
-      );
+      showMsg(formatPartialDuplicatesMessage(added, duplicates), 'success');
       setProgress(null);
       setTitle('');
       setArtist(DEFAULT_ARTIST);
@@ -76,10 +101,11 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       if (latest?.id) onUploadSuccess?.(latest.id);
     } catch (e) {
       const err = e instanceof Error ? e.message : '';
-      setMsg(
+      showMsg(
         err === 'storage_failed'
           ? 'Could not save to device storage (quota or permission). Free space and try again.'
           : 'Upload failed. Try again or fewer files at once.',
+        'error',
       );
       setProgress(null);
     } finally {
@@ -89,13 +115,21 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
 
   const handleSingleUpload = async () => {
     if (!file) {
-      setMsg('Pick an audio or video file first.');
+      showMsg('Pick an audio or video file first.', 'error');
       return;
     }
     if (!title.trim()) {
-      setMsg('Enter a title — that is what the player shows when playing.');
+      showMsg('Enter a title — that is what the player shows when playing.', 'error');
       return;
     }
+
+    const { duplicates } = classifyFilesAgainstCatalog([file], tracks);
+    if (duplicates.length) {
+      showMsg(formatAllDuplicatesMessage(duplicates), 'info');
+      resetFilePicker();
+      return;
+    }
+
     await runImport([file], { title: title.trim() });
   };
 
@@ -111,25 +145,37 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     setMsg(null);
     setProgress('Reading folder…');
     try {
-      const { added, skipped } = await scanDeviceLibrary({ pickFolder: true });
+      const { added, duplicates } = await scanDeviceLibrary({ pickFolder: true });
       setActivePlaylist(MASTER_PLAYLIST_ID);
-      const tracks = listAllTracks();
-      const latest = tracks.sort((a, b) => (b.uploadedAt ?? '').localeCompare(a.uploadedAt ?? ''))[0];
+      const allTracks = listAllTracks();
+      const latest = allTracks.sort((a, b) => (b.uploadedAt ?? '').localeCompare(a.uploadedAt ?? ''))[0];
+
       if (added === 0) {
-        setMsg(skipped > 0 ? 'All files in that folder are already in your catalog.' : 'No media files found in folder.');
+        showMsg(
+          duplicates.length
+            ? formatAllDuplicatesMessage(duplicates)
+            : 'No media files found in that folder, or import was cancelled.',
+          duplicates.length ? 'info' : 'error',
+        );
       } else {
-        setMsg(`Added ${added} from folder${skipped ? ` · ${skipped} duplicates skipped` : ''}. Open Listen to play.`);
+        showMsg(formatPartialDuplicatesMessage(added, duplicates), 'success');
         if (latest?.id) onUploadSuccess?.(latest.id);
       }
     } catch {
-      setMsg('Folder import failed or was cancelled.');
+      showMsg('Folder import failed or was cancelled.', 'error');
     } finally {
       setProgress(null);
       setBusy(false);
     }
   };
 
-  const tracks = listAllTracks();
+  const catalogTracks = listAllTracks();
+  const msgClass =
+    msgKind === 'error'
+      ? 'spotify-dj-msg spotify-dj-msg--error'
+      : msgKind === 'success'
+        ? 'spotify-dj-msg spotify-dj-msg--success'
+        : 'spotify-dj-msg spotify-dj-msg--info';
 
   return (
     <section className="spotify-main-panel spotify-dj">
@@ -139,7 +185,8 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           <h2 className="spotify-main-title">Add tracks</h2>
           <p className="spotify-main-desc">
             Single file with a custom title, or import many at once. Everything lands in{' '}
-            <strong>Master catalog</strong> — then open <strong>Listen</strong>.
+            <strong>Master catalog</strong> — then open <strong>Listen</strong>. Files you already
+            uploaded are detected before upload starts.
           </p>
         </div>
       </header>
@@ -206,7 +253,8 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         <article className="spotify-dj-card spotify-dj-card--wide">
           <h3>2 · Many files at once</h3>
           <p className="spotify-main-desc" style={{ marginBottom: '0.75rem' }}>
-            Uses each file name as the track title. Duplicates are skipped automatically.
+            Uses each file name as the track title. Files already in your catalog are skipped with a
+            clear note — not treated as an error.
           </p>
           <label className="spotify-field">
             Select multiple audio / video files
@@ -232,15 +280,15 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         {(progress || msg) && (
           <article className="spotify-dj-card spotify-dj-card--wide">
             {progress && <p className="spotify-dj-msg">{progress}</p>}
-            {msg && <p className="spotify-dj-msg">{msg}</p>}
+            {msg && <p className={msgClass}>{msg}</p>}
           </article>
         )}
 
-        {tracks.length > 0 && (
+        {catalogTracks.length > 0 && (
           <article className="spotify-dj-card spotify-dj-card--wide">
-            <h3>Your catalog ({tracks.length})</h3>
+            <h3>Your catalog ({catalogTracks.length})</h3>
             <ol className="spotify-dj-order">
-              {tracks.map((tr, idx) => (
+              {catalogTracks.map((tr, idx) => (
                 <li key={tr.id} className="spotify-dj-order-row">
                   <span className="spotify-dj-order-idx">{idx + 1}</span>
                   <span className="spotify-dj-order-title">{tr.title}</span>

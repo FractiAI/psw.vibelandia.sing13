@@ -200,7 +200,7 @@ export function BridgePage() {
         onClose={() => setBulkExportOpen(false)}
         onNeedPass={() => {
           setBulkExportOpen(false);
-          setBoardingOpen(true);
+          useMediaChromeStore.getState().setFairOpen(true);
         }}
         onCaptainRequest={() => {
           setBulkExportOpen(false);

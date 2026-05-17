@@ -58,19 +58,20 @@ export function BridgePage() {
   };
 
   const handleUploadSuccess = (trackId: string) => {
-    goListen();
-    setTrack(trackId);
-    setPlaying(true);
+    setDjMode(false);
+    setActivePlaylist(MASTER_PLAYLIST_ID);
+    navigate('/bridge', { replace: true });
+    window.setTimeout(() => {
+      setTrack(trackId);
+      setPlaying(true);
+    }, 0);
   };
 
   const goListen = () => {
     setDjMode(false);
+    setActivePlaylist(MASTER_PLAYLIST_ID);
     navigate('/bridge', { replace: true });
-    const st = useCatalogStore.getState();
-    if (Object.keys(st.tracks).length > 0) {
-      st.persist();
-      st.setActivePlaylist(MASTER_PLAYLIST_ID);
-    }
+    useCatalogStore.getState().persist();
   };
 
   const goPlaylists = () => {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm run build:questfest-bridge",
+  "buildCommand": "npm ci && npm run build:questfest-bridge",
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [

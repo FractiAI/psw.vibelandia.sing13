@@ -73,19 +73,17 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     );
 
     try {
-      const { added } = await importMediaFiles(newFiles, {
+      const { added, addedTrackIds } = await importMediaFiles(newFiles, {
         title: opts?.title,
         artist: artist.trim() || DEFAULT_ARTIST,
         description: description.trim() || undefined,
         playlistIds: [MASTER_PLAYLIST_ID],
       });
       setActivePlaylist(MASTER_PLAYLIST_ID);
-      const allTracks = listAllTracks();
-      const latest = allTracks.sort((a, b) => (b.uploadedAt ?? '').localeCompare(a.uploadedAt ?? ''))[0];
 
       if (added === 0) {
         showMsg(
-          'Nothing new was saved. If you expected a new track, free browser storage or try a smaller file.',
+          'Nothing new was saved on the server. Check Vercel Blob + CATALOG_UPLOAD_SECRET, or file size (max ~4.5 MB).',
           'error',
         );
         setProgress(null);
@@ -98,12 +96,13 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       setArtist(DEFAULT_ARTIST);
       setDescription('');
       resetFilePicker();
-      if (latest?.id) onUploadSuccess?.(latest.id);
+      const playId = addedTrackIds[0];
+      if (playId) onUploadSuccess?.(playId);
     } catch (e) {
       const err = e instanceof Error ? e.message : '';
       if (err === 'catalog_upload_unconfigured') {
         showMsg(
-          'Server upload is not wired yet. Add MP3s under media/catalog/tracks/ and deploy, or set VITE_CATALOG_UPLOAD_SECRET + Vercel Blob.',
+          'Server upload is not configured. On Vercel set BLOB_READ_WRITE_TOKEN and CATALOG_UPLOAD_SECRET (same value as VITE_CATALOG_UPLOAD_SECRET or captain password in the Bridge build), then redeploy.',
           'error',
         );
       } else {
@@ -166,7 +165,8 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         );
       } else {
         showMsg(formatPartialDuplicatesMessage(added, duplicates), 'success');
-        if (latest?.id) onUploadSuccess?.(latest.id);
+        const playId = result.addedTrackIds?.[0] ?? latest?.id;
+        if (playId) onUploadSuccess?.(playId);
       }
     } catch {
       showMsg('Folder import failed or was cancelled.', 'error');

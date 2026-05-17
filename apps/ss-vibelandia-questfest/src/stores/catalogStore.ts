@@ -6,14 +6,17 @@ import {
   isMasterPlaylist,
 } from '@/lib/catalogSeed';
 import {
-  deleteBlob,
-  loadBlob,
   loadCatalogJson,
   loadDeviceDirHandle,
   saveCatalogJson,
   saveDeviceDirHandle,
 } from '@/lib/catalogPersistence';
-import { fetchServerCatalog, uploadTrackToServer } from '@/lib/serverCatalog';
+import {
+  fetchServerCatalog,
+  isServerUploadConfigured,
+  uploadTrackToServer,
+} from '@/lib/serverCatalog';
+import type { CatalogSnapshot } from '@/lib/catalogTypes';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
 import {
@@ -65,7 +68,7 @@ interface CatalogState {
   importMediaFiles: (
     files: File[],
     opts?: { artist?: string; description?: string; title?: string; playlistIds?: string[] },
-  ) => Promise<{ added: number; skipped: number }>;
+  ) => Promise<{ added: number; skipped: number; addedTrackIds: string[] }>;
   scanDeviceLibrary: (opts?: { pickFolder?: boolean }) => Promise<{
     added: number;
     skipped: number;
@@ -73,7 +76,26 @@ interface CatalogState {
   }>;
   deleteTrack: (trackId: string) => Promise<void>;
   hydrate: () => Promise<void>;
+  /** Re-fetch server catalog (after upload). */
+  refreshFromServer: () => Promise<void>;
   persist: () => void;
+}
+
+function applyServerCatalog(
+  server: CatalogSnapshot,
+  saved: CatalogSnapshot | null,
+): { tracks: Record<string, TrackDef>; playlists: PlaylistDef[]; activePlaylistId: string } {
+  const base = mergeServerCatalogWithPrefs(server, saved, syncMasterPlaylistWithTracks);
+  const playlists = syncMasterPlaylistWithTracks(base.tracks, base.playlists);
+  return {
+    tracks: base.tracks,
+    playlists,
+    activePlaylistId:
+      base.activePlaylistId ||
+      playlists.find((p) => p.id === MASTER_PLAYLIST_ID)?.id ||
+      playlists[0]?.id ||
+      MASTER_PLAYLIST_ID,
+  };
 }
 
 function cloneSnapshot(s: CatalogSnapshot): CatalogSnapshot {
@@ -112,28 +134,6 @@ function syncMasterPlaylistWithTracks(
   return next;
 }
 
-async function attachBlobUrls(tracks: Record<string, TrackDef>): Promise<Record<string, TrackDef>> {
-  const next = { ...tracks };
-  await Promise.all(
-    Object.values(next).map(async (tr) => {
-      if (!tr.localMediaKey) return;
-      const blob = await loadBlob(tr.localMediaKey);
-      if (!blob) return;
-      const url = URL.createObjectURL(blob);
-      if (tr.videoSrc || fileLooksVideo(blob)) {
-        next[tr.id] = { ...tr, videoSrc: url, src: url };
-      } else {
-        next[tr.id] = { ...tr, src: url };
-      }
-    }),
-  );
-  return next;
-}
-
-function fileLooksVideo(blob: Blob): boolean {
-  return blob.type.startsWith('video/');
-}
-
 function clampDescription(text?: string): string | undefined {
   const t = text?.trim();
   if (!t) return undefined;
@@ -144,7 +144,7 @@ async function addFileAsTrack(
   file: File,
   existing: { tracks: Record<string, TrackDef>; sourceKeys: Set<string> },
   meta: { title?: string; artist?: string; description?: string; useFileNameAsTitle?: boolean },
-): Promise<TrackDef | null> {
+): Promise<{ track: TrackDef; catalog?: CatalogSnapshot } | null> {
   const sourceKey = fileSourceKey(file);
   if (existing.sourceKeys.has(sourceKey)) return null;
 
@@ -153,25 +153,27 @@ async function addFileAsTrack(
     trimmedTitle || (meta.useFileNameAsTitle ? titleFromFileName(file.name) : 'Untitled');
   const description = clampDescription(meta.description);
 
-  let track: TrackDef;
-  try {
-    track = await uploadTrackToServer(file, {
-      title: displayTitle,
-      artist: meta.artist?.trim() || DEFAULT_ARTIST,
-    });
-  } catch (e) {
-    const code = (e as Error & { code?: string }).code;
-    if (code === 'catalog_upload_unconfigured') throw new Error('catalog_upload_unconfigured');
-    throw new Error('storage_failed');
+  if (!isServerUploadConfigured()) {
+    const err = new Error('catalog_upload_unconfigured') as Error & { code?: string };
+    err.code = 'catalog_upload_unconfigured';
+    throw err;
   }
 
-  return {
-    ...track,
+  const { track, catalog } = await uploadTrackToServer(file, {
     title: displayTitle,
-    artist: meta.artist?.trim() || track.artist || DEFAULT_ARTIST,
-    ...(description ? { description } : {}),
-    sourceKey,
-    serverHosted: true,
+    artist: meta.artist?.trim() || DEFAULT_ARTIST,
+  });
+
+  return {
+    track: {
+      ...track,
+      title: displayTitle,
+      artist: meta.artist?.trim() || track.artist || DEFAULT_ARTIST,
+      ...(description ? { description } : {}),
+      sourceKey,
+      serverHosted: true,
+    },
+    catalog,
   };
 }
 
@@ -389,40 +391,53 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const existing = { tracks: { ...get().tracks }, sourceKeys };
     const newTracks: TrackDef[] = [];
     let skipped = 0;
+    let serverCatalog: CatalogSnapshot | undefined;
 
     for (const file of files) {
-      const track = await addFileAsTrack(file, existing, {
+      const row = await addFileAsTrack(file, existing, {
         title: opts?.title,
         artist: opts?.artist,
         description: opts?.description,
         useFileNameAsTitle: !opts?.title?.trim(),
       });
-      if (!track) {
+      if (!row) {
         skipped += 1;
         continue;
       }
+      if (row.catalog) serverCatalog = row.catalog;
+      const { track } = row;
       existing.tracks[track.id] = track;
       if (track.sourceKey) existing.sourceKeys.add(track.sourceKey);
       newTracks.push(track);
     }
 
-    if (!newTracks.length) return { added: 0, skipped };
+    if (!newTracks.length) return { added: 0, skipped, addedTrackIds: [] };
 
-    set((s) => {
-      const tracks = { ...s.tracks };
-      for (const tr of newTracks) tracks[tr.id] = tr;
-      const playlists = s.playlists.map((p) => {
-        if (!playlistIds.includes(p.id)) return p;
-        const ids = [...p.trackIds];
-        for (const tr of newTracks) {
-          if (!ids.includes(tr.id)) ids.push(tr.id);
-        }
-        return { ...p, trackIds: ids };
+    if (serverCatalog) {
+      const saved = loadCatalogJson<CatalogSnapshot>();
+      const applied = applyServerCatalog(serverCatalog, saved);
+      set({
+        tracks: applied.tracks,
+        playlists: applied.playlists,
+        activePlaylistId: applied.activePlaylistId,
       });
-      return { tracks, playlists };
-    });
+    } else {
+      set((s) => {
+        const tracks = { ...s.tracks };
+        for (const tr of newTracks) tracks[tr.id] = tr;
+        const playlists = s.playlists.map((p) => {
+          if (!playlistIds.includes(p.id)) return p;
+          const ids = [...p.trackIds];
+          for (const tr of newTracks) {
+            if (!ids.includes(tr.id)) ids.push(tr.id);
+          }
+          return { ...p, trackIds: ids };
+        });
+        return { tracks, playlists };
+      });
+    }
     get().persist();
-    return { added: newTracks.length, skipped };
+    return { added: newTracks.length, skipped, addedTrackIds: newTracks.map((t) => t.id) };
   },
 
   scanDeviceLibrary: async (opts) => {
@@ -450,8 +465,6 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   deleteTrack: async (trackId) => {
-    const tr = get().tracks[trackId];
-    if (tr?.localMediaKey && !tr.serverHosted) await deleteBlob(tr.localMediaKey);
     set((s) => {
       const { [trackId]: _, ...tracks } = s.tracks;
       return {
@@ -470,18 +483,24 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
     const server = await fetchServerCatalog();
     const saved = loadCatalogJson<CatalogSnapshot>();
-    const base = mergeServerCatalogWithPrefs(server, saved, syncMasterPlaylistWithTracks);
-    const tracks = await attachBlobUrls(base.tracks);
-    const playlists = syncMasterPlaylistWithTracks(tracks, base.playlists);
+    const applied = applyServerCatalog(server, saved);
     set({
       hydrated: true,
-      tracks,
-      playlists,
-      activePlaylistId:
-        base.activePlaylistId ||
-        playlists.find((p) => p.id === MASTER_PLAYLIST_ID)?.id ||
-        playlists[0]?.id ||
-        MASTER_PLAYLIST_ID,
+      tracks: applied.tracks,
+      playlists: applied.playlists,
+      activePlaylistId: applied.activePlaylistId,
+    });
+    get().persist();
+  },
+
+  refreshFromServer: async () => {
+    const server = await fetchServerCatalog();
+    const saved = loadCatalogJson<CatalogSnapshot>();
+    const applied = applyServerCatalog(server, saved);
+    set({
+      tracks: applied.tracks,
+      playlists: applied.playlists,
+      activePlaylistId: applied.activePlaylistId,
     });
     get().persist();
   },

@@ -29,7 +29,8 @@ export function mergeServerCatalogWithPrefs(
   localPrefs: CatalogSnapshot | null,
   syncMaster: (tracks: Record<string, TrackDef>, playlists: PlaylistDef[]) => PlaylistDef[],
 ): CatalogSnapshot {
-  const tracks = { ...server.tracks };
+  const localTracks = localPrefs ? extractLocalTracks(localPrefs) : {};
+  const tracks = { ...server.tracks, ...localTracks };
   let playlists = server.playlists.map((p) => ({ ...p, trackIds: [...p.trackIds] }));
 
   if (localPrefs) {

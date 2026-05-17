@@ -1,6 +1,6 @@
 /**
- * POST /api/catalog-upload — store track on Vercel Blob; append to server catalog (Upstash).
- * Body: raw file bytes. Headers: X-Catalog-Secret, X-Track-Title, X-Track-Artist, X-Filename, Content-Type.
+ * POST /api/catalog-upload — Vercel Blob audio + dynamic catalog manifest (server only).
+ * Accepts raw bytes (application/octet-stream) or JSON { dataBase64, filename, title, artist, contentType }.
  */
 const crypto = require('node:crypto');
 const { put } = require('@vercel/blob');
@@ -8,31 +8,60 @@ const {
   assertCatalogUploadAuth,
   catalogUploadConfigured,
   loadServerCatalog,
-  mergeCatalogSnapshots,
   saveDynamicCatalog,
-  requestOrigin,
 } = require('../lib/catalog-server.mjs');
 
 const DEFAULT_ARTIST = "Hero Jo's Golden Bachdoor Hit Factory";
-/** Vercel Hobby request limit ~4.5 MB — use media/catalog/tracks/ deploy for larger files. */
 const MAX_BYTES = 4.5 * 1024 * 1024;
 
+function readBodyObject(req) {
+  if (typeof req.body === 'object' && req.body && !Buffer.isBuffer(req.body)) return req.body;
+  if (typeof req.body === 'string') {
+    try {
+      return JSON.parse(req.body);
+    } catch {
+      return null;
+    }
+  }
+  return null;
+}
+
 async function readRawBody(req, limit) {
+  if (Buffer.isBuffer(req.body)) {
+    if (req.body.length > limit) throw new Error('payload_too_large');
+    return req.body;
+  }
+
+  const json = readBodyObject(req);
+  if (json?.dataBase64) {
+    const buf = Buffer.from(String(json.dataBase64), 'base64');
+    if (buf.length > limit) throw new Error('payload_too_large');
+    return buf;
+  }
+
   const chunks = [];
   let size = 0;
-  for await (const chunk of req) {
-    size += chunk.length;
-    if (size > limit) throw new Error('payload_too_large');
-    chunks.push(chunk);
+  const readable = req;
+  if (typeof readable[Symbol.asyncIterator] === 'function') {
+    for await (const chunk of readable) {
+      const piece = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
+      size += piece.length;
+      if (size > limit) throw new Error('payload_too_large');
+      chunks.push(piece);
+    }
+    return Buffer.concat(chunks);
   }
-  return Buffer.concat(chunks);
+
+  return Buffer.alloc(0);
 }
 
 function titleFromFilename(name) {
-  return String(name || 'Untitled')
-    .replace(/\.[^.]+$/, '')
-    .replace(/[_-]+/g, ' ')
-    .trim() || 'Untitled';
+  return (
+    String(name || 'Untitled')
+      .replace(/\.[^.]+$/, '')
+      .replace(/[_-]+/g, ' ')
+      .trim() || 'Untitled'
+  );
 }
 
 module.exports = async function handler(req, res) {
@@ -54,12 +83,14 @@ module.exports = async function handler(req, res) {
     return res.status(503).json({
       error: 'catalog_upload_unconfigured',
       message:
-        'Set BLOB_READ_WRITE_TOKEN and CATALOG_UPLOAD_SECRET on Vercel, or add MP3s under media/catalog/tracks/ and deploy catalog.json.',
+        'Set BLOB_READ_WRITE_TOKEN and CATALOG_UPLOAD_SECRET (match VITE_CATALOG_UPLOAD_SECRET in the Bridge build) on Vercel.',
     });
   }
 
   const auth = assertCatalogUploadAuth(req);
   if (!auth.ok) return res.status(auth.status).json({ error: auth.code });
+
+  const jsonBody = readBodyObject(req);
 
   let buffer;
   try {
@@ -73,10 +104,19 @@ module.exports = async function handler(req, res) {
 
   if (!buffer.length) return res.status(400).json({ error: 'empty_file' });
 
-  const filename = String(req.headers['x-filename'] || 'upload.bin').replace(/[^\w.\-()+ ]/g, '_');
-  const title = String(req.headers['x-track-title'] || '').trim() || titleFromFilename(filename);
-  const artist = String(req.headers['x-track-artist'] || '').trim() || DEFAULT_ARTIST;
-  const contentType = String(req.headers['content-type'] || 'application/octet-stream');
+  const filename = String(
+    req.headers['x-filename'] || jsonBody?.filename || 'upload.bin',
+  ).replace(/[^\w.\-()+ ]/g, '_');
+  const title =
+    String(req.headers['x-track-title'] || jsonBody?.title || '').trim() ||
+    titleFromFilename(filename);
+  const artist =
+    String(req.headers['x-track-artist'] || jsonBody?.artist || '').trim() || DEFAULT_ARTIST;
+  const contentType = String(
+    req.headers['content-type']?.includes('json')
+      ? jsonBody?.contentType || 'application/octet-stream'
+      : req.headers['content-type'] || jsonBody?.contentType || 'application/octet-stream',
+  );
 
   const id = `trk-srv-${crypto.randomUUID()}`;
   const pathname = `catalog/${id}-${filename}`;
@@ -85,7 +125,7 @@ module.exports = async function handler(req, res) {
   try {
     blob = await put(pathname, buffer, {
       access: 'public',
-      contentType,
+      contentType: contentType.split(';')[0].trim(),
       addRandomSuffix: false,
     });
   } catch (e) {
@@ -115,18 +155,11 @@ module.exports = async function handler(req, res) {
   const next = { ...current, tracks, playlists };
   const saved = await saveDynamicCatalog(next);
   if (!saved) {
-    return res.status(200).json({
-      track,
-      warning: 'blob_saved_catalog_not_persisted',
-      message: 'File is on Blob storage but catalog overlay needs UPSTASH_REDIS_REST_URL.',
+    return res.status(500).json({
+      error: 'catalog_save_failed',
+      message: 'Audio stored but catalog manifest could not be saved.',
     });
   }
 
   return res.status(200).json({ track, catalog: next });
-};
-
-module.exports.config = {
-  api: {
-    bodyParser: false,
-  },
 };

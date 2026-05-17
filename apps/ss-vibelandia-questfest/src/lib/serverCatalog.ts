@@ -4,10 +4,17 @@ import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 const API_CATALOG = '/api/catalog';
 const STATIC_CATALOG = '/media/catalog/catalog.json';
 
-export function catalogUploadSecret(): string | null {
-  const fromEnv = import.meta.env.VITE_CATALOG_UPLOAD_SECRET;
-  if (typeof fromEnv === 'string' && fromEnv.trim().length > 0) return fromEnv.trim();
-  return null;
+/** Must match server CATALOG_UPLOAD_SECRET (or shared captain password on Vercel). */
+export function catalogUploadSecret(): string {
+  const upload = import.meta.env.VITE_CATALOG_UPLOAD_SECRET;
+  if (typeof upload === 'string' && upload.trim().length >= 8) return upload.trim();
+  const captain = import.meta.env.VITE_CAPTAIN_BYPASS_PASSWORD;
+  if (typeof captain === 'string' && captain.trim().length >= 8) return captain.trim();
+  return '';
+}
+
+export function isServerUploadConfigured(): boolean {
+  return catalogUploadSecret().length >= 8;
 }
 
 function normalizeServerCatalog(raw: unknown): CatalogSnapshot {
@@ -24,7 +31,7 @@ function normalizeServerCatalog(raw: unknown): CatalogSnapshot {
   };
 }
 
-/** Load master library from server (API merges static JSON + Redis overlay). */
+/** Load master library from server (API merges static JSON + dynamic manifest). */
 export async function fetchServerCatalog(): Promise<CatalogSnapshot> {
   try {
     const res = await fetch(API_CATALOG, { cache: 'no-store' });
@@ -41,31 +48,72 @@ export async function fetchServerCatalog(): Promise<CatalogSnapshot> {
   return buildEmptyCatalog();
 }
 
+function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      if (typeof result !== 'string') {
+        reject(new Error('read_failed'));
+        return;
+      }
+      const comma = result.indexOf(',');
+      resolve(comma >= 0 ? result.slice(comma + 1) : result);
+    };
+    reader.onerror = () => reject(new Error('read_failed'));
+    reader.readAsDataURL(file);
+  });
+}
+
+export type UploadTrackResult = {
+  track: TrackDef;
+  catalog?: CatalogSnapshot;
+};
+
+/** Upload audio to Vercel Blob + server catalog manifest. No browser storage. */
 export async function uploadTrackToServer(
   file: File,
   meta: { title?: string; artist?: string },
-): Promise<TrackDef> {
+): Promise<UploadTrackResult> {
   const secret = catalogUploadSecret();
   if (!secret) {
-    throw new Error('catalog_upload_unconfigured');
+    const err = new Error('catalog_upload_unconfigured') as Error & { code?: string };
+    err.code = 'catalog_upload_unconfigured';
+    throw err;
   }
+
+  const payload = {
+    dataBase64: await fileToBase64(file),
+    filename: file.name,
+    title: meta.title?.trim() || '',
+    artist: meta.artist?.trim() || '',
+    contentType: file.type || 'application/octet-stream',
+  };
+
   const res = await fetch('/api/catalog-upload', {
     method: 'POST',
     headers: {
-      'Content-Type': file.type || 'application/octet-stream',
+      'Content-Type': 'application/json',
       'X-Catalog-Secret': secret,
-      'X-Track-Title': meta.title?.trim() || '',
-      'X-Track-Artist': meta.artist?.trim() || '',
-      'X-Filename': file.name,
+      'X-Track-Title': payload.title,
+      'X-Track-Artist': payload.artist,
+      'X-Filename': payload.filename,
     },
-    body: file,
+    body: JSON.stringify(payload),
   });
-  const data = (await res.json().catch(() => ({}))) as { track?: TrackDef; error?: string; message?: string };
+
+  const data = (await res.json().catch(() => ({}))) as {
+    track?: TrackDef;
+    catalog?: CatalogSnapshot;
+    error?: string;
+    message?: string;
+  };
+
   if (!res.ok) {
-    const err = new Error(data.error || 'upload_failed') as Error & { code?: string };
+    const err = new Error(data.error || data.message || 'upload_failed') as Error & { code?: string };
     err.code = data.error;
     throw err;
   }
   if (!data.track?.src) throw new Error('upload_failed');
-  return data.track;
+  return { track: data.track, catalog: data.catalog };
 }

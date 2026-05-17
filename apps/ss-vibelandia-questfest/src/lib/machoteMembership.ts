@@ -2,16 +2,45 @@
 
 export const MACHOTE_MAGAZINE_NAME = 'Machote Moderno Magazine';
 
-/** Collector's edition cover — hub campaign popup & bridge modal. */
+/** Collector's edition cover — hub campaign popup & bridge modal (qualifier badge, not the product sold). */
 export const MACHOTE_MAGAZINE_COVER_SRC = '/interfaces/assets/machote-moderno-magazine-cover.png';
 
-export const MACHOTE_MEMBERS_PASS_TITLE = 'Machote Moderno Magazine · Members-only pass';
+export const MACHOTE_MAGAZINE_COVER_ALT =
+  'Machote Moderno Magazine — qualifier badge for followers-only Master Music Catalog access';
 
-export const MACHOTE_CATALOG_TITLE = 'Reno Holographic Swamp Beats Caliente Catalog';
+export const MACHOTE_MASTER_CATALOG_TITLE =
+  'Master Music Catalog · Holographic Reno Swamp Beats Caliente';
+
+export const MACHOTE_CATALOG_TITLE = MACHOTE_MASTER_CATALOG_TITLE;
 
 export const MACHOTE_CATALOG_SUBTITLE = "Hero Jo's Golden Bachdoor Hit Factory";
 
-export const MACHOTE_MEMBERS_PASS_SHORT = 'Machote Magazine members pass';
+export const MACHOTE_BEEHIVE_RESIDENCY_TITLE = 'Goldilocks Synthrverse Beehive Residency';
+
+export const MACHOTE_BEEHIVE_RESIDENCY_TAGLINE =
+  'Members-only · Old School Protocol · contact PL Taino · 0.001%';
+
+export const MACHOTE_BEEHIVE_PL_TAINO_EMAIL = 'valetpru@gmail.com';
+
+export const MACHOTE_BEEHIVE_MAILTO =
+  'mailto:valetpru@gmail.com?subject=Goldilocks%20Synthrverse%20Beehive%20Residency%20%E2%80%94%20interested%20node';
+
+export const MACHOTE_BEEHIVE_RESIDENCY_PATH = '/interfaces/goldilocks-beehive-residency.html';
+
+export const MACHOTE_BEEHIVE_NEST_PATH = '/interfaces/nesting/nest-goldilocks-beehive.html';
+
+export const MACHOTE_CAMPAIGN_EYEBROW = 'Exclusively for Machote Moderno followers';
+
+export const MACHOTE_MEMBERS_PASS_TITLE = 'Special offer · Master Music Catalog access';
+
+export const MACHOTE_MEMBERS_PASS_SHORT = 'Machote followers · catalog pass';
+
+export const MACHOTE_HUB_PASS_CTA =
+  'Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass';
+
+export const MACHOTE_CAMPAIGN_CTA = 'Get the catalog honor pass · $16.18/mo';
+
+export const MACHOTE_BEEHIVE_CTA = 'Goldilocks Synthrverse Beehive · walkthrough';
 
 /** Machote Moderno Magazine on Facebook — members-pass qualifier link. */
 export const MACHOTE_MAGAZINE_FOLLOW_URL =
@@ -25,30 +54,43 @@ export function machoteMagazineFollowUrl(): string {
 }
 
 export const MACHOTE_MAGAZINE_QUALIFIER =
-  'Following Machote Moderno Magazine is your qualifier for the members-only monthly pass.';
+  'Follow Machote Moderno Magazine to qualify — the magazine is your badge, not what you are buying. The $16.18/mo honor pass unlocks the Master Music Catalog exclusively for Machote Moderno followers.';
 
 export const MACHOTE_LIFE_PITCH =
-  'Members-only access to the hottest Reno holographic swamp beats caliente catalog on the planet — built so you are the star of your own parties, your car rides, your life. You know it.';
+  'Members-only access to our Master Music Catalog of holographic Reno swamp beats caliente — the hottest catalog on the planet, built so you are the star of your own parties, your car rides, your life. You know it.';
 
 export const MACHOTE_CREW_LINE =
   'For Machote Modernos — frontier explorers who kept their edge and their Y-chromosome swagger on the wrong side of town.';
 
-export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v1';
+/** Persisted on hub + bridge — do not re-show offer while pass is active. */
+export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
+
+export const MACHOTE_CAMPAIGN_LEDE =
+  'Not the magazine for sale — a followers-only special to stream the full Master Music Catalog. Follow Machote Moderno Magazine to qualify, then lock in the monthly honor pass.';
+
+export const MACHOTE_BEEHIVE_CAMPAIGN_BLURB =
+  'Invite the ecosystem back in. Old School Protocol: interested party nodes contact PL Taino directly. 2-week test drive for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.';
+
+export const MACHOTE_BEEHIVE_OLD_SCHOOL_PROTOCOL =
+  'Under the Old School Protocol, interested party nodes contact PL Taino directly — no corporate intake funnel.';
+
+export const MACHOTE_BEEHIVE_TERMS_SUMMARY =
+  'Initial 2-week test drive for all parties to gauge resonance; capacity to scale to a month, a season, or longer when the hive hums on both sides.';
 
 export const MACHOTE_CAMPAIGN_REASONS: { title: string; body: string }[] = [
   {
-    title: 'Be the one with the cool music',
+    title: 'Master Music Catalog · caliente',
     body:
-      "Access the hottest Reno Swamp Beats Caliente from Hero Jo's Golden Bachdoor Hit Factory — star of the party, the drive, the vibe. All crafted with the Hydrogen Line Frontiersman Machote Moderno Y-chromosome beings from everywhere, united in our Machote Moderno style, tastes, interests, and way of life.",
+      "Unlock the full Holographic Reno Swamp Beats Caliente Master Music Catalog from Hero Jo's Golden Bachdoor Hit Factory — star of the party, the drive, the vibe. Offered exclusively to Machote Moderno followers.",
   },
   {
-    title: 'Full catalog · background play',
+    title: 'Full catalog · not the 30-second teaser',
     body:
-      'Members get the whole Reno Holographic Swamp Beats Caliente Catalog — not the 30-second teaser. Full tracks, background audio when you switch apps or lock the screen, and exports when you need a file offline.',
+      'Pass holders get every track — background play when you switch apps or lock the screen, and exports when you need a file offline. The magazine cover is your qualifier; the catalog is what you are unlocking.',
   },
   {
     title: 'Follow the magazine · $16.18/mo honor pass',
     body:
-      'Follow Machote Moderno Magazine on Facebook to qualify, then pay $16.18/mo on Venmo, PayPal, or Cash App on honor. Machote Modernos keeping it raw — no corporate checkout, just the pass and the catalog.',
+      'Follow Machote Moderno Magazine on Facebook to qualify, then pay $16.18/mo on Venmo, PayPal, or Cash App on honor for catalog access. Machote Modernos keeping it raw — no corporate checkout.',
   },
 ];

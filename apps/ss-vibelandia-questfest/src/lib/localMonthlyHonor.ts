@@ -1,6 +1,6 @@
 import type { LiveRail } from '@/lib/paymentRails';
 
-const KEY = 'qv-local-monthly-honor';
+export const LOCAL_MONTHLY_HONOR_KEY = 'qv-local-monthly-honor';
 
 export interface LocalMonthlyHonor {
   rail: LiveRail;
@@ -11,8 +11,13 @@ export interface LocalMonthlyHonor {
   jti: string;
 }
 
-function todayISO(): string {
-  return new Date().toISOString().slice(0, 10);
+/** Calendar date in the user's local timezone (YYYY-MM-DD). */
+export function localTodayISO(): string {
+  const d = new Date();
+  const yy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${yy}-${mm}-${dd}`;
 }
 
 function addDaysToISODate(iso: string, days: number): string {
@@ -31,7 +36,7 @@ export function computeValidUntilFromPaidDate(paidDate: string): string {
 }
 
 export function isHonorDateActive(validUntil: string): boolean {
-  return todayISO() <= validUntil;
+  return localTodayISO() <= validUntil;
 }
 
 export function readLocalMonthlyHonor(): LocalMonthlyHonor | null {
@@ -49,12 +54,16 @@ export function readLocalMonthlyHonor(): LocalMonthlyHonor | null {
 }
 
 export function writeLocalMonthlyHonor(rec: LocalMonthlyHonor) {
-  localStorage.setItem(KEY, JSON.stringify(rec));
+  try {
+    localStorage.setItem(LOCAL_MONTHLY_HONOR_KEY, JSON.stringify(rec));
+  } catch {
+    throw new Error('storage_failed');
+  }
 }
 
 export function clearLocalMonthlyHonor() {
   try {
-    localStorage.removeItem(KEY);
+    localStorage.removeItem(LOCAL_MONTHLY_HONOR_KEY);
   } catch {
     /* ignore */
   }

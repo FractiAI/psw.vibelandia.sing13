@@ -25,7 +25,7 @@ export const RAIL_LABEL: Record<LiveRail, string> = {
 };
 
 export function boardingNote(): string {
-  return 'MACHOTE MAGAZINE MEMBERS · Caliente Catalog · $16.18';
+  return 'MACHOTE FOLLOWERS · Master Music Catalog pass · $16.18/mo';
 }
 
 export function exportNote(trackTitle: string): string {

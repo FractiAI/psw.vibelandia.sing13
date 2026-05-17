@@ -17,12 +17,9 @@ import {
   machoteMagazineFollowUrl,
 } from '@/lib/machoteMembership';
 import { HonorFarmstandFigure } from '@/components/payment/HonorFarmstandFigure';
+import { localTodayISO } from '@/lib/localMonthlyHonor';
 import { useSessionStore } from '@/stores/sessionStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
-
-function todayISO() {
-  return new Date().toISOString().slice(0, 10);
-}
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -45,7 +42,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const setGain = usePlaybackStore((s) => s.setGain);
   const [step, setStep] = useState<'rail' | 'pay' | 'honor'>('rail');
   const [rail, setRail] = useState<LiveRail | null>(null);
-  const [paidDate, setPaidDate] = useState(todayISO);
+  const [paidDate, setPaidDate] = useState(localTodayISO);
   const [email, setEmail] = useState('');
   const [honorAck, setHonorAck] = useState(false);
   const [magazineFollowAck, setMagazineFollowAck] = useState(false);
@@ -57,7 +54,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const reset = () => {
     setStep('rail');
     setRail(null);
-    setPaidDate(todayISO());
+    setPaidDate(localTodayISO());
     setEmail('');
     setHonorAck(false);
     setMagazineFollowAck(false);
@@ -185,7 +182,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                   void onSubmit({
                     rail: 'venmo',
                     honorConfirm: true,
-                    paidDate: todayISO(),
+                    paidDate: localTodayISO(),
                     email: 'dev@local',
                   })
                 }

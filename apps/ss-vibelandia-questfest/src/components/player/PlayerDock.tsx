@@ -4,10 +4,13 @@ import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
 import { VesselSwitchModal } from '@/components/player/VesselSwitchModal';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
+import { useSessionStore } from '@/stores/sessionStore';
 
 /** In-flow player at the bottom of the Bridge column (scrolls with the page). */
 export function PlayerDock() {
   const setFairOpen = useMediaChromeStore((s) => s.setFairOpen);
+  const isPassenger = useSessionStore((s) => s.isPassenger);
+  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const showVessel = useMediaChromeStore((s) => s.showVessel);
   const hideVessel = useMediaChromeStore((s) => s.hideVessel);
   const vesselOpen = useMediaChromeStore((s) => s.vesselOpen);
@@ -15,7 +18,10 @@ export function PlayerDock() {
   const setGain = usePlaybackStore((s) => s.setGain);
   const stream = useStreamLock();
 
-  const onFairExchange = useCallback(() => setFairOpen(true), [setFairOpen]);
+  const onFairExchange = useCallback(() => {
+    if (isPassenger || captainUnlocked) return;
+    setFairOpen(true);
+  }, [captainUnlocked, isPassenger, setFairOpen]);
 
   const onVesselSwitch = useCallback(
     (reason: 'vessel_switch' | 'tab_preempt') => {

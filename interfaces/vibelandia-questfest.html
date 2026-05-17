@@ -292,6 +292,7 @@
       box-shadow: 0 0 22px rgba(103, 232, 249, 0.14);
       background: rgba(10, 12, 18, 0.9);
     }
+    .qf-crew-portrait--album { object-position: center; }
     .qf-crew-card-body { min-width: 0; flex: 1; }
     .qf-crew-card-body p { margin-bottom: 0; max-width: none; }
     .qf-crew strong { color: #e8edf5; }
@@ -354,45 +355,131 @@
     .qf-theater strong { color: #e8edf5; }
     .qf-theater em { color: var(--foam); font-style: normal; }
 
+    .nest-ladder-intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem 0.65rem;
+      margin: 0 0 0.85rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      border: 1px dashed rgba(45, 212, 191, 0.45);
+      background: rgba(45, 212, 191, 0.06);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--foam);
+    }
+    .nest-ladder-intro::before {
+      content: '↳';
+      font-size: 1rem;
+      line-height: 1;
+    }
+
     .nest-ladder {
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 0.82rem;
-      line-height: 1.45;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
     }
-    .nest-ladder li {
-      position: relative;
-      padding: 0.45rem 0 0.45rem 0.85rem;
-      border-left: 2px solid rgba(212, 175, 55, 0.25);
-      margin-left: 0;
-      color: var(--muted);
+    .nest-ladder > li {
+      margin: 0;
+      padding: 0;
+      border: none;
     }
-    .nest-ladder li + li { margin-top: 0.15rem; }
-    .nest-ladder li:nth-child(2) { margin-left: 0.5rem; }
-    .nest-ladder li:nth-child(3) { margin-left: 1rem; }
-    .nest-ladder li:nth-child(4) { margin-left: 1.5rem; }
-    .nest-ladder li:nth-child(5) { margin-left: 2rem; }
-    .nest-ladder li:nth-child(6) { margin-left: 2.5rem; }
-    .nest-ladder li:nth-child(7) { margin-left: 3rem; }
-    .nest-ladder li:nth-child(8) { margin-left: 3.5rem; }
-    .nest-ladder li a {
-      color: inherit;
+    .nest-ladder > li:nth-child(1) { margin-left: 0; }
+    .nest-ladder > li:nth-child(2) { margin-left: 0.45rem; }
+    .nest-ladder > li:nth-child(3) { margin-left: 0.9rem; }
+    .nest-ladder > li:nth-child(4) { margin-left: 1.35rem; }
+    .nest-ladder > li:nth-child(5) { margin-left: 1.8rem; }
+    .nest-ladder > li:nth-child(6) { margin-left: 2.25rem; }
+    .nest-ladder > li:nth-child(7) { margin-left: 2.7rem; }
+    .nest-ladder > li:nth-child(8) { margin-left: 3.15rem; }
+    .nest-ladder > li:nth-child(9) { margin-left: 3.6rem; }
+
+    .nest-card__link {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        'title cta'
+        'badge cta';
+      gap: 0.2rem 0.75rem;
+      align-items: center;
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid rgba(212, 175, 55, 0.38);
+      background: rgba(12, 16, 24, 0.85);
       text-decoration: none;
+      color: #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      transition: border-color 0.15s ease, background 0.15s ease, transform 0.12s ease;
+      cursor: pointer;
     }
-    .nest-ladder li a:hover {
-      color: var(--foam);
-      text-decoration: underline;
-    }
-    .nest-ladder li.here {
+    .nest-card__link:hover {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.1);
       color: var(--gold-hi);
-      border-left-color: var(--gold);
-      font-weight: 700;
+      transform: translateX(2px);
     }
-    .nest-ladder li.here a { font-weight: inherit; color: inherit; }
-    .nest-ladder li.here::before {
-      content: '▸ ';
+    .nest-card__link:focus-visible {
+      outline: 2px solid var(--foam);
+      outline-offset: 2px;
+    }
+    .nest-card__title {
+      grid-area: title;
+      font-size: 0.86rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .nest-card__cta {
+      grid-area: cta;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
       color: var(--foam);
+      white-space: nowrap;
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      background: rgba(45, 212, 191, 0.08);
+    }
+    .nest-card__link:hover .nest-card__cta {
+      color: #0a0f1a;
+      background: var(--foam);
+      border-color: var(--foam);
+    }
+    .nest-card__badge {
+      grid-area: badge;
+      display: none;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-hi);
+    }
+    .nest-card--here .nest-card__link {
+      border-color: var(--gold);
+      background: linear-gradient(105deg, rgba(212, 175, 55, 0.16) 0%, rgba(12, 16, 24, 0.9) 55%);
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.2), 0 4px 14px rgba(0, 0, 0, 0.35);
+    }
+    .nest-card--here .nest-card__badge {
+      display: block;
+    }
+    .nest-card--here .nest-card__cta {
+      color: #1a120c;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .nest-card--here .nest-card__link:hover .nest-card__cta {
+      background: var(--gold-hi);
+      border-color: var(--gold-hi);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .nest-card__link:hover { transform: none; }
     }
 
     .channel-verse {
@@ -589,6 +676,18 @@
       gap: 0.5rem;
     }
     .machote-campaign-hub__actions .btn { width: 100%; text-align: center; }
+    .machote-campaign-hub__beehive {
+      margin: 0 0 1rem;
+      padding: 0.85rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid rgba(125, 211, 192, 0.45);
+      background: rgba(8, 20, 24, 0.55);
+      font-size: 0.86rem;
+      line-height: 1.45;
+      color: #c8d0dc;
+    }
+    .machote-campaign-hub__beehive strong { color: var(--gold-hi); }
+    .machote-campaign-hub__beehive .btn { margin-top: 0.65rem; }
   </style>
 </head>
 <body>
@@ -600,29 +699,33 @@
         src="assets/machote-moderno-magazine-cover.png"
         width="480"
         height="640"
-        alt="Machote Moderno Magazine cover — SS Vibelandia Questfest collector's edition, $16.18 USD members-only pass"
+        alt="Machote Moderno Magazine — qualifier badge for followers-only Master Music Catalog access"
         loading="eager"
         decoding="async"
       />
-      <p class="machote-campaign-hub__eyebrow" data-i18n="qf.campaignEyebrow">Machote Moderno · members-only</p>
-      <h2 id="machote-campaign-title" class="machote-campaign-hub__title" data-i18n="qf.campaignTitle">Machote Moderno Magazine · Members-only pass</h2>
-      <p class="machote-campaign-hub__lede" data-i18n-html="qf.campaignLede">Top 3 reasons you want the pass — follow <a href="https://www.facebook.com/profile.php?id=61587003343289" target="_blank" rel="noopener noreferrer">Machote Moderno Magazine</a> and lock in <strong>$16.18/month</strong>.</p>
+      <p class="machote-campaign-hub__eyebrow" data-i18n="qf.campaignEyebrow">Exclusively for Machote Moderno followers</p>
+      <h2 id="machote-campaign-title" class="machote-campaign-hub__title" data-i18n="qf.campaignTitle">Special offer · Master Music Catalog access</h2>
+      <p class="machote-campaign-hub__lede" data-i18n-html="qf.campaignLede"><strong>Not the magazine for sale.</strong> A followers-only special to stream our <strong>Master Music Catalog of Holographic Reno Swamp Beats Caliente</strong>. Follow <a href="https://www.facebook.com/profile.php?id=61587003343289" target="_blank" rel="noopener noreferrer">Machote Moderno Magazine</a> to qualify — then <strong>$16.18/mo</strong> honor pass unlocks the catalog (not the cover).</p>
       <ol class="machote-campaign-hub__reasons">
         <li>
           <span class="machote-campaign-hub__num" aria-hidden="true">1</span>
-          <span data-i18n-html="qf.campaignR1"><strong>Be the one with the cool music</strong> Access the hottest Reno Swamp Beats Caliente from Hero Jo's Golden Bachdoor Hit Factory — star of the party, the drive, the vibe. Crafted with Hydrogen Line Frontiersman Machote Moderno Y-chromosome beings united in our style, tastes, interests, and way of life.</span>
+          <span data-i18n-html="qf.campaignR1"><strong>Master Music Catalog · caliente</strong> Full access to holographic Reno swamp beats from Hero Jo's Golden Bachdoor Hit Factory — party, drive, vibe. Offered exclusively to Machote Moderno followers.</span>
         </li>
         <li>
           <span class="machote-campaign-hub__num" aria-hidden="true">2</span>
-          <span data-i18n-html="qf.campaignR2"><strong>Full catalog · background play</strong> Members get the whole Reno Holographic Swamp Beats Caliente Catalog — not the 30-second teaser. Full tracks, background audio when you switch apps, exports when you need a file offline.</span>
+          <span data-i18n-html="qf.campaignR2"><strong>Full catalog · not the 30-second teaser</strong> Pass holders get every track, background play, and exports offline. The magazine is your qualifier badge; the catalog is what you unlock.</span>
         </li>
         <li>
           <span class="machote-campaign-hub__num" aria-hidden="true">3</span>
-          <span data-i18n-html="qf.campaignR3"><strong>Follow the magazine · $16.18/mo honor pass</strong> Follow Machote Moderno Magazine on Facebook to qualify, then pay on Venmo, PayPal, or Cash App on honor. Machote Modernos keeping it raw — no corporate checkout.</span>
+          <span data-i18n-html="qf.campaignR3"><strong>Honor pass · $16.18/mo</strong> Follow Machote Moderno Magazine on Facebook to qualify, then pay catalog access on Venmo, PayPal, or Cash App on honor. Machote Modernos keeping it raw — no corporate checkout.</span>
         </li>
       </ol>
+      <aside class="machote-campaign-hub__beehive">
+        <p data-i18n-html="qf.campaignBeehiveHtml"><strong>New · Layer 9.</strong> <strong>Goldilocks Synthrverse Beehive Residency</strong> — Machote members only. <strong>Old School Protocol:</strong> interested party nodes contact <strong>PL Taino</strong> directly. <strong>2-week test drive</strong> for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.</p>
+        <a class="btn btn-ghost" href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta">Goldilocks Synthrverse Beehive · walkthrough</a>
+      </aside>
       <div class="machote-campaign-hub__actions">
-        <a class="btn btn-primary" id="machote-campaign-cta" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.campaignCta">Get the members-only pass · $16.18/mo</a>
+        <a class="btn btn-primary" id="machote-campaign-cta" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.campaignCta">Get the catalog honor pass · $16.18/mo</a>
         <button type="button" class="btn btn-ghost" id="machote-campaign-later" data-i18n="qf.campaignLater">Maybe later</button>
       </div>
     </div>
@@ -641,7 +744,7 @@
       <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
       <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Basenet</strong>. This page is the mirror on the cloud.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnSwampVibe">Machote Moderno Magazine · Members-only pass · $16.18/mo</a>
+        <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnSwampVibe">Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass</a>
         <a class="btn btn-ghost" href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
         <a class="btn btn-ghost" href="/interfaces/look-under-the-hood.html" data-i18n="qf.btnHood">Look under the hood</a>
       </div>
@@ -651,19 +754,69 @@
   <div class="qf-theater" aria-label="Nested theater">
 
     <section id="qf-nest-section" aria-labelledby="qf-nest-h2">
-      <h2 id="qf-nest-h2" data-i18n="qf.nestHead">The nesting · you are here</h2>
-      <p class="lede-block" data-i18n-html="qf.nestLedeHtml"><strong>SING 13</strong> is the <em>Internet cloud skin</em> — the holographic mirror that lets the ship broadcast from a man-cave restroom on the wrong side, all the way out to the net.</p>
-      <p class="lede-block" data-i18n="qf.nestTapHint">Each layer below opens a short plain-language guide.</p>
-      <ol class="nest-ladder">
-        <li><a href="/interfaces/nesting/nest-basenet-genesis.html"><span data-i18n="qf.nest7">Basenet · genesis</span></a></li>
-        <li><a href="/interfaces/nesting/nest-syntheverse.html"><span data-i18n="qf.nest6">Syntheverse</span></a></li>
-        <li><a href="/interfaces/nesting/nest-sonic-singularity.html"><span data-i18n="qf.nest5">Sonic Singularity</span></a></li>
-        <li><a href="/interfaces/nesting/nest-wrong-side.html"><span data-i18n="qf.nest4">Wrong Side of Town</span></a></li>
-        <li><a href="/interfaces/nesting/nest-man-cave-restroom.html"><span data-i18n="qf.nest3">Man cave · men's restroom · nested mirrored theater</span></a></li>
-        <li><a href="/interfaces/nesting/nest-questfest-puerto-reno.html"><span data-i18n="qf.nest2">Sonic Ship SS Vibelandia QUESTFEST 24×365 · Puerto Reno</span></a></li>
-        <li><a href="/interfaces/nesting/nest-dph-gpu.html"><span data-i18n="qf.nestDph">Digital Pru Holographic GPU (DPH-GPU)</span></a></li>
-        <li class="here"><a href="/interfaces/nesting/nest-sing13.html"><span data-i18n="qf.nest1">SING 13 · Internet cloud skin</span></a></li>
+      <h2 id="qf-nest-h2" data-i18n="qf.nestHead">YOU ARE HERE</h2>
+      <p class="lede-block" data-i18n-html="qf.nestLedeHtml"><strong>SING 13</strong> is the cloud mirror; <strong>Layer 9</strong> adds the Goldilocks Synthrverse Beehive Residency — Old School Protocol, contact PL Taino, 2-week test drive.</p>
+      <p class="nest-ladder-intro" data-i18n="qf.nestTapHint">Select any layer below — each opens an expanded plain-language guide.</p>
+      <ol class="nest-ladder" role="list">
+        <li class="nest-card">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-basenet-genesis.html">
+            <span class="nest-card__title" data-i18n="qf.nest7">Basenet · genesis</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
+          </a>
+        </li>
+        <li class="nest-card">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-syntheverse.html">
+            <span class="nest-card__title" data-i18n="qf.nest6">Syntheverse</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
+          </a>
+        </li>
+        <li class="nest-card">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-sonic-singularity.html">
+            <span class="nest-card__title" data-i18n="qf.nest5">Sonic Singularity</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
+          </a>
+        </li>
+        <li class="nest-card">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-wrong-side.html">
+            <span class="nest-card__title" data-i18n="qf.nest4">Wrong Side of Town</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
+          </a>
+        </li>
+        <li class="nest-card">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-man-cave-restroom.html">
+            <span class="nest-card__title" data-i18n="qf.nest3">Man cave · men's restroom · nested mirrored theater</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
+          </a>
+        </li>
+        <li class="nest-card">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-questfest-puerto-reno.html">
+            <span class="nest-card__title" data-i18n="qf.nest2">Sonic Ship SS Vibelandia QUESTFEST 24×365 · Puerto Reno</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
+          </a>
+        </li>
+        <li class="nest-card">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-dph-gpu.html">
+            <span class="nest-card__title" data-i18n="qf.nestDph">Digital Pru Holographic GPU (DPH-GPU)</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
+          </a>
+        </li>
+        <li class="nest-card">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-sing13.html">
+            <span class="nest-card__title" data-i18n="qf.nest1">SING 13 · Internet cloud skin</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenGuide">Open guide</span>
+          </a>
+        </li>
+        <li class="nest-card nest-card--here">
+          <a class="nest-card__link" href="/interfaces/nesting/nest-goldilocks-beehive.html" aria-label="Goldilocks Beehive Residency — latest layer. Open guide.">
+            <span class="nest-card__title" data-i18n="qf.nest0">Goldilocks Synthrverse Beehive Residency · members · 0.001%</span>
+            <span class="nest-card__badge" data-i18n="qf.nestLatestLayer">Latest layer</span>
+            <span class="nest-card__cta" data-i18n="qf.nestOpenLayer">View this layer</span>
+          </a>
+        </li>
       </ol>
+      <p class="nest-ladder-intro" style="margin-top:1rem;margin-bottom:0">
+        <a class="btn btn-ghost" href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta" style="display:inline-block;text-decoration:none">Goldilocks Synthrverse Beehive · walkthrough</a>
+      </p>
     </section>
 
     <section aria-labelledby="qf-channel-h2">
@@ -800,13 +953,13 @@
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/hector-lavoe.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <img class="qf-crew-portrait qf-crew-portrait--album" src="/interfaces/assets/questfest-crew/hector-lavoe.jpg" alt="Héctor Lavoe — De Ti Depende album cover (1976)" width="152" height="152" loading="lazy" decoding="async" />
         <div class="qf-crew-card-body">
           <p data-i18n-html="qf.crewHectorHtml"><strong>Héctor Lavoe</strong> — <em>Clave soul.</em> Salsa nerve and wrong-side phrasing; swing that refuses to polish the edge off.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/vinicius-de-moraes.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <img class="qf-crew-portrait qf-crew-portrait--album" src="/interfaces/assets/questfest-crew/vinicius-de-moraes.jpg" alt="Vinícius de Moraes &amp; Baden Powell — Os Afro-Sambas album cover (1966)" width="152" height="152" loading="lazy" decoding="async" />
         <div class="qf-crew-card-body">
           <p data-i18n-html="qf.crewViniciusHtml"><strong>Vinicius de Moraes</strong> — <em>Lyric architect.</em> Bossa logic and romance-with-teeth; bridges pretty melody to fatal honesty.</p>
         </div>
@@ -848,20 +1001,44 @@
     document.addEventListener('DOMContentLoaded', function () {
       if (window.VibelandiaI18n) window.VibelandiaI18n.initFromPage('questfest');
 
-      var CAMPAIGN_KEY = 'machote-members-campaign-dismissed-v1';
+      var CAMPAIGN_KEY = 'machote-members-campaign-dismissed-v2';
+      var HONOR_KEY = 'qv-local-monthly-honor';
+      var PASS_KEY = 'qv-pass-token';
       var popup = document.getElementById('machote-campaign');
       var closeBtn = document.getElementById('machote-campaign-close');
       var laterBtn = document.getElementById('machote-campaign-later');
       var cta = document.getElementById('machote-campaign-cta');
 
+      function localTodayISO() {
+        var d = new Date();
+        var mm = String(d.getMonth() + 1);
+        var dd = String(d.getDate());
+        if (mm.length < 2) mm = '0' + mm;
+        if (dd.length < 2) dd = '0' + dd;
+        return d.getFullYear() + '-' + mm + '-' + dd;
+      }
+
+      function hasActiveMembersPass() {
+        try {
+          var honorRaw = localStorage.getItem(HONOR_KEY);
+          if (honorRaw) {
+            var honor = JSON.parse(honorRaw);
+            if (honor && honor.validUntil && localTodayISO() <= honor.validUntil) return true;
+          }
+          var tok = localStorage.getItem(PASS_KEY);
+          if (tok && tok.indexOf('.') > 0) return true;
+        } catch (e) { /* ignore */ }
+        return false;
+      }
+
       function dismissCampaign() {
-        try { sessionStorage.setItem(CAMPAIGN_KEY, '1'); } catch (e) { /* ignore */ }
+        try { localStorage.setItem(CAMPAIGN_KEY, '1'); } catch (e) { /* ignore */ }
         if (popup) popup.hidden = true;
         document.body.classList.remove('machote-campaign-open');
       }
 
       function showCampaign() {
-        if (!popup || sessionStorage.getItem(CAMPAIGN_KEY)) return;
+        if (!popup || localStorage.getItem(CAMPAIGN_KEY) || hasActiveMembersPass()) return;
         popup.hidden = false;
         document.body.classList.add('machote-campaign-open');
         closeBtn && closeBtn.focus();

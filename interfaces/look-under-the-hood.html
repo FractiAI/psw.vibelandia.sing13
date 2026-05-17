@@ -4,20 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#050810" />
-  <title>Under the hood · SS Vibelandia</title>
-  <meta name="description" content="Technical overview and document index for SS Vibelandia QUESTFEST — Digital Pru, compile surface, and whitepapers." />
-  <link rel="canonical" href="https://psw-vibelandia-sing13.vercel.app/interfaces/look-under-the-hood.html" />
+  <title>Under the hood · SS Vibelandia QUESTFEST · engine room</title>
+  <meta name="description" content="Explore what makes QUESTFEST 24×365 run — beats, tracks, musicals, Sovereign Player, lite-edge ops, and the coherent status of the Sonic Ship and its assets." />
+  <link rel="canonical" href="https://psw-vibelandia.sing13.vercel.app/interfaces/look-under-the-hood.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050810;
       --line: rgba(212, 175, 55, 0.22);
       --gold: #e8d089;
+      --gold-hi: #fef3c7;
       --text: #e8edf5;
       --muted: #94a3b8;
       --foam: #7dd3c0;
+      --ok: #6ee7b7;
+      --card: rgba(15, 20, 28, 0.85);
     }
     * { box-sizing: border-box; }
     html, body {
@@ -29,7 +32,7 @@
       font-size: 1.0625rem;
     }
     .wrap {
-      max-width: 40rem;
+      max-width: 42rem;
       margin: 0 auto;
       padding: max(1rem, env(safe-area-inset-top)) 1.25rem max(2.5rem, env(safe-area-inset-bottom));
     }
@@ -44,20 +47,40 @@
     .skin-nav a:hover { text-decoration: underline; color: var(--gold); }
     .skin-nav span.dot { margin: 0 0.45rem; opacity: 0.55; }
 
+    .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--foam);
+      margin-bottom: 0.35rem;
+    }
+    h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(1.75rem, 5vw, 2.35rem);
+      font-weight: 400;
+      color: var(--gold-hi);
+      line-height: 1.05;
+      margin: 0 0 0.65rem;
+      letter-spacing: 0.02em;
+    }
+    .deck-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1a120c;
+      background: var(--gold);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
     .hero-img {
       width: 100%;
       border-radius: 12px;
       border: 1px solid var(--line);
       margin-bottom: 1.35rem;
       display: block;
-    }
-    h1 {
-      font-size: clamp(1.35rem, 4vw, 1.75rem);
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1.2;
-      margin: 0 0 1rem;
-      letter-spacing: -0.02em;
     }
     .content-img {
       width: 100%;
@@ -66,7 +89,7 @@
       margin: 1.25rem 0;
       display: block;
     }
-    section { margin-bottom: 1.75rem; }
+    section { margin-bottom: 1.85rem; }
     h2 {
       font-size: 1.05rem;
       font-weight: 700;
@@ -76,8 +99,120 @@
     }
     p { margin: 0 0 0.85rem; color: #cbd5e1; }
     p:last-child { margin-bottom: 0; }
-    ul { margin: 0.35rem 0 0; padding-left: 1.25rem; color: #cbd5e1; }
-    li { margin-bottom: 0.4rem; }
+    ul, ol { margin: 0.35rem 0 0; padding-left: 1.25rem; color: #cbd5e1; }
+    li { margin-bottom: 0.45rem; }
+    a { color: var(--foam); }
+    a:hover { color: var(--gold-hi); }
+
+    .tour-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0.75rem 0 0;
+      counter-reset: tour;
+    }
+    .tour-steps li {
+      counter-increment: tour;
+      padding: 0.75rem 0 0.75rem 2.5rem;
+      position: relative;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+    .tour-steps li::before {
+      content: counter(tour);
+      position: absolute;
+      left: 0;
+      top: 0.72rem;
+      width: 1.65rem;
+      height: 1.65rem;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.2);
+      color: var(--gold-hi);
+      font-size: 0.8rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tour-steps li:last-child { border-bottom: none; }
+    .tour-steps strong { color: var(--gold-hi); }
+
+    .status-grid {
+      display: grid;
+      gap: 0.55rem;
+      margin-top: 0.75rem;
+    }
+    .status-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem 1rem;
+      align-items: start;
+      padding: 0.65rem 0.75rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .status-row .name { font-weight: 600; color: var(--text); }
+    .status-row .desc { grid-column: 1 / -1; font-size: 0.84rem; color: var(--muted); margin-top: 0.15rem; }
+    .status-pill {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .status-pill--live { background: rgba(110, 231, 183, 0.15); color: var(--ok); }
+    .status-pill--doc { background: rgba(125, 211, 192, 0.12); color: var(--foam); }
+    .status-pill--edge { background: rgba(232, 208, 137, 0.12); color: var(--gold); }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 2px solid var(--line);
+      color: var(--foam);
+    }
+    .btn:hover { border-color: var(--gold); color: var(--gold-hi); }
+    .btn--gold {
+      background: linear-gradient(180deg, #f0d4a0, #c9a227);
+      color: #1a120c;
+      border-color: transparent;
+    }
+    .btn--gold:hover { color: #1a120c; filter: brightness(1.05); }
+
+    .coherence {
+      padding: 1rem 1.1rem;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: linear-gradient(165deg, rgba(45, 55, 72, 0.35) 0%, rgba(15, 20, 28, 0.6) 100%);
+    }
+    .coherence dt {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-top: 0.65rem;
+    }
+    .coherence dt:first-child { margin-top: 0; }
+    .coherence dd {
+      margin: 0.2rem 0 0;
+      color: #e2e8f0;
+      font-size: 0.92rem;
+    }
 
     .docs {
       margin-top: 2.25rem;
@@ -85,81 +220,190 @@
       border-top: 1px solid var(--line);
     }
     .docs h2 { margin-bottom: 0.85rem; }
-    .docs ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    .docs ul { list-style: none; padding: 0; margin: 0; }
     .docs li {
       margin: 0;
       padding: 0.55rem 0;
       border-bottom: 1px solid rgba(148, 163, 184, 0.12);
     }
     .docs li:last-child { border-bottom: none; }
-    .docs a {
-      color: var(--foam);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .docs a:hover { text-decoration: underline; color: var(--gold); }
+    .docs a { font-weight: 600; text-decoration: none; }
+    .docs a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <main class="wrap">
     <nav class="skin-nav" aria-label="Site">
-      <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="vibelandia-questfest.html">QUESTFEST 24×365</a><span class="dot" aria-hidden="true">·</span>
       <span style="color:var(--gold);font-weight:600;">Under the hood</span><span class="dot" aria-hidden="true">·</span>
-      <a href="look-at-the-sun.html">Look at the Sun</a>
+      <a href="look-at-the-sun.html">Look at the Sun</a><span class="dot" aria-hidden="true">·</span>
+      <a href="questfest-bridge/">Sovereign Player</a>
     </nav>
 
+    <p class="eyebrow">SS Vibelandia · engine room tour</p>
     <h1>Under the hood</h1>
-    <img class="hero-img" src="images/look-hood-engine.png" alt="Illustration of the ship engine room and holographic stack." width="1200" height="675" decoding="async" />
+    <span class="deck-tag">Operations · tech · coherent ship status</span>
+    <img class="hero-img" src="images/look-hood-engine.png" alt="Engine room of the Sonic Ship — holographic stack, pipes, and compile surfaces." width="1200" height="675" decoding="async" />
 
     <section>
-      <p>This page is the technical entry for <strong>SS Vibelandia QUESTFEST</strong>: how the Digital Pru stack is described, how the in-browser compile surface relates to the repos, and where to read the full papers.</p>
+      <h2>More than music — what you are exploring</h2>
+      <p>
+        <strong>SS Vibelandia QUESTFEST 24×365</strong> is not only a playlist, a festival poster, or a single musical.
+        It is a <strong>nested theater</strong>: beats from Hero Jo's Golden Bachdoor Hit Factory, tracks you upload on the
+        <strong>Sovereign Player</strong>, musicals inside musicals, and a ship that stays on air every day of the year from
+        Puerto Reno through the <strong>SING 13 Internet cloud skin</strong>.
+      </p>
+      <p>
+        This page is the <strong>engine room</strong> — how that experience is built, wired, and kept honest. Pair it with
+        <a href="look-at-the-sun.html">Look at the Sun</a> (broadcast and coupling layer) and the
+        <a href="vibelandia-questfest.html">QUESTFEST hub</a> (where you board).
+      </p>
     </section>
 
     <section>
-      <h2>Stack</h2>
-      <p>The ship narrative maps to a real toolchain: specs and long reads in the reader, Juicy Juicy Snap (OFC) as the shallow compile proof, and FractiAI/digital-pru for runnable RTL and tests.</p>
+      <h2>Your walkthrough · metabolize → crystallize → animate</h2>
+      <ol class="tour-steps">
+        <li>
+          <strong>Metabolize</strong> — Raw signal enters: Reno swamp beats, your uploads, channel verse, nesting story.
+          The hit factory catalog and your device library are the fuel.
+        </li>
+        <li>
+          <strong>Crystallize</strong> — Tracks, playlists, and docs harden into mirrored shells: Bridge player state,
+          whitepapers, JJ Snap compile artifacts, NSPFRNP catalog entries on this edge.
+        </li>
+        <li>
+          <strong>Animate</strong> — Playback, background handoff, Fair Exchange passes, exports, and the holographic
+          channel stay live — 24×365, not a weekend gate.
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Ship status · assets on this edge</h2>
+      <p>Operational picture for the coherent stack carried on <strong>SING 13</strong> (parent edge holds legacy heavy routes).</p>
+      <div class="status-grid">
+        <div class="status-row">
+          <span class="name"><a href="vibelandia-questfest.html">QUESTFEST hub</a></span>
+          <span class="status-pill status-pill--live">Live</span>
+          <span class="desc">24×365 nest, nesting ladder, channel, scorecard — the mirror on the cloud.</span>
+        </div>
+        <div class="status-row">
+          <span class="name"><a href="questfest-bridge/">Sovereign Player · Bridge</a></span>
+          <span class="status-pill status-pill--live">Live</span>
+          <span class="desc">Listen · Upload · Playlists · Machote members pass · 30s fair taste · device-side catalog.</span>
+        </div>
+        <div class="status-row">
+          <span class="name"><a href="whitepaper-surface.html?id=sing13-edge-onboarding">SING 13 lite edge</a></span>
+          <span class="status-pill status-pill--edge">Edge</span>
+          <span class="desc">Wallets, keys, verifications at the edge; center = pipes only. Boarding / heartbeat APIs when env set.</span>
+        </div>
+        <div class="status-row">
+          <span class="name"><a href="whitepaper-surface.html?id=jj-snap-ofc">JJ Snap · OFC compile</a></span>
+          <span class="status-pill status-pill--doc">Canon</span>
+          <span class="desc">Browser metabolize → JSON crystallize → animate in repo; silicon mirror of the Hit Factory ratios.</span>
+        </div>
+        <div class="status-row">
+          <span class="name"><a href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener">digital-pru</a></span>
+          <span class="status-pill status-pill--doc">Repo</span>
+          <span class="desc">Runnable RTL, tests, and bench — engineering proof behind the narrative.</span>
+        </div>
+        <div class="status-row">
+          <span class="name"><a href="nesting/nest-questfest-puerto-reno.html">Puerto Reno nest guide</a></span>
+          <span class="status-pill status-pill--doc">Guide</span>
+          <span class="desc">Plain-language layer in the Basenet → SING 13 ladder for the ship itself.</span>
+        </div>
+        <div class="status-row">
+          <span class="name"><a href="goldilocks-beehive-residency.html">Goldilocks Synthrverse Beehive Residency</a></span>
+          <span class="status-pill status-pill--doc">Layer 9</span>
+          <span class="desc">Machote members only · Old School Protocol · contact PL Taino · 2-week test drive · calendar 2026.</span>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn--gold" href="questfest-bridge/#/bridge">Open Sovereign Player</a>
+        <a class="btn" href="vibelandia-questfest.html#qf-nest-section">Nesting ladder</a>
+        <a class="btn" href="goldilocks-beehive-residency.html">Beehive residency</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>What runs under the beats</h2>
+      <p>
+        <strong>Tracks</strong> you hear are files on your device (IndexedDB + catalog JSON) or streamed previews until the
+        Machote members pass unlocks full play. <strong>Beats</strong> in the Reno holographic swamp catalog share the same
+        Fair Exchange rails — Venmo, PayPal, Cash App on honor, no corporate checkout on this skin.
+      </p>
+      <p>
+        <strong>Musicals</strong> nest: QUESTFEST inside Sonic Singularity inside Syntheverse inside Basenet. The restroom
+        mirror on the Wrong Side is not decoration — it is where the cloud skin attaches to the story you are inside.
+      </p>
+    </section>
+
+    <section>
+      <h2>Stack · pipes and compile</h2>
+      <p>
+        The ship narrative maps to a real toolchain: long reads in the <a href="whitepaper-surface.html">reader</a>,
+        Juicy Juicy Snap (OFC) as shallow compile proof, and FractiAI/digital-pru for runnable verification. Honesty tokens
+        and explicit simulation boundaries stay in the artifacts — not buried in marketing copy.
+      </p>
     </section>
 
     <section>
       <h2>Ionosphere and coupling</h2>
-      <img class="content-img" src="images/look-hood-ionosphere.png" alt="Earth ionosphere as a planetary-scale circuit." width="1200" height="675" decoding="async" />
-      <p>Solar wind and the ionosphere are used in the canon as the large-scale RF environment for the metaphor of planetary coupling—not a substitute for physics or medicine.</p>
+      <img class="content-img" src="images/look-hood-ionosphere.png" alt="Earth ionosphere as planetary-scale circuit — large-scale RF metaphor for the stack." width="1200" height="675" decoding="async" />
+      <p>
+        Solar wind and the ionosphere frame the <strong>large-scale coupling</strong> metaphor in canon — how broadcast
+        energy meets the hull. Operational playback still runs on normal browser audio, storage, and lite-edge APIs.
+        See <a href="look-at-the-sun.html">Look at the Sun</a> for that deck.
+      </p>
     </section>
 
     <section>
       <h2>Design targets</h2>
       <ul>
-        <li>Fewer assumptions on legacy silicon-centric hosting.</li>
+        <li>Fewer assumptions on legacy silicon-centric hosting — lite edges, local honor passes where appropriate.</li>
         <li>Honest simulation boundaries and explicit honesty tokens in compile output.</li>
-        <li>EGS φ (1.618) as the proportion constant referenced across DNA / PEFF docs.</li>
+        <li>EGS φ (1.618) as the proportion constant across DNA / PEFF docs and Fair Exchange pricing.</li>
+        <li>13-channel spine: Seed Node → Terminal Edge pathfinding (NSPFRNP catalog on this repo).</li>
       </ul>
     </section>
 
     <section>
       <h2>EGS key</h2>
-      <img class="content-img" src="images/look-hood-egs-key.png" alt="Golden spiral suggesting the EGS fractal constant." width="1200" height="675" decoding="async" />
-      <p>The documents below define how φ shows up in architecture, validation, and narrative—not as a substitute for measurement where engineering applies.</p>
+      <img class="content-img" src="images/look-hood-egs-key.png" alt="Golden spiral — EGS fractal constant referenced across architecture and passes." width="1200" height="675" decoding="async" />
+      <p>
+        φ shows up in architecture, validation, and the $16.18/mo members pass — as proportion language, not as a substitute
+        for measurement where engineering applies.
+      </p>
     </section>
 
     <section>
-      <h2>Fair Exchange</h2>
-      <p>Billing and passes are manual rails (Venmo / PayPal / Cash App). Technical claims are backed by artifacts you can run or audit in-repo.</p>
+      <h2>Coherent status · one ship</h2>
+      <dl class="coherence">
+        <dt>Experience layer</dt>
+        <dd>Beats · tracks · musicals · 24×365 channel — felt in the player and on the hub.</dd>
+        <dt>Operations layer</dt>
+        <dd>Upload, catalog sync, stream lock, boarding JWT / local honor — this page.</dd>
+        <dt>Proof layer</dt>
+        <dd>Whitepapers, Snap compile, digital-pru tests — auditable in-repo.</dd>
+        <dt>Broadcast layer</dt>
+        <dd>Solar / DNA / Machote coupling metaphors — <a href="look-at-the-sun.html">Look at the Sun</a>.</dd>
+      </dl>
     </section>
 
     <section class="docs">
-      <h2>Documents</h2>
-      <p style="margin-bottom:0.75rem;color:var(--muted);font-size:0.9375rem;">Each link opens one paper in the reader.</p>
+      <h2>Deep documents · engineering room</h2>
+      <p style="margin-bottom:0.75rem;color:var(--muted);font-size:0.9375rem;">Each link opens one paper in the reader — the hardened canon behind the hood.</p>
       <ul>
+        <li><a href="whitepaper-surface.html?id=sing13-edge-onboarding">SING 13 edge onboarding</a></li>
+        <li><a href="whitepaper-surface.html?id=mca-nspfrnp-catalog">NSPFRNP · MCA catalog</a></li>
+        <li><a href="whitepaper-surface.html?id=bbhe-repository-standard">BBHE repository standard</a></li>
         <li><a href="whitepaper-surface.html?id=dp-resonance-notice">Resonance notice</a></li>
         <li><a href="whitepaper-surface.html?id=dp-omniverse-matrix">Omniversal magnetic matrix · Protonic-DNA</a></li>
         <li><a href="whitepaper-surface.html?id=dp-paradise-simulation">Paradise Game · technical analysis</a></li>
         <li><a href="whitepaper-surface.html?id=dp-master-canon">Digital Pru · DNA / PEFF master canon</a></li>
         <li><a href="whitepaper-surface.html?id=dp-roadmap-13">Digital Pru · 13-channel roadmap</a></li>
         <li><a href="whitepaper-surface.html?id=jj-snap-ofc">JJ Snap · OFC whitepaper</a></li>
+        <li><a href="look-under-the-hood-legacy-catalog.html">Legacy catalog · all links</a></li>
       </ul>
     </section>
   </main>

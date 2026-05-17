@@ -29,4 +29,6 @@
   <url><loc>https://psw-vibelandia-sing13.vercel.app/interfaces/nesting/nest-questfest-puerto-reno.html</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://psw-vibelandia-sing13.vercel.app/interfaces/nesting/nest-dph-gpu.html</loc><priority>0.82</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://psw-vibelandia-sing13.vercel.app/interfaces/nesting/nest-sing13.html</loc><priority>0.85</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://psw-vibelandia-sing13.vercel.app/interfaces/nesting/nest-goldilocks-beehive.html</loc><priority>0.88</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://psw-vibelandia-sing13.vercel.app/interfaces/goldilocks-beehive-residency.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
 </urlset>

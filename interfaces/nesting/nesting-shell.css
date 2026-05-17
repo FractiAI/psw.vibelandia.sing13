@@ -62,3 +62,61 @@ html, body {
   font-size: 0.9rem;
   color: var(--nest-muted);
 }
+.note a { color: var(--nest-foam); font-weight: 600; text-decoration: none; }
+.note a:hover { text-decoration: underline; color: var(--nest-gold); }
+
+.nest-deck {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0a0f14;
+  background: linear-gradient(90deg, #2dd4bf, #22d3ee);
+  padding: 0.22rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.65rem;
+}
+.nest-hero {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--nest-line);
+  margin: 0 0 1.15rem;
+  display: block;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+.nest-lede {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #e2e8f0;
+  margin: 0 0 1.35rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--nest-line);
+}
+.nest-lede strong { color: var(--nest-gold); }
+.nest-step {
+  margin: 0 0 1rem;
+  padding-left: 0.85rem;
+  border-left: 3px solid rgba(45, 212, 191, 0.45);
+  color: #cbd5e1;
+}
+.nest-step strong { color: #f1f5f9; }
+.nest-pull {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  font-size: 0.95rem;
+  color: #e8edf5;
+  font-style: italic;
+}
+.nest-actions {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: rgba(12, 16, 24, 0.9);
+  border: 1px solid var(--nest-line);
+}
+.nest-actions p { margin: 0 0 0.5rem; font-size: 0.9rem; }
+.nest-actions p:last-child { margin-bottom: 0; }

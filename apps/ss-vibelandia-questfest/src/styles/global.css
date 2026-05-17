@@ -2947,6 +2947,23 @@ a.boarding-pay-open {
   justify-content: center;
 }
 
+.machote-campaign-beehive {
+  margin: 0 0 1rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(125, 211, 192, 0.45);
+  background: rgba(8, 20, 24, 0.55);
+}
+
+.machote-campaign-beehive__cta {
+  display: block;
+  width: 100%;
+  margin-top: 0.65rem;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
 .sp-pl-edit-foot {
   margin-top: 1.5rem;
   padding-bottom: 1rem;

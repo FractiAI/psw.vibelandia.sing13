@@ -1,0 +1,186 @@
+:root {
+  --bh-bg: #050810;
+  --bh-gold: #e8d089;
+  --bh-gold-hi: #f5e6b8;
+  --bh-foam: #7dd3c0;
+  --bh-honey: #c97b4a;
+  --bh-line: rgba(212, 175, 55, 0.28);
+  --bh-muted: #94a3b8;
+  --bh-text: #e8edf5;
+}
+.bh-wrap {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: max(1rem, env(safe-area-inset-top)) 1.25rem max(3rem, env(safe-area-inset-bottom));
+}
+.bh-hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid var(--bh-line);
+  margin: 0 0 1.25rem;
+  display: block;
+}
+.bh-kicker {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bh-foam);
+  margin: 0 0 0.5rem;
+}
+.bh-title {
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+  font-weight: 700;
+  color: var(--bh-gold-hi);
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+}
+.bh-sub {
+  font-size: 1rem;
+  color: var(--bh-muted);
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+.bh-lede {
+  font-size: 1.0625rem;
+  color: #cbd5e1;
+  margin: 0 0 2rem;
+  line-height: 1.65;
+}
+.bh-manifesto,
+.bh-protocol,
+.bh-terms {
+  margin-bottom: 2rem;
+}
+.bh-manifesto h2,
+.bh-protocol h2,
+.bh-terms h2,
+.bh-section-head {
+  font-size: 1.1rem;
+  color: var(--bh-gold);
+  margin: 0 0 0.75rem;
+}
+.bh-manifesto p,
+.bh-protocol p,
+.bh-terms p {
+  margin: 0 0 0.85rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+}
+.bh-manifesto p:last-child,
+.bh-protocol p:last-child { margin-bottom: 0; }
+.bh-terms ul {
+  margin: 0.35rem 0 0.85rem;
+  padding-left: 1.15rem;
+  color: #b8c4d4;
+}
+.bh-terms li { margin-bottom: 0.45rem; line-height: 1.55; }
+.bh-protocol {
+  padding: 1.1rem 1rem;
+  border-radius: 10px;
+  border: 2px solid rgba(125, 211, 192, 0.4);
+  background: rgba(8, 22, 28, 0.55);
+}
+.bh-protocol a { color: var(--bh-foam); font-weight: 600; }
+.bh-protocol-contact { margin: 1rem 0 0 !important; }
+.bh-protocol-contact .bh-btn { color: #1a120c; }
+.bh-calendar {
+  margin-bottom: 2rem;
+  padding: 1.1rem 1rem;
+  border-radius: 10px;
+  border: 2px solid rgba(201, 123, 74, 0.55);
+  background: linear-gradient(165deg, rgba(42, 28, 20, 0.95), rgba(26, 18, 14, 0.98));
+}
+.bh-calendar h2 {
+  font-size: 1.05rem;
+  color: var(--bh-gold-hi);
+  margin: 0 0 0.6rem;
+}
+.bh-calendar p {
+  margin: 0;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+.bh-callout--connect p:last-child { margin-bottom: 0; }
+.bh-callout a { color: var(--bh-foam); }
+.bh-phase {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 2rem;
+  border-left: 2px solid var(--bh-line);
+  margin-left: 0.65rem;
+  padding-bottom: 0.25rem;
+}
+.bh-phase:last-of-type { border-left-color: transparent; }
+.bh-phase-num {
+  position: absolute;
+  left: -1.05rem;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--bh-honey), var(--bh-gold));
+  color: #1a120c;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(232, 184, 109, 0.35);
+}
+.bh-phase h2 {
+  font-size: 1.1rem;
+  color: var(--bh-gold);
+  margin: 0 0 0.5rem;
+}
+.bh-phase p {
+  margin: 0 0 0.65rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.bh-phase ul {
+  margin: 0.35rem 0 0.65rem;
+  padding-left: 1.15rem;
+  color: #b8c4d4;
+}
+.bh-phase li { margin-bottom: 0.35rem; }
+.bh-callout {
+  background: linear-gradient(165deg, rgba(61, 46, 36, 0.9), rgba(31, 24, 20, 0.95));
+  border: 2px solid var(--bh-line);
+  border-radius: 12px;
+  padding: 1.15rem 1.1rem;
+  margin: 2rem 0;
+}
+.bh-callout strong { color: var(--bh-gold-hi); }
+.bh-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 2rem;
+}
+.bh-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--bh-gold);
+  color: #1a120c;
+  background: linear-gradient(180deg, var(--bh-gold-hi), var(--bh-gold));
+}
+.bh-btn:hover { filter: brightness(1.06); }
+.bh-btn--ghost {
+  background: transparent;
+  color: var(--bh-gold);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+.bh-btn--ghost:hover { background: rgba(212, 175, 55, 0.08); }
+.bh-fine {
+  font-size: 0.8rem;
+  color: var(--bh-muted);
+  margin-top: 1.5rem;
+  line-height: 1.5;
+}

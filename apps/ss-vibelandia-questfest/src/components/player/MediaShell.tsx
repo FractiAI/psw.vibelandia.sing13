@@ -41,7 +41,22 @@ export function MediaShell() {
   /** Re-check honor end date without reload (e.g. tab left open past midnight). */
   useEffect(() => {
     const id = window.setInterval(() => hydrateSession(), 60_000);
-    return () => window.clearInterval(id);
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') hydrateSession();
+    };
+    const onStorage = (ev: StorageEvent) => {
+      if (ev.key === 'qv-local-monthly-honor' || ev.key === 'qv-pass-token') hydrateSession();
+    };
+    const onPageShow = () => hydrateSession();
+    document.addEventListener('visibilitychange', onVisible);
+    window.addEventListener('storage', onStorage);
+    window.addEventListener('pageshow', onPageShow);
+    return () => {
+      window.clearInterval(id);
+      document.removeEventListener('visibilitychange', onVisible);
+      window.removeEventListener('storage', onStorage);
+      window.removeEventListener('pageshow', onPageShow);
+    };
   }, [hydrateSession]);
 
   const handleBoarding = async (payload: BoardingRequestBody) => {
@@ -90,6 +105,8 @@ export function MediaShell() {
         }}
         onNeedPass={() => {
           closeExport();
+          const st = useSessionStore.getState();
+          if (st.isPassenger || st.captainUnlocked) return;
           setFairOpen(true);
         }}
       />

@@ -15,8 +15,8 @@
 | **Onboarding** | Single-read edge file (SING 13 specific) | `SING13_EDGE_ONBOARDING.md` |
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
-| **QUESTFEST surface** | Hub + ETCon + press + Snap robots + Look at the Sun + Juicy Juicy Snap + FractiAI + Valet Pru + i18n (10 locales) + assets | `interfaces/` |
-| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock (scrolls with page), Libretto log, **Machote Moderno Magazine · members-only pass** ($16.18/mo EGS φ — follow magazine + honor attestation → **30 calendar days** on this browser), single-active-stream lock, **background audio for members/captain only**, richer playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · static bundle: `interfaces/questfest-bridge/` (rebuild with `npm run build:questfest-bridge`; CI runs the same) |
+| **QUESTFEST surface** | Hub + **9-layer nesting ladder** (plain-language guides) + **Goldilocks Synthrverse Beehive Residency** + ETCon + press + Look at the Sun / Under the hood + FractiAI + Valet Pru + i18n + assets | `interfaces/` · `interfaces/nesting/` |
+| **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock, Libretto log, **Master Music Catalog** honor pass ($16.18/mo EGS φ — **not the magazine for sale**; follow **Machote Moderno Magazine** to qualify, then honor attestation → **30 calendar days** on this browser), single-active-stream lock, **background audio for members/captain only**, playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · bundle: `interfaces/questfest-bridge/` (`npm run build:questfest-bridge`) |
 | **Lite-edge APIs** | Boarding + export JWTs (shared `api/honor-attest.js`), per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
 | **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks (hood page is narrative + whitepaper CTAs; compile is not embedded) | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
@@ -27,12 +27,33 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 | Tier | Price | How |
 |---|---|---|
-| **Machote Magazine members pass** | **$16.18/mo** (EGS φ) | **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/profile.php?id=61587003343289)** (linked in boarding; override with `VITE_MACHOTE_MAGAZINE_URL`). Pay on Venmo, PayPal, or Cash App → boarding modal: **magazine-follow** + **honor** checkboxes, **date paid**, **email**, rail → **device record** unlocks full play until **paid date + 30 days** (playback honor is client-side). **`POST /api/boarding`** still issues a **signed Passenger JWT** when `PASS_TOKEN_SECRET` is set (exports and server-verified flows). |
+| **Master Music Catalog honor pass** | **$16.18/mo** (EGS φ) | **Not the magazine for sale** — the pass unlocks the **Holographic Reno Swamp Beats Caliente** catalog (Hero Jo's Golden Bachdoor Hit Factory). **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/profile.php?id=61587003343289)** (`VITE_MACHOTE_MAGAZINE_URL` to override). Pay on Venmo, PayPal, or Cash App → boarding: magazine-follow + honor attestation, date paid, email, rail → **device record** unlocks full play until **paid date + 30 days**. **`POST /api/boarding`** issues a signed Passenger JWT when `PASS_TOKEN_SECRET` is set. |
 | **Track export / download** | **$1.61** | Same honor attestation after payment (or legacy `receipt` string on the API); `POST /api/export` records a license id, then the client saves the file |
 | **Bookings** | Contact | `valetpru@gmail.com` |
 | **Catalog / licensing (Reno Holographic Swamp Beats · Caliente Catalog — Hero Jo's Golden Bachdoor Hit Factory)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
 
 Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via BroadcastChannel (same tab) + `/api/heartbeat` (cross-device; Upstash Redis when env is set).
+
+### Goldilocks Synthrverse Beehive Residency (Layer 9 · Machote members)
+
+Exclusively for **Machote Moderno Magazine** members — targeting the **0.001%**. Invite the ecosystem back in after the fortress gets heavy: not another asset manager, a **living residency** nested inside SING 13.
+
+| Item | Detail |
+|---|---|
+| **Old School Protocol** | **Interested party nodes contact [PL Taino](mailto:valetpru@gmail.com?subject=Goldilocks%20Synthrverse%20Beehive%20Residency%20%E2%80%94%20interested%20node) directly** — no corporate intake funnel. |
+| **Terms** | **2-week test drive** for all parties to gauge resonance; scale to a **month**, a **season**, or **longer** by mutual yes. |
+| **Calendar** | Open slots for the **rest of 2026** — fills very fast; don't hesitate if the message resonates. |
+| **Walkthrough** | [`interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) · nest guide: [`interfaces/nesting/nest-goldilocks-beehive.html`](interfaces/nesting/nest-goldilocks-beehive.html) |
+
+Requires magazine follow + active catalog honor pass. Bookings / residency signal: **valetpru@gmail.com**.
+
+### Nesting ladder (9 layers)
+
+Outermost → innermost on the hub (**YOU ARE HERE** marks Layer 9):
+
+1. Basenet · genesis → 2. Syntheverse → 3. Sonic Singularity → 4. Wrong Side of Town → 5. Man cave mirror → 6. QUESTFEST · Puerto Reno → 7. DPH-GPU → 8. SING 13 · cloud skin → **9. Goldilocks Synthrverse Beehive Residency**
+
+Hub ladder: [`interfaces/vibelandia-questfest.html#qf-nest-section`](interfaces/vibelandia-questfest.html#qf-nest-section). Each layer has an expanded guide under `interfaces/nesting/nest-*.html`.
 
 ### Playback layout and background audio
 
@@ -73,12 +94,14 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 
 - **Landing → QUESTFEST:** `/` redirects to [`/interfaces/vibelandia-questfest.html`](interfaces/vibelandia-questfest.html)
 - **QUESTFEST short path:** `/questfest`
-- **Machote members pass (checkout):** [`/interfaces/questfest-bridge/#/bridge?checkout=1`](interfaces/questfest-bridge/) — opens **$16.18/mo** boarding flow. Linked from the QUESTFEST hub as **Machote Moderno Magazine · Members-only pass · $16.18/mo**.
-- **QUESTFEST Bridge (Sovereign Player):** [`/interfaces/questfest-bridge/#/`](interfaces/questfest-bridge/) · short rewrite **`/sovereign-gate`** → same app entry
+- **Nesting ladder (9 layers):** [`/interfaces/vibelandia-questfest.html#qf-nest-section`](interfaces/vibelandia-questfest.html#qf-nest-section)
+- **Goldilocks Synthrverse Beehive Residency:** [`/interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) — manifesto, Old School Protocol (contact PL Taino), 2-week test drive terms, 2026 calendar
+- **Master Music Catalog pass (checkout):** [`/interfaces/questfest-bridge/#/bridge?checkout=1`](interfaces/questfest-bridge/) — **$16.18/mo** honor pass (catalog access; magazine is the qualifier badge). Hub CTA: **Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass**.
+- **QUESTFEST Bridge (Sovereign Player):** [`/interfaces/questfest-bridge/#/`](interfaces/questfest-bridge/) · **`/sovereign-gate`** → same entry
+- **Look at the Sun:** [`interfaces/look-at-the-sun.html`](interfaces/look-at-the-sun.html) · **Under the hood:** [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html)
 - **ETCon Reno Desert** (May 28–31, 2026): `/etcon` → [`interfaces/etcon-reno-desert.html`](interfaces/etcon-reno-desert.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)
-- **Look under the hood (engine room):** `/hood` → [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html) — narrative + whitepaper buttons; OFC compile lives in `engine/` and [`docs/JJ_SNAP_OFC_WHITEPAPER.md`](docs/JJ_SNAP_OFC_WHITEPAPER.md)
-- **FractiAI hub:** [`/interfaces/fractiai.html`](interfaces/fractiai.html) · short hub: `/fractiai/digital-pru` → [`interfaces/fractiai-digital-pru.html`](interfaces/fractiai-digital-pru.html)
+- **FractiAI hub:** [`/interfaces/fractiai.html`](interfaces/fractiai.html) · `/fractiai/digital-pru` → [`interfaces/fractiai-digital-pru.html`](interfaces/fractiai-digital-pru.html)
 - **SING 13 onboarding:** `/sing13-edge-onboarding` → [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md)
 
 ## What lives on SING 9 (parent edge — not duplicated here)
@@ -139,4 +162,4 @@ Open `http://localhost:5173/interfaces/questfest-bridge/#/` (matches Vite `base`
 
 ---
 
-**NSPFRNP ⊃ SING 13 ⊃ 13-channel pathfinding ⊃ NSPFRNP catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹**
+**NSPFRNP ⊃ SING 13 ⊃ 9-layer nest ⊃ Goldilocks Synthrverse Beehive ⊃ Master Music Catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹**

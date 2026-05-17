@@ -12,6 +12,7 @@ import {
   saveCatalogJson,
   saveDeviceDirHandle,
 } from '@/lib/catalogPersistence';
+import { readBundledCatalog } from '@/lib/bundledCatalog';
 import {
   fetchRemoteCatalog,
   fetchServerCatalog,
@@ -35,7 +36,6 @@ import {
 type View = 'catalog' | 'dj';
 
 interface CatalogState {
-  hydrated: boolean;
   catalogSyncing: boolean;
   view: View;
   djMode: boolean;
@@ -187,13 +187,15 @@ async function addFileAsTrack(
   };
 }
 
+const bootCatalog = applyServerCatalog(readBundledCatalog(), loadCatalogJson<CatalogSnapshot>());
+
 export const useCatalogStore = create<CatalogState>((set, get) => ({
-  hydrated: false,
+  catalogSyncing: false,
   view: 'catalog',
   djMode: false,
-  tracks: {},
-  playlists: [],
-  activePlaylistId: MASTER_PLAYLIST_ID,
+  tracks: bootCatalog.tracks,
+  playlists: bootCatalog.playlists,
+  activePlaylistId: bootCatalog.activePlaylistId,
   search: '',
 
   setView: (v) => set({ view: v }),
@@ -525,9 +527,24 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const { tracks, activePlaylistId } = get();
     const playlists = syncMasterPlaylistWithTracks(tracks, get().playlists);
     set({ playlists });
+    const savedTracks: Record<string, TrackDef> = {};
+    for (const [id, tr] of Object.entries(tracks)) {
+      if (!tr.src && !tr.serverHosted) continue;
+      savedTracks[id] = {
+        id: tr.id,
+        title: tr.title,
+        artist: tr.artist,
+        src: tr.src,
+        ...(tr.videoSrc ? { videoSrc: tr.videoSrc } : {}),
+        ...(tr.description ? { description: tr.description } : {}),
+        ...(tr.uploadedAt ? { uploadedAt: tr.uploadedAt } : {}),
+        serverHosted: tr.serverHosted ?? true,
+        ...(tr.sourceKey ? { sourceKey: tr.sourceKey } : {}),
+      };
+    }
     saveCatalogJson({
       version: CATALOG_VERSION,
-      tracks: {},
+      tracks: savedTracks,
       playlists,
       activePlaylistId,
     });

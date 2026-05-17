@@ -153,24 +153,14 @@ export function NowPlayingBar({
     const el = mediaRef.current;
     const bg = backgroundAudioRef.current;
     if (!el || !track) return;
-    if (isPlaying) {
-      beginSession();
-      if (document.hidden && fullPlayUnlocked) {
-        if (bg?.src) {
-          void bg.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
-        } else {
-          void el.play().catch(() => {});
-        }
-      } else {
-        void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
-      }
-    } else {
+    if (!isPlaying) {
       el.pause();
-      if (!backgroundHandoffActive || !document.hidden) {
-        bg?.pause();
-      }
+      bg?.pause();
+      return;
     }
-  }, [backgroundHandoffActive, beginSession, fullPlayUnlocked, isPlaying, isVideo, track]);
+    beginSession();
+    void el.play().catch(() => setError('Tap play on a track to start listening.'));
+  }, [beginSession, isPlaying, track]);
 
   useEffect(() => {
     const el = mediaRef.current;

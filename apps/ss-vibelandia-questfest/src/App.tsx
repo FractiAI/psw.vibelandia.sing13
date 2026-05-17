@@ -6,15 +6,15 @@ import { RegistrationPage } from './pages/RegistrationPage';
 export default function App() {
   return (
     <>
-    <Routes>
-      <Route path="/" element={<RegistrationPage />} />
-      <Route path="/register" element={<RegistrationPage />} />
-      <Route path="/bridge" element={<BridgePage />} />
-      <Route path="/playlists" element={<BridgePage />} />
-      <Route path="/dj" element={<BridgePage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-    <MediaShell />
+      <Routes>
+        <Route path="/" element={<Navigate to="/bridge" replace />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/bridge" element={<BridgePage />} />
+        <Route path="/playlists" element={<BridgePage />} />
+        <Route path="/dj" element={<BridgePage />} />
+        <Route path="*" element={<Navigate to="/bridge" replace />} />
+      </Routes>
+      <MediaShell />
     </>
   );
 }

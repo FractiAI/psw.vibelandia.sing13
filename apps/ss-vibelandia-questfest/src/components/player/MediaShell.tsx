@@ -4,14 +4,18 @@ import { BoardingModal } from '@/components/payment/BoardingModal';
 import { CaptainUnlockModal } from '@/components/payment/CaptainUnlockModal';
 import { MachoteCampaignModal } from '@/components/payment/MachoteCampaignModal';
 import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
-import { consumeCampaignResetFromUrl, dismissMachoteCampaign } from '@/lib/machoteCampaignStorage';
+import {
+  consumeCampaignResetFromUrl,
+  dismissMachoteCampaign,
+  shouldAutoShowMachoteCampaign,
+} from '@/lib/machoteCampaignStorage';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import type { BoardingRequestBody } from '@/lib/api';
 
-/** Global modals and session — no blocking catalog load. */
+/** Modals + session only. Catalog is ready on first paint — no network sync here. */
 export function MediaShell() {
   const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
@@ -35,11 +39,18 @@ export function MediaShell() {
 
   useEffect(() => {
     hydrateSession();
+    usePlaybackStore.getState().setPlaying(false);
+    usePlaybackStore.getState().setTrack(null);
+
     consumeCampaignResetFromUrl();
-    window.setTimeout(() => {
-      void useCatalogStore.getState().refreshFromServer();
-    }, 0);
-  }, [hydrateSession]);
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('campaign') === '1') {
+      const st = useSessionStore.getState();
+      if (shouldAutoShowMachoteCampaign(st.isPassenger || st.captainUnlocked)) {
+        setCampaignOpen(true);
+      }
+    }
+  }, [hydrateSession, setCampaignOpen]);
 
   const closeCampaign = (dismiss: boolean) => {
     if (dismiss) dismissMachoteCampaign();

@@ -63,10 +63,8 @@ export function BridgePage() {
     setDjMode(false);
     setActivePlaylist(MASTER_PLAYLIST_ID);
     navigate('/bridge', { replace: true });
-    window.setTimeout(() => {
-      setTrack(trackId);
-      setPlaying(true);
-    }, 0);
+    setPlaying(false);
+    setTrack(trackId);
   };
 
   const goListen = () => {
@@ -136,8 +134,9 @@ export function BridgePage() {
               className="sp-top-link"
               disabled={catalogSyncing}
               onClick={() => void refreshFromServer()}
+              title="Optional — only when you want to pull new uploads from the server"
             >
-              {catalogSyncing ? 'Syncing…' : 'Refresh library'}
+              {catalogSyncing ? 'Syncing…' : 'Sync from server'}
             </button>
             {showMembersOffer ? (
               <button

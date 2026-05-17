@@ -184,9 +184,9 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           <p className="spotify-main-eyebrow">Upload</p>
           <h2 className="spotify-main-title">Add tracks</h2>
           <p className="spotify-main-desc">
-            Single file with a custom title, or import many at once. Everything lands in{' '}
-            <strong>Master catalog</strong> — then open <strong>Listen</strong>. Files you already
-            uploaded are detected before upload starts.
+            Single file with a custom title, or import many at once. Everything joins the{' '}
+            <strong>Sonic Singularity</strong> library — then open <strong>Listen</strong>. Files you
+            already uploaded are detected before upload starts.
           </p>
         </div>
       </header>

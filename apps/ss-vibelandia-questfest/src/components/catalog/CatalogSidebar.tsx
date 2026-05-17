@@ -1,5 +1,7 @@
 import { useCatalogStore } from '@/stores/catalogStore';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
+import { PLAIN } from '@/lib/plainSpeak';
 import { useMemo } from 'react';
 
 interface CatalogSidebarProps {
@@ -14,6 +16,7 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
+  const getTrack = useCatalogStore((s) => s.getTrack);
 
   const masterPl = useMemo(
     () => playlists.find((p) => p.id === MASTER_PLAYLIST_ID),
@@ -50,7 +53,10 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
         <span className="sp-logo-mark" aria-hidden>♪</span>
         <div>
           <strong>Machote Moderno</strong>
-          <span>{trackCount} tracks</span>
+          <span>
+            {trackCount} {PLAIN.tracks}
+            {masterPl ? ` · ${fmtPlaylistTotalTime(masterPl.trackIds, getTrack)}` : ''}
+          </span>
         </div>
       </div>
 
@@ -79,7 +85,7 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
             }
           }}
         >
-          <span className="sp-side-icon">🏠</span> Listen
+          <span className="sp-side-icon">🏠</span> {PLAIN.listen}
         </button>
         <button
           type="button"
@@ -89,13 +95,13 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
             onDjClick();
           }}
         >
-          <span className="sp-side-icon">⬆</span> Upload
+          <span className="sp-side-icon">⬆</span> {PLAIN.upload}
         </button>
       </nav>
 
       <div className="sp-side-section sp-side-section--master">
-        <p className="sp-side-label">Master catalog</p>
-        <p className="sp-side-master-hint">All files on this device — always listed here</p>
+        <p className="sp-side-label">{PLAIN.masterCatalog}</p>
+        <p className="sp-side-master-hint">{PLAIN.masterCatalogHint}</p>
         <button
           type="button"
           className={`sp-pl-item sp-pl-item--master${activeId === MASTER_PLAYLIST_ID && !djMode ? ' sp-pl-item--on' : ''}`}
@@ -105,15 +111,17 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
             📚
           </span>
           <span className="sp-pl-text">
-            <span className="sp-pl-name">{masterPl?.name ?? 'Master catalog'}</span>
-            <span className="sp-pl-count">{masterCount} tracks</span>
+            <span className="sp-pl-name">{masterPl?.name ?? PLAIN.masterCatalog}</span>
+            <span className="sp-pl-count">
+              {masterCount} {PLAIN.tracks} · {fmtPlaylistTotalTime(masterPl?.trackIds ?? [], getTrack)}
+            </span>
           </span>
         </button>
       </div>
 
       <div className="sp-side-section">
         <div className="sp-side-label-row">
-          <p className="sp-side-label">Your playlists</p>
+          <p className="sp-side-label">{PLAIN.yourPlaylists}</p>
           <button
             type="button"
             className="sp-side-new"
@@ -136,7 +144,9 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
                 </span>
                 <span className="sp-pl-text">
                   <span className="sp-pl-name">{pl.name}</span>
-                  <span className="sp-pl-count">{pl.trackIds.length} tracks</span>
+                  <span className="sp-pl-count">
+                    {pl.trackIds.length} {PLAIN.tracks} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)}
+                  </span>
                 </span>
               </button>
             </li>

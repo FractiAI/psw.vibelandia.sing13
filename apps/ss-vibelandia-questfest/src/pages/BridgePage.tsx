@@ -11,6 +11,7 @@ import { PlayerDock } from '@/components/player/PlayerDock';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
+import { PLAIN } from '@/lib/plainSpeak';
 
 export function BridgePage() {
   const location = useLocation();
@@ -103,7 +104,7 @@ export function BridgePage() {
   if (!hydrated) {
     return (
       <div className="sp-app sp-app--loading">
-        <p>Loading catalog…</p>
+        <p>{PLAIN.loadingCatalog}</p>
       </div>
     );
   }
@@ -159,12 +160,10 @@ export function BridgePage() {
         <main className="sp-scroll">
           {!djMode && !isPlaylistsView && trackCount === 0 ? (
             <section className="sp-empty-catalog">
-              <h2 className="sp-empty-catalog-title">No tracks yet</h2>
-              <p className="sp-empty-catalog-desc">
-                Catalog is empty. Use Upload to add a track, then listen and press play.
-              </p>
+              <h2 className="sp-empty-catalog-title">No songs yet</h2>
+              <p className="sp-empty-catalog-desc">{PLAIN.noTracksUpload}</p>
               <button type="button" className="sp-tab sp-tab--dj sp-tab--on" onClick={goDj}>
-                Upload a track
+                {PLAIN.upload}
               </button>
             </section>
           ) : isPlaylistsView ? (

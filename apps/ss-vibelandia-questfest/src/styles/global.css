@@ -1952,8 +1952,14 @@ a.voxel-btn {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem 1rem;
-  width: 100%;
-  min-width: 0;
+}
+
+.sp-toolbar-total {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--swamp-gold);
+  white-space: nowrap;
+  margin-left: auto;
 }
 
 .sp-toolbar .sp-hero-secondary {
@@ -2182,6 +2188,23 @@ a.voxel-btn {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.sp-library-desc--hint {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.68rem;
+  opacity: 0.85;
+  white-space: normal;
+}
+
+.sp-pl-edit-banner-hint {
+  display: block;
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #b8c4d4;
+  line-height: 1.45;
 }
 
 .sp-library-actions {

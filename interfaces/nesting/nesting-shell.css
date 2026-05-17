@@ -75,7 +75,15 @@ html, body {
   background: linear-gradient(90deg, #2dd4bf, #22d3ee);
   padding: 0.22rem 0.55rem;
   border-radius: 4px;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.35rem;
+}
+.nest-plain-tag {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--nest-muted);
+  margin: 0 0 0.65rem;
+  letter-spacing: 0.02em;
 }
 .nest-hero {
   width: 100%;

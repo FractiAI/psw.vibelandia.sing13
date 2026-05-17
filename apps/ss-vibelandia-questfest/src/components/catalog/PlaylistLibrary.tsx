@@ -2,6 +2,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { PlaylistEditor } from '@/components/catalog/PlaylistEditor';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
+import { PLAIN } from '@/lib/plainSpeak';
+import { MASTER_LIBRARY_UI_HINT, SONIC_SINGULARITY_TAGLINE } from '@/lib/sonicCatalogCopy';
 
 interface PlaylistLibraryProps {
   onOpenPlaylist: (id: string) => void;
@@ -27,6 +30,7 @@ export function PlaylistLibrary({
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const duplicatePlaylist = useCatalogStore((s) => s.duplicatePlaylist);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
+  const getTrack = useCatalogStore((s) => s.getTrack);
 
   const [editingId, setEditingId] = useState<string | null>(null);
 
@@ -67,10 +71,10 @@ export function PlaylistLibrary({
     <section className="sp-library">
       <header className="sp-library-head">
         <div>
-          <h1 className="sp-library-title">Your playlists</h1>
+          <h1 className="sp-library-title">{PLAIN.yourPlaylists}</h1>
           <p className="sp-library-sub">
-            <strong>Master catalog</strong> lists every file on this device. Create a playlist, tap Edit, then add
-            tracks from that library.
+            <strong>{PLAIN.masterCatalog}</strong> — {PLAIN.masterCatalogHint} Make a playlist, tap Edit, add songs from
+            that list.
           </p>
         </div>
         <button type="button" className="sp-library-new" onClick={handleCreate}>
@@ -89,15 +93,19 @@ export function PlaylistLibrary({
                 <span className="sp-library-name">
                   {pl.name}
                   {isMasterPlaylist(pl.id) && (
-                    <span className="sp-library-badge"> master catalog </span>
+                    <span className="sp-library-badge"> full library </span>
                   )}
                 </span>
-                <span className="sp-library-count">{pl.trackIds.length} songs</span>
-                {!isMasterPlaylist(pl.id) && pl.description && (
-                  <span className="sp-library-desc">{pl.description}</span>
-                )}
-                {isMasterPlaylist(pl.id) && (
-                  <span className="sp-library-desc">Auto — every upload</span>
+                <span className="sp-library-count">
+                  {pl.trackIds.length} {PLAIN.songs} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)} {PLAIN.totalTime}
+                </span>
+                {isMasterPlaylist(pl.id) ? (
+                  <>
+                    <span className="sp-library-desc">{SONIC_SINGULARITY_TAGLINE}</span>
+                    <span className="sp-library-desc sp-library-desc--hint">{MASTER_LIBRARY_UI_HINT}</span>
+                  </>
+                ) : (
+                  pl.description && <span className="sp-library-desc">{pl.description}</span>
                 )}
               </span>
             </button>

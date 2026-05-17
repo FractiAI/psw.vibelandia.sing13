@@ -3,6 +3,9 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
+import { PLAIN } from '@/lib/plainSpeak';
+import { MASTER_LIBRARY_UI_HINT, SONIC_SINGULARITY_DESCRIPTION } from '@/lib/sonicCatalogCopy';
 
 interface PlaylistEditorProps {
   playlistId: string;
@@ -130,8 +133,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
       {isMaster && (
         <p className="sp-pl-edit-banner">
-          <strong>Master catalog</strong> — every new file is added here automatically. Build other playlists from this
-          list with <strong>+ Add songs</strong> on those playlists.
+          {SONIC_SINGULARITY_DESCRIPTION}
+          <span className="sp-pl-edit-banner-hint">{MASTER_LIBRARY_UI_HINT}</span>
         </p>
       )}
 
@@ -161,7 +164,9 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
       <div className="sp-pl-edit-tracks">
         <div className="sp-pl-edit-tracks-bar">
-          <h2 className="sp-pl-edit-tracks-title">{playlistTracks.length} songs</h2>
+          <h2 className="sp-pl-edit-tracks-title">
+            {playlistTracks.length} {PLAIN.songs} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)} {PLAIN.totalTime}
+          </h2>
           {!isMaster && (
             <button
               type="button"

@@ -12,25 +12,13 @@ import { hasExportLicense } from '@/lib/exportLicenses';
 
 import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 
-import { DEFAULT_ARTIST } from '@/lib/catalogTypes';
-
 import { isMasterPlaylist } from '@/lib/catalogSeed';
-
-
-
-function fmtDuration(sec?: number) {
-
-  if (sec == null || !Number.isFinite(sec)) return '—';
-
-  const total = Math.max(0, Math.floor(Number(sec)));
-
-  const m = Math.floor(total / 60);
-
-  const s = total % 60;
-
-  return `${m}:${s.toString().padStart(2, '0')}`;
-
-}
+import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
+import { PLAIN } from '@/lib/plainSpeak';
+import {
+  SONIC_CATALOG_DISPLAY_NAME,
+  SONIC_SINGULARITY_DESCRIPTION,
+} from '@/lib/sonicCatalogCopy';
 
 
 
@@ -140,7 +128,29 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
   const currentTrack = currentTrackId ? getTrack(currentTrackId) : undefined;
 
+  const isMaster = isMasterPlaylist(pl.id);
 
+  const heroTitle = currentTrack?.title ?? (isMaster ? SONIC_CATALOG_DISPLAY_NAME : pl.name);
+
+  const heroDescription = currentTrack?.description?.trim()
+    ? currentTrack.description
+    : isMaster
+      ? SONIC_SINGULARITY_DESCRIPTION
+      : pl.description;
+
+  const heroStats = currentTrack
+    ? [
+        currentTrack.artist?.trim() || undefined,
+        currentTrack.durationSec != null ? fmtDuration(currentTrack.durationSec) : undefined,
+        isPassenger ? PLAIN.fullPlay : PLAIN.freePreview,
+      ]
+        .filter(Boolean)
+        .join(' · ')
+    : [
+        `${pl.trackIds.length} ${PLAIN.songs}`,
+        `${totalTimeLabel} ${PLAIN.totalTime}`,
+        isPassenger ? PLAIN.fullPlay : PLAIN.freePreview,
+      ].join(' · ');
 
   const playAll = () => {
 
@@ -166,7 +176,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
   if (!pl) {
 
-    return <p className="sp-empty">Pick a playlist on the left.</p>;
+    return <p className="sp-empty">{PLAIN.pickPlaylist}</p>;
 
   }
 
@@ -182,17 +192,16 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
         <div className="sp-hero-meta">
 
-          <p className="sp-hero-type">{currentTrack ? 'Now playing' : 'Playlist'}</p>
+          <p className="sp-hero-type">
+            {currentTrack ? 'Now playing' : isMaster ? 'Sonic Singularity' : 'Playlist'}
+          </p>
 
-          <h1 className="sp-hero-title">{currentTrack?.title ?? pl.name}</h1>
+          <h1 className="sp-hero-title">{heroTitle}</h1>
 
-          <p className="sp-hero-desc">{currentTrack?.description || pl.description}</p>
+          <p className="sp-hero-desc">{heroDescription}</p>
 
           <p className="sp-hero-stats">
-
-            <strong>{currentTrack?.artist ?? DEFAULT_ARTIST}</strong> · {pl.trackIds.length} songs ·{' '}
-
-            {isPassenger ? 'full play' : '30s free on each track'}
+            {heroStats}
 
             {isPassenger && (
 
@@ -246,7 +255,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
             type="search"
 
-            placeholder="Search in playlist"
+            placeholder={PLAIN.searchPlaylist}
 
             value={search}
 
@@ -266,6 +275,17 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
         )}
 
+        {rows.length > 0 && (
+          <span className="sp-toolbar-total" aria-live="polite">
+            {rows.length === pl.trackIds.length
+              ? `${totalTimeLabel} ${PLAIN.totalTime}`
+              : `${fmtPlaylistTotalTime(
+                  rows.map((r) => r.id),
+                  getTrack,
+                )} shown`}
+          </span>
+        )}
+
       </div>
 
 
@@ -278,7 +298,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
             ? 'No tracks match your search.'
 
-            : 'No tracks in this playlist yet. Open Playlists → Edit and add songs from the Master catalog.'}
+            : PLAIN.noTracksYet}
 
         </p>
 

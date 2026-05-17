@@ -1058,8 +1058,17 @@
 
       var params = new URLSearchParams(window.location.search);
       if (params.get('campaign') === '1') {
+        try { localStorage.removeItem(CAMPAIGN_KEY); } catch (e) { /* ignore */ }
+      }
+
+      function tryShowCampaign() {
         showCampaign();
       }
+
+      tryShowCampaign();
+      window.addEventListener('pageshow', function (ev) {
+        if (ev.persisted) tryShowCampaign();
+      });
     });
   </script>
 </body>

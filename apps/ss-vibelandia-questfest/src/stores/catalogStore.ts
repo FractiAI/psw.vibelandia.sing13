@@ -136,20 +136,22 @@ function keepLocalTracksOnly(snapshot: CatalogSnapshot): CatalogSnapshot {
 
   playlists = syncMasterPlaylistWithTracks(tracks, playlists);
 
+  const legacyMasterNames = new Set([MASTER_PLAYLIST_LEGACY_NAME, 'Master catalog', 'All uploads']);
+  const legacyMasterDescriptions = new Set([
+    'Every upload lands here automatically. Build other playlists from this list.',
+    'Every file on this device (uploads and folder imports) lives here. Other playlists are views you build from this full library.',
+  ]);
+
   playlists = playlists.map((p) => {
     if (p.id !== MASTER_PLAYLIST_ID) return p;
-    if (p.name === MASTER_PLAYLIST_LEGACY_NAME) {
-      return {
-        ...p,
-        name: MASTER_PLAYLIST_DEFAULT_NAME,
-        description:
-          p.description ===
-          'Every upload lands here automatically. Build other playlists from this list.'
-            ? MASTER_PLAYLIST_DEFAULT_DESCRIPTION
-            : p.description,
-      };
-    }
-    return p;
+    return {
+      ...p,
+      name: legacyMasterNames.has(p.name) ? MASTER_PLAYLIST_DEFAULT_NAME : p.name,
+      description:
+        legacyMasterDescriptions.has(p.description) || !p.description?.trim()
+          ? MASTER_PLAYLIST_DEFAULT_DESCRIPTION
+          : p.description,
+    };
   });
 
   if (!playlists.length) {

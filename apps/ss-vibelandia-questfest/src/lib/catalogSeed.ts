@@ -1,4 +1,5 @@
 import type { CatalogSnapshot } from '@/lib/catalogTypes';
+import { MASTER_LIBRARY_UI_HINT, SONIC_CATALOG_DISPLAY_NAME } from '@/lib/sonicCatalogCopy';
 
 /** Bump to wipe browser catalog + blobs on next load (no seed data). */
 export const CATALOG_VERSION = 4;
@@ -7,10 +8,10 @@ export const CATALOG_VERSION = 4;
 export const MASTER_PLAYLIST_ID = 'pl-main';
 
 /** Shown for the master row (persisted playlists may still use legacy name until migrated). */
-export const MASTER_PLAYLIST_DEFAULT_NAME = 'Master catalog';
+export const MASTER_PLAYLIST_DEFAULT_NAME = SONIC_CATALOG_DISPLAY_NAME;
 
-export const MASTER_PLAYLIST_DEFAULT_DESCRIPTION =
-  'Every file on this device (uploads and folder imports) lives here. Other playlists are views you build from this full library.';
+/** Persisted on the master row — UI hint only (Listen hero uses sonicCatalogCopy). */
+export const MASTER_PLAYLIST_DEFAULT_DESCRIPTION = MASTER_LIBRARY_UI_HINT;
 
 /** Legacy catalog title from older builds — migrated on load in `keepLocalTracksOnly`. */
 export const MASTER_PLAYLIST_LEGACY_NAME = 'All uploads';

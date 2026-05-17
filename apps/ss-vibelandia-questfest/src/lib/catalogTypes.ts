@@ -12,8 +12,10 @@ export interface TrackDef {
   videoSrc?: string;
   posterSrc?: string;
   durationSec?: number;
-  /** IndexedDB blob key for DJ uploads */
+  /** IndexedDB blob key — legacy edge cache only */
   localMediaKey?: string;
+  /** Track file lives on server (static /media or Blob URL) */
+  serverHosted?: boolean;
   uploadedAt?: string;
   /** Dedup key from device file (name + size + modified) */
   sourceKey?: string;

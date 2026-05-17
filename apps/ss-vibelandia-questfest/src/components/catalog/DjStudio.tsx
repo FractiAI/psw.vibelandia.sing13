@@ -101,12 +101,19 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       if (latest?.id) onUploadSuccess?.(latest.id);
     } catch (e) {
       const err = e instanceof Error ? e.message : '';
-      showMsg(
-        err === 'storage_failed'
-          ? 'Could not save to device storage (quota or permission). Free space and try again.'
-          : 'Upload failed. Try again or fewer files at once.',
-        'error',
-      );
+      if (err === 'catalog_upload_unconfigured') {
+        showMsg(
+          'Server upload is not wired yet. Add MP3s under media/catalog/tracks/ and deploy, or set VITE_CATALOG_UPLOAD_SECRET + Vercel Blob.',
+          'error',
+        );
+      } else {
+        showMsg(
+          err === 'storage_failed'
+            ? 'Could not save to the server. Check file size (max ~4.5 MB via upload) or use media/catalog/tracks/.'
+            : 'Upload failed. Try again or fewer files at once.',
+          'error',
+        );
+      }
       setProgress(null);
     } finally {
       setBusy(false);

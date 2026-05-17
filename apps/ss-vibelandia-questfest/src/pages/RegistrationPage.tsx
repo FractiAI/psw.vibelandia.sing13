@@ -14,7 +14,7 @@ export function RegistrationPage() {
         <p className="gate-kicker">Machote Moderno · Caliente Catalog</p>
         <h1 className="gate-title">SS Vibelandia QUESTFEST</h1>
         <p className="gate-lead">
-          Full Reno Swamp catalog on the Bridge — upload your own tracks anytime.
+          Library is server-hosted — tracks live on QUESTFEST, not in your browser cache.
         </p>
         <ul className="gate-list">
           <li>Upload — pick an audio or video file.</li>

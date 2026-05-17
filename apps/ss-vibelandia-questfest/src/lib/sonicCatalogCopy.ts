@@ -17,4 +17,4 @@ export const SONIC_SINGULARITY_TAGLINE =
 
 /** Technical note — playlists UI only, never the Listen hero story. */
 export const MASTER_LIBRARY_UI_HINT =
-  'Your uploads and folder imports land here. Other playlists are mixes you build from this list.';
+  'Server-hosted library — your tracks live on QUESTFEST, not in the browser. Other playlists are mixes you build from this list.';

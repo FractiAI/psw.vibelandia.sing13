@@ -20,7 +20,57 @@ export function isMasterPlaylist(id: string): boolean {
 }
 
 export function isUserUploadTrack(id: string, tr: TrackDef): boolean {
-  return Boolean(tr.localMediaKey) || id.startsWith('trk-up-');
+  return Boolean(tr.serverHosted) || Boolean(tr.localMediaKey) || id.startsWith('trk-up-') || id.startsWith('trk-srv-');
+}
+
+/** Server manifest + saved playlist preferences (no edge track blobs). */
+export function mergeServerCatalogWithPrefs(
+  server: CatalogSnapshot,
+  localPrefs: CatalogSnapshot | null,
+  syncMaster: (tracks: Record<string, TrackDef>, playlists: PlaylistDef[]) => PlaylistDef[],
+): CatalogSnapshot {
+  const tracks = { ...server.tracks };
+  let playlists = server.playlists.map((p) => ({ ...p, trackIds: [...p.trackIds] }));
+
+  if (localPrefs) {
+    const byId = new Map(playlists.map((p) => [p.id, p]));
+    for (const p of localPrefs.playlists) {
+      if (p.id === MASTER_PLAYLIST_ID) continue;
+      const filtered = p.trackIds.filter((id) => tracks[id]);
+      if (byId.has(p.id)) {
+        byId.set(p.id, { ...byId.get(p.id)!, trackIds: filtered, name: p.name, description: p.description });
+      } else if (filtered.length) {
+        byId.set(p.id, { ...p, trackIds: filtered });
+      }
+    }
+    playlists = [...byId.values()];
+  }
+
+  playlists = syncMaster(tracks, playlists);
+
+  playlists = playlists.map((p) => {
+    if (p.id !== MASTER_PLAYLIST_ID) return p;
+    return {
+      ...p,
+      name: LEGACY_MASTER_NAMES.has(p.name) ? MASTER_PLAYLIST_DEFAULT_NAME : p.name,
+      description:
+        LEGACY_MASTER_DESCRIPTIONS.has(p.description) || !p.description?.trim()
+          ? MASTER_PLAYLIST_DEFAULT_DESCRIPTION
+          : p.description,
+    };
+  });
+
+  const activePlaylistId =
+    localPrefs?.activePlaylistId && playlists.some((p) => p.id === localPrefs.activePlaylistId)
+      ? localPrefs.activePlaylistId
+      : server.activePlaylistId || MASTER_PLAYLIST_ID;
+
+  return {
+    version: CATALOG_VERSION,
+    tracks,
+    playlists,
+    activePlaylistId,
+  };
 }
 
 /** Your library only — no demo / remote seed streams. */

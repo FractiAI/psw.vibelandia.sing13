@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "activePlaylistId": "pl-main",
+  "tracks": {},
+  "playlists": [
+    {
+      "id": "pl-main",
+      "name": "Sonic Singularity · Master Library",
+      "kind": "sovereign",
+      "description": "Server-hosted catalog — your uploads live here, not in the browser.",
+      "trackIds": []
+    }
+  ]
+}

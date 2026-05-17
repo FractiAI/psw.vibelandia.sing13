@@ -53,7 +53,12 @@ export function useStreamLock(): StreamLockApi {
       bc = new BroadcastChannel(CH);
       bc.onmessage = (ev: MessageEvent) => {
         const d = ev.data as { type?: string; deviceId?: string };
-        if (d?.type === 'preempt' && d.deviceId && d.deviceId !== deviceId) {
+        if (
+          d?.type === 'preempt' &&
+          d.deviceId &&
+          d.deviceId !== deviceId &&
+          document.visibilityState === 'visible'
+        ) {
           setKillReason('tab_preempt');
           usePlaybackStore.getState().setPlaying(false);
           usePlaybackStore.getState().setGain(0);
@@ -71,19 +76,24 @@ export function useStreamLock(): StreamLockApi {
     if (!isPlaying || !isPassenger || !jti || captainUnlocked) return;
 
     sendPreempt();
-    void postHeartbeat(jti, deviceId);
 
-    const id = window.setInterval(async () => {
-      const res = await getHeartbeat(jti, deviceId);
-      if (res?.kill) {
-        setKillReason('vessel_switch');
-        usePlaybackStore.getState().setPlaying(false);
-        usePlaybackStore.getState().setGain(0);
-      }
-    }, 4000);
+    const poll = () => {
+      if (document.hidden) return;
+      void postHeartbeat(jti, deviceId);
+      void getHeartbeat(jti, deviceId).then((res) => {
+        if (res?.kill) {
+          setKillReason('vessel_switch');
+          usePlaybackStore.getState().setPlaying(false);
+          usePlaybackStore.getState().setGain(0);
+        }
+      });
+    };
+
+    poll();
+    const id = window.setInterval(poll, 4000);
 
     return () => window.clearInterval(id);
-  }, [deviceId, isPassenger, isPlaying, jti, sendPreempt]);
+  }, [captainUnlocked, deviceId, isPassenger, isPlaying, jti, sendPreempt]);
 
   return { beginSession, endSession, killReason, clearKill };
 }

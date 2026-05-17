@@ -6,10 +6,13 @@ interface PlaybackState {
   displayTime: number;
   /** 0–1 linear gain applied by solenoid / vessel switch */
   gain: number;
+  /** Hidden audio handoff active (paid background play). */
+  backgroundHandoffActive: boolean;
   setTrack: (id: string | null) => void;
   setPlaying: (v: boolean) => void;
   setDisplayTime: (t: number) => void;
   setGain: (g: number) => void;
+  setBackgroundHandoffActive: (v: boolean) => void;
 }
 
 export const usePlaybackStore = create<PlaybackState>((set) => ({
@@ -17,8 +20,10 @@ export const usePlaybackStore = create<PlaybackState>((set) => ({
   isPlaying: false,
   displayTime: 0,
   gain: 1,
+  backgroundHandoffActive: false,
   setTrack: (id) => set({ currentTrackId: id }),
-  setPlaying: (v) => set({ isPlaying: v }),
+  setPlaying: (v) => set({ isPlaying: v, ...(v ? {} : { backgroundHandoffActive: false }) }),
   setDisplayTime: (t) => set({ displayTime: t }),
   setGain: (g) => set({ gain: Math.max(0, Math.min(1, g)) }),
+  setBackgroundHandoffActive: (v) => set({ backgroundHandoffActive: v }),
 }));

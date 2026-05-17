@@ -12,6 +12,8 @@ interface UseBackgroundPlaybackOptions {
   track: TrackDef | undefined;
   isVideo: boolean;
   setPlaying: (playing: boolean) => void;
+  /** Resume primary or handoff audio (lock-screen play, etc.). */
+  onRequestResume?: () => void;
 }
 
 function syncMediaSession(track: TrackDef | undefined, allowBackgroundPlay: boolean) {
@@ -53,9 +55,16 @@ export function useBackgroundPlayback({
   track,
   isVideo,
   setPlaying,
+  onRequestResume,
 }: UseBackgroundPlaybackOptions) {
   const backgroundHandoffRef = useRef(false);
   const resumeAttemptsRef = useRef(0);
+  const setBackgroundHandoffActive = usePlaybackStore((s) => s.setBackgroundHandoffActive);
+
+  const setHandoff = (active: boolean) => {
+    backgroundHandoffRef.current = active;
+    setBackgroundHandoffActive(active);
+  };
 
   useEffect(() => {
     if (!allowBackgroundPlay || !track || !('mediaSession' in navigator)) {
@@ -65,8 +74,16 @@ export function useBackgroundPlayback({
 
     syncMediaSession(track, true);
 
-    const onPlay = () => setPlaying(true);
-    const onPause = () => setPlaying(false);
+    const onPlay = () => {
+      setPlaying(true);
+      onRequestResume?.();
+    };
+    /** Do not set isPlaying false on lock-screen/tab hide — OS pauses elements; we hand off instead. */
+    const onPause = () => {
+      if (document.visibilityState === 'visible') {
+        setPlaying(false);
+      }
+    };
 
     try {
       navigator.mediaSession.setActionHandler('play', onPlay);
@@ -76,7 +93,7 @@ export function useBackgroundPlayback({
     }
 
     return () => clearMediaSession();
-  }, [allowBackgroundPlay, setPlaying, track]);
+  }, [allowBackgroundPlay, onRequestResume, setPlaying, track]);
 
   useEffect(() => {
     if (!('mediaSession' in navigator) || !allowBackgroundPlay) return;
@@ -99,7 +116,7 @@ export function useBackgroundPlayback({
       try {
         sentinel = await wakeLock.request('screen');
         sentinel?.addEventListener('release', () => {
-          if (!cancelled && usePlaybackStore.getState().isPlaying && document.visibilityState === 'visible') {
+          if (!cancelled && usePlaybackStore.getState().isPlaying) {
             void acquire();
           }
         });
@@ -128,25 +145,25 @@ export function useBackgroundPlayback({
       const bg = backgroundAudioRef.current;
       if (el && !el.paused) el.pause();
       bg?.pause();
-      backgroundHandoffRef.current = false;
+      setHandoff(false);
       if (usePlaybackStore.getState().isPlaying) setPlaying(false);
     };
 
     const startBackgroundHandoff = () => {
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
-      if (!el || !bg || !track) return;
+      if (!el || !bg || !track || !usePlaybackStore.getState().isPlaying) return;
 
-      const src = isVideo && el instanceof HTMLVideoElement ? track.src : track.src;
+      const src = track.src;
       if (!src) return;
 
-      backgroundHandoffRef.current = true;
+      setHandoff(true);
       bg.src = src;
       bg.currentTime = el.currentTime;
       bg.volume = el.volume;
       el.pause();
       void bg.play().catch(() => {
-        backgroundHandoffRef.current = false;
+        setHandoff(false);
       });
     };
 
@@ -159,30 +176,12 @@ export function useBackgroundPlayback({
         el.currentTime = bg.currentTime;
         bg.pause();
         bg.removeAttribute('src');
-        backgroundHandoffRef.current = false;
+        setHandoff(false);
         if (usePlaybackStore.getState().isPlaying) {
           void el.play().catch(() => {});
         }
       } else if (usePlaybackStore.getState().isPlaying && el.paused) {
         void el.play().catch(() => {});
-      }
-    };
-
-    const resumePrimaryOrBackground = () => {
-      const el = mediaRef.current;
-      const bg = backgroundAudioRef.current;
-      if (!el || !usePlaybackStore.getState().isPlaying) return;
-
-      if (backgroundHandoffRef.current && bg) {
-        if (bg.paused) void bg.play().catch(() => {});
-        return;
-      }
-
-      if (el.paused) {
-        resumeAttemptsRef.current += 1;
-        if (resumeAttemptsRef.current <= 8) {
-          void el.play().catch(() => {});
-        }
       }
     };
 
@@ -204,12 +203,12 @@ export function useBackgroundPlayback({
       restoreFromHandoff();
     };
 
-    const onPageHide = (ev: PageTransitionEvent) => {
+    const onPageHide = () => {
       if (!allowBackgroundPlay) {
         pauseForFreeListener();
         return;
       }
-      if (ev.persisted || !usePlaybackStore.getState().isPlaying) return;
+      if (!usePlaybackStore.getState().isPlaying) return;
       startBackgroundHandoff();
     };
 
@@ -217,29 +216,40 @@ export function useBackgroundPlayback({
       if (!allowBackgroundPlay) pauseForFreeListener();
     };
 
-    const onBlur = () => {
-      if (!allowBackgroundPlay) pauseForFreeListener();
-    };
-
     document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pagehide', onPageHide);
     document.addEventListener('freeze', onFreeze);
-    window.addEventListener('blur', onBlur);
 
     return () => {
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pagehide', onPageHide);
       document.removeEventListener('freeze', onFreeze);
-      window.removeEventListener('blur', onBlur);
     };
   }, [
     allowBackgroundPlay,
     backgroundAudioRef,
     isVideo,
     mediaRef,
+    setBackgroundHandoffActive,
     setPlaying,
     track,
   ]);
+
+  /** If play starts while already hidden (e.g. resume), hand off immediately. */
+  useEffect(() => {
+    if (!allowBackgroundPlay || !isPlaying || !document.hidden || !track) return;
+    const el = mediaRef.current;
+    const bg = backgroundAudioRef.current;
+    if (!el || !bg || backgroundHandoffRef.current) return;
+    const src = track.src;
+    if (!src) return;
+    setHandoff(true);
+    bg.src = src;
+    bg.currentTime = el.currentTime;
+    bg.volume = el.volume;
+    el.pause();
+    void bg.play().catch(() => setHandoff(false));
+  }, [allowBackgroundPlay, backgroundAudioRef, isPlaying, mediaRef, setBackgroundHandoffActive, track]);
 
   useEffect(() => {
     const bg = backgroundAudioRef.current;
@@ -255,11 +265,33 @@ export function useBackgroundPlayback({
       if (backgroundHandoffRef.current) setPlaying(false);
     };
 
+    const onBgPause = () => {
+      if (
+        !backgroundHandoffRef.current ||
+        !document.hidden ||
+        !usePlaybackStore.getState().isPlaying
+      ) {
+        return;
+      }
+      window.setTimeout(() => {
+        if (
+          document.hidden &&
+          backgroundHandoffRef.current &&
+          usePlaybackStore.getState().isPlaying &&
+          bg.paused
+        ) {
+          void bg.play().catch(() => {});
+        }
+      }, 100);
+    };
+
     bg.addEventListener('timeupdate', onBgTime);
     bg.addEventListener('ended', onBgEnded);
+    bg.addEventListener('pause', onBgPause);
     return () => {
       bg.removeEventListener('timeupdate', onBgTime);
       bg.removeEventListener('ended', onBgEnded);
+      bg.removeEventListener('pause', onBgPause);
     };
   }, [allowBackgroundPlay, backgroundAudioRef, setPlaying, track?.id]);
 
@@ -269,25 +301,16 @@ export function useBackgroundPlayback({
 
     const onPause = () => {
       if (!document.hidden || !usePlaybackStore.getState().isPlaying) return;
-      if (backgroundHandoffRef.current) {
-        const bg = backgroundAudioRef.current;
-        if (bg?.paused) {
-          window.setTimeout(() => {
-            if (document.hidden && usePlaybackStore.getState().isPlaying) {
-              void bg.play().catch(() => {});
-            }
-          }, 80);
-        }
-        return;
-      }
+      if (backgroundHandoffRef.current) return;
 
       window.setTimeout(() => {
         if (!document.hidden || !usePlaybackStore.getState().isPlaying) return;
+        if (backgroundHandoffRef.current) return;
         if (el.paused) void el.play().catch(() => {});
-      }, 80);
+      }, 100);
     };
 
     el.addEventListener('pause', onPause);
     return () => el.removeEventListener('pause', onPause);
-  }, [allowBackgroundPlay, backgroundAudioRef, mediaRef, track?.id]);
+  }, [allowBackgroundPlay, mediaRef, track?.id]);
 }

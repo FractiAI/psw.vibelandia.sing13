@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
@@ -51,6 +51,18 @@ export function NowPlayingBar({
   const pl = getActivePlaylist();
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
   const isVideo = !!track?.videoSrc;
+  const backgroundHandoffActive = usePlaybackStore((s) => s.backgroundHandoffActive);
+
+  const resumePlayback = useCallback(() => {
+    const el = mediaRef.current;
+    const bg = backgroundAudioRef.current;
+    if (!track || !fullPlayUnlocked) return;
+    if (document.hidden && bg?.src) {
+      void bg.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
+    } else if (el) {
+      void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
+    }
+  }, [fullPlayUnlocked, track]);
 
   useBackgroundPlayback({
     mediaRef,
@@ -60,6 +72,7 @@ export function NowPlayingBar({
     track,
     isVideo,
     setPlaying,
+    onRequestResume: resumePlayback,
   });
 
   useEffect(() => {
@@ -142,16 +155,22 @@ export function NowPlayingBar({
     if (!el || !track) return;
     if (isPlaying) {
       beginSession();
-      if (document.hidden && fullPlayUnlocked && bg?.src) {
-        void bg.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
+      if (document.hidden && fullPlayUnlocked) {
+        if (bg?.src) {
+          void bg.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
+        } else {
+          void el.play().catch(() => {});
+        }
       } else {
         void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
       }
     } else {
       el.pause();
-      bg?.pause();
+      if (!backgroundHandoffActive || !document.hidden) {
+        bg?.pause();
+      }
     }
-  }, [beginSession, fullPlayUnlocked, isPlaying, isVideo, track]);
+  }, [backgroundHandoffActive, beginSession, fullPlayUnlocked, isPlaying, isVideo, track]);
 
   useEffect(() => {
     const el = mediaRef.current;
@@ -207,11 +226,11 @@ export function NowPlayingBar({
       {track && !isVideo && (
         <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} className="sr-only" preload="metadata" />
       )}
-      {track && fullPlayUnlocked && (
+      {fullPlayUnlocked && (
         <audio
-          ref={backgroundAudioRef}
+          ref={backgroundAudioRef as RefObject<HTMLAudioElement>}
           className="sr-only"
-          preload="metadata"
+          preload="auto"
           aria-hidden
           playsInline
         />

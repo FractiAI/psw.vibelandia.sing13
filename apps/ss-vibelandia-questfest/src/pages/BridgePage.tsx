@@ -29,7 +29,10 @@ export function BridgePage() {
 
   const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
+  const setCampaignOpen = useMediaChromeStore((s) => s.setCampaignOpen);
   const openExport = useMediaChromeStore((s) => s.openExport);
+
+  const showMembersOffer = !isPassenger && !captainUnlocked;
 
   const [bulkExportOpen, setBulkExportOpen] = useState(false);
   const [playlistEditId, setPlaylistEditId] = useState<string | null>(null);
@@ -145,12 +148,18 @@ export function BridgePage() {
             </button>
           </div>
           <nav className="sp-top-nav">
-            <a href="/questfest" className="sp-top-link">
-              SS Vibelandia
+            {showMembersOffer ? (
+              <button
+                type="button"
+                className="sp-top-link sp-top-link--offer"
+                onClick={() => setCampaignOpen(true)}
+              >
+                Members offer
+              </button>
+            ) : null}
+            <a href="/interfaces/vibelandia-questfest.html" className="sp-top-link">
+              QUESTFEST
             </a>
-            <Link to="/" className="sp-top-link">
-              Home
-            </Link>
             <button type="button" className="sp-top-link" onClick={() => setCaptainOpen(true)}>
               Captain
             </button>

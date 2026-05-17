@@ -1,11 +1,10 @@
 import { create } from 'zustand';
 import {
-  buildEmptyCatalog,
+  buildSeedCatalog,
   CATALOG_VERSION,
-  MASTER_PLAYLIST_DEFAULT_DESCRIPTION,
-  MASTER_PLAYLIST_DEFAULT_NAME,
+  extractLocalTracks,
   MASTER_PLAYLIST_ID,
-  MASTER_PLAYLIST_LEGACY_NAME,
+  mergeCatalogWithSeed,
   isMasterPlaylist,
 } from '@/lib/catalogSeed';
 import {
@@ -114,61 +113,6 @@ function syncMasterPlaylistWithTracks(
   const next = [...playlists];
   next[idx] = { ...master, trackIds: nextIds };
   return next;
-}
-
-/** Only tracks stored on this device (uploads / device scan). Removes 552 seed entries. */
-function keepLocalTracksOnly(snapshot: CatalogSnapshot): CatalogSnapshot {
-  const tracks: Record<string, TrackDef> = {};
-  for (const [id, tr] of Object.entries(snapshot.tracks)) {
-    if (tr.localMediaKey) tracks[id] = tr;
-  }
-  const validIds = new Set(Object.keys(tracks));
-
-  let playlists = snapshot.playlists.map((p) => ({
-    ...p,
-    trackIds: p.trackIds.filter((tid) => validIds.has(tid)),
-  }));
-
-  if (!playlists.some((p) => p.id === MASTER_PLAYLIST_ID)) {
-    const seedMaster = buildEmptyCatalog().playlists.find((p) => p.id === MASTER_PLAYLIST_ID)!;
-    playlists = [seedMaster, ...playlists.filter((p) => p.id !== MASTER_PLAYLIST_ID)];
-  }
-
-  playlists = syncMasterPlaylistWithTracks(tracks, playlists);
-
-  const legacyMasterNames = new Set([MASTER_PLAYLIST_LEGACY_NAME, 'Master catalog', 'All uploads']);
-  const legacyMasterDescriptions = new Set([
-    'Every upload lands here automatically. Build other playlists from this list.',
-    'Every file on this device (uploads and folder imports) lives here. Other playlists are views you build from this full library.',
-  ]);
-
-  playlists = playlists.map((p) => {
-    if (p.id !== MASTER_PLAYLIST_ID) return p;
-    return {
-      ...p,
-      name: legacyMasterNames.has(p.name) ? MASTER_PLAYLIST_DEFAULT_NAME : p.name,
-      description:
-        legacyMasterDescriptions.has(p.description) || !p.description?.trim()
-          ? MASTER_PLAYLIST_DEFAULT_DESCRIPTION
-          : p.description,
-    };
-  });
-
-  if (!playlists.length) {
-    playlists = buildEmptyCatalog().playlists;
-  }
-
-  const main = playlists.find((p) => p.id === MASTER_PLAYLIST_ID) ?? playlists[0];
-  const activePlaylistId = playlists.some((p) => p.id === snapshot.activePlaylistId)
-    ? snapshot.activePlaylistId
-    : main.id;
-
-  return {
-    version: CATALOG_VERSION,
-    tracks,
-    playlists,
-    activePlaylistId,
-  };
 }
 
 async function attachBlobUrls(tracks: Record<string, TrackDef>): Promise<Record<string, TrackDef>> {
@@ -539,43 +483,43 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     if (get().hydrated) return;
 
     const inMemoryBefore = { ...get().tracks };
-
     const saved = loadCatalogJson<CatalogSnapshot>();
+
+    let base: CatalogSnapshot;
     if (!saved || saved.version < CATALOG_VERSION) {
-      const inMemoryCount = Object.keys(inMemoryBefore).length;
-      if (inMemoryCount > 0) {
-        const playlists = syncMasterPlaylistWithTracks(inMemoryBefore, get().playlists);
-        set({
-          hydrated: true,
-          tracks: inMemoryBefore,
-          playlists,
-          activePlaylistId: MASTER_PLAYLIST_ID,
-        });
-        get().persist();
-        return;
+      const localOnly = Object.fromEntries(
+        Object.entries(inMemoryBefore).filter(([, tr]) => tr.localMediaKey),
+      );
+      if (Object.keys(localOnly).length > 0) {
+        base = mergeCatalogWithSeed(
+          {
+            version: CATALOG_VERSION,
+            tracks: localOnly,
+            playlists: get().playlists.length ? get().playlists : buildSeedCatalog().playlists,
+            activePlaylistId: get().activePlaylistId || MASTER_PLAYLIST_ID,
+          },
+          syncMasterPlaylistWithTracks,
+        );
+      } else {
+        if (!saved || saved.version < CATALOG_VERSION) await resetLocalCatalog();
+        base = mergeCatalogWithSeed(null, syncMasterPlaylistWithTracks);
       }
-      await resetLocalCatalog();
-      const base = buildEmptyCatalog();
-      set({
-        hydrated: true,
-        tracks: {},
-        playlists: base.playlists,
-        activePlaylistId: base.activePlaylistId,
-      });
-      get().persist();
-      return;
+    } else {
+      base = mergeCatalogWithSeed(cloneSnapshot(saved), syncMasterPlaylistWithTracks);
     }
 
-    const base = keepLocalTracksOnly(cloneSnapshot(saved));
     const loadedTracks = await attachBlobUrls(base.tracks);
-    const tracks = { ...loadedTracks, ...get().tracks };
+    const tracks = { ...loadedTracks };
     const playlists = syncMasterPlaylistWithTracks(tracks, base.playlists);
     set({
       hydrated: true,
       tracks,
       playlists,
       activePlaylistId:
-        base.activePlaylistId || playlists.find((p) => p.id === MASTER_PLAYLIST_ID)?.id || playlists[0]?.id || MASTER_PLAYLIST_ID,
+        base.activePlaylistId ||
+        playlists.find((p) => p.id === MASTER_PLAYLIST_ID)?.id ||
+        playlists[0]?.id ||
+        MASTER_PLAYLIST_ID,
     });
     get().persist();
   },
@@ -584,10 +528,16 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const { tracks, activePlaylistId } = get();
     const playlists = syncMasterPlaylistWithTracks(tracks, get().playlists);
     set({ playlists });
+    const localTracks = extractLocalTracks({
+      version: CATALOG_VERSION,
+      tracks,
+      playlists,
+      activePlaylistId,
+    });
     saveCatalogJson({
       version: CATALOG_VERSION,
-      tracks: stripForStorage(get().tracks),
-      playlists: get().playlists,
+      tracks: stripForStorage(localTracks),
+      playlists,
       activePlaylistId,
     });
   },

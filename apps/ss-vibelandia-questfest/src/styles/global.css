@@ -1849,6 +1849,22 @@ a.voxel-btn {
   text-decoration: underline;
 }
 
+.sp-top-link--offer {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  color: #1a120c;
+  background: linear-gradient(180deg, #f0d4a0, #c9a227);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.sp-top-link--offer:hover {
+  color: #1a120c;
+  text-decoration: none;
+  filter: brightness(1.06);
+}
+
 .sp-scroll {
   flex: none;
   overflow: visible;

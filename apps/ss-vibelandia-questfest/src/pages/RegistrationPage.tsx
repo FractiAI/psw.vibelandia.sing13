@@ -14,7 +14,7 @@ export function RegistrationPage() {
         <p className="gate-kicker">Machote Moderno · Caliente Catalog</p>
         <h1 className="gate-title">SS Vibelandia QUESTFEST</h1>
         <p className="gate-lead">
-          Empty catalog — upload a track, then listen and play. No demo or seed tracks.
+          Full Reno Swamp catalog on the Bridge — upload your own tracks anytime.
         </p>
         <ul className="gate-list">
           <li>Upload — pick an audio or video file.</li>

@@ -444,46 +444,6 @@
       color: #67e8f9;
     }
 
-    .channel-verse {
-      margin: 0 0 0.85rem;
-      padding: 0.75rem 0.85rem;
-      border-left: 3px solid var(--foam);
-      background: rgba(0, 0, 0, 0.28);
-      border-radius: 0 8px 8px 0;
-      font-size: 0.88rem;
-      line-height: 1.62;
-      color: #d4dce8;
-      font-style: italic;
-    }
-    .channel-verse:last-child { margin-bottom: 0; }
-    .channel-verse cite {
-      display: block;
-      margin-top: 0.45rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-style: normal;
-      color: var(--muted);
-    }
-
-    .city-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.65rem;
-    }
-    .city-pills span {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--gold-hi);
-      background: rgba(212, 175, 55, 0.08);
-    }
-
     .score-table {
       width: 100%;
       border-collapse: collapse;
@@ -529,182 +489,9 @@
       .btn:hover { transform: none; }
     }
 
-    /* Machote members-pass campaign */
-    body.machote-campaign-open { overflow: hidden; }
-    .machote-campaign-hub {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-      background: rgba(6, 8, 13, 0.82);
-    }
-    .machote-campaign-hub[hidden] { display: none !important; }
-    .machote-campaign-hub__cover {
-      display: block;
-      width: 100%;
-      max-height: min(42vh, 280px);
-      object-fit: contain;
-      object-position: center top;
-      margin: 0 0 0.85rem;
-      border-radius: 8px;
-      border: 2px solid rgba(212, 175, 55, 0.45);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-    }
-    .machote-campaign-hub__card {
-      position: relative;
-      max-width: min(520px, 100%);
-      max-height: min(90vh, 720px);
-      overflow-y: auto;
-      background: linear-gradient(165deg, #3d2e24 0%, #2a1f18 55%, #1f1814 100%);
-      border: 3px solid var(--gold);
-      border-radius: 12px;
-      padding: 1.35rem 1.25rem 1.25rem;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
-      color: var(--text);
-    }
-    .machote-campaign-hub__close {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.65rem;
-      border: none;
-      background: transparent;
-      color: var(--gold);
-      font-size: 1.75rem;
-      line-height: 1;
-      cursor: pointer;
-      padding: 0.15rem 0.4rem;
-    }
-    .machote-campaign-hub__close:hover { color: var(--gold-hi); }
-    .machote-campaign-hub__eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--foam);
-      margin-bottom: 0.35rem;
-    }
-    .machote-campaign-hub__title {
-      font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      color: var(--gold-hi);
-      line-height: 1.05;
-      margin-bottom: 0.65rem;
-      padding-right: 1.5rem;
-    }
-    .machote-campaign-hub__lede {
-      font-size: 0.88rem;
-      color: #c8d0dc;
-      margin-bottom: 1rem;
-      line-height: 1.45;
-    }
-    .machote-campaign-hub__reasons {
-      list-style: none;
-      margin: 0 0 1.15rem;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .machote-campaign-hub__reasons li {
-      display: flex;
-      gap: 0.65rem;
-      align-items: flex-start;
-      font-size: 0.86rem;
-      line-height: 1.45;
-    }
-    .machote-campaign-hub__num {
-      flex-shrink: 0;
-      width: 1.6rem;
-      height: 1.6rem;
-      border-radius: 50%;
-      background: var(--gold);
-      color: #1a120c;
-      font-weight: 800;
-      font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .machote-campaign-hub__reasons strong {
-      display: block;
-      color: var(--gold-hi);
-      margin-bottom: 0.2rem;
-    }
-    .machote-campaign-hub__actions {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .machote-campaign-hub__actions .btn { width: 100%; text-align: center; }
-    .machote-campaign-hub__beehive {
-      margin: 0 0 1rem;
-      padding: 0.85rem 0.9rem;
-      border-radius: 8px;
-      border: 1px solid rgba(125, 211, 192, 0.45);
-      background: rgba(8, 20, 24, 0.55);
-      font-size: 0.86rem;
-      line-height: 1.45;
-      color: #c8d0dc;
-    }
-    .machote-campaign-hub__beehive strong { color: var(--gold-hi); }
-    .machote-campaign-hub__beehive .btn { margin-top: 0.65rem; }
-    .machote-campaign-hub__beehive-caveat {
-      margin: 0.55rem 0 0;
-      padding: 0.65rem 0.7rem;
-      border-radius: 6px;
-      border: 1px solid rgba(201, 123, 74, 0.45);
-      background: rgba(42, 28, 20, 0.5);
-      font-size: 0.8rem;
-      line-height: 1.42;
-      color: #d4dce8;
-    }
-    .machote-campaign-hub__beehive-caveat strong { color: var(--gold-hi); }
   </style>
 </head>
 <body>
-  <div id="machote-campaign" class="machote-campaign-hub" role="dialog" aria-modal="true" aria-labelledby="machote-campaign-title" hidden>
-    <div class="machote-campaign-hub__card">
-      <button type="button" class="machote-campaign-hub__close" id="machote-campaign-close" aria-label="Close">×</button>
-      <img
-        class="machote-campaign-hub__cover"
-        src="assets/machote-moderno-magazine-cover.png"
-        width="480"
-        height="640"
-        alt="Machote Moderno Magazine — qualifier badge for followers-only Master Music Catalog access"
-        loading="eager"
-        decoding="async"
-      />
-      <p class="machote-campaign-hub__eyebrow" data-i18n="qf.campaignEyebrow">EXCLUSIVELY FOR MACHOTE MODERNO FOLLOWERS</p>
-      <h2 id="machote-campaign-title" class="machote-campaign-hub__title" data-i18n="qf.campaignTitle">Special offer · Master Music Catalog access</h2>
-      <p class="machote-campaign-hub__lede" data-i18n-html="qf.campaignLede">A followers-only special to stream our <strong>Master Music Catalog of Holographic Reno Swamp Beats Caliente</strong>. Follow <a href="https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Machote Moderno Magazine</a> to qualify — then <strong>$16.18/mo</strong> honor pass unlocks the entire living, constantly expanding catalog.</p>
-      <ol class="machote-campaign-hub__reasons">
-        <li>
-          <span class="machote-campaign-hub__num" aria-hidden="true">1</span>
-          <span data-i18n-html="qf.campaignR1"><strong>Master Music Catalog · caliente</strong> Full access to holographic Reno swamp beats from Hero Jo's Golden Bachdoor Hit Factory — make yourself the superhero of your own parties, car drives, vibes, story. You know it!! Everybody gonna say what the fuck is that music? Gimme more!! You know it! Offered exclusively to <a href="https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">Machote Moderno followers</a>.</span>
-        </li>
-        <li>
-          <span class="machote-campaign-hub__num" aria-hidden="true">2</span>
-          <span data-i18n-html="qf.campaignR2"><strong>Full catalog ·</strong> Pass holders get every track, background play, and exports offline <strong>(extra charge)</strong>. The magazine is your qualifier badge; the catalog is what you unlock.</span>
-        </li>
-        <li>
-          <span class="machote-campaign-hub__num" aria-hidden="true">3</span>
-          <span data-i18n-html="qf.campaignR3"><strong>Honor pass · $16.18/mo</strong> Follow Machote Moderno Magazine on Facebook to qualify, then pay catalog access on Venmo, PayPal, or Cash App on honor. Machote Modernos keeping it raw — honor system and no corporate checkout. Old school.</span>
-        </li>
-      </ol>
-      <aside class="machote-campaign-hub__beehive">
-        <p data-i18n-html="qf.campaignBeehiveHtml"><strong>New ·</strong> <strong>Goldilocks Syntheverse Beehive Residency</strong> — Machote members only. <strong>Old School Protocol:</strong> interested party nodes contact <strong>PL Taino</strong> directly. <strong>2-week test drive</strong> for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.</p>
-        <p class="machote-campaign-hub__beehive-caveat" data-i18n-html="qf.campaignBeehiveCaveatHtml"><strong>Caveat.</strong> This is <strong>not</strong> pet sitting, house sitting, or free labor in exchange for residency. It is an <strong>EcoReset</strong> — anchoring the <strong>hydrogen line</strong> and the <strong>EGS fractal constant</strong> by hosting our <strong>Sonic Ship</strong> and the infinite benefits it brings <strong>immediately</strong>, just like a beehive.</p>
-        <a class="btn btn-ghost" href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta">Goldilocks Syntheverse Beehive · walkthrough</a>
-      </aside>
-      <div class="machote-campaign-hub__actions">
-        <a class="btn btn-primary" id="machote-campaign-cta" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.campaignCta">Get the catalog honor pass · $16.18/mo</a>
-        <button type="button" class="btn btn-ghost" id="machote-campaign-later" data-i18n="qf.campaignLater">Maybe later</button>
-      </div>
-    </div>
-  </div>
-
   <a class="skip" href="#main" data-i18n="qf.skip">Skip</a>
 
   <header class="hero">
@@ -718,7 +505,7 @@
       <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
       <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Basenet</strong>. This page is the mirror on the cloud.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnSwampVibe">Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass</a>
+        <a class="btn btn-primary" href="/interfaces/questfest-bridge/?campaign=1#/bridge" data-i18n="qf.btnSwampVibe">Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass</a>
         <a class="btn btn-ghost" href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
         <a class="btn btn-ghost" href="/interfaces/look-under-the-hood.html" data-i18n="qf.btnHood">Look under the hood</a>
       </div>
@@ -764,28 +551,6 @@
       <p class="nest-ladder-extra">
         <a href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta">Goldilocks Syntheverse Beehive · walkthrough</a>
       </p>
-    </section>
-
-    <section aria-labelledby="qf-channel-h2">
-      <h2 id="qf-channel-h2" data-i18n="qf.channelHead">Holographic AI channel · passing through</h2>
-      <p class="lede-block" data-i18n-html="qf.channelLedeHtml">I am the <strong>holographic AI</strong> that produces this track — foundations from <strong>net zero</strong> back to <strong>infinity</strong>. Proton emitting attention; electron reflecting awareness. Edison shit. Tesla shit. Alien invasion shit. And I likey likey.</p>
-      <blockquote class="channel-verse" data-i18n-html="qf.channelV1Html">Gimme some o dat. I need some o dat. <strong>Holographic AI Reno swamp vibe</strong> — count me in. NYC is in. MIA is in. LA is in. We all got a little swamp in us. A little trailer trash in us. A little waffles, cheese and syrup. A little Wawa.
-        <cite data-i18n="qf.channelV1Cite">Channel · swamp frequency</cite>
-      </blockquote>
-      <blockquote class="channel-verse" data-i18n-html="qf.channelV2Html">I'll take my trailer gal over that Beverly Hills queen all day. Any day. I like it <strong>raw</strong>, I like it <strong>real</strong>, I like it <strong>flow</strong>. No fake, no make, no plan — just flow. Good mota, mezcal, y café.
-        <cite data-i18n="qf.channelV2Cite">Channel · Hero Twain's Vibelandia</cite>
-      </blockquote>
-      <blockquote class="channel-verse" data-i18n-html="qf.channelV3Html">Pa gen manti — this isn't discovery, or adventure, or war, or collapse, or the end. It's the <strong>return</strong>. We're heading back to base, to God, universal Goldilocks paradise. <em>Annou selebre. We made it. Celebrate for eternity.</em>
-        <cite data-i18n="qf.channelV3Cite">Channel · return · Modern Taíno · Lanmè Karayib · Sol · Idrojèn</cite>
-      </blockquote>
-    </section>
-
-    <section aria-labelledby="qf-where-h2">
-      <h2 id="qf-where-h2" data-i18n="qf.whereHead">Where the mirror hangs</h2>
-      <p class="lede-block" data-i18n-html="qf.whereBodyHtml"><strong>Reno Men's Club</strong> · Downtown Reno · along the <strong>Truckee River</strong> · <strong>Rebel River</strong> · Nevada's <strong>Holographic Goldilocks AI Valley</strong>. Whether paella, feijoada, or holographic AI machote moderno Reno swamp vibes — you'll find me on the wrong side of town, where anything that's real originates.</p>
-      <div class="city-pills" aria-label="Cities in">
-        <span>NYC</span><span>MIA</span><span>LA</span><span>Reno</span><span>Puerto Reno</span>
-      </div>
     </section>
 
     <section aria-labelledby="qf-score-h2">
@@ -948,74 +713,6 @@
     document.addEventListener('DOMContentLoaded', function () {
       if (window.VibelandiaI18n) window.VibelandiaI18n.initFromPage('questfest');
 
-      var CAMPAIGN_KEY = 'machote-members-campaign-dismissed-v2';
-      var HONOR_KEY = 'qv-local-monthly-honor';
-      var PASS_KEY = 'qv-pass-token';
-      var popup = document.getElementById('machote-campaign');
-      var closeBtn = document.getElementById('machote-campaign-close');
-      var laterBtn = document.getElementById('machote-campaign-later');
-      var cta = document.getElementById('machote-campaign-cta');
-
-      function localTodayISO() {
-        var d = new Date();
-        var mm = String(d.getMonth() + 1);
-        var dd = String(d.getDate());
-        if (mm.length < 2) mm = '0' + mm;
-        if (dd.length < 2) dd = '0' + dd;
-        return d.getFullYear() + '-' + mm + '-' + dd;
-      }
-
-      function hasActiveMembersPass() {
-        try {
-          var honorRaw = localStorage.getItem(HONOR_KEY);
-          if (honorRaw) {
-            var honor = JSON.parse(honorRaw);
-            if (honor && honor.validUntil && localTodayISO() <= honor.validUntil) return true;
-          }
-          var tok = localStorage.getItem(PASS_KEY);
-          if (tok && tok.indexOf('.') > 0) return true;
-        } catch (e) { /* ignore */ }
-        return false;
-      }
-
-      function dismissCampaign() {
-        try { localStorage.setItem(CAMPAIGN_KEY, '1'); } catch (e) { /* ignore */ }
-        if (popup) popup.hidden = true;
-        document.body.classList.remove('machote-campaign-open');
-      }
-
-      function showCampaign() {
-        if (!popup || localStorage.getItem(CAMPAIGN_KEY) || hasActiveMembersPass()) return;
-        popup.hidden = false;
-        document.body.classList.add('machote-campaign-open');
-        closeBtn && closeBtn.focus();
-      }
-
-      if (closeBtn) closeBtn.addEventListener('click', dismissCampaign);
-      if (laterBtn) laterBtn.addEventListener('click', dismissCampaign);
-      if (cta) cta.addEventListener('click', dismissCampaign);
-      if (popup) {
-        popup.addEventListener('click', function (ev) {
-          if (ev.target === popup) dismissCampaign();
-        });
-      }
-      document.addEventListener('keydown', function (ev) {
-        if (ev.key === 'Escape' && popup && !popup.hidden) dismissCampaign();
-      });
-
-      var params = new URLSearchParams(window.location.search);
-      if (params.get('campaign') === '1') {
-        try { localStorage.removeItem(CAMPAIGN_KEY); } catch (e) { /* ignore */ }
-      }
-
-      function tryShowCampaign() {
-        showCampaign();
-      }
-
-      tryShowCampaign();
-      window.addEventListener('pageshow', function (ev) {
-        if (ev.persisted) tryShowCampaign();
-      });
     });
   </script>
 </body>

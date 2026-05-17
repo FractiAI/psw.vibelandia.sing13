@@ -2,7 +2,13 @@ import { useEffect } from 'react';
 import { FairExchangeModal } from '@/components/player/FairExchangeModal';
 import { BoardingModal } from '@/components/payment/BoardingModal';
 import { CaptainUnlockModal } from '@/components/payment/CaptainUnlockModal';
+import { MachoteCampaignModal } from '@/components/payment/MachoteCampaignModal';
 import { ExportTrackModal } from '@/components/payment/ExportTrackModal';
+import {
+  consumeCampaignResetFromUrl,
+  dismissMachoteCampaign,
+  shouldAutoShowMachoteCampaign,
+} from '@/lib/machoteCampaignStorage';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
@@ -27,11 +33,15 @@ export function MediaShell() {
   const fairOpen = useMediaChromeStore((s) => s.fairOpen);
   const boardingOpen = useMediaChromeStore((s) => s.boardingOpen);
   const captainOpen = useMediaChromeStore((s) => s.captainOpen);
+  const campaignOpen = useMediaChromeStore((s) => s.campaignOpen);
   const exportTrackId = useMediaChromeStore((s) => s.exportTrackId);
   const setFairOpen = useMediaChromeStore((s) => s.setFairOpen);
   const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
+  const setCampaignOpen = useMediaChromeStore((s) => s.setCampaignOpen);
   const closeExport = useMediaChromeStore((s) => s.closeExport);
+
+  const hasMembersAccess = isPassenger || captainUnlocked;
 
   useEffect(() => {
     hydrateSession();
@@ -58,6 +68,27 @@ export function MediaShell() {
       window.removeEventListener('pageshow', onPageShow);
     };
   }, [hydrateSession]);
+
+  useEffect(() => {
+    consumeCampaignResetFromUrl();
+  }, []);
+
+  /** Machote campaign · top deck (auto once per browser until dismissed). */
+  useEffect(() => {
+    if (!catalogHydrated) return;
+    if (!shouldAutoShowMachoteCampaign(hasMembersAccess)) return;
+    const t = window.setTimeout(() => setCampaignOpen(true), 500);
+    return () => window.clearTimeout(t);
+  }, [catalogHydrated, hasMembersAccess, setCampaignOpen]);
+
+  useEffect(() => {
+    if (hasMembersAccess && campaignOpen) setCampaignOpen(false);
+  }, [hasMembersAccess, campaignOpen, setCampaignOpen]);
+
+  const closeCampaign = (dismiss: boolean) => {
+    if (dismiss) dismissMachoteCampaign();
+    setCampaignOpen(false);
+  };
 
   const handleBoarding = async (payload: BoardingRequestBody) => {
     const ok = await completeBoarding(payload);
@@ -94,6 +125,15 @@ export function MediaShell() {
       />
 
       <CaptainUnlockModal open={captainOpen} onClose={() => setCaptainOpen(false)} />
+
+      <MachoteCampaignModal
+        open={campaignOpen}
+        onClose={() => closeCampaign(true)}
+        onGetPass={() => {
+          closeCampaign(true);
+          setBoardingOpen(true);
+        }}
+      />
 
       <ExportTrackModal
         open={!!exportTrackId}

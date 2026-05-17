@@ -6,12 +6,14 @@ interface MediaChromeState {
   fairOpen: boolean;
   boardingOpen: boolean;
   captainOpen: boolean;
+  campaignOpen: boolean;
   vesselOpen: boolean;
   vesselKind: VesselKind;
   exportTrackId: string | null;
   setFairOpen: (v: boolean) => void;
   setBoardingOpen: (v: boolean) => void;
   setCaptainOpen: (v: boolean) => void;
+  setCampaignOpen: (v: boolean) => void;
   showVessel: (k: Exclude<VesselKind, null>) => void;
   hideVessel: () => void;
   openExport: (trackId: string) => void;
@@ -22,12 +24,14 @@ export const useMediaChromeStore = create<MediaChromeState>((set) => ({
   fairOpen: false,
   boardingOpen: false,
   captainOpen: false,
+  campaignOpen: false,
   vesselOpen: false,
   vesselKind: null,
   exportTrackId: null,
   setFairOpen: (v) => set({ fairOpen: v }),
   setBoardingOpen: (v) => set({ boardingOpen: v }),
   setCaptainOpen: (v) => set({ captainOpen: v }),
+  setCampaignOpen: (v) => set({ campaignOpen: v }),
   showVessel: (k) => set({ vesselOpen: true, vesselKind: k }),
   hideVessel: () => set({ vesselOpen: false, vesselKind: null }),
   openExport: (trackId) => set({ exportTrackId: trackId }),

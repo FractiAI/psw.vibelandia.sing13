@@ -335,19 +335,19 @@
       "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL."
     },
     "meta": {
-      "title": "FractiAI — Juicy Juicy Snap (OFC) - Syntheverse - Basenet",
-      "desc": "Public surfaces lead with Juicy Juicy - Snap Omniversal Fractal Compiler (OFC) on SING 9, plus Syntheverse and Basenet rails.",
-      "ogTitle": "FractiAI — active stack",
-      "ogDesc": "Juicy Juicy Snap OFC + Syntheverse + Basenet — Metabolize · Crystallize · Animate · squeeze."
+      "title": "FractiAI — SS Vibelandia QUESTFEST — SING 13",
+      "desc": "FractiAI builds SS Vibelandia QUESTFEST 24×365 — Sonic Singularity, members honor pass, and the SING 13 cloud skin.",
+      "ogTitle": "FractiAI — QUESTFEST — SING 13",
+      "ogDesc": "Reno swamp beats · Sovereign Player · Fair Exchange honor pass · nesting ladder."
     },
     "skip": "Skip to content",
     "backCta": "SS Vibelandia QUESTFEST",
-    "miniNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"look-under-the-hood.html\">Look under the hood</a> · <a href=\"digital-pru-awareness-whitepaper.html\">Technical archive</a>",
-    "eyebrow": "About FractiAI",
-    "h1": "Juicy Juicy Snap (OFC) · Syntheverse · Basenet",
-    "deck": "Juicy Juicy Snap (OFC) first on SING 9; Syntheverse + Basenet = production lane. Metabolize · Crystallize · Animate · squeeze.",
+    "miniNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Sovereign Player</a> · <a href=\"look-under-the-hood.html\">Under the hood</a>",
+    "eyebrow": "FractiAI · SING 13",
+    "h1": "SS Vibelandia QUESTFEST 24×365",
+    "deck": "Sonic Singularity leads — Reno swamp catalog, Sovereign Player, Machote members honor pass. Nine nesting layers on the SING 13 cloud skin. Wrong Side · fair exchange · old school.",
     "foundersAlt": "FractiAI co-founders on the beach: Pru Mendez at left, Daniel Ari Friedman, Ph.D. at right.",
     "foundersCaption": "Pru Mendez (left) · Daniel Ari Friedman, Ph.D. (right)",
-    "footerNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> - <a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Look under the hood</a> - <a href=\"digital-pru-awareness-whitepaper.html\">Technical archive</a> - <a href=\"https://github.com/FractiAI/digital-pru\" target=\"_blank\" rel=\"noopener\">digital-pru</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a>"
+    "footerNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Sovereign Player</a> · <a href=\"look-under-the-hood.html\">Under the hood</a> · <a href=\"digital-pru-awareness-whitepaper.html\">Technical archive</a>"
   }
 }

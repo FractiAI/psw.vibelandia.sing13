@@ -37,6 +37,20 @@ export async function loadBlob(key: string): Promise<Blob | null> {
   });
 }
 
+export async function listAllBlobKeys(): Promise<string[]> {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(BLOB_STORE, 'readonly');
+    const req = tx.objectStore(BLOB_STORE).getAllKeys();
+    req.onsuccess = () => {
+      const keys = (req.result as IDBValidKey[])
+        .filter((k): k is string => typeof k === 'string');
+      resolve(keys);
+    };
+    req.onerror = () => reject(req.error);
+  });
+}
+
 export async function deleteBlob(key: string): Promise<void> {
   const db = await openDb();
   return new Promise((resolve, reject) => {

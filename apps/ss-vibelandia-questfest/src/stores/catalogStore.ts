@@ -1,18 +1,18 @@
 import { create } from 'zustand';
 import {
-  buildSeedCatalog,
+  buildEmptyCatalog,
   CATALOG_VERSION,
   extractLocalTracks,
   MASTER_PLAYLIST_ID,
-  mergeCatalogWithSeed,
+  mergeUserCatalog,
   isMasterPlaylist,
 } from '@/lib/catalogSeed';
 import {
   deleteBlob,
+  listAllBlobKeys,
   loadBlob,
   loadCatalogJson,
   loadDeviceDirHandle,
-  resetLocalCatalog,
   saveBlob,
   saveCatalogJson,
   saveDeviceDirHandle,
@@ -113,6 +113,40 @@ function syncMasterPlaylistWithTracks(
   const next = [...playlists];
   next[idx] = { ...master, trackIds: nextIds };
   return next;
+}
+
+/** Re-link uploads when metadata survived but catalog JSON was wiped. */
+async function recoverOrphanBlobs(tracks: Record<string, TrackDef>): Promise<Record<string, TrackDef>> {
+  const keys = await listAllBlobKeys();
+  const known = new Set(
+    Object.values(tracks)
+      .map((t) => t.localMediaKey)
+      .filter((k): k is string => Boolean(k)),
+  );
+  const out = { ...tracks };
+  let n = 0;
+
+  for (const blobKey of keys) {
+    if (!blobKey.startsWith('media-trk-up-') || known.has(blobKey)) continue;
+    const id = blobKey.slice('media-'.length);
+    if (out[id]) continue;
+    const blob = await loadBlob(blobKey);
+    if (!blob) continue;
+    n += 1;
+    const url = URL.createObjectURL(blob);
+    const isVideo = blob.type.startsWith('video/');
+    out[id] = {
+      id,
+      title: `Recovered upload ${n}`,
+      artist: DEFAULT_ARTIST,
+      src: url,
+      videoSrc: isVideo ? url : undefined,
+      localMediaKey: blobKey,
+      uploadedAt: new Date().toISOString(),
+    };
+    known.add(blobKey);
+  }
+  return out;
 }
 
 async function attachBlobUrls(tracks: Record<string, TrackDef>): Promise<Record<string, TrackDef>> {
@@ -485,31 +519,31 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const inMemoryBefore = { ...get().tracks };
     const saved = loadCatalogJson<CatalogSnapshot>();
 
-    let base: CatalogSnapshot;
-    if (!saved || saved.version < CATALOG_VERSION) {
-      const localOnly = Object.fromEntries(
-        Object.entries(inMemoryBefore).filter(([, tr]) => tr.localMediaKey),
-      );
-      if (Object.keys(localOnly).length > 0) {
-        base = mergeCatalogWithSeed(
-          {
-            version: CATALOG_VERSION,
-            tracks: localOnly,
-            playlists: get().playlists.length ? get().playlists : buildSeedCatalog().playlists,
-            activePlaylistId: get().activePlaylistId || MASTER_PLAYLIST_ID,
-          },
-          syncMasterPlaylistWithTracks,
-        );
-      } else {
-        if (!saved || saved.version < CATALOG_VERSION) await resetLocalCatalog();
-        base = mergeCatalogWithSeed(null, syncMasterPlaylistWithTracks);
-      }
-    } else {
-      base = mergeCatalogWithSeed(cloneSnapshot(saved), syncMasterPlaylistWithTracks);
-    }
+    const inMemoryLocals = Object.fromEntries(
+      Object.entries(inMemoryBefore).filter(([id, tr]) => tr.localMediaKey || id.startsWith('trk-up-')),
+    );
 
-    const loadedTracks = await attachBlobUrls(base.tracks);
-    const tracks = { ...loadedTracks };
+    const snapshot: CatalogSnapshot | null = saved
+      ? {
+          ...cloneSnapshot(saved),
+          version: CATALOG_VERSION,
+          tracks: {
+            ...extractLocalTracks(cloneSnapshot(saved)),
+            ...inMemoryLocals,
+          },
+        }
+      : Object.keys(inMemoryLocals).length
+        ? {
+            version: CATALOG_VERSION,
+            tracks: inMemoryLocals,
+            playlists: get().playlists.length ? get().playlists : buildEmptyCatalog().playlists,
+            activePlaylistId: get().activePlaylistId || MASTER_PLAYLIST_ID,
+          }
+        : null;
+
+    const base = mergeUserCatalog(snapshot, syncMasterPlaylistWithTracks);
+    let tracks = await attachBlobUrls(base.tracks);
+    tracks = await recoverOrphanBlobs(tracks);
     const playlists = syncMasterPlaylistWithTracks(tracks, base.playlists);
     set({
       hydrated: true,

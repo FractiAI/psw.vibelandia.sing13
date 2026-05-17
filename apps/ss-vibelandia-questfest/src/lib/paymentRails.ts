@@ -10,7 +10,7 @@ export const EGS_EXPORT_PLAYLIST_BUNDLE_PER_TRACK_USD = EGS_EXPORT_USD * PLAYLIS
 const env = import.meta.env;
 
 export const PAYMENT_HANDLES: Record<LiveRail, string> = {
-  venmo: env.VITE_VENMO_HANDLE || '@GoldenBachdoor',
+  venmo: env.VITE_VENMO_HANDLE || '@Pru-Mendez',
   paypal: env.VITE_PAYPAL_HANDLE || 'goldenbackdoorhitfactory@gmail.com',
   cashapp: env.VITE_CASHAPP_HANDLE || '$GoldenBachdoor',
 };

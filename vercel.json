@@ -17,6 +17,10 @@
     { "source": "/press/", "destination": "/interfaces/press-releases.html" },
     { "source": "/hood", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/hood/", "destination": "/interfaces/look-under-the-hood.html" },
+    { "source": "/interfaces/digital-pru-awareness-whitepaper", "destination": "/interfaces/digital-pru-awareness-whitepaper.html" },
+    { "source": "/interfaces/digital-pru-awareness-whitepaper/", "destination": "/interfaces/digital-pru-awareness-whitepaper.html" },
+    { "source": "/interfaces/digital-pru-snap-robots.html", "destination": "/interfaces/look-under-the-hood.html" },
+    { "source": "/interfaces/digital-pru-snap-robots", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/sovereign-gate", "destination": "/interfaces/questfest-bridge/index.html" },
     { "source": "/sovereign-gate/", "destination": "/interfaces/questfest-bridge/index.html" }
   ],

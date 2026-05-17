@@ -52,7 +52,6 @@
 
 - ETCon Reno Desert (May 28–31, 2026): /interfaces/etcon-reno-desert.html
 - Press releases (Hit Factory + ETCon): /interfaces/press-releases.html
-- Digital SNAP robots checkout: /interfaces/digital-pru-snap-robots.html
 - Look at the Sun: /interfaces/look-at-the-sun.html
 - Juicy Juicy Snap (OFC) — compile surface: /interfaces/look-under-the-hood.html
 - Talk is cheap: /interfaces/talk-is-cheap.html

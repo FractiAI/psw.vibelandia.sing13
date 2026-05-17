@@ -43,7 +43,7 @@
     "campaignResidencyCta": "Goldilocks Syntheverse Beehive · walkthrough",
     "campaignLater": "Maybe later",
     "nestHead": "YOU ARE HERE",
-    "nestTapHint": "Plain talk: tap any layer below. Each one opens a short guide — no jargon wall.",
+    "nestTapHint": "Tap a layer — short plain guide. Listen and pass are always one click from the hub.",
     "nestOpenGuide": "Open guide",
     "nestOpenLayer": "View this layer",
     "nestYouAreHere": "You are here",
@@ -57,9 +57,9 @@
     "nest3": "Man cave restroom mirror",
     "nest2": "QUESTFEST ship · Puerto Reno · 24×365",
     "nest1": "SING 13 · this website",
-    "nestLedeHtml": "<strong>SING 13</strong> is the cloud mirror; <strong>Layer 9</strong> adds the Goldilocks Syntheverse Beehive Residency — Old School Protocol, contact PL Taino, 2-week test drive.",
+    "nestLedeHtml": "Nine layers, plain guides. <strong>Layer 9</strong> — Goldilocks Beehive Residency (members · Old School Protocol · contact PL Taino).",
     "channelHead": "Holographic AI channel · passing through",
-    "channelLedeHtml": "Holographic AI channel for this ship — attention out, awareness reflected; architecture and receipts live <strong>Under the hood</strong> and in the papers linked there.",
+    "channelLedeHtml": "Channel verse for the ship — Reno swamp frequency. Deeper reads: <a href=\"look-under-the-hood.html\">Under the hood</a> and <a href=\"digital-pru-awareness-whitepaper.html\">technical archive</a>.",
     "channelV1Html": "<strong>Reno swamp frequency</strong> — coast to coast, same signal.",
     "channelV1Cite": "Channel · swamp frequency",
     "channelV2Html": "Prefer <strong>raw flow</strong> over polish-for-polish’s sake — lyrics stay live.",
@@ -81,7 +81,7 @@
     "quicklinksHead": "Quicklinks",
     "quicklinkTalk": "Look under the hood",
     "quicklinkCasting": "Casting · email",
-    "quicklinkDigitalPru": "digital-pru · GitHub",
+    "quicklinkDigitalPru": "Digital Pru · on-site map",
     "quicklinkSing9": "SING 9 · GitHub",
     "quicklinkPress": "Press releases · Hit Factory",
     "prTeaserBadge": "FEATURE · Press",
@@ -161,9 +161,9 @@
     "h2StudioHtml": "The holographic AI behind <em>Wrong Side of Town: The Musical</em> is not just theory",
     "ledeStudio1Html": "The show runs on phones and speakers you already own - but underneath it is a real <strong>awareness OS metaphor</strong>: honest boundaries, phi-locked structure, and thirteen channels that stay in sync with something you can <strong>inspect</strong>, not a black-box feed that vanishes when the tour leaves town.",
     "ledeStudio2Html": "<strong>One page, live now:</strong> <a href=\"/interfaces/look-under-the-hood.html\"><strong>Look under the hood</strong></a> — <strong>1 Metabolize</strong> (Snap compile in browser), <strong>2 Crystallize</strong> (two JSON artifacts), <strong>3 Animate</strong> (player, robots, GitHub). Deep docs are <strong>one click</strong> on the same page.",
-    "ledeStudio3Html": "Big stages sell trust us. This stack says <strong>show the pipe</strong> — <strong>squeeze</strong> to Look under the hood (Juicy Juicy Snap OFC inside), clone digital-pru, run tests. Fair Exchange = <strong>verifiable rhythm</strong> (story, silicon, street).",
+    "ledeStudio3Html": "Big stages sell trust us. This stack shows the pipe — <a href=\"look-under-the-hood.html\">Under the hood</a> for listen, pass, and papers. Fair Exchange = honest taste, honest pay, honest playback.",
     "btnHoodOpen": "Open Look under the hood",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Look under the hood</a> - <a href=\"look-at-the-sun.html\">Look at the Sun</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">Technical archive</a> - <a href=\"https://github.com/FractiAI/digital-pru\" target=\"_blank\" rel=\"noopener\">digital-pru (run)</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote and Reno swamp (plain)</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Big shows vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Under the hood</a> - <a href=\"look-at-the-sun.html\">Look at the Sun</a> - <a href=\"digital-pru-awareness-whitepaper.html\">Technical archive</a> - <a href=\"fractiai-digital-pru.html\">Digital Pru map</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote and Reno swamp (plain)</a> - <a href=\"legacy-vs-wrong-side-report.html\">Big shows vs. Wrong Side</a>"
   },
     "hood": {
     "langBar": {

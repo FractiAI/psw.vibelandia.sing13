@@ -18,6 +18,7 @@ import { PLAIN } from '@/lib/plainSpeak';
 import {
   SONIC_CATALOG_DISPLAY_NAME,
   SONIC_SINGULARITY_DESCRIPTION,
+  SONIC_SINGULARITY_HERO_SRC,
 } from '@/lib/sonicCatalogCopy';
 
 
@@ -188,7 +189,16 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
       <header className="sp-hero">
 
-        <div className="sp-hero-cover" aria-hidden>🎧</div>
+        <div
+          className={`sp-hero-cover${isMaster ? ' sp-hero-cover--sonic' : ''}`}
+          aria-hidden
+        >
+          {isMaster ? (
+            <img src={SONIC_SINGULARITY_HERO_SRC} alt="" width={232} height={232} />
+          ) : (
+            '🎧'
+          )}
+        </div>
 
         <div className="sp-hero-meta">
 

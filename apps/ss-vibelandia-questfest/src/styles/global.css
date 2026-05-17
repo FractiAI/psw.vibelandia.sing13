@@ -1879,13 +1879,26 @@ a.voxel-btn {
   width: clamp(140px, 22vw, 232px);
   height: clamp(140px, 22vw, 232px);
   border-radius: 8px;
-  background: linear-gradient(145deg, #1ed760 0%, #121212 70%);
+  background: linear-gradient(145deg, var(--swamp-gold) 0%, var(--indigo-deep) 70%);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
   flex-shrink: 0;
+}
+
+.sp-hero-cover--sonic {
+  padding: 0;
+  overflow: hidden;
+  background: var(--indigo-deep);
+}
+
+.sp-hero-cover--sonic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .sp-hero-type {

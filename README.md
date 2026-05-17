@@ -141,7 +141,18 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 | **Production Vercel URL** | `https://psw-vibelandia-sing13-nine.vercel.app` |
 | **Custom domain (target)** | [`https://www.ssvibelandiaquestfest24x365.com`](https://www.ssvibelandiaquestfest24x365.com) |
 
-**Link custom domain (one-time, Vercel dashboard):** [Project → Settings → Domains](https://vercel.com/fracti-verse/psw-vibelandia-sing13/settings/domains) → add **`www.ssvibelandiaquestfest24x365.com`**. If Vercel says the name is already on another project, remove it there first, then add it on **this** project only. DNS must match what the Domains tab shows (usually `www` → `cname.vercel-dns.com`).
+**Link custom domain (one-time):** [Project → Settings → Domains](https://vercel.com/fracti-verse/psw-vibelandia-sing13/settings/domains) → add **`www.ssvibelandiaquestfest24x365.com`**.
+
+If Vercel says the domain is linked to **another Vercel account**, verify ownership with a TXT record:
+
+| Field | Value |
+|--------|--------|
+| **Where** | DNS for `ssvibelandiaquestfest24x365.com` (this zone uses **Vercel nameservers** — edit at [vercel.com/domains](https://vercel.com/domains) on the account that owns the domain, **DNS Records**) |
+| **Name / host** | `_vercel` (shown as `_vercel.ssvibelandiaquestfest24x365.com`) |
+| **Type** | `TXT` |
+| **Value** | Copy from the Domains screen on **fracti-verse/psw-vibelandia-sing13** (starts with `vc-domain-verify=`) |
+
+Save the record, wait a few minutes, click **Verify** in the project Domains tab. You can remove the TXT record after verification. Then set **`www`** → CNAME as Vercel shows for production.
 
 Optional manual deploy: [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) (`workflow_dispatch` only; needs `VERCEL_TOKEN`).
 

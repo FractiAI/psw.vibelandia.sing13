@@ -211,7 +211,11 @@ async function addFileAsTrack(
   if (existing.sourceKeys.has(sourceKey)) return null;
   const id = `trk-up-${sourceKey.replace(/[^a-zA-Z0-9]+/g, '-').slice(0, 48)}-${Date.now()}`;
   const key = `media-${id}`;
-  await saveBlob(key, file);
+  try {
+    await saveBlob(key, file);
+  } catch {
+    throw new Error('storage_failed');
+  }
   const url = URL.createObjectURL(file);
   const isVideo = file.type.startsWith('video/');
   const description = clampDescription(meta.description);
@@ -518,8 +522,24 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   hydrate: async () => {
+    if (get().hydrated) return;
+
+    const inMemoryBefore = { ...get().tracks };
+
     const saved = loadCatalogJson<CatalogSnapshot>();
     if (!saved || saved.version < CATALOG_VERSION) {
+      const inMemoryCount = Object.keys(inMemoryBefore).length;
+      if (inMemoryCount > 0) {
+        const playlists = syncMasterPlaylistWithTracks(inMemoryBefore, get().playlists);
+        set({
+          hydrated: true,
+          tracks: inMemoryBefore,
+          playlists,
+          activePlaylistId: MASTER_PLAYLIST_ID,
+        });
+        get().persist();
+        return;
+      }
       await resetLocalCatalog();
       const base = buildEmptyCatalog();
       set({
@@ -533,12 +553,15 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     }
 
     const base = keepLocalTracksOnly(cloneSnapshot(saved));
-    const tracks = await attachBlobUrls(base.tracks);
+    const loadedTracks = await attachBlobUrls(base.tracks);
+    const tracks = { ...loadedTracks, ...get().tracks };
+    const playlists = syncMasterPlaylistWithTracks(tracks, base.playlists);
     set({
       hydrated: true,
       tracks,
-      playlists: base.playlists,
-      activePlaylistId: base.activePlaylistId || base.playlists[0]?.id || MASTER_PLAYLIST_ID,
+      playlists,
+      activePlaylistId:
+        base.activePlaylistId || playlists.find((p) => p.id === MASTER_PLAYLIST_ID)?.id || playlists[0]?.id || MASTER_PLAYLIST_ID,
     });
     get().persist();
   },

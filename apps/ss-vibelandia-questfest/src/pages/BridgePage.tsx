@@ -63,15 +63,8 @@ export function BridgePage() {
     setDjMode(false);
     navigate('/bridge', { replace: true });
     const st = useCatalogStore.getState();
-    const active = st.getActivePlaylist();
-    const master = st.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
-    if (
-      master &&
-      master.trackIds.length > 0 &&
-      active &&
-      active.id !== MASTER_PLAYLIST_ID &&
-      active.trackIds.length === 0
-    ) {
+    if (Object.keys(st.tracks).length > 0) {
+      st.persist();
       st.setActivePlaylist(MASTER_PLAYLIST_ID);
     }
   };

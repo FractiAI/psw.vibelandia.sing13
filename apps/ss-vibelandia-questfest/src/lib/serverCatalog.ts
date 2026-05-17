@@ -1,5 +1,6 @@
 import { buildEmptyCatalog } from '@/lib/catalogSeed';
 import { expectedCaptainPassword } from '@/lib/captainAuth';
+import { fetchJsonWithTimeout } from '@/lib/fetchWithTimeout';
 import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 
 /** Blob + catalog API host when the public www edge lacks upload env (FractiVerse pipe). */
@@ -11,7 +12,9 @@ const STATIC_CATALOG = '/media/catalog/catalog.json';
 export function catalogPipeOrigin(): string {
   const fromEnv = import.meta.env.VITE_CATALOG_PIPE_ORIGIN;
   if (typeof fromEnv === 'string' && fromEnv.trim()) return fromEnv.trim().replace(/\/$/, '');
-  if (typeof location !== 'undefined' && /ssvibelandiaquestfest24x365\.com$/i.test(location.hostname)) {
+  if (typeof location === 'undefined') return '';
+  const host = location.hostname.toLowerCase();
+  if (host === 'www.ssvibelandiaquestfest24x365.com' || host === 'ssvibelandiaquestfest24x365.com') {
     return DEFAULT_CATALOG_PIPE;
   }
   return '';
@@ -51,32 +54,50 @@ function normalizeServerCatalog(raw: unknown): CatalogSnapshot {
   };
 }
 
-/** Load master library from server (API merges static JSON + dynamic manifest). */
+function mergeCatalogSnapshots(a: CatalogSnapshot, b: CatalogSnapshot): CatalogSnapshot {
+  const tracks = { ...a.tracks, ...b.tracks };
+  const byId = new Map(a.playlists.map((p) => [p.id, { ...p, trackIds: [...p.trackIds] }]));
+  for (const p of b.playlists) {
+    if (p.id === 'pl-main') continue;
+    if (!byId.has(p.id)) byId.set(p.id, { ...p, trackIds: [...p.trackIds] });
+  }
+  const master = byId.get('pl-main') ?? a.playlists[0];
+  if (master) {
+    const ids = new Set(master.trackIds);
+    for (const id of Object.keys(tracks)) {
+      if (!ids.has(id)) master.trackIds.push(id);
+    }
+    byId.set('pl-main', master);
+  }
+  return {
+    version: Math.max(a.version, b.version),
+    tracks,
+    playlists: [...byId.values()],
+    activePlaylistId: a.activePlaylistId || b.activePlaylistId || 'pl-main',
+  };
+}
+
+/** Load master library from server (static JSON + API; www uses pipe for dynamic uploads). */
 export async function fetchServerCatalog(): Promise<CatalogSnapshot> {
   const pipe = catalogPipeOrigin();
-  const apiPaths = pipe ? [catalogApiUrl(API_CATALOG), API_CATALOG] : [API_CATALOG, catalogApiUrl(API_CATALOG)];
 
-  for (const url of apiPaths) {
-    try {
-      const res = await fetch(url, { cache: 'no-store' });
-      if (res.ok) {
-        const remote = normalizeServerCatalog(await res.json());
-        if (pipe && url.startsWith(pipe)) return remote;
-        if (!pipe) return remote;
-        if (Object.keys(remote.tracks).length > 0) return remote;
-      }
-    } catch {
-      /* try next */
+  const staticRaw = await fetchJsonWithTimeout(STATIC_CATALOG);
+  let catalog = staticRaw ? normalizeServerCatalog(staticRaw) : buildEmptyCatalog();
+
+  if (pipe) {
+    const remoteRaw = await fetchJsonWithTimeout(catalogApiUrl(API_CATALOG));
+    if (remoteRaw) {
+      catalog = mergeCatalogSnapshots(catalog, normalizeServerCatalog(remoteRaw));
     }
+    return catalog;
   }
 
-  try {
-    const res = await fetch(STATIC_CATALOG, { cache: 'no-store' });
-    if (res.ok) return normalizeServerCatalog(await res.json());
-  } catch {
-    /* */
+  const localRaw = await fetchJsonWithTimeout(API_CATALOG);
+  if (localRaw) {
+    return mergeCatalogSnapshots(catalog, normalizeServerCatalog(localRaw));
   }
-  return buildEmptyCatalog();
+
+  return catalog;
 }
 
 function fileToBase64(file: File): Promise<string> {

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import {
+  buildEmptyCatalog,
   CATALOG_VERSION,
   MASTER_PLAYLIST_ID,
   mergeServerCatalogWithPrefs,
@@ -494,16 +495,27 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   hydrate: async () => {
     if (get().hydrated) return;
 
-    const server = await fetchServerCatalog();
     const saved = loadCatalogJson<CatalogSnapshot>();
-    const applied = applyServerCatalog(server, saved);
+    const boot = applyServerCatalog(buildEmptyCatalog(), saved);
     set({
       hydrated: true,
-      tracks: applied.tracks,
-      playlists: applied.playlists,
-      activePlaylistId: applied.activePlaylistId,
+      tracks: boot.tracks,
+      playlists: boot.playlists,
+      activePlaylistId: boot.activePlaylistId,
     });
-    get().persist();
+
+    try {
+      const server = await fetchServerCatalog();
+      const applied = applyServerCatalog(server, saved);
+      set({
+        tracks: applied.tracks,
+        playlists: applied.playlists,
+        activePlaylistId: applied.activePlaylistId,
+      });
+      get().persist();
+    } catch {
+      /* offline — keep boot state */
+    }
   },
 
   refreshFromServer: async () => {

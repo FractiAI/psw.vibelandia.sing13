@@ -3,6 +3,7 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { collectMediaFiles } from '@/lib/deviceMediaScan';
+import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import {
   classifyFilesAgainstCatalog,
   formatAllDuplicatesMessage,
@@ -13,7 +14,7 @@ interface DjStudioProps {
   onUploadSuccess?: (trackId: string) => void;
 }
 
-type MsgKind = 'info' | 'success' | 'error';
+type MsgKind = 'info' | 'success' | 'error' | 'idle';
 
 export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const hydrated = useCatalogStore((s) => s.hydrated);
@@ -32,13 +33,19 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const [description, setDescription] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [busy, setBusy] = useState(false);
-  const [progress, setProgress] = useState<string | null>(null);
+  const [statusLine, setStatusLine] = useState('Ready to upload.');
   const [msg, setMsg] = useState<string | null>(null);
-  const [msgKind, setMsgKind] = useState<MsgKind>('info');
+  const [msgKind, setMsgKind] = useState<MsgKind>('idle');
+
+  const serverReady = isServerUploadConfigured();
 
   const showMsg = (text: string, kind: MsgKind) => {
     setMsg(text);
     setMsgKind(kind);
+  };
+
+  const setStatus = (text: string) => {
+    setStatusLine(text);
   };
 
   const handleDescriptionChange = (value: string) => {
@@ -51,7 +58,17 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   };
 
   const runImport = async (files: File[], opts?: { title?: string }) => {
+    if (!serverReady) {
+      setStatus('Upload not available.');
+      showMsg(
+        'Server upload is not configured. Set VITE_CATALOG_UPLOAD_SECRET (or captain password) in the Bridge build and CATALOG_UPLOAD_SECRET + BLOB_READ_WRITE_TOKEN on Vercel, then redeploy.',
+        'error',
+      );
+      return;
+    }
+
     if (!files.length) {
+      setStatus('No files selected.');
       showMsg('No audio or video files found.', 'error');
       return;
     }
@@ -59,6 +76,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     const { newFiles, duplicates } = classifyFilesAgainstCatalog(files, tracks);
 
     if (!newFiles.length) {
+      setStatus('Nothing new to upload.');
       showMsg(formatAllDuplicatesMessage(duplicates), 'info');
       resetFilePicker();
       return;
@@ -66,10 +84,11 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
 
     setBusy(true);
     setMsg(null);
-    setProgress(
+    setMsgKind('idle');
+    setStatus(
       duplicates.length
-        ? `Checked: ${duplicates.length} already in catalog · uploading ${newFiles.length} new…`
-        : `Uploading ${newFiles.length} file${newFiles.length === 1 ? '' : 's'}…`,
+        ? `Checked: ${duplicates.length} duplicate(s) skipped · starting ${newFiles.length} upload(s)…`
+        : `Starting upload of ${newFiles.length} file${newFiles.length === 1 ? '' : 's'}…`,
     );
 
     try {
@@ -78,28 +97,33 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         artist: artist.trim() || DEFAULT_ARTIST,
         description: description.trim() || undefined,
         playlistIds: [MASTER_PLAYLIST_ID],
+        onProgress: (line) => setStatus(line),
       });
       setActivePlaylist(MASTER_PLAYLIST_ID);
 
       if (added === 0) {
+        setStatus('Upload finished — nothing saved.');
         showMsg(
-          'Nothing new was saved on the server. Check Vercel Blob + CATALOG_UPLOAD_SECRET, or file size (max ~4.5 MB).',
+          'Nothing new was saved on the server. Check file size (max ~4.5 MB per file) or Vercel Blob settings.',
           'error',
         );
-        setProgress(null);
         return;
       }
 
+      setStatus(`Done — ${added} track${added === 1 ? '' : 's'} saved on the server.`);
       showMsg(formatPartialDuplicatesMessage(added, duplicates), 'success');
-      setProgress(null);
       setTitle('');
       setArtist(DEFAULT_ARTIST);
       setDescription('');
       resetFilePicker();
       const playId = addedTrackIds[0];
-      if (playId) onUploadSuccess?.(playId);
+      if (playId) {
+        setStatus('Opening Listen…');
+        onUploadSuccess?.(playId);
+      }
     } catch (e) {
       const err = e instanceof Error ? e.message : '';
+      setStatus('Upload failed.');
       if (err === 'catalog_upload_unconfigured') {
         showMsg(
           'Server upload is not configured. On Vercel set BLOB_READ_WRITE_TOKEN and CATALOG_UPLOAD_SECRET (same value as VITE_CATALOG_UPLOAD_SECRET or captain password in the Bridge build), then redeploy.',
@@ -107,13 +131,14 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         );
       } else {
         showMsg(
-          err === 'storage_failed'
-            ? 'Could not save to the server. Check file size (max ~4.5 MB via upload) or use media/catalog/tracks/.'
-            : 'Upload failed. Try again or fewer files at once.',
+          err === 'storage_failed' || err === 'payload_too_large'
+            ? 'Could not save to the server. File may be too large (max ~4.5 MB) or Blob is unavailable.'
+            : err
+              ? `Upload failed: ${err}`
+              : 'Upload failed. Try again or fewer files at once.',
           'error',
         );
       }
-      setProgress(null);
     } finally {
       setBusy(false);
     }
@@ -121,42 +146,54 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
 
   const handleSingleUpload = async () => {
     if (!file) {
+      setStatus('Pick a file first.');
       showMsg('Pick an audio or video file first.', 'error');
       return;
     }
     if (!title.trim()) {
+      setStatus('Enter a title.');
       showMsg('Enter a title — that is what the player shows when playing.', 'error');
       return;
     }
 
     const { duplicates } = classifyFilesAgainstCatalog([file], tracks);
     if (duplicates.length) {
+      setStatus('Already in catalog.');
       showMsg(formatAllDuplicatesMessage(duplicates), 'info');
       resetFilePicker();
       return;
     }
 
+    setStatus(`Preparing "${title.trim()}"…`);
     await runImport([file], { title: title.trim() });
   };
 
   const handleMultiUpload = async (fileList: FileList | null) => {
     if (!fileList?.length) return;
+    setStatus('Reading selected files…');
     const files = await collectMediaFiles(fileList);
     await runImport(files);
     resetFilePicker();
   };
 
   const handleFolderImport = async () => {
+    if (!serverReady) {
+      setStatus('Upload not available.');
+      showMsg('Server upload is not configured on this deployment.', 'error');
+      return;
+    }
     setBusy(true);
     setMsg(null);
-    setProgress('Reading folder…');
+    setStatus('Choose a folder…');
     try {
-      const { added, duplicates } = await scanDeviceLibrary({ pickFolder: true });
+      const { added, duplicates, addedTrackIds } = await scanDeviceLibrary({
+        pickFolder: true,
+        onProgress: (line) => setStatus(line),
+      });
       setActivePlaylist(MASTER_PLAYLIST_ID);
-      const allTracks = listAllTracks();
-      const latest = allTracks.sort((a, b) => (b.uploadedAt ?? '').localeCompare(a.uploadedAt ?? ''))[0];
 
       if (added === 0) {
+        setStatus(duplicates.length ? 'All files already in catalog.' : 'No media in folder.');
         showMsg(
           duplicates.length
             ? formatAllDuplicatesMessage(duplicates)
@@ -164,14 +201,15 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           duplicates.length ? 'info' : 'error',
         );
       } else {
+        setStatus(`Done — ${added} track${added === 1 ? '' : 's'} imported.`);
         showMsg(formatPartialDuplicatesMessage(added, duplicates), 'success');
-        const playId = result.addedTrackIds?.[0] ?? latest?.id;
+        const playId = addedTrackIds[0];
         if (playId) onUploadSuccess?.(playId);
       }
     } catch {
+      setStatus('Folder import failed.');
       showMsg('Folder import failed or was cancelled.', 'error');
     } finally {
-      setProgress(null);
       setBusy(false);
     }
   };
@@ -182,7 +220,9 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       ? 'spotify-dj-msg spotify-dj-msg--error'
       : msgKind === 'success'
         ? 'spotify-dj-msg spotify-dj-msg--success'
-        : 'spotify-dj-msg spotify-dj-msg--info';
+        : msgKind === 'info'
+          ? 'spotify-dj-msg spotify-dj-msg--info'
+          : 'spotify-dj-msg';
 
   return (
     <section className="spotify-main-panel spotify-dj">
@@ -191,12 +231,25 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           <p className="spotify-main-eyebrow">Upload</p>
           <h2 className="spotify-main-title">Add tracks</h2>
           <p className="spotify-main-desc">
-            Single file with a custom title, or import many at once. Everything joins the{' '}
-            <strong>Sonic Singularity</strong> library — then open <strong>Listen</strong>. Files you
-            already uploaded are detected before upload starts.
+            Files save to the <strong>server catalog</strong>, then appear in Listen. Max ~4.5 MB per file
+            through the browser uploader.
           </p>
         </div>
       </header>
+
+      <div
+        className={`spotify-dj-status${busy ? ' spotify-dj-status--busy' : ''}${!serverReady ? ' spotify-dj-status--warn' : ''}`}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {busy && <span className="spotify-dj-status-spinner" aria-hidden />}
+        <div className="spotify-dj-status-text">
+          <strong>{busy ? 'Working' : serverReady ? 'Status' : 'Setup needed'}</strong>
+          <span>{statusLine}</span>
+        </div>
+        {msg && <p className={msgClass}>{msg}</p>}
+      </div>
 
       <div className="spotify-dj-grid">
         <article className="spotify-dj-card spotify-dj-card--wide">
@@ -244,24 +297,27 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               type="file"
               accept="audio/*,video/*"
               disabled={busy || !hydrated}
-              onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+              onChange={(e) => {
+                const picked = e.target.files?.[0] ?? null;
+                setFile(picked);
+                if (picked) setStatus(`Selected: ${picked.name}`);
+              }}
             />
           </label>
           <button
             type="button"
             className="spotify-btn spotify-btn--gold"
-            disabled={busy || !hydrated}
+            disabled={busy || !hydrated || !serverReady}
             onClick={() => void handleSingleUpload()}
           >
-            {busy ? 'Working…' : 'Upload one · go to Listen'}
+            {busy ? 'Uploading…' : 'Upload · go to Listen'}
           </button>
         </article>
 
         <article className="spotify-dj-card spotify-dj-card--wide">
           <h3>2 · Many files at once</h3>
           <p className="spotify-main-desc" style={{ marginBottom: '0.75rem' }}>
-            Uses each file name as the track title. Files already in your catalog are skipped with a
-            clear note — not treated as an error.
+            Uses each file name as the track title. Duplicates are skipped with a clear note.
           </p>
           <label className="spotify-field">
             Select multiple audio / video files
@@ -270,26 +326,19 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               type="file"
               accept="audio/*,video/*"
               multiple
-              disabled={busy || !hydrated}
+              disabled={busy || !hydrated || !serverReady}
               onChange={(e) => void handleMultiUpload(e.target.files)}
             />
           </label>
           <button
             type="button"
             className="spotify-btn spotify-btn--ghost"
-            disabled={busy || !hydrated}
+            disabled={busy || !hydrated || !serverReady}
             onClick={() => void handleFolderImport()}
           >
-            Import a folder…
+            {busy ? 'Working…' : 'Import a folder…'}
           </button>
         </article>
-
-        {(progress || msg) && (
-          <article className="spotify-dj-card spotify-dj-card--wide">
-            {progress && <p className="spotify-dj-msg">{progress}</p>}
-            {msg && <p className={msgClass}>{msg}</p>}
-          </article>
-        )}
 
         {catalogTracks.length > 0 && (
           <article className="spotify-dj-card spotify-dj-card--wide">

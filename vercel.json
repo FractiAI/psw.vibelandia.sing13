@@ -55,7 +55,7 @@
         { "key": "X-Protocol", "value": "NSPFRNP" },
         { "key": "X-Octave-0", "value": "Seed" },
         { "key": "X-Octave-1", "value": "Edge" },
-        { "key": "X-Singularity", "value": "SING-13" },
+        { "key": "X-Singularity", "value": "Sonic Singularity Sing! 13" },
         { "key": "X-Parent-Edge", "value": "https://psw-vibelandia-sing9.vercel.app" }
       ]
     }

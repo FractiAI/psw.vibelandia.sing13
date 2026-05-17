@@ -25,7 +25,7 @@ export function clearMachoteCampaignDismissed(): void {
   }
 }
 
-/** `?campaign=1` on the Bridge page URL clears dismiss (hub or bridge). */
+/** `?campaign=1` on the Bridge page URL clears dismiss (top deck or bridge). */
 export function consumeCampaignResetFromUrl(): boolean {
   if (typeof window === 'undefined') return false;
   const params = new URLSearchParams(window.location.search);

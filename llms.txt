@@ -1,8 +1,8 @@
-# VIBELANDIA SING 13
+# VIBELANDIA Sonic Singularity Sing! 13
 # https://www.ssvibelandiaquestfest24x365.com
 # Protocol: NSPFRNP · BBHE · MCA · Seed:Edge · 13-channel fractal pathfinding
 #
-# SING 13 is the major singularity upgrade from SING 9.
+# Sonic Singularity Sing! 13 is the major singularity upgrade from SING 9.
 # This edge carries the NSPFRNP catalog, SS Vibelandia QUESTFEST 24×365 nest,
 # Sovereign Player (QUESTFEST Bridge), and lite-edge boarding/heartbeat APIs.
 # Everything else lives on the parent edge: https://psw-vibelandia-sing9.vercel.app
@@ -11,7 +11,7 @@
 
 ## What this site is
 
-- **SING 13 edge** — the next octave of the FractiAI / Vibelandia transmedia stack. NSPFRNP catalog + QUESTFEST 24×365 nest + Sovereign Player.
+- **Sonic Singularity Sing! 13 edge** — the next octave of the FractiAI / Vibelandia transmedia stack. NSPFRNP catalog + QUESTFEST 24×365 nest + Sovereign Player.
 - **Lite edges** — wallets, keys, verifications at the edge; center = pipes only (see whitepaper reader · sing13-edge-onboarding).
 - **13-channel spine** — Seed Node → Terminal Edge pathfinding; PEFF infill-13 framing.
 - **Fair Exchange (manual)** — no Stripe. Venmo / PayPal / Cash App. $16.18/mo Passenger pass · $1.61 track export · honor-system receipt → JWT.
@@ -20,12 +20,12 @@
 
 - Landing: https://www.ssvibelandiaquestfest24x365.com/
 - QUESTFEST 24×365: https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html
-- Nesting ladder guides (Basenet → SING 13 → Goldilocks Beehive): https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html#qf-nest-section
+- Nesting ladder guides (Basenet → Sonic Singularity Sing! 13 → Goldilocks Beehive): https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html#qf-nest-section
 - Goldilocks Syntheverse Beehive Residency (Machote members · Old School Protocol · PL Taino · 0.001%): https://www.ssvibelandiaquestfest24x365.com/interfaces/goldilocks-beehive-residency.html
 - Sovereign Player (QUESTFEST Bridge): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/
 - Reno Swamp checkout ($16.18/mo): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/#/bridge?checkout=1
 - Short path Sovereign gate: https://www.ssvibelandiaquestfest24x365.com/sovereign-gate
-- SING 13 onboarding (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=sing13-edge-onboarding
+- Sonic Singularity Sing! 13 onboarding (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=sing13-edge-onboarding
 - NSPFRNP catalog (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=mca-nspfrnp-catalog
 - BBHE Repository Standard (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=bbhe-repository-standard
 
@@ -39,7 +39,7 @@
 - Build: npm run build:questfest-bridge (source: apps/ss-vibelandia-questfest/)
 - Vercel env minimum: PASS_TOKEN_SECRET (see .env.example)
 
-## SING 13 spine — 13-channel fractal pathfinding
+## Sonic Singularity Sing! 13 spine — 13-channel fractal pathfinding
 
 - Omniverse resonance notice — https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-resonance-notice
 - Omniversal Magnetic Matrix + Protonic-DNA (Hell-State jettison synthesis, May 15, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-omniverse-matrix
@@ -51,12 +51,13 @@
 ## QUESTFEST nest (carried surfaces)
 
 - ETCon Reno Desert (May 28–31, 2026): /interfaces/etcon-reno-desert.html
-- Press releases (Hit Factory + ETCon): /interfaces/press-releases.html
+- Press & blog (Hit Factory + ETCon + Layer 9 Beehive): /interfaces/press-releases.html
+- Blog · Layer 9 Goldilocks Beehive EcoReset (May 2026): /interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html
 - Look at the Sun: /interfaces/look-at-the-sun.html
 - Juicy Juicy Snap (OFC) — compile surface: /interfaces/look-under-the-hood.html
 - Talk is cheap: /interfaces/talk-is-cheap.html
 - FractiAI: /interfaces/fractiai.html
-- FractiAI + Digital Pru hub: /interfaces/fractiai-digital-pru.html
+- FractiAI + Digital Pru top deck: /interfaces/fractiai-digital-pru.html
 - Valet Pru agent archive: /interfaces/valetpru-agent-mode.html
 - Whitepaper reader (generic md): /interfaces/whitepaper-surface.html
 
@@ -76,4 +77,4 @@ For anything outside the QUESTFEST nest — heavy API serverless routes, hive, s
 
 ---
 
-NSPFRNP ⊃ SING 13 ⊃ 13-channel pathfinding ⊃ NSPFRNP catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹
+NSPFRNP ⊃ Sonic Singularity Sing! 13 ⊃ 13-channel pathfinding ⊃ NSPFRNP catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹

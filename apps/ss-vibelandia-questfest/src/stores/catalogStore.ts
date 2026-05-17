@@ -16,7 +16,6 @@ import {
   isServerUploadConfigured,
   uploadTrackToServer,
 } from '@/lib/serverCatalog';
-import type { CatalogSnapshot } from '@/lib/catalogTypes';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
 import {
@@ -67,12 +66,19 @@ interface CatalogState {
   ) => Promise<string>;
   importMediaFiles: (
     files: File[],
-    opts?: { artist?: string; description?: string; title?: string; playlistIds?: string[] },
+    opts?: {
+      artist?: string;
+      description?: string;
+      title?: string;
+      playlistIds?: string[];
+      onProgress?: (message: string) => void;
+    },
   ) => Promise<{ added: number; skipped: number; addedTrackIds: string[] }>;
-  scanDeviceLibrary: (opts?: { pickFolder?: boolean }) => Promise<{
+  scanDeviceLibrary: (opts?: { pickFolder?: boolean; onProgress?: (message: string) => void }) => Promise<{
     added: number;
     skipped: number;
     duplicates: ImportDuplicate[];
+    addedTrackIds: string[];
   }>;
   deleteTrack: (trackId: string) => Promise<void>;
   hydrate: () => Promise<void>;
@@ -392,8 +398,12 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const newTracks: TrackDef[] = [];
     let skipped = 0;
     let serverCatalog: CatalogSnapshot | undefined;
+    const total = files.length;
+    const report = opts?.onProgress;
 
-    for (const file of files) {
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      report?.(`Uploading ${i + 1} of ${total}: ${file.name}…`);
       const row = await addFileAsTrack(file, existing, {
         title: opts?.title,
         artist: opts?.artist,
@@ -444,23 +454,26 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     let handle = await loadDeviceDirHandle();
     if (opts?.pickFolder || !handle) {
       const picked = await pickMediaDirectory();
-      if (!picked) return { added: 0, skipped: 0, duplicates: [] };
+      if (!picked) return { added: 0, skipped: 0, duplicates: [], addedTrackIds: [] };
       handle = picked;
       await saveDeviceDirHandle(handle);
     } else {
       const perm = await handle.queryPermission({ mode: 'read' });
       if (perm !== 'granted') {
         const req = await handle.requestPermission({ mode: 'read' });
-        if (req !== 'granted') return { added: 0, skipped: 0, duplicates: [] };
+        if (req !== 'granted') return { added: 0, skipped: 0, duplicates: [], addedTrackIds: [] };
       }
     }
 
     const files = await scanDirectoryHandle(handle);
     const { newFiles, duplicates } = classifyFilesAgainstCatalog(files, get().tracks);
     if (!newFiles.length) {
-      return { added: 0, skipped: duplicates.length, duplicates };
+      return { added: 0, skipped: duplicates.length, duplicates, addedTrackIds: [] };
     }
-    const result = await get().importMediaFiles(newFiles, { playlistIds: [MASTER_PLAYLIST_ID] });
+    const result = await get().importMediaFiles(newFiles, {
+      playlistIds: [MASTER_PLAYLIST_ID],
+      onProgress: opts?.onProgress,
+    });
     return { ...result, duplicates };
   },
 

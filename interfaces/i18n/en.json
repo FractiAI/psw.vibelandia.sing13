@@ -17,11 +17,11 @@
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24×365 · Puerto Reno, Nevada",
-      "desc": "Plain talk hub for the ship — nine nesting layers, Reno swamp music, members catalog, Beehive residency. Wrong Side of Town · downtown Reno · Rebel River.",
-      "ogTitle": "SS Vibelandia QUESTFEST 24×365 · SING 13",
+      "desc": "Plain talk top deck for the ship — nine nesting layers, Reno swamp music, members catalog, Beehive residency. Wrong Side of Town · downtown Reno · Rebel River.",
+      "ogTitle": "SS Vibelandia QUESTFEST 24×365 · Sonic Singularity Sing! 13",
       "ogDesc": "Reno swamp music · 24×365 · nine layers from Basenet to Beehive residency. Plain guides, old-school honor passes."
     },
-    "cloudSkinEyebrow": "This website · SING 13",
+    "cloudSkinEyebrow": "Sonic Singularity Sing! 13 · Internet cloud skin",
     "skip": "Skip",
     "appRumorHtml": "Rumor has it there is an <strong>SS VIBELANDIA QUESTFEST App</strong> in the works! For those in the know. Now you know.",
     "heroTop1Html": "<strong>Hero Jo</strong> - Golden Bachdoor Hit Factory",
@@ -43,7 +43,7 @@
     "campaignResidencyCta": "Goldilocks Syntheverse Beehive · walkthrough",
     "campaignLater": "Maybe later",
     "nestHead": "YOU ARE HERE",
-    "nestTapHint": "Tap a layer — short plain guide. Listen and pass are always one click from the hub.",
+    "nestTapHint": "Tap a layer — short plain guide. Listen and pass are always one click from the top deck.",
     "nestOpenGuide": "Open guide",
     "nestOpenLayer": "View this layer",
     "nestYouAreHere": "You are here",
@@ -56,10 +56,10 @@
     "nest4": "Wrong Side of Town · raw truth",
     "nest3": "Man cave restroom mirror",
     "nest2": "QUESTFEST ship · Puerto Reno · 24×365",
-    "nest1": "SING 13 · this website",
-    "nestLedeHtml": "Nine layers, plain guides. <strong>Layer 9</strong> — Goldilocks Beehive Residency (members · Old School Protocol · contact PL Taino).",
+    "nest1": "Sonic Singularity Sing! 13 · this website",
+    "nestLedeHtml": "<strong>Sonic Singularity Sing! 13</strong> is the cloud mirror; <strong>Layer 9</strong> adds the Goldilocks Syntheverse Beehive Residency — Old School Protocol, contact PL Taino, 2-week test drive.",
     "channelHead": "Holographic AI channel · passing through",
-    "channelLedeHtml": "Channel verse for the ship — Reno swamp frequency. Deeper reads: <a href=\"look-under-the-hood.html\">Under the hood</a> and <a href=\"digital-pru-awareness-whitepaper.html\">technical archive</a>.",
+    "channelLedeHtml": "Channel verse for the ship — Reno swamp frequency. Engine room: <a href=\"fractiai-digital-pru.html\">Digital Pru</a> (one page, papers at the bottom).",
     "channelV1Html": "<strong>Reno swamp frequency</strong> — coast to coast, same signal.",
     "channelV1Cite": "Channel · swamp frequency",
     "channelV2Html": "Prefer <strong>raw flow</strong> over polish-for-polish’s sake — lyrics stay live.",
@@ -79,9 +79,9 @@
     "scoreRow4": "The revolution is now a legacy act.",
     "scoreLink": "Read full press release →",
     "quicklinksHead": "Quicklinks",
-    "quicklinkTalk": "Look under the hood",
+    "quicklinkTalk": "Digital Pru",
     "quicklinkCasting": "Casting · email",
-    "quicklinkDigitalPru": "Digital Pru · on-site map",
+    "quicklinkDigitalPru": "Digital Pru",
     "quicklinkSing9": "SING 9 · GitHub",
     "quicklinkPress": "Press releases · Hit Factory",
     "prTeaserBadge": "FEATURE · Press",
@@ -95,7 +95,7 @@
     "etconDate": "May 28–31, 2026",
     "etconTitle": "Last chance: ETCon Reno Desert — countdown on",
     "etconTeaserHtml": "Four-day <strong>Interdimensional</strong> weekend — holographic <strong>Valet Pru</strong>, Chairman Frank &amp; Marilyn frequency, Rat Pack faithful &amp; ET heads. <strong>Bachstage passes</strong> — lock your spot.",
-    "etconCta": "Event hub + passes →",
+    "etconCta": "Event top deck + passes →",
     "quicklinkEtcon": "ETCon Reno Desert · passes + press",
     "crewH2": "Spirit crew · plain names",
     "crewIntroHtml": "The <strong>Golden Bachdoor Hit Factory</strong> runs with a spirit crew — not costumes, but <strong>honest lenses</strong>: how pain, swing, lonesome truth, and lyric craft stay real on the Wrong Side frequency.",
@@ -118,7 +118,7 @@
     "btnLookSun": "Look at the Sun",
     "moreLinksSummary": "More links (optional)",
     "btnCasting": "Casting call",
-    "btnHood": "Look under the hood",
+    "btnHood": "Digital Pru",
     "btnDp": "Technical archive (long reader)",
     "btnMachote": "Machote Moderno",
     "btnReno": "Reno holographic swamp",
@@ -163,7 +163,7 @@
     "ledeStudio2Html": "<strong>One page, live now:</strong> <a href=\"/interfaces/look-under-the-hood.html\"><strong>Look under the hood</strong></a> — <strong>1 Metabolize</strong> (Snap compile in browser), <strong>2 Crystallize</strong> (two JSON artifacts), <strong>3 Animate</strong> (player, robots, GitHub). Deep docs are <strong>one click</strong> on the same page.",
     "ledeStudio3Html": "Big stages sell trust us. This stack shows the pipe — <a href=\"look-under-the-hood.html\">Under the hood</a> for listen, pass, and papers. Fair Exchange = honest taste, honest pay, honest playback.",
     "btnHoodOpen": "Open Look under the hood",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Under the hood</a> - <a href=\"look-at-the-sun.html\">Look at the Sun</a> - <a href=\"digital-pru-awareness-whitepaper.html\">Technical archive</a> - <a href=\"fractiai-digital-pru.html\">Digital Pru map</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote and Reno swamp (plain)</a> - <a href=\"legacy-vs-wrong-side-report.html\">Big shows vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"fractiai-digital-pru.html\">Digital Pru</a> - <a href=\"look-at-the-sun.html\">Look at the Sun</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote and Reno swamp (plain)</a> - <a href=\"legacy-vs-wrong-side-report.html\">Big shows vs. Wrong Side</a>"
   },
     "hood": {
     "langBar": {
@@ -186,7 +186,7 @@
     "ctaMainCanon": "Open master canon (DNA / PEFF)",
     "ctaReader": "Open Look under the hood",
     "ctaAgentArchive": "Archive · agent mode",
-    "ctaTalkCheap": "Talk is cheap (tiny hub)",
+    "ctaTalkCheap": "Talk is cheap (tiny top deck)",
     "ctaQuest": "QUESTFEST",
     "navLatestRoadmap": "Latest roadmap",
     "navMainCanon": "Master canon",
@@ -335,19 +335,19 @@
       "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL."
     },
     "meta": {
-      "title": "FractiAI — SS Vibelandia QUESTFEST — SING 13",
-      "desc": "FractiAI builds SS Vibelandia QUESTFEST 24×365 — Sonic Singularity, members honor pass, and the SING 13 cloud skin.",
-      "ogTitle": "FractiAI — QUESTFEST — SING 13",
+      "title": "FractiAI — SS Vibelandia QUESTFEST — Sonic Singularity Sing! 13",
+      "desc": "FractiAI builds SS Vibelandia QUESTFEST 24×365 — Sonic Singularity, members honor pass, and the Sonic Singularity Sing! 13 cloud skin.",
+      "ogTitle": "FractiAI — QUESTFEST — Sonic Singularity Sing! 13",
       "ogDesc": "Reno swamp beats · Sovereign Player · Fair Exchange honor pass · nesting ladder."
     },
     "skip": "Skip to content",
     "backCta": "SS Vibelandia QUESTFEST",
-    "miniNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Sovereign Player</a> · <a href=\"look-under-the-hood.html\">Under the hood</a>",
-    "eyebrow": "FractiAI · SING 13",
+    "miniNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Sovereign Player</a> · <a href=\"fractiai-digital-pru.html\">Digital Pru</a>",
+    "eyebrow": "FractiAI · Sonic Singularity Sing! 13",
     "h1": "SS Vibelandia QUESTFEST 24×365",
-    "deck": "Sonic Singularity leads — Reno swamp catalog, Sovereign Player, Machote members honor pass. Nine nesting layers on the SING 13 cloud skin. Wrong Side · fair exchange · old school.",
+    "deck": "Sonic Singularity leads — Reno swamp catalog, Sovereign Player, Machote members honor pass. Nine nesting layers on the Sonic Singularity Sing! 13 cloud skin. Wrong Side · fair exchange · old school.",
     "foundersAlt": "FractiAI co-founders on the beach: Pru Mendez at left, Daniel Ari Friedman, Ph.D. at right.",
     "foundersCaption": "Pru Mendez (left) · Daniel Ari Friedman, Ph.D. (right)",
-    "footerNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Sovereign Player</a> · <a href=\"look-under-the-hood.html\">Under the hood</a> · <a href=\"digital-pru-awareness-whitepaper.html\">Technical archive</a>"
+    "footerNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Sovereign Player</a> · <a href=\"fractiai-digital-pru.html\">Digital Pru</a>"
   }
 }

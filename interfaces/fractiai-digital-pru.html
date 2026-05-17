@@ -4,17 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#06080d" />
-  <title>FractiAI &amp; Digital Pru — explore on this site</title>
-  <meta name="description" content="FractiAI and Digital Pru on this site — Under the hood, technical archive, and the full FractiAI page." />
+  <title>Digital Pru | SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="Digital Pru in plain talk: intelligent pipes, how sound and passes work, optional long papers. One page. Listen on the Sovereign Player." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/fractiai-digital-pru.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #06080d;
-      --card: #0f141c;
       --line: rgba(212, 175, 55, 0.35);
       --gold: #d4af37;
       --gold-hi: #fef3c7;
@@ -22,166 +21,234 @@
       --muted: #94a3b8;
       --text: #f1f5f9;
     }
-    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: Inter, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.55;
-      font-size: 1rem;
-      min-height: 100vh;
+      line-height: 1.65;
+      font-size: 1.02rem;
     }
-    a { color: var(--foam); text-decoration: none; }
-    a:hover { color: var(--gold-hi); text-decoration: underline; }
-    .skip { position: absolute; left: -9999px; top: 0; background: var(--gold); color: #000; padding: .5rem 1rem; z-index: 100; }
-    .skip:focus { left: 0; }
-
-    .wrap { max-width: 560px; margin: 0 auto; padding: calc(1.5rem + env(safe-area-inset-top)) 1.25rem 3rem; }
-    .nav-top {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem 1rem;
-      font-size: .72rem;
-      letter-spacing: .08em;
+    a { color: var(--foam); font-weight: 600; }
+    a:hover { color: var(--gold-hi); }
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: calc(1.25rem + env(safe-area-inset-top)) 1.25rem 3rem;
+    }
+    .back {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-    .nav-top a { color: var(--muted); }
-    .nav-top a:hover { color: var(--gold-hi); }
-
-    h1 {
-      font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: clamp(2rem, 8vw, 2.75rem);
-      line-height: 0.98;
-      color: var(--gold-hi);
-      letter-spacing: 0.02em;
-      font-weight: 400;
-      margin-bottom: .65rem;
-    }
-    .lede {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 50ch;
       margin-bottom: 1.5rem;
+      text-decoration: none;
     }
-    .lede strong { color: #e2e8f0; }
-
-    .note {
-      font-size: .85rem;
-      color: var(--muted);
-      padding: .75rem .9rem;
-      border-left: 3px solid var(--gold);
-      background: rgba(15, 20, 28, 0.65);
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 1.75rem;
-      max-width: 50ch;
-    }
-    .note strong { color: var(--gold-hi); }
-
-    h2 {
-      font-size: .68rem;
-      letter-spacing: .2em;
+    .back:hover { color: var(--gold-hi); }
+    .kicker {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
-      margin: 1.75rem 0 .6rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(2rem, 6vw, 2.65rem);
+      line-height: 1.02;
+      color: var(--gold-hi);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+    .lead { font-size: 1.08rem; color: #e2e8f0; margin-bottom: 1rem; }
+    h2 {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--foam);
+      margin: 2rem 0 0.65rem;
       font-weight: 700;
     }
-    h2:first-of-type { margin-top: 0; }
-
-    .card {
-      background: var(--card);
+    p { margin: 0 0 0.85rem; color: #cbd5e1; }
+    ul.plain { margin: 0 0 1rem 1.15rem; color: #cbd5e1; }
+    ul.plain li { margin-bottom: 0.4rem; }
+    ul.plain strong { color: #e2e8f0; }
+    .hero-img {
+      width: 100%;
+      border-radius: 12px;
       border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 1rem 1.1rem;
-      margin-bottom: .75rem;
+      margin: 0 0 1.25rem;
+      display: block;
     }
-    .card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: .4rem;
+    .paper-list {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
     }
-    .card p {
-      font-size: .92rem;
+    .paper-list li {
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      padding: 0.65rem 0;
+    }
+    .paper-list a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .paper-list a:hover { text-decoration: underline; }
+    .paper-list .sub {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 400;
       color: var(--muted);
-      margin-bottom: .75rem;
-      max-width: 48ch;
+      margin-top: 0.2rem;
     }
-    .card p:last-child { margin-bottom: 0; }
-
+    .end-actions {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+    }
+    .end-actions p {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
     .btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: .75rem 1rem;
-      font-size: .7rem;
+      padding: 0.75rem 1.2rem;
+      font-size: 0.7rem;
       font-weight: 800;
-      letter-spacing: .1em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      border-radius: 8px;
-      border: 2px solid var(--foam);
-      background: rgba(45, 212, 191, 0.08);
-      color: var(--foam);
-      margin-top: .35rem;
+      text-decoration: none;
+      border-radius: 999px;
     }
-    .btn:hover { background: rgba(45, 212, 191, 0.14); text-decoration: none; color: var(--gold-hi); border-color: var(--gold-hi); }
     .btn--gold {
-      border-color: var(--gold);
-      background: linear-gradient(135deg, var(--gold), #b8922a);
-      color: #0a0f1a;
+      background: linear-gradient(180deg, #f0d4a0, #c9a227);
+      color: #1a120c;
     }
-    .btn--gold:hover { filter: brightness(1.05); color: #0a0f1a; }
-
+    .btn--gold:hover { filter: brightness(1.05); color: #1a120c; }
+    .btn--ghost {
+      border: 2px solid var(--line);
+      color: var(--foam);
+    }
+    .btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
     .foot {
       margin-top: 2rem;
-      font-size: .8rem;
+      font-size: 0.82rem;
       color: var(--muted);
-      text-align: center;
     }
+    .foot a { font-weight: 500; }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to main</a>
+  <main class="wrap">
+    <a class="back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
 
-  <div class="wrap">
-    <div class="nav-top">
-      <a href="look-under-the-hood.html">← Look under the hood</a>
-      <a href="vibelandia-questfest.html">QUESTFEST</a>
-    </div>
+    <p class="kicker">Digital Pru &middot; one page &middot; plain talk</p>
+    <h1>Under the hood (without the maze)</h1>
+    <p class="lead">
+      Everything below is the honest mirror: what runs, what we keep off the server, and which long files exist if you want them.
+      <strong>You do not need any of this to press play.</strong>
+    </p>
 
-    <header id="main">
-      <h1>FractiAI &amp; Digital Pru</h1>
-      <p class="lede"><strong>Digital Pru on this site</strong> — demos, papers, and Under the hood. No login. Off-site GitHub links are optional and often unavailable.</p>
-      <p class="note"><strong>Members:</strong> listen and pay on the <a href="questfest-bridge/#/bridge">Sovereign Player</a>. Papers are for depth only.</p>
-    </header>
+    <img class="hero-img" src="images/look-hood-engine.png" alt="Engine room of the Sonic Ship." width="1200" height="675" loading="lazy" decoding="async" />
 
-    <h2>FractiAI (the org &amp; lane)</h2>
-    <div class="card">
-      <h3>In plain words</h3>
-      <p><strong>FractiAI</strong> is the house behind the public stack: QUESTFEST music surfaces, the Juicy Juicy Snap compile line, and the longer technical reads. Think “studio + proof” — not a single download button.</p>
-      <a class="btn" href="fractiai.html">Open the full FractiAI page</a>
-    </div>
+    <h2 id="what">What Digital Pru is</h2>
+    <p>
+      <strong>FractiAI</strong> builds the member experience: music, honor passes, nesting guides on the top deck.
+      <strong>Digital Pru</strong> is the name for the technical truth layer: compile rules, edge onboarding, and honesty boundaries.
+      Same house. You are reading the engine room now.
+    </p>
 
-    <h2>Digital Pru (the mirror &amp; tools)</h2>
-    <div class="card">
-      <h3>In plain words</h3>
-      <p><strong>Digital Pru</strong> is the name for the technical mirror: honesty rules, PEFF / DNA docs, optional whiteboard-style readers, and demos that run in the browser where we ship them.</p>
-      <a class="btn btn--gold" href="questfest-bridge/#/bridge">Sovereign Player</a>
-      <a class="btn" href="look-under-the-hood.html">Under the hood</a>
-      <a class="btn" href="digital-pru-awareness-whitepaper.html">Technical archive</a>
-    </div>
+    <h2 id="pipes">Intelligent pipes (data-free center)</h2>
+    <p>
+      We keep the <strong>server as data-free as we can</strong>. The center is not a warehouse of profiles, playlists, or listening history.
+      It is a set of <strong>intelligent pipes</strong>: route, verify, sign, merge catalogs. The heavy life stays on your edge.
+    </p>
+    <ul class="plain">
+      <li><strong>Your pass</strong> &mdash; signed token on your device after honor boarding (Venmo, PayPal, Cash App). No Stripe. No member database we mine.</li>
+      <li><strong>Your taste</strong> &mdash; playlists in browser storage; tracks from static catalog plus upload pipes.</li>
+      <li><strong>Our pipes</strong> &mdash; boarding JWT, optional single-stream heartbeat, catalog API. Small handlers, not a platform brain.</li>
+    </ul>
+    <p>
+      That cuts complexity, cost, and raises sovereignty: you hold the pass; we do not own your listening graph.
+    </p>
 
-    <h2>Source (optional)</h2>
-    <div class="card">
-      <h3>Repositories</h3>
-      <p>For clones, tests, or the full Digital Pru runtime, use GitHub when you already work from the terminal.</p>
-      <a class="btn" href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener">digital-pru on GitHub</a>
-      <a class="btn" href="https://github.com/FractiAI/psw.vibelandia.sing9" target="_blank" rel="noopener">SING 9 on GitHub</a>
-    </div>
+    <h2 id="sound">What runs the sound</h2>
+    <p>
+      Tracks merge from the <strong>server catalog</strong> (static manifest plus optional uploads).
+      Previews play until the Machote honor pass ($16.18/mo) unlocks full playback on the Sovereign Player.
+      Exports use the same Fair Exchange rails as boarding.
+    </p>
 
-    <p class="foot"><a href="look-under-the-hood.html">Look under the hood</a> · <a href="https://psw-vibelandia-sing9.vercel.app/interfaces/sing9-light-edge-onboarding.html" target="_blank" rel="noopener">SING 9 light edge</a> · <a href="vibelandia-questfest.html">QUESTFEST</a></p>
-  </div>
+    <h2 id="broadcast">Broadcast layer (honest)</h2>
+    <p>
+      Solar and ionosphere language is <strong>story color</strong> for the channel &mdash; playback is normal browser audio.
+      The sun deck is a separate end page if you want that metaphor spelled out.
+    </p>
+
+    <h2>What we are not asking</h2>
+    <ul class="plain">
+      <li>Clone GitHub to hear a beat.</li>
+      <li>Read DNA / PEFF canon before play.</li>
+      <li>Treat flare language as a roof weather forecast.</li>
+    </ul>
+
+    <h2 id="papers">Long reads (papers in the reader)</h2>
+    <p>Optional. Each link opens the full document. No hopscotch between map pages.</p>
+    <ul class="paper-list">
+      <li>
+        <a href="whitepaper-surface.html?id=sing13-edge-onboarding">Sonic Singularity Sing! 13 &middot; edge onboarding</a>
+        <span class="sub">Intelligent pipes, sovereignty, lite edge &mdash; start here if you read one file.</span>
+      </li>
+      <li>
+        <a href="whitepaper-surface.html?id=dp-resonance-notice">Resonance notice</a>
+        <span class="sub">What we claim vs. metaphor vs. what would need real instruments.</span>
+      </li>
+      <li>
+        <a href="whitepaper-surface.html?id=dp-master-canon">Digital Pru &middot; master canon (DNA / PEFF)</a>
+        <span class="sub">Deep narrative &mdash; after you already know the ship.</span>
+      </li>
+      <li>
+        <a href="whitepaper-surface.html?id=jj-snap-ofc">JJ Snap &middot; OFC compile proof</a>
+        <span class="sub">Browser compile: two JSON artifacts or a clean abort.</span>
+      </li>
+      <li>
+        <a href="whitepaper-surface.html?id=dp-roadmap-13">13-channel pathfinding &middot; May 2026 roadmap</a>
+        <span class="sub">Story spine for the upgrade &mdash; not a clinical protocol.</span>
+      </li>
+      <li>
+        <a href="whitepaper-surface.html?id=mca-nspfrnp-catalog">MCA / NSPFRNP catalog</a>
+        <span class="sub">Shared dictionary so the stack does not drift.</span>
+      </li>
+    </ul>
+
+    <section class="end-actions" aria-label="Go to member surfaces">
+      <p>Member surfaces</p>
+      <div class="btn-row">
+        <a class="btn btn--gold" href="questfest-bridge/#/bridge">Sovereign Player</a>
+        <a class="btn btn--ghost" href="vibelandia-questfest.html">QUESTFEST top deck</a>
+      </div>
+    </section>
+
+    <p class="foot">
+      Also:
+      <a href="look-at-the-sun.html">Look at the Sun</a> &middot;
+      <a href="fractiai.html">FractiAI</a> &middot;
+      <a href="goldilocks-beehive-residency.html">Beehive residency</a>
+      <br /><br />
+      Engineers:
+      <a href="https://github.com/FractiAI/digital-pru" target="_blank" rel="noopener">digital-pru</a>,
+      <a href="https://github.com/FractiAI/psw.vibelandia.sing13" target="_blank" rel="noopener">sing13</a>,
+      <a href="https://github.com/FractiAI/psw.vibelandia.sing9" target="_blank" rel="noopener">sing9</a>
+    </p>
+  </main>
 </body>
 </html>

@@ -347,7 +347,7 @@
   },
   "findings": {
     "headline": "Sun rising; ionosphere moderate — studio weeks on the same axis",
-    "lede": "**52 UTC weeks** ending **2026-05-11**: **687** public Git commits across SING 9 / SING 13 / digital-pru, plotted beside **SILSO + SWPC daily sunspots** and **NOAA F10.7** (daily noon flux when available, else SWPC daily table / monthly fill). **Not live** — frozen at generation time.",
+    "lede": "**52 UTC weeks** ending **2026-05-11**: **687** public Git commits across SING 9 / Sonic Singularity Sing! 13 / digital-pru, plotted beside **SILSO + SWPC daily sunspots** and **NOAA F10.7** (daily noon flux when available, else SWPC daily table / monthly fill). **Not live** — frozen at generation time.",
     "bullets": [
       "Latest daily sunspot number: **56** (2026-05-13). Mean F10.7 proxy that day: **103.0 sfu**.",
       "Last four weeks mean SSN **98.5** vs prior four **88.1** — trend reads **rising**.",

@@ -29,3 +29,4 @@ Thumbs.db
 
 # Supabase (not used in SING 13; lite edges only)
 # supabase/
+.env*.local

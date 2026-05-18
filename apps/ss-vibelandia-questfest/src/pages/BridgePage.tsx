@@ -12,6 +12,7 @@ import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { PLAIN } from '@/lib/plainSpeak';
+import { BuildNoticeBanner } from '@/components/BuildNoticeBanner';
 
 export function BridgePage() {
   const location = useLocation();
@@ -93,7 +94,9 @@ export function BridgePage() {
   };
 
   return (
-    <div className="sp-app">
+    <>
+      <BuildNoticeBanner />
+      <div className="sp-app">
       <CatalogSidebar onDjClick={goDj} />
 
       <div className="sp-main">
@@ -197,5 +200,6 @@ export function BridgePage() {
         }}
       />
     </div>
+    </>
   );
 }

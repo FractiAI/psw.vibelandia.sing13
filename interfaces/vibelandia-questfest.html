@@ -490,10 +490,29 @@
       .btn:hover { transform: none; }
     }
 
+    .qf-build-notice {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      padding: 0.7rem 1.1rem;
+      background: linear-gradient(90deg, rgba(42, 36, 24, 0.97) 0%, rgba(26, 40, 36, 0.97) 50%, rgba(42, 36, 24, 0.97) 100%);
+      border-bottom: 1px solid var(--line);
+      color: #e2e8f0;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+    .qf-build-notice p { margin: 0 auto; max-width: 42rem; }
+    .qf-build-notice strong { color: var(--gold-hi); }
+
   </style>
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="qf.skip">Skip</a>
+
+  <div class="qf-build-notice" role="status">
+    <p data-i18n-html="qf.buildNoticeHtml"><strong>Build in progress.</strong> We are finishing the QUESTFEST top deck and Sovereign Player — give us a few days to get uploads, catalog, and playback working just right. Thank you for your patience.</p>
+  </div>
 
   <header class="hero">
     <div>

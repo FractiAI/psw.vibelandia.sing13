@@ -116,6 +116,21 @@ function uploadErrorMessage(err: unknown): string {
   return msg;
 }
 
+async function postCatalogJson(
+  apiPath: string,
+  secret: string,
+  body: Record<string, unknown>,
+): Promise<Response> {
+  return fetch(catalogApiUrl(apiPath), {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Catalog-Secret': secret,
+    },
+    body: JSON.stringify(body),
+  });
+}
+
 async function registerUploadedTrack(
   secret: string,
   payload: {

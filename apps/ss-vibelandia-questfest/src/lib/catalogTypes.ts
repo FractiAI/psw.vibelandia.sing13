@@ -12,9 +12,11 @@ export interface TrackDef {
   videoSrc?: string;
   posterSrc?: string;
   durationSec?: number;
-  /** IndexedDB blob key — legacy edge cache only */
+  /** IndexedDB blob key — only when user downloaded for offline */
   localMediaKey?: string;
-  /** Track file lives on server (static /media or Blob URL) */
+  /** User saved this track on device; playback uses local copy */
+  downloadedLocally?: boolean;
+  /** Track file lives on server (static /media or Blob URL) — stream by default */
   serverHosted?: boolean;
   uploadedAt?: string;
   /** Dedup key from device file (name + size + modified) */

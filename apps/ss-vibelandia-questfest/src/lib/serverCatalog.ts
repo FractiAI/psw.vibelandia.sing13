@@ -7,6 +7,7 @@ import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 const DEFAULT_CATALOG_PIPE = 'https://psw-vibelandia-sing13.vercel.app';
 
 const STATIC_CATALOG = '/media/catalog/catalog.json';
+const FETCH_MS = 8_000;
 
 export function catalogPipeOrigin(): string {
   const fromEnv = import.meta.env.VITE_CATALOG_PIPE_ORIGIN;
@@ -44,9 +45,17 @@ function normalizeServerCatalog(raw: unknown): CatalogSnapshot {
   const tracks =
     o.tracks && typeof o.tracks === 'object' ? (o.tracks as Record<string, TrackDef>) : {};
   const playlists = Array.isArray(o.playlists) ? o.playlists : buildEmptyCatalog().playlists;
+  const normalizedTracks: Record<string, TrackDef> = {};
+  for (const [id, tr] of Object.entries(tracks)) {
+    normalizedTracks[id] = {
+      ...tr,
+      id: tr.id || id,
+      serverHosted: true,
+    };
+  }
   return {
     version: Number(o.version) || 1,
-    tracks,
+    tracks: normalizedTracks,
     playlists,
     activePlaylistId: o.activePlaylistId || 'pl-main',
   };
@@ -75,21 +84,22 @@ export function mergeCatalogSnapshots(a: CatalogSnapshot, b: CatalogSnapshot): C
   };
 }
 
-/** Same-origin static manifest only — never blocks on cross-origin. */
-export async function fetchServerCatalog(): Promise<CatalogSnapshot> {
-  const staticRaw = await fetchJsonWithTimeout(STATIC_CATALOG, 2_500);
-  return staticRaw ? normalizeServerCatalog(staticRaw) : buildEmptyCatalog();
-}
+/**
+ * Live library from QUESTFEST (static manifest + dynamic API).
+ * Same flow as mainstream streaming apps: catalog lives on the server.
+ */
+export async function fetchLiveCatalog(): Promise<CatalogSnapshot> {
+  const staticRaw = await fetchJsonWithTimeout(STATIC_CATALOG, FETCH_MS);
+  let catalog = staticRaw ? normalizeServerCatalog(staticRaw) : buildEmptyCatalog();
 
-/** Optional remote library (pipe); call from Refresh or after upload — not on startup. */
-export async function fetchRemoteCatalog(): Promise<CatalogSnapshot | null> {
   const pipe = catalogPipeOrigin();
-  if (!pipe) {
-    const localRaw = await fetchJsonWithTimeout('/api/catalog', 2_500);
-    return localRaw ? normalizeServerCatalog(localRaw) : null;
+  const apiUrl = pipe ? `${pipe}/api/catalog` : '/api/catalog';
+  const apiRaw = await fetchJsonWithTimeout(apiUrl, FETCH_MS);
+  if (apiRaw) {
+    catalog = mergeCatalogSnapshots(catalog, normalizeServerCatalog(apiRaw));
   }
-  const remoteRaw = await fetchJsonWithTimeout(`${pipe}/api/catalog`, 2_500);
-  return remoteRaw ? normalizeServerCatalog(remoteRaw) : null;
+
+  return catalog;
 }
 
 function fileToBase64(file: File): Promise<string> {

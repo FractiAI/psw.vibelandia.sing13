@@ -1,4 +1,6 @@
+import type { CatalogPrefs } from '@/lib/catalogPrefs';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
+import { localMediaKeyFor } from '@/lib/localPlayback';
 import {
   MASTER_LIBRARY_UI_HINT,
   SONIC_CATALOG_DISPLAY_NAME,
@@ -23,14 +25,22 @@ export function isUserUploadTrack(id: string, tr: TrackDef): boolean {
   return Boolean(tr.serverHosted) || Boolean(tr.localMediaKey) || id.startsWith('trk-up-') || id.startsWith('trk-srv-');
 }
 
-/** Server manifest + saved playlist preferences (no edge track blobs). */
+/** Server catalog + user playlists + offline downloads only (no full library in browser storage). */
 export function mergeServerCatalogWithPrefs(
   server: CatalogSnapshot,
-  localPrefs: CatalogSnapshot | null,
+  localPrefs: CatalogPrefs | null,
+  downloadedTrackIds: Set<string>,
   syncMaster: (tracks: Record<string, TrackDef>, playlists: PlaylistDef[]) => PlaylistDef[],
 ): CatalogSnapshot {
-  const localTracks = localPrefs ? extractLocalTracks(localPrefs) : {};
-  const tracks = { ...server.tracks, ...localTracks };
+  const tracks = { ...server.tracks };
+  for (const id of downloadedTrackIds) {
+    if (!tracks[id]) continue;
+    tracks[id] = {
+      ...tracks[id],
+      downloadedLocally: true,
+      localMediaKey: localMediaKeyFor(id),
+    };
+  }
   let playlists = server.playlists.map((p) => ({ ...p, trackIds: [...p.trackIds] }));
 
   if (localPrefs) {

@@ -1,4 +1,5 @@
 import { loadBlob } from '@/lib/catalogPersistence';
+import { saveLocalCopy } from '@/lib/localPlayback';
 import type { TrackDef } from '@/lib/catalogTypes';
 
 function extFromMime(mime: string): string {
@@ -35,11 +36,13 @@ async function resolveBlob(track: TrackDef): Promise<Blob | null> {
   return null;
 }
 
+/** Fetch from server (or local), save for in-app offline playback, and trigger browser download. */
 export async function downloadTrackToDevice(track: TrackDef): Promise<void> {
   const blob = await resolveBlob(track);
   if (!blob) {
     throw new Error('no_file_on_device');
   }
+  await saveLocalCopy(track.id, blob);
   const ext = extFromMime(blob.type) || (track.videoSrc ? '.mp4' : '.m4a');
   const name = safeFileName(track.title, track.artist, ext);
   const objectUrl = URL.createObjectURL(blob);

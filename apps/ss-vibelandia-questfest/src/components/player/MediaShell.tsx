@@ -15,15 +15,17 @@ import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import type { BoardingRequestBody } from '@/lib/api';
 
-/** Modals + session only. Catalog is ready on first paint — no network sync here. */
+/** Modals + session. Library syncs from server like a standard streaming app. */
 export function MediaShell() {
   const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
+  const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
   const boardingError = useSessionStore((s) => s.boardingError);
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const getTrack = useCatalogStore((s) => s.getTrack);
+  const markTrackDownloaded = useCatalogStore((s) => s.markTrackDownloaded);
   const setGain = usePlaybackStore((s) => s.setGain);
 
   const fairOpen = useMediaChromeStore((s) => s.fairOpen);
@@ -50,7 +52,9 @@ export function MediaShell() {
         setCampaignOpen(true);
       }
     }
-  }, [hydrateSession, setCampaignOpen]);
+
+    void syncLibraryFromServer();
+  }, [hydrateSession, setCampaignOpen, syncLibraryFromServer]);
 
   const closeCampaign = (dismiss: boolean) => {
     if (dismiss) dismissMachoteCampaign();
@@ -108,6 +112,7 @@ export function MediaShell() {
         isPassenger={isPassenger}
         captainUnlocked={captainUnlocked}
         onClose={() => closeExport()}
+        onDownloaded={(trackId) => markTrackDownloaded(trackId)}
         onNeedPass={() => {
           closeExport();
           const st = useSessionStore.getState();

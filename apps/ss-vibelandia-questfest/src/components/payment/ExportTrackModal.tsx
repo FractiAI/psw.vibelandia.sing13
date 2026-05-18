@@ -29,6 +29,7 @@ interface ExportTrackModalProps {
   captainUnlocked: boolean;
   onClose: () => void;
   onNeedPass: () => void;
+  onDownloaded?: (trackId: string) => void;
 }
 
 export function ExportTrackModal({
@@ -38,6 +39,7 @@ export function ExportTrackModal({
   captainUnlocked,
   onClose,
   onNeedPass,
+  onDownloaded,
 }: ExportTrackModalProps) {
   const [step, setStep] = useState<'gate' | 'captain_bypass' | 'rail' | 'pay' | 'honor' | 'done'>('gate');
   const [rail, setRail] = useState<LiveRail | null>(null);
@@ -82,7 +84,8 @@ export function ExportTrackModal({
     setError(null);
     try {
       await downloadTrackToDevice(track);
-      setMsg(`Saved “${title}” to your device. Use any player offline.`);
+      onDownloaded?.(track.id);
+      setMsg(`Saved “${title}” on this device — plays offline in the Bridge too.`);
       setStep('done');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'download_failed');
@@ -101,7 +104,8 @@ export function ExportTrackModal({
         licenseId: 'captain-bypass',
       });
       await downloadTrackToDevice(track);
-      setMsg(`Saved “${title}” to your device. Use any player offline.`);
+      onDownloaded?.(track.id);
+      setMsg(`Saved “${title}” on this device — plays offline in the Bridge too.`);
       setStep('done');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'download_failed');

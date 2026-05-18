@@ -405,6 +405,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
                       <span className="sp-listen-type-dur">
 
                         {tr.videoSrc ? 'Video' : 'Audio'} · {fmtDuration(tr.durationSec)}
+                        {tr.downloadedLocally ? ' · On device' : ' · Stream'}
 
                       </span>
 

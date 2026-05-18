@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
+import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { useSessionStore } from '@/stores/sessionStore';
@@ -84,26 +85,32 @@ export function NowPlayingBar({
   useEffect(() => {
     const el = mediaRef.current;
     const bg = backgroundAudioRef.current;
-    const activeEl = el ?? bg;
-    if (!activeEl || !track) return;
+    if (!el || !track) return;
 
+    let cancelled = false;
+    const prevId = currentTrackId;
     gateArmedRef.current = true;
     setError(null);
-    if (!el) return;
 
-    if (isVideo && el instanceof HTMLVideoElement) {
-      el.src = track.videoSrc!;
-      el.load();
-      if (bg) {
-        bg.pause();
-        bg.removeAttribute('src');
+    void (async () => {
+      try {
+        const url = await resolvePlaybackUrl(track);
+        if (cancelled || !mediaRef.current) return;
+
+        if (isVideo && el instanceof HTMLVideoElement) {
+          el.src = track.videoSrc || url;
+          el.load();
+          bg?.pause();
+          bg?.removeAttribute('src');
+        } else if (el instanceof HTMLAudioElement) {
+          el.src = url;
+          el.load();
+        }
+        el.volume = gain;
+      } catch {
+        if (!cancelled) setError('Could not load this track.');
       }
-    } else if (el instanceof HTMLAudioElement) {
-      el.src = track.src;
-      el.load();
-    }
-
-    el.volume = gain;
+    })();
 
     const onTime = () => {
       const t = el.currentTime;
@@ -142,12 +149,14 @@ export function NowPlayingBar({
     bg?.addEventListener('ended', onBgEnded);
 
     return () => {
+      cancelled = true;
       el.removeEventListener('timeupdate', onTime);
       el.removeEventListener('ended', onEnded);
       el.removeEventListener('error', onErr);
       bg?.removeEventListener('ended', onBgEnded);
+      if (prevId) releasePlaybackUrl(prevId);
     };
-  }, [gain, isVideo, onFairExchange, setDisplayTime, setPlaying, solenoidActive, track]);
+  }, [currentTrackId, gain, isVideo, onFairExchange, setDisplayTime, setPlaying, solenoidActive, track]);
 
   useEffect(() => {
     const el = mediaRef.current;

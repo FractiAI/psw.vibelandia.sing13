@@ -109,7 +109,7 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
           <span className="sp-pl-text">
             <span className="sp-pl-name">{masterPl?.name ?? PLAIN.masterCatalog}</span>
             <span className="sp-pl-count">
-              {masterCount} {PLAIN.tracks} · {fmtPlaylistTotalTime(masterPl?.trackIds ?? [], getTrack)}
+              {masterCount} {PLAIN.tracks}
             </span>
           </span>
         </button>

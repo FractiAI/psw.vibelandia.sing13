@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 
 import { useCatalogStore } from '@/stores/catalogStore';
+import { useActivePlaylist } from '@/stores/catalogSelectors';
 
 import { usePlaybackStore } from '@/stores/playbackStore';
 
@@ -39,7 +40,7 @@ interface TrackListProps {
 
 export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlaylistDownload }: TrackListProps) {
 
-  const pl = useCatalogStore((s) => s.getActivePlaylist());
+  const pl = useActivePlaylist();
 
   const search = useCatalogStore((s) => s.search);
 

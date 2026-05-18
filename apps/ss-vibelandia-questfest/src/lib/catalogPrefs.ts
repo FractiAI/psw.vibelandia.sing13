@@ -36,10 +36,12 @@ export function saveCatalogPrefs(prefs: CatalogPrefs): void {
 }
 
 /** Last server manifest — instant paint while live sync runs. */
+const MAX_CACHE_BYTES = 2_000_000;
+
 export function loadCatalogCache(): CatalogSnapshot | null {
   try {
     const raw = localStorage.getItem(CACHE_KEY);
-    if (!raw) return null;
+    if (!raw || raw.length > MAX_CACHE_BYTES) return null;
     return JSON.parse(raw) as CatalogSnapshot;
   } catch {
     return null;

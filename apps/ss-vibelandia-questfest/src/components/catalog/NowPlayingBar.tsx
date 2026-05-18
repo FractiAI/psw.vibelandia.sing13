@@ -3,6 +3,7 @@ import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { KillReason } from '@/hooks/useStreamLock';
 
@@ -49,7 +50,6 @@ export function NowPlayingBar({
   const fullPlayUnlocked = isPassenger || captainUnlocked;
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
-  const pl = getActivePlaylist();
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
   const isVideo = !!track?.videoSrc;
   const backgroundHandoffActive = usePlaybackStore((s) => s.backgroundHandoffActive);

@@ -1,13 +1,24 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { PlaylistBulkExportModal } from '@/components/payment/PlaylistBulkExportModal';
 import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
-import { TrackList } from '@/components/catalog/TrackList';
-import { PlaylistLibrary } from '@/components/catalog/PlaylistLibrary';
-import { DjStudio } from '@/components/catalog/DjStudio';
 import { PlayerDock } from '@/components/player/PlayerDock';
+
+const TrackList = lazy(() =>
+  import('@/components/catalog/TrackList').then((m) => ({ default: m.TrackList })),
+);
+const PlaylistLibrary = lazy(() =>
+  import('@/components/catalog/PlaylistLibrary').then((m) => ({ default: m.PlaylistLibrary })),
+);
+const DjStudio = lazy(() =>
+  import('@/components/catalog/DjStudio').then((m) => ({ default: m.DjStudio })),
+);
+
+function TabPane({ children }: { children: ReactNode }) {
+  return <Suspense fallback={<p className="sp-empty">Loading…</p>}>{children}</Suspense>;
+}
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
@@ -71,7 +82,6 @@ export function BridgePage() {
     setDjMode(false);
     setActivePlaylist(MASTER_PLAYLIST_ID);
     navigate('/bridge', { replace: true });
-    useCatalogStore.getState().persist();
   };
 
   const goPlaylists = () => {
@@ -167,20 +177,26 @@ export function BridgePage() {
               </button>
             </section>
           ) : isPlaylistsView ? (
-            <PlaylistLibrary
-              onOpenPlaylist={openPlaylist}
-              initialEditId={playlistEditId}
-              onClearInitialEdit={() => setPlaylistEditId(null)}
-            />
+            <TabPane>
+              <PlaylistLibrary
+                onOpenPlaylist={openPlaylist}
+                initialEditId={playlistEditId}
+                onClearInitialEdit={() => setPlaylistEditId(null)}
+              />
+            </TabPane>
           ) : djMode ? (
-            <DjStudio onUploadSuccess={handleUploadSuccess} />
+            <TabPane>
+              <DjStudio onUploadSuccess={handleUploadSuccess} />
+            </TabPane>
           ) : (
-            <TrackList
-              isPassenger={isPassenger || captainUnlocked}
-              onDownload={handleDownloadRequest}
-              onEditPlaylist={() => editPlaylist(activePlaylistId)}
-              onBulkPlaylistDownload={() => setBulkExportOpen(true)}
-            />
+            <TabPane>
+              <TrackList
+                isPassenger={isPassenger || captainUnlocked}
+                onDownload={handleDownloadRequest}
+                onEditPlaylist={() => editPlaylist(activePlaylistId)}
+                onBulkPlaylistDownload={() => setBulkExportOpen(true)}
+              />
+            </TabPane>
           )}
         </main>
 

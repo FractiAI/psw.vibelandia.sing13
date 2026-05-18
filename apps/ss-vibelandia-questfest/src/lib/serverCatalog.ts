@@ -12,6 +12,7 @@ import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 const STATIC_CATALOG = '/media/catalog/catalog.json';
 const FETCH_MS = 2_500;
 const UPLOAD_API = '/api/catalog-upload';
+const TRACK_API = '/api/catalog-track';
 
 export const MAX_UPLOAD_BYTES = Math.floor(4.5 * 1024 * 1024);
 export { MAX_MEDIA_UPLOAD_BYTES, MAX_VIDEO_DURATION_SEC };
@@ -126,11 +127,7 @@ async function registerUploadedTrack(
     filename: string;
   },
 ): Promise<TrackDef> {
-  const res = await fetch(catalogApiUrl(UPLOAD_API), {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'X-Catalog-Secret': secret },
-    body: JSON.stringify({ action: 'register', ...payload }),
-  });
+  const res = await postCatalogJson(UPLOAD_API, secret, { action: 'register', ...payload });
   const data = (await res.json().catch(() => ({}))) as {
     track?: TrackDef;
     error?: string;
@@ -146,9 +143,57 @@ async function registerUploadedTrack(
 }
 
 /** All uploads: browser → Blob, then register (works for audio + video up to 10 min). */
+export type TrackMetadataPatch = {
+  title?: string;
+  artist?: string;
+  genre?: string;
+  description?: string;
+  durationSec?: number;
+  playlistIds?: string[];
+};
+
+export async function updateTrackOnServer(
+  trackId: string,
+  patch: TrackMetadataPatch,
+): Promise<TrackDef> {
+  const secret = catalogUploadSecret();
+  if (!secret) throw new Error('catalog_upload_unconfigured');
+
+  const res = await postCatalogJson(TRACK_API, secret, {
+    action: 'update',
+    trackId,
+    ...patch,
+  });
+  const data = (await res.json().catch(() => ({}))) as {
+    track?: TrackDef;
+    error?: string;
+    message?: string;
+  };
+  if (!res.ok) {
+    const err = new Error(data.error || data.message || 'update_failed') as Error & { code?: string };
+    err.code = data.error;
+    throw err;
+  }
+  if (!data.track?.src) throw new Error('update_failed');
+  return data.track;
+}
+
+export async function deleteTrackOnServer(trackId: string): Promise<void> {
+  const secret = catalogUploadSecret();
+  if (!secret) throw new Error('catalog_upload_unconfigured');
+
+  const res = await postCatalogJson(TRACK_API, secret, { action: 'delete', trackId });
+  const data = (await res.json().catch(() => ({}))) as { error?: string; message?: string };
+  if (!res.ok) {
+    const err = new Error(data.error || data.message || 'delete_failed') as Error & { code?: string };
+    err.code = data.error;
+    throw err;
+  }
+}
+
 export async function uploadTrackToServer(
   file: File,
-  meta: { title?: string; artist?: string },
+  meta: { title?: string; artist?: string; description?: string; genre?: string },
   opts?: UploadTrackOptions,
 ): Promise<UploadTrackResult> {
   const secret = catalogUploadSecret();
@@ -174,6 +219,10 @@ export async function uploadTrackToServer(
   const pathname = `catalog/${trackId}-${safeFilename(file.name)}`;
   const title = meta.title?.trim() || '';
   const artist = meta.artist?.trim() || '';
+  const description = meta.description?.trim().slice(0, 1000) || undefined;
+  const genre = meta.genre?.trim().slice(0, 80) || undefined;
+  const storedDuration =
+    durationSec != null && durationSec > 0 ? Math.round(durationSec) : undefined;
 
   opts?.onProgress?.('Uploading to QUESTFEST…');
 
@@ -204,6 +253,16 @@ export async function uploadTrackToServer(
     title,
     artist,
     filename: file.name,
+    description,
+    genre,
+    durationSec: storedDuration,
   });
-  return { track };
+  return {
+    track: {
+      ...track,
+      ...(description ? { description } : {}),
+      ...(genre ? { genre } : {}),
+      ...(storedDuration != null ? { durationSec: storedDuration } : {}),
+    },
+  };
 }

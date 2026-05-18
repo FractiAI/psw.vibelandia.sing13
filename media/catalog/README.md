@@ -13,14 +13,29 @@ Tracks for the Sovereign Player are **hosted on the server**, not in browser sto
 
 Files are served at `https://www.ssvibelandiaquestfest24x365.com/media/catalog/tracks/…`
 
-## Captain upload (API)
+## Captain upload (Bridge Upload tab)
 
-Set on Vercel:
+On **FractiAI** Vercel project `psw-vibelandia-sing13`, set:
 
-- `BLOB_READ_WRITE_TOKEN` — Vercel Blob store
-- `CATALOG_UPLOAD_SECRET` — same value as `VITE_CATALOG_UPLOAD_SECRET` in the Bridge build
-- `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` — optional overlay catalog
+| Variable | Purpose |
+|----------|---------|
+| `BLOB_READ_WRITE_TOKEN` | **Required** — create a **Blob store** under Storage and connect to this project |
+| `CATALOG_UPLOAD_SECRET` | Auth for `/api/catalog-upload` and `/api/catalog-track` (≥8 chars) |
+| `VITE_CATALOG_UPLOAD_SECRET` | Same value at **build time** for the Bridge bundle |
 
-POST raw audio to `/api/catalog-upload` with headers `X-Catalog-Secret`, `X-Track-Title`, `X-Track-Artist`, `X-Filename`.
+Optional: `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` for a Redis catalog overlay.
 
-Request body limit ~4.5 MB on Hobby; use static `tracks/` for full albums.
+**Limits:** audio + **video up to 10 minutes** (~600 MB) via direct Blob upload.
+
+**APIs:**
+
+- `POST /api/catalog-upload` — upload + register
+- `POST /api/catalog-track` — `{ action: 'update' \| 'delete', trackId, … }` for title, artist, genre, description, playlists
+
+Smoke test (after deploy):
+
+```bash
+curl -s -X POST https://www.ssvibelandiaquestfest24x365.com/api/catalog-upload -H "Content-Type: application/json" -d "{}"
+```
+
+Should return `unauthorized` or similar — **not** `catalog_upload_unconfigured`.

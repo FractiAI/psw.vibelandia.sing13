@@ -144,6 +144,8 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 
 **Domains:** [Project → Settings → Domains](https://vercel.com/fractiai/psw-vibelandia-sing13/settings/domains) — keep **`www.ssvibelandiaquestfest24x365.com`** on this project only.
 
+**Bridge Upload tab:** audio + video (≤10 min, ~600 MB) → server Blob catalog. Per track: **title, artist, genre, description**, **edit / delete**, **add to playlists** (Upload → Your catalog → Edit).
+
 **Post-push smoke test (production):**
 
 | Check | URL |

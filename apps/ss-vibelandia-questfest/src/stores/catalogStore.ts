@@ -20,12 +20,18 @@ import {
 } from '@/lib/catalogPrefs';
 import { localMediaKeyFor } from '@/lib/localPlayback';
 import {
+  deleteTrackOnServer,
   fetchLiveCatalog,
   isServerUploadConfigured,
+  updateTrackOnServer,
   uploadTrackToServer,
 } from '@/lib/serverCatalog';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
-import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
+import {
+  DEFAULT_ARTIST,
+  TRACK_DESCRIPTION_MAX,
+  TRACK_GENRE_MAX,
+} from '@/lib/catalogTypes';
 import {
   fileSourceKey,
   pickMediaDirectory,
@@ -88,6 +94,15 @@ interface CatalogState {
     duplicates: ImportDuplicate[];
     addedTrackIds: string[];
   }>;
+  updateTrack: (
+    trackId: string,
+    patch: {
+      title?: string;
+      artist?: string;
+      genre?: string;
+      description?: string;
+    },
+  ) => Promise<void>;
   deleteTrack: (trackId: string) => Promise<void>;
   /** Pull library from QUESTFEST server (streaming catalog). */
   syncLibraryFromServer: () => Promise<void>;
@@ -123,6 +138,8 @@ function serverTracksForCache(tracks: Record<string, TrackDef>): Record<string, 
       src: tr.src,
       ...(tr.videoSrc ? { videoSrc: tr.videoSrc } : {}),
       ...(tr.description ? { description: tr.description } : {}),
+      ...(tr.genre ? { genre: tr.genre } : {}),
+      ...(tr.durationSec != null ? { durationSec: tr.durationSec } : {}),
       ...(tr.uploadedAt ? { uploadedAt: tr.uploadedAt } : {}),
       serverHosted: true,
     };
@@ -172,6 +189,20 @@ function clampDescription(text?: string): string | undefined {
   return t.slice(0, TRACK_DESCRIPTION_MAX);
 }
 
+function clampGenre(text?: string): string | undefined {
+  const t = text?.trim();
+  if (!t) return undefined;
+  return t.slice(0, TRACK_GENRE_MAX);
+}
+
+async function syncServerTrackPlaylists(trackId: string, playlistIds: string[]) {
+  if (!isServerUploadConfigured()) return;
+  const tr = useCatalogStore.getState().tracks[trackId];
+  if (!tr?.serverHosted) return;
+  const userIds = playlistIds.filter((id) => !isMasterPlaylist(id));
+  await updateTrackOnServer(trackId, { playlistIds: userIds });
+}
+
 async function addFileAsTrack(
   file: File,
   existing: { tracks: Record<string, TrackDef>; sourceKeys: Set<string> },
@@ -179,6 +210,7 @@ async function addFileAsTrack(
     title?: string;
     artist?: string;
     description?: string;
+    genre?: string;
     useFileNameAsTitle?: boolean;
     onProgress?: (line: string) => void;
   },
@@ -190,6 +222,7 @@ async function addFileAsTrack(
   const displayTitle =
     trimmedTitle || (meta.useFileNameAsTitle ? titleFromFileName(file.name) : 'Untitled');
   const description = clampDescription(meta.description);
+  const genre = clampGenre(meta.genre);
 
   if (!isServerUploadConfigured()) {
     const err = new Error('catalog_upload_unconfigured') as Error & { code?: string };
@@ -202,6 +235,8 @@ async function addFileAsTrack(
     {
       title: displayTitle,
       artist: meta.artist?.trim() || DEFAULT_ARTIST,
+      description,
+      genre,
     },
     { onProgress: meta.onProgress },
   );
@@ -212,6 +247,7 @@ async function addFileAsTrack(
       title: displayTitle,
       artist: meta.artist?.trim() || track.artist || DEFAULT_ARTIST,
       ...(description ? { description } : {}),
+      ...(genre ? { genre } : {}),
       sourceKey,
       serverHosted: true,
     },
@@ -466,6 +502,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         title: opts?.title,
         artist: opts?.artist,
         description: opts?.description,
+        genre: opts?.genre,
         useFileNameAsTitle: !opts?.title?.trim(),
         onProgress: opts?.onProgress,
       });
@@ -543,7 +580,61 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     return { ...result, duplicates };
   },
 
+  updateTrack: async (trackId, patch) => {
+    const prev = get().tracks[trackId];
+    if (!prev) return;
+
+    const next: TrackDef = {
+      ...prev,
+      ...(patch.title !== undefined ? { title: patch.title.trim() || prev.title } : {}),
+      ...(patch.artist !== undefined ? { artist: patch.artist.trim() || prev.artist } : {}),
+    };
+    const description =
+      patch.description !== undefined ? clampDescription(patch.description) : prev.description;
+    const genre = patch.genre !== undefined ? clampGenre(patch.genre) : prev.genre;
+    if (description) next.description = description;
+    else delete next.description;
+    if (genre) next.genre = genre;
+    else delete next.genre;
+
+    if (prev.serverHosted && isServerUploadConfigured()) {
+      const userPlaylistIds = get()
+        .playlists.filter((p) => !isMasterPlaylist(p.id) && p.trackIds.includes(trackId))
+        .map((p) => p.id);
+      const saved = await updateTrackOnServer(trackId, {
+        title: next.title,
+        artist: next.artist,
+        description: next.description,
+        genre: next.genre,
+        durationSec: next.durationSec,
+        playlistIds: userPlaylistIds,
+      });
+      next.title = saved.title;
+      next.artist = saved.artist;
+      if (saved.description) next.description = saved.description;
+      else delete next.description;
+      if (saved.genre) next.genre = saved.genre;
+      else delete next.genre;
+      if (saved.durationSec != null) next.durationSec = saved.durationSec;
+    }
+
+    set((s) => ({ tracks: { ...s.tracks, [trackId]: next } }));
+    get().persist();
+  },
+
   deleteTrack: async (trackId) => {
+    const prev = get().tracks[trackId];
+    if (!prev) return;
+    if (!window.confirm(`Delete “${prev.title}” from your catalog?`)) return;
+
+    if (prev.serverHosted && isServerUploadConfigured()) {
+      try {
+        await deleteTrackOnServer(trackId);
+      } catch {
+        if (!window.confirm('Server delete failed. Remove from this device anyway?')) return;
+      }
+    }
+
     set((s) => {
       const { [trackId]: _, ...tracks } = s.tracks;
       return {

@@ -111,7 +111,8 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
           row.track.artist.toLowerCase().includes(q) ||
 
-          (row.track.description?.toLowerCase().includes(q) ?? false)
+          (row.track.description?.toLowerCase().includes(q) ?? false) ||
+          (row.track.genre?.toLowerCase().includes(q) ?? false)
 
         );
 
@@ -417,6 +418,10 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
                       </span>
 
                     </span>
+
+                    {tr.genre && (
+                      <span className="sp-listen-track-genre">{tr.genre}</span>
+                    )}
 
                     {tr.description && (
 

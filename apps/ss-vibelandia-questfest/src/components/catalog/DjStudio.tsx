@@ -1,6 +1,11 @@
 import { useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { DEFAULT_ARTIST, TRACK_DESCRIPTION_MAX } from '@/lib/catalogTypes';
+import {
+  DEFAULT_ARTIST,
+  TRACK_DESCRIPTION_MAX,
+  TRACK_GENRE_MAX,
+} from '@/lib/catalogTypes';
+import { TrackLibraryManager } from '@/components/catalog/TrackLibraryManager';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { collectMediaFiles } from '@/lib/deviceMediaScan';
 import { isServerUploadConfigured } from '@/lib/serverCatalog';
@@ -27,7 +32,6 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const tracks = useCatalogStore((s) => s.tracks);
   const importMediaFiles = useCatalogStore((s) => s.importMediaFiles);
   const scanDeviceLibrary = useCatalogStore((s) => s.scanDeviceLibrary);
-  const deleteTrack = useCatalogStore((s) => s.deleteTrack);
   const listAllTracks = useCatalogStore((s) => s.listAllTracks);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
 
@@ -37,6 +41,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState(DEFAULT_ARTIST);
   const [description, setDescription] = useState('');
+  const [genre, setGenre] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const [busy, setBusy] = useState(false);
   const [statusLine, setStatusLine] = useState('Ready to upload.');
@@ -120,6 +125,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         title: opts?.title,
         artist: artist.trim() || DEFAULT_ARTIST,
         description: description.trim() || undefined,
+        genre: genre.trim() || undefined,
         playlistIds: [MASTER_PLAYLIST_ID],
         onProgress: (line) => setStatus(line),
       });
@@ -314,6 +320,19 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         {msg && <p className={msgClass}>{msg}</p>}
       </div>
 
+      <datalist id="qf-genre-suggestions">
+        <option value="Reno Swamp" />
+        <option value="Bachdoor" />
+        <option value="Caliente" />
+        <option value="Wrong Side" />
+        <option value="Holographic" />
+        <option value="Salsa" />
+        <option value="Country" />
+        <option value="Jazz" />
+        <option value="Ambient" />
+        <option value="Other" />
+      </datalist>
+
       <div className="spotify-dj-grid">
         <article className="spotify-dj-card spotify-dj-card--wide">
           <h3>1 · One file (custom title)</h3>
@@ -333,6 +352,17 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               className="spotify-input"
               value={artist}
               onChange={(e) => setArtist(e.target.value)}
+              disabled={busy}
+            />
+          </label>
+          <label className="spotify-field">
+            Genre (optional)
+            <input
+              className="spotify-input"
+              list="qf-genre-suggestions"
+              value={genre}
+              onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
+              placeholder="e.g. Reno Swamp"
               disabled={busy}
             />
           </label>
@@ -403,29 +433,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           </button>
         </article>
 
-        {catalogTracks.length > 0 && (
-          <article className="spotify-dj-card spotify-dj-card--wide">
-            <h3>Your catalog ({catalogTracks.length})</h3>
-            <ol className="spotify-dj-order">
-              {catalogTracks.map((tr, idx) => (
-                <li key={tr.id} className="spotify-dj-order-row">
-                  <span className="spotify-dj-order-idx">{idx + 1}</span>
-                  <span className="spotify-dj-order-title">{tr.title}</span>
-                  <span className="spotify-dj-order-artist">{tr.artist}</span>
-                  <div className="spotify-dj-order-actions">
-                    <button
-                      type="button"
-                      className="spotify-btn spotify-btn--tiny spotify-btn--ghost"
-                      onClick={() => deleteTrack(tr.id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </article>
-        )}
+        <TrackLibraryManager tracks={catalogTracks} disabled={busy} />
       </div>
     </section>
   );

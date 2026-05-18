@@ -71,7 +71,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
         return (
           t.title.toLowerCase().includes(q) ||
           t.artist.toLowerCase().includes(q) ||
-          (t.description?.toLowerCase().includes(q) ?? false)
+          (t.description?.toLowerCase().includes(q) ?? false) ||
+          (t.genre?.toLowerCase().includes(q) ?? false)
         );
       });
   }, [isMaster, masterPl?.trackIds, getTrack, inPlaylist, addSearch]);

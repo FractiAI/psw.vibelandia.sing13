@@ -80,6 +80,12 @@ async function registerTrack(res, body) {
   const filename = String(body.filename || 'upload.bin');
   const title = String(body.title || '').trim() || titleFromFilename(filename);
   const artist = String(body.artist || '').trim() || DEFAULT_ARTIST;
+  const description = String(body.description || '').trim().slice(0, 1000) || undefined;
+  const genre = String(body.genre || '').trim().slice(0, 80) || undefined;
+  const durationSec =
+    body.durationSec != null && Number.isFinite(Number(body.durationSec))
+      ? Math.max(0, Math.min(86400, Math.round(Number(body.durationSec))))
+      : undefined;
   const contentType = String(body.contentType || 'application/octet-stream');
   const url = String(body.url);
   const isVideo = contentType.startsWith('video/');
@@ -90,6 +96,9 @@ async function registerTrack(res, body) {
     artist,
     src: url,
     ...(isVideo ? { videoSrc: url } : {}),
+    ...(description ? { description } : {}),
+    ...(genre ? { genre } : {}),
+    ...(durationSec != null ? { durationSec } : {}),
     uploadedAt: new Date().toISOString(),
     serverHosted: true,
   };
@@ -182,6 +191,11 @@ async function handleInlineUpload(req, res) {
     return res.status(500).json({ error: 'blob_store_failed' });
   }
 
+  const description =
+    String(req.headers['x-track-description'] || jsonBody?.description || '').trim().slice(0, 1000) ||
+    undefined;
+  const genre =
+    String(req.headers['x-track-genre'] || jsonBody?.genre || '').trim().slice(0, 80) || undefined;
   const isVideo = contentType.startsWith('video/');
   const track = {
     id,
@@ -189,6 +203,8 @@ async function handleInlineUpload(req, res) {
     artist,
     src: blob.url,
     ...(isVideo ? { videoSrc: blob.url } : {}),
+    ...(description ? { description } : {}),
+    ...(genre ? { genre } : {}),
     uploadedAt: new Date().toISOString(),
     serverHosted: true,
   };

@@ -158,6 +158,16 @@ Optional manual deploy: [`.github/workflows/vercel-deploy.yml`](.github/workflow
 npm run build:questfest-bridge
 ```
 
+**Vercel env — music upload (Bridge Upload tab):**
+
+| Variable | Purpose |
+|---|---|
+| `BLOB_READ_WRITE_TOKEN` | **Required.** Create a **Blob store** on the FractiAI project (Storage → Connect to project). Vercel injects this token automatically. Without it, `/api/catalog-upload` returns `catalog_upload_unconfigured`. |
+| `CATALOG_UPLOAD_SECRET` | Server auth for `/api/catalog-upload` (≥8 chars). Defaults to edge captain secret if unset on Vercel. |
+| `VITE_CATALOG_UPLOAD_SECRET` | **Build-time** — set in FractiAI project env so the Bridge bundle sends the same secret (or rely on baked captain default; must match server). |
+
+After adding Blob + secrets, **redeploy** production. Smoke test: `curl -s -X POST https://www.ssvibelandiaquestfest24x365.com/api/catalog-upload -H "Content-Type: application/json" -d "{}"` should **not** return `catalog_upload_unconfigured` (expect `401`/`403` without `X-Catalog-Secret`, not `503`).
+
 **Vercel env (minimum for live boarding / export):**
 
 | Variable | Purpose |

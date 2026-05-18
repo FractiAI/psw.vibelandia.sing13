@@ -2,7 +2,8 @@
 /**
  * Smoke-test catalog upload API (run: node scripts/test-catalog-apis.mjs)
  */
-const ORIGIN = process.env.CATALOG_ORIGIN || 'https://psw-vibelandia-sing13.vercel.app';
+const ORIGIN =
+  process.env.CATALOG_ORIGIN || 'https://www.ssvibelandiaquestfest24x365.com';
 const SECRET = process.env.CATALOG_UPLOAD_SECRET || 'valetpru1!';
 
 async function main() {

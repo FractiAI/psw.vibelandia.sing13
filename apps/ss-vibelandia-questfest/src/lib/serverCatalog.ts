@@ -9,9 +9,6 @@ import {
 } from '@/lib/mediaUploadLimits';
 import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 
-/** Upload API host when www edge has no Blob env (FractiVerse pipe). */
-const DEFAULT_CATALOG_PIPE = 'https://psw-vibelandia-sing13.vercel.app';
-
 const STATIC_CATALOG = '/media/catalog/catalog.json';
 const FETCH_MS = 2_500;
 const UPLOAD_API = '/api/catalog-upload';
@@ -19,14 +16,10 @@ const UPLOAD_API = '/api/catalog-upload';
 export const MAX_UPLOAD_BYTES = Math.floor(4.5 * 1024 * 1024);
 export { MAX_MEDIA_UPLOAD_BYTES, MAX_VIDEO_DURATION_SEC };
 
+/** Same-origin `/api/catalog-*` unless `VITE_CATALOG_PIPE_ORIGIN` overrides (dev only). */
 export function catalogPipeOrigin(): string {
   const fromEnv = import.meta.env.VITE_CATALOG_PIPE_ORIGIN;
   if (typeof fromEnv === 'string' && fromEnv.trim()) return fromEnv.trim().replace(/\/$/, '');
-  if (typeof location === 'undefined') return '';
-  const host = location.hostname.toLowerCase();
-  if (host === 'www.ssvibelandiaquestfest24x365.com' || host === 'ssvibelandiaquestfest24x365.com') {
-    return DEFAULT_CATALOG_PIPE;
-  }
   return '';
 }
 
@@ -113,7 +106,10 @@ function safeFilename(name: string): string {
 function uploadErrorMessage(err: unknown): string {
   if (!(err instanceof Error)) return 'upload_failed';
   const msg = err.message || 'upload_failed';
-  if (/load failed|failed to fetch|networkerror|network error/i.test(msg)) {
+  if (/catalog_upload_unconfigured|blob_store|upload_token_failed|BLOB_READ_WRITE/i.test(msg)) {
+    return 'catalog_upload_unconfigured';
+  }
+  if (/load failed|failed to fetch|networkerror|network error|deployment.not_found|not found on vercel/i.test(msg)) {
     return 'upload_connection_failed';
   }
   return msg;
@@ -194,8 +190,9 @@ export async function uploadTrackToServer(
       },
     });
   } catch (e) {
-    const err = new Error(uploadErrorMessage(e)) as Error & { code?: string };
-    err.code = 'upload_connection_failed';
+    const code = uploadErrorMessage(e);
+    const err = new Error(code) as Error & { code?: string };
+    err.code = code;
     throw err;
   }
 

@@ -172,7 +172,13 @@ function clampDescription(text?: string): string | undefined {
 async function addFileAsTrack(
   file: File,
   existing: { tracks: Record<string, TrackDef>; sourceKeys: Set<string> },
-  meta: { title?: string; artist?: string; description?: string; useFileNameAsTitle?: boolean },
+  meta: {
+    title?: string;
+    artist?: string;
+    description?: string;
+    useFileNameAsTitle?: boolean;
+    onProgress?: (line: string) => void;
+  },
 ): Promise<{ track: TrackDef; catalog?: CatalogSnapshot } | null> {
   const sourceKey = fileSourceKey(file);
   if (existing.sourceKeys.has(sourceKey)) return null;
@@ -441,6 +447,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         artist: opts?.artist,
         description: opts?.description,
         useFileNameAsTitle: !opts?.title?.trim(),
+        onProgress: opts?.onProgress,
       });
       if (!row) {
         skipped += 1;

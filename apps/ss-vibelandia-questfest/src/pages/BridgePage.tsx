@@ -31,7 +31,6 @@ export function BridgePage() {
 
   const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
-  const setCampaignOpen = useMediaChromeStore((s) => s.setCampaignOpen);
   const openExport = useMediaChromeStore((s) => s.openExport);
 
   const showMembersOffer = !isPassenger && !captainUnlocked;
@@ -139,13 +138,12 @@ export function BridgePage() {
               {catalogSyncing ? 'Updating…' : 'Refresh'}
             </button>
             {showMembersOffer ? (
-              <button
-                type="button"
+              <a
+                href="/interfaces/vibelandia-questfest.html?campaign=1"
                 className="sp-top-link sp-top-link--offer"
-                onClick={() => setCampaignOpen(true)}
               >
                 Members offer
-              </button>
+              </a>
             ) : null}
             <a href="/interfaces/vibelandia-questfest.html" className="sp-top-link">
               QUESTFEST

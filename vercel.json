@@ -24,6 +24,20 @@
     { "source": "/sovereign-gate", "destination": "/interfaces/questfest-bridge/index.html" },
     { "source": "/sovereign-gate/", "destination": "/interfaces/questfest-bridge/index.html" }
   ],
+  "functions": {
+    "api/catalog-upload.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    },
+    "api/catalog-upload-client.js": {
+      "memory": 1024,
+      "maxDuration": 300
+    },
+    "api/catalog-register.js": {
+      "memory": 512,
+      "maxDuration": 30
+    }
+  },
   "headers": [
     {
       "source": "/interfaces/questfest-bridge/index.html",

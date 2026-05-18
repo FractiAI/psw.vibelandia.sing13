@@ -1,0 +1,214 @@
+/* Machote members-pass campaign — QUESTFEST top deck only */
+.machote-campaign-root {
+  --swamp-gold: #e8b86d;
+  --swamp-amber: #c49a3c;
+  --swamp-teal: #7dd3c0;
+  --swamp-cream: #f5efe6;
+  --swamp-warm-line: rgba(232, 184, 109, 0.45);
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.machote-campaign-root[hidden] {
+  display: none !important;
+}
+
+.machote-campaign-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 18, 12, 0.78);
+  border: none;
+  cursor: pointer;
+}
+
+.machote-campaign-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: min(520px, 94vw);
+  max-height: min(90vh, 720px);
+  overflow-y: auto;
+  padding: 1.15rem 1.2rem 1.25rem;
+  background: linear-gradient(165deg, #3d2e24 0%, #2a1f18 55%, #1f1814 100%);
+  border: 3px solid var(--swamp-gold);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 4px 4px 0 var(--swamp-amber);
+  border-radius: 10px;
+  color: var(--swamp-cream);
+}
+
+.machote-campaign-cover {
+  display: block;
+  width: 100%;
+  max-height: min(42vh, 280px);
+  object-fit: contain;
+  object-position: center top;
+  margin: 0 0 0.85rem;
+  border-radius: 8px;
+  border: 2px solid rgba(232, 184, 109, 0.45);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.machote-campaign-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  border: none;
+  background: transparent;
+  color: var(--swamp-gold);
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.45rem;
+  border-radius: 6px;
+}
+
+.machote-campaign-close:hover {
+  background: rgba(232, 184, 109, 0.15);
+  color: var(--swamp-cream);
+}
+
+.machote-campaign-eyebrow {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--swamp-teal);
+  margin: 0 0 0.35rem;
+}
+
+.machote-campaign-title {
+  color: var(--swamp-gold);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin: 0 0 0.65rem;
+  font-weight: 800;
+}
+
+.machote-campaign-lede {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.machote-campaign-lede a {
+  color: var(--swamp-teal);
+}
+
+.machote-campaign-reasons {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  counter-reset: machote-reason;
+}
+
+.machote-campaign-reasons li {
+  position: relative;
+  padding-left: 2.5rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.machote-campaign-reasons li::before {
+  counter-increment: machote-reason;
+  content: counter(machote-reason);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #f0d4a0, var(--swamp-gold));
+  color: #1a120c;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.machote-campaign-reasons a {
+  color: var(--swamp-teal);
+}
+
+.machote-campaign-beehive {
+  margin: 0 0 1rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(125, 211, 192, 0.45);
+  background: rgba(8, 20, 24, 0.55);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.machote-campaign-beehive-caveat {
+  margin: 0.55rem 0 0;
+}
+
+.machote-campaign-beehive-cta {
+  display: block;
+  width: 100%;
+  margin-top: 0.65rem;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  border: 2px solid var(--swamp-warm-line);
+  color: var(--swamp-gold);
+  background: transparent;
+  border-radius: 6px;
+}
+
+.machote-campaign-beehive-cta:hover {
+  background: rgba(232, 184, 109, 0.12);
+  color: var(--swamp-cream);
+}
+
+.machote-campaign-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.machote-campaign-btn {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--swamp-amber);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.machote-campaign-btn--gold {
+  background: linear-gradient(180deg, #f0d4a0, var(--swamp-gold));
+  color: #2a1f18;
+}
+
+.machote-campaign-btn--ghost {
+  background: transparent;
+  border-color: var(--swamp-warm-line);
+  color: var(--swamp-gold);
+}
+
+.machote-campaign-btn:hover {
+  filter: brightness(1.06);
+}

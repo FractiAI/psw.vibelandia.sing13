@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/interfaces/machote-campaign-popup.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -505,7 +506,7 @@
       <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
       <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Basenet</strong>. This page is the mirror on the cloud.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/interfaces/questfest-bridge/?campaign=1#/bridge" data-i18n="qf.btnSwampVibe">Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass</a>
+        <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnSwampVibe">Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass</a>
         <a class="btn btn-ghost" href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
         <a class="btn btn-ghost" href="/interfaces/fractiai-digital-pru.html" data-i18n="qf.btnHood">Look under the hood</a>
       </div>
@@ -708,11 +709,44 @@
   <footer>
     <p data-i18n-html="qf.footerMicroHtml"><a href="mailto:goldenbackdoorhitfactory@gmail.com?subject=QUESTFEST">goldenbackdoorhitfactory@gmail.com</a></p>
   </footer>
+
+  <div id="machote-campaign-modal" class="machote-campaign-root" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="machote-campaign-title">
+    <button type="button" class="machote-campaign-backdrop" data-machote-dismiss aria-label="Close"></button>
+    <div class="machote-campaign-card">
+      <button type="button" class="machote-campaign-close" aria-label="Close campaign">×</button>
+      <img
+        class="machote-campaign-cover"
+        src="/interfaces/assets/machote-moderno-magazine-cover.png"
+        width="480"
+        height="640"
+        alt="Machote Moderno Magazine — your badge to qualify for the members-only music catalog"
+        loading="eager"
+        decoding="async"
+      />
+      <p class="machote-campaign-eyebrow" data-i18n="qf.campaignEyebrow">EXCLUSIVELY FOR MACHOTE MODERNO FOLLOWERS</p>
+      <h2 id="machote-campaign-title" class="machote-campaign-title" data-i18n="qf.campaignTitle">Special offer · Master Music Catalog access</h2>
+      <p class="machote-campaign-lede" data-i18n-html="qf.campaignLede">A followers-only special to stream our <strong>Master Music Catalog of Holographic Reno Swamp Beats Caliente</strong>.</p>
+      <ol class="machote-campaign-reasons">
+        <li data-i18n-html="qf.campaignR1"><strong>Master Music Catalog · caliente</strong> Full access to holographic Reno swamp beats.</li>
+        <li data-i18n-html="qf.campaignR2"><strong>Full catalog ·</strong> Pass holders get every track, background play, and exports offline <strong>(extra charge)</strong>.</li>
+        <li data-i18n-html="qf.campaignR3"><strong>Honor pass · $16.18/mo</strong> Follow Machote Moderno Magazine on Facebook to qualify.</li>
+      </ol>
+      <aside class="machote-campaign-beehive">
+        <p data-i18n-html="qf.campaignBeehiveHtml"><strong>New ·</strong> <strong>Goldilocks Syntheverse Beehive Residency</strong> — Machote members only.</p>
+        <p class="machote-campaign-beehive-caveat" data-i18n-html="qf.campaignBeehiveCaveatHtml"><strong>Caveat.</strong> This is <strong>not</strong> pet sitting or free labor.</p>
+        <a class="machote-campaign-beehive-cta" href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta">Goldilocks Syntheverse Beehive · walkthrough</a>
+      </aside>
+      <div class="machote-campaign-actions">
+        <a class="machote-campaign-btn machote-campaign-btn--gold" href="/interfaces/questfest-bridge/?boarding=1#/bridge" data-i18n="qf.campaignCta">Get the catalog honor pass · $16.18/mo</a>
+        <button type="button" class="machote-campaign-btn machote-campaign-btn--ghost" data-machote-later data-i18n="qf.campaignLater">Maybe later</button>
+      </div>
+    </div>
+  </div>
   <script src="/interfaces/i18n-auto.js"></script>
+  <script src="/interfaces/machote-campaign-popup.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       if (window.VibelandiaI18n) window.VibelandiaI18n.initFromPage('questfest');
-
     });
   </script>
 </body>

@@ -25,7 +25,7 @@ export function clearMachoteCampaignDismissed(): void {
   }
 }
 
-/** `?campaign=1` on the Bridge page URL clears dismiss (top deck or bridge). */
+/** `?campaign=1` on the QUESTFEST top deck URL clears dismiss and re-shows the offer. */
 export function consumeCampaignResetFromUrl(): boolean {
   if (typeof window === 'undefined') return false;
   const params = new URLSearchParams(window.location.search);

@@ -5,6 +5,13 @@ import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { collectMediaFiles } from '@/lib/deviceMediaScan';
 import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import {
+  filterUploadableFiles,
+  formatUploadRejectSummary,
+  probeVideoDurationSec,
+  MAX_MEDIA_UPLOAD_BYTES,
+  MAX_VIDEO_DURATION_SEC,
+} from '@/lib/mediaUploadLimits';
+import {
   classifyFilesAgainstCatalog,
   formatAllDuplicatesMessage,
   formatPartialDuplicatesMessage,
@@ -84,14 +91,32 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     setBusy(true);
     setMsg(null);
     setMsgKind('idle');
+    setStatus('Checking length and size…');
+
+    const { uploadable, rejected } = await filterUploadableFiles(newFiles);
+    const rejectNote = formatUploadRejectSummary(rejected);
+
+    if (!uploadable.length) {
+      setStatus('Cannot upload selection.');
+      showMsg(
+        rejectNote
+          ? `${rejectNote}. Videos must be 10 minutes or less and under ~600 MB.`
+          : formatAllDuplicatesMessage(duplicates),
+        'error',
+      );
+      setBusy(false);
+      resetFilePicker();
+      return;
+    }
+
     setStatus(
-      duplicates.length
-        ? `Checked: ${duplicates.length} duplicate(s) skipped · starting ${newFiles.length} upload(s)…`
-        : `Starting upload of ${newFiles.length} file${newFiles.length === 1 ? '' : 's'}…`,
+      duplicates.length || rejected.length
+        ? `Checked: ${duplicates.length} duplicate(s) skipped${rejectNote ? ` · ${rejectNote}` : ''} · starting ${uploadable.length} upload(s)…`
+        : `Starting upload of ${uploadable.length} file${uploadable.length === 1 ? '' : 's'}…`,
     );
 
     try {
-      const { added, addedTrackIds } = await importMediaFiles(newFiles, {
+      const { added, addedTrackIds } = await importMediaFiles(uploadable, {
         title: opts?.title,
         artist: artist.trim() || DEFAULT_ARTIST,
         description: description.trim() || undefined,
@@ -103,14 +128,18 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       if (added === 0) {
         setStatus('Upload finished — nothing saved.');
         showMsg(
-          'Nothing new was saved on the server. Check file size (max ~4.5 MB per file) or Vercel Blob settings.',
+          'Nothing new was saved on the server. Check Vercel Blob settings or try one file at a time.',
           'error',
         );
         return;
       }
 
       setStatus(`Done — ${added} track${added === 1 ? '' : 's'} saved on the server.`);
-      showMsg(formatPartialDuplicatesMessage(added, duplicates), 'success');
+      const dupNote = formatPartialDuplicatesMessage(added, duplicates);
+      showMsg(
+        rejectNote ? `${dupNote} Skipped: ${rejectNote}.` : dupNote,
+        'success',
+      );
       setTitle('');
       setArtist(DEFAULT_ARTIST);
       setDescription('');
@@ -122,19 +151,35 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       }
     } catch (e) {
       const err = e instanceof Error ? e.message : '';
+      const errLower = err.toLowerCase();
       setStatus('Upload failed.');
       if (err === 'catalog_upload_unconfigured') {
         showMsg(
           'Server upload is not configured. On Vercel set BLOB_READ_WRITE_TOKEN and CATALOG_UPLOAD_SECRET (same value as VITE_CATALOG_UPLOAD_SECRET or captain password in the Bridge build), then redeploy.',
           'error',
         );
+      } else if (err === 'video_too_long') {
+        showMsg(
+          `Video is longer than ${Math.floor(MAX_VIDEO_DURATION_SEC / 60)} minutes. Trim or export a shorter cut, then try again.`,
+          'error',
+        );
+      } else if (
+        err === 'file_too_large' ||
+        err === 'payload_too_large' ||
+        errLower.includes('out of memory') ||
+        errLower.includes('allocation failed')
+      ) {
+        showMsg(
+          'File is too large for this upload path. Videos: up to 10 minutes and ~600 MB. Audio: try a smaller MP3 or upload one file at a time.',
+          'error',
+        );
       } else {
         showMsg(
-          err === 'storage_failed' || err === 'payload_too_large'
-            ? 'Could not save to the server. File may be too large (max ~4.5 MB) or Blob is unavailable.'
+          err === 'storage_failed' || err === 'blob_store_failed'
+            ? 'Could not save to the server. Blob storage may be unavailable — check Vercel Blob on the deployment.'
             : err
               ? `Upload failed: ${err}`
-              : 'Upload failed. Try again or fewer files at once.',
+              : 'Upload failed. Try one smaller file at a time.',
           'error',
         );
       }
@@ -160,6 +205,20 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       setStatus('Already in catalog.');
       showMsg(formatAllDuplicatesMessage(duplicates), 'info');
       resetFilePicker();
+      return;
+    }
+    if (file.size > MAX_MEDIA_UPLOAD_BYTES) {
+      setStatus('File too large.');
+      showMsg('This file is over the ~600 MB upload limit. Use a shorter or more compressed export.', 'error');
+      return;
+    }
+    const durationSec = await probeVideoDurationSec(file);
+    if (durationSec !== null && durationSec > MAX_VIDEO_DURATION_SEC) {
+      setStatus('Video too long.');
+      showMsg(
+        `Video is ${Math.ceil(durationSec / 60)} minutes — max is ${MAX_VIDEO_DURATION_SEC / 60} minutes. Trim and try again.`,
+        'error',
+      );
       return;
     }
 
@@ -230,8 +289,8 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           <p className="spotify-main-eyebrow">Upload</p>
           <h2 className="spotify-main-title">Add tracks</h2>
           <p className="spotify-main-desc">
-            Files save to the <strong>server catalog</strong>, then appear in Listen. Max ~4.5 MB per file
-            through the browser uploader.
+            Files save to the <strong>server catalog</strong>, then appear in Listen. Audio and video — videos up
+            to <strong>10 minutes</strong> (~600 MB) upload direct to QUESTFEST storage.
           </p>
         </div>
       </header>

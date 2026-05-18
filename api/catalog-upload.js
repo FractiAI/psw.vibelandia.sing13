@@ -6,8 +6,9 @@ const crypto = require('node:crypto');
 const { put } = require('@vercel/blob');
 const {
   assertCatalogUploadAuth,
+  appendTrackToDynamicCatalog,
   catalogUploadConfigured,
-  loadServerCatalog,
+  loadDynamicCatalog,
   saveDynamicCatalog,
 } = require('../lib/catalog-server.mjs');
 
@@ -36,7 +37,7 @@ async function readRawBody(req, limit) {
   if (json?.dataBase64) {
     const buf = Buffer.from(String(json.dataBase64), 'base64');
     if (buf.length > limit) throw new Error('payload_too_large');
-    return buf;
+    return { buffer: buf, jsonBody: json };
   }
 
   const chunks = [];
@@ -49,10 +50,10 @@ async function readRawBody(req, limit) {
       if (size > limit) throw new Error('payload_too_large');
       chunks.push(piece);
     }
-    return Buffer.concat(chunks);
+    return { buffer: Buffer.concat(chunks), jsonBody: null };
   }
 
-  return Buffer.alloc(0);
+  return { buffer: Buffer.alloc(0), jsonBody: null };
 }
 
 function titleFromFilename(name) {
@@ -90,11 +91,28 @@ module.exports = async function handler(req, res) {
   const auth = assertCatalogUploadAuth(req);
   if (!auth.ok) return res.status(auth.status).json({ error: auth.code });
 
-  const jsonBody = readBodyObject(req);
-
+  let jsonBody = readBodyObject(req);
   let buffer;
   try {
-    buffer = await readRawBody(req, MAX_BYTES);
+    const raw = await readRawBody(req, MAX_BYTES);
+    if (Buffer.isBuffer(raw)) {
+      buffer = raw;
+    } else {
+      buffer = raw.buffer;
+      if (raw.jsonBody) jsonBody = raw.jsonBody;
+      else if (!jsonBody && buffer.length && String(req.headers['content-type'] || '').includes('json')) {
+        try {
+          jsonBody = JSON.parse(buffer.toString('utf8'));
+          if (jsonBody?.dataBase64) {
+            buffer = Buffer.from(String(jsonBody.dataBase64), 'base64');
+            if (buffer.length > MAX_BYTES) throw new Error('payload_too_large');
+          }
+        } catch (parseErr) {
+          if (parseErr.message === 'payload_too_large') throw parseErr;
+          /* keep buffer as read */
+        }
+      }
+    }
   } catch (e) {
     if (e.message === 'payload_too_large') {
       return res.status(413).json({ error: 'file_too_large' });
@@ -112,10 +130,11 @@ module.exports = async function handler(req, res) {
     titleFromFilename(filename);
   const artist =
     String(req.headers['x-track-artist'] || jsonBody?.artist || '').trim() || DEFAULT_ARTIST;
+  const contentTypeHeader = String(req.headers['content-type'] || '');
   const contentType = String(
-    req.headers['content-type']?.includes('json')
+    contentTypeHeader.includes('json')
       ? jsonBody?.contentType || 'application/octet-stream'
-      : req.headers['content-type'] || jsonBody?.contentType || 'application/octet-stream',
+      : contentTypeHeader || jsonBody?.contentType || 'application/octet-stream',
   );
 
   const id = `trk-srv-${crypto.randomUUID()}`;
@@ -144,15 +163,8 @@ module.exports = async function handler(req, res) {
     serverHosted: true,
   };
 
-  const current = await loadServerCatalog(req);
-  const tracks = { ...current.tracks, [id]: track };
-  const playlists = current.playlists.map((p) => {
-    if (p.id !== 'pl-main') return p;
-    const ids = p.trackIds.includes(id) ? p.trackIds : [...p.trackIds, id];
-    return { ...p, trackIds: ids };
-  });
-
-  const next = { ...current, tracks, playlists };
+  const dynamic = await loadDynamicCatalog();
+  const next = appendTrackToDynamicCatalog(dynamic, track);
   const saved = await saveDynamicCatalog(next);
   if (!saved) {
     return res.status(500).json({
@@ -161,5 +173,11 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  return res.status(200).json({ track, catalog: next });
+  return res.status(200).json({ track });
+};
+
+module.exports.config = {
+  api: {
+    bodyParser: false,
+  },
 };

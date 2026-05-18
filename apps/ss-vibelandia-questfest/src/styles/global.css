@@ -1424,6 +1424,78 @@ a.voxel-btn {
   text-align: right;
 }
 
+.spotify-file-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.spotify-file-pick-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.spotify-file-pick-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.spotify-file-pick-name {
+  margin: 0;
+  font-size: 0.78rem;
+  color: rgba(245, 239, 230, 0.55);
+}
+
+.spotify-file-pick-name--selected {
+  color: var(--swamp-cream);
+}
+
+.spotify-file-pick-name strong {
+  color: var(--swamp-gold);
+  font-weight: 700;
+}
+
+.spotify-file-pick-meta {
+  margin-left: 0.35rem;
+  font-size: 0.72rem;
+  color: rgba(245, 239, 230, 0.5);
+}
+
+.spotify-file-pick-list {
+  margin: 0;
+  padding: 0.45rem 0.55rem;
+  list-style: none;
+  border-radius: 6px;
+  border: 1px solid rgba(232, 184, 109, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+  max-height: 8rem;
+  overflow-y: auto;
+}
+
+.spotify-file-pick-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.74rem;
+  color: var(--swamp-cream);
+  padding: 0.2rem 0;
+}
+
+.spotify-file-pick-more {
+  color: rgba(245, 239, 230, 0.55);
+  font-style: italic;
+}
+
 .spotify-check-grid {
   display: flex;
   flex-direction: column;

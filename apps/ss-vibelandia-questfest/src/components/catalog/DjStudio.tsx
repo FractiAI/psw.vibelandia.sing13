@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useId, useRef, useState } from 'react';
+import { formatFileSize } from '@/lib/formatDuration';
 import { useCatalogStore } from '@/stores/catalogStore';
 import {
   DEFAULT_ARTIST,
@@ -36,7 +37,11 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const singleFileInputId = useId();
+  const multiFileInputId = useId();
   const [fileInputKey, setFileInputKey] = useState(0);
+  const [multiInputKey, setMultiInputKey] = useState(0);
+  const [multiFiles, setMultiFiles] = useState<File[]>([]);
 
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState(DEFAULT_ARTIST);
@@ -66,6 +71,11 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const resetFilePicker = () => {
     setFile(null);
     setFileInputKey((k) => k + 1);
+  };
+
+  const resetMultiPicker = () => {
+    setMultiFiles([]);
+    setMultiInputKey((k) => k + 1);
   };
 
   const runImport = async (files: File[], opts?: { title?: string }) => {
@@ -237,12 +247,32 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     await runImport([file], { title: title.trim() });
   };
 
-  const handleMultiUpload = async (fileList: FileList | null) => {
-    if (!fileList?.length) return;
+  const handleMultiFilePick = async (fileList: FileList | null) => {
+    if (!fileList?.length) {
+      setMultiFiles([]);
+      return;
+    }
     setStatus('Reading selected files…');
     const files = await collectMediaFiles(fileList);
-    await runImport(files);
-    resetFilePicker();
+    setMultiFiles(files);
+    if (!files.length) {
+      setStatus('No media in selection.');
+      showMsg('No audio or video files in that selection.', 'error');
+      return;
+    }
+    setStatus(`${files.length} file${files.length === 1 ? '' : 's'} ready to upload.`);
+    setMsg(null);
+    setMsgKind('idle');
+  };
+
+  const handleMultiUpload = async () => {
+    if (!multiFiles.length) {
+      setStatus('Pick files first.');
+      showMsg('Select one or more audio or video files first.', 'error');
+      return;
+    }
+    await runImport(multiFiles);
+    resetMultiPicker();
   };
 
   const handleFolderImport = async () => {
@@ -381,26 +411,66 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               {description.length}/{TRACK_DESCRIPTION_MAX} characters
             </span>
           </label>
-          <label className="spotify-field">
-            Audio or video
-            <input
-              key={fileInputKey}
-              ref={fileInputRef}
-              className="spotify-input"
-              type="file"
-              accept="audio/*,video/*"
-              disabled={busy}
-              onChange={(e) => {
-                const picked = e.target.files?.[0] ?? null;
-                setFile(picked);
-                if (picked) setStatus(`Selected: ${picked.name}`);
-              }}
-            />
-          </label>
+          <div className="spotify-field">
+            <span>Audio or video</span>
+            <div className="spotify-file-pick">
+              <input
+                key={fileInputKey}
+                id={singleFileInputId}
+                ref={fileInputRef}
+                className="spotify-file-pick-input"
+                type="file"
+                accept="audio/*,video/*"
+                disabled={busy}
+                onChange={(e) => {
+                  const picked = e.target.files?.[0] ?? null;
+                  setFile(picked);
+                  if (picked) {
+                    setStatus(`Selected: ${picked.name}`);
+                    setMsg(null);
+                    setMsgKind('idle');
+                  } else {
+                    setStatus('Ready to upload.');
+                  }
+                }}
+              />
+              <div className="spotify-file-pick-row">
+                <label htmlFor={singleFileInputId} className="spotify-btn spotify-btn--ghost">
+                  Choose file
+                </label>
+                {file && (
+                  <button
+                    type="button"
+                    className="spotify-btn spotify-btn--tiny"
+                    disabled={busy}
+                    onClick={() => {
+                      resetFilePicker();
+                      setStatus('Ready to upload.');
+                    }}
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+              <p
+                className={`spotify-file-pick-name${file ? ' spotify-file-pick-name--selected' : ''}`}
+                aria-live="polite"
+              >
+                {file ? (
+                  <>
+                    <strong>{file.name}</strong>
+                    <span className="spotify-file-pick-meta">{formatFileSize(file.size)}</span>
+                  </>
+                ) : (
+                  'No file selected yet'
+                )}
+              </p>
+            </div>
+          </div>
           <button
             type="button"
             className="spotify-btn spotify-btn--gold"
-            disabled={busy || !serverReady}
+            disabled={busy || !serverReady || !file}
             onClick={() => void handleSingleUpload()}
           >
             {busy ? 'Uploading…' : 'Upload · go to Listen'}
@@ -412,17 +482,78 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           <p className="spotify-main-desc" style={{ marginBottom: '0.75rem' }}>
             Uses each file name as the track title. Duplicates are skipped with a clear note.
           </p>
-          <label className="spotify-field">
-            Select multiple audio / video files
-            <input
-              className="spotify-input"
-              type="file"
-              accept="audio/*,video/*"
-              multiple
-              disabled={busy || !serverReady}
-              onChange={(e) => void handleMultiUpload(e.target.files)}
-            />
-          </label>
+          <div className="spotify-field">
+            <span>Select multiple audio / video files</span>
+            <div className="spotify-file-pick">
+              <input
+                key={multiInputKey}
+                id={multiFileInputId}
+                className="spotify-file-pick-input"
+                type="file"
+                accept="audio/*,video/*"
+                multiple
+                disabled={busy || !serverReady}
+                onChange={(e) => void handleMultiFilePick(e.target.files)}
+              />
+              <div className="spotify-file-pick-row">
+                <label htmlFor={multiFileInputId} className="spotify-btn spotify-btn--ghost">
+                  Choose files
+                </label>
+                {multiFiles.length > 0 && (
+                  <button
+                    type="button"
+                    className="spotify-btn spotify-btn--tiny"
+                    disabled={busy}
+                    onClick={() => {
+                      resetMultiPicker();
+                      setStatus('Ready to upload.');
+                    }}
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+              <p
+                className={`spotify-file-pick-name${multiFiles.length ? ' spotify-file-pick-name--selected' : ''}`}
+                aria-live="polite"
+              >
+                {multiFiles.length ? (
+                  <>
+                    <strong>
+                      {multiFiles.length} file{multiFiles.length === 1 ? '' : 's'} selected
+                    </strong>
+                  </>
+                ) : (
+                  'No files selected yet'
+                )}
+              </p>
+              {multiFiles.length > 0 && (
+                <ul className="spotify-file-pick-list">
+                  {multiFiles.slice(0, 6).map((f) => (
+                    <li key={`${f.name}-${f.size}-${f.lastModified}`}>
+                      {f.name}
+                      <span className="spotify-file-pick-meta">{formatFileSize(f.size)}</span>
+                    </li>
+                  ))}
+                  {multiFiles.length > 6 && (
+                    <li className="spotify-file-pick-more">+{multiFiles.length - 6} more</li>
+                  )}
+                </ul>
+              )}
+            </div>
+          </div>
+          <button
+            type="button"
+            className="spotify-btn spotify-btn--gold"
+            disabled={busy || !serverReady || multiFiles.length === 0}
+            onClick={() => void handleMultiUpload()}
+          >
+            {busy
+              ? 'Uploading…'
+              : multiFiles.length
+                ? `Upload ${multiFiles.length} file${multiFiles.length === 1 ? '' : 's'}`
+                : 'Upload files'}
+          </button>
           <button
             type="button"
             className="spotify-btn spotify-btn--ghost"

@@ -1,8 +1,8 @@
 # Optional manual deploy — production autodeploy is Vercel ↔ GitHub on push to `main`.
-# Project: fracti-verse/psw-vibelandia-sing13 · production host: psw-vibelandia-sing13-nine.vercel.app
-# Custom domain (one-time in Vercel UI): www.ssvibelandiaquestfest24x365.com
+# Team: fractiai · project: psw-vibelandia-sing13 · host: psw-vibelandia-sing13-nine.vercel.app
+# Custom domain: www.ssvibelandiaquestfest24x365.com
 #
-# Run this workflow only if you need a CLI deploy and have VERCEL_TOKEN set in repo secrets.
+# GitHub secrets (FractiAI team): VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID
 
 name: Deploy to Vercel (manual)
 
@@ -25,6 +25,6 @@ jobs:
       - name: Deploy to Vercel (production)
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: team_maBDMCkpaNwjZQ52f14MR3M4
-          VERCEL_PROJECT_ID: prj_Ocm9lo8BnghKtAL41KdSD6zxBnWo
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: npx vercel@latest deploy --prod --yes

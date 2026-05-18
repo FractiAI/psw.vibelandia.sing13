@@ -133,28 +133,26 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 
 **Stack:** Static HTML/CSS/assets plus the **Vite React** QUESTFEST Bridge bundle under `interfaces/questfest-bridge/`, plus **lite-edge** serverless routes in `api/`. [`vercel.json`](vercel.json) defines the production build (`buildCommand: npm run build:questfest-bridge`), short-path rewrites, and NSPFRNP headers.
 
-**Autodeploy:** Push to **`main`** → **Vercel ↔ GitHub** builds and ships production for this repo.
+**Autodeploy:** Push to **`main`** → **Vercel ↔ GitHub** on team **[FractiAI](https://vercel.com/fractiai)** builds and ships production. The duplicate project on **FractiVerse** (`aiwona1`) was removed; do not recreate it.
 
 | | |
 |---|---|
-| **Vercel project** | [`fracti-verse/psw-vibelandia-sing13`](https://vercel.com/fracti-verse/psw-vibelandia-sing13) |
+| **Vercel team** | [FractiAI](https://vercel.com/fractiai) |
+| **Vercel project** | [`fractiai/psw-vibelandia-sing13`](https://vercel.com/fractiai/psw-vibelandia-sing13) (Settings → General for **Project ID** / **Team ID**) |
 | **Production Vercel URL** | `https://psw-vibelandia-sing13-nine.vercel.app` |
-| **Custom domain (target)** | [`https://www.ssvibelandiaquestfest24x365.com`](https://www.ssvibelandiaquestfest24x365.com) |
+| **Custom domain** | [`https://www.ssvibelandiaquestfest24x365.com`](https://www.ssvibelandiaquestfest24x365.com) |
 
-**Link custom domain (one-time):** [Project → Settings → Domains](https://vercel.com/fracti-verse/psw-vibelandia-sing13/settings/domains) → add **`www.ssvibelandiaquestfest24x365.com`**.
+**Domains:** [Project → Settings → Domains](https://vercel.com/fractiai/psw-vibelandia-sing13/settings/domains) — keep **`www.ssvibelandiaquestfest24x365.com`** on this project only.
 
-If Vercel says the domain is linked to **another Vercel account**, verify ownership with a TXT record:
+**Post-push smoke test (production):**
 
-| Field | Value |
-|--------|--------|
-| **Where** | DNS for `ssvibelandiaquestfest24x365.com` (this zone uses **Vercel nameservers** — edit at [vercel.com/domains](https://vercel.com/domains) on the account that owns the domain, **DNS Records**) |
-| **Name / host** | `_vercel` (shown as `_vercel.ssvibelandiaquestfest24x365.com`) |
-| **Type** | `TXT` |
-| **Value** | Copy from the Domains screen on **fracti-verse/psw-vibelandia-sing13** (starts with `vc-domain-verify=`) |
+| Check | URL |
+|--------|-----|
+| QUESTFEST top deck | `/` or `/interfaces/vibelandia-questfest.html` |
+| Sovereign Player | `/interfaces/questfest-bridge/` |
+| Look under the hood | `/interfaces/look-under-the-hood.html` |
 
-Save the record, wait a few minutes, click **Verify** in the project Domains tab. You can remove the TXT record after verification. Then set **`www`** → CNAME as Vercel shows for production.
-
-Optional manual deploy: [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) (`workflow_dispatch` only; needs `VERCEL_TOKEN`).
+Optional manual deploy: [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) (`workflow_dispatch`). Set GitHub secrets **`VERCEL_TOKEN`** (FractiAI team token), **`VERCEL_ORG_ID`**, **`VERCEL_PROJECT_ID`** from the FractiAI project settings — not the retired FractiVerse IDs.
 
 ```bash
 npm run build:questfest-bridge

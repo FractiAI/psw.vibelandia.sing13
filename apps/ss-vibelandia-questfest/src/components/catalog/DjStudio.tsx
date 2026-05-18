@@ -163,6 +163,11 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           `Video is longer than ${Math.floor(MAX_VIDEO_DURATION_SEC / 60)} minutes. Trim or export a shorter cut, then try again.`,
           'error',
         );
+      } else if (err === 'upload_connection_failed') {
+        showMsg(
+          'Could not reach the upload server. Check your connection, wait a minute after deploy, and try again.',
+          'error',
+        );
       } else if (
         err === 'file_too_large' ||
         err === 'payload_too_large' ||
@@ -175,7 +180,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         );
       } else {
         showMsg(
-          err === 'storage_failed' || err === 'blob_store_failed'
+          err === 'storage_failed' || err === 'blob_store_failed' || err === 'register_failed'
             ? 'Could not save to the server. Blob storage may be unavailable — check Vercel Blob on the deployment.'
             : err
               ? `Upload failed: ${err}`

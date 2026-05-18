@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+/**
+ * Smoke-test catalog upload API (run: node scripts/test-catalog-apis.mjs)
+ */
+const ORIGIN = process.env.CATALOG_ORIGIN || 'https://psw-vibelandia-sing13.vercel.app';
+const SECRET = process.env.CATALOG_UPLOAD_SECRET || 'valetpru1!';
+
+async function main() {
+  console.log('Origin:', ORIGIN);
+
+  const catRes = await fetch(`${ORIGIN}/api/catalog`);
+  console.log('GET /api/catalog', catRes.status, catRes.ok ? 'ok' : await catRes.text());
+
+  const tiny = Buffer.alloc(512, 0);
+  const upRes = await fetch(`${ORIGIN}/api/catalog-upload`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'audio/mpeg',
+      'X-Catalog-Secret': SECRET,
+      'X-Filename': 'smoke-test.mp3',
+      'X-Track-Title': 'Smoke Test',
+      'X-Track-Artist': 'API Test',
+    },
+    body: tiny,
+  });
+  const upJson = await upRes.json().catch(() => ({}));
+  console.log('POST /api/catalog-upload (inline)', upRes.status, upJson.error || upJson.track?.id || upJson);
+
+  const regRes = await fetch(`${ORIGIN}/api/catalog-upload`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Catalog-Secret': SECRET,
+    },
+    body: JSON.stringify({
+      action: 'register',
+      trackId: 'trk-srv-smoke-register',
+      url: 'https://example.com/smoke.mp3',
+      contentType: 'audio/mpeg',
+      title: 'Register smoke',
+      artist: 'Test',
+      filename: 'smoke.mp3',
+    }),
+  });
+  const regJson = await regRes.json().catch(() => ({}));
+  console.log('POST /api/catalog-upload (register)', regRes.status, regJson.error || regJson.track?.id || regJson);
+
+  const clientRes = await fetch(`${ORIGIN}/api/catalog-upload`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Catalog-Secret': SECRET,
+    },
+    body: JSON.stringify({
+      type: 'blob.generate-client-token',
+      payload: { pathname: 'catalog/smoke-test.bin', callbackUrl: `${ORIGIN}/api/catalog-upload` },
+    }),
+  });
+  const clientText = await clientRes.text();
+  console.log('POST /api/catalog-upload (blob token)', clientRes.status, clientText.slice(0, 240));
+
+  const ok = regRes.ok && clientRes.ok;
+  if (!ok) process.exitCode = 1;
+  else console.log('\nOK — register + blob token ready for browser uploads.');
+}
+
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

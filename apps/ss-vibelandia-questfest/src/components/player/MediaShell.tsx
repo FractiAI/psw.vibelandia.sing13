@@ -41,7 +41,10 @@ export function MediaShell() {
       setBoardingOpen(true);
     }
 
-    void syncLibraryFromServer();
+    const t = window.setTimeout(() => {
+      void syncLibraryFromServer();
+    }, 0);
+    return () => window.clearTimeout(t);
   }, [hydrateSession, setBoardingOpen, syncLibraryFromServer]);
 
   const handleBoarding = async (payload: BoardingRequestBody) => {

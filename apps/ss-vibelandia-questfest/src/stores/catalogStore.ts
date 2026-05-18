@@ -194,10 +194,14 @@ async function addFileAsTrack(
     throw err;
   }
 
-  const { track, catalog } = await uploadTrackToServer(file, {
-    title: displayTitle,
-    artist: meta.artist?.trim() || DEFAULT_ARTIST,
-  });
+  const { track } = await uploadTrackToServer(
+    file,
+    {
+      title: displayTitle,
+      artist: meta.artist?.trim() || DEFAULT_ARTIST,
+    },
+    { onProgress: meta.onProgress },
+  );
 
   return {
     track: {
@@ -208,7 +212,6 @@ async function addFileAsTrack(
       sourceKey,
       serverHosted: true,
     },
-    catalog,
   };
 }
 
@@ -222,7 +225,7 @@ function bootFromCache() {
 const bootCatalog = bootFromCache();
 
 export const useCatalogStore = create<CatalogState>((set, get) => ({
-  catalogSyncing: !loadCatalogCache(),
+  catalogSyncing: false,
   view: 'catalog',
   djMode: false,
   tracks: bootCatalog.tracks,

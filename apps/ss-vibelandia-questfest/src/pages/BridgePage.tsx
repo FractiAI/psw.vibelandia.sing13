@@ -155,12 +155,7 @@ export function BridgePage() {
         </header>
 
         <main className="sp-scroll">
-          {!djMode && !isPlaylistsView && catalogSyncing && trackCount === 0 ? (
-            <section className="sp-empty-catalog" aria-busy="true">
-              <h2 className="sp-empty-catalog-title">Loading library</h2>
-              <p className="sp-empty-catalog-desc">Fetching catalog from QUESTFEST…</p>
-            </section>
-          ) : !djMode && !isPlaylistsView && trackCount === 0 ? (
+          {!djMode && !isPlaylistsView && trackCount === 0 ? (
             <section className="sp-empty-catalog">
               <h2 className="sp-empty-catalog-title">No songs in catalog yet</h2>
               <p className="sp-empty-catalog-desc">{PLAIN.noTracksUpload}</p>

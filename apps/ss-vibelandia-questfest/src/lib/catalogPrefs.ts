@@ -3,7 +3,8 @@ import type { CatalogSnapshot, PlaylistDef } from '@/lib/catalogTypes';
 import { CATALOG_VERSION } from '@/lib/catalogSeed';
 
 const PREFS_KEY = 'hjghf-catalog-prefs-v2';
-const CACHE_KEY = 'hjghf-catalog-cache-v1';
+const CACHE_KEY = 'hjghf-catalog-cache-v2';
+const LEGACY_CACHE_KEY = 'hjghf-catalog-cache-v1';
 const DOWNLOADS_KEY = 'hjghf-downloaded-tracks-v1';
 
 export interface CatalogPrefs {
@@ -47,7 +48,32 @@ export function saveCatalogPrefs(prefs: CatalogPrefs): void {
 /** Last server manifest — instant paint while live sync runs. */
 const MAX_CACHE_BYTES = 2_000_000;
 
+/** Drop stale v1 cache (orphan server tracks / bad localMediaKey). */
+function migrateLegacyCatalogCache(): void {
+  try {
+    if (localStorage.getItem(CACHE_KEY)) return;
+    if (localStorage.getItem(LEGACY_CACHE_KEY)) {
+      localStorage.removeItem(LEGACY_CACHE_KEY);
+    }
+    localStorage.removeItem('hjghf-catalog-v1');
+  } catch {
+    /* ignore */
+  }
+}
+
+export function clearClientCatalogCache(): void {
+  try {
+    localStorage.removeItem(CACHE_KEY);
+    localStorage.removeItem(LEGACY_CACHE_KEY);
+    localStorage.removeItem('hjghf-catalog-v1');
+    localStorage.removeItem(DOWNLOADS_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
 export function loadCatalogCache(): CatalogSnapshot | null {
+  migrateLegacyCatalogCache();
   try {
     const raw = localStorage.getItem(CACHE_KEY);
     if (!raw || raw.length > MAX_CACHE_BYTES) return null;

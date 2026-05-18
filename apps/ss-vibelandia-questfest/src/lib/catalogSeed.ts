@@ -6,7 +6,7 @@ import {
   SONIC_CATALOG_DISPLAY_NAME,
 } from '@/lib/sonicCatalogCopy';
 
-export const CATALOG_VERSION = 4;
+export const CATALOG_VERSION = 5;
 
 /** Master list: every upload / device import is kept here automatically. */
 export const MASTER_PLAYLIST_ID = 'pl-main';
@@ -102,15 +102,33 @@ export function buildEmptyCatalog(): CatalogSnapshot {
   };
 }
 
+function normalizeCachedTrack(id: string, tr: TrackDef): TrackDef {
+  const next: TrackDef = { ...tr, id: tr.id || id };
+  if (!next.downloadedLocally) {
+    delete next.localMediaKey;
+  } else {
+    next.localMediaKey = next.localMediaKey ?? localMediaKeyFor(id);
+  }
+  return next;
+}
+
 /** Persisted + legacy snapshots: uploads only (drops old trk-1…552 seed rows). */
 export function extractLocalTracks(snapshot: CatalogSnapshot): Record<string, TrackDef> {
   const tracks: Record<string, TrackDef> = {};
   for (const [id, tr] of Object.entries(snapshot.tracks)) {
     if (!isUserUploadTrack(id, tr)) continue;
-    tracks[id] = {
-      ...tr,
-      localMediaKey: tr.localMediaKey ?? `media-${id}`,
-    };
+    tracks[id] = normalizeCachedTrack(id, tr);
+  }
+  return tracks;
+}
+
+/** Device cache on boot — offline downloads only; server catalog comes from /api/catalog sync. */
+export function extractDeviceCacheTracks(snapshot: CatalogSnapshot): Record<string, TrackDef> {
+  const tracks: Record<string, TrackDef> = {};
+  for (const [id, tr] of Object.entries(snapshot.tracks)) {
+    if (tr.serverHosted) continue;
+    if (!isUserUploadTrack(id, tr)) continue;
+    tracks[id] = normalizeCachedTrack(id, tr);
   }
   return tracks;
 }

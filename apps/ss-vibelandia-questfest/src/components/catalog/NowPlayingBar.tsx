@@ -93,7 +93,7 @@ export function NowPlayingBar({
     setError(null);
 
     const streamUrl = track.videoSrc || track.src;
-    const useStreamFirst = !!streamUrl && !track.downloadedLocally && !track.localMediaKey;
+    const useStreamFirst = !!streamUrl && !track.downloadedLocally;
 
     if (useStreamFirst) {
       if (isVideo && el instanceof HTMLVideoElement) {

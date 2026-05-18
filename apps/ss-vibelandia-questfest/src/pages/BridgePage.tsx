@@ -34,6 +34,8 @@ export function BridgePage() {
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const catalogSyncing = useCatalogStore((s) => s.catalogSyncing);
   const refreshFromServer = useCatalogStore((s) => s.refreshFromServer);
+  const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
+  const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
@@ -58,6 +60,11 @@ export function BridgePage() {
       setTimeout(hydrate, 0);
     }
   }, []);
+
+  useEffect(() => {
+    if (!deviceHydrated) return;
+    void syncLibraryFromServer();
+  }, [deviceHydrated, syncLibraryFromServer]);
 
   useEffect(() => {
     if (location.pathname === '/dj' || location.hash === '#/dj') {

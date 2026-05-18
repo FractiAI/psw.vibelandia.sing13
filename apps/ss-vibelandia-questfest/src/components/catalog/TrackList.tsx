@@ -123,13 +123,11 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
 
   const play = (id: string) => {
-
+    const tr = getTrack(id);
+    if (!tr?.src && !tr?.videoSrc) return;
     setActivePlaylist(activePlaylistId);
-
     setTrack(id);
-
     setPlaying(true);
-
   };
 
 

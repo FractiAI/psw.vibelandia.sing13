@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { usePlaybackStore } from '@/stores/playbackStore';
 import {
   buildEmptyCatalog,
   CATALOG_VERSION,
@@ -655,6 +656,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     set({ catalogSyncing: true });
     const prefs = loadCatalogPrefs();
     const downloaded = loadDownloadedTrackIds();
+    const prevTrackId = usePlaybackStore.getState().currentTrackId;
     try {
       const server = await fetchLiveCatalog();
       const applied = applyServerCatalog(server, prefs, downloaded);
@@ -670,6 +672,10 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         activePlaylistId: applied.activePlaylistId,
       });
       get().persist();
+      if (prevTrackId && !applied.tracks[prevTrackId]) {
+        usePlaybackStore.getState().setPlaying(false);
+        usePlaybackStore.getState().setTrack(null);
+      }
     } catch {
       /* keep cached library */
     } finally {

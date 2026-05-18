@@ -14,8 +14,12 @@
   padding: 1rem;
 }
 
-.machote-campaign-root[hidden] {
+.machote-campaign-root[hidden]:not(.machote-campaign-open) {
   display: none !important;
+}
+
+.machote-campaign-root.machote-campaign-open {
+  display: flex !important;
 }
 
 .machote-campaign-backdrop {

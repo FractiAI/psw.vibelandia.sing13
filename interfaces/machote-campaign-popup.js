@@ -1,10 +1,11 @@
 ﻿/**
- * Machote members campaign modal ΓÇö QUESTFEST top deck only (not Sovereign Player).
+ * Machote members campaign modal — QUESTFEST top deck only (not Sovereign Player).
  */
 (function () {
   'use strict';
 
-  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v3';
+  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v4';
+  var LEGACY_DISMISS_KEY = 'machote-members-campaign-dismissed-v2';
   var PASS_TOKEN_KEY = 'qv-pass-token';
   var LOCAL_HONOR_KEY = 'qv-local-monthly-honor';
   var CAPTAIN_KEY = 'qv-captain-unlocked';
@@ -12,9 +13,27 @@
     '/interfaces/questfest-bridge/?boarding=1#/bridge';
   var BEEHIVE_PATH = '/interfaces/goldilocks-beehive-residency.html';
 
+  function parsePassToken(token) {
+    if (!token) return null;
+    var parts = token.split('.');
+    if (parts.length < 2) return null;
+    try {
+      var pad = parts[1].length % 4 === 0 ? '' : '='.repeat(4 - (parts[1].length % 4));
+      var json = atob(parts[1].replace(/-/g, '+').replace(/_/g, '/') + pad);
+      var data = JSON.parse(json);
+      if (data.tier !== 'PASSENGER') return null;
+      if (typeof data.exp === 'number' && data.exp < Math.floor(Date.now() / 1000)) {
+        return null;
+      }
+      return data;
+    } catch (e) {
+      return null;
+    }
+  }
+
   function hasMembersAccess() {
     try {
-      if (localStorage.getItem(PASS_TOKEN_KEY)) return true;
+      if (parsePassToken(localStorage.getItem(PASS_TOKEN_KEY))) return true;
       if (sessionStorage.getItem(CAPTAIN_KEY) === '1') return true;
       var honor = localStorage.getItem(LOCAL_HONOR_KEY);
       if (!honor) return false;
@@ -46,6 +65,7 @@
   function clearDismissed() {
     try {
       sessionStorage.removeItem(SESSION_DISMISS_KEY);
+      localStorage.removeItem(LEGACY_DISMISS_KEY);
     } catch (e) {
       /* ignore */
     }
@@ -83,13 +103,15 @@
 
     function closeModal(dismissPersist) {
       if (dismissPersist) dismiss();
+      root.classList.remove('machote-campaign-open');
       root.hidden = true;
       root.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
 
     function openModal() {
-      root.hidden = false;
+      root.removeAttribute('hidden');
+      root.classList.add('machote-campaign-open');
       root.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
       var focusTarget = root.querySelector('.machote-campaign-btn--gold');
@@ -120,15 +142,27 @@
       if (shouldAutoShow(forceCampaign)) openModal();
     }
 
-    if (document.readyState === 'complete') {
-      maybeOpen();
+    /* Do not wait for window load — hero images can delay or block it forever */
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(maybeOpen, 80);
+      });
     } else {
-      window.addEventListener('load', maybeOpen, { once: true });
+      setTimeout(maybeOpen, 80);
     }
   }
 
   window.MachoteCampaignPopup = {
     init: init,
+    open: function () {
+      var root = document.getElementById('machote-campaign-modal');
+      if (root) {
+        root.removeAttribute('hidden');
+        root.classList.add('machote-campaign-open');
+        root.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+    },
     BRIDGE_BOARDING: BRIDGE_BOARDING,
     BEEHIVE_PATH: BEEHIVE_PATH
   };

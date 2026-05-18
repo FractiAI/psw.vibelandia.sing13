@@ -26,6 +26,21 @@ export function isUserUploadTrack(id: string, tr: TrackDef): boolean {
 }
 
 /** Server catalog + user playlists + offline downloads only (no full library in browser storage). */
+/** Keep just-uploaded server tracks if live sync has not caught up yet. */
+export function mergePendingServerTracks(
+  server: CatalogSnapshot,
+  localTracks: Record<string, TrackDef>,
+): CatalogSnapshot {
+  const tracks = { ...server.tracks };
+  let changed = false;
+  for (const [id, tr] of Object.entries(localTracks)) {
+    if (!tr.serverHosted || tracks[id]) continue;
+    tracks[id] = tr;
+    changed = true;
+  }
+  return changed ? { ...server, tracks } : server;
+}
+
 export function mergeServerCatalogWithPrefs(
   server: CatalogSnapshot,
   localPrefs: CatalogPrefs | null,

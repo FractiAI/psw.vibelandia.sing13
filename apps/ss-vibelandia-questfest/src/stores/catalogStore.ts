@@ -4,6 +4,7 @@ import {
   buildEmptyCatalog,
   CATALOG_VERSION,
   MASTER_PLAYLIST_ID,
+  mergePendingServerTracks,
   mergeServerCatalogWithPrefs,
   isMasterPlaylist,
 } from '@/lib/catalogSeed';
@@ -551,6 +552,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       });
     }
     get().persist();
+    try {
+      await get().syncLibraryFromServer();
+    } catch {
+      /* keep local uploads visible */
+    }
     return { added: newTracks.length, skipped, addedTrackIds: newTracks.map((t) => t.id) };
   },
 
@@ -658,7 +664,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const downloaded = loadDownloadedTrackIds();
     const prevTrackId = usePlaybackStore.getState().currentTrackId;
     try {
-      const server = await fetchLiveCatalog();
+      const localTracks = get().tracks;
+      const server = mergePendingServerTracks(await fetchLiveCatalog(), localTracks);
       const applied = applyServerCatalog(server, prefs, downloaded);
       set({
         tracks: applied.tracks,

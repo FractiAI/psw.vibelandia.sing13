@@ -8,7 +8,7 @@ import {
 } from '@/lib/catalogTypes';
 import { TrackLibraryManager } from '@/components/catalog/TrackLibraryManager';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
-import { collectMediaFiles } from '@/lib/deviceMediaScan';
+import { collectMediaFiles, titleFromFileName } from '@/lib/deviceMediaScan';
 import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import {
   filterUploadableFiles,
@@ -209,31 +209,22 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     }
   };
 
-  const handleSingleUpload = async () => {
-    if (!file) {
-      setStatus('Pick a file first.');
-      showMsg('Pick an audio or video file first.', 'error');
-      return;
-    }
-    if (!title.trim()) {
-      setStatus('Enter a title.');
-      showMsg('Enter a title — that is what the player shows when playing.', 'error');
-      return;
-    }
+  const uploadSingleFile = async (picked: File) => {
+    const displayTitle = title.trim() || titleFromFileName(picked.name);
 
-    const { duplicates } = classifyFilesAgainstCatalog([file], tracks);
+    const { duplicates } = classifyFilesAgainstCatalog([picked], tracks);
     if (duplicates.length) {
       setStatus('Already in catalog.');
       showMsg(formatAllDuplicatesMessage(duplicates), 'info');
       resetFilePicker();
       return;
     }
-    if (file.size > MAX_MEDIA_UPLOAD_BYTES) {
+    if (picked.size > MAX_MEDIA_UPLOAD_BYTES) {
       setStatus('File too large.');
       showMsg('This file is over the ~600 MB upload limit. Use a shorter or more compressed export.', 'error');
       return;
     }
-    const durationSec = await probeVideoDurationSec(file);
+    const durationSec = await probeVideoDurationSec(picked);
     if (durationSec !== null && durationSec > MAX_VIDEO_DURATION_SEC) {
       setStatus('Video too long.');
       showMsg(
@@ -243,8 +234,18 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       return;
     }
 
-    setStatus(`Preparing "${title.trim()}"…`);
-    await runImport([file], { title: title.trim() });
+    if (!title.trim()) setTitle(displayTitle);
+    setStatus(`Uploading “${displayTitle}”…`);
+    await runImport([picked], { title: displayTitle });
+  };
+
+  const handleSingleUpload = async () => {
+    if (!file) {
+      setStatus('Pick a file first.');
+      showMsg('Pick an audio or video file first.', 'error');
+      return;
+    }
+    await uploadSingleFile(file);
   };
 
   const handleMultiFilePick = async (fileList: FileList | null) => {
@@ -260,9 +261,11 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       showMsg('No audio or video files in that selection.', 'error');
       return;
     }
-    setStatus(`${files.length} file${files.length === 1 ? '' : 's'} ready to upload.`);
+    setStatus(`Uploading ${files.length} file${files.length === 1 ? '' : 's'}…`);
     setMsg(null);
     setMsgKind('idle');
+    await runImport(files);
+    resetMultiPicker();
   };
 
   const handleMultiUpload = async () => {
@@ -271,6 +274,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       showMsg('Select one or more audio or video files first.', 'error');
       return;
     }
+    setStatus(`Uploading ${multiFiles.length} file${multiFiles.length === 1 ? '' : 's'}…`);
     await runImport(multiFiles);
     resetMultiPicker();
   };
@@ -425,13 +429,21 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                 onChange={(e) => {
                   const picked = e.target.files?.[0] ?? null;
                   setFile(picked);
-                  if (picked) {
-                    setStatus(`Selected: ${picked.name}`);
-                    setMsg(null);
-                    setMsgKind('idle');
-                  } else {
+                  if (!picked) {
                     setStatus('Ready to upload.');
+                    return;
                   }
+                  setMsg(null);
+                  setMsgKind('idle');
+                  if (!serverReady) {
+                    setStatus('Upload not available.');
+                    showMsg(
+                      'Server upload is not configured on this deployment. Check Vercel Blob + catalog secrets.',
+                      'error',
+                    );
+                    return;
+                  }
+                  void uploadSingleFile(picked);
                 }}
               />
               <div className="spotify-file-pick-row">
@@ -473,7 +485,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
             disabled={busy || !serverReady || !file}
             onClick={() => void handleSingleUpload()}
           >
-            {busy ? 'Uploading…' : 'Upload · go to Listen'}
+            {busy ? 'Uploading…' : file ? 'Upload again · go to Listen' : 'Upload · go to Listen'}
           </button>
         </article>
 
@@ -542,18 +554,16 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               )}
             </div>
           </div>
-          <button
-            type="button"
-            className="spotify-btn spotify-btn--gold"
-            disabled={busy || !serverReady || multiFiles.length === 0}
-            onClick={() => void handleMultiUpload()}
-          >
-            {busy
-              ? 'Uploading…'
-              : multiFiles.length
-                ? `Upload ${multiFiles.length} file${multiFiles.length === 1 ? '' : 's'}`
-                : 'Upload files'}
-          </button>
+          {multiFiles.length > 0 && (
+            <button
+              type="button"
+              className="spotify-btn spotify-btn--gold"
+              disabled={busy || !serverReady}
+              onClick={() => void handleMultiUpload()}
+            >
+              {busy ? 'Uploading…' : `Upload ${multiFiles.length} again`}
+            </button>
+          )}
           <button
             type="button"
             className="spotify-btn spotify-btn--ghost"

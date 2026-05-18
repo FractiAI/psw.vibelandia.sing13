@@ -125,6 +125,9 @@ async function registerUploadedTrack(
     title: string;
     artist: string;
     filename: string;
+    description?: string;
+    genre?: string;
+    durationSec?: number;
   },
 ): Promise<TrackDef> {
   const res = await postCatalogJson(UPLOAD_API, secret, { action: 'register', ...payload });

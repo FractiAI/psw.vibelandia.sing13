@@ -1,6 +1,5 @@
 import { useCatalogStore } from '@/stores/catalogStore';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
-import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
 import { useMemo } from 'react';
 
@@ -16,8 +15,6 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
-  const getTrack = useCatalogStore((s) => s.getTrack);
-
   const masterPl = useMemo(
     () => playlists.find((p) => p.id === MASTER_PLAYLIST_ID),
     [playlists],
@@ -55,7 +52,6 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
           <strong>Machote Moderno</strong>
           <span>
             {trackCount} {PLAIN.tracks}
-            {masterPl ? ` · ${fmtPlaylistTotalTime(masterPl.trackIds, getTrack)}` : ''}
           </span>
         </div>
       </div>
@@ -145,7 +141,7 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
                 <span className="sp-pl-text">
                   <span className="sp-pl-name">{pl.name}</span>
                   <span className="sp-pl-count">
-                    {pl.trackIds.length} {PLAIN.tracks} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)}
+                    {pl.trackIds.length} {PLAIN.tracks}
                   </span>
                 </span>
               </button>

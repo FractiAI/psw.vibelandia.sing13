@@ -83,6 +83,11 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
 
 
+  const totalTimeLabel = useMemo(
+    () => fmtPlaylistTotalTime(pl?.trackIds ?? [], getTrack),
+    [pl?.trackIds, getTrack],
+  );
+
   const rows = useMemo(() => {
 
     const q = search.trim().toLowerCase();
@@ -127,18 +132,18 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
 
 
+  if (!pl) {
+    return <p className="sp-empty">{PLAIN.pickPlaylist}</p>;
+  }
+
   const currentTrack = currentTrackId ? getTrack(currentTrackId) : undefined;
-
   const isMaster = isMasterPlaylist(pl.id);
-
   const heroTitle = currentTrack?.title ?? (isMaster ? SONIC_CATALOG_DISPLAY_NAME : pl.name);
-
   const heroDescription = currentTrack?.description?.trim()
     ? currentTrack.description
     : isMaster
       ? SONIC_SINGULARITY_DESCRIPTION
       : pl.description;
-
   const heroStats = currentTrack
     ? [
         currentTrack.artist?.trim() || undefined,
@@ -175,26 +180,25 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
 
 
-  if (!pl) {
-
-    return <p className="sp-empty">{PLAIN.pickPlaylist}</p>;
-
-  }
-
-
-
   return (
 
     <section className="sp-listen">
 
-      <header className="sp-hero">
+      <header className="sp-hero sp-hero--compact">
 
         <div
           className={`sp-hero-cover${isMaster ? ' sp-hero-cover--sonic' : ''}`}
           aria-hidden
         >
           {isMaster ? (
-            <img src={SONIC_SINGULARITY_HERO_SRC} alt="" width={232} height={232} />
+            <img
+              src={SONIC_SINGULARITY_HERO_SRC}
+              alt=""
+              width={120}
+              height={120}
+              loading="lazy"
+              decoding="async"
+            />
           ) : (
             '🎧'
           )}
@@ -208,7 +212,9 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
           <h1 className="sp-hero-title">{heroTitle}</h1>
 
-          <p className="sp-hero-desc">{heroDescription}</p>
+          {(currentTrack || !isMaster) && heroDescription ? (
+            <p className="sp-hero-desc">{heroDescription}</p>
+          ) : null}
 
           <p className="sp-hero-stats">
             {heroStats}

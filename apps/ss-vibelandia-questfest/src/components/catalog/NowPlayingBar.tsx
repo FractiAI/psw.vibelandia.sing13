@@ -92,25 +92,41 @@ export function NowPlayingBar({
     gateArmedRef.current = true;
     setError(null);
 
-    void (async () => {
-      try {
-        const url = await resolvePlaybackUrl(track);
-        if (cancelled || !mediaRef.current) return;
+    const streamUrl = track.videoSrc || track.src;
+    const useStreamFirst = !!streamUrl && !track.downloadedLocally && !track.localMediaKey;
 
-        if (isVideo && el instanceof HTMLVideoElement) {
-          el.src = track.videoSrc || url;
-          el.load();
-          bg?.pause();
-          bg?.removeAttribute('src');
-        } else if (el instanceof HTMLAudioElement) {
-          el.src = url;
-          el.load();
-        }
-        el.volume = gain;
-      } catch {
-        if (!cancelled) setError('Could not load this track.');
+    if (useStreamFirst) {
+      if (isVideo && el instanceof HTMLVideoElement) {
+        el.src = track.videoSrc || streamUrl;
+        el.load();
+        bg?.pause();
+        bg?.removeAttribute('src');
+      } else if (el instanceof HTMLAudioElement) {
+        el.src = streamUrl;
+        el.load();
       }
-    })();
+      el.volume = gain;
+    } else {
+      void (async () => {
+        try {
+          const url = await resolvePlaybackUrl(track);
+          if (cancelled || !mediaRef.current) return;
+
+          if (isVideo && el instanceof HTMLVideoElement) {
+            el.src = track.videoSrc || url;
+            el.load();
+            bg?.pause();
+            bg?.removeAttribute('src');
+          } else if (el instanceof HTMLAudioElement) {
+            el.src = url;
+            el.load();
+          }
+          el.volume = gain;
+        } catch {
+          if (!cancelled) setError('Could not load this track.');
+        }
+      })();
+    }
 
     const onTime = () => {
       const t = el.currentTime;

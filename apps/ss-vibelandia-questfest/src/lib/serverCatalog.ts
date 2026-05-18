@@ -13,7 +13,7 @@ import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 const DEFAULT_CATALOG_PIPE = 'https://psw-vibelandia-sing13.vercel.app';
 
 const STATIC_CATALOG = '/media/catalog/catalog.json';
-const FETCH_MS = 4_000;
+const FETCH_MS = 2_500;
 const UPLOAD_API = '/api/catalog-upload';
 
 export const MAX_UPLOAD_BYTES = Math.floor(4.5 * 1024 * 1024);

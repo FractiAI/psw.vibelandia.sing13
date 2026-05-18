@@ -27,20 +27,24 @@ function revokeUrl(trackId: string) {
   }
 }
 
-/** Prefer device copy when user downloaded; otherwise stream from server URL. */
+/** Stream URL first (Spotify-style). IndexedDB only when user explicitly downloaded. */
 export async function resolvePlaybackUrl(track: TrackDef): Promise<string> {
-  if (track.localMediaKey || track.downloadedLocally) {
-    const key = track.localMediaKey ?? localMediaKeyFor(track.id);
-    const blob = await loadBlob(key);
-    if (blob) {
-      revokeUrl(track.id);
-      const url = URL.createObjectURL(blob);
-      blobUrlCache.set(track.id, url);
-      return url;
-    }
+  const stream = track.videoSrc || track.src;
+
+  if (!track.downloadedLocally && !track.localMediaKey) {
+    if (!stream) throw new Error('no_playback_source');
+    return stream;
   }
 
-  const stream = track.videoSrc || track.src;
+  const key = track.localMediaKey ?? localMediaKeyFor(track.id);
+  const blob = await loadBlob(key);
+  if (blob) {
+    revokeUrl(track.id);
+    const url = URL.createObjectURL(blob);
+    blobUrlCache.set(track.id, url);
+    return url;
+  }
+
   if (!stream) throw new Error('no_playback_source');
   return stream;
 }

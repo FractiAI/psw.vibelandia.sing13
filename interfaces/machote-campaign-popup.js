@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
+  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v3';
   var PASS_TOKEN_KEY = 'qv-pass-token';
   var LOCAL_HONOR_KEY = 'qv-local-monthly-honor';
   var CAPTAIN_KEY = 'qv-captain-unlocked';
@@ -27,9 +27,9 @@
     }
   }
 
-  function isDismissed() {
+  function isDismissedThisSession() {
     try {
-      return localStorage.getItem(STORAGE_KEY) === '1';
+      return sessionStorage.getItem(SESSION_DISMISS_KEY) === '1';
     } catch (e) {
       return false;
     }
@@ -37,7 +37,7 @@
 
   function dismiss() {
     try {
-      localStorage.setItem(STORAGE_KEY, '1');
+      sessionStorage.setItem(SESSION_DISMISS_KEY, '1');
     } catch (e) {
       /* ignore */
     }
@@ -45,7 +45,7 @@
 
   function clearDismissed() {
     try {
-      localStorage.removeItem(STORAGE_KEY);
+      sessionStorage.removeItem(SESSION_DISMISS_KEY);
     } catch (e) {
       /* ignore */
     }
@@ -64,32 +64,18 @@
     return false;
   }
 
-  function shouldAutoShow() {
+  function shouldAutoShow(forceCampaign) {
+    if (forceCampaign) return true;
     if (hasMembersAccess()) return false;
-    if (isDismissed()) return false;
+    if (isDismissedThisSession()) return false;
     return true;
-  }
-
-  function whenI18nReady(cb) {
-    if (window.__VIBELANDIA_I18N__) {
-      cb();
-      return;
-    }
-    var attempts = 0;
-    var timer = window.setInterval(function () {
-      attempts += 1;
-      if (window.__VIBELANDIA_I18N__ || attempts > 80) {
-        window.clearInterval(timer);
-        cb();
-      }
-    }, 50);
   }
 
   function init() {
     var root = document.getElementById('machote-campaign-modal');
     if (!root) return;
 
-    consumeCampaignResetFromUrl();
+    var forceCampaign = consumeCampaignResetFromUrl();
 
     var backdrop = root.querySelector('[data-machote-dismiss]');
     var closeBtn = root.querySelector('.machote-campaign-close');
@@ -130,9 +116,15 @@
       if (ev.key === 'Escape') closeModal(true);
     });
 
-    whenI18nReady(function () {
-      if (shouldAutoShow()) openModal();
-    });
+    function maybeOpen() {
+      if (shouldAutoShow(forceCampaign)) openModal();
+    }
+
+    if (document.readyState === 'complete') {
+      maybeOpen();
+    } else {
+      window.addEventListener('load', maybeOpen, { once: true });
+    }
   }
 
   window.MachoteCampaignPopup = {

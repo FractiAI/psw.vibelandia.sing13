@@ -1970,6 +1970,26 @@ a.voxel-btn {
   min-width: 0;
 }
 
+.sp-hero--compact {
+  padding: 1rem 0 0.75rem;
+  min-height: 0;
+  gap: 1rem;
+}
+
+.sp-hero--compact .sp-hero-cover {
+  width: 120px;
+  height: 120px;
+  font-size: 2rem;
+}
+
+.sp-hero--compact .sp-hero-title {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.sp-hero--compact .sp-hero-actions {
+  margin-top: 0.65rem;
+}
+
 .sp-hero-meta {
   min-width: 0;
   flex: 1 1 auto;

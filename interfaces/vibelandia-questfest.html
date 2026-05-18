@@ -294,6 +294,10 @@
       background: rgba(10, 12, 18, 0.9);
     }
     .qf-crew-portrait--album { object-position: center; }
+    .qf-crew-portrait--valetpru {
+      object-position: center 32%;
+      border-color: rgba(232, 184, 109, 0.5);
+    }
     .qf-crew-card-body { min-width: 0; flex: 1; }
     .qf-crew-card-body p { margin-bottom: 0; max-width: none; }
     .qf-crew strong { color: #e8edf5; }
@@ -505,6 +509,37 @@
     .qf-build-notice p { margin: 0 auto; max-width: 42rem; }
     .qf-build-notice strong { color: var(--gold-hi); }
 
+    .qf-deck-actions {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      padding: 0.55rem 1rem;
+      background: rgba(6, 8, 13, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+    .qf-deck-actions .btn {
+      flex: 1 1 auto;
+      min-width: 9rem;
+      max-width: 16rem;
+      text-align: center;
+      justify-content: center;
+    }
+    .btn-pass {
+      background: linear-gradient(180deg, #f0d4a0, #d4af37);
+      color: #1a120c;
+      border-color: #c49a3c;
+      font-weight: 800;
+    }
+    .btn-pass:hover {
+      filter: brightness(1.06);
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body>
@@ -513,6 +548,11 @@
   <div class="qf-build-notice" role="status">
     <p data-i18n-html="qf.buildNoticeHtml"><strong>Build in progress.</strong> We are finishing the QUESTFEST top deck and Sovereign Player — give us a few days to get uploads, catalog, and playback working just right. Thank you for your patience.</p>
   </div>
+
+  <nav class="qf-deck-actions" aria-label="Listen and members pass">
+    <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a>
+    <a class="btn btn-pass" href="/interfaces/questfest-bridge/?boarding=1#/bridge" data-i18n="qf.btnMembersPass">Members pass · $16.18/mo</a>
+  </nav>
 
   <header class="hero">
     <div>
@@ -523,9 +563,8 @@
         <span class="nav-here">QUESTFEST</span><span class="sep" aria-hidden="true">·</span><a href="/interfaces/fractiai-digital-pru.html" data-i18n="qf.quicklinkTalk">Under the hood</a><span class="sep" aria-hidden="true">·</span><a href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
       </nav>
       <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
-      <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Basenet</strong>. This page is the mirror on the cloud.</p>
+      <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Basenet</strong>. Each layer card below is a short plain guide.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnSwampVibe">Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass</a>
         <a class="btn btn-ghost" href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
         <a class="btn btn-ghost" href="/interfaces/fractiai-digital-pru.html" data-i18n="qf.btnHood">Look under the hood</a>
       </div>
@@ -537,7 +576,6 @@
     <section id="qf-nest-section" aria-labelledby="qf-nest-h2">
       <h2 id="qf-nest-h2" data-i18n="qf.nestHead">YOU ARE HERE</h2>
       <p class="lede-block" data-i18n-html="qf.nestLedeHtml"><strong>Sonic Singularity Sing! 13</strong> is the cloud mirror; <strong>Layer 9</strong> adds the Goldilocks Syntheverse Beehive Residency — Old School Protocol, contact PL Taino, 2-week test drive.</p>
-      <p class="nest-ladder-intro" data-i18n="qf.nestTapHint">Select any layer below — each opens an expanded plain-language guide.</p>
       <ol class="nest-ladder" role="list">
         <li class="nest-card">
           <a class="nest-card__link" href="/interfaces/nesting/nest-basenet-genesis.html" data-i18n="qf.nest7">Basenet · the ground floor</a>
@@ -568,9 +606,6 @@
           <span class="nest-card__badge" data-i18n="qf.nestLatestLayer">Latest layer</span>
         </li>
       </ol>
-      <p class="nest-ladder-extra">
-        <a href="/interfaces/goldilocks-beehive-residency.html" data-i18n="qf.campaignResidencyCta">Goldilocks Syntheverse Beehive · walkthrough</a>
-      </p>
     </section>
 
     <section aria-labelledby="qf-score-h2">
@@ -615,6 +650,17 @@
   </div>
 
   <section id="main" class="quick-wrap">
+    <aside class="qf-feature" aria-labelledby="qf-machote-pr-title">
+      <a class="main" href="/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html">
+        <span class="badge" data-i18n="qf.machotePrBadge">PRESS · Machote Moderno</span>
+        <time datetime="2026-05-16" data-i18n="qf.machotePrDate">May 16, 2026</time>
+        <h3 id="qf-machote-pr-title" data-i18n="qf.machotePrTitle">Magazine launches members-only catalog pass &amp; Goldilocks Beehive residency</h3>
+        <p class="teaser-body" data-i18n-html="qf.machotePrHtml">Two special offers for <strong>Machote Moderno followers</strong> — <strong>$16.18/mo</strong> Master Music Catalog honor pass and <strong>Layer 9 Beehive EcoReset</strong> via Old School Protocol with PL Taino. Fair Exchange, no Stripe.</p>
+        <span class="cta" data-i18n="qf.machotePrCta">Read full press release →</span>
+      </a>
+      <a class="archive" href="/interfaces/vibelandia-questfest.html?campaign=1">View live members offers</a>
+    </aside>
+
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-etcon-title">
       <a class="main" href="/interfaces/etcon-reno-desert.html">
         <div class="qf-feature-art">
@@ -697,9 +743,17 @@
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/valetpru.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <img
+          class="qf-crew-portrait qf-crew-portrait--valetpru"
+          src="/interfaces/assets/questfest-crew/valetpru-pl-taino.png"
+          alt="PL Taino on Machote Moderno Magazine — Holographic VALETPRU"
+          width="152"
+          height="152"
+          loading="lazy"
+          decoding="async"
+        />
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewPruHtml"><strong>Holographic VALETPRU</strong> — the <strong>valet layer</strong> for the stack: greets attention, routes asks, holds Fair Exchange language, and mirrors the machinery to guests without breaking the service spell. Same Pru spine you meet in the long readers — here as <strong>door, not decoration</strong>.</p>
+          <p data-i18n-html="qf.crewPruHtml"><strong>Holographic VALETPRU (PL Taino)</strong> — the <strong>valet layer</strong> for the stack: greets attention, routes asks, holds Fair Exchange language, and mirrors the machinery to guests without breaking the service spell. Same Pru spine you meet on the <strong>Machote Moderno Magazine</strong> cover — here as <strong>door, not decoration</strong>.</p>
         </div>
       </article>
       <article class="qf-crew-card">

@@ -9,10 +9,9 @@ import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import type { BoardingRequestBody } from '@/lib/api';
 
-/** Modals + session. Library syncs from server like a standard streaming app. */
+/** Modals + session only — catalog loads from cache/bundle; Refresh pulls server updates. */
 export function MediaShell() {
   const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
-  const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
   const boardingError = useSessionStore((s) => s.boardingError);
@@ -41,11 +40,7 @@ export function MediaShell() {
       setBoardingOpen(true);
     }
 
-    const t = window.setTimeout(() => {
-      void syncLibraryFromServer();
-    }, 0);
-    return () => window.clearTimeout(t);
-  }, [hydrateSession, setBoardingOpen, syncLibraryFromServer]);
+  }, [hydrateSession, setBoardingOpen]);
 
   const handleBoarding = async (payload: BoardingRequestBody) => {
     const ok = await completeBoarding(payload);

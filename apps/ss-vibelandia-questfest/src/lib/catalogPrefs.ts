@@ -12,16 +12,25 @@ export interface CatalogPrefs {
   activePlaylistId: string;
 }
 
-export function loadCatalogPrefs(): CatalogPrefs | null {
+const MAX_PREFS_BYTES = 800_000;
+
+/** v2 prefs only — avoids parsing multi‑MB legacy `hjghf-catalog-v1` on boot. */
+export function loadCatalogPrefsOnly(): CatalogPrefs | null {
   try {
     const raw = localStorage.getItem(PREFS_KEY);
-    if (raw) {
-      const o = JSON.parse(raw) as CatalogPrefs;
-      if (Array.isArray(o.playlists)) return o;
-    }
+    if (!raw || raw.length > MAX_PREFS_BYTES) return null;
+    const o = JSON.parse(raw) as CatalogPrefs;
+    if (Array.isArray(o.playlists)) return o;
   } catch {
-    /* fall through */
+    /* ignore */
   }
+  return null;
+}
+
+/** Includes one-time migration from legacy localStorage catalog. */
+export function loadCatalogPrefs(): CatalogPrefs | null {
+  const prefs = loadCatalogPrefsOnly();
+  if (prefs) return prefs;
   const legacy = loadCatalogJson<CatalogSnapshot>();
   if (!legacy?.playlists?.length) return null;
   return {

@@ -1,5 +1,5 @@
-/**
- * Machote members campaign modal — QUESTFEST top deck only (not Sovereign Player).
+﻿/**
+ * Machote members campaign modal ΓÇö QUESTFEST top deck only (not Sovereign Player).
  */
 (function () {
   'use strict';

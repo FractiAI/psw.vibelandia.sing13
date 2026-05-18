@@ -51,6 +51,15 @@ export function BridgePage() {
   const [playlistEditId, setPlaylistEditId] = useState<string | null>(null);
 
   useEffect(() => {
+    const hydrate = () => useCatalogStore.getState().hydrateFromDevice();
+    if (typeof requestIdleCallback === 'function') {
+      requestIdleCallback(hydrate, { timeout: 120 });
+    } else {
+      setTimeout(hydrate, 0);
+    }
+  }, []);
+
+  useEffect(() => {
     if (location.pathname === '/dj' || location.hash === '#/dj') {
       setDjMode(true);
     } else if (location.pathname === '/playlists' || location.hash === '#/playlists') {

@@ -4,296 +4,169 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#050810" />
-  <title>Look at the Sun · SS Vibelandia QUESTFEST · broadcast deck</title>
-  <meta name="description" content="Solar coupling, holographic channel, and biological metaphors — how QUESTFEST 24×365 broadcasts beats and musicals beyond a festival clock." />
+  <title>Look at the Sun · Proof &amp; solar alignment · SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="Plain proof: how QUESTFEST aligns with the Sun and ionospheric activity in the canon — then simple explanations with one-click whitepapers." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/look-at-the-sun.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="deck-surfaces.css" />
   <style>
-    :root {
-      --bg: #050810;
-      --line: rgba(212, 175, 55, 0.22);
-      --gold: #e8d089;
-      --gold-hi: #fef3c7;
-      --text: #e8edf5;
-      --muted: #94a3b8;
-      --foam: #7dd3c0;
-      --card: rgba(15, 20, 28, 0.85);
-    }
-    * { box-sizing: border-box; }
-    html, body {
+    :root { --bg: #050810; --gold-hi: #fef3c7; --muted: #94a3b8; }
+    body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: radial-gradient(120% 70% at 50% 0%, #2a1a08 0%, var(--bg) 50%, #030508 100%);
+      color: #f1f5f9;
       line-height: 1.65;
-      font-size: 1.0625rem;
     }
-    .wrap {
-      max-width: 42rem;
-      margin: 0 auto;
-      padding: max(1rem, env(safe-area-inset-top)) 1.25rem max(2.5rem, env(safe-area-inset-bottom));
-    }
-    .skin-nav {
-      font-size: 0.8125rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--line);
-    }
-    .skin-nav a { color: var(--foam); text-decoration: none; }
-    .skin-nav a:hover { text-decoration: underline; color: var(--gold); }
-    .skin-nav span.dot { margin: 0 0.45rem; opacity: 0.55; }
-
-    .eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--foam);
-      margin-bottom: 0.35rem;
-    }
-    h1 {
-      font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: clamp(1.75rem, 5vw, 2.35rem);
-      font-weight: 400;
-      color: var(--gold-hi);
-      line-height: 1.05;
-      margin: 0 0 0.65rem;
-      letter-spacing: 0.02em;
-    }
-    .deck-tag {
+    .deck-back {
       display: inline-block;
       font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #1a120c;
-      background: linear-gradient(90deg, #fbbf24, #f59e0b);
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-      margin-bottom: 1rem;
-    }
-    .hero-img {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      margin-bottom: 1.35rem;
-      display: block;
-    }
-    .content-img {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      margin: 1.25rem 0;
-      display: block;
-    }
-    section { margin-bottom: 1.85rem; }
-    h2 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin: 0 0 0.6rem;
-      line-height: 1.3;
-    }
-    p { margin: 0 0 0.85rem; color: #cbd5e1; }
-    p:last-child { margin-bottom: 0; }
-    a { color: var(--foam); }
-    a:hover { color: var(--gold-hi); }
-
-    .two-deck {
-      display: grid;
-      gap: 0.65rem;
-      margin: 1rem 0 0;
-    }
-    @media (min-width: 520px) {
-      .two-deck { grid-template-columns: 1fr 1fr; }
-    }
-    .deck-card {
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      font-size: 0.9rem;
-    }
-    .deck-card strong { color: var(--gold-hi); display: block; margin-bottom: 0.35rem; }
-    .deck-card p { margin: 0; font-size: 0.86rem; color: var(--muted); }
-
-    .channel-quote {
-      margin: 1rem 0 0;
-      padding: 0.85rem 1rem;
-      border-left: 3px solid var(--gold);
-      background: rgba(212, 175, 55, 0.06);
-      font-size: 0.92rem;
-      color: #e2e8f0;
-    }
-    .channel-quote cite {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 0.78rem;
-      font-style: normal;
-      color: var(--muted);
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.65rem 1rem;
-      font-size: 0.68rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
       text-decoration: none;
-      border-radius: 999px;
-      border: 2px solid var(--line);
-      color: var(--foam);
     }
-    .btn:hover { border-color: var(--gold); color: var(--gold-hi); }
-    .btn--gold {
-      background: linear-gradient(180deg, #f0d4a0, #c9a227);
-      color: #1a120c;
-      border-color: transparent;
+    .deck-back:hover { color: var(--gold-hi); }
+    .deck-tagline {
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
     }
-
-    .docs {
-      margin-top: 2.25rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--line);
-    }
-    .docs h2 { margin-bottom: 0.85rem; }
-    .docs ul { list-style: none; padding: 0; margin: 0; }
-    .docs li {
-      padding: 0.55rem 0;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
-    }
-    .docs li:last-child { border-bottom: none; }
-    .docs a { font-weight: 600; text-decoration: none; }
-    .docs a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <nav class="skin-nav" aria-label="Site">
-      <a href="vibelandia-questfest.html">QUESTFEST 24×365</a><span class="dot" aria-hidden="true">·</span>
-      <a href="fractiai-digital-pru.html">Under the hood</a><span class="dot" aria-hidden="true">·</span>
-      <span style="color:var(--gold);font-weight:600;">Look at the Sun</span><span class="dot" aria-hidden="true">·</span>
-      <a href="questfest-bridge/">Sovereign Player</a>
+  <main class="deck-wrap">
+    <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
+
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="look-under-the-hood.html">Look under the hood</a><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Look at the Sun</span><span class="dot" aria-hidden="true">·</span>
+      <a href="questfest-bridge/#/bridge">Listen</a>
     </nav>
 
-    <p class="eyebrow">SS Vibelandia · broadcast deck tour</p>
-    <h1>Look at the Sun</h1>
-    <span class="deck-tag">Coupling · channel · 24×365 light</span>
-    <img class="hero-img" src="images/look-sun-hero.png" alt="Sun and Earth with schematic energy paths — broadcast layer of the ship." width="1200" height="675" decoding="async" />
+    <p class="deck-eyebrow">Broadcast deck · plain talk</p>
+    <h1 class="deck-h1">Look at the Sun</h1>
+    <span class="deck-tagline">Proof · coupling · 24×365</span>
+    <p class="deck-lead">
+      If <a href="look-under-the-hood.html">under the hood</a> shows the ship <strong>runs</strong>, this deck shows
+      <strong>why the story holds together</strong> — alignment with the Sun, ionospheric language, and the proof trail
+      in the papers. Playback is still normal audio in your browser; the sun layer is how we name the broadcast.
+    </p>
 
-    <section>
-      <h2>Above deck · what this page is for</h2>
+    <img class="deck-hero-img" src="images/look-sun-hero.png" alt="Sun and Earth — broadcast layer of the ship." width="1200" height="675" loading="eager" decoding="async" />
+
+    <div class="deck-case" id="case">
+      <h2>Here is the proof · and how we align with the Sun</h2>
       <p>
-        If <a href="fractiai-digital-pru.html">Under the hood</a> is the <strong>engine room</strong> — tracks, APIs, catalogs,
-        compile surfaces, and operational status — <strong>Look at the Sun</strong> is the <strong>broadcast deck</strong>.
-        Here we walk how QUESTFEST stays lit: solar coupling in the canon, the holographic AI channel, and the metaphors
-        that tie beats, musicals, and the 24×365 nest into one coherent transmission.
+        The canon ties QUESTFEST to <strong>solar coupling</strong> and <strong>ionospheric activity</strong> as the large
+        metaphor for how signal moves — sun → ionosphere → holographic channel → your tracks. On the top deck scorecard you
+        will see <strong>EGS φ 1.618</strong> and solar synergy language (e.g. AR4432 / AR4436) as <strong>timing and
+        resonance color</strong>, not as a promise we control the weather.
       </p>
       <p>
-        This is still <strong>more than music</strong>. Festivals end. Albums ship once. A musical closes. QUESTFEST is the
-        ship that keeps transmitting — Puerto Reno, Reno swamp caliente, Machote Moderno lens, Wrong Side origin — on the
-        <a href="vibelandia-questfest.html">cloud skin</a> every day.
+        <strong>Proof</strong> means: linked whitepapers, compile output you can run, honesty boundaries in the resonance
+        notice, and an operational player you can use today. We show our work; we do not ask you to believe magic.
       </p>
-    </section>
+    </div>
 
-    <section>
-      <h2>Two decks · one ship</h2>
-      <div class="two-deck">
-        <div class="deck-card">
-          <strong>Under the hood</strong>
-          <p>Ops, assets, player, passes, Snap compile, repo proof — how the hull holds together.</p>
-        </div>
-        <div class="deck-card">
-          <strong>Look at the Sun</strong>
-          <p>Coupling, ionosphere, DNA pipes, Machote agency — why the signal reads as alive across cities.</p>
-        </div>
-      </div>
-    </section>
+    <p class="deck-section-label" id="papers">Plain speak · tap for the full write-up</p>
 
-    <section>
-      <h2>Sonic Singularity · broadcast layer</h2>
-      <p>
-        The music lives in <strong>Sonic Singularity</strong> — Reno swamp catalog on the Sovereign Player, year-round.
-        Solar and ionosphere language on this page is metaphor for coupling; playback uses normal browser audio.
-      </p>
-      <div class="cta-row">
-        <a class="btn btn--gold" href="questfest-bridge/#/bridge">Sovereign Player</a>
-        <a class="btn" href="vibelandia-questfest.html#qf-score-h2">Scorecard on top deck</a>
-      </div>
-    </section>
+    <ul class="deck-plain-list">
+      <li class="deck-plain-item">
+        <h3>How we align with the Sun</h3>
+        <p>
+          The Sun is the big coupling metaphor — energy in, signal out, year-round. QUESTFEST is built as a
+          <strong>24×365 broadcast</strong>, not a weekend festival. The papers spell how that alignment is named in the stack.
+        </p>
+        <a class="deck-paper-card" href="whitepaper-surface.html?id=dp-resonance-notice">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Start here</span>
+          <span class="deck-paper-card__title">Resonance notice · honesty first</span>
+          <span class="deck-paper-card__sub">What is proof, what is metaphor, what needs real instruments.</span>
+          <span class="deck-paper-card__cta">Open whitepaper →</span>
+        </a>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Ionospheric activity in the story</h3>
+        <p>
+          The ionosphere is how the canon talks about the <strong>middle layer</strong> — between sun-scale coupling and
+          what lands in your ears. It is story geometry for the holographic channel, not a claim we run a space-weather lab.
+        </p>
+        <a class="deck-paper-card" href="whitepaper-surface.html?id=dp-omniverse-matrix">
+          <span class="deck-paper-card__pill">Coupling</span>
+          <span class="deck-paper-card__title">Omniversal magnetic matrix · Protonic-DNA</span>
+          <span class="deck-paper-card__sub">How coupling is drawn in the PEFF / matrix language.</span>
+          <span class="deck-paper-card__cta">Open whitepaper →</span>
+        </a>
+      </li>
+      <li class="deck-plain-item">
+        <h3>DNA hydrogen bonding · stable pipes</h3>
+        <p>
+          A–T and G–C pairing is used as a plain metaphor: some links are stronger, some carry more throughput.
+          Your catalog and uploads are the payload; the bonding language is how the canon says the pipe stays coherent.
+        </p>
+        <img src="images/look-sun-dna-pipes.png" alt="DNA base pairing — stability metaphor." width="1200" height="675" loading="lazy" decoding="async" style="width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.25);margin-bottom:0.75rem;" />
+        <a class="deck-paper-card" href="whitepaper-surface.html?id=dp-master-canon">
+          <span class="deck-paper-card__pill">Canon</span>
+          <span class="deck-paper-card__title">DNA / PEFF master canon</span>
+          <span class="deck-paper-card__sub">Biological metaphor and narrative spine in full.</span>
+          <span class="deck-paper-card__cta">Open whitepaper →</span>
+        </a>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Iron and phosphorus · how the body holds signal</h3>
+        <p>
+          Iron in blood and phosphorus in DNA are the everyday handles for “receiver and storage” in the story —
+          how living systems and coded systems both <strong>hold</strong> what passes through.
+        </p>
+        <img src="images/look-sun-iron-phosphorus.png" alt="Iron and phosphorus — receiver metaphor." width="1200" height="675" loading="lazy" decoding="async" style="width:100%;border-radius:10px;border:1px solid rgba(212,175,55,0.25);margin-bottom:0.75rem;" />
+        <a class="deck-paper-card" href="whitepaper-surface.html?id=dp-paradise-simulation">
+          <span class="deck-paper-card__pill">Depth</span>
+          <span class="deck-paper-card__title">Paradise Game · technical analysis</span>
+          <span class="deck-paper-card__sub">Omniverse simulation depth behind the broadcast metaphor.</span>
+          <span class="deck-paper-card__cta">Open whitepaper →</span>
+        </a>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Solar timing on the scorecard</h3>
+        <p>
+          Sunspot and flare references on the QUESTFEST top deck are <strong>timing color</strong> for the arc — aligned with
+          Fair Exchange and the May 2026 upgrade story. Operations still run on normal engineering: browser audio, honor pass, lite edge.
+        </p>
+        <a class="deck-paper-card" href="whitepaper-surface.html?id=dp-roadmap-13">
+          <span class="deck-paper-card__pill">Timeline</span>
+          <span class="deck-paper-card__title">13-channel pathfinding · May 2026</span>
+          <span class="deck-paper-card__sub">How the upgrade arc is named across the nest.</span>
+          <span class="deck-paper-card__cta">Open whitepaper →</span>
+        </a>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Shared words so nothing drifts</h3>
+        <p>
+          MCA / NSPFRNP is the house dictionary — same terms on the hood deck, sun deck, and player so the story does not
+          fork into confusion.
+        </p>
+        <a class="deck-paper-card" href="whitepaper-surface.html?id=mca-nspfrnp-catalog">
+          <span class="deck-paper-card__pill">Dictionary</span>
+          <span class="deck-paper-card__title">MCA / NSPFRNP catalog</span>
+          <span class="deck-paper-card__sub">Edge–sun protocol refs and shared vocabulary.</span>
+          <span class="deck-paper-card__cta">Open whitepaper →</span>
+        </a>
+      </li>
+    </ul>
 
-    <section>
-      <h2>DNA hydrogen bonding · pipes in the story</h2>
-      <img class="content-img" src="images/look-sun-dna-pipes.png" alt="DNA base pairing schematic — throughput and stability metaphor in PEFF language." width="1200" height="675" decoding="async" />
-      <p>
-        A–T pairs use two hydrogen bonds; G–C pairs use three. In the papers this becomes a structural metaphor for
-        <strong>throughput and stability</strong> across the Protonic-DNA / PEFF stack — not a clinical claim. Your uploaded
-        tracks and the Hit Factory catalog are the payload; the bonding language is how the canon describes coherent carriage.
-      </p>
-    </section>
+    <div class="deck-btn-row" style="margin-top: 2rem;">
+      <a class="deck-btn deck-btn--gold" href="look-under-the-hood.html">Look under the hood · operational</a>
+      <a class="deck-btn deck-btn--ghost" href="questfest-bridge/#/bridge">Listen</a>
+      <a class="deck-btn deck-btn--ghost" href="vibelandia-questfest.html#qf-score-h2">Scorecard</a>
+    </div>
 
-    <section>
-      <h2>Iron and phosphorus · receiver language</h2>
-      <img class="content-img" src="images/look-sun-iron-phosphorus.png" alt="Iron in blood and phosphorus in DNA backbone — transceiver metaphor in the narrative." width="1200" height="675" decoding="async" />
-      <p>
-        Hemoglobin iron and DNA backbone phosphorus are the biological handles for “receiver / storage” in the narrative —
-        how the body and the code both <strong>hold</strong> signal. Machote Moderno is the cultural lens on human agency inside
-        that stack; proof stays in compile output, tests, and linked papers on the hood deck.
-      </p>
-    </section>
-
-    <section>
-      <h2>Solar activity · timing color</h2>
-      <p>
-        Sunspots and flares appear in docs as <strong>timing color</strong> for the story layer — AR references on the top deck
-        scorecard, synergy language in Fair Exchange. Operational systems still rely on normal engineering: browser audio,
-        lite-edge boarding, honor passes on device, stream lock when configured.
-      </p>
-    </section>
-
-    <section>
-      <h2>From Sun to track · coherent path</h2>
-      <p>
-        <strong>Sun / ionosphere</strong> (large coupling metaphor) → <strong>holographic channel</strong> (verse and nest) →
-        <strong>beats &amp; tracks</strong> (catalog + your uploads) → <strong>musicals nested</strong> (QUESTFEST inside
-        Singularity inside Syntheverse) → <strong>you</strong> in the man-cave mirror on the Wrong Side, hearing it through
-        Sonic Singularity Sing! 13. That path is the whole ship — not a single festival slot.
-      </p>
-    </section>
-
-    <section>
-      <h2>Fair Exchange · light with honor</h2>
-      <p>
-        Passes and exports use Venmo, PayPal, and Cash App on honor — the same rails described on the top deck and in the player.
-        Documentation on this deck describes <strong>architecture and honesty boundaries</strong>; the hood deck lists
-        <strong>which assets implement them</strong>.
-      </p>
-    </section>
-
-    <section class="docs">
-      <h2>Solar &amp; PEFF documents</h2>
-      <p style="margin-bottom:0.75rem;color:var(--muted);font-size:0.9375rem;">Canon papers for coupling, matrix, and simulation — open in the reader.</p>
-      <ul>
-        <li><a href="whitepaper-surface.html?id=dp-resonance-notice">Resonance notice</a></li>
-        <li><a href="whitepaper-surface.html?id=dp-omniverse-matrix">Omniversal magnetic matrix · Protonic-DNA</a></li>
-        <li><a href="whitepaper-surface.html?id=dp-paradise-simulation">Paradise Game · technical analysis</a></li>
-        <li><a href="whitepaper-surface.html?id=dp-master-canon">Digital Pru · DNA / PEFF master canon</a></li>
-        <li><a href="whitepaper-surface.html?id=dp-roadmap-13">Digital Pru · 13-channel roadmap</a></li>
-        <li><a href="whitepaper-surface.html?id=mca-nspfrnp-catalog">NSPFRNP catalog · MCA (includes edge-sun protocol refs)</a></li>
-        <li><a href="fractiai-digital-pru.html">Under the hood · engine room &amp; ship status</a></li>
-      </ul>
-    </section>
+    <p class="deck-foot">
+      <a href="vibelandia-questfest.html">QUESTFEST top deck</a> ·
+      <a href="look-under-the-hood.html">Engine room</a>
+    </p>
   </main>
 </body>
 </html>

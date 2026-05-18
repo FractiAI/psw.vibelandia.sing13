@@ -10,7 +10,7 @@ import {
   loadDeviceDirHandle,
   saveDeviceDirHandle,
 } from '@/lib/catalogPersistence';
-import { readBundledCatalog } from '@/lib/bundledCatalog';
+import { hydrateCatalogFromDevice, instantBootSnapshot } from '@/lib/catalogBoot';
 import {
   loadCatalogCache,
   loadCatalogPrefs,
@@ -94,6 +94,9 @@ interface CatalogState {
   refreshFromServer: () => Promise<void>;
   /** After user downloads a track for offline playback. */
   markTrackDownloaded: (trackId: string) => void;
+  /** Restore device cache/prefs after instant empty boot. */
+  hydrateFromDevice: () => void;
+  deviceHydrated: boolean;
   persist: () => void;
 }
 
@@ -215,14 +218,15 @@ async function addFileAsTrack(
   };
 }
 
-function bootFromCache() {
-  const server = loadCatalogCache() ?? readBundledCatalog();
-  const prefs = loadCatalogPrefs();
-  const downloaded = loadDownloadedTrackIds();
-  return applyServerCatalog(server, prefs, downloaded);
+function snapshotToState(snapshot: CatalogSnapshot) {
+  return {
+    tracks: snapshot.tracks,
+    playlists: snapshot.playlists,
+    activePlaylistId: snapshot.activePlaylistId,
+  };
 }
 
-const bootCatalog = bootFromCache();
+const bootCatalog = snapshotToState(instantBootSnapshot());
 
 export const useCatalogStore = create<CatalogState>((set, get) => ({
   catalogSyncing: false,
@@ -231,7 +235,20 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   tracks: bootCatalog.tracks,
   playlists: bootCatalog.playlists,
   activePlaylistId: bootCatalog.activePlaylistId,
+  deviceHydrated: false,
   search: '',
+
+  hydrateFromDevice: () => {
+    if (get().deviceHydrated) return;
+    const snapshot = hydrateCatalogFromDevice(syncMasterPlaylistWithTracks);
+    const applied = snapshotToState(snapshot);
+    set({
+      tracks: applied.tracks,
+      playlists: applied.playlists,
+      activePlaylistId: applied.activePlaylistId,
+      deviceHydrated: true,
+    });
+  },
 
   setView: (v) => set({ view: v }),
   setDjMode: (on) => set({ djMode: on, view: on ? 'dj' : 'catalog' }),

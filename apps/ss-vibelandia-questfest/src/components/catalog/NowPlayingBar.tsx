@@ -43,7 +43,7 @@ export function NowPlayingBar({
   const setGain = usePlaybackStore((s) => s.setGain);
 
   const getTrack = useCatalogStore((s) => s.getTrack);
-  const getActivePlaylist = useCatalogStore((s) => s.getActivePlaylist);
+  const pl = useActivePlaylist();
 
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);

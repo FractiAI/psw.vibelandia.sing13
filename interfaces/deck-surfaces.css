@@ -1,0 +1,271 @@
+/* Shared deck styling — Look under the hood, Look at the Sun, member surfaces */
+.deck-wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: calc(1.25rem + env(safe-area-inset-top)) 1.25rem 3rem;
+}
+.deck-skin-nav {
+  font-size: 0.8125rem;
+  color: var(--muted, #94a3b8);
+  margin-bottom: 1.35rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line, rgba(212, 175, 55, 0.22));
+}
+.deck-skin-nav a {
+  color: var(--foam, #2dd4bf);
+  text-decoration: none;
+  font-weight: 600;
+}
+.deck-skin-nav a:hover { color: var(--gold-hi, #fef3c7); text-decoration: underline; }
+.deck-skin-nav .dot { margin: 0 0.45rem; opacity: 0.55; }
+.deck-skin-nav .here { color: var(--gold-hi, #fef3c7); font-weight: 700; }
+
+.deck-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--foam, #2dd4bf);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.deck-h1 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  line-height: 1.02;
+  color: var(--gold-hi, #fef3c7);
+  font-weight: 400;
+  margin: 0 0 0.65rem;
+  letter-spacing: 0.02em;
+}
+.deck-tagline {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a120c;
+  background: linear-gradient(90deg, #5eead4, #2dd4bf);
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.deck-lead {
+  font-size: 1.08rem;
+  color: #e2e8f0;
+  margin-bottom: 1.15rem;
+  line-height: 1.55;
+}
+
+.deck-case {
+  margin: 0 0 1.75rem;
+  padding: 1.1rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: linear-gradient(145deg, rgba(45, 212, 191, 0.08), rgba(212, 175, 55, 0.06));
+}
+.deck-case h2 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--gold-hi, #fef3c7);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+.deck-case p {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.deck-case p + p { margin-top: 0.65rem; }
+
+.deck-plain-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+.deck-plain-item h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold-hi, #fef3c7);
+  margin: 0 0 0.45rem;
+  line-height: 1.25;
+}
+.deck-plain-item p {
+  margin: 0 0 0.75rem;
+  color: #cbd5e1;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.deck-plain-item .deck-paper-card {
+  max-width: 100%;
+}
+.deck-section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--foam, #2dd4bf);
+  margin: 2rem 0 0.75rem;
+  font-weight: 700;
+}
+.deck-body p {
+  margin: 0 0 0.85rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+.deck-body ul.plain {
+  margin: 0 0 1rem 1.1rem;
+  color: #cbd5e1;
+}
+.deck-body ul.plain li { margin-bottom: 0.4rem; }
+.deck-body ul.plain strong { color: #e2e8f0; }
+
+.deck-hero-img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line, rgba(212, 175, 55, 0.35));
+  margin: 0 0 1.35rem;
+  display: block;
+}
+
+.deck-paper-grid {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.5rem 0 0;
+  list-style: none;
+  padding: 0;
+}
+@media (min-width: 520px) {
+  .deck-paper-grid--two { grid-template-columns: 1fr 1fr; }
+}
+
+.deck-paper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: linear-gradient(145deg, rgba(26, 32, 44, 0.95), rgba(10, 14, 22, 0.98));
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  min-height: 100%;
+}
+.deck-paper-card:hover {
+  border-color: var(--gold, #d4af37);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  color: inherit;
+}
+.deck-paper-card:focus-visible {
+  outline: 2px solid var(--foam, #2dd4bf);
+  outline-offset: 3px;
+}
+.deck-paper-card__pill {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold, #d4af37);
+}
+.deck-paper-card__pill--featured {
+  color: #1a120c;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+}
+.deck-paper-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-hi, #fef3c7);
+  line-height: 1.25;
+}
+.deck-paper-card__sub {
+  font-size: 0.86rem;
+  color: var(--muted, #94a3b8);
+  line-height: 1.45;
+  flex: 1;
+}
+.deck-paper-card__cta {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--foam, #2dd4bf);
+  margin-top: 0.25rem;
+}
+.deck-paper-card:hover .deck-paper-card__cta { color: var(--gold-hi, #fef3c7); }
+
+.deck-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.deck-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 2px solid transparent;
+}
+.deck-btn--gold {
+  background: linear-gradient(180deg, #f0d4a0, #c9a227);
+  color: #1a120c;
+}
+.deck-btn--gold:hover { filter: brightness(1.06); color: #1a120c; }
+.deck-btn--ghost {
+  border-color: rgba(212, 175, 55, 0.4);
+  color: var(--foam, #2dd4bf);
+}
+.deck-btn--ghost:hover {
+  border-color: var(--gold, #d4af37);
+  color: var(--gold-hi, #fef3c7);
+}
+
+.deck-two-card {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+}
+@media (min-width: 520px) {
+  .deck-two-card { grid-template-columns: 1fr 1fr; }
+}
+.deck-mini-card {
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(15, 20, 28, 0.85);
+}
+.deck-mini-card strong {
+  display: block;
+  color: var(--gold-hi, #fef3c7);
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+.deck-mini-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted, #94a3b8);
+}
+
+.deck-foot {
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+  font-size: 0.88rem;
+  color: var(--muted, #94a3b8);
+}
+.deck-foot a { font-weight: 600; color: var(--foam, #2dd4bf); }

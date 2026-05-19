@@ -190,7 +190,7 @@
       'quantum-genomic-peff': { doc: '../docs/QUANTUM_GENOMIC_VALETPRU_ASIC_EGS_PEFF_VALIDATION_2026-05-08.md', title: 'Quantum genomic · PEFF / EGS validation' },
       'integrated-modeling-layer-b': { doc: '../docs/INTEGRATED_MODELING_EGS_NODAL_LATTICE_SYNTHEVERSE_VALETPRU_ASIC_2026-05-06.md', title: 'Integrated modeling · Layer B' },
       'valetpru-agent-24x365': { doc: '../docs/VALETPRU_AGENT_24X365_OPERATION_MODE_2026-05-06.md', title: 'VALETPRU-AGENT · 24×365 mode' },
-      'sing13-edge-onboarding': { doc: '../SING13_EDGE_ONBOARDING.md', title: 'Sonic Singularity Sing! 13 · Edge onboarding' },
+      'sing13-edge-onboarding': { redirect: 'sing13-edge-onboarding.html', title: 'Sonic Singularity Sing! 13 · Edge onboarding' },
       'mca-nspfrnp-catalog': { doc: '../protocols/MCA_NSPFRNP_CATALOG.md', title: 'NSPFRNP catalog (MCA)' },
       'bbhe-repository-standard': { doc: '../BBHE_REPOSITORY_STANDARD.md', title: 'BBHE repository standard' }
     };
@@ -251,6 +251,9 @@
         var doc = q.get('doc');
         var title = q.get('title');
         if (doc && doc.endsWith('.md')) return { doc: doc, title: title };
+        if (id === 'sing13-edge-onboarding') {
+          return { redirect: 'sing13-edge-onboarding.html', title: 'Sonic Singularity Sing! 13 · Edge onboarding' };
+        }
         return null;
       }
 
@@ -268,7 +271,12 @@
       var statusEl = document.getElementById('status');
       var contentEl = document.getElementById('content');
 
-      if (!resolved || !resolved.doc.endsWith('.md')) {
+      if (resolved && resolved.redirect) {
+        window.location.replace(resolved.redirect);
+        return;
+      }
+
+      if (!resolved || !resolved.doc || !resolved.doc.endsWith('.md')) {
         titleEl.textContent = 'Document reader';
         statusEl.textContent = 'Choose a document from Under the hood or Look at the Sun.';
         return;

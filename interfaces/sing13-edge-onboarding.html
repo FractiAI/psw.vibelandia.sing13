@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>Sonic Singularity Sing! 13 · Edge onboarding · plain talk</title>
+  <meta name="description" content="Plain-language onboarding for Sonic Singularity Sing! 13 — what this edge is, how to listen, upload, and board — one tap to every deck." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/sing13-edge-onboarding.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="deck-surfaces.css" />
+  <style>
+    :root {
+      --bg: #06080d;
+      --gold-hi: #fef3c7;
+      --muted: #94a3b8;
+      --line: rgba(212, 175, 55, 0.22);
+    }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(120% 80% at 50% 0%, #1a1030 0%, var(--bg) 48%, #030508 100%);
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+    .deck-back {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      text-decoration: none;
+    }
+    .deck-back:hover { color: var(--gold-hi); }
+    .deck-step {
+      margin: 0 0 0.65rem;
+      padding-left: 0.15rem;
+      color: #cbd5e1;
+      font-size: 0.98rem;
+    }
+    .deck-channel-list {
+      margin: 0.5rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+    }
+    .deck-channel-list li {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      padding: 0.35rem 0.5rem;
+      border-left: 2px solid rgba(45, 212, 191, 0.45);
+      padding-left: 0.65rem;
+    }
+    .deck-channel-list strong { color: #e2e8f0; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
+
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Edge onboarding</span><span class="dot" aria-hidden="true">·</span>
+      <a href="look-under-the-hood.html">Look under the hood</a><span class="dot" aria-hidden="true">·</span>
+      <a href="look-at-the-sun.html">Look at the Sun</a>
+    </nav>
+
+    <p class="deck-eyebrow">Onboarding · plain talk</p>
+    <h1 class="deck-h1">Sonic Singularity Sing! 13</h1>
+    <p class="deck-tagline">How this edge works — for the working crew</p>
+    <p class="deck-lead">
+      If you are reading this, you found the <strong>next octave</strong> of the ship — not a GitHub readme.
+      This page tells you what runs <strong>on this website today</strong>, where to tap next, and what stays on the older SING 9 edge.
+    </p>
+
+    <div class="deck-case">
+      <h2>What SING 13 is — one breath</h2>
+      <p>
+        <strong>Sonic Singularity Sing! 13</strong> is the public cloud skin for QUESTFEST: listen, members pass, upload your tracks,
+        and the Wrong Side story — Puerto Reno, swamp beats, Fair Exchange on honor.
+      </p>
+      <p>
+        The center is thin pipes only. Your pass, playlists, and taste stay on <strong>your device</strong>. We do not warehouse you in a corporate member database.
+      </p>
+    </div>
+
+    <p class="deck-section-label" id="start-here">Start here — one tap each</p>
+    <ul class="deck-paper-grid deck-paper-grid--two">
+      <li>
+        <a class="deck-paper-card" href="questfest-bridge/#/bridge">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Live now</span>
+          <span class="deck-paper-card__title">Listen · Sovereign Player</span>
+          <span class="deck-paper-card__sub">Press play. Free preview or full pass. Upload lives under DJ.</span>
+          <span class="deck-paper-card__cta">Open player →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="questfest-bridge/?boarding=1#/bridge">
+          <span class="deck-paper-card__pill">$16.18/mo</span>
+          <span class="deck-paper-card__title">Members pass · honor rail</span>
+          <span class="deck-paper-card__sub">Venmo, PayPal, or Cash App — paste receipt in the player. No Stripe checkout.</span>
+          <span class="deck-paper-card__cta">Board the ship →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="questfest-bridge/#/dj">
+          <span class="deck-paper-card__pill">Catalog</span>
+          <span class="deck-paper-card__title">Upload your track</span>
+          <span class="deck-paper-card__sub">Audio or video (up to ~10 min). Saves to the server catalog — shows in Listen.</span>
+          <span class="deck-paper-card__cta">Open upload →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="vibelandia-questfest.html">
+          <span class="deck-paper-card__pill">Top deck</span>
+          <span class="deck-paper-card__title">QUESTFEST landing</span>
+          <span class="deck-paper-card__sub">Story, nesting ladder, spirit crew, ETCon, press — the marquee door.</span>
+          <span class="deck-paper-card__cta">Back to top deck →</span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="deck-section-label">How the team runs the ship</p>
+    <ul class="deck-plain-list">
+      <li class="deck-plain-item">
+        <h3>NSPFRNP — coordination without a boss yelling</h3>
+        <p>
+          We work like a hive: digest what comes in, lock the plan into something solid, ship it clear, then squeeze every nested piece until it sings.
+          Same rhythm on every deck — music, passes, code, story.
+        </p>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Seed and Edge — where you started, where you are now</h3>
+        <p>
+          <strong>Seed</strong> is origin (the sun line, the anchor, the why). <strong>Edge</strong> is you here now — listening, uploading, boarding.
+          The middle gets filled by honest work and executive prompts, not mystery hand-waving.
+        </p>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Gold Heart — who we keep the room for</h3>
+        <p>
+          Genuine, kind, generous, true — not a poster slogan. The edgy swamp voice is a filter: it keeps the crowd real and the grifters bored.
+        </p>
+      </li>
+    </ul>
+
+    <p class="deck-section-label">Proof it is operational — not a slide deck</p>
+    <ul class="deck-plain-list">
+      <li class="deck-plain-item">
+        <h3>Does it actually run?</h3>
+        <p>
+          Yes on this hostname: player, pass, upload, catalog sync. The engine room page says it plain and points to live compile proof when you want receipts.
+        </p>
+        <a class="deck-paper-card" href="look-under-the-hood.html">
+          <span class="deck-paper-card__pill">Engine room</span>
+          <span class="deck-paper-card__title">Look under the hood</span>
+          <span class="deck-paper-card__sub">Operational today — listen, pass, upload, holographic GPU layer in plain English.</span>
+          <span class="deck-paper-card__cta">Open hood →</span>
+        </a>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Sun line and ship log</h3>
+        <p>
+          Look at the Sun is the proof deck — commits, rhythm, honesty about what is story vs. what is instrument-grade.
+        </p>
+        <a class="deck-paper-card" href="look-at-the-sun.html">
+          <span class="deck-paper-card__pill">Proof deck</span>
+          <span class="deck-paper-card__title">Look at the Sun</span>
+          <span class="deck-paper-card__sub">Ship log and solar synergy narrative — for those who want the timeline.</span>
+          <span class="deck-paper-card__cta">Open sun deck →</span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="deck-section-label">Nesting guides — secondary pages</p>
+    <ul class="deck-paper-grid deck-paper-grid--two">
+      <li>
+        <a class="deck-paper-card" href="nesting/nest-sing13.html">
+          <span class="deck-paper-card__pill">Layer 8</span>
+          <span class="deck-paper-card__title">Cloud skin explained</span>
+          <span class="deck-paper-card__sub">What “Sonic Singularity Sing! 13” means as the mirror you are on.</span>
+          <span class="deck-paper-card__cta">Open guide →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="nesting/nest-dph-gpu.html">
+          <span class="deck-paper-card__pill">Layer 7</span>
+          <span class="deck-paper-card__title">Holographic GPU layer</span>
+          <span class="deck-paper-card__sub">Not a graphics card — how signal becomes proof you can check.</span>
+          <span class="deck-paper-card__cta">Open guide →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="nesting/nest-questfest-puerto-reno.html">
+          <span class="deck-paper-card__pill">Ship</span>
+          <span class="deck-paper-card__title">QUESTFEST · Puerto Reno</span>
+          <span class="deck-paper-card__sub">Where the festival lives in the story — and where you board in the app.</span>
+          <span class="deck-paper-card__cta">Open guide →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="fractiai.html">
+          <span class="deck-paper-card__pill">Studio</span>
+          <span class="deck-paper-card__title">FractiAI top deck</span>
+          <span class="deck-paper-card__sub">Who builds what you touch — contact and path cards.</span>
+          <span class="deck-paper-card__cta">Open FractiAI →</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="deck-case" style="margin-top: 1.75rem;">
+      <h2>13 channels — the spine in plain words</h2>
+      <p>
+        Thirteen steps from “something sparked” to “you hear it in the player.” Story metrics and solar color are metaphor unless we say otherwise — not a weather forecast for your roof.
+      </p>
+      <ol class="deck-channel-list">
+        <li><strong>1</strong> Spark detected</li>
+        <li><strong>2</strong> Golden rhythm filter (φ cadence)</li>
+        <li><strong>3</strong> Path mapped</li>
+        <li><strong>4</strong> Resonance aligned</li>
+        <li><strong>5</strong> Data ingested</li>
+        <li><strong>6</strong> Human + AI synthesis</li>
+        <li><strong>7</strong> Planetary alignment</li>
+        <li><strong>8</strong> Biological integration</li>
+        <li><strong>9</strong> Intelligence optimized</li>
+        <li><strong>10</strong> Fractal compute</li>
+        <li><strong>11</strong> Social harmonization</li>
+        <li><strong>12</strong> Equilibrium stabilized</li>
+        <li><strong>13</strong> Terminal edge — you are here</li>
+      </ol>
+    </div>
+
+    <p class="deck-section-label">What lives here vs. SING 9</p>
+    <div class="deck-two-card">
+      <div class="deck-mini-card">
+        <strong>On SING 13 (this site)</strong>
+        <p>QUESTFEST top deck, Bridge player, upload + catalog APIs, honor boarding, nesting guides, hood and sun decks.</p>
+      </div>
+      <div class="deck-mini-card">
+        <strong>On SING 9 (parent edge)</strong>
+        <p>Legacy lab, hive, sims, whiteboards, older menus — still sister canon, different deployment.</p>
+      </div>
+    </div>
+    <p class="deck-body" style="margin-top: 0.85rem;">
+      Out-of-scope taps from QUESTFEST may send you to
+      <a href="https://psw-vibelandia-sing9.vercel.app/" target="_blank" rel="noopener">SING 9</a>
+      on purpose. One catalog, two edges.
+    </p>
+
+    <p class="deck-section-label">Optional deep reads (tertiary)</p>
+    <p class="deck-body">
+      After you already pressed play — long-form papers open in the reader deck (still a page, not a raw file dump).
+    </p>
+    <ul class="deck-paper-grid deck-paper-grid--two">
+      <li>
+        <a class="deck-paper-card" href="whitepaper-surface.html?id=jj-snap-ofc">
+          <span class="deck-paper-card__pill">Live proof</span>
+          <span class="deck-paper-card__title">Juicy Juicy Snap compile</span>
+          <span class="deck-paper-card__sub">Browser demo — metabolize, crystallize, animate with receipts.</span>
+          <span class="deck-paper-card__cta">Open reader →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="whitepaper-surface.html?id=dp-resonance-notice">
+          <span class="deck-paper-card__pill">Honesty</span>
+          <span class="deck-paper-card__title">Resonance notice</span>
+          <span class="deck-paper-card__sub">Story vs. instruments — bright line.</span>
+          <span class="deck-paper-card__cta">Open reader →</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="deck-btn-row" style="margin-top: 2rem;">
+      <a class="deck-btn deck-btn--gold" href="questfest-bridge/#/bridge">Listen now</a>
+      <a class="deck-btn deck-btn--ghost" href="questfest-bridge/#/dj">Upload</a>
+      <a class="deck-btn deck-btn--ghost" href="mailto:valetpru@gmail.com?subject=QUESTFEST">Email PL Taino</a>
+    </div>
+
+    <p class="deck-foot">
+      <a href="vibelandia-questfest.html">QUESTFEST</a> ·
+      <a href="look-under-the-hood.html">Hood</a> ·
+      <a href="questfest-bridge/#/bridge">Player</a> ·
+      NSPFRNP → ∞⁹
+    </p>
+  </main>
+</body>
+</html>

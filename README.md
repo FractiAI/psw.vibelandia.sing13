@@ -105,7 +105,7 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **ETCon Reno Desert** (May 28–31, 2026): `/etcon` → [`interfaces/etcon-reno-desert.html`](interfaces/etcon-reno-desert.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)
 - **FractiAI top deck:** [`/interfaces/fractiai.html`](interfaces/fractiai.html) · `/fractiai/digital-pru` → [`interfaces/fractiai-digital-pru.html`](interfaces/fractiai-digital-pru.html)
-- **SING 13 onboarding:** `/sing13-edge-onboarding` → [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md)
+- **SING 13 onboarding:** `/sing13-edge-onboarding` → [`interfaces/sing13-edge-onboarding.html`](interfaces/sing13-edge-onboarding.html) (plain deck; repo stub: `SING13_EDGE_ONBOARDING.md`)
 
 ## What lives on SING 9 (parent edge — not duplicated here)
 

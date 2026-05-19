@@ -240,6 +240,11 @@
       When mainnet awards that height, we log the <strong>actual</strong> block and the <strong>score</strong> — everyone can verify.
       Not gambling, not mining income — a transparent scoreboard.
     </p>
+    <p style="font-size:0.82rem;color:#cbd5e1;">
+      <strong>How soon?</strong> The <strong>open forecast</strong> appears within minutes of deploy.
+      The first <strong>live</strong> resolved row lands when the <strong>next</strong> Bitcoin block is found (~10 min average, sometimes up to ~60 min).
+      Cron runs every <strong>5 minutes</strong>. On first visit we also <strong>backfill</strong> the last ~24 blocks (marked <em>backfill</em>) so the table is not empty.
+    </p>
     <p id="pred-stats" style="font-size:0.82rem;color:var(--muted);">Loading prediction stats…</p>
     <div id="pred-open" class="pred-open-box" aria-live="polite">—</div>
     <table class="pred-table" aria-label="Resolved predictions">
@@ -371,7 +376,8 @@
                 var won = r.wouldHaveWon
                   ? '<span class="pred-hit">' + r.wouldHaveWon.btc + ' BTC</span>'
                   : '—';
-                return '<tr><td>' + r.targetHeight + '</td><td>' +
+                var tag = r.backfill ? ' <span style="color:#94a3b8;font-size:0.65rem">backfill</span>' : '';
+                return '<tr><td>' + r.targetHeight + tag + '</td><td>' +
                   (r.forecast && r.forecast.predictedIntervalSec) + 's</td><td>' +
                   (r.actual && r.actual.intervalSec) + 's</td><td>' +
                   (sc.intervalErrorSec != null ? sc.intervalErrorSec : '—') + '</td><td>' +

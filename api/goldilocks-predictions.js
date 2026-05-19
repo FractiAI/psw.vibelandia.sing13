@@ -15,9 +15,18 @@ module.exports = async function handler(req, res) {
 
   try {
     const { runGoldilocksPulse } = await import('../lib/goldilocks-pulse.mjs');
-    const { getPredictionLedger } = await import('../lib/goldilocks-predictions.mjs');
+    const { getPredictionLedger, backfillPredictionLedger, backfillIfEmpty } = await import(
+      '../lib/goldilocks-predictions.mjs'
+    );
 
     await runGoldilocksPulse({ force: req.query?.refresh === '1' });
+
+    if (req.query?.backfill === '1') {
+      await backfillPredictionLedger({ count: Number(req.query.count) || 24 });
+    } else {
+      await backfillIfEmpty({ count: 24 });
+    }
+
     const ledger = await getPredictionLedger();
 
     return res.status(200).json({

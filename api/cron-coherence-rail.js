@@ -15,7 +15,10 @@ module.exports = async function handler(req, res) {
 
   try {
     const { runCoherenceAutopilotCycle } = await import('../lib/coherence-autopilot.mjs');
-    const out = await runCoherenceAutopilotCycle({ forcePulse: req.query?.force === '1' });
+    const out = await runCoherenceAutopilotCycle({
+      forcePulse: req.query?.force === '1',
+      backfillPredictions: req.query?.backfill !== '0',
+    });
     res.setHeader('Content-Type', 'application/json');
     return res.status(200).json({
       ok: true,

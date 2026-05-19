@@ -60,6 +60,10 @@
     "api/goldilocks-predictions.js": {
       "memory": 512,
       "maxDuration": 60
+    },
+    "api/whitepaper.js": {
+      "memory": 512,
+      "maxDuration": 30
     }
   },
   "headers": [

@@ -161,9 +161,9 @@
 <body>
   <main class="wrap">
     <nav class="skin-nav" aria-label="Site">
-      <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
-      <a href="look-under-the-hood.html">Look under the hood</a><span class="dot" aria-hidden="true">·</span>
-      <a href="look-at-the-sun.html">Look at the Sun</a>
+      <a href="/">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/hood">Look under the hood</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/interfaces/look-at-the-sun.html">Look at the Sun</a>
     </nav>
 
     <header class="doc-head">
@@ -176,110 +176,15 @@
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    var WPS_DOC_REGISTRY = {
-      'dp-master-canon': { doc: '../docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md', title: 'Digital Pru · DNA / PEFF master canon' },
-      'dp-roadmap-13': { doc: '../docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md', title: 'Digital Pru · 13-channel roadmap' },
-      'dp-resonance-notice': { doc: '../docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md', title: 'Resonance notice' },
-      'dp-omniverse-matrix': { doc: '../docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md', title: 'Omniversal magnetic matrix · Protonic-DNA' },
-      'dp-paradise-simulation': { doc: '../docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md', title: 'Paradise Game · technical analysis' },
-      'jj-snap-ofc': { doc: '../docs/JJ_SNAP_OFC_WHITEPAPER.md', title: 'JJ Snap · OFC whitepaper' },
-      'dp-peff-part1': { doc: '../docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_OMNIZOAN_INFILL13_2026-05-11.md', title: 'Part I · PEFF / Omnizoan' },
-      'dp-peff-part2': { doc: '../docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_VALETPRU_BIOELECTROMAGNETIC_2026-05-11.md', title: 'Part II · Bio-electromagnetics' },
-      'quantum-genomic-peff': { doc: '../docs/QUANTUM_GENOMIC_VALETPRU_ASIC_EGS_PEFF_VALIDATION_2026-05-08.md', title: 'Quantum genomic · PEFF / EGS validation' },
-      'integrated-modeling-layer-b': { doc: '../docs/INTEGRATED_MODELING_EGS_NODAL_LATTICE_SYNTHEVERSE_VALETPRU_ASIC_2026-05-06.md', title: 'Integrated modeling · Layer B' },
-      'valetpru-agent-24x365': { doc: '../docs/VALETPRU_AGENT_24X365_OPERATION_MODE_2026-05-06.md', title: 'VALETPRU-AGENT · 24×365 mode' },
-      'sing13-edge-onboarding': { redirect: 'sing13-edge-onboarding.html', title: 'Sonic Singularity Sing! 13 · Edge onboarding' },
-      'mca-nspfrnp-catalog': { doc: '../protocols/MCA_NSPFRNP_CATALOG.md', title: 'NSPFRNP catalog (MCA)' },
-      'bbhe-repository-standard': { doc: '../BBHE_REPOSITORY_STANDARD.md', title: 'BBHE repository standard' },
-      'rev-egs-hhf-mythos': { doc: '../docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md', title: 'Holographic review of Anthropic’s Mythos · REV-EGS-HHF-2026-007' },
-      'ops-egs-btc-mining': { doc: '../docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md', title: 'EGS legal sovereign mining · OPS-EGS-BTC-2026-008' },
-      'coherence-plain-speak': { doc: '../docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md', title: 'Coherence · plain speak · what\'s real · HONESTY-COHERENCE-2026-009' }
-    };
-
     (function () {
-      var MD_BASE_TO_ID = {};
-      Object.keys(WPS_DOC_REGISTRY).forEach(function (id) {
-        var p = WPS_DOC_REGISTRY[id].doc;
-        MD_BASE_TO_ID[p.replace(/^.*\//, '').toLowerCase()] = id;
-      });
-      window.WPS_MD_BASE_TO_ID = MD_BASE_TO_ID;
-    })();
-
-    function normalizeRepoLinks(container) {
-      if (!container || !container.querySelectorAll) return;
-      var mdMap = window.WPS_MD_BASE_TO_ID || {};
-      container.querySelectorAll('a[href]').forEach(function (a) {
-        var href = a.getAttribute('href');
-        if (!href || href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
-        if (/^https?:\/\//i.test(href)) return;
-
-        var hashPart = '';
-        var pathPart = href;
-        var hashIdx = href.indexOf('#');
-        if (hashIdx >= 0) {
-          hashPart = href.slice(hashIdx);
-          pathPart = href.slice(0, hashIdx);
-        }
-
-        if (/\.(md|markdown)$/i.test(pathPart)) {
-          var base = pathPart.replace(/^.*\//, '').toLowerCase();
-          var rid = mdMap[base];
-          if (rid) {
-            a.setAttribute('href', 'whitepaper-surface.html?id=' + encodeURIComponent(rid) + hashPart);
-            return;
-          }
-        }
-
-        if (href.charAt(0) === '/') return;
-        if (href.indexOf('../') === 0 || href.indexOf('./') === 0) return;
-        var next = href;
-        if (href.indexOf('interfaces/') === 0) next = '/' + href;
-        else if (href.indexOf('protocols/') === 0) next = '/' + href;
-        else if (href.indexOf('docs/') === 0) next = '/' + href;
-        else if (href.indexOf('data/') === 0) next = '/' + href;
-        else if (href.indexOf('public/') === 0) next = '/' + href;
-        else if (/^[^/]+\.(md|markdown)$/i.test(href)) next = '/' + href;
-        if (next !== href) a.setAttribute('href', next);
-      });
-    }
-
-    (function () {
-      var DOC_REGISTRY = WPS_DOC_REGISTRY;
-
-      function resolveFromQuery(q) {
-        var id = q.get('id');
-        if (id && DOC_REGISTRY[id]) return DOC_REGISTRY[id];
-        var doc = q.get('doc');
-        var title = q.get('title');
-        if (doc && doc.endsWith('.md')) return { doc: doc, title: title };
-        if (id === 'sing13-edge-onboarding') {
-          return { redirect: 'sing13-edge-onboarding.html', title: 'Sonic Singularity Sing! 13 · Edge onboarding' };
-        }
-        return null;
-      }
-
-      function registryIdForDoc(docPath) {
-        var keys = Object.keys(DOC_REGISTRY);
-        for (var i = 0; i < keys.length; i++) {
-          if (DOC_REGISTRY[keys[i]].doc === docPath) return keys[i];
-        }
-        return null;
-      }
-
       var q = new URLSearchParams(window.location.search);
-      var resolved = resolveFromQuery(q);
+      var id = q.get('id');
       var titleEl = document.getElementById('title');
       var statusEl = document.getElementById('status');
       var contentEl = document.getElementById('content');
 
-      if (resolved && resolved.redirect) {
-        window.location.replace(resolved.redirect);
-        return;
-      }
-
-      if (!resolved || !resolved.doc || !resolved.doc.endsWith('.md')) {
+      if (!id) {
         titleEl.textContent = 'Document reader';
         statusEl.textContent = 'Choose a document from Under the hood or Look at the Sun.';
         return;
@@ -287,36 +192,45 @@
 
       var legacyDoc = q.get('doc');
       if (legacyDoc && window.history && window.history.replaceState) {
-        var rid = registryIdForDoc(legacyDoc);
-        if (rid) {
-          var nu = new URL(window.location.href);
-          nu.searchParams.delete('doc');
-          nu.searchParams.delete('title');
-          nu.searchParams.set('id', rid);
-          window.history.replaceState({}, '', nu.pathname + nu.search);
-        }
+        var nu = new URL(window.location.href);
+        nu.searchParams.delete('doc');
+        nu.searchParams.delete('title');
+        nu.searchParams.set('id', id || 'rev-egs-hhf-mythos');
+        window.history.replaceState({}, '', nu.pathname + nu.search);
       }
 
-      var safeTitle = resolved.title || resolved.doc.split('/').pop().replace(/\.md$/i, '').replace(/[_-]+/g, ' ');
-      titleEl.textContent = safeTitle;
+      function showError(msg) {
+        statusEl.textContent = msg || 'Could not load this document.';
+      }
 
-      fetch(resolved.doc)
+      var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      var timeout = controller
+        ? window.setTimeout(function () {
+            controller.abort();
+            showError('Document load timed out. Retry or open /api/whitepaper?id=' + encodeURIComponent(id));
+          }, 15000)
+        : null;
+
+      fetch('/api/whitepaper?id=' + encodeURIComponent(id), controller ? { signal: controller.signal } : {})
         .then(function (r) {
-          if (!r.ok) throw new Error('not_found');
-          return r.text();
+          return r.json().then(function (data) {
+            if (!r.ok || !data.ok) throw new Error(data.message || data.code || 'load_failed');
+            return data;
+          });
         })
-        .then(function (md) {
-          statusEl.remove();
-          if (window.marked && typeof window.marked.parse === 'function') {
-            contentEl.innerHTML = window.marked.parse(md, { breaks: true });
-            normalizeRepoLinks(contentEl);
-          } else {
-            contentEl.innerHTML = '<pre></pre>';
-            contentEl.querySelector('pre').textContent = md;
+        .then(function (data) {
+          if (timeout) window.clearTimeout(timeout);
+          if (data.redirect) {
+            window.location.replace(data.redirect);
+            return;
           }
+          titleEl.textContent = data.title || id;
+          statusEl.remove();
+          contentEl.innerHTML = data.html || '';
         })
-        .catch(function () {
-          statusEl.textContent = 'Could not load this document.';
+        .catch(function (err) {
+          if (timeout) window.clearTimeout(timeout);
+          showError(err && err.name === 'AbortError' ? 'Timed out loading document.' : 'Could not load this document.');
         });
     })();
   </script>

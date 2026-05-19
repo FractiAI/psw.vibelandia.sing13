@@ -121,6 +121,28 @@
     .honesty-rail ul { margin: 0 0 0.5rem 1.1rem; color: #cbd5e1; }
     .honesty-rail li { margin-bottom: 0.35rem; }
     .honesty-rail p { margin-bottom: 0.5rem; font-size: 0.88rem; }
+    .pred-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.72rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .pred-table th, .pred-table td {
+      border: 1px solid var(--line);
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+    }
+    .pred-table th { color: var(--muted); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .pred-hit { color: var(--ok); }
+    .pred-miss { color: #fbbf24; }
+    .pred-open-box {
+      border: 1px solid rgba(94, 234, 212, 0.35);
+      background: rgba(8, 28, 32, 0.5);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      margin: 0.75rem 0 1rem;
+      font-size: 0.82rem;
+    }
   </style>
 </head>
 <body>
@@ -147,6 +169,8 @@
       <dd>Sunspots AR4436 &amp; AR4441 · 1420.4 MHz hydrogen line · Φ_EGS 1.618</dd>
       <dt>Live pulse API</dt>
       <dd><a href="/api/goldilocks-pulse">/api/goldilocks-pulse</a> (signed receipt every ~10 min)</dd>
+      <dt>Prediction ledger</dt>
+      <dd><a href="/api/goldilocks-predictions">/api/goldilocks-predictions</a> (forecast next block · score when awarded)</dd>
       <dt>Mining rail · read-only</dt>
       <dd><a href="/api/mining-rail">/api/mining-rail</a> — display only; payout locked to operational anchor</dd>
     </dl>
@@ -209,6 +233,34 @@
     <p id="pulse-status" style="font-size:0.88rem;color:var(--muted);">Loading live pulse…</p>
     <pre class="pulse-box" id="pulse-json" aria-live="polite">—</pre>
 
+    <h2>Public prediction ledger · EGS vs mainnet</h2>
+    <p>
+      Before each new block is awarded, we publish a <strong>signed forecast</strong> for block <strong>N+1</strong>
+      (timing, fees, subsidy) using only <strong>public Bitcoin data</strong> and our <strong>EGS φ cadence</strong> algorithm.
+      When mainnet awards that height, we log the <strong>actual</strong> block and the <strong>score</strong> — everyone can verify.
+      Not gambling, not mining income — a transparent scoreboard.
+    </p>
+    <p id="pred-stats" style="font-size:0.82rem;color:var(--muted);">Loading prediction stats…</p>
+    <div id="pred-open" class="pred-open-box" aria-live="polite">—</div>
+    <table class="pred-table" aria-label="Resolved predictions">
+      <thead>
+        <tr>
+          <th>Height</th>
+          <th>Predicted interval</th>
+          <th>Actual interval</th>
+          <th>Δ sec</th>
+          <th>φ band</th>
+          <th>Would have won</th>
+        </tr>
+      </thead>
+      <tbody id="pred-resolved-body">
+        <tr><td colspan="6">Loading…</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.78rem;color:var(--muted);">
+      Full JSON: <a href="/api/goldilocks-predictions">/api/goldilocks-predictions</a>
+    </p>
+
     <h2>Autopilot · display only</h2>
     <p>
       Tier 0 runs <strong>without human ops</strong>: cron + APIs lock payout to the operational anchor and emit signed pulses every ~10 min.
@@ -266,8 +318,75 @@
             if (status) status.textContent = 'Pulse API unavailable — deploy /api/goldilocks-pulse on production.';
           });
       }
+      function fmtTs(unix) {
+        if (!unix) return '—';
+        return new Date(unix * 1000).toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+      }
+      function refreshPredictions() {
+        var statsEl = document.getElementById('pred-stats');
+        var openEl = document.getElementById('pred-open');
+        var body = document.getElementById('pred-resolved-body');
+        fetch('/api/goldilocks-predictions')
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (statsEl && data.stats) {
+              var wonLine = data.stats.totalWouldHaveWon
+                ? ' · successful wins total ' + data.stats.totalWouldHaveWon.btc + ' BTC (hypothetical)'
+                : '';
+              statsEl.textContent =
+                'Resolved: ' + (data.stats.resolvedCount || 0) +
+                ' · successful φ-band hits: ' + (data.stats.successfulCount ?? 0) +
+                ' · avg |Δ| interval ' + (data.stats.avgAbsIntervalErrorSec ?? '—') + 's' +
+                ' · in φ band ' + (data.stats.intervalInPhiBandPct ?? '—') + '%' +
+                wonLine;
+            }
+            if (openEl && data.open) {
+              var o = data.open;
+              var f = o.forecast || {};
+              openEl.innerHTML =
+                '<strong>OPEN forecast</strong> for block <strong>' + o.targetHeight + '</strong> ' +
+                '(after tip ' + o.basedOnTip.height + ')<br>' +
+                'Predicted interval: <strong>' + f.predictedIntervalSec + 's</strong> ' +
+                '(φ band ' + f.intervalBandSec.low + '–' + f.intervalBandSec.high + 's) · ' +
+                'target time ~' + fmtTs(f.predictedBlockTimestamp) + '<br>' +
+                'Predicted fees: <strong>' + f.predictedFeesSats + '</strong> sats · ' +
+                'if φ-band hits, would have won <strong>' +
+                (f.wouldHaveWonIfSuccessful ? f.wouldHaveWonIfSuccessful.btc : '—') +
+                ' BTC</strong> (hypothetical block reward) · ' +
+                'id <code style="font-size:0.7rem">' + o.predictionId + '</code>';
+            } else if (openEl) {
+              openEl.textContent = 'No open forecast yet.';
+            }
+            if (body) {
+              var rows = (data.resolved || []).slice(0, 12);
+              if (!rows.length) {
+                body.innerHTML = '<tr><td colspan="6">No resolved forecasts yet — next block will score the open entry.</td></tr>';
+                return;
+              }
+              body.innerHTML = rows.map(function (r) {
+                var sc = r.score || {};
+                var band = sc.intervalInPhiBand
+                  ? '<span class="pred-hit">yes</span>'
+                  : '<span class="pred-miss">no</span>';
+                var won = r.wouldHaveWon
+                  ? '<span class="pred-hit">' + r.wouldHaveWon.btc + ' BTC</span>'
+                  : '—';
+                return '<tr><td>' + r.targetHeight + '</td><td>' +
+                  (r.forecast && r.forecast.predictedIntervalSec) + 's</td><td>' +
+                  (r.actual && r.actual.intervalSec) + 's</td><td>' +
+                  (sc.intervalErrorSec != null ? sc.intervalErrorSec : '—') + '</td><td>' +
+                  band + '</td><td>' + won + '</td></tr>';
+              }).join('');
+            }
+          })
+          .catch(function () {
+            if (statsEl) statsEl.textContent = 'Prediction ledger unavailable — deploy /api/goldilocks-predictions.';
+          });
+      }
       refresh();
+      refreshPredictions();
       setInterval(refresh, 60000);
+      setInterval(refreshPredictions, 60000);
     })();
   </script>
 </body>

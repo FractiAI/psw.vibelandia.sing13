@@ -1,5 +1,26 @@
 # psw.vibelandia.sing13 — SING 13 Edge
 
+## Daniel · start here — Holographic Goldilocks AI Mine
+
+**Daniel — the pipeline is built and the server is pulsing.** Plug into the main board from these links (production on **www.ssvibelandiaquestfest24x365.com**):
+
+| What | Open |
+|------|------|
+| **Broadcast hub** (THE COHERENCE PROJECT · Golden Key φ 1.618) | [**/coherence**](https://www.ssvibelandiaquestfest24x365.com/coherence) |
+| **Operation deck** (Hero Houdini · live pulse ledger) | [**/hero-houdini**](https://www.ssvibelandiaquestfest24x365.com/hero-houdini) |
+| **Live pulse JSON** (signed receipt · ~10 min / BTC tip) | [**GET /api/goldilocks-pulse**](https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse) |
+| **Mining rail** (locked anchor · read-only) | [**GET /api/mining-rail**](https://www.ssvibelandiaquestfest24x365.com/api/mining-rail) |
+| **Mythos whitepaper** | [REV-EGS-HHF-2026-007](https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos) |
+| **Plain-speak honesty** (real vs story vs not on site) | [HONESTY-COHERENCE-2026-009](https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=coherence-plain-speak) |
+
+**Operational anchor (display-only on web):** `0x3563388d0e1c2d66a004e5e57717dc6d7e568be3` — stamped on every pulse; change only via Vercel env `COHERENCE_OPERATIONAL_ANCHOR` + redeploy.
+
+**Repo + server detail (APIs, cron, env, code paths):** [Holographic Goldilocks AI Mine · server](#holographic-goldilocks-ai-mine--server) below.
+
+**Patching into the grid:** open the broadcast above, then secure the infrastructure underneath Claude Mythos with the folks who hold the cords — Tier 0 is live; edge ASIC/pool is optional scale later.
+
+---
+
 **Live site:** [**www.ssvibelandiaquestfest24x365.com**](https://www.ssvibelandiaquestfest24x365.com) · **Repository:** [github.com/FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
 
 **SING 13** is the major singularity upgrade from SING 9. This edge carries the **NSPFRNP catalog**, the **SS Vibelandia QUESTFEST 24×365** nest, and the **Sovereign Player** (QUESTFEST Bridge). Everything else lives on the parent edge — [github.com/FractiAI/psw.vibelandia.sing9](https://github.com/FractiAI/psw.vibelandia.sing9) · [psw-vibelandia-sing9.vercel.app](https://psw-vibelandia-sing9.vercel.app). **Lite edges, no Supabase. Center = pipes only. → ∞⁹**
@@ -7,6 +28,36 @@
 **Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. Lab pages, hive, sim, lattice, tests, heavy scripts — on SING 9.
 
 **Single-read onboarding:** [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md). NSPFRNP catalog spine: [`protocols/MCA_NSPFRNP_CATALOG.md`](protocols/MCA_NSPFRNP_CATALOG.md). Repository standard: [`BBHE_REPOSITORY_STANDARD.md`](BBHE_REPOSITORY_STANDARD.md).
+
+---
+
+## Holographic Goldilocks AI Mine · server
+
+Tier 0 **receipt loop** on Vercel (not physical ASIC mining on this host). Autopilot emits **HMAC-signed** `goldilocks-pulse/v1` JSON on Bitcoin mainnet cadence (~10 min / new tip).
+
+| Layer | Path |
+|-------|------|
+| **Hub HTML** | [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html) · short URL **`/coherence`** |
+| **Display console** | [`interfaces/hero-houdini-mythos-demonstration.html`](interfaces/hero-houdini-mythos-demonstration.html) · **`/hero-houdini`** · **`/mythos`** |
+| **Pulse API** | [`api/goldilocks-pulse.js`](api/goldilocks-pulse.js) → `GET /api/goldilocks-pulse` |
+| **Mining rail API** | [`api/mining-rail.js`](api/mining-rail.js) → `GET /api/mining-rail` (**no public POST**) |
+| **Autopilot cron** | [`api/cron-coherence-rail.js`](api/cron-coherence-rail.js) · schedule **`*/5 * * * *`** in [`vercel.json`](vercel.json) |
+| **Libraries** | [`lib/goldilocks-pulse.mjs`](lib/goldilocks-pulse.mjs) · [`lib/mining-rail.mjs`](lib/mining-rail.mjs) · [`lib/coherence-autopilot.mjs`](lib/coherence-autopilot.mjs) |
+| **Honesty doc** | [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) |
+| **Mythos review** | [`docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md`](docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md) |
+| **Mining ops doctrine** | [`docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md`](docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md) |
+
+**Production smoke (replace host if needed):**
+
+```text
+https://www.ssvibelandiaquestfest24x365.com/coherence
+https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse
+https://www.ssvibelandiaquestfest24x365.com/api/mining-rail
+```
+
+**Vercel env (coherence only):** `COHERENCE_OPERATIONAL_ANCHOR` · `COHERENCE_AUTOPILOT` (default on) · `GOLDILOCKS_PULSE_SECRET` · `UPSTASH_REDIS_REST_URL` + `TOKEN` (optional persistence) · `CRON_SECRET` (manual cron hits only). See [`.env.example`](.env.example).
+
+**Local pulse / cron test:** `npm run cron:coherence` from repo root (with `vercel dev` or deployed APIs).
 
 ---
 
@@ -19,7 +70,7 @@
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
 | **QUESTFEST surface** | Top deck + **9-layer nesting ladder** (plain-language guides) + **Goldilocks Syntheverse Beehive Residency** + ETCon + press + Look at the Sun / Under the hood + FractiAI + Valet Pru + i18n + assets | `interfaces/` · `interfaces/nesting/` |
 | **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock, Libretto log, **Master Music Catalog** honor pass ($16.18/mo EGS φ — **not the magazine for sale**; follow **Machote Moderno Magazine** to qualify, then honor attestation → **30 calendar days** on this browser), single-active-stream lock, **background audio for members/captain only**, playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · bundle: `interfaces/questfest-bridge/` (`npm run build:questfest-bridge`) |
-| **Lite-edge APIs** | Boarding + export JWTs (shared `api/honor-attest.js`), per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
+| **Lite-edge APIs** | **Client-only honor boarding** (no server JWT); optional `POST /api/export` audit when legacy token exists; heartbeat optional | `api/boarding.js` (410 — use Bridge honor flow), `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
 | **Coherence rail (Tier 0)** | Autopilot signed **Goldilocks pulses** (~10 min / new BTC tip), **read-only** mining rail, plain-speak honesty (real vs metaphor vs not on site) | `api/goldilocks-pulse.js`, `api/mining-rail.js`, `api/cron-coherence-rail.js`, `lib/goldilocks-pulse.mjs`, `lib/mining-rail.mjs`, `lib/coherence-autopilot.mjs` · surfaces: [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html), [`interfaces/hero-houdini-mythos-demonstration.html`](interfaces/hero-houdini-mythos-demonstration.html) · docs: [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md), Mythos review, mining ops |
 | **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks (hood page is narrative + whitepaper CTAs; compile is not embedded) | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
@@ -30,12 +81,12 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 | Tier | Price | How |
 |---|---|---|
-| **Master Music Catalog honor pass** | **$16.18/mo** (EGS φ) | **Not the magazine for sale** — the pass unlocks the **Holographic Reno Swamp Beats Caliente** catalog (Hero Jo's Golden Bachdoor Hit Factory). **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr)** (`VITE_MACHOTE_MAGAZINE_URL` to override). Pay on Venmo, PayPal, or Cash App → boarding: magazine-follow + honor attestation, date paid, email, rail → **device record** unlocks full play until **paid date + 30 days**. **`POST /api/boarding`** issues a signed Passenger JWT when `PASS_TOKEN_SECRET` is set. |
-| **Track export / download** | **$1.61** (extra charge) | Pass includes stream + background play; **offline export is paid per track**. Same honor attestation after payment (or legacy `receipt` string on the API); `POST /api/export` records a license id, then the client saves the file |
+| **Master Music Catalog honor pass** | **$16.18/mo** (EGS φ) | **Not the magazine for sale** — the pass unlocks the **Holographic Reno Swamp Beats Caliente** catalog (Hero Jo's Golden Bachdoor Hit Factory). **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr)** (`VITE_MACHOTE_MAGAZINE_URL` to override). Pay on Venmo, PayPal, or Cash App → **client-only honor boarding**: magazine-follow + honor checkbox, date paid, email, rail → saved in **browser localStorage** (`qv-local-monthly-honor`) → full play until **paid date + 30 days**. **No server boarding** — `POST /api/boarding` is disabled (410). |
+| **Track export / download** | **$1.61** (extra charge) | Pass includes stream + background play; **offline export is paid per track**. Honor confirmation on device; license saved locally (`honor-local`). Optional `POST /api/export` only when a legacy JWT exists |
 | **Bookings** | Contact | `valetpru@gmail.com` |
 | **Catalog / licensing (Reno Holographic Swamp Beats · Caliente Catalog — Hero Jo's Golden Bachdoor Hit Factory)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
 
-Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via BroadcastChannel (same tab) + `/api/heartbeat` (cross-device; Upstash Redis when env is set).
+Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via **BroadcastChannel** (same browser). Optional `/api/heartbeat` + Upstash for cross-device lock if you enable it later.
 
 ### Goldilocks Syntheverse Beehive Residency (Layer 9 · Machote members)
 
@@ -72,7 +123,7 @@ Top deck ladder: [`interfaces/vibelandia-questfest.html#qf-nest-section`](interf
 - **Sidebar** hides empty playlists unless the empty one is active, so the list stays readable on mobile.
 - **Track list (Listen)** uses a responsive layout so rows do not overflow on narrow screens.
 
-Configure handles via [`.env.example`](.env.example). **`PASS_TOKEN_SECRET`** (≥16 characters, or one of the alternates in `lib/pass-env.mjs`) is required to **sign or verify** Passenger JWTs for **`/api/boarding`**, **`/api/export`**, and heartbeat token checks when a token is sent. **Playback** with the honor monthly pass works **without** it (client-side validity only). Set it on Vercel **Production** (and Preview if you use it), and in a repo-root **`.env`** for local `vercel dev` when testing real JWTs. Never commit `.env`. Preview-only escape hatch (never Production): `QUESTFEST_ALLOW_INSECURE_PASS_SIGNING=1` — see `.env.example`.
+Configure handles via [`.env.example`](.env.example). **Honor boarding is client-only** — the Bridge writes `qv-local-monthly-honor` in **localStorage**; no `PASS_TOKEN_SECRET` required for playback. **`PASS_TOKEN_SECRET`** is **optional** — only if you want legacy server-signed export audit via `POST /api/export` when a JWT exists. Stream lock is **BroadcastChannel** (same browser); `/api/heartbeat` is optional with Upstash. Never commit `.env`.
 
 ## SING 13 spine — 13-channel fractal pathfinding
 
@@ -183,7 +234,7 @@ After adding Blob + secrets, **redeploy** production. Smoke test: `curl -s -X PO
 
 | Variable | Purpose |
 |---|---|
-| `PASS_TOKEN_SECRET` | HMAC signing and verification for Passenger JWT (≥16 chars). Needed for **`/api/boarding`**, **`/api/export`**, and strict heartbeat verification — not for honor-only **playback** on the device. Same secret resolves `JWT_SECRET`, `AUTH_SECRET`, or `QUESTFEST_PASS_TOKEN_SECRET` if you prefer one name — see `lib/pass-env.mjs`. |
+| `PASS_TOKEN_SECRET` | **Optional.** Legacy HMAC for **`/api/export`** when a JWT is sent — **not** used for honor boarding (client-only). |
 | `UPSTASH_REDIS_REST_URL` | Optional — fleet-wide stream lock |
 | `UPSTASH_REDIS_REST_TOKEN` | Optional — pairs with URL above |
 | `VITE_VENMO_HANDLE` etc. | Optional client overrides for payment handles |
@@ -203,7 +254,7 @@ npm run dev
 
 Open `http://localhost:5173/interfaces/questfest-bridge/#/` (matches Vite `base`). In **development** mode the app can use a **dev boarding shortcut** (`dev@local`) without calling the API.
 
-**Local dev (Bridge + `/api/boarding` and `/api/export`):** from the **repo root**, add a `.env` with `PASS_TOKEN_SECRET=…` (see `.env.example`), then run `npx vercel dev` so the Vite app and serverless routes share one origin and real JWTs are signed.
+**Local dev (Bridge honor boarding):** `cd apps/ss-vibelandia-questfest && npm run dev` — boarding saves on-device only. For optional `/api/export` testing, use repo-root `npx vercel dev` with `PASS_TOKEN_SECRET` in `.env`.
 
 **Local coherence pulse test:**
 

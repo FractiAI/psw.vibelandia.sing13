@@ -7,7 +7,7 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
-import type { BoardingRequestBody } from '@/lib/api';
+import type { BoardingHonorPayload } from '@/lib/boardingHonor';
 
 /** Modals + session only — catalog loads from cache/bundle; Refresh pulls server updates. */
 export function MediaShell() {
@@ -42,7 +42,7 @@ export function MediaShell() {
 
   }, [hydrateSession, setBoardingOpen]);
 
-  const handleBoarding = async (payload: BoardingRequestBody) => {
+  const handleBoarding = async (payload: BoardingHonorPayload) => {
     const ok = await completeBoarding(payload);
     if (ok) {
       setBoardingOpen(false);

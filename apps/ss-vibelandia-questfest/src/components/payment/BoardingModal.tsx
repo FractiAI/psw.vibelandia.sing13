@@ -7,7 +7,7 @@ import {
   railCheckoutLinks,
   type LiveRail,
 } from '@/lib/paymentRails';
-import type { BoardingRequestBody } from '@/lib/api';
+import type { BoardingHonorPayload } from '@/lib/boardingHonor';
 import {
   MACHOTE_CATALOG_SUBTITLE,
   MACHOTE_CATALOG_TITLE,
@@ -26,7 +26,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 interface BoardingModalProps {
   open: boolean;
   onClose: () => void;
-  onSubmit: (payload: BoardingRequestBody) => Promise<void>;
+  onSubmit: (payload: BoardingHonorPayload) => Promise<void>;
   busy: boolean;
   error: string | null;
 }
@@ -232,8 +232,9 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
         {step === 'honor' && rail && (
           <>
             <p className="modal-body">
-              Fair Exchange runs on trust. Check the box, set the date you paid, and we unlock full play on this browser
-              for 30 days from that date. When it expires, come back and confirm again.
+              Fair Exchange runs on trust — <strong>client-only honor</strong>. No server account or JWT: check the boxes,
+              set the date you paid, and we save the pass on <strong>this browser only</strong> for 30 days from that date.
+              When it expires, confirm again here.
             </p>
             <HonorFarmstandFigure />
             <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
@@ -301,7 +302,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                   })
                 }
               >
-                {busy ? 'Issuing pass…' : 'Issue 30-day members pass'}
+                {busy ? 'Saving honor pass…' : 'Confirm honor pass · 30 days on this device'}
               </button>
               <button type="button" className="voxel-btn" onClick={() => setStep('pay')} disabled={busy}>
                 Back

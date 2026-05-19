@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { BoardingRequestBody } from '@/lib/api';
+import type { BoardingHonorPayload } from '@/lib/boardingHonor';
 import { verifyCaptainPassword } from '@/lib/captainAuth';
 import {
   clearLocalMonthlyHonor,
@@ -88,7 +88,7 @@ interface SessionState extends SessionDerived {
   captainUnlocked: boolean;
   boardingBusy: boolean;
   boardingError: string | null;
-  completeBoarding: (input: BoardingRequestBody) => Promise<boolean>;
+  completeBoarding: (input: BoardingHonorPayload) => Promise<boolean>;
   disembark: () => void;
   tryCaptainPassword: (password: string) => boolean;
   hydrateFromStorage: () => void;
@@ -119,7 +119,7 @@ export const useSessionStore = create<SessionState>((set) => ({
         jti: randomJti(),
       };
 
-      /** On-device honor is the source of truth; drop any stale JWT */
+      /** Client-only honor — no POST /api/boarding; localStorage is source of truth */
       clearPassToken();
       writeLocalMonthlyHonor(honor);
 

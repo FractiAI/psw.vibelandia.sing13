@@ -59,9 +59,11 @@ module.exports = async function handler(req, res) {
         autopilot: true,
         operationalAnchor: OPERATIONAL_ANCHOR,
         api: '/api/goldilocks-pulse',
+        predictionsApi: '/api/goldilocks-predictions',
         cadenceSec: state.cadenceSec,
         latest: state.latest,
         history: state.history,
+        predictions: out.predictions || null,
       });
     }
 

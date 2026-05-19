@@ -42,13 +42,13 @@
 
 ## Sovereign Player — Fair Exchange
 
-- Passenger pass: $16.18/mo (EGS φ) — pay on Venmo, PayPal, or Cash App; paste receipt; POST /api/boarding issues 30-day signed JWT
+- Passenger pass: $16.18/mo (EGS φ) — pay on Venmo, PayPal, or Cash App; client-only honor boarding (localStorage on device, 30 days from paid date); no server JWT
 - Track export: $1.61 — same rails; email proof with track id
 - Bookings: valetpru@gmail.com
 - Catalog / licensing (500+ Reno swamp · caliente tracks): goldenbackdoorhitfactory@gmail.com
-- Stream lock: BroadcastChannel (same tab) + GET/POST /api/heartbeat (Upstash Redis when UPSTASH_* env set)
+- Stream lock: BroadcastChannel (same browser); /api/heartbeat optional
 - Build: npm run build:questfest-bridge (source: apps/ss-vibelandia-questfest/)
-- Vercel env minimum: PASS_TOKEN_SECRET (see .env.example)
+- Vercel env: PASS_TOKEN_SECRET optional (legacy export audit only); honor boarding needs no server secret
 
 ## Sonic Singularity Sing! 13 spine — 13-channel fractal pathfinding
 

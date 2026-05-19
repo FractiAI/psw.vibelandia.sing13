@@ -158,12 +158,8 @@ export function PlaylistBulkExportModal({
     const passToken = readPassToken();
     const devSkip = import.meta.env.DEV && email.trim() === 'dev@local';
 
-    if (!passToken && !devSkip) {
-      setError(
-        localHonorOnly
-          ? 'This pass is for playback on this browser only. Use Captain unlock to export, or boarding with server export tokens enabled.'
-          : 'Machote members pass required.',
-      );
+    if (!passToken && !devSkip && !localHonorOnly) {
+      setError('Machote members pass required — confirm honor boarding first.');
       return;
     }
 
@@ -180,11 +176,7 @@ export function PlaylistBulkExportModal({
             licensedAt: new Date().toISOString(),
             licenseId: 'dev-local-bulk',
           });
-        } else {
-          if (!passToken) {
-            failures.push(`${track.title} (missing pass token)`);
-            continue;
-          }
+        } else if (passToken) {
           const res = await requestExport({
             passToken,
             rail,
@@ -199,6 +191,12 @@ export function PlaylistBulkExportModal({
             licensedAt: new Date().toISOString(),
             licenseId: res.licenseId,
             passengerJti: res.passengerJti,
+          });
+        } else {
+          saveExportLicense({
+            trackId: track.id,
+            licensedAt: new Date().toISOString(),
+            licenseId: 'honor-local-bulk',
           });
         }
         await downloadTrackToDevice(track);

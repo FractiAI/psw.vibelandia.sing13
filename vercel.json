@@ -56,6 +56,10 @@
     "api/goldilocks-pulse.js": {
       "memory": 512,
       "maxDuration": 60
+    },
+    "api/goldilocks-predictions.js": {
+      "memory": 512,
+      "maxDuration": 60
     }
   },
   "headers": [

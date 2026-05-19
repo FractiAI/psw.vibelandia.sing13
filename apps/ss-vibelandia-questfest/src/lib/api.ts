@@ -1,22 +1,5 @@
 import type { LiveRail } from '@/lib/paymentRails';
 
-export interface BoardingRequestBody {
-  rail: LiveRail;
-  honorConfirm: true;
-  paidDate: string;
-  email: string;
-}
-
-export interface BoardingResponse {
-  ok: boolean;
-  token: string;
-  tier: 'PASSENGER';
-  jti: string;
-  expiresAt: number;
-  egsMonthlyUsd: number;
-  message?: string;
-}
-
 /** Thrown when a JSON API responds with `{ error, message? }`; use `code` for branching */
 export class ApiHttpError extends Error {
   readonly name = 'ApiHttpError';
@@ -36,26 +19,7 @@ export class ApiHttpError extends Error {
   }
 }
 
-export async function requestBoarding(input: BoardingRequestBody): Promise<BoardingResponse> {
-  const res = await fetch('/api/boarding', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(input),
-  });
-  const data = (await res.json().catch(() => ({}))) as BoardingResponse & {
-    error?: string;
-    message?: string;
-  };
-  if (!res.ok) {
-    throw new ApiHttpError(data.message ?? data.error ?? `boarding_failed_${res.status}`, {
-      code: typeof data.error === 'string' ? data.error : undefined,
-      status: res.status,
-      body: data,
-    });
-  }
-  return data;
-}
-
+/** Optional server audit log when a legacy JWT exists — honor boarding does not use this. */
 export type ExportRequestBody =
   | {
       passToken: string;

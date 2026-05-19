@@ -18,6 +18,7 @@ We run a **real public receipt loop** tied to **real Bitcoin block times**, wrap
 |------|----------------|
 | **Bitcoin cadence** | Mainnet finds a block about every 10 minutes. We read the tip from public APIs (e.g. mempool.space). |
 | **Goldilocks pulse** | Our server publishes JSON every ~10 minutes (or on a new block) at `/api/goldilocks-pulse`, with an HMAC signature you can inspect. |
+| **Prediction ledger** | Before each new block, we publish a **signed forecast** for height N+1 at `/api/goldilocks-predictions`; when mainnet awards it, we log **actual vs predicted** (interval, fees, φ band). On a **successful** φ-band hit we show **would have won** = that block’s subsidy + fees in BTC (hypothetical solo reward — not paid to us). Public scoreboard — not a bet or financial product. |
 | **Operational anchor** | A fixed wallet address is stamped into each pulse. The public site shows it read-only. |
 | **Autopilot** | Vercel cron calls `/api/cron-coherence-rail` so pulses keep running without anyone clicking forms. |
 | **This website** | HTML, audio player, press pages, Fair Exchange honor passes — normal software you can use. |

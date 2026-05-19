@@ -42,7 +42,7 @@ export function isHonorDateActive(validUntil: string): boolean {
 export function readLocalMonthlyHonor(): LocalMonthlyHonor | null {
   if (typeof window === 'undefined') return null;
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = localStorage.getItem(LOCAL_MONTHLY_HONOR_KEY);
     if (!raw) return null;
     const o = JSON.parse(raw) as Partial<LocalMonthlyHonor>;
     if (!o?.rail || !o?.paidDate || !o?.validUntil || !o?.jti || typeof o.email !== 'string')

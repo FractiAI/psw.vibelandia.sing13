@@ -20,6 +20,7 @@
 | **QUESTFEST surface** | Top deck + **9-layer nesting ladder** (plain-language guides) + **Goldilocks Syntheverse Beehive Residency** + ETCon + press + Look at the Sun / Under the hood + FractiAI + Valet Pru + i18n + assets | `interfaces/` · `interfaces/nesting/` |
 | **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock, Libretto log, **Master Music Catalog** honor pass ($16.18/mo EGS φ — **not the magazine for sale**; follow **Machote Moderno Magazine** to qualify, then honor attestation → **30 calendar days** on this browser), single-active-stream lock, **background audio for members/captain only**, playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · bundle: `interfaces/questfest-bridge/` (`npm run build:questfest-bridge`) |
 | **Lite-edge APIs** | Boarding + export JWTs (shared `api/honor-attest.js`), per-track export log, stream heartbeat (Upstash when configured) | `api/boarding.js`, `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
+| **Coherence rail (Tier 0)** | Autopilot signed **Goldilocks pulses** (~10 min / new BTC tip), **read-only** mining rail, plain-speak honesty (real vs metaphor vs not on site) | `api/goldilocks-pulse.js`, `api/mining-rail.js`, `api/cron-coherence-rail.js`, `lib/goldilocks-pulse.mjs`, `lib/mining-rail.mjs`, `lib/coherence-autopilot.mjs` · surfaces: [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html), [`interfaces/hero-houdini-mythos-demonstration.html`](interfaces/hero-houdini-mythos-demonstration.html) · docs: [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md), Mythos review, mining ops |
 | **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks (hood page is narrative + whitepaper CTAs; compile is not embedded) | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
 
@@ -104,6 +105,10 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **Look at the Sun:** [`interfaces/look-at-the-sun.html`](interfaces/look-at-the-sun.html) · **Under the hood:** [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html)
 - **ETCon Reno Desert** (May 28–31, 2026): `/etcon` → [`interfaces/etcon-reno-desert.html`](interfaces/etcon-reno-desert.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)
+- **THE COHERENCE PROJECT:** `/coherence` → [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html)
+- **Hero Houdini (display console):** `/hero-houdini` · `/houdini` · `/mythos` → [`interfaces/hero-houdini-mythos-demonstration.html`](interfaces/hero-houdini-mythos-demonstration.html)
+- **Goldilocks pulse API (read-only JSON):** `GET /api/goldilocks-pulse` · **Mining rail status:** `GET /api/mining-rail` (no public `POST`)
+- **Plain-speak honesty:** [`whitepaper-surface.html?id=coherence-plain-speak`](interfaces/whitepaper-surface.html?id=coherence-plain-speak)
 - **FractiAI top deck:** [`/interfaces/fractiai.html`](interfaces/fractiai.html) · `/fractiai/digital-pru` → [`interfaces/fractiai-digital-pru.html`](interfaces/fractiai-digital-pru.html)
 - **SING 13 onboarding:** `/sing13-edge-onboarding` → [`interfaces/sing13-edge-onboarding.html`](interfaces/sing13-edge-onboarding.html) (plain deck; repo stub: `SING13_EDGE_ONBOARDING.md`)
 
@@ -153,6 +158,10 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 | QUESTFEST top deck | `/` or `/interfaces/vibelandia-questfest.html` |
 | Sovereign Player | `/interfaces/questfest-bridge/` |
 | Look under the hood | `/interfaces/look-under-the-hood.html` |
+| Coherence Project | `/coherence` |
+| Goldilocks pulse | `/api/goldilocks-pulse` |
+
+**Coherence rail (plain speak):** Tier 0 publishes **real** signed receipts tied to **real** Bitcoin block cadence. It does **not** run ASIC mining or pool payouts from Vercel. Story language (φ-lock, Mythos clock-skew, sunspots) is **narrative** — see [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md). Vercel **cron** hits `/api/cron-coherence-rail` every 5 minutes (`vercel.json`).
 
 Optional manual deploy: [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) (`workflow_dispatch`). Set GitHub secrets **`VERCEL_TOKEN`** (FractiAI team token), **`VERCEL_ORG_ID`**, **`VERCEL_PROJECT_ID`** from the FractiAI project settings — not the retired FractiVerse IDs.
 
@@ -179,6 +188,10 @@ After adding Blob + secrets, **redeploy** production. Smoke test: `curl -s -X PO
 | `UPSTASH_REDIS_REST_TOKEN` | Optional — pairs with URL above |
 | `VITE_VENMO_HANDLE` etc. | Optional client overrides for payment handles |
 | `VITE_MACHOTE_MAGAZINE_URL` | Optional — magazine follow link for members-pass qualifier (default: [Machote Moderno Magazine on Facebook](https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr)) |
+| `COHERENCE_OPERATIONAL_ANCHOR` | Optional — fixed payout in pulses (server only; public site is read-only) |
+| `GOLDILOCKS_PULSE_SECRET` | Optional — HMAC signing key for pulses (falls back to catalog secret or anchor) |
+| `UPSTASH_REDIS_REST_URL` / `TOKEN` | Optional — persist pulse + rail state across cold starts |
+| `COHERENCE_AUTOPILOT` | Default on (`1`); set `0` to disable autopilot bootstrap |
 
 **Local dev (Bridge UI only):**
 
@@ -192,6 +205,12 @@ Open `http://localhost:5173/interfaces/questfest-bridge/#/` (matches Vite `base`
 
 **Local dev (Bridge + `/api/boarding` and `/api/export`):** from the **repo root**, add a `.env` with `PASS_TOKEN_SECRET=…` (see `.env.example`), then run `npx vercel dev` so the Vite app and serverless routes share one origin and real JWTs are signed.
 
+**Local coherence pulse test:**
+
+```bash
+npm run cron:coherence
+```
+
 ---
 
-**NSPFRNP ⊃ SING 13 ⊃ 9-layer nest ⊃ Goldilocks Syntheverse Beehive ⊃ Master Music Catalog ⊃ QUESTFEST 24×365 ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹**
+**NSPFRNP ⊃ SING 13 ⊃ 9-layer nest ⊃ Goldilocks Syntheverse Beehive ⊃ Master Music Catalog ⊃ QUESTFEST 24×365 ⊃ Coherence rail ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹**

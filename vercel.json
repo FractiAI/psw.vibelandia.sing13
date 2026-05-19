@@ -16,6 +16,15 @@
     { "source": "/etcon/", "destination": "/interfaces/etcon-reno-desert.html" },
     { "source": "/press", "destination": "/interfaces/press-releases.html" },
     { "source": "/press/", "destination": "/interfaces/press-releases.html" },
+    { "source": "/mythos", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
+    { "source": "/mythos/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
+    { "source": "/coherence", "destination": "/interfaces/the-coherence-project.html" },
+    { "source": "/coherence/", "destination": "/interfaces/the-coherence-project.html" },
+    { "source": "/hero-houdini", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
+    { "source": "/hero-houdini/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
+    { "source": "/houdini", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
+    { "source": "/houdini/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
+    { "source": "/interfaces/houdini-mythos-demonstration.html", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
     { "source": "/hood", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/hood/", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/interfaces/digital-pru-awareness-whitepaper", "destination": "/interfaces/digital-pru-awareness-whitepaper.html" },
@@ -25,6 +34,12 @@
     { "source": "/sovereign-gate", "destination": "/interfaces/questfest-bridge/index.html" },
     { "source": "/sovereign-gate/", "destination": "/interfaces/questfest-bridge/index.html" }
   ],
+  "crons": [
+    {
+      "path": "/api/cron-coherence-rail",
+      "schedule": "*/5 * * * *"
+    }
+  ],
   "functions": {
     "api/catalog-upload.js": {
       "memory": 1024,
@@ -32,6 +47,14 @@
     },
     "api/catalog-track.js": {
       "memory": 1024,
+      "maxDuration": 60
+    },
+    "api/cron-coherence-rail.js": {
+      "memory": 512,
+      "maxDuration": 60
+    },
+    "api/goldilocks-pulse.js": {
+      "memory": 512,
       "maxDuration": 60
     }
   },

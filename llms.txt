@@ -23,6 +23,16 @@
 - Nesting ladder guides (Basenet → Sonic Singularity Sing! 13 → Goldilocks Beehive): https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html#qf-nest-section
 - Goldilocks Syntheverse Beehive Residency (Machote members · Old School Protocol · PL Taino · 0.001%): https://www.ssvibelandiaquestfest24x365.com/interfaces/goldilocks-beehive-residency.html
 - Press release · Machote Moderno Magazine + Beehive special offers (May 16, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html
+- Mythos holographic review (REV-EGS-HHF-2026-007 · May 18, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos
+- Hero Houdini legal EGS mining operation: https://www.ssvibelandiaquestfest24x365.com/interfaces/hero-houdini-mythos-demonstration.html
+- EGS legal sovereign mining (OPS-EGS-BTC-2026-008): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining
+- THE COHERENCE PROJECT: https://www.ssvibelandiaquestfest24x365.com/interfaces/the-coherence-project.html
+- Plain speak honesty (real vs metaphor vs not on site): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=coherence-plain-speak
+- Goldilocks pulse API (signed ~10 min): https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse
+- Mining rail API (read-only · locked operational anchor): https://www.ssvibelandiaquestfest24x365.com/api/mining-rail
+- Coherence autopilot cron (every 5 min on Vercel): https://www.ssvibelandiaquestfest24x365.com/api/cron-coherence-rail
+- Operational anchor: 0x3563388d0e1c2d66a004e5e57717dc6d7e568be3
+- Press release · Anthropic Mythos review: https://www.ssvibelandiaquestfest24x365.com/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html
 - Sovereign Player (QUESTFEST Bridge): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/
 - Reno Swamp checkout ($16.18/mo): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/#/bridge?checkout=1
 - Short path Sovereign gate: https://www.ssvibelandiaquestfest24x365.com/sovereign-gate

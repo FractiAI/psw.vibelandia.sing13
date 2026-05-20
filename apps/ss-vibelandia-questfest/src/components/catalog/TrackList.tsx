@@ -8,12 +8,14 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
+import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 
 import { hasExportLicense } from '@/lib/exportLicenses';
 
 import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 
-import { isMasterPlaylist } from '@/lib/catalogSeed';
+import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
+import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
 import {
@@ -69,6 +71,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
 
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
+  const [editingTrackId, setEditingTrackId] = useState<string | null>(null);
 
 
 
@@ -339,6 +342,8 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
               const dragging = dragIndex === row.index;
 
               const dropBefore = overIndex === row.index && dragIndex !== null && dragIndex !== row.index;
+              const canManageTrack = isUserUploadTrack(tr.id, tr);
+              const isEditing = editingTrackId === tr.id;
 
               return (
 
@@ -348,7 +353,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
                   data-reorder-idx={row.index}
 
-                  className={`sp-pl-edit-row sp-pl-edit-row--listen${active ? ' sp-pl-edit-row--listen-on' : ''}${dragging ? ' sp-pl-edit-row--dragging' : ''}${dropBefore ? ' sp-pl-edit-row--drop' : ''}`}
+                  className={`sp-pl-edit-row sp-pl-edit-row--listen${active ? ' sp-pl-edit-row--listen-on' : ''}${dragging ? ' sp-pl-edit-row--dragging' : ''}${dropBefore ? ' sp-pl-edit-row--drop' : ''}${isEditing ? ' sp-pl-edit-row--editing' : ''}`}
 
                   onDoubleClick={() => play(tr.id)}
 
@@ -445,6 +450,17 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
                     </button>
 
+                    {canManageTrack && (
+                      <button
+                        type="button"
+                        className="sp-listen-mini"
+                        onClick={() => setEditingTrackId(isEditing ? null : tr.id)}
+                        aria-expanded={isEditing}
+                      >
+                        {isEditing ? 'Close' : 'Edit'}
+                      </button>
+                    )}
+
                     {canEditPlaylist && (
 
                       <button
@@ -511,6 +527,15 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
                   </div>
 
+                  {isEditing && canManageTrack && (
+                    <TrackMetadataEditor
+                      track={tr}
+                      variant="inline"
+                      onSaved={() => setEditingTrackId(null)}
+                      onDeleted={() => setEditingTrackId(null)}
+                    />
+                  )}
+
                 </li>
 
               );
@@ -521,6 +546,14 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
         </div>
 
+      )}
+
+      {editingTrackId && (
+        <datalist id="qf-genre-suggestions">
+          {TRACK_GENRE_SUGGESTIONS.map((g) => (
+            <option key={g} value={g} />
+          ))}
+        </datalist>
       )}
 
 

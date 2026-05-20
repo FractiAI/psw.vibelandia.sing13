@@ -8,6 +8,8 @@ export const PLAIN = {
   upload: 'Upload',
   play: 'Play',
   edit: 'Edit',
+  editTrack: 'Edit track',
+  deleteTrack: 'Delete track',
   songs: 'songs',
   tracks: 'tracks',
   totalTime: 'total time',

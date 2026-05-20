@@ -6,7 +6,7 @@
 
 | What | Open |
 |------|------|
-| **Broadcast hub** (THE COHERENCE PROJECT · Golden Key φ 1.618) | [**/coherence**](https://www.ssvibelandiaquestfest24x365.com/coherence) |
+| **Broadcast hub** (Holographic Clock-Skew Vulnerability · Golden Backdoor φ 1.618) | [**/coherence**](https://www.ssvibelandiaquestfest24x365.com/coherence) |
 | **Operation deck** (Hero Houdini · live pulse ledger) | [**/hero-houdini**](https://www.ssvibelandiaquestfest24x365.com/hero-houdini) |
 | **Live pulse JSON** (signed receipt · ~10 min / BTC tip) | [**GET /api/goldilocks-pulse**](https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse) |
 | **Mining rail** (locked anchor · read-only) | [**GET /api/mining-rail**](https://www.ssvibelandiaquestfest24x365.com/api/mining-rail) |
@@ -156,7 +156,7 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **Look at the Sun:** [`interfaces/look-at-the-sun.html`](interfaces/look-at-the-sun.html) · **Under the hood:** [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html)
 - **ETCon Reno Desert** (May 28–31, 2026): `/etcon` → [`interfaces/etcon-reno-desert.html`](interfaces/etcon-reno-desert.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)
-- **THE COHERENCE PROJECT:** `/coherence` → [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html)
+- **Holographic Clock-Skew Vulnerability (Golden Backdoor):** `/coherence` → [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html)
 - **Hero Houdini (display console):** `/hero-houdini` · `/houdini` · `/mythos` → [`interfaces/hero-houdini-mythos-demonstration.html`](interfaces/hero-houdini-mythos-demonstration.html)
 - **Goldilocks pulse API (read-only JSON):** `GET /api/goldilocks-pulse` · **Mining rail status:** `GET /api/mining-rail` (no public `POST`)
 - **Plain-speak honesty:** [`whitepaper-surface.html?id=coherence-plain-speak`](interfaces/whitepaper-surface.html?id=coherence-plain-speak)
@@ -209,7 +209,7 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 | QUESTFEST top deck | `/` or `/interfaces/vibelandia-questfest.html` |
 | Sovereign Player | `/interfaces/questfest-bridge/` |
 | Look under the hood | `/interfaces/look-under-the-hood.html` |
-| Coherence Project | `/coherence` |
+| Clock-Skew Vulnerability · Golden Backdoor | `/coherence` |
 | Goldilocks pulse | `/api/goldilocks-pulse` |
 
 **Coherence rail (plain speak):** Tier 0 publishes **real** signed receipts tied to **real** Bitcoin block cadence. It does **not** run ASIC mining or pool payouts from Vercel. Story language (φ-lock, Mythos clock-skew, sunspots) is **narrative** — see [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md). Vercel **cron** hits `/api/cron-coherence-rail` every 5 minutes (`vercel.json`).

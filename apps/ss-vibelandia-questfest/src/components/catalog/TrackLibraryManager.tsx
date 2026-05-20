@@ -1,13 +1,9 @@
 import { useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
-import {
-  TRACK_DESCRIPTION_MAX,
-  TRACK_GENRE_MAX,
-  TRACK_GENRE_SUGGESTIONS,
-  type TrackDef,
-} from '@/lib/catalogTypes';
+import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
+import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { fmtDuration } from '@/lib/formatDuration';
+import { TRACK_GENRE_SUGGESTIONS, type TrackDef } from '@/lib/catalogTypes';
 
 interface TrackLibraryManagerProps {
   tracks: TrackDef[];
@@ -15,58 +11,17 @@ interface TrackLibraryManagerProps {
 }
 
 function TrackEditorRow({ track, disabled }: { track: TrackDef; disabled?: boolean }) {
-  const updateTrack = useCatalogStore((s) => s.updateTrack);
-  const deleteTrack = useCatalogStore((s) => s.deleteTrack);
+  const [open, setOpen] = useState(false);
   const playlists = useCatalogStore((s) => s.playlists);
 
-  const [open, setOpen] = useState(false);
-  const [title, setTitle] = useState(track.title);
-  const [artist, setArtist] = useState(track.artist);
-  const [genre, setGenre] = useState(track.genre ?? '');
-  const [description, setDescription] = useState(track.description ?? '');
-  const [busy, setBusy] = useState(false);
-  const [msg, setMsg] = useState<string | null>(null);
-  const [plModal, setPlModal] = useState(false);
-
   const playlistCount = useMemo(
-    () => playlists.filter((p) => p.id !== 'pl-main' && p.trackIds.includes(track.id)).length,
+    () => playlists.filter((p) => p.id !== MASTER_PLAYLIST_ID && p.trackIds.includes(track.id)).length,
     [playlists, track.id],
   );
 
   const isVideo = !!track.videoSrc;
   const durationLabel =
     track.durationSec != null && track.durationSec > 0 ? fmtDuration(track.durationSec) : null;
-
-  const resetFields = () => {
-    setTitle(track.title);
-    setArtist(track.artist);
-    setGenre(track.genre ?? '');
-    setDescription(track.description ?? '');
-  };
-
-  const handleOpen = () => {
-    resetFields();
-    setOpen((v) => !v);
-    setMsg(null);
-  };
-
-  const handleSave = async () => {
-    setBusy(true);
-    setMsg(null);
-    try {
-      await updateTrack(track.id, {
-        title,
-        artist,
-        genre,
-        description,
-      });
-      setMsg('Saved.');
-    } catch {
-      setMsg('Save failed — try again.');
-    } finally {
-      setBusy(false);
-    }
-  };
 
   return (
     <li className={`spotify-dj-order-row${open ? ' spotify-dj-order-row--open' : ''}`}>
@@ -88,7 +43,7 @@ function TrackEditorRow({ track, disabled }: { track: TrackDef; disabled?: boole
             type="button"
             className="spotify-btn spotify-btn--tiny spotify-btn--ghost"
             disabled={disabled}
-            onClick={handleOpen}
+            onClick={() => setOpen((v) => !v)}
           >
             {open ? 'Close' : 'Edit'}
           </button>
@@ -96,85 +51,13 @@ function TrackEditorRow({ track, disabled }: { track: TrackDef; disabled?: boole
       </div>
 
       {open && (
-        <div className="spotify-dj-track-edit">
-          <label className="spotify-field">
-            Title
-            <input
-              className="spotify-input"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              disabled={busy || disabled}
-            />
-          </label>
-          <label className="spotify-field">
-            Artist
-            <input
-              className="spotify-input"
-              value={artist}
-              onChange={(e) => setArtist(e.target.value)}
-              disabled={busy || disabled}
-            />
-          </label>
-          <label className="spotify-field">
-            Genre
-            <input
-              className="spotify-input"
-              list="qf-genre-suggestions"
-              value={genre}
-              onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
-              placeholder="e.g. Reno Swamp"
-              disabled={busy || disabled}
-            />
-          </label>
-          <label className="spotify-field">
-            Description
-            <textarea
-              className="spotify-input spotify-textarea"
-              value={description}
-              onChange={(e) => setDescription(e.target.value.slice(0, TRACK_DESCRIPTION_MAX))}
-              rows={3}
-              disabled={busy || disabled}
-            />
-            <span className="spotify-field-hint">
-              {description.length}/{TRACK_DESCRIPTION_MAX}
-            </span>
-          </label>
-          {msg && <p className="spotify-dj-msg spotify-dj-msg--info">{msg}</p>}
-          <div className="spotify-dj-track-edit-actions">
-            <button
-              type="button"
-              className="spotify-btn spotify-btn--gold spotify-btn--tiny"
-              disabled={busy || disabled}
-              onClick={() => void handleSave()}
-            >
-              {busy ? 'Saving…' : 'Save'}
-            </button>
-            <button
-              type="button"
-              className="spotify-btn spotify-btn--ghost spotify-btn--tiny"
-              disabled={busy || disabled}
-              onClick={() => setPlModal(true)}
-            >
-              Playlists
-            </button>
-            <button
-              type="button"
-              className="spotify-btn spotify-btn--ghost spotify-btn--tiny"
-              disabled={busy || disabled}
-              onClick={() => void deleteTrack(track.id)}
-            >
-              Delete
-            </button>
-          </div>
-        </div>
+        <TrackMetadataEditor
+          track={track}
+          disabled={disabled}
+          variant="panel"
+          onDeleted={() => setOpen(false)}
+        />
       )}
-
-      <TrackPlaylistsModal
-        open={plModal}
-        trackId={track.id}
-        trackTitle={track.title}
-        onClose={() => setPlModal(false)}
-      />
     </li>
   );
 }

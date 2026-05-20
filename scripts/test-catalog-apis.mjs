@@ -9,8 +9,9 @@ const SECRET = process.env.CATALOG_UPLOAD_SECRET || 'valetpru1!';
 async function main() {
   console.log('Origin:', ORIGIN);
 
-  const catRes = await fetch(`${ORIGIN}/api/catalog`);
-  console.log('GET /api/catalog', catRes.status, catRes.ok ? 'ok' : await catRes.text());
+  const catRes = await fetch(`${ORIGIN}/api/catalog`, { cache: 'no-store' });
+  const catJson = await catRes.json().catch(() => ({}));
+  console.log('GET /api/catalog', catRes.status, catRes.ok ? 'ok' : catJson);
 
   const tiny = Buffer.alloc(512, 0);
   const upRes = await fetch(`${ORIGIN}/api/catalog-upload`, {
@@ -60,9 +61,40 @@ async function main() {
   const clientText = await clientRes.text();
   console.log('POST /api/catalog-upload (blob token)', clientRes.status, clientText.slice(0, 240));
 
-  const ok = regRes.ok && clientRes.ok;
-  if (!ok) process.exitCode = 1;
-  else console.log('\nOK — register + blob token ready for browser uploads.');
+  const editId = Object.keys(catJson.tracks || {}).find((id) => id.startsWith('trk-srv-'));
+  if (editId && catRes.ok) {
+    const origTitle = catJson.tracks[editId].title;
+    const probe = `EDIT_VERIFY_${Date.now()}`;
+    const patchRes = await fetch(`${ORIGIN}/api/catalog-track`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Catalog-Secret': SECRET },
+      body: JSON.stringify({ action: 'update', trackId: editId, title: probe }),
+    });
+    const patchJson = await patchRes.json().catch(() => ({}));
+    console.log('POST /api/catalog-track (update)', patchRes.status, patchJson.error || patchJson.track?.title);
+
+    const readRes = await fetch(`${ORIGIN}/api/catalog`, { cache: 'no-store' });
+    const readJson = await readRes.json().catch(() => ({}));
+    const readTitle = readJson.tracks?.[editId]?.title;
+    const match = readTitle === probe;
+    console.log(
+      'GET /api/catalog after edit',
+      readRes.status,
+      match ? 'title matches' : `MISMATCH got=${readTitle} want=${probe} ver=${readJson.version}`,
+    );
+
+    await fetch(`${ORIGIN}/api/catalog-track`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Catalog-Secret': SECRET },
+      body: JSON.stringify({ action: 'update', trackId: editId, title: origTitle }),
+    });
+
+    if (!patchRes.ok || !match) process.exitCode = 1;
+  }
+
+  const ok = regRes.ok && clientRes.ok && !process.exitCode;
+  if (!ok) process.exitCode = process.exitCode || 1;
+  else console.log('\nOK — register + blob token + track edit verify.');
 }
 
 main().catch((e) => {

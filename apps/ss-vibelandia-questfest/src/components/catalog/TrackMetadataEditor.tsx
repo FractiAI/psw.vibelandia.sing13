@@ -68,6 +68,8 @@ export function TrackMetadataEditor({
         setMsg('Save failed — track not on server catalog.');
       } else if (code === 'catalog_upload_unconfigured') {
         setMsg('Save failed — upload secret not configured in this build.');
+      } else if (code === 'catalog_save_verify_failed' || code === 'catalog_save_failed') {
+        setMsg('Save failed — server could not persist catalog. Try again in a moment.');
       } else {
         setMsg('Save failed — try again.');
       }

@@ -96,12 +96,29 @@ module.exports = async function handler(req, res) {
     try {
       const saved = await saveDynamicCatalog(next);
       if (!saved) return res.status(500).json({ error: 'catalog_save_failed' });
+
+      const expectedTitle = next.tracks[trackId].title;
+      let verified = false;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const reloaded = await ensureDynamicTrack(req, trackId);
+        if (reloaded?.tracks?.[trackId]?.title === expectedTitle) {
+          verified = true;
+          break;
+        }
+        await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+      }
+      if (!verified) {
+        console.error('[catalog-track] verify failed after save', trackId, expectedTitle);
+        return res.status(500).json({ error: 'catalog_save_verify_failed' });
+      }
     } catch (e) {
       console.error('[catalog-track] update save', e);
       return res.status(500).json({ error: 'catalog_save_failed' });
     }
 
-    return res.status(200).json({ track: next.tracks[trackId], catalog: next });
+    const fresh = await ensureDynamicTrack(req, trackId);
+    const track = fresh?.tracks?.[trackId] ?? next.tracks[trackId];
+    return res.status(200).json({ track, catalog: fresh ?? next });
   }
 
   return res.status(400).json({ error: 'invalid_action' });

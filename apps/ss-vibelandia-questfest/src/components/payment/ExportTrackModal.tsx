@@ -85,7 +85,7 @@ export function ExportTrackModal({
     try {
       await downloadTrackToDevice(track);
       onDownloaded?.(track.id);
-      setMsg(`Saved “${title}” on this device — plays offline in the Bridge too.`);
+      setMsg(`Saved “${title}” on this device — plays offline in Capitan's Bridge too.`);
       setStep('done');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'download_failed');
@@ -105,7 +105,7 @@ export function ExportTrackModal({
       });
       await downloadTrackToDevice(track);
       onDownloaded?.(track.id);
-      setMsg(`Saved “${title}” on this device — plays offline in the Bridge too.`);
+      setMsg(`Saved “${title}” on this device — plays offline in Capitan's Bridge too.`);
       setStep('done');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'download_failed');
@@ -180,7 +180,7 @@ export function ExportTrackModal({
               You need an <strong>active Machote members pass</strong> or <strong>captain access</strong> before you can
               buy a track download. Streaming stays on the pass; downloads are per track. Captain unlock lives inside{' '}
               <strong>Get members-only pass</strong> — expand <strong>Are you the captain?</strong> there, or use the
-              Fair Exchange screen after a 30s preview (or the <strong>Captain</strong> link in the header).
+              Fair Exchange screen after a 30s preview (or the <strong>Capitan</strong> link in the header).
             </p>
             <div className="modal-actions">
               <button type="button" className="voxel-btn voxel-btn--orange" onClick={onNeedPass}>

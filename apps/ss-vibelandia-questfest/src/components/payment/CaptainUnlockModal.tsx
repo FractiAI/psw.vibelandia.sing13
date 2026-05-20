@@ -38,14 +38,14 @@ export function CaptainUnlockModal({ open, onClose, onUnlocked }: CaptainUnlockM
       <div className="modal-backdrop" onClick={close} />
       <div className="voxel-panel modal-card modal-card--wide">
         <h2 id="cap-title" className="modal-title">
-          Captain / operator access
+          Capitan / operator access
         </h2>
         <p className="modal-body">
           If you run this deck, confirm below. This unlocks <strong>full playback</strong> and{' '}
           <strong>per-track downloads without the payment rails</strong> on this browser session only.
         </p>
         <label className="boarding-field">
-          <span>Captain password</span>
+          <span>Capitan password</span>
           <input
             className="libretto-input boarding-input"
             type="password"

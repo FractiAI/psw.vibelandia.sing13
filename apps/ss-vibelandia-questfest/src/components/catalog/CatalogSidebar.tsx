@@ -1,6 +1,7 @@
 import { useCatalogStore } from '@/stores/catalogStore';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { PLAIN } from '@/lib/plainSpeak';
+import { CAPITANS_BRIDGE } from '@/lib/productNames';
 import { useMemo } from 'react';
 
 interface CatalogSidebarProps {
@@ -50,6 +51,7 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
         <span className="sp-logo-mark" aria-hidden>♪</span>
         <div>
           <strong>Machote Moderno</strong>
+          <span className="sp-side-deck">{CAPITANS_BRIDGE}</span>
           <span>
             {trackCount} {PLAIN.tracks}
           </span>

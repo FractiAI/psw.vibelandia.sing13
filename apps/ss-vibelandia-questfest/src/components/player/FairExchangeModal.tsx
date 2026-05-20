@@ -80,7 +80,7 @@ export function FairExchangeModal({ open, onClose, onBoard, onCaptainAccess }: F
           </button>
           {onCaptainAccess && (
             <button type="button" className="voxel-btn voxel-btn--ghost-warm" onClick={onCaptainAccess}>
-              Captain / operator — unlock with password
+              Capitan / operator — unlock with password
             </button>
           )}
           <button type="button" className="voxel-btn voxel-btn--ghost-warm" onClick={onClose}>

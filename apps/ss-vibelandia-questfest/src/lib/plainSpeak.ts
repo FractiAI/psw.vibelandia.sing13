@@ -1,4 +1,4 @@
-/** Old-school plain labels for the Bridge player (no jargon wall). */
+/** Old-school plain labels for Capitan's Bridge (no jargon wall). */
 
 export const PLAIN = {
   masterCatalog: 'Sonic Singularity · full library',

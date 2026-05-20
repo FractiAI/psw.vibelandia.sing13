@@ -23,7 +23,7 @@
     },
     "cloudSkinEyebrow": "Sonic Singularity Sing! 13 · Internet cloud skin",
     "skip": "Skip",
-    "buildNoticeHtml": "<strong>Build in progress.</strong> We are finishing the QUESTFEST top deck and Sovereign Player — give us a few days to get uploads, catalog, and playback working just right. Thank you for your patience.",
+    "buildNoticeHtml": "<strong>Build in progress.</strong> We are finishing the QUESTFEST top deck and Capitan's Bridge — give us a few days to get uploads, catalog, and playback working just right. Thank you for your patience.",
     "appRumorHtml": "Rumor has it there is an <strong>SS VIBELANDIA QUESTFEST App</strong> in the works! For those in the know. Now you know.",
     "heroTop1Html": "<strong>Hero Jo</strong> - Golden Bachdoor Hit Factory",
     "heroTop2": "Puerto Reno - 24x365",
@@ -355,16 +355,16 @@
       "title": "FractiAI — SS Vibelandia QUESTFEST — Sonic Singularity Sing! 13",
       "desc": "FractiAI builds SS Vibelandia QUESTFEST 24×365 — Sonic Singularity, members honor pass, and the Sonic Singularity Sing! 13 cloud skin.",
       "ogTitle": "FractiAI — QUESTFEST — Sonic Singularity Sing! 13",
-      "ogDesc": "Reno swamp beats · Sovereign Player · Fair Exchange honor pass · nesting ladder."
+      "ogDesc": "Reno swamp beats · Capitan's Bridge · Fair Exchange honor pass · nesting ladder."
     },
     "skip": "Skip to content",
     "backCta": "SS Vibelandia QUESTFEST",
-    "miniNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Sovereign Player</a> · <a href=\"look-under-the-hood.html\">Look under the hood</a>",
+    "miniNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Capitan's Bridge</a> · <a href=\"look-under-the-hood.html\">Look under the hood</a>",
     "eyebrow": "FractiAI · Sonic Singularity Sing! 13",
     "h1": "SS Vibelandia QUESTFEST 24×365",
-    "deck": "Sonic Singularity leads — Reno swamp catalog, Sovereign Player, Machote members honor pass. Nine nesting layers on the Sonic Singularity Sing! 13 cloud skin. Wrong Side · fair exchange · old school.",
+    "deck": "Sonic Singularity leads — Reno swamp catalog, Capitan's Bridge, Machote members honor pass. Nine nesting layers on the Sonic Singularity Sing! 13 cloud skin. Wrong Side · fair exchange · old school.",
     "foundersAlt": "FractiAI co-founders on the beach: Pru Mendez at left, Daniel Ari Friedman, Ph.D. at right.",
     "foundersCaption": "Pru Mendez (left) · Daniel Ari Friedman, Ph.D. (right)",
-    "footerNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Sovereign Player</a> · <a href=\"look-under-the-hood.html\">Look under the hood</a>"
+    "footerNavHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST</a> · <a href=\"questfest-bridge/#/bridge\">Capitan's Bridge</a> · <a href=\"look-under-the-hood.html\">Look under the hood</a>"
   }
 }

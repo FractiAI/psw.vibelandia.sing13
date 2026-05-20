@@ -1829,6 +1829,12 @@ a.voxel-btn {
   margin-top: 0.15rem;
 }
 
+.sp-side-deck {
+  color: #d4af37 !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 .sp-logo-mark {
   width: 2.5rem;
   height: 2.5rem;

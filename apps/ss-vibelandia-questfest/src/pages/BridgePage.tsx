@@ -24,6 +24,7 @@ import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { PLAIN } from '@/lib/plainSpeak';
 import { BuildNoticeBanner } from '@/components/BuildNoticeBanner';
+import { CAPITANS_BRIDGE } from '@/lib/productNames';
 
 export function BridgePage() {
   const location = useLocation();
@@ -177,8 +178,13 @@ export function BridgePage() {
             <a href="/interfaces/vibelandia-questfest.html" className="sp-top-link">
               QUESTFEST
             </a>
-            <button type="button" className="sp-top-link" onClick={() => setCaptainOpen(true)}>
-              Captain
+            <button
+              type="button"
+              className="sp-top-link"
+              onClick={() => setCaptainOpen(true)}
+              title={CAPITANS_BRIDGE}
+            >
+              Capitan
             </button>
           </nav>
         </header>

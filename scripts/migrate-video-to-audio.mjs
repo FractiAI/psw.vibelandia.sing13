@@ -26,6 +26,7 @@ const TMP = path.join(ROOT, 'scripts', '.migrate-tmp');
 const FFMPEG = process.env.FFMPEG_PATH || 'ffmpeg';
 const FFPROBE = process.env.FFPROBE_PATH || 'ffprobe';
 const DRY = process.argv.includes('--dry-run');
+const PATCH_ONLY = process.argv.includes('--patch-only');
 
 function run(cmd, args) {
   return new Promise((resolve, reject) => {
@@ -68,8 +69,38 @@ async function blobUpload(pathname, filePath, contentType) {
     access: 'public',
     handleUploadUrl: `${ORIGIN}/api/catalog-upload`,
     headers: { 'X-Catalog-Secret': SECRET },
+    clientPayload: JSON.stringify({ allowOverwrite: true }),
     multipart: buf.length > 15 * 1024 * 1024,
   });
+}
+
+function blobOriginFromUrl(url) {
+  try {
+    return new URL(url).origin;
+  } catch {
+    return null;
+  }
+}
+
+/** MP3 may already be on Blob from a prior run that failed to patch catalog. */
+async function resolveAudioUrl(track, mp3Path) {
+  const pathname = `catalog/${track.id}.mp3`;
+  try {
+    const blob = await blobUpload(pathname, mp3Path, 'audio/mpeg');
+    return blob.url;
+  } catch (e) {
+    const msg = String(e?.message || e);
+    if (!/already exists/i.test(msg)) throw e;
+    const origin = blobOriginFromUrl(track.videoSrc || track.src);
+    if (!origin) throw e;
+    const guess = `${origin}/${pathname}`;
+    const head = await fetch(guess, { method: 'HEAD', cache: 'no-store' });
+    if (head.ok) {
+      console.log('  reuse existing mp3 blob');
+      return guess;
+    }
+    throw e;
+  }
 }
 
 async function patchTrack(trackId, patch) {
@@ -86,6 +117,21 @@ async function patchTrack(trackId, patch) {
   return data.track;
 }
 
+async function patchOnlyOne(track) {
+  const origin = blobOriginFromUrl(track.videoSrc || track.src);
+  if (!origin) throw new Error('no_blob_origin');
+  const audioUrl = `${origin}/catalog/${track.id}.mp3`;
+  const head = await fetch(audioUrl, { method: 'HEAD', cache: 'no-store' });
+  if (!head.ok) throw new Error(`mp3 missing ${head.status}`);
+  const coverUrl = `${origin}/catalog/covers/${track.id}.jpg`;
+  const coverHead = await fetch(coverUrl, { method: 'HEAD', cache: 'no-store' });
+  const posterSrc = coverHead.ok ? coverUrl : undefined;
+  console.log('  patch catalog (existing mp3 on blob)…');
+  const updated = await patchTrack(track.id, { src: audioUrl, posterSrc, clearVideo: true });
+  console.log(`  ✓ ${updated.title} → audio only`);
+  return { ok: true, patchOnly: true };
+}
+
 async function migrateOne(track) {
   const mediaUrl = track.videoSrc || track.src;
   if (!mediaUrl) return { skipped: true, reason: 'no_media' };
@@ -95,6 +141,9 @@ async function migrateOne(track) {
   const jpgPath = path.join(TMP, `${track.id}.jpg`);
 
   console.log(`\n▶ ${track.title} (${track.id})`);
+
+  if (PATCH_ONLY) return patchOnlyOne(track);
+
   console.log(`  download ${mediaUrl.slice(0, 72)}…`);
 
   if (DRY) {
@@ -103,7 +152,7 @@ async function migrateOne(track) {
   }
 
   fs.mkdirSync(TMP, { recursive: true });
-  const dl = await fetch(mediaUrl);
+  const dl = await fetch(mediaUrl, { signal: AbortSignal.timeout(45 * 60 * 1000) });
   if (!dl.ok) throw new Error(`download ${dl.status}`);
   const ext = path.extname(new URL(mediaUrl).pathname) || '.bin';
   const inFile = `${inPath}${ext}`;
@@ -117,14 +166,25 @@ async function migrateOne(track) {
   console.log(`  mp3 ${(mp3Size / 1e6).toFixed(2)} MB`);
 
   console.log('  ffmpeg → cover…');
-  await run(FFMPEG, ['-y', '-ss', '00:00:02', '-i', inFile, '-vframes', '1', '-q:v', '3', jpgPath]).catch(
-    () => {},
-  );
+  await run(FFMPEG, [
+    '-y',
+    '-ss',
+    '00:00:02',
+    '-i',
+    inFile,
+    '-frames:v',
+    '1',
+    '-q:v',
+    '3',
+    '-update',
+    '1',
+    jpgPath,
+  ]).catch(() => {});
 
   const durationSec = await probeDurationSec(mp3Path);
 
   console.log('  upload mp3…');
-  const audioBlob = await blobUpload(`catalog/${track.id}.mp3`, mp3Path, 'audio/mpeg');
+  const audioUrl = await resolveAudioUrl(track, mp3Path);
 
   let posterSrc;
   if (fs.existsSync(jpgPath)) {
@@ -135,7 +195,7 @@ async function migrateOne(track) {
 
   console.log('  patch catalog…');
   const updated = await patchTrack(track.id, {
-    src: audioBlob.url,
+    src: audioUrl,
     posterSrc,
     clearVideo: true,
     durationSec,
@@ -154,7 +214,7 @@ async function migrateOne(track) {
 }
 
 async function main() {
-  console.log('Origin:', ORIGIN, DRY ? '(dry-run)' : '');
+  console.log('Origin:', ORIGIN, DRY ? '(dry-run)' : PATCH_ONLY ? '(patch-only)' : '');
   const catalog = await fetchCatalog();
   const tracks = Object.values(catalog.tracks || {}).filter((t) => t.videoSrc);
   console.log(`Catalog v${catalog.version} — ${tracks.length} video track(s) to convert`);

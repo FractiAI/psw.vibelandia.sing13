@@ -128,11 +128,21 @@ async function handleBlobClientToken(req, res, body) {
     const jsonResponse = await handleUpload({
       body,
       request: req,
-      onBeforeGenerateToken: async () => ({
-        allowedContentTypes: ALLOWED_CONTENT_TYPES,
-        maximumSizeInBytes: MAX_CLIENT_BYTES,
-        addRandomSuffix: false,
-      }),
+      onBeforeGenerateToken: async (_pathname, clientPayload) => {
+        let allowOverwrite = false;
+        try {
+          const p = clientPayload ? JSON.parse(clientPayload) : {};
+          allowOverwrite = p.allowOverwrite === true;
+        } catch {
+          /* ignore */
+        }
+        return {
+          allowedContentTypes: ALLOWED_CONTENT_TYPES,
+          maximumSizeInBytes: MAX_CLIENT_BYTES,
+          addRandomSuffix: false,
+          allowOverwrite,
+        };
+      },
       onUploadCompleted: async () => {},
     });
     return res.status(200).json(jsonResponse);

@@ -276,7 +276,7 @@ export function NowPlayingBar({
               {solenoidActive && <span className="sp-now-badge">30s preview</span>}
               {fullPlayUnlocked && (
                 <span className="sp-now-badge sp-now-badge--pass" title="Keeps playing in background">
-                  {captainUnlocked && !isPassenger ? 'Captain · background OK' : 'Background play'}
+                  {captainUnlocked && !isPassenger ? 'Capitan · background OK' : 'Background play'}
                 </span>
               )}
             </>

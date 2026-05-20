@@ -82,7 +82,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     if (!serverReady) {
       setStatus('Upload not available.');
       showMsg(
-        'Server upload is not configured. Set VITE_CATALOG_UPLOAD_SECRET (or captain password) in the Bridge build and CATALOG_UPLOAD_SECRET + BLOB_READ_WRITE_TOKEN on Vercel, then redeploy.',
+        "Server upload is not configured. Set VITE_CATALOG_UPLOAD_SECRET (or Capitan password) in the Capitan's Bridge build and CATALOG_UPLOAD_SECRET + BLOB_READ_WRITE_TOKEN on Vercel, then redeploy.",
         'error',
       );
       return;
@@ -171,7 +171,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       setStatus('Upload failed.');
       if (err === 'catalog_upload_unconfigured') {
         showMsg(
-          'Server upload is not configured. On Vercel set BLOB_READ_WRITE_TOKEN and CATALOG_UPLOAD_SECRET (same value as VITE_CATALOG_UPLOAD_SECRET or captain password in the Bridge build), then redeploy.',
+          "Server upload is not configured. On Vercel set BLOB_READ_WRITE_TOKEN and CATALOG_UPLOAD_SECRET (same value as VITE_CATALOG_UPLOAD_SECRET or Capitan password in the Capitan's Bridge build), then redeploy.",
           'error',
         );
       } else if (err === 'video_too_long') {

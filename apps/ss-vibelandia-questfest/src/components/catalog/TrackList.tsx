@@ -15,6 +15,7 @@ import { hasExportLicense } from '@/lib/exportLicenses';
 import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
+import { isVideoTrack } from '@/lib/isVideoTrack';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
@@ -415,7 +416,7 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
                       <span className="sp-listen-type-dur">
 
-                        {tr.videoSrc ? 'Video' : 'Audio'} · {fmtDuration(tr.durationSec)}
+                        {isVideoTrack(tr) ? 'Video' : 'Audio'} · {fmtDuration(tr.durationSec)}
                         {tr.downloadedLocally ? ' · On device' : ' · Stream'}
 
                       </span>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import type { TrackDef } from '@/lib/catalogTypes';
+import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
 interface UseBackgroundPlaybackOptions {
@@ -12,11 +13,6 @@ interface UseBackgroundPlaybackOptions {
   setPlaying: (playing: boolean) => void;
   onRequestResume?: () => void;
   onTimeUpdate?: (currentTime: number) => void;
-}
-
-function streamUrl(track: TrackDef | undefined): string {
-  if (!track) return '';
-  return track.src || track.videoSrc || '';
 }
 
 /**
@@ -86,7 +82,7 @@ export function useBackgroundPlayback({
     const handoffToBackground = () => {
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
-      const url = streamUrl(trackRef.current);
+      const url = playbackUrlForTrack(trackRef.current);
       if (!el || !bg || !url || !isPlayingRef.current) return;
       if (usePlaybackStore.getState().backgroundHandoffActive) return;
 

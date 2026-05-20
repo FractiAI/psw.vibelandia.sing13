@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
+import { isVideoTrack, playbackUrlForTrack } from '@/lib/isVideoTrack';
 import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
@@ -27,10 +28,10 @@ export function NowPlayingBar({
   beginSession,
   clearKill,
   onDownload,
-  expanded = false,
 }: NowPlayingBarProps) {
-  const mediaRef = useRef<HTMLVideoElement | HTMLAudioElement | null>(null);
-  const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const backgroundAudioRef = useRef<HTMLAudioElement>(null);
   const gateArmedRef = useRef(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -51,11 +52,16 @@ export function NowPlayingBar({
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
-  const isVideo = !!track?.videoSrc;
-  const backgroundHandoffActive = usePlaybackStore((s) => s.backgroundHandoffActive);
+  const showVideo = isVideoTrack(track);
+
+  const primaryMediaRef = showVideo ? videoRef : audioRef;
+
+  const getPrimaryMedia = useCallback((): HTMLVideoElement | HTMLAudioElement | null => {
+    return primaryMediaRef.current;
+  }, [primaryMediaRef]);
 
   const resumePlayback = useCallback(() => {
-    const el = mediaRef.current;
+    const el = getPrimaryMedia();
     const bg = backgroundAudioRef.current;
     if (!track || !fullPlayUnlocked) return;
     if (document.hidden && bg?.src) {
@@ -63,15 +69,15 @@ export function NowPlayingBar({
     } else if (el) {
       void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
     }
-  }, [fullPlayUnlocked, track]);
+  }, [fullPlayUnlocked, getPrimaryMedia, track]);
 
   useBackgroundPlayback({
-    mediaRef,
+    mediaRef: primaryMediaRef as RefObject<HTMLVideoElement | HTMLAudioElement | null>,
     backgroundAudioRef,
     allowBackgroundPlay: fullPlayUnlocked,
     isPlaying,
     track,
-    isVideo,
+    isVideo: showVideo,
     setPlaying,
     onRequestResume: resumePlayback,
     onTimeUpdate: setDisplayTime,
@@ -84,50 +90,17 @@ export function NowPlayingBar({
   }, [killReason, onVesselSwitch]);
 
   useEffect(() => {
-    const el = mediaRef.current;
+    if (!track) return;
+    const el = primaryMediaRef.current;
     const bg = backgroundAudioRef.current;
-    if (!el || !track) return;
+    if (!el) return;
 
     let cancelled = false;
     const prevId = currentTrackId;
     gateArmedRef.current = true;
     setError(null);
-
-    const streamUrl = track.videoSrc || track.src;
-    const useStreamFirst = !!streamUrl && !track.downloadedLocally;
-
-    if (useStreamFirst) {
-      if (isVideo && el instanceof HTMLVideoElement) {
-        el.src = track.videoSrc || streamUrl;
-        el.load();
-        bg?.pause();
-        bg?.removeAttribute('src');
-      } else if (el instanceof HTMLAudioElement) {
-        el.src = streamUrl;
-        el.load();
-      }
-      el.volume = gain;
-    } else {
-      void (async () => {
-        try {
-          const url = await resolvePlaybackUrl(track);
-          if (cancelled || !mediaRef.current) return;
-
-          if (isVideo && el instanceof HTMLVideoElement) {
-            el.src = track.videoSrc || url;
-            el.load();
-            bg?.pause();
-            bg?.removeAttribute('src');
-          } else if (el instanceof HTMLAudioElement) {
-            el.src = url;
-            el.load();
-          }
-          el.volume = gain;
-        } catch {
-          if (!cancelled) setError('Could not load this track.');
-        }
-      })();
-    }
+    bg?.pause();
+    bg?.removeAttribute('src');
 
     const onTime = () => {
       const t = el.currentTime;
@@ -158,25 +131,66 @@ export function NowPlayingBar({
     const onEnded = () => setPlaying(false);
     const onErr = () => setError('Could not play this file.');
 
-    const onBgEnded = () => setPlaying(false);
+    const tryPlay = () => {
+      if (cancelled || !usePlaybackStore.getState().isPlaying) return;
+      beginSession();
+      el.volume = gain;
+      void el.play().catch(() => setError('Tap play on a track to start listening.'));
+    };
 
-    el.addEventListener('timeupdate', onTime);
-    el.addEventListener('ended', onEnded);
-    el.addEventListener('error', onErr);
-    bg?.addEventListener('ended', onBgEnded);
+    const applySrc = (url: string) => {
+      if (cancelled || !url) return;
+      el.src = url;
+      el.load();
+      el.volume = gain;
+      el.addEventListener('timeupdate', onTime);
+      el.addEventListener('ended', onEnded);
+      el.addEventListener('error', onErr);
+      el.addEventListener('canplay', tryPlay, { once: true });
+      if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) tryPlay();
+    };
+
+    const streamUrl = playbackUrlForTrack(track);
+    const useStreamFirst = !!streamUrl && !track.downloadedLocally;
+
+    if (useStreamFirst) {
+      applySrc(streamUrl);
+    } else {
+      void (async () => {
+        try {
+          const url = await resolvePlaybackUrl(track);
+          if (cancelled) return;
+          applySrc(url);
+        } catch {
+          if (!cancelled) setError('Could not load this track.');
+        }
+      })();
+    }
 
     return () => {
       cancelled = true;
       el.removeEventListener('timeupdate', onTime);
       el.removeEventListener('ended', onEnded);
       el.removeEventListener('error', onErr);
-      bg?.removeEventListener('ended', onBgEnded);
+      el.pause();
+      el.removeAttribute('src');
       if (prevId) releasePlaybackUrl(prevId);
     };
-  }, [currentTrackId, gain, isVideo, onFairExchange, setDisplayTime, setPlaying, solenoidActive, track]);
+  }, [
+    beginSession,
+    currentTrackId,
+    gain,
+    primaryMediaRef,
+    onFairExchange,
+    setDisplayTime,
+    setPlaying,
+    showVideo,
+    solenoidActive,
+    track,
+  ]);
 
   useEffect(() => {
-    const el = mediaRef.current;
+    const el = primaryMediaRef.current;
     const bg = backgroundAudioRef.current;
     if (!el || !track) return;
     if (!isPlaying) {
@@ -184,14 +198,12 @@ export function NowPlayingBar({
       bg?.pause();
       return;
     }
-    beginSession();
-    void el.play().catch(() => setError('Tap play on a track to start listening.'));
-  }, [beginSession, isPlaying, track]);
-
-  useEffect(() => {
-    const el = mediaRef.current;
-    if (el) el.volume = gain;
-  }, [gain]);
+    if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA && el.src) {
+      beginSession();
+      el.volume = gain;
+      void el.play().catch(() => setError('Tap play on a track to start listening.'));
+    }
+  }, [beginSession, gain, isPlaying, primaryMediaRef, track]);
 
   const fmt = useCallback((s: number) => {
     const m = Math.floor(s / 60);
@@ -227,24 +239,26 @@ export function NowPlayingBar({
 
   return (
     <footer className="sp-now">
-      {track && isVideo && (
+      {track && showVideo && (
         <div className="sp-now-visual">
           <video
-            ref={mediaRef as React.RefObject<HTMLVideoElement>}
+            key={track.id}
+            ref={videoRef}
             className="sp-now-video"
-            preload="metadata"
+            preload="auto"
             playsInline
+            controls
             poster={track.posterSrc}
             aria-label={track.title}
           />
         </div>
       )}
-      {track && !isVideo && (
-        <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} className="sr-only" preload="metadata" />
+      {track && !showVideo && (
+        <audio key={track.id} ref={audioRef} className="sr-only" preload="auto" />
       )}
       {fullPlayUnlocked && (
         <audio
-          ref={backgroundAudioRef as RefObject<HTMLAudioElement>}
+          ref={backgroundAudioRef}
           className="sr-only"
           preload="auto"
           aria-hidden
@@ -258,6 +272,7 @@ export function NowPlayingBar({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
+              {showVideo && <span className="sp-now-badge">Video</span>}
               {solenoidActive && <span className="sp-now-badge">30s preview</span>}
               {fullPlayUnlocked && (
                 <span className="sp-now-badge sp-now-badge--pass" title="Keeps playing in background">

@@ -3311,17 +3311,24 @@ a.boarding-pay-open {
 }
 
 .sp-now-visual {
-  max-height: min(42vh, 360px);
+  width: 100%;
+  min-height: min(42vh, 280px);
+  max-height: min(52vh, 420px);
   background: #000;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .sp-now-video {
+  display: block;
   width: 100%;
   max-width: 960px;
-  max-height: min(42vh, 360px);
+  height: auto;
+  min-height: 200px;
+  max-height: min(52vh, 420px);
   object-fit: contain;
+  background: #000;
 }
 
 .sp-now-bar {

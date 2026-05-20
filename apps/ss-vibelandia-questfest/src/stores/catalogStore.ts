@@ -611,7 +611,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       const userPlaylistIds = get()
         .playlists.filter((p) => !isMasterPlaylist(p.id) && p.trackIds.includes(trackId))
         .map((p) => p.id);
-      const { track: saved, catalog: serverCatalog } = await updateTrackOnServer(trackId, {
+      const { track: saved } = await updateTrackOnServer(trackId, {
         title: next.title,
         artist: next.artist,
         description: next.description,
@@ -619,45 +619,14 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         durationSec: next.durationSec,
         playlistIds: userPlaylistIds,
       });
-      next.title = saved.title;
-      next.artist = saved.artist;
-      if (saved.description) next.description = saved.description;
-      else delete next.description;
-      if (saved.genre) next.genre = saved.genre;
-      else delete next.genre;
-      if (saved.durationSec != null) next.durationSec = saved.durationSec;
-      next.serverHosted = true;
-
-      if (serverCatalog) {
-        const prefs = loadCatalogPrefs();
-        const downloaded = loadDownloadedTrackIds();
-        const applied = applyServerCatalog(
-          mergePendingServerTracks(
-            {
-              version: serverCatalog.version,
-              tracks: serverCatalog.tracks,
-              playlists: serverCatalog.playlists,
-              activePlaylistId: serverCatalog.activePlaylistId,
-            },
-            { ...get().tracks, [trackId]: next },
-          ),
-          prefs,
-          downloaded,
-        );
-        set({
-          tracks: applied.tracks,
-          playlists: applied.playlists,
-          activePlaylistId: applied.activePlaylistId,
-        });
-        saveCatalogCache({
-          version: CATALOG_VERSION,
-          tracks: serverTracksForCache(applied.tracks),
-          playlists: applied.playlists,
-          activePlaylistId: applied.activePlaylistId,
-        });
-        get().persist();
-        return;
-      }
+      Object.assign(next, {
+        ...saved,
+        id: trackId,
+        serverHosted: true,
+        sourceKey: prev.sourceKey,
+        downloadedLocally: prev.downloadedLocally,
+        localMediaKey: prev.localMediaKey,
+      });
     }
 
     set((s) => ({ tracks: { ...s.tracks, [trackId]: next } }));

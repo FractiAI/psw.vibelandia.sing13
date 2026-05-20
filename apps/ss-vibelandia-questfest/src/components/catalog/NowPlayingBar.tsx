@@ -74,6 +74,7 @@ export function NowPlayingBar({
     isVideo,
     setPlaying,
     onRequestResume: resumePlayback,
+    onTimeUpdate: setDisplayTime,
   });
 
   useEffect(() => {

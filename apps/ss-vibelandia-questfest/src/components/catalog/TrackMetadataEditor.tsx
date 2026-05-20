@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { isServerUploadConfigured } from '@/lib/serverCatalog';
+import { isUserUploadTrack } from '@/lib/catalogSeed';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import {
   TRACK_DESCRIPTION_MAX,
@@ -47,7 +49,16 @@ export function TrackMetadataEditor({
     setMsg(null);
     try {
       await updateTrack(track.id, { title, artist, genre, description });
-      setMsg('Saved.');
+      const latest = useCatalogStore.getState().getTrack(track.id);
+      if (latest) {
+        setTitle(latest.title);
+        setArtist(latest.artist);
+        setGenre(latest.genre ?? '');
+        setDescription(latest.description ?? '');
+      }
+      const synced =
+        isServerUploadConfigured() && isUserUploadTrack(track.id, track);
+      setMsg(synced ? 'Saved to server.' : 'Saved on this device only.');
       onSaved?.();
     } catch (err) {
       const code = err && typeof err === 'object' && 'code' in err ? String((err as { code?: string }).code) : '';
@@ -55,6 +66,8 @@ export function TrackMetadataEditor({
         setMsg('Save failed — captain / upload secret mismatch.');
       } else if (code === 'track_not_found') {
         setMsg('Save failed — track not on server catalog.');
+      } else if (code === 'catalog_upload_unconfigured') {
+        setMsg('Save failed — upload secret not configured in this build.');
       } else {
         setMsg('Save failed — try again.');
       }

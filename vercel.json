@@ -20,6 +20,9 @@
     { "source": "/mythos/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
     { "source": "/coherence", "destination": "/interfaces/the-coherence-project.html" },
     { "source": "/coherence/", "destination": "/interfaces/the-coherence-project.html" },
+    { "source": "/mining-ops", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
+    { "source": "/mining-ops/", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
+    { "source": "/whitepaper/:id", "destination": "/interfaces/whitepaper-surface.html?id=:id" },
     { "source": "/hero-houdini", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
     { "source": "/hero-houdini/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
     { "source": "/houdini", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
@@ -63,7 +66,8 @@
     },
     "api/whitepaper.js": {
       "memory": 512,
-      "maxDuration": 30
+      "maxDuration": 30,
+      "includeFiles": "{docs/**,protocols/**,BBHE_REPOSITORY_STANDARD.md}"
     }
   },
   "headers": [

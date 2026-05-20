@@ -12,7 +12,8 @@ const TRACKS_DIR = path.join(ROOT, 'media', 'catalog', 'tracks');
 const OUT = path.join(ROOT, 'media', 'catalog', 'catalog.json');
 const DEFAULT_ARTIST = "Hero Jo's Golden Bachdoor Hit Factory";
 
-const MEDIA_EXT = new Set(['.mp3', '.m4a', '.wav', '.ogg', '.flac', '.mp4', '.webm', '.mov']);
+const MEDIA_EXT = new Set(['.mp3', '.m4a', '.wav', '.ogg', '.flac', '.aac']);
+const COVER_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp']);
 
 function slug(s) {
   return s
@@ -37,8 +38,16 @@ function main() {
     process.exit(0);
   }
 
-  const files = fs
-    .readdirSync(TRACKS_DIR)
+  const allFiles = fs.readdirSync(TRACKS_DIR);
+  const coverByStem = new Map();
+  for (const f of allFiles) {
+    const ext = path.extname(f).toLowerCase();
+    if (!COVER_EXT.has(ext)) continue;
+    const stem = path.basename(f, ext);
+    coverByStem.set(stem, f);
+  }
+
+  const files = allFiles
     .filter((f) => MEDIA_EXT.has(path.extname(f).toLowerCase()))
     .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
@@ -53,14 +62,17 @@ function main() {
   for (const file of files) {
     const id = `trk-srv-${slug(file)}`;
     const urlPath = `/media/catalog/tracks/${encodeURIComponent(file)}`;
-    const ext = path.extname(file).toLowerCase();
-    const isVideo = ['.mp4', '.webm', '.mov'].includes(ext);
+    const stem = path.basename(file, path.extname(file));
+    const coverFile = coverByStem.get(stem);
+    const posterPath = coverFile
+      ? `/media/catalog/tracks/${encodeURIComponent(coverFile)}`
+      : undefined;
     tracks[id] = {
       id,
       title: titleFromFile(file),
       artist: DEFAULT_ARTIST,
       src: urlPath,
-      ...(isVideo ? { videoSrc: urlPath } : {}),
+      ...(posterPath ? { posterSrc: posterPath } : {}),
       serverHosted: true,
     };
     trackIds.push(id);

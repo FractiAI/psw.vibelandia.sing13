@@ -10,6 +10,7 @@
     "build:questfest-bridge": "npm --prefix apps/ss-vibelandia-questfest ci && npm --prefix apps/ss-vibelandia-questfest run build",
     "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",
     "build:catalog": "node scripts/build-catalog-from-tracks.mjs",
+    "migrate:catalog-audio": "node scripts/migrate-video-to-audio.mjs",
     "cron:coherence": "node -e \"import('./lib/coherence-autopilot.mjs').then(m=>m.runCoherenceAutopilotCycle({backfillPredictions:true})).then(r=>console.log(JSON.stringify(r,null,2)))\"",
     "predictions:backfill": "node -e \"import('./lib/goldilocks-predictions.mjs').then(m=>m.backfillPredictionLedger({count:24})).then(r=>console.log(JSON.stringify(r.stats,null,2)))\""
   },

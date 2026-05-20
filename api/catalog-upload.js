@@ -17,7 +17,7 @@ const {
 
 const DEFAULT_ARTIST = "Hero Jo's Golden Bachdoor Hit Factory";
 const MAX_INLINE_BYTES = 4.5 * 1024 * 1024;
-const MAX_CLIENT_BYTES = 600 * 1024 * 1024;
+const MAX_CLIENT_BYTES = 80 * 1024 * 1024;
 
 const ALLOWED_CONTENT_TYPES = [
   'audio/mpeg',
@@ -31,11 +31,9 @@ const ALLOWED_CONTENT_TYPES = [
   'audio/ogg',
   'audio/webm',
   'audio/x-m4a',
-  'video/mp4',
-  'video/webm',
-  'video/quicktime',
-  'video/x-matroska',
-  'video/ogg',
+  'image/jpeg',
+  'image/png',
+  'image/webp',
   'application/octet-stream',
 ];
 
@@ -88,14 +86,18 @@ async function registerTrack(res, body) {
       : undefined;
   const contentType = String(body.contentType || 'application/octet-stream');
   const url = String(body.url);
-  const isVideo = contentType.startsWith('video/');
+  if (contentType.startsWith('video/')) {
+    return res.status(400).json({
+      error: 'video_not_allowed',
+      message: 'Upload MP3 or WAV only — video is no longer accepted.',
+    });
+  }
 
   const track = {
     id,
     title,
     artist,
     src: url,
-    ...(isVideo ? { videoSrc: url } : {}),
     ...(description ? { description } : {}),
     ...(genre ? { genre } : {}),
     ...(durationSec != null ? { durationSec } : {}),
@@ -196,13 +198,17 @@ async function handleInlineUpload(req, res) {
     undefined;
   const genre =
     String(req.headers['x-track-genre'] || jsonBody?.genre || '').trim().slice(0, 80) || undefined;
-  const isVideo = contentType.startsWith('video/');
+  if (contentType.startsWith('video/') || /\.(mp4|webm|mov|mkv|m4v)$/i.test(filename)) {
+    return res.status(400).json({
+      error: 'video_not_allowed',
+      message: 'Upload MP3 or WAV only — video is no longer accepted.',
+    });
+  }
   const track = {
     id,
     title,
     artist,
     src: blob.url,
-    ...(isVideo ? { videoSrc: blob.url } : {}),
     ...(description ? { description } : {}),
     ...(genre ? { genre } : {}),
     uploadedAt: new Date().toISOString(),

@@ -27,6 +27,7 @@ export function TrackMetadataEditor({
   onDeleted,
 }: TrackMetadataEditorProps) {
   const updateTrack = useCatalogStore((s) => s.updateTrack);
+  const uploadTrackCover = useCatalogStore((s) => s.uploadTrackCover);
   const deleteTrack = useCatalogStore((s) => s.deleteTrack);
 
   const [title, setTitle] = useState(track.title);
@@ -36,18 +37,27 @@ export function TrackMetadataEditor({
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   const [plModal, setPlModal] = useState(false);
+  const [coverPreview, setCoverPreview] = useState<string | undefined>(track.posterSrc);
+  const [coverFile, setCoverFile] = useState<File | null>(null);
 
   useEffect(() => {
     setTitle(track.title);
     setArtist(track.artist);
     setGenre(track.genre ?? '');
     setDescription(track.description ?? '');
-  }, [track.id, track.title, track.artist, track.genre, track.description]);
+    setCoverPreview(track.posterSrc);
+    setCoverFile(null);
+  }, [track.id, track.title, track.artist, track.genre, track.description, track.posterSrc]);
 
   const handleSave = async () => {
     setBusy(true);
     setMsg(null);
     try {
+      if (coverFile) {
+        await uploadTrackCover(track.id, coverFile);
+        setCoverPreview(useCatalogStore.getState().getTrack(track.id)?.posterSrc);
+        setCoverFile(null);
+      }
       await updateTrack(track.id, { title, artist, genre, description });
       const latest = useCatalogStore.getState().getTrack(track.id);
       if (latest) {
@@ -95,6 +105,31 @@ export function TrackMetadataEditor({
 
   return (
     <div className={wrapClass}>
+      <div className="spotify-field sp-track-cover-field">
+        <span>Cover foto</span>
+        <div className="sp-track-cover-row">
+          {coverPreview ? (
+            <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
+          ) : (
+            <span className="sp-track-cover-preview sp-track-cover-preview--empty" aria-hidden />
+          )}
+          <label className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
+            {coverFile ? coverFile.name : 'Choose image'}
+            <input
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              className="spotify-file-pick-input"
+              disabled={busy || disabled}
+              onChange={(e) => {
+                const f = e.target.files?.[0] ?? null;
+                setCoverFile(f);
+                if (f) setCoverPreview(URL.createObjectURL(f));
+              }}
+            />
+          </label>
+        </div>
+        <span className="spotify-field-hint">JPEG, PNG, or WebP · saved with Save</span>
+      </div>
       <label className="spotify-field">
         Title
         <input

@@ -3,9 +3,10 @@ import { buildEmptyCatalog } from '@/lib/catalogSeed';
 import { expectedCaptainPassword } from '@/lib/captainAuth';
 import { fetchJsonWithTimeout } from '@/lib/fetchWithTimeout';
 import {
+  isAudioFile,
+  isVideoFile,
   MAX_MEDIA_UPLOAD_BYTES,
-  MAX_VIDEO_DURATION_SEC,
-  probeVideoDurationSec,
+  probeAudioDurationSec,
 } from '@/lib/mediaUploadLimits';
 import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 
@@ -15,7 +16,7 @@ const UPLOAD_API = '/api/catalog-upload';
 const TRACK_API = '/api/catalog-track';
 
 export const MAX_UPLOAD_BYTES = Math.floor(4.5 * 1024 * 1024);
-export { MAX_MEDIA_UPLOAD_BYTES, MAX_VIDEO_DURATION_SEC };
+export { MAX_MEDIA_UPLOAD_BYTES };
 
 /** Same-origin `/api/catalog-*` unless `VITE_CATALOG_PIPE_ORIGIN` overrides (dev only). */
 export function catalogPipeOrigin(): string {
@@ -203,6 +204,29 @@ export async function updateTrackOnServer(
   return { track, catalog: data.catalog };
 }
 
+const COVER_MAX_BYTES = 4 * 1024 * 1024;
+
+/** Upload track cover (foto) — JPEG/PNG/WebP up to 4 MB. */
+export async function uploadTrackCover(trackId: string, file: File): Promise<string> {
+  const secret = catalogUploadSecret();
+  if (!secret) throw new Error('catalog_upload_unconfigured');
+  if (!file.type.startsWith('image/')) throw new Error('cover_not_image');
+  if (file.size > COVER_MAX_BYTES) throw new Error('cover_too_large');
+
+  const ext =
+    file.type === 'image/png' ? 'png' : file.type === 'image/webp' ? 'webp' : 'jpg';
+  const pathname = `catalog/covers/${trackId}.${ext}`;
+
+  const blob = await upload(pathname, file, {
+    access: 'public',
+    handleUploadUrl: catalogApiUrl(UPLOAD_API),
+    headers: { 'X-Catalog-Secret': secret },
+  });
+
+  await updateTrackOnServer(trackId, { posterSrc: blob.url });
+  return blob.url;
+}
+
 export async function deleteTrackOnServer(trackId: string): Promise<void> {
   const secret = catalogUploadSecret();
   if (!secret) throw new Error('catalog_upload_unconfigured');
@@ -228,12 +252,17 @@ export async function uploadTrackToServer(
     throw err;
   }
 
-  const durationSec = await probeVideoDurationSec(file);
-  if (durationSec !== null && durationSec > MAX_VIDEO_DURATION_SEC) {
-    const err = new Error('video_too_long') as Error & { code?: string };
-    err.code = 'video_too_long';
+  if (isVideoFile(file)) {
+    const err = new Error('video_not_allowed') as Error & { code?: string };
+    err.code = 'video_not_allowed';
     throw err;
   }
+  if (!isAudioFile(file)) {
+    const err = new Error('not_audio') as Error & { code?: string };
+    err.code = 'not_audio';
+    throw err;
+  }
+  const durationSec = await probeAudioDurationSec(file);
   if (file.size > MAX_MEDIA_UPLOAD_BYTES) {
     const err = new Error('file_too_large') as Error & { code?: string };
     err.code = 'file_too_large';

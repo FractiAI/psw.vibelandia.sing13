@@ -86,6 +86,9 @@ module.exports = async function handler(req, res) {
       genre: body.genre,
       description: body.description,
       durationSec: body.durationSec,
+      src: body.src,
+      posterSrc: body.posterSrc,
+      clearVideo: body.clearVideo === true || body.clearVideo === 'true',
     });
     if (!next) return res.status(404).json({ error: 'track_not_found' });
 

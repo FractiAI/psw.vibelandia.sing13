@@ -1,8 +1,8 @@
-const MEDIA_EXT = /\.(mp3|wav|flac|m4a|aac|ogg|opus|wma|mp4|webm|mov|mkv|avi|m4v)$/i;
+const AUDIO_EXT = /\.(mp3|wav|flac|m4a|aac|ogg|opus|wma)$/i;
 
 export function isMediaFile(file: File): boolean {
-  if (file.type.startsWith('audio/') || file.type.startsWith('video/')) return true;
-  return MEDIA_EXT.test(file.name);
+  if (file.type.startsWith('audio/')) return true;
+  return AUDIO_EXT.test(file.name);
 }
 
 export function fileSourceKey(file: File): string {

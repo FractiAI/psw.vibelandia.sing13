@@ -390,6 +390,19 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
 
                   </span>
 
+                  {tr.posterSrc ? (
+                    <img
+                      className="sp-track-cover-thumb"
+                      src={tr.posterSrc}
+                      alt=""
+                      width={40}
+                      height={40}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <span className="sp-track-cover-thumb sp-track-cover-thumb--empty" aria-hidden />
+                  )}
+
                   <button
 
                     type="button"

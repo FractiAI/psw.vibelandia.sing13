@@ -416,7 +416,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
             </span>
           </label>
           <div className="spotify-field">
-            <span>Audio or video</span>
+            <span>Audio (MP3 or WAV)</span>
             <div className="spotify-file-pick">
               <input
                 key={fileInputKey}
@@ -424,7 +424,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                 ref={fileInputRef}
                 className="spotify-file-pick-input"
                 type="file"
-                accept="audio/*,video/*"
+                accept="audio/mpeg,audio/wav,audio/*,.mp3,.wav"
                 disabled={busy}
                 onChange={(e) => {
                   const picked = e.target.files?.[0] ?? null;
@@ -495,14 +495,14 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
             Uses each file name as the track title. Duplicates are skipped with a clear note.
           </p>
           <div className="spotify-field">
-            <span>Select multiple audio / video files</span>
+            <span>Select multiple MP3 / WAV files</span>
             <div className="spotify-file-pick">
               <input
                 key={multiInputKey}
                 id={multiFileInputId}
                 className="spotify-file-pick-input"
                 type="file"
-                accept="audio/*,video/*"
+                accept="audio/mpeg,audio/wav,audio/*,.mp3,.wav"
                 multiple
                 disabled={busy || !serverReady}
                 onChange={(e) => void handleMultiFilePick(e.target.files)}

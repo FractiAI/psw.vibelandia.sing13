@@ -18,6 +18,7 @@ dist/
 build/
 .vercel
 demo-output/
+scripts/.migrate-tmp/
 
 # Audio — local only (Golden Backdoor / Work Flow); not in repo
 assets/audio/

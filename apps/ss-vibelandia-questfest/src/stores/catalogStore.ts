@@ -27,6 +27,7 @@ import {
   fetchLiveCatalog,
   isServerUploadConfigured,
   updateTrackOnServer,
+  uploadTrackCover as uploadTrackCoverToServer,
   uploadTrackToServer,
 } from '@/lib/serverCatalog';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
@@ -107,6 +108,7 @@ interface CatalogState {
     },
   ) => Promise<void>;
   deleteTrack: (trackId: string) => Promise<void>;
+  uploadTrackCover: (trackId: string, file: File) => Promise<void>;
   /** Pull library from QUESTFEST server (streaming catalog). */
   syncLibraryFromServer: () => Promise<void>;
   refreshFromServer: () => Promise<void>;
@@ -630,6 +632,17 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     }
 
     set((s) => ({ tracks: { ...s.tracks, [trackId]: next } }));
+    get().persist();
+  },
+
+  uploadTrackCover: async (trackId, file) => {
+    const prev = get().tracks[trackId];
+    if (!prev) return;
+    if (!isServerUploadConfigured() || !isUserUploadTrack(trackId, prev)) return;
+    const url = await uploadTrackCoverToServer(trackId, file);
+    set((s) => ({
+      tracks: { ...s.tracks, [trackId]: { ...s.tracks[trackId], posterSrc: url } },
+    }));
     get().persist();
   },
 

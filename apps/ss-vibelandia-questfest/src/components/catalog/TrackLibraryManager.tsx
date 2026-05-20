@@ -56,6 +56,7 @@ function TrackEditorRow({ track, disabled }: { track: TrackDef; disabled?: boole
           track={track}
           disabled={disabled}
           variant="panel"
+          onSaved={() => setOpen(false)}
           onDeleted={() => setOpen(false)}
         />
       )}

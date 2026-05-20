@@ -5,7 +5,7 @@
 const {
   assertCatalogUploadAuth,
   catalogUploadConfigured,
-  loadDynamicCatalog,
+  ensureDynamicTrack,
   patchDynamicTrack,
   removeDynamicTrack,
   saveDynamicCatalog,
@@ -61,7 +61,7 @@ module.exports = async function handler(req, res) {
 
   if (!trackId) return res.status(400).json({ error: 'invalid_track_id' });
 
-  let dynamic = await loadDynamicCatalog();
+  const dynamic = await ensureDynamicTrack(req, trackId);
   if (!dynamic?.tracks?.[trackId]) {
     return res.status(404).json({ error: 'track_not_found' });
   }

@@ -170,10 +170,15 @@ export type TrackMetadataPatch = {
   playlistIds?: string[];
 };
 
+export type UpdateTrackOnServerResult = {
+  track: TrackDef;
+  catalog?: CatalogSnapshot;
+};
+
 export async function updateTrackOnServer(
   trackId: string,
   patch: TrackMetadataPatch,
-): Promise<TrackDef> {
+): Promise<UpdateTrackOnServerResult> {
   const secret = catalogUploadSecret();
   if (!secret) throw new Error('catalog_upload_unconfigured');
 
@@ -184,6 +189,7 @@ export async function updateTrackOnServer(
   });
   const data = (await res.json().catch(() => ({}))) as {
     track?: TrackDef;
+    catalog?: CatalogSnapshot;
     error?: string;
     message?: string;
   };
@@ -192,8 +198,9 @@ export async function updateTrackOnServer(
     err.code = data.error;
     throw err;
   }
-  if (!data.track?.src) throw new Error('update_failed');
-  return data.track;
+  const track = data.track;
+  if (!track?.src && !track?.videoSrc) throw new Error('update_failed');
+  return { track, catalog: data.catalog };
 }
 
 export async function deleteTrackOnServer(trackId: string): Promise<void> {

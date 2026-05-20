@@ -7,6 +7,7 @@ import {
   mergePendingServerTracks,
   mergeServerCatalogWithPrefs,
   isMasterPlaylist,
+  isUserUploadTrack,
 } from '@/lib/catalogSeed';
 import {
   loadDeviceDirHandle,
@@ -604,11 +605,13 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     if (genre) next.genre = genre;
     else delete next.genre;
 
-    if (prev.serverHosted && isServerUploadConfigured()) {
+    const shouldSyncServer = isServerUploadConfigured() && isUserUploadTrack(trackId, prev);
+
+    if (shouldSyncServer) {
       const userPlaylistIds = get()
         .playlists.filter((p) => !isMasterPlaylist(p.id) && p.trackIds.includes(trackId))
         .map((p) => p.id);
-      const saved = await updateTrackOnServer(trackId, {
+      const { track: saved, catalog: serverCatalog } = await updateTrackOnServer(trackId, {
         title: next.title,
         artist: next.artist,
         description: next.description,
@@ -623,6 +626,38 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       if (saved.genre) next.genre = saved.genre;
       else delete next.genre;
       if (saved.durationSec != null) next.durationSec = saved.durationSec;
+      next.serverHosted = true;
+
+      if (serverCatalog) {
+        const prefs = loadCatalogPrefs();
+        const downloaded = loadDownloadedTrackIds();
+        const applied = applyServerCatalog(
+          mergePendingServerTracks(
+            {
+              version: serverCatalog.version,
+              tracks: serverCatalog.tracks,
+              playlists: serverCatalog.playlists,
+              activePlaylistId: serverCatalog.activePlaylistId,
+            },
+            { ...get().tracks, [trackId]: next },
+          ),
+          prefs,
+          downloaded,
+        );
+        set({
+          tracks: applied.tracks,
+          playlists: applied.playlists,
+          activePlaylistId: applied.activePlaylistId,
+        });
+        saveCatalogCache({
+          version: CATALOG_VERSION,
+          tracks: serverTracksForCache(applied.tracks),
+          playlists: applied.playlists,
+          activePlaylistId: applied.activePlaylistId,
+        });
+        get().persist();
+        return;
+      }
     }
 
     set((s) => ({ tracks: { ...s.tracks, [trackId]: next } }));
@@ -634,7 +669,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     if (!prev) return;
     if (!window.confirm(`Delete “${prev.title}” from your catalog?`)) return;
 
-    if (prev.serverHosted && isServerUploadConfigured()) {
+    if (isServerUploadConfigured() && isUserUploadTrack(trackId, prev)) {
       try {
         await deleteTrackOnServer(trackId);
       } catch {

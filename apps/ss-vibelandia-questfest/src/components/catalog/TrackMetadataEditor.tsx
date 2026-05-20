@@ -49,8 +49,15 @@ export function TrackMetadataEditor({
       await updateTrack(track.id, { title, artist, genre, description });
       setMsg('Saved.');
       onSaved?.();
-    } catch {
-      setMsg('Save failed — try again.');
+    } catch (err) {
+      const code = err && typeof err === 'object' && 'code' in err ? String((err as { code?: string }).code) : '';
+      if (code === 'unauthorized') {
+        setMsg('Save failed — captain / upload secret mismatch.');
+      } else if (code === 'track_not_found') {
+        setMsg('Save failed — track not on server catalog.');
+      } else {
+        setMsg('Save failed — try again.');
+      }
     } finally {
       setBusy(false);
     }

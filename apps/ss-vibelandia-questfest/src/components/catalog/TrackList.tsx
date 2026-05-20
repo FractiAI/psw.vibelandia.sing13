@@ -531,7 +531,6 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
                     <TrackMetadataEditor
                       track={tr}
                       variant="inline"
-                      onSaved={() => setEditingTrackId(null)}
                       onDeleted={() => setEditingTrackId(null)}
                     />
                   )}

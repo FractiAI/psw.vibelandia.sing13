@@ -58,6 +58,10 @@
   object-position: center 35%;
 }
 
+.qf-bridge-tower__embed--loading {
+  background: #050508;
+}
+
 .qf-bridge-tower__bg {
   animation: qf-billboard-ken 8s ease-in-out infinite;
 }

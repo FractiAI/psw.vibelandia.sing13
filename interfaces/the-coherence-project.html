@@ -471,10 +471,13 @@
         if (status) status.textContent = 'Loading scoreboard from public APIs…';
         fetch(url, { cache: 'no-store' })
           .then(function (r) {
-            return r.json();
+            return r.json().then(function (data) {
+              if (!r.ok && data && data.message) throw new Error(data.message);
+              return data;
+            });
           })
           .then(function (data) {
-            if (!data.ok) throw new Error(data.message || 'api error');
+            if (data.ok === false) throw new Error(data.message || data.code || 'api error');
             setStatsCards(data.stats);
             renderOpen(data.open);
             renderTable(data.resolved);

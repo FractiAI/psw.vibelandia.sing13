@@ -23,6 +23,8 @@
     { "source": "/mining-ops", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
     { "source": "/mining-ops/", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
     { "source": "/whitepaper/:id", "destination": "/interfaces/whitepaper-surface.html?id=:id" },
+    { "source": "/hhf-wp-2026-v8", "destination": "/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" },
+    { "source": "/hhf-wp-2026-v8/", "destination": "/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" },
     { "source": "/hero-houdini", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
     { "source": "/hero-houdini/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
     { "source": "/houdini", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },

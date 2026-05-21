@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#07090e" />
-    <title>Holographic Goldilocks AI OS · Product demo (in development) · SS Vibelandia</title>
+    <title>Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia</title>
     <meta
       name="description"
-      content="Holographic Goldilocks AI OS — product demo on the hydrogen line: edge compute, FractiStorage, Fair Exchange. In development on SS Vibelandia QUESTFEST SING 13."
+      content="Plain-speak live trials for the 13D Holographic Goldilocks AI OS on the hydrogen line — what was tested, what it means, and implications for today's tech giants. HHF-WP-2026-V8."
     />
     <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/holographic-goldilocks-ai-os" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       *,
       *::before,
@@ -21,10 +27,130 @@
         margin: 0;
         min-height: 100%;
         background: #07090e;
-        color: #56d364;
+        color: #c9d1d9;
+        font-family: Inter, 'Segoe UI', system-ui, sans-serif;
+        font-size: 1.05rem;
+        line-height: 1.65;
+      }
+      .plain-page {
+        max-width: 46rem;
+      }
+      .plain-page h1,
+      .plain-page h2,
+      .plain-page h3 {
+        color: #e6edf3;
+        line-height: 1.25;
+      }
+      .plain-page h1 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin: 0 0 0.5rem;
+      }
+      .plain-page h2 {
+        font-size: 1.25rem;
+        margin: 2rem 0 0.65rem;
+        padding-bottom: 0.35rem;
+        border-bottom: 1px solid #30363d;
+      }
+      .plain-page h3 {
+        font-size: 1.05rem;
+        color: #79c0ff;
+        margin: 1.25rem 0 0.4rem;
+      }
+      .plain-page p,
+      .plain-page li {
+        color: #c9d1d9;
+        margin: 0 0 0.85rem;
+      }
+      .plain-page strong {
+        color: #e6edf3;
+      }
+      .plain-page ol.steps {
+        margin: 0 0 1rem;
+        padding: 0;
+        list-style: none;
+      }
+      .plain-page ol.steps > li {
+        border: 1px solid #30363d;
+        background: #0d1117;
+        margin-bottom: 0.65rem;
+        padding: 0.85rem 1rem;
+      }
+      .plain-page ol.steps > li h3 {
+        margin-top: 0;
+      }
+      .plain-page .step-num {
+        display: inline-block;
+        font-weight: 700;
+        color: #3fb950;
+        margin-right: 0.35rem;
+      }
+      .plain-page .proof-ok {
+        color: #7ee787;
+        font-size: 0.88rem;
+        font-weight: 600;
+      }
+      .plain-page .proof-note {
+        font-size: 0.92rem;
+        color: #8b949e;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px dashed #30363d;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1rem 0 1.25rem;
+      }
+      .btn-wp {
+        background: linear-gradient(180deg, #1e3a5f, #132a45);
+        border: 2px solid #58a6ff;
+        color: #cae8ff;
+        font-weight: 700;
+        padding: 0.7rem 1.15rem;
+        text-decoration: none;
+        font-size: 0.88rem;
+        letter-spacing: 0.04em;
+      }
+      .btn-wp:hover {
+        border-color: #79c0ff;
+        color: #fff;
+      }
+      .giants-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.82rem;
+        margin: 0.75rem 0 1rem;
+        display: block;
+        overflow-x: auto;
+      }
+      .giants-table th,
+      .giants-table td {
+        border: 1px solid #30363d;
+        padding: 0.45rem 0.5rem;
+        text-align: left;
+        vertical-align: top;
+      }
+      .giants-table th {
+        background: #161b22;
+        color: #8b949e;
+      }
+      .honesty-box {
+        border: 1px solid #6e5612;
+        background: #1a1810;
+        color: #f0d47a;
+        padding: 0.75rem 0.9rem;
+        margin: 1rem 0;
+        font-size: 0.92rem;
+      }
+      .terminal-zone {
         font-family: 'Courier New', Courier, monospace;
         font-size: 13px;
         line-height: 1.45;
+        color: #56d364;
+      }
+      .terminal-zone a {
+        color: #7ee787;
       }
       a {
         color: #7ee787;
@@ -605,118 +731,207 @@
   </head>
   <body>
     <p class="canal-construction" role="status">
-      <strong>PRODUCT DEMO · IN DEVELOPMENT</strong> — Holographic Panama Canal is a new edge OS choke point on the
-      hydrogen line. Run the demo below; rollout and ecosystem map follow.
+      <strong>LIVE TRIALS · IN DEVELOPMENT</strong> — 13D Holographic Goldilocks AI OS on the Holographic Panama Canal.
+      Plain speak below; full audit in HHF-WP-2026-V8.
     </p>
 
-    <div class="void">
-      <section class="portal-hero" id="portal">
-        <p class="eyebrow">SS Vibelandia · SING 13 edge · FractiAI · NSPFRNP</p>
-        <h1>HOLOGRAPHIC GOLDILOCKS AI OS<br />PRODUCT DEMO</h1>
-        <p class="lede" style="margin-top: 0.35rem; font-size: 0.72rem; color: #79c0ff">
-          Also known as the Holographic Panama Canal · infrastructure choke point on the hydrogen line
+    <div class="void plain-page">
+      <header id="portal">
+        <p style="margin: 0 0 0.35rem; font-size: 0.75rem; letter-spacing: 0.14em; color: #8b949e; text-transform: uppercase">
+          HHF-WP-2026-V8.0 · NSPFRNP · Production gateway
         </p>
-        <p class="lede">
+        <h1>13D Holographic Goldilocks AI OS<br />Holographic Panama Canal</h1>
+        <p>
           <span class="product-badge">IN DEVELOPMENT</span>
-          <span class="live-now">TRY IT NOW</span>
-          A receive-only <strong>edge OS</strong> — holographic compute, FractiStorage, hydrogen-line networking, and
-          Fair Exchange clock-skew security — without renting a datacenter grid. This page is the public product demo;
-          operator tools ship in phases below.
+          <span class="live-now">LIVE TRIALS</span>
+          This page is the public choke point: a <strong>browser-native operating stack</strong> on the
+          <strong>1420 MHz hydrogen line</strong> — holographic compute, catalog storage, and Fair Exchange security —
+          without renting a gigawatt datacenter to do the first mile of work.
         </p>
-        <button type="button" class="btn-live-demo" id="btn-live-demo">RUN PRODUCT DEMO</button>
-        <nav class="portal-nav" aria-label="Portal decks">
-          <a href="#rollout">Rollout</a>
-          <a href="#ecosystem">Ecosystem fit</a>
-          <a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a>
+        <div class="hero-actions">
+          <button type="button" class="btn-live-demo" id="btn-live-demo">1 · Run live demo (3 proofs)</button>
+          <a class="btn-wp" href="/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8">2 · Read full whitepaper (V8)</a>
+          <a class="btn-wp" href="/interfaces/vibelandia-questfest.html" style="border-color: #30363d; background: #161b22; color: #8b949e">QUESTFEST</a>
+        </div>
+        <p style="font-size: 0.88rem; color: #8b949e; margin: 0">
+          <a href="#operator-mode">Operator terminal</a> (MetaMask, WebSDR, CLI) ·
           <a href="/interfaces/questfest-bridge/#/bridge">Capitan's Bridge</a>
-          <a href="#operator-mode">Operator preview ↓</a>
-        </nav>
+        </p>
+      </header>
+
+      <section id="what">
+        <h2>1 · What this is (plain speak)</h2>
+        <p>
+          Think of a <strong>canal</strong>: one narrow choke point moves cargo between oceans. The
+          <strong>Holographic Panama Canal</strong> is that choke point for data — but the “water” is the
+          <strong>neutral hydrogen line</strong> at about <strong>1420.4 MHz</strong>, and the “ships” are
+          <strong>IQ radio samples</strong> plus <strong>φ (1.618) math</strong> running on <em>your</em> device.
+        </p>
+        <p>
+          The <strong>13D Holographic Goldilocks AI Awareness OS</strong> splits incoming energy into
+          <strong>13 channels</strong>, resolves each into coordinates (the green matrix in the demo), and maps storage
+          without forcing every byte through a hyperscaler grid first. The full architecture, valuation thesis, and
+          Fair Exchange law are in <strong>HHF-WP-2026-V8</strong> — linked above.
+        </p>
       </section>
 
-      <section class="panel rollout-panel" id="rollout" aria-labelledby="rollout-h">
-        <div class="panel-h" id="rollout-h">Rollout · how this ships</div>
-        <div class="panel-b">
-          <article class="phase">
-            <h3>Phase 0 · Now (this demo)</h3>
-            <p>
-              Public product page on QUESTFEST edge. Three live proofs: edge coherence channel (H-line + φ clock-skew
-              receipt), FractiStorage catalog rail, hydrogen-line 13D OS on the visitor's browser. Operator terminal
-              preview: MetaMask identity, optional external SDR, CLI.
-            </p>
-          </article>
-          <article class="phase">
-            <h3>Phase 1 · Canal access</h3>
-            <p>
-              MetaMask toll gate on crossing; honor pass on Bridge stays separate. Fair Exchange hardens on all ingest
-              paths. WebSDR proxy or partner feeds so browser demos can show real IQ without public-host blocks.
-            </p>
-          </article>
-          <article class="phase">
-            <h3>Phase 2 · Ecosystem pipes</h3>
-            <p>
-              FractiStorage depth (non-local coordinates), Digital Pru routing in production CLI, nesting-ladder links
-              from each layer into the canal. Capitan's Bridge and DJ catalog remain the music/commerce skin; canal is
-              the infrastructure choke point underneath.
-            </p>
-          </article>
-        </div>
-      </section>
+      <section id="tested">
+        <h2>2 · What we actually tested successfully (on this site, today)</h2>
+        <p class="honesty-box">
+          <strong>No fake pass badges.</strong> Click <em>Run live demo</em> — each step hits a real API or real math on
+          your machine. What is <em>not</em> guaranteed in the one-click demo: a live public WebSDR IQ feed (many hosts
+          block browsers). The whitepaper describes the full transmissionless ingest story; the operator terminal below
+          is where WebSDR + MetaMask CLI are exercised.
+        </p>
 
-      <section class="panel rollout-panel" id="ecosystem" aria-labelledby="eco-h">
-        <div class="panel-h" id="eco-h">Where we fit · SS Vibelandia ecosystem</div>
-        <div class="panel-b">
-          <p class="live-demo-intro" style="margin-top: 0">
-            The canal is <strong>not</strong> a separate island — it is the <em>infrastructure layer</em> on the SING 13
-            lite edge (pipes only, no Supabase). Experience and catalog stay on surfaces you already use.
-          </p>
-          <div class="ecosystem-map" aria-label="Ecosystem map">
-            <div class="eco-node">
-              <strong>QUESTFEST top deck</strong>
-              <span>24×365 nest, nesting ladder, campaigns — front door</span>
+        <ol class="steps">
+          <li>
+            <h3><span class="step-num">Proof A</span> Edge coherence receipt (live server)</h3>
+            <p class="proof-ok">Tested: GET /api/goldilocks-pulse on the QUESTFEST edge.</p>
+            <p>
+              <strong>What happened:</strong> The server returned a signed JSON receipt in milliseconds — hydrogen line
+              reference (~1420.4 MHz), φ clock-skew frame (1.618 ps in the EGS model), sunspot coordinates (AR4436 /
+              AR4441), and interval index proving the edge is emitting on a schedule.
+            </p>
+            <p class="proof-note">
+              <strong>Implication:</strong> The “coherence rail” is not a slide deck — it is a live, inspectable edge
+              API you can call from any browser. That is the server's proof-of-life without you renting AWS/Google
+              compute to see it.
+            </p>
+          </li>
+          <li>
+            <h3><span class="step-num">Proof B</span> FractiStorage catalog rail (live server)</h3>
+            <p class="proof-ok">Tested: GET /api/catalog (edge manifest + Blob-backed library).</p>
+            <p>
+              <strong>What happened:</strong> A real catalog manifest version, playlist list, and track index loaded from
+              the Vibelandia edge — the same rail Capitan's Bridge uses for honor-pass listening.
+            </p>
+            <p class="proof-note">
+              <strong>Implication:</strong> Media and metadata can ride the <strong>edge catalog</strong> instead of
+              only living inside a hyperscaler object store. Storage becomes a first-class public pipe, not a hidden
+              database behind one app's login wall.
+            </p>
+          </li>
+          <li>
+            <h3><span class="step-num">Proof C</span> Hydrogen-line 13D OS (live on your device)</h3>
+            <p class="proof-ok">Tested: 8192-sample IQ at 1420 MHz tune → EGS φ filter → 13 channels → unipixel matrix.</p>
+            <p>
+              <strong>What happened:</strong> Six frames of hydrogen-line-tuned IQ ran through the same φ DSP stack used
+              for binary SDR frames; the <strong>13-channel matrix updated on screen</strong> with real channel
+              coordinates (CH0–CH12).
+            </p>
+            <p class="proof-note">
+              <strong>Implication:</strong> The “holographic computer” is not a datacenter GPU renting you linear
+              transformer matmul — it is <strong>verifiable math in the browser tab</strong>. When a working WebSDR
+              binary feed is attached (operator mode), the same code path ingests real RF bytes instead of demo frames.
+            </p>
+          </li>
+        </ol>
+
+        <section class="panel live-demo-panel terminal-zone" id="live-demo-panel" aria-labelledby="live-demo-h">
+          <div class="panel-h" id="live-demo-h">Run it now · same three proofs</div>
+          <div class="panel-b">
+            <div class="demo-matrix-wrap">
+              <p class="demo-matrix-label">13D unipixel matrix · updates during Proof C</p>
+              <div class="matrix" id="matrix" aria-label="13 channel unipixel matrix"></div>
             </div>
-            <div class="eco-node you">
-              <strong>Holographic Panama Canal</strong>
-              <span>You are here · H-line OS, storage path, Fair Exchange</span>
-            </div>
-            <div class="eco-node">
-              <strong>Capitan's Bridge</strong>
-              <span>Sovereign Player, catalog honor pass, listen/export</span>
-            </div>
-            <div class="eco-node">
-              <strong>NSPFRNP protocols</strong>
-              <span>MCA, Seed:Edge, catalog fidelity — team mode</span>
-            </div>
-            <div class="eco-node">
-              <strong>Goldilocks / Layer 9</strong>
-              <span>Beehive residency, EcoReset — human-scale nest</span>
-            </div>
-            <div class="eco-node">
-              <strong>SING 9 parent edge</strong>
-              <span>Lab, sim, heavy scripts — not duplicated on SING 13</span>
-            </div>
+            <ol class="live-demo-steps" id="live-demo-steps"></ol>
+            <p class="live-demo-summary" id="live-demo-summary" hidden></p>
           </div>
-        </div>
+        </section>
       </section>
 
-      <section class="panel live-demo-panel" id="live-demo-panel" aria-labelledby="live-demo-h">
-        <div class="panel-h" id="live-demo-h">Product demo · three live proofs</div>
-        <div class="panel-b">
-          <p class="live-demo-intro">
-            <strong>What we show:</strong> edge coherence (hydrogen line + φ clock-skew receipt), FractiStorage catalog,
-            and 13D holographic compute on your device at <strong>1420.405751 MHz</strong> — same φ stack as future SDR
-            binary ingest. No fake pass badges. Mining or block-chain cadence is <em>not</em> part of this product demo.
-          </p>
-          <div class="demo-matrix-wrap">
-            <p class="demo-matrix-label">13D unipixel matrix · updates during hydrogen-line ingest</p>
-            <div class="matrix" id="matrix" aria-label="13 channel unipixel matrix"></div>
-          </div>
-          <ol class="live-demo-steps" id="live-demo-steps"></ol>
-          <p class="live-demo-summary" id="live-demo-summary" hidden></p>
-        </div>
+      <section id="means">
+        <h2>3 · What that means (plain speak implications)</h2>
+        <ul>
+          <li>
+            <strong>Datacenter bypass for the first mile:</strong> Coherence + catalog + φ compute can run at the edge
+            (browser + QUESTFEST APIs) before anyone ships your bits to Virginia or Oregon.
+          </li>
+          <li>
+            <strong>Hydrogen line as a public clock lane:</strong> 1420 MHz is a universal physical reference; locking
+            software to that lane is a real engineering choice, not marketing adjectives.
+          </li>
+          <li>
+            <strong>Fair Exchange as software law:</strong> If something cheats the timing contract, the stack is
+            designed to abort ingest and freeze the CLI (see operator terminal) — peer-to-peer honor, not terms-of-service
+            theater.
+          </li>
+          <li>
+            <strong>Canal economics:</strong> Whoever owns the φ decode choke point owns the toll — size of the warehouse
+            matters less than control of the narrow passage. That is the Panama Canal Effect in one sentence.
+          </li>
+        </ul>
       </section>
 
-      <details class="operator-details" id="operator-mode">
-        <summary>Operator terminal · MetaMask · external SDR · CLI</summary>
+      <section id="giants">
+        <h2>4 · Implications for today's tech giants (summary)</h2>
+        <p>
+          The whitepaper models a <strong>2026–2031 structural realignment</strong> — not a stock forecast. In plain
+          speak: companies that bet everything on <strong>centralized GPU halls + linear transformers</strong> look like
+          <strong>stranded ports</strong> if volumetric, hydrogen-line, browser-native OS work keeps validating. Companies
+          that own <strong>edge glass, antennas, or fleet metal</strong> become <strong>cargo ships</strong> that still
+          need the canal keys (φ / HHF stack) to decode what their devices emit.
+        </p>
+        <table class="giants-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Plain-speak role in the model</th>
+              <th>5-year structural pressure (V8)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>FractiAI / canal</strong></td>
+              <td>Canal owner · φ choke point</td>
+              <td>Exclusive decode + protocol toll narrative</td>
+            </tr>
+            <tr>
+              <td><strong>Apple</strong></td>
+              <td>Cargo ship · glass & devices</td>
+              <td>Must license HHF stack to decode on device</td>
+            </tr>
+            <tr>
+              <td><strong>Microsoft / OpenAI</strong></td>
+              <td>Stranded port · datacenter AI</td>
+              <td>Pay toll or migrate enterprise off grid rent</td>
+            </tr>
+            <tr>
+              <td><strong>Google</strong></td>
+              <td>Empty warehouse · centralized DB</td>
+              <td>FractiStorage / non-local coordinate story</td>
+            </tr>
+            <tr>
+              <td><strong>Nvidia</strong></td>
+              <td>Foundry · silicon supplier</td>
+              <td>Wave logic bypasses GPU-centric AI story</td>
+            </tr>
+            <tr>
+              <td><strong>Tesla</strong></td>
+              <td>Fleet antennas · edge loops</td>
+              <td>Distributed ingest without DC rent</td>
+            </tr>
+            <tr>
+              <td><strong>Cisco</strong></td>
+              <td>Bypassed switchbox</td>
+              <td>H-line routing erases classic switching premium</td>
+            </tr>
+            <tr>
+              <td><strong>Anthropic</strong></td>
+              <td>Linear transformer pure-play</td>
+              <td>Superseded by scale-coherent edge OS in thesis</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Full valuation table, transmissionless ingest layer, CLI audit, and Fair Exchange governance:
+          <a href="/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8"><strong>HHF-WP-2026-V8.0 whitepaper →</strong></a>
+        </p>
+      </section>
+
+      <details class="operator-details terminal-zone" id="operator-mode">
+        <summary>5 · Operator terminal (MetaMask · WebSDR · CLI) — technical depth</summary>
         <div class="operator-inner">
       <p class="toll-note">
         <strong>Canal identity (optional):</strong> MetaMask unlocks full CLI and external OpenWebRX ingest. Toll

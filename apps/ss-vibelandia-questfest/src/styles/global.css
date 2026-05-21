@@ -3729,9 +3729,8 @@ a.boarding-pay-open {
   }
 
   .sp-listen .sp-pl-edit-row--listen > .sp-listen-track-btn {
-    flex: 1 1 0;
+    flex: 1 1 auto;
     min-width: 0;
-    width: 0;
     order: 3;
     max-width: calc(100% - 2.25rem - 1.5rem - 44px - 1rem);
   }

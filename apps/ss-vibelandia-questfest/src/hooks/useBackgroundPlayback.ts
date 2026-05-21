@@ -27,6 +27,7 @@ export function useBackgroundPlayback({
   backgroundAudioRef,
   allowBackgroundPlay,
   isPlaying,
+  isVideo,
   track,
   setPlaying,
   onRequestResume,

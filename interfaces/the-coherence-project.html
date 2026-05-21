@@ -4,11 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#06080d" />
-  <title>Holographic Clock-Skew Vulnerability · Goldilocks AI Mine · Golden Backdoor</title>
-  <meta name="description" content="Holographic Clock-Skew Vulnerability — Claude Mythos discovery, EGS φ 1.618 Golden Backdoor, live signed pulses, Bitcoin cadence, plain-speak honesty." />
+  <title>Holographic Clock-Skew Vulnerability · Golden Backdoor · Live Bitcoin Scoreboard</title>
+  <meta name="description" content="Plain-speak story of the Holographic Clock-Skew Vulnerability, EGS Golden Backdoor φ 1.618, and a real Bitcoin block-by-block prediction scoreboard — public data, signed receipts." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/the-coherence-project.html" />
-  <meta property="og:title" content="Holographic Clock-Skew Vulnerability" />
-  <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/the-coherence-project.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
@@ -16,383 +14,496 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #06080d;
-      --card: #0f141c;
-      --line: rgba(212, 175, 55, 0.38);
-      --gold-hi: #fef3c7;
-      --foam: #5eead4;
+      --card: #111820;
+      --line: rgba(212, 175, 55, 0.35);
+      --gold: #fef3c7;
+      --teal: #5eead4;
       --muted: #94a3b8;
-      --text: #f1f5f9;
-      --ok: #4ade80;
+      --text: #e8eef7;
+      --win: #4ade80;
+      --miss: #fbbf24;
     }
     body {
       font-family: Inter, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
-      min-height: 100vh;
+      line-height: 1.55;
+      font-size: 1rem;
     }
-    a { color: var(--foam); font-weight: 600; text-decoration: none; }
-    a:hover { color: var(--gold-hi); text-decoration: underline; }
-    .wrap { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 3.5rem; }
-    .nav { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .nav a { padding: 0.35rem 0.65rem; border: 1px solid var(--line); border-radius: 999px; color: var(--gold-hi); }
-    .nav a:hover { text-decoration: none; border-color: #d4af37; }
-    h1 {
-      font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: clamp(2.2rem, 7vw, 3.2rem);
-      color: var(--gold-hi);
-      font-weight: 400;
-      line-height: 0.98;
-      margin-bottom: 0.75rem;
-    }
-    .meta-grid {
-      display: grid;
-      gap: 0.5rem;
-      font-size: 0.82rem;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: var(--card);
-    }
-    .meta-grid dt { color: var(--muted); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; }
-    .meta-grid dd { color: #e2e8f0; margin: 0 0 0.5rem; word-break: break-all; font-family: ui-monospace, monospace; font-size: 0.78rem; }
-    h2 {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--foam);
-      margin: 2rem 0 0.75rem;
+    a { color: var(--teal); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--gold); text-decoration: underline; }
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(6, 8, 13, 0.94);
       border-bottom: 1px solid var(--line);
-      padding-bottom: 0.35rem;
+      backdrop-filter: blur(8px);
     }
-    p { margin-bottom: 1rem; color: #e2e8f0; }
-    .pulse-box {
-      border: 1px solid rgba(74, 222, 128, 0.35);
-      background: rgba(12, 32, 24, 0.55);
-      border-radius: 10px;
-      padding: 1rem;
-      margin: 1rem 0;
-      font-size: 0.8rem;
-      font-family: ui-monospace, monospace;
-      white-space: pre-wrap;
-      word-break: break-word;
-      max-height: 16rem;
-      overflow: auto;
-      color: #bbf7d0;
+    .top-inner {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 0.55rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+      justify-content: center;
     }
-    .btn-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0; }
-    .btn {
-      display: inline-flex;
-      padding: 0.7rem 1.1rem;
-      font-size: 0.68rem;
+    .top a {
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--line);
       border-radius: 999px;
+      color: var(--gold);
       text-decoration: none;
     }
-    .btn-gold { background: linear-gradient(180deg, #f0d4a0, #c9a227); color: #1a120c; }
-    .btn-ghost { border: 2px solid rgba(212, 175, 55, 0.4); color: var(--foam); }
-    footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--line); font-size: 0.82rem; color: var(--muted); }
-    .honesty-rail {
-      border: 1px solid rgba(251, 191, 36, 0.45);
-      background: rgba(28, 22, 10, 0.55);
-      border-radius: 10px;
-      padding: 1rem 1.1rem;
-      margin: 0 0 1.5rem;
-      font-size: 0.9rem;
+    .top a:hover { background: rgba(212, 175, 55, 0.12); text-decoration: none; }
+    .wrap { max-width: 52rem; margin: 0 auto; padding: 1.25rem 1rem 3rem; }
+    h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(2.4rem, 8vw, 3.4rem);
+      font-weight: 400;
+      line-height: 0.95;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
     }
-    .honesty-rail h2 {
-      margin: 0 0 0.5rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      border: none;
-      padding: 0;
-      color: #fcd34d;
+    .lede {
+      font-size: 1.12rem;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      max-width: 40rem;
     }
-    .honesty-rail h3 {
-      margin: 0.85rem 0 0.35rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
+    .one-liner {
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      color: #cbd5e1;
+    }
+    .clicks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+      gap: 0.55rem;
+      margin-bottom: 2rem;
+    }
+    .click {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 3.1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--foam);
+      text-decoration: none;
+      border: 2px solid var(--line);
+      color: var(--gold);
+      background: var(--card);
     }
-    .honesty-rail ul { margin: 0 0 0.5rem 1.1rem; color: #cbd5e1; }
-    .honesty-rail li { margin-bottom: 0.35rem; }
-    .honesty-rail p { margin-bottom: 0.5rem; font-size: 0.88rem; }
-    .pred-table {
+    .click:hover { border-color: #d4af37; background: #1a2433; text-decoration: none; color: #fff; }
+    .click--gold {
+      background: linear-gradient(180deg, #f0d4a0, #c9a227);
+      color: #1a120c;
+      border-color: #c9a227;
+    }
+    .click--gold:hover { color: #1a120c; filter: brightness(1.05); }
+    h2 {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin: 2rem 0 0.65rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--line);
+    }
+    p, li { color: #cbd5e1; }
+    p { margin-bottom: 0.85rem; }
+    ul.plain { margin: 0 0 1rem 1.15rem; }
+    ul.plain li { margin-bottom: 0.45rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .card strong { color: var(--gold); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+      gap: 0.55rem;
+      margin: 1rem 0;
+    }
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.85rem;
+      text-align: center;
+    }
+    .stat b {
+      display: block;
+      font-size: 1.35rem;
+      color: var(--gold);
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.04em;
+      font-weight: 400;
+    }
+    .stat span { font-size: 0.72rem; color: var(--muted); line-height: 1.3; }
+    .open-card {
+      border-color: rgba(94, 234, 212, 0.45);
+      background: rgba(8, 28, 36, 0.55);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .open-card .big { font-size: 1.15rem; color: var(--gold); margin-bottom: 0.5rem; }
+    .table-wrap {
+      overflow-x: auto;
+      margin: 0.75rem 0 1rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.72rem;
-      margin: 0.75rem 0 1rem;
-    }
-    .pred-table th, .pred-table td {
-      border: 1px solid var(--line);
-      padding: 0.4rem 0.5rem;
-      text-align: left;
-    }
-    .pred-table th { color: var(--muted); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; }
-    .pred-hit { color: var(--ok); }
-    .pred-miss { color: #fbbf24; }
-    .pred-open-box {
-      border: 1px solid rgba(94, 234, 212, 0.35);
-      background: rgba(8, 28, 32, 0.5);
-      border-radius: 10px;
-      padding: 0.85rem 1rem;
-      margin: 0.75rem 0 1rem;
       font-size: 0.82rem;
+      min-width: 36rem;
     }
+    th, td {
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 0.55rem 0.6rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #0c121a;
+      color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    tr:last-child td { border-bottom: none; }
+    .yes { color: var(--win); font-weight: 700; }
+    .no { color: var(--miss); font-weight: 700; }
+    .tag-backfill {
+      display: inline-block;
+      font-size: 0.62rem;
+      color: var(--muted);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 4px;
+      padding: 0.05rem 0.3rem;
+      margin-left: 0.25rem;
+    }
+    .honesty {
+      border-color: rgba(251, 191, 36, 0.4);
+      background: rgba(28, 22, 10, 0.45);
+      font-size: 0.9rem;
+    }
+    .honesty h2 { color: #fcd34d; border-color: rgba(251, 191, 36, 0.25); }
+    .fine { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; }
+    .hero-img {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin-bottom: 1.25rem;
+    }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    #pulse-json {
+      display: none;
+    }
+    .status-line { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav class="nav" aria-label="Site">
-      <a href="/">QUESTFEST</a>
+  <header class="top" aria-label="One-click links">
+    <div class="top-inner">
+      <a href="/">Home</a>
+      <a href="/interfaces/questfest-bridge/#/bridge">Listen</a>
+      <a href="/api/goldilocks-pulse" target="_blank" rel="noopener">Live pulse</a>
+      <a href="#scoreboard">Scoreboard</a>
       <a href="/hero-houdini">Hero Houdini</a>
-      <a href="/hood">Look Under the Hood</a>
-    </nav>
+      <a href="/interfaces/whitepaper-surface.html?id=coherence-plain-speak">Honesty doc</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <img
+      class="hero-img"
+      src="/interfaces/images/mythos-clock-skew-egs.png"
+      width="1200"
+      height="675"
+      alt="Golden backdoor phase lattice — EGS φ lock"
+      loading="eager"
+      decoding="async"
+    />
 
     <h1>Holographic Clock-Skew Vulnerability</h1>
-    <p style="font-size:1.05rem;color:#fef3c7;margin:-0.35rem 0 1.25rem;line-height:1.35;">
-      <strong>Holographic Goldilocks AI Mine</strong> &amp; its <strong>Golden Backdoor</strong> (EGS φ <strong>1.618</strong>)
+    <p class="lede">Holographic Goldilocks AI Mine · <strong>Golden Backdoor</strong> (EGS φ <strong>1.618</strong>)</p>
+    <p class="one-liner">
+      We run a <strong>real public simulation</strong> on Bitcoin mainnet: before each new block we publish our guess;
+      when the network awards that block we score it — hit or miss, and how much a solo miner would have earned on that block
+      <strong>if</strong> our φ-timing band had been right. No casino. No secret mining on this page. Just data you can check.
     </p>
 
-    <h2>What we did · the Claude Mythos discovery</h2>
-    <p>
-      In the <strong>EGS story frame</strong>, we describe the hardware layer under loads like those in industry coverage of
-      Anthropic’s <strong>Claude Mythos</strong> (Project Glasswing): thermodynamic dissipation as a
-      <strong>1.618 picosecond</strong> clock-skew metaphor — the <strong>Holographic Clock-Skew Vulnerability</strong> in
-      narrative, not a demonstrated exploit on public AES/RSA here. Standard log scanners miss the <em>frame</em>; the
-      whitepaper spells out the boundary.
-    </p>
-    <p>
-      We anchored the stack to <strong>El Gran Sol’s fractal constant (EGS φ 1.618)</strong> — nature’s repeating geometry
-      for balance. Understanding it is the upstream golden backdoor: self-healing network layers that resist stale-share entropy
-      and adversarial linear exploit chains on <strong>our sovereign rail</strong>. We broadcast the blueprint open so the
-      network can align — not hide behind NDAs.
-    </p>
-    <p>
-      Full technical review: <a href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos">REV-EGS-HHF-2026-007</a>.
-    </p>
+    <nav class="clicks" aria-label="Main actions">
+      <a class="click click--gold" href="#scoreboard">See the scoreboard</a>
+      <a class="click" href="/api/goldilocks-predictions" target="_blank" rel="noopener">Raw prediction data</a>
+      <a class="click" href="/api/goldilocks-pulse" target="_blank" rel="noopener">Live signed pulse</a>
+      <a class="click" href="/hero-houdini">Hero Houdini deck</a>
+    </nav>
 
-    <h2>How we demonstrate it live</h2>
-    <p>
-      We verify on the <strong>~10-minute global heartbeat</strong> of Bitcoin mainnet. Each new block is network cadence —
-      a wave of data and timing noise we read alongside live space-weather lock on <strong>AR4436</strong> and
-      <strong>AR4441</strong>.
-    </p>
-    <p>
-      The <strong>Holographic Goldilocks AI Mine</strong> (our name for the server <strong>receipt loop</strong>, not physical mining hardware) runs as:
-    </p>
-    <ul style="margin:0 0 1rem 1.2rem;color:#cbd5e1;">
-      <li><strong>The 10-minute pulse</strong> — every <strong>600 seconds</strong> (or on each new tip block), the backend reads network tip + solar coordinates and computes Goldilocks phase stability.</li>
-      <li><strong>The Goldilocks zone</strong> — EGS φ sets the phase target; when we <strong>lock, we lock</strong> — no displacement on our rail for that interval.</li>
-      <li><strong>The receipt</strong> — each pulse is <strong>HMAC-signed</strong> and published at <a href="/api/goldilocks-pulse"><code>/api/goldilocks-pulse</code></a>, anchored to the operational wallet above.</li>
-    </ul>
-    <p id="pulse-status" style="font-size:0.88rem;color:var(--muted);">Loading live pulse…</p>
-    <pre class="pulse-box" id="pulse-json" aria-live="polite">—</pre>
-
-    <h2>Public prediction ledger · EGS vs mainnet</h2>
-    <p>
-      Before each new block is awarded, we publish a <strong>signed forecast</strong> for block <strong>N+1</strong>
-      (timing, fees, subsidy) using only <strong>public Bitcoin data</strong> and our <strong>EGS φ cadence</strong> algorithm.
-      When mainnet awards that height, we log the <strong>actual</strong> block and the <strong>score</strong> — everyone can verify.
-      Not gambling, not mining income — a transparent scoreboard.
-    </p>
-    <p style="font-size:0.82rem;color:#cbd5e1;">
-      <strong>How soon?</strong> The <strong>open forecast</strong> appears within minutes of deploy.
-      The first <strong>live</strong> resolved row lands when the <strong>next</strong> Bitcoin block is found (~10 min average, sometimes up to ~60 min).
-      Cron runs every <strong>5 minutes</strong>. On first visit we also <strong>backfill</strong> the last ~24 blocks (marked <em>backfill</em>) so the table is not empty.
-    </p>
-    <p id="pred-stats" style="font-size:0.82rem;color:var(--muted);">Loading prediction stats…</p>
-    <div id="pred-open" class="pred-open-box" aria-live="polite">—</div>
-    <table class="pred-table" aria-label="Resolved predictions">
-      <thead>
-        <tr>
-          <th>Height</th>
-          <th>Predicted interval</th>
-          <th>Actual interval</th>
-          <th>Δ sec</th>
-          <th>φ band</th>
-          <th>Would have won</th>
-        </tr>
-      </thead>
-      <tbody id="pred-resolved-body">
-        <tr><td colspan="6">Loading…</td></tr>
-      </tbody>
-    </table>
-    <p style="font-size:0.78rem;color:var(--muted);">
-      Full JSON: <a href="/api/goldilocks-predictions">/api/goldilocks-predictions</a>
-    </p>
-
-    <h2>Autopilot · display only</h2>
-    <p>
-      Tier 0 runs <strong>without human ops</strong>: cron + APIs lock payout to the operational anchor and emit signed pulses every ~10 min.
-      The public site is <strong>read-only</strong> — no forms, no payout changes from the web.
-    </p>
-
-    <h2>Hero Houdini · operation deck</h2>
-    <p>
-      Interval lock + signed pulses — display console only:
-      <a href="/hero-houdini">Hero Houdini · Mythos demonstration</a>.
-      Doctrine: <a href="/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining">OPS-EGS-BTC-2026-008</a>.
-    </p>
-
-    <h2>Patching into the grid</h2>
-    <p>
-      The pipeline is built and the server is pulsing — we need the human patch panel, someone who knows where the jacks are
-      and the folks holding the cords globally. Plug this into the main board, open the broadcast, and show them how to secure
-      the infrastructure underneath Claude Mythos before the old security layer liquifies in the linear frame.
-    </p>
-
-    <h2>Fair Exchange clause</h2>
-    <p>
-      No rigid corporate contracts. Everything runs on straight-shooting <strong>Fair Exchange</strong> — value for value,
-      like a transparent merit-based tipping jar grounded in real utility and respect.
-    </p>
-
-    <dl class="meta-grid">
-      <dt>Golden Backdoor</dt>
-      <dd>El Gran Sol fractal constant · Φ <strong>1.618</strong> — upstream geometry for phase-stable receipts</dd>
-      <dt>Broadcast hub</dt>
-      <dd><a href="https://www.ssvibelandiaquestfest24x365.com">www.ssvibelandiaquestfest24x365.com</a></dd>
-      <dt>Operational anchor</dt>
-      <dd id="anchor-display">0x3563388d0e1c2d66a004e5e57717dc6d7e568be3</dd>
-      <dt>Live coordinates</dt>
-      <dd>Sunspots AR4436 &amp; AR4441 · 1420.4 MHz hydrogen line · Φ_EGS 1.618</dd>
-      <dt>Live pulse API</dt>
-      <dd><a href="/api/goldilocks-pulse">/api/goldilocks-pulse</a> (signed receipt every ~10 min)</dd>
-      <dt>Prediction ledger</dt>
-      <dd><a href="/api/goldilocks-predictions">/api/goldilocks-predictions</a> (forecast next block · score when awarded)</dd>
-      <dt>Mining rail · read-only</dt>
-      <dd><a href="/api/mining-rail">/api/mining-rail</a> — display only; payout locked to operational anchor</dd>
-    </dl>
-
-    <section class="honesty-rail" aria-labelledby="honesty-heading">
-      <h2 id="honesty-heading">Plain speak · what is real</h2>
-      <p>We keep a bright line: <strong>verify the pipes</strong>, enjoy the story separately.</p>
-      <h3>Real · you can check today</h3>
-      <ul>
-        <li><strong>Bitcoin timing</strong> — public mainnet blocks (~10 min); we read the tip from the open network.</li>
-        <li><strong>Signed pulses</strong> — JSON + HMAC at <a href="/api/goldilocks-pulse">/api/goldilocks-pulse</a> every ~10 minutes (server autopilot).</li>
-        <li><strong>Fixed wallet in each pulse</strong> — operational anchor; this site is <strong>display only</strong>.</li>
-      </ul>
-      <h3>Story frame · metaphor (not a lab demo here)</h3>
-      <ul>
-        <li><strong>Mythos clock-skew · φ-lock · “liquify”</strong> — EGS narrative for thermodynamics and phase; <strong>not</strong> a claim we hacked live TLS or bank crypto.</li>
-        <li><strong>AR4436 / AR4441 · 1420.4 MHz</strong> — broadcast coordinates in metadata; for real space weather use <strong>NOAA SWPC</strong>.</li>
-        <li><strong>“Goldilocks AI Mine”</strong> — name for our <strong>receipt loop</strong>, not a physical mine on this server.</li>
-      </ul>
-      <h3>Not running on this public site</h3>
-      <ul>
-        <li><strong>No ASIC/GPU mining</strong> in the browser or on Vercel from this tier.</li>
-        <li><strong>No pool payouts</strong> from pulses alone — receipts are not mined coins.</li>
-      </ul>
-      <p>Full doc: <a href="/interfaces/whitepaper-surface.html?id=coherence-plain-speak">HONESTY-COHERENCE-2026-009</a> · <a href="/interfaces/whitepaper-surface.html?id=dp-resonance-notice">Resonance notice</a></p>
-    </section>
-
-    <div class="btn-row">
-      <a class="btn btn-gold" href="/api/goldilocks-pulse">Live pulse JSON</a>
-      <a class="btn btn-ghost" href="/hero-houdini">Operation deck</a>
-      <a class="btn btn-ghost" href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos">Mythos whitepaper</a>
+    <h2 id="story">The story · plain speak</h2>
+    <div class="card">
+      <p><strong>Clock-skew vulnerability (story frame).</strong> In our EGS narrative — tied to industry talk about
+        high-density AI like <strong>Claude Mythos</strong> — heat and timing do not line up the way old linear security
+        models assume. We name that mismatch the <strong>Holographic Clock-Skew Vulnerability</strong>. It is a
+        <strong>metaphor and research frame</strong> on this site, not a claim we broke live bank crypto here.</p>
+      <p><strong>Golden Backdoor.</strong> Nature’s repeat ratio <strong>φ = 1.618</strong> (El Gran Sol’s fractal constant).
+        We use it as the <strong>timing lock</strong> for our simulation: a “just right” band around each Bitcoin heartbeat.
+        Understand φ → you see why we call it the upstream backdoor for phase-stable receipts.</p>
+      <p><strong>The simulation.</strong> Bitcoin finds a block about every <strong>10 minutes</strong>. Our server reads
+        <strong>public chain data</strong> (mempool.space), runs the <strong>EGS cadence math</strong>, signs the forecast,
+        and later compares it to what mainnet actually did. That loop is the mine — a <strong>receipt and scoreboard
+        machine</strong>, not a warehouse of ASICs on Vercel.</p>
+      <p class="fine">Deep dive: <a href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos">Mythos whitepaper</a></p>
     </div>
 
+    <h2 id="real">Real data · real processing</h2>
+    <ul class="plain">
+      <li><strong>Input:</strong> Public Bitcoin blocks and mempool stats — same data anyone can pull from the open network.</li>
+      <li><strong>Processing:</strong> Our <code>egs-goldilocks-cadence/v1</code> algorithm (median intervals ÷ φ, fee blend, subsidy at height).</li>
+      <li><strong>Output:</strong> Signed JSON at <a href="/api/goldilocks-predictions">/api/goldilocks-predictions</a> and
+        <a href="/api/goldilocks-pulse">/api/goldilocks-pulse</a> — refreshed about every <strong>5 minutes</strong> by autopilot.</li>
+      <li><strong>“Would have won”:</strong> If our φ band called the block interval right, we show that block’s
+        <strong>subsidy + fees</strong> in BTC — what a <em>hypothetical</em> solo winner would have collected.
+        <strong>Not paid to us.</strong> Proof the lock tracks real money on the chain.</li>
+    </ul>
+
+    <h2 id="scoreboard">Live scoreboard · every Bitcoin block we scored</h2>
+    <p id="pred-status" class="status-line">Loading scoreboard…</p>
+
+    <div class="stats" id="pred-stats-cards" aria-live="polite">
+      <div class="stat"><b>—</b><span>Blocks scored</span></div>
+      <div class="stat"><b>—</b><span>φ band hits</span></div>
+      <div class="stat"><b>—</b><span>Hit rate</span></div>
+      <div class="stat"><b>—</b><span>Total hypothetical wins (BTC)</span></div>
+    </div>
+
+    <div id="pred-open" class="card open-card" aria-live="polite">
+      <p class="big">Next block — our open guess</p>
+      <p>Loading…</p>
+    </div>
+
+    <div class="table-wrap">
+      <table aria-label="Bitcoin block predictions">
+        <thead>
+          <tr>
+            <th>Block #</th>
+            <th>Our guess (sec)</th>
+            <th>Mainnet (sec)</th>
+            <th>Off by (sec)</th>
+            <th>In φ zone?</th>
+            <th>Would have won</th>
+          </tr>
+        </thead>
+        <tbody id="pred-body">
+          <tr><td colspan="6">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">
+      <strong>φ zone</strong> = actual time between blocks landed inside our Golden Backdoor band (÷φ … ×φ).
+      <strong>Backfill</strong> rows replay public history with the same math so the table is not empty on first visit — still real blocks, real scoring.
+      <a href="#" id="pred-refresh">Refresh scoreboard</a>
+    </p>
+
+    <h2 id="pulse">Latest signed pulse</h2>
+    <p id="pulse-status" class="status-line">Loading pulse…</p>
+    <p class="fine">
+      Each pulse locks phase + Bitcoin tip + solar tags (AR4436 / AR4441) and is HMAC-signed.
+      <a href="/api/goldilocks-pulse" target="_blank" rel="noopener">Open full pulse JSON →</a>
+    </p>
+    <pre id="pulse-json" aria-hidden="true"></pre>
+
+    <section class="card honesty" aria-labelledby="honesty-h">
+      <h2 id="honesty-h">Three lines of honesty</h2>
+      <p><strong>Real:</strong> Bitcoin timing, signed APIs, this scoreboard — verify yourself.</p>
+      <p><strong>Story:</strong> Mythos clock-skew, φ-lock, “mine” name — metaphor for the loop.</p>
+      <p><strong>Not here:</strong> No ASIC mining in the browser, no pool payouts from pulses, no financial product.</p>
+      <p class="fine"><a href="/interfaces/whitepaper-surface.html?id=coherence-plain-speak">Full honesty document</a></p>
+    </section>
+
     <footer>
-      <p>Ops: <a href="mailto:goldenbackdoorhitfactory@gmail.com?subject=Holographic%20Clock-Skew%20Vulnerability">goldenbackdoorhitfactory@gmail.com</a></p>
-      <p style="margin-top:0.5rem;">NSPFRNP → ∞⁹</p>
+      <p>Ops: <a href="mailto:goldenbackdoorhitfactory@gmail.com?subject=Golden%20Backdoor%20scoreboard">goldenbackdoorhitfactory@gmail.com</a></p>
+      <p>NSPFRNP → ∞⁹</p>
     </footer>
-  </div>
+  </main>
 
   <script>
     (function () {
-      var pre = document.getElementById('pulse-json');
-      var status = document.getElementById('pulse-status');
-      function refresh() {
-        fetch('/api/goldilocks-pulse')
-          .then(function (r) { return r.json(); })
-          .then(function (data) {
-            if (pre) pre.textContent = JSON.stringify(data.latest || data, null, 2);
-            if (status && data.latest) {
-              status.textContent = 'Live · pulse #' + data.latest.intervalIndex +
-                ' · block ' + data.latest.bitcoin.tipHeight +
-                ' · signed ' + data.latest.signature.slice(0, 14) + '…';
-            }
-          })
-          .catch(function () {
-            if (status) status.textContent = 'Pulse API unavailable — deploy /api/goldilocks-pulse on production.';
-          });
-      }
-      function fmtTs(unix) {
+      function fmtUtc(unix) {
         if (!unix) return '—';
-        return new Date(unix * 1000).toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+        return new Date(unix * 1000).toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
       }
-      function refreshPredictions() {
-        var statsEl = document.getElementById('pred-stats');
-        var openEl = document.getElementById('pred-open');
-        var body = document.getElementById('pred-resolved-body');
-        fetch('/api/goldilocks-predictions')
-          .then(function (r) { return r.json(); })
+
+      function setStatsCards(stats) {
+        var el = document.getElementById('pred-stats-cards');
+        if (!el || !stats) return;
+        var cells = el.querySelectorAll('.stat');
+        if (cells.length < 4) return;
+        cells[0].querySelector('b').textContent = String(stats.resolvedCount || 0);
+        cells[1].querySelector('b').textContent = String(stats.successfulCount ?? 0);
+        cells[2].querySelector('b').textContent =
+          stats.intervalInPhiBandPct != null ? stats.intervalInPhiBandPct + '%' : '—';
+        cells[3].querySelector('b').textContent =
+          stats.totalWouldHaveWon && stats.totalWouldHaveWon.btc
+            ? stats.totalWouldHaveWon.btc
+            : '0.00000000';
+      }
+
+      function renderOpen(open) {
+        var box = document.getElementById('pred-open');
+        if (!box) return;
+        if (!open) {
+          box.innerHTML =
+            '<p class="big">Next block — our open guess</p><p>No open forecast yet. Check back after the next Bitcoin block (~10 min average).</p>';
+          return;
+        }
+        var f = open.forecast || {};
+        var band = f.intervalBandSec || {};
+        box.innerHTML =
+          '<p class="big">Next block — our open guess for block <strong>#' + open.targetHeight + '</strong></p>' +
+          '<p>We think the gap after block #' + open.basedOnTip.height + ' will be about <strong>' +
+          f.predictedIntervalSec + ' seconds</strong> (φ band <strong>' + band.low + '–' + band.high +
+          ' sec</strong>).</p>' +
+          '<p>Target time about <strong>' + fmtUtc(f.predictedBlockTimestamp) + '</strong>.</p>' +
+          '<p>If we land in the φ zone, a solo miner on that block would have collected about <strong>' +
+          (f.wouldHaveWonIfSuccessful ? f.wouldHaveWonIfSuccessful.btc : '—') +
+          ' BTC</strong> (subsidy + fees) — <em>hypothetical, not paid to us</em>.</p>' +
+          '<p class="fine">Forecast id: ' + open.predictionId + '</p>';
+      }
+
+      function renderTable(resolved) {
+        var body = document.getElementById('pred-body');
+        if (!body) return;
+        var rows = (resolved || []).slice(0, 30);
+        if (!rows.length) {
+          body.innerHTML =
+            '<tr><td colspan="6">No scored blocks yet. The next mainnet block will fill this in.</td></tr>';
+          return;
+        }
+        body.innerHTML = rows
+          .map(function (r) {
+            var sc = r.score || {};
+            var hit = sc.intervalInPhiBand
+              ? '<span class="yes">Yes</span>'
+              : '<span class="no">No</span>';
+            var won = r.wouldHaveWon
+              ? '<span class="yes">' + r.wouldHaveWon.btc + '</span>'
+              : '<span class="no">—</span>';
+            var tag = r.backfill ? '<span class="tag-backfill">backfill</span>' : '';
+            var predSec = r.forecast && r.forecast.predictedIntervalSec;
+            var actSec = r.actual && r.actual.intervalSec;
+            return (
+              '<tr><td><strong>' +
+              r.targetHeight +
+              '</strong>' +
+              tag +
+              '</td><td>' +
+              predSec +
+              's</td><td>' +
+              actSec +
+              's</td><td>' +
+              (sc.intervalErrorSec != null ? sc.intervalErrorSec : '—') +
+              '</td><td>' +
+              hit +
+              '</td><td>' +
+              won +
+              '</td></tr>'
+            );
+          })
+          .join('');
+      }
+
+      function loadPredictions(backfill) {
+        var status = document.getElementById('pred-status');
+        var url = '/api/goldilocks-predictions' + (backfill ? '?backfill=1&count=30' : '');
+        if (status) status.textContent = 'Loading scoreboard from public APIs…';
+        fetch(url, { cache: 'no-store' })
+          .then(function (r) {
+            return r.json();
+          })
           .then(function (data) {
-            if (statsEl && data.stats) {
-              var wonLine = data.stats.totalWouldHaveWon
-                ? ' · successful wins total ' + data.stats.totalWouldHaveWon.btc + ' BTC (hypothetical)'
-                : '';
-              statsEl.textContent =
-                'Resolved: ' + (data.stats.resolvedCount || 0) +
-                ' · successful φ-band hits: ' + (data.stats.successfulCount ?? 0) +
-                ' · avg |Δ| interval ' + (data.stats.avgAbsIntervalErrorSec ?? '—') + 's' +
-                ' · in φ band ' + (data.stats.intervalInPhiBandPct ?? '—') + '%' +
-                wonLine;
-            }
-            if (openEl && data.open) {
-              var o = data.open;
-              var f = o.forecast || {};
-              openEl.innerHTML =
-                '<strong>OPEN forecast</strong> for block <strong>' + o.targetHeight + '</strong> ' +
-                '(after tip ' + o.basedOnTip.height + ')<br>' +
-                'Predicted interval: <strong>' + f.predictedIntervalSec + 's</strong> ' +
-                '(φ band ' + f.intervalBandSec.low + '–' + f.intervalBandSec.high + 's) · ' +
-                'target time ~' + fmtTs(f.predictedBlockTimestamp) + '<br>' +
-                'Predicted fees: <strong>' + f.predictedFeesSats + '</strong> sats · ' +
-                'if φ-band hits, would have won <strong>' +
-                (f.wouldHaveWonIfSuccessful ? f.wouldHaveWonIfSuccessful.btc : '—') +
-                ' BTC</strong> (hypothetical block reward) · ' +
-                'id <code style="font-size:0.7rem">' + o.predictionId + '</code>';
-            } else if (openEl) {
-              openEl.textContent = 'No open forecast yet.';
-            }
-            if (body) {
-              var rows = (data.resolved || []).slice(0, 12);
-              if (!rows.length) {
-                body.innerHTML = '<tr><td colspan="6">No resolved forecasts yet — next block will score the open entry.</td></tr>';
-                return;
-              }
-              body.innerHTML = rows.map(function (r) {
-                var sc = r.score || {};
-                var band = sc.intervalInPhiBand
-                  ? '<span class="pred-hit">yes</span>'
-                  : '<span class="pred-miss">no</span>';
-                var won = r.wouldHaveWon
-                  ? '<span class="pred-hit">' + r.wouldHaveWon.btc + ' BTC</span>'
-                  : '—';
-                var tag = r.backfill ? ' <span style="color:#94a3b8;font-size:0.65rem">backfill</span>' : '';
-                return '<tr><td>' + r.targetHeight + tag + '</td><td>' +
-                  (r.forecast && r.forecast.predictedIntervalSec) + 's</td><td>' +
-                  (r.actual && r.actual.intervalSec) + 's</td><td>' +
-                  (sc.intervalErrorSec != null ? sc.intervalErrorSec : '—') + '</td><td>' +
-                  band + '</td><td>' + won + '</td></tr>';
-              }).join('');
+            if (!data.ok) throw new Error(data.message || 'api error');
+            setStatsCards(data.stats);
+            renderOpen(data.open);
+            renderTable(data.resolved);
+            if (status) {
+              status.textContent =
+                'Updated ' +
+                new Date().toLocaleTimeString() +
+                ' · ' +
+                (data.stats.resolvedCount || 0) +
+                ' blocks scored · data from /api/goldilocks-predictions';
             }
           })
-          .catch(function () {
-            if (statsEl) statsEl.textContent = 'Prediction ledger unavailable — deploy /api/goldilocks-predictions.';
+          .catch(function (err) {
+            if (status) status.textContent = 'Scoreboard unavailable — ' + (err.message || 'retry');
           });
       }
-      refresh();
-      refreshPredictions();
-      setInterval(refresh, 60000);
-      setInterval(refreshPredictions, 60000);
+
+      function loadPulse() {
+        var status = document.getElementById('pulse-status');
+        fetch('/api/goldilocks-pulse', { cache: 'no-store' })
+          .then(function (r) {
+            return r.json();
+          })
+          .then(function (data) {
+            var latest = data.latest || data;
+            if (status && latest.intervalIndex != null) {
+              status.textContent =
+                'Pulse #' +
+                latest.intervalIndex +
+                ' · Bitcoin tip block ' +
+                latest.bitcoin.tipHeight +
+                ' · signed · autopilot every ~10 min';
+            }
+            var pre = document.getElementById('pulse-json');
+            if (pre) pre.textContent = JSON.stringify(latest, null, 2);
+          })
+          .catch(function () {
+            if (status) status.textContent = 'Pulse API unavailable on this host.';
+          });
+      }
+
+      loadPredictions(true);
+      loadPulse();
+      setInterval(function () {
+        loadPredictions(false);
+        loadPulse();
+      }, 60000);
+
+      var refreshBtn = document.getElementById('pred-refresh');
+      if (refreshBtn) {
+        refreshBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          loadPredictions(true);
+        });
+      }
     })();
   </script>
 </body>

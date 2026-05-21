@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { isVideoTrack, playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { readPlaybackSession } from '@/lib/playbackSession';
 import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
@@ -105,6 +106,17 @@ export function NowPlayingBar({
     else setPlaying(false);
   }, [advanceInPlaylist, autoplayEnabled, setPlaying]);
 
+  const autoplayRef = useRef(autoplayEnabled);
+  const gainRef = useRef(gain);
+  const advanceRef = useRef(advanceInPlaylist);
+  const endedRef = useRef(handleTrackEnded);
+  const fairExchangeRef = useRef(onFairExchange);
+  autoplayRef.current = autoplayEnabled;
+  gainRef.current = gain;
+  advanceRef.current = advanceInPlaylist;
+  endedRef.current = handleTrackEnded;
+  fairExchangeRef.current = onFairExchange;
+
   const resumePlayback = useCallback(() => {
     const el = getPrimaryMedia();
     const bg = backgroundAudioRef.current;
@@ -146,22 +158,31 @@ export function NowPlayingBar({
     const prevId = currentTrackId;
     gateArmedRef.current = true;
     setError(null);
-    bg?.pause();
-    bg?.removeAttribute('src');
+
+    const handoffActive = usePlaybackStore.getState().backgroundHandoffActive;
+    if (!handoffActive) {
+      bg?.pause();
+      bg?.removeAttribute('src');
+    }
+
+    const snap = readPlaybackSession();
+    const resumeAt =
+      snap?.trackId === track.id && snap.displayTime > 0.5 ? snap.displayTime : null;
 
     const onTime = () => {
       const t = el.currentTime;
       setDisplayTime(t);
+      const g = gainRef.current;
 
       if (!solenoidActive) {
-        el.volume = gain;
+        el.volume = g;
         return;
       }
 
       if (t >= FADE_START && t < GATE_SEC) {
         const span = GATE_SEC - FADE_START;
         const u = (GATE_SEC - t) / span;
-        el.volume = Math.max(0, Math.min(1, u * gain));
+        el.volume = Math.max(0, Math.min(1, u * g));
       }
 
       if (t >= GATE_SEC && gateArmedRef.current) {
@@ -169,20 +190,24 @@ export function NowPlayingBar({
         el.pause();
         el.currentTime = 0;
         setDisplayTime(0);
-        el.volume = gain;
-        onFairExchange();
-        if (autoplayEnabled && advanceInPlaylist(1)) return;
+        el.volume = g;
+        fairExchangeRef.current();
+        if (autoplayRef.current && advanceRef.current(1)) return;
         setPlaying(false);
       }
     };
 
-    const onEnded = () => handleTrackEnded();
+    const onEnded = () => endedRef.current();
     const onErr = () => setError('Could not play this file.');
 
     const tryPlay = () => {
       if (cancelled || !usePlaybackStore.getState().isPlaying) return;
+      if (resumeAt != null && resumeAt < (el.duration || Infinity) - 0.25) {
+        el.currentTime = resumeAt;
+        setDisplayTime(resumeAt);
+      }
       beginSession();
-      el.volume = gain;
+      el.volume = gainRef.current;
       void el.play().catch(() => setError('Tap play on a track to start listening.'));
     };
 
@@ -190,7 +215,7 @@ export function NowPlayingBar({
       if (cancelled || !url) return;
       el.src = url;
       el.load();
-      el.volume = gain;
+      el.volume = gainRef.current;
       el.addEventListener('timeupdate', onTime);
       el.addEventListener('ended', onEnded);
       el.addEventListener('error', onErr);
@@ -220,41 +245,45 @@ export function NowPlayingBar({
       el.removeEventListener('timeupdate', onTime);
       el.removeEventListener('ended', onEnded);
       el.removeEventListener('error', onErr);
-      el.pause();
-      el.removeAttribute('src');
+      if (!usePlaybackStore.getState().backgroundHandoffActive) {
+        el.pause();
+        el.removeAttribute('src');
+      }
       if (prevId) releasePlaybackUrl(prevId);
     };
-  }, [
-    beginSession,
-    currentTrackId,
-    gain,
-    primaryMediaRef,
-    onFairExchange,
-    setDisplayTime,
-    setPlaying,
-    showVideo,
-    solenoidActive,
-    advanceInPlaylist,
-    autoplayEnabled,
-    handleTrackEnded,
-    track,
-  ]);
+  }, [beginSession, currentTrackId, primaryMediaRef, setDisplayTime, setPlaying, showVideo, solenoidActive, track]);
+
+  useEffect(() => {
+    const el = primaryMediaRef.current;
+    if (!el || !track || solenoidActive) return;
+    el.volume = gain;
+  }, [gain, primaryMediaRef, solenoidActive, track?.id]);
 
   useEffect(() => {
     const el = primaryMediaRef.current;
     const bg = backgroundAudioRef.current;
     if (!el || !track) return;
+    const handoff = usePlaybackStore.getState().backgroundHandoffActive;
+
     if (!isPlaying) {
       el.pause();
-      bg?.pause();
+      if (!handoff) bg?.pause();
       return;
     }
+
+    if (document.hidden && allowBackgroundPlay) {
+      if (handoff && bg?.src) return;
+      return;
+    }
+
+    if (handoff) return;
+
     if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA && el.src) {
       beginSession();
-      el.volume = gain;
+      el.volume = gainRef.current;
       void el.play().catch(() => setError('Tap play on a track to start listening.'));
     }
-  }, [beginSession, gain, isPlaying, primaryMediaRef, track]);
+  }, [allowBackgroundPlay, beginSession, isPlaying, primaryMediaRef, track?.id]);
 
   const fmt = useCallback((s: number) => {
     const m = Math.floor(s / 60);

@@ -8,9 +8,12 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import type { BoardingHonorPayload } from '@/lib/boardingHonor';
+import { readPlaybackSession } from '@/lib/playbackSession';
+import { usePlaybackSessionPersistence } from '@/hooks/usePlaybackSessionPersistence';
 
 /** Modals + session only — catalog loads from cache/bundle; Refresh pulls server updates. */
 export function MediaShell() {
+  usePlaybackSessionPersistence();
   const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
@@ -32,9 +35,15 @@ export function MediaShell() {
 
   useEffect(() => {
     hydrateSession();
-    usePlaybackStore.getState().hydratePlaybackPrefs();
-    usePlaybackStore.getState().setPlaying(false);
-    usePlaybackStore.getState().setTrack(null);
+    const pb = usePlaybackStore.getState();
+    pb.hydratePlaybackPrefs();
+
+    const snap = readPlaybackSession();
+    if (snap?.trackId) {
+      pb.setTrack(snap.trackId);
+      pb.setDisplayTime(snap.displayTime);
+      if (snap.isPlaying) pb.setPlaying(true);
+    }
 
     const params = new URLSearchParams(window.location.search);
     if (params.get('boarding') === '1') {

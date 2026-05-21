@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import { isUserUploadTrack } from '@/lib/catalogSeed';
@@ -27,7 +27,6 @@ export function TrackMetadataEditor({
   onDeleted,
 }: TrackMetadataEditorProps) {
   const updateTrack = useCatalogStore((s) => s.updateTrack);
-  const uploadTrackCover = useCatalogStore((s) => s.uploadTrackCover);
   const deleteTrack = useCatalogStore((s) => s.deleteTrack);
 
   const [title, setTitle] = useState(track.title);
@@ -40,15 +39,31 @@ export function TrackMetadataEditor({
   const [plModal, setPlModal] = useState(false);
   const [coverPreview, setCoverPreview] = useState<string | undefined>(track.posterSrc);
   const [coverFile, setCoverFile] = useState<File | null>(null);
+  const coverBlobRef = useRef<string | null>(null);
+
+  const revokeCoverBlob = () => {
+    if (coverBlobRef.current) {
+      URL.revokeObjectURL(coverBlobRef.current);
+      coverBlobRef.current = null;
+    }
+  };
+
+  const setCoverPreviewSafe = (url: string | undefined) => {
+    revokeCoverBlob();
+    if (url?.startsWith('blob:')) coverBlobRef.current = url;
+    setCoverPreview(url);
+  };
 
   useEffect(() => {
     setTitle(track.title);
     setArtist(track.artist);
     setGenre(track.genre ?? '');
     setDescription(track.description ?? '');
-    setCoverPreview(track.posterSrc);
     setCoverFile(null);
+    setCoverPreviewSafe(track.posterSrc);
   }, [track.id, track.title, track.artist, track.genre, track.description, track.posterSrc]);
+
+  useEffect(() => () => revokeCoverBlob(), []);
 
   const handleSave = async () => {
     setBusy(true);
@@ -70,7 +85,7 @@ export function TrackMetadataEditor({
         setArtist(latest.artist);
         setGenre(latest.genre ?? '');
         setDescription(latest.description ?? '');
-        setCoverPreview(latest.posterSrc);
+        setCoverPreviewSafe(latest.posterSrc);
       }
       const synced =
         isServerUploadConfigured() && isUserUploadTrack(track.id, track);
@@ -132,6 +147,13 @@ export function TrackMetadataEditor({
   const wrapClass =
     variant === 'inline' ? 'sp-track-edit sp-track-edit--inline' : 'spotify-dj-track-edit';
 
+  const msgClass =
+    msg?.startsWith('Save failed') || msg?.startsWith('Delete failed')
+      ? 'spotify-dj-msg spotify-dj-msg--error'
+      : msg
+        ? 'spotify-dj-msg spotify-dj-msg--success'
+        : 'spotify-dj-msg';
+
   return (
     <div className={wrapClass}>
       <div className="spotify-field sp-track-cover-field">
@@ -152,7 +174,8 @@ export function TrackMetadataEditor({
               onChange={(e) => {
                 const f = e.target.files?.[0] ?? null;
                 setCoverFile(f);
-                if (f) setCoverPreview(URL.createObjectURL(f));
+                setCoverPreviewSafe(f ? URL.createObjectURL(f) : track.posterSrc);
+                e.target.value = '';
               }}
             />
           </label>

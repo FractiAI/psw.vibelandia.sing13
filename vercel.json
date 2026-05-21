@@ -35,7 +35,17 @@
     { "source": "/interfaces/digital-pru-snap-robots.html", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/interfaces/digital-pru-snap-robots", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/sovereign-gate", "destination": "/interfaces/questfest-bridge/index.html" },
-    { "source": "/sovereign-gate/", "destination": "/interfaces/questfest-bridge/index.html" }
+    { "source": "/sovereign-gate/", "destination": "/interfaces/questfest-bridge/index.html" },
+    { "source": "/goldilocks-os", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/goldilocks-os/", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/holographic-panama-canal", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/holographic-panama-canal/", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/panama-canal", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/panama-canal/", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/portal", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/portal/", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/other-side", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/other-side/", "destination": "/interfaces/goldilocks-os.html" }
   ],
   "crons": [
     {

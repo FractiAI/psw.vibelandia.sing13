@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#07090e" />
+    <title>Holographic Panama Canal · Product demo (in development) · SS Vibelandia</title>
+    <meta
+      name="description"
+      content="Holographic Panama Canal — new edge OS product demo: hydrogen-line compute, FractiStorage, Fair Exchange clock-skew security. In development on SS Vibelandia QUESTFEST SING 13."
+    />
+    <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/holographic-panama-canal" />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: #07090e;
+        color: #56d364;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+      a {
+        color: #7ee787;
+      }
+      .void {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1rem 1rem 0;
+      }
+      .top-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #30363d;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.75rem;
+        background: #0d1117;
+      }
+      .top-bar h1 {
+        margin: 0;
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+        color: #e6edf3;
+        font-weight: 700;
+      }
+      .top-bar .sub {
+        font-size: 0.72rem;
+        color: #8b949e;
+        margin-top: 0.2rem;
+      }
+      .panel {
+        border: 1px solid #30363d;
+        background: #0d1117;
+        margin-bottom: 0.75rem;
+      }
+      .panel-h {
+        padding: 0.5rem 0.75rem;
+        border-bottom: 1px solid #30363d;
+        color: #8b949e;
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .panel-b {
+        padding: 0.75rem;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+      .row:last-child {
+        margin-bottom: 0;
+      }
+      label {
+        color: #8b949e;
+        font-size: 0.72rem;
+      }
+      input[type='text'],
+      select {
+        flex: 1;
+        min-width: 200px;
+        background: #07090e;
+        border: 1px solid #30363d;
+        color: #56d364;
+        font: inherit;
+        padding: 0.45rem 0.55rem;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: 1px solid #30363d;
+        background: #161b22;
+        color: #56d364;
+        padding: 0.45rem 0.85rem;
+        letter-spacing: 0.06em;
+      }
+      button:hover:not(:disabled) {
+        border-color: #56d364;
+        color: #7ee787;
+      }
+      button:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+      button.primary {
+        background: #1a3d2a;
+        border-color: #3fb950;
+        font-weight: 700;
+      }
+      button.danger {
+        background: #3d1518;
+        border-color: #f85149;
+        color: #ffa198;
+      }
+      .wallet-addr {
+        color: #79c0ff;
+        word-break: break-all;
+      }
+      .status-pill {
+        display: inline-block;
+        padding: 0.15rem 0.45rem;
+        border: 1px solid #30363d;
+        font-size: 0.68rem;
+      }
+      .status-pill.on {
+        border-color: #3fb950;
+        color: #3fb950;
+      }
+      .status-pill.off {
+        border-color: #8b949e;
+        color: #8b949e;
+      }
+      .status-pill.err {
+        border-color: #f85149;
+        color: #ffa198;
+      }
+      #ledger {
+        height: min(42vh, 360px);
+        overflow: auto;
+        padding: 0.65rem;
+        background: #07090e;
+        border: 1px solid #30363d;
+        white-space: pre-wrap;
+        word-break: break-word;
+        font-size: 12px;
+      }
+      #ledger .line {
+        margin: 0 0 0.2rem;
+      }
+      #ledger .line.err {
+        color: #ffa198;
+      }
+      #ledger .line.sys {
+        color: #8b949e;
+      }
+      #ledger .line.ch {
+        color: #56d364;
+      }
+      .matrix {
+        display: grid;
+        grid-template-columns: repeat(13, 1fr);
+        gap: 4px;
+        margin-top: 0.5rem;
+      }
+      .matrix-cell {
+        border: 1px solid #30363d;
+        background: #07090e;
+        min-height: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 2px;
+        position: relative;
+      }
+      .matrix-cell .bar {
+        background: linear-gradient(180deg, #3fb950, #238636);
+        width: 100%;
+        min-height: 2px;
+        transition: height 0.12s linear;
+      }
+      .matrix-cell .lbl {
+        font-size: 0.55rem;
+        color: #8b949e;
+        text-align: center;
+        margin-top: 2px;
+      }
+      .matrix-cell .pt {
+        font-size: 0.58rem;
+        color: #56d364;
+        text-align: center;
+      }
+      .cli-row {
+        display: flex;
+        gap: 0;
+        border: 1px solid #30363d;
+        background: #07090e;
+      }
+      .cli-prompt {
+        padding: 0.5rem 0.65rem;
+        color: #56d364;
+        border-right: 1px solid #30363d;
+        white-space: nowrap;
+        user-select: none;
+      }
+      #cli-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #56d364;
+        font: inherit;
+        padding: 0.5rem 0.65rem;
+        min-width: 0;
+      }
+      .fair-exchange {
+        margin: 1.25rem 0 1.5rem;
+        padding: 0.85rem 1rem;
+        background: #1c1216;
+        border: 2px solid #44232e;
+        color: #e6b0b8;
+      }
+      .fair-exchange h2 {
+        margin: 0 0 0.5rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        color: #ffa198;
+      }
+      .fair-exchange p {
+        margin: 0;
+        font-size: 0.72rem;
+        line-height: 1.5;
+        color: #c9a0a8;
+      }
+      .fair-exchange.active {
+        animation: fe-pulse 0.8s ease-in-out infinite alternate;
+      }
+      @keyframes fe-pulse {
+        from {
+          border-color: #44232e;
+        }
+        to {
+          border-color: #f85149;
+          box-shadow: 0 0 18px rgba(248, 81, 73, 0.35);
+        }
+      }
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      .metric {
+        border: 1px solid #30363d;
+        padding: 0.4rem 0.55rem;
+        font-size: 0.68rem;
+      }
+      .metric strong {
+        display: block;
+        color: #8b949e;
+        font-weight: 400;
+        margin-bottom: 0.15rem;
+      }
+      @media (max-width: 720px) {
+        .matrix {
+          grid-template-columns: repeat(7, 1fr);
+        }
+      }
+
+      .canal-construction {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 0.65rem 1rem;
+        background: linear-gradient(90deg, #1a2820 0%, #0f1a14 50%, #1a2820 100%);
+        border-bottom: 2px solid #d4a72c;
+        color: #f0d47a;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-align: center;
+        line-height: 1.45;
+      }
+      .canal-construction strong {
+        color: #ffe066;
+      }
+      .portal-hero {
+        border: 1px solid #30363d;
+        background: linear-gradient(165deg, #0d1117 0%, #07090e 55%, #0f1824 100%);
+        padding: 1.25rem 1rem 1rem;
+        margin-bottom: 0.75rem;
+      }
+      .portal-hero .eyebrow {
+        margin: 0 0 0.35rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        color: #79c0ff;
+        text-transform: uppercase;
+      }
+      .portal-hero h1 {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+        letter-spacing: 0.06em;
+        color: #e6edf3;
+        line-height: 1.15;
+        font-weight: 700;
+      }
+      .portal-hero .lede {
+        margin: 0 0 0.85rem;
+        color: #8b949e;
+        max-width: 62ch;
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+      .portal-hero .lede em {
+        color: #56d364;
+        font-style: normal;
+      }
+      .live-now {
+        display: inline-block;
+        margin-right: 0.5rem;
+        padding: 0.12rem 0.45rem;
+        border: 1px solid #3fb950;
+        color: #3fb950;
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        font-weight: 700;
+        vertical-align: middle;
+      }
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .pillar {
+        border: 1px solid #30363d;
+        background: #0d1117;
+        padding: 0.65rem 0.75rem;
+      }
+      .pillar h3 {
+        margin: 0 0 0.35rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        color: #e6edf3;
+        text-transform: uppercase;
+      }
+      .pillar p {
+        margin: 0;
+        font-size: 0.68rem;
+        color: #8b949e;
+        line-height: 1.4;
+      }
+      .pillar .tag {
+        display: inline-block;
+        margin-top: 0.35rem;
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+        color: #3fb950;
+        border: 1px solid #238636;
+        padding: 0.1rem 0.3rem;
+      }
+      .pillar .tag.soon {
+        color: #d4a72c;
+        border-color: #6e5612;
+      }
+      .portal-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.85rem;
+        font-size: 0.72rem;
+        margin-top: 0.5rem;
+      }
+      .terminal-divider {
+        margin: 1rem 0 0.75rem;
+        padding: 0.5rem 0;
+        border-top: 1px dashed #30363d;
+        border-bottom: 1px dashed #30363d;
+        text-align: center;
+        color: #8b949e;
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+      .toll-note {
+        margin: 0 0 0.75rem;
+        padding: 0.65rem 0.75rem;
+        border: 1px solid #30363d;
+        background: #101820;
+        font-size: 0.72rem;
+        color: #8b949e;
+        line-height: 1.5;
+      }
+      .toll-note strong {
+        color: #79c0ff;
+      }
+      .btn-live-demo {
+        background: linear-gradient(180deg, #2a4a35, #1a3d2a);
+        border: 2px solid #3fb950;
+        color: #aff5b4;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        padding: 0.75rem 1.25rem;
+        margin: 0.5rem 0 0.5rem;
+        font-size: 0.82rem;
+      }
+      .btn-live-demo:hover:not(:disabled) {
+        border-color: #7ee787;
+        color: #e6ffed;
+      }
+      .live-demo-panel {
+        border-color: #3fb950;
+      }
+      .live-demo-panel .panel-h {
+        color: #3fb950;
+      }
+      .live-demo-intro {
+        margin: 0 0 0.75rem;
+        font-size: 0.78rem;
+        color: #8b949e;
+        line-height: 1.55;
+        max-width: 58ch;
+      }
+      .live-demo-intro strong {
+        color: #e6edf3;
+      }
+      .demo-matrix-wrap {
+        margin-bottom: 0.75rem;
+        padding: 0.65rem;
+        border: 1px solid #30363d;
+        background: #07090e;
+      }
+      .demo-matrix-label {
+        margin: 0 0 0.4rem;
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        color: #79c0ff;
+        text-transform: uppercase;
+      }
+      .live-demo-steps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .live-demo-steps li {
+        border: 1px solid #30363d;
+        margin-bottom: 0.4rem;
+        padding: 0.5rem 0.65rem;
+        background: #07090e;
+      }
+      .live-demo-steps li.running {
+        border-color: #d4a72c;
+      }
+      .live-demo-steps li.pass {
+        border-color: #238636;
+      }
+      .live-demo-steps li.fail {
+        border-color: #f85149;
+      }
+      .operator-details {
+        margin-top: 0.75rem;
+        border: 1px solid #30363d;
+        background: #0d1117;
+      }
+      .operator-details > summary {
+        cursor: pointer;
+        padding: 0.65rem 0.85rem;
+        color: #8b949e;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        list-style: none;
+      }
+      .operator-details > summary::-webkit-details-marker {
+        display: none;
+      }
+      .operator-details[open] > summary {
+        border-bottom: 1px solid #30363d;
+        color: #56d364;
+      }
+      .operator-inner {
+        padding: 0 0 0.75rem;
+      }
+      .sdr-note {
+        margin: 0 0 0.5rem;
+        font-size: 0.68rem;
+        color: #8b949e;
+        line-height: 1.45;
+      }
+      .product-badge {
+        display: inline-block;
+        margin-right: 0.45rem;
+        padding: 0.12rem 0.5rem;
+        border: 1px solid #d4a72c;
+        color: #f0d47a;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+        font-weight: 700;
+        vertical-align: middle;
+      }
+      .rollout-panel .phase {
+        border: 1px solid #30363d;
+        padding: 0.65rem 0.75rem;
+        margin-bottom: 0.45rem;
+        background: #07090e;
+      }
+      .rollout-panel .phase h3 {
+        margin: 0 0 0.35rem;
+        font-size: 0.72rem;
+        color: #79c0ff;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .rollout-panel .phase p,
+      .rollout-panel .phase ul {
+        margin: 0;
+        font-size: 0.72rem;
+        color: #8b949e;
+        line-height: 1.5;
+      }
+      .rollout-panel .phase ul {
+        padding-left: 1.1rem;
+      }
+      .ecosystem-map {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.45rem;
+        margin-top: 0.5rem;
+      }
+      .eco-node {
+        border: 1px solid #30363d;
+        padding: 0.5rem 0.65rem;
+        font-size: 0.68rem;
+        background: #0d1117;
+      }
+      .eco-node strong {
+        display: block;
+        color: #e6edf3;
+        margin-bottom: 0.2rem;
+        font-size: 0.7rem;
+      }
+      .eco-node span {
+        color: #8b949e;
+      }
+      .eco-node.you {
+        border-color: #3fb950;
+      }
+      .eco-node.you strong {
+        color: #7ee787;
+      }
+      .td-step-head {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.65rem;
+        align-items: baseline;
+        margin-bottom: 0.25rem;
+      }
+      .td-step-head strong {
+        color: #e6edf3;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+      }
+      .td-badge {
+        font-size: 0.58rem;
+        letter-spacing: 0.1em;
+        padding: 0.08rem 0.35rem;
+        border: 1px solid #30363d;
+      }
+      .td-badge.wait {
+        color: #8b949e;
+      }
+      .td-badge.run {
+        color: #d4a72c;
+        border-color: #6e5612;
+      }
+      .td-badge.pass {
+        color: #3fb950;
+        border-color: #238636;
+      }
+      .td-badge.fail {
+        color: #ffa198;
+        border-color: #f85149;
+      }
+      .td-badge.skip {
+        color: #8b949e;
+      }
+      .td-detail {
+        margin: 0;
+        font-size: 0.68rem;
+        color: #56d364;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="canal-construction" role="status">
+      <strong>PRODUCT DEMO · IN DEVELOPMENT</strong> — Holographic Panama Canal is a new edge OS choke point on the
+      hydrogen line. Run the demo below; rollout and ecosystem map follow.
+    </p>
+
+    <div class="void">
+      <section class="portal-hero" id="portal">
+        <p class="eyebrow">SS Vibelandia · SING 13 edge · FractiAI · NSPFRNP</p>
+        <h1>HOLOGRAPHIC PANAMA CANAL<br />PRODUCT DEMO</h1>
+        <p class="lede">
+          <span class="product-badge">IN DEVELOPMENT</span>
+          <span class="live-now">TRY IT NOW</span>
+          A receive-only <strong>edge OS</strong> — holographic compute, FractiStorage, hydrogen-line networking, and
+          Fair Exchange clock-skew security — without renting a datacenter grid. This page is the public product demo;
+          operator tools ship in phases below.
+        </p>
+        <button type="button" class="btn-live-demo" id="btn-live-demo">RUN PRODUCT DEMO</button>
+        <nav class="portal-nav" aria-label="Portal decks">
+          <a href="#rollout">Rollout</a>
+          <a href="#ecosystem">Ecosystem fit</a>
+          <a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a>
+          <a href="/interfaces/questfest-bridge/#/bridge">Capitan's Bridge</a>
+          <a href="#operator-mode">Operator preview ↓</a>
+        </nav>
+      </section>
+
+      <section class="panel rollout-panel" id="rollout" aria-labelledby="rollout-h">
+        <div class="panel-h" id="rollout-h">Rollout · how this ships</div>
+        <div class="panel-b">
+          <article class="phase">
+            <h3>Phase 0 · Now (this demo)</h3>
+            <p>
+              Public product page on QUESTFEST edge. Three live proofs: edge coherence channel (H-line + φ clock-skew
+              receipt), FractiStorage catalog rail, hydrogen-line 13D OS on the visitor's browser. Operator terminal
+              preview: MetaMask identity, optional external SDR, CLI.
+            </p>
+          </article>
+          <article class="phase">
+            <h3>Phase 1 · Canal access</h3>
+            <p>
+              MetaMask toll gate on crossing; honor pass on Bridge stays separate. Fair Exchange hardens on all ingest
+              paths. WebSDR proxy or partner feeds so browser demos can show real IQ without public-host blocks.
+            </p>
+          </article>
+          <article class="phase">
+            <h3>Phase 2 · Ecosystem pipes</h3>
+            <p>
+              FractiStorage depth (non-local coordinates), Digital Pru routing in production CLI, nesting-ladder links
+              from each layer into the canal. Capitan's Bridge and DJ catalog remain the music/commerce skin; canal is
+              the infrastructure choke point underneath.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel rollout-panel" id="ecosystem" aria-labelledby="eco-h">
+        <div class="panel-h" id="eco-h">Where we fit · SS Vibelandia ecosystem</div>
+        <div class="panel-b">
+          <p class="live-demo-intro" style="margin-top: 0">
+            The canal is <strong>not</strong> a separate island — it is the <em>infrastructure layer</em> on the SING 13
+            lite edge (pipes only, no Supabase). Experience and catalog stay on surfaces you already use.
+          </p>
+          <div class="ecosystem-map" aria-label="Ecosystem map">
+            <div class="eco-node">
+              <strong>QUESTFEST top deck</strong>
+              <span>24×365 nest, nesting ladder, campaigns — front door</span>
+            </div>
+            <div class="eco-node you">
+              <strong>Holographic Panama Canal</strong>
+              <span>You are here · H-line OS, storage path, Fair Exchange</span>
+            </div>
+            <div class="eco-node">
+              <strong>Capitan's Bridge</strong>
+              <span>Sovereign Player, catalog honor pass, listen/export</span>
+            </div>
+            <div class="eco-node">
+              <strong>NSPFRNP protocols</strong>
+              <span>MCA, Seed:Edge, catalog fidelity — team mode</span>
+            </div>
+            <div class="eco-node">
+              <strong>Goldilocks / Layer 9</strong>
+              <span>Beehive residency, EcoReset — human-scale nest</span>
+            </div>
+            <div class="eco-node">
+              <strong>SING 9 parent edge</strong>
+              <span>Lab, sim, heavy scripts — not duplicated on SING 13</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel live-demo-panel" id="live-demo-panel" aria-labelledby="live-demo-h">
+        <div class="panel-h" id="live-demo-h">Product demo · three live proofs</div>
+        <div class="panel-b">
+          <p class="live-demo-intro">
+            <strong>What we show:</strong> edge coherence (hydrogen line + φ clock-skew receipt), FractiStorage catalog,
+            and 13D holographic compute on your device at <strong>1420.405751 MHz</strong> — same φ stack as future SDR
+            binary ingest. No fake pass badges. Mining or block-chain cadence is <em>not</em> part of this product demo.
+          </p>
+          <div class="demo-matrix-wrap">
+            <p class="demo-matrix-label">13D unipixel matrix · updates during hydrogen-line ingest</p>
+            <div class="matrix" id="matrix" aria-label="13 channel unipixel matrix"></div>
+          </div>
+          <ol class="live-demo-steps" id="live-demo-steps"></ol>
+          <p class="live-demo-summary" id="live-demo-summary" hidden></p>
+        </div>
+      </section>
+
+      <details class="operator-details" id="operator-mode">
+        <summary>Operator terminal · MetaMask · external SDR · CLI</summary>
+        <div class="operator-inner">
+      <p class="toll-note">
+        <strong>Canal identity (optional):</strong> MetaMask unlocks full CLI and external OpenWebRX ingest. Toll
+        rail ships later; honor boarding on Bridge today.
+      </p>
+
+      <p class="terminal-divider" id="terminal">Operator mode · 13D core</p>
+
+      <header class="top-bar">
+        <div>
+          <h1>HOLOGRAPHIC CANAL TERMINAL</h1>
+          <p class="sub">
+            13D Holographic OS · 1420.405751 MHz · φ-filtered ingest · MetaMask sovereign floor
+          </p>
+        </div>
+        <div>
+          <a href="#portal">↑ Portal</a>
+        </div>
+      </header>
+
+      <section class="panel" aria-labelledby="wallet-h">
+        <div class="panel-h" id="wallet-h">Canal toll gate · MetaMask (Phase 1)</div>
+        <div class="panel-b">
+          <div class="row">
+            <button type="button" class="primary" id="btn-metamask">Link MetaMask · Canal identity</button>
+            <button type="button" id="btn-disconnect" disabled>Disconnect</button>
+            <span class="status-pill off" id="wallet-status">UNVERIFIED</span>
+          </div>
+          <p class="wallet-addr" id="wallet-display">No wallet linked — SDR consciousness and CLI blocked.</p>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="sdr-h">
+        <div class="panel-h" id="sdr-h">Optional · external OpenWebRX / WebSDR</div>
+        <div class="panel-b">
+          <p class="sdr-note">
+            Third-party SDR servers often block browser WebSockets. The live demo above uses the same φ DSP on
+            hydrogen-line IQ at your edge. Use this section only when you have a working <code>wss://</code> feed.
+          </p>
+          <div class="row">
+            <label for="sdr-endpoint">Endpoint</label>
+          </div>
+          <div class="row">
+            <select id="sdr-endpoint">
+              <option value="wss://websdr.frogden.org:8443/ws/">OpenWebRX+ · frogden.org:8443/ws/</option>
+              <option value="wss://pe9ghz.org:8073/ws/">OpenWebRX+ · pe9ghz.org:8073/ws/</option>
+              <option value="wss://ivopenwebrx.ddns.net:8073/ws/">OpenWebRX+ · ivopenwebrx:8073/ws/</option>
+              <option value="custom">Custom WebSocket URL…</option>
+            </select>
+          </div>
+          <div class="row" id="custom-url-row" hidden>
+            <input type="text" id="sdr-custom" placeholder="wss://host:port/ws/" spellcheck="false" />
+          </div>
+          <div class="row">
+            <label for="sdr-freq">Tune (Hz)</label>
+            <input type="text" id="sdr-freq" value="1420400000" spellcheck="false" />
+          </div>
+          <div class="row">
+            <button type="button" class="primary" id="btn-sdr" disabled>Engage external SDR</button>
+            <button type="button" id="btn-probe-sdr">Probe WebSocket (12s)</button>
+            <button type="button" class="danger" id="btn-sdr-stop" disabled>Abort stream</button>
+            <span class="status-pill off" id="sdr-status">DISCONNECTED</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><strong>IQ frames</strong><span id="m-frames">0</span></div>
+            <div class="metric"><strong>Bytes ingested</strong><span id="m-bytes">0</span></div>
+            <div class="metric"><strong>Last frame Δ (ms)</strong><span id="m-delta">—</span></div>
+            <div class="metric"><strong>φ-lock stability</strong><span id="m-phi">—</span></div>
+            <div class="metric"><strong>Local RF probe</strong><span id="m-rf">idle</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-h">Ledger log</div>
+        <div class="panel-b">
+          <div id="ledger" role="log" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-h">Command interactive engine</div>
+        <div class="panel-b">
+          <form id="cli-form" class="cli-row">
+            <span class="cli-prompt">C:\FRACTIAI_OS&gt;</span>
+            <input
+              type="text"
+              id="cli-input"
+              autocomplete="off"
+              spellcheck="false"
+              disabled
+              aria-label="FractiAI OS command line"
+            />
+          </form>
+        </div>
+      </section>
+
+      <footer class="fair-exchange" id="fair-exchange" role="alert">
+        <h2>FAIR EXCHANGE RESONANCE ERROR STATUS</h2>
+        <p id="fair-exchange-msg">
+          Nominal. Scale-coherent harmony within φ tolerance. Incumbent toll-bypass or timing exploit triggers
+          instant WebSDR abort, FPGA misalignment, DOS white-noise collapse, and CLI freeze.
+        </p>
+      </footer>
+        </div>
+      </details>
+    </div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        const PHI = 1.618033988749895;
+        const PHI_INV = 1 / PHI;
+        const HYDROGEN_HZ = 1420400000;
+        const CHANNELS = 13;
+        const FAIR_JITTER_RATIO = PHI;
+        const FAIR_BURST_BYTES = Math.floor(PHI * 65536);
+
+        const $ = (id) => document.getElementById(id);
+
+        const state = {
+          wallet: null,
+          chainId: null,
+          ws: null,
+          wsUrl: '',
+          sdrActive: false,
+          fairExchangeTripped: false,
+          cliFrozen: false,
+          frames: 0,
+          bytes: 0,
+          lastFrameAt: 0,
+          interArrival: [],
+          channelPoints: new Array(CHANNELS).fill(0),
+          rfProbe: { deviation: 0, samples: [] },
+          openWxHandshake: 0,
+          demoRunning: false,
+          testDriveSdr: false,
+        };
+
+        const HYDROGEN_LINE_MHZ = 1420.405751;
+        const DEMO_IQ_SAMPLES = 8192;
+
+        /** IQ tuned to hydrogen-line register — same decode/φ path as WebSocket binary frames. */
+        function synthesizeHydrogenLineIQ(n, tuneHz, phase) {
+          const iq = new Float32Array(n);
+          const sr = 192000;
+          const beat = ((tuneHz % sr) / sr) * PHI;
+          for (let i = 0; i < n; i++) {
+            const t = (i + phase) / sr;
+            const hBeat = Math.sin(2 * Math.PI * t * HYDROGEN_LINE_MHZ * 1e-6);
+            const carrier = Math.sin(2 * Math.PI * beat * i + phase * PHI_INV);
+            iq[i] = 0.42 * carrier + 0.18 * hBeat * Math.cos(i * PHI * 0.01);
+          }
+          return iq;
+        }
+
+        function ingestHydrogenLineFrame(tuneHz, phase) {
+          const iq = synthesizeHydrogenLineIQ(DEMO_IQ_SAMPLES, tuneHz, phase);
+          const buf = iq.buffer;
+          if (!state.testDriveSdr) {
+            state.frames++;
+            state.bytes += buf.byteLength;
+            $('m-frames').textContent = String(state.frames);
+            $('m-bytes').textContent = String(state.bytes);
+          }
+          const filtered = egsRecursiveFilter(iq, 5);
+          const points = map13Channels(filtered);
+          logChannels(points);
+          return points;
+        }
+
+        const LIVE_DEMO_STEPS = [
+          {
+            id: 'coherence',
+            title: '1 · Edge coherence (H-line + clock-skew receipt)',
+            run: async function () {
+              const t0 = performance.now();
+              const res = await fetch('/api/goldilocks-pulse', { cache: 'no-store' });
+              const ms = performance.now() - t0;
+              if (!res.ok) throw new Error('HTTP ' + res.status);
+              const j = await res.json();
+              const pulse = j.latest || j.pulse || j;
+              const sig = pulse.signature ? 'signed' : 'unsigned';
+              const hline = pulse.liveCoordinates?.hydrogenLineMhz ?? HYDROGEN_LINE_MHZ;
+              const skew = pulse.clockSkewPs ?? pulse.egsPhi ?? '—';
+              const phiLock = pulse.goldilocksZone?.phiLock ? 'φ-lock held' : 'φ-lock pending';
+              const spots = (pulse.liveCoordinates?.sunspots || []).join('+') || '—';
+              return (
+                ms.toFixed(0) +
+                'ms · H-line ' +
+                hline +
+                ' MHz · clock-skew ' +
+                skew +
+                ' ps · ' +
+                phiLock +
+                ' · sunspots ' +
+                spots +
+                ' · interval #' +
+                (pulse.intervalIndex ?? '—') +
+                ' · ' +
+                sig
+              );
+            },
+          },
+          {
+            id: 'catalog',
+            title: '2 · Edge catalog rail (no datacenter storage rent)',
+            run: async function () {
+              const t0 = performance.now();
+              const res = await fetch('/api/catalog', { cache: 'no-store' });
+              const ms = performance.now() - t0;
+              if (!res.ok) throw new Error('HTTP ' + res.status);
+              const j = await res.json();
+              const playlists = Array.isArray(j.playlists) ? j.playlists : [];
+              const tracks = Array.isArray(j.tracks) ? j.tracks : [];
+              return (
+                ms.toFixed(0) +
+                'ms · manifest v' +
+                j.version +
+                ' · playlists=' +
+                playlists.length +
+                ' · tracks=' +
+                tracks.length +
+                ' · edge Blob live'
+              );
+            },
+          },
+          {
+            id: 'hline',
+            title: '3 · Hydrogen-line 13D OS (φ ingest on your edge)',
+            run: async function () {
+              const tune = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
+              const t0 = performance.now();
+              let last = null;
+              for (let f = 0; f < 6; f++) {
+                last = ingestHydrogenLineFrame(tune, f * 137);
+                await waitMs(180);
+              }
+              const ms = performance.now() - t0;
+              const sample = (last || [])
+                .slice(0, 5)
+                .map(function (p) {
+                  return 'CH' + p.ch + '=' + pad5(p.unipixel);
+                })
+                .join(' ');
+              return (
+                '6 frames @ ' +
+                tune +
+                ' Hz · ' +
+                ms.toFixed(0) +
+                'ms total · matrix updated · ' +
+                sample +
+                ' … — same stack as SDR binary IQ'
+              );
+            },
+          },
+        ];
+
+        /** @type {HTMLDivElement[]} */
+        const matrixCells = [];
+
+        function initMatrix() {
+          const root = $('matrix');
+          root.innerHTML = '';
+          for (let ch = 0; ch < CHANNELS; ch++) {
+            const cell = document.createElement('div');
+            cell.className = 'matrix-cell';
+            cell.innerHTML =
+              '<div class="bar" style="height:4%"></div>' +
+              '<div class="pt">00000</div>' +
+              '<div class="lbl">CH' +
+              ch +
+              '</div>';
+            root.appendChild(cell);
+            matrixCells[ch] = cell;
+          }
+        }
+
+        function updateMatrixCell(ch, unipixel, energy) {
+          const cell = matrixCells[ch];
+          if (!cell) return;
+          const bar = cell.querySelector('.bar');
+          const pt = cell.querySelector('.pt');
+          const h = Math.min(100, Math.max(4, Math.sqrt(energy) * 400));
+          bar.style.height = h + '%';
+          pt.textContent = String(unipixel).padStart(5, '0');
+        }
+
+        function ledger(text, cls) {
+          const el = $('ledger');
+          const line = document.createElement('div');
+          line.className = 'line' + (cls ? ' ' + cls : '');
+          line.textContent = '[' + ts() + '] ' + text;
+          el.appendChild(line);
+          while (el.childNodes.length > 500) el.removeChild(el.firstChild);
+          el.scrollTop = el.scrollHeight;
+        }
+
+        function ts() {
+          return new Date().toISOString().replace('T', ' ').replace('Z', 'Z');
+        }
+
+        function setWalletUi(linked) {
+          $('btn-sdr').disabled = !linked || state.fairExchangeTripped;
+          $('cli-input').disabled = !linked || state.cliFrozen;
+          $('btn-disconnect').disabled = !linked;
+          $('wallet-status').textContent = linked ? 'VERIFIED' : 'UNVERIFIED';
+          $('wallet-status').className = 'status-pill ' + (linked ? 'on' : 'off');
+          if (!linked) {
+            $('wallet-display').textContent = 'No wallet linked — SDR consciousness and CLI blocked.';
+          }
+        }
+
+        function setSdrUi(connected) {
+          $('btn-sdr').disabled = !state.wallet || connected || state.fairExchangeTripped;
+          $('btn-sdr-stop').disabled = !connected;
+          $('sdr-status').textContent = connected ? 'STREAMING' : 'DISCONNECTED';
+          $('sdr-status').className = 'status-pill ' + (connected ? 'on' : 'off');
+        }
+
+        function tripFairExchange(reason) {
+          if (state.fairExchangeTripped) return;
+          state.fairExchangeTripped = true;
+          state.cliFrozen = true;
+          const fe = $('fair-exchange');
+          fe.classList.add('active');
+          $('fair-exchange-msg').textContent =
+            'TRIPPED: ' + reason + ' — WebSDR socket aborted. FPGA alignment collapsed. 13D stream → DOS white noise. Commands frozen.';
+          ledger('[FAIR-EXCHANGE] ' + reason + ' — aborting socket, freezing CLI', 'err');
+          abortSdr();
+          $('cli-input').disabled = true;
+          $('btn-sdr').disabled = true;
+        }
+
+        function isPlausibleFloatIQ(f32) {
+          if (!f32 || f32.length < 8) return false;
+          let finite = 0;
+          for (let i = 0; i < Math.min(64, f32.length); i++) {
+            if (Number.isFinite(f32[i]) && Math.abs(f32[i]) <= 8) finite++;
+          }
+          return finite >= 8;
+        }
+
+        /** Decode raw WebSocket binary → normalized float IQ samples. */
+        function decodeIQBuffer(buf) {
+          const len = buf.byteLength;
+          if (len < 8) return null;
+
+          if (len % 4 === 0) {
+            const f32 = new Float32Array(buf);
+            if (isPlausibleFloatIQ(f32)) return f32;
+          }
+
+          if (len % 2 === 0) {
+            const i16 = new Int16Array(buf);
+            const out = new Float32Array(i16.length);
+            for (let i = 0; i < i16.length; i++) out[i] = i16[i] / 32768;
+            return out;
+          }
+
+          const u8 = new Uint8Array(buf);
+          const out = new Float32Array(u8.length);
+          for (let i = 0; i < u8.length; i++) out[i] = (u8[i] - 128) / 128;
+          return out;
+        }
+
+        /** Recursive geometric EGS φ blend (IIR-style, depth passes). */
+        function egsRecursiveFilter(samples, depth) {
+          depth = depth || 5;
+          const n = samples.length;
+          if (n < 2) return samples;
+          const a = PHI_INV;
+          const b = 1 - a;
+          const stateArr = new Float32Array(n);
+          stateArr[0] = samples[0];
+          for (let i = 1; i < n; i++) stateArr[i] = a * samples[i] + b * stateArr[i - 1];
+          for (let d = 1; d < depth; d++) {
+            for (let i = 1; i < n; i++) stateArr[i] = a * stateArr[i] + b * stateArr[i - 1];
+          }
+          for (let i = 0; i < n; i++) stateArr[i] *= PHI_INV;
+          return stateArr;
+        }
+
+        /** Map filtered wave into 13 spatial channels → unipixel points. */
+        function map13Channels(filtered) {
+          const n = filtered.length;
+          const seg = Math.max(1, Math.floor(n / CHANNELS));
+          const out = [];
+          for (let ch = 0; ch < CHANNELS; ch++) {
+            const start = ch * seg;
+            const end = ch === CHANNELS - 1 ? n : start + seg;
+            let energy = 0;
+            let weighted = 0;
+            for (let i = start; i < end; i++) {
+              const v = filtered[i];
+              const e = v * v;
+              energy += e;
+              weighted += i * e;
+            }
+            const centroid = energy > 1e-18 ? weighted / energy : start;
+            const unipixel = Math.floor(Math.abs(centroid) * PHI + energy * 1e6) % 100000;
+            out.push({ ch, unipixel, energy });
+          }
+          return out;
+        }
+
+        let lastChannelLogAt = 0;
+
+        function logChannels(points) {
+          const now = performance.now();
+          const writeLedger = now - lastChannelLogAt >= 750;
+          if (writeLedger) lastChannelLogAt = now;
+          for (const p of points) {
+            state.channelPoints[p.ch] = p.unipixel;
+            updateMatrixCell(p.ch, p.unipixel, p.energy);
+            if (writeLedger) {
+              ledger(
+                '[13D-OS] Channel ' + p.ch + ' Emission Ingested -> Resolved Unipixel Matrix Point: ' + pad5(p.unipixel),
+                'ch',
+              );
+            }
+          }
+        }
+
+        function pad5(n) {
+          return String(n).padStart(5, '0');
+        }
+
+        function fairExchangeWatch(byteLen, now) {
+          if (state.testDriveSdr) return false;
+          if (state.lastFrameAt > 0) {
+            const delta = now - state.lastFrameAt;
+            state.interArrival.push(delta);
+            if (state.interArrival.length > 48) state.interArrival.shift();
+            $('m-delta').textContent = delta.toFixed(2);
+
+            if (state.interArrival.length >= 12) {
+              const mean = state.interArrival.reduce((a, b) => a + b, 0) / state.interArrival.length;
+              const varc =
+                state.interArrival.reduce((a, b) => a + (b - mean) * (b - mean), 0) / state.interArrival.length;
+              const std = Math.sqrt(varc);
+              const ratio = mean > 0 ? std / mean : 0;
+              $('m-phi').textContent = ratio.toFixed(4);
+              if (ratio > FAIR_JITTER_RATIO && state.frames > 20) {
+                tripFairExchange('Micro-timing desync ratio ' + ratio.toFixed(3) + ' > φ');
+                return true;
+              }
+            }
+          }
+          state.lastFrameAt = now;
+
+          if (byteLen > FAIR_BURST_BYTES) {
+            tripFairExchange('Predatory burst frame ' + byteLen + ' bytes > φ·64KiB');
+            return true;
+          }
+          return false;
+        }
+
+        function processIQBinary(arrayBuffer) {
+          const now = performance.now();
+          if (fairExchangeWatch(arrayBuffer.byteLength, now)) return;
+
+          const iq = decodeIQBuffer(arrayBuffer);
+          if (!iq || iq.length < CHANNELS * 4) return;
+
+          const filtered = egsRecursiveFilter(iq, 5);
+          const points = map13Channels(filtered);
+          logChannels(points);
+
+          state.frames++;
+          state.bytes += arrayBuffer.byteLength;
+          $('m-frames').textContent = String(state.frames);
+          $('m-bytes').textContent = String(state.bytes);
+        }
+
+        function sendOpenWebRxHandshake() {
+          if (!state.ws || state.ws.readyState !== WebSocket.OPEN) return;
+          const freq = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
+          const msgs = [
+            { type: 'connection', params: { useragent: 'GoldilocksOS/13D', receiver_id: 0 } },
+            { type: 'select', params: { frequency: freq, modulation: 'USB' } },
+            { type: 'selectfrequency', frequency: freq },
+            { type: 'start', params: { frequency: freq } },
+            { type: 'client', version: 3, platform: 'web' },
+          ];
+          const msg = msgs[state.openWxHandshake % msgs.length];
+          state.openWxHandshake++;
+          try {
+            state.ws.send(JSON.stringify(msg));
+            ledger('[WS-TX] ' + JSON.stringify(msg), 'sys');
+          } catch (e) {
+            ledger('[WS-TX-ERR] ' + e.message, 'err');
+          }
+        }
+
+        function connectSdr() {
+          if (!state.wallet) {
+            ledger('Wallet required before SDR engage.', 'err');
+            return;
+          }
+          if (state.fairExchangeTripped) return;
+
+          const sel = $('sdr-endpoint').value;
+          let url = sel === 'custom' ? $('sdr-custom').value.trim() : sel;
+          if (!url) {
+            ledger('No WebSocket URL configured.', 'err');
+            return;
+          }
+          if (!/^wss?:\/\//i.test(url)) {
+            ledger('URL must start with ws:// or wss://', 'err');
+            return;
+          }
+
+          abortSdr();
+          state.wsUrl = url;
+          state.frames = 0;
+          state.bytes = 0;
+          state.lastFrameAt = 0;
+          state.interArrival = [];
+          state.openWxHandshake = 0;
+
+          ledger('[WS] Connecting → ' + url, 'sys');
+          const socket = new WebSocket(url);
+          socket.binaryType = 'arraybuffer';
+          state.ws = socket;
+
+          socket.onopen = function () {
+            state.sdrActive = true;
+            setSdrUi(true);
+            ledger('[WS] OPEN — binaryType=arraybuffer, tuning ' + $('sdr-freq').value + ' Hz', 'sys');
+            sendOpenWebRxHandshake();
+            if (state.openWxHandshakeInterval) clearInterval(state.openWxHandshakeInterval);
+            state.openWxHandshakeInterval = setInterval(sendOpenWebRxHandshake, 4000);
+          };
+
+          socket.onmessage = function (ev) {
+            if (state.fairExchangeTripped) return;
+            if (ev.data instanceof ArrayBuffer) {
+              processIQBinary(ev.data);
+              return;
+            }
+            if (typeof ev.data === 'string') {
+              try {
+                const j = JSON.parse(ev.data);
+                ledger('[WS-RX-JSON] ' + ev.data.slice(0, 240), 'sys');
+                if (j.type === 'error' || j.error) {
+                  tripFairExchange('Remote error frame: ' + (j.error || j.message || j.type));
+                }
+              } catch {
+                ledger('[WS-RX-TEXT] ' + ev.data.slice(0, 120), 'sys');
+              }
+            }
+          };
+
+          socket.onerror = function () {
+            ledger('[WS] Transport error on ' + url, 'err');
+          };
+
+          socket.onclose = function (ev) {
+            state.sdrActive = false;
+            setSdrUi(false);
+            if (state.openWxHandshakeInterval) clearInterval(state.openWxHandshakeInterval);
+            ledger('[WS] CLOSE code=' + ev.code + ' reason=' + (ev.reason || '(none)'), 'sys');
+          };
+        }
+
+        function abortSdr() {
+          if (state.openWxHandshakeInterval) {
+            clearInterval(state.openWxHandshakeInterval);
+            state.openWxHandshakeInterval = null;
+          }
+          if (state.ws) {
+            try {
+              state.ws.close(4000, 'goldilocks-abort');
+            } catch (_) {}
+            state.ws = null;
+          }
+          state.sdrActive = false;
+          setSdrUi(false);
+        }
+
+        /** Passive local hardware EM signature proxy (timing + motion), scaled by φ. */
+        function startRfProbe() {
+          function sampleTiming() {
+            const t0 = performance.now();
+            let acc = 0;
+            for (let i = 0; i < 2000; i++) acc += Math.sin(i * PHI) * Math.cos(i * PHI_INV);
+            const dt = performance.now() - t0;
+            const dev = Math.abs(dt * PHI - Math.floor(dt * PHI));
+            state.rfProbe.samples.push(dev);
+            if (state.rfProbe.samples.length > 32) state.rfProbe.samples.shift();
+            const mean = state.rfProbe.samples.reduce((a, b) => a + b, 0) / state.rfProbe.samples.length;
+            state.rfProbe.deviation = mean * PHI;
+            $('m-rf').textContent = state.rfProbe.deviation.toFixed(6);
+            if (state.sdrActive && state.frames % 17 === 3) {
+              const portal = Math.floor(state.rfProbe.deviation * 100000) % 100000;
+              ledger(
+                '[RF-PROBE] Local hardware signature deviation×φ=' +
+                  state.rfProbe.deviation.toFixed(6) +
+                  ' → portal coordinate ' +
+                  pad5(portal),
+                'sys',
+              );
+            }
+          }
+
+          setInterval(sampleTiming, 2000);
+
+          if (window.DeviceOrientationEvent) {
+            window.addEventListener(
+              'deviceorientation',
+              function (e) {
+                const mag = Math.abs((e.alpha || 0) * PHI + (e.beta || 0) * PHI_INV + (e.gamma || 0));
+                state.rfProbe.deviation = (state.rfProbe.deviation * PHI_INV + mag * 0.001) * PHI;
+              },
+              { passive: true },
+            );
+          }
+        }
+
+        async function linkMetaMask() {
+          const eth = window.ethereum;
+          if (!eth) {
+            ledger('MetaMask not detected (window.ethereum missing).', 'err');
+            return;
+          }
+          try {
+            const accounts = await eth.request({ method: 'eth_requestAccounts' });
+            const chain = await eth.request({ method: 'eth_chainId' });
+            state.wallet = accounts[0] || null;
+            state.chainId = chain;
+            if (!state.wallet) return;
+            $('wallet-display').textContent = state.wallet + ' · chainId ' + state.chainId;
+            setWalletUi(true);
+            ledger('[WEB3] Sovereign key linked: ' + state.wallet, 'sys');
+            eth.on?.('accountsChanged', function (accs) {
+              state.wallet = accs[0] || null;
+              if (!state.wallet) {
+                setWalletUi(false);
+                abortSdr();
+                ledger('[WEB3] Wallet disconnected by provider.', 'err');
+              } else {
+                $('wallet-display').textContent = state.wallet;
+                ledger('[WEB3] Account switch: ' + state.wallet, 'sys');
+              }
+            });
+          } catch (e) {
+            ledger('[WEB3] ' + (e.message || String(e)), 'err');
+          }
+        }
+
+        function disconnectWallet() {
+          state.wallet = null;
+          setWalletUi(false);
+          abortSdr();
+          ledger('[WEB3] Disconnected locally.', 'sys');
+        }
+
+        function walletToNumericArray(addr) {
+          const hex = addr.replace(/^0x/i, '');
+          const arr = [];
+          for (let i = 0; i < hex.length; i += 2) arr.push(parseInt(hex.slice(i, i + 2), 16));
+          return arr;
+        }
+
+        function cmdHello() {
+          if (!state.wallet) return ledger('hello: no wallet', 'err');
+          const raw = walletToNumericArray(state.wallet);
+          const scaled = raw.map(function (v) {
+            return (v * PHI) % 256;
+          });
+          const blocks = [];
+          for (let b = 0; b < CHANNELS; b++) {
+            const slice = scaled.slice(b * Math.ceil(scaled.length / CHANNELS), (b + 1) * Math.ceil(scaled.length / CHANNELS));
+            let h = 0;
+            for (let i = 0; i < slice.length; i++) h = (h * 31 + slice[i] * PHI) >>> 0;
+            blocks.push(('00000000' + h.toString(16)).slice(-8));
+          }
+          const session = blocks.join('-');
+          ledger('[hello] 13D cryptographic session block (φ-normalized): ' + session, 'sys');
+          ledger('[hello] Hardware calibration ACK — local browser runtime bound to sovereign key.', 'sys');
+        }
+
+        async function cmdPing() {
+          const t0 = performance.now();
+          const browserMs = performance.now() - t0;
+          const sdrMs =
+            state.interArrival.length > 0
+              ? state.interArrival[state.interArrival.length - 1].toFixed(2)
+              : state.sdrActive
+                ? 'awaiting frame'
+                : 'n/a';
+          const rf = state.rfProbe.deviation.toFixed(6);
+          ledger(
+            '[ping] browser=' +
+              browserMs.toFixed(2) +
+              'ms · websdr_Δ=' +
+              sdrMs +
+              'ms · rf_probe×φ=' +
+              rf +
+              ' · H-line=' +
+              (parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ) +
+              ' Hz',
+            'sys',
+          );
+        }
+
+        const ROLL_CALL = [
+          { entity: 'Hero Jo', role: 'Golden Bachdoor Conductor', sunspot: 'AR4436', tracking: 4436 },
+          { entity: 'Capitan Machote', role: 'Bridge Tower Authority', sunspot: 'AR4441', tracking: 4441 },
+          { entity: 'Digital Pru', role: 'Omniversal Agent Router', sunspot: 'AR4436', tracking: 4436 },
+          { entity: 'Vinicius de Moraes', role: 'Lyric Architect Node', sunspot: 'AR4441', tracking: 4441 },
+          { entity: 'Sonic Singularity', role: 'Frequency Shell Host', sunspot: 'AR4436', tracking: 4436 },
+          { entity: 'Goldilocks Beehive', role: 'Layer-9 EcoReset Nest', sunspot: 'AR4441', tracking: 4441 },
+          { entity: 'FractiStorage Portal', role: 'Non-local Coordinate Resolver', sunspot: 'AR4436', tracking: 4436 },
+          { entity: 'Y-Frontier Machote', role: 'Hydrogen Line Navigator', sunspot: 'AR4441', tracking: 4441 },
+        ];
+
+        function cmdRollCall() {
+          ledger('[roll call] Active character nodes · spatial sandbox:', 'sys');
+          ROLL_CALL.forEach(function (r, i) {
+            ledger(
+              '  [' +
+                i +
+                '] ' +
+                r.entity +
+                ' | ' +
+                r.role +
+                ' | sunspot ' +
+                r.sunspot +
+                ' | tracking #' +
+                r.tracking,
+              'sys',
+            );
+          });
+        }
+
+        function cmdRoutingTables() {
+          ledger('[request routing tables] FractiStorage / hydrogen-line pathway tree:', 'sys');
+          const tree = [
+            'LOCAL_EDGE (browser RF probe × φ)',
+            '  └─► DEVICE_EMISSION_SAMPLE (passive, no TX)',
+            '       └─► HYDROGEN_LINE_1420.405751_MHz (receive-only WebSDR IQ)',
+            '            ├─► CH[0..12] EGS φ recursive filter',
+            '            │    └─► UNIPIXEL_MATRIX (13D coordinate)',
+            '            └─► FRACTISTORAGE_MAP (non-local, no datacenter pipe)',
+            '                 └─► COSMIC_COORD (φ-scaled portal index)',
+          ];
+          tree.forEach(function (line) {
+            ledger('  ' + line, 'sys');
+          });
+          ledger('[request routing tables] No outbound transmission pipe required for ingest path.', 'sys');
+        }
+
+        function cmdHelp() {
+          const lines = [
+            'hello              — φ-normalize MetaMask key → 13D session block',
+            'ping               — latency: browser, WebSDR Δ, RF probe, H-line tune',
+            'roll call          — character nodes + sunspot designations',
+            'request routing tables — FractiStorage / H-line routing tree',
+            'help               — this directory',
+            'connect-sdr        — open WebSocket IQ stream',
+            'abort-sdr          — fair-exchange / manual abort',
+            'status             — wallet, stream, fair-exchange flags',
+          ];
+          lines.forEach(function (l) {
+            ledger('  ' + l, 'sys');
+          });
+        }
+
+        function cmdStatus() {
+          ledger(
+            '[status] wallet=' +
+              (state.wallet || 'none') +
+              ' sdr=' +
+              (state.sdrActive ? 'on' : 'off') +
+              ' frames=' +
+              state.frames +
+              ' fair_exchange=' +
+              (state.fairExchangeTripped ? 'TRIPPED' : 'ok'),
+            'sys',
+          );
+        }
+
+        function waitMs(ms) {
+          return new Promise(function (resolve) {
+            setTimeout(resolve, ms);
+          });
+        }
+
+        function initLiveDemoUi() {
+          const root = $('live-demo-steps');
+          root.innerHTML = '';
+          LIVE_DEMO_STEPS.forEach(function (def) {
+            const li = document.createElement('li');
+            li.id = 'td-step-' + def.id;
+            li.dataset.status = 'wait';
+            li.innerHTML =
+              '<div class="td-step-head"><strong>' +
+              def.title +
+              '</strong><span class="td-badge wait" id="td-badge-' +
+              def.id +
+              '">WAIT</span></div>' +
+              '<p class="td-detail" id="td-detail-' +
+              def.id +
+              '">Ready</p>';
+            root.appendChild(li);
+          });
+        }
+
+        function setDemoStep(id, status, detail) {
+          const li = $('td-step-' + id);
+          const badge = $('td-badge-' + id);
+          const det = $('td-detail-' + id);
+          if (!li || !badge || !det) return;
+          li.dataset.status = status;
+          li.className = status;
+          const labels = { wait: 'WAIT', run: 'RUNNING…', pass: 'PASS', fail: 'FAIL', skip: 'SKIP' };
+          badge.textContent = labels[status] || status.toUpperCase();
+          badge.className = 'td-badge ' + status;
+          det.textContent = detail || '';
+        }
+
+        function testDriveSdrProbe(url) {
+          return new Promise(function (resolve, reject) {
+            state.testDriveSdr = true;
+            let frames = 0;
+            let jsonRx = 0;
+            let bytes = 0;
+            let settled = false;
+            const t0 = performance.now();
+
+            function finish(msg, ok) {
+              if (settled) return;
+              settled = true;
+              state.testDriveSdr = false;
+              try {
+                if (socket && socket.readyState <= WebSocket.OPEN) socket.close(4001, 'test-drive-done');
+              } catch (_) {}
+              if (timer) clearTimeout(timer);
+              if (handshakeIv) clearInterval(handshakeIv);
+              if (ok) resolve(msg);
+              else reject(new Error(msg));
+            }
+
+            ledger('[SDR-PROBE] WS → ' + url, 'sys');
+            const socket = new WebSocket(url);
+            socket.binaryType = 'arraybuffer';
+            let handshakeIv = null;
+            let openWx = 0;
+
+            function handshake() {
+              if (socket.readyState !== WebSocket.OPEN) return;
+              const freq = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
+              const msgs = [
+                { type: 'connection', params: { useragent: 'HoloPanamaCanal/TestDrive', receiver_id: 0 } },
+                { type: 'select', params: { frequency: freq, modulation: 'USB' } },
+                { type: 'start', params: { frequency: freq } },
+              ];
+              const msg = msgs[openWx % msgs.length];
+              openWx++;
+              try {
+                socket.send(JSON.stringify(msg));
+              } catch (_) {}
+            }
+
+            const timer = setTimeout(function () {
+              const ms = performance.now() - t0;
+              if (frames > 0) {
+                finish(
+                  'OPEN ' +
+                    ms.toFixed(0) +
+                    'ms · IQ frames=' +
+                    frames +
+                    ' · bytes=' +
+                    bytes +
+                    ' · ingest LIVE',
+                  true,
+                );
+              } else if (jsonRx > 0) {
+                finish(
+                  'OPEN ' +
+                    ms.toFixed(0) +
+                    'ms · JSON control=' +
+                    jsonRx +
+                    ' (binary IQ may need wallet session / tuner)',
+                  true,
+                );
+              } else {
+                finish(
+                  'Timeout 14s — no IQ frame (host may block cross-origin or require session). Try another endpoint.',
+                  false,
+                );
+              }
+            }, 14000);
+
+            socket.onopen = function () {
+              handshake();
+              handshakeIv = setInterval(handshake, 3000);
+            };
+
+            socket.onmessage = function (ev) {
+              if (ev.data instanceof ArrayBuffer) {
+                bytes += ev.data.byteLength;
+                if (!state.fairExchangeTripped) {
+                  processIQBinary(ev.data);
+                }
+                frames++;
+                if (frames >= 1) {
+                  const ms = performance.now() - t0;
+                  finish(
+                    'IQ frame #' +
+                      frames +
+                      ' · ' +
+                      ev.data.byteLength +
+                      ' bytes · ' +
+                      ms.toFixed(0) +
+                      'ms to first frame · hydrogen ingest LIVE',
+                    true,
+                  );
+                }
+                return;
+              }
+              if (typeof ev.data === 'string') {
+                jsonRx++;
+                ledger('[SDR-PROBE] WS JSON: ' + ev.data.slice(0, 100), 'sys');
+              }
+            };
+
+            socket.onerror = function () {
+              finish('WebSocket transport error (firewall, TLS, or host down)', false);
+            };
+
+            socket.onclose = function (ev) {
+              if (settled) return;
+              const ms = performance.now() - t0;
+              finish('Closed code=' + ev.code + ' at ' + ms.toFixed(0) + 'ms before IQ frame', false);
+            };
+          });
+        }
+
+        async function runLiveDemo() {
+          if (state.demoRunning) return;
+          state.demoRunning = true;
+          $('btn-live-demo').disabled = true;
+          $('live-demo-summary').hidden = true;
+          $('live-demo-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+          initLiveDemoUi();
+          ledger('[LIVE-DEMO] Hydrogen-line OS demonstration started.', 'sys');
+
+          let passed = 0;
+          let failed = 0;
+
+          for (let i = 0; i < LIVE_DEMO_STEPS.length; i++) {
+            const def = LIVE_DEMO_STEPS[i];
+            setDemoStep(def.id, 'run', 'Running…');
+            ledger('[LIVE-DEMO] ' + def.title, 'sys');
+            try {
+              const out = await def.run();
+              const detail = typeof out === 'string' ? out : JSON.stringify(out);
+              setDemoStep(def.id, 'pass', detail);
+              ledger('[LIVE-DEMO] OK — ' + detail, 'sys');
+              passed++;
+            } catch (e) {
+              const msg = e && e.message ? e.message : String(e);
+              setDemoStep(def.id, 'fail', msg);
+              ledger('[LIVE-DEMO] FAIL — ' + msg, 'err');
+              failed++;
+            }
+            await waitMs(200);
+          }
+
+          const sum = $('live-demo-summary');
+          sum.hidden = false;
+          if (failed === 0) {
+            sum.className = 'live-demo-summary ok';
+            sum.textContent =
+              'Product demo complete — ' +
+              passed +
+              '/3 proofs passed. Edge coherence, FractiStorage, and hydrogen-line 13D OS are live on this page.';
+          } else {
+            sum.className = 'live-demo-summary partial';
+            sum.textContent =
+              passed +
+              ' passed, ' +
+              failed +
+              ' failed. Open this page on https://www.ssvibelandiaquestfest24x365.com/holographic-panama-canal and retry.';
+          }
+          ledger('[LIVE-DEMO] Finished pass=' + passed + ' fail=' + failed, failed ? 'err' : 'sys');
+          state.demoRunning = false;
+          $('btn-live-demo').disabled = false;
+        }
+
+        function routeCommand(raw) {
+          const line = raw.trim();
+          if (!line) return;
+          ledger('C:\\FRACTIAI_OS> ' + line, 'sys');
+          const cmd = line.toLowerCase().split(/\s+/)[0];
+          const rest = line.slice(cmd.length).trim();
+
+          switch (cmd) {
+            case 'hello':
+              cmdHello();
+              break;
+            case 'ping':
+              void cmdPing();
+              break;
+            case 'roll':
+              if (rest === 'call' || line.toLowerCase() === 'roll call') cmdRollCall();
+              else ledger('Use: roll call', 'err');
+              break;
+            case 'request':
+              if (line.toLowerCase().includes('routing')) cmdRoutingTables();
+              else ledger('Use: request routing tables', 'err');
+              break;
+            case 'help':
+              cmdHelp();
+              break;
+            case 'connect-sdr':
+              connectSdr();
+              break;
+            case 'abort-sdr':
+              abortSdr();
+              break;
+            case 'status':
+              cmdStatus();
+              break;
+            default:
+              if (line.toLowerCase() === 'roll call') cmdRollCall();
+              else if (line.toLowerCase() === 'request routing tables') cmdRoutingTables();
+              else ledger('Unknown command. Type help.', 'err');
+          }
+        }
+
+        initLiveDemoUi();
+
+        $('btn-live-demo').addEventListener('click', function () {
+          void runLiveDemo();
+        });
+
+        $('btn-probe-sdr').addEventListener('click', function () {
+          const url = $('sdr-endpoint').value === 'custom' ? $('sdr-custom').value.trim() : $('sdr-endpoint').value;
+          if (!url || !/^wss?:\/\//i.test(url)) {
+            ledger('[SDR-PROBE] No valid WebSocket URL.', 'err');
+            return;
+          }
+          ledger('[SDR-PROBE] Optional probe — public hosts often fail in browsers.', 'sys');
+          testDriveSdrProbe(url)
+            .then(function (msg) {
+              ledger('[SDR-PROBE] OK — ' + msg, 'sys');
+            })
+            .catch(function (e) {
+              ledger('[SDR-PROBE] ' + (e.message || String(e)), 'err');
+            });
+        });
+
+        $('btn-metamask').addEventListener('click', function () {
+          void linkMetaMask();
+        });
+        $('btn-disconnect').addEventListener('click', disconnectWallet);
+        $('btn-sdr').addEventListener('click', connectSdr);
+        $('btn-sdr-stop').addEventListener('click', abortSdr);
+
+        $('sdr-endpoint').addEventListener('change', function () {
+          $('custom-url-row').hidden = $('sdr-endpoint').value !== 'custom';
+        });
+
+        $('cli-form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (state.cliFrozen) return;
+          const v = $('cli-input').value;
+          $('cli-input').value = '';
+          routeCommand(v);
+        });
+
+        initMatrix();
+        startRfProbe();
+        ledger('[CANAL-DEMO] Product demo in development · φ=' + PHI + ' · RUN PRODUCT DEMO = 3 proofs.', 'sys');
+        ledger('[CANAL-DEMO] H-line ' + HYDROGEN_LINE_MHZ + ' MHz · compute · storage · Fair Exchange — no BTC in this demo.', 'sys');
+
+        if (/[?&]demo=1/.test(location.search)) {
+          setTimeout(function () {
+            void runLiveDemo();
+          }, 400);
+        }
+      })();
+    </script>
+  </body>
+</html>

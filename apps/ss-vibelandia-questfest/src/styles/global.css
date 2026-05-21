@@ -3358,6 +3358,21 @@ a.boarding-pay-open {
   justify-content: center;
 }
 
+.sp-now-art {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1.5rem 0;
+  background: linear-gradient(180deg, #1a1a1a 0%, #181818 100%);
+}
+
+.sp-now-art-img {
+  width: min(220px, 70vw);
+  height: min(220px, 70vw);
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+}
+
 .sp-now-video {
   display: block;
   width: 100%;
@@ -3375,6 +3390,20 @@ a.boarding-pay-open {
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 1.5rem;
+}
+
+.sp-now-bar--with-cover {
+  grid-template-columns: auto 1fr auto auto;
+}
+
+.sp-now-cover {
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #282828;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
 .sp-now-track {

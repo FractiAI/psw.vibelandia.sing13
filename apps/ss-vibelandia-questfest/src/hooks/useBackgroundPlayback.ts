@@ -164,10 +164,14 @@ export function useBackgroundPlayback({
     }
 
     try {
+      const artwork = track.posterSrc
+        ? [{ src: track.posterSrc, sizes: '512x512', type: 'image/jpeg' }]
+        : [];
       navigator.mediaSession.metadata = new MediaMetadata({
         title: track.title,
         artist: track.artist,
         album: 'SS Vibelandia QUESTFEST',
+        artwork,
       });
       navigator.mediaSession.setActionHandler('play', () => {
         setPlaying(true);
@@ -186,5 +190,5 @@ export function useBackgroundPlayback({
         /* ignore */
       }
     };
-  }, [allowBackgroundPlay, track?.id, track?.title, track?.artist, setPlaying, onRequestResume]);
+  }, [allowBackgroundPlay, track?.id, track?.title, track?.artist, track?.posterSrc, setPlaying, onRequestResume]);
 }

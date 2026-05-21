@@ -27,7 +27,7 @@ import {
   fetchLiveCatalog,
   isServerUploadConfigured,
   updateTrackOnServer,
-  uploadTrackCover as uploadTrackCoverToServer,
+  uploadCoverBlob,
   uploadTrackToServer,
 } from '@/lib/serverCatalog';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
@@ -106,6 +106,7 @@ interface CatalogState {
       genre?: string;
       description?: string;
     },
+    opts?: { coverFile?: File | null },
   ) => Promise<void>;
   deleteTrack: (trackId: string) => Promise<void>;
   uploadTrackCover: (trackId: string, file: File) => Promise<void>;
@@ -590,7 +591,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     return { ...result, duplicates };
   },
 
-  updateTrack: async (trackId, patch) => {
+  updateTrack: async (trackId, patch, opts) => {
     const prev = get().tracks[trackId];
     if (!prev) return;
 
@@ -610,6 +611,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const shouldSyncServer = isServerUploadConfigured() && isUserUploadTrack(trackId, prev);
 
     if (shouldSyncServer) {
+      let posterSrc = prev.posterSrc;
+      if (opts?.coverFile) {
+        posterSrc = await uploadCoverBlob(trackId, opts.coverFile);
+        next.posterSrc = posterSrc;
+      }
       const userPlaylistIds = get()
         .playlists.filter((p) => !isMasterPlaylist(p.id) && p.trackIds.includes(trackId))
         .map((p) => p.id);
@@ -620,6 +626,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         genre: next.genre,
         durationSec: next.durationSec,
         playlistIds: userPlaylistIds,
+        ...(posterSrc ? { posterSrc } : {}),
       });
       Object.assign(next, {
         ...saved,
@@ -636,14 +643,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   uploadTrackCover: async (trackId, file) => {
-    const prev = get().tracks[trackId];
-    if (!prev) return;
-    if (!isServerUploadConfigured() || !isUserUploadTrack(trackId, prev)) return;
-    const url = await uploadTrackCoverToServer(trackId, file);
-    set((s) => ({
-      tracks: { ...s.tracks, [trackId]: { ...s.tracks[trackId], posterSrc: url } },
-    }));
-    get().persist();
+    await get().updateTrack(trackId, {}, { coverFile: file });
   },
 
   deleteTrack: async (trackId) => {

@@ -100,25 +100,35 @@ module.exports = async function handler(req, res) {
       const saved = await saveDynamicCatalog(next);
       if (!saved) return res.status(500).json({ error: 'catalog_save_failed' });
 
-      const expectedTitle = next.tracks[trackId].title;
-      const expectedSrc = next.tracks[trackId].src;
-      const expectNoVideo = !next.tracks[trackId].videoSrc;
+      const savedTrack = next.tracks[trackId];
+      const checkTitle = body.title !== undefined;
+      const checkArtist = body.artist !== undefined;
+      const checkSrc = body.src !== undefined;
+      const checkPoster = body.posterSrc !== undefined;
+      const checkClearVideo = body.clearVideo === true || body.clearVideo === 'true';
+
       let verified = false;
-      for (let attempt = 0; attempt < 3; attempt++) {
+      for (let attempt = 0; attempt < 5; attempt++) {
         const reloaded = await ensureDynamicTrack(req, trackId);
         const got = reloaded?.tracks?.[trackId];
-        if (
-          got?.title === expectedTitle &&
-          got?.src === expectedSrc &&
-          (!expectNoVideo || !got?.videoSrc)
-        ) {
+        if (!got) {
+          await new Promise((r) => setTimeout(r, 500 * (attempt + 1)));
+          continue;
+        }
+        const titleOk = !checkTitle || got.title === savedTrack.title;
+        const artistOk = !checkArtist || got.artist === savedTrack.artist;
+        const srcOk = !checkSrc || got.src === savedTrack.src;
+        const posterOk =
+          !checkPoster || (got.posterSrc || null) === (savedTrack.posterSrc || null);
+        const videoOk = !checkClearVideo || !got.videoSrc;
+        if (titleOk && artistOk && srcOk && posterOk && videoOk) {
           verified = true;
           break;
         }
-        await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+        await new Promise((r) => setTimeout(r, 500 * (attempt + 1)));
       }
       if (!verified) {
-        console.error('[catalog-track] verify failed after save', trackId, expectedTitle);
+        console.error('[catalog-track] verify failed after save', trackId, savedTrack.title);
         return res.status(500).json({ error: 'catalog_save_verify_failed' });
       }
     } catch (e) {

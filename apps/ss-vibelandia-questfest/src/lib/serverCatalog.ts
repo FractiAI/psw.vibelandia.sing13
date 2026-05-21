@@ -206,8 +206,8 @@ export async function updateTrackOnServer(
 
 const COVER_MAX_BYTES = 4 * 1024 * 1024;
 
-/** Upload track cover (foto) — JPEG/PNG/WebP up to 4 MB. */
-export async function uploadTrackCover(trackId: string, file: File): Promise<string> {
+/** Upload cover image to Blob (JPEG/PNG/WebP up to 4 MB). */
+export async function uploadCoverBlob(trackId: string, file: File): Promise<string> {
   const secret = catalogUploadSecret();
   if (!secret) throw new Error('catalog_upload_unconfigured');
   if (!file.type.startsWith('image/')) throw new Error('cover_not_image');
@@ -221,11 +221,14 @@ export async function uploadTrackCover(trackId: string, file: File): Promise<str
     access: 'public',
     handleUploadUrl: catalogApiUrl(UPLOAD_API),
     headers: { 'X-Catalog-Secret': secret },
+    clientPayload: JSON.stringify({ allowOverwrite: true }),
   });
 
-  await updateTrackOnServer(trackId, { posterSrc: blob.url });
   return blob.url;
 }
+
+/** @deprecated Use uploadCoverBlob + updateTrackOnServer */
+export const uploadTrackCover = uploadCoverBlob;
 
 export async function deleteTrackOnServer(trackId: string): Promise<void> {
   const secret = catalogUploadSecret();
@@ -285,7 +288,7 @@ export async function uploadTrackToServer(
     blob = await upload(pathname, file, {
       access: 'public',
       handleUploadUrl: catalogApiUrl(UPLOAD_API),
-      clientPayload: JSON.stringify({ trackId, filename: file.name, title, artist }),
+      clientPayload: JSON.stringify({ trackId, filename: file.name, title, artist, allowOverwrite: true }),
       headers: { 'X-Catalog-Secret': secret },
       multipart: file.size > 15 * 1024 * 1024,
       onUploadProgress: ({ percentage }) => {

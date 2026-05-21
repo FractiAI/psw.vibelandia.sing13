@@ -53,18 +53,15 @@ export function TrackMetadataEditor({
     setBusy(true);
     setMsg(null);
     try {
-      if (coverFile) {
-        await uploadTrackCover(track.id, coverFile);
-        setCoverPreview(useCatalogStore.getState().getTrack(track.id)?.posterSrc);
-        setCoverFile(null);
-      }
-      await updateTrack(track.id, { title, artist, genre, description });
+      await updateTrack(track.id, { title, artist, genre, description }, { coverFile });
+      setCoverFile(null);
       const latest = useCatalogStore.getState().getTrack(track.id);
       if (latest) {
         setTitle(latest.title);
         setArtist(latest.artist);
         setGenre(latest.genre ?? '');
         setDescription(latest.description ?? '');
+        setCoverPreview(latest.posterSrc);
       }
       const synced =
         isServerUploadConfigured() && isUserUploadTrack(track.id, track);

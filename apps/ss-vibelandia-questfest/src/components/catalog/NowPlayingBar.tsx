@@ -7,8 +7,15 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { KillReason } from '@/hooks/useStreamLock';
+import type { TrackDef } from '@/lib/catalogTypes';
 
 const GATE_SEC = 29;
+
+function trackCoverUrl(track: TrackDef): string | undefined {
+  if (!track.posterSrc) return undefined;
+  const sep = track.posterSrc.includes('?') ? '&' : '?';
+  return `${track.posterSrc}${sep}v=${encodeURIComponent(track.id)}`;
+}
 const FADE_START = 28.85;
 
 interface NowPlayingBarProps {
@@ -248,9 +255,14 @@ export function NowPlayingBar({
             preload="auto"
             playsInline
             controls
-            poster={track.posterSrc}
+            poster={trackCoverUrl(track)}
             aria-label={track.title}
           />
+        </div>
+      )}
+      {track && !showVideo && track.posterSrc && (
+        <div className="sp-now-art" aria-hidden>
+          <img className="sp-now-art-img" src={trackCoverUrl(track)} alt="" />
         </div>
       )}
       {track && !showVideo && (
@@ -266,7 +278,16 @@ export function NowPlayingBar({
         />
       )}
 
-      <div className="sp-now-bar">
+      <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
+        {track?.posterSrc && !showVideo && (
+          <img
+            className="sp-now-cover"
+            src={trackCoverUrl(track)}
+            alt=""
+            width={56}
+            height={56}
+          />
+        )}
         <div className="sp-now-track">
           {track ? (
             <>

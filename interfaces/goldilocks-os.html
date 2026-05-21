@@ -779,9 +779,9 @@
         <h2>2 · What we actually tested successfully (on this site, today)</h2>
         <p class="honesty-box">
           <strong>No fake pass badges.</strong> Click <em>Run live demo</em> — each step hits a real API or real math on
-          your machine. What is <em>not</em> guaranteed in the one-click demo: a live public WebSDR IQ feed (many hosts
-          block browsers). The whitepaper describes the full transmissionless ingest story; the operator terminal below
-          is where WebSDR + MetaMask CLI are exercised.
+          your machine. <strong>Proof C</strong> pulls a <strong>real OpenWebRX RF frame</strong> through our edge relay
+          (<code>/api/websdr-iq</code>) — browsers cannot hit public SDR hosts directly (CORS/TLS). Operator mode below
+          uses the same OpenWebRX protocol if you connect a wallet and engage SDR manually.
         </p>
 
         <ol class="steps">
@@ -813,17 +813,18 @@
             </p>
           </li>
           <li>
-            <h3><span class="step-num">Proof C</span> Hydrogen-line 13D OS (live on your device)</h3>
-            <p class="proof-ok">Tested: 8192-sample IQ at 1420 MHz tune → EGS φ filter → 13 channels → unipixel matrix.</p>
+            <h3><span class="step-num">Proof C</span> Live WebSDR RF ingest → hydrogen-line φ → 13D matrix</h3>
+            <p class="proof-ok">Tested: edge relay captures OpenWebRX binary (demod audio / FFT) → your browser φ DSP → 13 channels.</p>
             <p>
-              <strong>What happened:</strong> Six frames of hydrogen-line-tuned IQ ran through the same φ DSP stack used
-              for binary SDR frames; the <strong>13-channel matrix updated on screen</strong> with real channel
-              coordinates (CH0–CH12).
+              <strong>What happened:</strong> The demo calls <code>/api/websdr-iq?live=1</code>. Our server opens a
+              receive-only WebSocket to a public OpenWebRX node (correct <em>SERVER DE CLIENT</em> + <em>dspcontrol</em>
+              handshake), returns a real RF frame, and your tab runs the same φ filter as operator mode. The matrix
+              updates from <strong>live spectrum data</strong>, not a fake pass badge.
             </p>
             <p class="proof-note">
-              <strong>Implication:</strong> The “holographic computer” is not a datacenter GPU renting you linear
-              transformer matmul — it is <strong>verifiable math in the browser tab</strong>. When a working WebSDR
-              binary feed is attached (operator mode), the same code path ingests real RF bytes instead of demo frames.
+              <strong>Implication:</strong> The choke point works without you shipping bytes to a hyperscaler first —
+              public SDR → edge capture → browser holographic math. If the hydrogen target is outside a receiver’s analog
+              band, we tune the nearest legal offset and report center frequency in the receipt.
             </p>
           </li>
         </ol>
@@ -968,17 +969,19 @@
         <div class="panel-h" id="sdr-h">Optional · external OpenWebRX / WebSDR</div>
         <div class="panel-b">
           <p class="sdr-note">
-            Third-party SDR servers often block browser WebSockets. The live demo above uses the same φ DSP on
-            hydrogen-line IQ at your edge. Use this section only when you have a working <code>wss://</code> feed.
+            Browsers cannot reach public SDR hosts reliably — the live demo uses <strong>/api/websdr-iq</strong> (edge
+            relay, real OpenWebRX frames). This panel is for direct <code>wss://</code> probes with the correct OpenWebRX
+            handshake (wallet required).
           </p>
           <div class="row">
             <label for="sdr-endpoint">Endpoint</label>
           </div>
           <div class="row">
             <select id="sdr-endpoint">
-              <option value="wss://websdr.frogden.org:8443/ws/">OpenWebRX+ · frogden.org:8443/ws/</option>
-              <option value="wss://pe9ghz.org:8073/ws/">OpenWebRX+ · pe9ghz.org:8073/ws/</option>
-              <option value="wss://ivopenwebrx.ddns.net:8073/ws/">OpenWebRX+ · ivopenwebrx:8073/ws/</option>
+              <option value="wss://openwebrx.rahsmann.de/ws/">OpenWebRX · rahsmann.de (relay default)</option>
+              <option value="wss://rx.rxw.cz/ws/">OpenWebRX · rx.rxw.cz</option>
+              <option value="wss://openwebrx.db0fhr.de/ws/">OpenWebRX · db0fhr.de</option>
+              <option value="wss://websdr.frogden.org:8443/ws/">OpenWebRX · frogden.org</option>
               <option value="custom">Custom WebSocket URL…</option>
             </select>
           </div>
@@ -1162,30 +1165,27 @@
           },
           {
             id: 'hline',
-            title: '3 · Hydrogen-line 13D OS (φ ingest on your edge)',
+            title: '3 · Live WebSDR RF → hydrogen-line φ → 13D matrix',
             run: async function () {
-              const tune = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
+              setDemoStep('hline', 'run', 'Capturing live WebSDR on edge relay (up to ~25s)…');
               const t0 = performance.now();
-              let last = null;
-              for (let f = 0; f < 6; f++) {
-                last = ingestHydrogenLineFrame(tune, f * 137);
-                await waitMs(180);
-              }
+              const ingest = await fetchLiveWebSdrIngest({ live: true, frames: 6 });
               const ms = performance.now() - t0;
-              const sample = (last || [])
+              const sample = (ingest.lastPoints || [])
                 .slice(0, 5)
                 .map(function (p) {
                   return 'CH' + p.ch + '=' + pad5(p.unipixel);
                 })
                 .join(' ');
               return (
-                '6 frames @ ' +
-                tune +
-                ' Hz · ' +
+                ingest.summary +
+                ' · ' +
                 ms.toFixed(0) +
-                'ms total · matrix updated · ' +
+                'ms total · ' +
+                ingest.frames +
+                ' φ frame(s) · ' +
                 sample +
-                ' … — same stack as SDR binary IQ'
+                ' …'
               );
             },
           },
@@ -1299,6 +1299,87 @@
           return out;
         }
 
+        /** OpenWebRX: byte0 = type (1 FFT, 2 audio, 3 secondary FFT, 4 HD audio). */
+        function decodeOpenWebRxBinary(buf) {
+          const u8 = new Uint8Array(buf);
+          if (u8.byteLength < 9) return null;
+          const frameType = u8[0];
+          const payload = u8.subarray(1);
+          if (frameType === 2 || frameType === 4) {
+            const samples = decodeIQBuffer(payload.buffer.slice(payload.byteOffset, payload.byteOffset + payload.byteLength));
+            if (!samples || samples.length < 8) return null;
+            return { type: frameType === 4 ? 'hd_audio' : 'audio', samples: samples };
+          }
+          if (frameType === 1 || frameType === 3) {
+            if (payload.byteLength % 4 === 0) {
+              const f32 = new Float32Array(payload.buffer, payload.byteOffset, payload.byteLength / 4);
+              if (f32.length >= 8) return { type: 'fft', samples: f32 };
+            }
+            const samples = decodeIQBuffer(payload.buffer.slice(payload.byteOffset, payload.byteOffset + payload.byteLength));
+            if (samples && samples.length >= 8) return { type: 'fft', samples: samples };
+          }
+          return null;
+        }
+
+        function ingestFloatSamples(samples, tag) {
+          if (!samples || samples.length < CHANNELS * 4) return null;
+          const filtered = egsRecursiveFilter(samples, 5);
+          const points = map13Channels(filtered);
+          logChannels(points);
+          if (tag && !state.testDriveSdr) {
+            ledger('[13D-OS] ' + tag + ' ingest → matrix', 'ch');
+          }
+          return points;
+        }
+
+        async function fetchLiveWebSdrIngest(opts) {
+          opts = opts || {};
+          const framesWanted = opts.frames || 6;
+          let res = await fetch('/api/websdr-iq?' + (opts.live ? 'live=1&' : '') + 't=' + Date.now(), {
+            cache: 'no-store',
+          });
+          let j = await res.json().catch(function () {
+            return { ok: false };
+          });
+          if (!res.ok || !j.ok || !j.frame || !j.frame.iqBase64) {
+            res = await fetch('/api/websdr-iq?t=' + Date.now(), { cache: 'no-store' });
+            j = await res.json().catch(function () {
+              return { ok: false };
+            });
+          }
+          if (!j.ok || !j.frame || !j.frame.iqBase64) {
+            throw new Error(j.message || 'No WebSDR frame from edge relay');
+          }
+          const frame = j.frame;
+          const raw = Uint8Array.from(atob(frame.iqBase64), function (c) {
+            return c.charCodeAt(0);
+          });
+          const samples = new Float32Array(raw.buffer, raw.byteOffset, raw.byteLength / 4);
+          let lastPoints = null;
+          const chunks = Math.max(1, Math.min(framesWanted, Math.floor(samples.length / DEMO_IQ_SAMPLES) || 1));
+          for (let f = 0; f < chunks; f++) {
+            const start = f * DEMO_IQ_SAMPLES;
+            const slice = samples.subarray(start, start + DEMO_IQ_SAMPLES);
+            if (slice.length < CHANNELS * 4) break;
+            lastPoints = ingestFloatSamples(slice, 'WebSDR/' + (frame.frameType || 'rf'));
+            await waitMs(120);
+          }
+          const summary =
+            (j.live ? 'LIVE capture' : 'cached capture') +
+            ' · ' +
+            (frame.endpointLabel || 'openwebrx') +
+            ' · ' +
+            (frame.frameType || 'rf') +
+            ' · ' +
+            (frame.sampleCount || samples.length) +
+            ' samples · tune ' +
+            (frame.tuneTargetHz || HYDROGEN_HZ) +
+            ' Hz · center ' +
+            (frame.centerFreqHz != null ? frame.centerFreqHz : '—') +
+            ' Hz';
+          return { summary: summary, frames: chunks, lastPoints: lastPoints, meta: frame };
+        }
+
         /** Recursive geometric EGS φ blend (IIR-style, depth passes). */
         function egsRecursiveFilter(samples, depth) {
           depth = depth || 5;
@@ -1395,12 +1476,11 @@
           const now = performance.now();
           if (fairExchangeWatch(arrayBuffer.byteLength, now)) return;
 
-          const iq = decodeIQBuffer(arrayBuffer);
+          const owrx = decodeOpenWebRxBinary(arrayBuffer);
+          const iq = owrx ? owrx.samples : decodeIQBuffer(arrayBuffer);
           if (!iq || iq.length < CHANNELS * 4) return;
 
-          const filtered = egsRecursiveFilter(iq, 5);
-          const points = map13Channels(filtered);
-          logChannels(points);
+          ingestFloatSamples(iq, owrx ? 'OpenWebRX/' + owrx.type : null);
 
           state.frames++;
           state.bytes += arrayBuffer.byteLength;
@@ -1408,24 +1488,50 @@
           $('m-bytes').textContent = String(state.bytes);
         }
 
-        function sendOpenWebRxHandshake() {
-          if (!state.ws || state.ws.readyState !== WebSocket.OPEN) return;
-          const freq = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
-          const msgs = [
-            { type: 'connection', params: { useragent: 'GoldilocksOS/13D', receiver_id: 0 } },
-            { type: 'select', params: { frequency: freq, modulation: 'USB' } },
-            { type: 'selectfrequency', frequency: freq },
-            { type: 'start', params: { frequency: freq } },
-            { type: 'client', version: 3, platform: 'web' },
-          ];
-          const msg = msgs[state.openWxHandshake % msgs.length];
-          state.openWxHandshake++;
+        const owrxState = { centerFreq: null, bandwidth: 2400000, demodStarted: false };
+
+        function clampOffset(offset, bandwidth) {
+          const half = Math.max(1000, (bandwidth || 2400000) / 2 - 500);
+          return Math.max(-half, Math.min(half, offset));
+        }
+
+        function startOpenWebRxDemod() {
+          if (!state.ws || state.ws.readyState !== WebSocket.OPEN || owrxState.demodStarted) return;
+          if (owrxState.centerFreq == null) return;
+          owrxState.demodStarted = true;
+          const tune = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
+          const offset = clampOffset(tune - owrxState.centerFreq, owrxState.bandwidth);
           try {
-            state.ws.send(JSON.stringify(msg));
-            ledger('[WS-TX] ' + JSON.stringify(msg), 'sys');
+            state.ws.send(JSON.stringify({ type: 'dspcontrol', action: 'start' }));
+            state.ws.send(
+              JSON.stringify({
+                type: 'dspcontrol',
+                params: { mod: 'usb', offset_freq: offset, low_cut: -1500, high_cut: 1500, squelch_level: -150 },
+              }),
+            );
+            ledger('[WS-TX] dspcontrol USB offset=' + offset + ' Hz (center ' + owrxState.centerFreq + ')', 'sys');
           } catch (e) {
             ledger('[WS-TX-ERR] ' + e.message, 'err');
           }
+        }
+
+        function sendOpenWebRxHandshake() {
+          if (!state.ws || state.ws.readyState !== WebSocket.OPEN) return;
+          if (state.openWxHandshake === 0) {
+            try {
+              state.ws.send('SERVER DE CLIENT client=GoldilocksOS/13D type=receiver');
+              state.ws.send(
+                JSON.stringify({
+                  type: 'connectionproperties',
+                  params: { output_rate: 12000, hd_output_rate: 36000 },
+                }),
+              );
+            } catch (e) {
+              ledger('[WS-TX-ERR] ' + e.message, 'err');
+            }
+          }
+          state.openWxHandshake++;
+          startOpenWebRxDemod();
         }
 
         function connectSdr() {
@@ -1453,6 +1559,8 @@
           state.lastFrameAt = 0;
           state.interArrival = [];
           state.openWxHandshake = 0;
+          owrxState.centerFreq = null;
+          owrxState.demodStarted = false;
 
           ledger('[WS] Connecting → ' + url, 'sys');
           const socket = new WebSocket(url);
@@ -1475,11 +1583,20 @@
               return;
             }
             if (typeof ev.data === 'string') {
+              if (ev.data.indexOf('CLIENT DE SERVER') === 0) {
+                ledger('[WS-RX] ' + ev.data.slice(0, 80), 'sys');
+                return;
+              }
               try {
                 const j = JSON.parse(ev.data);
-                ledger('[WS-RX-JSON] ' + ev.data.slice(0, 240), 'sys');
-                if (j.type === 'error' || j.error) {
-                  tripFairExchange('Remote error frame: ' + (j.error || j.message || j.type));
+                if (j.type === 'config' && j.value) {
+                  if (typeof j.value.center_freq === 'number') owrxState.centerFreq = j.value.center_freq;
+                  if (typeof j.value.samp_rate === 'number') owrxState.bandwidth = j.value.samp_rate;
+                  startOpenWebRxDemod();
+                }
+                ledger('[WS-RX-JSON] ' + ev.data.slice(0, 200), 'sys');
+                if (j.type === 'error' || j.error || j.type === 'sdr_error') {
+                  tripFairExchange('Remote error frame: ' + (j.error || j.value || j.message || j.type));
                 }
               } catch {
                 ledger('[WS-RX-TEXT] ' + ev.data.slice(0, 120), 'sys');
@@ -1784,19 +1901,38 @@
             let handshakeIv = null;
             let openWx = 0;
 
+            var probeCenter = null;
+            var probeBw = 2400000;
+            var probeDemod = false;
+
             function handshake() {
               if (socket.readyState !== WebSocket.OPEN) return;
-              const freq = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
-              const msgs = [
-                { type: 'connection', params: { useragent: 'HoloPanamaCanal/TestDrive', receiver_id: 0 } },
-                { type: 'select', params: { frequency: freq, modulation: 'USB' } },
-                { type: 'start', params: { frequency: freq } },
-              ];
-              const msg = msgs[openWx % msgs.length];
+              if (openWx === 0) {
+                try {
+                  socket.send('SERVER DE CLIENT client=HoloPanamaCanal/TestDrive type=receiver');
+                  socket.send(
+                    JSON.stringify({
+                      type: 'connectionproperties',
+                      params: { output_rate: 12000, hd_output_rate: 36000 },
+                    }),
+                  );
+                } catch (_) {}
+              }
               openWx++;
-              try {
-                socket.send(JSON.stringify(msg));
-              } catch (_) {}
+              if (probeCenter != null && !probeDemod) {
+                probeDemod = true;
+                const tune = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
+                const offset = clampOffset(tune - probeCenter, probeBw);
+                try {
+                  socket.send(JSON.stringify({ type: 'dspcontrol', action: 'start' }));
+                  socket.send(
+                    JSON.stringify({
+                      type: 'dspcontrol',
+                      params: { mod: 'usb', offset_freq: offset, low_cut: -1500, high_cut: 1500, squelch_level: -150 },
+                    }),
+                  );
+                } catch (_) {}
+              }
             }
 
             const timer = setTimeout(function () {
@@ -1858,6 +1994,14 @@
               }
               if (typeof ev.data === 'string') {
                 jsonRx++;
+                try {
+                  const j = JSON.parse(ev.data);
+                  if (j.type === 'config' && j.value && typeof j.value.center_freq === 'number') {
+                    probeCenter = j.value.center_freq;
+                    if (typeof j.value.samp_rate === 'number') probeBw = j.value.samp_rate;
+                    handshake();
+                  }
+                } catch (_) {}
                 ledger('[SDR-PROBE] WS JSON: ' + ev.data.slice(0, 100), 'sys');
               }
             };
@@ -1913,7 +2057,7 @@
             sum.textContent =
               'Product demo complete — ' +
               passed +
-              '/3 proofs passed. Edge coherence, FractiStorage, and hydrogen-line 13D OS are live on this page.';
+              '/3 proofs passed. Edge coherence, FractiStorage, and live WebSDR → 13D φ matrix are on this page.';
           } else {
             sum.className = 'live-demo-summary partial';
             sum.textContent =

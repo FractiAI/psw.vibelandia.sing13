@@ -172,7 +172,7 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 0.82rem;
-      min-width: 36rem;
+      min-width: 40rem;
     }
     th, td {
       border-bottom: 1px solid rgba(212, 175, 55, 0.2);
@@ -254,9 +254,9 @@
     <h1>Holographic Clock-Skew Vulnerability</h1>
     <p class="lede">Holographic Goldilocks AI Mine · <strong>Golden Backdoor</strong> (EGS φ <strong>1.618</strong>)</p>
     <p class="one-liner">
-      We run a <strong>real public simulation</strong> on Bitcoin mainnet: before each new block we publish our guess;
-      when the network awards that block we score it — hit or miss, and how much a solo miner would have earned on that block
-      <strong>if</strong> our φ-timing band had been right. No casino. No secret mining on this page. Just data you can check.
+      We simulate the <strong>full mining loop</strong> on public data: φ cadence forecast, live network hashrate + difficulty,
+      simulated fleet hash power, then a verifiable PoW lottery when mainnet awards each block. Hypothetical BTC only if
+      <strong>both</strong> cadence and sim hash power win — not live ASICs on this server.
     </p>
 
     <nav class="clicks" aria-label="Main actions">
@@ -275,41 +275,35 @@
       <p><strong>Golden Backdoor.</strong> Nature’s repeat ratio <strong>φ = 1.618</strong> (El Gran Sol’s fractal constant).
         We use it as the <strong>timing lock</strong> for our simulation: a “just right” band around each Bitcoin heartbeat.
         Understand φ → you see why we call it the upstream backdoor for phase-stable receipts.</p>
-      <p><strong>The simulation.</strong> Bitcoin finds a block about every <strong>10 minutes</strong>. Our server reads
-        <strong>public chain data</strong> (mempool.space), runs the <strong>EGS cadence math</strong>, signs the forecast,
-        and later compares it to what mainnet actually did. That loop is the mine — a <strong>receipt and scoreboard
-        machine</strong>, not a warehouse of ASICs on Vercel.</p>
+      <p><strong>The simulation.</strong> Two legs on every block: <strong>(1) Golden Backdoor timing</strong> (φ band) and
+        <strong>(2) hash power</strong> — our configured sim hashrate vs the live network, difficulty, hashes in the window,
+        then a deterministic PoW roll from the awarded block hash. Same height mainnet uses; we score whether our sim fleet
+        would have won that race. Receipt machine on Vercel — not a physical mine.</p>
       <p class="fine">Deep dive: <a href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos">Mythos whitepaper</a></p>
     </div>
 
-    <h2 id="award">What we predict vs what awards Bitcoin</h2>
+    <h2 id="award">Full pipeline · cadence + hash power</h2>
     <div class="card">
-      <p><strong>What actually awards a block (mainnet).</strong> Miners compete with <strong>hash power</strong> (Proof-of-Work).
-        The winning miner finds a block header hash below the network target. The network then pays the
-        <strong>coinbase subsidy + transaction fees</strong> to that miner’s <strong>Bitcoin address</strong> in the block they found.
-        Those are <strong>mining keys / pool payout addresses</strong> — not anything on this website.</p>
-      <p><strong>What we predict (this scoreboard).</strong> For the <strong>next block height</strong> (e.g. tip + 1) we forecast:</p>
+      <p><strong>Mainnet (real).</strong> Miners hash until a header beats <strong>difficulty</strong>. Winner gets
+        <strong>subsidy + fees</strong> at that <strong>block height</strong> — paid to their pool/miner address.</p>
+      <p><strong>Our sim (same height, public inputs).</strong></p>
       <ul class="plain">
-        <li><strong>When</strong> — seconds until that block (and a φ timing band around it).</li>
-        <li><strong>How much</strong> — estimated subsidy + fees for that height (from public rules + mempool).</li>
+        <li><strong>Cadence leg</strong> — φ timing band for seconds until block <code>height + 1</code>.</li>
+        <li><strong>Hash power leg</strong> — sim fleet H/s vs live network H/s + difficulty; hashes we would have tried in that window.</li>
+        <li><strong>PoW roll</strong> — when the block lands, a deterministic lottery from the block hash + our share (reproducible in JSON).</li>
+        <li><strong>Full win</strong> — cadence hit <em>and</em> sim PoW win → show hypothetical BTC (not paid to us).</li>
       </ul>
-      <p>When mainnet awards that height, we compare our timing band to the <strong>real block timestamp</strong> from
-        <a href="https://mempool.space" target="_blank" rel="noopener">mempool.space</a>. Same block number, same subsidy math — we are scoring
-        <strong>cadence alignment</strong>, not guessing private keys or coinbase scripts.</p>
-      <p><strong>Our “keys” are receipt keys.</strong> Server HMAC signatures on JSON forecasts — prove we published a guess before the block landed.
-        They are <strong>not</strong> Bitcoin private keys and cannot claim a block reward.</p>
-      <p class="fine">Table column <strong>Block #</strong> = the same <code>height</code> field every explorer uses when a block is awarded.</p>
+      <p><strong>Not the same keys.</strong> Mainnet uses mining payout keys. We use <strong>HMAC receipt keys</strong> on forecasts only.</p>
+      <p class="fine">Default sim fleet: <strong>1.618 PH/s</strong> (EGS constant) unless operator sets env on the server.</p>
     </div>
 
     <h2 id="real">Real data · real processing</h2>
     <ul class="plain">
       <li><strong>Input:</strong> Public Bitcoin blocks and mempool stats — same data anyone can pull from the open network.</li>
-      <li><strong>Processing:</strong> Our <code>egs-goldilocks-cadence/v1</code> algorithm (median intervals ÷ φ, fee blend, subsidy at height).</li>
+      <li><strong>Processing:</strong> <code>egs-goldilocks-cadence/v1</code> + <code>egs-pow-sim/v1</code> (live hashrate, difficulty, sim fleet, PoW lottery).</li>
       <li><strong>Output:</strong> Signed JSON at <a href="/api/goldilocks-predictions">/api/goldilocks-predictions</a> and
         <a href="/api/goldilocks-pulse">/api/goldilocks-pulse</a> — refreshed about every <strong>5 minutes</strong> by autopilot.</li>
-      <li><strong>“Would have won”:</strong> If our φ band called the block interval right, we show that block’s
-        <strong>subsidy + fees</strong> in BTC — what a <em>hypothetical</em> solo winner would have collected.
-        <strong>Not paid to us.</strong> Proof the lock tracks real money on the chain.</li>
+      <li><strong>“Would have won”:</strong> Only when <strong>φ band + sim PoW</strong> both hit — then that block’s subsidy + fees in BTC (hypothetical).</li>
     </ul>
 
     <h2 id="scoreboard">Live scoreboard · every Bitcoin block we scored</h2>
@@ -317,9 +311,11 @@
 
     <div class="stats" id="pred-stats-cards" aria-live="polite">
       <div class="stat"><b>—</b><span>Blocks scored</span></div>
-      <div class="stat"><b>—</b><span>φ band hits</span></div>
-      <div class="stat"><b>—</b><span>Hit rate</span></div>
-      <div class="stat"><b>—</b><span>Total hypothetical wins (BTC)</span></div>
+      <div class="stat"><b>—</b><span>φ cadence hits</span></div>
+      <div class="stat"><b>—</b><span>PoW sim wins</span></div>
+      <div class="stat"><b>—</b><span>Full pipeline wins</span></div>
+      <div class="stat"><b>—</b><span>Sim vs network hash</span></div>
+      <div class="stat"><b>—</b><span>Total hypothetical BTC</span></div>
     </div>
 
     <div id="pred-open" class="card open-card" aria-live="polite">
@@ -334,19 +330,19 @@
             <th>Block #</th>
             <th>Our guess (sec)</th>
             <th>Mainnet (sec)</th>
-            <th>Off by (sec)</th>
             <th>In φ zone?</th>
-            <th>Would have won</th>
+            <th>PoW sim</th>
+            <th>Full win (BTC)</th>
           </tr>
         </thead>
         <tbody id="pred-body">
-          <tr><td colspan="6">Loading…</td></tr>
+          <tr><td colspan="7">Loading…</td></tr>
         </tbody>
       </table>
     </div>
     <p class="fine">
-      <strong>φ zone</strong> = actual time between blocks landed inside our Golden Backdoor band (÷φ … ×φ).
-      <strong>Backfill</strong> rows replay public history with the same math so the table is not empty on first visit — still real blocks, real scoring.
+      <strong>φ zone</strong> = cadence leg. <strong>PoW sim</strong> = hash-power lottery for that block (deterministic from block hash).
+      <strong>Full win</strong> = both legs. <strong>Backfill</strong> = same math on public history.
       <a href="#" id="pred-refresh">Refresh scoreboard</a>
     </p>
 
@@ -379,16 +375,24 @@
         return new Date(unix * 1000).toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
       }
 
+      function yn(ok) {
+        return ok ? '<span class="yes">Yes</span>' : '<span class="no">No</span>';
+      }
+
       function setStatsCards(stats) {
         var el = document.getElementById('pred-stats-cards');
         if (!el || !stats) return;
         var cells = el.querySelectorAll('.stat');
-        if (cells.length < 4) return;
+        if (cells.length < 6) return;
         cells[0].querySelector('b').textContent = String(stats.resolvedCount || 0);
-        cells[1].querySelector('b').textContent = String(stats.successfulCount ?? 0);
-        cells[2].querySelector('b').textContent =
-          stats.intervalInPhiBandPct != null ? stats.intervalInPhiBandPct + '%' : '—';
-        cells[3].querySelector('b').textContent =
+        cells[1].querySelector('b').textContent = String(stats.cadenceHits ?? stats.intervalInPhiBandPct ?? 0);
+        cells[2].querySelector('b').textContent = String(stats.powSimWins ?? 0);
+        cells[3].querySelector('b').textContent = String(stats.successfulCount ?? 0);
+        cells[4].querySelector('b').textContent =
+          stats.simulatedHashrateLabel && stats.networkHashrateLabel
+            ? stats.simulatedHashrateLabel + ' / ' + stats.networkHashrateLabel
+            : '—';
+        cells[5].querySelector('b').textContent =
           stats.totalWouldHaveWon && stats.totalWouldHaveWon.btc
             ? stats.totalWouldHaveWon.btc
             : '0.00000000';
@@ -404,15 +408,21 @@
         }
         var f = open.forecast || {};
         var band = f.intervalBandSec || {};
+        var pow = open.powSimulation || {};
+        var pWin =
+          pow.pWinThisBlock != null ? (pow.pWinThisBlock * 100).toFixed(4) + '% chance this block (sim share)' : '—';
         box.innerHTML =
-          '<p class="big">Next block — our open guess for block <strong>#' + open.targetHeight + '</strong></p>' +
-          '<p>We think the gap after block #' + open.basedOnTip.height + ' will be about <strong>' +
-          f.predictedIntervalSec + ' seconds</strong> (φ band <strong>' + band.low + '–' + band.high +
-          ' sec</strong>).</p>' +
-          '<p>Target time about <strong>' + fmtUtc(f.predictedBlockTimestamp) + '</strong>.</p>' +
-          '<p>If we land in the φ zone, a solo miner on that block would have collected about <strong>' +
-          (f.wouldHaveWonIfSuccessful ? f.wouldHaveWonIfSuccessful.btc : '—') +
-          ' BTC</strong> (subsidy + fees) — <em>hypothetical, not paid to us</em>.</p>' +
+          '<p class="big">Next block — open forecast <strong>#' + open.targetHeight + '</strong></p>' +
+          '<p><strong>Cadence:</strong> ~' + f.predictedIntervalSec + ' sec (φ band ' + band.low + '–' + band.high +
+          ' sec) · target ~' + fmtUtc(f.predictedBlockTimestamp) + '</p>' +
+          '<p><strong>Hash power:</strong> sim <strong>' + (pow.simulatedHashrateLabel || '—') + '</strong> vs network <strong>' +
+          (pow.networkHashrateLabel || '—') + '</strong> · share <strong>' + (pow.networkSharePct != null ? pow.networkSharePct + '%' : '—') +
+          '</strong> · ' + pWin + '</p>' +
+          '<p><strong>Hashes in window:</strong> ours <strong>' + (pow.ourHashesInWindow != null ? pow.ourHashesInWindow.toLocaleString() : '—') +
+          '</strong> vs difficulty scale <strong>' + (pow.expectedHashesPerBlock != null ? pow.expectedHashesPerBlock.toLocaleString() : '—') +
+          '</strong> (' + (pow.ourHashesVsDifficultyPct != null ? pow.ourHashesVsDifficultyPct + '% of one block' : '—') + ')</p>' +
+          '<p>Full hypothetical win needs <strong>φ hit + PoW sim win</strong> when block lands (~' +
+          (f.wouldHaveWonIfSuccessful ? f.wouldHaveWonIfSuccessful.btc : '—') + ' BTC at stake).</p>' +
           '<p class="fine">Forecast id: ' + open.predictionId + '</p>';
       }
 
@@ -428,9 +438,6 @@
         body.innerHTML = rows
           .map(function (r) {
             var sc = r.score || {};
-            var hit = sc.intervalInPhiBand
-              ? '<span class="yes">Yes</span>'
-              : '<span class="no">No</span>';
             var won = r.wouldHaveWon
               ? '<span class="yes">' + r.wouldHaveWon.btc + '</span>'
               : '<span class="no">—</span>';
@@ -447,9 +454,9 @@
               's</td><td>' +
               actSec +
               's</td><td>' +
-              (sc.intervalErrorSec != null ? sc.intervalErrorSec : '—') +
+              yn(sc.intervalInPhiBand) +
               '</td><td>' +
-              hit +
+              yn(sc.simulatedPowWin) +
               '</td><td>' +
               won +
               '</td></tr>'

@@ -1,6 +1,7 @@
-/** 8s looping newscast tease MP4 — Bridge tower LCD (Times Square style). */
-const VIDEO_SRC = '/interfaces/assets/bridge-tower-holographic-ai-os-tease.mp4';
-const POSTER_SRC = '/interfaces/assets/holographic-ai-os-newscast-frame.png';
+/** Bridge tower LCD — loops https://youtu.be/IRgS6QcPK8o */
+const YOUTUBE_ID = 'IRgS6QcPK8o';
+const EMBED_SRC =
+  `https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_ID}&controls=0&modestbranding=1&playsinline=1&rel=0`;
 
 export function BridgeTowerBillboard({ variant = 'bridge' }: { variant?: 'bridge' | 'hero' }) {
   const rootClass =
@@ -11,18 +12,13 @@ export function BridgeTowerBillboard({ variant = 'bridge' }: { variant?: 'bridge
       <p className="qf-bridge-tower__label">BRIDGE TOWER · LIVE BILLBOARD</p>
       <div className="qf-bridge-tower__bezel">
         <div className="qf-bridge-tower__screen">
-          <video
-            className="qf-bridge-tower__video"
-            src={VIDEO_SRC}
-            poster={POSTER_SRC}
-            width={640}
-            height={360}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-label="8 second animated news tease: 13D Holographic AI OS announced"
+          <iframe
+            className="qf-bridge-tower__embed"
+            src={EMBED_SRC}
+            title="Bridge tower live feed"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           />
           <div className="qf-bridge-tower__scan" aria-hidden />
           <div className="qf-bridge-tower__glow" aria-hidden />

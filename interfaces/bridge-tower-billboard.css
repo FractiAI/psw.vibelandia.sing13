@@ -1,4 +1,4 @@
-/* Bridge tower · Times Square LCD billboard — 8s loop */
+/* Bridge tower · Times Square LCD billboard — YouTube loop */
 .qf-bridge-tower {
   --billboard-cycle: 8s;
   --billboard-cyan: #2de8ff;
@@ -41,15 +41,21 @@
 }
 
 .qf-bridge-tower__video,
+.qf-bridge-tower__embed,
 .qf-bridge-tower__bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
   display: block;
   background: #050508;
+  border: 0;
+}
+
+.qf-bridge-tower__video,
+.qf-bridge-tower__bg {
+  object-fit: cover;
+  object-position: center 35%;
 }
 
 .qf-bridge-tower__bg {

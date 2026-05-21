@@ -1,6 +1,7 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import type { TrackDef } from '@/lib/catalogTypes';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
 interface UseBackgroundPlaybackOptions {
@@ -58,6 +59,7 @@ export function useBackgroundPlayback({
 
     const pauseIfHidden = () => {
       if (!document.hidden) return;
+      flushPlaybackSession();
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
       if (el && !el.paused) el.pause();
@@ -98,10 +100,18 @@ export function useBackgroundPlayback({
       }
 
       const finishRestore = () => {
+        const resumeAt = bg?.src ? bg.currentTime : el.currentTime;
         bg?.pause();
         bg?.removeAttribute('src');
         setBackgroundHandoffActive(false);
-        onTimeUpdateRef.current?.(el.currentTime);
+        if (resumeAt > 0.25 && Number.isFinite(resumeAt)) {
+          el.currentTime = resumeAt;
+          onTimeUpdateRef.current?.(resumeAt);
+          usePlaybackStore.getState().setDisplayTime(resumeAt);
+        } else {
+          onTimeUpdateRef.current?.(el.currentTime);
+        }
+        flushPlaybackSession();
         if (usePlaybackStore.getState().isPlaying) {
           void el.play().catch(() => onRequestResumeRef.current?.());
         }
@@ -141,6 +151,7 @@ export function useBackgroundPlayback({
       if (isVideo) return;
       if (usePlaybackStore.getState().backgroundHandoffActive && mediaIsAudible(bg)) return;
 
+      flushPlaybackSession();
       handoffBusyRef.current = true;
       bg.src = url;
       bg.currentTime = el.currentTime;

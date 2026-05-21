@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
+import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
 import { isVideoTrack, playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { getPlaybackMedia, registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
 import { readPlaybackSession } from '@/lib/playbackSession';
 import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -39,7 +41,8 @@ export function NowPlayingBar({
 }: NowPlayingBarProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const backgroundAudioRef = useRef<HTMLAudioElement>(null);
+  const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
+  const wiredTrackRef = useRef<string | null>(null);
   const gateArmedRef = useRef(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -71,9 +74,21 @@ export function NowPlayingBar({
 
   const primaryMediaRef = showVideo ? videoRef : audioRef;
 
+  const syncBackgroundRef = useCallback(() => {
+    backgroundAudioRef.current =
+      getPlaybackMedia().background ??
+      (document.querySelector('audio[data-qv-playback-keepalive]') as HTMLAudioElement | null);
+  }, []);
+
   const getPrimaryMedia = useCallback((): HTMLVideoElement | HTMLAudioElement | null => {
     return primaryMediaRef.current;
   }, [primaryMediaRef]);
+
+  useEffect(() => {
+    syncBackgroundRef();
+    registerPlaybackMedia(primaryMediaRef.current, backgroundAudioRef.current);
+    return () => registerPlaybackMedia(null, getPlaybackMedia().background);
+  }, [primaryMediaRef, syncBackgroundRef, showVideo, track?.id]);
 
   const advanceInPlaylist = useCallback(
     (delta: 1 | -1) => {
@@ -118,6 +133,7 @@ export function NowPlayingBar({
   fairExchangeRef.current = onFairExchange;
 
   const resumePlayback = useCallback(() => {
+    syncBackgroundRef();
     const el = getPrimaryMedia();
     const bg = backgroundAudioRef.current;
     if (!track || !fullPlayUnlocked) return;
@@ -126,7 +142,9 @@ export function NowPlayingBar({
     } else if (el) {
       void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
     }
-  }, [allowBackgroundPlay, fullPlayUnlocked, getPrimaryMedia, track]);
+  }, [allowBackgroundPlay, fullPlayUnlocked, getPrimaryMedia, syncBackgroundRef, track]);
+
+  syncBackgroundRef();
 
   useBackgroundPlayback({
     mediaRef: primaryMediaRef as RefObject<HTMLVideoElement | HTMLAudioElement | null>,
@@ -149,25 +167,21 @@ export function NowPlayingBar({
   }, [killReason, onVesselSwitch]);
 
   useEffect(() => {
-    if (!track) return;
+    if (!track || !currentTrackId) return;
     const el = primaryMediaRef.current;
-    const bg = backgroundAudioRef.current;
     if (!el) return;
+    syncBackgroundRef();
+    const bg = backgroundAudioRef.current;
+    registerPlaybackMedia(el, bg);
 
     let cancelled = false;
-    const prevId = currentTrackId;
+    const trackId = track.id;
     gateArmedRef.current = true;
     setError(null);
 
-    const handoffActive = usePlaybackStore.getState().backgroundHandoffActive;
-    if (!handoffActive) {
-      bg?.pause();
-      bg?.removeAttribute('src');
-    }
-
     const snap = readPlaybackSession();
     const resumeAt =
-      snap?.trackId === track.id && snap.displayTime > 0.5 ? snap.displayTime : null;
+      snap?.trackId === trackId && snap.displayTime > 0.5 ? snap.displayTime : null;
 
     const onTime = () => {
       const t = el.currentTime;
@@ -200,9 +214,23 @@ export function NowPlayingBar({
     const onEnded = () => endedRef.current();
     const onErr = () => setError('Could not play this file.');
 
+    const detachListeners = () => {
+      el.removeEventListener('timeupdate', onTime);
+      el.removeEventListener('ended', onEnded);
+      el.removeEventListener('error', onErr);
+    };
+
     const tryPlay = () => {
       if (cancelled || !usePlaybackStore.getState().isPlaying) return;
-      if (resumeAt != null && resumeAt < (el.duration || Infinity) - 0.25) {
+      const handoffActive = usePlaybackStore.getState().backgroundHandoffActive;
+      if (handoffActive && bg?.src && !bg.paused) {
+        const t = bg.currentTime;
+        el.currentTime = t;
+        setDisplayTime(t);
+        bg.pause();
+        bg.removeAttribute('src');
+        setBackgroundHandoffActive(false);
+      } else if (resumeAt != null && resumeAt < (el.duration || Infinity) - 0.25) {
         el.currentTime = resumeAt;
         setDisplayTime(resumeAt);
       }
@@ -211,14 +239,39 @@ export function NowPlayingBar({
       void el.play().catch(() => setError('Tap play on a track to start listening.'));
     };
 
-    const applySrc = (url: string) => {
-      if (cancelled || !url) return;
-      el.src = url;
-      el.load();
-      el.volume = gainRef.current;
+    const attachListeners = () => {
       el.addEventListener('timeupdate', onTime);
       el.addEventListener('ended', onEnded);
       el.addEventListener('error', onErr);
+    };
+
+    const sameTrack =
+      wiredTrackRef.current === trackId &&
+      !!el.src &&
+      !el.error;
+
+    if (sameTrack) {
+      attachListeners();
+      if (usePlaybackStore.getState().isPlaying) tryPlay();
+      return () => {
+        cancelled = true;
+        detachListeners();
+      };
+    }
+
+    const handoffActive = usePlaybackStore.getState().backgroundHandoffActive;
+    if (!handoffActive) {
+      bg?.pause();
+      bg?.removeAttribute('src');
+    }
+
+    const applySrc = (url: string) => {
+      if (cancelled || !url) return;
+      wiredTrackRef.current = trackId;
+      el.src = url;
+      el.load();
+      el.volume = gainRef.current;
+      attachListeners();
       el.addEventListener('canplay', tryPlay, { once: true });
       if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) tryPlay();
     };
@@ -242,16 +295,33 @@ export function NowPlayingBar({
 
     return () => {
       cancelled = true;
-      el.removeEventListener('timeupdate', onTime);
-      el.removeEventListener('ended', onEnded);
-      el.removeEventListener('error', onErr);
-      if (!usePlaybackStore.getState().backgroundHandoffActive) {
-        el.pause();
-        el.removeAttribute('src');
+      detachListeners();
+      const stillThisTrack = usePlaybackStore.getState().currentTrackId === trackId;
+      const handoff = usePlaybackStore.getState().backgroundHandoffActive;
+      if (!stillThisTrack) {
+        wiredTrackRef.current = null;
+        if (!handoff) {
+          el.pause();
+          el.removeAttribute('src');
+        }
+        releasePlaybackUrl(trackId);
       }
-      if (prevId) releasePlaybackUrl(prevId);
     };
-  }, [beginSession, currentTrackId, primaryMediaRef, setDisplayTime, setPlaying, showVideo, solenoidActive, track]);
+  }, [
+    beginSession,
+    currentTrackId,
+    primaryMediaRef,
+    setBackgroundHandoffActive,
+    setDisplayTime,
+    setPlaying,
+    showVideo,
+    solenoidActive,
+    syncBackgroundRef,
+    track?.downloadedLocally,
+    track?.id,
+    track?.src,
+    track?.videoSrc,
+  ]);
 
   useEffect(() => {
     const el = primaryMediaRef.current;
@@ -261,6 +331,7 @@ export function NowPlayingBar({
 
   useEffect(() => {
     const el = primaryMediaRef.current;
+    syncBackgroundRef();
     const bg = backgroundAudioRef.current;
     if (!el || !track) return;
     const handoff = usePlaybackStore.getState().backgroundHandoffActive;
@@ -281,9 +352,45 @@ export function NowPlayingBar({
     if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA && el.src) {
       beginSession();
       el.volume = gainRef.current;
+      const snap = readPlaybackSession();
+      if (snap?.trackId === track.id && snap.displayTime > 0.5) {
+        const resumeAt = Math.min(snap.displayTime, (el.duration || Infinity) - 0.25);
+        if (resumeAt > 0.25) {
+          el.currentTime = resumeAt;
+          setDisplayTime(resumeAt);
+        }
+      }
       void el.play().catch(() => setError('Tap play on a track to start listening.'));
     }
-  }, [allowBackgroundPlay, beginSession, isPlaying, primaryMediaRef, track?.id]);
+  }, [allowBackgroundPlay, beginSession, isPlaying, primaryMediaRef, setDisplayTime, syncBackgroundRef, track?.id]);
+
+  const wasHiddenRef = useRef(false);
+
+  useEffect(() => {
+    const onVis = () => {
+      if (document.hidden) {
+        wasHiddenRef.current = true;
+        flushPlaybackSession();
+        return;
+      }
+      if (!wasHiddenRef.current || !isPlaying || !track) return;
+      wasHiddenRef.current = false;
+      syncBackgroundRef();
+      const el = primaryMediaRef.current;
+      const bg = backgroundAudioRef.current;
+      if (usePlaybackStore.getState().backgroundHandoffActive && bg?.src) return;
+      if (!el?.src) return;
+      if (el && !el.paused && el.readyState > HTMLMediaElement.HAVE_NOTHING) return;
+      const snap = readPlaybackSession();
+      if (snap?.trackId === track.id && snap.displayTime > 0.5) {
+        el.currentTime = Math.min(snap.displayTime, (el.duration || Infinity) - 0.25);
+        setDisplayTime(el.currentTime);
+      }
+      void el.play().catch(() => {});
+    };
+    document.addEventListener('visibilitychange', onVis);
+    return () => document.removeEventListener('visibilitychange', onVis);
+  }, [isPlaying, primaryMediaRef, setDisplayTime, syncBackgroundRef, track?.id]);
 
   const fmt = useCallback((s: number) => {
     const m = Math.floor(s / 60);
@@ -325,16 +432,6 @@ export function NowPlayingBar({
       {track && !showVideo && (
         <audio key={track.id} ref={audioRef} className="sr-only" preload="auto" />
       )}
-      {allowBackgroundPlay && (
-        <audio
-          ref={backgroundAudioRef}
-          className="sr-only"
-          preload="auto"
-          aria-hidden
-          playsInline
-        />
-      )}
-
       <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
         {track?.posterSrc && !showVideo && (
           <img

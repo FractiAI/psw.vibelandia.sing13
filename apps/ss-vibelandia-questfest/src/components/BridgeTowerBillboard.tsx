@@ -33,6 +33,9 @@ export function BridgeTowerBillboard({ variant = 'bridge' }: { variant?: 'bridge
   return (
     <aside className={rootClass} aria-label="Bridge tower announcement — holographic AI OS">
       <p className="qf-bridge-tower__label">BRIDGE TOWER · LIVE BILLBOARD</p>
+      <a className="qf-bridge-tower__product-cta" href="/holographic-goldilocks-ai-os">
+        Open Holographic Goldilocks AI OS demo →
+      </a>
       <div className="qf-bridge-tower__bezel">
         <div className="qf-bridge-tower__screen">
           {embedSrc ? (

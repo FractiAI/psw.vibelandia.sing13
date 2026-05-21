@@ -554,6 +554,36 @@
       filter: brightness(1.08);
       text-decoration: none;
     }
+    .nest-card--product {
+      border-color: rgba(212, 175, 55, 0.55);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(10, 15, 26, 0.9));
+    }
+    .nest-card--product .nest-card__badge {
+      background: #d4af37;
+      color: #1a120c;
+    }
+    .qf-feature--product {
+      border-color: rgba(212, 175, 55, 0.45);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.12);
+    }
+    .qf-feature--product .badge {
+      background: rgba(212, 175, 55, 0.2);
+      color: #fef3c7;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+    }
+    .qf-bridge-tower__product-cta {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7ee787;
+      text-align: center;
+      font-weight: 700;
+    }
+    .qf-bridge-tower__product-cta:hover {
+      color: #aff5b4;
+    }
 
   </style>
 </head>
@@ -565,6 +595,7 @@
   </div>
 
   <nav class="qf-deck-actions" aria-label="Top deck actions">
+    <a class="btn btn-goldilocks" href="/holographic-goldilocks-ai-os" data-i18n="qf.btnGoldilocksOs">Holographic Goldilocks AI OS · demo</a>
     <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a>
     <a class="btn btn-pass" href="/interfaces/questfest-bridge/?boarding=1#/bridge" data-i18n="qf.btnMembersPass">Members pass · $16.18/mo</a>
   </nav>
@@ -573,6 +604,7 @@
     <div>
       <aside class="qf-bridge-tower qf-bridge-tower--hero" aria-label="Bridge tower announcement — holographic AI OS">
         <p class="qf-bridge-tower__label">BRIDGE TOWER · LIVE BILLBOARD</p>
+        <a class="qf-bridge-tower__product-cta" href="/holographic-goldilocks-ai-os" data-i18n="qf.glosCta">Open product demo →</a>
         <div class="qf-bridge-tower__bezel">
           <div class="qf-bridge-tower__screen">
             <iframe
@@ -596,11 +628,12 @@
         <a href="/interfaces/look-at-the-sun.html" data-i18n="qf.navSun">Look at the Sun</a><span class="sep" aria-hidden="true">·</span>
         <a href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" data-i18n="qf.navClockSkewPress">Clock-skew press release</a><span class="sep" aria-hidden="true">·</span>
         <a href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a><span class="sep" aria-hidden="true">·</span>
-        <a href="/holographic-panama-canal">Holographic Panama Canal</a>
+        <a href="/holographic-goldilocks-ai-os" data-i18n="qf.navGoldilocksOs">Holographic Goldilocks AI OS</a>
       </nav>
       <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
       <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Basenet</strong>. Each layer card below is a short plain guide.</p>
       <div class="cta-row">
+        <a class="btn btn-goldilocks" href="/holographic-goldilocks-ai-os" data-i18n="qf.btnGoldilocksOsHero">Holographic Goldilocks AI OS · run live demo</a>
         <a class="btn btn-ghost" href="/interfaces/look-under-the-hood.html" data-i18n="qf.btnHood">Look Under the Hood</a>
         <a class="btn btn-ghost" href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
       </div>
@@ -686,6 +719,20 @@
   </div>
 
   <section id="main" class="quick-wrap">
+    <aside class="qf-feature qf-feature--product" aria-labelledby="qf-glos-title">
+      <a class="main" href="/holographic-goldilocks-ai-os">
+        <span class="badge" data-i18n="qf.glosBadge">NEW · PRODUCT DEMO</span>
+        <h3 id="qf-glos-title" data-i18n="qf.glosTitle">Holographic Goldilocks AI OS</h3>
+        <p class="teaser-body" data-i18n-html="qf.glosTeaserHtml">
+          <strong>In development</strong> — edge OS on the <strong>1420 MHz hydrogen line</strong>: holographic compute,
+          FractiStorage catalog rail, and Fair Exchange security. <strong>Run the live demo</strong> — three proofs on
+          this site, no datacenter rent.
+        </p>
+        <span class="cta" data-i18n="qf.glosCta">Open product demo →</span>
+      </a>
+      <a class="archive" href="/holographic-panama-canal" data-i18n="qf.glosCanalAlias">Holographic Panama Canal (same page) →</a>
+    </aside>
+
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-clockskew-title">
       <a class="main" href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html">
         <div class="qf-feature-art">
@@ -819,6 +866,7 @@
         <li><a href="/interfaces/etcon-reno-desert.html" data-i18n="qf.quicklinkEtcon">ETCon Reno Desert · passes + press</a></li>
         <li><a href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" data-i18n="qf.quicklinkClockSkewPress">Clock-skew vulnerability · press release</a></li>
         <li><a href="/interfaces/press-releases.html" data-i18n="qf.quicklinkPress">Press releases · Hit Factory</a></li>
+        <li><a href="/holographic-goldilocks-ai-os" data-i18n="qf.quicklinkGoldilocksOs">Holographic Goldilocks AI OS · product demo</a></li>
         <li><a href="/interfaces/look-under-the-hood.html" data-i18n="qf.quicklinkHood">Look Under the Hood</a></li>
         <li><a href="/interfaces/look-at-the-sun.html" data-i18n="qf.quicklinkSun">Look at the Sun</a></li>
         <li><a href="/interfaces/fractiai.html" data-i18n="qf.btnFracti">FractiAI</a></li>

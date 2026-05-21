@@ -2,15 +2,7 @@
  * POST /api/catalog-track — update or delete server-hosted tracks in the dynamic catalog.
  * Body: { action: 'update' | 'delete', trackId, title?, artist?, genre?, description?, durationSec?, playlistIds? }
  */
-const {
-  assertCatalogUploadAuth,
-  catalogUploadConfigured,
-  ensureDynamicTrack,
-  patchDynamicTrack,
-  removeDynamicTrack,
-  saveDynamicCatalog,
-  setDynamicTrackPlaylistMembership,
-} = require('../lib/catalog-server.mjs');
+const { loadCatalogServer } = require('../lib/catalog-api-lib.cjs');
 
 function setCors(res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -43,6 +35,24 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'method_not_allowed' });
   }
 
+  let catalog;
+  try {
+    catalog = await loadCatalogServer();
+  } catch (e) {
+    console.error('[catalog-track] load module', e);
+    return res.status(500).json({ error: 'catalog_module_failed', message: e?.message });
+  }
+
+  const {
+    assertCatalogUploadAuth,
+    catalogUploadConfigured,
+    ensureDynamicTrack,
+    patchDynamicTrack,
+    removeDynamicTrack,
+    saveDynamicCatalog,
+    setDynamicTrackPlaylistMembership,
+  } = catalog;
+
   if (!catalogUploadConfigured()) {
     return res.status(503).json({
       error: 'catalog_upload_unconfigured',
@@ -71,10 +81,12 @@ module.exports = async function handler(req, res) {
     if (!next) return res.status(404).json({ error: 'track_not_found' });
     try {
       const saved = await saveDynamicCatalog(next);
-      if (!saved) return res.status(500).json({ error: 'catalog_save_failed' });
+      if (!saved.ok) {
+        return res.status(500).json({ error: 'catalog_save_failed', message: saved.message });
+      }
     } catch (e) {
       console.error('[catalog-track] delete save', e);
-      return res.status(500).json({ error: 'catalog_save_failed' });
+      return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
     }
     return res.status(200).json({ ok: true, trackId });
   }
@@ -98,7 +110,9 @@ module.exports = async function handler(req, res) {
 
     try {
       const saved = await saveDynamicCatalog(next);
-      if (!saved) return res.status(500).json({ error: 'catalog_save_failed' });
+      if (!saved.ok) {
+        return res.status(500).json({ error: 'catalog_save_failed', message: saved.message });
+      }
 
       const savedTrack = next.tracks[trackId];
       const checkTitle = body.title !== undefined;
@@ -118,7 +132,6 @@ module.exports = async function handler(req, res) {
         const artistOk = !checkArtist || got.artist === savedTrack.artist;
         const srcOk = !checkSrc || got.src === savedTrack.src;
         const videoOk = !checkClearVideo || !got.videoSrc;
-        // Poster URLs can lag across Redis/Blob/CDN — do not fail the save on poster mismatch.
         if (titleOk && artistOk && srcOk && videoOk) {
           verified = true;
           break;
@@ -130,7 +143,7 @@ module.exports = async function handler(req, res) {
       }
     } catch (e) {
       console.error('[catalog-track] update save', e);
-      return res.status(500).json({ error: 'catalog_save_failed' });
+      return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
     }
 
     const fresh = await ensureDynamicTrack(req, trackId);

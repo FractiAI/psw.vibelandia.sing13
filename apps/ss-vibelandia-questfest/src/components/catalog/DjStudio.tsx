@@ -209,10 +209,12 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       } else {
         showMsg(
           err === 'storage_failed' || err === 'blob_store_failed' || err === 'register_failed'
-            ? 'Could not save to the server. Blob storage may be unavailable — check Vercel Blob on the deployment.'
-            : err
-              ? `Upload failed: ${err}`
-              : 'Upload failed. Try one smaller file at a time.',
+            ? 'Upload stored the file but the catalog manifest did not save. Check Vercel Blob is connected to this project and CATALOG_UPLOAD_SECRET matches the bridge build.'
+            : err === 'catalog_save_failed'
+              ? 'Catalog manifest could not be saved on the server. Connect Blob storage on Vercel (FractiAI project) and redeploy.'
+              : err
+                ? `Upload failed: ${err}`
+                : 'Upload failed. Try one smaller file at a time.',
           'error',
         );
       }

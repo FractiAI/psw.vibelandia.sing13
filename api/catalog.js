@@ -1,7 +1,7 @@
 /**
  * GET /api/catalog — server-hosted master library (static JSON + optional Upstash overlay).
  */
-const { loadServerCatalog } = require('../lib/catalog-server.mjs');
+const { loadCatalogServer } = require('../lib/catalog-api-lib.cjs');
 
 module.exports = async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json');
@@ -16,10 +16,11 @@ module.exports = async function handler(req, res) {
   }
 
   try {
+    const { loadServerCatalog } = await loadCatalogServer();
     const catalog = await loadServerCatalog(req);
     return res.status(200).json(catalog);
   } catch (e) {
     console.error('[catalog]', e);
-    return res.status(500).json({ error: 'catalog_load_failed' });
+    return res.status(500).json({ error: 'catalog_load_failed', message: e?.message });
   }
 };

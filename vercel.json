@@ -44,6 +44,10 @@
     }
   ],
   "functions": {
+    "api/catalog.js": {
+      "memory": 512,
+      "maxDuration": 30
+    },
     "api/catalog-upload.js": {
       "memory": 1024,
       "maxDuration": 300

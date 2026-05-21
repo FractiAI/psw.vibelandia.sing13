@@ -7,13 +7,7 @@
 const crypto = require('node:crypto');
 const { put } = require('@vercel/blob');
 const { handleUpload } = require('@vercel/blob/client');
-const {
-  assertCatalogUploadAuth,
-  appendTrackToDynamicCatalog,
-  catalogUploadConfigured,
-  loadDynamicCatalog,
-  saveDynamicCatalog,
-} = require('../lib/catalog-server.mjs');
+const { loadCatalogServer } = require('../lib/catalog-api-lib.cjs');
 
 const DEFAULT_ARTIST = "Hero Jo's Golden Bachdoor Hit Factory";
 const MAX_INLINE_BYTES = 4.5 * 1024 * 1024;
@@ -67,7 +61,8 @@ function titleFromFilename(name) {
   );
 }
 
-async function registerTrack(res, body) {
+async function registerTrack(res, body, lib) {
+  const { loadDynamicCatalog, saveDynamicCatalog, appendTrackToDynamicCatalog } = lib;
   if (!body?.url || !body?.trackId) {
     return res.status(400).json({ error: 'invalid_body' });
   }
@@ -109,15 +104,15 @@ async function registerTrack(res, body) {
   const next = appendTrackToDynamicCatalog(dynamic, track);
   try {
     const saved = await saveDynamicCatalog(next);
-    if (!saved) {
+    if (!saved.ok) {
       return res.status(500).json({
         error: 'catalog_save_failed',
-        message: 'File is on storage but the catalog manifest could not be saved.',
+        message: saved.message || 'File is on storage but the catalog manifest could not be saved.',
       });
     }
   } catch (e) {
     console.error('[catalog-upload] register save', e);
-    return res.status(500).json({ error: 'catalog_save_failed' });
+    return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
   }
 
   return res.status(200).json({ track });
@@ -162,7 +157,8 @@ function readInlineBuffer(req) {
   return null;
 }
 
-async function handleInlineUpload(req, res) {
+async function handleInlineUpload(req, res, lib) {
+  const { loadDynamicCatalog, saveDynamicCatalog, appendTrackToDynamicCatalog } = lib;
   const buffer = readInlineBuffer(req);
   if (!buffer || !buffer.length) {
     return res.status(400).json({ error: 'empty_file' });
@@ -229,15 +225,15 @@ async function handleInlineUpload(req, res) {
   const next = appendTrackToDynamicCatalog(dynamic, track);
   try {
     const saved = await saveDynamicCatalog(next);
-    if (!saved) {
+    if (!saved.ok) {
       return res.status(500).json({
         error: 'catalog_save_failed',
-        message: 'Audio stored but catalog manifest could not be saved.',
+        message: saved.message || 'Audio stored but catalog manifest could not be saved.',
       });
     }
   } catch (e) {
     console.error('[catalog-upload] inline save', e);
-    return res.status(500).json({ error: 'catalog_save_failed' });
+    return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
   }
 
   return res.status(200).json({ track });
@@ -253,6 +249,16 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'method_not_allowed' });
   }
 
+  let lib;
+  try {
+    lib = await loadCatalogServer();
+  } catch (e) {
+    console.error('[catalog-upload] load module', e);
+    return res.status(500).json({ error: 'catalog_module_failed', message: e?.message });
+  }
+
+  const { assertCatalogUploadAuth, catalogUploadConfigured } = lib;
+
   if (!catalogUploadConfigured()) {
     return res.status(503).json({
       error: 'catalog_upload_unconfigured',
@@ -267,14 +273,14 @@ module.exports = async function handler(req, res) {
   const jsonBody = readBodyObject(req);
 
   if (jsonBody?.action === 'register') {
-    return registerTrack(res, jsonBody);
+    return registerTrack(res, jsonBody, lib);
   }
 
   if (jsonBody && typeof jsonBody.type === 'string' && jsonBody.type.startsWith('blob.')) {
     return handleBlobClientToken(req, res, jsonBody);
   }
 
-  return handleInlineUpload(req, res);
+  return handleInlineUpload(req, res, lib);
 };
 
 module.exports.config = {

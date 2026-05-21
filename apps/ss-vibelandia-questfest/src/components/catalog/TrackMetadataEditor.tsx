@@ -91,7 +91,13 @@ export function TrackMetadataEditor({
       } else if (code === 'catalog_upload_unconfigured') {
         setMsg('Save failed — upload secret not configured in this build.');
       } else if (code === 'catalog_save_verify_failed' || code === 'catalog_save_failed') {
-        setMsg('Save failed — server could not persist catalog. Try again in a moment.');
+        const detail =
+          err instanceof Error && err.message && err.message !== code ? err.message : '';
+        setMsg(
+          detail
+            ? `Save failed — ${detail}`
+            : 'Save failed — server could not persist catalog. Check Vercel Blob + catalog secret.',
+        );
       } else if (code === 'upload_connection_failed') {
         setMsg('Save failed — could not reach the server. Check connection and try again.');
       } else if (code === 'cover_not_image') {

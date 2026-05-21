@@ -163,11 +163,10 @@ async function registerUploadedTrack(
     message?: string;
   };
   if (!res.ok) {
-    const err = new Error(data.error || data.message || 'register_failed') as Error & { code?: string };
-    err.code = data.error;
-    throw err;
+    const msg = data.message || data.error || 'register_failed';
+    throw catalogApiError(data.error || 'register_failed', msg);
   }
-  if (!data.track?.src) throw new Error('register_failed');
+  if (!data.track?.src) throw catalogApiError('register_failed');
   return data.track;
 }
 
@@ -206,7 +205,8 @@ export async function updateTrackOnServer(
     message?: string;
   };
   if (!res.ok) {
-    throw catalogApiError(data.error || data.message || 'update_failed', data.message);
+    const msg = data.message || data.error || 'update_failed';
+    throw catalogApiError(data.error || 'update_failed', msg);
   }
   const track = data.track;
   if (!track?.id) throw catalogApiError('update_failed');

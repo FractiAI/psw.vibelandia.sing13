@@ -282,6 +282,25 @@
       <p class="fine">Deep dive: <a href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos">Mythos whitepaper</a></p>
     </div>
 
+    <h2 id="award">What we predict vs what awards Bitcoin</h2>
+    <div class="card">
+      <p><strong>What actually awards a block (mainnet).</strong> Miners compete with <strong>hash power</strong> (Proof-of-Work).
+        The winning miner finds a block header hash below the network target. The network then pays the
+        <strong>coinbase subsidy + transaction fees</strong> to that miner’s <strong>Bitcoin address</strong> in the block they found.
+        Those are <strong>mining keys / pool payout addresses</strong> — not anything on this website.</p>
+      <p><strong>What we predict (this scoreboard).</strong> For the <strong>next block height</strong> (e.g. tip + 1) we forecast:</p>
+      <ul class="plain">
+        <li><strong>When</strong> — seconds until that block (and a φ timing band around it).</li>
+        <li><strong>How much</strong> — estimated subsidy + fees for that height (from public rules + mempool).</li>
+      </ul>
+      <p>When mainnet awards that height, we compare our timing band to the <strong>real block timestamp</strong> from
+        <a href="https://mempool.space" target="_blank" rel="noopener">mempool.space</a>. Same block number, same subsidy math — we are scoring
+        <strong>cadence alignment</strong>, not guessing private keys or coinbase scripts.</p>
+      <p><strong>Our “keys” are receipt keys.</strong> Server HMAC signatures on JSON forecasts — prove we published a guess before the block landed.
+        They are <strong>not</strong> Bitcoin private keys and cannot claim a block reward.</p>
+      <p class="fine">Table column <strong>Block #</strong> = the same <code>height</code> field every explorer uses when a block is awarded.</p>
+    </div>
+
     <h2 id="real">Real data · real processing</h2>
     <ul class="plain">
       <li><strong>Input:</strong> Public Bitcoin blocks and mempool stats — same data anyone can pull from the open network.</li>
@@ -348,7 +367,7 @@
     </section>
 
     <footer>
-      <p>Ops: <a href="mailto:goldenbackdoorhitfactory@gmail.com?subject=Golden%20Backdoor%20scoreboard">goldenbackdoorhitfactory@gmail.com</a></p>
+      <p>Ops: <a href="mailto:valetpru@gmail.com?subject=Golden%20Backdoor%20scoreboard">valetpru@gmail.com</a></p>
       <p>NSPFRNP → ∞⁹</p>
     </footer>
   </main>

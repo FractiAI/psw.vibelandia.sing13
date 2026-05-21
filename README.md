@@ -84,7 +84,7 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 | **Master Music Catalog honor pass** | **$16.18/mo** (EGS φ) | **Not the magazine for sale** — the pass unlocks the **Holographic Reno Swamp Beats Caliente** catalog (Hero Jo's Golden Bachdoor Hit Factory). **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr)** (`VITE_MACHOTE_MAGAZINE_URL` to override). Pay on Venmo, PayPal, or Cash App → **client-only honor boarding**: magazine-follow + honor checkbox, date paid, email, rail → saved in **browser localStorage** (`qv-local-monthly-honor`) → full play until **paid date + 30 days**. **No server boarding** — `POST /api/boarding` is disabled (410). |
 | **Track export / download** | **$1.61** (extra charge) | Pass includes stream + background play; **offline export is paid per track**. Honor confirmation on device; license saved locally (`honor-local`). Optional `POST /api/export` only when a legacy JWT exists |
 | **Bookings** | Contact | `valetpru@gmail.com` |
-| **Catalog / licensing (Reno Holographic Swamp Beats · Caliente Catalog — Hero Jo's Golden Bachdoor Hit Factory)** | Contact | `goldenbackdoorhitfactory@gmail.com` |
+| **Catalog / licensing (Reno Holographic Swamp Beats · Caliente Catalog — Hero Jo's Golden Bachdoor Hit Factory)** | Contact | `valetpru@gmail.com` |
 
 Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via **BroadcastChannel** (same browser). Optional `/api/heartbeat` + Upstash for cross-device lock if you enable it later.
 

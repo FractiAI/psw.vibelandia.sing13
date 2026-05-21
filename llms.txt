@@ -45,7 +45,7 @@
 - Passenger pass: $16.18/mo (EGS φ) — pay on Venmo, PayPal, or Cash App; client-only honor boarding (localStorage on device, 30 days from paid date); no server JWT
 - Track export: $1.61 — same rails; email proof with track id
 - Bookings: valetpru@gmail.com
-- Catalog / licensing (500+ Reno swamp · caliente tracks): goldenbackdoorhitfactory@gmail.com
+- Catalog / licensing (500+ Reno swamp · caliente tracks): valetpru@gmail.com
 - Stream lock: BroadcastChannel (same browser); /api/heartbeat optional
 - Build: npm run build:questfest-bridge (source: apps/ss-vibelandia-questfest/)
 - Vercel env: PASS_TOKEN_SECRET optional (legacy export audit only); honor boarding needs no server secret

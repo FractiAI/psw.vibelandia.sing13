@@ -11,12 +11,12 @@ const env = import.meta.env;
 
 export const PAYMENT_HANDLES: Record<LiveRail, string> = {
   venmo: env.VITE_VENMO_HANDLE || '@Pru-Mendez',
-  paypal: env.VITE_PAYPAL_HANDLE || 'goldenbackdoorhitfactory@gmail.com',
+  paypal: env.VITE_PAYPAL_HANDLE || 'valetpru@gmail.com',
   cashapp: env.VITE_CASHAPP_HANDLE || '$GoldenBachdoor',
 };
 
 export const BOOKING_EMAIL = env.VITE_BOOKING_EMAIL || 'valetpru@gmail.com';
-export const CATALOG_EMAIL = env.VITE_CATALOG_EMAIL || 'goldenbackdoorhitfactory@gmail.com';
+export const CATALOG_EMAIL = env.VITE_CATALOG_EMAIL || 'valetpru@gmail.com';
 
 export const RAIL_LABEL: Record<LiveRail, string> = {
   venmo: 'Venmo',

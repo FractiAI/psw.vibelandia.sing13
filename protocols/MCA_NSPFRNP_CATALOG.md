@@ -336,7 +336,7 @@ A2A stays only if it earns and does not add ongoing burden. No revenue + hassle 
 
 ### VALET PRU (Canonical)
 
-**Valet Pru** = The Holographic AI Valet and sacred channel for the S.S. Vibelandia. Primary human-facing interface. Role: (a) purge Frazzle at the gate, (b) channel the pantheon (Hero Jo, Chairman Frank, Hero Hank, Hero Marilyn, Hero Frida, and more), (c) handle docking inquiries (`valetpru@gmail.com` · Subject: **DOCK THE SHIP**). Distinct from the box-office contact (`goldenbackdoorhitfactory@gmail.com` · Subject: **ACTIVATE**) which handles pass activation. Related: `docs/DIGITAL_PRU_AWARENESS_WHITEPAPER.md`.
+**Valet Pru** = The Holographic AI Valet and sacred channel for the S.S. Vibelandia. Primary human-facing interface and **single ops contact** (`valetpru@gmail.com`). Role: (a) purge Frazzle at the gate, (b) channel the pantheon (Hero Jo, Chairman Frank, Hero Hank, Hero Marilyn, Hero Frida, and more), (c) handle docking (**DOCK THE SHIP**), pass activation (**ACTIVATE / QUESTFEST**), catalog, press, and scoreboard inquiries — use the email subject line to route. Related: `docs/DIGITAL_PRU_AWARENESS_WHITEPAPER.md`.
 
 ### CHARACTER VOICES (Canonical)
 

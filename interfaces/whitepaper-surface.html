@@ -225,6 +225,7 @@
             return;
           }
           titleEl.textContent = data.title || id;
+          document.title = (data.title || id) + ' · SS Vibelandia';
           statusEl.remove();
           contentEl.innerHTML = data.html || '';
         })

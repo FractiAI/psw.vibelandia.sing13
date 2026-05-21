@@ -2,7 +2,6 @@ import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
-import { PlaylistBulkExportModal } from '@/components/payment/PlaylistBulkExportModal';
 import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
 import { PlayerDock } from '@/components/player/PlayerDock';
 
@@ -117,10 +116,6 @@ export function BridgePage() {
     goListen();
   };
 
-  const handleDownloadRequest = (trackId: string) => {
-    openExport(trackId);
-  };
-
   return (
     <>
       <BuildNoticeBanner />
@@ -218,9 +213,7 @@ export function BridgePage() {
             <TabPane>
               <TrackList
                 isPassenger={isPassenger || captainUnlocked}
-                onDownload={handleDownloadRequest}
                 onEditPlaylist={() => editPlaylist(activePlaylistId)}
-                onBulkPlaylistDownload={() => setBulkExportOpen(true)}
               />
             </TabPane>
           )}
@@ -229,18 +222,6 @@ export function BridgePage() {
         <PlayerDock />
       </div>
 
-      <PlaylistBulkExportModal
-        open={bulkExportOpen}
-        onClose={() => setBulkExportOpen(false)}
-        onNeedPass={() => {
-          setBulkExportOpen(false);
-          useMediaChromeStore.getState().setFairOpen(true);
-        }}
-        onCaptainRequest={() => {
-          setBulkExportOpen(false);
-          setCaptainOpen(true);
-        }}
-      />
     </div>
     </>
   );

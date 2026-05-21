@@ -27,7 +27,6 @@ interface NowPlayingBarProps {
   killReason: KillReason;
   beginSession: () => void;
   clearKill: () => void;
-  onDownload?: (trackId: string) => void;
   expanded?: boolean;
 }
 
@@ -37,7 +36,6 @@ export function NowPlayingBar({
   killReason,
   beginSession,
   clearKill,
-  onDownload,
 }: NowPlayingBarProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -499,16 +497,6 @@ export function NowPlayingBar({
         </div>
 
         <div className="sp-now-time">
-          {track && onDownload && (
-            <button
-              type="button"
-              className="sp-now-dl"
-              onClick={() => onDownload(track.id)}
-              aria-label="Download track"
-            >
-              ↓
-            </button>
-          )}
           {track && <span>{fmt(displayTime)}</span>}
           {error && <span className="sp-now-error">{error}</span>}
         </div>

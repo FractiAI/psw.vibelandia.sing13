@@ -41,8 +41,8 @@ export function CaptainUnlockModal({ open, onClose, onUnlocked }: CaptainUnlockM
           Capitan / operator access
         </h2>
         <p className="modal-body">
-          If you run this deck, confirm below. This unlocks <strong>full playback</strong> and{' '}
-          <strong>per-track downloads without the payment rails</strong> on this browser session only.
+          If you run this deck, confirm below. This unlocks <strong>full playback</strong> and background
+          listening on this browser session only.
         </p>
         <label className="boarding-field">
           <span>Capitan password</span>

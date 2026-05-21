@@ -10,10 +10,6 @@ import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 
-import { hasExportLicense } from '@/lib/exportLicenses';
-
-import { EGS_EXPORT_USD } from '@/lib/paymentRails';
-
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
 import { isVideoTrack } from '@/lib/isVideoTrack';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
@@ -28,20 +24,11 @@ import {
 
 
 interface TrackListProps {
-
   isPassenger: boolean;
-
-  onDownload: (trackId: string) => void;
-
   onEditPlaylist?: () => void;
-
-  onBulkPlaylistDownload?: () => void;
-
 }
 
-
-
-export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlaylistDownload }: TrackListProps) {
+export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
 
   const pl = useActivePlaylist();
 
@@ -223,18 +210,6 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
           <p className="sp-hero-stats">
             {heroStats}
 
-            {isPassenger && (
-
-              <>
-
-                {' '}
-
-                · download ${EGS_EXPORT_USD.toFixed(2)}/track for offline
-
-              </>
-
-            )}
-
           </p>
 
           <div className="sp-hero-actions">
@@ -284,16 +259,6 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
           />
 
         </label>
-
-        {onBulkPlaylistDownload && pl.trackIds.length > 0 && (
-
-          <button type="button" className="sp-hero-secondary" onClick={onBulkPlaylistDownload}>
-
-            Download playlist…
-
-          </button>
-
-        )}
 
         {rows.length > 0 && (
           <span className="sp-toolbar-total" aria-live="polite">
@@ -430,7 +395,6 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
                       <span className="sp-listen-type-dur">
 
                         {isVideoTrack(tr) ? 'Video' : 'Audio'} · {fmtDuration(tr.durationSec)}
-                        {tr.downloadedLocally ? ' · On device' : ' · Stream'}
 
                       </span>
 
@@ -492,36 +456,6 @@ export function TrackList({ isPassenger, onDownload, onEditPlaylist, onBulkPlayl
                       </button>
 
                     )}
-
-                    <button
-
-                      type="button"
-
-                      className={`sp-listen-dl${hasExportLicense(tr.id) ? ' sp-listen-dl--owned' : ''}`}
-
-                      onClick={() => onDownload(tr.id)}
-
-                      aria-label={`Download ${tr.title}`}
-
-                      title={
-
-                        isPassenger
-
-                          ? hasExportLicense(tr.id)
-
-                            ? 'Download again (licensed)'
-
-                            : `Download · $${EGS_EXPORT_USD.toFixed(2)}`
-
-                          : 'Machote members pass required'
-
-                      }
-
-                    >
-
-                      {hasExportLicense(tr.id) ? '✓' : '↓'}
-
-                    </button>
 
                     <button
 

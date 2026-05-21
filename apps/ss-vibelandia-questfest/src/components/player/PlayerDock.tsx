@@ -39,7 +39,6 @@ export function PlayerDock() {
           killReason={stream.killReason}
           beginSession={stream.beginSession}
           clearKill={stream.clearKill}
-          onDownload={(trackId) => useMediaChromeStore.getState().openExport(trackId)}
         />
       </div>
 

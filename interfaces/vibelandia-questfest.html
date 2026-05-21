@@ -20,6 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/interfaces/machote-campaign-popup.css" />
+  <link rel="stylesheet" href="/interfaces/bridge-tower-billboard.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -570,6 +571,28 @@
 
   <header class="hero">
     <div>
+      <aside class="qf-bridge-tower qf-bridge-tower--hero" aria-label="Bridge tower announcement — holographic AI OS">
+        <p class="qf-bridge-tower__label">BRIDGE TOWER · LIVE BILLBOARD</p>
+        <div class="qf-bridge-tower__bezel">
+          <div class="qf-bridge-tower__screen">
+            <video
+              class="qf-bridge-tower__video"
+              src="/interfaces/assets/bridge-tower-holographic-ai-os-tease.mp4"
+              poster="/interfaces/assets/holographic-ai-os-newscast-frame.png"
+              width="640"
+              height="360"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="8 second animated news tease: 13D Holographic AI OS announced"
+            ></video>
+            <div class="qf-bridge-tower__scan" aria-hidden></div>
+            <div class="qf-bridge-tower__glow" aria-hidden></div>
+          </div>
+        </div>
+      </aside>
       <p class="cloud-badge" data-i18n="qf.cloudSkinEyebrow">Sonic Singularity Sing! 13 · Internet cloud skin</p>
       <h1 class="kicker" data-i18n="qf.h1">SS Vibelandia QUESTFEST 24×365</h1>
       <p class="sub" data-i18n="qf.sub">Puerto Reno · Holographic Goldilocks AI Valley, Nevada</p>

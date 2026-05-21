@@ -23,6 +23,7 @@ import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { PLAIN } from '@/lib/plainSpeak';
+import { BridgeTowerBillboard } from '@/components/BridgeTowerBillboard';
 import { BuildNoticeBanner } from '@/components/BuildNoticeBanner';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
 
@@ -127,6 +128,9 @@ export function BridgePage() {
       <CatalogSidebar onDjClick={goDj} />
 
       <div className="sp-main">
+        <div className="sp-bridge-tower-wrap">
+          <BridgeTowerBillboard />
+        </div>
         <header className="sp-top">
           <div className="sp-tabs" role="tablist">
             <button

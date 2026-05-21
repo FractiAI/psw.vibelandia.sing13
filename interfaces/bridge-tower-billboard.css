@@ -1,0 +1,391 @@
+/* Bridge tower · Times Square LCD billboard — 8s loop */
+.qf-bridge-tower {
+  --billboard-cycle: 8s;
+  --billboard-cyan: #2de8ff;
+  --billboard-mag: #ff2d6a;
+  --billboard-gold: #ffd54a;
+  position: relative;
+  width: min(100%, 420px);
+  margin: 0 auto 1rem;
+  z-index: 2;
+}
+
+.qf-bridge-tower__label {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--billboard-gold, #ffd54a);
+  text-align: center;
+  margin-bottom: 0.35rem;
+  opacity: 0.9;
+}
+
+.qf-bridge-tower__bezel {
+  padding: 0.45rem;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #1a1a22, #0a0a0e);
+  border: 3px solid #2a2a35;
+  box-shadow:
+    0 0 0 1px rgba(45, 232, 255, 0.25),
+    0 0 28px rgba(255, 45, 106, 0.35),
+    0 12px 40px rgba(0, 0, 0, 0.65),
+    inset 0 0 24px rgba(45, 232, 255, 0.08);
+}
+
+.qf-bridge-tower__screen {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #050508;
+}
+
+.qf-bridge-tower__video,
+.qf-bridge-tower__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  background: #050508;
+}
+
+.qf-bridge-tower__bg {
+  animation: qf-billboard-ken 8s ease-in-out infinite;
+}
+
+.qf-bridge-tower__scan {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.12) 2px,
+    rgba(0, 0, 0, 0.12) 4px
+  );
+  opacity: 0.45;
+  animation: qf-billboard-scan 4s linear infinite;
+}
+
+.qf-bridge-tower__glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(255, 45, 106, 0.2), transparent 70%);
+  mix-blend-mode: screen;
+}
+
+.qf-bridge-tower__slides {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.65rem 0.75rem 2.1rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+}
+
+.qf-billboard-slide {
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 2rem;
+  margin: 0;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: qf-billboard-slide var(--billboard-cycle) ease-in-out infinite;
+}
+
+.qf-billboard-slide--breaking {
+  top: 0.55rem;
+  bottom: auto;
+  font-size: clamp(1.35rem, 5vw, 1.85rem);
+  color: #fff;
+  background: var(--billboard-mag);
+  display: inline-block;
+  width: fit-content;
+  padding: 0.15rem 0.55rem;
+  animation-name: qf-billboard-breaking;
+}
+
+.qf-billboard-slide--dos {
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
+  color: var(--billboard-cyan);
+  animation-delay: 0s;
+}
+
+.qf-billboard-slide--today {
+  font-size: clamp(0.95rem, 3.8vw, 1.25rem);
+  color: #f1f5f9;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 700;
+  animation-delay: 0s;
+}
+
+.qf-billboard-slide--os {
+  font-size: clamp(1.15rem, 4.5vw, 1.65rem);
+  color: var(--billboard-gold);
+  animation-delay: 0s;
+}
+
+.qf-billboard-slide--edge {
+  font-size: clamp(0.78rem, 3vw, 0.95rem);
+  color: #b8e8ff;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+  animation-delay: 0s;
+}
+
+.qf-billboard-slide[data-step='1'] { animation-delay: calc(var(--billboard-cycle) * 0); }
+.qf-billboard-slide[data-step='2'] { animation-delay: calc(var(--billboard-cycle) * 0.125); }
+.qf-billboard-slide[data-step='3'] { animation-delay: calc(var(--billboard-cycle) * 0.3125); }
+.qf-billboard-slide[data-step='4'] { animation-delay: calc(var(--billboard-cycle) * 0.5); }
+.qf-billboard-slide[data-step='5'] { animation-delay: calc(var(--billboard-cycle) * 0.6875); }
+
+.qf-bridge-tower__ticker {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.65rem;
+  background: linear-gradient(90deg, #0a1628, #12122a);
+  border-top: 2px solid var(--billboard-mag);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.qf-bridge-tower__ticker-track {
+  display: flex;
+  white-space: nowrap;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--billboard-cyan);
+  animation: qf-billboard-ticker 16s linear infinite;
+}
+
+.qf-bridge-tower__ticker-track span {
+  padding-right: 3rem;
+}
+
+@keyframes qf-billboard-ken {
+  0%,
+  100% {
+    transform: scale(1.04) translateX(-1%);
+  }
+  50% {
+    transform: scale(1.08) translateX(1%);
+  }
+}
+
+@keyframes qf-billboard-scan {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes qf-billboard-breaking {
+  0%,
+  11% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  14%,
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes qf-billboard-slide {
+  0%,
+  8% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  11%,
+  22% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25%,
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.qf-billboard-slide[data-step='1'] {
+  animation-name: qf-billboard-s1;
+}
+.qf-billboard-slide[data-step='2'] {
+  animation-name: qf-billboard-s2;
+}
+.qf-billboard-slide[data-step='3'] {
+  animation-name: qf-billboard-s3;
+}
+.qf-billboard-slide[data-step='4'] {
+  animation-name: qf-billboard-s4;
+}
+.qf-billboard-slide[data-step='5'] {
+  animation-name: qf-billboard-s5;
+}
+
+@keyframes qf-billboard-s1 {
+  0%,
+  10% {
+    opacity: 1;
+  }
+  14%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes qf-billboard-s2 {
+  0%,
+  12% {
+    opacity: 0;
+  }
+  14%,
+  24% {
+    opacity: 1;
+  }
+  28%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes qf-billboard-s3 {
+  0%,
+  26% {
+    opacity: 0;
+  }
+  30%,
+  42% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes qf-billboard-s4 {
+  0%,
+  44% {
+    opacity: 0;
+  }
+  48%,
+  62% {
+    opacity: 1;
+  }
+  66%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes qf-billboard-s5 {
+  0%,
+  64% {
+    opacity: 0;
+  }
+  68%,
+  88% {
+    opacity: 1;
+  }
+  92%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes qf-billboard-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* QUESTFEST hero · tower on the ship */
+.hero {
+  position: relative;
+}
+
+.hero .qf-bridge-tower--hero {
+  position: absolute;
+  top: max(0.75rem, env(safe-area-inset-top));
+  right: max(0.75rem, env(safe-area-inset-right));
+  width: min(42vw, 380px);
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .hero .qf-bridge-tower--hero {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 420px;
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .hero > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Capitan's Bridge · tower above tabs */
+.sp-bridge-tower-wrap {
+  padding: 0.75rem 1.5rem 0;
+  background: linear-gradient(180deg, #0f0824 0%, #121212 100%);
+  border-bottom: 1px solid rgba(45, 232, 255, 0.15);
+}
+
+.sp-bridge-tower-wrap .qf-bridge-tower {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.sp-bridge-tower-wrap .qf-bridge-tower__label {
+  color: #d4af37;
+}
+
+@media (max-width: 900px) {
+  .sp-bridge-tower-wrap {
+    padding: 0.65rem 1rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qf-bridge-tower__bg,
+  .qf-billboard-slide,
+  .qf-bridge-tower__scan,
+  .qf-bridge-tower__ticker-track {
+    animation: none !important;
+  }
+
+  .qf-billboard-slide[data-step='5'] {
+    opacity: 1;
+  }
+
+  .qf-billboard-slide:not([data-step='5']),
+  .qf-billboard-slide--breaking {
+    opacity: 0;
+  }
+}

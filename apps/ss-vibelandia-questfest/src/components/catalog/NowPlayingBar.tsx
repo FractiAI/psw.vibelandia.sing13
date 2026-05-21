@@ -49,6 +49,12 @@ export function NowPlayingBar({
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const setDisplayTime = usePlaybackStore((s) => s.setDisplayTime);
   const setGain = usePlaybackStore((s) => s.setGain);
+  const setTrack = usePlaybackStore((s) => s.setTrack);
+  const setBackgroundHandoffActive = usePlaybackStore((s) => s.setBackgroundHandoffActive);
+  const autoplayEnabled = usePlaybackStore((s) => s.autoplayEnabled);
+  const backgroundPlayEnabled = usePlaybackStore((s) => s.backgroundPlayEnabled);
+  const setAutoplayEnabled = usePlaybackStore((s) => s.setAutoplayEnabled);
+  const setBackgroundPlayEnabled = usePlaybackStore((s) => s.setBackgroundPlayEnabled);
 
   const getTrack = useCatalogStore((s) => s.getTrack);
   const pl = useActivePlaylist();
@@ -56,6 +62,7 @@ export function NowPlayingBar({
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const fullPlayUnlocked = isPassenger || captainUnlocked;
+  const allowBackgroundPlay = fullPlayUnlocked && backgroundPlayEnabled;
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
@@ -67,27 +74,60 @@ export function NowPlayingBar({
     return primaryMediaRef.current;
   }, [primaryMediaRef]);
 
+  const advanceInPlaylist = useCallback(
+    (delta: 1 | -1) => {
+      if (!pl || !currentTrackId) return false;
+      const idx = pl.trackIds.indexOf(currentTrackId);
+      if (idx < 0) return false;
+      const step = delta > 0 ? 1 : -1;
+      for (let i = idx + step; i >= 0 && i < pl.trackIds.length; i += step) {
+        const id = pl.trackIds[i];
+        if (!getTrack(id)) continue;
+        setBackgroundHandoffActive(false);
+        gateArmedRef.current = true;
+        setDisplayTime(0);
+        setTrack(id);
+        setPlaying(true);
+        return true;
+      }
+      setPlaying(false);
+      return false;
+    },
+    [currentTrackId, getTrack, pl, setBackgroundHandoffActive, setDisplayTime, setPlaying, setTrack],
+  );
+
+  const playNext = useCallback(() => {
+    advanceInPlaylist(1);
+  }, [advanceInPlaylist]);
+
+  const handleTrackEnded = useCallback(() => {
+    if (autoplayEnabled) advanceInPlaylist(1);
+    else setPlaying(false);
+  }, [advanceInPlaylist, autoplayEnabled, setPlaying]);
+
   const resumePlayback = useCallback(() => {
     const el = getPrimaryMedia();
     const bg = backgroundAudioRef.current;
     if (!track || !fullPlayUnlocked) return;
-    if (document.hidden && bg?.src) {
+    if (document.hidden && allowBackgroundPlay && bg?.src) {
       void bg.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
     } else if (el) {
       void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
     }
-  }, [fullPlayUnlocked, getPrimaryMedia, track]);
+  }, [allowBackgroundPlay, fullPlayUnlocked, getPrimaryMedia, track]);
 
   useBackgroundPlayback({
     mediaRef: primaryMediaRef as RefObject<HTMLVideoElement | HTMLAudioElement | null>,
     backgroundAudioRef,
-    allowBackgroundPlay: fullPlayUnlocked,
+    allowBackgroundPlay,
     isPlaying,
     track,
     isVideo: showVideo,
     setPlaying,
     onRequestResume: resumePlayback,
     onTimeUpdate: setDisplayTime,
+    onTrackEnded: handleTrackEnded,
+    onNextTrack: playNext,
   });
 
   useEffect(() => {
@@ -128,14 +168,15 @@ export function NowPlayingBar({
         gateArmedRef.current = false;
         el.pause();
         el.currentTime = 0;
-        setPlaying(false);
         setDisplayTime(0);
         el.volume = gain;
         onFairExchange();
+        if (autoplayEnabled && advanceInPlaylist(1)) return;
+        setPlaying(false);
       }
     };
 
-    const onEnded = () => setPlaying(false);
+    const onEnded = () => handleTrackEnded();
     const onErr = () => setError('Could not play this file.');
 
     const tryPlay = () => {
@@ -193,6 +234,9 @@ export function NowPlayingBar({
     setPlaying,
     showVideo,
     solenoidActive,
+    advanceInPlaylist,
+    autoplayEnabled,
+    handleTrackEnded,
     track,
   ]);
 
@@ -218,24 +262,8 @@ export function NowPlayingBar({
     return `${m}:${sec.toString().padStart(2, '0')}`;
   }, []);
 
-  const playNext = () => {
-    if (!pl || !currentTrackId) return;
-    const idx = pl.trackIds.indexOf(currentTrackId);
-    const next = pl.trackIds[idx + 1];
-    if (next) {
-      usePlaybackStore.getState().setTrack(next);
-      setPlaying(true);
-    }
-  };
-
   const playPrev = () => {
-    if (!pl || !currentTrackId) return;
-    const idx = pl.trackIds.indexOf(currentTrackId);
-    const prev = pl.trackIds[Math.max(0, idx - 1)];
-    if (prev) {
-      usePlaybackStore.getState().setTrack(prev);
-      setPlaying(true);
-    }
+    advanceInPlaylist(-1);
   };
 
   const togglePlay = () => {
@@ -268,7 +296,7 @@ export function NowPlayingBar({
       {track && !showVideo && (
         <audio key={track.id} ref={audioRef} className="sr-only" preload="auto" />
       )}
-      {fullPlayUnlocked && (
+      {allowBackgroundPlay && (
         <audio
           ref={backgroundAudioRef}
           className="sr-only"
@@ -296,14 +324,34 @@ export function NowPlayingBar({
               {showVideo && <span className="sp-now-badge">Video</span>}
               {solenoidActive && <span className="sp-now-badge">30s preview</span>}
               {fullPlayUnlocked && (
-                <span className="sp-now-badge sp-now-badge--pass" title="Keeps playing in background">
-                  {captainUnlocked && !isPassenger ? 'Capitan · background OK' : 'Background play'}
+                <span className="sp-now-badge sp-now-badge--pass" title="Member playback">
+                  {captainUnlocked && !isPassenger ? 'Capitan · full play' : 'Members pass · full play'}
                 </span>
               )}
             </>
           ) : (
             <p className="sp-now-empty">Pick a track to play</p>
           )}
+          <div className="sp-now-prefs" role="group" aria-label="Playback options">
+            <label className="sp-now-pref">
+              <input
+                type="checkbox"
+                checked={autoplayEnabled}
+                onChange={(e) => setAutoplayEnabled(e.target.checked)}
+              />
+              Autoplay playlist
+            </label>
+            {fullPlayUnlocked && (
+              <label className="sp-now-pref">
+                <input
+                  type="checkbox"
+                  checked={backgroundPlayEnabled}
+                  onChange={(e) => setBackgroundPlayEnabled(e.target.checked)}
+                />
+                Background
+              </label>
+            )}
+          </div>
         </div>
 
         <div className="sp-now-controls">

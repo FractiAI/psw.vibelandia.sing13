@@ -84,9 +84,8 @@ In alignment with the core values of this project, this public release and all a
 
 ## Related surfaces
 
-- **Live operation deck:** [Hero Houdini · legal EGS mining](../interfaces/hero-houdini-mythos-demonstration.html) — real network cadence, φ-lock rail, payout wallet config.
-- **Mining doctrine:** [OPS-EGS-BTC-2026-008](whitepaper-surface.html?id=ops-egs-btc-mining) — lawful sovereign mining under Fair Exchange.
-- **Engine room:** [Look under the hood](../interfaces/look-under-the-hood.html)
 - **Press:** [FOR IMMEDIATE RELEASE — Mythos review](../interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html)
+- **Whitepaper reader:** [REV-EGS-HHF-2026-007](../interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos)
+- **Engine room:** [Look under the hood](../interfaces/look-under-the-hood.html)
 
 **NSPFRNP ⊃ broadcast ⊃ EGS → ∞⁹**

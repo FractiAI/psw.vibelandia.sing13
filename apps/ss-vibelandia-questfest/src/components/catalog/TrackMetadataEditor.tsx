@@ -35,6 +35,7 @@ export function TrackMetadataEditor({
   const [genre, setGenre] = useState(track.genre ?? '');
   const [description, setDescription] = useState(track.description ?? '');
   const [busy, setBusy] = useState(false);
+  const [progress, setProgress] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
   const [plModal, setPlModal] = useState(false);
   const [coverPreview, setCoverPreview] = useState<string | undefined>(track.posterSrc);
@@ -52,8 +53,16 @@ export function TrackMetadataEditor({
   const handleSave = async () => {
     setBusy(true);
     setMsg(null);
+    setProgress('Starting…');
     try {
-      await updateTrack(track.id, { title, artist, genre, description }, { coverFile });
+      await updateTrack(
+        track.id,
+        { title, artist, genre, description },
+        {
+          coverFile,
+          onProgress: (line) => setProgress(line),
+        },
+      );
       setCoverFile(null);
       const latest = useCatalogStore.getState().getTrack(track.id);
       if (latest) {
@@ -68,7 +77,13 @@ export function TrackMetadataEditor({
       setMsg(synced ? 'Saved to server.' : 'Saved on this device only.');
       onSaved?.();
     } catch (err) {
-      const code = err && typeof err === 'object' && 'code' in err ? String((err as { code?: string }).code) : '';
+      const raw =
+        err && typeof err === 'object' && 'code' in err
+          ? String((err as { code?: string }).code)
+          : err instanceof Error
+            ? err.message
+            : '';
+      const code = raw.toLowerCase();
       if (code === 'unauthorized') {
         setMsg('Save failed — captain / upload secret mismatch.');
       } else if (code === 'track_not_found') {
@@ -77,16 +92,27 @@ export function TrackMetadataEditor({
         setMsg('Save failed — upload secret not configured in this build.');
       } else if (code === 'catalog_save_verify_failed' || code === 'catalog_save_failed') {
         setMsg('Save failed — server could not persist catalog. Try again in a moment.');
+      } else if (code === 'upload_connection_failed') {
+        setMsg('Save failed — could not reach the server. Check connection and try again.');
+      } else if (code === 'cover_not_image') {
+        setMsg('Save failed — cover must be JPEG, PNG, or WebP.');
+      } else if (code === 'cover_too_large') {
+        setMsg('Save failed — cover image is over 4 MB.');
+      } else if (code === 'update_failed') {
+        setMsg('Save failed — server did not confirm the track. Try again.');
       } else {
-        setMsg('Save failed — try again.');
+        setMsg(raw ? `Save failed — ${raw}` : 'Save failed — try again.');
       }
     } finally {
       setBusy(false);
+      setProgress(null);
     }
   };
 
   const handleDelete = async () => {
     setBusy(true);
+    setMsg(null);
+    setProgress('Deleting track…');
     try {
       await deleteTrack(track.id);
       onDeleted?.();
@@ -169,7 +195,15 @@ export function TrackMetadataEditor({
           {description.length}/{TRACK_DESCRIPTION_MAX}
         </span>
       </label>
-      {msg && <p className="spotify-dj-msg spotify-dj-msg--info">{msg}</p>}
+      {busy && progress && (
+        <div className="sp-save-progress" role="status" aria-live="polite">
+          <p className="sp-save-progress__label">{progress}</p>
+          <div className="sp-save-progress__bar" aria-hidden>
+            <span className="sp-save-progress__bar-fill" />
+          </div>
+        </div>
+      )}
+      {!busy && msg && <p className={msgClass}>{msg}</p>}
       <div className="spotify-dj-track-edit-actions">
         <button
           type="button"

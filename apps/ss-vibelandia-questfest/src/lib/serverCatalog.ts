@@ -117,19 +117,29 @@ function uploadErrorMessage(err: unknown): string {
   return msg;
 }
 
+function catalogApiError(code: string, message?: string): Error & { code: string } {
+  const err = new Error(message || code) as Error & { code: string };
+  err.code = code;
+  return err;
+}
+
 async function postCatalogJson(
   apiPath: string,
   secret: string,
   body: Record<string, unknown>,
 ): Promise<Response> {
-  return fetch(catalogApiUrl(apiPath), {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Catalog-Secret': secret,
-    },
-    body: JSON.stringify(body),
-  });
+  try {
+    return await fetch(catalogApiUrl(apiPath), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Catalog-Secret': secret,
+      },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    throw catalogApiError('upload_connection_failed');
+  }
 }
 
 async function registerUploadedTrack(
@@ -169,6 +179,7 @@ export type TrackMetadataPatch = {
   description?: string;
   durationSec?: number;
   playlistIds?: string[];
+  posterSrc?: string;
 };
 
 export type UpdateTrackOnServerResult = {
@@ -195,33 +206,43 @@ export async function updateTrackOnServer(
     message?: string;
   };
   if (!res.ok) {
-    const err = new Error(data.error || data.message || 'update_failed') as Error & { code?: string };
-    err.code = data.error;
-    throw err;
+    throw catalogApiError(data.error || data.message || 'update_failed', data.message);
   }
   const track = data.track;
-  if (!track?.src && !track?.videoSrc) throw new Error('update_failed');
-  return { track, catalog: data.catalog };
+  if (!track?.id) throw catalogApiError('update_failed');
+  const src = String(track.src || '').trim();
+  const videoSrc = String(track.videoSrc || '').trim();
+  if (!src && !videoSrc) throw catalogApiError('update_failed');
+  return { track: { ...track, src: src || videoSrc }, catalog: data.catalog };
 }
 
-const COVER_MAX_BYTES = 4 * 1024 * 1024;
+export const COVER_MAX_BYTES = 4 * 1024 * 1024;
 
 /** Upload cover image to Blob (JPEG/PNG/WebP up to 4 MB). */
-export async function uploadCoverBlob(trackId: string, file: File): Promise<string> {
+export async function uploadCoverBlob(
+  trackId: string,
+  file: File,
+  opts?: { onProgress?: (message: string) => void },
+): Promise<string> {
   const secret = catalogUploadSecret();
   if (!secret) throw new Error('catalog_upload_unconfigured');
-  if (!file.type.startsWith('image/')) throw new Error('cover_not_image');
-  if (file.size > COVER_MAX_BYTES) throw new Error('cover_too_large');
+  if (!file.type.startsWith('image/')) throw catalogApiError('cover_not_image');
+  if (file.size > COVER_MAX_BYTES) throw catalogApiError('cover_too_large');
 
   const ext =
     file.type === 'image/png' ? 'png' : file.type === 'image/webp' ? 'webp' : 'jpg';
   const pathname = `catalog/covers/${trackId}.${ext}`;
+
+  opts?.onProgress?.('Uploading cover…');
 
   const blob = await upload(pathname, file, {
     access: 'public',
     handleUploadUrl: catalogApiUrl(UPLOAD_API),
     headers: { 'X-Catalog-Secret': secret },
     clientPayload: JSON.stringify({ allowOverwrite: true }),
+    onUploadProgress: ({ percentage }) => {
+      opts?.onProgress?.(`Uploading cover… ${Math.round(percentage)}%`);
+    },
   });
 
   return blob.url;

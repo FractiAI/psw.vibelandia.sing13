@@ -1624,6 +1624,41 @@ a.voxel-btn {
   color: #f0a0a0;
 }
 
+.sp-save-progress {
+  margin: 0.5rem 0 0;
+}
+
+.sp-save-progress__label {
+  font-size: 0.78rem;
+  color: var(--gold, #d4a84b);
+  margin: 0 0 0.35rem;
+}
+
+.sp-save-progress__bar {
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(212, 168, 75, 0.2);
+  overflow: hidden;
+}
+
+.sp-save-progress__bar-fill {
+  display: block;
+  height: 100%;
+  width: 40%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--swamp-teal, #5eead4), var(--gold, #d4a84b));
+  animation: sp-save-progress-indeterminate 1.1s ease-in-out infinite;
+}
+
+@keyframes sp-save-progress-indeterminate {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+
 .spotify-dj-order {
   list-style: none;
   margin: 0;
@@ -1713,9 +1748,12 @@ a.voxel-btn {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.sp-listen .sp-pl-edit-row--listen.sp-pl-edit-row--editing {
-  display: grid;
-  grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+@media (min-width: 901px) {
+  .sp-listen .sp-pl-edit-row--listen.sp-pl-edit-row--editing {
+    grid-template-areas:
+      'grip idx cover track actions'
+      'editor editor editor editor editor';
+  }
 }
 
 @media (max-width: 768px) {
@@ -2800,9 +2838,52 @@ a.voxel-btn {
   box-shadow: inset 0 2px 0 #1ed760;
 }
 
-/* Listen tab: same grid row mechanics as playlist editor (grip · # · track · download · play) */
+/* Listen tab: grip · # · cover · track · actions (download/play live in actions) */
 .sp-pl-edit-row--listen {
-  grid-template-columns: auto auto auto minmax(0, 1fr) auto auto;
+  grid-template-columns: auto auto auto minmax(0, 1fr) minmax(0, auto);
+  grid-template-areas: 'grip idx cover track actions';
+  align-items: center;
+}
+
+.sp-pl-edit-row--listen > .sp-row-grip {
+  grid-area: grip;
+}
+
+.sp-pl-edit-row--listen > .sp-pl-edit-idx {
+  grid-area: idx;
+}
+
+.sp-pl-edit-row--listen > .sp-track-cover-thumb {
+  grid-area: cover;
+}
+
+.sp-pl-edit-row--listen > .sp-pl-edit-track-info--btn,
+.sp-pl-edit-row--listen > .sp-listen-track-btn {
+  grid-area: track;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.sp-pl-edit-row--listen > .sp-track-cover-thumb,
+.sp-pl-edit-row--listen > .sp-track-cover-thumb--empty {
+  grid-area: cover;
+  justify-self: center;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.sp-pl-edit-row--listen > .sp-listen-row-actions {
+  grid-area: actions;
+  justify-content: flex-end;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.sp-listen .sp-track-edit--inline {
+  grid-area: editor;
+  grid-column: 1 / -1;
+  margin: 0.35rem 0 0;
 }
 
 .sp-track-cover-thumb {
@@ -2924,6 +3005,24 @@ a.voxel-btn {
   max-width: min(100%, 12rem);
 }
 
+.sp-listen-track-genre {
+  font-size: 0.68rem;
+  color: #727272;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.sp-listen-tracks {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.sp-listen-tracks .sp-pl-edit-list {
+  max-width: 100%;
+}
+
 .boarding-pay-actions {
   flex-direction: column;
   align-items: stretch;
@@ -3014,6 +3113,20 @@ a.boarding-pay-open {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Listen rows — allow wrapped metadata; nowrap only on title */
+.sp-listen .sp-pl-edit-track-info--btn span {
+  white-space: normal;
+}
+
+.sp-listen .sp-pl-edit-track-info--btn > .sp-listen-track-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
 .sp-pl-edit-moves {
@@ -3141,8 +3254,10 @@ a.boarding-pay-open {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.25rem;
-  flex-shrink: 0;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .sp-listen-mini {
@@ -3439,6 +3554,30 @@ a.boarding-pay-open {
   color: #fff;
 }
 
+.sp-now-prefs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.4rem;
+}
+
+.sp-now-pref {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  color: #b3b3b3;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sp-now-pref input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #1ed760;
+  flex-shrink: 0;
+}
+
 .sp-now-empty {
   margin: 0;
   font-size: 0.82rem;
@@ -3558,6 +3697,64 @@ a.boarding-pay-open {
     padding-right: max(1rem, env(safe-area-inset-right));
     padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
     padding-bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  .sp-listen .sp-pl-edit-row--listen {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.45rem 0.5rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .sp-listen .sp-pl-edit-row--listen > .sp-row-grip {
+    flex: 0 0 2.25rem;
+    order: 0;
+    align-self: center;
+  }
+
+  .sp-listen .sp-pl-edit-row--listen > .sp-pl-edit-idx {
+    flex: 0 0 1.5rem;
+    order: 1;
+    align-self: center;
+  }
+
+  .sp-listen .sp-pl-edit-row--listen > .sp-track-cover-thumb,
+  .sp-listen .sp-pl-edit-row--listen > .sp-track-cover-thumb--empty {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    order: 2;
+    align-self: flex-start;
+  }
+
+  .sp-listen .sp-pl-edit-row--listen > .sp-listen-track-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 0;
+    order: 3;
+    max-width: calc(100% - 2.25rem - 1.5rem - 44px - 1rem);
+  }
+
+  .sp-listen .sp-pl-edit-row--listen > .sp-listen-row-actions {
+    flex: 1 1 100%;
+    width: 100%;
+    order: 4;
+    justify-content: flex-start;
+    padding-top: 0.35rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    box-sizing: border-box;
+  }
+
+  .sp-listen .sp-pl-edit-row--listen > .sp-track-edit--inline {
+    flex: 1 1 100%;
+    width: 100%;
+    order: 5;
+    margin-left: 0;
+  }
+
+  .sp-listen .sp-pl-edit-row--listen.sp-pl-edit-row--editing > .sp-track-edit--inline {
+    order: 5;
   }
 
   .sp-toolbar {
@@ -3696,10 +3893,23 @@ a.boarding-pay-open {
     min-height: auto;
   }
 
+  .sp-listen .sp-hero {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sp-listen .sp-hero-meta {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
   .sp-hero-cover {
     width: 120px;
     height: 120px;
+    max-width: 100%;
     font-size: 2rem;
+    flex-shrink: 0;
   }
 
   .sp-hero-title {
@@ -3762,12 +3972,19 @@ a.boarding-pay-open {
     align-self: center;
   }
 
-  /* Listen tab — .sp-listen only; keep grid separate from editor so we never double-apply */
+  /* Listen tab — flex row (grid overlap fix on iOS Safari) */
   .sp-listen .sp-pl-edit-row--listen {
-    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
-    grid-template-rows: auto;
-    grid-template-areas: none;
-    padding: 0.5rem 0.75rem;
+    padding: 0.55rem 0.65rem;
+    gap: 0.4rem 0.45rem;
+  }
+
+  .sp-listen .sp-pl-edit-row--listen > .sp-listen-track-btn {
+    max-width: calc(100% - 2.25rem - 1.5rem - 44px - 0.85rem);
+  }
+
+  .sp-listen .sp-pl-edit-track-info--btn > .sp-listen-track-desc {
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   .sp-listen .sp-listen-dl,
@@ -3776,6 +3993,27 @@ a.boarding-pay-open {
     min-height: 44px;
     width: 44px;
     height: 44px;
+    flex-shrink: 0;
+  }
+
+  .sp-listen-mini {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.5rem;
+    min-height: 36px;
+  }
+
+  .sp-listen .sp-pl-edit-track-info--btn > .sp-listen-track-line2 .sp-listen-artist {
+    max-width: 100%;
+  }
+
+  .sp-listen-track-line2 {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+
+  .sp-listen-type-dur {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .sp-pl-edit-track-desc {

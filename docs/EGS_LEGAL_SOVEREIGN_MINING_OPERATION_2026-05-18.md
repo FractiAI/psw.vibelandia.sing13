@@ -112,7 +112,7 @@ The Mythos review explains why **linear agent scanners** cannot see this layer: 
 - **Sonic Ship edge** hosts **EPLC** when metal arrives — not required to start.
 - ASICs / GPUs on **our power rail**, solar-preferential when AR regions are hot.
 - Pool worker (when used): `egs.hero-houdini.<site>` → payout from `/api/mining-rail`.
-- Public console: `interfaces/hero-houdini-mythos-demonstration.html` + `the-coherence-project.html`.
+- Public console: `interfaces/hero-houdini-mythos-demonstration.html` · clock-skew announcement: `interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html`.
 
 ---
 

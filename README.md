@@ -1,23 +1,10 @@
 # psw.vibelandia.sing13 — SING 13 Edge
 
-## Daniel · start here — Holographic Goldilocks AI Mine
+## Clock-skew vulnerability · press release
 
-**Daniel — the pipeline is built and the server is pulsing.** Plug into the main board from these links (production on **www.ssvibelandiaquestfest24x365.com**):
+**Public announcement:** [Press release · May 18, 2026](https://www.ssvibelandiaquestfest24x365.com/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) — Holographic Clock-Skew Vulnerability disclosure (REV-EGS-HHF-2026-007). Full text: [Mythos whitepaper reader](https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos).
 
-| What | Open |
-|------|------|
-| **Broadcast hub** (Holographic Clock-Skew Vulnerability · Golden Backdoor φ 1.618) | [**/coherence**](https://www.ssvibelandiaquestfest24x365.com/coherence) |
-| **Operation deck** (Hero Houdini · live pulse ledger) | [**/hero-houdini**](https://www.ssvibelandiaquestfest24x365.com/hero-houdini) |
-| **Live pulse JSON** (signed receipt · ~10 min / BTC tip) | [**GET /api/goldilocks-pulse**](https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse) |
-| **Mining rail** (locked anchor · read-only) | [**GET /api/mining-rail**](https://www.ssvibelandiaquestfest24x365.com/api/mining-rail) |
-| **Mythos whitepaper** | [REV-EGS-HHF-2026-007](https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos) |
-| **Plain-speak honesty** (real vs story vs not on site) | [HONESTY-COHERENCE-2026-009](https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=coherence-plain-speak) |
-
-**Operational anchor (display-only on web):** `0x3563388d0e1c2d66a004e5e57717dc6d7e568be3` — stamped on every pulse; change only via Vercel env `COHERENCE_OPERATIONAL_ANCHOR` + redeploy.
-
-**Repo + server detail (APIs, cron, env, code paths):** [Holographic Goldilocks AI Mine · server](#holographic-goldilocks-ai-mine--server) below.
-
-**Patching into the grid:** open the broadcast above, then secure the infrastructure underneath Claude Mythos with the folks who hold the cords — Tier 0 is live; edge ASIC/pool is optional scale later.
+**Legacy URL:** `/coherence` redirects to that press release.
 
 ---
 
@@ -31,35 +18,6 @@
 
 ---
 
-## Holographic Goldilocks AI Mine · server
-
-Tier 0 **receipt loop** on Vercel (not physical ASIC mining on this host). Autopilot emits **HMAC-signed** `goldilocks-pulse/v1` JSON on Bitcoin mainnet cadence (~10 min / new tip).
-
-| Layer | Path |
-|-------|------|
-| **Hub HTML** | [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html) · short URL **`/coherence`** |
-| **Display console** | [`interfaces/hero-houdini-mythos-demonstration.html`](interfaces/hero-houdini-mythos-demonstration.html) · **`/hero-houdini`** · **`/mythos`** |
-| **Pulse API** | [`api/goldilocks-pulse.js`](api/goldilocks-pulse.js) → `GET /api/goldilocks-pulse` |
-| **Mining rail API** | [`api/mining-rail.js`](api/mining-rail.js) → `GET /api/mining-rail` (**no public POST**) |
-| **Autopilot cron** | [`api/cron-coherence-rail.js`](api/cron-coherence-rail.js) · schedule **`*/5 * * * *`** in [`vercel.json`](vercel.json) |
-| **Libraries** | [`lib/goldilocks-pulse.mjs`](lib/goldilocks-pulse.mjs) · [`lib/mining-rail.mjs`](lib/mining-rail.mjs) · [`lib/coherence-autopilot.mjs`](lib/coherence-autopilot.mjs) |
-| **Honesty doc** | [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) |
-| **Mythos review** | [`docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md`](docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md) |
-| **Mining ops doctrine** | [`docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md`](docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md) |
-
-**Production smoke (replace host if needed):**
-
-```text
-https://www.ssvibelandiaquestfest24x365.com/coherence
-https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse
-https://www.ssvibelandiaquestfest24x365.com/api/mining-rail
-```
-
-**Vercel env (coherence only):** `COHERENCE_OPERATIONAL_ANCHOR` · `COHERENCE_AUTOPILOT` (default on) · `GOLDILOCKS_PULSE_SECRET` · `UPSTASH_REDIS_REST_URL` + `TOKEN` (optional persistence) · `CRON_SECRET` (manual cron hits only). See [`.env.example`](.env.example).
-
-**Local pulse / cron test:** `npm run cron:coherence` from repo root (with `vercel dev` or deployed APIs).
-
----
 
 ## What's here
 
@@ -71,7 +29,7 @@ https://www.ssvibelandiaquestfest24x365.com/api/mining-rail
 | **QUESTFEST surface** | Top deck + **9-layer nesting ladder** (plain-language guides) + **Goldilocks Syntheverse Beehive Residency** + ETCon + press + Look at the Sun / Under the hood + FractiAI + Valet Pru + i18n + assets | `interfaces/` · `interfaces/nesting/` |
 | **QUESTFEST Bridge (React)** | Sovereign Player: video-first deck, 30s Solenoid gate, in-flow player dock, Libretto log, **Master Music Catalog** honor pass ($16.18/mo EGS φ — **not the magazine for sale**; follow **Machote Moderno Magazine** to qualify, then honor attestation → **30 calendar days** on this browser), single-active-stream lock, **background audio for members/captain only**, playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · bundle: `interfaces/questfest-bridge/` (`npm run build:questfest-bridge`) |
 | **Lite-edge APIs** | **Client-only honor boarding** (no server JWT); optional `POST /api/export` audit when legacy token exists; heartbeat optional | `api/boarding.js` (410 — use Bridge honor flow), `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
-| **Coherence rail (Tier 0)** | Autopilot signed **Goldilocks pulses** (~10 min / new BTC tip), **read-only** mining rail, plain-speak honesty (real vs metaphor vs not on site) | `api/goldilocks-pulse.js`, `api/mining-rail.js`, `api/cron-coherence-rail.js`, `lib/goldilocks-pulse.mjs`, `lib/mining-rail.mjs`, `lib/coherence-autopilot.mjs` · surfaces: [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html), [`interfaces/hero-houdini-mythos-demonstration.html`](interfaces/hero-houdini-mythos-demonstration.html) · docs: [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md), Mythos review, mining ops |
+| **Clock-skew announcement** | Press release + Mythos whitepaper (no public mining console) | [`interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html`](interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) · [`docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md`](docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md) |
 | **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks (hood page is narrative + whitepaper CTAs; compile is not embedded) | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
 
@@ -156,10 +114,8 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **Look at the Sun:** [`interfaces/look-at-the-sun.html`](interfaces/look-at-the-sun.html) · **Under the hood:** [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html)
 - **ETCon Reno Desert** (May 28–31, 2026): `/etcon` → [`interfaces/etcon-reno-desert.html`](interfaces/etcon-reno-desert.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)
-- **Holographic Clock-Skew Vulnerability (Golden Backdoor):** `/coherence` → [`interfaces/the-coherence-project.html`](interfaces/the-coherence-project.html)
-- **Hero Houdini (display console):** `/hero-houdini` · `/houdini` · `/mythos` → [`interfaces/hero-houdini-mythos-demonstration.html`](interfaces/hero-houdini-mythos-demonstration.html)
-- **Goldilocks pulse API (read-only JSON):** `GET /api/goldilocks-pulse` · **Mining rail status:** `GET /api/mining-rail` (no public `POST`)
-- **Plain-speak honesty:** [`whitepaper-surface.html?id=coherence-plain-speak`](interfaces/whitepaper-surface.html?id=coherence-plain-speak)
+- **Clock-skew vulnerability (press release):** [`interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html`](interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) · `/coherence` redirects here
+- **Mythos whitepaper:** [`whitepaper-surface.html?id=rev-egs-hhf-mythos`](interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos)
 - **FractiAI top deck:** [`/interfaces/fractiai.html`](interfaces/fractiai.html) · `/fractiai/digital-pru` → [`interfaces/fractiai-digital-pru.html`](interfaces/fractiai-digital-pru.html)
 - **SING 13 onboarding:** `/sing13-edge-onboarding` → [`interfaces/sing13-edge-onboarding.html`](interfaces/sing13-edge-onboarding.html) (plain deck; repo stub: `SING13_EDGE_ONBOARDING.md`)
 
@@ -209,10 +165,7 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 | QUESTFEST top deck | `/` or `/interfaces/vibelandia-questfest.html` |
 | Sovereign Player | `/interfaces/questfest-bridge/` |
 | Look under the hood | `/interfaces/look-under-the-hood.html` |
-| Clock-Skew Vulnerability · Golden Backdoor | `/coherence` |
-| Goldilocks pulse | `/api/goldilocks-pulse` |
-
-**Coherence rail (plain speak):** Tier 0 publishes **real** signed receipts tied to **real** Bitcoin block cadence. It does **not** run ASIC mining or pool payouts from Vercel. Story language (φ-lock, Mythos clock-skew, sunspots) is **narrative** — see [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md). Vercel **cron** hits `/api/cron-coherence-rail` every 5 minutes (`vercel.json`).
+| Clock-skew press release | `/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html` (or `/coherence`) |
 
 Optional manual deploy: [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) (`workflow_dispatch`). Set GitHub secrets **`VERCEL_TOKEN`** (FractiAI team token), **`VERCEL_ORG_ID`**, **`VERCEL_PROJECT_ID`** from the FractiAI project settings — not the retired FractiVerse IDs.
 

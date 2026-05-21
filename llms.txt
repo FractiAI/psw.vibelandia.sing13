@@ -26,7 +26,7 @@
 - Mythos holographic review (REV-EGS-HHF-2026-007 · May 18, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos
 - Hero Houdini legal EGS mining operation: https://www.ssvibelandiaquestfest24x365.com/interfaces/hero-houdini-mythos-demonstration.html
 - EGS legal sovereign mining (OPS-EGS-BTC-2026-008): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining
-- Holographic Clock-Skew Vulnerability (Golden Backdoor φ 1.618): https://www.ssvibelandiaquestfest24x365.com/coherence
+- Holographic Clock-Skew Vulnerability (press release · May 18, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html
 - Plain speak honesty (real vs metaphor vs not on site): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=coherence-plain-speak
 - Goldilocks pulse API (signed ~10 min): https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse
 - Mining rail API (read-only · locked operational anchor): https://www.ssvibelandiaquestfest24x365.com/api/mining-rail

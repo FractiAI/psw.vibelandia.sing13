@@ -32,6 +32,7 @@ export function MediaShell() {
 
   useEffect(() => {
     hydrateSession();
+    usePlaybackStore.getState().hydratePlaybackPrefs();
     usePlaybackStore.getState().setPlaying(false);
     usePlaybackStore.getState().setTrack(null);
 
@@ -45,6 +46,7 @@ export function MediaShell() {
   const handleBoarding = async (payload: BoardingHonorPayload) => {
     const ok = await completeBoarding(payload);
     if (ok) {
+      usePlaybackStore.getState().applyPassHolderPlaybackDefaults();
       setBoardingOpen(false);
       setFairOpen(false);
       setGain(1);

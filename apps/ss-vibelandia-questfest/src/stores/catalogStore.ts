@@ -87,8 +87,10 @@ interface CatalogState {
     opts?: {
       artist?: string;
       description?: string;
+      genre?: string;
       title?: string;
       playlistIds?: string[];
+      coverFile?: File | null;
       onProgress?: (message: string) => void;
     },
   ) => Promise<{ added: number; skipped: number; addedTrackIds: string[] }>;
@@ -106,7 +108,7 @@ interface CatalogState {
       genre?: string;
       description?: string;
     },
-    opts?: { coverFile?: File | null },
+    opts?: { coverFile?: File | null; onProgress?: (message: string) => void },
   ) => Promise<void>;
   deleteTrack: (trackId: string) => Promise<void>;
   uploadTrackCover: (trackId: string, file: File) => Promise<void>;
@@ -556,6 +558,18 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       });
     }
     get().persist();
+
+    if (opts?.coverFile && newTracks.length > 0) {
+      try {
+        await get().updateTrack(newTracks[0].id, {}, {
+          coverFile: opts.coverFile,
+          onProgress: opts.onProgress,
+        });
+      } catch {
+        /* track saved; cover is optional */
+      }
+    }
+
     try {
       await get().syncLibraryFromServer();
     } catch {
@@ -594,6 +608,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   updateTrack: async (trackId, patch, opts) => {
     const prev = get().tracks[trackId];
     if (!prev) return;
+    const report = opts?.onProgress;
 
     const next: TrackDef = {
       ...prev,
@@ -610,24 +625,28 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
     const shouldSyncServer = isServerUploadConfigured() && isUserUploadTrack(trackId, prev);
 
+    report?.('Saving…');
+
     if (shouldSyncServer) {
       let posterSrc = prev.posterSrc;
       if (opts?.coverFile) {
-        posterSrc = await uploadCoverBlob(trackId, opts.coverFile);
+        posterSrc = await uploadCoverBlob(trackId, opts.coverFile, { onProgress: report });
         next.posterSrc = posterSrc;
       }
+      report?.('Syncing metadata to server…');
       const userPlaylistIds = get()
         .playlists.filter((p) => !isMasterPlaylist(p.id) && p.trackIds.includes(trackId))
         .map((p) => p.id);
-      const { track: saved } = await updateTrackOnServer(trackId, {
+      const serverPatch: Parameters<typeof updateTrackOnServer>[1] = {
         title: next.title,
         artist: next.artist,
         description: next.description,
         genre: next.genre,
         durationSec: next.durationSec,
         playlistIds: userPlaylistIds,
-        ...(posterSrc ? { posterSrc } : {}),
-      });
+      };
+      if (opts?.coverFile && posterSrc) serverPatch.posterSrc = posterSrc;
+      const { track: saved } = await updateTrackOnServer(trackId, serverPatch);
       Object.assign(next, {
         ...saved,
         id: trackId,
@@ -636,8 +655,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         downloadedLocally: prev.downloadedLocally,
         localMediaKey: prev.localMediaKey,
       });
+    } else {
+      report?.('Saving on this device…');
     }
 
+    report?.('Updating library…');
     set((s) => ({ tracks: { ...s.tracks, [trackId]: next } }));
     get().persist();
   },

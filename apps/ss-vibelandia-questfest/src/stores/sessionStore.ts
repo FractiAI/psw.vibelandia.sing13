@@ -10,6 +10,7 @@ import {
   writeLocalMonthlyHonor,
 } from '@/lib/localMonthlyHonor';
 import { clearPassToken, parsePassPayload, readPassToken } from '@/lib/mockJwt';
+import { usePlaybackStore } from '@/stores/playbackStore';
 
 const CAPTAIN_SESSION_KEY = 'qv-captain-unlocked';
 
@@ -123,6 +124,8 @@ export const useSessionStore = create<SessionState>((set) => ({
       clearPassToken();
       writeLocalMonthlyHonor(honor);
 
+      usePlaybackStore.getState().applyPassHolderPlaybackDefaults();
+
       set({
         ...load(),
         boardingBusy: false,
@@ -153,6 +156,7 @@ export const useSessionStore = create<SessionState>((set) => ({
   tryCaptainPassword: (password: string) => {
     if (!verifyCaptainPassword(password)) return false;
     writeCaptainUnlocked(true);
+    usePlaybackStore.getState().applyPassHolderPlaybackDefaults();
     set({ captainUnlocked: true });
     return true;
   },

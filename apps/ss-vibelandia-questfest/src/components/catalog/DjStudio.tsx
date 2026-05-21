@@ -9,7 +9,7 @@ import {
 import { TrackLibraryManager } from '@/components/catalog/TrackLibraryManager';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { collectMediaFiles, titleFromFileName } from '@/lib/deviceMediaScan';
-import { isServerUploadConfigured } from '@/lib/serverCatalog';
+import { COVER_MAX_BYTES, isServerUploadConfigured } from '@/lib/serverCatalog';
 import {
   filterUploadableFiles,
   formatUploadRejectSummary,
@@ -47,6 +47,8 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const [artist, setArtist] = useState(DEFAULT_ARTIST);
   const [description, setDescription] = useState('');
   const [genre, setGenre] = useState('');
+  const [coverFile, setCoverFile] = useState<File | null>(null);
+  const [coverPreview, setCoverPreview] = useState<string | undefined>();
   const [file, setFile] = useState<File | null>(null);
   const [busy, setBusy] = useState(false);
   const [statusLine, setStatusLine] = useState('Ready to upload.');
@@ -66,6 +68,12 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
 
   const handleDescriptionChange = (value: string) => {
     setDescription(value.slice(0, TRACK_DESCRIPTION_MAX));
+  };
+
+  const resetCoverPicker = () => {
+    if (coverPreview?.startsWith('blob:')) URL.revokeObjectURL(coverPreview);
+    setCoverFile(null);
+    setCoverPreview(undefined);
   };
 
   const resetFilePicker = () => {
@@ -131,12 +139,14 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     );
 
     try {
+      const applyCover = uploadable.length === 1 && coverFile;
       const { added, addedTrackIds } = await importMediaFiles(uploadable, {
         title: opts?.title,
         artist: artist.trim() || DEFAULT_ARTIST,
         description: description.trim() || undefined,
         genre: genre.trim() || undefined,
         playlistIds: [MASTER_PLAYLIST_ID],
+        coverFile: applyCover ? coverFile : undefined,
         onProgress: (line) => setStatus(line),
       });
       setActivePlaylist(MASTER_PLAYLIST_ID);
@@ -159,6 +169,8 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       setTitle('');
       setArtist(DEFAULT_ARTIST);
       setDescription('');
+      setGenre('');
+      resetCoverPicker();
       resetFilePicker();
       const playId = addedTrackIds[0];
       if (playId) {
@@ -210,6 +222,11 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   };
 
   const uploadSingleFile = async (picked: File) => {
+    if (coverFile && coverFile.size > COVER_MAX_BYTES) {
+      setStatus('Cover too large.');
+      showMsg('Cover image is over 4 MB — choose a smaller file or clear the cover.', 'error');
+      return;
+    }
     const displayTitle = title.trim() || titleFromFileName(picked.name);
 
     const { duplicates } = classifyFilesAgainstCatalog([picked], tracks);
@@ -415,8 +432,57 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               {description.length}/{TRACK_DESCRIPTION_MAX} characters
             </span>
           </label>
+          <div className="spotify-field sp-track-cover-field">
+            <span>Cover image (optional)</span>
+            <div className="sp-track-cover-row">
+              {coverPreview ? (
+                <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
+              ) : (
+                <span className="sp-track-cover-preview sp-track-cover-preview--empty" aria-hidden />
+              )}
+              <label className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
+                {coverFile ? coverFile.name : 'Choose image'}
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  className="spotify-file-pick-input"
+                  disabled={busy}
+                  onChange={(e) => {
+                    const picked = e.target.files?.[0] ?? null;
+                    if (coverPreview?.startsWith('blob:')) URL.revokeObjectURL(coverPreview);
+                    if (picked && (!picked.type.startsWith('image/') || picked.size > COVER_MAX_BYTES)) {
+                      setCoverFile(null);
+                      setCoverPreview(undefined);
+                      e.target.value = '';
+                      showMsg(
+                        picked.size > COVER_MAX_BYTES
+                          ? 'Cover image is over 4 MB — use a smaller JPEG, PNG, or WebP.'
+                          : 'Cover must be a JPEG, PNG, or WebP image.',
+                        'error',
+                      );
+                      return;
+                    }
+                    setCoverFile(picked);
+                    setCoverPreview(picked ? URL.createObjectURL(picked) : undefined);
+                    e.target.value = '';
+                  }}
+                />
+              </label>
+              {coverFile && (
+                <button
+                  type="button"
+                  className="spotify-btn spotify-btn--tiny"
+                  disabled={busy}
+                  onClick={() => resetCoverPicker()}
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+            <span className="spotify-field-hint">JPEG, PNG, or WebP · up to 4 MB · saved with the track</span>
+          </div>
           <div className="spotify-field">
-            <span>Audio (MP3 or WAV)</span>
+            <span>Audio or video</span>
             <div className="spotify-file-pick">
               <input
                 key={fileInputKey}
@@ -424,7 +490,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                 ref={fileInputRef}
                 className="spotify-file-pick-input"
                 type="file"
-                accept="audio/mpeg,audio/wav,audio/*,.mp3,.wav"
+                accept="audio/mpeg,audio/wav,audio/*,video/*,.mp3,.wav,.mp4,.mov,.webm"
                 disabled={busy}
                 onChange={(e) => {
                   const picked = e.target.files?.[0] ?? null;
@@ -502,7 +568,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                 id={multiFileInputId}
                 className="spotify-file-pick-input"
                 type="file"
-                accept="audio/mpeg,audio/wav,audio/*,.mp3,.wav"
+                accept="audio/mpeg,audio/wav,audio/*,video/*,.mp3,.wav,.mp4,.mov,.webm"
                 multiple
                 disabled={busy || !serverReady}
                 onChange={(e) => void handleMultiFilePick(e.target.files)}

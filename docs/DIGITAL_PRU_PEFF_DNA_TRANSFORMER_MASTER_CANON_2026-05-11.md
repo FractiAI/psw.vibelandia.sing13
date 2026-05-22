@@ -164,7 +164,7 @@ Within PEFF language, the **DNA transformer** converts **y** (torsional storage)
 14. PEFF reframing E = mc² (PDF) — Zenodo: https://zenodo.org/records/17333594  
 15. FractiScope live demo deep dives — Zenodo: https://zenodo.org/records/14812026  
 16. Hydrogen holographic science and intelligence — Zenodo: https://zenodo.org/records/17574903  
-17. FractiAI repository (legacy fork cited in draft) — GitHub: https://github.com/AiwonA1/FractiAI  
+17. FractiAI repository (legacy fork cited in draft) — GitHub: https://github.com/aiwona1/FractiAI  
 
 *Access dates per source draft: May 11, 2026.*
 

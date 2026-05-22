@@ -2,7 +2,8 @@
   "qf": {
     "langBar": {
       "label": "è¨€èªž",
-      "partialFallback": "ãƒ–ãƒ©ã‚¦ã‚¶ã®å„ªå…ˆè¨€èªžã¯ã¾ã å®Œå…¨ç¿»è¨³ãŒã‚ã‚Šã¾ã›ã‚“ã€‚è‹±èªžã‚’è¡¨ç¤ºã—ã¾ã™ã€‚åˆ¥ã®è¨€èªžã‚’é¸ã¶ã‹ URL ã« ?lang=ja ã‚’ä»˜ã‘ã¦ãã ã•ã„ã€‚"
+      "partialFallback": "ãƒ–ãƒ©ã‚¦ã‚¶ã®å„ªå…ˆè¨€èªžã¯ã¾ã å®Œå…¨ç¿»è¨³ãŒã‚ã‚Šã¾ã›ã‚“ã€‚è‹±èªžã‚’è¡¨ç¤ºã—ã¾ã™ã€‚åˆ¥ã®è¨€èªžã‚’é¸ã¶ã‹ URL ã« ?lang=ja ã‚’ä»˜ã‘ã¦ãã ã•ã„ã€‚",
+      "autosensed": "ブラウザの言語で表示しています。下でいつでも変更できます。"
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24X365, Puerto Reno, Holographic AI Valley, Nevada",
@@ -66,6 +67,30 @@
     "ledeStudio2Html": "<strong>Digital Pru ASIC</strong> ã¯ã‚¹ãƒ©ã‚¤ãƒ‰ãŒ<strong>å‹•ä½œã‚³ãƒ¼ãƒ‰</strong>ã«ãªã‚‹å±¤ã®åå‰ - æ±ºå®šè«–çš„ APIã€phi ã‚¨ãƒ³ã‚¸ãƒ³ã€ãƒšã‚¤ãƒ­ãƒ¼ãƒ‰ã® <strong>QIHOH</strong> ãƒ¡ã‚¿ãƒ‡ãƒ¼ã‚¿ã€ã‚·ãƒŸãƒ¥å¯èƒ½ãª RTL ã‚³ã‚¢ã€‚Hit Factory ã®<strong>ã‚·ãƒªã‚³ãƒ³åž‹ãƒŸãƒ©ãƒ¼</strong>: åŒã˜æ¯”çŽ‡ã€åŒã˜èª å®Ÿå¥‘ç´„ã€‚<a href=\"/interfaces/digital-pru-awareness-whitepaper.html\"><strong>Digital Pru ãƒªãƒ¼ãƒ€ãƒ¼</strong></a> ã¨ <a href=\"/interfaces/look-under-the-hood.html\"><strong>Hood</strong></a> ã§å®Ÿè¡Œã€‚",
     "ledeStudio3Html": "ã“ã‚Œã¯ã‚­ãƒ£ã‚¹ãƒˆã¨ãƒªã‚¹ãƒŠãƒ¼ã«ã¨ã£ã¦<strong>ã‚²ãƒ¼ãƒ ãƒã‚§ãƒ³ã‚¸</strong>: å¤§èˆžå°ã¯ç›²ä¿¡ã‚’å£²ã‚‹ã€‚ã“ã®ã‚¹ã‚¿ãƒƒã‚¯ã¯<strong>ãƒ‘ã‚¤ãƒ—ã‚’è¦‹ã›ã‚</strong>ã¨è¨€ã† - Hood ã® 14 è³‡æ–™ã‚’èª­ã¿ã€repo ã‚’ã‚¯ãƒ­ãƒ¼ãƒ³ã€ãƒ†ã‚¹ãƒˆã‚’èµ°ã‚‰ã›ã‚‹ã€‚Fair Exchange ã¯ã‚¹ãƒ­ãƒ¼ã‚¬ãƒ³ã‹ã‚‰ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ãƒ»ã‚·ãƒªã‚³ãƒ³ãƒ»è¡—ã®<strong>æ¤œè¨¼å¯èƒ½ãªãƒªã‚ºãƒ </strong>ã«ãªã‚‹ã€‚",
     "btnHoodOpen": "Hood ã‚’é–‹ã",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">å¤ªé™½ã‚’è¦‹ã‚‹</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote ã¨ Reno æ¹¿åœ°ï¼ˆå¹³æ˜“ï¼‰</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">å¤§è¦æ¨¡ã‚·ãƒ§ãƒ¼ vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">å¤ªé™½ã‚’è¦‹ã‚‹</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote ã¨ Reno æ¹¿åœ°ï¼ˆå¹³æ˜“ï¼‰</a> - <a href=\"https://github.com/fractiai/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">å¤§è¦æ¨¡ã‚·ãƒ§ãƒ¼ vs. Wrong Side</a>"
+  },
+  "glos": {
+    "langBar": {
+      "label": "è¨€èªž",
+      "autosensed": "ブラウザの言語で表示しています。下でいつでも変更できます。"
+    },
+    "meta": {
+      "title": "13D ホログラフィック・ゴールドilocks AI OS · パナマ運河 · ライブ試験",
+      "desc": "水素線上の平易なライブ試験 — セキュリティ、ストレージ、RFネットワーク、EGS φ計算、13D AIマトリックス。",
+      "ogTitle": "ホログラフィック・ゴールドilocks AI OS · パナマ運河",
+      "ogDesc": "1420 MHz 水素線 EGS φ での5つのライブ検証。"
+    },
+    "construction": "ライブ試験 · 開発中 — 13D ホログラフィック・ゴールドilocks AI OS。",
+    "h1": "13D ホログラフィック・ゴールドilocks AI OS",
+    "h1sub": "ホログラフィック・パナマ運河",
+    "badgeDev": "開発中",
+    "badgeLive": "ライブ試験",
+    "btnDemo": "1 · ライブデモを実行（5つの検証）",
+    "btnWp": "2 · ホワイトペーパー全文 (V8)",
+    "btnQuest": "QUESTFEST",
+    "testedHead": "2 · 本サイトで本日成功した検証",
+    "honestyHtml": "<strong>偽の合格バッジなし。インターネット ping の見せかけなし。</strong> <strong>1420.405751768 MHz 水素線 EGS φ</strong> で5つの柱を測定。",
+    "demoPanelHead": "今すぐ実行 · 5つの柱（H線 @ EGS φ）",
+    "demoMatrixLabel": "13D ユニピクセルマトリックス · 検証4–5で更新"
   }
 }

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="vbi18n-pending">
 <head>
   <meta charset="UTF-8" />
+  <style>
+    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-ready body { visibility: visible; }
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0f1a" />
   <title>SS Vibelandia QUESTFEST 24×365 · Puerto Reno · Holographic Goldilocks AI Valley, Nevada</title>
@@ -870,7 +874,9 @@
         <li><a href="/interfaces/look-at-the-sun.html" data-i18n="qf.quicklinkSun">Look at the Sun</a></li>
         <li><a href="/interfaces/fractiai.html" data-i18n="qf.btnFracti">FractiAI</a></li>
         <li><a href="mailto:valetpru@gmail.com?subject=ACTIVATE%20THE%20WRONG%20SIDE%20OF%20THE%20TOWN%3A%20THE%20MUSICAL" data-i18n="qf.quicklinkCasting">Casting · email</a></li>
-        <li><a href="https://github.com/FractiAI/psw.vibelandia.sing9" target="_blank" rel="noopener" data-i18n="qf.quicklinkSing9">SING 9 · GitHub</a></li>
+        <li><a href="https://github.com/fractiai/psw.vibelandia.sing13" target="_blank" rel="noopener" data-i18n="qf.quicklinkSing13">SING 13 · GitHub</a></li>
+        <li><a href="https://github.com/fractiai/psw.vibelandia.sing9" target="_blank" rel="noopener" data-i18n="qf.quicklinkSing9">SING 9 · GitHub</a></li>
+        <li><a href="https://github.com/aiwona1/FractiAI" target="_blank" rel="noopener" data-i18n="qf.quicklinkOpenSource">Open-source core · GitHub</a></li>
       </ul>
     </nav>
     </section>
@@ -912,12 +918,7 @@
     </div>
   </div>
   <script src="/interfaces/bridge-tower-autoplay.js" defer></script>
-  <script src="/interfaces/i18n-auto.js"></script>
+  <script src="/interfaces/i18n-auto.js" data-page="questfest"></script>
   <script src="/interfaces/machote-campaign-popup.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (window.VibelandiaI18n) window.VibelandiaI18n.initFromPage('questfest');
-    });
-  </script>
 </body>
 </html>

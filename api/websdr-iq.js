@@ -16,7 +16,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const { getWebSdrFrame } = await import('../lib/openwebrx-ingest.mjs');
-    const { frame, live: wasLive, stale } = await getWebSdrFrame({ live });
+    const { frame, live: wasLive, stale, captureError } = await getWebSdrFrame({ live });
 
     if (format === 'bin' && frame?.iqBase64) {
       const buf = Buffer.from(frame.iqBase64, 'base64');
@@ -32,6 +32,7 @@ module.exports = async function handler(req, res) {
       ok: true,
       live: wasLive,
       stale,
+      captureError: captureError || null,
       frame,
     });
   } catch (err) {

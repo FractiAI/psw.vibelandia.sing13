@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="vbi18n-pending">
 <head>
   <meta charset="UTF-8" />
+  <style>
+    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-ready body { visibility: visible; }
+  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#06080d" />
   <title>Look Under the Hood · This is operational · SS Vibelandia QUESTFEST</title>
@@ -41,7 +45,7 @@
 </head>
 <body>
   <main class="deck-wrap">
-    <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
+    <a class="deck-back" href="vibelandia-questfest.html" data-i18n="hood.deckBack">&larr; QUESTFEST top deck</a>
 
     <nav class="deck-skin-nav" aria-label="Site">
       <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
@@ -61,13 +65,13 @@
     <img class="deck-hero-img" src="images/look-hood-engine.png" alt="Engine room of the Sonic Ship." width="1200" height="675" loading="eager" decoding="async" />
 
     <div class="deck-case" id="case">
-      <h2>This is operational — today</h2>
-      <p>
+      <h2 data-i18n="hood.caseHead">This is operational — today</h2>
+      <p data-i18n-html="hood.caseP1Html">
         You can <strong>listen</strong> on <strong>Capitan's Bridge</strong>, get a <strong>members pass</strong> on honor ($16.18/mo),
         <strong>upload</strong> tracks, and use the catalog without reading a single paper. The ship is live on this website —
         not a slide deck, not a promise for later.
       </p>
-      <p>
+      <p data-i18n="hood.caseP2">
         The center stays thin: small pipes that verify and route. Your pass, playlists, and taste stay on <strong>your device</strong>.
         That is the operational contract.
       </p>
@@ -164,14 +168,15 @@
     </ul>
 
     <div class="deck-btn-row" style="margin-top: 2rem;">
-      <a class="deck-btn deck-btn--gold" href="questfest-bridge/#/bridge">Listen now</a>
-      <a class="deck-btn deck-btn--ghost" href="look-at-the-sun.html">Look at the Sun · proof deck</a>
+      <a class="deck-btn deck-btn--gold" href="questfest-bridge/#/bridge" data-i18n="hood.btnListen">Listen now</a>
+      <a class="deck-btn deck-btn--ghost" href="look-at-the-sun.html" data-i18n="hood.btnSun">Look at the Sun · proof deck</a>
     </div>
 
-    <p class="deck-foot">
+    <p class="deck-foot" data-i18n-html="hood.footHtml">
       <a href="vibelandia-questfest.html">QUESTFEST top deck</a> ·
       <a href="nesting/nest-dph-gpu.html">DPH-GPU nesting guide</a>
     </p>
   </main>
+  <script src="/interfaces/i18n-auto.js" data-page="hood"></script>
 </body>
 </html>

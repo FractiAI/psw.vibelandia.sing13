@@ -11,7 +11,7 @@ import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
-import { isVideoTrack } from '@/lib/isVideoTrack';
+import { isVideoTrack, playbackUrlForTrack } from '@/lib/isVideoTrack';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
@@ -115,7 +115,7 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
 
   const play = (id: string) => {
     const tr = getTrack(id);
-    if (!tr?.src && !tr?.videoSrc) return;
+    if (!tr || !playbackUrlForTrack(tr)) return;
     setActivePlaylist(activePlaylistId);
     setTrack(id);
     setPlaying(true);
@@ -354,19 +354,6 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
                     {active && isPlaying ? <span className="sp-eq">♪</span> : displayIndex + 1}
 
                   </span>
-
-                  {tr.posterSrc ? (
-                    <img
-                      className="sp-track-cover-thumb"
-                      src={tr.posterSrc}
-                      alt=""
-                      width={40}
-                      height={40}
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span className="sp-track-cover-thumb sp-track-cover-thumb--empty" aria-hidden />
-                  )}
 
                   <button
 

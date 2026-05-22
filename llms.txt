@@ -78,13 +78,14 @@ For anything outside the QUESTFEST nest — heavy API serverless routes, hive, s
 
 - SING 9 landing: https://psw-vibelandia-sing9.vercel.app/
 - SING 9 vibers menu: https://psw-vibelandia-sing9.vercel.app/interfaces/vibers-menu.html
-- SING 9 GitHub: https://github.com/FractiAI/psw.vibelandia.sing9
+- SING 9 GitHub: https://github.com/fractiai/psw.vibelandia.sing9
 
 ## Sister repos
 
-- FractiAI/digital-pru — runnable Digital Pru app: https://github.com/FractiAI/digital-pru
-- FractiAI/psw.vibelandia.sing9 — parent edge: https://github.com/FractiAI/psw.vibelandia.sing9
-- FractiAI/psw.vibelandia.sing13 — this edge: https://github.com/FractiAI/psw.vibelandia.sing13
+- FractiAI/digital-pru — runnable Digital Pru app: https://github.com/fractiai/digital-pru
+- FractiAI/psw.vibelandia.sing9 — parent edge: https://github.com/fractiai/psw.vibelandia.sing9
+- fractiai/psw.vibelandia.sing13 — this edge: https://github.com/fractiai/psw.vibelandia.sing13
+- aiwona1/FractiAI — open-source core: https://github.com/aiwona1/FractiAI
 
 ---
 

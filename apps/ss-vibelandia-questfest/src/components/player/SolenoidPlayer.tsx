@@ -3,6 +3,7 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistStore } from '@/stores/playlistStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { KillReason } from '@/hooks/useStreamLock';
+import { isVideoTrack, playbackUrlForTrack } from '@/lib/isVideoTrack';
 
 const GATE_SEC = 29;
 const FADE_START = 28.85;
@@ -42,7 +43,7 @@ export function SolenoidPlayer({
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const pl = getActivePlaylist();
   const solenoidActive = pl?.kind === 'sovereign' && !isPassenger;
-  const isVideo = !!track?.videoSrc;
+  const isVideo = isVideoTrack(track);
 
   useEffect(() => {
     if (killReason === 'vessel_switch' || killReason === 'tab_preempt') {
@@ -56,13 +57,10 @@ export function SolenoidPlayer({
 
     gateArmedRef.current = true;
     setError(null);
-    if (isVideo && el instanceof HTMLVideoElement) {
-      el.src = track.videoSrc!;
-      el.load();
-    } else {
-      el.src = track.src;
-      el.load();
-    }
+    const url = playbackUrlForTrack(track);
+    if (!url) return;
+    el.src = url;
+    el.load();
     el.volume = gain;
 
     const onTime = () => {

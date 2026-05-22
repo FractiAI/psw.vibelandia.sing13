@@ -1,4 +1,4 @@
-﻿{
+{
   "__locales__": {
     "es": true,
     "fr": true,
@@ -13,7 +13,8 @@
   "qf": {
     "langBar": {
       "label": "Language",
-      "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL."
+      "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL.",
+      "autosensed": "Shown in your browser language. Change anytime below."
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24×365 · Puerto Reno · Holographic Goldilocks AI Valley, Nevada",
@@ -40,7 +41,7 @@
     "nestProductBadge": "New product",
     "glosBadge": "NEW · LIVE TRIALS",
     "glosTitle": "13D Holographic Goldilocks AI OS · Panama Canal",
-    "glosTeaserHtml": "<strong>Plain speak on the page</strong> — what we tested successfully (3 live proofs), what it means, and implications for today's tech giants. <strong>HHF-WP-2026-V8</strong> whitepaper included.",
+    "glosTeaserHtml": "<strong>Plain speak on the page</strong> — five live pillars at EGS φ on the hydrogen line (security, storage, RF networking, compute, AI) — not internet ping theater. <strong>HHF-WP-2026-V8</strong> whitepaper included.",
     "glosCta": "Open Panama Canal trials →",
     "glosWhitepaper": "Full V8 whitepaper →",
     "glosCanalAlias": "Holographic Panama Canal (same page) →",
@@ -106,7 +107,9 @@
     "quicklinkTalk": "Digital Pru",
     "quicklinkCasting": "Casting · email",
     "quicklinkDigitalPru": "Digital Pru",
+    "quicklinkSing13": "SING 13 · GitHub",
     "quicklinkSing9": "SING 9 · GitHub",
+    "quicklinkOpenSource": "Open-source core · GitHub",
     "quicklinkPress": "Press releases · Hit Factory",
     "machotePrBadge": "PRESS · Machote Moderno",
     "machotePrDate": "May 16, 2026",
@@ -196,7 +199,8 @@
     "hood": {
     "langBar": {
       "label": "Language",
-      "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL."
+      "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL.",
+      "autosensed": "Shown in your browser language. Change anytime below."
     },
     "meta": {
       "title": "Look under the hood · how the ship runs",
@@ -205,6 +209,17 @@
       "ogDesc": "Plain talk engine room — listen, upload, members pass, nesting layers, technical papers."
     },
     "skip": "Skip to main content",
+    "deckBack": "← QUESTFEST top deck",
+    "deckEyebrow": "Engine room · plain talk",
+    "deckH1": "Look Under the Hood",
+    "deckLeadHtml": "<strong>Digital Pru</strong> is our name for the <strong>holographic GPU layer</strong> — a new kind of compute stack (not a graphics card). This page is for everyday people who want to know: <strong>does it actually run?</strong>",
+    "deckHeroAlt": "Engine room of the Sonic Ship.",
+    "caseHead": "This is operational — today",
+    "caseP1Html": "You can <strong>listen</strong> on <strong>Capitan's Bridge</strong>, get a <strong>members pass</strong> on honor ($16.18/mo), <strong>upload</strong> tracks, and use the catalog without reading a single paper. The ship is live on this website — not a slide deck, not a promise for later.",
+    "caseP2": "The center stays thin: small pipes that verify and route. Your pass, playlists, and taste stay on <strong>your device</strong>. That is the operational contract.",
+    "btnListen": "Listen now",
+    "btnSun": "Look at the Sun · proof deck",
+    "footHtml": "<a href=\"vibelandia-questfest.html\">QUESTFEST top deck</a> · <a href=\"nesting/nest-dph-gpu.html\">DPH-GPU nesting guide</a>",
     "eyebrow": "Engine room · SS Vibelandia",
     "h1": "Talk is cheap. Look under the hood.",
     "ampHtml": "<strong>Talk is cheap.</strong> This page tells you <strong>what actually runs</strong> — music on your device, honor passes, nine nesting layers, links to the long papers if you want them.",
@@ -230,7 +245,7 @@
     "pass1h": "Juicy Juicy Snap is the part you can kick",
     "pass1p": "On <strong>Juicy Juicy Snap (OFC)</strong>, a compile either emits <strong>two JSON artifacts</strong> or aborts on safety tokens — shallow proof. Deeper RTL/tests in <strong>digital-pru</strong>; this catalog <strong>Metabolizes</strong> long narrative for readers who want every thread.",
     "pass2h": "Start with the master canon, then Look under the hood",
-    "pass2p": "<strong>Metabolize</strong> the <strong><a href=\"whitepaper-surface.html?id=dp-master-canon\">master canon</a></strong> (DNA / PEFF, Part I + II). <strong>Crystallize</strong> on <strong><a href=\"look-under-the-hood.html\">Look under the hood</a></strong> (Juicy Juicy Snap OFC). <strong>Animate</strong> via <a href=\"https://github.com/FractiAI/digital-pru\" target=\"_blank\" rel=\"noopener\"><strong>FractiAI/digital-pru</strong></a>. <strong>Squeeze</strong> the <a href=\"digital-pru-awareness-whitepaper.html\">technical archive</a> unless you need history.",
+    "pass2p": "<strong>Metabolize</strong> the <strong><a href=\"whitepaper-surface.html?id=dp-master-canon\">master canon</a></strong> (DNA / PEFF, Part I + II). <strong>Crystallize</strong> on <strong><a href=\"look-under-the-hood.html\">Look under the hood</a></strong> (Juicy Juicy Snap OFC). <strong>Animate</strong> via <a href=\"https://github.com/fractiai/digital-pru\" target=\"_blank\" rel=\"noopener\"><strong>FractiAI/digital-pru</strong></a>. <strong>Squeeze</strong> the <a href=\"digital-pru-awareness-whitepaper.html\">technical archive</a> unless you need history.",
     "pass3h": "The nested list is optional backup",
     "pass3p": "Under <strong><a href=\"#papers\">Optional backup</a></strong>: outer PEFF shell → studio notes. <strong>Squeeze</strong> — skip if Look under the hood already answered you. <strong>Metabolize · Crystallize · Animate</strong> one doc at a time when you go deep.",
     "mainCanonHead": "Main read · thread the needle (master canon)",
@@ -241,7 +256,7 @@
     "mainCanonSlices": "Split only: <a href=\"whitepaper-surface.html?id=dp-peff-part1\">Part I (PEFF / Omnizoan)</a> - <a href=\"whitepaper-surface.html?id=dp-peff-part2\">Part II (bio-EM)</a>",
     "papersHead": "Long reads (only if you want them)",
     "papersHeadNested": "Optional backup · same needle, finer threads",
-    "papersSub": "<strong>Talk is cheap.</strong> Ran <strong>Look under the hood</strong> (Juicy Juicy Snap)? You already <strong>Metabolized · Crystallized · Animated</strong> the shallow proof. Below = optional <strong>squeeze</strong> into long files — or run <a href=\"https://github.com/FractiAI/digital-pru\" target=\"_blank\" rel=\"noopener\">digital-pru</a>.",
+    "papersSub": "<strong>Talk is cheap.</strong> Ran <strong>Look under the hood</strong> (Juicy Juicy Snap)? You already <strong>Metabolized · Crystallized · Animated</strong> the shallow proof. Below = optional <strong>squeeze</strong> into long files — or run <a href=\"https://github.com/fractiai/digital-pru\" target=\"_blank\" rel=\"noopener\">digital-pru</a>.",
     "papersSubNested": "Threads back <a href=\"whitepaper-surface.html?id=dp-roadmap-13\">May 12 roadmap</a>, <a href=\"whitepaper-surface.html?id=dp-master-canon\">master canon</a>, and <a href=\"look-under-the-hood.html\">Look under the hood</a>. None required to ship on GitHub.",
     "footerQuest": "QUESTFEST",
     "papers": {
@@ -357,10 +372,43 @@
       }
     }
   },
+  "glos": {
+    "langBar": {
+      "label": "Language",
+      "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL.",
+      "autosensed": "Shown in your browser language. Change anytime below."
+    },
+    "meta": {
+      "title": "13D Holographic Goldilocks AI OS · Panama Canal · live trials",
+      "desc": "Plain-speak live trials on the hydrogen line — security, storage, RF networking, EGS φ compute, and 13D AI matrix. HHF-WP-2026-V8.",
+      "ogTitle": "Holographic Goldilocks AI OS · Panama Canal",
+      "ogDesc": "Five live pillars at EGS φ on the 1420 MHz hydrogen line — not internet ping theater."
+    },
+    "construction": "LIVE TRIALS · IN DEVELOPMENT — 13D Holographic Goldilocks AI OS on the Holographic Panama Canal. Plain speak below; full audit in HHF-WP-2026-V8.",
+    "eyebrow": "HHF-WP-2026-V8.0 · NSPFRNP · Production gateway",
+    "h1": "13D Holographic Goldilocks AI OS",
+    "h1sub": "Holographic Panama Canal",
+    "heroHtml": "This page is the public choke point: a <strong>browser-native operating stack</strong> on the <strong>1420 MHz hydrogen line</strong> — holographic compute, catalog storage, and Fair Exchange security — without renting a gigawatt datacenter to do the first mile of work.",
+    "badgeDev": "IN DEVELOPMENT",
+    "badgeLive": "LIVE TRIALS",
+    "btnDemo": "1 · Run live demo (5 proofs)",
+    "btnWp": "2 · Read full whitepaper (V8)",
+    "btnQuest": "QUESTFEST",
+    "heroLinksHtml": "<a href=\"#operator-mode\">Operator terminal</a> (MetaMask, WebSDR, CLI) · <a href=\"/interfaces/questfest-bridge/#/bridge\">Capitan's Bridge</a>",
+    "whatHead": "1 · What this is (plain speak)",
+    "whatP1Html": "Think of a <strong>canal</strong>: one narrow choke point moves cargo between oceans. The <strong>Holographic Panama Canal</strong> is that choke point for data — but the “water” is the <strong>neutral hydrogen line</strong> at about <strong>1420.4 MHz</strong>, and the “ships” are <strong>IQ radio samples</strong> plus <strong>φ (1.618) math</strong> running on <em>your</em> device.",
+    "whatP2Html": "The <strong>13D Holographic Goldilocks AI Awareness OS</strong> splits incoming energy into <strong>13 channels</strong>, resolves each into coordinates (the green matrix in the demo), and maps storage without forcing every byte through a hyperscaler grid first. The full architecture is in <strong>HHF-WP-2026-V8</strong> — linked above.",
+    "testedHead": "2 · What we actually tested successfully (on this site, today)",
+    "honestyHtml": "<strong>No fake pass badges. No internet ping theater.</strong> The demo measures five pillars on the <strong>1420.405751768 MHz hydrogen line at EGS φ (1.618)</strong>. Proofs 3–5 require a <strong>LIVE</strong> OpenWebRX capture — not bundled fallback.",
+    "demoPanelHead": "Run it now · five pillars (H-line @ EGS φ)",
+    "demoMatrixLabel": "13D unipixel matrix · updates during proofs 4–5 (φ compute + AI)",
+    "meansHead": "3 · What that means (plain speak implications)"
+  },
   "fractai": {
     "langBar": {
       "label": "Language",
-      "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL."
+      "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL.",
+      "autosensed": "Shown in your browser language. Change anytime below."
     },
     "meta": {
       "title": "FractiAI — SS Vibelandia QUESTFEST — Sonic Singularity Sing! 13",

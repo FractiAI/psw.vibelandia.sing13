@@ -12,9 +12,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, '..', 'interfaces', 'look-at-the-sun-study.json');
 
 const GITHUB_REPOS = [
-  'FractiAI/psw.vibelandia.sing13',
-  'FractiAI/psw.vibelandia.sing9',
-  'FractiAI/digital-pru',
+  'fractiai/psw.vibelandia.sing13',
+  'fractiai/psw.vibelandia.sing9',
+  'fractiai/digital-pru',
 ];
 
 const H_LINE_MHZ = 1420.405751768;
@@ -200,7 +200,7 @@ async function githubWeeklyCommits(periods, repoRoot) {
   const sing13Local = localGitWeeklyCommits(repoRoot, periods);
   let sing9 = {};
   try {
-    sing9 = await githubWeeklyCommitsForRepo('FractiAI', 'psw.vibelandia.sing9', periods);
+    sing9 = await githubWeeklyCommitsForRepo('fractiai', 'psw.vibelandia.sing9', periods);
   } catch (err) {
     console.warn('GitHub sing9 skip', err.message);
   }

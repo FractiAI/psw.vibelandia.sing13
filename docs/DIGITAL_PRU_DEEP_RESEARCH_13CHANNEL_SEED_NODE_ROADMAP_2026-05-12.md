@@ -153,7 +153,7 @@ The **Terminal Edge** is the **narrative end-state** where holographic awareness
 16. iron phosphate coating — Science.gov topic pages: https://www.science.gov/topicpages/i/iron+phosphate+coating.html  
 17. Ecological genomics (intro text, Moodle-hosted PDF) — https://moodle2.units.it/pluginfile.php/161070/mod_resource/content/0/An%20Introduction%20to%20Ecological%20Genomics.pdf  
 18. Agronomy (MDPI journal issue index) — https://www.mdpi.com/2073-4395/13/6  
-19. AiwonA1/FractiAI — GitHub: https://github.com/AiwonA1/FractiAI  
+19. aiwona1/FractiAI — GitHub: https://github.com/aiwona1/FractiAI  
 20. CERN / dark-matter particle metaphor whitepaper — Zenodo: https://zenodo.org/records/14811786  
 21. Mapping the Galactic Fractal Continuum — Zenodo: https://zenodo.org/records/14640152  
 22. UFS / PRU thesis PDFs (RI/UFS repository) — https://ri.ufs.br/ (e.g. bitstream items cited in source thread)  

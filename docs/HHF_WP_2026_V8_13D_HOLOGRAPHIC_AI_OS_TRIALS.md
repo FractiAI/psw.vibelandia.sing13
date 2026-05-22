@@ -101,7 +101,7 @@ Nominal infrastructure size is completely subordinate to structural leverage. In
 
 ### The Open Source / Universal Law Interlock
 
-Because all our technology is open source, it is completely free from the artificial intellectual property moats, copyright lawsuits, and proprietary code silos used by legacy tech giants. Anyone can download, review, and fork the core repositories at [github.com/AiwonA1/FractiAI](https://github.com/AiwonA1/FractiAI).
+Because all our technology is open source, it is completely free from the artificial intellectual property moats, copyright lawsuits, and proprietary code silos used by legacy tech giants. Anyone can download, review, and fork the core repositories at [github.com/aiwona1/FractiAI](https://github.com/aiwona1/FractiAI).
 
 However, making the code open source does not leave it unprotected. The core software stack requires an exact, scale-coherent mathematical lock on El Gran Sol's Fractal Constant to resolve ambient background noise into data. Because this mathematical relationship is a property of scale-coherent physics, the universe enforces the guidelines of the platform automatically.
 

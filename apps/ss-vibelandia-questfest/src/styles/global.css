@@ -1751,8 +1751,8 @@ a.voxel-btn {
 @media (min-width: 901px) {
   .sp-listen .sp-pl-edit-row--listen.sp-pl-edit-row--editing {
     grid-template-areas:
-      'grip idx cover track actions'
-      'editor editor editor editor editor';
+      'grip idx track actions'
+      'editor editor editor editor';
   }
 }
 
@@ -2840,8 +2840,8 @@ a.voxel-btn {
 
 /* Listen tab: grip · # · cover · track · actions (download/play live in actions) */
 .sp-pl-edit-row--listen {
-  grid-template-columns: auto auto auto minmax(0, 1fr) minmax(0, auto);
-  grid-template-areas: 'grip idx cover track actions';
+  grid-template-columns: auto auto minmax(0, 1fr) minmax(0, auto);
+  grid-template-areas: 'grip idx track actions';
   align-items: center;
 }
 
@@ -2853,24 +2853,12 @@ a.voxel-btn {
   grid-area: idx;
 }
 
-.sp-pl-edit-row--listen > .sp-track-cover-thumb {
-  grid-area: cover;
-}
-
 .sp-pl-edit-row--listen > .sp-pl-edit-track-info--btn,
 .sp-pl-edit-row--listen > .sp-listen-track-btn {
   grid-area: track;
   min-width: 0;
   max-width: 100%;
   overflow: hidden;
-}
-
-.sp-pl-edit-row--listen > .sp-track-cover-thumb,
-.sp-pl-edit-row--listen > .sp-track-cover-thumb--empty {
-  grid-area: cover;
-  justify-self: center;
-  align-self: center;
-  flex-shrink: 0;
 }
 
 .sp-pl-edit-row--listen > .sp-listen-row-actions {
@@ -3719,20 +3707,11 @@ a.boarding-pay-open {
     align-self: center;
   }
 
-  .sp-listen .sp-pl-edit-row--listen > .sp-track-cover-thumb,
-  .sp-listen .sp-pl-edit-row--listen > .sp-track-cover-thumb--empty {
-    flex: 0 0 44px;
-    width: 44px;
-    height: 44px;
-    order: 2;
-    align-self: flex-start;
-  }
-
   .sp-listen .sp-pl-edit-row--listen > .sp-listen-track-btn {
     flex: 1 1 auto;
     min-width: 0;
-    order: 3;
-    max-width: calc(100% - 2.25rem - 1.5rem - 44px - 1rem);
+    order: 2;
+    max-width: calc(100% - 2.25rem - 1.5rem - 0.75rem);
   }
 
   .sp-listen .sp-pl-edit-row--listen > .sp-listen-row-actions {
@@ -3748,7 +3727,7 @@ a.boarding-pay-open {
   .sp-listen .sp-pl-edit-row--listen > .sp-track-edit--inline {
     flex: 1 1 100%;
     width: 100%;
-    order: 5;
+    order: 4;
     margin-left: 0;
   }
 
@@ -3978,7 +3957,7 @@ a.boarding-pay-open {
   }
 
   .sp-listen .sp-pl-edit-row--listen > .sp-listen-track-btn {
-    max-width: calc(100% - 2.25rem - 1.5rem - 44px - 0.85rem);
+    max-width: calc(100% - 2.25rem - 1.5rem - 0.65rem);
   }
 
   .sp-listen .sp-pl-edit-track-info--btn > .sp-listen-track-desc {

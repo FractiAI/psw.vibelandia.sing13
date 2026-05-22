@@ -1,6 +1,7 @@
 import { loadBlob, saveBlob } from '@/lib/catalogPersistence';
 import { markTrackDownloaded } from '@/lib/catalogPrefs';
 import type { TrackDef } from '@/lib/catalogTypes';
+import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 
 const blobUrlCache = new Map<string, string>();
 
@@ -29,7 +30,7 @@ function revokeUrl(trackId: string) {
 
 /** Stream URL first (Spotify-style). IndexedDB only when user explicitly downloaded. */
 export async function resolvePlaybackUrl(track: TrackDef): Promise<string> {
-  const stream = track.videoSrc || track.src;
+  const stream = playbackUrlForTrack(track);
 
   if (!track.downloadedLocally && !track.localMediaKey) {
     if (!stream) throw new Error('no_playback_source');

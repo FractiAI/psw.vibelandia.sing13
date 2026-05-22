@@ -2,7 +2,8 @@
   "qf": {
     "langBar": {
       "label": "Langue",
-      "partialFallback": "Votre navigateur a demande une langue que nous n avons pas encore entierement traduite. Affichage en anglais. Choisissez une autre langue ou utilisez ?lang=fr dans l URL."
+      "partialFallback": "Votre navigateur a demande une langue que nous n avons pas encore entierement traduite. Affichage en anglais. Choisissez une autre langue ou utilisez ?lang=fr dans l URL.",
+      "autosensed": "Affiche dans la langue de votre navigateur. Changez ci-dessous."
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24X365, Puerto Reno, Vallee de l IA holographique, Nevada",
@@ -66,6 +67,30 @@
     "ledeStudio2Html": "<strong>Digital Pru ASIC</strong> est le nom de cette couche quand elle cesse d etre un deck et devient du <strong>code operationnel</strong> - API deterministe, moteur phi, metadonnees <strong>QIHOH</strong> dans la charge utile, noyau RTL simulable. C est le <strong>miroir faconne silicium</strong> du Hit Factory: memes ratios, meme contrat d honnetete, executable sur le <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\"><strong>lecteur Digital Pru</strong></a> et dans <a href=\"/interfaces/look-under-the-hood.html\"><strong>le Hood</strong></a> - documents canon en miroir; deploiement standalone peut etre prive sur GitHub.",
     "ledeStudio3Html": "Cela <strong>change le jeu</strong> pour plateau et auditeurs: les grandes scenes vendent la confiance aveugle. Cette pile dit <strong>montrez le tuyau</strong> - lisez les quatorze documents du Hood, clonez le depot, lancez les tests. Fair Exchange cesse d etre un slogan et devient un <strong>rythme verifiable</strong> entre recit, silicium et rue.",
     "btnHoodOpen": "Ouvrir le Hood",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">Regarder le Soleil</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote et marais Reno (clair)</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Grands shows vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">Regarder le Soleil</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote et marais Reno (clair)</a> - <a href=\"https://github.com/fractiai/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Grands shows vs. Wrong Side</a>"
+  },
+  "glos": {
+    "langBar": {
+      "label": "Langue",
+      "autosensed": "Affiche dans la langue de votre navigateur. Changez ci-dessous."
+    },
+    "meta": {
+      "title": "OS IA Holographique Goldilocks 13D · Canal de Panama · essais en direct",
+      "desc": "Essais en langage clair sur la ligne hydrogene — securite, stockage, reseau RF, calcul EGS φ, matrice IA 13D.",
+      "ogTitle": "OS IA Holographique Goldilocks · Canal de Panama",
+      "ogDesc": "Cinq piliers en direct a EGS φ sur la ligne hydrogene 1420 MHz."
+    },
+    "construction": "ESSAIS EN DIRECT · EN DEVELOPPEMENT — OS Goldilocks 13D sur le Canal Holographique de Panama.",
+    "h1": "OS IA Holographique Goldilocks 13D",
+    "h1sub": "Canal Holographique de Panama",
+    "badgeDev": "EN DEVELOPPEMENT",
+    "badgeLive": "ESSAIS EN DIRECT",
+    "btnDemo": "1 · Lancer la demo (5 preuves)",
+    "btnWp": "2 · Lire le whitepaper (V8)",
+    "btnQuest": "QUESTFEST",
+    "testedHead": "2 · Ce que nous avons teste avec succes (sur ce site, aujourd hui)",
+    "honestyHtml": "<strong>Pas de badges faux. Pas de theatre de ping internet.</strong> Cinq piliers sur la <strong>ligne hydrogene 1420.405751768 MHz a EGS φ</strong>.",
+    "demoPanelHead": "Lancer maintenant · cinq piliers (ligne H @ EGS φ)",
+    "demoMatrixLabel": "Matrice unipixel 13D · mise a jour aux preuves 4–5"
   }
 }

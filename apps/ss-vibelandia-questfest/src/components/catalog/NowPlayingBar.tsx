@@ -210,7 +210,10 @@ export function NowPlayingBar({
     };
 
     const onEnded = () => endedRef.current();
-    const onErr = () => setError('Could not play this file.');
+    const onErr = () => {
+      setError('Could not play this file.');
+      setPlaying(false);
+    };
 
     const detachListeners = () => {
       el.removeEventListener('timeupdate', onTime);
@@ -264,7 +267,12 @@ export function NowPlayingBar({
     }
 
     const applySrc = (url: string) => {
-      if (cancelled || !url) return;
+      if (cancelled) return;
+      if (!url) {
+        setError('No playback file for this track.');
+        setPlaying(false);
+        return;
+      }
       wiredTrackRef.current = trackId;
       el.src = url;
       el.load();

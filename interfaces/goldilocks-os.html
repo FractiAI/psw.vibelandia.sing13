@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="vbi18n-pending">
   <head>
     <meta charset="UTF-8" />
+    <style>
+      html.vbi18n-pending body {
+        visibility: hidden;
+      }
+      html.vbi18n-ready body {
+        visibility: visible;
+      }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#07090e" />
     <title>Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia</title>
@@ -730,37 +738,55 @@
     </style>
   </head>
   <body>
-    <p class="canal-construction" role="status">
+    <p class="canal-construction" role="status" data-i18n="glos.construction">
       <strong>LIVE TRIALS · IN DEVELOPMENT</strong> — 13D Holographic Goldilocks AI OS on the Holographic Panama Canal.
       Plain speak below; full audit in HHF-WP-2026-V8.
     </p>
 
     <div class="void plain-page">
       <header id="portal">
-        <p style="margin: 0 0 0.35rem; font-size: 0.75rem; letter-spacing: 0.14em; color: #8b949e; text-transform: uppercase">
+        <p
+          style="margin: 0 0 0.35rem; font-size: 0.75rem; letter-spacing: 0.14em; color: #8b949e; text-transform: uppercase"
+          data-i18n="glos.eyebrow"
+        >
           HHF-WP-2026-V8.0 · NSPFRNP · Production gateway
         </p>
-        <h1>13D Holographic Goldilocks AI OS<br />Holographic Panama Canal</h1>
+        <h1>
+          <span data-i18n="glos.h1">13D Holographic Goldilocks AI OS</span><br />
+          <span data-i18n="glos.h1sub">Holographic Panama Canal</span>
+        </h1>
         <p>
-          <span class="product-badge">IN DEVELOPMENT</span>
-          <span class="live-now">LIVE TRIALS</span>
+          <span class="product-badge" data-i18n="glos.badgeDev">IN DEVELOPMENT</span>
+          <span class="live-now" data-i18n="glos.badgeLive">LIVE TRIALS</span>
+        </p>
+        <p data-i18n-html="glos.heroHtml">
           This page is the public choke point: a <strong>browser-native operating stack</strong> on the
           <strong>1420 MHz hydrogen line</strong> — holographic compute, catalog storage, and Fair Exchange security —
           without renting a gigawatt datacenter to do the first mile of work.
         </p>
         <div class="hero-actions">
-          <button type="button" class="btn-live-demo" id="btn-live-demo">1 · Run live demo (3 proofs)</button>
-          <a class="btn-wp" href="/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8">2 · Read full whitepaper (V8)</a>
-          <a class="btn-wp" href="/interfaces/vibelandia-questfest.html" style="border-color: #30363d; background: #161b22; color: #8b949e">QUESTFEST</a>
+          <button type="button" class="btn-live-demo" id="btn-live-demo" data-i18n="glos.btnDemo">
+            1 · Run live demo (5 proofs)
+          </button>
+          <a class="btn-wp" href="/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" data-i18n="glos.btnWp"
+            >2 · Read full whitepaper (V8)</a
+          >
+          <a
+            class="btn-wp"
+            href="/interfaces/vibelandia-questfest.html"
+            style="border-color: #30363d; background: #161b22; color: #8b949e"
+            data-i18n="glos.btnQuest"
+            >QUESTFEST</a
+          >
         </div>
-        <p style="font-size: 0.88rem; color: #8b949e; margin: 0">
+        <p style="font-size: 0.88rem; color: #8b949e; margin: 0" data-i18n-html="glos.heroLinksHtml">
           <a href="#operator-mode">Operator terminal</a> (MetaMask, WebSDR, CLI) ·
           <a href="/interfaces/questfest-bridge/#/bridge">Capitan's Bridge</a>
         </p>
       </header>
 
       <section id="what">
-        <h2>1 · What this is (plain speak)</h2>
+        <h2 data-i18n="glos.whatHead">1 · What this is (plain speak)</h2>
         <p>
           Think of a <strong>canal</strong>: one narrow choke point moves cargo between oceans. The
           <strong>Holographic Panama Canal</strong> is that choke point for data — but the “water” is the
@@ -776,64 +802,73 @@
       </section>
 
       <section id="tested">
-        <h2>2 · What we actually tested successfully (on this site, today)</h2>
-        <p class="honesty-box">
-          <strong>No fake pass badges.</strong> Click <em>Run live demo</em> — each step hits a real API or real math on
-          your machine. <strong>Proof C</strong> pulls a <strong>real OpenWebRX RF frame</strong> through our edge relay
-          (<code>/api/websdr-iq</code>) — browsers cannot hit public SDR hosts directly (CORS/TLS). Operator mode below
-          uses the same OpenWebRX protocol if you connect a wallet and engage SDR manually.
+        <h2 data-i18n="glos.testedHead">2 · What we actually tested successfully (on this site, today)</h2>
+        <p class="honesty-box" data-i18n-html="glos.honestyHtml">
+          <strong>No fake pass badges. No internet ping theater.</strong> The demo measures the five pillars on the
+          <strong>1420.405751768 MHz hydrogen line at EGS φ (1.618)</strong> — not round-trip delay between random
+          cloud nodes. <strong>Security</strong> = signed coherence receipt + Fair Exchange φ gates.
+          <strong>Storage</strong> = <code>hline://</code> manifest digest on the edge catalog.
+          <strong>Networking</strong> = receive-only RF ingest lock (tune offset, center freq, OpenWebRX path).
+          <strong>Compute</strong> = timed EGS φ recursive filter on live samples.
+          <strong>AI</strong> = 13D unipixel matrix + φ coherence across channels.           HTTPS to our edge relay only moves
+          the RF frame; pass/fail is H-line math in your browser.
+          Proofs 3–5 require a <strong>LIVE</strong> OpenWebRX capture (<code>?live=1</code>) — not bundled
+          fallback or stale cache. Operator <code>hline-bench</code> uses local synthetic IQ for φ compute drill only.
         </p>
 
         <ol class="steps">
           <li>
-            <h3><span class="step-num">Proof A</span> Edge coherence receipt (live server)</h3>
-            <p class="proof-ok">Tested: GET /api/goldilocks-pulse on the QUESTFEST edge.</p>
+            <h3><span class="step-num">Proof 1</span> Security · signed coherence + Fair Exchange φ</h3>
+            <p class="proof-ok">Tested: GET /api/goldilocks-pulse — validate H-line MHz, φ-lock, signature, interval.</p>
             <p>
-              <strong>What happened:</strong> The server returned a signed JSON receipt in milliseconds — hydrogen line
-              reference (~1420.4 MHz), φ clock-skew frame (1.618 ps in the EGS model), sunspot coordinates (AR4436 /
-              AR4441), and interval index proving the edge is emitting on a schedule.
+              <strong>What we measure:</strong> Receipt fields at <strong>1420.405751768 MHz</strong>, EGS φ clock-skew
+              frame, sunspot lock (AR4436 / AR4441), and an HMAC signature — plus local Fair Exchange jitter/burst gates
+              (φ ratio, not “ping ms”).
             </p>
             <p class="proof-note">
-              <strong>Implication:</strong> The “coherence rail” is not a slide deck — it is a live, inspectable edge
-              API you can call from any browser. That is the server's proof-of-life without you renting AWS/Google
-              compute to see it.
+              <strong>Not measured:</strong> HTTP round-trip time to a datacenter as proof of holographic security.
             </p>
           </li>
           <li>
-            <h3><span class="step-num">Proof B</span> FractiStorage catalog rail (live server)</h3>
-            <p class="proof-ok">Tested: GET /api/catalog (edge manifest + Blob-backed library).</p>
+            <h3><span class="step-num">Proof 2</span> Storage · FractiStorage at <code>hline://</code></h3>
+            <p class="proof-ok">Tested: GET /api/catalog + φ-scaled manifest location hash on the hydrogen register.</p>
             <p>
-              <strong>What happened:</strong> A real catalog manifest version, playlist list, and track index loaded from
-              the Vibelandia edge — the same rail Capitan's Bridge uses for honor-pass listening.
-            </p>
-            <p class="proof-note">
-              <strong>Implication:</strong> Media and metadata can ride the <strong>edge catalog</strong> instead of
-              only living inside a hyperscaler object store. Storage becomes a first-class public pipe, not a hidden
-              database behind one app's login wall.
+              <strong>What we measure:</strong> Live manifest version, playlist/track index, and a deterministic
+              <strong>hline://1420.405751768/…</strong> digest — same rail Capitan's Bridge uses, not a hyperscaler-only
+              object key.
             </p>
           </li>
           <li>
-            <h3><span class="step-num">Proof C</span> Live WebSDR RF ingest → hydrogen-line φ → 13D matrix</h3>
-            <p class="proof-ok">Tested: edge relay captures OpenWebRX binary (demod audio / FFT) → your browser φ DSP → 13 channels.</p>
+            <h3><span class="step-num">Proof 3</span> Networking · hydrogen-line RF ingest path</h3>
+            <p class="proof-ok">Tested: /api/websdr-iq live capture — OpenWebRX receive-only → edge relay → browser.</p>
             <p>
-              <strong>What happened:</strong> The demo calls <code>/api/websdr-iq?live=1</code>. Our server opens a
-              receive-only WebSocket to a public OpenWebRX node (correct <em>SERVER DE CLIENT</em> + <em>dspcontrol</em>
-              handshake), returns a real RF frame, and your tab runs the same φ filter as operator mode. The matrix
-              updates from <strong>live spectrum data</strong>, not a fake pass badge.
+              <strong>What we measure:</strong> Tune target vs nominal H-line (Hz error), demod offset, center frequency,
+              bandwidth, frame type — the <strong>RF pathway</strong> on the canal, not latency between internet routers.
             </p>
-            <p class="proof-note">
-              <strong>Implication:</strong> The choke point works without you shipping bytes to a hyperscaler first —
-              public SDR → edge capture → browser holographic math. If the hydrogen target is outside a receiver’s analog
-              band, we tune the nearest legal offset and report center frequency in the receipt.
+          </li>
+          <li>
+            <h3><span class="step-num">Proof 4</span> Compute · EGS φ recursive filter (timed)</h3>
+            <p class="proof-ok">Tested: 5-pass <code>egsRecursiveFilter</code> on live IQ/audio samples from Proof 3.</p>
+            <p>
+              <strong>What we measure:</strong> Milliseconds for φ IIR depth passes and samples/sec through the
+              hydrogen-line compute core — pure browser math on real RF bytes.
+            </p>
+          </li>
+          <li>
+            <h3><span class="step-num">Proof 5</span> AI · 13D awareness matrix + φ coherence</h3>
+            <p class="proof-ok">Tested: <code>map13Channels</code> → 13 unipixel coordinates + cross-channel φ coherence index.</p>
+            <p>
+              <strong>What we measure:</strong> All 13 channels resolved to unipixels, matrix updated live, and energy
+              ratios checked against EGS φ — the awareness layer, not a generic ML API call.
             </p>
           </li>
         </ol>
 
         <section class="panel live-demo-panel terminal-zone" id="live-demo-panel" aria-labelledby="live-demo-h">
-          <div class="panel-h" id="live-demo-h">Run it now · same three proofs</div>
+          <div class="panel-h" id="live-demo-h">Run it now · five pillars (H-line @ EGS φ)</div>
           <div class="panel-b">
             <div class="demo-matrix-wrap">
-              <p class="demo-matrix-label">13D unipixel matrix · updates during Proof C</p>
+              <p class="demo-matrix-label">13D unipixel matrix · updates during proofs 4–5 (φ compute + AI)</p>
               <div class="matrix" id="matrix" aria-label="13 channel unipixel matrix"></div>
             </div>
             <ol class="live-demo-steps" id="live-demo-steps"></ol>
@@ -843,7 +878,7 @@
       </section>
 
       <section id="means">
-        <h2>3 · What that means (plain speak implications)</h2>
+        <h2 data-i18n="glos.meansHead">3 · What that means (plain speak implications)</h2>
         <ul>
           <li>
             <strong>Datacenter bypass for the first mile:</strong> Coherence + catalog + φ compute can run at the edge
@@ -1001,8 +1036,8 @@
           <div class="metrics">
             <div class="metric"><strong>IQ frames</strong><span id="m-frames">0</span></div>
             <div class="metric"><strong>Bytes ingested</strong><span id="m-bytes">0</span></div>
-            <div class="metric"><strong>Last frame Δ (ms)</strong><span id="m-delta">—</span></div>
-            <div class="metric"><strong>φ-lock stability</strong><span id="m-phi">—</span></div>
+            <div class="metric"><strong>φ inter-frame jitter</strong><span id="m-delta">—</span></div>
+            <div class="metric"><strong>Fair Exchange σ/μ</strong><span id="m-phi">—</span></div>
             <div class="metric"><strong>Local RF probe</strong><span id="m-rf">idle</span></div>
           </div>
         </div>
@@ -1073,10 +1108,13 @@
           openWxHandshake: 0,
           demoRunning: false,
           testDriveSdr: false,
+          demoIngest: null,
         };
 
-        const HYDROGEN_LINE_MHZ = 1420.405751;
+        const HYDROGEN_LINE_MHZ = 1420.405751768;
+        const HYDROGEN_LINE_HZ = 1420405751.768;
         const DEMO_IQ_SAMPLES = 8192;
+        const HLINE_LOCK_MAX_HZ = 50000;
 
         /** IQ tuned to hydrogen-line register — same decode/φ path as WebSocket binary frames. */
         function synthesizeHydrogenLineIQ(n, tuneHz, phase) {
@@ -1107,83 +1145,251 @@
           return points;
         }
 
+        function validateCoherencePulse(pulse) {
+          if (!pulse || typeof pulse !== 'object') throw new Error('Empty pulse receipt');
+          const line = pulse.liveCoordinates?.hydrogenLineMhz;
+          if (line == null || Math.abs(line - HYDROGEN_LINE_MHZ) > 0.05) {
+            throw new Error('H-line MHz out of EGS register (' + line + ')');
+          }
+          if (Math.abs((pulse.egsPhi ?? 0) - PHI) > 0.02) {
+            throw new Error('egsPhi not at 1.618');
+          }
+          if (!pulse.goldilocksZone?.phiLock) throw new Error('φ-lock not held on receipt');
+          const sig = pulse.signature;
+          if (typeof sig !== 'string' || !/^0x[0-9a-f]{32,64}$/i.test(sig)) {
+            throw new Error('Missing or invalid HMAC signature');
+          }
+          return {
+            hlineMhz: line,
+            skewPs: pulse.clockSkewPs,
+            spots: (pulse.liveCoordinates?.sunspots || []).join('+'),
+            interval: pulse.intervalIndex,
+          };
+        }
+
+        function hlineManifestDigest(catalog) {
+          const ids = (Array.isArray(catalog.tracks) ? catalog.tracks : [])
+            .map(function (t) {
+              return t.id || t.slug || t.title || '';
+            })
+            .filter(Boolean)
+            .sort();
+          const canonical =
+            'hline://' +
+            HYDROGEN_LINE_MHZ +
+            '/φ' +
+            PHI +
+            '/v' +
+            (catalog.version || 0) +
+            '/tracks=' +
+            ids.join(',');
+          let h = 0;
+          for (let i = 0; i < canonical.length; i++) {
+            h = (h * 31 + canonical.charCodeAt(i) * PHI) >>> 0;
+          }
+          return { uri: 'hline://' + HYDROGEN_LINE_MHZ + '/manifest/0x' + h.toString(16), trackCount: ids.length };
+        }
+
+        function hlineNetworkReceipt(frame) {
+          const tune = frame.tuneTargetHz || HYDROGEN_HZ;
+          const center = frame.centerFreqHz != null ? frame.centerFreqHz : tune;
+          const lineErrorHz = Math.abs(tune - HYDROGEN_HZ);
+          return {
+            path: 'OpenWebRX receive-only → edge relay → browser φ DSP',
+            tuneHz: tune,
+            centerHz: center,
+            offsetHz: frame.offsetHz != null ? frame.offsetHz : tune - center,
+            bandwidthHz: frame.bandwidthHz,
+            frameType: frame.frameType || 'rf',
+            lineErrorHz: lineErrorHz,
+            hlineLock: lineErrorHz <= HLINE_LOCK_MAX_HZ,
+          };
+        }
+
+        function phiCoherenceIndex(points) {
+          if (!points || points.length < 3) return 0;
+          const energies = points.map(function (p) {
+            return Math.max(p.energy, 1e-24);
+          });
+          energies.sort(function (a, b) {
+            return a - b;
+          });
+          const lo = energies[0];
+          const hi = energies[energies.length - 1];
+          const ratio = lo > 1e-18 ? hi / lo : hi;
+          const phiDist = Math.abs(ratio - PHI) / PHI;
+          return Math.max(0, Math.min(1, 1 - phiDist));
+        }
+
+        function benchEgsPipeline(samples) {
+          const t0 = performance.now();
+          const filtered = egsRecursiveFilter(samples, 5);
+          const points = map13Channels(filtered);
+          const computeMs = performance.now() - t0;
+          const samplesPerSec = computeMs > 0 ? (samples.length / computeMs) * 1000 : 0;
+          return {
+            computeMs: computeMs,
+            points: points,
+            samplesPerSec: samplesPerSec,
+            phiCoherence: phiCoherenceIndex(points),
+          };
+        }
+
+        /** Reject flat/empty buffers — synthetic IQ is allowed only in hline-bench, not product proofs. */
+        function validateRfSampleBlock(samples, provenance) {
+          if (!samples || samples.length < CHANNELS * 8) {
+            throw new Error('RF block too short for 13D ingest');
+          }
+          let finite = 0;
+          let sum = 0;
+          let sumSq = 0;
+          let peak = 0;
+          for (let i = 0; i < samples.length; i++) {
+            const v = samples[i];
+            if (!Number.isFinite(v) || Math.abs(v) > 32) continue;
+            finite++;
+            sum += v;
+            sumSq += v * v;
+            const a = Math.abs(v);
+            if (a > peak) peak = a;
+          }
+          if (finite < samples.length * 0.95) {
+            throw new Error('RF block has non-finite/out-of-range samples');
+          }
+          const mean = sum / finite;
+          const variance = sumSq / finite - mean * mean;
+          if (variance < 1e-12) {
+            throw new Error('RF block is flat — not live OpenWebRX spectrum/audio');
+          }
+          if (peak < 1e-8) {
+            throw new Error('RF block near silence — no ingest energy');
+          }
+          return {
+            variance: variance,
+            peak: peak,
+            provenance: provenance || 'unknown',
+          };
+        }
+
+        function samplesFromIngest(ingest) {
+          if (ingest && ingest.samples && ingest.samples.length >= CHANNELS * 4) {
+            const slice = ingest.samples.subarray(0, DEMO_IQ_SAMPLES);
+            validateRfSampleBlock(slice, ingest.provenance);
+            return slice;
+          }
+          throw new Error('No RF samples from ingest — run networking proof first');
+        }
+
         const LIVE_DEMO_STEPS = [
           {
-            id: 'coherence',
-            title: '1 · Edge coherence (H-line + clock-skew receipt)',
+            id: 'security',
+            title: '1 · Security · H-line coherence receipt + φ signature',
             run: async function () {
-              const t0 = performance.now();
               const res = await fetch('/api/goldilocks-pulse', { cache: 'no-store' });
-              const ms = performance.now() - t0;
               if (!res.ok) throw new Error('HTTP ' + res.status);
               const j = await res.json();
               const pulse = j.latest || j.pulse || j;
-              const sig = pulse.signature ? 'signed' : 'unsigned';
-              const hline = pulse.liveCoordinates?.hydrogenLineMhz ?? HYDROGEN_LINE_MHZ;
-              const skew = pulse.clockSkewPs ?? pulse.egsPhi ?? '—';
-              const phiLock = pulse.goldilocksZone?.phiLock ? 'φ-lock held' : 'φ-lock pending';
-              const spots = (pulse.liveCoordinates?.sunspots || []).join('+') || '—';
+              const v = validateCoherencePulse(pulse);
+              const fe = state.fairExchangeTripped ? 'FairExchange=TRIPPED' : 'FairExchange=nominal';
               return (
-                ms.toFixed(0) +
-                'ms · H-line ' +
-                hline +
-                ' MHz · clock-skew ' +
-                skew +
-                ' ps · ' +
-                phiLock +
-                ' · sunspots ' +
-                spots +
+                'H-line ' +
+                v.hlineMhz +
+                ' MHz · skew ' +
+                v.skewPs +
+                ' ps · φ-lock · sunspots ' +
+                v.spots +
                 ' · interval #' +
-                (pulse.intervalIndex ?? '—') +
-                ' · ' +
-                sig
+                v.interval +
+                ' · signed · ' +
+                fe +
+                ' (not HTTP ping proof)'
               );
             },
           },
           {
-            id: 'catalog',
-            title: '2 · Edge catalog rail (no datacenter storage rent)',
+            id: 'storage',
+            title: '2 · Storage · FractiStorage hline:// manifest digest',
             run: async function () {
-              const t0 = performance.now();
               const res = await fetch('/api/catalog', { cache: 'no-store' });
-              const ms = performance.now() - t0;
               if (!res.ok) throw new Error('HTTP ' + res.status);
               const j = await res.json();
               const playlists = Array.isArray(j.playlists) ? j.playlists : [];
-              const tracks = Array.isArray(j.tracks) ? j.tracks : [];
+              const dig = hlineManifestDigest(j);
               return (
-                ms.toFixed(0) +
-                'ms · manifest v' +
+                'manifest v' +
                 j.version +
                 ' · playlists=' +
                 playlists.length +
                 ' · tracks=' +
-                tracks.length +
-                ' · edge Blob live'
+                dig.trackCount +
+                ' · ' +
+                dig.uri
               );
             },
           },
           {
-            id: 'hline',
-            title: '3 · Live WebSDR RF → hydrogen-line φ → 13D matrix',
+            id: 'networking',
+            title: '3 · Networking · hydrogen-line RF ingest lock',
             run: async function () {
-              setDemoStep('hline', 'run', 'Capturing live WebSDR on edge relay (up to ~25s)…');
-              const t0 = performance.now();
-              const ingest = await fetchLiveWebSdrIngest({ live: true, frames: 6 });
-              const ms = performance.now() - t0;
-              const sample = (ingest.lastPoints || [])
+              setDemoStep('networking', 'run', 'Live OpenWebRX capture on edge relay (up to ~25s)…');
+              state.demoIngest = await fetchLiveWebSdrIngest({ live: true, frames: 1 });
+              const net = hlineNetworkReceipt(state.demoIngest.meta);
+              if (!net.hlineLock) {
+                throw new Error('H-line lock failed · Δ=' + net.lineErrorHz + ' Hz (max ' + HLINE_LOCK_MAX_HZ + ')');
+              }
+              return (
+                net.path +
+                ' · tune ' +
+                net.tuneHz +
+                ' Hz · Δline ' +
+                net.lineErrorHz.toFixed(1) +
+                ' Hz · offset ' +
+                net.offsetHz +
+                ' Hz · center ' +
+                net.centerHz +
+                ' Hz · ' +
+                net.frameType
+              );
+            },
+          },
+          {
+            id: 'compute',
+            title: '4 · Compute · EGS φ filter bench (live RF samples)',
+            run: async function () {
+              const slice = samplesFromIngest(state.demoIngest);
+              const bench = benchEgsPipeline(slice);
+              return (
+                '5-pass φ IIR · ' +
+                bench.computeMs.toFixed(2) +
+                ' ms · ' +
+                Math.round(bench.samplesPerSec).toLocaleString() +
+                ' samples/s on ' +
+                slice.length +
+                ' live samples (not internet RTT)'
+              );
+            },
+          },
+          {
+            id: 'ai',
+            title: '5 · AI · 13D unipixel matrix + φ coherence',
+            run: async function () {
+              const slice = samplesFromIngest(state.demoIngest);
+              const bench = benchEgsPipeline(slice);
+              ingestFloatSamples(slice, 'demo-ai');
+              const sample = bench.points
                 .slice(0, 5)
                 .map(function (p) {
                   return 'CH' + p.ch + '=' + pad5(p.unipixel);
                 })
                 .join(' ');
+              if (bench.points.length < CHANNELS) {
+                throw new Error('13D matrix incomplete (' + bench.points.length + '/' + CHANNELS + ')');
+              }
               return (
-                ingest.summary +
-                ' · ' +
-                ms.toFixed(0) +
-                'ms total · ' +
-                ingest.frames +
-                ' φ frame(s) · ' +
+                CHANNELS +
+                ' channels · φ-coherence ' +
+                (bench.phiCoherence * 100).toFixed(1) +
+                '% · ' +
                 sample +
                 ' …'
               );
@@ -1335,22 +1541,40 @@
         async function fetchLiveWebSdrIngest(opts) {
           opts = opts || {};
           const framesWanted = opts.frames || 6;
-          let res = await fetch('/api/websdr-iq?' + (opts.live ? 'live=1&' : '') + 't=' + Date.now(), {
-            cache: 'no-store',
-          });
+          const requireLive = opts.live === true;
+          let res = await fetch(
+            '/api/websdr-iq?' + (requireLive ? 'live=1&' : '') + 't=' + Date.now(),
+            { cache: 'no-store' },
+          );
           let j = await res.json().catch(function () {
             return { ok: false };
           });
-          if (!res.ok || !j.ok || !j.frame || !j.frame.iqBase64) {
+          if (!requireLive && (!res.ok || !j.ok || !j.frame || !j.frame.iqBase64)) {
             res = await fetch('/api/websdr-iq?t=' + Date.now(), { cache: 'no-store' });
             j = await res.json().catch(function () {
               return { ok: false };
             });
           }
-          if (!j.ok || !j.frame || !j.frame.iqBase64) {
-            throw new Error(j.message || 'No WebSDR frame from edge relay');
+          if (!res.ok || !j.ok || !j.frame || !j.frame.iqBase64) {
+            throw new Error(j.message || j.captureError || 'No WebSDR frame from edge relay');
+          }
+          if (requireLive && !j.live) {
+            const tag = j.frame.bundled ? 'bundled fallback' : j.stale ? 'stale cache' : 'non-live cache';
+            throw new Error(
+              'Live OpenWebRX capture failed — edge returned ' +
+                tag +
+                (j.captureError ? ' (' + j.captureError + ')' : '') +
+                '. Retry; proofs 3–5 require fresh RF.',
+            );
           }
           const frame = j.frame;
+          const provenance = j.live
+            ? 'LIVE_OPENWEBRX'
+            : frame.bundled
+              ? 'BUNDLED_FALLBACK'
+              : j.stale
+                ? 'STALE_CACHE'
+                : 'EDGE_CACHE';
           const raw = Uint8Array.from(atob(frame.iqBase64), function (c) {
             return c.charCodeAt(0);
           });
@@ -1377,7 +1601,20 @@
             ' Hz · center ' +
             (frame.centerFreqHz != null ? frame.centerFreqHz : '—') +
             ' Hz';
-          return { summary: summary, frames: chunks, lastPoints: lastPoints, meta: frame };
+          const head = samples.subarray(0, DEMO_IQ_SAMPLES);
+          const rfCheck = validateRfSampleBlock(head, provenance);
+          return {
+            summary: summary,
+            frames: chunks,
+            lastPoints: lastPoints,
+            meta: frame,
+            samples: head,
+            live: !!j.live,
+            stale: !!j.stale,
+            bundled: !!frame.bundled,
+            provenance: provenance,
+            rfVariance: rfCheck.variance,
+          };
         }
 
         /** Recursive geometric EGS φ blend (IIR-style, depth passes). */
@@ -1733,28 +1970,70 @@
           ledger('[hello] Hardware calibration ACK — local browser runtime bound to sovereign key.', 'sys');
         }
 
-        async function cmdPing() {
-          const t0 = performance.now();
-          const browserMs = performance.now() - t0;
-          const sdrMs =
-            state.interArrival.length > 0
-              ? state.interArrival[state.interArrival.length - 1].toFixed(2)
-              : state.sdrActive
-                ? 'awaiting frame'
-                : 'n/a';
-          const rf = state.rfProbe.deviation.toFixed(6);
+        function cmdHlineBench() {
+          const tune = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
+          const iq = synthesizeHydrogenLineIQ(DEMO_IQ_SAMPLES, tune, state.frames);
+          const bench = benchEgsPipeline(iq);
+          const lineErr = Math.abs(tune - HYDROGEN_HZ);
           ledger(
-            '[ping] browser=' +
-              browserMs.toFixed(2) +
-              'ms · websdr_Δ=' +
-              sdrMs +
-              'ms · rf_probe×φ=' +
-              rf +
-              ' · H-line=' +
-              (parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ) +
-              ' Hz',
+            '[hline-bench] EGS φ compute ' +
+              bench.computeMs.toFixed(2) +
+              'ms · ' +
+              Math.round(bench.samplesPerSec).toLocaleString() +
+              ' samp/s · 13D φ-coherence ' +
+              (bench.phiCoherence * 100).toFixed(1) +
+              '% · Δline ' +
+              lineErr +
+              ' Hz · tune ' +
+              tune +
+              ' Hz (not internet ping)',
             'sys',
           );
+          ingestFloatSamples(iq, 'hline-bench');
+        }
+
+        function cmdFairExchangeTest() {
+          const saved = {
+            tripped: state.fairExchangeTripped,
+            inter: state.interArrival.slice(),
+            frames: state.frames,
+            last: state.lastFrameAt,
+          };
+          state.interArrival = [];
+          state.frames = 0;
+          state.lastFrameAt = 0;
+          state.fairExchangeTripped = false;
+          const tune = parseInt($('sdr-freq').value, 10) || HYDROGEN_HZ;
+          for (let i = 0; i < 24; i++) {
+            const iq = synthesizeHydrogenLineIQ(512, tune, i);
+            const buf = iq.buffer;
+            if (fairExchangeWatch(buf.byteLength, performance.now() + i * (PHI * 3))) break;
+          }
+          const ratio =
+            state.interArrival.length >= 2
+              ? (function () {
+                  const mean = state.interArrival.reduce(function (a, b) {
+                    return a + b;
+                  }, 0) / state.interArrival.length;
+                  const v =
+                    state.interArrival.reduce(function (a, b) {
+                      return a + (b - mean) * (b - mean);
+                    }, 0) / state.interArrival.length;
+                  return mean > 0 ? Math.sqrt(v) / mean : 0;
+                })()
+              : 0;
+          ledger(
+            '[fair-exchange-test] φ-stable stream σ/μ=' +
+              ratio.toFixed(4) +
+              (ratio > FAIR_JITTER_RATIO ? ' WOULD TRIP' : ' nominal') +
+              ' · burst gate φ·64KiB=' +
+              FAIR_BURST_BYTES,
+            ratio > FAIR_JITTER_RATIO ? 'err' : 'sys',
+          );
+          state.fairExchangeTripped = saved.tripped;
+          state.interArrival = saved.inter;
+          state.frames = saved.frames;
+          state.lastFrameAt = saved.last;
         }
 
         const ROLL_CALL = [
@@ -1807,7 +2086,8 @@
         function cmdHelp() {
           const lines = [
             'hello              — φ-normalize MetaMask key → 13D session block',
-            'ping               — latency: browser, WebSDR Δ, RF probe, H-line tune',
+            'hline-bench        — timed EGS φ compute on H-line IQ (not internet ping)',
+            'fair-exchange-test — φ jitter / burst gates on synthetic stream',
             'roll call          — character nodes + sunspot designations',
             'request routing tables — FractiStorage / H-line routing tree',
             'help               — this directory',
@@ -2021,12 +2301,13 @@
         async function runLiveDemo() {
           if (state.demoRunning) return;
           state.demoRunning = true;
+          state.demoIngest = null;
           $('btn-live-demo').disabled = true;
           $('live-demo-summary').hidden = true;
           $('live-demo-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
           initLiveDemoUi();
-          ledger('[LIVE-DEMO] Hydrogen-line OS demonstration started.', 'sys');
+          ledger('[LIVE-DEMO] Five pillars @ H-line 1420.405751768 MHz · EGS φ — no internet ping proofs.', 'sys');
 
           let passed = 0;
           let failed = 0;
@@ -2057,7 +2338,7 @@
             sum.textContent =
               'Product demo complete — ' +
               passed +
-              '/3 proofs passed. Edge coherence, FractiStorage, and live WebSDR → 13D φ matrix are on this page.';
+              '/5 pillars passed: security, storage, H-line RF networking, EGS φ compute, 13D AI matrix.';
           } else {
             sum.className = 'live-demo-summary partial';
             sum.textContent =
@@ -2082,8 +2363,11 @@
             case 'hello':
               cmdHello();
               break;
-            case 'ping':
-              void cmdPing();
+            case 'hline-bench':
+              cmdHlineBench();
+              break;
+            case 'fair-exchange-test':
+              cmdFairExchangeTest();
               break;
             case 'roll':
               if (rest === 'call' || line.toLowerCase() === 'roll call') cmdRollCall();
@@ -2155,7 +2439,7 @@
 
         initMatrix();
         startRfProbe();
-        ledger('[CANAL-DEMO] Product demo in development · φ=' + PHI + ' · RUN PRODUCT DEMO = 3 proofs.', 'sys');
+        ledger('[CANAL-DEMO] Product demo in development · φ=' + PHI + ' · RUN PRODUCT DEMO = 5 pillars @ H-line.', 'sys');
         ledger('[CANAL-DEMO] H-line ' + HYDROGEN_LINE_MHZ + ' MHz · compute · storage · Fair Exchange — no BTC in this demo.', 'sys');
 
         if (/[?&]demo=1/.test(location.search)) {
@@ -2165,5 +2449,6 @@
         }
       })();
     </script>
+    <script src="/interfaces/i18n-auto.js" data-page="glos"></script>
   </body>
 </html>

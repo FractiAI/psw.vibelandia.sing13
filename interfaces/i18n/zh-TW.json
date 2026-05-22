@@ -2,7 +2,8 @@
   "qf": {
     "langBar": {
       "label": "èªžè¨€",
-      "partialFallback": "ç€è¦½å™¨åå¥½èªžè¨€å°šæœªå®Œæ•´ç¿»è­¯ï¼Œæš«é¡¯ç¤ºè‹±æ–‡ã€‚å¯æ‰‹å‹•é¸æ“‡èªžè¨€æˆ–åœ¨ç¶²å€åŠ  ?lang=zh-TW ã€‚"
+      "partialFallback": "ç€è¦½å™¨åå¥½èªžè¨€å°šæœªå®Œæ•´ç¿»è­¯ï¼Œæš«é¡¯ç¤ºè‹±æ–‡ã€‚å¯æ‰‹å‹•é¸æ“‡èªžè¨€æˆ–åœ¨ç¶²å€åŠ  ?lang=zh-TW ã€‚",
+      "autosensed": "依瀏覽器語言顯示。可在下方隨時切換。"
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24X365ï¼Œæ³¢å¤šé‡Œè«¾ï¼Œå…¨æ¯ AI è°·ï¼Œå…§è¯é”",
@@ -66,6 +67,30 @@
     "ledeStudio2Html": "<strong>Digital Pru ASIC</strong> æ˜¯ç•¶æŠ•å½±ç‰‡è®Šæˆ<strong>é‹è¡Œç¨‹å¼ç¢¼</strong>æ™‚çš„åå­— - ç¢ºå®šæ€§ APIã€phi å¼•æ“Žã€è¼‰è·è£¡çš„ <strong>QIHOH</strong> ä¸­ç¹¼è³‡æ–™ã€å¯ä»¿çœŸçš„ RTL æ ¸å¿ƒã€‚å®ƒæ˜¯ Hit Factory çš„<strong>çŸ½å½¢é¡åƒ</strong>ï¼šåŒä¸€æ¯”ä¾‹ã€åŒä¸€èª å¯¦å¥‘ç´„ï¼Œå¯åœ¨ <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\"><strong>Digital Pru é–±è®€å™¨</strong></a> èˆ‡ <a href=\"/interfaces/look-under-the-hood.html\"><strong>Hood</strong></a> é‹è¡Œã€‚",
     "ledeStudio3Html": "é€™å°æ¼”å“¡èˆ‡è½çœ¾<strong>æ”¹è®Šè¦å‰‡</strong>ï¼šå¤§èˆžè‡ºè³£ç›²ä¿¡ã€‚é€™å¥—å †ç–Šèªª<strong>äº®å‡ºç®¡é“</strong> - è®€ Hood è£¡åä¸‰ç¯‡æ–‡ä»¶ï¼Œè¤‡è£½å„²å­˜åº«ï¼Œè·‘æ¸¬è©¦ã€‚Fair Exchange å¾žå£è™Ÿè®Šæˆæ•…äº‹ã€çŸ½èˆ‡è¡—é ­çš„<strong>å¯é©—è­‰ç¯€å¥</strong>ã€‚",
     "btnHoodOpen": "æ‰“é–‹ Hood",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">ä»°æœ›å¤ªé™½</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote èˆ‡é›·è«¾æ²¼æ¾¤ï¼ˆç™½è©±ï¼‰</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">å¤§ç§€ vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">ä»°æœ›å¤ªé™½</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote èˆ‡é›·è«¾æ²¼æ¾¤ï¼ˆç™½è©±ï¼‰</a> - <a href=\"https://github.com/fractiai/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">å¤§ç§€ vs. Wrong Side</a>"
+  },
+  "glos": {
+    "langBar": {
+      "label": "èªžè¨€",
+      "autosensed": "依瀏覽器語言顯示。可在下方隨時切換。"
+    },
+    "meta": {
+      "title": "13D 全像黃金洛克 AI 作業系統 · 巴拿馬運河 · 現場試驗",
+      "desc": "氫譜線上的白話試驗 — 安全、儲存、射頻網路、EGS φ 運算、13D AI 矩陣。",
+      "ogTitle": "全像黃金洛克 AI 作業系統 · 巴拿馬運河",
+      "ogDesc": "在 1420 MHz 氫譜線 EGS φ 上的五項現場驗證。"
+    },
+    "construction": "現場試驗 · 開發中 — 13D 全像黃金洛克 AI 作業系統。",
+    "h1": "13D 全像黃金洛克 AI 作業系統",
+    "h1sub": "全像巴拿馬運河",
+    "badgeDev": "開發中",
+    "badgeLive": "現場試驗",
+    "btnDemo": "1 · 執行現場示範（5 項驗證）",
+    "btnWp": "2 · 閱讀完整白皮書 (V8)",
+    "btnQuest": "QUESTFEST",
+    "testedHead": "2 · 我們在此站點成功驗證的內容（今日）",
+    "honestyHtml": "<strong>無假通過標章。非網際網路 ping 表演。</strong> 在 <strong>1420.405751768 MHz 氫譜線 EGS φ</strong> 上測量五大支柱。",
+    "demoPanelHead": "立即執行 · 五大支柱（氫譜線 @ EGS φ）",
+    "demoMatrixLabel": "13D 單像素矩陣 · 在驗證 4–5 時更新"
   }
 }

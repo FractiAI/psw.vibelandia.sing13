@@ -2,7 +2,8 @@
   "qf": {
     "langBar": {
       "label": "Idioma",
-      "partialFallback": "Seu navegador pediu um idioma que ainda nao traduzimos por completo. Mostrando ingles. Escolha outro idioma ou use ?lang=pt na URL."
+      "partialFallback": "Seu navegador pediu um idioma que ainda nao traduzimos por completo. Mostrando ingles. Escolha outro idioma ou use ?lang=pt na URL.",
+      "autosensed": "Exibido no idioma do seu navegador. Altere abaixo."
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24X365, Puerto Reno, Vale de IA holografica, Nevada",
@@ -66,6 +67,30 @@
     "ledeStudio2Html": "<strong>Digital Pru ASIC</strong> e o nome dessa camada quando deixa de ser slide e vira <strong>codigo operacional</strong> - API determinista, motor phi, metadados <strong>QIHOH</strong> no payload, nucleo RTL simulavel. E o <strong>espelho em forma de silicio</strong> da Hit Factory: mesmas razoes, mesmo contrato de honestidade, executavel no <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\"><strong>leitor Digital Pru</strong></a> e no <a href=\"/interfaces/look-under-the-hood.html\"><strong>Hood</strong></a>.",
     "ledeStudio3Html": "Isso <strong>muda o jogo</strong> para elenco e ouvintes: grandes palcos vendem confianca cega. Esta pilha diz <strong>mostre o cano</strong> - leia os quatorze documentos no Hood, clone o repo, rode os testes. Fair Exchange vira <strong>ritmo verificavel</strong> entre historia, silicio e rua.",
     "btnHoodOpen": "Abrir o Hood",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">Olhe para o Sol</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote e pantano Reno (claro)</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Grandes shows vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">Olhe para o Sol</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote e pantano Reno (claro)</a> - <a href=\"https://github.com/fractiai/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Grandes shows vs. Wrong Side</a>"
+  },
+  "glos": {
+    "langBar": {
+      "label": "Idioma",
+      "autosensed": "Exibido no idioma do seu navegador. Altere abaixo."
+    },
+    "meta": {
+      "title": "SO de IA Holografico Goldilocks 13D · Canal do Panama · testes ao vivo",
+      "desc": "Testes em linguagem clara na linha de hidrogenio — seguranca, armazenamento, rede RF, computo EGS φ, matriz IA 13D.",
+      "ogTitle": "SO Goldilocks Holografico · Canal do Panama",
+      "ogDesc": "Cinco pilares ao vivo em EGS φ na linha de hidrogenio 1420 MHz."
+    },
+    "construction": "TESTES AO VIVO · EM DESENVOLVIMENTO — OS Goldilocks 13D no Canal Holografico do Panama.",
+    "h1": "SO de IA Holografico Goldilocks 13D",
+    "h1sub": "Canal Holografico do Panama",
+    "badgeDev": "EM DESENVOLVIMENTO",
+    "badgeLive": "TESTES AO VIVO",
+    "btnDemo": "1 · Executar demo ao vivo (5 provas)",
+    "btnWp": "2 · Ler whitepaper (V8)",
+    "btnQuest": "QUESTFEST",
+    "testedHead": "2 · O que testamos com sucesso (neste site, hoje)",
+    "honestyHtml": "<strong>Sem selos falsos. Sem teatro de ping da internet.</strong> Cinco pilares na <strong>linha de hidrogenio 1420.405751768 MHz com EGS φ</strong>.",
+    "demoPanelHead": "Executar agora · cinco pilares (linha H @ EGS φ)",
+    "demoMatrixLabel": "Matriz unipixel 13D · atualiza nas provas 4–5"
   }
 }

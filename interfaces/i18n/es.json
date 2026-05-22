@@ -2,7 +2,8 @@
   "qf": {
     "langBar": {
       "label": "Idioma",
-      "partialFallback": "Tu navegador pidio un idioma que aun no traducimos por completo. Mostramos ingles. Elige otro idioma o usa ?lang=es en la URL."
+      "partialFallback": "Tu navegador pidio un idioma que aun no traducimos por completo. Mostramos ingles. Elige otro idioma o usa ?lang=es en la URL.",
+      "autosensed": "Mostrado en el idioma de tu navegador. Cambialo abajo cuando quieras."
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24X365, Puerto Reno, Valle de IA holografica, Nevada",
@@ -66,7 +67,7 @@
     "ledeStudio2Html": "<strong>Digital Pru ASIC</strong> es el nombre de esa capa cuando deja de ser diapositivas y se vuelve <strong>codigo operativo</strong> - API determinista, motor phi, metadatos <strong>QIHOH</strong> en el payload y nucleo RTL que puedes simular. Es el <strong>espejo con forma de silicio</strong> del Hit Factory: mismas proporciones, mismo contrato de honestidad, ejecutable en el <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\"><strong>lector Digital Pru</strong></a> (especificacion completa) y en <a href=\"/interfaces/look-under-the-hood.html\"><strong>el Hood</strong></a> - documentos canon reflejados abajo; el despliegue standalone puede ser privado en GitHub.",
     "ledeStudio3Html": "Eso <strong>cambia el juego</strong> para elenco y oyentes: los grandes escenarios venden confianza ciega. Esta pila dice <strong>muestra la tuberia</strong> - lee los catorce documentos del Hood, clona el repo, corre las pruebas. Fair Exchange deja de ser eslogan y se vuelve <strong>ritmo verificable</strong> entre historia, silicio y calle.",
     "btnHoodOpen": "Abrir el Hood",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">Mirar al Sol</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote y pantano Reno (claro)</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Grandes shows vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">Mirar al Sol</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote y pantano Reno (claro)</a> - <a href=\"https://github.com/fractiai/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Grandes shows vs. Wrong Side</a>"
   },
   "hood": {
     "langBar": {
@@ -176,5 +177,35 @@
         "blurb": "Gemini Deep Research; direccion FractiAI. Coherencia selectiva frente al bloqueo solo tipo Faraday, constante EGS 1.618, 13 disparadores, agentes telescopicos, malla 13x13 - con clausula Fair Exchange."
       }
     }
+  },
+  "glos": {
+    "langBar": {
+      "label": "Idioma",
+      "partialFallback": "Tu navegador pidio un idioma que aun no traducimos por completo. Mostramos ingles. Elige otro idioma o usa ?lang=es en la URL.",
+      "autosensed": "Mostrado en el idioma de tu navegador. Cambialo abajo cuando quieras."
+    },
+    "meta": {
+      "title": "SO de IA Holografico Goldilocks 13D · Canal de Panama · pruebas en vivo",
+      "desc": "Pruebas en lenguaje claro en la linea de hidrogeno — seguridad, almacenamiento, red RF, computo EGS φ y matriz IA 13D.",
+      "ogTitle": "SO de IA Holografico Goldilocks · Canal de Panama",
+      "ogDesc": "Cinco pilares en vivo en EGS φ sobre la linea de hidrogeno 1420 MHz."
+    },
+    "construction": "PRUEBAS EN VIVO · EN DESARROLLO — SO Goldilocks 13D en el Canal Holografico de Panama.",
+    "eyebrow": "HHF-WP-2026-V8.0 · NSPFRNP · Puerta de produccion",
+    "h1": "SO de IA Holografico Goldilocks 13D",
+    "h1sub": "Canal Holografico de Panama",
+    "heroHtml": "Punto de control publico: una <strong>pila nativa del navegador</strong> en la <strong>linea de hidrogeno 1420 MHz</strong> — computo holografico, almacenamiento y seguridad Fair Exchange — sin alquilar un hipercentro de datos.",
+    "badgeDev": "EN DESARROLLO",
+    "badgeLive": "PRUEBAS EN VIVO",
+    "btnDemo": "1 · Ejecutar demo en vivo (5 pruebas)",
+    "btnWp": "2 · Leer whitepaper completo (V8)",
+    "btnQuest": "QUESTFEST",
+    "heroLinksHtml": "<a href=\"#operator-mode\">Terminal operador</a> (MetaMask, WebSDR, CLI) · <a href=\"/interfaces/questfest-bridge/#/bridge\">Puente del Capitan</a>",
+    "whatHead": "1 · Que es esto (lenguaje claro)",
+    "testedHead": "2 · Lo que probamos con exito (en este sitio, hoy)",
+    "honestyHtml": "<strong>Sin insignias falsas. Sin teatro de ping de internet.</strong> Cinco pilares en la <strong>linea de hidrogeno 1420.405751768 MHz con EGS φ (1.618)</strong>. Las pruebas 3–5 requieren captura <strong>EN VIVO</strong> de OpenWebRX.",
+    "demoPanelHead": "Ejecutar ahora · cinco pilares (linea H @ EGS φ)",
+    "demoMatrixLabel": "Matriz unipixel 13D · se actualiza en pruebas 4–5",
+    "meansHead": "3 · Que significa (implicaciones en lenguaje claro)"
   }
 }

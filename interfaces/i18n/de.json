@@ -2,7 +2,8 @@
   "qf": {
     "langBar": {
       "label": "Sprache",
-      "partialFallback": "Ihr Browser bevorzugt eine Sprache, die wir noch nicht voll uebersetzt haben. Wir zeigen Englisch. Waehlen Sie eine andere Sprache oder nutzen Sie ?lang=de in der URL."
+      "partialFallback": "Ihr Browser bevorzugt eine Sprache, die wir noch nicht voll uebersetzt haben. Wir zeigen Englisch. Waehlen Sie eine andere Sprache oder nutzen Sie ?lang=de in der URL.",
+      "autosensed": "In Ihrer Browsersprache angezeigt. Unten jederzeit wechseln."
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24X365, Puerto Reno, Holographic AI Valley, Nevada",
@@ -66,6 +67,30 @@
     "ledeStudio2Html": "<strong>Digital Pru ASIC</strong> ist der Name dieser Schicht, wenn sie aufhoert, Folien zu sein, und <strong>Betriebscode</strong> wird - deterministische API, phi-Motor, <strong>QIHOH</strong> Metadaten im Payload, RTL-Kern zum Simulieren. Der <strong>silizium-geformte Spiegel</strong> der Hit Factory: gleiche Verhaeltnisse, gleicher Ehrlichkeitsvertrag, lauffaehig im <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\"><strong>Digital Pru Reader</strong></a> und im <a href=\"/interfaces/look-under-the-hood.html\"><strong>Hood</strong></a>.",
     "ledeStudio3Html": "Das <strong>aendert das Spiel</strong> fuer Cast und Hoerer: grosse Buenen verkaufen blindes Vertrauen. Dieser Stack sagt <strong>zeig die Rohre</strong> - lies die vierzehn Papers im Hood, clone das Repo, fahr Tests. Fair Exchange wird zum <strong>pruefbaren Rhythmus</strong> zwischen Story, Silizium und Strasse.",
     "btnHoodOpen": "Hood oeffnen",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">Zur Sonne schauen</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote und Reno Sumpf (klar)</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Grosse Shows vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">Zur Sonne schauen</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote und Reno Sumpf (klar)</a> - <a href=\"https://github.com/fractiai/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">Grosse Shows vs. Wrong Side</a>"
+  },
+  "glos": {
+    "langBar": {
+      "label": "Sprache",
+      "autosensed": "In Ihrer Browsersprache angezeigt. Unten jederzeit wechseln."
+    },
+    "meta": {
+      "title": "13D Holographisches Goldilocks KI-OS · Panamakanal · Live-Tests",
+      "desc": "Klartext-Tests auf der Wasserstofflinie — Sicherheit, Speicher, RF-Netz, EGS φ Compute, 13D KI-Matrix.",
+      "ogTitle": "Holographisches Goldilocks KI-OS · Panamakanal",
+      "ogDesc": "Fuenf Live-Saeulen bei EGS φ auf der 1420 MHz Wasserstofflinie."
+    },
+    "construction": "LIVE-TESTS · IN ENTWICKLUNG — 13D Goldilocks OS am Holographischen Panamakanal.",
+    "h1": "13D Holographisches Goldilocks KI-OS",
+    "h1sub": "Holographischer Panamakanal",
+    "badgeDev": "IN ENTWICKLUNG",
+    "badgeLive": "LIVE-TESTS",
+    "btnDemo": "1 · Live-Demo starten (5 Beweise)",
+    "btnWp": "2 · Whitepaper lesen (V8)",
+    "btnQuest": "QUESTFEST",
+    "testedHead": "2 · Was wir erfolgreich getestet haben (heute auf dieser Seite)",
+    "honestyHtml": "<strong>Keine falschen Pass-Badges. Kein Internet-Ping-Theater.</strong> Fuenf Saeulen auf der <strong>Wasserstofflinie 1420.405751768 MHz bei EGS φ</strong>.",
+    "demoPanelHead": "Jetzt ausfuehren · fuenf Saeulen (H-Linie @ EGS φ)",
+    "demoMatrixLabel": "13D Unipixel-Matrix · aktualisiert bei Beweisen 4–5"
   }
 }

@@ -2,7 +2,8 @@
   "qf": {
     "langBar": {
       "label": "ì–¸ì–´",
-      "partialFallback": "ë¸Œë¼ìš°ì €ê°€ ìš”ì²­í•œ ì–¸ì–´ë¥¼ ì•„ì§ ì™„ì „ížˆ ë²ˆì—­í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤. ì˜ì–´ë¡œ í‘œì‹œí•©ë‹ˆë‹¤. ë‹¤ë¥¸ ì–¸ì–´ë¥¼ ê³ ë¥´ê±°ë‚˜ URLì— ?lang=ko ë¥¼ ë„£ìœ¼ì„¸ìš”."
+      "partialFallback": "ë¸Œë¼ìš°ì €ê°€ ìš”ì²­í•œ ì–¸ì–´ë¥¼ ì•„ì§ ì™„ì „ížˆ ë²ˆì—­í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤. ì˜ì–´ë¡œ í‘œì‹œí•©ë‹ˆë‹¤. ë‹¤ë¥¸ ì–¸ì–´ë¥¼ ê³ ë¥´ê±°ë‚˜ URLì— ?lang=ko ë¥¼ ë„£ìœ¼ì„¸ìš”.",
+      "autosensed": "브라우저 언어로 표시됩니다. 아래에서 언제든 변경하세요."
     },
     "meta": {
       "title": "SS Vibelandia QUESTFEST 24X365, Puerto Reno, Holographic AI Valley, Nevada",
@@ -66,6 +67,30 @@
     "ledeStudio2Html": "<strong>Digital Pru ASIC</strong> ì€ ìŠ¬ë¼ì´ë“œê°€ <strong>ìš´ì˜ ì½”ë“œ</strong>ê°€ ë  ë•Œ ê·¸ ì¸µì˜ ì´ë¦„ - ê²°ì •ë¡ ì  API, phi ì—”ì§„, íŽ˜ì´ë¡œë“œì˜ <strong>QIHOH</strong> ë©”íƒ€ë°ì´í„°, ì‹œë®¬ ê°€ëŠ¥í•œ RTL ì½”ì–´. Hit Factory ì˜ <strong>ì‹¤ë¦¬ì½˜í˜• ê±°ìš¸</strong>. <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\"><strong>Digital Pru ë¦¬ë”</strong></a> ì™€ <a href=\"/interfaces/look-under-the-hood.html\"><strong>Hood</strong></a> ì—ì„œ ì‹¤í–‰.",
     "ledeStudio3Html": "ìºìŠ¤íŠ¸ì™€ ì²­ì·¨ìžì—ê²Œ <strong>ê²Œìž„ ì²´ì¸ì €</strong>: í° ë¬´ëŒ€ëŠ” ë§¹ì‹ ì„ íŒë‹ˆë‹¤. ì´ ìŠ¤íƒì€ <strong>íŒŒì´í”„ë¥¼ ë³´ì—¬ì¤˜</strong> ë¼ê³  í•©ë‹ˆë‹¤ - Hood ì˜ 14íŽ˜ì´í¼ë¥¼ ì½ê³ , repo í´ë¡ , í…ŒìŠ¤íŠ¸ ì‹¤í–‰. Fair Exchange ëŠ” ìŠ¬ë¡œê±´ì—ì„œ ì´ì•¼ê¸°Â·ì‹¤ë¦¬ì½˜Â·ê±°ë¦¬ì˜ <strong>ê²€ì¦ ê°€ëŠ¥í•œ ë¦¬ë“¬</strong>ì´ ë©ë‹ˆë‹¤.",
     "btnHoodOpen": "Hood ì—´ê¸°",
-    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">íƒœì–‘ ë³´ê¸°</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote ì™€ Reno ëŠª(í‰ì´)</a> - <a href=\"https://github.com/FractiAI/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">ë¹… ì‡¼ vs. Wrong Side</a>"
+    "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Juicy Juicy Snap</a> - <a href=\"look-at-the-sun.html\">íƒœì–‘ ë³´ê¸°</a> - <a href=\"/interfaces/digital-pru-awareness-whitepaper.html\">VALETPRU reader</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote ì™€ Reno ëŠª(í‰ì´)</a> - <a href=\"https://github.com/fractiai/psw.vibelandia.sing9\" target=\"_blank\" rel=\"noopener\">SING 9</a> - <a href=\"legacy-vs-wrong-side-report.html\">ë¹… ì‡¼ vs. Wrong Side</a>"
+  },
+  "glos": {
+    "langBar": {
+      "label": "ì–¸ì–´",
+      "autosensed": "브라우저 언어로 표시됩니다. 아래에서 언제든 변경하세요."
+    },
+    "meta": {
+      "title": "13D 홀로그래픽 골드ilocks AI OS · 파나마 운하 · 라이브 시험",
+      "desc": "수소선에서의 명확한 라이브 시험 — 보안, 스토리지, RF 네트워킹, EGS φ 컴퓨트, 13D AI 매트릭스.",
+      "ogTitle": "홀로그래픽 골드ilocks AI OS · 파나마 운하",
+      "ogDesc": "1420 MHz 수소선 EGS φ에서 5가지 라이브 검증."
+    },
+    "construction": "라이브 시험 · 개발 중 — 13D 홀로그래픽 골드ilocks AI OS.",
+    "h1": "13D 홀로그래픽 골드ilocks AI OS",
+    "h1sub": "홀로그래픽 파나마 운하",
+    "badgeDev": "개발 중",
+    "badgeLive": "라이브 시험",
+    "btnDemo": "1 · 라이브 데모 실행 (5가지 검증)",
+    "btnWp": "2 · 백서 전문 (V8)",
+    "btnQuest": "QUESTFEST",
+    "testedHead": "2 · 오늘 이 사이트에서 성공적으로 검증한 항목",
+    "honestyHtml": "<strong>가짜 통과 배지 없음. 인터넷 ping 연출 없음.</strong> <strong>1420.405751768 MHz 수소선 EGS φ</strong>에서 5가지 기둥 측정.",
+    "demoPanelHead": "지금 실행 · 5가지 기둥 (H선 @ EGS φ)",
+    "demoMatrixLabel": "13D 유니픽셀 매트릭스 · 검증 4–5에서 업데이트"
   }
 }

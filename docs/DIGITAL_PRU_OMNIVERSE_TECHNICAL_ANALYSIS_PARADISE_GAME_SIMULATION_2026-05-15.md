@@ -177,8 +177,8 @@ Note: Entries mix peer literature, journalism, repositories, and transmedia cita
 - Atlantic radio blackout / flare — Gadgets360. https://www.gadgets360.com/science/news/powerful-m5-7-solar-flare-triggers-radio-blackouts-on-earth-11483174  
 - Ground News aggregation — solar atmosphere ejection coverage. https://ground.news/article/powerful-ejection-blows-massive-hole-in-suns-atmosphere-earth-on-alert-for-impact  
 - Space.com aurora / CME forecasting hub — https://www.space.com/news/space-history  
-- FractiAI / Holographic-Hydrogen-Fractal-MRI-Demo — GitHub. https://github.com/FractiAI/Holographic-Hydrogen-Fractal-MRI-Demo  
-- AiwonA1 / FractiAI repositories — GitHub. https://github.com/AiwonA1/FractiAI  
+- FractiAI / Holographic-Hydrogen-Fractal-MRI-Demo — GitHub. https://github.com/fractiai/Holographic-Hydrogen-Fractal-MRI-Demo  
+- aiwona1 / FractiAI repositories — GitHub. https://github.com/aiwona1/FractiAI  
 - Green synthesis iron oxides/phosphates (tea polyphenols) — ACS *Inorganic Chemistry*. https://pubs.acs.org/doi/10.1021/acs.inorgchem.0c03794  
 - Microsoft Project Silica overview — Microsoft. https://www.microsoft.com/en-us/research/project/project-silica/  
 - 1993 Wright Laboratory summer research volume — DTIC ADA278515. https://apps.dtic.mil/sti/tr/pdf/ADA278515.pdf  

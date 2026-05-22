@@ -1269,6 +1269,29 @@ a.voxel-btn {
   border: 0;
 }
 
+/* iOS Safari: clipped/sr-only media will not play — keep a 1px playable surface */
+.sp-media-playback-el {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 0;
+  border: 0;
+}
+
+html.ios .sp-now-visual,
+html.ios .sp-now-art {
+  display: none !important;
+}
+
+html.ios .sp-now-video {
+  max-height: none;
+  min-height: 0;
+}
+
 .spotify-now {
   grid-column: 2;
   position: fixed;

@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState, type RefObject } from 'react';
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
-import { isVideoTrack, playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { IOS_PLAYABLE_MEDIA_CLASS } from '@/lib/devicePlayback';
+import { isVideoTrack, playbackUrlForTrack, showInlineVideoPlayer } from '@/lib/isVideoTrack';
+import { dispatchPlayGesture, subscribePlayGesture } from '@/lib/playGesture';
 import { getPlaybackMedia, registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
 import { readPlaybackSession } from '@/lib/playbackSession';
 import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
@@ -68,9 +70,12 @@ export function NowPlayingBar({
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
-  const showVideo = isVideoTrack(track);
+  const showVideoPanel = showInlineVideoPlayer(track);
+  const useVideoElement = isVideoTrack(track);
+  const showVideoBadge = isVideoTrack(track);
 
-  const primaryMediaRef = showVideo ? videoRef : audioRef;
+  const primaryMediaRef = useVideoElement ? videoRef : audioRef;
+  const [mediaMountGen, setMediaMountGen] = useState(0);
 
   const syncBackgroundRef = useCallback(() => {
     backgroundAudioRef.current =
@@ -86,7 +91,33 @@ export function NowPlayingBar({
     syncBackgroundRef();
     registerPlaybackMedia(primaryMediaRef.current, backgroundAudioRef.current);
     return () => registerPlaybackMedia(null, getPlaybackMedia().background);
-  }, [primaryMediaRef, syncBackgroundRef, showVideo, track?.id]);
+  }, [primaryMediaRef, syncBackgroundRef, useVideoElement, track?.id]);
+
+  const bumpMediaMount = useCallback(() => setMediaMountGen((n) => n + 1), []);
+
+  const wireSrcAndPlay = useCallback(
+    (trackId: string, fromGesture: boolean) => {
+      const tr = getTrack(trackId);
+      const url = tr ? playbackUrlForTrack(tr) : '';
+      const el = primaryMediaRef.current;
+      if (!tr || !url || !el) return false;
+
+      if (wiredTrackRef.current !== trackId || el.src !== url) {
+        wiredTrackRef.current = trackId;
+        el.src = url;
+        el.load();
+      }
+      el.volume = gainRef.current;
+      if (fromGesture || usePlaybackStore.getState().isPlaying) {
+        beginSession();
+        void el.play().catch(() => setError('Tap play on a track to start listening.'));
+      }
+      return true;
+    },
+    [beginSession, getTrack, primaryMediaRef],
+  );
+
+  useEffect(() => subscribePlayGesture((trackId) => wireSrcAndPlay(trackId, true)), [wireSrcAndPlay]);
 
   const advanceInPlaylist = useCallback(
     (delta: 1 | -1) => {
@@ -150,7 +181,7 @@ export function NowPlayingBar({
     allowBackgroundPlay,
     isPlaying,
     track,
-    isVideo: showVideo,
+    isVideo: useVideoElement,
     setPlaying,
     onRequestResume: resumePlayback,
     onTimeUpdate: setDisplayTime,
@@ -320,13 +351,15 @@ export function NowPlayingBar({
     setBackgroundHandoffActive,
     setDisplayTime,
     setPlaying,
-    showVideo,
+    mediaMountGen,
+    showVideoPanel,
     solenoidActive,
     syncBackgroundRef,
     track?.downloadedLocally,
     track?.id,
     track?.src,
     track?.videoSrc,
+    useVideoElement,
   ]);
 
   useEffect(() => {
@@ -411,16 +444,33 @@ export function NowPlayingBar({
   const togglePlay = () => {
     clearKill();
     setGain(1);
+    if (!isPlaying && track) queueMicrotask(() => dispatchPlayGesture(track.id));
     setPlaying(!isPlaying);
   };
 
+  const setVideoRef = useCallback(
+    (el: HTMLVideoElement | null) => {
+      videoRef.current = el;
+      if (el) bumpMediaMount();
+    },
+    [bumpMediaMount],
+  );
+
+  const setAudioRef = useCallback(
+    (el: HTMLAudioElement | null) => {
+      audioRef.current = el;
+      if (el) bumpMediaMount();
+    },
+    [bumpMediaMount],
+  );
+
   return (
     <footer className="sp-now">
-      {track && showVideo && (
+      {track && showVideoPanel && (
         <div className="sp-now-visual">
           <video
             key={track.id}
-            ref={videoRef}
+            ref={setVideoRef}
             className="sp-now-video"
             preload="auto"
             playsInline
@@ -430,16 +480,22 @@ export function NowPlayingBar({
           />
         </div>
       )}
-      {track && !showVideo && track.posterSrc && (
-        <div className="sp-now-art" aria-hidden>
-          <img className="sp-now-art-img" src={trackCoverUrl(track)} alt="" />
-        </div>
+      {track && useVideoElement && !showVideoPanel && (
+        <video
+          key={`${track.id}-ios`}
+          ref={setVideoRef}
+          className={IOS_PLAYABLE_MEDIA_CLASS}
+          preload="auto"
+          playsInline
+          poster={trackCoverUrl(track)}
+          aria-label={track.title}
+        />
       )}
-      {track && !showVideo && (
-        <audio key={track.id} ref={audioRef} className="sr-only" preload="auto" />
+      {track && !useVideoElement && (
+        <audio key={track.id} ref={setAudioRef} className={IOS_PLAYABLE_MEDIA_CLASS} preload="auto" />
       )}
-      <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
-        {track?.posterSrc && !showVideo && (
+      <div className={`sp-now-bar${track?.posterSrc && !showVideoPanel ? ' sp-now-bar--with-cover' : ''}`}>
+        {track?.posterSrc && !showVideoPanel && (
           <img
             className="sp-now-cover"
             src={trackCoverUrl(track)}
@@ -453,7 +509,7 @@ export function NowPlayingBar({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
-              {showVideo && <span className="sp-now-badge">Video</span>}
+              {showVideoBadge && <span className="sp-now-badge">Video</span>}
               {solenoidActive && <span className="sp-now-badge">30s preview</span>}
               {fullPlayUnlocked && (
                 <span className="sp-now-badge sp-now-badge--pass" title="Member playback">

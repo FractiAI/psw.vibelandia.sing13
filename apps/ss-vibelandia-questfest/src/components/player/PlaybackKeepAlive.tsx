@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { IOS_PLAYABLE_MEDIA_CLASS } from '@/lib/devicePlayback';
 import { registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
 
 /**
@@ -17,7 +18,7 @@ export function PlaybackKeepAlive() {
   return (
     <audio
       ref={backgroundRef}
-      className="sr-only"
+      className={IOS_PLAYABLE_MEDIA_CLASS}
       preload="auto"
       playsInline
       aria-hidden

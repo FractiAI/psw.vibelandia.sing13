@@ -1,4 +1,5 @@
 import type { TrackDef } from '@/lib/catalogTypes';
+import { isIOSDevice } from '@/lib/devicePlayback';
 
 const VIDEO_EXT = /\.(mp4|webm|mov|m4v|ogv|mkv)(\?|#|$)/i;
 const AUDIO_EXT = /\.(mp3|m4a|aac|wav|ogg|flac|opus|weba)(\?|#|$)/i;
@@ -31,4 +32,11 @@ export function isVideoTrack(track: Pick<TrackDef, 'src' | 'videoSrc'> | undefin
 export function playbackUrlForTrack(track: TrackDef): string {
   if (isVideoTrack(track)) return (track.videoSrc || track.src || '').trim();
   return (track.src || track.videoSrc || '').trim();
+}
+
+/** Inline <video> panel — off on iPhone (native layer / hang); use <audio> there instead. */
+export function showInlineVideoPlayer(
+  track: Pick<TrackDef, 'src' | 'videoSrc'> | undefined,
+): boolean {
+  return isVideoTrack(track) && !isIOSDevice();
 }

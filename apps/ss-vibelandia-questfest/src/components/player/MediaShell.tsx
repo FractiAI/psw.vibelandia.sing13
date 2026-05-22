@@ -42,7 +42,7 @@ export function MediaShell() {
     if (snap?.trackId) {
       pb.setTrack(snap.trackId);
       pb.setDisplayTime(snap.displayTime);
-      if (snap.isPlaying) pb.setPlaying(true);
+      pb.setPlaying(false);
     }
 
     const params = new URLSearchParams(window.location.search);

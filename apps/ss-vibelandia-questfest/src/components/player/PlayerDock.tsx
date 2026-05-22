@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useStreamLock } from '@/hooks/useStreamLock';
-import { NowPlayingBar } from '@/components/catalog/NowPlayingBar';
+import { SimplePlayer } from '@/components/player/SimplePlayer';
 import { VesselSwitchModal } from '@/components/player/VesselSwitchModal';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
@@ -33,7 +33,7 @@ export function PlayerDock() {
   return (
     <>
       <div className="sp-player-dock" aria-live="polite">
-        <NowPlayingBar
+        <SimplePlayer
           onFairExchange={onFairExchange}
           onVesselSwitch={onVesselSwitch}
           killReason={stream.killReason}

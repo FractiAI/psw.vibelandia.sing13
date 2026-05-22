@@ -12,7 +12,6 @@ import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
-import { dispatchPlayGesture } from '@/lib/playGesture';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
@@ -120,7 +119,6 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
     setActivePlaylist(activePlaylistId);
     setTrack(id);
     setPlaying(true);
-    queueMicrotask(() => dispatchPlayGesture(id));
   };
 
 

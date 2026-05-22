@@ -19,11 +19,10 @@ export function flushPlaybackSession() {
 export function usePlaybackSessionPersistence() {
   const trackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
-  const displayTime = usePlaybackStore((s) => s.displayTime);
 
   useEffect(() => {
     flushPlaybackSession();
-  }, [trackId, isPlaying, displayTime]);
+  }, [trackId, isPlaying]);
 
   useEffect(() => {
     const onHide = () => {

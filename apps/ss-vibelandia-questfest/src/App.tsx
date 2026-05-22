@@ -1,6 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { MediaShell } from './components/player/MediaShell';
-import { PlaybackKeepAlive } from './components/player/PlaybackKeepAlive';
 import { useIOSHtmlClass } from '@/lib/useIOSHtmlClass';
 import { BridgePage } from './pages/BridgePage';
 import { RegistrationPage } from './pages/RegistrationPage';
@@ -9,7 +8,6 @@ export default function App() {
   useIOSHtmlClass();
   return (
     <>
-      <PlaybackKeepAlive />
       <Routes>
         <Route path="/" element={<Navigate to="/bridge" replace />} />
         <Route path="/register" element={<RegistrationPage />} />

@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { GlobalAudio } from './components/player/GlobalAudio';
 import { MediaShell } from './components/player/MediaShell';
 import { useIOSHtmlClass } from '@/lib/useIOSHtmlClass';
 import { BridgePage } from './pages/BridgePage';
@@ -9,7 +8,6 @@ export default function App() {
   useIOSHtmlClass();
   return (
     <>
-      <GlobalAudio />
       <Routes>
         <Route path="/" element={<Navigate to="/bridge" replace />} />
         <Route path="/register" element={<RegistrationPage />} />

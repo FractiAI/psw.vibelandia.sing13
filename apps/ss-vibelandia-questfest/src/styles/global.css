@@ -3474,6 +3474,28 @@ a.boarding-pay-open {
   border-top: 1px solid #282828;
 }
 
+.sp-native-player {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sp-native-audio {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+  background: #0a0a0a;
+}
+
+.sp-native-player .sp-media-playback-el {
+  position: static;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .sp-now-visual {
   width: 100%;
   min-height: min(42vh, 280px);

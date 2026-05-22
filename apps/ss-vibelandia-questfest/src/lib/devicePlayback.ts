@@ -8,3 +8,8 @@ export function isIOSDevice(): boolean {
 
 /** iOS Safari blocks programmatic play on clipped / display:none media. */
 export const IOS_PLAYABLE_MEDIA_CLASS = 'sp-media-playback-el';
+
+/** iPhone/iPad: never mount <video> — native layer causes blue-screen hang. */
+export function iosAudioOnlyPlayback(): boolean {
+  return isIOSDevice();
+}

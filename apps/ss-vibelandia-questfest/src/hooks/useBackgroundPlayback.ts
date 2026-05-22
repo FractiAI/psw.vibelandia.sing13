@@ -93,9 +93,7 @@ export function useBackgroundPlayback({
       if (bg?.src) {
         el.currentTime = resumeAt;
         if (el instanceof HTMLAudioElement) {
-          el.src = bg.src;
-        } else if (el instanceof HTMLVideoElement && tr) {
-          el.src = tr.videoSrc || tr.src || bg.src;
+          el.src = bg.src || (tr ? playbackUrlForTrack(tr) : '');
         }
       }
 

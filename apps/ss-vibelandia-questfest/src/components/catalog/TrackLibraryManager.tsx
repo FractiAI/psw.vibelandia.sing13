@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
-import { isVideoTrack } from '@/lib/isVideoTrack';
+import { trackHasVideoAsset } from '@/lib/isVideoTrack';
 import { fmtDuration } from '@/lib/formatDuration';
 import { TRACK_GENRE_SUGGESTIONS, type TrackDef } from '@/lib/catalogTypes';
 
@@ -20,7 +20,7 @@ function TrackEditorRow({ track, disabled }: { track: TrackDef; disabled?: boole
     [playlists, track.id],
   );
 
-  const isVideo = isVideoTrack(track);
+  const isVideo = trackHasVideoAsset(track);
   const durationLabel =
     track.durationSec != null && track.durationSec > 0 ? fmtDuration(track.durationSec) : null;
 

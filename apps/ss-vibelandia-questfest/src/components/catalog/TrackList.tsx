@@ -11,7 +11,7 @@ import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
-import { isVideoTrack, playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 import { dispatchPlayGesture } from '@/lib/playGesture';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
@@ -383,7 +383,7 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
 
                       <span className="sp-listen-type-dur">
 
-                        {isVideoTrack(tr) ? 'Video' : 'Audio'} · {fmtDuration(tr.durationSec)}
+                        Audio · {fmtDuration(tr.durationSec)}
 
                       </span>
 

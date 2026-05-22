@@ -23,7 +23,7 @@ async function resolveBlob(track: TrackDef): Promise<Blob | null> {
     const blob = await loadBlob(track.localMediaKey);
     if (blob) return blob;
   }
-  const url = track.videoSrc || track.src;
+  const url = track.src;
   if (!url) return null;
   if (url.startsWith('blob:') || url.startsWith('http')) {
     try {
@@ -43,7 +43,7 @@ export async function downloadTrackToDevice(track: TrackDef): Promise<void> {
     throw new Error('no_file_on_device');
   }
   await saveLocalCopy(track.id, blob);
-  const ext = extFromMime(blob.type) || (track.videoSrc ? '.mp4' : '.m4a');
+  const ext = extFromMime(blob.type) || '.mp3';
   const name = safeFileName(track.title, track.artist, ext);
   const objectUrl = URL.createObjectURL(blob);
   const anchor = document.createElement('a');

@@ -3,7 +3,7 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistStore } from '@/stores/playlistStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { KillReason } from '@/hooks/useStreamLock';
-import { isVideoTrack, playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 
 const GATE_SEC = 29;
 const FADE_START = 28.85;
@@ -43,7 +43,6 @@ export function SolenoidPlayer({
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const pl = getActivePlaylist();
   const solenoidActive = pl?.kind === 'sovereign' && !isPassenger;
-  const isVideo = isVideoTrack(track);
 
   useEffect(() => {
     if (killReason === 'vessel_switch' || killReason === 'tab_preempt') {
@@ -101,7 +100,7 @@ export function SolenoidPlayer({
       el.removeEventListener('ended', onEnded);
       el.removeEventListener('error', onErr);
     };
-  }, [gain, isVideo, onFairExchange, setDisplayTime, setPlaying, solenoidActive, track]);
+  }, [gain, onFairExchange, setDisplayTime, setPlaying, solenoidActive, track]);
 
   useEffect(() => {
     const el = mediaRef.current;
@@ -135,21 +134,11 @@ export function SolenoidPlayer({
 
   return (
     <div className="voxel-panel player-wrap">
-      {isVideo ? (
-        <video
-          ref={mediaRef as React.RefObject<HTMLVideoElement>}
-          className="player-video"
-          preload="metadata"
-          playsInline
-          poster={track.posterSrc}
-        />
-      ) : (
-        <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} preload="metadata" />
-      )}
+      <audio ref={mediaRef} preload="metadata" playsInline />
 
       <div className="player-head">
         <div>
-          <div className="player-label">Now playing {isVideo ? '· video' : '· audio'}</div>
+          <div className="player-label">Now playing · audio</div>
           <h3 className="player-title">{track.title}</h3>
           <div className="player-artist">{track.artist}</div>
         </div>

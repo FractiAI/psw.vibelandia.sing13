@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
 import { IOS_PLAYABLE_MEDIA_CLASS } from '@/lib/devicePlayback';
-import { isVideoTrack, playbackUrlForTrack, showInlineVideoPlayer } from '@/lib/isVideoTrack';
+import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 import { dispatchPlayGesture, subscribePlayGesture } from '@/lib/playGesture';
 import { getPlaybackMedia, registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
 import { readPlaybackSession } from '@/lib/playbackSession';
@@ -39,7 +39,6 @@ export function NowPlayingBar({
   beginSession,
   clearKill,
 }: NowPlayingBarProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
   const wiredTrackRef = useRef<string | null>(null);
@@ -70,11 +69,7 @@ export function NowPlayingBar({
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
-  const showVideoPanel = showInlineVideoPlayer(track);
-  const useVideoElement = isVideoTrack(track);
-  const showVideoBadge = isVideoTrack(track);
-
-  const primaryMediaRef = useVideoElement ? videoRef : audioRef;
+  const primaryMediaRef = audioRef;
   const [mediaMountGen, setMediaMountGen] = useState(0);
 
   const syncBackgroundRef = useCallback(() => {
@@ -83,15 +78,15 @@ export function NowPlayingBar({
       (document.querySelector('audio[data-qv-playback-keepalive]') as HTMLAudioElement | null);
   }, []);
 
-  const getPrimaryMedia = useCallback((): HTMLVideoElement | HTMLAudioElement | null => {
-    return primaryMediaRef.current;
-  }, [primaryMediaRef]);
+  const getPrimaryMedia = useCallback((): HTMLAudioElement | null => {
+    return audioRef.current;
+  }, []);
 
   useEffect(() => {
     syncBackgroundRef();
     registerPlaybackMedia(primaryMediaRef.current, backgroundAudioRef.current);
     return () => registerPlaybackMedia(null, getPlaybackMedia().background);
-  }, [primaryMediaRef, syncBackgroundRef, useVideoElement, track?.id]);
+  }, [syncBackgroundRef, track?.id]);
 
   const bumpMediaMount = useCallback(() => setMediaMountGen((n) => n + 1), []);
 
@@ -99,10 +94,11 @@ export function NowPlayingBar({
     (trackId: string, fromGesture: boolean) => {
       const tr = getTrack(trackId);
       const url = tr ? playbackUrlForTrack(tr) : '';
-      const el = primaryMediaRef.current;
+      const el = audioRef.current;
       if (!tr || !url || !el) return false;
 
-      if (wiredTrackRef.current !== trackId || el.src !== url) {
+      const needsLoad = wiredTrackRef.current !== trackId || !el.src;
+      if (needsLoad) {
         wiredTrackRef.current = trackId;
         el.src = url;
         el.load();
@@ -114,7 +110,7 @@ export function NowPlayingBar({
       }
       return true;
     },
-    [beginSession, getTrack, primaryMediaRef],
+    [beginSession, getTrack],
   );
 
   useEffect(() => subscribePlayGesture((trackId) => wireSrcAndPlay(trackId, true)), [wireSrcAndPlay]);
@@ -176,12 +172,12 @@ export function NowPlayingBar({
   syncBackgroundRef();
 
   useBackgroundPlayback({
-    mediaRef: primaryMediaRef as RefObject<HTMLVideoElement | HTMLAudioElement | null>,
+    mediaRef: primaryMediaRef as RefObject<HTMLAudioElement | null>,
     backgroundAudioRef,
     allowBackgroundPlay,
     isPlaying,
     track,
-    isVideo: useVideoElement,
+    isVideo: false,
     setPlaying,
     onRequestResume: resumePlayback,
     onTimeUpdate: setDisplayTime,
@@ -304,11 +300,18 @@ export function NowPlayingBar({
         setPlaying(false);
         return;
       }
+      const alreadyWired = wiredTrackRef.current === trackId && !!el.src && !el.error;
       wiredTrackRef.current = trackId;
-      el.src = url;
-      el.load();
+      if (!alreadyWired) {
+        el.src = url;
+        el.load();
+      }
       el.volume = gainRef.current;
       attachListeners();
+      if (alreadyWired) {
+        if (usePlaybackStore.getState().isPlaying && el.paused) tryPlay();
+        return;
+      }
       el.addEventListener('canplay', tryPlay, { once: true });
       if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) tryPlay();
     };
@@ -352,14 +355,11 @@ export function NowPlayingBar({
     setDisplayTime,
     setPlaying,
     mediaMountGen,
-    showVideoPanel,
     solenoidActive,
     syncBackgroundRef,
     track?.downloadedLocally,
     track?.id,
     track?.src,
-    track?.videoSrc,
-    useVideoElement,
   ]);
 
   useEffect(() => {
@@ -448,14 +448,6 @@ export function NowPlayingBar({
     setPlaying(!isPlaying);
   };
 
-  const setVideoRef = useCallback(
-    (el: HTMLVideoElement | null) => {
-      videoRef.current = el;
-      if (el) bumpMediaMount();
-    },
-    [bumpMediaMount],
-  );
-
   const setAudioRef = useCallback(
     (el: HTMLAudioElement | null) => {
       audioRef.current = el;
@@ -466,36 +458,17 @@ export function NowPlayingBar({
 
   return (
     <footer className="sp-now">
-      {track && showVideoPanel && (
-        <div className="sp-now-visual">
-          <video
-            key={track.id}
-            ref={setVideoRef}
-            className="sp-now-video"
-            preload="auto"
-            playsInline
-            controls
-            poster={trackCoverUrl(track)}
-            aria-label={track.title}
-          />
-        </div>
-      )}
-      {track && useVideoElement && !showVideoPanel && (
-        <video
-          key={`${track.id}-ios`}
-          ref={setVideoRef}
+      {track && (
+        <audio
+          ref={setAudioRef}
           className={IOS_PLAYABLE_MEDIA_CLASS}
           preload="auto"
           playsInline
-          poster={trackCoverUrl(track)}
-          aria-label={track.title}
+          aria-hidden
         />
       )}
-      {track && !useVideoElement && (
-        <audio key={track.id} ref={setAudioRef} className={IOS_PLAYABLE_MEDIA_CLASS} preload="auto" />
-      )}
-      <div className={`sp-now-bar${track?.posterSrc && !showVideoPanel ? ' sp-now-bar--with-cover' : ''}`}>
-        {track?.posterSrc && !showVideoPanel && (
+      <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
+        {track?.posterSrc && (
           <img
             className="sp-now-cover"
             src={trackCoverUrl(track)}
@@ -509,7 +482,6 @@ export function NowPlayingBar({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
-              {showVideoBadge && <span className="sp-now-badge">Video</span>}
               {solenoidActive && <span className="sp-now-badge">30s preview</span>}
               {fullPlayUnlocked && (
                 <span className="sp-now-badge sp-now-badge--pass" title="Member playback">

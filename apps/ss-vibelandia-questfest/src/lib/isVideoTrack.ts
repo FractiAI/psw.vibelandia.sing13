@@ -1,5 +1,4 @@
 import type { TrackDef } from '@/lib/catalogTypes';
-import { isIOSDevice } from '@/lib/devicePlayback';
 
 const VIDEO_EXT = /\.(mp4|webm|mov|m4v|ogv|mkv)(\?|#|$)/i;
 const AUDIO_EXT = /\.(mp3|m4a|aac|wav|ogg|flac|opus|weba)(\?|#|$)/i;
@@ -16,27 +15,39 @@ function isVideoUrl(url: string): boolean {
   return /video\//i.test(url);
 }
 
-/** True when this catalog row should use the video player (not audio-only). */
-export function isVideoTrack(track: Pick<TrackDef, 'src' | 'videoSrc'> | undefined): boolean {
+/** Catalog metadata only — playback is audio-only (never true for player routing). */
+export function isVideoTrack(_track: Pick<TrackDef, 'src' | 'videoSrc'> | undefined): boolean {
+  return false;
+}
+
+/** True when the row still has a legacy video file (UI labels only). */
+export function trackHasVideoAsset(track: Pick<TrackDef, 'src' | 'videoSrc'> | undefined): boolean {
   if (!track) return false;
   const src = (track.src || '').trim();
   const videoSrc = (track.videoSrc || '').trim();
-  // Migrated / uploaded audio rows keep src as mp3 even if legacy videoSrc lingers in cache.
   if (isAudioUrl(src)) return false;
   if (videoSrc) return true;
   if (!src) return false;
   return isVideoUrl(src);
 }
 
-/** Canonical stream URL for the active player (audio-first when src is audio). */
+/** Stream URL for playback — MP3/audio src only; never videoSrc. */
 export function playbackUrlForTrack(track: TrackDef): string {
-  if (isVideoTrack(track)) return (track.videoSrc || track.src || '').trim();
-  return (track.src || track.videoSrc || '').trim();
+  const src = (track.src || '').trim();
+  if (src) return src;
+  const videoSrc = (track.videoSrc || '').trim();
+  if (!videoSrc || !track.id) return '';
+  try {
+    const origin = new URL(videoSrc).origin;
+    return `${origin}/catalog/${track.id}.mp3`;
+  } catch {
+    return '';
+  }
 }
 
-/** Inline <video> panel — off on iPhone (native layer / hang); use <audio> there instead. */
+/** Inline video panel disabled — audio-only deck. */
 export function showInlineVideoPlayer(
-  track: Pick<TrackDef, 'src' | 'videoSrc'> | undefined,
+  _track: Pick<TrackDef, 'src' | 'videoSrc'> | undefined,
 ): boolean {
-  return isVideoTrack(track) && !isIOSDevice();
+  return false;
 }

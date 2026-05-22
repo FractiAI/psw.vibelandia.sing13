@@ -1,5 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useSimpleAudioEngine, SIMPLE_AUDIO_CLASS } from '@/hooks/useSimpleAudioEngine';
+import {
+  useSimpleAudioEngine,
+  SIMPLE_AUDIO_CLASS,
+  startTrackPlayback,
+} from '@/hooks/useSimpleAudioEngine';
+import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { pauseSimpleAudio } from '@/lib/simplePlayback';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -37,7 +43,7 @@ export function SimplePlayer({
 }: SimplePlayerProps) {
   const [error, setError] = useState<string | null>(null);
 
-  const audioRef = useSimpleAudioEngine({
+  const setAudioRef = useSimpleAudioEngine({
     onFairExchange,
     onError: setError,
     beginSession,
@@ -78,26 +84,38 @@ export function SimplePlayer({
       const step = delta > 0 ? 1 : -1;
       for (let i = idx + step; i >= 0 && i < pl.trackIds.length; i += step) {
         const id = pl.trackIds[i];
-        if (!getTrack(id)) continue;
-        setDisplayTime(0);
-        setTrack(id);
-        setPlaying(true);
+        const tr = getTrack(id);
+        const u = tr ? playbackUrlForTrack(tr) : '';
+        if (!u) continue;
+        startTrackPlayback(id, u, { beginSession, onError: setError, setGain });
         return;
       }
       setPlaying(false);
+      pauseSimpleAudio();
     },
-    [currentTrackId, getTrack, pl, setDisplayTime, setPlaying, setTrack],
+    [beginSession, currentTrackId, getTrack, pl, setPlaying],
   );
 
   const togglePlay = () => {
     clearKill();
     setGain(1);
-    setPlaying(!isPlaying);
+    if (isPlaying) {
+      pauseSimpleAudio();
+      setPlaying(false);
+      return;
+    }
+    if (!track) return;
+    const u = playbackUrlForTrack(track);
+    if (!u) {
+      setError('No MP3 on this track — tap Refresh or upload audio.');
+      return;
+    }
+    startTrackPlayback(track.id, u, { beginSession, onError: setError, setGain });
   };
 
   return (
     <footer className="sp-now sp-simple-player">
-      <audio ref={audioRef} className={SIMPLE_AUDIO_CLASS} playsInline preload="metadata" aria-hidden />
+      <audio ref={setAudioRef} className={SIMPLE_AUDIO_CLASS} playsInline preload="metadata" aria-hidden />
       <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
         {track?.posterSrc && (
           <img className="sp-now-cover" src={trackCoverUrl(track)} alt="" width={56} height={56} />

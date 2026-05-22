@@ -12,6 +12,8 @@ import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { startTrackPlayback } from '@/hooks/useSimpleAudioEngine';
+import { startTrackPlayback } from '@/hooks/useSimpleAudioEngine';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
@@ -51,12 +53,6 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
 
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
-
-  const setTrack = usePlaybackStore((s) => s.setTrack);
-
-  const setPlaying = usePlaybackStore((s) => s.setPlaying);
-
-
 
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
   const [editingTrackId, setEditingTrackId] = useState<string | null>(null);
@@ -115,10 +111,10 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
 
   const play = (id: string) => {
     const tr = getTrack(id);
-    if (!tr || !playbackUrlForTrack(tr)) return;
+    const url = tr ? playbackUrlForTrack(tr) : '';
+    if (!tr || !url) return;
     setActivePlaylist(activePlaylistId);
-    setTrack(id);
-    setPlaying(true);
+    startTrackPlayback(id, url);
   };
 
 

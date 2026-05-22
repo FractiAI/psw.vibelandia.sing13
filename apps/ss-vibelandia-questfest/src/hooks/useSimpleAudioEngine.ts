@@ -4,7 +4,14 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
-import { getSimpleAudioElement, pauseSimpleAudio, playAudioNow, syncLoadedUrl } from '@/lib/simplePlayback';
+import {
+  getLoadedUrl,
+  getSimpleAudioElement,
+  pauseSimpleAudio,
+  playAudioNow,
+  syncLoadedUrl,
+  urlMatchesElement,
+} from '@/lib/simplePlayback';
 
 const GATE_SEC = 29;
 const FADE_START = 28.85;
@@ -167,16 +174,24 @@ export function useSimpleAudioEngine({
       return;
     }
 
+    if (!isPlaying) {
+      pauseSimpleAudio();
+      return;
+    }
+
     onError(null);
     syncLoadedUrl(url);
 
     const audio = getSimpleAudioElement();
-    if (audio && isPlaying && audio.src !== url) {
-      audio.src = url;
-    }
+    if (!audio) return;
 
-    if (!isPlaying) {
-      pauseSimpleAudio();
+    // Never assign src here — that races gesture play() and silences playback.
+    const loaded = getLoadedUrl();
+    if (loaded && urlMatchesElement(audio, loaded) && audio.paused) {
+      void audio.play().catch(() => {
+        onError('Tap play again — could not start audio.');
+        setPlaying(false);
+      });
     }
   }, [isPlaying, onError, setPlaying, trackId, url]);
 

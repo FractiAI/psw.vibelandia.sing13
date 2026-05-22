@@ -65,3 +65,17 @@ export function pauseSimpleAudio(): void {
 export function syncLoadedUrl(url: string | null): void {
   loadedUrl = url;
 }
+
+export function getLoadedUrl(): string | null {
+  return loadedUrl;
+}
+
+/** Compare track URL to element src (browser resolves to absolute href). */
+export function urlMatchesElement(el: HTMLAudioElement, url: string): boolean {
+  if (!url) return !el.src;
+  try {
+    return new URL(el.src || '', window.location.href).href === new URL(url, window.location.href).href;
+  } catch {
+    return el.src === url;
+  }
+}

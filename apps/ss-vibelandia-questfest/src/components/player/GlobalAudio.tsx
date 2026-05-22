@@ -15,7 +15,7 @@ export function GlobalAudio() {
       ref={setRef}
       className={IOS_PLAYABLE_MEDIA_CLASS}
       playsInline
-      preload="metadata"
+      preload="auto"
       aria-hidden
     />
   );

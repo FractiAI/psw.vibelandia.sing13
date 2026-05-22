@@ -100,7 +100,8 @@ async function main() {
     await page.waitForFunction(
       () => {
         const a = document.querySelector('audio.sp-media-playback-el');
-        return a && !a.paused && a.currentTime > 0.05;
+        const clock = document.querySelector('.sp-now-time span')?.textContent?.trim() || '';
+        return a && !a.paused && (a.currentTime > 0.05 || (clock !== '0:00' && clock !== ''));
       },
       undefined,
       { timeout: 45_000 },
@@ -111,6 +112,7 @@ async function main() {
       return {
         paused: a?.paused,
         time: a?.currentTime,
+        clock: document.querySelector('.sp-now-time span')?.textContent?.trim(),
         src: a?.src?.slice(0, 80),
         error: document.querySelector('.sp-now-error')?.textContent || null,
       };

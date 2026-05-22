@@ -4,6 +4,8 @@ import { readPlaybackPrefs, writePlaybackPrefs } from '@/lib/playbackPreferences
 interface PlaybackState {
   currentTrackId: string | null;
   isPlaying: boolean;
+  /** Shown in the player bar when start/play fails. */
+  playbackError: string | null;
   displayTime: number;
   /** 0–1 linear gain applied by solenoid / vessel switch */
   gain: number;
@@ -29,6 +31,7 @@ const initialPrefs = readPlaybackPrefs();
 export const usePlaybackStore = create<PlaybackState>((set) => ({
   currentTrackId: null,
   isPlaying: false,
+  playbackError: null,
   displayTime: 0,
   gain: 1,
   backgroundHandoffActive: false,
@@ -36,6 +39,7 @@ export const usePlaybackStore = create<PlaybackState>((set) => ({
   backgroundPlayEnabled: initialPrefs.backgroundPlay,
   setTrack: (id) => set({ currentTrackId: id }),
   setPlaying: (v) => set({ isPlaying: v, ...(v ? {} : { backgroundHandoffActive: false }) }),
+  setPlaybackError: (msg) => set({ playbackError: msg }),
   setDisplayTime: (t) => set({ displayTime: t }),
   setGain: (g) => set({ gain: Math.max(0, Math.min(1, g)) }),
   setBackgroundHandoffActive: (v) => set({ backgroundHandoffActive: v }),

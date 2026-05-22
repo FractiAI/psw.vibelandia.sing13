@@ -1,23 +1,13 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
-import { IOS_PLAYABLE_MEDIA_CLASS } from '@/lib/devicePlayback';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
-import {
-  bindSimpleAudioElement,
-  getSimpleAudioElement,
-  pauseSimpleAudio,
-  playAudioNow,
-  syncLoadedUrl,
-} from '@/lib/simplePlayback';
-import { registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
+import { getSimpleAudioElement, pauseSimpleAudio, playAudioNow, syncLoadedUrl } from '@/lib/simplePlayback';
 
 const GATE_SEC = 29;
 const FADE_START = 28.85;
-
-export const SIMPLE_AUDIO_CLASS = IOS_PLAYABLE_MEDIA_CLASS;
 
 interface UseSimpleAudioEngineOptions {
   onFairExchange: () => void;
@@ -35,7 +25,6 @@ export function useSimpleAudioEngine({
   beginSession,
 }: UseSimpleAudioEngineOptions) {
   const gateArmedRef = useRef(true);
-  const [audioReady, setAudioReady] = useState(0);
 
   const trackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
@@ -63,19 +52,6 @@ export function useSimpleAudioEngine({
   beginSessionRef.current = beginSession;
   autoplayRef.current = autoplayEnabled;
   gainRef.current = gain;
-
-  const setAudioRef = useCallback((el: HTMLAudioElement | null) => {
-    bindSimpleAudioElement(el);
-    registerPlaybackMedia(el, null);
-    if (el) setAudioReady((n) => n + 1);
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      bindSimpleAudioElement(null);
-      registerPlaybackMedia(null, null);
-    };
-  }, []);
 
   useEffect(() => {
     if (fullPlayUnlocked) return;
@@ -173,7 +149,6 @@ export function useSimpleAudioEngine({
     setTrack,
     solenoidActive,
     trackId,
-    audioReady,
   ]);
 
   useEffect(() => {
@@ -195,6 +170,11 @@ export function useSimpleAudioEngine({
     onError(null);
     syncLoadedUrl(url);
 
+    const audio = getSimpleAudioElement();
+    if (audio && isPlaying && audio.src !== url) {
+      audio.src = url;
+    }
+
     if (!isPlaying) {
       pauseSimpleAudio();
     }
@@ -204,8 +184,6 @@ export function useSimpleAudioEngine({
     const audio = getSimpleAudioElement();
     if (audio && !solenoidActive) audio.volume = gain;
   }, [gain, solenoidActive]);
-
-  return setAudioRef;
 }
 
 /** Start playback inside a user gesture (list row, play button). */
@@ -218,15 +196,22 @@ export function startTrackPlayback(
     setGain?: (g: number) => void;
   },
 ): void {
-  const g = usePlaybackStore.getState().gain || 1;
+  const pb = usePlaybackStore.getState();
+  pb.setGain(1);
   opts?.setGain?.(1);
-  usePlaybackStore.getState().setTrack(trackId);
-  usePlaybackStore.getState().setPlaying(true);
-  usePlaybackStore.getState().setDisplayTime(0);
+  pb.setPlaybackError(null);
+  pb.setTrack(trackId);
+  pb.setPlaying(true);
+  pb.setDisplayTime(0);
   opts?.beginSession?.();
   syncLoadedUrl(url);
-  void playAudioNow(url, g).catch(() => {
-    opts?.onError?.('Tap play again — could not start audio.');
-    usePlaybackStore.getState().setPlaying(false);
+  void playAudioNow(url, 1).catch((err) => {
+    const msg =
+      err instanceof Error && err.message === 'no_audio_or_url'
+        ? 'Player not ready — refresh and try again.'
+        : 'Tap play again — could not start audio.';
+    pb.setPlaybackError(msg);
+    opts?.onError?.(msg);
+    pb.setPlaying(false);
   });
 }

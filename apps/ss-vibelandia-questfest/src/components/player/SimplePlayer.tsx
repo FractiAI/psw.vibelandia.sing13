@@ -1,9 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
-import {
-  useSimpleAudioEngine,
-  SIMPLE_AUDIO_CLASS,
-  startTrackPlayback,
-} from '@/hooks/useSimpleAudioEngine';
+import { useCallback, useEffect } from 'react';
+import { useSimpleAudioEngine, startTrackPlayback } from '@/hooks/useSimpleAudioEngine';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 import { pauseSimpleAudio } from '@/lib/simplePlayback';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
@@ -41,13 +37,21 @@ export function SimplePlayer({
   beginSession,
   clearKill,
 }: SimplePlayerProps) {
-  const [error, setError] = useState<string | null>(null);
+  const storeError = usePlaybackStore((s) => s.playbackError);
+  const setPlaybackError = usePlaybackStore((s) => s.setPlaybackError);
 
-  const setAudioRef = useSimpleAudioEngine({
+  const setError = useCallback(
+    (msg: string | null) => setPlaybackError(msg),
+    [setPlaybackError],
+  );
+
+  useSimpleAudioEngine({
     onFairExchange,
     onError: setError,
     beginSession,
   });
+
+  const error = storeError;
 
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
@@ -115,7 +119,6 @@ export function SimplePlayer({
 
   return (
     <footer className="sp-now sp-simple-player">
-      <audio ref={setAudioRef} className={SIMPLE_AUDIO_CLASS} playsInline preload="metadata" aria-hidden />
       <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
         {track?.posterSrc && (
           <img className="sp-now-cover" src={trackCoverUrl(track)} alt="" width={56} height={56} />

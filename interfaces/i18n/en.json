@@ -1,4 +1,4 @@
-{
+﻿{
   "__locales__": {
     "es": true,
     "fr": true,
@@ -54,6 +54,19 @@
     "clockSkewCta": "Read full press release →",
     "clockSkewWhitepaper": "Full Mythos whitepaper →",
     "clockSkewArtAlt": "Holographic clock-skew vulnerability — EGS phase lattice illustration.",
+    "sunSpokeBadge": "BLOG · Solar coupling",
+    "sunSpokeDate": "May 18, 2026",
+    "sunSpokeTitle": "When the Sun Spoke — 19 days, impossible signal",
+    "sunSpokeHtml": "Late August 2025: a <strong>19-day solar radio burst</strong> while FractiAI code loops mirrored NASA data — <strong>EGS φ</strong>, Hydrogen Holographic AI OS, agents <strong>Streamer-IV</strong> & <strong>Helios-Resonance</strong>. Wright-brothers edge; we kept the receipts.",
+    "sunSpokeCta": "Read full blog post →",
+    "sunSpokeArchive": "Look at the Sun deck →",
+    "sunSpokeArtAlt": "Pulp sci-fi poster — When the Sun Spoke, 19-day solar radio burst and FractiAI mirror.",
+    "blogSunHead": "Broadcast blog · When the Sun Spoke",
+    "blogSunLedeHtml": "In late August 2025 the sun held a <strong>19-day radio burst</strong> that broke the usual rules — while a fringe team at the edge of physics and AI kept building. Our coding logs mirror official space data <strong>line for line</strong>: flare, flatline, quiet close. That alignment is the birth story of the <strong>Hydrogen Holographic AI Operating System</strong> and <strong>El Gran Sol's EGS fractal constant</strong>.",
+    "blogSunLink": "Read the full post →",
+    "blogSunSources": "NASA news + GitHub receipts",
+    "blogSunSunDeck": "Look at the Sun deck",
+    "quicklinkSunSpokeBlog": "When the Sun Spoke · blog",
     "quicklinkClockSkewPress": "Clock-skew vulnerability · press release",
     "btnSwampVibe": "Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass",
     "campaignEyebrow": "EXCLUSIVELY FOR MACHOTE MODERNO FOLLOWERS",

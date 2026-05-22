@@ -13,7 +13,6 @@ import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 import { startTrackPlayback } from '@/hooks/useSimpleAudioEngine';
-import { startTrackPlayback } from '@/hooks/useSimpleAudioEngine';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
@@ -112,7 +111,10 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
   const play = (id: string) => {
     const tr = getTrack(id);
     const url = tr ? playbackUrlForTrack(tr) : '';
-    if (!tr || !url) return;
+    if (!tr || !url) {
+      usePlaybackStore.getState().setPlaybackError('No audio file on this track — tap Refresh.');
+      return;
+    }
     setActivePlaylist(activePlaylistId);
     startTrackPlayback(id, url);
   };

@@ -58,7 +58,7 @@ export function PlaylistBulkExportModal({
   const [email, setEmail] = useState('');
   const [honorAck, setHonorAck] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [progress, setProgress] = useState({ done: 0, total: 0 });
+  const [progress, setProgress] = useState({ done: 0, total: 0, currentTitle: '' });
   const [error, setError] = useState<string | null>(null);
   const [doneMsg, setDoneMsg] = useState<string | null>(null);
 
@@ -94,7 +94,7 @@ export function PlaylistBulkExportModal({
     setEmail('');
     setHonorAck(false);
     setBusy(false);
-    setProgress({ done: 0, total: 0 });
+    setProgress({ done: 0, total: 0, currentTitle: '' });
     setError(null);
     setDoneMsg(null);
   }, []);
@@ -123,27 +123,40 @@ export function PlaylistBulkExportModal({
     setStep('confirm');
   }, [open, pl, targets.length, toLicense.length, isPassenger, captainUnlocked, reset]);
 
-  const runCaptainDownloads = async () => {
+  const runBulkDownloads = async (
+    onTrack: (track: (typeof toLicense)[0]['track'], index: number) => Promise<void>,
+  ) => {
     setBusy(true);
     setError(null);
-    setProgress({ done: 0, total: toLicense.length });
+    const total = toLicense.length;
+    setProgress({ done: 0, total, currentTitle: toLicense[0]?.track.title ?? '' });
     const failures: string[] = [];
-    for (let i = 0; i < toLicense.length; i++) {
+    for (let i = 0; i < total; i++) {
       const { track } = toLicense[i];
+      setProgress({ done: i, total, currentTitle: track.title });
       try {
-        saveExportLicense({
-          trackId: track.id,
-          licensedAt: new Date().toISOString(),
-          licenseId: 'captain-bulk',
-        });
-        await downloadTrackToDevice(track);
-        setProgress({ done: i + 1, total: toLicense.length });
+        await onTrack(track, i);
+        setProgress({ done: i + 1, total, currentTitle: track.title });
         await new Promise((r) => window.setTimeout(r, 350));
-      } catch {
-        failures.push(track.title);
+      } catch (e) {
+        failures.push(
+          `${track.title}${e instanceof Error && e.message ? ` (${e.message})` : ''}`,
+        );
       }
     }
     setBusy(false);
+    return failures;
+  };
+
+  const runCaptainDownloads = async () => {
+    const failures = await runBulkDownloads(async (track) => {
+      saveExportLicense({
+        trackId: track.id,
+        licensedAt: new Date().toISOString(),
+        licenseId: 'captain-bulk',
+      });
+      await downloadTrackToDevice(track);
+    });
     if (failures.length) {
       setStep('error');
       setError(`Some files could not save: ${failures.join(', ')}`);
@@ -163,50 +176,38 @@ export function PlaylistBulkExportModal({
       return;
     }
 
-    setBusy(true);
-    setError(null);
-    setProgress({ done: 0, total: toLicense.length });
-    const failures: string[] = [];
-    for (let i = 0; i < toLicense.length; i++) {
-      const { track } = toLicense[i];
-      try {
-        if (import.meta.env.DEV && email.trim() === 'dev@local') {
-          saveExportLicense({
-            trackId: track.id,
-            licensedAt: new Date().toISOString(),
-            licenseId: 'dev-local-bulk',
-          });
-        } else if (passToken) {
-          const res = await requestExport({
-            passToken,
-            rail,
-            honorConfirm: true,
-            paidDate,
-            email: email.trim(),
-            trackId: track.id,
-            trackTitle: track.title,
-          });
-          saveExportLicense({
-            trackId: track.id,
-            licensedAt: new Date().toISOString(),
-            licenseId: res.licenseId,
-            passengerJti: res.passengerJti,
-          });
-        } else {
-          saveExportLicense({
-            trackId: track.id,
-            licensedAt: new Date().toISOString(),
-            licenseId: 'honor-local-bulk',
-          });
-        }
-        await downloadTrackToDevice(track);
-        setProgress({ done: i + 1, total: toLicense.length });
-        await new Promise((r) => window.setTimeout(r, 400));
-      } catch (e) {
-        failures.push(`${track.title} (${e instanceof Error ? e.message : 'failed'})`);
+    const failures = await runBulkDownloads(async (track) => {
+      if (import.meta.env.DEV && email.trim() === 'dev@local') {
+        saveExportLicense({
+          trackId: track.id,
+          licensedAt: new Date().toISOString(),
+          licenseId: 'dev-local-bulk',
+        });
+      } else if (passToken) {
+        const res = await requestExport({
+          passToken,
+          rail,
+          honorConfirm: true,
+          paidDate,
+          email: email.trim(),
+          trackId: track.id,
+          trackTitle: track.title,
+        });
+        saveExportLicense({
+          trackId: track.id,
+          licensedAt: new Date().toISOString(),
+          licenseId: res.licenseId,
+          passengerJti: res.passengerJti,
+        });
+      } else {
+        saveExportLicense({
+          trackId: track.id,
+          licensedAt: new Date().toISOString(),
+          licenseId: 'honor-local-bulk',
+        });
       }
-    }
-    setBusy(false);
+      await downloadTrackToDevice(track);
+    });
     if (failures.length) {
       setStep('error');
       setError(failures.join(' · '));
@@ -224,6 +225,14 @@ export function PlaylistBulkExportModal({
   };
 
   const firstTitle = toLicense[0]?.track.title ?? 'tracks';
+  const pct =
+    progress.total > 0 ? Math.min(100, Math.round((progress.done / progress.total) * 100)) : 0;
+  const progressLabel =
+    progress.total > 0
+      ? busy && progress.done < progress.total
+        ? `Downloading track ${progress.done + 1} of ${progress.total}…`
+        : `${progress.done} of ${progress.total} tracks downloaded`
+      : 'Starting downloads…';
 
   return (
     <div className="modal-root" role="dialog" aria-modal="true">
@@ -440,9 +449,27 @@ export function PlaylistBulkExportModal({
 
         {step === 'working' && (
           <>
-            <p className="modal-body">
-              {busy ? `Saving files… ${progress.done}/${progress.total}` : 'Starting…'}
-            </p>
+            <div className="sp-save-progress sp-bulk-download-progress" role="status" aria-live="polite">
+              <p className="sp-save-progress__label">{progressLabel}</p>
+              {progress.currentTitle && busy && progress.done < progress.total && (
+                <p className="modal-fine sp-bulk-download-progress__track">{progress.currentTitle}</p>
+              )}
+              {progress.total > 0 && (
+                <div
+                  className="sp-save-progress__bar"
+                  role="progressbar"
+                  aria-valuemin={0}
+                  aria-valuemax={progress.total}
+                  aria-valuenow={progress.done}
+                  aria-label={progressLabel}
+                >
+                  <span
+                    className="sp-save-progress__bar-fill sp-save-progress__bar-fill--determinate"
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+              )}
+            </div>
             {error && <p className="modal-error">{error}</p>}
           </>
         )}

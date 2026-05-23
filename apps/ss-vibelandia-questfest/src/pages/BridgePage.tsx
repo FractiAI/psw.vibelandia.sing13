@@ -4,6 +4,7 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
 import { PlayerDock } from '@/components/player/PlayerDock';
+import { PlaylistBulkExportModal } from '@/components/payment/PlaylistBulkExportModal';
 
 const TrackList = lazy(() =>
   import('@/components/catalog/TrackList').then((m) => ({ default: m.TrackList })),
@@ -46,8 +47,6 @@ export function BridgePage() {
 
   const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
-  const openExport = useMediaChromeStore((s) => s.openExport);
-
   const showMembersOffer = !isPassenger && !captainUnlocked;
 
   const [bulkExportOpen, setBulkExportOpen] = useState(false);
@@ -214,6 +213,7 @@ export function BridgePage() {
               <TrackList
                 isPassenger={isPassenger || captainUnlocked}
                 onEditPlaylist={() => editPlaylist(activePlaylistId)}
+                onBulkPlaylistDownload={() => setBulkExportOpen(true)}
               />
             </TabPane>
           )}
@@ -222,6 +222,18 @@ export function BridgePage() {
         <PlayerDock />
       </div>
 
+      <PlaylistBulkExportModal
+        open={bulkExportOpen}
+        onClose={() => setBulkExportOpen(false)}
+        onNeedPass={() => {
+          setBulkExportOpen(false);
+          setBoardingOpen(true);
+        }}
+        onCaptainRequest={() => {
+          setBulkExportOpen(false);
+          setCaptainOpen(true);
+        }}
+      />
     </div>
     </>
   );

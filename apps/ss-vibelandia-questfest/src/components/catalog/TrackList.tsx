@@ -27,9 +27,10 @@ import {
 interface TrackListProps {
   isPassenger: boolean;
   onEditPlaylist?: () => void;
+  onBulkPlaylistDownload?: () => void;
 }
 
-export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
+export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload }: TrackListProps) {
 
   const pl = useActivePlaylist();
 
@@ -257,6 +258,12 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
           />
 
         </label>
+
+        {onBulkPlaylistDownload && isPassenger && pl.trackIds.length > 0 && (
+          <button type="button" className="sp-hero-secondary" onClick={onBulkPlaylistDownload}>
+            Download playlist…
+          </button>
+        )}
 
         {rows.length > 0 && (
           <span className="sp-toolbar-total" aria-live="polite">

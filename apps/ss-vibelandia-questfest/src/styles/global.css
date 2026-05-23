@@ -1682,6 +1682,20 @@ html.ios .sp-now-video {
   }
 }
 
+.sp-save-progress__bar-fill--determinate {
+  width: 0;
+  transform: none;
+  animation: none;
+  transition: width 0.25s ease-out;
+}
+
+.sp-bulk-download-progress__track {
+  margin: 0 0 0.35rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .spotify-dj-order {
   list-style: none;
   margin: 0;

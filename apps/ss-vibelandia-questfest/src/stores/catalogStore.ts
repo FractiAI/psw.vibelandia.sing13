@@ -93,7 +93,7 @@ interface CatalogState {
       coverFile?: File | null;
       onProgress?: (message: string) => void;
     },
-  ) => Promise<{ added: number; skipped: number; addedTrackIds: string[] }>;
+  ) => Promise<{ added: number; skipped: number; addedTrackIds: string[]; coverError?: string }>;
   scanDeviceLibrary: (opts?: { pickFolder?: boolean; onProgress?: (message: string) => void }) => Promise<{
     added: number;
     skipped: number;
@@ -525,7 +525,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       newTracks.push(track);
     }
 
-    if (!newTracks.length) return { added: 0, skipped, addedTrackIds: [] };
+    if (!newTracks.length) return { added: 0, skipped, addedTrackIds: [], coverError: undefined };
 
     if (serverCatalog) {
       const prefs = loadCatalogPrefs();
@@ -559,14 +559,20 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     }
     get().persist();
 
+    let coverError: string | undefined;
     if (opts?.coverFile && newTracks.length > 0) {
       try {
         await get().updateTrack(newTracks[0].id, {}, {
           coverFile: opts.coverFile,
           onProgress: opts.onProgress,
         });
-      } catch {
-        /* track saved; cover is optional */
+      } catch (e) {
+        coverError =
+          e instanceof Error
+            ? e.message
+            : typeof e === 'object' && e && 'code' in e
+              ? String((e as { code?: string }).code)
+              : 'cover_upload_failed';
       }
     }
 
@@ -575,7 +581,12 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     } catch {
       /* keep local uploads visible */
     }
-    return { added: newTracks.length, skipped, addedTrackIds: newTracks.map((t) => t.id) };
+    return {
+      added: newTracks.length,
+      skipped,
+      addedTrackIds: newTracks.map((t) => t.id),
+      coverError,
+    };
   },
 
   scanDeviceLibrary: async (opts) => {

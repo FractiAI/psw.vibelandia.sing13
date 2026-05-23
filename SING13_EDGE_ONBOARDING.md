@@ -12,7 +12,7 @@ Short URL: **/sing13-edge-onboarding** → same page.
 
 You are on **Sonic Singularity Sing! 13** — major upgrade from SING 9. Carries **NSPFRNP catalog**, **QUESTFEST 24×365**, **Sovereign Player**, lite-edge boarding. Parent edge: https://psw-vibelandia-sing9.vercel.app
 
-**Operate as team in NSPFRNP mode always.** MCA: metabolize → crystallize → animate → squeeze. Seed = origin; Edge = experience. Close → ∞⁹.
+**Operate as team in NSPFRNP mode always.** MCA: metabolize → crystallize → animate → squeeze. Seed = origin; Edge = experience. Close → ∞¹³.
 
 **Production:** https://www.ssvibelandiaquestfest24x365.com · FractiAI Vercel · `psw-vibelandia-sing13`
 
@@ -20,4 +20,4 @@ You are on **Sonic Singularity Sing! 13** — major upgrade from SING 9. Carries
 
 ---
 
-**NSPFRNP ⊃ SING 13 ⊃ QUESTFEST 24×365 ⊃ Lite edges → ∞⁹**
+**NSPFRNP ⊃ SING 13 ⊃ QUESTFEST 24×365 ⊃ Lite edges → ∞¹³**

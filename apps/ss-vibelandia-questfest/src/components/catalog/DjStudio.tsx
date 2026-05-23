@@ -9,7 +9,8 @@ import {
 import { TrackLibraryManager } from '@/components/catalog/TrackLibraryManager';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { collectMediaFiles, titleFromFileName } from '@/lib/deviceMediaScan';
-import { COVER_MAX_BYTES, isServerUploadConfigured } from '@/lib/serverCatalog';
+import { normalizeCoverForUpload } from '@/lib/coverImageFile';
+import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import {
   filterUploadableFiles,
   formatUploadRejectSummary,
@@ -39,6 +40,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const singleFileInputId = useId();
   const multiFileInputId = useId();
+  const coverInputId = useId();
   const [fileInputKey, setFileInputKey] = useState(0);
   const [multiInputKey, setMultiInputKey] = useState(0);
   const [multiFiles, setMultiFiles] = useState<File[]>([]);
@@ -74,6 +76,27 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     if (coverPreview?.startsWith('blob:')) URL.revokeObjectURL(coverPreview);
     setCoverFile(null);
     setCoverPreview(undefined);
+    setCoverInputKey((k) => k + 1);
+  };
+
+  const applyCoverPick = async (picked: File | null) => {
+    if (coverPreview?.startsWith('blob:')) URL.revokeObjectURL(coverPreview);
+    if (!picked) {
+      setCoverFile(null);
+      setCoverPreview(undefined);
+      return;
+    }
+    try {
+      const normalized = await normalizeCoverForUpload(picked);
+      setCoverFile(normalized);
+      setCoverPreview(URL.createObjectURL(normalized));
+      showMsg(`Cover ready: ${normalized.name}`, 'success');
+    } catch {
+      showMsg(
+        'Could not use that image — try JPEG or PNG, or export your photo as JPEG on this device.',
+        'error',
+      );
+    }
   };
 
   const resetFilePicker = () => {
@@ -139,14 +162,13 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     );
 
     try {
-      const applyCover = uploadable.length === 1 && coverFile;
-      const { added, addedTrackIds } = await importMediaFiles(uploadable, {
+      const { added, addedTrackIds, coverError } = await importMediaFiles(uploadable, {
         title: opts?.title,
         artist: artist.trim() || DEFAULT_ARTIST,
         description: description.trim() || undefined,
         genre: genre.trim() || undefined,
         playlistIds: [MASTER_PLAYLIST_ID],
-        coverFile: applyCover ? coverFile : undefined,
+        coverFile: coverFile ?? undefined,
         onProgress: (line) => setStatus(line),
       });
       setActivePlaylist(MASTER_PLAYLIST_ID);
@@ -162,9 +184,14 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
 
       setStatus(`Done — ${added} track${added === 1 ? '' : 's'} saved on the server.`);
       const dupNote = formatPartialDuplicatesMessage(added, duplicates);
+      const coverNote = coverError
+        ? ` Track saved but cover failed (${coverError}) — edit the track and choose image again.`
+        : coverFile && added > 0
+          ? ' Cover image saved.'
+          : '';
       showMsg(
-        rejectNote ? `${dupNote} Skipped: ${rejectNote}.` : dupNote,
-        'success',
+        (rejectNote ? `${dupNote} Skipped: ${rejectNote}.` : dupNote) + coverNote,
+        coverError ? 'info' : 'success',
       );
       setTitle('');
       setArtist(DEFAULT_ARTIST);
@@ -224,11 +251,6 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   };
 
   const uploadSingleFile = async (picked: File) => {
-    if (coverFile && coverFile.size > COVER_MAX_BYTES) {
-      setStatus('Cover too large.');
-      showMsg('Cover image is over 4 MB — choose a smaller file or clear the cover.', 'error');
-      return;
-    }
     const displayTitle = title.trim() || titleFromFileName(picked.name);
 
     const { duplicates } = classifyFilesAgainstCatalog([picked], tracks);
@@ -436,52 +458,44 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           </label>
           <div className="spotify-field sp-track-cover-field">
             <span>Cover image (optional)</span>
-            <div className="sp-track-cover-row">
-              {coverPreview ? (
-                <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
-              ) : (
-                <span className="sp-track-cover-preview sp-track-cover-preview--empty" aria-hidden />
-              )}
-              <label className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
-                {coverFile ? coverFile.name : 'Choose image'}
-                <input
-                  type="file"
-                  accept="image/jpeg,image/png,image/webp"
-                  className="spotify-file-pick-input"
-                  disabled={busy}
-                  onChange={(e) => {
-                    const picked = e.target.files?.[0] ?? null;
-                    if (coverPreview?.startsWith('blob:')) URL.revokeObjectURL(coverPreview);
-                    if (picked && (!picked.type.startsWith('image/') || picked.size > COVER_MAX_BYTES)) {
-                      setCoverFile(null);
-                      setCoverPreview(undefined);
-                      e.target.value = '';
-                      showMsg(
-                        picked.size > COVER_MAX_BYTES
-                          ? 'Cover image is over 4 MB — use a smaller JPEG, PNG, or WebP.'
-                          : 'Cover must be a JPEG, PNG, or WebP image.',
-                        'error',
-                      );
-                      return;
-                    }
-                    setCoverFile(picked);
-                    setCoverPreview(picked ? URL.createObjectURL(picked) : undefined);
-                    e.target.value = '';
-                  }}
-                />
-              </label>
-              {coverFile && (
-                <button
-                  type="button"
-                  className="spotify-btn spotify-btn--tiny"
-                  disabled={busy}
-                  onClick={() => resetCoverPicker()}
-                >
-                  Clear
-                </button>
-              )}
+            <div className="spotify-file-pick">
+              <input
+                key={coverInputKey}
+                id={coverInputId}
+                type="file"
+                accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
+                className="spotify-file-pick-input"
+                disabled={busy}
+                onChange={(e) => {
+                  const picked = e.target.files?.[0] ?? null;
+                  e.target.value = '';
+                  void applyCoverPick(picked);
+                }}
+              />
+              <div className="sp-track-cover-row">
+                {coverPreview ? (
+                  <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
+                ) : (
+                  <span className="sp-track-cover-preview sp-track-cover-preview--empty" aria-hidden />
+                )}
+                <label htmlFor={coverInputId} className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
+                  {coverFile ? coverFile.name : 'Choose image'}
+                </label>
+                {coverFile && (
+                  <button
+                    type="button"
+                    className="spotify-btn spotify-btn--tiny"
+                    disabled={busy}
+                    onClick={() => resetCoverPicker()}
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
             </div>
-            <span className="spotify-field-hint">JPEG, PNG, or WebP · up to 4 MB · saved with the track</span>
+            <span className="spotify-field-hint">
+              Any standard photo (JPEG, PNG, WebP, iPhone HEIC) · saved with the track
+            </span>
           </div>
           <div className="spotify-field">
             <span>Audio or video</span>

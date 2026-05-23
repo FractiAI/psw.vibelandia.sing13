@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { normalizeCoverForUpload } from '@/lib/coverImageFile';
 import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import { isUserUploadTrack } from '@/lib/catalogSeed';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
@@ -39,6 +40,8 @@ export function TrackMetadataEditor({
   const [plModal, setPlModal] = useState(false);
   const [coverPreview, setCoverPreview] = useState<string | undefined>(track.posterSrc);
   const [coverFile, setCoverFile] = useState<File | null>(null);
+  const [coverInputKey, setCoverInputKey] = useState(0);
+  const coverInputId = useId();
   const coverBlobRef = useRef<string | null>(null);
 
   const revokeCoverBlob = () => {
@@ -60,6 +63,7 @@ export function TrackMetadataEditor({
     setGenre(track.genre ?? '');
     setDescription(track.description ?? '');
     setCoverFile(null);
+    setCoverInputKey((k) => k + 1);
     setCoverPreviewSafe(track.posterSrc);
   }, [track.id, track.title, track.artist, track.genre, track.description, track.posterSrc]);
 
@@ -118,7 +122,7 @@ export function TrackMetadataEditor({
       } else if (code === 'cover_not_image') {
         setMsg('Save failed — cover must be JPEG, PNG, or WebP.');
       } else if (code === 'cover_too_large') {
-        setMsg('Save failed — cover image is over 4 MB.');
+        setMsg('Save failed — cover image is too large for the server (max ~80 MB).');
       } else if (code === 'update_failed') {
         setMsg('Save failed — server did not confirm the track. Try again.');
       } else {
@@ -158,29 +162,46 @@ export function TrackMetadataEditor({
     <div className={wrapClass}>
       <div className="spotify-field sp-track-cover-field">
         <span>Cover foto</span>
-        <div className="sp-track-cover-row">
-          {coverPreview ? (
-            <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
-          ) : (
-            <span className="sp-track-cover-preview sp-track-cover-preview--empty" aria-hidden />
-          )}
-          <label className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
-            {coverFile ? coverFile.name : 'Choose image'}
-            <input
-              type="file"
-              accept="image/jpeg,image/png,image/webp"
-              className="spotify-file-pick-input"
-              disabled={busy || disabled}
-              onChange={(e) => {
-                const f = e.target.files?.[0] ?? null;
-                setCoverFile(f);
-                setCoverPreviewSafe(f ? URL.createObjectURL(f) : track.posterSrc);
-                e.target.value = '';
-              }}
-            />
-          </label>
+        <div className="spotify-file-pick">
+          <input
+            key={coverInputKey}
+            id={coverInputId}
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
+            className="spotify-file-pick-input"
+            disabled={busy || disabled}
+            onChange={(e) => {
+              const picked = e.target.files?.[0] ?? null;
+              e.target.value = '';
+              void (async () => {
+                if (!picked) {
+                  setCoverFile(null);
+                  setCoverPreviewSafe(track.posterSrc);
+                  return;
+                }
+                try {
+                  const normalized = await normalizeCoverForUpload(picked);
+                  setCoverFile(normalized);
+                  setCoverPreviewSafe(URL.createObjectURL(normalized));
+                  setMsg(null);
+                } catch {
+                  setMsg('Could not use that image — try JPEG or PNG.');
+                }
+              })();
+            }}
+          />
+          <div className="sp-track-cover-row">
+            {coverPreview ? (
+              <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
+            ) : (
+              <span className="sp-track-cover-preview sp-track-cover-preview--empty" aria-hidden />
+            )}
+            <label htmlFor={coverInputId} className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
+              {coverFile ? coverFile.name : 'Choose image'}
+            </label>
+          </div>
         </div>
-        <span className="spotify-field-hint">JPEG, PNG, or WebP · saved with Save</span>
+        <span className="spotify-field-hint">JPEG, PNG, WebP, or iPhone photo · saved with Save</span>
       </div>
       <label className="spotify-field">
         Title

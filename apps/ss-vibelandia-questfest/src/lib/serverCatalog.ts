@@ -8,6 +8,7 @@ import {
   MAX_MEDIA_UPLOAD_BYTES,
   probeAudioDurationSec,
 } from '@/lib/mediaUploadLimits';
+import { normalizeCoverForUpload } from '@/lib/coverImageFile';
 import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 
 const STATIC_CATALOG = '/media/catalog/catalog.json';
@@ -216,9 +217,10 @@ export async function updateTrackOnServer(
   return { track: { ...track, src: src || videoSrc }, catalog: data.catalog };
 }
 
-export const COVER_MAX_BYTES = 4 * 1024 * 1024;
+/** Same ceiling as catalog client blob uploads (standard phone/camera photos). */
+export const COVER_MAX_BYTES = 80 * 1024 * 1024;
 
-/** Upload cover image to Blob (JPEG/PNG/WebP up to 4 MB). */
+/** Upload cover image to Blob (JPEG/PNG/WebP; large sources are resized client-side). */
 export async function uploadCoverBlob(
   trackId: string,
   file: File,
@@ -226,16 +228,26 @@ export async function uploadCoverBlob(
 ): Promise<string> {
   const secret = catalogUploadSecret();
   if (!secret) throw new Error('catalog_upload_unconfigured');
-  if (!file.type.startsWith('image/')) throw catalogApiError('cover_not_image');
-  if (file.size > COVER_MAX_BYTES) throw catalogApiError('cover_too_large');
+  let uploadFile: File;
+  try {
+    uploadFile = await normalizeCoverForUpload(file);
+  } catch (e) {
+    const code = e instanceof Error ? e.message : 'cover_not_image';
+    if (code === 'cover_too_large' || code === 'cover_not_image') throw catalogApiError(code);
+    throw catalogApiError('cover_not_image');
+  }
 
   const ext =
-    file.type === 'image/png' ? 'png' : file.type === 'image/webp' ? 'webp' : 'jpg';
+    uploadFile.type === 'image/png'
+      ? 'png'
+      : uploadFile.type === 'image/webp'
+        ? 'webp'
+        : 'jpg';
   const pathname = `catalog/covers/${trackId}.${ext}`;
 
   opts?.onProgress?.('Uploading cover…');
 
-  const blob = await upload(pathname, file, {
+  const blob = await upload(pathname, uploadFile, {
     access: 'public',
     handleUploadUrl: catalogApiUrl(UPLOAD_API),
     headers: { 'X-Catalog-Secret': secret },

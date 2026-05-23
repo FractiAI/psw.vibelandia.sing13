@@ -26,8 +26,11 @@ const ALLOWED_CONTENT_TYPES = [
   'audio/webm',
   'audio/x-m4a',
   'image/jpeg',
+  'image/jpg',
   'image/png',
   'image/webp',
+  'image/heic',
+  'image/heif',
   'application/octet-stream',
 ];
 

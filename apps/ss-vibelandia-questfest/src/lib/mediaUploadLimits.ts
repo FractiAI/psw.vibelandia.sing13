@@ -17,7 +17,17 @@ export function isAudioFile(file: File): boolean {
   return file.type.startsWith('audio/') || AUDIO_EXT.test(file.name);
 }
 
+const PROBE_TIMEOUT_MS = 8_000;
+
 export function probeAudioDurationSec(file: File): Promise<number | null> {
+  return probeAudioDurationSecWithTimeout(file, PROBE_TIMEOUT_MS);
+}
+
+/** iOS Safari often never fires loadedmetadata — always time out. */
+export function probeAudioDurationSecWithTimeout(
+  file: File,
+  timeoutMs = PROBE_TIMEOUT_MS,
+): Promise<number | null> {
   if (!isAudioFile(file)) return Promise.resolve(null);
   if (typeof document === 'undefined') return Promise.resolve(null);
 
@@ -25,10 +35,17 @@ export function probeAudioDurationSec(file: File): Promise<number | null> {
     const url = URL.createObjectURL(file);
     const el = document.createElement('audio');
     el.preload = 'metadata';
+    let settled = false;
     const done = (value: number | null) => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timer);
       URL.revokeObjectURL(url);
+      el.removeAttribute('src');
+      el.load();
       resolve(value);
     };
+    const timer = window.setTimeout(() => done(null), timeoutMs);
     el.onloadedmetadata = () => {
       const d = el.duration;
       done(Number.isFinite(d) && d > 0 ? d : null);

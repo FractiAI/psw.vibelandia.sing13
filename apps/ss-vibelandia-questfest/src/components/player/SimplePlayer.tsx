@@ -270,7 +270,7 @@ export function SimplePlayer({
         ref={audioRef}
         className={`sp-native-audio ${IOS_PLAYABLE_MEDIA_CLASS}`}
         playsInline
-        preload="auto"
+        preload="metadata"
         controls
         aria-label={track ? `Playing ${track.title}` : 'Audio player'}
       />

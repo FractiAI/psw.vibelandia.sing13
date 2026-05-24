@@ -26,6 +26,7 @@ import { PLAIN } from '@/lib/plainSpeak';
 import { BridgeTowerBillboard } from '@/components/BridgeTowerBillboard';
 import { BuildNoticeBanner } from '@/components/BuildNoticeBanner';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
+import { isIOSDevice } from '@/lib/devicePlayback';
 
 export function BridgePage() {
   const location = useLocation();
@@ -89,9 +90,14 @@ export function BridgePage() {
   const handleUploadSuccess = (trackId: string) => {
     setDjMode(false);
     setActivePlaylist(MASTER_PLAYLIST_ID);
-    navigate('/bridge', { replace: true });
     setPlaying(false);
-    setTrack(trackId);
+    navigate('/bridge', { replace: true });
+    const arm = () => setTrack(trackId);
+    if (isIOSDevice()) {
+      window.setTimeout(arm, 300);
+    } else {
+      arm();
+    }
   };
 
   const goListen = () => {

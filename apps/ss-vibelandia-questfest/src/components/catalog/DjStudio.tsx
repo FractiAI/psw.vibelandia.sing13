@@ -12,9 +12,14 @@ import { collectMediaFiles, titleFromFileName } from '@/lib/deviceMediaScan';
 import { normalizeCoverForUpload } from '@/lib/coverImageFile';
 import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import {
+  deferAfterFilePicker,
+  isIOSDevice,
+  uploadFileInputAccept,
+} from '@/lib/devicePlayback';
+import {
   filterUploadableFiles,
   formatUploadRejectSummary,
-  probeVideoDurationSec,
+  probeAudioDurationSecWithTimeout,
   MAX_MEDIA_UPLOAD_BYTES,
   MAX_VIDEO_DURATION_SEC,
 } from '@/lib/mediaUploadLimits';
@@ -58,6 +63,8 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const [msgKind, setMsgKind] = useState<MsgKind>('idle');
 
   const serverReady = isServerUploadConfigured();
+  const iosUpload = isIOSDevice();
+  const mediaAccept = uploadFileInputAccept();
 
   const showMsg = (text: string, kind: MsgKind) => {
     setMsg(text);
@@ -265,14 +272,16 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       showMsg('This file is over the ~600 MB upload limit. Use a shorter or more compressed export.', 'error');
       return;
     }
-    const durationSec = await probeVideoDurationSec(picked);
-    if (durationSec !== null && durationSec > MAX_VIDEO_DURATION_SEC) {
-      setStatus('Video too long.');
-      showMsg(
-        `Video is ${Math.ceil(durationSec / 60)} minutes — max is ${MAX_VIDEO_DURATION_SEC / 60} minutes. Trim and try again.`,
-        'error',
-      );
-      return;
+    if (!iosUpload) {
+      const durationSec = await probeAudioDurationSecWithTimeout(picked, 8_000);
+      if (durationSec !== null && durationSec > MAX_VIDEO_DURATION_SEC) {
+        setStatus('Video too long.');
+        showMsg(
+          `Video is ${Math.ceil(durationSec / 60)} minutes — max is ${MAX_VIDEO_DURATION_SEC / 60} minutes. Trim and try again.`,
+          'error',
+        );
+        return;
+      }
     }
 
     if (!title.trim()) setTitle(displayTitle);
@@ -300,6 +309,12 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     if (!files.length) {
       setStatus('No media in selection.');
       showMsg('No audio or video files in that selection.', 'error');
+      return;
+    }
+    if (iosUpload) {
+      setStatus(`${files.length} file${files.length === 1 ? '' : 's'} ready — tap Upload below.`);
+      setMsg(null);
+      setMsgKind('idle');
       return;
     }
     setStatus(`Uploading ${files.length} file${files.length === 1 ? '' : 's'}…`);
@@ -375,8 +390,18 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
           <p className="spotify-main-eyebrow">Upload</p>
           <h2 className="spotify-main-title">Add tracks</h2>
           <p className="spotify-main-desc">
-            Files save to the <strong>server catalog</strong>, then appear in Listen. Audio and video — videos up
-            to <strong>10 minutes</strong> (~600 MB) upload direct to QUESTFEST storage.
+            Files save to the <strong>server catalog</strong>, then appear in Listen.{' '}
+            {iosUpload ? (
+              <>
+                On iPhone/iPad use <strong>MP3 or M4A audio</strong> — tap <strong>Upload</strong> after you choose a
+                file (avoids the blue picker hang).
+              </>
+            ) : (
+              <>
+                Audio and video — videos up to <strong>10 minutes</strong> (~600 MB) upload direct to QUESTFEST
+                storage.
+              </>
+            )}
           </p>
         </div>
       </header>
@@ -506,7 +531,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                 ref={fileInputRef}
                 className="spotify-file-pick-input"
                 type="file"
-                accept="audio/mpeg,audio/wav,audio/*,video/*,.mp3,.wav,.mp4,.mov,.webm"
+                accept={mediaAccept}
                 disabled={busy}
                 onChange={(e) => {
                   const picked = e.target.files?.[0] ?? null;
@@ -525,7 +550,12 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                     );
                     return;
                   }
-                  void uploadSingleFile(picked);
+                  if (iosUpload) {
+                    setStatus('File ready — tap Upload below.');
+                    showMsg('On iPhone, tap Upload to start (do not leave this tab).', 'info');
+                    return;
+                  }
+                  deferAfterFilePicker(() => void uploadSingleFile(picked));
                 }}
               />
               <div className="spotify-file-pick-row">
@@ -584,10 +614,21 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                 id={multiFileInputId}
                 className="spotify-file-pick-input"
                 type="file"
-                accept="audio/mpeg,audio/wav,audio/*,video/*,.mp3,.wav,.mp4,.mov,.webm"
+                accept={mediaAccept}
                 multiple
                 disabled={busy || !serverReady}
-                onChange={(e) => void handleMultiFilePick(e.target.files)}
+                onChange={(e) => {
+                  const list = e.target.files;
+                  if (!list?.length) {
+                    setMultiFiles([]);
+                    return;
+                  }
+                  if (iosUpload) {
+                    void handleMultiFilePick(list);
+                    return;
+                  }
+                  deferAfterFilePicker(() => void handleMultiFilePick(list));
+                }}
               />
               <div className="spotify-file-pick-row">
                 <label htmlFor={multiFileInputId} className="spotify-btn spotify-btn--ghost">

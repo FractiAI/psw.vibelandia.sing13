@@ -2,11 +2,12 @@ import { upload } from '@vercel/blob/client';
 import { buildEmptyCatalog } from '@/lib/catalogSeed';
 import { expectedCaptainPassword } from '@/lib/captainAuth';
 import { fetchJsonWithTimeout } from '@/lib/fetchWithTimeout';
+import { isIOSDevice } from '@/lib/devicePlayback';
 import {
   isAudioFile,
   isVideoFile,
   MAX_MEDIA_UPLOAD_BYTES,
-  probeAudioDurationSec,
+  probeAudioDurationSecWithTimeout,
 } from '@/lib/mediaUploadLimits';
 import { normalizeCoverForUpload } from '@/lib/coverImageFile';
 import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
@@ -298,7 +299,9 @@ export async function uploadTrackToServer(
     err.code = 'not_audio';
     throw err;
   }
-  const durationSec = await probeAudioDurationSec(file);
+  const durationSec = isIOSDevice()
+    ? null
+    : await probeAudioDurationSecWithTimeout(file, 8_000);
   if (file.size > MAX_MEDIA_UPLOAD_BYTES) {
     const err = new Error('file_too_large') as Error & { code?: string };
     err.code = 'file_too_large';

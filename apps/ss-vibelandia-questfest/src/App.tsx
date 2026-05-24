@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { MediaShell } from './components/player/MediaShell';
+import { PlaybackRoot } from './components/player/PlaybackRoot';
 import { useIOSHtmlClass } from '@/lib/useIOSHtmlClass';
 import { BridgePage } from './pages/BridgePage';
 import { RegistrationPage } from './pages/RegistrationPage';
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/dj" element={<BridgePage />} />
         <Route path="*" element={<Navigate to="/bridge" replace />} />
       </Routes>
+      <PlaybackRoot />
       <MediaShell />
     </>
   );

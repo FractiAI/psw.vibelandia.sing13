@@ -576,11 +576,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }
     }
 
-    try {
-      await get().syncLibraryFromServer();
-    } catch {
-      /* keep local uploads visible */
-    }
+    void get()
+      .syncLibraryFromServer()
+      .catch(() => {
+        /* keep local uploads visible */
+      });
     return {
       added: newTracks.length,
       skipped,

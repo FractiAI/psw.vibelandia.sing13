@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
-import { PlayerDock } from '@/components/player/PlayerDock';
 import { PlaylistBulkExportModal } from '@/components/payment/PlaylistBulkExportModal';
 
 const TrackList = lazy(() =>
@@ -26,7 +25,7 @@ import { PLAIN } from '@/lib/plainSpeak';
 import { BridgeTowerBillboard } from '@/components/BridgeTowerBillboard';
 import { BuildNoticeBanner } from '@/components/BuildNoticeBanner';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
-import { isIOSDevice } from '@/lib/devicePlayback';
+import { pauseSimpleAudio } from '@/lib/simplePlayback';
 
 export function BridgePage() {
   const location = useLocation();
@@ -87,17 +86,13 @@ export function BridgePage() {
     navigate('/dj', { replace: true });
   };
 
-  const handleUploadSuccess = (trackId: string) => {
+  const handleUploadSuccess = (_trackId: string) => {
+    pauseSimpleAudio();
+    setPlaying(false);
+    setTrack(null);
     setDjMode(false);
     setActivePlaylist(MASTER_PLAYLIST_ID);
-    setPlaying(false);
     navigate('/bridge', { replace: true });
-    const arm = () => setTrack(trackId);
-    if (isIOSDevice()) {
-      window.setTimeout(arm, 300);
-    } else {
-      arm();
-    }
   };
 
   const goListen = () => {
@@ -225,7 +220,6 @@ export function BridgePage() {
           )}
         </main>
 
-        <PlayerDock />
       </div>
 
       <PlaylistBulkExportModal

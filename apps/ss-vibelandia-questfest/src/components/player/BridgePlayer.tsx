@@ -1,8 +1,14 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { directPlayTrack, registerDirectPlayHandler } from '@/lib/directPlayback';
-import { IOS_PLAYABLE_MEDIA_CLASS } from '@/lib/devicePlayback';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
-import { registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
+import {
+  getSimpleAudioElement,
+  pauseSimpleAudio,
+  playAudioNow,
+  registerPlaybackEngine,
+  subscribeAudioBind,
+  syncLoadedUrl,
+} from '@/lib/simplePlayback';
+import { pausePlayback, startTrackPlayback } from '@/lib/trackPlayback';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -25,7 +31,7 @@ function fmtTime(s: number): string {
   return `${m}:${sec.toString().padStart(2, '0')}`;
 }
 
-interface SimplePlayerProps {
+interface BridgePlayerProps {
   onFairExchange: () => void;
   onVesselSwitch: (reason: Exclude<KillReason, null>) => void;
   killReason: KillReason;
@@ -33,16 +39,16 @@ interface SimplePlayerProps {
   clearKill: () => void;
 }
 
-/** Dock player: one in-component <audio> + native controls (reliable on iOS). */
-export function SimplePlayer({
+/** Track chrome + 30s gate — one shared <audio> lives in GlobalAudio (App root). */
+export function BridgePlayer({
   onFairExchange,
   onVesselSwitch,
   killReason,
   beginSession,
   clearKill,
-}: SimplePlayerProps) {
-  const audioRef = useRef<HTMLAudioElement>(null);
+}: BridgePlayerProps) {
   const gateArmedRef = useRef(true);
+  const gainRef = useRef(1);
 
   const storeError = usePlaybackStore((s) => s.playbackError);
   const setPlaybackError = usePlaybackStore((s) => s.setPlaybackError);
@@ -52,7 +58,6 @@ export function SimplePlayer({
   const gain = usePlaybackStore((s) => s.gain);
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const setGain = usePlaybackStore((s) => s.setGain);
-  const setTrack = usePlaybackStore((s) => s.setTrack);
   const setDisplayTime = usePlaybackStore((s) => s.setDisplayTime);
   const autoplayEnabled = usePlaybackStore((s) => s.autoplayEnabled);
   const backgroundPlayEnabled = usePlaybackStore((s) => s.backgroundPlayEnabled);
@@ -69,100 +74,48 @@ export function SimplePlayer({
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const url = track ? playbackUrlForTrack(track) : '';
 
-  const playOnElement = useCallback(
-    (el: HTMLAudioElement, src: string, vol = 1) => {
-      el.volume = Math.max(0, Math.min(1, vol));
-      try {
-        const next = new URL(src, window.location.href).href;
-        const cur = el.src ? new URL(el.src, window.location.href).href : '';
-        if (cur !== next) el.src = src;
-      } catch {
-        if (el.src !== src) el.src = src;
-      }
-      return el.play();
-    },
-    [],
-  );
+  gainRef.current = gain;
 
   const playUrl = useCallback(
     (trackId: string, src: string) => {
-      const el = audioRef.current;
-      if (!el) {
-        setPlaybackError('Player not ready — refresh the page.');
-        setPlaying(false);
-        return;
-      }
-
       clearKill();
       gateArmedRef.current = true;
-
-      const playPromise = playOnElement(el, src, 1);
-
-      setGain(1);
-      setPlaybackError(null);
-      setTrack(trackId);
-      setPlaying(true);
-      setDisplayTime(0);
       beginSession();
-
-      void playPromise.catch(() => {
-        setPlaybackError('Could not play — use the bar above or tap ▶ again.');
-        setPlaying(false);
-      });
+      startTrackPlayback(trackId, src);
     },
-    [
-      beginSession,
-      clearKill,
-      playOnElement,
-      setDisplayTime,
-      setGain,
-      setPlaybackError,
-      setPlaying,
-      setTrack,
-    ],
+    [beginSession, clearKill],
   );
 
-  useEffect(() => {
-    registerDirectPlayHandler((trackId, src) => playUrl(trackId, src));
-    return () => registerDirectPlayHandler(null);
-  }, [playUrl]);
-
-  useEffect(() => {
-    const el = audioRef.current;
-    registerPlaybackMedia(el, null);
-    return () => registerPlaybackMedia(null, null);
-  }, []);
+  const advanceNext = useCallback(() => {
+    if (!pl || !currentTrackId) return false;
+    const idx = pl.trackIds.indexOf(currentTrackId);
+    if (idx < 0) return false;
+    for (let i = idx + 1; i < pl.trackIds.length; i++) {
+      const id = pl.trackIds[i];
+      const tr = getTrack(id);
+      const u = tr ? playbackUrlForTrack(tr) : '';
+      if (!u) continue;
+      playUrl(id, u);
+      return true;
+    }
+    setPlaying(false);
+    return false;
+  }, [currentTrackId, getTrack, pl, playUrl, setPlaying]);
 
   useEffect(() => {
     if (killReason === 'vessel_switch' || killReason === 'tab_preempt') {
+      pauseSimpleAudio();
       onVesselSwitch(killReason);
     }
   }, [killReason, onVesselSwitch]);
 
   useEffect(() => {
-    const el = audioRef.current;
-    if (!el) return;
+    const runGate = (t: number) => {
+      const el = getSimpleAudioElement();
+      if (!el) return;
 
-    const advanceNext = () => {
-      if (!pl || !currentTrackId) return false;
-      const idx = pl.trackIds.indexOf(currentTrackId);
-      if (idx < 0) return false;
-      for (let i = idx + 1; i < pl.trackIds.length; i++) {
-        const id = pl.trackIds[i];
-        const tr = getTrack(id);
-        const u = tr ? playbackUrlForTrack(tr) : '';
-        if (!u) continue;
-        playUrl(id, u);
-        return true;
-      }
-      setPlaying(false);
-      return false;
-    };
-
-    const onTime = () => {
-      const t = el.currentTime;
       setDisplayTime(t);
-      const g = usePlaybackStore.getState().gain;
+      const g = gainRef.current;
 
       if (!solenoidActive) {
         el.volume = g;
@@ -187,36 +140,36 @@ export function SimplePlayer({
       }
     };
 
-    const onPlay = () => setPlaying(true);
-    const onPause = () => setPlaying(false);
-    const onEnded = () => {
-      if (autoplayEnabled && advanceNext()) return;
-      setPlaying(false);
-    };
-    const onErr = () => {
-      setPlaybackError('Could not load this audio file.');
-      setPlaying(false);
-    };
+    registerPlaybackEngine({
+      onTime: runGate,
+      onEnded: () => {
+        if (autoplayEnabled && advanceNext()) return;
+        setPlaying(false);
+      },
+      onError: () => {
+        setPlaybackError('Could not load this audio file.');
+        setPlaying(false);
+      },
+    });
 
-    el.addEventListener('timeupdate', onTime);
-    el.addEventListener('playing', onPlay);
-    el.addEventListener('pause', onPause);
-    el.addEventListener('ended', onEnded);
-    el.addEventListener('error', onErr);
-    return () => {
-      el.removeEventListener('timeupdate', onTime);
-      el.removeEventListener('playing', onPlay);
-      el.removeEventListener('pause', onPause);
-      el.removeEventListener('ended', onEnded);
-      el.removeEventListener('error', onErr);
-    };
+    return subscribeAudioBind(() => {
+      const el = getSimpleAudioElement();
+      if (el) registerPlaybackEngine({
+        onTime: runGate,
+        onEnded: () => {
+          if (autoplayEnabled && advanceNext()) return;
+          setPlaying(false);
+        },
+        onError: () => {
+          setPlaybackError('Could not load this audio file.');
+          setPlaying(false);
+        },
+      });
+    });
   }, [
+    advanceNext,
     autoplayEnabled,
-    currentTrackId,
-    getTrack,
     onFairExchange,
-    pl,
-    playUrl,
     setDisplayTime,
     setPlaybackError,
     setPlaying,
@@ -224,56 +177,67 @@ export function SimplePlayer({
   ]);
 
   useEffect(() => {
-    if (!url || !audioRef.current) return;
-    if (!isPlaying) {
-      audioRef.current.pause();
+    const el = getSimpleAudioElement();
+    if (!el) return;
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
+    el.addEventListener('playing', onPlay);
+    el.addEventListener('pause', onPause);
+    return () => {
+      el.removeEventListener('playing', onPlay);
+      el.removeEventListener('pause', onPause);
+    };
+  }, [setPlaying]);
+
+  useEffect(() => {
+    if (fullPlayUnlocked && backgroundPlayEnabled) return;
+    const onHide = () => {
+      if (document.hidden) pausePlayback();
+    };
+    document.addEventListener('visibilitychange', onHide);
+    window.addEventListener('pagehide', onHide);
+    return () => {
+      document.removeEventListener('visibilitychange', onHide);
+      window.removeEventListener('pagehide', onHide);
+    };
+  }, [backgroundPlayEnabled, fullPlayUnlocked]);
+
+  const stepPlaylist = (delta: 1 | -1) => {
+    if (!pl || !currentTrackId) return;
+    const idx = pl.trackIds.indexOf(currentTrackId);
+    if (idx < 0) return;
+    const step = delta > 0 ? 1 : -1;
+    for (let i = idx + step; i >= 0 && i < pl.trackIds.length; i += step) {
+      const id = pl.trackIds[i];
+      const tr = getTrack(id);
+      const u = tr ? playbackUrlForTrack(tr) : '';
+      if (!u) continue;
+      playUrl(id, u);
       return;
     }
-  }, [isPlaying, url]);
-
-  const stepPlaylist = useCallback(
-    (delta: 1 | -1) => {
-      if (!pl || !currentTrackId) return;
-      const idx = pl.trackIds.indexOf(currentTrackId);
-      if (idx < 0) return;
-      const step = delta > 0 ? 1 : -1;
-      for (let i = idx + step; i >= 0 && i < pl.trackIds.length; i += step) {
-        const id = pl.trackIds[i];
-        const tr = getTrack(id);
-        const u = tr ? playbackUrlForTrack(tr) : '';
-        if (!u) continue;
-        playUrl(id, u);
-        return;
-      }
-      setPlaying(false);
-      audioRef.current?.pause();
-    },
-    [currentTrackId, getTrack, pl, playUrl, setPlaying],
-  );
+    pausePlayback();
+  };
 
   const togglePlay = () => {
-    const el = audioRef.current;
+    const el = getSimpleAudioElement();
     if (!el || !track || !url) return;
     clearKill();
     setGain(1);
     if (isPlaying) {
-      el.pause();
-      setPlaying(false);
+      pausePlayback();
       return;
     }
-    playUrl(track.id, url);
+    syncLoadedUrl(url);
+    void playAudioNow(url, 1).catch(() => {
+      setPlaybackError('Tap play on the bar below.');
+      setPlaying(false);
+    });
+    usePlaybackStore.getState().setTrack(track.id);
+    beginSession();
   };
 
   return (
-    <footer className="sp-now sp-simple-player sp-native-player">
-      <audio
-        ref={audioRef}
-        className={`sp-native-audio ${IOS_PLAYABLE_MEDIA_CLASS}`}
-        playsInline
-        preload="metadata"
-        controls
-        aria-label={track ? `Playing ${track.title}` : 'Audio player'}
-      />
+    <footer className="sp-now sp-bridge-player">
       <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
         {track?.posterSrc && (
           <img className="sp-now-cover" src={trackCoverUrl(track)} alt="" width={56} height={56} />
@@ -291,7 +255,7 @@ export function SimplePlayer({
               )}
             </>
           ) : (
-            <p className="sp-now-empty">Pick a track, then press play on the bar above</p>
+            <p className="sp-now-empty">Pick a track, then use the player below</p>
           )}
           <div className="sp-now-prefs" role="group" aria-label="Playback options">
             <label className="sp-now-pref">
@@ -336,24 +300,9 @@ export function SimplePlayer({
           {storeError && <span className="sp-now-error">{storeError}</span>}
         </div>
       </div>
+      <p className="sp-bridge-player-hint">
+        Use the <strong>Safari audio bar</strong> below for scrub and volume — most reliable on iPhone.
+      </p>
     </footer>
   );
-}
-
-/** List rows — single code path; play() runs inside the tap handler. */
-export function startTrackPlayback(
-  trackId: string,
-  url: string,
-  opts?: {
-    onError?: (msg: string | null) => void;
-  },
-): void {
-  if (directPlayTrack(trackId, url)) return;
-
-  const msg = 'Player not ready — scroll to the player bar and press play there.';
-  const pb = usePlaybackStore.getState();
-  pb.setTrack(trackId);
-  pb.setPlaybackError(msg);
-  pb.setPlaying(false);
-  opts?.onError?.(msg);
 }

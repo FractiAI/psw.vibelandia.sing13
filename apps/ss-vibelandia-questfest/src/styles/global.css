@@ -3467,7 +3467,62 @@ a.boarding-pay-open {
   display: inline-block;
 }
 
-/* In-flow player dock (scrolls with Bridge content) */
+/* Fixed playback stack — single GlobalAudio + track chrome (Upload tab slides off-screen) */
+.sp-playback-stack {
+  position: fixed;
+  left: 280px;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+  transition: transform 0.2s ease;
+}
+
+html.qf-upload-tab .sp-playback-stack {
+  transform: translateY(110%);
+  pointer-events: none;
+}
+
+html:not(.qf-upload-tab) .sp-scroll {
+  padding-bottom: min(220px, 38vh);
+}
+
+.sp-global-audio-wrap {
+  background: #0a0a0a;
+  border-top: 1px solid #282828;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.sp-global-audio {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  background: #0a0a0a;
+}
+
+.sp-bridge-player-hint {
+  margin: 0;
+  padding: 0.35rem 0.75rem 0.5rem;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  background: #181818;
+  border-top: 1px solid #282828;
+}
+
+.sp-bridge-player .sp-now-bar {
+  background: #181818;
+}
+
+@media (max-width: 900px) {
+  .sp-playback-stack {
+    left: 0;
+  }
+}
+
+/* In-flow player dock (legacy; chrome now in fixed stack) */
 .sp-player-dock {
   flex-shrink: 0;
   width: 100%;

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { pauseSimpleAudio } from '@/lib/simplePlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
 const CH = 'qv-vibelandia-stream';
@@ -48,6 +49,7 @@ export function useStreamLock(): StreamLockApi {
           document.visibilityState === 'visible'
         ) {
           setKillReason('tab_preempt');
+          pauseSimpleAudio();
           usePlaybackStore.getState().setPlaying(false);
           usePlaybackStore.getState().setGain(0);
         }

@@ -59,7 +59,7 @@ Because the system functions entirely via passive reception, it requires zero FC
 
 ## 4. Live Trial Audit & Basic OS Command Execution
 
-The deployment at www.ssvibelandiaquestfest24x365.com serves as a live, functional demonstration of core operating system level utilities. Rather than offering flat text descriptions, the terminal console handles real, low-level data variables, routing system validation through a non-custodial financial floor anchored onto Basenet (Base Network) using the user's MetaMask wallet destination.
+The deployment at www.ssvibelandiaquestfest24x365.com serves as a live, functional demonstration of core operating system level utilities. Rather than offering flat text descriptions, the terminal console handles real, low-level data variables, routing system validation through a non-custodial financial floor anchored onto Base Mainnet using the user's MetaMask wallet destination.
 
 Once the sovereign cryptographic key is authorized, the system commands process real-time variables through the processing core:
 

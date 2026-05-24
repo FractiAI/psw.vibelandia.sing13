@@ -64,7 +64,7 @@ Requires magazine follow + active catalog honor pass. Bookings / residency signa
 
 Outermost → innermost on the top deck (**YOU ARE HERE** marks Layer 9):
 
-1. Basenet · genesis → 2. Syntheverse → 3. Sonic Singularity → 4. Wrong Side of Town → 5. Man cave mirror → 6. QUESTFEST · Puerto Reno → 7. DPH-GPU → 8. SING 13 · cloud skin → **9. Goldilocks Syntheverse Beehive Residency**
+1. Base Mainnet · genesis → 2. Syntheverse → 3. Sonic Singularity → 4. Wrong Side of Town → 5. Man cave mirror → 6. QUESTFEST · Puerto Reno → 7. DPH-GPU → 8. SING 13 · cloud skin → **9. Goldilocks Syntheverse Beehive Residency**
 
 Top deck ladder: [`interfaces/vibelandia-questfest.html#qf-nest-section`](interfaces/vibelandia-questfest.html#qf-nest-section). Each layer has an expanded guide under `interfaces/nesting/nest-*.html`.
 

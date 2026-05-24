@@ -1,4 +1,4 @@
-﻿{
+{
   "__locales__": {
     "es": true,
     "fr": true,
@@ -20,7 +20,7 @@
       "title": "SS Vibelandia QUESTFEST 24×365 · Puerto Reno · Holographic Goldilocks AI Valley, Nevada",
       "desc": "Plain talk top deck for the ship — nine nesting layers, Reno swamp music, members catalog, Beehive residency. Wrong Side of Town · downtown Reno · Rebel River.",
       "ogTitle": "SS Vibelandia QUESTFEST 24×365 · Sonic Singularity Sing! 13",
-      "ogDesc": "Reno swamp music · 24×365 · nine layers from Basenet to Beehive residency. Plain guides, old-school honor passes."
+      "ogDesc": "Reno swamp music · 24×365 · nine layers from Base Mainnet to Beehive residency. Plain guides, old-school honor passes."
     },
     "cloudSkinEyebrow": "Sonic Singularity Sing! 13 · Internet cloud skin",
     "skip": "Skip",
@@ -31,7 +31,7 @@
     "h1": "SS Vibelandia QUESTFEST 24×365",
     "sub": "Puerto Reno · Holographic Goldilocks AI Valley, Nevada",
     "primerHtml": "One story, plain talk — Puerto Reno and the <strong>Wrong Side of Town</strong>. Donde se vibea. Donde se bolea. Donde se perrea.",
-    "nestingHtml": "The ship nests in layers — from <strong>Basenet</strong> (the ground) out to this website and the <strong>Beehive residency</strong>. Each card below is a short plain guide.",
+    "nestingHtml": "The ship nests in layers — from <strong>Base Mainnet</strong> (the ground) out to this website and the <strong>Beehive residency</strong>. Each card below is a short plain guide.",
     "btnListen": "Listen",
     "btnMembersPass": "Members pass · $16.18/mo",
     "btnGoldilocksOs": "Holographic Goldilocks AI OS · demo",
@@ -88,7 +88,7 @@
     "nestLatestLayer": "Latest layer",
     "nest0": "Goldilocks Beehive Residency · members only",
     "nestDph": "Broadcast machinery layer (DPH-GPU)",
-    "nest7": "Basenet · the ground floor",
+    "nest7": "Base Mainnet · the ground floor",
     "nest6": "Syntheverse · where story meets code",
     "nest5": "Sonic Singularity · sound leads",
     "nest4": "Wrong Side of Town · raw truth",
@@ -346,7 +346,7 @@
       "15": {
         "tier": "Thread · lattice B",
         "title": "Integrated lattice + Syntheverse — visitor and biosphere in one braid",
-        "blurb": "Second lattice layer: earth/visitor signature synthesis, thirteen-trigger firmware map, Basenet-facing Syntheverse note — connect macro story to lived activation."
+        "blurb": "Second lattice layer: earth/visitor signature synthesis, thirteen-trigger firmware map, Base Mainnet-facing Syntheverse note — connect macro story to lived activation."
       },
       "16": {
         "tier": "Thread · lattice C",

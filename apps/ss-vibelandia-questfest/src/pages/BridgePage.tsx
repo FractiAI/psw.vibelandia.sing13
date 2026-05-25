@@ -128,6 +128,9 @@ export function BridgePage() {
       <CatalogSidebar onDjClick={goDj} />
 
       <div className="sp-main">
+        <a className="sp-deck-back" href="/interfaces/vibelandia-questfest.html">
+          &larr; SS Vibelandia QUESTFEST top deck
+        </a>
         {!djMode && (
           <div className="sp-bridge-tower-wrap">
             <BridgeTowerBillboard />

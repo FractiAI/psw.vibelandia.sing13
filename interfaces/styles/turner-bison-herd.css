@@ -21,7 +21,7 @@
 }
 
 .tb-wrap {
-  max-width: 42rem;
+  max-width: min(96vw, 1120px);
   margin: 0 auto;
   padding: calc(1rem + env(safe-area-inset-top)) 1.15rem 2.5rem;
 }
@@ -111,6 +111,339 @@
   font-size: 0.72rem;
   color: var(--tb-muted);
   letter-spacing: 0.04em;
+}
+
+.tb-hint--secondary {
+  margin-top: 1.25rem;
+}
+
+/* —— Live rangeland map (primary surface) —— */
+.tb-map-root {
+  margin-bottom: 1rem;
+}
+
+.tb-map-stage {
+  position: relative;
+  border: 1px solid var(--tb-line);
+  border-radius: 10px;
+  background: #0a1812;
+  overflow: hidden;
+}
+
+.tb-radar-banner {
+  margin: 0;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #b8e8c4;
+  background: rgba(26, 80, 55, 0.55);
+  border-bottom: 1px solid var(--tb-line);
+}
+
+.tb-map-hud--top,
+.tb-map-hud--bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.5rem 0.55rem;
+  background: rgba(15, 38, 28, 0.92);
+  border-bottom: 1px solid var(--tb-line);
+}
+
+.tb-map-hud--bottom {
+  border-bottom: none;
+  border-top: 1px solid var(--tb-line);
+  align-items: center;
+}
+
+.tb-hud-title {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tb-gold);
+  margin-right: 0.35rem;
+}
+
+.tb-map-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
+@media (min-width: 720px) {
+  .tb-map-body {
+    grid-template-columns: 7.5rem minmax(0, 1fr) 7.5rem;
+  }
+}
+
+.tb-map-hud--left,
+.tb-map-hud--right {
+  display: none;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.45rem;
+  background: rgba(15, 38, 28, 0.85);
+}
+
+@media (min-width: 720px) {
+  .tb-map-hud--left {
+    display: flex;
+    border-right: 1px solid var(--tb-line);
+  }
+  .tb-map-hud--right {
+    display: flex;
+    border-left: 1px solid var(--tb-line);
+  }
+}
+
+.tb-hud-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid var(--tb-line);
+  border-radius: 6px;
+  background: rgba(26, 61, 46, 0.45);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.tb-hud-chip:hover,
+.tb-hud-chip:focus-visible {
+  border-color: var(--tb-gold);
+  background: rgba(154, 123, 82, 0.15);
+  outline: none;
+}
+
+.tb-hud-chip--source {
+  flex: 0 1 auto;
+  font-size: 0.68rem;
+}
+
+.tb-hud-l {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tb-gold);
+}
+
+.tb-hud-v {
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.tb-hud-s {
+  font-size: 0.58rem;
+  color: var(--tb-muted);
+  line-height: 1.2;
+}
+
+.tb-map-viewport {
+  position: relative;
+  aspect-ratio: 1000 / 620;
+  max-height: 72vh;
+  min-height: 280px;
+  cursor: grab;
+  touch-action: none;
+}
+
+.tb-map-viewport:active {
+  cursor: grabbing;
+}
+
+.tb-map-svg,
+.tb-map-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tb-map-canvas {
+  z-index: 2;
+}
+
+.tb-pasture {
+  fill: rgba(60, 120, 90, 0.22);
+  stroke: rgba(196, 168, 116, 0.35);
+  stroke-width: 1.5;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.tb-pasture:hover,
+.tb-pasture--focus {
+  fill: rgba(90, 160, 110, 0.35);
+  stroke: var(--tb-gold);
+}
+
+.tb-fence {
+  stroke: rgba(144, 238, 144, 0.25);
+  stroke-width: 1;
+  stroke-dasharray: 6 4;
+  pointer-events: none;
+}
+
+.tb-pasture-label {
+  fill: rgba(232, 228, 220, 0.75);
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Inter', system-ui, sans-serif;
+  pointer-events: none;
+}
+
+.tb-map-legend {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.62rem;
+  background: rgba(15, 38, 28, 0.88);
+  border: 1px solid var(--tb-line);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.tb-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.2rem;
+  vertical-align: middle;
+}
+
+.tb-dot--male { background: #4a9eff; }
+.tb-dot--female { background: #f472b6; }
+.tb-dot--calf { background: #fb923c; }
+
+.tb-trail-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  background: rgba(144, 238, 144, 0.7);
+  margin-right: 0.25rem;
+  vertical-align: middle;
+}
+
+.tb-power-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  background: rgba(255, 180, 80, 0.85);
+  margin-right: 0.25rem;
+  vertical-align: middle;
+  box-shadow: 0 0 4px rgba(255, 140, 40, 0.5);
+}
+
+.tb-power-line {
+  fill: none;
+  stroke: rgba(255, 170, 70, 0.45);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  pointer-events: stroke;
+  cursor: pointer;
+}
+
+.tb-power-line--mv {
+  stroke: rgba(255, 140, 50, 0.55);
+  stroke-width: 1.5;
+}
+
+.tb-power-line--hv {
+  stroke: rgba(255, 100, 120, 0.65);
+  stroke-width: 2;
+  filter: drop-shadow(0 0 2px rgba(255, 80, 100, 0.4));
+}
+
+.tb-power-line:hover {
+  stroke: var(--tb-gold);
+  stroke-width: 2.5;
+}
+
+.tb-map-reset {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 4;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  border: 1px solid var(--tb-gold);
+  border-radius: 4px;
+  background: rgba(15, 38, 28, 0.9);
+  color: var(--tb-cream);
+  cursor: pointer;
+}
+
+.tb-map-detail {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(100%, 18rem);
+  z-index: 5;
+  padding: 1rem 1rem 1.25rem;
+  background: rgba(10, 24, 18, 0.97);
+  border-left: 1px solid var(--tb-gold);
+  overflow-y: auto;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.35);
+}
+
+.tb-map-detail h3 {
+  margin: 0 2rem 0.35rem 0;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 1rem;
+  color: var(--tb-cream);
+}
+
+.tb-map-detail-sub {
+  margin: 0 0 0.75rem;
+  font-size: 0.72rem;
+  color: var(--tb-muted);
+}
+
+.tb-map-detail-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: transparent;
+  color: var(--tb-gold);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.tb-detail-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.78rem;
+  color: #e8e4dc;
+  line-height: 1.5;
+}
+
+.tb-metric-big {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  font-variant-numeric: tabular-nums;
 }
 
 /* —— Layer 1 KPI band —— */

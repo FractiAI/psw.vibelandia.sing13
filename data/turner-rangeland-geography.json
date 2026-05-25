@@ -1,0 +1,123 @@
+{
+  "schema": "turner-rangeland-geography/v2",
+  "networkLabel": "Turner Enterprise Contiguous Land Network",
+  "totalHead": 45000,
+  "totalAcres": 2000000,
+  "positioningMethod": "passive-radar-synthesis",
+  "positioningNote": "Like radar: fence-line × satellite × NOAA magnetic layers × HIFLD transmission corridors for placement fidelity. No GPS collars.",
+  "networkGeoBbox": { "west": -114, "east": -100, "south": 32, "north": 48 },
+  "sexRatio": { "male": 0.38, "female": 0.42, "calf": 0.2 },
+  "dataSources": [
+    {
+      "id": "fence-line",
+      "name": "Fence-line radar transmit · 1420 MHz Goubau grid",
+      "feeds": ["OpenWebRX hydrogen line · PLL microsecond returns per gate"],
+      "role": "Primary radar transmit/receive along high-tensile perimeter"
+    },
+    {
+      "id": "satellite-pass",
+      "name": "Open-Meteo · ECMWF assimilated soil moisture",
+      "feeds": ["soil_moisture_0_to_1cm · satellite + station assimilation per pasture centroid"],
+      "role": "Satellite-class reflectivity pass cross-referenced with fence-line radar returns"
+    },
+    {
+      "id": "power-grid",
+      "name": "HIFLD · US Electric Power Transmission Lines",
+      "feeds": ["ArcGIS FeatureServer · ≥69 kV lines in Turner network bbox"],
+      "role": "Transmission corridor geometry · magnetic leverage for radar grid boost"
+    },
+    {
+      "id": "magnetic-layers",
+      "name": "NOAA SWPC · geomagnetic stack",
+      "feeds": ["boulder_k_index_1m", "geospace_dst_1_hour", "rtsw_mag_1m (L1 Bz/Bt)"],
+      "role": "Higher magnetic layers · resolution boost + GIC-style coupling with grid"
+    },
+    {
+      "id": "noaa-swpc",
+      "name": "NOAA Space Weather Prediction Center",
+      "feeds": ["f107_cm_flux.json", "planetary_k_index_1m.json", "solar_regions.json"],
+      "role": "Solar flux · planetary Kp · ionospheric correction before radar fuse"
+    },
+    {
+      "id": "tie",
+      "name": "Turner Institute of Ecoagriculture",
+      "feeds": ["Public spring pasture rotation · Flying D river-basin gates"],
+      "role": "Pasture rotation · ADM agronomy baselines"
+    },
+    {
+      "id": "tesf",
+      "name": "Turner Endangered Species Fund",
+      "feeds": ["Winter-exit mean mass profile · conservation registries"],
+      "role": "Biological mass · herd unit calibration"
+    },
+    {
+      "id": "nspfrnp",
+      "name": "NSPFRNP passive radar pipeline",
+      "feeds": ["INGEST → SCALE (EGS φ) → RADAR fuse → SYNTHESIS"],
+      "role": "Cross-reference fence-line with satellite for herd map"
+    }
+  ],
+  "pastures": [
+    {
+      "id": "flying-d",
+      "name": "Flying D Ranch",
+      "state": "Montana",
+      "lat": 45.18,
+      "lon": -111.25,
+      "acres": 113000,
+      "headShare": 0.22,
+      "polygon": [[80, 40], [320, 35], [340, 200], [90, 220], [60, 120]],
+      "gates": ["Lower river-basin gates · spring cow-calf"]
+    },
+    {
+      "id": "vermejo",
+      "name": "Vermejo Park Ranch",
+      "state": "New Mexico / Colorado",
+      "lat": 36.75,
+      "lon": -104.75,
+      "acres": 590000,
+      "headShare": 0.28,
+      "polygon": [[120, 280], [380, 260], [420, 480], [140, 500], [100, 360]]
+    },
+    {
+      "id": "snowcrest",
+      "name": "Snowcrest Ranch",
+      "state": "Montana",
+      "lat": 45.52,
+      "lon": -113.48,
+      "acres": 88000,
+      "headShare": 0.08,
+      "polygon": [[360, 30], [520, 40], [540, 160], [370, 180]]
+    },
+    {
+      "id": "sandhills",
+      "name": "Sandhills Rangeland",
+      "state": "Nebraska",
+      "lat": 41.52,
+      "lon": -101.48,
+      "acres": 445000,
+      "headShare": 0.2,
+      "polygon": [[480, 200], [780, 190], [820, 400], [500, 420], [460, 280]]
+    },
+    {
+      "id": "armendaris",
+      "name": "Armendaris Ranch",
+      "state": "New Mexico",
+      "lat": 33.18,
+      "lon": -107.22,
+      "acres": 360000,
+      "headShare": 0.12,
+      "polygon": [[200, 400], [400, 390], [430, 560], [180, 580], [160, 460]]
+    },
+    {
+      "id": "red-creek",
+      "name": "Red Creek Ranch",
+      "state": "Montana",
+      "lat": 46.48,
+      "lon": -105.52,
+      "acres": 180000,
+      "headShare": 0.1,
+      "polygon": [[560, 80], [720, 70], [750, 220], [580, 240]]
+    }
+  ]
+}

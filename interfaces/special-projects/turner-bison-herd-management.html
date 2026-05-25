@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0f261c" />
   <title>Turner Enterprise Rangeland · Ted Turner with the Bison · Passive Herd Console</title>
-  <meta name="description" content="Executive passive herd awareness for Turner Enterprise — 2M acres, 45,000 bison, live NOAA and fence-line telemetry. No collars." />
+  <meta name="description" content="Passive radar herd console for Turner Enterprise — fence-line returns cross-referenced with satellite soil-moisture pass. 2M acres, 45,000 bison, no collars." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,7 +17,7 @@
     <header class="tb-exec-header">
       <p class="tb-entity">Turner Enterprise · Rangeland Operations</p>
       <h1>Ted Turner with the Bison</h1>
-      <p class="tb-tagline">Passive herd awareness · Turner Enterprise Contiguous Land Network</p>
+      <p class="tb-tagline">Passive radar herd map · fence-line × satellite · Turner Enterprise Contiguous Land Network</p>
       <p class="tb-doc">DOC HHA-NSPFRNP-ANCHOR-2026-05-25 · NSPFRNP · no GPS collars · 24×365</p>
     </header>
 
@@ -31,40 +31,11 @@
 
     <p class="tb-exec-status" id="tb-exec-status" aria-live="polite">Connecting live stream…</p>
     <p class="tb-fetch-err" id="tb-fetch-err" hidden></p>
-    <p class="tb-hint">Layer 1 — executive summary. Tap any row to telescope in.</p>
+    <p class="tb-hint">Passive radar map — fence transmit · satellite return · NOAA magnetic layers (K, Dst, L1 Bz) · HIFLD transmission grid for added resolution. Orange lines = power corridors. Click to zoom.</p>
 
-    <section class="tb-kpi-band" aria-label="Executive metrics">
-      <div class="tb-kpi">
-        <span class="tb-kpi-label">Bison footprint</span>
-        <span class="tb-kpi-value" id="tb-kpi-heads">—</span>
-        <span class="tb-kpi-sub">head · contiguous network</span>
-      </div>
-      <div class="tb-kpi">
-        <span class="tb-kpi-label">Rangeland canvas</span>
-        <span class="tb-kpi-value" id="tb-kpi-acres">—</span>
-        <span class="tb-kpi-sub">acres · Turner Enterprise</span>
-      </div>
-      <div class="tb-kpi">
-        <span class="tb-kpi-label">Solar flux lock</span>
-        <span class="tb-kpi-value" id="tb-kpi-flux">—</span>
-        <span class="tb-kpi-sub">sfu · NOAA live</span>
-      </div>
-      <div class="tb-kpi">
-        <span class="tb-kpi-label">Noise floor</span>
-        <span class="tb-kpi-value" id="tb-kpi-kp">—</span>
-        <span class="tb-kpi-sub">Kp · EGS φ 1.618</span>
-      </div>
-      <div class="tb-kpi">
-        <span class="tb-kpi-label">Daily forage</span>
-        <span class="tb-kpi-value" id="tb-kpi-forage">—</span>
-        <span class="tb-kpi-sub">lbs / day · fleet total</span>
-      </div>
-      <div class="tb-kpi">
-        <span class="tb-kpi-label">Grazing velocity</span>
-        <span class="tb-kpi-value" id="tb-kpi-velocity">—</span>
-        <span class="tb-kpi-sub">cohort mean</span>
-      </div>
-    </section>
+    <div id="tb-map-root" class="tb-map-root"></div>
+
+    <p class="tb-hint tb-hint--secondary">Telescope — tap any row for full tables and audit narrative.</p>
 
     <div class="tb-cards" id="tb-cards">
       <article class="tb-card" data-telescope="environment">
@@ -159,6 +130,7 @@
               <tr><th>Ambient carrier</th><td id="tb-init-carrier">—</td></tr>
               <tr><th>Scalar anchor</th><td id="tb-init-phi">—</td></tr>
               <tr><th>Pipeline</th><td><span id="tb-pipe-stage">—</span> — <span id="tb-pipe-detail">—</span></td></tr>
+              <tr><th>Passive radar</th><td id="tb-radar-summary">Fence-line × satellite cross-reference · radar-quality fidelity</td></tr>
               <tr><th>Data sources</th><td id="tb-source-banner">—</td></tr>
             </tbody>
           </table>
@@ -176,6 +148,7 @@
     </footer>
   </div>
 
+  <script src="/interfaces/scripts/turner-rangeland-map.js" defer></script>
   <script src="/interfaces/scripts/turner-bison-herd.js" defer></script>
 </body>
 </html>

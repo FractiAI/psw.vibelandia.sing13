@@ -10,6 +10,47 @@
 
   const $ = (sel, root) => (root || document).querySelector(sel);
 
+  let mapInstance = null;
+
+  function mapStreamFromPipeline(stream) {
+    const env = stream.pipeline?.synthesis?.environment || {};
+    const herd = stream.pipeline?.synthesis?.herd || {};
+    const bio = stream.pipeline?.synthesis?.biomass || {};
+    const wire = stream.pipeline?.synthesis?.wire || {};
+    const radarStage = stream.pipeline?.radar;
+    const radar = radarStage || stream.pipeline?.synthesis?.radar || null;
+    const pll = wire.pllMicroseconds ?? stream.pipeline?.ingest?.wirePhaseUs;
+    const magnetic = stream.pipeline?.magnetic;
+    const powerGrid = stream.pipeline?.powerGrid;
+    return {
+      radar,
+      magnetic,
+      powerGrid,
+      radarFence: radarStage?.fenceChannel?.label || radar?.fenceChannel?.label,
+      radarSatellite: radarStage?.satelliteChannel?.label || radar?.satelliteChannel?.label,
+      baseline: {
+        headCount: herd.headCount ?? 45000,
+        canvasAcres: 2000000,
+        velocityMph: herd.velocity ? parseFloat(herd.velocity) : 0.24,
+        velocityKmh: 0.38,
+        dailyForageTons: bio.dailyForageTons ?? 585,
+        admLbsPerAcre: bio.admLbsPerAcre ?? 1450,
+      },
+      live: {
+        fluxSfu: env.f107LiveSfu ?? env.f107AnchorSfu,
+        sunspotCount: env.sunspotLiveCount ?? env.sunspotAnchorCount,
+        kp: env.kpEgsFloor ?? env.kpLive ?? env.kpAnchor,
+      },
+      ingest: {
+        pllMicroseconds: pll,
+        pllProxy:
+          pll != null && Number.isFinite(Number(pll))
+            ? Math.min(1, Math.max(0, (Number(pll) - 8) / 30))
+            : 0.5,
+      },
+    };
+  }
+
   function fmtNum(n, digits) {
     return Number(n).toLocaleString('en-US', {
       maximumFractionDigits: digits ?? 0,
@@ -59,21 +100,7 @@
     const headCount = herd.headCount ?? 45000;
     const acres = '2,000,000';
 
-    setText('tb-kpi-heads', fmtNum(headCount));
-    setText('tb-kpi-acres', acres);
-    setText(
-      'tb-kpi-flux',
-      env.f107LiveSfu != null ? `${env.f107LiveSfu}` : `${env.f107AnchorSfu ?? 137}`
-    );
-    setText(
-      'tb-kpi-kp',
-      env.kpEgsFloor != null ? `${env.kpEgsFloor}` : `${env.kpAnchor ?? 1}`
-    );
-    setText(
-      'tb-kpi-forage',
-      bio.dailyForageLbs != null ? fmtNum(bio.dailyForageLbs) : '—'
-    );
-    setText('tb-kpi-velocity', herd.velocity ? herd.velocity.split(' ')[0] : '0.24 mph');
+    if (mapInstance) mapInstance.updateStream(mapStreamFromPipeline(stream));
 
     setText('tb-preview-environment', env.f107LiveSfu != null ? `${env.f107LiveSfu} sfu · Kp ${env.kpEgsFloor ?? '—'}` : 'NOAA ingest active');
     setText('tb-preview-herd', `${fmtNum(headCount)} head · ${fmtNum(herd.meanWeightLbs ?? 1100)} lbs mean`);
@@ -119,21 +146,40 @@
     setText('tb-pll', `${wire.pllMicroseconds ?? '—'} µs · ${wire.rfSource || 'RF'}`);
     setText('tb-ingest-count', noaa.f107Time ? noaa.f107Time : 'pending');
 
-    setText('tb-pipe-stage', synthesis.stage || 'SYNTHESIS');
-    setText('tb-pipe-detail', 'NOAA + 1420 MHz RF → φ scale → Turner herd/biomass stream');
+    const radar = stream.pipeline?.radar;
+    setText('tb-pipe-stage', radar ? 'RADAR' : synthesis.stage || 'SYNTHESIS');
+    setText(
+      'tb-pipe-detail',
+      radar
+        ? `Passive radar fuse ${radar.fidelityPct}% · fence-line × satellite → herd map`
+        : 'INGEST → SCALE → RADAR → SYNTHESIS'
+    );
 
     const sources = [];
+    sources.push('Fence-line radar · OpenWebRX 1420 MHz PLL gates');
+    sources.push('Satellite pass · Open-Meteo assimilated soil moisture');
+    sources.push('Magnetic layers · NOAA Boulder K · Dst · L1 Bz');
+    if (stream.pipeline?.powerGrid?.lineCount) {
+      sources.push(`HIFLD grid · ${stream.pipeline.powerGrid.lineCount} transmission lines`);
+    }
     if (noaa.f107Sfu != null) sources.push(`NOAA F10.7 ${noaa.f107Sfu} sfu`);
     else if (noaa.error) sources.push(`NOAA: ${noaa.error}`);
-    if (ingest?.rf?.ok) sources.push(`1420 MHz · ${ingest.rf.endpointLabel || 'OpenWebRX'}`);
-    sources.push('Turner public registry · TIE · TESF');
+    sources.push('Turner Institute · TESF public registry');
     setText('tb-source-banner', sources.join(' · '));
+    setText(
+      'tb-radar-summary',
+      radar
+        ? `${radar.fidelityPct}% fidelity · correlation ${radar.correlationMean ?? '—'} · ${radar.method || 'passive-radar-synthesis'}`
+        : 'Awaiting radar fuse…'
+    );
 
     const status = $('#tb-exec-status');
     if (status) {
-      status.textContent = noaa.error
-        ? 'Stream active — NOAA degraded; fence-line RF and Turner baselines online.'
-        : 'Stream locked — passive ingest live for Turner Enterprise Rangeland.';
+      status.textContent = radar
+        ? `Passive radar locked — ${radar.fidelityPct}% fidelity · fence-line cross-referenced with satellite pass.`
+        : noaa.error
+          ? 'Stream active — NOAA degraded; fence radar and satellite fuse retrying.'
+          : 'Stream locked — passive radar ingest live for Turner Enterprise Rangeland.';
     }
   }
 
@@ -162,9 +208,20 @@
     if (clock) clock.textContent = new Date().toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
   }
 
+  async function initMap() {
+    const root = document.getElementById('tb-map-root');
+    if (!root || typeof TurnerRangelandMap !== 'function') return;
+    try {
+      mapInstance = new TurnerRangelandMap(root, {});
+      await mapInstance.load();
+    } catch (e) {
+      root.innerHTML = `<p class="tb-fetch-err">Map load failed: ${e.message}</p>`;
+    }
+  }
+
   function init() {
     initTelescope();
-    tick(true);
+    initMap().then(() => tick(true));
     setInterval(() => tick(false), POLL_MS);
   }
 

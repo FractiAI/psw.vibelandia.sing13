@@ -98,11 +98,12 @@ Position trails + ADM baseline + metabolic index (2.6%) → cumulative drawdown 
 
 ## Part IX — Ingestion pipeline (single chronological matrix)
 
-1. **Ingest** — Wire phase loops + NOAA flux + public Turner/TESF uploads.  
-2. **Scale** — Non-linear EGS (1.618) filter → Kp = 1.00 floor.  
-3. **Synthesis** — Metabolic + ADM → unified herd awareness stream.
+1. **Ingest** — Fence-line PLL returns (1420 MHz Goubau waveguide) + NOAA ionospheric flux + public Turner/TESF baselines.  
+2. **Scale** — Non-linear EGS (1.618) filter → Kp = 1.00 noise floor before fuse.  
+3. **Radar** — Passive radar synthesis: cross-reference **fence-line gate returns** with **Open-Meteo assimilated soil-moisture** (satellite + stations), **NOAA geomagnetic layers** (Boulder K, geospace Dst, L1 RTSW Bz), and **HIFLD US transmission corridors** (free ArcGIS). Magnetic coupling boosts grid resolution; high-voltage lines near pastures increase placement leverage.  
+4. **Synthesis** — Metabolic + ADM + radar placement field → unified herd awareness stream.
 
-Status: `[DATA INGEST PASSIVE — SATELLITE CORE LOCKED — VALIDATION SECURED — SINGLE STREAM LAYER EFFECTIVE]`
+Status: `[PASSIVE RADAR — FENCE × SATELLITE CORE LOCKED — VALIDATION SECURED — SINGLE STREAM LAYER EFFECTIVE]`
 
 ---
 

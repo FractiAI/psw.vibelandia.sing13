@@ -25,6 +25,7 @@ import { PLAIN } from '@/lib/plainSpeak';
 import { BridgeTowerBillboard } from '@/components/BridgeTowerBillboard';
 import { BuildNoticeBanner } from '@/components/BuildNoticeBanner';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
+import { isIOSDevice } from '@/lib/devicePlayback';
 import { pauseSimpleAudio } from '@/lib/simplePlayback';
 
 export function BridgePage() {
@@ -90,8 +91,12 @@ export function BridgePage() {
     pauseSimpleAudio();
     setPlaying(false);
     setTrack(null);
-    setDjMode(false);
     setActivePlaylist(MASTER_PLAYLIST_ID);
+    if (isIOSDevice()) {
+      /* Stay on Upload — navigating during picker teardown causes Safari blue-screen hang. */
+      return;
+    }
+    setDjMode(false);
     navigate('/bridge', { replace: true });
   };
 
@@ -123,9 +128,11 @@ export function BridgePage() {
       <CatalogSidebar onDjClick={goDj} />
 
       <div className="sp-main">
-        <div className="sp-bridge-tower-wrap">
-          <BridgeTowerBillboard />
-        </div>
+        {!djMode && (
+          <div className="sp-bridge-tower-wrap">
+            <BridgeTowerBillboard />
+          </div>
+        )}
         <header className="sp-top">
           <div className="sp-tabs" role="tablist">
             <button

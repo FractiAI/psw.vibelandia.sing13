@@ -14,19 +14,36 @@ export function iosAudioOnlyPlayback(): boolean {
   return isIOSDevice();
 }
 
-/** File picker accept — no video/* on iOS (native preview can blue-screen hang). */
+/** File picker accept — no video/* or audio/* wildcards on iOS (native preview blue-screens). */
 export function uploadFileInputAccept(): string {
   if (isIOSDevice()) {
-    return 'audio/mpeg,audio/mp4,audio/x-m4a,audio/wav,audio/*,.mp3,.m4a,.wav,.aac';
+    return '.mp3,.m4a,.wav,.aac,audio/mpeg,audio/mp4,audio/x-m4a';
   }
   return 'audio/mpeg,audio/wav,audio/*,video/*,.mp3,.wav,.m4a,.mp4,.mov,.webm';
 }
 
-/** iOS: wait for picker to dismiss before starting network upload. */
+/** iOS cover picker — same dismiss delay as audio (Photos UI overlap). */
+export function uploadCoverInputAccept(): string {
+  if (isIOSDevice()) {
+    return '.jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp';
+  }
+  return 'image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic';
+}
+
+const IOS_PICKER_DISMISS_MS = 720;
+
+/**
+ * iOS: wait for the system file/photo picker to fully dismiss before DOM/network work.
+ * Double rAF + timeout avoids the Safari blue-screen hang on Upload tab.
+ */
 export function deferAfterFilePicker(cb: () => void): void {
   if (!isIOSDevice()) {
     cb();
     return;
   }
-  window.setTimeout(cb, 400);
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      window.setTimeout(cb, IOS_PICKER_DISMISS_MS);
+    });
+  });
 }

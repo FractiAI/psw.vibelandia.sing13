@@ -3480,9 +3480,23 @@ a.boarding-pay-open {
   transition: transform 0.2s ease;
 }
 
+html.qf-upload-tab,
+html.qf-upload-tab body {
+  background: #06080d;
+}
+
 html.qf-upload-tab .sp-playback-stack {
-  transform: translateY(110%);
+  display: none !important;
+  visibility: hidden;
   pointer-events: none;
+}
+
+html.qf-upload-tab .sp-global-audio-wrap--upload,
+html.qf-upload-tab .sp-global-audio-wrap--upload .sp-global-audio {
+  display: none !important;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 html:not(.qf-upload-tab) .sp-scroll {

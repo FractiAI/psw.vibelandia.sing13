@@ -14,8 +14,11 @@ import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import {
   deferAfterFilePicker,
   isIOSDevice,
+  uploadCoverInputAccept,
   uploadFileInputAccept,
 } from '@/lib/devicePlayback';
+import { pauseSimpleAudio } from '@/lib/simplePlayback';
+import { usePlaybackStore } from '@/stores/playbackStore';
 import {
   filterUploadableFiles,
   formatUploadRejectSummary,
@@ -65,6 +68,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const serverReady = isServerUploadConfigured();
   const iosUpload = isIOSDevice();
   const mediaAccept = uploadFileInputAccept();
+  const coverAccept = uploadCoverInputAccept();
 
   const showMsg = (text: string, kind: MsgKind) => {
     setMsg(text);
@@ -116,7 +120,14 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     setMultiInputKey((k) => k + 1);
   };
 
+  const armUploadSafe = () => {
+    pauseSimpleAudio();
+    usePlaybackStore.getState().setPlaying(false);
+    usePlaybackStore.getState().setTrack(null);
+  };
+
   const runImport = async (files: File[], opts?: { title?: string }) => {
+    armUploadSafe();
     if (!serverReady) {
       setStatus('Upload not available.');
       showMsg(
@@ -208,8 +219,13 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       resetFilePicker();
       const playId = addedTrackIds[0];
       if (playId) {
-        setStatus('Opening Listen…');
-        onUploadSuccess?.(playId);
+        if (iosUpload) {
+          setStatus('Upload complete — tap Listen when ready.');
+          showMsg('Saved on the server. Tap Listen (top tab) to play — stay here if another upload is queued.', 'success');
+        } else {
+          setStatus('Opening Listen…');
+          onUploadSuccess?.(playId);
+        }
       }
     } catch (e) {
       const err = e instanceof Error ? e.message : '';
@@ -295,7 +311,9 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       showMsg('Pick an audio or video file first.', 'error');
       return;
     }
-    await uploadSingleFile(file);
+    const go = () => void uploadSingleFile(file);
+    if (iosUpload) deferAfterFilePicker(go);
+    else go();
   };
 
   const handleMultiFilePick = async (fileList: FileList | null) => {
@@ -330,9 +348,13 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       showMsg('Select one or more audio or video files first.', 'error');
       return;
     }
-    setStatus(`Uploading ${multiFiles.length} file${multiFiles.length === 1 ? '' : 's'}…`);
-    await runImport(multiFiles);
-    resetMultiPicker();
+    const go = async () => {
+      setStatus(`Uploading ${multiFiles.length} file${multiFiles.length === 1 ? '' : 's'}…`);
+      await runImport(multiFiles);
+      resetMultiPicker();
+    };
+    if (iosUpload) deferAfterFilePicker(() => void go());
+    else void go();
   };
 
   const handleFolderImport = async () => {
@@ -488,13 +510,15 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                 key={coverInputKey}
                 id={coverInputId}
                 type="file"
-                accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
+                accept={coverAccept}
                 className="spotify-file-pick-input"
                 disabled={busy}
                 onChange={(e) => {
                   const picked = e.target.files?.[0] ?? null;
                   e.target.value = '';
-                  void applyCoverPick(picked);
+                  const apply = () => void applyCoverPick(picked);
+                  if (iosUpload) deferAfterFilePicker(apply);
+                  else apply();
                 }}
               />
               <div className="sp-track-cover-row">
@@ -552,7 +576,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                   }
                   if (iosUpload) {
                     setStatus('File ready — tap Upload below.');
-                    showMsg('On iPhone, tap Upload to start (do not leave this tab).', 'info');
+                    showMsg('iPhone: tap Upload below after the picker closes. Stay on this tab until finished.', 'info');
                     return;
                   }
                   deferAfterFilePicker(() => void uploadSingleFile(picked));
@@ -597,7 +621,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
             disabled={busy || !serverReady || !file}
             onClick={() => void handleSingleUpload()}
           >
-            {busy ? 'Uploading…' : file ? 'Upload again · go to Listen' : 'Upload · go to Listen'}
+            {busy ? 'Uploading…' : file ? (iosUpload ? 'Upload' : 'Upload again · go to Listen') : iosUpload ? 'Upload' : 'Upload · go to Listen'}
           </button>
         </article>
 
@@ -624,7 +648,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                     return;
                   }
                   if (iosUpload) {
-                    void handleMultiFilePick(list);
+                    deferAfterFilePicker(() => void handleMultiFilePick(list));
                     return;
                   }
                   deferAfterFilePicker(() => void handleMultiFilePick(list));
@@ -687,14 +711,16 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               {busy ? 'Uploading…' : `Upload ${multiFiles.length} again`}
             </button>
           )}
-          <button
-            type="button"
-            className="spotify-btn spotify-btn--ghost"
-            disabled={busy || !serverReady}
-            onClick={() => void handleFolderImport()}
-          >
-            {busy ? 'Working…' : 'Import a folder…'}
-          </button>
+          {!iosUpload && (
+            <button
+              type="button"
+              className="spotify-btn spotify-btn--ghost"
+              disabled={busy || !serverReady}
+              onClick={() => void handleFolderImport()}
+            >
+              {busy ? 'Working…' : 'Import a folder…'}
+            </button>
+          )}
         </article>
 
         <TrackLibraryManager tracks={catalogTracks} disabled={busy} />

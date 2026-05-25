@@ -16,8 +16,8 @@ export function PlaybackRoot() {
 
   return (
     <div className="sp-playback-stack" aria-hidden={djMode}>
-      {!djMode ? <PlayerDock /> : null}
       <GlobalAudio />
+      {!djMode ? <PlayerDock /> : null}
     </div>
   );
 }

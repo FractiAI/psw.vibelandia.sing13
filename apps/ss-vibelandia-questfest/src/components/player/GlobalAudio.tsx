@@ -15,7 +15,7 @@ export function GlobalAudio() {
         ref={setRef}
         className="sp-global-audio"
         playsInline
-        preload="none"
+        preload="metadata"
         controls
         aria-label="QUESTFEST audio"
       />

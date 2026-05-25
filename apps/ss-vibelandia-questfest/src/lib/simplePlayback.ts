@@ -82,13 +82,24 @@ export function bindSimpleAudioElement(el: HTMLAudioElement | null): void {
 }
 
 export function getSimpleAudioElement(): HTMLAudioElement | null {
-  if (!audioEl) return null;
-  if (!audioEl.isConnected) return null;
-  return audioEl;
+  if (audioEl?.isConnected) return audioEl;
+  const found = document.querySelector<HTMLAudioElement>('audio.sp-global-audio');
+  if (found?.isConnected) {
+    bindSimpleAudioElement(found);
+    return found;
+  }
+  return null;
 }
 
 function readyEnough(el: HTMLAudioElement): boolean {
   return el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA;
+}
+
+export function assignPlaybackSrc(el: HTMLAudioElement, url: string): void {
+  if (urlMatchesElement(el, url) && loadedUrl === url) return;
+  loadedUrl = url;
+  el.src = url;
+  el.load();
 }
 
 /** Call synchronously from click/tap handlers. */
@@ -97,11 +108,7 @@ export function playAudioNow(url: string, volume = 1): Promise<void> {
   if (!el || !url) return Promise.reject(new Error('no_audio_or_url'));
 
   el.volume = Math.max(0, Math.min(1, volume));
-
-  if (loadedUrl !== url) {
-    loadedUrl = url;
-    el.src = url;
-  }
+  assignSrc(el, url);
 
   const attempt = (): Promise<void> => el.play();
 

@@ -129,15 +129,48 @@
   overflow: hidden;
 }
 
+.tb-chart-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.tb-chart-overlay--top {
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tb-chart-overlay--top .tb-chart-head,
+.tb-chart-overlay--top .tb-metric-strip,
+.tb-chart-overlay--top .tb-chart-legend {
+  pointer-events: auto;
+}
+
+.tb-chart-overlay--bottom {
+  bottom: 0;
+  margin: 0;
+  padding: 0.45rem 0.65rem;
+  border-top: 1px solid var(--tb-line);
+  border-radius: 0;
+  background: rgba(10, 24, 18, 0.88);
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
 .tb-chart-head {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: 0.65rem;
-  padding: 0.75rem 0.85rem;
-  border-bottom: 1px solid var(--tb-line);
-  background: rgba(15, 38, 28, 0.95);
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid rgba(196, 168, 116, 0.25);
+  background: rgba(15, 38, 28, 0.92);
+  backdrop-filter: blur(8px);
 }
 
 .tb-chart-title {
@@ -180,9 +213,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  padding: 0.5rem 0.65rem;
-  background: rgba(12, 30, 22, 0.98);
-  border-bottom: 1px solid var(--tb-line);
+  padding: 0.4rem 0.55rem;
+  background: rgba(12, 30, 22, 0.9);
+  border-bottom: 1px solid rgba(196, 168, 116, 0.2);
+  backdrop-filter: blur(6px);
 }
 
 .tb-metric {
@@ -238,19 +272,15 @@
 }
 
 .tb-chart-legend {
-  position: absolute;
-  left: 0.55rem;
-  bottom: 0.55rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem 0.7rem;
-  padding: 0.4rem 0.55rem;
+  padding: 0.35rem 0.55rem;
   font-size: 0.65rem;
   color: #e8e4dc;
-  background: rgba(10, 24, 18, 0.9);
-  border: 1px solid var(--tb-line);
-  border-radius: 6px;
-  pointer-events: none;
+  background: rgba(10, 24, 18, 0.88);
+  border-bottom: 1px solid rgba(196, 168, 116, 0.2);
+  backdrop-filter: blur(6px);
 }
 
 .swatch {
@@ -333,12 +363,8 @@
 
 .tb-chart-status {
   margin: 0;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.72rem;
   font-weight: 600;
   color: #b8e8c4;
-  background: rgba(26, 80, 55, 0.45);
-  border-top: 1px solid var(--tb-line);
 }
 
 .tb-detail-list {

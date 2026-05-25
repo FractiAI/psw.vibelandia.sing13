@@ -238,27 +238,30 @@
 
     this.root.innerHTML = `
       <section class="tb-chart" aria-label="Passive radar rangeland chart">
-        <header class="tb-chart-head">
-          <div>
-            <h2 class="tb-chart-title">Passive radar topological chart</h2>
-            <p class="tb-chart-sub" id="tb-chart-sub">${escapeHtml(g.networkLabel || '')} · scroll to zoom · drag to pan</p>
-          </div>
-          <div class="tb-chart-actions">
-            <button type="button" class="tb-chart-btn" id="tb-zoom-out" title="Zoom out">−</button>
-            <button type="button" class="tb-chart-btn" id="tb-zoom-in" title="Zoom in">+</button>
-            <button type="button" class="tb-chart-btn" id="tb-fit" title="Full network">Fit</button>
-          </div>
-        </header>
-        <div class="tb-metric-strip" role="group" aria-label="Live metrics">${metricHtml}</div>
         <div class="tb-chart-stage">
           <canvas class="tb-chart-canvas" id="tb-chart-canvas" aria-label="Rangeland map"></canvas>
-          <div class="tb-chart-legend">
-            <span><i class="swatch swatch-male"></i>Male</span>
-            <span><i class="swatch swatch-female"></i>Female</span>
-            <span><i class="swatch swatch-calf"></i>Calf</span>
-            <span><i class="swatch swatch-trail"></i>Pheromone trail</span>
-            <span><i class="swatch swatch-power"></i>Transmission</span>
+          <div class="tb-chart-overlay tb-chart-overlay--top" aria-label="Chart labels">
+            <header class="tb-chart-head">
+              <div>
+                <h2 class="tb-chart-title">Passive radar topological chart</h2>
+                <p class="tb-chart-sub" id="tb-chart-sub">${escapeHtml(g.networkLabel || '')} · scroll to zoom · drag to pan</p>
+              </div>
+              <div class="tb-chart-actions">
+                <button type="button" class="tb-chart-btn" id="tb-zoom-out" title="Zoom out">−</button>
+                <button type="button" class="tb-chart-btn" id="tb-zoom-in" title="Zoom in">+</button>
+                <button type="button" class="tb-chart-btn" id="tb-fit" title="Full network">Fit</button>
+              </div>
+            </header>
+            <div class="tb-metric-strip" role="group" aria-label="Live metrics">${metricHtml}</div>
+            <div class="tb-chart-legend">
+              <span><i class="swatch swatch-male"></i>Male</span>
+              <span><i class="swatch swatch-female"></i>Female</span>
+              <span><i class="swatch swatch-calf"></i>Calf</span>
+              <span><i class="swatch swatch-trail"></i>Pheromone trail</span>
+              <span><i class="swatch swatch-power"></i>Transmission</span>
+            </div>
           </div>
+          <p class="tb-chart-status tb-chart-overlay tb-chart-overlay--bottom" id="tb-chart-status" aria-live="polite">Awaiting telemetry…</p>
           <aside class="tb-chart-panel" id="tb-chart-panel" hidden>
             <button type="button" class="tb-chart-panel-x" id="tb-chart-panel-x" aria-label="Close">×</button>
             <h3 id="tb-panel-title"></h3>
@@ -266,7 +269,6 @@
             <div id="tb-panel-body"></div>
           </aside>
         </div>
-        <p class="tb-chart-status" id="tb-chart-status" aria-live="polite">Awaiting telemetry…</p>
       </section>
     `;
 
@@ -410,9 +412,14 @@
     this._paintPower(ctx, tier, focus);
     this._paintTrails(ctx, vb, focus);
     this._paintBison(ctx, vb, focus);
-    this._paintLabels(ctx, tier, focus);
+    this._paintPastureLabels(ctx, tier, focus);
+    this._paintPowerLabels(ctx, tier, focus);
+    this._paintBisonLabels(ctx, tier, focus);
 
     ctx.restore();
+    this._paintMapHud(ctx, tier);
+
+    this._updateRenderNote();
 
     const sub = this.root.querySelector('#tb-chart-sub');
     if (sub) {
@@ -432,15 +439,6 @@
         else ctx.lineTo(x, py);
       }
       ctx.stroke();
-    }
-    if (labelTier(this.cam.scale) === 0) {
-      ctx.fillStyle = 'rgba(168, 181, 160, 0.75)';
-      ctx.font = '600 11px Inter, system-ui, sans-serif';
-      ctx.fillText('Topographic relief', 12, 52);
-      ctx.fillText('West', 14, MAP_H - 10);
-      ctx.textAlign = 'right';
-      ctx.fillText('East', MAP_W - 14, MAP_H - 10);
-      ctx.textAlign = 'left';
     }
   };
 
@@ -462,23 +460,37 @@
       ctx.lineWidth = p.id === focus ? 2.2 : 1.2;
       ctx.stroke();
       ctx.globalAlpha = 1;
+    }
+  };
 
-      if (tier >= 0 && (!focus || p.id === focus)) {
-        const cx = poly.reduce((s, c) => s + c[0], 0) / poly.length;
-        const cy = poly.reduce((s, c) => s + c[1], 0) / poly.length;
-        const heads = this.bison.filter((b) => b.pastureId === p.id).length;
-        ctx.textAlign = 'center';
-        ctx.fillStyle = '#f8f6f0';
-        ctx.font = `700 ${Math.max(10, 13 / this.cam.scale)}px Libre Baskerville, Georgia, serif`;
-        ctx.fillText(p.name, cx, cy - 6 / this.cam.scale);
-        if (tier >= 1) {
-          ctx.font = `500 ${Math.max(8, 10 / this.cam.scale)}px Inter, system-ui, sans-serif`;
-          ctx.fillStyle = '#d4edc8';
-          ctx.fillText(`${p.state} · ${heads.toLocaleString()} head`, cx, cy + 8 / this.cam.scale);
-        }
-        if (tier >= 2) {
-          ctx.fillText(`${(p.acres || 0).toLocaleString()} acres`, cx, cy + 20 / this.cam.scale);
-        }
+  TurnerRangelandMap.prototype._paintPastureLabels = function (ctx, tier, focus) {
+    if (tier < 0) return;
+    for (const p of this.geo.pastures) {
+      if (focus && p.id !== focus) continue;
+      const poly = p.polygon;
+      const cx = poly.reduce((s, c) => s + c[0], 0) / poly.length;
+      const cy = poly.reduce((s, c) => s + c[1], 0) / poly.length;
+      const heads = this.bison.filter((b) => b.pastureId === p.id).length;
+      const fs = Math.max(10, 13 / this.cam.scale);
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = `700 ${fs}px Libre Baskerville, Georgia, serif`;
+      ctx.strokeStyle = 'rgba(8, 20, 15, 0.92)';
+      ctx.lineWidth = Math.max(2, 4 / this.cam.scale);
+      ctx.fillStyle = '#f8f6f0';
+      ctx.strokeText(p.name, cx, cy - 8 / this.cam.scale);
+      ctx.fillText(p.name, cx, cy - 8 / this.cam.scale);
+      if (tier >= 1) {
+        const sub = `${p.state} · ${heads.toLocaleString()} head`;
+        ctx.font = `500 ${Math.max(8, 10 / this.cam.scale)}px Inter, system-ui, sans-serif`;
+        ctx.fillStyle = '#d4edc8';
+        ctx.strokeText(sub, cx, cy + 8 / this.cam.scale);
+        ctx.fillText(sub, cx, cy + 8 / this.cam.scale);
+      }
+      if (tier >= 2) {
+        const acres = `${(p.acres || 0).toLocaleString()} acres`;
+        ctx.strokeText(acres, cx, cy + 22 / this.cam.scale);
+        ctx.fillText(acres, cx, cy + 22 / this.cam.scale);
       }
     }
   };
@@ -495,23 +507,42 @@
       ctx.strokeStyle = kv >= 345 ? 'rgba(255, 120, 90, 0.75)' : 'rgba(255, 180, 70, 0.55)';
       ctx.lineWidth = Math.max(1, (kv >= 345 ? 2.4 : 1.6) / this.cam.scale);
       ctx.stroke();
-      if (tier >= 2 && pts.length) {
-        const mid = pts[Math.floor(pts.length / 2)];
-        ctx.font = `600 ${Math.max(7, 9 / this.cam.scale)}px Inter, system-ui, sans-serif`;
-        ctx.fillStyle = 'rgba(255, 210, 120, 0.95)';
-        ctx.textAlign = 'center';
-        ctx.fillText(`${kv} kV`, mid.x, mid.y - 4 / this.cam.scale);
-      }
     }
+  };
+
+  TurnerRangelandMap.prototype._paintPowerLabels = function (ctx, tier, focus) {
+    if (tier < 2) return;
+    for (const seg of this._powerSegments) {
+      if (focus && seg.pastureId && seg.pastureId !== focus) continue;
+      const pts = seg.points || [];
+      if (pts.length < 2) continue;
+      const mid = pts[Math.floor(pts.length / 2)];
+      const kv = seg.voltageKv || 115;
+      ctx.font = `600 ${Math.max(7, 9 / this.cam.scale)}px Inter, system-ui, sans-serif`;
+      ctx.fillStyle = 'rgba(255, 210, 120, 0.95)';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'bottom';
+      ctx.fillText(`${kv} kV`, mid.x, mid.y - 4 / this.cam.scale);
+    }
+  };
+
+  TurnerRangelandMap.prototype._visualStride = function () {
+    const s = this.cam.scale;
+    if (s < 0.55) return { dots: 4, trails: 10 };
+    if (s < 0.85) return { dots: 2, trails: 6 };
+    if (s < 1.15) return { dots: 1, trails: 4 };
+    if (s < 2.5) return { dots: 1, trails: 2 };
+    return { dots: 1, trails: 1 };
   };
 
   TurnerRangelandMap.prototype._paintTrails = function (ctx, vb, focus) {
     const scale = this.cam.scale;
-    const glowW = Math.max(2.8, 5 / scale);
-    const coreW = Math.max(1.4, 2.2 / scale);
-    const trailStride = scale < 1.2 ? 4 : scale < 3 ? 2 : 1;
+    const stride = this._visualStride();
+    const glowW = Math.max(1.2, 4.5 / scale);
+    const coreW = Math.max(0.65, 1.8 / scale);
+    const trailStride = stride.trails;
     let drawn = 0;
-    const maxTrails = scale < 1 ? 12000 : 50000;
+    const maxTrails = scale < 0.7 ? 3500 : scale < 1.1 ? 7000 : scale < 2 ? 18000 : 45000;
 
     for (let i = 0; i < this.bison.length; i++) {
       if (i % trailStride !== 0) continue;
@@ -541,8 +572,9 @@
   };
 
   TurnerRangelandMap.prototype._paintBison = function (ctx, vb, focus) {
-    const r = Math.max(0.45, 1.15 / this.cam.scale);
-    const stride = this.cam.scale < 0.9 ? 2 : 1;
+    const scale = this.cam.scale;
+    const r = Math.max(0.28, 1.05 / scale);
+    const stride = this._visualStride().dots;
     for (let i = 0; i < this.bison.length; i++) {
       if (i % stride !== 0) continue;
       const b = this.bison[i];
@@ -555,7 +587,45 @@
     }
   };
 
-  TurnerRangelandMap.prototype._paintLabels = function (ctx, tier, focus) {
+  TurnerRangelandMap.prototype._paintMapHud = function (ctx, tier) {
+    const topPad = 72;
+    const y = topPad + (tier === 0 ? 14 : 4);
+    ctx.save();
+    ctx.font = '600 10px Inter, system-ui, sans-serif';
+    ctx.fillStyle = 'rgba(200, 220, 205, 0.9)';
+    ctx.textBaseline = 'top';
+    ctx.textAlign = 'left';
+    if (tier === 0) {
+      ctx.fillText('Topographic relief · radar-weighted herd field', 10, topPad);
+    }
+    ctx.fillText('West', 10, y);
+    ctx.textAlign = 'right';
+    ctx.fillText('East', this.viewW - 10, y);
+    ctx.restore();
+  };
+
+  TurnerRangelandMap.prototype._statusLine = function () {
+    const stride = this._visualStride();
+    const placed = this.bison.length;
+    let head = this._statusHead || 'Awaiting telemetry…';
+    if (this.stream?.radar) {
+      head = `Passive radar locked · ${this.stream.radar.fidelityPct}% fidelity · fence × satellite × magnetic · pheromone trails active`;
+    } else if (placed && this._radar?.placementSeed) {
+      head = `${placed.toLocaleString()} bison · radar-weighted placement (continuous field, not grid snap)`;
+    }
+    const sample =
+      stride.dots > 1 || stride.trails > 1
+        ? ` · zoom: 1/${stride.dots} dots · 1/${stride.trails} trails drawn (${placed.toLocaleString()} heads placed)`
+        : '';
+    return head + sample;
+  };
+
+  TurnerRangelandMap.prototype._updateRenderNote = function () {
+    const st = this.root.querySelector('#tb-chart-status');
+    if (st) st.textContent = this._statusLine();
+  };
+
+  TurnerRangelandMap.prototype._paintBisonLabels = function (ctx, tier, focus) {
     if (tier < 3) return;
     const vb = this.visibleWorld();
     let n = 0;
@@ -643,9 +713,8 @@
     const pg = stream.powerGrid || stream.radar?.powerGridChannel;
     set('#tb-m-grid', pg?.lineCount != null ? String(pg.lineCount) : '—');
 
-    const st = this.root.querySelector('#tb-chart-status');
-    if (st && stream.radar) {
-      st.textContent = `Passive radar locked · ${stream.radar.fidelityPct}% fidelity · fence × satellite × magnetic · pheromone trails active`;
+    if (stream.radar) {
+      this._statusHead = `Passive radar locked · ${stream.radar.fidelityPct}% fidelity · fence × satellite × magnetic · pheromone trails active`;
     }
     this.render();
   };

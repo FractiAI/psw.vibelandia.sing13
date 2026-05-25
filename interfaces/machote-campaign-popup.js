@@ -1,8 +1,13 @@
 ﻿/**
- * Machote members campaign modal — QUESTFEST top deck only (not Sovereign Player).
+ * Machote members campaign modal — QUESTFEST top deck only (not Bulletin Board or Sovereign Player).
  */
 (function () {
   'use strict';
+
+  function isBulletinBoardPage() {
+    var path = (window.location.pathname || '').toLowerCase();
+    return path.includes('bulletin-board');
+  }
 
   var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v4';
   var LEGACY_DISMISS_KEY = 'machote-members-campaign-dismissed-v2';
@@ -92,6 +97,7 @@
   }
 
   function init() {
+    if (isBulletinBoardPage()) return;
     var root = document.getElementById('machote-campaign-modal');
     if (!root) return;
 

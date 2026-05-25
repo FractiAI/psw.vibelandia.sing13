@@ -1,0 +1,52 @@
+.site-quicklinks {
+  margin: 1.25rem 0 0;
+  padding: 0.75rem 1rem;
+  border-top: 2px solid rgba(154, 123, 82, 0.55);
+  background: linear-gradient(180deg, rgba(26, 61, 46, 0.35), rgba(15, 38, 28, 0.5));
+  font-size: 0.78rem;
+}
+
+.site-quicklinks p {
+  margin: 0 0 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #c4a574;
+}
+
+.site-quicklinks a {
+  color: #5eead4;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-quicklinks a:hover {
+  color: #fef3c7;
+  text-decoration: underline;
+}
+
+.site-quicklinks .sep {
+  margin: 0 0.4rem;
+  opacity: 0.55;
+}
+
+.qf-bulletin-strip {
+  margin: 0;
+  padding: 0.85rem 1.25rem;
+  text-align: center;
+  background: linear-gradient(90deg, #1a3d2e, #0f261c);
+  border-top: 2px solid #9a7b52;
+}
+
+.qf-bulletin-strip a {
+  color: #f5f0e6;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  font-size: 0.82rem;
+}
+
+.qf-bulletin-strip a:hover {
+  color: #fef3c7;
+  text-decoration: underline;
+}

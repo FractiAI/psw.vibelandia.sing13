@@ -1,0 +1,29 @@
+{
+  "schema": "ss-vibelandia-bulletin-board/v1",
+  "boardTitle": "SS Vibelandia Bulletin Board",
+  "updated": "2026-05-25",
+  "posts": [
+    {
+      "id": "turner-bison-herd-2026",
+      "posted": "2026-05-25",
+      "featured": true,
+      "title": "Turner Bison Herd Management System",
+      "subtitle": "First bulletin posting · passive 24×365 rangeland console",
+      "summary": "No-collar fence-line waveguide telemetry over Turner Enterprise scale (2M acres · 45,000 head). Live NOAA space weather ingest, public registry reconciliation, NSPFRNP single-stream pipeline.",
+      "href": "/special-projects/turner-bison-herd-management",
+      "pill": "Live console",
+      "docRef": "HHA-NSPFRNP-ANCHOR-2026-05-25",
+      "contact": "valetpru@gmail.com"
+    },
+    {
+      "id": "questfest-bridge",
+      "posted": "2026-05-18",
+      "featured": false,
+      "title": "Capitan's Bridge · QUESTFEST listen",
+      "subtitle": "Music catalog · members pass · upload",
+      "summary": "Stream the Reno swamp catalog, board the members pass, and use the DJ studio on Capitan's Bridge.",
+      "href": "/interfaces/questfest-bridge/#/bridge",
+      "pill": "Listen"
+    }
+  ]
+}

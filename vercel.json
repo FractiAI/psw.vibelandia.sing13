@@ -49,7 +49,11 @@
     { "source": "/portal", "destination": "/interfaces/goldilocks-os.html" },
     { "source": "/portal/", "destination": "/interfaces/goldilocks-os.html" },
     { "source": "/other-side", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/other-side/", "destination": "/interfaces/goldilocks-os.html" }
+    { "source": "/other-side/", "destination": "/interfaces/goldilocks-os.html" },
+    { "source": "/bulletin-board", "destination": "/interfaces/bulletin-board.html" },
+    { "source": "/bulletin-board/", "destination": "/interfaces/bulletin-board.html" },
+    { "source": "/special-projects/turner-bison-herd-management", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" },
+    { "source": "/special-projects/turner-bison-herd-management/", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" }
   ],
   "crons": [
     {
@@ -59,6 +63,10 @@
     {
       "path": "/api/cron-websdr-capture",
       "schedule": "*/10 * * * *"
+    },
+    {
+      "path": "/api/cron-turner-bison-ingest",
+      "schedule": "*/5 * * * *"
     }
   ],
   "functions": {
@@ -98,6 +106,21 @@
       "memory": 512,
       "maxDuration": 30,
       "includeFiles": "{docs/**,protocols/**,BBHE_REPOSITORY_STANDARD.md}"
+    },
+    "api/turner-bison-telemetry.js": {
+      "memory": 512,
+      "maxDuration": 60,
+      "includeFiles": "{data/**,lib/**}"
+    },
+    "api/cron-turner-bison-ingest.js": {
+      "memory": 512,
+      "maxDuration": 60,
+      "includeFiles": "{data/**,lib/**}"
+    },
+    "api/bulletin-board.js": {
+      "memory": 256,
+      "maxDuration": 15,
+      "includeFiles": "data/bulletin-board-posts.json"
     }
   },
   "headers": [

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="tb-page">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f261c" />
+  <title>Turner Bison Herd Management System · NSPFRNP Passive Console</title>
+  <meta name="description" content="Passive no-collar bison herd management console — live NOAA space weather, 1420 MHz RF ingest, public registry reconciliation." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management" />
+  <link rel="stylesheet" href="/interfaces/styles/turner-bison-herd.css" />
+</head>
+<body>
+  <div class="tb-wrap">
+    <header class="tb-header">
+      <h1>Turner Bison Herd Management System</h1>
+      <p class="tb-sub">SS Vibelandia Bulletin Board · first posting · passive · no GPS collar · 24×365 · DOC HHA-NSPFRNP-ANCHOR-2026-05-25</p>
+    </header>
+
+    <nav class="tb-nav" aria-label="Console navigation">
+      <a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a>
+      <a href="/bulletin-board">SS Vibelandia Bulletin Board</a>
+      <span class="here">Herd console</span>
+      <a href="/interfaces/whitepaper-surface.html?id=turner-bison-herd-report">Full report</a>
+    </nav>
+
+    <p class="tb-source" id="tb-source-banner">Connecting live telemetry…</p>
+    <p class="tb-fetch-err" id="tb-fetch-err" hidden></p>
+
+    <div class="tb-status-row" aria-live="polite">
+      <div class="tb-status" id="tb-status-ingest">[DATA INGEST — CONNECTING]</div>
+      <div class="tb-status" id="tb-status-validate">[VALIDATION SECURED — SINGLE STREAM LAYER EFFECTIVE]</div>
+      <div class="tb-status tb-status--warn" id="tb-clock">UTC —</div>
+    </div>
+
+    <section aria-labelledby="tb-init-h">
+      <h2 id="tb-init-h" class="tb-section-label">System initialization</h2>
+      <table class="tb-table">
+        <tbody>
+          <tr><th scope="row">Methodology</th><td id="tb-init-method">NSPFRNP</td></tr>
+          <tr><th scope="row">Physical canvas</th><td id="tb-init-canvas">—</td></tr>
+          <tr><th scope="row">Waveguide medium</th><td id="tb-init-wave">—</td></tr>
+          <tr><th scope="row">Ambient carrier</th><td id="tb-init-carrier">—</td></tr>
+          <tr><th scope="row">Scalar anchor</th><td id="tb-init-phi">—</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="tb-grid tb-grid--panels">
+      <section class="tb-panel" aria-labelledby="tb-p1">
+        <div class="tb-panel-head" id="tb-p1">Panel 1 · Space &amp; Earth environment <span class="tb-live-tag">NOAA live</span></div>
+        <div class="tb-panel-body">
+          <table class="tb-table">
+            <tbody>
+              <tr><th scope="row">Radio solar flux</th><td class="num" id="tb-flux">—</td></tr>
+              <tr><th scope="row">Sunspot multi-sync</th><td id="tb-sunspot">—</td></tr>
+              <tr><th scope="row">Goubau noise floor</th><td id="tb-kp">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="tb-panel" aria-labelledby="tb-p2">
+        <div class="tb-panel-head" id="tb-p2">Panel 2 · YTD herd metrics &amp; velocity <span class="tb-live-tag">registry</span></div>
+        <div class="tb-panel-body">
+          <table class="tb-table">
+            <tbody>
+              <tr><th scope="row">Population footprint</th><td class="num" id="tb-heads">—</td></tr>
+              <tr><th scope="row">Mean biological profile</th><td class="num" id="tb-weight">—</td></tr>
+              <tr><th scope="row">Grazing cohort velocity</th><td id="tb-velocity">—</td></tr>
+              <tr><th scope="row">PLL wire attenuation</th><td class="num" id="tb-pll">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="tb-panel" aria-labelledby="tb-p3">
+        <div class="tb-panel-head" id="tb-p3">Panel 3 · Biomass &amp; consumption <span class="tb-live-tag">registry</span></div>
+        <div class="tb-panel-body">
+          <table class="tb-table">
+            <tbody>
+              <tr><th scope="row">ADM yield / acre</th><td class="num" id="tb-adm">—</td></tr>
+              <tr><th scope="row">Metabolic ingest</th><td id="tb-metabolic">—</td></tr>
+              <tr><th scope="row">Daily forage drawdown</th><td id="tb-forage">—</td></tr>
+              <tr><th scope="row">Last NOAA ingest</th><td class="num" id="tb-ingest-count">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <h2 class="tb-section-label">Empirical accuracy reconciliation slices</h2>
+    <div class="tb-slice-tabs" role="tablist">
+      <button type="button" role="tab" data-slice="rotation" aria-selected="true">Pasture rotation timelines</button>
+      <button type="button" role="tab" data-slice="biomass" aria-selected="false">Biomass depletion velocity</button>
+      <button type="button" role="tab" data-slice="mass" aria-selected="false">Biological mass displacement</button>
+    </div>
+    <div id="slice-rotation" class="tb-slice-pane tb-slice-pane--on" role="tabpanel">
+      <p><strong>Slice:</strong> Fence-line wave-lock vs Turner Institute of Ecoagriculture public spring updates.</p>
+      <p>Recorded alignment: lower elevation river-basin gates opening on Flying D Ranch — matched to published perimeter coordinates.</p>
+    </div>
+    <div id="slice-biomass" class="tb-slice-pane" role="tabpanel">
+      <p><strong>Slice:</strong> Live position paths vs early-summer agronomy curves.</p>
+      <p>ADM baseline 1,450 lbs/acre reconciled against continuous grazing signature.</p>
+    </div>
+    <div id="slice-mass" class="tb-slice-pane" role="tabpanel">
+      <p><strong>Slice:</strong> PLL microsecond attenuation from live 1420 MHz RF proxy vs collective herd mass model.</p>
+      <p>Mass filter: 1,100 lbs (500 kg) mean adult cow unit (TESF public profile).</p>
+    </div>
+
+    <div class="tb-pipeline" aria-live="polite">
+      <strong>Harmonized single-stream pipeline</strong>
+      <ol>
+        <li><span id="tb-pipe-stage">INGEST</span> — <span id="tb-pipe-detail">—</span></li>
+      </ol>
+    </div>
+
+    <p class="tb-fair">
+      Fair Exchange Clause — locked. Settlement may refund in part depending on delivery quality (tipping model).
+    </p>
+
+    <footer class="tb-foot">
+      <a href="/bulletin-board">SS Vibelandia Bulletin Board</a> ·
+      <a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a> ·
+      <a href="mailto:valetpru@gmail.com?subject=Turner%20Bison%20Herd">Contact</a>
+    </footer>
+  </div>
+
+  <script src="/interfaces/scripts/turner-bison-herd.js" defer></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "schema": "turner-public-registry/v1",
+  "documentRef": "HHA-NSPFRNP-ANCHOR-2026-05-25",
+  "updated": "2026-05-25",
+  "sources": [
+    {
+      "id": "tie-spring-gates",
+      "org": "Turner Institute of Ecoagriculture",
+      "topic": "Pasture rotation · Flying D Ranch",
+      "summary": "Public spring management notes reference lower elevation river-basin gate openings for cow-calf pairs on Flying D Ranch.",
+      "url": "https://www.turnerinstitute.org/"
+    },
+    {
+      "id": "tesf-mass-profile",
+      "org": "Turner Endangered Species Fund",
+      "topic": "Adult bison mass baseline",
+      "summary": "Conservation updates cite winter-exit mean weight near 1,100 lbs (500 kg) per adult cow unit.",
+      "url": "https://www.tesf.org/"
+    }
+  ],
+  "operationalBaseline": {
+    "methodology": "NSPFRNP",
+    "canvasLabel": "Turner Enterprise Contiguous Land Network",
+    "canvasAcres": 2000000,
+    "headCount": 45000,
+    "waveguide": "High-tensile steel pasture perimeter boundary fences",
+    "carrierMhz": 1420.4,
+    "solarFluxAnchorSfu": 137,
+    "sunspotAnchorCount": 86,
+    "activeAreaAnchor": "AR4446",
+    "kpFloorTarget": 1.0,
+    "meanWeightLbs": 1100,
+    "velocityMph": 0.24,
+    "velocityKmh": 0.38,
+    "admLbsPerAcre": 1450,
+    "metabolicPct": 0.026,
+    "dailyForageLbs": 1170000,
+    "dailyForageTons": 585
+  },
+  "reconciliationSlices": {
+    "rotation": {
+      "title": "Pasture rotation timelines",
+      "publicEvent": "Flying D lower river-basin gates · spring cow-calf movement",
+      "registryId": "tie-spring-gates"
+    },
+    "biomass": {
+      "title": "Biomass depletion velocity",
+      "admLbsPerAcre": 1450,
+      "note": "Early-summer agronomy baseline cross-checked against continuous grazing signature."
+    },
+    "mass": {
+      "title": "Biological mass displacement",
+      "meanWeightLbs": 1100,
+      "registryId": "tesf-mass-profile"
+    }
+  }
+}

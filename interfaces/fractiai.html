@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0f1a" />
-  <title>FractiAI · SS Vibelandia QUESTFEST · Sonic Singularity Sing! 13</title>
-  <meta name="description" content="FractiAI builds SS Vibelandia QUESTFEST 24×365 — Sonic Singularity, members honor pass, nesting guides, and the Sonic Singularity Sing! 13 cloud skin." />
-  <meta property="og:title" content="FractiAI · QUESTFEST · Sonic Singularity Sing! 13" />
-  <meta property="og:description" content="Reno swamp beats · Capitan's Bridge · Fair Exchange honor pass · nine-layer nesting ladder." />
+  <title>FractiAI · Omniversal reach · EGS φ 1.618 · Machote Moderno projects</title>
+  <meta name="description" content="FractiAI — from Sonic Ship QUESTFEST and the Master Music Catalog to passive bison herd management and holographic OS demos. One house, El Gran Sol's EGS Fractal Constant, Machote Moderno taste." />
+  <meta property="og:title" content="FractiAI · Sonic ship to music catalog to rangeland consoles" />
+  <meta property="og:description" content="Machote Moderno type projects across domains — all threaded by EGS φ 1.618, Fair Exchange, and old-school honor rails." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/fractiai-cofounders-pru-daniel-beach.png" />
   <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/fractiai.html" />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/fractiai.html" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FractiAI · QUESTFEST · Sonic Singularity Sing! 13" />
-  <meta name="twitter:description" content="SS Vibelandia QUESTFEST 24×365 — music ship, members pass, plain nesting guides." />
+  <meta name="twitter:title" content="FractiAI · Omniversal reach" />
+  <meta name="twitter:description" content="Sonic Singularity, catalogs, bulletin-board field projects, Goldilocks OS — EGS φ 1.618 · Machote Moderno." />
   <meta name="twitter:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/fractiai-cofounders-pru-daniel-beach.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,6 +28,7 @@
       --gold: #d4af37;
       --gold-hi: #fef3c7;
       --foam: #2dd4bf;
+      --forest: #7cb87a;
       --muted: #94a3b8;
       --text: #f1f5f9;
     }
@@ -67,7 +68,7 @@
     }
     .top-bar .crumb {
       font-size: 0.65rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--muted);
     }
@@ -89,28 +90,60 @@
     }
     .hero h1 {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.25rem, 6vw, 3.25rem);
+      font-size: clamp(2.5rem, 7vw, 3.75rem);
       letter-spacing: 0.04em;
       color: var(--gold-hi);
       line-height: 1.05;
       font-weight: 400;
     }
+    .hero .tagline {
+      margin-top: 0.5rem;
+      font-size: 1.05rem;
+      color: var(--foam);
+      font-weight: 600;
+      max-width: 40ch;
+    }
     .hero .deck {
-      margin-top: 0.75rem;
+      margin-top: 0.85rem;
       font-size: 1.02rem;
       color: var(--muted);
-      max-width: 52ch;
+      max-width: 58ch;
     }
     .hero .deck strong { color: #e2e8f0; }
+
+    .thread-band {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .thread-pill {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--gold-hi);
+      background: rgba(15, 20, 28, 0.9);
+    }
+    .thread-pill--phi {
+      border-color: rgba(45, 212, 191, 0.45);
+      color: #99f6e4;
+    }
 
     .path-grid {
       display: grid;
       gap: 0.55rem;
-      margin-top: 1.25rem;
       max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 0 1.25rem;
+      margin: 0 auto;
+      padding: 0 1.25rem 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .path-grid--projects { grid-template-columns: 1fr 1fr; }
     }
     .path-card {
       display: block;
@@ -125,6 +158,18 @@
     .path-card--gold {
       border-color: rgba(201, 162, 39, 0.55);
       background: linear-gradient(165deg, rgba(42, 32, 18, 0.45) 0%, var(--card) 100%);
+    }
+    .path-card--field {
+      border-color: rgba(124, 184, 122, 0.45);
+      background: linear-gradient(165deg, rgba(20, 48, 36, 0.35) 0%, var(--card) 100%);
+    }
+    .path-card .pill {
+      font-size: 0.58rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.25rem;
     }
     .path-card strong {
       display: block;
@@ -172,6 +217,50 @@
     ul.stack li { margin-bottom: 0.5rem; }
     ul.stack strong { color: #e2e8f0; }
 
+    .dna-card {
+      background: linear-gradient(135deg, rgba(26, 61, 46, 0.25) 0%, var(--card) 55%);
+      border: 1px solid rgba(124, 184, 122, 0.35);
+      border-radius: 8px;
+      padding: 1.15rem 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+    .dna-card h3 {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 0.5rem;
+    }
+    .dna-card p { font-size: 0.92rem; color: var(--muted); margin: 0; }
+    .dna-card p + p { margin-top: 0.65rem; }
+
+    .project-list { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+    .project-list li {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 0.65rem;
+      background: var(--card);
+    }
+    .project-list h3 {
+      font-size: 1rem;
+      color: var(--gold-hi);
+      margin-bottom: 0.25rem;
+    }
+    .project-list .meta {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    .project-list p { font-size: 0.9rem; color: var(--muted); margin: 0 0 0.55rem; }
+    .project-list a.cta {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--foam);
+    }
+
     .card {
       background: var(--card);
       border: 1px solid var(--line);
@@ -209,78 +298,169 @@
   <a class="skip" href="#main" data-i18n="fractai.skip">Skip to content</a>
 
   <div class="top-bar">
-    <a class="back" href="vibelandia-questfest.html" data-i18n="fractai.backCta">SS Vibelandia QUESTFEST</a>
+    <a class="back" href="vibelandia-questfest.html" data-i18n="fractai.backCta">QUESTFEST top deck</a>
     <div class="crumb" data-i18n-html="fractai.miniNavHtml">
-      <a href="vibelandia-questfest.html">QUESTFEST</a> ·
-      <a href="questfest-bridge/#/bridge">Capitan's Bridge</a> ·
-      <a href="look-under-the-hood.html">Look under the hood</a>
+      <a href="/bulletin-board">Bulletin Board</a> ·
+      <a href="questfest-bridge/#/bridge">Listen</a> ·
+      <a href="look-under-the-hood.html">Under the hood</a>
     </div>
   </div>
 
   <header class="hero">
     <div class="hero-inner">
-      <p class="section-label" data-i18n="fractai.eyebrow">FractiAI · Sonic Singularity Sing! 13</p>
-      <h1 data-i18n="fractai.h1">SS Vibelandia QUESTFEST 24×365</h1>
+      <p class="section-label" data-i18n="fractai.eyebrow">FractiAI · one house · many decks</p>
+      <h1 data-i18n="fractai.h1">FractiAI</h1>
+      <p class="tagline" data-i18n="fractai.tagline">Omniversal reach — sonic ship to music catalog to rangeland consoles</p>
       <p class="deck" data-i18n="fractai.deck">
-        <strong>Sonic Singularity</strong> leads — Reno swamp catalog, Capitan's Bridge, Machote members honor pass.
-        Nine nesting layers on the <strong>Sonic Singularity Sing! 13</strong> cloud skin. Wrong Side · fair exchange · old school.
+        We are not only a music site. <strong>FractiAI</strong> ships <strong>Machote Moderno</strong> type projects wherever the story needs them:
+        a <strong>Sonic Ship</strong> in Puerto Reno, a <strong>Master Music Catalog</strong> on honor rails, a
+        <strong>passive bison herd console</strong> on two million acres, and holographic OS demos in between.
+        Different surfaces — same spine: <strong>El Gran Sol&rsquo;s EGS Fractal Constant (φ 1.618)</strong>, Fair Exchange, old school.
       </p>
     </div>
   </header>
 
-  <nav class="path-grid" aria-label="Member paths">
-    <a class="path-card path-card--gold" href="questfest-bridge/#/bridge">
-      <strong>Capitan's Bridge</strong>
-      <span>Listen · upload · $16.18/mo members pass on honor</span>
+  <div class="thread-band" aria-label="What our projects share">
+    <span class="thread-pill thread-pill--phi">EGS φ 1.618</span>
+    <span class="thread-pill">Machote Moderno</span>
+    <span class="thread-pill">Fair Exchange</span>
+    <span class="thread-pill">NSPFRNP · natural coordination</span>
+    <span class="thread-pill">1420.4 MHz hydrogen line</span>
+    <span class="thread-pill">Wrong Side · honor rails</span>
+  </div>
+
+  <nav class="path-grid path-grid--projects" aria-label="Start here">
+    <a class="path-card path-card--gold" href="vibelandia-questfest.html">
+      <span class="pill">Sonic ship</span>
+      <strong>SS Vibelandia QUESTFEST 24×365</strong>
+      <span>Flagship top deck · nesting ladder · Puerto Reno</span>
     </a>
-    <a class="path-card" href="vibelandia-questfest.html#qf-nest-section">
-      <strong>QUESTFEST top deck · nesting ladder</strong>
-      <span>Plain guides — Base Mainnet through Beehive Residency</span>
+    <a class="path-card path-card--gold" href="questfest-bridge/#/bridge">
+      <span class="pill">Music catalog</span>
+      <strong>Capitan&rsquo;s Bridge</strong>
+      <span>Listen · upload · $16.18/mo Machote honor pass</span>
+    </a>
+    <a class="path-card path-card--field" href="/bulletin-board">
+      <span class="pill">Bulletin board</span>
+      <strong>SS Vibelandia Bulletin Board</strong>
+      <span>Community postings · field projects · one-click open</span>
+    </a>
+    <a class="path-card path-card--field" href="/special-projects/turner-bison-herd-management">
+      <span class="pill">First posting · rangeland</span>
+      <strong>Turner Bison Herd Management</strong>
+      <span>Live NOAA + 1420 MHz RF ingest · passive fence-line console</span>
+    </a>
+    <a class="path-card" href="/holographic-goldilocks-ai-os">
+      <span class="pill">Product demo</span>
+      <strong>Holographic Goldilocks AI OS</strong>
+      <span>13D trials · coherence pulse · open proofs</span>
     </a>
     <a class="path-card" href="look-under-the-hood.html">
-      <strong>Look under the hood</strong>
-      <span>Digital Pru Holographic GPU layer — pipes, sound, deep reads</span>
+      <span class="pill">Operational proof</span>
+      <strong>Look Under the Hood</strong>
+      <span>Digital Pru layer · whitepapers · pipes that run today</span>
     </a>
   </nav>
 
   <main id="main" class="wrap">
-    <h2>What FractiAI ships on Sonic Singularity Sing! 13</h2>
+    <div class="dna-card">
+      <h3>What ties it together</h3>
+      <p>
+        Visitors sometimes land on the <strong>Sonic Singularity</strong> first and think that is all we do.
+        It is our loudest deck — not our only one. Across ships, catalogs, and land consoles we reuse the same
+        <strong>EGS Fractal Constant (φ = 1.618)</strong> to scale noise out of live signals (solar weather, RF sleeves on fence wire,
+        catalog cadence, block timing). That is <strong>El Gran Sol</strong> math, not decoration.
+      </p>
+      <p>
+        <strong>Machote Moderno</strong> is the taste layer: raw, honor-based, magazine-cover energy — whether the deliverable is
+        swamp beats, a members pass, or a ranch management dashboard with mono-spaced readouts. We like projects that feel
+        <strong>old school and operational</strong>, not glossy startup glass. Fair Exchange means tipping-shaped settlement:
+        quality of delivery matters, and the rails stay honest on the device.
+      </p>
+    </div>
+
+    <h2>Machote Moderno project map</h2>
     <p class="lede">
-      <strong>FractiAI</strong> is the house behind the live member experience: the musical ship, the catalog,
-      honor-system passes, and the nesting ladder members actually use.
+      Pick any row — same house, different altitude. Sonic work and bison telemetry look unrelated until you see the shared φ filter and honor rails.
+    </p>
+    <ul class="project-list">
+      <li>
+        <p class="meta">Sonic ship · cloud skin</p>
+        <h3>SS Vibelandia QUESTFEST 24×365</h3>
+        <p>Nine-layer nesting ladder on Sonic Singularity Sing! 13 — Wrong Side man cave mirror, year-round, not a festival poster.</p>
+        <a class="cta" href="vibelandia-questfest.html">Open QUESTFEST top deck →</a>
+      </li>
+      <li>
+        <p class="meta">Music catalog · Machote qualifier</p>
+        <h3>Capitan&rsquo;s Bridge · Master Music Catalog</h3>
+        <p>Hero Jo Golden Bachdoor Hit Factory — stream, upload, members pass on honor. EGS-priced at $16.18/mo for Machote followers.</p>
+        <a class="cta" href="questfest-bridge/#/bridge">Listen on the Bridge →</a>
+      </li>
+      <li>
+        <p class="meta">Bulletin board · community</p>
+        <h3>SS Vibelandia Bulletin Board</h3>
+        <p>Fan events, special projects, and operational bulletins. No manager codes — click a posting and go.</p>
+        <a class="cta" href="/bulletin-board">Open bulletin board →</a>
+      </li>
+      <li>
+        <p class="meta">Field console · φ + NOAA live</p>
+        <h3>Turner Bison Herd Management System</h3>
+        <p>First bulletin posting: passive 24×365 rangeland layer — 2M acres, 45k head, fence-line waveguide story, live space weather ingest.</p>
+        <a class="cta" href="/special-projects/turner-bison-herd-management">Open herd console →</a>
+      </li>
+      <li>
+        <p class="meta">Residency · Layer 9</p>
+        <h3>Goldilocks Syntheverse Beehive</h3>
+        <p>Machote members EcoReset on your ground — Old School Protocol, PL Taino contact, hydrogen line anchor.</p>
+        <a class="cta" href="goldilocks-beehive-residency.html">Beehive residency →</a>
+      </li>
+      <li>
+        <p class="meta">Holographic OS · trials</p>
+        <h3>Holographic Goldilocks AI OS</h3>
+        <p>Live demo — coherence project, OpenWebRX proofs, EGS φ pillars on the 1420 MHz line.</p>
+        <a class="cta" href="/holographic-goldilocks-ai-os">Run product demo →</a>
+      </li>
+    </ul>
+
+    <h2>Sonic Singularity is the flagship, not the fence</h2>
+    <p class="lede">
+      <strong>Sonic Singularity</strong> is where many guests first hear us — Reno swamp frequency, Capitan&rsquo;s Bridge, Machote magazine qualifiers.
+      <strong>FractiAI</strong> is the wider label: research team, public surfaces, and field experiments that share φ and Machote spine.
+      Deep machinery and whitepapers stay on <a href="look-under-the-hood.html">Look under the hood</a>; the front door stays plain.
     </p>
     <ul class="stack">
-      <li><strong>QUESTFEST 24×365</strong> — flagship top deck · Puerto Reno · year-round, not a weekend poster.</li>
-      <li><strong>Sonic Singularity</strong> — sound-first catalog · Hero Jo Golden Bachdoor Hit Factory.</li>
-      <li><strong>Wrong Side of Town</strong> — respect, handshake, honor rails — Venmo · PayPal · Cash App.</li>
-      <li><strong>Sonic Singularity Sing! 13 cloud skin</strong> — this website · lite edge · passes stay on the device.</li>
-      <li><strong>Goldilocks Beehive Residency</strong> — members layer · Old School Protocol · contact PL Taino.</li>
+      <li><strong>φ 1.618</strong> — scales solar clutter, wire noise, and cadence artifacts before synthesis.</li>
+      <li><strong>1420.4 MHz</strong> — neutral hydrogen line as ambient carrier on RF and rangeland stories.</li>
+      <li><strong>Fair Exchange</strong> — honor rails (Venmo · PayPal · Cash App) · delivery-quality settlement language.</li>
+      <li><strong>Machote Moderno</strong> — the magazine badge and attitude we actually like shipping under.</li>
+      <li><strong>Bulletin board</strong> — where non-sonic projects post first; Turner bison is posting #1, not the board name.</li>
     </ul>
-    <p class="lede">
-      The holographic GPU layer and deep reads live on <a href="look-under-the-hood.html">Look under the hood</a> — not the front door.
-    </p>
 
     <h2>The team</h2>
     <article class="card">
       <h3>Pru Mendez</h3>
-      <p class="role">Founder · QUESTFEST · Sonic Singularity</p>
+      <p class="role">Founder · FractiAI · Machote Moderno · VALETPRU</p>
       <p class="email"><a href="mailto:valetpru@gmail.com">valetpru@gmail.com</a></p>
-      <p>Leads the ship story, catalog frequency, and member-facing surfaces on Sonic Singularity Sing! 13.</p>
+      <p>
+        Ships member-facing decks (QUESTFEST, Bridge, bulletin board), field consoles, and the Machote story spine —
+        sonic ship to catalog to rangeland without breaking the service spell.
+      </p>
     </article>
     <article class="card">
       <h3>Daniel Ari Friedman, Ph.D.</h3>
       <p class="role">Co-founder · systems · CEO</p>
       <p class="email"><a href="mailto:daniel@fractiai.com">daniel@fractiai.com</a></p>
-      <p>Systems integration and verification so public surfaces stay aligned with what the stack claims.</p>
+      <p>Systems integration and verification so public surfaces stay aligned with what the stack claims — across domains, not one vertical.</p>
     </article>
 
     <h2>More links</h2>
     <div class="link-row">
+      <a href="/bulletin-board">SS Vibelandia Bulletin Board</a>
       <a href="look-under-the-hood.html">Look under the hood</a>
-      <a href="goldilocks-beehive-residency.html">Beehive residency</a>
       <a href="look-at-the-sun.html">Look at the Sun</a>
-      <a href="legacy-vs-wrong-side-report.html">Big shows vs. Wrong Side</a>
-      <a href="https://github.com/fractiai/psw.vibelandia.sing13" target="_blank" rel="noopener">Sonic Singularity Sing! 13 repo</a>
+      <a href="press-releases.html">Press · Hit Factory</a>
+      <a href="sing13-edge-onboarding.html">SING 13 edge onboarding</a>
+      <a href="https://github.com/fractiai/psw.vibelandia.sing13" target="_blank" rel="noopener">SING 13 repo</a>
       <a href="https://github.com/fractiai" target="_blank" rel="noopener">FractiAI on GitHub</a>
       <a href="https://github.com/aiwona1" target="_blank" rel="noopener">Open-source core (aiwona1)</a>
     </div>
@@ -289,6 +469,7 @@
     <ul class="stack">
       <li><strong>General:</strong> <a href="mailto:info@fractiai.com">info@fractiai.com</a></li>
       <li><strong>Investor relations:</strong> <a href="mailto:invest@fractiai.com">invest@fractiai.com</a></li>
+      <li><strong>Projects &amp; press:</strong> <a href="mailto:valetpru@gmail.com">valetpru@gmail.com</a></li>
     </ul>
   </main>
 
@@ -302,16 +483,18 @@
       data-i18n-attr="alt:fractai.foundersAlt"
       alt="FractiAI co-founders on the beach: Pru Mendez at left, Daniel Ari Friedman, Ph.D. at right."
     />
-    <figcaption data-i18n="fractai.foundersCaption">Pru Mendez (left) · Daniel Ari Friedman, Ph.D. (right)</figcaption>
+    <figcaption data-i18n="fractai.foundersCaption">Pru Mendez (left) · Daniel Ari Friedman, Ph.D. (right) · FractiAI</figcaption>
   </figure>
 
   <footer>
     <p data-i18n-html="fractai.footerNavHtml">
       <a href="vibelandia-questfest.html">QUESTFEST</a> ·
-      <a href="questfest-bridge/#/bridge">Capitan's Bridge</a> ·
+      <a href="/bulletin-board">Bulletin Board</a> ·
       <a href="look-under-the-hood.html">Look under the hood</a>
     </p>
   </footer>
   <script src="/interfaces/i18n-auto.js" data-page="fractai"></script>
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

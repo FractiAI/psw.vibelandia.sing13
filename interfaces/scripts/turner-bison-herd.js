@@ -212,7 +212,7 @@
     const root = document.getElementById('tb-map-root');
     if (!root || typeof TurnerRangelandMap !== 'function') return;
     try {
-      mapInstance = new TurnerRangelandMap(root, {});
+      mapInstance = new TurnerRangelandMap(root);
       await mapInstance.load();
     } catch (e) {
       root.innerHTML = `<p class="tb-fetch-err">Map load failed: ${e.message}</p>`;

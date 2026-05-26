@@ -30,13 +30,14 @@
       <strong>Date range:</strong> requires Open-Meteo soil for <em>every</em> geolocated pasture on <em>every</em> day in the window, or the API returns an error (set <code>TURNER_ALLOW_SYNTHETIC=1</code> on the server to restore legacy synthetic fallback and φ-squashed Kp / RNG weight spread).
       <strong>Triangulated lock-in (default on):</strong> <strong>Fence pulse</strong> (<code>wirePhaseUs</code> PLL from OpenWebRX + Kp) × <strong>SDR</strong> (per-gate spectrum when <code>TURNER_SDR_WSS_URL</code> is set) × <strong>satellite surface</strong> (Open-Meteo soil + NASA POWER skin temp IR proxy) × <strong>fence lines from OpenStreetMap</strong> (Overpass <code>barrier=fence</code> near each pasture — no field walk required; ODbL, often incomplete on private ranch) with optional local override in <code>data/turner-perimeter-steel.geojson</code> × <strong>Digital Pru</strong> φ-gate. Raises <code>lockIn</code> and biases the placement field toward mapped fence — still a <strong>model</strong>, not collar or scale truth.
       <strong>Optional ET₀ calibration:</strong> <code>TURNER_FUSION_SURFACE_CALIB=1</code> adds a small bounded pseudo-correlation nudge from Open-Meteo FAO-56 ET₀.
+      <strong>Multi-source cross-reference:</strong> live ingest cross-checks <strong>soil moisture, NASA POWER skin temp, Open-Meteo leaf area index, ET₀ (optional), OpenWebRX SDR, OSM/GPS fence, NOAA magnetic, and HIFLD grid</strong> — boosting placement only where families agree. <strong>Collar proximity %</strong> on the map is honest operational grade toward collar GPS (capped ~48% without collars or sub-meter census); <strong>fuse %</strong> is feed completeness, not animal truth.
       <strong>On-the-ground collaboration:</strong> accuracy and operational usefulness can be <strong>significantly improved</strong> by tuning this stack <strong>with Turner teams in the field</strong> — pasture boundaries, fence and gate truth where OSM is thin, OpenWebRX / hydrogen-line receiver placement, seasonal baselines, and which components to weight for each ranch — without requiring a full re-walk when public fence data or prior surveys already exist.
     </p>
 
     <section class="tb-range-panel" aria-labelledby="tb-range-heading">
       <h2 class="tb-range-heading" id="tb-range-heading">Date range · modeled movement &amp; weight</h2>
       <p class="tb-range-note">
-        Pick any <strong>UTC</strong> start/end for <strong>full herd list–style reports</strong> (map scrub + <strong>Download range CSV</strong> for every day in the window). There is <strong>no fixed 90-day cap</strong> — very long spans mean more Open-Meteo calls and may hit the server time limit; narrow the window or retry if load fails.
+        Pick any <strong>UTC</strong> start/end for <strong>full herd list–style reports</strong> (map scrub + <strong>Download range (.txt)</strong> for every day in the window). There is <strong>no fixed 90-day cap</strong> — very long spans mean more Open-Meteo calls and may hit the server time limit; narrow the window or retry if load fails.
         Uses daily soil moisture from Open-Meteo historical forecast (or ERA5 archive / fallback) fused with the same radar field as live. Sample herd <strong>8–128</strong> heads for performance — not the full 45,000.
       </p>
       <div class="tb-range-row">
@@ -45,7 +46,7 @@
         <label class="tb-range-sample">Sample <input type="number" id="tb-range-sample" min="8" max="128" value="96" class="tb-range-input tb-range-input--num" /></label>
         <button type="button" class="tb-chart-btn" id="tb-range-load">Load range</button>
         <button type="button" class="tb-chart-btn tb-chart-btn--ghost" id="tb-range-live">Back to live</button>
-        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-range-csv" disabled>Download range CSV</button>
+        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-range-txt" disabled>Download range (.txt)</button>
       </div>
       <div class="tb-range-slider-row" id="tb-range-slider-wrap" hidden>
         <label for="tb-range-day">Day <span id="tb-range-day-label">—</span></label>
@@ -69,7 +70,7 @@
 
     <div class="tb-manager-actions" aria-label="Manager herd export">
       <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-page-download-herd" disabled>
-        Download full herd list (.csv)
+        Download full herd list (.txt)
       </button>
       <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-page-herd-report" disabled>
         Herd report by ranch

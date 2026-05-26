@@ -187,6 +187,14 @@
     if (stream.pipeline?.lstPass?.parameter) {
       sources.push('Surface IR proxy · NASA POWER earth skin temperature (MERRA-2 TS)');
     }
+    if (stream.pipeline?.laiPass?.variable) {
+      sources.push('Vegetation structure · Open-Meteo leaf area index');
+    }
+    if (radar?.crossSource) {
+      sources.push(
+        `Multi-source cross-ref · ~${radar.collarGradeProximityPct ?? radar.crossSource.collarGradeProximityPct}% collar proximity (not GPS fixes)`,
+      );
+    }
     if (radar?.triangulatedLock?.digitalPruGate) {
       sources.push('Digital Pru φ-gated lock-in score');
     }
@@ -199,17 +207,18 @@
     sources.push('Turner Institute · TESF public registry');
     setText('tb-source-banner', sources.join(' · '));
     const lockMean = radar?.triangulatedLock?.meanLockIn;
+  const collarProx = radar?.collarGradeProximityPct ?? radar?.crossSource?.collarGradeProximityPct;
     setText(
       'tb-radar-summary',
       radar
-        ? `${radar.fidelityPct}% fidelity · correlation ${radar.correlationMean ?? '—'} · lock ${lockMean != null ? (lockMean * 100).toFixed(0) + '%' : '—'} · ${radar.fenceChannel?.usedSteelGates ? 'steel GPS gates' : 'schematic gates'}`
+        ? `${radar.fidelityPct}% fuse · ~${collarProx ?? '—'}% collar proximity · correlation ${radar.correlationMean ?? '—'} · lock ${lockMean != null ? (lockMean * 100).toFixed(0) + '%' : '—'} · ${radar.fenceChannel?.usedSteelGates ? 'steel GPS gates' : 'schematic gates'}`
         : 'Awaiting radar fuse…'
     );
 
     const status = $('#tb-exec-status');
     if (status) {
       status.textContent = radar
-        ? `Triangulated lock — ${lockMean != null ? (lockMean * 100).toFixed(0) + '% mean lockIn' : 'lock pending'} · ${radar.fidelityPct}% fuse · fence pulse × SDR × satellite surface (see honesty note).`
+        ? `Cross-ref ${collarProx ?? '—'}% collar proximity (multi-source, capped without collars) · lock ${lockMean != null ? (lockMean * 100).toFixed(0) + '%' : '—'} · ${radar.fidelityPct}% fuse channel · see honesty note.`
         : noaa.error
           ? 'Stream active — NOAA degraded; radar fuse retrying.'
           : 'Live ingest active — passive radar synthesis for Turner-scale registry (model layer).';
@@ -308,10 +317,19 @@
     }
   }
 
-  function downloadRangeCsv() {
+  function plainField(s) {
+    return String(s ?? '')
+      .replace(/\r?\n/g, ' ')
+      .replace(/\|/g, '/');
+  }
+
+  function downloadRangeTxt() {
     if (!rangeSeries?.daily?.length) return;
     const lines = [
-      'date,id,pastureId,pastureName,schematicX,schematicY,lat_deg,lng_deg,estWeightLbs,radarFidelityPct',
+      '# Turner date-range herd sample (modeled)',
+      `# Range: ${rangeSeries.range.start} to ${rangeSeries.range.end}`,
+      '# Fields separated by " | "',
+      '# date | id | pastureId | pastureName | schematicX | schematicY | lat_deg | lng_deg | estWeightLbs | radarFidelityPct',
     ];
     for (const d of rangeSeries.daily) {
       const fid = d.radar?.fidelityPct ?? '';
@@ -319,24 +337,24 @@
         lines.push(
           [
             d.date,
-            a.id,
-            a.pastureId,
-            String(a.pastureName || '').replace(/,/g, ';'),
+            plainField(a.id),
+            plainField(a.pastureId),
+            plainField(a.pastureName),
             String(a.x),
             String(a.y),
             a.lat != null ? String(a.lat) : '',
             a.lng != null ? String(a.lng) : '',
             String(a.weightLbs),
             String(fid),
-          ].join(','),
+          ].join(' | '),
         );
       }
     }
-    const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+    const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `turner-range-${rangeSeries.range.start}_to_${rangeSeries.range.end}.csv`;
+    a.download = `turner-range-${rangeSeries.range.start}_to_${rangeSeries.range.end}.txt`;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -381,14 +399,14 @@
       rangeSeries = data.series;
       const wrap = document.getElementById('tb-range-slider-wrap');
       const slider = document.getElementById('tb-range-day');
-      const csvBtn = document.getElementById('tb-range-csv');
+      const txtBtn = document.getElementById('tb-range-txt');
       if (wrap && slider) {
         wrap.hidden = false;
         slider.max = String(rangeSeries.daily.length - 1);
         slider.value = String(rangeSeries.daily.length - 1);
         slider.min = '0';
       }
-      if (csvBtn) csvBtn.disabled = false;
+      if (txtBtn) txtBtn.disabled = false;
       if (st) {
         st.textContent = `${rangeSeries.honesty?.note || ''} Soil: ${rangeSeries.soilHistory?.source || '—'}`;
       }
@@ -410,10 +428,10 @@
     historicalActive = false;
     rangeSeries = null;
     const wrap = document.getElementById('tb-range-slider-wrap');
-    const csvBtn = document.getElementById('tb-range-csv');
+    const txtBtn = document.getElementById('tb-range-txt');
     const st = document.getElementById('tb-range-status');
     if (wrap) wrap.hidden = true;
-    if (csvBtn) csvBtn.disabled = true;
+    if (txtBtn) txtBtn.disabled = true;
     if (st) st.textContent = '';
     if (mapInstance && typeof mapInstance.exitHistoricalMode === 'function') {
       mapInstance.exitHistoricalMode();
@@ -427,7 +445,7 @@
     const load = document.getElementById('tb-range-load');
     const live = document.getElementById('tb-range-live');
     const slider = document.getElementById('tb-range-day');
-    const csv = document.getElementById('tb-range-csv');
+    const txt = document.getElementById('tb-range-txt');
     if (load) load.addEventListener('click', () => void loadRange());
     if (live) live.addEventListener('click', () => backToLive());
     if (slider) {
@@ -436,7 +454,7 @@
         applyRangeDayIndex(idx);
       });
     }
-    if (csv) csv.addEventListener('click', () => downloadRangeCsv());
+    if (txt) txt.addEventListener('click', () => downloadRangeTxt());
   }
 
   async function tick(first) {
@@ -479,10 +497,10 @@
     if (hint && ready) {
       const n = mapInstance.bison?.length ?? 0;
       if (historicalActive && rangeSeries) {
-        hint.textContent = `${n.toLocaleString()} sample heads (date range) · use “Download range CSV” for all days`;
+        hint.textContent = `${n.toLocaleString()} sample heads (date range) · use “Download range (.txt)” for all days`;
       } else {
         hint.textContent = n
-          ? `${n.toLocaleString()} heads · CSV includes every animal by ranch + ranch summary rows`
+          ? `${n.toLocaleString()} heads · plain-text export includes every animal by ranch + ranch summary rows`
           : 'Herd roster ready — download or open report';
       }
     }

@@ -35,10 +35,11 @@
       .replace(/>/g, '&gt;');
   }
 
-  function escapeCsv(s) {
-    const txt = String(s ?? '');
-    if (/[",\n]/.test(txt)) return `"${txt.replace(/"/g, '""')}"`;
-    return txt;
+  /** Normalize free-text fields for pipe-delimited plain-text export lines. */
+  function escapePlainField(s) {
+    return String(s ?? '')
+      .replace(/\r?\n/g, ' ')
+      .replace(/\|/g, '/');
   }
 
   function pointInPoly(x, y, poly) {
@@ -588,8 +589,9 @@
       const bounds = polygonBounds(poly);
       const gridSize = rp?.gridSize || 24;
       for (let n = 0; n < block.count && idx < order.length; n++, idx++) {
+        const posConf = rp?.crossSource?.placementConfidence ?? 1;
         const pos = rp?.weights
-          ? pickWeightedPosition(rp.weights, gridSize, poly, rng)
+          ? pickWeightedPosition(rp.weights, gridSize, poly, rng, posConf)
           : randomInPoly(poly, rng);
         let radarField = null;
         if (rp?.weights) {
@@ -619,7 +621,8 @@
   TurnerRangelandMap.prototype._renderChrome = function () {
     const g = this.geo;
     const metrics = [
-      ['fidelity', 'Radar fidelity', 'tb-m-fidelity'],
+      ['fidelity', 'Fuse %', 'tb-m-fidelity'],
+      ['collarProx', 'Collar prox.', 'tb-m-collar-prox'],
       ['heads', 'Bison', 'tb-m-heads'],
       ['flux', 'Solar flux', 'tb-m-flux'],
       ['kp', 'Kp', 'tb-m-kp'],
@@ -649,7 +652,7 @@
                 <button type="button" class="tb-chart-btn" id="tb-zoom-in" title="Zoom in">+</button>
                 <button type="button" class="tb-chart-btn" id="tb-fit" title="Full network">Fit</button>
                 <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-herd-report" title="Herd roster report by ranch">Report</button>
-                <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd" title="Download complete herd list (CSV)">Download</button>
+                <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd" title="Download complete herd list (plain text)">Download</button>
               </div>
             </header>
             <div class="tb-metric-strip" role="group" aria-label="Live metrics">${metricHtml}</div>
@@ -1256,6 +1259,8 @@
       const b = stream.baseline || {};
       const live = stream.live || {};
       set('#tb-m-fidelity', stream.radar?.fidelityPct != null ? stream.radar.fidelityPct + '%' : '—');
+      const cpx = stream.radar?.collarGradeProximityPct ?? stream.radar?.crossSource?.collarGradeProximityPct;
+      set('#tb-m-collar-prox', cpx != null ? cpx + '%' : '—');
       set('#tb-m-heads', (b.headCount || 45000).toLocaleString());
       set('#tb-m-flux', live.fluxSfu != null ? live.fluxSfu + ' sfu' : '—');
       set('#tb-m-kp', live.kp != null ? String(live.kp) : '—');
@@ -1283,6 +1288,9 @@
     const b = stream.baseline || {};
     const live = stream.live || {};
     set('#tb-m-fidelity', stream.radar?.fidelityPct != null ? stream.radar.fidelityPct + '%' : '—');
+    const collarProx =
+      stream.radar?.collarGradeProximityPct ?? stream.radar?.crossSource?.collarGradeProximityPct;
+    set('#tb-m-collar-prox', collarProx != null ? collarProx + '%' : '—');
     set('#tb-m-heads', (b.headCount || 45000).toLocaleString());
     set('#tb-m-flux', live.fluxSfu != null ? live.fluxSfu + ' sfu' : '—');
     set('#tb-m-kp', live.kp != null ? String(live.kp) : '—');
@@ -1292,7 +1300,8 @@
     set('#tb-m-grid', pg?.lineCount != null ? String(pg.lineCount) : '—');
 
     if (stream.radar) {
-      this._statusHead = `Synthesis snapshot · ${stream.radar.fidelityPct}% fuse · herd on imagery (Open-Meteo soil / satellite assimilation × radar field) · trampled paths (GeoJSON)`;
+      const cpx = stream.radar.collarGradeProximityPct ?? stream.radar.crossSource?.collarGradeProximityPct;
+      this._statusHead = `Synthesis · ${stream.radar.fidelityPct}% fuse · ~${cpx ?? '—'}% collar proximity (multi-source cross-ref, not GPS collars) · trampled paths (GeoJSON)`;
     } else {
       this._statusHead = 'Telemetry live · awaiting radar fuse payload';
     }
@@ -1408,49 +1417,60 @@
       window.alert('Herd list is still loading. Wait for the map to finish, then try again.');
       return;
     }
-    this._downloadHerdReportCsv();
+    this._downloadHerdReportTxt();
   };
 
-  TurnerRangelandMap.prototype._downloadHerdReportCsv = function () {
+  TurnerRangelandMap.prototype._downloadHerdReportTxt = function () {
     const report = this._buildHerdReport();
+    const stamp = new Date().toISOString().replace(/[:]/g, '-').replace(/\..+$/, '');
+    const xref = this._radar?.crossSource;
     const lines = [
-      'Ranch,ID,Latitude,Longitude,Sex,CalfTag,ApproxWeightLbs,Status,Remark',
+      '# Turner Enterprise herd roster (modeled)',
+      `# Generated: ${stamp}`,
+      xref
+        ? `# Collar-grade proximity (multi-source cross-ref, not GPS): ${this._radar?.collarGradeProximityPct ?? xref.collarGradeProximityPct}% · fuse channel ${this._radar?.fidelityPct ?? '—'}%`
+        : '# Collar-grade proximity: cross-reference pending',
+      '',
+      '# Animal records — fields separated by " | "',
+      '# Ranch | ID | Latitude | Longitude | Sex | CalfTag | ApproxWeightLbs | Status | Remark',
       ...report.rows.map(
         (r) =>
           [
-            escapeCsv(r.ranch),
-            escapeCsv(r.id),
+            escapePlainField(r.ranch),
+            escapePlainField(r.id),
             r.lat,
             r.lng,
-            escapeCsv(r.sex),
-            escapeCsv(r.calfTag),
+            escapePlainField(r.sex),
+            escapePlainField(r.calfTag),
             String(r.weightLbs),
-            escapeCsv(r.status),
-            escapeCsv(r.remark),
-          ].join(','),
+            escapePlainField(r.status),
+            escapePlainField(r.remark),
+          ].join(' | '),
       ),
       '',
-      'Ranch,HeadCount,Calves,Flagged,MeanWeightLbs,Remarks',
+      '# Ranch summaries',
+      '# Ranch | HeadCount | Calves | Flagged | MeanWeightLbs | Remarks',
       ...report.ranchSummaries.map(
         (r) =>
           [
-            escapeCsv(r.ranch),
+            escapePlainField(r.ranch),
             String(r.headCount),
             String(r.calves),
             String(r.alerts),
             String(r.meanWeight),
-            escapeCsv(r.remark),
-          ].join(','),
+            escapePlainField(r.remark),
+          ].join(' | '),
       ),
       '',
-      `Global Totals,${report.totals.totalHead},${report.totals.totalCalves},${report.totals.totalAlerts},${report.totals.meanWeightAll},${escapeCsv(report.totals.globalRemark)}`,
+      '# Global totals',
+      '# totalHead | totalCalves | flagged | meanWeightAll | remark',
+      `${report.totals.totalHead} | ${report.totals.totalCalves} | ${report.totals.totalAlerts} | ${report.totals.meanWeightAll} | ${escapePlainField(report.totals.globalRemark)}`,
     ];
-    const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+    const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    const stamp = new Date().toISOString().replace(/[:]/g, '-').replace(/\..+$/, '');
     a.href = url;
-    a.download = `turner-herd-report-${stamp}.csv`;
+    a.download = `turner-herd-report-${stamp}.txt`;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -1468,7 +1488,7 @@
       'Full herd roster report',
       'By ranch totals, remarks, and downloadable full list',
       `<div class="tb-report-actions">
-        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd-csv">Download full herd list (.csv)</button>
+        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd-txt">Download full herd list (.txt)</button>
       </div>
       <ul class="tb-detail-list">
         <li><strong>Total heads</strong> ${report.totals.totalHead.toLocaleString()}</li>
@@ -1479,7 +1499,7 @@
       <p class="tb-est-note">${escapeHtml(report.totals.globalRemark)}</p>
       <ul class="tb-detail-list tb-report-list">${summaryHtml}</ul>`,
     );
-    const btn = this.root.querySelector('#tb-download-herd-csv');
+    const btn = this.root.querySelector('#tb-download-herd-txt');
     if (btn) btn.addEventListener('click', () => this.downloadHerdReport(), { once: true });
   };
 
@@ -1538,7 +1558,12 @@
     const s = this.stream;
     if (!s) return;
     const map = {
-      fidelity: ['Radar fidelity', (s.radar?.fidelityPct ?? '—') + '%', 'Fence × satellite × magnetic fuse'],
+      fidelity: ['Fuse channel', (s.radar?.fidelityPct ?? '—') + '%', 'Feed completeness (not ground truth)'],
+      collarProx: [
+        'Collar proximity',
+        (s.radar?.collarGradeProximityPct ?? s.radar?.crossSource?.collarGradeProximityPct ?? '—') + '%',
+        'Multi-source agreement toward collar-grade ops — capped without collars/VHR',
+      ],
       heads: ['Bison', (s.baseline?.headCount || 45000).toLocaleString(), 'One dot per head on chart'],
       flux: ['Solar flux', s.live?.fluxSfu + ' sfu', 'NOAA SWPC'],
       kp: ['Kp', String(s.live?.kp ?? '—'), 'NOAA · EGS φ'],

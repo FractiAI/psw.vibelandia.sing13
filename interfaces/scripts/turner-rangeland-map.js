@@ -252,13 +252,16 @@
     this.map = L.map(mapEl, {
       zoomControl: false,
       attributionControl: true,
-      minZoom: 4,
+      minZoom: 3,
       maxZoom: 16,
+      scrollWheelZoom: true,
+      wheelDebounceTime: 30,
+      wheelPxPerZoomLevel: 90,
       maxBounds: [
-        [bbox.south - 3, bbox.west - 4],
-        [bbox.north + 3, bbox.east + 4],
+        [bbox.south - 5, bbox.west - 6],
+        [bbox.north + 8, bbox.east + 5],
       ],
-      maxBoundsViscosity: 0.9,
+      maxBoundsViscosity: 0.15,
     });
 
     L.tileLayer(ESRI_WORLD_IMAGERY, {
@@ -281,15 +284,10 @@
       this._pasturePolys[p.id] = poly;
     }
 
-    this.map.fitBounds(
-      [
-        [bbox.south, bbox.west],
-        [bbox.north, bbox.east],
-      ],
-      { padding: [28, 28] },
-    );
+    this.fitNetwork();
 
     this.map.on('move zoom zoomend resize', () => this.render());
+    this.map.on('click', (e) => this._onMapClick(e));
     setTimeout(() => {
       if (this.map) this.map.invalidateSize();
       this.render();
@@ -318,6 +316,28 @@
   TurnerRangelandMap.prototype._containerToLatLng = function (x, y) {
     if (!this.map || !global.L) return null;
     return this.map.containerPointToLatLng(global.L.point(x, y));
+  };
+
+  TurnerRangelandMap.prototype._networkLatLngBounds = function () {
+    const L = global.L;
+    const b = this._bbox();
+    if (!L || !this.geo?.pastures?.length) {
+      return [
+        [b.south, b.west],
+        [b.north, b.east],
+      ];
+    }
+    const pts = [];
+    for (const p of this.geo.pastures) {
+      for (const ll of p.latlngs || []) pts.push(ll);
+    }
+    if (!pts.length) {
+      return [
+        [b.south, b.west],
+        [b.north, b.east],
+      ];
+    }
+    return L.latLngBounds(pts).pad(0.14);
   };
 
   TurnerRangelandMap.prototype._updatePastureStyles = function () {
@@ -506,13 +526,13 @@
       btn.addEventListener('click', () => self._showMetric(btn.getAttribute('data-metric')));
     });
 
-    if (!this.stage || !L) return;
+    if (!this.map) return;
 
+    const container = this.map.getContainer();
     const onPointerEnd = (e) => self._finishPointer(e);
 
-    this.stage.addEventListener('pointerdown', (e) => {
-      if (e.button !== 0 || !self.map) return;
-      if (e.target.closest('.tb-chart-overlay--top, .tb-chart-panel, .tb-chart-btn')) return;
+    container.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0) return;
       self._clearPointerHold();
       self._suppressClick = false;
       const p = self._eventPoint(e);
@@ -522,47 +542,39 @@
         sy: p.y,
         cx: p.x,
         cy: p.y,
-        lastX: p.x,
-        lastY: p.y,
         mode: 'pending',
       };
       self._pointer.holdTimer = setTimeout(() => {
         if (!self._pointer || self._pointer.mode !== 'pending') return;
         self._pointer.mode = 'select';
-        if (self.map) self.map.dragging.disable();
+        self.map.dragging.disable();
+        try {
+          container.setPointerCapture(self._pointer.id);
+        } catch (_) {
+          /* ignore */
+        }
         self.stage.classList.add('tb-chart-stage--marquee');
         self.render();
       }, HOLD_MS);
-      self.stage.setPointerCapture(e.pointerId);
     });
-    this.stage.addEventListener('pointermove', (e) => {
+    container.addEventListener('pointermove', (e) => {
       if (!self._pointer || self._pointer.id !== e.pointerId) return;
       const p = self._eventPoint(e);
       self._pointer.cx = p.x;
       self._pointer.cy = p.y;
-      const dist = Math.hypot(p.x - self._pointer.sx, p.y - self._pointer.sy);
-      if (self._pointer.mode === 'pending' && dist >= PAN_THRESHOLD_PX) {
-        self._clearPointerHold();
-        self._pointer.mode = 'pan';
-        self._suppressClick = true;
-        self._pointer.lastX = p.x;
-        self._pointer.lastY = p.y;
+      if (self._pointer.mode === 'pending') {
+        const dist = Math.hypot(p.x - self._pointer.sx, p.y - self._pointer.sy);
+        if (dist >= PAN_THRESHOLD_PX) {
+          self._clearPointerHold();
+          self._pointer = null;
+        }
+        return;
       }
-      if (self._pointer.mode === 'pan' && self.map) {
-        self.map.panBy(
-          L.point(self._pointer.lastX - p.x, self._pointer.lastY - p.y),
-          { animate: false },
-        );
-        self._pointer.lastX = p.x;
-        self._pointer.lastY = p.y;
-      } else if (self._pointer.mode === 'select') {
-        self.render();
-      }
+      if (self._pointer.mode === 'select') self.render();
     });
-    this.stage.addEventListener('pointerup', onPointerEnd);
-    this.stage.addEventListener('pointercancel', onPointerEnd);
-    this.stage.addEventListener('click', (e) => self._onClick(e));
-    this.stage.addEventListener('contextmenu', (e) => e.preventDefault());
+    container.addEventListener('pointerup', onPointerEnd);
+    container.addEventListener('pointercancel', onPointerEnd);
+    container.addEventListener('contextmenu', (e) => e.preventDefault());
   };
 
   TurnerRangelandMap.prototype._clearPointerHold = function () {
@@ -600,16 +612,12 @@
         }
       }
       this._suppressClick = true;
-    } else if (ptr.mode === 'pan') {
-      if (Math.hypot(ptr.cx - ptr.sx, ptr.cy - ptr.sy) > PAN_THRESHOLD_PX) {
-        this._suppressClick = true;
-      }
     }
 
     this._pointer = null;
-    if (e) {
+    if (e && this.map) {
       try {
-        this.stage.releasePointerCapture(e.pointerId);
+        this.map.getContainer().releasePointerCapture(e.pointerId);
       } catch (_) {
         /* ignore */
       }
@@ -625,15 +633,11 @@
   };
 
   TurnerRangelandMap.prototype.fitNetwork = function () {
-    const bbox = this._bbox();
     if (this.map) {
-      this.map.fitBounds(
-        [
-          [bbox.south, bbox.west],
-          [bbox.north, bbox.east],
-        ],
-        { padding: [28, 28] },
-      );
+      this.map.fitBounds(this._networkLatLngBounds(), {
+        padding: [52, 52],
+        maxZoom: 8,
+      });
     }
     this.focusPasture = null;
     this._updatePastureStyles();
@@ -961,13 +965,14 @@
     }
   };
 
-  TurnerRangelandMap.prototype._onClick = function (e) {
+  TurnerRangelandMap.prototype._onMapClick = function (e) {
     if (this._suppressClick) {
       this._suppressClick = false;
       return;
     }
-    if (e.target.closest('.tb-chart-overlay--top, .tb-chart-panel')) return;
-    const sp = this._eventPoint(e);
+    const ll = e.latlng;
+    if (!ll) return;
+    const sp = this.map.latLngToContainerPoint(ll);
     let best = null;
     let bestD = 14;
     for (const b of this.bison) {
@@ -984,8 +989,6 @@
       this._showBison(best);
       return;
     }
-    const ll = this._containerToLatLng(sp.x, sp.y);
-    if (!ll) return;
     const xy = this._latLngToXY(ll.lat, ll.lng);
     for (const pasture of this.geo.pastures) {
       if (pointInPoly(xy.x, xy.y, pasture.polygon)) {

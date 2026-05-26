@@ -166,8 +166,30 @@
     );
 
     const sources = [];
-    sources.push('Fence-line radar · OpenWebRX 1420 MHz PLL gates');
+    if (radar?.fenceChannel?.usedSteelGates) {
+      const sp = stream.pipeline?.steelPack;
+      if (sp?.osmWayCount > 0) {
+        sources.push(`Fence lines · OpenStreetMap Overpass (${sp.osmWayCount} ways, ODbL)`);
+      }
+      if (sp?.localFeatureCount > 0) {
+        sources.push('Fence override · data/turner-perimeter-steel.geojson');
+      }
+      if (!sp?.osmWayCount && !sp?.localFeatureCount) {
+        sources.push('Mapped fence perimeter gates');
+      }
+    }
+    if (radar?.fenceChannel?.passiveSdrSpectrumMapping) {
+      sources.push('Fence pulse × SDR · OpenWebRX spectrum mapped to steel gates');
+    } else {
+      sources.push('Fence-line radar · OpenWebRX 1420 MHz PLL gates');
+    }
     sources.push('Satellite pass · Open-Meteo assimilated soil moisture');
+    if (stream.pipeline?.lstPass?.parameter) {
+      sources.push('Surface IR proxy · NASA POWER earth skin temperature (MERRA-2 TS)');
+    }
+    if (radar?.triangulatedLock?.digitalPruGate) {
+      sources.push('Digital Pru φ-gated lock-in score');
+    }
     sources.push('Magnetic layers · NOAA Boulder K · Dst · L1 Bz');
     if (stream.pipeline?.powerGrid?.lineCount) {
       sources.push(`HIFLD grid · ${stream.pipeline.powerGrid.lineCount} transmission lines`);
@@ -176,17 +198,18 @@
     else if (noaa.error) sources.push(`NOAA: ${noaa.error}`);
     sources.push('Turner Institute · TESF public registry');
     setText('tb-source-banner', sources.join(' · '));
+    const lockMean = radar?.triangulatedLock?.meanLockIn;
     setText(
       'tb-radar-summary',
       radar
-        ? `${radar.fidelityPct}% fidelity · correlation ${radar.correlationMean ?? '—'} · ${radar.method || 'passive-radar-synthesis'}`
+        ? `${radar.fidelityPct}% fidelity · correlation ${radar.correlationMean ?? '—'} · lock ${lockMean != null ? (lockMean * 100).toFixed(0) + '%' : '—'} · ${radar.fenceChannel?.usedSteelGates ? 'steel GPS gates' : 'schematic gates'}`
         : 'Awaiting radar fuse…'
     );
 
     const status = $('#tb-exec-status');
     if (status) {
       status.textContent = radar
-        ? `Synthesis locked to ingest snapshot — ${radar.fidelityPct}% modeled fuse · fence × satellite (see honesty note).`
+        ? `Triangulated lock — ${lockMean != null ? (lockMean * 100).toFixed(0) + '% mean lockIn' : 'lock pending'} · ${radar.fidelityPct}% fuse · fence pulse × SDR × satellite surface (see honesty note).`
         : noaa.error
           ? 'Stream active — NOAA degraded; radar fuse retrying.'
           : 'Live ingest active — passive radar synthesis for Turner-scale registry (model layer).';

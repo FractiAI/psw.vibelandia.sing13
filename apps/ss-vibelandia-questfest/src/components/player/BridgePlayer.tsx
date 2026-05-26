@@ -14,6 +14,12 @@ import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
+import {
+  filterPlayableTrackIds,
+  nextSequentialTrackId,
+  nextShuffledTrackId,
+  playlistOrderFingerprint,
+} from '@/lib/playlistShuffle';
 import type { KillReason } from '@/hooks/useStreamLock';
 import type { TrackDef } from '@/lib/catalogTypes';
 
@@ -60,10 +66,16 @@ export function BridgePlayer({
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const setGain = usePlaybackStore((s) => s.setGain);
   const setDisplayTime = usePlaybackStore((s) => s.setDisplayTime);
+  const setTrack = usePlaybackStore((s) => s.setTrack);
   const autoplayEnabled = usePlaybackStore((s) => s.autoplayEnabled);
   const backgroundPlayEnabled = usePlaybackStore((s) => s.backgroundPlayEnabled);
   const setAutoplayEnabled = usePlaybackStore((s) => s.setAutoplayEnabled);
   const setBackgroundPlayEnabled = usePlaybackStore((s) => s.setBackgroundPlayEnabled);
+  const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
+  const shuffleQueue = usePlaybackStore((s) => s.shuffleQueue);
+  const setShuffleEnabled = usePlaybackStore((s) => s.setShuffleEnabled);
+  const syncShuffleQueue = usePlaybackStore((s) => s.syncShuffleQueue);
+  const clearShuffleQueue = usePlaybackStore((s) => s.clearShuffleQueue);
 
   const getTrack = useCatalogStore((s) => s.getTrack);
   const pl = useActivePlaylist();
@@ -74,6 +86,22 @@ export function BridgePlayer({
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const url = track ? playbackUrlForTrack(track) : '';
+
+  const plOrderKey = pl?.trackIds.join('\t') ?? '';
+
+  useEffect(() => {
+    if (!pl) {
+      clearShuffleQueue();
+      return;
+    }
+    if (!shuffleEnabled) {
+      clearShuffleQueue();
+      return;
+    }
+    const playable = filterPlayableTrackIds(pl.trackIds, getTrack);
+    const fp = playlistOrderFingerprint(pl.id, pl.trackIds);
+    syncShuffleQueue(fp, playable);
+  }, [pl?.id, plOrderKey, shuffleEnabled, getTrack, syncShuffleQueue, clearShuffleQueue]);
 
   gainRef.current = gain;
 
@@ -88,20 +116,37 @@ export function BridgePlayer({
   );
 
   const advanceNext = useCallback(() => {
-    if (!pl || !currentTrackId) return false;
-    const idx = pl.trackIds.indexOf(currentTrackId);
-    if (idx < 0) return false;
-    for (let i = idx + 1; i < pl.trackIds.length; i++) {
-      const id = pl.trackIds[i];
-      const tr = getTrack(id);
-      const u = tr ? playbackUrlForTrack(tr) : '';
-      if (!u) continue;
-      playUrl(id, u);
-      return true;
+    if (!pl) return false;
+    const useShuffle = shuffleEnabled && shuffleQueue && shuffleQueue.length > 1;
+    let nextId: string | null = null;
+    if (useShuffle) {
+      nextId = nextShuffledTrackId(shuffleQueue!, currentTrackId, 1, getTrack);
+      if (nextId === currentTrackId) nextId = null;
+    } else {
+      if (!currentTrackId) return false;
+      nextId = nextSequentialTrackId(pl.trackIds, currentTrackId, 1, getTrack);
     }
-    setPlaying(false);
-    return false;
-  }, [currentTrackId, getTrack, pl, playUrl, setPlaying]);
+    if (!nextId) {
+      setPlaying(false);
+      return false;
+    }
+    const tr = getTrack(nextId);
+    const u = tr ? playbackUrlForTrack(tr) : '';
+    if (!u) {
+      setPlaying(false);
+      return false;
+    }
+    playUrl(nextId, u);
+    return true;
+  }, [
+    currentTrackId,
+    getTrack,
+    pl,
+    playUrl,
+    setPlaying,
+    shuffleEnabled,
+    shuffleQueue,
+  ]);
 
   useEffect(() => {
     if (killReason === 'vessel_switch' || killReason === 'tab_preempt') {
@@ -204,19 +249,26 @@ export function BridgePlayer({
   }, [backgroundPlayEnabled, fullPlayUnlocked]);
 
   const stepPlaylist = (delta: 1 | -1) => {
-    if (!pl || !currentTrackId) return;
-    const idx = pl.trackIds.indexOf(currentTrackId);
-    if (idx < 0) return;
-    const step = delta > 0 ? 1 : -1;
-    for (let i = idx + step; i >= 0 && i < pl.trackIds.length; i += step) {
-      const id = pl.trackIds[i];
-      const tr = getTrack(id);
-      const u = tr ? playbackUrlForTrack(tr) : '';
-      if (!u) continue;
-      playUrl(id, u);
+    if (!pl) return;
+    const useShuffle = shuffleEnabled && shuffleQueue && shuffleQueue.length > 1;
+    let nextId: string | null = null;
+    if (useShuffle) {
+      nextId = nextShuffledTrackId(shuffleQueue!, currentTrackId, delta, getTrack);
+    } else {
+      if (!currentTrackId) return;
+      nextId = nextSequentialTrackId(pl.trackIds, currentTrackId, delta, getTrack);
+    }
+    if (!nextId) {
+      pausePlayback();
       return;
     }
-    pausePlayback();
+    const tr = getTrack(nextId);
+    const u = tr ? playbackUrlForTrack(tr) : '';
+    if (!u) {
+      pausePlayback();
+      return;
+    }
+    playUrl(nextId, u);
   };
 
   const togglePlay = () => {
@@ -275,6 +327,14 @@ export function BridgePlayer({
                 onChange={(e) => setAutoplayEnabled(e.target.checked)}
               />
               Autoplay playlist
+            </label>
+            <label className="sp-now-pref" title="Random order for next, previous, and autoplay within this playlist">
+              <input
+                type="checkbox"
+                checked={shuffleEnabled}
+                onChange={(e) => setShuffleEnabled(e.target.checked)}
+              />
+              Shuffle
             </label>
             {fullPlayUnlocked && (
               <label className="sp-now-pref">

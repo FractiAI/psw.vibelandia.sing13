@@ -20,6 +20,8 @@ This document and the companion **herd console** describe a **model synthesis la
 
 Instrument-grade claims require dedicated sensing and independent validation; anything else remains **theater-forward narrative** aligned to the repo honesty rails.
 
+**On-the-ground collaboration:** accuracy and operational capability can be **significantly improved** by tuning this system **with Turner Enterprise teams in the field** — verified pasture polygons, fence and gate geometry where public maps are incomplete, hydrogen-line / OpenWebRX receiver placement, and ranch-specific seasonal baselines. That collaboration does not require walking every mile again when OpenStreetMap, prior surveys, or operator GeoJSON overrides already cover the line.
+
 ---
 
 ## Part I — Project intention, selection, and objective
@@ -118,7 +120,7 @@ Position trails + ADM baseline + metabolic index (2.6%) → cumulative drawdown 
 
 **Console status:** synthesis is **locked to the ingest snapshot** for that run (live) or **per day** in date-range mode — not a claim of third-party operational validation.
 
-**Date-range API:** `GET /api/turner-bison-telemetry?start=YYYY-MM-DD&end=YYYY-MM-DD&sample=96` returns daily slices with **modeled** head positions and weights; see herd management HTML for scrub UI and CSV export.
+**Date-range API:** `GET /api/turner-bison-telemetry?start=YYYY-MM-DD&end=YYYY-MM-DD&sample=96` returns daily slices with **modeled** head positions and weights for **any** inclusive UTC window (no fixed 90-day cap); see herd management HTML for scrub UI and CSV export. Very long windows increase upstream fetch time and may hit host execution limits.
 
 ---
 

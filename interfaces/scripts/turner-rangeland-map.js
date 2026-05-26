@@ -123,23 +123,42 @@
     return randomInPoly(poly, rng);
   }
 
-  function buildTrails(pos, poly, rng, syntheticAllowed) {
-    if (!syntheticAllowed) {
-      return [{ x: pos.x, y: pos.y }];
-    }
-    const trails = [{ x: pos.x, y: pos.y }];
-    let x = pos.x;
-    let y = pos.y;
-    for (let t = 1; t < TRAIL_LEN; t++) {
-      x += (rng() - 0.5) * 6;
-      y += (rng() - 0.5) * 6;
-      if (!pointInPoly(x, y, poly)) {
-        x = pos.x + (rng() - 0.5) * 4 * t;
-        y = pos.y + (rng() - 0.5) * 4 * t;
+  function closestPointOnSegment(lng1, lat1, lng2, lat2, lngP, latP) {
+    const dx = lng2 - lng1;
+    const dy = lat2 - lat1;
+    const len2 = dx * dx + dy * dy;
+    if (len2 < 1e-24) return { lng: lng1, lat: lat1, t: 0 };
+    let t = ((lngP - lng1) * dx + (latP - lat1) * dy) / len2;
+    t = Math.max(0, Math.min(1, t));
+    return { lng: lng1 + t * dx, lat: lat1 + t * dy, t };
+  }
+
+  function distSqLngLat(lngA, latA, lngB, latB) {
+    const mx = Math.cos(((latA + latB) * Math.PI) / 360);
+    const dx = (lngA - lngB) * mx;
+    const dy = latA - latB;
+    return dx * dx + dy * dy;
+  }
+
+  function buildPastureTrampleIndex(fc) {
+    const by = {};
+    if (!fc || fc.type !== 'FeatureCollection' || !Array.isArray(fc.features)) return by;
+    for (const f of fc.features) {
+      const pid = (f.properties && (f.properties.pastureId || f.properties.pasture_id)) || null;
+      if (!pid || !f.geometry) continue;
+      const g = f.geometry;
+      const lines = [];
+      if (g.type === 'LineString' && Array.isArray(g.coordinates) && g.coordinates.length >= 2) {
+        lines.push(g.coordinates);
+      } else if (g.type === 'MultiLineString' && Array.isArray(g.coordinates)) {
+        for (const ring of g.coordinates) {
+          if (ring && ring.length >= 2) lines.push(ring);
+        }
       }
-      trails.push({ x, y });
+      if (!by[pid]) by[pid] = [];
+      for (const ln of lines) by[pid].push(ln);
     }
-    return trails;
+    return by;
   }
 
   function hashSeed(str) {
@@ -205,6 +224,7 @@
     this.canvas = null;
     this.ctx = null;
     this.dpr = 1;
+    this._trampledByPasture = {};
   }
 
   TurnerRangelandMap.prototype._bbox = function () {
@@ -270,12 +290,77 @@
     b.lat = ll.lat;
     b.lng = ll.lng;
     for (const t of b.trails) {
+      if (t.lat != null && t.lng != null && Number.isFinite(t.lat) && Number.isFinite(t.lng)) {
+        continue;
+      }
+      if (t.x == null || t.y == null) continue;
       const tll = pasture
         ? this._schematicXYToLatLng(t.x, t.y, pasture)
         : this._xyToLatLng(t.x, t.y);
       t.lat = tll.lat;
       t.lng = tll.lng;
     }
+  };
+
+  TurnerRangelandMap.prototype._latLngInsidePasture = function (lat, lng, pasture) {
+    if (!pasture || !pasture.latlngs || pasture.latlngs.length < 3) return false;
+    const poly = pasture.latlngs.map((pair) => [pair[1], pair[0]]);
+    return pointInPoly(lng, lat, poly);
+  };
+
+  TurnerRangelandMap.prototype._nearestTrampledTrailLatLng = function (pasture, startLat, startLng) {
+    const lines = this._trampledByPasture[pasture.id];
+    if (!lines || !lines.length) return [];
+    let bestD = Infinity;
+    let bestCoords = null;
+    let bestVertex = 0;
+    for (const coords of lines) {
+      if (!coords || coords.length < 2) continue;
+      for (let i = 0; i < coords.length - 1; i++) {
+        const [lng1, lat1] = coords[i];
+        const [lng2, lat2] = coords[i + 1];
+        const cp = closestPointOnSegment(lng1, lat1, lng2, lat2, startLng, startLat);
+        const d = distSqLngLat(cp.lng, cp.lat, startLng, startLat);
+        if (d < bestD) {
+          bestD = d;
+          bestCoords = coords;
+          bestVertex = cp.t < 0.5 ? i : i + 1;
+        }
+      }
+    }
+    if (!bestCoords) return [];
+    const seq = [];
+    for (let j = bestVertex; j < bestCoords.length && seq.length < TRAIL_LEN; j++) {
+      const [lng, lat] = bestCoords[j];
+      if (!this._latLngInsidePasture(lat, lng, pasture)) break;
+      seq.push({ lat, lng });
+    }
+    if (seq.length < 2) {
+      const back = [];
+      for (let j = bestVertex; j >= 0 && back.length < TRAIL_LEN; j--) {
+        const [lng, lat] = bestCoords[j];
+        if (!this._latLngInsidePasture(lat, lng, pasture)) break;
+        back.push({ lat, lng });
+      }
+      back.reverse();
+      return back.slice(0, TRAIL_LEN);
+    }
+    return seq.slice(0, TRAIL_LEN);
+  };
+
+  TurnerRangelandMap.prototype._buildPheromoneTrails = function (pasture, pos) {
+    const ll = this._schematicXYToLatLng(pos.x, pos.y, pasture);
+    const seq = this._nearestTrampledTrailLatLng(pasture, ll.lat, ll.lng);
+    if (seq.length) {
+      const out = [{ lat: ll.lat, lng: ll.lng }];
+      for (const p of seq) {
+        if (Math.abs(p.lat - ll.lat) < 1e-9 && Math.abs(p.lng - ll.lng) < 1e-9) continue;
+        out.push(p);
+        if (out.length >= TRAIL_LEN) break;
+      }
+      if (out.length >= 2) return out;
+    }
+    return [{ x: pos.x, y: pos.y }];
   };
 
   TurnerRangelandMap.prototype._waitForLeaflet = function (maxMs) {
@@ -433,6 +518,16 @@
     if (!res.ok) throw new Error('Geography unavailable');
     this.geo = await res.json();
     this._prepareGeo();
+    this._trampledByPasture = {};
+    try {
+      const trRes = await fetch('/data/turner-trampled-grass-trails.geojson', { cache: 'no-store' });
+      if (trRes.ok) {
+        const fc = await trRes.json();
+        this._trampledByPasture = buildPastureTrampleIndex(fc);
+      }
+    } catch (err) {
+      console.warn('[Turner map] trampled-grass trails GeoJSON unavailable', err);
+    }
     this._buildHerd(null);
     this._renderChrome();
     await this._initLeaflet();
@@ -513,7 +608,7 @@
           sex,
           pastureId: block.pasture.id,
           pastureName: block.pasture.name,
-          trails: buildTrails(pos, poly, rng, synth),
+          trails: this._buildPheromoneTrails(block.pasture, pos),
           weightLbs,
         });
         this._syncBisonLatLng(this.bison[this.bison.length - 1]);
@@ -562,7 +657,7 @@
               <span><i class="swatch swatch-male"></i>Male</span>
               <span><i class="swatch swatch-female"></i>Female</span>
               <span><i class="swatch swatch-calf"></i>Calf</span>
-              <span><i class="swatch swatch-trail"></i>Pheromone trail</span>
+              <span><i class="swatch swatch-trail"></i>Trampled-grass path (GeoJSON)</span>
               <span><i class="swatch swatch-power"></i>Transmission</span>
               <span class="tb-imagery-credit">Basemap · Esri World Imagery (USDA / USGS)</span>
             </div>
@@ -763,6 +858,22 @@
     };
   };
 
+  /**
+   * Rough visibility for herd paint passes. When Leaflet is active, bison schematic (b.x,b.y) must
+   * NOT be compared to _boundsXY() — that box is linearized network XY, not the same numeric space
+   * as pasture polygon coordinates, so everything was culled off the Esri basemap.
+   */
+  TurnerRangelandMap.prototype._bisonInPaintViewport = function (b, padRatio) {
+    if (b.lat == null || b.lng == null || !Number.isFinite(b.lat) || !Number.isFinite(b.lng)) return false;
+    if (this.map && global.L) {
+      const pr = padRatio == null ? 0.14 : padRatio;
+      return this.map.getBounds().pad(pr).contains(global.L.latLng(b.lat, b.lng));
+    }
+    const vb = this._boundsXY();
+    const m = 10;
+    return b.x >= vb.minX - m && b.x <= vb.maxX + m && b.y >= vb.minY - m && b.y <= vb.maxY + m;
+  };
+
   TurnerRangelandMap.prototype.render = function () {
     if (!this.ctx || !this.geo) {
       this._updateRenderNote();
@@ -772,7 +883,6 @@
     const dpr = this.dpr;
     const zoom = this._mapZoom();
     const tier = labelTier(zoom);
-    const vb = this._boundsXY();
     const focus = this.focusPasture;
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -785,8 +895,8 @@
 
     this._updatePastureStyles();
     this._paintPower(ctx, tier, focus);
-    this._paintTrails(ctx, vb, focus, zoom);
-    this._paintBison(ctx, vb, focus, zoom);
+    this._paintTrails(ctx, focus, zoom);
+    this._paintBison(ctx, focus, zoom);
     this._paintPastureLabels(ctx, tier, focus);
     this._paintPowerLabels(ctx, tier, focus);
     this._paintBisonLabels(ctx, tier, focus);
@@ -915,7 +1025,7 @@
     }
   };
 
-  TurnerRangelandMap.prototype._paintTrails = function (ctx, vb, focus, zoom) {
+  TurnerRangelandMap.prototype._paintTrails = function (ctx, focus, zoom) {
     const stride = visualStride(zoom);
     const glowW = Math.max(1.2, 5 - zoom * 0.35);
     const coreW = Math.max(0.65, 2.2 - zoom * 0.2);
@@ -927,8 +1037,7 @@
       if (i % trailStride !== 0) continue;
       const b = this.bison[i];
       if (focus && b.pastureId !== focus) continue;
-      if (b.x < vb.minX - 20 || b.x > vb.maxX + 20 || b.y < vb.minY - 20 || b.y > vb.maxY + 20)
-        continue;
+      if (!this._bisonInPaintViewport(b, 0.18)) continue;
       const tr = b.trails;
       if (tr.length < 2) continue;
 
@@ -956,14 +1065,14 @@
     }
   };
 
-  TurnerRangelandMap.prototype._paintBison = function (ctx, vb, focus, zoom) {
+  TurnerRangelandMap.prototype._paintBison = function (ctx, focus, zoom) {
     const r = Math.max(1.5, 5.5 - zoom * 0.35);
     const stride = visualStride(zoom).dots;
     for (let i = 0; i < this.bison.length; i++) {
       if (i % stride !== 0) continue;
       const b = this.bison[i];
       if (focus && b.pastureId !== focus) continue;
-      if (b.x < vb.minX - 5 || b.x > vb.maxX + 5 || b.y < vb.minY - 5 || b.y > vb.maxY + 5) continue;
+      if (!this._bisonInPaintViewport(b, 0.1)) continue;
       const pt = this._ptContainer(b.lat, b.lng);
       if (!pt) continue;
       ctx.fillStyle = COLORS[b.sex];
@@ -1007,7 +1116,7 @@
     ctx.textBaseline = 'top';
     ctx.textAlign = 'left';
     if (tier === 0) {
-      const line = 'Esri US satellite · radar-weighted herd overlay';
+      const line = 'Esri World Imagery · trampled-grass paths from GeoJSON only (no simulated wander)';
       ctx.strokeText(line, 10, topPad);
       ctx.fillText(line, 10, topPad);
     }
@@ -1027,13 +1136,13 @@
     }
     let head = this._statusHead || 'Awaiting telemetry…';
     if (this.stream?.radar) {
-      head = `Synthesis snapshot · ${this.stream.radar.fidelityPct}% modeled fuse · fence × satellite × magnetic · trails`;
+      head = `Synthesis snapshot · ${this.stream.radar.fidelityPct}% fuse · herd on imagery (Open-Meteo soil × radar) · trampled paths (GeoJSON)`;
     } else if (placed && this._radar?.placementSeed) {
       head = `${placed.toLocaleString()} bison · radar-weighted placement (continuous field, not grid snap)`;
     }
     const sample =
       stride.dots > 1 || stride.trails > 1
-        ? ` · zoom: 1/${stride.dots} dots · 1/${stride.trails} trails drawn (${placed.toLocaleString()} heads placed)`
+        ? ` · zoom: 1/${stride.dots} dots · 1/${stride.trails} path samples drawn (${placed.toLocaleString()} heads placed)`
         : '';
     return head + sample;
   };
@@ -1045,7 +1154,6 @@
 
   TurnerRangelandMap.prototype._paintBisonLabels = function (ctx, tier, focus) {
     if (tier < 3) return;
-    const vb = this._boundsXY();
     let n = 0;
     const cap = this._mapZoom() >= 11 ? 80 : 30;
     ctx.textAlign = 'center';
@@ -1053,7 +1161,7 @@
     for (const b of this.bison) {
       if (n >= cap) break;
       if (focus && b.pastureId !== focus) continue;
-      if (b.x < vb.minX || b.x > vb.maxX || b.y < vb.minY || b.y > vb.maxY) continue;
+      if (!this._bisonInPaintViewport(b, 0.08)) continue;
       const pt = this._ptContainer(b.lat, b.lng);
       if (!pt) continue;
       const sex = ['M', 'F', 'C'][b.sex];
@@ -1117,7 +1225,7 @@
     });
     for (const b of this.bison) this._syncBisonLatLng(b);
     this._statusHead =
-      'Historical range · model sample (Open-Meteo soil × radar fuse) · not GPS collar positions';
+      'Historical range · green path = consecutive daily sample positions (chronology), not trampled-grass survey lines — see data/README-turner-trampled-grass-trails.txt for live GeoJSON';
     this._updateRenderNote();
     this.render();
   };
@@ -1168,23 +1276,6 @@
     this._powerSegments =
       stream.powerGrid?.mapSegments || stream.radar?.powerGridChannel?.mapSegments || [];
 
-    const rng = mulberry32(Math.floor(Date.now() / 45000));
-    const drift = ((stream.ingest?.pllProxy ?? 0.5) - 0.5) * 0.4;
-    for (const b of this.bison) {
-      const pasture = this.geo.pastures.find((p) => p.id === b.pastureId);
-      if (!pasture) continue;
-      const last = b.trails[b.trails.length - 1];
-      let nx = last.x + (rng() - 0.5) * 5 + drift;
-      let ny = last.y + (rng() - 0.5) * 5;
-      if (pointInPoly(nx, ny, pasture.polygon)) {
-        b.trails.push({ x: nx, y: ny });
-        if (b.trails.length > TRAIL_LEN) b.trails.shift();
-        b.x = nx;
-        b.y = ny;
-        this._syncBisonLatLng(b);
-      }
-    }
-
     const set = (id, v) => {
       const el = this.root.querySelector(id);
       if (el) el.textContent = v;
@@ -1201,7 +1292,7 @@
     set('#tb-m-grid', pg?.lineCount != null ? String(pg.lineCount) : '—');
 
     if (stream.radar) {
-      this._statusHead = `Synthesis snapshot · ${stream.radar.fidelityPct}% modeled fuse · fence × satellite × magnetic · trails`;
+      this._statusHead = `Synthesis snapshot · ${stream.radar.fidelityPct}% fuse · herd on imagery (Open-Meteo soil / satellite assimilation × radar field) · trampled paths (GeoJSON)`;
     } else {
       this._statusHead = 'Telemetry live · awaiting radar fuse payload';
     }
@@ -1417,7 +1508,7 @@
         <li><strong>Sex</strong> ${sex} (${sexCode})</li>
         <li><strong>Est. live weight</strong> ${w.toLocaleString()} lbs (${kg.toLocaleString()} kg)</li>
         <li><strong>Mass method</strong> TESF ${(this._meanWeightLbs || 1100).toLocaleString()} lb cow-unit baseline · sex class · passive radar biomass proxy</li>
-        <li><strong>Pheromone trail</strong> ${b.trails.length} samples (light green path)</li>
+        <li><strong>Trampled-grass path</strong> ${b.trails.length} vertices (GeoJSON survey line, or single point if none)</li>
         <li><strong>Radar fix</strong> ${b.lat.toFixed(4)}°, ${b.lng.toFixed(4)}°</li>
       </ul>
       <p class="tb-est-note">Per-head weight is a model estimate for operations planning, not an individual scale or collar reading.</p>`,

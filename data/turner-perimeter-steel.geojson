@@ -1,0 +1,6 @@
+{
+  "type": "FeatureCollection",
+  "name": "turner-perimeter-steel-local-override",
+  "description": "Optional local fence overrides. When empty, Turner loads barrier=fence from OpenStreetMap via Overpass near each pasture centroid. Add features only where OSM is wrong or missing.",
+  "features": []
+}

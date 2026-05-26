@@ -17,6 +17,12 @@
       "role": "Primary radar transmit/receive along high-tensile perimeter"
     },
     {
+      "id": "osm-fence",
+      "name": "OpenStreetMap · barrier=fence (Overpass)",
+      "feeds": ["Overpass API · fence / barbed_wire / chain_link ways near pasture centroids"],
+      "role": "Public fence-line geometry for gate coupling (ODbL); optional local GeoJSON override"
+    },
+    {
       "id": "satellite-pass",
       "name": "Open-Meteo · ECMWF assimilated soil moisture",
       "feeds": ["soil_moisture_0_to_1cm · satellite + station assimilation per pasture centroid"],

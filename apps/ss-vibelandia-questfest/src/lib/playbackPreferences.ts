@@ -3,11 +3,14 @@ const STORAGE_KEY = 'qv-playback-prefs';
 export type PlaybackPrefs = {
   autoplay: boolean;
   backgroundPlay: boolean;
+  /** Random order for next/prev and autoplay within the active playlist (master or user). */
+  shuffle: boolean;
 };
 
 export const PLAYBACK_PREFS_DEFAULT: PlaybackPrefs = {
   autoplay: true,
   backgroundPlay: true,
+  shuffle: false,
 };
 
 export function readPlaybackPrefs(): PlaybackPrefs {
@@ -19,6 +22,7 @@ export function readPlaybackPrefs(): PlaybackPrefs {
     return {
       autoplay: parsed.autoplay !== false,
       backgroundPlay: parsed.backgroundPlay !== false,
+      shuffle: parsed.shuffle === true,
     };
   } catch {
     return { ...PLAYBACK_PREFS_DEFAULT };

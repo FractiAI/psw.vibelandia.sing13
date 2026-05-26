@@ -13,6 +13,10 @@ import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 import { startTrackPlayback } from '@/hooks/useSimpleAudioEngine';
+import {
+  filterPlayableTrackIds,
+  playlistOrderFingerprint,
+} from '@/lib/playlistShuffle';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
@@ -53,6 +57,8 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
 
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
+
+  const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
 
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
   const [editingTrackId, setEditingTrackId] = useState<string | null>(null);
@@ -152,7 +158,25 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
 
     if (!pl?.trackIds[0]) return;
 
-    play(pl.trackIds[0]);
+    const playable = filterPlayableTrackIds(pl.trackIds, getTrack);
+
+    if (!playable.length) return;
+
+    let first = playable[0]!;
+
+    if (shuffleEnabled) {
+
+      const fp = playlistOrderFingerprint(pl.id, pl.trackIds);
+
+      usePlaybackStore.getState().syncShuffleQueue(fp, playable);
+
+      const q = usePlaybackStore.getState().shuffleQueue;
+
+      if (q?.[0]) first = q[0];
+
+    }
+
+    play(first);
 
   };
 

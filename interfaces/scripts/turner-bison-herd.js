@@ -11,14 +11,15 @@
   const $ = (sel, root) => (root || document).querySelector(sel);
 
   let mapInstance = null;
+  let mapReady = false;
+  let pendingMapStream = null;
 
   function mapStreamFromPipeline(stream) {
     const env = stream.pipeline?.synthesis?.environment || {};
     const herd = stream.pipeline?.synthesis?.herd || {};
     const bio = stream.pipeline?.synthesis?.biomass || {};
     const wire = stream.pipeline?.synthesis?.wire || {};
-    const radarStage = stream.pipeline?.radar;
-    const radar = radarStage || stream.pipeline?.synthesis?.radar || null;
+    const radar = stream.pipeline?.radar || stream.pipeline?.synthesis?.radar || null;
     const pll = wire.pllMicroseconds ?? stream.pipeline?.ingest?.wirePhaseUs;
     const magnetic = stream.pipeline?.magnetic;
     const powerGrid = stream.pipeline?.powerGrid;
@@ -26,8 +27,8 @@
       radar,
       magnetic,
       powerGrid,
-      radarFence: radarStage?.fenceChannel?.label || radar?.fenceChannel?.label,
-      radarSatellite: radarStage?.satelliteChannel?.label || radar?.satelliteChannel?.label,
+      radarFence: radar?.fenceChannel?.label,
+      radarSatellite: radar?.satelliteChannel?.label,
       baseline: {
         headCount: herd.headCount ?? 45000,
         canvasAcres: 2000000,
@@ -100,7 +101,9 @@
     const headCount = herd.headCount ?? 45000;
     const acres = '2,000,000';
 
-    if (mapInstance) mapInstance.updateStream(mapStreamFromPipeline(stream));
+    const mapped = mapStreamFromPipeline(stream);
+    if (mapInstance && mapReady) mapInstance.updateStream(mapped);
+    else pendingMapStream = mapped;
 
     setText('tb-preview-environment', env.f107LiveSfu != null ? `${env.f107LiveSfu} sfu · Kp ${env.kpEgsFloor ?? '—'}` : 'NOAA ingest active');
     setText('tb-preview-herd', `${fmtNum(headCount)} head · ${fmtNum(herd.meanWeightLbs ?? 1100)} lbs mean`);
@@ -185,11 +188,23 @@
 
   async function pull(refresh) {
     const url = refresh ? `${API}?refresh=1` : API;
-    const res = await fetch(url, { headers: { Accept: 'application/json' } });
-    if (!res.ok) throw new Error(`telemetry ${res.status}`);
-    const data = await res.json();
-    if (!data.ok || !data.stream) throw new Error('invalid stream');
-    return data.stream;
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 55000);
+    try {
+      const res = await fetch(url, {
+        headers: { Accept: 'application/json' },
+        signal: ctrl.signal,
+      });
+      if (!res.ok) throw new Error(`telemetry ${res.status}`);
+      const data = await res.json();
+      if (!data.ok || !data.stream) throw new Error('invalid stream');
+      return data.stream;
+    } catch (e) {
+      if (e.name === 'AbortError') throw new Error('telemetry timeout (try refresh)');
+      throw e;
+    } finally {
+      clearTimeout(timer);
+    }
   }
 
   async function tick(first) {
@@ -214,14 +229,21 @@
     try {
       mapInstance = new TurnerRangelandMap(root);
       await mapInstance.load();
+      mapReady = true;
+      if (pendingMapStream) {
+        mapInstance.updateStream(pendingMapStream);
+        pendingMapStream = null;
+      }
     } catch (e) {
+      mapReady = false;
       root.innerHTML = `<p class="tb-fetch-err">Map load failed: ${e.message}</p>`;
     }
   }
 
   function init() {
     initTelescope();
-    initMap().then(() => tick(true));
+    void initMap();
+    void tick(true);
     setInterval(() => tick(false), POLL_MS);
   }
 

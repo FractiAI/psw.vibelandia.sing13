@@ -161,6 +161,8 @@
     this.focusPasture = null;
     this._pointer = null;
     this._suppressClick = false;
+    this._pendingStream = null;
+    this._basemapMode = 'imagery';
     this.canvas = null;
     this.ctx = null;
     this.dpr = 1;
@@ -207,12 +209,42 @@
     }
   };
 
-  TurnerRangelandMap.prototype._initLeaflet = function () {
+  TurnerRangelandMap.prototype._waitForLeaflet = function (maxMs) {
+    return new Promise((resolve) => {
+      if (global.L) {
+        resolve(true);
+        return;
+      }
+      const t0 = Date.now();
+      const tick = () => {
+        if (global.L) {
+          resolve(true);
+          return;
+        }
+        if (Date.now() - t0 >= maxMs) {
+          resolve(false);
+          return;
+        }
+        setTimeout(tick, 40);
+      };
+      tick();
+    });
+  };
+
+  TurnerRangelandMap.prototype._initLeaflet = async function () {
+    const ok = await this._waitForLeaflet(10000);
     const L = global.L;
-    if (!L) {
-      console.warn('Leaflet missing — cannot load US imagery basemap');
+    if (!ok || !L) {
+      console.warn('Leaflet missing — herd overlay uses schematic projection (no Esri tiles)');
+      this._basemapMode = 'schematic';
+      const el = this.root.querySelector('#tb-leaflet-map');
+      if (el) {
+        el.innerHTML =
+          '<p class="tb-basemap-fallback">Satellite tiles unavailable — passive radar overlay active</p>';
+      }
       return;
     }
+    this._basemapMode = 'imagery';
     const bbox = this._bbox();
     const mapEl = this.root.querySelector('#tb-leaflet-map');
     if (!mapEl) return;
@@ -268,9 +300,19 @@
     return this.map ? this.map.getZoom() : 5;
   };
 
+  TurnerRangelandMap.prototype._latLngToScreen = function (lat, lng) {
+    if (this.map && global.L) {
+      return this.map.latLngToContainerPoint(global.L.latLng(lat, lng));
+    }
+    const b = this._bbox();
+    return {
+      x: ((lng - b.west) / (b.east - b.west)) * this.viewW,
+      y: ((b.north - lat) / (b.north - b.south)) * this.viewH,
+    };
+  };
+
   TurnerRangelandMap.prototype._latLngToContainer = function (lat, lng) {
-    if (!this.map || !global.L) return null;
-    return this.map.latLngToContainerPoint(global.L.latLng(lat, lng));
+    return this._latLngToScreen(lat, lng);
   };
 
   TurnerRangelandMap.prototype._containerToLatLng = function (x, y) {
@@ -300,10 +342,14 @@
     this._prepareGeo();
     this._buildHerd(null);
     this._renderChrome();
-    this._initLeaflet();
+    await this._initLeaflet();
     this._bind();
     this.fitNetwork();
     this.render();
+    if (this._pendingStream) {
+      this.updateStream(this._pendingStream);
+      this._pendingStream = null;
+    }
   };
 
   TurnerRangelandMap.prototype._radarByPasture = function (radar) {
@@ -483,7 +529,7 @@
       self._pointer.holdTimer = setTimeout(() => {
         if (!self._pointer || self._pointer.mode !== 'pending') return;
         self._pointer.mode = 'select';
-        self.map.dragging.disable();
+        if (self.map) self.map.dragging.disable();
         self.stage.classList.add('tb-chart-stage--marquee');
         self.render();
       }, HOLD_MS);
@@ -502,7 +548,7 @@
         self._pointer.lastX = p.x;
         self._pointer.lastY = p.y;
       }
-      if (self._pointer.mode === 'pan') {
+      if (self._pointer.mode === 'pan' && self.map) {
         self.map.panBy(
           L.point(self._pointer.lastX - p.x, self._pointer.lastY - p.y),
           { animate: false },
@@ -579,15 +625,16 @@
   };
 
   TurnerRangelandMap.prototype.fitNetwork = function () {
-    if (!this.map) return;
     const bbox = this._bbox();
-    this.map.fitBounds(
-      [
-        [bbox.south, bbox.west],
-        [bbox.north, bbox.east],
-      ],
-      { padding: [28, 28] },
-    );
+    if (this.map) {
+      this.map.fitBounds(
+        [
+          [bbox.south, bbox.west],
+          [bbox.north, bbox.east],
+        ],
+        { padding: [28, 28] },
+      );
+    }
     this.focusPasture = null;
     this._updatePastureStyles();
     this.render();
@@ -595,8 +642,9 @@
 
   TurnerRangelandMap.prototype.fitPasture = function (id) {
     const poly = this._pasturePolys[id];
-    if (!poly || !this.map) return;
-    this.map.fitBounds(poly.getBounds(), { padding: [36, 36], maxZoom: 12 });
+    if (poly && this.map) {
+      this.map.fitBounds(poly.getBounds(), { padding: [36, 36], maxZoom: 12 });
+    }
     this.focusPasture = id;
     this._updatePastureStyles();
     this.render();
@@ -616,7 +664,10 @@
   };
 
   TurnerRangelandMap.prototype.render = function () {
-    if (!this.ctx || !this.geo || !this.map) return;
+    if (!this.ctx || !this.geo) {
+      this._updateRenderNote();
+      return;
+    }
     const ctx = this.ctx;
     const dpr = this.dpr;
     const zoom = this._mapZoom();
@@ -626,6 +677,11 @@
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, this.viewW, this.viewH);
+    if (!this.map) {
+      ctx.fillStyle = 'rgba(10, 24, 18, 0.55)';
+      ctx.fillRect(0, 0, this.viewW, this.viewH);
+      this._paintSchematicPastures(ctx, focus);
+    }
 
     this._updatePastureStyles();
     this._paintPower(ctx, tier, focus);
@@ -644,12 +700,36 @@
       const name = focus
         ? this.geo.pastures.find((p) => p.id === focus)?.name || ''
         : '';
-      sub.textContent = `${this.geo.networkLabel} · Esri US imagery · zoom ${zoom}${name ? ' · ' + name : ''} · drag pan · hold & slide to zoom area`;
+      const basemap = this.map ? 'Esri US imagery' : 'schematic fallback';
+      sub.textContent = `${this.geo.networkLabel} · ${basemap} · zoom ${zoom}${name ? ' · ' + name : ''} · drag pan · hold & slide to zoom area`;
+    }
+  };
+
+  TurnerRangelandMap.prototype._paintSchematicPastures = function (ctx, focus) {
+    for (const p of this.geo.pastures) {
+      if (focus && p.id !== focus) ctx.globalAlpha = 0.15;
+      else ctx.globalAlpha = 1;
+      const ring = p.latlngs
+        .map((ll) => this._latLngToScreen(ll[0], ll[1]))
+        .filter(Boolean);
+      if (ring.length < 3) continue;
+      ctx.beginPath();
+      ctx.moveTo(ring[0].x, ring[0].y);
+      for (let i = 1; i < ring.length; i++) ctx.lineTo(ring[i].x, ring[i].y);
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(45, 95, 72, 0.35)';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(196, 168, 116, 0.55)';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
     }
   };
 
   TurnerRangelandMap.prototype._ptContainer = function (lat, lng) {
-    return this._latLngToContainer(lat, lng);
+    const pt = this._latLngToScreen(lat, lng);
+    if (!pt || !Number.isFinite(pt.x)) return null;
+    return pt;
   };
 
   TurnerRangelandMap.prototype._paintPastureLabels = function (ctx, tier, focus) {
@@ -918,7 +998,14 @@
 
   TurnerRangelandMap.prototype.updateStream = function (stream) {
     this.stream = stream;
-    if (!stream) return;
+    if (!stream) {
+      this._updateRenderNote();
+      return;
+    }
+    if (!this.ctx || !this.geo) {
+      this._pendingStream = stream;
+      return;
+    }
 
     if (stream.radar && stream.radar.placementSeed !== this._radar?.placementSeed) {
       this._radar = stream.radar;
@@ -962,7 +1049,10 @@
 
     if (stream.radar) {
       this._statusHead = `Passive radar locked · ${stream.radar.fidelityPct}% fidelity · fence × satellite × magnetic · pheromone trails active`;
+    } else {
+      this._statusHead = 'Telemetry live · awaiting radar fuse payload';
     }
+    this._updateRenderNote();
     this.render();
   };
 

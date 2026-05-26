@@ -274,6 +274,20 @@
   color: #b8c4b8;
 }
 
+.tb-basemap-fallback {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 2.5rem;
+  z-index: 1;
+  margin: 0;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.65rem;
+  color: #b8e8c4;
+  background: rgba(10, 24, 18, 0.88);
+  border: 1px solid var(--tb-line);
+  border-radius: 4px;
+}
+
 .tb-chart-canvas {
   position: absolute;
   inset: 0;

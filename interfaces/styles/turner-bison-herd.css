@@ -190,7 +190,9 @@
 
 .tb-chart-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.35rem;
+  justify-content: flex-end;
 }
 
 .tb-chart-btn {
@@ -213,6 +215,43 @@
 .tb-chart-btn--report {
   font-size: 0.78rem;
   min-width: 4.4rem;
+}
+
+.tb-chart-btn--download {
+  font-size: 0.78rem;
+  min-width: 5.5rem;
+  border-color: rgba(124, 200, 140, 0.65);
+  background: rgba(40, 90, 58, 0.75);
+  color: #d8f5dc;
+}
+
+.tb-chart-btn--download:hover:not(:disabled) {
+  border-color: #9ae8a8;
+  background: rgba(60, 120, 78, 0.9);
+}
+
+.tb-chart-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.tb-manager-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.65rem;
+  margin: 0.65rem 0 0.85rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(154, 123, 82, 0.35);
+  border-radius: 8px;
+  background: rgba(18, 40, 30, 0.55);
+}
+
+.tb-manager-hint {
+  flex: 1 1 12rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--tb-muted);
 }
 
 .tb-metric-strip {
@@ -434,6 +473,12 @@
 
 .tb-report-actions {
   margin: 0 0 0.65rem;
+}
+
+.tb-report-actions .tb-chart-btn--download {
+  width: 100%;
+  min-height: 2.25rem;
+  font-weight: 600;
 }
 
 .tb-report-list {

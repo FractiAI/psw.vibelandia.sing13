@@ -547,7 +547,8 @@
                 <button type="button" class="tb-chart-btn" id="tb-zoom-out" title="Zoom out">−</button>
                 <button type="button" class="tb-chart-btn" id="tb-zoom-in" title="Zoom in">+</button>
                 <button type="button" class="tb-chart-btn" id="tb-fit" title="Full network">Fit</button>
-                <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-herd-report" title="Herd roster report">Report</button>
+                <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-herd-report" title="Herd roster report by ranch">Report</button>
+                <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd" title="Download complete herd list (CSV)">Download</button>
               </div>
             </header>
             <div class="tb-metric-strip" role="group" aria-label="Live metrics">${metricHtml}</div>
@@ -605,6 +606,8 @@
     });
     this.root.querySelector('#tb-fit').addEventListener('click', () => self.fitNetwork());
     this.root.querySelector('#tb-herd-report').addEventListener('click', () => self._showHerdReport());
+    const dlToolbar = this.root.querySelector('#tb-download-herd');
+    if (dlToolbar) dlToolbar.addEventListener('click', () => self.downloadHerdReport());
     this.root.querySelector('#tb-chart-panel-x').addEventListener('click', () => self._hidePanel());
 
     this.root.querySelectorAll('[data-metric]').forEach((btn) => {
@@ -1245,6 +1248,20 @@
     return { rows, ranchSummaries, totals: { totalHead, totalCalves, totalAlerts, meanWeightAll, globalRemark } };
   };
 
+  /** Public — open ranch summary report (includes download). */
+  TurnerRangelandMap.prototype.showHerdReport = function () {
+    this._showHerdReport();
+  };
+
+  /** Public — managers download full herd roster (all heads, by ranch). */
+  TurnerRangelandMap.prototype.downloadHerdReport = function () {
+    if (!this.bison || !this.bison.length) {
+      window.alert('Herd list is still loading. Wait for the map to finish, then try again.');
+      return;
+    }
+    this._downloadHerdReportCsv();
+  };
+
   TurnerRangelandMap.prototype._downloadHerdReportCsv = function () {
     const report = this._buildHerdReport();
     const lines = [
@@ -1302,7 +1319,7 @@
       'Full herd roster report',
       'By ranch totals, remarks, and downloadable full list',
       `<div class="tb-report-actions">
-        <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-download-herd-csv">Download full list (.csv)</button>
+        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd-csv">Download full herd list (.csv)</button>
       </div>
       <ul class="tb-detail-list">
         <li><strong>Total heads</strong> ${report.totals.totalHead.toLocaleString()}</li>
@@ -1314,7 +1331,7 @@
       <ul class="tb-detail-list tb-report-list">${summaryHtml}</ul>`,
     );
     const btn = this.root.querySelector('#tb-download-herd-csv');
-    if (btn) btn.addEventListener('click', () => this._downloadHerdReportCsv(), { once: true });
+    if (btn) btn.addEventListener('click', () => this.downloadHerdReport(), { once: true });
   };
 
   TurnerRangelandMap.prototype._hidePanel = function () {

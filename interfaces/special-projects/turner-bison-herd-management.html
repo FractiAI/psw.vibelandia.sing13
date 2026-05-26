@@ -34,6 +34,16 @@
     <p class="tb-fetch-err" id="tb-fetch-err" hidden></p>
     <p class="tb-hint">Live chart below — <strong>Esri US satellite imagery</strong> (free USDA/USGS layer). Drag to pan, scroll or +/− to zoom; <strong>hold and slide</strong> to box-zoom. Light green paths are pheromone trails; click a pasture or bison for detail.</p>
 
+    <div class="tb-manager-actions" aria-label="Manager herd export">
+      <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-page-download-herd" disabled>
+        Download full herd list (.csv)
+      </button>
+      <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-page-herd-report" disabled>
+        Herd report by ranch
+      </button>
+      <span class="tb-manager-hint" id="tb-manager-hint">Preparing herd roster…</span>
+    </div>
+
     <div id="tb-map-root" class="tb-map-root"></div>
 
     <p class="tb-hint tb-hint--secondary">Telescope — tap any row for full tables and audit narrative.</p>

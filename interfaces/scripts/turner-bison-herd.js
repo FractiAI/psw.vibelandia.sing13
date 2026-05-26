@@ -223,6 +223,34 @@
     if (clock) clock.textContent = new Date().toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
   }
 
+  function bindManagerActions() {
+    const dl = document.getElementById('tb-page-download-herd');
+    const report = document.getElementById('tb-page-herd-report');
+    const hint = document.getElementById('tb-manager-hint');
+    const ready = mapReady && mapInstance;
+
+    if (dl) {
+      dl.disabled = !ready;
+      if (ready && !dl.dataset.bound) {
+        dl.dataset.bound = '1';
+        dl.addEventListener('click', () => mapInstance.downloadHerdReport());
+      }
+    }
+    if (report) {
+      report.disabled = !ready;
+      if (ready && !report.dataset.bound) {
+        report.dataset.bound = '1';
+        report.addEventListener('click', () => mapInstance.showHerdReport());
+      }
+    }
+    if (hint && ready) {
+      const n = mapInstance.bison?.length ?? 0;
+      hint.textContent = n
+        ? `${n.toLocaleString()} heads · CSV includes every animal by ranch + ranch summary rows`
+        : 'Herd roster ready — download or open report';
+    }
+  }
+
   async function initMap() {
     const root = document.getElementById('tb-map-root');
     if (!root || typeof TurnerRangelandMap !== 'function') return;
@@ -234,9 +262,12 @@
         mapInstance.updateStream(pendingMapStream);
         pendingMapStream = null;
       }
+      bindManagerActions();
     } catch (e) {
       mapReady = false;
       root.innerHTML = `<p class="tb-fetch-err">Map load failed: ${e.message}</p>`;
+      const hint = document.getElementById('tb-manager-hint');
+      if (hint) hint.textContent = 'Map unavailable — export disabled until chart loads.';
     }
   }
 

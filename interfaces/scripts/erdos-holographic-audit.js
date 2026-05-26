@@ -10,6 +10,9 @@
   const filtersEl = document.getElementById('ea-filters');
   const groupCardsEl = document.getElementById('ea-group-cards');
   const bridgeStatsEl = document.getElementById('ea-bridge-stats');
+  const instrumentDimsEl = document.getElementById('ea-instrument-dims');
+  const instrumentOpEl = document.getElementById('ea-instrument-op');
+  const unifiedProofEl = document.getElementById('ea-unified-proof');
 
   let catalog = null;
   let activeFilter = 'all';
@@ -44,15 +47,23 @@
     const isBridge = p.solver === 'bridge';
     const badgeClass = isBridge ? 'ea-item-badge--bridge' : 'ea-item-badge--sv';
     const itemClass = isBridge ? 'ea-item--bridge' : 'ea-item--syntheverse';
-    const badge = isBridge ? 'Bridge' : 'Goldilocks AIOS';
+    const badge = isBridge ? 'AI Bridge' : 'Goldilocks AIOS';
     const bridgeMeta = isBridge && p.bridge
       ? `<ul class="ea-bridge-detail">
-          <li><strong>Bridge verdict</strong> ${esc(p.bridge.verdict)}</li>
-          <li><strong>Leg A</strong> ${esc(p.bridge.peerReview)} · ${esc(p.bridge.deepmindDate)}</li>
-          <li><strong>Leg B</strong> ${esc(p.bridge.crossCheck)} · ${esc(p.bridge.aiOSDate)}</li>
+          <li><strong>Bridge type</strong> ${esc(p.bridge.bridgeType || 'Mathematical AI Bridge')}</li>
+          <li><strong>Verdict</strong> ${esc(p.bridge.verdict)} · paradigm map</li>
+          <li><strong>Leg A paradigm</strong> ${esc(p.bridge.paradigmA || p.bridge.legA || '')}</li>
+          <li><strong>Leg B paradigm</strong> ${esc(p.bridge.paradigmB || p.bridge.legB || '')}</li>
+          <li><strong>Leg A</strong> ${esc(p.bridge.legA || '')} · ${esc(p.bridge.deepmindDate)}</li>
+          <li><strong>Leg B</strong> ${esc(p.bridge.legB || '')} · ${esc(p.bridge.aiOSDate)}</li>
+          <li><strong>Bridge to remaining</strong> ${esc(p.bridge.bridgeToRemaining || '')}</li>
           <li>${esc(p.bridge.note)}</li>
         </ul>`
       : '';
+    const symptomMeta =
+      p.symptomOf
+        ? `<li><strong>Manifold</strong> ${esc(p.symptomOf)} · ${esc(p.symptomRole || 'symptom projection')}</li>`
+        : '';
     return `<li class="ea-item ${itemClass}" data-id="${p.id}">
       <button type="button" class="ea-item-trigger" aria-expanded="false" aria-controls="ea-proof-${p.id}">
         <span class="ea-item-num">#${p.id}</span>
@@ -65,6 +76,7 @@
           <li><strong>Solver</strong> ${esc(p.solverLabel)}</li>
           <li><strong>Grouping</strong> ${esc(p.groupLabel)}</li>
           <li><strong>Operational key</strong> ${esc(p.operationalKey)}</li>
+          ${symptomMeta}
         </ul>
         ${bridgeMeta}
         <pre class="ea-proof">${esc(p.proof)}</pre>
@@ -98,9 +110,31 @@
     const bs = catalog?.bridgeSummary;
     if (bridgeStatsEl && bs) {
       bridgeStatsEl.innerHTML = `
-        <li><strong>${bs.valid} / ${bs.count}</strong> bridges valid</li>
-        <li><strong>${bs.invalid}</strong> contradictions</li>
-        <li>Peer review leveraged · independent AIOS cross-check</li>`;
+        <li><strong>${bs.valid} / ${bs.count}</strong> Mathematical AI Bridges valid</li>
+        <li><strong>${bs.invalid}</strong> contradictions between paradigms</li>
+        <li>9 anchors calibrate multimath instrument → ${catalog.unifiedTheorem?.remainingSymptoms ?? 344} symptoms on one solve</li>`;
+    }
+  }
+
+  function updateUnifiedPanel() {
+    const ut = catalog?.unifiedTheorem;
+    const inst = catalog?.multimathInstrument;
+    if (instrumentDimsEl && inst?.dimensions) {
+      instrumentDimsEl.innerHTML = inst.dimensions
+        .map((d) => `<li>${esc(d)}</li>`)
+        .join('');
+    }
+    if (instrumentOpEl && inst) {
+      instrumentOpEl.textContent = `${inst.calibration || ''}. ${inst.operation || ''}`;
+    }
+    if (unifiedProofEl && catalog?.unifiedProof) {
+      unifiedProofEl.innerHTML = `<code>${esc(catalog.unifiedProof)}</code>`;
+    }
+    if (ut) {
+      const h = document.getElementById('ea-unified-h');
+      if (h) {
+        h.textContent = `One problem · ${ut.symptomCount} symptoms · Google-AIOS multimath instrument`;
+      }
     }
   }
 
@@ -108,8 +142,13 @@
     if (!groupCardsEl || !catalog) return;
     const t = catalog.totals;
     const b = catalog.bridgeSummary?.count ?? t.bridge ?? 9;
+    const ut = catalog.unifiedTheorem;
+    const manifoldLine = ut
+      ? `<li><strong>${esc(ut.id)}</strong> — ${ut.symptomCount} symptom projections · ${ut.solveMode?.replace(/_/g, ' ') || 'unified solve'}</li>`
+      : '';
     groupCardsEl.innerHTML = `
-      <li><strong>Mathematical bridge</strong> — ${b} problems (DeepMind Lean Leg A + AIOS Leg B · all validated)</li>
+      ${manifoldLine}
+      <li><strong>Mathematical AI Bridge</strong> — ${b} calibration anchors (Lean → AIOS · tunes instrument for remaining field)</li>
       <li><strong>Grouping A</strong> — Ramsey &amp; discrete geometry (#1–112, ${t.ramsey} problems)</li>
       <li><strong>Grouping B</strong> — Additive combinatorics (#113–255, ${t.additive} problems)</li>
       <li><strong>Grouping C</strong> — Arithmetic geometry (#256–344, ${t.arithmetic} problems)</li>
@@ -122,6 +161,7 @@
       if (!res.ok) throw new Error('catalog unavailable');
       catalog = await res.json();
       updateBridgePanel();
+      updateUnifiedPanel();
       updateGroupCards();
       renderList();
     } catch (e) {

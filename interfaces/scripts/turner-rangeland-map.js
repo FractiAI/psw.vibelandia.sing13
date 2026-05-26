@@ -11,6 +11,9 @@
   const TRAIL_CORE = 'rgba(144, 238, 144, 0.82)';
   const TRAIL_GLOW = 'rgba(100, 220, 130, 0.28)';
   const TRAIL_LEN = 12;
+  const HOLD_MS = 220;
+  const PAN_THRESHOLD_PX = 6;
+  const MARQUEE_MIN_PX = 14;
 
   function mulberry32(a) {
     return function () {
@@ -142,7 +145,8 @@
     this._powerSegments = [];
     this.cam = { scale: 1, tx: 0, ty: 0 };
     this.focusPasture = null;
-    this.drag = null;
+    this._pointer = null;
+    this._suppressClick = false;
     this.canvas = null;
     this.ctx = null;
     this.dpr = 1;
@@ -244,7 +248,7 @@
             <header class="tb-chart-head">
               <div>
                 <h2 class="tb-chart-title">Passive radar topological chart</h2>
-                <p class="tb-chart-sub" id="tb-chart-sub">${escapeHtml(g.networkLabel || '')} · scroll to zoom · drag to pan</p>
+                <p class="tb-chart-sub" id="tb-chart-sub">${escapeHtml(g.networkLabel || '')} · scroll zoom · drag pan · hold &amp; slide to zoom area</p>
               </div>
               <div class="tb-chart-actions">
                 <button type="button" class="tb-chart-btn" id="tb-zoom-out" title="Zoom out">−</button>
@@ -315,20 +319,105 @@
       self.zoomAt(p.x, p.y, e.deltaY > 0 ? 0.9 : 1.1);
     }, { passive: false });
 
+    const onPointerEnd = (e) => self._finishPointer(e);
+
     this.canvas.addEventListener('pointerdown', (e) => {
-      self.drag = { x: e.clientX, y: e.clientY, tx: self.cam.tx, ty: self.cam.ty };
+      if (e.button !== 0) return;
+      self._clearPointerHold();
+      self._suppressClick = false;
+      const p = self._eventPoint(e);
+      self._pointer = {
+        id: e.pointerId,
+        sx: p.x,
+        sy: p.y,
+        cx: p.x,
+        cy: p.y,
+        mode: 'pending',
+        panTx: self.cam.tx,
+        panTy: self.cam.ty,
+      };
+      self._pointer.holdTimer = setTimeout(() => {
+        if (!self._pointer || self._pointer.mode !== 'pending') return;
+        self._pointer.mode = 'select';
+        self.canvas.classList.add('tb-chart-canvas--marquee');
+        self.render();
+      }, HOLD_MS);
       self.canvas.setPointerCapture(e.pointerId);
     });
     this.canvas.addEventListener('pointermove', (e) => {
-      if (!self.drag) return;
-      self.cam.tx = self.drag.tx + (e.clientX - self.drag.x);
-      self.cam.ty = self.drag.ty + (e.clientY - self.drag.y);
-      self.render();
+      if (!self._pointer || self._pointer.id !== e.pointerId) return;
+      const p = self._eventPoint(e);
+      self._pointer.cx = p.x;
+      self._pointer.cy = p.y;
+      const dist = Math.hypot(p.x - self._pointer.sx, p.y - self._pointer.sy);
+      if (self._pointer.mode === 'pending' && dist >= PAN_THRESHOLD_PX) {
+        self._clearPointerHold();
+        self._pointer.mode = 'pan';
+        self._suppressClick = true;
+      }
+      if (self._pointer.mode === 'pan') {
+        self.cam.tx = self._pointer.panTx + (p.x - self._pointer.sx);
+        self.cam.ty = self._pointer.panTy + (p.y - self._pointer.sy);
+        self.render();
+      } else if (self._pointer.mode === 'select') {
+        self.render();
+      }
     });
-    this.canvas.addEventListener('pointerup', () => {
-      self.drag = null;
-    });
+    this.canvas.addEventListener('pointerup', onPointerEnd);
+    this.canvas.addEventListener('pointercancel', onPointerEnd);
+    this.canvas.addEventListener('contextmenu', (e) => e.preventDefault());
     this.canvas.addEventListener('click', (e) => self._onClick(e));
+  };
+
+  TurnerRangelandMap.prototype._clearPointerHold = function () {
+    if (this._pointer?.holdTimer) {
+      clearTimeout(this._pointer.holdTimer);
+      this._pointer.holdTimer = null;
+    }
+  };
+
+  TurnerRangelandMap.prototype._finishPointer = function (e) {
+    const ptr = this._pointer;
+    if (!ptr || (e && ptr.id !== e.pointerId)) return;
+    this._clearPointerHold();
+    if (e) {
+      const p = this._eventPoint(e);
+      ptr.cx = p.x;
+      ptr.cy = p.y;
+    }
+
+    if (ptr.mode === 'select') {
+      this.canvas.classList.remove('tb-chart-canvas--marquee');
+      const x1 = Math.min(ptr.sx, ptr.cx);
+      const x2 = Math.max(ptr.sx, ptr.cx);
+      const y1 = Math.min(ptr.sy, ptr.cy);
+      const y2 = Math.max(ptr.sy, ptr.cy);
+      if (x2 - x1 >= MARQUEE_MIN_PX && y2 - y1 >= MARQUEE_MIN_PX) {
+        const w0 = this.screenToWorld(x1, y1);
+        const w1 = this.screenToWorld(x2, y2);
+        this.fitWorldRect(
+          Math.min(w0.x, w1.x),
+          Math.min(w0.y, w1.y),
+          Math.max(w0.x, w1.x),
+          Math.max(w0.y, w1.y),
+        );
+      }
+      this._suppressClick = true;
+    } else if (ptr.mode === 'pan') {
+      if (Math.hypot(ptr.cx - ptr.sx, ptr.cy - ptr.sy) > PAN_THRESHOLD_PX) {
+        this._suppressClick = true;
+      }
+    }
+
+    this._pointer = null;
+    if (e) {
+      try {
+        this.canvas.releasePointerCapture(e.pointerId);
+      } catch (_) {
+        /* ignore */
+      }
+    }
+    this.render();
   };
 
   TurnerRangelandMap.prototype._eventPoint = function (e) {
@@ -359,6 +448,23 @@
     this.cam.tx = (this.viewW - MAP_W * this.cam.scale) / 2;
     this.cam.ty = (this.viewH - MAP_H * this.cam.scale) / 2;
     this.focusPasture = null;
+    this.render();
+  };
+
+  TurnerRangelandMap.prototype.fitWorldRect = function (minX, minY, maxX, maxY) {
+    const w = maxX - minX;
+    const h = maxY - minY;
+    if (w < 4 || h < 4) return;
+    const pad = 24;
+    const sx = (this.viewW * 0.9) / (w + pad);
+    const sy = (this.viewH * 0.82) / (h + pad);
+    this.cam.scale = Math.max(0.35, Math.min(18, Math.min(sx, sy)));
+    const cx = (minX + maxX) / 2;
+    const cy = (minY + maxY) / 2;
+    this.cam.tx = this.viewW / 2 - cx * this.cam.scale;
+    this.cam.ty = this.viewH / 2 - cy * this.cam.scale;
+    this.focusPasture = null;
+    this._hidePanel();
     this.render();
   };
 
@@ -418,13 +524,14 @@
 
     ctx.restore();
     this._paintMapHud(ctx, tier);
+    this._paintMarquee(ctx);
 
     this._updateRenderNote();
 
     const sub = this.root.querySelector('#tb-chart-sub');
     if (sub) {
       const z = (this.cam.scale * 100) | 0;
-      sub.textContent = `${this.geo.networkLabel} · zoom ${z}%${focus ? ' · ' + (this.geo.pastures.find((p) => p.id === focus)?.name || '') : ''} · scroll zoom · drag pan`;
+      sub.textContent = `${this.geo.networkLabel} · zoom ${z}%${focus ? ' · ' + (this.geo.pastures.find((p) => p.id === focus)?.name || '') : ''} · scroll zoom · drag pan · hold & slide to zoom area`;
     }
   };
 
@@ -587,6 +694,29 @@
     }
   };
 
+  TurnerRangelandMap.prototype._paintMarquee = function (ctx) {
+    const ptr = this._pointer;
+    if (!ptr || ptr.mode !== 'select') return;
+    const x1 = Math.min(ptr.sx, ptr.cx);
+    const x2 = Math.max(ptr.sx, ptr.cx);
+    const y1 = Math.min(ptr.sy, ptr.cy);
+    const y2 = Math.max(ptr.sy, ptr.cy);
+    ctx.save();
+    ctx.fillStyle = 'rgba(196, 168, 116, 0.12)';
+    ctx.strokeStyle = 'rgba(196, 168, 116, 0.95)';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([5, 4]);
+    ctx.fillRect(x1, y1, x2 - x1, y2 - y1);
+    ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
+    ctx.setLineDash([]);
+    ctx.font = '600 10px Inter, system-ui, sans-serif';
+    ctx.fillStyle = 'rgba(232, 228, 220, 0.95)';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'bottom';
+    ctx.fillText('Release to zoom', x1 + 4, Math.max(y1 - 4, 12));
+    ctx.restore();
+  };
+
   TurnerRangelandMap.prototype._paintMapHud = function (ctx, tier) {
     const topPad = 72;
     const y = topPad + (tier === 0 ? 14 : 4);
@@ -645,6 +775,10 @@
   };
 
   TurnerRangelandMap.prototype._onClick = function (e) {
+    if (this._suppressClick) {
+      this._suppressClick = false;
+      return;
+    }
     const sp = this._eventPoint(e);
     const p = this.screenToWorld(sp.x, sp.y);
     let best = null;

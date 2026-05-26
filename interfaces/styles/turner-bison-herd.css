@@ -271,6 +271,14 @@
   cursor: grabbing;
 }
 
+.tb-chart-canvas--marquee {
+  cursor: crosshair;
+}
+
+.tb-chart-canvas--marquee:active {
+  cursor: crosshair;
+}
+
 .tb-chart-legend {
   display: flex;
   flex-wrap: wrap;

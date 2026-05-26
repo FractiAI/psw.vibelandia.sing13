@@ -22,6 +22,34 @@
       <p class="tb-doc">DOC HHA-NSPFRNP-ANCHOR-2026-05-25 · NSPFRNP · no GPS collars · 24×365</p>
     </header>
 
+    <p class="tb-honesty" id="tb-honesty">
+      <strong>Real-data default.</strong>
+      Dynamic layers use <strong>only remote APIs</strong> (NOAA SWPC, Open-Meteo soil, OpenWebRX IQ when configured, HIFLD, geomagnetic). There is <strong>no synthetic soil fill</strong> and no fabricated spatial fence phase — gate coupling is <strong>uniform from live Kp / IQ</strong> unless you opt into legacy mode.
+      Herd dots are still a <strong>weighted field</strong> over pastures (inverse-style placement), not GPS or scale weights. Registry numbers (head count, ADM, etc.) are <strong>static published baselines</strong> in <code>data/turner-public-registry.json</code>, not live measurements.
+      <strong>Date range:</strong> requires Open-Meteo soil for <em>every</em> geolocated pasture on <em>every</em> day in the window, or the API returns an error (set <code>TURNER_ALLOW_SYNTHETIC=1</code> on the server to restore legacy synthetic fallback and φ-squashed Kp / RNG weight spread).
+    </p>
+
+    <section class="tb-range-panel" aria-labelledby="tb-range-heading">
+      <h2 class="tb-range-heading" id="tb-range-heading">Date range · modeled movement &amp; weight</h2>
+      <p class="tb-range-note">
+        Request up to <strong>90 days</strong> (UTC). Uses daily soil moisture from Open-Meteo historical forecast (or ERA5 archive / fallback) fused with the same radar field as live. Sample herd <strong>8–128</strong> heads for performance — not the full 45,000.
+      </p>
+      <div class="tb-range-row">
+        <label>Start <input type="date" id="tb-range-start" class="tb-range-input" /></label>
+        <label>End <input type="date" id="tb-range-end" class="tb-range-input" /></label>
+        <label class="tb-range-sample">Sample <input type="number" id="tb-range-sample" min="8" max="128" value="96" class="tb-range-input tb-range-input--num" /></label>
+        <button type="button" class="tb-chart-btn" id="tb-range-load">Load range</button>
+        <button type="button" class="tb-chart-btn tb-chart-btn--ghost" id="tb-range-live">Back to live</button>
+        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-range-csv" disabled>Download range CSV</button>
+      </div>
+      <div class="tb-range-slider-row" id="tb-range-slider-wrap" hidden>
+        <label for="tb-range-day">Day <span id="tb-range-day-label">—</span></label>
+        <input type="range" id="tb-range-day" min="0" max="0" value="0" />
+      </div>
+      <p class="tb-range-status" id="tb-range-status" aria-live="polite"></p>
+      <p class="tb-range-err" id="tb-range-err" hidden></p>
+    </section>
+
     <nav class="tb-nav" aria-label="Site">
       <a href="/bulletin-board">Bulletin Board</a>
       <span class="dot">·</span>
@@ -121,7 +149,7 @@
           </div>
           <div class="tb-audit-block">
             <h3>Biological mass displacement</h3>
-            <p>PLL microsecond attenuation vs collective dielectric herd mass at perimeter fences.</p>
+            <p>Mass estimates use TESF public cow-unit baselines plus radar-field and (in range mode) seasonal and soil-moisture <strong>model</strong> adjustments — not individual scale or collar reads.</p>
           </div>
         </div>
       </article>
@@ -141,7 +169,7 @@
               <tr><th>Ambient carrier</th><td id="tb-init-carrier">—</td></tr>
               <tr><th>Scalar anchor</th><td id="tb-init-phi">—</td></tr>
               <tr><th>Pipeline</th><td><span id="tb-pipe-stage">—</span> — <span id="tb-pipe-detail">—</span></td></tr>
-              <tr><th>Passive radar</th><td id="tb-radar-summary">Fence-line × satellite cross-reference · radar-quality fidelity</td></tr>
+              <tr><th>Passive radar</th><td id="tb-radar-summary">Fence-line × satellite synthesis (see honesty note above)</td></tr>
               <tr><th>Data sources</th><td id="tb-source-banner">—</td></tr>
             </tbody>
           </table>

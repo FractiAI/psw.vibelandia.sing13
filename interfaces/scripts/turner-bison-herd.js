@@ -7,6 +7,9 @@
 
   const API = '/api/turner-bison-telemetry';
   const POLL_MS = 45_000;
+  let pollTimer = null;
+  let rangeSeries = null;
+  let historicalActive = false;
 
   const $ = (sel, root) => (root || document).querySelector(sel);
 
@@ -27,6 +30,8 @@
       radar,
       magnetic,
       powerGrid,
+      dataPolicy: stream.dataPolicy,
+      syntheticDataAllowed: stream.syntheticDataAllowed,
       radarFence: radar?.fenceChannel?.label,
       radarSatellite: radar?.satelliteChannel?.label,
       baseline: {
@@ -47,7 +52,9 @@
         pllProxy:
           pll != null && Number.isFinite(Number(pll))
             ? Math.min(1, Math.max(0, (Number(pll) - 8) / 30))
-            : 0.5,
+            : stream.syntheticDataAllowed
+              ? 0.5
+              : 0,
       },
     };
   }
@@ -154,7 +161,7 @@
     setText(
       'tb-pipe-detail',
       radar
-        ? `Passive radar fuse ${radar.fidelityPct}% · fence-line × satellite → herd map`
+        ? `Radar fuse ${radar.fidelityPct}% · fence × satellite → model herd map`
         : 'INGEST → SCALE → RADAR → SYNTHESIS'
     );
 
@@ -179,10 +186,10 @@
     const status = $('#tb-exec-status');
     if (status) {
       status.textContent = radar
-        ? `Passive radar locked — ${radar.fidelityPct}% fidelity · fence-line cross-referenced with satellite pass.`
+        ? `Synthesis locked to ingest snapshot — ${radar.fidelityPct}% modeled fuse · fence × satellite (see honesty note).`
         : noaa.error
-          ? 'Stream active — NOAA degraded; fence radar and satellite fuse retrying.'
-          : 'Stream locked — passive radar ingest live for Turner Enterprise Rangeland.';
+          ? 'Stream active — NOAA degraded; radar fuse retrying.'
+          : 'Live ingest active — passive radar synthesis for Turner-scale registry (model layer).';
     }
   }
 
@@ -207,7 +214,210 @@
     }
   }
 
+  function stopPoll() {
+    if (pollTimer) {
+      clearInterval(pollTimer);
+      pollTimer = null;
+    }
+  }
+
+  function startPoll() {
+    stopPoll();
+    pollTimer = setInterval(() => tick(false), POLL_MS);
+  }
+
+  function isoDateUTC(d) {
+    return d.toISOString().slice(0, 10);
+  }
+
+  function setDefaultRangeInputs() {
+    const end = document.getElementById('tb-range-end');
+    const start = document.getElementById('tb-range-start');
+    if (!end || !start) return;
+    const now = new Date();
+    const e = isoDateUTC(now);
+    const sDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - 14));
+    const s = isoDateUTC(sDate);
+    end.value = e;
+    start.value = s;
+  }
+
+  function buildAnimalsForDayIndex(series, dayIndex) {
+    const cumulative = new Map();
+    for (let i = 0; i <= dayIndex; i++) {
+      const d = series.daily[i];
+      if (!d?.animals) continue;
+      for (const a of d.animals) {
+        const trail = cumulative.get(a.id) || [];
+        trail.push({ x: a.x, y: a.y });
+        cumulative.set(a.id, trail);
+      }
+    }
+    const day = series.daily[dayIndex];
+    if (!day?.animals) return [];
+    const trailCap = 16;
+    return day.animals.map((a) => {
+      const full = cumulative.get(a.id) || [{ x: a.x, y: a.y }];
+      const trailXY = full.slice(-trailCap);
+      return {
+        id: a.id,
+        x: a.x,
+        y: a.y,
+        sex: a.sex,
+        pastureId: a.pastureId,
+        pastureName: a.pastureName,
+        weightLbs: a.weightLbs,
+        trailXY,
+      };
+    });
+  }
+
+  function applyRangeDayIndex(idx) {
+    if (!rangeSeries || !mapInstance || !mapReady) return;
+    const animals = buildAnimalsForDayIndex(rangeSeries, idx);
+    mapInstance.applyHistoricalSample(animals);
+    const day = rangeSeries.daily[idx];
+    const label = document.getElementById('tb-range-day-label');
+    if (label) label.textContent = `${day.date} · mean est. ${day.herdMeanWeightLbs ?? '—'} lbs`;
+    const st = document.getElementById('tb-range-status');
+    if (st) {
+      st.textContent = `Showing day ${idx + 1}/${rangeSeries.daily.length} · ${rangeSeries.soilHistory?.source || 'soil'} · sample ${rangeSeries.sampleCount} heads`;
+    }
+  }
+
+  function downloadRangeCsv() {
+    if (!rangeSeries?.daily?.length) return;
+    const lines = [
+      'date,id,pastureId,pastureName,schematicX,schematicY,lat_deg,lng_deg,estWeightLbs,radarFidelityPct',
+    ];
+    for (const d of rangeSeries.daily) {
+      const fid = d.radar?.fidelityPct ?? '';
+      for (const a of d.animals || []) {
+        lines.push(
+          [
+            d.date,
+            a.id,
+            a.pastureId,
+            String(a.pastureName || '').replace(/,/g, ';'),
+            String(a.x),
+            String(a.y),
+            a.lat != null ? String(a.lat) : '',
+            a.lng != null ? String(a.lng) : '',
+            String(a.weightLbs),
+            String(fid),
+          ].join(','),
+        );
+      }
+    }
+    const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `turner-range-${rangeSeries.range.start}_to_${rangeSeries.range.end}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  async function loadRange() {
+    const errEl = document.getElementById('tb-range-err');
+    const st = document.getElementById('tb-range-status');
+    const startEl = document.getElementById('tb-range-start');
+    const endEl = document.getElementById('tb-range-end');
+    const sampleEl = document.getElementById('tb-range-sample');
+    if (!startEl || !endEl) return;
+    if (!mapReady || !mapInstance) {
+      if (st) st.textContent = 'Wait for the map to finish loading, then try again.';
+      if (errEl) {
+        errEl.textContent = 'Map not ready.';
+        errEl.hidden = false;
+      }
+      return;
+    }
+    const start = startEl.value;
+    const end = endEl.value;
+    let sample = parseInt(String(sampleEl?.value || '96'), 10);
+    if (!Number.isFinite(sample)) sample = 96;
+    if (errEl) errEl.hidden = true;
+    if (st) st.textContent = 'Loading historical synthesis (may take up to a minute)…';
+    stopPoll();
+    historicalActive = true;
+    try {
+      const url = `${API}?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&sample=${encodeURIComponent(String(sample))}`;
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 120000);
+      const res = await fetch(url, {
+        headers: { Accept: 'application/json' },
+        signal: ctrl.signal,
+      });
+      clearTimeout(timer);
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.message || `HTTP ${res.status}`);
+      if (data.mode !== 'range' || !data.series?.daily?.length) throw new Error('Invalid range response');
+      rangeSeries = data.series;
+      const wrap = document.getElementById('tb-range-slider-wrap');
+      const slider = document.getElementById('tb-range-day');
+      const csvBtn = document.getElementById('tb-range-csv');
+      if (wrap && slider) {
+        wrap.hidden = false;
+        slider.max = String(rangeSeries.daily.length - 1);
+        slider.value = String(rangeSeries.daily.length - 1);
+        slider.min = '0';
+      }
+      if (csvBtn) csvBtn.disabled = false;
+      if (st) {
+        st.textContent = `${rangeSeries.honesty?.note || ''} Soil: ${rangeSeries.soilHistory?.source || '—'}`;
+      }
+      applyRangeDayIndex(rangeSeries.daily.length - 1);
+      bindManagerActions();
+    } catch (e) {
+      historicalActive = false;
+      if (errEl) {
+        errEl.textContent = e.message || 'Range load failed';
+        errEl.hidden = false;
+      }
+      if (st) st.textContent = '';
+      startPoll();
+      void tick(false);
+    }
+  }
+
+  function backToLive() {
+    historicalActive = false;
+    rangeSeries = null;
+    const wrap = document.getElementById('tb-range-slider-wrap');
+    const csvBtn = document.getElementById('tb-range-csv');
+    const st = document.getElementById('tb-range-status');
+    if (wrap) wrap.hidden = true;
+    if (csvBtn) csvBtn.disabled = true;
+    if (st) st.textContent = '';
+    if (mapInstance && typeof mapInstance.exitHistoricalMode === 'function') {
+      mapInstance.exitHistoricalMode();
+    }
+    startPoll();
+    void tick(true);
+  }
+
+  function bindRangeControls() {
+    setDefaultRangeInputs();
+    const load = document.getElementById('tb-range-load');
+    const live = document.getElementById('tb-range-live');
+    const slider = document.getElementById('tb-range-day');
+    const csv = document.getElementById('tb-range-csv');
+    if (load) load.addEventListener('click', () => void loadRange());
+    if (live) live.addEventListener('click', () => backToLive());
+    if (slider) {
+      slider.addEventListener('input', () => {
+        const idx = parseInt(slider.value, 10) || 0;
+        applyRangeDayIndex(idx);
+      });
+    }
+    if (csv) csv.addEventListener('click', () => downloadRangeCsv());
+  }
+
   async function tick(first) {
+    if (historicalActive) return;
     const errEl = $('#tb-fetch-err');
     try {
       const stream = await pull(first);
@@ -245,9 +455,13 @@
     }
     if (hint && ready) {
       const n = mapInstance.bison?.length ?? 0;
-      hint.textContent = n
-        ? `${n.toLocaleString()} heads · CSV includes every animal by ranch + ranch summary rows`
-        : 'Herd roster ready — download or open report';
+      if (historicalActive && rangeSeries) {
+        hint.textContent = `${n.toLocaleString()} sample heads (date range) · use “Download range CSV” for all days`;
+      } else {
+        hint.textContent = n
+          ? `${n.toLocaleString()} heads · CSV includes every animal by ranch + ranch summary rows`
+          : 'Herd roster ready — download or open report';
+      }
     }
   }
 
@@ -273,9 +487,10 @@
 
   function init() {
     initTelescope();
+    bindRangeControls();
     void initMap();
     void tick(true);
-    setInterval(() => tick(false), POLL_MS);
+    startPoll();
   }
 
   if (document.readyState === 'loading') {

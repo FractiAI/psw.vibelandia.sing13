@@ -113,7 +113,7 @@
     },
     "api/turner-bison-telemetry.js": {
       "memory": 512,
-      "maxDuration": 60,
+      "maxDuration": 120,
       "includeFiles": "{data/**,lib/**}"
     },
     "api/cron-turner-bison-ingest.js": {

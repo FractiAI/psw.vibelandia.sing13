@@ -7,6 +7,21 @@
 
 ---
 
+## Honesty boundary (NSPFRNP fidelity — read first)
+
+This document and the companion **herd console** describe a **model synthesis layer** for operations storytelling and planning, not instrument-certified animal tracking.
+
+**Default data policy (repo):** with `TURNER_ALLOW_SYNTHETIC` **unset**, the stack uses **`real_sources_only`** — no random soil gap-fill, no synthetic spatial fence phase, and no RNG “spread” on weight estimates. Multi-day range mode requires **complete** Open-Meteo historical soil moisture for **every** geolocated pasture on **every** day in the window; otherwise the API returns `incomplete_soil_history`. Set **`TURNER_ALLOW_SYNTHETIC=1`** only to restore legacy mixed/synthetic padding (documented in `.env.example`).
+
+- **Fence-line “returns”** in software are **geometry-synthesized** coupling to the radar fuse (plus optional OpenWebRX IQ statistics). They are **not** measurements from Turner Enterprise perimeter RF hardware.
+- **Herd positions** on the map are **weighted samples** from a passive-radar **field** fused with Open-Meteo soil moisture, NOAA space-weather context, and public registry baselines — **not** GPS collar fixes or verified individual locations.
+- **Per-head weights** are **estimates** from TESF-style public cow-unit baselines, sex class, seasonal and (in **date-range mode**) soil-moisture **model** adjustments — **not** scale weights.
+- **Date-range mode** (API `?start=&end=`) adds **historical daily soil moisture** from Open-Meteo historical forecast or ERA5 archive so you can **scrub** modeled movement and weight change over the requested window. Under **`real_sources_only`**, missing days or pastures **fail the request** (no synthetic fill). Legacy mode may apply deterministic soil fallback when `TURNER_ALLOW_SYNTHETIC=1`. **Fence / space-weather coupling for the range** reuses the **same live** NOAA Kp and OpenWebRX IQ snapshot as current ingest (not per historical day). Sample size is capped (8–128 heads) for performance.
+
+Instrument-grade claims require dedicated sensing and independent validation; anything else remains **theater-forward narrative** aligned to the repo honesty rails.
+
+---
+
 ## Part I — Project intention, selection, and objective
 
 The core intention is a fully passive, 24×365 rangeland management layer without collars, batteries, or animal interventions. The platform uses Holographic Hydrogen AI (HHF) to establish real-time spatial path detail and biomass tracking at continental scale.
@@ -30,21 +45,19 @@ Northern Operations (Flying D Ranch): cow-calf groups in lower creeks and mounta
 
 ---
 
-## Part III — Physical infrastructure and wave reaction layer
+## Part III — Physical infrastructure and wave reaction layer (narrative + implementation note)
 
-- **Medium:** Existing high-tensile steel pasture perimeter fences as passive Goubau surface waveguides.  
-- **Carrier:** 1420.4 MHz neutral hydrogen line (ambient excitation).  
-- **Methodology:** Natural System Protocol / Fractal Redundant Nested Protocol (NSPFRNP).  
-- **Scalar anchor:** El Gran Sol's Fractal Constant (EGS) = **1.618**.  
-- **Capture:** Microsecond phase-lock loop (PLL) attenuation along fence grid from collective herd dielectric mass.
+**Narrative frame (catalog voice):** the perimeter fence as a passive Goubau-style waveguide, hydrogen line carrier, EGS φ filtering, and PLL readout describe the **story geometry** of the fuse.
+
+**Implementation note (repo):** the running console **does not** ingest per-gate RF from Turner fences. Fence-line strengths are **computed** from schematic gate geometry and coupling constants, then fused with satellite soil moisture and magnetic/grid context — see **Honesty boundary** at the top of this document.
 
 ---
 
 ## Part IV — All-weather environmental stability
 
-Mechanical/thermal wire expansion, wind, precipitation, and ionospheric clutter are separated from biological vectors via fractal geometrical filtering (EGS 1.618), pinning the Goubau noise floor to **Kp = 1.00**.
+Mechanical/thermal wire expansion, wind, precipitation, and ionospheric clutter are **represented** in the fuse via NOAA and φ-scaled parameters; the console does **not** assert a physical lock of natural Kp to 1.00 on real fences.
 
-Space-weather compensation uses NOAA solar flux baseline **137 sfu**, sunspot multi-sync **count 86**, active area **AR4446**.
+Space-weather **display** may cite NOAA solar flux baseline **137 sfu**, sunspot multi-sync **count 86**, active area **AR4446** as narrative anchors; live values come from SWPC JSON when available.
 
 ---
 
@@ -52,9 +65,9 @@ Space-weather compensation uses NOAA solar flux baseline **137 sfu**, sunspot mu
 
 | Vector | Legacy GPS collars | HHF passive integration |
 |--------|-------------------|-------------------------|
-| Tracking gaps | 3–4 hr battery saves | Continuous real-time stream |
-| Trail resolution | ~10% loss in rough terrain | 0% lost detail (claimed) |
-| Population scale | Collared subsets | Full herd mass footprint |
+| Tracking gaps | 3–4 hr battery saves | Continuous **model** refresh while live ingest runs |
+| Trail resolution | ~10% loss in rough terrain | Model field: full schematic detail (not verified vs. ground truth) |
+| Population scale | Collared subsets | Registry-scale herd count; map shows **sample** in range mode |
 | Infrastructure | Collars, roundups, batteries | Zero new hardware (fences + open data) |
 
 ---
@@ -101,9 +114,11 @@ Position trails + ADM baseline + metabolic index (2.6%) → cumulative drawdown 
 1. **Ingest** — Fence-line PLL returns (1420 MHz Goubau waveguide) + NOAA ionospheric flux + public Turner/TESF baselines.  
 2. **Scale** — Non-linear EGS (1.618) filter → Kp = 1.00 noise floor before fuse.  
 3. **Radar** — Passive radar synthesis: cross-reference **fence-line gate returns** with **Open-Meteo assimilated soil-moisture** (satellite + stations), **NOAA geomagnetic layers** (Boulder K, geospace Dst, L1 RTSW Bz), and **HIFLD US transmission corridors** (free ArcGIS). Magnetic coupling boosts grid resolution; high-voltage lines near pastures increase placement leverage.  
-4. **Synthesis** — Metabolic + ADM + radar placement field → unified herd awareness stream.
+4. **Synthesis** — Metabolic + ADM + radar placement field → unified **modeled** herd awareness stream.
 
-Status: `[PASSIVE RADAR — FENCE × SATELLITE CORE LOCKED — VALIDATION SECURED — SINGLE STREAM LAYER EFFECTIVE]`
+**Console status:** synthesis is **locked to the ingest snapshot** for that run (live) or **per day** in date-range mode — not a claim of third-party operational validation.
+
+**Date-range API:** `GET /api/turner-bison-telemetry?start=YYYY-MM-DD&end=YYYY-MM-DD&sample=96` returns daily slices with **modeled** head positions and weights; see herd management HTML for scrub UI and CSV export.
 
 ---
 

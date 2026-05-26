@@ -123,7 +123,10 @@
     return randomInPoly(poly, rng);
   }
 
-  function buildTrails(pos, poly, rng) {
+  function buildTrails(pos, poly, rng, syntheticAllowed) {
+    if (!syntheticAllowed) {
+      return [{ x: pos.x, y: pos.y }];
+    }
     const trails = [{ x: pos.x, y: pos.y }];
     let x = pos.x;
     let y = pos.y;
@@ -148,17 +151,18 @@
     return h >>> 0;
   }
 
-  /** TESF cow-unit baseline + sex class + stable individual spread + weak radar biomass proxy — not a scale reading. */
+  /** TESF cow-unit baseline + sex class (+ optional radar field). RNG spread only when stream allows synthetic. */
   function estimateBisonWeightLbs(b, opts) {
     const mean = opts.meanWeightLbs ?? 1100;
+    const synth = opts.syntheticDataAllowed === true;
     const rng = mulberry32(hashSeed(`${b.id}:${opts.placementSeed ?? 0}`));
     let lbs;
     if (b.sex === SEX.calf) {
-      lbs = mean * (0.34 + rng() * 0.14);
+      lbs = synth ? mean * (0.34 + rng() * 0.14) : mean * 0.41;
     } else if (b.sex === SEX.male) {
-      lbs = mean * 1.16 * (0.92 + rng() * 0.16);
+      lbs = synth ? mean * 1.16 * (0.92 + rng() * 0.16) : mean * 1.16;
     } else {
-      lbs = mean * (0.9 + rng() * 0.2);
+      lbs = synth ? mean * (0.9 + rng() * 0.2) : mean;
     }
     if (opts.radarField != null && Number.isFinite(opts.radarField)) {
       lbs *= 0.93 + Math.min(1, Math.max(0, opts.radarField)) * 0.14;
@@ -197,6 +201,7 @@
     this._pendingStream = null;
     this._basemapMode = 'imagery';
     this._meanWeightLbs = 1100;
+    this._historicalMode = false;
     this.canvas = null;
     this.ctx = null;
     this.dpr = 1;
@@ -453,6 +458,7 @@
     const radarPastures = this._radarByPasture(radar);
     const placementSeed = radar?.placementSeed ?? 0;
     const meanWeightLbs = this._meanWeightLbs ?? g.meanWeightLbs ?? 1100;
+    const synth = this.stream?.syntheticDataAllowed === true;
     const ratio = g.sexRatio || { male: 0.38, female: 0.42, calf: 0.2 };
     const order = [];
     const nM = Math.floor(total * ratio.male);
@@ -498,7 +504,7 @@
         const id = 'b-' + idx;
         const weightLbs = estimateBisonWeightLbs(
           { id, sex },
-          { meanWeightLbs, placementSeed, radarField },
+          { meanWeightLbs, placementSeed, radarField, syntheticDataAllowed: synth },
         );
         this.bison.push({
           id,
@@ -507,7 +513,7 @@
           sex,
           pastureId: block.pasture.id,
           pastureName: block.pasture.name,
-          trails: buildTrails(pos, poly, rng),
+          trails: buildTrails(pos, poly, rng, synth),
           weightLbs,
         });
         this._syncBisonLatLng(this.bison[this.bison.length - 1]);
@@ -1016,9 +1022,12 @@
   TurnerRangelandMap.prototype._statusLine = function () {
     const stride = visualStride(this._mapZoom());
     const placed = this.bison.length;
+    if (this._historicalMode) {
+      return this._statusHead || 'Historical range · model sample';
+    }
     let head = this._statusHead || 'Awaiting telemetry…';
     if (this.stream?.radar) {
-      head = `Passive radar locked · ${this.stream.radar.fidelityPct}% fidelity · fence × satellite × magnetic · pheromone trails active`;
+      head = `Synthesis snapshot · ${this.stream.radar.fidelityPct}% modeled fuse · fence × satellite × magnetic · trails`;
     } else if (placed && this._radar?.placementSeed) {
       head = `${placed.toLocaleString()} bison · radar-weighted placement (continuous field, not grid snap)`;
     }
@@ -1089,10 +1098,59 @@
     }
   };
 
+  TurnerRangelandMap.prototype.applyHistoricalSample = function (animals) {
+    if (!this.geo || !Array.isArray(animals) || !animals.length) return;
+    this._historicalMode = true;
+    this.bison = animals.map((a) => {
+      const trailSrc = a.trailXY && a.trailXY.length ? a.trailXY : [{ x: a.x, y: a.y }];
+      const trails = trailSrc.map((pt) => ({ x: pt.x, y: pt.y }));
+      return {
+        id: a.id,
+        x: a.x,
+        y: a.y,
+        sex: a.sex,
+        pastureId: a.pastureId,
+        pastureName: a.pastureName,
+        weightLbs: a.weightLbs,
+        trails,
+      };
+    });
+    for (const b of this.bison) this._syncBisonLatLng(b);
+    this._statusHead =
+      'Historical range · model sample (Open-Meteo soil × radar fuse) · not GPS collar positions';
+    this._updateRenderNote();
+    this.render();
+  };
+
+  TurnerRangelandMap.prototype.exitHistoricalMode = function () {
+    this._historicalMode = false;
+    this._radar = null;
+    if (this.stream) {
+      this.updateStream(this.stream);
+    } else {
+      this._buildHerd(null);
+      this._updateRenderNote();
+      this.render();
+    }
+  };
+
   TurnerRangelandMap.prototype.updateStream = function (stream) {
     this.stream = stream;
     if (!stream) {
       this._updateRenderNote();
+      return;
+    }
+    if (this._historicalMode) {
+      const set = (id, v) => {
+        const el = this.root.querySelector(id);
+        if (el) el.textContent = v;
+      };
+      const b = stream.baseline || {};
+      const live = stream.live || {};
+      set('#tb-m-fidelity', stream.radar?.fidelityPct != null ? stream.radar.fidelityPct + '%' : '—');
+      set('#tb-m-heads', (b.headCount || 45000).toLocaleString());
+      set('#tb-m-flux', live.fluxSfu != null ? live.fluxSfu + ' sfu' : '—');
+      set('#tb-m-kp', live.kp != null ? String(live.kp) : '—');
       return;
     }
     if (!this.ctx || !this.geo) {
@@ -1143,7 +1201,7 @@
     set('#tb-m-grid', pg?.lineCount != null ? String(pg.lineCount) : '—');
 
     if (stream.radar) {
-      this._statusHead = `Passive radar locked · ${stream.radar.fidelityPct}% fidelity · fence × satellite × magnetic · pheromone trails active`;
+      this._statusHead = `Synthesis snapshot · ${stream.radar.fidelityPct}% modeled fuse · fence × satellite × magnetic · trails`;
     } else {
       this._statusHead = 'Telemetry live · awaiting radar fuse payload';
     }
@@ -1348,6 +1406,7 @@
     const w = b.weightLbs ?? estimateBisonWeightLbs(b, {
       meanWeightLbs: this._meanWeightLbs,
       placementSeed: this._radar?.placementSeed,
+      syntheticDataAllowed: this.stream?.syntheticDataAllowed === true,
     });
     const kg = Math.round(w * 0.453592);
     this._showPanel(

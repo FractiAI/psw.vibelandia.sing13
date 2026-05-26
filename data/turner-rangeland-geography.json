@@ -5,6 +5,8 @@
   "totalAcres": 2000000,
   "positioningMethod": "passive-radar-synthesis",
   "positioningNote": "Like radar: fence-line × satellite × NOAA magnetic layers × HIFLD transmission corridors for placement fidelity. No GPS collars.",
+  "meanWeightLbs": 1100,
+  "massEstimateNote": "Per-head weight is modeled from TESF public cow-unit baseline (1,100 lb), sex class, and passive radar biomass proxy — not individual scale or collar data.",
   "networkGeoBbox": { "west": -114, "east": -100, "south": 32, "north": 48 },
   "sexRatio": { "male": 0.38, "female": 0.42, "calf": 0.2 },
   "dataSources": [

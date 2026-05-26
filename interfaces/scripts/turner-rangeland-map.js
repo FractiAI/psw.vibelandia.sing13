@@ -133,6 +133,33 @@
     return trails;
   }
 
+  function hashSeed(str) {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+
+  /** TESF cow-unit baseline + sex class + stable individual spread + weak radar biomass proxy — not a scale reading. */
+  function estimateBisonWeightLbs(b, opts) {
+    const mean = opts.meanWeightLbs ?? 1100;
+    const rng = mulberry32(hashSeed(`${b.id}:${opts.placementSeed ?? 0}`));
+    let lbs;
+    if (b.sex === SEX.calf) {
+      lbs = mean * (0.34 + rng() * 0.14);
+    } else if (b.sex === SEX.male) {
+      lbs = mean * 1.16 * (0.92 + rng() * 0.16);
+    } else {
+      lbs = mean * (0.9 + rng() * 0.2);
+    }
+    if (opts.radarField != null && Number.isFinite(opts.radarField)) {
+      lbs *= 0.93 + Math.min(1, Math.max(0, opts.radarField)) * 0.14;
+    }
+    return Math.max(200, Math.round(lbs));
+  }
+
   function labelTier(zoom) {
     if (zoom >= 11) return 3;
     if (zoom >= 9) return 2;
@@ -163,6 +190,7 @@
     this._suppressClick = false;
     this._pendingStream = null;
     this._basemapMode = 'imagery';
+    this._meanWeightLbs = 1100;
     this.canvas = null;
     this.ctx = null;
     this.dpr = 1;
@@ -383,6 +411,8 @@
     const total = g.totalHead || 45000;
     const rng = mulberry32(radar?.placementSeed ?? 20260525);
     const radarPastures = this._radarByPasture(radar);
+    const placementSeed = radar?.placementSeed ?? 0;
+    const meanWeightLbs = this._meanWeightLbs ?? g.meanWeightLbs ?? 1100;
     const ratio = g.sexRatio || { male: 0.38, female: 0.42, calf: 0.2 };
     const order = [];
     const nM = Math.floor(total * ratio.male);
@@ -414,18 +444,31 @@
     for (const block of blocks) {
       const poly = block.pasture.polygon;
       const rp = radarPastures[block.pasture.id];
+      const bounds = polygonBounds(poly);
+      const gridSize = rp?.gridSize || 24;
       for (let n = 0; n < block.count && idx < order.length; n++, idx++) {
         const pos = rp?.weights
-          ? pickWeightedPosition(rp.weights, rp.gridSize || 24, poly, rng)
+          ? pickWeightedPosition(rp.weights, gridSize, poly, rng)
           : randomInPoly(poly, rng);
+        let radarField = null;
+        if (rp?.weights) {
+          radarField = sampleBilinearField(pos.x, pos.y, bounds, gridSize, rp.weights);
+        }
+        const sex = order[idx];
+        const id = 'b-' + idx;
+        const weightLbs = estimateBisonWeightLbs(
+          { id, sex },
+          { meanWeightLbs, placementSeed, radarField },
+        );
         this.bison.push({
-          id: 'b-' + idx,
+          id,
           x: pos.x,
           y: pos.y,
-          sex: order[idx],
+          sex,
           pastureId: block.pasture.id,
           pastureName: block.pasture.name,
           trails: buildTrails(pos, poly, rng),
+          weightLbs,
         });
         this._syncBisonLatLng(this.bison[this.bison.length - 1]);
       }
@@ -1010,6 +1053,8 @@
       return;
     }
 
+    this._meanWeightLbs = stream.baseline?.meanWeightLbs ?? this._meanWeightLbs ?? 1100;
+
     if (stream.radar && stream.radar.placementSeed !== this._radar?.placementSeed) {
       this._radar = stream.radar;
       this._buildHerd(stream.radar);
@@ -1073,26 +1118,41 @@
 
   TurnerRangelandMap.prototype._showBison = function (b) {
     const sex = ['Male', 'Female', 'Calf'][b.sex];
+    const w = b.weightLbs ?? estimateBisonWeightLbs(b, {
+      meanWeightLbs: this._meanWeightLbs,
+      placementSeed: this._radar?.placementSeed,
+    });
+    const kg = Math.round(w * 0.453592);
     this._showPanel(
       `${sex} · ${b.pastureName}`,
-      'Radar fix · no GPS collar',
+      'Estimated mass · not scale-weighed · no GPS collar',
       `<ul class="tb-detail-list">
         <li><strong>ID</strong> ${b.id}</li>
+        <li><strong>Est. live weight</strong> ${w.toLocaleString()} lbs (${kg.toLocaleString()} kg)</li>
+        <li><strong>Mass method</strong> TESF ${(this._meanWeightLbs || 1100).toLocaleString()} lb cow-unit baseline · sex class · passive radar biomass proxy</li>
         <li><strong>Pheromone trail</strong> ${b.trails.length} samples (light green path)</li>
-        <li><strong>Position</strong> (${b.x.toFixed(1)}, ${b.y.toFixed(1)})</li>
-      </ul>`,
+        <li><strong>Radar fix</strong> ${b.lat.toFixed(4)}°, ${b.lng.toFixed(4)}°</li>
+      </ul>
+      <p class="tb-est-note">Per-head weight is a model estimate for operations planning, not an individual scale or collar reading.</p>`,
     );
   };
 
   TurnerRangelandMap.prototype._showPasture = function (p) {
-    const count = this.bison.filter((b) => b.pastureId === p.id).length;
+    const herd = this.bison.filter((b) => b.pastureId === p.id);
+    const count = herd.length;
+    const totalLbs = herd.reduce((s, b) => s + (b.weightLbs || 0), 0);
+    const meanW = count ? Math.round(totalLbs / count) : 0;
+    const tons = (totalLbs / 2000).toFixed(1);
     this._showPanel(
       p.name,
       p.state,
       `<ul class="tb-detail-list">
         <li><strong>Head on chart</strong> ${count.toLocaleString()}</li>
         <li><strong>Acres</strong> ${(p.acres || 0).toLocaleString()}</li>
-      </ul>`,
+        <li><strong>Mean est. weight</strong> ${meanW.toLocaleString()} lbs / head</li>
+        <li><strong>Est. pasture biomass</strong> ${totalLbs.toLocaleString()} lbs (${tons} short tons)</li>
+      </ul>
+      <p class="tb-est-note">Weights are herd-model estimates from TESF public baseline, not individual measurements.</p>`,
     );
   };
 

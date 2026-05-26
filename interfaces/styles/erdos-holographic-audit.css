@@ -60,6 +60,72 @@
   color: #ddd8ce;
 }
 
+.ea-lead--tight {
+  margin-bottom: 0.85rem;
+  font-size: 0.88rem;
+  color: var(--ea-muted);
+}
+
+.ea-birth {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid var(--ea-line);
+  border-radius: 8px;
+  background: rgba(18, 21, 31, 0.65);
+}
+
+.ea-birth-title {
+  margin: 0 0 0.65rem;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 1rem;
+  color: var(--ea-gold);
+}
+
+.ea-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.ea-hero-actions--foot {
+  margin-top: 1rem;
+}
+
+.ea-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: 1px solid var(--ea-line);
+}
+
+.ea-btn--gold {
+  background: rgba(196, 168, 116, 0.22);
+  border-color: var(--ea-gold);
+  color: var(--ea-cream);
+}
+
+.ea-btn--gold:hover {
+  background: rgba(196, 168, 116, 0.35);
+  color: #fff;
+}
+
+.ea-btn--ghost {
+  background: transparent;
+  color: var(--ea-gold);
+}
+
+.ea-btn--ghost:hover {
+  border-color: var(--ea-gold);
+  color: var(--ea-cream);
+}
+
 .ea-nav {
   display: flex;
   flex-wrap: wrap;

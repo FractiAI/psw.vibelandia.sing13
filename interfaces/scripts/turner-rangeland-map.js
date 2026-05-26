@@ -217,21 +217,51 @@
     };
   };
 
+  TurnerRangelandMap.prototype._pastureGeoScale = function (pasture) {
+    const poly = pasture.polygon;
+    const pb = polygonBounds(poly);
+    const pw = Math.max(pb.maxX - pb.minX, 48);
+    const ph = Math.max(pb.maxY - pb.minY, 48);
+    const scx = poly.reduce((s, c) => s + c[0], 0) / poly.length;
+    const scy = poly.reduce((s, c) => s + c[1], 0) / poly.length;
+    const acreScale = Math.sqrt((pasture.acres || 120000) / 220000);
+    const net = this._bbox();
+    const dLon = 1.15 * acreScale * (pw / MAP_W) * (net.east - net.west);
+    const dLat = 0.95 * acreScale * (ph / MAP_H) * (net.north - net.south);
+    return { scx, scy, pw, ph, dLon, dLat };
+  };
+
+  TurnerRangelandMap.prototype._schematicXYToLatLng = function (x, y, pasture) {
+    if (pasture.lat != null && pasture.lon != null) {
+      const g = this._pastureGeoScale(pasture);
+      return {
+        lat: pasture.lat + ((g.scy - y) / g.ph) * g.dLat,
+        lng: pasture.lon + ((x - g.scx) / g.pw) * g.dLon,
+      };
+    }
+    return this._xyToLatLng(x, y);
+  };
+
   TurnerRangelandMap.prototype._prepareGeo = function () {
     for (const p of this.geo.pastures) {
       p.latlngs = p.polygon.map(([x, y]) => {
-        const ll = this._xyToLatLng(x, y);
+        const ll = this._schematicXYToLatLng(x, y, p);
         return [ll.lat, ll.lng];
       });
     }
   };
 
   TurnerRangelandMap.prototype._syncBisonLatLng = function (b) {
-    const ll = this._xyToLatLng(b.x, b.y);
+    const pasture = this.geo.pastures.find((p) => p.id === b.pastureId);
+    const ll = pasture
+      ? this._schematicXYToLatLng(b.x, b.y, pasture)
+      : this._xyToLatLng(b.x, b.y);
     b.lat = ll.lat;
     b.lng = ll.lng;
     for (const t of b.trails) {
-      const tll = this._xyToLatLng(t.x, t.y);
+      const tll = pasture
+        ? this._schematicXYToLatLng(t.x, t.y, pasture)
+        : this._xyToLatLng(t.x, t.y);
       t.lat = tll.lat;
       t.lng = tll.lng;
     }
@@ -273,23 +303,18 @@
       return;
     }
     this._basemapMode = 'imagery';
-    const bbox = this._bbox();
     const mapEl = this.root.querySelector('#tb-leaflet-map');
     if (!mapEl) return;
 
     this.map = L.map(mapEl, {
       zoomControl: false,
       attributionControl: true,
-      minZoom: 3,
+      minZoom: 2,
       maxZoom: 16,
       scrollWheelZoom: true,
       wheelDebounceTime: 30,
       wheelPxPerZoomLevel: 90,
-      maxBounds: [
-        [bbox.south - 5, bbox.west - 6],
-        [bbox.north + 8, bbox.east + 5],
-      ],
-      maxBoundsViscosity: 0.15,
+      worldCopyJump: false,
     });
 
     L.tileLayer(ESRI_WORLD_IMAGERY, {
@@ -313,6 +338,7 @@
     }
 
     this.fitNetwork();
+    this._applySoftMapBounds();
 
     this.map.on('move zoom zoomend resize', () => this.render());
     this.map.on('click', (e) => this._onMapClick(e));
@@ -365,7 +391,15 @@
         [b.north, b.east],
       ];
     }
-    return L.latLngBounds(pts).pad(0.14);
+    return L.latLngBounds(pts).pad(0.08);
+  };
+
+  TurnerRangelandMap.prototype._applySoftMapBounds = function () {
+    if (!this.map || !global.L) return;
+    const bounds = this._networkLatLngBounds();
+    const pad = bounds.pad(0.22);
+    this.map.setMaxBounds(pad);
+    this.map.options.maxBoundsViscosity = 0.05;
   };
 
   TurnerRangelandMap.prototype._updatePastureStyles = function () {
@@ -676,10 +710,12 @@
   };
 
   TurnerRangelandMap.prototype.fitNetwork = function () {
-    if (this.map) {
-      this.map.fitBounds(this._networkLatLngBounds(), {
-        padding: [52, 52],
-        maxZoom: 8,
+    if (this.map && global.L) {
+      const bounds = this._networkLatLngBounds();
+      this.map.fitBounds(bounds, {
+        paddingTopLeft: [48, 88],
+        paddingBottomRight: [48, 48],
+        maxZoom: 6,
       });
     }
     this.focusPasture = null;

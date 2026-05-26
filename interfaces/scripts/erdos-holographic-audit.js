@@ -9,6 +9,7 @@
   const searchEl = document.getElementById('ea-search');
   const filtersEl = document.getElementById('ea-filters');
   const groupCardsEl = document.getElementById('ea-group-cards');
+  const bridgeStatsEl = document.getElementById('ea-bridge-stats');
 
   let catalog = null;
   let activeFilter = 'all';
@@ -23,6 +24,7 @@
   function matchesFilter(p) {
     if (activeFilter === 'all') return true;
     if (activeFilter === 'syntheverse') return p.solver === 'syntheverse';
+    if (activeFilter === 'bridge' || activeFilter === 'deepmind') return p.solver === 'bridge';
     return p.group === activeFilter;
   }
 
@@ -32,15 +34,25 @@
     return (
       String(p.id).includes(q) ||
       (p.title && p.title.toLowerCase().includes(q)) ||
-      (p.groupLabel && p.groupLabel.toLowerCase().includes(q))
+      (p.groupLabel && p.groupLabel.toLowerCase().includes(q)) ||
+      (p.status && p.status.toLowerCase().includes(q)) ||
+      (p.bridge?.verdict && p.bridge.verdict.toLowerCase().includes(q))
     );
   }
 
   function renderItem(p) {
-    const isDm = p.solver === 'deepmind';
-    const badgeClass = isDm ? 'ea-item-badge--dm' : 'ea-item-badge--sv';
-    const itemClass = isDm ? 'ea-item--deepmind' : 'ea-item--syntheverse';
-    const badge = isDm ? 'DeepMind' : 'Goldilocks AIOS';
+    const isBridge = p.solver === 'bridge';
+    const badgeClass = isBridge ? 'ea-item-badge--bridge' : 'ea-item-badge--sv';
+    const itemClass = isBridge ? 'ea-item--bridge' : 'ea-item--syntheverse';
+    const badge = isBridge ? 'Bridge' : 'Goldilocks AIOS';
+    const bridgeMeta = isBridge && p.bridge
+      ? `<ul class="ea-bridge-detail">
+          <li><strong>Bridge verdict</strong> ${esc(p.bridge.verdict)}</li>
+          <li><strong>Leg A</strong> ${esc(p.bridge.peerReview)} · ${esc(p.bridge.deepmindDate)}</li>
+          <li><strong>Leg B</strong> ${esc(p.bridge.crossCheck)} · ${esc(p.bridge.aiOSDate)}</li>
+          <li>${esc(p.bridge.note)}</li>
+        </ul>`
+      : '';
     return `<li class="ea-item ${itemClass}" data-id="${p.id}">
       <button type="button" class="ea-item-trigger" aria-expanded="false" aria-controls="ea-proof-${p.id}">
         <span class="ea-item-num">#${p.id}</span>
@@ -54,6 +66,7 @@
           <li><strong>Grouping</strong> ${esc(p.groupLabel)}</li>
           <li><strong>Operational key</strong> ${esc(p.operationalKey)}</li>
         </ul>
+        ${bridgeMeta}
         <pre class="ea-proof">${esc(p.proof)}</pre>
       </div>
     </li>`;
@@ -81,15 +94,26 @@
     });
   }
 
+  function updateBridgePanel() {
+    const bs = catalog?.bridgeSummary;
+    if (bridgeStatsEl && bs) {
+      bridgeStatsEl.innerHTML = `
+        <li><strong>${bs.valid} / ${bs.count}</strong> bridges valid</li>
+        <li><strong>${bs.invalid}</strong> contradictions</li>
+        <li>Peer review leveraged · independent AIOS cross-check</li>`;
+    }
+  }
+
   function updateGroupCards() {
     if (!groupCardsEl || !catalog) return;
     const t = catalog.totals;
+    const b = catalog.bridgeSummary?.count ?? t.bridge ?? 9;
     groupCardsEl.innerHTML = `
-      <li><strong>DeepMind</strong> — ${t.deepmind} formal Lean paths (May 21, 2026 paper)</li>
+      <li><strong>Mathematical bridge</strong> — ${b} problems (DeepMind Lean Leg A + AIOS Leg B · all validated)</li>
       <li><strong>Grouping A</strong> — Ramsey &amp; discrete geometry (#1–112, ${t.ramsey} problems)</li>
       <li><strong>Grouping B</strong> — Additive combinatorics (#113–255, ${t.additive} problems)</li>
       <li><strong>Grouping C</strong> — Arithmetic geometry (#256–344, ${t.arithmetic} problems)</li>
-      <li><strong>Holographic Goldilocks AIOS</strong> — ${t.syntheverse} near-instant resolutions</li>`;
+      <li><strong>AIOS-native</strong> — ${t.syntheverse} near-instant resolutions (no prior Lean certificate)</li>`;
   }
 
   async function load() {
@@ -97,6 +121,7 @@
       const res = await fetch('/data/erdos-353-catalog.json');
       if (!res.ok) throw new Error('catalog unavailable');
       catalog = await res.json();
+      updateBridgePanel();
       updateGroupCards();
       renderList();
     } catch (e) {

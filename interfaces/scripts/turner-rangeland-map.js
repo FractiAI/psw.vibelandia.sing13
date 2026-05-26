@@ -14,6 +14,10 @@
   const HOLD_MS = 220;
   const PAN_THRESHOLD_PX = 6;
   const MARQUEE_MIN_PX = 14;
+  const ESRI_WORLD_IMAGERY =
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+  const ESRI_ATTRIBUTION =
+    'Tiles © Esri — USDA FSA, USGS, Maxar & GIS community';
 
   function mulberry32(a) {
     return function () {
@@ -129,11 +133,19 @@
     return trails;
   }
 
-  function labelTier(scale) {
-    if (scale >= 8) return 3;
-    if (scale >= 3) return 2;
-    if (scale >= 1.4) return 1;
+  function labelTier(zoom) {
+    if (zoom >= 11) return 3;
+    if (zoom >= 9) return 2;
+    if (zoom >= 7) return 1;
     return 0;
+  }
+
+  function visualStride(zoom) {
+    if (zoom <= 5) return { dots: 4, trails: 10 };
+    if (zoom <= 6) return { dots: 2, trails: 6 };
+    if (zoom <= 7) return { dots: 1, trails: 4 };
+    if (zoom <= 9) return { dots: 1, trails: 2 };
+    return { dots: 1, trails: 1 };
   }
 
   function TurnerRangelandMap(rootEl) {
@@ -143,7 +155,9 @@
     this.bison = [];
     this._radar = null;
     this._powerSegments = [];
-    this.cam = { scale: 1, tx: 0, ty: 0 };
+    this.map = null;
+    this.pastureLayer = null;
+    this._pasturePolys = {};
     this.focusPasture = null;
     this._pointer = null;
     this._suppressClick = false;
@@ -152,13 +166,141 @@
     this.dpr = 1;
   }
 
+  TurnerRangelandMap.prototype._bbox = function () {
+    return (
+      this.geo?.networkGeoBbox || { west: -114, east: -100, south: 32, north: 48 }
+    );
+  };
+
+  TurnerRangelandMap.prototype._xyToLatLng = function (x, y) {
+    const b = this._bbox();
+    const lat = b.north - (y / MAP_H) * (b.north - b.south);
+    const lng = b.west + (x / MAP_W) * (b.east - b.west);
+    return { lat, lng };
+  };
+
+  TurnerRangelandMap.prototype._latLngToXY = function (lat, lng) {
+    const b = this._bbox();
+    return {
+      x: ((lng - b.west) / (b.east - b.west)) * MAP_W,
+      y: (1 - (lat - b.south) / (b.north - b.south)) * MAP_H,
+    };
+  };
+
+  TurnerRangelandMap.prototype._prepareGeo = function () {
+    for (const p of this.geo.pastures) {
+      p.latlngs = p.polygon.map(([x, y]) => {
+        const ll = this._xyToLatLng(x, y);
+        return [ll.lat, ll.lng];
+      });
+    }
+  };
+
+  TurnerRangelandMap.prototype._syncBisonLatLng = function (b) {
+    const ll = this._xyToLatLng(b.x, b.y);
+    b.lat = ll.lat;
+    b.lng = ll.lng;
+    for (const t of b.trails) {
+      const tll = this._xyToLatLng(t.x, t.y);
+      t.lat = tll.lat;
+      t.lng = tll.lng;
+    }
+  };
+
+  TurnerRangelandMap.prototype._initLeaflet = function () {
+    const L = global.L;
+    if (!L) {
+      console.warn('Leaflet missing — cannot load US imagery basemap');
+      return;
+    }
+    const bbox = this._bbox();
+    const mapEl = this.root.querySelector('#tb-leaflet-map');
+    if (!mapEl) return;
+
+    this.map = L.map(mapEl, {
+      zoomControl: false,
+      attributionControl: true,
+      minZoom: 4,
+      maxZoom: 16,
+      maxBounds: [
+        [bbox.south - 3, bbox.west - 4],
+        [bbox.north + 3, bbox.east + 4],
+      ],
+      maxBoundsViscosity: 0.9,
+    });
+
+    L.tileLayer(ESRI_WORLD_IMAGERY, {
+      attribution: ESRI_ATTRIBUTION,
+      maxNativeZoom: 19,
+      maxZoom: 19,
+    }).addTo(this.map);
+
+    this.pastureLayer = L.layerGroup().addTo(this.map);
+    this._pasturePolys = {};
+    for (const p of this.geo.pastures) {
+      const poly = L.polygon(p.latlngs, {
+        color: '#c4a874',
+        weight: 1.4,
+        fillColor: '#1a3d2e',
+        fillOpacity: 0.22,
+      });
+      poly.pastureId = p.id;
+      poly.addTo(this.pastureLayer);
+      this._pasturePolys[p.id] = poly;
+    }
+
+    this.map.fitBounds(
+      [
+        [bbox.south, bbox.west],
+        [bbox.north, bbox.east],
+      ],
+      { padding: [28, 28] },
+    );
+
+    this.map.on('move zoom zoomend resize', () => this.render());
+    setTimeout(() => {
+      if (this.map) this.map.invalidateSize();
+      this.render();
+    }, 80);
+  };
+
+  TurnerRangelandMap.prototype._mapZoom = function () {
+    return this.map ? this.map.getZoom() : 5;
+  };
+
+  TurnerRangelandMap.prototype._latLngToContainer = function (lat, lng) {
+    if (!this.map || !global.L) return null;
+    return this.map.latLngToContainerPoint(global.L.latLng(lat, lng));
+  };
+
+  TurnerRangelandMap.prototype._containerToLatLng = function (x, y) {
+    if (!this.map || !global.L) return null;
+    return this.map.containerPointToLatLng(global.L.point(x, y));
+  };
+
+  TurnerRangelandMap.prototype._updatePastureStyles = function () {
+    const focus = this.focusPasture;
+    for (const p of this.geo.pastures) {
+      const poly = this._pasturePolys[p.id];
+      if (!poly) continue;
+      const on = !focus || p.id === focus;
+      poly.setStyle({
+        fillOpacity: on ? (p.id === focus ? 0.32 : 0.22) : 0.06,
+        opacity: on ? 0.95 : 0.2,
+        weight: p.id === focus ? 2.2 : 1.2,
+      });
+    }
+  };
+
   TurnerRangelandMap.prototype.load = async function () {
     this.root.innerHTML = '<p class="tb-hint">Loading rangeland chart…</p>';
     const res = await fetch('/data/turner-rangeland-geography.json');
     if (!res.ok) throw new Error('Geography unavailable');
     this.geo = await res.json();
+    this._prepareGeo();
     this._buildHerd(null);
     this._renderChrome();
+    this._initLeaflet();
     this._bind();
     this.fitNetwork();
     this.render();
@@ -219,6 +361,7 @@
           pastureName: block.pasture.name,
           trails: buildTrails(pos, poly, rng),
         });
+        this._syncBisonLatLng(this.bison[this.bison.length - 1]);
       }
     }
   };
@@ -243,12 +386,13 @@
     this.root.innerHTML = `
       <section class="tb-chart" aria-label="Passive radar rangeland chart">
         <div class="tb-chart-stage">
-          <canvas class="tb-chart-canvas" id="tb-chart-canvas" aria-label="Rangeland map"></canvas>
+          <div id="tb-leaflet-map" class="tb-leaflet-map" aria-hidden="true"></div>
+          <canvas class="tb-chart-canvas" id="tb-chart-canvas" aria-label="Rangeland herd overlay"></canvas>
           <div class="tb-chart-overlay tb-chart-overlay--top" aria-label="Chart labels">
             <header class="tb-chart-head">
               <div>
-                <h2 class="tb-chart-title">Passive radar topological chart</h2>
-                <p class="tb-chart-sub" id="tb-chart-sub">${escapeHtml(g.networkLabel || '')} · scroll zoom · drag pan · hold &amp; slide to zoom area</p>
+                <h2 class="tb-chart-title">Passive radar rangeland chart</h2>
+                <p class="tb-chart-sub" id="tb-chart-sub">${escapeHtml(g.networkLabel || '')} · Esri US satellite imagery · scroll zoom · drag pan · hold &amp; slide to zoom area</p>
               </div>
               <div class="tb-chart-actions">
                 <button type="button" class="tb-chart-btn" id="tb-zoom-out" title="Zoom out">−</button>
@@ -263,6 +407,7 @@
               <span><i class="swatch swatch-calf"></i>Calf</span>
               <span><i class="swatch swatch-trail"></i>Pheromone trail</span>
               <span><i class="swatch swatch-power"></i>Transmission</span>
+              <span class="tb-imagery-credit">Basemap · Esri World Imagery (USDA / USGS)</span>
             </div>
           </div>
           <p class="tb-chart-status tb-chart-overlay tb-chart-overlay--bottom" id="tb-chart-status" aria-live="polite">Awaiting telemetry…</p>
@@ -278,10 +423,11 @@
 
     this.stage = this.root.querySelector('.tb-chart-stage');
     this.canvas = this.root.querySelector('#tb-chart-canvas');
-    this.ctx = this.canvas.getContext('2d', { alpha: false });
+    this.ctx = this.canvas.getContext('2d', { alpha: true });
     this._resizeCanvas();
     window.addEventListener('resize', () => {
       this._resizeCanvas();
+      if (this.map) this.map.invalidateSize();
       this.render();
     });
   };
@@ -300,11 +446,12 @@
 
   TurnerRangelandMap.prototype._bind = function () {
     const self = this;
+    const L = global.L;
     this.root.querySelector('#tb-zoom-in').addEventListener('click', () => {
-      self.zoomAt(self.viewW / 2, self.viewH / 2, 1.25);
+      if (self.map) self.map.zoomIn();
     });
     this.root.querySelector('#tb-zoom-out').addEventListener('click', () => {
-      self.zoomAt(self.viewW / 2, self.viewH / 2, 0.8);
+      if (self.map) self.map.zoomOut();
     });
     this.root.querySelector('#tb-fit').addEventListener('click', () => self.fitNetwork());
     this.root.querySelector('#tb-chart-panel-x').addEventListener('click', () => self._hidePanel());
@@ -313,16 +460,13 @@
       btn.addEventListener('click', () => self._showMetric(btn.getAttribute('data-metric')));
     });
 
-    this.canvas.addEventListener('wheel', (e) => {
-      e.preventDefault();
-      const p = self._eventPoint(e);
-      self.zoomAt(p.x, p.y, e.deltaY > 0 ? 0.9 : 1.1);
-    }, { passive: false });
+    if (!this.stage || !L) return;
 
     const onPointerEnd = (e) => self._finishPointer(e);
 
-    this.canvas.addEventListener('pointerdown', (e) => {
-      if (e.button !== 0) return;
+    this.stage.addEventListener('pointerdown', (e) => {
+      if (e.button !== 0 || !self.map) return;
+      if (e.target.closest('.tb-chart-overlay--top, .tb-chart-panel, .tb-chart-btn')) return;
       self._clearPointerHold();
       self._suppressClick = false;
       const p = self._eventPoint(e);
@@ -332,19 +476,20 @@
         sy: p.y,
         cx: p.x,
         cy: p.y,
+        lastX: p.x,
+        lastY: p.y,
         mode: 'pending',
-        panTx: self.cam.tx,
-        panTy: self.cam.ty,
       };
       self._pointer.holdTimer = setTimeout(() => {
         if (!self._pointer || self._pointer.mode !== 'pending') return;
         self._pointer.mode = 'select';
-        self.canvas.classList.add('tb-chart-canvas--marquee');
+        self.map.dragging.disable();
+        self.stage.classList.add('tb-chart-stage--marquee');
         self.render();
       }, HOLD_MS);
-      self.canvas.setPointerCapture(e.pointerId);
+      self.stage.setPointerCapture(e.pointerId);
     });
-    this.canvas.addEventListener('pointermove', (e) => {
+    this.stage.addEventListener('pointermove', (e) => {
       if (!self._pointer || self._pointer.id !== e.pointerId) return;
       const p = self._eventPoint(e);
       self._pointer.cx = p.x;
@@ -354,19 +499,24 @@
         self._clearPointerHold();
         self._pointer.mode = 'pan';
         self._suppressClick = true;
+        self._pointer.lastX = p.x;
+        self._pointer.lastY = p.y;
       }
       if (self._pointer.mode === 'pan') {
-        self.cam.tx = self._pointer.panTx + (p.x - self._pointer.sx);
-        self.cam.ty = self._pointer.panTy + (p.y - self._pointer.sy);
-        self.render();
+        self.map.panBy(
+          L.point(self._pointer.lastX - p.x, self._pointer.lastY - p.y),
+          { animate: false },
+        );
+        self._pointer.lastX = p.x;
+        self._pointer.lastY = p.y;
       } else if (self._pointer.mode === 'select') {
         self.render();
       }
     });
-    this.canvas.addEventListener('pointerup', onPointerEnd);
-    this.canvas.addEventListener('pointercancel', onPointerEnd);
-    this.canvas.addEventListener('contextmenu', (e) => e.preventDefault());
-    this.canvas.addEventListener('click', (e) => self._onClick(e));
+    this.stage.addEventListener('pointerup', onPointerEnd);
+    this.stage.addEventListener('pointercancel', onPointerEnd);
+    this.stage.addEventListener('click', (e) => self._onClick(e));
+    this.stage.addEventListener('contextmenu', (e) => e.preventDefault());
   };
 
   TurnerRangelandMap.prototype._clearPointerHold = function () {
@@ -387,20 +537,21 @@
     }
 
     if (ptr.mode === 'select') {
-      this.canvas.classList.remove('tb-chart-canvas--marquee');
+      this.stage.classList.remove('tb-chart-stage--marquee');
+      if (this.map) this.map.dragging.enable();
       const x1 = Math.min(ptr.sx, ptr.cx);
       const x2 = Math.max(ptr.sx, ptr.cx);
       const y1 = Math.min(ptr.sy, ptr.cy);
       const y2 = Math.max(ptr.sy, ptr.cy);
-      if (x2 - x1 >= MARQUEE_MIN_PX && y2 - y1 >= MARQUEE_MIN_PX) {
-        const w0 = this.screenToWorld(x1, y1);
-        const w1 = this.screenToWorld(x2, y2);
-        this.fitWorldRect(
-          Math.min(w0.x, w1.x),
-          Math.min(w0.y, w1.y),
-          Math.max(w0.x, w1.x),
-          Math.max(w0.y, w1.y),
-        );
+      if (x2 - x1 >= MARQUEE_MIN_PX && y2 - y1 >= MARQUEE_MIN_PX && global.L) {
+        const sw = this._containerToLatLng(x1, y2);
+        const ne = this._containerToLatLng(x2, y1);
+        if (sw && ne) {
+          this.map.fitBounds(global.L.latLngBounds(sw, ne), { padding: [28, 28] });
+          this.focusPasture = null;
+          this._hidePanel();
+          this._updatePastureStyles();
+        }
       }
       this._suppressClick = true;
     } else if (ptr.mode === 'pan') {
@@ -412,7 +563,7 @@
     this._pointer = null;
     if (e) {
       try {
-        this.canvas.releasePointerCapture(e.pointerId);
+        this.stage.releasePointerCapture(e.pointerId);
       } catch (_) {
         /* ignore */
       }
@@ -421,108 +572,68 @@
   };
 
   TurnerRangelandMap.prototype._eventPoint = function (e) {
-    const rect = this.canvas.getBoundingClientRect();
-    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
-  };
-
-  TurnerRangelandMap.prototype.screenToWorld = function (sx, sy) {
-    return {
-      x: (sx - this.cam.tx) / this.cam.scale,
-      y: (sy - this.cam.ty) / this.cam.scale,
-    };
-  };
-
-  TurnerRangelandMap.prototype.zoomAt = function (sx, sy, factor) {
-    const w = this.screenToWorld(sx, sy);
-    this.cam.scale = Math.max(0.35, Math.min(18, this.cam.scale * factor));
-    this.cam.tx = sx - w.x * this.cam.scale;
-    this.cam.ty = sy - w.y * this.cam.scale;
-    this.render();
+    const mapRect = this.map
+      ? this.map.getContainer().getBoundingClientRect()
+      : this.stage.getBoundingClientRect();
+    return { x: e.clientX - mapRect.left, y: e.clientY - mapRect.top };
   };
 
   TurnerRangelandMap.prototype.fitNetwork = function () {
-    const pad = 24;
-    const sx = (this.viewW - pad * 2) / MAP_W;
-    const sy = (this.viewH - pad * 2) / MAP_H;
-    this.cam.scale = Math.min(sx, sy);
-    this.cam.tx = (this.viewW - MAP_W * this.cam.scale) / 2;
-    this.cam.ty = (this.viewH - MAP_H * this.cam.scale) / 2;
+    if (!this.map) return;
+    const bbox = this._bbox();
+    this.map.fitBounds(
+      [
+        [bbox.south, bbox.west],
+        [bbox.north, bbox.east],
+      ],
+      { padding: [28, 28] },
+    );
     this.focusPasture = null;
-    this.render();
-  };
-
-  TurnerRangelandMap.prototype.fitWorldRect = function (minX, minY, maxX, maxY) {
-    const w = maxX - minX;
-    const h = maxY - minY;
-    if (w < 4 || h < 4) return;
-    const pad = 24;
-    const sx = (this.viewW * 0.9) / (w + pad);
-    const sy = (this.viewH * 0.82) / (h + pad);
-    this.cam.scale = Math.max(0.35, Math.min(18, Math.min(sx, sy)));
-    const cx = (minX + maxX) / 2;
-    const cy = (minY + maxY) / 2;
-    this.cam.tx = this.viewW / 2 - cx * this.cam.scale;
-    this.cam.ty = this.viewH / 2 - cy * this.cam.scale;
-    this.focusPasture = null;
-    this._hidePanel();
+    this._updatePastureStyles();
     this.render();
   };
 
   TurnerRangelandMap.prototype.fitPasture = function (id) {
-    const p = this.geo.pastures.find((x) => x.id === id);
-    if (!p) return;
-    const b = polygonBounds(p.polygon);
-    const pad = 28;
-    const pw = b.maxX - b.minX + pad * 2;
-    const ph = b.maxY - b.minY + pad * 2;
-    const sx = (this.viewW * 0.92) / pw;
-    const sy = (this.viewH * 0.88) / ph;
-    this.cam.scale = Math.min(sx, sy, 14);
-    const cx = (b.minX + b.maxX) / 2;
-    const cy = (b.minY + b.maxY) / 2;
-    this.cam.tx = this.viewW / 2 - cx * this.cam.scale;
-    this.cam.ty = this.viewH / 2 - cy * this.cam.scale;
+    const poly = this._pasturePolys[id];
+    if (!poly || !this.map) return;
+    this.map.fitBounds(poly.getBounds(), { padding: [36, 36], maxZoom: 12 });
     this.focusPasture = id;
+    this._updatePastureStyles();
     this.render();
   };
 
-  TurnerRangelandMap.prototype.visibleWorld = function () {
-    const x0 = this.screenToWorld(0, 0);
-    const x1 = this.screenToWorld(this.viewW, this.viewH);
+  TurnerRangelandMap.prototype._boundsXY = function () {
+    if (!this.map) return { minX: 0, maxX: MAP_W, minY: 0, maxY: MAP_H };
+    const b = this.map.getBounds();
+    const sw = this._latLngToXY(b.getSouth(), b.getWest());
+    const ne = this._latLngToXY(b.getNorth(), b.getEast());
     return {
-      minX: Math.min(x0.x, x1.x),
-      maxX: Math.max(x0.x, x1.x),
-      minY: Math.min(x0.y, x1.y),
-      maxY: Math.max(x0.y, x1.y),
+      minX: Math.min(sw.x, ne.x),
+      maxX: Math.max(sw.x, ne.x),
+      minY: Math.min(sw.y, ne.y),
+      maxY: Math.max(sw.y, ne.y),
     };
   };
 
   TurnerRangelandMap.prototype.render = function () {
-    if (!this.ctx || !this.geo) return;
+    if (!this.ctx || !this.geo || !this.map) return;
     const ctx = this.ctx;
     const dpr = this.dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = '#0a1812';
-    ctx.fillRect(0, 0, this.viewW, this.viewH);
-
-    ctx.save();
-    ctx.translate(this.cam.tx, this.cam.ty);
-    ctx.scale(this.cam.scale, this.cam.scale);
-
-    const tier = labelTier(this.cam.scale);
-    const vb = this.visibleWorld();
+    const zoom = this._mapZoom();
+    const tier = labelTier(zoom);
+    const vb = this._boundsXY();
     const focus = this.focusPasture;
 
-    this._paintTopo(ctx);
-    this._paintPastures(ctx, tier, focus);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, this.viewW, this.viewH);
+
+    this._updatePastureStyles();
     this._paintPower(ctx, tier, focus);
-    this._paintTrails(ctx, vb, focus);
-    this._paintBison(ctx, vb, focus);
+    this._paintTrails(ctx, vb, focus, zoom);
+    this._paintBison(ctx, vb, focus, zoom);
     this._paintPastureLabels(ctx, tier, focus);
     this._paintPowerLabels(ctx, tier, focus);
     this._paintBisonLabels(ctx, tier, focus);
-
-    ctx.restore();
     this._paintMapHud(ctx, tier);
     this._paintMarquee(ctx);
 
@@ -530,74 +641,53 @@
 
     const sub = this.root.querySelector('#tb-chart-sub');
     if (sub) {
-      const z = (this.cam.scale * 100) | 0;
-      sub.textContent = `${this.geo.networkLabel} · zoom ${z}%${focus ? ' · ' + (this.geo.pastures.find((p) => p.id === focus)?.name || '') : ''} · scroll zoom · drag pan · hold & slide to zoom area`;
+      const name = focus
+        ? this.geo.pastures.find((p) => p.id === focus)?.name || ''
+        : '';
+      sub.textContent = `${this.geo.networkLabel} · Esri US imagery · zoom ${zoom}${name ? ' · ' + name : ''} · drag pan · hold & slide to zoom area`;
     }
   };
 
-  TurnerRangelandMap.prototype._paintTopo = function (ctx) {
-    ctx.strokeStyle = 'rgba(90, 140, 110, 0.14)';
-    ctx.lineWidth = 1;
-    for (let y = 0; y < MAP_H; y += 36) {
-      ctx.beginPath();
-      for (let x = 0; x <= MAP_W; x += 36) {
-        const py = y + 10 * Math.sin((x + y) / 55);
-        if (x === 0) ctx.moveTo(x, py);
-        else ctx.lineTo(x, py);
-      }
-      ctx.stroke();
-    }
-  };
-
-  TurnerRangelandMap.prototype._paintPastures = function (ctx, tier, focus) {
-    for (const p of this.geo.pastures) {
-      if (focus && p.id !== focus) {
-        ctx.globalAlpha = 0.12;
-      } else {
-        ctx.globalAlpha = 1;
-      }
-      const poly = p.polygon;
-      ctx.beginPath();
-      ctx.moveTo(poly[0][0], poly[0][1]);
-      for (let i = 1; i < poly.length; i++) ctx.lineTo(poly[i][0], poly[i][1]);
-      ctx.closePath();
-      ctx.fillStyle = focus && p.id === focus ? 'rgba(60, 120, 90, 0.42)' : 'rgba(45, 95, 72, 0.32)';
-      ctx.fill();
-      ctx.strokeStyle = p.id === focus ? 'rgba(196, 168, 116, 0.9)' : 'rgba(196, 168, 116, 0.45)';
-      ctx.lineWidth = p.id === focus ? 2.2 : 1.2;
-      ctx.stroke();
-      ctx.globalAlpha = 1;
-    }
+  TurnerRangelandMap.prototype._ptContainer = function (lat, lng) {
+    return this._latLngToContainer(lat, lng);
   };
 
   TurnerRangelandMap.prototype._paintPastureLabels = function (ctx, tier, focus) {
     if (tier < 0) return;
+    const zoom = this._mapZoom();
     for (const p of this.geo.pastures) {
       if (focus && p.id !== focus) continue;
-      const poly = p.polygon;
-      const cx = poly.reduce((s, c) => s + c[0], 0) / poly.length;
-      const cy = poly.reduce((s, c) => s + c[1], 0) / poly.length;
+      let lat = 0;
+      let lng = 0;
+      for (const ll of p.latlngs) {
+        lat += ll[0];
+        lng += ll[1];
+      }
+      lat /= p.latlngs.length;
+      lng /= p.latlngs.length;
+      const pt = this._ptContainer(lat, lng);
+      if (!pt) continue;
       const heads = this.bison.filter((b) => b.pastureId === p.id).length;
-      const fs = Math.max(10, 13 / this.cam.scale);
+      const fs = Math.max(10, 14 - zoom * 0.35);
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.font = `700 ${fs}px Libre Baskerville, Georgia, serif`;
       ctx.strokeStyle = 'rgba(8, 20, 15, 0.92)';
-      ctx.lineWidth = Math.max(2, 4 / this.cam.scale);
+      ctx.lineWidth = Math.max(2, 5 - zoom * 0.25);
       ctx.fillStyle = '#f8f6f0';
-      ctx.strokeText(p.name, cx, cy - 8 / this.cam.scale);
-      ctx.fillText(p.name, cx, cy - 8 / this.cam.scale);
+      ctx.strokeText(p.name, pt.x, pt.y - 10);
+      ctx.fillText(p.name, pt.x, pt.y - 10);
       if (tier >= 1) {
         const sub = `${p.state} · ${heads.toLocaleString()} head`;
-        ctx.font = `500 ${Math.max(8, 10 / this.cam.scale)}px Inter, system-ui, sans-serif`;
+        ctx.font = `500 ${Math.max(8, 11 - zoom * 0.3)}px Inter, system-ui, sans-serif`;
         ctx.fillStyle = '#d4edc8';
-        ctx.strokeText(sub, cx, cy + 8 / this.cam.scale);
-        ctx.fillText(sub, cx, cy + 8 / this.cam.scale);
+        ctx.strokeText(sub, pt.x, pt.y + 8);
+        ctx.fillText(sub, pt.x, pt.y + 8);
       }
       if (tier >= 2) {
         const acres = `${(p.acres || 0).toLocaleString()} acres`;
-        ctx.strokeText(acres, cx, cy + 22 / this.cam.scale);
-        ctx.fillText(acres, cx, cy + 22 / this.cam.scale);
+        ctx.strokeText(acres, pt.x, pt.y + 22);
+        ctx.fillText(acres, pt.x, pt.y + 22);
       }
     }
   };
@@ -607,12 +697,21 @@
       if (focus && seg.pastureId && seg.pastureId !== focus) continue;
       const pts = seg.points || [];
       if (pts.length < 2) continue;
+      const c0 = this._ptContainer(
+        this._xyToLatLng(pts[0].x, pts[0].y).lat,
+        this._xyToLatLng(pts[0].x, pts[0].y).lng,
+      );
+      if (!c0) continue;
       ctx.beginPath();
-      ctx.moveTo(pts[0].x, pts[0].y);
-      for (let i = 1; i < pts.length; i++) ctx.lineTo(pts[i].x, pts[i].y);
+      ctx.moveTo(c0.x, c0.y);
+      for (let i = 1; i < pts.length; i++) {
+        const ll = this._xyToLatLng(pts[i].x, pts[i].y);
+        const ci = this._ptContainer(ll.lat, ll.lng);
+        if (ci) ctx.lineTo(ci.x, ci.y);
+      }
       const kv = seg.voltageKv || 115;
-      ctx.strokeStyle = kv >= 345 ? 'rgba(255, 120, 90, 0.75)' : 'rgba(255, 180, 70, 0.55)';
-      ctx.lineWidth = Math.max(1, (kv >= 345 ? 2.4 : 1.6) / this.cam.scale);
+      ctx.strokeStyle = kv >= 345 ? 'rgba(255, 120, 90, 0.85)' : 'rgba(255, 180, 70, 0.65)';
+      ctx.lineWidth = kv >= 345 ? 2.4 : 1.6;
       ctx.stroke();
     }
   };
@@ -624,44 +723,43 @@
       const pts = seg.points || [];
       if (pts.length < 2) continue;
       const mid = pts[Math.floor(pts.length / 2)];
+      const ll = this._xyToLatLng(mid.x, mid.y);
+      const pt = this._ptContainer(ll.lat, ll.lng);
+      if (!pt) continue;
       const kv = seg.voltageKv || 115;
-      ctx.font = `600 ${Math.max(7, 9 / this.cam.scale)}px Inter, system-ui, sans-serif`;
+      ctx.font = '600 9px Inter, system-ui, sans-serif';
       ctx.fillStyle = 'rgba(255, 210, 120, 0.95)';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
-      ctx.fillText(`${kv} kV`, mid.x, mid.y - 4 / this.cam.scale);
+      ctx.fillText(`${kv} kV`, pt.x, pt.y - 4);
     }
   };
 
-  TurnerRangelandMap.prototype._visualStride = function () {
-    const s = this.cam.scale;
-    if (s < 0.55) return { dots: 4, trails: 10 };
-    if (s < 0.85) return { dots: 2, trails: 6 };
-    if (s < 1.15) return { dots: 1, trails: 4 };
-    if (s < 2.5) return { dots: 1, trails: 2 };
-    return { dots: 1, trails: 1 };
-  };
-
-  TurnerRangelandMap.prototype._paintTrails = function (ctx, vb, focus) {
-    const scale = this.cam.scale;
-    const stride = this._visualStride();
-    const glowW = Math.max(1.2, 4.5 / scale);
-    const coreW = Math.max(0.65, 1.8 / scale);
+  TurnerRangelandMap.prototype._paintTrails = function (ctx, vb, focus, zoom) {
+    const stride = visualStride(zoom);
+    const glowW = Math.max(1.2, 5 - zoom * 0.35);
+    const coreW = Math.max(0.65, 2.2 - zoom * 0.2);
     const trailStride = stride.trails;
     let drawn = 0;
-    const maxTrails = scale < 0.7 ? 3500 : scale < 1.1 ? 7000 : scale < 2 ? 18000 : 45000;
+    const maxTrails = zoom <= 5 ? 3500 : zoom <= 7 ? 8000 : 45000;
 
     for (let i = 0; i < this.bison.length; i++) {
       if (i % trailStride !== 0) continue;
       const b = this.bison[i];
       if (focus && b.pastureId !== focus) continue;
-      if (b.x < vb.minX - 20 || b.x > vb.maxX + 20 || b.y < vb.minY - 20 || b.y > vb.maxY + 20) continue;
+      if (b.x < vb.minX - 20 || b.x > vb.maxX + 20 || b.y < vb.minY - 20 || b.y > vb.maxY + 20)
+        continue;
       const tr = b.trails;
       if (tr.length < 2) continue;
 
+      const p0 = this._ptContainer(tr[0].lat, tr[0].lng);
+      if (!p0) continue;
       ctx.beginPath();
-      ctx.moveTo(tr[0].x, tr[0].y);
-      for (let t = 1; t < tr.length; t++) ctx.lineTo(tr[t].x, tr[t].y);
+      ctx.moveTo(p0.x, p0.y);
+      for (let t = 1; t < tr.length; t++) {
+        const pt = this._ptContainer(tr[t].lat, tr[t].lng);
+        if (pt) ctx.lineTo(pt.x, pt.y);
+      }
 
       ctx.strokeStyle = TRAIL_GLOW;
       ctx.lineWidth = glowW;
@@ -678,18 +776,19 @@
     }
   };
 
-  TurnerRangelandMap.prototype._paintBison = function (ctx, vb, focus) {
-    const scale = this.cam.scale;
-    const r = Math.max(0.28, 1.05 / scale);
-    const stride = this._visualStride().dots;
+  TurnerRangelandMap.prototype._paintBison = function (ctx, vb, focus, zoom) {
+    const r = Math.max(1.5, 5.5 - zoom * 0.35);
+    const stride = visualStride(zoom).dots;
     for (let i = 0; i < this.bison.length; i++) {
       if (i % stride !== 0) continue;
       const b = this.bison[i];
       if (focus && b.pastureId !== focus) continue;
       if (b.x < vb.minX - 5 || b.x > vb.maxX + 5 || b.y < vb.minY - 5 || b.y > vb.maxY + 5) continue;
+      const pt = this._ptContainer(b.lat, b.lng);
+      if (!pt) continue;
       ctx.fillStyle = COLORS[b.sex];
       ctx.beginPath();
-      ctx.arc(b.x, b.y, r, 0, Math.PI * 2);
+      ctx.arc(pt.x, pt.y, r, 0, Math.PI * 2);
       ctx.fill();
     }
   };
@@ -722,20 +821,26 @@
     const y = topPad + (tier === 0 ? 14 : 4);
     ctx.save();
     ctx.font = '600 10px Inter, system-ui, sans-serif';
-    ctx.fillStyle = 'rgba(200, 220, 205, 0.9)';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.92)';
+    ctx.strokeStyle = 'rgba(8, 20, 15, 0.75)';
+    ctx.lineWidth = 3;
     ctx.textBaseline = 'top';
     ctx.textAlign = 'left';
     if (tier === 0) {
-      ctx.fillText('Topographic relief · radar-weighted herd field', 10, topPad);
+      const line = 'Esri US satellite · radar-weighted herd overlay';
+      ctx.strokeText(line, 10, topPad);
+      ctx.fillText(line, 10, topPad);
     }
+    ctx.strokeText('West', 10, y);
     ctx.fillText('West', 10, y);
     ctx.textAlign = 'right';
+    ctx.strokeText('East', this.viewW - 10, y);
     ctx.fillText('East', this.viewW - 10, y);
     ctx.restore();
   };
 
   TurnerRangelandMap.prototype._statusLine = function () {
-    const stride = this._visualStride();
+    const stride = visualStride(this._mapZoom());
     const placed = this.bison.length;
     let head = this._statusHead || 'Awaiting telemetry…';
     if (this.stream?.radar) {
@@ -757,19 +862,21 @@
 
   TurnerRangelandMap.prototype._paintBisonLabels = function (ctx, tier, focus) {
     if (tier < 3) return;
-    const vb = this.visibleWorld();
+    const vb = this._boundsXY();
     let n = 0;
-    const cap = this.cam.scale >= 10 ? 80 : 30;
+    const cap = this._mapZoom() >= 11 ? 80 : 30;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
     for (const b of this.bison) {
       if (n >= cap) break;
       if (focus && b.pastureId !== focus) continue;
       if (b.x < vb.minX || b.x > vb.maxX || b.y < vb.minY || b.y > vb.maxY) continue;
+      const pt = this._ptContainer(b.lat, b.lng);
+      if (!pt) continue;
       const sex = ['M', 'F', 'C'][b.sex];
-      ctx.font = `600 ${Math.max(6, 8 / this.cam.scale)}px Inter, system-ui, sans-serif`;
+      ctx.font = '600 8px Inter, system-ui, sans-serif';
       ctx.fillStyle = COLORS[b.sex];
-      ctx.fillText(`${sex} ${b.id}`, b.x, b.y - 2 / this.cam.scale);
+      ctx.fillText(`${sex} ${b.id}`, pt.x, pt.y - 3);
       n++;
     }
   };
@@ -779,12 +886,14 @@
       this._suppressClick = false;
       return;
     }
+    if (e.target.closest('.tb-chart-overlay--top, .tb-chart-panel')) return;
     const sp = this._eventPoint(e);
-    const p = this.screenToWorld(sp.x, sp.y);
     let best = null;
-    let bestD = 14 / this.cam.scale;
+    let bestD = 14;
     for (const b of this.bison) {
-      const d = Math.hypot(b.x - p.x, b.y - p.y);
+      const pt = this._ptContainer(b.lat, b.lng);
+      if (!pt) continue;
+      const d = Math.hypot(pt.x - sp.x, pt.y - sp.y);
       if (d < bestD) {
         bestD = d;
         best = b;
@@ -795,8 +904,11 @@
       this._showBison(best);
       return;
     }
+    const ll = this._containerToLatLng(sp.x, sp.y);
+    if (!ll) return;
+    const xy = this._latLngToXY(ll.lat, ll.lng);
     for (const pasture of this.geo.pastures) {
-      if (pointInPoly(p.x, p.y, pasture.polygon)) {
+      if (pointInPoly(xy.x, xy.y, pasture.polygon)) {
         this.fitPasture(pasture.id);
         this._showPasture(pasture);
         return;
@@ -829,6 +941,7 @@
         if (b.trails.length > TRAIL_LEN) b.trails.shift();
         b.x = nx;
         b.y = ny;
+        this._syncBisonLatLng(b);
       }
     }
 

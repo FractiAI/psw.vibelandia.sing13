@@ -21,6 +21,12 @@
       "role": "Satellite-class reflectivity pass cross-referenced with fence-line radar returns"
     },
     {
+      "id": "basemap-imagery",
+      "name": "Esri World Imagery · US rangeland basemap",
+      "feeds": ["ArcGIS tile service · USDA FSA · USGS · Maxar (free tier, attribution required)"],
+      "role": "Visual chart background — real US satellite/aerial photography under herd overlay"
+    },
+    {
       "id": "power-grid",
       "name": "HIFLD · US Electric Power Transmission Lines",
       "feeds": ["ArcGIS FeatureServer · ≥69 kV lines in Turner network bbox"],

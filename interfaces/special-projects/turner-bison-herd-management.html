@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="/interfaces/styles/turner-bison-herd.css" />
 </head>
 <body>
@@ -31,7 +32,7 @@
 
     <p class="tb-exec-status" id="tb-exec-status" aria-live="polite">Connecting live stream…</p>
     <p class="tb-fetch-err" id="tb-fetch-err" hidden></p>
-    <p class="tb-hint">Live chart below — drag to pan, scroll or +/− to zoom, <strong>hold and slide</strong> to box-zoom a target area. Light green paths are pheromone trails; click a pasture or bison for detail.</p>
+    <p class="tb-hint">Live chart below — <strong>Esri US satellite imagery</strong> (free USDA/USGS layer). Drag to pan, scroll or +/− to zoom; <strong>hold and slide</strong> to box-zoom. Light green paths are pheromone trails; click a pasture or bison for detail.</p>
 
     <div id="tb-map-root" class="tb-map-root"></div>
 
@@ -148,6 +149,7 @@
     </footer>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9TC+kNixYaVNdrplsrk=" crossorigin="" defer></script>
   <script src="/interfaces/scripts/turner-rangeland-map.js" defer></script>
   <script src="/interfaces/scripts/turner-bison-herd.js" defer></script>
 </body>

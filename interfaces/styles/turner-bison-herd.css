@@ -257,26 +257,44 @@
   height: min(72vh, 520px);
   min-height: 300px;
   background: #0a1812;
-}
-
-.tb-chart-canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
   cursor: grab;
   touch-action: none;
 }
 
-.tb-chart-canvas:active {
+.tb-leaflet-map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #0a1812;
+}
+
+.tb-leaflet-map .leaflet-control-attribution {
+  font-size: 0.58rem;
+  background: rgba(10, 24, 18, 0.82);
+  color: #b8c4b8;
+}
+
+.tb-chart-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.tb-chart-stage--marquee {
+  cursor: crosshair;
+}
+
+.tb-chart-stage:active {
   cursor: grabbing;
 }
 
-.tb-chart-canvas--marquee {
-  cursor: crosshair;
-}
-
-.tb-chart-canvas--marquee:active {
-  cursor: crosshair;
+.tb-imagery-credit {
+  opacity: 0.85;
+  font-size: 0.6rem;
 }
 
 .tb-chart-legend {

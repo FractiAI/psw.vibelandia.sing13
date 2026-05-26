@@ -53,7 +53,9 @@
     { "source": "/bulletin-board", "destination": "/interfaces/bulletin-board.html" },
     { "source": "/bulletin-board/", "destination": "/interfaces/bulletin-board.html" },
     { "source": "/special-projects/turner-bison-herd-management", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" },
-    { "source": "/special-projects/turner-bison-herd-management/", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" }
+    { "source": "/special-projects/turner-bison-herd-management/", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" },
+    { "source": "/special-projects/erdos-holographic-aios-audit", "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html" },
+    { "source": "/special-projects/erdos-holographic-aios-audit/", "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html" }
   ],
   "crons": [
     {

@@ -210,6 +210,11 @@
   background: rgba(154, 123, 82, 0.2);
 }
 
+.tb-chart-btn--report {
+  font-size: 0.78rem;
+  min-width: 4.4rem;
+}
+
 .tb-metric-strip {
   display: flex;
   flex-wrap: wrap;
@@ -425,6 +430,19 @@
   font-size: 0.78rem;
   color: #e8e4dc;
   line-height: 1.5;
+}
+
+.tb-report-actions {
+  margin: 0 0 0.65rem;
+}
+
+.tb-report-list {
+  margin-top: 0.7rem;
+}
+
+.tb-report-remark {
+  color: var(--tb-muted);
+  font-size: 0.72rem;
 }
 
 .tb-metric-big {

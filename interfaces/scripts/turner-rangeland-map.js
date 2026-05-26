@@ -35,6 +35,12 @@
       .replace(/>/g, '&gt;');
   }
 
+  function escapeCsv(s) {
+    const txt = String(s ?? '');
+    if (/[",\n]/.test(txt)) return `"${txt.replace(/"/g, '""')}"`;
+    return txt;
+  }
+
   function pointInPoly(x, y, poly) {
     let inside = false;
     for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
@@ -541,6 +547,7 @@
                 <button type="button" class="tb-chart-btn" id="tb-zoom-out" title="Zoom out">−</button>
                 <button type="button" class="tb-chart-btn" id="tb-zoom-in" title="Zoom in">+</button>
                 <button type="button" class="tb-chart-btn" id="tb-fit" title="Full network">Fit</button>
+                <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-herd-report" title="Herd roster report">Report</button>
               </div>
             </header>
             <div class="tb-metric-strip" role="group" aria-label="Live metrics">${metricHtml}</div>
@@ -597,6 +604,7 @@
       if (self.map) self.map.zoomOut();
     });
     this.root.querySelector('#tb-fit').addEventListener('click', () => self.fitNetwork());
+    this.root.querySelector('#tb-herd-report').addEventListener('click', () => self._showHerdReport());
     this.root.querySelector('#tb-chart-panel-x').addEventListener('click', () => self._hidePanel());
 
     this.root.querySelectorAll('[data-metric]').forEach((btn) => {
@@ -1148,12 +1156,178 @@
     this.root.querySelector('#tb-panel-body').innerHTML = html;
   };
 
+  TurnerRangelandMap.prototype._sexLabel = function (sex) {
+    const labels = ['Male', 'Female', 'Calf'];
+    return labels[sex] ?? 'Unknown';
+  };
+
+  TurnerRangelandMap.prototype._bisonStatus = function (b) {
+    const w = Number(b.weightLbs || 0);
+    if (b.sex === SEX.calf) {
+      if (w < 360) return { status: 'Calf monitor', remark: 'Calf low weight - monitor intake and shelter.' };
+      if (w > 620) return { status: 'Calf review', remark: 'Calf above expected weight band - verify cohort age bucket.' };
+      return { status: 'All looks good', remark: 'Calf in expected weight band.' };
+    }
+    if (w < 900) return { status: 'Friction point', remark: 'Adult low weight pocket - check forage and movement pressure.' };
+    if (w > 1600) return { status: 'Incipient issue', remark: 'Adult high weight outlier - validate estimate and sampling drift.' };
+    return { status: 'All looks good', remark: 'Mass estimate and movement pattern are in-range.' };
+  };
+
+  TurnerRangelandMap.prototype._buildHerdReport = function () {
+    const byRanch = new Map();
+    for (const b of this.bison) {
+      const ranch = b.pastureName || b.pastureId || 'Unknown';
+      if (!byRanch.has(ranch)) byRanch.set(ranch, []);
+      byRanch.get(ranch).push(b);
+    }
+    const ranchNames = Array.from(byRanch.keys()).sort((a, b) => a.localeCompare(b));
+    const rows = [];
+    const ranchSummaries = [];
+    let totalWeight = 0;
+    let totalAlerts = 0;
+    let totalCalves = 0;
+    for (const ranch of ranchNames) {
+      const herd = byRanch.get(ranch);
+      herd.sort((a, b) => (a.id < b.id ? -1 : 1));
+      let ranchWeight = 0;
+      let alerts = 0;
+      let calves = 0;
+      for (const b of herd) {
+        const s = this._bisonStatus(b);
+        const sexLabel = this._sexLabel(b.sex);
+        const calfTag = b.sex === SEX.calf ? 'Calf' : '';
+        const weight = Number(b.weightLbs || 0);
+        ranchWeight += weight;
+        totalWeight += weight;
+        if (b.sex === SEX.calf) {
+          calves += 1;
+          totalCalves += 1;
+        }
+        if (s.status !== 'All looks good') {
+          alerts += 1;
+          totalAlerts += 1;
+        }
+        rows.push({
+          ranch,
+          id: b.id,
+          lat: Number(b.lat).toFixed(5),
+          lng: Number(b.lng).toFixed(5),
+          sex: sexLabel,
+          calfTag,
+          weightLbs: Math.round(weight),
+          status: s.status,
+          remark: s.remark,
+        });
+      }
+      const meanWeight = herd.length ? Math.round(ranchWeight / herd.length) : 0;
+      const alertPct = herd.length ? (alerts / herd.length) * 100 : 0;
+      const ranchRemark =
+        alerts === 0
+          ? 'All looks good.'
+          : alertPct >= 10
+            ? 'Incipient issues detected: check forage drawdown, movement pressure, and estimate drift.'
+            : 'Minor friction points present: continue watchlist monitoring.';
+      ranchSummaries.push({
+        ranch,
+        headCount: herd.length,
+        calves,
+        alerts,
+        meanWeight,
+        remark: ranchRemark,
+      });
+    }
+    const totalHead = rows.length;
+    const meanWeightAll = totalHead ? Math.round(totalWeight / totalHead) : 0;
+    const globalRemark =
+      totalAlerts === 0
+        ? 'All looks good across all ranches.'
+        : `${totalAlerts.toLocaleString()} heads flagged for friction points or incipient issues.`;
+    return { rows, ranchSummaries, totals: { totalHead, totalCalves, totalAlerts, meanWeightAll, globalRemark } };
+  };
+
+  TurnerRangelandMap.prototype._downloadHerdReportCsv = function () {
+    const report = this._buildHerdReport();
+    const lines = [
+      'Ranch,ID,Latitude,Longitude,Sex,CalfTag,ApproxWeightLbs,Status,Remark',
+      ...report.rows.map(
+        (r) =>
+          [
+            escapeCsv(r.ranch),
+            escapeCsv(r.id),
+            r.lat,
+            r.lng,
+            escapeCsv(r.sex),
+            escapeCsv(r.calfTag),
+            String(r.weightLbs),
+            escapeCsv(r.status),
+            escapeCsv(r.remark),
+          ].join(','),
+      ),
+      '',
+      'Ranch,HeadCount,Calves,Flagged,MeanWeightLbs,Remarks',
+      ...report.ranchSummaries.map(
+        (r) =>
+          [
+            escapeCsv(r.ranch),
+            String(r.headCount),
+            String(r.calves),
+            String(r.alerts),
+            String(r.meanWeight),
+            escapeCsv(r.remark),
+          ].join(','),
+      ),
+      '',
+      `Global Totals,${report.totals.totalHead},${report.totals.totalCalves},${report.totals.totalAlerts},${report.totals.meanWeightAll},${escapeCsv(report.totals.globalRemark)}`,
+    ];
+    const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const stamp = new Date().toISOString().replace(/[:]/g, '-').replace(/\..+$/, '');
+    a.href = url;
+    a.download = `turner-herd-report-${stamp}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  };
+
+  TurnerRangelandMap.prototype._showHerdReport = function () {
+    const report = this._buildHerdReport();
+    const summaryHtml = report.ranchSummaries
+      .map(
+        (r) => `<li><strong>${escapeHtml(r.ranch)}</strong> — ${r.headCount.toLocaleString()} heads · calves ${r.calves.toLocaleString()} · flagged ${r.alerts.toLocaleString()} · mean ${r.meanWeight.toLocaleString()} lbs<br><span class="tb-report-remark">${escapeHtml(r.remark)}</span></li>`,
+      )
+      .join('');
+    this._showPanel(
+      'Full herd roster report',
+      'By ranch totals, remarks, and downloadable full list',
+      `<div class="tb-report-actions">
+        <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-download-herd-csv">Download full list (.csv)</button>
+      </div>
+      <ul class="tb-detail-list">
+        <li><strong>Total heads</strong> ${report.totals.totalHead.toLocaleString()}</li>
+        <li><strong>Total calves</strong> ${report.totals.totalCalves.toLocaleString()}</li>
+        <li><strong>Flagged heads</strong> ${report.totals.totalAlerts.toLocaleString()}</li>
+        <li><strong>Mean est. weight</strong> ${report.totals.meanWeightAll.toLocaleString()} lbs</li>
+      </ul>
+      <p class="tb-est-note">${escapeHtml(report.totals.globalRemark)}</p>
+      <ul class="tb-detail-list tb-report-list">${summaryHtml}</ul>`,
+    );
+    const btn = this.root.querySelector('#tb-download-herd-csv');
+    if (btn) btn.addEventListener('click', () => this._downloadHerdReportCsv(), { once: true });
+  };
+
   TurnerRangelandMap.prototype._hidePanel = function () {
     this.root.querySelector('#tb-chart-panel').hidden = true;
   };
 
   TurnerRangelandMap.prototype._showBison = function (b) {
-    const sex = ['Male', 'Female', 'Calf'][b.sex];
+    const sexCodes = ['M', 'F', 'C'];
+    const sexLabels = ['Male', 'Female', 'Calf'];
+    const sex =
+      b.sex != null && sexLabels[b.sex] != null ? sexLabels[b.sex] : '—';
+    const sexCode =
+      b.sex != null && sexCodes[b.sex] != null ? sexCodes[b.sex] : '—';
     const w = b.weightLbs ?? estimateBisonWeightLbs(b, {
       meanWeightLbs: this._meanWeightLbs,
       placementSeed: this._radar?.placementSeed,
@@ -1164,6 +1338,7 @@
       'Estimated mass · not scale-weighed · no GPS collar',
       `<ul class="tb-detail-list">
         <li><strong>ID</strong> ${b.id}</li>
+        <li><strong>Sex</strong> ${sex} (${sexCode})</li>
         <li><strong>Est. live weight</strong> ${w.toLocaleString()} lbs (${kg.toLocaleString()} kg)</li>
         <li><strong>Mass method</strong> TESF ${(this._meanWeightLbs || 1100).toLocaleString()} lb cow-unit baseline · sex class · passive radar biomass proxy</li>
         <li><strong>Pheromone trail</strong> ${b.trails.length} samples (light green path)</li>

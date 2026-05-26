@@ -11,8 +11,8 @@ const TrackList = lazy(() =>
 const PlaylistLibrary = lazy(() =>
   import('@/components/catalog/PlaylistLibrary').then((m) => ({ default: m.PlaylistLibrary })),
 );
-const DjStudio = lazy(() =>
-  import('@/components/catalog/DjStudio').then((m) => ({ default: m.DjStudio })),
+const Mp3Uploader = lazy(() =>
+  import('@/components/catalog/Mp3Uploader').then((m) => ({ default: m.Mp3Uploader })),
 );
 
 function TabPane({ children }: { children: ReactNode }) {
@@ -25,7 +25,6 @@ import { PLAIN } from '@/lib/plainSpeak';
 import { BridgeTowerBillboard } from '@/components/BridgeTowerBillboard';
 import { BuildNoticeBanner } from '@/components/BuildNoticeBanner';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
-import { isIOSDevice } from '@/lib/devicePlayback';
 import { pauseSimpleAudio } from '@/lib/simplePlayback';
 
 export function BridgePage() {
@@ -43,9 +42,6 @@ export function BridgePage() {
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
-  const setTrack = usePlaybackStore((s) => s.setTrack);
-  const setPlaying = usePlaybackStore((s) => s.setPlaying);
-
   const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
   const showMembersOffer = !isPassenger && !captainUnlocked;
@@ -70,9 +66,17 @@ export function BridgePage() {
   useEffect(() => {
     if (location.pathname === '/dj' || location.hash === '#/dj') {
       setDjMode(true);
-    } else if (location.pathname === '/playlists' || location.hash === '#/playlists') {
-      setDjMode(false);
+      pauseSimpleAudio();
+      usePlaybackStore.getState().setPlaying(false);
+      usePlaybackStore.getState().setTrack(null);
+      document.documentElement.classList.add('qf-mp3-upload-page');
+    } else {
+      document.documentElement.classList.remove('qf-mp3-upload-page');
+      if (location.pathname === '/playlists' || location.hash === '#/playlists') {
+        setDjMode(false);
+      }
     }
+    return () => document.documentElement.classList.remove('qf-mp3-upload-page');
   }, [location.pathname, location.hash, setDjMode]);
 
   const isPlaylistsView =
@@ -87,17 +91,9 @@ export function BridgePage() {
     navigate('/dj', { replace: true });
   };
 
-  const handleUploadSuccess = (_trackId: string) => {
-    pauseSimpleAudio();
-    setPlaying(false);
-    setTrack(null);
+  const handleUploadSuccess = () => {
     setActivePlaylist(MASTER_PLAYLIST_ID);
-    if (isIOSDevice()) {
-      /* Stay on Upload — navigating during picker teardown causes Safari blue-screen hang. */
-      return;
-    }
-    setDjMode(false);
-    navigate('/bridge', { replace: true });
+    /* Stay on Upload tab — user opens Listen when ready (avoids iOS picker teardown hang). */
   };
 
   const goListen = () => {
@@ -217,7 +213,7 @@ export function BridgePage() {
             </TabPane>
           ) : djMode ? (
             <TabPane>
-              <DjStudio onUploadSuccess={handleUploadSuccess} />
+              <Mp3Uploader onUploaded={handleUploadSuccess} />
             </TabPane>
           ) : (
             <TabPane>

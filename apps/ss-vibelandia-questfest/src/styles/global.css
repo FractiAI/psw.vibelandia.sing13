@@ -3498,8 +3498,173 @@ a.boarding-pay-open {
 }
 
 html.qf-upload-tab,
-html.qf-upload-tab body {
+html.qf-upload-tab body,
+html.qf-mp3-upload-page,
+html.qf-mp3-upload-page body {
   background: #06080d;
+}
+
+html.qf-mp3-upload-page .sp-playback-stack {
+  display: none !important;
+}
+
+html.qf-mp3-upload-page .sp-scroll {
+  padding-bottom: 1.5rem;
+}
+
+/* —— MP3-only uploader (replaces legacy DJ studio on Upload tab) —— */
+.mp3-uploader {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 0.5rem 0 2rem;
+}
+
+.mp3-uploader-head {
+  margin-bottom: 1.25rem;
+}
+
+.mp3-uploader-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2dd4bf;
+}
+
+.mp3-uploader-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fef3c7;
+}
+
+.mp3-uploader-desc {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+.mp3-uploader-warn {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.8rem;
+  color: #fca5a5;
+  background: rgba(127, 29, 29, 0.25);
+  border: 1px solid rgba(248, 113, 113, 0.35);
+  border-radius: 8px;
+}
+
+.mp3-uploader-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.mp3-uploader-card {
+  padding: 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 12px;
+  background: rgba(15, 20, 28, 0.95);
+}
+
+.mp3-uploader-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.mp3-uploader-text {
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  background: #0a0a0a;
+  color: #f1f5f9;
+  font: inherit;
+}
+
+.mp3-uploader-file-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mp3-uploader-file-name {
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.mp3-uploader-file-name--on {
+  color: #e2e8f0;
+}
+
+.mp3-uploader-file-name strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #fef3c7;
+}
+
+.mp3-uploader-meta {
+  display: block;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.mp3-uploader-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: transparent;
+  color: #fef3c7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.mp3-uploader-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mp3-uploader-btn--ghost:hover:not(:disabled) {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.mp3-uploader-btn--tiny {
+  padding: 0.45rem 0.65rem;
+  font-size: 0.68rem;
+}
+
+.mp3-uploader-btn--primary {
+  width: 100%;
+  border-color: #d4af37;
+  background: #d4af37;
+  color: #0a0f1a;
+}
+
+.mp3-uploader-btn--primary:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.mp3-uploader-status {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #b8e8c4;
+  font-weight: 500;
 }
 
 html.qf-upload-tab .sp-playback-stack {

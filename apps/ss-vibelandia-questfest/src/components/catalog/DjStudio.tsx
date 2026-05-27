@@ -528,8 +528,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                 multiple
                 disabled={busy}
                 onChange={(e) => {
-                  const raw = Array.from(e.target.files ?? []);
-                  e.target.value = '';
+                  const raw = e.target.files?.length ? Array.from(e.target.files) : [];
                   if (!raw.length) {
                     setMultiFiles([]);
                     setStatus('Ready to upload.');
@@ -537,7 +536,10 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                   }
                   setMsg(null);
                   setMsgKind('idle');
-                  deferAfterFilePicker(() => void processPickedFiles(raw));
+                  deferAfterFilePicker(() => {
+                    e.target.value = '';
+                    void processPickedFiles(raw);
+                  });
                 }}
               />
               <div className="spotify-file-pick-row">

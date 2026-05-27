@@ -143,21 +143,33 @@
     window.setTimeout(() => URL.revokeObjectURL(url), 2000);
   }
 
+  function snapshotLabel(series, dayDate) {
+    if (series.range?.start === series.range?.end) return 'snapshot';
+    if (dayDate === series.range?.start) return 'start';
+    if (dayDate === series.range?.end) return 'end';
+    return dayDate;
+  }
+
   function buildRangeTxtBlob(series) {
+    const snapshots = series.daily || [];
     const lines = [
       '# Turner Enterprise herd report — MODELED OUTPUT (not collar GPS or scale weights)',
       '# Positions and weights are generated from public feeds + registry baselines.',
       '# Collaboration with Turner (pastures, fence truth, baselines, validation) could greatly improve accuracy.',
       `# Range: ${series.range.start} to ${series.range.end}`,
-      `# Sample: ${series.sampleCount} heads · soil: ${series.soilHistory?.source || '—'}`,
+      `# Export: location and estimated weight at range start and end only (not each day in between).`,
+      `# Sample: ${series.sampleCount} heads per snapshot · soil: ${series.soilHistory?.source || '—'}`,
       '# Fields separated by " | "',
-      '# date | id | pastureId | pastureName | schematicX | schematicY | lat_deg | lng_deg | estWeightLbs | radarFidelityPct',
+      '# snapshot | utc_date | id | pastureId | pastureName | schematicX | schematicY | lat_deg | lng_deg | estWeightLbs | radarFidelityPct',
     ];
-    for (const d of series.daily) {
+    for (const d of snapshots) {
       const fid = d.radar?.fidelityPct ?? '';
+      const snap = snapshotLabel(series, d.date);
+      lines.push(`# --- ${snap.toUpperCase()} ${d.date} · mean est. ${d.herdMeanWeightLbs ?? '—'} lbs ---`);
       for (const a of d.animals || []) {
         lines.push(
           [
+            snap,
             d.date,
             plainField(a.id),
             plainField(a.pastureId),
@@ -176,7 +188,7 @@
   }
 
   async function fetchRangeSeries(start, end, sample) {
-    const url = `${API}?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&sample=${encodeURIComponent(String(sample))}`;
+    const url = `${API}?start=${encodeURIComponent(start)}&end=${encodeURIComponent(end)}&sample=${encodeURIComponent(String(sample))}&snapshots=1`;
     const ctrl = new AbortController();
     const timer = window.setTimeout(() => ctrl.abort(), 120000);
     try {
@@ -203,7 +215,12 @@
     const blob = buildRangeTxtBlob(series);
     triggerBlobDownload(blob, `turner-herd-${series.range.start}_to_${series.range.end}.txt`);
     if (statusEl) {
-      statusEl.textContent = `Downloaded · ${series.daily.length} days · ${series.sampleCount} heads per day.`;
+      const snapN = series.daily?.length ?? 0;
+      const snapLabel =
+        series.range?.start === series.range?.end
+          ? '1 snapshot (start = end)'
+          : `${snapN} snapshots (start + end)`;
+      statusEl.textContent = `Downloaded · ${snapLabel} · ${series.sampleCount} heads each.`;
     }
     const live = $('#tb-exec-status');
     if (live) {

@@ -4,6 +4,7 @@
  *   refresh=1 — force new ingest cycle.
  *   start=YYYY-MM-DD&end=YYYY-MM-DD — date-range model synthesis (soil history × radar fuse).
  *   sample=96 — optional sample head count for range mode (8–128).
+ *   snapshots=1 — range mode: only start + end day herd snapshots (default for exports).
  */
 module.exports = async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json');
@@ -35,7 +36,18 @@ module.exports = async function handler(req, res) {
       let sample = parseInt(String(q.sample || '96'), 10);
       if (!Number.isFinite(sample)) sample = 96;
       sample = Math.min(Math.max(sample, 8), MAX_SAMPLE_HEADS);
-      const series = await runTurnerBisonTimeseries({ startDate: start, endDate: end, sampleSize: sample });
+      const snapshotsOnly =
+        q.daily === '1' || q.daily === 'true'
+          ? false
+          : q.snapshots === '0' || q.snapshots === 'false'
+            ? false
+            : true;
+      const series = await runTurnerBisonTimeseries({
+        startDate: start,
+        endDate: end,
+        sampleSize: sample,
+        snapshotsOnly,
+      });
       if (!series.ok) {
         return res.status(400).json({
           ok: false,

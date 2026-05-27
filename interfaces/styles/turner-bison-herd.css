@@ -1037,6 +1037,11 @@
   gap: 0.25rem;
 }
 
+.tb-range-input[readonly] {
+  cursor: pointer;
+  caret-color: transparent;
+}
+
 .tb-download-status {
   margin: 0 0 0.5rem;
   font-size: 0.78rem;

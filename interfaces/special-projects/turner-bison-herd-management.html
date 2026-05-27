@@ -47,14 +47,14 @@
     <form method="dialog" class="tb-download-form" id="tb-download-form">
       <h2 class="tb-download-title" id="tb-download-dialog-title">Download herd report</h2>
       <p class="tb-download-desc">
-        Choose a <strong>UTC date range</strong>. You receive one plain-text file with a <strong>start</strong> and <strong>end</strong> snapshot only — each sampled animal’s location and estimated weight at the range start date and at the end date (not every day in between). Sample size 8–128 heads per snapshot.
+        Defaults to <strong>yesterday → today (UTC)</strong>. Tap a date field to change it. The file lists each animal at <strong>start</strong> and <strong>end</strong> only: <strong>ID, sex, calf (yes/no), est. weight (lbs), est. location (lat/lng)</strong>. Sample size 8–128 heads per snapshot.
       </p>
       <div class="tb-download-fields">
         <label>Start date
-          <input type="date" id="tb-dl-start" class="tb-range-input" required />
+          <input type="date" id="tb-dl-start" class="tb-range-input" required autocomplete="off" />
         </label>
         <label>End date
-          <input type="date" id="tb-dl-end" class="tb-range-input" required />
+          <input type="date" id="tb-dl-end" class="tb-range-input" required autocomplete="off" />
         </label>
         <label class="tb-range-sample">Sample heads
           <input type="number" id="tb-dl-sample" min="8" max="128" value="96" class="tb-range-input tb-range-input--num" required />

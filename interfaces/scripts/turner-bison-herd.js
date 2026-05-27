@@ -117,12 +117,44 @@
     return d.toISOString().slice(0, 10);
   }
 
+  /** Default range: yesterday → today (UTC), one-day span ending today. */
   function setDefaultDateInputs(startEl, endEl) {
     if (!endEl || !startEl) return;
     const now = new Date();
     endEl.value = isoDateUTC(now);
-    const sDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - 14));
+    const sDate = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() - 1));
     startEl.value = isoDateUTC(sDate);
+  }
+
+  /** Avoid mobile auto-opening the native date picker when the dialog opens. */
+  function armDateInputNoAutoPicker(el) {
+    if (!el || el.type !== 'date') return;
+    el.readOnly = true;
+    el.setAttribute('inputmode', 'none');
+    const unlock = () => {
+      el.readOnly = false;
+    };
+    el.addEventListener('pointerdown', unlock, { passive: true });
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') unlock();
+    });
+  }
+
+  function lockDateInputsForDialog(startEl, endEl) {
+    for (const el of [startEl, endEl]) {
+      if (el) el.readOnly = true;
+    }
+  }
+
+  function sexLabel(sex) {
+    if (sex === 0) return 'Male';
+    if (sex === 1) return 'Female';
+    if (sex === 2) return 'Calf';
+    return 'Unknown';
+  }
+
+  function calfFlag(sex) {
+    return sex === 2 ? 'yes' : 'no';
   }
 
   function plainField(s) {
@@ -160,10 +192,9 @@
       `# Export: location and estimated weight at range start and end only (not each day in between).`,
       `# Sample: ${series.sampleCount} heads per snapshot · soil: ${series.soilHistory?.source || '—'}`,
       '# Fields separated by " | "',
-      '# snapshot | utc_date | id | pastureId | pastureName | schematicX | schematicY | lat_deg | lng_deg | estWeightLbs | radarFidelityPct',
+      '# snapshot | utc_date | id | sex | calf | est_weight_lbs | est_lat_deg | est_lng_deg | pasture',
     ];
     for (const d of snapshots) {
-      const fid = d.radar?.fidelityPct ?? '';
       const snap = snapshotLabel(series, d.date);
       lines.push(`# --- ${snap.toUpperCase()} ${d.date} · mean est. ${d.herdMeanWeightLbs ?? '—'} lbs ---`);
       for (const a of d.animals || []) {
@@ -172,14 +203,12 @@
             snap,
             d.date,
             plainField(a.id),
-            plainField(a.pastureId),
-            plainField(a.pastureName),
-            String(a.x),
-            String(a.y),
+            plainField(sexLabel(a.sex)),
+            calfFlag(a.sex),
+            a.weightLbs != null ? String(Math.round(a.weightLbs)) : '',
             a.lat != null ? String(a.lat) : '',
             a.lng != null ? String(a.lng) : '',
-            String(a.weightLbs),
-            String(fid),
+            plainField(a.pastureName || a.pastureId || ''),
           ].join(' | '),
         );
       }
@@ -243,6 +272,12 @@
     if (!dialog || !form) return;
 
     setDefaultDateInputs(startEl, endEl);
+    armDateInputNoAutoPicker(startEl);
+    armDateInputNoAutoPicker(endEl);
+
+    dialog.addEventListener('close', () => {
+      lockDateInputsForDialog(startEl, endEl);
+    });
 
     cancel?.addEventListener('click', () => {
       dialog.close('cancel');
@@ -306,10 +341,18 @@
       return;
     }
     setDefaultDateInputs(startEl, endEl);
+    lockDateInputsForDialog(startEl, endEl);
     if (errEl) errEl.hidden = true;
     if (statusEl) statusEl.hidden = true;
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else window.alert('Your browser does not support the download dialog. Try a current Chrome, Edge, Firefox, or Safari.');
+    if (typeof dialog.showModal === 'function') {
+      dialog.showModal();
+      const focusBtn = document.getElementById('tb-dl-submit');
+      requestAnimationFrame(() => {
+        focusBtn?.focus({ preventScroll: true });
+      });
+    } else {
+      window.alert('Your browser does not support the download dialog. Try a current Chrome, Edge, Firefox, or Safari.');
+    }
   }
 
   window.TurnerRangelandUI = {

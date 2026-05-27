@@ -4,20 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0f261c" />
-  <title>Turner rangeland · live chart &amp; herd report</title>
+  <title>Turner Enterprise · Rangeland herd intelligence</title>
   <meta name="description" content="Live modeled herd chart and downloadable reports for Turner Enterprise scale rangeland — fused public data; not collar GPS." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="/interfaces/styles/turner-bison-herd.css" />
 </head>
 <body>
   <div class="tb-wrap tb-wrap--simple">
-    <header class="tb-simple-header">
-      <h1 class="tb-simple-title">Turner rangeland</h1>
-      <p class="tb-simple-sub">Live chart · modeled herd · date-range export</p>
+    <header class="tb-brand" aria-label="Turner Enterprise">
+      <p class="tb-brand-entity">Turner Enterprises</p>
+      <h1 class="tb-brand-title">Rangeland herd intelligence</h1>
+      <p class="tb-brand-tagline">Live modeled chart · passive fuse · exportable herd reports</p>
+      <p class="tb-brand-doc">Prepared for Turner scale operations · public-data synthesis</p>
     </header>
 
     <section class="tb-truth" aria-label="What this data is">
@@ -25,27 +27,6 @@
         <strong>Modeled output.</strong> Map positions and weights are <strong>generated</strong> by fusing public remote sensing, receive-only radio statistics (mapped to fence geometry), and published registry baselines — <strong>not</strong> GPS collars, scales, or Turner private telemetry.
         <strong>Collaboration</strong> with Turner teams (accurate pastures, fence truth, seasonal baselines, optional validation windows) could <strong>greatly increase</strong> usefulness and accuracy.
       </p>
-    </section>
-
-    <section class="tb-range-panel tb-range-panel--simple" aria-labelledby="tb-range-heading">
-      <h2 class="tb-range-heading" id="tb-range-heading">Date range report</h2>
-      <p class="tb-range-note tb-range-note--short">
-        UTC dates · one plain-text file with <strong>every sampled animal</strong> for <strong>each day</strong> in the range (same modeled rules as live). Sample size 8–128 heads for performance.
-      </p>
-      <div class="tb-range-row">
-        <label>Start <input type="date" id="tb-range-start" class="tb-range-input" /></label>
-        <label>End <input type="date" id="tb-range-end" class="tb-range-input" /></label>
-        <label class="tb-range-sample">Sample <input type="number" id="tb-range-sample" min="8" max="128" value="96" class="tb-range-input tb-range-input--num" /></label>
-        <button type="button" class="tb-chart-btn" id="tb-range-load">Load range</button>
-        <button type="button" class="tb-chart-btn tb-chart-btn--ghost" id="tb-range-live">Live chart</button>
-        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-range-txt" disabled>Download range (.txt)</button>
-      </div>
-      <div class="tb-range-slider-row" id="tb-range-slider-wrap" hidden>
-        <label for="tb-range-day">Day <span id="tb-range-day-label">—</span></label>
-        <input type="range" id="tb-range-day" min="0" max="0" value="0" />
-      </div>
-      <p class="tb-range-status" id="tb-range-status" aria-live="polite"></p>
-      <p class="tb-range-err" id="tb-range-err" hidden></p>
     </section>
 
     <p class="tb-live-line" id="tb-exec-status" aria-live="polite">Loading…</p>
@@ -61,6 +42,32 @@
       · <a href="mailto:valetpru@gmail.com?subject=Turner%20rangeland">Contact</a>
     </footer>
   </div>
+
+  <dialog class="tb-download-dialog" id="tb-download-dialog" aria-labelledby="tb-download-dialog-title">
+    <form method="dialog" class="tb-download-form" id="tb-download-form">
+      <h2 class="tb-download-title" id="tb-download-dialog-title">Download herd report</h2>
+      <p class="tb-download-desc">
+        Choose a <strong>UTC date range</strong>. You receive one plain-text file with every sampled animal for each day in the range (same modeled rules as the live chart). Sample size 8–128 heads for performance.
+      </p>
+      <div class="tb-download-fields">
+        <label>Start date
+          <input type="date" id="tb-dl-start" class="tb-range-input" required />
+        </label>
+        <label>End date
+          <input type="date" id="tb-dl-end" class="tb-range-input" required />
+        </label>
+        <label class="tb-range-sample">Sample heads
+          <input type="number" id="tb-dl-sample" min="8" max="128" value="96" class="tb-range-input tb-range-input--num" required />
+        </label>
+      </div>
+      <p class="tb-download-status" id="tb-download-status" aria-live="polite" hidden></p>
+      <p class="tb-download-err" id="tb-download-err" hidden></p>
+      <div class="tb-download-actions">
+        <button type="submit" class="tb-chart-btn tb-chart-btn--download" id="tb-dl-submit">Download .txt</button>
+        <button type="button" class="tb-chart-btn tb-chart-btn--ghost" id="tb-dl-cancel">Cancel</button>
+      </div>
+    </form>
+  </dialog>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
   <script src="/interfaces/scripts/turner-rangeland-map.js" defer></script>

@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from 'react';
+import { useId, useState } from 'react';
 import { formatFileSize } from '@/lib/formatDuration';
 import { useCatalogStore } from '@/stores/catalogStore';
 import {
@@ -22,8 +22,6 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 import {
   filterUploadableFiles,
   formatUploadRejectSummary,
-  probeAudioDurationSecWithTimeout,
-  MAX_MEDIA_UPLOAD_BYTES,
   MAX_VIDEO_DURATION_SEC,
 } from '@/lib/mediaUploadLimits';
 import {
@@ -45,12 +43,9 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const listAllTracks = useCatalogStore((s) => s.listAllTracks);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
 
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const singleFileInputId = useId();
-  const multiFileInputId = useId();
+  const uploadFileInputId = useId();
   const coverInputId = useId();
-  const [fileInputKey, setFileInputKey] = useState(0);
-  const [multiInputKey, setMultiInputKey] = useState(0);
+  const [uploadInputKey, setUploadInputKey] = useState(0);
   const [multiFiles, setMultiFiles] = useState<File[]>([]);
 
   const [title, setTitle] = useState('');
@@ -59,7 +54,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
   const [genre, setGenre] = useState('');
   const [coverFile, setCoverFile] = useState<File | null>(null);
   const [coverPreview, setCoverPreview] = useState<string | undefined>();
-  const [file, setFile] = useState<File | null>(null);
+  const [coverInputKey, setCoverInputKey] = useState(0);
   const [busy, setBusy] = useState(false);
   const [statusLine, setStatusLine] = useState('Ready to upload.');
   const [msg, setMsg] = useState<string | null>(null);
@@ -110,14 +105,9 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     }
   };
 
-  const resetFilePicker = () => {
-    setFile(null);
-    setFileInputKey((k) => k + 1);
-  };
-
-  const resetMultiPicker = () => {
+  const resetUploadPicker = () => {
     setMultiFiles([]);
-    setMultiInputKey((k) => k + 1);
+    setUploadInputKey((k) => k + 1);
   };
 
   const armUploadSafe = () => {
@@ -148,7 +138,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     if (!newFiles.length) {
       setStatus('Nothing new to upload.');
       showMsg(formatAllDuplicatesMessage(duplicates), 'info');
-      resetFilePicker();
+      resetUploadPicker();
       return;
     }
 
@@ -169,7 +159,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
         'error',
       );
       setBusy(false);
-      resetFilePicker();
+      resetUploadPicker();
       return;
     }
 
@@ -181,7 +171,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
 
     try {
       const { added, addedTrackIds, coverError } = await importMediaFiles(uploadable, {
-        title: opts?.title,
+        title: uploadable.length === 1 ? opts?.title : undefined,
         artist: artist.trim() || DEFAULT_ARTIST,
         description: description.trim() || undefined,
         genre: genre.trim() || undefined,
@@ -216,7 +206,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       setDescription('');
       setGenre('');
       resetCoverPicker();
-      resetFilePicker();
+      resetUploadPicker();
       const playId = addedTrackIds[0];
       if (playId) {
         if (iosUpload) {
@@ -273,73 +263,44 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
     }
   };
 
-  const uploadSingleFile = async (picked: File) => {
-    const displayTitle = title.trim() || titleFromFileName(picked.name);
-
-    const { duplicates } = classifyFilesAgainstCatalog([picked], tracks);
-    if (duplicates.length) {
-      setStatus('Already in catalog.');
-      showMsg(formatAllDuplicatesMessage(duplicates), 'info');
-      resetFilePicker();
-      return;
-    }
-    if (picked.size > MAX_MEDIA_UPLOAD_BYTES) {
-      setStatus('File too large.');
-      showMsg('This file is over the ~600 MB upload limit. Use a shorter or more compressed export.', 'error');
-      return;
-    }
-    if (!iosUpload) {
-      const durationSec = await probeAudioDurationSecWithTimeout(picked, 8_000);
-      if (durationSec !== null && durationSec > MAX_VIDEO_DURATION_SEC) {
-        setStatus('Video too long.');
-        showMsg(
-          `Video is ${Math.ceil(durationSec / 60)} minutes — max is ${MAX_VIDEO_DURATION_SEC / 60} minutes. Trim and try again.`,
-          'error',
-        );
-        return;
-      }
-    }
-
-    if (!title.trim()) setTitle(displayTitle);
-    setStatus(`Uploading “${displayTitle}”…`);
-    await runImport([picked], { title: displayTitle });
-  };
-
-  const handleSingleUpload = async () => {
-    if (!file) {
-      setStatus('Pick a file first.');
-      showMsg('Pick an audio or video file first.', 'error');
-      return;
-    }
-    const go = () => void uploadSingleFile(file);
-    if (iosUpload) deferAfterFilePicker(go);
-    else go();
-  };
-
-  const handleMultiFilePick = async (fileList: FileList | null) => {
-    if (!fileList?.length) {
+  /** `raw` must be a snapshot (e.g. `Array.from(input.files)`) — not a live `FileList` after the input resets. */
+  const processPickedFiles = async (raw: File[]) => {
+    if (!raw.length) {
       setMultiFiles([]);
       return;
     }
     setStatus('Reading selected files…');
-    const files = await collectMediaFiles(fileList);
+    const files = await collectMediaFiles(raw);
     setMultiFiles(files);
     if (!files.length) {
       setStatus('No media in selection.');
       showMsg('No audio or video files in that selection.', 'error');
       return;
     }
+    if (files.length === 1 && !title.trim()) {
+      setTitle(titleFromFileName(files[0]!.name));
+    }
+    const importOpts =
+      files.length === 1 ? { title: title.trim() || titleFromFileName(files[0]!.name) } : {};
+
     if (iosUpload) {
       setStatus(`${files.length} file${files.length === 1 ? '' : 's'} ready — tap Upload below.`);
       setMsg(null);
       setMsgKind('idle');
       return;
     }
+    if (!serverReady) {
+      setStatus('Upload not available.');
+      showMsg(
+        'Server upload is not configured on this deployment. Check Vercel Blob + catalog secrets.',
+        'error',
+      );
+      return;
+    }
     setStatus(`Uploading ${files.length} file${files.length === 1 ? '' : 's'}…`);
     setMsg(null);
     setMsgKind('idle');
-    await runImport(files);
-    resetMultiPicker();
+    await runImport(files, importOpts);
   };
 
   const handleMultiUpload = async () => {
@@ -348,10 +309,13 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
       showMsg('Select one or more audio or video files first.', 'error');
       return;
     }
+    const importOpts =
+      multiFiles.length === 1
+        ? { title: title.trim() || titleFromFileName(multiFiles[0]!.name) }
+        : {};
     const go = async () => {
       setStatus(`Uploading ${multiFiles.length} file${multiFiles.length === 1 ? '' : 's'}…`);
-      await runImport(multiFiles);
-      resetMultiPicker();
+      await runImport(multiFiles, importOpts);
     };
     if (iosUpload) deferAfterFilePicker(() => void go());
     else void go();
@@ -457,14 +421,20 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
 
       <div className="spotify-dj-grid">
         <article className="spotify-dj-card spotify-dj-card--wide">
-          <h3>1 · One file (custom title)</h3>
+          <h3>Upload tracks</h3>
+          <p className="spotify-main-desc" style={{ marginBottom: '0.75rem' }}>
+            Choose <strong>one or many</strong> audio files in the same dialog (multi-select on desktop). When you pick
+            exactly one file, the fields below apply to that upload; with several files, each track title comes from the
+            file name. Duplicates are skipped with a clear note. On iPhone/iPad, tap <strong>Upload</strong> after you
+            choose files.
+          </p>
           <label className="spotify-field">
             Title
             <input
               className="spotify-input"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Shown in the player when playing"
+              placeholder="Used when exactly one file is selected"
               disabled={busy}
             />
           </label>
@@ -543,119 +513,35 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               </div>
             </div>
             <span className="spotify-field-hint">
-              Any standard photo (JPEG, PNG, WebP, iPhone HEIC) · saved with the track
+              Any standard photo (JPEG, PNG, WebP, iPhone HEIC) · saved with the track when you upload a single file
             </span>
           </div>
           <div className="spotify-field">
-            <span>Audio or video</span>
+            <span>Audio files</span>
             <div className="spotify-file-pick">
               <input
-                key={fileInputKey}
-                id={singleFileInputId}
-                ref={fileInputRef}
+                key={uploadInputKey}
+                id={uploadFileInputId}
                 className="spotify-file-pick-input"
                 type="file"
                 accept={mediaAccept}
+                multiple
                 disabled={busy}
                 onChange={(e) => {
-                  const picked = e.target.files?.[0] ?? null;
-                  setFile(picked);
-                  if (!picked) {
+                  const raw = Array.from(e.target.files ?? []);
+                  e.target.value = '';
+                  if (!raw.length) {
+                    setMultiFiles([]);
                     setStatus('Ready to upload.');
                     return;
                   }
                   setMsg(null);
                   setMsgKind('idle');
-                  if (!serverReady) {
-                    setStatus('Upload not available.');
-                    showMsg(
-                      'Server upload is not configured on this deployment. Check Vercel Blob + catalog secrets.',
-                      'error',
-                    );
-                    return;
-                  }
-                  if (iosUpload) {
-                    setStatus('File ready — tap Upload below.');
-                    showMsg('iPhone: tap Upload below after the picker closes. Stay on this tab until finished.', 'info');
-                    return;
-                  }
-                  deferAfterFilePicker(() => void uploadSingleFile(picked));
+                  deferAfterFilePicker(() => void processPickedFiles(raw));
                 }}
               />
               <div className="spotify-file-pick-row">
-                <label htmlFor={singleFileInputId} className="spotify-btn spotify-btn--ghost">
-                  Choose file
-                </label>
-                {file && (
-                  <button
-                    type="button"
-                    className="spotify-btn spotify-btn--tiny"
-                    disabled={busy}
-                    onClick={() => {
-                      resetFilePicker();
-                      setStatus('Ready to upload.');
-                    }}
-                  >
-                    Clear
-                  </button>
-                )}
-              </div>
-              <p
-                className={`spotify-file-pick-name${file ? ' spotify-file-pick-name--selected' : ''}`}
-                aria-live="polite"
-              >
-                {file ? (
-                  <>
-                    <strong>{file.name}</strong>
-                    <span className="spotify-file-pick-meta">{formatFileSize(file.size)}</span>
-                  </>
-                ) : (
-                  'No file selected yet'
-                )}
-              </p>
-            </div>
-          </div>
-          <button
-            type="button"
-            className="spotify-btn spotify-btn--gold"
-            disabled={busy || !serverReady || !file}
-            onClick={() => void handleSingleUpload()}
-          >
-            {busy ? 'Uploading…' : file ? (iosUpload ? 'Upload' : 'Upload again · go to Listen') : iosUpload ? 'Upload' : 'Upload · go to Listen'}
-          </button>
-        </article>
-
-        <article className="spotify-dj-card spotify-dj-card--wide">
-          <h3>2 · Many files at once</h3>
-          <p className="spotify-main-desc" style={{ marginBottom: '0.75rem' }}>
-            Uses each file name as the track title. Duplicates are skipped with a clear note.
-          </p>
-          <div className="spotify-field">
-            <span>Select multiple MP3 / WAV files</span>
-            <div className="spotify-file-pick">
-              <input
-                key={multiInputKey}
-                id={multiFileInputId}
-                className="spotify-file-pick-input"
-                type="file"
-                accept={mediaAccept}
-                multiple
-                disabled={busy || !serverReady}
-                onChange={(e) => {
-                  const list = e.target.files;
-                  if (!list?.length) {
-                    setMultiFiles([]);
-                    return;
-                  }
-                  if (iosUpload) {
-                    deferAfterFilePicker(() => void handleMultiFilePick(list));
-                    return;
-                  }
-                  deferAfterFilePicker(() => void handleMultiFilePick(list));
-                }}
-              />
-              <div className="spotify-file-pick-row">
-                <label htmlFor={multiFileInputId} className="spotify-btn spotify-btn--ghost">
+                <label htmlFor={uploadFileInputId} className="spotify-btn spotify-btn--ghost">
                   Choose files
                 </label>
                 {multiFiles.length > 0 && (
@@ -664,7 +550,7 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
                     className="spotify-btn spotify-btn--tiny"
                     disabled={busy}
                     onClick={() => {
-                      resetMultiPicker();
+                      resetUploadPicker();
                       setStatus('Ready to upload.');
                     }}
                   >
@@ -708,7 +594,11 @@ export function DjStudio({ onUploadSuccess }: DjStudioProps) {
               disabled={busy || !serverReady}
               onClick={() => void handleMultiUpload()}
             >
-              {busy ? 'Uploading…' : `Upload ${multiFiles.length} again`}
+              {busy
+                ? 'Uploading…'
+                : iosUpload
+                  ? `Upload ${multiFiles.length} file${multiFiles.length === 1 ? '' : 's'}`
+                  : `Upload ${multiFiles.length} file${multiFiles.length === 1 ? '' : 's'} again`}
             </button>
           )}
           {!iosUpload && (

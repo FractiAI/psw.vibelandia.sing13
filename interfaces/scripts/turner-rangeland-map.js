@@ -648,7 +648,7 @@
                 <button type="button" class="tb-chart-btn" id="tb-zoom-in" title="Zoom in">+</button>
                 <button type="button" class="tb-chart-btn" id="tb-fit" title="Full network">Fit</button>
                 <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-herd-report" title="Summary by ranch">Ranches</button>
-                <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd" title="Plain-text herd list">Download herd</button>
+                <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd" title="Choose dates and download plain-text herd report">Download herd</button>
               </div>
             </header>
             <div class="tb-metric-strip" role="group" aria-label="Live metrics">${metricHtml}</div>
@@ -707,7 +707,17 @@
     this.root.querySelector('#tb-fit').addEventListener('click', () => self.fitNetwork());
     this.root.querySelector('#tb-herd-report').addEventListener('click', () => self._showHerdReport());
     const dlToolbar = this.root.querySelector('#tb-download-herd');
-    if (dlToolbar) dlToolbar.addEventListener('click', () => self.downloadHerdReport());
+    if (dlToolbar) {
+      dlToolbar.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        if (global.TurnerRangelandUI && typeof global.TurnerRangelandUI.openDownloadDialog === 'function') {
+          global.TurnerRangelandUI.openDownloadDialog();
+          return;
+        }
+        self.downloadHerdReport();
+      });
+    }
     this.root.querySelector('#tb-chart-panel-x').addEventListener('click', () => self._hidePanel());
 
     this.root.querySelectorAll('[data-metric]').forEach((btn) => {
@@ -1476,7 +1486,7 @@
       'Herd summary',
       'Modeled totals by ranch — not verified inventory',
       `<div class="tb-report-actions">
-        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd-txt">Download full herd list (.txt)</button>
+        <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd-txt">Download herd report (.txt)</button>
       </div>
       <ul class="tb-detail-list">
         <li><strong>Total heads</strong> ${report.totals.totalHead.toLocaleString()}</li>
@@ -1488,7 +1498,21 @@
       <ul class="tb-detail-list tb-report-list">${summaryHtml}</ul>`,
     );
     const btn = this.root.querySelector('#tb-download-herd-txt');
-    if (btn) btn.addEventListener('click', () => this.downloadHerdReport(), { once: true });
+    if (btn) {
+      btn.addEventListener(
+        'click',
+        (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (global.TurnerRangelandUI && typeof global.TurnerRangelandUI.openDownloadDialog === 'function') {
+            global.TurnerRangelandUI.openDownloadDialog();
+            return;
+          }
+          this.downloadHerdReport();
+        },
+        { once: true },
+      );
+    }
   };
 
   TurnerRangelandMap.prototype._hidePanel = function () {

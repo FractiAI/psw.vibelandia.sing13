@@ -189,6 +189,8 @@
 }
 
 .tb-chart-actions {
+  position: relative;
+  z-index: 4;
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
@@ -921,6 +923,44 @@
   padding-top: 0.75rem;
 }
 
+.tb-brand {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--tb-line);
+}
+
+.tb-brand-entity {
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tb-gold);
+}
+
+.tb-brand-title {
+  margin: 0 0 0.35rem;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(1.2rem, 3.8vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--tb-cream);
+}
+
+.tb-brand-tagline {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #e8e4dc;
+}
+
+.tb-brand-doc {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--tb-muted);
+  letter-spacing: 0.02em;
+}
+
 .tb-simple-header {
   margin-bottom: 0.75rem;
   padding-bottom: 0.65rem;
@@ -940,6 +980,79 @@
   margin: 0;
   font-size: 0.88rem;
   color: var(--tb-muted);
+}
+
+.tb-download-dialog {
+  margin: auto;
+  max-width: min(92vw, 420px);
+  padding: 0;
+  border: 1px solid var(--tb-line);
+  border-radius: 8px;
+  background: var(--tb-forest-deep);
+  color: var(--tb-cream);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.tb-download-dialog::backdrop {
+  background: rgba(8, 18, 14, 0.72);
+}
+
+.tb-download-form {
+  padding: 1rem 1.1rem 1.1rem;
+}
+
+.tb-download-title {
+  margin: 0 0 0.5rem;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--tb-cream);
+}
+
+.tb-download-desc {
+  margin: 0 0 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--tb-muted);
+}
+
+.tb-download-desc strong {
+  color: var(--tb-gold);
+  font-weight: 600;
+}
+
+.tb-download-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.tb-download-fields label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--tb-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tb-download-status {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  color: #c8dcc8;
+}
+
+.tb-download-err {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  color: #fca5a5;
+}
+
+.tb-download-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .tb-truth {

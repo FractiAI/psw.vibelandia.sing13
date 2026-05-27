@@ -1,5 +1,6 @@
 /**
- * Minimal MP3-only uploader — no video, no cover picker, no auto-upload on file select.
+ * Minimal MP3-only uploader — no video, no cover picker.
+ * Desktop: upload runs right after you pick (deferAfterFilePicker). iPhone/iPad: pick then tap Upload.
  * Playback chrome is unmounted on /dj (see App.tsx) to avoid iOS Safari blue-screen hangs.
  */
 import { useRef, useState } from 'react';
@@ -15,6 +16,7 @@ import {
 import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import { MAX_MEDIA_UPLOAD_BYTES } from '@/lib/mediaUploadLimits';
 import { formatFileSize } from '@/lib/formatDuration';
+import { deferAfterFilePicker, isIOSDevice } from '@/lib/devicePlayback';
 
 const MP3_ACCEPT = '.mp3,audio/mpeg';
 
@@ -43,30 +45,12 @@ function shuffleUploadOrder<T>(files: readonly T[]): T[] {
   return out;
 }
 
-function fileDedupeKey(f: File): string {
-  return `${f.name}|${f.size}|${f.lastModified}`;
-}
-
-/** Merge new picks with existing selection (no duplicate files). */
-function mergeFileLists(prev: File[], next: File[]): File[] {
-  const seen = new Set(prev.map(fileDedupeKey));
-  const out = [...prev];
-  for (const f of next) {
-    const k = fileDedupeKey(f);
-    if (seen.has(k)) continue;
-    seen.add(k);
-    out.push(f);
-  }
-  return out;
-}
-
 type Mp3UploaderProps = {
   onUploaded?: () => void;
 };
 
 export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
   const inputRef = useRef<HTMLInputElement>(null);
-  const appendNextPickRef = useRef(false);
   const tracks = useCatalogStore((s) => s.tracks);
   const importMediaFiles = useCatalogStore((s) => s.importMediaFiles);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
@@ -75,25 +59,24 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
   const [files, setFiles] = useState<File[]>([]);
   const [shuffle, setShuffle] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [status, setStatus] = useState('Choose one or more MP3s, then tap Upload.');
+  const [status, setStatus] = useState('Choose one or more MP3s — upload starts after you pick (iPhone: tap Upload).');
 
   const serverReady = isServerUploadConfigured();
+  const iosUpload = isIOSDevice();
 
-  const openPicker = (append = false) => {
+  const openPicker = () => {
     if (busy) return;
-    appendNextPickRef.current = append;
     inputRef.current?.click();
   };
 
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const list = e.target.files;
+    /** Copy before clearing `value` — `FileList` is tied to the input and can go empty when reset. */
+    const picked = list?.length ? Array.from(list) : [];
     e.target.value = '';
-    if (!list?.length) {
-      appendNextPickRef.current = false;
+    if (!picked.length) {
       return;
     }
-
-    const picked = Array.from(list);
     const valid: File[] = [];
     const rejections: string[] = [];
 
@@ -109,30 +92,18 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
       valid.push(f);
     }
 
-    const append = appendNextPickRef.current;
-
     if (!valid.length) {
-      appendNextPickRef.current = false;
-      if (!append) {
-        setFiles([]);
-      }
+      setFiles([]);
       setStatus(
         rejections.length
-          ? `No usable files: ${rejections.join('; ')}.${append ? ' Previous selection kept.' : ''}`
-          : append
-            ? 'No new MP3s in that pick — previous selection kept.'
-            : 'Only MP3 files under ~80 MB each. Export or convert, then try again.',
+          ? `No usable files: ${rejections.join('; ')}.`
+          : 'Only MP3 files under ~80 MB each. Export or convert, then try again.',
       );
       return;
     }
 
-    appendNextPickRef.current = false;
-
-    let combined: File[] = valid;
-    setFiles((prev) => {
-      combined = append ? mergeFileLists(prev, valid) : valid;
-      return combined;
-    });
+    const combined: File[] = valid;
+    setFiles(combined);
 
     if (combined.length === 1 && !title.trim()) {
       setTitle(titleFromFileName(combined[0]!.name));
@@ -144,14 +115,28 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
       rejections.length > 0 ? ` (${rejections.length} skipped: ${rejections.slice(0, 3).join('; ')}${rejections.length > 3 ? '…' : ''})` : '';
     setStatus(
       combined.length === 1
-        ? `Ready: ${combined[0]!.name} — tap Upload when set.${extra}`
-        : `Ready: ${combined.length} MP3s — titles from file names.${shuffle ? ' Shuffle on upload.' : ''}${append ? ' (merged with previous selection.)' : ''}${extra}`,
+        ? iosUpload
+          ? `Ready: ${combined[0]!.name} — tap Upload.${extra}`
+          : `Uploading ${combined[0]!.name}…${extra}`
+        : iosUpload
+          ? `Ready: ${combined.length} MP3s — tap Upload.${shuffle ? ' Shuffle applies when you upload.' : ''}${extra}`
+          : `Uploading ${combined.length} MP3s…${shuffle ? ' (shuffled order.)' : ''}${extra}`,
     );
+
+    const singleTitleForImport =
+      combined.length === 1 ? title.trim() || titleFromFileName(combined[0]!.name) : undefined;
+
+    if (serverReady && !iosUpload) {
+      deferAfterFilePicker(() => {
+        void uploadQueue(combined, singleTitleForImport);
+      });
+    }
   };
 
-  const runUpload = async () => {
-    if (!files.length || busy) {
-      setStatus('Choose one or more MP3 files first.');
+  /** Upload a concrete file array (avoids stale React state right after file pick). */
+  const uploadQueue = async (queue: File[], singleTitleOverride?: string) => {
+    if (!queue.length || busy) {
+      if (!queue.length) setStatus('Choose one or more MP3 files first.');
       return;
     }
     if (!serverReady) {
@@ -159,12 +144,12 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
       return;
     }
 
-    let queue = [...files];
-    if (shuffle) {
-      queue = shuffleUploadOrder(queue);
+    let ordered = [...queue];
+    if (shuffle && ordered.length > 1) {
+      ordered = shuffleUploadOrder(ordered);
     }
 
-    const { newFiles, duplicates } = classifyFilesAgainstCatalog(queue, tracks);
+    const { newFiles, duplicates } = classifyFilesAgainstCatalog(ordered, tracks);
     if (!newFiles.length) {
       setStatus(formatAllDuplicatesMessage(duplicates));
       return;
@@ -177,9 +162,9 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
       const singleTitle =
         newFiles.length !== 1
           ? undefined
-          : queue.length === 1
-            ? title.trim() || titleFromFileName(newFiles[0]!.name)
-            : titleFromFileName(newFiles[0]!.name);
+          : singleTitleOverride?.trim() ||
+            title.trim() ||
+            titleFromFileName(newFiles[0]!.name);
       const { added } = await importMediaFiles(newFiles, {
         ...(singleTitle ? { title: singleTitle } : {}),
         artist: DEFAULT_ARTIST,
@@ -216,6 +201,10 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
     }
   };
 
+  const runUpload = () => {
+    void uploadQueue(files);
+  };
+
   return (
     <section className="mp3-uploader" aria-labelledby="mp3-uploader-h">
       <header className="mp3-uploader-head">
@@ -224,11 +213,10 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
           Add tracks to the catalog
         </h2>
         <p className="mp3-uploader-desc">
-          MP3 only — use <strong>Choose MP3s</strong> for a new selection (multi-select with Ctrl/Shift on desktop, or
-          several files on mobile where the OS allows). <strong>Add more MP3s</strong> merges another picker round into
-          the same upload queue. Each title comes from the file name (you can override when exactly one file is in the
-          queue). Optional shuffle randomizes upload order. No video, no auto-upload while the picker is open (safer on
-          iPhone).
+          MP3 only. Use <strong>Choose MP3 files</strong> — you can select one or many in the same dialog (Ctrl/Shift on
+          desktop). Titles come from file names; you can override when exactly one file is selected. On this device,
+          {iosUpload ? ' tap Upload after you pick.' : ' upload starts right after you pick.'} Optional shuffle applies
+          when two or more files are queued. No video.
         </p>
       </header>
 
@@ -272,30 +260,18 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
         )}
 
         <div className="mp3-uploader-file-row">
-          <button type="button" className="mp3-uploader-btn mp3-uploader-btn--ghost" disabled={busy} onClick={() => openPicker(false)}>
-            Choose MP3{files.length > 1 ? 's' : ''}
+          <button type="button" className="mp3-uploader-btn mp3-uploader-btn--ghost" disabled={busy} onClick={openPicker}>
+            Choose MP3 files
           </button>
-          {serverReady ? (
-            <button
-              type="button"
-              className="mp3-uploader-btn mp3-uploader-btn--ghost"
-              disabled={busy}
-              onClick={() => openPicker(true)}
-              title="Keep current list and add more files from another folder or selection"
-            >
-              Add more MP3s
-            </button>
-          ) : null}
           {files.length ? (
             <button
               type="button"
               className="mp3-uploader-btn mp3-uploader-btn--tiny"
               disabled={busy}
               onClick={() => {
-                appendNextPickRef.current = false;
                 setFiles([]);
                 setTitle('');
-                setStatus('Choose one or more MP3s, then tap Upload.');
+                setStatus('Choose one or more MP3s — upload starts after you pick (iPhone: tap Upload).');
               }}
             >
               Clear all
@@ -314,7 +290,7 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
               if (files.length > 1) {
                 setStatus(
                   on
-                    ? `Shuffle on: upload order will be random (new order each time you tap Upload).`
+                    ? `Shuffle on: random order each time files are uploaded (pick again or tap Upload).`
                     : `Ready: ${files.length} MP3s — upload order matches your selection.`,
                 );
               }
@@ -351,7 +327,9 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
             ? 'Uploading…'
             : files.length > 1
               ? `Upload ${files.length} MP3s`
-              : 'Upload MP3'}
+              : iosUpload
+                ? 'Upload MP3'
+                : 'Upload again'}
         </button>
       </div>
 

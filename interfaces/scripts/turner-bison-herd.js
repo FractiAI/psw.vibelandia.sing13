@@ -218,7 +218,7 @@
     const status = $('#tb-exec-status');
     if (status) {
       status.textContent = radar
-        ? `Cross-ref ${collarProx ?? '—'}% collar proximity (multi-source, capped without collars) · lock ${lockMean != null ? (lockMean * 100).toFixed(0) + '%' : '—'} · ${radar.fidelityPct}% fuse channel · see honesty note.`
+        ? `Cross-ref ${collarProx ?? '—'}% collar proximity (multi-source agreement, not GPS fixes) · lock ${lockMean != null ? (lockMean * 100).toFixed(0) + '%' : '—'} · ${radar.fidelityPct}% fuse channel · see honesty note.`
         : noaa.error
           ? 'Stream active — NOAA degraded; radar fuse retrying.'
           : 'Live ingest active — passive radar synthesis for Turner-scale registry (model layer).';

@@ -1562,7 +1562,7 @@
       collarProx: [
         'Collar proximity',
         (s.radar?.collarGradeProximityPct ?? s.radar?.crossSource?.collarGradeProximityPct ?? '—') + '%',
-        'Multi-source agreement toward collar-grade ops — capped without collars/VHR',
+        'Multi-source agreement toward collar-grade ops — reflects current feed agreement',
       ],
       heads: ['Bison', (s.baseline?.headCount || 45000).toLocaleString(), 'One dot per head on chart'],
       flux: ['Solar flux', s.live?.fluxSfu + ' sfu', 'NOAA SWPC'],

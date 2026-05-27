@@ -13,14 +13,16 @@ This document and the companion **herd console** describe a **model synthesis la
 
 **Default data policy (repo):** with `TURNER_ALLOW_SYNTHETIC` **unset**, the stack uses **`real_sources_only`** — no random soil gap-fill, no synthetic spatial fence phase, and no RNG “spread” on weight estimates. Multi-day range mode requires **complete** Open-Meteo historical soil moisture for **every** geolocated pasture on **every** day in the window; otherwise the API returns `incomplete_soil_history`. Set **`TURNER_ALLOW_SYNTHETIC=1`** only to restore legacy mixed/synthetic padding (documented in `.env.example`).
 
-- **Fence-line “returns”** in software are **geometry-synthesized** coupling to the radar fuse (plus optional OpenWebRX IQ statistics). They are **not** measurements from Turner Enterprise perimeter RF hardware.
+- **Passive RF (default):** receive-only **internet OpenWebRX** on the hydrogen-line neighborhood band, with IQ/FFT chunks **mapped onto live fence coordinates** (OpenStreetMap `barrier=fence` near pastures plus optional `data/turner-perimeter-steel.geojson`). **No on-premise SDR at Turner is required** to run the console; that path is the canonical stack.
+- **Fence-line “returns”** in software are **model coupling** along mapped perimeter gates (plus OpenWebRX statistics when configured). They are **not** discrete physical probes on each gate unless you later add dedicated hardware.
+- **Optional fidelity upgrade — on-premise SDR:** if you later deploy **receive-only** OpenWebRX (or equivalent) **on or near the ranch** and point `TURNER_SDR_WSS_URL` at that host, ability and operational fidelity can improve (ranch-local passband, tighter alignment with perimeter geometry in the fuse). Still a **model** mapped to fence GIS — not collar-grade animal GPS by default.
 - **Herd positions** on the map are **weighted samples** from a passive-radar **field** fused with Open-Meteo soil moisture, NOAA space-weather context, and public registry baselines — **not** GPS collar fixes or verified individual locations.
 - **Per-head weights** are **estimates** from TESF-style public cow-unit baselines, sex class, seasonal and (in **date-range mode**) soil-moisture **model** adjustments — **not** scale weights.
 - **Date-range mode** (API `?start=&end=`) adds **historical daily soil moisture** from Open-Meteo historical forecast or ERA5 archive so you can **scrub** modeled movement and weight change over the requested window. Under **`real_sources_only`**, missing days or pastures **fail the request** (no synthetic fill). Legacy mode may apply deterministic soil fallback when `TURNER_ALLOW_SYNTHETIC=1`. **Fence / space-weather coupling for the range** reuses the **same live** NOAA Kp and OpenWebRX IQ snapshot as current ingest (not per historical day). Sample size is capped (8–128 heads) for performance.
 
 Instrument-grade claims require dedicated sensing and independent validation; anything else remains **theater-forward narrative** aligned to the repo honesty rails.
 
-**On-the-ground collaboration:** accuracy and operational capability can be **significantly improved** by tuning this system **with Turner Enterprise teams in the field** — verified pasture polygons, fence and gate geometry where public maps are incomplete, hydrogen-line / OpenWebRX receiver placement, and ranch-specific seasonal baselines. That collaboration does not require walking every mile again when OpenStreetMap, prior surveys, or operator GeoJSON overrides already cover the line.
+**On-the-ground collaboration:** accuracy and operational capability can be **significantly improved** by tuning this system **with Turner Enterprise teams in the field** — verified pasture polygons, fence and gate geometry where public maps are incomplete, and ranch-specific seasonal baselines. **RF:** the default needs **no Turner hardware** (public receive-only OpenWebRX + mapped fence lines). **Optional:** on-premise receive-only SDR at agreed sites can **upgrade ability and fidelity** when you choose that path. Field collaboration does not require walking every mile again when OpenStreetMap, prior surveys, or operator GeoJSON overrides already cover the line.
 
 ---
 
@@ -51,7 +53,7 @@ Northern Operations (Flying D Ranch): cow-calf groups in lower creeks and mounta
 
 **Narrative frame (catalog voice):** the perimeter fence as a passive Goubau-style waveguide, hydrogen line carrier, EGS φ filtering, and PLL readout describe the **story geometry** of the fuse.
 
-**Implementation note (repo):** the running console **does not** ingest per-gate RF from Turner fences. Fence-line strengths are **computed** from schematic gate geometry and coupling constants, then fused with satellite soil moisture and magnetic/grid context — see **Honesty boundary** at the top of this document.
+**Implementation note (repo):** the running console couples **receive-only OpenWebRX** (internet by default) to **ordered gates along live fence coordinates**, then fuses with satellite soil moisture and magnetic/grid context. It does **not** require on-premise ranch SDR; **optional** on-premise receive-only ingest can improve fidelity when deployed — see **Honesty boundary**.
 
 ---
 

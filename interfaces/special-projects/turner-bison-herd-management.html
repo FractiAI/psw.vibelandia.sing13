@@ -1,52 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" class="tb-page">
+<html lang="en" class="tb-page tb-page--simple">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0f261c" />
-  <title>Passive, No GPS Collar Bison Herd Management System · Turner Enterprise Rangelands</title>
-  <meta name="description" content="Passive, No GPS Collar Bison Herd Management System for Turner Enterprise Rangelands — passive radar map, fence-line × satellite × magnetic fuse. 2M acres, 45,000 bison." />
+  <title>Turner rangeland · live chart &amp; herd report</title>
+  <meta name="description" content="Live modeled herd chart and downloadable reports for Turner Enterprise scale rangeland — fused public data; not collar GPS." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="/interfaces/styles/turner-bison-herd.css" />
 </head>
 <body>
-  <div class="tb-wrap">
-    <header class="tb-exec-header">
-      <p class="tb-entity">Turner Enterprise Rangelands</p>
-      <h1>Passive, No GPS Collar Bison Herd Management System</h1>
-      <p class="tb-tagline">Turner Enterprise Rangelands · passive radar map · fence-line × satellite × magnetic · 2M acres · 45,000 head</p>
-      <p class="tb-doc">DOC HHA-NSPFRNP-ANCHOR-2026-05-25 · NSPFRNP · no GPS collars · 24×365</p>
+  <div class="tb-wrap tb-wrap--simple">
+    <header class="tb-simple-header">
+      <h1 class="tb-simple-title">Turner rangeland</h1>
+      <p class="tb-simple-sub">Live chart · modeled herd · date-range export</p>
     </header>
 
-    <p class="tb-honesty" id="tb-honesty">
-      <strong>Real-data default.</strong>
-      Dynamic layers use <strong>only remote APIs</strong> (NOAA SWPC, Open-Meteo soil, OpenWebRX when configured, HIFLD, geomagnetic). There is <strong>no synthetic soil fill</strong> and no fabricated spatial sin-phase on gates. With <code>TURNER_SDR_WSS_URL</code>, per-gate strengths follow <strong>real downstream RMS slices</strong> from your OpenWebRX buffer; otherwise coupling is <strong>uniform from live Kp / IQ RMS</strong> (unless legacy <code>TURNER_ALLOW_SYNTHETIC=1</code>).
-      <strong>Passive fence read (default):</strong> internet receive-only OpenWebRX (<code>TURNER_SDR_WSS_URL</code> or built-in public feeds) plus <strong>live fence coordinates</strong> (OSM + optional <code>data/turner-perimeter-steel.geojson</code>) — server pulls <strong>FFT/IQ/demod floats</strong>, chunks RMS along the passband, and maps them to ordered perimeter gates. <strong>No on-premise SDR at Turner is required.</strong>
-      <strong>Optional fidelity upgrade:</strong> receive-only OpenWebRX <strong>on or near the ranch</strong> (same <code>wss://…/ws/</code> ingest) can <strong>improve ability and operational fidelity</strong> when you deploy it — still a spectral proxy mapped to fence GIS, not a transducer per gate.
-      Herd dots are still a <strong>weighted field</strong> over pastures (inverse-style placement), not GPS or scale weights. Registry numbers (head count, ADM, etc.) are <strong>static published baselines</strong> in <code>data/turner-public-registry.json</code>, not live measurements.
-      <strong>Date range:</strong> requires Open-Meteo soil for <em>every</em> geolocated pasture on <em>every</em> day in the window, or the API returns an error (set <code>TURNER_ALLOW_SYNTHETIC=1</code> on the server to restore legacy synthetic fallback and φ-squashed Kp / RNG weight spread).
-      <strong>Triangulated lock-in (default on):</strong> <strong>Fence pulse</strong> (<code>wirePhaseUs</code> PLL from OpenWebRX + Kp) × <strong>SDR</strong> (per-gate spectrum when <code>TURNER_SDR_WSS_URL</code> is set) × <strong>satellite surface</strong> (Open-Meteo soil + NASA POWER skin temp IR proxy) × <strong>fence lines from OpenStreetMap</strong> (Overpass <code>barrier=fence</code> near each pasture — no field walk required; ODbL, often incomplete on private ranch) with optional local override in <code>data/turner-perimeter-steel.geojson</code> × <strong>Digital Pru</strong> φ-gate. Raises <code>lockIn</code> and biases the placement field toward mapped fence — still a <strong>model</strong>, not collar or scale truth.
-      <strong>Optional ET₀ calibration:</strong> <code>TURNER_FUSION_SURFACE_CALIB=1</code> adds a small bounded pseudo-correlation nudge from Open-Meteo FAO-56 ET₀.
-      <strong>Multi-source cross-reference:</strong> live ingest cross-checks <strong>soil moisture, NASA POWER skin temp, Open-Meteo leaf area index, ET₀ (optional), OpenWebRX SDR, OSM/GPS fence, NOAA magnetic, and HIFLD grid</strong> — boosting placement only where families agree. <strong>Collar proximity %</strong> on the map is honest operational grade toward collar GPS and now reflects current multi-source agreement (still not GPS fixes); <strong>fuse %</strong> is feed completeness, not animal truth.
-      <strong>On-the-ground collaboration:</strong> accuracy and operational usefulness can be <strong>significantly improved</strong> by tuning this stack <strong>with Turner teams in the field</strong> — pasture boundaries, fence and gate truth where OSM is thin, seasonal baselines, and which components to weight for each ranch. Default RF needs <strong>no ranch hardware</strong>; optional <strong>on-premise receive-only SDR</strong> is an upgrade path for higher fidelity when you choose it — without requiring a full re-walk when public fence data or prior surveys already exist.
-    </p>
+    <section class="tb-truth" aria-label="What this data is">
+      <p class="tb-truth-text" id="tb-truth-text">
+        <strong>Modeled output.</strong> Map positions and weights are <strong>generated</strong> by fusing public remote sensing, receive-only radio statistics (mapped to fence geometry), and published registry baselines — <strong>not</strong> GPS collars, scales, or Turner private telemetry.
+        <strong>Collaboration</strong> with Turner teams (accurate pastures, fence truth, seasonal baselines, optional validation windows) could <strong>greatly increase</strong> usefulness and accuracy.
+      </p>
+    </section>
 
-    <section class="tb-range-panel" aria-labelledby="tb-range-heading">
-      <h2 class="tb-range-heading" id="tb-range-heading">Date range · modeled movement &amp; weight</h2>
-      <p class="tb-range-note">
-        Pick any <strong>UTC</strong> start/end for <strong>full herd list–style reports</strong> (map scrub + <strong>Download range (.txt)</strong> for every day in the window). There is <strong>no fixed 90-day cap</strong> — very long spans mean more Open-Meteo calls and may hit the server time limit; narrow the window or retry if load fails.
-        Uses daily soil moisture from Open-Meteo historical forecast (or ERA5 archive / fallback) fused with the same radar field as live. Sample herd <strong>8–128</strong> heads for performance — not the full 45,000.
+    <section class="tb-range-panel tb-range-panel--simple" aria-labelledby="tb-range-heading">
+      <h2 class="tb-range-heading" id="tb-range-heading">Date range report</h2>
+      <p class="tb-range-note tb-range-note--short">
+        UTC dates · one plain-text file with <strong>every sampled animal</strong> for <strong>each day</strong> in the range (same modeled rules as live). Sample size 8–128 heads for performance.
       </p>
       <div class="tb-range-row">
         <label>Start <input type="date" id="tb-range-start" class="tb-range-input" /></label>
         <label>End <input type="date" id="tb-range-end" class="tb-range-input" /></label>
         <label class="tb-range-sample">Sample <input type="number" id="tb-range-sample" min="8" max="128" value="96" class="tb-range-input tb-range-input--num" /></label>
         <button type="button" class="tb-chart-btn" id="tb-range-load">Load range</button>
-        <button type="button" class="tb-chart-btn tb-chart-btn--ghost" id="tb-range-live">Back to live</button>
+        <button type="button" class="tb-chart-btn tb-chart-btn--ghost" id="tb-range-live">Live chart</button>
         <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-range-txt" disabled>Download range (.txt)</button>
       </div>
       <div class="tb-range-slider-row" id="tb-range-slider-wrap" hidden>
@@ -57,140 +48,17 @@
       <p class="tb-range-err" id="tb-range-err" hidden></p>
     </section>
 
-    <nav class="tb-nav" aria-label="Site">
-      <a href="/bulletin-board">Bulletin Board</a>
-      <span class="dot">·</span>
-      <a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a>
-      <span class="dot">·</span>
-      <a href="/interfaces/whitepaper-surface.html?id=turner-bison-herd-report">Full report</a>
-    </nav>
-
-    <p class="tb-exec-status" id="tb-exec-status" aria-live="polite">Connecting live stream…</p>
+    <p class="tb-live-line" id="tb-exec-status" aria-live="polite">Loading…</p>
     <p class="tb-fetch-err" id="tb-fetch-err" hidden></p>
-    <p class="tb-hint">Live chart below — <strong>Esri US satellite imagery</strong> (free USDA/USGS layer). Drag to pan, scroll or +/− to zoom; <strong>hold and slide</strong> to box-zoom. Light green paths are <strong>trampled-grass survey lines</strong> from <code>data/turner-trampled-grass-trails.geojson</code> (WGS84 LineStrings per <code>pastureId</code>) — no simulated random walks. Date-range mode draws consecutive daily sample positions, not that GeoJSON. Click a pasture or bison for detail.</p>
 
-    <div class="tb-manager-actions" aria-label="Manager herd export">
-      <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-page-download-herd" disabled>
-        Download full herd list (.txt)
-      </button>
-      <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-page-herd-report" disabled>
-        Herd report by ranch
-      </button>
-      <span class="tb-manager-hint" id="tb-manager-hint">Preparing herd roster…</span>
-    </div>
-
-    <div id="tb-map-root" class="tb-map-root"></div>
-
-    <p class="tb-hint tb-hint--secondary">Telescope — tap any row for full tables and audit narrative.</p>
-
-    <div class="tb-cards" id="tb-cards">
-      <article class="tb-card" data-telescope="environment">
-        <button type="button" class="tb-card-trigger" aria-expanded="false" aria-controls="tb-scope-environment">
-          <span class="tb-card-title">Space &amp; Earth environment</span>
-          <span class="tb-card-preview" id="tb-preview-environment">Solar · ionosphere · Goubau floor</span>
-          <span class="tb-card-chevron" aria-hidden="true"></span>
-        </button>
-        <div class="tb-telescope" id="tb-scope-environment" hidden>
-          <table class="tb-detail-table">
-            <tbody>
-              <tr><th>Radio solar flux</th><td id="tb-flux">—</td></tr>
-              <tr><th>Sunspot multi-sync</th><td id="tb-sunspot">—</td></tr>
-              <tr><th>Goubau noise floor</th><td id="tb-kp">—</td></tr>
-              <tr><th>NOAA ingest time</th><td id="tb-ingest-count">—</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <article class="tb-card" data-telescope="herd">
-        <button type="button" class="tb-card-trigger" aria-expanded="false" aria-controls="tb-scope-herd">
-          <span class="tb-card-title">Herd &amp; movement</span>
-          <span class="tb-card-preview" id="tb-preview-herd">Population · mass · travel speed</span>
-          <span class="tb-card-chevron" aria-hidden="true"></span>
-        </button>
-        <div class="tb-telescope" id="tb-scope-herd" hidden>
-          <p class="tb-telescope-note">Calibrated to Turner Endangered Species Fund public winter-exit cow unit profile. Flying D and Sandhills cohorts per YTD baseline.</p>
-          <table class="tb-detail-table">
-            <tbody>
-              <tr><th>Population footprint</th><td class="num" id="tb-heads">—</td></tr>
-              <tr><th>Mean biological profile</th><td class="num" id="tb-weight">—</td></tr>
-              <tr><th>Grazing cohort velocity</th><td id="tb-velocity">—</td></tr>
-              <tr><th>PLL wire attenuation</th><td class="num" id="tb-pll">—</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <article class="tb-card" data-telescope="forage">
-        <button type="button" class="tb-card-trigger" aria-expanded="false" aria-controls="tb-scope-forage">
-          <span class="tb-card-title">Range &amp; forage drawdown</span>
-          <span class="tb-card-preview" id="tb-preview-forage">ADM · metabolic load · daily consumption</span>
-          <span class="tb-card-chevron" aria-hidden="true"></span>
-        </button>
-        <div class="tb-telescope" id="tb-scope-forage" hidden>
-          <p class="tb-telescope-note">Turner Institute of Ecoagriculture agronomy baseline — 1,450 lbs dry matter per acre on northern substrates.</p>
-          <table class="tb-detail-table">
-            <tbody>
-              <tr><th>ADM yield / acre</th><td class="num" id="tb-adm">—</td></tr>
-              <tr><th>Metabolic ingest</th><td id="tb-metabolic">—</td></tr>
-              <tr><th>Daily forage drawdown</th><td id="tb-forage">—</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-
-      <article class="tb-card" data-telescope="audit">
-        <button type="button" class="tb-card-trigger" aria-expanded="false" aria-controls="tb-scope-audit">
-          <span class="tb-card-title">Audit · public reconciliation</span>
-          <span class="tb-card-preview" id="tb-preview-audit">Rotation · biomass · mass displacement</span>
-          <span class="tb-card-chevron" aria-hidden="true"></span>
-        </button>
-        <div class="tb-telescope" id="tb-scope-audit" hidden>
-          <div class="tb-audit-block">
-            <h3>Pasture rotation timelines</h3>
-            <p>Fence-line wave-lock vs Turner Institute of Ecoagriculture spring updates — lower river-basin gates, Flying D Ranch cow-calf movement.</p>
-          </div>
-          <div class="tb-audit-block">
-            <h3>Biomass depletion velocity</h3>
-            <p>Live grazing signature vs early-summer ADM curves — depletion without field sampling.</p>
-          </div>
-          <div class="tb-audit-block">
-            <h3>Biological mass displacement</h3>
-            <p>Mass estimates use TESF public cow-unit baselines plus radar-field and (in range mode) seasonal and soil-moisture <strong>model</strong> adjustments — not individual scale or collar reads.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="tb-card" data-telescope="system">
-        <button type="button" class="tb-card-trigger" aria-expanded="false" aria-controls="tb-scope-system">
-          <span class="tb-card-title">System &amp; data stream</span>
-          <span class="tb-card-preview" id="tb-preview-system">NSPFRNP · ingest pipeline · sources</span>
-          <span class="tb-card-chevron" aria-hidden="true"></span>
-        </button>
-        <div class="tb-telescope" id="tb-scope-system" hidden>
-          <table class="tb-detail-table">
-            <tbody>
-              <tr><th>Methodology</th><td id="tb-init-method">NSPFRNP</td></tr>
-              <tr><th>Physical canvas</th><td id="tb-init-canvas">—</td></tr>
-              <tr><th>Waveguide medium</th><td id="tb-init-wave">—</td></tr>
-              <tr><th>Ambient carrier</th><td id="tb-init-carrier">—</td></tr>
-              <tr><th>Scalar anchor</th><td id="tb-init-phi">—</td></tr>
-              <tr><th>Pipeline</th><td><span id="tb-pipe-stage">—</span> — <span id="tb-pipe-detail">—</span></td></tr>
-              <tr><th>Passive radar</th><td id="tb-radar-summary">Fence-line × satellite synthesis (see honesty note above)</td></tr>
-              <tr><th>Data sources</th><td id="tb-source-banner">—</td></tr>
-            </tbody>
-          </table>
-          <p class="tb-fair">Fair Exchange Clause — locked. Delivery-quality settlement may adjust in part.</p>
-        </div>
-      </article>
-    </div>
+    <div id="tb-map-root" class="tb-map-root tb-map-root--hero"></div>
 
     <p class="tb-clock" id="tb-clock">UTC —</p>
 
-    <footer class="tb-foot">
-      <span>Prepared for Turner Enterprise Rangeland team · FractiAI / SS Vibelandia Bulletin Board</span><br />
-      <a href="/bulletin-board">Bulletin Board</a> ·
-      <a href="mailto:valetpru@gmail.com?subject=Turner%20Enterprise%20Rangeland">valetpru@gmail.com</a>
+    <footer class="tb-foot tb-foot--simple">
+      <a href="/bulletin-board">Bulletin</a>
+      · <a href="/interfaces/vibelandia-questfest.html">Questfest</a>
+      · <a href="mailto:valetpru@gmail.com?subject=Turner%20rangeland">Contact</a>
     </footer>
   </div>
 

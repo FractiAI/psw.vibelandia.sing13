@@ -1,261 +1,237 @@
-# White Paper: Passive, No-Collar Bison Herd Awareness Layer for Turner Enterprise Rangelands
+# Technical Architecture White Paper: Under the Hood of the Passive Bison Herd Management System
 
-**Document:** HHA-TURNER-WP-2026-05-26  
-**Prepared for:** Dr. Carter Kruse and Turner Enterprise leadership  
+**Document ref:** HHA-TURNER-WP-2026-05-26 (rev. B — all public sensors enabled in live pipeline)  
+**Prepared for:** Turner Enterprise leadership & ecological research teams  
 **Prepared by:** Pru Mendez  
 **Contact:** valetpru@gmail.com  
-**Classification:** External — technical background and honesty disclosure  
+**Classification:** Technical background & operational disclosure  
 
 ---
 
 ## Executive summary
 
-Turner Enterprise operates roughly **two million contiguous acres** and on the order of **45,000 bison** across diverse rangeland. Conventional herd awareness at that scale has historically depended on **GPS collars**, **roundups**, **batteries**, and **collared subsets**—all costly, invasive, and incomplete at full-population scale.
+Monitoring bison populations across roughly **two million contiguous acres** presents deep logistical bottlenecks. Conventional methods rely on **GPS collars**, **roundups**, and **battery maintenance**—invasive, expensive, and structurally limited to **subsets** of the herd.
 
-We have built a **passive, receive-only fusion console** that combines **public remote sensing**, **space-weather context**, **mapped perimeter geometry**, and **internet radio statistics** in the hydrogen-line neighborhood band (~1420 MHz) to produce a **continuous modeled awareness layer** for **pasture-scale planning**—not instrument-certified per-animal tracking.
+This project offers a **practical path** (live today) and a **collaborative research path** (Phase 2):
 
-**Important honesty points up front:**
+1. **Phase 1 (today):** A **passive, receive-only model synthesis layer** for **macro pasture-scale planning**—built from **live public environmental APIs**, **internet OpenWebRX** statistics mapped to **fence geometry**, **published registry baselines**, and **all additional public “sensor” channels this repository implements** (see §2.6 *Space-bio ranch log — always on*). **No hardware installation on Turner land is required** to evaluate it.
 
-- This is a **model synthesis system**, not a replacement for collars, scales, or Turner’s operational ground truth unless independently validated.
-- **No hardware on Turner land is required** to run or evaluate the default stack.
-- **Optional** receive-only radios on the ranch can **upgrade RF fidelity** later; they are not a prerequisite.
-- Prior language implying “live GPS on every animal without technology” was **overstated**; this document corrects that record.
+2. **Phase 2 (collaborative / not fully delivered):** With Turner ground truth, GIS corrections, **ranch receive-only radios** where desired, and **separate validated trials** (e.g. passive ID, collared control subsets), the stack **may** move toward higher operational fidelity. That is a **pilot and engineering roadmap**, not a claim of instrument-grade tracking today.
 
-Optional public demo (treat as any external site until IT review):  
-https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management
+We are contacting Turner to **test correlation** on one unit at low cost—not to assert that every catalog narrative is already proven on the ranch.
 
----
-
-## 1. Why Turner, why now
-
-Turner was selected as a reference landscape because of:
-
-- Scale and continuity of operations (continental rangeland network)  
-- Public conservation and land-management registries usable as **baselines**, not as live animal telemetry  
-- Existing high-tensile perimeter infrastructure that can be **represented** in a passive “fence-line” fuse  
-- Operational need for **24×365 pasture awareness** without adding animal-borne devices at full herd scale  
-
-The goal is not to discredit Turner’s existing programs. The goal is to offer an **additional planning layer** built only from **open or receive-only inputs**, with explicit limits on what can be inferred without collars or ranch-private data.
+**Public demo** (treat as any external site until IT review):  
+https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management  
 
 ---
 
-## 2. The problem we address
+## 1. What the system is (and what it is not)
 
-| Challenge at Turner scale | Conventional approach | Limitation |
-|---------------------------|----------------------|------------|
-| Full-herd position | GPS collars on subsets | Batteries, loss, handling, incomplete coverage |
-| Pasture stress / forage | Spot surveys, models | Lag, labor, weather gaps |
-| Perimeter awareness | Riders, gates, notes | Not continuous at 2M acres |
-| Weight / condition | Scale, visual class | Sparse, episodic |
+### Phase 1 — Model synthesis layer (operational today)
 
-Our layer targets **pasture-scale continuity** and **cross-source agreement** (soil surface, RF statistics mapped to fence, magnetic/grid context, registry baselines)—while **not** claiming collar-grade fixes on every head.
+The platform ingests **real remote feeds** and produces a **continuous fused model** of pasture-scale context and **sampled** herd placement on the map. It is an **additional planning layer** for rangeland rotation and forage-pressure narrative—not certified per-animal tracking, legal traceability, or scale-accurate weights.
 
----
+| Today | Not today |
+|--------|-----------|
+| Live NOAA, Open-Meteo, NASA POWER, geomagnetic/HIFLD context | GPS fixes on every head without collars |
+| Receive-only OpenWebRX IQ/FFT mapped to **ordered fence gates** | Proof that internet SDR receivers sense Turner bison on the wire |
+| **Space-bio ranch log** — always merged on live ingest: RF/fuse readouts, Open-Meteo column at network centroid, Sentinel-2 L2A STAC head + pipeline LAI/soil (each channel **fails gracefully** if upstream drops; **no synthetic gap-fill**) | CYGNSS L1 DDM pasture products, GOES sounder L2 “respiration plume,” or red-edge COG decode (not in this build) |
+| Weighted placement **field** inside pastures + honesty metrics | “No guessing” or instrument-grade inventory without validation |
+| Static published registry baselines (head count, ADM, etc.) | Live Turner telemetry or scale weights |
 
-## 3. What the solution is (one paragraph)
+**Default data policy:** `real_sources_only` — no random soil gap-fill, no fabricated spatial phase on gates; missing historical soil in date-range mode **fails the request** rather than inventing data.
 
-The **Passive, No GPS Collar Bison Herd Management System** is a **server-side fusion pipeline** and **web console** that:
+### Phase 2 — Research & collaboration roadmap (not delivered as turnkey product)
 
-1. Ingests **live public feeds** (NOAA space weather, Open-Meteo soil moisture and optional leaf-area index, NASA POWER land-surface temperature proxy, geomagnetic indices, HIFLD transmission context where relevant).  
-2. Pulls **receive-only OpenWebRX** IQ/FFT/demod buffers from the **internet** (~1420 MHz neighborhood), chunks spectral energy, and **maps** it onto **ordered gates** along **live fence coordinates** (OpenStreetMap `barrier=fence` near each pasture, plus optional operator GeoJSON overrides).  
-3. Runs a **passive radar-style fuse** that weights plausible herd placement within pastures when multiple families agree.  
-4. Displays **registry-scale population context** (published baselines) with **sampled** map dots in long date-range mode for performance—not all 45,000 individuals rendered at once.  
+The **longer-term goal**, if pilots justify it, is higher-fidelity operations—possibly approaching collar-grade usefulness in agreed units through **calibration**, **ranch receive-only radio**, and **validated animal-level sensing trials**. That is **not** the current product; it requires independent benchmarks against Turner ground truth.
 
-Everything dynamic is **remote API or receive-only radio** under default policy **`real_sources_only`**: no random soil gap-fill, no fabricated spatial “sin phase” on gates, no random spread on weight estimates unless legacy mode is explicitly enabled on the server.
+### Non-invasive default
 
----
-
-## 4. What the solution is not
-
-We do **not** claim:
-
-- Per-animal, 24×365 GPS locations without animal-borne sensors  
-- Scale-accurate weights without scale validation  
-- That a public internet receiver is physically installed on Turner’s fence wire  
-- “No guessing” or legal/traceability-grade inventory  
-- That **fuse completeness %** equals **animal truth %** (see Section 8)  
-
-Instrument-grade herd tracking would require **dedicated sensing**, **Turner-private operational data**, and **independent validation**—a path we describe as collaboration, not as today’s default deliverable.
+Phase 1 runs on **server-side fusion** of **public / receive-only** inputs. It does not require new animal-borne devices or ranch hardware to **start** the conversation.
 
 ---
 
-## 5. Architecture (plain language)
+## 2. Core technical architecture & data flow (Phase 1)
 
-### 5.1 Data flow
+While live ingest runs, the pipeline refreshes on a **snapshot cadence** (host-dependent). Processing follows five core stages plus **always-on** space-bio attachment:
 
 ```
-Public APIs (NOAA, Open-Meteo, NASA POWER, geomagnetic, HIFLD)
-        +
-Internet receive-only OpenWebRX (~1420 MHz band statistics)
-        +
-Mapped fence lines (OSM + optional Turner GeoJSON)
-        ↓
-Passive radar fuse + multi-source cross-reference
-        ↓
-Pasture-level placement field + registry-based weight estimates
-        ↓
-Herd management console (map, metrics, optional date-range scrub)
+[STAGE 1: INGESTION]   → Public APIs + internet OpenWebRX buffers (receive-only)
+         ↓
+[STAGE 2: NORMALIZE]   → Space-weather context; PLL scalar from IQ RMS + Kp
+         ↓
+[STAGE 3: RADAR FUSE]  → Map spectral chunks onto fence gate order × soil/surface grid
+         ↓
+[STAGE 4: CROSS-REF]   → Multi-source agreement; honesty metrics
+         ↓
+[STAGE 5: SYNTHESIS]   → Dashboard, placement field, registry-based weight estimates
+         ↓
+[STAGE 6: SPACE-BIO]   → Always-on public extensions → stream.spaceBio + ranch log UI
 ```
 
-### 5.2 Pipeline stages (chronological)
+### Stage 1: Multi-source data ingestion
 
-| Stage | Function |
-|--------|----------|
-| **Ingest** | Snapshot live remote feeds; optional OpenWebRX WebSocket URL on server (no browser CORS). |
-| **Scale / filter** | Normalize space-weather and coupling parameters for fuse stability. |
-| **Radar fuse** | Combine fence-gate coupling shape, soil moisture surface, magnetic/grid leverage, optional LST/LAI. |
-| **Cross-source fidelity** | Boost placement only where families agree; cap “collar proximity” and “individual animal proximity” scores honestly. |
-| **Synthesis** | Metabolic/forage narrative from public ADM and registry baselines + modeled placement sample. |
+| Source | Role |
+|--------|------|
+| **NOAA SWPC** | Kp, space-weather context for coupling |
+| **Open-Meteo** | Soil moisture; optional LAI, ET₀ (optional cal); **also** hourly T₂m / RH / dewpoint for space-bio column panel |
+| **NASA POWER** | Land-surface temperature (IR proxy) |
+| **OpenWebRX** | Receive-only IQ/FFT/demod near ~1420 MHz (public internet receivers by default, or operator `wss://`) |
+| **OpenStreetMap / GeoJSON** | Fence lines and gate order (`barrier=fence` + optional `turner-perimeter-steel.geojson`) |
+| **Geomagnetic / HIFLD** | Field and transmission context in the fuse |
+| **Public registry JSON** | Static baselines (head count, ADM, mean weight)—**not** live animal measurements |
+| **Element 84 Earth Search (STAC)** | **Latest Sentinel-2 L2A** scene **metadata** over pasture network bbox (id, time, cloud cover)—**not** full hyperspectral ingest |
 
-### 5.3 Passive RF and the fence line
+### Stages 2 & 3: Passive RF fence-line fuse (implementation truth)
 
-**Default (no Turner hardware):**
+**Narrative geometry:** In catalog language, high-tensile perimeter fence is represented as a passive waveguide along which gate coupling is computed.
 
-- A **public receive-only** online SDR feed provides real spectral statistics.  
-- The server divides the passband into RMS chunks and **assigns** them to **gates in order** along the **mapped fence polyline** for each pasture.  
-- This is **software coupling** between **band activity** and **known perimeter geometry**—useful for lock-in and fuse weighting, not a claim of a transducer on every post.
+**Implementation:**
 
-**Fence coordinates:**
+1. **Fence medium (GIS):** Pasture perimeters and gate sequences come from OSM and/or operator overrides—not from a sensor on each post.
 
-- Sourced from **OpenStreetMap** near pasture centroids (often incomplete on private ranchland) and/or **`turner-perimeter-steel.geojson`** overrides.  
-- Improve **where** the model thinks the waveguide path lies; they do not relocate the internet receiver onto Montana wire.
+2. **Carrier band (receive-only):** The server pulls **open** statistics from the hydrogen-line **neighborhood** band via OpenWebRX. Receivers are typically **internet-hosted**, not on Turner wire.
 
-**Optional upgrade — on-premise receive-only SDR:**
+3. **Mapping logic:** The passband is split into **contiguous RMS chunks** and **interpolated in order** onto fence gates (`lib/sdr-fence-spectrum.mjs`). That yields **per-gate coupling shape** for the fuse—a **software mapping**, not discrete ranch transducers.
 
-- If Turner later deploys **receive-only** OpenWebRX (or equivalent) **on or near the ranch** and provides a `wss://` ingest endpoint, **ability and operational fidelity can improve** (ranch-local passband, tighter operational alignment).  
-- Same software path as today; **not required** to evaluate the console.
+4. **Placement field:** Inside each pasture polygon, a grid combines fence-return decay, **soil-moisture anomaly**, skin-temperature proxy, magnetic/grid leverage, and lock-in scores. Map dots are **weighted samples** from that field (`pickWeightedPosition`), not verified animal coordinates.
 
-### 5.4 Narrative frame vs implementation
+**Important:** The fuse **weights** localization when signals **align**; it does **not** prove that bison mass caused a specific RF change at a remote receiver.
 
-The catalog describes perimeter fence as a passive waveguide, hydrogen-line carrier, and phase readout. That language describes the **geometry of the fuse**. The **implementation** is explicit: strengths along the line are **computed and mapped** from remote feeds unless and until dedicated hardware is added under the optional upgrade path above.
+### Stage 4: Cross-reference & display math (not “weather-proofed Kp”)
 
----
+- **Cross-source fidelity** boosts placement only where **forage**, **geometry**, and **RF** families agree (`lib/turner-cross-source-fidelity.mjs`).
+- **φ (1.618)** appears in **legacy / narrative** scaling paths when `TURNER_ALLOW_SYNTHETIC=1`. Under **`real_sources_only`**, gate coupling uses **live Kp / IQ** without claiming to “lock” ionospheric Kp to 1.00 on real fences.
+- The console **does not** assert that fractal filtering has eliminated wind, ice, or wire thermal noise on Turner perimeters.
 
-## 6. Data sources (default stack)
+### Stage 6: Space-bio ranch log (always on — all public channels this build reaches)
 
-| Source | What it contributes | Animal-level? |
-|--------|---------------------|---------------|
-| NOAA SWPC | Kp, space-weather context for coupling | No |
-| Open-Meteo | Soil moisture, optional LAI, ET₀ (optional cal) | Pasture |
-| NASA POWER | Skin temperature (IR proxy) | Pasture |
-| OpenWebRX (internet) | Real IQ/FFT → per-gate coupling shape | No |
-| OpenStreetMap / GeoJSON | Fence lines, schematic gates | Infrastructure |
-| Geomagnetic / HIFLD | Grid and field context in fuse | No |
-| Public Turner/TESF registry | Head count, ADM, mean weight baselines | Statistical |
+On **every** successful live pipeline run, the server attaches **`stream.spaceBio`** (`lib/turner-space-bio-panels.mjs`) and the herd dashboard renders **three monospace ranch panels**:
 
-**Default policy:** `real_sources_only` — incomplete historical soil in date-range mode **fails the request** rather than inventing data.
+| Panel | What is real | What is *not* claimed |
+|-------|----------------|------------------------|
+| **Reflectivity / coupling** | OpenWebRX IQ RMS, PLL proxy, spectrum→gate mapping, fence mean coupling from the fuse | NASA CYGNSS delay-Doppler maps, bistatic RCS of bison on wire |
+| **Atmospheric column** | Open-Meteo blended forecast at pasture-network centroid (T₂m, RH, dewpoint) | GOES ABI/Sounder L2 “metabolic plume” retrieval |
+| **Field / vegetation** | Sentinel-2 L2A **STAC catalog head** (latest scene id, time, cloud %) + pipeline LAI + soil moisture spread | Red-edge B5–B7 step-function ingest, auto-traced “trophic scar” boundary |
 
----
-
-## 7. Console capabilities
-
-- **Live mode:** Current ingest snapshot across geolocated Turner pastures in the model.  
-- **Date-range mode:** UTC start/end scrub with daily soil history; **8–128 head sample** on map for performance; full-window **text export** for reports.  
-- **Metrics:** Fuse completeness, honest collar-proximity and individual-proximity caps, cross-source matrix.  
-- **Downloads:** Pipe-delimited text exports for herd and range.  
-
-**Registry numbers** (e.g. 45,000 head, ADM 1,450 lb/acre) come from **static published baselines** in the repository, not live Turner telemetry.
+If an upstream **errors or times out**, that **panel’s lines** report failure; the code **does not** invent substitute values for that channel. The main fuse can still succeed if core ingest completed.
 
 ---
 
-## 8. How to read the fidelity metrics
+## 3. What the console delivers today (honest scope)
 
-| Metric | Meaning | Common mistake |
-|--------|---------|----------------|
-| **Fuse %** | Channel completeness of live feeds | “We know where every bison is” |
-| **Collar proximity %** | Honest operational grade *toward* collar GPS (software-capped without collars) | Treating as actual collar accuracy |
-| **Individual animal proximity %** | Even lower cap without per-head sensing | Assuming per-animal tracking |
+**Clarifying:** Phase 1 is **not** a closed simulation with invented numbers. It is a **live fusion model** from **real public feeds**. It is also **not** collar-certified animal instrumentation.
 
-When multiple sources agree, placement weights adjust; when they disagree, the system does not pretend high individual certainty.
+We fuse **three core input families** for the placement field—**not** three proven bison physical signatures:
 
----
+### 3.1 Surface and forage context (pasture-scale, real APIs)
 
-## 9. Comparison: collars vs this layer
+Soil moisture, optional leaf-area index / ET₀, and NASA POWER skin-temperature proxies describe **surface conditions** at geolocated pastures. These inform **where grazing pressure is plausible** in the model—they do **not** locate individual animals.
 
-| Dimension | GPS collars (legacy) | Passive fusion layer (this system) |
-|-----------|-------------------|-------------------------------------|
-| Coverage | Subset of herd | Full registry context; map **sample** in range mode |
-| Animal handling | Roundups, batteries | None required (default) |
-| Position truth | Measured (subset) | **Modeled** field |
-| Infrastructure | Collars, chargers | Fences (mapped) + open data + receive-only RF |
-| Best use | Animal-level ops | Pasture-scale planning, rotation narrative, stress fusion |
-| Validation | Ranch ground truth | Requires pilot + optional collar subset for calibration |
+### 3.2 Receive-only radio statistics (mapped to fence geometry)
 
----
+OpenWebRX provides IQ/FFT/demod statistics. The server maps spectral energy **in gate order** along **mapped fence polylines**. This is **band activity × perimeter geometry** in software—not proof of animals at each gate.
 
-## 10. What improves with Turner collaboration
+### 3.3 Perimeter and environmental context
 
-**No hardware required to start:**
+Mapped fence lines, NOAA space weather / geomagnetic indices, and HIFLD transmission context feed a **passive radar-style fuse** and **lock-in** composite (PLL from IQ + Kp, SDR mapping, soil, LST proxy, steel geometry).
 
-- Verified pasture polygons  
-- Fence and gate corrections where OSM is thin  
-- Ranch-specific seasonal baselines and weight-class assumptions  
-- Agreement on which pastures/units to score in a pilot  
+### Model outputs (what managers see)
 
-**Optional later:**
+| Output | Meaning |
+|--------|---------|
+| **Placement field** | Normalized weights over a pasture grid |
+| **Map dots** | Sampled points from the field—not all 45,000 head |
+| **Fuse %** | **Feed completeness** for the ingest—not per-animal truth |
+| **Collar proximity %** | Multi-source **agreement toward** collar-grade **operational** usefulness (reflects current feeds; **not** GPS fixes) |
+| **Individual animal proximity %** | Per-head certainty remains **low** without animal-level sensors (software-bounded) |
+| **`stream.spaceBio`** | Always-on JSON block + UI ranch log for **every public extension** wired in this repo |
 
-- Receive-only ranch SDR (fidelity upgrade)  
-- Small collared comparison set in one unit (calibration only)  
-- Commercial very-high-resolution imagery pilots (validation, not default)  
+### What we do **not** assert today
 
----
+- Dielectric “bison footprints” or **undeniable** presence at boundaries from remote RF alone  
+- Automatic **verified tracks** (e.g. timber breaks → creek) logged on the wire  
+- **Grazing vs. trailing** classification from RF loop shape (not in the pipeline)  
+- **CYGNSS / GOES-native** products as implemented live channels (they are **not** in repo; panels state this explicitly)  
 
-## 11. Proposed minimal pilot (30 days)
+Those belong in **pilot hypotheses**, not in “what we prove today.”
 
-1. **Unit:** One pasture or management area Turner names.  
-2. **Inputs:** Existing GIS or OSM + your corrections; your rotation/grazing notes for the window.  
-3. **Comparison:** Pasture-level modeled stress/placement vs your ground truth.  
-4. **Optional:** Collared animals you already have—in that unit only—for error bands, not dependency.  
-5. **Success:** Useful for **planning conversation**; fail if marketed as certified inventory or collar replacement.  
+### What an honest pilot would validate (~30 days, one unit)
+
+Compare modeled pasture narrative vs. Turner rotation notes, range inspection, or optional small collared subset **for error bands only**. **Success** = useful for planning conversation. **Failure** = sold as certified inventory or collar replacement.
 
 ---
 
-## 12. Security and how to engage
+## 4. Data integrity & trust metrics
 
-- This white paper can be read **without visiting any website**.  
-- We can provide a **PDF**, a **scheduled call**, or materials through **Turner’s preferred channel**.  
-- Any demo URL should pass your **IT/security review** like any external link.  
-- We do not require installation of executable software on Turner systems for this background review.  
+Under **`real_sources_only`**, missing environmental or radio inputs cause **failure** rather than synthetic fill (except where legacy mode is explicitly enabled on the server).
 
----
-
-## 13. Corrections to earlier messaging
-
-If prior correspondence implied:
-
-- “Live feed of every bison” without collars → **incorrect**; the map shows a **fused model**, not continuous verified fixes.  
-- “No guessing” → **overstated**; we use **public models and fusion**, with explicit caps on collar-grade claims.  
-- Mandatory on-site radios → **incorrect**; **optional** for fidelity upgrade only.  
-
-This document supersedes informal marketing language on those points.
+| Metric | What it measures | Common mistake |
+|--------|------------------|----------------|
+| **Fuse completeness %** | Health of active feed channels | “We know where every bison is” |
+| **Collar proximity %** | Agreement of independent families toward collar-grade **ops** | Treating as actual collar GPS accuracy |
+| **Individual animal proximity %** | Per-head certainty (macro model without per-head sensors) | Expecting animal-level ID from Phase 1 alone |
 
 ---
 
-## 14. Contact and references
+## 5. Collaborative roadmap (Phase 2 — proposals, not promises)
 
-**Pru Mendez**  
-valetpru@gmail.com  
+The default stack is **usable for evaluation without Turner hardware**. Higher fidelity is **collaborative**:
 
-**Technical honesty anchor (internal/public repo):** HHA-NSPFRNP-ANCHOR-2026-05-25  
-**Optional demo:** https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management  
+### Step 1 — Ground data alignment (zero ranch radio)
+
+Import accurate pasture polygons and fence/gate GeoJSON where OSM is thin; align seasonal weight-class assumptions with Turner operations.
+
+### Step 2 — Local RF tuning (ranch upgrade path)
+
+Deploy **receive-only** OpenWebRX (or equivalent) on or near the ranch; point server ingest at a `wss://` URL. **Same software path**; potentially **tighter RF alignment** with local passband. Still mapped to fence GIS—not automatic per-animal GPS.
+
+### Step 3 — Animal-level sensing trials (separate protocol; not in repo today)
+
+**Hypothesis for future pilots only:** passive UHF RFID or other industry-standard tags, read ranges, and reader placement would need **Turner-approved trials** independent of the Phase 1 console. We do **not** claim today that:
+
+- Standard livestock UHF ear tags are excited by a 1420 MHz “cosmic fence waveguide,” or  
+- The current pipeline demodulates per-animal IDs at fence gates.
+
+Any per-head path requires **new hardware design**, **read validation**, and **published error bands**—not narrative physics in Phase 1.
+
+### Step 4 — Verification & error tuning
+
+Overlay a **small control subset** of existing GPS-collared animals in one test unit to benchmark model outputs, tune weights, and document explicit error statistics—**calibration**, not a dependency to run Phase 1.
+
+### Step 5 — Future native space products (engineering backlog)
+
+**CYGNSS** land / delay-Doppler **science products**, **GOES** L2 environmental fields at pasture scale, and **Sentinel-2** red-edge **pixel pipelines** are **candidates** for a later release once data contracts, latency, and validation paths are defined. They are **not** silently simulated in Phase 1.
 
 ---
 
-## Appendix A — Cover email (optional, paste above white paper)
+## 6. Security & engagement
 
-**Subject:** White paper — passive rangeland fusion layer (background, limits, optional pilot)
-
-Dr. Kruse,
-
-Following your questions about links and whether live animal feeds are possible without on-animal technology, I am attaching background that states plainly **what our system is, what it is not, and how we would propose a small pilot if useful**.
-
-The short version: we fuse **public remote sensing**, **mapped fence geometry**, and **receive-only radio statistics** into a **pasture-scale planning model**. We do **not** claim collar-grade GPS on every head, and we do **not** require hardware on Turner land to review the approach. Optional receive-only radios on the ranch can improve RF fidelity later if you choose that path.
-
-I am happy to discuss on a call or send a PDF; no link click is required to read the attached text.
-
-Respectfully,  
-Pru Mendez
+- This document is readable **without clicking** any demo link.  
+- PDF or scheduled call available; use Turner’s preferred channel.  
+- Demo URL should pass **IT/security review** like any external site.
 
 ---
 
-*End of white paper · HHA-TURNER-WP-2026-05-26*
+## 7. Corrections to earlier messaging
+
+| Earlier overstatement | Accurate framing |
+|----------------------|------------------|
+| Live GPS on every animal without tech | Pasture-scale **model** + sample map points |
+| Internet SDR = on your fence wire | **Mapped** to your fence **in software** |
+| “No guessing” | **Real feeds** + **fusion** with explicit metric limits |
+| Mandatory ranch hardware | **Not required** to start; **ranch SDR** = upgrade path |
+| Phase 2 tags / instrument grade **today** | **Roadmap / pilot** only |
+| “Optional” public sensors in UI | **All wired public channels run every ingest**; missing upstream = **failed channel text**, not fake data |
+
+---
+
+## 8. Fair Exchange Clause
+
+Settlement may adjust in part depending on overall delivery, like tipping — unchanged on the live stream payload (`fairExchange` string).
+
+---
+
+**Pru Mendez** · valetpru@gmail.com  
+
+*NSPFRNP fidelity · Phase 1 = all public feeds this repo wires + mapped fence + fusion model + space-bio ranch log · Phase 2 = collaboration & validated trials · → ∞¹³*

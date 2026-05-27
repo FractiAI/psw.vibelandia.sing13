@@ -59,169 +59,27 @@
     };
   }
 
-  function fmtNum(n, digits) {
-    return Number(n).toLocaleString('en-US', {
-      maximumFractionDigits: digits ?? 0,
-      minimumFractionDigits: digits ?? 0,
-    });
-  }
-
-  function setText(id, text) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = text;
-  }
-
-  function initTelescope() {
-    document.querySelectorAll('.tb-card-trigger').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        const panelId = btn.getAttribute('aria-controls');
-        const panel = panelId ? document.getElementById(panelId) : null;
-        const card = btn.closest('.tb-card');
-
-        document.querySelectorAll('.tb-card-trigger').forEach((other) => {
-          if (other === btn) return;
-          other.setAttribute('aria-expanded', 'false');
-          const pid = other.getAttribute('aria-controls');
-          const p = pid ? document.getElementById(pid) : null;
-          if (p) p.hidden = true;
-          other.closest('.tb-card')?.classList.remove('is-open');
-        });
-
-        const next = !expanded;
-        btn.setAttribute('aria-expanded', next ? 'true' : 'false');
-        if (panel) panel.hidden = !next;
-        card?.classList.toggle('is-open', next);
-      });
-    });
-  }
-
   function render(stream) {
     if (!stream?.pipeline) return;
-    const { ingest, scale, synthesis } = stream.pipeline;
-    const env = synthesis.environment || {};
-    const herd = synthesis.herd || {};
-    const bio = synthesis.biomass || {};
-    const wire = synthesis.wire || {};
+    const { ingest, synthesis } = stream.pipeline;
     const noaa = ingest?.noaa || {};
-
-    const headCount = herd.headCount ?? 45000;
-    const acres = '2,000,000';
-
+    const radar = stream.pipeline?.radar;
     const mapped = mapStreamFromPipeline(stream);
     if (mapInstance && mapReady) mapInstance.updateStream(mapped);
     else pendingMapStream = mapped;
 
-    setText('tb-preview-environment', env.f107LiveSfu != null ? `${env.f107LiveSfu} sfu · Kp ${env.kpEgsFloor ?? '—'}` : 'NOAA ingest active');
-    setText('tb-preview-herd', `${fmtNum(headCount)} head · ${fmtNum(herd.meanWeightLbs ?? 1100)} lbs mean`);
-    setText('tb-preview-forage', `${fmtNum(bio.admLbsPerAcre ?? 1450)} ADM/ac · ${bio.dailyForageTons ?? 585} tons/day`);
-    setText('tb-preview-audit', 'TIE · TESF public registry cross-check');
-    setText('tb-preview-system', `${stream.methodology || 'NSPFRNP'} · φ ${scale?.egsPhi || 1.618}`);
-
-    setText('tb-init-method', stream.methodology || 'NSPFRNP');
-    setText(
-      'tb-init-canvas',
-      `Turner Enterprise Contiguous Land Network · ${acres} acres · ${fmtNum(headCount)} head`
-    );
-    setText('tb-init-wave', 'High-tensile steel pasture perimeter boundary fences');
-    setText('tb-init-carrier', `${ingest?.rf?.carrierMhz?.toFixed(3) || '1420.406'} MHz · neutral hydrogen line`);
-    setText('tb-init-phi', `El Gran Sol EGS = ${scale?.egsPhi || 1.618}`);
-
-    const fluxLine =
-      env.f107LiveSfu != null
-        ? `${env.f107LiveSfu} sfu live (anchor ${env.f107AnchorSfu} · Δ ${env.f107Delta >= 0 ? '+' : ''}${env.f107Delta ?? '—'})`
-        : `Anchor ${env.f107AnchorSfu} sfu`;
-    setText('tb-flux', fluxLine);
-
-    setText(
-      'tb-sunspot',
-      env.sunspotLiveCount != null
-        ? `Count ${env.sunspotLiveCount} · ${env.activeAreaLive || '—'}`
-        : `Anchor ${env.activeAreaAnchor} · count ${env.sunspotAnchorCount}`
-    );
-
-    setText(
-      'tb-kp',
-      env.kpLive != null
-        ? `Live ${env.kpLive} → floor ${env.kpEgsFloor} (φ ${scale?.egsPhi || 1.618})`
-        : `Floor ${env.kpEgsFloor}`
-    );
-
-    setText('tb-heads', fmtNum(headCount));
-    setText('tb-weight', `${fmtNum(herd.meanWeightLbs ?? 1100)} lbs · ${herd.source || 'TESF registry'}`);
-    setText('tb-velocity', herd.velocity || '—');
-    setText('tb-adm', `${fmtNum(bio.admLbsPerAcre ?? 1450)} lbs / acre`);
-    setText('tb-metabolic', bio.metabolic || '—');
-    setText('tb-forage', `${fmtNum(bio.dailyForageLbs ?? 1170000)} lbs (${bio.dailyForageTons ?? 585} tons) / day`);
-    setText('tb-pll', `${wire.pllMicroseconds ?? '—'} µs · ${wire.rfSource || 'RF'}`);
-    setText('tb-ingest-count', noaa.f107Time ? noaa.f107Time : 'pending');
-
-    const radar = stream.pipeline?.radar;
-    setText('tb-pipe-stage', radar ? 'RADAR' : synthesis.stage || 'SYNTHESIS');
-    setText(
-      'tb-pipe-detail',
-      radar
-        ? `Radar fuse ${radar.fidelityPct}% · fence × satellite → model herd map`
-        : 'INGEST → SCALE → RADAR → SYNTHESIS'
-    );
-
-    const sources = [];
-    if (radar?.fenceChannel?.usedSteelGates) {
-      const sp = stream.pipeline?.steelPack;
-      if (sp?.osmWayCount > 0) {
-        sources.push(`Fence lines · OpenStreetMap Overpass (${sp.osmWayCount} ways, ODbL)`);
-      }
-      if (sp?.localFeatureCount > 0) {
-        sources.push('Fence override · data/turner-perimeter-steel.geojson');
-      }
-      if (!sp?.osmWayCount && !sp?.localFeatureCount) {
-        sources.push('Mapped fence perimeter gates');
-      }
-    }
-    if (radar?.fenceChannel?.passiveSdrSpectrumMapping) {
-      sources.push('Fence pulse × SDR · OpenWebRX spectrum mapped to steel gates');
-    } else {
-      sources.push('Fence-line radar · OpenWebRX 1420 MHz PLL gates');
-    }
-    sources.push('Satellite pass · Open-Meteo assimilated soil moisture');
-    if (stream.pipeline?.lstPass?.parameter) {
-      sources.push('Surface IR proxy · NASA POWER earth skin temperature (MERRA-2 TS)');
-    }
-    if (stream.pipeline?.laiPass?.variable) {
-      sources.push('Vegetation structure · Open-Meteo leaf area index');
-    }
-    if (radar?.crossSource) {
-      sources.push(
-        `Multi-source cross-ref · ~${radar.collarGradeProximityPct ?? radar.crossSource.collarGradeProximityPct}% collar proximity (not GPS fixes)`,
-      );
-    }
-    if (radar?.triangulatedLock?.digitalPruGate) {
-      sources.push('Digital Pru φ-gated lock-in score');
-    }
-    sources.push('Magnetic layers · NOAA Boulder K · Dst · L1 Bz');
-    if (stream.pipeline?.powerGrid?.lineCount) {
-      sources.push(`HIFLD grid · ${stream.pipeline.powerGrid.lineCount} transmission lines`);
-    }
-    if (noaa.f107Sfu != null) sources.push(`NOAA F10.7 ${noaa.f107Sfu} sfu`);
-    else if (noaa.error) sources.push(`NOAA: ${noaa.error}`);
-    sources.push('Turner Institute · TESF public registry');
-    setText('tb-source-banner', sources.join(' · '));
     const lockMean = radar?.triangulatedLock?.meanLockIn;
-  const collarProx = radar?.collarGradeProximityPct ?? radar?.crossSource?.collarGradeProximityPct;
-    setText(
-      'tb-radar-summary',
-      radar
-        ? `${radar.fidelityPct}% fuse · ~${collarProx ?? '—'}% collar proximity · correlation ${radar.correlationMean ?? '—'} · lock ${lockMean != null ? (lockMean * 100).toFixed(0) + '%' : '—'} · ${radar.fenceChannel?.usedSteelGates ? 'steel GPS gates' : 'schematic gates'}`
-        : 'Awaiting radar fuse…'
-    );
-
+    const collarProx = radar?.collarGradeProximityPct ?? radar?.crossSource?.collarGradeProximityPct;
     const status = $('#tb-exec-status');
     if (status) {
-      status.textContent = radar
-        ? `Cross-ref ${collarProx ?? '—'}% collar proximity (multi-source agreement, not GPS fixes) · lock ${lockMean != null ? (lockMean * 100).toFixed(0) + '%' : '—'} · ${radar.fidelityPct}% fuse channel · see honesty note.`
-        : noaa.error
-          ? 'Stream active — NOAA degraded; radar fuse retrying.'
-          : 'Live ingest active — passive radar synthesis for Turner-scale registry (model layer).';
+      if (radar) {
+        const lockPct = lockMean != null ? `${(lockMean * 100).toFixed(0)}%` : '—';
+        status.textContent = `Live · fuse ${radar.fidelityPct}% · collar-agreement ${collarProx ?? '—'}% (not GPS) · lock ${lockPct} · modeled map`;
+      } else {
+        status.textContent = noaa.error
+          ? 'Live stream degraded — retrying…'
+          : 'Live stream — building fuse…';
+      }
     }
   }
 
@@ -326,7 +184,8 @@
   function downloadRangeTxt() {
     if (!rangeSeries?.daily?.length) return;
     const lines = [
-      '# Turner date-range herd sample (modeled)',
+      '# Turner date-range herd sample — MODELED OUTPUT (not collar GPS or scale weights)',
+      '# Collaboration with Turner (pastures, fence truth, baselines, validation) could greatly improve accuracy.',
       `# Range: ${rangeSeries.range.start} to ${rangeSeries.range.end}`,
       '# Fields separated by " | "',
       '# date | id | pastureId | pastureName | schematicX | schematicY | lat_deg | lng_deg | estWeightLbs | radarFidelityPct',
@@ -408,10 +267,9 @@
       }
       if (txtBtn) txtBtn.disabled = false;
       if (st) {
-        st.textContent = `${rangeSeries.honesty?.note || ''} Soil: ${rangeSeries.soilHistory?.source || '—'}`;
+        st.textContent = `Range loaded · ${rangeSeries.daily.length} days · sample ${rangeSeries.sampleCount} heads · ${rangeSeries.soilHistory?.source || 'soil'}`;
       }
       applyRangeDayIndex(rangeSeries.daily.length - 1);
-      bindManagerActions();
     } catch (e) {
       historicalActive = false;
       if (errEl) {
@@ -474,38 +332,6 @@
     if (clock) clock.textContent = new Date().toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
   }
 
-  function bindManagerActions() {
-    const dl = document.getElementById('tb-page-download-herd');
-    const report = document.getElementById('tb-page-herd-report');
-    const hint = document.getElementById('tb-manager-hint');
-    const ready = mapReady && mapInstance;
-
-    if (dl) {
-      dl.disabled = !ready;
-      if (ready && !dl.dataset.bound) {
-        dl.dataset.bound = '1';
-        dl.addEventListener('click', () => mapInstance.downloadHerdReport());
-      }
-    }
-    if (report) {
-      report.disabled = !ready;
-      if (ready && !report.dataset.bound) {
-        report.dataset.bound = '1';
-        report.addEventListener('click', () => mapInstance.showHerdReport());
-      }
-    }
-    if (hint && ready) {
-      const n = mapInstance.bison?.length ?? 0;
-      if (historicalActive && rangeSeries) {
-        hint.textContent = `${n.toLocaleString()} sample heads (date range) · use “Download range (.txt)” for all days`;
-      } else {
-        hint.textContent = n
-          ? `${n.toLocaleString()} heads · plain-text export includes every animal by ranch + ranch summary rows`
-          : 'Herd roster ready — download or open report';
-      }
-    }
-  }
-
   async function initMap() {
     const root = document.getElementById('tb-map-root');
     if (!root || typeof TurnerRangelandMap !== 'function') return;
@@ -517,17 +343,13 @@
         mapInstance.updateStream(pendingMapStream);
         pendingMapStream = null;
       }
-      bindManagerActions();
     } catch (e) {
       mapReady = false;
       root.innerHTML = `<p class="tb-fetch-err">Map load failed: ${e.message}</p>`;
-      const hint = document.getElementById('tb-manager-hint');
-      if (hint) hint.textContent = 'Map unavailable — export disabled until chart loads.';
     }
   }
 
   function init() {
-    initTelescope();
     bindRangeControls();
     void initMap();
     void tick(true);

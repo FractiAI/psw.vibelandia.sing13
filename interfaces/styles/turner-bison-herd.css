@@ -832,3 +832,176 @@
   font-size: 0.78rem;
   color: #f0a8a8;
 }
+
+/* —— Ranch log · space-bio panels (monospace, high contrast) —— */
+.tb-ranch-panels {
+  margin: 1.5rem 0 1.25rem;
+  padding: 1rem 1rem 1.15rem;
+  border: 2px solid #2a4a38;
+  background: #0a1810;
+  box-shadow: inset 0 0 0 1px rgba(196, 168, 116, 0.2);
+}
+
+.tb-ranch-heading {
+  margin: 0 0 0.5rem;
+  font-family: var(--tb-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e8d4a8;
+}
+
+.tb-ranch-lede {
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  color: #c8d4c0;
+  line-height: 1.45;
+}
+
+.tb-ranch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.85rem;
+}
+
+.tb-ranch-panel {
+  border: 1px solid #3d6b52;
+  background: #0d2218;
+  padding: 0.65rem 0.7rem 0.75rem;
+}
+
+.tb-ranch-panel-title {
+  margin: 0 0 0.45rem;
+  font-family: var(--tb-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #f0e6c8;
+  line-height: 1.35;
+}
+
+.tb-ranch-readout {
+  margin: 0;
+  padding: 0.5rem 0.45rem;
+  font-family: var(--tb-mono);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: #e8f4e8;
+  background: #050d0a;
+  border: 1px solid #1a3024;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 14rem;
+  overflow: auto;
+}
+
+.tb-ranch-foot {
+  margin: 0.45rem 0 0;
+  font-size: 0.65rem;
+  color: #9ab49a;
+  line-height: 1.4;
+}
+
+.tb-ranch-disclaimer {
+  margin: 0.85rem 0 0;
+  font-size: 0.65rem;
+  color: #a89a7a;
+  font-family: var(--tb-mono);
+  line-height: 1.45;
+}
+
+/* —— Simplified herd page (live chart + range export) —— */
+.tb-page--simple {
+  font-size: 15px;
+}
+
+.tb-wrap--simple {
+  max-width: min(98vw, 1200px);
+  padding-top: 0.75rem;
+}
+
+.tb-simple-header {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--tb-line);
+}
+
+.tb-simple-title {
+  margin: 0 0 0.25rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(1.25rem, 4vw, 1.6rem);
+  font-weight: 600;
+  color: var(--tb-cream);
+  letter-spacing: 0.02em;
+}
+
+.tb-simple-sub {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--tb-muted);
+}
+
+.tb-truth {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.85rem;
+  background: rgba(15, 38, 28, 0.65);
+  border: 1px solid rgba(196, 168, 116, 0.35);
+  border-radius: 4px;
+}
+
+.tb-truth-text {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #e4e8e0;
+}
+
+.tb-truth-text strong {
+  color: var(--tb-gold);
+  font-weight: 600;
+}
+
+.tb-range-panel--simple {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 0.85rem;
+}
+
+.tb-range-note--short {
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+}
+
+.tb-live-line {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  color: #c8dcc8;
+  font-family: var(--tb-mono);
+}
+
+.tb-map-root--hero {
+  min-height: min(62vh, 560px);
+  margin-bottom: 0.5rem;
+}
+
+.tb-foot--simple {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--tb-line);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.tb-foot--simple a {
+  color: var(--tb-gold);
+  font-weight: 500;
+}
+
+.tb-chart-legend--compact {
+  gap: 0.35rem 0.55rem;
+  font-size: 0.68rem;
+}
+
+.tb-chart-legend--compact .tb-imagery-credit {
+  margin-left: 0.25rem;
+}

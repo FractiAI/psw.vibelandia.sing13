@@ -621,13 +621,9 @@
   TurnerRangelandMap.prototype._renderChrome = function () {
     const g = this.geo;
     const metrics = [
-      ['fidelity', 'Fuse %', 'tb-m-fidelity'],
-      ['collarProx', 'Collar prox.', 'tb-m-collar-prox'],
-      ['heads', 'Bison', 'tb-m-heads'],
-      ['flux', 'Solar flux', 'tb-m-flux'],
-      ['kp', 'Kp', 'tb-m-kp'],
-      ['mag', 'Magnetic', 'tb-m-mag'],
-      ['grid', 'Grid lines', 'tb-m-grid'],
+      ['fidelity', 'Fuse', 'tb-m-fidelity'],
+      ['collarProx', 'Collar Δ', 'tb-m-collar-prox'],
+      ['heads', 'Heads', 'tb-m-heads'],
     ];
     const metricHtml = metrics
       .map(
@@ -644,25 +640,25 @@
           <div class="tb-chart-overlay tb-chart-overlay--top" aria-label="Chart labels">
             <header class="tb-chart-head">
               <div>
-                <h2 class="tb-chart-title">Passive radar rangeland chart</h2>
-                <p class="tb-chart-sub" id="tb-chart-sub">${escapeHtml(g.networkLabel || '')} · Esri US satellite imagery · scroll zoom · drag pan · hold &amp; slide to zoom area</p>
+                <h2 class="tb-chart-title">Live rangeland chart</h2>
+                <p class="tb-chart-sub" id="tb-chart-sub">${escapeHtml(g.networkLabel || '')} · modeled herd on imagery · scroll / drag pan · box-drag to zoom</p>
               </div>
               <div class="tb-chart-actions">
                 <button type="button" class="tb-chart-btn" id="tb-zoom-out" title="Zoom out">−</button>
                 <button type="button" class="tb-chart-btn" id="tb-zoom-in" title="Zoom in">+</button>
                 <button type="button" class="tb-chart-btn" id="tb-fit" title="Full network">Fit</button>
-                <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-herd-report" title="Herd roster report by ranch">Report</button>
-                <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd" title="Download complete herd list (plain text)">Download</button>
+                <button type="button" class="tb-chart-btn tb-chart-btn--report" id="tb-herd-report" title="Summary by ranch">Ranches</button>
+                <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd" title="Plain-text herd list">Download herd</button>
               </div>
             </header>
             <div class="tb-metric-strip" role="group" aria-label="Live metrics">${metricHtml}</div>
-            <div class="tb-chart-legend">
-              <span><i class="swatch swatch-male"></i>Male</span>
-              <span><i class="swatch swatch-female"></i>Female</span>
+            <div class="tb-chart-legend tb-chart-legend--compact">
+              <span><i class="swatch swatch-male"></i>M</span>
+              <span><i class="swatch swatch-female"></i>F</span>
               <span><i class="swatch swatch-calf"></i>Calf</span>
-              <span><i class="swatch swatch-trail"></i>Trampled-grass path (GeoJSON)</span>
-              <span><i class="swatch swatch-power"></i>Transmission</span>
-              <span class="tb-imagery-credit">Basemap · Esri World Imagery (USDA / USGS)</span>
+              <span><i class="swatch swatch-trail"></i>Trail</span>
+              <span><i class="swatch swatch-power"></i>HV</span>
+              <span class="tb-imagery-credit">Esri</span>
             </div>
           </div>
           <p class="tb-chart-status tb-chart-overlay tb-chart-overlay--bottom" id="tb-chart-status" aria-live="polite">Awaiting telemetry…</p>
@@ -1119,7 +1115,7 @@
     ctx.textBaseline = 'top';
     ctx.textAlign = 'left';
     if (tier === 0) {
-      const line = 'Esri World Imagery · trampled-grass paths from GeoJSON only (no simulated wander)';
+      const line = 'Imagery + survey trails — herd dots modeled';
       ctx.strokeText(line, 10, topPad);
       ctx.fillText(line, 10, topPad);
     }
@@ -1139,9 +1135,9 @@
     }
     let head = this._statusHead || 'Awaiting telemetry…';
     if (this.stream?.radar) {
-      head = `Synthesis snapshot · ${this.stream.radar.fidelityPct}% fuse · herd on imagery (Open-Meteo soil × radar) · trampled paths (GeoJSON)`;
+      head = `Fuse ${this.stream.radar.fidelityPct}% · modeled herd`;
     } else if (placed && this._radar?.placementSeed) {
-      head = `${placed.toLocaleString()} bison · radar-weighted placement (continuous field, not grid snap)`;
+      head = `${placed.toLocaleString()} heads · modeled`;
     }
     const sample =
       stride.dots > 1 || stride.trails > 1
@@ -1257,13 +1253,10 @@
         if (el) el.textContent = v;
       };
       const b = stream.baseline || {};
-      const live = stream.live || {};
       set('#tb-m-fidelity', stream.radar?.fidelityPct != null ? stream.radar.fidelityPct + '%' : '—');
       const cpx = stream.radar?.collarGradeProximityPct ?? stream.radar?.crossSource?.collarGradeProximityPct;
       set('#tb-m-collar-prox', cpx != null ? cpx + '%' : '—');
       set('#tb-m-heads', (b.headCount || 45000).toLocaleString());
-      set('#tb-m-flux', live.fluxSfu != null ? live.fluxSfu + ' sfu' : '—');
-      set('#tb-m-kp', live.kp != null ? String(live.kp) : '—');
       return;
     }
     if (!this.ctx || !this.geo) {
@@ -1286,24 +1279,17 @@
       if (el) el.textContent = v;
     };
     const b = stream.baseline || {};
-    const live = stream.live || {};
     set('#tb-m-fidelity', stream.radar?.fidelityPct != null ? stream.radar.fidelityPct + '%' : '—');
     const collarProx =
       stream.radar?.collarGradeProximityPct ?? stream.radar?.crossSource?.collarGradeProximityPct;
     set('#tb-m-collar-prox', collarProx != null ? collarProx + '%' : '—');
     set('#tb-m-heads', (b.headCount || 45000).toLocaleString());
-    set('#tb-m-flux', live.fluxSfu != null ? live.fluxSfu + ' sfu' : '—');
-    set('#tb-m-kp', live.kp != null ? String(live.kp) : '—');
-    const mag = stream.magnetic || stream.radar?.magneticChannel;
-    set('#tb-m-mag', mag?.couplingIndex != null ? String(mag.couplingIndex) : '—');
-    const pg = stream.powerGrid || stream.radar?.powerGridChannel;
-    set('#tb-m-grid', pg?.lineCount != null ? String(pg.lineCount) : '—');
 
     if (stream.radar) {
       const cpx = stream.radar.collarGradeProximityPct ?? stream.radar.crossSource?.collarGradeProximityPct;
-      this._statusHead = `Synthesis · ${stream.radar.fidelityPct}% fuse · ~${cpx ?? '—'}% collar proximity (multi-source cross-ref, not GPS collars) · trampled paths (GeoJSON)`;
+      this._statusHead = `Fuse ${stream.radar.fidelityPct}% · collar-agreement ${cpx ?? '—'}% (not GPS) · modeled`;
     } else {
-      this._statusHead = 'Telemetry live · awaiting radar fuse payload';
+      this._statusHead = 'Live · awaiting fuse';
     }
     this._updateRenderNote();
     this.render();
@@ -1425,7 +1411,9 @@
     const stamp = new Date().toISOString().replace(/[:]/g, '-').replace(/\..+$/, '');
     const xref = this._radar?.crossSource;
     const lines = [
-      '# Turner Enterprise herd roster (modeled)',
+      '# Turner Enterprise herd roster — MODELED OUTPUT (not collar GPS or scale weights)',
+      '# Positions and weights are generated from public feeds + registry baselines.',
+      '# Collaboration with Turner (pastures, fence truth, baselines, validation) could greatly improve accuracy.',
       `# Generated: ${stamp}`,
       xref
         ? `# Collar-grade proximity (multi-source cross-ref, not GPS): ${this._radar?.collarGradeProximityPct ?? xref.collarGradeProximityPct}% · fuse channel ${this._radar?.fidelityPct ?? '—'}%`
@@ -1485,8 +1473,8 @@
       )
       .join('');
     this._showPanel(
-      'Full herd roster report',
-      'By ranch totals, remarks, and downloadable full list',
+      'Herd summary',
+      'Modeled totals by ranch — not verified inventory',
       `<div class="tb-report-actions">
         <button type="button" class="tb-chart-btn tb-chart-btn--download" id="tb-download-herd-txt">Download full herd list (.txt)</button>
       </div>

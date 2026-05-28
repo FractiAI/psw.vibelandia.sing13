@@ -68,8 +68,10 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
   const busyRef = useRef(false);
 
   const tracks = useCatalogStore((s) => s.tracks);
+  const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const importMediaFiles = useCatalogStore((s) => s.importMediaFiles);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
+  const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
 
   const [title, setTitle] = useState('');
   const [files, setFiles] = useState<File[]>([]);
@@ -124,7 +126,7 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
             : singleTitleOverride?.trim() ||
               title.trim() ||
               titleFromFileName(newFiles[0]!.name);
-        const { added } = await importMediaFiles(newFiles, {
+        const result = await importMediaFiles(newFiles, {
           ...(singleTitle ? { title: singleTitle } : {}),
           artist: DEFAULT_ARTIST,
           playlistIds: [MASTER_PLAYLIST_ID],
@@ -132,19 +134,23 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
         });
         setActivePlaylist(MASTER_PLAYLIST_ID);
 
-        if (added > 0) {
+        if (result.added > 0) {
           queueRef.current = [];
           setFiles([]);
           setTitle('');
           clearFileInput();
-          setStatus(
-            duplicates.length
-              ? formatPartialDuplicatesMessage(added, duplicates)
-              : added === 1
-                ? 'Success — track saved. Open Listen to play.'
-                : `Success — ${added} tracks saved. Open Listen to play.`,
-          );
+          const dupNote = duplicates.length
+            ? formatPartialDuplicatesMessage(result.added, duplicates)
+            : result.added === 1
+              ? 'Success — track saved. Open Listen to play.'
+              : `Success — ${result.added} tracks saved. Open Listen to play.`;
+          const failNote =
+            result.failed > 0
+              ? ` ${result.failed} file${result.failed === 1 ? '' : 's'} failed (${result.failures[0]?.name}: ${result.failures[0]?.message}).`
+              : '';
+          setStatus(`${dupNote}${failNote} Catalog: ${Object.keys(useCatalogStore.getState().tracks).length} tracks.`);
           onUploaded?.();
+          void syncLibraryFromServer();
         } else {
           setStatus('Upload finished but nothing new was saved. Check catalog settings or try again.');
         }
@@ -162,7 +168,7 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
         setBusy(false);
       }
     },
-    [importMediaFiles, onUploaded, serverReady, setActivePlaylist, shuffle, title, tracks],
+    [importMediaFiles, onUploaded, serverReady, setActivePlaylist, shuffle, syncLibraryFromServer, title, tracks],
   );
 
   const applyPickedFiles = useCallback(
@@ -388,6 +394,9 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
 
       <p className="mp3-uploader-status" role="status" aria-live="polite">
         {status}
+        {trackCount > 0 ? (
+          <span className="mp3-uploader-count"> · {trackCount} tracks in catalog</span>
+        ) : null}
       </p>
     </section>
   );

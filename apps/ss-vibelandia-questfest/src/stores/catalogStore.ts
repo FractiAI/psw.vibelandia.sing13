@@ -24,7 +24,7 @@ import {
 import { localMediaKeyFor } from '@/lib/localPlayback';
 import {
   deleteTrackOnServer,
-  fetchLiveCatalog,
+  fetchLiveCatalogForSync,
   isServerUploadConfigured,
   updateTrackOnServer,
   uploadCoverBlob,
@@ -93,7 +93,14 @@ interface CatalogState {
       coverFile?: File | null;
       onProgress?: (message: string) => void;
     },
-  ) => Promise<{ added: number; skipped: number; addedTrackIds: string[]; coverError?: string }>;
+  ) => Promise<{
+    added: number;
+    skipped: number;
+    addedTrackIds: string[];
+    failed: number;
+    failures: Array<{ name: string; message: string }>;
+    coverError?: string;
+  }>;
   scanDeviceLibrary: (opts?: { pickFolder?: boolean; onProgress?: (message: string) => void }) => Promise<{
     added: number;
     skipped: number;
@@ -162,6 +169,30 @@ function cloneSnapshot(s: CatalogSnapshot): CatalogSnapshot {
     playlists: s.playlists.map((p) => ({ ...p, trackIds: [...p.trackIds] })),
   };
 }
+
+/** After each successful upload — sidebar / track count update immediately. */
+function appendImportedTrackToState(
+  set: (fn: (s: CatalogState) => Partial<CatalogState>) => void,
+  get: () => CatalogState,
+  track: TrackDef,
+  playlistIds: string[],
+) {
+  set((s) => {
+    const tracks = { ...s.tracks, [track.id]: track };
+    const playlists = syncMasterPlaylistWithTracks(
+      tracks,
+      s.playlists.map((p) => {
+        if (!playlistIds.includes(p.id)) return p;
+        if (p.trackIds.includes(track.id)) return p;
+        return { ...p, trackIds: [...p.trackIds, track.id] };
+      }),
+    );
+    return { tracks, playlists };
+  });
+  get().persist();
+}
+
+const BETWEEN_UPLOAD_MS = 450;
 
 /** Master playlist = all track ids: keep existing order, append any new ids, drop missing files. */
 function syncMasterPlaylistWithTracks(
@@ -498,66 +529,48 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     );
     const existing = { tracks: { ...get().tracks }, sourceKeys };
     const newTracks: TrackDef[] = [];
+    const addedTrackIds: string[] = [];
+    const failures: Array<{ name: string; message: string }> = [];
     let skipped = 0;
-    let serverCatalog: CatalogSnapshot | undefined;
     const total = files.length;
     const report = opts?.onProgress;
+    const singleFile = total === 1;
+    const singleTitle = singleFile ? opts?.title?.trim() : undefined;
 
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
       report?.(`Uploading ${i + 1} of ${total}: ${file.name}…`);
-      const row = await addFileAsTrack(file, existing, {
-        title: opts?.title,
-        artist: opts?.artist,
-        description: opts?.description,
-        genre: opts?.genre,
-        useFileNameAsTitle: !opts?.title?.trim(),
-        onProgress: opts?.onProgress,
-      });
-      if (!row) {
-        skipped += 1;
-        continue;
-      }
-      if (row.catalog) serverCatalog = row.catalog;
-      const { track } = row;
-      existing.tracks[track.id] = track;
-      if (track.sourceKey) existing.sourceKeys.add(track.sourceKey);
-      newTracks.push(track);
-    }
-
-    if (!newTracks.length) return { added: 0, skipped, addedTrackIds: [], coverError: undefined };
-
-    if (serverCatalog) {
-      const prefs = loadCatalogPrefs();
-      const downloaded = loadDownloadedTrackIds();
-      const applied = applyServerCatalog(serverCatalog, prefs, downloaded);
-      set({
-        tracks: applied.tracks,
-        playlists: applied.playlists,
-        activePlaylistId: applied.activePlaylistId,
-      });
-      saveCatalogCache({
-        version: CATALOG_VERSION,
-        tracks: serverTracksForCache(applied.tracks),
-        playlists: applied.playlists,
-        activePlaylistId: applied.activePlaylistId,
-      });
-    } else {
-      set((s) => {
-        const tracks = { ...s.tracks };
-        for (const tr of newTracks) tracks[tr.id] = tr;
-        const playlists = s.playlists.map((p) => {
-          if (!playlistIds.includes(p.id)) return p;
-          const ids = [...p.trackIds];
-          for (const tr of newTracks) {
-            if (!ids.includes(tr.id)) ids.push(tr.id);
-          }
-          return { ...p, trackIds: ids };
+      try {
+        const row = await addFileAsTrack(file, existing, {
+          title: singleTitle,
+          artist: opts?.artist,
+          description: opts?.description,
+          genre: opts?.genre,
+          useFileNameAsTitle: !singleTitle,
+          onProgress: opts?.onProgress,
         });
-        return { tracks, playlists };
-      });
+        if (!row) {
+          skipped += 1;
+          continue;
+        }
+        const { track } = row;
+        existing.tracks[track.id] = track;
+        if (track.sourceKey) existing.sourceKeys.add(track.sourceKey);
+        newTracks.push(track);
+        addedTrackIds.push(track.id);
+        appendImportedTrackToState(set, get, track, playlistIds);
+        const n = Object.keys(get().tracks).length;
+        report?.(`Saved ${i + 1} of ${total} · ${n} tracks in catalog`);
+
+        if (i < files.length - 1) {
+          await new Promise((r) => setTimeout(r, BETWEEN_UPLOAD_MS));
+        }
+      } catch (e) {
+        const message = e instanceof Error ? e.message : 'upload_failed';
+        failures.push({ name: file.name, message });
+        report?.(`Failed ${file.name} (${i + 1}/${total}): ${message}`);
+      }
     }
-    get().persist();
 
     let coverError: string | undefined;
     if (opts?.coverFile && newTracks.length > 0) {
@@ -576,15 +589,29 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }
     }
 
-    void get()
-      .syncLibraryFromServer()
-      .catch(() => {
-        /* keep local uploads visible */
-      });
+    if (newTracks.length > 0) {
+      try {
+        await get().syncLibraryFromServer();
+      } catch {
+        /* incremental local state already visible */
+      }
+    }
+
+    if (!newTracks.length && failures.length === 1) {
+      throw new Error(failures[0]!.message);
+    }
+    if (!newTracks.length && failures.length > 1) {
+      throw new Error(
+        `All ${failures.length} uploads failed. First error: ${failures[0]!.message}`,
+      );
+    }
+
     return {
       added: newTracks.length,
       skipped,
-      addedTrackIds: newTracks.map((t) => t.id),
+      addedTrackIds,
+      failed: failures.length,
+      failures,
       coverError,
     };
   },
@@ -715,7 +742,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const prevTrackId = usePlaybackStore.getState().currentTrackId;
     try {
       const localTracks = get().tracks;
-      const server = mergePendingServerTracks(await fetchLiveCatalog(), localTracks);
+      const server = mergePendingServerTracks(await fetchLiveCatalogForSync(), localTracks);
       const applied = applyServerCatalog(server, prefs, downloaded);
       set({
         tracks: applied.tracks,

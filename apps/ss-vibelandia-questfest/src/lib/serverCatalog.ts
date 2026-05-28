@@ -14,6 +14,8 @@ import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
 
 const STATIC_CATALOG = '/media/catalog/catalog.json';
 const FETCH_MS = 2_500;
+/** After uploads — allow slower catalog manifest on mobile networks. */
+const SYNC_FETCH_MS = 15_000;
 const UPLOAD_API = '/api/catalog-upload';
 const TRACK_API = '/api/catalog-track';
 
@@ -88,16 +90,24 @@ export function mergeCatalogSnapshots(a: CatalogSnapshot, b: CatalogSnapshot): C
   };
 }
 
-export async function fetchLiveCatalog(): Promise<CatalogSnapshot> {
+async function fetchLiveCatalogWithTimeout(timeoutMs: number): Promise<CatalogSnapshot> {
   const pipe = catalogPipeOrigin();
   const apiUrl = pipe ? `${pipe}/api/catalog` : '/api/catalog';
   const [staticRaw, apiRaw] = await Promise.all([
-    fetchJsonWithTimeout(STATIC_CATALOG, FETCH_MS),
-    fetchJsonWithTimeout(apiUrl, FETCH_MS),
+    fetchJsonWithTimeout(STATIC_CATALOG, timeoutMs),
+    fetchJsonWithTimeout(apiUrl, timeoutMs),
   ]);
   let catalog = staticRaw ? normalizeServerCatalog(staticRaw) : buildEmptyCatalog();
   if (apiRaw) catalog = mergeCatalogSnapshots(catalog, normalizeServerCatalog(apiRaw));
   return catalog;
+}
+
+export async function fetchLiveCatalog(): Promise<CatalogSnapshot> {
+  return fetchLiveCatalogWithTimeout(FETCH_MS);
+}
+
+export async function fetchLiveCatalogForSync(): Promise<CatalogSnapshot> {
+  return fetchLiveCatalogWithTimeout(SYNC_FETCH_MS);
 }
 
 export type UploadTrackResult = { track: TrackDef };

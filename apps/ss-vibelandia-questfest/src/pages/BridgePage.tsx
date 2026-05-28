@@ -93,6 +93,7 @@ export function BridgePage() {
 
   const handleUploadSuccess = () => {
     setActivePlaylist(MASTER_PLAYLIST_ID);
+    void syncLibraryFromServer();
     /* Stay on Upload tab — user opens Listen when ready (avoids iOS picker teardown hang). */
   };
 

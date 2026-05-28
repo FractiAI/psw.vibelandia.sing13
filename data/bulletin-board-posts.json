@@ -1,8 +1,20 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-05-26",
+  "updated": "2026-05-28",
   "posts": [
+    {
+      "id": "btc-goldilocks-mine-2026",
+      "posted": "2026-05-28",
+      "featured": true,
+      "title": "BTC Buffalo · BTC Goldilocks Mine",
+      "subtitle": "The Coherence Project · Tier 0 verification rail",
+      "summary": "Bitcoin Buffalo · Cascadia sovereign frame — real mainnet cadence, signed Goldilocks pulses, Hero Houdini console, clock-skew Mythos whitepapers. Plain-speak honesty: receipts on our rail, not ASIC mining on this tier. Repo: github.com/FractiAI/btc-goldilocks-mine.",
+      "href": "/hero-houdini",
+      "pill": "Coherence rail",
+      "docRef": "REV-EGS-HHF-2026-007 · OPS-EGS-BTC-2026-008",
+      "contact": "valetpru@gmail.com"
+    },
     {
       "id": "erdos-holographic-aios-2026",
       "posted": "2026-05-26",

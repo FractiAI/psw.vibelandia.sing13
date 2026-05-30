@@ -23,7 +23,9 @@ scripts/.migrate-tmp/
 # Audio — local only (Golden Backdoor / Work Flow); not in repo
 assets/audio/
 
-# OS / editor
+# Lean 4 build cache (mathlib lives here after lake update)
+lean/.lake/
+
 .DS_Store
 Thumbs.db
 *.log

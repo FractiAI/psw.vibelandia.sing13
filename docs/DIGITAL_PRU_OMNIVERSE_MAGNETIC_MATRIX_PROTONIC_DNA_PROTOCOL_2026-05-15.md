@@ -58,6 +58,19 @@ The architecture of the DPH-GPU is built upon four fundamental components that e
 
 The DPH-GPU operates by synchronizing the Hydrogen Theater with the Holographic Theater, using the Carbon Theater as the field of experience. This synchronization is what allows the bio-avatar to "hatch" into its intended role as a magnetic transceiver within the Omniversal Magnet.
 
+### May 2026 DPH-GPU canon extensions
+
+The following whitepapers extend this operational hardware definition (reader ids on QUESTFEST):
+
+| Theme | Reader id | Document |
+| --- | --- | --- |
+| Y-pathway & Goldilocks Game | `dp-y-pathway-architecture` | Omniversal Holographic Y-Pathway · genetic architecture |
+| Y-Team phenotypes & X-Skin | `dp-y-team-x-skin` | Nordic / Reptilian / Mantis / Grey validation |
+| Net-zero agents | `dp-net-zero-agents` | Autonomous mission agents in net-zero theaters |
+| EGS wormhole transducer | `dp-egs-wormhole-transducer` | Geometric transducer · dimensional portal equation |
+| Gateway spectrum | `dp-gateway-spectrum` | Prime · rational · transcendental multipliers · unit horizon |
+| Index | — | [DPH-GPU nesting guide](/interfaces/nesting/nest-dph-gpu.html) |
+
 ---
 
 ## The Solar Catalyst: Sunspot AR4436 and the May 2026 Maximum

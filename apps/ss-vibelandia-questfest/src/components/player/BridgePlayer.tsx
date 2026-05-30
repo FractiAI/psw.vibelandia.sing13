@@ -1,14 +1,11 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
 import {
-  assignPlaybackSrc,
   getSimpleAudioElement,
   pauseSimpleAudio,
-  playAudioNow,
   registerPlaybackEngine,
   subscribeAudioBind,
 } from '@/lib/simplePlayback';
-import { dispatchPlayGesture } from '@/lib/playGesture';
 import { pausePlayback, startTrackPlayback } from '@/lib/trackPlayback';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
@@ -66,7 +63,6 @@ export function BridgePlayer({
   const setPlaying = usePlaybackStore((s) => s.setPlaying);
   const setGain = usePlaybackStore((s) => s.setGain);
   const setDisplayTime = usePlaybackStore((s) => s.setDisplayTime);
-  const setTrack = usePlaybackStore((s) => s.setTrack);
   const autoplayEnabled = usePlaybackStore((s) => s.autoplayEnabled);
   const backgroundPlayEnabled = usePlaybackStore((s) => s.backgroundPlayEnabled);
   const setAutoplayEnabled = usePlaybackStore((s) => s.setAutoplayEnabled);
@@ -275,23 +271,9 @@ export function BridgePlayer({
     if (!track || !url) return;
     clearKill();
     setGain(1);
+    setPlaybackError(null);
     if (isPlaying) {
       pausePlayback();
-      return;
-    }
-    dispatchPlayGesture(track.id);
-    const el = getSimpleAudioElement();
-    if (el) {
-      assignPlaybackSrc(el, url);
-      beginSession();
-      setTrack(track.id);
-      setPlaying(true);
-      void el.play().catch(() => {
-        void playAudioNow(url, 1).catch(() => {
-          setPlaybackError('Tap play on the audio bar below.');
-          setPlaying(false);
-        });
-      });
       return;
     }
     beginSession();

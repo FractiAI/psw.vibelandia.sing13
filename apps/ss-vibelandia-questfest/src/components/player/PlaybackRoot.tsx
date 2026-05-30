@@ -11,6 +11,7 @@ export function PlaybackRoot() {
 
   useEffect(() => {
     document.documentElement.classList.toggle('qf-upload-tab', djMode);
+    document.documentElement.classList.toggle('qf-playback-dock', !djMode);
     if (djMode) {
       pauseSimpleAudio();
       const pb = usePlaybackStore.getState();
@@ -18,11 +19,14 @@ export function PlaybackRoot() {
       pb.setTrack(null);
       pb.setPlaybackError(null);
     }
-    return () => document.documentElement.classList.remove('qf-upload-tab');
+    return () => {
+      document.documentElement.classList.remove('qf-upload-tab');
+      document.documentElement.classList.remove('qf-playback-dock');
+    };
   }, [djMode]);
 
   return (
-    <div className="sp-playback-stack" aria-hidden={djMode}>
+    <div className="sp-playback-stack" aria-hidden={djMode} data-playback-dock={djMode ? undefined : 'on'}>
       <GlobalAudio />
       {!djMode ? <PlayerDock /> : null}
     </div>

@@ -1,10 +1,5 @@
 import { playbackUrlForTrack } from '@/lib/isVideoTrack';
-import {
-  assignPlaybackSrc,
-  getSimpleAudioElement,
-  pauseSimpleAudio,
-  playAudioNow,
-} from '@/lib/simplePlayback';
+import { getSimpleAudioElement, pauseSimpleAudio, playAudioNow } from '@/lib/simplePlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import type { TrackDef } from '@/lib/catalogTypes';
 
@@ -30,18 +25,15 @@ export function startTrackPlayback(
 
   const el = getSimpleAudioElement();
   if (el) {
-    assignPlaybackSrc(el, url);
     pb.setPlaying(true);
-    void el.play().catch(() => {
-      void playAudioNow(url, 1)
-        .then(() => pb.setPlaying(true))
-        .catch(() => {
-          const msg = 'Could not start — tap ▶ on the audio bar below.';
-          pb.setPlaybackError(msg);
-          pb.setPlaying(false);
-          opts?.onError?.(msg);
-        });
-    });
+    void playAudioNow(url, 1)
+      .then(() => pb.setPlaying(true))
+      .catch(() => {
+        const msg = 'Could not start — tap ▶ on the player bar or Safari controls below.';
+        pb.setPlaybackError(msg);
+        pb.setPlaying(false);
+        opts?.onError?.(msg);
+      });
     return;
   }
 

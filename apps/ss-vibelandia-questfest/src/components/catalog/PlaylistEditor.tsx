@@ -1,5 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
+import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { startTrackPlayback } from '@/lib/trackPlayback';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
@@ -24,6 +27,9 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
   const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);
   const duplicatePlaylist = useCatalogStore((s) => s.duplicatePlaylist);
+  const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
+  const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
+  const isPlaying = usePlaybackStore((s) => s.isPlaying);
 
   const pl = playlists.find((p) => p.id === playlistId);
   const masterPl = playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
@@ -57,6 +63,17 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
       .map((id, index) => ({ id, index, track: getTrack(id) }))
       .filter((row): row is { id: string; index: number; track: NonNullable<ReturnType<typeof getTrack>> } => !!row.track);
   }, [pl, getTrack]);
+
+  const playTrack = (id: string) => {
+    const tr = getTrack(id);
+    const url = tr ? playbackUrlForTrack(tr) : '';
+    if (!tr || !url) {
+      usePlaybackStore.getState().setPlaybackError('No audio on this track — tap Refresh.');
+      return;
+    }
+    setActivePlaylist(playlistId);
+    startTrackPlayback(id, url);
+  };
 
   const availableTracks = useMemo(() => {
     if (isMaster) return [];
@@ -287,6 +304,14 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                       <span>{tr.artist}</span>
                     </span>
                     <div className="sp-pl-edit-row-actions">
+                      <button
+                        type="button"
+                        className="sp-pl-edit-play"
+                        onClick={() => playTrack(tr.id)}
+                        aria-label={`Play ${tr.title}`}
+                      >
+                        {currentTrackId === tr.id && isPlaying ? '♪' : '▶'}
+                      </button>
                       <button
                         type="button"
                         className="sp-pl-edit-secondary"

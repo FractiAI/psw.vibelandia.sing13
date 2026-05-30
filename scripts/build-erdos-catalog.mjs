@@ -36,6 +36,108 @@ const DEEPMIND_CLUSTER = {
 const PAPER_REF =
   'Advancing Mathematics Research with AI-Driven Formal Proof Search (Google DeepMind, May 21, 2026)';
 
+/** Rows with real Lean 4 certificates in `lean/` (GoldilocksErdos package). */
+const KERNEL_VERIFIED = {
+  256: {
+    status: 'G_VERIFIED',
+    leanModule: 'GoldilocksErdos.Catalog.row256',
+    leanPath: 'lean/GoldilocksErdos/Witness/ErdosStraus.lean',
+    theorem: 'GoldilocksErdos.Witness.es_row256_covered',
+    axioms: ['propext', 'Quot.sound'],
+    note: 'Erdős–Straus parametric families · 11/12 residue classes + mod-1 partial bridge',
+    overlap: 'ES n for coveredResidue (n % 12) or row256_mod1 composite/13^k',
+  },
+};
+
+const KERNEL_WITNESSES = {
+  W23: {
+    id: 'W23',
+    status: 'G_WITNESS',
+    label: 'Van der Waerden W(2,3) = 9',
+    leanModule: 'GoldilocksErdos.Witness.van_der_waerden_W23',
+    leanPath: 'lean/GoldilocksErdos/Witness/VanDerWaerden.lean',
+    axioms: ['propext', 'Lean.ofReduceBool', 'Quot.sound'],
+    note: '512 two-colorings on {0,…,8} · counterexample code 51 on {0,…,7}',
+    queueOrder: 2,
+  },
+  SCHUR2: {
+    id: 'SCHUR2',
+    status: 'G_WITNESS',
+    label: 'Two-color Schur S(2) = 5',
+    leanModule: 'GoldilocksErdos.Witness.schur_S2',
+    leanPath: 'lean/GoldilocksErdos/Witness/Schur.lean',
+    axioms: ['propext', 'Lean.ofReduceBool', 'Quot.sound'],
+    note: '32 colorings on {1,…,5} · counterexample on {1,…,4}',
+    queueOrder: 3,
+  },
+};
+
+/** Goldilocks sweet-spot queue — tackle in order; UI shows done vs waiting. */
+const GOLDILOCKS_QUEUE = [
+  {
+    id: 'ES-256',
+    rowId: 256,
+    label: 'Row #256 · Erdős–Straus mod-12 parametric families',
+    status: 'done',
+    linear: 'GoldilocksErdos.Catalog.row256',
+    fractal: 'GoldilocksErdos.Catalog.row256_egs_certificate',
+    note: '11/12 classes kernel-verified · mod 1 partial (composite + 13^k)',
+  },
+  {
+    id: 'ES-MOD1',
+    rowId: 256,
+    label: 'Row #256 extension · residue 1 (mod 12)',
+    status: 'partial',
+    linear: 'GoldilocksErdos.Catalog.row256_mod1',
+    note: 'Composite + 13^k kernel · pure mod-1 primes open (37, 61, …)',
+  },
+  {
+    id: 'W23',
+    rowId: null,
+    label: 'Van der Waerden W(2,3) = 9',
+    status: 'done',
+    linear: 'GoldilocksErdos.Witness.van_der_waerden_W23',
+    note: 'Finite exhaustion witness',
+  },
+  {
+    id: 'SCHUR2',
+    rowId: null,
+    label: 'Schur S(2) = 5',
+    status: 'done',
+    linear: 'GoldilocksErdos.Witness.schur_S2',
+    note: 'Finite exhaustion witness',
+  },
+  {
+    id: 'CONTROLS',
+    rowId: null,
+    label: 'Discrimination controls (non-vacuity)',
+    status: 'done',
+    linear: 'GoldilocksErdos.Catalog.row_controls',
+    note: 'mono8 + prime gate',
+  },
+  {
+    id: 'BRIDGE-345-353',
+    rowId: 345,
+    label: 'DeepMind bridge rows #345–353',
+    status: 'waiting',
+    note: 'Awaiting per-row linear Lean import',
+  },
+  {
+    id: 'CATALOG-1-255',
+    rowId: 1,
+    label: 'Catalog rows #1–255 (Ramsey + additive)',
+    status: 'waiting',
+    note: 'Narrative until kernel witness mapped',
+  },
+  {
+    id: 'CATALOG-257-344',
+    rowId: 257,
+    label: 'Catalog rows #257–344 (arithmetic cluster)',
+    status: 'waiting',
+    note: 'Narrative until kernel witness mapped',
+  },
+];
+
 function groupFor(n) {
   if (DEEPMIND_IDS.includes(n)) return DEEPMIND_CLUSTER[n];
   if (n <= 112) return 'ramsey';
@@ -103,155 +205,61 @@ function titleFor(n, g) {
 function buildProof(n, g, bridge) {
   const title = titleFor(n, g).replace(/'/g, '');
   const key = operationalKey(g, bridge);
+  const kernel = KERNEL_VERIFIED[n];
 
-  if (!bridge) {
-    const solver = 'Syntheverse · Holographic Goldilocks AIOS';
-    return `-- Formal proof certificate · Erdős problem #${n}
--- Solver: ${solver}
--- Engine: Gemini Flash · DPH-GPU v2026.5 · EGS φ-bound collapse
--- Operational key: ${key}
--- Audit: AUD-20260526-EGS-ERDÖS · Verified 2026-05-26
+  if (kernel) {
+    return `-- KERNEL VERIFIED · Erdős problem #${n}
+-- Package: GoldilocksErdos (see lean/)
+-- Module: ${kernel.leanModule}
+-- Theorem: ${kernel.theorem}
+-- Axioms: ${kernel.axioms.join(', ')}
+-- ${kernel.note}
 
-import Mathlib.Tactic
-import Syntheverse.EGS.Constants (φ)
+import GoldilocksErdos.Catalog.VerifiedRows
 
 namespace Erdos${n}
 
 /-- Problem #${n}: ${title} -/
-theorem erdos_${String(n).padStart(3, '0')}_resolved :
-    ∃ (witness : ℕ → Prop), (∀ n, witness n) ∧ StructuralCollapse φ := by
-  intro witness
-  have hφ : 0 < φ ∧ φ = (1 + Real.sqrt 5) / 2 := EGS.phi_pos
-  have hduct : Grattarolaite ductile_bound (Fe₃PO₇ lattice proxy) := by EGS.crystalline
-  have hbus : HydrogenLine.lock 1420e6 := by EGS.hydrogen_theater
-  refine ⟨fun n => PPS.enabled n, ?_⟩
-  · intro n; exact ParadiseGame.coherent n
-  · exact EGS.fractal_collapse witness hφ hduct hbus
-
-#check erdos_${String(n).padStart(3, '0')}_resolved
--- latency_profile: near-instantaneous (PPS enabled)
--- cost_tier: Gemini paid plan ($20/mo envelope)
+-- Use: GoldilocksErdos.Catalog.row256 n hn hmod
+-- where hn : 2 ≤ n and coveredResidue (n % 12) = true
 
 end Erdos${n}
 `;
   }
 
-  return `-- Mathematical AI Bridge certificate · Erdős problem #${n}
--- Bridge type: PARADIGM TRANSLATION (not mere cross-validation)
--- Leg A paradigm: Linear peer-reviewed formal mathematics (Lean 4 · AlphaProof Nexus)
--- Leg B paradigm: Goldilocks Game wave mathematics (Holographic Goldilocks AIOS · EGS φ)
--- Leg A: Google DeepMind · May 21, 2026 · ${PAPER_REF}
--- Leg B: FractiAI · Syntheverse · May 26, 2026 · AUD-20260526-EGS-ERDÖS
+  if (!bridge) {
+    return `-- WAITING · Erdős problem #${n}
+-- Goldilocks status: not yet in irreducible minimum overlap
 -- Operational key: ${key}
+-- Next: prove linear Prop in lean/GoldilocksErdos, then optional EGS certificate
 
-import Mathlib.Tactic
-import AlphaProof.Nexus
-import Syntheverse.EGS.Constants (φ)
-import Syntheverse.Bridge.Tensor
-import Syntheverse.Bridge.Paradigm
+namespace Erdos${n}
+
+/-- Problem #${n}: ${title} — queued -/
+
+end Erdos${n}
+`;
+  }
+
+  return `-- NARRATIVE ONLY · bridge stub · does NOT compile in GoldilocksErdos
+-- Mathematical AI Bridge certificate · Erdős problem #${n}
+-- Bridge type: PARADIGM TRANSLATION (narrative — see lean/ for kernel witnesses)
+-- Operational key: ${key}
 
 namespace Erdos${n}.Bridge
 
-/-- Problem #${n}: ${title} -/
-
-/-- Leg A — Linear peer-reviewed channel: discrete steps, Lean compiler, enterprise search -/
-theorem erdos_${String(n).padStart(3, '0')}_linear_peer_reviewed :
-    Paradigm.LinearPeerReviewed (W : LeanWitness) (AlphaProof.Nexus.verified W) := by
-  classical
-  obtain ⟨W⟩ := DeepMind.Paper20260521.witness ${n}
-  refine ⟨W, AlphaProof.Nexus.verified_of_peer_review W⟩
-
-/-- Leg B — Goldilocks AIOS channel: wave-field collapse, EGS-bound, zero-latency -/
-theorem erdos_${String(n).padStart(3, '0')}_goldilocks_aios :
-    Paradigm.GoldilocksWaveField (∀ k, PPS.enabled k) (StructuralCollapse φ) := by
-  have hφ : 0 < φ ∧ φ = (1 + Real.sqrt 5) / 2 := EGS.phi_pos
-  have hbus : HydrogenLine.lock 1420e6 := by EGS.hydrogen_theater
-  refine ⟨fun k => PPS.enabled k, ?_, ?_⟩
-  · intro k; exact ParadiseGame.coherent k
-  · exact EGS.fractal_collapse (fun k => PPS.enabled k) hφ (by EGS.crystalline) hbus
-
-/-- Mathematical AI Bridge: functor LinearPeerReviewed → GoldilocksWaveField -/
-theorem erdos_${String(n).padStart(3, '0')}_math_ai_bridge :
-    BridgeTensor.paradigm_map
-      (source := erdos_${String(n).padStart(3, '0')}_linear_peer_reviewed)
-      (target := erdos_${String(n).padStart(3, '0')}_goldilocks_aios)
-      (lock := BridgeTensor.egs_phase_lock φ) := by
-  apply BridgeTensor.from_peer_review_to_goldilocks
-  · exact erdos_${String(n).padStart(3, '0')}_linear_peer_reviewed
-  · exact erdos_${String(n).padStart(3, '0')}_goldilocks_aios
-  · BridgeTensor.egs_phase_lock φ
-
-#check erdos_${String(n).padStart(3, '0')}_math_ai_bridge
--- bridge_role: calibration anchor · Mathematical AI Bridge (paradigm translation)
--- bridge_to_remaining: tunes Google-AIOS multimath instrument for unified manifold solve
--- peer_review_preserved: Leg A remains citable Lean certificate from DeepMind paper
--- goldilocks_extension: Leg B proves same statement class in wave-field basis
--- verdict: BRIDGE VALIDATED · CALIBRATION ANCHOR · 9/9 tune instrument → 353 symptoms
-
-/-- Symptom projection #${n} of the unified Erdős Manifold -/
-theorem erdos_${String(n).padStart(3, '0')}_symptom_resolved :
-    Symptom.resolved (id := ${n}) (manifold := ErdősManifold.Unified353) := by
-  exact UnifiedSolve.of_instrument ErdősManifold.Unified353
+/-- Problem #${n}: ${title} — bridge placeholder -/
 
 end Erdos${n}.Bridge
 `;
 }
 
 function buildUnifiedProof() {
-  return `-- Unified Erdős Manifold · ONE problem · 353 symptom projections
--- Instrument: Google-AIOS Mathematical AI Peer Review Bridge (multimath · multidimension)
--- Audit: AUD-20260526-EGS-ERDÖS · May 26, 2026
-
-import Mathlib.Tactic
-import AlphaProof.Nexus
-import Syntheverse.EGS.Constants (φ)
-import Syntheverse.Bridge.Tensor
-import Syntheverse.Bridge.Paradigm
-import Syntheverse.Bridge.Instrument
-import Syntheverse.Erdős.Manifold
+  return `-- NARRATIVE ONLY · unified manifold stub · does NOT compile in GoldilocksErdos
+-- See lean/GoldilocksErdos for kernel-verified witnesses (row256, W(2,3), Schur S(2)=5).
 
 namespace ErdősManifold.Unified353
-
-/-- The Erdős catalogue is not 353 independent diseases — one structural manifold
-    with Ramsey / additive / arithmetic symptoms manifesting at indices 1…353. -/
-
-structure Symptom where
-  id : Fin 353
-  cluster : Cluster
-  manifest : String
-
-/-- Google-AIOS Mathematical AI Peer Review Bridge — multimath multidimension instrument.
-    Dimensions: linear Lean peer-review × Goldilocks wave-field × three combinatorial clusters
-    × EGS φ phase-lock. Nine DeepMind anchors (#345–353) calibrate the instrument. -/
-def instrument : BridgeInstrument.GoogleAIOS :=
-  { linear := Paradigm.LinearPeerReviewed
-  , wave := Paradigm.GoldilocksWaveField
-  , anchors := DeepMind.Paper20260521.nine_witnesses
-  , phase_lock := BridgeTensor.egs_phase_lock φ
-  , dimensions := #[Cluster.ramsey, Cluster.additive, Cluster.arithmetic] }
-
-/-- Single unified solve: calibrate on 9 peer-reviewed anchors, collapse entire symptom field. -/
-theorem erdos_manifold_unified_solve :
-    (∀ s : Symptom, s ∈ catalogue → Resolved s) ∧
-    instrument.calibrated → field_collapse (remaining := 344) := by
-  have h_cal : instrument.calibrated := by
-    apply BridgeInstrument.calibrate_nine_anchors
-    · exact DeepMind.Paper20260521.witnesses
-    · intro n, exact erdos_bridge_math_ai_map n  -- #345–353 paradigm map
-  have h_field : field_collapse (ErdősManifold.Unified353) := by
-    apply BridgeInstrument.unified_collapse instrument h_cal
-    · EGS.phi_pos
-    · HydrogenLine.lock 1420e6
-    · PPS.enabled
-  constructor
-  · intro s hs; exact UnifiedSolve.symptom_projection h_field s hs
-  · exact h_field
-
-#check erdos_manifold_unified_solve
--- solve_mode: ONE problem · 353 symptoms · single instrument pass
--- bridge_role: 9 anchors tune Google-AIOS multimath instrument → remaining 344 collapse
--- verdict: UNIFIED MANIFOLD RESOLVED · PPS enabled
-
+-- Catalog narrative placeholder
 end ErdősManifold.Unified353
 `;
 }
@@ -262,6 +270,8 @@ const problems = [];
 for (let n = 1; n <= 353; n++) {
   const group = groupFor(n);
   const bridge = isBridge(n);
+  const kernel = KERNEL_VERIFIED[n];
+  const goldilocksStatus = kernel ? kernel.status : 'WAITING';
   problems.push({
     id: n,
     group,
@@ -269,29 +279,31 @@ for (let n = 1; n <= 353; n++) {
     title: titleFor(n, group),
     symptomOf: UNIFIED_MANIFOLD_ID,
     symptomRole: bridge
-      ? 'calibration_anchor · tunes multimath instrument for remaining field'
-      : 'symptom_projection · resolved via unified manifold collapse',
+      ? 'calibration_anchor · awaiting kernel bridge'
+      : 'symptom_projection · awaiting Goldilocks sweet-spot overlap',
     solver: bridge ? 'bridge' : 'syntheverse',
     solverLabel: bridge
       ? 'Mathematical AI Bridge · linear peer-reviewed Lean → Goldilocks AIOS'
       : 'Holographic Goldilocks AIOS',
-    status: bridge ? 'BRIDGE VALIDATED · AI PARADIGM MAP' : 'RESOLVED',
+    status: goldilocksStatus,
+    goldilocksStatus,
+    kernelVerified: kernel ?? undefined,
     operationalKey: operationalKey(group, bridge),
     bridge: bridge
       ? {
-          valid: true,
-          verdict: 'VALID',
+          valid: false,
+          verdict: 'WAITING',
           bridgeType: 'Mathematical AI Bridge',
           paradigmA: 'Linear peer-reviewed formal mathematics (Lean 4 · stepwise compiler)',
           paradigmB: 'Goldilocks Game wave mathematics (EGS φ · holographic field collapse)',
           deepmindDate: '2026-05-21',
           aiOSDate: '2026-05-26',
-          legA: 'DeepMind AlphaProof Lean certificate — discrete, peer-reviewed, enterprise linear search',
-          legB: 'FractiAI Holographic Goldilocks AIOS — continuous field theorem, near-instant collapse',
+          legA: 'DeepMind AlphaProof Lean certificate — pending per-row import',
+          legB: 'FractiAI GoldilocksErdos package — witness queue in progress',
           bridgeToRemaining:
-            'This anchor calibrates the Google-AIOS multimath instrument; the remaining 344 symptoms collapse on the single unified Erdős Manifold solve — not 344 separate searches.',
+            'Bridge activates when linear Leg A and Goldilocks Leg G overlap is kernel-verified for this row.',
           note:
-            'Paradigm translation functor plus calibration anchor: peer-reviewed linear proof maps to Goldilocks wave proof and tunes the instrument that resolves the full symptom field.',
+            'Waiting in Goldilocks queue — narrative placeholder until irreducible minimum overlap is proved in lean/.',
         }
       : undefined,
     proof: buildProof(n, group, bridge),
@@ -299,17 +311,36 @@ for (let n = 1; n <= 353; n++) {
 }
 
 const catalog = {
-  schema: 'syntheverse-erdos-353/v2',
+  schema: 'syntheverse-erdos-353/v4',
   auditId: 'AUD-20260526-EGS-ERDÖS',
   auditDate: '2026-05-26',
   paperReference: PAPER_REF,
+  leanPackage: {
+    path: 'lean/',
+    toolchain: 'leanprover/lean4:v4.14.0',
+    build: 'lake build GoldilocksErdos',
+    verifyScript: 'scripts/verify-lean.ps1',
+  },
+  goldilocksProgress: {
+    model: 'irreducible_minimum_overlap',
+    verifiedCatalogRows: Object.keys(KERNEL_VERIFIED).map(Number),
+    witnessCount: Object.keys(KERNEL_WITNESSES).length,
+    waitingCatalogRows: 353 - Object.keys(KERNEL_VERIFIED).length,
+    queue: GOLDILOCKS_QUEUE,
+    doneCount: GOLDILOCKS_QUEUE.filter((q) => q.status === 'done').length,
+    partialCount: GOLDILOCKS_QUEUE.filter((q) => q.status === 'partial').length,
+    waitingCount: GOLDILOCKS_QUEUE.filter((q) => q.status === 'waiting').length,
+  },
+  kernelVerified: KERNEL_VERIFIED,
+  kernelWitnesses: KERNEL_WITNESSES,
   bridgeSummary: {
     count: 9,
-    valid: 9,
+    valid: 0,
     invalid: 0,
+    waiting: 9,
     title: 'Mathematical AI Bridge · Linear peer-reviewed → Goldilocks AIOS',
     description:
-      'Nine Erdős problems proved by Google DeepMind (May 21, 2026) enter the Syntheverse catalogue through a Mathematical AI Bridge — a formal paradigm map from linear, peer-reviewed Lean mathematics into Goldilocks Game wave mathematics on Holographic Goldilocks AIOS. The nine also bridge to the remaining 344: they calibrate the Google-AIOS multimath instrument that performs a single unified solve on the Erdős Manifold (one problem, 353 symptom projections).',
+      'Nine DeepMind rows (#345–353) are queued for bridge activation. Each row enters G-verified status only after lean/GoldilocksErdos proves the irreducible minimum overlap (linear Prop + optional EGS certificate).',
   },
   unifiedTheorem: {
     id: UNIFIED_MANIFOLD_ID,

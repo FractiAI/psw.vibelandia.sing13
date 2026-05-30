@@ -108,7 +108,7 @@ export function playAudioNow(url: string, volume = 1): Promise<void> {
   if (!el || !url) return Promise.reject(new Error('no_audio_or_url'));
 
   el.volume = Math.max(0, Math.min(1, volume));
-  assignSrc(el, url);
+  assignPlaybackSrc(el, url);
 
   const attempt = (): Promise<void> => el.play();
 

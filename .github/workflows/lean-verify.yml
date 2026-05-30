@@ -1,0 +1,40 @@
+# GoldilocksErdos · kernel witness verification (Lean 4 + mathlib4)
+name: Lean Verify
+
+on:
+  push:
+    paths:
+      - 'lean/**'
+      - 'scripts/verify-lean.ps1'
+      - '.github/workflows/lean-verify.yml'
+  pull_request:
+    paths:
+      - 'lean/**'
+      - 'scripts/verify-lean.ps1'
+      - '.github/workflows/lean-verify.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.14.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Cache Lake build
+        uses: actions/cache@v4
+        with:
+          path: |
+            lean/.lake/build
+            ~/.elan
+          key: lean-${{ runner.os }}-v4.14.0-${{ hashFiles('lean/lakefile.lean', 'lean/lake-manifest.json', 'lean/**/*.lean') }}
+          restore-keys: |
+            lean-${{ runner.os }}-v4.14.0-
+
+      - name: Build GoldilocksErdos
+        working-directory: lean
+        run: lake build GoldilocksErdos

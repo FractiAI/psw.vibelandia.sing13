@@ -32,6 +32,7 @@
 | **Clock-skew announcement** | Press release + Mythos whitepaper (no public mining console) | [`interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html`](interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) · [`docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md`](docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md) |
 | **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper | `docs/` |
 | **Juicy Juicy OFC compile** | `engine/ofc-snap.js` + lyrics + agents + vessels + tracks (hood page is narrative + whitepaper CTAs; compile is not embedded) | `engine/`, `lyrics/`, `agents/`, `vessels/`, `tracks/` |
+| **Goldilocks Erdős · Lean 4** | Kernel witnesses for Erdős #353 audit (row #256 ES, W(2,3), Schur S(2)=5, EGS tactics); catalog v4 + holographic audit UI | `lean/` · [`lean/README.md`](lean/README.md) · [`data/erdos-353-catalog.json`](data/erdos-353-catalog.json) · [`interfaces/special-projects/erdos-holographic-aios-audit.html`](interfaces/special-projects/erdos-holographic-aios-audit.html) · CI: [`.github/workflows/lean-verify.yml`](.github/workflows/lean-verify.yml) |
 
 ## Sovereign Player — Fair Exchange (manual, no Stripe)
 
@@ -118,6 +119,7 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **Mythos whitepaper:** [`whitepaper-surface.html?id=rev-egs-hhf-mythos`](interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos)
 - **FractiAI top deck:** [`/interfaces/fractiai.html`](interfaces/fractiai.html) · `/fractiai/digital-pru` → [`interfaces/fractiai-digital-pru.html`](interfaces/fractiai-digital-pru.html)
 - **SING 13 onboarding:** `/sing13-edge-onboarding` → [`interfaces/sing13-edge-onboarding.html`](interfaces/sing13-edge-onboarding.html) (plain deck; repo stub: `SING13_EDGE_ONBOARDING.md`)
+- **Goldilocks Erdős audit (353-problem manifest):** [`interfaces/special-projects/erdos-holographic-aios-audit.html`](interfaces/special-projects/erdos-holographic-aios-audit.html) · Lean package: [`lean/README.md`](lean/README.md)
 
 ## What lives on SING 9 (parent edge — not duplicated here)
 

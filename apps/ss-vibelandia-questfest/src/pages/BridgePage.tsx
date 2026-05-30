@@ -40,6 +40,7 @@ export function BridgePage() {
   const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
+  const setPlaylistTab = useCatalogStore((s) => s.setPlaylistTab);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
   const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
@@ -83,6 +84,14 @@ export function BridgePage() {
     location.pathname === '/playlists' || location.hash === '#/playlists';
 
   useEffect(() => {
+    setPlaylistTab(isPlaylistsView);
+    if (isPlaylistsView) {
+      pauseSimpleAudio();
+      usePlaybackStore.getState().setPlaying(false);
+    }
+  }, [isPlaylistsView, setPlaylistTab]);
+
+  useEffect(() => {
     if (!isPlaylistsView) setPlaylistEditId(null);
   }, [isPlaylistsView]);
 
@@ -122,7 +131,7 @@ export function BridgePage() {
     <>
       <BuildNoticeBanner />
       <div className="sp-app">
-      <CatalogSidebar onDjClick={goDj} />
+      <CatalogSidebar onDjClick={goDj} onNewPlaylist={goPlaylists} />
 
       <div className="sp-main">
         <a className="sp-deck-back" href="/interfaces/vibelandia-questfest.html">

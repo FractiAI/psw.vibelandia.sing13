@@ -2611,6 +2611,7 @@ html.ios .sp-now-video {
 }
 
 .sp-library-input {
+  width: 100%;
   border: 1px solid #535353;
   border-radius: 8px;
   background: #121212;
@@ -2618,6 +2619,12 @@ html.ios .sp-now-video {
   font: inherit;
   font-size: 16px;
   padding: 0.5rem 0.65rem;
+}
+
+.sp-library-rename {
+  margin-bottom: 0.15rem;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .sp-library-textarea {
@@ -3501,15 +3508,19 @@ a.boarding-pay-open {
 html.qf-upload-tab,
 html.qf-upload-tab body,
 html.qf-mp3-upload-page,
-html.qf-mp3-upload-page body {
+html.qf-mp3-upload-page body,
+html.qf-playlists-tab,
+html.qf-playlists-tab body {
   background: #06080d;
 }
 
-html.qf-mp3-upload-page .sp-playback-stack {
+html.qf-mp3-upload-page .sp-playback-stack,
+html.qf-playlists-tab .sp-playback-stack {
   display: none !important;
 }
 
-html.qf-mp3-upload-page .sp-scroll {
+html.qf-mp3-upload-page .sp-scroll,
+html.qf-playlists-tab .sp-scroll {
   padding-bottom: 1.5rem;
 }
 

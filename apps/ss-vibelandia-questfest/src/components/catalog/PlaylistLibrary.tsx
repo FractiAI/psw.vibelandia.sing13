@@ -28,11 +28,14 @@ export function PlaylistLibrary({
   const playlists = useCatalogStore((s) => s.playlists);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
+  const renamePlaylist = useCatalogStore((s) => s.renamePlaylist);
   const duplicatePlaylist = useCatalogStore((s) => s.duplicatePlaylist);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
   const getTrack = useCatalogStore((s) => s.getTrack);
 
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [renameId, setRenameId] = useState<string | null>(null);
+  const [renameDraft, setRenameDraft] = useState('');
 
   useEffect(() => {
     if (initialEditId) setEditingId(initialEditId);
@@ -44,10 +47,19 @@ export function PlaylistLibrary({
     }
   }, [editingId, playlists]);
 
+  const commitRename = () => {
+    if (!renameId) return;
+    renamePlaylist(renameId, renameDraft);
+    setRenameId(null);
+    setRenameDraft('');
+  };
+
+  /** Create only — stay on list (no heavy editor mount; avoids iOS blue-screen hang). */
   const handleCreate = () => {
     const id = createPlaylist('New playlist');
     setActive(id);
-    setEditingId(id);
+    setRenameId(id);
+    setRenameDraft('New playlist');
   };
 
   const sorted = useMemo(() => sortPlaylists(playlists), [playlists]);
@@ -73,8 +85,8 @@ export function PlaylistLibrary({
         <div>
           <h1 className="sp-library-title">{PLAIN.yourPlaylists}</h1>
           <p className="sp-library-sub">
-            <strong>{PLAIN.masterCatalog}</strong> — {PLAIN.masterCatalogHint} Make a playlist, tap Edit, add songs from
-            that list.
+            Tap <strong>+ New playlist</strong>, name it inline, then <strong>Edit</strong> to add songs from the Master
+            catalog.
           </p>
         </div>
         <button type="button" className="sp-library-new" onClick={handleCreate}>
@@ -90,12 +102,28 @@ export function PlaylistLibrary({
                 {isMasterPlaylist(pl.id) ? '📚' : '🎵'}
               </span>
               <span className="sp-library-meta">
-                <span className="sp-library-name">
-                  {pl.name}
-                  {isMasterPlaylist(pl.id) && (
-                    <span className="sp-library-badge"> full library </span>
-                  )}
-                </span>
+                {renameId === pl.id && !isMasterPlaylist(pl.id) ? (
+                  <input
+                    className="sp-library-input sp-library-rename"
+                    value={renameDraft}
+                    autoFocus
+                    aria-label="Playlist name"
+                    onClick={(e) => e.stopPropagation()}
+                    onChange={(e) => setRenameDraft(e.target.value)}
+                    onBlur={commitRename}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                        commitRename();
+                      }
+                    }}
+                  />
+                ) : (
+                  <span className="sp-library-name">
+                    {pl.name}
+                    {isMasterPlaylist(pl.id) && <span className="sp-library-badge"> full library </span>}
+                  </span>
+                )}
                 <span className="sp-library-count">
                   {pl.trackIds.length} {PLAIN.songs} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)} {PLAIN.totalTime}
                 </span>
@@ -110,13 +138,15 @@ export function PlaylistLibrary({
               </span>
             </button>
             <div className="sp-library-actions">
-              <button
-                type="button"
-                className="sp-library-btn sp-library-btn--primary"
-                onClick={() => setEditingId(pl.id)}
-              >
-                Edit
-              </button>
+              {!isMasterPlaylist(pl.id) && (
+                <button
+                  type="button"
+                  className="sp-library-btn sp-library-btn--primary"
+                  onClick={() => setEditingId(pl.id)}
+                >
+                  Edit
+                </button>
+              )}
               {!isMasterPlaylist(pl.id) && (
                 <button
                   type="button"

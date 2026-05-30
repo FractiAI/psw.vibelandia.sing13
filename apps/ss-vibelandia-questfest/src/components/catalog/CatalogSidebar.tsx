@@ -6,9 +6,10 @@ import { useMemo } from 'react';
 
 interface CatalogSidebarProps {
   onDjClick: () => void;
+  onNewPlaylist?: () => void;
 }
 
-export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
+export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps) {
   const playlists = useCatalogStore((s) => s.playlists);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
@@ -123,7 +124,11 @@ export function CatalogSidebar({ onDjClick }: CatalogSidebarProps) {
           <button
             type="button"
             className="sp-side-new"
-            onClick={() => createPlaylist('New playlist')}
+            onClick={() => {
+              createPlaylist('New playlist');
+              setDjMode(false);
+              onNewPlaylist?.();
+            }}
             aria-label="New playlist"
           >
             +

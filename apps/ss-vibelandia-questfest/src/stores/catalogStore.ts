@@ -53,12 +53,15 @@ interface CatalogState {
   catalogSyncing: boolean;
   view: View;
   djMode: boolean;
+  /** Playlists tab — pause/hide playback chrome (iOS blue-screen guard). */
+  playlistTab: boolean;
   tracks: Record<string, TrackDef>;
   playlists: PlaylistDef[];
   activePlaylistId: string;
   search: string;
   setView: (v: View) => void;
   setDjMode: (on: boolean) => void;
+  setPlaylistTab: (on: boolean) => void;
   setSearch: (q: string) => void;
   setActivePlaylist: (id: string) => void;
   getActivePlaylist: () => PlaylistDef | undefined;
@@ -307,6 +310,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   catalogSyncing: false,
   view: 'catalog',
   djMode: false,
+  playlistTab: false,
   tracks: bootCatalog.tracks,
   playlists: bootCatalog.playlists,
   activePlaylistId: bootCatalog.activePlaylistId,
@@ -326,7 +330,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   setView: (v) => set({ view: v }),
-  setDjMode: (on) => set({ djMode: on, view: on ? 'dj' : 'catalog' }),
+  setDjMode: (on) => set({ djMode: on, view: on ? 'dj' : 'catalog', playlistTab: on ? false : get().playlistTab }),
+  setPlaylistTab: (on) => set({ playlistTab: on }),
   setSearch: (q) => set({ search: q }),
   setActivePlaylist: (id) => set({ activePlaylistId: id, view: 'catalog' }),
 

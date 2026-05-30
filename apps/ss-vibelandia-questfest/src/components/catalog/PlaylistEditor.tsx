@@ -38,7 +38,6 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const [description, setDescription] = useState('');
   const [showAdd, setShowAdd] = useState(false);
   const [addSearch, setAddSearch] = useState('');
-  const [alsoAddTo, setAlsoAddTo] = useState<Set<string>>(new Set());
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
 
   const isMaster = isMasterPlaylist(playlistId);
@@ -124,9 +123,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     onDone();
   };
 
-  const addTrackWithExtras = (trackId: string) => {
+  const addTrack = (trackId: string) => {
     addTrackToPlaylist(trackId, playlistId);
-    for (const id of alsoAddTo) addTrackToPlaylist(trackId, id);
   };
 
   const handleDuplicate = () => {
@@ -211,49 +209,19 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
             ) : availableTracks.length === 0 ? (
               <p className="sp-pl-edit-add-empty">Every song from the Master catalog is already in this playlist.</p>
             ) : (
-              <>
-                {otherPlaylists.length > 0 && (
-                  <div className="sp-pl-edit-also-add">
-                    <p className="sp-pl-edit-also-label">Also add new picks to:</p>
-                    <ul className="sp-track-pl-list sp-track-pl-list--compact">
-                      {otherPlaylists.map((op) => (
-                        <li key={op.id}>
-                          <label className="sp-track-pl-row">
-                            <input
-                              type="checkbox"
-                              checked={alsoAddTo.has(op.id)}
-                              onChange={() => {
-                                setAlsoAddTo((prev) => {
-                                  const next = new Set(prev);
-                                  if (next.has(op.id)) next.delete(op.id);
-                                  else next.add(op.id);
-                                  return next;
-                                });
-                              }}
-                            />
-                            <span className="sp-track-pl-meta">
-                              <strong>{op.name}</strong>
-                            </span>
-                          </label>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                <ul className="sp-pl-edit-add-list">
-                  {availableTracks.map((tr) => (
-                    <li key={tr.id} className="sp-pl-edit-add-row">
-                      <span className="sp-pl-edit-track-info">
-                        <strong>{tr.title}</strong>
-                        <span>{tr.artist}</span>
-                      </span>
-                      <button type="button" className="sp-pl-edit-add-btn" onClick={() => addTrackWithExtras(tr.id)}>
-                        Add
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </>
+              <ul className="sp-pl-edit-add-list">
+                {availableTracks.map((tr) => (
+                  <li key={tr.id} className="sp-pl-edit-add-row">
+                    <span className="sp-pl-edit-track-info">
+                      <strong>{tr.title}</strong>
+                      <span>{tr.artist}</span>
+                    </span>
+                    <button type="button" className="sp-pl-edit-add-btn" onClick={() => addTrack(tr.id)}>
+                      Add
+                    </button>
+                  </li>
+                ))}
+              </ul>
             )}
           </div>
         )}

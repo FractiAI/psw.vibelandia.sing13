@@ -45,7 +45,7 @@
     } catch (_) {
       if (list) {
         list.innerHTML =
-          '<li class="deck-plain-item"><p>Could not load postings. <a href="/special-projects/turner-bison-herd-management">Turner Bison Herd Management System</a></p></li>';
+          '<li class="deck-plain-item"><p>Could not load postings. <a href="/interfaces/vibelandia-questfest.html">Return to QUESTFEST top deck</a></p></li>';
       }
     }
   }

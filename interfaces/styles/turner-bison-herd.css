@@ -11,6 +11,17 @@
   --tb-mono: 'Consolas', 'Courier New', monospace;
 }
 
+.tb-archived-notice {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--tb-cream);
+  background: rgba(154, 123, 82, 0.22);
+  border: 1px solid var(--tb-line);
+  border-radius: 6px;
+}
+
 .tb-page {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;

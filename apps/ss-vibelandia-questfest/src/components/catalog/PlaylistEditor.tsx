@@ -43,12 +43,13 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const isMaster = isMasterPlaylist(playlistId);
 
   useEffect(() => {
-    if (!pl) return;
-    setName(pl.name);
-    setDescription(pl.description);
+    const current = useCatalogStore.getState().playlists.find((p) => p.id === playlistId);
+    if (!current) return;
+    setName(current.name);
+    setDescription(current.description);
     setShowAdd(false);
     setAddSearch('');
-  }, [playlistId, pl?.id, pl?.name, pl?.description]);
+  }, [playlistId]);
 
   const canReorder = (pl?.trackIds.length ?? 0) > 1;
   const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
@@ -161,8 +162,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
             className="sp-library-input sp-pl-edit-name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            onBlur={saveMeta}
             placeholder="Playlist name"
+            autoComplete="off"
           />
         </label>
         <label className="sp-library-field">
@@ -171,7 +172,6 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
             className="sp-library-input sp-library-textarea"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            onBlur={saveMeta}
             rows={2}
             placeholder="Optional description"
           />

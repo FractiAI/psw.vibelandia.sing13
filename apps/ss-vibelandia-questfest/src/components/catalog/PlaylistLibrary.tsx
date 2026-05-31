@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { PlaylistEditor } from '@/components/catalog/PlaylistEditor';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
@@ -36,6 +36,12 @@ export function PlaylistLibrary({
   const [editingId, setEditingId] = useState<string | null>(null);
   const [renameId, setRenameId] = useState<string | null>(null);
   const [renameDraft, setRenameDraft] = useState('');
+  const renameDraftRef = useRef('');
+  const renameInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    renameDraftRef.current = renameDraft;
+  }, [renameDraft]);
 
   useEffect(() => {
     if (initialEditId) setEditingId(initialEditId);
@@ -47,19 +53,43 @@ export function PlaylistLibrary({
     }
   }, [editingId, playlists]);
 
-  const commitRename = () => {
+  useEffect(() => {
     if (!renameId) return;
-    renamePlaylist(renameId, renameDraft);
+    const t = window.setTimeout(() => {
+      const el = renameInputRef.current;
+      if (!el) return;
+      el.focus();
+      el.select();
+    }, 80);
+    return () => window.clearTimeout(t);
+  }, [renameId]);
+
+  const finishRename = useCallback(() => {
+    if (!renameId) return;
+    const name = renameDraftRef.current.trim() || 'New playlist';
+    renamePlaylist(renameId, name);
     setRenameId(null);
     setRenameDraft('');
-  };
+    renameDraftRef.current = '';
+  }, [renameId, renamePlaylist]);
 
-  /** Create only — stay on list (no heavy editor mount; avoids iOS blue-screen hang). */
+  const cancelRename = useCallback(() => {
+    setRenameId(null);
+    setRenameDraft('');
+    renameDraftRef.current = '';
+  }, []);
+
+  const startRename = useCallback((id: string, currentName: string) => {
+    setRenameId(id);
+    setRenameDraft(currentName);
+    renameDraftRef.current = currentName;
+  }, []);
+
+  /** Create only — stay on list; name via explicit Save (no blur / no nested button). */
   const handleCreate = () => {
     const id = createPlaylist('New playlist');
     setActive(id);
-    setRenameId(id);
-    setRenameDraft('New playlist');
+    startRename(id, 'New playlist');
   };
 
   const sorted = useMemo(() => sortPlaylists(playlists), [playlists]);
@@ -85,8 +115,8 @@ export function PlaylistLibrary({
         <div>
           <h1 className="sp-library-title">{PLAIN.yourPlaylists}</h1>
           <p className="sp-library-sub">
-            Tap <strong>+ New playlist</strong>, name it inline, then <strong>Edit</strong> to add songs from the Master
-            catalog.
+            Tap <strong>+ New playlist</strong>, enter a name and tap <strong>Save name</strong>, then{' '}
+            <strong>Edit</strong> to add songs from the Master catalog.
           </p>
         </div>
         <button type="button" className="sp-library-new" onClick={handleCreate}>
@@ -95,76 +125,118 @@ export function PlaylistLibrary({
       </header>
 
       <ul className="sp-library-list">
-        {sorted.map((pl) => (
-          <li key={pl.id} className={`sp-library-card${pl.id === activeId ? ' sp-library-card--on' : ''}`}>
-            <button type="button" className="sp-library-open" onClick={() => onOpenPlaylist(pl.id)}>
-              <span className="sp-library-cover" aria-hidden>
-                {isMasterPlaylist(pl.id) ? '📚' : '🎵'}
-              </span>
-              <span className="sp-library-meta">
-                {renameId === pl.id && !isMasterPlaylist(pl.id) ? (
-                  <input
-                    className="sp-library-input sp-library-rename"
-                    value={renameDraft}
-                    autoFocus
-                    aria-label="Playlist name"
-                    onClick={(e) => e.stopPropagation()}
-                    onChange={(e) => setRenameDraft(e.target.value)}
-                    onBlur={commitRename}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter') {
-                        e.preventDefault();
-                        commitRename();
-                      }
-                    }}
-                  />
-                ) : (
-                  <span className="sp-library-name">
-                    {pl.name}
-                    {isMasterPlaylist(pl.id) && <span className="sp-library-badge"> full library </span>}
+        {sorted.map((pl) => {
+          const isRenaming = renameId === pl.id && !isMasterPlaylist(pl.id);
+          return (
+            <li
+              key={pl.id}
+              className={`sp-library-card${pl.id === activeId ? ' sp-library-card--on' : ''}${isRenaming ? ' sp-library-card--renaming' : ''}`}
+            >
+              {isRenaming ? (
+                <div className="sp-library-rename-panel">
+                  <span className="sp-library-cover" aria-hidden>
+                    🎵
                   </span>
-                )}
-                <span className="sp-library-count">
-                  {pl.trackIds.length} {PLAIN.songs} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)} {PLAIN.totalTime}
-                </span>
-                {isMasterPlaylist(pl.id) ? (
+                  <div className="sp-library-rename-form">
+                    <label className="sp-library-field" htmlFor={`pl-rename-${pl.id}`}>
+                      Playlist name
+                    </label>
+                    <input
+                      ref={renameInputRef}
+                      id={`pl-rename-${pl.id}`}
+                      className="sp-library-input sp-library-rename"
+                      value={renameDraft}
+                      aria-label="Playlist name"
+                      autoComplete="off"
+                      enterKeyHint="done"
+                      onChange={(e) => {
+                        setRenameDraft(e.target.value);
+                        renameDraftRef.current = e.target.value;
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          e.preventDefault();
+                          finishRename();
+                        }
+                        if (e.key === 'Escape') {
+                          e.preventDefault();
+                          cancelRename();
+                        }
+                      }}
+                    />
+                    <div className="sp-library-rename-actions">
+                      <button type="button" className="sp-library-btn sp-library-btn--primary" onClick={finishRename}>
+                        Save name
+                      </button>
+                      <button type="button" className="sp-library-btn" onClick={cancelRename}>
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <button type="button" className="sp-library-open" onClick={() => onOpenPlaylist(pl.id)}>
+                  <span className="sp-library-cover" aria-hidden>
+                    {isMasterPlaylist(pl.id) ? '📚' : '🎵'}
+                  </span>
+                  <span className="sp-library-meta">
+                    <span className="sp-library-name">
+                      {pl.name}
+                      {isMasterPlaylist(pl.id) && <span className="sp-library-badge"> full library </span>}
+                    </span>
+                    <span className="sp-library-count">
+                      {pl.trackIds.length} {PLAIN.songs} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)}{' '}
+                      {PLAIN.totalTime}
+                    </span>
+                    {isMasterPlaylist(pl.id) ? (
+                      <>
+                        <span className="sp-library-desc">{SONIC_SINGULARITY_TAGLINE}</span>
+                        <span className="sp-library-desc sp-library-desc--hint">{MASTER_LIBRARY_UI_HINT}</span>
+                      </>
+                    ) : (
+                      pl.description && <span className="sp-library-desc">{pl.description}</span>
+                    )}
+                  </span>
+                </button>
+              )}
+              <div className="sp-library-actions">
+                {!isMasterPlaylist(pl.id) && !isRenaming && (
                   <>
-                    <span className="sp-library-desc">{SONIC_SINGULARITY_TAGLINE}</span>
-                    <span className="sp-library-desc sp-library-desc--hint">{MASTER_LIBRARY_UI_HINT}</span>
+                    <button
+                      type="button"
+                      className="sp-library-btn sp-library-btn--primary"
+                      onClick={() => setEditingId(pl.id)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      type="button"
+                      className="sp-library-btn"
+                      onClick={() => startRename(pl.id, pl.name)}
+                    >
+                      Rename
+                    </button>
+                    <button
+                      type="button"
+                      className="sp-library-btn"
+                      onClick={() => {
+                        const newId = duplicatePlaylist(pl.id);
+                        if (newId) setEditingId(newId);
+                      }}
+                    >
+                      Duplicate
+                    </button>
                   </>
-                ) : (
-                  pl.description && <span className="sp-library-desc">{pl.description}</span>
                 )}
-              </span>
-            </button>
-            <div className="sp-library-actions">
-              {!isMasterPlaylist(pl.id) && (
-                <button
-                  type="button"
-                  className="sp-library-btn sp-library-btn--primary"
-                  onClick={() => setEditingId(pl.id)}
-                >
-                  Edit
-                </button>
-              )}
-              {!isMasterPlaylist(pl.id) && (
-                <button
-                  type="button"
-                  className="sp-library-btn"
-                  onClick={() => {
-                    const newId = duplicatePlaylist(pl.id);
-                    if (newId) setEditingId(newId);
-                  }}
-                >
-                  Duplicate
-                </button>
-              )}
-              <button type="button" className="sp-library-btn" onClick={() => onOpenPlaylist(pl.id)}>
-                Play
-              </button>
-            </div>
-          </li>
-        ))}
+                {!isRenaming && (
+                  <button type="button" className="sp-library-btn" onClick={() => onOpenPlaylist(pl.id)}>
+                    Play
+                  </button>
+                )}
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

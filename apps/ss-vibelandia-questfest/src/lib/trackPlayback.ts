@@ -1,4 +1,4 @@
-import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import { getSimpleAudioElement, pauseSimpleAudio, playAudioNow } from '@/lib/simplePlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import type { TrackDef } from '@/lib/catalogTypes';
@@ -50,14 +50,29 @@ export function playTrackDef(
   track: TrackDef,
   opts?: { onError?: (msg: string | null) => void; beginSession?: () => void },
 ): void {
-  const url = playbackUrlForTrack(track);
-  if (!url) {
-    const msg = 'No audio file on this track — tap Refresh.';
+  void resolvePlaybackUrl(track)
+    .then((url) => startTrackPlayback(track.id, url, opts))
+    .catch(() => {
+      const msg = 'No audio file on this track — tap Refresh.';
+      usePlaybackStore.getState().setPlaybackError(msg);
+      opts?.onError?.(msg);
+    });
+}
+
+/** Resolve local-first URL then play — for list rows and bridge controls. */
+export function playTrackById(
+  trackId: string,
+  getTrack: (id: string) => TrackDef | undefined,
+  opts?: { onError?: (msg: string | null) => void; beginSession?: () => void },
+): void {
+  const tr = getTrack(trackId);
+  if (!tr) {
+    const msg = 'Track not found — tap Refresh.';
     usePlaybackStore.getState().setPlaybackError(msg);
     opts?.onError?.(msg);
     return;
   }
-  startTrackPlayback(track.id, url, opts);
+  playTrackDef(tr, opts);
 }
 
 export function pausePlayback(): void {

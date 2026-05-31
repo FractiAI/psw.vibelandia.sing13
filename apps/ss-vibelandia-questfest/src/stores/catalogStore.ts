@@ -773,20 +773,18 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   markTrackDownloaded: (trackId) => {
-    set((s) => {
-      const tr = s.tracks[trackId];
-      if (!tr) return s;
-      return {
-        tracks: {
-          ...s.tracks,
-          [trackId]: {
-            ...tr,
-            downloadedLocally: true,
-            localMediaKey: localMediaKeyFor(trackId),
-          },
+    const tr = get().tracks[trackId];
+    if (!tr || tr.downloadedLocally) return;
+    set((s) => ({
+      tracks: {
+        ...s.tracks,
+        [trackId]: {
+          ...tr,
+          downloadedLocally: true,
+          localMediaKey: localMediaKeyFor(trackId),
         },
-      };
-    });
+      },
+    }));
     get().persist();
   },
 

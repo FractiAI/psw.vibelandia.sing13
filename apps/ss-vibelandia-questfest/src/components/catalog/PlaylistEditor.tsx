@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { playbackUrlForTrack } from '@/lib/isVideoTrack';
-import { startTrackPlayback } from '@/lib/trackPlayback';
+import { playTrackById } from '@/lib/trackPlayback';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
@@ -65,14 +64,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   }, [pl, getTrack]);
 
   const playTrack = (id: string) => {
-    const tr = getTrack(id);
-    const url = tr ? playbackUrlForTrack(tr) : '';
-    if (!tr || !url) {
-      usePlaybackStore.getState().setPlaybackError('No audio on this track — tap Refresh.');
-      return;
-    }
     setActivePlaylist(playlistId);
-    startTrackPlayback(id, url);
+    playTrackById(id, getTrack);
   };
 
   const availableTracks = useMemo(() => {

@@ -11,8 +11,7 @@ import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
 
 import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
-import { playbackUrlForTrack } from '@/lib/isVideoTrack';
-import { startTrackPlayback } from '@/hooks/useSimpleAudioEngine';
+import { playTrackById } from '@/lib/trackPlayback';
 import {
   filterPlayableTrackIds,
   playlistOrderFingerprint,
@@ -116,14 +115,8 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
 
 
   const play = (id: string) => {
-    const tr = getTrack(id);
-    const url = tr ? playbackUrlForTrack(tr) : '';
-    if (!tr || !url) {
-      usePlaybackStore.getState().setPlaybackError('No audio file on this track — tap Refresh.');
-      return;
-    }
     setActivePlaylist(activePlaylistId);
-    startTrackPlayback(id, url);
+    playTrackById(id, getTrack);
   };
 
 

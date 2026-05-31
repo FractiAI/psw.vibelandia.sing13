@@ -3,7 +3,7 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistStore } from '@/stores/playlistStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { KillReason } from '@/hooks/useStreamLock';
-import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { resolvePlaybackUrl } from '@/lib/localPlayback';
 
 const GATE_SEC = 29;
 const FADE_START = 28.85;
@@ -56,11 +56,18 @@ export function SolenoidPlayer({
 
     gateArmedRef.current = true;
     setError(null);
-    const url = playbackUrlForTrack(track);
-    if (!url) return;
-    el.src = url;
-    el.load();
-    el.volume = gain;
+    let cancelled = false;
+
+    void resolvePlaybackUrl(track)
+      .then((url) => {
+        if (cancelled || !url) return;
+        el.src = url;
+        el.load();
+        el.volume = gain;
+      })
+      .catch(() => {
+        if (!cancelled) setError('Could not load this file.');
+      });
 
     const onTime = () => {
       const t = el.currentTime;
@@ -96,6 +103,7 @@ export function SolenoidPlayer({
     el.addEventListener('error', onErr);
 
     return () => {
+      cancelled = true;
       el.removeEventListener('timeupdate', onTime);
       el.removeEventListener('ended', onEnded);
       el.removeEventListener('error', onErr);

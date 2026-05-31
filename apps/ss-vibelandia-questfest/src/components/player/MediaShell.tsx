@@ -9,6 +9,7 @@ import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import type { BoardingHonorPayload } from '@/lib/boardingHonor';
 import { readPlaybackSession } from '@/lib/playbackSession';
+import { subscribeTrackDownloaded } from '@/lib/downloadEvents';
 import { usePlaybackSessionPersistence } from '@/hooks/usePlaybackSessionPersistence';
 
 /** Modals + session only — catalog loads from cache/bundle; Refresh pulls server updates. */
@@ -51,6 +52,8 @@ export function MediaShell() {
     }
 
   }, [hydrateSession, setBoardingOpen]);
+
+  useEffect(() => subscribeTrackDownloaded((trackId) => markTrackDownloaded(trackId)), [markTrackDownloaded]);
 
   const handleBoarding = async (payload: BoardingHonorPayload) => {
     const ok = await completeBoarding(payload);

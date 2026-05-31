@@ -9,10 +9,40 @@
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-catalog.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="deck-surfaces.css" />
   <style>
-    :root { --catalog-gold: #e8d089; --catalog-line: rgba(212, 175, 55, 0.22); }
+    :root {
+      --bg: #06080d;
+      --gold-hi: #fef3c7;
+      --gold: #d4af37;
+      --muted: #b8c5d6;
+      --foam: #5eead4;
+      --line: rgba(212, 175, 55, 0.38);
+      --catalog-gold: #fef3c7;
+      --catalog-line: rgba(212, 175, 55, 0.38);
+    }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(120% 80% at 50% 0%, #0c181c 0%, var(--bg) 45%, #030508 100%);
+      color: #f1f5f9;
+      line-height: 1.65;
+    }
+    .deck-wrap--catalog {
+      max-width: 56rem;
+    }
+    .deck-back {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      text-decoration: none;
+    }
+    .deck-back:hover { color: var(--gold-hi); }
     .cat-toolbar {
       display: flex;
       flex-wrap: wrap;
@@ -23,37 +53,49 @@
     .cat-search {
       flex: 1 1 14rem;
       min-width: 12rem;
-      padding: 0.65rem 0.85rem;
-      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      border-radius: 10px;
       border: 1px solid var(--catalog-line);
-      background: rgba(6, 11, 21, 0.85);
-      color: #f1f5f9;
+      background: rgba(10, 16, 28, 0.95);
+      color: #f8fafc;
       font: inherit;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
     }
-    .cat-search:focus { outline: 2px solid rgba(212, 175, 55, 0.45); outline-offset: 1px; }
+    .cat-search::placeholder { color: #94a3b8; }
+    .cat-search:focus {
+      outline: 2px solid rgba(94, 234, 212, 0.55);
+      outline-offset: 1px;
+      border-color: rgba(94, 234, 212, 0.45);
+    }
     .cat-filters {
       display: flex;
       flex-wrap: wrap;
       gap: 0.45rem;
+      margin-bottom: 0.75rem;
     }
     .cat-filter {
-      padding: 0.4rem 0.75rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 999px;
       border: 1px solid var(--catalog-line);
-      background: transparent;
-      color: #94a3b8;
+      background: rgba(10, 16, 28, 0.85);
+      color: #cbd5e1;
       font: inherit;
       font-size: 0.8125rem;
+      font-weight: 600;
       cursor: pointer;
     }
-    .cat-filter.is-active {
+    .cat-filter:hover {
       border-color: rgba(212, 175, 55, 0.55);
       color: var(--catalog-gold);
-      background: rgba(212, 175, 55, 0.1);
+    }
+    .cat-filter.is-active {
+      border-color: rgba(251, 191, 36, 0.75);
+      color: #1a120c;
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
     }
     .cat-meta {
       font-size: 0.875rem;
-      color: #94a3b8;
+      color: #cbd5e1;
       margin: 0 0 1rem;
     }
     .cat-grid {
@@ -73,37 +115,50 @@
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
-      padding: 1rem 1.05rem;
-      border-radius: 10px;
-      border: 1px solid var(--catalog-line);
-      background: rgba(8, 14, 26, 0.72);
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.42);
+      background: linear-gradient(145deg, rgba(26, 32, 44, 0.98), rgba(10, 14, 22, 0.99));
       text-decoration: none;
       color: inherit;
       min-height: 100%;
-      transition: border-color 0.15s, background 0.15s;
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
     }
     .cat-card:hover {
-      border-color: rgba(212, 175, 55, 0.45);
-      background: rgba(12, 20, 36, 0.85);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42);
+      color: inherit;
+    }
+    .cat-card:focus-visible {
+      outline: 2px solid var(--foam);
+      outline-offset: 3px;
     }
     .cat-card__pill {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #7dd3c0;
+      color: var(--gold);
     }
-    .cat-card__pill--featured { color: var(--catalog-gold); }
+    .cat-card__pill--featured {
+      color: #1a120c;
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+    }
     .cat-card__title {
-      font-weight: 600;
-      font-size: 0.98rem;
-      line-height: 1.35;
-      color: #f8fafc;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.3;
+      color: var(--catalog-gold);
     }
     .cat-card__sub {
-      font-size: 0.8125rem;
-      color: #94a3b8;
+      font-size: 0.86rem;
+      color: #cbd5e1;
       line-height: 1.45;
+      flex: 1;
     }
     .cat-card__tags {
       display: flex;
@@ -114,34 +169,41 @@
     }
     .cat-tag {
       font-size: 0.68rem;
-      padding: 0.15rem 0.45rem;
+      font-weight: 600;
+      padding: 0.18rem 0.5rem;
       border-radius: 4px;
-      background: rgba(148, 163, 184, 0.12);
-      color: #cbd5e1;
+      background: rgba(94, 234, 212, 0.12);
+      border: 1px solid rgba(94, 234, 212, 0.22);
+      color: #99f6e4;
     }
     .cat-empty {
       padding: 2rem 1rem;
       text-align: center;
-      color: #94a3b8;
+      color: #cbd5e1;
       border: 1px dashed var(--catalog-line);
-      border-radius: 10px;
+      border-radius: 12px;
+      background: rgba(10, 16, 28, 0.65);
     }
+    .cat-empty a { color: var(--foam); font-weight: 600; }
     .cat-actions-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.65rem;
       margin-top: 0.35rem;
     }
     .cat-action {
-      font-size: 0.75rem;
-      color: #7dd3c0;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--foam);
       text-decoration: none;
     }
     .cat-action:hover { text-decoration: underline; color: var(--catalog-gold); }
   </style>
 </head>
 <body>
-  <main class="deck-wrap">
+  <main class="deck-wrap deck-wrap--catalog">
     <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
 
     <nav class="deck-skin-nav" aria-label="Site">
@@ -226,28 +288,22 @@
           return;
         }
         gridEl.innerHTML = items.map(function (it) {
-          var pill = it.featured ? 'cat-card__pill cat-card__pill--featured' : 'cat-card__pill';
+          var pillClass = it.featured ? 'cat-card__pill cat-card__pill--featured' : 'cat-card__pill';
+          var pillLabel = it.type === 'whitepaper' ? 'Whitepaper' : it.type;
+          if (it.featured && it.type === 'whitepaper') pillLabel = 'Featured · Whitepaper';
           var sub = [it.docId, it.published, categoryLabel(it.category)].filter(Boolean).join(' · ');
           var tags = (it.tags || []).slice(0, 4).map(function (t) {
             return '<span class="cat-tag">' + t + '</span>';
           }).join('');
           var readHref = readerHref(it);
-          var pdfHref = it.type === 'whitepaper' || it.type === 'redirect'
-            ? readHref + (readHref.indexOf('?') >= 0 ? '&' : '?') + 'print=1'
-            : (it.whitepaperId ? '/interfaces/whitepaper-surface.html?id=' + encodeURIComponent(it.whitepaperId) + '&print=1' : null);
-          var actions = '<a class="cat-action" href="' + readHref + '">Read →</a>';
-          if (pdfHref) actions += ' <a class="cat-action" href="' + pdfHref + '">PDF export →</a>';
-          if (it.type === 'surface' || it.type === 'api') {
-            actions += ' <a class="cat-action" href="' + it.href + '">Open surface →</a>';
-          }
           return (
-            '<li><article class="cat-card">' +
-              '<span class="' + pill + '">' + (it.type === 'whitepaper' ? 'Whitepaper' : it.type) + '</span>' +
+            '<li><a class="cat-card" href="' + readHref + '">' +
+              '<span class="' + pillClass + '">' + pillLabel + '</span>' +
               '<span class="cat-card__title">' + it.title + '</span>' +
               '<span class="cat-card__sub">' + sub + '</span>' +
               '<div class="cat-card__tags">' + tags + '</div>' +
-              '<div class="cat-actions-row">' + actions + '</div>' +
-            '</article></li>'
+              '<span class="cat-action">Read →</span>' +
+            '</a></li>'
           );
         }).join('');
       }

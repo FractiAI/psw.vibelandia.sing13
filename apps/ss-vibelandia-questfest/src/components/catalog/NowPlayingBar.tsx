@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
 import { IOS_PLAYABLE_MEDIA_CLASS } from '@/lib/devicePlayback';
-import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { subscribeTrackDownloaded } from '@/lib/downloadEvents';
 import { dispatchPlayGesture, subscribePlayGesture } from '@/lib/playGesture';
 import { getPlaybackMedia, registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
 import { readPlaybackSession } from '@/lib/playbackSession';
@@ -71,6 +71,7 @@ export function NowPlayingBar({
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
   const primaryMediaRef = audioRef;
   const [mediaMountGen, setMediaMountGen] = useState(0);
+  const wiredUrlRef = useRef<string | null>(null);
 
   const syncBackgroundRef = useCallback(() => {
     backgroundAudioRef.current =
@@ -90,24 +91,38 @@ export function NowPlayingBar({
 
   const bumpMediaMount = useCallback(() => setMediaMountGen((n) => n + 1), []);
 
+  useEffect(
+    () =>
+      subscribeTrackDownloaded((trackId) => {
+        if (usePlaybackStore.getState().currentTrackId === trackId) bumpMediaMount();
+      }),
+    [bumpMediaMount],
+  );
+
   const wireSrcAndPlay = useCallback(
     (trackId: string, fromGesture: boolean) => {
       const tr = getTrack(trackId);
-      const url = tr ? playbackUrlForTrack(tr) : '';
       const el = audioRef.current;
-      if (!tr || !url || !el) return false;
+      if (!tr || !el) return false;
 
-      const needsLoad = wiredTrackRef.current !== trackId || !el.src;
-      if (needsLoad) {
-        wiredTrackRef.current = trackId;
-        el.src = url;
-        el.load();
-      }
-      el.volume = gainRef.current;
-      if (fromGesture || usePlaybackStore.getState().isPlaying) {
-        beginSession();
-        void el.play().catch(() => setError('Tap play on a track to start listening.'));
-      }
+      void resolvePlaybackUrl(tr)
+        .then((url) => {
+          if (!url) return;
+          const needsLoad = wiredTrackRef.current !== trackId || wiredUrlRef.current !== url || !el.src;
+          wiredTrackRef.current = trackId;
+          wiredUrlRef.current = url;
+          if (needsLoad) {
+            el.src = url;
+            el.load();
+          }
+          el.volume = gainRef.current;
+          if (fromGesture || usePlaybackStore.getState().isPlaying) {
+            beginSession();
+            void el.play().catch(() => setError('Tap play on a track to start listening.'));
+          }
+        })
+        .catch(() => setError('Could not load this track.'));
+
       return true;
     },
     [beginSession, getTrack],
@@ -300,11 +315,23 @@ export function NowPlayingBar({
         setPlaying(false);
         return;
       }
-      const alreadyWired = wiredTrackRef.current === trackId && !!el.src && !el.error;
+      const sameUrl = wiredUrlRef.current === url;
+      const alreadyWired = wiredTrackRef.current === trackId && !!el.src && !el.error && sameUrl;
       wiredTrackRef.current = trackId;
+      wiredUrlRef.current = url;
       if (!alreadyWired) {
+        const resumePos = el.currentTime > 0.25 ? el.currentTime : resumeAt;
         el.src = url;
         el.load();
+        if (resumePos != null && resumePos > 0.25) {
+          el.addEventListener(
+            'loadedmetadata',
+            () => {
+              el.currentTime = Math.min(resumePos, (el.duration || Infinity) - 0.25);
+            },
+            { once: true },
+          );
+        }
       }
       el.volume = gainRef.current;
       attachListeners();
@@ -316,22 +343,15 @@ export function NowPlayingBar({
       if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) tryPlay();
     };
 
-    const streamUrl = playbackUrlForTrack(track);
-    const useStreamFirst = !!streamUrl && !track.downloadedLocally;
-
-    if (useStreamFirst) {
-      applySrc(streamUrl);
-    } else {
-      void (async () => {
-        try {
-          const url = await resolvePlaybackUrl(track);
-          if (cancelled) return;
-          applySrc(url);
-        } catch {
-          if (!cancelled) setError('Could not load this track.');
-        }
-      })();
-    }
+    void (async () => {
+      try {
+        const url = await resolvePlaybackUrl(track);
+        if (cancelled) return;
+        applySrc(url);
+      } catch {
+        if (!cancelled) setError('Could not load this track.');
+      }
+    })();
 
     return () => {
       cancelled = true;

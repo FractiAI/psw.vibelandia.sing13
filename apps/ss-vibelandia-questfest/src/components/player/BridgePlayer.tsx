@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import {
   getSimpleAudioElement,
   pauseSimpleAudio,
   registerPlaybackEngine,
   subscribeAudioBind,
 } from '@/lib/simplePlayback';
-import { pausePlayback, startTrackPlayback } from '@/lib/trackPlayback';
+import { pausePlayback, playTrackDef, startTrackPlayback } from '@/lib/trackPlayback';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -81,7 +81,6 @@ export function BridgePlayer({
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
-  const url = track ? playbackUrlForTrack(track) : '';
 
   const plOrderKey = pl?.trackIds.join('\t') ?? '';
 
@@ -127,12 +126,19 @@ export function BridgePlayer({
       return false;
     }
     const tr = getTrack(nextId);
-    const u = tr ? playbackUrlForTrack(tr) : '';
-    if (!u) {
+    if (!tr) {
       setPlaying(false);
       return false;
     }
-    playUrl(nextId, u);
+    void resolvePlaybackUrl(tr)
+      .then((u) => {
+        if (!u) {
+          setPlaying(false);
+          return;
+        }
+        playUrl(nextId, u);
+      })
+      .catch(() => setPlaying(false));
     return true;
   }, [
     currentTrackId,
@@ -259,16 +265,23 @@ export function BridgePlayer({
       return;
     }
     const tr = getTrack(nextId);
-    const u = tr ? playbackUrlForTrack(tr) : '';
-    if (!u) {
+    if (!tr) {
       pausePlayback();
       return;
     }
-    playUrl(nextId, u);
+    void resolvePlaybackUrl(tr)
+      .then((u) => {
+        if (!u) {
+          pausePlayback();
+          return;
+        }
+        playUrl(nextId, u);
+      })
+      .catch(() => pausePlayback());
   };
 
   const togglePlay = () => {
-    if (!track || !url) return;
+    if (!track) return;
     clearKill();
     setGain(1);
     setPlaybackError(null);
@@ -277,7 +290,7 @@ export function BridgePlayer({
       return;
     }
     beginSession();
-    startTrackPlayback(track.id, url, { beginSession });
+    playTrackDef(track, { beginSession });
   };
 
   return (
@@ -352,9 +365,6 @@ export function BridgePlayer({
           {storeError && <span className="sp-now-error">{storeError}</span>}
         </div>
       </div>
-      <p className="sp-bridge-player-hint">
-        Use the <strong>Safari audio bar</strong> below for scrub and volume — most reliable on iPhone.
-      </p>
     </footer>
   );
 }

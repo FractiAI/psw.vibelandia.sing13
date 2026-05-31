@@ -124,6 +124,15 @@
   margin: 2rem 0 0.75rem;
   font-weight: 700;
 }
+.deck-section-label a {
+  color: var(--foam, #5eead4);
+  text-decoration: none;
+  font-weight: 700;
+}
+.deck-section-label a:hover {
+  color: var(--gold-hi, #fef3c7);
+  text-decoration: underline;
+}
 .deck-body p {
   margin: 0 0 0.85rem;
   color: #cbd5e1;
@@ -150,6 +159,9 @@
   margin: 0.5rem 0 0;
   list-style: none;
   padding: 0;
+}
+@media (min-width: 520px) {
+  .deck-paper-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 520px) {
   .deck-paper-grid--two { grid-template-columns: 1fr 1fr; }
@@ -200,7 +212,7 @@
 }
 .deck-paper-card__sub {
   font-size: 0.86rem;
-  color: var(--muted, #94a3b8);
+  color: #cbd5e1;
   line-height: 1.45;
   flex: 1;
 }

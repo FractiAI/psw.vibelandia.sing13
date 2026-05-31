@@ -23,7 +23,6 @@ import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { PLAIN } from '@/lib/plainSpeak';
 import { BridgeTowerBillboard } from '@/components/BridgeTowerBillboard';
-import { BuildNoticeBanner } from '@/components/BuildNoticeBanner';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
 import { pauseSimpleAudio } from '@/lib/simplePlayback';
 
@@ -129,7 +128,6 @@ export function BridgePage() {
 
   return (
     <>
-      <BuildNoticeBanner />
       <div className="sp-app">
       <CatalogSidebar onDjClick={goDj} onNewPlaylist={goPlaylists} />
 

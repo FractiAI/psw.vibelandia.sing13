@@ -1,6 +1,6 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import type { TrackDef } from '@/lib/catalogTypes';
-import { playbackUrlForTrack } from '@/lib/isVideoTrack';
+import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
@@ -20,6 +20,15 @@ interface UseBackgroundPlaybackOptions {
 
 function mediaIsAudible(el: HTMLMediaElement | null): boolean {
   return !!el && !el.paused && el.readyState > HTMLMediaElement.HAVE_NOTHING;
+}
+
+async function resolveHandoffUrl(track: TrackDef | undefined): Promise<string> {
+  if (!track) return '';
+  try {
+    return await resolvePlaybackUrl(track);
+  } catch {
+    return '';
+  }
 }
 
 /**
@@ -92,8 +101,10 @@ export function useBackgroundPlayback({
       const resumeAt = bg?.src ? bg.currentTime : el.currentTime;
       if (bg?.src) {
         el.currentTime = resumeAt;
-        if (el instanceof HTMLAudioElement) {
-          el.src = bg.src || (tr ? playbackUrlForTrack(tr) : '');
+        if (el instanceof HTMLAudioElement && tr) {
+          void resolveHandoffUrl(tr).then((url) => {
+            if (url) el.src = bg.src || url;
+          });
         }
       }
 
@@ -132,11 +143,12 @@ export function useBackgroundPlayback({
       };
       el.addEventListener('canplay', onReady, { once: true });
       if (!el.src && tr) {
-        const url = playbackUrlForTrack(tr);
-        if (url) {
-          el.src = url;
-          el.load();
-        }
+        void resolveHandoffUrl(tr).then((url) => {
+          if (url) {
+            el.src = url;
+            el.load();
+          }
+        });
       }
     };
 
@@ -144,27 +156,30 @@ export function useBackgroundPlayback({
       if (handoffBusyRef.current) return;
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
-      const url = playbackUrlForTrack(trackRef.current);
-      if (!el || !bg || !url || !isPlayingRef.current) return;
+      const tr = trackRef.current;
+      if (!el || !bg || !tr || !isPlayingRef.current) return;
       if (isVideo) return;
       if (usePlaybackStore.getState().backgroundHandoffActive && mediaIsAudible(bg)) return;
 
-      flushPlaybackSession();
-      handoffBusyRef.current = true;
-      bg.src = url;
-      bg.currentTime = el.currentTime;
-      bg.volume = el.volume;
-      void bg
-        .play()
-        .then(() => {
-          el.pause();
-          setBackgroundHandoffActive(true);
-          handoffBusyRef.current = false;
-        })
-        .catch(() => {
-          handoffBusyRef.current = false;
-          onRequestResumeRef.current?.();
-        });
+      void resolveHandoffUrl(tr).then((url) => {
+        if (!url) return;
+        flushPlaybackSession();
+        handoffBusyRef.current = true;
+        bg.src = url;
+        bg.currentTime = el.currentTime;
+        bg.volume = el.volume;
+        void bg
+          .play()
+          .then(() => {
+            el.pause();
+            setBackgroundHandoffActive(true);
+            handoffBusyRef.current = false;
+          })
+          .catch(() => {
+            handoffBusyRef.current = false;
+            onRequestResumeRef.current?.();
+          });
+      });
     };
 
     const resumeIfStalled = () => {
@@ -249,12 +264,14 @@ export function useBackgroundPlayback({
 
     const el = mediaRef.current;
     const bg = backgroundAudioRef.current;
-    const url = playbackUrlForTrack(track);
-    if (!el || !bg || !url) return;
+    if (!el || !bg || !track) return;
     if (usePlaybackStore.getState().backgroundHandoffActive && bg.src) return;
 
-    const handoff = () => {
-      if (handoffBusyRef.current) return;
+    let cancelled = false;
+    let onReady: (() => void) | null = null;
+
+    const handoff = (url: string) => {
+      if (cancelled || handoffBusyRef.current) return;
       handoffBusyRef.current = true;
       bg.src = url;
       bg.currentTime = Math.min(el.currentTime || 0, Number.isFinite(bg.duration) ? bg.duration : el.currentTime || 0);
@@ -262,24 +279,32 @@ export function useBackgroundPlayback({
       void bg
         .play()
         .then(() => {
+          if (cancelled) return;
           el.pause();
           setBackgroundHandoffActive(true);
           handoffBusyRef.current = false;
         })
         .catch(() => {
           handoffBusyRef.current = false;
-          onRequestResumeRef.current?.();
+          if (!cancelled) onRequestResumeRef.current?.();
         });
     };
 
-    if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA && el.src) {
-      handoff();
-      return;
-    }
+    void resolveHandoffUrl(track).then((url) => {
+      if (cancelled || !url) return;
+      if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA && el.src) {
+        handoff(url);
+        return;
+      }
 
-    const onReady = () => handoff();
-    el.addEventListener('canplay', onReady, { once: true });
-    return () => el.removeEventListener('canplay', onReady);
+      onReady = () => handoff(url);
+      el.addEventListener('canplay', onReady, { once: true });
+    });
+
+    return () => {
+      cancelled = true;
+      if (onReady) el.removeEventListener('canplay', onReady);
+    };
   }, [
     allowBackgroundPlay,
     backgroundAudioRef,

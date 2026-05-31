@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#060b15" />
+  <title>Technical papers · SS Vibelandia catalog</title>
+  <meta name="description" content="Search, read, and export SS Vibelandia technical whitepapers — DPH-GPU, HHF, Coherence, Erdős, Digital Pru, agentic layer." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-catalog.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="deck-surfaces.css" />
+  <style>
+    :root { --catalog-gold: #e8d089; --catalog-line: rgba(212, 175, 55, 0.22); }
+    .cat-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.25rem 0 1rem;
+      align-items: center;
+    }
+    .cat-search {
+      flex: 1 1 14rem;
+      min-width: 12rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--catalog-line);
+      background: rgba(6, 11, 21, 0.85);
+      color: #f1f5f9;
+      font: inherit;
+    }
+    .cat-search:focus { outline: 2px solid rgba(212, 175, 55, 0.45); outline-offset: 1px; }
+    .cat-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .cat-filter {
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--catalog-line);
+      background: transparent;
+      color: #94a3b8;
+      font: inherit;
+      font-size: 0.8125rem;
+      cursor: pointer;
+    }
+    .cat-filter.is-active {
+      border-color: rgba(212, 175, 55, 0.55);
+      color: var(--catalog-gold);
+      background: rgba(212, 175, 55, 0.1);
+    }
+    .cat-meta {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin: 0 0 1rem;
+    }
+    .cat-grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 960px) {
+      .cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .cat-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 1rem 1.05rem;
+      border-radius: 10px;
+      border: 1px solid var(--catalog-line);
+      background: rgba(8, 14, 26, 0.72);
+      text-decoration: none;
+      color: inherit;
+      min-height: 100%;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .cat-card:hover {
+      border-color: rgba(212, 175, 55, 0.45);
+      background: rgba(12, 20, 36, 0.85);
+    }
+    .cat-card__pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7dd3c0;
+    }
+    .cat-card__pill--featured { color: var(--catalog-gold); }
+    .cat-card__title {
+      font-weight: 600;
+      font-size: 0.98rem;
+      line-height: 1.35;
+      color: #f8fafc;
+    }
+    .cat-card__sub {
+      font-size: 0.8125rem;
+      color: #94a3b8;
+      line-height: 1.45;
+    }
+    .cat-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: auto;
+      padding-top: 0.35rem;
+    }
+    .cat-tag {
+      font-size: 0.68rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      background: rgba(148, 163, 184, 0.12);
+      color: #cbd5e1;
+    }
+    .cat-empty {
+      padding: 2rem 1rem;
+      text-align: center;
+      color: #94a3b8;
+      border: 1px dashed var(--catalog-line);
+      border-radius: 10px;
+    }
+    .cat-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+    }
+    .cat-action {
+      font-size: 0.75rem;
+      color: #7dd3c0;
+      text-decoration: none;
+    }
+    .cat-action:hover { text-decoration: underline; color: var(--catalog-gold); }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
+
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="look-under-the-hood.html">Under the hood</a><span class="dot" aria-hidden="true">·</span>
+      <a href="look-at-the-sun.html">Look at the Sun</a><span class="dot" aria-hidden="true">·</span>
+      <a href="nesting/nest-dph-gpu.html">DPH-GPU</a>
+    </nav>
+
+    <p class="deck-eyebrow">Repository · search · read · export</p>
+    <h1 class="deck-h1">Technical papers catalog</h1>
+    <p class="deck-lead">
+      One index for <strong>DPH-GPU</strong>, <strong>HHF</strong>, <strong>Coherence / BTC Buffalo</strong>,
+      <strong>Erdős</strong>, <strong>Digital Pru</strong>, and the <strong>agentic layer</strong> —
+      the same canon linked from Look under the hood, Look at the Sun, and special projects.
+    </p>
+
+    <div class="cat-toolbar">
+      <input class="cat-search" id="cat-search" type="search" placeholder="Search title, doc ID, tags…" autocomplete="off" aria-label="Search papers" />
+    </div>
+    <div class="cat-filters" id="cat-filters" role="tablist" aria-label="Filter by category"></div>
+    <p class="cat-meta" id="cat-meta" aria-live="polite">Loading catalog…</p>
+    <ul class="cat-grid" id="cat-grid" aria-live="polite"></ul>
+
+    <p class="deck-foot" style="margin-top: 2rem;">
+      <a href="look-under-the-hood.html#papers">Under the hood index</a> ·
+      <a href="whitepaper-surface.html">Document reader</a> ·
+      NSPFRNP → ∞¹³
+    </p>
+  </main>
+
+  <script>
+    (function () {
+      var categories = [];
+      var allItems = [];
+      var activeCategory = 'all';
+      var searchEl = document.getElementById('cat-search');
+      var filtersEl = document.getElementById('cat-filters');
+      var metaEl = document.getElementById('cat-meta');
+      var gridEl = document.getElementById('cat-grid');
+
+      function categoryLabel(id) {
+        var row = categories.find(function (c) { return c.id === id; });
+        return row ? row.label : id;
+      }
+
+      function renderFilters() {
+        filtersEl.innerHTML = categories.map(function (c) {
+          var active = c.id === activeCategory ? ' is-active' : '';
+          return '<button type="button" class="cat-filter' + active + '" data-cat="' + c.id + '" role="tab">' + c.label + '</button>';
+        }).join('');
+        filtersEl.querySelectorAll('.cat-filter').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            activeCategory = btn.getAttribute('data-cat') || 'all';
+            renderFilters();
+            renderGrid();
+          });
+        });
+      }
+
+      function filteredItems() {
+        var q = (searchEl.value || '').trim().toLowerCase();
+        return allItems.filter(function (it) {
+          if (activeCategory !== 'all' && it.category !== activeCategory) return false;
+          if (!q) return true;
+          var hay = [it.title, it.docId, it.id, it.category].concat(it.tags || []).join(' ').toLowerCase();
+          return hay.indexOf(q) !== -1;
+        });
+      }
+
+      function readerHref(item) {
+        if (item.type === 'whitepaper' || item.type === 'redirect') return item.href;
+        if (item.whitepaperId) return '/interfaces/whitepaper-surface.html?id=' + encodeURIComponent(item.whitepaperId);
+        return item.href;
+      }
+
+      function renderGrid() {
+        var items = filteredItems();
+        metaEl.textContent = items.length + ' of ' + allItems.length + ' entries · tap to read · use reader Save as PDF for export';
+        if (!items.length) {
+          gridEl.innerHTML = '<li class="cat-empty">No matches — try another search or category.</li>';
+          return;
+        }
+        gridEl.innerHTML = items.map(function (it) {
+          var pill = it.featured ? 'cat-card__pill cat-card__pill--featured' : 'cat-card__pill';
+          var sub = [it.docId, it.published, categoryLabel(it.category)].filter(Boolean).join(' · ');
+          var tags = (it.tags || []).slice(0, 4).map(function (t) {
+            return '<span class="cat-tag">' + t + '</span>';
+          }).join('');
+          var readHref = readerHref(it);
+          var pdfHref = it.type === 'whitepaper' || it.type === 'redirect'
+            ? readHref + (readHref.indexOf('?') >= 0 ? '&' : '?') + 'print=1'
+            : (it.whitepaperId ? '/interfaces/whitepaper-surface.html?id=' + encodeURIComponent(it.whitepaperId) + '&print=1' : null);
+          var actions = '<a class="cat-action" href="' + readHref + '">Read →</a>';
+          if (pdfHref) actions += ' <a class="cat-action" href="' + pdfHref + '">PDF export →</a>';
+          if (it.type === 'surface' || it.type === 'api') {
+            actions += ' <a class="cat-action" href="' + it.href + '">Open surface →</a>';
+          }
+          return (
+            '<li><article class="cat-card">' +
+              '<span class="' + pill + '">' + (it.type === 'whitepaper' ? 'Whitepaper' : it.type) + '</span>' +
+              '<span class="cat-card__title">' + it.title + '</span>' +
+              '<span class="cat-card__sub">' + sub + '</span>' +
+              '<div class="cat-card__tags">' + tags + '</div>' +
+              '<div class="cat-actions-row">' + actions + '</div>' +
+            '</article></li>'
+          );
+        }).join('');
+      }
+
+      var debounce;
+      searchEl.addEventListener('input', function () {
+        clearTimeout(debounce);
+        debounce = setTimeout(renderGrid, 120);
+      });
+
+      fetch('/api/whitepaper-catalog')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data.ok) throw new Error('catalog load failed');
+          categories = data.categories || [{ id: 'all', label: 'All papers' }];
+          allItems = data.items || [];
+          renderFilters();
+          renderGrid();
+        })
+        .catch(function () {
+          metaEl.textContent = 'Could not load catalog. Open papers from Look under the hood.';
+          gridEl.innerHTML = '<li class="cat-empty"><a href="look-under-the-hood.html#papers">Look under the hood →</a></li>';
+        });
+    })();
+  </script>
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

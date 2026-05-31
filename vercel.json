@@ -23,6 +23,12 @@
     { "source": "/mining-ops", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
     { "source": "/mining-ops/", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
     { "source": "/whitepaper/:id", "destination": "/interfaces/whitepaper-surface.html?id=:id" },
+    { "source": "/papers", "destination": "/interfaces/whitepaper-catalog.html" },
+    { "source": "/papers/", "destination": "/interfaces/whitepaper-catalog.html" },
+    { "source": "/whitepaper-catalog", "destination": "/interfaces/whitepaper-catalog.html" },
+    { "source": "/whitepaper-catalog/", "destination": "/interfaces/whitepaper-catalog.html" },
+    { "source": "/whitepaper/syn-sun-wavefield-oscillator", "destination": "/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator" },
+    { "source": "/whitepaper/syn-sun-wavefield-oscillator/", "destination": "/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator" },
     { "source": "/hhf-wp-2026-v8", "destination": "/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" },
     { "source": "/hhf-wp-2026-v8/", "destination": "/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" },
     { "source": "/whitepaper/goldilocks-erdos-mathematics", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-erdos-mathematics" },
@@ -110,6 +116,16 @@
       "memory": 512,
       "maxDuration": 30,
       "includeFiles": "{docs/**,protocols/**,BBHE_REPOSITORY_STANDARD.md}"
+    },
+    "api/whitepaper-catalog.js": {
+      "memory": 256,
+      "maxDuration": 15,
+      "includeFiles": "lib/**"
+    },
+    "api/dph-wavefield-solar.js": {
+      "memory": 512,
+      "maxDuration": 60,
+      "includeFiles": "lib/**"
     },
     "api/turner-bison-telemetry.js": {
       "memory": 512,

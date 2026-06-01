@@ -3,6 +3,19 @@ import { getSimpleAudioElement, pauseSimpleAudio, playAudioNow } from '@/lib/sim
 import { usePlaybackStore } from '@/stores/playbackStore';
 import type { TrackDef } from '@/lib/catalogTypes';
 
+/** True while pause came from app controls (not browser tab/screen sleep). */
+let appInitiatedPause = false;
+
+export function markAppPause(): void {
+  appInitiatedPause = true;
+}
+
+export function consumeAppPause(): boolean {
+  if (!appInitiatedPause) return false;
+  appInitiatedPause = false;
+  return true;
+}
+
 /** Play from a list-row tap — src + play() in the same user gesture (iOS Safari). */
 export function startTrackPlayback(
   trackId: string,
@@ -76,6 +89,18 @@ export function playTrackById(
 }
 
 export function pausePlayback(): void {
+  markAppPause();
   pauseSimpleAudio();
   usePlaybackStore.getState().setPlaying(false);
+}
+
+/** Resume when store still says playing but the element was paused (tab switch, screen lock). */
+export function resumePlaybackIfNeeded(): void {
+  if (document.hidden) return;
+  const { isPlaying, currentTrackId } = usePlaybackStore.getState();
+  if (!isPlaying || !currentTrackId) return;
+  const el = getSimpleAudioElement();
+  if (el?.paused && el.src) {
+    void el.play().catch(() => {});
+  }
 }

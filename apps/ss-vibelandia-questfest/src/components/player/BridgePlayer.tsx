@@ -6,7 +6,13 @@ import {
   registerPlaybackEngine,
   subscribeAudioBind,
 } from '@/lib/simplePlayback';
-import { pausePlayback, playTrackDef, startTrackPlayback } from '@/lib/trackPlayback';
+import {
+  consumeAppPause,
+  markAppPause,
+  pausePlayback,
+  playTrackDef,
+  startTrackPlayback,
+} from '@/lib/trackPlayback';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -178,6 +184,7 @@ export function BridgePlayer({
 
       if (t >= GATE_SEC && gateArmedRef.current) {
         gateArmedRef.current = false;
+        markAppPause();
         el.pause();
         el.currentTime = 0;
         setDisplayTime(0);
@@ -228,7 +235,11 @@ export function BridgePlayer({
     const el = getSimpleAudioElement();
     if (!el) return;
     const onPlay = () => setPlaying(true);
-    const onPause = () => setPlaying(false);
+    const onPause = () => {
+      if (consumeAppPause()) return;
+      if (!document.hidden) setPlaying(false);
+      /* Tab background / screen lock: keep play intent so we resume on return. */
+    };
     el.addEventListener('playing', onPlay);
     el.addEventListener('pause', onPause);
     return () => {
@@ -236,19 +247,6 @@ export function BridgePlayer({
       el.removeEventListener('pause', onPause);
     };
   }, [setPlaying]);
-
-  useEffect(() => {
-    if (fullPlayUnlocked && backgroundPlayEnabled) return;
-    const onHide = () => {
-      if (document.hidden) pausePlayback();
-    };
-    document.addEventListener('visibilitychange', onHide);
-    window.addEventListener('pagehide', onHide);
-    return () => {
-      document.removeEventListener('visibilitychange', onHide);
-      window.removeEventListener('pagehide', onHide);
-    };
-  }, [backgroundPlayEnabled, fullPlayUnlocked]);
 
   const stepPlaylist = (delta: 1 | -1) => {
     if (!pl) return;

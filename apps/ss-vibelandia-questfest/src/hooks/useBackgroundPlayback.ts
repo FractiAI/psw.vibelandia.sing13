@@ -69,12 +69,7 @@ export function useBackgroundPlayback({
     const pauseIfHidden = () => {
       if (!document.hidden) return;
       flushPlaybackSession();
-      const el = mediaRef.current;
-      const bg = backgroundAudioRef.current;
-      if (el && !el.paused) el.pause();
-      if (bg && !bg.paused) bg.pause();
-      if (usePlaybackStore.getState().isPlaying) setPlaying(false);
-      setBackgroundHandoffActive(false);
+      /* Free preview: persist position only — do not stop on tab background. */
     };
 
     document.addEventListener('visibilitychange', pauseIfHidden);

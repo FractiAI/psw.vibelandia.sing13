@@ -5,17 +5,16 @@ import { pauseSimpleAudio } from '@/lib/simplePlayback';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
-/** App-level playback — one <audio> always mounted; chrome hidden on Upload / Playlists tabs. */
+/** App-level playback — one <audio> always mounted; chrome hidden on Upload tab only. */
 export function PlaybackRoot() {
   const djMode = useCatalogStore((s) => s.djMode);
   const playlistTab = useCatalogStore((s) => s.playlistTab);
-  const chromeSafe = djMode || playlistTab;
 
   useEffect(() => {
     document.documentElement.classList.toggle('qf-upload-tab', djMode);
     document.documentElement.classList.toggle('qf-playlists-tab', playlistTab);
-    document.documentElement.classList.toggle('qf-playback-dock', !chromeSafe);
-    if (chromeSafe) {
+    document.documentElement.classList.toggle('qf-playback-dock', !djMode);
+    if (djMode) {
       pauseSimpleAudio();
       const pb = usePlaybackStore.getState();
       pb.setPlaying(false);
@@ -27,12 +26,12 @@ export function PlaybackRoot() {
       document.documentElement.classList.remove('qf-playlists-tab');
       document.documentElement.classList.remove('qf-playback-dock');
     };
-  }, [djMode, playlistTab, chromeSafe]);
+  }, [djMode, playlistTab]);
 
   return (
-    <div className="sp-playback-stack" aria-hidden={chromeSafe} data-playback-dock={chromeSafe ? undefined : 'on'}>
+    <div className="sp-playback-stack" aria-hidden={djMode} data-playback-dock={djMode ? undefined : 'on'}>
       <GlobalAudio />
-      {!chromeSafe ? <PlayerDock /> : null}
+      {!djMode ? <PlayerDock /> : null}
     </div>
   );
 }

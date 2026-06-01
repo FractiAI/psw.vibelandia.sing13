@@ -3517,13 +3517,11 @@ html.qf-playlists-tab body {
   background: #06080d;
 }
 
-html.qf-mp3-upload-page .sp-playback-stack,
-html.qf-playlists-tab .sp-playback-stack {
+html.qf-mp3-upload-page .sp-playback-stack {
   display: none !important;
 }
 
-html.qf-mp3-upload-page .sp-scroll,
-html.qf-playlists-tab .sp-scroll {
+html.qf-mp3-upload-page .sp-scroll {
   padding-bottom: 1.5rem;
 }
 

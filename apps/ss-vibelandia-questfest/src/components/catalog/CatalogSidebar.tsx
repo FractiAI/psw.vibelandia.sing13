@@ -3,6 +3,7 @@ import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { PLAIN } from '@/lib/plainSpeak';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
 import { useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface CatalogSidebarProps {
   onDjClick: () => void;
@@ -10,6 +11,8 @@ interface CatalogSidebarProps {
 }
 
 export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
   const playlists = useCatalogStore((s) => s.playlists);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
@@ -25,6 +28,35 @@ export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps
   const openListen = (id: string) => {
     setDjMode(false);
     setActive(id);
+    if (location.pathname !== '/bridge') {
+      navigate('/bridge', { replace: true });
+    }
+  };
+
+  const goListenHome = () => {
+    setDjMode(false);
+    const st = useCatalogStore.getState();
+    const active = st.getActivePlaylist();
+    const master = st.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
+    if (
+      master &&
+      master.trackIds.length > 0 &&
+      active &&
+      active.id !== MASTER_PLAYLIST_ID &&
+      active.trackIds.length === 0
+    ) {
+      st.setActivePlaylist(MASTER_PLAYLIST_ID);
+    }
+    if (!activeId && playlists[0]) {
+      const first = playlists.find((p) => p.id === MASTER_PLAYLIST_ID) ?? playlists[0];
+      setActive(first.id);
+    }
+    if (st.activePlaylistId === MASTER_PLAYLIST_ID && activeId !== MASTER_PLAYLIST_ID) {
+      setActive(activeId);
+    }
+    if (location.pathname !== '/bridge') {
+      navigate('/bridge', { replace: true });
+    }
   };
 
   const sortedPls = useMemo(() => {
@@ -63,26 +95,7 @@ export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps
         <button
           type="button"
           className={`sp-side-link${!djMode ? ' sp-side-link--on' : ''}`}
-          onClick={() => {
-            setDjMode(false);
-            const st = useCatalogStore.getState();
-            const active = st.getActivePlaylist();
-            const master = st.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
-            if (
-              master &&
-              master.trackIds.length > 0 &&
-              active &&
-              active.id !== MASTER_PLAYLIST_ID &&
-              active.trackIds.length === 0
-            ) {
-              st.setActivePlaylist(MASTER_PLAYLIST_ID);
-            }
-            if (!activeId && playlists[0]) {
-              const first =
-                playlists.find((p) => p.id === MASTER_PLAYLIST_ID) ?? playlists[0];
-              setActive(first.id);
-            }
-          }}
+          onClick={goListenHome}
         >
           <span className="sp-side-icon">🏠</span> {PLAIN.listen}
         </button>

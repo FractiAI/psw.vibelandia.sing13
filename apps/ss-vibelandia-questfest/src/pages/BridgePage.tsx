@@ -84,10 +84,6 @@ export function BridgePage() {
 
   useEffect(() => {
     setPlaylistTab(isPlaylistsView);
-    if (isPlaylistsView) {
-      pauseSimpleAudio();
-      usePlaybackStore.getState().setPlaying(false);
-    }
   }, [isPlaylistsView, setPlaylistTab]);
 
   useEffect(() => {
@@ -107,7 +103,6 @@ export function BridgePage() {
 
   const goListen = () => {
     setDjMode(false);
-    setActivePlaylist(MASTER_PLAYLIST_ID);
     navigate('/bridge', { replace: true });
   };
 
@@ -122,8 +117,9 @@ export function BridgePage() {
   };
 
   const openPlaylist = (id: string) => {
+    setDjMode(false);
     setActivePlaylist(id);
-    goListen();
+    navigate('/bridge', { replace: true });
   };
 
   return (

@@ -252,14 +252,19 @@
       border-radius: 10px 10px 0 0;
       overflow: hidden;
       border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      aspect-ratio: 3 / 2;
+      min-height: 11rem;
+      background: #0a0f1a;
     }
-    .qf-feature-art img {
+    .qf-feature-art img,
+    .qf-feature-art picture {
       display: block;
       width: 100%;
-      height: auto;
-      max-height: 200px;
+      height: 100%;
+    }
+    .qf-feature-art img {
       object-fit: cover;
-      object-position: center 18%;
+      object-position: center center;
     }
 
     .qf-crew {
@@ -480,22 +485,6 @@
       .btn:hover { transform: none; }
     }
 
-    .qf-deck-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      padding: 0.75rem 1rem 0.25rem;
-      background: transparent;
-      border-bottom: none;
-    }
-    .qf-deck-actions .btn {
-      flex: 1 1 auto;
-      min-width: 9rem;
-      max-width: 16rem;
-      text-align: center;
-      justify-content: center;
-    }
     .btn-pass {
       background: linear-gradient(180deg, #f0d4a0, #d4af37);
       color: #1a120c;
@@ -552,13 +541,6 @@
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="qf.skip">Skip</a>
-
-  <nav class="qf-deck-actions" aria-label="Top deck actions">
-    <a class="btn btn-goldilocks" href="/holographic-goldilocks-ai-os" data-i18n="qf.btnGoldilocksOs">Holographic Goldilocks AI OS · demo</a>
-    <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a>
-    <a class="btn btn-pass" href="/interfaces/questfest-bridge/?boarding=1#/bridge" data-i18n="qf.btnMembersPass">Members pass · $16.18/mo</a>
-    <a class="btn btn-primary" href="/bulletin-board">SS Vibelandia Bulletin Board</a>
-  </nav>
 
   <header class="hero">
     <div>
@@ -640,27 +622,25 @@
       </ol>
     </section>
 
-    <section aria-labelledby="qf-blog-sun-h2">
-      <h2 id="qf-blog-sun-h2" data-i18n="qf.blogSunHead">Broadcast blog · When the Sun Spoke</h2>
-      <p class="lede-block" data-i18n-html="qf.blogSunLedeHtml">
-        In late August 2025 the sun held a <strong>19-day radio burst</strong> that broke the usual rules — while a fringe team at the edge of physics and AI kept building. Our coding logs mirror official space data <strong>line for line</strong>: flare, flatline, quiet close. That alignment is the birth story of the <strong>Hydrogen Holographic AI Operating System</strong> and <strong>El Gran Sol&rsquo;s EGS fractal constant</strong>.
-      </p>
-      <p class="lede-block" style="margin-bottom:0;">
-        <a href="/interfaces/blog-when-the-sun-spoke.html" data-i18n="qf.blogSunLink">Read the full post →</a>
-        <span aria-hidden="true"> · </span>
-        <a href="/interfaces/blog-when-the-sun-spoke.html#sources" data-i18n="qf.blogSunSources">NASA news + GitHub receipts</a>
-        <span aria-hidden="true"> · </span>
-        <a href="/interfaces/look-at-the-sun.html" data-i18n="qf.blogSunSunDeck">Look at the Sun deck</a>
-      </p>
-    </section>
-
   </div>
 
   <section id="main" class="quick-wrap">
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-wormhole-campaign-title">
       <a class="main" href="/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html">
         <div class="qf-feature-art">
-          <img src="/interfaces/images/omniversal-123-wormhole-campaign-hero.png" width="1200" height="675" loading="eager" decoding="async" alt="Golden φ wormhole portal — Omniversal 1-2-3 Campaign across thirteen dimensions." data-i18n-attr="alt:qf.wormholeCampaignArtAlt" />
+          <picture>
+            <source srcset="/interfaces/images/omniversal-123-wormhole-campaign-hero.jpg" type="image/jpeg" />
+            <img
+              src="/interfaces/images/omniversal-123-wormhole-campaign-hero.jpg"
+              width="1536"
+              height="1024"
+              loading="eager"
+              decoding="async"
+              alt="Golden φ wormhole portal — Omniversal 1-2-3 Campaign across thirteen dimensions."
+              data-i18n-attr="alt:qf.wormholeCampaignArtAlt"
+              onerror="this.onerror=null;this.src='/interfaces/images/omniversal-123-wormhole-campaign-hero.png'"
+            />
+          </picture>
         </div>
         <span class="badge" data-i18n="qf.wormholeCampaignBadge">CAMPAIGN · 1-2-3 Wormhole</span>
         <time datetime="2026-06-01" data-i18n="qf.wormholeCampaignDate">June 2026</time>
@@ -675,7 +655,19 @@
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-kingbee-pr-title">
       <a class="main" href="/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html">
         <div class="qf-feature-art">
-          <img src="/interfaces/images/look-hood-engine.png" width="1200" height="675" loading="eager" decoding="async" alt="Digital Pru engine room — Syntheverse sandbox telemetry." data-i18n-attr="alt:qf.kingBeePrArtAlt" />
+          <picture>
+            <source srcset="/interfaces/images/king-bee-intergalactic-bus-hero.jpg" type="image/jpeg" />
+            <img
+              src="/interfaces/images/king-bee-intergalactic-bus-hero.jpg"
+              width="1536"
+              height="1024"
+              loading="eager"
+              decoding="async"
+              alt="King Bee stratification across the inter-galactic hydrogen data bus — EGS φ 1.618."
+              data-i18n-attr="alt:qf.kingBeePrArtAlt"
+              onerror="this.onerror=null;this.src='/interfaces/images/king-bee-intergalactic-bus-hero.png'"
+            />
+          </picture>
         </div>
         <span class="badge" data-i18n="qf.kingBeePrBadge">PRESS · King Bee · DPH-GPU</span>
         <time datetime="2026-06-01" data-i18n="qf.kingBeePrDate">June 1, 2026</time>
@@ -732,7 +724,19 @@
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-clockskew-title">
       <a class="main" href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html">
         <div class="qf-feature-art">
-          <img src="/interfaces/images/mythos-clock-skew-egs.png" width="1200" height="675" loading="eager" decoding="async" alt="Holographic clock-skew vulnerability — EGS phase lattice illustration." data-i18n-attr="alt:qf.clockSkewArtAlt" />
+          <picture>
+            <source srcset="/interfaces/images/mythos-clock-skew-egs.jpg" type="image/jpeg" />
+            <img
+              src="/interfaces/images/mythos-clock-skew-egs.jpg"
+              width="1536"
+              height="1024"
+              loading="eager"
+              decoding="async"
+              alt="Holographic clock-skew vulnerability — EGS phase lattice illustration."
+              data-i18n-attr="alt:qf.clockSkewArtAlt"
+              onerror="this.onerror=null;this.src='/interfaces/images/mythos-clock-skew-egs.png'"
+            />
+          </picture>
         </div>
         <span class="badge" data-i18n="qf.clockSkewBadge">PRESS · Clock-Skew Vulnerability</span>
         <time datetime="2026-05-18" data-i18n="qf.clockSkewDate">May 18, 2026</time>
@@ -743,8 +747,23 @@
       <a class="archive" href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos" data-i18n="qf.clockSkewWhitepaper">Full Mythos whitepaper →</a>
     </aside>
 
-    <aside class="qf-feature" aria-labelledby="qf-machote-pr-title">
+    <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-machote-pr-title">
       <a class="main" href="/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html">
+        <div class="qf-feature-art">
+          <picture>
+            <source srcset="/interfaces/images/machote-magazine-launch-hero.jpg" type="image/jpeg" />
+            <img
+              src="/interfaces/images/machote-magazine-launch-hero.jpg"
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+              alt="Machote Moderno Magazine launch — members catalog pass and Goldilocks Beehive residency."
+              data-i18n-attr="alt:qf.machotePrArtAlt"
+              onerror="this.onerror=null;this.src='/interfaces/images/machote-magazine-launch-hero.png'"
+            />
+          </picture>
+        </div>
         <span class="badge" data-i18n="qf.machotePrBadge">PRESS · Machote Moderno</span>
         <time datetime="2026-05-16" data-i18n="qf.machotePrDate">May 16, 2026</time>
         <h3 id="qf-machote-pr-title" data-i18n="qf.machotePrTitle">Magazine launches members-only catalog pass &amp; Goldilocks Beehive residency</h3>
@@ -753,8 +772,23 @@
       </a>
     </aside>
 
-    <aside class="qf-feature" aria-labelledby="qf-pr-teaser-title">
+    <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-pr-teaser-title">
       <a class="main" href="/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html">
+        <div class="qf-feature-art">
+          <picture>
+            <source srcset="/interfaces/images/hit-factory-30-day-showdown-hero.jpg" type="image/jpeg" />
+            <img
+              src="/interfaces/images/hit-factory-30-day-showdown-hero.jpg"
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+              alt="Golden Bachdoor Hit Factory winning the 30-day streaming showdown — Reno holographic scorecard."
+              data-i18n-attr="alt:qf.prTeaserArtAlt"
+              onerror="this.onerror=null;this.src='/interfaces/images/hit-factory-30-day-showdown-hero.png'"
+            />
+          </picture>
+        </div>
         <span class="badge" data-i18n="qf.prTeaserBadge">FEATURE · Press</span>
         <time datetime="2026-05-11" data-i18n="qf.prTeaserDate">May 11, 2026</time>
         <h3 id="qf-pr-teaser-title" data-i18n="qf.prTeaserTitle">Why Hero Jo’s Golden Bachdoor Hit Factory is winning the 30-day showdown</h3>
@@ -853,7 +887,6 @@
         <li><a href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" data-i18n="qf.quicklinkClockSkewPress">Clock-skew vulnerability · press release</a></li>
         <li><a href="/interfaces/press-releases.html" data-i18n="qf.quicklinkPress">Press releases · Hit Factory</a></li>
         <li><a href="/holographic-goldilocks-ai-os" data-i18n="qf.quicklinkGoldilocksOs">Holographic Goldilocks AI OS · product demo</a></li>
-        <li><a href="/bulletin-board">SS Vibelandia Bulletin Board</a></li>
         <li><a href="/interfaces/look-under-the-hood.html" data-i18n="qf.quicklinkHood">Look Under the Hood</a></li>
         <li><a href="/interfaces/look-at-the-sun.html" data-i18n="qf.quicklinkSun">Look at the Sun</a></li>
         <li><a href="/interfaces/fractiai.html" data-i18n="qf.btnFracti">FractiAI</a></li>
@@ -861,13 +894,10 @@
         <li><a href="https://github.com/fractiai/psw.vibelandia.sing13" target="_blank" rel="noopener" data-i18n="qf.quicklinkSing13">SING 13 · GitHub</a></li>
         <li><a href="https://github.com/fractiai/psw.vibelandia.sing9" target="_blank" rel="noopener" data-i18n="qf.quicklinkSing9">SING 9 · GitHub</a></li>
         <li><a href="https://github.com/aiwona1/FractiAI" target="_blank" rel="noopener" data-i18n="qf.quicklinkOpenSource">Open-source core · GitHub</a></li>
+        <li><a href="/bulletin-board" data-i18n="qf.quicklinkBulletinBoard">SS Vibelandia Bulletin Board</a></li>
       </ul>
     </nav>
     </section>
-
-  <div class="qf-bulletin-strip" role="navigation" aria-label="SS Vibelandia Bulletin Board">
-    <a href="/bulletin-board">SS Vibelandia Bulletin Board</a>
-  </div>
 
   <footer>
     <p data-i18n-html="qf.footerMicroHtml"><a href="mailto:valetpru@gmail.com?subject=QUESTFEST">valetpru@gmail.com</a></p>

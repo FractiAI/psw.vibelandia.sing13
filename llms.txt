@@ -61,8 +61,7 @@
 
 ## QUESTFEST nest (carried surfaces)
 
-- ETCon Reno Desert (May 28–31, 2026): /interfaces/etcon-reno-desert.html
-- Press & blog (Hit Factory + ETCon + Layer 9 Beehive): /interfaces/press-releases.html
+- Press & blog (Hit Factory + Layer 9 Beehive): /interfaces/press-releases.html
 - Blog · Layer 9 Goldilocks Beehive EcoReset (May 2026): /interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html
 - Look at the Sun: /interfaces/look-at-the-sun.html
 - Juicy Juicy Snap (OFC) — compile surface: /interfaces/look-under-the-hood.html

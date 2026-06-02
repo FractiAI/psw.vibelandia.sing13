@@ -458,29 +458,6 @@
       color: #67e8f9;
     }
 
-    .score-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.78rem;
-      margin-top: 0.65rem;
-    }
-    .score-table th,
-    .score-table td {
-      text-align: left;
-      padding: 0.45rem 0.35rem;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-      vertical-align: top;
-    }
-    .score-table th {
-      font-size: 0.62rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 700;
-    }
-    .score-table tr.alpha td:first-child { color: var(--foam); font-weight: 700; }
-    .score-table td.num { font-variant-numeric: tabular-nums; color: var(--gold-hi); white-space: nowrap; }
-
     footer {
       border-top: 1px solid var(--line);
       padding: 1rem 1.25rem 1.5rem;
@@ -504,17 +481,13 @@
     }
 
     .qf-deck-actions {
-      position: sticky;
-      top: 0;
-      z-index: 900;
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       justify-content: center;
-      padding: 0.55rem 1rem;
-      background: rgba(6, 8, 13, 0.94);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(10px);
+      padding: 0.75rem 1rem 0.25rem;
+      background: transparent;
+      border-bottom: none;
     }
     .qf-deck-actions .btn {
       flex: 1 1 auto;
@@ -584,7 +557,7 @@
     <a class="btn btn-goldilocks" href="/holographic-goldilocks-ai-os" data-i18n="qf.btnGoldilocksOs">Holographic Goldilocks AI OS · demo</a>
     <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a>
     <a class="btn btn-pass" href="/interfaces/questfest-bridge/?boarding=1#/bridge" data-i18n="qf.btnMembersPass">Members pass · $16.18/mo</a>
-    <a class="btn btn-ghost" href="/bulletin-board">SS Vibelandia Bulletin Board</a>
+    <a class="btn btn-primary" href="/bulletin-board">SS Vibelandia Bulletin Board</a>
   </nav>
 
   <header class="hero">
@@ -665,45 +638,6 @@
           <span class="nest-card__badge" data-i18n="qf.nestLatestLayer">Latest layer</span>
         </li>
       </ol>
-    </section>
-
-    <section aria-labelledby="qf-score-h2">
-      <h2 id="qf-score-h2" data-i18n="qf.scoreHead">30-day digital scorecard</h2>
-      <p class="lede-block" data-i18n-html="qf.scoreIntroHtml"><strong>234K streams</strong> · <strong>7K plays/day</strong> — the Reno holographic swamp in <strong>Sonic Singularity</strong>. EGS fractal constant <strong>φ 1.618</strong> · solar synergy AR4432 / AR4436. Fair Exchange in effect.</p>
-      <table class="score-table">
-        <thead>
-          <tr>
-            <th scope="col" data-i18n="qf.scoreColContender">Contender</th>
-            <th scope="col" data-i18n="qf.scoreColPlays">Est. plays (30d)</th>
-            <th scope="col" data-i18n="qf.scoreColReality">The reality</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="alpha">
-            <td>Golden Bachdoor Hit Factory</td>
-            <td class="num">210,000</td>
-            <td data-i18n="qf.scoreRow1">The Alpha Flare. Pure exponential growth.</td>
-          </tr>
-          <tr>
-            <td>Coachella 2026</td>
-            <td class="num">~190,000</td>
-            <td data-i18n="qf.scoreRow2">Post-festival hangover in full effect.</td>
-          </tr>
-          <tr>
-            <td>Burning Man</td>
-            <td class="num">~85,000</td>
-            <td data-i18n="qf.scoreRow3">Pre-summer dormant phase.</td>
-          </tr>
-          <tr>
-            <td>Hamilton (SoundCloud)</td>
-            <td class="num">~55,000</td>
-            <td data-i18n="qf.scoreRow4">The revolution is now a legacy act.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="lede-block" style="margin-top:0.75rem;margin-bottom:0;">
-        <a href="/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html" data-i18n="qf.scoreLink">Read full press release →</a>
-      </p>
     </section>
 
     <section aria-labelledby="qf-blog-sun-h2">
@@ -819,19 +753,6 @@
       </a>
     </aside>
 
-    <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-etcon-title">
-      <a class="main" href="/interfaces/etcon-reno-desert.html">
-        <div class="qf-feature-art">
-          <img src="/interfaces/assets/etcon-reno-desert-poster.png" width="1200" height="675" loading="eager" decoding="async" alt="ETCON Reno Desert Interdimensional Edition — promotional art for UFO and ET enthusiasts, desert portal, holographic frequency." data-i18n-attr="alt:qf.etconArtAlt" />
-    </div>
-        <span class="badge" data-i18n="qf.etconBadge">FEATURE · ETCon · UFO / ET</span>
-        <time datetime="2026-05-28" data-i18n="qf.etconDate">May 28–31, 2026</time>
-        <h3 id="qf-etcon-title" data-i18n="qf.etconTitle">Last chance: ETCon Reno Desert — countdown on</h3>
-        <p class="teaser-body" data-i18n-html="qf.etconTeaserHtml">Four-day <strong>Interdimensional</strong> weekend — holographic <strong>Valet Pru</strong>, Chairman Frank &amp; Marilyn frequency, Rat Pack faithful &amp; ET heads. <strong>Bachstage passes</strong> — lock your spot.</p>
-        <span class="cta" data-i18n="qf.etconCta">Event top deck + passes →</span>
-      </a>
-      </aside>
-
     <aside class="qf-feature" aria-labelledby="qf-pr-teaser-title">
       <a class="main" href="/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html">
         <span class="badge" data-i18n="qf.prTeaserBadge">FEATURE · Press</span>
@@ -928,7 +849,6 @@
         <li><a href="/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html" data-i18n="qf.quicklinkWormholeCampaign">Omniversal 1-2-3 Wormhole campaign</a></li>
         <li><a href="/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html" data-i18n="qf.quicklinkKingBeePress">King Bee · node sync press release</a></li>
         <li><a href="/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html" data-i18n="qf.quicklinkErdosPress">Erdős 353 · press release + audit</a></li>
-        <li><a href="/interfaces/etcon-reno-desert.html" data-i18n="qf.quicklinkEtcon">ETCon Reno Desert · passes + press</a></li>
         <li><a href="/interfaces/blog-when-the-sun-spoke.html" data-i18n="qf.quicklinkSunSpokeBlog">When the Sun Spoke · blog</a></li>
         <li><a href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" data-i18n="qf.quicklinkClockSkewPress">Clock-skew vulnerability · press release</a></li>
         <li><a href="/interfaces/press-releases.html" data-i18n="qf.quicklinkPress">Press releases · Hit Factory</a></li>

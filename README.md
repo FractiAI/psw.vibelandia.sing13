@@ -185,6 +185,8 @@ npm run build:questfest-bridge
 
 After adding Blob + secrets, **redeploy** production. Smoke test: `curl -s -X POST https://www.ssvibelandiaquestfest24x365.com/api/catalog-upload -H "Content-Type: application/json" -d "{}"` should **not** return `catalog_upload_unconfigured` (expect `401`/`403` without `X-Catalog-Secret`, not `503`).
 
+**Blob billing (FractiVerse vs FractiAI):** Production catalog media uses Vercel Blob (`*.public.blob.vercel-storage.com`). A **fracti-verse** “100% Blob storage” email is usually the **legacy hobby team’s store**, not the FractiAI Pro project. Confirm deploy identity: `GET /api/deploy-info` on production. Full checklist: [docs/VERCEL_BLOB_FRACTIVERSE_RUNBOOK.md](docs/VERCEL_BLOB_FRACTIVERSE_RUNBOOK.md). Audit usage: `BLOB_READ_WRITE_TOKEN=… npm run audit:blob`.
+
 **Vercel env (minimum for live boarding / export):**
 
 | Variable | Purpose |

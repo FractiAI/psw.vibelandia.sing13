@@ -46,6 +46,7 @@ module.exports = async function handler(req, res) {
   const {
     assertCatalogUploadAuth,
     catalogUploadConfigured,
+    deleteTrackMediaBlobs,
     ensureDynamicTrack,
     patchDynamicTrack,
     removeDynamicTrack,
@@ -77,9 +78,11 @@ module.exports = async function handler(req, res) {
   }
 
   if (action === 'delete') {
+    const removed = dynamic.tracks[trackId];
     const next = removeDynamicTrack(dynamic, trackId);
     if (!next) return res.status(404).json({ error: 'track_not_found' });
     try {
+      const blobDel = await deleteTrackMediaBlobs(removed);
       const saved = await saveDynamicCatalog(next);
       if (!saved.ok) {
         return res.status(500).json({ error: 'catalog_save_failed', message: saved.message });
@@ -88,7 +91,7 @@ module.exports = async function handler(req, res) {
       console.error('[catalog-track] delete save', e);
       return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
     }
-    return res.status(200).json({ ok: true, trackId });
+    return res.status(200).json({ ok: true, trackId, blobDeleted: blobDel?.deleted ?? 0 });
   }
 
   if (action === 'update') {

@@ -15,7 +15,8 @@
     "cron:coherence": "node -e \"import('./lib/coherence-autopilot.mjs').then(m=>m.runCoherenceAutopilotCycle({backfillPredictions:true})).then(r=>console.log(JSON.stringify(r,null,2)))\"",
     "capture:websdr": "node scripts/capture-websdr-iq.mjs",
     "predictions:backfill": "node -e \"import('./lib/goldilocks-predictions.mjs').then(m=>m.backfillPredictionLedger({count:24})).then(r=>console.log(JSON.stringify(r.stats,null,2)))\"",
-    "test:wavefield": "node scripts/test-wavefield-metrology.mjs"
+    "test:wavefield": "node scripts/test-wavefield-metrology.mjs",
+    "audit:blob": "node scripts/blob-storage-audit.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.3.3",

@@ -2,55 +2,26 @@
   "H1": {
     "hypothesis": "H1: movement parallel to local field lines",
     "rayleigh_heading": {
-      "n": 2136,
-      "r": 0.0033774662107458756,
-      "z": 0.024365945818103498,
-      "p": 0.9759340055998265,
-      "mean_heading_deg": 154.5617333005361,
-      "significant": "False"
+      "n": 33961,
+      "r": 0.029539864346614098,
+      "z": 29.634490371117295,
+      "p": 1.340556043702723e-13,
+      "mean_heading_deg": 8.2332516995051,
+      "significant": "True"
     },
     "kuiper_uniformity": {
-      "n": 2136,
-      "statistic": 0.021214790012183182,
-      "p": 0.2874600795772515,
-      "significant": "False"
+      "n": 33961,
+      "statistic": 0.05058196799693454,
+      "p": 5.913372309026707e-76,
+      "significant": "True"
     },
     "declination_mean_deg": null,
-    "tier": "no_support"
+    "tier": "weak"
   },
   "H2": {
     "hypothesis": "H2: behavioral change during geomagnetic storms",
-    "storm_comparison": {
-      "mean_step_km": {
-        "quiet_mean": 2.961411453542962,
-        "storm_mean": 3.0089045668461982,
-        "delta": 0.047493113303236356,
-        "p_value": 0.6887672311284108,
-        "significant": "False"
-      },
-      "total_displacement_km": {
-        "quiet_mean": 71.07387488503112,
-        "storm_mean": 72.21370960430876,
-        "delta": 1.1398347192776441,
-        "p_value": 0.6887672311284181,
-        "significant": "False"
-      },
-      "directional_consistency": {
-        "quiet_mean": 0.19643913371446972,
-        "storm_mean": 0.20948065669313032,
-        "delta": 0.013041522978660597,
-        "p_value": 0.5967399032777777,
-        "significant": "False"
-      },
-      "herd_spread_km": {
-        "quiet_mean": 72.22946170277551,
-        "storm_mean": 71.40247077567594,
-        "delta": -0.8269909270995726,
-        "p_value": 0.11513035047706953,
-        "significant": "False"
-      }
-    },
-    "tier": "no_support"
+    "storm_comparison": {},
+    "tier": "inconclusive"
   },
   "H3": {
     "hypothesis": "H3: corridors vs magnetic gradients",
@@ -59,10 +30,9 @@
   },
   "H4": {
     "hypothesis": "H4: bison magnetically influenced navigation",
-    "tier": "no_support",
+    "tier": "inconclusive",
     "data": [
-      "gbif",
-      "placeholder_deterministic"
+      "movebank_gps"
     ]
   },
   "H5": {

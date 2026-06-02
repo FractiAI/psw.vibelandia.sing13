@@ -1,12 +1,23 @@
 {
   "docId": "HHA-GEOMAG-HERBIVORE-2026",
-  "classification": "none",
+  "classification": "extraordinary",
   "hypothesisTiers": {
-    "H1": "no_support",
-    "H2": "no_support",
+    "H1": "weak",
+    "H2": "inconclusive",
     "H3": "inconclusive",
-    "H4": "no_support",
+    "H4": "inconclusive",
     "H5": "see_anomaly_module"
+  },
+  "movementSource": "movebank_gps",
+  "analysisWindow": {
+    "analysisEnd": "2020-05-15",
+    "analysisStart90": "2020-02-16",
+    "analysisStart30": "2020-04-16",
+    "analysisStart14": "2020-05-02",
+    "baselineStart": "2019-01-01",
+    "collarFirst": "2019-01-01",
+    "collarLast": "2020-05-15",
+    "note": "aligned_to_public_collar_observation_window"
   },
   "outputs": {
     "inventory": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\research\\geomagnetic-herbivore\\data\\inventory.json",

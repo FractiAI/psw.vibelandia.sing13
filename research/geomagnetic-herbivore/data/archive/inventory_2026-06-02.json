@@ -1,6 +1,6 @@
 {
   "schema": "geomagnetic-herbivore/v1",
-  "generatedAt": "2026-06-02T22:48:28.452428+00:00",
+  "generatedAt": "2026-06-02T23:35:14.404295+00:00",
   "sources": [
     {
       "id": "gfz_kp",
@@ -50,11 +50,11 @@
     {
       "id": "movebank",
       "category": "movement",
-      "name": "Movebank",
-      "url": "https://www.movebank.org/",
-      "license": "Study-specific",
-      "status": "requires_auth",
-      "notes": "Collar trajectories require study owner credentials; inventory lists public study IDs for manual ingest."
+      "name": "Movebank public GPS JSON API",
+      "url": "https://www.movebank.org/movebank/service/public/json",
+      "license": "Study-specific (public download)",
+      "status": "available",
+      "notes": "Primary collar layer \u2014 public/json for studies owners marked public. Preferred IDs in fetch_movebank.py."
     },
     {
       "id": "gbif",
@@ -80,8 +80,8 @@
       "name": "Turner passive bison synthesis (psw.vibelandia.sing13)",
       "url": "/api/turner-bison-telemetry",
       "license": "Repository terms",
-      "status": "available",
-      "notes": "Model placement field \u2014 NOT collar GPS; labeled explicitly in all outputs."
+      "status": "not_used",
+      "notes": "Excluded from geomagnetic study \u2014 not collar GPS."
     },
     {
       "id": "nps_yellowstone",

@@ -1,16 +1,18 @@
-"""Steps 3–6: Movement data — GBIF points + Turner API synthesis trajectories."""
+"""Movement data — public GPS collar (Movebank) primary; GBIF points optional context only."""
 from __future__ import annotations
 
 import json
 import math
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlencode
 
 import pandas as pd
-import requests
 
-from config import CENTROID_LAT, CENTROID_LON, DATA, END_DATE, START_90, STUDY_BBOX
+from config import DATA
+from src.fetch_movebank import (
+    fetch_public_collar_trajectories,
+    save_analysis_window,
+)
 
 
 def haversine_km(lat1, lon1, lat2, lon2):
@@ -31,104 +33,6 @@ def bearing_deg(lat1, lon1, lat2, lon2):
     return (brng + 360) % 360
 
 
-def fetch_gbif_occurrences(taxon: str = "Bison bison", limit: int = 300) -> pd.DataFrame:
-    q = urlencode(
-        {
-            "scientificName": taxon,
-            "decimalLatitude": f"{STUDY_BBOX['south']},{STUDY_BBOX['north']}",
-            "decimalLongitude": f"{STUDY_BBOX['west']},{STUDY_BBOX['east']}",
-            "limit": str(limit),
-            "hasCoordinate": "true",
-        }
-    )
-    url = f"https://api.gbif.org/v1/occurrence/search?{q}"
-    try:
-        res = requests.get(url, timeout=45)
-        res.raise_for_status()
-        data = res.json()
-    except Exception:
-        return pd.DataFrame()
-    rows = []
-    for r in data.get("results") or []:
-        lat, lon = r.get("decimalLatitude"), r.get("decimalLongitude")
-        if lat is None or lon is None:
-            continue
-        rows.append(
-            {
-                "individual_id": f"gbif-{r.get('key')}",
-                "timestamp": r.get("eventDate") or r.get("lastInterpreted"),
-                "lat": lat,
-                "lon": lon,
-                "source": "gbif",
-            }
-        )
-    return pd.DataFrame(rows)
-
-
-def fetch_turner_timeseries(base_url: str, start: str, end: str, sample: int = 48) -> pd.DataFrame:
-    """Pull daily synthesis from local or deployed Turner telemetry API."""
-    q = urlencode(
-        {
-            "start": start,
-            "end": end,
-            "sample": str(sample),
-            "daily": "1",
-            "snapshots": "0",
-        }
-    )
-    url = f"{base_url.rstrip('/')}/api/turner-bison-telemetry?{q}"
-    try:
-        res = requests.get(url, timeout=120)
-        res.raise_for_status()
-        payload = res.json()
-    except Exception:
-        return pd.DataFrame()
-    if not payload.get("ok"):
-        return pd.DataFrame()
-    series = payload.get("series") or {}
-    rows = []
-    for day in series.get("daily") or []:
-        date = day.get("date")
-        for a in day.get("animals") or []:
-            rows.append(
-                {
-                    "individual_id": a.get("id"),
-                    "timestamp": f"{date}T12:00:00Z",
-                    "lat": a.get("lat"),
-                    "lon": a.get("lng"),
-                    "pasture_id": a.get("pastureId"),
-                    "source": "turner_synthesis",
-                    "weight_lbs": a.get("weightLbs"),
-                }
-            )
-    return pd.DataFrame(rows)
-
-
-def synthesize_placeholder_trajectory(days: int = 90, n_animals: int = 24) -> pd.DataFrame:
-    """Deterministic placeholder when API unavailable — clearly labeled."""
-    import random
-
-    rng = random.Random(161803)
-    rows = []
-    base_lat, base_lon = CENTROID_LAT, CENTROID_LON
-    for i in range(n_animals):
-        lat, lon = base_lat + rng.uniform(-0.8, 0.8), base_lon + rng.uniform(-1.2, 1.2)
-        for d in range(days):
-            date = (pd.Timestamp(END_DATE) - pd.Timedelta(days=days - 1 - d)).strftime("%Y-%m-%d")
-            lat += rng.gauss(0, 0.02)
-            lon += rng.gauss(0, 0.03)
-            rows.append(
-                {
-                    "individual_id": f"placeholder-{i:02d}",
-                    "timestamp": f"{date}T12:00:00Z",
-                    "lat": round(lat, 5),
-                    "lon": round(lon, 5),
-                    "source": "placeholder_deterministic",
-                }
-            )
-    return pd.DataFrame(rows)
-
-
 def enrich_trajectories(df: pd.DataFrame) -> pd.DataFrame:
     if df.empty:
         return df
@@ -141,7 +45,7 @@ def enrich_trajectories(df: pd.DataFrame) -> pd.DataFrame:
 
     df = df.dropna(subset=["lat", "lon"]).sort_values(["individual_id", "timestamp"]).reset_index(drop=True)
     out = []
-    for ind, grp in df.groupby("individual_id"):
+    for _, grp in df.groupby("individual_id"):
         grp = grp.copy().reset_index(drop=True)
         prev_lat = prev_lon = None
         prev_t = None
@@ -187,22 +91,64 @@ def enrich_trajectories(df: pd.DataFrame) -> pd.DataFrame:
     return pd.concat(out, ignore_index=True)
 
 
-def run_fetch_movement(turner_base: str = "http://127.0.0.1:3000") -> pd.DataFrame:
+def run_fetch_movement() -> pd.DataFrame:
+    """
+    Primary: publicly available GPS collar trajectories from Movebank.
+    Does not use Turner synthesis or synthetic placeholders.
+    """
     DATA.mkdir(parents=True, exist_ok=True)
-    turner = fetch_turner_timeseries(turner_base, START_90, END_DATE)
-    if turner.empty:
-        turner = synthesize_placeholder_trajectory(90)
-    gbif = fetch_gbif_occurrences("Bison bison", 200)
-    frames = [f for f in [turner, gbif] if not f.empty]
-    df = pd.concat(frames, ignore_index=True) if frames else synthesize_placeholder_trajectory(90)
-    df = enrich_trajectories(df)
+    collar, fetch_meta = fetch_public_collar_trajectories()
+
+    if collar.empty:
+        meta = {
+            "fetchedAt": datetime.now(timezone.utc).isoformat(),
+            "rows": 0,
+            "individuals": 0,
+            "sources": [],
+            "primarySource": None,
+            "error": fetch_meta.get("error") or "no_public_collar_data",
+            "fetchMeta": fetch_meta,
+            "note": (
+                "No public GPS collar fixes retrieved. "
+                "Study cannot run movement–geomagnetic tests until a public Movebank study is available."
+            ),
+        }
+        (DATA / "movement_meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+        (DATA / "trajectories.csv").write_text(
+            "individual_id,timestamp,lat,lon,source\n", encoding="utf-8"
+        )
+        return collar
+
+    window = fetch_meta.get("analysisWindow") or {}
+    save_analysis_window(window)
+
+    df = enrich_trajectories(collar)
     df.to_csv(DATA / "trajectories.csv", index=False)
+
+    study = fetch_meta.get("selectedStudy") or {}
+    taxa = study.get("taxa") or []
     meta = {
         "fetchedAt": datetime.now(timezone.utc).isoformat(),
         "rows": len(df),
-        "individuals": int(df["individual_id"].nunique()) if not df.empty else 0,
-        "sources": sorted(df["source"].unique().tolist()) if not df.empty else [],
-        "note": "Turner synthesis is model placement, not collar GPS. GBIF are point occurrences.",
+        "individuals": int(df["individual_id"].nunique()),
+        "sources": sorted(df["source"].unique().tolist()),
+        "primarySource": "movebank_gps",
+        "movebankStudyId": study.get("studyId"),
+        "movebankStudyName": study.get("studyName"),
+        "taxa": taxa,
+        "bisonCollarInStudy": bool(study.get("hasBisonTaxon")),
+        "analysisWindow": window,
+        "fetchMeta": fetch_meta,
+        "note": (
+            "Movement layer = public GPS collar fixes from Movebank "
+            f"(study {study.get('studyId')}: {study.get('studyName')}). "
+            "Kp alignment uses the collar observation window, not synthetic placement."
+        ),
     }
+    if not meta["bisonCollarInStudy"]:
+        meta["speciesNote"] = (
+            "No public Movebank study with Bison bison GPS was found in the public catalog; "
+            f"using nearest large-herbivore collar data ({', '.join(taxa) or 'see taxa'})."
+        )
     (DATA / "movement_meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
     return df

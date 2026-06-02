@@ -2,11 +2,11 @@
 
 ## Workflow (Steps 1–8)
 
-1. **Inventory** — Document Movebank, GBIF, NOAA SWPC, GFZ Kp, USGS EMAG2, Open-Meteo, Turner synthesis, agency reports (`src/inventory.py`).
+1. **Inventory** — Document Movebank public GPS, NOAA SWPC, GFZ Kp, USGS EMAG2, Open-Meteo, agency reports (`src/inventory.py`). Turner synthesis listed as not used.
 2. **Metadata** — UTC timestamps, EPSG:4326, archived JSON under `data/archive/`.
 3. **Clean** — Align 3-hourly Kp to daily max; dedupe trajectory IDs.
 4. **CRS** — WGS84 lat/lon throughout.
-5. **Trajectories** — Daily fixes from Turner API or GBIF; heading/speed from sequential steps.
+5. **Trajectories** — Public Movebank GPS collar fixes (`src/fetch_movebank.py`); heading/speed from sequential steps; Kp aligned to collar observation window.
 6. **Movement metrics** — Step km, speed, tortuosity proxy, herd spread, Rayleigh consistency.
 7. **Magnetic field** — Declination/inclination/intensity via `geomag` (WMM).
 8. **Link** — Merge Kp/Ap; storm class; environmental covariates (Open-Meteo optional extension).
@@ -27,7 +27,7 @@ Classifications: `none` | `weak` | `moderate` | `strong` | `extraordinary`.
 
 ## Validation / falsification
 
-Every positive flag lists contradicting evidence and non-geomagnetic explanations. Turner synthesis is **not** collar GPS — tier caps at **weak** for H2/H5 unless Movebank collars ingested.
+Every positive flag lists contradicting evidence and non-geomagnetic explanations. Movement is **collar GPS** from public Movebank studies; species may differ from *Bison bison* when no public bison collar study exists (documented in `movement_meta.json`).
 
 ## Reproducibility
 

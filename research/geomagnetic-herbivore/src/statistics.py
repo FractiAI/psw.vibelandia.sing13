@@ -137,12 +137,11 @@ def random_forest_importance(merged: pd.DataFrame) -> dict:
 
 
 def trajectory_for_herd_metrics(traj: pd.DataFrame) -> pd.DataFrame:
-    """Sequential daily tracks only — exclude GBIF point occurrences from herd baselines."""
+    """Sequential GPS collar tracks only — exclude non-collar point layers."""
     if traj.empty:
         return traj
-    mask = traj["source"].isin(("turner_synthesis", "placeholder_deterministic"))
-    seq = traj.loc[mask].copy()
-    return seq if not seq.empty else traj
+    collar = traj.loc[traj["source"] == "movebank_gps"].copy()
+    return collar if not collar.empty else traj
 
 
 def test_hypotheses(traj: pd.DataFrame, kp_daily: pd.DataFrame) -> dict:
@@ -183,7 +182,14 @@ def test_hypotheses(traj: pd.DataFrame, kp_daily: pd.DataFrame) -> dict:
     h3 = {"hypothesis": "H3: corridors vs magnetic gradients", "tier": "inconclusive", "note": "USGS EMAG2 overlay not auto-fetched — manual corridor pass required."}
     h4 = {
         "hypothesis": "H4: bison magnetically influenced navigation",
-        "tier": h1["tier"] if traj["source"].str.contains("bison|turner|gbif", case=False).any() else "inconclusive",
+        "tier": h1["tier"]
+        if traj["source"].eq("movebank_gps").any()
+        and (
+            traj.get("taxon", pd.Series(dtype=str)).astype(str).str.contains("bison", case=False).any()
+            if "taxon" in traj.columns
+            else False
+        )
+        else ("inconclusive" if traj["source"].eq("movebank_gps").any() else "no_data"),
         "data": sorted(traj["source"].unique().tolist()),
     }
     h5 = {

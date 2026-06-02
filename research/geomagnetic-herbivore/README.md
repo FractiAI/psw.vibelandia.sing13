@@ -13,12 +13,7 @@ pip install -r requirements.txt
 python scripts/run_pipeline.py
 ```
 
-Optional Turner live trajectories (local dev server):
-
-```bash
-# from repo root, with Vercel dev or static server exposing /api/turner-bison-telemetry
-python scripts/run_pipeline.py --turner-base http://127.0.0.1:3000
-```
+**Movement source:** Public GPS collar fixes from [Movebank](https://www.movebank.org/) (`public/json` API). Turner passive synthesis is **not** used. If no public *Bison bison* study exists, the pipeline documents the taxon actually collared (e.g. moose) in `data/movement_meta.json`.
 
 ## Outputs
 

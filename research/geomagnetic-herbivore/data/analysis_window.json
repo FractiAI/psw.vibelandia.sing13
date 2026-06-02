@@ -1,0 +1,10 @@
+{
+  "analysisEnd": "2020-05-15",
+  "analysisStart90": "2020-02-16",
+  "analysisStart30": "2020-04-16",
+  "analysisStart14": "2020-05-02",
+  "baselineStart": "2019-01-01",
+  "collarFirst": "2019-01-01",
+  "collarLast": "2020-05-15",
+  "note": "aligned_to_public_collar_observation_window"
+}

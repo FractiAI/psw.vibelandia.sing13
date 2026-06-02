@@ -41,7 +41,7 @@ def plot_kp_storm(merged: pd.DataFrame, path: Path):
     ax2 = ax1.twinx()
     ax2.plot(dates, merged["mean_step_km"], color="#5eead4", lw=1.5, label="Mean step km")
     ax2.set_ylabel("Mean daily step (km)")
-    ax1.set_title("Storm index vs herd displacement (synthesis layer)")
+    ax1.set_title("Storm index vs herd displacement (GPS collar layer)")
     fig.autofmt_xdate()
     fig.savefig(path, bbox_inches="tight")
     plt.close(fig)
@@ -61,7 +61,7 @@ def plot_correlation_heatmap(merged: pd.DataFrame, path: Path):
 
 
 def plot_movement_map(traj: pd.DataFrame, path: Path):
-    t = traj[traj["source"].str.contains("turner|placeholder", case=False, na=False)]
+    t = traj[traj["source"] == "movebank_gps"]
     if t.empty:
         t = traj
     if t.empty:

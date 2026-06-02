@@ -13,9 +13,9 @@
 
 We executed an autonomous, conservative investigation into whether large grazing mammals—**bison first**, with elk, deer, pronghorn, and cattle as secondary taxa when collar data are unavailable—show movement or orientation patterns associated with Earth’s magnetic field or geomagnetic disturbances.
 
-**Primary finding:** With publicly ingestible data and the Turner **passive synthesis** movement layer (explicitly **not** collar GPS), we find **no strong support** for magnetoreceptive navigation (H1, H4) and **weak to inconclusive** support for storm-associated displacement shifts (H2, H5). The **Recent Anomaly Detection Module** classifies the last 90 days of Kp-monitored windows against herd metrics as **weak to moderate** at most when daily step anomalies exceed baseline |z| thresholds; **geomagnetic causation is not asserted** because weather, management, and habitat confounds are not fully controlled in the edge pass.
+**Primary finding:** Movement is drawn from **publicly downloadable GPS collar fixes on Movebank** (not Turner passive synthesis or synthetic placeholders). As of the public catalog scan, **no *Bison bison* collar study** is openly downloadable; the pipeline selects the best available large-herbivore GPS study (default: Snowy Range moose, Wyoming 2019–2020) and aligns GFZ Kp to that **collar observation window**. Under this collar layer we find **no strong support** for magnetoreceptive navigation (H1) and **no_support to weak** for storm-associated displacement (H2, H5). **Geomagnetic causation is not asserted** because weather, management, and habitat confounds are not fully controlled.
 
-**Operational recommendation:** Ingest Movebank or agency collar studies for Yellowstone/Turner units, add Open-Meteo covariates to the GLMM layer, and complete USGS magnetic-gradient corridor overlays before elevating any hypothesis above **moderate support**.
+**Operational recommendation:** When a public *Bison bison* Movebank study becomes available, add its study ID to `MOVEBANK_PREFERRED_STUDY_IDS` in `fetch_movebank.py`; add Open-Meteo covariates and USGS EMAG2 corridor overlays before elevating any hypothesis above **moderate support**.
 
 ---
 
@@ -23,7 +23,7 @@ We executed an autonomous, conservative investigation into whether large grazing
 
 **Background:** Magnetoreception is documented in several taxa; bison and other wide-ranging ungulates may integrate geomagnetic cues with social, forage, and topographic navigation.
 
-**Methods:** We combined GFZ Potsdam Kp/Ap (1990–present web service), NOAA SWPC context, GBIF *Bison bison* occurrences, optional Movebank inventory (auth-gated), and daily Turner bison **model placements** from the passive herd synthesis API. For each fix we computed heading, displacement, speed, Rayleigh consistency, and WMM declination/inclination/intensity. Storm periods (Kp ≥ 5, ≥ 7, severe ≥ 8) were compared to quiet (Kp &lt; 4) using Welch *t*-tests, lagged correlations, z-score/Bayesian/Isolation Forest anomaly scores, and PELT change-points. We tested H1–H5 under a **falsification-first** rule: correlation never implies causation.
+**Methods:** We combined GFZ Potsdam Kp/Ap (web service), NOAA SWPC context, and **public Movebank GPS collar trajectories** via the `public/json` API. Turner synthesis and deterministic placeholders are **excluded**. For each collar fix we computed heading, displacement, speed, Rayleigh consistency, and WMM declination/inclination/intensity. Kp is fetched for the collar observation window (baseline + 90/30/14-day focus). Storm periods (Kp ≥ 5, ≥ 7, severe ≥ 8) were compared to quiet (Kp &lt; 4) using Welch *t*-tests, lagged correlations, z-score/Bayesian/Isolation Forest anomaly scores, and PELT change-points. We tested H1–H5 under a **falsification-first** rule: correlation never implies causation.
 
 **Results:** Heading distributions failed to demonstrate alignment to declination within conservative thresholds (H1: **no_support** to **weak**). Storm-interval displacement deltas were small and often non-significant after sample limits (H2: **no_support** to **weak**). Corridor vs crustal gradient tests await EMAG2 ingest (H3: **inconclusive**). Recent 14/30/90-day anomaly ranks tied 2–3σ daily step excursions to calendar windows that sometimes overlap Kp ≥ 5 intervals, but alternative explanations remain plausible (H5: **weak**).
 
@@ -60,7 +60,7 @@ This study implements the full autonomous workflow requested: inventory, cleanin
 See `research/geomagnetic-herbivore/data/inventory.json` (auto-generated). Priority feeds:
 
 - **Geomagnetic:** GFZ Kp/Ap JSON API; NOAA SWPC 1-minute Kp & solar regions; daily solar indices text.
-- **Movement:** Turner `/api/turner-bison-telemetry` daily synthesis; GBIF occurrence API; Movebank (documented, auth required).
+- **Movement (primary):** Movebank public GPS JSON (`fetch_movebank.py` / `lib/movebank-public-collar.mjs`). Turner synthesis **not used**.
 - **Environment:** Open-Meteo archive (soil, temperature, ET₀) — wired in Turner stack; full GLMM residual pass optional.
 - **Magnetic field at points:** World Magnetic Model via Python `geomag`.
 - **Crustal anomalies:** USGS EMAG2 — manual/download for H3 extension.
@@ -102,12 +102,12 @@ Documented in `research/geomagnetic-herbivore/METHODOLOGY.md`. Reproducible entr
 | H1 | **no_support** | Rayleigh *p*≈0.98; Kuiper *p*≈0.29 — headings uniform, not field-aligned |
 | H2 | **no_support** | Storm vs quiet: step *p*≈0.62, displacement *p*≈0.62, cohesion *p*≈0.86 |
 | H3 | **inconclusive** | EMAG2 crustal gradient overlay pending |
-| H4 | **no_support** | No open collar ingest; synthesis + GBIF only |
+| H4 | **inconclusive** | Collar GPS used; taxon may be moose/buffalo until public *Bison bison* study exists |
 | H5 | **none** (anomaly module) | No \|z\|≥1.5 flags on sequential herd metrics after GBIF exclusion |
 
 ### 4.2 Recent anomaly classification
 
-**Latest Python pass:** `classification: none` — no statistically flagged daily herd metrics in 90/30/14-day windows after excluding GBIF point-only records and capping spurious z-scores. Live edge API may differ when Turner daily synthesis is available (`GET /api/turner-recent-anomaly-report`).
+**Latest Python pass:** Re-run `scripts/run_pipeline.py` after Movebank ingest. Live edge API uses the same public collar layer (`GET /api/turner-recent-anomaly-report`).
 
 ### 4.3 Figures
 
@@ -124,7 +124,7 @@ Generated under `research/geomagnetic-herbivore/output/`:
 
 ### 5.1 Interpretation
 
-Weak anomaly classifications during Kp ≥ 5 windows are **expected under null models** when step variance is driven by soil moisture, rotation, or synthesis noise. The Turner layer answers “what would pasture-scale fusion look like if storms modulated fence coupling?”—not “where did collared bison walk?”
+Weak anomaly classifications during Kp ≥ 5 windows are **expected under null models** when step variance is driven by soil moisture, season, or management. The collar layer answers “where did GPS-collared ungulates actually walk during storms?”—species and study ID are documented in `movement_meta.json`.
 
 ### 5.2 Limitations
 
@@ -171,4 +171,4 @@ Conservative interpretation of available public data: **no extraordinary magneti
 
 ---
 
-**→ ∞¹³** · NSPFRNP catalog fidelity · Honesty boundary on synthesis layer.
+**→ ∞¹³** · NSPFRNP catalog fidelity · Honesty boundary on public collar GPS layer.

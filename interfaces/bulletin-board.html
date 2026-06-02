@@ -17,9 +17,21 @@
   <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
   <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <style>
+    .bb-board-main { padding-top: 0.25rem; }
+    .bb-load-err { color: #cbd5e1; font-size: 0.95rem; }
+    #bb-posts.deck-paper-grid > li { list-style: none; margin: 0; padding: 0; }
+    #bb-posts .deck-paper-card { height: 100%; }
+    .deck-paper-card__summary {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: #94a3b8;
+      margin: 0.15rem 0 0.25rem;
+    }
+  </style>
 </head>
 <body>
-  <main class="deck-wrap">
+  <main class="deck-wrap bb-board-main">
     <a class="deck-back" href="/interfaces/vibelandia-questfest.html">&larr; SS Vibelandia QUESTFEST top deck</a>
 
     <nav class="deck-skin-nav" aria-label="Site">
@@ -32,17 +44,9 @@
     <p class="bb-cloud-badge">Sonic Singularity Sing! 13 · Internet cloud skin</p>
     <hr class="bb-hero-rule" aria-hidden="true" />
 
-    <p class="deck-eyebrow">SS Vibelandia · 24×365 · Puerto Reno</p>
-    <h1 class="deck-h1" id="bb-board-title">SS Vibelandia Bulletin Board</h1>
-    <p class="deck-tagline">Community · special projects · Machote Moderno postings</p>
-    <p class="deck-lead" id="bb-board-lead">
-      Fan events, field consoles, and operational bulletins on the QUESTFEST nest. Open any posting with one click — no manager codes or extra steps. Same house as the sonic ship and the catalog: <strong>EGS φ 1.618</strong> · Fair Exchange · old school.
-    </p>
-
-    <p class="deck-section-label">Postings</p>
-    <ul class="deck-plain-list" id="bb-posts" aria-live="polite">
-      <li class="deck-plain-item">
-        <p>Loading postings…</p>
+    <ul class="deck-paper-grid" id="bb-posts" aria-label="Bulletin postings" aria-live="polite">
+      <li>
+        <p class="bb-load-err">Loading postings…</p>
       </li>
     </ul>
 

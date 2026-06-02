@@ -58,11 +58,11 @@ def build_inventory() -> dict:
         {
             "id": "movebank",
             "category": "movement",
-            "name": "Movebank",
-            "url": "https://www.movebank.org/",
-            "license": "Study-specific",
-            "status": "requires_auth",
-            "notes": "Collar trajectories require study owner credentials; inventory lists public study IDs for manual ingest.",
+            "name": "Movebank public GPS JSON API",
+            "url": "https://www.movebank.org/movebank/service/public/json",
+            "license": "Study-specific (public download)",
+            "status": "available",
+            "notes": "Primary collar layer — public/json for studies owners marked public. Preferred IDs in fetch_movebank.py.",
         },
         {
             "id": "gbif",
@@ -88,8 +88,8 @@ def build_inventory() -> dict:
             "name": "Turner passive bison synthesis (psw.vibelandia.sing13)",
             "url": "/api/turner-bison-telemetry",
             "license": "Repository terms",
-            "status": "available",
-            "notes": "Model placement field — NOT collar GPS; labeled explicitly in all outputs.",
+            "status": "not_used",
+            "notes": "Excluded from geomagnetic study — not collar GPS.",
         },
         {
             "id": "nps_yellowstone",

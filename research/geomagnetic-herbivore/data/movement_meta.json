@@ -1,10 +1,70 @@
 {
-  "fetchedAt": "2026-06-02T22:48:45.668273+00:00",
-  "rows": 2360,
-  "individuals": 224,
+  "fetchedAt": "2026-06-02T23:37:19.533656+00:00",
+  "rows": 33977,
+  "individuals": 16,
   "sources": [
-    "gbif",
-    "placeholder_deterministic"
+    "movebank_gps"
   ],
-  "note": "Turner synthesis is model placement, not collar GPS. GBIF are point occurrences."
+  "primarySource": "movebank_gps",
+  "movebankStudyId": 2548892515,
+  "movebankStudyName": "Snowy Range Moose in Wyoming (2019-2020)",
+  "taxa": [
+    "Alces alces"
+  ],
+  "bisonCollarInStudy": false,
+  "analysisWindow": {
+    "analysisEnd": "2020-05-15",
+    "analysisStart90": "2020-02-16",
+    "analysisStart30": "2020-04-16",
+    "analysisStart14": "2020-05-02",
+    "baselineStart": "2019-01-01",
+    "collarFirst": "2019-01-01",
+    "collarLast": "2020-05-15",
+    "note": "aligned_to_public_collar_observation_window"
+  },
+  "fetchMeta": {
+    "primarySource": "movebank_gps",
+    "selectedStudy": {
+      "studyId": 2548892515,
+      "individuals": 26,
+      "points": 123399,
+      "taxa": [
+        "Alces alces"
+      ],
+      "hasBisonTaxon": false,
+      "trajectoryStart": "2019-01-01",
+      "trajectoryEnd": "2020-05-15",
+      "studyName": "Snowy Range Moose in Wyoming (2019-2020)",
+      "licenseNote": "Public Movebank study \u2014 accept owner terms at movebank.org before redistribution."
+    },
+    "analysisWindow": {
+      "analysisEnd": "2020-05-15",
+      "analysisStart90": "2020-02-16",
+      "analysisStart30": "2020-04-16",
+      "analysisStart14": "2020-05-02",
+      "baselineStart": "2019-01-01",
+      "collarFirst": "2019-01-01",
+      "collarLast": "2020-05-15",
+      "note": "aligned_to_public_collar_observation_window"
+    },
+    "publicStudiesScanned": 162,
+    "herbivoreCandidates": 5,
+    "attempts": [
+      {
+        "studyId": 2548892515,
+        "individuals": 26,
+        "points": 123399,
+        "taxa": [
+          "Alces alces"
+        ],
+        "hasBisonTaxon": false,
+        "trajectoryStart": "2019-01-01",
+        "trajectoryEnd": "2020-05-15",
+        "studyName": "Snowy Range Moose in Wyoming (2019-2020)",
+        "licenseNote": "Public Movebank study \u2014 accept owner terms at movebank.org before redistribution."
+      }
+    ]
+  },
+  "note": "Movement layer = public GPS collar fixes from Movebank (study 2548892515: Snowy Range Moose in Wyoming (2019-2020)). Kp alignment uses the collar observation window, not synthetic placement.",
+  "speciesNote": "No public Movebank study with Bison bison GPS was found in the public catalog; using nearest large-herbivore collar data (Alces alces)."
 }

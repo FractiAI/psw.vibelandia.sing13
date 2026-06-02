@@ -105,7 +105,7 @@ def rank_anomalies(merged: pd.DataFrame, kp_events: dict, windows: dict) -> list
                         "evidence_for_geomagnetic": [],
                         "evidence_against_geomagnetic": [
                             "correlation not causation",
-                            "Turner synthesis ≠ collar telemetry",
+                            "species may not be Bison bison if no public bison collar",
                         ],
                     }
                 )
@@ -161,8 +161,21 @@ def final_classification(ranked: list[dict], max_z: float) -> str:
     return "weak"
 
 
+def _analysis_windows() -> dict[str, str]:
+    win_path = DATA / "analysis_window.json"
+    if win_path.is_file():
+        w = json.loads(win_path.read_text(encoding="utf-8"))
+        if w.get("analysisStart90"):
+            return {
+                "90d": w["analysisStart90"],
+                "30d": w.get("analysisStart30") or START_30,
+                "14d": w.get("analysisStart14") or START_14,
+            }
+    return {"90d": START_90, "30d": START_30, "14d": START_14}
+
+
 def run_anomaly_module(merged: pd.DataFrame, kp: pd.DataFrame, kp_meta: dict) -> dict:
-    windows = {"90d": START_90, "30d": START_30, "14d": START_14}
+    windows = _analysis_windows()
     ranked = rank_anomalies(merged, kp_meta.get("events") or {}, windows)
     max_z = max((abs(a["z_score"]) for a in ranked), default=0.0)
     classification = final_classification(ranked, max_z)

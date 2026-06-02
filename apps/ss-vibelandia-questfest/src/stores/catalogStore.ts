@@ -7,8 +7,15 @@ import {
   mergePendingServerTracks,
   mergeServerCatalogWithPrefs,
   isMasterPlaylist,
+  isMyLikesPlaylist,
   isUserUploadTrack,
 } from '@/lib/catalogSeed';
+import {
+  applyLikesToPlaylists,
+  resolveLikedTrackIds,
+  saveLikedTrackIds,
+  toggleLikedId,
+} from '@/lib/trackLikes';
 import {
   loadDeviceDirHandle,
   saveDeviceDirHandle,
@@ -17,6 +24,7 @@ import { hydrateCatalogFromDevice, instantBootSnapshot } from '@/lib/catalogBoot
 import {
   loadCatalogCache,
   loadCatalogPrefs,
+  loadCatalogPrefsOnly,
   loadDownloadedTrackIds,
   saveCatalogCache,
   saveCatalogPrefs,
@@ -58,7 +66,11 @@ interface CatalogState {
   tracks: Record<string, TrackDef>;
   playlists: PlaylistDef[];
   activePlaylistId: string;
+  /** Device-local likes (newest first); drives My Likes playlist. */
+  likedTrackIds: string[];
   search: string;
+  isTrackLiked: (trackId: string) => boolean;
+  toggleTrackLike: (trackId: string) => void;
   setView: (v: View) => void;
   setDjMode: (on: boolean) => void;
   setPlaylistTab: (on: boolean) => void;
@@ -137,12 +149,19 @@ function applyServerCatalog(
   server: CatalogSnapshot,
   prefs: ReturnType<typeof loadCatalogPrefs>,
   downloaded: Set<string>,
-): { tracks: Record<string, TrackDef>; playlists: PlaylistDef[]; activePlaylistId: string } {
+): {
+  tracks: Record<string, TrackDef>;
+  playlists: PlaylistDef[];
+  activePlaylistId: string;
+  likedTrackIds: string[];
+} {
   const base = mergeServerCatalogWithPrefs(server, prefs, downloaded, syncMasterPlaylistWithTracks);
+  const likedTrackIds = resolveLikedTrackIds(prefs, base.playlists);
   return {
     tracks: base.tracks,
     playlists: base.playlists,
     activePlaylistId: base.activePlaylistId,
+    likedTrackIds,
   };
 }
 
@@ -173,29 +192,52 @@ function cloneSnapshot(s: CatalogSnapshot): CatalogSnapshot {
   };
 }
 
+/** Fast append during multi-file batches — full master reorder runs once in persist(). */
+function appendTrackToPlaylistsIncremental(
+  playlists: PlaylistDef[],
+  trackId: string,
+  playlistIds: string[],
+): PlaylistDef[] {
+  return playlists.map((p) => {
+    if (!playlistIds.includes(p.id)) return p;
+    if (p.trackIds.includes(trackId)) return p;
+    return { ...p, trackIds: [...p.trackIds, trackId] };
+  });
+}
+
 /** After each successful upload — sidebar / track count update immediately. */
 function appendImportedTrackToState(
   set: (fn: (s: CatalogState) => Partial<CatalogState>) => void,
   get: () => CatalogState,
   track: TrackDef,
   playlistIds: string[],
+  opts?: { batch?: boolean },
 ) {
   set((s) => {
     const tracks = { ...s.tracks, [track.id]: track };
-    const playlists = syncMasterPlaylistWithTracks(
-      tracks,
-      s.playlists.map((p) => {
-        if (!playlistIds.includes(p.id)) return p;
-        if (p.trackIds.includes(track.id)) return p;
-        return { ...p, trackIds: [...p.trackIds, track.id] };
-      }),
-    );
+    const playlists = opts?.batch
+      ? appendTrackToPlaylistsIncremental(s.playlists, track.id, playlistIds)
+      : syncMasterPlaylistWithTracks(
+          tracks,
+          s.playlists.map((p) => {
+            if (!playlistIds.includes(p.id)) return p;
+            if (p.trackIds.includes(track.id)) return p;
+            return { ...p, trackIds: [...p.trackIds, track.id] };
+          }),
+        );
     return { tracks, playlists };
   });
-  get().persist();
+  if (!opts?.batch) get().persist();
 }
 
-const BETWEEN_UPLOAD_MS = 450;
+const BETWEEN_UPLOAD_MS = 280;
+
+/** Yield main thread between blob uploads (large batches). */
+function yieldBetweenUploads(): Promise<void> {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, BETWEEN_UPLOAD_MS);
+  });
+}
 
 /** Master playlist = all track ids: keep existing order, append any new ids, drop missing files. */
 function syncMasterPlaylistWithTracks(
@@ -314,19 +356,38 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   tracks: bootCatalog.tracks,
   playlists: bootCatalog.playlists,
   activePlaylistId: bootCatalog.activePlaylistId,
+  likedTrackIds: [],
   deviceHydrated: false,
   search: '',
+
+  isTrackLiked: (trackId) => get().likedTrackIds.includes(trackId),
+
+  toggleTrackLike: (trackId) => {
+    if (!get().tracks[trackId]) return;
+    const likedTrackIds = toggleLikedId(get().likedTrackIds, trackId);
+    const playlists = applyLikesToPlaylists(
+      get().playlists,
+      likedTrackIds,
+      new Set(Object.keys(get().tracks)),
+    );
+    set({ likedTrackIds, playlists });
+    get().persist();
+  },
 
   hydrateFromDevice: () => {
     if (get().deviceHydrated) return;
     const snapshot = hydrateCatalogFromDevice(syncMasterPlaylistWithTracks);
     const applied = snapshotToState(snapshot);
+    const prefs = loadCatalogPrefsOnly();
+    const likedTrackIds = resolveLikedTrackIds(prefs, applied.playlists);
     set({
       tracks: applied.tracks,
       playlists: applied.playlists,
       activePlaylistId: applied.activePlaylistId,
+      likedTrackIds,
       deviceHydrated: true,
     });
+    saveLikedTrackIds(likedTrackIds);
   },
 
   setView: (v) => set({ view: v }),
@@ -367,6 +428,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   renamePlaylist: (id, name) => {
+    if (isMyLikesPlaylist(id)) return;
     set((s) => ({
       playlists: s.playlists.map((p) => (p.id === id ? { ...p, name: name.trim() || p.name } : p)),
     }));
@@ -374,6 +436,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   updatePlaylist: (id, patch) => {
+    if (isMyLikesPlaylist(id)) return;
     set((s) => ({
       playlists: s.playlists.map((p) => {
         if (p.id !== id) return p;
@@ -388,7 +451,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   deletePlaylist: (id) => {
-    if (id === MASTER_PLAYLIST_ID) return;
+    if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id)) return;
     const { playlists, activePlaylistId } = get();
     if (playlists.length <= 1) return;
     const next = playlists.filter((p) => p.id !== id);
@@ -400,7 +463,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   duplicatePlaylist: (id) => {
-    if (id === MASTER_PLAYLIST_ID) return '';
+    if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id)) return '';
     const s = get();
     const src = s.playlists.find((p) => p.id === id);
     if (!src) return '';
@@ -424,6 +487,10 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   addTrackToPlaylist: (trackId, playlistId) => {
+    if (isMyLikesPlaylist(playlistId)) {
+      if (!get().isTrackLiked(trackId)) get().toggleTrackLike(trackId);
+      return;
+    }
     set((s) => ({
       playlists: s.playlists.map((p) => {
         if (p.id !== playlistId) return p;
@@ -436,6 +503,10 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
   removeTrackFromPlaylist: (trackId, playlistId) => {
     if (playlistId === MASTER_PLAYLIST_ID) return;
+    if (isMyLikesPlaylist(playlistId)) {
+      if (get().isTrackLiked(trackId)) get().toggleTrackLike(trackId);
+      return;
+    }
     set((s) => ({
       playlists: s.playlists.map((p) =>
         p.id === playlistId ? { ...p, trackIds: p.trackIds.filter((t) => t !== trackId) } : p,
@@ -462,8 +533,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
   reorderTrackInPlaylist: (playlistId, fromIndex, toIndex) => {
     if (fromIndex === toIndex) return;
-    set((s) => ({
-      playlists: s.playlists.map((p) => {
+    set((s) => {
+      const playlists = s.playlists.map((p) => {
         if (p.id !== playlistId) return p;
         const ids = [...p.trackIds];
         if (fromIndex < 0 || fromIndex >= ids.length) return p;
@@ -471,8 +542,12 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         const [item] = ids.splice(fromIndex, 1);
         ids.splice(clamped, 0, item);
         return { ...p, trackIds: ids };
-      }),
-    }));
+      });
+      const likedTrackIds = isMyLikesPlaylist(playlistId)
+        ? (playlists.find((p) => p.id === playlistId)?.trackIds ?? s.likedTrackIds)
+        : s.likedTrackIds;
+      return { playlists, likedTrackIds };
+    });
     get().persist();
   },
 
@@ -494,17 +569,30 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   setTrackPlaylistMembership: (trackId, playlistIds) => {
-    const allowed = new Set(playlistIds);
-    set((s) => ({
-      playlists: s.playlists.map((p) => {
-        if (isMasterPlaylist(p.id)) return p;
-        const has = p.trackIds.includes(trackId);
-        const shouldHave = allowed.has(p.id);
-        if (has === shouldHave) return p;
-        if (shouldHave) return { ...p, trackIds: [...p.trackIds, trackId] };
-        return { ...p, trackIds: p.trackIds.filter((t) => t !== trackId) };
-      }),
-    }));
+    const allowed = new Set(playlistIds.filter((id) => !isMyLikesPlaylist(id)));
+    const wantLike = playlistIds.some((id) => isMyLikesPlaylist(id));
+    set((s) => {
+      let likedTrackIds = s.likedTrackIds;
+      const liked = likedTrackIds.includes(trackId);
+      if (wantLike && !liked) {
+        likedTrackIds = [trackId, ...likedTrackIds.filter((id) => id !== trackId)];
+      } else if (!wantLike && liked) {
+        likedTrackIds = likedTrackIds.filter((id) => id !== trackId);
+      }
+      const playlists = applyLikesToPlaylists(
+        s.playlists.map((p) => {
+          if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id)) return p;
+          const has = p.trackIds.includes(trackId);
+          const shouldHave = allowed.has(p.id);
+          if (has === shouldHave) return p;
+          if (shouldHave) return { ...p, trackIds: [...p.trackIds, trackId] };
+          return { ...p, trackIds: p.trackIds.filter((t) => t !== trackId) };
+        }),
+        likedTrackIds,
+        new Set(Object.keys(s.tracks)),
+      );
+      return { playlists, likedTrackIds };
+    });
     get().persist();
   },
 
@@ -563,18 +651,22 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         if (track.sourceKey) existing.sourceKeys.add(track.sourceKey);
         newTracks.push(track);
         addedTrackIds.push(track.id);
-        appendImportedTrackToState(set, get, track, playlistIds);
+        appendImportedTrackToState(set, get, track, playlistIds, { batch: total > 1 });
         const n = Object.keys(get().tracks).length;
         report?.(`Saved ${i + 1} of ${total} · ${n} tracks in catalog`);
 
         if (i < files.length - 1) {
-          await new Promise((r) => setTimeout(r, BETWEEN_UPLOAD_MS));
+          await yieldBetweenUploads();
         }
       } catch (e) {
         const message = e instanceof Error ? e.message : 'upload_failed';
         failures.push({ name: file.name, message });
         report?.(`Failed ${file.name} (${i + 1}/${total}): ${message}`);
       }
+    }
+
+    if (newTracks.length > 0) {
+      get().persist();
     }
 
     let coverError: string | undefined;
@@ -595,11 +687,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     }
 
     if (newTracks.length > 0) {
-      try {
-        await get().syncLibraryFromServer();
-      } catch {
-        /* incremental local state already visible */
-      }
+      void get()
+        .syncLibraryFromServer()
+        .catch(() => {
+          /* local batch state already has new tracks */
+        });
     }
 
     if (!newTracks.length && failures.length === 1) {
@@ -726,13 +818,16 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
     set((s) => {
       const { [trackId]: _, ...tracks } = s.tracks;
-      return {
-        tracks,
-        playlists: s.playlists.map((p) => ({
+      const likedTrackIds = s.likedTrackIds.filter((t) => t !== trackId);
+      const playlists = applyLikesToPlaylists(
+        s.playlists.map((p) => ({
           ...p,
           trackIds: p.trackIds.filter((t) => t !== trackId),
         })),
-      };
+        likedTrackIds,
+        new Set(Object.keys(tracks)),
+      );
+      return { tracks, playlists, likedTrackIds };
     });
     get().persist();
   },
@@ -745,14 +840,26 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const prefs = loadCatalogPrefs();
     const downloaded = loadDownloadedTrackIds();
     const prevTrackId = usePlaybackStore.getState().currentTrackId;
+    const priorLikes = get().likedTrackIds;
     try {
       const localTracks = get().tracks;
       const server = mergePendingServerTracks(await fetchLiveCatalogForSync(), localTracks);
-      const applied = applyServerCatalog(server, prefs, downloaded);
+      const prefsWithLikes: ReturnType<typeof loadCatalogPrefs> = prefs
+        ? { ...prefs, likedTrackIds: priorLikes.length ? priorLikes : prefs.likedTrackIds }
+        : priorLikes.length
+          ? {
+              version: CATALOG_VERSION,
+              playlists: get().playlists,
+              activePlaylistId: get().activePlaylistId,
+              likedTrackIds: priorLikes,
+            }
+          : null;
+      const applied = applyServerCatalog(server, prefsWithLikes, downloaded);
       set({
         tracks: applied.tracks,
         playlists: applied.playlists,
         activePlaylistId: applied.activePlaylistId,
+        likedTrackIds: applied.likedTrackIds,
       });
       saveCatalogCache({
         version: CATALOG_VERSION,
@@ -789,13 +896,16 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   persist: () => {
-    const { tracks, activePlaylistId } = get();
-    const playlists = syncMasterPlaylistWithTracks(tracks, get().playlists);
+    const { tracks, activePlaylistId, likedTrackIds } = get();
+    let playlists = syncMasterPlaylistWithTracks(tracks, get().playlists);
+    playlists = applyLikesToPlaylists(playlists, likedTrackIds, new Set(Object.keys(tracks)));
     set({ playlists });
+    saveLikedTrackIds(likedTrackIds);
     saveCatalogPrefs({
       version: CATALOG_VERSION,
       playlists,
       activePlaylistId,
+      likedTrackIds,
     });
     saveCatalogCache({
       version: CATALOG_VERSION,

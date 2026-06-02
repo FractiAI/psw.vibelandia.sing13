@@ -7,6 +7,7 @@ import { dispatchPlayGesture, subscribePlayGesture } from '@/lib/playGesture';
 import { getPlaybackMedia, registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
 import { readPlaybackSession } from '@/lib/playbackSession';
 import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
+import { LikeButton } from '@/components/catalog/LikeButton';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
@@ -535,6 +536,7 @@ export function NowPlayingBar({
         </div>
 
         <div className="sp-now-controls">
+          {track && <LikeButton trackId={track.id} size="md" className="sp-now-like" />}
           <button type="button" className="sp-now-btn" onClick={playPrev} disabled={!track} aria-label="Previous">
             ⏮
           </button>

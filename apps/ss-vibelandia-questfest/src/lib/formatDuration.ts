@@ -8,6 +8,13 @@ export function formatFileSize(bytes: number): string {
 }
 
 /** M:SS or H:MM:SS */
+export function fmtUploadDate(iso?: string): string {
+  if (!iso?.trim()) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
 export function fmtDuration(sec?: number): string {
   if (sec == null || !Number.isFinite(sec)) return '—';
   const total = Math.max(0, Math.floor(Number(sec)));

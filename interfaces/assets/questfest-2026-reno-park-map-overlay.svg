@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img" aria-label="Downtown and Midtown Reno boundary overlay">
+  <defs>
+    <pattern id="stripes" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="4" height="8" fill="rgba(255,255,255,0.08)"/>
+    </pattern>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Downtown · 7th N · Mary S · Arlington W · Lake E -->
+  <rect x="118" y="52" width="564" height="248" rx="18" fill="url(#stripes)" stroke="#fef08a" stroke-width="5" stroke-dasharray="14 8" filter="url(#glow)"/>
+  <text x="400" y="38" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="22" fill="#fef08a" letter-spacing="2">DOWNTOWN RENO · PARK ZONE A</text>
+  <text x="128" y="78" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#5eead4">7th St · N</text>
+  <text x="128" y="286" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#5eead4">Mary St · S</text>
+  <text x="128" y="168" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fda4af" transform="rotate(-90 128 168)">Arlington · W</text>
+  <text x="672" y="168" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fda4af" transform="rotate(90 672 168)">Lake St · E</text>
+  <text x="400" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#e2e8f0">Virginia St corridor · Reno Arch ride</text>
+  <!-- Midtown · Plumas W · Holcomb E -->
+  <rect x="168" y="318" width="464" height="248" rx="18" fill="url(#stripes)" stroke="#f472b6" stroke-width="5" stroke-dasharray="14 8" filter="url(#glow)"/>
+  <text x="400" y="308" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="22" fill="#f9a8d4" letter-spacing="2">MIDTOWN · PARK ZONE B</text>
+  <text x="178" y="430" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fda4af" transform="rotate(-90 178 430)">Plumas · W</text>
+  <text x="622" y="430" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fda4af" transform="rotate(90 622 430)">Holcomb · E</text>
+  <text x="400" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e2e8f0">Bike workshop · perreo country late night</text>
+  <!-- Truckee / Rebel River -->
+  <path d="M 80 300 H 920" stroke="#38bdf8" stroke-width="4" stroke-dasharray="6 6"/>
+  <text x="500" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#7dd3fc">Truckee · Rebel River · river walk sunset mixer</text>
+  <!-- Attraction pins -->
+  <circle cx="400" cy="200" r="28" fill="#d4af37" stroke="#0f172a" stroke-width="3"/>
+  <text x="400" y="206" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="11" fill="#0f172a">YOU</text>
+  <text x="400" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#0f172a">HERE</text>
+  <text x="400" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fef3c7">Man Cave · VIP table</text>
+</svg>

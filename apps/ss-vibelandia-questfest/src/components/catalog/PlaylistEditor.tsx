@@ -4,7 +4,8 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
-import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { LikeButton } from '@/components/catalog/LikeButton';
+import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
 import { MASTER_LIBRARY_UI_HINT, SONIC_SINGULARITY_DESCRIPTION } from '@/lib/sonicCatalogCopy';
@@ -40,6 +41,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
 
   const isMaster = isMasterPlaylist(playlistId);
+  const isMyLikes = isMyLikesPlaylist(playlistId);
 
   useEffect(() => {
     const current = useCatalogStore.getState().playlists.find((p) => p.id === playlistId);
@@ -101,6 +103,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const masterTrackCount = masterPl?.trackIds.length ?? 0;
 
   const saveMeta = () => {
+    if (isMyLikes) return;
     updatePlaylist(playlistId, { name, description });
   };
 
@@ -110,7 +113,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   };
 
   const handleDelete = () => {
-    if (isMaster) return;
+    if (isMaster || isMyLikes) return;
     if (playlists.length <= 1) return;
     if (!window.confirm('Delete this playlist? Tracks stay in the Master catalog.')) return;
     deletePlaylist(playlistId);
@@ -122,7 +125,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   };
 
   const handleDuplicate = () => {
-    if (isMaster) return;
+    if (isMaster || isMyLikes) return;
     saveMeta();
     const newId = duplicatePlaylist(playlistId);
     if (newId) onDuplicated?.(newId);
@@ -148,6 +151,9 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
         </p>
       )}
 
+      {isMyLikes && <p className="sp-pl-edit-banner">{PLAIN.myLikesHint}</p>}
+
+      {!isMyLikes && (
       <div className="sp-pl-edit-meta">
         <label className="sp-library-field">
           Playlist name
@@ -170,13 +176,14 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           />
         </label>
       </div>
+      )}
 
       <div className="sp-pl-edit-tracks">
         <div className="sp-pl-edit-tracks-bar">
           <h2 className="sp-pl-edit-tracks-title">
             {playlistTracks.length} {PLAIN.songs} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)} {PLAIN.totalTime}
           </h2>
-          {!isMaster && (
+          {!isMaster && !isMyLikes && (
             <button
               type="button"
               className="sp-pl-edit-add-toggle"
@@ -188,7 +195,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           )}
         </div>
 
-        {!isMaster && showAdd && (
+        {!isMaster && !isMyLikes && showAdd && (
           <div className="sp-pl-edit-add-panel">
             <input
               className="sp-search sp-pl-edit-add-search"
@@ -223,6 +230,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           <p className="sp-pl-edit-empty">
             {isMaster ? (
               <>No uploads yet. Use the <strong>Upload</strong> tab.</>
+            ) : isMyLikes ? (
+              <>No likes yet. Tap the <strong>♥</strong> on any track while you listen.</>
             ) : (
               <>
                 No songs yet. Tap <strong>+ Add from Master catalog</strong> above.
@@ -265,6 +274,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                       <span>{tr.artist}</span>
                     </span>
                     <div className="sp-pl-edit-row-actions">
+                      <LikeButton trackId={tr.id} />
                       <button
                         type="button"
                         className="sp-pl-edit-play"
@@ -285,9 +295,9 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                           type="button"
                           className="sp-pl-edit-remove"
                           onClick={() => removeTrackFromPlaylist(tr.id, playlistId)}
-                          aria-label={`Remove ${tr.title}`}
+                          aria-label={isMyLikes ? `Unlike ${tr.title}` : `Remove ${tr.title}`}
                         >
-                          Remove
+                          {isMyLikes ? 'Unlike' : 'Remove'}
                         </button>
                       )}
                     </div>
@@ -306,7 +316,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
         onClose={() => setTrackPlModal(null)}
       />
 
-      {!isMaster && (
+      {!isMaster && !isMyLikes && (
         <footer className="sp-pl-edit-foot">
           <button type="button" className="sp-library-btn" onClick={handleDuplicate}>
             Duplicate playlist

@@ -146,11 +146,18 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
               : `Success — ${result.added} tracks saved. Open Listen to play.`;
           const failNote =
             result.failed > 0
-              ? ` ${result.failed} file${result.failed === 1 ? '' : 's'} failed (${result.failures[0]?.name}: ${result.failures[0]?.message}).`
+              ? ` ${result.failed} of ${result.added + result.failed} failed (${result.failures[0]?.name}: ${result.failures[0]?.message}).`
               : '';
-          setStatus(`${dupNote}${failNote} Catalog: ${Object.keys(useCatalogStore.getState().tracks).length} tracks.`);
+          const syncNote =
+            result.added > 3
+              ? ' Server catalog sync continues in background.'
+              : '';
+          setStatus(
+            `${dupNote}${failNote}${syncNote} Catalog: ${Object.keys(useCatalogStore.getState().tracks).length} tracks.`,
+          );
           onUploaded?.();
-          void syncLibraryFromServer();
+          /* importMediaFiles already syncs in background */
+          if (result.added > 0) void syncLibraryFromServer();
         } else {
           setStatus('Upload finished but nothing new was saved. Check catalog settings or try again.');
         }

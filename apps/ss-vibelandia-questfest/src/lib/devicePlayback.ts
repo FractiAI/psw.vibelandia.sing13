@@ -47,7 +47,8 @@ export function deferAfterFilePicker(cb: () => void): void {
   });
 }
 
-const IOS_RETAIN_MAX_BYTES = 48 * 1024 * 1024;
+/** Per-file retain on iOS (multi-select); avoids dropping refs before batch upload finishes. */
+const IOS_RETAIN_FILE_MAX_BYTES = 12 * 1024 * 1024;
 
 function guessAudioMime(name: string): string {
   const n = name.toLowerCase();
@@ -62,11 +63,13 @@ function guessAudioMime(name: string): string {
  */
 export async function retainPickedFilesForIOS(files: File[]): Promise<File[]> {
   if (!isIOSDevice() || !files.length) return files;
-  const total = files.reduce((s, f) => s + f.size, 0);
-  if (total > IOS_RETAIN_MAX_BYTES) return files;
 
   const out: File[] = [];
   for (const f of files) {
+    if (f.size > IOS_RETAIN_FILE_MAX_BYTES) {
+      out.push(f);
+      continue;
+    }
     try {
       const buf = await f.arrayBuffer();
       out.push(

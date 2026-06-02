@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="ss-vibelandia-deck">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>Geomagnetic Herbivore Study · Recent Anomaly Module</title>
+  <meta name="description" content="HHA-GEOMAG-HERBIVORE-2026 — bison & large herbivore movement vs geomagnetic storms. Live anomaly report + full paper for review." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/geomagnetic-herbivore-study" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <style>
+    .geo-report {
+      margin-top: 1.25rem;
+      padding: 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.6);
+      font-size: 0.88rem;
+      max-height: 22rem;
+      overflow: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #cbd5e1;
+    }
+    .geo-class {
+      display: inline-block;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+      color: #fef3c7;
+      margin: 0.5rem 0;
+    }
+    .geo-honesty {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-left: 3px solid #5eead4;
+      padding-left: 0.75rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <a class="deck-back" href="/interfaces/vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="/bulletin-board">Bulletin Board</a><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Geomagnetic study</span><span class="dot" aria-hidden="true">·</span>
+      <a href="/special-projects/turner-bison-herd-management">Turner bison console</a>
+    </nav>
+
+    <p class="deck-eyebrow">HHA-GEOMAG-HERBIVORE-2026 · For review</p>
+    <h1 class="deck-h1">Geomagnetic Influences on Bison &amp; Large Herbivore Movement</h1>
+    <p class="deck-tagline">Autonomous research · Recent Anomaly Detection Module · correlation ≠ causation</p>
+    <p class="deck-lead">
+      Full journal-style paper, reproducible Python pipeline, and live edge report.
+      Movement layer defaults to <strong>Turner passive synthesis</strong> (not collar GPS) unless Movebank collars are ingested.
+    </p>
+
+    <div class="deck-btn-row">
+      <a class="deck-btn deck-btn--gold" href="/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026">Read full paper →</a>
+      <a class="deck-btn deck-btn--ghost" href="/api/turner-recent-anomaly-report" target="_blank" rel="noopener">Live JSON report</a>
+      <button type="button" class="deck-btn deck-btn--ghost" id="geo-refresh">Refresh live summary</button>
+    </div>
+
+    <p class="geo-honesty" id="geo-honesty">Loading honesty boundary…</p>
+    <p class="geo-class" id="geo-class" aria-live="polite">Classification: …</p>
+    <p id="geo-summary" class="deck-lead" style="font-size:0.95rem;"></p>
+    <pre class="geo-report" id="geo-report" aria-label="Live anomaly report excerpt">Loading…</pre>
+
+    <p class="deck-section-label">Hypotheses H1–H5</p>
+    <ul class="deck-plain-list" id="geo-hyp"></ul>
+
+    <p class="deck-foot">
+      <a href="https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/research/geomagnetic-herbivore" target="_blank" rel="noopener">Python pipeline on GitHub</a> ·
+      <a href="mailto:valetpru@gmail.com?subject=GEOMAG-HERBIVORE-2026%20review">Email review</a>
+    </p>
+  </main>
+  <footer>
+    <p><a href="/bulletin-board">Bulletin Board</a> · HHA-GEOMAG-HERBIVORE-2026</p>
+  </footer>
+  <script>
+    (function () {
+      const pre = document.getElementById('geo-report');
+      const cls = document.getElementById('geo-class');
+      const sum = document.getElementById('geo-summary');
+      const hyp = document.getElementById('geo-hyp');
+      const honesty = document.getElementById('geo-honesty');
+      const btn = document.getElementById('geo-refresh');
+
+      async function load() {
+        pre.textContent = 'Fetching /api/turner-recent-anomaly-report …';
+        try {
+          const res = await fetch('/api/turner-recent-anomaly-report');
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.message || 'failed');
+          const r = data.report;
+          cls.textContent = 'Classification: ' + (r.classification || '—');
+          sum.textContent = r.recentAnomalySummary || '';
+          honesty.textContent = (r.dataHonesty && (r.dataHonesty.movement + ' ' + r.dataHonesty.geomagnetic)) || r.criticalRule || '';
+          hyp.innerHTML = Object.entries(r.hypotheses || {}).map(function (entry) {
+            var id = entry[0];
+            var h = entry[1];
+            return '<li><strong>' + id + '</strong> · ' + (h.label || '') + ' — tier: <em>' + (h.tier || '—') + '</em></li>';
+          }).join('');
+          const excerpt = {
+            classification: r.classification,
+            rankedAnomalies: (r.rankedAnomalies || []).slice(0, 8),
+            stormEvents: r.stormEvents,
+            criticalRule: r.criticalRule,
+          };
+          pre.textContent = JSON.stringify(excerpt, null, 2);
+        } catch (e) {
+          pre.textContent = 'Could not load live report. Open the paper or run the Python pipeline locally.\n' + e.message;
+        }
+      }
+      btn.addEventListener('click', load);
+      load();
+    })();
+  </script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

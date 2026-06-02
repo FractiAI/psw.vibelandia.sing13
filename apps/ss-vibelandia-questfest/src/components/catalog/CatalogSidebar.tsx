@@ -1,5 +1,5 @@
 import { useCatalogStore } from '@/stores/catalogStore';
-import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID, MY_LIKES_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { PLAIN } from '@/lib/plainSpeak';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
 import { useMemo } from 'react';
@@ -63,6 +63,8 @@ export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps
     return [...playlists].sort((a, b) => {
       if (a.id === MASTER_PLAYLIST_ID) return -1;
       if (b.id === MASTER_PLAYLIST_ID) return 1;
+      if (a.id === MY_LIKES_PLAYLIST_ID) return -1;
+      if (b.id === MY_LIKES_PLAYLIST_ID) return 1;
       return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
     });
   }, [playlists]);
@@ -71,7 +73,8 @@ export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps
     () =>
       sortedPls.filter(
         (pl) =>
-          !isMasterPlaylist(pl.id) && (pl.trackIds.length > 0 || pl.id === activeId),
+          !isMasterPlaylist(pl.id) &&
+          (isMyLikesPlaylist(pl.id) || pl.trackIds.length > 0 || pl.id === activeId),
       ),
     [sortedPls, activeId],
   );
@@ -156,7 +159,7 @@ export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps
                 onClick={() => openListen(pl.id)}
               >
                 <span className="sp-pl-cover" aria-hidden>
-                  🎵
+                  {isMyLikesPlaylist(pl.id) ? '♥' : '🎵'}
                 </span>
                 <span className="sp-pl-text">
                   <span className="sp-pl-name">{pl.name}</span>

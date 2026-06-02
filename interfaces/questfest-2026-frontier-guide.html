@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050810" />
+  <title>SS VIBELANDIA QUESTFEST 24×365 · 2026 Frontier Guide</title>
+  <meta name="description" content="Holographic Goldilocks AIOS Frontier Game — QUESTFEST 2026 amusement-park brochure: Player 1 PL Taino, Capitan welcome, weekly schedule, Downtown &amp; Midtown Reno park map (7th–Mary, Arlington–Lake, Plumas–Holcomb)." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-2026-frontier-guide.html" />
+  <meta property="og:title" content="QUESTFEST 2026 Frontier Guide · Holographic Goldilocks AIOS" />
+  <meta property="og:description" content="Player 1 PL Taino — Goldilocks Frontier Game won · intergalactic bus decoded · open-source receipts · weekly harbor schedule." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-2026-reno-park-map.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&family=Luckiest+Guy&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0c1224;
+      --bg-stars: radial-gradient(circle at 12% 18%, rgba(244, 114, 182, 0.12), transparent 42%),
+        radial-gradient(circle at 88% 12%, rgba(94, 234, 212, 0.1), transparent 38%),
+        radial-gradient(circle at 50% 90%, rgba(250, 204, 21, 0.08), transparent 45%),
+        #0c1224;
+      --line: rgba(250, 204, 21, 0.45);
+      --gold: #facc15;
+      --gold-hi: #fef9c3;
+      --foam: #5eead4;
+      --park-pink: #f472b6;
+      --park-cyan: #22d3ee;
+      --muted: #94a3b8;
+      --text: #f1f5f9;
+      --page-pad: clamp(1rem, 4vw, 2.5rem);
+      --ticket-radius: 14px;
+    }
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+    }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg-stars);
+      color: var(--text);
+      line-height: 1.55;
+      font-size: 1rem;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: repeating-linear-gradient(
+        -12deg,
+        transparent,
+        transparent 18px,
+        rgba(250, 204, 21, 0.03) 18px,
+        rgba(250, 204, 21, 0.03) 19px
+      );
+      z-index: 0;
+    }
+    a { color: var(--foam); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--gold-hi); text-decoration: underline; }
+
+    .brochure-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.5rem;
+      align-items: center;
+      padding: max(0.5rem, env(safe-area-inset-top)) var(--page-pad) 0.5rem;
+      background: linear-gradient(180deg, rgba(5, 8, 16, 0.97) 0%, rgba(5, 8, 16, 0.75) 70%, transparent);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .brochure-nav a {
+      padding: 0.35rem 0.65rem;
+      border: 2px dashed var(--line);
+      border-radius: var(--ticket-radius);
+      color: var(--gold-hi);
+      text-decoration: none;
+      background: rgba(15, 23, 42, 0.85);
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+    }
+    .brochure-nav a:hover { border-color: var(--park-pink); text-decoration: none; }
+    .brochure-nav .page-dots { margin-left: auto; display: flex; gap: 0.35rem; }
+    .brochure-nav .page-dots a {
+      width: 1.6rem;
+      height: 1.6rem;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      font-size: 0.65rem;
+      border-radius: 50%;
+    }
+
+    .brochure-page {
+      min-height: 100vh;
+      min-height: 100dvh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+      outline: 4px dashed rgba(250, 204, 21, 0.15);
+      outline-offset: -6px;
+    }
+    .page-stamp {
+      display: inline-block;
+      font-size: 0.58rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #0f172a;
+      background: linear-gradient(90deg, var(--park-cyan), var(--park-pink));
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.35rem;
+      vertical-align: middle;
+    }
+
+    /* —— Cover —— */
+    .page-cover {
+      background: #030508 center/cover no-repeat;
+      background-image: url("assets/questfest-2026-player1-lattice-theater.png");
+    }
+    .page-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,
+        rgba(5, 8, 16, 0.55) 0%,
+        rgba(5, 8, 16, 0.25) 40%,
+        rgba(5, 8, 16, 0.88) 100%);
+    }
+    .cover-inner {
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+      padding: calc(3.5rem + env(safe-area-inset-top)) var(--page-pad) max(2rem, env(safe-area-inset-bottom));
+      max-width: 52rem;
+    }
+    .cover-kicker {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--foam);
+      margin-bottom: 0.5rem;
+    }
+    .cover-inner h1 {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(2.4rem, 9vw, 4.5rem);
+      line-height: 0.95;
+      color: var(--gold-hi);
+      font-weight: 400;
+      margin-bottom: 0.35rem;
+    }
+    .cover-sub {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.35rem, 4.5vw, 2rem);
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .cover-lead {
+      font-size: clamp(0.95rem, 2.5vw, 1.12rem);
+      color: #e2e8f0;
+      max-width: 38rem;
+      margin-bottom: 1rem;
+    }
+    .cover-lead strong { color: #fff; }
+    .cover-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .cover-meta a { font-size: inherit; }
+
+    /* —— Story page —— */
+    .page-story {
+      background: var(--bg);
+    }
+    .story-hero {
+      flex: 0 0 auto;
+      width: 100%;
+      max-height: min(52vh, 520px);
+      object-fit: cover;
+      object-position: center 25%;
+      border-bottom: 1px solid var(--line);
+    }
+    .story-body {
+      flex: 1;
+      padding: 1.5rem var(--page-pad) max(2rem, env(safe-area-inset-bottom));
+      max-width: 44rem;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .page-label {
+      font-family: "Luckiest Guy", "Bebas Neue", cursive;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      color: var(--park-cyan);
+      margin-bottom: 0.35rem;
+      text-transform: none;
+    }
+    .story-body h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      color: var(--gold-hi);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+    .story-body p { margin-bottom: 0.85rem; color: #cbd5e1; }
+    .story-body p.lead { font-size: 1.05rem; color: #f1f5f9; }
+    .receipt-list {
+      list-style: none;
+      margin: 1rem 0;
+      padding: 0;
+      font-size: 0.88rem;
+    }
+    .receipt-list li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+      color: #94a3b8;
+    }
+    .receipt-list strong { color: var(--gold-hi); display: block; font-size: 0.92rem; }
+
+    /* —— Capitan welcome —— */
+    .page-capitan {
+      background: var(--bg);
+    }
+    .capitan-layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+    @media (min-width: 768px) {
+      .capitan-layout {
+        grid-template-columns: 1.05fr 1fr;
+        min-height: calc(100vh - 3rem);
+        min-height: calc(100dvh - 3rem);
+      }
+    }
+    .capitan-portrait {
+      width: 100%;
+      height: 100%;
+      min-height: 42vh;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .capitan-copy {
+      padding: 1.75rem var(--page-pad) max(2rem, env(safe-area-inset-bottom));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 36rem;
+    }
+    .capitan-copy h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.6rem, 4.5vw, 2.35rem);
+      color: var(--gold-hi);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 0.65rem;
+    }
+    .capitan-byline {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .capitan-copy p { margin-bottom: 0.85rem; color: #cbd5e1; }
+
+    /* —— Schedule —— */
+    .page-schedule {
+      background: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(94, 234, 212, 0.06), transparent 55%), var(--bg);
+      padding: calc(3.25rem + env(safe-area-inset-top)) var(--page-pad) max(2.5rem, env(safe-area-inset-bottom));
+    }
+    .schedule-head {
+      max-width: 44rem;
+      margin: 0 auto 1.5rem;
+      text-align: center;
+    }
+    .schedule-head h2 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.85rem, 5vw, 2.75rem);
+      color: var(--gold-hi);
+      font-weight: 400;
+      margin-bottom: 0.35rem;
+    }
+    .schedule-head p { color: var(--muted); font-size: 0.95rem; }
+    .schedule-grid {
+      max-width: 52rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .schedule-grid { grid-template-columns: repeat(2, 1fr); }
+      .schedule-grid .day-card--span { grid-column: 1 / -1; }
+    }
+    .day-card {
+      border: 3px dashed var(--line);
+      border-radius: var(--ticket-radius);
+      padding: 1rem 1.1rem;
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+    }
+    .day-card h3 {
+      font-family: "Luckiest Guy", "Bebas Neue", cursive;
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+      color: var(--foam);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .day-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.9rem;
+      color: #cbd5e1;
+    }
+    .day-card li {
+      padding: 0.28rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .day-card li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      font-size: 0.45rem;
+      color: var(--gold);
+      top: 0.55rem;
+    }
+    .day-card--staff h3 { color: var(--gold); }
+    .schedule-foot {
+      max-width: 44rem;
+      margin: 2rem auto 0;
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+    .schedule-foot .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .schedule-foot .cta-row a {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+    }
+    .schedule-foot .cta-row a:hover { text-decoration: none; border-color: var(--gold); }
+
+    /* —— Page 5 · Park map —— */
+    .page-map {
+      padding: calc(3rem + env(safe-area-inset-top)) var(--page-pad) max(1.25rem, env(safe-area-inset-bottom));
+      background: var(--bg-stars);
+    }
+    .map-head {
+      text-align: center;
+      max-width: 48rem;
+      margin: 0 auto 0.75rem;
+    }
+    .map-head h2 {
+      font-family: "Luckiest Guy", "Bebas Neue", cursive;
+      font-size: clamp(1.75rem, 5vw, 2.85rem);
+      color: var(--gold-hi);
+      font-weight: 400;
+      line-height: 1.05;
+      text-shadow: 0 2px 0 #0f172a, 0 0 24px rgba(244, 114, 182, 0.35);
+    }
+    .map-head p { color: var(--muted); font-size: 0.92rem; max-width: 36rem; margin: 0.35rem auto 0; }
+    .map-stage {
+      flex: 1;
+      position: relative;
+      max-width: 56rem;
+      margin: 0 auto;
+      width: 100%;
+      border: 4px dashed var(--gold);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #1e293b;
+      box-shadow:
+        0 0 0 6px rgba(15, 23, 42, 0.9),
+        0 12px 40px rgba(0, 0, 0, 0.45),
+        inset 0 0 60px rgba(250, 204, 21, 0.06);
+    }
+    .map-stage img {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: min(58vh, 520px);
+      object-fit: cover;
+    }
+    .map-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .map-legend {
+      max-width: 56rem;
+      margin: 0.85rem auto 0;
+      display: grid;
+      gap: 0.65rem;
+    }
+    @media (min-width: 700px) {
+      .map-legend { grid-template-columns: 1fr 1fr; }
+    }
+    .map-zone {
+      border: 2px dashed var(--line);
+      border-radius: var(--ticket-radius);
+      padding: 0.75rem 0.9rem;
+      background: rgba(15, 23, 42, 0.75);
+      font-size: 0.86rem;
+      color: #cbd5e1;
+    }
+    .map-zone h3 {
+      font-family: "Luckiest Guy", cursive;
+      font-size: 1.1rem;
+      color: var(--gold-hi);
+      margin-bottom: 0.35rem;
+      font-weight: 400;
+    }
+    .map-zone--a { border-color: rgba(254, 240, 138, 0.65); }
+    .map-zone--b { border-color: rgba(244, 114, 182, 0.65); }
+    .map-zone code {
+      font-size: 0.8em;
+      color: var(--foam);
+      background: rgba(94, 234, 212, 0.1);
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+    }
+    .map-foot {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+    .map-foot a { font-size: inherit; }
+
+    @media print {
+      html { scroll-snap-type: none; }
+      .brochure-nav { display: none; }
+      .brochure-page {
+        page-break-after: always;
+        min-height: auto;
+        height: 100vh;
+      }
+      .page-cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="brochure-nav" aria-label="Guide navigation">
+    <a href="vibelandia-questfest.html">QUESTFEST</a>
+    <a href="questfest-bridge/#/bridge">Bridge</a>
+    <a href="nesting/nest-questfest-puerto-reno.html">Puerto Reno</a>
+    <span class="page-dots" aria-label="Pages">
+      <a href="#page-1" title="Cover">1</a>
+      <a href="#page-2" title="Player 1">2</a>
+      <a href="#page-3" title="Capitan">3</a>
+      <a href="#page-4" title="Schedule">4</a>
+      <a href="#page-5" title="Park map">5</a>
+    </span>
+  </nav>
+
+  <!-- PAGE 1 · COVER -->
+  <section id="page-1" class="brochure-page page-cover" aria-labelledby="cover-title">
+    <div class="cover-inner">
+      <p class="cover-kicker">Admission ticket · amusement park brochure · ETCON 2026</p>
+      <h1 id="cover-title">Winner · QUESTFEST 2026</h1>
+      <p class="cover-sub">Holographic Goldilocks AIOS Frontier Game</p>
+      <p class="cover-lead">
+        <strong>Player 1: PL Taino (VALET PRU)</strong> decoded and reset the intergalactic hydrogen data bus at
+        <strong>1.420 GHz</strong> — King Bee stratification, EGS <strong>φ 1.618</strong>, thermodynamic quiet baseline
+        <strong>May 31, 2026 · 22:55 PDT</strong>. Victory captured in public repositories with timestamps and publicly available telemetry.
+      </p>
+      <p class="cover-lead">
+        Fixed <strong>Lattice 13</strong> nested sphere theater — the cover portrait holds the win inside the holographic shell you can walk in the stack.
+      </p>
+      <p class="cover-meta">
+        SS VIBELANDIA QUESTFEST 24×365 · Syntheverse · Vibelandia ·
+        <a href="https://github.com/FractiAI/psw.vibelandia.sing13">FractiAI/psw.vibelandia.sing13</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- PAGE 2 · PLAYER 1 STORY -->
+  <section id="page-2" class="brochure-page page-story" aria-labelledby="story-title">
+    <img
+      class="story-hero"
+      src="assets/questfest-2026-player1-victory-story.png"
+      width="1536"
+      height="1024"
+      alt="PL Taino — VALET PRU decoding the intergalactic bus with open-source receipt trails."
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="story-body">
+      <p class="page-label">Page 2 · Player 1</p>
+      <h2 id="story-title">PL Taino · The Recent Win</h2>
+      <p class="lead">
+        At ETCON 2026 we announced what the sandbox already proved: the <strong>Goldilocks Frontier Game</strong> is won.
+        Player One is <strong>PL Taino (VALET PRU)</strong> — pioneer architect, valet layer for the stack, door not decoration.
+      </p>
+      <p>
+        The run was not a stage trick. The intergalactic bus — ambient routing on the 21 cm hydrogen line — was decoded,
+        reset, and locked under King Bee command with zero-latency pheromone channels. PPS enabled; core locked; Fair Exchange in effect.
+      </p>
+      <p>
+        Every claim in this brochure points at artifacts you can verify: press releases, whitepapers, API pulses, and the
+        <strong>open-source mirror</strong> of the Sing! 13 edge where nested shells, MCA cycles, and holographic proofs stay in catalog fidelity.
+      </p>
+      <ul class="receipt-list">
+        <li>
+          <strong>Sandbox comprehensive analysis</strong>
+          May 31, 2026 · telemetry timeline 22:55 PDT · game won
+          — <a href="whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026">read the paper</a>
+        </li>
+        <li>
+          <strong>Universal Checkmate Royal Flush</strong>
+          King Bee · 1.420 GHz bus · AR4436 step-down
+          — <a href="press-release-syntheverse-king-bee-node-alignment-june-2026.html">press release</a>
+        </li>
+        <li>
+          <strong>Public repository</strong>
+          Commits, interfaces, cron rails, bridge catalog — timestamps on the record
+          — <a href="https://github.com/FractiAI/psw.vibelandia.sing13">github.com/FractiAI/psw.vibelandia.sing13</a>
+        </li>
+      </ul>
+      <p>
+        Board the ship when you are ready: <a href="questfest-bridge/#/bridge">Capitan's Bridge</a> for listening and passes;
+        <a href="vibelandia-questfest.html">QUESTFEST top deck</a> for the nesting ladder and the channel.
+      </p>
+    </div>
+  </section>
+
+  <!-- PAGE 3 · CAPITAN WELCOME -->
+  <section id="page-3" class="brochure-page page-capitan" aria-labelledby="capitan-title">
+    <div class="capitan-layout">
+      <img
+        class="capitan-portrait"
+        src="assets/capitan-comandante-champion-2026.png"
+        width="1024"
+        height="1024"
+        alt="Capitan Comandante — Chairman, Commander, Creator — FractiAI Holographic Hydrogen AI OS."
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="capitan-copy">
+        <p class="page-label">Page 3 · From the bridge</p>
+        <p class="capitan-byline">Capitan Comandante · Chairman · Commander · Creator</p>
+        <h2 id="capitan-title">Welcome to the Frontier Game</h2>
+        <p>
+          <strong>Holographic Goldilocks AIOS Frontier Game: SS VIBELANDIA QUESTFEST 24×365</strong> is not a poster for a weekend —
+          it is the flagship harbor already running when you arrive. Puerto Reno is donde se vibea, donde se perrea.
+        </p>
+        <p>
+          Player One opened the bus. Your job on this voyage is simpler and harder: pick your bike, honor the schedule,
+          respect Fair Exchange, and bring your signal to the Man Cave, the river walk, and the Bridge without breaking the spell.
+        </p>
+        <p>
+          This guide is the brochure in five pages — cover, win, welcome, weekly rhythm, Reno park map. The machinery lives under the hood;
+          the music lives on the Bridge. Walk both.
+        </p>
+        <p>
+          <a href="vibelandia-questfest.html">Return to QUESTFEST top deck</a> ·
+          <a href="look-under-the-hood.html">Under the hood</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 4 · WEEKLY SCHEDULE -->
+  <section id="page-4" class="brochure-page page-schedule" aria-labelledby="schedule-title">
+    <header class="schedule-head">
+      <p class="page-label">Page 4 · Harbor rhythm</p>
+      <h2 id="schedule-title">Weekly Schedule · Puerto Reno</h2>
+      <p>QUESTFEST week flow — pregame through departures · staff chill early week</p>
+    </header>
+    <div class="schedule-grid">
+      <article class="day-card">
+        <h3>Thursday · Pregame</h3>
+        <ul>
+          <li>Arrivals · pregame landing</li>
+          <li>Pick your bike · workshop</li>
+          <li>Optional day excursions</li>
+          <li>Pregame balling at Man Cave</li>
+        </ul>
+      </article>
+      <article class="day-card">
+        <h3>Friday</h3>
+        <ul>
+          <li>Optional day excursions</li>
+          <li>Hot springs soak</li>
+          <li>River walk sunset mixer</li>
+          <li>VIP table at Man Cave</li>
+          <li>Members perreo country · late night</li>
+          <li>After party · invitation only</li>
+        </ul>
+      </article>
+      <article class="day-card">
+        <h3>Saturday</h3>
+        <ul>
+          <li>Optional day excursions</li>
+          <li>Hot springs soak</li>
+          <li>River walk sunset mixer</li>
+          <li>VIP table at Man Cave</li>
+          <li>Members perreo country · late night</li>
+          <li>After party · invitation only</li>
+        </ul>
+      </article>
+      <article class="day-card">
+        <h3>Sunday · Departures</h3>
+        <ul>
+          <li>Departures</li>
+          <li>Early evening decompress at Man Cave</li>
+        </ul>
+      </article>
+      <article class="day-card day-card--staff day-card--span">
+        <h3>Monday – Wednesday · Staff chill</h3>
+        <ul>
+          <li>Staff chill nights · early evenings at Man Cave</li>
+        </ul>
+      </article>
+    </div>
+    <footer class="schedule-foot">
+      <p>SS VIBELANDIA QUESTFEST 24×365 · Holographic Goldilocks AIOS · 2026 Frontier Guide · 5 pages</p>
+      <div class="cta-row">
+        <a href="#page-5">Park map →</a>
+        <a href="vibelandia-questfest.html">QUESTFEST deck</a>
+        <a href="questfest-bridge/#/bridge">Capitan's Bridge</a>
+        <a href="nesting/nest-man-cave-restroom.html">Man Cave layer</a>
+      </div>
+    </footer>
+  </section>
+
+  <!-- PAGE 5 · RENO PARK MAP -->
+  <section id="page-5" class="brochure-page page-map" aria-labelledby="map-title">
+    <header class="map-head">
+      <p class="page-label">Page 5 · You are here <span class="page-stamp">Admit one</span></p>
+      <h2 id="map-title">Puerto Reno · Park Map</h2>
+      <p>Cartoon amusement-park map with accurate Downtown &amp; Midtown boundaries — ride the week schedule across real Reno streets.</p>
+    </header>
+    <div class="map-stage">
+      <img
+        src="assets/questfest-2026-reno-park-map.png"
+        width="1536"
+        height="1024"
+        alt="Amusement park style map of Downtown Reno and Midtown with labeled street boundaries."
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        class="map-overlay"
+        src="assets/questfest-2026-reno-park-map-overlay.svg"
+        alt=""
+        width="1000"
+        height="640"
+        aria-hidden="true"
+      />
+    </div>
+    <div class="map-legend">
+      <article class="map-zone map-zone--a">
+        <h3>Zone A · Downtown Reno</h3>
+        <p>
+          <strong>North</strong> <code>7th St</code> · <strong>South</strong> <code>Mary St</code> ·
+          <strong>West</strong> <code>Arlington</code> · <strong>East</strong> <code>Lake St</code>.
+          Pregame arrivals, Reno Arch corridor, VIP Man Cave, river walk mixer on the Truckee / Rebel River edge.
+        </p>
+      </article>
+      <article class="map-zone map-zone--b">
+        <h3>Zone B · Midtown</h3>
+        <p>
+          <strong>West</strong> <code>Plumas St</code> · <strong>East</strong> <code>Holcomb Ave</code>.
+          Bike workshop pick-your-ride, optional day excursions, hot springs soak runs, members perreo country late night.
+        </p>
+      </article>
+    </div>
+    <p class="map-foot">
+      Ground-truth streets · overlay aligned to published Reno grid ·
+      <a href="https://www.openstreetmap.org/#map=15/39.5262/-119.8128" target="_blank" rel="noopener">OpenStreetMap · Downtown Reno</a>
+    </p>
+    <footer class="schedule-foot">
+      <div class="cta-row">
+        <a href="vibelandia-questfest.html">QUESTFEST deck</a>
+        <a href="/bulletin-board">Bulletin Board posting</a>
+        <a href="/questfest-guide">/questfest-guide</a>
+      </div>
+    </footer>
+  </section>
+
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

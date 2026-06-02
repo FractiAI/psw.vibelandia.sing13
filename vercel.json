@@ -7,6 +7,10 @@
     { "source": "/", "destination": "/interfaces/vibelandia-questfest.html" },
     { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },
     { "source": "/questfest/", "destination": "/interfaces/vibelandia-questfest.html" },
+    { "source": "/questfest-guide", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
+    { "source": "/questfest-guide/", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
+    { "source": "/guide/2026", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
+    { "source": "/guide/2026/", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
     { "source": "/fractiai/digital-pru", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/fractiai/digital-pru/", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/interfaces/fractiai/digital-pru", "destination": "/interfaces/look-under-the-hood.html" },
@@ -75,7 +79,11 @@
     { "source": "/special-projects/turner-bison-herd-management", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" },
     { "source": "/special-projects/turner-bison-herd-management/", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" },
     { "source": "/special-projects/erdos-holographic-aios-audit", "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html" },
-    { "source": "/special-projects/erdos-holographic-aios-audit/", "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html" }
+    { "source": "/special-projects/erdos-holographic-aios-audit/", "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html" },
+    { "source": "/special-projects/geomagnetic-herbivore-study", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
+    { "source": "/special-projects/geomagnetic-herbivore-study/", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
+    { "source": "/whitepaper/geomagnetic-herbivore-2026", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
+    { "source": "/whitepaper/geomagnetic-herbivore-2026/", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" }
   ],
   "crons": [
     {
@@ -140,6 +148,11 @@
       "includeFiles": "lib/**"
     },
     "api/turner-bison-telemetry.js": {
+      "memory": 512,
+      "maxDuration": 300,
+      "includeFiles": "{data/**,lib/**}"
+    },
+    "api/turner-recent-anomaly-report.js": {
       "memory": 512,
       "maxDuration": 300,
       "includeFiles": "{data/**,lib/**}"

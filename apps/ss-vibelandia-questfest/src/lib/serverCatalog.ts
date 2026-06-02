@@ -135,11 +135,16 @@ function catalogApiError(code: string, message?: string): Error & { code: string
   return err;
 }
 
+const REGISTER_FETCH_MS = 90_000;
+
 async function postCatalogJson(
   apiPath: string,
   secret: string,
   body: Record<string, unknown>,
+  timeoutMs = REGISTER_FETCH_MS,
 ): Promise<Response> {
+  const ctrl = new AbortController();
+  const timer = window.setTimeout(() => ctrl.abort(), timeoutMs);
   try {
     return await fetch(catalogApiUrl(apiPath), {
       method: 'POST',
@@ -148,9 +153,15 @@ async function postCatalogJson(
         'X-Catalog-Secret': secret,
       },
       body: JSON.stringify(body),
+      signal: ctrl.signal,
     });
-  } catch {
+  } catch (e) {
+    if (e instanceof Error && e.name === 'AbortError') {
+      throw catalogApiError('upload_connection_failed', 'Catalog register timed out — retry.');
+    }
     throw catalogApiError('upload_connection_failed');
+  } finally {
+    window.clearTimeout(timer);
   }
 }
 

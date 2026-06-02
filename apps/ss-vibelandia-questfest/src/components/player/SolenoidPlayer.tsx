@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
+import { LikeButton } from '@/components/catalog/LikeButton';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistStore } from '@/stores/playlistStore';
 import { useSessionStore } from '@/stores/sessionStore';
@@ -160,6 +161,7 @@ export function SolenoidPlayer({
       {error && <p className="player-error">{error}</p>}
 
       <div className="player-controls">
+        <LikeButton trackId={track.id} size="md" />
         <button
           type="button"
           className="voxel-btn voxel-btn--cyan"

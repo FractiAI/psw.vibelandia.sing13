@@ -1,0 +1,17 @@
+{
+  "docId": "HHA-GEOMAG-HERBIVORE-2026",
+  "classification": "none",
+  "hypothesisTiers": {
+    "H1": "no_support",
+    "H2": "no_support",
+    "H3": "inconclusive",
+    "H4": "no_support",
+    "H5": "see_anomaly_module"
+  },
+  "outputs": {
+    "inventory": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\research\\geomagnetic-herbivore\\data\\inventory.json",
+    "anomaly_report": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\research\\geomagnetic-herbivore\\data\\anomaly_report.json",
+    "trajectories": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\research\\geomagnetic-herbivore\\data\\trajectories.csv",
+    "figures": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\research\\geomagnetic-herbivore\\output"
+  }
+}

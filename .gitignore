@@ -1,5 +1,8 @@
 # Dependencies
 node_modules/
+node_modules.bak*/
+**/__pycache__/
+*.pyc
 
 # Environment
 .env

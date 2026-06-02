@@ -1,6 +1,7 @@
 import type { CatalogPrefs } from '@/lib/catalogPrefs';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 import { localMediaKeyFor } from '@/lib/localPlayback';
+import { applyLikesToPlaylists, resolveLikedTrackIds } from '@/lib/trackLikes';
 import {
   MASTER_LIBRARY_UI_HINT,
   SONIC_CATALOG_DISPLAY_NAME,
@@ -10,6 +11,18 @@ export const CATALOG_VERSION = 5;
 
 /** Master list: every upload / device import is kept here automatically. */
 export const MASTER_PLAYLIST_ID = 'pl-main';
+
+/** Auto-built from listener likes (device-local). */
+export const MY_LIKES_PLAYLIST_ID = 'pl-my-likes';
+
+export const MY_LIKES_PLAYLIST_DEFAULT_NAME = 'My Likes';
+
+export const MY_LIKES_PLAYLIST_DEFAULT_DESCRIPTION =
+  'Tracks you liked on this device — updated automatically when you tap the heart.';
+
+export function isMyLikesPlaylist(id: string): boolean {
+  return id === MY_LIKES_PLAYLIST_ID;
+}
 
 export const MASTER_PLAYLIST_DEFAULT_NAME = SONIC_CATALOG_DISPLAY_NAME;
 
@@ -61,7 +74,7 @@ export function mergeServerCatalogWithPrefs(
   if (localPrefs) {
     const byId = new Map(playlists.map((p) => [p.id, p]));
     for (const p of localPrefs.playlists) {
-      if (p.id === MASTER_PLAYLIST_ID) continue;
+      if (p.id === MASTER_PLAYLIST_ID || p.id === MY_LIKES_PLAYLIST_ID) continue;
       const filtered = p.trackIds.filter((id) => tracks[id]);
       if (byId.has(p.id)) {
         byId.set(p.id, { ...byId.get(p.id)!, trackIds: filtered, name: p.name, description: p.description });
@@ -85,6 +98,9 @@ export function mergeServerCatalogWithPrefs(
           : p.description,
     };
   });
+
+  const likedTrackIds = resolveLikedTrackIds(localPrefs, playlists);
+  playlists = applyLikesToPlaylists(playlists, likedTrackIds, new Set(Object.keys(tracks)));
 
   const activePlaylistId =
     localPrefs?.activePlaylistId && playlists.some((p) => p.id === localPrefs.activePlaylistId)
@@ -198,6 +214,18 @@ export function mergeUserCatalog(
           : p.description,
     };
   });
+
+  const likedTrackIds = resolveLikedTrackIds(
+    saved
+      ? {
+          version: CATALOG_VERSION,
+          playlists: saved.playlists,
+          activePlaylistId: saved.activePlaylistId,
+        }
+      : null,
+    playlists,
+  );
+  playlists = applyLikesToPlaylists(playlists, likedTrackIds, new Set(Object.keys(tracks)));
 
   const activePlaylistId =
     saved?.activePlaylistId && playlists.some((p) => p.id === saved.activePlaylistId)

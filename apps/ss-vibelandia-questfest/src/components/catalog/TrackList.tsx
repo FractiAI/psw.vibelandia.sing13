@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { useCatalogStore } from '@/stores/catalogStore';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
@@ -9,15 +9,24 @@ import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
+import { MasterCatalogFilters } from '@/components/catalog/MasterCatalogFilters';
 
-import { isMasterPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
+import { LikeButton } from '@/components/catalog/LikeButton';
+import { isMasterPlaylist, isMyLikesPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
+import {
+  applyMasterCatalogView,
+  loadMasterCatalogFilter,
+  saveMasterCatalogFilter,
+  isMasterFilterActive,
+  type MasterCatalogFilterState,
+} from '@/lib/masterCatalogFilter';
 import { playTrackById } from '@/lib/trackPlayback';
 import {
   filterPlayableTrackIds,
   playlistOrderFingerprint,
 } from '@/lib/playlistShuffle';
 import { TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
-import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
+import { fmtDuration, fmtPlaylistTotalTime, fmtUploadDate } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
 import {
   SONIC_CATALOG_DISPLAY_NAME,
@@ -41,6 +50,8 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
 
   const setSearch = useCatalogStore((s) => s.setSearch);
 
+  const playlists = useCatalogStore((s) => s.playlists);
+
   const getTrack = useCatalogStore((s) => s.getTrack);
 
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
@@ -61,12 +72,30 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
 
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
   const [editingTrackId, setEditingTrackId] = useState<string | null>(null);
+  const [masterFilter, setMasterFilter] = useState<MasterCatalogFilterState>(loadMasterCatalogFilter);
 
+  const isMaster = pl ? isMasterPlaylist(pl.id) : false;
+  const canEditPlaylist = pl && !isMasterPlaylist(pl.id) && !isMyLikesPlaylist(pl.id);
+  const isMyLikes = pl ? isMyLikesPlaylist(pl.id) : false;
 
+  const onMasterFilterChange = useCallback((next: MasterCatalogFilterState) => {
+    setMasterFilter(next);
+    saveMasterCatalogFilter(next);
+  }, []);
 
-  const canEditPlaylist = pl && !isMasterPlaylist(pl.id);
-
-  const canReorder = !search.trim() && (pl?.trackIds.length ?? 0) > 1;
+  const canReorder = useMemo(() => {
+    if ((pl?.trackIds.length ?? 0) <= 1) return false;
+    if (isMaster) {
+      return (
+        !isMasterFilterActive(masterFilter) &&
+        masterFilter.sortKey === 'playlistOrder' &&
+        !masterFilter.titleQuery.trim() &&
+        !masterFilter.genre.trim() &&
+        masterFilter.playlistMode === 'all'
+      );
+    }
+    return !search.trim();
+  }, [isMaster, masterFilter, pl?.trackIds.length, search]);
 
 
 
@@ -82,35 +111,24 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
   );
 
   const rows = useMemo(() => {
-
-    const q = search.trim().toLowerCase();
-
     const ids = pl?.trackIds ?? [];
-
+    if (isMaster) {
+      return applyMasterCatalogView(ids, playlists, masterFilter, getTrack);
+    }
+    const q = search.trim().toLowerCase();
     return ids
-
       .map((id, index) => ({ id, index, track: getTrack(id) }))
-
       .filter((row): row is { id: string; index: number; track: NonNullable<ReturnType<typeof getTrack>> } => {
-
         if (!row.track) return false;
-
         if (!q) return true;
-
         return (
-
           row.track.title.toLowerCase().includes(q) ||
-
           row.track.artist.toLowerCase().includes(q) ||
-
           (row.track.description?.toLowerCase().includes(q) ?? false) ||
           (row.track.genre?.toLowerCase().includes(q) ?? false)
-
         );
-
       });
-
-  }, [pl, search, getTrack]);
+  }, [isMaster, masterFilter, pl, playlists, search, getTrack]);
 
 
 
@@ -126,7 +144,6 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
   }
 
   const currentTrack = currentTrackId ? getTrack(currentTrackId) : undefined;
-  const isMaster = isMasterPlaylist(pl.id);
   const heroTitle = currentTrack?.title ?? (isMaster ? SONIC_CATALOG_DISPLAY_NAME : pl.name);
   const heroDescription = currentTrack?.description?.trim()
     ? currentTrack.description
@@ -148,29 +165,18 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
       ].join(' · ');
 
   const playAll = () => {
-
-    if (!pl?.trackIds[0]) return;
-
-    const playable = filterPlayableTrackIds(pl.trackIds, getTrack);
-
+    const visibleIds = rows.map((r) => r.id);
+    if (!visibleIds[0]) return;
+    const playable = filterPlayableTrackIds(visibleIds, getTrack);
     if (!playable.length) return;
-
     let first = playable[0]!;
-
-    if (shuffleEnabled) {
-
-      const fp = playlistOrderFingerprint(pl.id, pl.trackIds);
-
+    if (shuffleEnabled && pl) {
+      const fp = playlistOrderFingerprint(pl.id, visibleIds);
       usePlaybackStore.getState().syncShuffleQueue(fp, playable);
-
       const q = usePlaybackStore.getState().shuffleQueue;
-
       if (q?.[0]) first = q[0];
-
     }
-
     play(first);
-
   };
 
 
@@ -214,12 +220,15 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
         <div className="sp-hero-meta">
 
           <p className="sp-hero-type">
-            {currentTrack ? 'Now playing' : isMaster ? 'Sonic Singularity' : 'Playlist'}
+            {currentTrack ? 'Now playing' : isMaster ? 'Sonic Singularity' : isMyLikes ? PLAIN.myLikes : 'Playlist'}
           </p>
 
           <h1 className="sp-hero-title">{heroTitle}</h1>
 
-          {(currentTrack || !isMaster) && heroDescription ? (
+          {isMyLikes && !currentTrack ? (
+            <p className="sp-hero-desc">{PLAIN.myLikesHint}</p>
+          ) : null}
+          {(currentTrack || (!isMaster && !isMyLikes)) && heroDescription ? (
             <p className="sp-hero-desc">{heroDescription}</p>
           ) : null}
 
@@ -255,44 +264,46 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
 
 
       <div className="sp-toolbar">
-
-        <label className="sp-search-wrap">
-
-          <span className="sr-only">Search</span>
-
-          <input
-
-            className="sp-search"
-
-            type="search"
-
-            placeholder={PLAIN.searchPlaylist}
-
-            value={search}
-
-            onChange={(e) => setSearch(e.target.value)}
-
+        {isMaster ? (
+          <MasterCatalogFilters
+            filter={masterFilter}
+            onChange={onMasterFilterChange}
+            trackIds={pl?.trackIds ?? []}
+            playlists={playlists}
+            getTrack={getTrack}
+            shownCount={rows.length}
+            totalCount={pl?.trackIds.length ?? 0}
           />
-
-        </label>
+        ) : (
+          <>
+            <label className="sp-search-wrap">
+              <span className="sr-only">Search</span>
+              <input
+                className="sp-search"
+                type="search"
+                placeholder={PLAIN.searchPlaylist}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </label>
+            {rows.length > 0 && (
+              <span className="sp-toolbar-total" aria-live="polite">
+                {rows.length === pl.trackIds.length
+                  ? `${totalTimeLabel} ${PLAIN.totalTime}`
+                  : `${fmtPlaylistTotalTime(
+                      rows.map((r) => r.id),
+                      getTrack,
+                    )} shown`}
+              </span>
+            )}
+          </>
+        )}
 
         {onBulkPlaylistDownload && isPassenger && pl.trackIds.length > 0 && (
           <button type="button" className="sp-hero-secondary" onClick={onBulkPlaylistDownload}>
             Download playlist…
           </button>
         )}
-
-        {rows.length > 0 && (
-          <span className="sp-toolbar-total" aria-live="polite">
-            {rows.length === pl.trackIds.length
-              ? `${totalTimeLabel} ${PLAIN.totalTime}`
-              : `${fmtPlaylistTotalTime(
-                  rows.map((r) => r.id),
-                  getTrack,
-                )} shown`}
-          </span>
-        )}
-
       </div>
 
 
@@ -301,11 +312,11 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
 
         <p className="sp-empty">
 
-          {search.trim()
-
-            ? 'No tracks match your search.'
-
-            : PLAIN.noTracksYet}
+          {isMaster && isMasterFilterActive(masterFilter)
+            ? PLAIN.noFilterMatch
+            : search.trim()
+              ? 'No tracks match your search.'
+              : PLAIN.noTracksYet}
 
         </p>
 
@@ -402,9 +413,8 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
                       </span>
 
                       <span className="sp-listen-type-dur">
-
                         Audio · {fmtDuration(tr.durationSec)}
-
+                        {isMaster && tr.uploadedAt ? ` · ${fmtUploadDate(tr.uploadedAt)}` : ''}
                       </span>
 
                     </span>
@@ -422,6 +432,8 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
                   </button>
 
                   <div className="sp-listen-row-actions">
+
+                    <LikeButton trackId={tr.id} />
 
                     <button
 

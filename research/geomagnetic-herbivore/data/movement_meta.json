@@ -1,0 +1,10 @@
+{
+  "fetchedAt": "2026-06-02T22:48:45.668273+00:00",
+  "rows": 2360,
+  "individuals": 224,
+  "sources": [
+    "gbif",
+    "placeholder_deterministic"
+  ],
+  "note": "Turner synthesis is model placement, not collar GPS. GBIF are point occurrences."
+}

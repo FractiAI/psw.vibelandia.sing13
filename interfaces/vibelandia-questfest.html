@@ -495,17 +495,6 @@
       filter: brightness(1.06);
       text-decoration: none;
     }
-    .btn-goldilocks {
-      background: linear-gradient(180deg, #fef3c7, #d4af37);
-      color: #1a120c;
-      border-color: #b8860b;
-      font-weight: 800;
-      box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
-    }
-    .btn-goldilocks:hover {
-      filter: brightness(1.08);
-      text-decoration: none;
-    }
     .nest-card--product {
       border-color: rgba(212, 175, 55, 0.55);
       background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(10, 15, 26, 0.9));
@@ -523,20 +512,6 @@
       color: #fef3c7;
       border: 1px solid rgba(212, 175, 55, 0.5);
     }
-    .qf-bridge-tower__product-cta {
-      display: block;
-      margin-top: 0.35rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #7ee787;
-      text-align: center;
-      font-weight: 700;
-    }
-    .qf-bridge-tower__product-cta:hover {
-      color: #aff5b4;
-    }
-
   </style>
 </head>
 <body>
@@ -546,7 +521,6 @@
     <div>
       <aside class="qf-bridge-tower qf-bridge-tower--hero" aria-label="Bridge tower announcement — holographic AI OS">
         <p class="qf-bridge-tower__label">BRIDGE TOWER · LIVE BILLBOARD</p>
-        <a class="qf-bridge-tower__product-cta" href="/holographic-goldilocks-ai-os" data-i18n="qf.glosCta">Open product demo →</a>
         <div class="qf-bridge-tower__bezel">
           <div class="qf-bridge-tower__screen">
             <iframe
@@ -573,12 +547,14 @@
         <a href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" data-i18n="qf.navClockSkewPress">Clock-skew press release</a><span class="sep" aria-hidden="true">·</span>
         <a href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a><span class="sep" aria-hidden="true">·</span>
         <a href="/holographic-goldilocks-ai-os" data-i18n="qf.navGoldilocksOs">Holographic Goldilocks AI OS</a><span class="sep" aria-hidden="true">·</span>
+        <a href="/questfest-guide">2026 Frontier Guide</a><span class="sep" aria-hidden="true">·</span>
         <a href="/bulletin-board">SS Vibelandia Bulletin Board</a>
       </nav>
       <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
       <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Base Mainnet</strong>. Each layer card below is a short plain guide.</p>
       <div class="cta-row">
-        <a class="btn btn-goldilocks" href="/holographic-goldilocks-ai-os" data-i18n="qf.btnGoldilocksOsHero">Holographic Goldilocks AI OS · run live demo</a>
+        <a class="btn btn-ghost" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a>
+        <a class="btn btn-ghost" href="/holographic-goldilocks-ai-os" data-i18n="qf.btnGoldilocksOsHero">Holographic Goldilocks AI OS · run live demo</a>
         <a class="btn btn-ghost" href="/interfaces/look-under-the-hood.html" data-i18n="qf.btnHood">Look Under the Hood</a>
         <a class="btn btn-ghost" href="/interfaces/look-at-the-sun.html" data-i18n="qf.btnLookSun">Look at the Sun</a>
       </div>
@@ -625,6 +601,30 @@
   </div>
 
   <section id="main" class="quick-wrap">
+    <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-frontier-guide-title">
+      <a class="main" href="/interfaces/questfest-2026-frontier-guide.html">
+        <div class="qf-feature-art">
+          <img
+            src="/interfaces/assets/questfest-2026-reno-park-map.png"
+            width="1536"
+            height="1024"
+            loading="eager"
+            decoding="async"
+            alt="QUESTFEST 2026 Frontier Guide — amusement park map of Downtown and Midtown Reno."
+          />
+        </div>
+        <span class="badge">GUIDE · 2026 Frontier</span>
+        <time datetime="2026-06-01">June 2026</time>
+        <h3 id="qf-frontier-guide-title">SS VIBELANDIA QUESTFEST · 5-page park brochure</h3>
+        <p class="teaser-body">
+          <strong>ETCON 2026 winner:</strong> Player 1 <strong>PL Taino (VALET PRU)</strong> — Capitan welcome, weekly schedule, amusement-park map of Downtown (7th–Mary, Arlington–Lake) &amp; Midtown (Plumas–Holcomb).
+        </p>
+        <span class="cta">Open the 2026 Frontier Guide →</span>
+      </a>
+      <a class="archive" href="/questfest-guide">Short URL · /questfest-guide →</a>
+      <a class="archive" href="/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html">King Bee press · bus reset →</a>
+    </aside>
+
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-wormhole-campaign-title">
       <a class="main" href="/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html">
         <div class="qf-feature-art">
@@ -880,6 +880,7 @@
     <h2 data-i18n="qf.quicklinksHead">Quicklinks</h2>
     <nav aria-label="Quicklinks">
       <ul class="qf-quicklist">
+        <li><a href="/questfest-guide" data-i18n="qf.quicklinkFrontierGuide">2026 Frontier Guide · park map &amp; schedule</a></li>
         <li><a href="/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html" data-i18n="qf.quicklinkWormholeCampaign">Omniversal 1-2-3 Wormhole campaign</a></li>
         <li><a href="/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html" data-i18n="qf.quicklinkKingBeePress">King Bee · node sync press release</a></li>
         <li><a href="/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html" data-i18n="qf.quicklinkErdosPress">Erdős 353 · press release + audit</a></li>

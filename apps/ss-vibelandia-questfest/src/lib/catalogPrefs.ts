@@ -11,6 +11,8 @@ export interface CatalogPrefs {
   version: number;
   playlists: PlaylistDef[];
   activePlaylistId: string;
+  /** Device-local liked track ids (newest first). Drives My Likes playlist. */
+  likedTrackIds?: string[];
 }
 
 const MAX_PREFS_BYTES = 800_000;
@@ -42,7 +44,13 @@ export function loadCatalogPrefs(): CatalogPrefs | null {
 }
 
 export function saveCatalogPrefs(prefs: CatalogPrefs): void {
-  localStorage.setItem(PREFS_KEY, JSON.stringify(prefs));
+  try {
+    const raw = JSON.stringify(prefs);
+    if (raw.length > MAX_PREFS_BYTES) return;
+    localStorage.setItem(PREFS_KEY, raw);
+  } catch {
+    /* QuotaExceeded — uploads still succeeded on server */
+  }
 }
 
 /** Last server manifest — instant paint while live sync runs. */
@@ -84,15 +92,18 @@ export function loadCatalogCache(): CatalogSnapshot | null {
 }
 
 export function saveCatalogCache(snapshot: CatalogSnapshot): void {
-  localStorage.setItem(
-    CACHE_KEY,
-    JSON.stringify({
+  try {
+    const raw = JSON.stringify({
       version: snapshot.version,
       tracks: snapshot.tracks,
       playlists: snapshot.playlists,
       activePlaylistId: snapshot.activePlaylistId,
-    }),
-  );
+    });
+    if (raw.length > MAX_CACHE_BYTES) return;
+    localStorage.setItem(CACHE_KEY, raw);
+  } catch {
+    /* QuotaExceeded — server manifest remains source of truth */
+  }
 }
 
 export function loadDownloadedTrackIds(): Set<string> {

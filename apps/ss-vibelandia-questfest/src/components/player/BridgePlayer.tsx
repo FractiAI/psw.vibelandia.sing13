@@ -15,6 +15,7 @@ import {
 } from '@/lib/trackPlayback';
 import { useActivePlaylist } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { LikeButton } from '@/components/catalog/LikeButton';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import {
@@ -342,6 +343,7 @@ export function BridgePlayer({
           </div>
         </div>
         <div className="sp-now-controls">
+          {track && <LikeButton trackId={track.id} size="md" className="sp-now-like" />}
           <button type="button" className="sp-now-btn" onClick={() => stepPlaylist(-1)} disabled={!track} aria-label="Previous">
             ⏮
           </button>

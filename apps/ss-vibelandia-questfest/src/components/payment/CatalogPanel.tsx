@@ -1,6 +1,7 @@
 import { BOOKING_EMAIL, CATALOG_EMAIL } from '@/lib/paymentRails';
 import { TRACKS } from '@/lib/demoTracks';
 import { usePlaybackStore } from '@/stores/playbackStore';
+import { LikeButton } from '@/components/catalog/LikeButton';
 import { usePlaylistStore } from '@/stores/playlistStore';
 
 interface CatalogPanelProps {
@@ -40,6 +41,7 @@ export function CatalogPanel({ isPassenger }: CatalogPanelProps) {
               {!isPassenger && <span className="catalog-free-pill">Free · 30s preview</span>}
               {isPassenger && <span className="catalog-pass-pill">Member · full play</span>}
             </div>
+            <LikeButton trackId={tr.id} />
             <button
               type="button"
               className={`voxel-btn voxel-btn--warm${currentTrackId === tr.id ? ' catalog-track--active' : ''}`}

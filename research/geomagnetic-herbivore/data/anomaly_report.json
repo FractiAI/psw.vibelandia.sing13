@@ -1,616 +1,15 @@
 {
   "schema": "recent-anomaly-module/v1",
-  "generatedAt": "2026-06-02T23:37:27.832888+00:00",
+  "generatedAt": "2026-06-03T00:09:11.489223+00:00",
   "objective": "90-day anomaly detection with 30-day and 14-day focus",
   "windows": {
-    "90d": "2020-02-16",
-    "30d": "2020-04-16",
-    "14d": "2020-05-02"
+    "90d": "2026-03-06",
+    "30d": "2026-05-05",
+    "14d": "2026-05-21"
   },
-  "recentAnomalySummary": "Recent anomaly pass (2026-06-02): classification **extraordinary** from 25 flagged daily metrics (max |z|=4.79). Geomagnetic influence not asserted without covariate control.",
-  "classification": "extraordinary",
-  "rankedAnomalies": [
-    {
-      "date": "2020-02-18",
-      "window": "90d",
-      "metric": "herd_spread_km",
-      "value": 22.948590824197822,
-      "baseline_mean": 29.011623050351155,
-      "z_score": -4.788472091762901,
-      "z_score_raw": -4.788472091762901,
-      "bayesian_tail_p": 1.6805592915059009e-06,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-15",
-      "window": "90d",
-      "metric": "mean_step_km",
-      "value": 0.11856140495874108,
-      "baseline_mean": 0.03936204284805754,
-      "z_score": 4.471654595155085,
-      "z_score_raw": 4.471654595155085,
-      "bayesian_tail_p": 7.761671944273019e-06,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-15",
-      "window": "30d",
-      "metric": "mean_step_km",
-      "value": 0.11856140495874108,
-      "baseline_mean": 0.03936204284805754,
-      "z_score": 4.471654595155085,
-      "z_score_raw": 4.471654595155085,
-      "bayesian_tail_p": 7.761671944273019e-06,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-15",
-      "window": "14d",
-      "metric": "mean_step_km",
-      "value": 0.11856140495874108,
-      "baseline_mean": 0.03936204284805754,
-      "z_score": 4.471654595155085,
-      "z_score_raw": 4.471654595155085,
-      "bayesian_tail_p": 7.761671944273019e-06,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-02-17",
-      "window": "90d",
-      "metric": "herd_spread_km",
-      "value": 24.227083998912473,
-      "baseline_mean": 29.011623050351155,
-      "z_score": -3.7787415380932967,
-      "z_score_raw": -3.7787415380932967,
-      "bayesian_tail_p": 0.00015762291887910784,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-02-19",
-      "window": "90d",
-      "metric": "herd_spread_km",
-      "value": 24.34608998976122,
-      "baseline_mean": 29.011623050351155,
-      "z_score": -3.684752780541637,
-      "z_score_raw": -3.684752780541637,
-      "bayesian_tail_p": 0.0002289247305340414,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-01",
-      "window": "90d",
-      "metric": "directional_consistency",
-      "value": 0.15822170809487948,
-      "baseline_mean": 0.052882338682947776,
-      "z_score": 3.3182293703977317,
-      "z_score_raw": 3.3182293703977317,
-      "bayesian_tail_p": 0.0009059006075711196,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-01",
-      "window": "30d",
-      "metric": "directional_consistency",
-      "value": 0.15822170809487948,
-      "baseline_mean": 0.052882338682947776,
-      "z_score": 3.3182293703977317,
-      "z_score_raw": 3.3182293703977317,
-      "bayesian_tail_p": 0.0009059006075711196,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-04-22",
-      "window": "90d",
-      "metric": "directional_consistency",
-      "value": 0.14293693319178805,
-      "baseline_mean": 0.052882338682947776,
-      "z_score": 2.8367532680962184,
-      "z_score_raw": 2.8367532680962184,
-      "bayesian_tail_p": 0.0045574816067475155,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-04-22",
-      "window": "30d",
-      "metric": "directional_consistency",
-      "value": 0.14293693319178805,
-      "baseline_mean": 0.052882338682947776,
-      "z_score": 2.8367532680962184,
-      "z_score_raw": 2.8367532680962184,
-      "bayesian_tail_p": 0.0045574816067475155,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-10",
-      "window": "90d",
-      "metric": "total_displacement_km",
-      "value": 27.94934021519176,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.2668332768470387,
-      "z_score_raw": 2.2668332768470387,
-      "bayesian_tail_p": 0.023400412467567078,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-10",
-      "window": "30d",
-      "metric": "total_displacement_km",
-      "value": 27.94934021519176,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.2668332768470387,
-      "z_score_raw": 2.2668332768470387,
-      "bayesian_tail_p": 0.023400412467567078,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-10",
-      "window": "14d",
-      "metric": "total_displacement_km",
-      "value": 27.94934021519176,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.2668332768470387,
-      "z_score_raw": 2.2668332768470387,
-      "bayesian_tail_p": 0.023400412467567078,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-01",
-      "window": "90d",
-      "metric": "total_displacement_km",
-      "value": 27.70802260378392,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.2261272410296833,
-      "z_score_raw": 2.2261272410296833,
-      "bayesian_tail_p": 0.026005659749069432,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-01",
-      "window": "30d",
-      "metric": "total_displacement_km",
-      "value": 27.70802260378392,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.2261272410296833,
-      "z_score_raw": 2.2261272410296833,
-      "bayesian_tail_p": 0.026005659749069432,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-11",
-      "window": "90d",
-      "metric": "total_displacement_km",
-      "value": 26.98873201792449,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.104795572858989,
-      "z_score_raw": 2.104795572858989,
-      "bayesian_tail_p": 0.035309106717934746,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-11",
-      "window": "30d",
-      "metric": "total_displacement_km",
-      "value": 26.98873201792449,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.104795572858989,
-      "z_score_raw": 2.104795572858989,
-      "bayesian_tail_p": 0.035309106717934746,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-11",
-      "window": "14d",
-      "metric": "total_displacement_km",
-      "value": 26.98873201792449,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.104795572858989,
-      "z_score_raw": 2.104795572858989,
-      "bayesian_tail_p": 0.035309106717934746,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-08",
-      "window": "90d",
-      "metric": "total_displacement_km",
-      "value": 26.72455450880438,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.0602334744458366,
-      "z_score_raw": 2.0602334744458366,
-      "bayesian_tail_p": 0.0393762262270565,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-08",
-      "window": "30d",
-      "metric": "total_displacement_km",
-      "value": 26.72455450880438,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.0602334744458366,
-      "z_score_raw": 2.0602334744458366,
-      "bayesian_tail_p": 0.0393762262270565,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-08",
-      "window": "14d",
-      "metric": "total_displacement_km",
-      "value": 26.72455450880438,
-      "baseline_mean": 14.510871426852958,
-      "z_score": 2.0602334744458366,
-      "z_score_raw": 2.0602334744458366,
-      "bayesian_tail_p": 0.0393762262270565,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-10",
-      "window": "90d",
-      "metric": "mean_step_km",
-      "value": 0.07335784833383664,
-      "baseline_mean": 0.03936204284805754,
-      "z_score": 1.9194283358498956,
-      "z_score_raw": 1.9194283358498956,
-      "bayesian_tail_p": 0.05493014773022398,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-10",
-      "window": "30d",
-      "metric": "mean_step_km",
-      "value": 0.07335784833383664,
-      "baseline_mean": 0.03936204284805754,
-      "z_score": 1.9194283358498956,
-      "z_score_raw": 1.9194283358498956,
-      "bayesian_tail_p": 0.05493014773022398,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-10",
-      "window": "14d",
-      "metric": "mean_step_km",
-      "value": 0.07335784833383664,
-      "baseline_mean": 0.03936204284805754,
-      "z_score": 1.9194283358498956,
-      "z_score_raw": 1.9194283358498956,
-      "bayesian_tail_p": 0.05493014773022398,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    },
-    {
-      "date": "2020-05-01",
-      "window": "90d",
-      "metric": "mean_step_km",
-      "value": 0.07330164709995746,
-      "baseline_mean": 0.03936204284805754,
-      "z_score": 1.9162551725941357,
-      "z_score_raw": 1.9162551725941357,
-      "bayesian_tail_p": 0.055332623749489995,
-      "environmental_explanations": [
-        "seasonal forage / soil moisture (Open-Meteo)",
-        "temperature / drought index",
-        "management rotation or fencing"
-      ],
-      "geomagnetic_explanations": [
-        "elevated Kp interval",
-        "solar region activity (NOAA SWPC)"
-      ],
-      "evidence_for_geomagnetic": [],
-      "evidence_against_geomagnetic": [
-        "correlation not causation",
-        "species may not be Bison bison if no public bison collar"
-      ]
-    }
-  ],
+  "recentAnomalySummary": "Recent anomaly pass (2026-06-03): classification **none** from 0 flagged daily metrics (max |z|=0.00). Geomagnetic influence not asserted without covariate control.",
+  "classification": "none",
+  "rankedAnomalies": [],
   "stormLagAnalysis": [],
   "changePoints": {
     "mean_step_km": [
@@ -630,6 +29,8 @@
     0,
     0,
     0,
+    1,
+    0,
     0,
     0,
     0,
@@ -686,6 +87,16 @@
     0,
     1,
     0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
     1,
     0,
     0,
@@ -695,20 +106,8 @@
     0,
     0,
     0,
-    1,
     0,
     0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    0,
-    1,
     1
   ],
   "criticalRule": "Do not infer causation from correlation. Geomagnetic influence reported only if significant after alternative explanations.",
@@ -723,104 +122,1867 @@
     "kp_events": {
       "kp5_plus": [
         {
-          "start": "2019-01-05T00:00:00+00:00",
-          "end": "2019-01-05T00:00:00+00:00",
+          "start": "2021-06-15T18:00:00+00:00",
+          "end": "2021-06-15T18:00:00+00:00",
           "kpMax": 5.0,
           "kpMean": 5.0,
           "intervals": 1,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-01-31T21:00:00+00:00",
-          "end": "2019-01-31T21:00:00+00:00",
+          "start": "2021-08-28T00:00:00+00:00",
+          "end": "2021-08-28T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2021-09-17T18:00:00+00:00",
+          "end": "2021-09-17T21:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2021-10-12T00:00:00+00:00",
+          "end": "2021-10-12T03:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.5,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2021-10-12T09:00:00+00:00",
+          "end": "2021-10-12T09:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 6.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2021-11-03T21:00:00+00:00",
+          "end": "2021-11-04T12:00:00+00:00",
+          "kpMax": 7.667,
+          "kpMean": 6.444500000000001,
+          "intervals": 6,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2021-11-30T21:00:00+00:00",
+          "end": "2021-11-30T21:00:00+00:00",
           "kpMax": 5.333,
           "kpMean": 5.333,
           "intervals": 1,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-05-11T00:00:00+00:00",
-          "end": "2019-05-11T00:00:00+00:00",
+          "start": "2021-12-19T21:00:00+00:00",
+          "end": "2021-12-19T21:00:00+00:00",
           "kpMax": 5.0,
           "kpMean": 5.0,
           "intervals": 1,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-05-14T03:00:00+00:00",
-          "end": "2019-05-14T06:00:00+00:00",
+          "start": "2022-01-08T18:00:00+00:00",
+          "end": "2022-01-08T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-01-14T21:00:00+00:00",
+          "end": "2022-01-14T21:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-01-18T00:00:00+00:00",
+          "end": "2022-01-18T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-01-19T00:00:00+00:00",
+          "end": "2022-01-19T03:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-02-03T06:00:00+00:00",
+          "end": "2022-02-03T09:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-02-04T15:00:00+00:00",
+          "end": "2022-02-04T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-02-10T18:00:00+00:00",
+          "end": "2022-02-10T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-03-05T21:00:00+00:00",
+          "end": "2022-03-05T21:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-03-13T12:00:00+00:00",
+          "end": "2022-03-14T00:00:00+00:00",
           "kpMax": 6.333,
+          "kpMean": 5.7334000000000005,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-04-10T03:00:00+00:00",
+          "end": "2022-04-10T06:00:00+00:00",
+          "kpMax": 6.667,
           "kpMean": 6.0,
           "intervals": 2,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-06-08T15:00:00+00:00",
-          "end": "2019-06-08T18:00:00+00:00",
-          "kpMax": 5.333,
-          "kpMean": 5.1665,
+          "start": "2022-04-14T15:00:00+00:00",
+          "end": "2022-04-14T18:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.8335,
           "intervals": 2,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-07-09T18:00:00+00:00",
-          "end": "2019-07-09T18:00:00+00:00",
+          "start": "2022-04-15T00:00:00+00:00",
+          "end": "2022-04-15T00:00:00+00:00",
           "kpMax": 5.0,
           "kpMean": 5.0,
           "intervals": 1,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-08-05T06:00:00+00:00",
-          "end": "2019-08-05T15:00:00+00:00",
-          "kpMax": 5.333,
-          "kpMean": 5.1665,
-          "intervals": 4,
+          "start": "2022-04-27T12:00:00+00:00",
+          "end": "2022-04-27T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-08-31T09:00:00+00:00",
-          "end": "2019-08-31T12:00:00+00:00",
-          "kpMax": 5.667,
-          "kpMean": 5.5,
+          "start": "2022-05-27T12:00:00+00:00",
+          "end": "2022-05-27T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-05-28T00:00:00+00:00",
+          "end": "2022-05-28T03:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
           "intervals": 2,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-09-01T06:00:00+00:00",
-          "end": "2019-09-01T12:00:00+00:00",
+          "start": "2022-07-07T12:00:00+00:00",
+          "end": "2022-07-07T12:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-07-08T00:00:00+00:00",
+          "end": "2022-07-08T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-07-21T15:00:00+00:00",
+          "end": "2022-07-21T15:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-07-23T03:00:00+00:00",
+          "end": "2022-07-23T03:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-08-07T21:00:00+00:00",
+          "end": "2022-08-08T00:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.3335,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-08-17T18:00:00+00:00",
+          "end": "2022-08-17T21:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 6.167,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-08-18T12:00:00+00:00",
+          "end": "2022-08-18T15:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-08-19T18:00:00+00:00",
+          "end": "2022-08-19T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-09-03T00:00:00+00:00",
+          "end": "2022-09-03T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-09-04T00:00:00+00:00",
+          "end": "2022-09-04T09:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.75,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-09-04T15:00:00+00:00",
+          "end": "2022-09-04T15:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 6.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-09-04T21:00:00+00:00",
+          "end": "2022-09-05T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-09-05T15:00:00+00:00",
+          "end": "2022-09-05T15:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-09-27T00:00:00+00:00",
+          "end": "2022-09-27T00:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-10-03T18:00:00+00:00",
+          "end": "2022-10-03T18:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-10-22T15:00:00+00:00",
+          "end": "2022-10-22T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-11-03T15:00:00+00:00",
+          "end": "2022-11-03T15:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-11-07T15:00:00+00:00",
+          "end": "2022-11-07T15:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-11-28T03:00:00+00:00",
+          "end": "2022-11-28T03:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-11-30T18:00:00+00:00",
+          "end": "2022-11-30T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2022-12-26T12:00:00+00:00",
+          "end": "2022-12-26T12:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-01-15T21:00:00+00:00",
+          "end": "2023-01-15T21:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-02-15T06:00:00+00:00",
+          "end": "2023-02-15T06:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-02-16T06:00:00+00:00",
+          "end": "2023-02-16T06:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-02-26T18:00:00+00:00",
+          "end": "2023-02-28T00:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 6.000090909090909,
+          "intervals": 11,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-03-15T03:00:00+00:00",
+          "end": "2023-03-15T03:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-03-15T21:00:00+00:00",
+          "end": "2023-03-15T21:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-03-23T12:00:00+00:00",
+          "end": "2023-03-23T12:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 6.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-03-23T18:00:00+00:00",
+          "end": "2023-03-24T06:00:00+00:00",
+          "kpMax": 8.0,
+          "kpMean": 6.9998000000000005,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-03-30T18:00:00+00:00",
+          "end": "2023-03-30T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-04-23T15:00:00+00:00",
+          "end": "2023-04-24T09:00:00+00:00",
+          "kpMax": 8.333,
+          "kpMean": 6.904714285714286,
+          "intervals": 7,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-05-06T03:00:00+00:00",
+          "end": "2023-05-06T03:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 6.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-05-10T03:00:00+00:00",
+          "end": "2023-05-10T03:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-05-12T12:00:00+00:00",
+          "end": "2023-05-12T12:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-05-20T00:00:00+00:00",
+          "end": "2023-05-20T03:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.3335,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-05-21T18:00:00+00:00",
+          "end": "2023-05-21T21:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-06-15T15:00:00+00:00",
+          "end": "2023-06-15T21:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.111,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-06-16T03:00:00+00:00",
+          "end": "2023-06-16T03:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 6.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-06-25T00:00:00+00:00",
+          "end": "2023-06-25T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-08-05T00:00:00+00:00",
+          "end": "2023-08-05T06:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.5553333333333335,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-09-02T12:00:00+00:00",
+          "end": "2023-09-02T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-09-02T21:00:00+00:00",
+          "end": "2023-09-03T00:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-09-12T12:00:00+00:00",
+          "end": "2023-09-12T15:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-09-18T15:00:00+00:00",
+          "end": "2023-09-18T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-09-19T00:00:00+00:00",
+          "end": "2023-09-19T03:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.833,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-09-19T12:00:00+00:00",
+          "end": "2023-09-19T15:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.6665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-09-24T18:00:00+00:00",
+          "end": "2023-09-25T00:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.555666666666667,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-09-26T12:00:00+00:00",
+          "end": "2023-09-26T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-10-05T03:00:00+00:00",
+          "end": "2023-10-05T03:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-10-21T06:00:00+00:00",
+          "end": "2023-10-21T06:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-11-05T09:00:00+00:00",
+          "end": "2023-11-05T18:00:00+00:00",
+          "kpMax": 7.333,
+          "kpMean": 6.5,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-11-06T03:00:00+00:00",
+          "end": "2023-11-06T03:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-11-06T18:00:00+00:00",
+          "end": "2023-11-06T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-11-07T00:00:00+00:00",
+          "end": "2023-11-07T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-11-13T00:00:00+00:00",
+          "end": "2023-11-13T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-11-22T03:00:00+00:00",
+          "end": "2023-11-22T06:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-11-25T18:00:00+00:00",
+          "end": "2023-11-25T18:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 6.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-12-01T09:00:00+00:00",
+          "end": "2023-12-01T12:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 6.3335,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-12-01T18:00:00+00:00",
+          "end": "2023-12-02T00:00:00+00:00",
           "kpMax": 5.333,
           "kpMean": 5.222,
           "intervals": 3,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-09-02T00:00:00+00:00",
-          "end": "2019-09-02T00:00:00+00:00",
+          "start": "2023-12-17T12:00:00+00:00",
+          "end": "2023-12-17T15:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-12-18T06:00:00+00:00",
+          "end": "2023-12-18T06:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-03-03T12:00:00+00:00",
+          "end": "2024-03-03T18:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.666666666666667,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-03-23T21:00:00+00:00",
+          "end": "2024-03-23T21:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-03-24T12:00:00+00:00",
+          "end": "2024-03-24T18:00:00+00:00",
+          "kpMax": 8.333,
+          "kpMean": 7.0,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-03-25T03:00:00+00:00",
+          "end": "2024-03-25T03:00:00+00:00",
           "kpMax": 5.0,
           "kpMean": 5.0,
           "intervals": 1,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-09-27T18:00:00+00:00",
-          "end": "2019-09-27T21:00:00+00:00",
+          "start": "2024-04-16T18:00:00+00:00",
+          "end": "2024-04-16T21:00:00+00:00",
           "kpMax": 5.333,
           "kpMean": 5.1665,
           "intervals": 2,
           "tier": "kp_ge_5"
         },
         {
-          "start": "2019-10-25T06:00:00+00:00",
-          "end": "2019-10-25T06:00:00+00:00",
+          "start": "2024-04-19T12:00:00+00:00",
+          "end": "2024-04-19T18:00:00+00:00",
+          "kpMax": 7.0,
+          "kpMean": 5.889,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-04-26T15:00:00+00:00",
+          "end": "2024-04-26T15:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-05-02T12:00:00+00:00",
+          "end": "2024-05-02T18:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 6.1113333333333335,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-05-06T00:00:00+00:00",
+          "end": "2024-05-06T00:00:00+00:00",
           "kpMax": 5.333,
           "kpMean": 5.333,
           "intervals": 1,
           "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-05-10T15:00:00+00:00",
+          "end": "2024-05-12T03:00:00+00:00",
+          "kpMax": 9.0,
+          "kpMean": 8.102615384615385,
+          "intervals": 13,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-05-12T21:00:00+00:00",
+          "end": "2024-05-13T03:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.8886666666666665,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-05-16T06:00:00+00:00",
+          "end": "2024-05-16T09:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.5,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-05-17T15:00:00+00:00",
+          "end": "2024-05-17T21:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.5553333333333335,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-06-07T12:00:00+00:00",
+          "end": "2024-06-07T15:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 6.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-06-28T09:00:00+00:00",
+          "end": "2024-06-28T18:00:00+00:00",
+          "kpMax": 7.667,
+          "kpMean": 6.16675,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-07-26T03:00:00+00:00",
+          "end": "2024-07-26T03:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-07-30T03:00:00+00:00",
+          "end": "2024-07-30T03:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-08-01T00:00:00+00:00",
+          "end": "2024-08-01T00:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-08-04T12:00:00+00:00",
+          "end": "2024-08-04T15:00:00+00:00",
+          "kpMax": 7.0,
+          "kpMean": 6.8335,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-08-11T12:00:00+00:00",
+          "end": "2024-08-11T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-08-12T00:00:00+00:00",
+          "end": "2024-08-12T21:00:00+00:00",
+          "kpMax": 8.0,
+          "kpMean": 6.8335,
+          "intervals": 8,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-08-17T15:00:00+00:00",
+          "end": "2024-08-17T21:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.5553333333333335,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-08-28T00:00:00+00:00",
+          "end": "2024-08-28T00:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-08-28T06:00:00+00:00",
+          "end": "2024-08-28T06:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-09-12T06:00:00+00:00",
+          "end": "2024-09-12T18:00:00+00:00",
+          "kpMax": 7.0,
+          "kpMean": 6.4002,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-09-13T00:00:00+00:00",
+          "end": "2024-09-13T00:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-09-13T21:00:00+00:00",
+          "end": "2024-09-13T21:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 6.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-09-17T00:00:00+00:00",
+          "end": "2024-09-17T12:00:00+00:00",
+          "kpMax": 7.333,
+          "kpMean": 6.2664,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-10-07T00:00:00+00:00",
+          "end": "2024-10-07T00:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-10-07T09:00:00+00:00",
+          "end": "2024-10-07T12:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.5,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-10-07T18:00:00+00:00",
+          "end": "2024-10-08T06:00:00+00:00",
+          "kpMax": 7.0,
+          "kpMean": 6.266800000000001,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-10-10T15:00:00+00:00",
+          "end": "2024-10-11T12:00:00+00:00",
+          "kpMax": 8.667,
+          "kpMean": 7.79175,
+          "intervals": 8,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-10-19T00:00:00+00:00",
+          "end": "2024-10-19T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-11-09T12:00:00+00:00",
+          "end": "2024-11-09T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-11-10T18:00:00+00:00",
+          "end": "2024-11-10T18:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-12-17T03:00:00+00:00",
+          "end": "2024-12-17T06:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-01-01T03:00:00+00:00",
+          "end": "2025-01-01T18:00:00+00:00",
+          "kpMax": 8.0,
+          "kpMean": 6.222166666666666,
+          "intervals": 6,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-01-04T06:00:00+00:00",
+          "end": "2025-01-04T06:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-01-04T18:00:00+00:00",
+          "end": "2025-01-04T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-02-15T09:00:00+00:00",
+          "end": "2025-02-15T09:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-02-19T00:00:00+00:00",
+          "end": "2025-02-19T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-02-27T09:00:00+00:00",
+          "end": "2025-02-27T09:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-02-28T00:00:00+00:00",
+          "end": "2025-02-28T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-08T21:00:00+00:00",
+          "end": "2025-03-08T21:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-09T03:00:00+00:00",
+          "end": "2025-03-09T03:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-09T09:00:00+00:00",
+          "end": "2025-03-09T09:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-12T15:00:00+00:00",
+          "end": "2025-03-12T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-13T00:00:00+00:00",
+          "end": "2025-03-13T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-13T06:00:00+00:00",
+          "end": "2025-03-13T06:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-13T12:00:00+00:00",
+          "end": "2025-03-13T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-14T00:00:00+00:00",
+          "end": "2025-03-14T00:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-21T18:00:00+00:00",
+          "end": "2025-03-22T03:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.25,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-03-26T12:00:00+00:00",
+          "end": "2025-03-26T18:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.666999999999999,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-04-05T00:00:00+00:00",
+          "end": "2025-04-05T03:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.3335,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-04-05T18:00:00+00:00",
+          "end": "2025-04-05T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-04-06T00:00:00+00:00",
+          "end": "2025-04-06T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-04-15T15:00:00+00:00",
+          "end": "2025-04-16T00:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.4165,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-04-16T12:00:00+00:00",
+          "end": "2025-04-16T21:00:00+00:00",
+          "kpMax": 7.667,
+          "kpMean": 6.666499999999999,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-04-20T00:00:00+00:00",
+          "end": "2025-04-20T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-04-21T12:00:00+00:00",
+          "end": "2025-04-21T12:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-04-21T18:00:00+00:00",
+          "end": "2025-04-21T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-05-02T00:00:00+00:00",
+          "end": "2025-05-02T03:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-05-02T21:00:00+00:00",
+          "end": "2025-05-03T00:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-05-17T00:00:00+00:00",
+          "end": "2025-05-17T03:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.833,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-05-29T00:00:00+00:00",
+          "end": "2025-05-29T21:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.45825,
+          "intervals": 8,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-06-01T00:00:00+00:00",
+          "end": "2025-06-01T18:00:00+00:00",
+          "kpMax": 7.667,
+          "kpMean": 6.381,
+          "intervals": 7,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-06-02T06:00:00+00:00",
+          "end": "2025-06-03T15:00:00+00:00",
+          "kpMax": 7.0,
+          "kpMean": 5.861166666666667,
+          "intervals": 12,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-06-04T12:00:00+00:00",
+          "end": "2025-06-04T15:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-06-12T18:00:00+00:00",
+          "end": "2025-06-13T06:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 5.533199999999999,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-06-13T12:00:00+00:00",
+          "end": "2025-06-13T21:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.83325,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-06-14T03:00:00+00:00",
+          "end": "2025-06-14T03:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-06-26T21:00:00+00:00",
+          "end": "2025-06-27T00:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-07-06T03:00:00+00:00",
+          "end": "2025-07-06T03:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-07-06T21:00:00+00:00",
+          "end": "2025-07-07T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-08-08T18:00:00+00:00",
+          "end": "2025-08-08T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-08-09T00:00:00+00:00",
+          "end": "2025-08-09T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-08-09T06:00:00+00:00",
+          "end": "2025-08-09T15:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.16675,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-09-01T21:00:00+00:00",
+          "end": "2025-09-02T00:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.5,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-09-06T15:00:00+00:00",
+          "end": "2025-09-06T15:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-09-09T21:00:00+00:00",
+          "end": "2025-09-09T21:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-09-15T00:00:00+00:00",
+          "end": "2025-09-15T03:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 6.167,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-09-15T12:00:00+00:00",
+          "end": "2025-09-15T12:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-09-29T15:00:00+00:00",
+          "end": "2025-09-29T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-09-30T00:00:00+00:00",
+          "end": "2025-10-01T03:00:00+00:00",
+          "kpMax": 7.0,
+          "kpMean": 5.6,
+          "intervals": 10,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-01T12:00:00+00:00",
+          "end": "2025-10-01T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-01T18:00:00+00:00",
+          "end": "2025-10-01T18:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 6.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-02T00:00:00+00:00",
+          "end": "2025-10-02T03:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 6.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-02T18:00:00+00:00",
+          "end": "2025-10-02T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-03T03:00:00+00:00",
+          "end": "2025-10-03T03:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-12T18:00:00+00:00",
+          "end": "2025-10-12T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-18T18:00:00+00:00",
+          "end": "2025-10-18T18:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 6.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-19T00:00:00+00:00",
+          "end": "2025-10-19T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-30T09:00:00+00:00",
+          "end": "2025-10-30T12:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-10-30T21:00:00+00:00",
+          "end": "2025-10-30T21:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-11-05T21:00:00+00:00",
+          "end": "2025-11-06T06:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 5.8335,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-11-07T00:00:00+00:00",
+          "end": "2025-11-07T06:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.222,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-11-08T00:00:00+00:00",
+          "end": "2025-11-08T06:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.5553333333333335,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-11-12T00:00:00+00:00",
+          "end": "2025-11-12T12:00:00+00:00",
+          "kpMax": 8.667,
+          "kpMean": 7.466799999999999,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-11-12T18:00:00+00:00",
+          "end": "2025-11-12T18:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-11-13T00:00:00+00:00",
+          "end": "2025-11-13T06:00:00+00:00",
+          "kpMax": 7.333,
+          "kpMean": 6.777666666666666,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-12-03T18:00:00+00:00",
+          "end": "2025-12-04T03:00:00+00:00",
+          "kpMax": 6.667,
+          "kpMean": 5.41675,
+          "intervals": 4,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-12-10T21:00:00+00:00",
+          "end": "2025-12-11T00:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 6.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-12-12T18:00:00+00:00",
+          "end": "2025-12-12T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-02T18:00:00+00:00",
+          "end": "2026-01-02T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-10T18:00:00+00:00",
+          "end": "2026-01-10T21:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-11T15:00:00+00:00",
+          "end": "2026-01-11T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-16T15:00:00+00:00",
+          "end": "2026-01-16T15:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-17T00:00:00+00:00",
+          "end": "2026-01-17T00:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-19T18:00:00+00:00",
+          "end": "2026-01-21T09:00:00+00:00",
+          "kpMax": 8.667,
+          "kpMean": 7.238071428571429,
+          "intervals": 14,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-22T21:00:00+00:00",
+          "end": "2026-01-22T21:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-28T21:00:00+00:00",
+          "end": "2026-01-28T21:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-02-05T03:00:00+00:00",
+          "end": "2026-02-05T03:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-02-15T00:00:00+00:00",
+          "end": "2026-02-15T03:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.1665,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-02-16T18:00:00+00:00",
+          "end": "2026-02-16T18:00:00+00:00",
+          "kpMax": 5.667,
+          "kpMean": 5.667,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-02-22T06:00:00+00:00",
+          "end": "2026-02-22T06:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-02-22T21:00:00+00:00",
+          "end": "2026-02-22T21:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-03-03T21:00:00+00:00",
+          "end": "2026-03-03T21:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-03-13T21:00:00+00:00",
+          "end": "2026-03-14T03:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.889,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-03-14T12:00:00+00:00",
+          "end": "2026-03-14T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-03-20T18:00:00+00:00",
+          "end": "2026-03-21T06:00:00+00:00",
+          "kpMax": 7.0,
+          "kpMean": 5.8666,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-03-22T09:00:00+00:00",
+          "end": "2026-03-23T00:00:00+00:00",
+          "kpMax": 7.0,
+          "kpMean": 6.277833333333334,
+          "intervals": 6,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-03-23T15:00:00+00:00",
+          "end": "2026-03-23T15:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-03-25T06:00:00+00:00",
+          "end": "2026-03-25T06:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-04-02T06:00:00+00:00",
+          "end": "2026-04-02T06:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-04-02T12:00:00+00:00",
+          "end": "2026-04-02T18:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.333333333333333,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-04-03T06:00:00+00:00",
+          "end": "2026-04-03T06:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-04-03T15:00:00+00:00",
+          "end": "2026-04-03T21:00:00+00:00",
+          "kpMax": 6.333,
+          "kpMean": 5.777666666666666,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-04-18T03:00:00+00:00",
+          "end": "2026-04-18T09:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.111,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-04-19T06:00:00+00:00",
+          "end": "2026-04-19T06:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-04-20T15:00:00+00:00",
+          "end": "2026-04-20T18:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 2,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-05-04T18:00:00+00:00",
+          "end": "2026-05-04T18:00:00+00:00",
+          "kpMax": 5.333,
+          "kpMean": 5.333,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-05-15T12:00:00+00:00",
+          "end": "2026-05-15T12:00:00+00:00",
+          "kpMax": 5.0,
+          "kpMean": 5.0,
+          "intervals": 1,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-05-15T21:00:00+00:00",
+          "end": "2026-05-16T00:00:00+00:00",
+          "kpMax": 6.0,
+          "kpMean": 5.8335,
+          "intervals": 2,
+          "tier": "kp_ge_5"
         }
       ],
-      "severe_kp8_plus": []
+      "severe_kp8_plus": [
+        {
+          "start": "2023-03-23T18:00:00+00:00",
+          "end": "2023-03-24T06:00:00+00:00",
+          "kpMax": 8.0,
+          "kpMean": 6.9998000000000005,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2023-04-23T15:00:00+00:00",
+          "end": "2023-04-24T09:00:00+00:00",
+          "kpMax": 8.333,
+          "kpMean": 6.904714285714286,
+          "intervals": 7,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-03-24T12:00:00+00:00",
+          "end": "2024-03-24T18:00:00+00:00",
+          "kpMax": 8.333,
+          "kpMean": 7.0,
+          "intervals": 3,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-05-10T15:00:00+00:00",
+          "end": "2024-05-12T03:00:00+00:00",
+          "kpMax": 9.0,
+          "kpMean": 8.102615384615385,
+          "intervals": 13,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-08-12T00:00:00+00:00",
+          "end": "2024-08-12T21:00:00+00:00",
+          "kpMax": 8.0,
+          "kpMean": 6.8335,
+          "intervals": 8,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2024-10-10T15:00:00+00:00",
+          "end": "2024-10-11T12:00:00+00:00",
+          "kpMax": 8.667,
+          "kpMean": 7.79175,
+          "intervals": 8,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-01-01T03:00:00+00:00",
+          "end": "2025-01-01T18:00:00+00:00",
+          "kpMax": 8.0,
+          "kpMean": 6.222166666666666,
+          "intervals": 6,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2025-11-12T00:00:00+00:00",
+          "end": "2025-11-12T12:00:00+00:00",
+          "kpMax": 8.667,
+          "kpMean": 7.466799999999999,
+          "intervals": 5,
+          "tier": "kp_ge_5"
+        },
+        {
+          "start": "2026-01-19T18:00:00+00:00",
+          "end": "2026-01-21T09:00:00+00:00",
+          "kpMax": 8.667,
+          "kpMean": 7.238071428571429,
+          "intervals": 14,
+          "tier": "kp_ge_5"
+        }
+      ]
     },
     "note": "M/X flare & CME lists require GOES event archive ingest (future pass)."
+  },
+  "sensitivityActivation": {
+    "schema": "geomagnetic-sensitivity-activation/v1",
+    "assessedAt": "2026-06-03T00:09:12.163575+00:00",
+    "activated": false,
+    "status": "elevated",
+    "confidence": 0.42,
+    "headline": "Elevated geomagnetic activity in last 30 days \u2014 monitor for activation.",
+    "evidence": [
+      "2 storm day(s) in last 30d."
+    ],
+    "calendarWindow": {
+      "calendarEnd": "2026-06-03",
+      "calendarStart90": "2026-03-06",
+      "calendarStart30": "2026-05-05",
+      "calendarStart14": "2026-05-21",
+      "baselineStart": "2021-06-04"
+    },
+    "recentGeomagnetic": {
+      "driverActive14d": false,
+      "driverActive30d": true,
+      "stormDays14d": 0,
+      "stormDays30d": 2,
+      "maxKp14d": 4.0,
+      "maxKp30d": 6.0,
+      "recentStormDates14d": []
+    },
+    "recentMovementCoupling": {
+      "collarOverlapsCalendarRecent": false,
+      "collarLast": "2020-05-15",
+      "window14d": {
+        "testable": false,
+        "reason": "insufficient herd days",
+        "nDays": 0
+      },
+      "window30d": {
+        "testable": false,
+        "reason": "insufficient herd days",
+        "nDays": 0
+      }
+    },
+    "historicalCoupling": {
+      "testable": true,
+      "couplingDetected": false,
+      "reason": "no Kp\u22655 days in window",
+      "nStormDays": 0,
+      "nQuietDays": 0
+    },
+    "recentAnomalyCount14d": 0,
+    "anomalyOnStormDay": false
   }
 }

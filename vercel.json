@@ -83,7 +83,9 @@
     { "source": "/special-projects/geomagnetic-herbivore-study", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
     { "source": "/special-projects/geomagnetic-herbivore-study/", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
-    { "source": "/whitepaper/geomagnetic-herbivore-2026/", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" }
+    { "source": "/whitepaper/geomagnetic-herbivore-2026/", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
+    { "source": "/questfest-schedule/:slug", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" },
+    { "source": "/questfest-schedule/:slug/", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" }
   ],
   "crons": [
     {

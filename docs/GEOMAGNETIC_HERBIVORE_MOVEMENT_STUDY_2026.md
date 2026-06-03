@@ -77,9 +77,19 @@ Documented in `research/geomagnetic-herbivore/METHODOLOGY.md`. Reproducible entr
 - **ML:** Random forest importance (step km ~ Kp + cohesion + spread).
 - **Planned extensions:** GLMM (individual random effect), Bayesian hierarchical storm model, SHAP, permutation tests with habitat residuals.
 
-### 3.4 Recent Anomaly Detection Module (required)
+### 3.4 Geomagnetic sensitivity activation (required)
 
-**Objective:** Detect significant movement, orientation, migration, or behavioral anomalies in the last **90 days**, focus **30** and **14 days**.
+**Objective:** Determine whether geomagnetic sensitivity has **recently activated** (calendar-recent, through today).
+
+- **Live Kp** through UTC today (GFZ) — storm forcing in last **14** / **30** days.
+- **Collar coupling** when public GPS overlaps the calendar-recent window (storm vs quiet movement).
+- **Watch tier** when storms are live but collar data are stale: historical storm–movement coupling from Movebank + live Kp (no causation asserted).
+
+Output: `sensitivity_activation.json` and `sensitivityActivation` in the live API (`GET /api/turner-recent-anomaly-report`). Status: `active` | `watch` | `latent` | `driver_active` | `driver_only` | `elevated`.
+
+### 3.5 Recent Anomaly Detection Module (required)
+
+**Objective:** Detect significant movement, orientation, migration, or behavioral anomalies in the last **90 days**, focus **30** and **14 days** (calendar-recent windows).
 
 **Metrics:** daily movement distance, directional consistency (Rayleigh *r*), herd spread, group spacing proxy, range utilization, orientation vs magnetic north.
 

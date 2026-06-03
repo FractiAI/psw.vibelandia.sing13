@@ -3400,6 +3400,12 @@ a.boarding-pay-open {
   color: #b3b3b3;
 }
 
+.sp-track-pl-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.35rem 0 0.5rem;
+}
+
 .sp-track-pl-modal .sp-track-pl-list {
   max-height: min(50vh, 320px);
   overflow-y: auto;

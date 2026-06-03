@@ -162,6 +162,15 @@ def final_classification(ranked: list[dict], max_z: float) -> str:
 
 
 def _analysis_windows() -> dict[str, str]:
+    cal_path = DATA / "calendar_window.json"
+    if cal_path.is_file():
+        w = json.loads(cal_path.read_text(encoding="utf-8"))
+        if w.get("calendarStart90"):
+            return {
+                "90d": w["calendarStart90"],
+                "30d": w.get("calendarStart30") or START_30,
+                "14d": w.get("calendarStart14") or START_14,
+            }
     win_path = DATA / "analysis_window.json"
     if win_path.is_file():
         w = json.loads(win_path.read_text(encoding="utf-8"))

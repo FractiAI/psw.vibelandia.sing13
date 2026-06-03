@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="ss-vibelandia-deck">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>QUESTFEST Schedule · SS Vibelandia</title>
+  <meta name="description" content="Weekly harbor schedule item — Puerto Reno QUESTFEST 2026 Frontier Guide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <style>
+    .sched-detail-day {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      color: #5eead4;
+      margin: 0 0 0.25rem;
+    }
+    .sched-meta { font-size: 0.88rem; color: #94a3b8; margin-bottom: 1rem; }
+    .sched-meta strong { color: #e2e8f0; }
+    .sched-detail-list { margin: 0 0 1.25rem 1.1rem; color: #cbd5e1; }
+    .sched-detail-list li { margin-bottom: 0.45rem; }
+    .sched-related { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .sched-related a {
+      padding: 0.45rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #fef3c7;
+    }
+    .sched-related a:hover { border-color: #5eead4; color: #5eead4; }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <a class="deck-back" href="/questfest-guide#page-4">&larr; Weekly schedule</a>
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a><span class="dot">·</span>
+      <a href="/questfest-guide">Frontier Guide</a><span class="dot">·</span>
+      <span class="here" id="sched-nav-here">Schedule item</span>
+    </nav>
+    <p class="deck-eyebrow">Harbor rhythm · ETCON 2026</p>
+    <p class="sched-detail-day" id="sched-day">…</p>
+    <h1 class="deck-h1" id="sched-title">Loading…</h1>
+    <p class="sched-meta" id="sched-meta"></p>
+    <p class="deck-lead" id="sched-summary"></p>
+    <p class="deck-section-label">What to expect</p>
+    <ul class="sched-detail-list" id="sched-details"></ul>
+    <p class="deck-section-label">Related</p>
+    <ul class="sched-related" id="sched-related"></ul>
+    <div class="deck-btn-row" style="margin-top: 1.5rem;">
+      <a class="deck-btn deck-btn--gold" href="/interfaces/questfest-bridge/#/bridge">Capitan's Bridge</a>
+      <a class="deck-btn deck-btn--ghost" href="/questfest-guide#page-5">Park map</a>
+    </div>
+  </main>
+  <script src="/interfaces/scripts/questfest-schedule-item.js" defer></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

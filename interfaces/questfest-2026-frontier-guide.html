@@ -10,7 +10,7 @@
   <meta property="og:title" content="QUESTFEST 2026 Frontier Guide · Holographic Goldilocks AIOS" />
   <meta property="og:description" content="Player 1 PL Taino — Goldilocks Frontier Game won · intergalactic bus decoded · open-source receipts · weekly harbor schedule." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-2026-reno-park-map.png" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/capitan-comandante-champion-2026.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -126,26 +126,64 @@
       vertical-align: middle;
     }
 
-    /* —— Cover —— */
+    /* —— Cover · Capitan / Player 1 likeness —— */
     .page-cover {
-      background: #030508 center/cover no-repeat;
-      background-image: url("/interfaces/assets/questfest-2026-player1-lattice-theater.png");
+      background: #030508;
+      justify-content: flex-start;
     }
-    .page-cover::before {
+    .cover-portrait-wrap {
+      position: relative;
+      flex: 0 0 auto;
+      width: 100%;
+      max-height: min(58vh, 560px);
+      overflow: hidden;
+      border-bottom: 3px dashed var(--line);
+    }
+    .cover-portrait {
+      display: block;
+      width: 100%;
+      height: min(58vh, 560px);
+      object-fit: cover;
+      object-position: center 8%;
+    }
+    .cover-portrait-wrap::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg,
-        rgba(5, 8, 16, 0.55) 0%,
-        rgba(5, 8, 16, 0.25) 40%,
-        rgba(5, 8, 16, 0.88) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(5, 8, 16, 0.15) 0%,
+        rgba(5, 8, 16, 0.05) 35%,
+        rgba(5, 8, 16, 0.75) 78%,
+        rgba(5, 8, 16, 0.95) 100%
+      );
+      pointer-events: none;
+    }
+    .cover-portrait-badge {
+      position: absolute;
+      left: var(--page-pad);
+      bottom: 0.75rem;
+      z-index: 2;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #0f172a;
+      background: linear-gradient(90deg, var(--gold), var(--park-cyan));
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
     }
     .cover-inner {
       position: relative;
       z-index: 1;
-      margin-top: auto;
-      padding: calc(3.5rem + env(safe-area-inset-top)) var(--page-pad) max(2rem, env(safe-area-inset-bottom));
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem var(--page-pad) max(2rem, env(safe-area-inset-bottom));
       max-width: 52rem;
+      width: 100%;
+      margin: 0 auto;
     }
     .cover-kicker {
       font-size: 0.65rem;
@@ -347,6 +385,15 @@
       color: var(--gold);
       top: 0.55rem;
     }
+    .day-card li a {
+      color: #e2e8f0;
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(250, 204, 21, 0.45);
+    }
+    .day-card li a:hover {
+      color: var(--gold-hi);
+      border-bottom-color: var(--foam);
+    }
     .day-card--staff h3 { color: var(--gold); }
     .schedule-foot {
       max-width: 44rem;
@@ -406,19 +453,13 @@
         0 12px 40px rgba(0, 0, 0, 0.45),
         inset 0 0 60px rgba(250, 204, 21, 0.06);
     }
-    .map-stage img {
+    .map-stage img,
+    .map-stage object {
       display: block;
       width: 100%;
       height: auto;
-      min-height: min(58vh, 520px);
-      object-fit: cover;
-    }
-    .map-overlay {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
+      aspect-ratio: 1000 / 640;
+      vertical-align: top;
     }
     .map-legend {
       max-width: 56rem;
@@ -489,17 +530,30 @@
 
   <!-- PAGE 1 · COVER -->
   <section id="page-1" class="brochure-page page-cover" aria-labelledby="cover-title">
+    <div class="cover-portrait-wrap">
+      <img
+        class="cover-portrait"
+        src="/interfaces/assets/capitan-comandante-champion-2026.png"
+        width="1024"
+        height="1024"
+        alt="PL Taino — VALET PRU · Capitan Comandante · ETCON 2026 QUESTFEST winner on the cover."
+        fetchpriority="high"
+        decoding="async"
+      />
+      <span class="cover-portrait-badge">Player 1 · Capitan Comandante</span>
+    </div>
     <div class="cover-inner">
       <p class="cover-kicker">Admission ticket · amusement park brochure · ETCON 2026</p>
       <h1 id="cover-title">Winner · QUESTFEST 2026</h1>
       <p class="cover-sub">Holographic Goldilocks AIOS Frontier Game</p>
       <p class="cover-lead">
-        <strong>Player 1: PL Taino (VALET PRU)</strong> decoded and reset the intergalactic hydrogen data bus at
-        <strong>1.420 GHz</strong> — King Bee stratification, EGS <strong>φ 1.618</strong>, thermodynamic quiet baseline
-        <strong>May 31, 2026 · 22:55 PDT</strong>. Victory captured in public repositories with timestamps and publicly available telemetry.
+        <strong>Player 1: PL Taino (VALET PRU)</strong> — Capitan Comandante on the cover — decoded and reset the intergalactic hydrogen data bus at
+        <strong>1.420 GHz</strong>. King Bee stratification, EGS <strong>φ 1.618</strong>, thermodynamic quiet baseline
+        <strong>May 31, 2026 · 22:55 PDT</strong>. Victory in public repositories with timestamps and telemetry.
       </p>
       <p class="cover-lead">
-        Fixed <strong>Lattice 13</strong> nested sphere theater — the cover portrait holds the win inside the holographic shell you can walk in the stack.
+        Open the five-page brochure: win story, Capitan welcome, weekly harbor rhythm, and the Reno park map —
+        Downtown to the <strong>Truckee River</strong>, Midtown south to <strong>Mary St</strong> at the bottom of the map.
       </p>
       <p class="cover-meta">
         SS VIBELANDIA QUESTFEST 24×365 · Syntheverse · Vibelandia ·
@@ -599,51 +653,51 @@
     <header class="schedule-head">
       <p class="page-label">Page 4 · Harbor rhythm</p>
       <h2 id="schedule-title">Weekly Schedule · Puerto Reno</h2>
-      <p>QUESTFEST week flow — pregame through departures · staff chill early week</p>
+      <p>QUESTFEST week flow — tap any item for details · pregame through departures · staff chill early week</p>
     </header>
     <div class="schedule-grid">
       <article class="day-card">
         <h3>Thursday · Pregame</h3>
         <ul>
-          <li>Arrivals · pregame landing</li>
-          <li>Pimp Your Bike Workshop</li>
-          <li>Optional day excursions</li>
-          <li>Pregame balling at Man Cave</li>
+          <li><a href="/questfest-schedule/thursday-arrivals-pregame-landing">Arrivals · pregame landing</a></li>
+          <li><a href="/questfest-schedule/thursday-pimp-your-bike-workshop">Pimp Your Bike Workshop</a></li>
+          <li><a href="/questfest-schedule/thursday-optional-excursions-vibe-coding">Optional daily excursions &amp; holographic vibe coding workshops</a></li>
+          <li><a href="/questfest-schedule/thursday-pregame-balling-man-cave">Pregame balling at Man Cave</a></li>
         </ul>
       </article>
       <article class="day-card">
         <h3>Friday</h3>
         <ul>
-          <li>Optional day excursions</li>
-          <li>Hot springs soak</li>
-          <li>River walk sunset mixer</li>
-          <li>VIP table at Man Cave</li>
-          <li>Members perreo country · late night</li>
-          <li>After party · invitation only</li>
+          <li><a href="/questfest-schedule/friday-optional-excursions-vibe-coding">Optional daily excursions &amp; holographic vibe coding workshops</a></li>
+          <li><a href="/questfest-schedule/friday-hot-springs-soak">Hot springs soak</a></li>
+          <li><a href="/questfest-schedule/friday-river-walk-sunset-mixer">River walk sunset mixer</a></li>
+          <li><a href="/questfest-schedule/friday-vip-table-man-cave">VIP table at Man Cave</a></li>
+          <li><a href="/questfest-schedule/friday-members-perreo-late-night">Members perreo country · late night</a></li>
+          <li><a href="/questfest-schedule/friday-after-party-invitation">After party · invitation only</a></li>
         </ul>
       </article>
       <article class="day-card">
         <h3>Saturday</h3>
         <ul>
-          <li>Optional day excursions</li>
-          <li>Hot springs soak</li>
-          <li>River walk sunset mixer</li>
-          <li>VIP table at Man Cave</li>
-          <li>Members perreo country · late night</li>
-          <li>After party · invitation only</li>
+          <li><a href="/questfest-schedule/saturday-optional-excursions-vibe-coding">Optional daily excursions &amp; holographic vibe coding workshops</a></li>
+          <li><a href="/questfest-schedule/saturday-hot-springs-soak">Hot springs soak</a></li>
+          <li><a href="/questfest-schedule/saturday-river-walk-sunset-mixer">River walk sunset mixer</a></li>
+          <li><a href="/questfest-schedule/saturday-vip-table-man-cave">VIP table at Man Cave</a></li>
+          <li><a href="/questfest-schedule/saturday-members-perreo-late-night">Members perreo country · late night</a></li>
+          <li><a href="/questfest-schedule/saturday-after-party-invitation">After party · invitation only</a></li>
         </ul>
       </article>
       <article class="day-card">
         <h3>Sunday · Departures</h3>
         <ul>
-          <li>Departures</li>
-          <li>Early evening decompress at Man Cave</li>
+          <li><a href="/questfest-schedule/sunday-departures">Departures</a></li>
+          <li><a href="/questfest-schedule/sunday-evening-decompress-man-cave">Early evening decompress at Man Cave</a></li>
         </ul>
       </article>
       <article class="day-card day-card--staff day-card--span">
         <h3>Monday – Wednesday · Staff chill</h3>
         <ul>
-          <li>Staff chill nights · early evenings at Man Cave</li>
+          <li><a href="/questfest-schedule/mon-wed-staff-chill-man-cave">Staff chill nights · early evenings at Man Cave</a></li>
         </ul>
       </article>
     </div>
@@ -666,22 +720,22 @@
       <p>Cartoon amusement-park map with accurate Downtown &amp; Midtown boundaries — ride the week schedule across real Reno streets.</p>
     </header>
     <div class="map-stage">
-      <img
-        src="/interfaces/assets/questfest-2026-reno-park-map.png"
-        width="1536"
-        height="1024"
-        alt="Amusement park style map of Downtown Reno and Midtown with labeled street boundaries."
-        loading="lazy"
-        decoding="async"
-      />
-      <img
-        class="map-overlay"
-        src="/interfaces/assets/questfest-2026-reno-park-map-overlay.svg"
-        alt=""
+      <object
+        type="image/svg+xml"
+        data="/interfaces/assets/questfest-2026-reno-park-map.svg"
         width="1000"
         height="640"
-        aria-hidden="true"
-      />
+        aria-label="Amusement park map: Downtown Reno north of Truckee River; Midtown south to Mary Street at the bottom of the map."
+      >
+        <img
+          src="/interfaces/assets/questfest-2026-reno-park-map.svg"
+          width="1000"
+          height="640"
+          alt="Amusement park map: Downtown Reno north of Truckee River; Midtown south to Mary Street at the bottom of the map."
+          loading="lazy"
+          decoding="async"
+        />
+      </object>
     </div>
     <div class="map-legend">
       <article class="map-zone map-zone--a">
@@ -697,12 +751,12 @@
         <p>
           <strong>North</strong> <code>Truckee River</code> · <strong>South</strong> <code>Mary St</code> ·
           <strong>West</strong> <code>Plumas St</code> · <strong>East</strong> <code>Holcomb Ave</code>.
-          Pimp Your Bike Workshop, optional day excursions, hot springs soak runs, members perreo country late night.
+          Pimp Your Bike Workshop, optional daily excursions and holographic vibe coding workshops, hot springs soak runs, members perreo country late night.
         </p>
       </article>
     </div>
     <p class="map-foot">
-      Ground-truth streets · overlay aligned to published Reno grid ·
+      Ground-truth streets · vector map regenerated June 2026 · Mary St at bottom of Midtown only ·
       <a href="https://www.openstreetmap.org/#map=15/39.5262/-119.8128" target="_blank" rel="noopener">OpenStreetMap · Downtown Reno</a>
     </p>
     <footer class="schedule-foot">

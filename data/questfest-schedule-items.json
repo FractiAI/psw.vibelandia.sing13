@@ -1,0 +1,344 @@
+{
+  "schema": "questfest-schedule/v1",
+  "guideUrl": "/questfest-guide#page-4",
+  "items": [
+    {
+      "slug": "thursday-arrivals-pregame-landing",
+      "day": "Thursday",
+      "dayKey": "thursday",
+      "label": "Arrivals · pregame landing",
+      "title": "Arrivals · Pregame Landing",
+      "time": "Afternoon – evening",
+      "zone": "Downtown Reno · Zone A (7th St north to Truckee River)",
+      "summary": "Land in Puerto Reno, check in, and settle into QUESTFEST week before the main harbor rhythm kicks in.",
+      "details": [
+        "Meet at the Reno Arch corridor and pregame staging near Virginia St.",
+        "Pick up your pass rhythm on Capitan's Bridge — listen before you roam.",
+        "Light orientation to Downtown Zone A boundaries on the park map (page 5 of the Frontier Guide)."
+      ],
+      "related": [
+        { "label": "Frontier Guide · schedule", "href": "/questfest-guide#page-4" },
+        { "label": "Park map", "href": "/questfest-guide#page-5" },
+        { "label": "Capitan's Bridge", "href": "/interfaces/questfest-bridge/#/bridge" }
+      ]
+    },
+    {
+      "slug": "thursday-pimp-your-bike-workshop",
+      "day": "Thursday",
+      "dayKey": "thursday",
+      "label": "Pimp Your Bike Workshop",
+      "title": "Pimp Your Bike Workshop",
+      "time": "Late afternoon",
+      "zone": "Midtown Reno · Zone B (Truckee River north to Mary St)",
+      "summary": "Customize your ride for the week — paint, lights, sound, and holographic vibe coding hooks for the street fleet.",
+      "details": [
+        "Workshop runs in Midtown between Plumas and Holcomb — see park map.",
+        "Bring your bike or coordinate a loaner through the harbor crew.",
+        "Optional tie-in to holographic vibe coding workshops the same day."
+      ],
+      "related": [
+        { "label": "Thursday · vibe coding", "href": "/questfest-schedule/thursday-optional-excursions-vibe-coding" },
+        { "label": "Midtown on map", "href": "/questfest-guide#page-5" }
+      ]
+    },
+    {
+      "slug": "thursday-optional-excursions-vibe-coding",
+      "day": "Thursday",
+      "dayKey": "thursday",
+      "label": "Optional daily excursions & holographic vibe coding workshops",
+      "title": "Optional Daily Excursions & Holographic Vibe Coding Workshops",
+      "time": "Daytime blocks · flexible",
+      "zone": "Downtown & Midtown · optional runs beyond the core grid",
+      "summary": "Self-directed day trips plus hands-on holographic vibe coding — build small interactive layers on the QUESTFEST stack.",
+      "details": [
+        "Excursions: Sierra day loops, river edge walks, or custom crew outings — sign up at the bulletin board.",
+        "Vibe coding: plain-speak intro to the holographic Goldilocks layer — not a graphics card; edge pipes and catalog fidelity.",
+        "Start with Look Under the Hood if you want the paper catalog synthesized in human language."
+      ],
+      "related": [
+        { "label": "Look Under the Hood", "href": "/interfaces/look-under-the-hood.html" },
+        { "label": "Paper catalog", "href": "/interfaces/whitepaper-catalog.html" },
+        { "label": "Goldilocks OS deck", "href": "/interfaces/goldilocks-os.html" }
+      ]
+    },
+    {
+      "slug": "thursday-pregame-balling-man-cave",
+      "day": "Thursday",
+      "dayKey": "thursday",
+      "label": "Pregame balling at Man Cave",
+      "title": "Pregame Balling at Man Cave",
+      "time": "Evening",
+      "zone": "Man Cave layer · VIP corridor",
+      "summary": "Pregame energy in the Man Cave — music, tables, and the first full-throated night of the week.",
+      "details": [
+        "Dress code: come correct for Puerto Reno — donde se vibea.",
+        "Members pass honored on the Bridge; tables by invitation where noted.",
+        "Connects to Friday/Saturday VIP table rhythm — this is the warm-up."
+      ],
+      "related": [
+        { "label": "Man Cave nest", "href": "/interfaces/nesting/nest-man-cave-restroom.html" },
+        { "label": "Listen", "href": "/interfaces/questfest-bridge/#/bridge" }
+      ]
+    },
+    {
+      "slug": "friday-optional-excursions-vibe-coding",
+      "day": "Friday",
+      "dayKey": "friday",
+      "label": "Optional daily excursions & holographic vibe coding workshops",
+      "title": "Optional Daily Excursions & Holographic Vibe Coding Workshops",
+      "time": "Daytime · optional",
+      "zone": "Regional · beyond core park map",
+      "summary": "Repeatable optional track — excursions and vibe coding workshops available again for crews who missed Thursday or want a second pass.",
+      "details": [
+        "Same excursion desk as Thursday; new routes may open based on weather and crew size.",
+        "Vibe coding deepens: catalog surfaces, bulletin board posts, and edge onboarding patterns.",
+        "Pair with hot springs or river walk later for a full Friday arc."
+      ],
+      "related": [
+        { "label": "Thursday session", "href": "/questfest-schedule/thursday-optional-excursions-vibe-coding" },
+        { "label": "Under the Hood primer", "href": "/interfaces/look-under-the-hood.html#catalog-primer" }
+      ]
+    },
+    {
+      "slug": "friday-hot-springs-soak",
+      "day": "Friday",
+      "dayKey": "friday",
+      "label": "Hot springs soak",
+      "title": "Hot Springs Soak",
+      "time": "Late morning – afternoon",
+      "zone": "Regional excursion · Sierra foothills",
+      "summary": "Recovery soak between harbor nights — geothermal reset before sunset mixer and Man Cave.",
+      "details": [
+        "Transport coordinated from bulletin board signup.",
+        "Pack water, towel, and Fair Exchange mindset — leave no trace.",
+        "Return in time for river walk sunset mixer."
+      ],
+      "related": [
+        { "label": "Friday river walk", "href": "/questfest-schedule/friday-river-walk-sunset-mixer" }
+      ]
+    },
+    {
+      "slug": "friday-river-walk-sunset-mixer",
+      "day": "Friday",
+      "dayKey": "friday",
+      "label": "River walk sunset mixer",
+      "title": "River Walk Sunset Mixer",
+      "time": "Sunset",
+      "zone": "Truckee · Rebel River edge · Downtown south / Midtown north",
+      "summary": "Walk the river corridor at golden hour — the geographic seam between Downtown and Midtown on the park map.",
+      "details": [
+        "Meet at the Truckee River boundary (Zone A south / Zone B north on the map).",
+        "Sunset mixer: light bites, introductions, solar-coupling story color from Look at the Sun deck.",
+        "Leads into VIP table at Man Cave."
+      ],
+      "related": [
+        { "label": "Look at the Sun", "href": "/interfaces/look-at-the-sun.html" },
+        { "label": "Park map", "href": "/questfest-guide#page-5" }
+      ]
+    },
+    {
+      "slug": "friday-vip-table-man-cave",
+      "day": "Friday",
+      "dayKey": "friday",
+      "label": "VIP table at Man Cave",
+      "title": "VIP Table at Man Cave",
+      "time": "Evening",
+      "zone": "Man Cave · VIP",
+      "summary": "Reserved table night — full harbor service, curated menus, and Bridge-forward listening.",
+      "details": [
+        "Bison, elk, wild salmon menus per Bachstage pass tier where applicable.",
+        "Table maps to Downtown corridor energy on the amusement-park map.",
+        "Members perreo country follows later — pace yourself."
+      ],
+      "related": [
+        { "label": "Man Cave", "href": "/interfaces/nesting/nest-man-cave-restroom.html" }
+      ]
+    },
+    {
+      "slug": "friday-members-perreo-late-night",
+      "day": "Friday",
+      "dayKey": "friday",
+      "label": "Members perreo country · late night",
+      "title": "Members Perreo Country · Late Night",
+      "time": "Late night",
+      "zone": "Midtown · Man Cave overflow",
+      "summary": "Members-only perreo country set — late night movement culture on the Midtown grid.",
+      "details": [
+        "Members pass required; honor rail on the Bridge.",
+        "Midtown zone (Plumas–Holcomb) is the story geography for this night.",
+        "After party is invitation-only — separate listing."
+      ],
+      "related": [
+        { "label": "Friday after party", "href": "/questfest-schedule/friday-after-party-invitation" }
+      ]
+    },
+    {
+      "slug": "friday-after-party-invitation",
+      "day": "Friday",
+      "dayKey": "friday",
+      "label": "After party · invitation only",
+      "title": "After Party · Invitation Only",
+      "time": "After hours",
+      "zone": "Private · invitation",
+      "summary": "Closed-circle after party — invitation from table hosts or Capitan crew only.",
+      "details": [
+        "Not on the public park map — respect the seal.",
+        "Fair Exchange and NSPFRNP catalog fidelity apply inside the room.",
+        "Saturday repeats the pattern for crews staying through the weekend."
+      ],
+      "related": []
+    },
+    {
+      "slug": "saturday-optional-excursions-vibe-coding",
+      "day": "Saturday",
+      "dayKey": "saturday",
+      "label": "Optional daily excursions & holographic vibe coding workshops",
+      "title": "Optional Daily Excursions & Holographic Vibe Coding Workshops",
+      "time": "Daytime",
+      "zone": "Optional · regional",
+      "summary": "Saturday optional track — last open day for excursions and vibe coding before Sunday departures.",
+      "details": [
+        "Final signup window for Sierra excursions.",
+        "Vibe coding capstone: ship a small bulletin-board-ready artifact.",
+        "Good day to read one paper from the synthesized catalog primer."
+      ],
+      "related": [
+        { "label": "Paper catalog", "href": "/interfaces/whitepaper-catalog.html" }
+      ]
+    },
+    {
+      "slug": "saturday-hot-springs-soak",
+      "day": "Saturday",
+      "dayKey": "saturday",
+      "label": "Hot springs soak",
+      "title": "Hot Springs Soak",
+      "time": "Late morning – afternoon",
+      "zone": "Regional",
+      "summary": "Second-chance soak for crews who skipped Friday or want a quieter Saturday reset.",
+      "details": [
+        "Same logistics as Friday — bulletin board signup.",
+        "Return for river walk and VIP rhythm."
+      ],
+      "related": [
+        { "label": "Saturday river walk", "href": "/questfest-schedule/saturday-river-walk-sunset-mixer" }
+      ]
+    },
+    {
+      "slug": "saturday-river-walk-sunset-mixer",
+      "day": "Saturday",
+      "dayKey": "saturday",
+      "label": "River walk sunset mixer",
+      "title": "River Walk Sunset Mixer",
+      "time": "Sunset",
+      "zone": "Truckee River corridor",
+      "summary": "Saturday sunset repeat — peak weekend energy on the river seam.",
+      "details": [
+        "Highest attendance night for the mixer.",
+        "Photo-friendly golden hour at the Downtown/Midtown boundary.",
+        "Feeds Saturday VIP and late night."
+      ],
+      "related": [
+        { "label": "Park map", "href": "/questfest-guide#page-5" }
+      ]
+    },
+    {
+      "slug": "saturday-vip-table-man-cave",
+      "day": "Saturday",
+      "dayKey": "saturday",
+      "label": "VIP table at Man Cave",
+      "title": "VIP Table at Man Cave",
+      "time": "Evening",
+      "zone": "Man Cave VIP",
+      "summary": "Peak VIP table night — Saturday is the flagship harbor dinner.",
+      "details": [
+        "Reserve through harbor crew; Bachstage pass holders prioritized.",
+        "Full curated menu and specialized drinks per QUESTFEST tier."
+      ],
+      "related": []
+    },
+    {
+      "slug": "saturday-members-perreo-late-night",
+      "day": "Saturday",
+      "dayKey": "saturday",
+      "label": "Members perreo country · late night",
+      "title": "Members Perreo Country · Late Night",
+      "time": "Late night",
+      "zone": "Midtown",
+      "summary": "Saturday peak dance night — perreo country until the lights come up.",
+      "details": [
+        "Members pass · Bridge honor rail.",
+        "Midtown Mary St southern edge is your geographic footer on the map."
+      ],
+      "related": []
+    },
+    {
+      "slug": "saturday-after-party-invitation",
+      "day": "Saturday",
+      "dayKey": "saturday",
+      "label": "After party · invitation only",
+      "title": "After Party · Invitation Only",
+      "time": "After hours",
+      "zone": "Private",
+      "summary": "Weekend capstone after party — invitations from Saturday table hosts.",
+      "details": [
+        "Invitation only — no walk-ins.",
+        "Sunday departures follow for travelers leaving early."
+      ],
+      "related": []
+    },
+    {
+      "slug": "sunday-departures",
+      "day": "Sunday",
+      "dayKey": "sunday",
+      "label": "Departures",
+      "title": "Departures",
+      "time": "Morning – afternoon",
+      "zone": "Puerto Reno · all zones",
+      "summary": "Checkout and departures — gratitude lap around the park map before wheels up.",
+      "details": [
+        "Final Bridge listen optional on the road.",
+        "Bulletin board stays live 24×365 — the harbor does not close.",
+        "Frontier Guide and papers remain on the site after you leave."
+      ],
+      "related": [
+        { "label": "QUESTFEST deck", "href": "/interfaces/vibelandia-questfest.html" }
+      ]
+    },
+    {
+      "slug": "sunday-evening-decompress-man-cave",
+      "day": "Sunday",
+      "dayKey": "sunday",
+      "label": "Early evening decompress at Man Cave",
+      "title": "Early Evening Decompress at Man Cave",
+      "time": "Early evening",
+      "zone": "Man Cave",
+      "summary": "Soft landing for locals and late departures — decompress, no full program.",
+      "details": [
+        "Chill tables, early evening only.",
+        "Staff transition to Monday–Wednesday rhythm."
+      ],
+      "related": [
+        { "label": "Staff chill nights", "href": "/questfest-schedule/mon-wed-staff-chill-man-cave" }
+      ]
+    },
+    {
+      "slug": "mon-wed-staff-chill-man-cave",
+      "day": "Monday – Wednesday",
+      "dayKey": "staff",
+      "label": "Staff chill nights · early evenings at Man Cave",
+      "title": "Staff Chill Nights · Early Evenings at Man Cave",
+      "time": "Early evenings",
+      "zone": "Man Cave · staff",
+      "summary": "Early-week staff recovery — harbor crew resets while the public park map stays posted online.",
+      "details": [
+        "Not full QUESTFEST week programming — internal rhythm.",
+        "Site, Bridge, and bulletin board remain operational 24×365.",
+        "Good nights to catch up on the whitepaper catalog synthesis."
+      ],
+      "related": [
+        { "label": "Look Under the Hood · catalog primer", "href": "/interfaces/look-under-the-hood.html#catalog-primer" },
+        { "label": "Full schedule", "href": "/questfest-guide#page-4" }
+      ]
+    }
+  ]
+}

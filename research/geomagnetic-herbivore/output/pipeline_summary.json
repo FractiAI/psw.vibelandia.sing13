@@ -1,6 +1,11 @@
 {
   "docId": "HHA-GEOMAG-HERBIVORE-2026",
-  "classification": "extraordinary",
+  "classification": "none",
+  "sensitivityActivation": {
+    "status": "elevated",
+    "activated": false,
+    "headline": "Elevated geomagnetic activity in last 30 days \u2014 monitor for activation."
+  },
   "hypothesisTiers": {
     "H1": "weak",
     "H2": "inconclusive",
@@ -17,7 +22,16 @@
     "baselineStart": "2019-01-01",
     "collarFirst": "2019-01-01",
     "collarLast": "2020-05-15",
+    "calendarEnd": "2026-06-03",
+    "collarOverlapsCalendarRecent": false,
     "note": "aligned_to_public_collar_observation_window"
+  },
+  "calendarWindow": {
+    "calendarEnd": "2026-06-03",
+    "calendarStart90": "2026-03-06",
+    "calendarStart30": "2026-05-05",
+    "calendarStart14": "2026-05-21",
+    "baselineStart": "2021-06-04"
   },
   "outputs": {
     "inventory": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\research\\geomagnetic-herbivore\\data\\inventory.json",

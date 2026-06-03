@@ -11,6 +11,7 @@ interface TrackPlaylistsModalProps {
 
 export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: TrackPlaylistsModalProps) {
   const playlists = useCatalogStore((s) => s.playlists);
+  const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const setTrackPlaylistMembership = useCatalogStore((s) => s.setTrackPlaylistMembership);
 
   const userPlaylists = useMemo(
@@ -45,6 +46,17 @@ export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: Trac
     onClose();
   };
 
+  const handleNewPlaylist = () => {
+    const id = createPlaylist('New playlist');
+    setSelected((prev) => {
+      const next = new Set(prev);
+      next.add(id);
+      return next;
+    });
+  };
+
+  const canSave = selected.size > 0;
+
   return (
     <div className="modal-root" role="dialog" aria-modal="true" aria-labelledby="tpl-title">
       <div className="modal-backdrop" onClick={onClose} />
@@ -56,8 +68,15 @@ export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: Trac
           Check every playlist that should include this song. Changes apply when you tap Save. The Master catalog
           always keeps every upload.
         </p>
+        <div className="sp-track-pl-toolbar">
+          <button type="button" className="sp-library-new" onClick={handleNewPlaylist}>
+            + New playlist
+          </button>
+        </div>
         {userPlaylists.length === 0 ? (
-          <p className="sp-empty">Create a playlist first — Master catalog songs can be added to your lists from Edit.</p>
+          <p className="sp-empty">
+            No playlists yet — tap <strong>+ New playlist</strong>, then check the list and Save.
+          </p>
         ) : (
           <ul className="sp-track-pl-list">
             {userPlaylists.map((pl) => (
@@ -66,7 +85,15 @@ export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: Trac
                   <input type="checkbox" checked={selected.has(pl.id)} onChange={() => toggle(pl.id)} />
                   <span className="sp-track-pl-meta">
                     <strong>{pl.name}</strong>
-                    <span>{pl.trackIds.includes(trackId) ? 'Currently in list' : 'Not in list'}</span>
+                    <span>
+                      {selected.has(pl.id)
+                        ? pl.trackIds.includes(trackId)
+                          ? 'Currently in list'
+                          : 'Will add on Save'
+                        : pl.trackIds.includes(trackId)
+                          ? 'Will remove on Save'
+                          : 'Not in list'}
+                    </span>
                   </span>
                 </label>
               </li>
@@ -78,7 +105,7 @@ export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: Trac
             type="button"
             className="voxel-btn voxel-btn--orange"
             onClick={save}
-            disabled={userPlaylists.length === 0}
+            disabled={!canSave}
           >
             Save playlists
           </button>

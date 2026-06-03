@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img" aria-labelledby="park-map-title park-map-desc">
+  <title id="park-map-title">QUESTFEST 2026 Puerto Reno Park Map</title>
+  <desc id="park-map-desc">Downtown Reno north of the Truckee River; Midtown south to Mary Street at the bottom of the map.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="55%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="grass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0c4a6e"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0c4a6e"/>
+    </linearGradient>
+    <pattern id="stripes-a" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="5" height="10" fill="rgba(254,240,138,0.07)"/>
+    </pattern>
+    <pattern id="stripes-b" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="5" height="10" fill="rgba(244,114,182,0.08)"/>
+    </pattern>
+    <filter id="glow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="640" fill="url(#sky)"/>
+  <rect x="0" y="0" width="1000" height="52" fill="#422006" opacity="0.35"/>
+  <text x="500" y="34" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="26" fill="#fde047" letter-spacing="3">PUERTO RENO AMUSEMENT PARK</text>
+
+  <!-- Zone A · Downtown -->
+  <rect x="40" y="48" width="920" height="252" rx="24" fill="url(#grass)" opacity="0.55"/>
+  <rect x="118" y="52" width="564" height="248" rx="18" fill="url(#stripes-a)" stroke="#fef08a" stroke-width="5" stroke-dasharray="14 8" filter="url(#glow)"/>
+  <text x="400" y="78" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="22" fill="#fef08a" letter-spacing="2">DOWNTOWN RENO - PARK ZONE A</text>
+  <text x="132" y="108" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#5eead4">7th St - NORTH</text>
+  <text x="132" y="198" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fda4af" transform="rotate(-90 132 198)">Arlington - WEST</text>
+  <text x="672" y="198" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fda4af" transform="rotate(90 672 198)">Lake St - EAST</text>
+  <text x="400" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#e2e8f0">Virginia St - Reno Arch ride</text>
+
+  <!-- Decorative downtown rides -->
+  <circle cx="280" cy="165" r="22" fill="none" stroke="#f472b6" stroke-width="4"/>
+  <circle cx="280" cy="165" r="6" fill="#fde047"/>
+  <line x1="280" y1="143" x2="280" y2="187" stroke="#f472b6" stroke-width="3"/>
+  <line x1="258" y1="165" x2="302" y2="165" stroke="#f472b6" stroke-width="3"/>
+  <rect x="520" y="130" width="48" height="70" rx="6" fill="#7c3aed" stroke="#fde047" stroke-width="3"/>
+  <polygon points="544,118 520,130 568,130" fill="#fde047"/>
+
+  <!-- Truckee River (shared boundary) -->
+  <rect x="40" y="286" width="920" height="40" fill="url(#river)" rx="8"/>
+  <path d="M 60 306 Q 200 292 340 308 T 500 302 T 660 310 T 940 298" fill="none" stroke="#7dd3fc" stroke-width="3" opacity="0.85"/>
+  <text x="500" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#e0f2fe">Truckee River (Rebel River) - Downtown SOUTH / Midtown NORTH</text>
+
+  <!-- Zone B · Midtown -->
+  <rect x="40" y="326" width="920" height="250" rx="24" fill="url(#grass)" opacity="0.45"/>
+  <rect x="168" y="330" width="464" height="200" rx="18" fill="url(#stripes-b)" stroke="#f472b6" stroke-width="5" stroke-dasharray="14 8" filter="url(#glow)"/>
+  <text x="400" y="356" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="22" fill="#f9a8d4" letter-spacing="2">MIDTOWN - PARK ZONE B</text>
+  <text x="178" y="420" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fda4af" transform="rotate(-90 178 420)">Plumas - WEST</text>
+  <text x="622" y="420" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fda4af" transform="rotate(90 622 420)">Holcomb - EAST</text>
+  <text x="400" y="448" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#e2e8f0">Pimp Your Bike Workshop - perreo country late night</text>
+
+  <!-- Bike workshop icon -->
+  <circle cx="340" cy="470" r="18" fill="none" stroke="#5eead4" stroke-width="3"/>
+  <circle cx="380" cy="470" r="18" fill="none" stroke="#5eead4" stroke-width="3"/>
+  <line x1="358" y1="470" x2="362" y2="455" stroke="#5eead4" stroke-width="3"/>
+
+  <!-- Mary St - southern edge of Midtown at bottom of map (NOT at the river) -->
+  <path d="M 48 548 H 952" stroke="#5eead4" stroke-width="5" stroke-dasharray="12 7"/>
+  <rect x="220" y="556" width="560" height="72" fill="#0c1224" fill-opacity="0.92" rx="10"/>
+  <text x="500" y="592" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="24" fill="#5eead4" letter-spacing="1">MARY ST - SOUTH (Midtown southern boundary)</text>
+  <text x="500" y="614" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Bottom of park map - south of Midtown, not at Truckee River</text>
+
+  <!-- YOU ARE HERE -->
+  <circle cx="400" cy="195" r="30" fill="#d4af37" stroke="#0f172a" stroke-width="3"/>
+  <text x="400" y="200" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="11" fill="#0f172a">YOU</text>
+  <text x="400" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#0f172a">HERE</text>
+  <text x="400" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fef3c7">Man Cave - VIP table</text>
+
+  <!-- Ticket border -->
+  <rect x="8" y="8" width="984" height="624" rx="20" fill="none" stroke="#d4af37" stroke-width="4" stroke-dasharray="16 10"/>
+</svg>

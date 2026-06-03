@@ -1,0 +1,50 @@
+{
+  "schema": "geomagnetic-sensitivity-activation/v1",
+  "assessedAt": "2026-06-03T00:09:12.163575+00:00",
+  "activated": false,
+  "status": "elevated",
+  "confidence": 0.42,
+  "headline": "Elevated geomagnetic activity in last 30 days \u2014 monitor for activation.",
+  "evidence": [
+    "2 storm day(s) in last 30d."
+  ],
+  "calendarWindow": {
+    "calendarEnd": "2026-06-03",
+    "calendarStart90": "2026-03-06",
+    "calendarStart30": "2026-05-05",
+    "calendarStart14": "2026-05-21",
+    "baselineStart": "2021-06-04"
+  },
+  "recentGeomagnetic": {
+    "driverActive14d": false,
+    "driverActive30d": true,
+    "stormDays14d": 0,
+    "stormDays30d": 2,
+    "maxKp14d": 4.0,
+    "maxKp30d": 6.0,
+    "recentStormDates14d": []
+  },
+  "recentMovementCoupling": {
+    "collarOverlapsCalendarRecent": false,
+    "collarLast": "2020-05-15",
+    "window14d": {
+      "testable": false,
+      "reason": "insufficient herd days",
+      "nDays": 0
+    },
+    "window30d": {
+      "testable": false,
+      "reason": "insufficient herd days",
+      "nDays": 0
+    }
+  },
+  "historicalCoupling": {
+    "testable": true,
+    "couplingDetected": false,
+    "reason": "no Kp\u22655 days in window",
+    "nStormDays": 0,
+    "nQuietDays": 0
+  },
+  "recentAnomalyCount14d": 0,
+  "anomalyOnStormDay": false
+}

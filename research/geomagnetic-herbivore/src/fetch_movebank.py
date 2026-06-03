@@ -161,6 +161,7 @@ def select_analysis_window(
     if baseline_start < traj_start:
         baseline_start = traj_start
 
+    today = datetime.now(timezone.utc).date()
     return {
         "analysisEnd": end_dt.isoformat(),
         "analysisStart90": start_90.isoformat(),
@@ -169,6 +170,8 @@ def select_analysis_window(
         "baselineStart": baseline_start.isoformat(),
         "collarFirst": traj_start.isoformat(),
         "collarLast": end_dt.isoformat(),
+        "calendarEnd": today.isoformat(),
+        "collarOverlapsCalendarRecent": end_dt >= (today - timedelta(days=13)),
         "note": "aligned_to_public_collar_observation_window",
     }
 

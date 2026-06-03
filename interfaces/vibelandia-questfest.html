@@ -314,6 +314,27 @@
     .qf-crew-card-body { min-width: 0; flex: 1; }
     .qf-crew-card-body p { margin-bottom: 0; max-width: none; }
     .qf-crew strong { color: #e8edf5; }
+    .qf-crew-portrait-link {
+      flex-shrink: 0;
+      display: block;
+      border-radius: 14px;
+      line-height: 0;
+    }
+    .qf-crew-portrait-link:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+    .qf-crew-portrait-link:hover .qf-crew-portrait {
+      border-color: rgba(212, 175, 55, 0.78);
+      box-shadow: 0 0 26px rgba(212, 175, 55, 0.22);
+    }
+    a.qf-crew-wiki {
+      color: #e8edf5;
+      text-decoration: underline;
+      text-decoration-color: rgba(212, 175, 55, 0.42);
+      text-underline-offset: 0.14em;
+    }
+    a.qf-crew-wiki:hover { color: var(--gold); }
 
     @media (max-width: 520px) {
       .qf-crew-portrait { width: 64px; height: 64px; border-radius: 12px; }
@@ -605,7 +626,7 @@
       <a class="main" href="/interfaces/questfest-2026-frontier-guide.html">
         <div class="qf-feature-art">
           <img
-            src="/interfaces/assets/questfest-2026-reno-park-map.png"
+            src="/interfaces/assets/questfest-2026-reno-park-map.svg"
             width="1536"
             height="1024"
             loading="eager"
@@ -802,57 +823,75 @@
       <h2 id="qf-crew-h2" data-i18n="qf.crewH2">Spirit crew · holographic VALETPRU</h2>
       <p class="qf-crew-intro" data-i18n-html="qf.crewIntroHtml">The <strong>Golden Bachdoor Hit Factory</strong> carries a <strong>spirit crew</strong> — not impersonation, but <strong>alignment lenses</strong>: how attention, pain, lonesome truth, barrio swing, and lyric architecture stay honest inside the Wrong Side of Town frequency.</p>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/howard-hughes.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/Howard_Hughes" target="_blank" rel="noopener noreferrer" aria-label="Howard Hughes — Wikipedia">
+          <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/howard-hughes.png" alt="Howard Hughes" width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewHowardHtml"><strong>Howard Hughes</strong> — <em>Silent sponsor &amp; altitude.</em> Aviation nerve, prototype courage, and the long bet on beauty in machines; carries <strong>return-of-golden-age</strong> gravity without needing the room.</p>
+          <p data-i18n-html="qf.crewHowardHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Howard_Hughes" target="_blank" rel="noopener noreferrer">Howard Hughes</a></strong> — <em>Silent sponsor &amp; altitude.</em> Aviation nerve, prototype courage, and the long bet on beauty in machines; carries <strong>return-of-golden-age</strong> gravity without needing the room.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/js-bach.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach" target="_blank" rel="noopener noreferrer" aria-label="Johann Sebastian Bach — Wikipedia">
+          <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/js-bach.png" alt="J.S. Bach" width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewHeroJoHtml"><strong>Hero Jo (J.S. Bach)</strong> — <em>Architect &amp; φ rail.</em> Order, fugue honesty, Fair Exchange in the counterpoint; the <strong>Bachdoor</strong> is named after this spine — conductor heat without ego noise.</p>
+          <p data-i18n-html="qf.crewHeroJoHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach" target="_blank" rel="noopener noreferrer">Hero Jo (J.S. Bach)</a></strong> — <em>Architect &amp; φ rail.</em> Order, fugue honesty, Fair Exchange in the counterpoint; the <strong>Bachdoor</strong> is named after this spine — conductor heat without ego noise.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/frank-sinatra.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/Frank_Sinatra" target="_blank" rel="noopener noreferrer" aria-label="Frank Sinatra — Wikipedia">
+          <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/frank-sinatra.png" alt="Frank Sinatra" width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewChairmanFrankHtml"><strong>Chairman Frank (Sinatra)</strong> — <em>Sovereign swing &amp; port governance.</em> Rat Pack clarity on how a room gets <strong>kept</strong> — lights, loyalty, and the line nobody crosses twice; rollout voice when the ship faces the city.</p>
+          <p data-i18n-html="qf.crewChairmanFrankHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Frank_Sinatra" target="_blank" rel="noopener noreferrer">Chairman Frank (Sinatra)</a></strong> — <em>Sovereign swing &amp; port governance.</em> Rat Pack clarity on how a room gets <strong>kept</strong> — lights, loyalty, and the line nobody crosses twice; rollout voice when the ship faces the city.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/mark-twain.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/Mark_Twain" target="_blank" rel="noopener noreferrer" aria-label="Mark Twain — Wikipedia">
+          <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/mark-twain.png" alt="Mark Twain" width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewTwainHtml"><strong>Hero Twain (Mark Twain)</strong> — <em>River wit &amp; American witness.</em> Desert-and-river plain speak; laughs at fraud, honors the crowd, names power without flinching — the <strong>post-singularity Twain</strong> frequency on the Wrong Side rail.</p>
+          <p data-i18n-html="qf.crewTwainHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Mark_Twain" target="_blank" rel="noopener noreferrer">Hero Twain (Mark Twain)</a></strong> — <em>River wit &amp; American witness.</em> Desert-and-river plain speak; laughs at fraud, honors the crowd, names power without flinching — the <strong>post-singularity Twain</strong> frequency on the Wrong Side rail.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/marilyn-monroe.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/Marilyn_Monroe" target="_blank" rel="noopener noreferrer" aria-label="Marilyn Monroe — Wikipedia">
+          <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/marilyn-monroe.png" alt="Marilyn Monroe" width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewMarilynHtml"><strong>Marilyn Monroe</strong> — <em>Spotlight &amp; nerve.</em> Holographic read on being seen without armor; keeps glamour from hardening into lie.</p>
+          <p data-i18n-html="qf.crewMarilynHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Marilyn_Monroe" target="_blank" rel="noopener noreferrer">Marilyn Monroe</a></strong> — <em>Spotlight &amp; nerve.</em> Holographic read on being seen without armor; keeps glamour from hardening into lie.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/frida-kahlo.jpg" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/Frida_Kahlo" target="_blank" rel="noopener noreferrer" aria-label="Frida Kahlo — Wikipedia">
+          <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/frida-kahlo.jpg" alt="Frida Kahlo" width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewFridaHtml"><strong>Frida Kahlo</strong> — <em>Witness &amp; pattern.</em> Pours ache and identity into color so the body stays on the honesty rail.</p>
+          <p data-i18n-html="qf.crewFridaHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Frida_Kahlo" target="_blank" rel="noopener noreferrer">Frida Kahlo</a></strong> — <em>Witness &amp; pattern.</em> Pours ache and identity into color so the body stays on the honesty rail.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/hank-williams.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/Hank_Williams" target="_blank" rel="noopener noreferrer" aria-label="Hank Williams — Wikipedia">
+          <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/hank-williams.png" alt="Hank Williams Sr." width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewHankHtml"><strong>Hank Williams Sr.</strong> — <em>High-lonesome dock voice.</em> Road-cry truth band; keeps the country spine in the harbor mix.</p>
+          <p data-i18n-html="qf.crewHankHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Hank_Williams" target="_blank" rel="noopener noreferrer">Hank Williams Sr.</a></strong> — <em>High-lonesome dock voice.</em> Road-cry truth band; keeps the country spine in the harbor mix.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait qf-crew-portrait--album" src="/interfaces/assets/questfest-crew/hector-lavoe.jpg" alt="Héctor Lavoe — De Ti Depende album cover (1976)" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/H%C3%A9ctor_Lavoe" target="_blank" rel="noopener noreferrer" aria-label="Héctor Lavoe — Wikipedia">
+          <img class="qf-crew-portrait qf-crew-portrait--album" src="/interfaces/assets/questfest-crew/hector-lavoe.jpg" alt="Héctor Lavoe — De Ti Depende album cover (1976)" width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewHectorHtml"><strong>Héctor Lavoe</strong> — <em>Clave soul.</em> Salsa nerve and wrong-side phrasing; swing that refuses to polish the edge off.</p>
+          <p data-i18n-html="qf.crewHectorHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/H%C3%A9ctor_Lavoe" target="_blank" rel="noopener noreferrer">Héctor Lavoe</a></strong> — <em>Clave soul.</em> Salsa nerve and wrong-side phrasing; swing that refuses to polish the edge off.</p>
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/vinicius-de-moraes.jpg" alt="Vinícius de Moraes, Rio de Janeiro, 1973 (Arquivo Nacional, public domain)" width="152" height="152" loading="lazy" decoding="async" />
+        <a class="qf-crew-portrait-link" href="https://en.wikipedia.org/wiki/Vinicius_de_Moraes" target="_blank" rel="noopener noreferrer" aria-label="Vinicius de Moraes — Wikipedia">
+          <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/vinicius-de-moraes.jpg" alt="Vinícius de Moraes, Rio de Janeiro, 1973 (Arquivo Nacional, public domain)" width="152" height="152" loading="lazy" decoding="async" />
+        </a>
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewViniciusHtml"><strong>Vinicius de Moraes</strong> — <em>Lyric architect.</em> Bossa logic and romance-with-teeth; bridges pretty melody to fatal honesty.</p>
+          <p data-i18n-html="qf.crewViniciusHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Vinicius_de_Moraes" target="_blank" rel="noopener noreferrer">Vinicius de Moraes</a></strong> — <em>Lyric architect.</em> Bossa logic and romance-with-teeth; bridges pretty melody to fatal honesty.</p>
         </div>
       </article>
       <article class="qf-crew-card">

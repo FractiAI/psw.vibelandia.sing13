@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-02T23:37:19.533656+00:00",
+  "fetchedAt": "2026-06-03T00:09:00.239947+00:00",
   "rows": 33977,
   "individuals": 16,
   "sources": [
@@ -20,6 +20,8 @@
     "baselineStart": "2019-01-01",
     "collarFirst": "2019-01-01",
     "collarLast": "2020-05-15",
+    "calendarEnd": "2026-06-03",
+    "collarOverlapsCalendarRecent": false,
     "note": "aligned_to_public_collar_observation_window"
   },
   "fetchMeta": {
@@ -45,6 +47,8 @@
       "baselineStart": "2019-01-01",
       "collarFirst": "2019-01-01",
       "collarLast": "2020-05-15",
+      "calendarEnd": "2026-06-03",
+      "collarOverlapsCalendarRecent": false,
       "note": "aligned_to_public_collar_observation_window"
     },
     "publicStudiesScanned": 162,

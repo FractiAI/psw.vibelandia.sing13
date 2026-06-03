@@ -35,6 +35,33 @@
       color: #fef3c7;
       margin: 0.5rem 0;
     }
+    .geo-activation {
+      margin: 1rem 0;
+      padding: 1rem 1.1rem;
+      border-radius: 10px;
+      border: 2px solid rgba(94, 234, 212, 0.45);
+      background: rgba(15, 23, 42, 0.85);
+    }
+    .geo-activation--active {
+      border-color: #facc15;
+      box-shadow: 0 0 24px rgba(250, 204, 21, 0.15);
+    }
+    .geo-activation--watch {
+      border-color: #f472b6;
+    }
+    .geo-activation__status {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      color: #fef3c7;
+      margin: 0 0 0.35rem;
+    }
+    .geo-activation__headline {
+      font-size: 0.95rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+      margin: 0;
+    }
     .geo-honesty {
       font-size: 0.85rem;
       color: #94a3b8;
@@ -67,8 +94,12 @@
       <button type="button" class="deck-btn deck-btn--ghost" id="geo-refresh">Refresh live summary</button>
     </div>
 
+    <section class="geo-activation" id="geo-activation" aria-live="polite">
+      <p class="geo-activation__status" id="geo-activation-status">Sensitivity activation: …</p>
+      <p class="geo-activation__headline" id="geo-activation-headline">Loading live geomagnetic + collar coupling…</p>
+    </section>
     <p class="geo-honesty" id="geo-honesty">Loading honesty boundary…</p>
-    <p class="geo-class" id="geo-class" aria-live="polite">Classification: …</p>
+    <p class="geo-class" id="geo-class" aria-live="polite">Movement anomaly classification: …</p>
     <p id="geo-summary" class="deck-lead" style="font-size:0.95rem;"></p>
     <pre class="geo-report" id="geo-report" aria-label="Live anomaly report excerpt">Loading…</pre>
 
@@ -91,6 +122,9 @@
       const hyp = document.getElementById('geo-hyp');
       const honesty = document.getElementById('geo-honesty');
       const btn = document.getElementById('geo-refresh');
+      const actBox = document.getElementById('geo-activation');
+      const actStatus = document.getElementById('geo-activation-status');
+      const actHeadline = document.getElementById('geo-activation-headline');
 
       async function load() {
         pre.textContent = 'Fetching /api/turner-recent-anomaly-report …';
@@ -99,16 +133,25 @@
           const data = await res.json();
           if (!data.ok) throw new Error(data.message || 'failed');
           const r = data.report;
-          cls.textContent = 'Classification: ' + (r.classification || '—');
+          const sa = r.sensitivityActivation || {};
+          actBox.className = 'geo-activation' + (sa.activated ? ' geo-activation--active' : sa.status === 'watch' ? ' geo-activation--watch' : '');
+          actStatus.textContent = 'Sensitivity activation: ' + (sa.status || 'unknown').toUpperCase()
+            + (sa.activated ? ' · ACTIVATED' : '')
+            + (sa.confidence != null ? ' · conf ' + (sa.confidence * 100).toFixed(0) + '%' : '');
+          actHeadline.textContent = sa.headline || 'No activation assessment.';
+          cls.textContent = 'Movement anomaly classification: ' + (r.classification || '—');
           sum.textContent = r.recentAnomalySummary || '';
-          honesty.textContent = (r.dataHonesty && (r.dataHonesty.movement + ' ' + r.dataHonesty.geomagnetic)) || r.criticalRule || '';
+          var dh = r.dataHonesty || {};
+          honesty.textContent = [dh.movement, dh.geomagnetic, dh.calendarNote].filter(Boolean).join(' ') || r.criticalRule || '';
           hyp.innerHTML = Object.entries(r.hypotheses || {}).map(function (entry) {
             var id = entry[0];
             var h = entry[1];
             return '<li><strong>' + id + '</strong> · ' + (h.label || '') + ' — tier: <em>' + (h.tier || '—') + '</em></li>';
           }).join('');
           const excerpt = {
+            sensitivityActivation: sa,
             classification: r.classification,
+            recentGeomagnetic: sa.recentGeomagnetic,
             rankedAnomalies: (r.rankedAnomalies || []).slice(0, 8),
             stormEvents: r.stormEvents,
             criticalRule: r.criticalRule,

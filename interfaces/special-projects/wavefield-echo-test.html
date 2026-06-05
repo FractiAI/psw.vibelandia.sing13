@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="ss-vibelandia-deck">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>Wavefield Echo Test · Plain-speak results</title>
+  <meta name="description" content="Clock-Skew Latency Echo Test — Synthobs diagnostic for sing13. Plain-speak results from the last repository run." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/wavefield-echo-test" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <style>
+    .wfe-status {
+      margin: 1.25rem 0;
+      padding: 1rem 1.15rem;
+      border-radius: 10px;
+      border: 2px solid rgba(212, 175, 55, 0.45);
+      background: rgba(15, 23, 42, 0.88);
+    }
+    .wfe-status--success { border-color: #4ade80; box-shadow: 0 0 20px rgba(74, 222, 128, 0.12); }
+    .wfe-status--drift { border-color: #f472b6; box-shadow: 0 0 20px rgba(244, 114, 182, 0.12); }
+    .wfe-status__label {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.65rem;
+      letter-spacing: 0.08em;
+      color: #fef3c7;
+      margin: 0 0 0.35rem;
+    }
+    .wfe-log {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.65);
+      font-size: 0.84rem;
+      max-height: 16rem;
+      overflow: auto;
+      white-space: pre-wrap;
+      color: #cbd5e1;
+      font-family: ui-monospace, Consolas, monospace;
+    }
+    .wfe-meta {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      margin: 0.5rem 0;
+    }
+    .wfe-honesty {
+      border-left: 3px solid #5eead4;
+      padding-left: 0.75rem;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+    }
+    .wfe-metrics {
+      display: grid;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    @media (min-width: 520px) {
+      .wfe-metrics { grid-template-columns: 1fr 1fr; }
+    }
+    .wfe-metrics dt { color: #5eead4; font-weight: 600; }
+    .wfe-metrics dd { margin: 0 0 0.5rem; color: #e2e8f0; }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <a class="deck-back" href="/bulletin-board">&larr; Bulletin Board</a>
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="/bulletin-board">Bulletin Board</a><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Wavefield echo test</span><span class="dot" aria-hidden="true">·</span>
+      <a href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">Wavefield paper</a>
+    </nav>
+
+    <p class="deck-eyebrow">CLOCK_SKEW_LATENCY_ECHO · Synthobs CLI</p>
+    <h1 class="deck-h1">Wavefield Echo Test</h1>
+    <p class="deck-tagline">Plain-speak results · last run baked into the repo</p>
+    <p class="deck-lead">
+      This is a <strong>local micro-benchmark</strong> — not a solar instrument. It runs 38 nested EGS tiers on your CPU and checks whether processing latency modulo <strong>1.618 ps</strong> lands in a narrow “aligned” band. Results below are from the last committed run in <code>data/wavefield_echo_test_latest.json</code>.
+    </p>
+
+    <p class="wfe-honesty">
+      <strong>Honesty:</strong> Success on this test does not prove your machine is coupled to AR4455 or a cannibal CME. It only shows whether this one timing sample sat near the catalog’s φ-skew story. For real space weather, use NOAA SWPC and <a href="/api/dph-wavefield-solar" target="_blank" rel="noopener">/api/dph-wavefield-solar</a>.
+    </p>
+
+    <section class="wfe-status" id="wfe-status" aria-live="polite">
+      <p class="wfe-status__label" id="wfe-status-label">Loading…</p>
+      <p id="wfe-plain" class="deck-lead" style="font-size:0.95rem;margin:0;"></p>
+    </section>
+
+    <dl class="wfe-metrics" id="wfe-metrics"></dl>
+    <p class="wfe-meta" id="wfe-run-meta"></p>
+
+    <p class="deck-section-label">Console log (last run)</p>
+    <pre class="wfe-log" id="wfe-log" aria-label="Console output">Loading…</pre>
+
+    <div class="deck-btn-row">
+      <a class="deck-btn deck-btn--gold" href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">Wavefield Oscillator whitepaper →</a>
+      <a class="deck-btn deck-btn--ghost" href="/data/wavefield_echo_test_latest.json" target="_blank" rel="noopener">Raw JSON →</a>
+    </div>
+
+    <div class="deck-case" style="margin-top:1.5rem;">
+      <h2>Run it yourself in Cursor</h2>
+      <p>Copy-paste in the repo terminal:</p>
+      <pre class="wfe-log" style="max-height:none;">python sing13/tests/wavefield_echo_test.py</pre>
+      <p class="wfe-meta">Updates <code>data/wavefield_echo_test_latest.json</code> — commit and redeploy to refresh this page.</p>
+    </div>
+
+    <p class="deck-foot">
+      <a href="/bulletin-board">Bulletin Board</a> ·
+      <a href="mailto:valetpru@gmail.com?subject=Wavefield%20Echo%20Test">Email</a> ·
+      NSPFRNP → ∞¹³
+    </p>
+  </main>
+  <footer>
+    <p><a href="/bulletin-board">Bulletin Board</a> · Wavefield Echo Test</p>
+  </footer>
+  <script>
+    (function () {
+      const statusEl = document.getElementById('wfe-status');
+      const labelEl = document.getElementById('wfe-status-label');
+      const plainEl = document.getElementById('wfe-plain');
+      const logEl = document.getElementById('wfe-log');
+      const metaEl = document.getElementById('wfe-run-meta');
+      const metricsEl = document.getElementById('wfe-metrics');
+
+      function esc(s) {
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
+
+      fetch('/data/wavefield_echo_test_latest.json')
+        .then((r) => {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then((d) => {
+          const m = d.metrics || {};
+          const ok = m.status === 'SUCCESS';
+          statusEl.classList.add(ok ? 'wfe-status--success' : 'wfe-status--drift');
+          labelEl.textContent = ok
+            ? 'Status: SUCCESS · phase-locked (catalog band)'
+            : 'Status: DRIFT · Cartesian jitter on this sample';
+          plainEl.textContent = d.plain_speak || '';
+          logEl.textContent = (d.console_log || []).join('\n');
+          const run = d.run || {};
+          metaEl.textContent =
+            'Last run: ' +
+            (run.timestamp_utc || 'unknown') +
+            ' · ' +
+            (run.hostname || '') +
+            ' · Python ' +
+            (run.python || '');
+          const tel = d.telemetry_note || {};
+          const rows = [
+            ['Track', m.track],
+            ['38-tier sum', m.cumulative_matrix_38_tiers != null ? m.cumulative_matrix_38_tiers.toFixed(6) : '—'],
+            ['Latency', m.execution_latency_ps != null ? m.execution_latency_ps.toFixed(2) + ' ps' : '—'],
+            ['Skew delta (mod 1.618)', m.skew_alignment_delta != null ? m.skew_alignment_delta.toFixed(6) : '—'],
+            ['EGS φ', m.egs_constant != null ? m.egs_constant.toFixed(10) : '—'],
+            ['Solar wind (catalog)', tel.solar_wind_km_s != null ? tel.solar_wind_km_s + ' km/s' : '—'],
+            ['Sunspot (catalog)', tel.sunspot_number != null ? String(tel.sunspot_number) : '—'],
+            ['Active region', tel.active_region || '—'],
+          ];
+          metricsEl.innerHTML = rows
+            .map(([k, v]) => '<dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd>')
+            .join('');
+        })
+        .catch((e) => {
+          labelEl.textContent = 'Could not load results';
+          plainEl.textContent = String(e.message || e);
+          logEl.textContent = 'Run: python sing13/tests/wavefield_echo_test.py';
+        });
+    })();
+  </script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

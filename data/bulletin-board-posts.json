@@ -1,8 +1,20 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-06-01",
+  "updated": "2026-06-05",
   "posts": [
+    {
+      "id": "wavefield-echo-test-2026",
+      "posted": "2026-06-05",
+      "featured": true,
+      "title": "Wavefield Echo Test · plain-speak results",
+      "subtitle": "CLOCK_SKEW_LATENCY_ECHO · Synthobs CLI diagnostic",
+      "summary": "38-tier EGS nested loop micro-benchmark on sing13 — last run logged in JSON. Plain-speak page shows SUCCESS vs DRIFT honestly. Run: python sing13/tests/wavefield_echo_test.py",
+      "href": "/special-projects/wavefield-echo-test",
+      "pill": "Diagnostic",
+      "docRef": "SYN-SUN-2026-REV7",
+      "contact": "valetpru@gmail.com"
+    },
     {
       "id": "geomagnetic-herbivore-2026",
       "posted": "2026-06-01",

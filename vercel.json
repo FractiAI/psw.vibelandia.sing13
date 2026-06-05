@@ -82,6 +82,8 @@
     { "source": "/special-projects/erdos-holographic-aios-audit/", "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html" },
     { "source": "/special-projects/geomagnetic-herbivore-study", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
     { "source": "/special-projects/geomagnetic-herbivore-study/", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
+    { "source": "/special-projects/wavefield-echo-test", "destination": "/interfaces/special-projects/wavefield-echo-test.html" },
+    { "source": "/special-projects/wavefield-echo-test/", "destination": "/interfaces/special-projects/wavefield-echo-test.html" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026/", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
     { "source": "/whitepaper/synthobs-hex-organ-engine", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026" },

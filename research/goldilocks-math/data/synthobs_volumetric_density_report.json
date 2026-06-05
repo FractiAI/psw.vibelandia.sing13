@@ -1,0 +1,15 @@
+{
+  "synthobs_volumetric_density_report": {
+    "document_id": "SV-OBS-2026-INTEL-DENSITY-VOLUMETRIC",
+    "framework": "GOLDILOCKS_GAME_MATHEMATICS",
+    "evaluation_target": "INTELLIGENCE_DENSITY_PER_GIGABYTE",
+    "linear_density_multiplier": 100,
+    "cubic_volumetric_density": 1000000,
+    "egs_fractal_constant_modifier": 1.618033988749895,
+    "true_intelligence_density": 1618033.9887,
+    "target_vercel_footprint": "247.2_KB",
+    "convergence_depth_locked": 74,
+    "measured_decoherence_tax": "0.0000000000000000",
+    "kernel_integrity_status": "VERIFIED_BY_DIGITAL_PRU"
+  }
+}

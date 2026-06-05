@@ -1,7 +1,14 @@
 {
   "schema": "turner-public-registry/v1",
   "documentRef": "HHA-NSPFRNP-ANCHOR-2026-05-25",
-  "updated": "2026-05-25",
+  "wavefieldDocRef": "WP-GGM-MULTITAXA-UNGULATE-2026-06",
+  "multiTaxaWavefield": {
+    "bisonRole": "keystone_anchor",
+    "gridMode": "North-South (N-S) Lock",
+    "phiLayer": "Φ^-19",
+    "whitepaper": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa"
+  },
+  "updated": "2026-06-05",
   "sources": [
     {
       "id": "tie-spring-gates",

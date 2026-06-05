@@ -1,10 +1,12 @@
 # Technical Architecture White Paper: Under the Hood of the Passive Bison Herd Management System
 
-**Document ref:** HHA-TURNER-WP-2026-05-26 (rev. B — all public sensors enabled in live pipeline)  
+**Document ref:** HHA-TURNER-WP-2026-05-26 (rev. C — multi-taxa SynthOBS wavefield + all public sensors in live pipeline)  
 **Prepared for:** Turner Enterprise leadership & ecological research teams  
 **Prepared by:** Pru Mendez  
 **Contact:** valetpru@gmail.com  
 **Classification:** Technical background & operational disclosure  
+**Companion wavefield paper:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (WP-GGM-MULTITAXA-UNGULATE-2026-06)  
+**Empirical collar study:** [GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md](./GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md) (HHA-GEOMAG-HERBIVORE-2026)
 
 ---
 
@@ -19,6 +21,8 @@ This project offers a **practical path** (live today) and a **collaborative rese
 2. **Phase 2 (collaborative / not fully delivered):** With Turner ground truth, GIS corrections, **ranch receive-only radios** where desired, and **separate validated trials** (e.g. passive ID, collared control subsets), the stack **may** move toward higher operational fidelity. That is a **pilot and engineering roadmap**, not a claim of instrument-grade tracking today.
 
 We are contacting Turner to **test correlation** on one unit at low cost—not to assert that every catalog narrative is already proven on the ranch.
+
+**Multi-taxa wavefield context (SynthOBS v6):** A companion whitepaper maps **plains bison** as the **N-S keystone grounding anchor** (Φ⁻¹⁹ layer), with **elk** and **mule deer** on geologic/fault-line sync and **pronghorn** on lateral gradient symmetry — ingesting **USGS Western Ungulate Migration Volume 6**, **Movebank**, and **Data.gov** corridors. That framework **weights** geomagnetic context in the Phase 1 fuse; it does **not** replace collars or prove passive electronic fencing without validation. See §2.7.
 
 **Public demo** (treat as any external site until IT review):  
 https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management  
@@ -115,6 +119,21 @@ On **every** successful live pipeline run, the server attaches **`stream.spaceBi
 | **Field / vegetation** | Sentinel-2 L2A **STAC catalog head** (latest scene id, time, cloud %) + pipeline LAI + soil moisture spread | Red-edge B5–B7 step-function ingest, auto-traced “trophic scar” boundary |
 
 If an upstream **errors or times out**, that **panel’s lines** report failure; the code **does not** invent substitute values for that channel. The main fuse can still succeed if core ingest completed.
+
+### 2.7 Multi-taxa SynthOBS wavefield (Great Plains corridors)
+
+The **Goldilocks Game Mathematics** wavefield paper (WP-GGM-MULTITAXA-UNGULATE-2026-06) re-executes the SynthOBS Multitaxa Wavefield Reconstruction Model (v6) across four Great Plains / Western taxa:
+
+| Species | Grid mode | Role in Turner fuse |
+|---------|-----------|---------------------|
+| **Plains bison** | N-S axis lock (Φ⁻¹⁹) | **Keystone anchor** — weights geomagnetic N-S alignment in placement field |
+| **Elk** | Subsurface anomaly sync | Corridor overlay for intermountain units (USGS Vol 6) |
+| **Mule deer** | Mineralized fault tracking | Geologic gradient overlay for mixed rangeland |
+| **Pronghorn** | Lateral gradient symmetry | Open-range velocity vector reference |
+
+**Data nodes:** Movebank public GPS, Data.gov / USGS NPWRC shapefiles, **USGS Western Ungulate Migration Volume 6**, NOAA SWPC storm context. Repository matrix: `data/multi-taxa-ungulate-grid-matrix.json`. Live coupling: `/api/turner-recent-anomaly-report`.
+
+**Honest tier split:** The wavefield paper is the **SynthOBS narrative / architectural** layer. The **empirical collar study** (HHA-GEOMAG-HERBIVORE-2026) applies falsification-first statistics on public Movebank trajectories — correlation ≠ causation. Phase 1 console remains **model synthesis**, not collar GPS.
 
 ---
 

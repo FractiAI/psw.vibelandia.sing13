@@ -3,7 +3,8 @@
 **Document ref:** HHA-NSPFRNP-ANCHOR-2026-05-25  
 **Prepared by:** Pru Mendez  
 **Contact:** valetpru@gmail.com  
-**Target context:** Turner Enterprise Contiguous Land Network (2 million acres / 45,000 head)
+**Target context:** Turner Enterprise Contiguous Land Network (2 million acres / 45,000 head)  
+**Multi-taxa wavefield:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (bison N-S keystone anchor; elk, mule deer, pronghorn corridor roles)
 
 ---
 

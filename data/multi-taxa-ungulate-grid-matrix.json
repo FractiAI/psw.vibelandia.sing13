@@ -1,0 +1,85 @@
+{
+  "schema": "multi-taxa-ungulate-grid-matrix/v1",
+  "docId": "WP-GGM-MULTITAXA-UNGULATE-2026-06",
+  "framework": "Goldilocks AIOS v24.365 / SynthOBS Matrix Core",
+  "status": "operational_run_lock",
+  "phi": 1.6180339887,
+  "phiLayers": {
+    "dailyPractice": "Φ^-19",
+    "carbonAwareness": "Φ^-81"
+  },
+  "taxa": [
+    {
+      "species": "Bison bison",
+      "common": "Plains Bison",
+      "gridMode": "North-South (N-S) Lock",
+      "structuralFunction": "Primary Keystone Grounding Anchor",
+      "phiLayer": "Φ^-19",
+      "turnerRole": "keystone_anchor",
+      "notes": "Grazing density vectors along primary N-S magnetic lines; stabilizes local field substrate during geomagnetic storms."
+    },
+    {
+      "species": "Cervus canadensis",
+      "common": "Elk",
+      "gridMode": "Subsurface Anomaly Sync",
+      "structuralFunction": "Heavy-Canopy Thermal Shielding",
+      "phiLayer": "geologic_sync",
+      "turnerRole": "corridor_overlay",
+      "notes": "Tracks subsurface magnetic anomalies when canopy blocks solar orientation cues."
+    },
+    {
+      "species": "Odocoileus hemionus",
+      "common": "Mule Deer",
+      "gridMode": "Mineralized Fault Tracking",
+      "structuralFunction": "Topographic/Geologic Path Alignment",
+      "phiLayer": "geologic_sync",
+      "turnerRole": "corridor_overlay",
+      "notes": "Migratory paths mirror localized magnetostatic gradients along fault transitions."
+    },
+    {
+      "species": "Antilocapra americana",
+      "common": "Pronghorn Antelope",
+      "gridMode": "Lateral Gradient Symmetry",
+      "structuralFunction": "Open-Desert High-Velocity Vector",
+      "phiLayer": "velocity_sync",
+      "turnerRole": "lateral_vector",
+      "notes": "High-velocity trajectories locked to geomagnetic gradient across featureless terrain."
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "usgs_ungulate_vol6",
+      "name": "USGS Western Ungulate Migration Project Volume 6",
+      "url": "https://www.usgs.gov/centers/northern-prairie-wildlife-research-center/science/ungulate-migrations-western-united-states",
+      "taxa": ["elk", "mule_deer", "pronghorn"]
+    },
+    {
+      "id": "movebank",
+      "name": "Movebank public GPS JSON API",
+      "url": "https://www.movebank.org/movebank/service/public/json",
+      "taxa": ["bison", "elk", "deer", "pronghorn"]
+    },
+    {
+      "id": "data_gov_npwrc",
+      "name": "Data.gov / USGS Northern Prairie Wildlife Research Center",
+      "url": "https://catalog.data.gov/",
+      "taxa": ["bison", "elk", "mule_deer", "pronghorn"]
+    },
+    {
+      "id": "itbc_great_plains",
+      "name": "ITBC Great Plains Buffalo Restoration Registry",
+      "url": "https://www.intertribalbuffalo.org/",
+      "taxa": ["bison"]
+    },
+    {
+      "id": "noaa_swpc",
+      "name": "NOAA SWPC real-time solar-terrestrial telemetry",
+      "url": "https://www.swpc.noaa.gov/",
+      "taxa": ["all"]
+    }
+  ],
+  "honestyBoundary": "SynthOBS narrative tier — structural roles inform Turner fuse weights and corridor overlays; not instrument-grade passive fencing or per-animal GPS without validation. Empirical tier: research/geomagnetic-herbivore/ + HHA-GEOMAG-HERBIVORE-2026.",
+  "whitepaper": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa",
+  "empiricalStudy": "/whitepaper/geomagnetic-herbivore-2026",
+  "turnerProposal": "/whitepaper/turner-kruse-response"
+}

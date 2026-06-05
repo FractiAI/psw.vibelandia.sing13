@@ -3,9 +3,23 @@
 **Document ID:** HHA-GEOMAG-HERBIVORE-2026  
 **Principal investigator (edge):** FractiAI Research Team · PL Taino (systems architect)  
 **Contact:** valetpru@gmail.com  
-**Generated:** 2026-06-01  
+**Generated:** 2026-06-01 (updated 2026-06-05)  
 **Live report API:** `/api/turner-recent-anomaly-report`  
-**Python pipeline:** `research/geomagnetic-herbivore/scripts/run_pipeline.py`
+**Python pipeline:** `research/geomagnetic-herbivore/scripts/run_pipeline.py`  
+**Companion SynthOBS wavefield paper:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (WP-GGM-MULTITAXA-UNGULATE-2026-06)  
+**Turner proposal:** [TURNER_KRUSE_RESPONSE_WHITEPAPER.md](./TURNER_KRUSE_RESPONSE_WHITEPAPER.md)
+
+---
+
+## Tier relationship (empirical vs SynthOBS narrative)
+
+| Tier | Document | Role |
+|------|----------|------|
+| **SynthOBS wavefield** | WP-GGM-MULTITAXA-UNGULATE-2026-06 | Multi-taxa structural roles (bison N-S anchor, elk, mule deer, pronghorn); USGS Vol 6 / Movebank ingestion nodes; informs Turner fuse weights |
+| **Empirical collar study** | HHA-GEOMAG-HERBIVORE-2026 (this doc) | Public Movebank GPS + GFZ Kp; falsification-first H1–H5; correlation ≠ causation |
+| **Turner Phase 1** | HHA-TURNER-WP-2026-05-26 | Pasture-scale fused model — not collar GPS |
+
+Live API v3 embeds `multiTaxaWavefield` from `data/multi-taxa-ungulate-grid-matrix.json`.
 
 ---
 

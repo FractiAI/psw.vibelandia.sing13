@@ -4,6 +4,18 @@
   "updated": "2026-06-05",
   "posts": [
     {
+      "id": "goldilocks-geomagnetic-multitaxa-2026",
+      "posted": "2026-06-05",
+      "featured": true,
+      "title": "Great Plains Multi-Taxa Wavefield · FOR REVIEW",
+      "subtitle": "WP-GGM-MULTITAXA-UNGULATE-2026-06 · SynthOBS v6",
+      "summary": "Unified geomagnetic wavefields across bison (N-S keystone anchor), elk, mule deer, and pronghorn — USGS Vol 6, Movebank, Data.gov, EGS Φ. Informs Turner passive herd fuse; empirical collar tier stays conservatively labeled in HHA-GEOMAG-HERBIVORE-2026.",
+      "href": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa",
+      "pill": "Wavefield",
+      "docRef": "WP-GGM-MULTITAXA-UNGULATE-2026-06",
+      "contact": "valetpru@gmail.com"
+    },
+    {
       "id": "wavefield-echo-test-2026",
       "posted": "2026-06-05",
       "featured": true,

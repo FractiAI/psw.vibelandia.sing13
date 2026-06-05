@@ -68,10 +68,13 @@
     const lockMean = radar?.triangulatedLock?.meanLockIn;
     const collarProx = radar?.collarGradeProximityPct ?? radar?.crossSource?.collarGradeProximityPct;
     const status = $('#tb-exec-status');
+    const wave = stream.multiTaxaWavefield;
+    const waveLabel =
+      wave?.bisonKeystone?.gridMode ? ` · wavefield ${wave.bisonKeystone.gridMode}` : '';
     if (status) {
       if (radar) {
         const lockPct = lockMean != null ? `${(lockMean * 100).toFixed(0)}%` : '—';
-        status.textContent = `Live · fuse ${radar.fidelityPct}% · collar-agreement ${collarProx ?? '—'}% (not GPS) · lock ${lockPct} · modeled map`;
+        status.textContent = `Live · fuse ${radar.fidelityPct}% · collar-agreement ${collarProx ?? '—'}% (not GPS) · lock ${lockPct}${waveLabel} · modeled map`;
       } else {
         status.textContent = ingest?.noaa?.error
           ? 'Live stream degraded — retrying…'

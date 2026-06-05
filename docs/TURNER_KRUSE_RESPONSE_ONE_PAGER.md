@@ -2,7 +2,7 @@
 
 **From:** Pru Mendez · valetpru@gmail.com  
 **Re:** Passive bison herd console · honesty · security · optional collaboration  
-**Companion:** [TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md](./TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md) · live console (see below)
+**Companion:** [TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md](./TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md) · [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) · live console (see below)
 
 ---
 

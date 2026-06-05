@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#06080d" />
-  <title>Geomagnetic Herbivore Study · Recent Anomaly Module</title>
-  <meta name="description" content="HHA-GEOMAG-HERBIVORE-2026 — bison & large herbivore movement vs geomagnetic storms. Live anomaly report + full paper for review." />
+  <title>Geomagnetic Herbivore Study · Multi-Taxa Wavefield</title>
+  <meta name="description" content="HHA-GEOMAG-HERBIVORE-2026 + WP-GGM-MULTITAXA-UNGULATE-2026-06 — bison, elk, mule deer, pronghorn vs geomagnetic storms. Live anomaly report + SynthOBS wavefield paper." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/geomagnetic-herbivore-study" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,16 +80,17 @@
       <a href="/special-projects/turner-bison-herd-management">Turner bison console</a>
     </nav>
 
-    <p class="deck-eyebrow">HHA-GEOMAG-HERBIVORE-2026 · For review</p>
-    <h1 class="deck-h1">Geomagnetic Influences on Bison &amp; Large Herbivore Movement</h1>
-    <p class="deck-tagline">Autonomous research · Recent Anomaly Detection Module · correlation ≠ causation</p>
+    <p class="deck-eyebrow">HHA-GEOMAG-HERBIVORE-2026 · WP-GGM-MULTITAXA-UNGULATE-2026-06</p>
+    <h1 class="deck-h1">Unified Geomagnetic Wavefields &amp; Multi-Taxa Ungulate Corridors</h1>
+    <p class="deck-tagline">SynthOBS v6 · bison N-S anchor · elk · mule deer · pronghorn · correlation ≠ causation</p>
     <p class="deck-lead">
-      Full journal-style paper, reproducible Python pipeline, and live edge report.
-      Movement layer uses <strong>public GPS collar data from Movebank</strong> (not Turner synthesis). If no public bison collar study exists, the pipeline uses the best available public large-herbivore GPS study and documents taxon.
+      Two tiers: <strong>SynthOBS wavefield paper</strong> (Great Plains multi-taxa grid, USGS Vol 6, Movebank, EGS Φ) and <strong>empirical collar study</strong> (falsification-first H1–H5).
+      Movement layer uses <strong>public GPS collar data from Movebank</strong> (not Turner synthesis). Plains bison = keystone N-S grounding anchor in the wavefield model; empirical tiers stay conservatively labeled.
     </p>
 
     <div class="deck-btn-row">
-      <a class="deck-btn deck-btn--gold" href="/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026">Read full paper →</a>
+      <a class="deck-btn deck-btn--gold" href="/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa">SynthOBS wavefield paper →</a>
+      <a class="deck-btn deck-btn--ghost" href="/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026">Empirical collar study →</a>
       <a class="deck-btn deck-btn--ghost" href="/api/turner-recent-anomaly-report" target="_blank" rel="noopener">Live JSON report</a>
       <button type="button" class="deck-btn deck-btn--ghost" id="geo-refresh">Refresh live summary</button>
     </div>
@@ -149,6 +150,8 @@
             return '<li><strong>' + id + '</strong> · ' + (h.label || '') + ' — tier: <em>' + (h.tier || '—') + '</em></li>';
           }).join('');
           const excerpt = {
+            wavefieldDocId: r.wavefieldDocId,
+            multiTaxaWavefield: r.multiTaxaWavefield,
             sensitivityActivation: sa,
             classification: r.classification,
             recentGeomagnetic: sa.recentGeomagnetic,

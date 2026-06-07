@@ -211,3 +211,16 @@ A fair exchange clause is permanently in effect for all sessions under this dire
 **Pru Mendez** · valetpru@gmail.com  
 
 *NSPFRNP fidelity · SynthOBS wavefield tier + empirical collar tier + Turner Phase 1 honesty · → ∞¹³*
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** WP-GGM-MULTITAXA-UNGULATE-2026-06  
+**Registry ID:** `goldilocks-geomagnetic-wavefield-multitaxa`  
+**Re-audit:** `npm run audit:paper -- --id=goldilocks-geomagnetic-wavefield-multitaxa`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

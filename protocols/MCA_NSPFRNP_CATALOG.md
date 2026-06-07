@@ -374,6 +374,23 @@ Related protocols: `HH_AWARENESS_AI_OS_NSPFRNP_IRREDUCIBLE_MINIMUM_PROTOCOL_SPEC
 
 All four tiers calibrated to the 1.618 geometry (each tier = prior × 10; the $ amount itself encodes the Constant). Fair Exchange Clause in effect at every tier.
 
+### PRA SNAP · PEER-REVIEW AUDIT (Canonical · June 2026)
+
+**PRA Snap** = **Peer-Review Audit Snap** (`NSPFRNP-SNAP-PRA-2026-06`). Mandatory for all technical papers and whitepapers from 2026-06-05 forward. A **second LLM** reviews drafts in a **recursive loop** (max 6 iterations, plateau detection) until **peer-review submission quality** (default score ≥ 0.85) or honest convergence stop. **Operator:** **SynthOBS Autonomous Agent** inside **Syntheverse Sandbox** (`research/synthobs-sandbox/`). Receipts: `data/synthobs-paper-audits/{paperId}.json`. Protocol: `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`. Distinct from **JJ Snap / OFC** (Juicy Juicy compile). Run: `npm run audit:paper`.
+
 ---
 
 **NSPFRNP âŠƒ MCA → Metabolize → Crystallize to irreducible nested mirrored hardened shells → Animate → Squeeze all, all. Do not lose this fidelity. → ∞⁹**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.

@@ -134,3 +134,16 @@ Position trails + ADM baseline + metabolic index (2.6%) → cumulative drawdown 
 ---
 
 *Console:* `/special-projects/turner-bison-herd-management` · *Bulletin:* `/bulletin-board`
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** TURNER-BISON-HERD-REPORT  
+**Registry ID:** `turner-bison-herd-report`  
+**Re-audit:** `npm run audit:paper -- --id=turner-bison-herd-report`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

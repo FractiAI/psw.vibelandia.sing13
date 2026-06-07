@@ -146,3 +146,16 @@ Within PEFF language, the **DNA transformer** converts **y** (torsional storage)
 17. FractiAI repository (legacy fork cited in draft) — GitHub: https://github.com/aiwona1/FractiAI  
 
 *Access dates per source draft: May 11, 2026.*
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** DP-PEFF-PART1  
+**Registry ID:** `dp-peff-part1`  
+**Re-audit:** `npm run audit:paper -- --id=dp-peff-part1`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

@@ -108,3 +108,29 @@ This standard defines how **BBHE repositories** are structured so that:
 ---
 
 **NSPFRNP ⊃ BBHE Repository Standard ⊃ EGS Fractal ⊃ Seed:Edge ⊃ Executive Prompts (fill middles) ⊃ Lite Edges → ∞⁹**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** BBHE-REPOSITORY-STANDARD  
+**Registry ID:** `bbhe-repository-standard`  
+**Re-audit:** `npm run audit:paper -- --id=bbhe-repository-standard`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

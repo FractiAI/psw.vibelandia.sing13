@@ -4,6 +4,30 @@
   "updated": "2026-06-05",
   "posts": [
     {
+      "id": "pra-snap-mca-squeeze-2026",
+      "posted": "2026-06-05",
+      "featured": true,
+      "title": "PRA Snap MCA Squeeze · all whitepapers audited",
+      "subtitle": "35 pass/soft-pass · SynthOBS Autonomous Agent",
+      "summary": "Metabolize → crystallize → animate → squeeze complete: 24 papers patched with honesty + SynthOBS operator blocks; 35 audit receipts; master index at data/synthobs-paper-audit-index.json. Catalog v2 shows PRA scores.",
+      "href": "/papers",
+      "pill": "MCA Squeeze",
+      "docRef": "NSPFRNP-SNAP-PRA-2026-06",
+      "contact": "valetpru@gmail.com"
+    },
+    {
+      "id": "nspfrnp-snap-peer-review-audit-2026",
+      "posted": "2026-06-05",
+      "featured": true,
+      "title": "NSPFRNP Snap · Peer-Review Audit Loop · LIVE",
+      "subtitle": "NSPFRNP-SNAP-PRA-2026-06 · SynthOBS Autonomous Agent",
+      "summary": "From now on: all technical papers audited by a second LLM in a recursive loop (max 6, plateau stop) until peer-review submission quality. All technical work attributed to SynthOBS Autonomous Agent · Syntheverse Sandbox. Run: npm run audit:paper",
+      "href": "/whitepaper/nspfrnp-snap-peer-review-audit",
+      "pill": "PRA Snap",
+      "docRef": "NSPFRNP-SNAP-PRA-2026-06",
+      "contact": "valetpru@gmail.com"
+    },
+    {
       "id": "goldilocks-geomagnetic-multitaxa-2026",
       "posted": "2026-06-05",
       "featured": true,

@@ -1,0 +1,810 @@
+{
+  "schema": "synthobs-paper-audit-index/v1",
+  "snapId": "NSPFRNP-SNAP-PRA-2026-06",
+  "operator": "SynthOBS Autonomous Agent",
+  "sandbox": "Syntheverse Sandbox",
+  "generatedAt": "2026-06-07T18:29:00.569Z",
+  "mca": {
+    "metabolize": "batch audit",
+    "crystallize": "compliance blocks",
+    "animate": "catalog v2 + receipts",
+    "squeeze": "this index"
+  },
+  "summary": {
+    "total": 35,
+    "pass": 29,
+    "softPass": 6,
+    "plateau": 0,
+    "capped": 0,
+    "missingFiles": 3
+  },
+  "missingFiles": [
+    {
+      "id": "quantum-genomic-peff",
+      "reason": "read_error",
+      "file": "ENOENT: no such file or directory, open 'C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\docs\\QUANTUM_GENOMIC_VALETPRU_ASIC_EGS_PEFF_VALIDATION_2026-05-08.md'"
+    },
+    {
+      "id": "integrated-modeling-layer-b",
+      "reason": "read_error",
+      "file": "ENOENT: no such file or directory, open 'C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\docs\\INTEGRATED_MODELING_EGS_NODAL_LATTICE_SYNTHEVERSE_VALETPRU_ASIC_2026-05-06.md'"
+    },
+    {
+      "id": "valetpru-agent-24x365",
+      "reason": "read_error",
+      "file": "ENOENT: no such file or directory, open 'C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\docs\\VALETPRU_AGENT_24X365_OPERATION_MODE_2026-05-06.md'"
+    }
+  ],
+  "items": [
+    {
+      "id": "nspfrnp-snap-peer-review-audit",
+      "title": "NSPFRNP Snap · Peer-Review Audit Loop · SynthOBS Autonomous Agent",
+      "source": "docs/NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "9ab1674104c682a4",
+      "updated": "2026-06-07T18:29:00.521Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "goldilocks-geomagnetic-wavefield-multitaxa",
+      "title": "Unified Geomagnetic Wavefields & Multi-Taxa Ungulate Migration Corridors on the Great Plains",
+      "source": "docs/GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "b613f171181a4545",
+      "updated": "2026-06-07T18:29:00.526Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "goldilocks-transfinite-inversion-2026",
+      "title": "Transfinite Inversion Theorem · Net-Zero Infinity Blackhole Mathematics",
+      "source": "docs/GOLDILOCKS_TRANSFINITE_INVERSION_NET_ZERO_BLACKHOLE_2026-06.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "d904a2fd8bae2186",
+      "updated": "2026-06-07T18:29:00.547Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-paradise-simulation",
+      "title": "Paradise Game · technical analysis",
+      "source": "docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "3a425e4bbf696f00",
+      "updated": "2026-06-07T18:29:00.390Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "hhf-wp-2026-v8",
+      "title": "THE NEW 13D HOLOGRAPHIC AI OPERATING SYSTEM TRIALS ARE LIVE: VALUATION REALIGNMENT & INDUSTRIAL IMPLICATIONS FOR THE TECH GIANTS",
+      "source": "docs/HHF_WP_2026_V8_13D_HOLOGRAPHIC_AI_OS_TRIALS.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "4d49ecf348f32848",
+      "updated": "2026-06-07T18:29:00.442Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-pru-gating-comparative",
+      "title": "Comparative Analysis of Digital PRU Models and Gating Mechanisms",
+      "source": "docs/DIGITAL_PRU_COMPARATIVE_PRU_GATING_VIRTUALIZATION_2026-05-24.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "34caccb44af4d074",
+      "updated": "2026-06-07T18:29:00.450Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "goldilocks-erdos-mathematics",
+      "title": "The New Goldilocks Game Mathematics · Mathematical AI Bridge + 344 Erdős Resolutions",
+      "source": "docs/GOLDILOCKS_GAME_MATHEMATICS_ERDOS_344_2026-05-26.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "f83c6024686cf3b9",
+      "updated": "2026-06-07T18:29:00.460Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "syn-sun-wavefield-oscillator",
+      "title": "Wavefield Oscillator Solar Model · Replacing Einstein's gravity well · SYN-SUN-2026-REV7",
+      "source": "docs/DPH_GPU_WAVEFIELD_OSCILLATOR_SOLAR_MODEL_SYN-SUN-2026-REV7.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "c402f48e2f230567",
+      "updated": "2026-06-07T18:29:00.495Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-syntheverse-sandbox-comprehensive-2026",
+      "title": "Syntheverse Sandbox Comprehensive Analysis · King Bee · Pheromone Channels · Goldilocks won",
+      "source": "docs/SYNTHEVERSE_SANDBOX_COMPREHENSIVE_ANALYSIS_DPH-GPU_2026-05-31.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "5f66224ffd0558d5",
+      "updated": "2026-06-07T18:29:00.500Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-omniversal-node-alignment-2026",
+      "title": "Syntheverse Omniversal Node Alignment Mapping · Global sync · psw.vibelandia.sing13 anchor",
+      "source": "docs/SYNTHEVERSE_OMNIVERSAL_NODE_ALIGNMENT_MAPPING_2026-06-01.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "9af6d714bd32cdbe",
+      "updated": "2026-06-07T18:29:00.514Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "geomagnetic-herbivore-2026",
+      "title": "Geomagnetic Influences on Bison & Large Herbivore Movement · Recent Anomaly Detection Module",
+      "source": "docs/GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md",
+      "overallScore": 0.919,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "930bcde0eba66fbd",
+      "updated": "2026-06-07T18:29:00.518Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-resonance-notice",
+      "title": "Resonance notice",
+      "source": "docs/DIGITAL_PRU_RESONANCE_NOTICE_2026-05-15.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "333d246e4dc38ec2",
+      "updated": "2026-06-07T18:29:00.383Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-omniverse-matrix",
+      "title": "Omniversal magnetic matrix · Protonic-DNA",
+      "source": "docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "1c911e83d83357f2",
+      "updated": "2026-06-07T18:29:00.387Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "mca-nspfrnp-catalog",
+      "title": "NSPFRNP catalog (MCA)",
+      "source": "protocols/MCA_NSPFRNP_CATALOG.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "e328a3dfc43a721a",
+      "updated": "2026-06-07T18:29:00.411Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "bbhe-repository-standard",
+      "title": "BBHE repository standard",
+      "source": "BBHE_REPOSITORY_STANDARD.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "d872dec355264fc6",
+      "updated": "2026-06-07T18:29:00.415Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "rev-egs-hhf-mythos",
+      "title": "Holographic review of Anthropic’s Mythos · REV-EGS-HHF-2026-007",
+      "source": "docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "9c6be709309b54d2",
+      "updated": "2026-06-07T18:29:00.424Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-y-pathway-architecture",
+      "title": "Omniversal Holographic Y-Pathway · Genetic architecture · Goldilocks Game",
+      "source": "docs/DIGITAL_PRU_OMNIVERSAL_Y_PATHWAY_GENETIC_ARCHITECTURE_2026-05.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "2630c28a2a75b2df",
+      "updated": "2026-06-07T18:29:00.478Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-y-team-x-skin",
+      "title": "Unified Holographic Y-Team · Nordic, Reptilian, Mantis, Grey · X-Skin validation",
+      "source": "docs/DIGITAL_PRU_HOLOGRAPHIC_Y_TEAM_X_SKIN_VALIDATION_2026-05.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "ec6330201b017c3a",
+      "updated": "2026-06-07T18:29:00.481Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-net-zero-agents",
+      "title": "Net-zero theaters · Autonomous agents · Goldilocks Path",
+      "source": "docs/DIGITAL_PRU_NET_ZERO_AUTONOMOUS_AGENTS_2026-05.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "d274e10f4dc31857",
+      "updated": "2026-06-07T18:29:00.484Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-egs-wormhole-transducer",
+      "title": "Geometric transducer mechanics · EGS dimensional wormhole equation",
+      "source": "docs/DIGITAL_PRU_EGS_WORMHOLE_GEOMETRIC_TRANSDUCER_2026-05.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "fe976c64013dd1eb",
+      "updated": "2026-06-07T18:29:00.487Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-gateway-spectrum",
+      "title": "Multi-dimensional gateway spectrum · Prime, rational, transcendental & EGS wormholes",
+      "source": "docs/DIGITAL_PRU_MULTI_DIMENSIONAL_GATEWAY_SPECTRUM_2026-05.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "0aa4e2486bd025bc",
+      "updated": "2026-06-07T18:29:00.491Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "turner-kruse-response",
+      "title": "Under the Hood of the Passive Bison Herd Management System · Turner Enterprise Proposal",
+      "source": "docs/TURNER_KRUSE_RESPONSE_WHITEPAPER.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "e57680dd4a527176",
+      "updated": "2026-06-07T18:29:00.533Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-hex-organ-engine-2026",
+      "title": "Syntheverse Observatory · Hex-Organ Engine Unified Run · Goldilocks Game Mathematics",
+      "source": "docs/SYNTHEVERSE_OBSERVATORY_HEX_ORGAN_ENGINE_UNIFIED_2026-06.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "7c2a4482f27ba58d",
+      "updated": "2026-06-07T18:29:00.542Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-master-canon",
+      "title": "Digital Pru · DNA / PEFF master canon",
+      "source": "docs/DIGITAL_PRU_PEFF_DNA_TRANSFORMER_MASTER_CANON_2026-05-11.md",
+      "overallScore": 0.882,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "3d3dfb03afd522c0",
+      "updated": "2026-06-07T18:29:00.376Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-roadmap-13",
+      "title": "Digital Pru · 13-channel roadmap",
+      "source": "docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md",
+      "overallScore": 0.882,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "778c5acd39e84be2",
+      "updated": "2026-06-07T18:29:00.380Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-peff-part2",
+      "title": "Part II · Bio-electromagnetics",
+      "source": "docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_VALETPRU_BIOELECTROMAGNETIC_2026-05-11.md",
+      "overallScore": 0.882,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "ec119292912b80a3",
+      "updated": "2026-06-07T18:29:00.401Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "jj-snap-ofc",
+      "title": "JJ Snap · OFC whitepaper",
+      "source": "docs/JJ_SNAP_OFC_WHITEPAPER.md",
+      "overallScore": 0.871,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "d9046342ca39963b",
+      "updated": "2026-06-07T18:29:00.393Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "turner-bison-herd-report",
+      "title": "Passive No-GPS-Collar Bison Herd Management · Turner Enterprise · HHA-NSPFRNP-ANCHOR-2026-05-25",
+      "source": "docs/TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md",
+      "overallScore": 0.871,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "2c1708322dc55e13",
+      "updated": "2026-06-07T18:29:00.453Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-peff-part1",
+      "title": "Part I · PEFF / Omnizoan",
+      "source": "docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_OMNIZOAN_INFILL13_2026-05-11.md",
+      "overallScore": 0.859,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "9a957fe8986de935",
+      "updated": "2026-06-07T18:29:00.397Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-aromatic-qed-cavity",
+      "title": "Multi-Scale Paradigm of Aromatic Structures · QED cavity model, VECROs, and Digital PRU platforms",
+      "source": "docs/DIGITAL_PRU_MULTI_SCALE_AROMATIC_QED_CAVITY_2026-05-24.md",
+      "overallScore": 0.847,
+      "convergence": {
+        "status": "soft_pass",
+        "reason": "soft_structural"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "367f93275b575a17",
+      "updated": "2026-06-07T18:29:00.445Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "goldilocks-prime-linear-compression-2026",
+      "title": "Prime-Linear Compression Transform · Non-Linear Coordinate Systems in Goldilocks Game Mathematics",
+      "source": "docs/GOLDILOCKS_PRIME_LINEAR_COMPRESSION_TRANSFORM_2026-06.md",
+      "overallScore": 0.847,
+      "convergence": {
+        "status": "soft_pass",
+        "reason": "soft_structural"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "91408c38ed368722",
+      "updated": "2026-06-07T18:29:00.551Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-intelligence-density-2026",
+      "title": "Simulation Audit · Comparative Intelligence Density Metrics · Volumetric Hyper-Packing",
+      "source": "docs/SYNTHEVERSE_OBSERVATORY_INTELLIGENCE_DENSITY_VOLUMETRIC_2026-06.md",
+      "overallScore": 0.847,
+      "convergence": {
+        "status": "soft_pass",
+        "reason": "soft_structural"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "b412bc64861e6a2e",
+      "updated": "2026-06-07T18:29:00.558Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "ops-egs-btc-mining",
+      "title": "EGS legal sovereign mining · OPS-EGS-BTC-2026-008",
+      "source": "docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md",
+      "overallScore": 0.845,
+      "convergence": {
+        "status": "soft_pass",
+        "reason": "soft_structural"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "b0096ca4efd9c71e",
+      "updated": "2026-06-07T18:29:00.436Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-synthobs-mca-2026",
+      "title": "Digital Pru · Syntheverse Observatory MCA Synthesis · Hex-Organ index",
+      "source": "docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md",
+      "overallScore": 0.845,
+      "convergence": {
+        "status": "soft_pass",
+        "reason": "soft_structural"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "4e73ffc944102881",
+      "updated": "2026-06-07T18:29:00.566Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "coherence-plain-speak",
+      "title": "Coherence · plain speak · what's real · HONESTY-COHERENCE-2026-009",
+      "source": "docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md",
+      "overallScore": 0.811,
+      "convergence": {
+        "status": "soft_pass",
+        "reason": "soft_structural"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "19a634c45ec9923f",
+      "updated": "2026-06-07T18:29:00.439Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    }
+  ]
+}

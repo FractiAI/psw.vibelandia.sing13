@@ -162,3 +162,16 @@ The **Terminal Edge** is the **narrative end-state** where holographic awareness
 25. Sun / aurora popularizations — Daily Galaxy: https://dailygalaxy.com/2026/05/sun-solar-flare-northern-lights-this-week/ · PRM Ukraine EN: https://prm.ua/en/the-earth-will-be-covered-by-a-strong-magnetic-storm-what-are-the-dates/
 
 *Access notes: May 12, 2026, per source thread; verify live URLs before citation-lock for external publication.*
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** DP-ROADMAP-13  
+**Registry ID:** `dp-roadmap-13`  
+**Re-audit:** `npm run audit:paper -- --id=dp-roadmap-13`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

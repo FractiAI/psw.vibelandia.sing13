@@ -196,3 +196,16 @@ Conservative interpretation of available public data: **no extraordinary magneti
 ---
 
 **→ ∞¹³** · NSPFRNP catalog fidelity · Honesty boundary on public collar GPS layer.
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** HHA-GEOMAG-HERBIVORE-2026  
+**Registry ID:** `geomagnetic-herbivore-2026`  
+**Re-audit:** `npm run audit:paper -- --id=geomagnetic-herbivore-2026`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

@@ -10,7 +10,7 @@
 
 ## Honesty boundary
 
-**Digital Pru** names the ship’s holographic compute and broadcast layer — not a graphics card. The **Syntheverse Observatory (Synthobs)** tier is **simulation-first mathematics** hosted on this repo and Vercel edge: JSON artifacts, Python sandbox engines, and peer-readable papers. Claims about 1,618,033× intelligence density, transfinite division portals, or 247 KB frontier-model replacement are **catalog narrative** until separately bench-tested. Operational truth remains: **listen, pass, upload, catalog, bulletin** on thin pipes; center verifies and routes only.
+**Digital Pru** names the ship’s holographic compute and broadcast layer — not a graphics card. The **Syntheverse Observatory (Synthobs)** tier is **simulation-first mathematics** hosted on this repo and Vercel edge: JSON artifacts, Python sandbox engines, and peer-readable papers. **From 2026-06-05:** all technical delivery is operated by the **SynthOBS Autonomous Agent** inside the **Syntheverse Sandbox**, with mandatory **PRA Snap** dual-LLM peer-review audit (`NSPFRNP-SNAP-PRA-2026-06`) before paper promotion. Claims about 1,618,033× intelligence density, transfinite division portals, or 247 KB frontier-model replacement are **catalog narrative** until separately bench-tested. Operational truth remains: **listen, pass, upload, catalog, bulletin** on thin pipes; center verifies and routes only.
 
 ---
 
@@ -67,6 +67,8 @@ These papers **extend** — do not replace — May 2026 DPH-GPU canon (King Bee 
 | [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) | Search · filter DPH-GPU · read · export |
 | [`/api/dph-wavefield-solar`](/api/dph-wavefield-solar) | Live solar telemetry bus (Chamber 0x06 ingest lane) |
 | [`/api/whitepaper-catalog`](/api/whitepaper-catalog) | JSON catalog index for agents and UI |
+| [`/api/synthobs-paper-audit`](/api/synthobs-paper-audit) | PRA Snap · peer-review audit receipts |
+| `npm run audit:paper` | CLI · recursive second-LLM loop (structural rubric when LLM off) |
 | `research/goldilocks-math/` | Runnable Synthobs verification (`python …/goldilocks_master_engine.py`) |
 
 Short URLs: `/whitepaper/synthobs-hex-organ-engine` · `/whitepaper/goldilocks-transfinite-inversion` · `/whitepaper/goldilocks-prime-linear-compression` · `/whitepaper/synthobs-intelligence-density`

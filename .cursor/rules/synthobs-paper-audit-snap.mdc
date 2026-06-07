@@ -1,0 +1,38 @@
+---
+description: NSPFRNP PRA Snap — dual-LLM peer-review audit + SynthOBS agent attribution for all technical papers
+globs: docs/**/*.md,protocols/**/*.md,research/**/*.md,research/**/*.py,lib/**/*.mjs,api/**/*.js
+alwaysApply: true
+---
+
+# NSPFRNP Snap · Peer-Review Audit (PRA) · SynthOBS Agent
+
+## Operator identity (mandatory)
+
+All **technical work**, **whitepapers**, **research pipelines**, and **support copy** in this repo are attributed to the **SynthOBS Autonomous Agent** operating in the **Syntheverse Sandbox** (`research/synthobs-sandbox/`). Human Player 1 retains editorial veto.
+
+## Before publishing or registering any technical paper
+
+1. Include **Honesty boundary** and **Document ID** sections.
+2. Include **SynthOBS Autonomous Agent · Syntheverse Sandbox** operator line.
+3. Run peer-review audit:
+   - `npm run audit:paper -- --id=<registryId>` OR `--path=docs/<file>.md`
+4. Do not feature on bulletin / set `featured: true` until audit receipt shows `pass` or `soft_pass` (or document why structural-only is acceptable).
+
+## PRA Snap loop (no infinite spin)
+
+- **Reviewer** = second LLM lane (when `SYNTHOBS_AUDIT_LLM_ENABLED=1` + `OPENAI_API_KEY`).
+- **Max iterations:** 6 (default). **Plateau:** 2 rounds with score delta < 0.02.
+- **Pass bar:** 0.85 overall, zero critical blockers.
+- Receipts: `data/synthobs-paper-audits/{paperId}.json`
+- Protocol: `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
+
+## When editing papers
+
+- Keep claims proportionate; use tier tables (narrative vs empirical vs operational).
+- Cross-link `coherence-plain-speak` honesty doc when making strong claims.
+- Register new papers in `lib/whitepaper-registry.mjs` and run audit before push.
+
+## API
+
+- `GET /api/synthobs-paper-audit?id=<paperId>` — receipt
+- `POST /api/synthobs-paper-audit` body `{ "id": "<paperId>" }` — run audit

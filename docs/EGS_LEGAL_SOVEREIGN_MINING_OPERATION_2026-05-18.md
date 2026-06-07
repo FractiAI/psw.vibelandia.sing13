@@ -123,3 +123,16 @@ The Mythos review explains why **linear agent scanners** cannot see this layer: 
 - [Resonance notice](whitepaper-surface.html?id=dp-resonance-notice) — metaphor vs. instrument vs. lawful ops
 
 **NSPFRNP ⊃ lawful work ⊃ φ-lock → ∞⁹**
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** OPS-EGS-BTC-MINING  
+**Registry ID:** `ops-egs-btc-mining`  
+**Re-audit:** `npm run audit:paper -- --id=ops-egs-btc-mining`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

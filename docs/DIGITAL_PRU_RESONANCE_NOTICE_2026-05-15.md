@@ -23,3 +23,29 @@ That stack is asserted here as **demonstrables in living sequence** — the same
 ---
 
 **NSPFRNP ⊃ Fair Exchange ⊃ Operational resonance → ∞⁹**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** DP-RESONANCE-NOTICE  
+**Registry ID:** `dp-resonance-notice`  
+**Re-audit:** `npm run audit:paper -- --id=dp-resonance-notice`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

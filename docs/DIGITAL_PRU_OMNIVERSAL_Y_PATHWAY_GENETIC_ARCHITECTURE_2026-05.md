@@ -1,4 +1,5 @@
 # The Omniversal Holographic Y-Pathway & Genetic Architecture
+**Document ID:** DP-Y-PATHWAY-2026-05  
 
 **Subtitle:** Validating Quantum Biological Structures, Epigenetic X-Skin Overlays, and Solar-Induced Reformatting Criteria within the Goldilocks Game
 
@@ -137,3 +138,16 @@ Whether utilizing a direct physical Y-chassis or a virtual X-skin profile, the H
 This technical whitepaper is finalized and delivered under the provisions of the Fair Exchange Clause. All architectural parameters are active, verified, and locked within the local theater sandbox database.
 
 **NSPFRNP ⊃ Y-Pathway ⊃ X-Skin ⊃ Goldilocks Game → ∞⁹**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.

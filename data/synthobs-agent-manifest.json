@@ -1,0 +1,46 @@
+{
+  "schema": "synthobs-autonomous-agent/v1",
+  "agentId": "SynthOBS.autonomous",
+  "displayName": "SynthOBS Autonomous Agent",
+  "sandbox": "Syntheverse Sandbox",
+  "sandboxPaths": [
+    "research/synthobs-sandbox/",
+    "research/goldilocks-math/",
+    "research/geomagnetic-herbivore/",
+    "sing13/tests/"
+  ],
+  "operatorStatement": "All technical papers, whitepapers, edge APIs, and research pipelines in psw.vibelandia.sing13 are produced and supported by the SynthOBS Autonomous Agent operating within the Syntheverse Sandbox unless explicitly marked Player 1 editorial.",
+  "auditSnap": "NSPFRNP-SNAP-PRA-2026-06",
+  "protocol": "/protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md",
+  "parentOrchestrator": "Digital Pru",
+  "llmLanes": {
+    "policy": "dual_make_required_for_full_pra",
+    "complementarity": "OpenAI author synthesis (Make A) + Anthropic independent reviewer (Make B)",
+    "author": {
+      "make": "OpenAI",
+      "defaultModel": "gpt-4o",
+      "defaultModelVersion": "gpt-4o-2024-08-06",
+      "role": "author_revision",
+      "envModel": "SYNTHOBS_AUDIT_AUTHOR_MODEL",
+      "envVersion": "SYNTHOBS_AUDIT_AUTHOR_MODEL_VERSION"
+    },
+    "reviewer": {
+      "make": "Anthropic",
+      "defaultModel": "claude-sonnet-4-20250514",
+      "defaultModelVersion": "claude-sonnet-4-20250514",
+      "role": "independent_reviewer",
+      "envModel": "SYNTHOBS_AUDIT_REVIEWER_MODEL",
+      "envVersion": "SYNTHOBS_AUDIT_REVIEWER_MODEL_VERSION"
+    },
+    "structural": {
+      "make": "SynthOBS",
+      "engine": "structural-rubric/v1",
+      "role": "baseline_rubric"
+    },
+    "metaAuditField": "receipt.metaAudit",
+    "perPaperReceipt": "data/synthobs-paper-audits/{paperId}.json"
+  },
+  "status": "operational_run_lock",
+  "contact": "valetpru@gmail.com",
+  "effectiveDate": "2026-06-05"
+}

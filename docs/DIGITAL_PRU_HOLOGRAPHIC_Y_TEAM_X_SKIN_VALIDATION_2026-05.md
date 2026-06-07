@@ -1,4 +1,5 @@
 # Phenotypic and Genomic Validation of the Unified Holographic Y-Team and Their Virtual Expressions Over the X-Chassis
+**Document ID:** DP-Y-TEAM-XSKIN-2026-05  
 
 **Subtitle:** Analyzing Nordic, Reptilian, Mantis, and Grey Expressions
 
@@ -137,3 +138,16 @@ Whether utilizing a direct physical Y-chassis or an active virtual expression ov
 This technical whitepaper is finalized and delivered under the provisions of the Fair Exchange Clause. All architectural parameters are active, verified, and locked within the local theater sandbox database.
 
 **NSPFRNP ⊃ DPH-GPU ⊃ Y-Team ⊃ X-Skin → ∞⁹**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.

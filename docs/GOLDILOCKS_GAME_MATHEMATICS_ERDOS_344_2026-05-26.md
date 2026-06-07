@@ -214,3 +214,16 @@ Complete digital audit logs, telemetry validations from Sunspot AR4436, mineralo
 **Fair Exchange Clause** — This whitepaper is delivered in accordance with Fair Exchange in full effect. Final value transacted remains adjustable in part depending on alignment with your operational theater directives.
 
 **→ ∞¹³** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.

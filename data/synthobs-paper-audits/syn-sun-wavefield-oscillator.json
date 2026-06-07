@@ -1,0 +1,139 @@
+{
+  "schema": "synthobs-paper-audit/v1",
+  "snapId": "NSPFRNP-SNAP-PRA-2026-06",
+  "auditId": "c402f48e2f230567",
+  "paperId": "syn-sun-wavefield-oscillator",
+  "sourcePath": "docs/DPH_GPU_WAVEFIELD_OSCILLATOR_SOLAR_MODEL_SYN-SUN-2026-REV7.md",
+  "operator": "SynthOBS Autonomous Agent",
+  "sandbox": "Syntheverse Sandbox",
+  "mode": "structural_only",
+  "metaAudit": {
+    "schema": "synthobs-meta-audit/v1",
+    "dualMakePolicy": "OpenAI author (Make A) + Anthropic reviewer (Make B)",
+    "dualMakeConfirmed": false,
+    "complementarity": "OpenAI author synthesis (Make A) + Anthropic independent reviewer (Make B) — distinct training families reduce shared blind spots",
+    "lanesPlanned": {
+      "author": {
+        "make": "OpenAI",
+        "model": "gpt-4o",
+        "modelVersion": "gpt-4o-2024-08-06",
+        "role": "author_revision"
+      },
+      "reviewer": {
+        "make": "Anthropic",
+        "model": "claude-sonnet-4-20250514",
+        "modelVersion": "claude-sonnet-4-20250514",
+        "role": "independent_reviewer"
+      },
+      "structural": {
+        "make": "SynthOBS",
+        "provider": "deterministic",
+        "engine": "structural-rubric/v1",
+        "role": "baseline_rubric",
+        "rationale": "Always-on deterministic rubric — fails closed on missing honesty/doc ID/attribution"
+      }
+    },
+    "mode": "structural_only",
+    "keysPresent": {
+      "openai": false,
+      "anthropic": false
+    },
+    "iterationLogs": [
+      {
+        "iteration": 1,
+        "structural": {
+          "engine": "structural-rubric/v1",
+          "invokedAt": "2026-06-07T18:29:00.495Z"
+        }
+      }
+    ],
+    "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
+  },
+  "startedAt": "2026-06-07T18:29:00.493Z",
+  "completedAt": "2026-06-07T18:29:00.495Z",
+  "iterations": 1,
+  "overallScore": 0.941,
+  "passThreshold": 0.85,
+  "convergence": {
+    "status": "pass",
+    "reason": "threshold_met"
+  },
+  "rubric": {
+    "honestyBoundary": {
+      "weight": 0.15,
+      "label": "Honesty boundary"
+    },
+    "methodsRepro": {
+      "weight": 0.15,
+      "label": "Methods / reproducibility"
+    },
+    "claimsProportionate": {
+      "weight": 0.15,
+      "label": "Claims proportionate to evidence"
+    },
+    "structure": {
+      "weight": 0.12,
+      "label": "Structure (IMRaD-like)"
+    },
+    "references": {
+      "weight": 0.1,
+      "label": "References / citations"
+    },
+    "abstractTitle": {
+      "weight": 0.08,
+      "label": "Title & abstract metadata"
+    },
+    "synthobsAttribution": {
+      "weight": 0.1,
+      "label": "SynthOBS agent attribution"
+    },
+    "technicalPrecision": {
+      "weight": 0.15,
+      "label": "Technical precision"
+    }
+  },
+  "history": [
+    {
+      "iteration": 1,
+      "overallScore": 0.941,
+      "criticalBlockers": [],
+      "scores": {
+        "honestyBoundary": 1,
+        "methodsRepro": 1,
+        "claimsProportionate": 1,
+        "structure": 0.95,
+        "references": 0.7,
+        "abstractTitle": 1,
+        "synthobsAttribution": 1,
+        "technicalPrecision": 0.85
+      }
+    }
+  ],
+  "final": {
+    "mode": "structural",
+    "scores": {
+      "honestyBoundary": 1,
+      "methodsRepro": 1,
+      "claimsProportionate": 1,
+      "structure": 0.95,
+      "references": 0.7,
+      "abstractTitle": 1,
+      "synthobsAttribution": 1,
+      "technicalPrecision": 0.85
+    },
+    "overallScore": 0.941,
+    "criticalBlockers": [],
+    "suggestions": [],
+    "meta": {
+      "wordCount": 3098,
+      "overclaims": [],
+      "refs": {
+        "hasRefsSection": false,
+        "links": 9,
+        "numbered": 0,
+        "citeLines": 2
+      }
+    }
+  },
+  "honestyNote": "Structural rubric only — full dual-make requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
+}

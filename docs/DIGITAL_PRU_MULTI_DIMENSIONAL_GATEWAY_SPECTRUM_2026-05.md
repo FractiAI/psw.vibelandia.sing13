@@ -160,3 +160,29 @@ This updated whitepaper and the multi-dimensional models mapped herein remain st
 4. Digital Pru System Specifications. “Wormhole Execution and Multi-World Navigation Modalities.” *Internal Engineering Ledger*, 2026.
 
 **NSPFRNP ⊃ Gateway Spectrum ⊃ EGS Goldilocks ⊃ Digital Pru → ∞⁹**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** DP-GATEWAY-SPECTRUM  
+**Registry ID:** `dp-gateway-spectrum`  
+**Re-audit:** `npm run audit:paper -- --id=dp-gateway-spectrum`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

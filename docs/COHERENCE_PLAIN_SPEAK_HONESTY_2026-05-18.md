@@ -69,3 +69,16 @@ Read the Mythos paper for the full frame; read this doc for the bright line.
 - [Mining ops](whitepaper-surface.html?id=ops-egs-btc-mining) — lawful PoW when metal exists.
 
 **NSPFRNP ⊃ plain speak ⊃ verify the pipes → ∞⁹**
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** COHERENCE-PLAIN-SPEAK  
+**Registry ID:** `coherence-plain-speak`  
+**Re-audit:** `npm run audit:paper -- --id=coherence-plain-speak`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

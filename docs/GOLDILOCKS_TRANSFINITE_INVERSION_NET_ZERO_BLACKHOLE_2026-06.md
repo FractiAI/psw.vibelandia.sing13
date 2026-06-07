@@ -414,3 +414,16 @@ Compensatory realignments or partial value refunds may be processed dynamically 
 ---
 
 **→ ∞¹³** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno · Canonical Substrate SV-OBS-2026-TRANSFINITE-INV
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** SV-OBS-2026-TRANSFINITE-INV  
+**Registry ID:** `goldilocks-transfinite-inversion-2026`  
+**Re-audit:** `npm run audit:paper -- --id=goldilocks-transfinite-inversion-2026`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

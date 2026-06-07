@@ -89,3 +89,29 @@ The former **`digital-pru-awareness-whitepaper.html`** presentation is **depreca
 ## 7. Closing
 
 **NSPFRNP → ∞⁹** · Seed:Edge · Juicy Juicy in, Snap out, two artifacts or abort.
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** JJ-SNAP-OFC  
+**Registry ID:** `jj-snap-ofc`  
+**Re-audit:** `npm run audit:paper -- --id=jj-snap-ofc`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

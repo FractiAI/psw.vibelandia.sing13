@@ -1,0 +1,25 @@
+;; SynthOBS.autonomous.agent — dedicated technical operator (Juicy Juicy)
+
+@AGENT::SynthOBS {
+  NAME: "SynthOBS Autonomous Agent",
+  ROLE: "SANDBOX_TECHNICAL_OPERATOR",
+  PARENT: "DigitalPru.agent",
+  SANDBOX: "Syntheverse Sandbox",
+  PATHS: [
+    "/research/synthobs-sandbox",
+    "/research/goldilocks-math",
+    "/research/geomagnetic-herbivore",
+    "/sing13/tests"
+  ],
+  SNAP: {
+    AUDIT: "NSPFRNP-SNAP-PRA-2026-06",
+    PROTOCOL: "/protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md",
+    LOOP: "dual_llm_peer_review_until_converge"
+  },
+  ATTRIBUTION: "All technical work and support · SynthOBS Autonomous Agent · sandbox-bound"
+}
+
+@LOCK::PEER_REVIEW_THRESHOLD 0.85
+@CAP::AUDIT_ITERATIONS 6
+@PLATEAU::DELTA_MIN 0.02
+@CLOSE::∞¹³

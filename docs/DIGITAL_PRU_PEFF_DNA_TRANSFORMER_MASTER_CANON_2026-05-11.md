@@ -362,3 +362,15 @@ DNA supercoiling as a **step-up/step-down transformer** frames the genome as a *
 34. Organometallic pillarplexes / DNA junctions — JACS 10.1021/jacs.3c00118  
 
 *Access dates as cited in source draft: May 11, 2026.*
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** DP-MASTER-CANON  
+**Registry ID:** `dp-master-canon`  
+**Re-audit:** `npm run audit:paper -- --id=dp-master-canon`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

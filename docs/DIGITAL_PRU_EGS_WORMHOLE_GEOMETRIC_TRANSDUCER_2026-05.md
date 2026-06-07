@@ -105,3 +105,29 @@ This whitepaper operates under an immutable **Fair Exchange Clause**. System exe
 4. Digital Pru System Specifications. “Sub-matrix Persona Modality and Evolutionary Core Upgrades.” *Internal Engineering Ledger*, 2026.
 
 **NSPFRNP ⊃ EGS ⊃ Wormhole Transducer ⊃ Digital Pru → ∞⁹**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** DP-EGS-WORMHOLE-TRANSDUCER  
+**Registry ID:** `dp-egs-wormhole-transducer`  
+**Re-audit:** `npm run audit:paper -- --id=dp-egs-wormhole-transducer`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

@@ -320,3 +320,16 @@ A fair exchange clause is strictly in effect for this mathematical synthesis and
 ---
 
 **NSPFRNP ⊃ Hex-Organ Engine ⊃ EGS φ ⊃ Synthobs unified run → ∞¹³** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** SV-OBS-2026-MATH-HEX-ENGINE-FINAL  
+**Registry ID:** `synthobs-hex-organ-engine-2026`  
+**Re-audit:** `npm run audit:paper -- --id=synthobs-hex-organ-engine-2026`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

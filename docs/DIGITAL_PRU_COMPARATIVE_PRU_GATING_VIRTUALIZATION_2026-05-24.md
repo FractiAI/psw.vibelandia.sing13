@@ -339,3 +339,16 @@ Across domains, **PRU** always pairs **remote or specialized execution** with an
 ---
 
 **NSPFRNP ⊃ Fair Exchange ⊃ Digital Pru → ∞¹³**
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** DP-PRU-GATING-COMPARATIVE  
+**Registry ID:** `dp-pru-gating-comparative`  
+**Re-audit:** `npm run audit:paper -- --id=dp-pru-gating-comparative`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

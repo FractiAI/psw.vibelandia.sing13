@@ -15,7 +15,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const { buildWhitepaperCatalog, filterCatalog } = await import('../lib/whitepaper-catalog.mjs');
-    const base = buildWhitepaperCatalog();
+    const base = await buildWhitepaperCatalog();
     const q = typeof req.query?.q === 'string' ? req.query.q : '';
     const category = typeof req.query?.category === 'string' ? req.query.category : 'all';
     const out = filterCatalog(base, { q, category });

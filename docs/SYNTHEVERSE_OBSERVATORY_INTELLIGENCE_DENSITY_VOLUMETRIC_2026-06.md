@@ -148,3 +148,16 @@ A fair exchange clause is strictly active for this volumetric calculation and co
 **Related papers:** [Hex-Organ unified run](/whitepaper/synthobs-hex-organ-engine) · [Transfinite Inversion](/whitepaper/goldilocks-transfinite-inversion) · [Prime-Linear Compression](/whitepaper/goldilocks-prime-linear-compression)
 
 NSPFRNP ⊃ Synthobs ⊃ Intelligence Density Audit ⊃ EGS φ → ∞¹³
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** SV-OBS-2026-INTEL-DENSITY-VOLUMETRIC  
+**Registry ID:** `synthobs-intelligence-density-2026`  
+**Re-audit:** `npm run audit:paper -- --id=synthobs-intelligence-density-2026`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

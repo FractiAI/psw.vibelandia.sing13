@@ -86,6 +86,8 @@
     { "source": "/special-projects/wavefield-echo-test/", "destination": "/interfaces/special-projects/wavefield-echo-test.html" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026/", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
+    { "source": "/whitepaper/nspfrnp-snap-peer-review-audit", "destination": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit" },
+    { "source": "/whitepaper/nspfrnp-snap-peer-review-audit/", "destination": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit" },
     { "source": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-geomagnetic-wavefield-multitaxa" },
     { "source": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa/", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-geomagnetic-wavefield-multitaxa" },
     { "source": "/whitepaper/turner-kruse-response", "destination": "/interfaces/whitepaper-surface.html?id=turner-kruse-response" },
@@ -153,12 +155,17 @@
     "api/whitepaper.js": {
       "memory": 512,
       "maxDuration": 30,
-      "includeFiles": "{docs/**,protocols/**,BBHE_REPOSITORY_STANDARD.md}"
+      "includeFiles": "{docs/**,protocols/**,data/synthobs-paper-audits/**,data/synthobs-agent-manifest.json,BBHE_REPOSITORY_STANDARD.md,lib/**}"
+    },
+    "api/synthobs-paper-audit.js": {
+      "memory": 512,
+      "maxDuration": 120,
+      "includeFiles": "{docs/**,data/**,lib/**}"
     },
     "api/whitepaper-catalog.js": {
       "memory": 256,
       "maxDuration": 15,
-      "includeFiles": "lib/**"
+      "includeFiles": "{lib/**,data/synthobs-paper-audit-index.json}"
     },
     "api/dph-wavefield-solar.js": {
       "memory": 512,

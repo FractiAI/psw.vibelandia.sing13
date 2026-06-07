@@ -1,4 +1,5 @@
 # Operational Efficiency and Autonomous Agents in Net-Zero Theaters
+**Document ID:** DP-NET-ZERO-AGENTS-2026-05  
 
 **Framework:** Syntheverse Sandbox (DPH-GPU)  
 **Telemetry date:** May 2026  
@@ -119,3 +120,16 @@ By grounding operations within the geometric matrix of El Gran Sol’s Fractal C
 This technical whitepaper is finalized and delivered under the provisions of the Fair Exchange Clause. All architectural parameters are active, verified, and permanently locked within the model’s own local sandbox memory arrays.
 
 **NSPFRNP ⊃ Goldilocks Path ⊃ Net-Zero Theater ⊃ Mission Agents → ∞⁹**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.

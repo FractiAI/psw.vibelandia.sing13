@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#060b15" />
   <title>Technical papers · SS Vibelandia catalog</title>
-  <meta name="description" content="Search, read, and export SS Vibelandia technical whitepapers — DPH-GPU, HHF, Coherence, Erdős, Digital Pru, agentic layer." />
+  <meta name="description" content="Search, read, and export SS Vibelandia technical whitepapers — PRA Snap audited · SynthOBS Autonomous Agent · Syntheverse Sandbox." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-catalog.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -216,9 +216,9 @@
     <p class="deck-eyebrow">Repository · search · read · export</p>
     <h1 class="deck-h1">Technical papers catalog</h1>
     <p class="deck-lead">
-      One index for <strong>Digital Pru</strong> and <strong>DPH-GPU</strong>, <strong>Synthobs Hex-Organ</strong>, <strong>HHF</strong>, <strong>Coherence / BTC Buffalo</strong>,
-      <strong>Erdős</strong>, and the <strong>agentic layer</strong> —
-      including the May 31 <strong>King Bee sandbox report</strong>, June <strong>Hex-Organ mathematics</strong>, and June 1 <strong>omniversal node alignment</strong> sweep
+      Operated by <strong>SynthOBS Autonomous Agent</strong> · <strong>Syntheverse Sandbox</strong>.
+      All technical papers pass <strong>NSPFRNP PRA Snap</strong> peer-review audit (receipt scores shown per card).
+      Index spans <strong>Digital Pru</strong>, <strong>DPH-GPU</strong>, <strong>Synthobs Hex-Organ</strong>, <strong>HHF</strong>, <strong>Coherence</strong>, <strong>Erdős</strong>, and <strong>special projects</strong>
       (repo anchor <strong>FractiAI/psw.vibelandia.sing13</strong>).
     </p>
 
@@ -283,7 +283,9 @@
 
       function renderGrid() {
         var items = filteredItems();
-        metaEl.textContent = items.length + ' of ' + allItems.length + ' entries · tap to read · use reader Save as PDF for export';
+        var sum = window._auditSummary;
+        var sumLine = sum ? ' · PRA Snap: ' + sum.pass + ' pass, ' + sum.softPass + ' soft pass' : '';
+        metaEl.textContent = items.length + ' of ' + allItems.length + ' entries' + sumLine + ' · SynthOBS Autonomous Agent · tap to read';
         if (!items.length) {
           gridEl.innerHTML = '<li class="cat-empty">No matches — try another search or category.</li>';
           return;
@@ -292,7 +294,12 @@
           var pillClass = it.featured ? 'cat-card__pill cat-card__pill--featured' : 'cat-card__pill';
           var pillLabel = it.type === 'whitepaper' ? 'Whitepaper' : it.type;
           if (it.featured && it.type === 'whitepaper') pillLabel = 'Featured · Whitepaper';
-          var sub = [it.docId, it.published, categoryLabel(it.category)].filter(Boolean).join(' · ');
+          var auditBit = '';
+          if (it.audit && it.audit.overallScore != null) {
+            var pct = Math.round(it.audit.overallScore * 100);
+            auditBit = 'PRA ' + pct + '% · ' + (it.audit.status || '—');
+          }
+          var sub = [it.docId, it.published, categoryLabel(it.category), auditBit].filter(Boolean).join(' · ');
           var tags = (it.tags || []).slice(0, 4).map(function (t) {
             return '<span class="cat-tag">' + t + '</span>';
           }).join('');
@@ -321,6 +328,7 @@
           if (!data.ok) throw new Error('catalog load failed');
           categories = data.categories || [{ id: 'all', label: 'All papers' }];
           allItems = data.items || [];
+          window._auditSummary = data.auditSummary || null;
           renderFilters();
           renderGrid();
         })

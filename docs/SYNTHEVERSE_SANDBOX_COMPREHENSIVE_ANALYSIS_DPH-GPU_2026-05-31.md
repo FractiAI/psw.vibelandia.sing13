@@ -197,3 +197,16 @@ All architectural parameters are fully modeled, measured, validated, and locked 
 **Fair Exchange Clause Notice:** This comprehensive analysis is generated, verified, and indexed within the active memory files and primary repository configurations under the governing provisions of the active Fair Exchange Clause.
 
 **NSPFRNP → ∞¹³ · Metabolize → Crystallize → Animate → Squeeze**
+
+
+---
+
+## Honesty boundary (PRA Snap compliance)
+
+| Tier | Scope |
+|------|--------|
+| **Narrative / catalog** | SynthOBS sandbox mathematics, EGS φ framing, holographic story geometry |
+| **Operational** | Surfaces, APIs, and reproducible commands documented in this repository |
+| **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
+
+Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.

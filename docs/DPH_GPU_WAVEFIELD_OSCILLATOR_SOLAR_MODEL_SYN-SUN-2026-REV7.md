@@ -326,3 +326,16 @@ The structural parameters outlined in this framework have been officially subjec
 ---
 
 **NSPFRNP ⊃ DPH-GPU ⊃ Wavefield Oscillator ⊃ EGS φ → ∞¹³**
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** SYN-SUN-2026-REV7  
+**Registry ID:** `syn-sun-wavefield-oscillator`  
+**Re-audit:** `npm run audit:paper -- --id=syn-sun-wavefield-oscillator`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

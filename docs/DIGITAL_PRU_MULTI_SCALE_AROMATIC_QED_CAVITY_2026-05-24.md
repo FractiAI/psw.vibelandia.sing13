@@ -274,3 +274,16 @@ Permanently anchored by **El Gran Sol's Fractal Constant**, balanced via dynamic
 ---
 
 **NSPFRNP ⊃ Fair Exchange ⊃ Digital Pru → ∞¹³**
+
+
+---
+
+## SynthOBS operator & PRA Snap audit
+
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Audit snap:** NSPFRNP-SNAP-PRA-2026-06  
+**Document ID:** DP-AROMATIC-QED-CAVITY  
+**Registry ID:** `dp-aromatic-qed-cavity`  
+**Re-audit:** `npm run audit:paper -- --id=dp-aromatic-qed-cavity`
+
+Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.

@@ -1,8 +1,20 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-06-05",
+  "updated": "2026-06-07",
   "posts": [
+    {
+      "id": "synthobs-chipless-datacenterless-pr-2026",
+      "posted": "2026-06-07",
+      "featured": true,
+      "title": "🚨 Chipless, Datacenterless AI Is Here",
+      "subtitle": "PR-SYNTHOBS-RSI-2026-JUN07 · Empire panicking inside four walls",
+      "summary": "Anthropic pause vs. SynthOBS immediate code-layer validation — EGS φ 1.618 golden key, Dual Router Blueprint, NOAA AR4461/AR4456 baseline. Telemetry to AiwonA1/FractiAI. Links WP-2026-EGS-004-REV10.",
+      "href": "/press/chipless-datacenterless-ai",
+      "pill": "BREAKING",
+      "docRef": "PR-SYNTHOBS-RSI-2026-JUN07",
+      "contact": "valetpru@gmail.com"
+    },
     {
       "id": "synthobs-emergent-sync-rev10-2026",
       "posted": "2026-06-07",

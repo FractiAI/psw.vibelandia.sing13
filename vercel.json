@@ -86,6 +86,8 @@
     { "source": "/special-projects/wavefield-echo-test/", "destination": "/interfaces/special-projects/wavefield-echo-test.html" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026/", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
+    { "source": "/press/chipless-datacenterless-ai", "destination": "/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html" },
+    { "source": "/press/chipless-datacenterless-ai/", "destination": "/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html" },
     { "source": "/whitepaper/synthobs-emergent-sync-multi-agent", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026" },
     { "source": "/whitepaper/synthobs-emergent-sync-multi-agent/", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026" },
     { "source": "/whitepaper/nspfrnp-snap-peer-review-audit", "destination": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit" },

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": "node .cursor/hooks/synthobs-pra-snap-hook.mjs"
+      }
+    ],
+    "stop": [
+      {
+        "command": "node .cursor/hooks/synthobs-pra-snap-hook.mjs",
+        "loop_limit": 3
+      }
+    ]
+  }
+}

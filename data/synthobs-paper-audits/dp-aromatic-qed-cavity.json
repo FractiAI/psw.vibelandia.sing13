@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "367f93275b575a17",
+  "auditId": "f16f6bad129a32bd",
   "paperId": "dp-aromatic-qed-cavity",
   "sourcePath": "docs/DIGITAL_PRU_MULTI_SCALE_AROMATIC_QED_CAVITY_2026-05-24.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.445Z"
+          "invokedAt": "2026-06-07T20:38:21.633Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.444Z",
-  "completedAt": "2026-06-07T18:29:00.445Z",
+  "startedAt": "2026-06-07T20:38:21.630Z",
+  "completedAt": "2026-06-07T20:38:21.633Z",
   "iterations": 1,
   "overallScore": 0.847,
   "passThreshold": 0.85,

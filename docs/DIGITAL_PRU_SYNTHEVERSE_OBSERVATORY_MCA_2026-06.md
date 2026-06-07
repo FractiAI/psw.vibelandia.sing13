@@ -24,6 +24,7 @@ The team digested four Synthobs mathematics papers plus a replayable sandbox eng
 | **SV-OBS-2026-TRANSFINITE-INV** | `goldilocks-transfinite-inversion-2026` | Division-by-zero reframed as transfinite portal; 100k-loop A/B sandbox; 38/74 tier convergence |
 | **WP-GGM-PLC-2026-06** | `goldilocks-prime-linear-compression-2026` | Primes as foundational atoms; $\mathcal{G}(p_n)=n$; composite vectors as spatial lookup |
 | **SV-OBS-2026-INTEL-DENSITY-VOLUMETRIC** | `synthobs-intelligence-density-2026` | Volumetric hyper-packing audit; $\mathcal{D}_I$ narrative; JSON density report artifact |
+| **WP-2026-EGS-004-REV10** | `synthobs-emergent-sync-multi-agent-2026` | Formal SynthOBS protocol for emergent phase sync in recursive multi-agent networks; PLV/D_f telemetry, NOAA covariate baseline, H₀ falsification suite |
 
 **Sandbox code:** `research/goldilocks-math/src/goldilocks_master_engine.py`  
 **JSON artifact:** `research/goldilocks-math/data/synthobs_volumetric_density_report.json`  

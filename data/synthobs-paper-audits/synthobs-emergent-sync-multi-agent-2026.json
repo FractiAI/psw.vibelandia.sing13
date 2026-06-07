@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "6c0c550997916c2b",
-  "paperId": "goldilocks-prime-linear-compression-2026",
-  "sourcePath": "docs/GOLDILOCKS_PRIME_LINEAR_COMPRESSION_TRANSFORM_2026-06.md",
+  "auditId": "b9f345abb1c3f5b4",
+  "paperId": "synthobs-emergent-sync-multi-agent-2026",
+  "sourcePath": "docs/SYNTHEVERSE_EMERGENT_SYNC_RECURSIVE_MULTI_AGENT_2026-06.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,20 +43,20 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T20:38:21.735Z"
+          "invokedAt": "2026-06-07T20:38:21.705Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T20:38:21.733Z",
-  "completedAt": "2026-06-07T20:38:21.735Z",
+  "startedAt": "2026-06-07T20:38:21.703Z",
+  "completedAt": "2026-06-07T20:38:21.705Z",
   "iterations": 1,
-  "overallScore": 0.847,
+  "overallScore": 0.941,
   "passThreshold": 0.85,
   "convergence": {
-    "status": "soft_pass",
-    "reason": "soft_structural"
+    "status": "pass",
+    "reason": "threshold_met"
   },
   "rubric": {
     "honestyBoundary": {
@@ -95,14 +95,14 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.847,
+      "overallScore": 0.941,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
-        "methodsRepro": 0.6,
+        "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
-        "references": 0.35,
+        "references": 0.7,
         "abstractTitle": 1,
         "synthobsAttribution": 1,
         "technicalPrecision": 0.85
@@ -113,28 +113,25 @@
     "mode": "structural",
     "scores": {
       "honestyBoundary": 1,
-      "methodsRepro": 0.6,
+      "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
-      "references": 0.35,
+      "references": 0.7,
       "abstractTitle": 1,
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.847,
+    "overallScore": 0.941,
     "criticalBlockers": [],
-    "suggestions": [
-      "Expand References with ≥3 citable sources or repo cross-links.",
-      "Document methods, data sources, and reproducibility commands."
-    ],
+    "suggestions": [],
     "meta": {
-      "wordCount": 2234,
+      "wordCount": 2805,
       "overclaims": [],
       "refs": {
-        "hasRefsSection": true,
+        "hasRefsSection": false,
         "links": 2,
-        "numbered": 8,
-        "citeLines": 1
+        "numbered": 2,
+        "citeLines": 2
       }
     }
   },

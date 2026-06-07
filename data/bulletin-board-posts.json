@@ -4,6 +4,18 @@
   "updated": "2026-06-05",
   "posts": [
     {
+      "id": "synthobs-emergent-sync-rev10-2026",
+      "posted": "2026-06-07",
+      "featured": true,
+      "title": "FractiAI SynthOBS · Emergent Sync · REV10",
+      "subtitle": "WP-2026-EGS-004-REV10 · Dual Router Benchmark · RSI inflection",
+      "summary": "Formal SynthOBS protocol for emergent phase sync in recursive multi-agent networks — EGS φ scaling, PLV telemetry, Dual Router Laboratory Benchmark, NOAA covariate baseline, H₀ falsification suite. Source: AiwonA1/FractiAI.",
+      "href": "/whitepaper/synthobs-emergent-sync-multi-agent",
+      "pill": "SynthOBS",
+      "docRef": "WP-2026-EGS-004-REV10",
+      "contact": "valetpru@gmail.com"
+    },
+    {
       "id": "pra-snap-mca-squeeze-2026",
       "posted": "2026-06-05",
       "featured": true,

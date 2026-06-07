@@ -18,9 +18,19 @@ All **technical work**, **whitepapers**, **research pipelines**, and **support c
    - `npm run audit:paper -- --id=<registryId>` OR `--path=docs/<file>.md`
 4. Do not feature on bulletin / set `featured: true` until audit receipt shows `pass` or `soft_pass` (or document why structural-only is acceptable).
 
+## Automatic Cursor agent audit (no API keys)
+
+Project hooks (`.cursor/hooks.json`) run **structural_only** PRA Snap automatically:
+
+1. **`afterFileEdit`** — records `docs/` and `protocols/` `.md` edits per conversation.
+2. **`stop`** — runs deterministic rubric (`structural-rubric/v1`); writes receipt; if blockers remain, auto-submits a **follow-up** to the agent (max 3 loops).
+
+No `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` required for this path. Manual re-run: `npm run audit:paper -- --id=<registryId>`.
+
 ## PRA Snap loop (no infinite spin)
 
-- **Reviewer** = second LLM lane (when `SYNTHOBS_AUDIT_LLM_ENABLED=1` + `OPENAI_API_KEY`).
+- **Default (automated):** structural rubric only — keys optional.
+- **Full dual-make:** second LLM lane when `SYNTHOBS_AUDIT_LLM_ENABLED=1` + both API keys.
 - **Max iterations:** 6 (default). **Plateau:** 2 rounds with score delta < 0.02.
 - **Pass bar:** 0.85 overall, zero critical blockers.
 - Receipts: `data/synthobs-paper-audits/{paperId}.json`

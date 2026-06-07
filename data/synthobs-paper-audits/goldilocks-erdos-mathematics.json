@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "f83c6024686cf3b9",
+  "auditId": "32ed2e98169cf30d",
   "paperId": "goldilocks-erdos-mathematics",
   "sourcePath": "docs/GOLDILOCKS_GAME_MATHEMATICS_ERDOS_344_2026-05-26.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.460Z"
+          "invokedAt": "2026-06-07T20:38:21.648Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.458Z",
-  "completedAt": "2026-06-07T18:29:00.460Z",
+  "startedAt": "2026-06-07T20:38:21.647Z",
+  "completedAt": "2026-06-07T20:38:21.648Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

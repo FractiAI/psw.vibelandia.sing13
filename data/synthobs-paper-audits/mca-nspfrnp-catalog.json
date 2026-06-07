@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "e328a3dfc43a721a",
+  "auditId": "ccc250b8b5a2146a",
   "paperId": "mca-nspfrnp-catalog",
   "sourcePath": "protocols/MCA_NSPFRNP_CATALOG.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.410Z"
+          "invokedAt": "2026-06-07T20:38:21.604Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.408Z",
-  "completedAt": "2026-06-07T18:29:00.411Z",
+  "startedAt": "2026-06-07T20:38:21.601Z",
+  "completedAt": "2026-06-07T20:38:21.605Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "c402f48e2f230567",
+  "auditId": "8b95afe4531f1dff",
   "paperId": "syn-sun-wavefield-oscillator",
   "sourcePath": "docs/DPH_GPU_WAVEFIELD_OSCILLATOR_SOLAR_MODEL_SYN-SUN-2026-REV7.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.495Z"
+          "invokedAt": "2026-06-07T20:38:21.686Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.493Z",
-  "completedAt": "2026-06-07T18:29:00.495Z",
+  "startedAt": "2026-06-07T20:38:21.684Z",
+  "completedAt": "2026-06-07T20:38:21.686Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

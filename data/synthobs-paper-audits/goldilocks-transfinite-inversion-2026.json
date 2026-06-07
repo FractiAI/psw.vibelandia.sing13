@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "d904a2fd8bae2186",
+  "auditId": "a52e9310bede978e",
   "paperId": "goldilocks-transfinite-inversion-2026",
   "sourcePath": "docs/GOLDILOCKS_TRANSFINITE_INVERSION_NET_ZERO_BLACKHOLE_2026-06.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.547Z"
+          "invokedAt": "2026-06-07T20:38:21.730Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.546Z",
-  "completedAt": "2026-06-07T18:29:00.547Z",
+  "startedAt": "2026-06-07T20:38:21.728Z",
+  "completedAt": "2026-06-07T20:38:21.730Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,

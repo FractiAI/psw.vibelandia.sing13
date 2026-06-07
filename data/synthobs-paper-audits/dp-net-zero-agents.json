@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "d274e10f4dc31857",
+  "auditId": "31e34be18babc8ed",
   "paperId": "dp-net-zero-agents",
   "sourcePath": "docs/DIGITAL_PRU_NET_ZERO_AUTONOMOUS_AGENTS_2026-05.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.484Z"
+          "invokedAt": "2026-06-07T20:38:21.660Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.483Z",
-  "completedAt": "2026-06-07T18:29:00.484Z",
+  "startedAt": "2026-06-07T20:38:21.659Z",
+  "completedAt": "2026-06-07T20:38:21.660Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,

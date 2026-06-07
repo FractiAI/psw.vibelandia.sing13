@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "1c911e83d83357f2",
+  "auditId": "32f48cda7ce3d824",
   "paperId": "dp-omniverse-matrix",
   "sourcePath": "docs/DIGITAL_PRU_OMNIVERSE_MAGNETIC_MATRIX_PROTONIC_DNA_PROTOCOL_2026-05-15.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.387Z"
+          "invokedAt": "2026-06-07T20:38:21.577Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.385Z",
-  "completedAt": "2026-06-07T18:29:00.387Z",
+  "startedAt": "2026-06-07T20:38:21.575Z",
+  "completedAt": "2026-06-07T20:38:21.577Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,

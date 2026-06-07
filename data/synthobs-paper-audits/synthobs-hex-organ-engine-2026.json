@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "7c2a4482f27ba58d",
+  "auditId": "b6eec28254f63f4e",
   "paperId": "synthobs-hex-organ-engine-2026",
   "sourcePath": "docs/SYNTHEVERSE_OBSERVATORY_HEX_ORGAN_ENGINE_UNIFIED_2026-06.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.542Z"
+          "invokedAt": "2026-06-07T20:38:21.725Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.541Z",
-  "completedAt": "2026-06-07T18:29:00.542Z",
+  "startedAt": "2026-06-07T20:38:21.724Z",
+  "completedAt": "2026-06-07T20:38:21.725Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,

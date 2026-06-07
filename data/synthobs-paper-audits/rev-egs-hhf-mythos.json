@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "9c6be709309b54d2",
+  "auditId": "18c6edc7b9beab20",
   "paperId": "rev-egs-hhf-mythos",
   "sourcePath": "docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.423Z"
+          "invokedAt": "2026-06-07T20:38:21.614Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.423Z",
-  "completedAt": "2026-06-07T18:29:00.424Z",
+  "startedAt": "2026-06-07T20:38:21.613Z",
+  "completedAt": "2026-06-07T20:38:21.614Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,

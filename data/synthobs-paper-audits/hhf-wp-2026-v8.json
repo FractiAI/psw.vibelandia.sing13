@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "4d49ecf348f32848",
+  "auditId": "2cc0acdffd2d060e",
   "paperId": "hhf-wp-2026-v8",
   "sourcePath": "docs/HHF_WP_2026_V8_13D_HOLOGRAPHIC_AI_OS_TRIALS.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.442Z"
+          "invokedAt": "2026-06-07T20:38:21.627Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.441Z",
-  "completedAt": "2026-06-07T18:29:00.442Z",
+  "startedAt": "2026-06-07T20:38:21.626Z",
+  "completedAt": "2026-06-07T20:38:21.627Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

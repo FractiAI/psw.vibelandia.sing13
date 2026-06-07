@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "e57680dd4a527176",
+  "auditId": "ba4f027e94377dfc",
   "paperId": "turner-kruse-response",
   "sourcePath": "docs/TURNER_KRUSE_RESPONSE_WHITEPAPER.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.533Z"
+          "invokedAt": "2026-06-07T20:38:21.720Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.532Z",
-  "completedAt": "2026-06-07T18:29:00.533Z",
+  "startedAt": "2026-06-07T20:38:21.719Z",
+  "completedAt": "2026-06-07T20:38:21.720Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,

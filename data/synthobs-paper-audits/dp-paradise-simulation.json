@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "3a425e4bbf696f00",
+  "auditId": "66b4a16660011a0a",
   "paperId": "dp-paradise-simulation",
   "sourcePath": "docs/DIGITAL_PRU_OMNIVERSE_TECHNICAL_ANALYSIS_PARADISE_GAME_SIMULATION_2026-05-15.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.389Z"
+          "invokedAt": "2026-06-07T20:38:21.581Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.388Z",
-  "completedAt": "2026-06-07T18:29:00.390Z",
+  "startedAt": "2026-06-07T20:38:21.579Z",
+  "completedAt": "2026-06-07T20:38:21.581Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

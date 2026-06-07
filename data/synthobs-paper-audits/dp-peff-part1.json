@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "9a957fe8986de935",
+  "auditId": "ab3e7e6b7ac2db6e",
   "paperId": "dp-peff-part1",
   "sourcePath": "docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_OMNIZOAN_INFILL13_2026-05-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.397Z"
+          "invokedAt": "2026-06-07T20:38:21.588Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.396Z",
-  "completedAt": "2026-06-07T18:29:00.397Z",
+  "startedAt": "2026-06-07T20:38:21.587Z",
+  "completedAt": "2026-06-07T20:38:21.589Z",
   "iterations": 1,
   "overallScore": 0.859,
   "passThreshold": 0.85,

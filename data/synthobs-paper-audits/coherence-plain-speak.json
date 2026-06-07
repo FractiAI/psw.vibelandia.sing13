@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "19a634c45ec9923f",
+  "auditId": "1f57e44cdcbc323d",
   "paperId": "coherence-plain-speak",
   "sourcePath": "docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T18:29:00.439Z"
+          "invokedAt": "2026-06-07T20:38:21.621Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T18:29:00.439Z",
-  "completedAt": "2026-06-07T18:29:00.439Z",
+  "startedAt": "2026-06-07T20:38:21.621Z",
+  "completedAt": "2026-06-07T20:38:21.621Z",
   "iterations": 1,
   "overallScore": 0.811,
   "passThreshold": 0.85,

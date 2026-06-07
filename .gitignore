@@ -1,3 +1,6 @@
+# Cursor hook ephemeral state
+.cursor/hooks/state/*.json
+
 # Dependencies
 node_modules/
 node_modules.bak*/

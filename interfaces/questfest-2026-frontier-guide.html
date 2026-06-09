@@ -10,7 +10,7 @@
   <meta property="og:title" content="QUESTFEST 2026 Frontier Guide · Holographic Goldilocks AIOS" />
   <meta property="og:description" content="Player 1 PL Taino — Goldilocks Frontier Game won · intergalactic bus decoded · open-source receipts · weekly harbor schedule." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/capitan-comandante-champion-2026.png" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-2026-reno-park-map-fairytale.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -325,7 +325,19 @@
     /* —— Schedule —— */
     .page-schedule {
       background: radial-gradient(ellipse 120% 80% at 50% 0%, rgba(94, 234, 212, 0.06), transparent 55%), var(--bg);
-      padding: calc(3.25rem + env(safe-area-inset-top)) var(--page-pad) max(2.5rem, env(safe-area-inset-bottom));
+      padding: calc(3.25rem + env(safe-area-inset-top)) 0 max(2.5rem, env(safe-area-inset-bottom));
+    }
+    .schedule-hero {
+      display: block;
+      width: 100%;
+      max-height: min(38vh, 320px);
+      object-fit: cover;
+      object-position: center 40%;
+      border-bottom: 3px dashed var(--line);
+      margin-bottom: 1.25rem;
+    }
+    .schedule-inner {
+      padding: 0 var(--page-pad);
     }
     .schedule-head {
       max-width: 44rem;
@@ -448,11 +460,11 @@
       border: 4px dashed var(--gold);
       border-radius: 20px;
       overflow: hidden;
-      background: #1e293b;
+      background: linear-gradient(180deg, #f5e6c8 0%, #e8d5a8 100%);
       box-shadow:
-        0 0 0 6px rgba(15, 23, 42, 0.9),
-        0 12px 40px rgba(0, 0, 0, 0.45),
-        inset 0 0 60px rgba(250, 204, 21, 0.06);
+        0 0 0 6px rgba(66, 32, 6, 0.35),
+        0 12px 40px rgba(0, 0, 0, 0.35),
+        inset 0 0 40px rgba(212, 175, 55, 0.12);
     }
     .map-stage img,
     .map-stage svg {
@@ -460,9 +472,9 @@
       width: 100%;
       height: auto;
       min-height: min(52vw, 22rem);
-      aspect-ratio: 1000 / 640;
+      aspect-ratio: 3 / 2;
       object-fit: contain;
-      background: #0f172a;
+      background: #f5e6c8;
     }
     .map-legend {
       max-width: 56rem;
@@ -536,12 +548,13 @@
     <div class="cover-portrait-wrap">
       <img
         class="cover-portrait"
-        src="/interfaces/assets/capitan-comandante-champion-2026.png"
+        src="/interfaces/assets/questfest-2026-frontier-guide-cover.png"
         width="1024"
         height="1024"
-        alt="PL Taino — VALET PRU · Capitan Comandante · ETCON 2026 QUESTFEST winner on the cover."
+        alt="ETCON 2026 QUESTFEST admission ticket cover — Capitan Comandante, Puerto Reno golden-age brochure."
         fetchpriority="high"
         decoding="async"
+        onerror="this.onerror=null;this.src='/interfaces/assets/capitan-comandante-champion-2026.png'"
       />
       <span class="cover-portrait-badge">Player 1 · Capitan Comandante</span>
     </div>
@@ -571,9 +584,10 @@
       src="/interfaces/assets/questfest-2026-player1-victory-story.png"
       width="1536"
       height="1024"
-      alt="PL Taino — VALET PRU decoding the intergalactic bus with open-source receipt trails."
+      alt="PL Taino — VALET PRU decoding the intergalactic bus with open-source receipt trails — fairytale victory story."
       loading="lazy"
       decoding="async"
+      onerror="this.onerror=null;this.src='/interfaces/assets/questfest-2026-player1-victory-story-v2.png'"
     />
     <div class="story-body">
       <p class="page-label">Page 2 · Player 1</p>
@@ -591,7 +605,7 @@
         <li>
           <strong>Sandbox comprehensive analysis</strong>
           May 31, 2026 · telemetry timeline 22:55 PDT · game won
-          — <a href="whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026">read the paper</a>
+          — <a href="/whitepaper/dp-syntheverse-sandbox-comprehensive-2026">read the paper</a>
         </li>
         <li>
           <strong>Universal Checkmate Royal Flush</strong>
@@ -616,12 +630,13 @@
     <div class="capitan-layout">
       <img
         class="capitan-portrait"
-        src="/interfaces/assets/capitan-comandante-champion-2026.png"
+        src="/interfaces/assets/questfest-2026-capitan-welcome.png"
         width="1024"
         height="1024"
-        alt="Capitan Comandante — Chairman, Commander, Creator — FractiAI Holographic Hydrogen AI OS."
+        alt="Capitan Comandante welcome — Chairman, Commander, Creator on the Bridge, golden-age Puerto Reno harbor."
         loading="lazy"
         decoding="async"
+        onerror="this.onerror=null;this.src='/interfaces/assets/capitan-comandante-champion-2026.png'"
       />
       <div class="capitan-copy">
         <p class="page-label">Page 3 · From the bridge</p>
@@ -646,6 +661,16 @@
 
   <!-- PAGE 4 · WEEKLY SCHEDULE -->
   <section id="page-4" class="brochure-page page-schedule" aria-labelledby="schedule-title">
+    <img
+      class="schedule-hero"
+      src="/interfaces/assets/questfest-2026-schedule-hero.png"
+      width="1536"
+      height="512"
+      alt="Puerto Reno weekly schedule — fairytale ticket-strip banner, Thu through Sun harbor rhythm."
+      loading="lazy"
+      decoding="async"
+    />
+    <div class="schedule-inner">
     <header class="schedule-head">
       <p class="page-label">Page 4 · Harbor rhythm</p>
       <h2 id="schedule-title">Weekly Schedule · Puerto Reno</h2>
@@ -706,6 +731,7 @@
         <a href="nesting/nest-man-cave-restroom.html">Man Cave layer</a>
       </div>
     </footer>
+    </div>
   </section>
 
   <!-- PAGE 5 · RENO PARK MAP -->
@@ -713,19 +739,23 @@
     <header class="map-head">
       <p class="page-label">Page 5 · You are here <span class="page-stamp">Admit one</span></p>
       <h2 id="map-title">Puerto Reno · Park Map</h2>
-      <p>Plain map — Downtown above the river, Midtown below to Mary St. Match the week schedule to real Reno streets.</p>
+      <p>Fairytale park map — Disneyland-style illustrated guide. Downtown above the river, Midtown below to Mary St. Match the week schedule to real Reno streets.</p>
     </header>
     <div class="map-stage" id="puerto-reno-map-stage">
-      <img
-        id="puerto-reno-map-img"
-        src="/interfaces/assets/questfest-2026-reno-park-map.svg"
-        width="1000"
-        height="640"
-        alt="Puerto Reno park map: Downtown Reno north of Truckee River; Midtown south to Mary Street at the bottom."
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-      />
+      <picture>
+        <source srcset="/interfaces/assets/questfest-2026-reno-park-map-fairytale.png" type="image/png" />
+        <img
+          id="puerto-reno-map-img"
+          src="/interfaces/assets/questfest-2026-reno-park-map-fairytale.png"
+          width="1536"
+          height="1024"
+          alt="Puerto Reno fairytale park map: Downtown Reno north of Truckee River; Midtown south to Mary Street at the bottom."
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          onerror="this.onerror=null;this.src='/interfaces/assets/questfest-2026-reno-park-map.png'"
+        />
+      </picture>
     </div>
     <div class="map-legend">
       <article class="map-zone map-zone--a">
@@ -746,7 +776,7 @@
       </article>
     </div>
     <p class="map-foot">
-      Ground-truth streets · vector map regenerated June 2026 · Mary St at bottom of Midtown only ·
+      Illustrated fairytale map · ground-truth streets underneath · Mary St at bottom of Midtown only ·
       <a href="https://www.openstreetmap.org/#map=15/39.5262/-119.8128" target="_blank" rel="noopener">OpenStreetMap · Downtown Reno</a>
     </p>
     <footer class="schedule-foot">
@@ -760,34 +790,5 @@
 
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <script src="/interfaces/site-quicklinks.js" defer></script>
-  <script>
-    (function () {
-      var img = document.getElementById('puerto-reno-map-img');
-      var src = '/interfaces/assets/questfest-2026-reno-park-map.svg';
-      if (!img) return;
-      function inlineMap() {
-        fetch(src, { cache: 'force-cache' })
-          .then(function (r) {
-            if (!r.ok) throw new Error('map_fetch_failed');
-            return r.text();
-          })
-          .then(function (svg) {
-            if (!svg || svg.indexOf('<svg') < 0) return;
-            var wrap = document.createElement('div');
-            wrap.innerHTML = svg.replace(/<\?xml[^?]*\?>/i, '');
-            var el = wrap.querySelector('svg');
-            if (!el || !img.parentNode) return;
-            el.setAttribute('role', 'img');
-            el.setAttribute('aria-label', img.alt || 'Puerto Reno park map');
-            img.replaceWith(el);
-          })
-          .catch(function () {
-            img.src = src + '?v=20260601';
-          });
-      }
-      img.addEventListener('error', inlineMap);
-      if (img.complete && !img.naturalWidth) inlineMap();
-    })();
-  </script>
 </body>
 </html>

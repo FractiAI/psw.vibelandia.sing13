@@ -1978,6 +1978,20 @@ html.ios .sp-now-video {
   font-weight: 600;
   cursor: pointer;
   text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.sp-side-link--questfest {
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: #5eead4;
+  margin-bottom: 0.15rem;
+}
+
+.sp-side-link--questfest:hover {
+  color: #fef3c7;
+  border-color: rgba(212, 175, 55, 0.75);
+  background: rgba(212, 175, 55, 0.08);
 }
 
 .sp-side-link:hover {
@@ -2218,6 +2232,59 @@ html.ios .sp-now-video {
   color: #1a120c;
   text-decoration: none;
   filter: brightness(1.06);
+}
+
+.sp-top-link--questfest {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  color: #5eead4;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.sp-top-link--questfest:hover {
+  color: #fef3c7;
+  border-color: #d4af37;
+  text-decoration: none;
+}
+
+/* Fixed escape hatch — always visible on Listen / Upload / player chrome */
+.qf-fast-link {
+  position: fixed;
+  top: max(0.55rem, env(safe-area-inset-top, 0px));
+  right: max(0.75rem, env(safe-area-inset-right, 0px));
+  z-index: 10050;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.48rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  background: rgba(10, 14, 22, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #5eead4;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.qf-fast-link:hover {
+  color: #fef3c7;
+  border-color: #d4af37;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .qf-fast-link {
+    font-size: 0.64rem;
+    padding: 0.45rem 0.75rem;
+  }
 }
 
 .sp-scroll {

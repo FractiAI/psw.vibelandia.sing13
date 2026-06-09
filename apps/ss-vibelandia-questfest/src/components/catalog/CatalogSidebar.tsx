@@ -4,6 +4,7 @@ import { PLAIN } from '@/lib/plainSpeak';
 import { CAPITANS_BRIDGE } from '@/lib/productNames';
 import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { QUESTFEST_DECK_HREF } from '@/components/QuestfestFastLink';
 
 interface CatalogSidebarProps {
   onDjClick: () => void;
@@ -95,6 +96,9 @@ export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps
       </div>
 
       <nav className="sp-side-nav">
+        <a className="sp-side-link sp-side-link--questfest" href={QUESTFEST_DECK_HREF}>
+          <span className="sp-side-icon">⚓</span> QUESTFEST top deck
+        </a>
         <button
           type="button"
           className={`sp-side-link${!djMode ? ' sp-side-link--on' : ''}`}

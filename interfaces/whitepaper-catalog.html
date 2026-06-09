@@ -275,7 +275,7 @@
 
       function readerHref(item) {
         if (item.type === 'whitepaper' || item.type === 'redirect') return item.href;
-        if (item.whitepaperId) return '/interfaces/whitepaper-surface.html?id=' + encodeURIComponent(item.whitepaperId);
+        if (item.whitepaperId) return '/whitepaper/' + encodeURIComponent(item.whitepaperId);
         return item.href;
       }
 
@@ -310,7 +310,7 @@
               '<span class="cat-card__title">' + it.title + '</span>' +
               '<span class="cat-card__sub">' + sub + '</span>' +
               '<div class="cat-card__tags">' + tags + '</div>' +
-              '<span class="cat-action">Read →</span>' +
+              '<span class="cat-action">Read paper →</span>' +
             '</a></li>'
           );
         }).join('');

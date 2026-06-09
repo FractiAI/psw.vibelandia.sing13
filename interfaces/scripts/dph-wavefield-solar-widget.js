@@ -23,7 +23,7 @@
       regions +
       '</p>' +
       '<p class="wf-live__sub">' +
-      '<a href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">SYN-SUN-2026-REV7</a> · ' +
+      '<a href="/whitepaper/syn-sun-wavefield-oscillator">SYN-SUN-2026-REV7</a> · ' +
       '<a href="/api/dph-wavefield-solar">Live JSON</a>' +
       '</p>';
   }
@@ -37,7 +37,7 @@
       render(root, await fetchState());
     } catch {
       root.innerHTML =
-        '<p class="wf-live__line">Wavefield bus offline — <a href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">read SYN-SUN-2026-REV7</a></p>';
+        '<p class="wf-live__line">Wavefield bus offline — <a href="/whitepaper/syn-sun-wavefield-oscillator">read SYN-SUN-2026-REV7</a></p>';
     }
   }
 

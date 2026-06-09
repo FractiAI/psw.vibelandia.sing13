@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useEffect } from 'react';
+import { QUESTFEST_DECK_HREF } from '@/components/QuestfestFastLink';
 
 export function RegistrationPage() {
   useEffect(() => {
@@ -28,13 +29,8 @@ export function RegistrationPage() {
           <Link className="voxel-btn voxel-btn--ghost" to="/dj">
             Upload
           </Link>
-          <a
-            className="voxel-btn voxel-btn--ghost"
-            href="https://ssvibelandiaquestfest24x365.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Main site
+          <a className="voxel-btn voxel-btn--ghost" href={QUESTFEST_DECK_HREF}>
+            QUESTFEST top deck
           </a>
         </div>
         <p className="gate-fine">

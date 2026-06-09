@@ -184,8 +184,8 @@ export function BridgePage() {
                 Members offer
               </a>
             ) : null}
-            <a href="/interfaces/vibelandia-questfest.html" className="sp-top-link">
-              QUESTFEST
+            <a href="/interfaces/vibelandia-questfest.html" className="sp-top-link sp-top-link--questfest">
+              ← QUESTFEST
             </a>
             <button
               type="button"

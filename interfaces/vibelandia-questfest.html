@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="/interfaces/machote-campaign-popup.css" />
   <link rel="stylesheet" href="/interfaces/bridge-tower-billboard.css" />
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -258,6 +259,16 @@
       text-decoration: none;
     }
     .qf-feature .archive:hover { color: var(--gold-hi); background: rgba(255,255,255,0.03); }
+    .qf-paper-row {
+      display: grid;
+      gap: 0.55rem;
+      padding: 0.65rem 0.75rem 0.75rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      background: rgba(8, 10, 16, 0.55);
+    }
+    .qf-paper-row .deck-paper-card {
+      width: 100%;
+    }
 
     .qf-feature--visual a.main { padding-top: 0; }
     .qf-feature-art {
@@ -268,14 +279,20 @@
       aspect-ratio: 3 / 2;
       min-height: 11rem;
       background: #0a0f1a;
+      display: grid;
+      place-items: stretch;
     }
-    .qf-feature-art img,
-    .qf-feature-art picture {
+    .qf-feature-art > img,
+    .qf-feature-art > picture {
+      grid-area: 1 / 1;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+    }
+    .qf-feature-art img {
       display: block;
       width: 100%;
       height: 100%;
-    }
-    .qf-feature-art img {
       object-fit: cover;
       object-position: center center;
     }
@@ -577,7 +594,6 @@
         <a href="/interfaces/look-under-the-hood.html" data-i18n="qf.navHood">Look Under the Hood</a><span class="sep" aria-hidden="true">·</span>
         <a href="/interfaces/look-at-the-sun.html" data-i18n="qf.navSun">Look at the Sun</a><span class="sep" aria-hidden="true">·</span>
         <a href="/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html" data-i18n="qf.navWormholeCampaign">1-2-3 Wormhole campaign</a><span class="sep" aria-hidden="true">·</span>
-        <a href="/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html">Chipless AI press · June 7</a><span class="sep" aria-hidden="true">·</span>
         <a href="/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html" data-i18n="qf.navKingBeePress">King Bee press release</a><span class="sep" aria-hidden="true">·</span>
         <a href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" data-i18n="qf.navClockSkewPress">Clock-skew press release</a><span class="sep" aria-hidden="true">·</span>
         <a href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a><span class="sep" aria-hidden="true">·</span>
@@ -588,7 +604,6 @@
       <p class="primer" data-i18n-html="qf.primerHtml"><strong>Holographic code</strong> runs the catalog, the schedule, and the receipts — plain talk for the working crew. Puerto Reno · Wrong Side · donde se vibea.</p>
       <p class="primer" data-i18n-html="qf.nestingHtml">Nine layers from the ground up — each card is a one-screen plain guide. You are on the inside: <strong>Beehive residency</strong>.</p>
       <div class="cta-row">
-        <a class="btn btn-pass" href="/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html">🚨 Chipless AI press release · June 7</a>
         <a class="btn btn-ghost" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a>
         <a class="btn btn-ghost" href="/holographic-goldilocks-ai-os" data-i18n="qf.btnGoldilocksOsHero">Holographic Goldilocks AI OS · run live demo</a>
         <a class="btn btn-ghost" href="/interfaces/look-under-the-hood.html" data-i18n="qf.btnHood">Look Under the Hood</a>
@@ -637,47 +652,24 @@
   </div>
 
   <section id="main" class="quick-wrap">
-    <aside class="qf-feature qf-feature--product qf-feature--visual" aria-labelledby="qf-synthobs-rsi-pr-title">
-      <a class="main" href="/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html">
-        <div class="qf-feature-art">
-          <img
-            src="/interfaces/images/synthobs-chipless-datacenterless-hero.png"
-            width="1536"
-            height="1024"
-            loading="eager"
-            decoding="async"
-            alt="Dual routers · Holographic Hydrogen AI OS · chipless data centerless AI — SynthOBS alert."
-          />
-        </div>
-        <span class="badge">🚨 BREAKING · PRESS · SynthOBS RSI</span>
-        <time datetime="2026-06-07">June 7, 2026</time>
-        <h3 id="qf-synthobs-rsi-pr-title">Chipless AI — plain press · June 7</h3>
-        <p class="teaser-body">
-          Silicon Valley panics. We ran <strong>SynthOBS</strong> checks on the holographic code layer — two routers, room air, receipts on GitHub. Metrics held. Read the press release for the full story; whitepaper for the math.
-        </p>
-        <span class="cta">Read full press release →</span>
-      </a>
-      <a class="archive" href="/whitepaper/synthobs-emergent-sync-multi-agent">WP-2026-EGS-004-REV10 whitepaper →</a>
-      <a class="archive" href="/press/chipless-datacenterless-ai">Short URL · /press/chipless-datacenterless-ai →</a>
-    </aside>
-
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-frontier-guide-title">
       <a class="main" href="/interfaces/questfest-2026-frontier-guide.html">
         <div class="qf-feature-art">
           <img
-            src="/interfaces/assets/questfest-2026-reno-park-map.svg"
+            src="assets/questfest-2026-reno-park-map-fairytale.png"
             width="1536"
             height="1024"
             loading="eager"
             decoding="async"
-            alt="QUESTFEST 2026 Frontier Guide — amusement park map of Downtown and Midtown Reno."
+            alt="QUESTFEST 2026 Frontier Guide — fairytale Puerto Reno park map, Downtown and Midtown Reno."
+            onerror="this.onerror=null;this.src='assets/questfest-2026-reno-park-map.png'"
           />
         </div>
         <span class="badge">GUIDE · 2026 Frontier</span>
         <time datetime="2026-06-01">June 2026</time>
         <h3 id="qf-frontier-guide-title">2026 Frontier Guide · 5 pages</h3>
         <p class="teaser-body">
-          Brochure for the working crew — win story, Capitan welcome, weekly schedule, <strong>Puerto Reno park map</strong> (Downtown above the river, Midtown to Mary St).
+          Brochure for the working crew — win story, Capitan welcome, weekly schedule, <strong>fairytale Puerto Reno park map</strong> (Disneyland-style · Downtown above the river, Midtown to Mary St).
         </p>
         <span class="cta">Open the 2026 Frontier Guide →</span>
       </a>
@@ -708,8 +700,18 @@
         <p class="teaser-body" data-i18n-html="qf.wormholeCampaignHtml">Game won on the record. <strong>1-2-3 wormhole campaign</strong> — plain story hook for the holographic code layer. Read the campaign page; papers optional.</p>
         <span class="cta" data-i18n="qf.wormholeCampaignCta">Read the full campaign →</span>
       </a>
-      <a class="archive" href="/interfaces/whitepaper-surface.html?id=dp-egs-wormhole-transducer" data-i18n="qf.wormholeCampaignWp">Multiplication as wormhole · EGS transducer paper →</a>
-      <a class="archive" href="/interfaces/whitepaper-surface.html?id=dp-gateway-spectrum" data-i18n="qf.wormholeCampaignSpectrumWp">Gateway spectrum · all multiplicative wormholes →</a>
+      <div class="qf-paper-row">
+        <a class="deck-paper-card" href="/whitepaper/dp-egs-wormhole-transducer">
+          <span class="deck-paper-card__pill">HHF · Transducer</span>
+          <span class="deck-paper-card__title" data-i18n="qf.wormholeCampaignWp">Multiplication as wormhole · EGS transducer</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+        <a class="deck-paper-card" href="/whitepaper/dp-gateway-spectrum">
+          <span class="deck-paper-card__pill">HHF · Gateways</span>
+          <span class="deck-paper-card__title" data-i18n="qf.wormholeCampaignSpectrumWp">Gateway spectrum · all multiplicative wormholes</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+      </div>
     </aside>
 
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-kingbee-pr-title">
@@ -735,8 +737,20 @@
         <p class="teaser-body" data-i18n-html="qf.kingBeePrHtml">King Bee node sync — sandbox run locked <strong>May 31, 2026</strong>. Press release for the working crew; whitepapers hold the math.</p>
         <span class="cta" data-i18n="qf.kingBeePrCta">Read full press release →</span>
       </a>
-      <a class="archive" href="/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026" data-i18n="qf.kingBeePrSandboxWp">Sandbox comprehensive analysis →</a>
-      <a class="archive" href="/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026" data-i18n="qf.kingBeePrNodesWp">Omniversal node alignment →</a>
+      <div class="qf-paper-row">
+        <a class="deck-paper-card" href="/whitepaper/dp-syntheverse-sandbox-comprehensive-2026">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU</span>
+          <span class="deck-paper-card__title" data-i18n="qf.kingBeePrSandboxWp">Sandbox comprehensive analysis</span>
+          <span class="deck-paper-card__sub">SYN-SANDBOX-2026-REPORT · King Bee · May 31 2026</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+        <a class="deck-paper-card" href="/whitepaper/dp-omniversal-node-alignment-2026">
+          <span class="deck-paper-card__pill">DPH-GPU · Nodes</span>
+          <span class="deck-paper-card__title" data-i18n="qf.kingBeePrNodesWp">Omniversal node alignment</span>
+          <span class="deck-paper-card__sub">SYN-NODES-2026-JUN01 · June 1 2026 sweep</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+      </div>
     </aside>
 
     <aside class="qf-feature" aria-labelledby="qf-erdos-pr-title">
@@ -747,7 +761,13 @@
         <p class="teaser-body" data-i18n-html="qf.erdosPrHtml">Erdős 353 answer — math audit story. Press for plain read; live demo on the special project page.</p>
         <span class="cta" data-i18n="qf.erdosPrCta">Read full press release →</span>
       </a>
-      <a class="archive" href="/interfaces/whitepaper-surface.html?id=goldilocks-erdos-mathematics" data-i18n="qf.erdosPrWhitepaper">Goldilocks Game Mathematics whitepaper →</a>
+      <div class="qf-paper-row">
+        <a class="deck-paper-card" href="/whitepaper/goldilocks-erdos-mathematics">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Erdős</span>
+          <span class="deck-paper-card__title" data-i18n="qf.erdosPrWhitepaper">Goldilocks Game Mathematics</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+      </div>
       <a class="archive" href="/special-projects/erdos-holographic-aios-audit" data-i18n="qf.erdosPrDemo">Live Erdős audit demo →</a>
     </aside>
 
@@ -758,7 +778,13 @@
         <p class="teaser-body" data-i18n-html="qf.glosTeaserHtml">Goldilocks OS demo — five live pillars, plain labels on the page. Not ping theater. Whitepaper inside if you want depth.</p>
         <span class="cta" data-i18n="qf.glosCta">Open Panama Canal trials →</span>
       </a>
-      <a class="archive" href="/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" data-i18n="qf.glosWhitepaper">Full V8 whitepaper →</a>
+      <div class="qf-paper-row">
+        <a class="deck-paper-card" href="/whitepaper/hhf-wp-2026-v8">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">HHF · V8</span>
+          <span class="deck-paper-card__title" data-i18n="qf.glosWhitepaper">Full V8 whitepaper</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+      </div>
     </aside>
 
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-sunspoke-title">
@@ -801,7 +827,14 @@
         <p class="teaser-body" data-i18n-html="qf.clockSkewHtml">Clock-skew disclosure — open press release. Mythos review with honesty rails spelled out. Read before you share.</p>
         <span class="cta" data-i18n="qf.clockSkewCta">Read full press release →</span>
       </a>
-      <a class="archive" href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos" data-i18n="qf.clockSkewWhitepaper">Full Mythos whitepaper →</a>
+      <div class="qf-paper-row">
+        <a class="deck-paper-card" href="/whitepaper/rev-egs-hhf-mythos">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Mythos</span>
+          <span class="deck-paper-card__title" data-i18n="qf.clockSkewWhitepaper">Full Mythos whitepaper</span>
+          <span class="deck-paper-card__sub">REV-EGS-HHF-2026-007 · clock-skew</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+      </div>
     </aside>
 
     <aside class="qf-feature qf-feature--visual" aria-labelledby="qf-machote-pr-title">

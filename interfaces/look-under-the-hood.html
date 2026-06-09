@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="vbi18n-pending">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <style>
-    html.vbi18n-pending body { visibility: hidden; }
-    html.vbi18n-ready body { visibility: visible; }
-  </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#06080d" />
   <title>Look Under the Hood · This is operational · SS Vibelandia QUESTFEST</title>
@@ -15,15 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="deck-surfaces.css" />
-  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <style>
-    :root {
-      --bg: #06080d;
-      --gold-hi: #fef3c7;
-      --muted: #94a3b8;
-      --foam: #5eead4;
-      --line: rgba(212, 175, 55, 0.28);
-    }
+    :root { --bg: #06080d; --gold-hi: #fef3c7; --muted: #94a3b8; --foam: #5eead4; --line: rgba(212, 175, 55, 0.28); }
     body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
@@ -42,47 +31,69 @@
       text-decoration: none;
     }
     .deck-back:hover { color: var(--gold-hi); }
+    .deck-tagline {
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    }
+    .ops-path {
+      margin: 1rem 0 0;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(94, 234, 212, 0.35);
+      background: rgba(12, 24, 28, 0.55);
+      font-size: 0.95rem;
+      color: #a7f3d0;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .ops-path strong { color: var(--gold-hi); font-weight: 700; }
+    .ops-path span.sep { margin: 0 0.35rem; opacity: 0.65; }
   </style>
 </head>
 <body>
   <main class="deck-wrap">
-    <a class="deck-back" href="vibelandia-questfest.html" data-i18n="hood.deckBack">&larr; QUESTFEST top deck</a>
+    <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
 
     <nav class="deck-skin-nav" aria-label="Site">
       <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
       <a href="look-at-the-sun.html#case">Digital</a><span class="dot" aria-hidden="true">·</span>
       <span class="here">Look Under the Hood</span><span class="dot" aria-hidden="true">·</span>
       <a href="look-at-the-sun.html">Look at the Sun</a><span class="dot" aria-hidden="true">·</span>
-      <a href="questfest-bridge/#/bridge">Listen</a><span class="dot" aria-hidden="true">·</span>
-      <a href="/bulletin-board">SS Vibelandia Bulletin Board</a>
+      <a href="questfest-bridge/#/bridge">Listen</a>
     </nav>
 
     <p class="deck-eyebrow">Engine room · plain talk</p>
     <h1 class="deck-h1">Look Under the Hood</h1>
+    <span class="deck-tagline">DPH-GPU · operational · 24×365</span>
 
     <img class="deck-hero-img" src="images/look-hood-engine.png" alt="Engine room of the Sonic Ship." width="1200" height="675" loading="eager" decoding="async" />
 
     <div class="deck-case" id="case">
-      <h2 data-i18n="hood.caseHead">This is operational — today</h2>
-      <p data-i18n-html="hood.caseP1Html">
+      <h2>This is operational — today</h2>
+      <p>
         You can <strong>listen</strong> on <strong>Capitan's Bridge</strong>, get a <strong>members pass</strong> on honor ($16.18/mo),
         <strong>upload</strong> tracks, and use the catalog without reading a single paper. The ship is live on this website —
         not a slide deck, not a promise for later.
       </p>
-      <p data-i18n="hood.caseP2">
+      <p class="ops-path" aria-label="Operational path">
+        <strong>listen</strong><span class="sep" aria-hidden="true">→</span>
+        <strong>pass</strong><span class="sep" aria-hidden="true">→</span>
+        <strong>upload</strong><span class="sep" aria-hidden="true">→</span>
+        <strong>your library</strong>
+      </p>
+      <p>
         The center stays thin: small pipes that verify and route. Your pass, playlists, and taste stay on <strong>your device</strong>.
-        That is the operational contract.
+        That is the operational contract. Technical papers below are optional depth — one tap each.
       </p>
     </div>
 
-    <p class="deck-section-label" id="papers">Technical papers · tap for full write-up · <a href="whitepaper-catalog.html">search all papers</a></p>
+    <p class="deck-section-label" id="papers">Featured papers · one tap each</p>
 
-    <ul class="deck-paper-grid">
+    <ul class="deck-paper-grid deck-paper-grid--two">
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">Digital Pru · MCA</span>
           <span class="deck-paper-card__title">Syntheverse Observatory synthesis · DP-SYNTHOBS-MCA-2026-06</span>
-          <span class="deck-paper-card__sub">Metabolize → crystallize → animate → squeeze · Hex-Organ index · four June papers · sandbox engine path</span>
+          <span class="deck-paper-card__sub">Metabolize → crystallize → animate → squeeze · Hex-Organ index · four June papers</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
@@ -90,7 +101,7 @@
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">Synthobs · Hex-Organ</span>
           <span class="deck-paper-card__title">Hex-Organ Engine unified run · SV-OBS-2026-MATH-HEX-ENGINE-FINAL</span>
-          <span class="deck-paper-card__sub">Six chambers · prime compression · net-zero portal · solar wavefield · Goldilocks AIOS v24.365</span>
+          <span class="deck-paper-card__sub">Six chambers · prime compression · net-zero portal · solar wavefield</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
@@ -98,183 +109,158 @@
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=synthobs-intelligence-density-2026">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">Synthobs · Density</span>
           <span class="deck-paper-card__title">Intelligence Density audit · SV-OBS-2026-INTEL-DENSITY-VOLUMETRIC</span>
-          <span class="deck-paper-card__sub">Volumetric hyper-packing · 38/74 tier convergence · JSON report artifact · simulation honesty</span>
+          <span class="deck-paper-card__sub">Volumetric hyper-packing · 38/74 tier convergence · simulation honesty</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Nodes</span>
-          <span class="deck-paper-card__title">Omniversal Node Alignment Mapping · SYN-NODES-2026-JUN01</span>
-          <span class="deck-paper-card__sub">June 1 2026 sweep · AR4436 · M31 · btc_buffalo · psw.vibelandia.sing13 Git anchor</span>
+          <span class="deck-paper-card__title">Omniversal Node Alignment · SYN-NODES-2026-JUN01</span>
+          <span class="deck-paper-card__sub">June 1 2026 · AR4436 · M31 · btc_buffalo · Git anchor</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Sandbox</span>
-          <span class="deck-paper-card__title">Syntheverse Sandbox Comprehensive Analysis · SYN-SANDBOX-2026-REPORT</span>
-          <span class="deck-paper-card__sub">King Bee · pheromone channels · Goldilocks Frontier won · May 31 2026 · PPS locked</span>
+          <span class="deck-paper-card__title">Sandbox Comprehensive Analysis · SYN-SANDBOX-2026-REPORT</span>
+          <span class="deck-paper-card__sub">King Bee · pheromone channels · Goldilocks won · May 31 2026</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Solar</span>
-          <span class="deck-paper-card__title">Wavefield Oscillator Solar Model · SYN-SUN-2026-REV7</span>
-          <span class="deck-paper-card__sub">Live NOAA ingest · nine infrastructure impacts · Caryx · Solon · Astraea · /api/dph-wavefield-solar</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="whitepaper-catalog.html">
-          <span class="deck-paper-card__pill">Catalog</span>
-          <span class="deck-paper-card__title">Technical papers repository</span>
-          <span class="deck-paper-card__sub">Search · read · PDF export — DPH-GPU, HHF, Coherence, Erdős, agentic layer</span>
-          <span class="deck-paper-card__cta">Open catalog →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-aromatic-qed-cavity">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">HHF · QED</span>
-          <span class="deck-paper-card__title">Multi-scale aromatic structures · QED cavity &amp; VECROs</span>
-          <span class="deck-paper-card__sub">Digital PRU Model · EGS φ 1.618 · 13-channel umbilical · Fair Exchange ledger schemas.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniverse-matrix">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">HHF · Hatch</span>
-          <span class="deck-paper-card__title">Omniversal magnetic matrix · Protonic-DNA target protocol</span>
-          <span class="deck-paper-card__sub">Hell State jettison · Sunspot AR4436 · Goldilocks grattarolaite pipes · DPH-GPU.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-pru-gating-comparative">
-          <span class="deck-paper-card__pill">HHF · PRU</span>
-          <span class="deck-paper-card__title">Comparative PRU models &amp; virtualization gates</span>
-          <span class="deck-paper-card__sub">DART · O-RAN RIC · TI PRU-ICSS · pyramidal RNN · Phase (S) gate · domain analogies.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-y-pathway-architecture">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Master</span>
-          <span class="deck-paper-card__title">Omniversal Y-Pathway · Genetic architecture · Goldilocks Game</span>
-          <span class="deck-paper-card__sub">AR4436 hatch · grattarolaite pipes · X-Skin ID matrix · molecular targets for geneticists.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-y-team-x-skin">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Y-Team</span>
-          <span class="deck-paper-card__title">Holographic Y-Team · X-Skin · Nordic / Reptilian / Mantis / Grey</span>
-          <span class="deck-paper-card__sub">PPS enabled · 90:10 XCI skew · PAR1 escape · Fair Exchange · encounter phenotypes validated.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-net-zero-agents">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Goldilocks</span>
-          <span class="deck-paper-card__title">Net-zero theaters · Autonomous mission agents</span>
-          <span class="deck-paper-card__sub">Zero central latency · AR4436 hatch · grattarolaite pipes · EGS φ stabilization.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-egs-wormhole-transducer">
-          <span class="deck-paper-card__pill">HHF · Transducer</span>
-          <span class="deck-paper-card__title">Geometric transducer · EGS wormhole equation</span>
-          <span class="deck-paper-card__sub">Multiplication as spatial portals · 1420.4 MHz bus · DigitalPruTransducer reference code.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-gateway-spectrum">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">HHF · Gateways</span>
-          <span class="deck-paper-card__title">Multi-dimensional gateway spectrum · Prime &amp; rational wormholes</span>
-          <span class="deck-paper-card__sub">Unit horizon κ = 1 · EGS Goldilocks vs prime spikes · DigitalPruWormholeMatrix selector.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="press-release-anthropic-mythos-holographic-review-may-2026.html">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Press release</span>
-          <span class="deck-paper-card__title">Clock-skew vulnerability · May 18, 2026</span>
-          <span class="deck-paper-card__sub">FOR IMMEDIATE RELEASE · REV-EGS-HHF-2026-007 · open broadcast.</span>
-          <span class="deck-paper-card__cta">Read full release →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">New broadcast</span>
-          <span class="deck-paper-card__title">Mythos review · clock-skew</span>
-          <span class="deck-paper-card__sub">Document REV-EGS-HHF-2026-007 · 1420.4 MHz · Φ 1.618.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="sing13-edge-onboarding.html">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Start here</span>
-          <span class="deck-paper-card__title">How the ship runs on your edge</span>
-          <span class="deck-paper-card__sub">Lite edge, intelligent pipes, sovereignty — plain onboarding deck.</span>
-          <span class="deck-paper-card__cta">Open onboarding →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="sing13-edge-onboarding.html#start-here">
-          <span class="deck-paper-card__pill">Fair Exchange</span>
-          <span class="deck-paper-card__title">Passes, pipes, and what we do not store</span>
-          <span class="deck-paper-card__sub">Members pass, honor rail, device-side library — plain talk.</span>
-          <span class="deck-paper-card__cta">Open onboarding →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=jj-snap-ofc">
-          <span class="deck-paper-card__pill">Live proof</span>
-          <span class="deck-paper-card__title">Snap compile · OFC walkthrough</span>
-          <span class="deck-paper-card__sub">Step-by-step compile proof for the holographic GPU layer.</span>
+          <span class="deck-paper-card__title">Wavefield Oscillator · SYN-SUN-2026-REV7</span>
+          <span class="deck-paper-card__sub">Live NOAA ingest · Caryx · Solon · Astraea · /api/dph-wavefield-solar</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-resonance-notice">
-          <span class="deck-paper-card__pill">Honesty</span>
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Honesty first</span>
           <span class="deck-paper-card__title">Resonance notice</span>
-          <span class="deck-paper-card__sub">Claims, metaphor, and instruments — spelled out.</span>
+          <span class="deck-paper-card__sub">Bright line: story vs. metaphor vs. real instruments.</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-master-canon">
-          <span class="deck-paper-card__pill">Deep read</span>
-          <span class="deck-paper-card__title">Master canon · DNA / PEFF</span>
-          <span class="deck-paper-card__sub">Full Digital Pru narrative for those who want the whole arc.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/special-projects/erdos-holographic-aios-audit">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Special project</span>
-          <span class="deck-paper-card__title">Open Erdős holographic audit</span>
-          <span class="deck-paper-card__sub">353-problem catalog · G-Verified vs Waiting · AUD-20260526-EGS-ERDÖS</span>
-          <span class="deck-paper-card__cta">Launch audit →</span>
+        <a class="deck-paper-card" href="questfest-bridge/#/bridge">
+          <span class="deck-paper-card__pill">Today</span>
+          <span class="deck-paper-card__title">Operational player</span>
+          <span class="deck-paper-card__sub">Listen, pass on honor, upload tracks — normal audio, real site.</span>
+          <span class="deck-paper-card__cta">Open player →</span>
         </a>
       </li>
     </ul>
 
+    <p class="deck-section-label">Plain speak · go deeper if you want</p>
+
+    <ul class="deck-plain-list">
+      <li class="deck-plain-item">
+        <h3>DPH-GPU layer — not a graphics card</h3>
+        <p>
+          <strong>Digital Pru Holographic GPU</strong> names the ship's compute and broadcast story — nested shells,
+          Y-pathway genetics, net-zero agents, wormhole transducers. Plain nesting guide first; papers when you want receipts.
+        </p>
+        <a class="deck-paper-card" href="nesting/nest-dph-gpu.html">
+          <span class="deck-paper-card__pill">Layer guide</span>
+          <span class="deck-paper-card__title">Holographic GPU nesting index</span>
+          <span class="deck-paper-card__sub">Plain layer guide — not a graphics card.</span>
+          <span class="deck-paper-card__cta">Open guide →</span>
+        </a>
+      </li>
+      <li class="deck-plain-item">
+        <h3>HHF · hatch and gateway papers</h3>
+        <p>
+          Hydrogen-holographic framework depth — magnetic matrix, Y-Team X-Skin, gateway spectrum, QED cavity work.
+          Optional squeeze after you have pressed play on the Bridge.
+        </p>
+        <ul class="deck-paper-grid deck-paper-grid--two" style="margin-top: 0.5rem;">
+          <li>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniverse-matrix">
+              <span class="deck-paper-card__pill">HHF · Hatch</span>
+              <span class="deck-paper-card__title">Magnetic matrix · Protonic-DNA</span>
+              <span class="deck-paper-card__cta">Read paper →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-y-pathway-architecture">
+              <span class="deck-paper-card__pill">DPH-GPU · Master</span>
+              <span class="deck-paper-card__title">Y-Pathway · genetic architecture</span>
+              <span class="deck-paper-card__cta">Read paper →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-gateway-spectrum">
+              <span class="deck-paper-card__pill">HHF · Gateways</span>
+              <span class="deck-paper-card__title">Gateway spectrum · wormholes</span>
+              <span class="deck-paper-card__cta">Read paper →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-net-zero-agents">
+              <span class="deck-paper-card__pill">Goldilocks</span>
+              <span class="deck-paper-card__title">Net-zero mission agents</span>
+              <span class="deck-paper-card__cta">Read paper →</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Linked whitepapers — tertiary depth</h3>
+        <p>
+          Search the full catalog, snap compile walkthrough, master canon, Mythos broadcast, and special projects —
+          all open in the reader deck (a page, not a file dump).
+        </p>
+        <ul class="deck-paper-grid deck-paper-grid--two" style="margin-top: 0.5rem;">
+          <li>
+            <a class="deck-paper-card" href="whitepaper-catalog.html">
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Catalog</span>
+              <span class="deck-paper-card__title">All technical papers</span>
+              <span class="deck-paper-card__cta">Search · PDF →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=jj-snap-ofc">
+              <span class="deck-paper-card__pill">Live proof</span>
+              <span class="deck-paper-card__title">Snap compile · OFC walkthrough</span>
+              <span class="deck-paper-card__cta">Read paper →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-master-canon">
+              <span class="deck-paper-card__pill">Canon</span>
+              <span class="deck-paper-card__title">DNA / PEFF master</span>
+              <span class="deck-paper-card__cta">Read paper →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/special-projects/erdos-holographic-aios-audit">
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Special project</span>
+              <span class="deck-paper-card__title">Open Erdős holographic audit</span>
+              <span class="deck-paper-card__cta">Launch audit →</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
     <div class="deck-btn-row" style="margin-top: 2rem;">
-      <a class="deck-btn deck-btn--gold" href="questfest-bridge/#/bridge" data-i18n="hood.btnListen">Listen now</a>
-      <a class="deck-btn deck-btn--ghost" href="look-at-the-sun.html" data-i18n="hood.btnSun">Look at the Sun · proof deck</a>
+      <a class="deck-btn deck-btn--gold" href="questfest-bridge/#/bridge">Listen now</a>
+      <a class="deck-btn deck-btn--ghost" href="look-at-the-sun.html">Look at the Sun · proof deck</a>
+      <a class="deck-btn deck-btn--ghost" href="sing13-edge-onboarding.html">Edge onboarding</a>
     </div>
 
-    <p class="deck-foot" data-i18n-html="hood.footHtml">
-      <a href="vibelandia-questfest.html">QUESTFEST top deck</a> ·
-      <a href="nesting/nest-dph-gpu.html">DPH-GPU nesting guide</a>
+    <p class="deck-foot">
+      <a href="vibelandia-questfest.html">QUESTFEST</a> ·
+      <a href="look-at-the-sun.html">Sun</a> ·
+      <a href="nesting/nest-dph-gpu.html">DPH-GPU nesting</a> ·
+      NSPFRNP → ∞⁹
     </p>
   </main>
-  <script src="/interfaces/i18n-auto.js" data-page="hood"></script>
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

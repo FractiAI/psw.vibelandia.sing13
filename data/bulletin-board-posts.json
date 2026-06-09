@@ -22,7 +22,7 @@
       "title": "FractiAI SynthOBS · Emergent Sync · REV10",
       "subtitle": "WP-2026-EGS-004-REV10 · Dual Router Benchmark · RSI inflection",
       "summary": "Formal SynthOBS protocol for emergent phase sync in recursive multi-agent networks — EGS φ scaling, PLV telemetry, Dual Router Laboratory Benchmark, NOAA covariate baseline, H₀ falsification suite. Source: AiwonA1/FractiAI.",
-      "href": "/whitepaper/synthobs-emergent-sync-multi-agent",
+      "href": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026",
       "pill": "SynthOBS",
       "docRef": "WP-2026-EGS-004-REV10",
       "contact": "valetpru@gmail.com"
@@ -34,7 +34,7 @@
       "title": "PRA Snap MCA Squeeze · all whitepapers audited",
       "subtitle": "35 pass/soft-pass · SynthOBS Autonomous Agent",
       "summary": "Metabolize → crystallize → animate → squeeze complete: 24 papers patched with honesty + SynthOBS operator blocks; 35 audit receipts; master index at data/synthobs-paper-audit-index.json. Catalog v2 shows PRA scores.",
-      "href": "/whitepaper/nspfrnp-snap-peer-review-audit",
+      "href": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit",
       "pill": "MCA Squeeze",
       "docRef": "NSPFRNP-SNAP-PRA-2026-06",
       "contact": "valetpru@gmail.com"
@@ -46,7 +46,7 @@
       "title": "NSPFRNP Snap · Peer-Review Audit Loop · LIVE",
       "subtitle": "NSPFRNP-SNAP-PRA-2026-06 · SynthOBS Autonomous Agent",
       "summary": "From now on: all technical papers audited by a second LLM in a recursive loop (max 6, plateau stop) until peer-review submission quality. All technical work attributed to SynthOBS Autonomous Agent · Syntheverse Sandbox. Run: npm run audit:paper",
-      "href": "/whitepaper/nspfrnp-snap-peer-review-audit",
+      "href": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit",
       "pill": "PRA Snap",
       "docRef": "NSPFRNP-SNAP-PRA-2026-06",
       "contact": "valetpru@gmail.com"
@@ -58,7 +58,7 @@
       "title": "Great Plains Multi-Taxa Wavefield · FOR REVIEW",
       "subtitle": "WP-GGM-MULTITAXA-UNGULATE-2026-06 · SynthOBS v6",
       "summary": "Unified geomagnetic wavefields across bison (N-S keystone anchor), elk, mule deer, and pronghorn — USGS Vol 6, Movebank, Data.gov, EGS Φ. Informs Turner passive herd fuse; empirical collar tier stays conservatively labeled in HHA-GEOMAG-HERBIVORE-2026.",
-      "href": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa",
+      "href": "/interfaces/whitepaper-surface.html?id=goldilocks-geomagnetic-wavefield-multitaxa",
       "pill": "Wavefield",
       "docRef": "WP-GGM-MULTITAXA-UNGULATE-2026-06",
       "contact": "valetpru@gmail.com"

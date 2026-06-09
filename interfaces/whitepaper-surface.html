@@ -213,6 +213,10 @@
     (function () {
       var q = new URLSearchParams(window.location.search);
       var id = q.get('id');
+      if (!id) {
+        var pathMatch = window.location.pathname.match(/\/whitepaper\/([^/?#]+)/);
+        if (pathMatch) id = decodeURIComponent(pathMatch[1]);
+      }
       var autoPrint = q.get('print') === '1';
       var titleEl = document.getElementById('title');
       var statusEl = document.getElementById('status');

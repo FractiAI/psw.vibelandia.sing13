@@ -275,7 +275,9 @@
 
       function readerHref(item) {
         if (item.type === 'whitepaper' || item.type === 'redirect') return item.href;
-        if (item.whitepaperId) return '/whitepaper/' + encodeURIComponent(item.whitepaperId);
+        if (item.whitepaperId) {
+          return '/interfaces/whitepaper-surface.html?id=' + encodeURIComponent(item.whitepaperId);
+        }
         return item.href;
       }
 

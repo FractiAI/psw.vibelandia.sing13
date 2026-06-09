@@ -28,7 +28,6 @@
     { "source": "/coherence/", "destination": "/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" },
     { "source": "/mining-ops", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
     { "source": "/mining-ops/", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
-    { "source": "/whitepaper/:id", "destination": "/interfaces/whitepaper-surface.html?id=:id" },
     { "source": "/papers", "destination": "/interfaces/whitepaper-catalog.html" },
     { "source": "/papers/", "destination": "/interfaces/whitepaper-catalog.html" },
     { "source": "/whitepaper-catalog", "destination": "/interfaces/whitepaper-catalog.html" },
@@ -107,7 +106,8 @@
     { "source": "/whitepaper/digital-pru-synthobs-mca", "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026" },
     { "source": "/whitepaper/digital-pru-synthobs-mca/", "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026" },
     { "source": "/questfest-schedule/:slug", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" },
-    { "source": "/questfest-schedule/:slug/", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" }
+    { "source": "/questfest-schedule/:slug/", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" },
+    { "source": "/whitepaper/:id", "destination": "/interfaces/whitepaper-surface.html?id=:id" }
   ],
   "crons": [
     {

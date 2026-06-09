@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   EGS_MONTHLY_USD,
   PAYMENT_HANDLES,
@@ -12,11 +12,16 @@ import {
   MACHOTE_CATALOG_SUBTITLE,
   MACHOTE_CATALOG_TITLE,
   MACHOTE_MAGAZINE_NAME,
-  MACHOTE_MAGAZINE_QUALIFIER,
   MACHOTE_MEMBERS_PASS_TITLE,
+  MACHOTE_MAGAZINE_QUALIFIER,
   machoteMagazineFollowUrl,
 } from '@/lib/machoteMembership';
 import { HonorFarmstandFigure } from '@/components/payment/HonorFarmstandFigure';
+import {
+  clearBoardingHonorDraft,
+  readBoardingHonorDraft,
+  writeBoardingHonorDraft,
+} from '@/lib/boardingHonorDraft';
 import { localTodayISO } from '@/lib/localMonthlyHonor';
 import { useSessionStore } from '@/stores/sessionStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -29,6 +34,25 @@ interface BoardingModalProps {
   onSubmit: (payload: BoardingHonorPayload) => Promise<void>;
   busy: boolean;
   error: string | null;
+}
+
+function honorChecklist(input: {
+  rail: LiveRail | null;
+  magazineFollowAck: boolean;
+  honorAck: boolean;
+  email: string;
+  paidDate: string;
+}) {
+  const emailOk = EMAIL_RE.test(input.email.trim());
+  const dateOk = input.paidDate.length >= 10 && input.paidDate <= localTodayISO();
+  return [
+    { id: 'rail', label: 'Pick Venmo, PayPal, or Cash App', done: !!input.rail },
+    { id: 'pay', label: 'Send $16.18 on your chosen rail', done: !!input.rail },
+    { id: 'magazine', label: 'Check “I follow Machote Moderno Magazine”', done: input.magazineFollowAck },
+    { id: 'honor', label: 'Check “I confirm I completed payment”', done: input.honorAck },
+    { id: 'date', label: 'Enter the date you paid (today or earlier)', done: dateOk },
+    { id: 'email', label: 'Enter a valid email address', done: emailOk },
+  ];
 }
 
 export function BoardingModal({ open, onClose, onSubmit, busy, error }: BoardingModalProps) {
@@ -48,6 +72,61 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
   const [magazineFollowAck, setMagazineFollowAck] = useState(false);
   const [captainPw, setCaptainPw] = useState('');
   const [captainErr, setCaptainErr] = useState<string | null>(null);
+  const [validationHint, setValidationHint] = useState<string | null>(null);
+  const submittingRef = useRef(false);
+  const blockBackdropUntilRef = useRef(0);
+  const honorAckRef = useRef(false);
+  const magazineFollowAckRef = useRef(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const draft = readBoardingHonorDraft();
+    if (!draft) return;
+    if (draft.rail) setRail(draft.rail);
+    if (draft.step) setStep(draft.step);
+    if (draft.paidDate) setPaidDate(draft.paidDate);
+    if (draft.email) setEmail(draft.email);
+    if (draft.honorAck) {
+      setHonorAck(true);
+      honorAckRef.current = true;
+    }
+    if (draft.magazineFollowAck) {
+      setMagazineFollowAck(true);
+      magazineFollowAckRef.current = true;
+    }
+  }, [open]);
+
+  useEffect(() => {
+    if (!open || step !== 'honor') return;
+    writeBoardingHonorDraft({
+      step,
+      rail,
+      paidDate,
+      email,
+      honorAck,
+      magazineFollowAck,
+    });
+  }, [open, step, rail, paidDate, email, honorAck, magazineFollowAck]);
+
+  useEffect(() => {
+    if (!open || step !== 'honor') return;
+    const draft = readBoardingHonorDraft();
+    if (!draft) return;
+    if (draft.paidDate) setPaidDate(draft.paidDate);
+    if (draft.email) setEmail(draft.email);
+    if (draft.magazineFollowAck) {
+      setMagazineFollowAck(true);
+      magazineFollowAckRef.current = true;
+    }
+    if (draft.honorAck) {
+      setHonorAck(true);
+      honorAckRef.current = true;
+    }
+  }, [open, step]);
+
+  useEffect(() => {
+    if (!busy) submittingRef.current = false;
+  }, [busy]);
 
   if (!open) return null;
 
@@ -58,11 +137,15 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
     setEmail('');
     setHonorAck(false);
     setMagazineFollowAck(false);
+    honorAckRef.current = false;
+    magazineFollowAckRef.current = false;
     setCaptainPw('');
     setCaptainErr(null);
+    setValidationHint(null);
   };
 
   const close = () => {
+    if (busy || submittingRef.current || Date.now() < blockBackdropUntilRef.current) return;
     reset();
     onClose();
   };
@@ -71,12 +154,14 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
     disembark();
     setPlaying(false);
     setGain(1);
+    clearBoardingHonorDraft();
     close();
   };
 
   const emailOk = EMAIL_RE.test(email.trim());
-  const canIssue =
-    !!rail && honorAck && magazineFollowAck && emailOk && paidDate.length >= 10 && !busy;
+  const dateOk = paidDate.length >= 10 && paidDate <= localTodayISO();
+  const canIssue = !!rail && honorAck && magazineFollowAck && emailOk && dateOk && !busy;
+  const checklist = honorChecklist({ rail, magazineFollowAck, honorAck, email, paidDate });
 
   const passMemo = boardingNote();
   const payCheckout =
@@ -87,10 +172,52 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
       ? new Date(honorValidUntil + 'T12:00:00').toLocaleDateString()
       : '';
 
+  const trySubmit = () => {
+    if (busy || !rail) return;
+    submittingRef.current = true;
+    blockBackdropUntilRef.current = Date.now() + 800;
+
+    const magazineOk = magazineFollowAckRef.current || magazineFollowAck;
+    const honorOk = honorAckRef.current || honorAck;
+
+    if (!magazineOk) {
+      submittingRef.current = false;
+      setValidationHint('Check the box confirming you follow Machote Moderno Magazine.');
+      return;
+    }
+    if (!honorOk) {
+      submittingRef.current = false;
+      setValidationHint('Check the box confirming you completed payment on honor.');
+      return;
+    }
+    if (!dateOk) {
+      submittingRef.current = false;
+      setValidationHint('Enter the date you paid (cannot be in the future).');
+      return;
+    }
+    if (!emailOk) {
+      submittingRef.current = false;
+      setValidationHint('Enter a valid email address so we can match your honor pass.');
+      return;
+    }
+    setValidationHint(null);
+    void onSubmit({
+      rail,
+      honorConfirm: true,
+      paidDate,
+      email: email.trim(),
+    }).finally(() => {
+      submittingRef.current = false;
+    });
+  };
+
   return (
     <div className="modal-root" role="dialog" aria-modal="true">
-      <div className="modal-backdrop" onClick={close} />
-      <div className="voxel-panel modal-card modal-card--wide modal-card--swamp-warm">
+      <div className="modal-backdrop" onClick={close} aria-hidden="true" />
+      <div
+        className="voxel-panel modal-card modal-card--wide modal-card--swamp-warm"
+        onMouseDown={(e) => e.stopPropagation()}
+      >
         <h2 className="modal-title modal-title--warm">{MACHOTE_MEMBERS_PASS_TITLE}</h2>
         {localHonorOnly && passUntilLabel && (
           <p className="modal-fine" style={{ margin: '0 0 0.75rem', color: '#5eead4', lineHeight: 1.45 }}>
@@ -167,6 +294,7 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                   onClick={() => {
                     setRail(r);
                     setStep('pay');
+                    setValidationHint(null);
                   }}
                 >
                   {RAIL_LABEL[r]}
@@ -219,7 +347,14 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                   </a>
                 </p>
               )}
-              <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('honor')}>
+              <button
+                type="button"
+                className="voxel-btn voxel-btn--orange"
+                onClick={() => {
+                  setStep('honor');
+                  setValidationHint(null);
+                }}
+              >
                 I've paid — continue to honor confirmation
               </button>
               <button type="button" className="voxel-btn" onClick={() => setStep('rail')}>
@@ -232,46 +367,22 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
         {step === 'honor' && rail && (
           <>
             <p className="modal-body">
-              Fair Exchange runs on trust — <strong>client-only honor</strong>. No server account or JWT: check the boxes,
-              set the date you paid, and we save the pass on <strong>this browser only</strong> for 30 days from that date.
-              When it expires, confirm again here.
+              Fair Exchange runs on trust — <strong>client-only honor</strong>. No server account: check both boxes,
+              enter the date you paid and your email, then confirm. We save the pass on <strong>this browser only</strong>{' '}
+              for 30 days from that date.
             </p>
             <HonorFarmstandFigure />
-            <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
-              <input
-                type="checkbox"
-                checked={magazineFollowAck}
-                onChange={(e) => setMagazineFollowAck(e.target.checked)}
-                disabled={busy}
-                style={{ marginTop: '0.2rem' }}
-              />
-              <span>
-                I follow <strong>{MACHOTE_MAGAZINE_NAME}</strong> — my qualifier for this members-only pass.{' '}
-                <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
-                  Open magazine
-                </a>
-              </span>
-            </label>
-            <label className="boarding-field" style={{ flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
-              <input
-                type="checkbox"
-                checked={honorAck}
-                onChange={(e) => setHonorAck(e.target.checked)}
-                disabled={busy}
-                style={{ marginTop: '0.2rem' }}
-              />
-              <span>
-                I confirm I completed payment of <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong> using{' '}
-                <strong>{RAIL_LABEL[rail]}</strong>.
-              </span>
-            </label>
             <label className="boarding-field">
               <span>Date you paid</span>
               <input
                 className="libretto-input boarding-input"
                 type="date"
+                max={localTodayISO()}
                 value={paidDate}
-                onChange={(e) => setPaidDate(e.target.value)}
+                onChange={(e) => {
+                  setPaidDate(e.target.value);
+                  setValidationHint(null);
+                }}
                 disabled={busy}
               />
             </label>
@@ -282,25 +393,79 @@ export function BoardingModal({ open, onClose, onSubmit, busy, error }: Boarding
                 type="email"
                 autoComplete="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setValidationHint(null);
+                }}
                 placeholder="you@example.com"
                 disabled={busy}
               />
             </label>
-            {error && <p className="player-error">{error}</p>}
+            <div className="boarding-check-row">
+              <input
+                id="boarding-magazine-follow"
+                type="checkbox"
+                checked={magazineFollowAck}
+                onChange={(e) => {
+                  const checked = e.target.checked;
+                  magazineFollowAckRef.current = checked;
+                  setMagazineFollowAck(checked);
+                  setValidationHint(null);
+                }}
+              />
+              <div className="boarding-check-copy">
+                <label htmlFor="boarding-magazine-follow">
+                  I follow <strong>{MACHOTE_MAGAZINE_NAME}</strong> — my qualifier for this members-only pass.
+                </label>{' '}
+                <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
+                  Open magazine
+                </a>
+              </div>
+            </div>
+            <div className="boarding-check-row">
+              <input
+                id="boarding-honor-confirm"
+                type="checkbox"
+                checked={honorAck}
+                onChange={(e) => {
+                  const checked = e.target.checked;
+                  honorAckRef.current = checked;
+                  setHonorAck(checked);
+                  setValidationHint(null);
+                }}
+              />
+              <label htmlFor="boarding-honor-confirm" className="boarding-check-copy">
+                I confirm I completed payment of <strong>${EGS_MONTHLY_USD.toFixed(2)}</strong> using{' '}
+                <strong>{RAIL_LABEL[rail]}</strong>.
+              </label>
+            </div>
+            {!canIssue && !busy && (
+              <>
+                <p className="boarding-honor-hint">
+                  Complete every step below, then tap confirm. Email and payment date are required — both
+                  honor boxes must be checked before the pass saves.
+                </p>
+                <ul className="boarding-honor-checklist" aria-label="Honor pass checklist">
+                  {checklist.map((item) => (
+                    <li key={item.id} className={item.done ? 'is-done' : undefined}>
+                      {item.label}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {(validationHint || error) && (
+              <p className="player-error" role="alert">
+                {validationHint || error}
+              </p>
+            )}
             <div className="modal-actions">
               <button
                 type="button"
                 className="voxel-btn voxel-btn--orange"
-                disabled={!canIssue}
-                onClick={() =>
-                  void onSubmit({
-                    rail,
-                    honorConfirm: true,
-                    paidDate,
-                    email: email.trim(),
-                  })
-                }
+                disabled={busy}
+                aria-disabled={!canIssue}
+                onClick={trySubmit}
               >
                 {busy ? 'Saving honor pass…' : 'Confirm honor pass · 30 days on this device'}
               </button>

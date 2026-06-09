@@ -8,6 +8,7 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import type { BoardingHonorPayload } from '@/lib/boardingHonor';
+import { clearBoardingHonorDraft } from '@/lib/boardingHonorDraft';
 import { readPlaybackSession } from '@/lib/playbackSession';
 import { subscribeTrackDownloaded } from '@/lib/downloadEvents';
 import { usePlaybackSessionPersistence } from '@/hooks/usePlaybackSessionPersistence';
@@ -58,6 +59,7 @@ export function MediaShell() {
   const handleBoarding = async (payload: BoardingHonorPayload) => {
     const ok = await completeBoarding(payload);
     if (ok) {
+      clearBoardingHonorDraft();
       usePlaybackStore.getState().applyPassHolderPlaybackDefaults();
       setBoardingOpen(false);
       setFairOpen(false);

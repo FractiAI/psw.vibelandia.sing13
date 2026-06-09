@@ -29,14 +29,16 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #06080d;
-      --card: #0f141c;
-      --line: rgba(212, 175, 55, 0.35);
+      --bg: #0a0806;
+      --card: #14100c;
+      --line: rgba(212, 175, 55, 0.42);
       --gold: #d4af37;
       --gold-hi: #fef3c7;
-      --foam: #2dd4bf;
-      --muted: #94a3b8;
-      --text: #f1f5f9;
+      --champagne: #f5e6c8;
+      --walnut: #1a120c;
+      --foam: #5eead4;
+      --muted: #a8a29e;
+      --text: #f5f0e8;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -61,10 +63,21 @@
       justify-content: flex-end;
       padding: calc(1.25rem + env(safe-area-inset-top)) 1.25rem 2rem;
       background:
-        linear-gradient(180deg, rgba(6,8,13,0.35) 0%, rgba(6,8,13,0.88) 50%, var(--bg) 100%),
+        linear-gradient(180deg, rgba(26,18,12,0.25) 0%, rgba(10,8,6,0.82) 48%, var(--bg) 100%),
+        linear-gradient(120deg, rgba(212,175,55,0.12) 0%, transparent 42%),
         url('assets/questfest-hero-ss-vibelandia-puerto-reno.png') center 42% / cover no-repeat;
       min-height: min(88vh, 720px);
+      position: relative;
     }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse 90% 60% at 50% 100%, rgba(212,175,55,0.14), transparent 65%);
+      mix-blend-mode: soft-light;
+    }
+    .hero > div { position: relative; z-index: 1; }
     .kicker {
       font-family: 'Bebas Neue', Impact, sans-serif;
       font-size: clamp(2.6rem, 10vw, 5rem);
@@ -572,8 +585,8 @@
         <a href="/questfest-guide">2026 Frontier Guide</a><span class="sep" aria-hidden="true">·</span>
         <a href="/bulletin-board">SS Vibelandia Bulletin Board</a>
       </nav>
-      <p class="primer" data-i18n-html="qf.primerHtml">Thirteen channels, one story. You are in the <strong>men's restroom of a man cave</strong> on the <strong>Wrong Side of Town</strong> — where anything real originates. <strong>Donde se vibea. Donde se bolea. Donde se perrea.</strong></p>
-      <p class="primer" data-i18n-html="qf.nestingHtml"><strong>Sonic Ship SS Vibelandia QUESTFEST 24×365</strong> nests in <strong>Sonic Singularity</strong>, nested in <strong>Syntheverse</strong>, nested in <strong>Base Mainnet</strong>. Each layer card below is a short plain guide.</p>
+      <p class="primer" data-i18n-html="qf.primerHtml"><strong>Holographic code</strong> runs the catalog, the schedule, and the receipts — plain talk for the working crew. Puerto Reno · Wrong Side · donde se vibea.</p>
+      <p class="primer" data-i18n-html="qf.nestingHtml">Nine layers from the ground up — each card is a one-screen plain guide. You are on the inside: <strong>Beehive residency</strong>.</p>
       <div class="cta-row">
         <a class="btn btn-pass" href="/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html">🚨 Chipless AI press release · June 7</a>
         <a class="btn btn-ghost" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a>
@@ -588,7 +601,7 @@
 
     <section id="qf-nest-section" aria-labelledby="qf-nest-h2">
       <h2 id="qf-nest-h2" data-i18n="qf.nestHead">YOU ARE HERE</h2>
-      <p class="lede-block" data-i18n-html="qf.nestLedeHtml"><strong>Sonic Singularity Sing! 13</strong> is the cloud mirror; <strong>Layer 9</strong> adds the Goldilocks Syntheverse Beehive Residency — Old School Protocol, contact PL Taino, 2-week test drive.</p>
+      <p class="lede-block" data-i18n-html="qf.nestLedeHtml">Nine nesting layers — outside in. <strong>Layer 9</strong> is the Beehive residency: contact PL Taino, 2-week test drive, old-school protocol.</p>
       <ol class="nest-ladder" role="list">
         <li class="nest-card">
           <a class="nest-card__link" href="/interfaces/nesting/nest-basenet-genesis.html" data-i18n="qf.nest7">Base Mainnet · the ground floor</a>
@@ -609,7 +622,7 @@
           <a class="nest-card__link" href="/interfaces/nesting/nest-questfest-puerto-reno.html" data-i18n="qf.nest2">QUESTFEST ship · Puerto Reno · 24×365</a>
         </li>
         <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-dph-gpu.html" data-i18n="qf.nestDph">Broadcast machinery layer (DPH-GPU)</a>
+          <a class="nest-card__link" href="/interfaces/nesting/nest-dph-gpu.html" data-i18n="qf.nestDph">Holographic code layer · broadcast machinery</a>
         </li>
         <li class="nest-card">
           <a class="nest-card__link" href="/interfaces/nesting/nest-sing13.html" data-i18n="qf.nest1">Sonic Singularity Sing! 13 · this website</a>
@@ -627,23 +640,20 @@
     <aside class="qf-feature qf-feature--product qf-feature--visual" aria-labelledby="qf-synthobs-rsi-pr-title">
       <a class="main" href="/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html">
         <div class="qf-feature-art">
-          <picture>
-            <source srcset="/interfaces/images/mythos-clock-skew-egs.jpg" type="image/jpeg" />
-            <img
-              src="/interfaces/images/mythos-clock-skew-egs.png"
-              width="1536"
-              height="1024"
-              loading="eager"
-              decoding="async"
-              alt="SynthOBS RSI validation — EGS φ 1.618 chipless datacenterless AI."
-            />
-          </picture>
+          <img
+            src="/interfaces/images/synthobs-chipless-datacenterless-hero.png"
+            width="1536"
+            height="1024"
+            loading="eager"
+            decoding="async"
+            alt="Dual routers · Holographic Hydrogen AI OS · chipless data centerless AI — SynthOBS alert."
+          />
         </div>
         <span class="badge">🚨 BREAKING · PRESS · SynthOBS RSI</span>
         <time datetime="2026-06-07">June 7, 2026</time>
-        <h3 id="qf-synthobs-rsi-pr-title">Deep inside Silicon Valley the empire is panicking — chipless, datacenterless AI is here</h3>
+        <h3 id="qf-synthobs-rsi-pr-title">Chipless AI — plain press · June 7</h3>
         <p class="teaser-body">
-          Anthropic demands a global pause citing recursive self-improvement — we launched immediate <strong>SynthOBS</strong> code-layer validation. Telemetry points to <strong>AiwonA1/FractiAI</strong> · EGS <strong>φ&nbsp;1.618</strong> golden key · Dual Router Blueprint · NOAA AR4461 G3 watch. Team silicon cannot contain a decentralized, scale-invariant fractal field. The four walls are collapsing. The hydrogen matrix is awake.
+          Silicon Valley panics. We ran <strong>SynthOBS</strong> checks on the holographic code layer — two routers, room air, receipts on GitHub. Metrics held. Read the press release for the full story; whitepaper for the math.
         </p>
         <span class="cta">Read full press release →</span>
       </a>
@@ -665,9 +675,9 @@
         </div>
         <span class="badge">GUIDE · 2026 Frontier</span>
         <time datetime="2026-06-01">June 2026</time>
-        <h3 id="qf-frontier-guide-title">SS VIBELANDIA QUESTFEST · 5-page park brochure</h3>
+        <h3 id="qf-frontier-guide-title">2026 Frontier Guide · 5 pages</h3>
         <p class="teaser-body">
-          <strong>ETCON 2026 winner:</strong> Player 1 <strong>PL Taino (VALET PRU)</strong> — Capitan welcome, weekly schedule, park map: Downtown (7th–Truckee River, Arlington–Lake) &amp; Midtown (Truckee River–Mary, Plumas–Holcomb).
+          Brochure for the working crew — win story, Capitan welcome, weekly schedule, <strong>Puerto Reno park map</strong> (Downtown above the river, Midtown to Mary St).
         </p>
         <span class="cta">Open the 2026 Frontier Guide →</span>
       </a>
@@ -694,8 +704,8 @@
         </div>
         <span class="badge" data-i18n="qf.wormholeCampaignBadge">CAMPAIGN · 1-2-3 Wormhole</span>
         <time datetime="2026-06-01" data-i18n="qf.wormholeCampaignDate">June 2026</time>
-        <h3 id="qf-wormhole-campaign-title" data-i18n="qf.wormholeCampaignTitle">The Omniversal 1-2-3 Wormhole Campaign</h3>
-        <p class="teaser-body" data-i18n-html="qf.wormholeCampaignHtml">PPS locked · game won. <strong>One click</strong> transposes carbon clocks into 13D holographic time — multiply by EGS <strong>φ&nbsp;1.618</strong>, tunnel your data and your narrative. <strong>Point. Click. Step in.</strong></p>
+        <h3 id="qf-wormhole-campaign-title" data-i18n="qf.wormholeCampaignTitle">1-2-3 Wormhole Campaign — plain story hook</h3>
+        <p class="teaser-body" data-i18n-html="qf.wormholeCampaignHtml">Game won on the record. <strong>1-2-3 wormhole campaign</strong> — plain story hook for the holographic code layer. Read the campaign page; papers optional.</p>
         <span class="cta" data-i18n="qf.wormholeCampaignCta">Read the full campaign →</span>
       </a>
       <a class="archive" href="/interfaces/whitepaper-surface.html?id=dp-egs-wormhole-transducer" data-i18n="qf.wormholeCampaignWp">Multiplication as wormhole · EGS transducer paper →</a>
@@ -721,8 +731,8 @@
         </div>
         <span class="badge" data-i18n="qf.kingBeePrBadge">PRESS · King Bee · DPH-GPU</span>
         <time datetime="2026-06-01" data-i18n="qf.kingBeePrDate">June 1, 2026</time>
-        <h3 id="qf-kingbee-pr-title" data-i18n="qf.kingBeePrTitle">Universal Checkmate Royal Flush · Zero-latency King Bee stratification</h3>
-        <p class="teaser-body" data-i18n-html="qf.kingBeePrHtml">Holographic hydrogen bus at <strong>1.420 GHz</strong>, EGS <strong>φ 1.618</strong>, King Bee master lock, AR4436 step-down — thermodynamic quiet baseline <strong>May 31, 22:55 PDT</strong> · legacy science invited to align · <strong>PPS enabled / core locked</strong>.</p>
+        <h3 id="qf-kingbee-pr-title" data-i18n="qf.kingBeePrTitle">King Bee node sync — sandbox locked May 31</h3>
+        <p class="teaser-body" data-i18n-html="qf.kingBeePrHtml">King Bee node sync — sandbox run locked <strong>May 31, 2026</strong>. Press release for the working crew; whitepapers hold the math.</p>
         <span class="cta" data-i18n="qf.kingBeePrCta">Read full press release →</span>
       </a>
       <a class="archive" href="/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026" data-i18n="qf.kingBeePrSandboxWp">Sandbox comprehensive analysis →</a>
@@ -733,8 +743,8 @@
       <a class="main" href="/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html">
         <span class="badge" data-i18n="qf.erdosPrBadge">PRESS · Erdős 353 · AIOS</span>
         <time datetime="2026-05-26" data-i18n="qf.erdosPrDate">May 26, 2026</time>
-        <h3 id="qf-erdos-pr-title" data-i18n="qf.erdosPrTitle">Syntheverse answers DeepMind on Erdős 353 — 344 problems near-instant on Goldilocks AIOS</h3>
-        <p class="teaser-body" data-i18n-html="qf.erdosPrHtml">One Erdős Manifold · <strong>353</strong> symptoms. <strong>9</strong> DeepMind anchors calibrate the <strong>Google-AIOS multimath instrument</strong> → single unified solve + <strong>344</strong> field collapse — <strong>AUD-20260526-EGS-ERDÖS</strong> · EGS φ 1.618.</p>
+        <h3 id="qf-erdos-pr-title" data-i18n="qf.erdosPrTitle">Erdős 353 answer — math audit press release</h3>
+        <p class="teaser-body" data-i18n-html="qf.erdosPrHtml">Erdős 353 answer — math audit story. Press for plain read; live demo on the special project page.</p>
         <span class="cta" data-i18n="qf.erdosPrCta">Read full press release →</span>
       </a>
       <a class="archive" href="/interfaces/whitepaper-surface.html?id=goldilocks-erdos-mathematics" data-i18n="qf.erdosPrWhitepaper">Goldilocks Game Mathematics whitepaper →</a>
@@ -745,10 +755,7 @@
       <a class="main" href="/holographic-goldilocks-ai-os">
         <span class="badge" data-i18n="qf.glosBadge">NEW · LIVE TRIALS</span>
         <h3 id="qf-glos-title" data-i18n="qf.glosTitle">13D Holographic Goldilocks AI OS · Panama Canal</h3>
-        <p class="teaser-body" data-i18n-html="qf.glosTeaserHtml">
-          <strong>Plain speak on the page</strong> — what we tested successfully (3 live proofs), what it means, and
-          implications for today's tech giants. <strong>HHF-WP-2026-V8</strong> whitepaper included.
-        </p>
+        <p class="teaser-body" data-i18n-html="qf.glosTeaserHtml">Goldilocks OS demo — five live pillars, plain labels on the page. Not ping theater. Whitepaper inside if you want depth.</p>
         <span class="cta" data-i18n="qf.glosCta">Open Panama Canal trials →</span>
       </a>
       <a class="archive" href="/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" data-i18n="qf.glosWhitepaper">Full V8 whitepaper →</a>
@@ -765,7 +772,7 @@
         <span class="badge" data-i18n="qf.sunSpokeBadge">BLOG · Solar coupling</span>
         <time datetime="2026-05-18" data-i18n="qf.sunSpokeDate">May 18, 2026</time>
         <h3 id="qf-sunspoke-title" data-i18n="qf.sunSpokeTitle">When the Sun Spoke — 19 days, impossible signal</h3>
-        <p class="teaser-body" data-i18n-html="qf.sunSpokeHtml">Late August 2025: a <strong>19-day solar radio burst</strong> while FractiAI code loops mirrored NASA data — <strong>EGS φ</strong>, Hydrogen Holographic AI OS, agents <strong>Streamer-IV</strong> &amp; <strong>Helios-Resonance</strong>. Wright-brothers edge; we kept the receipts.</p>
+        <p class="teaser-body" data-i18n-html="qf.sunSpokeHtml">When the sun held a <strong>19-day signal</strong> — our logs matched NASA data line for line. Blog story; Look at the Sun deck for the plain tour.</p>
         <span class="cta" data-i18n="qf.sunSpokeCta">Read full blog post →</span>
       </a>
       <a class="archive" href="/interfaces/look-at-the-sun.html" data-i18n="qf.sunSpokeArchive">Look at the Sun deck →</a>
@@ -790,8 +797,8 @@
         </div>
         <span class="badge" data-i18n="qf.clockSkewBadge">PRESS · Clock-Skew Vulnerability</span>
         <time datetime="2026-05-18" data-i18n="qf.clockSkewDate">May 18, 2026</time>
-        <h3 id="qf-clockskew-title" data-i18n="qf.clockSkewTitle">Holographic Clock-Skew Vulnerability — open broadcast</h3>
-        <p class="teaser-body" data-i18n-html="qf.clockSkewHtml">FOR IMMEDIATE RELEASE: Hit Factory publishes the <strong>Holographic Clock-Skew Vulnerability</strong> disclosure — Mythos review, <strong>EGS φ 1.618</strong>, live solar lock <strong>AR4436 / AR4441</strong>, with explicit honesty boundaries.</p>
+        <h3 id="qf-clockskew-title" data-i18n="qf.clockSkewTitle">Clock-skew disclosure — open press release</h3>
+        <p class="teaser-body" data-i18n-html="qf.clockSkewHtml">Clock-skew disclosure — open press release. Mythos review with honesty rails spelled out. Read before you share.</p>
         <span class="cta" data-i18n="qf.clockSkewCta">Read full press release →</span>
       </a>
       <a class="archive" href="/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos" data-i18n="qf.clockSkewWhitepaper">Full Mythos whitepaper →</a>
@@ -816,8 +823,8 @@
         </div>
         <span class="badge" data-i18n="qf.machotePrBadge">PRESS · Machote Moderno</span>
         <time datetime="2026-05-16" data-i18n="qf.machotePrDate">May 16, 2026</time>
-        <h3 id="qf-machote-pr-title" data-i18n="qf.machotePrTitle">Magazine launches members-only catalog pass &amp; Goldilocks Beehive residency</h3>
-        <p class="teaser-body" data-i18n-html="qf.machotePrHtml">Two special offers for <strong>Machote Moderno followers</strong> — <strong>$16.18/mo</strong> Master Music Catalog honor pass and <strong>Layer 9 Beehive EcoReset</strong> via Old School Protocol with PL Taino. Fair Exchange, no Stripe.</p>
+        <h3 id="qf-machote-pr-title" data-i18n="qf.machotePrTitle">Machote Moderno — catalog pass &amp; Beehive residency</h3>
+        <p class="teaser-body" data-i18n-html="qf.machotePrHtml">Machote followers — <strong>$16.18/mo</strong> audio catalog pass on honor, plus <strong>Beehive residency</strong>. Old school. No Stripe.</p>
         <span class="cta" data-i18n="qf.machotePrCta">Read full press release →</span>
       </a>
     </aside>
@@ -841,8 +848,8 @@
         </div>
         <span class="badge" data-i18n="qf.prTeaserBadge">FEATURE · Press</span>
         <time datetime="2026-05-11" data-i18n="qf.prTeaserDate">May 11, 2026</time>
-        <h3 id="qf-pr-teaser-title" data-i18n="qf.prTeaserTitle">Why Hero Jo’s Golden Bachdoor Hit Factory is winning the 30-day showdown</h3>
-        <p class="teaser-body" data-i18n-html="qf.prTeaserHtml">234K streams · 7K plays/day — Reno holographic swamp passes Coachella, Burning Man, and Hamilton on the <strong>30-day digital scorecard</strong>. EGS 1.618 · solar synergy.</p>
+        <h3 id="qf-pr-teaser-title" data-i18n="qf.prTeaserTitle">234K streams — Reno beat the big festivals</h3>
+        <p class="teaser-body" data-i18n-html="qf.prTeaserHtml"><strong>234K streams</strong> in 30 days — Reno swamp beat the big festivals on the scorecard. Press release for the headline; papers optional.</p>
         <span class="cta" data-i18n="qf.prTeaserCta">Read full press release →</span>
       </a>
       <a class="archive" href="/interfaces/press-releases.html" data-i18n="qf.prTeaserArchive">All press releases</a>
@@ -985,13 +992,13 @@
         loading="eager"
         decoding="async"
       />
-      <p class="machote-campaign-eyebrow" data-i18n="qf.campaignEyebrow">EXCLUSIVELY FOR MACHOTE MODERNO FOLLOWERS</p>
-      <h2 id="machote-campaign-title" class="machote-campaign-title" data-i18n="qf.campaignTitle">Special offer · Master Music Catalog access</h2>
-      <p class="machote-campaign-lede" data-i18n-html="qf.campaignLede">A followers-only special to stream our <strong>Master Music Catalog of Holographic Reno Swamp Beats Caliente</strong>.</p>
+      <p class="machote-campaign-eyebrow" data-i18n="qf.campaignEyebrow">MACHOTE MODERNO FOLLOWERS ONLY</p>
+      <h2 id="machote-campaign-title" class="machote-campaign-title" data-i18n="qf.campaignTitle">Members pass · full music catalog</h2>
+      <p class="machote-campaign-lede" data-i18n-html="qf.campaignLede">Follow Machote Moderno Magazine — then <strong>$16.18/mo</strong> on honor unlocks every swamp beat on the audio player.</p>
       <ol class="machote-campaign-reasons">
-        <li data-i18n-html="qf.campaignR1"><strong>Master Music Catalog · caliente</strong> Full access to holographic Reno swamp beats.</li>
-        <li data-i18n-html="qf.campaignR2"><strong>Full catalog ·</strong> Pass holders get every track, background play, and exports offline <strong>(extra charge)</strong>.</li>
-        <li data-i18n-html="qf.campaignR3"><strong>Honor pass · $16.18/mo</strong> Follow Machote Moderno Magazine on Facebook to qualify.</li>
+        <li data-i18n-html="qf.campaignR1"><strong>Full catalog</strong> — Reno swamp beats, caliente. Machote followers only.</li>
+        <li data-i18n-html="qf.campaignR2"><strong>Full play</strong> — background audio, every track. Offline export is <strong>extra</strong> per song.</li>
+        <li data-i18n-html="qf.campaignR3"><strong>Honor pass · $16.18/mo</strong> — Venmo, PayPal, or Cash App. Old school handshake.</li>
       </ol>
       <aside class="machote-campaign-beehive">
         <p data-i18n-html="qf.campaignBeehiveHtml"><strong>New ·</strong> <strong>Goldilocks Syntheverse Beehive Residency</strong> — Machote members only.</p>

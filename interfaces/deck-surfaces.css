@@ -1,4 +1,5 @@
 /* Shared deck styling — Look under the hood, Look at the Sun, member surfaces */
+/* Goldilocks golden age · warm gold / walnut / champagne */
 .deck-wrap {
   max-width: 44rem;
   margin: 0 auto;
@@ -72,8 +73,9 @@
   margin: 0 0 1.75rem;
   padding: 1.1rem 1.15rem;
   border-radius: 12px;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  background: linear-gradient(145deg, rgba(45, 212, 191, 0.08), rgba(212, 175, 55, 0.06));
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  background: linear-gradient(145deg, rgba(212, 175, 55, 0.1), rgba(26, 18, 12, 0.85));
+  box-shadow: inset 0 1px 0 rgba(245, 230, 200, 0.08);
 }
 .deck-case h2 {
   font-family: 'Bebas Neue', Impact, sans-serif;

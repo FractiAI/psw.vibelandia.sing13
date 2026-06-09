@@ -11,19 +11,19 @@ export function RegistrationPage() {
     <div className="gate">
       <div className="gate-texture" aria-hidden />
       <div className="gate-inner">
-        <p className="gate-kicker">Machote Moderno · Caliente Catalog</p>
+        <p className="gate-kicker">Machote Moderno · swamp beats</p>
         <h1 className="gate-title">SS Vibelandia QUESTFEST</h1>
         <p className="gate-lead">
-          Stream the catalog from QUESTFEST. Tracks play from the server until you download them to your device.
+          Audio player for the full catalog. Stream from the server or download tracks to your device.
         </p>
         <ul className="gate-list">
-          <li>Upload — pick an audio or video file.</li>
-          <li>Listen — play your upload from the bottom player.</li>
-          <li>Machote Magazine members pass unlocks uninterrupted playback when you are ready.</li>
+          <li>Upload — pick an audio file (MP3 and friends).</li>
+          <li>Listen — play from the bottom player dock.</li>
+          <li>Members pass — full play and background audio on honor ($16.18/mo).</li>
         </ul>
         <div className="gate-actions">
           <Link className="voxel-btn voxel-btn--orange" to="/bridge">
-            Listen to the catalog
+            Open audio player
           </Link>
           <Link className="voxel-btn voxel-btn--ghost" to="/dj">
             Upload

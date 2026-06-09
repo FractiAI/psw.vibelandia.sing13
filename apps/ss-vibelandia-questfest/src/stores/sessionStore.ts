@@ -6,6 +6,7 @@ import {
   computeValidUntilFromPaidDate,
   isHonorDateActive,
   type LocalMonthlyHonor,
+  localTodayISO,
   readLocalMonthlyHonor,
   writeLocalMonthlyHonor,
 } from '@/lib/localMonthlyHonor';
@@ -109,7 +110,19 @@ export const useSessionStore = create<SessionState>((set) => ({
     try {
       const rail = input.rail;
       const paidDate = input.paidDate.trim();
-      const email = input.email.trim();
+      const email = input.email.trim().toLowerCase();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        set({ boardingBusy: false, boardingError: 'Enter a valid email address.' });
+        return false;
+      }
+      if (paidDate.length < 10 || paidDate > localTodayISO()) {
+        set({
+          boardingBusy: false,
+          boardingError: 'Enter the date you paid (today or earlier).',
+        });
+        return false;
+      }
       const validUntil = computeValidUntilFromPaidDate(paidDate);
 
       const honor: LocalMonthlyHonor = {
@@ -134,7 +147,12 @@ export const useSessionStore = create<SessionState>((set) => ({
       });
       return true;
     } catch (e) {
-      const msg = e instanceof Error ? e.message : 'boarding_failed';
+      const msg =
+        e instanceof Error && e.message === 'storage_failed'
+          ? 'Could not save on this browser — check that cookies/storage are allowed (not private mode).'
+          : e instanceof Error
+            ? e.message
+            : 'boarding_failed';
       set({ boardingBusy: false, boardingError: msg });
       return false;
     }

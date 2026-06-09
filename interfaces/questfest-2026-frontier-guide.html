@@ -18,14 +18,14 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0c1224;
-      --bg-stars: radial-gradient(circle at 12% 18%, rgba(244, 114, 182, 0.12), transparent 42%),
-        radial-gradient(circle at 88% 12%, rgba(94, 234, 212, 0.1), transparent 38%),
-        radial-gradient(circle at 50% 90%, rgba(250, 204, 21, 0.08), transparent 45%),
-        #0c1224;
-      --line: rgba(250, 204, 21, 0.45);
-      --gold: #facc15;
-      --gold-hi: #fef9c3;
+      --bg: #0a0806;
+      --bg-stars: radial-gradient(circle at 12% 18%, rgba(212, 175, 55, 0.14), transparent 42%),
+        radial-gradient(circle at 88% 12%, rgba(245, 230, 200, 0.08), transparent 38%),
+        radial-gradient(circle at 50% 90%, rgba(250, 204, 21, 0.1), transparent 45%),
+        #0a0806;
+      --line: rgba(212, 175, 55, 0.48);
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
       --foam: #5eead4;
       --park-pink: #f472b6;
       --park-cyan: #22d3ee;
@@ -439,11 +439,12 @@
     }
     .map-head p { color: var(--muted); font-size: 0.92rem; max-width: 36rem; margin: 0.35rem auto 0; }
     .map-stage {
-      flex: 1;
+      flex: 1 1 auto;
       position: relative;
       max-width: 56rem;
       margin: 0 auto;
       width: 100%;
+      min-height: min(52vw, 22rem);
       border: 4px dashed var(--gold);
       border-radius: 20px;
       overflow: hidden;
@@ -454,12 +455,14 @@
         inset 0 0 60px rgba(250, 204, 21, 0.06);
     }
     .map-stage img,
-    .map-stage object {
+    .map-stage svg {
       display: block;
       width: 100%;
       height: auto;
+      min-height: min(52vw, 22rem);
       aspect-ratio: 1000 / 640;
-      vertical-align: top;
+      object-fit: contain;
+      background: #0f172a;
     }
     .map-legend {
       max-width: 56rem;
@@ -543,17 +546,16 @@
       <span class="cover-portrait-badge">Player 1 · Capitan Comandante</span>
     </div>
     <div class="cover-inner">
-      <p class="cover-kicker">Admission ticket · amusement park brochure · ETCON 2026</p>
+      <p class="cover-kicker">Admission ticket · golden-age brochure · ETCON 2026</p>
       <h1 id="cover-title">Winner · QUESTFEST 2026</h1>
-      <p class="cover-sub">Holographic Goldilocks AIOS Frontier Game</p>
+      <p class="cover-sub">Goldilocks Frontier Game · Puerto Reno</p>
       <p class="cover-lead">
-        <strong>Player 1: PL Taino (VALET PRU)</strong> — Capitan Comandante on the cover — decoded and reset the intergalactic hydrogen data bus at
-        <strong>1.420 GHz</strong>. King Bee stratification, EGS <strong>φ 1.618</strong>, thermodynamic quiet baseline
-        <strong>May 31, 2026 · 22:55 PDT</strong>. Victory in public repositories with timestamps and telemetry.
+        <strong>Player 1: PL Taino (VALET PRU)</strong> — Capitan on the cover. The win is on the record: GitHub, press, receipts.
+        Holographic code locked the run <strong>May 31, 2026</strong>.
       </p>
       <p class="cover-lead">
-        Open the five-page brochure: win story, Capitan welcome, weekly harbor rhythm, and the Reno park map —
-        Downtown to the <strong>Truckee River</strong>, Midtown south to <strong>Mary St</strong> at the bottom of the map.
+        Five pages — win story, Capitan welcome, weekly schedule, <strong>Puerto Reno map</strong>.
+        Downtown above the <strong>Truckee River</strong>. Midtown south to <strong>Mary St</strong>.
       </p>
       <p class="cover-meta">
         SS VIBELANDIA QUESTFEST 24×365 · Syntheverse · Vibelandia ·
@@ -577,16 +579,13 @@
       <p class="page-label">Page 2 · Player 1</p>
       <h2 id="story-title">PL Taino · The Recent Win</h2>
       <p class="lead">
-        At ETCON 2026 we announced what the sandbox already proved: the <strong>Goldilocks Frontier Game</strong> is won.
-        Player One is <strong>PL Taino (VALET PRU)</strong> — pioneer architect, valet layer for the stack, door not decoration.
+        ETCON 2026 — the <strong>Frontier Game</strong> is won. Player One is <strong>PL Taino (VALET PRU)</strong> — architect, valet, door to the ship.
       </p>
       <p>
-        The run was not a stage trick. The intergalactic bus — ambient routing on the 21 cm hydrogen line — was decoded,
-        reset, and locked under King Bee command with zero-latency pheromone channels. PPS enabled; core locked; Fair Exchange in effect.
+        Not a stage trick. Holographic code run, receipts published, Fair Exchange in effect. Verify it yourself — links below.
       </p>
       <p>
-        Every claim in this brochure points at artifacts you can verify: press releases, whitepapers, API pulses, and the
-        <strong>open-source mirror</strong> of the Sing! 13 edge where nested shells, MCA cycles, and holographic proofs stay in catalog fidelity.
+        Press releases, papers, and the open-source repo hold the timestamps. Listen on the audio player when you are ready.
       </p>
       <ul class="receipt-list">
         <li>
@@ -629,16 +628,13 @@
         <p class="capitan-byline">Capitan Comandante · Chairman · Commander · Creator</p>
         <h2 id="capitan-title">Welcome to the Frontier Game</h2>
         <p>
-          <strong>Holographic Goldilocks AIOS Frontier Game: SS VIBELANDIA QUESTFEST 24×365</strong> is not a poster for a weekend —
-          it is the flagship harbor already running when you arrive. Puerto Reno is donde se vibea, donde se perrea.
+          <strong>SS VIBELANDIA QUESTFEST 24×365</strong> is the harbor — already running. Puerto Reno · donde se vibea · golden-age Reno vibe.
         </p>
         <p>
-          Player One opened the bus. Your job on this voyage is simpler and harder: hit the <strong>Pimp Your Bike Workshop</strong>, honor the schedule,
-          respect Fair Exchange, and bring your signal to the Man Cave, the river walk, and the Bridge without breaking the spell.
+          Your job: follow the schedule, honor Fair Exchange, hit the <strong>Pimp Your Bike Workshop</strong>, Man Cave, river walk, and the audio player on the Bridge.
         </p>
         <p>
-          This guide is the brochure in five pages — cover, win, welcome, weekly rhythm, Reno park map. The machinery lives under the hood;
-          the music lives on the Bridge. Walk both.
+          Five pages in this brochure. Machinery under the hood. Music on the Bridge. Walk both.
         </p>
         <p>
           <a href="vibelandia-questfest.html">Return to QUESTFEST top deck</a> ·
@@ -653,7 +649,7 @@
     <header class="schedule-head">
       <p class="page-label">Page 4 · Harbor rhythm</p>
       <h2 id="schedule-title">Weekly Schedule · Puerto Reno</h2>
-      <p>QUESTFEST week flow — tap any item for details · pregame through departures · staff chill early week</p>
+      <p>Week flow — tap any line for details · Thu pregame through Sun departures · Mon–Wed staff chill</p>
     </header>
     <div class="schedule-grid">
       <article class="day-card">
@@ -717,25 +713,19 @@
     <header class="map-head">
       <p class="page-label">Page 5 · You are here <span class="page-stamp">Admit one</span></p>
       <h2 id="map-title">Puerto Reno · Park Map</h2>
-      <p>Cartoon amusement-park map with accurate Downtown &amp; Midtown boundaries — ride the week schedule across real Reno streets.</p>
+      <p>Plain map — Downtown above the river, Midtown below to Mary St. Match the week schedule to real Reno streets.</p>
     </header>
-    <div class="map-stage">
-      <object
-        type="image/svg+xml"
-        data="/interfaces/assets/questfest-2026-reno-park-map.svg"
+    <div class="map-stage" id="puerto-reno-map-stage">
+      <img
+        id="puerto-reno-map-img"
+        src="/interfaces/assets/questfest-2026-reno-park-map.svg"
         width="1000"
         height="640"
-        aria-label="Amusement park map: Downtown Reno north of Truckee River; Midtown south to Mary Street at the bottom of the map."
-      >
-        <img
-          src="/interfaces/assets/questfest-2026-reno-park-map.svg"
-          width="1000"
-          height="640"
-          alt="Amusement park map: Downtown Reno north of Truckee River; Midtown south to Mary Street at the bottom of the map."
-          loading="lazy"
-          decoding="async"
-        />
-      </object>
+        alt="Puerto Reno park map: Downtown Reno north of Truckee River; Midtown south to Mary Street at the bottom."
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+      />
     </div>
     <div class="map-legend">
       <article class="map-zone map-zone--a">
@@ -770,5 +760,34 @@
 
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script>
+    (function () {
+      var img = document.getElementById('puerto-reno-map-img');
+      var src = '/interfaces/assets/questfest-2026-reno-park-map.svg';
+      if (!img) return;
+      function inlineMap() {
+        fetch(src, { cache: 'force-cache' })
+          .then(function (r) {
+            if (!r.ok) throw new Error('map_fetch_failed');
+            return r.text();
+          })
+          .then(function (svg) {
+            if (!svg || svg.indexOf('<svg') < 0) return;
+            var wrap = document.createElement('div');
+            wrap.innerHTML = svg.replace(/<\?xml[^?]*\?>/i, '');
+            var el = wrap.querySelector('svg');
+            if (!el || !img.parentNode) return;
+            el.setAttribute('role', 'img');
+            el.setAttribute('aria-label', img.alt || 'Puerto Reno park map');
+            img.replaceWith(el);
+          })
+          .catch(function () {
+            img.src = src + '?v=20260601';
+          });
+      }
+      img.addEventListener('error', inlineMap);
+      if (img.complete && !img.naturalWidth) inlineMap();
+    })();
+  </script>
 </body>
 </html>

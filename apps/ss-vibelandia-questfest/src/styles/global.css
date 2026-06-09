@@ -75,6 +75,20 @@ body {
   box-shadow: 2px 2px 0 var(--ink);
 }
 
+.voxel-btn:disabled,
+.voxel-btn[aria-disabled='true'] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.voxel-btn:disabled:hover,
+.voxel-btn[aria-disabled='true']:hover {
+  transform: none;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
 .voxel-btn--orange {
   background: linear-gradient(180deg, var(--orange-glow), var(--orange-fire));
   color: var(--ink);
@@ -697,6 +711,51 @@ a.voxel-btn {
 
 .boarding-input {
   width: 100%;
+}
+
+.boarding-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.boarding-check-row input[type='checkbox'] {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.boarding-check-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.boarding-honor-hint {
+  font-size: 0.72rem;
+  color: #fbbf24;
+  margin: 0 0 0.75rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 4px;
+  background: rgba(251, 191, 36, 0.08);
+}
+
+.boarding-honor-checklist {
+  margin: 0 0 0.75rem;
+  padding-left: 1.15rem;
+  font-size: 0.72rem;
+  color: rgba(232, 224, 213, 0.72);
+}
+
+.boarding-honor-checklist li {
+  margin-bottom: 0.25rem;
+}
+
+.boarding-honor-checklist li.is-done {
+  color: #5eead4;
+  text-decoration: line-through;
 }
 
 .boarding-honor-figure {

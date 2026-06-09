@@ -25,8 +25,8 @@
     body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(120% 80% at 50% 0%, #0c181c 0%, var(--bg) 45%, #030508 100%);
-      color: #f1f5f9;
+      background: radial-gradient(120% 80% at 50% 0%, rgba(212,175,55,0.08) 0%, #0c181c 22%, var(--bg) 48%, #030508 100%);
+      color: #f5f0e8;
       line-height: 1.65;
     }
     .deck-wrap--catalog {
@@ -213,13 +213,11 @@
       <a href="nesting/nest-dph-gpu.html">DPH-GPU</a>
     </nav>
 
-    <p class="deck-eyebrow">Repository · search · read · export</p>
+    <p class="deck-eyebrow">Papers · plain card · deep read inside</p>
     <h1 class="deck-h1">Technical papers catalog</h1>
     <p class="deck-lead">
-      Operated by <strong>SynthOBS Autonomous Agent</strong> · <strong>Syntheverse Sandbox</strong>.
-      All technical papers pass <strong>NSPFRNP PRA Snap</strong> peer-review audit (receipt scores shown per card).
-      Index spans <strong>Digital Pru</strong>, <strong>DPH-GPU</strong>, <strong>Synthobs Hex-Organ</strong>, <strong>HHF</strong>, <strong>Coherence</strong>, <strong>Erdős</strong>, and <strong>special projects</strong>
-      (repo anchor <strong>FractiAI/psw.vibelandia.sing13</strong>).
+      Search the library. Each card is <strong>one plain line</strong> for the working crew — open any paper for the full technical write-up.
+      PRA Snap scores show when audited. Repo: <strong>FractiAI/psw.vibelandia.sing13</strong>.
     </p>
 
     <div class="cat-toolbar">
@@ -299,7 +297,9 @@
             var pct = Math.round(it.audit.overallScore * 100);
             auditBit = 'PRA ' + pct + '% · ' + (it.audit.status || '—');
           }
-          var sub = [it.docId, it.published, categoryLabel(it.category), auditBit].filter(Boolean).join(' · ');
+          var plain = it.plainLine || '';
+          var meta = [it.docId, it.published, auditBit].filter(Boolean).join(' · ');
+          var sub = plain ? (plain + (meta ? ' · ' + meta : '')) : [it.docId, it.published, categoryLabel(it.category), auditBit].filter(Boolean).join(' · ');
           var tags = (it.tags || []).slice(0, 4).map(function (t) {
             return '<span class="cat-tag">' + t + '</span>';
           }).join('');

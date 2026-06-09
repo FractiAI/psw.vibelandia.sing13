@@ -1,17 +1,17 @@
 :root {
-  --nest-bg: #050810;
-  --nest-line: rgba(212, 175, 55, 0.22);
-  --nest-gold: #e8d089;
-  --nest-text: #e8edf5;
-  --nest-muted: #94a3b8;
-  --nest-foam: #7dd3c0;
+  --nest-bg: #0a0806;
+  --nest-line: rgba(212, 175, 55, 0.38);
+  --nest-gold: #d4af37;
+  --nest-text: #f5f0e8;
+  --nest-muted: #a8a29e;
+  --nest-foam: #5eead4;
   --nest-prose: 40rem;
 }
 * { box-sizing: border-box; }
 html, body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
-  background: var(--nest-bg);
+  background: radial-gradient(120% 80% at 50% 0%, rgba(212, 175, 55, 0.07) 0%, var(--nest-bg) 42%, #030508 100%);
   color: var(--nest-text);
   line-height: 1.65;
   font-size: 1.0625rem;

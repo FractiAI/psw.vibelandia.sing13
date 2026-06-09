@@ -29,15 +29,17 @@ import {
   saveCatalogCache,
   saveCatalogPrefs,
 } from '@/lib/catalogPrefs';
-import { localMediaKeyFor } from '@/lib/localPlayback';
+import { coverFileToPersistableDataUrl } from '@/lib/coverImageFile';
 import {
   deleteTrackOnServer,
   fetchLiveCatalogForSync,
   isServerUploadConfigured,
   updateTrackOnServer,
   uploadCoverBlob,
+  uploadPlaylistCoverBlob,
   uploadTrackToServer,
 } from '@/lib/serverCatalog';
+import { localMediaKeyFor } from '@/lib/localPlayback';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 import {
   DEFAULT_ARTIST,
@@ -82,7 +84,11 @@ interface CatalogState {
   listAllTracks: () => TrackDef[];
   createPlaylist: (name: string) => string;
   renamePlaylist: (id: string, name: string) => void;
-  updatePlaylist: (id: string, patch: { name?: string; description?: string }) => void;
+  updatePlaylist: (
+    id: string,
+    patch: { name?: string; description?: string; posterSrc?: string | null },
+    opts?: { coverFile?: File | null; onProgress?: (message: string) => void },
+  ) => Promise<void>;
   deletePlaylist: (id: string) => void;
   /** Clone a non-master playlist; returns new id or empty string if invalid. */
   duplicatePlaylist: (id: string) => string;
@@ -132,7 +138,9 @@ interface CatalogState {
     },
     opts?: { coverFile?: File | null; onProgress?: (message: string) => void },
   ) => Promise<void>;
-  deleteTrack: (trackId: string) => Promise<void>;
+  deleteTrack: (trackId: string, opts?: { skipConfirm?: boolean }) => Promise<void>;
+  /** Bulk delete — one confirm; returns ids removed from local catalog. */
+  deleteTracks: (trackIds: string[], opts?: { skipConfirm?: boolean }) => Promise<string[]>;
   uploadTrackCover: (trackId: string, file: File) => Promise<void>;
   /** Pull library from QUESTFEST server (streaming catalog). */
   syncLibraryFromServer: () => Promise<void>;
@@ -435,16 +443,45 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     get().persist();
   },
 
-  updatePlaylist: (id, patch) => {
+  updatePlaylist: async (id, patch, opts) => {
     if (isMyLikesPlaylist(id)) return;
+    const prev = get().playlists.find((p) => p.id === id);
+    if (!prev) return;
+    const report = opts?.onProgress;
+
+    let posterSrc = prev.posterSrc;
+    if (patch.posterSrc === null) {
+      posterSrc = undefined;
+    } else if (patch.posterSrc !== undefined) {
+      posterSrc = patch.posterSrc || undefined;
+    }
+
+    if (opts?.coverFile) {
+      report?.('Saving cover…');
+      try {
+        if (isServerUploadConfigured()) {
+          posterSrc = await uploadPlaylistCoverBlob(id, opts.coverFile, { onProgress: report });
+        } else {
+          posterSrc = await coverFileToPersistableDataUrl(opts.coverFile);
+        }
+      } catch (e) {
+        const code = e instanceof Error ? e.message : 'cover_not_image';
+        throw Object.assign(new Error(code), { code });
+      }
+    }
+
+    report?.('Saving playlist…');
     set((s) => ({
       playlists: s.playlists.map((p) => {
         if (p.id !== id) return p;
-        return {
+        const next: PlaylistDef = {
           ...p,
           ...(patch.name !== undefined ? { name: patch.name.trim() || p.name } : {}),
           ...(patch.description !== undefined ? { description: patch.description } : {}),
         };
+        if (posterSrc) next.posterSrc = posterSrc;
+        else delete next.posterSrc;
+        return next;
       }),
     }));
     get().persist();
@@ -478,6 +515,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           kind: 'sovereign' as const,
           description: src.description,
           trackIds: [...src.trackIds],
+          ...(src.posterSrc ? { posterSrc: src.posterSrc } : {}),
         },
       ],
       activePlaylistId: newId,
@@ -803,26 +841,66 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     await get().updateTrack(trackId, {}, { coverFile: file });
   },
 
-  deleteTrack: async (trackId) => {
-    const prev = get().tracks[trackId];
-    if (!prev) return;
-    if (!window.confirm(`Delete “${prev.title}” from your catalog?`)) return;
+  deleteTrack: async (trackId, opts) => {
+    await get().deleteTracks([trackId], opts);
+  },
 
-    if (isServerUploadConfigured() && isUserUploadTrack(trackId, prev)) {
-      try {
-        await deleteTrackOnServer(trackId);
-      } catch {
-        if (!window.confirm('Server delete failed. Remove from this device anyway?')) return;
+  deleteTracks: async (trackIds, opts) => {
+    const unique = [...new Set(trackIds)];
+    const candidates = unique
+      .map((id) => ({ id, tr: get().tracks[id] }))
+      .filter((row): row is { id: string; tr: TrackDef } => !!row.tr);
+
+    if (!candidates.length) return [];
+
+    if (!opts?.skipConfirm) {
+      const label =
+        candidates.length === 1
+          ? `Delete “${candidates[0]!.tr.title}” from your catalog?`
+          : `Delete ${candidates.length} tracks from your catalog? They will be removed from all playlists.`;
+      if (!window.confirm(label)) return [];
+    }
+
+    const serverConfigured = isServerUploadConfigured();
+    const serverOk = new Set<string>();
+    const serverFailed = new Set<string>();
+
+    for (const { id, tr } of candidates) {
+      if (serverConfigured && isUserUploadTrack(id, tr)) {
+        try {
+          await deleteTrackOnServer(id);
+          serverOk.add(id);
+        } catch {
+          serverFailed.add(id);
+        }
+      } else {
+        serverOk.add(id);
       }
     }
 
+    let removeIds = [...serverOk];
+    if (serverFailed.size) {
+      const proceed = window.confirm(
+        serverFailed.size === candidates.length
+          ? 'Server delete failed. Remove from this device anyway?'
+          : `Server delete failed for ${serverFailed.size} track(s). Remove from this device anyway?`,
+      );
+      if (proceed) {
+        removeIds = candidates.map((c) => c.id);
+      }
+    }
+
+    if (!removeIds.length) return [];
+
+    const removeSet = new Set(removeIds);
     set((s) => {
-      const { [trackId]: _, ...tracks } = s.tracks;
-      const likedTrackIds = s.likedTrackIds.filter((t) => t !== trackId);
+      const tracks = { ...s.tracks };
+      for (const id of removeSet) delete tracks[id];
+      const likedTrackIds = s.likedTrackIds.filter((t) => !removeSet.has(t));
       const playlists = applyLikesToPlaylists(
         s.playlists.map((p) => ({
           ...p,
-          trackIds: p.trackIds.filter((t) => t !== trackId),
+          trackIds: p.trackIds.filter((t) => !removeSet.has(t)),
         })),
         likedTrackIds,
         new Set(Object.keys(tracks)),
@@ -830,6 +908,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { tracks, playlists, likedTrackIds };
     });
     get().persist();
+    return removeIds;
   },
 
   refreshFromServer: async () => get().syncLibraryFromServer(),

@@ -9,6 +9,7 @@ import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
+import { MasterCatalogEditor } from '@/components/catalog/MasterCatalogEditor';
 import { MasterCatalogFilters } from '@/components/catalog/MasterCatalogFilters';
 
 import { LikeButton } from '@/components/catalog/LikeButton';
@@ -72,6 +73,7 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
 
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
   const [editingTrackId, setEditingTrackId] = useState<string | null>(null);
+  const [masterEditMode, setMasterEditMode] = useState(false);
   const [masterFilter, setMasterFilter] = useState<MasterCatalogFilterState>(loadMasterCatalogFilter);
 
   const isMaster = pl ? isMasterPlaylist(pl.id) : false;
@@ -138,6 +140,18 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
   };
 
 
+
+  const canManageAnyMasterTrack = useMemo(() => {
+    if (!isMaster || !pl) return false;
+    return pl.trackIds.some((id) => {
+      const tr = getTrack(id);
+      return tr && isUserUploadTrack(id, tr);
+    });
+  }, [isMaster, pl, getTrack]);
+
+  if (masterEditMode && isMaster) {
+    return <MasterCatalogEditor onDone={() => setMasterEditMode(false)} />;
+  }
 
   if (!pl) {
     return <p className="sp-empty">{PLAIN.pickPlaylist}</p>;
@@ -212,6 +226,17 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
               loading="lazy"
               decoding="async"
             />
+          ) : pl?.posterSrc ? (
+            <img
+              src={pl.posterSrc}
+              alt=""
+              width={120}
+              height={120}
+              loading="lazy"
+              decoding="async"
+            />
+          ) : isMyLikes ? (
+            '♥'
           ) : (
             '🎧'
           )}
@@ -244,6 +269,12 @@ export function TrackList({ isPassenger, onEditPlaylist, onBulkPlaylistDownload 
               ▶
 
             </button>
+
+            {canManageAnyMasterTrack && (
+              <button type="button" className="sp-hero-secondary" onClick={() => setMasterEditMode(true)}>
+                {PLAIN.editMasterCatalog}
+              </button>
+            )}
 
             {onEditPlaylist && (
 

@@ -2101,6 +2101,15 @@ html.ios .sp-now-video {
   justify-content: center;
   font-size: 0.85rem;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.sp-pl-cover--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
 }
 
 .sp-pl-text {
@@ -2794,6 +2803,22 @@ html.ios .sp-now-video {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.sp-library-cover-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  font-size: 1.25rem;
+}
+
+.sp-library-cover-inner.sp-pl-cover--img {
+  object-fit: cover;
 }
 
 .sp-library-meta {
@@ -2855,6 +2880,142 @@ html.ios .sp-now-video {
   font-weight: 700;
   cursor: pointer;
   min-height: 36px;
+}
+
+/* Master catalog bulk edit */
+.sp-master-edit {
+  padding: 0 1.25rem 2rem;
+  max-width: 52rem;
+}
+
+.sp-master-edit-intro {
+  margin-bottom: 1rem;
+}
+
+.sp-master-edit-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sp-master-edit-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sp-master-edit-check input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #1db954;
+}
+
+.sp-master-edit-count {
+  font-size: 0.78rem;
+  color: #b3b3b3;
+  flex: 1;
+  min-width: 6rem;
+}
+
+.sp-master-edit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sp-master-edit-row {
+  border-radius: 8px;
+  background: #181818;
+  border: 1px solid #282828;
+}
+
+.sp-master-edit-row--selected {
+  border-color: rgba(29, 185, 84, 0.45);
+}
+
+.sp-master-edit-row--open {
+  border-color: #404040;
+}
+
+.sp-master-edit-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.75rem 0.85rem;
+}
+
+.sp-master-edit-thumb {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #282828;
+}
+
+.sp-master-edit-thumb--empty {
+  display: block;
+}
+
+.sp-master-edit-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.sp-master-edit-title {
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-master-edit-artist {
+  font-size: 0.78rem;
+  color: #b3b3b3;
+}
+
+.sp-master-edit-desc {
+  font-size: 0.75rem;
+  color: #727272;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-master-edit-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+}
+
+.sp-master-edit-tag {
+  font-size: 0.68rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: #282828;
+  color: #b3b3b3;
+}
+
+.sp-master-edit-row .spotify-dj-track-edit {
+  margin: 0 0.85rem 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #282828;
 }
 
 .sp-library-editor {

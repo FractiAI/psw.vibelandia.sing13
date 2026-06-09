@@ -5,6 +5,7 @@ import { CAPITANS_BRIDGE } from '@/lib/productNames';
 import { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { QUESTFEST_DECK_HREF } from '@/components/QuestfestFastLink';
+import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
 
 interface CatalogSidebarProps {
   onDjClick: () => void;
@@ -162,9 +163,7 @@ export function CatalogSidebar({ onDjClick, onNewPlaylist }: CatalogSidebarProps
                 className={`sp-pl-item${pl.id === activeId && !djMode ? ' sp-pl-item--on' : ''}`}
                 onClick={() => openListen(pl.id)}
               >
-                <span className="sp-pl-cover" aria-hidden>
-                  {isMyLikesPlaylist(pl.id) ? '♥' : '🎵'}
-                </span>
+                <PlaylistCoverArt playlist={pl} size={32} />
                 <span className="sp-pl-text">
                   <span className="sp-pl-name">{pl.name}</span>
                   <span className="sp-pl-count">

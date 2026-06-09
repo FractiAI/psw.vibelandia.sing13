@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { PlaylistEditor } from '@/components/catalog/PlaylistEditor';
+import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
@@ -135,7 +136,7 @@ export function PlaylistLibrary({
               {isRenaming ? (
                 <div className="sp-library-rename-panel">
                   <span className="sp-library-cover" aria-hidden>
-                    🎵
+                    <PlaylistCoverArt playlist={pl} className="sp-library-cover-inner" size={48} />
                   </span>
                   <div className="sp-library-rename-form">
                     <label className="sp-library-field" htmlFor={`pl-rename-${pl.id}`}>
@@ -177,7 +178,11 @@ export function PlaylistLibrary({
               ) : (
                 <button type="button" className="sp-library-open" onClick={() => onOpenPlaylist(pl.id)}>
                   <span className="sp-library-cover" aria-hidden>
-                    {isMasterPlaylist(pl.id) ? '📚' : '🎵'}
+                    {isMasterPlaylist(pl.id) ? (
+                      '📚'
+                    ) : (
+                      <PlaylistCoverArt playlist={pl} className="sp-library-cover-inner" size={48} />
+                    )}
                   </span>
                   <span className="sp-library-meta">
                     <span className="sp-library-name">

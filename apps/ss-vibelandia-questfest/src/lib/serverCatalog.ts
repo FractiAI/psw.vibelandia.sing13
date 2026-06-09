@@ -282,6 +282,46 @@ export async function uploadCoverBlob(
   return blob.url;
 }
 
+/** Upload playlist cover image to Blob (same pipeline as track covers). */
+export async function uploadPlaylistCoverBlob(
+  playlistId: string,
+  file: File,
+  opts?: { onProgress?: (message: string) => void },
+): Promise<string> {
+  const secret = catalogUploadSecret();
+  if (!secret) throw new Error('catalog_upload_unconfigured');
+  let uploadFile: File;
+  try {
+    uploadFile = await normalizeCoverForUpload(file);
+  } catch (e) {
+    const code = e instanceof Error ? e.message : 'cover_not_image';
+    if (code === 'cover_too_large' || code === 'cover_not_image') throw catalogApiError(code);
+    throw catalogApiError('cover_not_image');
+  }
+
+  const ext =
+    uploadFile.type === 'image/png'
+      ? 'png'
+      : uploadFile.type === 'image/webp'
+        ? 'webp'
+        : 'jpg';
+  const pathname = `catalog/playlist-covers/${playlistId}.${ext}`;
+
+  opts?.onProgress?.('Uploading cover…');
+
+  const blob = await upload(pathname, uploadFile, {
+    access: 'public',
+    handleUploadUrl: catalogApiUrl(UPLOAD_API),
+    headers: { 'X-Catalog-Secret': secret },
+    clientPayload: JSON.stringify({ allowOverwrite: true }),
+    onUploadProgress: ({ percentage }) => {
+      opts?.onProgress?.(`Uploading cover… ${Math.round(percentage)}%`);
+    },
+  });
+
+  return blob.url;
+}
+
 /** @deprecated Use uploadCoverBlob + updateTrackOnServer */
 export const uploadTrackCover = uploadCoverBlob;
 

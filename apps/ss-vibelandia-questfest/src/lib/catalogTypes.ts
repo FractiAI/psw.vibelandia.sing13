@@ -45,6 +45,8 @@ export interface PlaylistDef {
   kind: PlaylistKind;
   description: string;
   trackIds: string[];
+  /** Playlist cover — HTTPS blob URL or compact data URL in local prefs. */
+  posterSrc?: string;
 }
 
 export interface CatalogSnapshot {

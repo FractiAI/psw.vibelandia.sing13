@@ -13,6 +13,11 @@ export const PLAIN = {
   play: 'Play',
   edit: 'Edit',
   editTrack: 'Edit track',
+  editMasterCatalog: 'Edit master catalog',
+  editMasterCatalogHint:
+    'Update title, description, and cover for each track. Select multiple tracks to delete them from the catalog.',
+  deleteSelected: 'Delete selected',
+  noEditableTracks: 'No uploaded tracks to edit yet. Use Upload to add tracks first.',
   deleteTrack: 'Delete track',
   songs: 'songs',
   tracks: 'tracks',

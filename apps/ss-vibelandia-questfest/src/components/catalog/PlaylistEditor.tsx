@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { playTrackById } from '@/lib/trackPlayback';
+import { normalizeCoverForUpload } from '@/lib/coverImageFile';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
@@ -9,6 +10,7 @@ import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/c
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
 import { MASTER_LIBRARY_UI_HINT, SONIC_SINGULARITY_DESCRIPTION } from '@/lib/sonicCatalogCopy';
+import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
 
 interface PlaylistEditorProps {
   playlistId: string;
@@ -36,6 +38,13 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [coverPreview, setCoverPreview] = useState<string | undefined>();
+  const [coverFile, setCoverFile] = useState<File | null>(null);
+  const [coverInputKey, setCoverInputKey] = useState(0);
+  const [coverBusy, setCoverBusy] = useState(false);
+  const [coverMsg, setCoverMsg] = useState<string | null>(null);
+  const coverInputId = useId();
+  const coverBlobRef = useRef<string | null>(null);
   const [showAdd, setShowAdd] = useState(false);
   const [addSearch, setAddSearch] = useState('');
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
@@ -48,9 +57,32 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     if (!current) return;
     setName(current.name);
     setDescription(current.description);
+    setCoverPreview(current.posterSrc);
+    setCoverFile(null);
+    setCoverInputKey((k) => k + 1);
+    setCoverMsg(null);
+    if (coverBlobRef.current) {
+      URL.revokeObjectURL(coverBlobRef.current);
+      coverBlobRef.current = null;
+    }
     setShowAdd(false);
     setAddSearch('');
   }, [playlistId]);
+
+  const setCoverPreviewSafe = (url?: string) => {
+    if (coverBlobRef.current) {
+      URL.revokeObjectURL(coverBlobRef.current);
+      coverBlobRef.current = null;
+    }
+    if (url?.startsWith('blob:')) coverBlobRef.current = url;
+    setCoverPreview(url);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (coverBlobRef.current) URL.revokeObjectURL(coverBlobRef.current);
+    };
+  }, []);
 
   const canReorder = (pl?.trackIds.length ?? 0) > 1;
   const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
@@ -102,14 +134,37 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
   const masterTrackCount = masterPl?.trackIds.length ?? 0;
 
-  const saveMeta = () => {
+  const saveMeta = async () => {
     if (isMyLikes) return;
-    updatePlaylist(playlistId, { name, description });
+    setCoverBusy(true);
+    setCoverMsg(null);
+    try {
+      await updatePlaylist(
+        playlistId,
+        { name, description },
+        coverFile ? { coverFile, onProgress: setCoverMsg } : undefined,
+      );
+      setCoverFile(null);
+      setCoverInputKey((k) => k + 1);
+      const latest = useCatalogStore.getState().playlists.find((p) => p.id === playlistId);
+      setCoverPreviewSafe(latest?.posterSrc);
+      setCoverMsg('Saved');
+    } catch (e) {
+      const code = (e as { code?: string }).code ?? (e instanceof Error ? e.message : '');
+      if (code === 'cover_not_image') {
+        setCoverMsg('Cover must be JPEG, PNG, or WebP.');
+      } else if (code === 'cover_too_large' || code === 'cover_too_large_local') {
+        setCoverMsg('Cover image is too large — try a smaller photo.');
+      } else {
+        setCoverMsg('Save failed — try again.');
+      }
+    } finally {
+      setCoverBusy(false);
+    }
   };
 
   const handleDone = () => {
-    saveMeta();
-    onDone();
+    void saveMeta().finally(onDone);
   };
 
   const handleDelete = () => {
@@ -126,9 +181,10 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
   const handleDuplicate = () => {
     if (isMaster || isMyLikes) return;
-    saveMeta();
-    const newId = duplicatePlaylist(playlistId);
-    if (newId) onDuplicated?.(newId);
+    void saveMeta().then(() => {
+      const newId = duplicatePlaylist(playlistId);
+      if (newId) onDuplicated?.(newId);
+    });
   };
 
   return (
@@ -155,6 +211,69 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
       {!isMyLikes && (
       <div className="sp-pl-edit-meta">
+        <div className="spotify-field sp-track-cover-field">
+          <span>Cover image</span>
+          <div className="spotify-file-pick">
+            <input
+              key={coverInputKey}
+              id={coverInputId}
+              type="file"
+              accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
+              className="spotify-file-pick-input"
+              disabled={coverBusy}
+              onChange={(e) => {
+                const picked = e.target.files?.[0] ?? null;
+                e.target.value = '';
+                void (async () => {
+                  if (!picked) {
+                    setCoverFile(null);
+                    setCoverPreviewSafe(pl.posterSrc);
+                    return;
+                  }
+                  try {
+                    const normalized = await normalizeCoverForUpload(picked);
+                    setCoverFile(normalized);
+                    setCoverPreviewSafe(URL.createObjectURL(normalized));
+                    setCoverMsg(null);
+                  } catch {
+                    setCoverMsg('Could not use that image — try JPEG or PNG.');
+                  }
+                })();
+              }}
+            />
+            <div className="sp-track-cover-row">
+              {coverPreview ? (
+                <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
+              ) : (
+                <PlaylistCoverArt playlist={pl} className="sp-track-cover-preview sp-track-cover-preview--empty" size={72} />
+              )}
+              <label htmlFor={coverInputId} className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
+                {coverFile ? coverFile.name : 'Choose image'}
+              </label>
+              {(coverPreview || pl.posterSrc) && (
+                <button
+                  type="button"
+                  className="spotify-btn spotify-btn--ghost spotify-btn--tiny"
+                  disabled={coverBusy}
+                  onClick={() => {
+                    setCoverFile(null);
+                    setCoverPreviewSafe(undefined);
+                    setCoverInputKey((k) => k + 1);
+                    void updatePlaylist(playlistId, { posterSrc: null });
+                  }}
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+          </div>
+          <span className="spotify-field-hint">JPEG, PNG, WebP, or iPhone photo · saved when you tap Done</span>
+          {coverMsg && (
+            <span className={`spotify-dj-msg${coverMsg.startsWith('Save failed') || coverMsg.includes('must be') || coverMsg.includes('too large') ? ' spotify-dj-msg--error' : coverMsg === 'Saved' ? ' spotify-dj-msg--success' : ''}`}>
+              {coverMsg}
+            </span>
+          )}
+        </div>
         <label className="sp-library-field">
           Playlist name
           <input

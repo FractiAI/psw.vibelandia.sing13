@@ -4,13 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#050810" />
-  <title>Base Mainnet · nesting guide</title>
-  <meta name="description" content="Base Mainnet — the bedrock under QUESTFEST, in plain language." />
+  <title>Base Mainnet · genesis contracts · nesting guide</title>
+  <meta name="description" content="Base Mainnet — Syntheverse Genesis smart contracts on chain 8453: SYNTH90T Motherlode Blockmine and Lens Kernel. Deployed January 2, 2026." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/nesting/nest-basenet-genesis.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="nesting-shell.css" />
+  <style>
+    .nest-contract {
+      margin: 0 0 1rem;
+      padding: 1rem 1.05rem;
+      border-radius: 10px;
+      border: 1px solid var(--nest-line);
+      background: rgba(12, 16, 24, 0.85);
+    }
+    .nest-contract h3 { margin-top: 0; }
+    .nest-contract p:last-child { margin-bottom: 0; }
+    .nest-contract__addr {
+      display: block;
+      margin: 0.5rem 0;
+      font-size: 0.82rem;
+      word-break: break-all;
+      color: #e2e8f0;
+    }
+    .nest-contract__links {
+      margin: 0.65rem 0 0;
+      font-size: 0.88rem;
+    }
+    .nest-meta-grid {
+      display: grid;
+      gap: 0.35rem 1rem;
+      margin: 0.75rem 0 0;
+      font-size: 0.92rem;
+    }
+    @media (min-width: 480px) {
+      .nest-meta-grid { grid-template-columns: 9rem 1fr; }
+    }
+    .nest-meta-grid dt {
+      margin: 0;
+      font-weight: 700;
+      color: var(--nest-muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .nest-meta-grid dd {
+      margin: 0 0 0.35rem;
+      color: #cbd5e1;
+    }
+  </style>
 </head>
 <body>
   <main class="nest-wrap">
@@ -22,7 +65,7 @@
     <p class="crumb"><a href="../vibelandia-questfest.html#qf-nest-section">← Nesting ladder</a></p>
 
     <p class="nest-deck">Layer 1 of 9</p>
-    <p class="nest-plain-tag">Plain talk</p>
+    <p class="nest-plain-tag">Plain talk · on-chain receipts</p>
     <h1>Base Mainnet</h1>
     <img class="nest-hero" src="../assets/nesting/nest-basenet-genesis.png" width="1200" height="675" alt="Desert bedrock and distant city — Base Mainnet." loading="eager" decoding="async" />
 
@@ -33,19 +76,107 @@
     </nav>
 
     <p class="nest-lede">
-      <strong>Base Mainnet</strong> is the bedrock under the ship — specs and receipts that music, passes, and papers must match.
+      <strong>Base Mainnet</strong> is the bedrock under the ship — chain receipts that music, passes, and papers must match.
+      Genesis smart contracts deployed here on <strong>January 2, 2026</strong> (chain ID <strong>8453</strong>).
     </p>
 
     <article class="nest-body">
       <h2>In one sentence</h2>
-      <p>The foundation layer: proof and documents everything else sits on.</p>
+      <p>Two minimal, immutable protocol contracts on Base — fixed-supply SYNTH token and a stateless lens for on-chain signals.</p>
+
+      <h2>Genesis smart contracts · Base Mainnet</h2>
+      <p>
+        Source repo:
+        <a href="https://github.com/FractiAI/Syntheverse-Genesis-Base-Blockchain" target="_blank" rel="noopener noreferrer">FractiAI/Syntheverse-Genesis-Base-Blockchain</a>
+        · Solidity 0.8.24 · Hardhat · OpenZeppelin ERC-20 · no upgradeability, no admin after deploy.
+      </p>
+
+      <div class="nest-contract">
+        <h3>SyntheverseGenesisSYNTH90T</h3>
+        <p>
+          Fixed-supply ERC-20 — <strong>90 trillion SYNTH</strong> (90,000,000,000,000 · 18 decimals).
+          One-time mint at deployment to the Motherlode Vault. No additional minting.
+          Emits <code>MotherlodeMinted</code> with Gold / Silver / Copper semantics (50% / 25% / 25%).
+        </p>
+        <code class="nest-contract__addr">0xAC9fa48Ca1D60e5274d14c7CEd6B3F4C1ADd1Aa3</code>
+        <p class="nest-contract__links">
+          <a href="https://basescan.org/address/0xAC9fa48Ca1D60e5274d14c7CEd6B3F4C1ADd1Aa3" target="_blank" rel="noopener noreferrer">BaseScan →</a>
+          ·
+          <a href="https://basescan.org/tx/0x2feb4ee91670fdff2c2ba3eace87c0ca93e81de003a8195d695b4d96fa88d314" target="_blank" rel="noopener noreferrer">Deploy tx</a>
+        </p>
+        <dl class="nest-meta-grid">
+          <dt>Token name</dt>
+          <dd>Syntheverse SYNTH 90T MOTHERLODE BLOCKMINE</dd>
+          <dt>Symbol</dt>
+          <dd>SYNTH</dd>
+          <dt>Deploy block</dt>
+          <dd>40,294,754</dd>
+          <dt>Motherlode vault</dt>
+          <dd><code>0x3563388d0e1c2d66a004e5e57717dc6d7e568be3</code></dd>
+        </dl>
+      </div>
+
+      <div class="nest-contract">
+        <h3>SyntheverseGenesisLensKernel</h3>
+        <p>
+          Stateless event-emitting contract — a neutral protocol surface for participation signals and attestations.
+          No stored state, no admin functions. Three primitives: <code>signal()</code>, <code>attest()</code>, <code>note()</code>.
+        </p>
+        <code class="nest-contract__addr">0xD9ABf9B19B4812A2fd06c5E8986B84040505B9D8</code>
+        <p class="nest-contract__links">
+          <a href="https://basescan.org/address/0xD9ABf9B19B4812A2fd06c5E8986B84040505B9D8" target="_blank" rel="noopener noreferrer">BaseScan →</a>
+          ·
+          <a href="https://basescan.org/tx/0x5a610ceef16e607734ec651797aefdec3143a26b25d769e07832c8ca1686fc5e" target="_blank" rel="noopener noreferrer">Deploy tx</a>
+        </p>
+        <dl class="nest-meta-grid">
+          <dt>Deploy block</dt>
+          <dd>40,294,815</dd>
+          <dt>Events</dt>
+          <dd><code>Signal</code> · <code>Attestation</code> · <code>Note</code></dd>
+        </dl>
+      </div>
+
+      <h2>Deployment receipt</h2>
+      <dl class="nest-meta-grid">
+        <dt>Network</dt>
+        <dd>Base Mainnet · chain ID 8453</dd>
+        <dt>Deployed</dt>
+        <dd>January 2, 2026</dd>
+        <dt>Deployer</dt>
+        <dd><code>0x3563388d0E1c2D66A004E5E57717dc6D7e568BE3</code></dd>
+        <dt>Total gas</dt>
+        <dd>889,587 (~0.0002–0.0003 ETH)</dd>
+        <dt>Testnet</dt>
+        <dd>
+          Same addresses on Base Sepolia (84532) —
+          <a href="https://sepolia.basescan.org/address/0xAC9fa48Ca1D60e5274d14c7CEd6B3F4C1ADd1Aa3" target="_blank" rel="noopener noreferrer">SYNTH90T</a>
+          ·
+          <a href="https://sepolia.basescan.org/address/0xD9ABf9B19B4812A2fd06c5E8986B84040505B9D8" target="_blank" rel="noopener noreferrer">LensKernel</a>
+        </dd>
+      </dl>
 
       <h2>Three steps</h2>
-      <p class="nest-step"><strong>1.</strong> Desert bedrock under Reno — ground under the neon strip.</p>
-      <p class="nest-step"><strong>2.</strong> Fair Exchange and playback should line up with what is documented.</p>
-      <p class="nest-step"><strong>3.</strong> No terminal required to belong — only to know receipts matter here.</p>
+      <p class="nest-step"><strong>1.</strong> Desert bedrock under Reno — on-chain genesis is the ground under the neon strip.</p>
+      <p class="nest-step"><strong>2.</strong> Fair Exchange and playback should line up with what Base can prove — verify on BaseScan.</p>
+      <p class="nest-step"><strong>3.</strong> Syntheverse surfaces sit above this layer — same story, matching receipts.</p>
+
+      <div class="nest-caveat">
+        <h2>Honesty boundary</h2>
+        <p>
+          Genesis contracts establish a fixed token supply and a permissionless signal surface — not a promise of market value,
+          exchange listing, or production breakthrough. Metallic allocation (Gold / Silver / Copper) is emitted as on-chain
+          event semantics. QUESTFEST passes and playback remain the guest-facing operational contract.
+        </p>
+      </div>
 
       <div class="nest-actions">
+        <p>
+          <a href="https://github.com/FractiAI/Syntheverse-Genesis-Base-Blockchain" target="_blank" rel="noopener noreferrer">Genesis repo →</a>
+          ·
+          <a href="https://github.com/FractiAI/Syntheverse" target="_blank" rel="noopener noreferrer">Syntheverse ecosystem →</a>
+          ·
+          <a href="https://github.com/AiwonA1/Syntheverse-" target="_blank" rel="noopener noreferrer">AiwonA1/Syntheverse →</a>
+        </p>
         <p><a href="nest-syntheverse.html">Next: Syntheverse →</a> · <a href="../vibelandia-questfest.html#qf-nest-section">Ladder</a></p>
       </div>
     </article>

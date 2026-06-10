@@ -1,0 +1,56 @@
+{
+  "$comment": "Hospitality Commons node template — clone this to stand up your own port. Same structure, local soul. Reno is the flagship; swap in your wildlife, heritage, and terrain. Voice tiers: mythic | operational | verified.",
+  "schema": "hospitality-node/v1",
+  "node": {
+    "id": "YOUR_NODE_ID",
+    "name": "YOUR_PORT_NAME",
+    "parent": "puerto-reno-flagship",
+    "region": "YOUR_REGION",
+    "contact": { "email": "YOUR_CONTACT_EMAIL", "phone": "YOUR_PHONE", "protocol": "old-school — one person answers, no funnel" }
+  },
+  "citadel": {
+    "$comment": "The amusement-park downtown — life concentrated in one walkable re-lit core; surrounding country untouched.",
+    "core": "DESCRIBE_YOUR_DOWNTOWN_CORE (e.g. two re-lit blocks, saloon hall, rooms above)",
+    "underutilizedAssets": ["EMPTY_FLOORS", "DARK_STOREFRONTS", "IDLE_HALLS"],
+    "voiceTier": "mythic-until-relit"
+  },
+  "trackA": {
+    "$comment": "Pristine Commons — un-motorized, heritage-grade. List what is native and legal in your region.",
+    "adventures": ["YOUR_WATER (e.g. salmon runs, fly water)", "YOUR_BIRDS", "YOUR_STOCK (e.g. cattle drives, pack mules)", "YOUR_MINERALS (e.g. hand sluicing)"],
+    "houseRules": ["no engines ever", "bag limits honored", "watershed purity", "acoustic balance"],
+    "voiceTier": "operational-when-guided"
+  },
+  "trackB": {
+    "$comment": "Overcharge Park — motorized thunder on barren ground only, fully disconnected from sensitive water and wildlife. Optional; omit if your node runs quiet-only.",
+    "adventures": ["YOUR_KINETIC_GROUND (e.g. dry lake beds, winter bowls)"],
+    "houseRules": ["barren ground only", "hard safety vectors", "never mixed with Track A"],
+    "voiceTier": "operational-when-guided"
+  },
+  "rail": {
+    "$comment": "The invisible concierge layer — the machine carries 100% of logistics.",
+    "machineCarries": ["bookings + day compilation", "gear staging", "zone boundaries", "one running tab"],
+    "humansDeliver": ["five-star presence", "local lore", "harvest-to-table fire", "Fair Exchange handshake"]
+  },
+  "stations": [
+    { "station": "host", "title": "Downtown Citadel Host", "claim": "building owners, civic developers, co-op organizers" },
+    { "station": "guide", "title": "Master Outfitter & Guide Commander", "claim": "licensed outfitters, hunters, anglers, wranglers, kinetic marshals" },
+    { "station": "chef", "title": "Frontier Sanctuary Gastronomy Director", "claim": "chefs, pitmasters, saloon operators" },
+    { "station": "guest", "title": "First Travelers", "claim": "anyone — tell the desk your window" }
+  ],
+  "economics": {
+    "model": "fair-exchange",
+    "$comment": "Honor-system reciprocity — live balance both parties can see and adjust; no corporate skim. Same system as the parent music catalog honor pass.",
+    "costIn": "low by design — under-utilized assets only: empty floors, idle gear and stock, off-season skill",
+    "commitment": "season by season, extend by mutual yes"
+  },
+  "honesty": {
+    "operational": ["brochure + portals", "contact desk", "this template", "fair exchange"],
+    "mythic": ["vertical citadel at scale", "hydrogen fleet", "virtual fencing"],
+    "verified": []
+  },
+  "parentEdge": {
+    "brochure": "https://www.ssvibelandiaquestfest24x365.com/commons",
+    "nestGuide": "https://www.ssvibelandiaquestfest24x365.com/interfaces/nesting/nest-hospitality-commons.html",
+    "seedKit": "https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/seed"
+  }
+}

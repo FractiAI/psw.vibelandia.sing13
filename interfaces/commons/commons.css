@@ -1,0 +1,380 @@
+/*
+ * The Commons — Machote Moderno skin (SynthOBS-WP-2026-V12 §V)
+ * Creamy un-decayed golds · deep tobacco browns · warm lacquer blacks · brushed brass.
+ * Type scale and depth follow φ = 1.618.
+ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --phi: 1.618;
+  --lacquer: #120d08;
+  --lacquer-2: #1c140c;
+  --tobacco: #3d2b1a;
+  --tobacco-soft: #56402a;
+  --cardstock: #efe3c8;
+  --cream-gold: #e8c87a;
+  --gold: #d4af37;
+  --gold-hi: #fdf3d7;
+  --brass: #b08d3f;
+  --brass-line: rgba(176, 141, 63, 0.5);
+  --ink: #f3ead6;
+  --ink-soft: #cdbfa3;
+  --foam: #5eead4;
+  /* φ type scale: 0.85 · 1 · 1.272(√φ) steps for readability */
+  --t-0: 0.85rem;
+  --t-1: 1rem;
+  --t-2: 1.272rem;
+  --t-3: 1.618rem;
+  --t-4: 2.058rem;
+  --t-5: 2.618rem;
+  --t-6: 4.236rem;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.12) 3px, rgba(0,0,0,0.12) 4px),
+    radial-gradient(ellipse 120% 70% at 50% -10%, rgba(212, 175, 55, 0.08), transparent 60%),
+    var(--lacquer);
+  color: var(--ink);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+a { color: var(--cream-gold); text-decoration: none; }
+a:hover { color: var(--gold-hi); text-decoration: underline; }
+
+.cm-wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+
+/* ── Top rail ── */
+.cm-topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.85rem;
+  padding: 0.85rem 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--brass-line);
+}
+.cm-topnav .dot { opacity: 0.45; user-select: none; }
+.cm-topnav a { color: var(--cream-gold); }
+.cm-topnav .here { color: var(--gold-hi); border-bottom: 2px solid var(--gold); padding-bottom: 1px; }
+
+/* ── Masthead ── */
+.cm-masthead { text-align: center; padding: 2.1rem 0 1.3rem; }
+.cm-eyebrow {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.65rem;
+}
+.cm-title {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.618rem, 9vw, var(--t-6));
+  line-height: 0.95;
+  letter-spacing: 0.025em;
+  color: var(--gold-hi);
+  text-shadow: 0 3px 0 rgba(0,0,0,0.55), 0 10px 26px rgba(0,0,0,0.5);
+}
+.cm-deck {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: var(--t-2);
+  color: var(--cream-gold);
+  margin-top: 0.5rem;
+}
+
+/* ── Hero plate ── */
+.cm-hero {
+  border: 3px solid var(--brass);
+  border-radius: 6px;
+  outline: 1px solid rgba(0,0,0,0.7);
+  box-shadow: 0 13px 42px rgba(0,0,0,0.62), inset 0 0 0 1px rgba(253, 243, 215, 0.12);
+  overflow: hidden;
+  margin: 0.85rem 0 1.3rem;
+  background: var(--lacquer-2);
+}
+.cm-hero img { display: block; width: 100%; height: auto; }
+.cm-hero-caption {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  text-align: center;
+  font-size: var(--t-0);
+  color: var(--ink-soft);
+  padding: 0.55rem 1rem 0.7rem;
+  border-top: 1px solid var(--brass-line);
+}
+
+/* ── Buttons ── */
+.cm-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.1rem 0;
+}
+.cm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.45rem;
+  border-radius: 4px;
+  border: 2px solid var(--brass);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .14s, filter .14s, box-shadow .14s;
+  text-decoration: none;
+}
+.cm-btn:hover { transform: translateY(-1px); text-decoration: none; filter: brightness(1.07); }
+.cm-btn--gold {
+  background: linear-gradient(180deg, #f0d490, var(--gold) 55%, var(--brass));
+  color: var(--lacquer);
+  box-shadow: 0 5px 13px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.45);
+}
+.cm-btn--ghost {
+  background: rgba(18, 13, 8, 0.82);
+  color: var(--cream-gold);
+}
+.cm-btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
+
+/* ── Sections ── */
+.cm-section { margin: 2.1rem 0; }
+.cm-h2 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-weight: 400;
+  font-size: var(--t-4);
+  letter-spacing: 0.05em;
+  color: var(--gold-hi);
+  margin-bottom: 0.25rem;
+}
+.cm-h2::after {
+  content: "";
+  display: block;
+  width: 4.236rem;
+  height: 3px;
+  margin-top: 0.35rem;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.cm-kick {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: var(--t-2);
+  color: var(--cream-gold);
+  margin-bottom: 0.85rem;
+}
+.cm-body { font-size: 0.95rem; color: var(--ink-soft); max-width: 60ch; }
+.cm-body strong, .cm-card p strong { color: var(--ink); }
+.cm-body + .cm-body { margin-top: 0.7rem; }
+
+/* ── Cards (letterpress panels) ── */
+.cm-grid { display: grid; gap: 0.8rem; margin-top: 1rem; }
+@media (min-width: 600px) { .cm-grid--2 { grid-template-columns: 1fr 1fr; } }
+.cm-card {
+  border: 1px solid var(--brass-line);
+  border-radius: 6px;
+  background:
+    linear-gradient(170deg, rgba(212, 175, 55, 0.07), transparent 38%),
+    linear-gradient(180deg, var(--lacquer-2), #160f09);
+  box-shadow: 0 8px 21px rgba(0,0,0,0.42);
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+.cm-card--link { display: block; color: inherit; transition: border-color .15s, box-shadow .15s, transform .15s; }
+.cm-card--link:hover {
+  border-color: var(--gold);
+  box-shadow: 0 13px 34px rgba(0,0,0,0.55), 0 0 21px rgba(212,175,55,0.13);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.cm-card-pill {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lacquer);
+  background: linear-gradient(180deg, #f0d490, var(--gold));
+  border-radius: 3px;
+  padding: 0.3em 0.65em;
+  margin-bottom: 0.55rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+}
+.cm-card-pill--track { background: linear-gradient(180deg, #9be3d3, var(--foam)); }
+.cm-card h3 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-weight: 400;
+  font-size: var(--t-3);
+  letter-spacing: 0.04em;
+  color: var(--gold-hi);
+  margin-bottom: 0.35rem;
+}
+.cm-card p { font-size: 0.88rem; color: var(--ink-soft); }
+.cm-card .cta {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream-gold);
+}
+
+/* ── Timeline (a day in the life) ── */
+.cm-timeline { list-style: none; margin-top: 1rem; }
+.cm-timeline li {
+  position: relative;
+  padding: 0 0 1.15rem 1.85rem;
+  border-left: 2px solid var(--brass-line);
+  margin-left: 0.55rem;
+}
+.cm-timeline li:last-child { padding-bottom: 0.2rem; }
+.cm-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.32rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--lacquer);
+  box-shadow: 0 0 8px rgba(212,175,55,0.6);
+}
+.cm-timeline .tl-time {
+  display: block;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.15rem;
+}
+.cm-timeline .tl-what { font-size: 0.92rem; color: var(--ink); font-weight: 600; }
+.cm-timeline .tl-note { font-size: 0.82rem; color: var(--ink-soft); }
+
+/* ── Ledger table (what's involved / economics) ── */
+.cm-ledger { width: 100%; border-collapse: collapse; margin-top: 0.9rem; font-size: 0.86rem; }
+.cm-ledger th {
+  text-align: left;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brass);
+  padding: 0.45rem 0.65rem;
+  border-bottom: 2px solid var(--brass-line);
+}
+.cm-ledger td {
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid rgba(176, 141, 63, 0.22);
+  color: var(--ink-soft);
+  vertical-align: top;
+}
+.cm-ledger td:first-child { color: var(--ink); font-weight: 600; white-space: nowrap; }
+
+/* ── Machine vs human split ── */
+.cm-split { display: grid; gap: 0.8rem; margin-top: 1rem; }
+@media (min-width: 600px) { .cm-split { grid-template-columns: 1fr 1fr; } }
+.cm-split-col {
+  border: 1px solid var(--brass-line);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(180deg, var(--lacquer-2), #160f09);
+}
+.cm-split-col h3 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-weight: 400;
+  font-size: var(--t-2);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+.cm-split-col--machine h3 { color: var(--foam); }
+.cm-split-col--human h3 { color: var(--gold-hi); }
+.cm-split-col ul { list-style: none; }
+.cm-split-col li {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 0.28rem 0 0.28rem 1.2rem;
+  position: relative;
+}
+.cm-split-col--machine li::before { content: "⚙"; position: absolute; left: 0; color: var(--foam); }
+.cm-split-col--human li::before { content: "★"; position: absolute; left: 0; color: var(--gold); }
+
+/* ── Honesty rail ── */
+.cm-honesty {
+  border: 1px dashed var(--brass-line);
+  border-radius: 6px;
+  background: rgba(212, 175, 55, 0.05);
+  padding: 1rem 1.1rem;
+  margin-top: 2.1rem;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+.cm-honesty h2 {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.5rem;
+}
+.cm-honesty p { margin-bottom: 0.35rem; }
+.cm-honesty p:last-child { margin-bottom: 0; }
+
+/* ── Claim panel ── */
+.cm-claim {
+  text-align: center;
+  border: 3px double var(--brass);
+  border-radius: 6px;
+  background:
+    radial-gradient(ellipse 80% 100% at 50% 0%, rgba(212, 175, 55, 0.12), transparent 70%),
+    var(--lacquer-2);
+  padding: 1.618rem 1.25rem;
+  margin-top: 2.1rem;
+}
+.cm-claim h2 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-weight: 400;
+  font-size: var(--t-4);
+  letter-spacing: 0.05em;
+  color: var(--gold-hi);
+  margin-bottom: 0.35rem;
+}
+.cm-claim p { font-size: 0.9rem; color: var(--ink-soft); max-width: 46ch; margin: 0 auto 0.9rem; }
+.cm-claim .cm-line {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: var(--t-1);
+  color: var(--cream-gold);
+  margin-top: 0.85rem;
+}
+
+/* ── Footer ── */
+.cm-foot {
+  margin-top: 2.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--brass-line);
+  text-align: center;
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cm-btn:hover, .cm-card--link:hover { transform: none; }
+}

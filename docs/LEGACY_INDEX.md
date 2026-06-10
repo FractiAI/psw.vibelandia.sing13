@@ -8,6 +8,7 @@ Surface twin: `interfaces/look-under-the-hood-legacy-catalog.html`
 |---------------|------|---------------|--------------------|
 | 2026-06-09 | Top-deck feature cards: 1-2-3 Wormhole campaign, King Bee node sync, Erdős 353 press, Goldilocks AI OS trials, When the Sun Spoke, Clock-skew disclosure, Machote Moderno launch, Hit Factory 234K showdown | Single "latest" slot (2026 Frontier Guide) + Three Doors front door | `/interfaces/press-releases.html` · whitepaper catalog |
 | 2026-06-09 | Top-deck Quicklinks: wormhole campaign, sun-spoke blog, Goldilocks OS demo, SING 9 GitHub, open-source core GitHub | Squeezed quicklist (archive + doors carry them) | Press archive · `llms.txt` sister-repo section |
+| 2026-06-09 | Top-deck featured slot: 2026 Frontier Guide | Layer 10 — The Commons (`/commons` brochure + portals) | `/questfest-guide` (page live; "previous feature" link kept under the slot) |
 
 ## How to add a row
 

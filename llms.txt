@@ -47,6 +47,16 @@
 - Door III · BUILD — seed kit (fork your own edge): https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/seed
 - Voice tiers on every claim: 🜛 mythic · ⚙ operational · 📐 verified (interfaces/voice-tier.css)
 
+## Layer 10 — The Commons (Sustainable Hospitality)
+
+- Guest brochure (amusement-park downtown + guided frontier + concierge rail): https://www.ssvibelandiaquestfest24x365.com/commons
+- Host portal (Downtown Citadel Host): https://www.ssvibelandiaquestfest24x365.com/commons/host
+- Guide portal (Outfitter & Guide Commander · Track A pristine / Track B motorized): https://www.ssvibelandiaquestfest24x365.com/commons/guide
+- Chef portal (Sanctuary Gastronomy Director): https://www.ssvibelandiaquestfest24x365.com/commons/chef
+- Nest guide (rung 10): https://www.ssvibelandiaquestfest24x365.com/interfaces/nesting/nest-hospitality-commons.html
+- Clone a node: seed/hospitality-node.template.json — any port community, same structure, local soul
+- Economics: Fair Exchange honor system; under-utilized assets only (empty floors, idle gear, off-season skill); contact valetpru@gmail.com · 775-404-5233
+
 ## Open music catalog manifest (syndication)
 
 - GET https://www.ssvibelandiaquestfest24x365.com/api/catalog — read-only JSON master library (tracks + playlists). Other edges may syndicate; license fields per track where present (stream rights via valetpru@gmail.com).

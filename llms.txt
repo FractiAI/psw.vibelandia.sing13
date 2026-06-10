@@ -40,6 +40,17 @@
 - NSPFRNP catalog (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=mca-nspfrnp-catalog
 - BBHE Repository Standard (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=bbhe-repository-standard
 
+## Three Doors (front door — everything nests under one of these)
+
+- Door I · LISTEN — Sovereign Player: https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/
+- Door II · READ — paper catalog: https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-catalog.html
+- Door III · BUILD — seed kit (fork your own edge): https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/seed
+- Voice tiers on every claim: 🜛 mythic · ⚙ operational · 📐 verified (interfaces/voice-tier.css)
+
+## Open music catalog manifest (syndication)
+
+- GET https://www.ssvibelandiaquestfest24x365.com/api/catalog — read-only JSON master library (tracks + playlists). Other edges may syndicate; license fields per track where present (stream rights via valetpru@gmail.com).
+
 ## Sovereign Player — Fair Exchange
 
 - Passenger pass: $16.18/mo (EGS φ) — pay on Venmo, PayPal, or Cash App; client-only honor boarding (localStorage on device, 30 days from paid date); no server JWT

@@ -37,6 +37,12 @@ export interface TrackDef {
   uploadedAt?: string;
   /** Dedup key from device file (name + size + modified) */
   sourceKey?: string;
+  /** Seed:Edge story — the narrative that travels with this track (catalog-of-record). */
+  story?: string;
+  /** Path or URL to lyrics (e.g. lyrics/ in the repo). */
+  lyricsRef?: string;
+  /** License line for syndication — e.g. 'stream-only', 'contact for licensing'. */
+  license?: string;
 }
 
 export interface PlaylistDef {

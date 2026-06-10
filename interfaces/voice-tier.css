@@ -1,0 +1,45 @@
+/*
+ * Voice-tier badges — NSPFRNP honesty rail markers.
+ * Three registers, marked everywhere they switch:
+ *   🜛 mythic      — narrative, story geometry, metaphor-forward
+ *   ⚙ operational — working software, reproducible commands, live surfaces
+ *   📐 verified    — math, audits, kernel witnesses, bench evidence
+ *
+ * Usage: <span class="vt-badge vt-mythic">🜛 mythic</span>
+ *        <span class="vt-badge vt-oper">⚙ operational</span>
+ *        <span class="vt-badge vt-verified">📐 verified</span>
+ */
+
+.vt-badge {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 0.28em 0.55em;
+  border-radius: 999px;
+  border: 1px solid;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.vt-mythic {
+  color: #e8b86d;
+  border-color: rgba(232, 184, 109, 0.45);
+  background: rgba(232, 184, 109, 0.08);
+}
+
+.vt-oper {
+  color: #5eead4;
+  border-color: rgba(94, 234, 212, 0.4);
+  background: rgba(94, 234, 212, 0.07);
+}
+
+.vt-verified {
+  color: #c4b5fd;
+  border-color: rgba(196, 181, 253, 0.4);
+  background: rgba(196, 181, 253, 0.07);
+}

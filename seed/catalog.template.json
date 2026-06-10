@@ -1,0 +1,23 @@
+{
+  "$schema": "Seed:Edge catalog — each entry carries origin, experience, and the story/license that travels with it.",
+  "edge": {
+    "name": "{{EDGE_NAME}}",
+    "url": "{{PRODUCTION_URL}}",
+    "contact": "{{CONTACT_EMAIL}}",
+    "parent": "https://www.ssvibelandiaquestfest24x365.com"
+  },
+  "version": 1,
+  "entries": [
+    {
+      "id": "{{unique-id}}",
+      "kind": "track | paper | episode | surface",
+      "title": "{{TITLE}}",
+      "seed": "{{ORIGIN — one line: who made it, where it came from}}",
+      "edge": "{{EXPERIENCE — one line: what the visitor gets}}",
+      "story": "{{OPTIONAL — the Seed:Edge narrative that travels with this entry}}",
+      "license": "{{OPTIONAL — e.g. 'stream-only', 'CC-BY', 'contact for licensing'}}",
+      "voiceTier": "mythic | operational | verified",
+      "src": "{{URL_OR_PATH}}"
+    }
+  ]
+}

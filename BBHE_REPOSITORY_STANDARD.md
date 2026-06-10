@@ -83,6 +83,16 @@ This standard defines how **BBHE repositories** are structured so that:
 
 ---
 
+## 6b. Continuous Squeeze — one in, one archived
+
+- Every new doc/paper/press item **registers** (registry ID, ladder rung, or archive entry) on landing.
+- The item it supersedes moves to the **legacy index** (`docs/LEGACY_INDEX.md` or the legacy catalog surface) the same day.
+- The front door stays **three doors wide** (Listen · Read · Build); the top deck carries exactly **one** featured slot.
+- New nest layers pass the **Goldilocks Gate** (`protocols/NEST_LAYER_ADMISSION_RULE_NSPFRNP.md`): one nest guide + one honesty row + one seed hook.
+- Voice tiers marked at every register switch: 🜛 mythic · ⚙ operational · 📐 verified.
+
+---
+
 ## 7. Checklist for a BBHE Repository
 
 | Item | Required |

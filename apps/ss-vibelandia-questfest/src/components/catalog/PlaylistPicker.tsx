@@ -117,31 +117,35 @@ export function PlaylistPicker() {
   return (
     <>
       <div className="sc-feed-picker-row">
-        <button type="button" className="sc-pick-trigger" onClick={() => setOpen(true)} aria-expanded={open}>
-          {buttonLabel}
-          <span aria-hidden> ▾</span>
-        </button>
-        <button
-          type="button"
-          className="sc-play-all sc-play-all--toolbar"
-          disabled={!canPlayAll}
-          aria-label={PLAIN.playAll}
-          title={PLAIN.playAll}
-          onClick={playAll}
-        >
-          ▶ {PLAIN.playAll}
-        </button>
-        {captainUnlocked && !isMyLikesPlaylist(activeId) ? (
+        <div className="sc-feed-picker-primary">
+          <button type="button" className="sc-pick-trigger" onClick={() => setOpen(true)} aria-expanded={open}>
+            {buttonLabel}
+            <span aria-hidden> ▾</span>
+          </button>
+        </div>
+        <div className="sc-feed-picker-actions">
           <button
             type="button"
-            className="sc-pick-edit"
-            onClick={() => setMetaOpen(true)}
-            aria-label={PLAIN.editCover}
-            title={PLAIN.editCover}
+            className="sc-play-all sc-play-all--toolbar"
+            disabled={!canPlayAll}
+            aria-label={PLAIN.playAll}
+            title={PLAIN.playAll}
+            onClick={playAll}
           >
-            ✎
+            ▶ {PLAIN.playAll}
           </button>
-        ) : null}
+          {captainUnlocked && !isMyLikesPlaylist(activeId) ? (
+            <button
+              type="button"
+              className="sc-pick-edit"
+              onClick={() => setMetaOpen(true)}
+              aria-label={PLAIN.editCover}
+              title={PLAIN.editCover}
+            >
+              ✎
+            </button>
+          ) : null}
+        </div>
       </div>
 
       {activePl?.description?.trim() ? (

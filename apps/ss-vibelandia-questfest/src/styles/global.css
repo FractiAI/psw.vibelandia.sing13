@@ -5119,6 +5119,11 @@ html:not(.qf-upload-tab) .sp-library {
   cursor: pointer;
   flex: 1 1 auto;
   min-width: 0;
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sc-pick-trigger:hover {
@@ -5266,9 +5271,39 @@ html:not(.qf-upload-tab) .sp-library {
 
 .sc-feed-picker-row {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.sc-feed-picker-primary {
+  display: flex;
+  min-width: 0;
+  padding-right: 6.75rem;
+}
+
+.sc-feed-picker-actions {
+  display: flex;
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+@media (min-width: 640px) {
+  .sc-feed-picker-row {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .sc-feed-picker-primary {
+    flex: 1 1 auto;
+    padding-right: 0;
+  }
+
+  .sc-feed-picker-actions {
+    flex-shrink: 0;
+  }
 }
 
 .sc-pick-edit,
@@ -5404,9 +5439,15 @@ html:not(.qf-upload-tab) .sp-library {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 0.65rem 1rem;
+  padding: max(0.65rem, env(safe-area-inset-top, 0px)) 1rem 0.65rem;
   background: #121212;
   border-bottom: 1px solid #282828;
+}
+
+@media (min-width: 640px) {
+  .sc-feed-picker {
+    padding-top: 0.65rem;
+  }
 }
 
 .sc-feed-body {

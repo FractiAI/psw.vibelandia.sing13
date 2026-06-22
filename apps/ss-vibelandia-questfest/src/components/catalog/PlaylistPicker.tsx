@@ -1,5 +1,7 @@
 import { useMemo, useState, type CSSProperties } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { useResolvedTrackIds } from '@/stores/catalogSelectors';
+import { usePlaybackStore } from '@/stores/playbackStore';
 import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
 import { PlaylistMetaModal } from '@/components/catalog/PlaylistMetaModal';
 import {
@@ -10,6 +12,8 @@ import {
   MY_LIKES_PLAYLIST_ID,
 } from '@/lib/catalogSeed';
 import { getDirectChildPlaylists, topLevelUserPlaylists } from '@/lib/playlistNest';
+import { nextSequentialTrackId, nextShuffledTrackId } from '@/lib/playlistShuffle';
+import { playTrackById } from '@/lib/trackPlayback';
 import { PLAIN } from '@/lib/plainSpeak';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { PlaylistDef } from '@/lib/catalogTypes';
@@ -75,6 +79,10 @@ export function PlaylistPicker() {
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const playlists = useCatalogStore((s) => s.playlists);
+  const getTrack = useCatalogStore((s) => s.getTrack);
+  const resolvedIds = useResolvedTrackIds(activeId);
+  const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
+  const shuffleQueue = usePlaybackStore((s) => s.shuffleQueue);
 
   const activePl = useMemo(() => playlists.find((p) => p.id === activeId), [playlists, activeId]);
   const myLikes = useMemo(() => playlists.find((p) => p.id === MY_LIKES_PLAYLIST_ID), [playlists]);
@@ -88,12 +96,40 @@ export function PlaylistPicker() {
         ? PLAIN.myLikes
         : activePl.name;
 
+  const canPlayAll = useMemo(() => {
+    const firstId =
+      shuffleEnabled && shuffleQueue?.length
+        ? nextShuffledTrackId(shuffleQueue, null, 1, getTrack)
+        : nextSequentialTrackId(resolvedIds, null, 1, getTrack);
+    return Boolean(firstId);
+  }, [resolvedIds, shuffleEnabled, shuffleQueue, getTrack]);
+
+  const playAll = () => {
+    const firstId =
+      shuffleEnabled && shuffleQueue?.length
+        ? nextShuffledTrackId(shuffleQueue, null, 1, getTrack)
+        : nextSequentialTrackId(resolvedIds, null, 1, getTrack);
+    if (!firstId) return;
+    setActive(activeId);
+    playTrackById(firstId, getTrack);
+  };
+
   return (
     <>
       <div className="sc-feed-picker-row">
         <button type="button" className="sc-pick-trigger" onClick={() => setOpen(true)} aria-expanded={open}>
           {buttonLabel}
           <span aria-hidden> ▾</span>
+        </button>
+        <button
+          type="button"
+          className="sc-play-all sc-play-all--toolbar"
+          disabled={!canPlayAll}
+          aria-label={PLAIN.playAll}
+          title={PLAIN.playAll}
+          onClick={playAll}
+        >
+          ▶ {PLAIN.playAll}
         </button>
         {captainUnlocked && !isMyLikesPlaylist(activeId) ? (
           <button

@@ -5117,6 +5117,8 @@ html:not(.qf-upload-tab) .sp-library {
   background: #181818;
   color: #fff;
   cursor: pointer;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .sc-pick-trigger:hover {
@@ -5266,6 +5268,7 @@ html:not(.qf-upload-tab) .sp-library {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .sc-pick-edit,
@@ -5782,9 +5785,20 @@ html:not(.qf-upload-tab) .sp-library {
   padding: 0.55rem 1.25rem;
   border: none;
   border-radius: 999px;
-  background: #ff5500;
-  color: #fff;
+  background: var(--swamp-gold);
+  color: #1a120c;
   cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sc-play-all--toolbar {
+  font-size: 0.82rem;
+  padding: 0.45rem 0.95rem;
+  white-space: nowrap;
+}
+
+.sc-play-all:hover:not(:disabled) {
+  background: #f0d4a0;
 }
 
 .sc-play-all:disabled {
@@ -6026,22 +6040,19 @@ html:not(.qf-upload-tab) .sp-library {
 }
 
 .sc-track-add-pl {
-  border: 1px solid #404040;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: #e8e8e8;
-  cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
+  border: 1px solid rgba(232, 184, 109, 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--swamp-gold);
+  cursor: pointer;
   flex-shrink: 0;
-  padding: 0.2rem 0.45rem;
-  min-height: 2rem;
-  min-width: 2rem;
+  padding: 0.2rem 0.4rem;
+  min-height: 32px;
+  min-width: 32px;
   font: inherit;
-  font-size: 0.72rem;
-  font-weight: 600;
   line-height: 1;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
@@ -6051,30 +6062,15 @@ html:not(.qf-upload-tab) .sp-library {
   display: block;
 }
 
-.sc-track-add-pl__label {
-  display: none;
-  white-space: nowrap;
-}
-
 .sc-track-add-pl:hover {
-  color: #ff5500;
-  border-color: rgba(255, 85, 0, 0.55);
-  background: rgba(255, 85, 0, 0.12);
+  color: #f0d4a0;
+  border-color: rgba(232, 184, 109, 0.55);
+  background: rgba(232, 184, 109, 0.1);
 }
 
 .sc-track-add-pl:focus-visible {
-  outline: 2px solid #ff5500;
+  outline: 2px solid var(--swamp-gold);
   outline-offset: 2px;
-}
-
-@media (min-width: 560px) {
-  .sc-track-add-pl__label {
-    display: inline;
-  }
-
-  .sc-track-add-pl {
-    padding: 0.2rem 0.55rem 0.2rem 0.4rem;
-  }
 }
 
 .sc-track-more {
@@ -6326,22 +6322,10 @@ html:not(.qf-upload-tab) .sp-library {
   }
 
   .sc-track-actions .sp-like-btn,
-  .sc-track-edit {
-    min-width: 2.75rem;
-    min-height: 2.75rem;
-  }
-
+  .sc-track-edit,
   .sc-track-add-pl {
-    min-height: 2.75rem;
-    min-width: 2.75rem;
-    padding: 0.35rem 0.65rem;
-    color: #fff;
-    border-color: rgba(255, 85, 0, 0.65);
-    background: rgba(255, 85, 0, 0.14);
-  }
-
-  .sc-track-add-pl__label {
-    display: inline;
+    min-width: 32px;
+    min-height: 32px;
   }
 
   .sc-sort-hint {

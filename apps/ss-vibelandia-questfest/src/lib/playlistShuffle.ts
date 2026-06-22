@@ -70,12 +70,24 @@ export function nextShuffledTrackId(
   const n = shuffleQueue.length;
   let idx = currentId ? shuffleQueue.indexOf(currentId) : -1;
   if (idx < 0) {
-    return (
-      shuffleQueue.find((id) => {
-        const t = getTrack(id);
-        return t && playbackUrlForTrack(t);
-      }) ?? null
-    );
+    if (!currentId) {
+      return (
+        shuffleQueue.find((id) => {
+          const t = getTrack(id);
+          return t && playbackUrlForTrack(t);
+        }) ?? null
+      );
+    }
+    /* Current track outside the shuffle ring — still walk the full queue. */
+    const start = delta > 0 ? 0 : n - 1;
+    for (let s = 0; s < n; s++) {
+      const j = (start + delta * s + n * 16) % n;
+      const id = shuffleQueue[j]!;
+      if (id === currentId) continue;
+      const tr = getTrack(id);
+      if (tr && playbackUrlForTrack(tr)) return id;
+    }
+    return null;
   }
   for (let s = 1; s <= n; s++) {
     const j = (idx + delta * s + n * 16) % n;

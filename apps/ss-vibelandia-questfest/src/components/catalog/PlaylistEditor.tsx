@@ -9,6 +9,7 @@ import { LikeButton } from '@/components/catalog/LikeButton';
 import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
+import { nestablePlaylistsForParent } from '@/lib/playlistNest';
 import { MASTER_LIBRARY_UI_HINT, SONIC_SINGULARITY_DESCRIPTION } from '@/lib/sonicCatalogCopy';
 import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
 
@@ -29,6 +30,10 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
   const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);
   const duplicatePlaylist = useCatalogStore((s) => s.duplicatePlaylist);
+  const getChildPlaylists = useCatalogStore((s) => s.getChildPlaylists);
+  const addPlaylistToPlaylist = useCatalogStore((s) => s.addPlaylistToPlaylist);
+  const removePlaylistFromPlaylist = useCatalogStore((s) => s.removePlaylistFromPlaylist);
+  const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
@@ -97,11 +102,6 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
       .filter((row): row is { id: string; index: number; track: NonNullable<ReturnType<typeof getTrack>> } => !!row.track);
   }, [pl, getTrack]);
 
-  const playTrack = (id: string) => {
-    setActivePlaylist(playlistId);
-    playTrackById(id, getTrack);
-  };
-
   const availableTracks = useMemo(() => {
     if (isMaster) return [];
     const q = addSearch.trim().toLowerCase();
@@ -120,6 +120,21 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
         );
       });
   }, [isMaster, masterPl?.trackIds, getTrack, inPlaylist, addSearch]);
+
+  const childPlaylists = useMemo(
+    () => (isMaster || isMyLikes ? [] : getChildPlaylists(playlistId)),
+    [getChildPlaylists, isMaster, isMyLikes, playlistId],
+  );
+
+  const nestCandidates = useMemo(
+    () => (isMaster || isMyLikes ? [] : nestablePlaylistsForParent(playlistId, playlists)),
+    [isMaster, isMyLikes, playlistId, playlists],
+  );
+
+  const playTrack = (id: string) => {
+    setActivePlaylist(playlistId);
+    playTrackById(id, getTrack);
+  };
 
   if (!pl) {
     return (
@@ -295,6 +310,59 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           />
         </label>
       </div>
+      )}
+
+      {!isMaster && !isMyLikes && (
+        <div className="sc-nest-editor">
+          <div className="sc-nest-editor-head">
+            <h2>{PLAIN.nestedPlaylists}</h2>
+            <button type="button" className="sc-ghost-btn" onClick={() => createPlaylist(PLAIN.newPlaylist, playlistId)}>
+              + {PLAIN.newNestedPlaylist}
+            </button>
+          </div>
+          {childPlaylists.length > 0 ? (
+            <ul className="sc-nest-editor-list">
+              {childPlaylists.map((child) => (
+                <li key={child.id} className="sc-nest-editor-row">
+                  <PlaylistCoverArt playlist={child} size={36} />
+                  <span className="sc-nest-editor-name">{child.name}</span>
+                  <button
+                    type="button"
+                    className="sc-ghost-btn"
+                    onClick={() => removePlaylistFromPlaylist(child.id, playlistId)}
+                  >
+                    {PLAIN.removeNested}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="sc-nest-editor-empty">{PLAIN.emptyPlaylist}</p>
+          )}
+          {nestCandidates.length > 0 ? (
+            <label className="sc-nest-picker">
+              <span>{PLAIN.addNestedPlaylist}</span>
+              <select
+                className="sc-nest-select"
+                defaultValue=""
+                onChange={(e) => {
+                  const id = e.target.value;
+                  e.target.value = '';
+                  if (id) addPlaylistToPlaylist(id, playlistId);
+                }}
+              >
+                <option value="" disabled>
+                  Choose playlist…
+                </option>
+                {nestCandidates.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          ) : null}
+        </div>
       )}
 
       <div className="sp-pl-edit-tracks">

@@ -86,7 +86,11 @@ export const usePlaybackStore = create<PlaybackState>((set) => ({
       if (s.shufflePlaylistKey === fingerprint && s.shuffleQueue?.length) {
         const prev = new Set(s.shuffleQueue);
         const next = new Set(playableTrackIds);
-        if (prev.size === next.size && [...prev].every((id) => next.has(id))) {
+        if (
+          s.shuffleQueue.length === playableTrackIds.length &&
+          prev.size === next.size &&
+          [...prev].every((id) => next.has(id))
+        ) {
           return {};
         }
       }

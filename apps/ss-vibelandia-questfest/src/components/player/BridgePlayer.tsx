@@ -13,7 +13,7 @@ import {
   playTrackDef,
   startTrackPlayback,
 } from '@/lib/trackPlayback';
-import { useActivePlaylist } from '@/stores/catalogSelectors';
+import { useActivePlaylist, useResolvedTrackIds, useResolvedTrackIdsKey } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { LikeButton } from '@/components/catalog/LikeButton';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -82,14 +82,14 @@ export function BridgePlayer({
 
   const getTrack = useCatalogStore((s) => s.getTrack);
   const pl = useActivePlaylist();
+  const resolvedTrackIds = useResolvedTrackIds(pl?.id);
+  const resolvedTrackIdsKey = useResolvedTrackIdsKey(pl?.id);
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const fullPlayUnlocked = isPassenger || captainUnlocked;
   const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
-
-  const plOrderKey = pl?.trackIds.join('\t') ?? '';
 
   useEffect(() => {
     if (!pl) {
@@ -100,10 +100,10 @@ export function BridgePlayer({
       clearShuffleQueue();
       return;
     }
-    const playable = filterPlayableTrackIds(pl.trackIds, getTrack);
-    const fp = playlistOrderFingerprint(pl.id, pl.trackIds);
+    const playable = filterPlayableTrackIds(resolvedTrackIds, getTrack);
+    const fp = playlistOrderFingerprint(pl.id, resolvedTrackIds);
     syncShuffleQueue(fp, playable);
-  }, [pl?.id, plOrderKey, shuffleEnabled, getTrack, syncShuffleQueue, clearShuffleQueue]);
+  }, [pl?.id, resolvedTrackIdsKey, shuffleEnabled, getTrack, syncShuffleQueue, clearShuffleQueue, resolvedTrackIds]);
 
   gainRef.current = gain;
 
@@ -126,7 +126,7 @@ export function BridgePlayer({
       if (nextId === currentTrackId) nextId = null;
     } else {
       if (!currentTrackId) return false;
-      nextId = nextSequentialTrackId(pl.trackIds, currentTrackId, 1, getTrack);
+      nextId = nextSequentialTrackId(resolvedTrackIds, currentTrackId, 1, getTrack);
     }
     if (!nextId) {
       setPlaying(false);
@@ -155,6 +155,7 @@ export function BridgePlayer({
     setPlaying,
     shuffleEnabled,
     shuffleQueue,
+    resolvedTrackIds,
   ]);
 
   useEffect(() => {
@@ -257,7 +258,7 @@ export function BridgePlayer({
       nextId = nextShuffledTrackId(shuffleQueue!, currentTrackId, delta, getTrack);
     } else {
       if (!currentTrackId) return;
-      nextId = nextSequentialTrackId(pl.trackIds, currentTrackId, delta, getTrack);
+      nextId = nextSequentialTrackId(resolvedTrackIds, currentTrackId, delta, getTrack);
     }
     if (!nextId) {
       pausePlayback();

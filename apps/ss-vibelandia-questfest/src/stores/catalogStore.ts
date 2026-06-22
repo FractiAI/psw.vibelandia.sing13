@@ -56,6 +56,15 @@ import {
   classifyFilesAgainstCatalog,
   type ImportDuplicate,
 } from '@/lib/mediaImportPreflight';
+import {
+  canNestPlaylist,
+  flattenPlaylistTrackIds,
+  getDirectChildPlaylists,
+  normalizeChildPlaylistIds,
+  resolvePlaylistTrackIds,
+  stripPlaylistFromAllParents,
+} from '@/lib/playlistNest';
+import { resyncShuffleQueueForPlaylist } from '@/lib/shuffleSync';
 
 type View = 'catalog' | 'dj';
 
@@ -81,8 +90,11 @@ interface CatalogState {
   getActivePlaylist: () => PlaylistDef | undefined;
   getTrack: (id: string) => TrackDef | undefined;
   listTracksForActivePlaylist: () => TrackDef[];
+  /** All playable track ids including nested playlists (for next/prev/shuffle). */
+  getResolvedTrackIds: (playlistId?: string) => string[];
+  getChildPlaylists: (playlistId: string) => PlaylistDef[];
   listAllTracks: () => TrackDef[];
-  createPlaylist: (name: string) => string;
+  createPlaylist: (name: string, parentPlaylistId?: string) => string;
   renamePlaylist: (id: string, name: string) => void;
   updatePlaylist: (
     id: string,
@@ -97,6 +109,9 @@ interface CatalogState {
   moveTrackInPlaylist: (playlistId: string, trackId: string, dir: -1 | 1) => void;
   reorderTrackInPlaylist: (playlistId: string, fromIndex: number, toIndex: number) => void;
   moveTrackToPlaylist: (trackId: string, targetPlaylistId: string) => void;
+  /** Nest an existing playlist inside another (folder). */
+  addPlaylistToPlaylist: (childPlaylistId: string, parentPlaylistId: string) => void;
+  removePlaylistFromPlaylist: (childPlaylistId: string, parentPlaylistId: string) => void;
   /** Set which user playlists (non-master) include this track. */
   setTrackPlaylistMembership: (trackId: string, playlistIds: string[]) => void;
   uploadTrack: (
@@ -414,12 +429,20 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     return pl.trackIds.map((id) => get().tracks[id]).filter(Boolean) as TrackDef[];
   },
 
+  getResolvedTrackIds: (playlistId) => {
+    const id = playlistId ?? get().activePlaylistId;
+    if (!id) return [];
+    return resolvePlaylistTrackIds(id, get().tracks, get().playlists);
+  },
+
+  getChildPlaylists: (playlistId) => getDirectChildPlaylists(playlistId, get().playlists),
+
   listAllTracks: () => Object.values(get().tracks),
 
-  createPlaylist: (name) => {
+  createPlaylist: (name, parentPlaylistId) => {
     const id = `pl-${Date.now()}`;
-    set((s) => ({
-      playlists: [
+    set((s) => {
+      let playlists: PlaylistDef[] = [
         ...s.playlists,
         {
           id,
@@ -428,9 +451,23 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           description: '',
           trackIds: [],
         },
-      ],
-      activePlaylistId: id,
-    }));
+      ];
+      if (
+        parentPlaylistId &&
+        canNestPlaylist(parentPlaylistId, id, playlists) &&
+        !isMasterPlaylist(parentPlaylistId) &&
+        !isMyLikesPlaylist(parentPlaylistId)
+      ) {
+        playlists = stripPlaylistFromAllParents(id, playlists).map((p) => {
+          if (p.id !== parentPlaylistId) return p;
+          return {
+            ...p,
+            childPlaylistIds: [...normalizeChildPlaylistIds(p.childPlaylistIds), id],
+          };
+        });
+      }
+      return { playlists, activePlaylistId: id };
+    });
     get().persist();
     return id;
   },
@@ -491,10 +528,10 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id)) return;
     const { playlists, activePlaylistId } = get();
     if (playlists.length <= 1) return;
-    const next = playlists.filter((p) => p.id !== id);
+    let next = stripPlaylistFromAllParents(id, playlists).filter((p) => p.id !== id);
     set({
       playlists: next,
-      activePlaylistId: activePlaylistId === id ? next[0].id : activePlaylistId,
+      activePlaylistId: activePlaylistId === id ? next[0]?.id ?? MASTER_PLAYLIST_ID : activePlaylistId,
     });
     get().persist();
   },
@@ -522,6 +559,37 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     });
     get().persist();
     return newId;
+  },
+
+  addPlaylistToPlaylist: (childPlaylistId, parentPlaylistId) => {
+    if (!canNestPlaylist(parentPlaylistId, childPlaylistId, get().playlists)) return;
+    set((s) => {
+      let playlists = stripPlaylistFromAllParents(childPlaylistId, s.playlists);
+      playlists = playlists.map((p) => {
+        if (p.id !== parentPlaylistId) return p;
+        const childPlaylistIds = normalizeChildPlaylistIds(p.childPlaylistIds);
+        if (childPlaylistIds.includes(childPlaylistId)) return p;
+        return { ...p, childPlaylistIds: [...childPlaylistIds, childPlaylistId] };
+      });
+      return { playlists };
+    });
+    get().persist();
+  },
+
+  removePlaylistFromPlaylist: (childPlaylistId, parentPlaylistId) => {
+    set((s) => ({
+      playlists: s.playlists.map((p) => {
+        if (p.id !== parentPlaylistId) return p;
+        const childPlaylistIds = normalizeChildPlaylistIds(p.childPlaylistIds).filter(
+          (cid) => cid !== childPlaylistId,
+        );
+        return {
+          ...p,
+          childPlaylistIds: childPlaylistIds.length ? childPlaylistIds : undefined,
+        };
+      }),
+    }));
+    get().persist();
   },
 
   addTrackToPlaylist: (trackId, playlistId) => {
@@ -940,6 +1008,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         activePlaylistId: applied.activePlaylistId,
         likedTrackIds: applied.likedTrackIds,
       });
+      resyncShuffleQueueForPlaylist(
+        applied.activePlaylistId,
+        applied.tracks,
+        applied.playlists,
+      );
       saveCatalogCache({
         version: CATALOG_VERSION,
         tracks: serverTracksForCache(applied.tracks),
@@ -979,6 +1052,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     let playlists = syncMasterPlaylistWithTracks(tracks, get().playlists);
     playlists = applyLikesToPlaylists(playlists, likedTrackIds, new Set(Object.keys(tracks)));
     set({ playlists });
+    resyncShuffleQueueForPlaylist(activePlaylistId, tracks, playlists);
     saveLikedTrackIds(likedTrackIds);
     saveCatalogPrefs({
       version: CATALOG_VERSION,

@@ -51,6 +51,8 @@ export interface PlaylistDef {
   kind: PlaylistKind;
   description: string;
   trackIds: string[];
+  /** Nested playlists — folders inside this playlist (one parent per playlist). */
+  childPlaylistIds?: string[];
   /** Playlist cover — HTTPS blob URL or compact data URL in local prefs. */
   posterSrc?: string;
 }

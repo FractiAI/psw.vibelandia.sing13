@@ -103,7 +103,7 @@ export function BridgePlayer({
     const playable = filterPlayableTrackIds(resolvedTrackIds, getTrack);
     const fp = playlistOrderFingerprint(pl.id, resolvedTrackIds);
     syncShuffleQueue(fp, playable);
-  }, [pl?.id, resolvedTrackIdsKey, shuffleEnabled, getTrack, syncShuffleQueue, clearShuffleQueue, resolvedTrackIds]);
+  }, [pl?.id, resolvedTrackIdsKey, shuffleEnabled, getTrack, syncShuffleQueue, clearShuffleQueue]);
 
   gainRef.current = gain;
 

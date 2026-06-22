@@ -7,16 +7,28 @@ export function useActivePlaylist(): PlaylistDef | undefined {
   return useCatalogStore((s) => s.playlists.find((p) => p.id === s.activePlaylistId));
 }
 
+function resolvedIdsEqual(a: string[], b: string[]): boolean {
+  if (a === b) return true;
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
+
 /**
  * Track ids for playback — subscribes to tracks + playlists so shuffle stays in sync
  * when the catalog grows after server sync.
  */
 export function useResolvedTrackIds(playlistId?: string): string[] {
-  return useCatalogStore((s) => {
-    const id = playlistId ?? s.activePlaylistId;
-    if (!id) return [];
-    return resolvePlaylistTrackIds(id, s.tracks, s.playlists);
-  });
+  return useCatalogStore(
+    (s) => {
+      const id = playlistId ?? s.activePlaylistId;
+      if (!id) return [] as string[];
+      return resolvePlaylistTrackIds(id, s.tracks, s.playlists);
+    },
+    resolvedIdsEqual,
+  );
 }
 
 /** Stable key for shuffle fingerprint effects (count + tail id avoids huge strings). */

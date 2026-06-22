@@ -36,7 +36,7 @@ body,
 
 body {
   font-family: var(--font-ui);
-  background: radial-gradient(120% 80% at 50% 0%, #2a1858 0%, var(--indigo-deep) 45%, #050308 100%);
+  background: #121212;
   color: var(--paper);
   line-height: 1.45;
 }

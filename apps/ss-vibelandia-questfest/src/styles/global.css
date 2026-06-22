@@ -5041,12 +5041,20 @@ html:not(.qf-upload-tab) .sp-library {
   align-items: center;
   flex-wrap: wrap;
   gap: 0.35rem 0.5rem;
-  padding: 0.65rem 1.25rem;
+  padding: max(0.65rem, env(safe-area-inset-top, 0px)) 1.25rem 0.65rem;
+  padding-right: max(1.25rem, calc(6.75rem + env(safe-area-inset-right, 0px)));
   border-bottom: 1px solid #282828;
   background: #0a0a0a;
   position: sticky;
   top: 0;
   z-index: 40;
+}
+
+@media (min-width: 640px) {
+  .sc-bar {
+    padding-right: 1.25rem;
+    padding-top: 0.65rem;
+  }
 }
 
 .sc-bar-brand {
@@ -5836,6 +5844,26 @@ html:not(.qf-upload-tab) .sp-library {
   font-size: 0.82rem;
   padding: 0.45rem 0.95rem;
   white-space: nowrap;
+}
+
+.sc-feed-upload-btn {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(232, 184, 109, 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--swamp-gold);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sc-feed-upload-btn:hover {
+  color: #f0d4a0;
+  border-color: rgba(232, 184, 109, 0.55);
+  background: rgba(232, 184, 109, 0.1);
 }
 
 .sc-play-all:hover:not(:disabled) {

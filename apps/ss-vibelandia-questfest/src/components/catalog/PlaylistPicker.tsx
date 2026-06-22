@@ -1,4 +1,5 @@
 import { useMemo, useState, type CSSProperties } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { useResolvedTrackIds } from '@/stores/catalogSelectors';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -72,11 +73,13 @@ function PickerRow({
 }
 
 export function PlaylistPicker() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [metaOpen, setMetaOpen] = useState(false);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const activeId = useCatalogStore((s) => s.activePlaylistId);
   const setActive = useCatalogStore((s) => s.setActivePlaylist);
+  const setDjMode = useCatalogStore((s) => s.setDjMode);
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const playlists = useCatalogStore((s) => s.playlists);
   const getTrack = useCatalogStore((s) => s.getTrack);
@@ -114,6 +117,11 @@ export function PlaylistPicker() {
     playTrackById(firstId, getTrack);
   };
 
+  const goUpload = () => {
+    setDjMode(true);
+    navigate('/dj', { replace: true });
+  };
+
   return (
     <>
       <div className="sc-feed-picker-row">
@@ -133,6 +141,9 @@ export function PlaylistPicker() {
             onClick={playAll}
           >
             ▶ {PLAIN.playAll}
+          </button>
+          <button type="button" className="sc-feed-upload-btn" onClick={goUpload}>
+            {PLAIN.upload}
           </button>
           {captainUnlocked && !isMyLikesPlaylist(activeId) ? (
             <button

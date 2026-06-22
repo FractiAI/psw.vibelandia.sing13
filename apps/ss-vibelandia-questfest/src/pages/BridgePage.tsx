@@ -80,7 +80,7 @@ export function BridgePage() {
   return (
     <div className="sp-app sc-shell sc-shell--solo">
       <div className="sc-main">
-        {djMode ? <ListenTopBar djMode={djMode} onListen={goListen} onUpload={goUpload} /> : null}
+        <ListenTopBar djMode={djMode} onListen={goListen} onUpload={goUpload} />
 
         <main className="sc-scroll">
           {!djMode && trackCount === 0 ? (

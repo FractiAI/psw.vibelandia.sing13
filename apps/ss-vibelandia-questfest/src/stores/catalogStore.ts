@@ -1048,11 +1048,29 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   persist: () => {
-    const { tracks, activePlaylistId, likedTrackIds } = get();
-    let playlists = syncMasterPlaylistWithTracks(tracks, get().playlists);
+    const state = get();
+    const { tracks, activePlaylistId, likedTrackIds } = state;
+    let playlists = syncMasterPlaylistWithTracks(tracks, state.playlists);
     playlists = applyLikesToPlaylists(playlists, likedTrackIds, new Set(Object.keys(tracks)));
-    set({ playlists });
-    resyncShuffleQueueForPlaylist(activePlaylistId, tracks, playlists);
+
+    const playlistsUnchanged =
+      playlists.length === state.playlists.length &&
+      playlists.every((p, i) => {
+        const prev = state.playlists[i];
+        if (!prev || p.id !== prev.id) return false;
+        if (p.trackIds.length !== prev.trackIds.length) return false;
+        for (let j = 0; j < p.trackIds.length; j++) {
+          if (p.trackIds[j] !== prev.trackIds[j]) return false;
+        }
+        const childA = (p.childPlaylistIds ?? []).join('\t');
+        const childB = (prev.childPlaylistIds ?? []).join('\t');
+        return childA === childB;
+      });
+
+    if (!playlistsUnchanged) {
+      set({ playlists });
+    }
+
     saveLikedTrackIds(likedTrackIds);
     saveCatalogPrefs({
       version: CATALOG_VERSION,

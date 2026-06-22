@@ -55,7 +55,8 @@ export function TrackPlaylistsModal({ open, trackId, trackTitle, onClose }: Trac
     });
   };
 
-  const canSave = selected.size > 0;
+  const canSave =
+    [...selected].sort().join(',') !== [...initialSelected].sort().join(',');
 
   return (
     <div className="modal-root" role="dialog" aria-modal="true" aria-labelledby="tpl-title">

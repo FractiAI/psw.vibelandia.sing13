@@ -111,7 +111,11 @@ export async function fetchLiveCatalogForSync(): Promise<CatalogSnapshot> {
 }
 
 export type UploadTrackResult = { track: TrackDef };
-export type UploadTrackOptions = { onProgress?: (line: string) => void };
+export type UploadTrackOptions = {
+  onProgress?: (line: string) => void;
+  /** Skip metadata probe during large batch imports (faster; duration filled later). */
+  skipDurationProbe?: boolean;
+};
 
 function safeFilename(name: string): string {
   return name.replace(/[^\w.\-()+ ]/g, '_') || 'upload.bin';
@@ -360,9 +364,10 @@ export async function uploadTrackToServer(
     err.code = 'not_audio';
     throw err;
   }
-  const durationSec = isIOSDevice()
-    ? null
-    : await probeAudioDurationSecWithTimeout(file, 8_000);
+  const durationSec =
+    opts?.skipDurationProbe || isIOSDevice()
+      ? null
+      : await probeAudioDurationSecWithTimeout(file, 8_000);
   if (file.size > MAX_MEDIA_UPLOAD_BYTES) {
     const err = new Error('file_too_large') as Error & { code?: string };
     err.code = 'file_too_large';

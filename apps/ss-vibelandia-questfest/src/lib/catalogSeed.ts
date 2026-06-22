@@ -73,16 +73,39 @@ export function mergeServerCatalogWithPrefs(
 
   if (localPrefs) {
     const byId = new Map(playlists.map((p) => [p.id, p]));
+    const localMaster = localPrefs.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
     for (const p of localPrefs.playlists) {
       if (p.id === MASTER_PLAYLIST_ID || p.id === MY_LIKES_PLAYLIST_ID) continue;
       const filtered = p.trackIds.filter((id) => tracks[id]);
       if (byId.has(p.id)) {
-        byId.set(p.id, { ...byId.get(p.id)!, trackIds: filtered, name: p.name, description: p.description });
+        const prev = byId.get(p.id)!;
+        byId.set(p.id, {
+          ...prev,
+          trackIds: filtered,
+          name: p.name,
+          description: p.description,
+          ...(p.posterSrc ? { posterSrc: p.posterSrc } : {}),
+          ...(p.childPlaylistIds?.length ? { childPlaylistIds: p.childPlaylistIds } : {}),
+        });
       } else if (filtered.length) {
         byId.set(p.id, { ...p, trackIds: filtered });
       }
     }
     playlists = [...byId.values()];
+
+    if (localMaster) {
+      playlists = playlists.map((p) => {
+        if (p.id !== MASTER_PLAYLIST_ID) return p;
+        return {
+          ...p,
+          ...(localMaster.posterSrc ? { posterSrc: localMaster.posterSrc } : {}),
+          ...(localMaster.description?.trim() ? { description: localMaster.description } : {}),
+          ...(localMaster.name?.trim() && !LEGACY_MASTER_NAMES.has(localMaster.name)
+            ? { name: localMaster.name }
+            : {}),
+        };
+      });
+    }
   }
 
   playlists = syncMaster(tracks, playlists);
@@ -169,6 +192,7 @@ const LEGACY_MASTER_NAMES = new Set([
   'Master catalog',
   'All uploads',
   'Hero Jo Golden Bachdoor Hit Factory',
+  'Sonic Singularity · Reno swamp catalog',
 ]);
 
 const LEGACY_MASTER_DESCRIPTIONS = new Set([

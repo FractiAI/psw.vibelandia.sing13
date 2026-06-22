@@ -1,19 +1,13 @@
-import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
+import { lazy, Suspense, useEffect, type ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { CatalogSidebar } from '@/components/catalog/CatalogSidebar';
-import { isMyLikesPlaylist, isMasterPlaylist } from '@/lib/catalogSeed';
-import { useSessionStore } from '@/stores/sessionStore';
-import { useMediaChromeStore } from '@/stores/mediaChromeStore';
+import { ListenTopBar } from '@/components/catalog/ListenTopBar';
 import { PLAIN } from '@/lib/plainSpeak';
 import { pauseSimpleAudio } from '@/lib/simplePlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
 const TrackList = lazy(() =>
   import('@/components/catalog/TrackList').then((m) => ({ default: m.TrackList })),
-);
-const PlaylistEditor = lazy(() =>
-  import('@/components/catalog/PlaylistEditor').then((m) => ({ default: m.PlaylistEditor })),
 );
 const Mp3Uploader = lazy(() =>
   import('@/components/catalog/Mp3Uploader').then((m) => ({ default: m.Mp3Uploader })),
@@ -26,22 +20,13 @@ function TabPane({ children }: { children: ReactNode }) {
 export function BridgePage() {
   const location = useLocation();
   const navigate = useNavigate();
-  const isPassenger = useSessionStore((s) => s.isPassenger);
-  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
 
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
-  const catalogSyncing = useCatalogStore((s) => s.catalogSyncing);
-  const refreshFromServer = useCatalogStore((s) => s.refreshFromServer);
   const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
   const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const setPlaylistTab = useCatalogStore((s) => s.setPlaylistTab);
-  const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
-  const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
-  const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
-
-  const [editPlaylistId, setEditPlaylistId] = useState<string | null>(null);
 
   useEffect(() => {
     const hydrate = () => useCatalogStore.getState().hydrateFromDevice();
@@ -85,7 +70,6 @@ export function BridgePage() {
 
   const goListen = () => {
     setDjMode(false);
-    setEditPlaylistId(null);
     navigate('/bridge', { replace: true });
   };
 
@@ -93,87 +77,28 @@ export function BridgePage() {
     void syncLibraryFromServer();
   };
 
-  const startEditPlaylist = () => {
-    if (
-      isMasterPlaylist(activePlaylistId) ||
-      isMyLikesPlaylist(activePlaylistId)
-    ) {
-      return;
-    }
-    setEditPlaylistId(activePlaylistId);
-  };
-
-  const fullPlay = isPassenger || captainUnlocked;
-
   return (
-    <div className="sp-app sc-shell">
-      <CatalogSidebar onUploadClick={goUpload} />
-
+    <div className="sp-app sc-shell sc-shell--solo">
       <div className="sc-main">
-        <header className="sc-topbar">
-          {!djMode ? (
-            <button type="button" className="sc-topbar-btn sc-topbar-btn--on">
-              {PLAIN.listen}
-            </button>
-          ) : (
-            <button type="button" className="sc-topbar-btn" onClick={goListen}>
-              {PLAIN.listen}
-            </button>
-          )}
-          {djMode ? (
-            <button type="button" className="sc-topbar-btn sc-topbar-btn--on">
-              {PLAIN.upload}
-            </button>
-          ) : (
-            <button type="button" className="sc-topbar-btn" onClick={goUpload}>
-              {PLAIN.upload}
-            </button>
-          )}
-          <div className="sc-topbar-spacer" />
-          <button
-            type="button"
-            className="sc-topbar-link"
-            disabled={catalogSyncing}
-            onClick={() => void refreshFromServer()}
-          >
-            {catalogSyncing ? PLAIN.refreshing : PLAIN.refresh}
-          </button>
-          {!fullPlay ? (
-            <button type="button" className="sc-topbar-link sc-topbar-link--accent" onClick={() => setBoardingOpen(true)}>
-              {PLAIN.getPass}
-            </button>
-          ) : null}
-          <button type="button" className="sc-topbar-link" onClick={() => setCaptainOpen(true)}>
-            {PLAIN.captain}
-          </button>
-        </header>
+        {djMode ? <ListenTopBar djMode={djMode} onListen={goListen} onUpload={goUpload} /> : null}
 
         <main className="sc-scroll">
           {!djMode && trackCount === 0 ? (
-            <section className="sc-empty-state">
+            <section className="sc-empty-state sc-feed-body">
               <h2>{PLAIN.noTracksYet}</h2>
               <button type="button" className="sc-play-all" onClick={goUpload}>
                 {PLAIN.uploadFirst}
               </button>
             </section>
-          ) : editPlaylistId && !djMode ? (
-            <TabPane>
-              <PlaylistEditor
-                playlistId={editPlaylistId}
-                onDone={() => setEditPlaylistId(null)}
-                onPlay={() => setEditPlaylistId(null)}
-              />
-            </TabPane>
           ) : djMode ? (
-            <TabPane>
-              <Mp3Uploader onUploaded={handleUploadSuccess} />
-            </TabPane>
+            <div className="sc-feed-body">
+              <TabPane>
+                <Mp3Uploader onUploaded={handleUploadSuccess} />
+              </TabPane>
+            </div>
           ) : (
             <TabPane>
-              <TrackList
-                isPassenger={fullPlay}
-                onEditPlaylist={startEditPlaylist}
-              />
+              <TrackList />
             </TabPane>
           )}
         </main>

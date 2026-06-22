@@ -65,6 +65,7 @@ import {
   stripPlaylistFromAllParents,
 } from '@/lib/playlistNest';
 import { resyncShuffleQueueForPlaylist } from '@/lib/shuffleSync';
+import { isIOSDevice, retainSingleFileForIOS, BULK_RETAIN_UPFRONT_MAX } from '@/lib/devicePlayback';
 
 type View = 'catalog' | 'dj';
 
@@ -254,6 +255,15 @@ function appendImportedTrackToState(
 }
 
 const BETWEEN_UPLOAD_MS = 280;
+/** Skip per-file duration probe above this batch size (large imports). */
+const SKIP_DURATION_PROBE_MIN_BATCH = 15;
+
+/** Active bulk imports — defer server sync until batch finishes. */
+let bulkImportDepth = 0;
+
+export function isBulkImportActive(): boolean {
+  return bulkImportDepth > 0;
+}
 
 /** Yield main thread between blob uploads (large batches). */
 function yieldBetweenUploads(): Promise<void> {
@@ -320,6 +330,7 @@ async function addFileAsTrack(
     genre?: string;
     useFileNameAsTitle?: boolean;
     onProgress?: (line: string) => void;
+    skipDurationProbe?: boolean;
   },
 ): Promise<{ track: TrackDef; catalog?: CatalogSnapshot } | null> {
   const sourceKey = fileSourceKey(file);
@@ -345,7 +356,7 @@ async function addFileAsTrack(
       description,
       genre,
     },
-    { onProgress: meta.onProgress },
+    { onProgress: meta.onProgress, skipDurationProbe: meta.skipDurationProbe },
   );
 
   return {
@@ -719,104 +730,117 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   importMediaFiles: async (files, opts) => {
-    const extras = opts?.playlistIds && opts.playlistIds.length > 0 ? opts.playlistIds : [];
-    const playlistIds = [...new Set([MASTER_PLAYLIST_ID, ...extras])];
-    const sourceKeys = new Set(
-      Object.values(get().tracks)
-        .map((t) => t.sourceKey)
-        .filter(Boolean) as string[],
-    );
-    const existing = { tracks: { ...get().tracks }, sourceKeys };
-    const newTracks: TrackDef[] = [];
-    const addedTrackIds: string[] = [];
-    const failures: Array<{ name: string; message: string }> = [];
-    let skipped = 0;
-    const total = files.length;
-    const report = opts?.onProgress;
-    const singleFile = total === 1;
-    const singleTitle = singleFile ? opts?.title?.trim() : undefined;
-
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      report?.(`Uploading ${i + 1} of ${total}: ${file.name}…`);
-      try {
-        const row = await addFileAsTrack(file, existing, {
-          title: singleTitle,
-          artist: opts?.artist,
-          description: opts?.description,
-          genre: opts?.genre,
-          useFileNameAsTitle: !singleTitle,
-          onProgress: opts?.onProgress,
-        });
-        if (!row) {
-          skipped += 1;
-          continue;
-        }
-        const { track } = row;
-        existing.tracks[track.id] = track;
-        if (track.sourceKey) existing.sourceKeys.add(track.sourceKey);
-        newTracks.push(track);
-        addedTrackIds.push(track.id);
-        appendImportedTrackToState(set, get, track, playlistIds, { batch: total > 1 });
-        const n = Object.keys(get().tracks).length;
-        report?.(`Saved ${i + 1} of ${total} · ${n} tracks in catalog`);
-
-        if (i < files.length - 1) {
-          await yieldBetweenUploads();
-        }
-      } catch (e) {
-        const message = e instanceof Error ? e.message : 'upload_failed';
-        failures.push({ name: file.name, message });
-        report?.(`Failed ${file.name} (${i + 1}/${total}): ${message}`);
-      }
-    }
-
-    if (newTracks.length > 0) {
-      get().persist();
-    }
-
-    let coverError: string | undefined;
-    if (opts?.coverFile && newTracks.length > 0) {
-      try {
-        await get().updateTrack(newTracks[0].id, {}, {
-          coverFile: opts.coverFile,
-          onProgress: opts.onProgress,
-        });
-      } catch (e) {
-        coverError =
-          e instanceof Error
-            ? e.message
-            : typeof e === 'object' && e && 'code' in e
-              ? String((e as { code?: string }).code)
-              : 'cover_upload_failed';
-      }
-    }
-
-    if (newTracks.length > 0) {
-      void get()
-        .syncLibraryFromServer()
-        .catch(() => {
-          /* local batch state already has new tracks */
-        });
-    }
-
-    if (!newTracks.length && failures.length === 1) {
-      throw new Error(failures[0]!.message);
-    }
-    if (!newTracks.length && failures.length > 1) {
-      throw new Error(
-        `All ${failures.length} uploads failed. First error: ${failures[0]!.message}`,
+    bulkImportDepth += 1;
+    let syncAfterBatch = false;
+    try {
+      const extras = opts?.playlistIds && opts.playlistIds.length > 0 ? opts.playlistIds : [];
+      const playlistIds = [...new Set([MASTER_PLAYLIST_ID, ...extras])];
+      const sourceKeys = new Set(
+        Object.values(get().tracks)
+          .map((t) => t.sourceKey)
+          .filter(Boolean) as string[],
       );
-    }
+      const existing = { tracks: { ...get().tracks }, sourceKeys };
+      const newTracks: TrackDef[] = [];
+      const addedTrackIds: string[] = [];
+      const failures: Array<{ name: string; message: string }> = [];
+      let skipped = 0;
+      const total = files.length;
+      const report = opts?.onProgress;
+      const singleFile = total === 1;
+      const singleTitle = singleFile ? opts?.title?.trim() : undefined;
+      const skipDurationProbe = total >= SKIP_DURATION_PROBE_MIN_BATCH;
+      const retainPerFileOnIos = isIOSDevice() && total > BULK_RETAIN_UPFRONT_MAX;
 
-    return {
-      added: newTracks.length,
-      skipped,
-      addedTrackIds,
-      failed: failures.length,
-      failures,
-      coverError,
-    };
+      for (let i = 0; i < files.length; i++) {
+        let file = files[i]!;
+        report?.(`Uploading ${i + 1} of ${total}: ${file.name}…`);
+        if (retainPerFileOnIos) {
+          report?.(`Preparing ${i + 1} of ${total}…`);
+          file = await retainSingleFileForIOS(file);
+        }
+        try {
+          const row = await addFileAsTrack(file, existing, {
+            title: singleTitle,
+            artist: opts?.artist,
+            description: opts?.description,
+            genre: opts?.genre,
+            useFileNameAsTitle: !singleTitle,
+            onProgress: opts?.onProgress,
+            skipDurationProbe,
+          });
+          if (!row) {
+            skipped += 1;
+            continue;
+          }
+          const { track } = row;
+          existing.tracks[track.id] = track;
+          if (track.sourceKey) existing.sourceKeys.add(track.sourceKey);
+          newTracks.push(track);
+          addedTrackIds.push(track.id);
+          appendImportedTrackToState(set, get, track, playlistIds, { batch: total > 1 });
+          const n = Object.keys(get().tracks).length;
+          report?.(`Saved ${i + 1} of ${total} · ${n} tracks in catalog`);
+
+          if (i < files.length - 1) {
+            await yieldBetweenUploads();
+          }
+        } catch (e) {
+          const message = e instanceof Error ? e.message : 'upload_failed';
+          failures.push({ name: file.name, message });
+          report?.(`Failed ${file.name} (${i + 1}/${total}): ${message}`);
+        }
+      }
+
+      if (newTracks.length > 0) {
+        get().persist();
+        syncAfterBatch = true;
+      }
+
+      let coverError: string | undefined;
+      if (opts?.coverFile && newTracks.length > 0) {
+        try {
+          await get().updateTrack(newTracks[0].id, {}, {
+            coverFile: opts.coverFile,
+            onProgress: opts.onProgress,
+          });
+        } catch (e) {
+          coverError =
+            e instanceof Error
+              ? e.message
+              : typeof e === 'object' && e && 'code' in e
+                ? String((e as { code?: string }).code)
+                : 'cover_upload_failed';
+        }
+      }
+
+      if (!newTracks.length && failures.length === 1) {
+        throw new Error(failures[0]!.message);
+      }
+      if (!newTracks.length && failures.length > 1) {
+        throw new Error(
+          `All ${failures.length} uploads failed. First error: ${failures[0]!.message}`,
+        );
+      }
+
+      return {
+        added: newTracks.length,
+        skipped,
+        addedTrackIds,
+        failed: failures.length,
+        failures,
+        coverError,
+      };
+    } finally {
+      bulkImportDepth = Math.max(0, bulkImportDepth - 1);
+      if (syncAfterBatch) {
+        void get()
+          .syncLibraryFromServer()
+          .catch(() => {
+            /* local batch state already has new tracks */
+          });
+      }
+    }
   },
 
   scanDeviceLibrary: async (opts) => {
@@ -898,6 +922,9 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       });
     } else {
       report?.('Saving on this device…');
+      if (opts?.coverFile) {
+        next.posterSrc = await coverFileToPersistableDataUrl(opts.coverFile);
+      }
     }
 
     report?.('Updating library…');
@@ -982,7 +1009,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   refreshFromServer: async () => get().syncLibraryFromServer(),
 
   syncLibraryFromServer: async () => {
-    if (get().catalogSyncing) return;
+    if (get().catalogSyncing || bulkImportDepth > 0) return;
     set({ catalogSyncing: true });
     const prefs = loadCatalogPrefs();
     const downloaded = loadDownloadedTrackIds();

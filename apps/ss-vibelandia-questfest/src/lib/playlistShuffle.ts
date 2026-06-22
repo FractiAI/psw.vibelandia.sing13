@@ -38,21 +38,25 @@ export function playlistOrderFingerprint(playlistId: string, trackIds: readonly 
   return `${playlistId}\t${trackIds.join('\t')}`;
 }
 
-/** Next/prev track with a URL, following playlist list order. */
+/** Next/prev track with a URL; wraps at playlist ends (continuous loop). */
 export function nextSequentialTrackId(
   trackIds: readonly string[],
   currentId: string | null,
   delta: 1 | -1,
   getTrack: (id: string) => TrackDef | undefined,
 ): string | null {
-  const idx = currentId ? trackIds.indexOf(currentId) : -1;
-  const step = delta > 0 ? 1 : -1;
-  const start = idx < 0 ? (delta > 0 ? 0 : trackIds.length - 1) : idx + step;
-  for (let i = start; i >= 0 && i < trackIds.length; i += step) {
-    const id = trackIds[i]!;
-    const tr = getTrack(id);
-    if (!tr) continue;
-    if (playbackUrlForTrack(tr)) return id;
+  const playable = filterPlayableTrackIds(trackIds, getTrack);
+  const n = playable.length;
+  if (!n) return null;
+
+  const idx = currentId ? playable.indexOf(currentId) : -1;
+  if (idx < 0) {
+    return playable[delta > 0 ? 0 : n - 1] ?? null;
+  }
+
+  for (let s = 1; s <= n; s++) {
+    const j = (idx + delta * s + n * 16) % n;
+    return playable[j]!;
   }
   return null;
 }

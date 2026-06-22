@@ -5,7 +5,8 @@ export const SONIC_SINGULARITY_HERO_SRC =
   '/interfaces/assets/nesting/nest-sonic-singularity.png';
 
 /** Listen hero + sidebar title for the full library (Layer 3 frequency). */
-export const SONIC_CATALOG_DISPLAY_NAME = 'Sonic Singularity · Reno swamp catalog';
+export const SONIC_CATALOG_DISPLAY_NAME =
+  "Hero Jo's Golden Bachdoor Hit Factory Master Catalog";
 
 /** What the master list *is* — not file-management instructions. */
 export const SONIC_SINGULARITY_DESCRIPTION =

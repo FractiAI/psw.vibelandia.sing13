@@ -271,14 +271,16 @@ export function TrackMetadataEditor({
         >
           Playlists
         </button>
-        <button
-          type="button"
-          className="spotify-btn spotify-btn--ghost spotify-btn--tiny sp-listen-mini--danger"
-          disabled={busy || disabled}
-          onClick={() => void handleDelete()}
-        >
-          Delete track
-        </button>
+        {onDeleted ? (
+          <button
+            type="button"
+            className="spotify-btn spotify-btn--ghost spotify-btn--tiny sp-listen-mini--danger"
+            disabled={busy || disabled}
+            onClick={() => void handleDelete()}
+          >
+            Delete track
+          </button>
+        ) : null}
       </div>
 
       <TrackPlaylistsModal

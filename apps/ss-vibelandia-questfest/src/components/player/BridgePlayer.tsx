@@ -123,7 +123,6 @@ export function BridgePlayer({
     let nextId: string | null = null;
     if (useShuffle) {
       nextId = nextShuffledTrackId(shuffleQueue!, currentTrackId, 1, getTrack);
-      if (nextId === currentTrackId) nextId = null;
     } else {
       if (!currentTrackId) return false;
       nextId = nextSequentialTrackId(resolvedTrackIds, currentTrackId, 1, getTrack);
@@ -192,7 +191,7 @@ export function BridgePlayer({
         setDisplayTime(0);
         el.volume = g;
         onFairExchange();
-        if (autoplayEnabled && advanceNext()) return;
+        if (advanceNext()) return;
         setPlaying(false);
       }
     };
@@ -200,7 +199,7 @@ export function BridgePlayer({
     registerPlaybackEngine({
       onTime: runGate,
       onEnded: () => {
-        if (autoplayEnabled && advanceNext()) return;
+        if (advanceNext()) return;
         setPlaying(false);
       },
       onError: () => {
@@ -214,7 +213,7 @@ export function BridgePlayer({
       if (el) registerPlaybackEngine({
         onTime: runGate,
         onEnded: () => {
-          if (autoplayEnabled && advanceNext()) return;
+          if (advanceNext()) return;
           setPlaying(false);
         },
         onError: () => {

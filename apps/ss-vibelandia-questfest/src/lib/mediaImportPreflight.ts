@@ -44,18 +44,18 @@ function duplicateListSnippet(duplicates: ImportDuplicate[], max = 3): string {
 export function formatAllDuplicatesMessage(duplicates: ImportDuplicate[]): string {
   if (duplicates.length === 1) {
     const d = duplicates[0];
-    return `Already in your catalog as “${d.catalogTitle}” (${d.fileName}). Open Listen to play it — no need to upload again.`;
+    return `Already in your catalog as “${d.catalogTitle}” (${d.fileName}). Switch to Listen to play it — no need to upload again.`;
   }
-  return `All ${duplicates.length} files are already in your catalog (${duplicateListSnippet(duplicates)}). Open Listen — they are not missing.`;
+  return `All ${duplicates.length} files are already saved in your catalog (${duplicateListSnippet(duplicates)}). Switch to Listen to play them — do not re-select the same files.`;
 }
 
 /** Shown when some files import and others were skipped as duplicates. */
 export function formatPartialDuplicatesMessage(added: number, duplicates: ImportDuplicate[]): string {
   const addedLabel = `Added ${added} new track${added === 1 ? '' : 's'}.`;
-  if (!duplicates.length) return `${addedLabel} Open Listen to play.`;
+  if (!duplicates.length) return `${addedLabel} Switch to Listen to play.`;
   const skippedLabel =
     duplicates.length === 1
       ? `1 file was already uploaded (“${duplicates[0].catalogTitle}”) and was not added again.`
       : `${duplicates.length} files were already uploaded (${duplicateListSnippet(duplicates)}) and were not added again.`;
-  return `${addedLabel} ${skippedLabel} Open Listen to play.`;
+  return `${addedLabel} ${skippedLabel} Switch to Listen to play.`;
 }

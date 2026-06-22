@@ -1,65 +1,83 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { useActivePlaylist, useResolvedTrackIds } from '@/stores/catalogSelectors';
 import { usePlaybackStore } from '@/stores/playbackStore';
+import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { LikeButton } from '@/components/catalog/LikeButton';
-import { NestedPlaylistCards } from '@/components/catalog/NestedPlaylistCards';
-import { PlaylistBreadcrumb } from '@/components/catalog/PlaylistSidebarTree';
-import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
-import { TrackMetadataEditor } from '@/components/catalog/TrackMetadataEditor';
-import { MasterCatalogEditor } from '@/components/catalog/MasterCatalogEditor';
-import { isMasterPlaylist, isMyLikesPlaylist, isUserUploadTrack } from '@/lib/catalogSeed';
+import { AddToPlaylistIcon } from '@/components/catalog/AddToPlaylistIcon';
+import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
+import { TrackEditModal } from '@/components/catalog/TrackEditModal';
+import { PlaylistPicker } from '@/components/catalog/PlaylistPicker';
+import { isMyLikesPlaylist } from '@/lib/catalogSeed';
 import { playTrackById } from '@/lib/trackPlayback';
-import { filterPlayableTrackIds, playlistOrderFingerprint } from '@/lib/playlistShuffle';
-import { fmtDuration, fmtPlaylistTotalTime } from '@/lib/formatDuration';
+import { fmtDuration } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
-import { SONIC_CATALOG_DISPLAY_NAME } from '@/lib/sonicCatalogCopy';
 import { useSessionStore } from '@/stores/sessionStore';
+import type { TrackDef } from '@/lib/catalogTypes';
 
-interface TrackListProps {
-  isPassenger: boolean;
-  onEditPlaylist?: () => void;
+type SortMode = 'playlistOrder' | 'titleAsc' | 'titleDesc';
+
+interface TrackRow {
+  track: TrackDef;
+  playlistIndex: number;
+  canReorder: boolean;
 }
 
-export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
+export function TrackList() {
   const pl = useActivePlaylist();
-  const search = useCatalogStore((s) => s.search);
-  const setSearch = useCatalogStore((s) => s.setSearch);
   const getTrack = useCatalogStore((s) => s.getTrack);
-  const getChildPlaylists = useCatalogStore((s) => s.getChildPlaylists);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
+  const moveTrackInPlaylist = useCatalogStore((s) => s.moveTrackInPlaylist);
+  const reorderTrackInPlaylist = useCatalogStore((s) => s.reorderTrackInPlaylist);
   const resolvedIds = useResolvedTrackIds(pl?.id);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
 
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
-  const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
 
-  const [masterEditMode, setMasterEditMode] = useState(false);
-  const [editingTrackId, setEditingTrackId] = useState<string | null>(null);
-  const [moreTrackId, setMoreTrackId] = useState<string | null>(null);
+  const [sortMode, setSortMode] = useState<SortMode>('playlistOrder');
+  const [editTrackId, setEditTrackId] = useState<string | null>(null);
+  const [playlistModalTrackId, setPlaylistModalTrackId] = useState<string | null>(null);
 
-  const isMaster = pl ? isMasterPlaylist(pl.id) : false;
   const isMyLikes = pl ? isMyLikesPlaylist(pl.id) : false;
-  const canEditPlaylist = pl && !isMaster && !isMyLikes;
-  const childPlaylists = pl ? getChildPlaylists(pl.id) : [];
+  const canReorderList = sortMode === 'playlistOrder' && (pl?.trackIds.length ?? 0) > 1;
 
-  const rows = useMemo(() => {
-    const ids = pl?.trackIds ?? [];
-    const q = search.trim().toLowerCase();
-    return ids
-      .map((id) => getTrack(id))
-      .filter((tr): tr is NonNullable<typeof tr> => !!tr)
-      .filter((tr) => {
-        if (!q) return true;
-        return (
-          tr.title.toLowerCase().includes(q) ||
-          tr.artist.toLowerCase().includes(q) ||
-          (tr.genre?.toLowerCase().includes(q) ?? false)
-        );
-      });
-  }, [pl?.trackIds, search, getTrack]);
+  const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
+    usePlaylistReorder(activePlaylistId, canReorderList, reorderTrackInPlaylist);
+
+  useEffect(() => {
+    setSortMode('playlistOrder');
+  }, [activePlaylistId]);
+
+  const rows = useMemo((): TrackRow[] => {
+    if (!pl) return [];
+    const playlistIndexById = new Map(pl.trackIds.map((id, i) => [id, i]));
+    let items = resolvedIds
+      .map((id) => {
+        const track = getTrack(id);
+        if (!track) return null;
+        const playlistIndex = playlistIndexById.get(id) ?? -1;
+        return {
+          track,
+          playlistIndex,
+          canReorder: playlistIndex >= 0,
+        };
+      })
+      .filter((row): row is TrackRow => !!row);
+
+    if (sortMode === 'titleAsc') {
+      items = [...items].sort((a, b) =>
+        a.track.title.localeCompare(b.track.title, undefined, { sensitivity: 'base' }),
+      );
+    } else if (sortMode === 'titleDesc') {
+      items = [...items].sort((a, b) =>
+        b.track.title.localeCompare(a.track.title, undefined, { sensitivity: 'base' }),
+      );
+    }
+
+    return items;
+  }, [pl, resolvedIds, getTrack, sortMode]);
 
   const play = useCallback(
     (id: string) => {
@@ -69,112 +87,95 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
     [activePlaylistId, getTrack, setActivePlaylist],
   );
 
-  const playAll = useCallback(() => {
-    if (!pl) return;
-    const playable = filterPlayableTrackIds(resolvedIds, getTrack);
-    if (!playable.length) return;
-    let first = playable[0]!;
-    if (shuffleEnabled) {
-      const fp = playlistOrderFingerprint(pl.id, resolvedIds);
-      usePlaybackStore.getState().syncShuffleQueue(fp, playable);
-      const q = usePlaybackStore.getState().shuffleQueue;
-      if (q?.[0]) first = q[0];
-    }
-    play(first);
-  }, [getTrack, play, pl, resolvedIds, shuffleEnabled]);
-
-  const openNested = useCallback(
-    (id: string) => {
-      setActivePlaylist(id);
+  const moveInPlaylist = useCallback(
+    (trackId: string, dir: -1 | 1) => {
+      moveTrackInPlaylist(activePlaylistId, trackId, dir);
     },
-    [setActivePlaylist],
+    [activePlaylistId, moveTrackInPlaylist],
   );
-
-  if (masterEditMode && isMaster && captainUnlocked) {
-    return <MasterCatalogEditor onDone={() => setMasterEditMode(false)} />;
-  }
 
   if (!pl) {
     return <p className="sc-empty">{PLAIN.pickPlaylist}</p>;
   }
 
-  const title = isMaster ? SONIC_CATALOG_DISPLAY_NAME : pl.name;
-  const totalLabel = fmtPlaylistTotalTime(resolvedIds, getTrack);
-  const showCaptainManage =
-    captainUnlocked && isMaster && pl.trackIds.some((id) => {
-      const tr = getTrack(id);
-      return tr && isUserUploadTrack(id, tr);
-    });
+  const playlistModalTrack = playlistModalTrackId ? getTrack(playlistModalTrackId) : undefined;
+  const editTrack = editTrackId ? getTrack(editTrackId) : undefined;
 
   return (
     <section className="sc-feed">
-      <PlaylistBreadcrumb playlistId={pl.id} onNavigate={setActivePlaylist} />
+      <div className="sc-feed-picker">
+        <PlaylistPicker />
+      </div>
 
-      <header className="sc-feed-head">
-        <div className="sc-feed-art">
-          {isMaster ? (
-            <span className="sc-feed-art-fallback" aria-hidden>
-              📚
-            </span>
+      {rows.length > 0 ? (
+        <div className="sc-sort-bar sc-feed-body">
+          <span className="sc-sort-label">{PLAIN.sortBy}</span>
+          <button
+            type="button"
+            className={`sc-sort-btn${sortMode === 'playlistOrder' ? ' sc-sort-btn--on' : ''}`}
+            onClick={() => setSortMode('playlistOrder')}
+          >
+            {PLAIN.sortOrder}
+          </button>
+          <button
+            type="button"
+            className={`sc-sort-btn${sortMode === 'titleAsc' ? ' sc-sort-btn--on' : ''}`}
+            onClick={() => setSortMode('titleAsc')}
+          >
+            {PLAIN.sortAscending}
+          </button>
+          <button
+            type="button"
+            className={`sc-sort-btn${sortMode === 'titleDesc' ? ' sc-sort-btn--on' : ''}`}
+            onClick={() => setSortMode('titleDesc')}
+          >
+            {PLAIN.sortDescending}
+          </button>
+          {canReorderList ? (
+            <span className="sc-sort-hint">{PLAIN.reorderHint}</span>
           ) : (
-            <PlaylistCoverArt playlist={pl} size={120} className="sc-feed-cover" />
+            <span className="sc-sort-hint">{PLAIN.addToPlaylistHint}</span>
           )}
         </div>
-        <div className="sc-feed-meta">
-          <p className="sc-feed-type">{isMaster ? PLAIN.library : isMyLikes ? PLAIN.myLikes : PLAIN.playlist}</p>
-          <h1 className="sc-feed-title">{title}</h1>
-          <p className="sc-feed-stats">
-            {resolvedIds.length} {PLAIN.tracks} · {totalLabel}
-            {!isPassenger ? ` · ${PLAIN.freePreview}` : ''}
-          </p>
-          <div className="sc-feed-actions">
-            <button type="button" className="sc-play-all" onClick={playAll} disabled={!resolvedIds.length}>
-              ▶ {PLAIN.playAll}
-            </button>
-            {canEditPlaylist && onEditPlaylist ? (
-              <button type="button" className="sc-ghost-btn" onClick={onEditPlaylist}>
-                {PLAIN.editPlaylist}
-              </button>
-            ) : null}
-            {showCaptainManage ? (
-              <button type="button" className="sc-ghost-btn" onClick={() => setMasterEditMode(true)}>
-                {PLAIN.manageLibrary}
-              </button>
-            ) : null}
-          </div>
-        </div>
-      </header>
+      ) : null}
 
-      <label className="sc-search-wrap">
-        <span className="sr-only">{PLAIN.search}</span>
-        <input
-          className="sc-search"
-          type="search"
-          placeholder={PLAIN.searchPlaceholder}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </label>
-
-      <NestedPlaylistCards playlists={childPlaylists} onOpen={openNested} />
-
-      {rows.length === 0 && !childPlaylists.length ? (
-        <p className="sc-empty">
-          {search.trim() ? PLAIN.noSearchMatch : isMyLikes ? PLAIN.myLikesEmpty : PLAIN.noTracksYet}
+      {rows.length === 0 ? (
+        <p className="sc-empty sc-feed-body">
+          {isMyLikes ? PLAIN.myLikesEmpty : PLAIN.noTracksYet}
         </p>
       ) : (
-        <ol className="sc-track-list">
-          {rows.map((tr, index) => {
+        <ol className="sc-track-list sc-feed-body" ref={listRef}>
+          {rows.map((row, displayIndex) => {
+            const tr = row.track;
             const active = currentTrackId === tr.id;
-            const showMore = moreTrackId === tr.id;
-            const canManage = captainUnlocked && isUserUploadTrack(tr.id, tr);
+            const dragging = canReorderList && row.canReorder && dragIndex === row.playlistIndex;
+            const dropBefore =
+              canReorderList &&
+              row.canReorder &&
+              overIndex === row.playlistIndex &&
+              dragIndex !== null &&
+              dragIndex !== row.playlistIndex;
 
             return (
               <li
                 key={tr.id}
-                className={`sc-track-row${active ? ' sc-track-row--on' : ''}`}
+                data-reorder-idx={row.canReorder ? row.playlistIndex : undefined}
+                className={`sc-track-row${active ? ' sc-track-row--on' : ''}${dragging ? ' sc-track-row--dragging' : ''}${dropBefore ? ' sc-track-row--drop' : ''}`}
                 onDoubleClick={() => play(tr.id)}
               >
+                {canReorderList && row.canReorder ? (
+                  <button
+                    type="button"
+                    className="sc-track-grip"
+                    aria-label={`Move ${tr.title}`}
+                    onPointerDown={(e) => onGripPointerDown(row.playlistIndex, e)}
+                    onPointerMove={onGripPointerMove}
+                    onPointerUp={(e) => onGripPointerUp(row.playlistIndex, e)}
+                    onPointerCancel={(e) => onGripPointerUp(row.playlistIndex, e)}
+                  >
+                    ⋮⋮
+                  </button>
+                ) : null}
                 <button
                   type="button"
                   className="sc-track-play"
@@ -183,46 +184,73 @@ export function TrackList({ isPassenger, onEditPlaylist }: TrackListProps) {
                 >
                   {active && isPlaying ? '⏸' : '▶'}
                 </button>
-                <span className="sc-track-idx">{index + 1}</span>
+                <span className="sc-track-idx">{displayIndex + 1}</span>
                 <button type="button" className="sc-track-main" onClick={() => play(tr.id)}>
                   <span className="sc-track-title">{tr.title}</span>
                   <span className="sc-track-sub">
                     {tr.artist}
                     {tr.genre ? ` · ${tr.genre}` : ''}
                   </span>
+                  {tr.description ? (
+                    <span className="sc-track-desc">{tr.description}</span>
+                  ) : null}
                 </button>
-                <span className="sc-track-dur">{fmtDuration(tr.durationSec)}</span>
-                <LikeButton trackId={tr.id} />
-                {canManage ? (
-                  <button
-                    type="button"
-                    className="sc-track-more"
-                    aria-label="More"
-                    onClick={() => setMoreTrackId(showMore ? null : tr.id)}
-                  >
-                    ···
-                  </button>
-                ) : null}
-                {showMore && canManage ? (
-                  <div className="sc-track-more-menu">
-                    <button type="button" onClick={() => setEditingTrackId(tr.id)}>
-                      {PLAIN.editTrack}
+                {canReorderList && row.canReorder ? (
+                  <span className="sc-track-moves">
+                    <button
+                      type="button"
+                      className="sc-track-move"
+                      aria-label={`${PLAIN.moveUp}: ${tr.title}`}
+                      disabled={row.playlistIndex <= 0}
+                      onClick={() => moveInPlaylist(tr.id, -1)}
+                    >
+                      ↑
                     </button>
-                  </div>
+                    <button
+                      type="button"
+                      className="sc-track-move"
+                      aria-label={`${PLAIN.moveDown}: ${tr.title}`}
+                      disabled={row.playlistIndex >= pl.trackIds.length - 1}
+                      onClick={() => moveInPlaylist(tr.id, 1)}
+                    >
+                      ↓
+                    </button>
+                  </span>
                 ) : null}
-                {editingTrackId === tr.id && canManage ? (
-                  <TrackMetadataEditor
-                    track={tr}
-                    variant="inline"
-                    onSaved={() => setEditingTrackId(null)}
-                    onDeleted={() => setEditingTrackId(null)}
-                  />
-                ) : null}
+                <div className="sc-track-actions">
+                  <span className="sc-track-dur">{fmtDuration(tr.durationSec)}</span>
+                  <AddToPlaylistIcon onClick={() => setPlaylistModalTrackId(tr.id)} />
+                  <LikeButton trackId={tr.id} />
+                  {captainUnlocked ? (
+                    <button
+                      type="button"
+                      className="sc-track-edit"
+                      aria-label={PLAIN.editTrack}
+                      title={PLAIN.editTrack}
+                      onClick={() => setEditTrackId(tr.id)}
+                    >
+                      ✎
+                    </button>
+                  ) : null}
+                </div>
               </li>
             );
           })}
         </ol>
       )}
+
+      {playlistModalTrack ? (
+        <TrackPlaylistsModal
+          open
+          trackId={playlistModalTrack.id}
+          trackTitle={playlistModalTrack.title}
+          onClose={() => setPlaylistModalTrackId(null)}
+        />
+      ) : null}
+
+      {editTrack ? (
+        <TrackEditModal track={editTrack} open onClose={() => setEditTrackId(null)} />
+      ) : null}
     </section>
   );
 }

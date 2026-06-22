@@ -47,13 +47,7 @@ function PlaylistTreeRow({
           className={`sc-tree-btn${pl.id === activeId && !djMode ? ' sc-tree-btn--on' : ''}`}
           onClick={() => onSelect(pl.id)}
         >
-          {isMasterPlaylist(pl.id) ? (
-            <span className="sc-tree-icon" aria-hidden>
-              📚
-            </span>
-          ) : (
-            <PlaylistCoverArt playlist={pl} size={28} />
-          )}
+          <PlaylistCoverArt playlist={pl} size={28} className="sc-tree-icon" />
           <span className="sc-tree-text">
             <span className="sc-tree-name">{pl.name}</span>
             <span className="sc-tree-count">
@@ -106,11 +100,9 @@ export function PlaylistSidebarTree({ activeId, djMode, onSelect, onCreate }: Pl
           className={`sc-tree-btn sc-tree-btn--master${activeId === MASTER_PLAYLIST_ID && !djMode ? ' sc-tree-btn--on' : ''}`}
           onClick={() => onSelect(MASTER_PLAYLIST_ID)}
         >
-          <span className="sc-tree-icon" aria-hidden>
-            📚
-          </span>
+          <PlaylistCoverArt playlist={masterPl ?? { id: MASTER_PLAYLIST_ID }} size={28} className="sc-tree-icon" />
           <span className="sc-tree-text">
-            <span className="sc-tree-name">{masterPl?.name ?? PLAIN.library}</span>
+            <span className="sc-tree-name">{PLAIN.library}</span>
             <span className="sc-tree-count">
               {masterPl?.trackIds.length ?? 0} {PLAIN.tracks}
             </span>

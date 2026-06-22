@@ -5,7 +5,7 @@ import { useCallback, useId, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { DEFAULT_ARTIST } from '@/lib/catalogTypes';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
-import { isMediaFile, titleFromFileName } from '@/lib/deviceMediaScan';
+import { isMediaFile, supportsDirectoryPicker, titleFromFileName } from '@/lib/deviceMediaScan';
 import {
   classifyFilesAgainstCatalog,
   formatAllDuplicatesMessage,
@@ -15,6 +15,7 @@ import { isServerUploadConfigured } from '@/lib/serverCatalog';
 import { MAX_MEDIA_UPLOAD_BYTES } from '@/lib/mediaUploadLimits';
 import { formatFileSize } from '@/lib/formatDuration';
 import {
+  BULK_UPLOAD_AUTO_START_MAX,
   deferAfterFilePicker,
   isIOSDevice,
   retainPickedFilesForIOS,
@@ -57,6 +58,8 @@ function filterUploadableAudio(picked: File[]): { valid: File[]; rejections: str
   return { valid, rejections };
 }
 
+const FILE_LIST_PREVIEW_MAX = 12;
+
 type Mp3UploaderProps = {
   onUploaded?: () => void;
 };
@@ -70,8 +73,8 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
   const tracks = useCatalogStore((s) => s.tracks);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const importMediaFiles = useCatalogStore((s) => s.importMediaFiles);
+  const scanDeviceLibrary = useCatalogStore((s) => s.scanDeviceLibrary);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
-  const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
 
   const [title, setTitle] = useState('');
   const [files, setFiles] = useState<File[]>([]);
@@ -142,8 +145,8 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
           const dupNote = duplicates.length
             ? formatPartialDuplicatesMessage(result.added, duplicates)
             : result.added === 1
-              ? 'Success — track saved. Open Listen to play.'
-              : `Success — ${result.added} tracks saved. Open Listen to play.`;
+              ? 'Success — track saved. Switch to Listen to play.'
+              : `Success — ${result.added} tracks saved. Switch to Listen to play.`;
           const failNote =
             result.failed > 0
               ? ` ${result.failed} of ${result.added + result.failed} failed (${result.failures[0]?.name}: ${result.failures[0]?.message}).`
@@ -156,8 +159,6 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
             `${dupNote}${failNote}${syncNote} Catalog: ${Object.keys(useCatalogStore.getState().tracks).length} tracks.`,
           );
           onUploaded?.();
-          /* importMediaFiles already syncs in background */
-          if (result.added > 0) void syncLibraryFromServer();
         } else {
           setStatus('Upload finished but nothing new was saved. Check catalog settings or try again.');
         }
@@ -175,12 +176,48 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
         setBusy(false);
       }
     },
-    [importMediaFiles, onUploaded, serverReady, setActivePlaylist, shuffle, syncLibraryFromServer, title, tracks],
+    [importMediaFiles, onUploaded, serverReady, setActivePlaylist, shuffle, title, tracks],
   );
+
+  const handleFolderImport = useCallback(async () => {
+    if (!serverReady || busyRef.current) return;
+    busyRef.current = true;
+    setBusy(true);
+    setStatus('Choose a folder with your audio files…');
+    try {
+      const { added, duplicates } = await scanDeviceLibrary({
+        pickFolder: true,
+        onProgress: (line) => setStatus(line),
+      });
+      setActivePlaylist(MASTER_PLAYLIST_ID);
+      if (added === 0) {
+        setStatus(
+          duplicates.length
+            ? formatAllDuplicatesMessage(duplicates)
+            : 'No new audio files in that folder, or import was cancelled.',
+        );
+      } else {
+        setStatus(
+          `${formatPartialDuplicatesMessage(added, duplicates)} Catalog: ${Object.keys(useCatalogStore.getState().tracks).length} tracks.`,
+        );
+        onUploaded?.();
+      }
+    } catch {
+      setStatus('Folder import failed or was cancelled.');
+    } finally {
+      busyRef.current = false;
+      setBusy(false);
+    }
+  }, [onUploaded, scanDeviceLibrary, serverReady, setActivePlaylist]);
 
   const applyPickedFiles = useCallback(
     async (picked: File[]) => {
-      setStatus('Reading selected files…');
+      const largeBatch = picked.length > BULK_UPLOAD_AUTO_START_MAX;
+      setStatus(
+        largeBatch
+          ? `Reading ${picked.length} selected files… (large batch — tap Upload when ready)`
+          : 'Reading selected files…',
+      );
 
       const retained = iosUpload ? await retainPickedFilesForIOS(picked) : picked;
       const { valid, rejections } = filterUploadableAudio(retained);
@@ -210,17 +247,10 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
           ? ` (${rejections.length} skipped: ${rejections.slice(0, 3).join('; ')}${rejections.length > 3 ? '…' : ''})`
           : '';
 
-      if (iosUpload) {
-        setStatus(
-          `Ready: ${valid.length} file${valid.length === 1 ? '' : 's'} — tap Upload below.${extra}`,
-        );
-        return;
-      }
+      const readyMsg = `Ready: ${valid.length} file${valid.length === 1 ? '' : 's'} — tap Upload below.${extra}`;
 
-      clearFileInput();
-
-      if (!serverReady) {
-        setStatus(`Selected ${valid.length} file${valid.length === 1 ? '' : 's'} — server upload not configured.${extra}`);
+      if (iosUpload || largeBatch) {
+        setStatus(readyMsg);
         return;
       }
 
@@ -271,8 +301,9 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
             </>
           ) : (
             <>
-              Pick one or many tracks (Ctrl/Shift on desktop). Upload starts automatically after you choose on this
-              device.
+              Pick one or many tracks (Ctrl/Shift on desktop). Small batches upload automatically after you
+              choose. For <strong>100+ tracks</strong>, use <strong>Import folder</strong> (recommended) or
+              choose files then tap <strong>Upload</strong>.
             </>
           )}
         </p>
@@ -325,6 +356,16 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
               Choose files
             </label>
           </span>
+          {supportsDirectoryPicker() ? (
+            <button
+              type="button"
+              className="mp3-uploader-btn mp3-uploader-btn--ghost"
+              disabled={busy || !serverReady}
+              onClick={() => void handleFolderImport()}
+            >
+              Import folder
+            </button>
+          ) : null}
           {files.length ? (
             <button
               type="button"
@@ -372,12 +413,17 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
 
         {files.length ? (
           <ul className="mp3-uploader-file-list" aria-label="Selected audio files">
-            {files.map((f) => (
+            {files.slice(0, FILE_LIST_PREVIEW_MAX).map((f) => (
               <li key={`${f.name}-${f.size}-${f.lastModified}`}>
                 <span className="mp3-uploader-file-list-name">{f.name}</span>
                 <span className="mp3-uploader-file-list-meta">{formatFileSize(f.size)}</span>
               </li>
             ))}
+            {files.length > FILE_LIST_PREVIEW_MAX ? (
+              <li className="mp3-uploader-file-list-more">
+                …and {files.length - FILE_LIST_PREVIEW_MAX} more (upload keeps file access until finished)
+              </li>
+            ) : null}
           </ul>
         ) : (
           <p className="mp3-uploader-file-name" aria-live="polite">

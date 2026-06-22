@@ -47,6 +47,12 @@ export function deferAfterFilePicker(cb: () => void): void {
   });
 }
 
+/** Above this count, retain each file right before upload instead of upfront (avoids picker loops). */
+export const BULK_RETAIN_UPFRONT_MAX = 25;
+
+/** Desktop: auto-start upload after pick only when at or below this count. */
+export const BULK_UPLOAD_AUTO_START_MAX = 40;
+
 /** Per-file retain on iOS (multi-select); avoids dropping refs before batch upload finishes. */
 const IOS_RETAIN_FILE_MAX_BYTES = 12 * 1024 * 1024;
 
@@ -57,30 +63,32 @@ function guessAudioMime(name: string): string {
   return 'audio/mpeg';
 }
 
+/** Copy one picked file into memory (iOS Safari drops refs when the input is reset). */
+export async function retainSingleFileForIOS(file: File): Promise<File> {
+  if (!isIOSDevice()) return file;
+  if (file.size > IOS_RETAIN_FILE_MAX_BYTES) return file;
+  try {
+    const buf = await file.arrayBuffer();
+    return new File([buf], file.name, {
+      type: file.type || guessAudioMime(file.name),
+      lastModified: file.lastModified,
+    });
+  } catch {
+    return file;
+  }
+}
+
 /**
  * iOS Safari can drop File references when the input is reset — copy into memory first.
- * Skips retain for very large singles (stream upload uses the original File when possible).
+ * For large multi-selects, skip upfront retain (caller retains per file during upload).
  */
 export async function retainPickedFilesForIOS(files: File[]): Promise<File[]> {
   if (!isIOSDevice() || !files.length) return files;
+  if (files.length > BULK_RETAIN_UPFRONT_MAX) return files;
 
   const out: File[] = [];
   for (const f of files) {
-    if (f.size > IOS_RETAIN_FILE_MAX_BYTES) {
-      out.push(f);
-      continue;
-    }
-    try {
-      const buf = await f.arrayBuffer();
-      out.push(
-        new File([buf], f.name, {
-          type: f.type || guessAudioMime(f.name),
-          lastModified: f.lastModified,
-        }),
-      );
-    } catch {
-      out.push(f);
-    }
+    out.push(await retainSingleFileForIOS(f));
   }
   return out;
 }

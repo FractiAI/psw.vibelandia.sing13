@@ -3,6 +3,9 @@ import { PlaylistSidebarTree } from '@/components/catalog/PlaylistSidebarTree';
 import { PLAIN } from '@/lib/plainSpeak';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { QUESTFEST_DECK_HREF } from '@/components/QuestfestFastLink';
+import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { useMediaChromeStore } from '@/stores/mediaChromeStore';
+import { useSessionStore } from '@/stores/sessionStore';
 
 interface CatalogSidebarProps {
   onUploadClick: () => void;
@@ -17,6 +20,14 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
   const djMode = useCatalogStore((s) => s.djMode);
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
+  const catalogSyncing = useCatalogStore((s) => s.catalogSyncing);
+  const refreshFromServer = useCatalogStore((s) => s.refreshFromServer);
+
+  const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
+  const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
+  const isPassenger = useSessionStore((s) => s.isPassenger);
+  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
+  const fullPlay = isPassenger || captainUnlocked;
 
   const openPlaylist = (id: string) => {
     setDjMode(false);
@@ -24,8 +35,9 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
     if (location.pathname !== '/bridge') navigate('/bridge', { replace: true });
   };
 
-  const goLibrary = () => {
+  const goHome = () => {
     setDjMode(false);
+    setActive(MASTER_PLAYLIST_ID);
     if (location.pathname !== '/bridge') navigate('/bridge', { replace: true });
   };
 
@@ -50,7 +62,11 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
       </div>
 
       <nav className="sc-side-nav">
-        <button type="button" className={`sc-nav-btn${!djMode ? ' sc-nav-btn--on' : ''}`} onClick={goLibrary}>
+        <button
+          type="button"
+          className={`sc-nav-btn${!djMode && activeId === MASTER_PLAYLIST_ID ? ' sc-nav-btn--on' : ''}`}
+          onClick={goHome}
+        >
           {PLAIN.library}
         </button>
         <button type="button" className={`sc-nav-btn${djMode ? ' sc-nav-btn--on' : ''}`} onClick={onUploadClick}>
@@ -67,6 +83,25 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
         onSelect={openPlaylist}
         onCreate={handleCreate}
       />
+
+      <div className="sc-side-foot">
+        <button
+          type="button"
+          className="sc-side-foot-btn"
+          disabled={catalogSyncing}
+          onClick={() => void refreshFromServer()}
+        >
+          {catalogSyncing ? PLAIN.refreshing : PLAIN.refresh}
+        </button>
+        {!fullPlay ? (
+          <button type="button" className="sc-side-foot-btn sc-side-foot-btn--accent" onClick={() => setBoardingOpen(true)}>
+            {PLAIN.getPass}
+          </button>
+        ) : null}
+        <button type="button" className="sc-side-foot-btn" onClick={() => setCaptainOpen(true)}>
+          {PLAIN.captain}
+        </button>
+      </div>
     </aside>
   );
 }

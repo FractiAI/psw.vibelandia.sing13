@@ -84,6 +84,7 @@
 - Prime-linear compression transform: https://www.ssvibelandiaquestfest24x365.com/whitepaper/goldilocks-prime-linear-compression
 - Intelligence density volumetric audit: https://www.ssvibelandiaquestfest24x365.com/whitepaper/synthobs-intelligence-density
 - Paper catalog (search): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-catalog.html
+- Reproducible research filter: AC-HMM · HGT-PSD · EESM GPU · EGS-NLRF (FractiAI GitHub pipelines, June 2026)
 - Legacy catalog (all links): https://www.ssvibelandiaquestfest24x365.com/interfaces/look-under-the-hood-legacy-catalog.html
 
 ## QUESTFEST nest (carried surfaces)

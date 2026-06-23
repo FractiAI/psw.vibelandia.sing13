@@ -25,8 +25,12 @@ The team digested four Synthobs mathematics papers plus a replayable sandbox eng
 | **WP-GGM-PLC-2026-06** | `goldilocks-prime-linear-compression-2026` | Primes as foundational atoms; $\mathcal{G}(p_n)=n$; composite vectors as spatial lookup |
 | **SV-OBS-2026-INTEL-DENSITY-VOLUMETRIC** | `synthobs-intelligence-density-2026` | Volumetric hyper-packing audit; $\mathcal{D}_I$ narrative; JSON density report artifact |
 | **WP-2026-EGS-004-REV10** | `synthobs-emergent-sync-multi-agent-2026` | Formal SynthOBS protocol for emergent phase sync in recursive multi-agent networks; PLV/D_f telemetry, NOAA covariate baseline, H₀ falsification suite |
+| **FRACTIAI-AC-HMM-2026** | `fractiai-ac-hmm-satellites-2026` | AC-HMM on T2T-CHM13 centromeres · UCSC public DNA · spatial CV audit ledger · [GitHub](https://github.com/FractiAI/ac-hmm-satellites) |
+| **FRACTIAI-HGT-PSD-2026** | `fractiai-hgt-psd-covariance-2026` | Structured PSD Hi-C prediction · ENCODE/UCSC ingest · Proposition 1 PSD validity · [GitHub](https://github.com/FractiAI/hgt-psd-covariance) |
+| **FRACTIAI-EESM-2026** | `fractiai-eesm-gpu-telemetry-2026` | Epigenetic GPU telemetry · MLPerf/CUTLASS reference corpus · ASPLOS draft · [GitHub](https://github.com/FractiAI/eesm-gpu-telemetry) |
+| **EGS-NLRF-v4.0** | `fractiai-egs-nlrf-2026` | Hydrogen holographic lattice · live NIST ASD Balmer experiments · falsification ledger · [GitHub](https://github.com/FractiAI/egs-nlrf) |
 
-**Sandbox code:** `research/goldilocks-math/src/goldilocks_master_engine.py`  
+**Catalog filter:** Reproducible research · FractiAI repos on [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) `research/goldilocks-math/src/goldilocks_master_engine.py`  
 **JSON artifact:** `research/goldilocks-math/data/synthobs_volumetric_density_report.json`  
 **Dependencies:** `research/goldilocks-math/requirements.txt` (`sympy`)
 

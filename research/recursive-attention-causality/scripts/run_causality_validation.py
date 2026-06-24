@@ -13,10 +13,10 @@ sys.path.insert(0, str(ROOT))
 from config import DATA, DOC_ID, OUTPUT, STUDY_TITLE  # noqa: E402
 from src.segments import (  # noqa: E402
     segment_geomagnetic_to_biological,
-    segment_quantum_dna_structural,
     segment_solar_geomagnetic_biological_chain,
     segment_solar_to_cognitive_proxy,
     segment_solar_to_geomagnetic,
+    segment_structural_layers,
     synthesize_closure_verdict,
 )
 
@@ -43,8 +43,8 @@ def main() -> int:
     print(f"[{DOC_ID}] chain ssn -> kp -> movement")
     s4 = segment_solar_geomagnetic_biological_chain()
 
-    print(f"[{DOC_ID}] quantum/DNA structural anchors")
-    s5 = segment_quantum_dna_structural()
+    print(f"[{DOC_ID}] structural layers (actual vs modelled)")
+    s5 = segment_structural_layers()
 
     segments = [s1, s2, s3, s4, s5]
     verdict = synthesize_closure_verdict(segments)
@@ -54,6 +54,7 @@ def main() -> int:
         "title": STUDY_TITLE,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "honestyBoundary": verdict["statement"],
+        "methodology": verdict.get("methodology"),
         "segments": segments,
         "closureVerdict": verdict,
     }

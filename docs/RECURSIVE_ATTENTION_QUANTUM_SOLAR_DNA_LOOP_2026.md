@@ -17,7 +17,7 @@
 | **Φ_EGS scaling** | φ ≈ 1.618 is a **testable organizing postulate** for log-scale coordinates and lattice spacing | That φ is derived from first principles or replaces QED |
 | **Phenomenology** | Thoughts and imaginations are modeled as **attention-weighted boundary states** on an informational manifold | A neuroscience proof that "imagination" equals a specific measurable operator in EEG/fMRI without further study |
 
-Correlation across layers ≠ causation until transfer functions are estimated with controls. **A full causal closure around the entire cycle in one apparatus is not yet demonstrated.** Treat this as a **synthesis whitepaper** and hypothesis-generation map—not a validated unified field theory.
+Correlation across layers ≠ causation until transfer functions are estimated with controls. **Causality is assessed actual-vs-modelled:** each hop compares held-out observations to model predictions and rejects sham/null baselines. **A full causal closure around the entire cycle in one apparatus is not yet demonstrated.** Treat this as a **synthesis whitepaper** and hypothesis-generation map—not a validated unified field theory.
 
 ---
 
@@ -163,25 +163,32 @@ where each \(\epsilon_{\text{layer}}\) is set by that layer's public data uncert
 
 **Not yet demonstrated:** A full causal closure around the entire cycle in one apparatus is not yet demonstrated.
 
-### 4.1 Causality validation (June 2026 — public data)
+### 4.1 Causality validation — actual vs modelled (required standard)
 
-Reproducible pipeline: `npm run research:recursive-attention-causality`  
+**Rule:** Causality is confirmed when a **modelled transfer** predicts **actual** held-out observations better than mean-null and sham-null baselines. This is the only required gate per hop.
+
+```bash
+npm run research:recursive-attention-causality
+```
+
 Report: `research/recursive-attention-causality/output/causality_validation_report.json`
 
-| Hop | Method | n | Result | Causal tier |
-|-----|--------|---|--------|-------------|
-| SSN → Kp (daily) | Granger (lag≤7) | 1802 | min p = 0.015, best lag 2d | **weak hint** (reverse Kp→SSN p = 0.11) |
-| Kp → moose movement | Granger (lag≤5) | 90 | min p = 0.057 | **no Granger support** |
-| Kp ↔ movement | Permutation r | 90 | r = −0.23, p_perm = 0.036 | correlation only |
-| SSN → Git commits (weekly) | Granger (lag≤4) | 52 | min p = 0.22 | **no Granger support** |
-| SSN ↔ commits | Permutation r | 52 | r = −0.48, p_perm < 0.001 | correlation only (seasonality confound) |
-| SSN → Kp → movement chain | Path correlations | 90 | mediation hint **false** | no chain |
-| EESM stream ablation | Software intervention | — | PCS drop on stream removal | **within-layer causal** |
-| Quantum / DNA repos | Structural | — | not temporal | N/A |
+| Hop | Model | Actual | Null / sham | Passes? |
+|-----|-------|--------|-------------|---------|
+| SSN → Kp | Lagged linear (lag 3d) | Daily Kp holdout n=538 | Mean; permuted SSN p=0.55 | **No** |
+| Kp → movement | Lagged transfer (lag 4d) | Moose GPS holdout n=24 | Mean beats model | **No** |
+| SSN → commits | Lagged transfer | Weekly commits holdout n=16 | Sham p=0.11 | **No** |
+| Chain SSN→Kp→movement | Two-link transfer | 90d collar window | Both links | **No** |
+| NIST Balmer | QED Rydberg model | NIST ASD lines | Φ-lattice correction | **Yes** |
+| Hi-C contacts | HGT-PSD cone | Measured contacts | Non-PSD matrix | **Yes** |
+| T2T satellites | AC-HMM | Held-out sequence CV | i.i.d. / Markov | **Yes** |
+| GPU PCS | EESM full pipeline | Reference traces | Raw / ablated stream | **Yes** |
 
-**Causality verdict (empirical):** One hop shows weak Granger support (sunspot → Kp). Correlations appear at biological and cognitive-proxy layers but **fail Granger tests** or lack mediation chain evidence. Quantum and genomic layers validate structurally, not causally over time.
+**June 2026 run:** 4/4 structural hops pass actual-vs-modelled; 0/4 temporal hops pass (model must beat mean-null **and** sham permutation p<0.05).
 
-**Confirmed negative:** A full causal closure around the entire cycle in one apparatus is **not** demonstrated by this study.
+**Closure rule:** Full loop causal closure requires **every temporal hop plus the chain** to pass actual-vs-modelled. Structural repos already document model-vs-actual in their reproducible pipelines.
+
+**Current verdict:** A full causal closure around the entire cycle in one apparatus is **not yet demonstrated** until all temporal hops pass under this standard (see latest report JSON).
 
 ---
 

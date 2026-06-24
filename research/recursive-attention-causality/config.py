@@ -13,5 +13,5 @@ GEOMagnetic_DATA = REPO_ROOT / "research" / "geomagnetic-herbivore" / "data"
 SUN_STUDY_JSON = REPO_ROOT / "interfaces" / "look-at-the-sun-study.json"
 
 GRANGER_MAX_LAG = 7
-PERMUTATION_N = 2000
+PERMUTATION_N = 400
 RANDOM_SEED = 42

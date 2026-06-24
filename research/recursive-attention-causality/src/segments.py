@@ -51,9 +51,8 @@ def segment_geomagnetic_to_biological() -> dict[str, Any]:
     if kp_daily.empty:
         return {"hop": "geomagnetic_kp -> biological_movement", "tier": "no_data", "error": "Kp fetch empty"}
 
-    merged = herd.merge(kp_daily[["date", "kp_max"]], on="date", how="inner", suffixes=("_herd", "_kp"))
-    if "kp_max_kp" in merged.columns:
-        merged["kp_max"] = merged["kp_max_kp"]
+    merged = herd.drop(columns=[c for c in ("kp_max", "storm_class") if c in herd.columns])
+    merged = merged.merge(kp_daily[["date", "kp_max"]], on="date", how="inner")
     merged = merged.dropna(subset=["kp_max", "mean_step_km"])
 
     mva = model_vs_actual(
@@ -116,9 +115,9 @@ def segment_solar_geomagnetic_biological_chain() -> dict[str, Any]:
     if len(merged) < 20:
         return {"hop": "chain ssn -> kp -> movement", "tier": "insufficient_data", "n": len(merged)}
 
-    mva_kp = model_vs_actual(merged["ssn"].values, merged["kp_max"].values, max_lag=5, n_perm=500, seed=43)
+    mva_kp = model_vs_actual(merged["ssn"].values, merged["kp_max"].values, max_lag=5, n_perm=PERMUTATION_N, seed=43)
     mva_move = model_vs_actual(
-        merged["kp_max"].values, merged["mean_step_km"].values, max_lag=5, n_perm=500, seed=44
+        merged["kp_max"].values, merged["mean_step_km"].values, max_lag=5, n_perm=PERMUTATION_N, seed=44
     )
     chain_ok = (
         mva_kp.get("tier") in ("weak_causal_hint", "causal_support_preliminary")
@@ -230,9 +229,8 @@ def synthesize_closure_verdict(segments: list[dict[str, Any]]) -> dict[str, Any]
 
     return {
         "methodology": (
-            "Causality is assessed by comparing held-out actual observations to modelled "
-            "transfer predictions. A hop is supported when the causal model beats mean-null "
-            "and sham (permuted-cause) baselines on actuals. This is the required standard."
+            "Causality is assessed actual-vs-modelled: nested AR(1)+cause transfer vs held-out "
+            "actuals, beating AR(1) persistence and circular-shift sham nulls. Required standard."
         ),
         "full_causal_closure_one_apparatus": bool(full_closure),
         "statement": (

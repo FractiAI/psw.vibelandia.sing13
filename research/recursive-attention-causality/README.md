@@ -4,13 +4,12 @@
 
 ## Required standard
 
-**Causality is confirmed by comparing actual observations to modelled predictions.**
+**Actual vs modelled:** compare held-out observations to a nested transfer model  
+`effect[t] ~ AR(1) + cause[t-lag]`.
 
-A hop is supported when a registered transfer model predicts held-out **actuals** better than:
-- **mean null** (predict the average), and
-- **sham null** (permuted cause / weaker baseline).
-
-Granger tests and raw correlations are not the primary gate — **actual vs modelled** is.
+Pass when the causal model beats:
+1. **AR(1) persistence** (effect predicts itself), and  
+2. **Circular-shift sham** (misaligned cause), on walk-forward or hold-out actuals.
 
 ## Run
 
@@ -18,11 +17,15 @@ Granger tests and raw correlations are not the primary gate — **actual vs mode
 npm run research:recursive-attention-causality
 ```
 
+## Troubleshooting fixes (June 2026)
+
+- Dropped stale empty `kp_max` columns before herd merge  
+- Walk-forward OOS for small samples (n&lt;120)  
+- AR(1) persistence null instead of mean-only  
+- Circular-shift sham for time series (not i.i.d. permutation)  
+- Fixed IndexError on hold-out sham arrays  
+- Guard constant-series `linregress` failures  
+
 ## Outputs
 
 - `output/causality_validation_report.json`
-- `output/causality_validation_report.md`
-
-## Honesty boundary
-
-Full loop closure requires every temporal hop **and** the full chain to pass actual-vs-modelled on held-out data. Structural repos (egs-nlrf, hgt-psd, ac-hmm, eesm) compare model output to measured actuals vs documented null baselines.

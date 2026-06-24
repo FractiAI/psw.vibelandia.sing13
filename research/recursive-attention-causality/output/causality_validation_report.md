@@ -1,6 +1,6 @@
 # Recursive Attention Loop — Causality Validation (Public Data)
 
-**Generated:** 2026-06-24T15:55:30.048091+00:00
+**Generated:** 2026-06-24T16:07:29.330335+00:00
 
 ## Honesty boundary
 
@@ -27,22 +27,19 @@
   },
   "actual_vs_modelled": {
     "method": "actual_vs_modelled",
+    "eval": "holdout_nested_ar1",
     "n": 1802,
-    "n_test": 538,
+    "n_oos": 541,
     "best_lag": 3,
-    "coefficients": {
-      "intercept": 2.7624644496821946,
-      "slope": 0.0029379114246260896
-    },
-    "mse_causal_model": 2.208833067133711,
-    "mse_mean_null": 2.211593300678942,
-    "rmse_causal_model": 1.4862143409124104,
-    "rmse_mean_null": 1.487142663189696,
+    "mse_causal_model": 1.5816738282673999,
+    "mse_persistence_null": 1.576555343670019,
+    "mse_mean_null": 2.2069448301457966,
+    "beats_persistence_null": false,
     "beats_mean_null": true,
-    "delta_mse_vs_mean": 0.002760233545231028,
-    "p_sham_permutation": 0.545727136431784,
+    "delta_mse_vs_persistence": -0.005118484597380846,
+    "p_sham_circular_shift": 0.5411471321695761,
     "tier": "no_causal_support",
-    "interpretation": "Transfer model does not beat null/sham on held-out actuals."
+    "interpretation": "Transfer model does not beat persistence/sham on held-out actuals."
   },
   "interpretation": "Transfer model: Kp from lagged SSN vs held-out daily Kp actuals."
 }
@@ -62,22 +59,20 @@
   },
   "actual_vs_modelled": {
     "method": "actual_vs_modelled",
+    "eval": "walk_forward_nested_ar1",
     "n": 90,
-    "n_test": 24,
-    "best_lag": 4,
-    "coefficients": {
-      "intercept": 0.022332941907178588,
-      "slope": 0.003312622710379251
-    },
-    "mse_causal_model": 0.0011959367137600841,
-    "mse_mean_null": 0.0010825213056732045,
-    "rmse_causal_model": 0.03458231793503848,
-    "rmse_mean_null": 0.03290169153209611,
-    "beats_mean_null": false,
-    "delta_mse_vs_mean": -0.00011341540808687957,
-    "p_sham_permutation": 0.9740129935032483,
+    "n_oos": 41,
+    "min_train": 49,
+    "best_lag": 5,
+    "mse_causal_model": 0.000196198266035715,
+    "mse_persistence_null": 0.00020493084698260222,
+    "mse_mean_null": 0.0005538347779383787,
+    "beats_persistence_null": true,
+    "beats_mean_null": true,
+    "delta_mse_vs_persistence": 8.732580946887232e-06,
+    "p_sham_circular_shift": 0.6159600997506235,
     "tier": "no_causal_support",
-    "interpretation": "Transfer model does not beat null/sham on held-out actuals."
+    "interpretation": "Transfer model does not beat persistence/sham on walk-forward actuals."
   },
   "interpretation": "Transfer model: movement from lagged Kp vs GPS collar actuals (herbivore proxy)."
 }
@@ -94,22 +89,20 @@
   },
   "actual_vs_modelled": {
     "method": "actual_vs_modelled",
+    "eval": "walk_forward_nested_ar1",
     "n": 52,
-    "n_test": 16,
+    "n_oos": 24,
+    "min_train": 28,
     "best_lag": 0,
-    "coefficients": {
-      "intercept": 74.97186005911914,
-      "slope": -0.560157689245178
-    },
-    "mse_causal_model": 1029.941562953198,
-    "mse_mean_null": 1206.6118827160494,
-    "rmse_causal_model": 32.092702643329964,
-    "rmse_mean_null": 34.736319360520184,
+    "mse_causal_model": 2473.5464067019243,
+    "mse_persistence_null": 2972.885637111673,
+    "mse_mean_null": 3100.9697388986297,
+    "beats_persistence_null": true,
     "beats_mean_null": true,
-    "delta_mse_vs_mean": 176.67031976285148,
-    "p_sham_permutation": 0.10744627686156921,
-    "tier": "no_causal_support",
-    "interpretation": "Transfer model does not beat null/sham on held-out actuals."
+    "delta_mse_vs_persistence": 499.3392304097488,
+    "p_sham_circular_shift": 0.0024937655860349127,
+    "tier": "causal_support_preliminary",
+    "interpretation": "Nested AR+cause model beats persistence and sham circular-shift on walk-forward actuals."
   },
   "interpretation": "Transfer model: commits from lagged SSN vs weekly commit actuals (studio proxy)."
 }
@@ -128,41 +121,37 @@
   "actual_vs_modelled": {
     "ssn_to_kp": {
       "method": "actual_vs_modelled",
+      "eval": "walk_forward_nested_ar1",
       "n": 90,
-      "n_test": 23,
-      "best_lag": 5,
-      "coefficients": {
-        "intercept": 2.5078477666985384,
-        "slope": -0.03686043573282335
-      },
-      "mse_causal_model": 0.9448488361149672,
-      "mse_mean_null": 0.9843943474641454,
-      "rmse_causal_model": 0.9720333513388145,
-      "rmse_mean_null": 0.992166491806766,
+      "n_oos": 41,
+      "min_train": 49,
+      "best_lag": 1,
+      "mse_causal_model": 0.929889443341581,
+      "mse_persistence_null": 0.9267686009218216,
+      "mse_mean_null": 0.9792709468072779,
+      "beats_persistence_null": false,
       "beats_mean_null": true,
-      "delta_mse_vs_mean": 0.039545511349178275,
-      "p_sham_permutation": 0.5948103792415169,
+      "delta_mse_vs_persistence": -0.0031208424197594065,
+      "p_sham_circular_shift": 0.39650872817955113,
       "tier": "no_causal_support",
-      "interpretation": "Transfer model does not beat null/sham on held-out actuals."
+      "interpretation": "Transfer model does not beat persistence/sham on walk-forward actuals."
     },
     "kp_to_movement": {
       "method": "actual_vs_modelled",
+      "eval": "walk_forward_nested_ar1",
       "n": 90,
-      "n_test": 24,
-      "best_lag": 4,
-      "coefficients": {
-        "intercept": 0.022332941907178588,
-        "slope": 0.003312622710379251
-      },
-      "mse_causal_model": 0.0011959367137600841,
-      "mse_mean_null": 0.0010825213056732045,
-      "rmse_causal_model": 0.03458231793503848,
-      "rmse_mean_null": 0.03290169153209611,
-      "beats_mean_null": false,
-      "delta_mse_vs_mean": -0.00011341540808687957,
-      "p_sham_permutation": 0.9740518962075848,
+      "n_oos": 41,
+      "min_train": 49,
+      "best_lag": 5,
+      "mse_causal_model": 0.000196198266035715,
+      "mse_persistence_null": 0.00020493084698260222,
+      "mse_mean_null": 0.0005538347779383787,
+      "beats_persistence_null": true,
+      "beats_mean_null": true,
+      "delta_mse_vs_persistence": 8.732580946887232e-06,
+      "p_sham_circular_shift": 0.5885286783042394,
       "tier": "no_causal_support",
-      "interpretation": "Transfer model does not beat null/sham on held-out actuals."
+      "interpretation": "Transfer model does not beat persistence/sham on walk-forward actuals."
     }
   },
   "chain_passes_actual_vs_modelled": false,

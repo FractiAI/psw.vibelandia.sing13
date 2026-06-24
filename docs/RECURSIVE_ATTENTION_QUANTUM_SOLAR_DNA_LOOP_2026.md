@@ -173,18 +173,15 @@ npm run research:recursive-attention-causality
 
 Report: `research/recursive-attention-causality/output/causality_validation_report.json`
 
-| Hop | Model | Actual | Null / sham | Passes? |
-|-----|-------|--------|-------------|---------|
-| SSN → Kp | Lagged linear (lag 3d) | Daily Kp holdout n=538 | Mean; permuted SSN p=0.55 | **No** |
-| Kp → movement | Lagged transfer (lag 4d) | Moose GPS holdout n=24 | Mean beats model | **No** |
-| SSN → commits | Lagged transfer | Weekly commits holdout n=16 | Sham p=0.11 | **No** |
-| Chain SSN→Kp→movement | Two-link transfer | 90d collar window | Both links | **No** |
-| NIST Balmer | QED Rydberg model | NIST ASD lines | Φ-lattice correction | **Yes** |
-| Hi-C contacts | HGT-PSD cone | Measured contacts | Non-PSD matrix | **Yes** |
-| T2T satellites | AC-HMM | Held-out sequence CV | i.i.d. / Markov | **Yes** |
-| GPU PCS | EESM full pipeline | Reference traces | Raw / ablated stream | **Yes** |
+| Hop | Model | Actual | Null | Passes? |
+|-----|-------|--------|------|---------|
+| SSN → Kp | Nested AR+SSN (lag 3d) | Daily Kp holdout | AR(1) persistence; sham p=0.54 | **No** |
+| Kp → movement | Nested AR+Kp (lag 5d) | Moose GPS walk-forward | Persistence OK; sham p=0.62 | **No** |
+| SSN → commits | Nested AR+SSN | Weekly commits walk-forward | AR(1); sham p=0.002 | **Yes** |
+| Chain SSN→Kp→movement | Two-link nested AR | 90d collar window | Both links | **No** |
+| NIST / HGT / AC-HMM / EESM | Repo models | Measured actuals | Documented nulls | **Yes** (4/4) |
 
-**June 2026 run:** 4/4 structural hops pass actual-vs-modelled; 0/4 temporal hops pass (model must beat mean-null **and** sham permutation p<0.05).
+**Fixed methodology:** walk-forward for small n; AR(1) persistence null (not mean-only); circular-shift sham (not i.i.d. permutation). **Verdict:** 1/4 temporal hops pass; full loop closure **not** demonstrated.
 
 **Closure rule:** Full loop causal closure requires **every temporal hop plus the chain** to pass actual-vs-modelled. Structural repos already document model-vs-actual in their reproducible pipelines.
 

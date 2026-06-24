@@ -175,13 +175,13 @@ Report: `research/recursive-attention-causality/output/causality_validation_repo
 
 | Hop | Model | Actual | Null | Passes? |
 |-----|-------|--------|------|---------|
-| SSN → Kp | Nested AR+SSN (lag 3d) | Daily Kp holdout | AR(1) persistence; sham p=0.54 | **No** |
-| Kp → movement | Nested AR+Kp (lag 5d) | Moose GPS walk-forward | Persistence OK; sham p=0.62 | **No** |
-| SSN → commits | Nested AR+SSN | Weekly commits walk-forward | AR(1); sham p=0.002 | **Yes** |
-| Chain SSN→Kp→movement | Two-link nested AR | 90d collar window | Both links | **No** |
+| Solar → Kp (best: Ap) | Seasonal AR+driver | Daily Kp holdout | AR(1)+season; sham p=0.16 | **No** |
+| Kp → movement | Seasonal AR+Kp | Moose GPS walk-forward | sham p=0.50 | **No** |
+| SSN → commits | Seasonal AR+SSN | Weekly commits | sham p=0.08 | **No** |
+| **Chain F10.7→Kp̂→movement** | Composed two-stage OOS | Collar actuals | sham p=0.017 | **Weak yes** |
 | NIST / HGT / AC-HMM / EESM | Repo models | Measured actuals | Documented nulls | **Yes** (4/4) |
 
-**Fixed methodology:** walk-forward for small n; AR(1) persistence null (not mean-only); circular-shift sham (not i.i.d. permutation). **Verdict:** 1/4 temporal hops pass; full loop closure **not** demonstrated.
+**June 2026 (fixed pipeline):** Historical F10.7 ingest, seasonal AR(1) nulls, block-shift sham, composed chain model. **Chain hop passes** (weak); individual solar→Kp and cognitive proxy do not; full apparatus closure **not** demonstrated.
 
 **Closure rule:** Full loop causal closure requires **every temporal hop plus the chain** to pass actual-vs-modelled. Structural repos already document model-vs-actual in their reproducible pipelines.
 

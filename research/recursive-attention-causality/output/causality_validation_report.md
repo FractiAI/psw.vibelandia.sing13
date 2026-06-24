@@ -1,6 +1,6 @@
 # Recursive Attention Loop — Causality Validation (Public Data)
 
-**Generated:** 2026-06-24T16:07:29.330335+00:00
+**Generated:** 2026-06-24T16:17:46.212531+00:00
 
 ## Honesty boundary
 
@@ -15,33 +15,91 @@
 
 ## Segments
 
-### solar_ssn -> geomagnetic_kp
+### solar_ap -> geomagnetic_kp
 
 ```json
 {
-  "hop": "solar_ssn -> geomagnetic_kp",
+  "hop": "solar_ap -> geomagnetic_kp",
   "window": {
     "start": "2021-06-25",
     "end": "2026-06-24",
-    "n_days": 1802
+    "n_days": 1826
   },
   "actual_vs_modelled": {
     "method": "actual_vs_modelled",
     "eval": "holdout_nested_ar1",
-    "n": 1802,
-    "n_oos": 541,
-    "best_lag": 3,
-    "mse_causal_model": 1.5816738282673999,
-    "mse_persistence_null": 1.576555343670019,
-    "mse_mean_null": 2.2069448301457966,
-    "beats_persistence_null": false,
+    "cause_label": "ap",
+    "seasonal_controls": true,
+    "n": 1825,
+    "n_oos": 548,
+    "best_lag": 5,
+    "mse_causal_model": 1.572760957203395,
+    "mse_persistence_null": 1.5744849046272351,
+    "mse_mean_null": 2.201859929440018,
+    "beats_persistence_null": true,
     "beats_mean_null": true,
-    "delta_mse_vs_persistence": -0.005118484597380846,
-    "p_sham_circular_shift": 0.5411471321695761,
+    "delta_mse_vs_persistence": 0.0017239474238401886,
+    "p_sham_block_shift": 0.16458852867830423,
     "tier": "no_causal_support",
-    "interpretation": "Transfer model does not beat persistence/sham on held-out actuals."
+    "interpretation": "Transfer model does not beat persistence/sham on actuals."
   },
-  "interpretation": "Transfer model: Kp from lagged SSN vs held-out daily Kp actuals."
+  "all_causes_tested": {
+    "f107": {
+      "method": "actual_vs_modelled",
+      "eval": "holdout_nested_ar1",
+      "cause_label": "f107",
+      "seasonal_controls": true,
+      "n": 1802,
+      "n_oos": 541,
+      "best_lag": 0,
+      "mse_causal_model": 1.5823250754381601,
+      "mse_persistence_null": 1.5723269269905715,
+      "mse_mean_null": 2.2069448301457966,
+      "beats_persistence_null": false,
+      "beats_mean_null": true,
+      "delta_mse_vs_persistence": -0.009998148447588617,
+      "p_sham_block_shift": 0.8528678304239401,
+      "tier": "no_causal_support",
+      "interpretation": "Transfer model does not beat persistence/sham on actuals."
+    },
+    "ssn": {
+      "method": "actual_vs_modelled",
+      "eval": "holdout_nested_ar1",
+      "cause_label": "ssn",
+      "seasonal_controls": true,
+      "n": 1802,
+      "n_oos": 541,
+      "best_lag": 3,
+      "mse_causal_model": 1.5782766844658955,
+      "mse_persistence_null": 1.5723269269905715,
+      "mse_mean_null": 2.2069448301457966,
+      "beats_persistence_null": false,
+      "beats_mean_null": true,
+      "delta_mse_vs_persistence": -0.005949757475324002,
+      "p_sham_block_shift": 0.7980049875311721,
+      "tier": "no_causal_support",
+      "interpretation": "Transfer model does not beat persistence/sham on actuals."
+    },
+    "ap": {
+      "method": "actual_vs_modelled",
+      "eval": "holdout_nested_ar1",
+      "cause_label": "ap",
+      "seasonal_controls": true,
+      "n": 1825,
+      "n_oos": 548,
+      "best_lag": 5,
+      "mse_causal_model": 1.572760957203395,
+      "mse_persistence_null": 1.5744849046272351,
+      "mse_mean_null": 2.201859929440018,
+      "beats_persistence_null": true,
+      "beats_mean_null": true,
+      "delta_mse_vs_persistence": 0.0017239474238401886,
+      "p_sham_block_shift": 0.16458852867830423,
+      "tier": "no_causal_support",
+      "interpretation": "Transfer model does not beat persistence/sham on actuals."
+    }
+  },
+  "interpretation": "Best solar driver: ap (F10.7 preferred for ionospheric coupling)."
 }
 ```
 
@@ -60,21 +118,23 @@
   "actual_vs_modelled": {
     "method": "actual_vs_modelled",
     "eval": "walk_forward_nested_ar1",
+    "cause_label": "kp",
+    "seasonal_controls": true,
     "n": 90,
     "n_oos": 41,
-    "min_train": 49,
-    "best_lag": 5,
-    "mse_causal_model": 0.000196198266035715,
-    "mse_persistence_null": 0.00020493084698260222,
+    "best_lag": 4,
+    "mse_causal_model": 0.000154831883249916,
+    "mse_persistence_null": 0.0001589340542883834,
     "mse_mean_null": 0.0005538347779383787,
     "beats_persistence_null": true,
     "beats_mean_null": true,
-    "delta_mse_vs_persistence": 8.732580946887232e-06,
-    "p_sham_circular_shift": 0.6159600997506235,
+    "delta_mse_vs_persistence": 4.102171038467402e-06,
+    "p_sham_block_shift": 0.46633416458852867,
     "tier": "no_causal_support",
-    "interpretation": "Transfer model does not beat persistence/sham on walk-forward actuals."
+    "interpretation": "Transfer model does not beat persistence/sham on actuals.",
+    "min_train": 49
   },
-  "interpretation": "Transfer model: movement from lagged Kp vs GPS collar actuals (herbivore proxy)."
+  "interpretation": "Seasonal AR+Kp vs GPS collar actuals (herbivore proxy)."
 }
 ```
 
@@ -90,72 +150,95 @@
   "actual_vs_modelled": {
     "method": "actual_vs_modelled",
     "eval": "walk_forward_nested_ar1",
+    "cause_label": "ssn",
+    "seasonal_controls": true,
     "n": 52,
     "n_oos": 24,
-    "min_train": 28,
     "best_lag": 0,
-    "mse_causal_model": 2473.5464067019243,
-    "mse_persistence_null": 2972.885637111673,
+    "mse_causal_model": 2367.608669932933,
+    "mse_persistence_null": 2999.299135307165,
     "mse_mean_null": 3100.9697388986297,
     "beats_persistence_null": true,
     "beats_mean_null": true,
-    "delta_mse_vs_persistence": 499.3392304097488,
-    "p_sham_circular_shift": 0.0024937655860349127,
-    "tier": "causal_support_preliminary",
-    "interpretation": "Nested AR+cause model beats persistence and sham circular-shift on walk-forward actuals."
+    "delta_mse_vs_persistence": 631.6904653742322,
+    "p_sham_block_shift": 0.0773067331670823,
+    "tier": "no_causal_support",
+    "interpretation": "Transfer model does not beat persistence/sham on actuals.",
+    "min_train": 28
   },
-  "interpretation": "Transfer model: commits from lagged SSN vs weekly commit actuals (studio proxy)."
+  "interpretation": "Seasonal AR+SSN vs weekly commit actuals (studio proxy; confounds possible)."
 }
 ```
 
-### chain solar -> geomagnetic -> biological (daily)
+### chain f107 -> kp -> movement (composed)
 
 ```json
 {
-  "hop": "chain solar -> geomagnetic -> biological (daily)",
+  "hop": "chain f107 -> kp -> movement (composed)",
   "window": {
     "start": "2019-01-01",
     "end": "2020-05-15",
     "n_days": 90
   },
   "actual_vs_modelled": {
-    "ssn_to_kp": {
+    "method": "composed_chain_actual_vs_modelled",
+    "eval": "walk_forward_nested_ar1",
+    "cause_label": "mediator_hat_from_cause",
+    "seasonal_controls": true,
+    "n": 41,
+    "n_oos": 19,
+    "best_lag": 4,
+    "mse_causal_model": 0.00021626608097370545,
+    "mse_persistence_null": 0.00022058983489262464,
+    "mse_mean_null": 0.0004928317851708468,
+    "beats_persistence_null": true,
+    "beats_mean_null": true,
+    "delta_mse_vs_persistence": 4.323753918919189e-06,
+    "p_sham_block_shift": 0.017456359102244388,
+    "tier": "weak_causal_hint",
+    "interpretation": "Nested AR+cause model beats seasonal persistence and sham on actuals.",
+    "min_train": 22,
+    "stage1": {
       "method": "actual_vs_modelled",
       "eval": "walk_forward_nested_ar1",
+      "cause_label": "cause_to_mediator",
+      "seasonal_controls": true,
       "n": 90,
       "n_oos": 41,
-      "min_train": 49,
-      "best_lag": 1,
-      "mse_causal_model": 0.929889443341581,
-      "mse_persistence_null": 0.9267686009218216,
+      "best_lag": 4,
+      "mse_causal_model": 0.8986923631614993,
+      "mse_persistence_null": 1.0171994984271713,
       "mse_mean_null": 0.9792709468072779,
-      "beats_persistence_null": false,
+      "beats_persistence_null": true,
       "beats_mean_null": true,
-      "delta_mse_vs_persistence": -0.0031208424197594065,
-      "p_sham_circular_shift": 0.39650872817955113,
-      "tier": "no_causal_support",
-      "interpretation": "Transfer model does not beat persistence/sham on walk-forward actuals."
+      "delta_mse_vs_persistence": 0.11850713526567203,
+      "p_sham_block_shift": 0.024875621890547265,
+      "tier": "weak_causal_hint",
+      "interpretation": "Nested AR+cause model beats seasonal persistence and sham on actuals.",
+      "min_train": 49
     },
-    "kp_to_movement": {
+    "stage2_direct": {
       "method": "actual_vs_modelled",
       "eval": "walk_forward_nested_ar1",
+      "cause_label": "mediator_to_effect",
+      "seasonal_controls": true,
       "n": 90,
       "n_oos": 41,
-      "min_train": 49,
-      "best_lag": 5,
-      "mse_causal_model": 0.000196198266035715,
-      "mse_persistence_null": 0.00020493084698260222,
+      "best_lag": 4,
+      "mse_causal_model": 0.000154831883249916,
+      "mse_persistence_null": 0.0001589340542883834,
       "mse_mean_null": 0.0005538347779383787,
       "beats_persistence_null": true,
       "beats_mean_null": true,
-      "delta_mse_vs_persistence": 8.732580946887232e-06,
-      "p_sham_circular_shift": 0.5885286783042394,
+      "delta_mse_vs_persistence": 4.102171038467402e-06,
+      "p_sham_block_shift": 0.472636815920398,
       "tier": "no_causal_support",
-      "interpretation": "Transfer model does not beat persistence/sham on walk-forward actuals."
+      "interpretation": "Transfer model does not beat persistence/sham on actuals.",
+      "min_train": 49
     }
   },
-  "chain_passes_actual_vs_modelled": false,
-  "interpretation": "Each chain link tested: modelled transfer vs held-out actuals."
+  "chain_passes_actual_vs_modelled": true,
+  "interpretation": "Two-stage OOS: solar driver -> Kp_hat -> movement vs collar actuals."
 }
 ```
 

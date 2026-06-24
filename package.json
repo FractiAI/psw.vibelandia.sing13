@@ -19,6 +19,7 @@
     "test:wavefield-echo": "python sing13/tests/wavefield_echo_test.py",
     "audit:blob": "node scripts/blob-storage-audit.mjs",
     "research:geomagnetic": "python research/geomagnetic-herbivore/scripts/run_pipeline.py",
+    "research:recursive-attention-causality": "node scripts/run-recursive-attention-causality.mjs",
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs"

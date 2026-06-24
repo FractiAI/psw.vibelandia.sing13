@@ -163,6 +163,26 @@ where each \(\epsilon_{\text{layer}}\) is set by that layer's public data uncert
 
 **Not yet demonstrated:** A full causal closure around the entire cycle in one apparatus is not yet demonstrated.
 
+### 4.1 Causality validation (June 2026 — public data)
+
+Reproducible pipeline: `npm run research:recursive-attention-causality`  
+Report: `research/recursive-attention-causality/output/causality_validation_report.json`
+
+| Hop | Method | n | Result | Causal tier |
+|-----|--------|---|--------|-------------|
+| SSN → Kp (daily) | Granger (lag≤7) | 1802 | min p = 0.015, best lag 2d | **weak hint** (reverse Kp→SSN p = 0.11) |
+| Kp → moose movement | Granger (lag≤5) | 90 | min p = 0.057 | **no Granger support** |
+| Kp ↔ movement | Permutation r | 90 | r = −0.23, p_perm = 0.036 | correlation only |
+| SSN → Git commits (weekly) | Granger (lag≤4) | 52 | min p = 0.22 | **no Granger support** |
+| SSN ↔ commits | Permutation r | 52 | r = −0.48, p_perm < 0.001 | correlation only (seasonality confound) |
+| SSN → Kp → movement chain | Path correlations | 90 | mediation hint **false** | no chain |
+| EESM stream ablation | Software intervention | — | PCS drop on stream removal | **within-layer causal** |
+| Quantum / DNA repos | Structural | — | not temporal | N/A |
+
+**Causality verdict (empirical):** One hop shows weak Granger support (sunspot → Kp). Correlations appear at biological and cognitive-proxy layers but **fail Granger tests** or lack mediation chain evidence. Quantum and genomic layers validate structurally, not causally over time.
+
+**Confirmed negative:** A full causal closure around the entire cycle in one apparatus is **not** demonstrated by this study.
+
 ---
 
 ## 5. Recursive closure — how imagination re-enters the loop
@@ -196,6 +216,7 @@ This paper is indexed in the **Questfest whitepaper catalog** under HHF / cross-
 
 ```bash
 npm run audit:paper -- --id=recursive-attention-quantum-solar-dna-loop-2026
+npm run research:recursive-attention-causality
 ```
 
 **Related canon (read order):**

@@ -1,0 +1,197 @@
+{
+  "docId": "WP-2026-ATTENTION-CAUSALITY-VALIDATION",
+  "title": "Recursive Attention Loop \u2014 Causality Validation (Public Data)",
+  "generatedAt": "2026-06-24T15:50:45.903344+00:00",
+  "honestyBoundary": "A full causal closure around the entire cycle in one apparatus is not yet demonstrated.",
+  "segments": [
+    {
+      "hop": "solar_ssn \u2192 geomagnetic_kp",
+      "window": {
+        "start": "2021-06-25",
+        "end": "2026-06-24",
+        "n_days": 1802
+      },
+      "correlation": {
+        "n": 1802,
+        "r": 0.08611376578423424,
+        "p_perm": 0.0004997501249375312,
+        "tier": "causal_support_preliminary"
+      },
+      "granger_ssn_causes_kp": {
+        "n": 1802,
+        "min_p": 0.015071519395427639,
+        "best_lag": 2,
+        "max_lag_tested": 7,
+        "tier": "weak_causal_hint"
+      },
+      "granger_kp_causes_ssn_control": {
+        "n": 1802,
+        "min_p": 0.10551740417187752,
+        "best_lag": 4,
+        "max_lag_tested": 7,
+        "tier": "no_causal_support"
+      },
+      "interpretation": "Physical expectation: SSN leads Kp with lag; reverse Granger should be weaker."
+    },
+    {
+      "hop": "geomagnetic_kp \u2192 biological_movement",
+      "species": "Alces alces",
+      "study": "Snowy Range Moose in Wyoming (2019-2020)",
+      "window": {
+        "start": "2019-01-01",
+        "end": "2020-05-15",
+        "n_days": 90
+      },
+      "correlation": {
+        "n": 90,
+        "r": -0.22513583151912503,
+        "p_perm": 0.035982008995502246,
+        "tier": "weak_causal_hint"
+      },
+      "granger_kp_causes_movement": {
+        "n": 90,
+        "min_p": 0.05667293225489271,
+        "best_lag": 1,
+        "max_lag_tested": 5,
+        "tier": "no_causal_support"
+      },
+      "granger_movement_causes_kp_control": {
+        "n": 90,
+        "min_p": 0.12233982439722224,
+        "best_lag": 1,
+        "max_lag_tested": 5,
+        "tier": "no_causal_support"
+      },
+      "storm_day_comparison": null,
+      "interpretation": "Moose GPS collar (Movebank) \u2014 herbivore movement proxy, not human neural attention."
+    },
+    {
+      "hop": "solar_ssn \u2192 cognitive_proxy (weekly Git commits)",
+      "window": {
+        "weeks": 52,
+        "granularity": "week"
+      },
+      "correlation_ssn_commits": {
+        "n": 52,
+        "r": -0.482211030015203,
+        "p_perm": 0.0004997501249375312,
+        "tier": "causal_support_preliminary"
+      },
+      "correlation_f107_commits": {
+        "n": 52,
+        "r": -0.3683498363867038,
+        "p_perm": 0.004997501249375313,
+        "tier": "causal_support_preliminary"
+      },
+      "granger_ssn_causes_commits": {
+        "n": 52,
+        "min_p": 0.21560009768788282,
+        "best_lag": 1,
+        "max_lag_tested": 4,
+        "tier": "no_causal_support"
+      },
+      "granger_commits_cause_ssn_control": {
+        "n": 52,
+        "min_p": 0.09752955351131248,
+        "best_lag": 2,
+        "max_lag_tested": 4,
+        "tier": "no_causal_support"
+      },
+      "interpretation": "Commits are a weak human-attention / studio-activity proxy \u2014 not EEG or imagination directly. Significant correlation does not imply the Sun drives commits; shared seasonality is a confound."
+    },
+    {
+      "hop": "chain solar \u2192 geomagnetic \u2192 biological (daily)",
+      "window": {
+        "start": "2019-01-01",
+        "end": "2020-05-15",
+        "n_days": 90
+      },
+      "path_correlations": {
+        "x_to_m": {
+          "n": 90,
+          "r": -0.037566018170463615,
+          "p_perm": 0.7206396801599201,
+          "tier": "no_causal_support"
+        },
+        "m_to_y": {
+          "n": 90,
+          "r": -0.22513583151912503,
+          "p_perm": 0.035982008995502246,
+          "tier": "weak_causal_hint"
+        },
+        "x_to_y": {
+          "n": 90,
+          "r": 0.16992429261668063,
+          "p_perm": 0.09245377311344327,
+          "tier": "no_causal_support"
+        },
+        "mediation_chain_hint": false
+      },
+      "interpretation": "Partial path evidence only \u2014 not a closed apparatus; confounds include season and habitat."
+    },
+    {
+      "hop": "quantum_hydrogen + DNA genomic",
+      "tier": "not_temporal",
+      "tests": [
+        {
+          "layer": "quantum_hydrogen",
+          "repo": "FractiAI/egs-nlrf",
+          "causality_status": "not_applicable",
+          "reason": "NIST ASD Balmer lines are equilibrium spectroscopy \u2014 no time series for solar\u2192quantum causal transfer.",
+          "structural_validation": "QED baseline holds (\u03c7\u00b2/dof \u2248 0.73); \u03a6 corrections do not improve fit."
+        },
+        {
+          "layer": "dna_sequence",
+          "repo": "FractiAI/ac-hmm-satellites",
+          "causality_status": "not_applicable",
+          "reason": "Spatial sequence modeling on T2T loci \u2014 not a dynamic attention loop over time.",
+          "structural_validation": "AC-HMM beats baselines on spatial CV (capped windows)."
+        },
+        {
+          "layer": "dna_contacts",
+          "repo": "FractiAI/hgt-psd-covariance",
+          "causality_status": "not_applicable",
+          "reason": "Static Hi-C contact map \u2014 PSD validity is structural, not temporal Granger.",
+          "structural_validation": "proposition1_psd_valid: true"
+        },
+        {
+          "layer": "silicon_epigenetic_metaphor",
+          "repo": "FractiAI/eesm-gpu-telemetry",
+          "causality_status": "within_layer_supported",
+          "reason": "Stream-order ablation shows PCS drops when causal stream path removed (software intervention).",
+          "structural_validation": "Full PCS 0.175 vs raw 0.5; stream ablation drop 0.175"
+        }
+      ]
+    }
+  ],
+  "closureVerdict": {
+    "full_causal_closure_one_apparatus": false,
+    "statement": "A full causal closure around the entire cycle in one apparatus is not yet demonstrated.",
+    "partial_path_evidence": {
+      "solar_to_geomagnetic_granger": true,
+      "geomagnetic_to_movement_granger": false,
+      "solar_to_commits_granger": false,
+      "correlation_only_hops": [
+        "solar_ssn \u2192 geomagnetic_kp :: correlation",
+        "geomagnetic_kp \u2192 biological_movement :: correlation",
+        "solar_ssn \u2192 cognitive_proxy (weekly Git commits) :: correlation_ssn_commits",
+        "solar_ssn \u2192 cognitive_proxy (weekly Git commits) :: correlation_f107_commits"
+      ],
+      "daily_mediation_chain_hint": false
+    },
+    "granger_supported_hops": [
+      "solar_ssn \u2192 geomagnetic_kp :: granger_ssn_causes_kp"
+    ],
+    "no_granger_support_hops": [
+      "solar_ssn \u2192 geomagnetic_kp :: granger_kp_causes_ssn_control",
+      "geomagnetic_kp \u2192 biological_movement :: granger_kp_causes_movement",
+      "geomagnetic_kp \u2192 biological_movement :: granger_movement_causes_kp_control",
+      "solar_ssn \u2192 cognitive_proxy (weekly Git commits) :: granger_ssn_causes_commits",
+      "solar_ssn \u2192 cognitive_proxy (weekly Git commits) :: granger_commits_cause_ssn_control"
+    ],
+    "non_temporal_or_missing": [
+      "quantum_hydrogen + DNA genomic"
+    ],
+    "recommendation": "Next bench: synchronized EEG + geomagnetic Kp + 21 cm RF + single-cell epigenetic time series under pre-registered storm windows \u2014 or accept observational multi-proxy synthesis only."
+  }
+}

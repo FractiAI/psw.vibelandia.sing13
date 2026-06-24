@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T15:45:57.142Z",
+  "generatedAt": "2026-06-24T17:59:33.495Z",
   "granularity": "week",
   "periods": [
     "2025-06-30",
@@ -89,25 +89,25 @@
     "2026-01-26": 0,
     "2026-02-02": 0,
     "2026-02-09": 0,
-    "2026-02-16": 126,
-    "2026-02-23": 175,
-    "2026-03-02": 114,
-    "2026-03-09": 76,
-    "2026-03-16": 59,
-    "2026-03-23": 39,
-    "2026-03-30": 2,
-    "2026-04-06": 11,
-    "2026-04-13": 5,
-    "2026-04-20": 12,
-    "2026-04-27": 7,
-    "2026-05-04": 19,
-    "2026-05-11": 98,
+    "2026-02-16": 0,
+    "2026-02-23": 0,
+    "2026-03-02": 0,
+    "2026-03-09": 0,
+    "2026-03-16": 0,
+    "2026-03-23": 0,
+    "2026-03-30": 0,
+    "2026-04-06": 0,
+    "2026-04-13": 0,
+    "2026-04-20": 0,
+    "2026-04-27": 0,
+    "2026-05-04": 0,
+    "2026-05-11": 72,
     "2026-05-18": 69,
     "2026-05-25": 43,
     "2026-06-01": 16,
     "2026-06-08": 11,
     "2026-06-15": 0,
-    "2026-06-22": 9
+    "2026-06-22": 13
   },
   "uploads": {
     "2025-06-30": 0,
@@ -333,9 +333,9 @@
     "solarCycle": "Solar Cycle 25 — ascending toward maximum (NOAA/SILSO indices)",
     "hydrogenLineMhz": 1420.405751768,
     "weeksInStudy": 52,
-    "totalCommits52w": 891,
-    "correlationSunCommits": -0.482,
-    "correlationF107Commits": -0.368
+    "totalCommits52w": 224,
+    "correlationSunCommits": -0.092,
+    "correlationF107Commits": -0.355
   },
   "alignment": {
     "title": "How the Sun meets the studio",
@@ -347,13 +347,13 @@
   },
   "findings": {
     "headline": "Sun steady; ionosphere moderate — studio weeks on the same axis",
-    "lede": "**52 UTC weeks** ending **2026-06-22**: **891** public Git commits across SING 9 / SING 13 / digital-pru, plotted beside **SILSO + SWPC daily sunspots** and **NOAA F10.7** (daily noon flux when available, else SWPC daily table / monthly fill). **Not live** — frozen at generation time.",
+    "lede": "**52 UTC weeks** ending **2026-06-22**: **224** public Git commits across SING 9 / SING 13 / digital-pru, plotted beside **SILSO + SWPC daily sunspots** and **NOAA F10.7** (daily noon flux when available, else SWPC daily table / monthly fill). **Not live** — frozen at generation time.",
     "bullets": [
       "Latest daily sunspot number: **106** (2026-06-23). Mean F10.7 proxy that day: **130.0 sfu**.",
       "Last four weeks mean SSN **97.1** vs prior four **98.0** — trend reads **steady**.",
       "Mean planetary **Kp** over recent NOAA 3-hour samples: **1.60** (quiet < 3; stormy > 5).",
-      "Pearson r (weekly mean SSN ↔ commits): **-0.48** — some co-movement in this window.",
-      "Peak commit week in window: **2026-02-23** (175 commits). Peak sunspot week: **2025-08-25** (183.9 mean SSN).",
+      "Pearson r (weekly mean SSN ↔ commits): **-0.09** — weak coupling expected; different time constants.",
+      "Peak commit week in window: **2026-05-11** (72 commits). Peak sunspot week: **2025-08-25** (183.9 mean SSN).",
       "SoundCloud drop counts are **not wired** in this snapshot (RSS handle migration). Commit cadence stands in for ship-room bursts until SC feed is reattached.",
       "Operational space weather: confirm with [NOAA SWPC](https://www.swpc.noaa.gov/) before propagation or safety decisions. QUESTFEST copy stays metaphor-forward."
     ]

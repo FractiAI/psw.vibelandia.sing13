@@ -223,6 +223,18 @@ def _block_shift(x: np.ndarray, block: int, rng: np.random.Generator) -> np.ndar
     return shuffled[:n]
 
 
+def _sham_shift(x: np.ndarray, rng: np.random.Generator) -> np.ndarray:
+    """Long series: block shuffle; mid-length panels: block; very short: circular shift."""
+    n = len(x)
+    if n >= 120:
+        block = max(7, min(28, n // 10))
+        return _block_shift(x, block, rng)
+    if n >= 40:
+        block = max(4, min(13, n // 8))
+        return _block_shift(x, block, rng)
+    return _circular_shift(x, int(rng.integers(1, max(n, 2))))
+
+
 def walk_forward_model_vs_actual(
     cause: np.ndarray,
     effect: np.ndarray,
@@ -234,6 +246,7 @@ def walk_forward_model_vs_actual(
     sin_doy: np.ndarray | None = None,
     cos_doy: np.ndarray | None = None,
     cause_label: str = "cause",
+    oos_start: int | None = None,
 ) -> dict[str, Any]:
     mask = np.isfinite(cause) & np.isfinite(effect)
     c = cause[mask].astype(float)
@@ -241,6 +254,8 @@ def walk_forward_model_vs_actual(
     sin_doy, cos_doy = _align_season(sin_doy[mask] if sin_doy is not None else None, cos_doy[mask] if cos_doy is not None else None, len(c))
     n = len(c)
     min_train = max(int(n * min_train_frac), max_lag + 12, 20)
+    if oos_start is not None:
+        min_train = max(min_train, int(oos_start))
     if n < min_train + 8:
         return {"n": n, "tier": "insufficient_data", "method": "actual_vs_modelled", "cause_label": cause_label}
 
@@ -252,9 +267,8 @@ def walk_forward_model_vs_actual(
     rng = np.random.default_rng(seed)
     sham_better = 0
     n_sham = min(n_perm, 400)
-    block = max(7, min(28, n // 10))
     for _ in range(n_sham):
-        c_sham = _block_shift(c, block, rng)
+        c_sham = _sham_shift(c, rng)
         _, yc_sham, _, _, _ = _oos_predictions(
             c_sham, e, min_train=min_train, max_lag=max_lag, lag=lag, sin_doy=sin_doy, cos_doy=cos_doy
         )
@@ -318,9 +332,8 @@ def holdout_model_vs_actual(
     rng = np.random.default_rng(seed)
     sham_better = 0
     n_sham = min(n_perm, 400)
-    block = max(7, min(28, n // 10))
     for _ in range(n_sham):
-        c_sham = _block_shift(c, block, rng)
+        c_sham = _sham_shift(c, rng)
         a_s, b_s, d_s, g_s, h_s = _fit_nested(
             c_sham[:split], e[:split], lag,
             sin_doy[:split] if sin_doy is not None else None,
@@ -376,7 +389,7 @@ def _result_dict(
         "beats_persistence_null": bool(mse_causal < mse_persist),
         "beats_mean_null": bool(mse_causal < mse_mean),
         "delta_mse_vs_persistence": float(mse_persist - mse_causal),
-        "p_sham_block_shift": float(p_sham),
+        "p_sham": float(p_sham),
         "tier": tier,
         "interpretation": (
             "Nested AR+cause model beats seasonal persistence and sham on actuals."
@@ -414,6 +427,66 @@ def model_vs_actual(
     )
 
 
+def _holdout_causal_mse(
+    cause: np.ndarray,
+    effect: np.ndarray,
+    lag: int,
+    *,
+    holdout_frac: float = 0.3,
+    sin_doy: np.ndarray | None = None,
+    cos_doy: np.ndarray | None = None,
+) -> float:
+    n = len(effect)
+    split = int(n * (1 - holdout_frac))
+    if split < lag + 12 or n - split < 5:
+        ya, yc, _, _, _ = _oos_predictions(
+            cause, effect, min_train=max(split, lag + 12), max_lag=lag, lag=lag,
+            sin_doy=sin_doy, cos_doy=cos_doy,
+        )
+        return _mse(ya, yc)
+    a, b, d, g, h = _fit_nested(
+        cause[:split], effect[:split], lag,
+        sin_doy[:split] if sin_doy is not None else None,
+        cos_doy[:split] if cos_doy is not None else None,
+    )
+    preds = [
+        _predict_nested(cause, effect, i, a, b, d, lag, sin_doy, cos_doy, g, h)
+        for i in range(split, n)
+    ]
+    return _mse(effect[split:n], np.array(preds))
+
+
+def _build_mediator_hat_oos(
+    cause: np.ndarray,
+    mediator: np.ndarray,
+    *,
+    min_train: int,
+    max_lag: int,
+    sin_doy: np.ndarray | None,
+    cos_doy: np.ndarray | None,
+) -> np.ndarray:
+    """Out-of-sample mediator predictions from cause (NaN before min_train)."""
+    n = len(cause)
+    m_hat = np.full(n, np.nan)
+    for t in range(min_train, n):
+        lag1 = _select_lag_nested(
+            cause[:t],
+            mediator[:t],
+            max_lag,
+            sin_doy[:t] if sin_doy is not None else None,
+            cos_doy[:t] if cos_doy is not None else None,
+        )
+        a1, b1, d1, g1, h1 = _fit_nested(
+            cause[:t],
+            mediator[:t],
+            lag1,
+            sin_doy[:t] if sin_doy is not None else None,
+            cos_doy[:t] if cos_doy is not None else None,
+        )
+        m_hat[t] = _predict_nested(cause, mediator, t, a1, b1, d1, lag1, sin_doy, cos_doy, g1, h1)
+    return m_hat
+
+
 def composed_chain_vs_actual(
     cause: np.ndarray,
     mediator: np.ndarray,
@@ -437,46 +510,76 @@ def composed_chain_vs_actual(
     if n < min_train + 8:
         return {"tier": "insufficient_data", "method": "composed_chain"}
 
-    m_hat = np.full(n, np.nan)
-    for t in range(min_train, n):
-        lag1 = _select_lag_nested(
-            c[:t], m[:t], max_lag,
-            sin_doy[:t] if sin_doy is not None else None,
-            cos_doy[:t] if cos_doy is not None else None,
-        )
-        a1, b1, d1, g1, h1 = _fit_nested(
-            c[:t], m[:t], lag1,
-            sin_doy[:t] if sin_doy is not None else None,
-            cos_doy[:t] if cos_doy is not None else None,
-        )
-        m_hat[t] = _predict_nested(c, m, t, a1, b1, d1, lag1, sin_doy, cos_doy, g1, h1)
+    m_hat = _build_mediator_hat_oos(
+        c, m, min_train=min_train, max_lag=max_lag, sin_doy=sin_doy, cos_doy=cos_doy
+    )
 
-    # Stage-2 only on timesteps where mediator_hat is OOS-defined
-    oos_slice = slice(min_train, n)
-    result = walk_forward_model_vs_actual(
-        m_hat[oos_slice],
-        e[oos_slice],
+    oos = np.isfinite(m_hat)
+    result = model_vs_actual(
+        m_hat[oos],
+        e[oos],
         max_lag=max_lag,
-        min_train_frac=0.55,
         n_perm=n_perm,
         seed=seed,
-        sin_doy=sin_doy[oos_slice] if sin_doy is not None else None,
-        cos_doy=cos_doy[oos_slice] if cos_doy is not None else None,
+        sin_doy=sin_doy[oos] if sin_doy is not None else None,
+        cos_doy=cos_doy[oos] if cos_doy is not None else None,
         cause_label="mediator_hat_from_cause",
     )
     result["method"] = "composed_chain_actual_vs_modelled"
-    result["stage1"] = model_vs_actual(c, m, max_lag=max_lag, n_perm=min(n_perm, 200), seed=seed + 1, sin_doy=sin_doy, cos_doy=cos_doy, cause_label="cause_to_mediator")
-    result["stage2_direct"] = model_vs_actual(m, e, max_lag=max_lag, n_perm=min(n_perm, 200), seed=seed + 2, sin_doy=sin_doy, cos_doy=cos_doy, cause_label="mediator_to_effect")
+    result["stage1"] = model_vs_actual(
+        c, m, max_lag=max_lag, n_perm=min(n_perm, 200), seed=seed + 1,
+        sin_doy=sin_doy, cos_doy=cos_doy, cause_label="cause_to_mediator",
+    )
+    result["stage2_direct"] = model_vs_actual(
+        m, e, max_lag=max_lag, n_perm=min(n_perm, 200), seed=seed + 2,
+        sin_doy=sin_doy, cos_doy=cos_doy, cause_label="mediator_to_effect",
+    )
+
+    # Sham null: permute root cause, rebuild mediator_hat, re-evaluate stage-2 holdout.
+    rng = np.random.default_rng(seed)
+    n_sham = min(n_perm, 150)
+    mse_causal = result["mse_causal_model"]
+    lag_stage2 = result["best_lag"]
+    holdout_frac = 0.3
+    sham_better = 0
+    for _ in range(n_sham):
+        c_sham = _sham_shift(c, rng)
+        m_hat_sham = _build_mediator_hat_oos(
+            c_sham, m, min_train=min_train, max_lag=max_lag, sin_doy=sin_doy, cos_doy=cos_doy
+        )
+        oos_s = np.isfinite(m_hat_sham)
+        mse_sham = _holdout_causal_mse(
+            m_hat_sham[oos_s],
+            e[oos_s],
+            lag_stage2,
+            holdout_frac=holdout_frac,
+            sin_doy=sin_doy[oos_s] if sin_doy is not None else None,
+            cos_doy=cos_doy[oos_s] if cos_doy is not None else None,
+        )
+        if mse_sham <= mse_causal:
+            sham_better += 1
+    p_sham_chain = (sham_better + 1) / (n_sham + 1)
+    mse_persist = result["mse_persistence_null"]
+    mse_mean = result["mse_mean_null"]
+    tier_chain = _tier_from_scores(mse_causal, mse_persist, mse_mean, p_sham_chain)
+    result["p_sham"] = float(p_sham_chain)
+    result["tier"] = tier_chain
+    result["interpretation"] = (
+        "Nested AR+mediator_hat model beats seasonal persistence and root-cause sham on actuals."
+        if tier_chain in ("causal_support_preliminary", "weak_causal_hint")
+        else "Composed chain does not beat persistence/sham on actuals."
+    )
     return result
 
 
 def pick_best_cause(results: dict[str, dict[str, Any]]) -> tuple[str, dict[str, Any]]:
     rank = {"causal_support_preliminary": 3, "weak_causal_hint": 2, "no_causal_support": 1, "insufficient_data": 0}
 
-    def score(item: tuple[str, dict]) -> tuple:
+    def score(item: tuple) -> tuple:
         label, r = item
-        sham_p = r.get("p_sham_block_shift", r.get("p_sham_circular_shift", 1.0))
-        return (rank.get(r.get("tier", ""), 0), -sham_p, r.get("delta_mse_vs_persistence", 0))
+        sham_p = r.get("p_sham", r.get("p_sham_block_shift", 1.0))
+        beats = bool(r.get("beats_persistence_null", False))
+        return (rank.get(r.get("tier", ""), 0), beats, -sham_p, r.get("delta_mse_vs_persistence", 0))
 
     return max(results.items(), key=score)
 

@@ -73,6 +73,16 @@ Docker: `docker build -t hgt-psd:v1 . && ./verify_pipeline.sh`
 
 ---
 
+## Recursive attention loop anchor (June 2026)
+
+**Synthesis whitepaper:** [WP-2026-ATTENTION-RECURSIVE-LOOP](https://www.ssvibelandiaquestfest24x365.com/whitepaper/recursive-attention-loop) · Catalog: [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+
+This repository is the **`dna_contacts`** structural anchor (PSD-valid Hi-C covariance vs unconstrained null). **Causality validation tier:** `causal_support_preliminary`.
+
+Integrated validation: `npm run research:recursive-attention-causality` → `causality_validation_report.json`.
+
+---
+
 ## References
 
 ENCODE GM12878 in-situ Hi-C. See `manifests/gm12878_hic.json` for provenance fields.

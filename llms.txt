@@ -80,6 +80,7 @@
 - DNA / PEFF master canon (May 11, 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-master-canon
 - Digital Pru MCA synthesis · Synthobs Hex-Organ index (June 2026): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026
 - Recursive attention loop · imagination → quantum → solar → DNA → human (WP-2026-ATTENTION-RECURSIVE-LOOP): https://www.ssvibelandiaquestfest24x365.com/whitepaper/recursive-attention-loop
+- Causality validation · actual-vs-modelled all hops pass (WP-2026-ATTENTION-CAUSALITY-VALIDATION): run `npm run research:recursive-attention-causality` · report at `research/recursive-attention-causality/output/causality_validation_report.json`
 - Synthobs Hex-Organ unified run · SV-OBS-2026-MATH-HEX-ENGINE-FINAL: https://www.ssvibelandiaquestfest24x365.com/whitepaper/synthobs-hex-organ-engine
 - Goldilocks transfinite inversion · net-zero blackhole math: https://www.ssvibelandiaquestfest24x365.com/whitepaper/goldilocks-transfinite-inversion
 - Prime-linear compression transform: https://www.ssvibelandiaquestfest24x365.com/whitepaper/goldilocks-prime-linear-compression

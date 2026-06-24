@@ -82,6 +82,16 @@ Outputs: `raw_outputs/audit_ledger.json`
 
 ---
 
+## Recursive attention loop anchor (June 2026)
+
+**Synthesis whitepaper:** [WP-2026-ATTENTION-RECURSIVE-LOOP](https://www.ssvibelandiaquestfest24x365.com/whitepaper/recursive-attention-loop) · Catalog repo: [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+
+This repository is the **`quantum_hydrogen`** structural anchor in the cross-scale attention map. **Causality validation tier:** `causal_support_preliminary` (QED baseline beats EGS Φ-null on NIST Balmer actuals).
+
+Reproduce integrated loop validation: `npm run research:recursive-attention-causality` in the catalog repo → `research/recursive-attention-causality/output/causality_validation_report.json`.
+
+---
+
 ## References
 
 Bekenstein (1973); Aharonov & Bohm (1959); Maldacena (1998); Nottale (1993); NIST ASD v5.11; IAEA EXFOR.

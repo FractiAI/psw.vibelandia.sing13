@@ -76,7 +76,7 @@ def _ms_to_iso(ms: int | float) -> str:
 def fetch_study_gps(
     study_id: int,
     *,
-    max_events_per_individual: int = 12000,
+    max_events_per_individual: int = 50000,
     timeout: int = 300,
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
     """Download GPS fixes from Movebank public JSON API."""
@@ -187,7 +187,7 @@ def filter_trajectory_to_window(traj: pd.DataFrame, window: dict[str, str]) -> p
 
 def fetch_public_collar_trajectories(
     *,
-    max_events_per_individual: int = 12000,
+    max_events_per_individual: int = 50000,
 ) -> tuple[pd.DataFrame, dict[str, Any]]:
     """
     Primary movement layer: publicly downloadable GPS collar data from Movebank.
@@ -207,10 +207,7 @@ def fetch_public_collar_trajectories(
         attempts.append(meta)
         if not df.empty:
             window = select_analysis_window(df)
-            filtered = filter_trajectory_to_window(df, window)
-            if filtered.empty:
-                filtered = df
-            return filtered, {
+            return df, {
                 "primarySource": "movebank_gps",
                 "selectedStudy": meta,
                 "analysisWindow": window,

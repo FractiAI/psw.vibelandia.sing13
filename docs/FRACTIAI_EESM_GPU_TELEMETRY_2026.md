@@ -110,3 +110,13 @@ python tools/verify_audit.py
 ```
 
 Outputs: `raw_outputs/audit_ledger.json`
+
+---
+
+## Recursive attention loop anchor (June 2026)
+
+**Synthesis whitepaper:** [WP-2026-ATTENTION-RECURSIVE-LOOP](https://www.ssvibelandiaquestfest24x365.com/whitepaper/recursive-attention-loop) · Catalog: [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+
+This repository is the **`silicon_epigenetic_metaphor`** structural anchor (full EESM pipeline vs raw PCS baseline). **Causality validation tier:** `causal_support_preliminary`.
+
+Integrated validation: `npm run research:recursive-attention-causality` → `causality_validation_report.json`.

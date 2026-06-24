@@ -175,6 +175,14 @@ AC-HMM (K=8, D=3) vs:
 
 AC-HMM delivers substantial parameter efficiency in low-entropy sequence fields (~1000× FLOP reduction vs neural baselines) while maintaining OOD transfer performance.
 
+### Recursive attention loop anchor (June 2026)
+
+**Synthesis whitepaper:** [WP-2026-ATTENTION-RECURSIVE-LOOP](https://www.ssvibelandiaquestfest24x365.com/whitepaper/recursive-attention-loop) · Catalog: [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
+
+This repository is the **`dna_sequence`** structural anchor (AC-HMM vs i.i.d./Markov baselines on held-out CV). **Causality validation tier:** `causal_support_preliminary`.
+
+Integrated validation: `npm run research:recursive-attention-causality` → `causality_validation_report.json`.
+
 **Limitations:**
 
 1. **Context memory hard ceiling** — fixed D cannot track dependencies beyond the window.

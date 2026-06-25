@@ -3,57 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a1218" />
-  <title>Listen · Sovereign Player primer · SS Vibelandia QUESTFEST</title>
-  <meta name="description" content="Plain talk: what the Listen door is, how the music player works, honor pass, playlists, and upload — before you open the Bridge." />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Listen · Capitan's Bridge · SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="The Sovereign Player — Reno swamp catalog, honor pass, playlists, upload. Hear the ship before you read anything else." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/listen.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="deck-surfaces.css" />
   <link rel="stylesheet" href="voice-tier.css" />
   <style>
-    :root { --bg: #0a1218; --gold-hi: #fef3c7; --muted: #94a3b8; }
+    :root {
+      --bg: #0a0806;
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --walnut: #1a120c;
+      --muted: #a8a29e;
+      --text: #f5f0e8;
+      --text-soft: #d6cfc4;
+    }
     body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(120% 70% at 50% 0%, rgba(94,234,212,0.1) 0%, #0c181c 30%, var(--bg) 55%, #030508 100%);
-      color: #f1f5f9;
+      background:
+        radial-gradient(ellipse 110% 50% at 50% 0%, rgba(212,175,55,0.16) 0%, transparent 55%),
+        #0a0806;
+      color: var(--text);
       line-height: 1.65;
     }
-    .deck-back {
-      display: inline-block;
-      font-size: 0.72rem;
+
+    /* ── Hero ── */
+    .li-hero {
+      padding: calc(2.5rem + env(safe-area-inset-top)) 1.25rem 0;
+      max-width: 44rem;
+      margin: 0 auto;
+    }
+    .li-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--gold);
+      margin: 0 0 0.75rem;
+    }
+    .li-h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(3rem, 11vw, 5.5rem);
+      line-height: 0.95;
+      color: var(--gold-hi);
+      margin: 0 0 1rem;
+      letter-spacing: 0.02em;
+    }
+    .li-lede {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+      line-height: 1.45;
+      color: var(--champagne);
+      max-width: 36rem;
+      margin: 0 0 1.75rem;
+    }
+    .li-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2.5rem;
+    }
+    .li-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
       text-decoration: none;
+      transition: transform 0.15s, filter 0.15s;
     }
-    .deck-back:hover { color: var(--gold-hi); }
-    .deck-tagline {
-      background: linear-gradient(90deg, #5eead4, #2dd4bf);
+    .li-btn:hover { transform: translateY(-1px); filter: brightness(1.07); }
+    .li-btn--primary {
+      background: linear-gradient(180deg, #f0d4a0, #c9a227);
+      color: var(--walnut);
     }
-    .listen-path {
-      margin: 1rem 0 0;
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
-      border: 1px solid rgba(94, 234, 212, 0.35);
-      background: rgba(12, 24, 28, 0.55);
-      font-size: 0.95rem;
-      color: #a7f3d0;
-      text-align: center;
+    .li-btn--ghost {
+      background: rgba(20,16,12,0.8);
+      color: var(--champagne);
+      border-color: rgba(212,175,55,0.45);
+    }
+    .li-btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
+
+    /* Pass card — featured */
+    .li-pass-card {
+      margin: 1.5rem 0;
+      padding: 1.25rem 1.35rem;
+      border-radius: 14px;
+      border: 1px solid rgba(212,175,55,0.6);
+      background: linear-gradient(145deg, rgba(212,175,55,0.12), rgba(26,18,12,0.9));
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .li-pass-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .li-pass-card__label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.35rem;
+    }
+    .li-pass-card__price {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--gold-hi);
       letter-spacing: 0.02em;
     }
-    .listen-path strong { color: var(--gold-hi); font-weight: 700; }
-    .listen-path span.sep { margin: 0 0.35rem; opacity: 0.65; }
+    .li-pass-card__price span {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-soft);
+      margin-left: 0.4rem;
+    }
+    .li-pass-card__desc {
+      margin: 0.55rem 0 0;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .li-pass-card__cta {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--champagne);
+    }
+    .li-pass-card:hover .li-pass-card__cta { color: var(--gold-hi); }
+
+    /* Step number */
+    .li-step-num {
+      display: inline-block;
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      margin-right: 0.4rem;
+    }
   </style>
 </head>
 <body>
-  <main class="deck-wrap">
-    <a class="deck-back" href="get-started.html">&larr; Get Started</a>
-
+  <div class="li-hero">
     <nav class="deck-skin-nav" aria-label="Site">
       <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
       <a href="get-started.html">Get Started</a><span class="dot" aria-hidden="true">·</span>
@@ -62,128 +167,116 @@
       <a href="look-at-the-sun.html">Look at the Sun</a>
     </nav>
 
-    <aside class="deck-role-primer" aria-labelledby="listen-role-h">
-      <p class="deck-role-primer__label">What this page is for</p>
-      <h2 id="listen-role-h">Listen — Door I</h2>
-      <p>
-        This is the <strong>plain-language front door</strong> to the music player (Capitan's Bridge).
-        Read this if you are new; open the player when you are ready to hear swamp beats, build playlists, or board with an honor pass.
-      </p>
-      <p>
-        The player itself is normal audio in your browser — <span class="vt-badge vt-oper" title="Operational">⚙ operational</span> software you can use today.
-      </p>
-    </aside>
-
-    <p class="deck-eyebrow">Door I · Sovereign Player</p>
-    <h1 class="deck-h1">Listen</h1>
-    <span class="deck-tagline">Audio first · Reno catalog · 24×365</span>
-
-    <div class="deck-case">
-      <h2>What you get</h2>
-      <p>
-        <strong>Listen</strong> is the heart of the ship — the <strong>Sovereign Player</strong> with the
-        <strong>Holographic Reno Swamp Beats</strong> catalog, your playlists, and optional upload.
-        Free visitors get a <strong>30-second preview</strong> per track. Members with an honor pass get full play and background audio on supported devices.
-      </p>
-      <p class="listen-path" aria-label="Listen path">
-        <strong>preview</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>honor pass</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>full play</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>your playlists</strong>
-      </p>
+    <p class="li-eyebrow">Door I · Capitan's Bridge · Sovereign Player</p>
+    <h1 class="li-h1">Listen</h1>
+    <p class="li-lede">
+      500+ tracks. Reno swamp, caliente, Golden Bachdoor — the catalog lives here. Press play before you read anything else.
+    </p>
+    <div class="li-cta-row">
+      <a class="li-btn li-btn--primary" href="questfest-bridge/#/bridge">Open the player →</a>
+      <a class="li-btn li-btn--ghost" href="questfest-bridge/#/bridge?checkout=1">Get the pass</a>
     </div>
+  </div>
 
-    <p class="deck-section-label">Three steps — no account database</p>
+  <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.22); max-width: 44rem; margin: 0 auto 0;" />
+
+  <main class="deck-wrap" style="padding-top: 1.75rem;">
+
+    <p class="deck-pull">
+      Capitan's Bridge is the player. Your playlists and listening state stay on your device — no warehouse, no profile built without your knowledge.
+    </p>
+
+    <p class="deck-section-label">How it works</p>
+
     <ul class="deck-plain-list">
       <li class="deck-plain-item">
-        <h3>1 · Press play</h3>
+        <h3><span class="li-step-num">01</span> Press play — no wall</h3>
         <p>
-          Open the Bridge and tap a track. Hear the vibe first — no signup wall, no corporate login.
-          Your listening state stays on <strong>your device</strong>.
+          Open the Bridge, tap a track. You hear it. No account, no email, no algorithm deciding for you.
+          Free visitors get a <strong>30-second Solenoid preview</strong> on sovereign playlists — enough to know if the vibe is right.
         </p>
         <a class="deck-paper-card" href="questfest-bridge/#/bridge">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">Live now</span>
-          <span class="deck-paper-card__title">Open Capitan's Bridge</span>
-          <span class="deck-paper-card__sub">The actual player — Listen tab, playlists, player dock at the bottom.</span>
+          <span class="deck-paper-card__title">Capitan's Bridge · the player</span>
+          <span class="deck-paper-card__sub">Listen tab · playlists · player dock at the bottom · upload under DJ</span>
           <span class="deck-paper-card__cta">Open player →</span>
         </a>
       </li>
+
       <li class="deck-plain-item">
-        <h3>2 · Members pass (optional)</h3>
+        <h3><span class="li-step-num">02</span> Honor pass — when you want the full catalog</h3>
         <p>
-          <strong>$16.18/mo</strong> on honor — follow Machote Moderno Magazine, pay on Venmo / PayPal / Cash App,
-          attest on your device. Full stream for <strong>30 calendar days</strong> from your paid date. No Stripe.
+          Full play, background audio, Libretto log, export rights. Paid on honor — Venmo, PayPal, or Cash App.
+          No Stripe. No subscription portal. You attest on your device; we trust you.
         </p>
-        <a class="deck-paper-card" href="questfest-bridge/#/bridge?checkout=1">
-          <span class="deck-paper-card__pill">$16.18/mo</span>
-          <span class="deck-paper-card__title">Honor pass checkout</span>
-          <span class="deck-paper-card__sub">Magazine qualifier + honor attestation in the player.</span>
-          <span class="deck-paper-card__cta">Board the ship →</span>
+        <a class="li-pass-card" href="questfest-bridge/#/bridge?checkout=1">
+          <p class="li-pass-card__label">Master Music Catalog · Honor Pass</p>
+          <p class="li-pass-card__price">$16.18<span>/ mo · EGS φ</span></p>
+          <p class="li-pass-card__desc">
+            Qualifier: follow <strong>Machote Moderno Magazine</strong>. Pay on Venmo, PayPal, or Cash App → attest in the player → 30 calendar days from your paid date, saved on this device only.
+          </p>
+          <span class="li-pass-card__cta">Board the ship →</span>
         </a>
       </li>
+
       <li class="deck-plain-item">
-        <h3>3 · Upload (optional)</h3>
+        <h3><span class="li-step-num">03</span> Upload your track (optional)</h3>
         <p>
-          Got a track? Upload audio or short video under the <strong>DJ</strong> tab — it lands in the server catalog and can appear in Listen for everyone.
+          Got something that belongs on the ship? Open the <strong>DJ</strong> tab — audio or short video, up to ~10 min.
+          It lands in the master catalog and shows in Listen for everyone.
+          You add title, artist, genre, and choose which playlists it joins.
         </p>
         <a class="deck-paper-card" href="questfest-bridge/#/dj">
           <span class="deck-paper-card__pill">Catalog</span>
-          <span class="deck-paper-card__title">Upload your track</span>
-          <span class="deck-paper-card__sub">Title, artist, genre — add to playlists after upload.</span>
-          <span class="deck-paper-card__cta">Open upload →</span>
+          <span class="deck-paper-card__title">Upload to the catalog</span>
+          <span class="deck-paper-card__sub">Audio or video · title, artist, genre, description · add to playlists on upload</span>
+          <span class="deck-paper-card__cta">Open DJ tab →</span>
         </a>
       </li>
     </ul>
 
-    <p class="deck-section-label">Inside the player — quick map</p>
-    <ul class="deck-plain-list">
-      <li class="deck-plain-item">
-        <h3>Listen tab</h3>
-        <p>Browse tracks, play, add to playlists, remove from lists, drag to reorder.</p>
-      </li>
-      <li class="deck-plain-item">
-        <h3>Playlists</h3>
-        <p>Master catalog is the full library. Create your own lists — duplicate, rename, multi-add tracks.</p>
-      </li>
-      <li class="deck-plain-item">
-        <h3>Libretto log</h3>
-        <p>Your session notes inside the Bridge — what played, what landed.</p>
-      </li>
-      <li class="deck-plain-item">
-        <h3>Export</h3>
-        <p>Streaming is included with the pass; <strong>offline export is $1.61 per track</strong> — honor confirmation on device.</p>
-      </li>
-    </ul>
+    <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.18); margin: 2.5rem 0 1.5rem;" />
 
-    <p class="deck-section-label">Related decks</p>
-    <ul class="deck-paper-grid deck-paper-grid--two">
-      <li>
-        <a class="deck-paper-card" href="get-started.html">
-          <span class="deck-paper-card__pill">New here?</span>
-          <span class="deck-paper-card__title">Get Started</span>
-          <span class="deck-paper-card__sub">Full site map in plain talk — all four decks explained.</span>
-          <span class="deck-paper-card__cta">Open guide →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="look-under-the-hood.html">
-          <span class="deck-paper-card__pill">Proof</span>
-          <span class="deck-paper-card__title">Look Under the Hood</span>
-          <span class="deck-paper-card__sub">Why we say the ship is operational — not a slide deck.</span>
-          <span class="deck-paper-card__cta">Open hood →</span>
-        </a>
-      </li>
-    </ul>
+    <p class="deck-statement">Inside the Bridge</p>
 
-    <div class="deck-btn-row" style="margin-top: 2rem;">
+    <div class="deck-two-card" style="margin-top: 0.75rem;">
+      <div class="deck-mini-card">
+        <strong>Listen tab</strong>
+        <p>Browse the full catalog, play, add to playlists, drag to reorder, remove from lists. One active stream per browser.</p>
+      </div>
+      <div class="deck-mini-card">
+        <strong>Playlists</strong>
+        <p>Master catalog = full library. Your playlists: create, rename, duplicate, multi-add, press-and-hold drag to reorder.</p>
+      </div>
+      <div class="deck-mini-card">
+        <strong>Libretto log</strong>
+        <p>Your session record inside the Bridge — what played, what resonated. Stays on your device.</p>
+      </div>
+      <div class="deck-mini-card">
+        <strong>Export</strong>
+        <p>Streaming included with the pass. Offline download is <strong>$1.61 per track</strong> — honor confirmation, license saved on device.</p>
+      </div>
+    </div>
+
+    <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.18); margin: 2.5rem 0;" />
+
+    <p class="deck-section-label">Contact &amp; bookings</p>
+    <p style="color: var(--text-soft); font-size: 0.98rem; line-height: 1.6;">
+      Catalog licensing, bookings, residency inquiries — <strong>old school protocol</strong>:
+      <a href="mailto:valetpru@gmail.com" style="color: var(--deck-champagne); font-weight: 600;">valetpru@gmail.com</a>
+      or 775-404-5233. No intake funnel.
+    </p>
+
+    <div class="deck-btn-row" style="margin-top: 2.25rem;">
       <a class="deck-btn deck-btn--gold" href="questfest-bridge/#/bridge">Open player now</a>
-      <a class="deck-btn deck-btn--ghost" href="questfest-bridge/#/bridge?checkout=1">Honor pass</a>
-      <a class="deck-btn deck-btn--ghost" href="vibelandia-questfest.html">QUESTFEST</a>
+      <a class="deck-btn deck-btn--ghost" href="get-started.html">Back to Get Started</a>
+      <a class="deck-btn deck-btn--ghost" href="look-under-the-hood.html">Look Under the Hood</a>
     </div>
 
     <p class="deck-foot">
+      <a href="vibelandia-questfest.html">QUESTFEST</a> ·
       <a href="get-started.html">Get Started</a> ·
-      <a href="questfest-bridge/#/bridge">Player</a> ·
+      <a href="look-under-the-hood.html">Hood</a> ·
       <a href="look-at-the-sun.html">Sun</a> ·
       NSPFRNP → ∞¹³
     </p>

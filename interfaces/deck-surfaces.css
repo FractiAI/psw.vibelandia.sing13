@@ -1,5 +1,18 @@
 /* Shared deck styling — Look under the hood, Look at the Sun, member surfaces */
 /* Goldilocks golden age · warm gold / walnut / champagne */
+:root {
+  --deck-bg: #0a0806;
+  --deck-text: #f5f0e8;
+  --deck-text-soft: #d6cfc4;
+  --deck-muted: #a8a29e;
+  --deck-gold: #d4af37;
+  --deck-gold-hi: #fef3c7;
+  --deck-champagne: #f5e6c8;
+  --deck-walnut: #1a120c;
+  --deck-line: rgba(212, 175, 55, 0.42);
+  --deck-link: #f5e6c8;
+  --deck-link-hover: #fef3c7;
+}
 .deck-wrap {
   max-width: 44rem;
   margin: 0 auto;
@@ -7,25 +20,25 @@
 }
 .deck-skin-nav {
   font-size: 0.8125rem;
-  color: var(--muted, #94a3b8);
+  color: var(--deck-muted);
   margin-bottom: 1.35rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--line, rgba(212, 175, 55, 0.22));
+  border-bottom: 1px solid var(--deck-line);
 }
 .deck-skin-nav a {
-  color: var(--foam, #5eead4);
+  color: var(--deck-link);
   text-decoration: none;
   font-weight: 600;
 }
-.deck-skin-nav a:hover { color: var(--gold-hi, #fef3c7); text-decoration: underline; }
+.deck-skin-nav a:hover { color: var(--deck-link-hover); text-decoration: underline; }
 .deck-skin-nav .dot { margin: 0 0.45rem; opacity: 0.55; }
-.deck-skin-nav .here { color: var(--gold-hi, #fef3c7); font-weight: 700; }
+.deck-skin-nav .here { color: var(--deck-gold-hi); font-weight: 700; }
 
 .deck-eyebrow {
   font-size: 0.68rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--foam, #5eead4);
+  color: var(--deck-gold);
   font-weight: 700;
   margin-bottom: 0.4rem;
 }
@@ -33,7 +46,7 @@
   font-family: 'Bebas Neue', Impact, sans-serif;
   font-size: clamp(2rem, 6vw, 2.75rem);
   line-height: 1.02;
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-gold-hi);
   font-weight: 400;
   margin: 0 0 0.65rem;
   letter-spacing: 0.02em;
@@ -44,29 +57,29 @@
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #1a120c;
-  background: linear-gradient(90deg, #5eead4, #2dd4bf);
+  color: var(--deck-walnut);
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
 .deck-lead {
   font-size: 1.08rem;
-  color: #e2e8f0;
+  color: var(--deck-text);
   margin-bottom: 1.15rem;
   line-height: 1.55;
 }
 .deck-lead a {
-  color: var(--foam, #5eead4);
+  color: var(--deck-link);
   font-weight: 600;
   text-decoration: none;
 }
 .deck-lead a:hover {
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-link-hover);
   text-decoration: underline;
 }
 .deck-lead a:visited {
-  color: var(--foam, #5eead4);
+  color: var(--deck-champagne);
 }
 
 .deck-case {
@@ -81,14 +94,14 @@
   font-family: 'Bebas Neue', Impact, sans-serif;
   font-size: 1.35rem;
   font-weight: 400;
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-gold-hi);
   margin: 0 0 0.5rem;
   letter-spacing: 0.02em;
   line-height: 1.1;
 }
 .deck-case p {
   margin: 0;
-  color: #e2e8f0;
+  color: var(--deck-text-soft);
   font-size: 1rem;
   line-height: 1.55;
 }
@@ -105,13 +118,13 @@
 .deck-plain-item h3 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-gold-hi);
   margin: 0 0 0.45rem;
   line-height: 1.25;
 }
 .deck-plain-item p {
   margin: 0 0 0.75rem;
-  color: #cbd5e1;
+  color: var(--deck-text-soft);
   font-size: 0.98rem;
   line-height: 1.55;
 }
@@ -122,35 +135,35 @@
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--foam, #5eead4);
+  color: var(--deck-gold);
   margin: 2rem 0 0.75rem;
   font-weight: 700;
 }
 .deck-section-label a {
-  color: var(--foam, #5eead4);
+  color: var(--deck-link);
   text-decoration: none;
   font-weight: 700;
 }
 .deck-section-label a:hover {
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-link-hover);
   text-decoration: underline;
 }
 .deck-body p {
   margin: 0 0 0.85rem;
-  color: #cbd5e1;
+  color: var(--deck-text-soft);
   line-height: 1.6;
 }
 .deck-body ul.plain {
   margin: 0 0 1rem 1.1rem;
-  color: #cbd5e1;
+  color: var(--deck-text-soft);
 }
 .deck-body ul.plain li { margin-bottom: 0.4rem; }
-.deck-body ul.plain strong { color: #e2e8f0; }
+.deck-body ul.plain strong { color: var(--deck-text); }
 
 .deck-hero-img {
   width: 100%;
   border-radius: 12px;
-  border: 1px solid var(--line, rgba(212, 175, 55, 0.35));
+  border: 1px solid rgba(212, 175, 55, 0.35);
   margin: 0 0 1.35rem;
   display: block;
 }
@@ -177,20 +190,20 @@
   padding: 1rem 1.1rem;
   border-radius: 12px;
   border: 1px solid rgba(212, 175, 55, 0.35);
-  background: linear-gradient(145deg, rgba(26, 32, 44, 0.95), rgba(10, 14, 22, 0.98));
+  background: linear-gradient(145deg, rgba(26, 18, 12, 0.95), rgba(10, 8, 6, 0.98));
   text-decoration: none;
   color: inherit;
   transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
   min-height: 100%;
 }
 .deck-paper-card:hover {
-  border-color: var(--gold, #d4af37);
+  border-color: var(--deck-gold);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   color: inherit;
 }
 .deck-paper-card:focus-visible {
-  outline: 2px solid var(--foam, #5eead4);
+  outline: 2px solid var(--deck-gold);
   outline-offset: 3px;
 }
 .deck-paper-card__pill {
@@ -198,10 +211,10 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold, #d4af37);
+  color: var(--deck-gold);
 }
 .deck-paper-card__pill--featured {
-  color: #1a120c;
+  color: var(--deck-walnut);
   background: linear-gradient(90deg, #fbbf24, #f59e0b);
   padding: 0.15rem 0.45rem;
   border-radius: 3px;
@@ -209,12 +222,12 @@
 .deck-paper-card__title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-gold-hi);
   line-height: 1.25;
 }
 .deck-paper-card__sub {
   font-size: 0.86rem;
-  color: #cbd5e1;
+  color: var(--deck-text-soft);
   line-height: 1.45;
   flex: 1;
 }
@@ -223,10 +236,10 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--foam, #5eead4);
+  color: var(--deck-champagne);
   margin-top: 0.25rem;
 }
-.deck-paper-card:hover .deck-paper-card__cta { color: var(--gold-hi, #fef3c7); }
+.deck-paper-card:hover .deck-paper-card__cta { color: var(--deck-gold-hi); }
 
 .deck-btn-row {
   display: flex;
@@ -249,16 +262,16 @@
 }
 .deck-btn--gold {
   background: linear-gradient(180deg, #f0d4a0, #c9a227);
-  color: #1a120c;
+  color: var(--deck-walnut);
 }
-.deck-btn--gold:hover { filter: brightness(1.06); color: #1a120c; }
+.deck-btn--gold:hover { filter: brightness(1.06); color: var(--deck-walnut); }
 .deck-btn--ghost {
   border-color: rgba(212, 175, 55, 0.4);
-  color: var(--foam, #5eead4);
+  color: var(--deck-champagne);
 }
 .deck-btn--ghost:hover {
-  border-color: var(--gold, #d4af37);
-  color: var(--gold-hi, #fef3c7);
+  border-color: var(--deck-gold);
+  color: var(--deck-gold-hi);
 }
 
 .deck-two-card {
@@ -273,68 +286,99 @@
   padding: 0.9rem 1rem;
   border-radius: 10px;
   border: 1px solid rgba(212, 175, 55, 0.28);
-  background: rgba(15, 20, 28, 0.85);
+  background: rgba(20, 16, 12, 0.85);
 }
 /* Role primer — plain-speak “what this page is for” (new-user front door) */
 .deck-role-primer {
   margin: 0 0 1.35rem;
   padding: 1rem 1.1rem;
   border-radius: 12px;
-  border: 1px solid rgba(94, 234, 212, 0.45);
-  background: linear-gradient(145deg, rgba(12, 24, 28, 0.75), rgba(8, 12, 18, 0.92));
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: linear-gradient(145deg, rgba(26, 18, 12, 0.75), rgba(10, 8, 6, 0.92));
 }
 .deck-role-primer__label {
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--foam, #5eead4);
+  color: var(--deck-gold);
   margin: 0 0 0.4rem;
 }
 .deck-role-primer h2 {
   font-family: 'Bebas Neue', Impact, sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-gold-hi);
   margin: 0 0 0.45rem;
   letter-spacing: 0.02em;
   line-height: 1.1;
 }
 .deck-role-primer p {
   margin: 0;
-  color: #cbd5e1;
+  color: var(--deck-text-soft);
   font-size: 0.98rem;
   line-height: 1.55;
 }
 .deck-role-primer p + p { margin-top: 0.55rem; }
 .deck-role-primer a {
-  color: var(--foam, #5eead4);
+  color: var(--deck-link);
   font-weight: 600;
   text-decoration: none;
 }
 .deck-role-primer a:hover {
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-link-hover);
   text-decoration: underline;
 }
 .deck-role-primer ul {
   margin: 0.55rem 0 0;
   padding-left: 1.15rem;
-  color: #94a3b8;
+  color: var(--deck-muted);
   font-size: 0.92rem;
   line-height: 1.5;
 }
-.deck-role-primer ul strong { color: #e2e8f0; }
+.deck-role-primer ul strong { color: var(--deck-text); }
 
 .deck-mini-card strong {
   display: block;
-  color: var(--gold-hi, #fef3c7);
+  color: var(--deck-gold-hi);
   margin-bottom: 0.35rem;
   font-size: 0.95rem;
 }
 .deck-mini-card p {
   margin: 0;
   font-size: 0.86rem;
-  color: var(--muted, #94a3b8);
+  color: var(--deck-muted);
+}
+
+/* Pull quote — italic Cormorant, champagne, generous size */
+.deck-pull {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 3.2vw, 1.4rem);
+  line-height: 1.45;
+  color: var(--deck-champagne);
+  margin: 1.5rem 0 2rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid rgba(212,175,55,0.55);
+}
+
+/* Statement line — bold display text, breaks the scan rhythm */
+.deck-statement {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(1.45rem, 4.5vw, 2rem);
+  color: var(--deck-gold-hi);
+  letter-spacing: 0.03em;
+  line-height: 1.05;
+  margin: 2rem 0 0.65rem;
+}
+
+/* Inline highlight — champagne on walnut, tight pill */
+.deck-hi {
+  background: rgba(212,175,55,0.14);
+  color: var(--deck-gold-hi);
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+  font-weight: 700;
 }
 
 .deck-foot {
@@ -342,6 +386,6 @@
   padding-top: 1.25rem;
   border-top: 1px solid rgba(212, 175, 55, 0.22);
   font-size: 0.88rem;
-  color: var(--muted, #94a3b8);
+  color: var(--deck-muted);
 }
-.deck-foot a { font-weight: 600; color: var(--foam, #5eead4); }
+.deck-foot a { font-weight: 600; color: var(--deck-champagne); }

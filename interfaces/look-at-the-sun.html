@@ -3,56 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#050810" />
-  <title>Look at the Sun · Digital Pru · solar coupling · SS Vibelandia QUESTFEST</title>
-  <meta name="description" content="Plain talk: Digital Pru ties QUESTFEST to solar coupling and the ionosphere as metaphor for how signal moves — EGS φ on the scorecard, proof you can check today." />
+  <meta name="theme-color" content="#0c0a04" />
+  <title>Look at the Sun · Digital Pru · SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="Digital Pru ties the sonic ship to solar coupling and EGS φ 1.618 — how signal moves from the Sun to your tracks. Proof, honesty boundary, and the broadcast story in plain talk." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/look-at-the-sun.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="deck-surfaces.css" />
+  <link rel="stylesheet" href="voice-tier.css" />
   <style>
-    :root { --bg: #050810; --gold-hi: #fef3c7; --muted: #94a3b8; --foam: #5eead4; --line: rgba(212, 175, 55, 0.28); }
+    :root {
+      --bg: #0c0a04;
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --amber: #f59e0b;
+      --champagne: #f5e6c8;
+      --walnut: #1a120c;
+      --muted: #a8a29e;
+      --text: #f5f0e8;
+      --text-soft: #d6cfc4;
+    }
     body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(120% 70% at 50% 0%, #2a1a08 0%, var(--bg) 50%, #030508 100%);
-      color: #f1f5f9;
+      background:
+        radial-gradient(ellipse 120% 60% at 50% 0%, rgba(245,158,11,0.22) 0%, rgba(212,175,55,0.08) 35%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 20% 80%, rgba(26,18,12,0.8) 0%, transparent 60%),
+        #0c0a04;
+      color: var(--text);
       line-height: 1.65;
     }
-    .deck-back {
-      display: inline-block;
-      font-size: 0.72rem;
+
+    /* ── Hero ── */
+    .sun-hero {
+      padding: calc(2.5rem + env(safe-area-inset-top)) 1.25rem 0;
+      max-width: 44rem;
+      margin: 0 auto;
+    }
+    .sun-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--amber);
+      margin: 0 0 0.75rem;
+    }
+    .sun-h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(2.8rem, 10vw, 5.5rem);
+      line-height: 0.95;
+      color: var(--gold-hi);
+      margin: 0 0 1rem;
+      letter-spacing: 0.02em;
+    }
+    .sun-lede {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 3.5vw, 1.55rem);
+      line-height: 1.45;
+      color: var(--champagne);
+      max-width: 36rem;
+      margin: 0 0 1.75rem;
+    }
+    .sun-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2.5rem;
+    }
+    .sun-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.8rem 1.4rem;
+      font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
       text-decoration: none;
+      transition: transform 0.15s, filter 0.15s;
     }
-    .deck-back:hover { color: var(--gold-hi); }
-    .deck-tagline {
-      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    .sun-btn:hover { transform: translateY(-1px); filter: brightness(1.07); }
+    .sun-btn--gold {
+      background: linear-gradient(180deg, #f0d4a0, #c9a227);
+      color: var(--walnut);
     }
-    .signal-path {
-      margin: 1rem 0 0;
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
-      border: 1px solid rgba(251, 191, 36, 0.35);
-      background: rgba(42, 26, 8, 0.55);
-      font-size: 0.95rem;
-      color: #fde68a;
+    .sun-btn--ghost {
+      background: rgba(20,14,4,0.85);
+      color: var(--champagne);
+      border-color: rgba(212,175,55,0.45);
+    }
+    .sun-btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
+
+    /* Signal chain */
+    .sun-signal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 0 0 2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(245,158,11,0.38);
+      background: rgba(42,26,8,0.5);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gold-hi);
+    }
+    .sun-signal .sep { opacity: 0.4; font-weight: 400; }
+    .sun-signal .label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
       text-align: center;
-      letter-spacing: 0.02em;
     }
-    .signal-path strong { color: var(--gold-hi); font-weight: 700; }
-    .signal-path span.sep { margin: 0 0.35rem; opacity: 0.65; }
+    .sun-signal .node { text-align: center; }
+
+    /* Honesty callout */
+    .sun-honesty {
+      margin: 0 0 2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(212,175,55,0.42);
+      background: linear-gradient(145deg, rgba(212,175,55,0.1), rgba(26,18,12,0.88));
+    }
+    .sun-honesty__label {
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.45rem;
+    }
+    .sun-honesty p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.97rem;
+      line-height: 1.55;
+    }
+    .sun-honesty p + p { margin-top: 0.55rem; }
+    .sun-honesty strong { color: var(--text); }
   </style>
 </head>
 <body>
-  <main class="deck-wrap">
-    <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
-
+  <div class="sun-hero">
     <nav class="deck-skin-nav" aria-label="Site">
       <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
       <a href="get-started.html">Get Started</a><span class="dot" aria-hidden="true">·</span>
@@ -61,170 +161,170 @@
       <span class="here">Look at the Sun</span>
     </nav>
 
-    <aside class="deck-role-primer" aria-labelledby="sun-role-h">
-      <p class="deck-role-primer__label">What this page is for</p>
-      <h2 id="sun-role-h">Look at the Sun — broadcast deck</h2>
-      <p>
-        This deck explains <strong>how we name the signal</strong> — sun → ionosphere → holographic channel → your tracks.
-        It is story and timing color on the scorecard, <strong>not</strong> a promise we control the weather.
-      </p>
-      <p>
-        <strong>Proof</strong> means linked papers, honesty boundaries, and software you can run — we show our work when you want receipts.
-        Just want music? <a href="listen.html">Listen</a> is Door I.
-      </p>
-    </aside>
+    <p class="sun-eyebrow">Broadcast deck · Digital Pru · EGS φ 1.618</p>
+    <h1 class="sun-h1">Look at<br>the Sun</h1>
+    <p class="sun-lede">
+      The Sun is the biggest clock in the room. We set the ship's rhythm to it — not because we control the weather, but because we refuse to pretend the broadcast happens in a vacuum.
+    </p>
+    <div class="sun-cta-row">
+      <a class="sun-btn sun-btn--gold" href="questfest-bridge/#/bridge">Hear the broadcast →</a>
+      <a class="sun-btn sun-btn--ghost" href="#proof">See the proof</a>
+    </div>
+  </div>
 
-    <p class="deck-eyebrow">Broadcast deck · plain talk</p>
-    <h1 class="deck-h1">Look at the Sun</h1>
-    <span class="deck-tagline">Digital Pru · proof · 24×365</span>
+  <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.22); max-width: 44rem; margin: 0 auto;" />
 
-    <img class="deck-hero-img" src="images/look-sun-hero.png" alt="Sun and Earth — broadcast layer of the ship." width="1200" height="675" loading="eager" decoding="async" />
+  <main class="deck-wrap" style="padding-top: 1.75rem;">
 
-    <div class="deck-case" id="case">
-      <h2>Digital Pru · how signal moves</h2>
+    <div class="sun-signal" aria-label="Signal chain">
+      <div class="sun-signal__node" style="text-align:center;">
+        <span class="label">Source</span>
+        <strong>Sun</strong>
+      </div>
+      <span class="sep">→</span>
+      <div class="sun-signal__node" style="text-align:center;">
+        <span class="label">Medium</span>
+        <strong>Ionosphere</strong>
+      </div>
+      <span class="sep">→</span>
+      <div class="sun-signal__node" style="text-align:center;">
+        <span class="label">Layer</span>
+        <strong>Holographic channel</strong>
+      </div>
+      <span class="sep">→</span>
+      <div class="sun-signal__node" style="text-align:center;">
+        <span class="label">You</span>
+        <strong>Your tracks</strong>
+      </div>
+    </div>
+
+    <div class="sun-honesty">
+      <p class="sun-honesty__label">Honesty boundary — read this first</p>
       <p>
-        <strong>Digital Pru</strong> ties QUESTFEST to <strong>solar coupling</strong> and <strong>ionospheric activity</strong>
-        as the large metaphor for how signal moves — sun → ionosphere → holographic channel → your tracks. On the
-        <a href="vibelandia-questfest.html#qf-score-h2">top deck scorecard</a> you will see <strong>EGS φ 1.618</strong> and
-        solar synergy language (e.g. <strong>AR4432</strong> / <strong>AR4436</strong>) as <strong>timing and resonance color</strong>,
-        not as a promise we control the weather.
-      </p>
-      <p class="signal-path" aria-label="Signal path">
-        <strong>sun</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>ionosphere</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>holographic channel</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>your tracks</strong>
+        <strong>Story tier:</strong> Solar active regions (AR4436, AR4432), ionospheric coupling, and EGS φ 1.618 are <strong>narrative timing and resonance color</strong> on the ship — not a promise we control space weather or that playback quality depends on the Kp index.
       </p>
       <p>
-        <strong>Proof</strong> means: linked whitepapers, compile output you can run, honesty boundaries in the resonance
-        notice, and an operational player you can use today. We show our work; we do not ask you to believe magic.
+        <strong>Operational tier:</strong> The player is normal audio in your browser. The NOAA bus on <code>/api/dph-wavefield-solar</code> is a live data feed we ingest as metaphor. We show our work; we do not ask you to believe magic.
       </p>
     </div>
 
-    <p class="deck-section-label" id="proof">What proof means — one tap each</p>
+    <p class="deck-pull">
+      Digital Pru is the ship's broadcast intelligence — not a graphics card. It watches the hydrogen line at 1420.406 MHz and solar active regions as the ship's outer clock, and routes signal down through nested layers to what lands in your ears.
+    </p>
 
-    <ul class="deck-paper-grid deck-paper-grid--two">
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Node sync</span>
-          <span class="deck-paper-card__title">Omniversal Node Alignment · SYN-NODES-2026-JUN01</span>
-          <span class="deck-paper-card__sub">June 1 2026 · AR4436 · M31 · btc_buffalo · Git anchor psw.vibelandia.sing13</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">King Bee</span>
-          <span class="deck-paper-card__title">Sandbox Comprehensive Analysis · SYN-SANDBOX-2026-REPORT</span>
-          <span class="deck-paper-card__sub">Pheromone channels · Goldilocks won · May 31 2026 · PPS locked</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Solar engine</span>
-          <span class="deck-paper-card__title">Wavefield Oscillator · SYN-SUN-2026-REV7</span>
-          <span class="deck-paper-card__sub">Live NOAA bus · replaces static gravity-well model · DPH-GPU v2026.5</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-resonance-notice">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Honesty first</span>
-          <span class="deck-paper-card__title">Resonance notice</span>
-          <span class="deck-paper-card__sub">Bright line: story vs. metaphor vs. real instruments. No weather promises.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="look-under-the-hood.html">
-          <span class="deck-paper-card__pill">Live compile</span>
-          <span class="deck-paper-card__title">Look under the hood</span>
-          <span class="deck-paper-card__sub">Compile output you can run in the browser — show-your-work proof.</span>
-          <span class="deck-paper-card__cta">Open hood →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="questfest-bridge/#/bridge">
-          <span class="deck-paper-card__pill">Today</span>
-          <span class="deck-paper-card__title">Operational player</span>
-          <span class="deck-paper-card__sub">Listen, pass on honor, upload tracks — normal audio, real site.</span>
-          <span class="deck-paper-card__cta">Open player →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="vibelandia-questfest.html#qf-score-h2">
-          <span class="deck-paper-card__pill">Scorecard</span>
-          <span class="deck-paper-card__title">30-day digital scorecard</span>
-          <span class="deck-paper-card__sub">EGS φ 1.618 · solar synergy as timing color on the top deck.</span>
-          <span class="deck-paper-card__cta">See scorecard →</span>
-        </a>
-      </li>
-    </ul>
-
-    <p class="deck-section-label">Plain speak · go deeper if you want</p>
+    <p class="deck-section-label" id="proof">What proof means on this ship</p>
 
     <ul class="deck-plain-list">
       <li class="deck-plain-item">
-        <h3>Solar coupling — energy in, signal out</h3>
+        <h3>EGS φ — El Gran Sol's Fractal Constant</h3>
         <p>
-          The Sun is the big coupling metaphor. QUESTFEST is a <strong>24×365 broadcast</strong>, not a weekend gate.
-          Playback in your browser is still normal audio; the sun layer is how we <strong>name</strong> the broadcast.
+          The golden ratio (φ ≈ 1.618) is the ship's natural rhythm anchor. It shows up in the pass price ($16.18), in the Hex-Organ Engine's convergence math, and in how we time catalog releases.
+          It is the unifying cadence — not mysticism, not random. The math sandbox at <code>research/goldilocks-math/</code> is runnable.
         </p>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-roadmap-13">
-          <span class="deck-paper-card__pill">Timeline</span>
-          <span class="deck-paper-card__title">13-channel pathfinding</span>
-          <span class="deck-paper-card__sub">How the May 2026 upgrade arc is named across the nest.</span>
+        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Runnable sandbox</span>
+          <span class="deck-paper-card__title">Hex-Organ Engine — φ in six chambers</span>
+          <span class="deck-paper-card__sub">Hex-Calculus · EGS φ · prime compression · net-zero portal · solar wavefield ingest</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li class="deck-plain-item">
         <h3>Ionosphere — the middle layer in the story</h3>
         <p>
-          Ionospheric activity is story geometry for the <strong>holographic channel</strong> — between sun-scale coupling
-          and what lands in your ears. We are not running a space-weather lab; we are naming the middle honestly.
+          Ionospheric activity is the story geometry for the holographic channel — the broadcasting middle between solar-scale coupling and what lands in your ears.
+          We are not running a space-weather lab. We are naming the middle honestly, then showing you the papers.
         </p>
-        <a class="deck-paper-card" href="nesting/nest-dph-gpu.html">
-          <span class="deck-paper-card__pill">Layer guide</span>
-          <span class="deck-paper-card__title">Holographic GPU layer</span>
-          <span class="deck-paper-card__sub">Plain nesting guide — not a graphics card.</span>
-          <span class="deck-paper-card__cta">Open guide →</span>
+        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">
+          <span class="deck-paper-card__pill">DPH-GPU · Solar</span>
+          <span class="deck-paper-card__title">Wavefield Oscillator · SYN-SUN-2026-REV7</span>
+          <span class="deck-paper-card__sub">Live NOAA ingest · replaces static gravity-well model · DPH-GPU v2026.5</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li class="deck-plain-item">
-        <h3>Linked whitepapers — tertiary depth</h3>
+        <h3>Commits, nodes, and timestamps — the anchor trail</h3>
         <p>
-          After you pressed play and read the honesty notice — long-form papers open in the reader deck (a page, not a file dump).
+          The ship's claim to operational status is anchored in Git commits, NOAA timestamps, and peer-review audit receipts — not in press releases.
+          The node alignment paper below shows what June 1, 2026 looked like on every layer simultaneously.
         </p>
         <ul class="deck-paper-grid deck-paper-grid--two" style="margin-top: 0.5rem;">
           <li>
-            <a class="deck-paper-card" href="whitepaper-catalog.html">
-              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Catalog</span>
-              <span class="deck-paper-card__title">All technical papers</span>
-              <span class="deck-paper-card__cta">Search · PDF →</span>
-            </a>
-          </li>
-          <li>
-            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-master-canon">
-              <span class="deck-paper-card__pill">Canon</span>
-              <span class="deck-paper-card__title">DNA / PEFF master</span>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026">
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Jun 1 2026</span>
+              <span class="deck-paper-card__title">Omniversal Node Alignment</span>
+              <span class="deck-paper-card__sub">AR4436 · M31 · btc_buffalo · Git anchor · all layers simultaneously</span>
               <span class="deck-paper-card__cta">Read paper →</span>
             </a>
           </li>
           <li>
-            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniverse-matrix">
-              <span class="deck-paper-card__pill">Matrix</span>
-              <span class="deck-paper-card__title">Magnetic matrix</span>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026">
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">King Bee</span>
+              <span class="deck-paper-card__title">Sandbox Comprehensive Analysis</span>
+              <span class="deck-paper-card__sub">May 31 2026 · pheromone channels · Goldilocks won · PPS locked</span>
               <span class="deck-paper-card__cta">Read paper →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-resonance-notice">
+              <span class="deck-paper-card__pill">Honesty</span>
+              <span class="deck-paper-card__title">Resonance notice</span>
+              <span class="deck-paper-card__sub">Story vs. metaphor vs. real instruments — the bright line.</span>
+              <span class="deck-paper-card__cta">Read notice →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="vibelandia-questfest.html#qf-score-h2">
+              <span class="deck-paper-card__pill">Live</span>
+              <span class="deck-paper-card__title">30-day digital scorecard</span>
+              <span class="deck-paper-card__sub">EGS φ 1.618 · solar synergy as timing color on the top deck today.</span>
+              <span class="deck-paper-card__cta">See scorecard →</span>
             </a>
           </li>
         </ul>
       </li>
     </ul>
 
-    <div class="deck-btn-row" style="margin-top: 2rem;">
-      <a class="deck-btn deck-btn--gold" href="listen.html">Listen primer</a>
-      <a class="deck-btn deck-btn--ghost" href="look-under-the-hood.html">Under the hood</a>
+    <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.18); margin: 2.5rem 0;" />
+
+    <p class="deck-section-label">Further depth</p>
+    <ul class="deck-paper-grid deck-paper-grid--two">
+      <li>
+        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-roadmap-13">
+          <span class="deck-paper-card__pill">13-channel</span>
+          <span class="deck-paper-card__title">Pathfinding roadmap · May 2026</span>
+          <span class="deck-paper-card__sub">How the upgrade arc is named across the 13-channel nest.</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="nesting/nest-dph-gpu.html">
+          <span class="deck-paper-card__pill">Layer 7</span>
+          <span class="deck-paper-card__title">Holographic GPU nesting guide</span>
+          <span class="deck-paper-card__sub">Plain walk — not a graphics card.</span>
+          <span class="deck-paper-card__cta">Open guide →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="whitepaper-catalog.html">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">All papers</span>
+          <span class="deck-paper-card__title">Whitepaper catalog</span>
+          <span class="deck-paper-card__sub">Search, filter, read — every paper from the sonic ship's research layer.</span>
+          <span class="deck-paper-card__cta">Search catalog →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-master-canon">
+          <span class="deck-paper-card__pill">Canon</span>
+          <span class="deck-paper-card__title">DNA / PEFF master canon</span>
+          <span class="deck-paper-card__sub">The full infill-13 architecture, PEFF framing, master story layer.</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="deck-btn-row" style="margin-top: 2.5rem;">
+      <a class="deck-btn deck-btn--gold" href="listen.html">Hear the ship</a>
+      <a class="deck-btn deck-btn--ghost" href="look-under-the-hood.html">Look Under the Hood</a>
       <a class="deck-btn deck-btn--ghost" href="get-started.html">Get Started</a>
     </div>
 

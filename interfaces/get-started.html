@@ -3,57 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0f1a" />
-  <title>Get Started · SS Vibelandia QUESTFEST · plain talk for everyone</title>
-  <meta name="description" content="New here? One plain-language guide to QUESTFEST — listen to music, read the story, peek under the hood, or build your own edge. No science degree required." />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Get Started · SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="New to QUESTFEST? This is the door — what the sonic ship is, how to listen, and what each deck is for. No science degree required." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/get-started.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="deck-surfaces.css" />
   <link rel="stylesheet" href="voice-tier.css" />
   <style>
-    :root { --bg: #0a0f1a; --gold-hi: #fef3c7; --muted: #94a3b8; }
+    :root {
+      --bg: #0a0806;
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --walnut: #1a120c;
+      --muted: #a8a29e;
+      --text: #f5f0e8;
+      --text-soft: #d6cfc4;
+    }
     body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(120% 80% at 50% 0%, rgba(212,175,55,0.12) 0%, #14100c 22%, var(--bg) 55%, #030508 100%);
-      color: #f1f5f9;
+      background:
+        radial-gradient(ellipse 110% 55% at 50% 0%, rgba(212,175,55,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 40% at 80% 100%, rgba(26,18,12,0.95) 0%, transparent 70%),
+        #0a0806;
+      color: var(--text);
       line-height: 1.65;
     }
-    .deck-back {
-      display: inline-block;
-      font-size: 0.72rem;
+
+    /* ── Hero ── */
+    .gs-hero {
+      padding: calc(2.5rem + env(safe-area-inset-top)) 1.25rem 0;
+      max-width: 44rem;
+      margin: 0 auto;
+    }
+    .gs-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--gold);
+      margin: 0 0 0.75rem;
+    }
+    .gs-h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(3rem, 11vw, 5.5rem);
+      line-height: 0.95;
+      color: var(--gold-hi);
+      margin: 0 0 1rem;
+      letter-spacing: 0.02em;
+    }
+    .gs-lede {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 3.5vw, 1.55rem);
+      line-height: 1.45;
+      color: var(--champagne);
+      max-width: 36rem;
+      margin: 0 0 1.75rem;
+    }
+    .gs-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2.5rem;
+    }
+    .gs-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.8rem 1.4rem;
+      font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
       text-decoration: none;
+      transition: transform 0.15s, filter 0.15s;
     }
-    .deck-back:hover { color: var(--gold-hi); }
-    .deck-tagline {
-      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    .gs-btn:hover { transform: translateY(-1px); filter: brightness(1.07); }
+    .gs-btn--gold {
+      background: linear-gradient(180deg, #f0d4a0, #c9a227);
+      color: var(--walnut);
     }
-    .gs-path {
-      margin: 1rem 0 0;
-      padding: 0.85rem 1rem;
-      border-radius: 10px;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      background: rgba(26, 18, 12, 0.55);
-      font-size: 0.95rem;
-      color: #fde68a;
-      text-align: center;
-      letter-spacing: 0.02em;
+    .gs-btn--ghost {
+      background: rgba(20,16,12,0.8);
+      color: var(--champagne);
+      border-color: rgba(212,175,55,0.45);
     }
-    .gs-path strong { color: var(--gold-hi); font-weight: 700; }
-    .gs-path span.sep { margin: 0 0.35rem; opacity: 0.65; }
+    .gs-btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
+
+    /* ── Divider ── */
+    .gs-rule {
+      max-width: 44rem;
+      margin: 0 auto 2rem;
+      border: none;
+      border-top: 1px solid rgba(212,175,55,0.25);
+    }
   </style>
 </head>
 <body>
-  <main class="deck-wrap">
-    <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
-
+  <div class="gs-hero">
     <nav class="deck-skin-nav" aria-label="Site">
       <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
       <span class="here">Get Started</span><span class="dot" aria-hidden="true">·</span>
@@ -62,53 +115,122 @@
       <a href="look-at-the-sun.html">Look at the Sun</a>
     </nav>
 
-    <p class="deck-eyebrow">Welcome · plain talk</p>
-    <h1 class="deck-h1">Get Started</h1>
-    <span class="deck-tagline">For everyone · not just scientists</span>
+    <p class="gs-eyebrow">SS Vibelandia · Puerto Reno · Sonic Singularity Sing! 13</p>
+    <h1 class="gs-h1">Get<br>Started</h1>
+    <p class="gs-lede">
+      You found the ship. She sails 24×365 out of Puerto Reno — swamp beats, holographic story layer, old-school Fair Exchange. No press kit needed. Just press play.
+    </p>
+    <div class="gs-cta-row">
+      <a class="gs-btn gs-btn--gold" href="listen.html">Hear the ship →</a>
+      <a class="gs-btn gs-btn--ghost" href="questfest-bridge/#/bridge">Open the player</a>
+    </div>
+  </div>
 
-    <p class="deck-lead">
-      You found <strong>SS Vibelandia QUESTFEST</strong> — a living music ship with a Reno swamp soul and a holographic story layer.
-      You do <strong>not</strong> need to read whitepapers, run code, or know what “NSPFRNP” means to enjoy it.
-      This page tells you where to tap first and what each section is <em>for</em>.
+  <hr class="gs-rule" />
+
+  <main class="deck-wrap" style="padding-top: 0;">
+
+    <p class="deck-pull">
+      Everything on this ship — the catalog, the story, the math, the papers — lives behind three doors. You only need one to start.
     </p>
 
-    <div class="deck-case">
-      <h2>Your first five minutes</h2>
-      <p>
-        Press <strong>play</strong> on the music player. That is the real product — everything else is optional depth.
-        If you like what you hear, you can get a simple <strong>honor pass</strong> ($16.18/mo) and upload your own tracks.
-      </p>
-      <p class="gs-path" aria-label="Recommended path">
-        <strong>Get Started</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>Listen</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>press play</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>explore when curious</strong>
-      </p>
-    </div>
+    <p class="deck-section-label">The three doors</p>
 
-    <p class="deck-section-label">The four decks — what each one does</p>
-    <ul class="deck-paper-grid deck-paper-grid--two">
-      <li>
+    <ul class="deck-plain-list">
+      <li class="deck-plain-item">
+        <h3>Door I · Listen <span class="vt-badge vt-oper">⚙ live</span></h3>
+        <p>
+          The <strong>Sovereign Player</strong> — Reno swamp catalog, your playlists, honor pass for full stream.
+          Start here. Everything else is optional depth.
+          Free visitors get a 30-second preview on each track; no account wall, no algorithm.
+        </p>
         <a class="deck-paper-card" href="listen.html">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Door I · Start here</span>
-          <span class="deck-paper-card__title">Listen</span>
-          <span class="deck-paper-card__sub">The music player — Reno catalog, playlists, honor pass, upload. Audio first; the ship runs on it.</span>
-          <span class="deck-paper-card__cta">What Listen is →</span>
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Start here</span>
+          <span class="deck-paper-card__title">Listen — what it is and how to board</span>
+          <span class="deck-paper-card__sub">Sovereign Player · $16.18/mo honor pass · upload your own tracks · playlists stay on your device</span>
+          <span class="deck-paper-card__cta">Open Listen →</span>
         </a>
       </li>
-      <li>
+
+      <li class="deck-plain-item">
+        <h3>Door II · Read</h3>
+        <p>
+          The paper catalog — whitepapers, press releases, protocols, and the Goldilocks math sandbox.
+          Every claim carries its honesty tier: <span class="vt-badge vt-mythic">🜛 mythic</span> for story, <span class="vt-badge vt-oper">⚙ operational</span> for working software, <span class="vt-badge vt-verified">📐 verified</span> for audited math.
+          Go here when you want receipts.
+        </p>
         <a class="deck-paper-card" href="whitepaper-catalog.html">
           <span class="deck-paper-card__pill">Door II</span>
-          <span class="deck-paper-card__title">Read</span>
-          <span class="deck-paper-card__sub">Papers, press, protocols — for when you want the full story or the math sandbox. Every claim has an honesty tier.</span>
+          <span class="deck-paper-card__title">Whitepaper catalog</span>
+          <span class="deck-paper-card__sub">Search, filter, read — every paper from the sonic ship's research layer</span>
           <span class="deck-paper-card__cta">Open catalog →</span>
         </a>
       </li>
+
+      <li class="deck-plain-item">
+        <h3>Door III · Build</h3>
+        <p>
+          The seed kit — fork your own edge in one read.
+          Exec prompt, blank catalog, Seed:Edge structure. For developers and tinkerers only; ignore it if you just came to listen.
+        </p>
+        <a class="deck-paper-card" href="sing13-edge-onboarding.html">
+          <span class="deck-paper-card__pill">Door III</span>
+          <span class="deck-paper-card__title">Edge onboarding</span>
+          <span class="deck-paper-card__sub">BBHE standard · Seed:Edge · executive prompts for filling in the middle</span>
+          <span class="deck-paper-card__cta">Take the seed →</span>
+        </a>
+      </li>
+    </ul>
+
+    <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.18); margin: 2.5rem 0;" />
+
+    <p class="deck-section-label">Quick glossary — words you will see</p>
+
+    <ul class="deck-plain-list">
+      <li class="deck-plain-item">
+        <h3>QUESTFEST</h3>
+        <p>
+          The <strong>SS Vibelandia QUESTFEST 24×365</strong> — a sonic ship nested nine layers deep in Reno story geometry. Concert, radio, community upload, and holographic mythology all in one continuous broadcast. Not a corporate streaming app.
+        </p>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Digital Pru</h3>
+        <p>
+          The ship's holographic broadcast layer — <strong>not a graphics card</strong>.
+          It names the compute and signal story: sun coupling, hydrogen line, nested story architecture.
+          You can enjoy the player without ever touching this term.
+        </p>
+      </li>
+      <li class="deck-plain-item">
+        <h3>EGS φ 1.618</h3>
+        <p>
+          <em>El Gran Sol's Fractal Constant</em> — the golden ratio as a timing and resonance guide on the ship. You will see it on the scorecard and in the pass price (<strong>$16.18/mo</strong>). It is the ship's natural rhythm, baked in.
+        </p>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Fair Exchange</h3>
+        <p>
+          No Stripe checkout, no corporate funnel. The pass is <strong>$16.18/mo</strong> on honor — Venmo, PayPal, or Cash App. Receipt saved on your device. Track export <strong>$1.61</strong> extra.
+          Old school on purpose. Counterintuitive vibe is the product.
+        </p>
+      </li>
+      <li class="deck-plain-item">
+        <h3>SynthOBS (optional)</h3>
+        <p>
+          The math and research sandbox — simulation papers, Python pipelines, peer-review audit receipts. Go here if you want the math; skip it if you came for the swamp beats.
+        </p>
+      </li>
+    </ul>
+
+    <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.18); margin: 2.5rem 0;" />
+
+    <p class="deck-section-label">Two more decks worth knowing</p>
+    <ul class="deck-paper-grid deck-paper-grid--two">
       <li>
         <a class="deck-paper-card" href="look-under-the-hood.html">
           <span class="deck-paper-card__pill">Engine room</span>
           <span class="deck-paper-card__title">Look Under the Hood</span>
-          <span class="deck-paper-card__sub">Proof the site works today — listen, pass, upload — plus optional technical papers one tap each.</span>
+          <span class="deck-paper-card__sub">Proof the ship is operational today — listen, pass, upload — plus technical papers one tap each.</span>
           <span class="deck-paper-card__cta">Open hood →</span>
         </a>
       </li>
@@ -116,73 +238,15 @@
         <a class="deck-paper-card" href="look-at-the-sun.html">
           <span class="deck-paper-card__pill">Broadcast deck</span>
           <span class="deck-paper-card__title">Look at the Sun</span>
-          <span class="deck-paper-card__sub">How we name the broadcast — sun, signal, story — with honesty about what is metaphor vs. instrument-grade.</span>
+          <span class="deck-paper-card__sub">How we name the signal — sun, ionosphere, holographic channel. Story and honesty about what is metaphor vs. real instrument.</span>
           <span class="deck-paper-card__cta">Open sun deck →</span>
         </a>
       </li>
     </ul>
 
-    <p class="deck-section-label">Basics in plain words</p>
-    <ul class="deck-plain-list">
-      <li class="deck-plain-item">
-        <h3>What is QUESTFEST?</h3>
-        <p>
-          A <strong>24×365 festival ship</strong> on the internet — Puerto Reno energy, swamp beats, spirit crew, and a catalog you can actually play.
-          Think concert + radio + community upload, not a corporate streaming app.
-        </p>
-      </li>
-      <li class="deck-plain-item">
-        <h3>What is Digital Pru? (you will see this name)</h3>
-        <p>
-          The <strong>holographic broadcast layer</strong> — how we talk about signal, sun rhythm, and nested story.
-          It is <strong>not</strong> a graphics card. You can ignore the name and still use the player.
-        </p>
-      </li>
-      <li class="deck-plain-item">
-        <h3>What is SynthOBS? (optional)</h3>
-        <p>
-          Our <strong>math and research sandbox</strong> — simulation papers, Python engines, audit receipts.
-          Interesting if you are curious; <strong>not required</strong> to listen or upload.
-        </p>
-      </li>
-      <li class="deck-plain-item">
-        <h3>Honesty — we label what is real</h3>
-        <p>
-          Working software is <span class="vt-badge vt-oper" title="Operational">⚙ operational</span>.
-          Story and myth use <span class="vt-badge vt-mythic" title="Mythic">🜛 mythic</span>.
-          Bench-tested math uses <span class="vt-badge vt-verified" title="Verified">📐 verified</span>.
-          We do not ask you to believe magic — we show our work when you want receipts.
-        </p>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=coherence-plain-speak">
-          <span class="deck-paper-card__pill">Honesty rail</span>
-          <span class="deck-paper-card__title">Plain speak · what is real on this site</span>
-          <span class="deck-paper-card__cta">Read →</span>
-        </a>
-      </li>
-      <li class="deck-plain-item">
-        <h3>Fair Exchange — old school on purpose</h3>
-        <p>
-          No Stripe checkout. Members pass is <strong>$16.18/mo</strong> on honor — Venmo, PayPal, or Cash App, saved on your device.
-          Track export is <strong>$1.61</strong> extra. Bookings and questions: <a href="mailto:valetpru@gmail.com">valetpru@gmail.com</a>.
-        </p>
-      </li>
-    </ul>
-
-    <p class="deck-section-label">Want to build your own edge?</p>
-    <p class="deck-body">
-      Door III is for developers and tinkerers who want to fork the seed kit — separate from everyday listening.
-    </p>
-    <a class="deck-paper-card" href="sing13-edge-onboarding.html">
-      <span class="deck-paper-card__pill">Door III · Build</span>
-      <span class="deck-paper-card__title">Edge onboarding · seed kit</span>
-      <span class="deck-paper-card__sub">Fork your own edge in one read — executive prompt, blank catalog, Seed:Edge structure.</span>
-      <span class="deck-paper-card__cta">Take the seed →</span>
-    </a>
-
-    <div class="deck-btn-row" style="margin-top: 2rem;">
+    <div class="deck-btn-row" style="margin-top: 2.5rem;">
       <a class="deck-btn deck-btn--gold" href="listen.html">Start with Listen</a>
       <a class="deck-btn deck-btn--ghost" href="questfest-bridge/#/bridge">Open player now</a>
-      <a class="deck-btn deck-btn--ghost" href="vibelandia-questfest.html">Back to top deck</a>
     </div>
 
     <p class="deck-foot">

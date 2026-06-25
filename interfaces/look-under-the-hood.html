@@ -3,56 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#06080d" />
-  <title>Look Under the Hood · This is operational · SS Vibelandia QUESTFEST</title>
-  <meta name="description" content="Plain proof that QUESTFEST is operational today — listen, pass, upload, holographic GPU layer. Simple explanations and one-click deep reads." />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Look Under the Hood · Engine Room · SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="The ship is operational today — listen, pass, upload. Look under the hood for the technical proof layer: DPH-GPU, Synthobs math, Hex-Organ engine." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/look-under-the-hood.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="deck-surfaces.css" />
+  <link rel="stylesheet" href="voice-tier.css" />
   <style>
-    :root { --bg: #06080d; --gold-hi: #fef3c7; --muted: #94a3b8; --foam: #5eead4; --line: rgba(212, 175, 55, 0.28); }
+    :root {
+      --bg: #0a0806;
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --walnut: #1a120c;
+      --muted: #a8a29e;
+      --text: #f5f0e8;
+      --text-soft: #d6cfc4;
+    }
     body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
-      background: radial-gradient(120% 80% at 50% 0%, rgba(212,175,55,0.08) 0%, #0c181c 22%, var(--bg) 48%, #030508 100%);
-      color: #f1f5f9;
+      background:
+        radial-gradient(ellipse 110% 45% at 50% 0%, rgba(212,175,55,0.14) 0%, transparent 55%),
+        #0a0806;
+      color: var(--text);
       line-height: 1.65;
     }
-    .deck-back {
-      display: inline-block;
-      font-size: 0.72rem;
+    .hood-hero {
+      padding: calc(2.5rem + env(safe-area-inset-top)) 1.25rem 0;
+      max-width: 44rem;
+      margin: 0 auto;
+    }
+    .hood-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--gold);
+      margin: 0 0 0.75rem;
+    }
+    .hood-h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(2.6rem, 9vw, 4.5rem);
+      line-height: 0.95;
+      color: var(--gold-hi);
+      margin: 0 0 1rem;
+      letter-spacing: 0.02em;
+    }
+    .hood-lede {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 3.2vw, 1.45rem);
+      line-height: 1.45;
+      color: var(--champagne);
+      max-width: 36rem;
+      margin: 0 0 1.75rem;
+    }
+    .hood-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2.5rem;
+    }
+    .hood-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.8rem 1.4rem;
+      font-size: 0.7rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
       text-decoration: none;
+      transition: transform 0.15s, filter 0.15s;
     }
-    .deck-back:hover { color: var(--gold-hi); }
-    .deck-tagline {
-      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    .hood-btn:hover { transform: translateY(-1px); filter: brightness(1.07); }
+    .hood-btn--gold {
+      background: linear-gradient(180deg, #f0d4a0, #c9a227);
+      color: var(--walnut);
     }
-    .ops-path {
-      margin: 1rem 0 0;
-      padding: 0.85rem 1rem;
+    .hood-btn--ghost {
+      background: rgba(20,16,12,0.8);
+      color: var(--champagne);
+      border-color: rgba(212,175,55,0.45);
+    }
+    .hood-btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
+
+    /* Ops bar */
+    .hood-ops {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 0 0 1.5rem;
+      padding: 0.9rem 1rem;
       border-radius: 10px;
-      border: 1px solid rgba(94, 234, 212, 0.35);
-      background: rgba(12, 24, 28, 0.55);
-      font-size: 0.95rem;
-      color: #a7f3d0;
-      text-align: center;
-      letter-spacing: 0.02em;
+      border: 1px solid rgba(212,175,55,0.4);
+      background: rgba(26,18,12,0.6);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gold-hi);
+      flex-wrap: wrap;
     }
-    .ops-path strong { color: var(--gold-hi); font-weight: 700; }
-    .ops-path span.sep { margin: 0 0.35rem; opacity: 0.65; }
+    .hood-ops .sep { opacity: 0.45; font-weight: 400; }
   </style>
 </head>
 <body>
-  <main class="deck-wrap">
-    <a class="deck-back" href="vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
-
+  <div class="hood-hero">
     <nav class="deck-skin-nav" aria-label="Site">
       <a href="vibelandia-questfest.html">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
       <a href="get-started.html">Get Started</a><span class="dot" aria-hidden="true">·</span>
@@ -61,153 +122,136 @@
       <a href="look-at-the-sun.html">Look at the Sun</a>
     </nav>
 
-    <aside class="deck-role-primer" aria-labelledby="hood-role-h">
-      <p class="deck-role-primer__label">What this page is for</p>
-      <h2 id="hood-role-h">Look Under the Hood — engine room</h2>
-      <p>
-        This deck answers: <strong>“Does it actually work?”</strong> Yes — you can listen, get a pass, and upload today.
-        The papers below are <strong>optional depth</strong> for curious minds; you do not need them to use the player.
-      </p>
-      <p>
-        <strong>Digital Pru / DPH-GPU</strong> here means the ship’s broadcast machinery in story language — not a graphics card.
-        New here? Start at <a href="get-started.html">Get Started</a> or <a href="listen.html">Listen</a>.
-      </p>
-    </aside>
+    <p class="hood-eyebrow">Engine room · DPH-GPU · Synthobs</p>
+    <h1 class="hood-h1">Look Under<br>the Hood</h1>
+    <p class="hood-lede">
+      The ship is not a slide deck. It is live — player, pass, upload, catalog. Proof below for those who want to look.
+    </p>
+    <div class="hood-cta-row">
+      <a class="hood-btn hood-btn--gold" href="questfest-bridge/#/bridge">Press play now</a>
+      <a class="hood-btn hood-btn--ghost" href="#papers">See the papers</a>
+    </div>
+  </div>
 
-    <p class="deck-eyebrow">Engine room · plain talk</p>
-    <h1 class="deck-h1">Look Under the Hood</h1>
-    <span class="deck-tagline">DPH-GPU · operational · 24×365</span>
+  <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.22); max-width: 44rem; margin: 0 auto;" />
 
-    <img class="deck-hero-img" src="images/look-hood-engine.png" alt="Engine room of the Sonic Ship." width="1200" height="675" loading="eager" decoding="async" />
+  <main class="deck-wrap" style="padding-top: 1.75rem;">
 
-    <div class="deck-case" id="case">
-      <h2>This is operational — today</h2>
-      <p>
-        You can <strong>listen</strong> on <strong>Capitan's Bridge</strong>, get a <strong>members pass</strong> on honor ($16.18/mo),
-        <strong>upload</strong> tracks, and use the catalog without reading a single paper. The ship is live on this website —
-        not a slide deck, not a promise for later.
-      </p>
-      <p class="ops-path" aria-label="Operational path">
-        <strong>listen</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>pass</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>upload</strong><span class="sep" aria-hidden="true">→</span>
-        <strong>your library</strong>
-      </p>
-      <p>
-        The center stays thin: small pipes that verify and route. Your pass, playlists, and taste stay on <strong>your device</strong>.
-        That is the operational contract. Technical papers below are optional depth — one tap each.
-      </p>
+    <div class="hood-ops" aria-label="Operational path">
+      <strong>listen</strong>
+      <span class="sep">→</span>
+      <strong>pass</strong>
+      <span class="sep">→</span>
+      <strong>upload</strong>
+      <span class="sep">→</span>
+      <strong>your library</strong>
+      <span class="sep">·</span>
+      <span class="vt-badge vt-oper">⚙ operational today</span>
     </div>
 
-    <p class="deck-section-label" id="papers">Featured papers · one tap each</p>
+    <p class="deck-pull">
+      The center stays thin — small pipes that verify and route. Your pass, playlists, and taste stay on your device. That is the operating contract.
+    </p>
+
+    <p style="color: var(--text-soft); font-size: 0.98rem; line-height: 1.6; margin: 0 0 2rem;">
+      <strong style="color: var(--gold-hi);">Digital Pru / DPH-GPU</strong> is not a graphics card. It names the ship's holographic compute and broadcast story — nested architecture, solar coupling metaphor, Synthobs math engine. The papers below are depth for curious minds; you do not need them to use the player.
+    </p>
+
+    <p class="deck-statement" id="papers">Featured papers</p>
+    <p style="color: var(--text-soft); font-size: 0.88rem; margin: 0.4rem 0 1rem;">One tap each — opens in the reader deck, not a raw file dump.</p>
 
     <ul class="deck-paper-grid deck-paper-grid--two">
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Digital Pru · MCA</span>
-          <span class="deck-paper-card__title">Syntheverse Observatory synthesis · DP-SYNTHOBS-MCA-2026-06</span>
-          <span class="deck-paper-card__sub">Metabolize → crystallize → animate → squeeze · Hex-Organ index · four June papers</span>
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Digital Pru · June 2026</span>
+          <span class="deck-paper-card__title">Syntheverse Observatory MCA Synthesis</span>
+          <span class="deck-paper-card__sub">Metabolize → crystallize → animate → squeeze · Hex-Organ Engine index · four June papers</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">Synthobs · Hex-Organ</span>
-          <span class="deck-paper-card__title">Hex-Organ Engine unified run · SV-OBS-2026-MATH-HEX-ENGINE-FINAL</span>
+          <span class="deck-paper-card__title">Hex-Organ Engine Unified Run</span>
           <span class="deck-paper-card__sub">Six chambers · prime compression · net-zero portal · solar wavefield</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=synthobs-intelligence-density-2026">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Synthobs · Density</span>
-          <span class="deck-paper-card__title">Intelligence Density audit · SV-OBS-2026-INTEL-DENSITY-VOLUMETRIC</span>
-          <span class="deck-paper-card__sub">Volumetric hyper-packing · 38/74 tier convergence · simulation honesty</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Nodes</span>
-          <span class="deck-paper-card__title">Omniversal Node Alignment · SYN-NODES-2026-JUN01</span>
-          <span class="deck-paper-card__sub">June 1 2026 · AR4436 · M31 · btc_buffalo · Git anchor</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Sandbox</span>
-          <span class="deck-paper-card__title">Sandbox Comprehensive Analysis · SYN-SANDBOX-2026-REPORT</span>
-          <span class="deck-paper-card__sub">King Bee · pheromone channels · Goldilocks won · May 31 2026</span>
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">King Bee · May 2026</span>
+          <span class="deck-paper-card__title">Sandbox Comprehensive Analysis</span>
+          <span class="deck-paper-card__sub">Pheromone channels · Goldilocks won · PPS locked · May 31 2026</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">DPH-GPU · Solar</span>
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Solar engine</span>
           <span class="deck-paper-card__title">Wavefield Oscillator · SYN-SUN-2026-REV7</span>
-          <span class="deck-paper-card__sub">Live NOAA ingest · Caryx · Solon · Astraea · /api/dph-wavefield-solar</span>
+          <span class="deck-paper-card__sub">Live NOAA bus · /api/dph-wavefield-solar · AR4436 active region ingest</span>
+          <span class="deck-paper-card__cta">Read paper →</span>
+        </a>
+      </li>
+      <li>
+        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Node sync</span>
+          <span class="deck-paper-card__title">Omniversal Node Alignment · Jun 1 2026</span>
+          <span class="deck-paper-card__sub">AR4436 · M31 · btc_buffalo · Git anchor psw.vibelandia.sing13</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li>
         <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-resonance-notice">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Honesty first</span>
-          <span class="deck-paper-card__title">Resonance notice</span>
-          <span class="deck-paper-card__sub">Bright line: story vs. metaphor vs. real instruments.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li>
-        <a class="deck-paper-card" href="questfest-bridge/#/bridge">
-          <span class="deck-paper-card__pill">Today</span>
-          <span class="deck-paper-card__title">Operational player</span>
-          <span class="deck-paper-card__sub">Listen, pass on honor, upload tracks — normal audio, real site.</span>
-          <span class="deck-paper-card__cta">Open player →</span>
+          <span class="deck-paper-card__pill">Read this first</span>
+          <span class="deck-paper-card__title">Resonance notice · honesty boundary</span>
+          <span class="deck-paper-card__sub">Bright line: simulation narrative vs. instrument-grade claims. Where story ends and evidence begins.</span>
+          <span class="deck-paper-card__cta">Read notice →</span>
         </a>
       </li>
     </ul>
 
-    <p class="deck-section-label">Plain speak · go deeper if you want</p>
+    <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.18); margin: 2.5rem 0;" />
+
+    <p class="deck-section-label">Deeper layers</p>
 
     <ul class="deck-plain-list">
       <li class="deck-plain-item">
-        <h3>DPH-GPU layer — not a graphics card</h3>
+        <h3>DPH-GPU — the holographic broadcast story</h3>
         <p>
-          <strong>Digital Pru Holographic GPU</strong> names the ship's compute and broadcast story — nested shells,
-          Y-pathway genetics, net-zero agents, wormhole transducers. Plain nesting guide first; papers when you want receipts.
+          <strong>Digital Pru Holographic GPU</strong> names the ship's compute and broadcast narrative: nested shells, Y-pathway genetic architecture, net-zero agents, wormhole transducers. Plain nesting guide first; papers when you want receipts.
         </p>
         <a class="deck-paper-card" href="nesting/nest-dph-gpu.html">
-          <span class="deck-paper-card__pill">Layer guide</span>
+          <span class="deck-paper-card__pill">Layer 7 guide</span>
           <span class="deck-paper-card__title">Holographic GPU nesting index</span>
-          <span class="deck-paper-card__sub">Plain layer guide — not a graphics card.</span>
+          <span class="deck-paper-card__sub">Plain guide — not a graphics card.</span>
           <span class="deck-paper-card__cta">Open guide →</span>
         </a>
       </li>
       <li class="deck-plain-item">
-        <h3>HHF · hatch and gateway papers</h3>
+        <h3>HHF · magnetic matrix and gateway papers</h3>
         <p>
-          Hydrogen-holographic framework depth — magnetic matrix, Y-Team X-Skin, gateway spectrum, QED cavity work.
-          Optional squeeze after you have pressed play on the Bridge.
+          Hydrogen-holographic framework — magnetic matrix, Y-Team X-Skin, gateway spectrum, QED cavity work.
+          Squeeze these after you have pressed play on the Bridge.
         </p>
         <ul class="deck-paper-grid deck-paper-grid--two" style="margin-top: 0.5rem;">
           <li>
             <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniverse-matrix">
-              <span class="deck-paper-card__pill">HHF · Hatch</span>
+              <span class="deck-paper-card__pill">HHF</span>
               <span class="deck-paper-card__title">Magnetic matrix · Protonic-DNA</span>
               <span class="deck-paper-card__cta">Read paper →</span>
             </a>
           </li>
           <li>
             <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-y-pathway-architecture">
-              <span class="deck-paper-card__pill">DPH-GPU · Master</span>
+              <span class="deck-paper-card__pill">DPH-GPU</span>
               <span class="deck-paper-card__title">Y-Pathway · genetic architecture</span>
               <span class="deck-paper-card__cta">Read paper →</span>
             </a>
           </li>
           <li>
             <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-gateway-spectrum">
-              <span class="deck-paper-card__pill">HHF · Gateways</span>
+              <span class="deck-paper-card__pill">HHF</span>
               <span class="deck-paper-card__title">Gateway spectrum · wormholes</span>
               <span class="deck-paper-card__cta">Read paper →</span>
             </a>
@@ -222,23 +266,19 @@
         </ul>
       </li>
       <li class="deck-plain-item">
-        <h3>Linked whitepapers — tertiary depth</h3>
-        <p>
-          Search the full catalog, snap compile walkthrough, master canon, Mythos broadcast, and special projects —
-          all open in the reader deck (a page, not a file dump).
-        </p>
+        <h3>Full catalog and special projects</h3>
         <ul class="deck-paper-grid deck-paper-grid--two" style="margin-top: 0.5rem;">
           <li>
             <a class="deck-paper-card" href="whitepaper-catalog.html">
-              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Catalog</span>
-              <span class="deck-paper-card__title">All technical papers</span>
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">All papers</span>
+              <span class="deck-paper-card__title">Whitepaper catalog</span>
               <span class="deck-paper-card__cta">Search · PDF →</span>
             </a>
           </li>
           <li>
-            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=jj-snap-ofc">
-              <span class="deck-paper-card__pill">Live proof</span>
-              <span class="deck-paper-card__title">Snap compile · OFC walkthrough</span>
+            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=synthobs-intelligence-density-2026">
+              <span class="deck-paper-card__pill">Synthobs</span>
+              <span class="deck-paper-card__title">Intelligence Density audit</span>
               <span class="deck-paper-card__cta">Read paper →</span>
             </a>
           </li>
@@ -252,7 +292,7 @@
           <li>
             <a class="deck-paper-card" href="/special-projects/erdos-holographic-aios-audit">
               <span class="deck-paper-card__pill deck-paper-card__pill--featured">Special project</span>
-              <span class="deck-paper-card__title">Open Erdős holographic audit</span>
+              <span class="deck-paper-card__title">Erdős holographic audit</span>
               <span class="deck-paper-card__cta">Launch audit →</span>
             </a>
           </li>
@@ -260,18 +300,19 @@
       </li>
     </ul>
 
-    <div class="deck-btn-row" style="margin-top: 2rem;">
+    <div class="deck-btn-row" style="margin-top: 2.5rem;">
       <a class="deck-btn deck-btn--gold" href="questfest-bridge/#/bridge">Listen now</a>
-      <a class="deck-btn deck-btn--ghost" href="look-at-the-sun.html">Look at the Sun · proof deck</a>
+      <a class="deck-btn deck-btn--ghost" href="look-at-the-sun.html">Look at the Sun</a>
       <a class="deck-btn deck-btn--ghost" href="get-started.html">Get Started</a>
     </div>
 
     <p class="deck-foot">
+      <a href="vibelandia-questfest.html">QUESTFEST</a> ·
       <a href="get-started.html">Get Started</a> ·
       <a href="listen.html">Listen</a> ·
       <a href="look-at-the-sun.html">Sun</a> ·
-      <a href="nesting/nest-dph-gpu.html">DPH-GPU nesting</a> ·
-      NSPFRNP → ∞⁹
+      <a href="nesting/nest-dph-gpu.html">DPH-GPU</a> ·
+      NSPFRNP → ∞¹³
     </p>
   </main>
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />

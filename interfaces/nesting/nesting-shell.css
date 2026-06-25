@@ -8,6 +8,8 @@
   --nest-prose: 40rem;
 }
 * { box-sizing: border-box; }
+a { color: var(--nest-foam); text-decoration: none; }
+a:hover { color: var(--nest-gold); text-decoration: underline; }
 html, body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;

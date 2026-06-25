@@ -1,16 +1,18 @@
 /* Erdős 353 · Holographic Goldilocks AIOS audit demonstration */
 :root {
-  --ea-bg: #0a0c14;
-  --ea-panel: #12151f;
+  --ea-bg: #0a0806;
+  --ea-panel: #14100c;
   --ea-line: rgba(196, 168, 116, 0.28);
   --ea-gold: #c4a574;
   --ea-cream: #f0ece4;
-  --ea-muted: #9aa3b5;
-  --ea-dm: #7eb8ff;
+  --ea-muted: #a8a29e;
+  --ea-dm: #e8c87a;
   --ea-bridge: #e8b86a;
   --ea-sv: #7cb87a;
   --ea-mono: 'JetBrains Mono', 'Consolas', monospace;
 }
+a { color: #f5e6c8; text-decoration: none; }
+a:hover { color: #fef3c7; text-decoration: underline; }
 
 .erdos-audit-page {
   margin: 0;

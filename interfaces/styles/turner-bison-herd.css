@@ -1,4 +1,6 @@
 /* Turner Enterprise Rangeland — executive Layer 1 + telescope detail */
+a { color: #f5e6c8; text-decoration: none; }
+a:hover { color: #fef3c7; text-decoration: underline; }
 :root {
   --tb-forest: #1a3d2e;
   --tb-forest-deep: #0f261c;

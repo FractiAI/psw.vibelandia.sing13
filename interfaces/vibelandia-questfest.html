@@ -38,9 +38,10 @@
       --gold-hi: #fef3c7;
       --champagne: #f5e6c8;
       --walnut: #1a120c;
-      --foam: #5eead4;
+      --foam: #f5e6c8;
       --muted: #a8a29e;
       --text: #f5f0e8;
+      --text-soft: #d6cfc4;
     }
     html { scroll-behavior: smooth; }
     body {
@@ -53,7 +54,7 @@
       display: flex;
       flex-direction: column;
     }
-    a { color: var(--foam); text-decoration: none; }
+    a { color: var(--champagne); text-decoration: none; }
     a:hover { color: var(--gold-hi); text-decoration: underline; }
     .skip { position: absolute; left: -9999px; top: 0; background: var(--gold); color: #000; padding: .5rem 1rem; z-index: 100; }
     .skip:focus { left: 0; }
@@ -94,7 +95,7 @@
       margin-top: .65rem;
       font-size: clamp(0.95rem, 2.6vw, 1.1rem);
       font-weight: 600;
-      color: #e2e8f0;
+      color: #e8e0d4;
       max-width: 36ch;
       text-shadow: 0 2px 12px rgba(0,0,0,.75);
     }
@@ -102,28 +103,38 @@
       margin: 0.35rem 0 1rem;
       font-size: 0.78rem;
       letter-spacing: 0.06em;
-      color: rgba(226,232,240,0.9);
+      color: rgba(245,230,200,0.75);
       text-shadow: 0 1px 10px rgba(0,0,0,.65);
       max-width: 42rem;
     }
     .skin-nav-hero a {
-      color: var(--foam);
+      color: var(--champagne);
       font-weight: 600;
       text-decoration: none;
     }
     .skin-nav-hero a:hover { color: var(--gold-hi); text-decoration: underline; }
     .skin-nav-hero .nav-here { color: var(--gold-hi); font-weight: 700; }
     .skin-nav-hero span.sep { margin: 0 0.4rem; opacity: 0.5; user-select: none; }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 3.2vw, 1.45rem);
+      line-height: 1.45;
+      color: var(--champagne);
+      max-width: 34rem;
+      margin: 0.75rem 0 0.5rem;
+      text-shadow: 0 2px 14px rgba(0,0,0,.7);
+    }
     .primer {
-      margin-top: .85rem;
+      margin-top: .65rem;
       font-size: 0.92rem;
-      line-height: 1.5;
-      color: #c8d0dc;
+      line-height: 1.55;
+      color: #d6cfc4;
       max-width: 42rem;
       text-shadow: 0 1px 10px rgba(0,0,0,.55);
     }
-    .primer strong { color: #e8edf5; }
-    .hero .primer + .primer { margin-top: 0.5rem; }
+    .primer strong { color: var(--champagne); }
+    .hero .primer + .primer { margin-top: 0.45rem; }
     .cta-row {
       display: flex;
       flex-wrap: wrap;
@@ -158,12 +169,12 @@
     }
     .btn-ghost:hover { border-color: var(--gold); text-decoration: none; }
     .btn-welcome {
-      background: rgba(12, 24, 28, 0.88);
-      color: var(--foam);
-      border-color: rgba(94, 234, 212, 0.55);
+      background: rgba(20, 16, 12, 0.88);
+      color: var(--champagne);
+      border-color: rgba(212, 175, 55, 0.55);
       backdrop-filter: blur(8px);
     }
-    .btn-welcome:hover { border-color: var(--foam); color: var(--gold-hi); text-decoration: none; }
+    .btn-welcome:hover { border-color: var(--gold); color: var(--gold-hi); text-decoration: none; }
 
     .quick-wrap {
       max-width: 36rem;
@@ -187,7 +198,7 @@
       overflow: hidden;
     }
     .qf-quicklist li {
-      border-top: 1px solid rgba(148, 163, 184, 0.12);
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
     }
     .qf-quicklist li:first-child { border-top: none; }
     .qf-quicklist a {
@@ -197,12 +208,12 @@
       font-weight: 600;
       color: var(--gold-hi);
     }
-    .qf-quicklist a:hover { background: rgba(45, 212, 191, 0.06); text-decoration: none; color: var(--foam); }
+    .qf-quicklist a:hover { background: rgba(212, 175, 55, 0.08); text-decoration: none; color: var(--champagne); }
 
     .qf-feature {
       border: 1px solid rgba(212, 175, 55, 0.5);
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(15, 20, 28, 0.98), rgba(8, 10, 16, 0.99));
+      background: linear-gradient(135deg, rgba(22, 14, 8, 0.98), rgba(10, 7, 4, 0.99));
       overflow: hidden;
       margin-bottom: 1.25rem;
       box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
@@ -214,14 +225,14 @@
       text-decoration: none;
     }
     .qf-feature a.main:hover {
-      background: rgba(45, 212, 191, 0.07);
+      background: rgba(212, 175, 55, 0.07);
     }
     .qf-feature .badge {
       display: inline-block;
       font-size: 0.62rem;
       font-weight: 800;
       letter-spacing: 0.28em;
-      color: var(--foam);
+      color: var(--champagne);
       margin-bottom: 0.45rem;
     }
     .qf-feature time {
@@ -245,24 +256,24 @@
     .qf-feature .teaser-body {
       font-size: 0.88rem;
       line-height: 1.5;
-      color: #c8d0dc;
+      color: var(--text-soft);
       margin-bottom: 0.65rem;
       max-width: 38ch;
     }
-    .qf-feature .teaser-body strong { color: #e8edf5; }
+    .qf-feature .teaser-body strong { color: var(--champagne); }
     .qf-feature .cta {
       font-size: 0.68rem;
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--foam);
+      color: var(--champagne);
     }
     .qf-feature .archive {
       display: block;
       text-align: center;
       padding: 0.45rem;
       font-size: 0.72rem;
-      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
       color: var(--muted);
       text-decoration: none;
     }
@@ -271,8 +282,8 @@
       display: grid;
       gap: 0.55rem;
       padding: 0.65rem 0.75rem 0.75rem;
-      border-top: 1px solid rgba(148, 163, 184, 0.15);
-      background: rgba(8, 10, 16, 0.55);
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      background: rgba(10, 7, 4, 0.55);
     }
     .qf-paper-row .deck-paper-card {
       width: 100%;
@@ -283,10 +294,10 @@
       margin: 0 0 0.85rem 0;
       border-radius: 10px 10px 0 0;
       overflow: hidden;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
       aspect-ratio: 3 / 2;
       min-height: 11rem;
-      background: #0a0f1a;
+      background: #0a0806;
       display: grid;
       place-items: stretch;
     }
@@ -313,7 +324,7 @@
       background: var(--card);
       font-size: 0.88rem;
       line-height: 1.58;
-      color: #c8d0dc;
+      color: var(--text-soft);
     }
     .qf-crew h2 {
       font-family: 'Bebas Neue', sans-serif;
@@ -339,8 +350,8 @@
       object-fit: cover;
       object-position: center top;
       border: 1px solid rgba(212, 175, 55, 0.38);
-      box-shadow: 0 0 22px rgba(103, 232, 249, 0.14);
-      background: rgba(10, 12, 18, 0.9);
+      box-shadow: 0 0 22px rgba(212, 175, 55, 0.12);
+      background: rgba(12, 8, 4, 0.9);
     }
     .qf-crew-portrait--album { object-position: center; }
     .qf-crew-portrait--valetpru {
@@ -351,7 +362,7 @@
     }
     .qf-crew-card-body { min-width: 0; flex: 1; }
     .qf-crew-card-body p { margin-bottom: 0; max-width: none; }
-    .qf-crew strong { color: #e8edf5; }
+    .qf-crew strong { color: var(--champagne); }
     .qf-crew-portrait-link {
       flex-shrink: 0;
       display: block;
@@ -364,10 +375,10 @@
     }
     .qf-crew-portrait-link:hover .qf-crew-portrait {
       border-color: rgba(212, 175, 55, 0.78);
-      box-shadow: 0 0 26px rgba(212, 175, 55, 0.22);
+      box-shadow: 0 0 26px rgba(212, 175, 55, 0.25);
     }
     a.qf-crew-wiki {
-      color: #e8edf5;
+      color: var(--champagne);
       text-decoration: underline;
       text-decoration-color: rgba(212, 175, 55, 0.42);
       text-underline-offset: 0.14em;
@@ -385,12 +396,12 @@
       font-weight: 800;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: var(--foam);
+      color: var(--champagne);
       margin-bottom: 0.65rem;
       padding: 0.35rem 0.65rem;
-      border: 1px solid rgba(45, 212, 191, 0.35);
+      border: 1px solid rgba(212, 175, 55, 0.45);
       border-radius: 4px;
-      background: rgba(45, 212, 191, 0.08);
+      background: rgba(212, 175, 55, 0.1);
     }
     .hero .kicker { max-width: 22ch; }
 
@@ -406,13 +417,13 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       background:
-        linear-gradient(180deg, rgba(18, 22, 30, 0.97), rgba(10, 12, 18, 0.99)),
+        linear-gradient(180deg, rgba(22, 16, 10, 0.97), rgba(12, 8, 4, 0.99)),
         repeating-linear-gradient(
           -45deg,
           transparent,
           transparent 8px,
-          rgba(148, 163, 184, 0.03) 8px,
-          rgba(148, 163, 184, 0.03) 9px
+          rgba(212, 175, 55, 0.025) 8px,
+          rgba(212, 175, 55, 0.025) 9px
         );
     }
     .qf-theater h2 {
@@ -426,12 +437,12 @@
     .qf-theater .lede-block {
       font-size: 0.9rem;
       line-height: 1.58;
-      color: #c8d0dc;
+      color: var(--text-soft);
       margin-bottom: 0.75rem;
     }
     .qf-theater .lede-block:last-child { margin-bottom: 0; }
-    .qf-theater strong { color: #e8edf5; }
-    .qf-theater em { color: var(--foam); font-style: normal; }
+    .qf-theater strong { color: var(--champagne); }
+    .qf-theater em { color: var(--champagne); font-style: normal; }
 
     .nest-ladder-intro {
       display: flex;
@@ -441,11 +452,11 @@
       margin: 0 0 0.85rem;
       padding: 0.55rem 0.75rem;
       border-radius: 8px;
-      border: 1px dashed rgba(45, 212, 191, 0.45);
-      background: rgba(45, 212, 191, 0.06);
+      border: 1px dashed rgba(212, 175, 55, 0.45);
+      background: rgba(212, 175, 55, 0.06);
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--foam);
+      color: var(--champagne);
     }
     .nest-ladder-intro::before {
       content: '↳';
@@ -486,18 +497,18 @@
       font-size: 0.9rem;
       font-weight: 600;
       line-height: 1.45;
-      color: var(--foam);
+      color: var(--champagne);
       text-decoration: underline;
-      text-decoration-color: rgba(45, 212, 191, 0.65);
+      text-decoration-color: rgba(212, 175, 55, 0.5);
       text-underline-offset: 3px;
       transition: color 0.12s ease, text-decoration-color 0.12s ease;
     }
     .nest-card__link:hover {
-      color: #67e8f9;
-      text-decoration-color: #67e8f9;
+      color: var(--gold-hi);
+      text-decoration-color: var(--gold);
     }
     .nest-card__link:focus-visible {
-      outline: 2px solid var(--foam);
+      outline: 2px solid var(--gold);
       outline-offset: 3px;
       border-radius: 2px;
     }
@@ -514,12 +525,12 @@
     }
     .nest-ladder-extra a {
       font-weight: 600;
-      color: var(--foam);
+      color: var(--champagne);
       text-decoration: underline;
       text-underline-offset: 3px;
     }
     .nest-ladder-extra a:hover {
-      color: #67e8f9;
+      color: var(--gold-hi);
     }
 
     footer {
@@ -641,7 +652,7 @@
     .qf-door p {
       font-size: 0.88rem;
       line-height: 1.5;
-      color: #c8d0dc;
+      color: var(--text-soft);
       max-width: 40ch;
       margin-bottom: 0.5rem;
     }
@@ -650,7 +661,7 @@
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--foam);
+      color: var(--champagne);
     }
     .qf-doors-pass {
       margin-top: 1.1rem;
@@ -691,13 +702,13 @@
       <p class="cloud-badge" data-i18n="qf.cloudSkinEyebrow">Sonic Singularity Sing! 13 · Internet cloud skin</p>
       <h1 class="kicker" data-i18n="qf.h1">SS Vibelandia QUESTFEST 24×365</h1>
       <p class="sub" data-i18n="qf.sub">Puerto Reno · Holographic Goldilocks AI Valley, Nevada</p>
+      <p class="hero-tagline">The sonic ship sails 24×365 — swamp beats, gold hearts, wrong side of town. Nine layers deep and wide open.</p>
       <p class="primer" data-i18n-html="qf.primerHtml"><strong>Holographic code</strong> runs the catalog, the schedule, and the receipts — plain talk for the working crew. Puerto Reno · Wrong Side · donde se vibea.</p>
       <p class="primer" data-i18n-html="qf.nestingHtml">Nine layers from the ground up — each card is a one-screen plain guide. You are on the inside: <strong>Beehive residency</strong>.</p>
       <div class="cta-row">
         <a class="btn btn-welcome" href="/get-started">Get Started</a>
         <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/bridge" data-i18n="qf.btnListen">Listen</a>
         <a class="btn btn-ghost" href="/interfaces/whitepaper-catalog.html">Read</a>
-        <a class="btn btn-ghost" href="/sing13-edge-onboarding">Build</a>
       </div>
     </div>
   </header>
@@ -746,12 +757,12 @@
 
   <section class="qf-doors" aria-labelledby="qf-doors-h2">
     <h2 id="qf-doors-h2" class="qf-doors-head">Three Doors</h2>
-    <p class="qf-doors-sub">Everything on this ship is behind one of three doors. Golden age rules: simple, honest, irreducible. <a href="/get-started" style="color:var(--foam);font-weight:700;">New here? Get Started →</a></p>
+    <p class="qf-doors-sub">Everything on the ship lives behind one of three doors — simple, honest, irreducible. <a href="/get-started" style="color:var(--champagne);font-weight:700;">New here? Get Started →</a></p>
     <div class="qf-door-grid">
       <a class="qf-door" href="/interfaces/listen.html">
         <span class="qf-door-numeral" aria-hidden>I</span>
         <h3>Listen <span class="vt-badge vt-oper" title="Operational — working software">⚙ operational</span></h3>
-        <p>The Sovereign Player — Reno swamp catalog, your playlists, honor pass. Audio first; the ship runs on it. Plain primer first, player one tap away.</p>
+        <p>The Sovereign Player — Reno swamp catalog, your playlists, honor pass. Audio first; the sonic ship runs on it. Plain primer first, player one tap away.</p>
         <span class="cta">What Listen is →</span>
       </a>
       <a class="qf-door" href="/interfaces/whitepaper-catalog.html">

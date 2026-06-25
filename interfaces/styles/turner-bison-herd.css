@@ -110,7 +110,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
   font-weight: 600;
   background: rgba(26, 61, 46, 0.55);
   border-left: 3px solid #7cb87a;
-  color: #d4edc8;
+  color: #f5e6c8;
 }
 
 .tb-fetch-err {
@@ -237,11 +237,11 @@ a:hover { color: #fef3c7; text-decoration: underline; }
   min-width: 5.5rem;
   border-color: rgba(124, 200, 140, 0.65);
   background: rgba(40, 90, 58, 0.75);
-  color: #d8f5dc;
+  color: #f5e6c8;
 }
 
 .tb-chart-btn--download:hover:not(:disabled) {
-  border-color: #9ae8a8;
+  border-color: #d4af37;
   background: rgba(60, 120, 78, 0.9);
 }
 
@@ -342,7 +342,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
 .tb-leaflet-map .leaflet-control-attribution {
   font-size: 0.58rem;
   background: rgba(10, 24, 18, 0.82);
-  color: #b8c4b8;
+  color: #d6cfc4;
 }
 
 .tb-basemap-fallback {
@@ -353,7 +353,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
   margin: 0;
   padding: 0.35rem 0.5rem;
   font-size: 0.65rem;
-  color: #b8e8c4;
+  color: #f5e6c8;
   background: rgba(10, 24, 18, 0.88);
   border: 1px solid var(--tb-line);
   border-radius: 4px;
@@ -467,7 +467,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
 .tb-chart-status {
   margin: 0;
   font-weight: 600;
-  color: #b8e8c4;
+  color: #f5e6c8;
 }
 
 .tb-est-note {
@@ -745,7 +745,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
   padding: 0.85rem 1rem;
   font-size: 0.82rem;
   line-height: 1.55;
-  color: #dce8d6;
+  color: #d6cfc4;
   background: rgba(26, 61, 46, 0.55);
   border: 1px solid var(--tb-line);
   border-radius: 6px;
@@ -870,7 +870,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
 .tb-ranch-lede {
   margin: 0 0 1rem;
   font-size: 0.78rem;
-  color: #c8d4c0;
+  color: #d6cfc4;
   line-height: 1.45;
 }
 
@@ -902,7 +902,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
   font-family: var(--tb-mono);
   font-size: 0.7rem;
   line-height: 1.4;
-  color: #e8f4e8;
+  color: #f5f0e8;
   background: #050d0a;
   border: 1px solid #1a3024;
   white-space: pre-wrap;
@@ -1058,7 +1058,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
 .tb-download-status {
   margin: 0 0 0.5rem;
   font-size: 0.78rem;
-  color: #c8dcc8;
+  color: #d6cfc4;
 }
 
 .tb-download-err {
@@ -1106,7 +1106,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
 .tb-live-line {
   margin: 0 0 0.5rem;
   font-size: 0.8rem;
-  color: #c8dcc8;
+  color: #d6cfc4;
   font-family: var(--tb-mono);
 }
 

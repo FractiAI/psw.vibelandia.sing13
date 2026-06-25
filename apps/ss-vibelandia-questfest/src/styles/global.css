@@ -1,10 +1,10 @@
 :root {
-  --indigo-deep: #0f0824;
-  --indigo-mid: #1a0f3a;
+  --indigo-deep: #0a0806;
+  --indigo-mid: #14100c;
   --orange-fire: #ff6b2d;
   --orange-glow: #ff9f68;
-  --cyan-neon: #2de8ff;
-  --cyan-dim: #1a9aab;
+  --cyan-neon: #fef3c7;
+  --cyan-dim: #d4af37;
   --paper: #e8e0d5;
   --paper-dark: #c9bfb0;
   --ink: #0a0612;
@@ -15,8 +15,8 @@
   --swamp-cream: #f5efe6;
   --swamp-gold: #e8b86d;
   --swamp-amber: #c97b4a;
-  --swamp-teal: #5fb8a8;
-  --swamp-teal-deep: #3d8f82;
+  --swamp-teal: #f5e6c8;
+  --swamp-teal-deep: #d4af37;
   --swamp-warm-bg: #2a1f18;
   --swamp-warm-line: rgba(232, 184, 109, 0.45);
 }
@@ -43,7 +43,7 @@ body {
 
 /* --- Voxel primitives --- */
 .voxel-panel {
-  background: linear-gradient(145deg, rgba(26, 15, 58, 0.95), rgba(10, 6, 18, 0.92));
+  background: linear-gradient(145deg, rgba(26, 18, 12, 0.95), rgba(10, 8, 6, 0.92));
   border: 3px solid var(--paper-dark);
   box-shadow: var(--shadow-voxel);
   padding: 1rem 1.1rem;

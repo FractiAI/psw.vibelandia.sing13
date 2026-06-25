@@ -2,6 +2,7 @@
 .machote-campaign-root {
   --swamp-gold: #e8b86d;
   --swamp-amber: #c49a3c;
+  --swamp-champagne: #f5e6c8;
   --swamp-teal: #f5e6c8;
   --swamp-cream: #f5efe6;
   --swamp-warm-line: rgba(232, 184, 109, 0.45);
@@ -80,7 +81,7 @@
   font-size: 0.62rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--swamp-teal);
+  color: var(--swamp-gold);
   margin: 0 0 0.35rem;
 }
 
@@ -99,7 +100,7 @@
 }
 
 .machote-campaign-lede a {
-  color: var(--swamp-teal);
+  color: var(--swamp-gold);
 }
 
 .machote-campaign-reasons {
@@ -138,15 +139,15 @@
 }
 
 .machote-campaign-reasons a {
-  color: var(--swamp-teal);
+  color: var(--swamp-gold);
 }
 
 .machote-campaign-beehive {
   margin: 0 0 1rem;
   padding: 0.85rem 0.9rem;
   border-radius: 8px;
-  border: 1px solid rgba(125, 211, 192, 0.45);
-  background: rgba(8, 20, 24, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(18, 12, 8, 0.55);
   font-size: 0.9rem;
   line-height: 1.5;
 }

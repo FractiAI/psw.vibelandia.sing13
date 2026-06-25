@@ -8,7 +8,7 @@
   --ea-muted: #a8a29e;
   --ea-dm: #e8c87a;
   --ea-bridge: #e8b86a;
-  --ea-sv: #7cb87a;
+  --ea-sv: #d4af37;
   --ea-mono: 'JetBrains Mono', 'Consolas', monospace;
 }
 a { color: #f5e6c8; text-decoration: none; }
@@ -202,7 +202,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
   font-family: var(--ea-mono);
   font-size: 0.68rem;
   line-height: 1.45;
-  color: #b8e8c4;
+  color: #f5e6c8;
   background: var(--ea-panel);
   border: 1px solid var(--ea-line);
   border-radius: 6px;
@@ -403,7 +403,7 @@ a:hover { color: #fef3c7; text-decoration: underline; }
 }
 
 .ea-unified h2 {
-  color: var(--ea-green, #7cb87a);
+  color: var(--ea-gold);
 }
 
 .ea-instrument-card {

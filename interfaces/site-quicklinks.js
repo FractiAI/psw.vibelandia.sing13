@@ -1,5 +1,12 @@
 /** Injects global Bulletin Board quick link before site footers. */
 (function () {
+  if (!document.querySelector('link[href*="brand-gold-surfaces"]')) {
+    const brand = document.createElement('link');
+    brand.rel = 'stylesheet';
+    brand.href = '/interfaces/brand-gold-surfaces.css';
+    document.head.appendChild(brand);
+  }
+
   if (document.querySelector('.site-quicklinks')) return;
 
   const path = window.location.pathname || '';

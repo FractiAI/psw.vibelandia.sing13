@@ -1,7 +1,7 @@
 /* Bridge tower · Times Square LCD billboard — YouTube loop */
 .qf-bridge-tower {
   --billboard-cycle: 8s;
-  --billboard-cyan: #f5e6c8;
+  --billboard-cyan: #fef3c7;
   --billboard-mag: #ff2d6a;
   --billboard-gold: #ffd54a;
   position: relative;

@@ -275,6 +275,56 @@
   border: 1px solid rgba(212, 175, 55, 0.28);
   background: rgba(15, 20, 28, 0.85);
 }
+/* Role primer — plain-speak “what this page is for” (new-user front door) */
+.deck-role-primer {
+  margin: 0 0 1.35rem;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(94, 234, 212, 0.45);
+  background: linear-gradient(145deg, rgba(12, 24, 28, 0.75), rgba(8, 12, 18, 0.92));
+}
+.deck-role-primer__label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--foam, #5eead4);
+  margin: 0 0 0.4rem;
+}
+.deck-role-primer h2 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--gold-hi, #fef3c7);
+  margin: 0 0 0.45rem;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+.deck-role-primer p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.deck-role-primer p + p { margin-top: 0.55rem; }
+.deck-role-primer a {
+  color: var(--foam, #5eead4);
+  font-weight: 600;
+  text-decoration: none;
+}
+.deck-role-primer a:hover {
+  color: var(--gold-hi, #fef3c7);
+  text-decoration: underline;
+}
+.deck-role-primer ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1.15rem;
+  color: #94a3b8;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.deck-role-primer ul strong { color: #e2e8f0; }
+
 .deck-mini-card strong {
   display: block;
   color: var(--gold-hi, #fef3c7);

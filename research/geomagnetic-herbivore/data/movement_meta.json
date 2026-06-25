@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-06-03T00:09:00.239947+00:00",
-  "rows": 33977,
-  "individuals": 16,
+  "fetchedAt": "2026-06-24T16:43:41.627003+00:00",
+  "rows": 123399,
+  "individuals": 26,
   "sources": [
     "movebank_gps"
   ],
@@ -20,7 +20,7 @@
     "baselineStart": "2019-01-01",
     "collarFirst": "2019-01-01",
     "collarLast": "2020-05-15",
-    "calendarEnd": "2026-06-03",
+    "calendarEnd": "2026-06-24",
     "collarOverlapsCalendarRecent": false,
     "note": "aligned_to_public_collar_observation_window"
   },
@@ -47,11 +47,11 @@
       "baselineStart": "2019-01-01",
       "collarFirst": "2019-01-01",
       "collarLast": "2020-05-15",
-      "calendarEnd": "2026-06-03",
+      "calendarEnd": "2026-06-24",
       "collarOverlapsCalendarRecent": false,
       "note": "aligned_to_public_collar_observation_window"
     },
-    "publicStudiesScanned": 162,
+    "publicStudiesScanned": 164,
     "herbivoreCandidates": 5,
     "attempts": [
       {

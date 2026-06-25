@@ -1,7 +1,7 @@
 /* Bridge tower · Times Square LCD billboard — YouTube loop */
 .qf-bridge-tower {
   --billboard-cycle: 8s;
-  --billboard-cyan: #2de8ff;
+  --billboard-cyan: #f5e6c8;
   --billboard-mag: #ff2d6a;
   --billboard-gold: #ffd54a;
   position: relative;
@@ -150,7 +150,7 @@
 
 .qf-billboard-slide--today {
   font-size: clamp(0.95rem, 3.8vw, 1.25rem);
-  color: #f1f5f9;
+  color: #f5f0e8;
   font-family: Inter, system-ui, sans-serif;
   font-weight: 700;
   animation-delay: 0s;
@@ -164,7 +164,7 @@
 
 .qf-billboard-slide--edge {
   font-size: clamp(0.78rem, 3vw, 0.95rem);
-  color: #b8e8ff;
+  color: #f5e6c8;
   font-family: Inter, system-ui, sans-serif;
   font-weight: 600;
   line-height: 1.25;
@@ -183,7 +183,7 @@
   right: 0;
   bottom: 0;
   height: 1.65rem;
-  background: linear-gradient(90deg, #0a1628, #12122a);
+  background: linear-gradient(90deg, #0a0806, #120c08);
   border-top: 2px solid var(--billboard-mag);
   overflow: hidden;
   display: flex;

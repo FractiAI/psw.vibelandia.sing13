@@ -2,17 +2,17 @@
   "H1": {
     "hypothesis": "H1: movement parallel to local field lines",
     "rayleigh_heading": {
-      "n": 33961,
-      "r": 0.029539864346614098,
-      "z": 29.634490371117295,
-      "p": 1.340556043702723e-13,
-      "mean_heading_deg": 8.2332516995051,
+      "n": 123373,
+      "r": 0.023554648562461162,
+      "z": 68.4499890827297,
+      "p": 1.8558522378118323e-30,
+      "mean_heading_deg": 6.804239823264206,
       "significant": "True"
     },
     "kuiper_uniformity": {
-      "n": 33961,
-      "statistic": 0.05058196799693454,
-      "p": 5.913372309026707e-76,
+      "n": 123373,
+      "statistic": 0.04821961455248207,
+      "p": 9.920958876966578e-250,
       "significant": "True"
     },
     "declination_mean_deg": null,

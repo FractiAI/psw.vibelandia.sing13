@@ -2,9 +2,9 @@
   "docId": "HHA-GEOMAG-HERBIVORE-2026",
   "classification": "none",
   "sensitivityActivation": {
-    "status": "elevated",
+    "status": "driver_active",
     "activated": false,
-    "headline": "Elevated geomagnetic activity in last 30 days \u2014 monitor for activation."
+    "headline": "Recent Kp\u22655 forcing in last 14 days; public collar data too stale to test herbivore response."
   },
   "hypothesisTiers": {
     "H1": "weak",
@@ -22,16 +22,16 @@
     "baselineStart": "2019-01-01",
     "collarFirst": "2019-01-01",
     "collarLast": "2020-05-15",
-    "calendarEnd": "2026-06-03",
+    "calendarEnd": "2026-06-24",
     "collarOverlapsCalendarRecent": false,
     "note": "aligned_to_public_collar_observation_window"
   },
   "calendarWindow": {
-    "calendarEnd": "2026-06-03",
-    "calendarStart90": "2026-03-06",
-    "calendarStart30": "2026-05-05",
-    "calendarStart14": "2026-05-21",
-    "baselineStart": "2021-06-04"
+    "calendarEnd": "2026-06-24",
+    "calendarStart90": "2026-03-27",
+    "calendarStart30": "2026-05-26",
+    "calendarStart14": "2026-06-11",
+    "baselineStart": "2021-06-25"
   },
   "outputs": {
     "inventory": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\research\\geomagnetic-herbivore\\data\\inventory.json",

@@ -1,28 +1,30 @@
 {
   "schema": "geomagnetic-sensitivity-activation/v1",
-  "assessedAt": "2026-06-03T00:09:12.163575+00:00",
+  "assessedAt": "2026-06-24T16:43:52.474648+00:00",
   "activated": false,
-  "status": "elevated",
-  "confidence": 0.42,
-  "headline": "Elevated geomagnetic activity in last 30 days \u2014 monitor for activation.",
+  "status": "driver_active",
+  "confidence": 0.48,
+  "headline": "Recent Kp\u22655 forcing in last 14 days; public collar data too stale to test herbivore response.",
   "evidence": [
-    "2 storm day(s) in last 30d."
+    "1 storm day(s) in last 14d (max Kp 5.0)."
   ],
   "calendarWindow": {
-    "calendarEnd": "2026-06-03",
-    "calendarStart90": "2026-03-06",
-    "calendarStart30": "2026-05-05",
-    "calendarStart14": "2026-05-21",
-    "baselineStart": "2021-06-04"
+    "calendarEnd": "2026-06-24",
+    "calendarStart90": "2026-03-27",
+    "calendarStart30": "2026-05-26",
+    "calendarStart14": "2026-06-11",
+    "baselineStart": "2021-06-25"
   },
   "recentGeomagnetic": {
-    "driverActive14d": false,
+    "driverActive14d": true,
     "driverActive30d": true,
-    "stormDays14d": 0,
+    "stormDays14d": 1,
     "stormDays30d": 2,
-    "maxKp14d": 4.0,
-    "maxKp30d": 6.0,
-    "recentStormDates14d": []
+    "maxKp14d": 5.0,
+    "maxKp30d": 6.333,
+    "recentStormDates14d": [
+      "2026-06-11"
+    ]
   },
   "recentMovementCoupling": {
     "collarOverlapsCalendarRecent": false,

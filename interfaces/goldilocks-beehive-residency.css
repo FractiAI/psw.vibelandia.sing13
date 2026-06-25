@@ -1,12 +1,12 @@
 :root {
-  --bh-bg: #050810;
+  --bh-bg: #0a0806;
   --bh-gold: #e8d089;
   --bh-gold-hi: #f5e6b8;
-  --bh-foam: #7dd3c0;
+  --bh-foam: #f5e6c8;
   --bh-honey: #c97b4a;
   --bh-line: rgba(212, 175, 55, 0.28);
-  --bh-muted: #94a3b8;
-  --bh-text: #e8edf5;
+  --bh-muted: #a8a29e;
+  --bh-text: #f5f0e8;
 }
 .bh-wrap {
   max-width: 42rem;
@@ -44,7 +44,7 @@
 }
 .bh-lede {
   font-size: 1.0625rem;
-  color: #cbd5e1;
+  color: #d6cfc4;
   margin: 0 0 2rem;
   line-height: 1.65;
 }
@@ -61,7 +61,7 @@
 }
 .bh-caveat p {
   margin: 0;
-  color: #e2e8f0;
+  color: #f5f0e8;
   line-height: 1.65;
 }
 .bh-manifesto,
@@ -81,7 +81,7 @@
 .bh-protocol p,
 .bh-terms p {
   margin: 0 0 0.85rem;
-  color: #cbd5e1;
+  color: #d6cfc4;
   line-height: 1.65;
 }
 .bh-manifesto p:last-child,
@@ -89,14 +89,14 @@
 .bh-terms ul {
   margin: 0.35rem 0 0.85rem;
   padding-left: 1.15rem;
-  color: #b8c4d4;
+  color: #d6cfc4;
 }
 .bh-terms li { margin-bottom: 0.45rem; line-height: 1.55; }
 .bh-protocol {
   padding: 1.1rem 1rem;
   border-radius: 10px;
-  border: 2px solid rgba(125, 211, 192, 0.4);
-  background: rgba(8, 22, 28, 0.55);
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  background: rgba(18, 12, 8, 0.55);
 }
 .bh-protocol a { color: var(--bh-foam); font-weight: 600; }
 .bh-protocol-contact { margin: 1rem 0 0 !important; }
@@ -115,7 +115,7 @@
 }
 .bh-calendar p {
   margin: 0;
-  color: #e2e8f0;
+  color: #f5f0e8;
   line-height: 1.6;
 }
 .bh-callout--connect p:last-child { margin-bottom: 0; }
@@ -152,13 +152,13 @@
 }
 .bh-phase p {
   margin: 0 0 0.65rem;
-  color: #cbd5e1;
+  color: #d6cfc4;
   line-height: 1.6;
 }
 .bh-phase ul {
   margin: 0.35rem 0 0.65rem;
   padding-left: 1.15rem;
-  color: #b8c4d4;
+  color: #d6cfc4;
 }
 .bh-phase li { margin-bottom: 0.35rem; }
 .bh-callout {

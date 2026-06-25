@@ -2,7 +2,7 @@
   margin: 1.25rem 0 0;
   padding: 0.75rem 1rem;
   border-top: 1px solid rgba(212, 175, 55, 0.28);
-  background: linear-gradient(180deg, rgba(12, 24, 28, 0.45), rgba(6, 8, 13, 0.92));
+  background: linear-gradient(180deg, rgba(22, 14, 8, 0.45), rgba(10, 8, 6, 0.92));
   font-size: 0.78rem;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .site-quicklinks a {
-  color: #5eead4;
+  color: #f5e6c8;
   font-weight: 700;
   text-decoration: none;
 }
@@ -34,12 +34,12 @@
   margin: 0;
   padding: 0.85rem 1.25rem;
   text-align: center;
-  background: linear-gradient(90deg, #0c181c, #06080d);
+  background: linear-gradient(90deg, #140e08, #0a0806);
   border-top: 1px solid rgba(212, 175, 55, 0.45);
 }
 
 .qf-bulletin-strip a {
-  color: #5eead4;
+  color: #f5e6c8;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-decoration: none;

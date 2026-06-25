@@ -536,7 +536,7 @@
   font-family: var(--ea-mono);
   font-size: 0.65rem;
   line-height: 1.45;
-  color: #d4e8ff;
+  color: #f5e6c8;
   background: #080a10;
   border-radius: 4px;
   overflow-x: auto;
@@ -711,7 +711,7 @@
 
 .ea-queue-item--partial .ea-queue-tag {
   background: rgba(120, 180, 220, 0.35);
-  color: #9fd4ff;
+  color: #fef3c7;
 }
 
 .ea-queue-meta {

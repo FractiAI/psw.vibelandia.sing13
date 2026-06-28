@@ -50,3 +50,132 @@
   color: #fef3c7;
   text-decoration: underline;
 }
+
+/* QUESTFEST share · QR modal (landing quicklink) */
+.qf-share-qr-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.qf-share-qr-root[hidden]:not(.qf-share-qr-open) {
+  display: none !important;
+}
+
+.qf-share-qr-root.qf-share-qr-open {
+  display: flex !important;
+}
+
+.qf-share-qr-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 8, 6, 0.82);
+  border: none;
+  cursor: pointer;
+}
+
+.qf-share-qr-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: min(360px, 94vw);
+  padding: 1.15rem 1.2rem 1.35rem;
+  background: linear-gradient(165deg, #1a120c 0%, #0a0806 100%);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  color: #f5f0e8;
+  text-align: center;
+}
+
+.qf-share-qr-close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.65rem;
+  border: none;
+  background: transparent;
+  color: #d4af37;
+  font-size: 1.65rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+}
+
+.qf-share-qr-close:hover {
+  background: rgba(212, 175, 55, 0.12);
+  color: #fef3c7;
+}
+
+.qf-share-qr-card h2 {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  color: #fef3c7;
+  font-weight: 400;
+  margin: 0 0 0.45rem;
+}
+
+.qf-share-qr-hint {
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #d6cfc4;
+}
+
+.qf-share-qr-frame {
+  display: inline-flex;
+  padding: 0.65rem;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.qf-share-qr-frame canvas {
+  display: block;
+  width: 240px;
+  height: 240px;
+  max-width: 100%;
+}
+
+.qf-share-qr-url {
+  margin: 0 0 0.85rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  word-break: break-all;
+  color: #a8a29e;
+}
+
+.qf-share-qr-copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.15rem;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  background: rgba(212, 175, 55, 0.12);
+  color: #fef3c7;
+  cursor: pointer;
+}
+
+.qf-share-qr-copy:hover {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.22);
+}
+
+.qf-share-qr-copy-msg {
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #d4af37;
+}

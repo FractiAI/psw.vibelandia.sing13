@@ -210,6 +210,23 @@
       color: var(--gold-hi);
     }
     .qf-quicklist a:hover { background: rgba(212, 175, 55, 0.08); text-decoration: none; color: var(--champagne); }
+    .qf-quicklist button.qf-quicklist-btn {
+      display: block;
+      width: 100%;
+      padding: .65rem 1rem;
+      font: inherit;
+      font-size: .88rem;
+      font-weight: 600;
+      text-align: left;
+      color: var(--gold-hi);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .qf-quicklist button.qf-quicklist-btn:hover {
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--champagne);
+    }
 
     .qf-feature {
       border: 1px solid rgba(212, 175, 55, 0.5);
@@ -912,6 +929,11 @@
     <h2 data-i18n="qf.quicklinksHead">Quicklinks</h2>
     <nav aria-label="Quicklinks">
       <ul class="qf-quicklist">
+        <li>
+          <button type="button" class="qf-quicklist-btn" id="qf-share-qr-open" data-i18n="qf.quicklinkShareQr">
+            Share this page · QR code
+          </button>
+        </li>
         <li><a href="/commons">The Commons · guest brochure &amp; crew portals</a></li>
         <li><a href="/questfest-guide" data-i18n="qf.quicklinkFrontierGuide">2026 Frontier Guide · park map &amp; schedule</a></li>
         <li><a href="/interfaces/press-releases.html">Press &amp; campaigns · the archive</a></li>
@@ -963,9 +985,26 @@
       </div>
     </div>
   </div>
+
+  <div id="qf-share-qr-modal" class="qf-share-qr-root" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qf-share-qr-title">
+    <button type="button" class="qf-share-qr-backdrop" data-qr-dismiss aria-label="Close"></button>
+    <div class="qf-share-qr-card">
+      <button type="button" class="qf-share-qr-close" data-qr-dismiss aria-label="Close">×</button>
+      <h2 id="qf-share-qr-title" data-i18n="qf.shareQrTitle">Share QUESTFEST</h2>
+      <p class="qf-share-qr-hint" data-i18n="qf.shareQrHint">Scan or copy the link when someone asks for the address.</p>
+      <div class="qf-share-qr-frame">
+        <canvas id="qf-share-qr-canvas" width="240" height="240" aria-hidden="true"></canvas>
+      </div>
+      <p class="qf-share-qr-url" id="qf-share-qr-url"></p>
+      <button type="button" class="qf-share-qr-copy" id="qf-share-qr-copy" data-i18n="qf.shareQrCopy">Copy link</button>
+      <p class="qf-share-qr-copy-msg" id="qf-share-qr-copy-msg" hidden data-i18n="qf.shareQrCopied">Copied!</p>
+    </div>
+  </div>
+
   <script src="/interfaces/bridge-tower-autoplay.js" defer></script>
   <script src="/interfaces/i18n-auto.js" data-page="questfest"></script>
   <script src="/interfaces/machote-campaign-popup.js"></script>
+  <script src="/interfaces/questfest-share-qr.js" defer></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

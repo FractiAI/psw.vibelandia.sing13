@@ -11,6 +11,7 @@ import { PlaylistPicker } from '@/components/catalog/PlaylistPicker';
 import { isMyLikesPlaylist } from '@/lib/catalogSeed';
 import { playTrackById } from '@/lib/trackPlayback';
 import { fmtDuration } from '@/lib/formatDuration';
+import { trackMatchesSearchQuery } from '@/lib/masterCatalogFilter';
 import { PLAIN } from '@/lib/plainSpeak';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { TrackDef } from '@/lib/catalogTypes';
@@ -37,21 +38,25 @@ export function TrackList() {
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
 
   const [sortMode, setSortMode] = useState<SortMode>('playlistOrder');
+  const [searchQuery, setSearchQuery] = useState('');
   const [editTrackId, setEditTrackId] = useState<string | null>(null);
   const [playlistModalTrackId, setPlaylistModalTrackId] = useState<string | null>(null);
 
   const isMyLikes = pl ? isMyLikesPlaylist(pl.id) : false;
-  const canReorderList = sortMode === 'playlistOrder' && (pl?.trackIds.length ?? 0) > 1;
+  const searchActive = searchQuery.trim().length > 0;
+  const canReorderList =
+    sortMode === 'playlistOrder' && !searchActive && (pl?.trackIds.length ?? 0) > 1;
 
   const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
     usePlaylistReorder(activePlaylistId, canReorderList, reorderTrackInPlaylist);
 
   useEffect(() => {
     setSortMode('playlistOrder');
+    setSearchQuery('');
   }, [activePlaylistId]);
 
-  const rows = useMemo((): TrackRow[] => {
-    if (!pl) return [];
+  const { rows, totalBeforeSearch } = useMemo((): { rows: TrackRow[]; totalBeforeSearch: number } => {
+    if (!pl) return { rows: [], totalBeforeSearch: 0 };
     const playlistIndexById = new Map(pl.trackIds.map((id, i) => [id, i]));
     let items = resolvedIds
       .map((id) => {
@@ -76,8 +81,13 @@ export function TrackList() {
       );
     }
 
-    return items;
-  }, [pl, resolvedIds, getTrack, sortMode]);
+    const totalBeforeSearch = items.length;
+    if (searchActive) {
+      items = items.filter((row) => trackMatchesSearchQuery(row.track, searchQuery));
+    }
+
+    return { rows: items, totalBeforeSearch };
+  }, [pl, resolvedIds, getTrack, sortMode, searchQuery, searchActive]);
 
   const play = useCallback(
     (id: string) => {
@@ -107,7 +117,22 @@ export function TrackList() {
         <PlaylistPicker />
       </div>
 
-      {rows.length > 0 ? (
+      {totalBeforeSearch > 0 ? (
+        <div className="sc-search-wrap sc-feed-body">
+          <input
+            type="search"
+            className="sc-search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder={PLAIN.searchPlaceholder}
+            aria-label={PLAIN.search}
+            autoComplete="off"
+            enterKeyHint="search"
+          />
+        </div>
+      ) : null}
+
+      {totalBeforeSearch > 0 ? (
         <div className="sc-sort-bar sc-feed-body">
           <span className="sc-sort-label">{PLAIN.sortBy}</span>
           <button
@@ -131,7 +156,11 @@ export function TrackList() {
           >
             {PLAIN.sortDescending}
           </button>
-          {canReorderList ? (
+          {searchActive ? (
+            <span className="sc-sort-hint" aria-live="polite">
+              {rows.length} of {totalBeforeSearch} {PLAIN.tracks}
+            </span>
+          ) : canReorderList ? (
             <span className="sc-sort-hint">{PLAIN.reorderHint}</span>
           ) : (
             <span className="sc-sort-hint">{PLAIN.addToPlaylistHint}</span>
@@ -141,7 +170,11 @@ export function TrackList() {
 
       {rows.length === 0 ? (
         <p className="sc-empty sc-feed-body">
-          {isMyLikes ? PLAIN.myLikesEmpty : PLAIN.noTracksYet}
+          {searchActive
+            ? PLAIN.noSearchMatch
+            : isMyLikes
+              ? PLAIN.myLikesEmpty
+              : PLAIN.noTracksYet}
         </p>
       ) : (
         <ol className="sc-track-list sc-feed-body" ref={listRef}>

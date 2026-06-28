@@ -114,6 +114,14 @@ function compareTracks(a: TrackDef, b: TrackDef, key: MasterSortKey, dir: SortDi
   return dir === 'asc' ? cmp : -cmp;
 }
 
+/** Case-insensitive match across title, artist, genre, and description. */
+export function trackMatchesSearchQuery(track: TrackDef, query: string): boolean {
+  const q = query.trim().toLowerCase();
+  if (!q) return true;
+  const hay = `${track.title} ${track.artist} ${track.genre ?? ''} ${track.description ?? ''}`.toLowerCase();
+  return hay.includes(q);
+}
+
 function matchesPlaylistFilter(
   trackId: string,
   mode: PlaylistFilterMode,
@@ -133,7 +141,6 @@ export function applyMasterCatalogView(
   filter: MasterCatalogFilterState,
   getTrack: (id: string) => TrackDef | undefined,
 ): MasterCatalogRow[] {
-  const q = filter.titleQuery.trim().toLowerCase();
   const genreQ = filter.genre.trim().toLowerCase();
 
   const rows: MasterCatalogRow[] = [];
@@ -142,10 +149,7 @@ export function applyMasterCatalogView(
     const track = getTrack(id);
     if (!track) continue;
 
-    if (q) {
-      const hay = `${track.title} ${track.artist} ${track.description ?? ''}`.toLowerCase();
-      if (!hay.includes(q)) continue;
-    }
+    if (!trackMatchesSearchQuery(track, filter.titleQuery)) continue;
 
     if (genreQ) {
       const g = (track.genre ?? '').toLowerCase();

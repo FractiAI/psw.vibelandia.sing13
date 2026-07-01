@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
-import { ModuleShell } from '../shell/CourseShell';
+import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
+import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
 const CASES = [
   { id: 'km', title: 'Knowledge management', now: 'Search + static wikis', forward: 'Living semantic fields (proposed)' },
@@ -23,29 +24,16 @@ export function EnterpriseModule() {
   };
 
   return (
-    <ModuleShell
+    <ModuleTwoPhase
+      presentation={MODULE_PRESENTATIONS['m8-enterprise']}
       kicker="Module 8"
       title="Enterprise Implications"
-      lead="Translate architecture into operating decisions across knowledge, workflows, governance, and future platform posture."
-      minutes={5}
-      onContinue={() => complete('m8-enterprise')}
-      continueDisabled={false}
+      lead="~6 minutes on operating model and governance, then case-study cards to tag now vs forward bets."
+      minutes={12}
+      practiceTitle="Practice · Enterprise case studies"
+      practiceLead="Open each card and classify operational reality vs proposed horizon."
+      onComplete={() => complete('m8-enterprise')}
     >
-      <div className="eo-card p-6">
-        <p className="eo-kicker">Knowledge transfer</p>
-        <h3 className="mt-2 text-lg font-semibold text-ink">Enterprise action model</h3>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <div className="rounded-xl border border-[var(--eo-border)] bg-surface p-4">
-            <p className="text-sm font-semibold text-ink">Now (12–18 months)</p>
-            <p className="mt-2 text-xs text-ink-muted">Ship retrieval-grounded copilots, tighten evals, instrument costs, and harden governance workflows.</p>
-          </div>
-          <div className="rounded-xl border border-amber-500/35 bg-amber-500/10 p-4">
-            <p className="text-sm font-semibold text-ink">Next (R&D horizon)</p>
-            <p className="mt-2 text-xs text-ink-muted">Prototype recursive memory and contextual reconstruction approaches in bounded domains.</p>
-          </div>
-        </div>
-      </div>
-
       <div className="grid gap-4 sm:grid-cols-2">
         {CASES.map((c, i) => (
           <motion.button
@@ -55,21 +43,15 @@ export function EnterpriseModule() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.06 }}
             onClick={() => explore(c.id)}
-            className={`eo-card p-5 text-left transition hover:shadow-glow ${
-              explored.has(c.id) ? 'ring-1 ring-accent' : ''
-            }`}
+            className={`eo-card p-5 text-left transition hover:shadow-glow ${explored.has(c.id) ? 'ring-1 ring-accent' : ''}`}
           >
             <p className="font-semibold text-ink">{c.title}</p>
-            <p className="mt-2 text-xs text-ink-muted">
-              <span className="font-medium text-ink">Today:</span> {c.now}
-            </p>
-            <p className="mt-1 text-xs text-accent">
-              <span className="font-medium">Forward (proposed):</span> {c.forward}
-            </p>
+            <p className="mt-2 text-xs text-ink-muted"><span className="font-medium text-ink">Today:</span> {c.now}</p>
+            <p className="mt-1 text-xs text-accent"><span className="font-medium">Forward (proposed):</span> {c.forward}</p>
           </motion.button>
         ))}
       </div>
       <p className="text-center text-xs text-ink-faint">{explored.size}/{CASES.length} case studies viewed</p>
-    </ModuleShell>
+    </ModuleTwoPhase>
   );
 }

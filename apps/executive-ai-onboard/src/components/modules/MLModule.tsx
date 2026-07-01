@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
-import { ModuleShell } from '../shell/CourseShell';
+import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
+import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
 const PARADIGMS = [
   { id: 'supervised', label: 'Supervised', desc: 'Labeled examples → predict outcomes' },
@@ -17,10 +18,9 @@ export function MLModule() {
   const [epochs, setEpochs] = useState(0);
   const [loss, setLoss] = useState(1.2);
   const [paradigm, setParadigm] = useState('supervised');
+
   useEffect(() => {
-    if (epochs >= 8) {
-      mark('m3-ml');
-    }
+    if (epochs >= 8) mark('m3-ml');
   }, [epochs, mark]);
 
   const trainStep = () => {
@@ -34,67 +34,31 @@ export function MLModule() {
   const activation = nodes.map((n, i) => n + (1 - loss) * 0.3 * Math.sin(i + epochs));
 
   return (
-    <ModuleShell
+    <ModuleTwoPhase
+      presentation={MODULE_PRESENTATIONS['m3-ml']}
       kicker="Module 3"
       title="Machine Learning Under the Hood"
-      lead="Understand how models learn (objective, gradients, optimization), then use the simulator to make the mechanics intuitive."
-      minutes={8}
-      onContinue={() => complete('m3-ml')}
-      continueDisabled={false}
+      lead="~7 minutes on paradigms, networks, and optimization — then a training simulator."
+      minutes={15}
+      practiceTitle="Practice · Training simulator"
+      practiceLead="Run epochs, watch loss fall, and map paradigms to what you heard in the presentation."
+      onComplete={() => complete('m3-ml')}
     >
-      <div className="eo-card p-6">
-        <p className="eo-kicker">Knowledge transfer</p>
-        <h3 className="mt-2 text-lg font-semibold text-ink">What is really happening during training</h3>
-        <ol className="mt-4 space-y-2 text-sm text-ink-muted list-decimal pl-5">
-          <li>Model predicts outputs from inputs (forward pass).</li>
-          <li>Loss function measures error against objective.</li>
-          <li>Backpropagation computes how each weight contributed to error.</li>
-          <li>Optimizer updates weights to reduce future loss.</li>
-          <li>Across many epochs, general patterns emerge from data.</li>
-        </ol>
-        <p className="mt-4 text-xs text-ink-faint">
-          Business implication: model quality depends on objective design and data quality as much as model architecture.
-        </p>
-      </div>
-
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="eo-card p-6">
           <p className="text-sm font-medium text-ink">Neural network simulator</p>
           <svg viewBox="0 0 280 120" className="mt-4 w-full" aria-hidden>
             {activation.map((y, i) => (
-              <motion.circle
-                key={i}
-                cx={40 + i * 50}
-                cy={60}
-                r={12 + (1 - loss) * 8}
-                fill="var(--eo-accent)"
-                animate={{ opacity: 0.4 + (1 - loss) * 0.6 }}
-              />
+              <motion.circle key={i} cx={40 + i * 50} cy={60} r={12 + (1 - loss) * 8} fill="var(--eo-accent)" animate={{ opacity: 0.4 + (1 - loss) * 0.6 }} />
             ))}
             {activation.slice(0, -1).map((_, i) => (
-              <line
-                key={`l${i}`}
-                x1={40 + i * 50 + 12}
-                y1={60}
-                x2={40 + (i + 1) * 50 - 12}
-                y2={60}
-                stroke="var(--eo-accent)"
-                strokeOpacity={0.3 + (1 - loss) * 0.4}
-              />
+              <line key={`l${i}`} x1={40 + i * 50 + 12} y1={60} x2={40 + (i + 1) * 50 - 12} y2={60} stroke="var(--eo-accent)" strokeOpacity={0.3 + (1 - loss) * 0.4} />
             ))}
           </svg>
           <div className="mt-4 space-y-4">
             <label className="block text-xs text-ink-muted">
               Learning rate: {lr.toFixed(2)}
-              <input
-                type="range"
-                min="0.1"
-                max="0.9"
-                step="0.05"
-                value={lr}
-                onChange={(e) => setLr(parseFloat(e.target.value))}
-                className="mt-1 w-full accent-accent"
-              />
+              <input type="range" min="0.1" max="0.9" step="0.05" value={lr} onChange={(e) => setLr(parseFloat(e.target.value))} className="mt-1 w-full accent-accent" />
             </label>
             <div className="flex items-center justify-between text-sm">
               <span className="text-ink-muted">Loss: <strong className="text-ink">{loss.toFixed(3)}</strong></span>
@@ -106,27 +70,22 @@ export function MLModule() {
           </div>
         </div>
         <div className="eo-card p-6">
-          <p className="text-sm font-medium text-ink">Learning paradigms</p>
+          <p className="text-sm font-medium text-ink">Match the paradigm</p>
           <div className="mt-3 space-y-2">
             {PARADIGMS.map((p) => (
               <button
                 key={p.id}
                 type="button"
                 onClick={() => setParadigm(p.id)}
-                className={`w-full rounded-lg border p-3 text-left text-sm transition ${
-                  paradigm === p.id ? 'border-accent bg-accent-soft' : 'border-[var(--eo-border)]'
-                }`}
+                className={`w-full rounded-lg border p-3 text-left text-sm transition ${paradigm === p.id ? 'border-accent bg-accent-soft' : 'border-[var(--eo-border)]'}`}
               >
                 <span className="font-semibold text-ink">{p.label}</span>
                 <p className="mt-0.5 text-xs text-ink-muted">{p.desc}</p>
               </button>
             ))}
           </div>
-          <p className="mt-4 text-xs text-ink-faint">
-            Transformers use self-supervised pre-training + supervised fine-tuning. Attention weights connect every token pair.
-          </p>
         </div>
       </div>
-    </ModuleShell>
+    </ModuleTwoPhase>
   );
 }

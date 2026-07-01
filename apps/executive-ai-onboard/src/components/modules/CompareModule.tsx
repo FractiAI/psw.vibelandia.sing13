@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
-import { ModuleShell } from '../shell/CourseShell';
+import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
+import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
 const COMPARISONS = [
   { traditional: 'Linear pipelines', proposed: 'Recursive networks', detail: 'Data flows through fixed stages vs self-similar processing at every scale.' },
@@ -27,32 +28,20 @@ export function CompareModule() {
   };
 
   return (
-    <ModuleShell
+    <ModuleTwoPhase
+      presentation={MODULE_PRESENTATIONS['m6-compare']}
       kicker="Module 6"
       title="Comparing Architectural Paradigms"
-      lead="Use this as a decision matrix: current-state architecture on the left, proposed architectural direction on the right."
-      minutes={8}
-      onContinue={() => complete('m6-compare')}
-      continueDisabled={false}
+      lead="~7 minute decision matrix briefing, then expand each comparison row in the practice game."
+      minutes={15}
+      practiceTitle="Practice · Paradigm dashboard"
+      practiceLead="Open every row and connect today's operational stack to the proposed direction."
+      onComplete={() => complete('m6-compare')}
     >
-      <div className="eo-card p-6">
-        <p className="eo-kicker">Knowledge transfer</p>
-        <h3 className="mt-2 text-lg font-semibold text-ink">How to read this comparison</h3>
-        <ul className="mt-4 space-y-2 text-sm text-ink-muted">
-          <li><strong className="text-ink">Left column:</strong> what teams can buy/build today with known tooling.</li>
-          <li><strong className="text-ink">Right column:</strong> a proposed direction for reducing retrieval and memory fragmentation.</li>
-          <li><strong className="text-ink">Decision rule:</strong> separate near-term execution bets from long-term research bets.</li>
-        </ul>
-      </div>
-
       <div className="space-y-2">
         {COMPARISONS.map((c, i) => (
           <div key={c.traditional} className="eo-card overflow-hidden">
-            <button
-              type="button"
-              onClick={() => openRow(i)}
-              className="flex w-full items-center justify-between gap-4 p-4 text-left hover:bg-accent-soft/30"
-            >
+            <button type="button" onClick={() => openRow(i)} className="flex w-full items-center justify-between gap-4 p-4 text-left hover:bg-accent-soft/30">
               <div className="grid flex-1 gap-2 sm:grid-cols-2 sm:gap-4">
                 <span className="text-sm text-ink-muted">{c.traditional}</span>
                 <span className="text-sm font-medium text-accent">{c.proposed}</span>
@@ -61,12 +50,7 @@ export function CompareModule() {
             </button>
             <AnimatePresence>
               {open === i && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  className="border-t border-[var(--eo-border)] px-4 pb-4"
-                >
+                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="border-t border-[var(--eo-border)] px-4 pb-4">
                   <p className="pt-3 text-sm text-ink-muted">{c.detail}</p>
                 </motion.div>
               )}
@@ -75,6 +59,6 @@ export function CompareModule() {
         ))}
       </div>
       <p className="text-center text-xs text-ink-faint">{viewed.size}/{COMPARISONS.length} comparisons explored</p>
-    </ModuleShell>
+    </ModuleTwoPhase>
   );
 }

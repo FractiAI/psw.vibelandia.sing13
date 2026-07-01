@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
-import { ModuleShell } from '../shell/CourseShell';
+import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
+import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
 const ERAS = [
   { id: 'symbolic', label: 'Symbolic AI', year: '1950s', desc: 'Logic, rules, expert systems' },
@@ -16,6 +17,7 @@ const ERAS = [
 const QUIZ = [
   { q: 'What unlocked modern language AI at scale?', options: ['Expert systems', 'Transformers + scale', 'Symbolic logic'], answer: 1 },
   { q: 'Which era emphasized hand-written rules?', options: ['Symbolic AI', 'Deep Learning', 'RAG'], answer: 0 },
+  { q: 'What shifted competitive advantage from rules to data?', options: ['Expert systems maintenance', 'Statistical learning from examples', 'Manual ontologies only'], answer: 1 },
 ];
 
 export function HistoryModule() {
@@ -30,49 +32,37 @@ export function HistoryModule() {
   const timelineFull = placed.length === ERAS.length;
 
   const placeNext = (id: string) => {
-    const next = [...placed, id];
-    setPlaced(next);
-    if (next.length === ERAS.length) mark('m1-history');
+    setPlaced((prev) => [...prev, id]);
   };
 
   const answerQuiz = (idx: number) => {
-    const correct = idx === QUIZ[quizIdx].answer;
-    if (correct) setQuizScore((s) => s + 1);
+    if (quizDone) return;
+    if (idx === QUIZ[quizIdx].answer) setQuizScore((s) => s + 1);
     if (quizIdx < QUIZ.length - 1) setQuizIdx((i) => i + 1);
-    else setQuizDone(true);
+    else {
+      setQuizDone(true);
+      mark('m1-history');
+    }
   };
 
+  const presentation = MODULE_PRESENTATIONS['m1-history'];
+
   return (
-    <ModuleShell
+    <ModuleTwoPhase
+      presentation={presentation}
       kicker="Module 1"
       title="Why AI Looks the Way It Does"
-      lead="Understand the operating logic behind each AI era, then use the timeline as reinforcement. The point is strategic clarity, not puzzle completion."
-      minutes={6}
-      onContinue={() => complete('m1-history')}
+      lead="A ~7 minute presentation on the seven-era arc, then a timeline and checkpoint quiz to lock it in."
+      minutes={14}
+      practiceTitle="Practice · AI history timeline"
+      practiceLead="Build the timeline in order, then answer three checkpoint questions from the presentation."
+      onComplete={() => complete('m1-history')}
       continueLabel="Unlock Module 2"
-      continueDisabled={false}
     >
       <div className="eo-card p-6">
-        <p className="eo-kicker">Knowledge transfer</p>
-        <h3 className="mt-2 text-lg font-semibold text-ink">The seven-era arc in plain executive language</h3>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          {ERAS.map((era) => (
-            <div key={era.id} className="rounded-xl border border-[var(--eo-border)] bg-surface p-3">
-              <p className="text-xs font-semibold text-accent">{era.year}</p>
-              <p className="mt-1 text-sm font-semibold text-ink">{era.label}</p>
-              <p className="mt-1 text-xs text-ink-muted">{era.desc}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-4 text-xs text-ink-faint">
-          Strategic takeaway: every wave shifts where value sits — from handcrafted rules, to data pipelines, to model scale, to distribution and workflow integration.
-        </p>
-      </div>
-
-      <div className="eo-card p-6">
-        <p className="mb-4 text-sm font-medium text-ink">Interactive timeline</p>
+        <p className="mb-4 text-sm font-medium text-ink">Timeline game · tap eras in chronological order</p>
         <div className="relative flex min-h-[120px] flex-wrap items-end gap-2 border-b-2 border-accent/40 pb-4">
-          {placed.map((id, i) => {
+          {placed.map((id) => {
             const era = ERAS.find((e) => e.id === id)!;
             return (
               <motion.div
@@ -95,13 +85,7 @@ export function HistoryModule() {
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {pool.map((era) => (
-            <button
-              key={era.id}
-              type="button"
-              onClick={() => placeNext(era.id)}
-              className="eo-btn-outline text-xs"
-              title={era.desc}
-            >
+            <button key={era.id} type="button" onClick={() => placeNext(era.id)} className="eo-btn-outline text-xs" title={era.desc}>
               {era.label}
             </button>
           ))}
@@ -115,7 +99,7 @@ export function HistoryModule() {
 
       {timelineFull && (
         <div className="eo-card p-6">
-          <p className="text-sm font-medium text-ink">Checkpoint · {quizIdx + 1} of {QUIZ.length}</p>
+          <p className="text-sm font-medium text-ink">Checkpoint quiz · {quizIdx + 1} of {QUIZ.length}</p>
           {!quizDone ? (
             <>
               <p className="mt-3 text-ink-muted">{QUIZ[quizIdx].q}</p>
@@ -129,11 +113,11 @@ export function HistoryModule() {
             </>
           ) : (
             <p className="mt-3 text-sm text-ink-muted">
-              Score: {quizScore}/{QUIZ.length} — {quizScore === QUIZ.length ? 'Ready to continue.' : 'Review the timeline and retry mentally.'}
+              Score: {quizScore}/{QUIZ.length} — {quizScore >= 2 ? 'Ready to continue.' : 'Review the presentation and retry.'}
             </p>
           )}
         </div>
       )}
-    </ModuleShell>
+    </ModuleTwoPhase>
   );
 }

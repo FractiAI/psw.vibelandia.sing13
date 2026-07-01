@@ -21,7 +21,7 @@ export function WelcomeModule() {
       <ModuleShell
         kicker="Executive onboarding · Module 1 of many"
         title="How does modern AI actually think?"
-        lead="A self-paced journey from today's mainstream architecture toward a proposed Fractal-Holographic Intelligence paradigm. Discover — don't lecture."
+        lead="Each module: a 6–8 minute presentation with expandable detail cards, then practice quizzes. Self-paced · save & resume."
         minutes={3}
         onContinue={() => complete('welcome')}
         continueLabel="Begin the journey"
@@ -36,7 +36,7 @@ export function WelcomeModule() {
           <div className="rounded-xl bg-gradient-to-br from-accent/20 via-transparent to-accent-soft p-8 sm:p-12 text-center">
             <p className="text-sm font-medium text-ink-muted">Estimated completion</p>
             <p className="mt-1 font-display text-5xl font-semibold tracking-tight text-ink">54</p>
-            <p className="text-sm text-ink-faint">minutes · 10 modules · save & resume</p>
+            <p className="text-sm text-ink-faint">minutes · presentation + practice per module</p>
           </div>
         </motion.div>
 

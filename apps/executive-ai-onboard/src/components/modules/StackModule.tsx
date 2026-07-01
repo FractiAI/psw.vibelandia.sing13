@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
-import { ModuleShell } from '../shell/CourseShell';
+import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
+import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
 const LAYERS = [
   { id: 'data', label: 'Data Sources', detail: 'Structured DBs, documents, APIs, sensors, web crawls', example: 'Customer records + support tickets + product docs' },
@@ -30,28 +31,16 @@ export function StackModule() {
   const layer = LAYERS.find((l) => l.id === active);
 
   return (
-    <ModuleShell
+    <ModuleTwoPhase
+      presentation={MODULE_PRESENTATIONS['m2-stack']}
       kicker="Module 2"
       title="Today's AI Technology Stack"
-      lead="First learn the full stack as an operating system; then click through layers to see details and implementation examples."
-      minutes={8}
-      onContinue={() => complete('m2-stack')}
-      continueDisabled={false}
+      lead="An ~8 minute walkthrough of every stack layer, then an architecture explorer game."
+      minutes={16}
+      practiceTitle="Practice · Stack explorer"
+      practiceLead="Click each layer in the pipeline. Match what you learned in the presentation to real examples."
+      onComplete={() => complete('m2-stack')}
     >
-      <div className="eo-card p-6">
-        <p className="eo-kicker">Knowledge transfer</p>
-        <h3 className="mt-2 text-lg font-semibold text-ink">How value and risk flow through the stack</h3>
-        <ul className="mt-4 space-y-2 text-sm text-ink-muted">
-          <li><strong className="text-ink">Data + storage:</strong> determines quality ceiling and governance risk.</li>
-          <li><strong className="text-ink">Pipelines + features:</strong> converts raw records into signal quality.</li>
-          <li><strong className="text-ink">Training + models:</strong> concentrates capital spend and capability.</li>
-          <li><strong className="text-ink">Inference + apps:</strong> where user experience, margin, and adoption happen.</li>
-        </ul>
-        <p className="mt-4 text-xs text-ink-faint">
-          Executive lens: if a use case fails, the root cause is usually one layer below where the symptom appears.
-        </p>
-      </div>
-
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="flex flex-col items-center gap-1">
           {LAYERS.map((l, i) => (
@@ -63,29 +52,19 @@ export function StackModule() {
               transition={{ delay: i * 0.05 }}
               onClick={() => explore(l.id)}
               className={`w-full max-w-xs rounded-xl border px-4 py-3 text-left text-sm transition-all ${
-                explored.has(l.id)
-                  ? 'border-accent bg-accent-soft text-ink'
-                  : 'border-[var(--eo-border)] bg-surface-raised text-ink-muted hover:border-accent/50'
+                explored.has(l.id) ? 'border-accent bg-accent-soft text-ink' : 'border-[var(--eo-border)] bg-surface-raised text-ink-muted hover:border-accent/50'
               } ${active === l.id ? 'ring-2 ring-accent' : ''}`}
             >
               <span className="font-semibold">{l.label}</span>
               {explored.has(l.id) && <span className="ml-2 text-accent">✓</span>}
-              {i < LAYERS.length - 1 && (
-                <span className="mx-auto mt-1 block text-center text-ink-faint">↓</span>
-              )}
+              {i < LAYERS.length - 1 && <span className="mx-auto mt-1 block text-center text-ink-faint">↓</span>}
             </motion.button>
           ))}
         </div>
         <AnimatePresence mode="wait">
           {layer ? (
-            <motion.div
-              key={layer.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              className="eo-card p-6"
-            >
-              <p className="eo-kicker">Deep dive</p>
+            <motion.div key={layer.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="eo-card p-6">
+              <p className="eo-kicker">Layer detail</p>
               <h3 className="mt-2 text-xl font-semibold text-ink">{layer.label}</h3>
               <p className="mt-3 text-sm text-ink-muted">{layer.detail}</p>
               <p className="mt-4 rounded-lg bg-accent-soft p-3 text-xs text-ink-muted">
@@ -93,15 +72,11 @@ export function StackModule() {
               </p>
             </motion.div>
           ) : (
-            <div className="flex items-center justify-center eo-card p-6 text-sm text-ink-faint">
-              Select a layer to explore →
-            </div>
+            <div className="flex items-center justify-center eo-card p-6 text-sm text-ink-faint">Select a layer →</div>
           )}
         </AnimatePresence>
       </div>
-      <p className="text-center text-xs text-ink-faint">
-        {explored.size}/{LAYERS.length} layers explored
-      </p>
-    </ModuleShell>
+      <p className="text-center text-xs text-ink-faint">{explored.size}/{LAYERS.length} layers explored</p>
+    </ModuleTwoPhase>
   );
 }

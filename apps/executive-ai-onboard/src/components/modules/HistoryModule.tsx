@@ -42,18 +42,33 @@ export function HistoryModule() {
     else setQuizDone(true);
   };
 
-  const canFinish = timelineFull && quizDone;
-
   return (
     <ModuleShell
       kicker="Module 1"
       title="Why AI Looks the Way It Does"
-      lead="Drag each breakthrough onto the timeline in order. Each era unlocked the next — understanding this sequence explains today's transformer-centric stack."
+      lead="Understand the operating logic behind each AI era, then use the timeline as reinforcement. The point is strategic clarity, not puzzle completion."
       minutes={6}
       onContinue={() => complete('m1-history')}
       continueLabel="Unlock Module 2"
-      continueDisabled={!canFinish}
+      continueDisabled={false}
     >
+      <div className="eo-card p-6">
+        <p className="eo-kicker">Knowledge transfer</p>
+        <h3 className="mt-2 text-lg font-semibold text-ink">The seven-era arc in plain executive language</h3>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {ERAS.map((era) => (
+            <div key={era.id} className="rounded-xl border border-[var(--eo-border)] bg-surface p-3">
+              <p className="text-xs font-semibold text-accent">{era.year}</p>
+              <p className="mt-1 text-sm font-semibold text-ink">{era.label}</p>
+              <p className="mt-1 text-xs text-ink-muted">{era.desc}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-4 text-xs text-ink-faint">
+          Strategic takeaway: every wave shifts where value sits — from handcrafted rules, to data pipelines, to model scale, to distribution and workflow integration.
+        </p>
+      </div>
+
       <div className="eo-card p-6">
         <p className="mb-4 text-sm font-medium text-ink">Interactive timeline</p>
         <div className="relative flex min-h-[120px] flex-wrap items-end gap-2 border-b-2 border-accent/40 pb-4">

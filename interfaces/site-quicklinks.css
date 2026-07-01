@@ -136,11 +136,25 @@
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
 }
 
-.qf-share-qr-frame canvas {
+.qf-share-qr-frame canvas,
+.qf-share-qr-frame img,
+.qf-share-qr-frame table {
   display: block;
   width: 240px;
   height: 240px;
   max-width: 100%;
+}
+
+.qf-share-qr-frame #qf-share-qr-host {
+  min-width: 240px;
+  min-height: 240px;
+  line-height: 0;
+}
+
+.qf-share-qr-error {
+  margin: -0.35rem 0 0.65rem;
+  font-size: 0.78rem;
+  color: #fbbf24;
 }
 
 .qf-share-qr-url {

@@ -17,11 +17,8 @@ export function MLModule() {
   const [epochs, setEpochs] = useState(0);
   const [loss, setLoss] = useState(1.2);
   const [paradigm, setParadigm] = useState('supervised');
-  const [simDone, setSimDone] = useState(false);
-
   useEffect(() => {
     if (epochs >= 8) {
-      setSimDone(true);
       mark('m3-ml');
     }
   }, [epochs, mark]);
@@ -40,11 +37,26 @@ export function MLModule() {
     <ModuleShell
       kicker="Module 3"
       title="Machine Learning Under the Hood"
-      lead="Adjust learning rate, run training epochs, and watch loss decrease. Then map paradigms to real systems."
+      lead="Understand how models learn (objective, gradients, optimization), then use the simulator to make the mechanics intuitive."
       minutes={8}
       onContinue={() => complete('m3-ml')}
-      continueDisabled={!simDone}
+      continueDisabled={false}
     >
+      <div className="eo-card p-6">
+        <p className="eo-kicker">Knowledge transfer</p>
+        <h3 className="mt-2 text-lg font-semibold text-ink">What is really happening during training</h3>
+        <ol className="mt-4 space-y-2 text-sm text-ink-muted list-decimal pl-5">
+          <li>Model predicts outputs from inputs (forward pass).</li>
+          <li>Loss function measures error against objective.</li>
+          <li>Backpropagation computes how each weight contributed to error.</li>
+          <li>Optimizer updates weights to reduce future loss.</li>
+          <li>Across many epochs, general patterns emerge from data.</li>
+        </ol>
+        <p className="mt-4 text-xs text-ink-faint">
+          Business implication: model quality depends on objective design and data quality as much as model architecture.
+        </p>
+      </div>
+
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="eo-card p-6">
           <p className="text-sm font-medium text-ink">Neural network simulator</p>

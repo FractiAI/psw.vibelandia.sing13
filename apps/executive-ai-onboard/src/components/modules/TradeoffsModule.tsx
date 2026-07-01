@@ -48,11 +48,34 @@ export function TradeoffsModule() {
     <ModuleShell
       kicker="Module 4"
       title="Where Today's AI Excels — and Struggles"
-      lead="Identify bottlenecks in enterprise scenarios. Strengths are real; limitations shape strategy."
+      lead="Learn the capability map and constraint map first; then use scenarios to practice prioritizing tradeoffs."
       minutes={8}
       onContinue={() => complete('m4-tradeoffs')}
-      continueDisabled={!done}
+      continueDisabled={false}
     >
+      <div className="eo-card p-6">
+        <p className="eo-kicker">Knowledge transfer</p>
+        <h3 className="mt-2 text-lg font-semibold text-ink">Executive decision frame</h3>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-xl border border-[var(--eo-border)] bg-surface p-4">
+            <p className="text-sm font-semibold text-ink">Use AI aggressively when</p>
+            <ul className="mt-2 space-y-1 text-xs text-ink-muted">
+              <li>· Pattern recognition dominates</li>
+              <li>· Human-in-the-loop is acceptable</li>
+              <li>· Errors are detectable and recoverable</li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-[var(--eo-border)] bg-surface p-4">
+            <p className="text-sm font-semibold text-ink">Apply tighter controls when</p>
+            <ul className="mt-2 space-y-1 text-xs text-ink-muted">
+              <li>· High regulatory or safety exposure</li>
+              <li>· Long-horizon reasoning is required</li>
+              <li>· Source traceability is mandatory</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="eo-card p-5">
           <p className="eo-kicker text-emerald-600 dark:text-emerald-400">Strengths</p>

@@ -2,8 +2,9 @@
 (function () {
   'use strict';
 
-  var QR_SCRIPT = 'https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js';
+  var QR_SCRIPT = '/interfaces/scripts/vendor/qrcodejs-1.0.0.min.js';
   var qrLibPromise = null;
+  var qrInstance = null;
 
   function shareUrl() {
     var canonical = document.querySelector('link[rel="canonical"]');
@@ -12,14 +13,14 @@
   }
 
   function loadQrLib() {
-    if (window.QRCode) return Promise.resolve();
+    if (typeof window.QRCode === 'function') return Promise.resolve();
     if (qrLibPromise) return qrLibPromise;
     qrLibPromise = new Promise(function (resolve, reject) {
       var s = document.createElement('script');
       s.src = QR_SCRIPT;
       s.async = true;
       s.onload = function () {
-        if (window.QRCode) resolve();
+        if (typeof window.QRCode === 'function') resolve();
         else reject(new Error('qrcode_unavailable'));
       };
       s.onerror = function () {
@@ -30,13 +31,30 @@
     return qrLibPromise;
   }
 
-  function renderQr(canvas, url) {
+  function clearHost(host) {
+    if (!host) return;
+    if (qrInstance && typeof qrInstance.clear === 'function') {
+      try {
+        qrInstance.clear();
+      } catch (_e) {
+        /* ignore */
+      }
+    }
+    qrInstance = null;
+    host.innerHTML = '';
+    host.removeAttribute('title');
+  }
+
+  function renderQr(host, url) {
     return loadQrLib().then(function () {
-      return window.QRCode.toCanvas(canvas, url, {
+      clearHost(host);
+      qrInstance = new window.QRCode(host, {
+        text: url,
         width: 240,
-        margin: 2,
-        color: { dark: '#0a0806', light: '#ffffff' },
-        errorCorrectionLevel: 'M',
+        height: 240,
+        colorDark: '#0a0806',
+        colorLight: '#ffffff',
+        correctLevel: window.QRCode.CorrectLevel.M,
       });
     });
   }
@@ -44,26 +62,28 @@
   function openModal(modal, opener) {
     var url = shareUrl();
     var urlEl = document.getElementById('qf-share-qr-url');
-    var canvas = document.getElementById('qf-share-qr-canvas');
+    var host = document.getElementById('qf-share-qr-host');
     var copyMsg = document.getElementById('qf-share-qr-copy-msg');
+    var errEl = document.getElementById('qf-share-qr-error');
 
     if (urlEl) {
       urlEl.textContent = url;
       urlEl.setAttribute('title', url);
     }
     if (copyMsg) copyMsg.hidden = true;
+    if (errEl) errEl.hidden = true;
 
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
     modal.classList.add('qf-share-qr-open');
     document.body.style.overflow = 'hidden';
 
-    if (canvas) {
-      var ctx = canvas.getContext('2d');
-      if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height);
-      renderQr(canvas, url).catch(function () {
-        if (urlEl) {
-          urlEl.textContent = url + ' (QR unavailable — copy the link below)';
+    if (host) {
+      clearHost(host);
+      renderQr(host, url).catch(function () {
+        if (errEl) {
+          errEl.hidden = false;
+          errEl.textContent = 'QR could not load — copy the link below.';
         }
       });
     }
@@ -78,6 +98,7 @@
     modal.setAttribute('aria-hidden', 'true');
     modal.classList.remove('qf-share-qr-open');
     document.body.style.overflow = '';
+    clearHost(document.getElementById('qf-share-qr-host'));
     var opener = modal._qfOpener;
     if (opener && typeof opener.focus === 'function') opener.focus();
     modal._qfOpener = null;

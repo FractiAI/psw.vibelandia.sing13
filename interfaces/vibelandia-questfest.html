@@ -994,8 +994,9 @@
       <h2 id="qf-share-qr-title" data-i18n="qf.shareQrTitle">Share QUESTFEST</h2>
       <p class="qf-share-qr-hint" data-i18n="qf.shareQrHint">Scan or copy the link when someone asks for the address.</p>
       <div class="qf-share-qr-frame">
-        <canvas id="qf-share-qr-canvas" width="240" height="240" aria-hidden="true"></canvas>
+        <div id="qf-share-qr-host" aria-hidden="true"></div>
       </div>
+      <p class="qf-share-qr-error" id="qf-share-qr-error" hidden></p>
       <p class="qf-share-qr-url" id="qf-share-qr-url"></p>
       <button type="button" class="qf-share-qr-copy" id="qf-share-qr-copy" data-i18n="qf.shareQrCopy">Copy link</button>
       <p class="qf-share-qr-copy-msg" id="qf-share-qr-copy-msg" hidden data-i18n="qf.shareQrCopied">Copied!</p>

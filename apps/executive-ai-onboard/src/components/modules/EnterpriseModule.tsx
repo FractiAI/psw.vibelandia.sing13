@@ -26,11 +26,26 @@ export function EnterpriseModule() {
     <ModuleShell
       kicker="Module 8"
       title="Enterprise Implications"
-      lead="Explore industry applications. Each card distinguishes current capabilities from forward-looking concepts."
+      lead="Translate architecture into operating decisions across knowledge, workflows, governance, and future platform posture."
       minutes={5}
       onContinue={() => complete('m8-enterprise')}
-      continueDisabled={explored.size < CASES.length}
+      continueDisabled={false}
     >
+      <div className="eo-card p-6">
+        <p className="eo-kicker">Knowledge transfer</p>
+        <h3 className="mt-2 text-lg font-semibold text-ink">Enterprise action model</h3>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-xl border border-[var(--eo-border)] bg-surface p-4">
+            <p className="text-sm font-semibold text-ink">Now (12–18 months)</p>
+            <p className="mt-2 text-xs text-ink-muted">Ship retrieval-grounded copilots, tighten evals, instrument costs, and harden governance workflows.</p>
+          </div>
+          <div className="rounded-xl border border-amber-500/35 bg-amber-500/10 p-4">
+            <p className="text-sm font-semibold text-ink">Next (R&D horizon)</p>
+            <p className="mt-2 text-xs text-ink-muted">Prototype recursive memory and contextual reconstruction approaches in bounded domains.</p>
+          </div>
+        </div>
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         {CASES.map((c, i) => (
           <motion.button

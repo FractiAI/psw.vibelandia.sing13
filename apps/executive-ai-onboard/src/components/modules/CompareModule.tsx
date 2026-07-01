@@ -30,11 +30,21 @@ export function CompareModule() {
     <ModuleShell
       kicker="Module 6"
       title="Comparing Architectural Paradigms"
-      lead="Open each row for an interactive explanation. Left: today's dominant stack. Right: proposed Fractal-Holographic model."
+      lead="Use this as a decision matrix: current-state architecture on the left, proposed architectural direction on the right."
       minutes={8}
       onContinue={() => complete('m6-compare')}
-      continueDisabled={viewed.size < COMPARISONS.length}
+      continueDisabled={false}
     >
+      <div className="eo-card p-6">
+        <p className="eo-kicker">Knowledge transfer</p>
+        <h3 className="mt-2 text-lg font-semibold text-ink">How to read this comparison</h3>
+        <ul className="mt-4 space-y-2 text-sm text-ink-muted">
+          <li><strong className="text-ink">Left column:</strong> what teams can buy/build today with known tooling.</li>
+          <li><strong className="text-ink">Right column:</strong> a proposed direction for reducing retrieval and memory fragmentation.</li>
+          <li><strong className="text-ink">Decision rule:</strong> separate near-term execution bets from long-term research bets.</li>
+        </ul>
+      </div>
+
       <div className="space-y-2">
         {COMPARISONS.map((c, i) => (
           <div key={c.traditional} className="eo-card overflow-hidden">

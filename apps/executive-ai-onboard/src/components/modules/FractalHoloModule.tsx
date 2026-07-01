@@ -46,13 +46,36 @@ export function FractalHoloModule() {
     <ModuleShell
       kicker="Module 5 · Proposed framework"
       title="Foundations of Fractal-Holographic Architecture"
-      lead="Established science vs new proposal — clearly separated. Explore recursive zoom and holographic reconstruction interactively."
+      lead="Separate what is established today from what is proposed next; then explore interactive metaphors for the proposal."
       minutes={8}
       onContinue={() => complete('m5-fractal-holo')}
-      continueDisabled={!ready}
+      continueDisabled={false}
     >
       <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-xs text-ink-muted">
         <strong className="text-amber-700 dark:text-amber-300">Proposal tier:</strong> Fractal-Holographic architecture is a conceptual framework — not industry standard. Compare to established transformer pipelines in Module 6.
+      </div>
+
+      <div className="eo-card p-6">
+        <p className="eo-kicker">Knowledge transfer</p>
+        <h3 className="mt-2 text-lg font-semibold text-ink">Established vs proposed (clear boundary)</h3>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-xl border border-[var(--eo-border)] bg-surface p-4">
+            <p className="text-sm font-semibold text-ink">Established today</p>
+            <ul className="mt-2 space-y-1 text-xs text-ink-muted">
+              <li>· Transformer inference over tokenized context</li>
+              <li>· Retrieval systems for external memory</li>
+              <li>· Vector embedding similarity for lookup</li>
+            </ul>
+          </div>
+          <div className="rounded-xl border border-amber-500/35 bg-amber-500/10 p-4">
+            <p className="text-sm font-semibold text-ink">Proposed Fractal-Holographic direction</p>
+            <ul className="mt-2 space-y-1 text-xs text-ink-muted">
+              <li>· Recursive organization across scales</li>
+              <li>· Whole-in-part contextual reconstruction</li>
+              <li>· Pattern-centric synthesis over linear retrieval</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">

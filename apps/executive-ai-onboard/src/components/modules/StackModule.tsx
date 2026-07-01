@@ -33,11 +33,25 @@ export function StackModule() {
     <ModuleShell
       kicker="Module 2"
       title="Today's AI Technology Stack"
-      lead="Click every layer to expand the architecture. Real products sit at the top; everything below is infrastructure."
+      lead="First learn the full stack as an operating system; then click through layers to see details and implementation examples."
       minutes={8}
       onContinue={() => complete('m2-stack')}
-      continueDisabled={explored.size < LAYERS.length}
+      continueDisabled={false}
     >
+      <div className="eo-card p-6">
+        <p className="eo-kicker">Knowledge transfer</p>
+        <h3 className="mt-2 text-lg font-semibold text-ink">How value and risk flow through the stack</h3>
+        <ul className="mt-4 space-y-2 text-sm text-ink-muted">
+          <li><strong className="text-ink">Data + storage:</strong> determines quality ceiling and governance risk.</li>
+          <li><strong className="text-ink">Pipelines + features:</strong> converts raw records into signal quality.</li>
+          <li><strong className="text-ink">Training + models:</strong> concentrates capital spend and capability.</li>
+          <li><strong className="text-ink">Inference + apps:</strong> where user experience, margin, and adoption happen.</li>
+        </ul>
+        <p className="mt-4 text-xs text-ink-faint">
+          Executive lens: if a use case fails, the root cause is usually one layer below where the symptom appears.
+        </p>
+      </div>
+
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="flex flex-col items-center gap-1">
           {LAYERS.map((l, i) => (

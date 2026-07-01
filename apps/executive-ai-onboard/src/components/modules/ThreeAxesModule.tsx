@@ -43,11 +43,24 @@ export function ThreeAxesModule() {
     <ModuleShell
       kicker="Module 7"
       title="The Three Axes of Intelligence"
-      lead="Rotate the model, inspect each layer, and see how emergent intelligence arises from the intersection."
+      lead="Treat intelligence as layered systems design: data substrate, recursive organization, and representation strategy."
       minutes={8}
       onContinue={() => complete('m7-axes')}
-      continueDisabled={inspected.size < 3}
+      continueDisabled={false}
     >
+      <div className="eo-card p-6">
+        <p className="eo-kicker">Knowledge transfer</p>
+        <h3 className="mt-2 text-lg font-semibold text-ink">Why this model matters to strategy</h3>
+        <p className="mt-3 text-sm text-ink-muted">
+          Most AI programs over-invest in models while under-investing in data architecture and memory design. The three-axis view prevents that imbalance.
+        </p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          <div className="rounded-lg bg-accent-soft p-3 text-xs text-ink-muted"><strong className="text-ink">Axis 1:</strong> data quality and access discipline.</div>
+          <div className="rounded-lg bg-accent-soft p-3 text-xs text-ink-muted"><strong className="text-ink">Axis 2:</strong> organization of knowledge across scales.</div>
+          <div className="rounded-lg bg-accent-soft p-3 text-xs text-ink-muted"><strong className="text-ink">Axis 3:</strong> representation and reconstruction behavior.</div>
+        </div>
+      </div>
+
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="eo-card flex flex-col items-center justify-center p-8" style={{ perspective: '800px' }}>
           <motion.div

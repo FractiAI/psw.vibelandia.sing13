@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
 import type { ModuleId } from '@/content/course';
@@ -55,6 +56,10 @@ function ModuleView({ id }: { id: ModuleId }) {
 
 export default function App() {
   const current = useCourseStore((s) => s.currentModule);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [current]);
 
   return (
     <div className="min-h-dvh bg-surface bg-[var(--eo-gradient)]">

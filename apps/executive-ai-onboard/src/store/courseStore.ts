@@ -1,9 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import type { LearnerPath, ModuleId } from '@/content/course';
-import { COURSE_MODULES } from '@/content/course';
-
-const MODULE_ORDER = COURSE_MODULES.map((m) => m.id);
+import { COURSE_MODULES, MODULE_ORDER } from '@/content/course';
 
 interface ModuleProgress {
   completed: boolean;
@@ -19,8 +17,11 @@ interface CourseState {
   theme: 'dark' | 'light';
   tutorOpen: boolean;
   glossaryOpen: boolean;
+  audioUnlocked: boolean;
   setLearnerPath: (path: LearnerPath) => void;
+  unlockAudio: () => void;
   goToModule: (id: ModuleId) => void;
+  prevModule: () => void;
   nextModule: () => void;
   markCheckpoint: (id: ModuleId) => void;
   completeModule: (id: ModuleId) => void;
@@ -42,11 +43,19 @@ export const useCourseStore = create<CourseState>()(
       theme: 'dark',
       tutorOpen: false,
       glossaryOpen: false,
+      audioUnlocked: false,
 
       setLearnerPath: (path) =>
         set({ learnerPath: path, startedAt: get().startedAt ?? new Date().toISOString() }),
 
+      unlockAudio: () => set({ audioUnlocked: true }),
+
       goToModule: (id) => set({ currentModule: id }),
+
+      prevModule: () => {
+        const idx = MODULE_ORDER.indexOf(get().currentModule);
+        if (idx > 0) set({ currentModule: MODULE_ORDER[idx - 1] });
+      },
 
       nextModule: () => {
         const idx = MODULE_ORDER.indexOf(get().currentModule);
@@ -82,6 +91,7 @@ export const useCourseStore = create<CourseState>()(
           moduleProgress: {},
           startedAt: null,
           completedAt: null,
+          audioUnlocked: false,
         }),
 
       setTheme: (theme) => {
@@ -98,7 +108,12 @@ export const useCourseStore = create<CourseState>()(
         return Math.round((done / MODULE_ORDER.length) * 100);
       },
     }),
-    { name: 'eo-course-progress-v1' },
+    {
+      name: 'eo-course-progress-v1',
+      onRehydrateStorage: () => (state) => {
+        if (state?.learnerPath) state.audioUnlocked = true;
+      },
+    },
   ),
 );
 

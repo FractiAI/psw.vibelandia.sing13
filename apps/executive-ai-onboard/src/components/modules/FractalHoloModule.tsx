@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
+import { usePracticeReady } from '@/hooks/practiceGate';
 import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
 import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
@@ -24,6 +25,8 @@ export function FractalHoloModule() {
   useEffect(() => {
     if (viewed.fractal && viewed.holo) mark('m5-fractal-holo');
   }, [viewed, mark]);
+
+  usePracticeReady(viewed.fractal && viewed.holo);
 
   return (
     <ModuleTwoPhase

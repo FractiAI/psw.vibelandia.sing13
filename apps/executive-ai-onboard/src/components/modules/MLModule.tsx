@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
+import { usePracticeReady } from '@/hooks/practiceGate';
 import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
 import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
@@ -32,6 +33,8 @@ export function MLModule() {
 
   const nodes = [0.2, 0.45, 0.7, 0.55, 0.35];
   const activation = nodes.map((n, i) => n + (1 - loss) * 0.3 * Math.sin(i + epochs));
+
+  usePracticeReady(epochs >= 8);
 
   return (
     <ModuleTwoPhase

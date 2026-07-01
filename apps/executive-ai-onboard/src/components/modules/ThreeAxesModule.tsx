@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
+import { usePracticeReady } from '@/hooks/practiceGate';
 import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
 import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
@@ -23,6 +24,8 @@ export function ThreeAxesModule() {
     setInspected(next);
     if (next.size >= 3) mark('m7-axes');
   };
+
+  usePracticeReady(inspected.size >= 3);
 
   return (
     <ModuleTwoPhase

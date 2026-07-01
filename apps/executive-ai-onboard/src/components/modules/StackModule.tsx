@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
+import { usePracticeReady } from '@/hooks/practiceGate';
 import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
 import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
@@ -29,6 +30,8 @@ export function StackModule() {
   };
 
   const layer = LAYERS.find((l) => l.id === active);
+
+  usePracticeReady(explored.size === LAYERS.length);
 
   return (
     <ModuleTwoPhase

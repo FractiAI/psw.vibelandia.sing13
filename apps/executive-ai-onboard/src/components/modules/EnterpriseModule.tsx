@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
+import { usePracticeReady } from '@/hooks/practiceGate';
 import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
 import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
@@ -22,6 +23,8 @@ export function EnterpriseModule() {
     setExplored(next);
     if (next.size === CASES.length) mark('m8-enterprise');
   };
+
+  usePracticeReady(explored.size === CASES.length);
 
   return (
     <ModuleTwoPhase

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { COURSE_MODULES, TOTAL_MINUTES, GLOSSARY } from '@/content/course';
 import { useCourseStore } from '@/store/courseStore';
 import type { ModuleId } from '@/content/course';
+import { ModuleNavigation } from './ModuleNavigation';
 
 export function ProgressRail() {
   const current = useCourseStore((s) => s.currentModule);
@@ -29,12 +30,16 @@ export function ProgressRail() {
             />
           </div>
         </div>
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Module navigation">
+        <ModuleNavigation variant="compact" />
+        <nav className="hidden xl:flex items-center gap-1" aria-label="Module progress dots">
           {COURSE_MODULES.map((m, i) => (
             <button
               key={m.id}
               type="button"
-              onClick={() => goTo(m.id as ModuleId)}
+              onClick={() => {
+                goTo(m.id as ModuleId);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className={`h-2 w-2 rounded-full transition-all ${
                 progress[m.id as ModuleId]?.completed
                   ? 'bg-accent scale-100'
@@ -193,13 +198,16 @@ export function ModuleShell({
         <p className="mt-3 text-xs text-ink-faint">~{minutes} min</p>
       </div>
       <div className="space-y-8">{children}</div>
-      {onContinue && (
-        <div className="mt-12 flex justify-end border-t border-[var(--eo-border)] pt-8">
-          <button type="button" className="eo-btn-primary" onClick={onContinue} disabled={continueDisabled}>
-            {continueLabel}
-          </button>
-        </div>
-      )}
+      <div className="mt-12 space-y-6 border-t border-[var(--eo-border)] pt-8">
+        <ModuleNavigation variant="footer" />
+        {onContinue && (
+          <div className="flex justify-end">
+            <button type="button" className="eo-btn-primary" onClick={onContinue} disabled={continueDisabled}>
+              {continueLabel}
+            </button>
+          </div>
+        )}
+      </div>
     </motion.section>
   );
 }

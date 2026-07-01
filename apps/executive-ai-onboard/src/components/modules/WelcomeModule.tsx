@@ -13,7 +13,13 @@ const PATHS: { id: LearnerPath; label: string; desc: string }[] = [
 export function WelcomeModule() {
   const setPath = useCourseStore((s) => s.setLearnerPath);
   const complete = useCourseStore((s) => s.completeModule);
-  const path = useCourseStore((s) => s.learnerPath);
+  const unlockAudio = useCourseStore((s) => s.unlockAudio);
+
+  const begin = (path: LearnerPath) => {
+    setPath(path);
+    unlockAudio();
+    window.setTimeout(() => complete('welcome'), 350);
+  };
 
   return (
     <div className="relative min-h-[calc(100dvh-4rem)] overflow-hidden">
@@ -21,11 +27,8 @@ export function WelcomeModule() {
       <ModuleShell
         kicker="Executive onboarding · Module 1 of many"
         title="How does modern AI actually think?"
-        lead="Each module: a 6–8 minute presentation with expandable detail cards, then practice quizzes. Self-paced · save & resume."
+        lead="Sit back — pick your lens and the anchor handles the rest. Player controls + practice quizzes only."
         minutes={3}
-        onContinue={() => complete('welcome')}
-        continueLabel="Begin the journey"
-        continueDisabled={!path}
       >
         <motion.div
           initial={{ scale: 0.96, opacity: 0 }}
@@ -36,12 +39,12 @@ export function WelcomeModule() {
           <div className="rounded-xl bg-gradient-to-br from-accent/20 via-transparent to-accent-soft p-8 sm:p-12 text-center">
             <p className="text-sm font-medium text-ink-muted">Estimated completion</p>
             <p className="mt-1 font-display text-5xl font-semibold tracking-tight text-ink">54</p>
-            <p className="text-sm text-ink-faint">minutes · presentation + practice per module</p>
+            <p className="text-sm text-ink-faint">minutes · mostly hands-free</p>
           </div>
         </motion.div>
 
         <div>
-          <p className="mb-4 text-sm font-medium text-ink">Choose your lens — the curriculum stays the same.</p>
+          <p className="mb-4 text-sm font-medium text-ink">One tap to start — choose your lens.</p>
           <div className="grid gap-3 sm:grid-cols-2">
             {PATHS.map((p, i) => (
               <motion.button
@@ -50,10 +53,8 @@ export function WelcomeModule() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 + i * 0.06 }}
-                onClick={() => setPath(p.id)}
-                className={`eo-card p-5 text-left transition-all hover:shadow-glow ${
-                  path === p.id ? 'ring-2 ring-accent border-accent/40' : ''
-                }`}
+                onClick={() => begin(p.id)}
+                className="eo-card p-5 text-left transition-all hover:shadow-glow hover:ring-2 hover:ring-accent/50"
               >
                 <p className="font-semibold text-ink">{p.label}</p>
                 <p className="mt-1 text-sm text-ink-muted">{p.desc}</p>

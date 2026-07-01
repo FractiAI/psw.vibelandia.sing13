@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
+import { usePracticeReady } from '@/hooks/practiceGate';
 import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
 import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
@@ -47,17 +48,18 @@ export function HistoryModule() {
 
   const presentation = MODULE_PRESENTATIONS['m1-history'];
 
+  usePracticeReady(timelineFull && quizDone);
+
   return (
     <ModuleTwoPhase
       presentation={presentation}
       kicker="Module 1"
       title="Why AI Looks the Way It Does"
-      lead="A ~7 minute presentation on the seven-era arc, then a timeline and checkpoint quiz to lock it in."
+      lead="Anchor briefing on the seven-era arc, then a timeline and checkpoint quiz."
       minutes={14}
       practiceTitle="Practice · AI history timeline"
-      practiceLead="Build the timeline in order, then answer three checkpoint questions from the presentation."
+      practiceLead="Build the timeline in order, then answer three checkpoint questions."
       onComplete={() => complete('m1-history')}
-      continueLabel="Unlock Module 2"
     >
       <div className="eo-card p-6">
         <p className="mb-4 text-sm font-medium text-ink">Timeline game · tap eras in chronological order</p>

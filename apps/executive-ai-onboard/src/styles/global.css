@@ -83,3 +83,52 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Executive briefing newscast stage */
+.newscast-studio-bg {
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(59, 130, 246, 0.22), transparent 55%),
+    linear-gradient(180deg, #0f2744 0%, #0a1628 45%, #060d18 100%);
+}
+
+.newscast-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.35) 2px,
+    rgba(255, 255, 255, 0.35) 3px
+  );
+}
+
+.newscast-live-badge {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.55);
+}
+
+.newscast-live-dot {
+  animation: newscastPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes newscastPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+.newscast-lower-third {
+  border-left: 4px solid var(--eo-accent);
+  background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+  padding: 0.65rem 0.85rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.newscast-anchor-frame {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}

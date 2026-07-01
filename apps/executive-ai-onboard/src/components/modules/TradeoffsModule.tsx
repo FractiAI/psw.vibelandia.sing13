@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
+import { usePracticeReady } from '@/hooks/practiceGate';
 import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
 import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
@@ -33,6 +34,7 @@ export function TradeoffsModule() {
   const [scenario, setScenario] = useState(0);
   const [picked, setPicked] = useState<Set<string>>(new Set());
   const [revealed, setRevealed] = useState(false);
+  const [passed, setPassed] = useState(false);
 
   const sc = SCENARIOS[scenario];
   const toggle = (b: string) => {
@@ -46,8 +48,13 @@ export function TradeoffsModule() {
 
   const check = () => {
     setRevealed(true);
-    if (sc.bottlenecks.filter((b) => picked.has(b)).length >= 2) mark('m4-tradeoffs');
+    if (sc.bottlenecks.filter((b) => picked.has(b)).length >= 2) {
+      mark('m4-tradeoffs');
+      setPassed(true);
+    }
   };
+
+  usePracticeReady(passed);
 
   return (
     <ModuleTwoPhase

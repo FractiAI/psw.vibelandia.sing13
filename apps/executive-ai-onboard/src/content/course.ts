@@ -95,6 +95,16 @@ export const COURSE_MODULES: CourseModule[] = [
 
 export const TOTAL_MINUTES = COURSE_MODULES.reduce((s, m) => s + m.minutes, 0);
 
+export const MODULE_ORDER: ModuleId[] = COURSE_MODULES.map((m) => m.id);
+
+export function moduleIndex(id: ModuleId): number {
+  return MODULE_ORDER.indexOf(id);
+}
+
+export function moduleAt(index: number): CourseModule | undefined {
+  return COURSE_MODULES[index];
+}
+
 export const GLOSSARY: Record<string, string> = {
   Transformer:
     'Neural architecture using self-attention to model relationships across sequences — foundation of modern LLMs.',

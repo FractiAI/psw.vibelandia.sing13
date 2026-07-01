@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm ci && npm run build:questfest-bridge",
+  "buildCommand": "npm ci && npm run build:questfest-bridge && npm run build:executive-onboard",
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
@@ -24,6 +24,12 @@
     { "source": "/interfaces/fractiai/digital-pru", "destination": "/interfaces/look-under-the-hood.html" },
     { "source": "/sing13-edge-onboarding", "destination": "/interfaces/sing13-edge-onboarding.html" },
     { "source": "/sing13-edge-onboarding/", "destination": "/interfaces/sing13-edge-onboarding.html" },
+    { "source": "/executive-onboarding", "destination": "/interfaces/executive-onboarding.html" },
+    { "source": "/executive-onboarding/", "destination": "/interfaces/executive-onboarding.html" },
+    { "source": "/my-whiteboard", "destination": "/interfaces/my-whiteboard.html" },
+    { "source": "/my-whiteboard/", "destination": "/interfaces/my-whiteboard.html" },
+    { "source": "/executive-ai", "destination": "/interfaces/executive-ai-onboard/index.html" },
+    { "source": "/executive-ai/", "destination": "/interfaces/executive-ai-onboard/index.html" },
     { "source": "/get-started", "destination": "/interfaces/get-started.html" },
     { "source": "/get-started/", "destination": "/interfaces/get-started.html" },
     { "source": "/listen", "destination": "/interfaces/listen.html" },
@@ -214,6 +220,18 @@
     }
   },
   "headers": [
+    {
+      "source": "/interfaces/executive-ai-onboard/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/interfaces/executive-ai-onboard/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
     {
       "source": "/interfaces/questfest-bridge/index.html",
       "headers": [

@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build:questfest-bridge": "npm --prefix apps/ss-vibelandia-questfest ci && npm --prefix apps/ss-vibelandia-questfest run build",
+    "build:executive-onboard": "npm --prefix apps/executive-ai-onboard ci && npm --prefix apps/executive-ai-onboard run build",
     "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",
     "build:erdos-catalog": "node scripts/build-erdos-catalog.mjs",
     "build:catalog": "node scripts/build-catalog-from-tracks.mjs",

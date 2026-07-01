@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --eo-surface: #fafafa;
+  --eo-surface-raised: #ffffff;
+  --eo-surface-overlay: rgba(255, 255, 255, 0.72);
+  --eo-ink: #18181b;
+  --eo-ink-muted: #52525b;
+  --eo-ink-faint: #a1a1aa;
+  --eo-accent: #2563eb;
+  --eo-accent-soft: rgba(37, 99, 235, 0.12);
+  --eo-accent-glow: rgba(37, 99, 235, 0.35);
+  --eo-border: rgba(0, 0, 0, 0.08);
+  --eo-gradient: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.15), transparent);
+}
+
+.dark {
+  --eo-surface: #09090b;
+  --eo-surface-raised: #18181b;
+  --eo-surface-overlay: rgba(24, 24, 27, 0.85);
+  --eo-ink: #fafafa;
+  --eo-ink-muted: #a1a1aa;
+  --eo-ink-faint: #71717a;
+  --eo-accent: #60a5fa;
+  --eo-accent-soft: rgba(96, 165, 250, 0.14);
+  --eo-accent-glow: rgba(96, 165, 250, 0.4);
+  --eo-border: rgba(255, 255, 255, 0.08);
+  --eo-gradient: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(96, 165, 250, 0.12), transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--eo-surface);
+  color: var(--eo-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+@layer components {
+  .eo-card {
+    @apply rounded-2xl border border-[var(--eo-border)] bg-surface-raised shadow-card;
+  }
+  .eo-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent disabled:opacity-40 disabled:pointer-events-none;
+  }
+  .eo-btn-primary {
+    @apply eo-btn bg-accent text-white hover:brightness-110 shadow-glow;
+  }
+  .eo-btn-ghost {
+    @apply eo-btn bg-transparent text-ink-muted hover:bg-accent-soft hover:text-ink;
+  }
+  .eo-btn-outline {
+    @apply eo-btn border border-[var(--eo-border)] bg-transparent text-ink hover:border-accent hover:text-accent;
+  }
+  .eo-kicker {
+    @apply text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-accent;
+  }
+  .eo-title {
+    @apply font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl md:text-[2.75rem] leading-[1.1];
+  }
+  .eo-lead {
+    @apply text-base sm:text-lg text-ink-muted leading-relaxed max-w-2xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

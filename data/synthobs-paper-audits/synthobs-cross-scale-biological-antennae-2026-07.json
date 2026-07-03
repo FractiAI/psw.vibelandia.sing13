@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "8fa0a36169e5c478",
+  "auditId": "cf0d0454b13abdfe",
   "paperId": "synthobs-cross-scale-biological-antennae-2026-07",
   "sourcePath": "docs/SYNTHOBS_CROSS_SCALE_BIOLOGICAL_ANTENNAE_WAVE_DAMPING_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-03T16:42:18.963Z"
+          "invokedAt": "2026-07-03T16:46:51.068Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-03T16:42:18.959Z",
-  "completedAt": "2026-07-03T16:42:18.964Z",
+  "startedAt": "2026-07-03T16:46:51.064Z",
+  "completedAt": "2026-07-03T16:46:51.069Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 2809,
+      "wordCount": 2956,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 11,
-        "numbered": 15,
-        "citeLines": 9
+        "numbered": 16,
+        "citeLines": 13
       }
     }
   },

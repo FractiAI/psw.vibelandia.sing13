@@ -1,5 +1,7 @@
 # SYNTHOBS Chromosomal Electrodynamics · Empirical Report
 
+**Status: EXECUTED** — public-data experiments E1–E4 completed in this repository.
+
 **Generated:** 2026-07-03T16:40:57.134Z
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 

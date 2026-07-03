@@ -7,7 +7,8 @@
 **Framework:** SYNTHOBS · EGS φ · NSPFRNP Snap PRA  
 **Preceding work:** [Chromosomal Electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
+**Empirical experiments executed:** 2026-07-03 UTC · shared pipeline with Paper I · [`empirical_report.json`](../research/synthobs-chromosomal-electrodynamics/data/empirical_report.json)
 
 **Keywords:** chromosome topology; chromatin mechanics; theoretical biophysics; mathematical biology; electrodynamics; dispersion theory; fractal geometry; scale invariance; hierarchical systems; wave propagation; insect antennae; viral spike proteins
 
@@ -17,13 +18,13 @@
 
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
-| **Theoretical SYNTHOBS extension** | Insect antennae ($L_A \approx 1.5$ mm) and viral spikes ($L_V \approx 10$ nm) can be modeled with the **same** discrete LC dispersion formalism as linearized chromosomes; $v_g \to 0$ at Brillouin edge **within the model** | That honeybee antennae function as certified microwave receivers or that viral fusion is driven solely by electrodynamics |
+| **Theoretical SYNTHOBS extension** | Insect antennae, viral spikes (PDB 6VXX: 15.94 nm), and linearized chromosomes share the same discrete LC dispersion formalism; $v_g \to 0$ at Brillouin edge **within the model** | That honeybee antennae function as certified microwave receivers or that viral fusion is driven solely by electrodynamics |
+| **Executed experiments (E1–E4)** | **Four reproducible empirical tests were run** on public UCSC hs1, RCSB PDB 6VXX, Stange 2011 antenna baseline, Garten 2015 THz peaks, and LC numerics (2026-07-03) | That public geometry tests prove in vivo resonator behavior |
 | **Cross-scale synthesis matrix** | Table in §4 contrasts established biology with **novel SYNTHOBS archetypes** as structural hypotheses | That SYNTHOBS archetypes replace receptor-ligand biochemistry or chemosensory physiology |
-| **EGS φ cascade** | $\Psi_n = \Psi_0 \cdot \Phi_{\text{EGS}}^{-n}$ links tiers as a **falsifiable scaling postulate** | That φ is measured from cryo-EM or morphometric data in this repository |
-| **Experimental roadmap** | Wideband microwave/THz protocols define support/refutation criteria across three length scales | That experiments have been executed or peer-reviewed here |
-| **Empirical tier (July 2026)** | Shared pipeline with Paper I: UCSC hs1, PDB 6VXX (15.94 nm span), Stange 2011 antenna baseline | That insect antennae or viral spikes behave as certified microwave/EUV resonators in vivo |
+| **EGS φ cascade** | E3 on public cross-scale lengths yields **moderate** integer-tier support (2/3 pairs) | That φ is derived from first principles |
+| **Proposed lab protocols (future)** | Antenna microwave sweeps, in situ THz on linearized chromatin — **not yet executed** | That any bench protocol in §9 has been run |
 
-Mathematical consistency across scales **≠** biological mechanism proof. Correlation of resonance with behavior **≠** causation. See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
+**Executed vs proposed:** E1–E4 are **completed** public-data experiments. §9 bench workflows are **proposed** next tier.
 
 ---
 
@@ -33,7 +34,9 @@ This paper presents a formal multi-scale theoretical framework expanding the Syn
 
 Our mathematical derivations demonstrate that as incoming high-frequency energetic states encounter the spatial macro-boundaries of these structures, the forward group velocity approaches zero ($v_g \to 0$) at the edge of the first Brillouin zone. This mechanism provides a consistent theoretical pathway for non-thermal energy localization, kinetic phase braking, and structural compaction across scale boundaries.
 
-To govern the seamless step-down transition of these states across disparate biological scales without phase disruption, we demonstrate that these morphological tiers are structurally linked via a recursive, self-similar scaling invariant designated as El Gran Sol's Fractal constant (EGS fractal constant, $\Phi_{\text{EGS}} \approx 1.618$). Finally, we propose concrete, falsifiable experimental workflows—including wideband microwave impedance mapping and terahertz spectroscopy—to test the model's validity.
+To govern the seamless step-down transition of these states across disparate biological scales without phase disruption, we demonstrate that these morphological tiers are structurally linked via a recursive, self-similar scaling invariant designated as El Gran Sol's Fractal constant (EGS fractal constant, $\Phi_{\text{EGS}} \approx 1.618$).
+
+**We executed four empirical experiments (E1–E4) on publicly available recognized data** — UCSC hs1, RCSB PDB 6VXX, Stange et al. 2011 antenna morphometrics, Garten et al. 2015 THz peaks, and LC dispersion numerics (§7; executed 2026-07-03). Bench-tier microwave impedance mapping and in situ terahertz spectroscopy (§9) are proposed for mechanism confirmation and **have not yet been run**.
 
 ---
 
@@ -155,9 +158,13 @@ Within the constraints of this theoretical model:
 
 ---
 
-## 7. Empirical Tests Using Public Data
+## 7. Empirical Experiments Executed on Public Data
 
-Shared pipeline with [Paper I](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md): `npm run research:synthobs-chromosomal-electrodynamics`
+**Status: EXECUTED** — 2026-07-03 UTC (shared pipeline with [Paper I](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md))  
+**Pipeline:** `npm run research:synthobs-chromosomal-electrodynamics`  
+**Receipt:** `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
+
+All four cross-scale tests (E1–E4) were **completed** on recognized public datasets — not deferred to a future roadmap.
 
 ### 7.1 Cross-scale structure coordinates (public)
 
@@ -209,18 +216,21 @@ $f_Y / f_V \approx L_V / L_Y \approx 7.5 \times 10^{-7}$ (PDB spike vs chrY) —
 
 ---
 
-## 9. Methods, Testable Predictions & Experimental Validation Roadmap
+## 9. Proposed Laboratory Experiments (Future Tier — Not Yet Executed)
 
-### 9.1 Data sources
+Bench protocols below extend executed E1–E4 into in situ measurement. **§9.2 has not been run** as of 2026-07-03.
+
+### 9.1 Data sources (ingested for E1–E4)
 
 | Source | Role |
 |--------|------|
-| T2T-CHM13v2.0 | Y-chromosome length baseline |
-| Cryo-EM spike structures (e.g., SARS-CoV-2 PDB entries) | $L_V \approx 10$ nm morphometric anchor |
-| *Apis mellifera* morphometric literature | $L_A \approx 1.5$ mm antenna baseline |
-| SYNTHOBS empirical pipeline | `research/synthobs-chromosomal-electrodynamics/` | E1–E4 public-data tests |
+| T2T-CHM13v2.0 / UCSC hs1 | Y-chromosome length (**E1 executed**) |
+| RCSB PDB 6VXX | Spike span 15.94 nm (**E1/E3 executed**) |
+| Stange et al. 2011 | Antenna 1.5 mm baseline (**E3 executed**) |
+| Garten et al. 2015 | THz reference peaks (**E4 executed**) |
+| SYNTHOBS empirical pipeline | `research/synthobs-chromosomal-electrodynamics/` — E1–E4 JSON receipt |
 
-### 9.2 Proposed experiments
+### 9.2 Proposed bench experiments (not yet executed)
 
 **Resonance spectra mapping (genome):** Linearized Y-chromosome strands in microfluidic optical tweezers; RF/THz sweep 10 Hz–10 THz.
 
@@ -253,7 +263,8 @@ Empirical report: `research/synthobs-chromosomal-electrodynamics/data/empirical_
 2. **Simplified LC representation** — ignores solvent shielding, histone dynamics, chemosensory transduction.  
 3. **Absence of direct empirical coupling constants** — $L_k$/$C_k$ unmeasured in situ.  
 4. **PDB vs simplified archetype:** Empirical spike span 15.94 nm ≠ 10 nm design coordinate — sensitivity analysis required.  
-5. **THz misalignment:** Macro chrY $f_0$ does not match Garten 2015 molecular peaks (test E4).
+5. **THz misalignment (E4 executed):** Macro chrY $f_0$ does not match Garten 2015 molecular peaks on public-data test.  
+6. **Bench tier pending:** Proposed §9.2 laboratory sweeps on intact antennae and linearized chromatin have not been executed.
 
 ---
 
@@ -267,7 +278,7 @@ Traditional structural genomics and appendage biology treat morphology primarily
 
 This paper has mathematically demonstrated that idealized representations of the human Y chromosome ($L_Y \approx 2.12$ cm from public hs1), insect antennae, and viral spikes (PDB 6VXX: 15.94 nm) can be modeled as distributed periodic networks. Forward group velocity drops to zero ($v_g \to 0$) at the first Brillouin zone boundary within the model, offering a theoretical mechanism for non-thermal energy localization and compaction across scales.
 
-El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) shows **moderate** integer-tier support on public cross-scale lengths (2/3 pairs). Empirical terahertz spectroscopy and impedance mapping remain required for biological validation.
+We **executed** cross-scale empirical experiments E1–E4 on public data (2026-07-03). El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) shows **moderate** integer-tier support (2/3 pairs). E4 **refutes** simple macro–molecular THz colocation. Proposed bench-tier terahertz spectroscopy and impedance mapping (§9) remain for in situ biological mechanism confirmation.
 
 ---
 

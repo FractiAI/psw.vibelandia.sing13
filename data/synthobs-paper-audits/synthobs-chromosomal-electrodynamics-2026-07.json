@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "65fd3a9703310d3f",
+  "auditId": "e4074fd4638bdb4e",
   "paperId": "synthobs-chromosomal-electrodynamics-2026-07",
   "sourcePath": "docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-03T16:42:18.913Z"
+          "invokedAt": "2026-07-03T16:46:50.386Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-03T16:42:18.909Z",
-  "completedAt": "2026-07-03T16:42:18.914Z",
+  "startedAt": "2026-07-03T16:46:50.382Z",
+  "completedAt": "2026-07-03T16:46:50.386Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 3816,
+      "wordCount": 3963,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 9,
+        "links": 10,
         "numbered": 17,
-        "citeLines": 11
+        "citeLines": 12
       }
     }
   },

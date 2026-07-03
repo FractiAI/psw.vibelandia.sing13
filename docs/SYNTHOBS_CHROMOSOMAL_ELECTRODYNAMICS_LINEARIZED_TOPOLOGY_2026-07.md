@@ -7,7 +7,8 @@
 **Framework:** SYNTHOBS · EGS φ · NSPFRNP Snap PRA  
 **Companion:** [Cross-Scale Biological Antennae](./SYNTHOBS_CROSS_SCALE_BIOLOGICAL_ANTENNAE_WAVE_DAMPING_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) · [AC-HMM T2T](./FRACTIAI_AC_HMM_SATELLITES_T2T_2026.md)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
-**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)
+**Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
+**Empirical experiments executed:** 2026-07-03 UTC · [`empirical_report.json`](../research/synthobs-chromosomal-electrodynamics/data/empirical_report.json) · `npm run research:synthobs-chromosomal-electrodynamics`
 
 **Keywords:** chromosome topology; chromatin mechanics; theoretical biophysics; mathematical biology; electrodynamics; dispersion theory; fractal geometry; scale invariance; hierarchical systems; wave propagation
 
@@ -18,12 +19,12 @@
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
 | **Theoretical SYNTHOBS model** | An idealized, linearized Y-chromosome polymer can be modeled as a discrete LC lattice; dispersion math yields $v_g \to 0$ at the first Brillouin zone edge within that model | Empirical proof that living chromosomes behave as engineered transmission lines in vivo |
-| **EGS φ scaling** | $\Phi_{\text{EGS}} \approx 1.618$ is proposed as a **testable organizing postulate** for multi-tier energy step-down | That φ is derived from first principles or replaces established biochemistry |
-| **Biological hypotheses** | Sections 6–7 state **falsifiable hypotheses** (chromatin folding, epigenetic tuning, phase disruption) tied to measurable RF/THz workflows | That epigenetic marks directly equal $L_k$/$C_k$ without impedance spectroscopy |
-| **Experimental roadmap** | Concrete protocols (terahertz sweep, impedance mapping, optical tweezers linearization) define support/refutation criteria | That any experiment has been executed in this repository |
-| **Empirical tier (July 2026)** | Public UCSC hs1 lengths, PDB 6VXX spike span, analytic LC band-edge confirmation via `research/synthobs-chromosomal-electrodynamics/` | That macro chrY standing-wave $f_0$ matches Garten 2015 THz peaks without controlled spectroscopy |
+| **Executed experiments (E1–E4)** | **Four reproducible empirical tests were run** on public UCSC hs1 assembly, RCSB PDB 6VXX, Garten 2015 THz peaks, and numeric LC dispersion (2026-07-03) | That these public-data tests substitute for bench spectroscopy on isolated linearized chromatin |
+| **EGS φ scaling** | $\Phi_{\text{EGS}} \approx 1.618$ is a **testable organizing postulate**; E3 yields **moderate** integer-tier support (2/3 pairs) on public lengths | That φ is derived from first principles or replaces established biochemistry |
+| **Biological hypotheses (H1–H3)** | Falsifiable hypotheses tied to measurable RF/THz workflows | That epigenetic marks directly equal $L_k$/$C_k$ without impedance spectroscopy |
+| **Proposed lab protocols (future)** | Optical tweezers linearization, terahertz sweep, in situ impedance mapping — **not yet executed** | That any bench protocol in §8 has been run in this repository |
 
-Mathematical consistency **within the idealized model** ≠ biological validation. Correlation of resonance peaks with compaction **≠** causation until controlled experiments are run. See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
+**Executed vs proposed:** E1–E4 are **completed** public-data experiments with JSON receipts. §8 laboratory workflows are **proposed** next-tier validation. See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ---
 
@@ -33,7 +34,9 @@ This paper presents a formal theoretical framework investigating the electromech
 
 The mathematical derivations demonstrate that as incoming high-frequency energetic states encounter the spatial macro-boundaries of the linearized strand, the forward group velocity approaches zero ($v_g \to 0$) at the edge of the first Brillouin zone. This mechanism suggests a theoretical pathway for non-thermal energy localization, attenuation, and structural compaction.
 
-To govern the seamless step-down transition of these states across disparate biological dimensions without phase disruption, we introduce a scale-invariant parameter designated as El Gran Sol's Fractal constant (EGS fractal constant, $\Phi_{\text{EGS}} \approx 1.618$). This constant acts as the foundational structural anchor regulating the recursive hierarchy of downstream biological geometries. We execute **empirical coordinate tests** on publicly available T2T assembly and PDB cryo-EM data (§6), then propose concrete, falsifiable experimental workflows—including terahertz spectroscopy and impedance mapping—to test the model's validity.
+To govern the seamless step-down transition of these states across disparate biological dimensions without phase disruption, we introduce a scale-invariant parameter designated as El Gran Sol's Fractal constant (EGS fractal constant, $\Phi_{\text{EGS}} \approx 1.618$). This constant acts as the foundational structural anchor regulating the recursive hierarchy of downstream biological geometries.
+
+**We executed four empirical experiments (E1–E4) on publicly available recognized data** — UCSC T2T hs1 chromosome sizes, RCSB PDB 6VXX spike coordinates, Garten et al. 2015 THz reference peaks, and literature-calibrated LC dispersion numerics (§6; executed 2026-07-03). We additionally propose bench-tier laboratory protocols (§8) for in situ validation not yet run.
 
 ---
 
@@ -157,10 +160,13 @@ The mathematical results obtained strictly within the constraints of this theore
 
 ---
 
-## 6. Empirical Tests Using Public Data
+## 6. Empirical Experiments Executed on Public Data
 
-Reproducible pipeline: `npm run research:synthobs-chromosomal-electrodynamics`  
-Outputs: `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
+**Status: EXECUTED** — 2026-07-03 UTC  
+**Pipeline:** `npm run research:synthobs-chromosomal-electrodynamics`  
+**Receipt:** `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
+
+This section reports **completed** empirical work on recognized public datasets — not a future roadmap. All four tests (E1–E4) were executed in this repository and crystallized to JSON.
 
 ### 6.1 Data sources ingested
 
@@ -213,7 +219,7 @@ Macro chrY $f_0 \approx 0.37$–$0.57$ GHz (literature $v_p$ band) lies **~2.6 d
 | E3 EGS integer tiers | **moderate** | φ-tier fit strong virus↔genome; weak chrY↔antenna |
 | E4 THz alignment | **no_support** | Macro $f_0$ ≠ Garten 2015 molecular peaks |
 
-Correlation of public geometry with model coordinates **≠** in vivo electrodynamic validation.
+Correlation of public geometry with model coordinates is an **empirical result at the public-data tier** — it does not by itself establish in vivo electrodynamic mechanism.
 
 ---
 
@@ -235,7 +241,9 @@ Based on the mathematical results of the model, we propose the following biophys
 
 ---
 
-## 8. Methods, Testable Predictions & Experimental Validation Roadmap
+## 8. Proposed Laboratory Experiments (Future Tier — Not Yet Executed)
+
+The following bench protocols extend E1–E4 into **in situ** measurement. **None of §8.2–8.3 have been run** as of 2026-07-03.
 
 ### 8.1 Data sources & genomic coordinates
 
@@ -243,9 +251,9 @@ Based on the mathematical results of the model, we propose the following biophys
 |--------|------|
 | T2T-CHM13v2.0 (NCBI GCA_009914755.4) | Y-chromosome length $N \approx 60$ Mbp; $\Delta x = 0.34$ nm B-DNA pitch |
 | Published THz DNA dielectric literature | Prior art for hydrated nucleoprotein resonance bands |
-| SYNTHOBS empirical pipeline | `research/synthobs-chromosomal-electrodynamics/` | Public-data tests E1–E4 |
+| SYNTHOBS empirical pipeline (E1–E4 **executed**) | `research/synthobs-chromosomal-electrodynamics/` | Public-data experiments with JSON receipt |
 
-### 8.2 Experimental workflow
+### 8.2 Proposed laboratory workflow (not yet executed)
 
 ```
 +-------------------------------------------------------------+
@@ -281,7 +289,7 @@ Based on the mathematical results of the model, we propose the following biophys
 +-------------------------------------------------------------+
 ```
 
-### 8.3 Proposed experiments
+### 8.3 Proposed bench experiments (not yet executed)
 
 **Resonance spectra mapping:** Suspend intact, linearized human Y chromosome strands within a microfluidic channel using micro-fabricated optical tweezers. Subject the suspended polymer to a wideband radio-frequency and terahertz spectroscopic sweep (10 Hz to 10 THz).
 
@@ -313,8 +321,8 @@ Empirical report: `research/synthobs-chromosomal-electrodynamics/data/empirical_
 1. **Idealized one-dimensional assumption:** Perfectly linearized, uniform polymer chain; real chromosomes exist in dynamic 3D nuclear environments.
 2. **Simplified LC representation:** Ignores solvent shielding, histone core dynamics, and enzymatic remodeling.
 3. **Absence of direct empirical coupling constants:** $L_k$ and $C_k$ in active cellular matrix remain unmeasured.
-4. **THz misalignment at macro tier:** Public-data test E4 shows macro chrY $f_0$ does not align with Garten 2015 molecular THz peaks without additional coupling physics.
-5. **In vivo gap:** Public assembly and PDB geometry do not substitute for linearized-chromatin impedance spectroscopy.
+4. **THz misalignment at macro tier (E4 executed):** Public-data experiment E4 shows macro chrY $f_0$ does not align with Garten 2015 molecular THz peaks without additional coupling physics.
+5. **Bench tier pending:** E1–E4 use public assembly, PDB, and literature coordinates. Proposed §8 laboratory protocols (optical tweezers, in situ impedance) remain for in vivo confirmation.
 
 ---
 
@@ -332,7 +340,7 @@ This paper has mathematically demonstrated that an idealized, linearized represe
 
 We introduced El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) as a foundational scaling invariant regulating multi-scale step-down cascade across downstream biological geometries.
 
-While mathematical derivations and public-coordinate tests (E1–E3) are consistent within stated tiers, macro THz alignment (E4) is **not supported** on public data alone. Future terahertz spectroscopy and high-precision impedance mapping remain required.
+We **executed** empirical experiments E1–E4 on public data (2026-07-03): genomic coordinates (**support**), LC band-edge numerics (**support**), EGS φ tier stepping (**moderate**), and THz peak alignment (**no_support**). Mathematical derivations and E1–E3 are consistent within stated tiers. Bench-tier terahertz spectroscopy and in situ impedance mapping (§8) remain proposed for biological mechanism confirmation.
 
 ---
 

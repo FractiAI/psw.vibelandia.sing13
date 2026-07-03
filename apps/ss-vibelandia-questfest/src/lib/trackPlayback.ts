@@ -1,5 +1,12 @@
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
-import { getSimpleAudioElement, pauseSimpleAudio, playAudioNow } from '@/lib/simplePlayback';
+import { readPlaybackSession } from '@/lib/playbackSession';
+import {
+  getSimpleAudioElement,
+  pauseSimpleAudio,
+  playAudioNow,
+  urlMatchesElement,
+} from '@/lib/simplePlayback';
+import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import type { TrackDef } from '@/lib/catalogTypes';
 
@@ -16,11 +23,24 @@ export function consumeAppPause(): boolean {
   return true;
 }
 
+function resolveResumeAt(trackId: string): number {
+  const pb = usePlaybackStore.getState();
+  if (pb.currentTrackId === trackId && pb.displayTime > 0.25) return pb.displayTime;
+  const snap = readPlaybackSession();
+  if (snap?.trackId === trackId && snap.displayTime > 0.5) return snap.displayTime;
+  return 0;
+}
+
 /** Play from a list-row tap — src + play() in the same user gesture (iOS Safari). */
 export function startTrackPlayback(
   trackId: string,
   url: string,
-  opts?: { onError?: (msg: string | null) => void; beginSession?: () => void },
+  opts?: {
+    onError?: (msg: string | null) => void;
+    beginSession?: () => void;
+    /** When true, keep queue position for the same track (player bar resume). */
+    resume?: boolean;
+  },
 ): void {
   if (!trackId || !url) {
     const msg = 'No audio file on this track — tap Refresh.';
@@ -30,33 +50,81 @@ export function startTrackPlayback(
   }
 
   const pb = usePlaybackStore.getState();
+  const switching = pb.currentTrackId !== trackId;
+  const resume = opts?.resume === true && !switching;
+  const startAt = resume ? resolveResumeAt(trackId) : 0;
+
   pb.setPlaybackError(null);
   pb.setTrack(trackId);
-  pb.setDisplayTime(0);
+  if (switching || !resume) pb.setDisplayTime(0);
+  else if (startAt > 0.25) pb.setDisplayTime(startAt);
   pb.setGain(1);
   opts?.beginSession?.();
+
+  const fail = (msg: string) => {
+    pb.setPlaybackError(msg);
+    pb.setPlaying(false);
+    opts?.onError?.(msg);
+  };
 
   const el = getSimpleAudioElement();
   if (el) {
     pb.setPlaying(true);
-    void playAudioNow(url, 1)
+    void playAudioNow(url, 1, startAt)
       .then(() => pb.setPlaying(true))
-      .catch(() => {
-        const msg = 'Could not start — tap ▶ on the player bar or Safari controls below.';
-        pb.setPlaybackError(msg);
-        pb.setPlaying(false);
-        opts?.onError?.(msg);
-      });
+      .catch(() => fail('Could not start — tap ▶ on the player bar or Safari controls below.'));
     return;
   }
 
   pb.setPlaying(true);
-  void playAudioNow(url, 1).catch(() => {
-    const msg = 'Player not ready — refresh, then tap play on the audio bar below.';
-    pb.setPlaybackError(msg);
-    pb.setPlaying(false);
-    opts?.onError?.(msg);
-  });
+  void playAudioNow(url, 1, startAt).catch(() =>
+    fail('Player not ready — refresh, then tap play on the audio bar below.'),
+  );
+}
+
+/** Resume the track already shown in the player bar (same gesture as ▶). */
+export function resumeOrPlayTrack(
+  track: TrackDef,
+  opts?: { onError?: (msg: string | null) => void; beginSession?: () => void },
+): void {
+  const pb = usePlaybackStore.getState();
+  pb.setPlaybackError(null);
+  opts?.beginSession?.();
+
+  const startAt = resolveResumeAt(track.id);
+  const el = getSimpleAudioElement();
+
+  void resolvePlaybackUrl(track)
+    .then((url) => {
+      if (!url) {
+        const msg = 'No audio file on this track — tap Refresh.';
+        pb.setPlaybackError(msg);
+        opts?.onError?.(msg);
+        return;
+      }
+
+      if (el && urlMatchesElement(el, url) && el.src && !el.error) {
+        pb.setTrack(track.id);
+        pb.setPlaying(true);
+        if (startAt > 0.25) {
+          const at = Math.min(startAt, (el.duration || Infinity) - 0.25);
+          if (at > 0.25) {
+            el.currentTime = at;
+            pb.setDisplayTime(at);
+          }
+        }
+        el.volume = pb.gain;
+        void el.play().catch(() => startTrackPlayback(track.id, url, { ...opts, resume: true }));
+        return;
+      }
+
+      startTrackPlayback(track.id, url, { ...opts, resume: true });
+    })
+    .catch(() => {
+      const msg = 'No audio file on this track — tap Refresh.';
+      pb.setPlaybackError(msg);
+      opts?.onError?.(msg);
+    });
 }
 
 export function playTrackDef(
@@ -99,8 +167,15 @@ export function resumePlaybackIfNeeded(): void {
   if (document.hidden) return;
   const { isPlaying, currentTrackId } = usePlaybackStore.getState();
   if (!isPlaying || !currentTrackId) return;
+
   const el = getSimpleAudioElement();
   if (el?.paused && el.src) {
     void el.play().catch(() => {});
+    return;
+  }
+
+  if (el?.paused && !el.src) {
+    const tr = useCatalogStore.getState().getTrack(currentTrackId);
+    if (tr) resumeOrPlayTrack(tr);
   }
 }

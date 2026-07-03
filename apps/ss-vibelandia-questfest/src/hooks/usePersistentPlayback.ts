@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
-import { resumePlaybackIfNeeded } from '@/lib/trackPlayback';
+import { resumeOrPlayTrack, resumePlaybackIfNeeded } from '@/lib/trackPlayback';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
@@ -54,8 +54,11 @@ export function usePersistentPlayback() {
       });
       navigator.mediaSession.playbackState = isPlaying ? 'playing' : 'paused';
       navigator.mediaSession.setActionHandler('play', () => {
-        usePlaybackStore.getState().setPlaying(true);
-        resumePlaybackIfNeeded();
+        const pb = usePlaybackStore.getState();
+        const tr = pb.currentTrackId ? getTrack(pb.currentTrackId) : undefined;
+        pb.setPlaying(true);
+        if (tr) resumeOrPlayTrack(tr);
+        else resumePlaybackIfNeeded();
       });
       navigator.mediaSession.setActionHandler('pause', () => {
         usePlaybackStore.getState().setPlaying(false);

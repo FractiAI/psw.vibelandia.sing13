@@ -70,6 +70,9 @@ export function getAudioBindGeneration(): number {
 /** Keep the mounted element; drop stale nodes left after Strict Mode unmount. */
 export function bindSimpleAudioElement(el: HTMLAudioElement | null): void {
   if (el) {
+    if (audioEl && audioEl !== el) {
+      loadedUrl = null;
+    }
     audioEl = el;
     notifyBind();
     wireElement(el);
@@ -103,37 +106,36 @@ export function assignPlaybackSrc(el: HTMLAudioElement, url: string): void {
 }
 
 /** Call synchronously from click/tap handlers. */
-export function playAudioNow(url: string, volume = 1): Promise<void> {
+export function playAudioNow(url: string, volume = 1, startAt = 0): Promise<void> {
   const el = getSimpleAudioElement();
   if (!el || !url) return Promise.reject(new Error('no_audio_or_url'));
 
   el.volume = Math.max(0, Math.min(1, volume));
   assignPlaybackSrc(el, url);
 
-  const attempt = (): Promise<void> => el.play();
+  const seekIfNeeded = () => {
+    if (startAt > 0.25 && Number.isFinite(el.duration)) {
+      const at = Math.min(startAt, Math.max(0, el.duration - 0.25));
+      if (at > 0.25) el.currentTime = at;
+    }
+    engineHooks?.onTime(el.currentTime);
+  };
+
+  const attempt = (): Promise<void> => el.play().then(seekIfNeeded);
 
   if (readyEnough(el)) {
-    return attempt().then(() => {
-      engineHooks?.onTime(el.currentTime);
-    });
+    return attempt();
   }
 
   const gesturePlay = attempt();
   return gesturePlay.catch(() => {
     if (readyEnough(el) && loadedUrl === url) {
-      return attempt().then(() => {
-        engineHooks?.onTime(el.currentTime);
-      });
+      return attempt();
     }
     return new Promise<void>((resolve, reject) => {
       const onReady = () => {
         cleanup();
-        attempt()
-          .then(() => {
-            engineHooks?.onTime(el.currentTime);
-            resolve();
-          })
-          .catch(reject);
+        attempt().then(resolve).catch(reject);
       };
       const onFail = () => {
         cleanup();

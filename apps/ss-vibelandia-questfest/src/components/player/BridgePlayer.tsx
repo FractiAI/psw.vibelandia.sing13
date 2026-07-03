@@ -10,7 +10,7 @@ import {
   consumeAppPause,
   markAppPause,
   pausePlayback,
-  playTrackDef,
+  resumeOrPlayTrack,
   startTrackPlayback,
 } from '@/lib/trackPlayback';
 import { useActivePlaylist, useResolvedTrackIds, useResolvedTrackIdsKey } from '@/stores/catalogSelectors';
@@ -289,7 +289,7 @@ export function BridgePlayer({
       return;
     }
     beginSession();
-    playTrackDef(track, { beginSession });
+    resumeOrPlayTrack(track, { beginSession, onError: setPlaybackError });
   };
 
   return (

@@ -129,6 +129,8 @@ interface CatalogState {
       playlistIds?: string[];
       coverFile?: File | null;
       onProgress?: (message: string) => void;
+      /** Large bulk uploader — skip per-file metadata probes. */
+      skipDurationProbe?: boolean;
     },
   ) => Promise<{
     added: number;
@@ -749,7 +751,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       const report = opts?.onProgress;
       const singleFile = total === 1;
       const singleTitle = singleFile ? opts?.title?.trim() : undefined;
-      const skipDurationProbe = total >= SKIP_DURATION_PROBE_MIN_BATCH;
+      const skipDurationProbe =
+        opts?.skipDurationProbe === true || total >= SKIP_DURATION_PROBE_MIN_BATCH;
       const retainPerFileOnIos = isIOSDevice() && total > BULK_RETAIN_UPFRONT_MAX;
 
       for (let i = 0; i < files.length; i++) {

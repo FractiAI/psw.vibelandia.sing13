@@ -4,14 +4,15 @@ import { PlaybackRoot } from './components/player/PlaybackRoot';
 import { QuestfestFastLink } from './components/QuestfestFastLink';
 import { useIOSHtmlClass } from '@/lib/useIOSHtmlClass';
 import { BridgePage } from './pages/BridgePage';
+import { BulkUploadPage } from './pages/BulkUploadPage';
 import { RegistrationPage } from './pages/RegistrationPage';
 
 function AppChrome() {
   const { pathname } = useLocation();
-  const uploadRoute = pathname === '/dj';
+  const noPlayerRoute = pathname === '/dj' || pathname === '/bulk-upload';
   return (
     <>
-      {!uploadRoute ? <PlaybackRoot /> : null}
+      {!noPlayerRoute ? <PlaybackRoot /> : null}
       <MediaShell />
     </>
   );
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/bridge" element={<BridgePage />} />
         <Route path="/playlists" element={<BridgePage />} />
         <Route path="/dj" element={<BridgePage />} />
+        <Route path="/bulk-upload" element={<BulkUploadPage />} />
         <Route path="*" element={<Navigate to="/bridge" replace />} />
       </Routes>
       <AppChrome />

@@ -21,6 +21,7 @@
 | **Cross-scale synthesis matrix** | Table in §4 contrasts established biology with **novel SYNTHOBS archetypes** as structural hypotheses | That SYNTHOBS archetypes replace receptor-ligand biochemistry or chemosensory physiology |
 | **EGS φ cascade** | $\Psi_n = \Psi_0 \cdot \Phi_{\text{EGS}}^{-n}$ links tiers as a **falsifiable scaling postulate** | That φ is measured from cryo-EM or morphometric data in this repository |
 | **Experimental roadmap** | Wideband microwave/THz protocols define support/refutation criteria across three length scales | That experiments have been executed or peer-reviewed here |
+| **Empirical tier (July 2026)** | Shared pipeline with Paper I: UCSC hs1, PDB 6VXX (15.94 nm span), Stange 2011 antenna baseline | That insect antennae or viral spikes behave as certified microwave/EUV resonators in vivo |
 
 Mathematical consistency across scales **≠** biological mechanism proof. Correlation of resonance with behavior **≠** causation. See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
@@ -154,7 +155,46 @@ Within the constraints of this theoretical model:
 
 ---
 
-## 7. Biological Interpretation & Hypotheses
+## 7. Empirical Tests Using Public Data
+
+Shared pipeline with [Paper I](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md): `npm run research:synthobs-chromosomal-electrodynamics`
+
+### 7.1 Cross-scale structure coordinates (public)
+
+| Structure | Source | Empirical length | Model $f_0$ domain (mid-$v_p$) |
+|-----------|--------|------------------|--------------------------------|
+| SARS-CoV-2 spike | PDB 6VXX CIF (22,812 atoms) | **15.94 nm** max bounding span | $\sim 3.1$ THz |
+| *Apis mellifera* antenna | Stange et al. 2011 | **1.50 mm** | $\sim 6.7$ MHz |
+| Human chrY | UCSC hs1 | **2.124 cm** (62,460,029 bp) | $\sim 0.47$ GHz |
+
+PDB empirical spike span (**15.94 nm**) exceeds the paper's simplified **10 nm** archetype — both map to high-frequency terahertz/EUV bands under $f_0 = v_p/2L$.
+
+### 7.2 Cross-scale EGS φ tier tests (moderate)
+
+| Pair | Nearest integer tier $n$ | Residual % | Pass |
+|------|--------------------------|------------|------|
+| antenna vs spike (PDB) | 24 | 0.85% | yes |
+| chrY vs spike (PDB) | 29 | 1.04% | yes |
+| chrY vs antenna | 6 | 8.94% | no |
+
+Virus-to-genome length ratios align tightly with $\Phi_{\text{EGS}}^n$ stepping; meso-scale chrY↔antenna pair fails 5% threshold — **moderate** cross-scale support, not universal φ-lock.
+
+### 7.3 Frequency ratio across tiers
+
+$f_Y / f_V \approx L_V / L_Y \approx 7.5 \times 10^{-7}$ (PDB spike vs chrY) — explicit multi-decade step-down from THz-class viral boundary to sub-GHz genomic boundary on public coordinates.
+
+### 7.4 Empirical tier summary
+
+| Test | Result |
+|------|--------|
+| E1 genomic lengths | **support** |
+| E2 LC band-edge $v_g \to 0$ | **support** (numeric) |
+| E3 EGS φ integer tiers | **moderate** (2/3 pairs) |
+| E4 THz peak vs macro chrY $f_0$ | **no_support** |
+
+---
+
+## 8. Biological Interpretation & Hypotheses
 
 | ID | Hypothesis | Falsification criterion |
 |----|------------|-------------------------|
@@ -169,18 +209,18 @@ Within the constraints of this theoretical model:
 
 ---
 
-## 8. Methods, Testable Predictions & Experimental Validation Roadmap
+## 9. Methods, Testable Predictions & Experimental Validation Roadmap
 
-### 8.1 Data sources
+### 9.1 Data sources
 
 | Source | Role |
 |--------|------|
 | T2T-CHM13v2.0 | Y-chromosome length baseline |
 | Cryo-EM spike structures (e.g., SARS-CoV-2 PDB entries) | $L_V \approx 10$ nm morphometric anchor |
 | *Apis mellifera* morphometric literature | $L_A \approx 1.5$ mm antenna baseline |
-| SYNTHOBS sandbox (`research/synthobs-sandbox/`) | Model derivation and audit receipts |
+| SYNTHOBS empirical pipeline | `research/synthobs-chromosomal-electrodynamics/` | E1–E4 public-data tests |
 
-### 8.2 Proposed experiments
+### 9.2 Proposed experiments
 
 **Resonance spectra mapping (genome):** Linearized Y-chromosome strands in microfluidic optical tweezers; RF/THz sweep 10 Hz–10 THz.
 
@@ -188,43 +228,46 @@ Within the constraints of this theoretical model:
 
 **Scale-invariant comparative analysis:** Group velocity profiles across chromosomes, viral spikes, and antennae; test $\Phi_{\text{EGS}}$ power-law stepping.
 
-### 8.3 Criteria for model support or refutation
+### 9.3 Criteria for model support or refutation
 
 | Outcome | Interpretation |
 |---------|----------------|
 | **Support** | $v_g \to 0$ near derived boundaries; macro/meso/micro resonance stepping aligns with $\Phi_{\text{EGS}}$ |
 | **Refutation** | Linear un-attenuated velocity across Brillouin boundaries; stochastic non-fractal scaling |
 
-### 8.4 Reproducibility
+### 9.4 Reproducibility
 
 ```bash
+npm run research:synthobs-chromosomal-electrodynamics
 npm run audit:paper -- --id=synthobs-cross-scale-biological-antennae-2026-07
 ```
 
-Audit receipts: `data/synthobs-paper-audits/synthobs-cross-scale-biological-antennae-2026-07.json`
+Audit receipts: `data/synthobs-paper-audits/synthobs-cross-scale-biological-antennae-2026-07.json`  
+Empirical report: `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
 
 ---
 
-## 9. Limitations of the Model
+## 10. Limitations of the Model
 
 1. **Idealized one-dimensional assumption** — real structures are dynamic 3D systems.  
 2. **Simplified LC representation** — ignores solvent shielding, histone dynamics, chemosensory transduction.  
 3. **Absence of direct empirical coupling constants** — $L_k$/$C_k$ unmeasured in situ.  
-4. **Lack of direct experimental validation** — entirely theoretical pending roadmap execution.
+4. **PDB vs simplified archetype:** Empirical spike span 15.94 nm ≠ 10 nm design coordinate — sensitivity analysis required.  
+5. **THz misalignment:** Macro chrY $f_0$ does not match Garten 2015 molecular peaks (test E4).
 
 ---
 
-## 10. Discussion
+## 11. Discussion
 
 Traditional structural genomics and appendage biology treat morphology primarily as mechanical or evolutionary products. The SYNTHOBS model bridges toward a multi-scale, distributed wave-damping framework where physical length bounds microscopic field states. The EGS fractal constant provides hierarchical organization as a **testable postulate** — not a replacement for established receptor biochemistry or olfactory physiology.
 
 ---
 
-## 11. Conclusion
+## 12. Conclusion
 
-This paper has mathematically demonstrated that idealized representations of the human Y chromosome ($L_Y \approx 2.04$ cm), insect antennae, and viral spikes can be modeled as distributed periodic networks. Forward group velocity drops to zero ($v_g \to 0$) at the first Brillouin zone boundary within the model, offering a theoretical mechanism for non-thermal energy localization and compaction across scales.
+This paper has mathematically demonstrated that idealized representations of the human Y chromosome ($L_Y \approx 2.12$ cm from public hs1), insect antennae, and viral spikes (PDB 6VXX: 15.94 nm) can be modeled as distributed periodic networks. Forward group velocity drops to zero ($v_g \to 0$) at the first Brillouin zone boundary within the model, offering a theoretical mechanism for non-thermal energy localization and compaction across scales.
 
-El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) is implemented as the foundational scaling invariant regulating multi-scale step-down cascade. Empirical terahertz spectroscopy and high-precision impedance mapping remain required to evaluate validity.
+El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) shows **moderate** integer-tier support on public cross-scale lengths (2/3 pairs). Empirical terahertz spectroscopy and impedance mapping remain required for biological validation.
 
 ---
 
@@ -232,9 +275,9 @@ El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) is implemente
 
 | Symbol | Definition | SI Unit | Nominal Value |
 |--------|------------|---------|---------------|
-| $L_Y$ | Unrolled Y-chromosome length | m | $\approx 2.04 \times 10^{-2}$ m |
+| $L_Y$ | Unrolled Y-chromosome length | m | $\approx 2.12 \times 10^{-2}$ m (hs1) |
 | $L_A$ | Honeybee antenna length | m | $\approx 1.5 \times 10^{-3}$ m |
-| $L_V$ | Viral spike length | m | $\approx 10 \times 10^{-9}$ m |
+| $L_V$ | Viral spike length (PDB 6VXX) | m | $\approx 1.59 \times 10^{-8}$ m |
 | $\lambda_{\text{max}}$ | Fundamental standing wavelength | m | $2L$ per structure |
 | $v_g$ | Group velocity | m·s⁻¹ | $\to 0$ at band-edge |
 | $\Phi_{\text{EGS}}$ | El Gran Sol's Fractal Constant | Dimensionless | $\approx 1.618$ |

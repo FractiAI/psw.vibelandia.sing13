@@ -1,0 +1,343 @@
+{
+  "documentIds": [
+    "WP-SYNTHOBS-CHROM-ELCD-2026-07",
+    "WP-SYNTHOBS-CROSS-ANTENNAE-2026-07"
+  ],
+  "generatedAt": "2026-07-03T16:40:57.134Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "dataSources": {
+    "ucsc": {
+      "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hs1/bigZips/hs1.chrom.sizes",
+      "assembly": "hs1 (T2T-CHM13v2.0)"
+    },
+    "pdbSpike": {
+      "entry": "6VXX",
+      "url": "https://files.rcsb.org/download/6VXX.cif"
+    },
+    "antenna": "Stange et al. 2011 · Arthropod Struct. Dev.",
+    "thzPeaks": "Garten et al. 2015 · Chem. Phys. Lett. 634",
+    "vpBand": {
+      "low": 16000000,
+      "mid": 20000000,
+      "high": 24000000
+    }
+  },
+  "genomicLengths": [
+    {
+      "chrom": "chrY",
+      "bp": 62460029,
+      "lengthM": 0.02123640986,
+      "lengthCm": 2.123640986,
+      "lambdaMaxM": 0.04247281972
+    },
+    {
+      "chrom": "chr1",
+      "bp": 248387328,
+      "lengthM": 0.08445169152,
+      "lengthCm": 8.445169152,
+      "lambdaMaxM": 0.16890338304
+    },
+    {
+      "chrom": "chr21",
+      "bp": 45090682,
+      "lengthM": 0.015330831880000001,
+      "lengthCm": 1.5330831880000002,
+      "lambdaMaxM": 0.030661663760000003
+    },
+    {
+      "chrom": "chrX",
+      "bp": 154259566,
+      "lengthM": 0.05244825244,
+      "lengthCm": 5.244825244,
+      "lambdaMaxM": 0.10489650488
+    }
+  ],
+  "frequencyMap": [
+    {
+      "chrom": "chrY",
+      "bp": 62460029,
+      "lengthM": 0.02123640986,
+      "lengthCm": 2.123640986,
+      "lambdaMaxM": 0.04247281972,
+      "f0_Hz_midVp": 470889386.008488,
+      "f0_GHz_midVp": 0.470889386008488
+    },
+    {
+      "chrom": "chr1",
+      "bp": 248387328,
+      "lengthM": 0.08445169152,
+      "lengthCm": 8.445169152,
+      "lambdaMaxM": 0.16890338304,
+      "f0_Hz_midVp": 118410890.53416748,
+      "f0_GHz_midVp": 0.11841089053416748
+    },
+    {
+      "chrom": "chr21",
+      "bp": 45090682,
+      "lengthM": 0.015330831880000001,
+      "lengthCm": 1.5330831880000002,
+      "lambdaMaxM": 0.030661663760000003,
+      "f0_Hz_midVp": 652280324.9212853,
+      "f0_GHz_midVp": 0.6522803249212853
+    },
+    {
+      "chrom": "chrX",
+      "bp": 154259566,
+      "lengthM": 0.05244825244,
+      "lengthCm": 5.244825244,
+      "lambdaMaxM": 0.10489650488,
+      "f0_Hz_midVp": 190664121.96364114,
+      "f0_GHz_midVp": 0.19066412196364113
+    }
+  ],
+  "crossScaleStructures": [
+    {
+      "id": "viral_spike",
+      "label": "SARS-CoV-2 spike PDB 6VXX",
+      "lengthM": 1.5939500000000002e-8
+    },
+    {
+      "id": "honeybee_antenna",
+      "label": "Apis mellifera antenna",
+      "lengthM": 0.0015
+    },
+    {
+      "id": "chrY",
+      "label": "Human chrY hs1",
+      "lengthM": 0.02123640986
+    }
+  ],
+  "spike": {
+    "source": "https://files.rcsb.org/download/6VXX.cif",
+    "entry": "6VXX",
+    "atomCount": 22812,
+    "spanA": {
+      "x": 117.25799999999998,
+      "y": 125.93100000000001,
+      "z": 159.395
+    },
+    "maxSpanNm": 15.9395,
+    "maxSpanM": 1.5939500000000002e-8,
+    "fetchedAt": "2026-07-03T16:40:57.133Z"
+  },
+  "antenna": {
+    "source": "Stange et al. 2011 · Arthropod Struct. Dev.",
+    "lengthM": 0.0015,
+    "note": "Literature morphometric baseline; no public collar-style telemetry API for antenna length."
+  },
+  "egsScaling": {
+    "pairs": [
+      {
+        "pair": "honeybee_antenna_vs_viral_spike",
+        "lengthLongM": 0.0015,
+        "lengthShortM": 1.5939500000000002e-8,
+        "log10Ratio": 4.973616564997264,
+        "phi": 1.618033988749895,
+        "nContinuous": 23.79861583703283,
+        "nNearestInteger": 24,
+        "predictedLog10Ratio": 5.01570336599949,
+        "residualLog10": -0.04208680100222573,
+        "residualPct": 0.8462011586984668,
+        "passesIntegerTier": true
+      },
+      {
+        "pair": "chrY_vs_viral_spike",
+        "lengthLongM": 0.02123640986,
+        "lengthShortM": 1.5939500000000002e-8,
+        "log10Ratio": 6.124606404519661,
+        "phi": 1.618033988749895,
+        "nContinuous": 29.30606995319803,
+        "nNearestInteger": 29,
+        "predictedLog10Ratio": 6.060641567249383,
+        "residualLog10": 0.06396483727027835,
+        "residualPct": 1.0443909868734653,
+        "passesIntegerTier": true
+      },
+      {
+        "pair": "chrY_vs_honeybee_antenna",
+        "lengthLongM": 0.02123640986,
+        "lengthShortM": 0.0015,
+        "log10Ratio": 1.1509898395223972,
+        "phi": 1.618033988749895,
+        "nContinuous": 5.507454116165199,
+        "nNearestInteger": 6,
+        "predictedLog10Ratio": 1.2539258414998724,
+        "residualLog10": -0.10293600197747521,
+        "residualPct": 8.943258962232758,
+        "passesIntegerTier": false
+      }
+    ],
+    "summary": {
+      "totalPairs": 3,
+      "integerTierPasses": 2,
+      "integerTierPassRate": 0.6666666666666666,
+      "interpretation": "moderate"
+    }
+  },
+  "dispersion": {
+    "Lk": 1e-17,
+    "Ck": 2.8900000000000005e-17,
+    "vpMid": 20000000,
+    "bandEdgeVgIsZero": true,
+    "vgAtZero": 20000000,
+    "vgAtEdge": 1.2246467991473533e-9,
+    "vgMin": 31.415926541424252,
+    "profileSample": [
+      {
+        "k": 0,
+        "kOverKmax": 0,
+        "vg": 20000000,
+        "vp": 20000000
+      },
+      {
+        "k": 923996915.2932763,
+        "kOverKmax": 0.0999999,
+        "vg": 19753767.303355876,
+        "vp": 19917854.868959036
+      },
+      {
+        "k": 1847993830.5865526,
+        "kOverKmax": 0.1999998,
+        "vg": 19021132.26751317,
+        "vp": 19672633.513171535
+      },
+      {
+        "k": 2771990745.879829,
+        "kOverKmax": 0.29999970000000004,
+        "vg": 17820134.762525033,
+        "vp": 19267956.687906384
+      },
+      {
+        "k": 3695987661.1731052,
+        "kOverKmax": 0.3999996,
+        "vg": 16180347.273823077,
+        "vp": 18709788.205217402
+      },
+      {
+        "k": 4619984576.466381,
+        "kOverKmax": 0.4999995,
+        "vg": 14142146.730933936,
+        "vp": 18006330.18733113
+      },
+      {
+        "k": 5543981491.759658,
+        "kOverKmax": 0.5999994000000001,
+        "vg": 11755720.295455318,
+        "vp": 17167879.238849364
+      },
+      {
+        "k": 6467978407.052933,
+        "kOverKmax": 0.6999992999999999,
+        "vg": 9079829.589042306,
+        "vp": 16206646.287021598
+      },
+      {
+        "k": 7391975322.3462105,
+        "kOverKmax": 0.7999992,
+        "vg": 6180363.790151388,
+        "vp": 15136543.529004829
+      },
+      {
+        "k": 8315972237.639486,
+        "kOverKmax": 0.8999990999999999,
+        "vg": 3128717.227031406,
+        "vp": 13972942.545567965
+      },
+      {
+        "k": 9239969152.932762,
+        "kOverKmax": 0.999999,
+        "vg": 31.415926541424252,
+        "vp": 12732408.179744098
+      }
+    ]
+  },
+  "thzAlignment": {
+    "chrY_bp": 62460029,
+    "chrY_lengthM": 0.02123640986,
+    "garten2015Peaks_GHz": [
+      220,
+      420,
+      850
+    ],
+    "vpSensitivity": [
+      {
+        "vp_m_s": 16000000,
+        "f0_Hz": 376711508.8067904,
+        "f0_GHz": 0.3767115088067904,
+        "nearestGarten2015Peak_GHz": 220,
+        "log10DeltaFromNearestPeak": 2.7664137924083407,
+        "withinOneDecadeOfThzPeak": false
+      },
+      {
+        "vp_m_s": 20000000,
+        "f0_Hz": 470889386.008488,
+        "f0_GHz": 0.470889386008488,
+        "nearestGarten2015Peak_GHz": 220,
+        "log10DeltaFromNearestPeak": 2.6695037794002845,
+        "withinOneDecadeOfThzPeak": false
+      },
+      {
+        "vp_m_s": 24000000,
+        "f0_Hz": 565067263.2101855,
+        "f0_GHz": 0.5650672632101855,
+        "nearestGarten2015Peak_GHz": 220,
+        "log10DeltaFromNearestPeak": 2.59032253335266,
+        "withinOneDecadeOfThzPeak": false
+      }
+    ],
+    "note": "Standing-wave f0 from macro boundary length vs published THz molecular peaks — correlation only."
+  },
+  "hypothesisTests": {
+    "E1_genomic_lengths_public": {
+      "statement": "T2T hs1 chromosome bp counts match published assembly order of magnitude",
+      "result": "support",
+      "chrY_bp": 62460029,
+      "paperNominal_bp": 60000000
+    },
+    "E2_band_edge_vg_zero": {
+      "statement": "Discrete LC model yields v_g → 0 at first Brillouin zone edge",
+      "result": "support",
+      "vgAtEdge": 1.2246467991473533e-9,
+      "vgMin": 31.415926541424252
+    },
+    "E3_egs_integer_tiers": {
+      "statement": "Cross-scale length ratios align with integer n·log10(φ) within 5%",
+      "result": "moderate",
+      "totalPairs": 3,
+      "integerTierPasses": 2,
+      "integerTierPassRate": 0.6666666666666666,
+      "interpretation": "moderate"
+    },
+    "E4_thz_peak_proximity": {
+      "statement": "Macro chrY f0 lies within one decade of published DNA THz peaks (Garten 2015)",
+      "result": "no_support",
+      "vpSensitivity": [
+        {
+          "vp_m_s": 16000000,
+          "f0_Hz": 376711508.8067904,
+          "f0_GHz": 0.3767115088067904,
+          "nearestGarten2015Peak_GHz": 220,
+          "log10DeltaFromNearestPeak": 2.7664137924083407,
+          "withinOneDecadeOfThzPeak": false
+        },
+        {
+          "vp_m_s": 20000000,
+          "f0_Hz": 470889386.008488,
+          "f0_GHz": 0.470889386008488,
+          "nearestGarten2015Peak_GHz": 220,
+          "log10DeltaFromNearestPeak": 2.6695037794002845,
+          "withinOneDecadeOfThzPeak": false
+        },
+        {
+          "vp_m_s": 24000000,
+          "f0_Hz": 565067263.2101855,
+          "f0_GHz": 0.5650672632101855,
+          "nearestGarten2015Peak_GHz": 220,
+          "log10DeltaFromNearestPeak": 2.59032253335266,
+          "withinOneDecadeOfThzPeak": false
+        }
+      ]
+    }
+  },
+  "honestyNote": "Public assembly sizes and PDB spans are empirical. LC dispersion band-edge is analytic confirmation. EGS integer-tier and THz alignment are falsification probes — correlation ≠ causation."
+}

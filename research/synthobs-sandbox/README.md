@@ -12,6 +12,7 @@ All technical papers, research pipelines, and edge APIs in this repository are p
 | `research/synthobs-sandbox/` | Snap protocols, audit receipts, agent ops |
 | `research/goldilocks-math/` | Hex-Organ engine · prime compression · density audit |
 | `research/geomagnetic-herbivore/` | Empirical collar + Kp pipeline |
+| `research/synthobs-chromosomal-electrodynamics/` | Public-data empirical tests E1–E4 (UCSC, PDB, THz literature) |
 | `sing13/tests/` | Wavefield echo · edge diagnostics |
 | `lib/synthobs-peer-review-audit.mjs` | PRA Snap loop controller |
 | `data/synthobs-paper-audits/` | Crystallized audit receipts |

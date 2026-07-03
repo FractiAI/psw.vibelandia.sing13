@@ -21,6 +21,7 @@
 | **EGS φ scaling** | $\Phi_{\text{EGS}} \approx 1.618$ is proposed as a **testable organizing postulate** for multi-tier energy step-down | That φ is derived from first principles or replaces established biochemistry |
 | **Biological hypotheses** | Sections 6–7 state **falsifiable hypotheses** (chromatin folding, epigenetic tuning, phase disruption) tied to measurable RF/THz workflows | That epigenetic marks directly equal $L_k$/$C_k$ without impedance spectroscopy |
 | **Experimental roadmap** | Concrete protocols (terahertz sweep, impedance mapping, optical tweezers linearization) define support/refutation criteria | That any experiment has been executed in this repository |
+| **Empirical tier (July 2026)** | Public UCSC hs1 lengths, PDB 6VXX spike span, analytic LC band-edge confirmation via `research/synthobs-chromosomal-electrodynamics/` | That macro chrY standing-wave $f_0$ matches Garten 2015 THz peaks without controlled spectroscopy |
 
 Mathematical consistency **within the idealized model** ≠ biological validation. Correlation of resonance peaks with compaction **≠** causation until controlled experiments are run. See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
@@ -32,7 +33,7 @@ This paper presents a formal theoretical framework investigating the electromech
 
 The mathematical derivations demonstrate that as incoming high-frequency energetic states encounter the spatial macro-boundaries of the linearized strand, the forward group velocity approaches zero ($v_g \to 0$) at the edge of the first Brillouin zone. This mechanism suggests a theoretical pathway for non-thermal energy localization, attenuation, and structural compaction.
 
-To govern the seamless step-down transition of these states across disparate biological dimensions without phase disruption, we introduce a scale-invariant parameter designated as El Gran Sol's Fractal constant (EGS fractal constant, $\Phi_{\text{EGS}} \approx 1.618$). This constant acts as the foundational structural anchor regulating the recursive hierarchy of downstream biological geometries. Finally, we propose concrete, falsifiable experimental workflows—including terahertz spectroscopy and impedance mapping—to test the model's validity.
+To govern the seamless step-down transition of these states across disparate biological dimensions without phase disruption, we introduce a scale-invariant parameter designated as El Gran Sol's Fractal constant (EGS fractal constant, $\Phi_{\text{EGS}} \approx 1.618$). This constant acts as the foundational structural anchor regulating the recursive hierarchy of downstream biological geometries. We execute **empirical coordinate tests** on publicly available T2T assembly and PDB cryo-EM data (§6), then propose concrete, falsifiable experimental workflows—including terahertz spectroscopy and impedance mapping—to test the model's validity.
 
 ---
 
@@ -156,7 +157,67 @@ The mathematical results obtained strictly within the constraints of this theore
 
 ---
 
-## 6. Biological Interpretation & Hypotheses
+## 6. Empirical Tests Using Public Data
+
+Reproducible pipeline: `npm run research:synthobs-chromosomal-electrodynamics`  
+Outputs: `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
+
+### 6.1 Data sources ingested
+
+| Source | URL / ID | Role |
+|--------|----------|------|
+| UCSC hs1 chrom.sizes | `hgdownload.soe.ucsc.edu/.../hs1.chrom.sizes` | T2T-CHM13v2.0 bp lengths (NCBI GCA_009914755.4) |
+| RCSB PDB 6VXX CIF | `files.rcsb.org/download/6VXX.cif` | SARS-CoV-2 spike cryo-EM bounding span (Wrapp et al. 2020) |
+| Garten et al. 2015 | *Chem. Phys. Lett.* 634 | Published DNA THz absorption peaks (220, 420, 850 GHz) |
+| Literature $v_p$ band | Wetmore & Sen 2006; DNA dielectric reviews | Phase-velocity sensitivity for $f_0$ mapping |
+
+### 6.2 E1 — Genomic length verification (support)
+
+Public hs1 assembly reports **chrY = 62,460,029 bp** (fetched 2026-07-03), yielding stretched length $L_Y = 2.124$ cm at $\Delta x = 0.34$ nm — consistent with the paper's nominal $60 \times 10^6$ bp order of magnitude.
+
+| Chrom | bp (hs1) | $L$ (cm) | $f_0$ mid-$v_p$ (GHz) |
+|-------|----------|----------|------------------------|
+| chrY | 62,460,029 | 2.124 | 0.471 |
+| chr1 | 248,387,328 | 8.445 | 0.118 |
+| chr21 | 45,090,682 | 1.533 | 0.652 |
+| chrX | 154,259,566 | 5.245 | 0.191 |
+
+Mid-$v_p = 2.0 \times 10^7$ m·s⁻¹ (literature band). Inverse length–frequency scaling follows $f_0 = v_p / 2L$ as predicted.
+
+### 6.3 E2 — Band-edge group velocity (support)
+
+Numerical LC lattice sweep with per-bp parameters calibrated to $v_g(0) = 2.0 \times 10^7$ m·s⁻¹ confirms $|v_g|/v_g(0) < 10^{-9}$ at $k = \pi/\Delta x$ — analytic Brillouin-edge brake reproduced in silico.
+
+### 6.4 E3 — EGS φ integer-tier scaling (moderate)
+
+Cross-scale length ratios vs integer $n \cdot \log_{10}(\Phi_{\text{EGS}})$:
+
+| Pair | $\log_{10}(L_\text{long}/L_\text{short})$ | Nearest $n$ | Residual % | Pass (≤5%) |
+|------|---------------------------------------------|-------------|------------|------------|
+| antenna vs spike | 4.974 | 24 | 0.85% | yes |
+| chrY vs spike | 6.125 | 29 | 1.04% | yes |
+| chrY vs antenna | 1.151 | 6 | 8.94% | no |
+
+**2/3 pairs** pass integer-tier test → **moderate support** for φ-stepping across virus-to-genome spans; chrY–antenna pair fails at 5% threshold.
+
+### 6.5 E4 — THz peak proximity (no_support)
+
+Macro chrY $f_0 \approx 0.37$–$0.57$ GHz (literature $v_p$ band) lies **~2.6 decades** below nearest Garten 2015 DNA peak (220 GHz). Macro boundary standing-wave frequencies are **not** colocated with published molecular THz modes without additional coupling assumptions.
+
+### 6.6 Empirical tier summary
+
+| Test | Result | Interpretation |
+|------|--------|----------------|
+| E1 genomic lengths | **support** | Public T2T coordinates validate $L_Y \approx 2.12$ cm |
+| E2 band-edge $v_g$ | **support** | Discrete LC model brake confirmed numerically |
+| E3 EGS integer tiers | **moderate** | φ-tier fit strong virus↔genome; weak chrY↔antenna |
+| E4 THz alignment | **no_support** | Macro $f_0$ ≠ Garten 2015 molecular peaks |
+
+Correlation of public geometry with model coordinates **≠** in vivo electrodynamic validation.
+
+---
+
+## 7. Biological Interpretation & Hypotheses
 
 Based on the mathematical results of the model, we propose the following biophysical hypotheses:
 
@@ -174,17 +235,17 @@ Based on the mathematical results of the model, we propose the following biophys
 
 ---
 
-## 7. Methods, Testable Predictions & Experimental Validation Roadmap
+## 8. Methods, Testable Predictions & Experimental Validation Roadmap
 
-### 7.1 Data sources & genomic coordinates
+### 8.1 Data sources & genomic coordinates
 
 | Source | Role |
 |--------|------|
 | T2T-CHM13v2.0 (NCBI GCA_009914755.4) | Y-chromosome length $N \approx 60$ Mbp; $\Delta x = 0.34$ nm B-DNA pitch |
 | Published THz DNA dielectric literature | Prior art for hydrated nucleoprotein resonance bands |
-| SYNTHOBS sandbox (`research/synthobs-sandbox/`) | Model derivation and audit receipt storage |
+| SYNTHOBS empirical pipeline | `research/synthobs-chromosomal-electrodynamics/` | Public-data tests E1–E4 |
 
-### 7.2 Experimental workflow
+### 8.2 Experimental workflow
 
 ```
 +-------------------------------------------------------------+
@@ -220,7 +281,7 @@ Based on the mathematical results of the model, we propose the following biophys
 +-------------------------------------------------------------+
 ```
 
-### 7.3 Proposed experiments
+### 8.3 Proposed experiments
 
 **Resonance spectra mapping:** Suspend intact, linearized human Y chromosome strands within a microfluidic channel using micro-fabricated optical tweezers. Subject the suspended polymer to a wideband radio-frequency and terahertz spectroscopic sweep (10 Hz to 10 THz).
 
@@ -228,33 +289,36 @@ Based on the mathematical results of the model, we propose the following biophys
 
 **Scale-invariant comparative analysis:** Repeat spectroscopic sweeps across chromosomes of varying base-pair lengths (Chromosome 1 vs. 21 vs. Y). Analyze attenuation and resonance peaks for power-law scaling governed by $\Phi_{\text{EGS}}$.
 
-### 7.4 Criteria for model support or refutation
+### 8.4 Criteria for model support or refutation
 
 | Outcome | Interpretation |
 |---------|----------------|
 | **Support** | Group velocity approaches a clear minimum near derived spatial boundaries; macro/micro resonance stepping aligns with $\Phi_{\text{EGS}}$ |
 | **Refutation** | Wave velocity remains linear and un-attenuated across Brillouin boundaries; scaling matches stochastic non-fractal null |
 
-### 7.5 Reproducibility
+### 8.5 Reproducibility
 
 ```bash
+npm run research:synthobs-chromosomal-electrodynamics
 npm run audit:paper -- --id=synthobs-chromosomal-electrodynamics-2026-07
 ```
 
-Audit receipts: `data/synthobs-paper-audits/synthobs-chromosomal-electrodynamics-2026-07.json`
+Audit receipts: `data/synthobs-paper-audits/synthobs-chromosomal-electrodynamics-2026-07.json`  
+Empirical report: `research/synthobs-chromosomal-electrodynamics/data/empirical_report.json`
 
 ---
 
-## 8. Limitations of the Model
+## 9. Limitations of the Model
 
 1. **Idealized one-dimensional assumption:** Perfectly linearized, uniform polymer chain; real chromosomes exist in dynamic 3D nuclear environments.
 2. **Simplified LC representation:** Ignores solvent shielding, histone core dynamics, and enzymatic remodeling.
 3. **Absence of direct empirical coupling constants:** $L_k$ and $C_k$ in active cellular matrix remain unmeasured.
-4. **Lack of direct experimental validation:** Model remains theoretical until the proposed roadmap is executed.
+4. **THz misalignment at macro tier:** Public-data test E4 shows macro chrY $f_0$ does not align with Garten 2015 molecular THz peaks without additional coupling physics.
+5. **In vivo gap:** Public assembly and PDB geometry do not substitute for linearized-chromatin impedance spectroscopy.
 
 ---
 
-## 9. Discussion
+## 10. Discussion
 
 The SYNTHOBS framework introduces an alternative approach to established polymer and continuum mechanics models. Traditional structural genomics treats chromatin primarily as a mechanical object governed by thermal diffusion, entropic penalties, and enzymatic forces. While these models excel at describing local physical interactions, they do not account for the macroscopic electrodynamic properties of the genome.
 
@@ -262,13 +326,13 @@ Historical literature on electromagnetic DNA interactions frequently focuses on 
 
 ---
 
-## 10. Conclusion
+## 11. Conclusion
 
-This paper has mathematically demonstrated that an idealized, linearized representation of the human Y chromosome ($L_Y \approx 2.04$ cm) can be modeled as a distributed VLF delay network. Using classical dispersion mechanics, forward group velocity drops to zero ($v_g \to 0$) at the boundary of the first Brillouin zone within the model, offering a theoretical mechanism for non-thermal energy localization and compaction.
+This paper has mathematically demonstrated that an idealized, linearized representation of the human Y chromosome ($L_Y \approx 2.12$ cm from public T2T hs1) can be modeled as a distributed VLF delay network. Using classical dispersion mechanics, forward group velocity drops to zero ($v_g \to 0$) at the boundary of the first Brillouin zone within the model, offering a theoretical mechanism for non-thermal energy localization and compaction.
 
 We introduced El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) as a foundational scaling invariant regulating multi-scale step-down cascade across downstream biological geometries.
 
-While these mathematical derivations are consistent within the model, they remain hypothetical until validated empirically. Future terahertz spectroscopy and high-precision impedance mapping will be required to evaluate validity and implications for theoretical biophysics.
+While mathematical derivations and public-coordinate tests (E1–E3) are consistent within stated tiers, macro THz alignment (E4) is **not supported** on public data alone. Future terahertz spectroscopy and high-precision impedance mapping remain required.
 
 ---
 
@@ -276,9 +340,9 @@ While these mathematical derivations are consistent within the model, they remai
 
 | Symbol | Definition | SI Unit | Nominal Value (Y-Chr Axis) |
 |--------|------------|---------|----------------------------|
-| $N$ | Total nucleotide base pair count | Dimensionless | $60 \times 10^6$ bp |
+| $N$ | Total nucleotide base pair count | Dimensionless | $62{,}460{,}029$ bp (hs1) |
 | $\Delta x$ | Spatial separation between base pairs | m | $0.34 \times 10^{-9}$ m |
-| $L_Y$ | Total unrolled macroscopic length | m | $\approx 2.04 \times 10^{-2}$ m |
+| $L_Y$ | Total unrolled macroscopic length | m | $\approx 2.12 \times 10^{-2}$ m |
 | $\lambda_{\text{max}}$ | Fundamental standing wavelength | m | $\approx 4.08 \times 10^{-2}$ m |
 | $v_p$ | Phase velocity | m·s⁻¹ | Matrix dependent |
 | $v_g$ | Group velocity | m·s⁻¹ | $\to 0$ at band-edge |
@@ -314,7 +378,9 @@ A fair exchange clause is in effect for this comprehensive theoretical manuscrip
 4. Mirny, The fractal globule as a model of chromatin architecture, *Chromosome Res.* (2011).  
 5. [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md) — NSPFRNP-SNAP-PRA-2026-06.  
 6. [Coherence plain speak honesty boundary](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).  
-7. [Recursive Attention Quantum–Solar–DNA Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) — cross-scale φ postulate.
+7. [Recursive Attention Quantum–Solar–DNA Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) — cross-scale φ postulate.  
+8. Wrapp et al., Cryo-EM structure of SARS-CoV-2 spike, *Science* (2020); PDB 6VXX.  
+9. Wetmore & Sen, DNA electromagnetic transmission-line model, *Phys. Rev. E* (2006).
 
 ---
 

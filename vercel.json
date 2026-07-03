@@ -15,6 +15,7 @@
     { "source": "/commons/guide/", "destination": "/interfaces/commons/guide.html" },
     { "source": "/commons/chef", "destination": "/interfaces/commons/chef.html" },
     { "source": "/commons/chef/", "destination": "/interfaces/commons/chef.html" },
+    { "source": "/commons/:asset(.+\\.(?:jpg|jpeg|png|webp|gif|css|svg|ico))", "destination": "/interfaces/commons/:asset" },
     { "source": "/questfest-guide", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
     { "source": "/questfest-guide/", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
     { "source": "/guide/2026", "destination": "/interfaces/questfest-2026-frontier-guide.html" },

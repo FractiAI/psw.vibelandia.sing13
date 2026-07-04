@@ -1,5 +1,5 @@
 /**
- * Bulk track uploader — 500+ files without preloading metadata or rendering huge lists.
+ * Bulk track uploader — one select, then upload progress (current / total).
  */
 import { useCallback, useId, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
@@ -10,8 +10,6 @@ import {
   filterFilesForBulkUpload,
   runBulkUploadQueue,
   scanFolderForBulkUpload,
-  summarizeBulkQueue,
-  type BulkQueueSummary,
   type BulkUploadProgress,
 } from '@/lib/bulkTrackUpload';
 import {
@@ -32,7 +30,7 @@ const IDLE_PROGRESS: BulkUploadProgress = {
   added: 0,
   skipped: 0,
   failed: 0,
-  message: 'Pick a folder or many files — uploads run in small batches so the page stays responsive.',
+  message: 'Select a folder or many audio files — upload starts automatically.',
 };
 
 export function BulkTrackUploader() {
@@ -49,14 +47,24 @@ export function BulkTrackUploader() {
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
 
-  const [summary, setSummary] = useState<BulkQueueSummary | null>(null);
   const [progress, setProgress] = useState<BulkUploadProgress>(IDLE_PROGRESS);
   const [indexPct, setIndexPct] = useState(0);
+  const [duplicatesSkipped, setDuplicatesSkipped] = useState(0);
 
   const serverReady = isServerUploadConfigured();
   const ios = isIOSDevice();
-  const busy = progress.phase === 'indexing' || progress.phase === 'uploading';
-  const canStart = summary != null && summary.toUpload > 0 && progress.phase === 'ready';
+  const folderApi = supportsDirectoryPicker();
+  const busy =
+    progress.phase === 'indexing' ||
+    progress.phase === 'uploading' ||
+    progress.phase === 'paused';
+  const showProgress =
+    progress.phase === 'indexing' ||
+    progress.phase === 'uploading' ||
+    progress.phase === 'paused' ||
+    progress.phase === 'done' ||
+    progress.phase === 'cancelled';
+  const idle = progress.phase === 'idle' || progress.phase === 'ready';
 
   const controls = {
     pause: () => {
@@ -75,52 +83,44 @@ export function BulkTrackUploader() {
 
   const resetQueue = useCallback(() => {
     queueRef.current = [];
-    setSummary(null);
     setIndexPct(0);
+    setDuplicatesSkipped(0);
     pausedRef.current = false;
     cancelledRef.current = false;
+    busyRef.current = false;
     if (inputRef.current) inputRef.current.value = '';
-    setProgress({
-      ...IDLE_PROGRESS,
-      message: 'Queue cleared. Pick files or a folder to start again.',
-    });
+    setProgress({ ...IDLE_PROGRESS });
   }, []);
 
-  const finalizeQueue = useCallback(
-    (valid: File[], rejected: number) => {
-      const { newFiles, duplicates } = classifyFilesAgainstCatalog(valid, tracks);
-      queueRef.current = newFiles;
-      const sum = summarizeBulkQueue(valid, tracks);
-      setSummary({ ...sum, rejected });
-      setProgress({
-        phase: 'ready',
-        summary: sum,
-        chunkIndex: 0,
-        chunkTotal: Math.ceil(newFiles.length / 20) || 0,
-        fileIndex: 0,
-        fileTotal: newFiles.length,
-        added: 0,
-        skipped: duplicates.length,
-        failed: 0,
-        message:
-          newFiles.length === 0
-            ? duplicates.length
-              ? `All ${valid.length} files are already in the catalog.`
-              : 'No valid audio files in selection.'
-            : `Ready: ${newFiles.length} new tracks (${duplicates.length} duplicates skipped, ${rejected} rejected). Tap Start bulk upload.`,
-      });
+  const startUpload = useCallback(
+    async (queue: File[]) => {
+      if (!queue.length || !serverReady || busyRef.current) return;
+
+      busyRef.current = true;
+      pausedRef.current = false;
+      cancelledRef.current = false;
+      setActivePlaylist(MASTER_PLAYLIST_ID);
+
+      await runBulkUploadQueue(queue, importMediaFiles, controls, setProgress);
+
+      busyRef.current = false;
+      queueRef.current = [];
+      void syncLibraryFromServer();
     },
-    [tracks],
+    [importMediaFiles, setActivePlaylist, syncLibraryFromServer],
   );
 
-  const indexFiles = useCallback(
+  const processSelection = useCallback(
     async (picked: File[]) => {
-      if (!picked.length) return;
+      if (!picked.length || !serverReady || busyRef.current) return;
+
       busyRef.current = true;
       setProgress((p) => ({
         ...p,
         phase: 'indexing',
-        message: `Indexing ${picked.length} files…`,
+        fileTotal: picked.length,
+        fileIndex: 0,
+        message: `Scanning ${picked.length} files…`,
       }));
       setIndexPct(0);
 
@@ -129,60 +129,101 @@ export function BulkTrackUploader() {
         setProgress((p) => ({
           ...p,
           phase: 'indexing',
+          fileIndex: indexed,
+          fileTotal: total,
           message: `Checking ${indexed} of ${total}…`,
         }));
       });
 
-      finalizeQueue(valid, rejected);
+      const { newFiles, duplicates } = classifyFilesAgainstCatalog(valid, tracks);
+      setDuplicatesSkipped(duplicates.length);
+      queueRef.current = newFiles;
+
+      if (newFiles.length === 0) {
+        busyRef.current = false;
+        setProgress({
+          phase: 'done',
+          summary: null,
+          chunkIndex: 0,
+          chunkTotal: 0,
+          fileIndex: 0,
+          fileTotal: valid.length,
+          added: 0,
+          skipped: duplicates.length,
+          failed: rejected,
+          message:
+            duplicates.length > 0
+              ? `All ${valid.length} files are already in the catalog.`
+              : rejected > 0
+                ? `No valid audio files (${rejected} rejected).`
+                : 'No valid audio files in selection.',
+        });
+        return;
+      }
+
+      setProgress({
+        phase: 'uploading',
+        summary: null,
+        chunkIndex: 0,
+        chunkTotal: Math.ceil(newFiles.length / 20),
+        fileIndex: 0,
+        fileTotal: newFiles.length,
+        added: 0,
+        skipped: duplicates.length,
+        failed: rejected,
+        message: `Uploading 0 of ${newFiles.length}…`,
+      });
+
       busyRef.current = false;
+      await startUpload(newFiles);
     },
-    [finalizeQueue],
+    [serverReady, startUpload, tracks],
   );
 
   const handleFiles = (picked: File[]) => {
     deferAfterFilePicker(() => {
-      void indexFiles(picked);
+      void processSelection(picked);
     });
   };
 
-  const handleFolder = async () => {
+  const handlePrimarySelect = () => {
     if (!serverReady || busyRef.current) return;
-    busyRef.current = true;
-    setProgress((p) => ({ ...p, phase: 'indexing', message: 'Opening folder picker…' }));
-    const files = await scanFolderForBulkUpload((msg) => {
-      setProgress((p) => ({ ...p, phase: 'indexing', message: msg }));
-    });
-    busyRef.current = false;
-    if (!files?.length) {
-      setProgress((p) => ({
-        ...p,
-        phase: 'idle',
-        message: 'Folder import cancelled or no audio files found.',
-      }));
+    if (folderApi) {
+      void (async () => {
+        busyRef.current = true;
+        setProgress((p) => ({
+          ...p,
+          phase: 'indexing',
+          message: 'Choose a folder…',
+        }));
+        const files = await scanFolderForBulkUpload((msg) => {
+          setProgress((p) => ({ ...p, phase: 'indexing', message: msg }));
+        });
+        busyRef.current = false;
+        if (!files?.length) {
+          setProgress({ ...IDLE_PROGRESS, message: 'Selection cancelled.' });
+          return;
+        }
+        await processSelection(files);
+      })();
       return;
     }
-    await indexFiles(files);
-  };
-
-  const startUpload = async () => {
-    const queue = queueRef.current;
-    if (!queue.length || !serverReady || busyRef.current) return;
-
-    busyRef.current = true;
-    pausedRef.current = false;
-    cancelledRef.current = false;
-    setActivePlaylist(MASTER_PLAYLIST_ID);
-
-    await runBulkUploadQueue(queue, importMediaFiles, controls, setProgress);
-
-    busyRef.current = false;
-    queueRef.current = [];
-    setSummary(null);
-    void syncLibraryFromServer();
+    inputRef.current?.click();
   };
 
   const pctUpload =
     progress.fileTotal > 0 ? Math.round((progress.fileIndex / progress.fileTotal) * 100) : 0;
+  const progressPct = progress.phase === 'indexing' ? indexPct : pctUpload;
+  const progressLabel =
+    progress.phase === 'indexing'
+      ? `Checking ${progress.fileIndex} of ${progress.fileTotal || '…'}`
+      : progress.phase === 'uploading' || progress.phase === 'paused'
+        ? `Uploading ${progress.fileIndex} of ${progress.fileTotal}`
+        : progress.phase === 'done'
+          ? `Complete — ${progress.added} uploaded`
+          : progress.phase === 'cancelled'
+            ? `Stopped — ${progress.added} uploaded`
+            : progress.message;
 
   return (
     <section className="bulk-uploader" aria-labelledby="bulk-uploader-h">
@@ -192,9 +233,8 @@ export function BulkTrackUploader() {
           Large-batch track uploader
         </h1>
         <p className="bulk-uploader-desc">
-          Built for huge libraries. Files are indexed in small slices, then uploaded in batches of 20 —
-          no metadata preloading, no giant file list, no UI freeze. Use <strong>Import folder</strong> for
-          500+ tracks (recommended on desktop).
+          One selection, automatic upload. Pick a folder (desktop) or many files — progress shows{' '}
+          <strong>current vs total</strong> until finished.
         </p>
       </header>
 
@@ -205,109 +245,110 @@ export function BulkTrackUploader() {
       ) : null}
 
       <div className="bulk-uploader-card">
-        <div className="bulk-uploader-actions">
-          <span className="bulk-uploader-pick-wrap">
-            <input
-              id={inputId}
-              ref={inputRef}
-              type="file"
-              accept={uploadFileInputAccept()}
-              multiple
-              className="bulk-uploader-input"
-              disabled={busy}
-              onChange={(e) => {
-                const picked = e.target.files?.length ? Array.from(e.target.files) : [];
-                if (picked.length) handleFiles(picked);
-              }}
-            />
-            <label htmlFor={inputId} className="bulk-uploader-btn bulk-uploader-btn--ghost">
-              Choose many files
-            </label>
-          </span>
-          {supportsDirectoryPicker() ? (
+        <input
+          id={inputId}
+          ref={inputRef}
+          type="file"
+          accept={uploadFileInputAccept()}
+          multiple
+          className="bulk-uploader-input"
+          disabled={busy}
+          onChange={(e) => {
+            const picked = e.target.files?.length ? Array.from(e.target.files) : [];
+            if (picked.length) handleFiles(picked);
+          }}
+        />
+
+        {idle ? (
+          <div className="bulk-uploader-actions bulk-uploader-actions--solo">
             <button
               type="button"
-              className="bulk-uploader-btn bulk-uploader-btn--ghost"
-              disabled={busy || !serverReady}
-              onClick={() => void handleFolder()}
+              className="bulk-uploader-btn bulk-uploader-btn--primary bulk-uploader-btn--hero"
+              disabled={!serverReady || busy}
+              onClick={handlePrimarySelect}
             >
-              Import folder
+              {folderApi ? 'Select folder to upload' : 'Select tracks to upload'}
             </button>
-          ) : null}
-          <button
-            type="button"
-            className="bulk-uploader-btn bulk-uploader-btn--tiny"
-            disabled={busy}
-            onClick={resetQueue}
-          >
-            Clear queue
-          </button>
-        </div>
-
-        {summary ? (
-          <dl className="bulk-uploader-stats">
-            <div>
-              <dt>Valid audio</dt>
-              <dd>{summary.valid}</dd>
-            </div>
-            <div>
-              <dt>New uploads</dt>
-              <dd>{summary.toUpload}</dd>
-            </div>
-            <div>
-              <dt>Already in catalog</dt>
-              <dd>{summary.duplicates}</dd>
-            </div>
-            {summary.rejected > 0 ? (
-              <div>
-                <dt>Rejected</dt>
-                <dd>{summary.rejected}</dd>
-              </div>
+            {folderApi ? (
+              <button
+                type="button"
+                className="bulk-uploader-btn bulk-uploader-btn--ghost"
+                disabled={!serverReady || busy}
+                onClick={() => inputRef.current?.click()}
+              >
+                Or choose individual files
+              </button>
             ) : null}
-          </dl>
+          </div>
         ) : null}
 
-        {(progress.phase === 'indexing' || progress.phase === 'uploading') && (
-          <div className="bulk-uploader-bar" role="progressbar" aria-valuenow={progress.phase === 'indexing' ? indexPct : pctUpload} aria-valuemin={0} aria-valuemax={100}>
-            <div
-              className="bulk-uploader-bar-fill"
-              style={{ width: `${progress.phase === 'indexing' ? indexPct : pctUpload}%` }}
-            />
+        {showProgress ? (
+          <div className="bulk-uploader-progress-panel">
+            <p className="bulk-uploader-progress-count" aria-live="polite">
+              {progressLabel}
+            </p>
+            {(progress.phase === 'indexing' ||
+              progress.phase === 'uploading' ||
+              progress.phase === 'paused') && (
+              <div
+                className="bulk-uploader-bar"
+                role="progressbar"
+                aria-valuenow={progressPct}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-label={progressLabel}
+              >
+                <div className="bulk-uploader-bar-fill" style={{ width: `${progressPct}%` }} />
+              </div>
+            )}
+            {progress.currentFile &&
+            (progress.phase === 'uploading' || progress.phase === 'paused') ? (
+              <p className="bulk-uploader-current-file">{progress.currentFile}</p>
+            ) : null}
+            <dl className="bulk-uploader-stats bulk-uploader-stats--inline">
+              <div>
+                <dt>Uploaded</dt>
+                <dd>{progress.added}</dd>
+              </div>
+              <div>
+                <dt>Total</dt>
+                <dd>{progress.fileTotal || '—'}</dd>
+              </div>
+              {duplicatesSkipped > 0 || progress.skipped > 0 ? (
+                <div>
+                  <dt>Skipped</dt>
+                  <dd>{Math.max(duplicatesSkipped, progress.skipped)}</dd>
+                </div>
+              ) : null}
+              {progress.failed > 0 ? (
+                <div>
+                  <dt>Failed</dt>
+                  <dd>{progress.failed}</dd>
+                </div>
+              ) : null}
+            </dl>
           </div>
-        )}
+        ) : null}
 
-        <div className="bulk-uploader-controls">
-          <button
-            type="button"
-            className="bulk-uploader-btn bulk-uploader-btn--primary"
-            disabled={!canStart || busy}
-            onClick={() => void startUpload()}
-          >
-            {progress.phase === 'uploading'
-              ? 'Uploading…'
-              : summary?.toUpload
-                ? `Start bulk upload (${summary.toUpload})`
-                : 'Start bulk upload'}
-          </button>
-          {progress.phase === 'uploading' && (
-            <button
-              type="button"
-              className="bulk-uploader-btn bulk-uploader-btn--ghost"
-              onClick={() => controls.pause()}
-            >
-              Pause
-            </button>
-          )}
-          {progress.phase === 'paused' && (
-            <button
-              type="button"
-              className="bulk-uploader-btn bulk-uploader-btn--ghost"
-              onClick={() => controls.resume()}
-            >
-              Resume
-            </button>
-          )}
-          {(progress.phase === 'uploading' || progress.phase === 'paused') && (
+        {(progress.phase === 'uploading' || progress.phase === 'paused') && (
+          <div className="bulk-uploader-controls">
+            {progress.phase === 'uploading' ? (
+              <button
+                type="button"
+                className="bulk-uploader-btn bulk-uploader-btn--ghost"
+                onClick={() => controls.pause()}
+              >
+                Pause
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="bulk-uploader-btn bulk-uploader-btn--ghost"
+                onClick={() => controls.resume()}
+              >
+                Resume
+              </button>
+            )}
             <button
               type="button"
               className="bulk-uploader-btn bulk-uploader-btn--ghost"
@@ -315,25 +356,30 @@ export function BulkTrackUploader() {
             >
               Stop
             </button>
-          )}
-        </div>
+          </div>
+        )}
+
+        {(progress.phase === 'done' || progress.phase === 'cancelled') && (
+          <div className="bulk-uploader-controls">
+            <button
+              type="button"
+              className="bulk-uploader-btn bulk-uploader-btn--primary"
+              onClick={resetQueue}
+            >
+              Upload more
+            </button>
+          </div>
+        )}
 
         {ios ? (
           <p className="bulk-uploader-hint">
-            iPhone: prefer smaller batches or upload from desktop for 500+ files. Stay on this tab until
-            finished.
+            iPhone: select files in batches if needed. Stay on this tab until upload completes.
           </p>
         ) : null}
       </div>
 
-      <p className="bulk-uploader-status" role="status" aria-live="polite">
+      <p className="bulk-uploader-status" role="status">
         {progress.message}
-        {progress.phase === 'uploading' || progress.phase === 'done' ? (
-          <span className="bulk-uploader-status-detail">
-            {' '}
-            · {progress.added} added · {progress.failed} failed
-          </span>
-        ) : null}
         {trackCount > 0 ? (
           <span className="bulk-uploader-count"> · {trackCount} tracks in catalog</span>
         ) : null}

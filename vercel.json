@@ -29,8 +29,6 @@
     { "source": "/executive-onboarding/", "destination": "/interfaces/executive-onboarding.html" },
     { "source": "/my-whiteboard", "destination": "/interfaces/my-whiteboard.html" },
     { "source": "/my-whiteboard/", "destination": "/interfaces/my-whiteboard.html" },
-    { "source": "/bulk-upload", "destination": "/interfaces/bulk-track-upload.html" },
-    { "source": "/bulk-upload/", "destination": "/interfaces/bulk-track-upload.html" },
     { "source": "/executive-ai", "destination": "/interfaces/executive-ai-onboard/index.html" },
     { "source": "/executive-ai/", "destination": "/interfaces/executive-ai-onboard/index.html" },
     { "source": "/get-started", "destination": "/interfaces/get-started.html" },
@@ -222,6 +220,10 @@
       "includeFiles": "data/bulletin-board-posts.json"
     }
   },
+  "redirects": [
+    { "source": "/bulk-upload", "destination": "/interfaces/questfest-bridge/#/bulk-upload", "permanent": false },
+    { "source": "/bulk-upload/", "destination": "/interfaces/questfest-bridge/#/bulk-upload", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/interfaces/executive-ai-onboard/index.html",

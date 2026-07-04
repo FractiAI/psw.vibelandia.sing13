@@ -196,17 +196,25 @@ export async function runBulkUploadQueue(
         playlistIds: [MASTER_PLAYLIST_ID],
         skipDurationProbe: true,
         onProgress: (line) => {
+          const withinChunk = line.match(/(\d+)\s+of\s+(\d+)/i);
+          const globalIndex = withinChunk
+            ? Math.min(fileTotal, chunkStart + Number(withinChunk[1]))
+            : fileIndex;
           onUpdate({
             phase: 'uploading',
             summary: null,
             chunkIndex: c + 1,
             chunkTotal,
-            fileIndex,
+            fileIndex: globalIndex,
             fileTotal,
             added,
             skipped,
             failed,
-            message: line,
+            currentFile: chunk[Math.max(0, globalIndex - chunkStart - 1)]?.name,
+            message:
+              globalIndex > 0 && fileTotal > 0
+                ? `Uploading ${globalIndex} of ${fileTotal}…`
+                : line,
           });
         },
       });

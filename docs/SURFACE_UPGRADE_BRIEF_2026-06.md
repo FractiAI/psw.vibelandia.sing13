@@ -62,7 +62,7 @@ Rework images and heroes toward **Rat Pack / Howard Hughes / Sinatra / Marilyn M
 
 | Route | Plain intention |
 |-------|-----------------|
-| `#/bridge` | Listen — pick songs, play audio |
+| `#/listen` | Listen — pick songs, play audio |
 | `#/playlists` | Your lists |
 | `#/dj` | Upload audio |
 | `#/register` | Quick gate before Bridge |

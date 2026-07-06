@@ -57,12 +57,6 @@ export function BridgePage() {
     return () => document.documentElement.classList.remove('qf-mp3-upload-page');
   }, [location.pathname, location.hash, setDjMode, setPlaylistTab]);
 
-  useEffect(() => {
-    if (location.pathname === '/playlists') {
-      navigate('/bridge', { replace: true });
-    }
-  }, [location.pathname, navigate]);
-
   const goUpload = () => {
     setDjMode(true);
     navigate('/dj', { replace: true });
@@ -70,7 +64,7 @@ export function BridgePage() {
 
   const goListen = () => {
     setDjMode(false);
-    navigate('/bridge', { replace: true });
+    navigate('/listen', { replace: true });
   };
 
   const handleUploadSuccess = () => {

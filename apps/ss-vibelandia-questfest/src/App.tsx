@@ -25,14 +25,14 @@ export default function App() {
     <>
       <QuestfestFastLink />
       <Routes>
-        <Route path="/" element={<Navigate to="/bridge" replace />} />
+        <Route path="/" element={<Navigate to="/listen" replace />} />
         <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/bridge" element={<BridgePage />} />
+        <Route path="/bridge" element={<Navigate to="/listen" replace />} />
         <Route path="/listen" element={<JukeboxListenPage />} />
-        <Route path="/playlists" element={<BridgePage />} />
+        <Route path="/playlists" element={<Navigate to="/listen" replace />} />
         <Route path="/dj" element={<BridgePage />} />
         <Route path="/bulk-upload" element={<BulkUploadPage />} />
-        <Route path="*" element={<Navigate to="/bridge" replace />} />
+        <Route path="*" element={<Navigate to="/listen" replace />} />
       </Routes>
       <AppChrome />
     </>

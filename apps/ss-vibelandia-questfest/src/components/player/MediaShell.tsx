@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { FairExchangeModal } from '@/components/player/FairExchangeModal';
 import { BoardingModal } from '@/components/payment/BoardingModal';
 import { CaptainUnlockModal } from '@/components/payment/CaptainUnlockModal';
@@ -16,6 +17,7 @@ import { usePlaybackSessionPersistence } from '@/hooks/usePlaybackSessionPersist
 /** Modals + session only — catalog loads from cache/bundle; Refresh pulls server updates. */
 export function MediaShell() {
   usePlaybackSessionPersistence();
+  const location = useLocation();
   const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
@@ -47,12 +49,15 @@ export function MediaShell() {
       pb.setPlaying(false);
     }
 
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('boarding') === '1') {
-      setBoardingOpen(true);
-    }
-
-  }, [hydrateSession, setBoardingOpen]);
+    const pageParams = new URLSearchParams(window.location.search);
+    const routeParams = new URLSearchParams(location.search);
+    const wantsBoarding =
+      pageParams.get('boarding') === '1' ||
+      routeParams.get('boarding') === '1' ||
+      pageParams.get('checkout') === '1' ||
+      routeParams.get('checkout') === '1';
+    if (wantsBoarding) setBoardingOpen(true);
+  }, [hydrateSession, location.search, setBoardingOpen]);
 
   useEffect(() => subscribeTrackDownloaded((trackId) => markTrackDownloaded(trackId)), [markTrackDownloaded]);
 

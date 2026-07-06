@@ -19,7 +19,7 @@
       "related": [
         { "label": "Frontier Guide · schedule", "href": "/questfest-guide#page-4" },
         { "label": "Park map", "href": "/questfest-guide#page-5" },
-        { "label": "Capitan's Bridge", "href": "/interfaces/questfest-bridge/#/bridge" }
+        { "label": "Capitan's Bridge", "href": "/interfaces/questfest-bridge/#/listen" }
       ]
     },
     {
@@ -77,7 +77,7 @@
       ],
       "related": [
         { "label": "Man Cave nest", "href": "/interfaces/nesting/nest-man-cave-restroom.html" },
-        { "label": "Listen", "href": "/interfaces/questfest-bridge/#/bridge" }
+        { "label": "Listen", "href": "/interfaces/questfest-bridge/#/listen" }
       ]
     },
     {

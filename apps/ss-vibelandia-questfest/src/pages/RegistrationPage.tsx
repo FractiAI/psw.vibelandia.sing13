@@ -34,7 +34,7 @@ export function RegistrationPage() {
           </a>
         </div>
         <p className="gate-fine">
-          Listen: <code className="gate-code">…/questfest-bridge/#/bridge</code> · Upload:{' '}
+          Listen: <code className="gate-code">…/questfest-bridge/#/listen</code> · Upload:{' '}
           <code className="gate-code">…/questfest-bridge/#/dj</code>
         </p>
       </div>

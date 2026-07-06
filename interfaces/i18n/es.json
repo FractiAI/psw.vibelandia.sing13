@@ -200,7 +200,7 @@
     "btnDemo": "1 · Ejecutar demo en vivo (5 pruebas)",
     "btnWp": "2 · Leer whitepaper completo (V8)",
     "btnQuest": "QUESTFEST",
-    "heroLinksHtml": "<a href=\"#operator-mode\">Terminal operador</a> (MetaMask, WebSDR, CLI) · <a href=\"/interfaces/questfest-bridge/#/bridge\">Puente del Capitan</a>",
+    "heroLinksHtml": "<a href=\"#operator-mode\">Terminal operador</a> (MetaMask, WebSDR, CLI) · <a href=\"/interfaces/questfest-bridge/#/listen\">Puente del Capitan</a>",
     "whatHead": "1 · Que es esto (lenguaje claro)",
     "testedHead": "2 · Lo que probamos con exito (en este sitio, hoy)",
     "honestyHtml": "<strong>Sin insignias falsas. Sin teatro de ping de internet.</strong> Cinco pilares en la <strong>linea de hidrogeno 1420.405751768 MHz con EGS φ (1.618)</strong>. Las pruebas 3–5 requieren captura <strong>EN VIVO</strong> de OpenWebRX.",

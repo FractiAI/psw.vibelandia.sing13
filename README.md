@@ -113,7 +113,7 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **QUESTFEST short path:** `/questfest`
 - **Nesting ladder (9 layers):** [`/interfaces/vibelandia-questfest.html#qf-nest-section`](interfaces/vibelandia-questfest.html#qf-nest-section)
 - **Goldilocks Syntheverse Beehive Residency:** [`/interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) — manifesto, Old School Protocol (contact PL Taino), 2-week test drive terms, 2026 calendar
-- **Master Music Catalog pass (checkout):** [`/interfaces/questfest-bridge/#/bridge?checkout=1`](interfaces/questfest-bridge/) — **$16.18/mo** honor pass (catalog access; magazine is the qualifier badge). Top deck CTA: **Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass**.
+- **Master Music Catalog pass (checkout):** [`/interfaces/questfest-bridge/#/listen?checkout=1`](interfaces/questfest-bridge/) — **$16.18/mo** honor pass (catalog access; magazine is the qualifier badge). Top deck CTA: **Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass**.
 - **QUESTFEST Bridge (Sovereign Player):** [`/interfaces/questfest-bridge/#/`](interfaces/questfest-bridge/) · **`/sovereign-gate`** → same entry
 - **Look at the Sun:** [`interfaces/look-at-the-sun.html`](interfaces/look-at-the-sun.html) · **Under the hood:** [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)

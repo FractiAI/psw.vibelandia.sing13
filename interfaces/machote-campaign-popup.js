@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Machote members campaign modal — QUESTFEST top deck only (not Bulletin Board or Sovereign Player).
  */
 (function () {
@@ -15,7 +15,7 @@
   var LOCAL_HONOR_KEY = 'qv-local-monthly-honor';
   var CAPTAIN_KEY = 'qv-captain-unlocked';
   var BRIDGE_BOARDING =
-    '/interfaces/questfest-bridge/?boarding=1#/bridge';
+    '/interfaces/questfest-bridge/?boarding=1#/listen';
   var BEEHIVE_PATH = '/interfaces/goldilocks-beehive-residency.html';
 
   function parsePassToken(token) {

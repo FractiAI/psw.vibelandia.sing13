@@ -14,8 +14,6 @@ import { findDuplicateTrackGroups } from '@/lib/findCatalogDuplicateGroups';
 import { PLAIN } from '@/lib/plainSpeak';
 import type { TrackDef } from '@/lib/catalogTypes';
 
-const TRACKS_PER_PAGE = 18;
-
 interface JukeboxTrackPanelProps {
   playlistId: string;
   playlistName: string;
@@ -32,7 +30,6 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
   const currentTrackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
 
-  const [page, setPage] = useState(0);
   const [selectMode, setSelectMode] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(() => new Set());
   const [playlistModalTrackId, setPlaylistModalTrackId] = useState<string | null>(null);
@@ -50,7 +47,6 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
     usePlaylistReorder(playlistId, canReorder, reorderTrackInPlaylist);
 
   useEffect(() => {
-    setPage(0);
     setSelectMode(false);
     setSelected(new Set());
     setDupDismissed(false);
@@ -67,11 +63,6 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
       })
       .filter((row): row is { track: TrackDef; playlistIndex: number } => !!row);
   }, [resolvedIds, getTrack]);
-
-  const pageCount = Math.max(1, Math.ceil(rows.length / TRACKS_PER_PAGE));
-  const safePage = Math.min(page, pageCount - 1);
-  const pageStart = safePage * TRACKS_PER_PAGE;
-  const pageRows = rows.slice(pageStart, pageStart + TRACKS_PER_PAGE);
 
   const duplicateGroups = useMemo(
     () => findDuplicateTrackGroups(resolvedIds, getTrack),
@@ -148,9 +139,6 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
     }
   }, [deleteTracks, duplicateRemoveIds, dupBusy]);
 
-  const pageDown = () => setPage((p) => Math.min(p + 1, pageCount - 1));
-  const pageUp = () => setPage((p) => Math.max(p - 1, 0));
-
   const playlistModalTrack = playlistModalTrackId ? getTrack(playlistModalTrackId) : undefined;
 
   return (
@@ -160,7 +148,6 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
           <h2 className="jb-track-panel__title">{playlistName}</h2>
           <p className="jb-track-panel__meta">
             {rows.length} track{rows.length === 1 ? '' : 's'}
-            {pageCount > 1 ? ` · page ${safePage + 1} of ${pageCount}` : ''}
           </p>
         </div>
         <div className="jb-track-panel__tools">
@@ -223,19 +210,18 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
       ) : null}
 
       <p className="jb-gesture-hint">
-        Swipe left to remove · hold &amp; drag to reorder · double-tap for playlists
+        Scroll for more · swipe left to remove · hold &amp; drag to reorder · double-tap for playlists
       </p>
 
       {rows.length === 0 ? (
         <p className="jb-empty">{PLAIN.noTracksYet}</p>
       ) : (
-        <>
-          <ol className="jb-track-list" ref={listRef}>
-            {pageRows.map((row, displayIndex) => (
-              <JukeboxTrackRow
-                key={row.track.id}
-                track={row.track}
-                index={pageStart + displayIndex + 1}
+        <ol className="jb-track-list" ref={listRef}>
+          {rows.map((row, displayIndex) => (
+            <JukeboxTrackRow
+              key={row.track.id}
+              track={row.track}
+              index={displayIndex + 1}
                 playlistIndex={row.playlistIndex}
                 active={currentTrackId === row.track.id}
                 playing={isPlaying}
@@ -256,30 +242,10 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
                 onOpenPlaylists={() => setPlaylistModalTrackId(row.track.id)}
                 onGripPointerDown={(e) => onGripPointerDown(row.playlistIndex, e)}
                 onGripPointerMove={onGripPointerMove}
-                onGripPointerUp={(e) => onGripPointerUp(row.playlistIndex, e)}
-              />
-            ))}
-          </ol>
-
-          {pageCount > 1 ? (
-            <div className="jb-pager">
-              <button type="button" className="jb-pager-btn" disabled={safePage <= 0} onClick={pageUp}>
-                Page up
-              </button>
-              <span className="jb-pager-label">
-                {safePage + 1} / {pageCount}
-              </span>
-              <button
-                type="button"
-                className="jb-pager-btn jb-pager-btn--primary"
-                disabled={safePage >= pageCount - 1}
-                onClick={pageDown}
-              >
-                Page down
-              </button>
-            </div>
-          ) : null}
-        </>
+              onGripPointerUp={(e) => onGripPointerUp(row.playlistIndex, e)}
+            />
+          ))}
+        </ol>
       )}
 
       {playlistModalTrack ? (

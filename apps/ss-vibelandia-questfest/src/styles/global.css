@@ -6928,6 +6928,7 @@ html.qf-jukebox-page .sc-pick-backdrop {
   justify-content: space-between;
   gap: 0.5rem;
   margin-bottom: 0.35rem;
+  flex-shrink: 0;
 }
 
 .jb-track-panel__title {
@@ -6976,6 +6977,7 @@ html.qf-jukebox-page .sc-pick-backdrop {
   background: rgba(120, 80, 10, 0.25);
   font-size: 0.62rem;
   line-height: 1.4;
+  flex-shrink: 0;
 }
 
 .jb-dup-banner__actions {
@@ -6999,6 +7001,7 @@ html.qf-jukebox-page .sc-pick-backdrop {
   gap: 0.35rem;
   margin-bottom: 0.35rem;
   font-size: 0.62rem;
+  flex-shrink: 0;
 }
 
 .jb-gesture-hint {
@@ -7006,6 +7009,7 @@ html.qf-jukebox-page .sc-pick-backdrop {
   font-size: 0.55rem;
   color: #8a8070;
   line-height: 1.35;
+  flex-shrink: 0;
 }
 
 .jb-track-list {

@@ -187,6 +187,22 @@ export function extractDeviceCacheTracks(snapshot: CatalogSnapshot): Record<stri
   return tracks;
 }
 
+/** Boot cache — keep server manifest for instant paint until live sync completes. */
+export function normalizeCachedTracksForBoot(
+  tracks: Record<string, TrackDef>,
+): Record<string, TrackDef> {
+  const out: Record<string, TrackDef> = {};
+  for (const [id, tr] of Object.entries(tracks)) {
+    if (tr.serverHosted) {
+      out[id] = { ...tr, id: tr.id || id, serverHosted: true };
+      continue;
+    }
+    if (!isUserUploadTrack(id, tr)) continue;
+    out[id] = normalizeCachedTrack(id, tr);
+  }
+  return out;
+}
+
 const LEGACY_MASTER_NAMES = new Set([
   MASTER_PLAYLIST_LEGACY_NAME,
   'Master catalog',

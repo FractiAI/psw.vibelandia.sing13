@@ -183,18 +183,21 @@ async function registerUploadedTrack(
     durationSec?: number;
   },
 ): Promise<TrackDef> {
-  const res = await postCatalogJson(UPLOAD_API, secret, { action: 'register', ...payload });
-  const data = (await res.json().catch(() => ({}))) as {
-    track?: TrackDef;
-    error?: string;
-    message?: string;
-  };
-  if (!res.ok) {
+  let lastErr: (Error & { code?: string }) | null = null;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const res = await postCatalogJson(UPLOAD_API, secret, { action: 'register', ...payload });
+    const data = (await res.json().catch(() => ({}))) as {
+      track?: TrackDef;
+      error?: string;
+      message?: string;
+    };
+    if (res.ok && data.track?.src) return data.track;
     const msg = data.message || data.error || 'register_failed';
-    throw catalogApiError(data.error || 'register_failed', msg);
+    lastErr = catalogApiError(data.error || 'register_failed', msg);
+    if (res.status !== 503 && res.status !== 500) break;
+    await new Promise((r) => window.setTimeout(r, 400 * (attempt + 1)));
   }
-  if (!data.track?.src) throw catalogApiError('register_failed');
-  return data.track;
+  throw lastErr ?? catalogApiError('register_failed');
 }
 
 /** All uploads: browser → Blob, then register (works for audio + video up to 10 min). */

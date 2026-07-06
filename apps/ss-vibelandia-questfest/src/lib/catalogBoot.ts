@@ -1,5 +1,5 @@
 import { readBundledCatalog } from '@/lib/bundledCatalog';
-import { extractDeviceCacheTracks, mergeServerCatalogWithPrefs } from '@/lib/catalogSeed';
+import { mergeServerCatalogWithPrefs, normalizeCachedTracksForBoot } from '@/lib/catalogSeed';
 import { loadCatalogCache, loadCatalogPrefsOnly, loadDownloadedTrackIds } from '@/lib/catalogPrefs';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 
@@ -17,7 +17,7 @@ export function hydrateCatalogFromDevice(
   const raw = loadCatalogCache();
   const server = raw
     ? (() => {
-        const tracks = extractDeviceCacheTracks(raw);
+        const tracks = normalizeCachedTracksForBoot(raw.tracks);
         const valid = new Set(Object.keys(tracks));
         return {
           ...raw,

@@ -1018,20 +1018,38 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const downloaded = loadDownloadedTrackIds();
     const prevTrackId = usePlaybackStore.getState().currentTrackId;
     const priorLikes = get().likedTrackIds;
+    const localTracks = get().tracks;
     try {
-      const localTracks = get().tracks;
-      const server = mergePendingServerTracks(await fetchLiveCatalogForSync(), localTracks);
-      const prefsWithLikes: ReturnType<typeof loadCatalogPrefs> = prefs
-        ? { ...prefs, likedTrackIds: priorLikes.length ? priorLikes : prefs.likedTrackIds }
-        : priorLikes.length
-          ? {
-              version: CATALOG_VERSION,
-              playlists: get().playlists,
-              activePlaylistId: get().activePlaylistId,
-              likedTrackIds: priorLikes,
-            }
-          : null;
-      const applied = applyServerCatalog(server, prefsWithLikes, downloaded);
+      let applied: ReturnType<typeof applyServerCatalog> | null = null;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          const live = await fetchLiveCatalogForSync();
+          const liveCount = Object.keys(live.tracks).length;
+          if (liveCount === 0 && attempt < 2) {
+            await new Promise((r) => window.setTimeout(r, 700 * (attempt + 1)));
+            continue;
+          }
+          const server = mergePendingServerTracks(live, localTracks);
+          const prefsWithLikes: ReturnType<typeof loadCatalogPrefs> = prefs
+            ? { ...prefs, likedTrackIds: priorLikes.length ? priorLikes : prefs.likedTrackIds }
+            : priorLikes.length
+              ? {
+                  version: CATALOG_VERSION,
+                  playlists: get().playlists,
+                  activePlaylistId: get().activePlaylistId,
+                  likedTrackIds: priorLikes,
+                }
+              : null;
+          applied = applyServerCatalog(server, prefsWithLikes, downloaded);
+          break;
+        } catch {
+          if (attempt < 2) {
+            await new Promise((r) => window.setTimeout(r, 700 * (attempt + 1)));
+          }
+        }
+      }
+      if (!applied) return;
+
       set({
         tracks: applied.tracks,
         playlists: applied.playlists,
@@ -1054,8 +1072,6 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         usePlaybackStore.getState().setPlaying(false);
         usePlaybackStore.getState().setTrack(null);
       }
-    } catch {
-      /* keep cached library */
     } finally {
       set({ catalogSyncing: false });
     }

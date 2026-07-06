@@ -65,7 +65,7 @@ function titleFromFilename(name) {
 }
 
 async function registerTrack(res, body, lib) {
-  const { loadDynamicCatalog, saveDynamicCatalog, appendTrackToDynamicCatalog } = lib;
+  const { registerTrackPersistently } = lib;
   if (!body?.url || !body?.trackId) {
     return res.status(400).json({ error: 'invalid_body' });
   }
@@ -103,22 +103,15 @@ async function registerTrack(res, body, lib) {
     serverHosted: true,
   };
 
-  const dynamic = await loadDynamicCatalog();
-  const next = appendTrackToDynamicCatalog(dynamic, track);
-  try {
-    const saved = await saveDynamicCatalog(next);
-    if (!saved.ok) {
-      return res.status(500).json({
-        error: 'catalog_save_failed',
-        message: saved.message || 'File is on storage but the catalog manifest could not be saved.',
-      });
-    }
-  } catch (e) {
-    console.error('[catalog-upload] register save', e);
-    return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
+  const result = await registerTrackPersistently(track);
+  if (!result.ok) {
+    return res.status(result.message === 'catalog_register_retry_exhausted' ? 503 : 500).json({
+      error: 'catalog_save_failed',
+      message: result.message || 'File is on storage but the catalog manifest could not be saved.',
+    });
   }
 
-  return res.status(200).json({ track });
+  return res.status(200).json({ track: result.track });
 }
 
 async function handleBlobClientToken(req, res, body) {
@@ -161,7 +154,7 @@ function readInlineBuffer(req) {
 }
 
 async function handleInlineUpload(req, res, lib) {
-  const { loadDynamicCatalog, saveDynamicCatalog, appendTrackToDynamicCatalog } = lib;
+  const { registerTrackPersistently } = lib;
   const buffer = readInlineBuffer(req);
   if (!buffer || !buffer.length) {
     return res.status(400).json({ error: 'empty_file' });
@@ -224,22 +217,15 @@ async function handleInlineUpload(req, res, lib) {
     serverHosted: true,
   };
 
-  const dynamic = await loadDynamicCatalog();
-  const next = appendTrackToDynamicCatalog(dynamic, track);
-  try {
-    const saved = await saveDynamicCatalog(next);
-    if (!saved.ok) {
-      return res.status(500).json({
-        error: 'catalog_save_failed',
-        message: saved.message || 'Audio stored but catalog manifest could not be saved.',
-      });
-    }
-  } catch (e) {
-    console.error('[catalog-upload] inline save', e);
-    return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
+  const result = await registerTrackPersistently(track);
+  if (!result.ok) {
+    return res.status(result.message === 'catalog_register_retry_exhausted' ? 503 : 500).json({
+      error: 'catalog_save_failed',
+      message: result.message || 'Audio stored but catalog manifest could not be saved.',
+    });
   }
 
-  return res.status(200).json({ track });
+  return res.status(200).json({ track: result.track });
 }
 
 module.exports = async function handler(req, res) {

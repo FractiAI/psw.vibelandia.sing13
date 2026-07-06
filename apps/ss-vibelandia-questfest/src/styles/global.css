@@ -6933,6 +6933,13 @@ html.qf-jukebox-page .sp-playback-stack {
   margin-top: 0.35rem;
 }
 
+.jb-dup-banner__note {
+  margin: 0.35rem 0 0;
+  font-size: 0.58rem;
+  color: #e8dcc8;
+  line-height: 1.35;
+}
+
 .jb-batch-bar {
   display: flex;
   flex-wrap: wrap;

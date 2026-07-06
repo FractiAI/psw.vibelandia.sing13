@@ -32,6 +32,7 @@ import {
 import { coverFileToPersistableDataUrl } from '@/lib/coverImageFile';
 import {
   deleteTrackOnServer,
+  deleteTracksOnServer,
   fetchLiveCatalogForSync,
   isServerUploadConfigured,
   updateTrackOnServer,
@@ -158,7 +159,10 @@ interface CatalogState {
   ) => Promise<void>;
   deleteTrack: (trackId: string, opts?: { skipConfirm?: boolean }) => Promise<void>;
   /** Bulk delete — one confirm; returns ids removed from local catalog. */
-  deleteTracks: (trackIds: string[], opts?: { skipConfirm?: boolean }) => Promise<string[]>;
+  deleteTracks: (
+    trackIds: string[],
+    opts?: { skipConfirm?: boolean; purgeLocalOrphans?: boolean },
+  ) => Promise<string[]>;
   uploadTrackCover: (trackId: string, file: File) => Promise<void>;
   /** Pull library from QUESTFEST server (streaming catalog). */
   syncLibraryFromServer: () => Promise<void>;
@@ -960,33 +964,52 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     }
 
     const serverConfigured = isServerUploadConfigured();
-    const serverOk = new Set<string>();
-    const serverFailed = new Set<string>();
+    const serverIds = candidates
+      .filter(({ id, tr }) => serverConfigured && isUserUploadTrack(id, tr))
+      .map(({ id }) => id);
 
-    for (const { id, tr } of candidates) {
-      if (serverConfigured && isUserUploadTrack(id, tr)) {
-        try {
-          await deleteTrackOnServer(id);
-          serverOk.add(id);
-        } catch {
-          serverFailed.add(id);
+    let serverRemoved = new Set<string>();
+    let serverMissing = new Set<string>();
+
+    if (serverIds.length) {
+      try {
+        const batch =
+          serverIds.length === 1
+            ? await (async () => {
+                await deleteTrackOnServer(serverIds[0]!);
+                return { removed: serverIds, missing: [] as string[] };
+              })()
+            : await deleteTracksOnServer(serverIds);
+        for (const id of batch.removed) serverRemoved.add(id);
+        for (const id of batch.missing) serverMissing.add(id);
+        if (batch.error && !batch.removed.length && !opts?.purgeLocalOrphans) {
+          const proceed = window.confirm(
+            batch.message ||
+              `Server delete failed (${batch.error}). Remove duplicates from this device anyway?`,
+          );
+          if (!proceed) return [];
         }
-      } else {
-        serverOk.add(id);
+      } catch {
+        if (!opts?.purgeLocalOrphans) {
+          const proceed = window.confirm(
+            'Server delete failed. Remove from this device anyway?',
+          );
+          if (!proceed) return [];
+        }
       }
     }
 
-    let removeIds = [...serverOk];
-    if (serverFailed.size) {
-      const proceed = window.confirm(
-        serverFailed.size === candidates.length
-          ? 'Server delete failed. Remove from this device anyway?'
-          : `Server delete failed for ${serverFailed.size} track(s). Remove from this device anyway?`,
-      );
-      if (proceed) {
-        removeIds = candidates.map((c) => c.id);
-      }
-    }
+    const removeIds = opts?.purgeLocalOrphans
+      ? candidates.map((c) => c.id)
+      : [
+          ...new Set([
+            ...serverRemoved,
+            ...serverMissing,
+            ...candidates
+              .filter(({ id, tr }) => !serverConfigured || !isUserUploadTrack(id, tr))
+              .map(({ id }) => id),
+          ]),
+        ];
 
     if (!removeIds.length) return [];
 
@@ -1006,6 +1029,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { tracks, playlists, likedTrackIds };
     });
     get().persist();
+    void get().syncLibraryFromServer();
     return removeIds;
   },
 

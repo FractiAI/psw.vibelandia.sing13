@@ -36,6 +36,8 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
   const [selected, setSelected] = useState<Set<string>>(() => new Set());
   const [playlistModalTrackId, setPlaylistModalTrackId] = useState<string | null>(null);
   const [dupDismissed, setDupDismissed] = useState(false);
+  const [dupBusy, setDupBusy] = useState(false);
+  const [dupMessage, setDupMessage] = useState<string | null>(null);
 
   const isMaster = isMasterPlaylist(playlistId);
   const canReorder = !isMaster && resolvedIds.length > 1;
@@ -48,6 +50,7 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
     setSelectMode(false);
     setSelected(new Set());
     setDupDismissed(false);
+    setDupMessage(null);
   }, [playlistId]);
 
   const rows = useMemo(() => {
@@ -109,14 +112,36 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
   }, [selected]);
 
   const handleDeleteDuplicates = useCallback(async () => {
-    if (!duplicateRemoveIds.length) return;
+    if (!duplicateRemoveIds.length || dupBusy) return;
     const ok = window.confirm(
       `Remove ${duplicateRemoveIds.length} duplicate track${duplicateRemoveIds.length === 1 ? '' : 's'}? The first copy in each group stays.`,
     );
     if (!ok) return;
-    await deleteTracks(duplicateRemoveIds, { skipConfirm: true });
-    setDupDismissed(true);
-  }, [deleteTracks, duplicateRemoveIds]);
+    setDupBusy(true);
+    setDupMessage(null);
+    try {
+      const removed = await deleteTracks(duplicateRemoveIds, {
+        skipConfirm: true,
+        purgeLocalOrphans: true,
+      });
+      if (!removed.length) {
+        setDupMessage('Delete failed — try Refresh, then delete duplicates again.');
+        return;
+      }
+      if (removed.length < duplicateRemoveIds.length) {
+        setDupMessage(
+          `Removed ${removed.length} of ${duplicateRemoveIds.length} duplicates. Tap Delete duplicates again for any left.`,
+        );
+        return;
+      }
+      setDupDismissed(true);
+      setDupMessage(`Removed ${removed.length} duplicate${removed.length === 1 ? '' : 's'}.`);
+    } catch (e) {
+      setDupMessage(e instanceof Error ? e.message : 'Delete duplicates failed.');
+    } finally {
+      setDupBusy(false);
+    }
+  }, [deleteTracks, duplicateRemoveIds, dupBusy]);
 
   const pageDown = () => setPage((p) => Math.min(p + 1, pageCount - 1));
   const pageUp = () => setPage((p) => Math.max(p - 1, 0));
@@ -154,13 +179,19 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
             {duplicateRemoveIds.length} extra cop{duplicateRemoveIds.length === 1 ? 'y' : 'ies'}).
           </p>
           <div className="jb-dup-banner__actions">
-            <button type="button" className="jb-tool-btn jb-tool-btn--gold" onClick={() => void handleDeleteDuplicates()}>
-              Delete duplicates
+            <button
+              type="button"
+              className="jb-tool-btn jb-tool-btn--gold"
+              disabled={dupBusy}
+              onClick={() => void handleDeleteDuplicates()}
+            >
+              {dupBusy ? 'Deleting…' : 'Delete duplicates'}
             </button>
-            <button type="button" className="jb-tool-btn" onClick={() => setDupDismissed(true)}>
+            <button type="button" className="jb-tool-btn" disabled={dupBusy} onClick={() => setDupDismissed(true)}>
               Dismiss
             </button>
           </div>
+          {dupMessage ? <p className="jb-dup-banner__note">{dupMessage}</p> : null}
         </div>
       ) : null}
 

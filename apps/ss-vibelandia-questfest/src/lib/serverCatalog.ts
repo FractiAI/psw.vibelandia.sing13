@@ -333,16 +333,88 @@ export async function uploadPlaylistCoverBlob(
 export const uploadTrackCover = uploadCoverBlob;
 
 export async function deleteTrackOnServer(trackId: string): Promise<void> {
+  const result = await deleteTracksOnServer([trackId]);
+  if (!result.removed.includes(trackId) && result.missing.includes(trackId)) {
+    const err = new Error('track_not_found') as Error & { code?: string };
+    err.code = 'track_not_found';
+    throw err;
+  }
+  if (!result.removed.includes(trackId) && result.error) {
+    const err = new Error(result.error) as Error & { code?: string };
+    err.code = result.error;
+    throw err;
+  }
+}
+
+export type DeleteTracksOnServerResult = {
+  removed: string[];
+  missing: string[];
+  error?: string;
+  message?: string;
+};
+
+const DELETE_MANY_FETCH_MS = 120_000;
+
+export async function deleteTracksOnServer(trackIds: string[]): Promise<DeleteTracksOnServerResult> {
   const secret = catalogUploadSecret();
   if (!secret) throw new Error('catalog_upload_unconfigured');
 
-  const res = await postCatalogJson(TRACK_API, secret, { action: 'delete', trackId });
-  const data = (await res.json().catch(() => ({}))) as { error?: string; message?: string };
-  if (!res.ok) {
-    const err = new Error(data.error || data.message || 'delete_failed') as Error & { code?: string };
-    err.code = data.error;
-    throw err;
+  const unique = [...new Set(trackIds.filter(Boolean))];
+  if (!unique.length) return { removed: [], missing: [] };
+
+  if (unique.length === 1) {
+    const trackId = unique[0]!;
+    const res = await postCatalogJson(TRACK_API, secret, { action: 'delete', trackId }, DELETE_MANY_FETCH_MS);
+    const data = (await res.json().catch(() => ({}))) as {
+      error?: string;
+      message?: string;
+      removed?: string[];
+      missing?: string[];
+    };
+    if (!res.ok) {
+      return {
+        removed: [],
+        missing: unique,
+        error: data.error || data.message || 'delete_failed',
+        message: data.message,
+      };
+    }
+    return {
+      removed: data.removed?.length ? data.removed : [trackId],
+      missing: data.missing ?? [],
+    };
   }
+
+  let last: DeleteTracksOnServerResult = { removed: [], missing: unique, error: 'delete_failed' };
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const res = await postCatalogJson(
+      TRACK_API,
+      secret,
+      { action: 'delete_many', trackIds: unique },
+      DELETE_MANY_FETCH_MS,
+    );
+    const data = (await res.json().catch(() => ({}))) as {
+      error?: string;
+      message?: string;
+      removed?: string[];
+      missing?: string[];
+    };
+    if (res.ok) {
+      return {
+        removed: Array.isArray(data.removed) ? data.removed : [],
+        missing: Array.isArray(data.missing) ? data.missing : [],
+      };
+    }
+    last = {
+      removed: Array.isArray(data.removed) ? data.removed! : [],
+      missing: Array.isArray(data.missing) ? data.missing! : unique,
+      error: data.error || data.message || 'delete_failed',
+      message: data.message,
+    };
+    if (res.status !== 503 && res.status !== 500) break;
+    await new Promise((r) => window.setTimeout(r, 500 * (attempt + 1)));
+  }
+  return last;
 }
 
 export async function uploadTrackToServer(

@@ -48,8 +48,10 @@ module.exports = async function handler(req, res) {
     catalogUploadConfigured,
     deleteTrackMediaBlobs,
     ensureDynamicTrack,
+    loadServerCatalog,
     patchDynamicTrack,
     removeDynamicTrack,
+    removeTracksPersistently,
     saveDynamicCatalog,
     setDynamicTrackPlaylistMembership,
   } = catalog;
@@ -70,7 +72,36 @@ module.exports = async function handler(req, res) {
     .replace(/[^\w-]/g, '')
     .slice(0, 80);
 
-  if (!trackId) return res.status(400).json({ error: 'invalid_track_id' });
+  if (!trackId && action !== 'delete_many') {
+    return res.status(400).json({ error: 'invalid_track_id' });
+  }
+
+  if (action === 'delete_many') {
+    const rawIds = Array.isArray(body?.trackIds) ? body.trackIds : [];
+    const trackIds = rawIds
+      .map((id) =>
+        String(id || '')
+          .replace(/[^\w-]/g, '')
+          .slice(0, 80),
+      )
+      .filter(Boolean);
+    if (!trackIds.length) return res.status(400).json({ error: 'invalid_track_ids' });
+
+    const result = await removeTracksPersistently(trackIds, loadServerCatalog, req);
+    if (!result.ok) {
+      return res.status(result.message === 'catalog_delete_retry_exhausted' ? 503 : 500).json({
+        error: 'catalog_save_failed',
+        message: result.message || 'Could not save catalog after delete.',
+        removed: result.removed,
+        missing: result.missing,
+      });
+    }
+    return res.status(200).json({
+      ok: true,
+      removed: result.removed,
+      missing: result.missing,
+    });
+  }
 
   const dynamic = await ensureDynamicTrack(req, trackId);
   if (!dynamic?.tracks?.[trackId]) {
@@ -78,20 +109,17 @@ module.exports = async function handler(req, res) {
   }
 
   if (action === 'delete') {
-    const removed = dynamic.tracks[trackId];
-    const next = removeDynamicTrack(dynamic, trackId);
-    if (!next) return res.status(404).json({ error: 'track_not_found' });
-    try {
-      const blobDel = await deleteTrackMediaBlobs(removed);
-      const saved = await saveDynamicCatalog(next);
-      if (!saved.ok) {
-        return res.status(500).json({ error: 'catalog_save_failed', message: saved.message });
-      }
-    } catch (e) {
-      console.error('[catalog-track] delete save', e);
-      return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
+    const result = await removeTracksPersistently([trackId], loadServerCatalog, req);
+    if (!result.ok) {
+      return res.status(result.message === 'catalog_delete_retry_exhausted' ? 503 : 500).json({
+        error: 'catalog_save_failed',
+        message: result.message || 'Could not save catalog after delete.',
+      });
     }
-    return res.status(200).json({ ok: true, trackId, blobDeleted: blobDel?.deleted ?? 0 });
+    if (!result.removed.length) {
+      return res.status(404).json({ error: 'track_not_found', missing: result.missing });
+    }
+    return res.status(200).json({ ok: true, trackId, removed: result.removed });
   }
 
   if (action === 'update') {

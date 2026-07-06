@@ -3,6 +3,7 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { SONIC_CATALOG_DISPLAY_NAME } from '@/lib/sonicCatalogCopy';
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
+import { PLAIN } from '@/lib/plainSpeak';
 
 interface JukeboxPlaylistMenuProps {
   activeId: string;
@@ -12,6 +13,7 @@ interface JukeboxPlaylistMenuProps {
 export function JukeboxPlaylistMenu({ activeId, onSelect }: JukeboxPlaylistMenuProps) {
   const playlists = useCatalogStore((s) => s.playlists);
   const tracks = useCatalogStore((s) => s.tracks);
+  const createPlaylist = useCatalogStore((s) => s.createPlaylist);
 
   const items = useMemo(() => {
     const sorted = [...playlists].sort((a, b) => {
@@ -45,6 +47,16 @@ export function JukeboxPlaylistMenu({ activeId, onSelect }: JukeboxPlaylistMenuP
           </li>
         ))}
       </ul>
+      <button
+        type="button"
+        className="jb-catalog-new"
+        onClick={() => {
+          const id = createPlaylist(PLAIN.newPlaylist);
+          onSelect(id);
+        }}
+      >
+        + {PLAIN.newPlaylist}
+      </button>
     </nav>
   );
 }

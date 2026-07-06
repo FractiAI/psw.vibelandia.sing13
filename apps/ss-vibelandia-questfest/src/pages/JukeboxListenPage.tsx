@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { JukeboxPlaylistMenu } from '@/components/jukebox/JukeboxPlaylistMenu';
 import { JukeboxTrackPanel } from '@/components/jukebox/JukeboxTrackPanel';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { MASTER_PLAYLIST_ID, isMasterPlaylist } from '@/lib/catalogSeed';
 import {
   SONIC_CATALOG_DISPLAY_NAME,
   SONIC_SINGULARITY_DESCRIPTION,
   SONIC_SINGULARITY_TAGLINE,
+  JUKEBOX_WELCOME,
+  JUKEBOX_WELCOME_TITLE,
 } from '@/lib/sonicCatalogCopy';
 
 export const JUKEBOX_HERO_SRC = '/interfaces/assets/jukebox-golden-era-1940s.png';
@@ -24,8 +26,8 @@ export function JukeboxListenPage() {
 
   const activePl = playlists.find((p) => p.id === activePlaylistId);
   const panelName =
-    activePlaylistId === MASTER_PLAYLIST_ID
-      ? SONIC_CATALOG_DISPLAY_NAME
+    activePl && isMasterPlaylist(activePl.id)
+      ? activePl.name?.trim() || SONIC_CATALOG_DISPLAY_NAME
       : (activePl?.name ?? 'Playlist');
 
   useEffect(() => {
@@ -64,6 +66,11 @@ export function JukeboxListenPage() {
         <h1 className="jb-h1">Listen</h1>
         <p className="jb-tagline">{SONIC_SINGULARITY_TAGLINE}</p>
       </header>
+
+      <section className="jb-welcome" aria-label="Welcome">
+        <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
+        <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
+      </section>
 
       <div className="jb-machine">
         <div className="jb-machine__frame">

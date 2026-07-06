@@ -6679,6 +6679,10 @@ html.qf-jukebox-page .sp-playback-stack {
   left: 0;
 }
 
+html.qf-jukebox-page .sc-pick-backdrop {
+  z-index: 400;
+}
+
 .jb-app {
   min-height: 100vh;
   padding: calc(0.75rem + env(safe-area-inset-top)) 0.75rem calc(9.5rem + env(safe-area-inset-bottom));
@@ -6739,6 +6743,33 @@ html.qf-jukebox-page .sp-playback-stack {
   margin: 0;
   font-size: 0.82rem;
   color: #c4b8a8;
+}
+
+.jb-welcome {
+  max-width: 38rem;
+  margin: 0 auto 1.15rem;
+  padding: 0.85rem 1rem;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.06);
+}
+
+.jb-welcome__title {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.jb-welcome__body {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #d8cbb8;
 }
 
 .jb-machine {
@@ -6860,6 +6891,27 @@ html.qf-jukebox-page .sp-playback-stack {
   font-size: 0.6rem;
   color: #a89880;
   margin-top: 0.15rem;
+}
+
+.jb-catalog-new {
+  display: block;
+  width: calc(100% - 0.7rem);
+  margin: 0.35rem auto 0;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  border: 1px dashed rgba(212, 175, 55, 0.45);
+  background: rgba(0, 0, 0, 0.25);
+  color: #d4af37;
+  cursor: pointer;
+}
+
+.jb-catalog-new:hover {
+  border-color: rgba(212, 175, 55, 0.75);
+  color: #fef3c7;
 }
 
 .jb-track-panel {

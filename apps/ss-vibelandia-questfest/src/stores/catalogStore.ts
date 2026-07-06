@@ -26,6 +26,7 @@ import {
   getDeletedTrackTombstones,
   reconcileDeletedTrackTombstones,
 } from '@/lib/deletedTrackTombstones';
+import { hydrateCatalogFromDevice, instantBootSnapshot } from '@/lib/catalogBoot';
 import {
   loadCatalogCache,
   loadCatalogPrefs,

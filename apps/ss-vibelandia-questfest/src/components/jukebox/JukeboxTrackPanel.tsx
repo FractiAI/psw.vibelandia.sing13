@@ -5,8 +5,9 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
 import { useJukeboxRowGestures } from '@/hooks/useJukeboxRowGestures';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
+import { PlaylistMetaModal } from '@/components/catalog/PlaylistMetaModal';
 import { LikeButton } from '@/components/catalog/LikeButton';
-import { isMasterPlaylist } from '@/lib/catalogSeed';
+import { isMasterPlaylist, isMyLikesPlaylist } from '@/lib/catalogSeed';
 import { playTrackById } from '@/lib/trackPlayback';
 import { fmtDuration } from '@/lib/formatDuration';
 import { findDuplicateTrackGroups } from '@/lib/findCatalogDuplicateGroups';
@@ -38,8 +39,11 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
   const [dupDismissed, setDupDismissed] = useState(false);
   const [dupBusy, setDupBusy] = useState(false);
   const [dupMessage, setDupMessage] = useState<string | null>(null);
+  const [metaOpen, setMetaOpen] = useState(false);
 
   const isMaster = isMasterPlaylist(playlistId);
+  const isMyLikes = isMyLikesPlaylist(playlistId);
+  const canEditPlaylist = !isMyLikes;
   const canReorder = !isMaster && resolvedIds.length > 1;
 
   const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
@@ -160,6 +164,11 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
           </p>
         </div>
         <div className="jb-track-panel__tools">
+          {canEditPlaylist ? (
+            <button type="button" className="jb-tool-btn" onClick={() => setMetaOpen(true)}>
+              {PLAIN.editPlaylist}
+            </button>
+          ) : null}
           <button
             type="button"
             className={`jb-tool-btn${selectMode ? ' jb-tool-btn--on' : ''}`}
@@ -279,6 +288,14 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
           trackId={playlistModalTrack.id}
           trackTitle={playlistModalTrack.title}
           onClose={() => setPlaylistModalTrackId(null)}
+        />
+      ) : null}
+
+      {canEditPlaylist ? (
+        <PlaylistMetaModal
+          playlistId={playlistId}
+          open={metaOpen}
+          onClose={() => setMetaOpen(false)}
         />
       ) : null}
     </section>

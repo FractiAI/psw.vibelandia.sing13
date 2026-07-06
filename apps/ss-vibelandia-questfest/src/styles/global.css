@@ -5188,6 +5188,27 @@ html:not(.qf-upload-tab) .sp-library {
     text-align: center;
   }
 
+  .sp-now-prefs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem 0.65rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sp-now-prefs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sp-now-pref {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.62rem;
+  }
+
   .sp-now-title {
     font-size: 0.92rem;
     overflow: hidden;
@@ -6714,10 +6735,22 @@ html.qf-jukebox-page .sp-now-badge {
 
 html.qf-jukebox-page .sp-now-prefs {
   margin-top: 0.15rem;
-  gap: 0.25rem 0.45rem;
+  gap: 0.2rem 0.35rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+html.qf-jukebox-page .sp-now-prefs::-webkit-scrollbar {
+  display: none;
 }
 
 html.qf-jukebox-page .sp-now-pref {
+  flex: 0 0 auto;
+  white-space: nowrap;
   font-size: 0.56rem;
 }
 
@@ -6879,11 +6912,13 @@ html.qf-jukebox-page .sp-now-add-pl {
 }
 
 .jb-stage {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 80;
-  flex-shrink: 0;
-  margin-bottom: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  margin-bottom: 0.45rem;
   border: 2px solid rgba(212, 175, 55, 0.45);
   border-radius: 12px;
   overflow: hidden;
@@ -6892,7 +6927,8 @@ html.qf-jukebox-page .sp-now-add-pl {
 }
 
 .jb-stage__hero {
-  max-height: min(34vw, 9.5rem);
+  flex-shrink: 0;
+  max-height: min(26vw, 7rem);
   overflow: hidden;
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);
 }
@@ -6901,21 +6937,14 @@ html.qf-jukebox-page .sp-now-add-pl {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 5.5rem;
+  min-height: 4.25rem;
   object-fit: cover;
   object-position: center 12%;
 }
 
-.jb-body {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 0.5rem;
-}
-
 .jb-pl-active {
-  padding: 0.45rem 0.5rem 0.5rem;
+  flex-shrink: 0;
+  padding: 0.35rem 0.5rem 0.4rem;
   background:
     linear-gradient(180deg, rgba(8, 6, 4, 0.96), rgba(18, 12, 8, 0.92)),
     repeating-linear-gradient(
@@ -6928,9 +6957,142 @@ html.qf-jukebox-page .sp-now-add-pl {
 }
 
 .jb-pl-active__head {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.2rem;
   padding: 0 0.15rem;
   text-align: center;
+}
+
+.jb-pl-active__menu-title {
+  margin: 0.12rem 0 0;
+}
+
+.jb-pl-scroll {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 0.4rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  padding: 0.1rem 0.45rem 0.35rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 175, 55, 0.45) transparent;
+}
+
+.jb-stage__tracks {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.jb-body {
+  flex-shrink: 0;
+  max-height: min(28vh, 11rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.35rem;
+}
+
+.jb-body--footer {
+  margin-top: auto;
+}
+
+.jb-empty--stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.jb-pl-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.jb-pl-scroll::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.45);
+  border-radius: 999px;
+}
+
+.jb-pl-scroll__card {
+  flex: 0 0 auto;
+  width: min(78vw, 15.5rem);
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.35rem 0.4rem 0.4rem;
+  text-align: left;
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(12, 10, 8, 0.92), rgba(6, 5, 4, 0.96));
+  color: #e8e0d4;
+  cursor: pointer;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.35);
+}
+
+.jb-pl-scroll__card:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  background: linear-gradient(180deg, rgba(22, 16, 10, 0.95), rgba(10, 8, 6, 0.98));
+}
+
+.jb-pl-scroll__card--on {
+  border-color: rgba(212, 175, 55, 0.85);
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.22), rgba(212, 175, 55, 0.08));
+  box-shadow:
+    inset 0 0 16px rgba(212, 175, 55, 0.12),
+    0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+.jb-pl-scroll__card--master .jb-pl-scroll__title,
+.jb-pl-scroll__card--master .jb-pl-menu__name {
+  color: #fef3c7;
+}
+
+.jb-pl-scroll__card--new {
+  border-style: dashed;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.jb-pl-scroll__title {
+  display: block;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fef3c7;
+  line-height: 1.15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.jb-pl-scroll__row {
+  display: grid;
+  grid-template-columns: 1.65rem minmax(0, auto) 1fr auto;
+  align-items: end;
+  gap: 0 0.3rem;
+  padding-top: 0.2rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.jb-pl-scroll__row .jb-pl-menu__name {
+  font-size: 0.58rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .jb-pl-active__title {
@@ -7232,11 +7394,12 @@ html.qf-jukebox-page .sp-now-add-pl {
 .jb-track-panel {
   display: flex;
   flex-direction: column;
+  flex: 1;
   min-height: 0;
   padding: 0;
-  border: 1px solid rgba(212, 175, 55, 0.28);
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.28);
+  border: none;
+  border-radius: 0;
+  background: transparent;
   overflow: hidden;
 }
 
@@ -7342,9 +7505,10 @@ html.qf-jukebox-page .sp-now-add-pl {
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow: visible;
-  flex: none;
+  flex: 1;
   min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .jb-track-row-wrap {
@@ -7354,7 +7518,7 @@ html.qf-jukebox-page .sp-now-add-pl {
 }
 
 .jb-track-row-wrap--on .jb-track-row {
-  background: rgba(212, 175, 55, 0.1);
+  background: #14100c;
 }
 
 .jb-track-row__reveal {
@@ -7364,10 +7528,17 @@ html.qf-jukebox-page .sp-now-add-pl {
   align-items: stretch;
   justify-content: flex-end;
   pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.jb-track-row-wrap--swipe-open .jb-track-row__reveal {
+  visibility: visible;
+  opacity: 1;
 }
 
 .jb-track-row__remove {
-  pointer-events: auto;
+  pointer-events: none;
   min-width: 5.5rem;
   padding: 0 0.65rem;
   border: none;
@@ -7378,6 +7549,10 @@ html.qf-jukebox-page .sp-now-add-pl {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.jb-track-row-wrap--swipe-open .jb-track-row__remove {
+  pointer-events: auto;
 }
 
 .jb-track-row__remove:hover {
@@ -7395,15 +7570,15 @@ html.qf-jukebox-page .sp-now-add-pl {
   transition: transform 0.15s ease, background 0.15s ease;
   position: relative;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.35);
+  background: #0c0a08;
 }
 
 .jb-track-row--on {
-  background: rgba(212, 175, 55, 0.12);
+  background: #14100c;
 }
 
 .jb-track-row--selected {
-  background: rgba(212, 175, 55, 0.18);
+  background: #1a140e;
 }
 
 .jb-track-row--dragging {
@@ -7557,11 +7732,19 @@ html.qf-jukebox-page .sp-now-add-pl {
 
 @media (max-width: 640px) {
   .jb-stage__hero {
-    max-height: min(38vw, 8.5rem);
+    max-height: min(24vw, 6.5rem);
   }
 
-  .jb-pl-active__title {
+  .jb-pl-scroll__card {
+    width: min(84vw, 14rem);
+  }
+
+  .jb-pl-active__menu-title {
     font-size: 0.82rem;
+  }
+
+  .jb-pl-scroll__title {
+    font-size: 0.72rem;
   }
 
   .jb-pl-active__actions {

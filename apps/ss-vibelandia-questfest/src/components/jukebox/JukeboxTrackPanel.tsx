@@ -382,17 +382,19 @@ function JukeboxTrackRow({
   });
 
   const offset = revealed ? -JB_SWIPE_REVEAL_PX : swipeOffset;
+  const swipeOpen = canRemove && (revealed || offset < 0);
 
   return (
     <li
       data-reorder-idx={canReorder ? playlistIndex : undefined}
-      className={`jb-track-row-wrap${active ? ' jb-track-row-wrap--on' : ''}${selected ? ' jb-track-row-wrap--selected' : ''}`}
+      className={`jb-track-row-wrap${active ? ' jb-track-row-wrap--on' : ''}${selected ? ' jb-track-row-wrap--selected' : ''}${swipeOpen ? ' jb-track-row-wrap--swipe-open' : ''}`}
     >
       {canRemove ? (
-        <div className="jb-track-row__reveal" aria-hidden={!revealed && offset === 0}>
+        <div className="jb-track-row__reveal" aria-hidden={!swipeOpen}>
           <button
             type="button"
             className="jb-track-row__remove"
+            tabIndex={swipeOpen ? 0 : -1}
             onClick={() => {
               onRemove();
               setSwipeOffset(0);
@@ -405,7 +407,7 @@ function JukeboxTrackRow({
       ) : null}
       <div
         className={`jb-track-row${active ? ' jb-track-row--on' : ''}${dragging ? ' jb-track-row--dragging' : ''}${dropBefore ? ' jb-track-row--drop' : ''}${selected ? ' jb-track-row--selected' : ''}`}
-        style={canRemove && offset < 0 ? { transform: `translateX(${offset}px)` } : undefined}
+        style={swipeOpen ? { transform: `translateX(${offset}px)` } : undefined}
         {...rowGestureProps}
       >
       {selectMode ? (

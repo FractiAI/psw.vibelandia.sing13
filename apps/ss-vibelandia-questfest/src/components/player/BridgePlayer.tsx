@@ -372,13 +372,13 @@ export function BridgePlayer({
           )}
           {shareNote ? <p className="sp-now-share-note">{shareNote}</p> : null}
           <div className="sp-now-prefs" role="group" aria-label="Playback options">
-            <label className="sp-now-pref">
+            <label className="sp-now-pref" title="Autoplay playlist">
               <input
                 type="checkbox"
                 checked={autoplayEnabled}
                 onChange={(e) => setAutoplayEnabled(e.target.checked)}
               />
-              Autoplay playlist
+              Autoplay
             </label>
             <label className="sp-now-pref" title="Random order for next, previous, and autoplay within this playlist">
               <input

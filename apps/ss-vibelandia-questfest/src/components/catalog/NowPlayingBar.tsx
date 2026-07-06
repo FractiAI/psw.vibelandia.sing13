@@ -514,13 +514,13 @@ export function NowPlayingBar({
             <p className="sp-now-empty">Pick a track to play</p>
           )}
           <div className="sp-now-prefs" role="group" aria-label="Playback options">
-            <label className="sp-now-pref">
+            <label className="sp-now-pref" title="Autoplay playlist">
               <input
                 type="checkbox"
                 checked={autoplayEnabled}
                 onChange={(e) => setAutoplayEnabled(e.target.checked)}
               />
-              Autoplay playlist
+              Autoplay
             </label>
             {fullPlayUnlocked && (
               <label className="sp-now-pref">

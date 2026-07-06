@@ -86,25 +86,25 @@ export function JukeboxListenPage() {
           />
         </div>
         <JukeboxPlaylistMenu activeId={playlistId} onSelect={setActivePlaylist} />
+        <div className="jb-stage__tracks" aria-label="Selected playlist tracks">
+          {trackCount === 0 ? (
+            <div className="jb-empty jb-empty--stage">
+              <p>No tracks on the Sonic Ship yet.</p>
+              <Link to="/dj" className="jb-link-btn">
+                Upload on DJ tab — feed the hydrogen Y line
+              </Link>
+            </div>
+          ) : (
+            <JukeboxTrackPanel playlistId={playlistId} />
+          )}
+        </div>
       </div>
 
-      <main className="jb-body">
+      <main className="jb-body jb-body--footer">
         <section className="jb-welcome jb-welcome--compact" aria-label="Welcome">
           <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
           <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
         </section>
-
-        {trackCount === 0 ? (
-          <div className="jb-empty jb-empty--hero">
-            <p>No tracks on the Sonic Ship yet.</p>
-            <Link to="/dj" className="jb-link-btn">
-              Upload on DJ tab — feed the hydrogen Y line
-            </Link>
-          </div>
-        ) : (
-          <JukeboxTrackPanel playlistId={playlistId} />
-        )}
-
         <p className="jb-master-blurb">{SONIC_SINGULARITY_DESCRIPTION}</p>
       </main>
     </div>

@@ -1,7 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useEffect } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
-import { SONIC_CATALOG_DISPLAY_NAME, PLAYLIST_MENU_CHANGE, PLAYLIST_MENU_EMPTY, PLAYLIST_MENU_KICKER, PLAYLIST_MENU_TITLE } from '@/lib/sonicCatalogCopy';
+import {
+  SONIC_CATALOG_DISPLAY_NAME,
+  PLAYLIST_MENU_KICKER,
+  PLAYLIST_MENU_TITLE,
+} from '@/lib/sonicCatalogCopy';
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
 import { PLAIN } from '@/lib/plainSpeak';
 
@@ -38,142 +42,101 @@ function useMenuItems() {
   }, [playlists, tracks]);
 }
 
-function CatalogPickerModal({
-  items,
-  activeId,
-  onSelect,
-  onClose,
-  onCreate,
-}: {
-  items: MenuItem[];
-  activeId: string;
-  onSelect: (id: string) => void;
-  onClose: () => void;
-  onCreate: () => void;
-}) {
-  return (
-    <div className="jb-pl-picker-backdrop" role="presentation" onClick={onClose}>
-      <div
-        className="jb-pl-picker"
-        role="dialog"
-        aria-label="Playlist menu"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <header className="jb-pl-picker__head">
-          <div>
-            <p className="jb-pl-menu__kicker">{PLAYLIST_MENU_KICKER}</p>
-            <h2 className="jb-pl-menu__title">{PLAYLIST_MENU_TITLE}</h2>
-          </div>
-          <button type="button" className="jb-pl-picker__close" onClick={onClose} aria-label="Close">
-            ×
-          </button>
-        </header>
-
-        <ul className="jb-pl-picker__list" role="list">
-          {items.map((item) => (
-            <li key={item.id} className="jb-pl-menu__row">
-              <button
-                type="button"
-                className={`jb-pl-menu__item${activeId === item.id ? ' jb-pl-menu__item--on' : ''}${item.isMaster ? ' jb-pl-menu__item--master' : ''}`}
-                onClick={() => {
-                  onSelect(item.id);
-                  onClose();
-                }}
-                aria-current={activeId === item.id ? 'true' : undefined}
-              >
-                <span className="jb-pl-menu__code">{item.code}</span>
-                <span className="jb-pl-menu__name">{item.name}</span>
-                <span className="jb-pl-menu__leaders" aria-hidden="true" />
-                <span className="jb-pl-menu__count">{item.count}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        <footer className="jb-pl-picker__foot">
-          <button
-            type="button"
-            className="jb-pl-menu__item jb-pl-menu__item--action"
-            onClick={() => {
-              onCreate();
-              onClose();
-            }}
-          >
-            <span className="jb-pl-menu__code">+</span>
-            <span className="jb-pl-menu__name">{PLAIN.newPlaylist}</span>
-            <span className="jb-pl-menu__leaders" aria-hidden="true" />
-            <span className="jb-pl-menu__count">new</span>
-          </button>
-        </footer>
-      </div>
-    </div>
-  );
-}
-
-/** Sticky bar — selected catalog only; full menu opens in a modal. */
+/** Sticky bar — kicker + title header, horizontally scrollable two-line playlist cards. */
 export function JukeboxPlaylistMenu({ activeId, onSelect }: JukeboxPlaylistMenuProps) {
   const createPlaylist = useCatalogStore((s) => s.createPlaylist);
   const items = useMenuItems();
-  const [pickerOpen, setPickerOpen] = useState(false);
-
-  const active =
-    items.find((item) => item.id === activeId) ??
-    items.find((item) => item.id === MASTER_PLAYLIST_ID) ??
-    items[0];
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const activeCardRef = useRef<HTMLButtonElement>(null);
 
   const handleCreate = () => {
     const id = createPlaylist(PLAIN.newPlaylist);
     onSelect(id);
   };
 
-  if (!active) {
+  useEffect(() => {
+    const card = activeCardRef.current;
+    const rail = scrollRef.current;
+    if (!card || !rail) return;
+    const cardLeft = card.offsetLeft;
+    const cardWidth = card.offsetWidth;
+    const railWidth = rail.clientWidth;
+    const target = cardLeft - (railWidth - cardWidth) / 2;
+    rail.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+  }, [activeId, items.length]);
+
+  if (!items.length) {
     return (
-      <div className="jb-pl-active">
-        <p className="jb-pl-active__empty">{PLAYLIST_MENU_EMPTY}</p>
-        <button type="button" className="jb-pl-active__btn" onClick={handleCreate}>
-          + {PLAIN.newPlaylist}
-        </button>
+      <div className="jb-pl-active" aria-label="Playlist menu">
+        <header className="jb-pl-active__head">
+          <p className="jb-pl-menu__kicker">{PLAYLIST_MENU_KICKER}</p>
+          <h2 className="jb-pl-menu__title jb-pl-active__menu-title">{PLAYLIST_MENU_TITLE}</h2>
+        </header>
+        <div className="jb-pl-scroll" role="tablist" aria-label="Playlists">
+          <button
+            type="button"
+            className="jb-pl-scroll__card jb-pl-scroll__card--new"
+            onClick={handleCreate}
+            aria-label={PLAIN.newPlaylist}
+          >
+            <span className="jb-pl-scroll__title">+ {PLAIN.newPlaylist}</span>
+            <span className="jb-pl-scroll__row">
+              <span className="jb-pl-menu__code">+</span>
+              <span className="jb-pl-menu__name">{PLAIN.newPlaylist}</span>
+              <span className="jb-pl-menu__leaders" aria-hidden="true" />
+              <span className="jb-pl-menu__count">new</span>
+            </span>
+          </button>
+        </div>
       </div>
     );
   }
 
   return (
-    <>
-      <div className="jb-pl-active" aria-label="Selected playlist">
-        <header className="jb-pl-active__head">
-          <p className="jb-pl-menu__kicker">Now playing from</p>
-          <h2 className="jb-pl-active__title">{active.name}</h2>
-        </header>
+    <div className="jb-pl-active" aria-label="Playlist menu">
+      <header className="jb-pl-active__head">
+        <p className="jb-pl-menu__kicker">{PLAYLIST_MENU_KICKER}</p>
+        <h2 className="jb-pl-menu__title jb-pl-active__menu-title">{PLAYLIST_MENU_TITLE}</h2>
+      </header>
 
-        <div
-          className={`jb-pl-active__row${active.isMaster ? ' jb-pl-active__row--master' : ''}`}
-          aria-current="true"
+      <div ref={scrollRef} className="jb-pl-scroll" role="tablist" aria-label="Playlists">
+        <button
+          type="button"
+          className="jb-pl-scroll__card jb-pl-scroll__card--new"
+          onClick={handleCreate}
+          aria-label={PLAIN.newPlaylist}
         >
-          <span className="jb-pl-menu__code">{active.code}</span>
-          <span className="jb-pl-menu__name">{active.name}</span>
-          <span className="jb-pl-menu__leaders" aria-hidden="true" />
-          <span className="jb-pl-menu__count">{active.count}</span>
-        </div>
-
-        <div className="jb-pl-active__actions">
-          <button type="button" className="jb-pl-active__btn" onClick={() => setPickerOpen(true)}>
-            {PLAYLIST_MENU_CHANGE}
-          </button>
-          <button type="button" className="jb-pl-active__btn jb-pl-active__btn--ghost" onClick={handleCreate}>
-            + {PLAIN.newPlaylist}
-          </button>
-        </div>
+          <span className="jb-pl-scroll__title">+ {PLAIN.newPlaylist}</span>
+          <span className="jb-pl-scroll__row">
+            <span className="jb-pl-menu__code">+</span>
+            <span className="jb-pl-menu__name">{PLAIN.newPlaylist}</span>
+            <span className="jb-pl-menu__leaders" aria-hidden="true" />
+            <span className="jb-pl-menu__count">new</span>
+          </span>
+        </button>
+        {items.map((item) => {
+          const selected = item.id === activeId;
+          return (
+            <button
+              key={item.id}
+              ref={selected ? activeCardRef : undefined}
+              type="button"
+              role="tab"
+              aria-selected={selected}
+              className={`jb-pl-scroll__card${selected ? ' jb-pl-scroll__card--on' : ''}${item.isMaster ? ' jb-pl-scroll__card--master' : ''}`}
+              onClick={() => onSelect(item.id)}
+            >
+              <span className="jb-pl-scroll__title">{item.name}</span>
+              <span className="jb-pl-scroll__row">
+                <span className="jb-pl-menu__code">{item.code}</span>
+                <span className="jb-pl-menu__name">{item.name}</span>
+                <span className="jb-pl-menu__leaders" aria-hidden="true" />
+                <span className="jb-pl-menu__count">{item.count}</span>
+              </span>
+            </button>
+          );
+        })}
       </div>
-
-      {pickerOpen ? (
-        <CatalogPickerModal
-          items={items}
-          activeId={activeId}
-          onSelect={onSelect}
-          onClose={() => setPickerOpen(false)}
-          onCreate={handleCreate}
-        />
-      ) : null}
-    </>
+    </div>
   );
 }

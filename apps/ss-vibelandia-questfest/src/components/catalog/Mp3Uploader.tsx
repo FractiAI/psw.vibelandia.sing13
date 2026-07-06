@@ -16,6 +16,7 @@ import {
   UPLOAD_EYEBROW,
   UPLOAD_INTRO_DESKTOP,
   UPLOAD_INTRO_IOS,
+  UPLOAD_MEMBER_INVITE,
   UPLOAD_TITLE,
 } from '@/lib/sonicCatalogCopy';
 import { MAX_MEDIA_UPLOAD_BYTES } from '@/lib/mediaUploadLimits';
@@ -306,6 +307,7 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
             <>{UPLOAD_INTRO_DESKTOP}</>
           )}
         </p>
+        <p className="mp3-uploader-member-invite">{UPLOAD_MEMBER_INVITE}</p>
       </header>
 
       {!serverReady ? (

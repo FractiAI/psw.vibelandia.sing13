@@ -3,6 +3,8 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { JukeboxPlaylistMenu } from '@/components/jukebox/JukeboxPlaylistMenu';
 import { JukeboxTrackPanel } from '@/components/jukebox/JukeboxTrackPanel';
 import { useCatalogStore } from '@/stores/catalogStore';
+import { useMediaChromeStore } from '@/stores/mediaChromeStore';
+import { useSessionStore } from '@/stores/sessionStore';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { setSharedTrackAutoplaySeed } from '@/lib/sharedTrackPlayback';
 import { playTrackById } from '@/lib/trackPlayback';
@@ -12,6 +14,10 @@ import {
   SONIC_SINGULARITY_TAGLINE,
   JUKEBOX_WELCOME,
   JUKEBOX_WELCOME_TITLE,
+  JUKEBOX_MEMBER_INVITE_TITLE,
+  JUKEBOX_MEMBER_INVITE_BODY,
+  JUKEBOX_MEMBER_INVITE_CTA_UPLOAD,
+  JUKEBOX_MEMBER_INVITE_CTA_PASS,
 } from '@/lib/sonicCatalogCopy';
 
 export const JUKEBOX_HERO_SRC = '/interfaces/assets/jukebox-golden-era-1940s.png';
@@ -25,6 +31,10 @@ export function JukeboxListenPage() {
   const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const getTrack = useCatalogStore((s) => s.getTrack);
+  const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
+  const isPassenger = useSessionStore((s) => s.isPassenger);
+  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
+  const memberUnlocked = isPassenger || captainUnlocked;
   const [searchParams, setSearchParams] = useSearchParams();
   const sharedTrackHandled = useRef(false);
 
@@ -110,6 +120,20 @@ export function JukeboxListenPage() {
         <section className="jb-welcome jb-welcome--compact" aria-label="Welcome">
           <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
           <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
+        </section>
+        <section className="jb-member-invite" aria-label="Member upload invitation">
+          <p className="jb-member-invite__title">{JUKEBOX_MEMBER_INVITE_TITLE}</p>
+          <p className="jb-member-invite__body">{JUKEBOX_MEMBER_INVITE_BODY}</p>
+          <div className="jb-member-invite__actions">
+            <Link to="/dj" className="jb-link-btn">
+              {JUKEBOX_MEMBER_INVITE_CTA_UPLOAD}
+            </Link>
+            {!memberUnlocked ? (
+              <button type="button" className="jb-link-btn jb-link-btn--ghost" onClick={() => setBoardingOpen(true)}>
+                {JUKEBOX_MEMBER_INVITE_CTA_PASS}
+              </button>
+            ) : null}
+          </div>
         </section>
         <p className="jb-master-blurb">{SONIC_SINGULARITY_DESCRIPTION}</p>
       </main>

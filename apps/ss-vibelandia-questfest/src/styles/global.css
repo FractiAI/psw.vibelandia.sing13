@@ -4029,6 +4029,17 @@ html.qf-mp3-upload-page .sp-scroll {
   color: #94a3b8;
 }
 
+.mp3-uploader-member-invite {
+  margin: 0.65rem 0 0;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
 .mp3-uploader-warn {
   margin: 0 0 1rem;
   padding: 0.65rem 0.75rem;
@@ -7358,6 +7369,80 @@ html.qf-jukebox-page .sp-now-add-pl {
   color: #d8cbb8;
 }
 
+.jb-member-invite {
+  max-width: 100%;
+  margin: 0.65rem 0 0;
+  padding: 0.6rem 0.75rem;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 10px;
+  background: rgba(20, 14, 8, 0.5);
+  box-shadow: inset 0 0 24px rgba(212, 175, 55, 0.05);
+}
+
+.jb-member-invite__title {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e8c86a;
+}
+
+.jb-member-invite__body {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: #d0c4b0;
+}
+
+.jb-member-invite__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+}
+
+.jb-link-btn--ghost {
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: transparent;
+  color: #e8d4a8;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.sp-pl-visibility {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.sp-pl-visibility legend {
+  margin-bottom: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.sp-pl-visibility__opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.sp-pl-visibility__opt input {
+  margin-top: 0.15rem;
+  accent-color: #1ed760;
+  flex-shrink: 0;
+}
+
 .jb-pl-menu {
   padding: 0;
 }
@@ -7833,6 +7918,7 @@ html.qf-jukebox-page .sp-now-add-pl {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
+  border: none;
 }
 
 .jb-master-blurb {

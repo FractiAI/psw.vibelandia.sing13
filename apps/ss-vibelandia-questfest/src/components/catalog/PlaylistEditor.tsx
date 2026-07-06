@@ -10,7 +10,14 @@ import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/c
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
 import { nestablePlaylistsForParent } from '@/lib/playlistNest';
-import { MASTER_LIBRARY_UI_HINT, SONIC_SINGULARITY_DESCRIPTION } from '@/lib/sonicCatalogCopy';
+import {
+  MASTER_LIBRARY_UI_HINT,
+  PLAYLIST_KIND_HINT,
+  PLAYLIST_KIND_OPEN_LABEL,
+  PLAYLIST_KIND_SOVEREIGN_LABEL,
+  SONIC_SINGULARITY_DESCRIPTION,
+} from '@/lib/sonicCatalogCopy';
+import type { PlaylistKind } from '@/lib/catalogTypes';
 import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
 
 interface PlaylistEditorProps {
@@ -43,6 +50,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [kind, setKind] = useState<PlaylistKind>('sovereign');
   const [coverPreview, setCoverPreview] = useState<string | undefined>();
   const [coverFile, setCoverFile] = useState<File | null>(null);
   const [coverInputKey, setCoverInputKey] = useState(0);
@@ -62,6 +70,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     if (!current) return;
     setName(current.name);
     setDescription(current.description);
+    setKind(current.kind);
     setCoverPreview(current.posterSrc);
     setCoverFile(null);
     setCoverInputKey((k) => k + 1);
@@ -156,7 +165,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     try {
       await updatePlaylist(
         playlistId,
-        { name, description },
+        { name, description, kind },
         coverFile ? { coverFile, onProgress: setCoverMsg } : undefined,
       );
       setCoverFile(null);
@@ -309,6 +318,30 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
             placeholder="Optional description"
           />
         </label>
+        {!isMaster ? (
+        <fieldset className="sp-library-field sp-pl-visibility">
+          <legend>Who can listen</legend>
+          <label className="sp-pl-visibility__opt">
+            <input
+              type="radio"
+              name={`pl-kind-${playlistId}`}
+              checked={kind === 'sovereign'}
+              onChange={() => setKind('sovereign')}
+            />
+            {PLAYLIST_KIND_SOVEREIGN_LABEL}
+          </label>
+          <label className="sp-pl-visibility__opt">
+            <input
+              type="radio"
+              name={`pl-kind-${playlistId}`}
+              checked={kind === 'open_deck'}
+              onChange={() => setKind('open_deck')}
+            />
+            {PLAYLIST_KIND_OPEN_LABEL}
+          </label>
+          <span className="spotify-field-hint">{PLAYLIST_KIND_HINT}</span>
+        </fieldset>
+        ) : null}
       </div>
       )}
 

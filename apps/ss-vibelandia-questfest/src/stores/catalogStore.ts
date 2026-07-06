@@ -48,7 +48,7 @@ import {
   uploadTrackToServer,
 } from '@/lib/serverCatalog';
 import { localMediaKeyFor } from '@/lib/localPlayback';
-import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
+import type { CatalogSnapshot, PlaylistDef, PlaylistKind, TrackDef } from '@/lib/catalogTypes';
 import {
   DEFAULT_ARTIST,
   TRACK_DESCRIPTION_MAX,
@@ -107,7 +107,7 @@ interface CatalogState {
   renamePlaylist: (id: string, name: string) => void;
   updatePlaylist: (
     id: string,
-    patch: { name?: string; description?: string; posterSrc?: string | null },
+    patch: { name?: string; description?: string; posterSrc?: string | null; kind?: PlaylistKind },
     opts?: { coverFile?: File | null; onProgress?: (message: string) => void },
   ) => Promise<void>;
   deletePlaylist: (id: string) => void;
@@ -539,6 +539,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           ...p,
           ...(patch.name !== undefined ? { name: patch.name.trim() || p.name } : {}),
           ...(patch.description !== undefined ? { description: patch.description } : {}),
+          ...(patch.kind !== undefined ? { kind: patch.kind } : {}),
         };
         if (posterSrc) next.posterSrc = posterSrc;
         else delete next.posterSrc;

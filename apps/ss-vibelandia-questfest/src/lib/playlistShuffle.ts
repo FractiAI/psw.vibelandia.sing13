@@ -56,7 +56,8 @@ export function nextSequentialTrackId(
 
   for (let s = 1; s <= n; s++) {
     const j = (idx + delta * s + n * 16) % n;
-    return playable[j]!;
+    const id = playable[j]!;
+    if (id !== currentId) return id;
   }
   return null;
 }

@@ -3,6 +3,7 @@ import { MediaShell } from './components/player/MediaShell';
 import { PlaybackRoot } from './components/player/PlaybackRoot';
 import { QuestfestFastLink } from './components/QuestfestFastLink';
 import { useIOSHtmlClass } from '@/lib/useIOSHtmlClass';
+import { BridgeExplainerPage } from './pages/BridgeExplainerPage';
 import { BridgePage } from './pages/BridgePage';
 import { BulkUploadPage } from './pages/BulkUploadPage';
 import { JukeboxListenPage } from './pages/JukeboxListenPage';
@@ -27,7 +28,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/listen" replace />} />
         <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/bridge" element={<Navigate to="/listen" replace />} />
+        <Route path="/bridge" element={<BridgeExplainerPage />} />
         <Route path="/listen" element={<JukeboxListenPage />} />
         <Route path="/playlists" element={<Navigate to="/listen" replace />} />
         <Route path="/dj" element={<BridgePage />} />

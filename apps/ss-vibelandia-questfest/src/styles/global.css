@@ -7730,6 +7730,124 @@ html.qf-jukebox-page .sp-now-add-pl {
   font-style: italic;
 }
 
+/* —— Capitan's Bridge explainer · /bridge —— */
+html.jb-bridge-page,
+html.jb-bridge-page body {
+  background:
+    radial-gradient(ellipse 90% 45% at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 55%),
+    #0a0806;
+}
+
+.jb-bridge {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: calc(0.5rem + env(safe-area-inset-top)) 0.65rem calc(5.5rem + env(safe-area-inset-bottom));
+  color: #f5f0e8;
+}
+
+.jb-bridge__main {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.jb-bridge__hero {
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+.jb-bridge__hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.jb-bridge__title {
+  margin: 0 0 0.5rem;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: #fef3c7;
+  text-align: center;
+}
+
+.jb-bridge__lead {
+  margin: 0 0 1rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #d6cfc4;
+  text-align: center;
+}
+
+.jb-bridge__section {
+  margin-bottom: 1rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.jb-bridge__section-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.jb-bridge__p {
+  margin: 0 0 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: #e8e0d4;
+}
+
+.jb-bridge__p:last-child {
+  margin-bottom: 0;
+}
+
+.jb-bridge__honesty {
+  margin: 0.5rem 0 1rem;
+  padding: 0.55rem 0.65rem;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: #9a9080;
+  font-style: italic;
+  border-left: 2px solid rgba(212, 175, 55, 0.4);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.jb-bridge__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.jb-link-btn--primary {
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.25);
+}
+
+.jb-link-btn:not(.jb-link-btn--primary) {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  color: #fef3c7;
+}
+
 @media (max-width: 640px) {
   .jb-stage__hero {
     max-height: min(24vw, 6.5rem);

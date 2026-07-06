@@ -4,6 +4,7 @@ import { JukeboxPlaylistMenu } from '@/components/jukebox/JukeboxPlaylistMenu';
 import { JukeboxTrackPanel } from '@/components/jukebox/JukeboxTrackPanel';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { setSharedTrackAutoplaySeed } from '@/lib/sharedTrackPlayback';
 import { playTrackById } from '@/lib/trackPlayback';
 import {
   SONIC_LISTEN_EYEBROW,
@@ -24,7 +25,7 @@ export function JukeboxListenPage() {
   const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const getTrack = useCatalogStore((s) => s.getTrack);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const sharedTrackHandled = useRef(false);
 
   useEffect(() => {
@@ -55,8 +56,11 @@ export function JukeboxListenPage() {
     const tr = getTrack(trackId);
     if (!tr) return;
     sharedTrackHandled.current = true;
+    setActivePlaylist(MASTER_PLAYLIST_ID);
+    setSharedTrackAutoplaySeed(trackId);
     playTrackById(trackId, getTrack);
-  }, [deviceHydrated, getTrack, searchParams, trackCount]);
+    setSearchParams({}, { replace: true });
+  }, [deviceHydrated, getTrack, searchParams, setActivePlaylist, setSearchParams, trackCount]);
 
   const playlistId = activePlaylistId || MASTER_PLAYLIST_ID;
 
@@ -64,7 +68,9 @@ export function JukeboxListenPage() {
     <div className="jb-app">
       <header className="jb-top jb-top--slim">
         <nav className="jb-nav" aria-label="Site">
-          <Link to="/bridge">Bridge</Link>
+        <Link to="/bridge" className="jb-nav__link">
+          Bridge
+        </Link>
           <span aria-hidden="true">·</span>
           <span className="jb-nav__here">Listen</span>
           <span aria-hidden="true">·</span>

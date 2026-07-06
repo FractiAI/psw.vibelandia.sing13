@@ -26,14 +26,19 @@ import {
   markFreeFullPlayConsumed,
   shouldPreviewGate,
 } from '@/lib/freeFullPlay';
-import { shareTrack } from '@/lib/shareTrack';
-import { PLAIN } from '@/lib/plainSpeak';
 import {
   filterPlayableTrackIds,
   nextSequentialTrackId,
   nextShuffledTrackId,
   playlistOrderFingerprint,
 } from '@/lib/playlistShuffle';
+import { PLAIN } from '@/lib/plainSpeak';
+import {
+  clearSharedTrackAutoplaySeed,
+  sharedTrackAutoplayFromMaster,
+} from '@/lib/sharedTrackPlayback';
+import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
 import type { KillReason } from '@/hooks/useStreamLock';
 import type { TrackDef } from '@/lib/catalogTypes';
 
@@ -133,16 +138,29 @@ export function BridgePlayer({
   );
 
   const advanceNext = useCallback(() => {
-    if (!pl) return false;
-    const useShuffle = shuffleEnabled && shuffleQueue && shuffleQueue.length > 1;
+    const tid = usePlaybackStore.getState().currentTrackId;
+    const fromShared = sharedTrackAutoplayFromMaster(tid);
+    let trackIds = resolvedTrackIds;
+
+    if (fromShared) {
+      const cat = useCatalogStore.getState();
+      trackIds = resolvePlaylistTrackIds(MASTER_PLAYLIST_ID, cat.tracks, cat.playlists);
+      cat.setActivePlaylist(MASTER_PLAYLIST_ID);
+      clearSharedTrackAutoplaySeed();
+    } else if (!pl) {
+      return false;
+    }
+
+    const useShuffle =
+      !fromShared && shuffleEnabled && shuffleQueue && shuffleQueue.length > 1;
     let nextId: string | null = null;
     if (useShuffle) {
-      nextId = nextShuffledTrackId(shuffleQueue!, currentTrackId, 1, getTrack);
+      nextId = nextShuffledTrackId(shuffleQueue!, tid, 1, getTrack);
     } else {
-      if (!currentTrackId) return false;
-      nextId = nextSequentialTrackId(resolvedTrackIds, currentTrackId, 1, getTrack);
+      if (!tid) return false;
+      nextId = nextSequentialTrackId(trackIds, tid, 1, getTrack);
     }
-    if (!nextId) {
+    if (!nextId || nextId === tid) {
       setPlaying(false);
       return false;
     }
@@ -157,7 +175,7 @@ export function BridgePlayer({
           setPlaying(false);
           return;
         }
-        playUrl(nextId, u);
+        playUrl(nextId!, u);
       })
       .catch(() => setPlaying(false));
     return true;

@@ -32,19 +32,19 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
   const openPlaylist = (id: string) => {
     setDjMode(false);
     setActive(id);
-    if (location.pathname !== '/bridge') navigate('/bridge', { replace: true });
+    if (location.pathname !== '/listen') navigate('/listen', { replace: true });
   };
 
   const goHome = () => {
     setDjMode(false);
     setActive(MASTER_PLAYLIST_ID);
-    if (location.pathname !== '/bridge') navigate('/bridge', { replace: true });
+    if (location.pathname !== '/listen') navigate('/listen', { replace: true });
   };
 
   const handleCreate = (parentId?: string) => {
     createPlaylist(PLAIN.newPlaylist, parentId);
     setDjMode(false);
-    if (location.pathname !== '/bridge') navigate('/bridge', { replace: true });
+    if (location.pathname !== '/listen') navigate('/listen', { replace: true });
   };
 
   return (

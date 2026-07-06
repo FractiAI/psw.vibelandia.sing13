@@ -6762,6 +6762,34 @@ html.qf-jukebox-page .sp-global-audio {
   color: #f5f0e8;
 }
 
+html.qf-jukebox-page .sp-now-badge--free {
+  background: rgba(56, 189, 248, 0.2);
+  color: #7dd3fc;
+}
+
+html.qf-jukebox-page .sp-now-share-note {
+  margin: 0.2rem 0 0;
+  font-size: 0.58rem;
+  line-height: 1.35;
+  color: #a5f3fc;
+}
+
+html.qf-jukebox-page .sp-now-btn--share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+}
+
+html.qf-jukebox-page .sp-now-add-pl {
+  width: 1.75rem;
+  height: 1.75rem;
+  min-width: 1.75rem;
+  padding: 0;
+}
+
 .jb-top {
   text-align: center;
   margin-bottom: 0.65rem;
@@ -7319,6 +7347,43 @@ html.qf-jukebox-page .sp-global-audio {
   min-height: 0;
 }
 
+.jb-track-row-wrap {
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+}
+
+.jb-track-row-wrap--on .jb-track-row {
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.jb-track-row__reveal {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.jb-track-row__remove {
+  pointer-events: auto;
+  min-width: 5.5rem;
+  padding: 0 0.65rem;
+  border: none;
+  background: #7f1d1d;
+  color: #fecaca;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.jb-track-row__remove:hover {
+  background: #991b1b;
+}
+
 .jb-track-row {
   display: grid;
   grid-template-columns: auto auto 1.4rem minmax(0, 1fr) auto auto;
@@ -7328,6 +7393,9 @@ html.qf-jukebox-page .sp-global-audio {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   touch-action: pan-y;
   transition: transform 0.15s ease, background 0.15s ease;
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .jb-track-row--on {

@@ -2,10 +2,13 @@ import { useCallback, useRef } from 'react';
 
 const DOUBLE_TAP_MS = 320;
 const SWIPE_THRESHOLD_PX = 72;
+const SWIPE_REVEAL_PX = 84;
 
 type RowGestureOpts = {
   enabled: boolean;
-  onSwipeLeft?: () => void;
+  onSwipeProgress?: (dx: number) => void;
+  onSwipeReveal?: () => void;
+  onSwipeReset?: () => void;
   onDoubleTap?: () => void;
   onLongPressDragStart?: (e: React.PointerEvent) => void;
   onLongPressDragMove?: (e: React.PointerEvent) => void;
@@ -13,10 +16,12 @@ type RowGestureOpts = {
   suppressDrag?: boolean;
 };
 
-/** Handheld row gestures: left swipe remove, double-tap menu, long-press drag on row body. */
+/** Handheld row gestures: left swipe reveal remove, double-tap menu, long-press drag. */
 export function useJukeboxRowGestures({
   enabled,
-  onSwipeLeft,
+  onSwipeProgress,
+  onSwipeReveal,
+  onSwipeReset,
   onDoubleTap,
   onLongPressDragStart,
   onLongPressDragMove,
@@ -47,9 +52,15 @@ export function useJukeboxRowGestures({
     (e: React.PointerEvent) => {
       if (pointerIdRef.current !== e.pointerId) return;
       if (!suppressDrag) onLongPressDragMove?.(e);
-      if (Math.abs(e.clientY - startYRef.current) > 12) draggingRef.current = true;
+      const dy = Math.abs(e.clientY - startYRef.current);
+      if (dy > 12) draggingRef.current = true;
+
+      const dx = e.clientX - startXRef.current;
+      if (!draggingRef.current && dy < 24 && dx < 0 && onSwipeProgress) {
+        onSwipeProgress(Math.max(dx, -SWIPE_REVEAL_PX));
+      }
     },
-    [onLongPressDragMove, suppressDrag],
+    [onLongPressDragMove, onSwipeProgress, suppressDrag],
   );
 
   const onPointerUp = useCallback(
@@ -62,11 +73,15 @@ export function useJukeboxRowGestures({
       const dx = e.clientX - startXRef.current;
       const dy = Math.abs(e.clientY - startYRef.current);
 
-      if (!draggingRef.current && dy < 24 && dx < -SWIPE_THRESHOLD_PX && onSwipeLeft) {
+      if (!draggingRef.current && dy < 24 && dx < -SWIPE_THRESHOLD_PX) {
         swipeHandledRef.current = true;
-        onSwipeLeft();
+        onSwipeReveal?.();
         if (typeof navigator !== 'undefined' && navigator.vibrate) navigator.vibrate(12);
         return;
+      }
+
+      if (!draggingRef.current && dy < 24 && Math.abs(dx) < 16) {
+        onSwipeReset?.();
       }
 
       if (!draggingRef.current && dy < 24 && Math.abs(dx) < 16 && onDoubleTap) {
@@ -78,9 +93,11 @@ export function useJukeboxRowGestures({
         } else {
           lastTapRef.current = now;
         }
+      } else if (Math.abs(dx) >= SWIPE_THRESHOLD_PX || dy >= 24) {
+        onSwipeReset?.();
       }
     },
-    [onDoubleTap, onLongPressDragEnd, onSwipeLeft, suppressDrag],
+    [onDoubleTap, onLongPressDragEnd, onSwipeReveal, onSwipeReset, suppressDrag],
   );
 
   const onPointerCancel = useCallback(
@@ -100,3 +117,5 @@ export function useJukeboxRowGestures({
     swipeHandledRef,
   };
 }
+
+export const JB_SWIPE_REVEAL_PX = SWIPE_REVEAL_PX;

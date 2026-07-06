@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import {
   getSimpleAudioElement,
@@ -10,14 +10,24 @@ import {
   consumeAppPause,
   markAppPause,
   pausePlayback,
+  playTrackById,
   resumeOrPlayTrack,
   startTrackPlayback,
 } from '@/lib/trackPlayback';
 import { useActivePlaylist, useResolvedTrackIds, useResolvedTrackIdsKey } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { LikeButton } from '@/components/catalog/LikeButton';
+import { AddToPlaylistIcon } from '@/components/catalog/AddToPlaylistIcon';
+import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
+import {
+  hasFreeFullPlayRemaining,
+  markFreeFullPlayConsumed,
+  shouldPreviewGate,
+} from '@/lib/freeFullPlay';
+import { shareTrack } from '@/lib/shareTrack';
+import { PLAIN } from '@/lib/plainSpeak';
 import {
   filterPlayableTrackIds,
   nextSequentialTrackId,
@@ -87,7 +97,12 @@ export function BridgePlayer({
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const fullPlayUnlocked = isPassenger || captainUnlocked;
-  const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
+  const solenoidActive = shouldPreviewGate(currentTrackId, fullPlayUnlocked, pl?.kind);
+  const freeFullRemaining =
+    Boolean(currentTrackId) && !fullPlayUnlocked && hasFreeFullPlayRemaining(currentTrackId);
+
+  const [playlistModalOpen, setPlaylistModalOpen] = useState(false);
+  const [shareNote, setShareNote] = useState<string | null>(null);
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
 
@@ -196,12 +211,20 @@ export function BridgePlayer({
       }
     };
 
+    const handleEnded = () => {
+      const tid = usePlaybackStore.getState().currentTrackId;
+      const member =
+        useSessionStore.getState().isPassenger || useSessionStore.getState().captainUnlocked;
+      if (tid && !member && hasFreeFullPlayRemaining(tid)) {
+        markFreeFullPlayConsumed(tid);
+      }
+      if (advanceNext()) return;
+      setPlaying(false);
+    };
+
     registerPlaybackEngine({
       onTime: runGate,
-      onEnded: () => {
-        if (advanceNext()) return;
-        setPlaying(false);
-      },
+      onEnded: handleEnded,
       onError: () => {
         setPlaybackError('Could not load this audio file.');
         setPlaying(false);
@@ -210,17 +233,15 @@ export function BridgePlayer({
 
     return subscribeAudioBind(() => {
       const el = getSimpleAudioElement();
-      if (el) registerPlaybackEngine({
-        onTime: runGate,
-        onEnded: () => {
-          if (advanceNext()) return;
-          setPlaying(false);
-        },
-        onError: () => {
-          setPlaybackError('Could not load this audio file.');
-          setPlaying(false);
-        },
-      });
+      if (el)
+        registerPlaybackEngine({
+          onTime: runGate,
+          onEnded: handleEnded,
+          onError: () => {
+            setPlaybackError('Could not load this audio file.');
+            setPlaying(false);
+          },
+        });
     });
   }, [
     advanceNext,
@@ -292,6 +313,39 @@ export function BridgePlayer({
     resumeOrPlayTrack(track, { beginSession, onError: setPlaybackError });
   };
 
+  const canStartPlaylist = useMemo(() => {
+    if (track) return true;
+    const firstId =
+      shuffleEnabled && shuffleQueue?.length
+        ? nextShuffledTrackId(shuffleQueue, null, 1, getTrack)
+        : nextSequentialTrackId(resolvedTrackIds, null, 1, getTrack);
+    return Boolean(firstId);
+  }, [getTrack, resolvedTrackIds, shuffleEnabled, shuffleQueue, track]);
+
+  const playOrToggle = () => {
+    if (track) {
+      togglePlay();
+      return;
+    }
+    const firstId =
+      shuffleEnabled && shuffleQueue?.length
+        ? nextShuffledTrackId(shuffleQueue, null, 1, getTrack)
+        : nextSequentialTrackId(resolvedTrackIds, null, 1, getTrack);
+    if (!firstId) return;
+    playTrackById(firstId, getTrack);
+  };
+
+  const handleShare = async () => {
+    if (!track) return;
+    setShareNote(null);
+    const result = await shareTrack(track);
+    if (result === 'copied') setShareNote(PLAIN.shareCopied);
+    else if (result === 'failed') setShareNote(PLAIN.shareFailed);
+    if (result === 'copied' || result === 'failed') {
+      window.setTimeout(() => setShareNote(null), 4000);
+    }
+  };
+
   return (
     <footer className="sp-now sp-bridge-player">
       <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
@@ -303,7 +357,10 @@ export function BridgePlayer({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
-              {solenoidActive && <span className="sp-now-badge">30s preview</span>}
+              {freeFullRemaining && (
+                <span className="sp-now-badge sp-now-badge--free">{PLAIN.freeFullPlay}</span>
+              )}
+              {solenoidActive && <span className="sp-now-badge">{PLAIN.freePreview}</span>}
               {fullPlayUnlocked && (
                 <span className="sp-now-badge sp-now-badge--pass" title="Member playback">
                   {captainUnlocked && !isPassenger ? 'Capitan · full play' : 'Members pass · full play'}
@@ -311,8 +368,9 @@ export function BridgePlayer({
               )}
             </>
           ) : (
-            <p className="sp-now-empty">Pick a track, then use the player below</p>
+            <p className="sp-now-empty">Tap ▶ {PLAIN.playAll} or pick a track</p>
           )}
+          {shareNote ? <p className="sp-now-share-note">{shareNote}</p> : null}
           <div className="sp-now-prefs" role="group" aria-label="Playback options">
             <label className="sp-now-pref">
               <input
@@ -343,18 +401,40 @@ export function BridgePlayer({
           </div>
         </div>
         <div className="sp-now-controls">
-          {track && <LikeButton trackId={track.id} size="md" className="sp-now-like" />}
+          {track ? (
+            <>
+              <LikeButton trackId={track.id} size="md" className="sp-now-like" />
+              <AddToPlaylistIcon
+                className="sp-now-add-pl"
+                onClick={() => setPlaylistModalOpen(true)}
+              />
+              <button
+                type="button"
+                className="sp-now-btn sp-now-btn--share"
+                onClick={() => void handleShare()}
+                aria-label={PLAIN.shareTrack}
+                title={PLAIN.shareTrack}
+              >
+                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M13 9.5a2.2 2.2 0 0 0-1.4.5l-4.6-2.6a2.3 2.3 0 0 0 0-1l4.6-2.6a2.2 2.2 0 1 0-.4-1l-4.6 2.6a2.2 2.2 0 1 0 0 2.2l4.6 2.6a2.2 2.2 0 1 0 1.4-.7zM3.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9-4.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+                  />
+                </svg>
+              </button>
+            </>
+          ) : null}
           <button type="button" className="sp-now-btn" onClick={() => stepPlaylist(-1)} disabled={!track} aria-label="Previous">
             ⏮
           </button>
           <button
             type="button"
             className="sp-now-btn sp-now-btn--play"
-            onClick={togglePlay}
-            disabled={!track}
-            aria-label={isPlaying ? 'Pause' : 'Play'}
+            onClick={playOrToggle}
+            disabled={!canStartPlaylist}
+            aria-label={track ? (isPlaying ? 'Pause' : 'Play') : PLAIN.playAll}
           >
-            {isPlaying ? '⏸' : '▶'}
+            {track && isPlaying ? '⏸' : '▶'}
           </button>
           <button type="button" className="sp-now-btn" onClick={() => stepPlaylist(1)} disabled={!track} aria-label="Next">
             ⏭
@@ -365,6 +445,15 @@ export function BridgePlayer({
           {storeError && <span className="sp-now-error">{storeError}</span>}
         </div>
       </div>
+
+      {track && playlistModalOpen ? (
+        <TrackPlaylistsModal
+          open
+          trackId={track.id}
+          trackTitle={track.title}
+          onClose={() => setPlaylistModalOpen(false)}
+        />
+      ) : null}
     </footer>
   );
 }

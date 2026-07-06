@@ -3,7 +3,7 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { useResolvedTrackIds } from '@/stores/catalogSelectors';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
-import { useJukeboxRowGestures } from '@/hooks/useJukeboxRowGestures';
+import { useJukeboxRowGestures, JB_SWIPE_REVEAL_PX } from '@/hooks/useJukeboxRowGestures';
 import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { PlaylistMetaModal } from '@/components/catalog/PlaylistMetaModal';
 import { LikeButton } from '@/components/catalog/LikeButton';
@@ -11,6 +11,7 @@ import { isMasterPlaylist, isMyLikesPlaylist } from '@/lib/catalogSeed';
 import { playTrackById } from '@/lib/trackPlayback';
 import { fmtDuration } from '@/lib/formatDuration';
 import { findDuplicateTrackGroups } from '@/lib/findCatalogDuplicateGroups';
+import { nextSequentialTrackId, nextShuffledTrackId } from '@/lib/playlistShuffle';
 import { PLAIN } from '@/lib/plainSpeak';
 import type { TrackDef } from '@/lib/catalogTypes';
 
@@ -36,6 +37,9 @@ export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
   const [dupBusy, setDupBusy] = useState(false);
   const [dupMessage, setDupMessage] = useState<string | null>(null);
   const [metaOpen, setMetaOpen] = useState(false);
+
+  const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
+  const shuffleQueue = usePlaybackStore((s) => s.shuffleQueue);
 
   const isMaster = isMasterPlaylist(playlistId);
   const isMyLikes = isMyLikesPlaylist(playlistId);
@@ -78,6 +82,34 @@ export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
       playTrackById(id, getTrack);
     },
     [getTrack, playlistId, setActivePlaylist],
+  );
+
+  const canPlayAll = useMemo(() => {
+    const firstId =
+      shuffleEnabled && shuffleQueue?.length
+        ? nextShuffledTrackId(shuffleQueue, null, 1, getTrack)
+        : nextSequentialTrackId(resolvedIds, null, 1, getTrack);
+    return Boolean(firstId);
+  }, [getTrack, resolvedIds, shuffleEnabled, shuffleQueue]);
+
+  const playAll = useCallback(() => {
+    const firstId =
+      shuffleEnabled && shuffleQueue?.length
+        ? nextShuffledTrackId(shuffleQueue, null, 1, getTrack)
+        : nextSequentialTrackId(resolvedIds, null, 1, getTrack);
+    if (!firstId) return;
+    setActivePlaylist(playlistId);
+    playTrackById(firstId, getTrack);
+  }, [getTrack, playlistId, resolvedIds, setActivePlaylist, shuffleEnabled, shuffleQueue]);
+
+  const confirmRemoveFromPlaylist = useCallback(
+    (id: string) => {
+      const tr = getTrack(id);
+      const label = tr?.title ?? 'this track';
+      if (!window.confirm(`Remove "${label}" from this playlist?`)) return;
+      removeTrackFromPlaylist(id, playlistId);
+    },
+    [getTrack, playlistId, removeTrackFromPlaylist],
   );
 
   const toggleSelected = useCallback((id: string) => {
@@ -149,6 +181,14 @@ export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
           </p>
         </div>
         <div className="jb-track-panel__tools">
+          <button
+            type="button"
+            className="jb-tool-btn jb-tool-btn--gold"
+            disabled={!canPlayAll}
+            onClick={playAll}
+          >
+            ▶ {PLAIN.playAll}
+          </button>
           {canEditPlaylist ? (
             <button type="button" className="jb-tool-btn" onClick={() => setMetaOpen(true)}>
               {PLAIN.editPlaylist}
@@ -208,7 +248,7 @@ export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
       ) : null}
 
       <p className="jb-gesture-hint">
-        Scroll for more · swipe left to remove · hold &amp; drag to reorder · double-tap for playlists
+        Scroll for more · swipe left for remove · hold &amp; drag to reorder · double-tap for playlists
       </p>
 
       {rows.length === 0 ? (
@@ -236,7 +276,7 @@ export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
                 }
                 onPlay={() => play(row.track.id)}
                 onToggleSelect={() => toggleSelected(row.track.id)}
-                onRemove={() => removeTrackFromPlaylist(row.track.id, playlistId)}
+                onRemove={() => confirmRemoveFromPlaylist(row.track.id)}
                 onOpenPlaylists={() => setPlaylistModalTrackId(row.track.id)}
                 onGripPointerDown={(e) => onGripPointerDown(row.playlistIndex, e)}
                 onGripPointerMove={onGripPointerMove}
@@ -307,21 +347,67 @@ function JukeboxTrackRow({
   onGripPointerMove,
   onGripPointerUp,
 }: RowProps) {
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    setSwipeOffset(0);
+    setRevealed(false);
+  }, [track.id]);
+
   const { rowGestureProps } = useJukeboxRowGestures({
     enabled: !selectMode,
-    onSwipeLeft: canRemove ? onRemove : undefined,
+    onSwipeProgress: canRemove
+      ? (dx) => {
+          setRevealed(false);
+          setSwipeOffset(dx);
+        }
+      : undefined,
+    onSwipeReveal: canRemove
+      ? () => {
+          setSwipeOffset(-JB_SWIPE_REVEAL_PX);
+          setRevealed(true);
+        }
+      : undefined,
+    onSwipeReset: canRemove
+      ? () => {
+          setSwipeOffset(0);
+          setRevealed(false);
+        }
+      : undefined,
     onDoubleTap: onOpenPlaylists,
     onLongPressDragStart: canReorder ? onGripPointerDown : undefined,
     onLongPressDragMove: canReorder ? onGripPointerMove : undefined,
     onLongPressDragEnd: canReorder ? onGripPointerUp : undefined,
   });
 
+  const offset = revealed ? -JB_SWIPE_REVEAL_PX : swipeOffset;
+
   return (
     <li
       data-reorder-idx={canReorder ? playlistIndex : undefined}
-      className={`jb-track-row${active ? ' jb-track-row--on' : ''}${dragging ? ' jb-track-row--dragging' : ''}${dropBefore ? ' jb-track-row--drop' : ''}${selected ? ' jb-track-row--selected' : ''}`}
-      {...rowGestureProps}
+      className={`jb-track-row-wrap${active ? ' jb-track-row-wrap--on' : ''}${selected ? ' jb-track-row-wrap--selected' : ''}`}
     >
+      {canRemove ? (
+        <div className="jb-track-row__reveal" aria-hidden={!revealed && offset === 0}>
+          <button
+            type="button"
+            className="jb-track-row__remove"
+            onClick={() => {
+              onRemove();
+              setSwipeOffset(0);
+              setRevealed(false);
+            }}
+          >
+            {PLAIN.removeFromPlaylist}
+          </button>
+        </div>
+      ) : null}
+      <div
+        className={`jb-track-row${active ? ' jb-track-row--on' : ''}${dragging ? ' jb-track-row--dragging' : ''}${dropBefore ? ' jb-track-row--drop' : ''}${selected ? ' jb-track-row--selected' : ''}`}
+        style={canRemove && offset < 0 ? { transform: `translateX(${offset}px)` } : undefined}
+        {...rowGestureProps}
+      >
       {selectMode ? (
         <input
           type="checkbox"
@@ -344,6 +430,7 @@ function JukeboxTrackRow({
       </button>
       <span className="jb-track-dur">{fmtDuration(track.durationSec)}</span>
       <LikeButton trackId={track.id} />
+      </div>
     </li>
   );
 }

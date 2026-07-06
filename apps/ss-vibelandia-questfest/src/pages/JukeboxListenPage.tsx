@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { JukeboxPlaylistMenu } from '@/components/jukebox/JukeboxPlaylistMenu';
 import { JukeboxTrackPanel } from '@/components/jukebox/JukeboxTrackPanel';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { playTrackById } from '@/lib/trackPlayback';
 import {
   SONIC_SINGULARITY_DESCRIPTION,
   SONIC_SINGULARITY_TAGLINE,
@@ -21,6 +22,9 @@ export function JukeboxListenPage() {
   const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
   const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
+  const getTrack = useCatalogStore((s) => s.getTrack);
+  const [searchParams] = useSearchParams();
+  const sharedTrackHandled = useRef(false);
 
   useEffect(() => {
     document.documentElement.classList.add('qf-jukebox-page');
@@ -43,6 +47,15 @@ export function JukeboxListenPage() {
   useEffect(() => {
     if (!activePlaylistId) setActivePlaylist(MASTER_PLAYLIST_ID);
   }, [activePlaylistId, setActivePlaylist]);
+
+  useEffect(() => {
+    const trackId = searchParams.get('track');
+    if (!trackId || !deviceHydrated || sharedTrackHandled.current) return;
+    const tr = getTrack(trackId);
+    if (!tr) return;
+    sharedTrackHandled.current = true;
+    playTrackById(trackId, getTrack);
+  }, [deviceHydrated, getTrack, searchParams, trackCount]);
 
   const playlistId = activePlaylistId || MASTER_PLAYLIST_ID;
 

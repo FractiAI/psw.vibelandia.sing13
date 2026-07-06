@@ -6825,93 +6825,167 @@ html.qf-jukebox-page .sc-pick-backdrop {
   min-width: 0;
 }
 
-.jb-catalog-menu {
+.jb-pl-menu {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0.45rem 0.35rem;
+  min-height: 0;
+  padding: 0.35rem 0.3rem 0.3rem;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.2)),
+    repeating-linear-gradient(
+      0deg,
+      rgba(212, 175, 55, 0.04) 0,
+      rgba(212, 175, 55, 0.04) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  border-right: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.jb-catalog-menu__label {
-  margin: 0 0 0.35rem;
-  padding: 0 0.35rem;
-  font-size: 0.58rem;
+.jb-pl-menu__head {
+  flex-shrink: 0;
+  margin: 0 0 0.4rem;
+  padding: 0.35rem 0.4rem 0.45rem;
+  text-align: center;
+  border-top: 2px solid rgba(212, 175, 55, 0.55);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.55);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.jb-pl-menu__kicker {
+  margin: 0 0 0.2rem;
+  font-size: 0.5rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #d4af37;
+  color: #a89880;
 }
 
-.jb-catalog-menu__list {
+.jb-pl-menu__title {
+  margin: 0;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fef3c7;
+  line-height: 1.1;
+}
+
+.jb-pl-menu__list {
   list-style: none;
   margin: 0;
   padding: 0;
   overflow-y: auto;
   flex: 1;
+  min-height: 0;
   -webkit-overflow-scrolling: touch;
 }
 
-.jb-catalog-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.jb-pl-menu__row {
+  margin: 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+.jb-pl-menu__row:last-child {
+  border-bottom-color: rgba(212, 175, 55, 0.28);
+}
+
+.jb-pl-menu__item {
+  display: grid;
+  grid-template-columns: 1.65rem minmax(0, auto) 1fr auto;
+  align-items: end;
+  gap: 0 0.3rem;
   width: 100%;
-  margin: 0 0 0.25rem;
-  padding: 0.45rem 0.5rem;
-  border: 1px solid transparent;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.03);
-  color: #e8dcc8;
+  margin: 0;
+  padding: 0.42rem 0.35rem 0.38rem;
+  border: none;
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: #d8cbb8;
   text-align: left;
   cursor: pointer;
   font: inherit;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
 }
 
-.jb-catalog-btn:hover {
-  border-color: rgba(212, 175, 55, 0.35);
+.jb-pl-menu__item:hover {
+  background: rgba(212, 175, 55, 0.08);
+  color: #f5ead8;
 }
 
-.jb-catalog-btn--on {
-  border-color: rgba(212, 175, 55, 0.75);
-  background: rgba(212, 175, 55, 0.14);
+.jb-pl-menu__item--on {
+  border-left-color: #d4af37;
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.22), rgba(212, 175, 55, 0.06));
   color: #fef3c7;
+  box-shadow: inset 0 0 18px rgba(212, 175, 55, 0.12);
 }
 
-.jb-catalog-btn--master .jb-catalog-btn__name {
+.jb-pl-menu__item--master .jb-pl-menu__name {
   color: #fef3c7;
-}
-
-.jb-catalog-btn__name {
-  font-size: 0.68rem;
   font-weight: 700;
+}
+
+.jb-pl-menu__code {
+  font-family: 'Space Grotesk', ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #d4af37;
+  line-height: 1.2;
+  align-self: center;
+}
+
+.jb-pl-menu__name {
+  font-size: 0.62rem;
+  font-weight: 600;
   line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  align-self: center;
 }
 
-.jb-catalog-btn__count {
-  font-size: 0.6rem;
-  color: #a89880;
-  margin-top: 0.15rem;
+.jb-pl-menu__leaders {
+  min-width: 0.35rem;
+  margin-bottom: 0.18rem;
+  border-bottom: 1px dotted rgba(212, 175, 55, 0.35);
 }
 
-.jb-catalog-new {
-  display: block;
-  width: calc(100% - 0.7rem);
-  margin: 0.35rem auto 0;
-  padding: 0.4rem 0.5rem;
+.jb-pl-menu__count {
+  font-family: 'Space Grotesk', ui-monospace, monospace;
   font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  border-radius: 6px;
-  border: 1px dashed rgba(212, 175, 55, 0.45);
-  background: rgba(0, 0, 0, 0.25);
-  color: #d4af37;
-  cursor: pointer;
+  color: #a89880;
+  white-space: nowrap;
+  align-self: center;
 }
 
-.jb-catalog-new:hover {
-  border-color: rgba(212, 175, 55, 0.75);
+.jb-pl-menu__item--on .jb-pl-menu__count {
+  color: #e8dcc8;
+}
+
+.jb-pl-menu__foot {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  padding-top: 0.15rem;
+  border-top: 2px solid rgba(212, 175, 55, 0.35);
+}
+
+.jb-pl-menu__item--action .jb-pl-menu__code {
   color: #fef3c7;
+}
+
+.jb-pl-menu__item--action .jb-pl-menu__count {
+  font-size: 0.52rem;
+  letter-spacing: 0.14em;
 }
 
 .jb-track-panel {
@@ -7211,11 +7285,22 @@ html.qf-jukebox-page .sc-pick-backdrop {
   .jb-machine__menu-col {
     border-right: none;
     border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-    max-height: 9rem;
+    max-height: 10.5rem;
   }
 
-  .jb-catalog-menu__list {
-    max-height: 7rem;
+  .jb-pl-menu {
+    border-right: none;
+  }
+
+  .jb-pl-menu__list {
+    max-height: 7.5rem;
+  }
+
+  .jb-pl-menu__name {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .jb-track-idx,

@@ -30,33 +30,45 @@ export function JukeboxPlaylistMenu({ activeId, onSelect }: JukeboxPlaylistMenuP
   }, [playlists, tracks]);
 
   return (
-    <nav className="jb-catalog-menu" aria-label="Playlist catalog">
-      <p className="jb-catalog-menu__label">Catalogs</p>
-      <ul className="jb-catalog-menu__list">
-        {items.map((item) => (
-          <li key={item.id}>
+    <nav className="jb-pl-menu" aria-label="Catalog menu">
+      <header className="jb-pl-menu__head">
+        <p className="jb-pl-menu__kicker">Selection panel</p>
+        <h2 className="jb-pl-menu__title">Catalog menu</h2>
+      </header>
+
+      <ul className="jb-pl-menu__list" role="list">
+        {items.map((item, index) => (
+          <li key={item.id} className="jb-pl-menu__row">
             <button
               type="button"
-              className={`jb-catalog-btn${activeId === item.id ? ' jb-catalog-btn--on' : ''}${item.isMaster ? ' jb-catalog-btn--master' : ''}`}
+              className={`jb-pl-menu__item${activeId === item.id ? ' jb-pl-menu__item--on' : ''}${item.isMaster ? ' jb-pl-menu__item--master' : ''}`}
               onClick={() => onSelect(item.id)}
               aria-current={activeId === item.id ? 'true' : undefined}
             >
-              <span className="jb-catalog-btn__name">{item.name}</span>
-              <span className="jb-catalog-btn__count">{item.count} tracks</span>
+              <span className="jb-pl-menu__code">{String(index + 1).padStart(2, '0')}</span>
+              <span className="jb-pl-menu__name">{item.name}</span>
+              <span className="jb-pl-menu__leaders" aria-hidden="true" />
+              <span className="jb-pl-menu__count">{item.count}</span>
             </button>
           </li>
         ))}
       </ul>
-      <button
-        type="button"
-        className="jb-catalog-new"
-        onClick={() => {
-          const id = createPlaylist(PLAIN.newPlaylist);
-          onSelect(id);
-        }}
-      >
-        + {PLAIN.newPlaylist}
-      </button>
+
+      <footer className="jb-pl-menu__foot">
+        <button
+          type="button"
+          className="jb-pl-menu__item jb-pl-menu__item--action"
+          onClick={() => {
+            const id = createPlaylist(PLAIN.newPlaylist);
+            onSelect(id);
+          }}
+        >
+          <span className="jb-pl-menu__code">+</span>
+          <span className="jb-pl-menu__name">{PLAIN.newPlaylist}</span>
+          <span className="jb-pl-menu__leaders" aria-hidden="true" />
+          <span className="jb-pl-menu__count">new</span>
+        </button>
+      </footer>
     </nav>
   );
 }

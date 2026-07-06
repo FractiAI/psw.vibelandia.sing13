@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import { JukeboxPlaylistMenu } from '@/components/jukebox/JukeboxPlaylistMenu';
 import { JukeboxTrackPanel } from '@/components/jukebox/JukeboxTrackPanel';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { MASTER_PLAYLIST_ID, isMasterPlaylist } from '@/lib/catalogSeed';
+import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import {
-  SONIC_CATALOG_DISPLAY_NAME,
   SONIC_SINGULARITY_DESCRIPTION,
   SONIC_SINGULARITY_TAGLINE,
   JUKEBOX_WELCOME,
@@ -21,14 +20,7 @@ export function JukeboxListenPage() {
   const setPlaylistTab = useCatalogStore((s) => s.setPlaylistTab);
   const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
   const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
-  const playlists = useCatalogStore((s) => s.playlists);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
-
-  const activePl = playlists.find((p) => p.id === activePlaylistId);
-  const panelName =
-    activePl && isMasterPlaylist(activePl.id)
-      ? activePl.name?.trim() || SONIC_CATALOG_DISPLAY_NAME
-      : (activePl?.name ?? 'Playlist');
 
   useEffect(() => {
     document.documentElement.classList.add('qf-jukebox-page');
@@ -52,9 +44,11 @@ export function JukeboxListenPage() {
     if (!activePlaylistId) setActivePlaylist(MASTER_PLAYLIST_ID);
   }, [activePlaylistId, setActivePlaylist]);
 
+  const playlistId = activePlaylistId || MASTER_PLAYLIST_ID;
+
   return (
     <div className="jb-app">
-      <header className="jb-top">
+      <header className="jb-top jb-top--slim">
         <nav className="jb-nav" aria-label="Site">
           <Link to="/bridge">Bridge</Link>
           <span aria-hidden="true">·</span>
@@ -63,53 +57,42 @@ export function JukeboxListenPage() {
           <Link to="/dj">DJ</Link>
         </nav>
         <p className="jb-eyebrow">Sonic Singularity · Golden Era Jukebox</p>
-        <h1 className="jb-h1">Listen</h1>
-        <p className="jb-tagline">{SONIC_SINGULARITY_TAGLINE}</p>
+        <p className="jb-tagline jb-tagline--slim">{SONIC_SINGULARITY_TAGLINE}</p>
       </header>
 
-      <section className="jb-welcome" aria-label="Welcome">
-        <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
-        <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
-      </section>
-
-      <div className="jb-machine">
-        <div className="jb-machine__frame">
+      <div className="jb-stage" aria-label="Jukebox selector">
+        <div className="jb-stage__hero">
           <img
-            className="jb-machine__photo"
+            className="jb-stage__photo"
             src={JUKEBOX_HERO_SRC}
             alt="1940s golden era jukebox"
             width={640}
             height={960}
             decoding="async"
           />
-          <div className="jb-machine__glass">
-            <div className="jb-machine__inner">
-              <aside className="jb-machine__menu-col">
-                <JukeboxPlaylistMenu
-                  activeId={activePlaylistId || MASTER_PLAYLIST_ID}
-                  onSelect={setActivePlaylist}
-                />
-              </aside>
-              <div className="jb-machine__track-col">
-                {trackCount === 0 ? (
-                  <div className="jb-empty jb-empty--hero">
-                    <p>No tracks yet.</p>
-                    <Link to="/dj" className="jb-link-btn">
-                      Upload on DJ tab
-                    </Link>
-                  </div>
-                ) : (
-                  <JukeboxTrackPanel
-                    playlistId={activePlaylistId || MASTER_PLAYLIST_ID}
-                    playlistName={panelName}
-                  />
-                )}
-              </div>
-            </div>
-          </div>
         </div>
-        <p className="jb-master-blurb">{SONIC_SINGULARITY_DESCRIPTION}</p>
+        <JukeboxPlaylistMenu activeId={playlistId} onSelect={setActivePlaylist} />
       </div>
+
+      <main className="jb-body">
+        <section className="jb-welcome jb-welcome--compact" aria-label="Welcome">
+          <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
+          <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
+        </section>
+
+        {trackCount === 0 ? (
+          <div className="jb-empty jb-empty--hero">
+            <p>No tracks yet.</p>
+            <Link to="/dj" className="jb-link-btn">
+              Upload on DJ tab
+            </Link>
+          </div>
+        ) : (
+          <JukeboxTrackPanel playlistId={playlistId} />
+        )}
+
+        <p className="jb-master-blurb">{SONIC_SINGULARITY_DESCRIPTION}</p>
+      </main>
     </div>
   );
 }

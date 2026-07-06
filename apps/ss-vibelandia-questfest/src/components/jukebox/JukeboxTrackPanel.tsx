@@ -16,10 +16,9 @@ import type { TrackDef } from '@/lib/catalogTypes';
 
 interface JukeboxTrackPanelProps {
   playlistId: string;
-  playlistName: string;
 }
 
-export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPanelProps) {
+export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
   const getTrack = useCatalogStore((s) => s.getTrack);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
@@ -142,10 +141,9 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
   const playlistModalTrack = playlistModalTrackId ? getTrack(playlistModalTrackId) : undefined;
 
   return (
-    <section className="jb-track-panel" aria-label={`Tracks in ${playlistName}`}>
+    <section className="jb-track-panel" aria-label="Playlist tracks">
       <header className="jb-track-panel__head">
         <div>
-          <h2 className="jb-track-panel__title">{playlistName}</h2>
           <p className="jb-track-panel__meta">
             {rows.length} track{rows.length === 1 ? '' : 's'}
           </p>

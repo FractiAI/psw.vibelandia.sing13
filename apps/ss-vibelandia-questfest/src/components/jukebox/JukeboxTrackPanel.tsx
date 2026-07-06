@@ -123,6 +123,7 @@ export function JukeboxTrackPanel({ playlistId, playlistName }: JukeboxTrackPane
       const removed = await deleteTracks(duplicateRemoveIds, {
         skipConfirm: true,
         purgeLocalOrphans: true,
+        skipSync: true,
       });
       if (!removed.length) {
         setDupMessage('Delete failed — try Refresh, then delete duplicates again.');

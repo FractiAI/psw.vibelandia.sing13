@@ -20,7 +20,12 @@ import {
   loadDeviceDirHandle,
   saveDeviceDirHandle,
 } from '@/lib/catalogPersistence';
-import { hydrateCatalogFromDevice, instantBootSnapshot } from '@/lib/catalogBoot';
+import {
+  addDeletedTrackTombstones,
+  filterSnapshotTracks,
+  getDeletedTrackTombstones,
+  reconcileDeletedTrackTombstones,
+} from '@/lib/deletedTrackTombstones';
 import {
   loadCatalogCache,
   loadCatalogPrefs,
@@ -161,7 +166,7 @@ interface CatalogState {
   /** Bulk delete — one confirm; returns ids removed from local catalog. */
   deleteTracks: (
     trackIds: string[],
-    opts?: { skipConfirm?: boolean; purgeLocalOrphans?: boolean },
+    opts?: { skipConfirm?: boolean; purgeLocalOrphans?: boolean; skipSync?: boolean },
   ) => Promise<string[]>;
   uploadTrackCover: (trackId: string, file: File) => Promise<void>;
   /** Pull library from QUESTFEST server (streaming catalog). */
@@ -1013,6 +1018,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
     if (!removeIds.length) return [];
 
+    addDeletedTrackTombstones(removeIds);
+
     const removeSet = new Set(removeIds);
     set((s) => {
       const tracks = { ...s.tracks };
@@ -1029,7 +1036,9 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { tracks, playlists, likedTrackIds };
     });
     get().persist();
-    void get().syncLibraryFromServer();
+    if (!opts?.skipSync) {
+      void get().syncLibraryFromServer();
+    }
     return removeIds;
   },
 
@@ -1053,7 +1062,10 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
             await new Promise((r) => window.setTimeout(r, 700 * (attempt + 1)));
             continue;
           }
-          const server = mergePendingServerTracks(live, localTracks);
+          const tombstones = getDeletedTrackTombstones();
+          reconcileDeletedTrackTombstones(new Set(Object.keys(live.tracks)));
+          const filteredLive = filterSnapshotTracks(live, tombstones);
+          const server = mergePendingServerTracks(filteredLive, localTracks);
           const prefsWithLikes: ReturnType<typeof loadCatalogPrefs> = prefs
             ? { ...prefs, likedTrackIds: priorLikes.length ? priorLikes : prefs.likedTrackIds }
             : priorLikes.length

@@ -9,6 +9,7 @@ import {
   BRIDGE_PAGE_TITLE,
   BRIDGE_SECTIONS,
 } from '@/lib/sonicBridgeCopy';
+import { HgaiOsDefinitionBlock } from '@/components/HgaiOsDefinitionBlock';
 import { SONIC_SINGULARITY_HERO_SRC, SONIC_SINGULARITY_TAGLINE } from '@/lib/sonicCatalogCopy';
 
 export function BridgeExplainerPage() {
@@ -44,6 +45,8 @@ export function BridgeExplainerPage() {
 
         <h1 className="jb-bridge__title">{BRIDGE_PAGE_TITLE}</h1>
         <p className="jb-bridge__lead">{BRIDGE_PAGE_LEAD}</p>
+
+        <HgaiOsDefinitionBlock variant="full" />
 
         {BRIDGE_SECTIONS.map((section) => (
           <section key={section.id} className="jb-bridge__section" id={section.id}>

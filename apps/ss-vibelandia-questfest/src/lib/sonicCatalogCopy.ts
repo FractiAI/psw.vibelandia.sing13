@@ -30,7 +30,7 @@ export const JUKEBOX_WELCOME =
 export const JUKEBOX_MEMBER_INVITE_TITLE = 'Members — upload your original line';
 
 export const JUKEBOX_MEMBER_INVITE_BODY =
-  'Paying members with an active Machote catalog pass can feed the Sonic Ship on the DJ tab: upload your own original holographic Goldilocks–aligned tracks—including AI music you have rights to—into playlists you build here. Set a playlist Sovereign to keep visitor previews tight, or Open deck when you are ready for others to listen through.';
+  'Paying members with an active Machote catalog pass can feed the Sonic Ship on the DJ tab: upload your own original work—including AI music you have rights to—that passes the Holographic Goldilocks AI OS minimum above. Curate it in playlists you build here. Set a playlist Sovereign to keep visitor previews tight, or Open deck when you are ready for others to listen through.';
 
 export const JUKEBOX_MEMBER_INVITE_CTA_UPLOAD = 'Open DJ tab — upload tracks';
 
@@ -38,7 +38,7 @@ export const JUKEBOX_MEMBER_INVITE_CTA_PASS = 'Get members pass';
 
 /** DJ / upload tab — member upload invitation (below intro). */
 export const UPLOAD_MEMBER_INVITE =
-  'Members pass holders: upload original holographic Goldilocks–aligned audio—including AI music you have rights to—then curate it in your own playlists. Sovereign playlists keep the preview gate for visitors; Open deck playlists let others listen through without that gate.';
+  'Members pass holders: upload audio that meets the Holographic Goldilocks AI OS minimum (whole-in-every-part, balanced band, coordinated layers)—including AI music you have rights to—then curate it in your own playlists. Sovereign playlists keep the preview gate for visitors; Open deck playlists let others listen through without that gate.';
 
 /** Playlist editor — visibility labels (maps to playlist kind). */
 export const PLAYLIST_KIND_SOVEREIGN_LABEL = 'Sovereign · tighter for visitors';

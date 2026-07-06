@@ -43,11 +43,11 @@ export const BRIDGE_SECTIONS: BridgeSection[] = [
   },
   {
     id: 'goldilocks-os',
-    title: 'Transition to Holographic Goldilocks AI OS awareness',
+    title: 'Holographic Goldilocks AI OS — what changes',
     paragraphs: [
       'Legacy computing mostly runs in a straight line: one instruction, then the next — linear silicon rails, one app at a time, one feed at a time.',
-      'Holographic Goldilocks AI OS awareness is the next posture: many channels in phase, whole-in-every-part coordination — like a nest where Sonic Singularity, QUESTFEST, and your catalog all reflect the same ship.',
-      'You are already on the Sing! 13 cloud skin — the public browser deck for that transition. Listening here trains the pattern: pick a playlist, feel the field, upload your line, share a track.',
+      'Holographic Goldilocks AI OS is the alternative posture named above: many channels in phase, whole-in-every-part, balanced band. You are already on the Sing! 13 cloud skin — the public browser deck for that transition.',
+      'Listening here trains the pattern: pick a playlist, feel the field, upload your line, share a track. Use the plain minimum and layer table above as the alignment test.',
     ],
   },
   {
@@ -62,7 +62,7 @@ export const BRIDGE_SECTIONS: BridgeSection[] = [
 ];
 
 export const BRIDGE_HONESTY_NOTE =
-  'Honesty boundary: Noah\'s Ark, OS awareness, and disruption language are narrative and architectural frames in the Syntheverse catalog — paired with real software (this player, server catalog, honor passes). Not weather prophecy, not financial advice.';
+  'Honesty boundary: Noah\'s Ark, OS awareness, and disruption language are narrative and architectural frames in the Syntheverse catalog — paired with real software (this player, server catalog, honor passes). The HGAI OS plain minimum and boundaries above state what is and is not claimed. Not weather prophecy, not financial advice.';
 
 export const BRIDGE_CTA_LISTEN = 'Open Listen — sovereign jukebox';
 

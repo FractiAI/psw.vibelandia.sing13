@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { JukeboxPlaylistMenu } from '@/components/jukebox/JukeboxPlaylistMenu';
 import { JukeboxTrackPanel } from '@/components/jukebox/JukeboxTrackPanel';
+import { HgaiOsDefinitionBlock } from '@/components/HgaiOsDefinitionBlock';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { useSessionStore } from '@/stores/sessionStore';
@@ -121,6 +122,7 @@ export function JukeboxListenPage() {
           <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
           <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
         </section>
+        <HgaiOsDefinitionBlock variant="compact" />
         <section className="jb-member-invite" aria-label="Member upload invitation">
           <p className="jb-member-invite__title">{JUKEBOX_MEMBER_INVITE_TITLE}</p>
           <p className="jb-member-invite__body">{JUKEBOX_MEMBER_INVITE_BODY}</p>

@@ -7369,6 +7369,164 @@ html.qf-jukebox-page .sp-now-add-pl {
   color: #d8cbb8;
 }
 
+/* Holographic Goldilocks AI OS — plain minimum definition */
+.jb-hgai-os {
+  margin: 0.65rem 0 0;
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: 10px;
+  background: rgba(8, 10, 14, 0.55);
+}
+
+.jb-bridge .jb-hgai-os {
+  margin: 0 0 1.25rem;
+  padding: 0.85rem 1rem;
+}
+
+.jb-hgai-os--compact {
+  text-align: center;
+}
+
+.jb-hgai-os--compact .jb-hgai-os__layers {
+  text-align: left;
+}
+
+.jb-hgai-os__title {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d4af37;
+  text-align: center;
+}
+
+.jb-hgai-os__def {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #d4cbb8;
+}
+
+.jb-hgai-os__layers-intro {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #a89880;
+}
+
+.jb-hgai-os__layers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.jb-hgai-os__layer {
+  margin: 0 0 0.5rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.jb-hgai-os__layer:last-child {
+  margin-bottom: 0;
+}
+
+.jb-hgai-os__layer-label {
+  margin: 0 0 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e8c86a;
+}
+
+.jb-hgai-os__layer-grid {
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.jb-hgai-os__layer-grid dt {
+  margin: 0;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a9ab0;
+}
+
+.jb-hgai-os__layer-grid dd {
+  margin: 0 0 0.15rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #c8d0dc;
+}
+
+.jb-hgai-os__boundaries {
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.jb-hgai-os__boundary-head {
+  margin: 0 0 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d4af37;
+  text-align: center;
+}
+
+.jb-hgai-os__boundary-cols {
+  display: grid;
+  gap: 0.65rem;
+}
+
+@media (min-width: 520px) {
+  .jb-hgai-os__boundary-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+}
+
+.jb-hgai-os__boundary-sub {
+  margin: 0 0 0.3rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.jb-hgai-os__boundaries ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.jb-hgai-os__boundaries li {
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #b8c0cc;
+  margin-bottom: 0.25rem;
+}
+
+.jb-hgai-os__bridge-link {
+  margin: 0.5rem 0 0;
+  font-size: 0.68rem;
+  color: #a89880;
+}
+
+.jb-hgai-os__bridge-link a {
+  color: #e8c86a;
+  font-weight: 700;
+}
+
 .jb-member-invite {
   max-width: 100%;
   margin: 0.65rem 0 0;

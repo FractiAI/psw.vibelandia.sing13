@@ -9,7 +9,8 @@ export function GlobalAudio() {
   const djMode = useCatalogStore((s) => s.djMode);
   const { pathname } = useLocation();
   /** Listen / Bridge use custom chrome only — native controls steal space on iPhone. */
-  const chromeOnly = !djMode && (pathname === '/listen' || pathname === '/bridge');
+  const chromeOnly =
+    !djMode && (pathname === '/listen' || pathname === '/listen/now' || pathname === '/bridge');
 
   const setRef = useCallback((el: HTMLAudioElement | null) => {
     bindSimpleAudioElement(el);

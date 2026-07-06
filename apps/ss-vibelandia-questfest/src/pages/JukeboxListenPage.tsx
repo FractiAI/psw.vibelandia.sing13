@@ -1,18 +1,19 @@
 import { useEffect, useRef } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { JukeboxPlaylistMenu } from '@/components/jukebox/JukeboxPlaylistMenu';
 import { JukeboxTrackPanel } from '@/components/jukebox/JukeboxTrackPanel';
+import { JukeboxSiteNav } from '@/components/jukebox/JukeboxSiteNav';
 import { HgaiOsDefinitionBlock } from '@/components/HgaiOsDefinitionBlock';
+import { useJukeboxListenSetup } from '@/hooks/useJukeboxListenSetup';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { JUKEBOX_NOW_PLAYING_PATH } from '@/lib/jukeboxRoutes';
 import { setSharedTrackAutoplaySeed } from '@/lib/sharedTrackPlayback';
 import { playTrackById } from '@/lib/trackPlayback';
 import {
-  SONIC_LISTEN_EYEBROW,
   SONIC_SINGULARITY_DESCRIPTION,
-  SONIC_SINGULARITY_TAGLINE,
   JUKEBOX_WELCOME,
   JUKEBOX_WELCOME_TITLE,
   JUKEBOX_MEMBER_INVITE_TITLE,
@@ -24,11 +25,11 @@ import {
 export const JUKEBOX_HERO_SRC = '/interfaces/assets/jukebox-golden-era-1940s.png';
 
 export function JukeboxListenPage() {
+  useJukeboxListenSetup();
+
+  const navigate = useNavigate();
   const activePlaylistId = useCatalogStore((s) => s.activePlaylistId);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
-  const setDjMode = useCatalogStore((s) => s.setDjMode);
-  const setPlaylistTab = useCatalogStore((s) => s.setPlaylistTab);
-  const syncLibraryFromServer = useCatalogStore((s) => s.syncLibraryFromServer);
   const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const getTrack = useCatalogStore((s) => s.getTrack);
@@ -39,23 +40,7 @@ export function JukeboxListenPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const sharedTrackHandled = useRef(false);
 
-  useEffect(() => {
-    document.documentElement.classList.add('qf-jukebox-page');
-    setDjMode(false);
-    setPlaylistTab(false);
-    const hydrate = () => useCatalogStore.getState().hydrateFromDevice();
-    if (typeof requestIdleCallback === 'function') {
-      requestIdleCallback(hydrate, { timeout: 120 });
-    } else {
-      setTimeout(hydrate, 0);
-    }
-    return () => document.documentElement.classList.remove('qf-jukebox-page');
-  }, [setDjMode, setPlaylistTab]);
-
-  useEffect(() => {
-    if (!deviceHydrated) return;
-    void syncLibraryFromServer();
-  }, [deviceHydrated, syncLibraryFromServer]);
+  const openNowPlaying = () => navigate(JUKEBOX_NOW_PLAYING_PATH);
 
   useEffect(() => {
     if (!activePlaylistId) setActivePlaylist(MASTER_PLAYLIST_ID);
@@ -71,25 +56,14 @@ export function JukeboxListenPage() {
     setSharedTrackAutoplaySeed(trackId);
     playTrackById(trackId, getTrack);
     setSearchParams({}, { replace: true });
-  }, [deviceHydrated, getTrack, searchParams, setActivePlaylist, setSearchParams, trackCount]);
+    navigate(JUKEBOX_NOW_PLAYING_PATH, { replace: true });
+  }, [deviceHydrated, getTrack, navigate, searchParams, setActivePlaylist, setSearchParams, trackCount]);
 
   const playlistId = activePlaylistId || MASTER_PLAYLIST_ID;
 
   return (
-    <div className="jb-app">
-      <header className="jb-top jb-top--slim">
-        <nav className="jb-nav" aria-label="Site">
-        <Link to="/bridge" className="jb-nav__link">
-          Bridge
-        </Link>
-          <span aria-hidden="true">·</span>
-          <span className="jb-nav__here">Listen</span>
-          <span aria-hidden="true">·</span>
-          <Link to="/dj">DJ</Link>
-        </nav>
-        <p className="jb-eyebrow">{SONIC_LISTEN_EYEBROW}</p>
-        <p className="jb-tagline jb-tagline--slim">{SONIC_SINGULARITY_TAGLINE}</p>
-      </header>
+    <div className="jb-app jb-app--browse">
+      <JukeboxSiteNav mode="browse" />
 
       <div className="jb-stage" aria-label="Jukebox selector">
         <div className="jb-stage__hero">
@@ -112,7 +86,7 @@ export function JukeboxListenPage() {
               </Link>
             </div>
           ) : (
-            <JukeboxTrackPanel playlistId={playlistId} />
+            <JukeboxTrackPanel playlistId={playlistId} onOpenNowPlaying={openNowPlaying} />
           )}
         </div>
       </div>

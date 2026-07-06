@@ -4690,6 +4690,14 @@ html:not(.qf-upload-tab) .sp-library {
   min-width: 0;
 }
 
+.sp-now-track--open-now {
+  cursor: pointer;
+}
+
+html.qf-jukebox-page .sp-now-track--open-now:hover .sp-now-title {
+  color: #e8c86a;
+}
+
 .sp-now-title {
   margin: 0;
   font-size: 0.88rem;
@@ -6920,6 +6928,122 @@ html.qf-jukebox-page .sp-global-audio {
   margin: 0 auto;
   padding: calc(0.5rem + env(safe-area-inset-top)) 0.65rem calc(5.25rem + env(safe-area-inset-bottom));
   color: #f5f0e8;
+}
+
+.jb-app--now {
+  padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.jb-now {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.35rem 0.25rem 0.5rem;
+}
+
+.jb-now__back {
+  align-self: flex-start;
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #e8c86a;
+  text-decoration: none;
+}
+
+.jb-now__art-wrap {
+  width: min(72vw, 16rem);
+  margin: 0 auto 0.85rem;
+}
+
+.jb-now__art {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(212, 175, 55, 0.35);
+}
+
+.jb-now__art--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #6a5a40;
+  background: linear-gradient(145deg, #1a140c, #0a0806);
+}
+
+.jb-now__meta {
+  width: 100%;
+  max-width: 24rem;
+}
+
+.jb-now__status {
+  margin: 0 0 0.35rem;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #1ed760;
+}
+
+.jb-now__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #f5f0e8;
+}
+
+.jb-now__artist {
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+  color: #c4b8a8;
+}
+
+.jb-now__genre {
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a89880;
+}
+
+.jb-now__time {
+  margin: 0 0 0.5rem;
+  font-size: 0.72rem;
+  color: #8a8a8a;
+  font-variant-numeric: tabular-nums;
+}
+
+.jb-now__desc,
+.jb-now__story {
+  margin: 0.45rem 0 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: #b8a898;
+  text-align: left;
+}
+
+.jb-now__story {
+  font-style: italic;
+  border-left: 2px solid rgba(212, 175, 55, 0.35);
+  padding-left: 0.55rem;
+}
+
+.jb-now__hint {
+  margin: 0.85rem 0 0;
+  font-size: 0.65rem;
+  line-height: 1.45;
+  color: #7a7060;
+  max-width: 18rem;
 }
 
 html.qf-jukebox-page .sp-now-badge--free {

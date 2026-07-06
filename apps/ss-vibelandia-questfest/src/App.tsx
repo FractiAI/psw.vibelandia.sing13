@@ -7,6 +7,7 @@ import { BridgeExplainerPage } from './pages/BridgeExplainerPage';
 import { BridgePage } from './pages/BridgePage';
 import { BulkUploadPage } from './pages/BulkUploadPage';
 import { JukeboxListenPage } from './pages/JukeboxListenPage';
+import { JukeboxNowPlayingPage } from './pages/JukeboxNowPlayingPage';
 import { RegistrationPage } from './pages/RegistrationPage';
 
 function AppChrome() {
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/register" element={<RegistrationPage />} />
         <Route path="/bridge" element={<BridgeExplainerPage />} />
         <Route path="/listen" element={<JukeboxListenPage />} />
+        <Route path="/listen/now" element={<JukeboxNowPlayingPage />} />
         <Route path="/playlists" element={<Navigate to="/listen" replace />} />
         <Route path="/dj" element={<BridgePage />} />
         <Route path="/bulk-upload" element={<BulkUploadPage />} />

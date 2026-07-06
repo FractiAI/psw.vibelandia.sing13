@@ -13,6 +13,7 @@ import {
 } from '@/lib/sonicCatalogCopy';
 import {
   filterFilesForBulkUpload,
+  retainFilesForBulkUpload,
   runBulkUploadQueue,
   scanFolderForBulkUpload,
   type BulkUploadProgress,
@@ -99,25 +100,26 @@ export function BulkTrackUploader() {
 
   const startUpload = useCallback(
     async (queue: File[]) => {
-      if (!queue.length || !serverReady || busyRef.current) return;
+      if (!queue.length || !serverReady) return;
 
-      busyRef.current = true;
       pausedRef.current = false;
       cancelledRef.current = false;
       setActivePlaylist(MASTER_PLAYLIST_ID);
 
-      await runBulkUploadQueue(queue, importMediaFiles, controls, setProgress);
-
-      busyRef.current = false;
-      queueRef.current = [];
       try {
-        await reconcileServerCatalog();
-      } catch {
-        /* sync still pulls index-reconciled catalog after deploy */
+        await runBulkUploadQueue(queue, importMediaFiles, controls, setProgress);
+        try {
+          await reconcileServerCatalog();
+        } catch {
+          /* sync still pulls index-reconciled catalog after deploy */
+        }
+        void syncLibraryFromServer();
+      } finally {
+        busyRef.current = false;
+        queueRef.current = [];
       }
-      void syncLibraryFromServer();
     },
-    [importMediaFiles, setActivePlaylist, syncLibraryFromServer],
+    [importMediaFiles, serverReady, setActivePlaylist, syncLibraryFromServer],
   );
 
   const processSelection = useCallback(
@@ -147,7 +149,6 @@ export function BulkTrackUploader() {
 
       const { newFiles, duplicates } = classifyFilesAgainstCatalog(valid, tracks);
       setDuplicatesSkipped(duplicates.length);
-      queueRef.current = newFiles;
 
       if (newFiles.length === 0) {
         busyRef.current = false;
@@ -171,50 +172,77 @@ export function BulkTrackUploader() {
         return;
       }
 
+      setProgress((p) => ({
+        ...p,
+        phase: 'indexing',
+        fileIndex: 0,
+        fileTotal: newFiles.length,
+        message: `Loading 0 of ${newFiles.length} into memory…`,
+      }));
+
+      const retained = await retainFilesForBulkUpload(newFiles, (loaded, total) => {
+        setIndexPct(Math.round((loaded / total) * 100));
+        setProgress((p) => ({
+          ...p,
+          phase: 'indexing',
+          fileIndex: loaded,
+          fileTotal: total,
+          message: `Loading ${loaded} of ${total} into memory…`,
+        }));
+      });
+
+      queueRef.current = retained;
+
       setProgress({
         phase: 'uploading',
         summary: null,
         chunkIndex: 0,
-        chunkTotal: Math.ceil(newFiles.length / 20),
+        chunkTotal: Math.ceil(retained.length / 20),
         fileIndex: 0,
-        fileTotal: newFiles.length,
+        fileTotal: retained.length,
         added: 0,
         skipped: duplicates.length,
         failed: rejected,
-        message: `Uploading 0 of ${newFiles.length}…`,
+        message: `Uploading 0 of ${retained.length}…`,
       });
 
-      busyRef.current = false;
-      await startUpload(newFiles);
+      await startUpload(retained);
     },
     [serverReady, startUpload, tracks],
   );
 
   const handleFiles = (picked: File[]) => {
+    if (busyRef.current) return;
     deferAfterFilePicker(() => {
       void processSelection(picked);
+      if (inputRef.current) inputRef.current.value = '';
     });
   };
 
   const handlePrimarySelect = () => {
     if (!serverReady || busyRef.current) return;
     if (folderApi) {
+      busyRef.current = true;
       void (async () => {
-        busyRef.current = true;
-        setProgress((p) => ({
-          ...p,
-          phase: 'indexing',
-          message: 'Choose a folder…',
-        }));
-        const files = await scanFolderForBulkUpload((msg) => {
-          setProgress((p) => ({ ...p, phase: 'indexing', message: msg }));
-        });
-        busyRef.current = false;
-        if (!files?.length) {
-          setProgress({ ...IDLE_PROGRESS, message: 'Selection cancelled.' });
-          return;
+        try {
+          setProgress((p) => ({
+            ...p,
+            phase: 'indexing',
+            message: 'Opening folder picker…',
+          }));
+          const files = await scanFolderForBulkUpload((msg) => {
+            setProgress((p) => ({ ...p, phase: 'indexing', message: msg }));
+          });
+          if (!files?.length) {
+            busyRef.current = false;
+            setProgress({ ...IDLE_PROGRESS, message: files ? 'No valid audio in folder.' : 'Selection cancelled.' });
+            return;
+          }
+          await processSelection(files);
+        } catch {
+          busyRef.current = false;
+          setProgress({ ...IDLE_PROGRESS, message: 'Folder scan failed — try again.' });
         }
-        await processSelection(files);
       })();
       return;
     }

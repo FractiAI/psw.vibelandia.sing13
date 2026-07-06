@@ -1,5 +1,7 @@
 import { DEFAULT_ARTIST } from '@/lib/catalogTypes';
-import { isMediaFile, supportsDirectoryPicker, pickMediaDirectory } from '@/lib/deviceMediaScan';
+import { isMediaFile, supportsDirectoryPicker, pickMediaDirectory, scanDirectoryHandle } from '@/lib/deviceMediaScan';
+import { loadDeviceDirHandle, saveDeviceDirHandle } from '@/lib/catalogPersistence';
+import { retainFileForBulkUpload } from '@/lib/devicePlayback';
 import { classifyFilesAgainstCatalog } from '@/lib/mediaImportPreflight';
 import { MAX_MEDIA_UPLOAD_BYTES } from '@/lib/mediaUploadLimits';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
@@ -78,39 +80,43 @@ export async function filterFilesForBulkUpload(
   return { valid, rejected };
 }
 
+export async function retainFilesForBulkUpload(
+  files: readonly File[],
+  onProgress?: (loaded: number, total: number) => void,
+): Promise<File[]> {
+  const total = files.length;
+  const out: File[] = [];
+  for (let i = 0; i < total; i += 1) {
+    out.push(await retainFileForBulkUpload(files[i]!));
+    if ((i + 1) % BULK_INDEX_YIELD_EVERY === 0 || i === total - 1) {
+      onProgress?.(i + 1, total);
+      await yieldMain();
+    }
+  }
+  return out;
+}
+
+/** Pick folder once (user gesture), scan audio, load into memory — then upload without re-opening. */
 export async function scanFolderForBulkUpload(
   onProgress?: (message: string) => void,
 ): Promise<File[] | null> {
   if (!supportsDirectoryPicker()) return null;
-  onProgress?.('Choose a folder…');
+
+  onProgress?.('Opening folder picker…');
   const handle = await pickMediaDirectory();
   if (!handle) return null;
 
-  const files: File[] = [];
-  let walked = 0;
-
-  async function walk(dir: FileSystemDirectoryHandle): Promise<void> {
-    for await (const entry of dir.values()) {
-      if (entry.kind === 'file') {
-        const f = await entry.getFile();
-        walked += 1;
-        if (isMediaFile(f) && f.size <= MAX_MEDIA_UPLOAD_BYTES) {
-          files.push(f);
-        }
-        if (walked % BULK_INDEX_YIELD_EVERY === 0) {
-          onProgress?.(`Scanning folder… ${files.length} audio files found`);
-          await yieldMain();
-        }
-      } else if (entry.kind === 'directory') {
-        await walk(entry);
-      }
-    }
+  try {
+    await saveDeviceDirHandle(handle);
+  } catch {
+    /* optional persistence */
   }
 
   onProgress?.('Scanning folder…');
-  await walk(handle);
-  onProgress?.(`Found ${files.length} audio files`);
-  return files;
+  const scanned = await scanDirectoryHandle(handle);
+  const valid = scanned.filter((f) => isMediaFile(f) && f.size <= MAX_MEDIA_UPLOAD_BYTES);
+  onProgress?.(`Found ${valid.length} audio files`);
+  return valid;
 }
 
 export function summarizeBulkQueue(
@@ -195,6 +201,8 @@ export async function runBulkUploadQueue(
         artist: DEFAULT_ARTIST,
         playlistIds: [MASTER_PLAYLIST_ID],
         skipDurationProbe: true,
+        deferServerSync: true,
+        skipBulkRetain: true,
         onProgress: (line) => {
           const withinChunk = line.match(/(\d+)\s+of\s+(\d+)/i);
           const globalIndex = withinChunk

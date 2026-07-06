@@ -73,7 +73,7 @@ import {
   stripPlaylistFromAllParents,
 } from '@/lib/playlistNest';
 import { resyncShuffleQueueForPlaylist } from '@/lib/shuffleSync';
-import { isIOSDevice, retainSingleFileForIOS, BULK_RETAIN_UPFRONT_MAX } from '@/lib/devicePlayback';
+import { isIOSDevice, retainSingleFileForIOS, retainFileForBulkUpload, BULK_RETAIN_UPFRONT_MAX } from '@/lib/devicePlayback';
 
 type View = 'catalog' | 'dj';
 
@@ -139,6 +139,10 @@ interface CatalogState {
       onProgress?: (message: string) => void;
       /** Large bulk uploader — skip per-file metadata probes. */
       skipDurationProbe?: boolean;
+      /** Bulk queue — reconcile/sync once after the full run. */
+      deferServerSync?: boolean;
+      /** Caller already loaded files into memory (bulk uploader). */
+      skipBulkRetain?: boolean;
     },
   ) => Promise<{
     added: number;
@@ -765,10 +769,22 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       const singleTitle = singleFile ? opts?.title?.trim() : undefined;
       const skipDurationProbe =
         opts?.skipDurationProbe === true || total >= SKIP_DURATION_PROBE_MIN_BATCH;
-      const retainPerFileOnIos = isIOSDevice() && total > BULK_RETAIN_UPFRONT_MAX;
+      const retainPerFileOnIos =
+        isIOSDevice() && total > BULK_RETAIN_UPFRONT_MAX && !skipDurationProbe;
+      let batch = files;
 
-      for (let i = 0; i < files.length; i++) {
-        let file = files[i]!;
+      if (skipDurationProbe && total > 0 && !opts?.skipBulkRetain) {
+        const retained: File[] = [];
+        for (let i = 0; i < total; i += 1) {
+          report?.(`Loading ${i + 1} of ${total} into memory…`);
+          retained.push(await retainFileForBulkUpload(files[i]!));
+          if (i < total - 1) await yieldBetweenUploads();
+        }
+        batch = retained;
+      }
+
+      for (let i = 0; i < batch.length; i++) {
+        let file = batch[i]!;
         report?.(`Uploading ${i + 1} of ${total}: ${file.name}…`);
         if (retainPerFileOnIos) {
           report?.(`Preparing ${i + 1} of ${total}…`);
@@ -797,7 +813,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           const n = Object.keys(get().tracks).length;
           report?.(`Saved ${i + 1} of ${total} · ${n} tracks in catalog`);
 
-          if (i < files.length - 1) {
+          if (i < batch.length - 1) {
             await yieldBetweenUploads();
           }
         } catch (e) {
@@ -848,7 +864,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       };
     } finally {
       bulkImportDepth = Math.max(0, bulkImportDepth - 1);
-      if (syncAfterBatch) {
+      if (syncAfterBatch && bulkImportDepth === 0 && !opts?.deferServerSync) {
         void (async () => {
           try {
             if (isServerUploadConfigured()) {

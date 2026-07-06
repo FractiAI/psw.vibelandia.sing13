@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import {
   getSimpleAudioElement,
@@ -38,6 +39,7 @@ import {
   sharedTrackAutoplayFromMaster,
 } from '@/lib/sharedTrackPlayback';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { JUKEBOX_LISTEN_PATH, JUKEBOX_NOW_PLAYING_PATH } from '@/lib/jukeboxRoutes';
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
 import type { KillReason } from '@/hooks/useStreamLock';
 import type { TrackDef } from '@/lib/catalogTypes';
@@ -108,6 +110,13 @@ export function BridgePlayer({
 
   const [playlistModalOpen, setPlaylistModalOpen] = useState(false);
   const [shareNote, setShareNote] = useState<string | null>(null);
+
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const jukeboxBrowse = pathname === JUKEBOX_LISTEN_PATH;
+  const openNowPlaying = useCallback(() => {
+    if (pathname !== JUKEBOX_NOW_PLAYING_PATH) navigate(JUKEBOX_NOW_PLAYING_PATH);
+  }, [navigate, pathname]);
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
 
@@ -370,7 +379,22 @@ export function BridgePlayer({
         {track?.posterSrc && (
           <img className="sp-now-cover" src={trackCoverUrl(track)} alt="" width={56} height={56} />
         )}
-        <div className="sp-now-track">
+        <div
+          className={`sp-now-track${jukeboxBrowse && track ? ' sp-now-track--open-now' : ''}`}
+          {...(jukeboxBrowse && track
+            ? {
+                role: 'button' as const,
+                tabIndex: 0,
+                onClick: openNowPlaying,
+                onKeyDown: (e: React.KeyboardEvent) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openNowPlaying();
+                  }
+                },
+              }
+            : {})}
+        >
           {track ? (
             <>
               <p className="sp-now-title">{track.title}</p>

@@ -67,6 +67,14 @@ function guessAudioMime(name: string): string {
 export async function retainSingleFileForIOS(file: File): Promise<File> {
   if (!isIOSDevice()) return file;
   if (file.size > IOS_RETAIN_FILE_MAX_BYTES) return file;
+  return retainFileForBulkUpload(file);
+}
+
+/**
+ * Read file into memory before bulk upload — avoids repeated OS "Open" prompts
+ * (OneDrive/cloud folders, iOS file refs, lazy directory handles).
+ */
+export async function retainFileForBulkUpload(file: File): Promise<File> {
   try {
     const buf = await file.arrayBuffer();
     return new File([buf], file.name, {

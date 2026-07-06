@@ -17,9 +17,11 @@ import type { TrackDef } from '@/lib/catalogTypes';
 
 interface JukeboxTrackPanelProps {
   playlistId: string;
+  /** Navigate to /listen/now after starting playback from this panel. */
+  onOpenNowPlaying?: () => void;
 }
 
-export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
+export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying }: JukeboxTrackPanelProps) {
   const getTrack = useCatalogStore((s) => s.getTrack);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
@@ -79,9 +81,14 @@ export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
   const play = useCallback(
     (id: string) => {
       setActivePlaylist(playlistId);
+      if (currentTrackId === id) {
+        onOpenNowPlaying?.();
+        return;
+      }
       playTrackById(id, getTrack);
+      onOpenNowPlaying?.();
     },
-    [getTrack, playlistId, setActivePlaylist],
+    [currentTrackId, getTrack, onOpenNowPlaying, playlistId, setActivePlaylist],
   );
 
   const canPlayAll = useMemo(() => {
@@ -100,7 +107,8 @@ export function JukeboxTrackPanel({ playlistId }: JukeboxTrackPanelProps) {
     if (!firstId) return;
     setActivePlaylist(playlistId);
     playTrackById(firstId, getTrack);
-  }, [getTrack, playlistId, resolvedIds, setActivePlaylist, shuffleEnabled, shuffleQueue]);
+    onOpenNowPlaying?.();
+  }, [getTrack, onOpenNowPlaying, playlistId, resolvedIds, setActivePlaylist, shuffleEnabled, shuffleQueue]);
 
   const confirmRemoveFromPlaylist = useCallback(
     (id: string) => {

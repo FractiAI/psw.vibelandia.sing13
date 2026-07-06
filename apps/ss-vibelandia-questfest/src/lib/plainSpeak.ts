@@ -1,5 +1,7 @@
 /** Plain labels — SoundCloud-simple Listen experience. */
 
+import { SONIC_CATALOG_DISPLAY_NAME } from '@/lib/sonicCatalogCopy';
+
 export const PLAIN = {
   library: 'Home',
   playlists: 'Playlists',
@@ -54,7 +56,7 @@ export const PLAIN = {
   shareFailed: 'Could not share — try again.',
   removeFromPlaylist: 'Remove from playlist',
   pickPlaylist: 'Choose a playlist.',
-  allTracks: "Hero Jo's Golden Bachdoor Hit Factory Master Catalog",
+  allTracks: SONIC_CATALOG_DISPLAY_NAME,
   noTracksYet: 'No tracks here yet.',
   noSearchMatch: 'Nothing matches that search.',
   search: 'Search',

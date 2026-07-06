@@ -12,6 +12,12 @@ import {
   formatPartialDuplicatesMessage,
 } from '@/lib/mediaImportPreflight';
 import { isServerUploadConfigured } from '@/lib/serverCatalog';
+import {
+  UPLOAD_EYEBROW,
+  UPLOAD_INTRO_DESKTOP,
+  UPLOAD_INTRO_IOS,
+  UPLOAD_TITLE,
+} from '@/lib/sonicCatalogCopy';
 import { MAX_MEDIA_UPLOAD_BYTES } from '@/lib/mediaUploadLimits';
 import { formatFileSize } from '@/lib/formatDuration';
 import {
@@ -289,22 +295,15 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
   return (
     <section className="mp3-uploader" aria-labelledby="mp3-uploader-h">
       <header className="mp3-uploader-head">
-        <p className="mp3-uploader-eyebrow">Upload</p>
+        <p className="mp3-uploader-eyebrow">{UPLOAD_EYEBROW}</p>
         <h2 id="mp3-uploader-h" className="mp3-uploader-title">
-          Add tracks to the catalog
+          {UPLOAD_TITLE}
         </h2>
         <p className="mp3-uploader-desc">
           {iosUpload ? (
-            <>
-              On iPhone: tap <strong>Choose files</strong> → <strong>Browse</strong> → select one or many MP3/M4A
-              files → wait for the list below → tap <strong>Upload</strong>. Stay on this tab until upload finishes.
-            </>
+            <>{UPLOAD_INTRO_IOS}</>
           ) : (
-            <>
-              Pick one or many tracks (Ctrl/Shift on desktop). Small batches upload automatically after you
-              choose. For <strong>100+ tracks</strong>, use <strong>Import folder</strong> (recommended) or
-              choose files then tap <strong>Upload</strong>.
-            </>
+            <>{UPLOAD_INTRO_DESKTOP}</>
           )}
         </p>
       </header>
@@ -448,7 +447,7 @@ export function Mp3Uploader({ onUploaded }: Mp3UploaderProps) {
       <p className="mp3-uploader-status" role="status" aria-live="polite">
         {status}
         {trackCount > 0 ? (
-          <span className="mp3-uploader-count"> · {trackCount} tracks in catalog</span>
+          <span className="mp3-uploader-count"> · {trackCount} tracks on the Sonic Ship</span>
         ) : null}
       </p>
     </section>

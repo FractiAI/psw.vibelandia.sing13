@@ -41,6 +41,7 @@ import {
   deleteTracksOnServer,
   fetchLiveCatalogForSync,
   isServerUploadConfigured,
+  reconcileServerCatalog,
   updateTrackOnServer,
   uploadCoverBlob,
   uploadPlaylistCoverBlob,
@@ -847,11 +848,18 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     } finally {
       bulkImportDepth = Math.max(0, bulkImportDepth - 1);
       if (syncAfterBatch) {
-        void get()
-          .syncLibraryFromServer()
-          .catch(() => {
-            /* local batch state already has new tracks */
-          });
+        void (async () => {
+          try {
+            if (isServerUploadConfigured()) {
+              await reconcileServerCatalog();
+            }
+          } catch {
+            /* index reconcile still runs on GET /api/catalog after deploy */
+          }
+          await get().syncLibraryFromServer();
+        })().catch(() => {
+          /* local batch state already has new tracks */
+        });
       }
     }
   },

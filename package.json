@@ -19,6 +19,7 @@
     "test:wavefield": "node scripts/test-wavefield-metrology.mjs",
     "test:wavefield-echo": "python sing13/tests/wavefield_echo_test.py",
     "audit:blob": "node scripts/blob-storage-audit.mjs",
+    "reconcile:catalog": "node scripts/reconcile-catalog.mjs",
     "research:geomagnetic": "python research/geomagnetic-herbivore/scripts/run_pipeline.py",
     "research:recursive-attention-causality": "node scripts/run-recursive-attention-causality.mjs",
     "research:synthobs-chromosomal-electrodynamics": "node research/synthobs-chromosomal-electrodynamics/scripts/run_empirical_pipeline.mjs",

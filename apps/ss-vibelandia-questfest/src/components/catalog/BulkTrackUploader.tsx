@@ -4,9 +4,14 @@
 import { useCallback, useId, useRef, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
-import { isServerUploadConfigured } from '@/lib/serverCatalog';
+import { isServerUploadConfigured, reconcileServerCatalog } from '@/lib/serverCatalog';
 import {
-  BULK_UPLOAD_MIN_RECOMMENDED,
+  BULK_UPLOAD_EYEBROW,
+  BULK_UPLOAD_IDLE_HINT,
+  BULK_UPLOAD_INTRO,
+  BULK_UPLOAD_TITLE,
+} from '@/lib/sonicCatalogCopy';
+import {
   filterFilesForBulkUpload,
   runBulkUploadQueue,
   scanFolderForBulkUpload,
@@ -30,7 +35,7 @@ const IDLE_PROGRESS: BulkUploadProgress = {
   added: 0,
   skipped: 0,
   failed: 0,
-  message: 'Select a folder or many audio files — upload starts automatically.',
+  message: BULK_UPLOAD_IDLE_HINT,
 };
 
 export function BulkTrackUploader() {
@@ -105,6 +110,11 @@ export function BulkTrackUploader() {
 
       busyRef.current = false;
       queueRef.current = [];
+      try {
+        await reconcileServerCatalog();
+      } catch {
+        /* sync still pulls index-reconciled catalog after deploy */
+      }
       void syncLibraryFromServer();
     },
     [importMediaFiles, setActivePlaylist, syncLibraryFromServer],
@@ -228,14 +238,11 @@ export function BulkTrackUploader() {
   return (
     <section className="bulk-uploader" aria-labelledby="bulk-uploader-h">
       <header className="bulk-uploader-head">
-        <p className="bulk-uploader-eyebrow">Bulk ingest · {BULK_UPLOAD_MIN_RECOMMENDED}+ tracks</p>
+        <p className="bulk-uploader-eyebrow">{BULK_UPLOAD_EYEBROW}</p>
         <h1 id="bulk-uploader-h" className="bulk-uploader-title">
-          Large-batch track uploader
+          {BULK_UPLOAD_TITLE}
         </h1>
-        <p className="bulk-uploader-desc">
-          One selection, automatic upload. Pick a folder (desktop) or many files — progress shows{' '}
-          <strong>current vs total</strong> until finished.
-        </p>
+        <p className="bulk-uploader-desc">{BULK_UPLOAD_INTRO}</p>
       </header>
 
       {!serverReady ? (

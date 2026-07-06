@@ -110,6 +110,47 @@ export async function fetchLiveCatalogForSync(): Promise<CatalogSnapshot> {
   return fetchLiveCatalogWithTimeout(SYNC_FETCH_MS);
 }
 
+export type ReconcileServerCatalogResult = {
+  ok: boolean;
+  before: number;
+  after: number;
+  indexRecovered: number;
+  blobRecovered: number;
+  masterTrackIds: number;
+};
+
+const RECONCILE_FETCH_MS = 300_000;
+
+/** Repair server manifest from upload index + orphan blobs (after bulk uploads). */
+export async function reconcileServerCatalog(opts?: {
+  includeBlobOrphans?: boolean;
+}): Promise<ReconcileServerCatalogResult> {
+  const secret = catalogUploadSecret();
+  if (!secret) throw new Error('catalog_upload_unconfigured');
+
+  const res = await postCatalogJson(
+    '/api/catalog-reconcile',
+    secret,
+    { includeBlobOrphans: opts?.includeBlobOrphans !== false },
+    RECONCILE_FETCH_MS,
+  );
+  const data = (await res.json().catch(() => ({}))) as ReconcileServerCatalogResult & {
+    error?: string;
+    message?: string;
+  };
+  if (!res.ok) {
+    throw catalogApiError(data.error || 'reconcile_failed', data.message);
+  }
+  return {
+    ok: true,
+    before: Number(data.before) || 0,
+    after: Number(data.after) || 0,
+    indexRecovered: Number(data.indexRecovered) || 0,
+    blobRecovered: Number(data.blobRecovered) || 0,
+    masterTrackIds: Number(data.masterTrackIds) || Number(data.after) || 0,
+  };
+}
+
 export type UploadTrackResult = { track: TrackDef };
 export type UploadTrackOptions = {
   onProgress?: (line: string) => void;

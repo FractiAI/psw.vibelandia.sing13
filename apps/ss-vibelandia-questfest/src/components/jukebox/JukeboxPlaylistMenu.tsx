@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
-import { SONIC_CATALOG_DISPLAY_NAME } from '@/lib/sonicCatalogCopy';
+import { SONIC_CATALOG_DISPLAY_NAME, PLAYLIST_MENU_CHANGE, PLAYLIST_MENU_EMPTY, PLAYLIST_MENU_KICKER, PLAYLIST_MENU_TITLE } from '@/lib/sonicCatalogCopy';
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
 import { PLAIN } from '@/lib/plainSpeak';
 
@@ -56,13 +56,13 @@ function CatalogPickerModal({
       <div
         className="jb-pl-picker"
         role="dialog"
-        aria-label="Catalog menu"
+        aria-label="Playlist menu"
         onClick={(e) => e.stopPropagation()}
       >
         <header className="jb-pl-picker__head">
           <div>
-            <p className="jb-pl-menu__kicker">Selection panel</p>
-            <h2 className="jb-pl-menu__title">Catalog menu</h2>
+            <p className="jb-pl-menu__kicker">{PLAYLIST_MENU_KICKER}</p>
+            <h2 className="jb-pl-menu__title">{PLAYLIST_MENU_TITLE}</h2>
           </div>
           <button type="button" className="jb-pl-picker__close" onClick={onClose} aria-label="Close">
             ×
@@ -129,7 +129,7 @@ export function JukeboxPlaylistMenu({ activeId, onSelect }: JukeboxPlaylistMenuP
   if (!active) {
     return (
       <div className="jb-pl-active">
-        <p className="jb-pl-active__empty">No catalogs yet.</p>
+        <p className="jb-pl-active__empty">{PLAYLIST_MENU_EMPTY}</p>
         <button type="button" className="jb-pl-active__btn" onClick={handleCreate}>
           + {PLAIN.newPlaylist}
         </button>
@@ -139,7 +139,7 @@ export function JukeboxPlaylistMenu({ activeId, onSelect }: JukeboxPlaylistMenuP
 
   return (
     <>
-      <div className="jb-pl-active" aria-label="Selected catalog">
+      <div className="jb-pl-active" aria-label="Selected playlist">
         <header className="jb-pl-active__head">
           <p className="jb-pl-menu__kicker">Now playing from</p>
           <h2 className="jb-pl-active__title">{active.name}</h2>
@@ -157,7 +157,7 @@ export function JukeboxPlaylistMenu({ activeId, onSelect }: JukeboxPlaylistMenuP
 
         <div className="jb-pl-active__actions">
           <button type="button" className="jb-pl-active__btn" onClick={() => setPickerOpen(true)}>
-            Change catalog
+            {PLAYLIST_MENU_CHANGE}
           </button>
           <button type="button" className="jb-pl-active__btn jb-pl-active__btn--ghost" onClick={handleCreate}>
             + {PLAIN.newPlaylist}

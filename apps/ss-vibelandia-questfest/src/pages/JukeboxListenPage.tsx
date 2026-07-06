@@ -6,6 +6,7 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { playTrackById } from '@/lib/trackPlayback';
 import {
+  SONIC_LISTEN_EYEBROW,
   SONIC_SINGULARITY_DESCRIPTION,
   SONIC_SINGULARITY_TAGLINE,
   JUKEBOX_WELCOME,
@@ -69,7 +70,7 @@ export function JukeboxListenPage() {
           <span aria-hidden="true">·</span>
           <Link to="/dj">DJ</Link>
         </nav>
-        <p className="jb-eyebrow">Sonic Singularity · Golden Era Jukebox</p>
+        <p className="jb-eyebrow">{SONIC_LISTEN_EYEBROW}</p>
         <p className="jb-tagline jb-tagline--slim">{SONIC_SINGULARITY_TAGLINE}</p>
       </header>
 
@@ -95,9 +96,9 @@ export function JukeboxListenPage() {
 
         {trackCount === 0 ? (
           <div className="jb-empty jb-empty--hero">
-            <p>No tracks yet.</p>
+            <p>No tracks on the Sonic Ship yet.</p>
             <Link to="/dj" className="jb-link-btn">
-              Upload on DJ tab
+              Upload on DJ tab — feed the hydrogen Y line
             </Link>
           </div>
         ) : (

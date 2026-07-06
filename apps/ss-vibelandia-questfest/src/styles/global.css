@@ -4536,6 +4536,25 @@ html:not(.qf-upload-tab) .sp-library {
   background: #0a0a0a;
 }
 
+/** Listen / Bridge — invisible element; BridgePlayer supplies controls (iOS layout). */
+.sp-global-audio-wrap--chrome-only {
+  height: 0;
+  min-height: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+.sp-global-audio--chrome-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
 .sp-bridge-player-hint {
   margin: 0;
   padding: 0.35rem 0.75rem 0.5rem;
@@ -5178,9 +5197,32 @@ html:not(.qf-upload-tab) .sp-library {
 
   .sp-now-bar {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-auto-rows: auto;
     gap: 0.5rem;
     padding: 0.5rem 1rem 0.65rem;
+  }
+
+  .sp-now-bar--with-cover {
+    grid-template-columns: auto 1fr;
+  }
+
+  .sp-now-bar--with-cover .sp-now-cover {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: start;
+  }
+
+  .sp-now-bar--with-cover .sp-now-track {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .sp-now-bar--with-cover .sp-now-controls {
+    grid-column: 1 / -1;
+  }
+
+  .sp-now-bar--with-cover .sp-now-time {
+    grid-column: 1 / -1;
   }
 
   .sp-now-track {
@@ -6781,6 +6823,80 @@ html.qf-jukebox-page .sp-now-error {
 html.qf-jukebox-page .sp-global-audio-wrap .sp-native-audio,
 html.qf-jukebox-page .sp-global-audio {
   min-height: 28px;
+}
+
+/* iPhone / narrow — track title row must not collapse beside controls */
+@media (max-width: 900px) {
+  html.qf-jukebox-page .sp-now-bar,
+  html.qf-jukebox-page .sp-now-bar--with-cover {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    gap: 0.28rem 0.4rem;
+    padding: 0.45rem 0.55rem calc(0.4rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  html.qf-jukebox-page .sp-now-bar:not(.sp-now-bar--with-cover) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html.qf-jukebox-page .sp-now-track {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-width: 0;
+    text-align: left;
+    overflow: visible;
+  }
+
+  html.qf-jukebox-page .sp-now-bar--with-cover .sp-now-cover {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  html.qf-jukebox-page .sp-now-bar--with-cover .sp-now-track {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  html.qf-jukebox-page .sp-now-title {
+    font-size: 0.82rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  html.qf-jukebox-page .sp-now-artist {
+    font-size: 0.68rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  html.qf-jukebox-page .sp-now-controls {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  html.qf-jukebox-page .sp-now-time {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-self: center;
+    font-size: 0.62rem;
+  }
+
+  html.qf-jukebox-page .jb-app {
+    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  html.qf-jukebox-page .sp-global-audio-wrap--chrome-only {
+    display: none;
+  }
 }
 
 .jb-app {

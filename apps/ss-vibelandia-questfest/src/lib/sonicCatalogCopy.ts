@@ -6,7 +6,7 @@ export const SONIC_SINGULARITY_HERO_SRC =
 
 /** Listen hero + sidebar title for the full library (Layer 3 frequency). */
 export const SONIC_CATALOG_DISPLAY_NAME =
-  "Hero Jo's Golden Bachdoor Hit Factory Master Catalog";
+  "Sonic Singularity Master Catalog · Hero Jo's Golden Bachdoor Hit Factory";
 
 /** What the master list *is* — not file-management instructions. */
 export const SONIC_SINGULARITY_DESCRIPTION =

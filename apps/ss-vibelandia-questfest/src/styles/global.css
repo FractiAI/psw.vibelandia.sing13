@@ -6666,3 +6666,511 @@ html.ios .sc-track-add-pl {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
+
+/* —— Golden Era Jukebox · /listen —— */
+html.qf-jukebox-page,
+html.qf-jukebox-page body {
+  background:
+    radial-gradient(ellipse 90% 45% at 50% 0%, rgba(212, 175, 55, 0.14) 0%, transparent 55%),
+    #0a0806;
+}
+
+html.qf-jukebox-page .sp-playback-stack {
+  left: 0;
+}
+
+.jb-app {
+  min-height: 100vh;
+  padding: calc(0.75rem + env(safe-area-inset-top)) 0.75rem calc(9.5rem + env(safe-area-inset-bottom));
+  max-width: 72rem;
+  margin: 0 auto;
+  color: #f5f0e8;
+}
+
+.jb-top {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.jb-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.jb-nav a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.jb-nav a:hover {
+  color: #fef3c7;
+}
+
+.jb-nav__here {
+  color: #fef3c7;
+}
+
+.jb-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.jb-h1 {
+  margin: 0 0 0.35rem;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-size: clamp(2.4rem, 8vw, 3.5rem);
+  line-height: 1;
+  color: #fef3c7;
+  letter-spacing: 0.04em;
+}
+
+.jb-tagline {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #c4b8a8;
+}
+
+.jb-machine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.jb-machine__frame {
+  position: relative;
+  width: min(100%, 42rem);
+}
+
+.jb-machine__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px 18px 8px 8px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65);
+}
+
+.jb-machine__glass {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 22%;
+  bottom: 28%;
+  background: linear-gradient(180deg, rgba(8, 6, 4, 0.92), rgba(18, 12, 8, 0.96));
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  border-radius: 10px;
+  box-shadow: inset 0 0 24px rgba(212, 175, 55, 0.12);
+  overflow: hidden;
+}
+
+.jb-machine__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+  height: 100%;
+  min-height: 14rem;
+}
+
+.jb-machine__menu-col {
+  border-right: 1px solid rgba(212, 175, 55, 0.25);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.jb-machine__track-col {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.jb-catalog-menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.45rem 0.35rem;
+}
+
+.jb-catalog-menu__label {
+  margin: 0 0 0.35rem;
+  padding: 0 0.35rem;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+
+.jb-catalog-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+  -webkit-overflow-scrolling: touch;
+}
+
+.jb-catalog-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 0 0.25rem;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #e8dcc8;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.jb-catalog-btn:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.jb-catalog-btn--on {
+  border-color: rgba(212, 175, 55, 0.75);
+  background: rgba(212, 175, 55, 0.14);
+  color: #fef3c7;
+}
+
+.jb-catalog-btn--master .jb-catalog-btn__name {
+  color: #fef3c7;
+}
+
+.jb-catalog-btn__name {
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.jb-catalog-btn__count {
+  font-size: 0.6rem;
+  color: #a89880;
+  margin-top: 0.15rem;
+}
+
+.jb-track-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: 0.4rem 0.45rem 0.35rem;
+}
+
+.jb-track-panel__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.jb-track-panel__title {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #fef3c7;
+}
+
+.jb-track-panel__meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.58rem;
+  color: #9a9080;
+}
+
+.jb-track-panel__tools {
+  flex-shrink: 0;
+}
+
+.jb-tool-btn {
+  padding: 0.28rem 0.55rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8dcc8;
+  cursor: pointer;
+}
+
+.jb-tool-btn--on,
+.jb-tool-btn--gold {
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.2);
+  color: #fef3c7;
+}
+
+.jb-dup-banner {
+  margin-bottom: 0.35rem;
+  padding: 0.4rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid rgba(251, 191, 36, 0.45);
+  background: rgba(120, 80, 10, 0.25);
+  font-size: 0.62rem;
+  line-height: 1.4;
+}
+
+.jb-dup-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.jb-batch-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.62rem;
+}
+
+.jb-gesture-hint {
+  margin: 0 0 0.35rem;
+  font-size: 0.55rem;
+  color: #8a8070;
+  line-height: 1.35;
+}
+
+.jb-track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.jb-track-row {
+  display: grid;
+  grid-template-columns: auto auto 1.4rem minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.25rem 0.35rem;
+  padding: 0.35rem 0.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  touch-action: pan-y;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.jb-track-row--on {
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.jb-track-row--selected {
+  background: rgba(212, 175, 55, 0.18);
+}
+
+.jb-track-row--dragging {
+  opacity: 0.55;
+}
+
+.jb-track-row--drop {
+  box-shadow: inset 0 2px 0 #d4af37;
+}
+
+.jb-track-check {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #d4af37;
+}
+
+.jb-track-play {
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fef3c7;
+  font-size: 0.65rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.jb-track-idx {
+  font-size: 0.58rem;
+  color: #8a8070;
+  text-align: right;
+}
+
+.jb-track-main {
+  min-width: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.jb-track-title {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #f5f0e8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jb-track-sub {
+  display: block;
+  font-size: 0.58rem;
+  color: #9a9080;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.jb-track-dur {
+  font-size: 0.58rem;
+  color: #8a8070;
+  font-variant-numeric: tabular-nums;
+}
+
+.jb-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.jb-pager-btn {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(0, 0, 0, 0.45);
+  color: #e8dcc8;
+  cursor: pointer;
+}
+
+.jb-pager-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.jb-pager-btn--primary {
+  background: linear-gradient(180deg, #f0d4a0, #c9a227);
+  color: #1a120c;
+  border-color: transparent;
+}
+
+.jb-pager-label {
+  font-size: 0.62rem;
+  color: #a89880;
+  font-variant-numeric: tabular-nums;
+}
+
+.jb-empty {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #a89880;
+}
+
+.jb-empty--hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 0.75rem;
+}
+
+.jb-link-btn {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f0d4a0, #c9a227);
+  color: #1a120c;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.jb-master-blurb {
+  max-width: 36rem;
+  margin: 0;
+  padding: 0 0.5rem;
+  text-align: center;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #b8a898;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .jb-machine__glass {
+    position: static;
+    margin-top: -2.5rem;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    min-height: 22rem;
+  }
+
+  .jb-machine__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 22rem;
+  }
+
+  .jb-machine__menu-col {
+    border-right: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    max-height: 9rem;
+  }
+
+  .jb-catalog-menu__list {
+    max-height: 7rem;
+  }
+
+  .jb-track-idx,
+  .jb-track-dur {
+    display: none;
+  }
+
+  .jb-track-row {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .jb-gesture-hint {
+    display: block;
+  }
+}
+
+@media (min-width: 641px) {
+  .jb-gesture-hint {
+    display: none;
+  }
+}

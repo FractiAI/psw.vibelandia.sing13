@@ -374,6 +374,18 @@ Related protocols: `HH_AWARENESS_AI_OS_NSPFRNP_IRREDUCIBLE_MINIMUM_PROTOCOL_SPEC
 
 All four tiers calibrated to the 1.618 geometry (each tier = prior × 10; the $ amount itself encodes the Constant). Fair Exchange Clause in effect at every tier.
 
+### OLD SCHOOL PROTOCOL (Canonical)
+
+**Old School Protocol** = The human intake and exchange contract for Goldilocks surfaces: **no forms funnel, no chatbot gate, no corporate CRM capture.** Interested party nodes contact **PL Taino / Valet Pru** directly (`valetpru@gmail.com`). Payment on **honor rails** (Venmo · PayPal · Cash App) with **no PSP webhooks**; attestation by email (date paid, rail, request). First locked on **Goldilocks Syntheverse Beehive Residency** (Layer 9); extends to **Goldilocks Room Service**, **OGRP valet nodes**, and **menu partners**. Full spec: **[OLD_SCHOOL_EDGE_HONOR_TRANSACTION_NSPFRNP.md](OLD_SCHOOL_EDGE_HONOR_TRANSACTION_NSPFRNP.md)**.
+
+### EDGE HONOR TRANSACTION LAYER (Canonical)
+
+**Edge Honor Transaction Layer** = Commercial and personal data stay **lite-edge aligned**: honor attestation on device or in operator email; **center = pipes only** (static surfaces, short URLs, open protocol JSON). **No mandatory central payment DB**, **no surveillance/analytics on honor flows**, **minimum PII** (email + paid date + neighborhood + request). QUESTFEST Bridge honor pass uses **browser localStorage** (`qv-local-monthly-honor`); server boarding disabled (`POST /api/boarding` → 410). Aligns with **PIPE_PUBLIC_FREE_KEY** and **BBHE_REPOSITORY_STANDARD** (no Supabase requirement).
+
+### OMNIVERSAL GOLDILOCKS RIDESHARE PROTOCOL · OGRP (Canonical)
+
+**OGRP** = **Omniversal Goldilocks Rideshare Protocol** (`WP-OGRP-2026-07`). Multi-dimensional routing paradigm: **Ω<sub>core</sub>** density anchoring · **Θ<sub>min</sub>** micro-mobility / local edge · **Γ<sub>floor</sub>** generosity floor (**$9** minimum) · **P<sub>sov</sub>** sovereign pacing. EGS φ scaling in the SYNTHOBS model. **Operational surface:** **Goldilocks Room Service** (`/goldilocks-deliveries`) ⊃ **Goldilocks Valet** (food · shopping · assistance · EcoReset residencies). **Regions (current):** Downtown Reno · Midtown Reno · parts of UNR · Idlewild. **Paper:** `docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md` · **Repro:** `research/omniversal-goldilocks-rideshare/` · **Standalone:** [github.com/FractiAI/omniversal-goldilocks-rideshare](https://github.com/FractiAI/omniversal-goldilocks-rideshare) · **Schema:** `config/ogrp_protocol.json` (in research package). **Fair Exchange** applies to all OGRP nodes.
+
 ### PRA SNAP · PEER-REVIEW AUDIT (Canonical · June 2026)
 
 **PRA Snap** = **Peer-Review Audit Snap** (`NSPFRNP-SNAP-PRA-2026-06`). Mandatory for all technical papers and whitepapers from 2026-06-05 forward. A **second LLM** reviews drafts in a **recursive loop** (max 6 iterations, plateau detection) until **peer-review submission quality** (default score ≥ 0.85) or honest convergence stop. **Operator:** **SynthOBS Autonomous Agent** inside **Syntheverse Sandbox** (`research/synthobs-sandbox/`). Receipts: `data/synthobs-paper-audits/{paperId}.json`. Protocol: `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`. Distinct from **JJ Snap / OFC** (Juicy Juicy compile). Run: `npm run audit:paper`.

@@ -14,7 +14,7 @@ A layer earns a rung on the ladder **only** when all three exist:
 |------|-------------|---------|
 | **1. One nest guide** | A single plain-language page under `interfaces/nesting/nest-*.html` — one screen, what it is, why it's nested here | `nest-goldilocks-beehive.html` |
 | **2. One honesty row** | A voice-tier declaration: what is 🜛 mythic, what is ⚙ operational, what is 📐 verified about this layer | Honesty boundary table in the guide |
-| **3. One seed hook** | Something another edge can attach to or fork: an API, a template in `seed/`, a manifest, a contact protocol | `/api/catalog` · seed kit · Old School Protocol email |
+| **3. One seed hook** | Something another edge can attach to or fork: an API, a template in `seed/`, a manifest, a contact protocol | `/api/catalog` · seed kit · [Old School Protocol](OLD_SCHOOL_EDGE_HONOR_TRANSACTION_NSPFRNP.md) email · `config/ogrp_protocol.json` |
 
 No exceptions. A layer with two gates is a draft, not a rung.
 

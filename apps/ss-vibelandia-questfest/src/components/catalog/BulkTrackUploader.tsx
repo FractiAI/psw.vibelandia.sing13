@@ -47,7 +47,6 @@ export function BulkTrackUploader() {
   const cancelledRef = useRef(false);
   const busyRef = useRef(false);
 
-  const tracks = useCatalogStore((s) => s.tracks);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const importMediaFiles = useCatalogStore((s) => s.importMediaFiles);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
@@ -107,7 +106,16 @@ export function BulkTrackUploader() {
       setActivePlaylist(MASTER_PLAYLIST_ID);
 
       try {
-        await runBulkUploadQueue(queue, importMediaFiles, controls, setProgress);
+        await runBulkUploadQueue(queue, importMediaFiles, controls, setProgress, {
+          onChunkComplete: async () => {
+            try {
+              await reconcileServerCatalog();
+            } catch {
+              /* live index catches up on next chunk or final sync */
+            }
+            await syncLibraryFromServer();
+          },
+        });
         try {
           await reconcileServerCatalog();
         } catch {
@@ -147,7 +155,10 @@ export function BulkTrackUploader() {
         }));
       });
 
-      const { newFiles, duplicates } = classifyFilesAgainstCatalog(valid, tracks);
+      const { newFiles, duplicates } = classifyFilesAgainstCatalog(
+        valid,
+        useCatalogStore.getState().tracks,
+      );
       setDuplicatesSkipped(duplicates.length);
 
       if (newFiles.length === 0) {
@@ -208,7 +219,7 @@ export function BulkTrackUploader() {
 
       await startUpload(retained);
     },
-    [serverReady, startUpload, tracks],
+    [serverReady, startUpload],
   );
 
   const handleFiles = (picked: File[]) => {
@@ -341,6 +352,10 @@ export function BulkTrackUploader() {
               <p className="bulk-uploader-current-file">{progress.currentFile}</p>
             ) : null}
             <dl className="bulk-uploader-stats bulk-uploader-stats--inline">
+              <div>
+                <dt>In catalog</dt>
+                <dd>{trackCount || progress.added || '—'}</dd>
+              </div>
               <div>
                 <dt>Uploaded</dt>
                 <dd>{progress.added}</dd>

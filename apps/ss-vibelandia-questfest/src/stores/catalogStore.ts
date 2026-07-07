@@ -137,6 +137,13 @@ interface CatalogState {
       playlistIds?: string[];
       coverFile?: File | null;
       onProgress?: (message: string) => void;
+      /** Fires after each successful file in a batch — bulk progress + live catalog size. */
+      onTrackAdded?: (info: {
+        catalogSize: number;
+        addedInBatch: number;
+        fileIndex: number;
+        fileTotal: number;
+      }) => void;
       /** Large bulk uploader — skip per-file metadata probes. */
       skipDurationProbe?: boolean;
       /** Bulk queue — reconcile/sync once after the full run. */
@@ -811,7 +818,17 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           addedTrackIds.push(track.id);
           appendImportedTrackToState(set, get, track, playlistIds, { batch: total > 1 });
           const n = Object.keys(get().tracks).length;
+          const addedInBatch = newTracks.length;
+          opts?.onTrackAdded?.({
+            catalogSize: n,
+            addedInBatch,
+            fileIndex: i + 1,
+            fileTotal: total,
+          });
           report?.(`Saved ${i + 1} of ${total} · ${n} tracks in catalog`);
+          if (total > 1 && addedInBatch % 5 === 0) {
+            get().persist();
+          }
 
           if (i < batch.length - 1) {
             await yieldBetweenUploads();

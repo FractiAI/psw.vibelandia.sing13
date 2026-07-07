@@ -16,9 +16,14 @@ export const SONIC_SINGULARITY_DESCRIPTION =
 export const SONIC_SINGULARITY_TAGLINE =
   'Holographic Goldilocks Sonic Ship · hydrogen Y line · φ · Machote Moderno · Wrong Side truth';
 
+/** Canonical brand string — selectable in page title row. */
+export const SONIC_BRAND_NAME = 'SS VIBELANDIA QUESTFEST';
+
 /** Listen page eyebrow — above the jukebox hero. */
-export const SONIC_LISTEN_EYEBROW =
-  'Sonic Singularity · Holographic Goldilocks Sonic Ship · SS VIBELANDIA QUESTFEST';
+export const SONIC_LISTEN_EYEBROW_PREFIX =
+  'Sonic Singularity · Holographic Goldilocks Sonic Ship ·';
+
+export const SONIC_LISTEN_EYEBROW = `${SONIC_LISTEN_EYEBROW_PREFIX} ${SONIC_BRAND_NAME}`;
 
 /** Jukebox /listen welcome — short, above the machine. */
 export const JUKEBOX_WELCOME_TITLE = 'More than juicy beats. More than a jukebox.';

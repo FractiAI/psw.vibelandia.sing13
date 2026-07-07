@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { MediaShell } from './components/player/MediaShell';
 import { PlaybackRoot } from './components/player/PlaybackRoot';
-import { QuestfestFastLink } from './components/QuestfestFastLink';
 import { useIOSHtmlClass } from '@/lib/useIOSHtmlClass';
 import { BridgeExplainerPage } from './pages/BridgeExplainerPage';
 import { BridgePage } from './pages/BridgePage';
@@ -25,7 +24,6 @@ export default function App() {
   useIOSHtmlClass();
   return (
     <>
-      <QuestfestFastLink />
       <Routes>
         <Route path="/" element={<Navigate to="/listen" replace />} />
         <Route path="/register" element={<RegistrationPage />} />

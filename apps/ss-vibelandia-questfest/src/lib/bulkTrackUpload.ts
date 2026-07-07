@@ -5,6 +5,7 @@ import { retainFileForBulkUpload } from '@/lib/devicePlayback';
 import { classifyFilesAgainstCatalog } from '@/lib/mediaImportPreflight';
 import { MAX_MEDIA_UPLOAD_BYTES } from '@/lib/mediaUploadLimits';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { useCatalogStore } from '@/stores/catalogStore';
 import type { TrackDef } from '@/lib/catalogTypes';
 
 export const BULK_UPLOAD_MIN_RECOMMENDED = 500;
@@ -139,7 +140,15 @@ type ImportFn = (
     artist?: string;
     playlistIds?: string[];
     onProgress?: (message: string) => void;
+    onTrackAdded?: (info: {
+      catalogSize: number;
+      addedInBatch: number;
+      fileIndex: number;
+      fileTotal: number;
+    }) => void;
     skipDurationProbe?: boolean;
+    deferServerSync?: boolean;
+    skipBulkRetain?: boolean;
   },
 ) => Promise<{
   added: number;
@@ -148,11 +157,21 @@ type ImportFn = (
   failures: Array<{ name: string; message: string }>;
 }>;
 
+export type BulkChunkSyncInfo = {
+  added: number;
+  skipped: number;
+  failed: number;
+  fileIndex: number;
+  fileTotal: number;
+  catalogSize: number;
+};
+
 export async function runBulkUploadQueue(
   files: File[],
   importMediaFiles: ImportFn,
   controls: BulkUploadControls,
   onUpdate: (p: BulkUploadProgress) => void,
+  opts?: { onChunkComplete?: (info: BulkChunkSyncInfo) => Promise<void> },
 ): Promise<{ added: number; skipped: number; failed: number }> {
   const fileTotal = files.length;
   const chunkTotal = Math.max(1, Math.ceil(fileTotal / BULK_UPLOAD_CHUNK_SIZE));
@@ -203,6 +222,22 @@ export async function runBulkUploadQueue(
         skipDurationProbe: true,
         deferServerSync: true,
         skipBulkRetain: true,
+        onTrackAdded: ({ catalogSize, addedInBatch, fileIndex: withinChunk }) => {
+          const globalIndex = Math.min(fileTotal, chunkStart + withinChunk);
+          onUpdate({
+            phase: 'uploading',
+            summary: null,
+            chunkIndex: c + 1,
+            chunkTotal,
+            fileIndex: globalIndex,
+            fileTotal,
+            added: added + addedInBatch,
+            skipped,
+            failed,
+            currentFile: chunk[withinChunk - 1]?.name ?? chunk[0]?.name,
+            message: `Uploading ${globalIndex} of ${fileTotal} · ${catalogSize} in catalog`,
+          });
+        },
         onProgress: (line) => {
           const withinChunk = line.match(/(\d+)\s+of\s+(\d+)/i);
           const globalIndex = withinChunk
@@ -230,6 +265,18 @@ export async function runBulkUploadQueue(
       skipped += result.skipped;
       failed += result.failed;
       fileIndex = chunkStart + chunk.length;
+
+      if (opts?.onChunkComplete && result.added > 0) {
+        const catalogSize = Object.keys(useCatalogStore.getState().tracks).length;
+        await opts.onChunkComplete({
+          added,
+          skipped,
+          failed,
+          fileIndex,
+          fileTotal,
+          catalogSize,
+        });
+      }
     } catch (e) {
       const msg = e instanceof Error ? e.message : 'batch_failed';
       failed += chunk.length;

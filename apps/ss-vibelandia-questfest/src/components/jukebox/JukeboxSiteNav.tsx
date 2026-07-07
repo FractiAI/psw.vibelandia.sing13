@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { JUKEBOX_LISTEN_PATH, JUKEBOX_NOW_PLAYING_PATH } from '@/lib/jukeboxRoutes';
-import { SONIC_LISTEN_EYEBROW, SONIC_SINGULARITY_TAGLINE } from '@/lib/sonicCatalogCopy';
+import { SONIC_BRAND_NAME, SONIC_LISTEN_EYEBROW_PREFIX, SONIC_SINGULARITY_TAGLINE } from '@/lib/sonicCatalogCopy';
 
 type JukeboxSiteNavProps = {
   mode: 'browse' | 'now';
@@ -28,7 +28,10 @@ export function JukeboxSiteNav({ mode }: JukeboxSiteNavProps) {
         <span aria-hidden="true">·</span>
         <Link to="/dj">DJ</Link>
       </nav>
-      <p className="jb-eyebrow">{SONIC_LISTEN_EYEBROW}</p>
+      <p className="jb-eyebrow">
+        {SONIC_LISTEN_EYEBROW_PREFIX}{' '}
+        <span className="jb-brand-selectable">{SONIC_BRAND_NAME}</span>
+      </p>
       <p className="jb-tagline jb-tagline--slim">{SONIC_SINGULARITY_TAGLINE}</p>
     </header>
   );

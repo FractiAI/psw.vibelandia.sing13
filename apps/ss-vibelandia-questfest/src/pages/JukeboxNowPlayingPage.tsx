@@ -5,6 +5,7 @@ import { useJukeboxListenSetup } from '@/hooks/useJukeboxListenSetup';
 import { JUKEBOX_LISTEN_PATH } from '@/lib/jukeboxRoutes';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
+import { SONIC_BRAND_NAME } from '@/lib/sonicCatalogCopy';
 import { fmtDuration } from '@/lib/formatDuration';
 import type { TrackDef } from '@/lib/catalogTypes';
 
@@ -28,7 +29,7 @@ export function JukeboxNowPlayingPage() {
     if (!currentTrackId) return;
     document.title = track ? `${track.title} · Now playing` : 'Now playing';
     return () => {
-      document.title = 'SS VIBELANDIA QUESTFEST';
+      document.title = SONIC_BRAND_NAME;
     };
   }, [currentTrackId, track]);
 

@@ -1,4 +1,4 @@
-import { useMemo, useRef, useEffect } from 'react';
+import { useMemo, useRef, useEffect, useLayoutEffect } from 'react';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { isMasterPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import {
@@ -41,6 +41,9 @@ function useMenuItems() {
     }));
   }, [playlists, tracks]);
 }
+
+/** Survives browse ↔ now-playing navigation so the rail stays put after Play all. */
+let jukeboxPlaylistScrollLeft = 0;
 
 /** Sticky bar — kicker + title header, horizontally scrollable two-line playlist cards. */
 export function JukeboxPlaylistMenu({ activeId, onSelect }: JukeboxPlaylistMenuProps) {

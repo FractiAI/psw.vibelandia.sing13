@@ -1,6 +1,5 @@
 import { useCatalogStore } from '@/stores/catalogStore';
 import { PLAIN } from '@/lib/plainSpeak';
-import { QUESTFEST_DECK_HREF } from '@/components/QuestfestFastLink';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { useSessionStore } from '@/stores/sessionStore';
 
@@ -45,9 +44,6 @@ export function ListenTopBar({ djMode, onListen, onUpload }: ListenTopBarProps) 
       <button type="button" className="sc-bar-link" onClick={() => setCaptainOpen(true)}>
         {PLAIN.captain}
       </button>
-      <a className="sc-bar-link" href={QUESTFEST_DECK_HREF}>
-        {PLAIN.questfest}
-      </a>
     </header>
   );
 }

@@ -7125,6 +7125,15 @@ html.qf-jukebox-page .sp-now-add-pl {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #d4af37;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.jb-brand-selectable {
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+  color: #fef3c7;
 }
 
 .jb-h1 {

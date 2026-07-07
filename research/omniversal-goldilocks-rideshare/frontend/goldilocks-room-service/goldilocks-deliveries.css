@@ -120,6 +120,88 @@ body {
   color: var(--grs-champagne);
 }
 
+.grs-svc-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+@media (min-width: 540px) {
+  .grs-svc-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.grs-svc {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--grs-line);
+  border-radius: 12px;
+  background: rgba(26, 18, 12, 0.5);
+}
+.grs-svc__name {
+  display: block;
+  font-family: var(--grs-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--grs-gold-hi);
+}
+.grs-svc__price {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grs-gold);
+  margin: 0.2rem 0 0.35rem;
+}
+.grs-svc__note {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--grs-muted);
+  line-height: 1.5;
+}
+
+.grs-svc-pick {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+.grs-svc-pick .grs-portal { padding: 1rem 1.1rem; }
+.grs-svc-pick .grs-portal__title { font-size: 1.1rem; margin-bottom: 0.2rem; }
+
+.grs-amount {
+  font-family: var(--grs-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--grs-gold-hi);
+  margin: 0.25rem 0 0.15rem;
+}
+.grs-amount-note {
+  font-size: 0.78rem;
+  color: var(--grs-muted);
+  margin: 0 0 0.75rem;
+}
+.grs-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.5rem 0 0.25rem;
+}
+.grs-qty button {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--grs-gold);
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--grs-gold-hi);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.grs-qty button:hover { filter: brightness(1.15); }
+.grs-qty__val {
+  min-width: 5.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--grs-champagne);
+}
+
 .grs-portal-grid {
   display: grid;
   gap: 0.85rem;
@@ -235,3 +317,48 @@ body {
   line-height: 1.7;
 }
 .grs-foot a { color: var(--grs-champagne); }
+
+.grs-steps {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.35rem;
+  display: grid;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--grs-muted);
+}
+.grs-steps li::marker {
+  color: var(--grs-gold);
+  font-weight: 700;
+}
+.grs-steps strong { color: var(--grs-gold-hi); }
+
+.grs-join { cursor: default; }
+.grs-join:hover { transform: none; }
+.grs-join__list {
+  margin: 0.6rem 0 0.35rem;
+  padding-left: 1.1rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--grs-champagne);
+}
+.grs-join .grs-portal__cta {
+  margin-right: 0.9rem;
+  text-decoration: none;
+}
+.grs-join .grs-portal__cta:hover { color: var(--grs-gold-hi); }
+
+/* SS Vibelandia deck skin harmony — keep card components free of global link underline */
+html.ss-vibelandia-deck .grs-portal,
+html.ss-vibelandia-deck .grs-portal:hover,
+html.ss-vibelandia-deck .grs-rail,
+html.ss-vibelandia-deck .grs-rail:hover,
+html.ss-vibelandia-deck .grs-btn,
+html.ss-vibelandia-deck .grs-btn:hover,
+html.ss-vibelandia-deck .grs-join .grs-portal__cta,
+html.ss-vibelandia-deck .grs-join .grs-portal__cta:hover {
+  text-decoration: none;
+}
+html.ss-vibelandia-deck .grs-nav a { color: var(--grs-champagne); }
+html.ss-vibelandia-deck .grs-nav a:hover { color: var(--grs-gold-hi); }
+html.ss-vibelandia-deck .grs-hero .bb-cloud-badge { margin-bottom: 0.75rem; }

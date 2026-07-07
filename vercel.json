@@ -29,6 +29,8 @@
     { "source": "/executive-onboarding/", "destination": "/interfaces/executive-onboarding.html" },
     { "source": "/goldilocks-deliveries", "destination": "/interfaces/goldilocks-deliveries/index.html" },
     { "source": "/goldilocks-deliveries/", "destination": "/interfaces/goldilocks-deliveries/index.html" },
+    { "source": "/hire-a-goldilocks-valet-concierge", "destination": "/interfaces/goldilocks-deliveries/index.html" },
+    { "source": "/hire-a-goldilocks-valet-concierge/", "destination": "/interfaces/goldilocks-deliveries/index.html" },
     { "source": "/room-service", "destination": "/interfaces/goldilocks-deliveries/index.html" },
     { "source": "/room-service/", "destination": "/interfaces/goldilocks-deliveries/index.html" },
     { "source": "/my-whiteboard", "destination": "/interfaces/my-whiteboard.html" },

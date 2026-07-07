@@ -1,66 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ss-vibelandia-deck">
 <head>
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Honor payment · Goldilocks Room Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#06080d" />
+  <title>Honor payment · Hire-A-Goldilocks-Valet-Concierge · SS Vibelandia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="goldilocks-deliveries.css" />
 </head>
 <body>
   <main class="grs-wrap">
-    <a class="grs-back" href="index.html">← Room Service home</a>
+    <a class="deck-back" href="index.html">&larr; Hire-A-Goldilocks-Valet-Concierge home</a>
     <p class="grs-kicker">Layer 3 · Honor payment</p>
-    <h1 class="grs-title">Fair Exchange</h1>
+    <h1 class="grs-title" id="pay-title">Fair Exchange</h1>
     <p class="grs-sub" id="pay-sub">Old-school honor rails — no PSP webhooks.</p>
 
+    <p class="grs-amount" id="pay-amount">$9.00</p>
+    <p class="grs-amount-note" id="pay-amount-note"></p>
+
+    <div class="grs-qty" id="pay-qty" hidden>
+      <button type="button" id="qty-minus" aria-label="Decrease">−</button>
+      <span class="grs-qty__val" id="qty-val">1 hour</span>
+      <button type="button" id="qty-plus" aria-label="Increase">+</button>
+    </div>
+
     <div class="grs-panel">
-      <p>Minimum <strong>$9.00</strong> (Γ<sub>floor</sub>). Pay on your rail, then email <strong>date paid</strong> and <strong>request details</strong> so we can dispatch a valet node.</p>
-      <p id="pay-role-note"></p>
+      <p id="pay-desc"></p>
+      <p><strong>How it works:</strong> you tell us what you want and what you're offering as tip — we decide if we accept. If we accept, we operate as your personal assistant, procuring and delivering whatever was agreed: food, beverage, merchandise, or other services.</p>
+      <p>Email <strong>what you want</strong>, <strong>your tip offer</strong>, and <strong>neighborhood</strong> (Downtown · Midtown · UNR · Idlewild). Once accepted, pay on your rail and reply with <strong>date paid + rail used</strong>. Fair Exchange — refunds and tips ride on delivery harmony, not algorithms.</p>
     </div>
 
     <div class="grs-rails" id="pay-rails"></div>
 
     <p class="grs-foot" style="border:0;padding:0;margin-top:1.5rem;">
-      Or email directly: <a href="mailto:valetpru@gmail.com" id="pay-mail">valetpru@gmail.com</a>
+      Then attest: <a href="mailto:valetpru@gmail.com" id="pay-mail">valetpru@gmail.com</a>
     </p>
   </main>
+  <footer>
+    <p><a href="mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge">valetpru@gmail.com</a> · SS Vibelandia QUESTFEST 24×365</p>
+  </footer>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
   <script>
     (function () {
-      var role = new URLSearchParams(location.search).get('role') || 'guest';
-      var labels = { guest: 'Guest room service', valet: 'Valet node', partner: 'Menu partner' };
-      var memos = {
-        guest: 'GOLDILOCKS ROOM SERVICE · guest request',
-        valet: 'GOLDILOCKS VALET · join',
-        partner: 'GOLDILOCKS MENU · partner'
+      var params = new URLSearchParams(location.search);
+      var role = params.get('role') || 'guest';
+      var service = params.get('service') || '';
+      var unit = params.get('unit') || '';
+
+      var HOUR_RATE = 16.18;
+      var DAY_RATE = 161.80;
+      var FLOOR = 9.00;
+
+      var config = {
+        food: {
+          title: 'Food delivery',
+          amount: FLOOR,
+          amountNote: '$9 delivery floor — goods settled on delivery',
+          desc: 'Covers your valet run from a menu partner to your door inside the bubble. The food itself is settled with the partner or on delivery under Fair Exchange.',
+          memo: 'HIRE A GOLDILOCKS VALET CONCIERGE · food delivery'
+        },
+        shopping: {
+          title: 'Personal shopping',
+          amount: FLOOR,
+          amountNote: '$9 run floor — goods + receipt settled on delivery',
+          desc: 'Groceries, pharmacy, errands, pickups. Your valet brings the receipt; goods are reimbursed on handoff under Fair Exchange.',
+          memo: 'HIRE A GOLDILOCKS VALET CONCIERGE · personal shopping'
+        },
+        'assist-hour': {
+          title: 'Personal assistance · hourly',
+          amount: HOUR_RATE,
+          quantity: { unitLabel: 'hour', rate: HOUR_RATE, min: 1, max: 8 },
+          amountNote: '$16.18 per hour · EGS φ rate',
+          desc: 'A valet on your pace, booked by the hour — tasks, setups, escorts, waiting in lines, whatever the day needs.',
+          memo: 'GOLDILOCKS VALET · assistance hourly'
+        },
+        'assist-day': {
+          title: 'Personal assistance · full day',
+          amount: DAY_RATE,
+          quantity: { unitLabel: 'day', rate: DAY_RATE, min: 1, max: 7 },
+          amountNote: '$161.80 per day · EGS φ ×10 rate',
+          desc: 'A dedicated valet for your whole day — Chairman-grade attention, sovereign pacing, one human thread.',
+          memo: 'GOLDILOCKS VALET · assistance day'
+        },
+        valet: {
+          title: 'Valet node · signal interest',
+          amount: FLOOR,
+          amountNote: 'Optional honor signal — the email is the door',
+          desc: 'Joining as a bike, e-bike, or e-scooter valet. The payment is optional; the email with your neighborhood and vector is what matters.',
+          memo: 'GOLDILOCKS VALET · join'
+        },
+        partner: {
+          title: 'Menu partner · apply',
+          amount: FLOOR,
+          amountNote: 'Optional honor signal — the email is the door',
+          desc: 'Listing food, goods, or services on our menu. Tell us what you serve and where inside the bubble.',
+          memo: 'GOLDILOCKS MENU · partner'
+        }
       };
-      var sub = document.getElementById('pay-sub');
-      var note = document.getElementById('pay-role-note');
-      var mail = document.getElementById('pay-mail');
-      if (sub) sub.textContent = labels[role] || labels.guest;
-      if (note) note.textContent = 'Portal: ' + (labels[role] || labels.guest) + '. Include neighborhood (Downtown · Midtown · UNR · Idlewild).';
-      var memo = encodeURIComponent(memos[role] || memos.guest);
-      var amt = '9.00';
-      var rails = document.getElementById('pay-rails');
-      if (!rails) return;
-      var links = [
-        { label: 'Venmo @Pru-Mendez', href: 'https://venmo.com/Pru-Mendez' },
-        { label: 'PayPal', href: 'https://paypal.me/valetpru/' + amt },
-        { label: 'Cash App $GoldenBachdoor', href: 'https://cash.app/$GoldenBachdoor/' + amt }
-      ];
-      links.forEach(function (l) {
-        var a = document.createElement('a');
-        a.className = 'grs-rail';
-        a.href = l.href;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        a.textContent = l.label;
-        rails.appendChild(a);
-      });
-      if (mail) {
-        mail.href = 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent(memos[role] || memos.guest) + '&body=' + encodeURIComponent('Date paid:\nRail used:\nNeighborhood:\nRequest details:');
+
+      var key;
+      if (service === 'assist') key = unit === 'day' ? 'assist-day' : 'assist-hour';
+      else if (service && config[service]) key = service;
+      else if (role !== 'guest' && config[role]) key = role;
+      else key = 'food';
+
+      var c = config[key];
+      var qty = c.quantity ? c.quantity.min : 1;
+
+      var titleEl = document.getElementById('pay-title');
+      var subEl = document.getElementById('pay-sub');
+      var amountEl = document.getElementById('pay-amount');
+      var amountNoteEl = document.getElementById('pay-amount-note');
+      var descEl = document.getElementById('pay-desc');
+      var qtyWrap = document.getElementById('pay-qty');
+      var qtyVal = document.getElementById('qty-val');
+      var railsEl = document.getElementById('pay-rails');
+      var mailEl = document.getElementById('pay-mail');
+
+      if (titleEl) titleEl.textContent = c.title;
+      if (subEl) subEl.textContent = 'Fair Exchange · old-school honor rails — no PSP webhooks.';
+      if (amountNoteEl) amountNoteEl.textContent = c.amountNote;
+      if (descEl) descEl.textContent = c.desc;
+
+      function total() {
+        return c.quantity ? c.quantity.rate * qty : c.amount;
       }
+
+      function memo() {
+        var m = c.memo;
+        if (c.quantity) m += ' · ' + qty + ' ' + c.quantity.unitLabel + (qty > 1 ? 's' : '');
+        return m;
+      }
+
+      function render() {
+        var amt = total().toFixed(2);
+        if (amountEl) amountEl.textContent = '$' + amt;
+        if (c.quantity && qtyVal) {
+          qtyVal.textContent = qty + ' ' + c.quantity.unitLabel + (qty > 1 ? 's' : '');
+        }
+        if (railsEl) {
+          railsEl.innerHTML = '';
+          var links = [
+            { label: 'Venmo @Pru-Mendez', href: 'https://venmo.com/Pru-Mendez' },
+            { label: 'PayPal · $' + amt, href: 'https://paypal.me/valetpru/' + amt },
+            { label: 'Cash App $GoldenBachdoor · $' + amt, href: 'https://cash.app/$GoldenBachdoor/' + amt }
+          ];
+          links.forEach(function (l) {
+            var a = document.createElement('a');
+            a.className = 'grs-rail';
+            a.href = l.href;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.textContent = l.label;
+            railsEl.appendChild(a);
+          });
+        }
+        if (mailEl) {
+          mailEl.href = 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent(memo()) +
+            '&body=' + encodeURIComponent('What I want (food / beverage / merchandise / other services):\nTip offered: $' + amt + ' (floor) + \nNeighborhood (Downtown / Midtown / UNR / Idlewild):\n\nAfter acceptance —\nDate paid:\nRail used:');
+        }
+      }
+
+      if (c.quantity && qtyWrap) {
+        qtyWrap.hidden = false;
+        document.getElementById('qty-minus').addEventListener('click', function () {
+          if (qty > c.quantity.min) { qty--; render(); }
+        });
+        document.getElementById('qty-plus').addEventListener('click', function () {
+          if (qty < c.quantity.max) { qty++; render(); }
+        });
+      }
+
+      render();
     })();
   </script>
 </body>

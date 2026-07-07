@@ -3,7 +3,7 @@
 **Document ID:** `WP-OGRP-2026-07`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Paper:** [`docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md`](docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md)  
-**Live catalog (hosted edge):** [whitepaper · OGRP](https://www.ssvibelandiaquestfest24x365.com/whitepaper/omniversal-goldilocks-rideshare) · [Goldilocks Room Service](https://www.ssvibelandiaquestfest24x365.com/goldilocks-deliveries)  
+**Live catalog (hosted edge):** [whitepaper · OGRP](https://www.ssvibelandiaquestfest24x365.com/whitepaper/omniversal-goldilocks-rideshare) · [Hire-A-Goldilocks-Valet-Concierge](https://www.ssvibelandiaquestfest24x365.com/goldilocks-deliveries)  
 **Monorepo mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13) · `research/omniversal-goldilocks-rideshare/`
 
 ---
@@ -58,7 +58,7 @@ The protocol accepts a transaction only when **four gates** pass:
 
 **Empirical anchor (executed).** Cross-analysis of AAA *Your Driving Costs* (2025/2026) vs micro-mobility operating model (**E1**); UW Urban Freight Lab parking-cruise fraction vs zero for micro-mobility (**E2**); Reno core bbox + JSON schema (**E5**).
 
-**Operational surface.** [Goldilocks Room Service](frontend/goldilocks-room-service/) is the reference **guest-facing frontend** — five-star resort room-service UX, three portal depths (Guest · Valet · Menu partner), honor payment rails on layer 3.
+**Operational surface.** [Hire-A-Goldilocks-Valet-Concierge](frontend/goldilocks-room-service/) is the reference **guest-facing frontend** — five-star resort room-service UX, three portal depths (Guest · Valet · Menu partner), honor payment rails on layer 3.
 
 ---
 
@@ -144,11 +144,11 @@ Full falsification table: [`METHODOLOGY.md`](METHODOLOGY.md).
 
 ---
 
-## Frontend · Goldilocks Room Service
+## Frontend · Hire-A-Goldilocks-Valet-Concierge
 
 The reference frontend demonstrates **how OGRP feels to humans** — not just how it scores in JSON.
 
-**Brand stack:** Goldilocks Room Service ⊃ Goldilocks Valet ⊃ food delivery · personal shopping · personal assistance · EcoReset residencies.
+**Brand stack:** Hire-A-Goldilocks-Valet-Concierge ⊃ Goldilocks Valet ⊃ food delivery · personal shopping · personal assistance · EcoResets (home � estate � business).
 
 **Regions (current):** Downtown Reno · Midtown Reno · parts of UNR · Idlewild.
 

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ss-vibelandia-deck">
 <head>
   <link rel="stylesheet" href="brand-gold-surfaces.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0806" />
-  <title>Goldilocks Room Service · Valet &amp; Deliveries</title>
-  <meta name="description" content="Reference frontend for OGRP (WP-OGRP-2026-07). Five-star resort delivery in downtown Reno. Micro-mobility. $9 generosity floor." />
+  <meta name="theme-color" content="#06080d" />
+  <title>Hire-A-Goldilocks-Valet-Concierge · Reference frontend</title>
+  <meta name="description" content="Reference frontend for OGRP (WP-OGRP-2026-07). Menu-first landing: food delivery, personal shopping, personal assistance by the hour or day, EcoResets. Offer &amp; acceptance mechanic, Old School Protocol sign-up. SS Vibelandia deck skin." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="ss-vibelandia-deck-skin.css" />
   <link rel="stylesheet" href="goldilocks-deliveries.css" />
 </head>
 <body>
@@ -17,25 +18,122 @@
     <nav class="grs-nav" aria-label="Repository">
       <a href="https://github.com/FractiAI/omniversal-goldilocks-rideshare">OGRP repo</a><span aria-hidden="true">·</span>
       <a href="../../docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md">Paper</a><span aria-hidden="true">·</span>
-      <span class="grs-nav__here">Room Service</span>
+      <span class="grs-nav__here">Hire-A-Goldilocks-Valet-Concierge</span>
     </nav>
 
     <header class="grs-hero">
+      <p class="bb-cloud-badge">Sonic Singularity Sing! 13 · Hire-A-Goldilocks-Valet-Concierge</p>
+      <hr class="bb-hero-rule" aria-hidden="true" />
       <p class="grs-kicker">OGRP · Omniversal Goldilocks Rideshare Protocol · reference frontend</p>
-      <h1 class="grs-title">Goldilocks Room Service</h1>
-      <p class="grs-sub">Pioneering hospitality for the high-density core — Howard Hughes clarity, zero sprawl.</p>
+      <h1 class="grs-title">Hire-A-Goldilocks-Valet-Concierge</h1>
+      <p class="grs-sub">Pioneering hospitality for the high-density core — Howard Hughes clarity, zero sprawl. You propose, we accept — no app, no account, no monitoring.</p>
     </header>
 
-    <section class="grs-pitch" aria-labelledby="pitch-h2">
-      <h2 id="pitch-h2">The pitch</h2>
-      <p>Legacy delivery apps optimize for speed on open roads — then dump parking tax, vehicle overhead, and operator exhaustion onto the human node. Suburban sprawl and cloud bloat are the same leak wearing different uniforms.</p>
-      <p><strong>Goldilocks Room Service</strong> rewards what belongs in the core and shuts out what does not. We route on the <a href="../../docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md">Omniversal Goldilocks Rideshare Protocol</a>: density anchoring, micro-mobility, a <strong>$9 generosity floor</strong>, and sovereign pacing — lowest cost, highest benefit.</p>
-      <ul class="grs-gates">
-        <li><strong>Ω<sub>core</sub></strong> — high-density hubs only</li>
-        <li><strong>Θ<sub>min</sub></strong> — bike · e-bike · e-scooter · foot</li>
-        <li><strong>Γ<sub>floor</sub></strong> — $9 minimum · fair exchange</li>
-        <li><strong>P<sub>sov</sub></strong> — your rhythm, not corporate clocks</li>
-      </ul>
+    <section class="grs-pitch" aria-labelledby="how-h2">
+      <h2 id="how-h2">How it works</h2>
+      <ol class="grs-steps">
+        <li><strong>You tell us what you want</strong> — food, beverage, merchandise, or other services — and what you're offering as tip.</li>
+        <li><strong>We decide</strong> — a human accepts or passes on your offer. No algorithm, no surge math, no queue.</li>
+        <li><strong>If we accept, we operate as your personal assistant</strong> — procuring and delivering whatever was agreed, on honor rails, Fair Exchange.</li>
+      </ol>
+      <p>The floors below are courtesy minimums ($9 runs · $16.18/hr · $161.80/day). Your tip offer above the floor is what makes the exchange sing — and what makes us say yes.</p>
+    </section>
+
+    <section class="grs-services" aria-labelledby="menu-h2">
+      <h2 id="menu-h2">The menu</h2>
+      <div class="grs-svc-pick">
+        <a class="grs-portal" href="pay.html?role=guest&amp;service=food">
+          <span class="grs-portal__pill">Delivery · $9 floor</span>
+          <span class="grs-portal__title">Food delivery</span>
+          <span class="grs-portal__sub">From our menu partners inside the bubble. Goods settled on delivery — Fair Exchange.</span>
+          <span class="grs-portal__cta">Order food →</span>
+        </a>
+        <a class="grs-portal" href="pay.html?role=guest&amp;service=shopping">
+          <span class="grs-portal__pill">Run · $9 floor</span>
+          <span class="grs-portal__title">Personal shopping</span>
+          <span class="grs-portal__sub">Groceries, pharmacy, errands, pickups — receipt in hand, no sprawl markup.</span>
+          <span class="grs-portal__cta">Send a valet →</span>
+        </a>
+        <a class="grs-portal" href="pay.html?role=guest&amp;service=assist&amp;unit=hour">
+          <span class="grs-portal__pill">Booked by the hour · $16.18/hr</span>
+          <span class="grs-portal__title">Personal assistance · hourly</span>
+          <span class="grs-portal__sub">Hands, wheels, and presence on your pace — tasks, setups, escorts, waiting in lines.</span>
+          <span class="grs-portal__cta">Book hours →</span>
+        </a>
+        <a class="grs-portal" href="pay.html?role=guest&amp;service=assist&amp;unit=day">
+          <span class="grs-portal__pill">Booked by the day · $161.80/day</span>
+          <span class="grs-portal__title">Personal assistance · full day</span>
+          <span class="grs-portal__sub">A dedicated valet for your whole day — Chairman-grade attention, sovereign pacing.</span>
+          <span class="grs-portal__cta">Book days →</span>
+        </a>
+        <a class="grs-portal" href="mailto:valetpru@gmail.com?subject=Goldilocks%20EcoReset%20%E2%80%94%20interested%20node&amp;body=Property%20type%20(home%20%2F%20estate%20%2F%20business)%3A%0ANeighborhood%3A%0AWindow%20of%20interest%3A%0AWhat%20resonates%3A">
+          <span class="grs-portal__pill">Home · Estate · Business · no payment layer</span>
+          <span class="grs-portal__title">EcoReset</span>
+          <span class="grs-portal__sub">Two-week test drive for your home, estate, or business — contact PL Taino directly, human to human.</span>
+          <span class="grs-portal__cta">Email PL Taino →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="grs-portals" aria-labelledby="join-h2">
+      <h2 id="join-h2">Join — old school, one email</h2>
+      <p class="grs-regions__note">No forms funnel, no chatbot gate, no CRM. Every door is a direct email to PL Taino / Valet Pru — send the basics below and a human answers.</p>
+      <div class="grs-portal-grid">
+        <div class="grs-portal grs-join">
+          <span class="grs-portal__pill">Guest</span>
+          <span class="grs-portal__title">Order as guest</span>
+          <span class="grs-portal__sub">No sign-up, no account. Tell us what you want and what you're offering; if we accept, pay on your rail and we handle the rest. Your email carries:</span>
+          <ul class="grs-join__list">
+            <li>What you want — food, beverage, merchandise, or other services</li>
+            <li>Your tip offer (floors: $9 run · $16.18/hr · $161.80/day)</li>
+            <li>Neighborhood — Downtown · Midtown · UNR · Idlewild</li>
+            <li>After we accept: date paid + rail used (Venmo · PayPal · Cash App)</li>
+          </ul>
+          <a class="grs-portal__cta" href="#menu-h2">Pick from the menu ↑</a>
+        </div>
+        <div class="grs-portal grs-join">
+          <span class="grs-portal__pill">Valet</span>
+          <span class="grs-portal__title">Delivery &amp; personal valet</span>
+          <span class="grs-portal__sub">Run deliveries, shopping errands, and assistance shifts on the OGRP matrix. One email with:</span>
+          <ul class="grs-join__list">
+            <li>Name + neighborhood you ride from</li>
+            <li>Vector — bike · e-bike · e-scooter · foot</li>
+            <li>Availability — hours or days you want to work</li>
+          </ul>
+          <a class="grs-portal__cta" href="mailto:valetpru@gmail.com?subject=Goldilocks%20Valet%20%E2%80%94%20join&amp;body=Name%3A%0ANeighborhood%3A%0AVector%20(bike%20%2F%20e-bike%20%2F%20e-scooter%20%2F%20foot)%3A%0AAvailability%3A">Email to join →</a>
+          <a class="grs-portal__cta" href="valet.html">Valet details →</a>
+        </div>
+        <div class="grs-portal grs-join">
+          <span class="grs-portal__pill">Purveyor</span>
+          <span class="grs-portal__title">Food &amp; beverage purveyor</span>
+          <span class="grs-portal__sub">Kitchens, cafes, bars, bakers, growers — get on our menu. One email with:</span>
+          <ul class="grs-join__list">
+            <li>Purveyor name + what you serve</li>
+            <li>Location inside the bubble + hours</li>
+            <li>How guests settle — on delivery or your counter</li>
+          </ul>
+          <a class="grs-portal__cta" href="mailto:valetpru@gmail.com?subject=Goldilocks%20Menu%20%E2%80%94%20purveyor&amp;body=Purveyor%20name%3A%0AWhat%20you%20serve%3A%0ALocation%20in%20the%20bubble%3A%0AHours%3A%0AHow%20guests%20settle%3A">Email to list →</a>
+          <a class="grs-portal__cta" href="partner.html">Purveyor details →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grs-services" aria-labelledby="why-h2">
+      <h2 id="why-h2">Why use us</h2>
+      <div class="grs-svc-grid">
+        <div class="grs-svc">
+          <span class="grs-svc__name">The Goldilocks resort experience — why not?</span>
+          <span class="grs-svc__note">You already live inside the most walkable core in Nevada. Why shouldn't your everyday feel like a five-star resort? Room service to your door, a concierge who knows your neighborhood, a valet on your pace. The golden age never ended — it just needed the right protocol. Why not you, why not here, why not today?</span>
+        </div>
+        <div class="grs-svc">
+          <span class="grs-svc__name">Doing the right thing</span>
+          <span class="grs-svc__note">Every request rides a bike, an e-bike, or two feet — never a two-ton car idling for a burrito. Valets keep the whole tip above an honest floor, nobody is surveilled, and no algorithm squeezes either side. Ordering here is voting for the core, the craft, and the human — the right thing, done deliciously.</span>
+        </div>
+        <div class="grs-svc">
+          <span class="grs-svc__name">This is not for everyone</span>
+          <span class="grs-svc__note">No app to install because there is no app. No account because we don't want your data. If you need surge-priced sameness, the corporate apps await. This is for those of us who deserve and want Goldilocks — just right, on honor, inside the bubble.</span>
+        </div>
+      </div>
     </section>
 
     <section class="grs-regions" aria-labelledby="regions-h2">
@@ -49,44 +147,24 @@
       </ul>
     </section>
 
-    <section class="grs-services" aria-labelledby="services-h2">
-      <h2 id="services-h2">Goldilocks Valet includes</h2>
-      <div class="grs-service-row">
-        <span>Food delivery</span>
-        <span>Personal shopping</span>
-        <span>Personal assistance</span>
-        <span>EcoReset residencies</span>
-      </div>
+    <section class="grs-pitch" aria-labelledby="pitch-h2">
+      <h2 id="pitch-h2">Why it works</h2>
+      <p>Legacy delivery apps optimize for speed on open roads — then dump parking tax, vehicle overhead, and operator exhaustion onto the human node. <strong>Hire-A-Goldilocks-Valet-Concierge</strong> rewards what belongs in the core and shuts out what does not, routing on the <a href="../../docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md">Omniversal Goldilocks Rideshare Protocol</a>.</p>
+      <ul class="grs-gates">
+        <li><strong>Ω<sub>core</sub></strong> — high-density hubs only</li>
+        <li><strong>Θ<sub>min</sub></strong> — bike · e-bike · e-scooter · foot</li>
+        <li><strong>Γ<sub>floor</sub></strong> — $9 minimum · fair exchange</li>
+        <li><strong>P<sub>sov</sub></strong> — your rhythm, not corporate clocks</li>
+      </ul>
     </section>
 
-    <section class="grs-portals" aria-labelledby="portals-h2">
-      <h2 id="portals-h2">Choose your portal</h2>
-      <div class="grs-portal-grid">
-        <a class="grs-portal" href="guest.html">
-          <span class="grs-portal__pill">Layer 2 · Guest</span>
-          <span class="grs-portal__title">Room Service</span>
-          <span class="grs-portal__sub">Five-star resort experience — request like room service, receive like a valued guest.</span>
-          <span class="grs-portal__cta">Enter as guest →</span>
-        </a>
-        <a class="grs-portal" href="valet.html">
-          <span class="grs-portal__pill">Layer 2 · Valet</span>
-          <span class="grs-portal__title">Delivery Valets</span>
-          <span class="grs-portal__sub">Bike · e-bike · e-scooter couriers on the OGRP matrix — zero parking cruise tax.</span>
-          <span class="grs-portal__cta">Join as valet →</span>
-        </a>
-        <a class="grs-portal" href="partner.html">
-          <span class="grs-portal__pill">Layer 2 · Partner</span>
-          <span class="grs-portal__title">On our menu</span>
-          <span class="grs-portal__sub">Offer something Goldilocks — food, goods, or services inside the core bubble.</span>
-          <span class="grs-portal__cta">List on menu →</span>
-        </a>
-      </div>
-    </section>
-
-    <footer class="grs-foot">
-      <p>Reference UI · fork and validate · <a href="https://github.com/FractiAI/omniversal-goldilocks-rideshare">GitHub</a></p>
-      <p>Fair Exchange · <a href="mailto:valetpru@gmail.com?subject=Goldilocks%20Room%20Service">valetpru@gmail.com</a> · <a href="https://www.ssvibelandiaquestfest24x365.com/goldilocks-deliveries">Live edge</a></p>
-    </footer>
+    <p class="grs-foot">
+      Reference UI · fork and validate · <a href="https://github.com/FractiAI/omniversal-goldilocks-rideshare">GitHub</a> ·
+      Fair Exchange · <a href="mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge">valetpru@gmail.com</a> · <a href="https://www.ssvibelandiaquestfest24x365.com/goldilocks-deliveries">Live edge</a>
+    </p>
   </main>
+  <footer>
+    <p><a href="mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge">valetpru@gmail.com</a> · SS Vibelandia QUESTFEST 24×365</p>
+  </footer>
 </body>
 </html>

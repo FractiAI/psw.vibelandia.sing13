@@ -2,7 +2,7 @@
 
 **Protocol ID:** OLD-SCHOOL-EDGE-HONOR-2026-07  
 **Status:** ⚡ ACTIVE  
-**Aligns:** NSPFRNP · Fair Exchange · Pass Ladder · Lite edges · OGRP · Goldilocks Room Service  
+**Aligns:** NSPFRNP · Fair Exchange · Pass Ladder · Lite edges · OGRP · Hire-A-Goldilocks-Valet-Concierge  
 **Operator contact:** [valetpru@gmail.com](mailto:valetpru@gmail.com)
 
 ---
@@ -19,12 +19,13 @@ Keep **commercial**, **transactional**, and **personal** information aligned wit
 |------|---------|
 | **No forms funnel** | No corporate intake, no chatbot gate, no CRM capture layer |
 | **Human door** | Interested nodes contact **PL Taino / Valet Pru** directly by email |
+| **Offer & acceptance** | Guest states **what they want** (food · beverage · merchandise · other services) and **what they offer as tip**; the operator **accepts or passes** — human judgment, no algorithmic matching, no surge math. On acceptance the operator acts as **personal assistant**, procuring and delivering whatever was agreed |
 | **Honor rails only** | Venmo · PayPal · Cash App — user pays on rail, attests on device |
 | **No PSP webhooks** | No Stripe, no payment-processor callbacks, no server-side payment state machine |
 | **No surveillance** | No session replay, no behavioral analytics on honor flows, no third-party tracking pixels on payment surfaces |
 | **Minimum personal data** | Email + date paid + neighborhood + request details — nothing else required to dispatch |
 
-First canonical use: **Goldilocks Syntheverse Beehive Residency** (Layer 9). Same protocol applies to **Goldilocks Room Service**, **OGRP valet nodes**, and **menu partners**.
+First canonical use: **Goldilocks Syntheverse Beehive Residency** (Layer 9). Same protocol applies to **Hire-A-Goldilocks-Valet-Concierge**, **OGRP valet nodes**, and **menu partners**.
 
 ---
 
@@ -35,7 +36,7 @@ First canonical use: **Goldilocks Syntheverse Beehive Residency** (Layer 9). Sam
 | Data class | Where it stays | Example |
 |------------|----------------|---------|
 | **Honor attestation** | Browser `localStorage` (QUESTFEST Bridge) or operator email inbox | `qv-local-monthly-honor` · paid date · rail used |
-| **Commercial intent** | Email subject + memo on honor rail | `GOLDILOCKS ROOM SERVICE · guest request` |
+| **Commercial intent** | Email subject + memo on honor rail | `Hire-A-Goldilocks-Valet-Concierge · guest request` |
 | **Transactional proof** | User's Venmo/PayPal/Cash App history (their rail) | They own the receipt — we do not mirror it to a database |
 | **Personal request details** | Email body only — operator-held | Delivery address, preferences — not scraped into analytics |
 
@@ -58,7 +59,7 @@ First canonical use: **Goldilocks Syntheverse Beehive Residency** (Layer 9). Sam
 
 ## OGRP alignment (rideshare / delivery)
 
-All **Goldilocks Room Service** and **OGRP** transactions inherit:
+All **Hire-A-Goldilocks-Valet-Concierge** and **OGRP** transactions inherit:
 
 | Gate | Symbol | Honor implication |
 |------|--------|-------------------|
@@ -75,12 +76,13 @@ All **Goldilocks Room Service** and **OGRP** transactions inherit:
 
 ## Operational checklist (operators & builders)
 
-1. **Pitch on web** — problem, gates, regions, three portals (max 3 layers to honor pay).  
-2. **Pay on rail** — open Venmo/PayPal/Cash App with amount + memo; no embedded checkout SDK.  
-3. **Attest by email** — date paid, rail, neighborhood, request — one thread, one human.  
-4. **Dispatch valet** — operator node; no automated rider GPS dashboard required.  
-5. **Fair Exchange** — refund or tip adjustment by mutual respect; not algorithmic surge pricing.  
-6. **Fork openly** — standalone repo for validation; cite `WP-OGRP-2026-07`.
+1. **Pitch on web** — menu-first landing, gates, regions, join doors (max 3 layers to honor pay).  
+2. **Propose by email** — guest states what they want + tip offer + neighborhood; one thread, one human.  
+3. **Accept or pass** — operator decides; no algorithm, no queue. Floors: $9 run · $16.18/hr · $161.80/day.  
+4. **Pay on rail** — open Venmo/PayPal/Cash App with amount + memo; no embedded checkout SDK; guest replies with date paid + rail.  
+5. **Procure & deliver** — operator acts as personal assistant for whatever was agreed; no automated rider GPS dashboard required.  
+6. **Fair Exchange** — refund or tip adjustment by mutual respect; not algorithmic surge pricing.  
+7. **Fork openly** — standalone repo for validation; cite `WP-OGRP-2026-07`.
 
 ---
 
@@ -88,7 +90,7 @@ All **Goldilocks Room Service** and **OGRP** transactions inherit:
 
 Same bar as **A2A AGENT QUALIFICATION** in MCA catalog for *autonomous agents* — but for *humans on honor surfaces*:
 
-- Requiring Stripe/Shopify checkout to access Room Service  
+- Requiring Stripe/Shopify checkout to access Hire-A-Goldilocks-Valet-Concierge  
 - Mandatory phone number + SMS OTP before a $9 honor request  
 - Storing delivery addresses in a cloud CRM without explicit operator consent  
 - “Track your driver” maps fed to a third-party analytics vendor  

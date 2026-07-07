@@ -7132,8 +7132,15 @@ html.qf-jukebox-page .sp-now-add-pl {
 .jb-brand-selectable {
   user-select: text;
   -webkit-user-select: text;
-  cursor: text;
+  cursor: pointer;
   color: #fef3c7;
+  text-decoration: none;
+}
+
+.jb-brand-selectable:hover {
+  color: #fff8e7;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .jb-h1 {

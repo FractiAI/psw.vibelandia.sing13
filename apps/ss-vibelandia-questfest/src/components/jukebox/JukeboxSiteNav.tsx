@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { QUESTFEST_DECK_HREF } from '@/components/QuestfestFastLink';
 import { JUKEBOX_LISTEN_PATH, JUKEBOX_NOW_PLAYING_PATH } from '@/lib/jukeboxRoutes';
 import { SONIC_BRAND_NAME, SONIC_LISTEN_EYEBROW_PREFIX, SONIC_SINGULARITY_TAGLINE } from '@/lib/sonicCatalogCopy';
 
@@ -30,7 +31,9 @@ export function JukeboxSiteNav({ mode }: JukeboxSiteNavProps) {
       </nav>
       <p className="jb-eyebrow">
         {SONIC_LISTEN_EYEBROW_PREFIX}{' '}
-        <span className="jb-brand-selectable">{SONIC_BRAND_NAME}</span>
+        <a className="jb-brand-selectable" href={QUESTFEST_DECK_HREF}>
+          {SONIC_BRAND_NAME}
+        </a>
       </p>
       <p className="jb-tagline jb-tagline--slim">{SONIC_SINGULARITY_TAGLINE}</p>
     </header>

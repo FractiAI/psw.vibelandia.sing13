@@ -1,0 +1,16 @@
+{
+  "protocol": "OmniversalGoldilocksRideshare",
+  "documentId": "WP-OGRP-2026-07",
+  "egs_constant": 1.618,
+  "acceptance_criteria": {
+    "density_gate_min_density": "high_core",
+    "value_floor_token_equivalent": 9.0,
+    "sovereign_pacing_enabled": true
+  },
+  "gates": {
+    "density_anchoring": "Omega_core",
+    "thermodynamic_minimization": "Theta_min",
+    "generosity_gate": "Gamma_floor",
+    "sovereign_pacing": "P_sov"
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "documentId": "WP-OGRP-2026-07",
+  "generatedAt": "2026-07-07T19:28:55.070Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "repository": "https://github.com/FractiAI/omniversal-goldilocks-rideshare",
+  "experiments": {
+    "E1_capitalLeak": {
+      "aaaSource": "AAA Your Driving Costs 2025/2026",
+      "annualMilesBasis": 15000,
+      "microMobilityAssumptions": {
+        "kwhPerMile": 0.03,
+        "usdPerKwh": 0.12,
+        "maintenancePerMileUsd": 0.0014
+      },
+      "tiers": [
+        {
+          "id": "aaa_composite",
+          "label": "AAA composite average",
+          "perMileUsd": 0.7718
+        },
+        {
+          "id": "aaa_small_sedan",
+          "label": "AAA small sedan",
+          "perMileUsd": 0.5587
+        },
+        {
+          "id": "aaa_medium_suv",
+          "label": "AAA medium SUV",
+          "perMileUsd": 0.8389
+        },
+        {
+          "id": "ogrp_micro_mobility",
+          "label": "OGRP micro-mobility (operating)",
+          "perMileUsd": 0.005
+        }
+      ],
+      "comparisons": [
+        {
+          "vehicleTier": "AAA composite average",
+          "perMileUsd": 0.7718,
+          "microPerMileUsd": 0.005,
+          "ratioVehicleToMicro": 154.36,
+          "savingsPerMileUsd": 0.7668
+        },
+        {
+          "vehicleTier": "AAA small sedan",
+          "perMileUsd": 0.5587,
+          "microPerMileUsd": 0.005,
+          "ratioVehicleToMicro": 111.74,
+          "savingsPerMileUsd": 0.5537
+        },
+        {
+          "vehicleTier": "AAA medium SUV",
+          "perMileUsd": 0.8389,
+          "microPerMileUsd": 0.005,
+          "ratioVehicleToMicro": 167.78,
+          "savingsPerMileUsd": 0.8339
+        }
+      ],
+      "minRatioVehicleToMicro": 111.74
+    },
+    "E2_parkingCruising": {
+      "source": "University of Washington Urban Freight Lab",
+      "legacyParkingCruiseFraction": 0.28,
+      "ogrpParkingCruiseFraction": 0,
+      "assumedTripMinutes": 180,
+      "legacyCruiseMinutes": 50.400000000000006,
+      "ogrpCruiseMinutes": 0,
+      "minutesSavedPerTrip": 50.400000000000006,
+      "pctTimeRecovered": 0.28,
+      "avgParkingCruiseMinutesPerDayCited": 50
+    },
+    "E3_egsOverhead": {
+      "phi": 1.618033988749895,
+      "analyticMinimum": {
+        "x": 0.8090169943749475,
+        "C": -0.6545084971874737,
+        "dC_dx": 0
+      },
+      "numericMinimum": {
+        "d_over_r": 0.8,
+        "C": -0.654427190999916
+      },
+      "minimumMatchesPhiHalf": true,
+      "resonanceRatio": 1.618033988749895,
+      "modeledRatioAtPhi": 1.0618033988749895,
+      "modeledRatioAtSprawl": 82.45898033750315,
+      "sprawlDivergenceExceedsPhi": true,
+      "sweepSample": [
+        {
+          "d_over_r": 0,
+          "C_model": 0,
+          "E_in_over_V_cap": 1,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 0.8,
+          "C_model": -0.654427190999916,
+          "E_in_over_V_cap": 1,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 1.6,
+          "C_model": -0.028854381999831702,
+          "E_in_over_V_cap": 1.06,
+          "atResonance": true
+        },
+        {
+          "d_over_r": 2.4,
+          "C_model": 1.8767184270002524,
+          "E_in_over_V_cap": 2.222941685500799,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 3.2,
+          "C_model": 5.062291236000338,
+          "E_in_over_V_cap": 6.005232921501136,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 4,
+          "C_model": 9.52786404500042,
+          "E_in_over_V_cap": 12.347524157501471,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 4.8,
+          "C_model": 15.273436854000504,
+          "E_in_over_V_cap": 21.249815393501805,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 5.6,
+          "C_model": 22.299009663000586,
+          "E_in_over_V_cap": 32.71210662950214,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 6.4,
+          "C_model": 30.60458247200068,
+          "E_in_over_V_cap": 46.73439786550249,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 7.2,
+          "C_model": 40.190155281000756,
+          "E_in_over_V_cap": 63.316689101502824,
+          "atResonance": false
+        },
+        {
+          "d_over_r": 8,
+          "C_model": 51.05572809000084,
+          "E_in_over_V_cap": 82.45898033750315,
+          "atResonance": false
+        }
+      ]
+    },
+    "E4_generosityGate": {
+      "gammaFloorUsd": 9,
+      "netYieldIfZeroMiles": {
+        "microMobility": 8.995,
+        "aaaVehicle": 8.2282
+      },
+      "milesToConsumeEntireFloorOnOverhead": {
+        "microMobility": 1800,
+        "aaaVehicle": 11.661052086032651
+      },
+      "policyNote": "Transactions below floor rejected before route acceptance; surplus tipping not modeled in E4"
+    },
+    "E5_densityAndSchema": {
+      "density": {
+        "bbox": {
+          "label": "Downtown Reno high-density core (OGRP Ω_core anchor)",
+          "city": "Reno, Nevada, USA",
+          "description": "Virgin St / casino corridor — density anchoring bbox for micro-mobility field trials",
+          "north": 39.5312,
+          "south": 39.5235,
+          "west": -119.8205,
+          "east": -119.808,
+          "sampleTrips": [
+            {
+              "id": "reno-virgin-casino",
+              "lat": 39.5289,
+              "lon": -119.8136,
+              "note": "Virgin St corridor"
+            },
+            {
+              "id": "reno-city-plaza",
+              "lat": 39.5258,
+              "lon": -119.8142,
+              "note": "City Plaza vicinity"
+            },
+            {
+              "id": "reno-riverwalk",
+              "lat": 39.5265,
+              "lon": -119.8098,
+              "note": "Riverwalk density node"
+            }
+          ]
+        },
+        "sampleTrips": [
+          {
+            "id": "reno-virgin-casino",
+            "lat": 39.5289,
+            "lon": -119.8136,
+            "insideCore": true
+          },
+          {
+            "id": "reno-city-plaza",
+            "lat": 39.5258,
+            "lon": -119.8142,
+            "insideCore": true
+          },
+          {
+            "id": "reno-riverwalk",
+            "lat": 39.5265,
+            "lon": -119.8098,
+            "insideCore": true
+          }
+        ],
+        "allSampleTripsInsideCore": true
+      },
+      "protocol": {
+        "protocol": "OmniversalGoldilocksRideshare",
+        "documentId": "WP-OGRP-2026-07",
+        "egs_constant": 1.618,
+        "acceptance_criteria": {
+          "density_gate_min_density": "high_core",
+          "value_floor_token_equivalent": 9,
+          "sovereign_pacing_enabled": true
+        },
+        "gates": {
+          "density_anchoring": "Omega_core",
+          "thermodynamic_minimization": "Theta_min",
+          "generosity_gate": "Gamma_floor",
+          "sovereign_pacing": "P_sov"
+        }
+      },
+      "schema": {
+        "valid": true,
+        "errors": []
+      }
+    }
+  },
+  "hypothesisTests": {
+    "E1_capital_leak_elimination": {
+      "statement": "OGRP micro-mobility operating cost << AAA published per-mile vehicle tiers",
+      "result": "support",
+      "minRatioVehicleToMicro": 111.74,
+      "microPerMileUsd": 0.005,
+      "aaaCompositePerMileUsd": 0.7718
+    },
+    "E2_parking_cruising_discrepancy": {
+      "statement": "Legacy delivery parking cruise fraction >> OGRP micro-mobility model (0%)",
+      "result": "support",
+      "legacyFraction": 0.28,
+      "ogrpFraction": 0,
+      "minutesSavedPerTripAssumed180min": 50.400000000000006
+    },
+    "E3_egs_overhead_minimum": {
+      "statement": "C(x)=x²−Φx minimum aligns with Φ/2; modeled sprawl divergence exceeds Φ-band",
+      "result": "support",
+      "analyticMinimumX": 0.8090169943749475,
+      "numericMinimumRatio": 0.8,
+      "sprawlRatioModeled": 82.45898033750315
+    },
+    "E4_generosity_gate_arithmetic": {
+      "statement": "Γ_floor=$9 yields positive net on micro tier after zero-mile overhead; rejects sub-floor by policy",
+      "result": "support",
+      "gammaFloorUsd": 9,
+      "netMicro": 8.995,
+      "netAaa": 8.2282
+    },
+    "E5_density_gate_and_schema": {
+      "statement": "Sample Reno core trips inside Ω_core bbox; OGRP JSON schema valid",
+      "result": "support",
+      "allInsideCore": true,
+      "schemaValid": true,
+      "schemaErrors": []
+    }
+  },
+  "honestyNote": "E1–E2 use published AAA and UW freight statistics — economic comparison, not causal proof of φ routing. E3 is analytic model verification. E4 is policy arithmetic. Field tipping (Experiment C narrative) requires optional controlled logs — not asserted here."
+}

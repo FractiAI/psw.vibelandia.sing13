@@ -1,0 +1,17 @@
+{
+  "_comment": "Optional operator field log — copy to field_trial_log.json. Anonymize PII. Not required for pipeline pass.",
+  "operatorId": "ANONYMIZED",
+  "vector": "electric micro-mobility",
+  "coreLabel": "downtown Reno Ω_core",
+  "trips": [
+    {
+      "tripId": "example-001",
+      "dateUtc": "2026-07-01",
+      "distanceMiles": 1.2,
+      "grossValueUsd": 12.0,
+      "tipUsd": 3.0,
+      "parkingCruiseMinutes": 0,
+      "insideCore": true
+    }
+  ]
+}

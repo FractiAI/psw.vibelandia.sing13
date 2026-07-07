@@ -1,0 +1,14 @@
+{
+  "label": "Downtown Reno high-density core (OGRP Ω_core anchor)",
+  "city": "Reno, Nevada, USA",
+  "description": "Virgin St / casino corridor — density anchoring bbox for micro-mobility field trials",
+  "north": 39.5312,
+  "south": 39.5235,
+  "west": -119.8205,
+  "east": -119.8080,
+  "sampleTrips": [
+    { "id": "reno-virgin-casino", "lat": 39.5289, "lon": -119.8136, "note": "Virgin St corridor" },
+    { "id": "reno-city-plaza", "lat": 39.5258, "lon": -119.8142, "note": "City Plaza vicinity" },
+    { "id": "reno-riverwalk", "lat": 39.5265, "lon": -119.8098, "note": "Riverwalk density node" }
+  ]
+}

@@ -23,6 +23,7 @@
     "research:geomagnetic": "python research/geomagnetic-herbivore/scripts/run_pipeline.py",
     "research:recursive-attention-causality": "node scripts/run-recursive-attention-causality.mjs",
     "research:synthobs-chromosomal-electrodynamics": "node research/synthobs-chromosomal-electrodynamics/scripts/run_empirical_pipeline.mjs",
+    "research:omniversal-goldilocks-rideshare": "node research/omniversal-goldilocks-rideshare/scripts/run_empirical_pipeline.mjs",
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs"

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="ss-vibelandia-deck">
+<head>
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>Menu item · Hire-A-Goldilocks-Valet-Concierge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/goldilocks-deliveries/goldilocks-deliveries.css" />
+</head>
+<body class="grs-deco-bg">
+  <main class="grs-wrap grs-item-wrap">
+    <a class="deck-back" href="/hire-a-goldilocks-valet-concierge#menu-h2">&larr; Back to menu</a>
+    <p class="grs-kicker" id="item-kicker">Menu item</p>
+    <h1 class="grs-title" id="item-title">Loading…</h1>
+    <p class="grs-sub" id="item-lead"></p>
+
+    <figure class="grs-hero-art grs-item-hero">
+      <img id="item-image" src="" alt="" width="1200" height="900" loading="eager" decoding="async" />
+    </figure>
+
+    <div class="grs-panel grs-item-body" id="item-body"></div>
+
+    <div class="grs-panel grs-item-request" id="item-request-panel">
+      <p class="grs-item-request__status" id="item-channel-status"></p>
+
+      <div id="item-qty-wrap" class="grs-qty" hidden>
+        <label class="grs-item-qty-label" for="item-qty">Quantity</label>
+        <button type="button" id="item-qty-minus" aria-label="Decrease">−</button>
+        <span class="grs-qty__val" id="item-qty-val">1 hour</span>
+        <button type="button" id="item-qty-plus" aria-label="Increase">+</button>
+      </div>
+
+      <label class="grs-item-field" id="item-tip-wrap">
+        <span class="grs-item-field__label">Tip above floor (optional)</span>
+        <input type="text" id="item-tip-extra" class="grs-item-field__input" placeholder="e.g. $5 more, or handled purveyor +18%" autocomplete="off" />
+      </label>
+
+      <div class="grs-item-cta-row" id="item-cta-row"></div>
+
+      <p class="grs-item-request__note" id="item-request-note"></p>
+    </div>
+  </main>
+  <footer>
+    <p><a href="mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge">valetpru@gmail.com</a> · SS Vibelandia QUESTFEST 24×365</p>
+  </footer>
+  <script src="/interfaces/goldilocks-deliveries/grs-channel.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var id = GRS.resolveItemId(params);
+      var item = GRS.ITEMS[id];
+      if (!item) { location.replace(GRS.HOME); return; }
+
+      document.title = item.title + ' · Hire-A-Goldilocks-Valet-Concierge';
+
+      var qty = item.quantity ? item.quantity.min : 1;
+      var kicker = document.getElementById('item-kicker');
+      var title = document.getElementById('item-title');
+      var lead = document.getElementById('item-lead');
+      var img = document.getElementById('item-image');
+      var body = document.getElementById('item-body');
+      var status = document.getElementById('item-channel-status');
+      var ctaRow = document.getElementById('item-cta-row');
+      var note = document.getElementById('item-request-note');
+      var qtyWrap = document.getElementById('item-qty-wrap');
+      var qtyVal = document.getElementById('item-qty-val');
+      var tipInput = document.getElementById('item-tip-extra');
+      var tipWrap = document.getElementById('item-tip-wrap');
+
+      if (kicker) kicker.textContent = item.pill;
+      if (title) title.textContent = item.title;
+      if (lead) lead.textContent = item.lead;
+      if (img) { img.src = item.image; img.alt = item.imageAlt; }
+      if (body) {
+        body.innerHTML = item.body.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
+          '<p><strong>Floor:</strong> ' + item.floorLabel + '</p>';
+      }
+
+      function renderCta() {
+        var tipExtra = tipInput ? tipInput.value.trim() : '';
+        ctaRow.innerHTML = '';
+
+        if (item.mailto) {
+          if (status) status.textContent = 'EcoReset uses the Old School email door — no WhatsApp channel.';
+          if (tipWrap) tipWrap.hidden = true;
+          if (qtyWrap) qtyWrap.hidden = true;
+          var mailBtn = document.createElement('a');
+          mailBtn.className = 'grs-btn';
+          mailBtn.href = item.mailto;
+          mailBtn.textContent = 'Request EcoReset · email PL Taino →';
+          ctaRow.appendChild(mailBtn);
+          if (note) note.textContent = 'Human to human. No payment layer on this door.';
+          return;
+        }
+
+        var active = GRS.isGuestChannelActive();
+
+        if (active) {
+          if (status) status.textContent = 'Guest channel active — your request opens WhatsApp with a prefilled broadcast. Send it to the guest channel group.';
+          var wa = document.createElement('a');
+          wa.className = 'grs-btn';
+          wa.href = GRS.whatsappUrl(GRS.buildBroadcast(item, { qty: qty, tipExtra: tipExtra }));
+          wa.target = '_blank';
+          wa.rel = 'noopener';
+          wa.textContent = 'Request · broadcast on WhatsApp →';
+          ctaRow.appendChild(wa);
+          var clear = document.createElement('button');
+          clear.type = 'button';
+          clear.className = 'grs-btn grs-btn--ghost';
+          clear.textContent = 'Leave guest channel (this device)';
+          clear.addEventListener('click', function () {
+            GRS.clearGuestChannel();
+            renderCta();
+          });
+          ctaRow.appendChild(clear);
+          if (note) note.textContent = 'After a valet accepts in-channel, settle offline on your honor rail (Venmo · PayPal · Cash App). Tip splits 33% app · 67% valet/concierge.';
+        } else {
+          if (status) status.textContent = 'Join the guest channel first — email Pru, get accepted, then activate your channel pass on this device.';
+          var joinMail = document.createElement('a');
+          joinMail.className = 'grs-btn';
+          joinMail.href = GRS.JOIN_MAIL;
+          joinMail.textContent = 'Email Pru to join guest channel →';
+          ctaRow.appendChild(joinMail);
+          var joinHome = document.createElement('a');
+          joinHome.className = 'grs-btn grs-btn--ghost';
+          joinHome.href = GRS.HOME + '#join-h2';
+          joinHome.textContent = 'See all join doors →';
+          ctaRow.appendChild(joinHome);
+          var activate = document.createElement('button');
+          activate.type = 'button';
+          activate.className = 'grs-btn grs-btn--ghost';
+          activate.textContent = 'Pru accepted me — activate guest channel';
+          activate.addEventListener('click', function () {
+            GRS.activateGuestChannel();
+            renderCta();
+          });
+          ctaRow.appendChild(activate);
+          if (note) note.textContent = 'Honor attestation on your device only — no server account. Once in the WhatsApp group, tap activate, then request.';
+        }
+      }
+
+      if (item.quantity && qtyWrap) {
+        qtyWrap.hidden = false;
+        function setQty() {
+          qtyVal.textContent = qty + ' ' + item.quantity.unitLabel + (qty > 1 ? 's' : '');
+          renderCta();
+        }
+        document.getElementById('item-qty-minus').addEventListener('click', function () {
+          if (qty > item.quantity.min) { qty--; setQty(); }
+        });
+        document.getElementById('item-qty-plus').addEventListener('click', function () {
+          if (qty < item.quantity.max) { qty++; setQty(); }
+        });
+        setQty();
+      } else {
+        renderCta();
+      }
+
+      if (tipInput) tipInput.addEventListener('input', renderCta);
+    })();
+  </script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

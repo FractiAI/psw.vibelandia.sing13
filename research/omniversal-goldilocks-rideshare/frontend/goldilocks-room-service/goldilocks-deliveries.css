@@ -22,9 +22,36 @@ body {
 }
 
 .grs-wrap {
-  max-width: 42rem;
+  max-width: 48rem;
   margin: 0 auto;
   padding: 1.25rem 1.15rem 3rem;
+}
+
+.grs-hero-art {
+  margin: 0 0 2rem;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(16, 11, 8, 0.75);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(245, 230, 200, 0.06);
+}
+.grs-hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.grs-hero-art__cap {
+  display: block;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--grs-champagne);
+  text-align: center;
+  border-top: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(10, 8, 6, 0.88);
 }
 
 .grs-nav {

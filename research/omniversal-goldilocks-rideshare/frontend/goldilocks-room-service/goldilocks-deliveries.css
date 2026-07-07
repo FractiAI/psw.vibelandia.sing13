@@ -164,6 +164,58 @@ body {
 .grs-svc-pick .grs-portal { padding: 1rem 1.1rem; }
 .grs-svc-pick .grs-portal__title { font-size: 1.1rem; margin-bottom: 0.2rem; }
 
+/* Rich illustrated menu — golden-age poster cards */
+.grs-menu-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+@media (min-width: 620px) {
+  .grs-menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .grs-menu-card--wide { grid-column: 1 / -1; }
+}
+.grs-menu-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  background: linear-gradient(180deg, rgba(26, 18, 12, 0.92), rgba(10, 8, 6, 0.96));
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(245, 230, 200, 0.06);
+}
+.grs-menu-card:hover {
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55), 0 0 18px rgba(212, 175, 55, 0.12);
+}
+.grs-menu-card__art {
+  display: block;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.grs-menu-card--wide .grs-menu-card__art { aspect-ratio: 21 / 9; }
+.grs-menu-card__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92);
+  transition: transform 0.45s ease;
+}
+.grs-menu-card:hover .grs-menu-card__art img { transform: scale(1.04); }
+.grs-menu-card__art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10, 8, 6, 0.55) 100%);
+  pointer-events: none;
+}
+.grs-menu-card__body {
+  display: block;
+  padding: 1rem 1.15rem 1.15rem;
+}
+
 .grs-amount {
   font-family: var(--grs-serif);
   font-size: 2rem;
@@ -333,6 +385,41 @@ body {
 }
 .grs-steps strong { color: var(--grs-gold-hi); }
 
+.grs-transparency { margin-bottom: 2rem; }
+.grs-transparency__note {
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--grs-champagne);
+}
+.grs-split {
+  margin-top: 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(16, 11, 8, 0.65);
+}
+.grs-split__row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--grs-muted);
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+}
+.grs-split__row:first-child { border-top: 0; }
+.grs-split__row--head {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grs-gold);
+  background: rgba(212, 175, 55, 0.08);
+}
+.grs-split__row strong { color: var(--grs-gold-hi); }
+
 .grs-join { cursor: default; }
 .grs-join:hover { transform: none; }
 .grs-join__list {
@@ -362,3 +449,17 @@ html.ss-vibelandia-deck .grs-join .grs-portal__cta:hover {
 html.ss-vibelandia-deck .grs-nav a { color: var(--grs-champagne); }
 html.ss-vibelandia-deck .grs-nav a:hover { color: var(--grs-gold-hi); }
 html.ss-vibelandia-deck .grs-hero .bb-cloud-badge { margin-bottom: 0.75rem; }
+
+/* Golden-age deco night background — landing page */
+html.ss-vibelandia-deck body.grs-deco-bg {
+  background:
+    linear-gradient(180deg, rgba(10, 8, 6, 0.62) 0%, rgba(10, 8, 6, 0.8) 55%, rgba(3, 5, 8, 0.92) 100%),
+    url('assets/grs-bg-deco-night.jpg') center top / cover no-repeat fixed;
+}
+body.grs-deco-bg .grs-regions,
+body.grs-deco-bg .grs-svc,
+body.grs-deco-bg .grs-panel,
+body.grs-deco-bg .grs-join {
+  background: rgba(16, 11, 8, 0.78);
+  backdrop-filter: blur(2px);
+}

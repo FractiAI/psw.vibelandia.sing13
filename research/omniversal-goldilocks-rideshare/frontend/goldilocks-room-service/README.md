@@ -8,7 +8,7 @@ Static HTML reference implementation for **OGRP** guest, valet, and menu-partner
 2. `pay.html` directly from the menu · `valet.html` / `partner.html` detail pages · `guest.html` (standalone picker deep link)  
 3. `pay.html` — service-aware honor rails (Γ<sub>floor</sub> = $9)
 
-Sign-up is Old School Protocol on every door: no forms funnel, no chatbot gate, no CRM — one email to PL Taino / Valet Pru with the basics (guest: date paid + rail + neighborhood + request · valet: name + neighborhood + vector + availability · purveyor: name + what you serve + location + hours + how guests settle).
+Sign-up is Old School Protocol on every door: no forms funnel, no chatbot gate, no CRM — one email to PL Taino / Valet Pru to join as **purveyor, valet, concierge, or guest**. Once accepted, the node is placed in the **WhatsApp group for the selected channel**, where requests broadcast (want + tip offer) and members accept. All else — procurement, delivery, payment — is handled offline through the established honor rails (Venmo · PayPal · Cash App).
 
 **Bookable services (guest picker → pay):**
 
@@ -40,6 +40,8 @@ python -m http.server 5190
 ## Look and feel
 
 Pages ship with the **SS Vibelandia deck skin** (`ss-vibelandia-deck-skin.css`) — gold / foam / Puerto Reno night-sky gradient — so the reference frontend matches the live SS Vibelandia QUESTFEST surfaces. Remove the `ss-vibelandia-deck` class on `<html>` and the skin stylesheet to de-brand a fork.
+
+The landing is a **rich illustrated menu**: each service card carries AI-generated golden-age art-deco poster art (`assets/grs-menu-*.jpg`), and the page sits on a deco night-sky background (`assets/grs-bg-deco-night.jpg`, applied via the `grs-deco-bg` body class). Swap the JPEGs in `assets/` to re-theme a fork; keep the 4:3 card ratio (21:9 for the wide EcoReset card).
 
 ## Fork notes
 

@@ -18,8 +18,11 @@ Keep **commercial**, **transactional**, and **personal** information aligned wit
 | Rule | Meaning |
 |------|---------|
 | **No forms funnel** | No corporate intake, no chatbot gate, no CRM capture layer |
-| **Human door** | Interested nodes contact **PL Taino / Valet Pru** directly by email |
+| **Human door** | Interested nodes contact **PL Taino / Valet Pru** directly by email — to join as **purveyor · valet · concierge · guest** |
+| **Channel placement** | Once accepted, the node is placed in the **WhatsApp group for their channel** — requests broadcast there and members accept; no dispatch server, no rider app |
 | **Offer & acceptance** | Guest states **what they want** (food · beverage · merchandise · other services) and **what they offer as tip**; the operator **accepts or passes** — human judgment, no algorithmic matching, no surge math. On acceptance the operator acts as **personal assistant**, procuring and delivering whatever was agreed |
+| **Tip split (transparent)** | Guest tip offer splits **33%** to the app (channel · broadcast · coordination) and **67%** to the valet or concierge who accepted and delivered — stated openly, attested on honor rails |
+| **Purveyor settlement** | Guest pays purveyor **directly** on delivery by default; optional **handled purveyor payments** for **+18% tip** on top of the guest offer if the guest prefers we settle goods |
 | **Honor rails only** | Venmo · PayPal · Cash App — user pays on rail, attests on device |
 | **No PSP webhooks** | No Stripe, no payment-processor callbacks, no server-side payment state machine |
 | **No surveillance** | No session replay, no behavioral analytics on honor flows, no third-party tracking pixels on payment surfaces |
@@ -77,10 +80,10 @@ All **Hire-A-Goldilocks-Valet-Concierge** and **OGRP** transactions inherit:
 ## Operational checklist (operators & builders)
 
 1. **Pitch on web** — menu-first landing, gates, regions, join doors (max 3 layers to honor pay).  
-2. **Propose by email** — guest states what they want + tip offer + neighborhood; one thread, one human.  
-3. **Accept or pass** — operator decides; no algorithm, no queue. Floors: $9 run · $16.18/hr · $161.80/day.  
-4. **Pay on rail** — open Venmo/PayPal/Cash App with amount + memo; no embedded checkout SDK; guest replies with date paid + rail.  
-5. **Procure & deliver** — operator acts as personal assistant for whatever was agreed; no automated rider GPS dashboard required.  
+2. **Join by email** — node emails Pru to join as **purveyor, valet, concierge, or guest**; one thread, one human answer.  
+3. **Channel placement** — once accepted, node is placed in the **WhatsApp group for the selected channel**; requests broadcast there, members accept.  
+4. **Broadcast & accept** — guest broadcasts what they want + tip offer; a valet or concierge accepts what fits. No algorithm, no queue. Floors: $9 run · $16.18/hr · $161.80/day.  
+5. **All else offline** — pay on Venmo/PayPal/Cash App with amount + memo (no embedded checkout SDK); operator procures and delivers whatever was agreed; no automated rider GPS dashboard.  
 6. **Fair Exchange** — refund or tip adjustment by mutual respect; not algorithmic surge pricing.  
 7. **Fork openly** — standalone repo for validation; cite `WP-OGRP-2026-07`.
 

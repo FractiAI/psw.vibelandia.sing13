@@ -1,0 +1,22 @@
+/* Minimal brand tokens for standalone OGRP frontend */
+:root {
+  --brand-gold: #d4af37;
+  --brand-gold-hi: #fef3c7;
+  --brand-champagne: #f5e6c8;
+  --brand-text: #f5f0e8;
+  --brand-muted: #a8a29e;
+  --brand-bg: #0a0806;
+}
+
+html { color-scheme: dark; }
+
+body {
+  -webkit-tap-highlight-color: rgba(212, 175, 55, 0.25);
+}
+
+a:any-link {
+  color: var(--brand-champagne);
+  text-decoration-color: rgba(212, 175, 55, 0.45);
+}
+
+a:hover { color: var(--brand-gold-hi); }

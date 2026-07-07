@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="brand-gold-surfaces.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Honor payment · Goldilocks Room Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="goldilocks-deliveries.css" />
+</head>
+<body>
+  <main class="grs-wrap">
+    <a class="grs-back" href="index.html">← Room Service home</a>
+    <p class="grs-kicker">Layer 3 · Honor payment</p>
+    <h1 class="grs-title">Fair Exchange</h1>
+    <p class="grs-sub" id="pay-sub">Old-school honor rails — no PSP webhooks.</p>
+
+    <div class="grs-panel">
+      <p>Minimum <strong>$9.00</strong> (Γ<sub>floor</sub>). Pay on your rail, then email <strong>date paid</strong> and <strong>request details</strong> so we can dispatch a valet node.</p>
+      <p id="pay-role-note"></p>
+    </div>
+
+    <div class="grs-rails" id="pay-rails"></div>
+
+    <p class="grs-foot" style="border:0;padding:0;margin-top:1.5rem;">
+      Or email directly: <a href="mailto:valetpru@gmail.com" id="pay-mail">valetpru@gmail.com</a>
+    </p>
+  </main>
+  <script>
+    (function () {
+      var role = new URLSearchParams(location.search).get('role') || 'guest';
+      var labels = { guest: 'Guest room service', valet: 'Valet node', partner: 'Menu partner' };
+      var memos = {
+        guest: 'GOLDILOCKS ROOM SERVICE · guest request',
+        valet: 'GOLDILOCKS VALET · join',
+        partner: 'GOLDILOCKS MENU · partner'
+      };
+      var sub = document.getElementById('pay-sub');
+      var note = document.getElementById('pay-role-note');
+      var mail = document.getElementById('pay-mail');
+      if (sub) sub.textContent = labels[role] || labels.guest;
+      if (note) note.textContent = 'Portal: ' + (labels[role] || labels.guest) + '. Include neighborhood (Downtown · Midtown · UNR · Idlewild).';
+      var amt = '9.00';
+      var rails = document.getElementById('pay-rails');
+      if (!rails) return;
+      var links = [
+        { label: 'Venmo @Pru-Mendez', href: 'https://venmo.com/Pru-Mendez' },
+        { label: 'PayPal', href: 'https://paypal.me/valetpru/' + amt },
+        { label: 'Cash App $GoldenBachdoor', href: 'https://cash.app/$GoldenBachdoor/' + amt }
+      ];
+      links.forEach(function (l) {
+        var a = document.createElement('a');
+        a.className = 'grs-rail';
+        a.href = l.href;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = l.label;
+        rails.appendChild(a);
+      });
+      if (mail) {
+        mail.href = 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent(memos[role] || memos.guest) + '&body=' + encodeURIComponent('Date paid:\nRail used:\nNeighborhood:\nRequest details:');
+      }
+    })();
+  </script>
+</body>
+</html>

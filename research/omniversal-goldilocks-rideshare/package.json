@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Empirical pipeline for WP-OGRP-2026-07 · Omniversal Goldilocks Rideshare Protocol",
+  "description": "OGRP · open reproduction, validation, and branching — paper, empirical pipeline, reference frontend",
   "repository": {
     "type": "git",
     "url": "https://github.com/FractiAI/omniversal-goldilocks-rideshare"
   },
   "scripts": {
     "empirical": "node scripts/run_empirical_pipeline.mjs",
-    "test": "node scripts/run_empirical_pipeline.mjs"
+    "test": "node scripts/run_empirical_pipeline.mjs",
+    "serve:frontend": "npx --yes serve frontend/goldilocks-room-service -p 5190"
   },
   "engines": {
     "node": ">=18.18.0"

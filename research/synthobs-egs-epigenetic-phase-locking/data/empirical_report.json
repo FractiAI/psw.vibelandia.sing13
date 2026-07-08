@@ -1,0 +1,67 @@
+{
+  "documentId": "WP-SYNTHOBS-EPI-PHASELOCK-2026-07",
+  "runAt": "2026-07-08T20:11:14.532Z",
+  "provenance": {
+    "gtexDatasetId": "gtex_v8",
+    "gtexApi": "https://gtexportal.org/api/v2",
+    "encodeApi": "https://www.encodeproject.org",
+    "requestedEncodeAccession": "ENCSR493MWX",
+    "requestedEncodeAccessionFound": false,
+    "selectedEncodePancreasAtacAccession": "ENCSR530XBF"
+  },
+  "metrics": {
+    "hypothalamus": {
+      "POMC": 7.53925,
+      "NPY": 13.4115,
+      "ratio_POMC_to_NPY": 0.562148156432912,
+      "phiDistanceLog": 1.0572016653445238
+    },
+    "pancreas": {
+      "INS": 2325.26,
+      "PDX1": 9.21954,
+      "ratio_INS_to_PDX1": 252.20998010746743,
+      "phiDistanceLog": 5.049050169882815,
+      "DNMT1": 4.54205,
+      "DNMT3A": 4.33584,
+      "ratio_DNMT1_to_DNMT3A": 1.0475594117864127
+    },
+    "encodeAtacPromoterWindows": {
+      "experimentAccession": "ENCSR530XBF",
+      "bedAccession": "ENCFF981WQJ",
+      "insWindow": {
+        "chrom": "chr11",
+        "start": 2109779,
+        "end": 2211341,
+        "peakCount": 0
+      },
+      "pdx1Window": {
+        "chrom": "chr13",
+        "start": 27870020,
+        "end": 27976231,
+        "peakCount": 0
+      },
+      "spacing": {
+        "INS": {
+          "n": 0,
+          "median": null,
+          "phiMatchPct": 0
+        },
+        "PDX1": {
+          "n": 0,
+          "median": null,
+          "phiMatchPct": 0
+        }
+      }
+    }
+  },
+  "findings": {
+    "F1_hypothalamus_ratio": "no_support_directional",
+    "F2_pancreas_ratio": "support_INS_above_PDX1",
+    "F3_encode_accessibility": "inconclusive_window_peaks",
+    "F4_phi_spacing": "no_support_phi_spacing_strong"
+  },
+  "honesty": {
+    "note": "These are public-data correlations and exploratory geometric summaries, not causal proof of epigenetic protection or clinical benefit.",
+    "notClaimed": "No in vivo phase-lock intervention, no patient-level causal inference, and no claim that high-glycemic risk is neutralized in real humans."
+  }
+}

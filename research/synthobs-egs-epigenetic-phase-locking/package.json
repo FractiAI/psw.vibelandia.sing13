@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-egs-epigenetic-phase-locking",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Empirical pipeline for EGS epigenetic phase-locking paper using public GTEx/ENCODE datasets.",
+  "scripts": {
+    "empirical": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

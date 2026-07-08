@@ -38,20 +38,20 @@ export const MACHOTE_ROOM_SERVICE_REGIONS =
   'Downtown · Midtown · UNR · Idlewild · Reno Experience District';
 
 export const MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB =
-  'A QUESTFEST service in Puerto Reno. Email Pru to join as guest or franchisee. Guests broadcast want + tip offer; franchise valets on electric bike or e-scooter accept what fits. Expansion candidacy open for new dense Goldilocks regions.';
+  'A QUESTFEST service built to solve dense-neighborhood friction: slow errands, parking churn, and last-mile coordination gaps. Email Pru to join as guest or franchisee. Guests broadcast want + tip offer; franchise valets on electric bike or e-scooter accept what fits. Expansion candidacy is open for new dense Goldilocks regions.';
 
 export const MACHOTE_ROOM_SERVICE_CTA = 'Room service & franchise →';
 
-export const MACHOTE_CAMPAIGN_EYEBROW = 'SS VIBELANDIA QUESTFEST · PUERTO RENO · MEMBERS';
+export const MACHOTE_CAMPAIGN_EYEBROW = 'FOLLOW MACHOTE MODERNO MAGAZINE ON FACEBOOK TO QUALIFY';
 
-export const MACHOTE_CAMPAIGN_TITLE = 'Room service · catalog pass · franchise';
+export const MACHOTE_CAMPAIGN_TITLE = 'Service intention · problems we help solve';
 
 export const MACHOTE_MEMBERS_PASS_TITLE = 'Members pass · full music catalog';
 
 export const MACHOTE_MEMBERS_PASS_SHORT = 'Machote members · catalog pass';
 
 export const MACHOTE_HUB_PASS_CTA =
-  'Unlock full catalog · Machote members · $16.18/mo on honor';
+  'Unlock full Sonic Singularity catalog · Machote members · $16.18/mo on honor';
 
 export const MACHOTE_CAMPAIGN_CTA = 'Get catalog pass · $16.18/mo';
 
@@ -78,7 +78,7 @@ export const MACHOTE_CREW_LINE =
 export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
 
 export const MACHOTE_CAMPAIGN_LEDE =
-  'New flagship service — Hire-A-Goldilocks-Valet-Concierge room service across Puerto Reno. Follow Machote Moderno Magazine to qualify for the catalog — then $16.18/mo honor pass unlocks the entire living, constantly expanding catalog.';
+  'Follow Machote Moderno Magazine on Facebook to qualify. This service is built to reduce daily friction in Puerto Reno with trusted human coordination for errands, deliveries, and assistance; members can also unlock the full Sonic Singularity catalog for $16.18/mo on honor.';
 
 export const MACHOTE_BEEHIVE_CAMPAIGN_BLURB =
   'Machote members only. Old School Protocol: interested party nodes contact PL Taino directly. 2-week test drive for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.';
@@ -98,17 +98,17 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   footerLinkLabel?: string;
 }[] = [
   {
-    title: 'Room service',
+    title: 'Service intention',
     body:
-      'Food delivery, personal shopping, and personal assistance by the hour or day inside the Goldilocks bubble — Downtown, Midtown, UNR, Idlewild, Reno Experience District.',
+      'Practical daily support with dignity: food delivery, personal shopping, and personal assistance by the hour or day across Downtown, Midtown, UNR, Idlewild, and the Reno Experience District.',
   },
   {
-    title: 'No-cost franchise',
+    title: 'Problems we help solve',
     body:
-      'Qualified operators with an electric bike or e-scooter in Puerto Reno. We are also accepting expansion candidacy for new dense Goldilocks regions.',
+      'Long waits, parking pain, and broken last-mile coordination in dense zones. No-cost franchise lanes for qualified electric bike/e-scooter operators help close those gaps, with expansion candidacy open for new dense Goldilocks regions.',
   },
   {
-    title: 'Full catalog · caliente',
+    title: 'Full Sonic Singularity catalog · caliente',
     body:
       'Pass holders get every Reno swamp beat from Hero Jo\'s Golden Bachdoor Hit Factory — background play, exports offline (extra charge). Honor pass $16.18/mo for',
     footerLinkLabel: 'Machote Moderno followers',

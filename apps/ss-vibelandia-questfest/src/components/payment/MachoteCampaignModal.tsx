@@ -1,10 +1,5 @@
 import { EGS_MONTHLY_USD } from '@/lib/paymentRails';
 import {
-  MACHOTE_BEEHIVE_CAMPAIGN_BLURB,
-  MACHOTE_BEEHIVE_CAVEAT,
-  MACHOTE_BEEHIVE_CTA,
-  MACHOTE_BEEHIVE_RESIDENCY_PATH,
-  MACHOTE_BEEHIVE_RESIDENCY_TITLE,
   MACHOTE_CAMPAIGN_CTA,
   MACHOTE_CAMPAIGN_EYEBROW,
   MACHOTE_CAMPAIGN_REASONS,
@@ -61,13 +56,12 @@ export function MachoteCampaignModal({ open, onClose, onGetPass, hasMembersAcces
           {MACHOTE_CAMPAIGN_TITLE}
         </h2>
         <p className="modal-body modal-body--warm machote-campaign-lede">
-          New flagship service — <strong>{MACHOTE_ROOM_SERVICE_TITLE}</strong> room service across Puerto Reno.
+          <strong>{MACHOTE_ROOM_SERVICE_TITLE}</strong> is built to reduce daily friction in Puerto Reno.
           Follow{' '}
           <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
             {MACHOTE_MAGAZINE_NAME}
           </a>{' '}
-          to qualify for the catalog — then <strong>${EGS_MONTHLY_USD.toFixed(2)}/mo</strong> honor pass unlocks the entire living,
-          constantly expanding catalog.
+          on Facebook to qualify — then <strong>${EGS_MONTHLY_USD.toFixed(2)}/mo</strong> on honor unlocks the full Sonic Singularity catalog.
         </p>
         <ol className="machote-campaign-reasons">
           {MACHOTE_CAMPAIGN_REASONS.map((r, i) => (
@@ -100,17 +94,6 @@ export function MachoteCampaignModal({ open, onClose, onGetPass, hasMembersAcces
           </p>
           <a className="voxel-btn voxel-btn--swamp-gold machote-campaign-roomservice__cta" href={MACHOTE_ROOM_SERVICE_PATH}>
             {MACHOTE_ROOM_SERVICE_CTA}
-          </a>
-        </aside>
-        <aside className="machote-campaign-beehive">
-          <p className="modal-body modal-body--warm" style={{ margin: 0 }}>
-            <strong>New ·</strong> {MACHOTE_BEEHIVE_RESIDENCY_TITLE} — {MACHOTE_BEEHIVE_CAMPAIGN_BLURB}
-          </p>
-          <p className="modal-body modal-body--warm machote-campaign-beehive-caveat" style={{ margin: '0.55rem 0 0' }}>
-            <strong>Caveat.</strong> {MACHOTE_BEEHIVE_CAVEAT}
-          </p>
-          <a className="voxel-btn voxel-btn--ghost-warm machote-campaign-beehive__cta" href={MACHOTE_BEEHIVE_RESIDENCY_PATH}>
-            {MACHOTE_BEEHIVE_CTA}
           </a>
         </aside>
         <div className="modal-actions machote-campaign-actions">

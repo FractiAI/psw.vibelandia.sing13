@@ -126,7 +126,7 @@
       '',
       'What I want:',
       'Tip offered: ' + floorStr + ' (floor)' + (tipExtra ? ' + ' + tipExtra : ''),
-      'Neighborhood (Downtown / Midtown / UNR / Idlewild):'
+      'Neighborhood (Downtown / Midtown / UNR / Idlewild / Reno Experience District):'
     ];
     if (item.quantity) {
       lines.push('Quantity: ' + qty + ' ' + item.quantity.unitLabel + (qty > 1 ? 's' : ''));

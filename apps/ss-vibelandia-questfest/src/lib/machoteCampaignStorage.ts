@@ -34,8 +34,7 @@ export function consumeCampaignResetFromUrl(): boolean {
   return true;
 }
 
-export function shouldAutoShowMachoteCampaign(hasMembersAccess: boolean): boolean {
-  if (hasMembersAccess) return false;
+export function shouldAutoShowMachoteCampaign(_hasMembersAccess: boolean): boolean {
   if (isMachoteCampaignDismissed()) return false;
   return true;
 }

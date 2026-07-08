@@ -9,7 +9,7 @@
     return path.includes('bulletin-board');
   }
 
-  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v4';
+  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v5';
   var LEGACY_DISMISS_KEY = 'machote-members-campaign-dismissed-v2';
   var PASS_TOKEN_KEY = 'qv-pass-token';
   var LOCAL_HONOR_KEY = 'qv-local-monthly-honor';
@@ -17,6 +17,7 @@
   var BRIDGE_BOARDING =
     '/interfaces/questfest-bridge/?boarding=1#/listen';
   var BEEHIVE_PATH = '/interfaces/goldilocks-beehive-residency.html';
+  var ROOM_SERVICE_PATH = '/hire-a-goldilocks-valet-concierge';
 
   function parsePassToken(token) {
     if (!token) return null;
@@ -91,9 +92,13 @@
 
   function shouldAutoShow(forceCampaign) {
     if (forceCampaign) return true;
-    if (hasMembersAccess()) return false;
     if (isDismissedThisSession()) return false;
     return true;
+  }
+
+  function applyMemberState(root) {
+    if (!hasMembersAccess()) return;
+    root.classList.add('machote-campaign--member');
   }
 
   function init() {
@@ -116,11 +121,13 @@
     }
 
     function openModal() {
+      applyMemberState(root);
       root.removeAttribute('hidden');
       root.classList.add('machote-campaign-open');
       root.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
-      var focusTarget = root.querySelector('.machote-campaign-btn--gold');
+      var focusTarget = root.querySelector('.machote-campaign-roomservice-cta') ||
+        root.querySelector('.machote-campaign-btn--gold');
       if (focusTarget) focusTarget.focus();
     }
 
@@ -170,7 +177,8 @@
       }
     },
     BRIDGE_BOARDING: BRIDGE_BOARDING,
-    BEEHIVE_PATH: BEEHIVE_PATH
+    BEEHIVE_PATH: BEEHIVE_PATH,
+    ROOM_SERVICE_PATH: ROOM_SERVICE_PATH
   };
 
   if (document.readyState === 'loading') {

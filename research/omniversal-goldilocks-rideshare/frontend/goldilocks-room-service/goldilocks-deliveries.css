@@ -132,6 +132,27 @@ body {
   font-size: 0.9rem;
   line-height: 1.7;
 }
+.grs-service-territory {
+  margin-bottom: 1.5rem;
+  border-color: rgba(212, 175, 55, 0.35);
+  background: linear-gradient(135deg, rgba(26, 18, 12, 0.72), rgba(12, 10, 8, 0.55));
+}
+.grs-portal.grs-franchise {
+  border-color: rgba(212, 175, 55, 0.4);
+  background: linear-gradient(160deg, rgba(32, 22, 14, 0.85), rgba(18, 12, 8, 0.65));
+}
+.grs-portal.grs-franchise .grs-portal__pill {
+  color: var(--grs-gold-hi);
+  border-color: rgba(212, 175, 55, 0.45);
+}
+.grs-panel__h {
+  margin: 0 0 0.65rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--grs-gold-hi);
+}
+.grs-franchise-expand { margin-top: 1rem; }
 
 .grs-services { margin-bottom: 2rem; }
 .grs-service-row {
@@ -548,7 +569,7 @@ html.ss-vibelandia-deck .grs-hero .bb-cloud-badge { margin-bottom: 0.75rem; }
 html.ss-vibelandia-deck body.grs-deco-bg {
   background:
     linear-gradient(180deg, rgba(10, 8, 6, 0.62) 0%, rgba(10, 8, 6, 0.8) 55%, rgba(3, 5, 8, 0.92) 100%),
-    url('assets/grs-bg-deco-night.jpg') center top / cover no-repeat fixed;
+    url('/interfaces/goldilocks-deliveries/assets/grs-bg-deco-night.jpg') center top / cover no-repeat fixed;
 }
 body.grs-deco-bg .grs-regions,
 body.grs-deco-bg .grs-svc,

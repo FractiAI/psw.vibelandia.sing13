@@ -27,9 +27,24 @@ export const MACHOTE_BEEHIVE_RESIDENCY_PATH = '/interfaces/goldilocks-beehive-re
 
 export const MACHOTE_BEEHIVE_NEST_PATH = '/interfaces/nesting/nest-goldilocks-beehive.html';
 
-export const MACHOTE_CAMPAIGN_EYEBROW = 'EXCLUSIVELY FOR MACHOTE MODERNO FOLLOWERS';
+export const MACHOTE_ROOM_SERVICE_PATH = '/hire-a-goldilocks-valet-concierge';
 
-export const MACHOTE_CAMPAIGN_TITLE = 'Special offer · Master Music Catalog access';
+export const MACHOTE_ROOM_SERVICE_TITLE = 'Hire-A-Goldilocks-Valet-Concierge';
+
+export const MACHOTE_ROOM_SERVICE_TAGLINE =
+  'QUESTFEST room service in Puerto Reno · guests · no-cost Goldilocks Valet franchise';
+
+export const MACHOTE_ROOM_SERVICE_REGIONS =
+  'Downtown · Midtown · UNR · Idlewild · Reno Experience District';
+
+export const MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB =
+  'A QUESTFEST service in Puerto Reno. Email Pru to join as guest or franchisee. Guests broadcast want + tip offer; franchise valets on electric bike or e-scooter accept what fits. Expansion candidacy open for new dense Goldilocks regions.';
+
+export const MACHOTE_ROOM_SERVICE_CTA = 'Room service & franchise →';
+
+export const MACHOTE_CAMPAIGN_EYEBROW = 'SS VIBELANDIA QUESTFEST · PUERTO RENO · MEMBERS';
+
+export const MACHOTE_CAMPAIGN_TITLE = 'Room service · catalog pass · franchise';
 
 export const MACHOTE_MEMBERS_PASS_TITLE = 'Members pass · full music catalog';
 
@@ -63,7 +78,7 @@ export const MACHOTE_CREW_LINE =
 export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
 
 export const MACHOTE_CAMPAIGN_LEDE =
-  'A followers-only special to stream our Master Music Catalog of Holographic Reno Swamp Beats Caliente. Follow Machote Moderno Magazine to qualify — then $16.18/mo honor pass unlocks the entire living, constantly expanding catalog.';
+  'New flagship service — Hire-A-Goldilocks-Valet-Concierge room service across Puerto Reno. Follow Machote Moderno Magazine to qualify for the catalog — then $16.18/mo honor pass unlocks the entire living, constantly expanding catalog.';
 
 export const MACHOTE_BEEHIVE_CAMPAIGN_BLURB =
   'Machote members only. Old School Protocol: interested party nodes contact PL Taino directly. 2-week test drive for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.';
@@ -83,19 +98,19 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   footerLinkLabel?: string;
 }[] = [
   {
-    title: 'Master Music Catalog · caliente',
+    title: 'Room service',
     body:
-      "Full access to holographic Reno swamp beats from Hero Jo's Golden Bachdoor Hit Factory — make yourself the superhero of your own parties, car drives, vibes, story. You know it!! Everybody gonna say what the fuck is that music? Gimme more!! You know it! Offered exclusively to",
+      'Food delivery, personal shopping, and personal assistance by the hour or day inside the Goldilocks bubble — Downtown, Midtown, UNR, Idlewild, Reno Experience District.',
+  },
+  {
+    title: 'No-cost franchise',
+    body:
+      'Qualified operators with an electric bike or e-scooter in Puerto Reno. We are also accepting expansion candidacy for new dense Goldilocks regions.',
+  },
+  {
+    title: 'Full catalog · caliente',
+    body:
+      'Pass holders get every Reno swamp beat from Hero Jo\'s Golden Bachdoor Hit Factory — background play, exports offline (extra charge). Honor pass $16.18/mo for',
     footerLinkLabel: 'Machote Moderno followers',
-  },
-  {
-    title: 'Full catalog ·',
-    body:
-      'Pass holders get every track, background play, and exports offline (extra charge). The magazine is your qualifier badge; the catalog is what you unlock.',
-  },
-  {
-    title: 'Honor pass · $16.18/mo',
-    body:
-      'Follow Machote Moderno Magazine on Facebook to qualify, then pay catalog access on Venmo, PayPal, or Cash App on honor. Machote Modernos keeping it raw — honor system and no corporate checkout. Old school.',
   },
 ];

@@ -1,7 +1,7 @@
 /** Hire-A-Goldilocks-Valet-Concierge · edge channel + menu items (no server state). */
 (function (global) {
-  var ASSET_BASE = '';
-  var HOME = 'index.html';
+  var ASSET_BASE = '/interfaces/goldilocks-deliveries';
+  var HOME = '/hire-a-goldilocks-valet-concierge';
   var CHANNEL_KEY = 'grs-guest-channel';
   var JOIN_MAIL = 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Hire-A-Goldilocks-Valet-Concierge — join as guest') +
     '&body=' + encodeURIComponent('Name:\nNeighborhood:\nWhatsApp number:');
@@ -12,7 +12,7 @@
       title: 'Food delivery',
       pill: 'Delivery · $9 floor',
       floorLabel: '$9 delivery floor',
-      image: ASSET_BASE + 'assets/grs-menu-food-delivery.jpg',
+      image: ASSET_BASE + '/assets/grs-menu-food-delivery.jpg',
       imageAlt: 'Golden-age valet on a bicycle carrying a silver room-service cloche through neon-lit downtown Reno',
       lead: 'From our menu partners inside the bubble — room service to your door, micro-mobility only.',
       body: [
@@ -28,7 +28,7 @@
       title: 'Personal shopping',
       pill: 'Run · $9 floor',
       floorLabel: '$9 run floor',
-      image: ASSET_BASE + 'assets/grs-menu-personal-shopping.jpg',
+      image: ASSET_BASE + '/assets/grs-menu-personal-shopping.jpg',
       imageAlt: 'Uniformed valet carrying wrapped parcels and a market basket past elegant storefronts at dusk',
       lead: 'Groceries, pharmacy, errands, pickups — receipt in hand, sovereign pacing.',
       body: [
@@ -44,7 +44,7 @@
       title: 'Personal assistance · hourly',
       pill: 'Booked by the hour · $16.18/hr',
       floorLabel: '$16.18 per hour · EGS φ rate',
-      image: ASSET_BASE + 'assets/grs-menu-assist-hourly.jpg',
+      image: ASSET_BASE + '/assets/grs-menu-assist-hourly.jpg',
       imageAlt: 'Impeccable concierge holding an open gold pocket watch beside a leather notebook',
       lead: 'Hands, wheels, and presence on your pace — booked by the hour.',
       body: [
@@ -61,7 +61,7 @@
       title: 'Personal assistance · full day',
       pill: 'Booked by the day · $161.80/day',
       floorLabel: '$161.80 per day · EGS φ ×10 rate',
-      image: ASSET_BASE + 'assets/grs-menu-assist-day.jpg',
+      image: ASSET_BASE + '/assets/grs-menu-assist-day.jpg',
       imageAlt: 'Distinguished valet-assistant opening grand lobby doors for a guest at sunrise',
       lead: 'A dedicated concierge for your whole day — sovereign pacing, one human thread.',
       body: [
@@ -78,7 +78,7 @@
       title: 'EcoReset',
       pill: 'Home · Estate · Business',
       floorLabel: 'Old School Protocol · no payment layer',
-      image: ASSET_BASE + 'assets/grs-menu-ecoreset.jpg',
+      image: ASSET_BASE + '/assets/grs-menu-ecoreset.jpg',
       imageAlt: 'Mid-century modern home at dusk with tended gardens and art deco sun rays',
       lead: 'Two-week test drive for your home, estate, or business — human to human.',
       body: [
@@ -126,7 +126,7 @@
       '',
       'What I want:',
       'Tip offered: ' + floorStr + ' (floor)' + (tipExtra ? ' + ' + tipExtra : ''),
-      'Neighborhood (Downtown / Midtown / UNR / Idlewild):'
+      'Neighborhood (Downtown / Midtown / UNR / Idlewild / Reno Experience District):'
     ];
     if (item.quantity) {
       lines.push('Quantity: ' + qty + ' ' + item.quantity.unitLabel + (qty > 1 ? 's' : ''));

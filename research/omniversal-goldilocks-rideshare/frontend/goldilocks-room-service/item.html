@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" class="ss-vibelandia-deck">
 <head>
-  <link rel="stylesheet" href="brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#06080d" />
   <title>Menu item · Hire-A-Goldilocks-Valet-Concierge</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="ss-vibelandia-deck-skin.css" />
-  <link rel="stylesheet" href="goldilocks-deliveries.css" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/goldilocks-deliveries/goldilocks-deliveries.css" />
 </head>
 <body class="grs-deco-bg">
   <main class="grs-wrap grs-item-wrap">
-    <a class="deck-back" href="index.html#menu-h2">&larr; Back to menu</a>
+    <a class="deck-back" href="/hire-a-goldilocks-valet-concierge#menu-h2">&larr; Back to menu</a>
     <p class="grs-kicker" id="item-kicker">Menu item</p>
     <h1 class="grs-title" id="item-title">Loading…</h1>
     <p class="grs-sub" id="item-lead"></p>
@@ -44,9 +45,9 @@
     </div>
   </main>
   <footer>
-    <p><a href="mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge">valetpru@gmail.com</a> · SS Vibelandia QUESTFEST 24×365</p>
+    <p><a href="mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge">valetpru@gmail.com</a> · SS Vibelandia QUESTFEST 24×365 · Puerto Reno</p>
   </footer>
-  <script src="grs-channel.js"></script>
+  <script src="/interfaces/goldilocks-deliveries/grs-channel.js"></script>
   <script>
     (function () {
       var params = new URLSearchParams(location.search);
@@ -116,7 +117,7 @@
             renderCta();
           });
           ctaRow.appendChild(clear);
-          if (note) note.textContent = 'After a valet accepts in-channel, settle offline on your honor rail (Venmo · PayPal · Cash App). Tip splits 33% app · 67% valet/concierge.';
+          if (note) note.textContent = 'After a franchise valet accepts in-channel, settle offline on your honor rail (Venmo · PayPal · Cash App). Tip splits 33% app · 67% Goldilocks Valet franchisee.';
         } else {
           if (status) status.textContent = 'Join the guest channel first — email Pru, get accepted, then activate your channel pass on this device.';
           var joinMail = document.createElement('a');
@@ -162,5 +163,6 @@
       if (tipInput) tipInput.addEventListener('input', renderCta);
     })();
   </script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

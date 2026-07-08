@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" class="ss-vibelandia-deck">
 <head>
-  <link rel="stylesheet" href="brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#06080d" />
   <title>Honor payment · Hire-A-Goldilocks-Valet-Concierge · SS Vibelandia</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="ss-vibelandia-deck-skin.css" />
-  <link rel="stylesheet" href="goldilocks-deliveries.css" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/goldilocks-deliveries/goldilocks-deliveries.css" />
 </head>
 <body>
   <main class="grs-wrap">
-    <a class="deck-back" href="index.html">&larr; Hire-A-Goldilocks-Valet-Concierge home</a>
+    <a class="deck-back" href="/hire-a-goldilocks-valet-concierge">&larr; Hire-A-Goldilocks-Valet-Concierge home</a>
     <p class="grs-kicker">Layer 3 · Honor payment</p>
     <h1 class="grs-title" id="pay-title">Fair Exchange</h1>
     <p class="grs-sub" id="pay-sub">Old-school honor rails — no PSP webhooks.</p>
@@ -30,8 +31,8 @@
       <p id="pay-desc"></p>
       <p><strong>How it works:</strong> you tell us what you want and what you're offering as tip — we decide if we accept. If we accept, we operate as your personal assistant, procuring and delivering whatever was agreed: food, beverage, merchandise, or other services.</p>
       <p><strong>Transparency:</strong> your tip splits <strong>33%</strong> to the app, <strong>67%</strong> to the valet or concierge who accepted. Pay purveyors directly on delivery, or ask us to handle purveyor payments for <strong>+18% tip</strong> on top of your offer.</p>
-      <p>Email <strong>what you want</strong>, <strong>your tip offer</strong>, and <strong>neighborhood</strong> (Downtown · Midtown · UNR · Idlewild). Once accepted, pay on your rail and reply with <strong>date paid + rail used</strong>. Fair Exchange — refunds and tips ride on delivery harmony, not algorithms.</p>
-      <p>Regular guest? <a href="index.html#join-h2">Join the guest channel</a> — once accepted you're placed in the WhatsApp group, where you broadcast requests and members accept. All else stays offline on these same rails.</p>
+      <p>Email <strong>what you want</strong>, <strong>your tip offer</strong>, and <strong>neighborhood</strong> (Downtown · Midtown · UNR · Idlewild · Reno Experience District). Once accepted, pay on your rail and reply with <strong>date paid + rail used</strong>. Fair Exchange — refunds and tips ride on delivery harmony, not algorithms.</p>
+      <p>Regular guest? <a href="/hire-a-goldilocks-valet-concierge#join-h2">Join the guest channel</a> — once accepted you're placed in the WhatsApp group, where you broadcast requests and members accept. All else stays offline on these same rails.</p>
     </div>
 
     <div class="grs-rails" id="pay-rails"></div>
@@ -43,6 +44,7 @@
   <footer>
     <p><a href="mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge">valetpru@gmail.com</a> · SS Vibelandia QUESTFEST 24×365</p>
   </footer>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
   <script>
     (function () {
       var params = new URLSearchParams(location.search);
@@ -86,11 +88,11 @@
           memo: 'GOLDILOCKS VALET · assistance day'
         },
         valet: {
-          title: 'Valet node · signal interest',
+          title: 'Goldilocks Valet franchise · signal interest',
           amount: FLOOR,
-          amountNote: 'Optional honor signal — the email is the door',
-          desc: 'Joining as a bike, e-bike, or e-scooter valet. The payment is optional; the email with your neighborhood and vector is what matters.',
-          memo: 'GOLDILOCKS VALET · join'
+          amountNote: 'Optional honor signal — the franchise application email is the door',
+          desc: 'No-cost franchise in Puerto Reno for qualified operators on electric bike or e-scooter. The payment is optional; your neighborhood, vehicle, and availability email is what matters.',
+          memo: 'GOLDILOCKS VALET FRANCHISE · Puerto Reno'
         },
         partner: {
           title: 'Menu partner · apply',
@@ -160,7 +162,7 @@
         }
         if (mailEl) {
           mailEl.href = 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent(memo()) +
-            '&body=' + encodeURIComponent('What I want (food / beverage / merchandise / other services):\nTip offered: $' + amt + ' (floor) + \nNeighborhood (Downtown / Midtown / UNR / Idlewild):\n\nAfter acceptance —\nDate paid:\nRail used:');
+            '&body=' + encodeURIComponent('What I want (food / beverage / merchandise / other services):\nTip offered: $' + amt + ' (floor) + \nNeighborhood (Downtown / Midtown / UNR / Idlewild / Reno Experience District):\n\nAfter acceptance —\nDate paid:\nRail used:');
         }
       }
 

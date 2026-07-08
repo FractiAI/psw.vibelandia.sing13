@@ -44,7 +44,7 @@ export const MACHOTE_ROOM_SERVICE_REGIONS =
   'Downtown · Midtown · UNR · Idlewild · Reno Experience District';
 
 export const MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB =
-  'A QUESTFEST service built to solve dense-neighborhood friction: slow errands, parking churn, and last-mile coordination gaps. Email Pru to join as guest or franchisee. Guests broadcast want + tip offer; franchise valets on electric bike or e-scooter accept what fits. Expansion candidacy is open for new dense Goldilocks regions.';
+  'A QUESTFEST service built to solve dense-neighborhood friction: slow errands, parking churn, and last-mile coordination gaps. Email Pru to join as guest or franchisee. Guests broadcast want + tip offer; franchise valets on electric bike or e-scooter accept what fits. Transparency: franchisees keep 67% of accepted tip offers — not all of it; the app takes 33%. Expansion candidacy is open for new dense Goldilocks regions.';
 
 export const MACHOTE_ROOM_SERVICE_CTA = 'Room service & franchise →';
 
@@ -84,7 +84,7 @@ export const MACHOTE_CREW_LINE =
 export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
 
 export const MACHOTE_CAMPAIGN_LEDE =
-  'Follow Machote Moderno Magazine on Facebook to qualify. Most rideshare applications are tuned to maximize platform profits; Hire-A-Goldilocks is tuned to do the right thing for all parties with human coordination, transparent splits, and sovereign pacing in Puerto Reno.';
+  'Follow Machote Moderno Magazine on Facebook to qualify. Most rideshare applications are tuned to maximize platform profits; Hire-A-Goldilocks is tuned to do the right thing for all parties — human coordination, sovereign pacing, and transparent tip splits: franchise valets keep 67% of accepted guest tip offers; the app takes 33% for channel and coordination.';
 
 export const MACHOTE_BEEHIVE_CAMPAIGN_BLURB =
   'Machote members only. Old School Protocol: interested party nodes contact PL Taino directly. 2-week test drive for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.';
@@ -111,7 +111,7 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   {
     title: 'Problems we help solve',
     body:
-      'Current rideshare apps optimize for extraction: surge pressure, opaque take rates, and incentives that can work against guests, operators, and local partners. Hire-A-Goldilocks is tuned for what is right for all: Fair Exchange, open 33/67 split transparency, and no-cost franchise lanes for qualified electric bike/e-scooter operators.',
+      'Current rideshare apps optimize for extraction: surge pressure, opaque take rates, and incentives that can work against guests, operators, and local partners. Hire-A-Goldilocks is tuned for what is right for all: Fair Exchange with open math — franchise valets do not keep every tip dollar; they keep 67% of accepted offers as franchisees, and the app takes 33%. No-cost franchise lanes for qualified electric bike/e-scooter operators.',
   },
   {
     title: 'Full Sonic Singularity catalog · caliente',

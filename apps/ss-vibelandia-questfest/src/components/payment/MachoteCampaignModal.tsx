@@ -1,11 +1,11 @@
 import { EGS_MONTHLY_USD } from '@/lib/paymentRails';
 import {
+  MACHOTE_CAMPAIGN_COVER_ALT,
+  MACHOTE_CAMPAIGN_COVER_SRC,
   MACHOTE_CAMPAIGN_CTA,
   MACHOTE_CAMPAIGN_EYEBROW,
   MACHOTE_CAMPAIGN_REASONS,
   MACHOTE_CAMPAIGN_TITLE,
-  MACHOTE_MAGAZINE_COVER_ALT,
-  MACHOTE_MAGAZINE_COVER_SRC,
   MACHOTE_MAGAZINE_NAME,
   MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB,
   MACHOTE_ROOM_SERVICE_CTA,
@@ -44,10 +44,10 @@ export function MachoteCampaignModal({ open, onClose, onGetPass, hasMembersAcces
         </button>
         <img
           className="machote-campaign-cover"
-          src={MACHOTE_MAGAZINE_COVER_SRC}
+          src={MACHOTE_CAMPAIGN_COVER_SRC}
           width={480}
           height={640}
-          alt={MACHOTE_MAGAZINE_COVER_ALT}
+          alt={MACHOTE_CAMPAIGN_COVER_ALT}
           loading="eager"
           decoding="async"
         />

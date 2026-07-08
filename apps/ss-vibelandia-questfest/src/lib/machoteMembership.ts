@@ -7,6 +7,12 @@ export const MACHOTE_MAGAZINE_COVER_SRC = '/interfaces/assets/machote-moderno-ma
 export const MACHOTE_MAGAZINE_COVER_ALT =
   'Machote Moderno Magazine — your badge to qualify for the members-only music catalog';
 
+export const MACHOTE_CAMPAIGN_COVER_SRC =
+  '/interfaces/goldilocks-deliveries/assets/grs-menu-food-delivery.jpg';
+
+export const MACHOTE_CAMPAIGN_COVER_ALT =
+  'Golden-age valet on a bicycle carrying a silver room-service cloche through neon-lit downtown Reno';
+
 export const MACHOTE_MASTER_CATALOG_TITLE = 'Master Music Catalog · Reno swamp beats caliente';
 
 export const MACHOTE_CATALOG_TITLE = MACHOTE_MASTER_CATALOG_TITLE;
@@ -78,7 +84,7 @@ export const MACHOTE_CREW_LINE =
 export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
 
 export const MACHOTE_CAMPAIGN_LEDE =
-  'Follow Machote Moderno Magazine on Facebook to qualify. This service is built to reduce daily friction in Puerto Reno with trusted human coordination for errands, deliveries, and assistance; members can also unlock the full Sonic Singularity catalog for $16.18/mo on honor.';
+  'Follow Machote Moderno Magazine on Facebook to qualify. Most rideshare applications are tuned to maximize platform profits; Hire-A-Goldilocks is tuned to do the right thing for all parties with human coordination, transparent splits, and sovereign pacing in Puerto Reno.';
 
 export const MACHOTE_BEEHIVE_CAMPAIGN_BLURB =
   'Machote members only. Old School Protocol: interested party nodes contact PL Taino directly. 2-week test drive for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.';
@@ -105,7 +111,7 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   {
     title: 'Problems we help solve',
     body:
-      'Long waits, parking pain, and broken last-mile coordination in dense zones. No-cost franchise lanes for qualified electric bike/e-scooter operators help close those gaps, with expansion candidacy open for new dense Goldilocks regions.',
+      'Current rideshare apps optimize for extraction: surge pressure, opaque take rates, and incentives that can work against guests, operators, and local partners. Hire-A-Goldilocks is tuned for what is right for all: Fair Exchange, open 33/67 split transparency, and no-cost franchise lanes for qualified electric bike/e-scooter operators.',
   },
   {
     title: 'Full Sonic Singularity catalog · caliente',

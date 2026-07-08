@@ -126,7 +126,8 @@
       root.classList.add('machote-campaign-open');
       root.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
-      var focusTarget = root.querySelector('.machote-campaign-roomservice-cta') ||
+      var focusTarget = root.querySelector('.machote-campaign-close') ||
+        root.querySelector('[data-machote-later]') ||
         root.querySelector('.machote-campaign-btn--gold');
       if (focusTarget) focusTarget.focus();
     }

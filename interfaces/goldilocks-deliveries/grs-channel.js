@@ -14,12 +14,81 @@
       floorLabel: '$9 delivery floor',
       image: ASSET_BASE + '/assets/grs-menu-food-delivery.jpg',
       imageAlt: 'Golden-age valet on a bicycle carrying a silver room-service cloche through neon-lit downtown Reno',
-      lead: 'Order from your purveyor of choice — book a Valet for pickup and delivery, or we handle everything for 18% of the total bill.',
+      lead: 'Order from any purveyor you choose inside our service area — book a Valet for pickup and delivery, or we handle everything for 18% of the total bill.',
       body: [
-        'You order and pay your purveyor directly — then book a Valet to pick up and deliver inside the service area. Micro-mobility only: no parking cruise, no sprawl markup, no corporate clock.',
+        'You may order from wherever you wish inside the Puerto Reno bubble — Downtown · Midtown · UNR · Idlewild · Reno Experience District. You order and pay your purveyor directly, then book a Valet to pick up and deliver. Micro-mobility only: no parking cruise, no sprawl markup, no corporate clock.',
         'Prefer hands-off? Book us to handle ordering, payment, pickup, and delivery for an additional 18% of the total bill.',
         'Valet tip splits 33% to the app · 67% to the franchisee who accepts and delivers.'
       ],
+      valetPicks: {
+        title: 'Goldilocks Valet Picks',
+        intro:
+          'You may order from <strong>wherever you wish</strong> inside our Puerto Reno service area — Downtown · Midtown · UNR · Idlewild · Reno Experience District. The purveyors below are ones we are <strong>proud to recommend and support</strong>. They are not the only options.',
+        instructions:
+          'Order online or by phone, then book your Valet. You place and pay for your order, or have us do it for you for an extra <strong>18%</strong>. Include <strong>“In care of Goldilocks Valet”</strong> in Special Order Instructions.',
+        sections: [
+          {
+            label: 'Breakfast',
+            picks: [
+              {
+                name: 'Desert Sun Bagels',
+                href: 'https://order.toasttab.com/online/desert-sun-bagel-co',
+                phone: '(775) 357-9480',
+                phoneTel: '+17753579480',
+                image: ASSET_BASE + '/assets/picks/desert-sun-bagels.png',
+                imageAlt: 'Desert Sun Bagel Co. logo'
+              }
+            ]
+          },
+          {
+            label: 'Lunch',
+            picks: [
+              {
+                name: 'Rubicon Deli',
+                href: 'https://order.toasttab.com/online/rubicon-deli-reno-445-california-ave-suite-b',
+                phone: '(775) 322-9792',
+                phoneTel: '+17753229792',
+                image: ASSET_BASE + '/assets/picks/rubicon-deli.jpg',
+                imageAlt: 'Rubicon Deli logo'
+              }
+            ]
+          },
+          {
+            label: 'Vegans',
+            picks: [
+              {
+                name: 'Great Full Gardens',
+                href: 'https://greatfullgardens.toast.site/order/great-full-gardens-midtown',
+                phone: '(775) 324-2013',
+                phoneTel: '+17753242013',
+                image: ASSET_BASE + '/assets/picks/great-full-gardens.jpg',
+                imageAlt: 'Great Full Gardens logo'
+              }
+            ]
+          },
+          {
+            label: 'Dinner',
+            picks: [
+              {
+                name: 'Liberty Food & Wine',
+                href: 'https://www.libertyfoodandwine.com/popmenu-order',
+                phone: '(775) 336-1091',
+                phoneTel: '+17753361091',
+                image: ASSET_BASE + '/assets/picks/liberty-food-wine.jpg',
+                imageAlt: 'Liberty Food & Wine Exchange logo'
+              },
+              {
+                name: 'Taiwan 101',
+                href: 'https://101restaurant.hrpos.heartland.us/order',
+                phone: '(775) 657-6144',
+                phoneTel: '+17756576144',
+                image: ASSET_BASE + '/assets/picks/taiwan-101.jpg',
+                imageAlt: '101 Taiwanese Cuisine logo'
+              }
+            ]
+          }
+        ]
+      },
       floor: 9,
       broadcastLabel: 'food delivery'
     },

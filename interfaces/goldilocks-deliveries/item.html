@@ -24,6 +24,8 @@
 
     <div class="grs-panel grs-item-body" id="item-body"></div>
 
+    <section class="grs-valet-picks grs-panel" id="item-valet-picks" hidden aria-labelledby="valet-picks-h2"></section>
+
     <div class="grs-panel grs-item-request" id="item-request-panel">
       <p class="grs-item-request__status" id="item-channel-status"></p>
 
@@ -78,6 +80,34 @@
       if (body) {
         body.innerHTML = item.body.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
           '<p><strong>Floor:</strong> ' + item.floorLabel + '</p>';
+      }
+
+      var picksEl = document.getElementById('item-valet-picks');
+      if (picksEl && item.valetPicks) {
+        var vp = item.valetPicks;
+        picksEl.hidden = false;
+        picksEl.innerHTML =
+          '<h2 id="valet-picks-h2" class="grs-valet-picks__title">' + vp.title + '</h2>' +
+          (vp.intro ? '<p class="grs-valet-picks__intro">' + vp.intro + '</p>' : '') +
+          vp.sections.map(function (sec) {
+            return '<div class="grs-valet-picks__section">' +
+              '<h3 class="grs-valet-picks__meal">' + sec.label + '</h3>' +
+              '<ul class="grs-valet-picks__list">' +
+              sec.picks.map(function (p) {
+                var phone = p.phone && p.phoneTel
+                  ? '<a class="grs-valet-pick__phone" href="tel:' + p.phoneTel + '">Call to order · ' + p.phone + '</a>'
+                  : '';
+                return '<li class="grs-valet-pick">' +
+                  '<span class="grs-valet-pick__thumb"><img src="' + p.image + '" alt="' + p.imageAlt + '" width="72" height="72" loading="lazy" decoding="async" /></span>' +
+                  '<span class="grs-valet-pick__body">' +
+                  '<span class="grs-valet-pick__name">' + p.name + '</span>' +
+                  '<a class="grs-valet-pick__cta" href="' + p.href + '" target="_blank" rel="noopener noreferrer">Order online →</a>' +
+                  phone +
+                  '</span></li>';
+              }).join('') +
+              '</ul></div>';
+          }).join('') +
+          (vp.instructions ? '<p class="grs-valet-picks__instructions">' + vp.instructions + '</p>' : '');
       }
 
       function renderCta() {

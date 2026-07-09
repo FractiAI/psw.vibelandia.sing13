@@ -187,6 +187,13 @@
     } catch (e) { /* edge only */ }
   }
 
+  function bookMail(item) {
+    var subject = 'Hire-A-Goldilocks-Valet-Concierge — ' + item.title;
+    var body = 'Name:\nNeighborhood:\nWhat I need:\nPreferred time:\n';
+    return 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  }
+
   function whatsappUrl(text) {
     return 'https://wa.me/?text=' + encodeURIComponent(text);
   }
@@ -228,6 +235,7 @@
     CHANNEL_KEY: CHANNEL_KEY,
     JOIN_MAIL: JOIN_MAIL,
     ITEMS: ITEMS,
+    bookMail: bookMail,
     isGuestChannelActive: isGuestChannelActive,
     activateGuestChannel: activateGuestChannel,
     clearGuestChannel: clearGuestChannel,

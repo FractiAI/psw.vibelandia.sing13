@@ -18,7 +18,7 @@ import {
   resumeOrPlayTrack,
   startTrackPlayback,
 } from '@/lib/trackPlayback';
-import { useActivePlaylist, useResolvedTrackIds, useResolvedTrackIdsKey } from '@/stores/catalogSelectors';
+import { usePlaybackPlaylist, useResolvedTrackIds, useResolvedTrackIdsKey } from '@/stores/catalogSelectors';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { LikeButton } from '@/components/catalog/LikeButton';
 import { AddToPlaylistIcon } from '@/components/catalog/AddToPlaylistIcon';
@@ -101,7 +101,7 @@ export function BridgePlayer({
   const clearShuffleQueue = usePlaybackStore((s) => s.clearShuffleQueue);
 
   const getTrack = useCatalogStore((s) => s.getTrack);
-  const pl = useActivePlaylist();
+  const pl = usePlaybackPlaylist();
   const resolvedTrackIds = useResolvedTrackIds(pl?.id);
   const resolvedTrackIdsKey = useResolvedTrackIdsKey(pl?.id);
   const isPassenger = useSessionStore((s) => s.isPassenger);
@@ -202,14 +202,20 @@ export function BridgePlayer({
   const advanceNext = useCallback(() => {
     const tid = usePlaybackStore.getState().currentTrackId;
     const fromShared = sharedTrackAutoplayFromMaster(tid);
-    let trackIds = resolvedTrackIds;
+    const cat = useCatalogStore.getState();
+    const pb = usePlaybackStore.getState();
+    const playlistId = fromShared
+      ? MASTER_PLAYLIST_ID
+      : pb.playbackPlaylistId ?? cat.activePlaylistId;
+    if (!playlistId) return false;
+
+    let trackIds = resolvePlaylistTrackIds(playlistId, cat.tracks, cat.playlists);
 
     if (fromShared) {
-      const cat = useCatalogStore.getState();
-      trackIds = resolvePlaylistTrackIds(MASTER_PLAYLIST_ID, cat.tracks, cat.playlists);
       cat.setActivePlaylist(MASTER_PLAYLIST_ID);
+      pb.setPlaybackPlaylist(MASTER_PLAYLIST_ID);
       clearSharedTrackAutoplaySeed();
-    } else if (!pl) {
+    } else if (!cat.playlists.some((p) => p.id === playlistId)) {
       return false;
     }
 
@@ -243,12 +249,10 @@ export function BridgePlayer({
     return true;
   }, [
     getTrack,
-    pl,
     playUrl,
     setPlaying,
     shuffleEnabled,
     shuffleQueue,
-    resolvedTrackIds,
   ]);
 
   const handleTrackEnded = useCallback(() => {
@@ -447,7 +451,7 @@ export function BridgePlayer({
         ? nextShuffledTrackId(shuffleQueue, null, 1, getTrack)
         : nextSequentialTrackId(resolvedTrackIds, null, 1, getTrack);
     if (!firstId) return;
-    playTrackById(firstId, getTrack);
+    playTrackById(firstId, getTrack, { playbackPlaylistId: pl?.id });
   };
 
   const handleShare = async () => {

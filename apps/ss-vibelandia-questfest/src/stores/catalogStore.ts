@@ -28,6 +28,10 @@ import {
 } from '@/lib/deletedTrackTombstones';
 import { hydrateCatalogFromDevice, instantBootSnapshot } from '@/lib/catalogBoot';
 import {
+  insertPlaylistMenuOrderAfter,
+  normalizePlaylistMenuOrder,
+} from '@/lib/playlistMenuOrder';
+import {
   loadCatalogCache,
   loadCatalogPrefs,
   loadCatalogPrefsOnly,
@@ -88,6 +92,8 @@ interface CatalogState {
   activePlaylistId: string;
   /** Device-local likes (newest first); drives My Likes playlist. */
   likedTrackIds: string[];
+  /** Device-local menu order for user playlists (not master / likes). */
+  userPlaylistMenuOrder: string[];
   search: string;
   isTrackLiked: (trackId: string) => boolean;
   toggleTrackLike: (trackId: string) => void;
@@ -113,6 +119,8 @@ interface CatalogState {
   deletePlaylist: (id: string) => void;
   /** Clone a non-master playlist; returns new id or empty string if invalid. */
   duplicatePlaylist: (id: string) => string;
+  reorderUserPlaylistMenu: (fromIndex: number, toIndex: number) => void;
+  moveUserPlaylistMenu: (playlistId: string, dir: -1 | 1) => void;
   addTrackToPlaylist: (trackId: string, playlistId: string) => void;
   removeTrackFromPlaylist: (trackId: string, playlistId: string) => void;
   moveTrackInPlaylist: (playlistId: string, trackId: string, dir: -1 | 1) => void;
@@ -415,6 +423,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   playlists: bootCatalog.playlists,
   activePlaylistId: bootCatalog.activePlaylistId,
   likedTrackIds: [],
+  userPlaylistMenuOrder: [],
   deviceHydrated: false,
   search: '',
 
@@ -438,21 +447,27 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const applied = snapshotToState(snapshot);
     const prefs = loadCatalogPrefsOnly();
     const likedTrackIds = resolveLikedTrackIds(prefs, applied.playlists);
+    const userPlaylistMenuOrder = normalizePlaylistMenuOrder(prefs?.userPlaylistMenuOrder, applied.playlists);
     set({
       tracks: applied.tracks,
       playlists: applied.playlists,
       activePlaylistId: applied.activePlaylistId,
       likedTrackIds,
+      userPlaylistMenuOrder,
       deviceHydrated: true,
     });
     saveLikedTrackIds(likedTrackIds);
+    get().persist();
   },
 
   setView: (v) => set({ view: v }),
   setDjMode: (on) => set({ djMode: on, view: on ? 'dj' : 'catalog', playlistTab: on ? false : get().playlistTab }),
   setPlaylistTab: (on) => set({ playlistTab: on }),
   setSearch: (q) => set({ search: q }),
-  setActivePlaylist: (id) => set({ activePlaylistId: id, view: 'catalog' }),
+  setActivePlaylist: (id) => {
+    set({ activePlaylistId: id, view: 'catalog' });
+    get().persist();
+  },
 
   getActivePlaylist: () => get().playlists.find((p) => p.id === get().activePlaylistId),
 
@@ -501,7 +516,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           };
         });
       }
-      return { playlists, activePlaylistId: id };
+      return { playlists, activePlaylistId: id, userPlaylistMenuOrder: [...s.userPlaylistMenuOrder.filter((pid) => pid !== id), id] };
     });
     get().persist();
     return id;
@@ -562,12 +577,13 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
   deletePlaylist: (id) => {
     if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id)) return;
-    const { playlists, activePlaylistId } = get();
+    const { playlists, activePlaylistId, userPlaylistMenuOrder } = get();
     if (playlists.length <= 1) return;
     let next = stripPlaylistFromAllParents(id, playlists).filter((p) => p.id !== id);
     set({
       playlists: next,
       activePlaylistId: activePlaylistId === id ? next[0]?.id ?? MASTER_PLAYLIST_ID : activePlaylistId,
+      userPlaylistMenuOrder: userPlaylistMenuOrder.filter((pid) => pid !== id),
     });
     get().persist();
   },
@@ -579,7 +595,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     if (!src) return '';
     const newId = `pl-${Date.now()}`;
     const baseName = src.name.trim() || 'Playlist';
-    set({
+    set((s) => ({
       playlists: [
         ...s.playlists,
         {
@@ -592,9 +608,32 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         },
       ],
       activePlaylistId: newId,
-    });
+      userPlaylistMenuOrder: insertPlaylistMenuOrderAfter(s.userPlaylistMenuOrder, newId, id),
+    }));
     get().persist();
     return newId;
+  },
+
+  reorderUserPlaylistMenu: (fromIndex, toIndex) => {
+    const { playlists, userPlaylistMenuOrder } = get();
+    const ordered = normalizePlaylistMenuOrder(userPlaylistMenuOrder, playlists);
+    if (fromIndex < 0 || fromIndex >= ordered.length || toIndex < 0 || toIndex >= ordered.length) return;
+    if (fromIndex === toIndex) return;
+    const next = [...ordered];
+    const [moved] = next.splice(fromIndex, 1);
+    next.splice(toIndex, 0, moved);
+    set({ userPlaylistMenuOrder: next });
+    get().persist();
+  },
+
+  moveUserPlaylistMenu: (playlistId, dir) => {
+    const { playlists, userPlaylistMenuOrder } = get();
+    const ordered = normalizePlaylistMenuOrder(userPlaylistMenuOrder, playlists);
+    const idx = ordered.indexOf(playlistId);
+    if (idx < 0) return;
+    const to = idx + dir;
+    if (to < 0 || to >= ordered.length) return;
+    get().reorderUserPlaylistMenu(idx, to);
   },
 
   addPlaylistToPlaylist: (childPlaylistId, parentPlaylistId) => {
@@ -1129,22 +1168,24 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }
       if (!applied) return;
 
+      const currentActive = get().activePlaylistId;
+      const activePlaylistId =
+        currentActive && applied.playlists.some((p) => p.id === currentActive)
+          ? currentActive
+          : applied.activePlaylistId;
+
       set({
         tracks: applied.tracks,
         playlists: applied.playlists,
-        activePlaylistId: applied.activePlaylistId,
+        activePlaylistId,
         likedTrackIds: applied.likedTrackIds,
       });
-      resyncShuffleQueueForPlaylist(
-        applied.activePlaylistId,
-        applied.tracks,
-        applied.playlists,
-      );
+      resyncShuffleQueueForPlaylist(activePlaylistId, applied.tracks, applied.playlists);
       saveCatalogCache({
         version: CATALOG_VERSION,
         tracks: serverTracksForCache(applied.tracks),
         playlists: applied.playlists,
-        activePlaylistId: applied.activePlaylistId,
+        activePlaylistId,
       });
       get().persist();
       if (prevTrackId && !applied.tracks[prevTrackId]) {
@@ -1174,12 +1215,14 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
 
   persist: () => {
     const state = get();
-    const { tracks, activePlaylistId, likedTrackIds } = state;
+    const { tracks, activePlaylistId, likedTrackIds, userPlaylistMenuOrder } = state;
     let playlists = syncMasterPlaylistWithTracks(tracks, state.playlists);
     playlists = applyLikesToPlaylists(playlists, likedTrackIds, new Set(Object.keys(tracks)));
+    const normalizedOrder = normalizePlaylistMenuOrder(userPlaylistMenuOrder, playlists);
 
     const playlistsUnchanged =
       playlists.length === state.playlists.length &&
+      normalizedOrder.join('\t') === state.userPlaylistMenuOrder.join('\t') &&
       playlists.every((p, i) => {
         const prev = state.playlists[i];
         if (!prev || p.id !== prev.id) return false;
@@ -1193,7 +1236,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       });
 
     if (!playlistsUnchanged) {
-      set({ playlists });
+      set({ playlists, userPlaylistMenuOrder: normalizedOrder });
     }
 
     saveLikedTrackIds(likedTrackIds);
@@ -1202,6 +1245,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       playlists,
       activePlaylistId,
       likedTrackIds,
+      userPlaylistMenuOrder: normalizedOrder,
     });
     saveCatalogCache({
       version: CATALOG_VERSION,

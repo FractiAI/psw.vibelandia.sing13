@@ -19,9 +19,10 @@ interface JukeboxTrackPanelProps {
   playlistId: string;
   /** Navigate to /listen/now after starting playback from this panel. */
   onOpenNowPlaying?: () => void;
+  onEditPlaylist?: () => void;
 }
 
-export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying }: JukeboxTrackPanelProps) {
+export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist }: JukeboxTrackPanelProps) {
   const getTrack = useCatalogStore((s) => s.getTrack);
   const setActivePlaylist = useCatalogStore((s) => s.setActivePlaylist);
   const removeTrackFromPlaylist = useCatalogStore((s) => s.removeTrackFromPlaylist);
@@ -85,7 +86,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying }: JukeboxTrack
         onOpenNowPlaying?.();
         return;
       }
-      playTrackById(id, getTrack);
+      playTrackById(id, getTrack, { playbackPlaylistId: playlistId });
       onOpenNowPlaying?.();
     },
     [currentTrackId, getTrack, onOpenNowPlaying, playlistId, setActivePlaylist],
@@ -106,7 +107,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying }: JukeboxTrack
         : nextSequentialTrackId(resolvedIds, null, 1, getTrack);
     if (!firstId) return;
     setActivePlaylist(playlistId);
-    playTrackById(firstId, getTrack);
+    playTrackById(firstId, getTrack, { playbackPlaylistId: playlistId });
     onOpenNowPlaying?.();
   }, [getTrack, onOpenNowPlaying, playlistId, resolvedIds, setActivePlaylist, shuffleEnabled, shuffleQueue]);
 
@@ -198,7 +199,11 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying }: JukeboxTrack
             ▶ {PLAIN.playAll}
           </button>
           {canEditPlaylist ? (
-            <button type="button" className="jb-tool-btn" onClick={() => setMetaOpen(true)}>
+            <button
+              type="button"
+              className="jb-tool-btn"
+              onClick={() => (onEditPlaylist ? onEditPlaylist() : setMetaOpen(true))}
+            >
               {PLAIN.editPlaylist}
             </button>
           ) : null}

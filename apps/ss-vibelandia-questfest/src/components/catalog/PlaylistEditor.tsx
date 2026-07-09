@@ -9,7 +9,7 @@ import { LikeButton } from '@/components/catalog/LikeButton';
 import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
-import { nestablePlaylistsForParent } from '@/lib/playlistNest';
+import { isBlankDraftPlaylist } from '@/lib/playlistDrafts';
 import {
   MASTER_LIBRARY_UI_HINT,
   PLAYLIST_KIND_HINT,
@@ -142,7 +142,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
   const playTrack = (id: string) => {
     setActivePlaylist(playlistId);
-    playTrackById(id, getTrack);
+    playTrackById(id, getTrack, { playbackPlaylistId: playlistId });
   };
 
   if (!pl) {
@@ -188,7 +188,13 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   };
 
   const handleDone = () => {
-    void saveMeta().finally(onDone);
+    void saveMeta().finally(() => {
+      const current = useCatalogStore.getState().playlists.find((p) => p.id === playlistId);
+      if (current && isBlankDraftPlaylist(current)) {
+        deletePlaylist(playlistId);
+      }
+      onDone();
+    });
   };
 
   const handleDelete = () => {
@@ -349,7 +355,14 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
         <div className="sc-nest-editor">
           <div className="sc-nest-editor-head">
             <h2>{PLAIN.nestedPlaylists}</h2>
-            <button type="button" className="sc-ghost-btn" onClick={() => createPlaylist(PLAIN.newPlaylist, playlistId)}>
+            <button
+              type="button"
+              className="sc-ghost-btn"
+              onClick={() => {
+                const newId = createPlaylist(PLAIN.newPlaylist, playlistId);
+                onDuplicated?.(newId);
+              }}
+            >
               + {PLAIN.newNestedPlaylist}
             </button>
           </div>

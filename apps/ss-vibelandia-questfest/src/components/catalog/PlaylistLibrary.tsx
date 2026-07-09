@@ -86,11 +86,11 @@ export function PlaylistLibrary({
     renameDraftRef.current = currentName;
   }, []);
 
-  /** Create only — stay on list; name via explicit Save (no blur / no nested button). */
+  /** Create and open full editor — name, tracks, cover, nested playlists. */
   const handleCreate = () => {
     const id = createPlaylist('New playlist');
     setActive(id);
-    startRename(id, 'New playlist');
+    setEditingId(id);
   };
 
   const sorted = useMemo(() => sortPlaylists(playlists), [playlists]);
@@ -116,8 +116,8 @@ export function PlaylistLibrary({
         <div>
           <h1 className="sp-library-title">{PLAIN.yourPlaylists}</h1>
           <p className="sp-library-sub">
-            Tap <strong>+ New playlist</strong>, enter a name and tap <strong>Save name</strong>, then{' '}
-            <strong>Edit</strong> to add songs from the Master catalog.
+            Tap <strong>+ New playlist</strong> to open the editor — name your list, add songs from the Master catalog,
+            and save when you are done.
           </p>
         </div>
         <button type="button" className="sp-library-new" onClick={handleCreate}>

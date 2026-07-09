@@ -13,6 +13,8 @@ export interface CatalogPrefs {
   activePlaylistId: string;
   /** Device-local liked track ids (newest first). Drives My Likes playlist. */
   likedTrackIds?: string[];
+  /** Device-local order for playlist menu (user playlists only). */
+  userPlaylistMenuOrder?: string[];
 }
 
 const MAX_PREFS_BYTES = 800_000;

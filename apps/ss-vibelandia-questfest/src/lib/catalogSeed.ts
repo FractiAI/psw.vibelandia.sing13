@@ -1,6 +1,10 @@
 import type { CatalogPrefs } from '@/lib/catalogPrefs';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 import { localMediaKeyFor } from '@/lib/localPlayback';
+import {
+  purgeBlankUserPlaylists,
+  resolveActivePlaylistAfterPurge,
+} from '@/lib/playlistDrafts';
 import { applyLikesToPlaylists, resolveLikedTrackIds } from '@/lib/trackLikes';
 import {
   MASTER_LIBRARY_UI_HINT,
@@ -125,10 +129,17 @@ export function mergeServerCatalogWithPrefs(
   const likedTrackIds = resolveLikedTrackIds(localPrefs, playlists);
   playlists = applyLikesToPlaylists(playlists, likedTrackIds, new Set(Object.keys(tracks)));
 
-  const activePlaylistId =
+  const purged = purgeBlankUserPlaylists(playlists);
+  if (purged.length !== playlists.length) {
+    playlists = purged;
+  }
+
+  const activePlaylistId = resolveActivePlaylistAfterPurge(
     localPrefs?.activePlaylistId && playlists.some((p) => p.id === localPrefs.activePlaylistId)
       ? localPrefs.activePlaylistId
-      : server.activePlaylistId || MASTER_PLAYLIST_ID;
+      : server.activePlaylistId || MASTER_PLAYLIST_ID,
+    playlists,
+  );
 
   return {
     version: CATALOG_VERSION,

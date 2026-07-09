@@ -21,7 +21,10 @@ interface PlaybackState {
   /** Built when shuffle is on — playable track ids in random order. */
   shuffleQueue: string[] | null;
   shufflePlaylistKey: string | null;
+  /** Playlist queue for next/prev/autoplay — survives browse selection changes. */
+  playbackPlaylistId: string | null;
   setTrack: (id: string | null) => void;
+  setPlaybackPlaylist: (id: string | null) => void;
   setPlaying: (v: boolean) => void;
   setDisplayTime: (t: number) => void;
   setGain: (g: number) => void;
@@ -51,7 +54,9 @@ export const usePlaybackStore = create<PlaybackState>((set) => ({
   shuffleEnabled: initialPrefs.shuffle,
   shuffleQueue: null,
   shufflePlaylistKey: null,
+  playbackPlaylistId: null,
   setTrack: (id) => set({ currentTrackId: id }),
+  setPlaybackPlaylist: (id) => set({ playbackPlaylistId: id }),
   setPlaying: (v) => set({ isPlaying: v, ...(v ? {} : { backgroundHandoffActive: false }) }),
   setPlaybackError: (msg) => set({ playbackError: msg }),
   setDisplayTime: (t) => set({ displayTime: t }),

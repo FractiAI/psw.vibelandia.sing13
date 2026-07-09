@@ -4,6 +4,7 @@ import { PLAIN } from '@/lib/plainSpeak';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { QUESTFEST_DECK_HREF } from '@/components/QuestfestFastLink';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import { jukeboxPlaylistEditHref } from '@/lib/jukeboxRoutes';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { useSessionStore } from '@/stores/sessionStore';
 
@@ -42,9 +43,9 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
   };
 
   const handleCreate = (parentId?: string) => {
-    createPlaylist(PLAIN.newPlaylist, parentId);
+    const id = createPlaylist(PLAIN.newPlaylist, parentId);
     setDjMode(false);
-    if (location.pathname !== '/listen') navigate('/listen', { replace: true });
+    navigate(jukeboxPlaylistEditHref(id));
   };
 
   return (

@@ -1,5 +1,5 @@
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
-import { getPlaybackMedia } from '@/lib/playbackMediaRegistry';
+import { getPlaybackMedia, readLivePlaybackPosition } from '@/lib/playbackMediaRegistry';
 import { readPlaybackSession } from '@/lib/playbackSession';
 import {
   getSimpleAudioElement,
@@ -145,8 +145,15 @@ export function playTrackDef(
 export function playTrackById(
   trackId: string,
   getTrack: (id: string) => TrackDef | undefined,
-  opts?: { onError?: (msg: string | null) => void; beginSession?: () => void },
+  opts?: {
+    onError?: (msg: string | null) => void;
+    beginSession?: () => void;
+    playbackPlaylistId?: string;
+  },
 ): void {
+  if (opts?.playbackPlaylistId) {
+    usePlaybackStore.getState().setPlaybackPlaylist(opts.playbackPlaylistId);
+  }
   const tr = getTrack(trackId);
   if (!tr) {
     const msg = 'Track not found — tap Refresh.';
@@ -167,17 +174,31 @@ export function pausePlayback(): void {
 export function resumePlaybackIfNeeded(): void {
   const { isPlaying, currentTrackId, backgroundHandoffActive } = usePlaybackStore.getState();
   if (!isPlaying || !currentTrackId) return;
+  if (document.hidden) return;
 
   const bg = getPlaybackMedia().background;
-  if (backgroundHandoffActive && bg?.src && bg.paused) {
-    void bg.play().catch(() => {});
+  if (backgroundHandoffActive && bg?.src) {
+    if (bg.paused) {
+      void bg.play().catch(() => {});
+    }
     return;
   }
 
-  if (document.hidden) return;
-
   const el = getSimpleAudioElement();
+  const liveAt = readLivePlaybackPosition();
+
   if (el?.paused && el.src) {
+    if (liveAt > 0.25 && Number.isFinite(liveAt)) {
+      try {
+        const at = Math.min(liveAt, Math.max(0, (el.duration || Infinity) - 0.25));
+        if (at > 0.25) {
+          el.currentTime = at;
+          usePlaybackStore.getState().setDisplayTime(at);
+        }
+      } catch {
+        /* ignore */
+      }
+    }
     void el.play().catch(() => {});
     return;
   }

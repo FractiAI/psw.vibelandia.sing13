@@ -15,7 +15,7 @@ import {
 import { getDirectChildPlaylists, topLevelUserPlaylists } from '@/lib/playlistNest';
 import { nextSequentialTrackId, nextShuffledTrackId } from '@/lib/playlistShuffle';
 import { playTrackById } from '@/lib/trackPlayback';
-import { PLAIN } from '@/lib/plainSpeak';
+import { jukeboxPlaylistEditHref } from '@/lib/jukeboxRoutes';
 import { useSessionStore } from '@/stores/sessionStore';
 import type { PlaylistDef } from '@/lib/catalogTypes';
 
@@ -114,7 +114,7 @@ export function PlaylistPicker() {
         : nextSequentialTrackId(resolvedIds, null, 1, getTrack);
     if (!firstId) return;
     setActive(activeId);
-    playTrackById(firstId, getTrack);
+    playTrackById(firstId, getTrack, { playbackPlaylistId: activeId });
   };
 
   const goUpload = () => {
@@ -214,8 +214,9 @@ export function PlaylistPicker() {
                 type="button"
                 className="sc-pick-new"
                 onClick={() => {
-                  createPlaylist(PLAIN.newPlaylist);
+                  const id = createPlaylist(PLAIN.newPlaylist);
                   setOpen(false);
+                  navigate(jukeboxPlaylistEditHref(id));
                 }}
               >
                 + {PLAIN.newPlaylist}

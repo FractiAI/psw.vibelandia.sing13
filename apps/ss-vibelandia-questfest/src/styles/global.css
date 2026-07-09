@@ -7229,6 +7229,225 @@ html.qf-jukebox-page .sp-now-add-pl {
   text-align: center;
 }
 
+.jb-pl-active__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-top: 0.12rem;
+}
+
+.jb-pl-manage-trigger {
+  flex-shrink: 0;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.12);
+  color: rgba(255, 236, 190, 0.95);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.55rem;
+  cursor: pointer;
+}
+
+.jb-pl-manage-trigger:hover {
+  background: rgba(212, 175, 55, 0.22);
+}
+
+.jb-pl-manage-panel {
+  width: min(100%, 28rem);
+  max-height: min(88vh, 36rem);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(18, 12, 8, 0.98), rgba(8, 6, 4, 0.98));
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 0.65rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+
+.jb-pl-picker-backdrop--manage {
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.jb-pl-manage-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.85rem 0.9rem 0.55rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.jb-pl-manage-head h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: rgba(255, 236, 190, 0.98);
+}
+
+.jb-pl-manage-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: rgba(255, 236, 190, 0.68);
+}
+
+.jb-pl-manage-close {
+  border: none;
+  background: transparent;
+  color: rgba(255, 236, 190, 0.85);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.1rem 0.25rem;
+}
+
+.jb-pl-manage-pinned {
+  list-style: none;
+  margin: 0;
+  padding: 0.55rem 0.75rem 0;
+}
+
+.jb-pl-manage-pinned-row {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.35rem;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.18);
+  color: rgba(255, 236, 190, 0.78);
+  font-size: 0.78rem;
+}
+
+.jb-pl-manage-pinned-badge {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(212, 175, 55, 0.85);
+}
+
+.jb-pl-manage-pinned-name {
+  font-weight: 600;
+}
+
+.jb-pl-manage-pinned-count {
+  font-size: 0.68rem;
+  opacity: 0.8;
+}
+
+.jb-pl-manage-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0.55rem;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.jb-pl-manage-row {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-areas:
+    'grip cover meta'
+    'grip cover actions';
+  gap: 0.35rem 0.45rem;
+  align-items: center;
+  padding: 0.55rem 0.35rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+}
+
+.jb-pl-manage-row--dragging {
+  opacity: 0.55;
+}
+
+.jb-pl-manage-row--drop {
+  box-shadow: inset 0 2px 0 rgba(212, 175, 55, 0.75);
+}
+
+.jb-pl-manage-row--renaming {
+  grid-template-areas:
+    'grip cover rename'
+    'grip cover rename';
+}
+
+.jb-pl-manage-grip {
+  grid-area: grip;
+}
+
+.jb-pl-manage-cover {
+  grid-area: cover;
+}
+
+.jb-pl-manage-meta {
+  grid-area: meta;
+  min-width: 0;
+}
+
+.jb-pl-manage-name {
+  display: block;
+  font-size: 0.82rem;
+  color: rgba(255, 236, 190, 0.96);
+}
+
+.jb-pl-manage-count {
+  display: block;
+  font-size: 0.68rem;
+  color: rgba(255, 236, 190, 0.62);
+}
+
+.jb-pl-manage-actions {
+  grid-area: actions;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.jb-pl-manage-rename {
+  grid-area: rename;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.jb-pl-manage-rename-input {
+  flex: 1 1 8rem;
+  min-width: 0;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 0.35rem;
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 236, 190, 0.95);
+  padding: 0.35rem 0.45rem;
+  font-size: 0.78rem;
+}
+
+.jb-pl-manage-empty {
+  margin: 0;
+  padding: 1rem 0.9rem;
+  font-size: 0.78rem;
+  color: rgba(255, 236, 190, 0.72);
+}
+
+.jb-pl-manage-foot {
+  padding: 0.55rem 0.9rem 0.75rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.jb-tool-btn--danger {
+  border-color: rgba(220, 90, 70, 0.55);
+  color: rgba(255, 180, 165, 0.95);
+}
+
+.jb-tool-btn--danger:hover {
+  background: rgba(220, 90, 70, 0.18);
+}
+
 .jb-pl-active__menu-title {
   margin: 0.12rem 0 0;
 }
@@ -7256,6 +7475,14 @@ html.qf-jukebox-page .sp-now-add-pl {
   overflow: hidden;
   border-top: 1px solid rgba(212, 175, 55, 0.22);
   background: rgba(0, 0, 0, 0.2);
+}
+
+.jb-stage__tracks .sp-pl-edit {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.65rem 0.75rem 1rem;
 }
 
 .jb-body {

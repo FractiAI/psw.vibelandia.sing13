@@ -92,7 +92,7 @@ export function TrackList() {
   const play = useCallback(
     (id: string) => {
       setActivePlaylist(activePlaylistId);
-      playTrackById(id, getTrack);
+      playTrackById(id, getTrack, { playbackPlaylistId: activePlaylistId });
     },
     [activePlaylistId, getTrack, setActivePlaylist],
   );

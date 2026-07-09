@@ -20,20 +20,31 @@ export function usePersistentPlayback() {
         flushPlaybackSession();
         return;
       }
-      resumePlaybackIfNeeded();
+      const resume = () => resumePlaybackIfNeeded();
+      resume();
+      window.setTimeout(resume, 50);
+      window.setTimeout(resume, 250);
     };
 
     const onPageShow = (ev: PageTransitionEvent) => {
       if (ev.persisted || document.visibilityState === 'visible') {
         resumePlaybackIfNeeded();
+        window.setTimeout(() => resumePlaybackIfNeeded(), 50);
       }
+    };
+
+    const onFocus = () => {
+      if (document.hidden) return;
+      resumePlaybackIfNeeded();
     };
 
     document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pageshow', onPageShow);
+    window.addEventListener('focus', onFocus);
     return () => {
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pageshow', onPageShow);
+      window.removeEventListener('focus', onFocus);
     };
   }, []);
 

@@ -1,7 +1,9 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import type { TrackDef } from '@/lib/catalogTypes';
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
+import { getPlaybackMedia, readLivePlaybackPosition } from '@/lib/playbackMediaRegistry';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
+import { getSimpleAudioElement, urlMatchesElement } from '@/lib/simplePlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
 interface UseBackgroundPlaybackOptions {
@@ -22,6 +24,17 @@ function mediaIsAudible(el: HTMLMediaElement | null): boolean {
   return !!el && !el.paused && el.readyState > HTMLMediaElement.HAVE_NOTHING;
 }
 
+function syncMediaRefs(
+  mediaRef: RefObject<HTMLVideoElement | HTMLAudioElement | null>,
+  backgroundAudioRef: RefObject<HTMLAudioElement | null>,
+) {
+  const el = getSimpleAudioElement();
+  const bg = getPlaybackMedia().background;
+  if (mediaRef.current !== el) mediaRef.current = el;
+  if (backgroundAudioRef.current !== bg) backgroundAudioRef.current = bg;
+  return { el, bg };
+}
+
 async function resolveHandoffUrl(track: TrackDef | undefined): Promise<string> {
   if (!track) return '';
   try {
@@ -31,8 +44,47 @@ async function resolveHandoffUrl(track: TrackDef | undefined): Promise<string> {
   }
 }
 
+function waitForCanPlay(el: HTMLMediaElement): Promise<void> {
+  if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const onReady = () => {
+      cleanup();
+      resolve();
+    };
+    const onErr = () => {
+      cleanup();
+      reject(new Error('media_error'));
+    };
+    const cleanup = () => {
+      el.removeEventListener('canplay', onReady);
+      el.removeEventListener('error', onErr);
+    };
+    el.addEventListener('canplay', onReady, { once: true });
+    el.addEventListener('error', onErr, { once: true });
+  });
+}
+
+async function ensureForegroundSrc(el: HTMLAudioElement, tr: TrackDef, bg: HTMLAudioElement | null): Promise<void> {
+  const url = await resolveHandoffUrl(tr);
+  if (!url) return;
+  if (urlMatchesElement(el, url) && el.src) return;
+  el.src = bg?.src || url;
+  el.load();
+  await waitForCanPlay(el).catch(() => undefined);
+}
+
+function releaseBackground(bg: HTMLAudioElement | null, setBackgroundHandoffActive: (on: boolean) => void) {
+  if (!bg) {
+    setBackgroundHandoffActive(false);
+    return;
+  }
+  bg.pause();
+  bg.removeAttribute('src');
+  setBackgroundHandoffActive(false);
+}
+
 /**
- * Free listeners: pause when the tab is hidden.
+ * Free listeners: browser may pause audio when hidden — resume on return.
  * Paid (pass / captain): hand off to a hidden <audio> so playback continues in background.
  */
 export function useBackgroundPlayback({
@@ -64,96 +116,88 @@ export function useBackgroundPlayback({
   onRequestResumeRef.current = onRequestResume;
 
   useEffect(() => {
-    if (allowBackgroundPlay) return;
-
-    const pauseIfHidden = () => {
+    const flushIfHidden = () => {
       if (!document.hidden) return;
       flushPlaybackSession();
-      /* Free preview: persist position only — do not stop on tab background. */
     };
 
-    document.addEventListener('visibilitychange', pauseIfHidden);
-    window.addEventListener('pagehide', pauseIfHidden);
+    document.addEventListener('visibilitychange', flushIfHidden);
+    window.addEventListener('pagehide', flushPlaybackSession);
     return () => {
-      document.removeEventListener('visibilitychange', pauseIfHidden);
-      window.removeEventListener('pagehide', pauseIfHidden);
+      document.removeEventListener('visibilitychange', flushIfHidden);
+      window.removeEventListener('pagehide', flushPlaybackSession);
     };
-  }, [allowBackgroundPlay, backgroundAudioRef, mediaRef, setBackgroundHandoffActive, setPlaying]);
+  }, []);
 
   useEffect(() => {
-    if (!allowBackgroundPlay) return;
-
-    const restoreToForeground = () => {
+    const restoreToForeground = async () => {
       if (handoffBusyRef.current) return;
-      const el = mediaRef.current;
-      const bg = backgroundAudioRef.current;
+      const { el, bg } = syncMediaRefs(mediaRef, backgroundAudioRef);
       const tr = trackRef.current;
+      const st = usePlaybackStore.getState();
+
       if (!el) {
-        setBackgroundHandoffActive(false);
-        return;
-      }
-
-      const resumeAt = bg?.src ? bg.currentTime : el.currentTime;
-      if (bg?.src) {
-        el.currentTime = resumeAt;
-        if (el instanceof HTMLAudioElement && tr) {
-          void resolveHandoffUrl(tr).then((url) => {
-            if (url) el.src = bg.src || url;
-          });
-        }
-      }
-
-      const finishRestore = () => {
-        const resumeAt = bg?.src ? bg.currentTime : el.currentTime;
-        bg?.pause();
-        bg?.removeAttribute('src');
-        setBackgroundHandoffActive(false);
-        if (resumeAt > 0.25 && Number.isFinite(resumeAt)) {
-          el.currentTime = resumeAt;
-          onTimeUpdateRef.current?.(resumeAt);
-          usePlaybackStore.getState().setDisplayTime(resumeAt);
+        if (bg && mediaIsAudible(bg)) {
+          setBackgroundHandoffActive(true);
         } else {
-          onTimeUpdateRef.current?.(el.currentTime);
+          setBackgroundHandoffActive(false);
         }
-        flushPlaybackSession();
-        if (usePlaybackStore.getState().isPlaying) {
-          void el.play().catch(() => onRequestResumeRef.current?.());
-        }
-      };
-
-      if (!usePlaybackStore.getState().isPlaying) {
-        finishRestore();
         return;
       }
 
-      if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA && el.src) {
-        finishRestore();
+      if (!st.isPlaying) {
+        releaseBackground(bg, setBackgroundHandoffActive);
         return;
       }
 
       handoffBusyRef.current = true;
-      const onReady = () => {
-        handoffBusyRef.current = false;
-        finishRestore();
-      };
-      el.addEventListener('canplay', onReady, { once: true });
-      if (!el.src && tr) {
-        void resolveHandoffUrl(tr).then((url) => {
-          if (url) {
-            el.src = url;
-            el.load();
+      const resumeAt = readLivePlaybackPosition() || (bg?.src ? bg.currentTime : el.currentTime);
+
+      try {
+        if (tr && el instanceof HTMLAudioElement) {
+          await ensureForegroundSrc(el, tr, bg);
+        }
+
+        if (resumeAt > 0.25 && Number.isFinite(resumeAt)) {
+          const at = Math.min(resumeAt, Math.max(0, (el.duration || Infinity) - 0.25));
+          if (at > 0.25) {
+            el.currentTime = at;
+            usePlaybackStore.getState().setDisplayTime(at);
+            onTimeUpdateRef.current?.(at);
           }
-        });
+        }
+
+        await waitForCanPlay(el);
+        await el.play();
+
+        releaseBackground(bg, setBackgroundHandoffActive);
+        flushPlaybackSession();
+      } catch {
+        if (bg?.src) {
+          if (resumeAt > 0.25 && Number.isFinite(resumeAt)) {
+            try {
+              bg.currentTime = resumeAt;
+            } catch {
+              /* ignore */
+            }
+          }
+          setBackgroundHandoffActive(true);
+          if (bg.paused) {
+            void bg.play().catch(() => onRequestResumeRef.current?.());
+          }
+        } else {
+          onRequestResumeRef.current?.();
+        }
+      } finally {
+        handoffBusyRef.current = false;
       }
     };
 
     const handoffToBackground = () => {
-      if (handoffBusyRef.current) return;
-      const el = mediaRef.current;
-      const bg = backgroundAudioRef.current;
+      if (!allowBackgroundPlay || handoffBusyRef.current || isVideo) return;
+      const { el, bg } = syncMediaRefs(mediaRef, backgroundAudioRef);
       const tr = trackRef.current;
       if (!el || !bg || !tr || !isPlayingRef.current) return;
-      if (isVideo) return;
       if (usePlaybackStore.getState().backgroundHandoffActive && mediaIsAudible(bg)) return;
 
       void resolveHandoffUrl(tr).then((url) => {
@@ -179,18 +223,28 @@ export function useBackgroundPlayback({
 
     const resumeIfStalled = () => {
       if (!isPlayingRef.current || document.hidden) return;
+      syncMediaRefs(mediaRef, backgroundAudioRef);
       const el = mediaRef.current;
       const bg = backgroundAudioRef.current;
       const st = usePlaybackStore.getState();
 
-      if (st.backgroundHandoffActive && mediaIsAudible(bg)) return;
-      if (mediaIsAudible(el)) return;
-
-      if (bg?.src && !bg.paused) {
-        restoreToForeground();
+      if (st.backgroundHandoffActive || (bg?.src && mediaIsAudible(bg))) {
+        void restoreToForeground();
         return;
       }
+      if (mediaIsAudible(el)) return;
+
+      const resumeAt = readLivePlaybackPosition();
       if (el?.src) {
+        if (resumeAt > 0.25 && Number.isFinite(resumeAt)) {
+          try {
+            el.currentTime = Math.min(resumeAt, Math.max(0, (el.duration || Infinity) - 0.25));
+            usePlaybackStore.getState().setDisplayTime(el.currentTime);
+            onTimeUpdateRef.current?.(el.currentTime);
+          } catch {
+            /* ignore */
+          }
+        }
         void el.play().catch(() => onRequestResumeRef.current?.());
         return;
       }
@@ -200,28 +254,39 @@ export function useBackgroundPlayback({
     const onVisibility = () => {
       if (document.hidden) {
         handoffToBackground();
-      } else {
+        return;
+      }
+      window.setTimeout(() => {
+        if (document.hidden) return;
         if (usePlaybackStore.getState().backgroundHandoffActive) {
-          restoreToForeground();
+          void restoreToForeground();
         } else {
           resumeIfStalled();
         }
-      }
+      }, 0);
     };
 
     const onPageShow = (ev: PageTransitionEvent) => {
-      if (ev.persisted || document.visibilityState === 'visible') {
-        resumeIfStalled();
-      }
+      if (!ev.persisted && document.visibilityState !== 'visible') return;
+      window.setTimeout(() => {
+        if (document.hidden) return;
+        if (usePlaybackStore.getState().backgroundHandoffActive) {
+          void restoreToForeground();
+        } else {
+          resumeIfStalled();
+        }
+      }, 0);
     };
 
     document.addEventListener('visibilitychange', onVisibility);
     window.addEventListener('pagehide', handoffToBackground);
     window.addEventListener('pageshow', onPageShow);
+    window.addEventListener('focus', resumeIfStalled);
     return () => {
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pagehide', handoffToBackground);
       window.removeEventListener('pageshow', onPageShow);
+      window.removeEventListener('focus', resumeIfStalled);
     };
   }, [
     allowBackgroundPlay,
@@ -233,7 +298,7 @@ export function useBackgroundPlayback({
 
   useEffect(() => {
     if (!allowBackgroundPlay || !backgroundHandoffActive) return;
-    const bg = backgroundAudioRef.current;
+    const bg = backgroundAudioRef.current ?? getPlaybackMedia().background;
     if (!bg) return;
 
     const onTime = () => onTimeUpdateRef.current?.(bg.currentTime);
@@ -257,9 +322,8 @@ export function useBackgroundPlayback({
     if (!allowBackgroundPlay || isVideo || !isPlaying || !track) return;
     if (!document.hidden) return;
 
-    const el = mediaRef.current;
-    const bg = backgroundAudioRef.current;
-    if (!el || !bg || !track) return;
+    const { el, bg } = syncMediaRefs(mediaRef, backgroundAudioRef);
+    if (!el || !bg) return;
     if (usePlaybackStore.getState().backgroundHandoffActive && bg.src) return;
 
     let cancelled = false;
@@ -314,9 +378,9 @@ export function useBackgroundPlayback({
 
   useEffect(() => {
     if (isPlaying || !backgroundHandoffActive) return;
-    const bg = backgroundAudioRef.current;
+    const bg = backgroundAudioRef.current ?? getPlaybackMedia().background;
     if (bg && !bg.paused) return;
-    backgroundAudioRef.current?.pause();
+    bg?.pause();
     setBackgroundHandoffActive(false);
   }, [isPlaying, backgroundHandoffActive, backgroundAudioRef, setBackgroundHandoffActive]);
 

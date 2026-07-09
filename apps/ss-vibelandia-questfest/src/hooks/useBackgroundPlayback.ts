@@ -14,7 +14,7 @@ interface UseBackgroundPlaybackOptions {
   track: TrackDef | undefined;
   isVideo: boolean;
   setPlaying: (playing: boolean) => void;
-  onRequestResume?: () => void;
+  onRequestResume?: (opts?: { userInitiated?: boolean }) => void;
   onTimeUpdate?: (currentTime: number) => void;
   onTrackEnded?: () => void;
   onNextTrack?: () => void;
@@ -83,6 +83,25 @@ function releaseBackground(bg: HTMLAudioElement | null, setBackgroundHandoffActi
   setBackgroundHandoffActive(false);
 }
 
+function syncUiFromBackgroundAudio(
+  el: HTMLAudioElement | null,
+  bg: HTMLAudioElement,
+  setBackgroundHandoffActive: (on: boolean) => void,
+  onTimeUpdate?: (t: number) => void,
+): void {
+  const t = bg.currentTime;
+  usePlaybackStore.getState().setDisplayTime(t);
+  onTimeUpdate?.(t);
+  if (el && el.paused) {
+    try {
+      el.currentTime = t;
+    } catch {
+      /* ignore */
+    }
+  }
+  setBackgroundHandoffActive(true);
+}
+
 /**
  * Free listeners: browser may pause audio when hidden — resume on return.
  * Paid (pass / captain): hand off to a hidden <audio> so playback continues in background.
@@ -130,6 +149,18 @@ export function useBackgroundPlayback({
   }, []);
 
   useEffect(() => {
+    const stayOnBackgroundIfPlaying = (): boolean => {
+      const { el, bg } = syncMediaRefs(mediaRef, backgroundAudioRef);
+      if (!bg?.src || !mediaIsAudible(bg)) return false;
+      syncUiFromBackgroundAudio(
+        el instanceof HTMLAudioElement ? el : null,
+        bg,
+        setBackgroundHandoffActive,
+        onTimeUpdateRef.current ?? undefined,
+      );
+      return true;
+    };
+
     const restoreToForeground = async () => {
       if (handoffBusyRef.current) return;
       const { el, bg } = syncMediaRefs(mediaRef, backgroundAudioRef);
@@ -147,6 +178,16 @@ export function useBackgroundPlayback({
 
       if (!st.isPlaying) {
         releaseBackground(bg, setBackgroundHandoffActive);
+        return;
+      }
+
+      if (bg?.src && mediaIsAudible(bg)) {
+        syncUiFromBackgroundAudio(
+          el instanceof HTMLAudioElement ? el : null,
+          bg,
+          setBackgroundHandoffActive,
+          onTimeUpdateRef.current ?? undefined,
+        );
         return;
       }
 
@@ -183,10 +224,8 @@ export function useBackgroundPlayback({
           }
           setBackgroundHandoffActive(true);
           if (bg.paused) {
-            void bg.play().catch(() => onRequestResumeRef.current?.());
+            void bg.play().catch(() => {});
           }
-        } else {
-          onRequestResumeRef.current?.();
         }
       } finally {
         handoffBusyRef.current = false;
@@ -216,7 +255,6 @@ export function useBackgroundPlayback({
           })
           .catch(() => {
             handoffBusyRef.current = false;
-            onRequestResumeRef.current?.();
           });
       });
     };
@@ -228,7 +266,9 @@ export function useBackgroundPlayback({
       const bg = backgroundAudioRef.current;
       const st = usePlaybackStore.getState();
 
-      if (st.backgroundHandoffActive || (bg?.src && mediaIsAudible(bg))) {
+      if (stayOnBackgroundIfPlaying()) return;
+
+      if (st.backgroundHandoffActive && bg?.src) {
         void restoreToForeground();
         return;
       }
@@ -245,10 +285,19 @@ export function useBackgroundPlayback({
             /* ignore */
           }
         }
-        void el.play().catch(() => onRequestResumeRef.current?.());
+        void el.play().catch(() => {});
         return;
       }
-      onRequestResumeRef.current?.();
+      onRequestResumeRef.current?.({ userInitiated: false });
+    };
+
+    const onReturnToForeground = () => {
+      if (stayOnBackgroundIfPlaying()) return;
+      if (usePlaybackStore.getState().backgroundHandoffActive) {
+        void restoreToForeground();
+      } else {
+        resumeIfStalled();
+      }
     };
 
     const onVisibility = () => {
@@ -258,11 +307,7 @@ export function useBackgroundPlayback({
       }
       window.setTimeout(() => {
         if (document.hidden) return;
-        if (usePlaybackStore.getState().backgroundHandoffActive) {
-          void restoreToForeground();
-        } else {
-          resumeIfStalled();
-        }
+        onReturnToForeground();
       }, 0);
     };
 
@@ -270,11 +315,7 @@ export function useBackgroundPlayback({
       if (!ev.persisted && document.visibilityState !== 'visible') return;
       window.setTimeout(() => {
         if (document.hidden) return;
-        if (usePlaybackStore.getState().backgroundHandoffActive) {
-          void restoreToForeground();
-        } else {
-          resumeIfStalled();
-        }
+        onReturnToForeground();
       }, 0);
     };
 
@@ -345,7 +386,6 @@ export function useBackgroundPlayback({
         })
         .catch(() => {
           handoffBusyRef.current = false;
-          if (!cancelled) onRequestResumeRef.current?.();
         });
     };
 
@@ -401,7 +441,7 @@ export function useBackgroundPlayback({
       });
       navigator.mediaSession.setActionHandler('play', () => {
         setPlaying(true);
-        onRequestResumeRef.current?.();
+        onRequestResumeRef.current?.({ userInitiated: true });
       });
       navigator.mediaSession.setActionHandler('pause', () => setPlaying(false));
       navigator.mediaSession.setActionHandler('nexttrack', () => onNextTrack?.());

@@ -178,9 +178,11 @@ export function resumePlaybackIfNeeded(): void {
 
   const bg = getPlaybackMedia().background;
   if (backgroundHandoffActive && bg?.src) {
-    if (bg.paused) {
-      void bg.play().catch(() => {});
+    if (!bg.paused) {
+      usePlaybackStore.getState().setDisplayTime(bg.currentTime);
+      return;
     }
+    void bg.play().catch(() => {});
     return;
   }
 

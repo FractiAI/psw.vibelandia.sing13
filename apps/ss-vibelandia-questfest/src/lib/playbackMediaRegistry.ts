@@ -19,13 +19,15 @@ export function getPlaybackMedia(): MediaPair {
 
 export function readLivePlaybackPosition(): number {
   const st = media;
-  const handoff =
-    typeof document !== 'undefined' &&
-    document.hidden &&
-    st.background &&
-    !st.background.paused &&
-    !!st.background.src;
-  if (handoff) return st.background.currentTime;
-  if (st.primary && st.primary.src) return st.primary.currentTime;
+  const bg = st.background;
+  const primary = st.primary;
+
+  if (bg?.src && !bg.paused) return bg.currentTime;
+  if (primary?.src) {
+    if (!primary.paused) return primary.currentTime;
+    if (bg?.src && bg.currentTime > 0.25) return bg.currentTime;
+    return primary.currentTime;
+  }
+  if (bg?.src) return bg.currentTime;
   return 0;
 }

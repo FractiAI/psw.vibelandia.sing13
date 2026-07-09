@@ -270,18 +270,26 @@ export function BridgePlayer({
     setPlaying(false);
   }, [advanceNext, setPlaying]);
 
-  const resumePlayback = useCallback(() => {
+  const resumePlayback = useCallback((opts?: { userInitiated?: boolean }) => {
     if (!track) return;
     syncMediaRefs();
     const bg = backgroundAudioRef.current;
+    const pb = usePlaybackStore.getState();
+    if (bg?.src && !bg.paused) {
+      pb.setBackgroundHandoffActive(true);
+      pb.setDisplayTime(bg.currentTime);
+      setPlaybackError(null);
+      return;
+    }
     if (document.hidden && allowBackgroundPlay && bg?.src) {
-      void bg.play().catch(() =>
-        setPlaybackError('Tap play again — browser blocked background playback.'),
-      );
+      void bg.play().catch(() => {});
       return;
     }
     beginSession();
-    resumeOrPlayTrack(track, { beginSession, onError: setPlaybackError });
+    resumeOrPlayTrack(track, {
+      beginSession,
+      onError: opts?.userInitiated ? setPlaybackError : undefined,
+    });
   }, [allowBackgroundPlay, beginSession, setPlaybackError, syncMediaRefs, track]);
 
   useBackgroundPlayback({

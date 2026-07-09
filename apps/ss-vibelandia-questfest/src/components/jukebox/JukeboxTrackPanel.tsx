@@ -11,6 +11,7 @@ import { isMasterPlaylist, isMyLikesPlaylist } from '@/lib/catalogSeed';
 import { playTrackById } from '@/lib/trackPlayback';
 import { fmtDuration } from '@/lib/formatDuration';
 import { findDuplicateTrackGroups } from '@/lib/findCatalogDuplicateGroups';
+import { trackMatchesSearchQuery } from '@/lib/masterCatalogFilter';
 import { nextSequentialTrackId, nextShuffledTrackId } from '@/lib/playlistShuffle';
 import { PLAIN } from '@/lib/plainSpeak';
 import type { TrackDef } from '@/lib/catalogTypes';
@@ -40,6 +41,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
   const [dupBusy, setDupBusy] = useState(false);
   const [dupMessage, setDupMessage] = useState<string | null>(null);
   const [metaOpen, setMetaOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
   const shuffleQueue = usePlaybackStore((s) => s.shuffleQueue);
@@ -47,7 +49,8 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
   const isMaster = isMasterPlaylist(playlistId);
   const isMyLikes = isMyLikesPlaylist(playlistId);
   const canEditPlaylist = !isMyLikes;
-  const canReorder = !isMaster && resolvedIds.length > 1;
+  const searchActive = searchQuery.trim().length > 0;
+  const canReorder = !isMaster && resolvedIds.length > 1 && !searchActive;
 
   const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
     usePlaylistReorder(playlistId, canReorder, reorderTrackInPlaylist);
@@ -57,18 +60,25 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
     setSelected(new Set());
     setDupDismissed(false);
     setDupMessage(null);
+    setSearchQuery('');
   }, [playlistId]);
 
-  const rows = useMemo(() => {
+  const { rows, totalBeforeSearch } = useMemo(() => {
     const playlistIndexById = new Map(resolvedIds.map((id, i) => [id, i]));
-    return resolvedIds
+    const allRows = resolvedIds
       .map((id) => {
         const track = getTrack(id);
         if (!track) return null;
         return { track, playlistIndex: playlistIndexById.get(id) ?? -1 };
       })
       .filter((row): row is { track: TrackDef; playlistIndex: number } => !!row);
-  }, [resolvedIds, getTrack]);
+    const totalBeforeSearch = allRows.length;
+    if (!searchActive) return { rows: allRows, totalBeforeSearch };
+    return {
+      rows: allRows.filter((row) => trackMatchesSearchQuery(row.track, searchQuery)),
+      totalBeforeSearch,
+    };
+  }, [resolvedIds, getTrack, searchQuery, searchActive]);
 
   const duplicateGroups = useMemo(
     () => findDuplicateTrackGroups(resolvedIds, getTrack),
@@ -186,7 +196,9 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
       <header className="jb-track-panel__head">
         <div>
           <p className="jb-track-panel__meta">
-            {rows.length} track{rows.length === 1 ? '' : 's'}
+            {searchActive
+              ? `${rows.length} of ${totalBeforeSearch} ${PLAIN.tracks}`
+              : `${rows.length} track${rows.length === 1 ? '' : 's'}`}
           </p>
         </div>
         <div className="jb-track-panel__tools">
@@ -219,6 +231,21 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
           </button>
         </div>
       </header>
+
+      {totalBeforeSearch > 0 ? (
+        <div className="jb-search-wrap">
+          <input
+            type="search"
+            className="jb-search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder={PLAIN.searchPlaceholder}
+            aria-label={PLAIN.search}
+            autoComplete="off"
+            enterKeyHint="search"
+          />
+        </div>
+      ) : null}
 
       {!dupDismissed && duplicateGroups.length > 0 ? (
         <div className="jb-dup-banner" role="status">
@@ -265,7 +292,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
       </p>
 
       {rows.length === 0 ? (
-        <p className="jb-empty">{PLAIN.noTracksYet}</p>
+        <p className="jb-empty">{searchActive ? PLAIN.noSearchMatch : PLAIN.noTracksYet}</p>
       ) : (
         <ol className="jb-track-list" ref={listRef}>
           {rows.map((row, displayIndex) => (

@@ -173,15 +173,25 @@ export function NowPlayingBar({
   endedRef.current = handleTrackEnded;
   fairExchangeRef.current = onFairExchange;
 
-  const resumePlayback = useCallback(() => {
+  const resumePlayback = useCallback((opts?: { userInitiated?: boolean }) => {
     syncBackgroundRef();
     const el = getPrimaryMedia();
     const bg = backgroundAudioRef.current;
     if (!track || !fullPlayUnlocked) return;
+    if (bg?.src && !bg.paused) {
+      usePlaybackStore.getState().setBackgroundHandoffActive(true);
+      usePlaybackStore.getState().setDisplayTime(bg.currentTime);
+      setError(null);
+      return;
+    }
     if (document.hidden && allowBackgroundPlay && bg?.src) {
-      void bg.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
-    } else if (el) {
-      void el.play().catch(() => setError('Tap play again — browser blocked autoplay.'));
+      void bg.play().catch(() => {});
+      return;
+    }
+    if (el) {
+      void el.play().catch(() => {
+        if (opts?.userInitiated) setError('Tap play again — browser blocked autoplay.');
+      });
     }
   }, [allowBackgroundPlay, fullPlayUnlocked, getPrimaryMedia, syncBackgroundRef, track]);
 

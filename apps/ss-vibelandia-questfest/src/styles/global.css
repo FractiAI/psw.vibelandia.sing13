@@ -8159,6 +8159,34 @@ html.qf-jukebox-page .sp-now-add-pl {
   flex-shrink: 0;
 }
 
+.jb-search-wrap {
+  flex-shrink: 0;
+  padding: 0.4rem 0.45rem 0.35rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.jb-search {
+  width: 100%;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fef3c7;
+  font: inherit;
+  font-size: 0.72rem;
+}
+
+.jb-search::placeholder {
+  color: #8a8070;
+}
+
+.jb-search:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.22);
+}
+
 .jb-tool-btn {
   padding: 0.28rem 0.55rem;
   font-size: 0.58rem;

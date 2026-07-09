@@ -37,6 +37,14 @@
                 phoneTel: '+17753579480',
                 image: ASSET_BASE + '/assets/picks/desert-sun-bagels.png',
                 imageAlt: 'Desert Sun Bagel Co. logo'
+              },
+              {
+                name: 'Sprinkle Donuts (Keystone)',
+                href: 'https://order.online/store/sprinkle-donuts-639523?pickup=true&utm_source=sdk',
+                phone: '(775) 800-4286',
+                phoneTel: '+17758004286',
+                image: ASSET_BASE + '/assets/picks/sprinkle-donuts.jpg',
+                imageAlt: 'Sprinkle Donuts logo'
               }
             ]
           },

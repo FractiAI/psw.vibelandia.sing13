@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { GlobalAudio } from '@/components/player/GlobalAudio';
+import { PlaybackKeepAlive } from '@/components/player/PlaybackKeepAlive';
 import { PlayerDock } from '@/components/player/PlayerDock';
 import { usePersistentPlayback } from '@/hooks/usePersistentPlayback';
 import { pauseSimpleAudio } from '@/lib/simplePlayback';
@@ -33,6 +34,7 @@ export function PlaybackRoot() {
   return (
     <div className="sp-playback-stack" aria-hidden={djMode} data-playback-dock={djMode ? undefined : 'on'}>
       <GlobalAudio />
+      <PlaybackKeepAlive />
       {!djMode ? <PlayerDock /> : null}
     </div>
   );

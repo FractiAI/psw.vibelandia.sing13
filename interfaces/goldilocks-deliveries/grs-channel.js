@@ -14,11 +14,11 @@
       floorLabel: '$9 delivery floor',
       image: ASSET_BASE + '/assets/grs-menu-food-delivery.jpg',
       imageAlt: 'Golden-age valet on a bicycle carrying a silver room-service cloche through neon-lit downtown Reno',
-      lead: 'From our menu partners inside the bubble — room service to your door, micro-mobility only.',
+      lead: 'Order from your purveyor of choice — book a Valet for pickup and delivery, or we handle everything for 18% of the total bill.',
       body: [
-        'Your valet rides from a Goldilocks menu partner to your door inside the core bubble. No parking cruise, no sprawl markup, no corporate clock.',
-        'Goods are settled on delivery under Fair Exchange — pay the purveyor directly, or ask us to handle purveyor payments for +18% tip on top of your offer.',
-        'Tip splits 33% to the app · 67% to the valet who accepts and delivers.'
+        'You order and pay your purveyor directly — then book a Valet to pick up and deliver inside the service area. Micro-mobility only: no parking cruise, no sprawl markup, no corporate clock.',
+        'Prefer hands-off? Book us to handle ordering, payment, pickup, and delivery for an additional 18% of the total bill.',
+        'Valet tip splits 33% to the app · 67% to the franchisee who accepts and delivers.'
       ],
       floor: 9,
       broadcastLabel: 'food delivery'
@@ -30,11 +30,11 @@
       floorLabel: '$9 run floor',
       image: ASSET_BASE + '/assets/grs-menu-personal-shopping.jpg',
       imageAlt: 'Uniformed valet carrying wrapped parcels and a market basket past elegant storefronts at dusk',
-      lead: 'Groceries, pharmacy, errands, pickups — receipt in hand, sovereign pacing.',
+      lead: 'Order from the store or pharmacy of your choice — book a Valet for pickup and delivery, or we handle everything for 18% of the total bill.',
       body: [
-        'Send a valet for groceries, pharmacy runs, errands, and pickups inside the Goldilocks bubble. Your human brings the receipt; goods are reimbursed on handoff.',
-        'No two-ton car idling for a gallon of milk. Bike · e-bike · e-scooter · foot — whatever fits the core.',
-        'Tip splits 33% to the app · 67% to the valet who accepts and runs.'
+        'Place your order directly with the shop, grocer, or pharmacy of your choice — then book a Valet to pick up and run it to your door inside the service area.',
+        'Prefer hands-off? Book us to handle ordering, payment, pickup, and delivery for an additional 18% of the total bill. Your valet brings the receipt; goods settled on handoff under Fair Exchange.',
+        'Valet tip splits 33% to the app · 67% to the franchisee who accepts and runs.'
       ],
       floor: 9,
       broadcastLabel: 'personal shopping'
@@ -131,7 +131,7 @@
     if (item.quantity) {
       lines.push('Quantity: ' + qty + ' ' + item.quantity.unitLabel + (qty > 1 ? 's' : ''));
     }
-    lines.push('', 'Purveyor settlement: direct on delivery OR handled (+18% tip)');
+    lines.push('', 'Order & pay purveyor direct · OR we handle all for 18% of total bill');
     return lines.join('\n');
   }
 

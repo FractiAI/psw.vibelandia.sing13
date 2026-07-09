@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import { bindSimpleAudioElement } from '@/lib/simplePlayback';
-import { registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
+import { getPlaybackMedia, registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
 import { useCatalogStore } from '@/stores/catalogStore';
 
 /** Single app-root audio element — never unmounts; muted on Upload tab only (iOS blue-screen fix). */
@@ -14,7 +14,7 @@ export function GlobalAudio() {
 
   const setRef = useCallback((el: HTMLAudioElement | null) => {
     bindSimpleAudioElement(el);
-    registerPlaybackMedia(el, null);
+    registerPlaybackMedia(el, getPlaybackMedia().background);
   }, []);
 
   return (

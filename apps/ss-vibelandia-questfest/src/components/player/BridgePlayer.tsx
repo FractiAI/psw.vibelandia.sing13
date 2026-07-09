@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import {
+  assignPlaybackSrc,
   getSimpleAudioElement,
   pauseSimpleAudio,
   registerPlaybackEngine,
   subscribeAudioBind,
 } from '@/lib/simplePlayback';
+import { getPlaybackMedia } from '@/lib/playbackMediaRegistry';
 import {
   consumeAppPause,
   markAppPause,
@@ -104,12 +107,21 @@ export function BridgePlayer({
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
   const fullPlayUnlocked = isPassenger || captainUnlocked;
+  const allowBackgroundPlay = fullPlayUnlocked && backgroundPlayEnabled;
   const solenoidActive = shouldPreviewGate(currentTrackId, fullPlayUnlocked, pl?.kind);
   const freeFullRemaining =
     Boolean(currentTrackId) && !fullPlayUnlocked && hasFreeFullPlayRemaining(currentTrackId);
 
   const [playlistModalOpen, setPlaylistModalOpen] = useState(false);
   const [shareNote, setShareNote] = useState<string | null>(null);
+
+  const mediaRef = useRef<HTMLAudioElement | null>(null);
+  const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
+
+  const syncMediaRefs = useCallback(() => {
+    mediaRef.current = getSimpleAudioElement();
+    backgroundAudioRef.current = getPlaybackMedia().background;
+  }, []);
 
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -136,14 +148,55 @@ export function BridgePlayer({
 
   gainRef.current = gain;
 
+  useEffect(() => {
+    syncMediaRefs();
+    return subscribeAudioBind(syncMediaRefs);
+  }, [syncMediaRefs]);
+
   const playUrl = useCallback(
     (trackId: string, src: string) => {
       clearKill();
       gateArmedRef.current = true;
       beginSession();
+
+      const pb = usePlaybackStore.getState();
+      const bg = getPlaybackMedia().background;
+      const handoff =
+        allowBackgroundPlay &&
+        (pb.backgroundHandoffActive || document.hidden) &&
+        bg &&
+        document.hidden;
+
+      pb.setPlaybackError(null);
+      pb.setTrack(trackId);
+      pb.setDisplayTime(0);
+      pb.setGain(1);
+
+      if (handoff) {
+        const el = getSimpleAudioElement();
+        if (el) {
+          assignPlaybackSrc(el, src);
+          el.pause();
+        }
+        bg.src = src;
+        bg.currentTime = 0;
+        bg.volume = gainRef.current;
+        pb.setBackgroundHandoffActive(true);
+        pb.setPlaying(true);
+        void bg
+          .play()
+          .then(() => pb.setPlaying(true))
+          .catch(() => {
+            pb.setPlaybackError('Background autoplay blocked — return to the tab and tap ▶.');
+            pb.setPlaying(false);
+            pb.setBackgroundHandoffActive(false);
+          });
+        return;
+      }
+
       startTrackPlayback(trackId, src, { beginSession });
     },
-    [beginSession, clearKill],
+    [allowBackgroundPlay, beginSession, clearKill],
   );
 
   const advanceNext = useCallback(() => {
@@ -189,7 +242,6 @@ export function BridgePlayer({
       .catch(() => setPlaying(false));
     return true;
   }, [
-    currentTrackId,
     getTrack,
     pl,
     playUrl,
@@ -198,6 +250,51 @@ export function BridgePlayer({
     shuffleQueue,
     resolvedTrackIds,
   ]);
+
+  const handleTrackEnded = useCallback(() => {
+    const tid = usePlaybackStore.getState().currentTrackId;
+    const member =
+      useSessionStore.getState().isPassenger || useSessionStore.getState().captainUnlocked;
+    if (tid && !member && hasFreeFullPlayRemaining(tid)) {
+      markFreeFullPlayConsumed(tid);
+    }
+    if (!usePlaybackStore.getState().autoplayEnabled) {
+      setPlaying(false);
+      return;
+    }
+    if (advanceNext()) return;
+    setPlaying(false);
+  }, [advanceNext, setPlaying]);
+
+  const resumePlayback = useCallback(() => {
+    if (!track) return;
+    syncMediaRefs();
+    const bg = backgroundAudioRef.current;
+    if (document.hidden && allowBackgroundPlay && bg?.src) {
+      void bg.play().catch(() =>
+        setPlaybackError('Tap play again — browser blocked background playback.'),
+      );
+      return;
+    }
+    beginSession();
+    resumeOrPlayTrack(track, { beginSession, onError: setPlaybackError });
+  }, [allowBackgroundPlay, beginSession, setPlaybackError, syncMediaRefs, track]);
+
+  useBackgroundPlayback({
+    mediaRef,
+    backgroundAudioRef,
+    allowBackgroundPlay,
+    isPlaying,
+    track,
+    isVideo: false,
+    setPlaying,
+    onRequestResume: resumePlayback,
+    onTimeUpdate: setDisplayTime,
+    onTrackEnded: handleTrackEnded,
+    onNextTrack: () => {
+      void advanceNext();
+    },
+  });
 
   useEffect(() => {
     if (killReason === 'vessel_switch' || killReason === 'tab_preempt') {
@@ -238,16 +335,7 @@ export function BridgePlayer({
       }
     };
 
-    const handleEnded = () => {
-      const tid = usePlaybackStore.getState().currentTrackId;
-      const member =
-        useSessionStore.getState().isPassenger || useSessionStore.getState().captainUnlocked;
-      if (tid && !member && hasFreeFullPlayRemaining(tid)) {
-        markFreeFullPlayConsumed(tid);
-      }
-      if (advanceNext()) return;
-      setPlaying(false);
-    };
+    const handleEnded = () => handleTrackEnded();
 
     registerPlaybackEngine({
       onTime: runGate,
@@ -272,7 +360,7 @@ export function BridgePlayer({
     });
   }, [
     advanceNext,
-    autoplayEnabled,
+    handleTrackEnded,
     onFairExchange,
     setDisplayTime,
     setPlaybackError,

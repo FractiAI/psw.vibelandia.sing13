@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { IOS_PLAYABLE_MEDIA_CLASS } from '@/lib/devicePlayback';
-import { registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
+import { getPlaybackMedia, registerPlaybackMedia } from '@/lib/playbackMediaRegistry';
 
 /**
  * Background audio element lives at app root so OS screensaver / route remounts
@@ -11,8 +11,8 @@ export function PlaybackKeepAlive() {
 
   useEffect(() => {
     const el = backgroundRef.current;
-    registerPlaybackMedia(null, el);
-    return () => registerPlaybackMedia(null, null);
+    if (el) registerPlaybackMedia(getPlaybackMedia().primary, el);
+    return () => registerPlaybackMedia(getPlaybackMedia().primary, null);
   }, []);
 
   return (

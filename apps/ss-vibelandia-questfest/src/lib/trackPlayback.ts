@@ -1,4 +1,5 @@
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
+import { getPlaybackMedia } from '@/lib/playbackMediaRegistry';
 import { readPlaybackSession } from '@/lib/playbackSession';
 import {
   getSimpleAudioElement,
@@ -164,9 +165,16 @@ export function pausePlayback(): void {
 
 /** Resume when store still says playing but the element was paused (tab switch, screen lock). */
 export function resumePlaybackIfNeeded(): void {
-  if (document.hidden) return;
-  const { isPlaying, currentTrackId } = usePlaybackStore.getState();
+  const { isPlaying, currentTrackId, backgroundHandoffActive } = usePlaybackStore.getState();
   if (!isPlaying || !currentTrackId) return;
+
+  const bg = getPlaybackMedia().background;
+  if (backgroundHandoffActive && bg?.src && bg.paused) {
+    void bg.play().catch(() => {});
+    return;
+  }
+
+  if (document.hidden) return;
 
   const el = getSimpleAudioElement();
   if (el?.paused && el.src) {

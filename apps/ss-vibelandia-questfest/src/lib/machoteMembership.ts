@@ -37,22 +37,36 @@ export const MACHOTE_ROOM_SERVICE_PATH = '/hire-a-goldilocks-valet-concierge';
 
 export const MACHOTE_ROOM_SERVICE_TITLE = 'Hire-A-Goldilocks-Valet-Concierge';
 
-export const MACHOTE_ROOM_SERVICE_TAGLINE =
-  'QUESTFEST Goldilocks Room Service in Puerto Reno · guests · no-cost Goldilocks Valet franchise';
+export const MACHOTE_ROOM_SERVICE_TAGLINE = 'Your Personal Concierge for Downtown Reno';
 
 export const MACHOTE_ROOM_SERVICE_REGIONS =
-  'Downtown · Midtown · UNR · Idlewild · Reno Experience District';
+  'Downtown Reno · Midtown · Idlewild · University District · Riverwalk · The Reno Experience Zone';
 
 export const MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB =
-  'Howard Hughes Pioneering, Golden Age Spirit. Electric bikes and e-scooters — good for the environment and good for Valet Franchisee wallets.';
+  'Practical help first. Adventure second. Goldilocks Valet Concierge is part of the larger SS Vibelandia QuestFest vision.';
 
-export const MACHOTE_ROOM_SERVICE_CTA = 'Explore Hire-A-Goldilocks-Valet-Concierge →';
+export const MACHOTE_ROOM_SERVICE_CTA = 'Hire a Concierge · Book Now';
 
-export const MACHOTE_CAMPAIGN_JOIN_CTA = 'Follow Machote on Facebook to join →';
+export const MACHOTE_QUESTFEST_UNIVERSE_PATH = '/hire-a-goldilocks-valet-concierge#questfest-universe';
 
-export const MACHOTE_CAMPAIGN_EYEBROW = 'THE GOLDILOCKS EXPERIENCE · QUESTFEST · PUERTO RENO';
+export const MACHOTE_GUEST_PATH = '/hire-a-goldilocks-valet-concierge/guest';
 
-export const MACHOTE_CAMPAIGN_TITLE = 'The Goldilocks Experience';
+export const MACHOTE_BOOK_MAIL =
+  'mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge%20%E2%80%94%20book%20now&body=Name%3A%0ANeighborhood%3A%0AWhat%20I%20need%3A%0APreferred%20time%3A';
+
+export const MACHOTE_CAMPAIGN_HIRE_CTA = 'Hire a Concierge · Book Now';
+
+export const MACHOTE_CAMPAIGN_QUEST_CTA = 'Explore QuestFest';
+
+export const MACHOTE_CAMPAIGN_BROWSE_CTA = 'Browse services →';
+
+export const MACHOTE_CAMPAIGN_JOIN_CTA = 'Email Pru to get started →';
+
+export const MACHOTE_CAMPAIGN_EYEBROW = 'Downtown Reno · Personal Concierge';
+
+export const MACHOTE_CAMPAIGN_TITLE = 'Hire-A-Goldilocks-Valet-Concierge';
+
+export const MACHOTE_CAMPAIGN_TAGLINE = 'Your Personal Concierge for Downtown Reno';
 
 export const MACHOTE_MEMBERS_PASS_TITLE = 'Members pass · full music catalog';
 
@@ -86,7 +100,16 @@ export const MACHOTE_CREW_LINE =
 export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
 
 export const MACHOTE_CAMPAIGN_LEDE =
-  "What's it mean? Goldilocks is where win-win-wins converge — not too much, not too little for guests, franchise valets, purveyors, and the environment. Hire-A-Goldilocks-Valet-Concierge is QUESTFEST room service in Puerto Reno: order from your purveyor of choice, book a Valet to pick up and deliver, or let us handle everything for 18% of the total bill.";
+  'I help residents, visitors, professionals, seniors, and travelers with everyday tasks throughout Downtown Reno, Midtown, Idlewild, and nearby districts — on electric bike, not in a car idling at the curb.';
+
+export const MACHOTE_CAMPAIGN_CHECKLIST: string[] = [
+  'E-bike courier — low emissions, no parking cruise or sprawl markup downtown',
+  'Fair for operators — your valet keeps 67%, not a gig-app squeeze',
+  'Real human assistance — not another app',
+];
+
+export const MACHOTE_CAMPAIGN_UNIVERSE_TEASER =
+  'If you’re curious, step aboard and discover the story behind the service. Email Pru to get signed up as a guest — one email, one human answer.';
 
 export const MACHOTE_BEEHIVE_CAMPAIGN_BLURB =
   'Machote members only. Old School Protocol: interested party nodes contact PL Taino directly. 2-week test drive for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.';
@@ -106,19 +129,16 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   footerLinkLabel?: string;
 }[] = [
   {
-    title: 'What it is',
+    title: 'Services',
     body:
-      'Core-centric room service in dense hubs: food delivery, personal shopping, and personal assistance by the hour or day. Human coordination on electric bike or e-scooter. Old-school pacing. No app store. No surge math.',
+      'Food pickup, groceries, errands, pharmacy runs, hotel guest help, personal shopping, walking companion, and hourly concierge — throughout the downtown core.',
   },
   {
-    title: 'Why it exists',
-    body:
-      'Rideshare apps maximize platform profit; Goldilocks is tuned for what is right for all. Short runs worth doing without sprawl markup. Guests who get it stay in their rhythm — Fair Exchange with open tip splits: franchise valets keep 67%; the app takes 33%.',
+    title: 'How it works',
+    body: 'Text or call. Tell Pru what you need. Receive a quote. Relax while it gets handled.',
   },
   {
-    title: 'Interested in joining?',
-    body:
-      'Follow Machote Moderno Magazine on Facebook if you want to join Hire-A-Goldilocks-Valet-Concierge as guest or Goldilocks Valet franchisee —',
-    footerLinkLabel: 'Machote Moderno on Facebook',
+    title: 'Get started',
+    body: 'Email Pru with your name, neighborhood, and what you need. No forms, no app.',
   },
 ];

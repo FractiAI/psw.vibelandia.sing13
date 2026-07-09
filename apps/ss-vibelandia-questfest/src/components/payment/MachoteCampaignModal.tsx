@@ -1,16 +1,19 @@
 import {
+  MACHOTE_BOOK_MAIL,
+  MACHOTE_CAMPAIGN_CHECKLIST,
   MACHOTE_CAMPAIGN_COVER_ALT,
   MACHOTE_CAMPAIGN_COVER_SRC,
   MACHOTE_CAMPAIGN_EYEBROW,
-  MACHOTE_CAMPAIGN_JOIN_CTA,
+  MACHOTE_CAMPAIGN_HIRE_CTA,
   MACHOTE_CAMPAIGN_LEDE,
-  MACHOTE_CAMPAIGN_REASONS,
+  MACHOTE_CAMPAIGN_QUEST_CTA,
+  MACHOTE_CAMPAIGN_TAGLINE,
   MACHOTE_CAMPAIGN_TITLE,
+  MACHOTE_CAMPAIGN_UNIVERSE_TEASER,
+  MACHOTE_GUEST_PATH,
+  MACHOTE_QUESTFEST_UNIVERSE_PATH,
   MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB,
-  MACHOTE_ROOM_SERVICE_CTA,
-  MACHOTE_ROOM_SERVICE_PATH,
   MACHOTE_ROOM_SERVICE_REGIONS,
-  machoteMagazineFollowUrl,
 } from '@/lib/machoteMembership';
 
 interface MachoteCampaignModalProps {
@@ -52,54 +55,34 @@ export function MachoteCampaignModal({ open, onClose, hasMembersAccess = false }
         <h2 id="machote-campaign-title" className="modal-title modal-title--warm">
           {MACHOTE_CAMPAIGN_TITLE}
         </h2>
+        <p className="machote-campaign-tagline">{MACHOTE_CAMPAIGN_TAGLINE}</p>
         <p className="modal-body modal-body--warm machote-campaign-lede">
-          {MACHOTE_CAMPAIGN_LEDE}
+          <strong>Need an extra pair of hands?</strong> {MACHOTE_CAMPAIGN_LEDE}
         </p>
-        <ol className="machote-campaign-reasons">
-          {MACHOTE_CAMPAIGN_REASONS.map((r, i) => (
-            <li key={r.title}>
-              <span className="machote-campaign-num">{i + 1}</span>
-              <div>
-                <strong>{r.title}</strong>
-                <p>
-                  {r.body}
-                  {r.footerLinkLabel ? (
-                    <>
-                      {' '}
-                      <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
-                        {r.footerLinkLabel}
-                      </a>
-                      .
-                    </>
-                  ) : null}
-                </p>
-              </div>
-            </li>
+        <ul className="machote-campaign-checklist">
+          {MACHOTE_CAMPAIGN_CHECKLIST.map((item) => (
+            <li key={item}>{item}</li>
           ))}
-        </ol>
-        <aside className="machote-campaign-roomservice">
-          <p className="modal-body modal-body--warm" style={{ margin: 0 }}>
-            {MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB} Explore the full service walkthrough.
+        </ul>
+        <p className="machote-campaign-regions">{MACHOTE_ROOM_SERVICE_REGIONS}</p>
+        <div className="machote-campaign-dual-nav">
+          <a className="machote-campaign-dual-nav__btn machote-campaign-dual-nav__btn--hire" href={MACHOTE_BOOK_MAIL}>
+            {MACHOTE_CAMPAIGN_HIRE_CTA}
+          </a>
+          <a className="machote-campaign-dual-nav__btn machote-campaign-dual-nav__btn--quest" href={MACHOTE_QUESTFEST_UNIVERSE_PATH}>
+            {MACHOTE_CAMPAIGN_QUEST_CTA}
+          </a>
+        </div>
+        <aside className="machote-campaign-universe-teaser">
+          <p>
+            <strong>{MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB}</strong>
           </p>
-          <p className="modal-body modal-body--warm machote-campaign-roomservice-regions" style={{ margin: '0.5rem 0 0' }}>
-            {MACHOTE_ROOM_SERVICE_REGIONS}
-          </p>
-          <a className="voxel-btn voxel-btn--swamp-gold machote-campaign-roomservice__cta" href={MACHOTE_ROOM_SERVICE_PATH}>
-            {MACHOTE_ROOM_SERVICE_CTA}
+          <p>{MACHOTE_CAMPAIGN_UNIVERSE_TEASER}</p>
+          <a className="machote-campaign-browse" href={MACHOTE_GUEST_PATH}>
+            Browse services →
           </a>
         </aside>
         <div className="modal-actions machote-campaign-actions">
-          <a className="voxel-btn voxel-btn--swamp-gold" href={MACHOTE_ROOM_SERVICE_PATH}>
-            {MACHOTE_ROOM_SERVICE_CTA}
-          </a>
-          <a
-            className="voxel-btn voxel-btn--swamp-gold"
-            href={machoteMagazineFollowUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {MACHOTE_CAMPAIGN_JOIN_CTA}
-          </a>
           <button type="button" className="voxel-btn voxel-btn--ghost-warm" onClick={onClose}>
             Maybe later
           </button>

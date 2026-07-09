@@ -9,7 +9,7 @@
     return path.includes('bulletin-board');
   }
 
-  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v7';
+  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v8';
   var LEGACY_DISMISS_KEY = 'machote-members-campaign-dismissed-v2';
   var PASS_TOKEN_KEY = 'qv-pass-token';
   var LOCAL_HONOR_KEY = 'qv-local-monthly-honor';
@@ -128,7 +128,7 @@
       document.body.style.overflow = 'hidden';
       var focusTarget = root.querySelector('.machote-campaign-close') ||
         root.querySelector('[data-machote-later]') ||
-        root.querySelector('.machote-campaign-btn--gold');
+        root.querySelector('.machote-campaign-dual-nav__btn--hire');
       if (focusTarget) focusTarget.focus();
     }
 

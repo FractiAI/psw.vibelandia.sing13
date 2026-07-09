@@ -38,19 +38,21 @@ export const MACHOTE_ROOM_SERVICE_PATH = '/hire-a-goldilocks-valet-concierge';
 export const MACHOTE_ROOM_SERVICE_TITLE = 'Hire-A-Goldilocks-Valet-Concierge';
 
 export const MACHOTE_ROOM_SERVICE_TAGLINE =
-  'QUESTFEST room service in Puerto Reno · guests · no-cost Goldilocks Valet franchise';
+  'QUESTFEST Goldilocks Room Service in Puerto Reno · guests · no-cost Goldilocks Valet franchise';
 
 export const MACHOTE_ROOM_SERVICE_REGIONS =
   'Downtown · Midtown · UNR · Idlewild · Reno Experience District';
 
 export const MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB =
-  'A QUESTFEST service built to solve dense-neighborhood friction: slow errands, parking churn, and last-mile coordination gaps. Email Pru to join as guest or franchisee. Guests broadcast want + tip offer; franchise valets on electric bike or e-scooter accept what fits. Transparency: franchisees keep 67% of accepted tip offers — not all of it; the app takes 33%. Expansion candidacy is open for new dense Goldilocks regions.';
+  'Howard Hughes Pioneering, Golden Age Spirit. Electric bikes and e-scooters — good for the environment and good for Valet Franchisee wallets.';
 
-export const MACHOTE_ROOM_SERVICE_CTA = 'Room service & franchise →';
+export const MACHOTE_ROOM_SERVICE_CTA = 'Explore Hire-A-Goldilocks-Valet-Concierge →';
 
-export const MACHOTE_CAMPAIGN_EYEBROW = 'FOLLOW MACHOTE MODERNO MAGAZINE ON FACEBOOK TO QUALIFY';
+export const MACHOTE_CAMPAIGN_JOIN_CTA = 'Follow Machote on Facebook to join →';
 
-export const MACHOTE_CAMPAIGN_TITLE = 'Service intention · problems we help solve';
+export const MACHOTE_CAMPAIGN_EYEBROW = 'THE GOLDILOCKS EXPERIENCE · QUESTFEST · PUERTO RENO';
+
+export const MACHOTE_CAMPAIGN_TITLE = 'The Goldilocks Experience';
 
 export const MACHOTE_MEMBERS_PASS_TITLE = 'Members pass · full music catalog';
 
@@ -84,7 +86,7 @@ export const MACHOTE_CREW_LINE =
 export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
 
 export const MACHOTE_CAMPAIGN_LEDE =
-  'Follow Machote Moderno Magazine on Facebook to qualify. Most rideshare applications are tuned to maximize platform profits; Hire-A-Goldilocks is tuned to do the right thing for all parties — human coordination, sovereign pacing, and transparent tip splits: franchise valets keep 67% of accepted guest tip offers; the app takes 33% for channel and coordination.';
+  "What's it mean? Goldilocks is where win-win-wins converge — not too much, not too little for guests, franchise valets, purveyors, and the environment. Hire-A-Goldilocks-Valet-Concierge is QUESTFEST room service in Puerto Reno: order from your purveyor of choice, book a Valet to pick up and deliver, or let us handle everything for 18% of the total bill.";
 
 export const MACHOTE_BEEHIVE_CAMPAIGN_BLURB =
   'Machote members only. Old School Protocol: interested party nodes contact PL Taino directly. 2-week test drive for all parties, then month, season, or longer. Open calendar for the rest of 2026 — fills very fast.';
@@ -104,19 +106,19 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   footerLinkLabel?: string;
 }[] = [
   {
-    title: 'Service intention',
+    title: 'What it is',
     body:
-      'Practical daily support with dignity: food delivery, personal shopping, and personal assistance by the hour or day across Downtown, Midtown, UNR, Idlewild, and the Reno Experience District.',
+      'Core-centric room service in dense hubs: food delivery, personal shopping, and personal assistance by the hour or day. Human coordination on electric bike or e-scooter. Old-school pacing. No app store. No surge math.',
   },
   {
-    title: 'Problems we help solve',
+    title: 'Why it exists',
     body:
-      'Current rideshare apps optimize for extraction: surge pressure, opaque take rates, and incentives that can work against guests, operators, and local partners. Hire-A-Goldilocks is tuned for what is right for all: Fair Exchange with open math — franchise valets do not keep every tip dollar; they keep 67% of accepted offers as franchisees, and the app takes 33%. No-cost franchise lanes for qualified electric bike/e-scooter operators.',
+      'Rideshare apps maximize platform profit; Goldilocks is tuned for what is right for all. Short runs worth doing without sprawl markup. Guests who get it stay in their rhythm — Fair Exchange with open tip splits: franchise valets keep 67%; the app takes 33%.',
   },
   {
-    title: 'Full Sonic Singularity catalog · caliente',
+    title: 'Interested in joining?',
     body:
-      'Pass holders get every Reno swamp beat from Hero Jo\'s Golden Bachdoor Hit Factory — background play, exports offline (extra charge). Honor pass $16.18/mo for',
-    footerLinkLabel: 'Machote Moderno followers',
+      'Follow Machote Moderno Magazine on Facebook if you want to join Hire-A-Goldilocks-Valet-Concierge as guest or Goldilocks Valet franchisee —',
+    footerLinkLabel: 'Machote Moderno on Facebook',
   },
 ];

@@ -1,28 +1,25 @@
-import { EGS_MONTHLY_USD } from '@/lib/paymentRails';
 import {
   MACHOTE_CAMPAIGN_COVER_ALT,
   MACHOTE_CAMPAIGN_COVER_SRC,
-  MACHOTE_CAMPAIGN_CTA,
   MACHOTE_CAMPAIGN_EYEBROW,
+  MACHOTE_CAMPAIGN_JOIN_CTA,
+  MACHOTE_CAMPAIGN_LEDE,
   MACHOTE_CAMPAIGN_REASONS,
   MACHOTE_CAMPAIGN_TITLE,
-  MACHOTE_MAGAZINE_NAME,
   MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB,
   MACHOTE_ROOM_SERVICE_CTA,
   MACHOTE_ROOM_SERVICE_PATH,
   MACHOTE_ROOM_SERVICE_REGIONS,
-  MACHOTE_ROOM_SERVICE_TITLE,
   machoteMagazineFollowUrl,
 } from '@/lib/machoteMembership';
 
 interface MachoteCampaignModalProps {
   open: boolean;
   onClose: () => void;
-  onGetPass: () => void;
   hasMembersAccess?: boolean;
 }
 
-export function MachoteCampaignModal({ open, onClose, onGetPass, hasMembersAccess = false }: MachoteCampaignModalProps) {
+export function MachoteCampaignModal({ open, onClose, hasMembersAccess = false }: MachoteCampaignModalProps) {
   if (!open) return null;
 
   return (
@@ -56,12 +53,7 @@ export function MachoteCampaignModal({ open, onClose, onGetPass, hasMembersAcces
           {MACHOTE_CAMPAIGN_TITLE}
         </h2>
         <p className="modal-body modal-body--warm machote-campaign-lede">
-          <strong>{MACHOTE_ROOM_SERVICE_TITLE}</strong> is built to reduce daily friction in Puerto Reno.
-          Follow{' '}
-          <a href={machoteMagazineFollowUrl()} target="_blank" rel="noopener noreferrer">
-            {MACHOTE_MAGAZINE_NAME}
-          </a>{' '}
-          on Facebook to qualify — then <strong>${EGS_MONTHLY_USD.toFixed(2)}/mo</strong> on honor unlocks the full Sonic Singularity catalog.
+          {MACHOTE_CAMPAIGN_LEDE}
         </p>
         <ol className="machote-campaign-reasons">
           {MACHOTE_CAMPAIGN_REASONS.map((r, i) => (
@@ -87,7 +79,7 @@ export function MachoteCampaignModal({ open, onClose, onGetPass, hasMembersAcces
         </ol>
         <aside className="machote-campaign-roomservice">
           <p className="modal-body modal-body--warm" style={{ margin: 0 }}>
-            <strong>New ·</strong> {MACHOTE_ROOM_SERVICE_TITLE} — {MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB}
+            {MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB} Explore the full service walkthrough.
           </p>
           <p className="modal-body modal-body--warm machote-campaign-roomservice-regions" style={{ margin: '0.5rem 0 0' }}>
             {MACHOTE_ROOM_SERVICE_REGIONS}
@@ -100,11 +92,14 @@ export function MachoteCampaignModal({ open, onClose, onGetPass, hasMembersAcces
           <a className="voxel-btn voxel-btn--swamp-gold" href={MACHOTE_ROOM_SERVICE_PATH}>
             {MACHOTE_ROOM_SERVICE_CTA}
           </a>
-          {!hasMembersAccess ? (
-            <button type="button" className="voxel-btn voxel-btn--swamp-gold" onClick={onGetPass}>
-              {MACHOTE_CAMPAIGN_CTA}
-            </button>
-          ) : null}
+          <a
+            className="voxel-btn voxel-btn--swamp-gold"
+            href={machoteMagazineFollowUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {MACHOTE_CAMPAIGN_JOIN_CTA}
+          </a>
           <button type="button" className="voxel-btn voxel-btn--ghost-warm" onClick={onClose}>
             Maybe later
           </button>

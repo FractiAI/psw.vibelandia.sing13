@@ -9,7 +9,7 @@
     return path.includes('bulletin-board');
   }
 
-  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v5';
+  var SESSION_DISMISS_KEY = 'machote-campaign-dismissed-session-v7';
   var LEGACY_DISMISS_KEY = 'machote-members-campaign-dismissed-v2';
   var PASS_TOKEN_KEY = 'qv-pass-token';
   var LOCAL_HONOR_KEY = 'qv-local-monthly-honor';

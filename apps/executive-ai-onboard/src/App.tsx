@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { useCourseStore } from '@/store/courseStore';
+import { usePageViews } from '@/hooks/usePageViews';
 import type { ModuleId } from '@/content/course';
 import { ProgressRail, TutorSidebar, GlossaryPanel, ThemeToggle } from '@/components/shell/CourseShell';
 import { WelcomeModule } from '@/components/modules/WelcomeModule';
@@ -56,6 +57,7 @@ function ModuleView({ id }: { id: ModuleId }) {
 
 export default function App() {
   const current = useCourseStore((s) => s.currentModule);
+  usePageViews(current);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

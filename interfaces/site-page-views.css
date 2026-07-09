@@ -1,0 +1,24 @@
+.site-page-visits {
+  position: fixed;
+  right: 0.55rem;
+  bottom: 0.4rem;
+  z-index: 60;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  color: rgba(168, 162, 158, 0.82);
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 480px) {
+  .site-page-visits {
+    right: 0.45rem;
+    bottom: max(0.35rem, env(safe-area-inset-bottom, 0.35rem));
+    font-size: 0.58rem;
+  }
+}

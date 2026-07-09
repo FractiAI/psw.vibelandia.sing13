@@ -9,6 +9,8 @@ import { JukeboxListenPage } from './pages/JukeboxListenPage';
 import { JukeboxNowPlayingPage } from './pages/JukeboxNowPlayingPage';
 import { RegistrationPage } from './pages/RegistrationPage';
 
+import { usePageViews } from '@/hooks/usePageViews';
+
 function AppChrome() {
   const { pathname } = useLocation();
   const noPlayerRoute = pathname === '/dj' || pathname === '/bulk-upload';
@@ -22,6 +24,7 @@ function AppChrome() {
 
 export default function App() {
   useIOSHtmlClass();
+  usePageViews();
   return (
     <>
       <Routes>

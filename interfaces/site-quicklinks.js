@@ -1,5 +1,13 @@
 /** Injects global Bulletin Board quick link before site footers. */
 (function () {
+  if (!window.__qvPageViewsBoot && !document.querySelector('script[data-qv-page-views]')) {
+    var pv = document.createElement('script');
+    pv.src = '/interfaces/site-page-views.js';
+    pv.defer = true;
+    pv.setAttribute('data-qv-page-views', '1');
+    document.head.appendChild(pv);
+  }
+
   if (!document.querySelector('link[href*="brand-gold-surfaces"]')) {
     const brand = document.createElement('link');
     brand.rel = 'stylesheet';

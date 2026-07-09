@@ -137,6 +137,35 @@ body {
   border-color: rgba(212, 175, 55, 0.35);
   background: linear-gradient(135deg, rgba(26, 18, 12, 0.72), rgba(12, 10, 8, 0.55));
 }
+
+.grs-experience {
+  margin-bottom: 2rem;
+  border-color: rgba(212, 175, 55, 0.5);
+  background: linear-gradient(160deg, rgba(36, 26, 16, 0.88), rgba(18, 12, 8, 0.72));
+}
+
+.grs-experience__lede {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--grs-champagne);
+}
+
+.grs-experience__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--grs-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.grs-experience__list li + li {
+  margin-top: 0.55rem;
+}
+
+.grs-experience__list strong {
+  color: var(--grs-gold-hi);
+}
 .grs-portal.grs-franchise {
   border-color: rgba(212, 175, 55, 0.4);
   background: linear-gradient(160deg, rgba(32, 22, 14, 0.85), rgba(18, 12, 8, 0.65));

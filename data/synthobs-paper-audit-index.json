@@ -103,28 +103,6 @@
       }
     },
     {
-      "id": "egs-trans-jspace-convergence-2026-07",
-      "title": "The Silicon-Biological Convergence: King Bee Directive & Anthropic J-Space Structural Validation",
-      "source": "docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md",
-      "overallScore": 0.971,
-      "convergence": {
-        "status": "pass",
-        "reason": "threshold_met"
-      },
-      "mode": "structural_only",
-      "blockers": [],
-      "auditId": "451a4a949808b422",
-      "updated": "2026-07-10T09:45:55.636Z",
-      "metaAudit": {
-        "dualMakeConfirmed": false,
-        "mode": "structural_only",
-        "authorMake": "OpenAI",
-        "authorModel": "gpt-4o-2024-08-06",
-        "reviewerMake": "Anthropic",
-        "reviewerModel": "claude-sonnet-4-20250514"
-      }
-    },
-    {
       "id": "omniversal-goldilocks-rideshare-2026-07",
       "title": "Omniversal Goldilocks Rideshare Protocol · Multi-Dimensional Resource Routing & Thermodynamic Optimization",
       "source": "docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md",

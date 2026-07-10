@@ -1,6 +1,6 @@
 # EGS-TRANS-2026-0710 · Empirical Report
 
-**Generated:** 2026-07-10T09:45:45.571Z
+**Generated:** 2026-07-10T14:51:33.597Z
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 
 ## Hypothesis tests
@@ -21,7 +21,7 @@
 - **Result:** skipped
 
 ### E6_causal_anthropic_jspace
-- **Result:** not_testable_in_repo
+- **Result:** testable_with_internal_tier_access
 
 ## Reproduce
 
@@ -29,4 +29,4 @@
 npm run empirical
 ```
 
-E1–E5 test reproducible public or synthetic signals. E6 and Anthropic↔King Bee causality remain narrative until third-party instrument data is available. Correlation ≠ causation.
+E1–E5 test reproducible public or synthetic signals. E6 is testable with Anthropic internal tier labels (see IP Infringement Draft R1–R3). Correlation ≠ causation until tier receipts complete E6.

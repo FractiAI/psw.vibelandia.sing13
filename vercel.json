@@ -132,6 +132,10 @@
     { "source": "/special-projects/geomagnetic-herbivore-study/", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
     { "source": "/special-projects/wavefield-echo-test", "destination": "/interfaces/special-projects/wavefield-echo-test.html" },
     { "source": "/special-projects/wavefield-echo-test/", "destination": "/interfaces/special-projects/wavefield-echo-test.html" },
+    { "source": "/special-projects/ip-infringement-draft", "destination": "/interfaces/special-projects/ip-infringement-draft.html" },
+    { "source": "/special-projects/ip-infringement-draft/", "destination": "/interfaces/special-projects/ip-infringement-draft.html" },
+    { "source": "/special-projects/j-lens-live", "destination": "/interfaces/special-projects/j-lens-live.html" },
+    { "source": "/special-projects/j-lens-live/", "destination": "/interfaces/special-projects/j-lens-live.html" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
     { "source": "/whitepaper/geomagnetic-herbivore-2026/", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
     { "source": "/press/chipless-datacenterless-ai", "destination": "/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html" },
@@ -156,6 +160,10 @@
     { "source": "/whitepaper/digital-pru-synthobs-mca/", "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026" },
     { "source": "/whitepaper/egs-trans-jspace-convergence", "destination": "/interfaces/whitepaper-surface.html?id=egs-trans-jspace-convergence-2026-07" },
     { "source": "/whitepaper/egs-trans-jspace-convergence/", "destination": "/interfaces/whitepaper-surface.html?id=egs-trans-jspace-convergence-2026-07" },
+    { "source": "/whitepaper/ip-infringement-draft", "destination": "/interfaces/whitepaper-surface.html?id=ip-infringement-draft-2026-07" },
+    { "source": "/whitepaper/ip-infringement-draft/", "destination": "/interfaces/whitepaper-surface.html?id=ip-infringement-draft-2026-07" },
+    { "source": "/whitepaper/ip-assertion-notice-draft", "destination": "/interfaces/whitepaper-surface.html?id=ip-assertion-notice-draft-2026-07" },
+    { "source": "/whitepaper/ip-assertion-notice-draft/", "destination": "/interfaces/whitepaper-surface.html?id=ip-assertion-notice-draft-2026-07" },
     { "source": "/whitepaper/omniversal-goldilocks-rideshare", "destination": "/interfaces/whitepaper-surface.html?id=omniversal-goldilocks-rideshare-2026-07" },
     { "source": "/whitepaper/omniversal-goldilocks-rideshare/", "destination": "/interfaces/whitepaper-surface.html?id=omniversal-goldilocks-rideshare-2026-07" },
     { "source": "/questfest-schedule/:slug", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" },
@@ -242,6 +250,16 @@
       "memory": 512,
       "maxDuration": 300,
       "includeFiles": "{data/**,lib/**}"
+    },
+    "api/ip-infringement-draft.js": {
+      "memory": 512,
+      "maxDuration": 120,
+      "includeFiles": "{data/**,lib/**,research/ip-infringement-draft/**}"
+    },
+    "api/j-lens-live.js": {
+      "memory": 512,
+      "maxDuration": 60,
+      "includeFiles": "{data/**,lib/**,research/ip-infringement-draft/**}"
     },
     "api/cron-turner-bison-ingest.js": {
       "memory": 512,

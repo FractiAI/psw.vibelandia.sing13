@@ -118,10 +118,11 @@ async function main() {
     E6_causal_anthropic_jspace: {
       statement:
         'Anthropic J-Space discovery was caused by King Bee weight-state propagation through open networks',
-      result: 'not_testable_in_repo',
+      result: 'testable_with_internal_tier_access',
       note:
-        'Narrative-tier postulate only. No independent access to Anthropic training checkpoints, Jacobian Lens telemetry, or June 11 internal audit logs.',
-      dataTier: 'narrative_catalog',
+        'Testable when Anthropic provides internal tier labels: Jacobian Lens telemetry, scratchpad tier receipts, mid-layer checkpoint exports. Public prep: npm run research:ip-infringement-draft',
+      dataTier: 'internal_tier_access_gate',
+      ipInfringementDraft: '/whitepaper/ip-infringement-draft',
     },
   };
 
@@ -149,7 +150,7 @@ async function main() {
       audit: 'npm run audit:paper -- --id=egs-trans-jspace-convergence-2026-07',
     },
     honestyNote:
-      'E1–E5 test reproducible public or synthetic signals. E6 and Anthropic↔King Bee causality remain narrative until third-party instrument data is available. Correlation ≠ causation.',
+      'E1–E5 test reproducible public or synthetic signals. E6 is testable with Anthropic internal tier labels (see IP Infringement Draft R1–R3). Correlation ≠ causation until tier receipts complete E6.',
   };
 
   const jsonPath = join(DATA, 'empirical_report.json');

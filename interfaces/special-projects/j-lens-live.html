@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="ss-vibelandia-deck">
+<head>
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>J-Lens Live · SynthOBS φ Compression Dashboard</title>
+  <meta name="description" content="King Bee node structure · φ ≈ 1.618 compression limit · open-weights echo · IP-INFRINGE R3" />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/j-lens-live" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <style>
+    .jl-nodes { display: grid; gap: 0.65rem; margin: 1.25rem 0; }
+    .jl-node {
+      padding: 0.75rem 1rem; border-radius: 8px;
+      border: 1px solid rgba(94,234,212,0.35);
+      background: rgba(15,23,42,0.75);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .jl-node--phi { border-color: rgba(250,204,21,0.55); box-shadow: 0 0 18px rgba(250,204,21,0.08); }
+    .jl-node__label { color: #f5f0e8; font-size: 0.92rem; }
+    .jl-node__layer { font-size: 0.75rem; color: #94a3b8; }
+    .jl-metric {
+      margin: 1rem 0; padding: 1rem; border-radius: 10px;
+      border: 2px solid rgba(250,204,21,0.4); background: rgba(15,23,42,0.85);
+    }
+    .jl-metric__val { font-family: "Bebas Neue", sans-serif; font-size: 2rem; color: #fef3c7; letter-spacing: 0.05em; }
+    .jl-bars { display: flex; gap: 4px; align-items: flex-end; height: 64px; margin-top: 1rem; }
+    .jl-bar { flex: 1; background: linear-gradient(180deg, #facc15, #b45309); border-radius: 3px 3px 0 0; min-width: 8px; }
+    .jl-report { font-size: 0.8rem; max-height: 12rem; overflow: auto; white-space: pre-wrap; color: #d6cfc4; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <a class="deck-back" href="/special-projects/ip-infringement-draft">&larr; IP Infringement Draft</a>
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="/whitepaper/egs-trans-jspace-convergence">EGS-TRANS</a><span class="dot">·</span>
+      <span class="here">J-Lens Live</span>
+    </nav>
+
+    <p class="deck-eyebrow">R3 · IP-INFRINGE-2026-07 · SynthOBS</p>
+    <h1 class="deck-h1">J-Lens Live Dashboard</h1>
+    <p class="deck-tagline">King Bee node structure · φ 1.618 compression limit · reproducible under command</p>
+
+    <div class="deck-btn-row">
+      <button type="button" class="deck-btn deck-btn--gold" id="jl-refresh">Pulse live probe</button>
+      <a class="deck-btn deck-btn--ghost" href="/api/j-lens-live" target="_blank" rel="noopener">JSON API</a>
+    </div>
+
+    <div class="jl-metric" aria-live="polite">
+      <p class="deck-section-label">Primary SVD ratio · EGS φ target</p>
+      <p class="jl-metric__val" id="jl-ratio">…</p>
+      <p id="jl-status" style="color:#a8a29e;font-size:0.9rem;margin:0;">Loading…</p>
+      <div class="jl-bars" id="jl-bars" aria-hidden="true"></div>
+    </div>
+
+    <p class="deck-section-label">King Bee node lattice</p>
+    <div class="jl-nodes" id="jl-nodes"></div>
+
+    <pre class="jl-report" id="jl-report">Loading…</pre>
+  </main>
+  <script>
+    (function () {
+      const PHI = 1.618033988749895;
+      async function load() {
+        try {
+          const res = await fetch('/api/j-lens-live');
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.message || 'failed');
+          const mean = data.phiStructured && data.phiStructured.primaryRatioMean;
+          document.getElementById('jl-ratio').textContent = mean != null
+            ? mean.toFixed(4) + ' / ' + PHI.toFixed(4)
+            : '—';
+          const ok = data.compressionLimitReproducible;
+          document.getElementById('jl-status').textContent = ok
+            ? 'Compression limit REPRODUCIBLE · φ-structured >> random baseline'
+            : 'Probe inconclusive — refresh or run open-weights CLI';
+          const samples = (data.phiStructured && data.phiStructured.sampleRatios) || [];
+          document.getElementById('jl-bars').innerHTML = samples.map(function (v) {
+            var h = Math.min(100, Math.max(8, Math.abs(v - PHI) < 0.12 ? 90 : 40));
+            return '<div class="jl-bar" style="height:' + h + '%" title="' + v + '"></div>';
+          }).join('');
+          document.getElementById('jl-nodes').innerHTML = (data.kingBeeNodes || []).map(function (n) {
+            return '<div class="jl-node' + (n.phiLock ? ' jl-node--phi' : '') + '">' +
+              '<span class="jl-node__label">' + n.label + '</span>' +
+              '<span class="jl-node__layer">layer ' + n.layer + (n.phiLock ? ' · φ lock' : '') + '</span></div>';
+          }).join('');
+          document.getElementById('jl-report').textContent = JSON.stringify({
+            e6AccessTier: data.e6AccessTier,
+            phiStructured: data.phiStructured,
+            randomBaseline: data.randomBaseline,
+            openWeightsHook: data.openWeightsHook,
+          }, null, 2);
+        } catch (e) {
+          document.getElementById('jl-report').textContent = 'Load failed: ' + e.message;
+        }
+      }
+      document.getElementById('jl-refresh').addEventListener('click', load);
+      load();
+      setInterval(load, 60000);
+    })();
+  </script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

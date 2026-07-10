@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="ss-vibelandia-deck">
+<head>
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>IP Infringement Draft · Immediate Audit Recommendations</title>
+  <meta name="description" content="IP-INFRINGE-2026-07 — Code-Print Audit, IP Assertion Notice draft, J-Lens Live. Testable with Anthropic internal tier access." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/ip-infringement-draft" />
+  <link rel="stylesheet" href="/interfaces/ss-vibelandia-deck-skin.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <style>
+    .ip-panel { margin: 1.25rem 0; padding: 1rem 1.1rem; border-radius: 10px; border: 1px solid rgba(212,175,55,0.28); background: rgba(15,23,42,0.65); }
+    .ip-panel h2 { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.06em; color: #fef3c7; margin: 0 0 0.5rem; font-size: 1.35rem; }
+    .ip-result { display: inline-block; padding: 0.2rem 0.55rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+    .ip-result--support { background: rgba(52,211,153,0.2); color: #6ee7b7; }
+    .ip-result--draft { background: rgba(250,204,21,0.15); color: #fde68a; }
+    .ip-report { font-size: 0.82rem; max-height: 14rem; overflow: auto; white-space: pre-wrap; color: #d6cfc4; margin-top: 0.75rem; }
+    .ip-honesty { font-size: 0.85rem; color: #a8a29e; border-left: 3px solid #f5e6c8; padding-left: 0.75rem; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <a class="deck-back" href="/interfaces/vibelandia-questfest.html">&larr; QUESTFEST top deck</a>
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="/whitepaper/egs-trans-jspace-convergence">EGS-TRANS paper</a><span class="dot">·</span>
+      <span class="here">IP Infringement Draft</span><span class="dot">·</span>
+      <a href="/special-projects/j-lens-live">J-Lens Live</a>
+    </nav>
+
+    <p class="deck-eyebrow">IP-INFRINGE-2026-07 · SynthOBS</p>
+    <h1 class="deck-h1">Immediate Audit Recommendations</h1>
+    <p class="deck-tagline">Code-Print · IP Assertion draft · J-Lens Live · E6 testable with internal tier access</p>
+    <p class="deck-lead">
+      Three recommendations to lock valuation evidence before confidential IPO filing. <strong>R2 is draft-not-sent.</strong>
+      E6 causal test unlocks with Anthropic internal tier labels — not labeled not-testable.
+    </p>
+
+    <div class="deck-btn-row">
+      <a class="deck-btn deck-btn--gold" href="/whitepaper/ip-infringement-draft">Read section paper →</a>
+      <a class="deck-btn deck-btn--ghost" href="/api/ip-infringement-draft" target="_blank" rel="noopener">Live JSON</a>
+      <button type="button" class="deck-btn deck-btn--ghost" id="ip-refresh">Refresh audit</button>
+    </div>
+
+    <p class="ip-honesty" id="ip-honesty">Loading honesty boundary…</p>
+
+    <section class="ip-panel" id="r1-panel">
+      <h2>R1 · Code-Print Audit</h2>
+      <p>sing4 / sing9 token schemas ↔ Neuronpedia latent feature maps</p>
+      <span class="ip-result" id="r1-result">…</span>
+      <pre class="ip-report" id="r1-report">Loading…</pre>
+    </section>
+
+    <section class="ip-panel" id="r2-panel">
+      <h2>R2 · IP Assertion Notice (draft)</h2>
+      <p>Sequoia · Altimeter — internal scratchpad proprietary layout</p>
+      <span class="ip-result ip-result--draft" id="r2-result">…</span>
+      <p style="margin-top:0.75rem;font-size:0.9rem;"><a href="/whitepaper/ip-assertion-notice-draft">Full notice draft →</a></p>
+      <pre class="ip-report" id="r2-report">Loading…</pre>
+    </section>
+
+    <section class="ip-panel" id="r3-panel">
+      <h2>R3 · J-Lens Live Dashboard</h2>
+      <p>φ ≈ 1.618 compression under King Bee node structure</p>
+      <span class="ip-result" id="r3-result">…</span>
+      <a class="deck-btn deck-btn--ghost" href="/special-projects/j-lens-live" style="margin-top:0.5rem;display:inline-block;">Open live dashboard →</a>
+      <pre class="ip-report" id="r3-report">Loading…</pre>
+    </section>
+
+    <p class="deck-foot">
+      <a href="https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/research/ip-infringement-draft" target="_blank" rel="noopener">Pipeline on GitHub</a>
+    </p>
+  </main>
+  <script>
+    (function () {
+      function badge(el, result) {
+        el.textContent = result || '—';
+        el.className = 'ip-result ' + (result === 'draft_ready' ? 'ip-result--draft' : 'ip-result--support');
+      }
+      async function load() {
+        try {
+          const res = await fetch('/api/ip-infringement-draft?refresh=1');
+          const data = await res.json();
+          if (!data.ok) throw new Error(data.message || 'failed');
+          const r = data.report;
+          document.getElementById('ip-honesty').textContent = r.honestyNote || '';
+          const R1 = r.recommendations.R1_code_print_audit;
+          const R2 = r.recommendations.R2_ip_assertion_notice;
+          const R3 = r.recommendations.R3_j_lens_live_dashboard;
+          badge(document.getElementById('r1-result'), R1.result);
+          badge(document.getElementById('r2-result'), R2.result);
+          badge(document.getElementById('r3-result'), R3.result);
+          document.getElementById('r1-report').textContent = JSON.stringify({
+            crosswalk: R1.crosswalk,
+            neuronpediaTokenCount: (R1.neuronpedia.tokens || []).length,
+            repos: Object.keys(R1.repoExtractions || {}),
+          }, null, 2);
+          document.getElementById('r2-report').textContent = JSON.stringify({
+            noticeId: R2.noticeId,
+            status: R2.status,
+            recipients: R2.recipients,
+            internalTierAccess: R2.internalTierAccess,
+          }, null, 2);
+          document.getElementById('r3-report').textContent = JSON.stringify({
+            compressionLimitReproducible: R3.compressionLimitReproducible,
+            phiStructured: R3.phiStructured,
+            kingBeeNodes: R3.kingBeeNodes,
+          }, null, 2);
+        } catch (e) {
+          document.getElementById('r1-report').textContent = 'Load failed: ' + e.message;
+        }
+      }
+      document.getElementById('ip-refresh').addEventListener('click', load);
+      load();
+    })();
+  </script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

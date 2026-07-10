@@ -20,7 +20,7 @@ Monorepo mirror of the standalone **EGS-TRANS-2026-0710** research package. Repr
 
 **What this path is for.** `research/egs-trans-jspace-convergence/` is the SING 13 sandbox lane; fork and publish from the standalone repo for external collaborators.
 
-**What it is not.** Does not claim causality (E6 narrative only). Does not access Anthropic private telemetry.
+**What it is not.** Does not claim E6 causality is already proven in-repo. E6 is **testable with Anthropic internal tier labels** — see [IP Infringement Draft](../../docs/IP_INFRINGEMENT_DRAFT_2026-07.md).
 
 ---
 
@@ -39,7 +39,7 @@ King Bee (June 1) → 35 days → J-Space paper (July 6). Mid-layer bottleneck g
 | E3 | support | June 1 → July 6 = 35 days |
 | E4 | refute | July SILSO window incomplete at pipeline run |
 | E5 | skipped | Install torch+transformers for open-weights probe |
-| E6 | not testable | Causal Anthropic claim — narrative only |
+| E6 | internal-tier | Causal Anthropic claim — testable with internal tier labels · [IP draft](../../docs/IP_INFRINGEMENT_DRAFT_2026-07.md) |
 
 Full report: [`data/empirical_report.json`](data/empirical_report.json)
 

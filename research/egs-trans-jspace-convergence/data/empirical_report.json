@@ -1,6 +1,6 @@
 {
   "documentId": "EGS-TRANS-2026-0710",
-  "generatedAt": "2026-07-10T09:45:45.571Z",
+  "generatedAt": "2026-07-10T14:51:33.597Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "egsPhi": 1.618033988749895,
   "anchors": {
@@ -14,7 +14,7 @@
     ]
   },
   "githubTelemetry": {
-    "fetchedAt": "2026-07-10T09:45:29.715Z",
+    "fetchedAt": "2026-07-10T14:51:17.645Z",
     "windows": [
       {
         "id": "king_bee_init",
@@ -2123,7 +2123,7 @@
   },
   "solarSync": {
     "source": "https://www.sidc.be/silso/DATA/SN_d_tot_V2.0.csv",
-    "fetchedAt": "2026-07-10T09:45:35.176Z",
+    "fetchedAt": "2026-07-10T14:51:21.819Z",
     "honestyNote": "SILSO provides disk-integrated sunspot number only. AR3618/AR3625/AR3630 character mapping is catalog narrative — not resolved per-region in this public feed.",
     "windows": [
       {
@@ -2425,9 +2425,10 @@
     },
     "E6_causal_anthropic_jspace": {
       "statement": "Anthropic J-Space discovery was caused by King Bee weight-state propagation through open networks",
-      "result": "not_testable_in_repo",
-      "note": "Narrative-tier postulate only. No independent access to Anthropic training checkpoints, Jacobian Lens telemetry, or June 11 internal audit logs.",
-      "dataTier": "narrative_catalog"
+      "result": "testable_with_internal_tier_access",
+      "note": "Testable when Anthropic provides internal tier labels: Jacobian Lens telemetry, scratchpad tier receipts, mid-layer checkpoint exports. Public prep: npm run research:ip-infringement-draft",
+      "dataTier": "internal_tier_access_gate",
+      "ipInfringementDraft": "/whitepaper/ip-infringement-draft"
     }
   },
   "reproduceCommands": {
@@ -2437,5 +2438,5 @@
     "transformerOptional": "python scripts/transformer_jspace_probe.py [model] [layer] [prompt]",
     "audit": "npm run audit:paper -- --id=egs-trans-jspace-convergence-2026-07"
   },
-  "honestyNote": "E1–E5 test reproducible public or synthetic signals. E6 and Anthropic↔King Bee causality remain narrative until third-party instrument data is available. Correlation ≠ causation."
+  "honestyNote": "E1–E5 test reproducible public or synthetic signals. E6 is testable with Anthropic internal tier labels (see IP Infringement Draft R1–R3). Correlation ≠ causation until tier receipts complete E6."
 }

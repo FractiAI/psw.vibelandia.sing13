@@ -154,6 +154,10 @@
     { "source": "/whitepaper/synthobs-intelligence-density/", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-intelligence-density-2026" },
     { "source": "/whitepaper/digital-pru-synthobs-mca", "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026" },
     { "source": "/whitepaper/digital-pru-synthobs-mca/", "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026" },
+    { "source": "/whitepaper/egs-trans-jspace-convergence", "destination": "/interfaces/whitepaper-surface.html?id=egs-trans-jspace-convergence-2026-07" },
+    { "source": "/whitepaper/egs-trans-jspace-convergence/", "destination": "/interfaces/whitepaper-surface.html?id=egs-trans-jspace-convergence-2026-07" },
+    { "source": "/whitepaper/omniversal-goldilocks-rideshare", "destination": "/interfaces/whitepaper-surface.html?id=omniversal-goldilocks-rideshare-2026-07" },
+    { "source": "/whitepaper/omniversal-goldilocks-rideshare/", "destination": "/interfaces/whitepaper-surface.html?id=omniversal-goldilocks-rideshare-2026-07" },
     { "source": "/questfest-schedule/:slug", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" },
     { "source": "/questfest-schedule/:slug/", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" },
     { "source": "/whitepaper/:id", "destination": "/interfaces/whitepaper-surface.html?id=:id" }

@@ -1,0 +1,20 @@
+{
+  "name": "egs-trans-jspace-convergence",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "EGS-TRANS-2026-0710 · Silicon-Biological Convergence · J-Space structural validation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/egs-trans-jspace-convergence"
+  },
+  "scripts": {
+    "empirical": "node scripts/run_empirical_pipeline.mjs",
+    "test": "node scripts/run_empirical_pipeline.mjs",
+    "svd": "python scripts/svd_workspace_probe.py",
+    "transformer": "python scripts/transformer_jspace_probe.py"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

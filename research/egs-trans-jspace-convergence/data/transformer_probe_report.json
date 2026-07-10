@@ -1,0 +1,6 @@
+{
+  "experiment": "E5_transformer_midlayer_svd",
+  "skipped": true,
+  "reason": "No module named 'torch'",
+  "install": "pip install torch transformers"
+}

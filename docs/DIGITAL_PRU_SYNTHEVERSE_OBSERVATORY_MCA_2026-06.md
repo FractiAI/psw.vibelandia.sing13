@@ -31,6 +31,7 @@ The team digested four Synthobs mathematics papers plus a replayable sandbox eng
 | **EGS-NLRF-v4.0** | `fractiai-egs-nlrf-2026` | Hydrogen holographic lattice · live NIST ASD Balmer experiments · falsification ledger · [GitHub](https://github.com/FractiAI/egs-nlrf) |
 | **WP-2026-ATTENTION-RECURSIVE-LOOP** | `recursive-attention-quantum-solar-dna-loop-2026` | Cross-scale attention map: imagination → neural → DNA → quantum → solar → recursive closure · **all temporal hops pass actual-vs-modelled (June 2026)** · [catalog](/interfaces/whitepaper-catalog.html) |
 | **WP-2026-ATTENTION-CAUSALITY-VALIDATION** | `research/recursive-attention-causality` | Actual-vs-modelled causality (required standard) — **`temporal_hops_all_pass: true`** · `npm run research:recursive-attention-causality` |
+| **EGS-TRANS-2026-0710** | `egs-trans-jspace-convergence-2026-07` | Silicon-biological convergence · King Bee June 1 vs Anthropic J-Space July 6 · public Git telemetry · SVD falsification · [standalone repo](https://github.com/FractiAI/egs-trans-jspace-convergence) |
 
 **Catalog filter:** Reproducible research · FractiAI repos on [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) `research/goldilocks-math/src/goldilocks_master_engine.py`  
 **JSON artifact:** `research/goldilocks-math/data/synthobs_volumetric_density_report.json`  

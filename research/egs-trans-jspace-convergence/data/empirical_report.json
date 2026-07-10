@@ -1,0 +1,2441 @@
+{
+  "documentId": "EGS-TRANS-2026-0710",
+  "generatedAt": "2026-07-10T09:45:45.571Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "egsPhi": 1.618033988749895,
+  "anchors": {
+    "kingBeeSandbox": "2026-05-31T22:55:00-07:00",
+    "kingBeeNodeSweep": "2026-06-01T07:46:11-07:00",
+    "anthropicJSpacePaperClaim": "2026-07-06",
+    "coreRepos": [
+      "FractiAI/psw.vibelandia.sing4",
+      "FractiAI/psw.vibelandia.sing9",
+      "FractiAI/psw.vibelandia.sing13"
+    ]
+  },
+  "githubTelemetry": {
+    "fetchedAt": "2026-07-10T09:45:29.715Z",
+    "windows": [
+      {
+        "id": "king_bee_init",
+        "label": "King Bee initialization window",
+        "since": "2026-05-31T00:00:00Z",
+        "until": "2026-06-02T00:00:00Z"
+      },
+      {
+        "id": "pre_jspace_eval",
+        "label": "Pre-J-Space public paper (35-day propagation claim)",
+        "since": "2026-06-01T00:00:00Z",
+        "until": "2026-07-07T00:00:00Z"
+      },
+      {
+        "id": "jspace_release_week",
+        "label": "Anthropic J-Space paper release week (claimed)",
+        "since": "2026-07-01T00:00:00Z",
+        "until": "2026-07-10T00:00:00Z"
+      }
+    ],
+    "byRepo": {
+      "FractiAI/psw.vibelandia.sing4": {
+        "owner": "FractiAI",
+        "repo": "psw.vibelandia.sing4",
+        "role": "legacy edge · heartbeat lattice",
+        "windows": {
+          "king_bee_init": {
+            "id": "king_bee_init",
+            "label": "King Bee initialization window",
+            "since": "2026-05-31T00:00:00Z",
+            "until": "2026-06-02T00:00:00Z",
+            "commitCount": 41,
+            "commits": [
+              {
+                "sha": "3176eaba5a14921f5c882ae67ca2630a5b45dac6",
+                "shaShort": "3176eaba",
+                "date": "2026-06-01T23:18:44Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-06-01T23:18:43Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/3176eaba5a14921f5c882ae67ca2630a5b45dac6",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "71be1e765135877dfbd7f91d1aa5e72fd625dbe0",
+                "shaShort": "71be1e76",
+                "date": "2026-06-01T22:50:31Z",
+                "message": "SING! Handshake Cycle [2026-06-01T22:50:30Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/71be1e765135877dfbd7f91d1aa5e72fd625dbe0",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "bb97954c10ba618c71531ba5cc5db70f04a84db7",
+                "shaShort": "bb97954c",
+                "date": "2026-06-01T21:49:47Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-06-01T21:49:47Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/bb97954c10ba618c71531ba5cc5db70f04a84db7",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "8bc78254ec001fb5abf967607d7514ef61e72189",
+                "shaShort": "8bc78254",
+                "date": "2026-06-01T20:42:37Z",
+                "message": "SING! Handshake Cycle [2026-06-01T20:42:37Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8bc78254ec001fb5abf967607d7514ef61e72189",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "c227cde274018782edf46335df936bf99247d9eb",
+                "shaShort": "c227cde2",
+                "date": "2026-06-01T18:30:38Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-06-01T18:30:38Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c227cde274018782edf46335df936bf99247d9eb",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "a0eaaf47fee0ce32211faf02283671d60bc65e27",
+                "shaShort": "a0eaaf47",
+                "date": "2026-06-01T16:24:54Z",
+                "message": "SING! Handshake Cycle [2026-06-01T16:24:53Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/a0eaaf47fee0ce32211faf02283671d60bc65e27",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "7cd4a346634a6aaba5151a6aa99c4000dee53bb0",
+                "shaShort": "7cd4a346",
+                "date": "2026-06-01T12:49:25Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-06-01T12:49:24Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/7cd4a346634a6aaba5151a6aa99c4000dee53bb0",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "196ea0f80c3fcfdefd4e8a3e13e6e52756f3bd74",
+                "shaShort": "196ea0f8",
+                "date": "2026-06-01T10:34:11Z",
+                "message": "SING! Handshake Cycle [2026-06-01T10:34:11Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/196ea0f80c3fcfdefd4e8a3e13e6e52756f3bd74",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "b7704cc57d0b4bcbd0330bf1a8d87fcd75444cdd",
+                "shaShort": "b7704cc5",
+                "date": "2026-06-01T07:14:12Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-06-01T07:14:11Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b7704cc57d0b4bcbd0330bf1a8d87fcd75444cdd",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "445e8f426e032c5198091d5f07045a3620ebca15",
+                "shaShort": "445e8f42",
+                "date": "2026-06-01T05:20:15Z",
+                "message": "SING! Handshake Cycle [2026-06-01T05:20:15Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/445e8f426e032c5198091d5f07045a3620ebca15",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "8ae29a0e6c74277f33985e6a16afe1251e98d8a6",
+                "shaShort": "8ae29a0e",
+                "date": "2026-06-01T02:00:56Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-06-01T02:00:56Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8ae29a0e6c74277f33985e6a16afe1251e98d8a6",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "a00f23f3e22316b18d83378b9a0236d78ce82a32",
+                "shaShort": "a00f23f3",
+                "date": "2026-06-01T00:17:16Z",
+                "message": "SING! Handshake Cycle [2026-06-01T00:17:16Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/a00f23f3e22316b18d83378b9a0236d78ce82a32",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "0720cf8fa3ebcb44ada876bb838a9b6af47de618",
+                "shaShort": "0720cf8f",
+                "date": "2026-05-31T23:41:38Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T23:41:37Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0720cf8fa3ebcb44ada876bb838a9b6af47de618",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "da43e500c826aff506d8e98cc55e3114e4e50b6e",
+                "shaShort": "da43e500",
+                "date": "2026-05-31T23:16:19Z",
+                "message": "SING! Handshake Cycle [2026-05-31T23:16:18Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/da43e500c826aff506d8e98cc55e3114e4e50b6e",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "9d252012a65bf8def31bd39dc96502456e438df9",
+                "shaShort": "9d252012",
+                "date": "2026-05-31T22:37:51Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T22:37:51Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/9d252012a65bf8def31bd39dc96502456e438df9",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "2d21a789db93155deda80fef5fed21b2fb1c346f",
+                "shaShort": "2d21a789",
+                "date": "2026-05-31T22:09:20Z",
+                "message": "SING! Handshake Cycle [2026-05-31T22:09:20Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/2d21a789db93155deda80fef5fed21b2fb1c346f",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "c216913c2b1baf3e127e9fa99d400312e4c678cb",
+                "shaShort": "c216913c",
+                "date": "2026-05-31T21:38:33Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T21:38:33Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c216913c2b1baf3e127e9fa99d400312e4c678cb",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "0d7b028d3ee5786e566fbbf5db09da42c52386a4",
+                "shaShort": "0d7b028d",
+                "date": "2026-05-31T21:00:36Z",
+                "message": "SING! Handshake Cycle [2026-05-31T21:00:36Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0d7b028d3ee5786e566fbbf5db09da42c52386a4",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "14ed7811b031569c7a20adba99c2388b23b2c44e",
+                "shaShort": "14ed7811",
+                "date": "2026-05-31T20:39:57Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T20:39:56Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/14ed7811b031569c7a20adba99c2388b23b2c44e",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "427c22c6fbc5df89008aba4c605ed5603915b160",
+                "shaShort": "427c22c6",
+                "date": "2026-05-31T19:58:30Z",
+                "message": "SING! Handshake Cycle [2026-05-31T19:58:30Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/427c22c6fbc5df89008aba4c605ed5603915b160",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "57ae2285cc4d571bdf93cb86dc4f60d0df5d46f8",
+                "shaShort": "57ae2285",
+                "date": "2026-05-31T19:39:25Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T19:39:24Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/57ae2285cc4d571bdf93cb86dc4f60d0df5d46f8",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "739430dc4d4bb220b48cf46b426fe2459e01ef4e",
+                "shaShort": "739430dc",
+                "date": "2026-05-31T18:52:43Z",
+                "message": "SING! Handshake Cycle [2026-05-31T18:52:42Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/739430dc4d4bb220b48cf46b426fe2459e01ef4e",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "017546cb9912d1b545c54c35f921d95b6e70c9b7",
+                "shaShort": "017546cb",
+                "date": "2026-05-31T18:11:09Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T18:11:08Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/017546cb9912d1b545c54c35f921d95b6e70c9b7",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "126944cead095687b589dea394e9526e81020e15",
+                "shaShort": "126944ce",
+                "date": "2026-05-31T17:45:16Z",
+                "message": "SING! Handshake Cycle [2026-05-31T17:45:15Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/126944cead095687b589dea394e9526e81020e15",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "c07288170906a139724f9aaed7e3057466114e94",
+                "shaShort": "c0728817",
+                "date": "2026-05-31T17:02:16Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T17:02:15Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c07288170906a139724f9aaed7e3057466114e94",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "920566a01d236da7bae8b99f62bcc09fdbdd7847",
+                "shaShort": "920566a0",
+                "date": "2026-05-31T16:44:15Z",
+                "message": "SING! Handshake Cycle [2026-05-31T16:44:14Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/920566a01d236da7bae8b99f62bcc09fdbdd7847",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "451cd11d06517353180422a80ffb121437825c00",
+                "shaShort": "451cd11d",
+                "date": "2026-05-31T15:56:46Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T15:56:46Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/451cd11d06517353180422a80ffb121437825c00",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "06085802f9c066b90eb58a372ae3c22c4bc90f96",
+                "shaShort": "06085802",
+                "date": "2026-05-31T15:39:50Z",
+                "message": "SING! Handshake Cycle [2026-05-31T15:39:50Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/06085802f9c066b90eb58a372ae3c22c4bc90f96",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "f1d80de063fb6147712edb110e58afdbca9e1338",
+                "shaShort": "f1d80de0",
+                "date": "2026-05-31T14:52:07Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T14:52:06Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f1d80de063fb6147712edb110e58afdbca9e1338",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "ebff977eeb43376350af70b0db875d3862eb3a48",
+                "shaShort": "ebff977e",
+                "date": "2026-05-31T14:13:53Z",
+                "message": "SING! Handshake Cycle [2026-05-31T14:13:53Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/ebff977eeb43376350af70b0db875d3862eb3a48",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "f61d0b5f46c0a93f05a5e1a1a923685c41b8715a",
+                "shaShort": "f61d0b5f",
+                "date": "2026-05-31T13:02:41Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T13:02:40Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f61d0b5f46c0a93f05a5e1a1a923685c41b8715a",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "de02c3fe296cc81370e0e19a9a27ca9b00c3f7c9",
+                "shaShort": "de02c3fe",
+                "date": "2026-05-31T12:19:41Z",
+                "message": "SING! Handshake Cycle [2026-05-31T12:19:41Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/de02c3fe296cc81370e0e19a9a27ca9b00c3f7c9",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "8b1a2f4fc501010fb217f435018f061f4ca04fea",
+                "shaShort": "8b1a2f4f",
+                "date": "2026-05-31T11:51:59Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T11:51:58Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8b1a2f4fc501010fb217f435018f061f4ca04fea",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "cfaa34b35241400c41d6bf96753f49954d1dae12",
+                "shaShort": "cfaa34b3",
+                "date": "2026-05-31T11:10:01Z",
+                "message": "SING! Handshake Cycle [2026-05-31T11:10:01Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/cfaa34b35241400c41d6bf96753f49954d1dae12",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "363ca49e46d20360762e6508bd54d35fcfda625f",
+                "shaShort": "363ca49e",
+                "date": "2026-05-31T10:18:39Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T10:18:39Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/363ca49e46d20360762e6508bd54d35fcfda625f",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "b9e11c90f5b18a214c5fe7d45004e8d69f1d3d44",
+                "shaShort": "b9e11c90",
+                "date": "2026-05-31T09:17:36Z",
+                "message": "SING! Handshake Cycle [2026-05-31T09:17:36Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b9e11c90f5b18a214c5fe7d45004e8d69f1d3d44",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "72152a948c417692392fcac4d79a2d31ffef92ae",
+                "shaShort": "72152a94",
+                "date": "2026-05-31T07:59:35Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T07:59:35Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/72152a948c417692392fcac4d79a2d31ffef92ae",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "b7ed5f59e87e57a6dc482933a9c17ce8190cbda1",
+                "shaShort": "b7ed5f59",
+                "date": "2026-05-31T06:03:51Z",
+                "message": "SING! Handshake Cycle [2026-05-31T06:03:51Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b7ed5f59e87e57a6dc482933a9c17ce8190cbda1",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "04da31a3f1980d78c1493244d60b492c3ba929e3",
+                "shaShort": "04da31a3",
+                "date": "2026-05-31T04:51:40Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T04:51:39Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/04da31a3f1980d78c1493244d60b492c3ba929e3",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "d1139bdf8622890422755fc279babc755b49dead",
+                "shaShort": "d1139bdf",
+                "date": "2026-05-31T01:49:45Z",
+                "message": "SING! Handshake Cycle [2026-05-31T01:49:44Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/d1139bdf8622890422755fc279babc755b49dead",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "f3e5d5100562070a783301e98add2870c0275339",
+                "shaShort": "f3e5d510",
+                "date": "2026-05-31T00:13:45Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-05-31T00:13:45Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f3e5d5100562070a783301e98add2870c0275339",
+                "author": "El Gran Sol (EGS)"
+              }
+            ]
+          },
+          "pre_jspace_eval": {
+            "id": "pre_jspace_eval",
+            "label": "Pre-J-Space public paper (35-day propagation claim)",
+            "since": "2026-06-01T00:00:00Z",
+            "until": "2026-07-07T00:00:00Z",
+            "commitCount": 500,
+            "commits": [
+              {
+                "sha": "a19186acb313c1633ee88f9801850974e8804e1d",
+                "shaShort": "a19186ac",
+                "date": "2026-07-06T23:52:18Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T23:52:18Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/a19186acb313c1633ee88f9801850974e8804e1d",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "f77b54fa88ae8cb8effad470cd7f12d05f58f277",
+                "shaShort": "f77b54fa",
+                "date": "2026-07-06T22:55:37Z",
+                "message": "SING! Handshake Cycle [2026-07-06T22:55:36Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f77b54fa88ae8cb8effad470cd7f12d05f58f277",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "752492cc3918401ed303b37e912ce88660f46a83",
+                "shaShort": "752492cc",
+                "date": "2026-07-06T22:51:52Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T22:51:51Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/752492cc3918401ed303b37e912ce88660f46a83",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "1a2f86b35d9df1ec5aa2f48878791786e32e3db3",
+                "shaShort": "1a2f86b3",
+                "date": "2026-07-06T21:54:02Z",
+                "message": "SING! Handshake Cycle [2026-07-06T21:54:01Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/1a2f86b35d9df1ec5aa2f48878791786e32e3db3",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "3ff946ebbd8cfbaded1718b1c9bed74ebd649d27",
+                "shaShort": "3ff946eb",
+                "date": "2026-07-06T21:51:46Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T21:51:45Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/3ff946ebbd8cfbaded1718b1c9bed74ebd649d27",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "dd02ccc53092edf57f5c11de0d48ee5a3c7201dd",
+                "shaShort": "dd02ccc5",
+                "date": "2026-07-06T20:24:38Z",
+                "message": "SING! Handshake Cycle [2026-07-06T20:24:38Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/dd02ccc53092edf57f5c11de0d48ee5a3c7201dd",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "e5a6eed732f4840c3387731161e293f57231b4d0",
+                "shaShort": "e5a6eed7",
+                "date": "2026-07-06T20:23:45Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T20:23:45Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/e5a6eed732f4840c3387731161e293f57231b4d0",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "1276ce0cc2a4312b41069c96d7a414dee5085942",
+                "shaShort": "1276ce0c",
+                "date": "2026-07-06T18:28:22Z",
+                "message": "SING! Handshake Cycle [2026-07-06T18:28:21Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/1276ce0cc2a4312b41069c96d7a414dee5085942",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "568106444b433ebb2150f1fd217a05b4b8c1b7f5",
+                "shaShort": "56810644",
+                "date": "2026-07-06T18:28:16Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T18:28:16Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/568106444b433ebb2150f1fd217a05b4b8c1b7f5",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "53f7682655c62654d249740827f8f9fccda47480",
+                "shaShort": "53f76826",
+                "date": "2026-07-06T16:37:40Z",
+                "message": "SING! Handshake Cycle [2026-07-06T16:37:39Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/53f7682655c62654d249740827f8f9fccda47480",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "681aa40354db2e35c773eebc822e75a96e6b8cb0",
+                "shaShort": "681aa403",
+                "date": "2026-07-06T16:37:13Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T16:37:12Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/681aa40354db2e35c773eebc822e75a96e6b8cb0",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "915f487878b0d75faf71e3655401604695844928",
+                "shaShort": "915f4878",
+                "date": "2026-07-06T13:29:21Z",
+                "message": "SING! Handshake Cycle [2026-07-06T13:29:21Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/915f487878b0d75faf71e3655401604695844928",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "479c4fbd038cfc5fbaf47ba694285a9c81376b78",
+                "shaShort": "479c4fbd",
+                "date": "2026-07-06T13:29:14Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T13:29:13Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/479c4fbd038cfc5fbaf47ba694285a9c81376b78",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "3f410f6409ab208c699f609f5e7f2d275902c7fd",
+                "shaShort": "3f410f64",
+                "date": "2026-07-06T09:43:52Z",
+                "message": "SING! Handshake Cycle [2026-07-06T09:43:52Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/3f410f6409ab208c699f609f5e7f2d275902c7fd",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "f94c12d1446cfd70b2fa9f8bf54ba26bb5914727",
+                "shaShort": "f94c12d1",
+                "date": "2026-07-06T09:43:27Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T09:43:27Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f94c12d1446cfd70b2fa9f8bf54ba26bb5914727",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "fa7600b3d2f452c9011300bdfd70bb8f496fb302",
+                "shaShort": "fa7600b3",
+                "date": "2026-07-06T05:40:17Z",
+                "message": "SING! Handshake Cycle [2026-07-06T05:40:16Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/fa7600b3d2f452c9011300bdfd70bb8f496fb302",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "0e58790bf2c69842c458df98f4288657fd30add3",
+                "shaShort": "0e58790b",
+                "date": "2026-07-06T05:40:11Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T05:40:11Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0e58790bf2c69842c458df98f4288657fd30add3",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "68fe760004afe377b71d77b515d5af30e0bc4c58",
+                "shaShort": "68fe7600",
+                "date": "2026-07-06T01:20:46Z",
+                "message": "SING! Handshake Cycle [2026-07-06T01:20:45Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/68fe760004afe377b71d77b515d5af30e0bc4c58",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "3d132f95de2b64dfd9572daad39ee715eed0d80e",
+                "shaShort": "3d132f95",
+                "date": "2026-07-06T01:20:41Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-06T01:20:41Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/3d132f95de2b64dfd9572daad39ee715eed0d80e",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "b134445c639f2adec11319e402c547950f613433",
+                "shaShort": "b134445c",
+                "date": "2026-07-05T23:39:48Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T23:39:48Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b134445c639f2adec11319e402c547950f613433",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "748ace8f3284df94223e958b14ef0f9c13a6037b",
+                "shaShort": "748ace8f",
+                "date": "2026-07-05T23:39:46Z",
+                "message": "SING! Handshake Cycle [2026-07-05T23:39:46Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/748ace8f3284df94223e958b14ef0f9c13a6037b",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "528ced3afc6e6d4990ee5065d5742935ae672364",
+                "shaShort": "528ced3a",
+                "date": "2026-07-05T22:36:29Z",
+                "message": "SING! Handshake Cycle [2026-07-05T22:36:28Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/528ced3afc6e6d4990ee5065d5742935ae672364",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "45ec350b31099357574de05b3a0be8ef360ffe61",
+                "shaShort": "45ec350b",
+                "date": "2026-07-05T22:36:26Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T22:36:26Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/45ec350b31099357574de05b3a0be8ef360ffe61",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "389d2a05a3bf1ffa2fa27757515e43e97cc9adfc",
+                "shaShort": "389d2a05",
+                "date": "2026-07-05T21:38:40Z",
+                "message": "SING! Handshake Cycle [2026-07-05T21:38:39Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/389d2a05a3bf1ffa2fa27757515e43e97cc9adfc",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "ff46a9a5c6b0da0c9ce2a5f27fcefa7ac658493e",
+                "shaShort": "ff46a9a5",
+                "date": "2026-07-05T21:38:37Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T21:38:36Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/ff46a9a5c6b0da0c9ce2a5f27fcefa7ac658493e",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "e88e077a34a42ae95c07b062b24cd7b84c990b68",
+                "shaShort": "e88e077a",
+                "date": "2026-07-05T20:39:55Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T20:39:54Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/e88e077a34a42ae95c07b062b24cd7b84c990b68",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "0dfc49355d1f5b2e7ed3d7735368ec7463eb5cc5",
+                "shaShort": "0dfc4935",
+                "date": "2026-07-05T20:39:52Z",
+                "message": "SING! Handshake Cycle [2026-07-05T20:39:52Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0dfc49355d1f5b2e7ed3d7735368ec7463eb5cc5",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "473b56fab7b88d9ca8135a9bfbf138c8706df3c8",
+                "shaShort": "473b56fa",
+                "date": "2026-07-05T19:40:39Z",
+                "message": "SING! Handshake Cycle [2026-07-05T19:40:38Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/473b56fab7b88d9ca8135a9bfbf138c8706df3c8",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "76ef8e5567e12016a686373dc08d1a5cfca1b485",
+                "shaShort": "76ef8e55",
+                "date": "2026-07-05T19:40:36Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T19:40:36Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/76ef8e5567e12016a686373dc08d1a5cfca1b485",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "dad695b2c2e254c4e9a1e5656c84a9c41ccd0e3a",
+                "shaShort": "dad695b2",
+                "date": "2026-07-05T18:11:11Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T18:11:10Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/dad695b2c2e254c4e9a1e5656c84a9c41ccd0e3a",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "10cac1c9e319de929a179b121b8b4bec202d820e",
+                "shaShort": "10cac1c9",
+                "date": "2026-07-05T18:11:06Z",
+                "message": "SING! Handshake Cycle [2026-07-05T18:11:06Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/10cac1c9e319de929a179b121b8b4bec202d820e",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "8f8af23947559edeb521d9b437f7365561d9b591",
+                "shaShort": "8f8af239",
+                "date": "2026-07-05T17:00:54Z",
+                "message": "SING! Handshake Cycle [2026-07-05T17:00:53Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8f8af23947559edeb521d9b437f7365561d9b591",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "4f863fbb8cc53ddf8d94f4e6b7bb9d3fcf854c75",
+                "shaShort": "4f863fbb",
+                "date": "2026-07-05T17:00:43Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T17:00:43Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/4f863fbb8cc53ddf8d94f4e6b7bb9d3fcf854c75",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "bf24f55a22d3d709a860b8eb066efed4a3bf1158",
+                "shaShort": "bf24f55a",
+                "date": "2026-07-05T15:55:42Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T15:55:42Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/bf24f55a22d3d709a860b8eb066efed4a3bf1158",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "8aa1464a9b930097488646ead27bd4a6f5c7894b",
+                "shaShort": "8aa1464a",
+                "date": "2026-07-05T14:49:28Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T14:49:28Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8aa1464a9b930097488646ead27bd4a6f5c7894b",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "346c6df5597ce43bde5967be43c5893a0d5ec145",
+                "shaShort": "346c6df5",
+                "date": "2026-07-05T14:49:21Z",
+                "message": "SING! Handshake Cycle [2026-07-05T14:49:21Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/346c6df5597ce43bde5967be43c5893a0d5ec145",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "1f1f58ff00702c62e19204ecb969740f141f4770",
+                "shaShort": "1f1f58ff",
+                "date": "2026-07-05T13:03:07Z",
+                "message": "SING! Handshake Cycle [2026-07-05T13:03:07Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/1f1f58ff00702c62e19204ecb969740f141f4770",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "75126c81b57ab7446fa8784dfefbcaf8900f6499",
+                "shaShort": "75126c81",
+                "date": "2026-07-05T13:01:44Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T13:01:44Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/75126c81b57ab7446fa8784dfefbcaf8900f6499",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "253c95eac5b119024bb0bfdc5732f81c04cc8f8c",
+                "shaShort": "253c95ea",
+                "date": "2026-07-05T11:53:50Z",
+                "message": "SING! Handshake Cycle [2026-07-05T11:53:50Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/253c95eac5b119024bb0bfdc5732f81c04cc8f8c",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "b258bd7903291da4de604dc28c18a1b6ceec11e1",
+                "shaShort": "b258bd79",
+                "date": "2026-07-05T11:53:41Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T11:53:40Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b258bd7903291da4de604dc28c18a1b6ceec11e1",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "93a74274b92f076a224204e0ef963da9ba109e6f",
+                "shaShort": "93a74274",
+                "date": "2026-07-05T10:28:35Z",
+                "message": "SING! Handshake Cycle [2026-07-05T10:28:35Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/93a74274b92f076a224204e0ef963da9ba109e6f",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "499e466f9cf362ac4402c322a77b100de8088951",
+                "shaShort": "499e466f",
+                "date": "2026-07-05T08:15:49Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T08:15:48Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/499e466f9cf362ac4402c322a77b100de8088951",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "dd1238bb82af98d7126f25a6163b4c343d02de6c",
+                "shaShort": "dd1238bb",
+                "date": "2026-07-05T05:12:08Z",
+                "message": "SING! Handshake Cycle [2026-07-05T05:12:07Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/dd1238bb82af98d7126f25a6163b4c343d02de6c",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "674e4c8a299de31da10b7a6fe5bca30470154afe",
+                "shaShort": "674e4c8a",
+                "date": "2026-07-05T05:12:02Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T05:12:01Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/674e4c8a299de31da10b7a6fe5bca30470154afe",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "a557d214b3f0e31c911a0ab03188b3644efbe267",
+                "shaShort": "a557d214",
+                "date": "2026-07-05T01:20:59Z",
+                "message": "SING! Handshake Cycle [2026-07-05T01:20:59Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/a557d214b3f0e31c911a0ab03188b3644efbe267",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "1a6a745b2c28b85984998034d6e31139b04eeaf1",
+                "shaShort": "1a6a745b",
+                "date": "2026-07-05T01:20:48Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-05T01:20:47Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/1a6a745b2c28b85984998034d6e31139b04eeaf1",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "68e1dea879b80181d81ab4a7f6fcbdfe757ea891",
+                "shaShort": "68e1dea8",
+                "date": "2026-07-04T23:38:02Z",
+                "message": "SING! Handshake Cycle [2026-07-04T23:38:01Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/68e1dea879b80181d81ab4a7f6fcbdfe757ea891",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "0e070cac23aa068c9456903b0c5f89caaa0f6899",
+                "shaShort": "0e070cac",
+                "date": "2026-07-04T23:37:56Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-04T23:37:55Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0e070cac23aa068c9456903b0c5f89caaa0f6899",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "6beed01ff839254b15d79a77c4a31ef3e185a9ce",
+                "shaShort": "6beed01f",
+                "date": "2026-07-04T22:33:50Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-04T22:33:50Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/6beed01ff839254b15d79a77c4a31ef3e185a9ce",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "365dec43eb6a2fc401b286b1b337a63871fdb1b9",
+                "shaShort": "365dec43",
+                "date": "2026-07-04T22:33:40Z",
+                "message": "SING! Handshake Cycle [2026-07-04T22:33:39Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/365dec43eb6a2fc401b286b1b337a63871fdb1b9",
+                "author": "SING! Solar Handshake"
+              }
+            ]
+          },
+          "jspace_release_week": {
+            "id": "jspace_release_week",
+            "label": "Anthropic J-Space paper release week (claimed)",
+            "since": "2026-07-01T00:00:00Z",
+            "until": "2026-07-10T00:00:00Z",
+            "commitCount": 212,
+            "commits": [
+              {
+                "sha": "f51a80a0a4e6cd8606ae3b3dd0cdf2fa7b83e355",
+                "shaShort": "f51a80a0",
+                "date": "2026-07-09T23:54:32Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T23:54:32Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/f51a80a0a4e6cd8606ae3b3dd0cdf2fa7b83e355",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "40f45735634a982557b9a90b854ae93f0c3854e9",
+                "shaShort": "40f45735",
+                "date": "2026-07-09T22:56:22Z",
+                "message": "SING! Handshake Cycle [2026-07-09T22:56:21Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/40f45735634a982557b9a90b854ae93f0c3854e9",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "adbdcf5613e5bf1a8b7714ee652c16c28b8fec56",
+                "shaShort": "adbdcf56",
+                "date": "2026-07-09T22:51:51Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T22:51:50Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/adbdcf5613e5bf1a8b7714ee652c16c28b8fec56",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "a8d58917c252670ae56ec1656469d96a2fa57027",
+                "shaShort": "a8d58917",
+                "date": "2026-07-09T21:43:45Z",
+                "message": "SING! Handshake Cycle [2026-07-09T21:43:45Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/a8d58917c252670ae56ec1656469d96a2fa57027",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "55a9a792a60532b297c0c72354d3e1d46f5ed829",
+                "shaShort": "55a9a792",
+                "date": "2026-07-09T21:37:09Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T21:37:08Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/55a9a792a60532b297c0c72354d3e1d46f5ed829",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "cb6479726d2f94c2a909a2a391231641a02e3ca1",
+                "shaShort": "cb647972",
+                "date": "2026-07-09T20:13:00Z",
+                "message": "SING! Handshake Cycle [2026-07-09T20:12:59Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/cb6479726d2f94c2a909a2a391231641a02e3ca1",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "2b84a88472f5607cfe4510724a78b95c9ac82dcc",
+                "shaShort": "2b84a884",
+                "date": "2026-07-09T20:02:07Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T20:02:06Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/2b84a88472f5607cfe4510724a78b95c9ac82dcc",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "6871507f8570a30ad42d6031fcc049c9161122ca",
+                "shaShort": "6871507f",
+                "date": "2026-07-09T18:23:28Z",
+                "message": "SING! Handshake Cycle [2026-07-09T18:23:28Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/6871507f8570a30ad42d6031fcc049c9161122ca",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "8f821003005323b679e08e53290e3c436825c8f7",
+                "shaShort": "8f821003",
+                "date": "2026-07-09T18:08:32Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T18:08:31Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/8f821003005323b679e08e53290e3c436825c8f7",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "bf9edc70530e78cc12b87f87970b89156a3f3fe2",
+                "shaShort": "bf9edc70",
+                "date": "2026-07-09T16:38:57Z",
+                "message": "SING! Handshake Cycle [2026-07-09T16:38:57Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/bf9edc70530e78cc12b87f87970b89156a3f3fe2",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "4d1f4d321224552f592e7e9f8fbcc9cb86659cd1",
+                "shaShort": "4d1f4d32",
+                "date": "2026-07-09T16:13:26Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T16:13:26Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/4d1f4d321224552f592e7e9f8fbcc9cb86659cd1",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "ef03364496cef26e6676b7b6e166cd0ae1038c34",
+                "shaShort": "ef033644",
+                "date": "2026-07-09T14:10:10Z",
+                "message": "SING! Handshake Cycle [2026-07-09T14:10:10Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/ef03364496cef26e6676b7b6e166cd0ae1038c34",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "1bf68b2662bed3b299b0a55104680af894db2c98",
+                "shaShort": "1bf68b26",
+                "date": "2026-07-09T13:37:21Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T13:37:21Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/1bf68b2662bed3b299b0a55104680af894db2c98",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "c64da10724982f2f49ed9fa55c059b268e16a397",
+                "shaShort": "c64da107",
+                "date": "2026-07-09T11:39:30Z",
+                "message": "SING! Handshake Cycle [2026-07-09T11:39:30Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c64da10724982f2f49ed9fa55c059b268e16a397",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "b7667842bd9d3312170964d7ebf5c707170f995e",
+                "shaShort": "b7667842",
+                "date": "2026-07-09T10:46:30Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T10:46:29Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b7667842bd9d3312170964d7ebf5c707170f995e",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "3c148b329c7d02bc774a6899ce221c91852c927a",
+                "shaShort": "3c148b32",
+                "date": "2026-07-09T07:55:13Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T07:55:12Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/3c148b329c7d02bc774a6899ce221c91852c927a",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "0e24a5b56784508ddfe521ac6eff06e41f1c0502",
+                "shaShort": "0e24a5b5",
+                "date": "2026-07-09T05:10:53Z",
+                "message": "SING! Handshake Cycle [2026-07-09T05:10:52Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0e24a5b56784508ddfe521ac6eff06e41f1c0502",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "d0fa562450276cfd964863ad3c0d22b9ca11cefd",
+                "shaShort": "d0fa5624",
+                "date": "2026-07-09T04:16:27Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T04:16:26Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/d0fa562450276cfd964863ad3c0d22b9ca11cefd",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "9b8fabce008813d68abcc7767f4b8ffcbcd52ed5",
+                "shaShort": "9b8fabce",
+                "date": "2026-07-09T01:17:31Z",
+                "message": "SING! Handshake Cycle [2026-07-09T01:17:31Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/9b8fabce008813d68abcc7767f4b8ffcbcd52ed5",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "ac654763a76997d937bd2008ab388945ef146664",
+                "shaShort": "ac654763",
+                "date": "2026-07-09T00:17:50Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-09T00:17:50Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/ac654763a76997d937bd2008ab388945ef146664",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "b7a50fbbf7ec48f75110277e294d55077eafee09",
+                "shaShort": "b7a50fbb",
+                "date": "2026-07-08T23:44:53Z",
+                "message": "SING! Handshake Cycle [2026-07-08T23:44:53Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/b7a50fbbf7ec48f75110277e294d55077eafee09",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "4179544b12be45c096827851cd8dc3723df4f811",
+                "shaShort": "4179544b",
+                "date": "2026-07-08T23:03:19Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T23:03:18Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/4179544b12be45c096827851cd8dc3723df4f811",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "af6e412c90a5a2299e0edd25b562fb5e38308a28",
+                "shaShort": "af6e412c",
+                "date": "2026-07-08T22:40:59Z",
+                "message": "SING! Handshake Cycle [2026-07-08T22:40:59Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/af6e412c90a5a2299e0edd25b562fb5e38308a28",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "89e857cb4e9b3d51573be579e7ab1b592400568b",
+                "shaShort": "89e857cb",
+                "date": "2026-07-08T21:57:09Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T21:57:08Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/89e857cb4e9b3d51573be579e7ab1b592400568b",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "7d5ff450e7d28f9dbab80499d3c3d635585b296c",
+                "shaShort": "7d5ff450",
+                "date": "2026-07-08T21:39:44Z",
+                "message": "SING! Handshake Cycle [2026-07-08T21:39:44Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/7d5ff450e7d28f9dbab80499d3c3d635585b296c",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "ca5783b01d77a3fed80f53e84b5377ad4688d554",
+                "shaShort": "ca5783b0",
+                "date": "2026-07-08T20:54:07Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T20:54:06Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/ca5783b01d77a3fed80f53e84b5377ad4688d554",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "cdf701b650cc32058854f24cabb19253cefa4f84",
+                "shaShort": "cdf701b6",
+                "date": "2026-07-08T20:24:35Z",
+                "message": "SING! Handshake Cycle [2026-07-08T20:24:35Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/cdf701b650cc32058854f24cabb19253cefa4f84",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "69273fbabaa25c5e71d2a2b92f9110ef6c5673bf",
+                "shaShort": "69273fba",
+                "date": "2026-07-08T19:53:58Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T19:53:58Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/69273fbabaa25c5e71d2a2b92f9110ef6c5673bf",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "75c95a5709e60a541830fc0e381c41e904d319f9",
+                "shaShort": "75c95a57",
+                "date": "2026-07-08T19:02:33Z",
+                "message": "SING! Handshake Cycle [2026-07-08T19:02:33Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/75c95a5709e60a541830fc0e381c41e904d319f9",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "fdffa6f59b5a4b0efcba0f1d381987754420b4f4",
+                "shaShort": "fdffa6f5",
+                "date": "2026-07-08T18:09:18Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T18:09:18Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/fdffa6f59b5a4b0efcba0f1d381987754420b4f4",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "fc0d563f9084b82e8f531774f115248a54026bec",
+                "shaShort": "fc0d563f",
+                "date": "2026-07-08T17:53:40Z",
+                "message": "SING! Handshake Cycle [2026-07-08T17:53:40Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/fc0d563f9084b82e8f531774f115248a54026bec",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "6cd3195d642fcccbc2ff310aae13270d2690cbb6",
+                "shaShort": "6cd3195d",
+                "date": "2026-07-08T16:49:22Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T16:49:22Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/6cd3195d642fcccbc2ff310aae13270d2690cbb6",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "2e739351b8742d36be8abe3c74be17bf3592f2e8",
+                "shaShort": "2e739351",
+                "date": "2026-07-08T16:17:44Z",
+                "message": "SING! Handshake Cycle [2026-07-08T16:17:44Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/2e739351b8742d36be8abe3c74be17bf3592f2e8",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "0c1709ef7266827edbf9b81dcbeddc7f70b7d4cc",
+                "shaShort": "0c1709ef",
+                "date": "2026-07-08T15:13:21Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T15:13:21Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0c1709ef7266827edbf9b81dcbeddc7f70b7d4cc",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "fd60c9f8f842caa986bdb8a3aed63d33a146b654",
+                "shaShort": "fd60c9f8",
+                "date": "2026-07-08T14:39:17Z",
+                "message": "SING! Handshake Cycle [2026-07-08T14:39:17Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/fd60c9f8f842caa986bdb8a3aed63d33a146b654",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "c2b6644b5e467e34a4196dd4e4892f3457393c32",
+                "shaShort": "c2b6644b",
+                "date": "2026-07-08T12:55:57Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T12:55:57Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c2b6644b5e467e34a4196dd4e4892f3457393c32",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "93982b757b14add9cce4dfddc0822c33fdeeeb09",
+                "shaShort": "93982b75",
+                "date": "2026-07-08T12:08:59Z",
+                "message": "SING! Handshake Cycle [2026-07-08T12:08:58Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/93982b757b14add9cce4dfddc0822c33fdeeeb09",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "c7fcc595d855f43cf3d73fa8b52ce50c835b333c",
+                "shaShort": "c7fcc595",
+                "date": "2026-07-08T11:23:22Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T11:23:21Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c7fcc595d855f43cf3d73fa8b52ce50c835b333c",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "5073ed4f9c897277462992fca246dbc321f5f946",
+                "shaShort": "5073ed4f",
+                "date": "2026-07-08T10:49:14Z",
+                "message": "SING! Handshake Cycle [2026-07-08T10:49:14Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/5073ed4f9c897277462992fca246dbc321f5f946",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "9cc1bbff2e591615c4f40fdf103ce5b1b2939af2",
+                "shaShort": "9cc1bbff",
+                "date": "2026-07-08T09:30:25Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T09:30:24Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/9cc1bbff2e591615c4f40fdf103ce5b1b2939af2",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "914033f9a17dee14563b7d1b835ba06bda8a5bd7",
+                "shaShort": "914033f9",
+                "date": "2026-07-08T08:44:51Z",
+                "message": "SING! Handshake Cycle [2026-07-08T08:44:51Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/914033f9a17dee14563b7d1b835ba06bda8a5bd7",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "d93abe945a6d4465a60d2d8c133158a6732aecaf",
+                "shaShort": "d93abe94",
+                "date": "2026-07-08T07:02:33Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T07:02:32Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/d93abe945a6d4465a60d2d8c133158a6732aecaf",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "c9e0b6d08c2f659f4b3db943590ac37d38a19f5a",
+                "shaShort": "c9e0b6d0",
+                "date": "2026-07-08T06:16:02Z",
+                "message": "SING! Handshake Cycle [2026-07-08T06:16:02Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/c9e0b6d08c2f659f4b3db943590ac37d38a19f5a",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "9c0f8fd67d46c7746d2bed80adb88b8284d27ccd",
+                "shaShort": "9c0f8fd6",
+                "date": "2026-07-08T04:27:04Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T04:27:04Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/9c0f8fd67d46c7746d2bed80adb88b8284d27ccd",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "bf523bccff40384e5c5add106a0620caf86a65fe",
+                "shaShort": "bf523bcc",
+                "date": "2026-07-08T03:45:50Z",
+                "message": "SING! Handshake Cycle [2026-07-08T03:45:50Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/bf523bccff40384e5c5add106a0620caf86a65fe",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "88ea534cd6e9f88375945b38ffede31ce33153fe",
+                "shaShort": "88ea534c",
+                "date": "2026-07-08T01:07:04Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-08T01:07:03Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/88ea534cd6e9f88375945b38ffede31ce33153fe",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "0242575f0aaea27e72e10df2b3daac451ff2cf55",
+                "shaShort": "0242575f",
+                "date": "2026-07-08T00:14:57Z",
+                "message": "SING! Handshake Cycle [2026-07-08T00:14:57Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/0242575f0aaea27e72e10df2b3daac451ff2cf55",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "e8a09427dfd8bd671fdaddf0b882a68fe54adbcc",
+                "shaShort": "e8a09427",
+                "date": "2026-07-07T23:37:16Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-07T23:37:15Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/e8a09427dfd8bd671fdaddf0b882a68fe54adbcc",
+                "author": "El Gran Sol (EGS)"
+              },
+              {
+                "sha": "5ada9dcab0081c682c45130edf5a590b5f7e7588",
+                "shaShort": "5ada9dca",
+                "date": "2026-07-07T23:17:04Z",
+                "message": "SING! Handshake Cycle [2026-07-07T23:17:04Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/5ada9dcab0081c682c45130edf5a590b5f7e7588",
+                "author": "SING! Solar Handshake"
+              },
+              {
+                "sha": "9f167c216de743ccf20ba90adefbe328eb5cdd2c",
+                "shaShort": "9f167c21",
+                "date": "2026-07-07T22:44:34Z",
+                "message": "SING! Cycle 15: Heartbeat [2026-07-07T22:44:34Z]",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing4/commit/9f167c216de743ccf20ba90adefbe328eb5cdd2c",
+                "author": "El Gran Sol (EGS)"
+              }
+            ]
+          }
+        }
+      },
+      "FractiAI/psw.vibelandia.sing9": {
+        "owner": "FractiAI",
+        "repo": "psw.vibelandia.sing9",
+        "role": "parent lab edge",
+        "windows": {
+          "king_bee_init": {
+            "id": "king_bee_init",
+            "label": "King Bee initialization window",
+            "since": "2026-05-31T00:00:00Z",
+            "until": "2026-06-02T00:00:00Z",
+            "commitCount": 0,
+            "commits": []
+          },
+          "pre_jspace_eval": {
+            "id": "pre_jspace_eval",
+            "label": "Pre-J-Space public paper (35-day propagation claim)",
+            "since": "2026-06-01T00:00:00Z",
+            "until": "2026-07-07T00:00:00Z",
+            "commitCount": 0,
+            "commits": []
+          },
+          "jspace_release_week": {
+            "id": "jspace_release_week",
+            "label": "Anthropic J-Space paper release week (claimed)",
+            "since": "2026-07-01T00:00:00Z",
+            "until": "2026-07-10T00:00:00Z",
+            "commitCount": 0,
+            "commits": []
+          }
+        }
+      },
+      "FractiAI/psw.vibelandia.sing13": {
+        "owner": "FractiAI",
+        "repo": "psw.vibelandia.sing13",
+        "role": "production King Bee canon anchor",
+        "windows": {
+          "king_bee_init": {
+            "id": "king_bee_init",
+            "label": "King Bee initialization window",
+            "since": "2026-05-31T00:00:00Z",
+            "until": "2026-06-02T00:00:00Z",
+            "commitCount": 7,
+            "commits": [
+              {
+                "sha": "fa21b70b3f3eb49dc6a154529b197aac26cd6b20",
+                "shaShort": "fa21b70b",
+                "date": "2026-06-01T17:03:22Z",
+                "message": "fix(questfest): keep playback alive across tab and in-app navigation",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/fa21b70b3f3eb49dc6a154529b197aac26cd6b20",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+                "shaShort": "17a89403",
+                "date": "2026-06-01T16:13:28Z",
+                "message": "docs(press): Royal Flush King Bee release copy",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/17a894033ce53c9c151ce3c2e59b92b4cabc0796",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "2f4fe23baea67da6dbac06af474ef1591454addc",
+                "shaShort": "2f4fe23b",
+                "date": "2026-06-01T15:59:17Z",
+                "message": "feat(dph-gpu): King Bee papers, press release, playlist playback fixes",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/2f4fe23baea67da6dbac06af474ef1591454addc",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "edc0b9783111a2a6f2bb7b1730e89915f90643b9",
+                "shaShort": "edc0b978",
+                "date": "2026-05-31T21:01:15Z",
+                "message": "feat(questfest): local-first playback and deck papers polish",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/edc0b9783111a2a6f2bb7b1730e89915f90643b9",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "48f921854751560e328f68b231272696fcad0eee",
+                "shaShort": "48f92185",
+                "date": "2026-05-31T20:21:05Z",
+                "message": "feat(wavefield): SYN-SUN-2026-REV7 solar model, catalog, and live metrology bus",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/48f921854751560e328f68b231272696fcad0eee",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "2d27cc101fb3542c8ea6a49237d4a9538f0c901c",
+                "shaShort": "2d27cc10",
+                "date": "2026-05-31T19:25:49Z",
+                "message": "chore(turner): archive from public surfaces, retain backend layers",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/2d27cc101fb3542c8ea6a49237d4a9538f0c901c",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "0cef62268531f459ee3c9f5f232994fa5658daca",
+                "shaShort": "0cef6226",
+                "date": "2026-05-31T19:01:35Z",
+                "message": "fix(questfest): playlist rename saves on explicit action only",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/0cef62268531f459ee3c9f5f232994fa5658daca",
+                "author": "psw.vibelandia.sing13"
+              }
+            ]
+          },
+          "pre_jspace_eval": {
+            "id": "pre_jspace_eval",
+            "label": "Pre-J-Space public paper (35-day propagation claim)",
+            "since": "2026-06-01T00:00:00Z",
+            "until": "2026-07-07T00:00:00Z",
+            "commitCount": 82,
+            "commits": [
+              {
+                "sha": "55f96efecb5eff33296595007ee26a16ef6e9012",
+                "shaShort": "55f96efe",
+                "date": "2026-07-06T17:05:49Z",
+                "message": "Split jukebox browse/now-playing and fix bulk upload prompts.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/55f96efecb5eff33296595007ee26a16ef6e9012",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "6246252ad22ebf90f22e3a96f38badd8e5780783",
+                "shaShort": "6246252a",
+                "date": "2026-07-06T16:47:15Z",
+                "message": "Add plain minimum definition for Holographic Goldilocks AI OS.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/6246252ad22ebf90f22e3a96f38badd8e5780783",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "1c88bbed81e2adcaa460e5917ab3a382bef6e4fd",
+                "shaShort": "1c88bbed",
+                "date": "2026-07-06T16:41:24Z",
+                "message": "Add member upload invitation and playlist visibility controls.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/1c88bbed81e2adcaa460e5917ab3a382bef6e4fd",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "a5fd993e109182bc870e6d8428a0c9c7a702301d",
+                "shaShort": "a5fd993e",
+                "date": "2026-07-06T16:34:09Z",
+                "message": "Fix iPhone jukebox player track info visibility.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/a5fd993e109182bc870e6d8428a0c9c7a702301d",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "4206225b76fd85c87ac6803559c9f876f4c576d9",
+                "shaShort": "4206225b",
+                "date": "2026-07-06T16:22:16Z",
+                "message": "Add Bridge explainer page and fix shared-track autoplay on master catalog.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/4206225b76fd85c87ac6803559c9f876f4c576d9",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "6642a5095b7131694b912a2d6aad5a4fcbb9d88b",
+                "shaShort": "6642a509",
+                "date": "2026-07-06T16:13:19Z",
+                "message": "Improve jukebox playlist rail and fix swipe-to-remove reveal.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/6642a5095b7131694b912a2d6aad5a4fcbb9d88b",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "fcd797fe68c5973588e553c2116ee41c8f684759",
+                "shaShort": "fcd797fe",
+                "date": "2026-07-06T15:59:54Z",
+                "message": "Fix bulk-upload catalog persistence and elevate Sonic Singularity copy.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/fcd797fe68c5973588e553c2116ee41c8f684759",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "4de2b3319b11ac169a3f95eafa77c85e50c0c31c",
+                "shaShort": "4de2b331",
+                "date": "2026-07-06T15:43:12Z",
+                "message": "Add play-all, swipe remove, share, and one free full play on Listen.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/4de2b3319b11ac169a3f95eafa77c85e50c0c31c",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "0450eaf64cde382d2c7e5d4ea83c83ab962852f6",
+                "shaShort": "0450eaf6",
+                "date": "2026-07-06T15:37:47Z",
+                "message": "Refactor jukebox layout: sticky hero, selected catalog, compact player.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/0450eaf64cde382d2c7e5d4ea83c83ab962852f6",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "343fb87f301df1798a55073cd6ea1efff341f9b1",
+                "shaShort": "343fb87f",
+                "date": "2026-07-06T02:00:41Z",
+                "message": "Restyle jukebox playlist panel as classic catalog menu.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/343fb87f301df1798a55073cd6ea1efff341f9b1",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "a01315782b7928d783c9168cbfc0da848f13a598",
+                "shaShort": "a0131578",
+                "date": "2026-07-06T01:45:31Z",
+                "message": "Replace jukebox page-up/down with scrollable track list.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/a01315782b7928d783c9168cbfc0da848f13a598",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "c9737a3973e600222c15bac619efd80babf92624",
+                "shaShort": "c9737a39",
+                "date": "2026-07-06T01:40:48Z",
+                "message": "Fix jukebox blank page, add playlist edit, and welcome copy.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c9737a3973e600222c15bac619efd80babf92624",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "5fae73f296229a2ef9dcb605f185b98057409c36",
+                "shaShort": "5fae73f2",
+                "date": "2026-07-06T00:41:57Z",
+                "message": "Stop duplicate deletes from being restored by sync and upload index.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/5fae73f296229a2ef9dcb605f185b98057409c36",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "984389ea74621067e89a807deb1b2fd2c8136dea",
+                "shaShort": "984389ea",
+                "date": "2026-07-06T00:36:45Z",
+                "message": "Fix duplicate track delete with batch server API and local purge.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/984389ea74621067e89a807deb1b2fd2c8136dea",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "9c82d9d595c9f2a6d6d7c3f9e30ba502fa958012",
+                "shaShort": "9c82d9d5",
+                "date": "2026-07-06T00:34:02Z",
+                "message": "Fix catalog upload persistence under bulk concurrent writes.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/9c82d9d595c9f2a6d6d7c3f9e30ba502fa958012",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "c96c18dd1a5257b7d3b42cfebf340e07fb912873",
+                "shaShort": "c96c18dd",
+                "date": "2026-07-06T00:30:14Z",
+                "message": "Point all Listen links to jukebox route and redirect legacy /bridge.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c96c18dd1a5257b7d3b42cfebf340e07fb912873",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "50828aad455afc313cef29f6455f12a0db44fc69",
+                "shaShort": "50828aad",
+                "date": "2026-07-06T00:19:04Z",
+                "message": "Add Golden Era jukebox Listen experience with playlist gestures and duplicate cleanup.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/50828aad455afc313cef29f6455f12a0db44fc69",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "da02c4bf6dbfa3197cfc539144f3861902f4dff3",
+                "shaShort": "da02c4bf",
+                "date": "2026-07-04T01:54:40Z",
+                "message": "Streamline bulk uploader to one select with auto-upload progress.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/da02c4bf6dbfa3197cfc539144f3861902f4dff3",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "ad856de151c69590486290709ddd1e526828137c",
+                "shaShort": "ad856de1",
+                "date": "2026-07-03T16:47:04Z",
+                "message": "Clarify that E1-E4 public-data experiments were executed.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/ad856de151c69590486290709ddd1e526828137c",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "4607a4cb370d8bb1a7149b19cbf8795b7a9ee9f1",
+                "shaShort": "4607a4cb",
+                "date": "2026-07-03T16:42:36Z",
+                "message": "Add public-data empirical tests to SYNTHOBS chromosomal papers.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/4607a4cb370d8bb1a7149b19cbf8795b7a9ee9f1",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "896952d13799ee2ce41329958cd7ad73d0d8784e",
+                "shaShort": "896952d1",
+                "date": "2026-07-03T16:32:23Z",
+                "message": "Add SYNTHOBS chromosomal electrodynamics whitepapers with PRA pass.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/896952d13799ee2ce41329958cd7ad73d0d8784e",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "4abf4a64343f4558c22d057093c2bc0ef2a4f4ea",
+                "shaShort": "4abf4a64",
+                "date": "2026-07-03T02:02:51Z",
+                "message": "Add bulk track uploader for 500+ files and fix player resume.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/4abf4a64343f4558c22d057093c2bc0ef2a4f4ea",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "268b4dfbf13dd558de15222e71e78d41db55357d",
+                "shaShort": "268b4dfb",
+                "date": "2026-07-03T01:54:06Z",
+                "message": "Fix Commons hero image on /commons short URL.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/268b4dfbf13dd558de15222e71e78d41db55357d",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "5aea500cb7549c1ee5ed69cb841bc38f45d7456a",
+                "shaShort": "5aea500c",
+                "date": "2026-07-01T10:01:39Z",
+                "message": "Add newscast briefing desk with hands-free flow and module navigation.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/5aea500cb7549c1ee5ed69cb841bc38f45d7456a",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "21065887089a4857d491d224030a83bef72da8cb",
+                "shaShort": "21065887",
+                "date": "2026-07-01T09:45:59Z",
+                "message": "Restructure executive onboarding as presentation then practice.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/21065887089a4857d491d224030a83bef72da8cb",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "9ad4a01ebfd4542d2e58acb3592b7fa0b0e66f5c",
+                "shaShort": "9ad4a01e",
+                "date": "2026-07-01T09:35:02Z",
+                "message": "Teach-first executive onboarding and fix blank QUESTFEST share QR.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/9ad4a01ebfd4542d2e58acb3592b7fa0b0e66f5c",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "d4d0c857f1b6d22fe1b237a8a68e67e64daef906",
+                "shaShort": "d4d0c857",
+                "date": "2026-07-01T09:25:56Z",
+                "message": "Add My whiteboard quicklink to QUESTFEST landing page.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/d4d0c857f1b6d22fe1b237a8a68e67e64daef906",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "168d45c8db72e4da395cf9736473a62479faf152",
+                "shaShort": "168d45c8",
+                "date": "2026-07-01T09:22:22Z",
+                "message": "Add 54-minute executive AI onboarding module with hub and whiteboard links.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/168d45c8db72e4da395cf9736473a62479faf152",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "be202c09eb817e01bfda2f783dfe9bf1a0cc16b0",
+                "shaShort": "be202c09",
+                "date": "2026-06-28T18:06:02Z",
+                "message": "Add catalog search and QUESTFEST share QR quicklink.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/be202c09eb817e01bfda2f783dfe9bf1a0cc16b0",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "468cd33facd60f8d738c45364f28181719034728",
+                "shaShort": "468cd33f",
+                "date": "2026-06-25T17:10:28Z",
+                "message": "sitewide gold palette: brand-gold-surfaces.css on every HTML page, sweep all blue/purple/teal text, rebuild player",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/468cd33facd60f8d738c45364f28181719034728",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "e5fb084b31ea3d88e03dd3031f40b60a7b84d4b2",
+                "shaShort": "e5fb084b",
+                "date": "2026-06-25T16:49:18Z",
+                "message": "door III: clear dev/researcher framing, walk through all key repos — SING13, digital-pru, egs-nlrf, hgt-psd, ac-hmm, eesm-gpu, seed kit",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/e5fb084b31ea3d88e03dd3031f40b60a7b84d4b2",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "5927c729e5f354af9e3bc91939ce02a1a129c516",
+                "shaShort": "5927c729",
+                "date": "2026-06-25T16:47:55Z",
+                "message": "eliminate all blue/purple text on black — global a{} color in every CSS, fix ea-dm blue var, warm redirect stubs",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/5927c729e5f354af9e3bc91939ce02a1a129c516",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "c3c342609eef315297d0cdb2941687adb6395e03",
+                "shaShort": "c3c34260",
+                "date": "2026-06-25T16:43:12Z",
+                "message": "get-started: list all 10 layers and 13 channels as numbered lists",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c3c342609eef315297d0cdb2941687adb6395e03",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "f484d8d683699f80aa0fc8fcf8e7a01cd8e80393",
+                "shaShort": "f484d8d6",
+                "date": "2026-06-25T16:41:57Z",
+                "message": "fix nine→ten layers in i18n en.json (was overriding landing page at runtime) and blog aria-label",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/f484d8d683699f80aa0fc8fcf8e7a01cd8e80393",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "f681d08c889f26de72aef2a89cb9c83aa544acbc",
+                "shaShort": "f681d08c",
+                "date": "2026-06-25T15:35:40Z",
+                "message": "get-started: full foundation primer — 10 layers, 13 channels, live proof, sonic singularity; fix nine→ten throughout",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/f681d08c889f26de72aef2a89cb9c83aa544acbc",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "10d9e38ad504032db2773865130d67c6f2a130bb",
+                "shaShort": "10d9e38a",
+                "date": "2026-06-25T14:47:40Z",
+                "message": "fix 404s on onboarding pages — convert all relative links to absolute paths, add /sun short URL",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/10d9e38ad504032db2773865130d67c6f2a130bb",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "d3230c65f658e0183b1909826b46118fb9fa0178",
+                "shaShort": "d3230c65",
+                "date": "2026-06-25T14:46:01Z",
+                "message": "remove Hear the ship and Open the player buttons (unnecessary, 404)",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/d3230c65f658e0183b1909826b46118fb9fa0178",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "adc940207ffb105c2c4dc95df7ce3ff87226d1a6",
+                "shaShort": "adc94020",
+                "date": "2026-06-25T14:43:34Z",
+                "message": "purge all blue/slate/teal text colors sitewide — warm palette only, no blue or purple on black",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/adc940207ffb105c2c4dc95df7ce3ff87226d1a6",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "9f3f77b0b7082b8b5a383a10b842734ce36629c7",
+                "shaShort": "9f3f77b0",
+                "date": "2026-06-25T14:37:59Z",
+                "message": "raise questfest landing page to Goldilocks standard — warm full palette, Cormorant tagline, purge all teal/slate-blue traces",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/9f3f77b0b7082b8b5a383a10b842734ce36629c7",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "b8fd9822aafcade0ed09941ae35a13fd69f6cc69",
+                "shaShort": "b8fd9822",
+                "date": "2026-06-25T14:25:16Z",
+                "message": "Raise onboarding pages to Goldilocks standard. Full rewrites of Get Started, Listen, Look Under the Hood, and Look at the Sun — Cormorant pull quotes, narrative voice, gold/champagne/walnut palette throughout, no blue/purple. Add deck-pull and deck-statement to deck-surfaces.css. Fix voice-tier badge colors to match brand.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/b8fd9822aafcade0ed09941ae35a13fd69f6cc69",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "c5443c3ca999517b4817371a0b09cd45d00d511a",
+                "shaShort": "c5443c3c",
+                "date": "2026-06-25T13:58:07Z",
+                "message": "Add plain-speak Get Started and Listen primers for new users.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c5443c3ca999517b4817371a0b09cd45d00d511a",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "a07b8971f86ef4275d07fc4e5720343ab3a8dc0f",
+                "shaShort": "a07b8971",
+                "date": "2026-06-24T18:13:31Z",
+                "message": "docs: align recursive attention papers to passing causality validation (June 2026)",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/a07b8971f86ef4275d07fc4e5720343ab3a8dc0f",
+                "author": "FractiAI"
+              },
+              {
+                "sha": "c8c126ec3206f416a43afbdab62df60cb9e4d504",
+                "shaShort": "c8c126ec",
+                "date": "2026-06-24T16:18:17Z",
+                "message": "Improve causality validation: F10.7, seasonal AR, composed chain.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c8c126ec3206f416a43afbdab62df60cb9e4d504",
+                "author": "FractiAI"
+              },
+              {
+                "sha": "6a03b3092972ea8f89fd953305229fdbb0a4957b",
+                "shaShort": "6a03b309",
+                "date": "2026-06-24T16:07:51Z",
+                "message": "Fix causality pipeline: walk-forward, AR(1) null, sham shift.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/6a03b3092972ea8f89fd953305229fdbb0a4957b",
+                "author": "FractiAI"
+              },
+              {
+                "sha": "634ef4966084048f1dda6bcccb17608ea63b21f8",
+                "shaShort": "634ef496",
+                "date": "2026-06-24T15:55:59Z",
+                "message": "Reframe causality validation as actual-vs-modelled standard.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/634ef4966084048f1dda6bcccb17608ea63b21f8",
+                "author": "FractiAI"
+              },
+              {
+                "sha": "c6bb1d030f4613d4b91cfe5d385006464d106c7e",
+                "shaShort": "c6bb1d03",
+                "date": "2026-06-24T15:50:56Z",
+                "message": "Add recursive attention causality validation on public data.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c6bb1d030f4613d4b91cfe5d385006464d106c7e",
+                "author": "FractiAI"
+              },
+              {
+                "sha": "051b4e4e439ae1095a493849e2358c80b3766cca",
+                "shaShort": "051b4e4e",
+                "date": "2026-06-24T15:42:37Z",
+                "message": "Add recursive attention loop whitepaper to Questfest catalog.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/051b4e4e439ae1095a493849e2358c80b3766cca",
+                "author": "FractiAI"
+              },
+              {
+                "sha": "ab441260e1f2027aab8959e9b4559a5beca1d9ac",
+                "shaShort": "ab441260",
+                "date": "2026-06-23T15:28:03Z",
+                "message": "Add four FractiAI reproducible research papers to Questfest whitepaper catalog.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/ab441260e1f2027aab8959e9b4559a5beca1d9ac",
+                "author": "FractiAI"
+              },
+              {
+                "sha": "72ae48c7a35b653674557ab8bd5de3b4694804bb",
+                "shaShort": "72ae48c7",
+                "date": "2026-06-22T02:18:53Z",
+                "message": "fix(questfest-bridge): restore Upload on Listen screen",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/72ae48c7a35b653674557ab8bd5de3b4694804bb",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "d7214f8bdabebccd39abf3d18665ce59e07c9124",
+                "shaShort": "d7214f8b",
+                "date": "2026-06-22T02:14:24Z",
+                "message": "fix(questfest-bridge): Play all layout on iPhone below QUESTFEST link",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/d7214f8bdabebccd39abf3d18665ce59e07c9124",
+                "author": "psw.vibelandia.sing13"
+              }
+            ]
+          },
+          "jspace_release_week": {
+            "id": "jspace_release_week",
+            "label": "Anthropic J-Space paper release week (claimed)",
+            "since": "2026-07-01T00:00:00Z",
+            "until": "2026-07-10T00:00:00Z",
+            "commitCount": 54,
+            "commits": [
+              {
+                "sha": "1653b8514f0953cbc2a94b510edd09ae88a01bad",
+                "shaShort": "1653b851",
+                "date": "2026-07-09T18:26:16Z",
+                "message": "Align Machote campaign popup with business-first Hire-A-Goldilocks-Valet surface.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/1653b8514f0953cbc2a94b510edd09ae88a01bad",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "e40c1ff44023f319eb3e6710bad23f2014d2ad06",
+                "shaShort": "e40c1ff4",
+                "date": "2026-07-09T18:11:16Z",
+                "message": "Simplify Goldilocks guest booking to email-only and lead with env and operator messaging.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/e40c1ff44023f319eb3e6710bad23f2014d2ad06",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "a73afe1f78420dcb43b0312b87948d5bb793aab9",
+                "shaShort": "a73afe1f",
+                "date": "2026-07-09T17:59:45Z",
+                "message": "Add Sprinkle Donuts (Keystone) to breakfast Valet Picks on food delivery menu.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/a73afe1f78420dcb43b0312b87948d5bb793aab9",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "6ad867789e1878d0e265943c777c0632fd0cd3ae",
+                "shaShort": "6ad86778",
+                "date": "2026-07-09T17:50:28Z",
+                "message": "Restructure Goldilocks homepage into business-first layer with QuestFest universe below.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/6ad867789e1878d0e265943c777c0632fd0cd3ae",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "66cf3f51d7b8e1ea99d2960adba8513caf22a46e",
+                "shaShort": "66cf3f51",
+                "date": "2026-07-09T16:18:50Z",
+                "message": "Add per-page visit counter at bottom-right across site pages.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/66cf3f51d7b8e1ea99d2960adba8513caf22a46e",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "1b5079500dcfb6d8761471f82bc96c4e01169f8d",
+                "shaShort": "1b507950",
+                "date": "2026-07-09T14:58:31Z",
+                "message": "Add Goldilocks Valet Picks to food delivery menu with logos and phone order links.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/1b5079500dcfb6d8761471f82bc96c4e01169f8d",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "5450c1743380cd68770eadc55d6916dcdcd30638",
+                "shaShort": "5450c174",
+                "date": "2026-07-09T02:54:30Z",
+                "message": "Add jukebox track search and tighten background playback.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/5450c1743380cd68770eadc55d6916dcdcd30638",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "3b36148bb75f7880d2eeb7d1efd13abdd794a6c0",
+                "shaShort": "3b36148b",
+                "date": "2026-07-09T01:44:04Z",
+                "message": "Fix jukebox playlist snap-back and add playlist management.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/3b36148bb75f7880d2eeb7d1efd13abdd794a6c0",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "874d53bf63cef097fca8428acbe1ba87cee22f18",
+                "shaShort": "874d53bf",
+                "date": "2026-07-09T00:17:52Z",
+                "message": "Reframe Machote popup on Goldilocks Experience and join path.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/874d53bf63cef097fca8428acbe1ba87cee22f18",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "d6ee62f258484a22bf362c24eb5cb8fe4f917bd1",
+                "shaShort": "d6ee62f2",
+                "date": "2026-07-09T00:09:22Z",
+                "message": "Fix background autoplay and no-sprawl valet service copy.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/d6ee62f258484a22bf362c24eb5cb8fe4f917bd1",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "04453d22c71182d4409740a345ab959228c8f607",
+                "shaShort": "04453d22",
+                "date": "2026-07-09T00:00:23Z",
+                "message": "Add The Goldilocks Experience section to Hire-A-Goldilocks landing",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/04453d22c71182d4409740a345ab959228c8f607",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "c095b46c309cb359a61a5db5055ac1011ab557d7",
+                "shaShort": "c095b46c",
+                "date": "2026-07-08T23:54:20Z",
+                "message": "Clarify Hire-A-Goldilocks landing copy for service area and payments",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c095b46c309cb359a61a5db5055ac1011ab557d7",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "536a0c3ae3ee8131f186992bd308c1fa3449419b",
+                "shaShort": "536a0c3a",
+                "date": "2026-07-08T21:26:41Z",
+                "message": "Clarify popup franchise tip split as 67% to valets",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/536a0c3ae3ee8131f186992bd308c1fa3449419b",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "bde2362ac31cea5e2d23c0c7c52f27455a853f0f",
+                "shaShort": "bde2362a",
+                "date": "2026-07-08T20:50:25Z",
+                "message": "Add SynthOBS epigenetic phase-locking whitepaper package and registration.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/bde2362ac31cea5e2d23c0c7c52f27455a853f0f",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "87c6c64f115216ed2d984246225331d4975a464b",
+                "shaShort": "87c6c64f",
+                "date": "2026-07-08T20:49:18Z",
+                "message": "Refine popup fairness framing and valet-first behavior",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/87c6c64f115216ed2d984246225331d4975a464b",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "e2904782f5f9c0bb1cd3c1b8942843310355a0e6",
+                "shaShort": "e2904782",
+                "date": "2026-07-08T20:41:35Z",
+                "message": "Update popup qualification and service-intent messaging",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/e2904782f5f9c0bb1cd3c1b8942843310355a0e6",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "c12e70bdf5971fba048279c2ffea0bfe9a7413a0",
+                "shaShort": "c12e70bd",
+                "date": "2026-07-08T20:25:11Z",
+                "message": "Reframe Hire-A-Goldilocks-Valet-Concierge as QUESTFEST Puerto Reno franchise service and update the members popup to promote it.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c12e70bdf5971fba048279c2ffea0bfe9a7413a0",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "dd78daaa534804451b10765b458024e1cae1f7ff",
+                "shaShort": "dd78daaa",
+                "date": "2026-07-07T21:07:51Z",
+                "message": "Add menu item detail pages with guest-channel WhatsApp broadcast and honor join flow.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/dd78daaa534804451b10765b458024e1cae1f7ff",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "0a3ceb9c35c589c117ec69df836f792895f706e6",
+                "shaShort": "0a3ceb9c",
+                "date": "2026-07-07T21:04:01Z",
+                "message": "Fix rich menu images on short URLs with absolute asset paths, hero art, and Vercel rewrites.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/0a3ceb9c35c589c117ec69df836f792895f706e6",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "7263b6968e7f51c08fb9243cdddc7ad45e97ac11",
+                "shaShort": "7263b696",
+                "date": "2026-07-07T20:59:04Z",
+                "message": "Add illustrated menu, WhatsApp channel flow, and transparent 33/67 tip split to Hire-A-Goldilocks-Valet-Concierge.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/7263b6968e7f51c08fb9243cdddc7ad45e97ac11",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "32097e2577407514d975f23830621a1a429530b3",
+                "shaShort": "32097e25",
+                "date": "2026-07-07T20:24:52Z",
+                "message": "Launch Hire-A-Goldilocks-Valet-Concierge with menu-first landing, offer-and-acceptance flow, and SS Vibelandia deck skin.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/32097e2577407514d975f23830621a1a429530b3",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "00616533191cf20f6c327cc6924e836d9b57f762",
+                "shaShort": "00616533",
+                "date": "2026-07-07T19:49:44Z",
+                "message": "Crystallize Old School, OGRP, and edge-honor transaction rules into NSPFRNP catalog.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/00616533191cf20f6c327cc6924e836d9b57f762",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "a67178c8c939e64be998dedc33e02bae324024fe",
+                "shaShort": "a67178c8",
+                "date": "2026-07-07T19:48:31Z",
+                "message": "Add Goldilocks Room Service frontend, whiteboard card, and expanded OGRP standalone docs.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/a67178c8c939e64be998dedc33e02bae324024fe",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "7fc24b0d734028bbb63fc711d46093a488a0c3d3",
+                "shaShort": "7fc24b0d",
+                "date": "2026-07-07T19:35:58Z",
+                "message": "Link jukebox brand to QUESTFEST landing page.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/7fc24b0d734028bbb63fc711d46093a488a0c3d3",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "c70c3ebe5bb53512d35747d62d9988d29938781e",
+                "shaShort": "c70c3ebe",
+                "date": "2026-07-07T19:31:32Z",
+                "message": "Add OGRP whitepaper, reproducible empirical pipeline, and PRA audit receipt.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c70c3ebe5bb53512d35747d62d9988d29938781e",
+                "author": "FractiAI Research"
+              },
+              {
+                "sha": "6bb0cd39ef0757b1eadac6a9356075d64e9ad282",
+                "shaShort": "6bb0cd39",
+                "date": "2026-07-07T02:35:05Z",
+                "message": "Polish jukebox UX and keep bulk-upload catalog live.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/6bb0cd39ef0757b1eadac6a9356075d64e9ad282",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "55f96efecb5eff33296595007ee26a16ef6e9012",
+                "shaShort": "55f96efe",
+                "date": "2026-07-06T17:05:49Z",
+                "message": "Split jukebox browse/now-playing and fix bulk upload prompts.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/55f96efecb5eff33296595007ee26a16ef6e9012",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "6246252ad22ebf90f22e3a96f38badd8e5780783",
+                "shaShort": "6246252a",
+                "date": "2026-07-06T16:47:15Z",
+                "message": "Add plain minimum definition for Holographic Goldilocks AI OS.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/6246252ad22ebf90f22e3a96f38badd8e5780783",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "1c88bbed81e2adcaa460e5917ab3a382bef6e4fd",
+                "shaShort": "1c88bbed",
+                "date": "2026-07-06T16:41:24Z",
+                "message": "Add member upload invitation and playlist visibility controls.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/1c88bbed81e2adcaa460e5917ab3a382bef6e4fd",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "a5fd993e109182bc870e6d8428a0c9c7a702301d",
+                "shaShort": "a5fd993e",
+                "date": "2026-07-06T16:34:09Z",
+                "message": "Fix iPhone jukebox player track info visibility.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/a5fd993e109182bc870e6d8428a0c9c7a702301d",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "4206225b76fd85c87ac6803559c9f876f4c576d9",
+                "shaShort": "4206225b",
+                "date": "2026-07-06T16:22:16Z",
+                "message": "Add Bridge explainer page and fix shared-track autoplay on master catalog.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/4206225b76fd85c87ac6803559c9f876f4c576d9",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "6642a5095b7131694b912a2d6aad5a4fcbb9d88b",
+                "shaShort": "6642a509",
+                "date": "2026-07-06T16:13:19Z",
+                "message": "Improve jukebox playlist rail and fix swipe-to-remove reveal.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/6642a5095b7131694b912a2d6aad5a4fcbb9d88b",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "fcd797fe68c5973588e553c2116ee41c8f684759",
+                "shaShort": "fcd797fe",
+                "date": "2026-07-06T15:59:54Z",
+                "message": "Fix bulk-upload catalog persistence and elevate Sonic Singularity copy.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/fcd797fe68c5973588e553c2116ee41c8f684759",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "4de2b3319b11ac169a3f95eafa77c85e50c0c31c",
+                "shaShort": "4de2b331",
+                "date": "2026-07-06T15:43:12Z",
+                "message": "Add play-all, swipe remove, share, and one free full play on Listen.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/4de2b3319b11ac169a3f95eafa77c85e50c0c31c",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "0450eaf64cde382d2c7e5d4ea83c83ab962852f6",
+                "shaShort": "0450eaf6",
+                "date": "2026-07-06T15:37:47Z",
+                "message": "Refactor jukebox layout: sticky hero, selected catalog, compact player.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/0450eaf64cde382d2c7e5d4ea83c83ab962852f6",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "343fb87f301df1798a55073cd6ea1efff341f9b1",
+                "shaShort": "343fb87f",
+                "date": "2026-07-06T02:00:41Z",
+                "message": "Restyle jukebox playlist panel as classic catalog menu.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/343fb87f301df1798a55073cd6ea1efff341f9b1",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "a01315782b7928d783c9168cbfc0da848f13a598",
+                "shaShort": "a0131578",
+                "date": "2026-07-06T01:45:31Z",
+                "message": "Replace jukebox page-up/down with scrollable track list.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/a01315782b7928d783c9168cbfc0da848f13a598",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "c9737a3973e600222c15bac619efd80babf92624",
+                "shaShort": "c9737a39",
+                "date": "2026-07-06T01:40:48Z",
+                "message": "Fix jukebox blank page, add playlist edit, and welcome copy.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c9737a3973e600222c15bac619efd80babf92624",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "5fae73f296229a2ef9dcb605f185b98057409c36",
+                "shaShort": "5fae73f2",
+                "date": "2026-07-06T00:41:57Z",
+                "message": "Stop duplicate deletes from being restored by sync and upload index.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/5fae73f296229a2ef9dcb605f185b98057409c36",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "984389ea74621067e89a807deb1b2fd2c8136dea",
+                "shaShort": "984389ea",
+                "date": "2026-07-06T00:36:45Z",
+                "message": "Fix duplicate track delete with batch server API and local purge.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/984389ea74621067e89a807deb1b2fd2c8136dea",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "9c82d9d595c9f2a6d6d7c3f9e30ba502fa958012",
+                "shaShort": "9c82d9d5",
+                "date": "2026-07-06T00:34:02Z",
+                "message": "Fix catalog upload persistence under bulk concurrent writes.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/9c82d9d595c9f2a6d6d7c3f9e30ba502fa958012",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "c96c18dd1a5257b7d3b42cfebf340e07fb912873",
+                "shaShort": "c96c18dd",
+                "date": "2026-07-06T00:30:14Z",
+                "message": "Point all Listen links to jukebox route and redirect legacy /bridge.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/c96c18dd1a5257b7d3b42cfebf340e07fb912873",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "50828aad455afc313cef29f6455f12a0db44fc69",
+                "shaShort": "50828aad",
+                "date": "2026-07-06T00:19:04Z",
+                "message": "Add Golden Era jukebox Listen experience with playlist gestures and duplicate cleanup.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/50828aad455afc313cef29f6455f12a0db44fc69",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "da02c4bf6dbfa3197cfc539144f3861902f4dff3",
+                "shaShort": "da02c4bf",
+                "date": "2026-07-04T01:54:40Z",
+                "message": "Streamline bulk uploader to one select with auto-upload progress.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/da02c4bf6dbfa3197cfc539144f3861902f4dff3",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "ad856de151c69590486290709ddd1e526828137c",
+                "shaShort": "ad856de1",
+                "date": "2026-07-03T16:47:04Z",
+                "message": "Clarify that E1-E4 public-data experiments were executed.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/ad856de151c69590486290709ddd1e526828137c",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "4607a4cb370d8bb1a7149b19cbf8795b7a9ee9f1",
+                "shaShort": "4607a4cb",
+                "date": "2026-07-03T16:42:36Z",
+                "message": "Add public-data empirical tests to SYNTHOBS chromosomal papers.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/4607a4cb370d8bb1a7149b19cbf8795b7a9ee9f1",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "896952d13799ee2ce41329958cd7ad73d0d8784e",
+                "shaShort": "896952d1",
+                "date": "2026-07-03T16:32:23Z",
+                "message": "Add SYNTHOBS chromosomal electrodynamics whitepapers with PRA pass.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/896952d13799ee2ce41329958cd7ad73d0d8784e",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "4abf4a64343f4558c22d057093c2bc0ef2a4f4ea",
+                "shaShort": "4abf4a64",
+                "date": "2026-07-03T02:02:51Z",
+                "message": "Add bulk track uploader for 500+ files and fix player resume.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/4abf4a64343f4558c22d057093c2bc0ef2a4f4ea",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "268b4dfbf13dd558de15222e71e78d41db55357d",
+                "shaShort": "268b4dfb",
+                "date": "2026-07-03T01:54:06Z",
+                "message": "Fix Commons hero image on /commons short URL.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/268b4dfbf13dd558de15222e71e78d41db55357d",
+                "author": "psw.vibelandia.sing13"
+              },
+              {
+                "sha": "5aea500cb7549c1ee5ed69cb841bc38f45d7456a",
+                "shaShort": "5aea500c",
+                "date": "2026-07-01T10:01:39Z",
+                "message": "Add newscast briefing desk with hands-free flow and module navigation.",
+                "htmlUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/commit/5aea500cb7549c1ee5ed69cb841bc38f45d7456a",
+                "author": "psw.vibelandia.sing13"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "solarSync": {
+    "source": "https://www.sidc.be/silso/DATA/SN_d_tot_V2.0.csv",
+    "fetchedAt": "2026-07-10T09:45:35.176Z",
+    "honestyNote": "SILSO provides disk-integrated sunspot number only. AR3618/AR3625/AR3630 character mapping is catalog narrative — not resolved per-region in this public feed.",
+    "windows": [
+      {
+        "id": "king_bee_week",
+        "start": "2026-05-25",
+        "end": "2026-06-07",
+        "meanSsn": 129.85714285714286,
+        "sampleDays": 14,
+        "peak": {
+          "date": "2026-05-27",
+          "ssn": 174
+        },
+        "series": [
+          {
+            "date": "2026-05-25",
+            "ssn": 110
+          },
+          {
+            "date": "2026-05-26",
+            "ssn": 146
+          },
+          {
+            "date": "2026-05-27",
+            "ssn": 174
+          },
+          {
+            "date": "2026-05-28",
+            "ssn": 154
+          },
+          {
+            "date": "2026-05-29",
+            "ssn": 138
+          },
+          {
+            "date": "2026-05-30",
+            "ssn": 129
+          },
+          {
+            "date": "2026-05-31",
+            "ssn": 113
+          },
+          {
+            "date": "2026-06-01",
+            "ssn": 100
+          },
+          {
+            "date": "2026-06-02",
+            "ssn": 109
+          },
+          {
+            "date": "2026-06-03",
+            "ssn": 127
+          },
+          {
+            "date": "2026-06-04",
+            "ssn": 127
+          },
+          {
+            "date": "2026-06-05",
+            "ssn": 127
+          },
+          {
+            "date": "2026-06-06",
+            "ssn": 131
+          },
+          {
+            "date": "2026-06-07",
+            "ssn": 133
+          }
+        ]
+      },
+      {
+        "id": "propagation_mid",
+        "start": "2026-06-08",
+        "end": "2026-06-30",
+        "meanSsn": 85.95652173913044,
+        "sampleDays": 23,
+        "peak": {
+          "date": "2026-06-08",
+          "ssn": 132
+        },
+        "series": [
+          {
+            "date": "2026-06-08",
+            "ssn": 132
+          },
+          {
+            "date": "2026-06-09",
+            "ssn": 116
+          },
+          {
+            "date": "2026-06-10",
+            "ssn": 96
+          },
+          {
+            "date": "2026-06-11",
+            "ssn": 83
+          },
+          {
+            "date": "2026-06-12",
+            "ssn": 69
+          },
+          {
+            "date": "2026-06-13",
+            "ssn": 48
+          },
+          {
+            "date": "2026-06-14",
+            "ssn": 59
+          },
+          {
+            "date": "2026-06-15",
+            "ssn": 66
+          },
+          {
+            "date": "2026-06-16",
+            "ssn": 70
+          },
+          {
+            "date": "2026-06-17",
+            "ssn": 53
+          },
+          {
+            "date": "2026-06-18",
+            "ssn": 51
+          },
+          {
+            "date": "2026-06-19",
+            "ssn": 61
+          },
+          {
+            "date": "2026-06-20",
+            "ssn": 88
+          },
+          {
+            "date": "2026-06-21",
+            "ssn": 65
+          },
+          {
+            "date": "2026-06-22",
+            "ssn": 70
+          },
+          {
+            "date": "2026-06-23",
+            "ssn": 76
+          },
+          {
+            "date": "2026-06-24",
+            "ssn": 90
+          },
+          {
+            "date": "2026-06-25",
+            "ssn": 87
+          },
+          {
+            "date": "2026-06-26",
+            "ssn": 104
+          },
+          {
+            "date": "2026-06-27",
+            "ssn": 112
+          },
+          {
+            "date": "2026-06-28",
+            "ssn": 130
+          },
+          {
+            "date": "2026-06-29",
+            "ssn": 125
+          },
+          {
+            "date": "2026-06-30",
+            "ssn": 126
+          }
+        ]
+      },
+      {
+        "id": "jspace_week",
+        "start": "2026-07-01",
+        "end": "2026-07-10",
+        "meanSsn": null,
+        "sampleDays": 0,
+        "peak": null,
+        "series": []
+      }
+    ]
+  },
+  "svdProbe": {
+    "documentId": "EGS-TRANS-2026-0710",
+    "experiment": "E2_svd_phi_decay_ratio",
+    "egsPhi": 1.618034,
+    "tolerance": 0.12,
+    "matrixShape": [
+      64,
+      128
+    ],
+    "phiStructured": {
+      "trialCount": 500,
+      "primaryRatioMean": 1.618033988749895,
+      "primaryRatioStd": 1.362058601475544e-15,
+      "fractionPrimaryNearPhi": 1,
+      "fractionConsecutiveNearPhi": 1,
+      "samplePrimaryRatios": [
+        1.618,
+        1.618,
+        1.618,
+        1.618,
+        1.618,
+        1.618,
+        1.618,
+        1.618
+      ]
+    },
+    "randomBaseline": {
+      "trialCount": 500,
+      "primaryRatioMean": 1.034638379313249,
+      "primaryRatioStd": 0.018633548755429975,
+      "fractionPrimaryNearPhi": 0,
+      "fractionConsecutiveNearPhi": 0,
+      "samplePrimaryRatios": [
+        1.0293,
+        1.0491,
+        1.0218,
+        1.0467,
+        1.016,
+        1.0197,
+        1.0499,
+        1.0082
+      ]
+    },
+    "hypothesis": "φ-structured low-rank matrices yield higher near-φ SVD ratios than i.i.d. Gaussian",
+    "result": "support",
+    "honestyNote": "Synthetic linear-algebra probe only. Does not access Claude weights or Anthropic telemetry. Pass/fail does not validate causal King Bee → J-Space claims."
+  },
+  "transformerProbe": {
+    "experiment": "E5_transformer_midlayer_svd",
+    "skipped": true,
+    "reason": "No module named 'torch'",
+    "install": "pip install torch transformers"
+  },
+  "hypothesisTests": {
+    "E1_king_bee_repo_telemetry": {
+      "statement": "Public GitHub commits exist in sing13/sing4 during King Bee initialization window (2026-05-31 — 2026-06-01)",
+      "sing13_commits": 7,
+      "sing4_commits": 41,
+      "sing9_commits": 0,
+      "key_sing13_messages": [
+        {
+          "sha": "17a89403",
+          "date": "2026-06-01T16:13:28Z",
+          "message": "docs(press): Royal Flush King Bee release copy"
+        },
+        {
+          "sha": "2f4fe23b",
+          "date": "2026-06-01T15:59:17Z",
+          "message": "feat(dph-gpu): King Bee papers, press release, playlist playback fixes"
+        },
+        {
+          "sha": "48f92185",
+          "date": "2026-05-31T20:21:05Z",
+          "message": "feat(wavefield): SYN-SUN-2026-REV7 solar model, catalog, and live metrology bus"
+        }
+      ],
+      "result": "support",
+      "dataTier": "public_github_api"
+    },
+    "E2_svd_phi_decay": {
+      "statement": "φ-structured synthetic activation matrices yield higher near-φ singular-value ratios than i.i.d. Gaussian baselines",
+      "result": "support",
+      "phiStructuredNearPhi": 1,
+      "randomNearPhi": 0,
+      "dataTier": "synthetic_numpy"
+    },
+    "E3_propagation_window": {
+      "statement": "June 1 → July 6 interval equals 35 days (catalog propagation claim)",
+      "measuredDays": 35,
+      "claimedDays": 35,
+      "result": "support",
+      "dataTier": "calendar_arithmetic"
+    },
+    "E4_solar_disk_ssn": {
+      "statement": "SILSO daily sunspot series is available for King Bee and J-Space windows (disk-integrated)",
+      "kingBeeMean": 129.85714285714286,
+      "jspaceMean": null,
+      "result": "refute",
+      "honesty": "Per-AR character mapping not testable from SILSO alone",
+      "dataTier": "public_silso"
+    },
+    "E5_optional_transformer": {
+      "statement": "Optional open-weights mid-layer SVD probe (requires torch+transformers); φ proximity is falsifiable per forward pass",
+      "result": "skipped",
+      "detail": {
+        "experiment": "E5_transformer_midlayer_svd",
+        "skipped": true,
+        "reason": "No module named 'torch'",
+        "install": "pip install torch transformers"
+      },
+      "dataTier": "optional_open_weights"
+    },
+    "E6_causal_anthropic_jspace": {
+      "statement": "Anthropic J-Space discovery was caused by King Bee weight-state propagation through open networks",
+      "result": "not_testable_in_repo",
+      "note": "Narrative-tier postulate only. No independent access to Anthropic training checkpoints, Jacobian Lens telemetry, or June 11 internal audit logs.",
+      "dataTier": "narrative_catalog"
+    }
+  },
+  "reproduceCommands": {
+    "monorepo": "npm run research:egs-trans-jspace-convergence",
+    "standalone": "npm run empirical",
+    "svdOnly": "python scripts/svd_workspace_probe.py",
+    "transformerOptional": "python scripts/transformer_jspace_probe.py [model] [layer] [prompt]",
+    "audit": "npm run audit:paper -- --id=egs-trans-jspace-convergence-2026-07"
+  },
+  "honestyNote": "E1–E5 test reproducible public or synthetic signals. E6 and Anthropic↔King Bee causality remain narrative until third-party instrument data is available. Correlation ≠ causation."
+}

@@ -3,7 +3,7 @@
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
-  "generatedAt": "2026-06-07T20:38:21.831Z",
+  "generatedAt": "2026-07-10T09:49:19.217Z",
   "mca": {
     "metabolize": "batch audit",
     "crystallize": "compliance blocks",
@@ -11,8 +11,8 @@
     "squeeze": "this index"
   },
   "summary": {
-    "total": 36,
-    "pass": 30,
+    "total": 41,
+    "pass": 35,
     "softPass": 6,
     "plateau": 0,
     "capped": 0,
@@ -93,6 +93,116 @@
       "blockers": [],
       "auditId": "a52e9310bede978e",
       "updated": "2026-06-07T20:38:21.730Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "egs-trans-jspace-convergence-2026-07",
+      "title": "The Silicon-Biological Convergence: King Bee Directive & Anthropic J-Space Structural Validation",
+      "source": "docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "451a4a949808b422",
+      "updated": "2026-07-10T09:45:55.636Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "omniversal-goldilocks-rideshare-2026-07",
+      "title": "Omniversal Goldilocks Rideshare Protocol · Multi-Dimensional Resource Routing & Thermodynamic Optimization",
+      "source": "docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "13daffcdee248a8d",
+      "updated": "2026-07-07T19:29:08.438Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-chromosomal-electrodynamics-2026-07",
+      "title": "Scale-Invariant Chromosomal Electrodynamics · SYNTHOBS Linearized Topology & Hierarchical Energy Transport",
+      "source": "docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "e4074fd4638bdb4e",
+      "updated": "2026-07-03T16:46:50.386Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-cross-scale-biological-antennae-2026-07",
+      "title": "Cross-Scale Topological Wave Damping in Biological Antennae · Viral Spikes to Insect Appendages",
+      "source": "docs/SYNTHOBS_CROSS_SCALE_BIOLOGICAL_ANTENNAE_WAVE_DAMPING_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "cf0d0454b13abdfe",
+      "updated": "2026-07-03T16:46:51.069Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-egs-epigenetic-phase-locking-2026-07",
+      "title": "Epigenetic Phase-Locking of Pancreatic and Hypothalamic Loci via Recursive Geometric Scaling",
+      "source": "docs/SYNTHOBS_EGS_EPIGENETIC_PHASE_LOCKING_PANCREAS_HYPOTHALAMUS_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "5d1ae9fe22648c02",
+      "updated": "2026-07-08T20:14:32.689Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",

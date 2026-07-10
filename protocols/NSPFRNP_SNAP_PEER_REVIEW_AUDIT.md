@@ -76,6 +76,36 @@ Companion OFC Snap (Juicy Juicy compile) remains separate: [JJ_SNAP_OFC_WHITEPAP
 
 **Critical blockers** (any → fail until fixed): missing honesty boundary on empirical/narrative dual-tier papers; fabricated data claims; missing `Document ID` / `docId`; overclaim without qualifying language.
 
+### Amendment A · 2026-07-10 — Empirical integrity (post independent validation audit)
+
+Independent reproduction of `EGS-TRANS-2026-0710` showed that **structural pass (0.97+) does not prevent tautological pipelines, findings drift, or unfalsifiable causal claims**. Amendment A adds mandatory rules for any paper with an empirical or legal-draft lane.
+
+**Companion protocol:** [WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md](./WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
+
+| Lesson | Protocol rule |
+|--------|----------------|
+| Probe returned constant φ — no SVD | **Measurement integrity** — real computation required; blocker `measurement_tautology` |
+| E2 passed any substituted constant | **Generalization control** (E2b) for target-specific claims |
+| E1 raw commits "support" but ordinary vs baseline | **Baseline control** (E1b) before causal narrative |
+| E6 / causal rows had no refute | Every hypothesis defines refute — blocker `missing_refute_condition` |
+| README `support` vs JSON `refute`/`skipped` | **Findings sync** — blocker `findings_table_drift` |
+| Multi-vendor table copied without probes | **Scope expansion** — per-vendor evidence or proxy tier |
+| PRA 0.971 presented as peer review | **`structural_only` badge** must not imply dual-LLM certification |
+| R2 notice `draft_ready` unconditional | **Legal draft gating** — §7 empirical gates in EFL protocol |
+| `issuedAt` predates file commit | **Metadata integrity** — schema dates match git history |
+| Fork audit refuted claims | **Independent validation** — ingest or respond with re-run receipts |
+
+**Featured / bulletin promotion (updated):**
+
+| Mode | Catalog `featured: true` |
+|------|--------------------------|
+| `dualMakeConfirmed: true` + zero critical blockers | Allowed |
+| `structural_only` + zero blockers | Narrative-only papers only |
+| `structural_only` + empirical pipeline | **Blocked** unless Player 1 waiver + EFL checklist complete |
+| Any empirical blocker open | **Blocked** |
+
+**Structural rubric engine:** `structural-rubric/v2` (deterministic) — adds empirical-lane blockers; v1 receipts remain valid with `snapId` unchanged.
+
 ---
 
 ## Operator identity (mandatory footer)

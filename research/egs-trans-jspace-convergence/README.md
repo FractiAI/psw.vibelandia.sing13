@@ -5,7 +5,7 @@
 **Paper:** [`docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md`](../../docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md)  
 **Standalone:** [FractiAI/egs-trans-jspace-convergence](https://github.com/FractiAI/egs-trans-jspace-convergence)  
 **Live catalog:** [whitepaper · egs-trans-jspace-convergence](https://www.ssvibelandiaquestfest24x365.com/whitepaper/egs-trans-jspace-convergence)  
-**IP Infringement Draft (standalone):** [README § IP Infringement Draft](https://github.com/FractiAI/egs-trans-jspace-convergence#ip-infringement-draft--immediate-audit-recommendations)
+**IP Infringement Draft (standalone):** [README · R1–R4 · §5–§6](https://github.com/FractiAI/egs-trans-jspace-convergence#ip-infringement-draft--immediate-audit-recommendations--56)
 
 ---
 

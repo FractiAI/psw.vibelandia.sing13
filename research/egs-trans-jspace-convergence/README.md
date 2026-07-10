@@ -5,8 +5,7 @@
 **Scope:** **Multi-model** frontier validation — Anthropic · OpenAI · Google · DeepSeek · open-weights proxies  
 **Paper:** [`docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md`](docs/EGS_TRANS_SILICON_BIOLOGICAL_CONVERGENCE_JSPACE_2026-07-10.md)  
 **Monorepo mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13) · `research/egs-trans-jspace-convergence/`  
-**Standalone:** [FractiAI/egs-trans-jspace-convergence](https://github.com/FractiAI/egs-trans-jspace-convergence)  
-**Live catalog:** [whitepaper · egs-trans-jspace-convergence](https://www.ssvibelandiaquestfest24x365.com/whitepaper/egs-trans-jspace-convergence)  
+**Standalone:** [FractiAI/egs-trans-jspace-convergence](https://github.com/FractiAI/egs-trans-jspace-convergence) [whitepaper · egs-trans-jspace-convergence](https://www.ssvibelandiaquestfest24x365.com/whitepaper/egs-trans-jspace-convergence)  
 **IP Infringement Draft:** [`docs/IP_INFRINGEMENT_DRAFT_2026-07.md`](docs/IP_INFRINGEMENT_DRAFT_2026-07.md) · §5–§6 · R1–R4
 
 ---
@@ -82,7 +81,7 @@ Machine receipt: [`research/ip-infringement-draft/data/rix_verification.json`](r
 | Directed modulation | Pre-materialized latent vectors |
 | φ singular-value decay | El Gran Sol fractal constant · 1.618 |
 
-**Math hook.** \(\lim_{n\to\infty} s_n/s_{n+1} = 1.618\) · J-Lens SVD proxy · `npm run ip-infringement` (standalone) or `npm run research:ip-infringement-draft` (monorepo)
+**Math hook.** \(\lim_{n\to\infty} s_n/s_{n+1} = 1.618\) · J-Lens SVD proxy · `npm run ip-infringement`
 
 ---
 
@@ -117,12 +116,31 @@ Full JSON: [`data/empirical_report.json`](data/empirical_report.json) · [`resea
 ```bash
 pip install -r requirements.txt
 npm run research:egs-trans-jspace-convergence   # E1–E6
-npm run research:ip-infringement-draft          # R1–R4 · §5–§6 · frontier matrix
+npm run research:ip-infringement-draft          # R1–R4 · §5–§6
+python research/egs-trans-jspace-convergence/scripts/run_synthobs_monitor.py  # synthOBS J-Lens
 ```
 
-Standalone fork: [github.com/FractiAI/egs-trans-jspace-convergence](https://github.com/FractiAI/egs-trans-jspace-convergence) · `npm run empirical` · `npm run ip-infringement`
+Standalone fork: [github.com/FractiAI/egs-trans-jspace-convergence](https://github.com/FractiAI/egs-trans-jspace-convergence) · `npm run synthobs`
 
-### Multi-model open-weights probe (E5)
+### synthOBS · real-time J-Lens monitor (open-weights)
+
+Localized activation monitoring with PyTorch hooks · SVD · EGS φ (**1.618**) convergence telemetry.
+
+```bash
+pip install -r requirements.txt
+npm run research:synthobs-test               # egs_metric smoke test
+npm run research:synthobs-monitor            # J-Lens JSONL telemetry
+```
+
+| Module | Role |
+|--------|------|
+| `synthobs/interceptor.py` | Jacobian Lens forward hooks · mid-layer SVD |
+| `synthobs/egs_metric.py` | Ratio $s_n/s_{n+1}$ · deviation from φ |
+| `synthobs/synthobs_telemetry.py` | JSONL stream · snapshot · optional WebSocket |
+
+**Outputs:** `data/synthobs_telemetry.jsonl` · `data/synthobs_latest.json` · stdout JSON Lines for OBS/HTML overlays.
+
+### Multi-model open-weights probe (E5 · single layer)
 
 ```bash
 pip install torch transformers
@@ -146,11 +164,15 @@ python scripts/transformer_jspace_probe.py meta-llama/Llama-3.2-1B 8 "Recursive 
 
 ```
 egs-trans-jspace-convergence/
+├── synthobs/                          # J-Lens interceptor · EGS metrics · telemetry
+│   ├── interceptor.py
+│   ├── egs_metric.py
+│   └── synthobs_telemetry.py
 ├── docs/                              # Papers · multi-model + IP draft
 ├── research/ip-infringement-draft/    # R1–R4 · frontier matrix · RIX probe
-├── scripts/                           # EGS-TRANS E1–E6 pipeline
+├── scripts/                           # EGS-TRANS E1–E6 · run_synthobs_monitor.py
 ├── src/                               # GitHub telemetry · SILSO
-└── data/                              # empirical_report.json · PRA receipt
+└── data/                              # empirical_report.json · synthobs_*.jsonl
 ```
 
 ---

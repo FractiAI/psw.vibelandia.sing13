@@ -25,6 +25,7 @@ build/
 .vercel
 demo-output/
 scripts/.migrate-tmp/
+tmp-catalog.json
 
 # Audio — local only (Golden Backdoor / Work Flow); not in repo
 assets/audio/

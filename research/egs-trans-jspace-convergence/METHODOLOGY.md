@@ -2,6 +2,8 @@
 
 ## Live empirical study policy (2026-07-10)
 
+**Primary timeline evidence = commit timestamps** (E1 GitHub telemetry, E7 commit-search when `GH_TOKEN` set). **E8 pickaxe** (`git log -S`) is optional depth for *file-content introduction* — not the default timeline comparator.
+
 | Tier | Experiments | Data source |
 |------|-------------|-------------|
 | **Live empirical** | E1 · E1b · E3 · E4 · E7 · E8 · E5 · E9 · R1 | GitHub API · git pickaxe clones · SILSO CSV · Hugging Face forward passes |

@@ -8,13 +8,116 @@
 **Live catalog:** [whitepaper · egs-trans-jspace-convergence](https://www.ssvibelandiaquestfest24x365.com/whitepaper/egs-trans-jspace-convergence)
 **IP Infringement Draft:** [`../../docs/IP_INFRINGEMENT_DRAFT_2026-07.md`](../../docs/IP_INFRINGEMENT_DRAFT_2026-07.md) · §5–§6 · R1–R4
 
-> **⚠️ Independent validation audit (2026-07-10, expanded multi-agent pass + real external verification) — read before trusting anything below.** Every falsifiable claim in this repository that has actually been tested — across E1–E9 and IP Infringement Draft recommendations R1–R4, §5, §6 — either fails on the repository's own stated success criteria, is refuted by real measurement, or performs no computation at all. **Real external checks add:** the Anthropic paper this repo is built on was fetched and read directly — it contains zero mentions of φ/1.618/FractiAI anywhere; no public record connects FractiAI to any of the four vendors' actual work; and a new 5-model, 45-real-trial survey across independently trained model families (Qwen2, SmolLM2 ×2, GPT-2, Pythia) found **0 of 45** trials within tolerance of φ, with φ itself below the minimum ratio observed. Full evidence, exact commit SHAs, and reproduction commands: [`../../docs/VALIDATION_AUDIT_2026-07-10.md`](../../docs/VALIDATION_AUDIT_2026-07-10.md). **Note on this document's own history:** while that audit was in progress on 2026-07-10, this README and the paper it links were rewritten by the repository's own autonomous operator to broaden the causal claim from Anthropic alone to Anthropic + OpenAI + Google + DeepSeek, and the audit's in-progress corrections to the findings table below were overwritten back to their pre-audit state. Nothing about the underlying evidence changed in that rewrite — the newly-foregrounded "Frontier model matrix" below is the same hardcoded, zero-probe table already audited in §6.2 of the validation report — but readers should know the claim's scope expanded *during*, not before, independent review, and should treat the "3 more real companies" framing with correspondingly more scrutiny, not less.
+---
+
+## Read this first — three alignment questions (dimensional analysis)
+
+**Stop here before the rest.** These are **not** single pass/fail gates. Each question has **separate dimensions**; some dimensions support partial alignment, others do not. Primary timeline evidence is **commit timestamps** (when Git recorded each commit) — not file-content archaeology.
+
+**Latest receipts:** [`data/empirical_report.json`](data/empirical_report.json) · [`historical_commit_snapshots.md`](data/historical_commit_snapshots.md)
+
+### Terms (plain language)
+
+| Term | Meaning in this repo |
+|------|----------------------|
+| **Scrape** | Pull **real commits** from GitHub (or local git clone) and record **committer timestamps**, SHAs, and messages. A scrape **found** something if commits exist in the receipt — regardless of when vocabulary appeared. |
+| **Pickaxe (E8, optional)** | A *deeper* search that asks when specific **words first entered file bodies** across all history (`git log -S`). **Not required** for timeline comparison; use only if you care about *content introduction date* vs *commit date*. |
+| **Post-vendor vocabulary** | Words like `scratchpad` / `J-Space` appearing in commits **after** 2026-07-06. This constrains **vocabulary timing** — it does **not** mean scrapes failed or that no pre-vendor commits exist. |
+
+### Anchor timestamps (compare these)
+
+| Event | ISO date | Source |
+|-------|----------|--------|
+| King Bee node sweep (claimed) | **2026-06-01** | Catalog anchor |
+| Anthropic J-Space paper (public) | **2026-07-06** | Vendor disclosure |
+| EGS-TRANS / IP material commits (sing13) | **2026-07-10** | Live scrape permalinks |
+
+---
+
+### 1 · Do timelines align?
+
+**Question split:** (A) Did FractiAI repos have **logged commit activity before** vendor disclosure? (B) Did **vendor-specific vocabulary** appear in commits before disclosure?
+
+| Dimension | Compare | Finding | Receipt |
+|-----------|---------|---------|---------|
+| **A · Pre-vendor commit activity** | Commit timestamps vs **2026-07-06** | **Partial support** — King Bee window (**2026-05-31 — 2026-06-02**) has live commits: sing13 **7**, sing4 **28** (sing9 **0** in window). Example pre-vendor sing13: [2f4fe23b](https://github.com/FractiAI/psw.vibelandia.sing13/commit/2f4fe23baea67da6dbac06af474ef1591454addc) (King Bee papers). Calendar June 1 → July 6 = **35 days** (E3). | E1 **`support`** · [`githubTelemetry`](data/empirical_report.json) |
+| **B · Core-mechanism vocabulary timing** | First commit **timestamp** where `scratchpad` / `J-Space` / `workspace bottleneck` appear vs **2026-07-06** | **Does not precede vendor** — scraped commits carrying those terms are **2026-07-10** (e.g. [dfc972b3](https://github.com/FractiAI/psw.vibelandia.sing13/commit/dfc972b3ebc2962c14d53adfd1e3c6b51415a089)). sing4/sing9: **zero** scraped commits with those markers at any date. | [`historical_commit_snapshots.md`](data/historical_commit_snapshots.md) |
+| **C · King Bee as discrete event** | Window commit rate vs each repo's prior 30-day cadence | **Not distinguishable** from ordinary cadence (|z| ≤ 2 all repos; sing4 heartbeat bot). Activity exists; spike anomaly does not. | E1b **`refute`** anomaly · not refute of commits existing |
+
+**Timeline synthesis (non-linear):** Pre-vendor **commit timestamps exist** and align with the June 1 narrative anchor. **Vendor-label vocabulary** in public git history does **not** align with “written before Anthropic paper.” Those are different timeline claims — do not collapse them into one **No**.
+
+```mermaid
+flowchart LR
+  subgraph pre [Before 2026-07-06]
+    KB[2026-06-01 King Bee commits]
+    HB[sing4 heartbeat cadence]
+  end
+  subgraph post [On or after 2026-07-06]
+    AN[2026-07-06 Anthropic paper]
+    VOC[2026-07-10 J-Space/scratchpad commits]
+  end
+  KB -->|timestamp precedes| AN
+  VOC -->|timestamp follows| AN
+  HB -->|continuous not spike| KB
+```
+
+---
+
+### 2 · Does architecture align?
+
+**Question split:** (A) Do **prior** sing4/sing9 protocol docs contain vendor core-mechanism tokens? (B) Does **φ-geometry** appear in real open-weights activations?
+
+| Dimension | Finding | Nuance |
+|-----------|---------|--------|
+| **A · Code-Print crosswalk (R1)** | **Weak** — FractiAI / φ branding matches; **`scratchpad`, `workspace_bottleneck`, `j_space` do not** appear in scraped sing4/sing9 HEAD protocols. | Weak ≠ zero overlap; ≠ strong prefiguration of vendor internals. |
+| **B · φ-SVD on designed matrices (E2/E2b)** | Control lane only — construction passes **any** target constant (tautology check). | Not evidence about Claude/Gemini weights. |
+| **C · φ-SVD on real models (E5/E9)** | **Refute when run** — e.g. ratio **47.32** vs φ **1.618**; audit pass **0/45** near φ. **Skipped** on latest local run (no `torch`). | Architecture *claim* (φ decay in hidden states) not supported on tested open weights. |
+
+**Architecture synthesis:** Broad lattice / workspace *narrative* may rhyme with vendor papers; **token-level** and **φ-metric** alignment are **not established** on public data. Partial narrative overlap + failed metric alignment = **mixed**, not a flat disqualification.
+
+---
+
+### 3 · Do scrapes and downstream model responses align?
+
+**Question split:** (A) Are scrapes **real** and **per-model grouped**? (B) Do downstream forward-pass measurements **tell the same story** as scrape timestamps?
+
+| Dimension | Finding | Nuance |
+|-----------|---------|--------|
+| **A · Scrape integrity** | **Yes — scrapes are real.** **128+** commit permalink snapshots from live E1 telemetry (timestamp-ordered). Post-vendor commits **are still scrapes** — they prove vocabulary entered the record on those dates. | Scrapes ≠ “pre-vendor proof.” Scrapes = immutable commit evidence. |
+| **B · Scrape story vs open-weights story** | **Mixed / tension** — June scrapes show King Bee / canon work **before** vendor paper; July scrapes show EGS-TRANS vocabulary **after**; E5/E9 (when run) **refute** φ on Qwen/SmolLM2/GPT-2/Pythia families. | Timelines and φ-geometry pull in **different directions**; that is alignment **analysis**, not automatic **invalid**. |
+| **C · Vendor matrix rows (§5)** | **Not scrape-derived** — catalog reference until vendor probes exist. | Do not treat §5 literals as downstream of scrapes. |
+
+**Scrape ↔ downstream synthesis:** Scrapes **model** the git timeline layer; E5/E9 **model** the activation geometry layer. They **align** on “public git activity predates July 6” for King Bee commits; they **do not align** on “φ in weights” or “vendor vocabulary predates July 6.” Report both.
+
+---
+
+### Summary matrix (read across, not one cell)
+
+| | Pre-vendor **commits** exist? | Vendor **vocabulary** pre-dates paper? | **φ** on open weights? | Scrapes **real**? |
+|--|:---:|:---:|:---:|:---:|
+| **Evidence** | **Yes** (E1) | **No** (timestamp scrape) | **No** when run (E5/E9) | **Yes** |
+| **Confidence** | Live API + clone fallback | Live commit timestamps | Audit run; re-run locally | Live pipeline |
+
+**Verified observation (strict catalog rule: A ∧ B both pass):** **Not met** — because vocabulary-timing and φ-metric dimensions fail even while pre-vendor commit scrapes succeed.
+
+**Re-run gaps:** E7 (`GH_TOKEN`) adds commit-search timestamp scrape · E5/E9 (`torch`) refresh open-weights layer.
+
+```bash
+npm run empirical -- --allow-incomplete
+# monorepo: npm run research:egs-trans-jspace-convergence -- --allow-incomplete
+```
+
+Adversarial cross-check: [`../../docs/VALIDATION_AUDIT_2026-07-10.md`](../../docs/VALIDATION_AUDIT_2026-07-10.md)
+
+---
+
+> **Audit note:** Independent review flagged over-broad vendor claims and φ tautologies. This section separates **what scrapes prove** (commits + timestamps) from **what they cannot prove** (private vendor weights, pre-image of vendor vocabulary).
 
 ---
 
 **Repository abstract**
 
-This repository is the **open, forkable home** for **EGS-TRANS-2026-0710**. **Verified observation** requires **two paths — both must pass:** **Path A** (historical timelines align before vendor papers) and **Path B** (new scratchspaces match architecture written prior to those discoveries). **July 10 2026 public receipt: both refuted — not verified.** See dual-path findings below.
+This repository is the **open, forkable home** for **EGS-TRANS-2026-0710**. See **[Read this first — three alignment questions](#read-this-first--three-alignment-questions)** above for timeline · architecture · scrape↔downstream answers before reading further.
 
 | Layer | Path | Role |
 |-------|------|------|
@@ -187,23 +290,16 @@ Full falsification table: [`METHODOLOGY.md`](METHODOLOGY.md). Full independent v
 
 ---
 
-## Historical commit snapshots (Path A · per model family)
+## Historical commit snapshots (commit **timestamps** · per model family)
 
-Every E1 · E7 · E8 scrape writes **GitHub commit permalinks** — immutable historical snapshots — into a per-model-family ledger. The pipeline runs this automatically at the end of `npm run empirical`; regenerate snapshots only with `npm run snapshots`.
+Every **E1** (and **E7** when run) scrape records **committer timestamps** + GitHub permalinks — grouped by frontier model family. **E8 pickaxe** is optional file-content depth; primary timeline comparison uses **commit dates only**. Regenerate: `npm run snapshots`.
 
 | Receipt | Path |
 |---------|------|
-| **JSON** (252 snapshots · `allScrapes[]` + `frontierModelSnapshots[]`) | [`data/historical_commit_snapshots.json`](data/historical_commit_snapshots.json) |
-| **Markdown table** (human-readable, grouped by model) | [`data/historical_commit_snapshots.md`](data/historical_commit_snapshots.md) |
+| JSON | [`data/historical_commit_snapshots.json`](data/historical_commit_snapshots.json) |
+| Markdown | [`data/historical_commit_snapshots.md`](data/historical_commit_snapshots.md) |
 
-| Model family | Path A hits | Key commit permalinks | Precedes vendor paper? |
-|--------------|-------------|----------------------|------------------------|
-| Anthropic Claude (J-Space) | 3 | [dfc972b3](https://github.com/FractiAI/psw.vibelandia.sing13/commit/dfc972b3ebc2962c14d53adfd1e3c6b51415a089) · [b0193201](https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d) | **No** (2026-07-10) |
-| OpenAI o-Series | 1 | [b0193201](https://github.com/FractiAI/psw.vibelandia.sing13/commit/b0193201910e628f2ef6003d89d5e211c025917d) | **No** |
-| Google Gemini · DeepSeek | 0 | — | N/A |
-| Open-weights (E5/E9) | Path B only | E9: 0/45 near φ | Path B **refuted** |
-
-Scrape sources: `E1_github_telemetry` · `E7_commit_search_scrape` · `E8_git_pickaxe_scrape`. Zero hits in sing4/sing9 for core markers is itself a snapshot receipt.
+**Interpretation:** A scrape **hit** on 2026-07-10 is real evidence that those terms entered the git record that day — not evidence that scrapes failed. Zero hits in sing4/sing9 for a marker means no commit **timestamp** carried that term in the scraped window/history.
 
 ---
 

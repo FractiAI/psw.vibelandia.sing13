@@ -6857,7 +6857,8 @@ html.ios .sc-track-add-pl {
 html.qf-jukebox-page,
 html.qf-jukebox-page body {
   background:
-    radial-gradient(ellipse 90% 45% at 50% 0%, rgba(212, 175, 55, 0.14) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(8, 6, 4, 0.72) 0%, rgba(8, 6, 4, 0.92) 42%, rgba(8, 6, 4, 0.97) 100%),
+    url('/interfaces/assets/jukebox-golden-era-1940s.png') center 18% / cover no-repeat fixed,
     #0a0806;
 }
 
@@ -6870,7 +6871,101 @@ html.qf-jukebox-page .jb-pl-picker-backdrop {
   z-index: 400;
 }
 
-/* Compact player — ~50% height on jukebox */
+/* Compact jukebox player — two lines */
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  padding: 0.28rem 0.55rem calc(0.28rem + env(safe-area-inset-bottom, 0px));
+  gap: 0.12rem 0.45rem;
+}
+
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-track {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-time {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  white-space: nowrap;
+}
+
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-controls {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-title,
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-artist {
+  display: inline;
+  margin: 0;
+}
+
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-artist::before {
+  content: ' · ';
+  color: #8a8a8a;
+}
+
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-title {
+  font-size: 0.78rem;
+}
+
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-artist {
+  font-size: 0.72rem;
+  color: #b3b3b3;
+}
+
+html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-btn--play {
+  width: 1.85rem;
+  height: 1.85rem;
+  font-size: 0.82rem;
+}
+
+html.qf-jukebox-page .sp-now-prefs-drawer {
+  position: relative;
+  display: inline-block;
+}
+
+html.qf-jukebox-page .sp-now-btn--prefs {
+  list-style: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+html.qf-jukebox-page .sp-now-btn--prefs::-webkit-details-marker {
+  display: none;
+}
+
+html.qf-jukebox-page .sp-now-prefs--drawer {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.35rem);
+  z-index: 220;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 8.5rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(12, 10, 8, 0.98);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+html.qf-jukebox-page .sp-now-prefs--drawer .sp-now-pref {
+  font-size: 0.68rem;
+}
+
+/* Compact player — legacy overrides */
 html.qf-jukebox-page .sp-now-bar {
   grid-template-columns: auto 1fr auto;
   padding: 0.35rem 0.65rem;
@@ -7014,7 +7109,28 @@ html.qf-jukebox-page .sp-global-audio {
   }
 
   html.qf-jukebox-page .jb-app {
-    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(3.85rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-bar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    padding: 0.32rem 0.55rem calc(0.32rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-track {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-time {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  html.qf-jukebox-page .sp-bridge-player--jukebox .sp-now-controls {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
   html.qf-jukebox-page .sp-global-audio-wrap--chrome-only {
@@ -7030,7 +7146,7 @@ html.qf-jukebox-page .sp-global-audio {
   overflow: hidden;
   max-width: 42rem;
   margin: 0 auto;
-  padding: calc(0.5rem + env(safe-area-inset-top)) 0.65rem calc(5.25rem + env(safe-area-inset-bottom));
+  padding: calc(0.45rem + env(safe-area-inset-top)) 0.55rem calc(3.85rem + env(safe-area-inset-bottom));
   color: #f5f0e8;
 }
 
@@ -7289,28 +7405,18 @@ html.qf-jukebox-page .sp-now-add-pl {
   flex-direction: column;
   flex: 1;
   min-height: 0;
-  margin-bottom: 0.45rem;
-  border: 2px solid rgba(212, 175, 55, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.38);
   border-radius: 12px;
   overflow: hidden;
-  background: #0a0806;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.55);
+  background: rgba(8, 6, 4, 0.88);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
 }
 
-.jb-stage__hero {
-  flex-shrink: 0;
-  max-height: min(26vw, 7rem);
-  overflow: hidden;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-}
-
-.jb-stage__photo {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 4.25rem;
-  object-fit: cover;
-  object-position: center 12%;
+.jb-gesture-hint--compact {
+  margin: 0.15rem 0 0.25rem;
+  font-size: 0.58rem;
+  opacity: 0.65;
 }
 
 .jb-pl-active {

@@ -50,6 +50,7 @@ import {
   uploadCoverBlob,
   uploadPlaylistCoverBlob,
   uploadTrackToServer,
+  syncUserPlaylistsToServer,
 } from '@/lib/serverCatalog';
 import { localMediaKeyFor } from '@/lib/localPlayback';
 import type { CatalogSnapshot, PlaylistDef, PlaylistKind, TrackDef } from '@/lib/catalogTypes';
@@ -80,6 +81,22 @@ import { resyncShuffleQueueForPlaylist } from '@/lib/shuffleSync';
 import { isIOSDevice, retainSingleFileForIOS, retainFileForBulkUpload, BULK_RETAIN_UPFRONT_MAX } from '@/lib/devicePlayback';
 
 type View = 'catalog' | 'dj';
+
+let playlistSyncTimer: ReturnType<typeof setTimeout> | null = null;
+const pendingPlaylistDeletes = new Set<string>();
+
+function scheduleSharedPlaylistSync(playlists: PlaylistDef[]): void {
+  if (!isServerUploadConfigured()) return;
+  if (playlistSyncTimer) clearTimeout(playlistSyncTimer);
+  playlistSyncTimer = setTimeout(() => {
+    playlistSyncTimer = null;
+    const deleteIds = [...pendingPlaylistDeletes];
+    pendingPlaylistDeletes.clear();
+    void syncUserPlaylistsToServer(playlists, { deleteIds: deleteIds.length ? deleteIds : undefined }).catch(
+      () => {},
+    );
+  }, 900);
+}
 
 interface CatalogState {
   catalogSyncing: boolean;
@@ -579,6 +596,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id)) return;
     const { playlists, activePlaylistId, userPlaylistMenuOrder } = get();
     if (playlists.length <= 1) return;
+    pendingPlaylistDeletes.add(id);
     let next = stripPlaylistFromAllParents(id, playlists).filter((p) => p.id !== id);
     set({
       playlists: next,
@@ -1253,6 +1271,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       playlists,
       activePlaylistId,
     });
+    scheduleSharedPlaylistSync(playlists);
   },
 }));
 

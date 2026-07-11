@@ -1,5 +1,5 @@
 import { upload } from '@vercel/blob/client';
-import { buildEmptyCatalog } from '@/lib/catalogSeed';
+import { buildEmptyCatalog, isMasterPlaylist, isMyLikesPlaylist } from '@/lib/catalogSeed';
 import { expectedCaptainPassword } from '@/lib/captainAuth';
 import { fetchJsonWithTimeout } from '@/lib/fetchWithTimeout';
 import { isIOSDevice } from '@/lib/devicePlayback';
@@ -10,7 +10,7 @@ import {
   probeAudioDurationSecWithTimeout,
 } from '@/lib/mediaUploadLimits';
 import { normalizeCoverForUpload } from '@/lib/coverImageFile';
-import type { CatalogSnapshot, TrackDef } from '@/lib/catalogTypes';
+import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 
 const STATIC_CATALOG = '/media/catalog/catalog.json';
 const FETCH_MS = 2_500;
@@ -18,6 +18,7 @@ const FETCH_MS = 2_500;
 const SYNC_FETCH_MS = 15_000;
 const UPLOAD_API = '/api/catalog-upload';
 const TRACK_API = '/api/catalog-track';
+const PLAYLIST_API = '/api/catalog-playlist';
 
 export const MAX_UPLOAD_BYTES = Math.floor(4.5 * 1024 * 1024);
 export { MAX_MEDIA_UPLOAD_BYTES };
@@ -540,4 +541,34 @@ export async function uploadTrackToServer(
       ...(storedDuration != null ? { durationSec: storedDuration } : {}),
     },
   };
+}
+
+export async function syncUserPlaylistsToServer(
+  playlists: PlaylistDef[],
+  opts?: { deleteIds?: string[] },
+): Promise<void> {
+  const secret = catalogUploadSecret();
+  if (!secret) return;
+
+  const shared = playlists
+    .filter((p) => !isMasterPlaylist(p.id) && !isMyLikesPlaylist(p.id))
+    .map((p) => ({
+      id: p.id,
+      name: p.name,
+      kind: p.kind,
+      description: p.description,
+      posterSrc: p.posterSrc,
+      trackIds: p.trackIds,
+      childPlaylistIds: p.childPlaylistIds,
+    }));
+
+  const res = await postCatalogJson(PLAYLIST_API, secret, {
+    action: 'sync',
+    playlists: shared,
+    deleteIds: opts?.deleteIds?.length ? opts.deleteIds : undefined,
+  });
+  if (!res.ok) {
+    const data = (await res.json().catch(() => ({}))) as { error?: string; message?: string };
+    throw catalogApiError(data.error || 'playlist_sync_failed', data.message);
+  }
 }

@@ -3,13 +3,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useBackgroundPlayback } from '@/hooks/useBackgroundPlayback';
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import {
-  assignPlaybackSrc,
   getSimpleAudioElement,
   pauseSimpleAudio,
   registerPlaybackEngine,
   subscribeAudioBind,
 } from '@/lib/simplePlayback';
-import { getPlaybackMedia } from '@/lib/playbackMediaRegistry';
+import { getPlaybackMedia, pauseBackgroundPlayback } from '@/lib/playbackMediaRegistry';
+import { shareTrack } from '@/lib/shareTrack';
 import {
   consumeAppPause,
   markAppPause,
@@ -175,8 +175,12 @@ export function BridgePlayer({
       if (handoff) {
         const el = getSimpleAudioElement();
         if (el) {
-          assignPlaybackSrc(el, src);
           el.pause();
+          try {
+            el.removeAttribute('src');
+          } catch {
+            /* ignore */
+          }
         }
         bg.src = src;
         bg.currentTime = 0;
@@ -194,6 +198,7 @@ export function BridgePlayer({
         return;
       }
 
+      pauseBackgroundPlayback();
       startTrackPlayback(trackId, src, { beginSession });
     },
     [allowBackgroundPlay, beginSession, clearKill],
@@ -256,7 +261,12 @@ export function BridgePlayer({
   ]);
 
   const handleTrackEnded = useCallback(() => {
-    const tid = usePlaybackStore.getState().currentTrackId;
+    const pb = usePlaybackStore.getState();
+    if (pb.backgroundHandoffActive) {
+      const bg = getPlaybackMedia().background;
+      if (bg?.src && !bg.ended) return;
+    }
+    const tid = pb.currentTrackId;
     const member =
       useSessionStore.getState().isPassenger || useSessionStore.getState().captainUnlocked;
     if (tid && !member && hasFreeFullPlayRemaining(tid)) {
@@ -474,11 +484,13 @@ export function BridgePlayer({
   };
 
   return (
-    <footer className="sp-now sp-bridge-player">
-      <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
-        {track?.posterSrc && (
+    <footer className={`sp-now sp-bridge-player${jukeboxBrowse ? ' sp-bridge-player--jukebox' : ''}`}>
+      <div
+        className={`sp-now-bar${!jukeboxBrowse && track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}
+      >
+        {!jukeboxBrowse && track?.posterSrc ? (
           <img className="sp-now-cover" src={trackCoverUrl(track)} alt="" width={56} height={56} />
-        )}
+        ) : null}
         <div
           className={`sp-now-track${jukeboxBrowse && track ? ' sp-now-track--open-now' : ''}`}
           {...(jukeboxBrowse && track
@@ -499,11 +511,13 @@ export function BridgePlayer({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
-              {freeFullRemaining && (
+              {!jukeboxBrowse && freeFullRemaining && (
                 <span className="sp-now-badge sp-now-badge--free">{PLAIN.freeFullPlay}</span>
               )}
-              {solenoidActive && <span className="sp-now-badge">{PLAIN.freePreview}</span>}
-              {fullPlayUnlocked && (
+              {!jukeboxBrowse && solenoidActive && (
+                <span className="sp-now-badge">{PLAIN.freePreview}</span>
+              )}
+              {!jukeboxBrowse && fullPlayUnlocked && (
                 <span className="sp-now-badge sp-now-badge--pass" title="Member playback">
                   {captainUnlocked && !isPassenger ? 'Capitan · full play' : 'Members pass · full play'}
                 </span>
@@ -513,34 +527,36 @@ export function BridgePlayer({
             <p className="sp-now-empty">Tap ▶ {PLAIN.playAll} or pick a track</p>
           )}
           {shareNote ? <p className="sp-now-share-note">{shareNote}</p> : null}
-          <div className="sp-now-prefs" role="group" aria-label="Playback options">
-            <label className="sp-now-pref" title="Autoplay playlist">
-              <input
-                type="checkbox"
-                checked={autoplayEnabled}
-                onChange={(e) => setAutoplayEnabled(e.target.checked)}
-              />
-              Autoplay
-            </label>
-            <label className="sp-now-pref" title="Random order for next, previous, and autoplay within this playlist">
-              <input
-                type="checkbox"
-                checked={shuffleEnabled}
-                onChange={(e) => setShuffleEnabled(e.target.checked)}
-              />
-              Shuffle
-            </label>
-            {fullPlayUnlocked && (
-              <label className="sp-now-pref">
+          {!jukeboxBrowse ? (
+            <div className="sp-now-prefs" role="group" aria-label="Playback options">
+              <label className="sp-now-pref" title="Autoplay playlist">
                 <input
                   type="checkbox"
-                  checked={backgroundPlayEnabled}
-                  onChange={(e) => setBackgroundPlayEnabled(e.target.checked)}
+                  checked={autoplayEnabled}
+                  onChange={(e) => setAutoplayEnabled(e.target.checked)}
                 />
-                Background
+                Autoplay
               </label>
-            )}
-          </div>
+              <label className="sp-now-pref" title="Random order for next, previous, and autoplay within this playlist">
+                <input
+                  type="checkbox"
+                  checked={shuffleEnabled}
+                  onChange={(e) => setShuffleEnabled(e.target.checked)}
+                />
+                Shuffle
+              </label>
+              {fullPlayUnlocked && (
+                <label className="sp-now-pref">
+                  <input
+                    type="checkbox"
+                    checked={backgroundPlayEnabled}
+                    onChange={(e) => setBackgroundPlayEnabled(e.target.checked)}
+                  />
+                  Background
+                </label>
+              )}
+            </div>
+          ) : null}
         </div>
         <div className="sp-now-controls">
           {track ? (
@@ -581,6 +597,41 @@ export function BridgePlayer({
           <button type="button" className="sp-now-btn" onClick={() => stepPlaylist(1)} disabled={!track} aria-label="Next">
             ⏭
           </button>
+          {jukeboxBrowse ? (
+            <details className="sp-now-prefs-drawer">
+              <summary className="sp-now-btn sp-now-btn--prefs" aria-label="Playback options">
+                ⋯
+              </summary>
+              <div className="sp-now-prefs sp-now-prefs--drawer" role="group" aria-label="Playback options">
+                <label className="sp-now-pref" title="Autoplay playlist">
+                  <input
+                    type="checkbox"
+                    checked={autoplayEnabled}
+                    onChange={(e) => setAutoplayEnabled(e.target.checked)}
+                  />
+                  Autoplay
+                </label>
+                <label className="sp-now-pref" title="Shuffle playlist">
+                  <input
+                    type="checkbox"
+                    checked={shuffleEnabled}
+                    onChange={(e) => setShuffleEnabled(e.target.checked)}
+                  />
+                  Shuffle
+                </label>
+                {fullPlayUnlocked ? (
+                  <label className="sp-now-pref">
+                    <input
+                      type="checkbox"
+                      checked={backgroundPlayEnabled}
+                      onChange={(e) => setBackgroundPlayEnabled(e.target.checked)}
+                    />
+                    Background
+                  </label>
+                ) : null}
+              </div>
+            </details>
+          ) : null}
         </div>
         <div className="sp-now-time">
           {track && <span>{fmtTime(displayTime)}</span>}

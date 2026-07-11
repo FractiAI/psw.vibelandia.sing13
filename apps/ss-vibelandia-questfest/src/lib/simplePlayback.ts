@@ -1,5 +1,8 @@
 /** Single shared <audio> — play() must run inside the user tap handler (iOS Safari). */
 
+import { pauseBackgroundPlayback } from '@/lib/playbackMediaRegistry';
+import { usePlaybackStore } from '@/stores/playbackStore';
+
 let audioEl: HTMLAudioElement | null = null;
 let loadedUrl: string | null = null;
 let bindGeneration = 0;
@@ -38,7 +41,10 @@ function wireElement(el: HTMLAudioElement): void {
   onTimeUpdate = () => {
     engineHooks?.onTime(el.currentTime);
   };
-  onEndedHandler = () => engineHooks?.onEnded();
+  onEndedHandler = () => {
+    if (usePlaybackStore.getState().backgroundHandoffActive) return;
+    engineHooks?.onEnded();
+  };
   onErrorHandler = () => engineHooks?.onError();
   onPlayingHandler = () => {
     engineHooks?.onTime(el.currentTime);
@@ -110,6 +116,7 @@ export function playAudioNow(url: string, volume = 1, startAt = 0): Promise<void
   const el = getSimpleAudioElement();
   if (!el || !url) return Promise.reject(new Error('no_audio_or_url'));
 
+  pauseBackgroundPlayback();
   el.volume = Math.max(0, Math.min(1, volume));
   assignPlaybackSrc(el, url);
 
@@ -153,6 +160,7 @@ export function playAudioNow(url: string, volume = 1, startAt = 0): Promise<void
 }
 
 export function pauseSimpleAudio(): void {
+  pauseBackgroundPlayback();
   const el = getSimpleAudioElement();
   el?.pause();
 }

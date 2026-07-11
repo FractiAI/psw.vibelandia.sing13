@@ -80,18 +80,10 @@ export function mergeServerCatalogWithPrefs(
     const localMaster = localPrefs.playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
     for (const p of localPrefs.playlists) {
       if (p.id === MASTER_PLAYLIST_ID || p.id === MY_LIKES_PLAYLIST_ID) continue;
+      /* Server-shared playlists win — local only seeds playlists not yet on server. */
+      if (byId.has(p.id)) continue;
       const filtered = p.trackIds.filter((id) => tracks[id]);
-      if (byId.has(p.id)) {
-        const prev = byId.get(p.id)!;
-        byId.set(p.id, {
-          ...prev,
-          trackIds: filtered,
-          name: p.name,
-          description: p.description,
-          ...(p.posterSrc ? { posterSrc: p.posterSrc } : {}),
-          ...(p.childPlaylistIds?.length ? { childPlaylistIds: p.childPlaylistIds } : {}),
-        });
-      } else if (filtered.length) {
+      if (filtered.length) {
         byId.set(p.id, { ...p, trackIds: filtered });
       }
     }

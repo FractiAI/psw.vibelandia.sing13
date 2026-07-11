@@ -189,6 +189,16 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
     }
   }, [deleteTracks, duplicateRemoveIds, dupBusy]);
 
+  const handleSearchSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      const first = rows[0];
+      if (!first) return;
+      play(first.track.id);
+    },
+    [play, rows],
+  );
+
   const playlistModalTrack = playlistModalTrackId ? getTrack(playlistModalTrackId) : undefined;
 
   return (
@@ -233,7 +243,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
       </header>
 
       {totalBeforeSearch > 0 ? (
-        <div className="jb-search-wrap">
+        <form className="jb-search-wrap" onSubmit={handleSearchSubmit}>
           <input
             type="search"
             className="jb-search"
@@ -244,7 +254,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
             autoComplete="off"
             enterKeyHint="search"
           />
-        </div>
+        </form>
       ) : null}
 
       {!dupDismissed && duplicateGroups.length > 0 ? (
@@ -287,8 +297,8 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
         </div>
       ) : null}
 
-      <p className="jb-gesture-hint">
-        Scroll for more · swipe left for remove · hold &amp; drag to reorder · double-tap for playlists
+      <p className="jb-gesture-hint jb-gesture-hint--compact">
+        Swipe left to remove · hold &amp; drag to reorder
       </p>
 
       {rows.length === 0 ? (

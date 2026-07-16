@@ -134,13 +134,13 @@
 
     <h2 id="what">1. What the game is</h2>
     <p>
-      <strong>Harmonopoly</strong> is the Goldilocks Rush: a circular board of 12 zones. Players act as holographic valets — helpers who light up “just-right” zones instead of buying dead property.
+      <strong>Harmonopoly</strong> is the Goldilocks Rush: a circular board of 12 zones. Players act as holographic valets. A zone only becomes a <em>just-right</em> field when <strong>every player</strong> has resonated there — full table chord, not a solo 3-chip buy.
     </p>
     <p>
       There is <strong>no dice</strong>. Each turn you press <strong>Check the Sun</strong>. The game fetches live public space weather. That snapshot picks where you land and what kind of turn you get (soft drift, just-right window, big surge, or sunspot-bound).
     </p>
     <p>
-      You win when every zone is lit. The <strong>best helper of the table</strong> is who did the most fair trades and grounded the most surges — not who bankrupted anyone.
+      You win when all 12 zones reach <strong>full resonance</strong>. The <strong>best helper of the table</strong> is who contributed the most attunes, fair trades, and surge grounds.
     </p>
 
     <h2 id="play">2. How a turn works</h2>
@@ -148,12 +148,19 @@
       <li>Active player presses <strong>Check the Sun</strong>.</li>
       <li>Phone asks the public solar pipe for current sunspot / region data.</li>
       <li>Nested <strong>Sun helper</strong> maps that data to a zone (1–12) and a beat.</li>
-      <li>If the zone is dark → spend <strong>energy chips</strong> to light a just-right zone.</li>
-      <li>If someone else owns it → <strong>fair trade</strong> (offer chips; they may tip some back).</li>
+      <li>If the zone is dark → add <strong>your resonance</strong> (small focus cost). It only lights when <strong>all players</strong> have attuned there — then the whole table gets a bloom.</li>
+      <li>If the zone is fully resonant → <strong>shared harvest</strong> or fair trade into the table field (tips stay honor-based).</li>
       <li>If the beat is a <strong>big solar surge</strong> → ground it with chips or pause until you help as valet (honor).</li>
     </ol>
     <p>
       Optional <strong>adult add-ons (18+)</strong> stay on the device only. Consent first. Skip is always allowed.
+    </p>
+
+    <h3>What a lit section means</h3>
+    <p>
+      The 12 wedges are not deeds you buy with a tax. Each section is a <strong>resonance chamber</strong>.
+      Partial fill (amber) = some players have attuned. Green check = <strong>full resonance</strong> — every seat at the table is in that chord.
+      The last attune triggers a <strong>bloom</strong>: every player gains chips. After that, landings are shared harvests, not rent to one owner.
     </p>
 
     <h2 id="path">3. Path up and down</h2>
@@ -289,6 +296,21 @@ Artifact:    research/harmonopoly-nested-token-sim/data/token_sim_100k.json</pre
       Solar weather GETs are separate public pipe traffic (not counted in the LLM token columns above).
     </p>
 
+    <h3>Sun gifts &amp; asks (rewards / challenges)</h3>
+    <p>
+      Each Check the Sun also draws one <strong>Goldilocks card</strong> from a deck of gifts and asks.
+      The pick is mapped from <strong>sunspot count, stability, stress, region id, your turn, and the solar timestamp</strong> (minute of day + seconds) — so the same quiet sun still yields variety across turns, while stormy scores tilt toward asks.
+    </p>
+    <ul>
+      <li><strong>Sun gift</strong> — extra chips, cheaper attune focus, better shared harvest, kinder tip suggestion, Root/Crown nudge</li>
+      <li><strong>Sun ask</strong> — chip toll, pricier attune, ground nudge, steeper table trade, Root/Crown dip</li>
+      <li><strong>Steady</strong> — no extra gift or ask; just play the land</li>
+    </ul>
+    <p>
+      Calm weather ≈ more gifts. Stormy weather ≈ more asks. Not too free, not too harsh — Goldilocks.
+      The card shows on the board strip and at the top of each resolve modal (with the UTC time seed).
+    </p>
+
     <h2 id="math">5. Math &amp; EGS φ</h2>
     <p>
       <strong>EGS φ (phi)</strong> ≈ <strong>1.618033988749895</strong> — El Gran Sol’s fractal constant in this stack. Plain speak: a balance ratio so parent layers stay a bit larger than child layers without exploding complexity.
@@ -310,14 +332,17 @@ roleBias: Fast mover +2 · Steady bridge 0 · Quiet seeder −3</pre>
     </div>
 
     <h3>Beat (story of the turn)</h3>
+    <p>
+      Live space weather sets a storm <em>intensity</em> (stability, stress, complex regions). That mixes with your turn number so the same sun snapshot does not always mean the same beat. Surges are the rare high lane — not every Check the Sun.
+    </p>
     <table class="hg-table">
       <thead>
-        <tr><th>Condition</th><th>Beat (plain)</th></tr>
+        <tr><th>Lane (mixed)</th><th>Beat (plain)</th></tr>
       </thead>
       <tbody>
-        <tr><td>Low stability or high stress / many complex regions</td><td>Big solar surge</td></tr>
-        <tr><td>Mid stability, calm stress</td><td>Just-right window (cheaper light-up)</td></tr>
-        <tr><td>Otherwise with live regions</td><td>Bound to a live sunspot</td></tr>
+        <tr><td>High (~top fifth)</td><td>Big solar surge</td></tr>
+        <tr><td>Middle band</td><td>Just-right window (cheaper light-up)</td></tr>
+        <tr><td>Lower mid + live regions</td><td>Bound to a live sunspot</td></tr>
         <tr><td>Else</td><td>Soft drift</td></tr>
       </tbody>
     </table>

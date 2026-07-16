@@ -183,6 +183,7 @@
       transition: fill 0.3s;
     }
     .hm-sector.is-calibrated { fill: rgba(134, 239, 172, 0.22); stroke: rgba(134, 239, 172, 0.65); }
+    .hm-sector.is-partial { fill: rgba(251, 191, 36, 0.18); stroke: rgba(251, 191, 36, 0.55); }
     .hm-sector.is-landed { fill: rgba(251, 191, 36, 0.35); stroke: #fbbf24; stroke-width: 2.5; }
     .hm-sector-label {
       fill: var(--deck-champagne);
@@ -337,7 +338,7 @@
       <p class="deck-eyebrow">Golden Bachdoor Hit Factory</p>
       <h1 class="deck-h1">HARMONOPOLY</h1>
       <p class="deck-tagline">Goldilocks Rush</p>
-      <p class="hm-one-line">No dice. Press <strong>Check the Sun</strong> — live solar weather picks where you land. Watch the path go up to the Sun and back down to your turn. Nested helpers (just three) do the work — not a crowd of chatty agents.</p>
+      <p class="hm-one-line">No dice. Press <strong>Check the Sun</strong>. Dark zones need <strong>every player’s resonance</strong> before they light — not a solo chip buy. Nested helpers (just three) do the work.</p>
       <p class="hm-btn-row" style="justify-content:center">
         <a class="hm-btn hm-btn--ghost" href="/harmonopoly-guide" style="text-decoration:none">Game · tech · math guide →</a>
       </p>
@@ -437,11 +438,11 @@
 
       <details class="hm-rules hm-panel">
         <summary>How to play (plain speak)</summary>
-        <p><strong>Goal:</strong> Light up every zone on the board into a <em>just-right zone</em>. The best helper of the table wins — most fair trades and surges handled.</p>
+        <p><strong>Goal:</strong> Bring every zone into <em>full table resonance</em> — every player attuned to that section, not a solo chip buy. The best helper wins — most attunes, fair trades, and surges grounded.</p>
         <ul>
           <li><strong>Check the Sun</strong> — no dice. Real solar weather (or a labeled backup) picks your landing spot and the story of that turn.</li>
-          <li><strong>Empty zone</strong> — spend energy chips to light it. It becomes your just-right zone.</li>
-          <li><strong>Someone else’s zone</strong> — fair trade: offer chips (and optional adult add-on if on). They may tip some chips back.</li>
+          <li><strong>Dark zone</strong> — add <em>your</em> resonance (a small focus cost). The zone only lights when <strong>all players</strong> have resonated there.</li>
+          <li><strong>Fully resonant zone</strong> — the whole table shares the just-right field. Fair trade feeds the table, with tips.</li>
           <li><strong>Big solar surge</strong> — ground yourself or you pause until you help the active player (honor reset).</li>
           <li><strong>Nested helpers</strong> — table master wakes sun / fair-trade / surge helpers one at a time (EGS φ = 1.618 nesting). Not a flat peer swarm.</li>
           <li><strong>Privacy</strong> — names, choices, and adult prompts stay on this device. Only public sun data is fetched.</li>
@@ -547,9 +548,48 @@
   function freshSectors() {
     var out = [];
     for (var i = 0; i < N; i++) {
-      out.push({ i: i, role: sectorRole(i), calibrated: false, owner: null });
+      out.push({ i: i, role: sectorRole(i), calibrated: false, resonators: [] });
     }
     return out;
+  }
+
+  function migrateSectors(sectors, players) {
+    if (!sectors) return freshSectors();
+    return sectors.map(function (sec, i) {
+      var resonators = Array.isArray(sec.resonators) ? sec.resonators.slice() : [];
+      if (sec.owner && resonators.indexOf(sec.owner) < 0) resonators.push(sec.owner);
+      if (sec.calibrated && players && players.length) {
+        players.forEach(function (p) {
+          if (resonators.indexOf(p.id) < 0) resonators.push(p.id);
+        });
+      }
+      var need = players ? players.length : 0;
+      var calibrated = need > 0 ? resonators.length >= need : !!sec.calibrated;
+      return {
+        i: sec.i != null ? sec.i : i,
+        role: sec.role || sectorRole(i),
+        calibrated: calibrated,
+        resonators: resonators
+      };
+    });
+  }
+
+  function resonanceLabel(sec) {
+    var need = state.players.length;
+    var have = (sec.resonators || []).length;
+    if (sec.calibrated) return 'Full resonance · all ' + need;
+    return 'Resonance ' + have + ' / ' + need;
+  }
+
+  function playerHasResonance(sec, playerId) {
+    return (sec.resonators || []).indexOf(playerId) >= 0;
+  }
+
+  function namesForResonators(sec) {
+    return (sec.resonators || []).map(function (id) {
+      var pl = state.players.find(function (x) { return x.id === id; });
+      return pl ? pl.name : id;
+    }).join(', ') || 'nobody yet';
   }
 
   function defaultPlayers(count) {
@@ -561,6 +601,7 @@
         roleId: ROLES[i % ROLES.length].id,
         chips: 24,
         exchanges: 0,
+        attunes: 0,
         flaresGrounded: 0,
         outOfPhase: false,
         root: 5,
@@ -679,10 +720,14 @@
       var sec = state.sectors[i];
       var cls = 'hm-sector';
       if (sec.calibrated) cls += ' is-calibrated';
+      else if ((sec.resonators || []).length) cls += ' is-partial';
       if (land === i) cls += ' is-landed';
       html += '<path class="' + cls + '" data-i="' + i + '" d="' + wedgePath(cx, cy, r0, r1, a0, a1) + '" />';
       var mid = polar(cx, cy, (r0 + r1) / 2, (a0 + a1) / 2);
-      html += '<text class="hm-sector-label" x="' + mid.x + '" y="' + mid.y + '" text-anchor="middle" dominant-baseline="middle">' + (i + 1) + '</text>';
+      var mark = sec.calibrated
+        ? '✓'
+        : ((sec.resonators || []).length ? (sec.resonators.length + '/' + state.players.length) : String(i + 1));
+      html += '<text class="hm-sector-label" x="' + mid.x + '" y="' + mid.y + '" text-anchor="middle" dominant-baseline="middle">' + mark + '</text>';
     }
     html += '<circle class="hm-hub" cx="' + cx + '" cy="' + cy + '" r="' + (r0 - 4) + '" />';
     html += '<text class="hm-hub-text" x="' + cx + '" y="' + (cy + 5) + '">SUN</text>';
@@ -717,7 +762,7 @@
     var lit = state.sectors.filter(function (s) { return s.calibrated; }).length;
     $('hm-turn-msg').innerHTML =
       '<strong>' + escapeHtml(p.name) + '</strong>’s turn · ' + escapeHtml(role.name) +
-      ' · zones lit ' + lit + '/' + N +
+      ' · full resonance ' + lit + '/' + N +
       (extra ? '<br>' + extra : '');
   }
 
@@ -735,7 +780,43 @@
     el.innerHTML = badge +
       ' Sunspot count <strong>' + s.ssn + '</strong> · stability <strong>' +
       (Math.round(s.hsi * 100) / 100) + '</strong> · top region <strong>' + escapeHtml(ar) +
-      '</strong> · beat <strong>' + escapeHtml(s.beatLabel) + '</strong>';
+      '</strong> · beat <strong>' + escapeHtml(s.beatLabel) + '</strong>' +
+      (s.event
+        ? '<br><span class="hm-badge">' +
+          (s.event.kind === 'reward' ? 'Sun gift' : s.event.kind === 'challenge' ? 'Sun ask' : 'Steady') +
+          '</span> ' + escapeHtml(s.event.plain)
+        : '');
+  }
+
+  function eventBannerHtml() {
+    var ev = state.lastSolar && state.lastSolar.event;
+    if (!ev) return '';
+    var tag =
+      ev.kind === 'reward' ? 'Sun gift' :
+      ev.kind === 'challenge' ? 'Sun ask' : 'Steady sun';
+    return '<p><span class="hm-badge">' + tag + '</span> <strong>' + escapeHtml(ev.plain) + '</strong></p>' +
+      '<p class="hm-muted">Mapped from sunspot ' + state.lastSolar.ssn +
+      ' · ' + escapeHtml(String(state.lastSolar.fetchedAt || '').replace('T', ' ').slice(0, 19)) +
+      ' UTC · seed ' + (ev.seed % 10000) + '</p>';
+  }
+
+  function applyPassiveEvent(player) {
+    var ev = state.lastSolar && state.lastSolar.event;
+    if (!ev) return;
+    if (ev.chips && ev.chips > 0) player.chips += ev.chips;
+    if (ev.rootDelta) {
+      player.root = Math.max(1, Math.min(10, player.root + ev.rootDelta));
+    }
+    if (ev.crownDelta) {
+      player.crown = Math.max(1, Math.min(10, player.crown + ev.crownDelta));
+    }
+    if (ev.exchangeBonus) player.exchanges += ev.exchangeBonus;
+  }
+
+  function applyChipToll(player, amount) {
+    if (player.chips < amount) return false;
+    player.chips -= amount;
+    return true;
   }
 
   /* ---- Landing map (nested Sun helper) ---- */
@@ -805,13 +886,13 @@
     var all = state.sectors.every(function (s) { return s.calibrated; });
     if (!all) return false;
     var best = state.players.slice().sort(function (a, b) {
-      return (b.exchanges + b.flaresGrounded * 2) - (a.exchanges + a.flaresGrounded * 2);
+      return (b.attunes + b.exchanges + b.flaresGrounded * 2) - (a.attunes + a.exchanges + a.flaresGrounded * 2);
     })[0];
     $('hm-win').classList.remove('hm-hidden');
     $('hm-sync').disabled = true;
     $('hm-win-msg').innerHTML =
       '<strong>' + escapeHtml(best.name) + '</strong> is the <strong>best helper of the table</strong> — ' +
-      best.exchanges + ' fair trades · ' + best.flaresGrounded + ' surges grounded.';
+      (best.attunes || 0) + ' attunes · ' + best.exchanges + ' fair trades · ' + best.flaresGrounded + ' surges grounded.';
     state.won = true;
     save();
     return true;
@@ -866,144 +947,248 @@
     var land = state.lastSolar.landSector;
     var sec = state.sectors[land];
     var beat = state.lastSolar.beat;
+    var ev = state.lastSolar.event || { kind: 'neutral', plain: 'Steady hum.' };
 
     setLadder(2, 'up', {
       4: state.lastSolar.beatLabel + (state.lastSolar.fallback ? ' (backup)' : ''),
       3: 'Landed on zone ' + (land + 1) + ' · ' + sec.role,
-      2: p.name + ' · Root ' + p.root + ' / Crown ' + p.crown,
+      2: p.name + ' · ' + (ev.plain || 'Sun card'),
       1: 'Choose what to do'
     });
 
-    if (beat === 'flare') {
-      var surgePlan = nest ? nest.runSurge('ground') : { groundCost: 3 };
+    if (ev.requiresGround || beat === 'flare') {
+      var surgePlan = nest
+        ? nest.runSurge('ground', { event: ev })
+        : { groundCost: ev.groundCost || 3 };
       var gCost = surgePlan.groundCost || 3;
-      openModal('Big solar surge',
-        '<p>The Sun dumped a surge on zone <strong>' + (land + 1) + '</strong>. Ground it, or you pause.</p>' +
-        '<p class="hm-muted">Surge helper woke · then slept.</p>' + adultLine(),
+      openModal(
+        beat === 'flare' ? 'Big solar surge' : 'Sun ask · ground',
+        eventBannerHtml() +
+          '<p>Ground it on zone <strong>' + (land + 1) + '</strong>, or pause.</p>' +
+          '<p class="hm-muted">Surge helper woke · then slept.</p>' + adultLine(),
         [
           {
             label: 'Ground it (−' + gCost + ' chips)',
             onClick: function () {
               if (p.chips < gCost) {
-                putOutOfPhase(p, 'Could not ground the surge');
+                putOutOfPhase(p, 'Could not ground the sun ask');
                 return;
               }
               p.chips -= gCost;
               p.flaresGrounded += 1;
+              applyPassiveEvent(p);
+              if (ev.chips && ev.chips < 0) applyChipToll(p, Math.abs(ev.chips));
               p.crown = Math.max(1, p.crown - 1);
               p.root = Math.min(10, p.root + 1);
-              finishResolve('Surge grounded');
+              finishResolve('Grounded · ' + (ev.id || 'surge'));
             }
           },
           {
             label: 'I freeze · pause me',
             ghost: true,
             onClick: function () {
-              putOutOfPhase(p, 'Did not ground the surge');
+              putOutOfPhase(p, 'Did not ground the sun ask');
             }
           }
-        ]);
+        ]
+      );
       return;
     }
 
-    if (!sec.calibrated) {
-      var cal = nest ? nest.runFairTrade('calibrateCost', { beat: beat }) : { cost: beat === 'goldilocks' ? 3 : 4 };
-      var cost = cal.cost;
-      openModal('Empty zone',
-        '<p>Zone <strong>' + (land + 1) + '</strong> (' + escapeHtml(sec.role) + ') is dark. Spend <strong>' +
-        cost + ' energy chips</strong> to light a just-right zone.</p>' +
-        (beat === 'goldilocks' ? '<p>Just-right window — cheaper light-up.</p>' : '') +
-        '<p class="hm-muted">Fair-trade helper woke · then slept.</p>' +
-        adultLine(),
+    if (ev.kind === 'challenge' && ev.chips && ev.chips < 0 && ev.canRefusePause) {
+      var toll = Math.abs(ev.chips);
+      openModal(
+        'Sun ask · chip toll',
+        eventBannerHtml() +
+          '<p>Pay <strong>' + toll + ' chips</strong> to keep moving, or pause with honor.</p>' + adultLine(),
         [
           {
-            label: 'Light it up (−' + cost + ')',
+            label: 'Pay toll (−' + toll + ')',
             onClick: function () {
-              if (p.chips < cost) {
-                putOutOfPhase(p, 'Not enough chips to light the zone');
+              if (!applyChipToll(p, toll)) {
+                putOutOfPhase(p, 'Could not pay sun toll');
                 return;
               }
-              p.chips -= cost;
-              sec.calibrated = true;
-              sec.owner = p.id;
-              p.exchanges += 1;
-              finishResolve('Zone ' + (land + 1) + ' is just-right');
+              applyPassiveEvent(p);
+              closeModal();
+              continueLandResolve(p, land, sec, beat, ev);
+            }
+          },
+          {
+            label: 'Refuse · pause me',
+            ghost: true,
+            onClick: function () {
+              putOutOfPhase(p, 'Refused sun toll');
+            }
+          }
+        ]
+      );
+      return;
+    }
+
+    applyPassiveEvent(p);
+    continueLandResolve(p, land, sec, beat, ev);
+  }
+
+  function continueLandResolve(p, land, sec, beat, ev) {
+    var need = state.players.length;
+    var have = (sec.resonators || []).length;
+
+    if (!sec.calibrated) {
+      if (playerHasResonance(sec, p.id)) {
+        openModal(
+          'Already in this chord',
+          eventBannerHtml() +
+            '<p>Zone <strong>' + (land + 1) + '</strong> (' + escapeHtml(sec.role) + ') — you already resonated here.</p>' +
+            '<p><strong>' + resonanceLabel(sec) + '</strong></p>' +
+            '<p class="hm-muted">Waiting on: full table. Resonated: ' + escapeHtml(namesForResonators(sec)) + '</p>' +
+            adultLine(),
+          [
+            {
+              label: 'Hold the field · end turn',
+              onClick: function () {
+                finishResolve('Holding resonance · zone ' + (land + 1));
+              }
+            }
+          ]
+        );
+        return;
+      }
+
+      var cal = nest
+        ? nest.runFairTrade('attuneCost', { beat: beat, event: ev })
+        : { cost: beat === 'goldilocks' ? 1 : 2 };
+      var cost = cal.cost;
+      openModal(
+        'Add your resonance',
+        eventBannerHtml() +
+          '<p>Zone <strong>' + (land + 1) + '</strong> (' + escapeHtml(sec.role) + ') is not fully alive yet.</p>' +
+          '<p>A lit section means <strong>every player</strong> has resonated here — not a solo buy.</p>' +
+          '<p><strong>' + resonanceLabel(sec) + '</strong> · already in: ' + escapeHtml(namesForResonators(sec)) + '</p>' +
+          '<p>Spend <strong>' + cost + ' energy chip' + (cost === 1 ? '' : 's') + '</strong> as focus to add <em>your</em> resonance.</p>' +
+          (beat === 'goldilocks' ? '<p>Just-right window — softer focus cost.</p>' : '') +
+          '<p class="hm-muted">Fair-trade helper woke · then slept.</p>' +
+          adultLine(),
+        [
+          {
+            label: cost === 0 ? 'Attune (free focus)' : 'Attune (−' + cost + ')',
+            onClick: function () {
+              if (cost > 0 && p.chips < cost) {
+                putOutOfPhase(p, 'Could not focus enough to attune');
+                return;
+              }
+              if (cost > 0) p.chips -= cost;
+              if (!sec.resonators) sec.resonators = [];
+              if (sec.resonators.indexOf(p.id) < 0) sec.resonators.push(p.id);
+              p.attunes = (p.attunes || 0) + 1;
+              have = sec.resonators.length;
+
+              if (have >= need) {
+                sec.calibrated = true;
+                var bloom = nest
+                  ? nest.runFairTrade('bloom', { event: ev })
+                  : { bloomEach: 2 };
+                var each = bloom.bloomEach || 2;
+                state.players.forEach(function (pl) {
+                  pl.chips += each;
+                });
+                finishResolve(
+                  'FULL RESONANCE on zone ' + (land + 1) + ' · whole table +' + each + ' chips'
+                );
+              } else {
+                finishResolve(
+                  'You resonated · zone ' + (land + 1) + ' now ' + have + '/' + need
+                );
+              }
             }
           },
           {
             label: 'Skip · risk pause',
             ghost: true,
             onClick: function () {
-              putOutOfPhase(p, 'Skipped lighting a zone');
+              putOutOfPhase(p, 'Skipped adding resonance');
             }
           }
-        ]);
+        ]
+      );
       return;
     }
 
-    var owner = state.players.find(function (x) { return x.id === sec.owner; });
-    var trade = nest ? nest.runFairTrade('offer', { beat: beat }) : { offer: beat === 'bound' ? 4 : 3 };
+    var harvest = nest
+      ? nest.runFairTrade('resonanceHarvest', { event: ev })
+      : { yieldAmt: 1, tableBonus: 1 };
+    var yieldAmt = harvest.yieldAmt || 1;
+    var tableBonus = harvest.tableBonus || 1;
+    var trade = nest
+      ? nest.runFairTrade('offer', { beat: beat, event: ev })
+      : { offer: beat === 'bound' ? 3 : 2, tipSuggest: 1 };
     var offer = trade.offer;
-    if (!owner || owner.id === p.id) {
-      var y = nest ? nest.runFairTrade('ownYield', {}) : { yieldAmt: 2 };
-      var yieldAmt = y.yieldAmt || 2;
-      p.chips += yieldAmt;
-      openModal('Your just-right zone',
-        '<p>You landed on your own zone. Collect <strong>' + yieldAmt + ' chips</strong>.</p>' + adultLine(),
-        [{ label: 'Collect', onClick: function () { finishResolve('Collected from your zone'); } }]);
-      return;
-    }
+    var tipSuggest = trade.tipSuggest || 1;
 
-    openModal('Fair trade',
-      '<p>You landed on <strong>' + escapeHtml(owner.name) + '</strong>’s just-right zone. Offer <strong>' +
-      offer + ' chips</strong> for the boost. They may tip some back.</p>' +
-      '<p class="hm-muted">Fair-trade helper woke · then slept.</p>' + adultLine(),
+    openModal(
+      'Full resonance · shared field',
+      eventBannerHtml() +
+        '<p>Zone <strong>' + (land + 1) + '</strong> is fully resonant — <strong>all players</strong> are in this chord.</p>' +
+        '<p>Harvest <strong>' + yieldAmt + '</strong> for you; each other player gains <strong>' + tableBonus + '</strong> (shared field).</p>' +
+        '<p>Or deepen with a fair trade into the table pool.</p>' +
+        '<p class="hm-muted">Resonated: ' + escapeHtml(namesForResonators(sec)) + '</p>' +
+        adultLine(),
       [
         {
-          label: 'Offer ' + offer + ' chips',
+          label: 'Shared harvest',
           onClick: function () {
-            if (p.chips < offer) {
-              putOutOfPhase(p, 'Could not fund a fair trade');
-              return;
-            }
-            p.chips -= offer;
-            owner.chips += offer;
+            p.chips += yieldAmt;
+            state.players.forEach(function (pl) {
+              if (pl.id !== p.id) pl.chips += tableBonus;
+            });
             p.exchanges += 1;
-            owner.exchanges += 1;
-            openModal('Tip back?',
-              '<p>' + escapeHtml(owner.name) + ' — tip some chips back to keep momentum fluid?</p>',
-              [
-                {
-                  label: 'Tip 1 back',
-                  onClick: function () {
-                    if (owner.chips >= 1) { owner.chips -= 1; p.chips += 1; }
-                    finishResolve('Fair trade + tip');
-                  }
-                },
-                {
-                  label: 'Tip 2 back',
-                  onClick: function () {
-                    var t = Math.min(2, owner.chips);
-                    owner.chips -= t; p.chips += t;
-                    finishResolve('Fair trade + tip');
-                  }
-                },
-                {
-                  label: 'Keep all (honor)',
-                  ghost: true,
-                  onClick: function () { finishResolve('Fair trade done'); }
-                }
-              ]);
+            finishResolve('Shared harvest · zone ' + (land + 1));
           }
         },
         {
-          label: 'Refuse trade · pause',
-          ghost: true,
+          label: 'Fair trade into table (−' + offer + ')',
           onClick: function () {
-            putOutOfPhase(p, 'Refused a fair trade');
+            if (p.chips < offer) {
+              putOutOfPhase(p, 'Could not fund a table fair trade');
+              return;
+            }
+            p.chips -= offer;
+            var share = Math.floor(offer / Math.max(1, state.players.length - 1)) || 1;
+            state.players.forEach(function (pl) {
+              if (pl.id !== p.id) pl.chips += share;
+            });
+            p.exchanges += 1;
+            openModal(
+              'Tip back into the field?',
+              '<p>Any player may tip chips back to <strong>' + escapeHtml(p.name) + '</strong> (honor).</p>' +
+                (tipSuggest > 1 ? '<p class="hm-muted">Sun gift suggests tipping up to ' + tipSuggest + '.</p>' : ''),
+              [
+                {
+                  label: 'Table tips 1 back',
+                  onClick: function () {
+                    var donor = state.players.find(function (pl) {
+                      return pl.id !== p.id && pl.chips >= 1;
+                    });
+                    if (donor) {
+                      donor.chips -= 1;
+                      p.chips += 1;
+                    }
+                    finishResolve('Table fair trade + tip');
+                  }
+                },
+                {
+                  label: 'Keep flow (honor)',
+                  ghost: true,
+                  onClick: function () {
+                    finishResolve('Table fair trade done');
+                  }
+                }
+              ]
+            );
           }
         }
-      ]);
+      ]
+    );
   }
 
   async function onCheckSun() {
@@ -1038,7 +1223,8 @@
       1: p.name,
       2: roleById(p.roleId).name,
       3: 'Mapped to zone ' + (mapped.landSector + 1),
-      4: mapped.beatLabel + ' · SSN ' + mapped.ssn + (mapped.fallback ? ' · backup' : ' · live')
+      4: mapped.beatLabel + ' · ' + ((mapped.event && mapped.event.plain) || 'sun card') +
+        (mapped.fallback ? ' · backup' : ' · live')
     });
     await sleep(400);
 
@@ -1146,6 +1332,10 @@
       return;
     }
     state = s;
+    state.players.forEach(function (pl) {
+      if (pl.attunes == null) pl.attunes = 0;
+    });
+    state.sectors = migrateSectors(state.sectors, state.players);
     $('hm-setup').classList.add('hm-hidden');
     $('hm-play').classList.remove('hm-hidden');
     if (state.won) $('hm-win').classList.remove('hm-hidden');

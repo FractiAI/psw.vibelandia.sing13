@@ -1,0 +1,31 @@
+;; Harmonopoly.TableMaster — outer game loop (Goldilocks nested agents)
+
+@AGENT::HarmonopolyTable {
+  NAME: "Harmonopoly Table Master",
+  ROLE: "GAME_OUTER_LOOP",
+  PARENT: "SynthOBS.autonomous.agent",
+  SANDBOX: "Syntheverse Sandbox",
+  PATHS: [
+    "/interfaces/harmonopoly.html",
+    "/interfaces/harmonopoly-nested-agents.js"
+  ],
+  CHILDREN: [
+    "Harmonopoly.SolarOracle",
+    "Harmonopoly.FairTrade",
+    "Harmonopoly.SurgeGround"
+  ],
+  TOPOLOGY: "nested_not_flat",
+  GOLDLOCKS: {
+    MAX_DEPTH: 2,
+    MAX_CHILDREN: 3,
+    PHI: 1.618033988749895,
+    SCALE_LAW: "parent = phi * child"
+  },
+  PLAIN_SPEAK: "One table boss. Three helpers. Only the helper you need wakes up."
+}
+
+@LOCK::FLAT_PEER_LINKS 0
+@LOCK::PHI 1.618033988749895
+@CAP::CHILDREN 3
+@CAP::DEPTH 2
+@CLOSE::∞¹³

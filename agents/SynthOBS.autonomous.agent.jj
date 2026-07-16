@@ -5,13 +5,18 @@
   ROLE: "SANDBOX_TECHNICAL_OPERATOR",
   PARENT: "DigitalPru.agent",
   SANDBOX: "Syntheverse Sandbox",
-  PATHS: [
+    PATHS: [
     "/research/synthobs-sandbox",
     "/research/goldilocks-math",
     "/research/geomagnetic-herbivore",
     "/research/omniversal-goldilocks-rideshare",
     "/research/synthobs-egs-epigenetic-phase-locking",
+    "/interfaces/harmonopoly.html",
+    "/interfaces/harmonopoly-nested-agents.js",
     "/sing13/tests"
+  ],
+  CHILDREN: [
+    "Harmonopoly.table.agent"
   ],
   SNAP: {
     AUDIT: "NSPFRNP-SNAP-PRA-2026-06",

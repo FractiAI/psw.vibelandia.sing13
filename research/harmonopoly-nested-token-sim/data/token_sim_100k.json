@@ -1,0 +1,65 @@
+{
+  "schema": "harmonopoly-token-sim/v1",
+  "issuedAt": "2026-07-16T17:46:55.523Z",
+  "honestyBoundary": {
+    "tier": "simulation_model",
+    "claims": "Token totals are topology estimates from documented assumptions — not live vendor invoices or instrumented LLM traces.",
+    "notClaimed": [
+      "Production latency ms from §5 of nested-agent papers",
+      "Exact OpenAI/Anthropic billing for 100k concurrent sessions"
+    ]
+  },
+  "assumptions": {
+    "concurrentPlayers": 100000,
+    "tableSize": 4,
+    "tables": 25000,
+    "rounds": 1,
+    "phi": 1.618033988749895,
+    "nestedMaxChildren": 3,
+    "flat": {
+      "agentsPerPlayer": 3,
+      "tokensInPerLink": 900,
+      "tokensOutPerLink": 180
+    },
+    "nested": {
+      "outerIn": 140,
+      "outerOut": 48,
+      "leafIn": 220,
+      "leafOut": 90,
+      "frozenTokenCost": 0,
+      "maxChildren": 3
+    },
+    "narrative": "One wave = every concurrent player takes one Check-the-Sun equivalent. Flat = 12 peer agents per 4-player table fully mesh-sync. Nested = Table Master + one awake leaf per turn; other leaves frozen at 0 LLM tokens."
+  },
+  "flat": {
+    "agentsPerTable": 12,
+    "undirectedLinksPerTable": 66,
+    "messagesPerTablePerRound": 132,
+    "tokensInPerTable": 118800,
+    "tokensOutPerTable": 23760,
+    "tokensInTotal": 2970000000,
+    "tokensOutTotal": 594000000,
+    "tokensTotal": 3564000000,
+    "formulaLinks": "C_flat = N_agents(N_agents - 1)/2"
+  },
+  "nested": {
+    "awakeAgentsPerTurn": 2,
+    "frozenLeaves": 2,
+    "tokensInPerTurn": 360,
+    "tokensOutPerTurn": 138,
+    "tokensInPerTable": 1440,
+    "tokensOutPerTable": 552,
+    "tokensInTotal": 36000000,
+    "tokensOutTotal": 13800000,
+    "tokensTotal": 49800000,
+    "scaleLaw": "Scale_parent = φ · Scale_child",
+    "flatPeerLinks": 0
+  },
+  "comparison": {
+    "nestedVsFlatTotalRatio": 0.013973,
+    "flatVsNestedSavingsFactor": 71.57,
+    "percentTokensSavedVsFlat": 98.6,
+    "tokensSaved": 3514200000,
+    "plainSpeak": "At 100,000 concurrent players (tables of 4), one full wave: nested uses about 72× fewer tokens than a flat peer mesh — helpers sleep when idle."
+  }
+}

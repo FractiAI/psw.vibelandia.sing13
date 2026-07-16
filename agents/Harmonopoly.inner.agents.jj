@@ -1,0 +1,31 @@
+;; Harmonopoly inner stewards — Goldilocks leaf agents (max 3)
+
+@AGENT::Harmonopoly.SolarOracle {
+  NAME: "Sun helper",
+  ROLE: "INNER_SOLAR_MAP",
+  PARENT: "Harmonopoly.table.agent",
+  JOB: "Check the Sun · land sector · narrative beat",
+  SCALE: 1.0,
+  MICRO_SNAPSHOT: true
+}
+
+@AGENT::Harmonopoly.FairTrade {
+  NAME: "Fair-trade helper",
+  ROLE: "INNER_FAIR_EXCHANGE",
+  PARENT: "Harmonopoly.table.agent",
+  JOB: "Just-right zones · chips · tip refund",
+  SCALE: 1.0,
+  MICRO_SNAPSHOT: true
+}
+
+@AGENT::Harmonopoly.SurgeGround {
+  NAME: "Surge helper",
+  ROLE: "INNER_SURGE_GROUND",
+  PARENT: "Harmonopoly.table.agent",
+  JOB: "Big solar surge · honor reset",
+  SCALE: 1.0,
+  MICRO_SNAPSHOT: true
+}
+
+@NOTE:: No peer-to-peer between leaves — parent firewall only.
+@CLOSE::∞¹³

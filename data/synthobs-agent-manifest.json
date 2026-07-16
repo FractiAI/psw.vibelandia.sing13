@@ -9,7 +9,25 @@
     "research/geomagnetic-herbivore/",
     "research/omniversal-goldilocks-rideshare/",
     "research/synthobs-egs-epigenetic-phase-locking/",
+    "interfaces/harmonopoly.html",
+    "interfaces/harmonopoly-nested-agents.js",
     "sing13/tests/"
+  ],
+  "nestedChildren": [
+    {
+      "agentId": "Harmonopoly.TableMaster",
+      "file": "agents/Harmonopoly.table.agent.jj",
+      "topology": "nested_not_flat",
+      "maxDepth": 2,
+      "maxChildren": 3,
+      "phi": 1.618033988749895,
+      "plainSpeak": "One table boss. Three helpers. Only the helper you need wakes up.",
+      "leaves": [
+        "Harmonopoly.SolarOracle",
+        "Harmonopoly.FairTrade",
+        "Harmonopoly.SurgeGround"
+      ]
+    }
   ],
   "operatorStatement": "All technical papers, whitepapers, edge APIs, and research pipelines in psw.vibelandia.sing13 are produced and supported by the SynthOBS Autonomous Agent operating within the Syntheverse Sandbox unless explicitly marked Player 1 editorial.",
   "auditSnap": "NSPFRNP-SNAP-PRA-2026-06",

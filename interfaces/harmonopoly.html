@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Harmonopoly · Goldilocks Rush</title>
+  <meta name="description" content="Harmonopoly — live solar board game. Check the Sun (no dice). Path up and down from your attention to the Sun and back. Honor play · stays on this device." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/harmonopoly" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <style>
+    :root {
+      --hm-sun: #f59e0b;
+      --hm-ok: #86efac;
+      --hm-warn: #fca5a5;
+      --hm-rail: rgba(245, 230, 200, 0.12);
+    }
+    body {
+      font-family: "Source Serif 4", Georgia, serif;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% -10%, rgba(245, 158, 11, 0.18), transparent 55%),
+        radial-gradient(ellipse 70% 40% at 80% 80%, rgba(212, 175, 55, 0.08), transparent 50%),
+        var(--deck-bg);
+      color: var(--deck-text);
+      margin: 0;
+      min-height: 100vh;
+    }
+    .hm-hero {
+      text-align: center;
+      padding: 0.5rem 0 1.25rem;
+    }
+    .hm-hero .deck-h1 {
+      font-size: clamp(2.4rem, 10vw, 3.4rem);
+      letter-spacing: 0.06em;
+    }
+    .hm-one-line {
+      font-size: 1.05rem;
+      color: var(--deck-champagne);
+      margin: 0 auto 1rem;
+      max-width: 28rem;
+      line-height: 1.45;
+    }
+    .hm-panel {
+      border: 1px solid var(--deck-line);
+      border-radius: 12px;
+      background: rgba(26, 18, 12, 0.72);
+      padding: 1rem 1.1rem;
+      margin: 0.85rem 0;
+    }
+    .hm-panel h2 {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: var(--deck-gold-hi);
+      margin: 0 0 0.55rem;
+      font-weight: 400;
+    }
+    .hm-muted { color: var(--deck-muted); font-size: 0.9rem; line-height: 1.45; }
+    .hm-btn {
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.85rem 1.35rem;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #fbbf24, #d97706);
+      color: #1a120c;
+      transition: transform 0.15s, filter 0.15s;
+    }
+    .hm-btn:hover { filter: brightness(1.06); transform: translateY(-1px); }
+    .hm-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+    .hm-btn--ghost {
+      background: transparent;
+      color: var(--deck-champagne);
+      border: 1px solid var(--deck-line);
+    }
+    .hm-btn--wide { width: 100%; text-align: center; }
+    .hm-btn-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 0.75rem; }
+    .hm-setup label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--deck-muted);
+      margin: 0.55rem 0 0.25rem;
+    }
+    .hm-setup input, .hm-setup select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.55rem 0.7rem;
+      border-radius: 6px;
+      border: 1px solid var(--deck-line);
+      background: #120e0a;
+      color: var(--deck-text);
+      font: inherit;
+    }
+    .hm-player-row {
+      display: grid;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    /* Path up and down (Descent Ladder) */
+    .hm-ladder {
+      display: grid;
+      gap: 0.4rem;
+    }
+    .hm-ladder__bar {
+      height: 8px;
+      border-radius: 999px;
+      background: var(--hm-rail);
+      overflow: hidden;
+      margin-bottom: 0.55rem;
+    }
+    .hm-ladder__fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #86efac, #fbbf24, #f59e0b);
+      transition: width 0.35s ease;
+    }
+    .hm-ladder__dir {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--hm-sun);
+      margin-bottom: 0.35rem;
+    }
+    .hm-step {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.45rem;
+      align-items: start;
+      padding: 0.45rem 0.5rem;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      opacity: 0.45;
+      transition: opacity 0.25s, border-color 0.25s, background 0.25s;
+    }
+    .hm-step.is-active {
+      opacity: 1;
+      border-color: rgba(251, 191, 36, 0.55);
+      background: rgba(251, 191, 36, 0.08);
+    }
+    .hm-step.is-done {
+      opacity: 0.9;
+      border-color: rgba(134, 239, 172, 0.35);
+    }
+    .hm-step.is-stuck {
+      opacity: 1;
+      border-color: rgba(252, 165, 165, 0.55);
+      background: rgba(252, 165, 165, 0.08);
+    }
+    .hm-step__n {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 1.2rem;
+      color: var(--deck-gold);
+      line-height: 1.2;
+    }
+    .hm-step__title { font-weight: 700; color: var(--deck-gold-hi); font-size: 0.95rem; }
+    .hm-step__detail { font-size: 0.82rem; color: var(--deck-muted); margin-top: 0.15rem; }
+    /* Board */
+    .hm-board-wrap {
+      position: relative;
+      width: min(100%, 340px);
+      margin: 0.75rem auto;
+      aspect-ratio: 1;
+    }
+    .hm-board {
+      width: 100%;
+      height: 100%;
+    }
+    .hm-sector {
+      fill: rgba(26, 18, 12, 0.85);
+      stroke: rgba(212, 175, 55, 0.45);
+      stroke-width: 1.5;
+      transition: fill 0.3s;
+    }
+    .hm-sector.is-calibrated { fill: rgba(134, 239, 172, 0.22); stroke: rgba(134, 239, 172, 0.65); }
+    .hm-sector.is-landed { fill: rgba(251, 191, 36, 0.35); stroke: #fbbf24; stroke-width: 2.5; }
+    .hm-sector-label {
+      fill: var(--deck-champagne);
+      font-size: 9px;
+      font-family: "Source Serif 4", Georgia, serif;
+      pointer-events: none;
+    }
+    .hm-hub {
+      fill: #120e0a;
+      stroke: var(--deck-gold);
+      stroke-width: 2;
+    }
+    .hm-hub-text {
+      fill: var(--deck-gold-hi);
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 14px;
+      text-anchor: middle;
+    }
+    .hm-status {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--deck-text-soft);
+    }
+    .hm-status strong { color: var(--deck-gold-hi); }
+    .hm-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      background: rgba(251, 191, 36, 0.2);
+      color: var(--hm-sun);
+      margin-right: 0.35rem;
+    }
+    .hm-badge--live { background: rgba(134, 239, 172, 0.2); color: var(--hm-ok); }
+    .hm-badge--fallback { background: rgba(252, 165, 165, 0.2); color: var(--hm-warn); }
+    .hm-roster {
+      display: grid;
+      gap: 0.4rem;
+      margin: 0.5rem 0;
+    }
+    .hm-roster__p {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.45rem 0.55rem;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      font-size: 0.9rem;
+    }
+    .hm-roster__p.is-active {
+      border-color: #fbbf24;
+      background: rgba(251, 191, 36, 0.1);
+    }
+    .hm-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 40;
+      padding: 1rem;
+    }
+    .hm-modal-backdrop.is-open { display: flex; }
+    .hm-modal {
+      width: min(100%, 26rem);
+      max-height: 85vh;
+      overflow: auto;
+      background: #1a120c;
+      border: 1px solid var(--deck-line);
+      border-radius: 14px 14px 10px 10px;
+      padding: 1.15rem 1.2rem 1.35rem;
+    }
+    .hm-modal h3 {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 1.5rem;
+      color: var(--deck-gold-hi);
+      margin: 0 0 0.5rem;
+      font-weight: 400;
+    }
+    details.hm-rules {
+      margin-top: 0.75rem;
+    }
+    details.hm-rules summary {
+      cursor: pointer;
+      color: var(--deck-gold);
+      font-weight: 700;
+    }
+    details.hm-rules p, details.hm-rules li {
+      color: var(--deck-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .hm-honesty {
+      font-size: 0.82rem;
+      color: var(--deck-muted);
+      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      margin-top: 1.25rem;
+      padding-top: 0.85rem;
+      line-height: 1.45;
+    }
+    .hm-hidden { display: none !important; }
+    .hm-win {
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .hm-win h2 { color: var(--hm-ok); }
+    .hm-nest {
+      display: grid;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .hm-nest__row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.4rem 0.55rem;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      font-size: 0.85rem;
+    }
+    .hm-nest__row.is-awake {
+      border-color: #86efac;
+      background: rgba(134, 239, 172, 0.1);
+    }
+    .hm-nest__row.is-frozen { opacity: 0.72; }
+    .hm-nest__tag {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--deck-muted);
+    }
+    .hm-nest__row.is-awake .hm-nest__tag { color: var(--hm-ok); }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap">
+    <a class="deck-back" href="/my-whiteboard">&larr; My whiteboard</a>
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="/">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/my-whiteboard">Whiteboard</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/harmonopoly-guide">Guide</a><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Harmonopoly</span>
+    </nav>
+
+    <header class="hm-hero">
+      <p class="deck-eyebrow">Golden Bachdoor Hit Factory</p>
+      <h1 class="deck-h1">HARMONOPOLY</h1>
+      <p class="deck-tagline">Goldilocks Rush</p>
+      <p class="hm-one-line">No dice. Press <strong>Check the Sun</strong> — live solar weather picks where you land. Watch the path go up to the Sun and back down to your turn. Nested helpers (just three) do the work — not a crowd of chatty agents.</p>
+      <p class="hm-btn-row" style="justify-content:center">
+        <a class="hm-btn hm-btn--ghost" href="/harmonopoly-guide" style="text-decoration:none">Game · tech · math guide →</a>
+      </p>
+    </header>
+
+    <!-- Setup -->
+    <section id="hm-setup" class="hm-panel hm-setup" aria-labelledby="hm-setup-h">
+      <h2 id="hm-setup-h">Start a table</h2>
+      <p class="hm-muted">Pass-the-phone play. Names and scores stay on this device — we do not upload your private play.</p>
+      <label for="hm-count">How many players?</label>
+      <select id="hm-count" aria-label="Player count">
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <div id="hm-player-fields"></div>
+      <label>
+        <input type="checkbox" id="hm-bachdoor" />
+        Adult add-ons (18+ · optional · stays on this device)
+      </label>
+      <div class="hm-btn-row">
+        <button type="button" class="hm-btn hm-btn--wide" id="hm-start">Start table</button>
+      </div>
+      <p class="hm-muted" style="margin-top:0.75rem">
+        Already playing? <button type="button" class="hm-btn hm-btn--ghost" id="hm-resume" style="padding:0.35rem 0.7rem;font-size:0.85rem">Resume saved table</button>
+      </p>
+    </section>
+
+    <!-- Play -->
+    <section id="hm-play" class="hm-hidden" aria-live="polite">
+      <div class="hm-panel">
+        <h2>Nested helpers</h2>
+        <p class="hm-muted" style="margin-top:0">Goldilocks nest: one table boss, three helpers. Only one wakes at a time; the rest sleep tiny (scale-to-zero). No flat agent chat storm.</p>
+        <div class="hm-nest" id="hm-nest" aria-live="polite"></div>
+      </div>
+
+      <div class="hm-panel">
+        <h2>Path up and down</h2>
+        <p class="hm-muted" style="margin-top:0">Like a download bar — but for your turn going to the Sun and coming back to you.</p>
+        <div class="hm-ladder__dir" id="hm-ladder-dir">Ready</div>
+        <div class="hm-ladder__bar" aria-hidden="true"><div class="hm-ladder__fill" id="hm-ladder-fill"></div></div>
+        <div class="hm-ladder" id="hm-ladder" role="list" aria-label="Path from you to the Sun and back">
+          <div class="hm-step" data-step="1" role="listitem">
+            <span class="hm-step__n">1</span>
+            <div>
+              <div class="hm-step__title">Your turn</div>
+              <div class="hm-step__detail" data-detail>Waiting for you</div>
+            </div>
+          </div>
+          <div class="hm-step" data-step="2" role="listitem">
+            <span class="hm-step__n">2</span>
+            <div>
+              <div class="hm-step__title">Your body in the game</div>
+              <div class="hm-step__detail" data-detail>Waveguide · grounded</div>
+            </div>
+          </div>
+          <div class="hm-step" data-step="3" role="listitem">
+            <span class="hm-step__n">3</span>
+            <div>
+              <div class="hm-step__title">This phone / screen</div>
+              <div class="hm-step__detail" data-detail>Board math</div>
+            </div>
+          </div>
+          <div class="hm-step" data-step="4" role="listitem">
+            <span class="hm-step__n">4</span>
+            <div>
+              <div class="hm-step__title">Sun right now</div>
+              <div class="hm-step__detail" data-detail>Live space weather</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hm-panel">
+        <h2>The board</h2>
+        <div class="hm-board-wrap">
+          <svg class="hm-board" id="hm-board" viewBox="0 0 320 320" aria-label="Circular game board with 12 zones"></svg>
+        </div>
+        <div class="hm-status" id="hm-solar-strip"></div>
+        <div class="hm-roster" id="hm-roster"></div>
+        <p class="hm-status" id="hm-turn-msg"></p>
+        <div class="hm-btn-row">
+          <button type="button" class="hm-btn hm-btn--wide" id="hm-sync">Check the Sun</button>
+          <button type="button" class="hm-btn hm-btn--ghost" id="hm-end-table">End table</button>
+        </div>
+      </div>
+
+      <div class="hm-panel hm-hidden" id="hm-win" aria-live="assertive">
+        <div class="hm-win">
+          <h2>Table complete</h2>
+          <p class="hm-status" id="hm-win-msg"></p>
+          <button type="button" class="hm-btn" id="hm-new-game">New table</button>
+        </div>
+      </div>
+
+      <details class="hm-rules hm-panel">
+        <summary>How to play (plain speak)</summary>
+        <p><strong>Goal:</strong> Light up every zone on the board into a <em>just-right zone</em>. The best helper of the table wins — most fair trades and surges handled.</p>
+        <ul>
+          <li><strong>Check the Sun</strong> — no dice. Real solar weather (or a labeled backup) picks your landing spot and the story of that turn.</li>
+          <li><strong>Empty zone</strong> — spend energy chips to light it. It becomes your just-right zone.</li>
+          <li><strong>Someone else’s zone</strong> — fair trade: offer chips (and optional adult add-on if on). They may tip some chips back.</li>
+          <li><strong>Big solar surge</strong> — ground yourself or you pause until you help the active player (honor reset).</li>
+          <li><strong>Nested helpers</strong> — table master wakes sun / fair-trade / surge helpers one at a time (EGS φ = 1.618 nesting). Not a flat peer swarm.</li>
+          <li><strong>Privacy</strong> — names, choices, and adult prompts stay on this device. Only public sun data is fetched.</li>
+        </ul>
+        <p>Engine story names: EGS φ ≈ 1.618 (balance number · parent scale = φ × child) · hydrogen line 1420.405 MHz (our shared channel name). Game geometry — not a claim that sunspots control your room.</p>
+        <p><a href="/harmonopoly-guide">Full guide — game, tech &amp; math →</a></p>
+      </details>
+    </section>
+
+    <p class="hm-honesty">
+      <strong>What’s real:</strong> Sun numbers come from a public weather pipe when live.
+      <strong>What’s game:</strong> Where you land, the path bar, and the nested helpers are play rules on this phone.
+      Honor system · no edge data mining · private info stays here · nested agents, not a flat swarm.
+    </p>
+  </main>
+
+  <!-- Resolve modal -->
+  <div class="hm-modal-backdrop" id="hm-modal" role="dialog" aria-modal="true" aria-labelledby="hm-modal-title">
+    <div class="hm-modal">
+      <h3 id="hm-modal-title">Your landing</h3>
+      <p class="hm-status" id="hm-modal-body"></p>
+      <div id="hm-modal-actions" class="hm-btn-row"></div>
+    </div>
+  </div>
+
+  <!-- Consent modal for adult add-ons -->
+  <div class="hm-modal-backdrop" id="hm-consent" role="dialog" aria-modal="true" aria-labelledby="hm-consent-title">
+    <div class="hm-modal">
+      <h3 id="hm-consent-title">Adult add-ons</h3>
+      <p class="hm-status">You must be 18+. Everyone at the table must agree. Keep absolute consent and clear boundaries. Prompts never leave this device.</p>
+      <div class="hm-btn-row">
+        <button type="button" class="hm-btn" id="hm-consent-yes">I am 18+ and we agree</button>
+        <button type="button" class="hm-btn hm-btn--ghost" id="hm-consent-no">Keep it Frontier only</button>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script src="/interfaces/harmonopoly-nested-agents.js"></script>
+  <script>
+(function () {
+  'use strict';
+
+  var nest = window.HarmonopolyNest && window.HarmonopolyNest.createNest({
+    onNestChange: function () { renderNest(); }
+  });
+  var N = (nest && nest.N) || 12;
+  var STORAGE = 'harmonopoly-table-v1';
+  var ROLES = [
+    { id: 'acoustic', name: 'Fast mover', bias: 2, blurb: 'Turns sudden solar bursts into forward moves.' },
+    { id: 'weaver', name: 'Steady bridge', bias: 0, blurb: 'Keeps competing lanes even when the Sun spikes.' },
+    { id: 'prompter', name: 'Quiet seeder', bias: -3, blurb: 'Drops quiet boosts onto the board from the side.' }
+  ];
+  var ADULT_PROMPTS = [
+    'Offer a simple sensory kindness the group agrees on (eyes closed for 10 seconds is enough).',
+    'Serve someone a drink or snack as valet — only if they want it.',
+    'Trade seats for one turn.',
+    'Share one honest compliment, then pass the phone.',
+    'Skip with honor — say “boundaries,” no questions asked.'
+  ];
+
+  var state = null;
+  var pendingResolve = null;
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function sleep(ms) {
+    return new Promise(function (r) { setTimeout(r, ms); });
+  }
+
+  function createEphemeralRoomCode() {
+    /* Stub for later same-room sync — no network today */
+    return null;
+  }
+
+  function sectorRole(i) {
+    return nest ? nest.sectorRole(i) : ['Surge', 'Ground', 'Bridge', 'Whisper', 'Yield', 'Overload'][i % 6];
+  }
+
+  function renderNest() {
+    var el = $('hm-nest');
+    if (!el || !nest) {
+      if (el) el.innerHTML = '<p class="hm-muted">Nest engine missing — refresh the page.</p>';
+      return;
+    }
+    var info = nest.inspect();
+    var rows = [
+      '<div class="hm-nest__row is-awake"><span><strong>' + escapeHtml(info.outer.plainName) + '</strong><br><span class="hm-muted">' +
+        escapeHtml(info.outer.job) + '</span></span><span class="hm-nest__tag">Outer · φ</span></div>'
+    ];
+    info.children.forEach(function (c) {
+      var cls = c.status === 'awake' ? 'is-awake' : 'is-frozen';
+      var tag = c.status === 'awake' ? 'Awake' : 'Sleeping · ' + c.snapBytes + 'b';
+      rows.push(
+        '<div class="hm-nest__row ' + cls + '"><span><strong>' + escapeHtml(c.plainName) + '</strong><br><span class="hm-muted">' +
+          escapeHtml(c.job) + '</span></span><span class="hm-nest__tag">' + tag + '</span></div>'
+      );
+    });
+    el.innerHTML = rows.join('');
+  }
+
+  function freshSectors() {
+    var out = [];
+    for (var i = 0; i < N; i++) {
+      out.push({ i: i, role: sectorRole(i), calibrated: false, owner: null });
+    }
+    return out;
+  }
+
+  function defaultPlayers(count) {
+    var list = [];
+    for (var i = 0; i < count; i++) {
+      list.push({
+        id: 'p' + i,
+        name: 'Player ' + (i + 1),
+        roleId: ROLES[i % ROLES.length].id,
+        chips: 24,
+        exchanges: 0,
+        flaresGrounded: 0,
+        outOfPhase: false,
+        root: 5,
+        crown: 5
+      });
+    }
+    return list;
+  }
+
+  function roleById(id) {
+    for (var i = 0; i < ROLES.length; i++) if (ROLES[i].id === id) return ROLES[i];
+    return ROLES[0];
+  }
+
+  function save() {
+    if (!state) return;
+    try { localStorage.setItem(STORAGE, JSON.stringify(state)); } catch (e) { /* ignore */ }
+  }
+
+  function load() {
+    try {
+      var raw = localStorage.getItem(STORAGE);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch (e) { return null; }
+  }
+
+  function clearSave() {
+    try { localStorage.removeItem(STORAGE); } catch (e) { /* ignore */ }
+  }
+
+  /* ---- Ladder UI ---- */
+  function setLadder(step, direction, details) {
+    details = details || {};
+    var fill = $('hm-ladder-fill');
+    var dir = $('hm-ladder-dir');
+    var steps = document.querySelectorAll('.hm-step');
+    var pct = direction === 'idle' ? 0 : (step / 4) * 100;
+    if (direction === 'up') pct = ((5 - step) / 4) * 100;
+    if (direction === 'stuck') pct = (step / 4) * 100;
+
+    fill.style.width = Math.max(8, Math.min(100, pct)) + '%';
+    dir.textContent =
+      direction === 'down' ? 'Going up to the Sun…' :
+      direction === 'up' ? 'Coming back to you…' :
+      direction === 'stuck' ? 'Paused — need a reset' :
+      'Ready';
+
+    steps.forEach(function (el) {
+      var n = Number(el.getAttribute('data-step'));
+      el.classList.remove('is-active', 'is-done', 'is-stuck');
+      var detail = el.querySelector('[data-detail]');
+      if (details[n]) detail.textContent = details[n];
+      if (direction === 'stuck' && n <= 2) {
+        el.classList.add('is-stuck');
+      } else if (direction === 'down') {
+        if (n < step) el.classList.add('is-done');
+        if (n === step) el.classList.add('is-active');
+      } else if (direction === 'up') {
+        if (n > step) el.classList.add('is-done');
+        if (n === step) el.classList.add('is-active');
+      } else if (n === 1) {
+        el.classList.add('is-active');
+      }
+    });
+
+    if (state) {
+      state.lastLadder = { direction: direction, step: step, pct: pct, details: details };
+      save();
+    }
+  }
+
+  async function animateDown(partialDetails) {
+    for (var s = 1; s <= 4; s++) {
+      setLadder(s, 'down', partialDetails);
+      await sleep(220);
+    }
+  }
+
+  async function animateUp(from, details) {
+    for (var s = from; s >= 1; s--) {
+      setLadder(s, 'up', details);
+      await sleep(220);
+    }
+  }
+
+  /* ---- Board SVG ---- */
+  function polar(cx, cy, r, ang) {
+    return { x: cx + r * Math.cos(ang), y: cy + r * Math.sin(ang) };
+  }
+
+  function wedgePath(cx, cy, r0, r1, a0, a1) {
+    var p0 = polar(cx, cy, r1, a0);
+    var p1 = polar(cx, cy, r1, a1);
+    var p2 = polar(cx, cy, r0, a1);
+    var p3 = polar(cx, cy, r0, a0);
+    var large = a1 - a0 > Math.PI ? 1 : 0;
+    return [
+      'M', p0.x, p0.y,
+      'A', r1, r1, 0, large, 1, p1.x, p1.y,
+      'L', p2.x, p2.y,
+      'A', r0, r0, 0, large, 0, p3.x, p3.y,
+      'Z'
+    ].join(' ');
+  }
+
+  function drawBoard() {
+    var svg = $('hm-board');
+    if (!svg || !state) return;
+    var cx = 160, cy = 160, r0 = 48, r1 = 148;
+    var html = '';
+    var land = state.lastSolar && state.lastSolar.landSector;
+    for (var i = 0; i < N; i++) {
+      var a0 = (-Math.PI / 2) + (i * 2 * Math.PI) / N;
+      var a1 = a0 + (2 * Math.PI) / N;
+      var sec = state.sectors[i];
+      var cls = 'hm-sector';
+      if (sec.calibrated) cls += ' is-calibrated';
+      if (land === i) cls += ' is-landed';
+      html += '<path class="' + cls + '" data-i="' + i + '" d="' + wedgePath(cx, cy, r0, r1, a0, a1) + '" />';
+      var mid = polar(cx, cy, (r0 + r1) / 2, (a0 + a1) / 2);
+      html += '<text class="hm-sector-label" x="' + mid.x + '" y="' + mid.y + '" text-anchor="middle" dominant-baseline="middle">' + (i + 1) + '</text>';
+    }
+    html += '<circle class="hm-hub" cx="' + cx + '" cy="' + cy + '" r="' + (r0 - 4) + '" />';
+    html += '<text class="hm-hub-text" x="' + cx + '" y="' + (cy + 5) + '">SUN</text>';
+    svg.innerHTML = html;
+  }
+
+  function renderRoster() {
+    var el = $('hm-roster');
+    if (!state) return;
+    el.innerHTML = state.players.map(function (p, idx) {
+      var role = roleById(p.roleId);
+      var active = idx === state.activeIndex ? ' is-active' : '';
+      var lock = p.outOfPhase ? ' · paused' : '';
+      return '<div class="hm-roster__p' + active + '"><span><strong>' + escapeHtml(p.name) + '</strong> · ' +
+        escapeHtml(role.name) + lock + '</span><span>' + p.chips + ' chips</span></div>';
+    }).join('');
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+    });
+  }
+
+  function activePlayer() {
+    return state.players[state.activeIndex];
+  }
+
+  function updateTurnMsg(extra) {
+    var p = activePlayer();
+    var role = roleById(p.roleId);
+    var lit = state.sectors.filter(function (s) { return s.calibrated; }).length;
+    $('hm-turn-msg').innerHTML =
+      '<strong>' + escapeHtml(p.name) + '</strong>’s turn · ' + escapeHtml(role.name) +
+      ' · zones lit ' + lit + '/' + N +
+      (extra ? '<br>' + extra : '');
+  }
+
+  function updateSolarStrip() {
+    var el = $('hm-solar-strip');
+    var s = state && state.lastSolar;
+    if (!s) {
+      el.innerHTML = '<span class="hm-badge">Waiting</span> Press <strong>Check the Sun</strong> to pull live space weather.';
+      return;
+    }
+    var badge = s.fallback
+      ? '<span class="hm-badge hm-badge--fallback">Backup sun data</span>'
+      : '<span class="hm-badge hm-badge--live">Live sun data</span>';
+    var ar = (s.regions && s.regions[0]) ? s.regions[0].id : '—';
+    el.innerHTML = badge +
+      ' Sunspot count <strong>' + s.ssn + '</strong> · stability <strong>' +
+      (Math.round(s.hsi * 100) / 100) + '</strong> · top region <strong>' + escapeHtml(ar) +
+      '</strong> · beat <strong>' + escapeHtml(s.beatLabel) + '</strong>';
+  }
+
+  /* ---- Landing map (nested Sun helper) ---- */
+  function mapLanding(payload, player, turnIndex) {
+    if (nest) return nest.runSolarOracle(payload, player, turnIndex);
+    return null;
+  }
+
+  function fallbackPayload() {
+    return nest ? nest.fallbackPayload() : { holographicStabilityIndex: 0.72, modulation: {}, telemetry: { sunspot: { sunspotNumber: 133, source: 'canonical' }, activeRegions: [] } };
+  }
+
+  async function fetchSolar() {
+    try {
+      var res = await fetch('/api/dph-wavefield-solar', { headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error('bad status');
+      var data = await res.json();
+      if (!data || data.ok === false) throw new Error('pipe fail');
+      return data;
+    } catch (e) {
+      return fallbackPayload();
+    }
+  }
+
+  /* ---- Resolve flows ---- */
+  function openModal(title, bodyHtml, actions) {
+    $('hm-modal-title').textContent = title;
+    $('hm-modal-body').innerHTML = bodyHtml;
+    var box = $('hm-modal-actions');
+    box.innerHTML = '';
+    actions.forEach(function (a) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'hm-btn' + (a.ghost ? ' hm-btn--ghost' : '');
+      b.textContent = a.label;
+      b.addEventListener('click', a.onClick);
+      box.appendChild(b);
+    });
+    $('hm-modal').classList.add('is-open');
+  }
+
+  function closeModal() {
+    $('hm-modal').classList.remove('is-open');
+  }
+
+  function adultLine() {
+    if (!state.bachdoor) return '';
+    var prompt = ADULT_PROMPTS[state.turnIndex % ADULT_PROMPTS.length];
+    return '<p class="hm-muted" style="margin-top:0.65rem"><strong>Adult add-on (local only):</strong> ' +
+      escapeHtml(prompt) + '</p>';
+  }
+
+  function finishResolve(msg) {
+    closeModal();
+    animateUp(2, {
+      4: state.lastSolar.beatLabel,
+      3: 'Landed on zone ' + (state.lastSolar.landSector + 1),
+      2: activePlayer().name + ' · grounded',
+      1: msg || 'Turn done'
+    }).then(function () {
+      setLadder(1, 'idle', { 1: 'Ready for next Check the Sun' });
+      advanceTurn();
+    });
+  }
+
+  function checkWin() {
+    var all = state.sectors.every(function (s) { return s.calibrated; });
+    if (!all) return false;
+    var best = state.players.slice().sort(function (a, b) {
+      return (b.exchanges + b.flaresGrounded * 2) - (a.exchanges + a.flaresGrounded * 2);
+    })[0];
+    $('hm-win').classList.remove('hm-hidden');
+    $('hm-sync').disabled = true;
+    $('hm-win-msg').innerHTML =
+      '<strong>' + escapeHtml(best.name) + '</strong> is the <strong>best helper of the table</strong> — ' +
+      best.exchanges + ' fair trades · ' + best.flaresGrounded + ' surges grounded.';
+    state.won = true;
+    save();
+    return true;
+  }
+
+  function advanceTurn() {
+    if (checkWin()) {
+      drawBoard();
+      renderRoster();
+      return;
+    }
+    var n = state.players.length;
+    for (var i = 0; i < n; i++) {
+      state.activeIndex = (state.activeIndex + 1) % n;
+      if (!activePlayer().outOfPhase) break;
+    }
+        state.turnIndex += 1;
+    save();
+    drawBoard();
+    renderRoster();
+    renderNest();
+    updateTurnMsg();
+    updateSolarStrip();
+    $('hm-sync').disabled = false;
+  }
+
+  function putOutOfPhase(player, reason) {
+    player.outOfPhase = true;
+    setLadder(1, 'stuck', {
+      1: 'Paused',
+      2: reason || 'Need a reset',
+      3: 'Board waiting',
+      4: state.lastSolar ? state.lastSolar.beatLabel : '—'
+    });
+    openModal('Paused — need a reset',
+      '<p>You are out of phase. Help the next player as a valet (honor). No fee — just realign.</p>' + adultLine(),
+      [
+        {
+          label: 'I helped · unlock me',
+          onClick: function () {
+            player.outOfPhase = false;
+            save();
+            finishResolve('Reset done · unlocked');
+          }
+        }
+      ]);
+    save();
+  }
+
+  function resolveLanding() {
+    var p = activePlayer();
+    var land = state.lastSolar.landSector;
+    var sec = state.sectors[land];
+    var beat = state.lastSolar.beat;
+
+    setLadder(2, 'up', {
+      4: state.lastSolar.beatLabel + (state.lastSolar.fallback ? ' (backup)' : ''),
+      3: 'Landed on zone ' + (land + 1) + ' · ' + sec.role,
+      2: p.name + ' · Root ' + p.root + ' / Crown ' + p.crown,
+      1: 'Choose what to do'
+    });
+
+    if (beat === 'flare') {
+      var surgePlan = nest ? nest.runSurge('ground') : { groundCost: 3 };
+      var gCost = surgePlan.groundCost || 3;
+      openModal('Big solar surge',
+        '<p>The Sun dumped a surge on zone <strong>' + (land + 1) + '</strong>. Ground it, or you pause.</p>' +
+        '<p class="hm-muted">Surge helper woke · then slept.</p>' + adultLine(),
+        [
+          {
+            label: 'Ground it (−' + gCost + ' chips)',
+            onClick: function () {
+              if (p.chips < gCost) {
+                putOutOfPhase(p, 'Could not ground the surge');
+                return;
+              }
+              p.chips -= gCost;
+              p.flaresGrounded += 1;
+              p.crown = Math.max(1, p.crown - 1);
+              p.root = Math.min(10, p.root + 1);
+              finishResolve('Surge grounded');
+            }
+          },
+          {
+            label: 'I freeze · pause me',
+            ghost: true,
+            onClick: function () {
+              putOutOfPhase(p, 'Did not ground the surge');
+            }
+          }
+        ]);
+      return;
+    }
+
+    if (!sec.calibrated) {
+      var cal = nest ? nest.runFairTrade('calibrateCost', { beat: beat }) : { cost: beat === 'goldilocks' ? 3 : 4 };
+      var cost = cal.cost;
+      openModal('Empty zone',
+        '<p>Zone <strong>' + (land + 1) + '</strong> (' + escapeHtml(sec.role) + ') is dark. Spend <strong>' +
+        cost + ' energy chips</strong> to light a just-right zone.</p>' +
+        (beat === 'goldilocks' ? '<p>Just-right window — cheaper light-up.</p>' : '') +
+        '<p class="hm-muted">Fair-trade helper woke · then slept.</p>' +
+        adultLine(),
+        [
+          {
+            label: 'Light it up (−' + cost + ')',
+            onClick: function () {
+              if (p.chips < cost) {
+                putOutOfPhase(p, 'Not enough chips to light the zone');
+                return;
+              }
+              p.chips -= cost;
+              sec.calibrated = true;
+              sec.owner = p.id;
+              p.exchanges += 1;
+              finishResolve('Zone ' + (land + 1) + ' is just-right');
+            }
+          },
+          {
+            label: 'Skip · risk pause',
+            ghost: true,
+            onClick: function () {
+              putOutOfPhase(p, 'Skipped lighting a zone');
+            }
+          }
+        ]);
+      return;
+    }
+
+    var owner = state.players.find(function (x) { return x.id === sec.owner; });
+    var trade = nest ? nest.runFairTrade('offer', { beat: beat }) : { offer: beat === 'bound' ? 4 : 3 };
+    var offer = trade.offer;
+    if (!owner || owner.id === p.id) {
+      var y = nest ? nest.runFairTrade('ownYield', {}) : { yieldAmt: 2 };
+      var yieldAmt = y.yieldAmt || 2;
+      p.chips += yieldAmt;
+      openModal('Your just-right zone',
+        '<p>You landed on your own zone. Collect <strong>' + yieldAmt + ' chips</strong>.</p>' + adultLine(),
+        [{ label: 'Collect', onClick: function () { finishResolve('Collected from your zone'); } }]);
+      return;
+    }
+
+    openModal('Fair trade',
+      '<p>You landed on <strong>' + escapeHtml(owner.name) + '</strong>’s just-right zone. Offer <strong>' +
+      offer + ' chips</strong> for the boost. They may tip some back.</p>' +
+      '<p class="hm-muted">Fair-trade helper woke · then slept.</p>' + adultLine(),
+      [
+        {
+          label: 'Offer ' + offer + ' chips',
+          onClick: function () {
+            if (p.chips < offer) {
+              putOutOfPhase(p, 'Could not fund a fair trade');
+              return;
+            }
+            p.chips -= offer;
+            owner.chips += offer;
+            p.exchanges += 1;
+            owner.exchanges += 1;
+            openModal('Tip back?',
+              '<p>' + escapeHtml(owner.name) + ' — tip some chips back to keep momentum fluid?</p>',
+              [
+                {
+                  label: 'Tip 1 back',
+                  onClick: function () {
+                    if (owner.chips >= 1) { owner.chips -= 1; p.chips += 1; }
+                    finishResolve('Fair trade + tip');
+                  }
+                },
+                {
+                  label: 'Tip 2 back',
+                  onClick: function () {
+                    var t = Math.min(2, owner.chips);
+                    owner.chips -= t; p.chips += t;
+                    finishResolve('Fair trade + tip');
+                  }
+                },
+                {
+                  label: 'Keep all (honor)',
+                  ghost: true,
+                  onClick: function () { finishResolve('Fair trade done'); }
+                }
+              ]);
+          }
+        },
+        {
+          label: 'Refuse trade · pause',
+          ghost: true,
+          onClick: function () {
+            putOutOfPhase(p, 'Refused a fair trade');
+          }
+        }
+      ]);
+  }
+
+  async function onCheckSun() {
+    if (!state || state.won) return;
+    var p = activePlayer();
+    if (p.outOfPhase) {
+      openModal('Still paused',
+        '<p>Unlock with an honor reset first.</p>',
+        [{ label: 'I helped · unlock', onClick: function () {
+          p.outOfPhase = false;
+          closeModal();
+          setLadder(1, 'idle', { 1: 'Back in play' });
+          save();
+        }}]);
+      return;
+    }
+
+    $('hm-sync').disabled = true;
+    await animateDown({
+      1: p.name + ' pressed Check the Sun',
+      2: roleById(p.roleId).name,
+      3: 'Asking the solar pipe…',
+      4: 'Waiting for the Sun…'
+    });
+
+    var payload = await fetchSolar();
+    var mapped = mapLanding(payload, p, state.turnIndex);
+    state.lastSolar = mapped;
+    save();
+
+    setLadder(4, 'down', {
+      1: p.name,
+      2: roleById(p.roleId).name,
+      3: 'Mapped to zone ' + (mapped.landSector + 1),
+      4: mapped.beatLabel + ' · SSN ' + mapped.ssn + (mapped.fallback ? ' · backup' : ' · live')
+    });
+    await sleep(400);
+
+    updateSolarStrip();
+    drawBoard();
+    renderRoster();
+    renderNest();
+
+    await animateUp(3, {
+      4: mapped.beatLabel,
+      3: 'Zone ' + (mapped.landSector + 1),
+      2: 'Coming into the body',
+      1: 'Resolve your landing'
+    });
+
+    resolveLanding();
+  }
+
+  /* ---- Setup UI ---- */
+  function renderPlayerFields() {
+    var count = Number($('hm-count').value) || 3;
+    var box = $('hm-player-fields');
+    box.innerHTML = '';
+    for (var i = 0; i < count; i++) {
+      var row = document.createElement('div');
+      row.className = 'hm-player-row';
+      row.innerHTML =
+        '<label>Player ' + (i + 1) + ' name</label>' +
+        '<input type="text" data-name="' + i + '" value="Player ' + (i + 1) + '" maxlength="24" />' +
+        '<label>Role</label>' +
+        '<select data-role="' + i + '">' +
+        ROLES.map(function (r, ri) {
+          return '<option value="' + r.id + '"' + (ri === (i % ROLES.length) ? ' selected' : '') + '>' +
+            r.name + ' — ' + r.blurb + '</option>';
+        }).join('') +
+        '</select>';
+      box.appendChild(row);
+    }
+  }
+
+  function startTable() {
+    var count = Number($('hm-count').value) || 3;
+    var players = defaultPlayers(count);
+    var nameInputs = document.querySelectorAll('[data-name]');
+    var roleSelects = document.querySelectorAll('[data-role]');
+    nameInputs.forEach(function (inp) {
+      var i = Number(inp.getAttribute('data-name'));
+      players[i].name = (inp.value || players[i].name).trim().slice(0, 24);
+    });
+    roleSelects.forEach(function (sel) {
+      var i = Number(sel.getAttribute('data-role'));
+      players[i].roleId = sel.value;
+    });
+
+    var wantBach = $('hm-bachdoor').checked;
+    if (wantBach) {
+      $('hm-consent').classList.add('is-open');
+      pendingResolve = function (ok) {
+        $('hm-consent').classList.remove('is-open');
+        beginGame(players, ok);
+      };
+      return;
+    }
+    beginGame(players, false);
+  }
+
+  function beginGame(players, bachdoor) {
+    state = {
+      v: 1,
+      players: players,
+      activeIndex: 0,
+      sectors: freshSectors(),
+      turnIndex: 0,
+      lastSolar: null,
+      lastLadder: { direction: 'idle', step: 1, pct: 0 },
+      bachdoor: !!bachdoor,
+      won: false,
+      roomStub: createEphemeralRoomCode()
+    };
+    save();
+    $('hm-setup').classList.add('hm-hidden');
+    $('hm-play').classList.remove('hm-hidden');
+    $('hm-win').classList.add('hm-hidden');
+    $('hm-sync').disabled = false;
+    setLadder(1, 'idle', { 1: 'Press Check the Sun' });
+    drawBoard();
+    renderRoster();
+    renderNest();
+    updateTurnMsg();
+    updateSolarStrip();
+  }
+
+  function showSetup() {
+    state = null;
+    clearSave();
+    $('hm-play').classList.add('hm-hidden');
+    $('hm-setup').classList.remove('hm-hidden');
+    renderPlayerFields();
+  }
+
+  function resume() {
+    var s = load();
+    if (!s || !s.players) {
+      alert('No saved table on this device.');
+      return;
+    }
+    state = s;
+    $('hm-setup').classList.add('hm-hidden');
+    $('hm-play').classList.remove('hm-hidden');
+    if (state.won) $('hm-win').classList.remove('hm-hidden');
+    else $('hm-win').classList.add('hm-hidden');
+    setLadder(1, 'idle', { 1: 'Resumed · Check the Sun' });
+    drawBoard();
+    renderRoster();
+    renderNest();
+    updateTurnMsg();
+    updateSolarStrip();
+  }
+
+  /* ---- Wire ---- */
+  $('hm-count').addEventListener('change', renderPlayerFields);
+  $('hm-start').addEventListener('click', startTable);
+  $('hm-resume').addEventListener('click', resume);
+  $('hm-sync').addEventListener('click', onCheckSun);
+  $('hm-end-table').addEventListener('click', showSetup);
+  $('hm-new-game').addEventListener('click', showSetup);
+  $('hm-consent-yes').addEventListener('click', function () {
+    if (pendingResolve) pendingResolve(true);
+    pendingResolve = null;
+  });
+  $('hm-consent-no').addEventListener('click', function () {
+    $('hm-bachdoor').checked = false;
+    if (pendingResolve) pendingResolve(false);
+    pendingResolve = null;
+  });
+
+  renderPlayerFields();
+  renderNest();
+  if (load()) {
+    /* soft hint only */
+  }
+})();
+  </script>
+</body>
+</html>

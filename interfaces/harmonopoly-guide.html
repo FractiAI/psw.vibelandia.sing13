@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Harmonopoly · Game, tech &amp; math guide</title>
+  <meta name="description" content="Plain-speak guide to Harmonopoly: how to play, nested agents, solar math, EGS φ, and honesty rails. Lite edge · honor · no data mining." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/harmonopoly-guide" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <style>
+    body {
+      font-family: "Source Serif 4", Georgia, serif;
+      background:
+        radial-gradient(ellipse 90% 50% at 40% -5%, rgba(245, 158, 11, 0.14), transparent 55%),
+        var(--deck-bg);
+      color: var(--deck-text);
+      margin: 0;
+    }
+    .hg-prose h2 {
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      color: var(--deck-gold-hi);
+      font-weight: 400;
+      margin: 1.75rem 0 0.55rem;
+    }
+    .hg-prose h3 {
+      font-size: 1.05rem;
+      color: var(--deck-champagne);
+      margin: 1.15rem 0 0.4rem;
+    }
+    .hg-prose p, .hg-prose li {
+      color: var(--deck-text-soft);
+      line-height: 1.55;
+      font-size: 1.02rem;
+    }
+    .hg-prose ul { padding-left: 1.2rem; }
+    .hg-box {
+      border: 1px solid var(--deck-line);
+      border-radius: 12px;
+      background: rgba(26, 18, 12, 0.72);
+      padding: 1rem 1.1rem;
+      margin: 1rem 0;
+    }
+    .hg-box pre, .hg-box code {
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 0.82rem;
+      color: #fef3c7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .hg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .hg-table th, .hg-table td {
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      padding: 0.45rem 0.55rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .hg-table th {
+      color: var(--deck-gold-hi);
+      background: rgba(26, 18, 12, 0.9);
+    }
+    .hg-cta {
+      display: inline-block;
+      margin: 0.35rem 0.45rem 0.35rem 0;
+      padding: 0.7rem 1.1rem;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      background: linear-gradient(135deg, #fbbf24, #d97706);
+      color: #1a120c;
+    }
+    .hg-cta--ghost {
+      background: transparent;
+      color: var(--deck-champagne);
+      border: 1px solid var(--deck-line);
+    }
+    .hg-toc a {
+      color: var(--deck-link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hg-toc a:hover { text-decoration: underline; color: var(--deck-link-hover); }
+    .hg-toc li { margin: 0.25rem 0; color: var(--deck-muted); }
+  </style>
+</head>
+<body>
+  <main class="deck-wrap hg-prose">
+    <a class="deck-back" href="/harmonopoly">&larr; Back to Harmonopoly</a>
+    <nav class="deck-skin-nav" aria-label="Site">
+      <a href="/">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/my-whiteboard">Whiteboard</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/harmonopoly">Play</a><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Guide</span>
+    </nav>
+
+    <p class="deck-eyebrow">Golden Bachdoor Hit Factory · SynthOBS nest</p>
+    <h1 class="deck-h1">HARMONOPOLY</h1>
+    <p class="deck-tagline">Game · tech · math</p>
+    <p class="deck-lead">
+      A live-action style board game driven by the Sun — not by dice. This page explains what you play, how the phone helpers nest, and the simple math under the hood. Written so anyone can follow; formulas are optional detail.
+    </p>
+
+    <p>
+      <a class="hg-cta" href="/harmonopoly">Play Harmonopoly</a>
+      <a class="hg-cta hg-cta--ghost" href="/my-whiteboard">Whiteboard</a>
+      <a class="hg-cta hg-cta--ghost" href="/api/dph-wavefield-solar">Solar pipe (JSON)</a>
+    </p>
+
+    <div class="hg-box hg-toc">
+      <strong style="color:var(--deck-gold-hi)">On this page</strong>
+      <ol>
+        <li><a href="#what">What the game is</a></li>
+        <li><a href="#play">How a turn works</a></li>
+        <li><a href="#path">Path up and down</a></li>
+        <li><a href="#nest">Nested agents (Goldilocks)</a></li>
+        <li><a href="#tokens">Token use · flat vs nested (100k players)</a></li>
+        <li><a href="#math">Math &amp; EGS φ</a></li>
+        <li><a href="#tech">Technology stack</a></li>
+        <li><a href="#privacy">Privacy &amp; honesty</a></li>
+        <li><a href="#files">Repo files</a></li>
+      </ol>
+    </div>
+
+    <h2 id="what">1. What the game is</h2>
+    <p>
+      <strong>Harmonopoly</strong> is the Goldilocks Rush: a circular board of 12 zones. Players act as holographic valets — helpers who light up “just-right” zones instead of buying dead property.
+    </p>
+    <p>
+      There is <strong>no dice</strong>. Each turn you press <strong>Check the Sun</strong>. The game fetches live public space weather. That snapshot picks where you land and what kind of turn you get (soft drift, just-right window, big surge, or sunspot-bound).
+    </p>
+    <p>
+      You win when every zone is lit. The <strong>best helper of the table</strong> is who did the most fair trades and grounded the most surges — not who bankrupted anyone.
+    </p>
+
+    <h2 id="play">2. How a turn works</h2>
+    <ol>
+      <li>Active player presses <strong>Check the Sun</strong>.</li>
+      <li>Phone asks the public solar pipe for current sunspot / region data.</li>
+      <li>Nested <strong>Sun helper</strong> maps that data to a zone (1–12) and a beat.</li>
+      <li>If the zone is dark → spend <strong>energy chips</strong> to light a just-right zone.</li>
+      <li>If someone else owns it → <strong>fair trade</strong> (offer chips; they may tip some back).</li>
+      <li>If the beat is a <strong>big solar surge</strong> → ground it with chips or pause until you help as valet (honor).</li>
+    </ol>
+    <p>
+      Optional <strong>adult add-ons (18+)</strong> stay on the device only. Consent first. Skip is always allowed.
+    </p>
+
+    <h2 id="path">3. Path up and down</h2>
+    <p>
+      Every Check the Sun shows a progress rail — like a download bar, but for attention and the Sun:
+    </p>
+    <table class="hg-table">
+      <thead>
+        <tr><th>Step</th><th>Plain name</th><th>What it means</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Your turn</td><td>You pressed the button / you finish the choice</td></tr>
+        <tr><td>2</td><td>Your body in the game</td><td>Root / Crown local sliders — grounding vs high focus</td></tr>
+        <tr><td>3</td><td>This phone / screen</td><td>Board math and landing</td></tr>
+        <tr><td>4</td><td>Sun right now</td><td>Live (or labeled backup) space weather</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Path goes <strong>1→4</strong> while fetching, then <strong>4→1</strong> as the result lands back on you. If you pause (“out of phase”), the path sticks near the bottom until an honor reset.
+    </p>
+
+    <h2 id="nest">4. Nested agents (Goldilocks)</h2>
+    <p>
+      Modern flat multi-agent setups often chat every agent to every other agent — cost grows like <em>N × (N−1) / 2</em>. Harmonopoly does the opposite: a <strong>small nested tree</strong>, just the right depth and count.
+    </p>
+    <div class="hg-box">
+      <pre>Digital Pru (ship orchestrator)
+└── SynthOBS (sandbox technical operator)
+    └── Table master          ← outer loop (scale φ)
+        ├── Sun helper        ← Check the Sun / land / beat
+        ├── Fair-trade helper ← light zones / chips / tips
+        └── Surge helper      ← ground surges / honor unlock</pre>
+    </div>
+    <ul>
+      <li><strong>Width:</strong> 3 helpers — <code>round(φ + 1)</code> — not a swarm.</li>
+      <li><strong>Depth:</strong> 2 under SynthOBS (boss + leaves).</li>
+      <li><strong>Rule:</strong> only one leaf awake at a time; others freeze to a tiny micro-snapshot (scale-to-zero).</li>
+      <li><strong>Firewall:</strong> leaves do not talk peer-to-peer — only through the table master.</li>
+    </ul>
+    <p>
+      In the play UI, the <strong>Nested helpers</strong> panel shows who is awake and who is sleeping. That is the architecture of omniversal nested computing, applied at game scale — Goldilocks, not maximal.
+    </p>
+
+    <h2 id="tokens">4b. Token use · flat vs nested (100,000 concurrent players)</h2>
+    <p>
+      Here is a <strong>simulated</strong> comparison of LLM-style <strong>tokens in</strong> (what you send: prompt + context) and <strong>tokens out</strong> (what the model writes back) for one full wave of play — every concurrent player takes one Check-the-Sun equivalent.
+    </p>
+    <p>
+      <strong>Setup:</strong> 100,000 players · tables of 4 · 25,000 tables · φ = 1.618 · nested max children = 3.
+    </p>
+
+    <h3>What each side means</h3>
+    <table class="hg-table">
+      <thead>
+        <tr><th>Design</th><th>How talk works</th><th>Who burns tokens</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Flat agentic</strong></td>
+          <td>Each of 4 players has 3 peer agents (12 agents). They mesh-sync: every agent can talk to every other. Links = N(N−1)/2 = 66 undirected · 132 directed messages per table per wave.</td>
+          <td>Every link carries a fat history context (~900 tokens in, ~180 out).</td>
+        </tr>
+        <tr>
+          <td><strong>Nested (ours)</strong></td>
+          <td>Table master + 3 helpers. <strong>Zero</strong> peer-to-peer links. Per turn: master + <em>one</em> awake leaf. Other leaves sleep as micro-snapshots (0 LLM tokens).</td>
+          <td>Only 2 awake calls per turn (~360 in, ~138 out).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>One wave · 100,000 players</h3>
+    <table class="hg-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Flat mesh</th>
+          <th>Nested Goldilocks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tokens <strong>in</strong></td>
+          <td>2,970,000,000</td>
+          <td>36,000,000</td>
+        </tr>
+        <tr>
+          <td>Tokens <strong>out</strong></td>
+          <td>594,000,000</td>
+          <td>13,800,000</td>
+        </tr>
+        <tr>
+          <td>Tokens <strong>total</strong></td>
+          <td>3,564,000,000</td>
+          <td>49,800,000</td>
+        </tr>
+        <tr>
+          <td>Per-player total (approx.)</td>
+          <td>~35,640</td>
+          <td>~498</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="hg-box">
+      <p style="margin:0;color:var(--deck-champagne)">
+        <strong>Plain speak:</strong> nested uses about <strong>72× fewer tokens</strong> than the flat mesh for the same 100k-player wave
+        (~98.6% less). Sleeping helpers cost almost nothing; flat peers keep paying the sync tax.
+      </p>
+    </div>
+
+    <h3>Per table (so you can check the math)</h3>
+    <table class="hg-table">
+      <thead>
+        <tr><th></th><th>Flat</th><th>Nested</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Agents awake / involved</td><td>12 mesh</td><td>2 per turn (master + 1 leaf)</td></tr>
+        <tr><td>Peer links</td><td>66 undirected</td><td>0</td></tr>
+        <tr><td>Tokens in / table / wave</td><td>118,800</td><td>1,440</td></tr>
+        <tr><td>Tokens out / table / wave</td><td>23,760</td><td>552</td></tr>
+      </tbody>
+    </table>
+
+    <div class="hg-box">
+      <pre>Flat links:  C = N(N − 1)/2  with N = 12 → 66
+Nested law:  Scale_parent = φ · Scale_child · flatPeerLinks = 0
+Re-run:      node scripts/harmonopoly-token-sim.mjs
+Artifact:    research/harmonopoly-nested-token-sim/data/token_sim_100k.json</pre>
+    </div>
+
+    <p>
+      <strong>Honesty:</strong> these are <em>topology estimates</em> from the assumptions in the script — not live OpenAI/Anthropic invoices.
+      Solar weather GETs are separate public pipe traffic (not counted in the LLM token columns above).
+    </p>
+
+    <h2 id="math">5. Math &amp; EGS φ</h2>
+    <p>
+      <strong>EGS φ (phi)</strong> ≈ <strong>1.618033988749895</strong> — El Gran Sol’s fractal constant in this stack. Plain speak: a balance ratio so parent layers stay a bit larger than child layers without exploding complexity.
+    </p>
+    <p>
+      Scale law used for nesting:
+    </p>
+    <div class="hg-box"><pre>Scale_parent = φ · Scale_child</pre></div>
+
+    <h3>Landing map (no dice)</h3>
+    <p>
+      From the solar payload we read sunspot number (SSN), region area sum, stress factor, and a stability score (HSI). With player role bias and turn index:
+    </p>
+    <div class="hg-box">
+      <pre>base = floor(SSN · φ + areaSum / φ + stress · 10) mod 12
+land = (base + roleBias + turnIndex) mod 12
+
+roleBias: Fast mover +2 · Steady bridge 0 · Quiet seeder −3</pre>
+    </div>
+
+    <h3>Beat (story of the turn)</h3>
+    <table class="hg-table">
+      <thead>
+        <tr><th>Condition</th><th>Beat (plain)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Low stability or high stress / many complex regions</td><td>Big solar surge</td></tr>
+        <tr><td>Mid stability, calm stress</td><td>Just-right window (cheaper light-up)</td></tr>
+        <tr><td>Otherwise with live regions</td><td>Bound to a live sunspot</td></tr>
+        <tr><td>Else</td><td>Soft drift</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hydrogen line (catalog name)</h3>
+    <p>
+      <strong>1420.405 MHz</strong> is our shared channel label (holographic hydrogen line) across SynthOBS / Digital Pru papers. In Harmonopoly it is a <em>coherence story name</em>, not a claim that your phone transmits on that frequency.
+    </p>
+
+    <h2 id="tech">6. Technology stack</h2>
+    <table class="hg-table">
+      <thead>
+        <tr><th>Piece</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>/harmonopoly</code></td><td>Play surface (hot-seat · localStorage)</td></tr>
+        <tr><td><code>harmonopoly-nested-agents.js</code></td><td>Nest runtime · wake/freeze · solar map</td></tr>
+        <tr><td><code>GET /api/dph-wavefield-solar</code></td><td>Public NOAA-backed wavefield pipe (with labeled fallback)</td></tr>
+        <tr><td><code>agents/Harmonopoly.*.jj</code></td><td>Declarative nest under SynthOBS</td></tr>
+        <tr><td>localStorage <code>harmonopoly-table-v1</code></td><td>Table state on this device only</td></tr>
+      </tbody>
+    </table>
+    <p>
+      No accounts. No analytics of your prompts. Center = pipes only (solar JSON). Edge = names, chips, adult prompts, house play.
+    </p>
+
+    <h2 id="privacy">7. Privacy &amp; honesty</h2>
+    <table class="hg-table">
+      <thead>
+        <tr><th>Tier</th><th>Meaning</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Operational</td><td>Button fetch, board state, nest wake/sleep on device</td></tr>
+        <tr><td>Public weather</td><td>Sunspot / region numbers from the solar API when live</td></tr>
+        <tr><td>Narrative / game geometry</td><td>φ landing map, beats, “best helper” scoring</td></tr>
+        <tr><td>Not claimed</td><td>RF control of the room, medical effects, or peer-reviewed latency tables as hardware fact</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Fair Exchange is always on: trades are mutual; tips can flow back; pause clears by helping, not by paying a server.
+    </p>
+
+    <h2 id="files">8. Repo files</h2>
+    <ul>
+      <li><code>interfaces/harmonopoly.html</code> — play UI</li>
+      <li><code>interfaces/harmonopoly-nested-agents.js</code> — nest engine</li>
+      <li><code>interfaces/harmonopoly-guide.html</code> — this page</li>
+      <li><code>scripts/harmonopoly-token-sim.mjs</code> — flat vs nested token model (100k players)</li>
+      <li><code>research/harmonopoly-nested-token-sim/data/token_sim_100k.json</code> — last sim receipt</li>
+      <li><code>agents/Harmonopoly.table.agent.jj</code> · <code>agents/Harmonopoly.inner.agents.jj</code></li>
+      <li><code>lib/dph-wavefield-solar.mjs</code> · <code>api/dph-wavefield-solar.js</code></li>
+    </ul>
+
+    <p style="margin-top:1.75rem">
+      <a class="hg-cta" href="/harmonopoly">Play now</a>
+      <a class="hg-cta hg-cta--ghost" href="/hood">Under the hood</a>
+    </p>
+
+    <p class="deck-lead" style="font-size:0.9rem;color:var(--deck-muted);margin-top:1.5rem">
+      NSPFRNP ⊃ SynthOBS ⊃ Harmonopoly nest ⊃ Goldilocks Rush → ∞¹³
+    </p>
+  </main>
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

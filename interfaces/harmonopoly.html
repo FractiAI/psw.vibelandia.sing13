@@ -438,14 +438,14 @@
 
       <details class="hm-rules hm-panel">
         <summary>How to play (plain speak)</summary>
-        <p><strong>Goal:</strong> Bring every zone into <em>full table resonance</em> — every player attuned to that section, not a solo chip buy. The best helper wins — most attunes, fair trades, and surges grounded.</p>
+        <p><strong>Goal:</strong> Bring every zone into <em>full table resonance</em>. Earnings are <strong>Fair Exchange tips</strong> from contributions and resonant answers — not sole ownership rent.</p>
         <ul>
-          <li><strong>Check the Sun</strong> — no dice. Real solar weather (or a labeled backup) picks your landing spot and the story of that turn.</li>
-          <li><strong>Dark zone</strong> — add <em>your</em> resonance (a small focus cost). The zone only lights when <strong>all players</strong> have resonated there.</li>
-          <li><strong>Fully resonant zone</strong> — the whole table shares the just-right field. Fair trade feeds the table, with tips.</li>
-          <li><strong>Big solar surge</strong> — ground yourself or you pause until you help the active player (honor reset).</li>
-          <li><strong>Nested helpers</strong> — table master wakes sun / fair-trade / surge helpers one at a time (EGS φ = 1.618 nesting). Not a flat peer swarm.</li>
-          <li><strong>Privacy</strong> — names, choices, and adult prompts stay on this device. Only public sun data is fetched.</li>
+          <li><strong>Check the Sun</strong> — maps to an OS-flavored Chance/Chest card (Wealth, Health, Purpose…).</li>
+          <li><strong>Challenges</strong> — pay chips into the tip pool, <em>or</em> Truth / Dare instead (honor · consent).</li>
+          <li><strong>Target questions</strong> — table rates the answer (resonant / partial / off-key) → tip size.</li>
+          <li><strong>Dark zone</strong> — add your resonance; lights only when everyone has attuned.</li>
+          <li><strong>Fully resonant</strong> — shared harvest / table fair trade.</li>
+          <li><strong>Privacy</strong> — answers are spoken at the table, not uploaded.</li>
         </ul>
         <p>Engine story names: EGS φ ≈ 1.618 (balance number · parent scale = φ × child) · hydrogen line 1420.405 MHz (our shared channel name). Game geometry — not a claim that sunspots control your room.</p>
         <p><a href="/harmonopoly-guide">Full guide — game, tech &amp; math →</a></p>
@@ -602,6 +602,10 @@
         chips: 24,
         exchanges: 0,
         attunes: 0,
+        tipsReceived: 0,
+        tipsGiven: 0,
+        truthsResonant: 0,
+        daresDone: 0,
         flaresGrounded: 0,
         outOfPhase: false,
         root: 5,
@@ -742,7 +746,11 @@
       var active = idx === state.activeIndex ? ' is-active' : '';
       var lock = p.outOfPhase ? ' · paused' : '';
       return '<div class="hm-roster__p' + active + '"><span><strong>' + escapeHtml(p.name) + '</strong> · ' +
-        escapeHtml(role.name) + lock + '</span><span>' + p.chips + ' chips</span></div>';
+        escapeHtml(role.name) + lock +
+        '<br><span class="hm-muted">tips in ' + (p.tipsReceived || 0) +
+        ' · out ' + (p.tipsGiven || 0) +
+        ' · contrib ' + (nest ? nest.contributionScore(p) : (p.attunes || 0)) +
+        '</span></span><span>' + p.chips + ' chips</span></div>';
     }).join('');
   }
 
@@ -784,8 +792,10 @@
       (s.event
         ? '<br><span class="hm-badge">' +
           (s.event.kind === 'reward' ? 'Sun gift' : s.event.kind === 'challenge' ? 'Sun ask' : 'Steady') +
-          '</span> ' + escapeHtml(s.event.plain)
-        : '');
+          '</span> ' + escapeHtml(s.event.plain) +
+          (s.event.osLane ? ' · <em>' + escapeHtml(s.event.osLane) + '</em>' : '')
+        : '') +
+      '<br><span class="hm-muted">Tip pool: <strong>' + tipPoolBalance() + '</strong> chips (Fair Exchange)</span>';
   }
 
   function eventBannerHtml() {
@@ -794,15 +804,45 @@
     var tag =
       ev.kind === 'reward' ? 'Sun gift' :
       ev.kind === 'challenge' ? 'Sun ask' : 'Steady sun';
-    return '<p><span class="hm-badge">' + tag + '</span> <strong>' + escapeHtml(ev.plain) + '</strong></p>' +
+    var mono = ev.monopolyEcho
+      ? '<p class="hm-muted">OS echo of Monopoly: <em>' + escapeHtml(ev.monopolyEcho) + '</em> · lane <strong>' +
+        escapeHtml(ev.osLane || '—') + '</strong></p>'
+      : (ev.osLane ? '<p class="hm-muted">OS lane: <strong>' + escapeHtml(ev.osLane) + '</strong></p>' : '');
+    return '<p><span class="hm-badge">' + tag + '</span> <strong>' + escapeHtml(ev.plain) + '</strong></p>' + mono +
       '<p class="hm-muted">Mapped from sunspot ' + state.lastSolar.ssn +
       ' · ' + escapeHtml(String(state.lastSolar.fetchedAt || '').replace('T', ' ').slice(0, 19)) +
       ' UTC · seed ' + (ev.seed % 10000) + '</p>';
   }
 
+  function ensureEconomy(player) {
+    if (player.tipsReceived == null) player.tipsReceived = 0;
+    if (player.tipsGiven == null) player.tipsGiven = 0;
+    if (player.truthsResonant == null) player.truthsResonant = 0;
+    if (player.daresDone == null) player.daresDone = 0;
+    if (player.attunes == null) player.attunes = 0;
+  }
+
+  function tipPoolBalance() {
+    if (state.tipPool == null) state.tipPool = 0;
+    return state.tipPool;
+  }
+
+  function addToTipPool(n) {
+    state.tipPool = tipPoolBalance() + n;
+  }
+
+  function payFromTipPool(player, n) {
+    var take = Math.min(n, tipPoolBalance());
+    state.tipPool -= take;
+    player.chips += take;
+    player.tipsReceived = (player.tipsReceived || 0) + take;
+    return take;
+  }
+
   function applyPassiveEvent(player) {
     var ev = state.lastSolar && state.lastSolar.event;
     if (!ev) return;
+    ensureEconomy(player);
     if (ev.chips && ev.chips > 0) player.chips += ev.chips;
     if (ev.rootDelta) {
       player.root = Math.max(1, Math.min(10, player.root + ev.rootDelta));
@@ -811,12 +851,272 @@
       player.crown = Math.max(1, Math.min(10, player.crown + ev.crownDelta));
     }
     if (ev.exchangeBonus) player.exchanges += ev.exchangeBonus;
+    if (ev.tipToSelf) {
+      player.chips += ev.tipToSelf;
+      player.tipsReceived += ev.tipToSelf;
+    }
+    if (ev.distributeByContribution && ev.tipPool) {
+      if (nest && nest.distributeByContribution) {
+        nest.distributeByContribution(state.players, ev.tipPool, null);
+      }
+    } else if (ev.tipPool) {
+      addToTipPool(ev.tipPool);
+    }
+    if (ev.collectPool) {
+      var got = payFromTipPool(player, tipPoolBalance());
+      if (got) player.exchanges += 1;
+    }
+    if (ev.tipTopContributor) {
+      var best = state.players[0];
+      var bestScore = nest ? nest.contributionScore(best) : (best.attunes || 0);
+      state.players.forEach(function (pl) {
+        var sc = nest ? nest.contributionScore(pl) : (pl.attunes || 0);
+        if (sc > bestScore) {
+          best = pl;
+          bestScore = sc;
+        }
+      });
+      best.chips += ev.tipTopContributor;
+      best.tipsReceived += ev.tipTopContributor;
+    }
   }
 
   function applyChipToll(player, amount) {
     if (player.chips < amount) return false;
     player.chips -= amount;
+    addToTipPool(amount);
+    player.tipsGiven = (player.tipsGiven || 0) + amount;
     return true;
+  }
+
+  /** After Truth/Dare: table rates answer → tip distribution (honor, local only). */
+  function settleAnswerRating(player, ev, quality, thenFn) {
+    ensureEconomy(player);
+    var tip = 0;
+    if (quality === 'resonant') {
+      tip = ev.tipOnResonant != null ? ev.tipOnResonant : 3;
+      player.truthsResonant += 1;
+    } else if (quality === 'partial') {
+      tip = ev.tipOnPartial != null ? ev.tipOnPartial : 1;
+    } else {
+      tip = ev.tipOnMiss != null ? ev.tipOnMiss : 0;
+    }
+    if (tip > 0) {
+      if (tipPoolBalance() >= tip) {
+        payFromTipPool(player, tip);
+      } else {
+        /** Table funds tip from others with chips (honor share). */
+        var need = tip;
+        state.players.forEach(function (pl) {
+          if (need <= 0 || pl.id === player.id) return;
+          if (pl.chips > 0) {
+            var give = Math.min(1, pl.chips, need);
+            pl.chips -= give;
+            pl.tipsGiven = (pl.tipsGiven || 0) + give;
+            need -= give;
+            player.chips += give;
+            player.tipsReceived += give;
+          }
+        });
+        if (need > 0) {
+          player.chips += need;
+          player.tipsReceived += need;
+        }
+      }
+    }
+    closeModal();
+    thenFn('Answer rated ' + quality + (tip ? ' · tip +' + tip : ''));
+  }
+
+  function openTruthDareChoice(p, ev, land, sec, beat, afterPaidOrHonor) {
+    var stake = ev.chipStake || Math.abs(ev.chips || 2);
+    var actions = [
+      {
+        label: 'Pay chips (−' + stake + ')',
+        onClick: function () {
+          if (!applyChipToll(p, stake)) {
+            putOutOfPhase(p, 'Could not pay · try Truth or Dare');
+            return;
+          }
+          applyPassiveEvent(p);
+          afterPaidOrHonor('Paid ' + stake + ' into tip pool');
+        }
+      },
+      {
+        label: 'Truth instead',
+        onClick: function () {
+          openTruthFlow(p, ev, function (msg) {
+            applyPassiveEvent(p);
+            afterPaidOrHonor(msg || 'Truth done');
+          });
+        }
+      },
+      {
+        label: 'Dare instead',
+        onClick: function () {
+          openDareFlow(p, ev, function (msg) {
+            applyPassiveEvent(p);
+            afterPaidOrHonor(msg || 'Dare done');
+          });
+        }
+      }
+    ];
+    if (ev.canRefusePause) {
+      actions.push({
+        label: 'Refuse · pause me',
+        ghost: true,
+        onClick: function () {
+          putOutOfPhase(p, 'Refused pay / Truth / Dare');
+        }
+      });
+    }
+    openModal(
+      'Fair Exchange · pay or Truth / Dare',
+      eventBannerHtml() +
+        '<p>Like Monopoly taxes — but Goldilocks OS: you may <strong>pay chips into the tip pool</strong>, or meet the ask with <strong>Truth</strong> or <strong>Dare</strong> (honor).</p>' +
+        '<p class="hm-muted">Tips later follow how resonant your answer feels to the table. Answers stay on this device.</p>' +
+        adultLine(),
+      actions
+    );
+  }
+
+  function openTruthFlow(p, ev, thenFn) {
+    var q = ev.truth || ev.targetQuestion || 'What is true for you on this zone?';
+    openModal(
+      'Truth',
+      eventBannerHtml() +
+        '<p><strong>Target question:</strong> ' + escapeHtml(q) + '</p>' +
+        '<p>Speak your answer to the table (not typed · not uploaded). Then the table rates it.</p>',
+      [
+        {
+          label: 'I answered · rate now',
+          onClick: function () {
+            openModal(
+              'Table rates the Truth',
+              '<p>Was the answer just-right for Fair Exchange?</p>',
+              [
+                {
+                  label: 'Resonant · full tip',
+                  onClick: function () {
+                    settleAnswerRating(p, ev, 'resonant', thenFn);
+                  }
+                },
+                {
+                  label: 'Partial · half tip',
+                  onClick: function () {
+                    settleAnswerRating(p, ev, 'partial', thenFn);
+                  }
+                },
+                {
+                  label: 'Off-key · no tip',
+                  ghost: true,
+                  onClick: function () {
+                    settleAnswerRating(p, ev, 'miss', thenFn);
+                  }
+                }
+              ]
+            );
+          }
+        },
+        {
+          label: 'Boundaries · skip to pause',
+          ghost: true,
+          onClick: function () {
+            putOutOfPhase(p, 'Boundaries on Truth');
+          }
+        }
+      ]
+    );
+  }
+
+  function openDareFlow(p, ev, thenFn) {
+    var d = ev.dare || 'Offer one agreed valet kindness.';
+    openModal(
+      'Dare',
+      eventBannerHtml() +
+        '<p><strong>Dare:</strong> ' + escapeHtml(d) + '</p>' +
+        '<p>Consent first. Skip is always allowed.</p>',
+      [
+        {
+          label: 'Dare done · table confirms',
+          onClick: function () {
+            p.daresDone = (p.daresDone || 0) + 1;
+            var tip = ev.tipOnResonant != null ? ev.tipOnResonant : 2;
+            if (tipPoolBalance() >= tip) payFromTipPool(p, tip);
+            else {
+              p.chips += tip;
+              p.tipsReceived = (p.tipsReceived || 0) + tip;
+            }
+            thenFn('Dare complete · tip +' + tip);
+          }
+        },
+        {
+          label: 'Boundaries · skip to pause',
+          ghost: true,
+          onClick: function () {
+            putOutOfPhase(p, 'Boundaries on Dare');
+          }
+        }
+      ]
+    );
+  }
+
+  function openRewardQuestion(p, ev, land, sec, beat) {
+    if (!ev.targetQuestion && !ev.truth) {
+      continueLandResolve(p, land, sec, beat, ev);
+      return;
+    }
+    openModal(
+      'Sun gift · target question',
+      eventBannerHtml() +
+        '<p><strong>Question:</strong> ' + escapeHtml(ev.targetQuestion || ev.truth) + '</p>' +
+        '<p>Answer aloud. Table tips by resonance — earnings are Fair Exchange, not rent.</p>',
+      [
+        {
+          label: 'Answered · rate tip',
+          onClick: function () {
+            openModal(
+              'Rate the gift answer',
+              '<p>How resonant was it?</p>',
+              [
+                {
+                  label: 'Resonant tip',
+                  onClick: function () {
+                    settleAnswerRating(p, ev, 'resonant', function (msg) {
+                      closeModal();
+                      continueLandResolve(p, land, sec, beat, ev);
+                    });
+                  }
+                },
+                {
+                  label: 'Partial tip',
+                  onClick: function () {
+                    settleAnswerRating(p, ev, 'partial', function (msg) {
+                      closeModal();
+                      continueLandResolve(p, land, sec, beat, ev);
+                    });
+                  }
+                },
+                {
+                  label: 'Skip rating · continue',
+                  ghost: true,
+                  onClick: function () {
+                    continueLandResolve(p, land, sec, beat, ev);
+                  }
+                }
+              ]
+            );
+          }
+        },
+        {
+          label: 'Skip question · continue',
+          ghost: true,
+          onClick: function () {
+            continueLandResolve(p, land, sec, beat, ev);
+          }
+        }
+      ]
+    );
   }
 
   /* ---- Landing map (nested Sun helper) ---- */
@@ -948,6 +1248,7 @@
     var sec = state.sectors[land];
     var beat = state.lastSolar.beat;
     var ev = state.lastSolar.event || { kind: 'neutral', plain: 'Steady hum.' };
+    ensureEconomy(p);
 
     setLadder(2, 'up', {
       4: state.lastSolar.beatLabel + (state.lastSolar.fallback ? ' (backup)' : ''),
@@ -956,77 +1257,92 @@
       1: 'Choose what to do'
     });
 
+    function afterHonor(msg) {
+      closeModal();
+      continueLandResolve(p, land, sec, beat, ev);
+    }
+
+    /** Ground / surge: chips OR Truth/Dare */
     if (ev.requiresGround || beat === 'flare') {
       var surgePlan = nest
         ? nest.runSurge('ground', { event: ev })
         : { groundCost: ev.groundCost || 3 };
       var gCost = surgePlan.groundCost || 3;
+      var actions = [
+        {
+          label: 'Ground with chips (−' + gCost + ')',
+          onClick: function () {
+            if (p.chips < gCost) {
+              putOutOfPhase(p, 'Could not ground — try Truth or Dare');
+              return;
+            }
+            p.chips -= gCost;
+            addToTipPool(gCost);
+            p.tipsGiven = (p.tipsGiven || 0) + gCost;
+            p.flaresGrounded += 1;
+            applyPassiveEvent(p);
+            p.crown = Math.max(1, p.crown - 1);
+            p.root = Math.min(10, p.root + 1);
+            finishResolve('Grounded with chips · ' + (ev.id || 'surge'));
+          }
+        }
+      ];
+      if (ev.allowTruthDare !== false) {
+        actions.push({
+          label: 'Truth instead of chips',
+          onClick: function () {
+            openTruthFlow(p, ev, function (msg) {
+              p.flaresGrounded += 1;
+              applyPassiveEvent(p);
+              finishResolve(msg + ' · grounded by Truth');
+            });
+          }
+        });
+        actions.push({
+          label: 'Dare instead of chips',
+          onClick: function () {
+            openDareFlow(p, ev, function (msg) {
+              p.flaresGrounded += 1;
+              applyPassiveEvent(p);
+              finishResolve(msg + ' · grounded by Dare');
+            });
+          }
+        });
+      }
+      actions.push({
+        label: 'I freeze · pause me',
+        ghost: true,
+        onClick: function () {
+          putOutOfPhase(p, 'Did not ground the sun ask');
+        }
+      });
       openModal(
         beat === 'flare' ? 'Big solar surge' : 'Sun ask · ground',
         eventBannerHtml() +
-          '<p>Ground it on zone <strong>' + (land + 1) + '</strong>, or pause.</p>' +
-          '<p class="hm-muted">Surge helper woke · then slept.</p>' + adultLine(),
-        [
-          {
-            label: 'Ground it (−' + gCost + ' chips)',
-            onClick: function () {
-              if (p.chips < gCost) {
-                putOutOfPhase(p, 'Could not ground the sun ask');
-                return;
-              }
-              p.chips -= gCost;
-              p.flaresGrounded += 1;
-              applyPassiveEvent(p);
-              if (ev.chips && ev.chips < 0) applyChipToll(p, Math.abs(ev.chips));
-              p.crown = Math.max(1, p.crown - 1);
-              p.root = Math.min(10, p.root + 1);
-              finishResolve('Grounded · ' + (ev.id || 'surge'));
-            }
-          },
-          {
-            label: 'I freeze · pause me',
-            ghost: true,
-            onClick: function () {
-              putOutOfPhase(p, 'Did not ground the sun ask');
-            }
-          }
-        ]
+          '<p>Ground on zone <strong>' + (land + 1) + '</strong> with chips <em>or</em> Truth / Dare (Fair Exchange).</p>' +
+          '<p class="hm-muted">Chip payments go to the tip pool for later contribution tips.</p>' + adultLine(),
+        actions
       );
       return;
     }
 
-    if (ev.kind === 'challenge' && ev.chips && ev.chips < 0 && ev.canRefusePause) {
-      var toll = Math.abs(ev.chips);
-      openModal(
-        'Sun ask · chip toll',
-        eventBannerHtml() +
-          '<p>Pay <strong>' + toll + ' chips</strong> to keep moving, or pause with honor.</p>' + adultLine(),
-        [
-          {
-            label: 'Pay toll (−' + toll + ')',
-            onClick: function () {
-              if (!applyChipToll(p, toll)) {
-                putOutOfPhase(p, 'Could not pay sun toll');
-                return;
-              }
-              applyPassiveEvent(p);
-              closeModal();
-              continueLandResolve(p, land, sec, beat, ev);
-            }
-          },
-          {
-            label: 'Refuse · pause me',
-            ghost: true,
-            onClick: function () {
-              putOutOfPhase(p, 'Refused sun toll');
-            }
-          }
-        ]
-      );
+    /** Challenges with stake: Pay / Truth / Dare */
+    if (ev.kind === 'challenge' && (ev.allowTruthDare || (ev.chips && ev.chips < 0))) {
+      openTruthDareChoice(p, ev, land, sec, beat, function (msg) {
+        closeModal();
+        continueLandResolve(p, land, sec, beat, ev);
+      });
       return;
     }
 
     applyPassiveEvent(p);
+
+    /** Rewards with target questions → tip by answer quality */
+    if (ev.kind === 'reward' && (ev.targetQuestion || (ev.truth && ev.tipOnResonant))) {
+      openRewardQuestion(p, ev, land, sec, beat);
+      return;
+    }
+
     continueLandResolve(p, land, sec, beat, ev);
   }
 
@@ -1077,7 +1393,11 @@
                 putOutOfPhase(p, 'Could not focus enough to attune');
                 return;
               }
-              if (cost > 0) p.chips -= cost;
+              if (cost > 0) {
+                p.chips -= cost;
+                addToTipPool(cost);
+                p.tipsGiven = (p.tipsGiven || 0) + cost;
+              }
               if (!sec.resonators) sec.resonators = [];
               if (sec.resonators.indexOf(p.id) < 0) sec.resonators.push(p.id);
               p.attunes = (p.attunes || 0) + 1;
@@ -1089,17 +1409,43 @@
                   ? nest.runFairTrade('bloom', { event: ev })
                   : { bloomEach: 2 };
                 var each = bloom.bloomEach || 2;
-                state.players.forEach(function (pl) {
-                  pl.chips += each;
-                });
+                if (nest && nest.distributeByContribution) {
+                  nest.distributeByContribution(state.players, each * state.players.length, p);
+                } else {
+                  state.players.forEach(function (pl) {
+                    pl.chips += each;
+                  });
+                }
                 finishResolve(
-                  'FULL RESONANCE on zone ' + (land + 1) + ' · whole table +' + each + ' chips'
+                  'FULL RESONANCE on zone ' + (land + 1) + ' · bloom by contribution'
                 );
               } else {
                 finishResolve(
                   'You resonated · zone ' + (land + 1) + ' now ' + have + '/' + need
                 );
               }
+            }
+          },
+          {
+            label: 'Truth instead of focus chips',
+            onClick: function () {
+              openTruthFlow(p, Object.assign({}, ev, {
+                truth: 'What does this zone need from you for full table resonance?',
+                tipOnResonant: 2,
+                tipOnPartial: 1
+              }), function () {
+                if (!sec.resonators) sec.resonators = [];
+                if (sec.resonators.indexOf(p.id) < 0) sec.resonators.push(p.id);
+                p.attunes = (p.attunes || 0) + 1;
+                have = sec.resonators.length;
+                if (have >= need) {
+                  sec.calibrated = true;
+                  state.players.forEach(function (pl) { pl.chips += 2; });
+                  finishResolve('FULL RESONANCE via Truth · zone ' + (land + 1));
+                } else {
+                  finishResolve('Resonated via Truth · ' + have + '/' + need);
+                }
+              });
             }
           },
           {
@@ -1299,6 +1645,7 @@
       sectors: freshSectors(),
       turnIndex: 0,
       lastSolar: null,
+      tipPool: 0,
       lastLadder: { direction: 'idle', step: 1, pct: 0 },
       bachdoor: !!bachdoor,
       won: false,

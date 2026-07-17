@@ -127,33 +127,247 @@
     }
 
     /**
-     * Goldilocks event deck — sun numbers + timestamp pick one card.
-     * Not too harsh, not too free: weights shift with storm intensity.
+     * Monopoly-style Chance / Chest mapped to Holographic Goldilocks AI OS.
+     * Challenges: pay chips OR Truth OR Dare (honor). Tips follow answer quality.
      */
+    var OS_LANES = [
+      'Health',
+      'Relationships',
+      'Wealth',
+      'Purpose',
+      'Experiences',
+      'Knowledge',
+      'Creative',
+      'Spirit',
+      'Libre'
+    ];
+
     var REWARD_DECK = [
-      { id: 'chip_breeze', plain: 'Solar breeze — pocket a few energy chips.', chips: 2 },
-      { id: 'chip_gift', plain: 'Quiet corona gift — extra chips for the table helper.', chips: 3 },
-      { id: 'cheap_light', plain: 'Soft light window — adding your resonance costs less focus.', calibrateDiscount: 1 },
-      { id: 'cheaper_light', plain: 'Golden slit — attuning is much cheaper.', calibrateDiscount: 2 },
-      { id: 'home_yield', plain: 'Shared-field gift — resonant harvests pay a little more.', yieldBonus: 2 },
-      { id: 'tip_kind', plain: 'Kind flux — fair trades suggest a bigger tip-back.', tipSuggest: 2 },
-      { id: 'root_warm', plain: 'Ground warmth — Root rises (you feel steadier).', rootDelta: 1 },
-      { id: 'crown_clear', plain: 'Clear crown air — Crown rises (ideas land easier).', crownDelta: 1 },
-      { id: 'double_soft', plain: 'Twin gift — chips plus cheaper attune focus.', chips: 1, calibrateDiscount: 1 },
-      { id: 'valet_boost', plain: 'Valet luck — score a free honor exchange credit.', exchangeBonus: 1 }
+      {
+        id: 'os_dividend',
+        plain: 'Net-zero dividend — the field pays contributors.',
+        osLane: 'Wealth',
+        monopolyEcho: 'Bank pays you',
+        tipPool: 4,
+        distributeByContribution: true
+      },
+      {
+        id: 'os_goldheart',
+        plain: 'Gold Heart notice — table tips you for clear presence.',
+        osLane: 'Spirit',
+        monopolyEcho: 'Beauty contest',
+        tipToSelf: 3,
+        targetQuestion: 'What kindness did you bring to this table today?'
+      },
+      {
+        id: 'os_knowledge',
+        plain: 'Knowledge pile gift — answer opens a tip.',
+        osLane: 'Knowledge',
+        monopolyEcho: 'Crossword competition',
+        tipOnResonant: 3,
+        tipOnPartial: 1,
+        targetQuestion: 'Name one true thing you learned this turn about the Sun or the table.'
+      },
+      {
+        id: 'os_creative',
+        plain: 'Creative spark — name a just-right idea for this zone.',
+        osLane: 'Creative',
+        monopolyEcho: 'Opera opening',
+        tipOnResonant: 3,
+        tipOnPartial: 2,
+        targetQuestion: 'In one sentence: what would make this zone sing for everyone?'
+      },
+      {
+        id: 'os_free_parking',
+        plain: 'Libre lane — collect from the tip pool if any.',
+        osLane: 'Libre',
+        monopolyEcho: 'Free Parking',
+        collectPool: true
+      },
+      {
+        id: 'os_advance_resonance',
+        plain: 'Purpose sync — cheaper attune + shared harvest bump.',
+        osLane: 'Purpose',
+        monopolyEcho: 'Advance to Go',
+        calibrateDiscount: 2,
+        yieldBonus: 1,
+        tipSuggest: 2
+      },
+      {
+        id: 'os_relationship',
+        plain: 'Relationship pile — tip the player with most attunes.',
+        osLane: 'Relationships',
+        monopolyEcho: 'Grand Opera',
+        tipTopContributor: 3
+      },
+      {
+        id: 'os_experience',
+        plain: 'Experience gift — Root and Crown both warm.',
+        osLane: 'Experiences',
+        monopolyEcho: 'Holiday fund',
+        rootDelta: 1,
+        crownDelta: 1,
+        chips: 1
+      },
+      {
+        id: 'cheap_light',
+        plain: 'Soft light window — attuning costs less focus.',
+        osLane: 'Health',
+        monopolyEcho: 'Building loan matures',
+        calibrateDiscount: 1,
+        chips: 2
+      },
+      {
+        id: 'valet_boost',
+        plain: 'Valet credit — honor exchange + tip suggest.',
+        osLane: 'Purpose',
+        monopolyEcho: 'Life insurance matures',
+        exchangeBonus: 1,
+        tipSuggest: 2
+      }
     ];
 
     var CHALLENGE_DECK = [
-      { id: 'chip_toll', plain: 'Sun tax — pay a small chip toll or pause.', chips: -2, canRefusePause: true },
-      { id: 'chip_toll_hard', plain: 'Heavy toll — pay more chips or pause.', chips: -3, canRefusePause: true },
-      { id: 'pricey_light', plain: 'Hazy sector — attuning costs extra focus.', calibrateSurcharge: 1 },
-      { id: 'pricey_light_2', plain: 'Thick wind — attuning costs two more focus chips.', calibrateSurcharge: 2 },
-      { id: 'thin_yield', plain: 'Thin return — shared harvests pay less this turn.', yieldBonus: -1 },
-      { id: 'ground_nudge', plain: 'Micro-surge — ground a little energy or pause.', groundCost: 2, requiresGround: true },
-      { id: 'ground_firm', plain: 'Anchor ask — ground firmly or pause.', groundCost: 3, requiresGround: true },
-      { id: 'crown_static', plain: 'Static in the crown — Crown dips until you reset next honor.', crownDelta: -1 },
-      { id: 'root_slip', plain: 'Slippery root — Root dips; stay kind in trades.', rootDelta: -1 },
-      { id: 'trade_steep', plain: 'Steep trade wind — table fair trades cost one more chip.', offerSurcharge: 1 }
+      {
+        id: 'os_tax',
+        plain: 'Income tax (OS) — pay chips, or Truth / Dare instead.',
+        osLane: 'Wealth',
+        monopolyEcho: 'Income Tax',
+        chips: -3,
+        chipStake: 3,
+        canRefusePause: true,
+        allowTruthDare: true,
+        targetQuestion: 'What are you clinging to that the table does not need?',
+        dare: 'Stand, name one blockage you will clear for the next player, then sit.'
+      },
+      {
+        id: 'os_luxury',
+        plain: 'Luxury tax — pay, or Truth / Dare for Fair Exchange.',
+        osLane: 'Wealth',
+        monopolyEcho: 'Luxury Tax',
+        chips: -2,
+        chipStake: 2,
+        canRefusePause: true,
+        allowTruthDare: true,
+        targetQuestion: 'Where did you take more than you gave this round?',
+        dare: 'Offer a 10-second valet kindness the receiver agrees to.'
+      },
+      {
+        id: 'os_repairs',
+        plain: 'Street repairs on the lattice — pay focus, or Truth / Dare.',
+        osLane: 'Health',
+        monopolyEcho: 'Street repairs',
+        chips: -2,
+        chipStake: 2,
+        calibrateSurcharge: 1,
+        canRefusePause: true,
+        allowTruthDare: true,
+        targetQuestion: 'What part of your body or breath needs grounding right now?',
+        dare: 'Three slow breaths with eyes soft; say “grounded” when done.'
+      },
+      {
+        id: 'os_jail',
+        plain: 'Cool-down box — pause, or Dare to stay in play.',
+        osLane: 'Spirit',
+        monopolyEcho: 'Go to Jail',
+        requiresGround: true,
+        groundCost: 2,
+        chipStake: 2,
+        allowTruthDare: true,
+        canRefusePause: true,
+        targetQuestion: 'What fear spiked when the Sun card landed?',
+        dare: 'Help the next player as valet for one full action (honor).'
+      },
+      {
+        id: 'os_doctor',
+        plain: 'Doctor fee (OS health) — pay or Truth.',
+        osLane: 'Health',
+        monopolyEcho: "Doctor's fee",
+        chips: -2,
+        chipStake: 2,
+        canRefusePause: true,
+        allowTruthDare: true,
+        targetQuestion: 'What would “just right” health look like for you tonight?',
+        dare: 'Drink water and toast the table’s net-zero balance.'
+      },
+      {
+        id: 'os_school',
+        plain: 'School tax (Knowledge) — pay or answer the target question.',
+        osLane: 'Knowledge',
+        monopolyEcho: 'School tax',
+        chips: -2,
+        chipStake: 2,
+        canRefusePause: true,
+        allowTruthDare: true,
+        targetQuestion: 'Explain in plain words what full resonance on a zone means.',
+        dare: 'Teach the next player the Check the Sun rule in one sentence.'
+      },
+      {
+        id: 'ground_nudge',
+        plain: 'Micro-surge — ground chips, or Truth / Dare.',
+        osLane: 'Spirit',
+        monopolyEcho: 'Electric company',
+        groundCost: 2,
+        requiresGround: true,
+        chipStake: 2,
+        allowTruthDare: true,
+        canRefusePause: true,
+        targetQuestion: 'Where is excess voltage in your crown right now?',
+        dare: 'Hands on the floor or chair base for five seconds — bleed the surge.'
+      },
+      {
+        id: 'ground_firm',
+        plain: 'Anchor ask — firm ground, or Truth / Dare.',
+        osLane: 'Spirit',
+        monopolyEcho: 'Oil company',
+        groundCost: 3,
+        requiresGround: true,
+        chipStake: 3,
+        allowTruthDare: true,
+        canRefusePause: true,
+        targetQuestion: 'Who at this table can help you ground — and will you ask?',
+        dare: 'Ask one player (with consent) to count three breaths with you.'
+      },
+      {
+        id: 'pricey_light',
+        plain: 'Hazy sector — extra attune cost, or Truth to waive one chip.',
+        osLane: 'Experiences',
+        monopolyEcho: 'Property repairs',
+        calibrateSurcharge: 1,
+        chipStake: 1,
+        allowTruthDare: true,
+        targetQuestion: 'What haze are you bringing into this zone?',
+        dare: 'Clear one small physical blockage in the room (with agreement).'
+      },
+      {
+        id: 'trade_steep',
+        plain: 'Steep trade wind — pay surcharge later, or Dare now.',
+        osLane: 'Relationships',
+        monopolyEcho: 'Pay poor tax',
+        offerSurcharge: 1,
+        chipStake: 2,
+        chips: -1,
+        canRefusePause: true,
+        allowTruthDare: true,
+        targetQuestion: 'Who have you under-tipped in spirit this game?',
+        dare: 'Promise one fair tip to the next shared harvest — say it aloud.'
+      }
+    ];
+
+    var TRUTH_BANK = [
+      'What do you actually want from this Goldilocks Rush — not the polite answer?',
+      'Which OS pile (Health, Wealth, Purpose…) are you starving?',
+      'Where are you out of phase with the table right now?',
+      'What would Fair Exchange look like if you were fully honest?',
+      'Name a boundary you need honored before the next turn.'
+    ];
+
+    var DARE_BANK = [
+      'Lead a 5-second group breath — in through nose, out slow.',
+      'Compliment the player with the fewest chips (sincere, specific).',
+      'Pass the phone standing, as a valet announcing their name.',
+      'Clear one tiny clutter in reach (only if the host agrees).',
+      'Say the hydrogen-line joke: “1420 — we’re on the channel.”'
     ];
 
     function hashSeed(parts) {
@@ -181,14 +395,22 @@
         ts % 1000,
         regionKey
       ]);
-      var roll = seed % 100;
+      /** Spread rolls across turns/clock — solar alone is sticky on calm days. */
+      var roll =
+        Math.abs(
+          (seed +
+            (ctx.turnIndex || 0) * 37 +
+            minuteOfDay * 13 +
+            Math.floor(ts / 1000) * 7 +
+            (ctx.land || 0) * 19) %
+            100
+        );
 
-      /** Goldilocks weights by intensity: calm → more gifts; storm → more asks. */
       var intensity = ctx.intensity || 0;
-      var rewardChance = Math.round(58 - intensity * 32); // ~58% calm → ~26% storm
-      var challengeChance = Math.round(28 + intensity * 36); // ~28% → ~64%
-      if (rewardChance + challengeChance > 92) {
-        challengeChance = 92 - rewardChance;
+      var rewardChance = Math.round(52 - intensity * 28);
+      var challengeChance = Math.round(34 + intensity * 34);
+      if (rewardChance + challengeChance > 94) {
+        challengeChance = 94 - rewardChance;
       }
 
       var kind;
@@ -196,29 +418,48 @@
       else if (roll < rewardChance + challengeChance) kind = 'challenge';
       else kind = 'neutral';
 
+      var osLane = OS_LANES[(seed + (ctx.land || 0)) % OS_LANES.length];
+
       if (kind === 'neutral') {
         return {
           kind: 'neutral',
           id: 'steady_hum',
           plain: 'Steady hum — no extra gift or ask. Just play the land.',
+          osLane: osLane,
+          monopolyEcho: 'Just visiting',
           seed: seed,
           roll: roll,
-          minuteOfDay: minuteOfDay
+          minuteOfDay: minuteOfDay,
+          allowTruthDare: false
         };
       }
 
       var deck = kind === 'reward' ? REWARD_DECK : CHALLENGE_DECK;
       var idx = seed % deck.length;
-      /** Second mix from timestamp seconds so same SSN still varies within the hour. */
       var idx2 = (seed + Math.floor((ts % 60000) / 1000)) % deck.length;
       var card = deck[intensity > 0.55 ? idx2 : idx];
+      var truth =
+        card.targetQuestion ||
+        TRUTH_BANK[(seed + 3) % TRUTH_BANK.length];
+      var dare =
+        card.dare || DARE_BANK[(seed + 11) % DARE_BANK.length];
+
       var out = {
         kind: kind,
         id: card.id,
         plain: card.plain,
+        osLane: card.osLane || osLane,
+        monopolyEcho: card.monopolyEcho || '',
         seed: seed,
         roll: roll,
         minuteOfDay: minuteOfDay,
+        truth: truth,
+        dare: dare,
+        allowTruthDare: !!card.allowTruthDare || kind === 'challenge',
+        chipStake: card.chipStake != null ? card.chipStake : Math.abs(card.chips || 2),
+        tipOnResonant: card.tipOnResonant != null ? card.tipOnResonant : 3,
+        tipOnPartial: card.tipOnPartial != null ? card.tipOnPartial : 1,
+        tipOnMiss: card.tipOnMiss != null ? card.tipOnMiss : 0,
         mappedFrom: {
           ssn: ctx.ssn,
           hsi: Math.round(ctx.hsi * 1000) / 1000,
@@ -240,11 +481,61 @@
         'groundCost',
         'requiresGround',
         'canRefusePause',
-        'offerSurcharge'
+        'offerSurcharge',
+        'tipPool',
+        'distributeByContribution',
+        'tipToSelf',
+        'collectPool',
+        'tipTopContributor',
+        'targetQuestion'
       ].forEach(function (k) {
         if (card[k] !== undefined) out[k] = card[k];
       });
+      if (out.targetQuestion) out.truth = out.targetQuestion;
       return out;
+    }
+
+    function contributionScore(p) {
+      return (
+        (p.attunes || 0) * 2 +
+        (p.truthsResonant || 0) * 3 +
+        (p.daresDone || 0) * 2 +
+        (p.tipsGiven || 0) +
+        (p.exchanges || 0)
+      );
+    }
+
+    function distributeByContribution(players, amount, creditGiver) {
+      var scores = players.map(contributionScore);
+      var sum = scores.reduce(function (a, b) { return a + b; }, 0);
+      var paid = 0;
+      if (sum <= 0) {
+        var even = Math.floor(amount / players.length) || (amount > 0 ? 1 : 0);
+        players.forEach(function (pl) {
+          pl.chips += even;
+          pl.tipsReceived = (pl.tipsReceived || 0) + even;
+          paid += even;
+        });
+      } else {
+        players.forEach(function (pl, i) {
+          var share = Math.floor((amount * scores[i]) / sum);
+          pl.chips += share;
+          pl.tipsReceived = (pl.tipsReceived || 0) + share;
+          paid += share;
+        });
+      }
+      var rem = amount - paid;
+      if (rem > 0 && players.length) {
+        var top = 0;
+        for (var i = 1; i < scores.length; i++) if (scores[i] > scores[top]) top = i;
+        players[top].chips += rem;
+        players[top].tipsReceived = (players[top].tipsReceived || 0) + rem;
+      }
+      if (creditGiver) {
+        creditGiver.tipsGiven = (creditGiver.tipsGiven || 0) + amount;
+        creditGiver.contributions = contributionScore(creditGiver);
+      }
+      return { paid: amount, mode: sum <= 0 ? 'even' : 'by_contribution' };
     }
 
     /** Inner: map live solar payload → land + beat + reward/challenge card */
@@ -323,17 +614,17 @@
         regions: regions
       });
 
-      /** Flare beat still maps to a firm ground challenge if the card was soft. */
-      if (beat === 'flare' && !event.requiresGround) {
+      /** Surge beat: must ground — chips or Truth/Dare — without wiping gift cards into tolls. */
+      if (beat === 'flare') {
         event = Object.assign({}, event, {
-          kind: 'challenge',
-          id: 'flare_' + event.id,
+          id: event.id,
           plain:
-            'Big solar surge overlay — ' +
-            event.plain +
-            ' Ground the surge to stay in play.',
+            (event.kind === 'reward' ? 'Surge overlay on gift — ' : 'Big solar surge — ') +
+            event.plain,
           requiresGround: true,
-          groundCost: event.groundCost || 3,
+          allowTruthDare: true,
+          groundCost: event.groundCost || event.chipStake || 3,
+          chipStake: event.chipStake || event.groundCost || 3,
           canRefusePause: true
         });
       }
@@ -429,6 +720,8 @@
       runSolarOracle: runSolarOracle,
       runFairTrade: runFairTrade,
       runSurge: runSurge,
+      contributionScore: contributionScore,
+      distributeByContribution: distributeByContribution,
       fallbackPayload: function () {
         return {
           issuedAt: new Date().toISOString(),

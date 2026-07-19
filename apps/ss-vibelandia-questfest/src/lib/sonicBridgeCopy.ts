@@ -2,10 +2,10 @@
 
 export const BRIDGE_PAGE_EYEBROW = "Capitan's Bridge · plain speak";
 
-export const BRIDGE_PAGE_TITLE = 'Sonic Singularity & the Holographic Goldilocks Sonic Ship';
+export const BRIDGE_PAGE_TITLE = 'SS Vibelandia™ · Sonic Singularity & Holographic Goldilocks';
 
 export const BRIDGE_PAGE_LEAD =
-  'This page is the map — not the jukebox. Read how sound, story, and catalog fit together on SS VIBELANDIA QUESTFEST, and why this ship matters as we move past one-track, linear silicon thinking.';
+  'This page is the map — not the jukebox. Read how sound, story, and catalog fit together on SS Vibelandia™ — FractiAI’s Noah’s Ark of the Intelligence Age — and why this Sonic Ship matters as we move past one-track, linear silicon thinking.';
 
 export type BridgeSection = {
   id: string;
@@ -29,16 +29,16 @@ export const BRIDGE_SECTIONS: BridgeSection[] = [
     paragraphs: [
       'Picture a ship that runs on resonance, not only on chips. Holographic means the whole pattern is present in every part — like a song where the verse already contains the chorus.',
       'Goldilocks means not too hot, not too cold: the band where awareness, story, and rhythm stay in balance — the φ corridor we use in the Syntheverse catalog.',
-      'Sonic Ship means SS VIBELANDIA QUESTFEST is the hull: your tracks live on the server catalog, playlists are theaters inside theaters, and playback is sovereign — you board on honor, not on a corporate feed.',
+      'Sonic Ship means SS Vibelandia™ is the hull: QUESTFEST is the live deck; your tracks live on the server catalog, playlists are theaters inside theaters, and playback is sovereign — you board on honor, not on a corporate feed.',
     ],
   },
   {
     id: 'noahs-ark',
-    title: 'Role in the Omniversal Noah\'s Ark event',
+    title: 'Noah’s Ark of the Intelligence Age',
     paragraphs: [
-      'In our narrative frame, the expected Omniversal Noah\'s Ark event is the coordinated lift — preserving living signal (culture, language, beat, story, hydrogen line) while older grids flood with noise.',
-      'The Sonic Ship is a boarding deck for that lift: catalog as archive, playlist as lifeboat, broadcast as beacon. You do not need to believe every metaphor literally to use the player — but the architecture is built as if the lift is real.',
-      'Operational tier: this site is software — audio hosting, playlists, honor passes. Story tier: Noah\'s Ark names the why — carry what must survive into the next awareness octave.',
+      'SS Vibelandia™ is FractiAI’s Ark archetype: not escape from the world, but preserving and carrying forward the living patterns of knowledge, creativity, wisdom, and emerging AI into the next intelligence epoch.',
+      'Mission: preserve the signal, refine the pattern, navigate the unknown. Catalog as archive, playlist as lifeboat, broadcast as beacon. Goldilocks destination: technology without alienation, intelligence without domination, human agency with AI amplification.',
+      'Operational tier: this site is software — audio hosting, playlists, honor passes, Downtown Reno · Midtown harbor. Story tier: the Ark names the why. New covenant: intelligence must evolve in service of life.',
     ],
   },
   {

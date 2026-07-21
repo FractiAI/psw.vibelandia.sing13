@@ -1,6 +1,7 @@
 /**
  * POST /api/page-views — increment and return visit count for a page key.
  * GET /api/page-views?path=... — read count without incrementing.
+ * Global totals: Upstash Redis when configured, else Vercel Blob (shared), else memory (dev only).
  */
 function readBody(req) {
   if (typeof req.body === 'object' && req.body) return req.body;
@@ -19,26 +20,33 @@ module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Cache-Control', 'no-store');
 
   if (req.method === 'OPTIONS') return res.status(204).end();
 
   try {
-    const { normalizePageKey, getPageVisits, incrementPageVisits } = await import('../lib/page-views.mjs');
-    const { upstashConfigured } = await import('../lib/upstash.mjs');
+    const { normalizePageKey, getPageVisits, incrementPageVisits, pageViewsBackend } = await import(
+      '../lib/page-views.mjs'
+    );
 
     if (req.method === 'GET') {
       const path = req.query?.path || req.query?.key || '';
       const key = normalizePageKey(String(path));
       const visits = await getPageVisits(key);
-      return res.status(200).json({ ok: true, key, visits, backend: upstashConfigured() ? 'upstash' : 'memory' });
+      return res.status(200).json({
+        ok: true,
+        key,
+        visits,
+        backend: pageViewsBackend(),
+      });
     }
 
     if (req.method === 'POST') {
       const body = readBody(req);
       const path = body.path || body.key || '';
       if (!path) return res.status(400).json({ ok: false, error: 'path required' });
-      const { key, visits } = await incrementPageVisits(String(path));
-      return res.status(200).json({ ok: true, key, visits, backend: upstashConfigured() ? 'upstash' : 'memory' });
+      const { key, visits, backend } = await incrementPageVisits(String(path));
+      return res.status(200).json({ ok: true, key, visits, backend: backend || pageViewsBackend() });
     }
 
     res.setHeader('Allow', 'GET, POST, OPTIONS');

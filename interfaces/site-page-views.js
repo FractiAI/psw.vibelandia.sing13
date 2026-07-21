@@ -16,7 +16,16 @@
   function pageKey(loc, extra) {
     loc = loc || window.location;
     var path = (loc.pathname || '/').replace(/\/index\.html$/i, '').replace(/\.html$/i, '') || '/';
+    if (path.length > 1 && path.charAt(path.length - 1) === '/') path = path.slice(0, -1);
     if (path.charAt(0) !== '/') path = '/' + path;
+    // Same jukebox surface at / and /interfaces/questfest-bridge
+    if (
+      path === '/interfaces/questfest-bridge' ||
+      path === '/questfest-bridge' ||
+      path === '/listen'
+    ) {
+      path = '/';
+    }
     var parts = [path];
     var q = new URLSearchParams(loc.search || '');
     ['id', 'item', 'slug', 'service', 'unit', 'campaign', 'module'].forEach(function (k) {

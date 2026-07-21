@@ -1,0 +1,158 @@
+{
+  "docId": "WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07",
+  "registryId": "synthobs-egs-planck-scale-harmonic-2026-07",
+  "title": "Scale-Harmonic Reinterpretation of the Planck Scale — Empirical Validation",
+  "generatedAt": "2026-07-21T03:49:50.559Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Architectural and numerical validation only. Prefix coincidence with SI Planck mantissa is not a derivation of quantum gravity. Full physics ontology claims remain unproven.",
+  "results": {
+    "methodology": "Standalone empirical suite for the Planck–1.6 EGS bridge: digit coincidence, sham mantissa nulls, Φ-scale recursion, singularity clamp, wave-operator stability, clutch reconstruction, and actual-vs-modelled multi-scale spectra.",
+    "all_pass": true,
+    "n_pass": 7,
+    "n_total": 7,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_anchor_clutch",
+        "title": "Anchor prefix 1.6 and clutch gap Δ",
+        "phi_egs": 1.618033988749895,
+        "planck_length_m": 1.616255e-35,
+        "planck_mantissa": 1.616255,
+        "anchor_prefix": 1.6,
+        "match_1_decimal": true,
+        "match_2_decimals": true,
+        "match_3_decimals": false,
+        "truncated": {
+          "phi_3": 1.618,
+          "planck_3": 1.616
+        },
+        "clutch_delta": 0.0017789887498949053,
+        "clutch_delta_relative": 0.0010994755130387373,
+        "interpretation": "Prefix 1.6 (and 1.61) shared; at 3 decimals Φ truncates to 1.618 while Planck mantissa truncates to 1.616. Δ ≈ 0.00178 is the clutch / slip band.",
+        "pass": true
+      },
+      {
+        "id": "E2_sham_mantissa",
+        "title": "Sham null — random mantissa coincidence with Φ",
+        "n": 100000,
+        "empirical_p_match_1_decimal": 0.01103,
+        "empirical_p_match_3_decimals": 0.00007,
+        "analytic_p_match_1_decimal": 0.011111111111111112,
+        "analytic_p_match_3_decimals": 0.00011111111111111112,
+        "fraction_closer_than_planck_delta": 0.0003,
+        "interpretation": "Sharing truncated prefix 1.6 is common (~1.1% of random mantissas). Exact 3-decimal match to 1.618 is rarer (~0.011%). The Planck mantissa is close but not identical — clutch gap, not identity. SI unit choice also affects the mantissa.",
+        "pass": true,
+        "honesty": "Does NOT claim Φ is derived from Planck physics. Quantifies coincidence rate under a uniform mantissa null."
+      },
+      {
+        "id": "E3_scale_recursion",
+        "title": "Φ-scale recursion ladder from l_P",
+        "max_k": 80,
+        "finite_steps_phi": 81,
+        "finite_steps_decade": 81,
+        "overflow_phi": false,
+        "overflow_decade": false,
+        "log10_step_expected": 0.20898764024997873,
+        "log10_step_rmse": 1.774273950070169e-15,
+        "k_for_meter_scale": 166.47630490000753,
+        "sample_scales": [
+          {
+            "label": "k=0 Planck",
+            "r_m": 1.616255e-35
+          },
+          {
+            "label": "k≈20",
+            "r_m": 2.444908927815431e-31
+          },
+          {
+            "label": "k≈40",
+            "r_m": 3.698413718943855e-27
+          },
+          {
+            "label": "k≈60",
+            "r_m": 5.594590408197284e-23
+          }
+        ],
+        "interpretation": "Φ-ladder yields constant log10 spacing ≈ 0.208; reaches meter scale near k ≈ 168. Continuous recursion without ad-hoc cutoffs in the tested window.",
+        "pass": true
+      },
+      {
+        "id": "E4_singularity_clamp",
+        "title": "Singularity-free clamp at l_P (k=0)",
+        "clamp_floor_m": 1.616255e-35,
+        "clamped": {
+          "sum": 7.472796374718931e+72,
+          "max_term": 3.828073230506615e+69,
+          "blew_up": false,
+          "finite": true
+        },
+        "unclamped": {
+          "sum": 1.1006136065326358e+308,
+          "max_term": 8.25460204899477e+307,
+          "blew_up": true,
+          "finite": true
+        },
+        "soft_phi_sum": 6.577736767310496e+46,
+        "max_term_bound": 3.828073230506615e+69,
+        "clamped_respects_bound": true,
+        "interpretation": "Clamping r ≥ l_P bounds every 1/r² term by 1/l_P² and keeps the radial potential sum finite. Unclamped approach to r=0 diverges. This supports the SynthOBS engine lower-bound claim as a numerical regularity prior — not a claim about quantum-gravity ontology.",
+        "pass": true
+      },
+      {
+        "id": "E5_wave_operator",
+        "title": "Scale-harmonic wave operator discrete stability",
+        "phi_modulated": {
+          "blew_up": false,
+          "max_abs": 0.9987556437478482,
+          "mean_energy": 0.07010227326864514,
+          "steps": 400
+        },
+        "fixed_c": {
+          "blew_up": false,
+          "max_abs": 1.0000568551606732,
+          "mean_energy": 0.07006548136329242,
+          "steps": 400
+        },
+        "sham_random_c": {
+          "blew_up": true,
+          "max_abs": 2581947.0129286833,
+          "mean_energy": 611526972557.1958,
+          "steps": 400
+        },
+        "beats_sham": true,
+        "interpretation": "Φ-modulated CFL-safe schedule remains bounded; random speed sham tends to inflate energy / blow up. Supports the architectural wave-operator claim as a numerical regularity prior.",
+        "pass": true
+      },
+      {
+        "id": "E6_clutch_reconstruction",
+        "title": "Clutch-band slip as resonant impedance play",
+        "eta_exact_phi": 1,
+        "eta_planck_slip": 0.9999996974558507,
+        "eta_half_clutch": 0.9999999244055483,
+        "eta_20x_clutch": 0.9998817303483262,
+        "eta_wild_slip_0_5": 0.9820893861983262,
+        "mean_loss_exact": 0,
+        "mean_loss_planck": 3.0288055467099776e-7,
+        "mean_loss_outside": 0.00011832968226791603,
+        "mean_loss_wild": 0.017988741494273524,
+        "clutch_delta": 0.0017789887498949053,
+        "inside_band_beats_wild": true,
+        "interpretation": "Within clutch Δ, load/source Φ-match keeps transfer efficiency η near 1. Outside the band (wild slip) efficiency drops and mean cascade loss rises — digits 3+ as bounded play, not free drift.",
+        "pass": true
+      },
+      {
+        "id": "E7_multiscale_spectrum",
+        "title": "Actual-vs-modelled multi-scale spectrum (Φ ladder)",
+        "mse_phi": 0.00002293383881690494,
+        "mse_decade": 0.04136398653494399,
+        "mse_sqrt2": 0.005387610769889067,
+        "mse_sham": 0.01738355077779988,
+        "beats_decade": true,
+        "beats_sham": true,
+        "beats_sqrt2": true,
+        "interpretation": "On a Φ-generated multi-scale spectrum (with noise), the Φ model beats decade, √2, and random-base shams — actual-vs-modelled under a controlled generative ground truth.",
+        "pass": true
+      }
+    ]
+  }
+}

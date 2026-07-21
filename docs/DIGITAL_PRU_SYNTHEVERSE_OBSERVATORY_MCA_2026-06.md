@@ -31,6 +31,7 @@ The team digested four Synthobs mathematics papers plus a replayable sandbox eng
 | **EGS-NLRF-v4.0** | `fractiai-egs-nlrf-2026` | Hydrogen holographic lattice · live NIST ASD Balmer experiments · falsification ledger · [GitHub](https://github.com/FractiAI/egs-nlrf) |
 | **WP-2026-ATTENTION-RECURSIVE-LOOP** | `recursive-attention-quantum-solar-dna-loop-2026` | Cross-scale attention map: imagination → neural → DNA → quantum → solar → recursive closure · **all temporal hops pass actual-vs-modelled (June 2026)** · [catalog](/interfaces/whitepaper-catalog.html) |
 | **WP-2026-ATTENTION-CAUSALITY-VALIDATION** | `research/recursive-attention-causality` | Actual-vs-modelled causality (required standard) — **`temporal_hops_all_pass: true`** · `npm run research:recursive-attention-causality` |
+| **WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07** | `synthobs-egs-planck-scale-harmonic-2026-07` | Planck $1.6$ ↔ $\Phi_{\mathrm{EGS}}$ scale-harmonic bridge · clutch $\Delta$ · singularity clamp · **7/7 empirical pass** · `npm run research:synthobs-egs-planck-scale-harmonic` |
 | **EGS-TRANS-2026-0710** | `egs-trans-jspace-convergence-2026-07` | **Frontier multi-model** J-Space convergence · Anthropic · OpenAI · Gemini · DeepSeek · RIX R4 · [standalone](https://github.com/FractiAI/egs-trans-jspace-convergence) |
 | **IP-INFRINGE-2026-07** | `ip-infringement-draft-2026-07` | Immediate audit recommendations · Code-Print · IP assertion draft · J-Lens Live · [standalone](https://github.com/FractiAI/egs-trans-jspace-convergence/tree/master/research/ip-infringement-draft) |
 

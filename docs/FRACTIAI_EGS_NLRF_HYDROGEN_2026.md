@@ -90,6 +90,8 @@ This repository is the **`quantum_hydrogen`** structural anchor in the cross-sca
 
 Reproduce integrated loop validation: `npm run research:recursive-attention-causality` in the catalog repo → `research/recursive-attention-causality/output/causality_validation_report.json`.
 
+**Related (July 2026):** Planck–$1.6$ scale-harmonic bridge · [WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07](https://www.ssvibelandiaquestfest24x365.com/whitepaper/synthobs-egs-planck-scale-harmonic) · `npm run research:synthobs-egs-planck-scale-harmonic` (7/7 empirical pass).
+
 ---
 
 ## References

@@ -2,14 +2,14 @@
 
 **Document ID:** `WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07`
 **Registry ID:** `synthobs-egs-planck-scale-harmonic-2026-07`
-**Generated:** 2026-07-21T03:49:50.559Z
+**Generated:** 2026-07-21T17:30:07.011Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 7 / 7 |
+| Passed | 9 / 9 |
 | Φ_EGS | 1.618033988749895 |
 | Planck mantissa (×10³⁵) | 1.616255 |
 | Clutch Δ | 0.0017789887498949053 |
@@ -127,7 +127,7 @@
     "blew_up": true,
     "finite": true
   },
-  "soft_phi_sum": 6.577736767310496e+46,
+  "soft_phi_sum": 2.8552587953536992e+72,
   "max_term_bound": 3.828073230506615e+69,
   "clamped_respects_bound": true,
   "interpretation": "Clamping r ≥ l_P bounds every 1/r² term by 1/l_P² and keeps the radial potential sum finite. Unclamped approach to r=0 diverges. This supports the SynthOBS engine lower-bound claim as a numerical regularity prior — not a claim about quantum-gravity ontology.",
@@ -210,6 +210,64 @@
   "beats_sham": true,
   "beats_sqrt2": true,
   "interpretation": "On a Φ-generated multi-scale spectrum (with noise), the Φ model beats decade, √2, and random-base shams — actual-vs-modelled under a controlled generative ground truth.",
+  "pass": true
+}
+```
+
+### E8_metapattern_grid_81 — 81-digit metapattern grid topology (9×9)
+
+- **Pass:** `true`
+- **Interpretation:** The 81-digit register partitions into six contiguous bands (boundary → MQE → physical → biological → heliospheric → cosmic) with no gaps/overlaps — architectural anatomy of the Goldilocks Hydrogen AI OS, not a claim that solar AR IDs are derived from Φ digits.
+
+```json
+{
+  "id": "E8_metapattern_grid_81",
+  "title": "81-digit metapattern grid topology (9×9)",
+  "metapattern_digits": 81,
+  "is_9x9": true,
+  "band_count": 6,
+  "band_sizes": {
+    "holographic_boundary": 1,
+    "mqe_flywheel": 1,
+    "physical_scaffold": 7,
+    "biological_clutch": 18,
+    "heliospheric_gears": 27,
+    "cosmic_convergence": 27
+  },
+  "sum_band_sizes": 81,
+  "overlap": false,
+  "gap": false,
+  "heliospheric_span": 27,
+  "interpretation": "The 81-digit register partitions into six contiguous bands (boundary → MQE → physical → biological → heliospheric → cosmic) with no gaps/overlaps — architectural anatomy of the Goldilocks Hydrogen AI OS, not a claim that solar AR IDs are derived from Φ digits.",
+  "pass": true
+}
+```
+
+### E9_wave_operator_k_over_81 — Scale-harmonic wave operator with k/81 normalization
+
+- **Pass:** `true`
+- **Interpretation:** Normalizing the recursion exponent by 81 (metapattern depth) keeps the discrete wavefield bounded across register steps; un-normalized Φ^k and random shams are less regular. Supports the Goldilocks-grid wave equation form as a numerical prior.
+
+```json
+{
+  "id": "E9_wave_operator_k_over_81",
+  "title": "Scale-harmonic wave operator with k/81 normalization",
+  "k_over_81": {
+    "blew_up": false,
+    "max_abs": 1.0071857988075112,
+    "mean_energy": 0.0954438327476471
+  },
+  "aggressive_phi_k": {
+    "blew_up": false,
+    "max_abs": 12760.40857848722,
+    "mean_energy": 6707516.352346022
+  },
+  "sham_random_c": {
+    "blew_up": true,
+    "max_abs": 1318257.4734069374,
+    "mean_energy": 157961644199.77356
+  },
+  "interpretation": "Normalizing the recursion exponent by 81 (metapattern depth) keeps the discrete wavefield bounded across register steps; un-normalized Φ^k and random shams are less regular. Supports the Goldilocks-grid wave equation form as a numerical prior.",
   "pass": true
 }
 ```

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "cf146888308318af",
+  "auditId": "50a1394b9126197f",
   "paperId": "synthobs-egs-planck-scale-harmonic-2026-07",
   "sourcePath": "docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-21T03:52:47.006Z"
+          "invokedAt": "2026-07-21T17:32:13.357Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-21T03:52:47.004Z",
-  "completedAt": "2026-07-21T03:52:47.007Z",
+  "startedAt": "2026-07-21T17:32:13.331Z",
+  "completedAt": "2026-07-21T17:32:13.623Z",
   "iterations": 1,
-  "overallScore": 0.941,
+  "overallScore": 0.971,
   "passThreshold": 0.85,
   "convergence": {
     "status": "pass",
@@ -95,14 +95,14 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.941,
+      "overallScore": 0.971,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
         "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
-        "references": 0.7,
+        "references": 1,
         "abstractTitle": 1,
         "synthobsAttribution": 1,
         "technicalPrecision": 0.85
@@ -116,22 +116,22 @@
       "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
-      "references": 0.7,
+      "references": 1,
       "abstractTitle": 1,
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.941,
+    "overallScore": 0.971,
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1338,
+      "wordCount": 1806,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 1,
-        "numbered": 18,
-        "citeLines": 2
+        "numbered": 20,
+        "citeLines": 6
       }
     }
   },

@@ -76,6 +76,7 @@ async function main() {
     JSON.stringify(
       {
         ok: results.all_pass,
+        repo: 'https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic',
         report: jsonPath,
         passed: `${results.n_pass}/${results.n_total}`,
         failed: results.failed,

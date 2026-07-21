@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "2c2b81dc1d240b1d",
-  "paperId": "synthobs-chromosomal-electrodynamics-2026-07",
-  "sourcePath": "docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md",
+  "auditId": "a6f52f1104247d5f",
+  "paperId": "fractiai-egs-nlrf-2026",
+  "sourcePath": "docs/FRACTIAI_EGS_NLRF_HYDROGEN_2026.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-21T17:40:53.928Z"
+          "invokedAt": "2026-07-21T17:41:15.436Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-21T17:40:53.924Z",
-  "completedAt": "2026-07-21T17:40:53.929Z",
+  "startedAt": "2026-07-21T17:41:15.433Z",
+  "completedAt": "2026-07-21T17:41:15.437Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 4181,
+      "wordCount": 763,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 14,
-        "numbered": 17,
-        "citeLines": 12
+        "links": 8,
+        "numbered": 4,
+        "citeLines": 9
       }
     }
   },

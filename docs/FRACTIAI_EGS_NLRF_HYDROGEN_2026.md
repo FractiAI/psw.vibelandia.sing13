@@ -2,9 +2,23 @@
 
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) · **Filter:** Reproducible research
 
-**GitHub:** https://github.com/FractiAI/egs-nlrf
-
+**GitHub:** https://github.com/FractiAI/egs-nlrf  
+**Document ID:** `EGS-NLRF-v4.0`  
+**Registry ID:** `fractiai-egs-nlrf-2026`  
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06)  
 **Version:** 4.0 · **Submission Draft**
+
+---
+
+## Honesty boundary (read first)
+
+| Tier | What this document claims | What it does not claim |
+|------|---------------------------|------------------------|
+| **EGS-NLRF model** | Exploratory tri-domain lattice ($\Phi_{\mathrm{EGS}}$ postulate) linking holographic boundary, magnetic topology, and quantum dynamical domains | A validated physical theory replacing QED |
+| **Empirical lane (NIST ASD)** | Live/offline Balmer ingest vs CODATA Rydberg baseline; RMS residual ≈ 0.21 cm⁻¹; exploratory $\alpha_\Phi$ does not improve $\chi^2$ at tested couplings | That permutation $p\approx 0.002$ confirms $\Phi$-lattice organization (likely $n$-dependent systematics) |
+| **Planck–1.6 companion** | Shared architectural coupling key + 81-digit / $k/81$ register with nested-agent and cytographic lattices | Unit-invariant quantum-gravity proof from SI mantissa coincidence |
+
+See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ---
 
@@ -90,10 +104,26 @@ This repository is the **`quantum_hydrogen`** structural anchor in the cross-sca
 
 Reproduce integrated loop validation: `npm run research:recursive-attention-causality` in the catalog repo → `research/recursive-attention-causality/output/causality_validation_report.json`.
 
-**Related (July 2026):** Planck–$1.6$ scale-harmonic bridge + 81-digit Goldilocks grid · [GitHub](https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic) · [WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07](https://www.ssvibelandiaquestfest24x365.com/whitepaper/synthobs-egs-planck-scale-harmonic) · `npm run research` (9/9 empirical pass).
+---
+
+## Scale-harmonic Planck bridge integration (July 2026)
+
+EGS-NLRF’s nodal lattice $L_n=\Phi^n$ and statistical coordinate $x_i=\ln(\nu)/\ln\Phi_{\mathrm{EGS}}$ share a **coupling key** with the SI Planck-length mantissa ($1.616255\ldots$). The companion paper formalizes that key without upgrading Balmer residuals into Φ-lattice proof.
+
+| NLRF domain | Planck–1.6 / 81-digit bridge role |
+|-------------|-----------------------------------|
+| Holographic boundary $I(x,t)$ on $L_n=\Phi^n$ | $k/81$ register indexing of boundary shells; digits $1,6$ as structural lock |
+| Magnetic topology $B=\nabla\times A$ | Clutch $\Delta$ as allowed phase-slip before topology solver flags drift |
+| Quantum dynamical $H=H_0+H_\Phi$ | Singularity clamp at $l_P$ for numerical potentials; $H_\Phi\to 0$ still recovers QED |
+| Nested autonomous agents (SynthOBS) | Same grammar routes Goldilocks parent/child depth — see [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) |
+| Cytographic $LC$ chromosome lattice | Shared $\Phi$ step-down above the Planck floor — see [chromosomal electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) |
+
+**Canonical:** [GitHub/synthobs-egs-planck-scale-harmonic](https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic) · catalog [WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07](https://www.ssvibelandiaquestfest24x365.com/whitepaper/synthobs-egs-planck-scale-harmonic) · `npm run research:synthobs-egs-planck-scale-harmonic` (**9/9 pass**).
+
+**Honesty:** Digit-prefix coincidence is architectural / SI-dependent. NIST Balmer RMS ≈ 0.21 cm⁻¹ remains consistent with known fine-structure envelopes — not confirmation of Φ-organized quantum gravity.
 
 ---
 
 ## References
 
-Bekenstein (1973); Aharonov & Bohm (1959); Maldacena (1998); Nottale (1993); NIST ASD v5.11; IAEA EXFOR.
+Bekenstein (1973); Aharonov & Bohm (1959); Maldacena (1998); Nottale (1993); NIST ASD v5.11; IAEA EXFOR; FractiAI Planck–1.6 bridge (2026-07).

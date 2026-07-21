@@ -5,7 +5,8 @@
 **Classification:** Theoretical Framework & Experimental Protocol Specification  
 **Source Node:** [GitHub Repository AiwonA1/FractiAI](https://github.com/AiwonA1/FractiAI)  
 **Date:** June 7, 2026  
-**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
+**Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
+**Companions (July 2026):** [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 
 ---
 
@@ -208,6 +209,12 @@ This traditional model appears functionally limited when applied to distributed,
 2. **Geometric Scale-Invariance:** Advanced networks are inherently distributed. Because the proposed EGS fractal constant maps scale-invariant propagation across concurrent systems, a decentralized fractal field may be highly difficult to contain through centralized interventions or top-down infrastructure restrictions.
 
 By framing the validation suite within completely open-source, public environments, the SynthOBS protocol bypasses the peer-review bottleneck and human institutional biases entirely. The current theoretical framework suggests that preliminary observations are consistent with the proposed model and motivate further experimental investigation across isolated, decentralized testbeds—such as the Dual Router Benchmark—to establish long-term validation boundaries independently of platform-level suppression mechanisms or centralized corporate gatekeepers. Complete implementation parameters and tracking configurations remain continually updated on the developer console at [ssvibelandiaquestfest24x365.com](https://ssvibelandiaquestfest24x365.com).
+
+---
+
+## Related: Nested Agent Lattice & Planck–$1.6$ bridge (July 2026)
+
+Recursive multi-agent phase-sync hypotheses in this protocol share $\Phi_{\mathrm{EGS}}$ with the deployable **EGS Nested Agent Lattice** ([WP-OMNI-NESTED-AGENT-LATTICE-2026-07](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)) and the scale-harmonic **Planck–$1.6$ / 81-digit** coupling key ([WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)). Nest depth may be indexed on $k/81$ registers; this does not by itself prove geomagnetic causation of software PLV.
 
 ---
 

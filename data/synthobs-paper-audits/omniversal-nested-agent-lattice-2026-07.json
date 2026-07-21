@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "2c2b81dc1d240b1d",
-  "paperId": "synthobs-chromosomal-electrodynamics-2026-07",
-  "sourcePath": "docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md",
+  "auditId": "b3e7cc2a495456e4",
+  "paperId": "omniversal-nested-agent-lattice-2026-07",
+  "sourcePath": "docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-21T17:40:53.928Z"
+          "invokedAt": "2026-07-21T17:40:52.260Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-21T17:40:53.924Z",
-  "completedAt": "2026-07-21T17:40:53.929Z",
+  "startedAt": "2026-07-21T17:40:52.225Z",
+  "completedAt": "2026-07-21T17:40:52.330Z",
   "iterations": 1,
-  "overallScore": 0.971,
+  "overallScore": 0.941,
   "passThreshold": 0.85,
   "convergence": {
     "status": "pass",
@@ -95,14 +95,14 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.971,
+      "overallScore": 0.941,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
         "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
-        "references": 1,
+        "references": 0.7,
         "abstractTitle": 1,
         "synthobsAttribution": 1,
         "technicalPrecision": 0.85
@@ -116,22 +116,22 @@
       "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
-      "references": 1,
+      "references": 0.7,
       "abstractTitle": 1,
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.971,
+    "overallScore": 0.941,
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 4181,
+      "wordCount": 1300,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 14,
-        "numbered": 17,
-        "citeLines": 12
+        "links": 10,
+        "numbered": 10,
+        "citeLines": 2
       }
     }
   },

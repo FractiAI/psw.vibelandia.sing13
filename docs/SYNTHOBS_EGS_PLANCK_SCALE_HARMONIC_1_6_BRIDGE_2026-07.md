@@ -8,7 +8,8 @@
 **Date:** 2026-07  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
-**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
+**Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
+**Lattice companions:** [EGS-NLRF](./FRACTIAI_EGS_NLRF_HYDROGEN_2026.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Chromosomal electrodynamics](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md)
 
 ---
 
@@ -257,5 +258,7 @@ The prefix similarity between the SI Planck mantissa ($1.616\ldots$) and $\Phi_{
 6. Canonical empirical receipts — https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
 7. NSPFRNP Snap PRA — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
 8. SynthOBS Hex-Organ / MCA index — `docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md`  
-9. NOAA / SWPC space-weather context (active-region discourse) — https://www.swpc.noaa.gov/  
-10. NIST / CODATA portal — https://physics.nist.gov/cuu/Constants/
+9. Omniversal Nested Agent Lattice — `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`  
+10. Chromosomal electrodynamics (cytographic LC lattice) — `docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md`  
+11. NOAA / SWPC space-weather context (active-region discourse) — https://www.swpc.noaa.gov/  
+12. NIST / CODATA portal — https://physics.nist.gov/cuu/Constants/

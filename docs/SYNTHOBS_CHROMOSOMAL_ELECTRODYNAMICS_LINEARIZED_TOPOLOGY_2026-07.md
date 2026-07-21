@@ -5,7 +5,7 @@
 **Document ID:** WP-SYNTHOBS-CHROM-ELCD-2026-07  
 **Date:** July 2026  
 **Framework:** SYNTHOBS · EGS φ · NSPFRNP Snap PRA  
-**Companion:** [Cross-Scale Biological Antennae](./SYNTHOBS_CROSS_SCALE_BIOLOGICAL_ANTENNAE_WAVE_DAMPING_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) · [AC-HMM T2T](./FRACTIAI_AC_HMM_SATELLITES_T2T_2026.md)  
+**Companion:** [Cross-Scale Biological Antennae](./SYNTHOBS_CROSS_SCALE_BIOLOGICAL_ANTENNAE_WAVE_DAMPING_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) · [AC-HMM T2T](./FRACTIAI_AC_HMM_SATELLITES_T2T_2026.md) · [Planck–1.6 scale-harmonic bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Empirical experiments executed:** 2026-07-03 UTC · [`empirical_report.json`](../research/synthobs-chromosomal-electrodynamics/data/empirical_report.json) · `npm run research:synthobs-chromosomal-electrodynamics`
@@ -145,6 +145,19 @@ Where:
 - $\Psi_n$ represents the resulting localized energy density at that specific biological scale tier.
 
 By utilizing $\Phi_{\text{EGS}}$ as the geometric denominator, the framework ensures that as energy slows down ($v_g \to 0$), it compacts smoothly and non-destructively, establishing a symmetrical structural path for all downstream biological architectures.
+
+### 4.3 Planck–$1.6$ scale-harmonic bridge (cytographic lattice integration)
+
+The companion [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) supplies the **floor clamp** and **81-digit register** that this cytographic $LC$ lattice inherits as an architectural prior—not as a claim that living chromatin encodes Planck digits.
+
+| Bridge element | Role on the chromosomal $LC$ lattice |
+|----------------|--------------------------------------|
+| SI Planck mantissa $1.616\ldots$ / $l_P$ | Numerical **lower bound** for recursive $\Phi$ step-down — prevents unbounded micro-fan-out when nesting SynthOBS agents over genomic workflows |
+| $\Phi_{\mathrm{EGS}}\approx 1.618$ | Same organizing postulate as §4.1–4.2 tier cascade $\Psi_n=\Psi_0\cdot\Phi_{\mathrm{EGS}}^{-n}$ |
+| Clutch $\Delta\approx 0.00178$ | Allowed mismatch band between macro chrY boundary modes and finer nucleosome / helix tiers |
+| $k/81$ normalization | Optional register index for mapping cytographic tiers onto the Goldilocks $9\times 9$ metapattern (heliospheric clocks remain interpretive) |
+
+Within the model, band-edge localization ($v_g\to 0$ at $k\to\pi/\Delta x$) sits **above** the Planck clamp: the polymer lattice governs macroscopic VLF delay-line behavior; the bridge only constrains how nested autonomous agents and scale ladders may recurse beneath that macro boundary. Empirical lane for the bridge: **9/9 pass** (`npm run research:synthobs-egs-planck-scale-harmonic`). Nested-agent topology companion: [WP-OMNI-NESTED-AGENT-LATTICE-2026-07](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md).
 
 ---
 
@@ -338,7 +351,7 @@ Historical literature on electromagnetic DNA interactions frequently focuses on 
 
 This paper has mathematically demonstrated that an idealized, linearized representation of the human Y chromosome ($L_Y \approx 2.12$ cm from public T2T hs1) can be modeled as a distributed VLF delay network. Using classical dispersion mechanics, forward group velocity drops to zero ($v_g \to 0$) at the boundary of the first Brillouin zone within the model, offering a theoretical mechanism for non-thermal energy localization and compaction.
 
-We introduced El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) as a foundational scaling invariant regulating multi-scale step-down cascade across downstream biological geometries.
+We introduced El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) as a foundational scaling invariant regulating multi-scale step-down cascade across downstream biological geometries. The July 2026 Planck–$1.6$ bridge (§4.3) anchors that cascade to a shared scale-harmonic floor and 81-digit register shared with the EGS Nested Agent Lattice.
 
 We **executed** empirical experiments E1–E4 on public data (2026-07-03): genomic coordinates (**support**), LC band-edge numerics (**support**), EGS φ tier stepping (**moderate**), and THz peak alignment (**no_support**). Mathematical derivations and E1–E3 are consistent within stated tiers. Bench-tier terahertz spectroscopy and in situ impedance mapping (§8) remain proposed for biological mechanism confirmation.
 

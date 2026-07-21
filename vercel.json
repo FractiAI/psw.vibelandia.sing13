@@ -4,7 +4,7 @@
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
-    { "source": "/", "destination": "/interfaces/vibelandia-questfest.html" },
+    { "source": "/", "destination": "/interfaces/questfest-bridge/index.html" },
     { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },
     { "source": "/questfest/", "destination": "/interfaces/vibelandia-questfest.html" },
     { "source": "/commons", "destination": "/interfaces/commons/index.html" },

@@ -6,6 +6,7 @@
 **Document ID:** `WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07`  
 **Registry ID:** `synthobs-egs-planck-scale-harmonic-2026-07`  
 **Date:** 2026-07  
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
 

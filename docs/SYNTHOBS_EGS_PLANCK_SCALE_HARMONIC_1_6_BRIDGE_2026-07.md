@@ -6,6 +6,7 @@
 **Document ID:** `WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07`  
 **Registry ID:** `synthobs-egs-planck-scale-harmonic-2026-07`  
 **Date:** 2026-07  
+**GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)
 
@@ -144,13 +145,20 @@ $$
 
 ## 7. Empirical validation (standalone, reproducible)
 
-**Run:**
+**Run (canonical repo):**
+
+```bash
+git clone https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic.git
+cd synthobs-egs-planck-scale-harmonic && npm run research
+```
+
+**Catalog mirror:**
 
 ```bash
 npm run research:synthobs-egs-planck-scale-harmonic
 ```
 
-**Receipts:** `research/synthobs-egs-planck-scale-harmonic/data/empirical_report.json`
+**Receipts:** `research/synthobs-egs-planck-scale-harmonic/data/empirical_report.json` · canonical: https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic
 
 | ID | Experiment | Result |
 |----|------------|--------|

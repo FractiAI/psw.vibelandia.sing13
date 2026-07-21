@@ -1,28 +1,21 @@
-# Planck–1.6 EGS Scale-Harmonic Bridge — Empirical Suite
+# Planck–1.6 EGS Scale-Harmonic Bridge — Catalog Mirror
 
-**Doc ID:** `WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07`  
-**Registry:** `synthobs-egs-planck-scale-harmonic-2026-07`
+**Canonical GitHub:** https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic  
+**Doc ID:** `WP-SYNTHOBS-EGS-PLANCK-1.6-2026-07`
 
-## Run
+This folder mirrors the standalone empirical suite. Prefer the canonical repo for clones and citations.
+
+## Run (mirror)
 
 ```bash
 npm run research:synthobs-egs-planck-scale-harmonic
 ```
 
-## Experiments
+## Run (canonical)
 
-| ID | Claim tested |
-|----|----------------|
-| E1 | Shared $1.6$ prefix + clutch $\Delta$ |
-| E2 | Sham mantissa coincidence rate |
-| E3 | $\Phi$-scale recursion ladder |
-| E4 | Singularity clamp at $l_P$ |
-| E5 | Wave-operator stability vs sham |
-| E6 | Clutch impedance play band |
-| E7 | Actual-vs-modelled multi-scale spectrum |
+```bash
+git clone https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic.git
+cd synthobs-egs-planck-scale-harmonic && npm run research
+```
 
-## Outputs
-
-- `data/empirical_report.json`
-- `data/empirical_report.md`
-- Paper: `docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`
+Rich README (intention · abstract · primer): see the standalone repo root.

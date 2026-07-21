@@ -84,18 +84,62 @@ type View = 'catalog' | 'dj';
 
 let playlistSyncTimer: ReturnType<typeof setTimeout> | null = null;
 const pendingPlaylistDeletes = new Set<string>();
+let playlistSyncInFlight = false;
+let playlistSyncQueued = false;
 
-function scheduleSharedPlaylistSync(playlists: PlaylistDef[]): void {
+async function pushSharedPlaylists(playlists: PlaylistDef[]): Promise<void> {
+  if (!isServerUploadConfigured()) return;
+  if (playlistSyncInFlight) {
+    playlistSyncQueued = true;
+    return;
+  }
+  playlistSyncInFlight = true;
+  const deleteIds = [...pendingPlaylistDeletes];
+  pendingPlaylistDeletes.clear();
+  try {
+    let lastErr: unknown = null;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        await syncUserPlaylistsToServer(playlists, {
+          deleteIds: deleteIds.length ? deleteIds : undefined,
+        });
+        useCatalogStore.setState({
+          playlistSyncError: null,
+          playlistSyncAt: new Date().toISOString(),
+        });
+        lastErr = null;
+        break;
+      } catch (e) {
+        lastErr = e;
+        await new Promise((r) => window.setTimeout(r, 400 * (attempt + 1)));
+      }
+    }
+    if (lastErr) {
+      const message =
+        lastErr instanceof Error ? lastErr.message : 'Playlist sync to shared catalog failed.';
+      useCatalogStore.setState({ playlistSyncError: message });
+    }
+  } finally {
+    playlistSyncInFlight = false;
+    if (playlistSyncQueued) {
+      playlistSyncQueued = false;
+      void pushSharedPlaylists(useCatalogStore.getState().playlists);
+    }
+  }
+}
+
+function scheduleSharedPlaylistSync(playlists: PlaylistDef[], opts?: { immediate?: boolean }): void {
   if (!isServerUploadConfigured()) return;
   if (playlistSyncTimer) clearTimeout(playlistSyncTimer);
-  playlistSyncTimer = setTimeout(() => {
+  const run = () => {
     playlistSyncTimer = null;
-    const deleteIds = [...pendingPlaylistDeletes];
-    pendingPlaylistDeletes.clear();
-    void syncUserPlaylistsToServer(playlists, { deleteIds: deleteIds.length ? deleteIds : undefined }).catch(
-      () => {},
-    );
-  }, 900);
+    void pushSharedPlaylists(playlists);
+  };
+  if (opts?.immediate) {
+    run();
+    return;
+  }
+  playlistSyncTimer = setTimeout(run, 900);
 }
 
 interface CatalogState {
@@ -111,6 +155,10 @@ interface CatalogState {
   likedTrackIds: string[];
   /** Device-local menu order for user playlists (not master / likes). */
   userPlaylistMenuOrder: string[];
+  /** Last shared-playlist sync error (null when healthy). */
+  playlistSyncError: string | null;
+  /** ISO timestamp of last successful shared-playlist sync. */
+  playlistSyncAt: string | null;
   search: string;
   isTrackLiked: (trackId: string) => boolean;
   toggleTrackLike: (trackId: string) => void;
@@ -441,6 +489,8 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   activePlaylistId: bootCatalog.activePlaylistId,
   likedTrackIds: [],
   userPlaylistMenuOrder: [],
+  playlistSyncError: null,
+  playlistSyncAt: null,
   deviceHydrated: false,
   search: '',
 
@@ -536,6 +586,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       return { playlists, activePlaylistId: id, userPlaylistMenuOrder: [...s.userPlaylistMenuOrder.filter((pid) => pid !== id), id] };
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
     return id;
   },
 
@@ -545,6 +596,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       playlists: s.playlists.map((p) => (p.id === id ? { ...p, name: name.trim() || p.name } : p)),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   updatePlaylist: async (id, patch, opts) => {
@@ -590,6 +642,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       }),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   deletePlaylist: (id) => {
@@ -604,6 +657,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       userPlaylistMenuOrder: userPlaylistMenuOrder.filter((pid) => pid !== id),
     });
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
   },
 
   duplicatePlaylist: (id) => {
@@ -629,6 +683,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       userPlaylistMenuOrder: insertPlaylistMenuOrderAfter(s.userPlaylistMenuOrder, newId, id),
     }));
     get().persist();
+    scheduleSharedPlaylistSync(get().playlists, { immediate: true });
     return newId;
   },
 

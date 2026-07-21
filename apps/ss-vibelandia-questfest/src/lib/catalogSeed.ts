@@ -82,10 +82,9 @@ export function mergeServerCatalogWithPrefs(
       if (p.id === MASTER_PLAYLIST_ID || p.id === MY_LIKES_PLAYLIST_ID) continue;
       /* Server-shared playlists win — local only seeds playlists not yet on server. */
       if (byId.has(p.id)) continue;
+      /* Keep named empty playlists so they can sync to the shared catalog (not only lists with tracks). */
       const filtered = p.trackIds.filter((id) => tracks[id]);
-      if (filtered.length) {
-        byId.set(p.id, { ...p, trackIds: filtered });
-      }
+      byId.set(p.id, { ...p, trackIds: filtered });
     }
     playlists = [...byId.values()];
 

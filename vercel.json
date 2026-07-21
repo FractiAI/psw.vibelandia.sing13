@@ -197,6 +197,11 @@
       "memory": 1024,
       "maxDuration": 60
     },
+    "api/catalog-playlist.js": {
+      "memory": 512,
+      "maxDuration": 60,
+      "includeFiles": "{lib/**}"
+    },
     "api/catalog-reconcile.js": {
       "memory": 1024,
       "maxDuration": 300

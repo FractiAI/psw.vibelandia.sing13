@@ -5902,6 +5902,17 @@ html.qf-jukebox-page .sp-now-track--open-now:hover .sp-now-title {
   min-height: 100vh;
 }
 
+.sc-side-share-note {
+  margin: 0.35rem 0.75rem 0.5rem;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  color: #8a8a8a;
+}
+
+.sc-side-share-note--err {
+  color: #f0a8a0;
+}
+
 .sc-side-foot {
   margin-top: auto;
   padding: 0.85rem 0.75rem 1.25rem;

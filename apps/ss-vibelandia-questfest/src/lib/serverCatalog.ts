@@ -73,7 +73,8 @@ export function mergeCatalogSnapshots(a: CatalogSnapshot, b: CatalogSnapshot): C
   const byId = new Map(a.playlists.map((p) => [p.id, { ...p, trackIds: [...p.trackIds] }]));
   for (const p of b.playlists) {
     if (p.id === 'pl-main') continue;
-    if (!byId.has(p.id)) byId.set(p.id, { ...p, trackIds: [...p.trackIds] });
+    // Upsert shared user playlists so track-list edits from the server replace stale local copies.
+    byId.set(p.id, { ...p, trackIds: [...p.trackIds] });
   }
   const master = byId.get('pl-main') ?? a.playlists[0];
   if (master) {

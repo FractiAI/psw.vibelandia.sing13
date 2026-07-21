@@ -22,6 +22,7 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
   const setDjMode = useCatalogStore((s) => s.setDjMode);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
   const catalogSyncing = useCatalogStore((s) => s.catalogSyncing);
+  const playlistSyncError = useCatalogStore((s) => s.playlistSyncError);
   const refreshFromServer = useCatalogStore((s) => s.refreshFromServer);
 
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
@@ -84,6 +85,15 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
         onSelect={openPlaylist}
         onCreate={handleCreate}
       />
+
+      <p className="sc-side-share-note">
+        Your playlists sync to the shared catalog — permanent for all listeners. Tap Refresh to pull the latest.
+      </p>
+      {playlistSyncError ? (
+        <p className="sc-side-share-note sc-side-share-note--err" role="status">
+          Shared sync issue: {playlistSyncError}
+        </p>
+      ) : null}
 
       <div className="sc-side-foot">
         <button

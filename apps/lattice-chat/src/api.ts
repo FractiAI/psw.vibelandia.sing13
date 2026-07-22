@@ -1,4 +1,4 @@
-import { LATTICE_ACCESS_EMAIL, isRememberedEmailFresh } from '@/access';
+import { isRememberedEmailFresh } from '@/access';
 import { buildLatticeExecution, buildLiveAgentRoster } from '@/latticeEngine';
 import { useLatticeStore } from '@/store';
 import type { LatticeExecution } from '@/types';
@@ -32,25 +32,22 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   const remembered = isRememberedEmailFresh(email, store.emailRememberedAt);
 
   if (!remembered) {
-    await new Promise((r) => setTimeout(r, 700));
+    await new Promise((r) => setTimeout(r, 500));
     window.clearInterval(pulse);
     const execution = buildLatticeExecution({
       message: trimmed,
       history,
       mode: 'edge',
       resumed: false,
-      reply: 'ask-email',
+      reply: 'ask-signin',
     });
     store.appendMessage(threadId, {
       role: 'assistant',
       content: [
-        'What’s your email?',
+        'Please sign in first.',
         '',
-        'Enter it in the left rail once — Lattice remembers it on this device (no passwords).',
-        `Creator privilege is permanent for ${LATTICE_ACCESS_EMAIL}.`,
-        'Guests need a one-month grant; email me for access and pricing if you don’t have one yet.',
-        '',
-        `Edge ledger still ran: ~${execution.tokens.savedTokens.toLocaleString()} tokens saved vs a naive corpus dump.`,
+        'Use Sign in (if you already have access) or Sign up (to request access) in the main panel.',
+        'No passwords — just your email, remembered on this device.',
       ].join('\n'),
       execution,
     });
@@ -87,10 +84,8 @@ export async function sendLatticeMessage(text: string): Promise<void> {
 
     if (!res.ok) {
       if (res.status === 401 || res.status === 403) {
-        const contact = data.email || LATTICE_ACCESS_EMAIL;
         throw new Error(
-          data.error ||
-            `Access required. Email ${contact} for access and pricing.`,
+          'Access not granted for this email yet. Use Sign up to request access, then Sign in after you’re approved.',
         );
       }
       throw new Error(data.error || `Request failed (${res.status})`);

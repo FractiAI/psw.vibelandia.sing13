@@ -1,106 +1,81 @@
+import { useState } from 'react';
 import type { LatticeAgentSlot, LatticeExecution } from '@/types';
 
 function statusClass(status: LatticeAgentSlot['status']): string {
-  return `agent-status agent-status-${status}`;
+  return `agent-chip-status agent-status-${status}`;
 }
 
+/** Compact live roster while a run is in flight. */
 export function AgentBoard({
   agents,
-  title = 'Active agents',
+  title = 'Agents',
 }: {
   agents: LatticeAgentSlot[];
   title?: string;
 }) {
   return (
-    <div className="agent-board" role="table" aria-label={title}>
-      <div className="agent-board-head">
-        <span>{title}</span>
-        <span className="agent-board-count">{agents.length}</span>
-      </div>
-      <div className="agent-board-row head" role="row">
-        <span role="columnheader">Agent</span>
-        <span role="columnheader">Role</span>
-        <span role="columnheader">Status</span>
-        <span role="columnheader">Progress</span>
-      </div>
-      {agents.map((a) => (
-        <div className="agent-board-row" role="row" key={a.id}>
-          <span role="cell" className="agent-name">
-            <strong>{a.name}</strong>
-            <em>{a.scale}</em>
-          </span>
-          <span role="cell" className="agent-role">
-            {a.role}
-            {a.note ? <small>{a.note}</small> : null}
-          </span>
-          <span role="cell" className={statusClass(a.status)}>
-            {a.status}
-          </span>
-          <span role="cell" className="agent-progress">
-            <span className="progress-track" aria-hidden="true">
-              <span className="progress-fill" style={{ width: `${a.progress}%` }} />
-            </span>
-            <span className="progress-label">{a.progress}%</span>
-          </span>
-        </div>
-      ))}
+    <div className="exec-muted agent-board-lite" aria-label={title}>
+      <span className="exec-muted-label">{title}</span>
+      <ul className="agent-chip-list">
+        {agents.map((a) => (
+          <li key={a.id} className="agent-chip">
+            <span className="agent-chip-name">{a.name}</span>
+            <span className={statusClass(a.status)}>{a.status}</span>
+            <span className="agent-chip-pct">{a.progress}%</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
+/** Condensed engine ledger — visually secondary to the chat reply. */
 export function ExecutionReport({ execution }: { execution: LatticeExecution }) {
-  const { tokens, selfTalk, agents, organization, engine, cycle, mode } = execution;
+  const { tokens, selfTalk, agents, mode } = execution;
+  const [open, setOpen] = useState(false);
+
+  const talkLine = selfTalk.map((s) => s.phase).join(' → ');
+  const agentLine = agents.map((a) => a.name).join(' · ');
 
   return (
-    <section className="execution-report" aria-label="Lattice execution">
-      <header className="exec-header">
-        <p className="exec-engine">{engine}</p>
-        <p className="exec-cycle">
-          {cycle} · <span className="exec-mode">{mode}</span>
-        </p>
-      </header>
-
-      <div className="token-savings" aria-label="Token savings estimate">
-        <p className="token-saved">
-          Estimated tokens saved:{' '}
-          <strong>{tokens.savedTokens.toLocaleString()}</strong>
-          <span className="token-pct"> (−{tokens.savedPercent}%)</span>
-        </p>
-        <p className="token-breakdown">
-          Naive ≈ {tokens.naiveTokens.toLocaleString()} tok · Lattice ≈{' '}
-          {tokens.latticeTokens.toLocaleString()} tok
-        </p>
-        <p className="token-method">{tokens.method}</p>
-        <ul className="token-assumptions">
-          {tokens.assumptions.map((a) => (
-            <li key={a}>{a}</li>
-          ))}
-        </ul>
-      </div>
-
-      <AgentBoard agents={agents} />
-
-      <div className="self-talk">
-        <p className="self-talk-title">Engine self-talk</p>
-        <ol>
-          {selfTalk.map((step) => (
-            <li key={step.id}>
-              <span className="st-phase">{step.phase}</span>
-              <span className="st-voice">{step.voice}</span>
-              <span className="st-detail">{step.detail}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <div className="exec-org">
-        <p className="self-talk-title">Organization</p>
-        <ul>
-          {organization.map((line) => (
-            <li key={line}>{line}</li>
-          ))}
-        </ul>
-      </div>
+    <section className="execution-report exec-muted" aria-label="Lattice engine summary">
+      <p className="exec-summary-line">
+        <span className="exec-muted-label">Engine</span>
+        <span className="exec-summary-text">
+          {talkLine}
+          <span className="exec-dot">·</span>
+          saved ~{tokens.savedTokens.toLocaleString()} tok (−{tokens.savedPercent}%)
+          <span className="exec-dot">·</span>
+          {mode}
+        </span>
+      </p>
+      <p className="exec-summary-line exec-agents-line">
+        <span className="exec-muted-label">Agents</span>
+        <span className="exec-summary-text">{agentLine}</span>
+      </p>
+      <button
+        type="button"
+        className="exec-toggle"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+      >
+        {open ? 'Hide details' : 'Details'}
+      </button>
+      {open ? (
+        <div className="exec-details">
+          <p>
+            Naive ≈ {tokens.naiveTokens.toLocaleString()} · Lattice ≈{' '}
+            {tokens.latticeTokens.toLocaleString()}
+          </p>
+          <ul>
+            {selfTalk.map((step) => (
+              <li key={step.id}>
+                <span className="st-phase">{step.phase}</span> {step.detail}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </section>
   );
 }

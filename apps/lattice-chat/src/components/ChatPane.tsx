@@ -1,11 +1,7 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
-import {
-  LATTICE_ACCESS_EMAIL,
-  LATTICE_ACCESS_MAILTO,
-  isCreatorEmail,
-  isRememberedEmailFresh,
-} from '@/access';
+import { isRememberedEmailFresh } from '@/access';
 import { sendLatticeMessage } from '@/api';
+import { AuthPanel, SignedInBar } from '@/components/AuthPanel';
 import { AgentBoard, ExecutionReport } from '@/components/ExecutionReport';
 import { useLatticeStore } from '@/store';
 
@@ -23,8 +19,7 @@ export function ChatPane() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   const thread = threads.find((t) => t.id === activeThreadId) ?? null;
-  const remembered = isRememberedEmailFresh(userEmail, emailRememberedAt);
-  const creator = remembered && isCreatorEmail(userEmail);
+  const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
 
   useEffect(() => {
     ensureThread();
@@ -32,10 +27,11 @@ export function ChatPane() {
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [thread?.messages.length, sending, liveAgents]);
+  }, [thread?.messages.length, sending, liveAgents, signedIn]);
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
+    if (!signedIn) return;
     const text = draft;
     setDraft('');
     await sendLatticeMessage(text);
@@ -52,41 +48,36 @@ export function ChatPane() {
   return (
     <main className="chat-pane">
       <header className="chat-header">
-        <h1 className="chat-title">
-          <span className="chat-wordmark">Lattice V1.618</span>
-          <span className="chat-by">by FractiAI</span>
-        </h1>
+        <div className="chat-header-row">
+          <h1 className="chat-title">
+            <span className="chat-wordmark">Lattice V1.618</span>
+            <span className="chat-by">by FractiAI</span>
+          </h1>
+          {signedIn ? <SignedInBar /> : null}
+        </div>
         <p className="chat-sub">
-          Nested agent lattice — as simple as chat.{' '}
-          <a href="/lattice">What is Lattice V1.618?</a>
+          Nested agents as simple as chat.{' '}
+          <a href="/lattice">What is Lattice?</a>
         </p>
-        {!remembered ? (
-          <p className="chat-access-line">
-            What’s your email? Enter it once in the left rail (no passwords).{' '}
-            <a href={LATTICE_ACCESS_MAILTO}>Email me for access and pricing</a>
-          </p>
-        ) : creator ? (
-          <p className="chat-access-line ok">
-            Creator · {userEmail} · permanent
-          </p>
-        ) : (
-          <p className="chat-access-line ok">
-            Remembered · {userEmail} · guest ~1 month
-          </p>
-        )}
       </header>
 
       <div className="message-scroll" role="log" aria-live="polite">
-        {!thread || thread.messages.length === 0 ? (
-          <div className="empty-state">
-            <p className="empty-lead">Compose here — histories never leave this browser.</p>
+        {!signedIn ? (
+          <div className="auth-stage">
+            <p className="empty-lead">Sign in or sign up to use Lattice</p>
             <p className="empty-hint">
-              Old-school access: we ask for your email once and remember it on this device.
-              Creator ({LATTICE_ACCESS_EMAIL}) is permanent; guests last one month after grant.
+              Two steps only: <strong>Sign in</strong> if you already have access, or{' '}
+              <strong>Sign up</strong> to request access ($200/mo + your Cursor key). No passwords.
             </p>
-            <a className="empty-cta" href={LATTICE_ACCESS_MAILTO}>
-              Email me for access and pricing
-            </a>
+            <AuthPanel />
+          </div>
+        ) : !thread || thread.messages.length === 0 ? (
+          <div className="empty-state">
+            <p className="empty-lead">You’re signed in — ask anything.</p>
+            <p className="empty-hint">
+              Histories stay on this device. Each reply shows the Lattice engine, agent board, and
+              token-savings ledger.
+            </p>
           </div>
         ) : (
           thread.messages.map((m) => (
@@ -130,14 +121,10 @@ export function ChatPane() {
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder={
-            remembered
-              ? 'Message Lattice…'
-              : 'Enter your email in the left rail first…'
-          }
-          disabled={sending}
+          placeholder={signedIn ? 'Message Lattice…' : 'Sign in above to chat…'}
+          disabled={sending || !signedIn}
         />
-        <button type="submit" disabled={sending || !draft.trim()}>
+        <button type="submit" disabled={sending || !signedIn || !draft.trim()}>
           Send
         </button>
       </form>

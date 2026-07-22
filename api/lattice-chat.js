@@ -5,14 +5,13 @@
  * Creator valetpru@gmail.com = permanent. Guests = one month from grant. No passwords.
  */
 import { buildLatticeExecution } from '../lib/lattice-engine.mjs';
-import { checkLatticeEmailAccess, CREATOR_EMAIL } from '../lib/lattice-access.mjs';
+import { checkLatticeEmailAccess } from '../lib/lattice-access.mjs';
 
 export const config = {
   maxDuration: 300,
 };
 
 const DEFAULT_REPO = 'https://github.com/FractiAI/psw.vibelandia.sing13';
-const CONTACT_EMAIL = CREATOR_EMAIL;
 
 const PREAMBLE = `You are Lattice V1.618 by FractiAI — the Nested Agent Lattice chat surface over SING13.
 Ground answers in docs/, protocols/, research/, and nested-agent / NSPFRNP rules when relevant.
@@ -168,7 +167,6 @@ export default async function handler(req, res) {
   if (!access.ok) {
     return json(res, 401, {
       error: access.reason,
-      email: CONTACT_EMAIL,
       privilege: access.privilege,
       expiresAt: access.expiresAt,
     });
@@ -177,8 +175,7 @@ export default async function handler(req, res) {
   const apiKey = (process.env.CURSOR_API_KEY || '').trim();
   if (!apiKey) {
     return json(res, 503, {
-      error: `Cloud agent not configured yet. Email ${CONTACT_EMAIL} for access and pricing.`,
-      email: CONTACT_EMAIL,
+      error: 'Cloud agent not configured yet. Try again later or request access via Sign up.',
     });
   }
 

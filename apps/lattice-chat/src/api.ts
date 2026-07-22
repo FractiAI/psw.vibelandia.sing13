@@ -1,5 +1,6 @@
 import { isRememberedEmailFresh } from '@/access';
 import { estimateTokenCompare } from '@/components/TokenCompare';
+import { mergeLatticeModels, LATTICE_MODEL_CATALOG } from '@/modelCatalog';
 import { useLatticeStore } from '@/store';
 import type { AgentMode, TokenCompare, TranscriptItem } from '@/types';
 
@@ -19,12 +20,36 @@ type LatticeResponse = {
 };
 
 const WATCHDOG_MS = 45_000;
-const RECOVER_POLL_MS = 6_000;
+const RECOVER_POLL_MS = 8_000;
 const STATUS_TICK_MS = 2_000;
-const MAX_RECOVER_ATTEMPTS = 12;
+const MAX_RECOVER_ATTEMPTS = 6;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
+}
+
+function isHardLatticeFailure(data: LatticeResponse, status: number): boolean {
+  if ([401, 403, 422].includes(status)) return true;
+  if (
+    data.code === 'cursor_github_access' ||
+    data.code === 'invalid_model' ||
+    data.code === 'cursor_auth' ||
+    data.code === 'missing_cursor_api_key'
+  ) {
+    return true;
+  }
+  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github/i.test(
+    data.error || '',
+  );
+}
+
+class LatticeHardFail extends Error {
+  code?: string;
+  constructor(message: string, code?: string) {
+    super(message);
+    this.name = 'LatticeHardFail';
+    this.code = code;
+  }
 }
 
 /** Live status copy so the wait feels progressive, not frozen. */
@@ -173,6 +198,9 @@ export async function loadLatticeModels(): Promise<void> {
   const email = store.userEmail.trim();
   if (!isRememberedEmailFresh(email, store.emailRememberedAt)) return;
 
+  // Always seed the full catalog immediately so the picker is never stuck on one model.
+  store.setModels(mergeLatticeModels(store.models.length > 1 ? store.models : []));
+
   try {
     const headers: Record<string, string> = { 'x-lattice-email': email };
     const key = store.cursorApiKey.trim();
@@ -184,21 +212,20 @@ export async function loadLatticeModels(): Promise<void> {
     const data = (await res.json().catch(() => ({}))) as {
       models?: { id: string; displayName?: string; description?: string }[];
     };
-    const models = (data.models || [])
+    const live = (data.models || [])
       .map((m) => ({
         id: String(m.id || '').trim(),
         displayName: String(m.displayName || m.id || '').trim(),
         description: m.description,
       }))
       .filter((m) => m.id);
-    if (models.length) {
-      store.setModels(models);
-      if (!models.some((m) => m.id === store.modelId)) {
-        store.setModelId(models[0].id);
-      }
+    const models = mergeLatticeModels(live.length ? live : LATTICE_MODEL_CATALOG);
+    store.setModels(models);
+    if (!models.some((m) => m.id === store.modelId)) {
+      store.setModelId(models[0]?.id || 'composer-2.5');
     }
   } catch {
-    /* keep fallback */
+    store.setModels(LATTICE_MODEL_CATALOG);
   }
 }
 
@@ -228,7 +255,15 @@ async function tryRecoverOnce(
     email,
   );
   if (data.agentId) store.setAgentId(threadId, data.agentId);
-  if (!res.ok) return false;
+  if (!res.ok) {
+    if (isHardLatticeFailure(data, res.status)) {
+      throw new LatticeHardFail(
+        data.error || `Recover failed (${res.status})`,
+        data.code,
+      );
+    }
+    return false;
+  }
   if (!awaitingAssistant(threadId)) return true;
 
   applyAssistantReply(threadId, data, store.modelId, store.agentMode, {
@@ -297,7 +332,13 @@ export async function checkPendingLatticeReply(): Promise<boolean> {
   } catch (err) {
     const msg = err instanceof Error ? err.message : 'Recover failed';
     store.setError(msg);
-    store.setSendProgress('stuck', msg);
+    if (err instanceof LatticeHardFail) {
+      store.setSendProgress('idle', null);
+      store.setSending(false);
+      store.clearPending();
+    } else {
+      store.setSendProgress('stuck', msg);
+    }
     return false;
   }
 }
@@ -427,8 +468,16 @@ export async function sendLatticeMessage(text: string): Promise<void> {
           store.setError(null);
           store.setSending(false);
         }
-      } catch {
-        /* primary may still finish */
+      } catch (recoverErr) {
+        if (recoverErr instanceof LatticeHardFail) {
+          settled = true;
+          clearInterval(watchdog);
+          clearInterval(statusTick);
+          store.setError(recoverErr.message);
+          store.setSendProgress('idle', null);
+          store.setSending(false);
+          store.clearPending();
+        }
       }
     })();
   }, RECOVER_POLL_MS);
@@ -461,16 +510,20 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     if (settled) return;
 
     if (!res.ok) {
-      if (res.status === 401 || res.status === 403) {
-        throw new Error(
+      if (isHardLatticeFailure(data, res.status)) {
+        throw new LatticeHardFail(
           data.error ||
-            'This email is not on the access list yet. Request access (opens a prefilled email), then Sign in after you’re granted.',
+            (res.status === 401 || res.status === 403
+              ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
+              : `Request failed (${res.status})`),
+          data.code,
         );
       }
       if (res.status === 503) {
-        throw new Error(
+        throw new LatticeHardFail(
           data.error ||
             'Cursor API key missing. Paste your key on this device (Sign in) — Lattice does not keep it on our server.',
+          data.code || 'missing_cursor_api_key',
         );
       }
       throw new Error(
@@ -487,14 +540,34 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       useLatticeStore.getState().threads.find((t) => t.id === threadId)?.agentId ||
       thread.agentId;
 
-    if (agentId && (isNetworkFailure(err) || /active run|busy/i.test(String(err)))) {
+    const hardFail =
+      err instanceof LatticeHardFail ||
+      /access list|API key|GitHub|repository|branch|401|403|503|invalid model|cursor_github/i.test(
+        err instanceof Error ? err.message : String(err),
+      );
+
+    if (
+      !hardFail &&
+      agentId &&
+      (isNetworkFailure(err) || /active run|busy/i.test(String(err)))
+    ) {
       store.setSendProgress('recovering', 'Connection hiccup — recovering cloud run…');
-      for (let i = 0; i < MAX_RECOVER_ATTEMPTS && !settled; i++) {
-        await sleep(2000 + i * 1200);
-        const ok = await tryRecoverOnce(threadId, trimmed, history, email);
-        if (ok) {
-          settled = true;
+      try {
+        for (let i = 0; i < MAX_RECOVER_ATTEMPTS && !settled; i++) {
+          await sleep(2000 + i * 1200);
+          const ok = await tryRecoverOnce(threadId, trimmed, history, email);
+          if (ok) {
+            settled = true;
+            store.setSending(false);
+            return;
+          }
+        }
+      } catch (recoverErr) {
+        if (recoverErr instanceof LatticeHardFail) {
+          store.setError(recoverErr.message);
+          store.setSendProgress('idle', null);
           store.setSending(false);
+          store.clearPending();
           return;
         }
       }
@@ -503,44 +576,48 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     if (settled) return;
     const msg = err instanceof Error ? err.message : 'Chat request failed';
     store.setError(msg);
-    // Hard failures (auth/GitHub): stop spinner. Soft/network: keep pending for Check.
-    const hardFail = /access list|API key|GitHub|repository|branch|401|403|503/i.test(msg);
-    if (hardFail && !agentId) {
+    if (hardFail) {
       store.setSendProgress('idle', null);
       store.setSending(false);
       store.clearPending();
-    } else {
-      store.setSendProgress(
-        'stuck',
-        'Send interrupted — tap Check for reply before re-pasting the prompt.',
-      );
-      store.setSending(true);
-      // Keep auto-checking so the user does not have to re-enter the prompt.
-      void (async () => {
-        for (let i = 0; i < MAX_RECOVER_ATTEMPTS && awaitingAssistant(threadId); i++) {
-          await sleep(RECOVER_POLL_MS);
-          if (!awaitingAssistant(threadId)) return;
-          store.setSendProgress(
-            'recovering',
-            latticeProgressHint(Math.round((Date.now() - startedAt) / 1000), 'recovering'),
-          );
-          try {
-            const ok = await tryRecoverOnce(threadId, trimmed, history, email);
-            if (ok) {
-              store.setError(null);
-              store.setSending(false);
-              return;
-            }
-          } catch {
-            /* keep trying */
+      return;
+    }
+    store.setSendProgress(
+      'stuck',
+      'Send interrupted — tap Check for reply before re-pasting the prompt.',
+    );
+    store.setSending(true);
+    // Soft hang only — auto-check without hammering on hard GitHub/auth failures.
+    void (async () => {
+      for (let i = 0; i < MAX_RECOVER_ATTEMPTS && awaitingAssistant(threadId); i++) {
+        await sleep(RECOVER_POLL_MS);
+        if (!awaitingAssistant(threadId)) return;
+        store.setSendProgress(
+          'recovering',
+          latticeProgressHint(Math.round((Date.now() - startedAt) / 1000), 'recovering'),
+        );
+        try {
+          const ok = await tryRecoverOnce(threadId, trimmed, history, email);
+          if (ok) {
+            store.setError(null);
+            store.setSending(false);
+            return;
+          }
+        } catch (recoverErr) {
+          if (recoverErr instanceof LatticeHardFail) {
+            store.setError(recoverErr.message);
+            store.setSendProgress('idle', null);
+            store.setSending(false);
+            store.clearPending();
+            return;
           }
         }
-        store.setSendProgress(
-          'stuck',
-          latticeProgressHint(Math.round((Date.now() - startedAt) / 1000), 'stuck'),
-        );
-      })();
-    }
+      }
+      store.setSendProgress(
+        'stuck',
+        latticeProgressHint(Math.round((Date.now() - startedAt) / 1000), 'stuck'),
+      );
+    })();
   } finally {
     clearInterval(watchdog);
     clearInterval(statusTick);

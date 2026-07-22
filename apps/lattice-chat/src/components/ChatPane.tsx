@@ -63,10 +63,16 @@ export function ChatPane() {
     if (signedIn && hasEdgeKey) void loadLatticeModels();
   }, [signedIn, userEmail, hasEdgeKey]);
 
-  // Resume a waiting turn after refresh / return — no re-paste.
+  // Resume a waiting turn after refresh — only when we still have a pending soft wait.
   useEffect(() => {
     if (!signedIn || !hasEdgeKey || resumedRef.current) return;
     if (!threadAwaitingAssistant(activeThreadId)) return;
+    const s = useLatticeStore.getState();
+    if (!s.pending) return;
+    if (s.error && /GitHub|repository|branch|API key|access list|invalid model/i.test(s.error)) {
+      resumedRef.current = true;
+      return;
+    }
     resumedRef.current = true;
     void checkPendingLatticeReply();
   }, [signedIn, hasEdgeKey, activeThreadId]);

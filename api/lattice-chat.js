@@ -493,17 +493,71 @@ function normalizeModelId(raw) {
   return id || (process.env.LATTICE_MODEL_ID || 'composer-2.5').trim() || 'composer-2.5';
 }
 
+/** Catalog shown when Cursor.models.list is empty/unavailable — keep broad for the picker. */
 const FALLBACK_MODELS = [
+  { id: 'auto', displayName: 'Auto' },
   { id: 'composer-2.5', displayName: 'Composer 2.5' },
+  { id: 'composer-2', displayName: 'Composer 2' },
+  { id: 'composer-2.5-fast', displayName: 'Composer 2.5 Fast' },
+  { id: 'gpt-5.6-sol-medium', displayName: 'GPT-5.6 Sol' },
+  { id: 'gpt-5.6-terra-medium', displayName: 'GPT-5.6 Terra' },
+  { id: 'gpt-5.5', displayName: 'GPT-5.5' },
   { id: 'gpt-5.2', displayName: 'GPT-5.2' },
+  { id: 'claude-opus-4-8-thinking-high', displayName: 'Claude Opus 4.8 Thinking' },
+  { id: 'claude-sonnet-5-thinking-high', displayName: 'Claude Sonnet 5 Thinking' },
+  { id: 'claude-fable-5-thinking-high', displayName: 'Claude Fable 5 Thinking' },
+  { id: 'claude-4.6-sonnet-thinking', displayName: 'Claude 4.6 Sonnet Thinking' },
   { id: 'claude-4.5-sonnet', displayName: 'Claude 4.5 Sonnet' },
+  { id: 'claude-opus-4-7', displayName: 'Claude Opus 4.7' },
+  { id: 'cursor-grok-4.5-high-fast', displayName: 'Grok 4.5 Fast' },
 ];
+
+function asModelList(listed) {
+  if (Array.isArray(listed)) return listed;
+  if (listed && Array.isArray(listed.items)) return listed.items;
+  if (listed && Array.isArray(listed.models)) return listed.models;
+  return [];
+}
+
+function mapCursorModel(m) {
+  const id = String(m?.id || '').trim();
+  if (!id) return null;
+  return {
+    id,
+    displayName: String(m?.displayName || m?.name || id).trim(),
+    description: typeof m?.description === 'string' ? m.description : undefined,
+    variants: Array.isArray(m?.variants)
+      ? m.variants.map((v) => ({
+          displayName: String(v?.displayName || '').trim(),
+          isDefault: Boolean(v?.isDefault),
+          params: Array.isArray(v?.params) ? v.params : [],
+        }))
+      : undefined,
+  };
+}
+
+/** Live Cursor list wins on overlap; fallback fills gaps so the picker stays full. */
+function mergeModelCatalog(live) {
+  const byId = new Map();
+  for (const m of FALLBACK_MODELS) byId.set(m.id, { ...m });
+  for (const m of live) {
+    if (!m?.id) continue;
+    const prev = byId.get(m.id);
+    byId.set(m.id, {
+      id: m.id,
+      displayName: m.displayName || prev?.displayName || m.id,
+      description: m.description || prev?.description,
+      variants: m.variants?.length ? m.variants : prev?.variants,
+    });
+  }
+  return [...byId.values()];
+}
 
 export default async function handler(req, res) {
   try {
     if (req.method === 'OPTIONS') {
       res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email, x-cursor-api-key');
       return json(res, 204, {});
     }
 
@@ -588,23 +642,12 @@ export default async function handler(req, res) {
         try {
           const { Cursor } = await import('@cursor/sdk');
           const listed = await Cursor.models.list({ apiKey });
-          const models = (Array.isArray(listed) ? listed : [])
-            .map((m) => ({
-              id: String(m?.id || '').trim(),
-              displayName: String(m?.displayName || m?.id || '').trim(),
-              description: typeof m?.description === 'string' ? m.description : undefined,
-              variants: Array.isArray(m?.variants)
-                ? m.variants.map((v) => ({
-                    displayName: String(v?.displayName || '').trim(),
-                    isDefault: Boolean(v?.isDefault),
-                    params: Array.isArray(v?.params) ? v.params : [],
-                  }))
-                : undefined,
-            }))
-            .filter((m) => m.id);
+          const live = asModelList(listed).map(mapCursorModel).filter(Boolean);
+          const models = mergeModelCatalog(live);
           return json(res, 200, {
-            models: models.length ? models : FALLBACK_MODELS,
-            source: models.length ? 'cursor' : 'fallback',
+            models,
+            source: live.length ? 'cursor+catalog' : 'fallback',
+            liveCount: live.length,
           });
         } catch (err) {
           console.warn('[lattice-chat] models.list', err);
@@ -839,15 +882,42 @@ export default async function handler(req, res) {
           agentId: agent?.agentId ?? agentId,
         });
       }
-      const branchFail = /default branch|verify existence of branch|repository/i.test(msg);
-      const hint = branchFail
-        ? ` Lattice uses ${repoUrl} @ ${startingRef}. The Cursor API key for this request can see granted repos (e.g. psw.vibelandia.sing4) but not this one yet. Open https://github.com/settings/installations → Cursor → Repository access → add FractiAI/psw.vibelandia.sing13 (or All repositories) for the GitHub account linked to that Cursor key. Also confirm https://cursor.com/dashboard/integrations.`
-        : '';
+
+      // Expected config/access failures — do not count as 500s (clients must stop retry storms).
+      if (/unauthorized|invalid.?api.?key|api key.*(invalid|missing)|401\b/i.test(msg)) {
+        return json(res, 401, {
+          error: msg,
+          code: 'cursor_auth',
+          agentId: agent?.agentId ?? agentId,
+        });
+      }
+      const branchFail =
+        /default branch|verify existence of branch|repository access|GitHub App|cursor github|not in cursor|failed to (clone|access).*repo|repositories?/i.test(
+          msg,
+        );
+      if (branchFail) {
+        return json(res, 422, {
+          error:
+            msg +
+            ` Lattice uses ${repoUrl} @ ${startingRef}. Connect GitHub for the Cursor account that owns this API key (cursor.com/dashboard/integrations) and ensure FractiAI/psw.vibelandia.sing13 is visible — public clone ≠ Cursor cloud access.`,
+          code: 'cursor_github_access',
+          repoUrl,
+          startingRef,
+          agentId: agent?.agentId ?? agentId,
+        });
+      }
+      if (/unknown model|invalid model|model .+ not (found|available)|unsupported model/i.test(msg)) {
+        return json(res, 422, {
+          error: msg,
+          code: 'invalid_model',
+          model: modelId,
+          agentId: agent?.agentId ?? agentId,
+        });
+      }
+
       return json(res, 500, {
-        error: msg + hint,
+        error: msg,
         code: 'agent_error',
-        repoUrl: branchFail ? repoUrl : undefined,
-        startingRef: branchFail ? startingRef : undefined,
         agentId: agent?.agentId ?? agentId,
       });
     } finally {

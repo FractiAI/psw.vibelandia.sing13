@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { isRememberedEmailFresh, normalizeEmail } from '@/access';
+import { LATTICE_MODEL_CATALOG } from '@/modelCatalog';
 import type {
   AgentMode,
   ChatMessage,
@@ -90,7 +91,7 @@ export const useLatticeStore = create<LatticeState>()(
       error: null,
       agentMode: 'agent',
       modelId: 'composer-2.5',
-      models: [{ id: 'composer-2.5', displayName: 'Composer 2.5' }],
+      models: LATTICE_MODEL_CATALOG,
 
       ensureThread: () => {
         const { threads, activeThreadId } = get();

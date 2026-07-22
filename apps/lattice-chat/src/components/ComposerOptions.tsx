@@ -1,3 +1,4 @@
+import { LATTICE_MODEL_CATALOG } from '@/modelCatalog';
 import type { AgentMode, LatticeModelOption } from '@/types';
 
 const MODES: { id: AgentMode; label: string }[] = [
@@ -20,10 +21,7 @@ export function ComposerOptions({
   onModeChange: (mode: AgentMode) => void;
   onModelChange: (modelId: string) => void;
 }) {
-  const options =
-    models.length > 0
-      ? models
-      : [{ id: modelId || 'composer-2.5', displayName: modelId || 'Composer 2.5' }];
+  const options = models.length > 1 ? models : LATTICE_MODEL_CATALOG;
 
   return (
     <div className="composer-options" role="group" aria-label="Agent options">

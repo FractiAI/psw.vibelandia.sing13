@@ -27,6 +27,7 @@ export function ChatPane() {
   const setAgentMode = useLatticeStore((s) => s.setAgentMode);
   const setModelId = useLatticeStore((s) => s.setModelId);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
+  const hasEdgeKey = useLatticeStore((s) => Boolean(s.cursorApiKey.trim()));
   const [draft, setDraft] = useState('');
   const [elapsedSec, setElapsedSec] = useState(0);
   const [checking, setChecking] = useState(false);
@@ -47,8 +48,8 @@ export function ChatPane() {
   }, [ensureThread]);
 
   useEffect(() => {
-    if (signedIn) void loadLatticeModels();
-  }, [signedIn, userEmail]);
+    if (signedIn && hasEdgeKey) void loadLatticeModels();
+  }, [signedIn, userEmail, hasEdgeKey]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -134,8 +135,8 @@ export function ChatPane() {
           <div className="auth-stage">
             <p className="empty-lead">Sign in to use Lattice</p>
             <p className="empty-hint">
-              If you already have a grant, enter your email / userid below. Request access only
-              appears when you are not signed in for the current monthly period.
+              Enter your email / userid and your Cursor API key. The key stays on this device —
+              we only forward it for each chat turn, never store it on our cloud.
             </p>
             <AuthPanel />
           </div>
@@ -144,8 +145,10 @@ export function ChatPane() {
             <p className="empty-lead">You’re signed in — ask anything.</p>
             <p className="empty-hint">
               Pick Agent or Plan and a model below — same Cursor agent options. Replies show
-              thinking, tools, and text in the chat like Cursor.
+              thinking, tools, and text in the chat like Cursor. Cursor key:{' '}
+              {hasEdgeKey ? 'on this edge' : 'missing — paste one below'}.
             </p>
+            {!hasEdgeKey ? <AuthPanel compact /> : null}
           </div>
         ) : (
           thread.messages.map((m) => (

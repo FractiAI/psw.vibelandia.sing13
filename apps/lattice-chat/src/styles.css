@@ -130,6 +130,25 @@ body {
   max-width: 11rem;
 }
 
+.signed-in-key {
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid transparent;
+}
+
+.signed-in-key--ok {
+  color: var(--brand-champagne);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.signed-in-key--missing {
+  color: #f0c4a8;
+  border-color: rgba(240, 160, 120, 0.45);
+}
+
 .sign-out-btn {
   appearance: none;
   margin-left: auto;
@@ -204,6 +223,13 @@ body {
   font-size: 0.88rem;
   color: var(--brand-text-soft);
   line-height: 1.4;
+}
+
+.auth-key-hint {
+  margin: 0.15rem 0 0.25rem;
+  font-size: 0.75rem;
+  color: var(--brand-muted);
+  line-height: 1.35;
 }
 
 .auth-form label {

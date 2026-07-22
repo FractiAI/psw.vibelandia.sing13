@@ -1,5 +1,7 @@
 /**
- * Lattice V1.618 chat — Cursor SDK cloud agent (server-side CURSOR_API_KEY).
+ * Lattice V1.618 chat — Cursor SDK cloud agent.
+ * Cursor API key: prefer per-request edge header `x-cursor-api-key` (BYOK).
+ * Optional server CURSOR_API_KEY is fallback only — we do not persist user keys.
  * Access: email allowlist. Creator permanent. Guests one month from grant.
  * Note: keep this file self-contained for Vercel (avoid top-level .mjs imports).
  */
@@ -182,6 +184,31 @@ function readEmail(req, body) {
   const raw = h['x-lattice-email'] || h['X-Lattice-Email'] || body?.email || '';
   return String(Array.isArray(raw) ? raw[0] : raw).trim();
 }
+
+/**
+ * Resolve Cursor API key for this request only.
+ * Edge header wins. Body key accepted once then stripped. Env is optional fallback.
+ * Never logs or persists the key.
+ */
+function resolveCursorApiKey(req, body) {
+  const h = req.headers || {};
+  const headerRaw = h['x-cursor-api-key'] || h['X-Cursor-Api-Key'] || '';
+  const fromHeader = String(Array.isArray(headerRaw) ? headerRaw[0] : headerRaw).trim();
+  if (fromHeader) return { key: fromHeader, source: 'edge' };
+
+  const fromBody = typeof body?.cursorApiKey === 'string' ? body.cursorApiKey.trim() : '';
+  if (body && Object.prototype.hasOwnProperty.call(body, 'cursorApiKey')) {
+    delete body.cursorApiKey;
+  }
+  if (fromBody) return { key: fromBody, source: 'edge' };
+
+  const fromEnv = (process.env.CURSOR_API_KEY || '').trim();
+  if (fromEnv) return { key: fromEnv, source: 'server' };
+  return { key: '', source: 'none' };
+}
+
+const MISSING_KEY_ERROR =
+  'Add your Cursor API key on this device (Sign in panel). Lattice keeps it on your edge only — not on our server.';
 
 function readBody(req) {
   if (req.body && typeof req.body === 'object') return Promise.resolve(req.body);
@@ -507,12 +534,12 @@ export default async function handler(req, res) {
         if (!access.ok) {
           return json(res, 401, { error: access.reason, ok: false });
         }
-        const apiKey = (process.env.CURSOR_API_KEY || '').trim();
+        const { key: apiKey, source: keySource } = resolveCursorApiKey(req, {});
         if (!apiKey) {
           return json(res, 503, {
             ok: false,
             code: 'missing_cursor_api_key',
-            error: 'CURSOR_API_KEY is not set on the server.',
+            error: MISSING_KEY_ERROR,
             targetRepo: DEFAULT_REPO,
           });
         }
@@ -530,11 +557,12 @@ export default async function handler(req, res) {
             targetRepo: DEFAULT_REPO,
             matched,
             connectedCount: urls.length,
+            keySource,
             // Sample only — avoid dumping full org lists to clients.
             sample: urls.slice(0, 12),
             note:
               matched.length > 0
-                ? 'CURSOR_API_KEY account can see this repo via Cursor GitHub integration.'
+                ? 'This Cursor API key can see this repo via Cursor GitHub integration.'
                 : 'API key works for Cursor API, but this repo is not in Cursor.repositories.list for that key. Connect GitHub for the same Cursor account that owns the key (cursor.com → Integrations → GitHub) and grant FractiAI/psw.vibelandia.sing13. IDE workspace open ≠ cloud API GitHub access.',
           });
         } catch (err) {
@@ -553,7 +581,7 @@ export default async function handler(req, res) {
         if (!access.ok) {
           return json(res, 401, { error: access.reason, models: FALLBACK_MODELS });
         }
-        const apiKey = (process.env.CURSOR_API_KEY || '').trim();
+        const { key: apiKey } = resolveCursorApiKey(req, {});
         if (!apiKey) {
           return json(res, 200, { models: FALLBACK_MODELS, source: 'fallback' });
         }
@@ -612,11 +640,10 @@ export default async function handler(req, res) {
       });
     }
 
-    const apiKey = (process.env.CURSOR_API_KEY || '').trim();
+    const { key: apiKey } = resolveCursorApiKey(req, body);
     if (!apiKey) {
       return json(res, 503, {
-        error:
-          'CURSOR_API_KEY is not set on the server. Add it in Vercel → Settings → Environment Variables, then redeploy.',
+        error: MISSING_KEY_ERROR,
         code: 'missing_cursor_api_key',
       });
     }
@@ -814,7 +841,7 @@ export default async function handler(req, res) {
       }
       const branchFail = /default branch|verify existence of branch|repository/i.test(msg);
       const hint = branchFail
-        ? ` Lattice uses ${repoUrl} @ ${startingRef}. Same CURSOR_API_KEY works on granted repos (e.g. psw.vibelandia.sing4) but not this one yet. FractiAI is a GitHub user account — while logged in as FractiAI, open https://github.com/settings/installations → Cursor → Repository access → add FractiAI/psw.vibelandia.sing13 (or All repositories). Also confirm https://cursor.com/dashboard/integrations for the account that owns CURSOR_API_KEY.`
+        ? ` Lattice uses ${repoUrl} @ ${startingRef}. The Cursor API key for this request can see granted repos (e.g. psw.vibelandia.sing4) but not this one yet. Open https://github.com/settings/installations → Cursor → Repository access → add FractiAI/psw.vibelandia.sing13 (or All repositories) for the GitHub account linked to that Cursor key. Also confirm https://cursor.com/dashboard/integrations.`
         : '';
       return json(res, 500, {
         error: msg + hint,

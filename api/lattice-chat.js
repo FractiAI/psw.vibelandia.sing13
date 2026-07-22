@@ -407,7 +407,10 @@ export default async function handler(req, res) {
     } catch (err) {
       console.error('[lattice-chat]', err);
       const msg = err instanceof Error ? err.message : 'Lattice agent failed';
-      return json(res, 500, { error: msg, code: 'agent_error' });
+      const hint = /default branch|verify existence of branch|repository/i.test(msg)
+        ? ' If this persists: confirm Cursor GitHub App can access FractiAI/psw.vibelandia.sing13, and that branch main exists.'
+        : '';
+      return json(res, 500, { error: msg + hint, code: 'agent_error' });
     } finally {
       await disposeAgent(agent);
     }

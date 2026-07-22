@@ -215,11 +215,10 @@ export async function loadLatticeModels(): Promise<void> {
       .filter((m) => m.id);
     const models = mergeLatticeModels(live.length ? live : LATTICE_MODEL_CATALOG);
     store.setModels(models);
-    if (!models.some((m) => m.id === store.modelId)) {
-      store.setModelId(models[0]?.id || 'composer-2.5');
-    }
+    store.setModelId('auto');
   } catch {
     store.setModels(LATTICE_MODEL_CATALOG);
+    store.setModelId('auto');
   }
 }
 
@@ -241,7 +240,7 @@ async function tryRecoverOnce(
       recover: true,
       agentId,
       email,
-      model: store.modelId,
+      model: 'auto',
       mode: store.agentMode,
       message: prompt,
       history,
@@ -393,7 +392,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     history,
     agentId: thread.agentId,
     email,
-    model: store.modelId,
+    model: 'auto',
     mode: store.agentMode,
   };
 

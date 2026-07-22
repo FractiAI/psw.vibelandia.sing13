@@ -1027,6 +1027,18 @@ body {
   max-width: min(18rem, 100%);
 }
 
+.composer-model-fixed {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(6, 5, 4, 0.65);
+  color: var(--brand-champagne);
+  font: 600 0.78rem/1.2 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.42rem 0.7rem;
+}
+
 .composer-model select:focus {
   border-color: rgba(212, 175, 55, 0.55);
 }

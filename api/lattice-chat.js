@@ -477,27 +477,13 @@ function normalizeAgentMode(raw) {
 function normalizeModelId(raw) {
   const id = String(raw || '')
     .trim();
-  return id || (process.env.LATTICE_MODEL_ID || 'composer-2.5').trim() || 'composer-2.5';
+  // Lattice is Auto-only while the operator pays for Cursor cloud.
+  if (id && id !== 'auto') return 'auto';
+  return id || (process.env.LATTICE_MODEL_ID || 'auto').trim() || 'auto';
 }
 
-/** Catalog shown when Cursor.models.list is empty/unavailable — keep broad for the picker. */
-const FALLBACK_MODELS = [
-  { id: 'auto', displayName: 'Auto' },
-  { id: 'composer-2.5', displayName: 'Composer 2.5' },
-  { id: 'composer-2', displayName: 'Composer 2' },
-  { id: 'composer-2.5-fast', displayName: 'Composer 2.5 Fast' },
-  { id: 'gpt-5.6-sol-medium', displayName: 'GPT-5.6 Sol' },
-  { id: 'gpt-5.6-terra-medium', displayName: 'GPT-5.6 Terra' },
-  { id: 'gpt-5.5', displayName: 'GPT-5.5' },
-  { id: 'gpt-5.2', displayName: 'GPT-5.2' },
-  { id: 'claude-opus-4-8-thinking-high', displayName: 'Claude Opus 4.8 Thinking' },
-  { id: 'claude-sonnet-5-thinking-high', displayName: 'Claude Sonnet 5 Thinking' },
-  { id: 'claude-fable-5-thinking-high', displayName: 'Claude Fable 5 Thinking' },
-  { id: 'claude-4.6-sonnet-thinking', displayName: 'Claude 4.6 Sonnet Thinking' },
-  { id: 'claude-4.5-sonnet', displayName: 'Claude 4.5 Sonnet' },
-  { id: 'claude-opus-4-7', displayName: 'Claude Opus 4.7' },
-  { id: 'cursor-grok-4.5-high-fast', displayName: 'Grok 4.5 Fast' },
-];
+/** Catalog shown in the picker — Auto only. */
+const FALLBACK_MODELS = [{ id: 'auto', displayName: 'Auto' }];
 
 function asModelList(listed) {
   if (Array.isArray(listed)) return listed;
@@ -513,31 +499,12 @@ function mapCursorModel(m) {
     id,
     displayName: String(m?.displayName || m?.name || id).trim(),
     description: typeof m?.description === 'string' ? m.description : undefined,
-    variants: Array.isArray(m?.variants)
-      ? m.variants.map((v) => ({
-          displayName: String(v?.displayName || '').trim(),
-          isDefault: Boolean(v?.isDefault),
-          params: Array.isArray(v?.params) ? v.params : [],
-        }))
-      : undefined,
   };
 }
 
-/** Live Cursor list wins on overlap; fallback fills gaps so the picker stays full. */
-function mergeModelCatalog(live) {
-  const byId = new Map();
-  for (const m of FALLBACK_MODELS) byId.set(m.id, { ...m });
-  for (const m of live) {
-    if (!m?.id) continue;
-    const prev = byId.get(m.id);
-    byId.set(m.id, {
-      id: m.id,
-      displayName: m.displayName || prev?.displayName || m.id,
-      description: m.description || prev?.description,
-      variants: m.variants?.length ? m.variants : prev?.variants,
-    });
-  }
-  return [...byId.values()];
+/** Always Auto — ignore live catalog expansion while operator pays. */
+function mergeModelCatalog(_live) {
+  return [...FALLBACK_MODELS];
 }
 
 export default async function handler(req, res) {
@@ -622,28 +589,7 @@ export default async function handler(req, res) {
         if (!access.ok) {
           return json(res, 401, { error: access.reason, models: FALLBACK_MODELS });
         }
-        const { key: apiKey } = resolveCursorApiKey();
-        if (!apiKey) {
-          return json(res, 200, { models: FALLBACK_MODELS, source: 'fallback' });
-        }
-        try {
-          const { Cursor } = await import('@cursor/sdk');
-          const listed = await Cursor.models.list({ apiKey });
-          const live = asModelList(listed).map(mapCursorModel).filter(Boolean);
-          const models = mergeModelCatalog(live);
-          return json(res, 200, {
-            models,
-            source: live.length ? 'cursor+catalog' : 'fallback',
-            liveCount: live.length,
-          });
-        } catch (err) {
-          console.warn('[lattice-chat] models.list', err);
-          return json(res, 200, {
-            models: FALLBACK_MODELS,
-            source: 'fallback',
-            detail: err instanceof Error ? err.message : String(err),
-          });
-        }
+        return json(res, 200, { models: FALLBACK_MODELS, source: 'auto-only' });
       }
 
       const access = checkLatticeEmailAccess(qEmail);

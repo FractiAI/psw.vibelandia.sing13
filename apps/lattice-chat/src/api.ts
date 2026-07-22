@@ -1,6 +1,7 @@
 import { isRememberedEmailFresh } from '@/access';
+import { estimateTokenCompare } from '@/components/TokenCompare';
 import { useLatticeStore } from '@/store';
-import type { AgentMode, TranscriptItem } from '@/types';
+import type { AgentMode, TokenCompare, TranscriptItem } from '@/types';
 
 type LatticeResponse = {
   reply?: string;
@@ -13,6 +14,8 @@ type LatticeResponse = {
   model?: string;
   mode?: AgentMode;
   recovered?: boolean;
+  tokens?: TokenCompare;
+  execution?: { tokens?: TokenCompare };
 };
 
 function sleep(ms: number): Promise<void> {
@@ -59,6 +62,11 @@ function applyAssistantReply(
   data: LatticeResponse,
   fallbackModel: string,
   fallbackMode: AgentMode,
+  estimateArgs?: {
+    message: string;
+    history?: { role?: string; content?: string }[];
+    resumed?: boolean;
+  },
 ): void {
   const store = useLatticeStore.getState();
   const reply = (data.reply || '').trim();
@@ -72,12 +80,25 @@ function applyAssistantReply(
       .trim() ||
     '(No reply text returned.)';
 
+  const tokens =
+    data.tokens ||
+    data.execution?.tokens ||
+    (estimateArgs
+      ? estimateTokenCompare({
+          message: estimateArgs.message,
+          history: estimateArgs.history,
+          reply: content,
+          resumed: estimateArgs.resumed,
+        })
+      : undefined);
+
   store.appendMessage(threadId, {
     role: 'assistant',
     content,
     transcript: transcript.length ? transcript : [{ type: 'assistant', text: content }],
     model: data.model || fallbackModel,
     mode: data.mode || fallbackMode,
+    tokens,
   });
   if (data.agentId) store.setAgentId(threadId, data.agentId);
 }
@@ -210,7 +231,11 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     }
 
     store.setError(null);
-    applyAssistantReply(threadId, data, store.modelId, store.agentMode);
+    applyAssistantReply(threadId, data, store.modelId, store.agentMode, {
+      message: trimmed,
+      history,
+      resumed: Boolean(thread.agentId),
+    });
   } catch (err) {
     // Tab blur / OS suspend often kills the fetch while the cloud agent keeps running.
     const agentId =
@@ -236,7 +261,11 @@ export async function sendLatticeMessage(text: string): Promise<void> {
           );
           if (res.ok) {
             store.setError(null);
-            applyAssistantReply(threadId, data, store.modelId, store.agentMode);
+            applyAssistantReply(threadId, data, store.modelId, store.agentMode, {
+              message: trimmed,
+              history,
+              resumed: true,
+            });
             return;
           }
           if (data.code === 'nothing_to_recover' || isBusyPayload(data, res.status)) {

@@ -166,7 +166,10 @@ function buildLatticeExecution(args) {
       latticeTokens,
       savedTokens,
       savedPercent,
-      method: 'Estimate chars÷4 · Lattice vs naive corpus dump',
+      standardLabel: 'Standard agentic (est.)',
+      latticeLabel: 'Lattice (est.)',
+      method:
+        'Estimate chars÷4 · standard ≈ full corpus dump + history + reply; Lattice ≈ RAG pointers + nest overhead + reply',
       assumptions: ['Heuristic meter — not vendor billing'],
     },
     organization: ['Edge history', 'RAG pointers', 'Nested scale bands'],
@@ -668,6 +671,19 @@ export default async function handler(req, res) {
         const recovered = await recoverCloudRun(Agent, agent.agentId ?? agentId, apiKey);
         if (recovered && (recovered.text?.trim() || recovered.transcript?.length)) {
           const reply = recovered.text || extractAssistantText(recovered.result) || '';
+          const execution = buildLatticeExecution({
+            message: message || '(recovered run)',
+            history: body.history,
+            mode: 'cloud',
+            resumed: true,
+            reply,
+            runId: recovered.runId,
+            agentId: agent.agentId ?? agentId,
+            usageTokens:
+              typeof recovered.result?.usage?.totalTokens === 'number'
+                ? recovered.result.usage.totalTokens
+                : null,
+          });
           completedOk = true;
           return json(res, 200, {
             reply,
@@ -678,6 +694,8 @@ export default async function handler(req, res) {
             agentId: agent.agentId ?? agentId,
             threadId: body.threadId ?? null,
             recovered: true,
+            tokens: execution.tokens,
+            execution,
             access: {
               privilege: access.privilege,
               email: access.email,
@@ -774,6 +792,7 @@ export default async function handler(req, res) {
         agentId: agent.agentId ?? agentId,
         threadId: body.threadId ?? null,
         recovered: Boolean(recovered || recoverOnly),
+        tokens: execution.tokens,
         execution,
         access: {
           privilege: access.privilege,

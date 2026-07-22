@@ -121,6 +121,7 @@ export const useLatticeStore = create<LatticeState>()(
           transcript: message.transcript,
           model: message.model,
           mode: message.mode,
+          tokens: message.tokens,
         };
         set((s) => ({
           threads: s.threads.map((t) => {

@@ -670,6 +670,38 @@ body {
   margin-left: 1.1rem;
 }
 
+.token-compare {
+  margin: 0.55rem 0 0;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.45rem;
+  align-items: baseline;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--brand-muted);
+  opacity: 0.9;
+}
+
+.token-compare-label {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  color: rgba(168, 162, 158, 0.85);
+  font-weight: 500;
+  min-width: 3.4rem;
+}
+
+.token-compare-text {
+  color: rgba(168, 162, 158, 0.95);
+}
+
+.token-compare-dot {
+  margin: 0 0.25rem;
+  opacity: 0.5;
+}
+
 .chat-error {
   margin: 0 1.5rem 0.35rem;
   color: #f0a0a0;

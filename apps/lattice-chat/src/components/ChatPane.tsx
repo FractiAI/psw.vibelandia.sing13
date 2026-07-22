@@ -4,6 +4,7 @@ import { loadLatticeModels, sendLatticeMessage } from '@/api';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { ComposerOptions } from '@/components/ComposerOptions';
+import { TokenCompareFooter } from '@/components/TokenCompare';
 import { useLatticeStore } from '@/store';
 
 export function ChatPane() {
@@ -109,6 +110,9 @@ export function ChatPane() {
               ) : (
                 <div className="bubble-body">{m.content}</div>
               )}
+              {m.role === 'assistant' && m.tokens ? (
+                <TokenCompareFooter tokens={m.tokens} />
+              ) : null}
             </article>
           ))
         )}

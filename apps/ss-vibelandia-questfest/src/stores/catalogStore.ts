@@ -1209,13 +1209,19 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     const localTracks = get().tracks;
     try {
       let applied: ReturnType<typeof applyServerCatalog> | null = null;
+      const localCount = Object.keys(localTracks).length;
       for (let attempt = 0; attempt < 3; attempt++) {
         try {
           const live = await fetchLiveCatalogForSync();
           const liveCount = Object.keys(live.tracks).length;
-          if (liveCount === 0 && attempt < 2) {
-            await new Promise((r) => window.setTimeout(r, 700 * (attempt + 1)));
-            continue;
+          // Never replace a populated library with an empty sync (API timeout / empty static).
+          if (liveCount === 0) {
+            if (localCount > 0) return;
+            if (attempt < 2) {
+              await new Promise((r) => window.setTimeout(r, 700 * (attempt + 1)));
+              continue;
+            }
+            return;
           }
           const tombstones = getDeletedTrackTombstones();
           reconcileDeletedTrackTombstones(new Set(Object.keys(live.tracks)));

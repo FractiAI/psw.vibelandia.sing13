@@ -25,6 +25,7 @@ export function JukeboxListenPage() {
   const deviceHydrated = useCatalogStore((s) => s.deviceHydrated);
   const playlists = useCatalogStore((s) => s.playlists);
   const trackCount = useCatalogStore((s) => Object.keys(s.tracks).length);
+  const catalogSyncing = useCatalogStore((s) => s.catalogSyncing);
   const getTrack = useCatalogStore((s) => s.getTrack);
   const [searchParams, setSearchParams] = useSearchParams();
   const sharedTrackHandled = useRef(false);
@@ -108,10 +109,16 @@ export function JukeboxListenPage() {
         <div className="jb-stage__tracks" aria-label="Selected playlist tracks">
           {trackCount === 0 && !editingPlaylistId ? (
             <div className="jb-empty jb-empty--stage">
-              <p>No tracks on the Sonic Ship yet.</p>
-              <Link to="/dj" className="jb-link-btn">
-                Upload on DJ tab — feed the hydrogen Y line
-              </Link>
+              {!deviceHydrated || catalogSyncing ? (
+                <p>Loading Sonic Ship catalog…</p>
+              ) : (
+                <>
+                  <p>No tracks on the Sonic Ship yet.</p>
+                  <Link to="/dj" className="jb-link-btn">
+                    Upload on DJ tab — feed the hydrogen Y line
+                  </Link>
+                </>
+              )}
             </div>
           ) : editingPlaylistId && playlists.some((p) => p.id === editingPlaylistId) ? (
             <PlaylistEditor

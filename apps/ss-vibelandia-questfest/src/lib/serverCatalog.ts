@@ -14,8 +14,11 @@ import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes'
 
 const STATIC_CATALOG = '/media/catalog/catalog.json';
 const FETCH_MS = 2_500;
-/** After uploads — allow slower catalog manifest on mobile networks. */
-const SYNC_FETCH_MS = 15_000;
+/**
+ * Live `/api/catalog` is often 300KB+ and can take 15–30s on cold/mobile.
+ * Bundled static catalog is intentionally empty (server-hosted tracks).
+ */
+const SYNC_FETCH_MS = 60_000;
 const UPLOAD_API = '/api/catalog-upload';
 const TRACK_API = '/api/catalog-track';
 const PLAYLIST_API = '/api/catalog-playlist';
@@ -96,11 +99,15 @@ async function fetchLiveCatalogWithTimeout(timeoutMs: number): Promise<CatalogSn
   const pipe = catalogPipeOrigin();
   const apiUrl = pipe ? `${pipe}/api/catalog` : '/api/catalog';
   const [staticRaw, apiRaw] = await Promise.all([
-    fetchJsonWithTimeout(STATIC_CATALOG, timeoutMs),
+    fetchJsonWithTimeout(STATIC_CATALOG, Math.min(timeoutMs, 8_000)),
     fetchJsonWithTimeout(apiUrl, timeoutMs),
   ]);
   let catalog = staticRaw ? normalizeServerCatalog(staticRaw) : buildEmptyCatalog();
   if (apiRaw) catalog = mergeCatalogSnapshots(catalog, normalizeServerCatalog(apiRaw));
+  // Static manifest is empty by design — a failed/timed-out API must not look like "0 tracks".
+  if (!apiRaw && Object.keys(catalog.tracks).length === 0) {
+    throw new Error('catalog_api_unavailable');
+  }
   return catalog;
 }
 

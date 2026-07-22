@@ -1,5 +1,12 @@
 {
   "creatorEmail": "valetpru@gmail.com",
-  "grants": [],
+  "grants": [
+    {
+      "email": "danielarifriedman@gmail.com",
+      "grantedAt": "2026-07-22T21:53:33.467Z",
+      "expiresAt": "2026-08-21T21:53:33.467Z",
+      "durationDays": 30
+    }
+  ],
   "notes": "Old-school Lattice access: no passwords. Creator is permanent. Guests get ~30 days from grantedAt. Tell the team an email to add a grant."
 }

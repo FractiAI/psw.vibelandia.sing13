@@ -314,7 +314,12 @@ export default async function handler(req, res) {
       return json(res, 400, { error: 'message is required' });
     }
 
-    const repoUrl = (process.env.LATTICE_REPO_URL || DEFAULT_REPO).trim();
+    // Guard common typo (cing13) and empty overrides from Vercel env.
+    let repoUrl = (process.env.LATTICE_REPO_URL || DEFAULT_REPO).trim() || DEFAULT_REPO;
+    if (/psw\.vibelandia\.cing13/i.test(repoUrl)) {
+      console.warn('[lattice-chat] correcting LATTICE_REPO_URL typo cing13 → sing13');
+      repoUrl = repoUrl.replace(/psw\.vibelandia\.cing13/gi, 'psw.vibelandia.sing13');
+    }
     const modelId = (process.env.LATTICE_MODEL_ID || 'composer-2.5').trim();
     const startingRef = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
     let agentId =
@@ -407,10 +412,16 @@ export default async function handler(req, res) {
     } catch (err) {
       console.error('[lattice-chat]', err);
       const msg = err instanceof Error ? err.message : 'Lattice agent failed';
-      const hint = /default branch|verify existence of branch|repository/i.test(msg)
-        ? ' If this persists: confirm Cursor GitHub App can access FractiAI/psw.vibelandia.sing13, and that branch main exists.'
+      const branchFail = /default branch|verify existence of branch|repository/i.test(msg);
+      const hint = branchFail
+        ? ` Lattice uses ${repoUrl} @ ${startingRef}. Branch main exists on GitHub; this usually means the Cursor account for CURSOR_API_KEY lacks GitHub App access to FractiAI/psw.vibelandia.sing13 (cursor.com → Integrations → GitHub → grant the FractiAI org/repo), or a transient Cursor/GitHub token glitch — retry after reconnecting GitHub.`
         : '';
-      return json(res, 500, { error: msg + hint, code: 'agent_error' });
+      return json(res, 500, {
+        error: msg + hint,
+        code: 'agent_error',
+        repoUrl: branchFail ? repoUrl : undefined,
+        startingRef: branchFail ? startingRef : undefined,
+      });
     } finally {
       await disposeAgent(agent);
     }

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Lattice V1.618 · Nested agents as simple as chat · FractiAI</title>
+  <meta
+    name="description"
+    content="Lattice V1.618 by FractiAI — nested agents as simple as chat. Huge token savings vs fat-context agentic mode. $200/mo plus your own Cursor key. Creator valetpru@gmail.com already live."
+  />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --text: #f5f0e8;
+      --soft: #d6cfc4;
+      --muted: #a8a29e;
+      --bg: #0a0806;
+      --walnut: #1a120c;
+      --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+      --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 90% 60% at 15% -5%, rgba(212, 175, 55, 0.16), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 100% 80%, rgba(90, 55, 15, 0.28), transparent 50%),
+        linear-gradient(165deg, #120e0a 0%, var(--bg) 48%, #050403 100%);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--champagne); }
+    a:hover { color: var(--gold-hi); }
+
+    .wrap {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: clamp(1.5rem, 4vw, 2.75rem) 1.25rem 4rem;
+    }
+
+    /* Hero — one composition */
+    .hero {
+      min-height: min(88vh, 42rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 2rem;
+      animation: rise 700ms ease both;
+    }
+    .brand {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 9vw, 4.6rem);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: 0.01em;
+      color: var(--gold-hi);
+    }
+    .by {
+      margin: 0.45rem 0 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .lede {
+      margin: 1.35rem 0 0;
+      max-width: 34rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3.2vw, 1.65rem);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--champagne);
+      line-height: 1.35;
+    }
+    .support {
+      margin: 0.85rem 0 0;
+      max-width: 32rem;
+      font-size: 1rem;
+      color: var(--soft);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.35rem;
+      font: 700 0.82rem/1 var(--font-body);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      transition: filter 160ms ease, background 160ms ease;
+    }
+    .btn-primary {
+      background: linear-gradient(180deg, #c9a227, #8a6a14);
+      color: #120e0a;
+    }
+    .btn-primary:hover {
+      filter: brightness(1.06);
+      color: #120e0a;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--champagne);
+    }
+    .btn-ghost:hover {
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--gold-hi);
+    }
+
+    section {
+      padding: 2.5rem 0 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.14);
+      margin-top: 2.25rem;
+      animation: rise 800ms ease both;
+    }
+    section h2 {
+      margin: 0 0 0.65rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.55rem, 3.5vw, 2rem);
+      font-weight: 600;
+      color: var(--gold-hi);
+      line-height: 1.15;
+    }
+    section > p {
+      margin: 0 0 1rem;
+      color: var(--soft);
+      max-width: 38rem;
+    }
+
+    .points {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .points li {
+      padding: 0.75rem 0 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+    }
+    .points strong {
+      display: block;
+      color: var(--champagne);
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    .points span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .price-block {
+      margin-top: 1rem;
+      padding: 1.15rem 1.2rem;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      background: rgba(212, 175, 55, 0.07);
+    }
+    .price-amt {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      color: var(--gold-hi);
+      line-height: 1;
+    }
+    .price-amt small {
+      font-size: 0.45em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-left: 0.35rem;
+    }
+    .price-note {
+      margin: 0.65rem 0 0;
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+    .price-note em {
+      font-style: normal;
+      color: var(--champagne);
+    }
+
+    .cmp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1.1rem 0;
+    }
+    @media (max-width: 640px) {
+      .cmp-grid { grid-template-columns: 1fr; }
+    }
+    .cmp-col {
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(8, 6, 4, 0.55);
+    }
+    .cmp-col h3 {
+      margin: 0 0 0.4rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .cmp-col.win {
+      border-color: rgba(212, 175, 55, 0.55);
+      background: rgba(212, 175, 55, 0.1);
+    }
+    .big-num {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--gold-hi);
+      line-height: 1.05;
+    }
+    .cmp-col p {
+      margin: 0.4rem 0 0;
+      font-size: 0.85rem;
+      color: var(--soft);
+    }
+    .saved-banner {
+      margin: 0.5rem 0 1rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 3vw, 1.55rem);
+      color: var(--champagne);
+      line-height: 1.25;
+    }
+    .honesty {
+      margin: 1rem 0 0;
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    table.agents {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 0.75rem;
+    }
+    table.agents th,
+    table.agents td {
+      text-align: left;
+      padding: 0.45rem 0.35rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+      vertical-align: top;
+    }
+    table.agents th {
+      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    table.agents td { color: var(--soft); }
+    table.agents td:first-child { color: var(--gold-hi); font-weight: 600; }
+
+    .footer {
+      margin-top: 2.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.14);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .footer a { color: var(--champagne); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1 class="brand">Lattice V1.618</h1>
+      <p class="by">by FractiAI</p>
+      <p class="lede">
+        Nested agents as simple as using chat. We take care of the rest —
+        best practices, peer-firewall nesting, and huge token savings.
+      </p>
+      <p class="support">
+        A new level of control and capability versus today’s fat-context agentic tools.
+        You bring your Cursor key and plan. We run the lattice.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/lattice-chat">Open Lattice chat</a>
+        <a class="btn btn-ghost" href="mailto:valetpru@gmail.com?subject=Lattice%20V1.618%20—%20access%20%26%20pricing">Email for access</a>
+      </div>
+    </header>
+
+    <section id="what">
+      <h2>What it is</h2>
+      <p>
+        Lattice V1.618 is a Nested Agent Lattice chat surface over your corpus.
+        You talk in plain chat. Under the hood, a Φ-Parent metabolizes the ask,
+        crystallizes scale-banded children (seed · edge · pipes), grounds them with RAG
+        pointers instead of dumping the library, then squeezes results back into one answer.
+      </p>
+      <ul class="points">
+        <li>
+          <strong>Chat-simple nesting</strong>
+          <span>No agent ops cockpit required. Nested agents feel like a conversation.</span>
+        </li>
+        <li>
+          <strong>Token discipline built in</strong>
+          <span>16-turn windows, catalog pointers, peer-firewall briefs — not mega-context pastes.</span>
+        </li>
+        <li>
+          <strong>Visible engine</strong>
+          <span>Self-talk, active-agent board, and a token-savings ledger on every turn.</span>
+        </li>
+        <li>
+          <strong>Edge-first UI</strong>
+          <span>Histories stay on your device. Old-school email access — no passwords.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="why">
+      <h2>Why use it</h2>
+      <p>
+        Today’s default agentic mode often wins by stuffing more files into context.
+        That burns tokens, blurs control, and makes nesting feel like a research project.
+        Lattice flips the pattern: nested agents are the default path, and the engine
+        is opinionated about best practice so you don’t have to babysit it.
+      </p>
+      <ul class="points">
+        <li>
+          <strong>Saves big on tokens</strong>
+          <span>Refuse corpus dumps. Load pointers and scale bands. Resume threads instead of re-preambling the world.</span>
+        </li>
+        <li>
+          <strong>A new level of control</strong>
+          <span>See which agents ran, their roles, progress, and how the MCA cycle closed.</span>
+        </li>
+        <li>
+          <strong>Capability without complexity</strong>
+          <span>Multi-band work (docs + UI + API) without teaching every user to design agent graphs.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="primer">
+      <h2>Primer</h2>
+      <ul class="points">
+        <li>
+          <strong>1 · Email once</strong>
+          <span>Enter your email in chat; we remember it on that device. Creator <em style="color:var(--champagne);font-style:normal">valetpru@gmail.com</em> is permanent. Guests: one-month grants.</span>
+        </li>
+        <li>
+          <strong>2 · Bring your Cursor key</strong>
+          <span>Subscribers use their own Cursor API key / plan. FractiAI does not bill your model usage — your Cursor pool does. Creator’s key is already live for creator sessions.</span>
+        </li>
+        <li>
+          <strong>3 · Chat the work</strong>
+          <span>Ask complex, multi-band questions. Lattice nests, RAG-squeezes, and returns the answer with the engine ledger.</span>
+        </li>
+        <li>
+          <strong>4 · Read the board</strong>
+          <span>Active agents, self-talk, and estimated tokens saved vs a naive dump — every reply.</span>
+        </li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/lattice-chat">Go to Lattice chat</a>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2>Pricing</h2>
+      <div class="price-block">
+        <p class="price-amt">$200<small>/ month</small></p>
+        <p class="price-note">
+          Lattice service fee · <em>plus your own Cursor key and plan</em> for model/agent usage.
+          Email <a href="mailto:valetpru@gmail.com?subject=Lattice%20V1.618%20—%20access%20%26%20pricing">valetpru@gmail.com</a>
+          for access and pricing. Creator privilege for <em>valetpru@gmail.com</em> is already live.
+        </p>
+      </div>
+    </section>
+
+    <section id="comparison">
+      <h2>Comparison test</h2>
+      <p>
+        Same complex multi-band ask — ground in docs/protocols, map edge UI, map API pipes,
+        propose a nested plan, estimate savings — run once as <strong>standard fat-context agentic</strong>
+        and once as <strong>Lattice V1.618</strong>.
+      </p>
+      <p class="saved-banner" id="cmp-headline">
+        Lattice cut estimated context load by roughly an order of magnitude on this complex multi-band ask.
+      </p>
+      <div class="cmp-grid">
+        <div class="cmp-col">
+          <h3>Standard agentic</h3>
+          <p class="big-num" id="std-tok">~305,918</p>
+          <p>Estimated context tokens · dump docs/protocols/code slices and re-stuff across map → plan → synthesize (×2.4).</p>
+        </div>
+        <div class="cmp-col win">
+          <h3>Lattice V1.618</h3>
+          <p class="big-num" id="lat-tok">~3,156</p>
+          <p>Estimated context tokens · RAG pointers + nested scale bands + windowed history.</p>
+        </div>
+      </div>
+      <p>
+        <strong id="saved-line" style="color: var(--gold-hi)">≈ 302,762 tokens saved (−99%)</strong>
+        on this bench prompt.
+      </p>
+      <table class="agents" aria-label="Lattice agents in comparison">
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Role</th>
+            <th>Scale</th>
+          </tr>
+        </thead>
+        <tbody id="agent-rows">
+          <tr><td>Φ-Parent</td><td>Meta-optimizer · MCA outer loop</td><td>Φ_EGS / outer</td></tr>
+          <tr><td>Seed·RAG</td><td>docs/ + protocols/ + research/ pointers</td><td>seed / corpus</td></tr>
+          <tr><td>Edge UI</td><td>apps/ + interfaces/</td><td>edge / UI</td></tr>
+          <tr><td>Pipe Runtime</td><td>api/ + lib/ + SDK pipe</td><td>center / pipes</td></tr>
+          <tr><td>Squeeze</td><td>Fold nested results · scale-to-zero</td><td>MCA / squeeze</td></tr>
+        </tbody>
+      </table>
+      <p class="honesty" id="honesty">
+        Honesty: structural token estimate (characters ÷ 4), same prompt both modes.
+        Not vendor-billed usage — illustrates context load. Receipt:
+        <a href="/data/lattice-vs-standard-comparison.json">lattice-vs-standard-comparison.json</a>.
+        Re-run: <code>npm run compare:lattice</code> (or <code>node scripts/lattice-vs-standard-comparison.mjs</code>).
+      </p>
+    </section>
+
+    <p class="footer">
+      Lattice V1.618 · FractiAI · Nested Agent Lattice ·
+      <a href="/lattice-chat">Chat</a> ·
+      <a href="mailto:valetpru@gmail.com">valetpru@gmail.com</a>
+      → ∞¹³
+    </p>
+  </div>
+
+  <script>
+    (async function hydrateComparison() {
+      try {
+        const res = await fetch('/data/lattice-vs-standard-comparison.json', { cache: 'no-store' });
+        if (!res.ok) return;
+        const data = await res.json();
+        const c = data.comparison || {};
+        const el = (id) => document.getElementById(id);
+        if (c.headline && el('cmp-headline')) el('cmp-headline').textContent = c.headline;
+        if (el('std-tok')) el('std-tok').textContent = '~' + Number(c.standardTokens).toLocaleString();
+        if (el('lat-tok')) el('lat-tok').textContent = '~' + Number(c.latticeTokens).toLocaleString();
+        if (el('saved-line')) {
+          el('saved-line').textContent =
+            '≈ ' + Number(c.tokensSaved).toLocaleString() +
+            ' tokens saved (−' + c.percentSaved + '%) on this bench prompt.';
+        }
+        const agents = data.modes?.lattice?.agents;
+        if (Array.isArray(agents) && el('agent-rows')) {
+          el('agent-rows').innerHTML = agents.map(function (a) {
+            return '<tr><td>' + a.name + '</td><td>' + a.role + '</td><td>' + a.scale + '</td></tr>';
+          }).join('');
+        }
+        if (data.honesty && el('honesty')) {
+          el('honesty').innerHTML =
+            'Honesty: ' + data.honesty +
+            ' Receipt: <a href="/data/lattice-vs-standard-comparison.json">lattice-vs-standard-comparison.json</a>.' +
+            ' Re-run: <code>node scripts/lattice-vs-standard-comparison.mjs</code>.';
+        }
+      } catch (_) { /* keep static fallbacks */ }
+    })();
+  </script>
+</body>
+</html>

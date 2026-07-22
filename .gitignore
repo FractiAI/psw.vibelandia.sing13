@@ -7,8 +7,10 @@ node_modules.bak*/
 **/__pycache__/
 *.pyc
 
-# Environment
+# Environment — never commit real secrets / keys / passwords
 .env
+.env.*
+!.env.example
 .env.local
 .env.*.local
 

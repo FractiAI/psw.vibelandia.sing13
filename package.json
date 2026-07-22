@@ -4,11 +4,13 @@
   "description": "SING 13 edge — major singularity upgrade from SING 9. NSPFRNP catalog + SS Vibelandia QUESTFEST 24X365 nest. 13-channel fractal pathfinding spine. Lite edges; no Supabase.",
   "version": "0.1.0",
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=22.13.0"
   },
   "scripts": {
     "build:questfest-bridge": "npm --prefix apps/ss-vibelandia-questfest ci && npm --prefix apps/ss-vibelandia-questfest run build",
     "build:executive-onboard": "npm --prefix apps/executive-ai-onboard ci && npm --prefix apps/executive-ai-onboard run build",
+    "build:lattice-chat": "npm --prefix apps/lattice-chat ci && npm --prefix apps/lattice-chat run build",
+    "compare:lattice": "node scripts/lattice-vs-standard-comparison.mjs",
     "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",
     "build:erdos-catalog": "node scripts/build-erdos-catalog.mjs",
     "build:catalog": "node scripts/build-catalog-from-tracks.mjs",
@@ -31,6 +33,7 @@
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs"
   },
   "dependencies": {
+    "@cursor/sdk": "^1.0.24",
     "@vercel/blob": "^2.3.3",
     "marked": "^9.1.6",
     "ws": "^8.20.1"

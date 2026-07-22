@@ -1,0 +1,162 @@
+{
+  "id": "lattice-vs-standard-complex-work-v1",
+  "title": "Lattice V1.618 vs standard agentic mode — complex multi-band work",
+  "ranAt": "2026-07-22T17:06:53.441Z",
+  "honesty": "Structural token estimate (chars÷4). Same prompt for both modes. Not vendor-billed usage; illustrates context load. Lattice path uses RAG pointers + nested scale bands; standard path dumps large doc/protocol/code slices and re-stuffs across phases.",
+  "prompt": "Complex work (same ask for both modes):\n\nMap how SING13 Nested Agent Lattice + NSPFRNP + RAG should execute a multi-band change:\n(1) ground the ask in docs/ and protocols/,\n(2) identify edge UI touchpoints under apps/ and interfaces/,\n(3) identify pipe/API touchpoints under api/ and lib/,\n(4) propose a token-efficient nested-agent plan with peer-firewall and scale-to-zero,\n(5) estimate token savings vs dumping the corpus into one fat agent.\n\nDeliver a structured plan a chat user could follow.",
+  "modes": {
+    "standardAgentic": {
+      "label": "Standard agentic (fat context)",
+      "description": "Single (or loosely coordinated) agent loads large docs/protocols/code slices into context and re-uses that fat context across map → plan → synthesize phases.",
+      "filesSampled": 56,
+      "corpusTokensOnce": 125979,
+      "phaseMultiplier": 2.4,
+      "estimatedTokens": 305918,
+      "samples": {
+        "docs": [
+          {
+            "path": "docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md",
+            "tokens": 2068
+          },
+          {
+            "path": "docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md",
+            "tokens": 2910
+          },
+          {
+            "path": "docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md",
+            "tokens": 1183
+          },
+          {
+            "path": "docs/DIGITAL_PRU_COMPARATIVE_PRU_GATING_VIRTUALIZATION_2026-05-24.md",
+            "tokens": 5297
+          },
+          {
+            "path": "docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md",
+            "tokens": 3474
+          },
+          {
+            "path": "docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_OMNIZOAN_INFILL13_2026-05-11.md",
+            "tokens": 3121
+          }
+        ],
+        "protocols": [
+          {
+            "path": "protocols/3I_ATLAS_INSERTION_PROTOCOL_GOLDILOCKS_CAPTURE.md",
+            "tokens": 393
+          },
+          {
+            "path": "protocols/EGS_HYDROGEN_LINE_EDGE_SUN_PROTOCOL_NSPFRNP.md",
+            "tokens": 1426
+          },
+          {
+            "path": "protocols/EP_DJ_STUDIO_SYSTEM.md",
+            "tokens": 2694
+          },
+          {
+            "path": "protocols/G5_SURF_PROTOCOL_NSPFRNP.md",
+            "tokens": 1390
+          }
+        ],
+        "code": [
+          {
+            "path": "apps/executive-ai-onboard/postcss.config.js",
+            "tokens": 22
+          },
+          {
+            "path": "apps/executive-ai-onboard/src/App.tsx",
+            "tokens": 900
+          },
+          {
+            "path": "apps/executive-ai-onboard/src/components/modules/CompareModule.tsx",
+            "tokens": 936
+          },
+          {
+            "path": "apps/executive-ai-onboard/src/components/modules/CompletionModule.tsx",
+            "tokens": 1270
+          },
+          {
+            "path": "apps/executive-ai-onboard/src/components/modules/EnterpriseModule.tsx",
+            "tokens": 740
+          },
+          {
+            "path": "apps/executive-ai-onboard/src/components/modules/FractalHoloModule.tsx",
+            "tokens": 870
+          }
+        ]
+      }
+    },
+    "lattice": {
+      "label": "Lattice V1.618 (nested + RAG)",
+      "description": "Φ-Parent crystallizes seed/edge/pipes children; RAG pointers and rule shells instead of corpus dumps; 16-turn window; peer-firewall; scale-to-zero.",
+      "estimatedTokens": 3156,
+      "engine": {
+        "naiveTokens": 72687,
+        "latticeTokens": 2522,
+        "savedTokens": 70165,
+        "savedPercent": 96.5,
+        "method": "Estimate: chars÷4. Naive = unbounded history + ~72k corpus dump. Lattice = 16-turn window + RAG pointers + nest briefs.",
+        "assumptions": [
+          "~4 characters ≈ 1 token (heuristic, not vendor billing)",
+          "Naive corpus dump modeled at 72,000 tokens",
+          "Lattice RAG pointer budget 1,800 tokens",
+          "Nested briefing overhead 420 tokens",
+          "Fresh agent included preamble once",
+          "No SDK usage meter on this run — estimate only"
+        ]
+      },
+      "agents": [
+        {
+          "name": "Φ-Parent",
+          "role": "Meta-optimizer · MCA outer loop",
+          "scale": "Φ_EGS / outer",
+          "status": "complete"
+        },
+        {
+          "name": "Seed·RAG",
+          "role": "docs/ + protocols/ + research/ pointers",
+          "scale": "seed / corpus",
+          "status": "complete"
+        },
+        {
+          "name": "Edge UI",
+          "role": "apps/ + interfaces/ (experience band)",
+          "scale": "edge / UI",
+          "status": "complete"
+        },
+        {
+          "name": "Pipe Runtime",
+          "role": "api/ + lib/ + SDK pipe",
+          "scale": "center / pipes",
+          "status": "complete"
+        },
+        {
+          "name": "Squeeze",
+          "role": "Fold nested results · scale-to-zero",
+          "scale": "MCA / squeeze",
+          "status": "complete"
+        }
+      ],
+      "pointerFiles": [
+        {
+          "path": ".cursor/rules/nested-cytographic-agents.mdc",
+          "tokens": 839
+        },
+        {
+          "path": ".cursor/rules/lattice_rag.mdc",
+          "tokens": 953
+        },
+        {
+          "path": ".cursor/rules/team-nspfrnp-mode.mdc",
+          "tokens": 439
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "standardTokens": 305918,
+    "latticeTokens": 3156,
+    "tokensSaved": 302762,
+    "percentSaved": 99,
+    "headline": "Lattice cut estimated context load by roughly an order of magnitude on this complex multi-band ask."
+  }
+}

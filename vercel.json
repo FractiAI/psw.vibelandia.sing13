@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm ci && npm run build:questfest-bridge && npm run build:executive-onboard",
+  "buildCommand": "npm ci && npm run build:questfest-bridge && npm run build:executive-onboard && npm run build:lattice-chat",
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
@@ -27,6 +27,12 @@
     { "source": "/sing13-edge-onboarding/", "destination": "/interfaces/sing13-edge-onboarding.html" },
     { "source": "/executive-onboarding", "destination": "/interfaces/executive-onboarding.html" },
     { "source": "/executive-onboarding/", "destination": "/interfaces/executive-onboarding.html" },
+    { "source": "/lattice", "destination": "/interfaces/lattice-v1618.html" },
+    { "source": "/lattice/", "destination": "/interfaces/lattice-v1618.html" },
+    { "source": "/lattice-v1618", "destination": "/interfaces/lattice-v1618.html" },
+    { "source": "/lattice-v1618/", "destination": "/interfaces/lattice-v1618.html" },
+    { "source": "/lattice-chat", "destination": "/interfaces/lattice-chat/index.html" },
+    { "source": "/lattice-chat/", "destination": "/interfaces/lattice-chat/index.html" },
     { "source": "/goldilocks-deliveries", "destination": "/interfaces/goldilocks-deliveries/index.html" },
     { "source": "/goldilocks-deliveries/", "destination": "/interfaces/goldilocks-deliveries/index.html" },
     { "source": "/hire-a-goldilocks-valet-concierge", "destination": "/interfaces/goldilocks-deliveries/index.html" },
@@ -270,6 +276,11 @@
       "memory": 256,
       "maxDuration": 10,
       "includeFiles": "{lib/**}"
+    },
+    "api/lattice-chat.js": {
+      "memory": 1024,
+      "maxDuration": 300,
+      "includeFiles": "{lib/**,data/lattice-access.json}"
     }
   },
   "redirects": [
@@ -299,6 +310,30 @@
     },
     {
       "source": "/interfaces/questfest-bridge/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/interfaces/lattice-chat/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/interfaces/lattice-v1618.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/data/lattice-vs-standard-comparison.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=60, stale-while-revalidate=300" }
+      ]
+    },
+    {
+      "source": "/interfaces/lattice-chat/assets/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]

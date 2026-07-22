@@ -54,15 +54,20 @@ export function TokenCompareFooter({ tokens }: { tokens: TokenCompare }) {
   const standard = tokens.standardLabel || 'Standard agentic (est.)';
   const lattice = tokens.latticeLabel || 'Lattice (est.)';
   return (
-    <p className="token-compare" aria-label="Token estimate">
-      <span className="token-compare-label">Tokens</span>
-      <span className="token-compare-text">
-        {standard} ~{tokens.naiveTokens.toLocaleString()}
-        <span className="token-compare-dot">·</span>
-        {lattice} ~{tokens.latticeTokens.toLocaleString()}
-        <span className="token-compare-dot">·</span>
-        saved ~{tokens.savedTokens.toLocaleString()} (−{tokens.savedPercent}%)
-      </span>
-    </p>
+    <div className="token-compare" aria-label="Token estimate">
+      <p className="token-compare-row">
+        <span className="token-compare-label">Tokens</span>
+        <span className="token-compare-text">
+          {standard} ~{tokens.naiveTokens.toLocaleString()}
+          <span className="token-compare-dot">·</span>
+          {lattice} ~{tokens.latticeTokens.toLocaleString()}
+          <span className="token-compare-dot">·</span>
+          saved ~{tokens.savedTokens.toLocaleString()} (−{tokens.savedPercent}%)
+        </span>
+      </p>
+      <p className="token-compare-honesty">
+        Estimate only (not a vendor bill). Same idea as the public Lattice proof file.
+      </p>
+    </div>
   );
 }

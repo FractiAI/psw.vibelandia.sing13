@@ -11,6 +11,7 @@
     "build:executive-onboard": "npm --prefix apps/executive-ai-onboard ci && npm --prefix apps/executive-ai-onboard run build",
     "build:lattice-chat": "npm --prefix apps/lattice-chat ci && npm --prefix apps/lattice-chat run build",
     "compare:lattice": "node scripts/lattice-vs-standard-comparison.mjs",
+    "test:lattice-floors": "node scripts/assert-lattice-token-floors.mjs",
     "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",
     "build:erdos-catalog": "node scripts/build-erdos-catalog.mjs",
     "build:catalog": "node scripts/build-catalog-from-tracks.mjs",

@@ -674,14 +674,18 @@ body {
   margin: 0.55rem 0 0;
   padding-top: 0.4rem;
   border-top: 1px solid rgba(212, 175, 55, 0.12);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem 0.45rem;
-  align-items: baseline;
   font-size: 0.72rem;
   line-height: 1.4;
   color: var(--brand-muted);
   opacity: 0.9;
+}
+
+.token-compare-row {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.45rem;
+  align-items: baseline;
 }
 
 .token-compare-label {
@@ -700,6 +704,12 @@ body {
 .token-compare-dot {
   margin: 0 0.25rem;
   opacity: 0.5;
+}
+
+.token-compare-honesty {
+  margin: 0.25rem 0 0;
+  font-size: 0.62rem;
+  color: rgba(168, 162, 158, 0.75);
 }
 
 .chat-error {

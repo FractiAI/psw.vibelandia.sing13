@@ -238,15 +238,86 @@ async function disposeAgent(agent) {
   }
 }
 
-async function collectRunText(run) {
+/** Normalize SDK stream events into Cursor-chat-style transcript items. */
+function pushTranscript(items, item) {
+  if (!item) return;
+  if (item.type === 'assistant' && items.length) {
+    const last = items[items.length - 1];
+    if (last.type === 'assistant') {
+      last.text = `${last.text || ''}${item.text || ''}`;
+      return;
+    }
+  }
+  if (item.type === 'thinking' && items.length) {
+    const last = items[items.length - 1];
+    if (last.type === 'thinking' && item.durationMs == null) {
+      last.text = `${last.text || ''}${item.text || ''}`;
+      return;
+    }
+  }
+  if (item.type === 'tool_call' && item.callId) {
+    const idx = items.findIndex((x) => x.type === 'tool_call' && x.callId === item.callId);
+    if (idx >= 0) {
+      items[idx] = { ...items[idx], ...item };
+      return;
+    }
+  }
+  items.push(item);
+}
+
+function summarizeUnknown(value, max = 400) {
+  if (value == null) return undefined;
+  try {
+    const s = typeof value === 'string' ? value : JSON.stringify(value);
+    if (s.length <= max) return s;
+    return `${s.slice(0, max)}…`;
+  } catch {
+    return undefined;
+  }
+}
+
+async function collectRunTranscript(run) {
+  const transcript = [];
   let text = '';
   if (run && typeof run.supports === 'function' && run.supports('stream') && typeof run.stream === 'function') {
     try {
       for await (const event of run.stream()) {
-        if (event?.type === 'assistant' && Array.isArray(event.message?.content)) {
+        if (!event || typeof event.type !== 'string') continue;
+        if (event.type === 'assistant' && Array.isArray(event.message?.content)) {
           for (const block of event.message.content) {
-            if (block?.type === 'text' && typeof block.text === 'string') text += block.text;
+            if (block?.type === 'text' && typeof block.text === 'string') {
+              text += block.text;
+              pushTranscript(transcript, { type: 'assistant', text: block.text });
+            }
           }
+        } else if (event.type === 'thinking' && typeof event.text === 'string') {
+          pushTranscript(transcript, {
+            type: 'thinking',
+            text: event.text,
+            durationMs:
+              typeof event.thinking_duration_ms === 'number' ? event.thinking_duration_ms : undefined,
+          });
+        } else if (event.type === 'tool_call') {
+          pushTranscript(transcript, {
+            type: 'tool_call',
+            callId: String(event.call_id || ''),
+            name: String(event.name || 'tool'),
+            status: String(event.status || 'running'),
+            argsPreview: summarizeUnknown(event.args),
+            resultPreview: summarizeUnknown(event.result),
+          });
+        } else if (event.type === 'status') {
+          pushTranscript(transcript, {
+            type: 'status',
+            status: String(event.status || ''),
+            message: typeof event.message === 'string' ? event.message : undefined,
+          });
+        } else if (event.type === 'task') {
+          pushTranscript(transcript, {
+            type: 'task',
+            status: typeof event.status === 'string' ? event.status : undefined,
+            text: typeof event.text === 'string' ? event.text : undefined,
+          });
         }
       }
     } catch (err) {
@@ -255,8 +326,30 @@ async function collectRunText(run) {
   }
   const result = run && typeof run.wait === 'function' ? await run.wait() : null;
   if (!text.trim()) text = extractAssistantText(result);
-  return { text: text.trim(), result, runId: result?.id ?? run?.id };
+  if (text.trim() && !transcript.some((i) => i.type === 'assistant' && String(i.text || '').trim())) {
+    pushTranscript(transcript, { type: 'assistant', text: text.trim() });
+  }
+  return { text: text.trim(), transcript, result, runId: result?.id ?? run?.id };
 }
+
+function normalizeAgentMode(raw) {
+  const m = String(raw || '')
+    .trim()
+    .toLowerCase();
+  return m === 'plan' ? 'plan' : 'agent';
+}
+
+function normalizeModelId(raw) {
+  const id = String(raw || '')
+    .trim();
+  return id || (process.env.LATTICE_MODEL_ID || 'composer-2.5').trim() || 'composer-2.5';
+}
+
+const FALLBACK_MODELS = [
+  { id: 'composer-2.5', displayName: 'Composer 2.5' },
+  { id: 'gpt-5.2', displayName: 'GPT-5.2' },
+  { id: 'claude-4.5-sonnet', displayName: 'Claude 4.5 Sonnet' },
+];
 
 export default async function handler(req, res) {
   try {
@@ -267,16 +360,114 @@ export default async function handler(req, res) {
     }
 
     if (req.method === 'GET') {
-      const q = typeof req.query?.email === 'string' ? req.query.email : '';
-      let urlEmail = q;
-      if (!urlEmail) {
+      let url;
+      try {
+        url = new URL(req.url || '', 'http://localhost');
+      } catch {
+        url = null;
+      }
+      const qEmail =
+        (typeof req.query?.email === 'string' ? req.query.email : '') ||
+        url?.searchParams.get('email') ||
+        '';
+      const wantModels =
+        req.query?.models === '1' ||
+        req.query?.models === 'true' ||
+        url?.searchParams.get('models') === '1' ||
+        url?.searchParams.get('models') === 'true';
+      const wantRepos =
+        req.query?.repos === '1' ||
+        req.query?.repos === 'true' ||
+        url?.searchParams.get('repos') === '1' ||
+        url?.searchParams.get('repos') === 'true';
+
+      if (wantRepos) {
+        const access = checkLatticeEmailAccess(qEmail || readEmail(req, {}));
+        if (!access.ok) {
+          return json(res, 401, { error: access.reason, ok: false });
+        }
+        const apiKey = (process.env.CURSOR_API_KEY || '').trim();
+        if (!apiKey) {
+          return json(res, 503, {
+            ok: false,
+            code: 'missing_cursor_api_key',
+            error: 'CURSOR_API_KEY is not set on the server.',
+            targetRepo: DEFAULT_REPO,
+          });
+        }
+        const targetNeedle = 'fractiai/psw.vibelandia.sing13';
         try {
-          urlEmail = new URL(req.url || '', 'http://localhost').searchParams.get('email') || '';
-        } catch {
-          urlEmail = '';
+          const { Cursor } = await import('@cursor/sdk');
+          const listed = await Cursor.repositories.list({ apiKey });
+          const urls = (Array.isArray(listed) ? listed : [])
+            .map((r) => String(r?.url || '').trim())
+            .filter(Boolean);
+          const matched = urls.filter((u) => u.toLowerCase().includes(targetNeedle));
+          return json(res, 200, {
+            ok: matched.length > 0,
+            code: matched.length ? 'repo_connected' : 'repo_not_in_cursor_github',
+            targetRepo: DEFAULT_REPO,
+            matched,
+            connectedCount: urls.length,
+            // Sample only — avoid dumping full org lists to clients.
+            sample: urls.slice(0, 12),
+            note:
+              matched.length > 0
+                ? 'CURSOR_API_KEY account can see this repo via Cursor GitHub integration.'
+                : 'API key works for Cursor API, but this repo is not in Cursor.repositories.list for that key. Connect GitHub for the same Cursor account that owns the key (cursor.com → Integrations → GitHub) and grant FractiAI/psw.vibelandia.sing13. IDE workspace open ≠ cloud API GitHub access.',
+          });
+        } catch (err) {
+          console.warn('[lattice-chat] repositories.list', err);
+          return json(res, 502, {
+            ok: false,
+            code: 'repos_list_failed',
+            targetRepo: DEFAULT_REPO,
+            error: err instanceof Error ? err.message : String(err),
+          });
         }
       }
-      const access = checkLatticeEmailAccess(urlEmail);
+
+      if (wantModels) {
+        const access = checkLatticeEmailAccess(qEmail || readEmail(req, {}));
+        if (!access.ok) {
+          return json(res, 401, { error: access.reason, models: FALLBACK_MODELS });
+        }
+        const apiKey = (process.env.CURSOR_API_KEY || '').trim();
+        if (!apiKey) {
+          return json(res, 200, { models: FALLBACK_MODELS, source: 'fallback' });
+        }
+        try {
+          const { Cursor } = await import('@cursor/sdk');
+          const listed = await Cursor.models.list({ apiKey });
+          const models = (Array.isArray(listed) ? listed : [])
+            .map((m) => ({
+              id: String(m?.id || '').trim(),
+              displayName: String(m?.displayName || m?.id || '').trim(),
+              description: typeof m?.description === 'string' ? m.description : undefined,
+              variants: Array.isArray(m?.variants)
+                ? m.variants.map((v) => ({
+                    displayName: String(v?.displayName || '').trim(),
+                    isDefault: Boolean(v?.isDefault),
+                    params: Array.isArray(v?.params) ? v.params : [],
+                  }))
+                : undefined,
+            }))
+            .filter((m) => m.id);
+          return json(res, 200, {
+            models: models.length ? models : FALLBACK_MODELS,
+            source: models.length ? 'cursor' : 'fallback',
+          });
+        } catch (err) {
+          console.warn('[lattice-chat] models.list', err);
+          return json(res, 200, {
+            models: FALLBACK_MODELS,
+            source: 'fallback',
+            detail: err instanceof Error ? err.message : String(err),
+          });
+        }
+      }
+
+      const access = checkLatticeEmailAccess(qEmail);
       return json(res, access.ok ? 200 : 401, access);
     }
 
@@ -320,7 +511,8 @@ export default async function handler(req, res) {
       console.warn('[lattice-chat] correcting LATTICE_REPO_URL typo cing13 → sing13');
       repoUrl = repoUrl.replace(/psw\.vibelandia\.cing13/gi, 'psw.vibelandia.sing13');
     }
-    const modelId = (process.env.LATTICE_MODEL_ID || 'composer-2.5').trim();
+    const modelId = normalizeModelId(body.model || body.modelId);
+    const agentMode = normalizeAgentMode(body.mode || body.agentMode);
     const startingRef = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
     let agentId =
       typeof body.agentId === 'string' && body.agentId.trim() ? body.agentId.trim() : null;
@@ -349,10 +541,13 @@ export default async function handler(req, res) {
         }
       }
 
+      const modelSelection = { id: modelId };
+
       if (!agent) {
         agent = await Agent.create({
           apiKey,
-          model: { id: modelId },
+          model: modelSelection,
+          mode: agentMode,
           cloud: {
             repos: [{ url: repoUrl, startingRef }],
           },
@@ -360,23 +555,32 @@ export default async function handler(req, res) {
       }
 
       const prompt = agentId ? message : buildPrompt(message, body.history);
-      const run = await agent.send(prompt);
-      const { text, result, runId } = await collectRunText(run);
+      const run = await agent.send(prompt, {
+        model: modelSelection,
+        mode: agentMode,
+      });
+      const { text, transcript, result, runId } = await collectRunTranscript(run);
 
       if (result?.status === 'error') {
         return json(res, 502, {
           error: result?.error?.message || 'Agent run failed',
           runId,
           agentId: agent.agentId ?? agentId,
+          transcript,
+          model: modelId,
+          mode: agentMode,
         });
       }
 
       const reply = text || extractAssistantText(result);
-      if (!reply) {
+      if (!reply && !(transcript && transcript.length)) {
         return json(res, 502, {
           error: 'Agent finished without reply text',
           runId,
           agentId: agent.agentId ?? agentId,
+          transcript,
+          model: modelId,
+          mode: agentMode,
         });
       }
 
@@ -390,14 +594,17 @@ export default async function handler(req, res) {
         history: body.history,
         mode: 'cloud',
         resumed: Boolean(agentId),
-        reply,
+        reply: reply || '',
         runId,
         agentId: agent.agentId ?? agentId,
         usageTokens,
       });
 
       return json(res, 200, {
-        reply,
+        reply: reply || '',
+        transcript,
+        model: modelId,
+        mode: agentMode,
         runId,
         agentId: agent.agentId ?? agentId,
         threadId: body.threadId ?? null,

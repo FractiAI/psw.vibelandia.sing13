@@ -1,10 +1,13 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import {
-  isRememberedEmailFresh,
-  normalizeEmail,
-} from '@/access';
-import type { ChatMessage, ChatThread, LatticeAgentSlot, LatticeExecution } from '@/types';
+import { isRememberedEmailFresh, normalizeEmail } from '@/access';
+import type {
+  AgentMode,
+  ChatMessage,
+  ChatThread,
+  LatticeModelOption,
+  TranscriptItem,
+} from '@/types';
 
 const STORAGE_KEY = 'lattice-v1618-edge';
 
@@ -25,12 +28,13 @@ function emptyThread(): ChatThread {
 type LatticeState = {
   threads: ChatThread[];
   activeThreadId: string | null;
-  /** Remembered email on this device (no passwords). */
   userEmail: string;
   emailRememberedAt: string | null;
   sending: boolean;
   error: string | null;
-  liveAgents: LatticeAgentSlot[];
+  agentMode: AgentMode;
+  modelId: string;
+  models: LatticeModelOption[];
   ensureThread: () => string;
   newChat: () => void;
   selectThread: (id: string) => void;
@@ -44,8 +48,10 @@ type LatticeState = {
   clearUserEmail: () => void;
   setSending: (v: boolean) => void;
   setError: (msg: string | null) => void;
-  setLiveAgents: (agents: LatticeAgentSlot[]) => void;
   setAgentId: (threadId: string, agentId: string) => void;
+  setAgentMode: (mode: AgentMode) => void;
+  setModelId: (modelId: string) => void;
+  setModels: (models: LatticeModelOption[]) => void;
   hasRememberedEmail: () => boolean;
 };
 
@@ -58,7 +64,9 @@ export const useLatticeStore = create<LatticeState>()(
       emailRememberedAt: null,
       sending: false,
       error: null,
-      liveAgents: [],
+      agentMode: 'agent',
+      modelId: 'composer-2.5',
+      models: [{ id: 'composer-2.5', displayName: 'Composer 2.5' }],
 
       ensureThread: () => {
         const { threads, activeThreadId } = get();
@@ -110,7 +118,9 @@ export const useLatticeStore = create<LatticeState>()(
           role: message.role,
           content: message.content,
           createdAt,
-          execution: message.execution,
+          transcript: message.transcript,
+          model: message.model,
+          mode: message.mode,
         };
         set((s) => ({
           threads: s.threads.map((t) => {
@@ -134,14 +144,16 @@ export const useLatticeStore = create<LatticeState>()(
         });
       },
       clearUserEmail: () => set({ userEmail: '', emailRememberedAt: null }),
-      setSending: (v) => set({ sending: v, ...(v ? {} : { liveAgents: [] }) }),
+      setSending: (v) => set({ sending: v }),
       setError: (msg) => set({ error: msg }),
-      setLiveAgents: (agents) => set({ liveAgents: agents }),
       setAgentId: (threadId, agentId) => {
         set((s) => ({
           threads: s.threads.map((t) => (t.id === threadId ? { ...t, agentId } : t)),
         }));
       },
+      setAgentMode: (mode) => set({ agentMode: mode }),
+      setModelId: (modelId) => set({ modelId }),
+      setModels: (models) => set({ models }),
       hasRememberedEmail: () => {
         const { userEmail, emailRememberedAt } = get();
         return isRememberedEmailFresh(userEmail, emailRememberedAt);
@@ -154,9 +166,11 @@ export const useLatticeStore = create<LatticeState>()(
         activeThreadId: s.activeThreadId,
         userEmail: s.userEmail,
         emailRememberedAt: s.emailRememberedAt,
+        agentMode: s.agentMode,
+        modelId: s.modelId,
       }),
     },
   ),
 );
 
-export type { LatticeExecution };
+export type { TranscriptItem };

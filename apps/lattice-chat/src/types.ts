@@ -1,50 +1,36 @@
 export type ChatRole = 'user' | 'assistant' | 'system';
 
-export type AgentStatus = 'queued' | 'running' | 'complete' | 'idle' | 'error';
+export type AgentMode = 'agent' | 'plan';
 
-export type LatticeAgentSlot = {
+export type LatticeModelOption = {
   id: string;
-  name: string;
-  role: string;
-  scale: string;
-  status: AgentStatus;
-  progress: number;
-  note?: string;
+  displayName: string;
+  description?: string;
 };
 
-export type LatticeSelfTalkStep = {
-  id: string;
-  phase: string;
-  voice: string;
-  detail: string;
-};
-
-export type LatticeTokenSavings = {
-  naiveTokens: number;
-  latticeTokens: number;
-  savedTokens: number;
-  savedPercent: number;
-  method: string;
-  assumptions: string[];
-};
-
-export type LatticeExecution = {
-  engine: string;
-  mode: 'edge' | 'cloud';
-  cycle: string;
-  selfTalk: LatticeSelfTalkStep[];
-  agents: LatticeAgentSlot[];
-  tokens: LatticeTokenSavings;
-  organization: string[];
-  closedAt: string;
-};
+/** Cursor SDK stream items, rendered like the Cursor chat transcript. */
+export type TranscriptItem =
+  | { type: 'thinking'; text: string; durationMs?: number }
+  | {
+      type: 'tool_call';
+      callId: string;
+      name: string;
+      status: string;
+      argsPreview?: string;
+      resultPreview?: string;
+    }
+  | { type: 'assistant'; text: string }
+  | { type: 'status'; status: string; message?: string }
+  | { type: 'task'; status?: string; text?: string };
 
 export type ChatMessage = {
   id: string;
   role: ChatRole;
   content: string;
   createdAt: string;
-  execution?: LatticeExecution;
+  transcript?: TranscriptItem[];
+  model?: string;
+  mode?: AgentMode;
 };
 
 export type ChatThread = {

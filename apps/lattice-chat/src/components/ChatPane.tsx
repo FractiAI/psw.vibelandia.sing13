@@ -1,8 +1,9 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { isRememberedEmailFresh } from '@/access';
-import { sendLatticeMessage } from '@/api';
+import { loadLatticeModels, sendLatticeMessage } from '@/api';
 import { AuthPanel, SignedInBar } from '@/components/AuthPanel';
-import { AgentBoard, ExecutionReport } from '@/components/ExecutionReport';
+import { AgentTranscript } from '@/components/AgentTranscript';
+import { ComposerOptions } from '@/components/ComposerOptions';
 import { useLatticeStore } from '@/store';
 
 export function ChatPane() {
@@ -11,8 +12,12 @@ export function ChatPane() {
   const userEmail = useLatticeStore((s) => s.userEmail);
   const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
   const sending = useLatticeStore((s) => s.sending);
-  const liveAgents = useLatticeStore((s) => s.liveAgents);
   const error = useLatticeStore((s) => s.error);
+  const agentMode = useLatticeStore((s) => s.agentMode);
+  const modelId = useLatticeStore((s) => s.modelId);
+  const models = useLatticeStore((s) => s.models);
+  const setAgentMode = useLatticeStore((s) => s.setAgentMode);
+  const setModelId = useLatticeStore((s) => s.setModelId);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const [draft, setDraft] = useState('');
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -26,8 +31,12 @@ export function ChatPane() {
   }, [ensureThread]);
 
   useEffect(() => {
+    if (signedIn) void loadLatticeModels();
+  }, [signedIn, userEmail]);
+
+  useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [thread?.messages.length, sending, liveAgents, signedIn]);
+  }, [thread?.messages.length, sending, signedIn]);
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -75,8 +84,8 @@ export function ChatPane() {
           <div className="empty-state">
             <p className="empty-lead">You’re signed in — ask anything.</p>
             <p className="empty-hint">
-              Histories stay on this device. Each reply shows the Lattice engine, agent board, and
-              token-savings ledger.
+              Pick Agent or Plan and a model below — same Cursor agent options. Replies show
+              thinking, tools, and text in the chat like Cursor.
             </p>
           </div>
         ) : (
@@ -87,22 +96,24 @@ export function ChatPane() {
               data-role={m.role}
             >
               <span className="bubble-role">
-                {m.role === 'user' ? 'You' : 'Lattice'}
+                {m.role === 'user'
+                  ? 'You'
+                  : m.mode || m.model
+                    ? `Lattice · ${m.mode || 'agent'}${m.model ? ` · ${m.model}` : ''}`
+                    : 'Lattice'}
               </span>
-              <div className="bubble-body">{m.content}</div>
-              {m.role === 'assistant' && m.execution ? (
-                <ExecutionReport execution={m.execution} />
-              ) : null}
+              {m.role === 'assistant' && m.transcript?.length ? (
+                <AgentTranscript items={m.transcript} />
+              ) : (
+                <div className="bubble-body">{m.content}</div>
+              )}
             </article>
           ))
         )}
         {sending ? (
           <article className="bubble bubble-assistant thinking">
-            <span className="bubble-role">Lattice engine</span>
-            <div className="bubble-body">Metabolizing · crystallizing nested agents…</div>
-            {liveAgents.length > 0 ? (
-              <AgentBoard agents={liveAgents} title="Active agents (live)" />
-            ) : null}
+            <span className="bubble-role">Lattice</span>
+            <div className="cx-block cx-status">Working…</div>
           </article>
         ) : null}
         <div ref={bottomRef} />
@@ -111,6 +122,14 @@ export function ChatPane() {
       {error ? <p className="chat-error" role="alert">{error}</p> : null}
 
       <form className="composer" onSubmit={onSubmit}>
+        <ComposerOptions
+          mode={agentMode}
+          modelId={modelId}
+          models={models}
+          disabled={sending || !signedIn}
+          onModeChange={setAgentMode}
+          onModelChange={setModelId}
+        />
         <label className="sr-only" htmlFor="lattice-composer">
           Message
         </label>

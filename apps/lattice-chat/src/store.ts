@@ -104,6 +104,31 @@ export const useLatticeStore = create<LatticeState>()(
       },
 
       newChat: () => {
+        const { threads, activeThreadId } = get();
+        const active = threads.find((t) => t.id === activeThreadId);
+        // Cursor-like: reuse an empty draft instead of stacking blanks.
+        if (active && active.messages.length === 0) {
+          set({
+            error: null,
+            sendPhase: 'idle',
+            statusHint: null,
+            pending: null,
+            sending: false,
+          });
+          return;
+        }
+        const empty = threads.find((t) => t.messages.length === 0);
+        if (empty) {
+          set({
+            activeThreadId: empty.id,
+            error: null,
+            sendPhase: 'idle',
+            statusHint: null,
+            pending: null,
+            sending: false,
+          });
+          return;
+        }
         const t = emptyThread();
         set((s) => ({
           threads: [t, ...s.threads],

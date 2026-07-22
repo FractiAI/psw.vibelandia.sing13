@@ -15,7 +15,13 @@ import { ComposerOptions } from '@/components/ComposerOptions';
 import { TokenCompareFooter } from '@/components/TokenCompare';
 import { useLatticeStore } from '@/store';
 
-export function ChatPane() {
+export function ChatPane({
+  onOpenHistory,
+  onNewChat,
+}: {
+  onOpenHistory?: () => void;
+  onNewChat?: () => void;
+} = {}) {
   const threads = useLatticeStore((s) => s.threads);
   const activeThreadId = useLatticeStore((s) => s.activeThreadId);
   const userEmail = useLatticeStore((s) => s.userEmail);
@@ -149,10 +155,29 @@ export function ChatPane() {
     <main className="chat-pane">
       <header className="chat-header">
         <div className="chat-header-row">
-          <h1 className="chat-title">
-            <span className="chat-wordmark">Lattice V1.618</span>
-            <span className="chat-by">by FractiAI</span>
-          </h1>
+          <div className="chat-header-lead">
+            <button
+              type="button"
+              className="header-rail-btn"
+              aria-label="Open past chats"
+              onClick={onOpenHistory}
+            >
+              ☰
+            </button>
+            <h1 className="chat-title">
+              <span className="chat-wordmark">Lattice V1.618</span>
+              <span className="chat-by">by FractiAI</span>
+            </h1>
+            <button
+              type="button"
+              className="header-new-chat"
+              aria-label="New chat"
+              disabled={!signedIn}
+              onClick={() => onNewChat?.()}
+            >
+              + New chat
+            </button>
+          </div>
           {signedIn ? <SignedInBar /> : null}
         </div>
         <p className="chat-sub">

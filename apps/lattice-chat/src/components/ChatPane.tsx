@@ -64,10 +64,10 @@ export function ChatPane() {
       <div className="message-scroll" role="log" aria-live="polite">
         {!signedIn ? (
           <div className="auth-stage">
-            <p className="empty-lead">Sign in or sign up to use Lattice</p>
+            <p className="empty-lead">Sign in to use Lattice</p>
             <p className="empty-hint">
-              Two steps only: <strong>Sign in</strong> if you already have access, or{' '}
-              <strong>Sign up</strong> to request access ($200/mo + your Cursor key). No passwords.
+              If you already have access, enter your email / userid below. Request access only if
+              you still need a grant.
             </p>
             <AuthPanel />
           </div>

@@ -262,6 +262,29 @@ body {
   padding: 0;
 }
 
+.auth-request-line {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: var(--brand-muted);
+  line-height: 1.4;
+}
+
+.auth-request-link {
+  color: var(--brand-gold-hi);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.auth-request-link:hover {
+  color: var(--brand-champagne);
+}
+
+.auth-request-hint {
+  color: var(--brand-muted);
+  font-size: 0.78rem;
+}
+
 .auth-flash {
   margin: 0.75rem 0 0;
   padding: 0.55rem 0.65rem;

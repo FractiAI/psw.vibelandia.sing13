@@ -46,8 +46,8 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       content: [
         'Please sign in first.',
         '',
-        'Use Sign in (if you already have access) or Sign up (to request access) in the main panel.',
-        'No passwords — just your email, remembered on this device.',
+        'Enter your email / userid in the main panel (remembered 30 days on this device).',
+        'Only use Request access if you do not have a grant yet.',
       ].join('\n'),
       execution,
     });
@@ -85,10 +85,21 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     if (!res.ok) {
       if (res.status === 401 || res.status === 403) {
         throw new Error(
-          'Access not granted for this email yet. Use Sign up to request access, then Sign in after you’re approved.',
+          data.error ||
+            'This email is not on the access list yet. Use Request access (opens email), then Sign in after you’re granted.',
         );
       }
-      throw new Error(data.error || `Request failed (${res.status})`);
+      if (res.status === 503) {
+        throw new Error(
+          data.error ||
+            'Lattice cloud is not configured yet (server Cursor key missing).',
+        );
+      }
+      throw new Error(
+        data.error ||
+          data.detail ||
+          `Request failed (${res.status}${res.statusText ? ` ${res.statusText}` : ''})`,
+      );
     }
 
     const reply = (data.reply || '').trim() || '(No reply text returned.)';

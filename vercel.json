@@ -327,6 +327,12 @@
       ]
     },
     {
+      "source": "/interfaces/my-whiteboard.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
       "source": "/data/lattice-vs-standard-comparison.json",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=60, stale-while-revalidate=300" }

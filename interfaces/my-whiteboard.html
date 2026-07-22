@@ -68,7 +68,20 @@
       font-weight: 700;
       color: #93c5fd;
     }
-    .wb-tile--featured .wb-tile__title { color: #fafafa; }
+    .wb-tile--lattice {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(26, 18, 12, 0.88));
+      border-color: rgba(212, 175, 55, 0.55);
+    }
+    .wb-tile--lattice .wb-tile__pill {
+      color: #fef3c7;
+    }
+    .wb-tile--lattice .wb-tile__title {
+      color: #fef3c7;
+      font-size: 1.25rem;
+    }
+    .wb-tile--lattice .wb-tile__cta {
+      color: #d4af37;
+    }
   </style>
 </head>
 <body>
@@ -89,6 +102,13 @@
     </p>
 
     <div class="wb-grid">
+      <a class="wb-tile wb-tile--featured wb-tile--lattice" href="/lattice">
+        <span class="wb-tile__pill">Lattice · Nested agents · $200/mo</span>
+        <p class="wb-tile__title">Lattice V1.618</p>
+        <p class="wb-tile__sub">Nested agents as simple as chat — huge token savings vs fat-context agentic mode. Not the valet card. Primer + chat at /lattice.</p>
+        <span class="wb-tile__cta">Open Lattice →</span>
+      </a>
+
       <a class="wb-tile wb-tile--featured" href="/ss-vibelandia">
         <span class="wb-tile__pill">Brand · Ark</span>
         <p class="wb-tile__title">SS Vibelandia™</p>
@@ -101,13 +121,6 @@
         <p class="wb-tile__title">Harmonopoly</p>
         <p class="wb-tile__sub">Live solar board game — press Check the Sun (no dice), watch the path up and down from your attention to the Sun and back. Honor play · stays on this device. <span style="color:#93c5fd">Guide: game · tech · math</span></p>
         <span class="wb-tile__cta">Open Harmonopoly →</span>
-      </a>
-
-      <a class="wb-tile wb-tile--featured" href="/lattice">
-        <span class="wb-tile__pill">New · Nested agents · $200/mo</span>
-        <p class="wb-tile__title">Lattice V1.618</p>
-        <p class="wb-tile__sub">Nested agents as simple as chat — huge token savings vs fat-context agentic mode. Primer, comparison bench, and chat. Bring your Cursor key; creator already live.</p>
-        <span class="wb-tile__cta">Open Lattice →</span>
       </a>
 
       <a class="wb-tile wb-tile--featured" href="/goldilocks-deliveries">

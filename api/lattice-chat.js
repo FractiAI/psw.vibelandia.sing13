@@ -621,7 +621,7 @@ export default async function handler(req, res) {
       const msg = err instanceof Error ? err.message : 'Lattice agent failed';
       const branchFail = /default branch|verify existence of branch|repository/i.test(msg);
       const hint = branchFail
-        ? ` Lattice uses ${repoUrl} @ ${startingRef}. Branch main exists on GitHub; this usually means the Cursor account for CURSOR_API_KEY lacks GitHub App access to FractiAI/psw.vibelandia.sing13 (cursor.com → Integrations → GitHub → grant the FractiAI org/repo), or a transient Cursor/GitHub token glitch — retry after reconnecting GitHub.`
+        ? ` Lattice uses ${repoUrl} @ ${startingRef}. Same CURSOR_API_KEY works on granted repos (e.g. psw.vibelandia.sing4) but not this one yet. FractiAI is a GitHub user account — while logged in as FractiAI, open https://github.com/settings/installations → Cursor → Repository access → add FractiAI/psw.vibelandia.sing13 (or All repositories). Also confirm https://cursor.com/dashboard/integrations for the account that owns CURSOR_API_KEY.`
         : '';
       return json(res, 500, {
         error: msg + hint,

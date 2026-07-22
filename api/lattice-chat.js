@@ -316,6 +316,7 @@ export default async function handler(req, res) {
 
     const repoUrl = (process.env.LATTICE_REPO_URL || DEFAULT_REPO).trim();
     const modelId = (process.env.LATTICE_MODEL_ID || 'composer-2.5').trim();
+    const startingRef = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
     let agentId =
       typeof body.agentId === 'string' && body.agentId.trim() ? body.agentId.trim() : null;
 
@@ -347,7 +348,9 @@ export default async function handler(req, res) {
         agent = await Agent.create({
           apiKey,
           model: { id: modelId },
-          cloud: { repos: [{ url: repoUrl }] },
+          cloud: {
+            repos: [{ url: repoUrl, startingRef }],
+          },
         });
       }
 

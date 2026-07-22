@@ -18,13 +18,45 @@ type LatticeResponse = {
   execution?: { tokens?: TokenCompare };
 };
 
-const WATCHDOG_MS = 70_000;
-const RECOVER_POLL_MS = 8_000;
-const MAX_RECOVER_ATTEMPTS = 10;
+const WATCHDOG_MS = 45_000;
+const RECOVER_POLL_MS = 6_000;
+const STATUS_TICK_MS = 2_000;
+const MAX_RECOVER_ATTEMPTS = 12;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
+
+/** Live status copy so the wait feels progressive, not frozen. */
+export function latticeProgressHint(elapsedSec: number, phase: string): string {
+  if (phase === 'recovering') {
+    if (elapsedSec < 60) return 'Looking up the active cloud run…';
+    return 'Cloud agent still running — attaching when it finishes…';
+  }
+  if (phase === 'stuck') {
+    return 'Still waiting — tap Check for reply (do not re-paste the prompt).';
+  }
+  if (elapsedSec < 8) return 'Starting Lattice cloud agent…';
+  if (elapsedSec < 25) return 'Cloud agent is up — reading the repo…';
+  if (elapsedSec < 50) return 'Working… tools and reasoning often take 1–3 min';
+  if (elapsedSec < 90) return 'Still working — Lattice auto-checks for a finished reply…';
+  if (elapsedSec < 150) return 'Long cloud run — keep this tab open; Check for reply is safe';
+  return 'Taking longer than usual — Check for reply, don’t re-enter the prompt';
+}
+
+export function latticeProgressStep(elapsedSec: number): number {
+  if (elapsedSec < 8) return 0;
+  if (elapsedSec < 25) return 1;
+  if (elapsedSec < 70) return 2;
+  return 3;
+}
+
+export const LATTICE_PROGRESS_STEPS = [
+  'Start',
+  'Repo',
+  'Work',
+  'Reply',
+] as const;
 
 function isNetworkFailure(err: unknown): boolean {
   if (!(err instanceof Error)) return false;
@@ -113,6 +145,7 @@ function applyAssistantReply(
     tokens,
   });
   if (data.agentId) store.setAgentId(threadId, data.agentId);
+  store.clearPending();
 }
 
 function lastUserPrompt(threadId: string): string | null {
@@ -128,6 +161,11 @@ function awaitingAssistant(threadId: string): boolean {
   const thread = useLatticeStore.getState().threads.find((t) => t.id === threadId);
   if (!thread?.messages.length) return false;
   return thread.messages[thread.messages.length - 1].role === 'user';
+}
+
+export function threadAwaitingAssistant(threadId: string | null | undefined): boolean {
+  if (!threadId) return false;
+  return awaitingAssistant(threadId);
 }
 
 export async function loadLatticeModels(): Promise<void> {
@@ -213,6 +251,7 @@ export async function checkPendingLatticeReply(): Promise<boolean> {
   const prompt = pending?.prompt || lastUserPrompt(threadId);
   if (!prompt || !awaitingAssistant(threadId)) {
     store.setSending(false);
+    store.clearPending();
     return false;
   }
 
@@ -343,6 +382,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     if (settled || !awaitingAssistant(threadId)) {
       settled = true;
       store.setSending(false);
+      store.clearPending();
       return;
     }
     settled = true;
@@ -355,28 +395,35 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     store.setSending(false);
   };
 
+  // Dual timers: frequent status ticks + recover polls (keep running until settled).
+  const statusTick = setInterval(() => {
+    if (settled) return;
+    const elapsed = Math.round((Date.now() - startedAt) / 1000);
+    const phase = useLatticeStore.getState().sendPhase;
+    const nextPhase =
+      elapsed * 1000 >= WATCHDOG_MS * 2
+        ? 'stuck'
+        : elapsed * 1000 >= WATCHDOG_MS
+          ? 'recovering'
+          : 'sending';
+    store.setSendProgress(nextPhase, latticeProgressHint(elapsed, nextPhase || phase));
+  }, STATUS_TICK_MS);
+
   const watchdog = setInterval(() => {
     void (async () => {
       if (settled) return;
       const elapsed = Date.now() - startedAt;
-      if (elapsed < WATCHDOG_MS) {
-        store.setSendProgress(
-          'sending',
-          `Working… ${Math.round(elapsed / 1000)}s (cloud agents often take 1–3 min)`,
-        );
-        return;
-      }
+      if (elapsed < WATCHDOG_MS) return;
       store.setSendProgress(
         elapsed > WATCHDOG_MS * 2 ? 'stuck' : 'recovering',
-        elapsed > WATCHDOG_MS * 2
-          ? 'Still waiting — tap Check for reply instead of re-pasting.'
-          : 'Taking longer than usual — checking cloud agent…',
+        latticeProgressHint(Math.round(elapsed / 1000), elapsed > WATCHDOG_MS * 2 ? 'stuck' : 'recovering'),
       );
       try {
         const ok = await tryRecoverOnce(threadId, trimmed, history, email);
         if (ok && !settled) {
           settled = true;
           clearInterval(watchdog);
+          clearInterval(statusTick);
           store.setError(null);
           store.setSending(false);
         }
@@ -387,7 +434,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   }, RECOVER_POLL_MS);
 
   try {
-    store.setSendProgress('sending', 'Metabolizing prompt on Lattice cloud…');
+    store.setSendProgress('sending', latticeProgressHint(0, 'sending'));
     let { res, data } = await postLattice(baseBody, email);
     if (settled) return;
     if (data.agentId) store.setAgentId(threadId, data.agentId);
@@ -456,14 +503,47 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     if (settled) return;
     const msg = err instanceof Error ? err.message : 'Chat request failed';
     store.setError(msg);
-    store.setSendProgress(
-      'stuck',
-      'Send interrupted — tap Check for reply before re-pasting the prompt.',
-    );
-    // Keep pending so Check for reply / re-paste recover works.
-    store.setSending(true);
+    // Hard failures (auth/GitHub): stop spinner. Soft/network: keep pending for Check.
+    const hardFail = /access list|API key|GitHub|repository|branch|401|403|503/i.test(msg);
+    if (hardFail && !agentId) {
+      store.setSendProgress('idle', null);
+      store.setSending(false);
+      store.clearPending();
+    } else {
+      store.setSendProgress(
+        'stuck',
+        'Send interrupted — tap Check for reply before re-pasting the prompt.',
+      );
+      store.setSending(true);
+      // Keep auto-checking so the user does not have to re-enter the prompt.
+      void (async () => {
+        for (let i = 0; i < MAX_RECOVER_ATTEMPTS && awaitingAssistant(threadId); i++) {
+          await sleep(RECOVER_POLL_MS);
+          if (!awaitingAssistant(threadId)) return;
+          store.setSendProgress(
+            'recovering',
+            latticeProgressHint(Math.round((Date.now() - startedAt) / 1000), 'recovering'),
+          );
+          try {
+            const ok = await tryRecoverOnce(threadId, trimmed, history, email);
+            if (ok) {
+              store.setError(null);
+              store.setSending(false);
+              return;
+            }
+          } catch {
+            /* keep trying */
+          }
+        }
+        store.setSendProgress(
+          'stuck',
+          latticeProgressHint(Math.round((Date.now() - startedAt) / 1000), 'stuck'),
+        );
+      })();
+    }
   } finally {
     clearInterval(watchdog);
+    clearInterval(statusTick);
     if (settled) store.setSending(false);
   }
 }

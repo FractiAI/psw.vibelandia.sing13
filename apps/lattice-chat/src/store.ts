@@ -65,6 +65,7 @@ type LatticeState = {
   setSending: (v: boolean) => void;
   setSendProgress: (phase: SendPhase, hint?: string | null) => void;
   setPending: (pending: PendingSend | null) => void;
+  clearPending: () => void;
   setError: (msg: string | null) => void;
   setAgentId: (threadId: string, agentId: string) => void;
   setAgentMode: (mode: AgentMode) => void;
@@ -182,7 +183,6 @@ export const useLatticeStore = create<LatticeState>()(
                 sending: false,
                 sendPhase: 'idle',
                 statusHint: null,
-                pending: null,
               },
         ),
       setSendProgress: (phase, hint = null) =>
@@ -192,6 +192,7 @@ export const useLatticeStore = create<LatticeState>()(
           sending: phase !== 'idle',
         }),
       setPending: (pending) => set({ pending }),
+      clearPending: () => set({ pending: null }),
       setError: (msg) => set({ error: msg }),
       setAgentId: (threadId, agentId) => {
         set((s) => ({
@@ -221,6 +222,8 @@ export const useLatticeStore = create<LatticeState>()(
         cursorApiKey: s.cursorApiKey,
         agentMode: s.agentMode,
         modelId: s.modelId,
+        // Survive refresh / tab blur so Check for reply works without re-pasting.
+        pending: s.pending,
       }),
     },
   ),

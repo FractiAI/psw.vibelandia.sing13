@@ -738,6 +738,115 @@ body {
   color: rgba(168, 162, 158, 0.75);
 }
 
+.working-actions {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.85rem;
+}
+
+.working-meter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.15rem 0 0.55rem;
+}
+
+.working-meter__step {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.45rem;
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  color: var(--brand-muted);
+  opacity: 0.55;
+}
+
+.working-meter__step.is-active {
+  opacity: 1;
+  color: var(--brand-champagne);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.working-meter__step.is-current {
+  background: rgba(212, 175, 55, 0.14);
+  color: var(--brand-gold-hi);
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25);
+}
+
+.thinking .cx-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.working-pulse {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: 0.35rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--brand-gold);
+  animation: lattice-pulse 1.2s ease-in-out infinite;
+}
+
+.thinking--stuck .working-pulse {
+  background: #e8a87c;
+  animation-duration: 1.8s;
+}
+
+.working-timer {
+  margin: 0.35rem 0 0;
+  font-size: 0.72rem;
+  color: var(--brand-muted);
+  letter-spacing: 0.02em;
+}
+
+@keyframes lattice-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.working-check-btn,
+.error-check-btn {
+  appearance: none;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--brand-gold-hi);
+  font: 600 0.75rem/1 var(--font-body);
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+.working-check-btn:hover:not(:disabled),
+.error-check-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+}
+
+.working-check-btn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.working-hint {
+  font-size: 0.72rem;
+  color: var(--brand-muted);
+}
+
+.error-check-btn {
+  margin-left: 0.35rem;
+  vertical-align: baseline;
+}
+
 .chat-error {
   margin: 0 1.5rem 0.35rem;
   color: #f0a0a0;

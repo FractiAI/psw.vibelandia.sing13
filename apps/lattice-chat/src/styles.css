@@ -700,14 +700,18 @@ body {
   margin: 0.55rem 0 0;
   padding-top: 0.4rem;
   border-top: 1px solid rgba(212, 175, 55, 0.12);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.2rem 0.45rem;
-  align-items: baseline;
   font-size: 0.72rem;
   line-height: 1.4;
   color: var(--brand-muted);
   opacity: 0.9;
+}
+
+.token-compare-row {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.45rem;
+  align-items: baseline;
 }
 
 .token-compare-label {
@@ -728,44 +732,10 @@ body {
   opacity: 0.5;
 }
 
-.working-actions {
-  margin-top: 0.55rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.55rem 0.85rem;
-}
-
-.working-check-btn,
-.error-check-btn {
-  appearance: none;
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  background: rgba(212, 175, 55, 0.12);
-  color: var(--brand-gold-hi);
-  font: 600 0.75rem/1 var(--font-body);
-  letter-spacing: 0.04em;
-  padding: 0.45rem 0.75rem;
-  cursor: pointer;
-}
-
-.working-check-btn:hover:not(:disabled),
-.error-check-btn:hover {
-  background: rgba(212, 175, 55, 0.2);
-}
-
-.working-check-btn:disabled {
-  opacity: 0.55;
-  cursor: wait;
-}
-
-.working-hint {
-  font-size: 0.72rem;
-  color: var(--brand-muted);
-}
-
-.error-check-btn {
-  margin-left: 0.35rem;
-  vertical-align: baseline;
+.token-compare-honesty {
+  margin: 0.25rem 0 0;
+  font-size: 0.62rem;
+  color: rgba(168, 162, 158, 0.75);
 }
 
 .chat-error {

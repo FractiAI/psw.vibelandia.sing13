@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0806" />
-  <title>Lattice V1.618 · Nested agents as simple as chat · FractiAI</title>
+  <title>Lattice V1.618 · Nested AI agents that use fewer tokens · FractiAI</title>
   <meta
     name="description"
-    content="Lattice V1.618 by FractiAI — nested agents as simple as chat. Huge token savings vs fat-context agentic mode. $200/mo plus your own Cursor key."
+    content="Lattice V1.618 by FractiAI — chat-simple nested AI agents for vibe coders. Public test: about 99% fewer estimated tokens vs dump-everything mode."
   />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,14 +52,39 @@
       padding: clamp(1.5rem, 4vw, 2.75rem) 1.25rem 4rem;
     }
 
-    /* Hero — one composition */
+    /* Hero — one composition + full-bleed Art Deco plane */
     .hero {
+      position: relative;
       min-height: min(88vh, 42rem);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding-bottom: 2rem;
+      justify-content: flex-end;
+      padding: 2rem 0 2.25rem;
+      margin: 0 -1.25rem 2rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      isolation: isolate;
       animation: rise 700ms ease both;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        url('/interfaces/images/lattice-artdeco-hero.png') center / cover no-repeat;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 8, 6, 0.25) 0%,
+        rgba(10, 8, 6, 0.72) 45%,
+        rgba(10, 8, 6, 0.94) 100%
+      );
     }
     .brand {
       margin: 0;
@@ -297,43 +322,41 @@
       <h1 class="brand">Lattice V1.618</h1>
       <p class="by">by FractiAI</p>
       <p class="lede">
-        Nested agents as simple as using chat. We take care of the rest —
-        best practices, peer-firewall nesting, and huge token savings.
+        A smarter way to run AI coding agents — chat on the outside, a small nested team on the inside.
       </p>
       <p class="support">
-        A new level of control and capability versus today’s fat-context agentic tools.
-        You bring your Cursor key and plan. We run the lattice.
+        Most tools dump your whole project into the AI. Lattice only loads what it needs.
+        Our public test: about 99% fewer estimated tokens vs dump-everything mode (estimate, not a vendor bill yet).
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/lattice-chat">Open Lattice chat</a>
-        <a class="btn btn-ghost" href="/lattice-chat">Request access in chat</a>
+        <a class="btn btn-ghost" href="/data/lattice-vs-standard-comparison.json">See the proof</a>
       </div>
     </header>
 
     <section id="what">
       <h2>What it is</h2>
       <p>
-        Lattice V1.618 is a Nested Agent Lattice chat surface over your corpus.
-        You talk in plain chat. Under the hood, a Φ-Parent metabolizes the ask,
-        crystallizes scale-banded children (seed · edge · pipes), grounds them with RAG
-        pointers instead of dumping the library, then squeezes results back into one answer.
+        Lattice V1.618 is FractiAI’s nested-agent chat for vibe coders.
+        You talk in plain chat. Behind the scenes a lead agent breaks the job up,
+        a few helpers each handle one area, and the system points at files instead of pasting everything.
       </p>
       <ul class="points">
         <li>
-          <strong>Chat-simple nesting</strong>
-          <span>No agent ops cockpit required. Nested agents feel like a conversation.</span>
+          <strong>Feels like chat</strong>
+          <span>No complicated agent cockpit. Nesting happens under the hood.</span>
         </li>
         <li>
-          <strong>Token discipline built in</strong>
-          <span>16-turn windows, catalog pointers, peer-firewall briefs — not mega-context pastes.</span>
+          <strong>Uses fewer tokens</strong>
+          <span>Pointers and small teams — not mega pastes of your whole repo.</span>
         </li>
         <li>
-          <strong>Visible engine</strong>
-          <span>Self-talk, active-agent board, and a token-savings ledger on every turn.</span>
+          <strong>You can see the work</strong>
+          <span>Which agents ran and an estimated token ledger on each turn.</span>
         </li>
         <li>
-          <strong>Edge-first UI</strong>
-          <span>Histories stay on your device. Old-school email access — no passwords.</span>
+          <strong>Simple access</strong>
+          <span>History stays on your device. Bring your own Cursor key and plan.</span>
         </li>
       </ul>
     </section>
@@ -341,45 +364,43 @@
     <section id="why">
       <h2>Why use it</h2>
       <p>
-        Today’s default agentic mode often wins by stuffing more files into context.
-        That burns tokens, blurs control, and makes nesting feel like a research project.
-        Lattice flips the pattern: nested agents are the default path, and the engine
-        is opinionated about best practice so you don’t have to babysit it.
+        Dump-everything agent mode burns tokens fast. Lattice is built so nested agents
+        are the default path — less waste, same ability to do real multi-part work.
       </p>
       <ul class="points">
         <li>
-          <strong>Saves big on tokens</strong>
-          <span>Refuse corpus dumps. Load pointers and scale bands. Resume threads instead of re-preambling the world.</span>
+          <strong>Big estimated savings</strong>
+          <span>Public test shows about 99% fewer estimated context tokens vs dump-everything on the same ask.</span>
         </li>
         <li>
-          <strong>A new level of control</strong>
-          <span>See which agents ran, their roles, progress, and how the MCA cycle closed.</span>
+          <strong>Clearer control</strong>
+          <span>See the nested team instead of one opaque mega-prompt.</span>
         </li>
         <li>
-          <strong>Capability without complexity</strong>
-          <span>Multi-band work (docs + UI + API) without teaching every user to design agent graphs.</span>
+          <strong>Built for vibe coders</strong>
+          <span>Docs + UI + API style work without designing agent graphs yourself.</span>
         </li>
       </ul>
     </section>
 
     <section id="primer">
-      <h2>Primer</h2>
+      <h2>How to start</h2>
       <ul class="points">
         <li>
-          <strong>1 · Sign in</strong>
-          <span>Enter your email / userid in chat if you already have access (remembered 30 days on your device). New? Use <em style="font-style:normal;color:var(--champagne)">Request access</em> — it opens a prefilled email.</span>
+          <strong>1 · Open chat</strong>
+          <span>Enter your email if you already have access. New users: request access from the chat screen (opens email).</span>
         </li>
         <li>
           <strong>2 · Bring your Cursor key</strong>
-          <span>Subscribers use their own Cursor API key / plan. FractiAI does not bill your model usage — your Cursor pool does.</span>
+          <span>You use your own Cursor plan for model usage. Lattice is the nesting layer.</span>
         </li>
         <li>
-          <strong>3 · Chat the work</strong>
-          <span>Ask complex, multi-band questions. Lattice nests, RAG-squeezes, and returns the answer with the engine ledger.</span>
+          <strong>3 · Ask real work</strong>
+          <span>Multi-part coding questions are fine. Lattice nests and answers with a ledger.</span>
         </li>
         <li>
-          <strong>4 · Read the board</strong>
-          <span>Active agents, self-talk, and estimated tokens saved vs a naive dump — every reply.</span>
+          <strong>4 · Check the proof</strong>
+          <span>Read the public comparison file anytime — same method we cite in posts.</span>
         </li>
       </ul>
       <div class="cta-row">
@@ -399,14 +420,13 @@
     </section>
 
     <section id="comparison">
-      <h2>Comparison test</h2>
+      <h2>Public test</h2>
       <p>
-        Same complex multi-band ask — ground in docs/protocols, map edge UI, map API pipes,
-        propose a nested plan, estimate savings — run once as <strong>standard fat-context agentic</strong>
-        and once as <strong>Lattice V1.618</strong>.
+        Same coding-style ask, two ways: <strong>dump-everything agent mode</strong>
+        vs <strong>Lattice V1.618</strong>.
       </p>
       <p class="saved-banner" id="cmp-headline">
-        Lattice cut estimated context load by roughly an order of magnitude on this complex multi-band ask.
+        Lattice used about 99% fewer estimated tokens on this test.
       </p>
       <div class="cmp-grid">
         <div class="cmp-col">
@@ -441,10 +461,10 @@
         </tbody>
       </table>
       <p class="honesty" id="honesty">
-        Honesty: structural token estimate (characters ÷ 4), same prompt both modes.
-        Not vendor-billed usage — illustrates context load. Receipt:
+        Honesty: this is our estimate (characters ÷ 4), same prompt both ways.
+        Not a final bill from OpenAI or Anthropic. Proof file:
         <a href="/data/lattice-vs-standard-comparison.json">lattice-vs-standard-comparison.json</a>.
-        Re-run: <code>npm run compare:lattice</code> (or <code>node scripts/lattice-vs-standard-comparison.mjs</code>).
+        Re-run: <code>npm run compare:lattice</code>.
       </p>
     </section>
 

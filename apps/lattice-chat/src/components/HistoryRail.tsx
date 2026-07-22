@@ -30,7 +30,7 @@ export function HistoryRail() {
         <SignedInBar />
       ) : (
         <p className="rail-auth-nudge">
-          Sign in or sign up in the main panel →
+          Sign in in the main panel →
         </p>
       )}
 

@@ -1,7 +1,7 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { isRememberedEmailFresh } from '@/access';
 import { loadLatticeModels, sendLatticeMessage } from '@/api';
-import { AuthPanel, SignedInBar } from '@/components/AuthPanel';
+import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { ComposerOptions } from '@/components/ComposerOptions';
 import { useLatticeStore } from '@/store';
@@ -25,6 +25,8 @@ export function ChatPane() {
 
   const thread = threads.find((t) => t.id === activeThreadId) ?? null;
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
+  const needsAccessGrant =
+    Boolean(error) && /not on the access list|Request access|access expired/i.test(error || '');
 
   useEffect(() => {
     ensureThread();
@@ -75,8 +77,8 @@ export function ChatPane() {
           <div className="auth-stage">
             <p className="empty-lead">Sign in to use Lattice</p>
             <p className="empty-hint">
-              If you already have access, enter your email / userid below. Request access only if
-              you still need a grant.
+              If you already have a grant, enter your email / userid below. Request access only
+              appears when you are not signed in for the current monthly period.
             </p>
             <AuthPanel />
           </div>
@@ -119,7 +121,17 @@ export function ChatPane() {
         <div ref={bottomRef} />
       </div>
 
-      {error ? <p className="chat-error" role="alert">{error}</p> : null}
+      {error ? (
+        <p className="chat-error" role="alert">
+          {error}
+          {needsAccessGrant || !signedIn ? (
+            <>
+              {' '}
+              <RequestAccessLink fromEmail={userEmail} />
+            </>
+          ) : null}
+        </p>
+      ) : null}
 
       <form className="composer" onSubmit={onSubmit}>
         <ComposerOptions

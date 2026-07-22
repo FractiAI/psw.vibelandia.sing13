@@ -1,19 +1,21 @@
 import { FormEvent, useEffect, useState } from 'react';
 import {
   CREATOR_EMAIL,
+  isRememberedEmailFresh,
   isValidEmailShape,
   normalizeEmail,
 } from '@/access';
 import { useLatticeStore } from '@/store';
 
-function buildRequestMailto(fromEmail: string): string {
-  const who = fromEmail.trim() || '(add your email here)';
+/** Prefills a request-access email to the operator. */
+export function buildRequestMailto(fromEmail = ''): string {
+  const who = normalizeEmail(fromEmail) || '(add your email here)';
   const subject = encodeURIComponent('Lattice V1.618 — request access');
   const body = encodeURIComponent(
     [
       'Hello,',
       '',
-      'I would like Lattice V1.618 access.',
+      'I would like Lattice V1.618 access for the monthly period.',
       '',
       `My email / userid: ${who}`,
       '',
@@ -23,15 +25,32 @@ function buildRequestMailto(fromEmail: string): string {
   return `mailto:${CREATOR_EMAIL}?subject=${subject}&body=${body}`;
 }
 
+export function RequestAccessLink({
+  fromEmail = '',
+  className = 'auth-request-link',
+}: {
+  fromEmail?: string;
+  className?: string;
+}) {
+  return (
+    <a className={className} href={buildRequestMailto(fromEmail)}>
+      Request access
+    </a>
+  );
+}
+
 /**
  * Sign in = enter email (remembered 30 days on this device).
- * Request access = opens mail to operator only (prefilled).
+ * Request access = only when not signed in for the monthly window; opens mail to valetpru@gmail.com.
  */
 export function AuthPanel({ compact = false }: { compact?: boolean }) {
   const userEmail = useLatticeStore((s) => s.userEmail);
+  const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
   const setUserEmail = useLatticeStore((s) => s.setUserEmail);
   const [emailDraft, setEmailDraft] = useState(userEmail);
   const [flash, setFlash] = useState<string | null>(null);
+
+  const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
 
   useEffect(() => {
     setEmailDraft(userEmail);
@@ -55,7 +74,7 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
     >
       <form className="auth-form" onSubmit={onSignIn}>
         <p className="auth-lead">
-          Already signed up? Enter your email / userid. No password — we remember you on this
+          Already have access? Enter your email / userid. No password — we remember you on this
           device for 30 days.
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
@@ -73,16 +92,16 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
         </button>
       </form>
 
-      <p className="auth-request-line">
-        New here or need a grant?{' '}
-        <a
-          className="auth-request-link"
-          href={buildRequestMailto(normalizeEmail(emailDraft))}
-        >
-          Request access
-        </a>
-        <span className="auth-request-hint"> — opens email to request access</span>
-      </p>
+      {!signedIn ? (
+        <p className="auth-request-line">
+          Need a monthly grant?{' '}
+          <RequestAccessLink fromEmail={emailDraft} />
+          <span className="auth-request-hint">
+            {' '}
+            — opens a prefilled email to {CREATOR_EMAIL}
+          </span>
+        </p>
+      ) : null}
 
       {flash ? (
         <p className="auth-flash" role="status">

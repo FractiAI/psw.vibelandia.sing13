@@ -63,7 +63,6 @@ export async function sendLatticeMessage(text: string): Promise<void> {
         'Please sign in first.',
         '',
         'Enter your email / userid in the main panel (remembered 30 days on this device).',
-        'Only use Request access if you do not have a grant yet.',
       ].join('\n'),
     });
     store.setSending(false);
@@ -103,7 +102,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       if (res.status === 401 || res.status === 403) {
         throw new Error(
           data.error ||
-            'This email is not on the access list yet. Use Request access (opens email), then Sign in after you’re granted.',
+            'This email is not on the access list yet. Request access (opens a prefilled email), then Sign in after you’re granted.',
         );
       }
       if (res.status === 503) {

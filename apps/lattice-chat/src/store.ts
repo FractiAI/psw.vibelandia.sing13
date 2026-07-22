@@ -40,8 +40,6 @@ type LatticeState = {
   activeThreadId: string | null;
   userEmail: string;
   emailRememberedAt: string | null;
-  /** Cursor API key — edge only (localStorage). Never sent to our durable store. */
-  cursorApiKey: string;
   sending: boolean;
   sendPhase: SendPhase;
   statusHint: string | null;
@@ -61,8 +59,6 @@ type LatticeState = {
   ) => string;
   setUserEmail: (email: string) => void;
   clearUserEmail: () => void;
-  setCursorApiKey: (key: string) => void;
-  clearCursorApiKey: () => void;
   setSending: (v: boolean) => void;
   setSendProgress: (phase: SendPhase, hint?: string | null) => void;
   setPending: (pending: PendingSend | null) => void;
@@ -73,7 +69,6 @@ type LatticeState = {
   setModelId: (modelId: string) => void;
   setModels: (models: LatticeModelOption[]) => void;
   hasRememberedEmail: () => boolean;
-  hasEdgeCursorKey: () => boolean;
 };
 
 export const useLatticeStore = create<LatticeState>()(
@@ -83,7 +78,6 @@ export const useLatticeStore = create<LatticeState>()(
       activeThreadId: null,
       userEmail: '',
       emailRememberedAt: null,
-      cursorApiKey: '',
       sending: false,
       sendPhase: 'idle',
       statusHint: null,
@@ -198,9 +192,7 @@ export const useLatticeStore = create<LatticeState>()(
           emailRememberedAt: normalized ? new Date().toISOString() : null,
         });
       },
-      clearUserEmail: () => set({ userEmail: '', emailRememberedAt: null, cursorApiKey: '' }),
-      setCursorApiKey: (key) => set({ cursorApiKey: String(key || '').trim() }),
-      clearCursorApiKey: () => set({ cursorApiKey: '' }),
+      clearUserEmail: () => set({ userEmail: '', emailRememberedAt: null }),
       setSending: (v) =>
         set(
           v
@@ -236,7 +228,6 @@ export const useLatticeStore = create<LatticeState>()(
         const { userEmail, emailRememberedAt } = get();
         return isRememberedEmailFresh(userEmail, emailRememberedAt);
       },
-      hasEdgeCursorKey: () => Boolean(get().cursorApiKey.trim()),
     }),
     {
       name: STORAGE_KEY,
@@ -245,10 +236,8 @@ export const useLatticeStore = create<LatticeState>()(
         activeThreadId: s.activeThreadId,
         userEmail: s.userEmail,
         emailRememberedAt: s.emailRememberedAt,
-        cursorApiKey: s.cursorApiKey,
         agentMode: s.agentMode,
         modelId: s.modelId,
-        // Survive refresh / tab blur so Check for reply works without re-pasting.
         pending: s.pending,
       }),
     },

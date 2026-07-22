@@ -1,7 +1,6 @@
 /**
  * Lattice V1.618 chat — Cursor SDK cloud agent.
- * Cursor API key: prefer per-request edge header `x-cursor-api-key` (BYOK).
- * Optional server CURSOR_API_KEY is fallback only — we do not persist user keys.
+ * All runs use server CURSOR_API_KEY (FractiAI pipe). Guests sign in with email only.
  * Access: email allowlist. Creator permanent. Guests one month from grant.
  * Note: keep this file self-contained for Vercel (avoid top-level .mjs imports).
  */
@@ -186,29 +185,17 @@ function readEmail(req, body) {
 }
 
 /**
- * Resolve Cursor API key for this request only.
- * Edge header wins. Body key accepted once then stripped. Env is optional fallback.
- * Never logs or persists the key.
+ * Server Cursor API key only — guests do not supply keys.
+ * Never logs the key.
  */
-function resolveCursorApiKey(req, body) {
-  const h = req.headers || {};
-  const headerRaw = h['x-cursor-api-key'] || h['X-Cursor-Api-Key'] || '';
-  const fromHeader = String(Array.isArray(headerRaw) ? headerRaw[0] : headerRaw).trim();
-  if (fromHeader) return { key: fromHeader, source: 'edge' };
-
-  const fromBody = typeof body?.cursorApiKey === 'string' ? body.cursorApiKey.trim() : '';
-  if (body && Object.prototype.hasOwnProperty.call(body, 'cursorApiKey')) {
-    delete body.cursorApiKey;
-  }
-  if (fromBody) return { key: fromBody, source: 'edge' };
-
+function resolveCursorApiKey() {
   const fromEnv = (process.env.CURSOR_API_KEY || '').trim();
   if (fromEnv) return { key: fromEnv, source: 'server' };
   return { key: '', source: 'none' };
 }
 
 const MISSING_KEY_ERROR =
-  'Add your Cursor API key on this device (Sign in panel). Lattice keeps it on your edge only — not on our server.';
+  'Lattice cloud is not configured (CURSOR_API_KEY missing on the server). Operator must set it in Vercel env.';
 
 function readBody(req) {
   if (req.body && typeof req.body === 'object') return Promise.resolve(req.body);
@@ -557,7 +544,7 @@ export default async function handler(req, res) {
   try {
     if (req.method === 'OPTIONS') {
       res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email, x-cursor-api-key');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email');
       return json(res, 204, {});
     }
 
@@ -588,7 +575,7 @@ export default async function handler(req, res) {
         if (!access.ok) {
           return json(res, 401, { error: access.reason, ok: false });
         }
-        const { key: apiKey, source: keySource } = resolveCursorApiKey(req, {});
+        const { key: apiKey, source: keySource } = resolveCursorApiKey();
         if (!apiKey) {
           return json(res, 503, {
             ok: false,
@@ -616,8 +603,8 @@ export default async function handler(req, res) {
             sample: urls.slice(0, 12),
             note:
               matched.length > 0
-                ? 'This Cursor API key can see this repo via Cursor GitHub integration.'
-                : 'API key works for Cursor API, but this repo is not in Cursor.repositories.list for that key. Connect GitHub for the same Cursor account that owns the key (cursor.com → Integrations → GitHub) and grant FractiAI/psw.vibelandia.sing13. IDE workspace open ≠ cloud API GitHub access.',
+                ? 'Server CURSOR_API_KEY can see this repo via Cursor GitHub integration.'
+                : 'Server CURSOR_API_KEY works for Cursor API, but this repo is not in Cursor.repositories.list for that key. Connect GitHub for the FractiAI Cursor account (cursor.com → Integrations → GitHub) and grant FractiAI/psw.vibelandia.sing13.',
           });
         } catch (err) {
           console.warn('[lattice-chat] repositories.list', err);
@@ -635,7 +622,7 @@ export default async function handler(req, res) {
         if (!access.ok) {
           return json(res, 401, { error: access.reason, models: FALLBACK_MODELS });
         }
-        const { key: apiKey } = resolveCursorApiKey(req, {});
+        const { key: apiKey } = resolveCursorApiKey();
         if (!apiKey) {
           return json(res, 200, { models: FALLBACK_MODELS, source: 'fallback' });
         }
@@ -683,7 +670,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const { key: apiKey } = resolveCursorApiKey(req, body);
+    const { key: apiKey } = resolveCursorApiKey();
     if (!apiKey) {
       return json(res, 503, {
         error: MISSING_KEY_ERROR,

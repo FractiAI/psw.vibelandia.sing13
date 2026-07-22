@@ -104,13 +104,10 @@ function isBusyPayload(data: LatticeResponse, status: number): boolean {
 }
 
 function latticeHeaders(email: string): HeadersInit {
-  const key = useLatticeStore.getState().cursorApiKey.trim();
-  const headers: Record<string, string> = {
+  return {
     'Content-Type': 'application/json',
     'x-lattice-email': email,
   };
-  if (key) headers['x-cursor-api-key'] = key;
-  return headers;
 }
 
 async function postLattice(
@@ -202,12 +199,9 @@ export async function loadLatticeModels(): Promise<void> {
   store.setModels(mergeLatticeModels(store.models.length > 1 ? store.models : []));
 
   try {
-    const headers: Record<string, string> = { 'x-lattice-email': email };
-    const key = store.cursorApiKey.trim();
-    if (key) headers['x-cursor-api-key'] = key;
     const res = await fetch(
       `/api/lattice-chat?models=1&email=${encodeURIComponent(email)}`,
-      { headers },
+      { headers: { 'x-lattice-email': email } },
     );
     const data = (await res.json().catch(() => ({}))) as {
       models?: { id: string; displayName?: string; description?: string }[];
@@ -386,20 +380,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       content: [
         'Please sign in first.',
         '',
-        'Enter your email / userid and Cursor API key in the main panel (kept on this device).',
-      ].join('\n'),
-    });
-    store.setSending(false);
-    return;
-  }
-
-  if (!store.cursorApiKey.trim()) {
-    store.appendMessage(threadId, {
-      role: 'assistant',
-      content: [
-        'Add your Cursor API key on this device to chat.',
-        '',
-        'Lattice keeps it on your edge only — we do not store it on our cloud server. Paste it in Sign in, then send again.',
+        'Enter your email / userid in the main panel (remembered 30 days on this device).',
       ].join('\n'),
     });
     store.setSending(false);
@@ -522,7 +503,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       if (res.status === 503) {
         throw new LatticeHardFail(
           data.error ||
-            'Cursor API key missing. Paste your key on this device (Sign in) — Lattice does not keep it on our server.',
+            'Lattice cloud is not configured yet (server Cursor key missing). Ask the operator to set CURSOR_API_KEY on Vercel.',
           data.code || 'missing_cursor_api_key',
         );
       }

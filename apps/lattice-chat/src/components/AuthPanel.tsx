@@ -39,18 +39,12 @@ export function RequestAccessLink({
   );
 }
 
-/**
- * Sign in = email + Cursor API key on this device.
- * Key stays in edge localStorage and is sent only per request — never stored on our server.
- */
+/** Sign in = email / userid only (remembered 30 days on this device). */
 export function AuthPanel({ compact = false }: { compact?: boolean }) {
   const userEmail = useLatticeStore((s) => s.userEmail);
   const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
-  const cursorApiKey = useLatticeStore((s) => s.cursorApiKey);
   const setUserEmail = useLatticeStore((s) => s.setUserEmail);
-  const setCursorApiKey = useLatticeStore((s) => s.setCursorApiKey);
   const [emailDraft, setEmailDraft] = useState(userEmail);
-  const [keyDraft, setKeyDraft] = useState(cursorApiKey);
   const [flash, setFlash] = useState<string | null>(null);
 
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
@@ -59,24 +53,14 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
     setEmailDraft(userEmail);
   }, [userEmail]);
 
-  useEffect(() => {
-    setKeyDraft(cursorApiKey);
-  }, [cursorApiKey]);
-
   function onSignIn(e: FormEvent) {
     e.preventDefault();
     const next = normalizeEmail(emailDraft);
-    const key = keyDraft.trim();
     if (!isValidEmailShape(next)) {
       setFlash('Enter your email / userid to sign in.');
       return;
     }
-    if (key.length < 8) {
-      setFlash('Paste your Cursor API key (kept only on this device).');
-      return;
-    }
     setUserEmail(next);
-    setCursorApiKey(key);
     setFlash(null);
   }
 
@@ -87,8 +71,8 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
     >
       <form className="auth-form" onSubmit={onSignIn}>
         <p className="auth-lead">
-          Enter your email / userid and your Cursor API key. No password vault on our cloud — the
-          key stays on this device and is only forwarded for each chat turn.
+          Already have access? Enter your email / userid. No password — we remember you on this
+          device for 30 days. Cloud agents run on FractiAI’s Cursor pipe (no key setup for you).
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
         <input
@@ -100,20 +84,6 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
           placeholder="you@example.com"
           onChange={(e) => setEmailDraft(e.target.value)}
         />
-        <label htmlFor="lattice-signin-cursor-key">Cursor API key</label>
-        <input
-          id="lattice-signin-cursor-key"
-          type="password"
-          autoComplete="off"
-          spellCheck={false}
-          value={keyDraft}
-          placeholder="key_… from cursor.com → Integrations / API"
-          onChange={(e) => setKeyDraft(e.target.value)}
-        />
-        <p className="auth-key-hint">
-          Get a key from your Cursor account. We never persist it on our server — only on your
-          edge.
-        </p>
         <button type="submit" className="auth-submit">
           {signedIn ? 'Update on this device' : 'Sign in'}
         </button>
@@ -141,7 +111,6 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
 
 export function SignedInBar() {
   const userEmail = useLatticeStore((s) => s.userEmail);
-  const hasKey = useLatticeStore((s) => Boolean(s.cursorApiKey.trim()));
   const clearUserEmail = useLatticeStore((s) => s.clearUserEmail);
 
   return (
@@ -149,16 +118,6 @@ export function SignedInBar() {
       <span className="signed-in-label">Signed in</span>
       <span className="signed-in-email" title={userEmail}>
         {userEmail}
-      </span>
-      <span
-        className={`signed-in-key${hasKey ? ' signed-in-key--ok' : ' signed-in-key--missing'}`}
-        title={
-          hasKey
-            ? 'Cursor API key is on this device only'
-            : 'Add your Cursor API key in Sign in'
-        }
-      >
-        {hasKey ? 'Key on edge' : 'Key missing'}
       </span>
       <button type="button" className="sign-out-btn" onClick={clearUserEmail}>
         Sign out

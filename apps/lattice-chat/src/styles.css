@@ -702,6 +702,46 @@ body {
   opacity: 0.5;
 }
 
+.working-actions {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.85rem;
+}
+
+.working-check-btn,
+.error-check-btn {
+  appearance: none;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--brand-gold-hi);
+  font: 600 0.75rem/1 var(--font-body);
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+.working-check-btn:hover:not(:disabled),
+.error-check-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+}
+
+.working-check-btn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.working-hint {
+  font-size: 0.72rem;
+  color: var(--brand-muted);
+}
+
+.error-check-btn {
+  margin-left: 0.35rem;
+  vertical-align: baseline;
+}
+
 .chat-error {
   margin: 0 1.5rem 0.35rem;
   color: #f0a0a0;

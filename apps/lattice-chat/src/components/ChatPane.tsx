@@ -1,6 +1,10 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { isRememberedEmailFresh } from '@/access';
-import { loadLatticeModels, sendLatticeMessage } from '@/api';
+import {
+  checkPendingLatticeReply,
+  loadLatticeModels,
+  sendLatticeMessage,
+} from '@/api';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { ComposerOptions } from '@/components/ComposerOptions';
@@ -13,6 +17,9 @@ export function ChatPane() {
   const userEmail = useLatticeStore((s) => s.userEmail);
   const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
   const sending = useLatticeStore((s) => s.sending);
+  const sendPhase = useLatticeStore((s) => s.sendPhase);
+  const statusHint = useLatticeStore((s) => s.statusHint);
+  const pending = useLatticeStore((s) => s.pending);
   const error = useLatticeStore((s) => s.error);
   const agentMode = useLatticeStore((s) => s.agentMode);
   const modelId = useLatticeStore((s) => s.modelId);
@@ -21,6 +28,8 @@ export function ChatPane() {
   const setModelId = useLatticeStore((s) => s.setModelId);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const [draft, setDraft] = useState('');
+  const [elapsedSec, setElapsedSec] = useState(0);
+  const [checking, setChecking] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -28,6 +37,10 @@ export function ChatPane() {
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
   const needsAccessGrant =
     Boolean(error) && /not on the access list|Request access|access expired/i.test(error || '');
+  const lastIsUser =
+    Boolean(thread?.messages.length) &&
+    thread!.messages[thread!.messages.length - 1].role === 'user';
+  const showWorking = sending || (lastIsUser && sendPhase !== 'idle' && Boolean(pending));
 
   useEffect(() => {
     ensureThread();
@@ -39,7 +52,32 @@ export function ChatPane() {
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [thread?.messages.length, sending, signedIn]);
+  }, [thread?.messages.length, sending, signedIn, statusHint, sendPhase]);
+
+  useEffect(() => {
+    if (!showWorking || !pending?.startedAt) {
+      setElapsedSec(0);
+      return;
+    }
+    const tick = () =>
+      setElapsedSec(Math.max(0, Math.floor((Date.now() - pending.startedAt) / 1000)));
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, [showWorking, pending?.startedAt]);
+
+  // Returning to the tab: auto-check for a finished cloud reply.
+  useEffect(() => {
+    function onVis() {
+      if (document.visibilityState !== 'visible') return;
+      const s = useLatticeStore.getState();
+      if (!s.sending && s.sendPhase === 'idle') return;
+      if (!s.pending && !s.sending) return;
+      void checkPendingLatticeReply();
+    }
+    document.addEventListener('visibilitychange', onVis);
+    return () => document.removeEventListener('visibilitychange', onVis);
+  }, []);
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -50,12 +88,30 @@ export function ChatPane() {
     inputRef.current?.focus();
   }
 
+  async function onCheckReply() {
+    setChecking(true);
+    try {
+      await checkPendingLatticeReply();
+    } finally {
+      setChecking(false);
+      inputRef.current?.focus();
+    }
+  }
+
   function onKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       void onSubmit(e);
     }
   }
+
+  const workingLabel =
+    statusHint ||
+    (sendPhase === 'recovering'
+      ? 'Recovering cloud run…'
+      : sendPhase === 'stuck'
+        ? 'Still waiting — check for a reply instead of re-pasting.'
+        : 'Working…');
 
   return (
     <main className="chat-pane">
@@ -116,12 +172,25 @@ export function ChatPane() {
             </article>
           ))
         )}
-        {sending ? (
+        {showWorking ? (
           <article className="bubble bubble-assistant thinking">
             <span className="bubble-role">Lattice</span>
             <div className="cx-block cx-status">
-              Working… (first cloud runs can take a minute — keep this tab open or Lattice will
-              recover when you return)
+              {workingLabel}
+              {elapsedSec > 0 ? ` · ${elapsedSec}s` : ''}
+            </div>
+            <div className="working-actions">
+              <button
+                type="button"
+                className="working-check-btn"
+                disabled={checking}
+                onClick={() => void onCheckReply()}
+              >
+                {checking ? 'Checking…' : 'Check for reply'}
+              </button>
+              <span className="working-hint">
+                Don’t re-paste — this attaches to the active cloud run.
+              </span>
             </div>
           </article>
         ) : null}
@@ -135,6 +204,14 @@ export function ChatPane() {
             <>
               {' '}
               <RequestAccessLink fromEmail={userEmail} />
+            </>
+          ) : null}
+          {lastIsUser ? (
+            <>
+              {' '}
+              <button type="button" className="error-check-btn" onClick={() => void onCheckReply()}>
+                Check for reply
+              </button>
             </>
           ) : null}
         </p>
@@ -159,11 +236,24 @@ export function ChatPane() {
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder={signedIn ? 'Message Lattice…' : 'Sign in above to chat…'}
-          disabled={sending || !signedIn}
+          placeholder={
+            showWorking
+              ? 'Waiting on Lattice… use Check for reply instead of re-pasting'
+              : signedIn
+                ? 'Message Lattice…'
+                : 'Sign in above to chat…'
+          }
+          disabled={!signedIn || (sending && sendPhase !== 'stuck')}
         />
-        <button type="submit" disabled={sending || !signedIn || !draft.trim()}>
-          Send
+        <button
+          type="submit"
+          disabled={
+            !signedIn ||
+            !draft.trim() ||
+            (sending && sendPhase !== 'stuck' && draft.trim() !== pending?.prompt)
+          }
+        >
+          {showWorking && draft.trim() === pending?.prompt ? 'Retry' : 'Send'}
         </button>
       </form>
     </main>

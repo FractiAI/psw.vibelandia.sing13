@@ -11,6 +11,8 @@ import type {
 
 const STORAGE_KEY = 'lattice-v1618-edge';
 
+export type SendPhase = 'idle' | 'sending' | 'recovering' | 'stuck';
+
 function uid(prefix: string): string {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
 }
@@ -25,12 +27,22 @@ function emptyThread(): ChatThread {
   };
 }
 
+type PendingSend = {
+  threadId: string;
+  prompt: string;
+  startedAt: number;
+  agentId?: string;
+};
+
 type LatticeState = {
   threads: ChatThread[];
   activeThreadId: string | null;
   userEmail: string;
   emailRememberedAt: string | null;
   sending: boolean;
+  sendPhase: SendPhase;
+  statusHint: string | null;
+  pending: PendingSend | null;
   error: string | null;
   agentMode: AgentMode;
   modelId: string;
@@ -47,6 +59,8 @@ type LatticeState = {
   setUserEmail: (email: string) => void;
   clearUserEmail: () => void;
   setSending: (v: boolean) => void;
+  setSendProgress: (phase: SendPhase, hint?: string | null) => void;
+  setPending: (pending: PendingSend | null) => void;
   setError: (msg: string | null) => void;
   setAgentId: (threadId: string, agentId: string) => void;
   setAgentMode: (mode: AgentMode) => void;
@@ -63,6 +77,9 @@ export const useLatticeStore = create<LatticeState>()(
       userEmail: '',
       emailRememberedAt: null,
       sending: false,
+      sendPhase: 'idle',
+      statusHint: null,
+      pending: null,
       error: null,
       agentMode: 'agent',
       modelId: 'composer-2.5',
@@ -84,6 +101,10 @@ export const useLatticeStore = create<LatticeState>()(
           threads: [t, ...s.threads],
           activeThreadId: t.id,
           error: null,
+          sendPhase: 'idle',
+          statusHint: null,
+          pending: null,
+          sending: false,
         }));
       },
 
@@ -145,11 +166,32 @@ export const useLatticeStore = create<LatticeState>()(
         });
       },
       clearUserEmail: () => set({ userEmail: '', emailRememberedAt: null }),
-      setSending: (v) => set({ sending: v }),
+      setSending: (v) =>
+        set(
+          v
+            ? { sending: true }
+            : {
+                sending: false,
+                sendPhase: 'idle',
+                statusHint: null,
+                pending: null,
+              },
+        ),
+      setSendProgress: (phase, hint = null) =>
+        set({
+          sendPhase: phase,
+          statusHint: hint,
+          sending: phase !== 'idle',
+        }),
+      setPending: (pending) => set({ pending }),
       setError: (msg) => set({ error: msg }),
       setAgentId: (threadId, agentId) => {
         set((s) => ({
           threads: s.threads.map((t) => (t.id === threadId ? { ...t, agentId } : t)),
+          pending:
+            s.pending && s.pending.threadId === threadId
+              ? { ...s.pending, agentId }
+              : s.pending,
         }));
       },
       setAgentMode: (mode) => set({ agentMode: mode }),

@@ -4,6 +4,8 @@ Operate as team in NSPFRNP mode always. See `.cursor/rules/team-nspfrnp-mode.mdc
 
 **Local RAG:** Always ground work in repo whitepapers and specs. See `.cursor/rules/lattice_rag.mdc`. Prefer `@Codebase` when retrieving EGS / Planck–1.6 / NSPFRNP / Goldilocks definitions from `docs/`, `protocols/`, and `research/`.
 
+**Nested agents:** For substantial tasks, auto-spawn EGS Nested Agent Lattice (cytographic) Task children. See `.cursor/rules/nested-cytographic-agents.mdc`.
+
 SynthOBS paper audit: `.cursor/rules/synthobs-paper-audit-snap.mdc`.
 
 Single onboarding file: SING9_EDGE_ONBOARDING.md (SING 13 edge). No Supabase; lite edges (wallets, keys, verifications). Seed:Edge + executive prompts for middles. BBHE_REPOSITORY_STANDARD.md. Close with → ∞¹³.

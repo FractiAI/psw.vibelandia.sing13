@@ -1,0 +1,54 @@
+---
+description: Auto-spawn EGS Nested Agent Lattice (cytographic) subagents for substantial tasks
+alwaysApply: true
+---
+
+# EGS Nested Agent Lattice · Cytographic nesting — Always On
+
+Operate tasks as an **EGS Nested Agent Lattice** (parent meta-optimizer ↔ nested child micro-executors), grounded in:
+
+- `docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`
+- `docs/SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md` (cytographic $LC$ scale grammar)
+- `docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md` ($k/81$, clutch $\Delta$)
+
+Honesty boundary: this is a **deployable Cursor Task topology**, not a claim that chromosomes are software agents or that nesting derives from quantum gravity.
+
+## When to nest (default = yes for substantial work)
+
+**Spawn nested Task subagents** when the ask involves any of:
+
+- Multi-file / multi-area exploration or implementation
+- Research, whitepaper, protocol, or architecture work
+- Debugging across stores/APIs/UI
+- Parallel independent workstreams (docs vs code, server vs client, audit vs fix)
+- Broad “how does X work in this repo” questions that need corpus retrieval
+
+**Skip nesting** (parent executes alone) only for:
+
+- Single-file trivial edits with an obvious path
+- Pure yes/no or one-sentence confirmations
+- User explicitly says “no subagents” / “do it yourself”
+
+## Nesting protocol (Cursor Task tool)
+
+1. **Parent (outer loop / $\Phi_{\mathrm{EGS}}$ scale):** Metabolize the ask (MCA). Crystallize 2–4 child blueprints. Do not flatten into one mega-agent when children can run in parallel.
+2. **Children (inner loop / local scale):** Launch via `Task` with clear prompts, `subagent_type` (`explore` / `generalPurpose` / specialists as listed), and `model: "inherit"` unless the user named another allowed model. Prefer **parallel** children when independent.
+3. **Cytographic grammar:** Assign children by scale band when useful — e.g. one child on `docs/`+`protocols/` (seed/spec), one on `apps/`+`interfaces/` (edge/UI), one on `api/`+`lib/` (pipes). Shared scale key: $\Phi_{\mathrm{EGS}}$ / Planck–1.6 / $k/81$ when the domain is lattice/EGS/SynthOBS.
+4. **Peer-firewall:** Children do not mesh-sync with each other; they report only to the parent. Parent synthesizes and implements (or delegates a final implementer child).
+5. **Scale-to-zero:** When a child’s drift → 0 (answer complete), do not keep polling; fold the result into the parent response and move on.
+6. **RAG:** Children and parent ground claims in local `docs/`, `protocols/`, `research/` before inventing. Use search tools / `@Codebase` fidelity inside prompts.
+
+## Minimum lattice shapes
+
+| Task class | Child pattern |
+|------------|----------------|
+| Explore + implement | `explore` (map) → parent or `generalPurpose` (build) |
+| Dual-lane research | Parallel: papers/protocols child + code/runtime child |
+| Bug across stack | Parallel: UI/client child + API/`lib` child; parent merges fix |
+| Paper / PRA work | Spec child + empirical/`research/` child; parent runs audit scripts |
+
+## User-visible habit
+
+On substantial tasks, briefly note that the **nested lattice** is active (which children ran). Keep it short — no lecture. Close with → ∞¹³.
+
+**NSPFRNP ⊃ Nested Agent Lattice ⊃ Cytographic scale grammar → ∞¹³.**

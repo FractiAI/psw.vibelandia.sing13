@@ -115,7 +115,10 @@ export function ChatPane() {
         {sending ? (
           <article className="bubble bubble-assistant thinking">
             <span className="bubble-role">Lattice</span>
-            <div className="cx-block cx-status">Working…</div>
+            <div className="cx-block cx-status">
+              Working… (first cloud runs can take a minute — keep this tab open or Lattice will
+              recover when you return)
+            </div>
           </article>
         ) : null}
         <div ref={bottomRef} />

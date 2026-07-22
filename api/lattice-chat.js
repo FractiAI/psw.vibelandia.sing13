@@ -238,6 +238,124 @@ async function disposeAgent(agent) {
   }
 }
 
+function isBusyError(err) {
+  if (!err) return false;
+  const name = err.name || err.constructor?.name || '';
+  const code = err.code || '';
+  const msg = String(err.message || err);
+  return (
+    name === 'AgentBusyError' ||
+    code === 'agent_busy' ||
+    /agent[_\s-]?busy|already has an active run|active run/i.test(msg)
+  );
+}
+
+function isAbortLikeError(err) {
+  const msg = String(err?.message || err || '');
+  return /aborted|abort|disconnect|socket hang up|canceled|cancelled|client closed/i.test(msg);
+}
+
+function normalizeRunStatus(status) {
+  return String(status || '')
+    .trim()
+    .toLowerCase();
+}
+
+function isActiveRunStatus(status) {
+  const s = normalizeRunStatus(status);
+  return s === 'running' || s === 'creating' || s === 'queued' || s === 'pending';
+}
+
+function runIdOf(run) {
+  return run?.id || run?.runId || run?.run_id || null;
+}
+
+async function listCloudRuns(Agent, agentId, apiKey, limit = 8) {
+  if (!Agent?.listRuns || !agentId) return [];
+  try {
+    const listed = await Agent.listRuns(agentId, {
+      apiKey,
+      runtime: 'cloud',
+      limit,
+    });
+    if (Array.isArray(listed)) return listed;
+    if (Array.isArray(listed?.items)) return listed.items;
+    return [];
+  } catch (err) {
+    console.warn('[lattice-chat] listRuns', err);
+    return [];
+  }
+}
+
+async function resolveCloudRun(Agent, agentId, runLike, apiKey) {
+  if (!runLike) return null;
+  if (typeof runLike.wait === 'function' || typeof runLike.stream === 'function') {
+    return runLike;
+  }
+  const id = runIdOf(runLike);
+  if (!id || !Agent?.getRun) return null;
+  try {
+    return await Agent.getRun(id, { apiKey, runtime: 'cloud', agentId });
+  } catch (err) {
+    console.warn('[lattice-chat] getRun', err);
+    return null;
+  }
+}
+
+/** Wait for an in-flight cloud run (or return latest finished). Used after tab-blur / agent_busy. */
+async function recoverCloudRun(Agent, agentId, apiKey) {
+  const items = await listCloudRuns(Agent, agentId, apiKey, 8);
+  if (!items.length) return null;
+
+  const activeMeta =
+    items.find((r) => isActiveRunStatus(r.status)) ||
+    items.find((r) => isActiveRunStatus(r?.result?.status));
+  const targetMeta = activeMeta || items[0];
+  const run = await resolveCloudRun(Agent, agentId, targetMeta, apiKey);
+  if (!run) return null;
+
+  const collected = await collectRunTranscript(run);
+  return {
+    ...collected,
+    agentId,
+    recovered: true,
+  };
+}
+
+async function cancelActiveCloudRuns(Agent, agentId, apiKey) {
+  const items = await listCloudRuns(Agent, agentId, apiKey, 5);
+  for (const item of items) {
+    if (!isActiveRunStatus(item.status) && !isActiveRunStatus(item?.result?.status)) continue;
+    try {
+      const run = await resolveCloudRun(Agent, agentId, item, apiKey);
+      if (run && typeof run.cancel === 'function' && (!run.supports || run.supports('cancel'))) {
+        await run.cancel();
+      } else if (Agent.cancelRun && runIdOf(item)) {
+        await Agent.cancelRun(runIdOf(item), { apiKey, runtime: 'cloud', agentId });
+      }
+    } catch (err) {
+      console.warn('[lattice-chat] cancel active run', err);
+    }
+  }
+}
+
+/** Send follow-up; if agent is busy, wait out / recover the active run, then retry once. */
+async function sendPromptHandlingBusy(Agent, agent, prompt, sendOpts, apiKey) {
+  try {
+    return { run: await agent.send(prompt, sendOpts), recovered: null };
+  } catch (err) {
+    if (!isBusyError(err)) throw err;
+    const id = agent.agentId;
+    console.warn('[lattice-chat] agent busy — recovering active run', id);
+    const recovered = await recoverCloudRun(Agent, id, apiKey);
+    if (recovered && (recovered.text?.trim() || recovered.transcript?.length)) {
+      return { run: null, recovered };
+    }
+    await cancelActiveCloudRuns(Agent, id, apiKey);
+    return { run: await agent.send(prompt, sendOpts), recovered: null };
+  }
+}
+
 /** Normalize SDK stream events into Cursor-chat-style transcript items. */
 function pushTranscript(items, item) {
   if (!item) return;
@@ -501,7 +619,8 @@ export default async function handler(req, res) {
     }
 
     const message = typeof body.message === 'string' ? body.message.trim() : '';
-    if (!message) {
+    const recoverOnly = Boolean(body.recover);
+    if (!message && !recoverOnly) {
       return json(res, 400, { error: 'message is required' });
     }
 
@@ -518,6 +637,7 @@ export default async function handler(req, res) {
       typeof body.agentId === 'string' && body.agentId.trim() ? body.agentId.trim() : null;
 
     let agent;
+    let completedOk = false;
     try {
       let Agent;
       try {
@@ -543,6 +663,38 @@ export default async function handler(req, res) {
 
       const modelSelection = { id: modelId };
 
+      // Tab-blur / reconnect: attach to the in-flight or latest cloud run and return it.
+      if (recoverOnly && agent) {
+        const recovered = await recoverCloudRun(Agent, agent.agentId ?? agentId, apiKey);
+        if (recovered && (recovered.text?.trim() || recovered.transcript?.length)) {
+          const reply = recovered.text || extractAssistantText(recovered.result) || '';
+          completedOk = true;
+          return json(res, 200, {
+            reply,
+            transcript: recovered.transcript || [],
+            model: modelId,
+            mode: agentMode,
+            runId: recovered.runId,
+            agentId: agent.agentId ?? agentId,
+            threadId: body.threadId ?? null,
+            recovered: true,
+            access: {
+              privilege: access.privilege,
+              email: access.email,
+              expiresAt: access.expiresAt,
+              reason: access.reason,
+            },
+          });
+        }
+        if (!message) {
+          return json(res, 409, {
+            error: 'No active or finished run to recover yet. Wait a moment and retry.',
+            code: 'nothing_to_recover',
+            agentId: agent.agentId ?? agentId,
+          });
+        }
+      }
+
       if (!agent) {
         agent = await Agent.create({
           apiKey,
@@ -554,12 +706,24 @@ export default async function handler(req, res) {
         });
       }
 
-      const prompt = agentId ? message : buildPrompt(message, body.history);
-      const run = await agent.send(prompt, {
+      const prompt = agent && agentId ? message : buildPrompt(message, body.history);
+      const sendOpts = {
         model: modelSelection,
         mode: agentMode,
-      });
-      const { text, transcript, result, runId } = await collectRunTranscript(run);
+      };
+
+      const { run, recovered } = await sendPromptHandlingBusy(
+        Agent,
+        agent,
+        prompt,
+        sendOpts,
+        apiKey,
+      );
+
+      const packed = recovered
+        ? recovered
+        : await collectRunTranscript(run);
+      const { text, transcript, result, runId } = packed;
 
       if (result?.status === 'error') {
         return json(res, 502, {
@@ -590,7 +754,7 @@ export default async function handler(req, res) {
           : null;
 
       const execution = buildLatticeExecution({
-        message,
+        message: message || '(recovered run)',
         history: body.history,
         mode: 'cloud',
         resumed: Boolean(agentId),
@@ -600,6 +764,7 @@ export default async function handler(req, res) {
         usageTokens,
       });
 
+      completedOk = true;
       return json(res, 200, {
         reply: reply || '',
         transcript,
@@ -608,6 +773,7 @@ export default async function handler(req, res) {
         runId,
         agentId: agent.agentId ?? agentId,
         threadId: body.threadId ?? null,
+        recovered: Boolean(recovered || recoverOnly),
         execution,
         access: {
           privilege: access.privilege,
@@ -619,6 +785,14 @@ export default async function handler(req, res) {
     } catch (err) {
       console.error('[lattice-chat]', err);
       const msg = err instanceof Error ? err.message : 'Lattice agent failed';
+      if (isBusyError(err)) {
+        return json(res, 409, {
+          error:
+            'Agent still has an active run. Lattice will recover it — wait a few seconds and retry, or stay on this tab until Working finishes.',
+          code: 'agent_busy',
+          agentId: agent?.agentId ?? agentId,
+        });
+      }
       const branchFail = /default branch|verify existence of branch|repository/i.test(msg);
       const hint = branchFail
         ? ` Lattice uses ${repoUrl} @ ${startingRef}. Same CURSOR_API_KEY works on granted repos (e.g. psw.vibelandia.sing4) but not this one yet. FractiAI is a GitHub user account — while logged in as FractiAI, open https://github.com/settings/installations → Cursor → Repository access → add FractiAI/psw.vibelandia.sing13 (or All repositories). Also confirm https://cursor.com/dashboard/integrations for the account that owns CURSOR_API_KEY.`
@@ -628,9 +802,11 @@ export default async function handler(req, res) {
         code: 'agent_error',
         repoUrl: branchFail ? repoUrl : undefined,
         startingRef: branchFail ? startingRef : undefined,
+        agentId: agent?.agentId ?? agentId,
       });
     } finally {
-      await disposeAgent(agent);
+      // Do not dispose on client abort / mid-flight errors — cloud run must stay recoverable.
+      if (completedOk) await disposeAgent(agent);
     }
   } catch (outer) {
     console.error('[lattice-chat] outer', outer);

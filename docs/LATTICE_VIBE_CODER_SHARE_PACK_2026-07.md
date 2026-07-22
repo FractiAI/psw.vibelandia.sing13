@@ -2,130 +2,123 @@
 
 **Document ID:** LATTICE-SHARE-PACK-2026-07  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Honesty boundary:** Token figures are structural / simulation estimates (chars÷4 · topology model), not vendor LLM invoices. Art assets are campaign visuals, not empirical claims.
+**Status:** Chairman-approved plain-English copy (2026-07-22)
 
-Chairman / Player 1 posts externally. Agents prepared copy + Art Deco images.
+**Honesty:** The “~99% fewer tokens” number is from our public estimate test, not an OpenAI/Anthropic bill yet.
 
-## Canonical links
+Chairman posts on social. Agents keep this pack + site/README in sync.
 
-- Live: https://www.ssvibelandiaquestfest24x365.com/lattice
-- Receipt: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
-- Repo: https://github.com/FractiAI/psw.vibelandia.sing13
+## Links
 
-## Art Deco images (attach with posts)
+- Site: https://www.ssvibelandiaquestfest24x365.com/lattice
+- Proof: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+- Code: https://github.com/FractiAI/psw.vibelandia.sing13
+
+## Pictures
 
 | File | Use |
 |------|-----|
-| [/interfaces/images/lattice-artdeco-hero.png](../interfaces/images/lattice-artdeco-hero.png) | GitHub · Show HN · Reddit (wide) |
-| [/interfaces/images/lattice-artdeco-square.png](../interfaces/images/lattice-artdeco-square.png) | X · Discord (square) |
-| [/interfaces/images/lattice-artdeco-tokens.png](../interfaces/images/lattice-artdeco-tokens.png) | Proof thread / Reddit alternate (chaos → nested lattice) |
+| [/interfaces/images/lattice-artdeco-hero.png](../interfaces/images/lattice-artdeco-hero.png) | GitHub · Hacker News · Reddit |
+| [/interfaces/images/lattice-artdeco-square.png](../interfaces/images/lattice-artdeco-square.png) | Discord · X |
+| [/interfaces/images/lattice-artdeco-tokens.png](../interfaces/images/lattice-artdeco-tokens.png) | Optional proof image |
 
 ## Post order
 
-1. GitHub → 2. Discord → 3. X → 4. Show HN → 5. Reddit (`r/cursor` / `r/LocalLLaMA`)
+1. GitHub → 2. Discord → 3. X → 4. Hacker News → 5. Reddit
 
 ---
 
 ### 1 · GitHub — image: `lattice-artdeco-hero.png`
 
-**Title:** Lattice V1.618 — fractal nested agents for vibe coders
+**Title:** Lattice V1.618 — a smarter way to run AI coding agents
 
 ```text
-Lattice V1.618 by FractiAI is a Nested Agent Lattice — fractal parent/child agents (Φ≈1.618), not another fat-context chat wrapper.
+Lattice V1.618 is a new tool from FractiAI.
 
-For vibe coders: plain chat on the outside; under the hood a Φ-Parent runs MCA nesting (seed · edge · pipes), RAG pointers instead of corpus dumps, peer-firewall leaves, one leaf awake at a time.
+Most AI coding tools dump huge piles of files into the AI. That burns a lot of tokens (money and limits).
 
-Token claim (honesty-tier): a public regenerable structural bench shows ~99% less estimated context-token load vs fat-context agentic mode (chars÷4 estimate — not vendor invoices).
+Lattice works differently. You chat normally. Behind the scenes it uses a small team of nested AI agents — like a boss agent with a few helpers — so it only loads what it needs.
 
-→ https://www.ssvibelandiaquestfest24x365.com/lattice
-→ Receipt: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
-→ Repo: https://github.com/FractiAI/psw.vibelandia.sing13
+In our public test, Lattice used about 99% fewer estimated tokens than the “dump everything” approach. That is our estimate, not a final bill from OpenAI or Anthropic. The test file is public so people can check our work.
+
+Try it: https://www.ssvibelandiaquestfest24x365.com/lattice
+Proof: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+Code: https://github.com/FractiAI/psw.vibelandia.sing13
 ```
 
 ### 2 · Discord — image: `lattice-artdeco-square.png`
 
 ```text
-For agent vibe coders burning tokens on fat-context agentic runs:
+Hey — for people using AI agents to code:
 
-Lattice V1.618 (FractiAI) = fractal Nested Agent Lattice — Φ-parent + scale-banded children, RAG pointers, peer-firewall. Feels like chat; nests underneath.
+Lattice V1.618 (FractiAI) is chat on the outside, nested agents on the inside. It avoids dumping your whole project into the AI every time.
 
-Public receipt: ~99% less estimated context-token load vs dumping the corpus into one fat agent (structural chars÷4 — not a billing guarantee).
+Our public test shows about 99% fewer estimated tokens vs the dump-everything style. Estimate only — not a vendor bill yet.
 
-Lattice: https://www.ssvibelandiaquestfest24x365.com/lattice
-Receipt: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+https://www.ssvibelandiaquestfest24x365.com/lattice
+Proof: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
 ```
 
 ### 3 · X — image: `lattice-artdeco-square.png`
 
 ```text
-Lattice V1.618 by FractiAI — fractal nested agents for vibe coders.
+Lattice V1.618 by FractiAI
 
-Not fat-context paste. Nested Agent Lattice (Φ≈1.618): parent MCA + RAG pointers + one leaf awake.
+Chat-simple AI coding agents that nest instead of dumping your whole repo into context.
 
-~99% less estimated context-token load vs fat-context agentic (public regenerable receipt; not vendor invoices).
+Our public test: ~99% fewer estimated tokens vs dump-everything mode (estimate, not a vendor bill).
 
 https://www.ssvibelandiaquestfest24x365.com/lattice
 ```
 
-**Proof reply — image: `lattice-artdeco-tokens.png`**
-
+**Optional reply:**
 ```text
-Receipt (JSON): https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
-Re-run: npm run compare:lattice in the SING13 repo.
-Honesty: structural estimate — topology + chars÷4 — not live LLM invoices.
+Proof file: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
 ```
 
-### 4 · Show HN — image: `lattice-artdeco-hero.png`
+### 4 · Hacker News — image: `lattice-artdeco-hero.png`
 
-**Title:** Show HN: Lattice V1.618 – fractal nested agents that cut estimated context tokens ~99%
+**Title:** Show HN: Lattice V1.618 – nested AI agents that use far fewer tokens (public test)
 
 ```text
 Hi HN —
 
-Lattice V1.618 is FractiAI’s Nested Agent Lattice chat surface. Idea: vibe-coding shouldn’t mean stuffing the whole repo into one fat-context agent.
+Lattice V1.618 is our chat tool for AI coding agents. The idea is simple: stop stuffing the whole codebase into one giant prompt.
 
-What it is:
-- Φ-Parent outer loop (MCA: metabolize → crystallize → animate → squeeze)
-- Scale-banded children (seed / edge / pipes), peer-firewall, one leaf awake
-- RAG pointers instead of corpus dumps
+How it works in plain terms:
+- One lead agent breaks the job up
+- A few helper agents each handle one area
+- It points at files instead of pasting everything
 
-Token claim (please read the honesty line):
-A regenerable structural bench in-repo compares Lattice vs fat-context agentic on the same multi-band prompt. Result: ~99% less estimated context-token load (chars÷4). This is not a vendor-invoice A/B. We’re publishing the receipt so you can attack the methodology.
+We published a test comparing Lattice vs the dump-everything style on the same task. Result: about 99% fewer estimated tokens. This is our estimate method, not a live invoice from a model vendor. Feedback welcome.
 
 Live: https://www.ssvibelandiaquestfest24x365.com/lattice
-Receipt: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
-Repo: https://github.com/FractiAI/psw.vibelandia.sing13
-
-Happy to discuss nesting topology, the meter, and what a true billed A/B would require.
+Proof: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+Code: https://github.com/FractiAI/psw.vibelandia.sing13
 ```
 
-### 5 · Reddit — image: `lattice-artdeco-hero.png` or `lattice-artdeco-tokens.png`
+### 5 · Reddit — image: `lattice-artdeco-hero.png`
 
-**Title:** Lattice V1.618 — nested/fractal agent lattice for vibe coders (token discipline, public receipt)
+**Title:** Lattice V1.618 — nested AI agents for vibe coders (uses fewer tokens; public proof)
 
 ```text
-Sharing something we built for people who vibe-code with agents and watch context tokens melt.
+Built for people who code with AI agents and hate watching token counts explode.
 
-Lattice V1.618 (FractiAI) treats nested agents as the default path — fractal Goldilocks nesting (parent + a few scale-banded children), not “paste more files into the prompt.”
+Lattice V1.618 (FractiAI): you chat like normal. Under the hood it runs a small nested agent team instead of pasting your whole project into one prompt.
 
-What you get as a builder:
-- Chat-simple surface
-- Nested execution under the hood (seed · edge · pipes)
-- A public regenerable comparison vs fat-context agentic mode
+Our public test: about 99% fewer estimated tokens than dump-everything mode. That’s an estimate, not an OpenAI/Anthropic invoice. Proof is public.
 
-Numbers (honest):
-~99% less estimated context-token load on that bench (chars÷4). Not claiming live OpenAI/Anthropic invoice savings until we run a billed A/B.
-
-Links:
 https://www.ssvibelandiaquestfest24x365.com/lattice
 https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
 https://github.com/FractiAI/psw.vibelandia.sing13
 
-Curious how others are cutting agent context burn without killing capability.
+How are you cutting agent token burn?
 ```
 
-## Agent autonomy note
+## Site surfaces (agents maintain)
 
-Agents can prepare this pack, regenerate receipts, ship `/lattice` surfaces, and open PRs without Chairman keystrokes. Chairman involvement remains: merge PR, post to external platforms, honor-rail access decisions.
+- README Lattice section
+- https://www.ssvibelandiaquestfest24x365.com/lattice
+- FractiAI page Lattice card/blurb
 
 → ∞¹³

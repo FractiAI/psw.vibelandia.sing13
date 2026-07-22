@@ -10,11 +10,20 @@
 
 **Live site:** [**www.ssvibelandiaquestfest24x365.com**](https://www.ssvibelandiaquestfest24x365.com) · **Repository:** [github.com/fractiai/psw.vibelandia.sing13](https://github.com/fractiai/psw.vibelandia.sing13)
 
+## Lattice V1.618 — nested AI agents for vibe coders
+
+**Lattice** is FractiAI’s chat tool for AI coding agents. You chat normally. Behind the scenes a small nested agent team loads only what it needs — instead of dumping your whole project into one giant prompt.
+
+- **Live:** [ssvibelandiaquestfest24x365.com/lattice](https://www.ssvibelandiaquestfest24x365.com/lattice)
+- **Chat:** [/lattice-chat](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)
+- **Public test:** about **99% fewer estimated tokens** vs dump-everything mode ([proof JSON](https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json)) — estimate method, not a vendor invoice yet
+- **Share pack** (approved post copy + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md`](docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md)
+
 **SING 13** is the major singularity upgrade from SING 9. This edge carries the **NSPFRNP catalog**, the **SS Vibelandia QUESTFEST 24×365** nest, and the **Sovereign Player** (QUESTFEST Bridge). Everything else lives on the parent edge — [github.com/fractiai/psw.vibelandia.sing9](https://github.com/fractiai/psw.vibelandia.sing9) · [psw-vibelandia-sing9.vercel.app](https://psw-vibelandia-sing9.vercel.app). **Lite edges, no Supabase. Center = pipes only. → ∞⁹**
 
 **Three Doors (front door):** **Listen** (Sovereign Player) · **Read** (paper catalog) · **Build** (seed kit — [`seed/`](seed/README.md)). Fork your own edge from `seed/README.md`. Open music manifest for syndication: `GET /api/catalog`. Layer admission (Goldilocks Gate): `protocols/NEST_LAYER_ADMISSION_RULE_NSPFRNP.md`. Squeeze record: `docs/LEGACY_INDEX.md`. Voice tiers on every claim: 🜛 mythic · ⚙ operational · 📐 verified.
 
-**Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. Lab pages, hive, sim, lattice, tests, heavy scripts — on SING 9.
+**Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. **Lattice V1.618** (`/lattice`, `/lattice-chat`) ships on this SING 13 edge. Other lab pages, hive, sim, tests, heavy scripts — on SING 9.
 
 **Single-read onboarding:** [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md). NSPFRNP catalog spine: [`protocols/MCA_NSPFRNP_CATALOG.md`](protocols/MCA_NSPFRNP_CATALOG.md). Repository standard: [`BBHE_REPOSITORY_STANDARD.md`](BBHE_REPOSITORY_STANDARD.md).
 
@@ -25,6 +34,7 @@
 
 | Lane | What | Where |
 |---|---|---|
+| **Lattice V1.618** | Nested-agent chat for vibe coders · token-discipline proof · Art Deco share pack | [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · `interfaces/lattice-v1618.html` · `apps/lattice-chat/` · `docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md` |
 | **Onboarding** | Single-read edge file (SING 13 specific) | `SING13_EDGE_ONBOARDING.md` |
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |

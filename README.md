@@ -24,7 +24,7 @@
 
 **SING 13** is the major singularity upgrade from SING 9. This edge carries the **NSPFRNP catalog**, the **SS Vibelandia QUESTFEST 24×365** nest, and the **Sovereign Player** (QUESTFEST Bridge). Everything else lives on the parent edge — [github.com/fractiai/psw.vibelandia.sing9](https://github.com/fractiai/psw.vibelandia.sing9) · [psw-vibelandia-sing9.vercel.app](https://psw-vibelandia-sing9.vercel.app). **Lite edges, no Supabase. Center = pipes only. → ∞⁹**
 
-**Three Doors (front door):** **Listen** (Sovereign Player) · **Read** (paper catalog) · **Build** (seed kit — [`seed/`](seed/README.md)). Fork your own edge from `seed/README.md`. Open music manifest for syndication: `GET /api/catalog`. Layer admission (Goldilocks Gate): `protocols/NEST_LAYER_ADMISSION_RULE_NSPFRNP.md`. Squeeze record: `docs/LEGACY_INDEX.md`. Voice tiers on every claim: 🜛 mythic · ⚙ operational · 📐 verified.
+**Three Doors (front door):** **Listen** (Sovereign Player) · **Read** (paper catalog) · **Build · Lattice** ([`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) nested agents). Seed kit remains optional under [`seed/`](seed/README.md). Open music manifest for syndication: `GET /api/catalog`. Layer admission (Goldilocks Gate): `protocols/NEST_LAYER_ADMISSION_RULE_NSPFRNP.md`. Squeeze record: `docs/LEGACY_INDEX.md`. Voice tiers on every claim: 🜛 mythic · ⚙ operational · 📐 verified.
 
 **Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. **Lattice V1.618** (`/lattice`, `/lattice-chat`) ships on this SING 13 edge. Other lab pages, hive, sim, tests, heavy scripts — on SING 9.
 

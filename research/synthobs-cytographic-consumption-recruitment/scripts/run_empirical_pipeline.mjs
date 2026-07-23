@@ -175,6 +175,9 @@ const NEST_SEEKER_ATTRACT = {
   parasite: 0.91,
   yeast: 0.88,
   human_sovereign_node: 0.93,
+  diatom: 0.94,
+  radiolarian: 0.92,
+  biosilica_sponge: 0.9,
 };
 
 function e6GoldilocksAttractor() {
@@ -276,6 +279,7 @@ async function main() {
       CLUTCH_DELTA,
       SUBSTRATE_AFFINITY,
       VESSEL_AFFINITY,
+      NEST_SEEKER_ATTRACT,
     },
     results,
   };

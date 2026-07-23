@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-CYTO-HOLO-NUCLEUS-2026-07`
 **Registry ID:** `synthobs-cytographic-holographic-nucleus-2026-07`
-**Generated:** 2026-07-23T16:36:09.030Z
+**Generated:** 2026-07-23T17:01:29.725Z
 
 ## Verdict
 
@@ -280,6 +280,18 @@
     {
       "seeker": "human_sovereign_node",
       "attract": 0.93
+    },
+    {
+      "seeker": "diatom",
+      "attract": 0.94
+    },
+    {
+      "seeker": "radiolarian",
+      "attract": 0.92
+    },
+    {
+      "seeker": "biosilica_sponge",
+      "attract": 0.9
     }
   ],
   "interpretation": "Every catalogued nest-seeker class scores attract ≥ 0.85 under Omniversal Goldilocks climate — universal pull by definition; Goldilocks Gate still filters admission.",

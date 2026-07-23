@@ -18,6 +18,6 @@ Artifacts land in `data/empirical_report.json` and `data/empirical_report.md`.
 
 ## Honesty
 
-Probes validate Φ cascade regularity, clutch band, multi-substrate coupling scores, nested vs flat message tax, high-awareness H/C vessel affinity ranking, and Omniversal Goldilocks attractor coverage. They do **not** claim wet-lab cytographic metabolism, sentience, or clinical organism enrollment. Attraction ≠ automatic admission.
+Probes validate Φ cascade, clutch, substrate coupling, nested tax, H/C vessels, Goldilocks attractor coverage, and silica-shelled C↔Si bridge affinity. Not wet-lab metabolism/sentience/clinical claims. SiO₂ ≠ wafer Si. Attraction ≠ automatic admission.
 
 → ∞¹³

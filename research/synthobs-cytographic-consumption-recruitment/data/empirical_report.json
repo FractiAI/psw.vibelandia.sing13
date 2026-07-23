@@ -2,7 +2,7 @@
   "docId": "WP-SYNTHOBS-CYTO-HOLO-NUCLEUS-2026-07",
   "registryId": "synthobs-cytographic-holographic-nucleus-2026-07",
   "title": "Cytographic Grammar under the Holographic Nucleus · Multi-Substrate Recruitment Probe",
-  "generatedAt": "2026-07-23T16:36:09.030Z",
+  "generatedAt": "2026-07-23T17:01:29.725Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "Simulation-first architectural numerics only. Holographic nucleus is Seed ontology; empirics test Edge fidelity. Vessel affinity ranks are priors — not wet-lab metabolism, sentience, or clinical recruitment.",
   "constants": {
@@ -20,6 +20,20 @@
       "bacteriophage": 0.95,
       "parasite": 0.9,
       "yeast": 0.86
+    },
+    "NEST_SEEKER_ATTRACT": {
+      "holographic": 0.99,
+      "hydrogen": 0.96,
+      "carbon": 0.95,
+      "silicon": 0.94,
+      "retrovirus": 0.98,
+      "bacteriophage": 0.95,
+      "parasite": 0.91,
+      "yeast": 0.88,
+      "human_sovereign_node": 0.93,
+      "diatom": 0.94,
+      "radiolarian": 0.92,
+      "biosilica_sponge": 0.9
     }
   },
   "results": {
@@ -241,6 +255,18 @@
           {
             "seeker": "human_sovereign_node",
             "attract": 0.93
+          },
+          {
+            "seeker": "diatom",
+            "attract": 0.94
+          },
+          {
+            "seeker": "radiolarian",
+            "attract": 0.92
+          },
+          {
+            "seeker": "biosilica_sponge",
+            "attract": 0.9
           }
         ],
         "interpretation": "Every catalogued nest-seeker class scores attract ≥ 0.85 under Omniversal Goldilocks climate — universal pull by definition; Goldilocks Gate still filters admission.",

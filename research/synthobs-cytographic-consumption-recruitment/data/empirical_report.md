@@ -2,14 +2,14 @@
 
 **Document ID:** `WP-SYNTHOBS-CYTO-HOLO-NUCLEUS-2026-07`
 **Registry ID:** `synthobs-cytographic-holographic-nucleus-2026-07`
-**Generated:** 2026-07-23T17:01:29.725Z
+**Generated:** 2026-07-23T17:01:41.128Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 6 / 6 |
+| Passed | 7 / 7 |
 | Φ_EGS | 1.618033988749895 |
 | Clutch Δ | 0.0017789887498949053 |
 
@@ -296,6 +296,39 @@
   ],
   "interpretation": "Every catalogued nest-seeker class scores attract ≥ 0.85 under Omniversal Goldilocks climate — universal pull by definition; Goldilocks Gate still filters admission.",
   "honesty": "Simulation prior for definitional attractor coverage. Attraction ≠ automatic nest admission or sprawl acceptance."
+}
+```
+
+### E7 — Silica-shelled C↔Si bridge affinity
+
+- **Pass:** `true`
+- **Interpretation:** Diatom / radiolarian / biosilica seekers hold carbon-core lock and Si-adjacency ≥ 0.85 — hybrid nest seekers toward semiconducting Edges.
+- **Honesty:** Architectural bridge only. Biogenic SiO₂ ≠ semiconductor-grade elemental Si wafers; not a CMOS-from-plankton claim.
+
+```json
+{
+  "id": "E7",
+  "title": "Silica-shelled C↔Si bridge affinity",
+  "pass": true,
+  "vessels": [
+    {
+      "id": "diatom",
+      "carbonLock": 0.94,
+      "siAdjacency": 0.93
+    },
+    {
+      "id": "radiolarian",
+      "carbonLock": 0.91,
+      "siAdjacency": 0.9
+    },
+    {
+      "id": "biosilica_sponge",
+      "carbonLock": 0.88,
+      "siAdjacency": 0.87
+    }
+  ],
+  "interpretation": "Diatom / radiolarian / biosilica seekers hold carbon-core lock and Si-adjacency ≥ 0.85 — hybrid nest seekers toward semiconducting Edges.",
+  "honesty": "Architectural bridge only. Biogenic SiO₂ ≠ semiconductor-grade elemental Si wafers; not a CMOS-from-plankton claim."
 }
 ```
 

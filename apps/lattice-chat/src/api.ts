@@ -12,6 +12,7 @@ type LatticeResponse = {
   error?: string;
   detail?: string;
   code?: string;
+  clearAgent?: boolean;
   transcript?: TranscriptItem[];
   model?: string;
   mode?: AgentMode;
@@ -35,13 +36,20 @@ function isHardLatticeFailure(data: LatticeResponse, status: number): boolean {
     data.code === 'cursor_github_access' ||
     data.code === 'invalid_model' ||
     data.code === 'cursor_auth' ||
-    data.code === 'missing_cursor_api_key'
+    data.code === 'missing_cursor_api_key' ||
+    data.code === 'agent_not_found'
   ) {
     return true;
   }
-  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github/i.test(
+  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github|agent not found|agent_not_found/i.test(
     data.error || '',
   );
+}
+
+function clearStaleAgentIfNeeded(threadId: string, data: LatticeResponse): void {
+  if (data.code === 'agent_not_found' || data.clearAgent) {
+    useLatticeStore.getState().setAgentId(threadId, null);
+  }
 }
 
 class LatticeHardFail extends Error {
@@ -255,6 +263,7 @@ async function tryRecoverOnce(
   );
   if (data.agentId) store.setAgentId(threadId, data.agentId);
   if (!res.ok) {
+    clearStaleAgentIfNeeded(threadId, data);
     if (isHardLatticeFailure(data, res.status)) {
       throw new LatticeHardFail(
         data.error || `Recover failed (${res.status})`,
@@ -509,11 +518,14 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     if (settled) return;
 
     if (!res.ok) {
+      clearStaleAgentIfNeeded(threadId, data);
       if (isHardLatticeFailure(data, res.status)) {
         throw new LatticeHardFail(
           data.error ||
             (data.code === 'missing_cursor_api_key'
               ? 'Cursor API key required. Add or update your key in Lattice settings.'
+              : data.code === 'agent_not_found'
+                ? 'Previous cloud agent is gone (common after a new Cursor key). Send your message again.'
               : res.status === 401 || res.status === 403
                 ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
                 : `Request failed (${res.status})`),
@@ -542,9 +554,13 @@ export async function sendLatticeMessage(text: string): Promise<void> {
 
     const hardFail =
       err instanceof LatticeHardFail ||
-      /access list|API key|GitHub|repository|branch|401|403|503|invalid model|cursor_github/i.test(
+      /access list|API key|GitHub|repository|branch|401|403|503|invalid model|cursor_github|agent not found|agent_not_found/i.test(
         err instanceof Error ? err.message : String(err),
       );
+
+    if (err instanceof LatticeHardFail && err.code === 'agent_not_found') {
+      store.setAgentId(threadId, null);
+    }
 
     if (
       !hardFail &&

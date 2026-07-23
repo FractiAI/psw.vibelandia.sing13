@@ -71,7 +71,18 @@ export function ChatPane({
   }, [ensureThread]);
 
   useEffect(() => {
-    const sync = () => setHasEdgeKey(hasUserCursorApiKey());
+    const sync = (detail?: { changed?: boolean }) => {
+      setHasEdgeKey(hasUserCursorApiKey());
+      // New Cursor key ⇒ old cloud agent ids are invalid (BYOK hang fix).
+      if (detail?.changed) {
+        const s = useLatticeStore.getState();
+        s.clearCloudAgents();
+        s.clearPending();
+        s.setError(null);
+        s.setSending(false);
+        resumedRef.current = true; // do not auto-recover a dead agent after key paste
+      }
+    };
     sync();
     return subscribeUserCursorApiKey(sync);
   }, []);
@@ -86,7 +97,16 @@ export function ChatPane({
     if (!threadAwaitingAssistant(activeThreadId)) return;
     const s = useLatticeStore.getState();
     if (!s.pending) return;
-    if (s.error && /GitHub|repository|branch|API key|access list|invalid model/i.test(s.error)) {
+    if (
+      s.error &&
+      /GitHub|repository|branch|API key|access list|invalid model|agent not found/i.test(s.error)
+    ) {
+      resumedRef.current = true;
+      return;
+    }
+    // Stale agent under a new edge key — don't spin recover forever.
+    const pendingAgent = s.pending.agentId || s.threads.find((t) => t.id === activeThreadId)?.agentId;
+    if (!pendingAgent) {
       resumedRef.current = true;
       return;
     }

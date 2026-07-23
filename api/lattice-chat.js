@@ -295,6 +295,16 @@ function runIdOf(run) {
   return run?.id || run?.runId || run?.run_id || null;
 }
 
+/** Stale agent id (often from a different Cursor key / prior session). */
+function isAgentNotFoundError(err) {
+  const msg = err instanceof Error ? err.message : String(err || '');
+  const code = err && typeof err === 'object' ? String(err.code || '') : '';
+  return (
+    code === 'agent_not_found' ||
+    /agent[_\s-]?not[_\s-]?found|\[agent_not_found\]/i.test(msg)
+  );
+}
+
 async function listCloudRuns(Agent, agentId, apiKey, limit = 8) {
   if (!Agent?.listRuns || !agentId) return [];
   try {
@@ -307,7 +317,8 @@ async function listCloudRuns(Agent, agentId, apiKey, limit = 8) {
     if (Array.isArray(listed?.items)) return listed.items;
     return [];
   } catch (err) {
-    console.warn('[lattice-chat] listRuns', err);
+    if (isAgentNotFoundError(err)) throw err;
+    console.warn('[lattice-chat] listRuns');
     return [];
   }
 }
@@ -718,12 +729,16 @@ export default async function handler(req, res) {
         });
       }
 
+      let resumedOk = false;
       if (agentId) {
         try {
           agent = await Agent.resume(agentId, { apiKey });
+          resumedOk = Boolean(agent);
         } catch (resumeErr) {
-          console.warn('[lattice-chat] resume failed, creating new agent', resumeErr);
+          console.warn('[lattice-chat] resume failed, creating new agent');
           agentId = null;
+          agent = null;
+          resumedOk = false;
         }
       }
 
@@ -731,41 +746,54 @@ export default async function handler(req, res) {
 
       // Tab-blur / reconnect: attach to the in-flight or latest cloud run and return it.
       if (recoverOnly && agent) {
-        const recovered = await recoverCloudRun(Agent, agent.agentId ?? agentId, apiKey);
-        if (recovered && (recovered.text?.trim() || recovered.transcript?.length)) {
-          const reply = recovered.text || extractAssistantText(recovered.result) || '';
-          const execution = buildLatticeExecution({
-            message: message || '(recovered run)',
-            history: body.history,
-            mode: 'cloud',
-            resumed: true,
-            reply,
-            runId: recovered.runId,
-            agentId: agent.agentId ?? agentId,
-            usageTokens:
-              typeof recovered.result?.usage?.totalTokens === 'number'
-                ? recovered.result.usage.totalTokens
-                : null,
-          });
-          completedOk = true;
-          return json(res, 200, {
-            reply,
-            transcript: recovered.transcript || [],
-            model: modelId,
-            mode: agentMode,
-            runId: recovered.runId,
-            agentId: agent.agentId ?? agentId,
-            threadId: body.threadId ?? null,
-            recovered: true,
-            tokens: execution.tokens,
-            execution,
-            access: {
-              privilege: access.privilege,
-              email: access.email,
-              expiresAt: access.expiresAt,
-              reason: access.reason,
-            },
-          });
+        try {
+          const recovered = await recoverCloudRun(Agent, agent.agentId ?? agentId, apiKey);
+          if (recovered && (recovered.text?.trim() || recovered.transcript?.length)) {
+            const reply = recovered.text || extractAssistantText(recovered.result) || '';
+            const execution = buildLatticeExecution({
+              message: message || '(recovered run)',
+              history: body.history,
+              mode: 'cloud',
+              resumed: true,
+              reply,
+              runId: recovered.runId,
+              agentId: agent.agentId ?? agentId,
+              usageTokens:
+                typeof recovered.result?.usage?.totalTokens === 'number'
+                  ? recovered.result.usage.totalTokens
+                  : null,
+            });
+            completedOk = true;
+            return json(res, 200, {
+              reply,
+              transcript: recovered.transcript || [],
+              model: modelId,
+              mode: agentMode,
+              runId: recovered.runId,
+              agentId: agent.agentId ?? agentId,
+              threadId: body.threadId ?? null,
+              recovered: true,
+              tokens: execution.tokens,
+              execution,
+              access: {
+                privilege: access.privilege,
+                email: access.email,
+                expiresAt: access.expiresAt,
+                reason: access.reason,
+              },
+            });
+          }
+        } catch (recoverErr) {
+          if (isAgentNotFoundError(recoverErr)) {
+            return json(res, 422, {
+              error:
+                'That cloud agent is gone (often after switching Cursor API keys). Start a new message — Lattice will create a fresh agent.',
+              code: 'agent_not_found',
+              clearAgent: true,
+              agentId: null,
+            });
+          }
+          throw recoverErr;
         }
         if (!message) {
           return json(res, 409, {
@@ -785,21 +813,57 @@ export default async function handler(req, res) {
             repos: [{ url: repoUrl, startingRef }],
           },
         });
+        agentId = agent.agentId ?? null;
+        resumedOk = false;
       }
 
-      const prompt = agent && agentId ? message : buildPrompt(message, body.history);
+      const prompt = resumedOk && message ? message : buildPrompt(message, body.history);
       const sendOpts = {
         model: modelSelection,
         mode: agentMode,
       };
 
-      const { run, recovered } = await sendPromptHandlingBusy(
-        Agent,
-        agent,
-        prompt,
-        sendOpts,
-        apiKey,
-      );
+      let run;
+      let recovered;
+      try {
+        ({ run, recovered } = await sendPromptHandlingBusy(
+          Agent,
+          agent,
+          prompt,
+          sendOpts,
+          apiKey,
+        ));
+      } catch (sendErr) {
+        // BYOK: stale agent ids from another key must not 500-loop the client.
+        if (isAgentNotFoundError(sendErr)) {
+          console.warn('[lattice-chat] stale agent — recreating under current edge key');
+          agentId = null;
+          try {
+            await disposeAgent(agent);
+          } catch {
+            /* ignore */
+          }
+          agent = await Agent.create({
+            apiKey,
+            model: modelSelection,
+            mode: agentMode,
+            cloud: {
+              repos: [{ url: repoUrl, startingRef }],
+            },
+          });
+          agentId = agent.agentId ?? null;
+          resumedOk = false;
+          ({ run, recovered } = await sendPromptHandlingBusy(
+            Agent,
+            agent,
+            buildPrompt(message, body.history),
+            sendOpts,
+            apiKey,
+          ));
+        } else {
+          throw sendErr;
+        }
+      }
 
       const packed = recovered
         ? recovered
@@ -905,6 +969,15 @@ export default async function handler(req, res) {
           code: 'invalid_model',
           model: modelId,
           agentId: agent?.agentId ?? agentId,
+        });
+      }
+      if (isAgentNotFoundError(err)) {
+        return json(res, 422, {
+          error:
+            'That cloud agent is gone (often after switching Cursor API keys). Send again — Lattice will start a fresh agent.',
+          code: 'agent_not_found',
+          clearAgent: true,
+          agentId: null,
         });
       }
 

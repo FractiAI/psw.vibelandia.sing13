@@ -83,6 +83,10 @@ export function AuthPanel({
       setFlash(keyResult.error || 'Paste your Cursor API key to sign in.');
       return;
     }
+    if (keyResult.changed) {
+      useLatticeStore.getState().clearCloudAgents();
+      useLatticeStore.getState().clearPending();
+    }
     setUserEmail(next);
     setFlash('Signed in — email and Cursor API key saved on this device.');
     onSignedIn?.();

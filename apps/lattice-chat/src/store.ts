@@ -64,7 +64,9 @@ type LatticeState = {
   setPending: (pending: PendingSend | null) => void;
   clearPending: () => void;
   setError: (msg: string | null) => void;
-  setAgentId: (threadId: string, agentId: string) => void;
+  setAgentId: (threadId: string, agentId: string | null) => void;
+  /** Drop cloud agent ids when the edge Cursor key changes (agents are per-key). */
+  clearCloudAgents: () => void;
   setAgentMode: (mode: AgentMode) => void;
   setModelId: (modelId: string) => void;
   setModels: (models: LatticeModelOption[]) => void;
@@ -214,13 +216,25 @@ export const useLatticeStore = create<LatticeState>()(
       setError: (msg) => set({ error: msg }),
       setAgentId: (threadId, agentId) => {
         set((s) => ({
-          threads: s.threads.map((t) => (t.id === threadId ? { ...t, agentId } : t)),
+          threads: s.threads.map((t) =>
+            t.id === threadId
+              ? { ...t, agentId: agentId || undefined }
+              : t,
+          ),
           pending:
             s.pending && s.pending.threadId === threadId
-              ? { ...s.pending, agentId }
+              ? { ...s.pending, agentId: agentId || undefined }
               : s.pending,
         }));
       },
+      clearCloudAgents: () =>
+        set((s) => ({
+          threads: s.threads.map((t) => ({ ...t, agentId: undefined })),
+          pending: s.pending ? { ...s.pending, agentId: undefined } : null,
+          sending: false,
+          sendPhase: 'idle' as const,
+          statusHint: null,
+        })),
       setAgentMode: (mode) => set({ agentMode: mode }),
       setModelId: (modelId) => set({ modelId }),
       setModels: (models) => set({ models }),

@@ -45,6 +45,8 @@ export function ChatPane({
   const [keySettingsOpen, setKeySettingsOpen] = useState(false);
   const [hasEdgeKey, setHasEdgeKey] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const stickToBottomRef = useRef(true);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const resumedRef = useRef(false);
 
@@ -115,9 +117,20 @@ export function ChatPane({
   }, [signedIn, hasEdgeKey, activeThreadId]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [thread?.messages.length, sending, signedIn, statusHint, sendPhase, elapsedSec]);
+    // Only pin to bottom when the user is already near the end (or just sent).
+    // Do not re-scroll on wait-timer ticks — that blocked reading earlier turns.
+    if (!stickToBottomRef.current) return;
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollTop = el.scrollHeight;
+  }, [thread?.messages.length, showWorking, signedIn, activeThreadId]);
 
+  function onMessageScroll() {
+    const el = scrollRef.current;
+    if (!el) return;
+    const gap = el.scrollHeight - el.scrollTop - el.clientHeight;
+    stickToBottomRef.current = gap < 96;
+  }
   useEffect(() => {
     if (!showWorking) {
       setElapsedSec(0);
@@ -155,6 +168,7 @@ export function ChatPane({
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!signedIn) return;
+    stickToBottomRef.current = true;
     const text = draft;
     setDraft('');
     await sendLatticeMessage(text);
@@ -236,7 +250,13 @@ export function ChatPane({
         </div>
       ) : null}
 
-      <div className="message-scroll" role="log" aria-live="polite">
+      <div
+        className="message-scroll"
+        role="log"
+        aria-live="polite"
+        ref={scrollRef}
+        onScroll={onMessageScroll}
+      >
         {!signedIn ? (
           <div className="auth-stage">
             <p className="empty-lead">Sign in to use Lattice</p>

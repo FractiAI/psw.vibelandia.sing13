@@ -56,7 +56,14 @@ body {
   grid-template-columns: var(--rail-w) 1fr;
   height: 100%;
   min-height: 100dvh;
+  max-height: 100dvh;
   position: relative;
+  overflow: hidden;
+}
+
+.lattice-shell > .chat-pane {
+  min-height: 0;
+  min-width: 0;
 }
 
 .history-rail {
@@ -601,7 +608,10 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto auto;
   min-width: 0;
+  min-height: 0;
   height: 100%;
+  max-height: 100dvh;
+  overflow: hidden;
 }
 
 .chat-header {
@@ -659,6 +669,9 @@ body {
 
 .message-scroll {
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  min-height: 0;
   padding: 1.25rem 1.5rem 1rem;
   display: flex;
   flex-direction: column;

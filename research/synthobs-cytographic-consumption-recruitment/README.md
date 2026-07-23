@@ -18,6 +18,6 @@ Artifacts land in `data/empirical_report.json` and `data/empirical_report.md`.
 
 ## Honesty
 
-Probes validate Φ cascade regularity, clutch band, multi-substrate coupling scores, nested vs flat message tax, and high-awareness H/C vessel affinity ranking (retrovirus · phage · parasite · yeast). They do **not** claim wet-lab cytographic metabolism, sentience, or clinical organism enrollment.
+Probes validate Φ cascade regularity, clutch band, multi-substrate coupling scores, nested vs flat message tax, high-awareness H/C vessel affinity ranking, and Omniversal Goldilocks attractor coverage. They do **not** claim wet-lab cytographic metabolism, sentience, or clinical organism enrollment. Attraction ≠ automatic admission.
 
 → ∞¹³

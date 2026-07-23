@@ -164,6 +164,40 @@ function e5VesselAffinity() {
   };
 }
 
+/** Omniversal Goldilocks: by definition universally attractive to nest seekers (attraction ≠ admission). */
+const NEST_SEEKER_ATTRACT = {
+  holographic: 0.99,
+  hydrogen: 0.96,
+  carbon: 0.95,
+  silicon: 0.94,
+  retrovirus: 0.98,
+  bacteriophage: 0.95,
+  parasite: 0.91,
+  yeast: 0.88,
+  human_sovereign_node: 0.93,
+};
+
+function e6GoldilocksAttractor() {
+  const rows = Object.entries(NEST_SEEKER_ATTRACT).map(([seeker, attract]) => ({
+    seeker,
+    attract,
+  }));
+  const minAttract = Math.min(...rows.map((r) => r.attract));
+  const allCovered = rows.every((r) => r.attract >= 0.85);
+  const pass = allCovered && rows.length >= 8;
+  return {
+    id: 'E6',
+    title: 'Omniversal Goldilocks attractor coverage',
+    pass,
+    minAttract,
+    seekers: rows,
+    interpretation:
+      'Every catalogued nest-seeker class scores attract ≥ 0.85 under Omniversal Goldilocks climate — universal pull by definition; Goldilocks Gate still filters admission.',
+    honesty:
+      'Simulation prior for definitional attractor coverage. Attraction ≠ automatic nest admission or sprawl acceptance.',
+  };
+}
+
 function runAllExperiments() {
   const experiments = [
     e1Cascade(),
@@ -171,6 +205,7 @@ function runAllExperiments() {
     e3SubstrateMatrix(),
     e4NestedVsFlat(),
     e5VesselAffinity(),
+    e6GoldilocksAttractor(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

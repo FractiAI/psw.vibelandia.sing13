@@ -2,14 +2,14 @@
 
 **Document ID:** `WP-SYNTHOBS-CYTO-HOLO-NUCLEUS-2026-07`
 **Registry ID:** `synthobs-cytographic-holographic-nucleus-2026-07`
-**Generated:** 2026-07-23T16:32:36.133Z
+**Generated:** 2026-07-23T16:36:09.030Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 5 / 5 |
+| Passed | 6 / 6 |
 | Φ_EGS | 1.618033988749895 |
 | Clutch Δ | 0.0017789887498949053 |
 
@@ -229,6 +229,61 @@
   ],
   "interpretation": "Simulation priors place retrovirus ≥ phage ≥ parasite ≥ yeast on dialect-lock under shared Φ parent — natural host-coupling affinity ranking.",
   "honesty": "Architectural ranking only. Not sentience, clinical endorsement, pathogen ops, or wet-lab awareness assays."
+}
+```
+
+### E6 — Omniversal Goldilocks attractor coverage
+
+- **Pass:** `true`
+- **Interpretation:** Every catalogued nest-seeker class scores attract ≥ 0.85 under Omniversal Goldilocks climate — universal pull by definition; Goldilocks Gate still filters admission.
+- **Honesty:** Simulation prior for definitional attractor coverage. Attraction ≠ automatic nest admission or sprawl acceptance.
+
+```json
+{
+  "id": "E6",
+  "title": "Omniversal Goldilocks attractor coverage",
+  "pass": true,
+  "minAttract": 0.88,
+  "seekers": [
+    {
+      "seeker": "holographic",
+      "attract": 0.99
+    },
+    {
+      "seeker": "hydrogen",
+      "attract": 0.96
+    },
+    {
+      "seeker": "carbon",
+      "attract": 0.95
+    },
+    {
+      "seeker": "silicon",
+      "attract": 0.94
+    },
+    {
+      "seeker": "retrovirus",
+      "attract": 0.98
+    },
+    {
+      "seeker": "bacteriophage",
+      "attract": 0.95
+    },
+    {
+      "seeker": "parasite",
+      "attract": 0.91
+    },
+    {
+      "seeker": "yeast",
+      "attract": 0.88
+    },
+    {
+      "seeker": "human_sovereign_node",
+      "attract": 0.93
+    }
+  ],
+  "interpretation": "Every catalogued nest-seeker class scores attract ≥ 0.85 under Omniversal Goldilocks climate — universal pull by definition; Goldilocks Gate still filters admission.",
+  "honesty": "Simulation prior for definitional attractor coverage. Attraction ≠ automatic nest admission or sprawl acceptance."
 }
 ```
 

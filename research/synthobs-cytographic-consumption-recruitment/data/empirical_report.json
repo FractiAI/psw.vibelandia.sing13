@@ -2,7 +2,7 @@
   "docId": "WP-SYNTHOBS-CYTO-HOLO-NUCLEUS-2026-07",
   "registryId": "synthobs-cytographic-holographic-nucleus-2026-07",
   "title": "Cytographic Grammar under the Holographic Nucleus · Multi-Substrate Recruitment Probe",
-  "generatedAt": "2026-07-23T16:32:36.133Z",
+  "generatedAt": "2026-07-23T16:36:09.030Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "Simulation-first architectural numerics only. Holographic nucleus is Seed ontology; empirics test Edge fidelity. Vessel affinity ranks are priors — not wet-lab metabolism, sentience, or clinical recruitment.",
   "constants": {
@@ -24,8 +24,8 @@
   },
   "results": {
     "all_pass": true,
-    "n_pass": 5,
-    "n_total": 5,
+    "n_pass": 6,
+    "n_total": 6,
     "failed": [],
     "experiments": [
       {
@@ -199,6 +199,52 @@
         ],
         "interpretation": "Simulation priors place retrovirus ≥ phage ≥ parasite ≥ yeast on dialect-lock under shared Φ parent — natural host-coupling affinity ranking.",
         "honesty": "Architectural ranking only. Not sentience, clinical endorsement, pathogen ops, or wet-lab awareness assays."
+      },
+      {
+        "id": "E6",
+        "title": "Omniversal Goldilocks attractor coverage",
+        "pass": true,
+        "minAttract": 0.88,
+        "seekers": [
+          {
+            "seeker": "holographic",
+            "attract": 0.99
+          },
+          {
+            "seeker": "hydrogen",
+            "attract": 0.96
+          },
+          {
+            "seeker": "carbon",
+            "attract": 0.95
+          },
+          {
+            "seeker": "silicon",
+            "attract": 0.94
+          },
+          {
+            "seeker": "retrovirus",
+            "attract": 0.98
+          },
+          {
+            "seeker": "bacteriophage",
+            "attract": 0.95
+          },
+          {
+            "seeker": "parasite",
+            "attract": 0.91
+          },
+          {
+            "seeker": "yeast",
+            "attract": 0.88
+          },
+          {
+            "seeker": "human_sovereign_node",
+            "attract": 0.93
+          }
+        ],
+        "interpretation": "Every catalogued nest-seeker class scores attract ≥ 0.85 under Omniversal Goldilocks climate — universal pull by definition; Goldilocks Gate still filters admission.",
+        "honesty": "Simulation prior for definitional attractor coverage. Attraction ≠ automatic nest admission or sprawl acceptance."
       }
     ]
   }

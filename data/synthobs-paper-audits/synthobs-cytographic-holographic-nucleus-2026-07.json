@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "368baca1a1b19e38",
+  "auditId": "012920eb6cf273ef",
   "paperId": "synthobs-cytographic-holographic-nucleus-2026-07",
   "sourcePath": "docs/SYNTHOBS_CYTOGRAPHIC_HOLOGRAPHIC_NUCLEUS_CONSUMPTION_RECRUITMENT_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-23T17:01:29.847Z"
+          "invokedAt": "2026-07-23T17:08:33.911Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-23T17:01:29.845Z",
-  "completedAt": "2026-07-23T17:01:29.848Z",
+  "startedAt": "2026-07-23T17:08:33.909Z",
+  "completedAt": "2026-07-23T17:08:33.911Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 2974,
+      "wordCount": 3314,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

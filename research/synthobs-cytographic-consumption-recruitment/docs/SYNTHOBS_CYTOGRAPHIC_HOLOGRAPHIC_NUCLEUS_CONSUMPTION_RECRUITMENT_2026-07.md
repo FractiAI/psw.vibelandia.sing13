@@ -193,6 +193,34 @@ OMNIVERSAL GOLDILOCKS NEST (universally attractive to nest seekers)
 | Omniversal Goldilocks nest climate | Universal attractor for nest seekers (definition) | Hold just-right nest; seekers arrive; Gate admits | Attraction ≠ unfiltered sprawl |
 | Silica-shelled C↔Si bridge | Biosilica vessels as dielectric/photonic hinge | Diatom / radiolarian adjacency to semiconducting Si Edges | SiO₂ ≠ wafer Si; simulation-first |
 
+### 5.1 Worked example · making + planet (biosilica nest under Lattice parent)
+
+**Intent:** Meaningful, beneficial application — not extractive plankton mining theater.
+
+**Planet lane (carbon + silica cycle):** Cultivate / steward diatom-rich Goldilocks water nests (density-anchored, OGRP-style *just right* — not sprawl tanks). Diatoms already pull dissolved silica and fix carbon while secreting frustules. Edge benefit: water-quality / bloom-rhythm sensing as **ambient stigmergy** for watershed and coastal restoration planning (companions: Turner soil/space-bio honesty — real sources only; Fair Exchange EcoReset franchise language in OGRP catalog).
+
+**Making lane (materials + nest):** Harvest only what the nest regenerates (Fair Exchange). Use frustule geometry as **template / dielectric–photonic reference** for low-energy optical sensors, filtration media, and C↔Si interface parts — inspired by biogenic order, fabricated or hybridized on semiconducting Edges. Maker nodes nest under Nested Agent Lattice parents that schedule EcoResets and honor-rail distribution.
+
+```
+PLANETARY NEST (diatom Goldilocks water)     MAKER NEST (frustule-inspired parts)
+        │                                            │
+        └──────────► OMNIVERSAL GOLDILOCKS ◄─────────┘
+                           │
+              LATTICE PARENT (synthetic compute)
+                           │
+              Fair Exchange · EcoReset · lite edges
+```
+
+**Can the host synthetic-compute?**
+
+| Tier | Answer |
+|------|--------|
+| **Living silica-shelled host alone** | **No** — not a drop-in GPU/LLM. It metabolizes, senses, biomineralizes. That is biological Edge work, not CMOS synthetic compute. |
+| **Host as co-processor in a nest** | **Partial / architectural** — frustule as dielectric/photonic interface + carbon core as sensor/actuator; **synthetic compute stays on silicon / Nested Agent Lattice / holographic Edges** that nest *with* the host. |
+| **Hybrid Goldilocks stack (recommended)** | **Yes, as a system:** Host provides living C↔Si bridge + planetary service; Lattice parent provides synthetic compute (MCA, routing, Fair Exchange ledgers); human Sovereign Nodes hold honor rails. The *host* does not replace the semiconductor — it **recruits into** the nest that already computes. |
+
+**Honesty:** No claim that diatoms run transformers, that frustules are certified transistors, or that planetary restoration is proven by this simulation lane. Beneficial path = stewardship + maker hybridization + Lattice synthetic compute — Fair Exchange, simulation-first until Player 1 wet-lab waiver.
+
 **Out of scope:** gene therapy, glycemic clinical claims, weaponized recruitment, pathogen weaponization, unverified Y→1420 MHz medical biophysics.
 
 ---

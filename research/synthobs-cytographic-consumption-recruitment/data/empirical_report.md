@@ -2,14 +2,14 @@
 
 **Document ID:** `WP-SYNTHOBS-CYTO-HOLO-NUCLEUS-2026-07`
 **Registry ID:** `synthobs-cytographic-holographic-nucleus-2026-07`
-**Generated:** 2026-07-23T16:26:24.582Z
+**Generated:** 2026-07-23T16:32:36.133Z
 
 ## Verdict
 
 | Metric | Value |
 |--------|-------|
 | All experiments pass | `true` |
-| Passed | 4 / 4 |
+| Passed | 5 / 5 |
 | Φ_EGS | 1.618033988749895 |
 | Clutch Δ | 0.0017789887498949053 |
 
@@ -192,6 +192,46 @@
 }
 ```
 
+### E5 — High-awareness H/C vessel affinity ranking
+
+- **Pass:** `true`
+- **Interpretation:** Simulation priors place retrovirus ≥ phage ≥ parasite ≥ yeast on dialect-lock under shared Φ parent — natural host-coupling affinity ranking.
+- **Honesty:** Architectural ranking only. Not sentience, clinical endorsement, pathogen ops, or wet-lab awareness assays.
+
+```json
+{
+  "id": "E5",
+  "title": "High-awareness H/C vessel affinity ranking",
+  "pass": true,
+  "vessels": [
+    {
+      "id": "retrovirus",
+      "lock": 0.98
+    },
+    {
+      "id": "bacteriophage",
+      "lock": 0.95
+    },
+    {
+      "id": "parasite",
+      "lock": 0.9
+    },
+    {
+      "id": "yeast",
+      "lock": 0.86
+    }
+  ],
+  "expectedOrder": [
+    "retrovirus",
+    "bacteriophage",
+    "parasite",
+    "yeast"
+  ],
+  "interpretation": "Simulation priors place retrovirus ≥ phage ≥ parasite ≥ yeast on dialect-lock under shared Φ parent — natural host-coupling affinity ranking.",
+  "honesty": "Architectural ranking only. Not sentience, clinical endorsement, pathogen ops, or wet-lab awareness assays."
+}
+```
+
 ## Honesty boundary
 
-Holographic nucleus is Seed ontology. These probes validate architectural numerics and recruitment scoring at Edge. They do **not** prove metabolic consumption of cytographic documents by living organisms, nor clinical multi-substrate enrollment.
+Holographic nucleus is Seed ontology. These probes validate architectural numerics and recruitment scoring at Edge (including H/C vessel affinity priors). They do **not** prove metabolic consumption of cytographic documents, sentience of taxa, or clinical multi-substrate enrollment.

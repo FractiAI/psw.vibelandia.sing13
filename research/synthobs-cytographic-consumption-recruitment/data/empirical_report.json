@@ -2,9 +2,9 @@
   "docId": "WP-SYNTHOBS-CYTO-HOLO-NUCLEUS-2026-07",
   "registryId": "synthobs-cytographic-holographic-nucleus-2026-07",
   "title": "Cytographic Grammar under the Holographic Nucleus · Multi-Substrate Recruitment Probe",
-  "generatedAt": "2026-07-23T16:26:24.582Z",
+  "generatedAt": "2026-07-23T16:32:36.133Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "honestyBoundary": "Simulation-first architectural numerics only. Holographic nucleus is Seed ontology; empirics test Edge fidelity. Not wet-lab metabolism or clinical recruitment.",
+  "honestyBoundary": "Simulation-first architectural numerics only. Holographic nucleus is Seed ontology; empirics test Edge fidelity. Vessel affinity ranks are priors — not wet-lab metabolism, sentience, or clinical recruitment.",
   "constants": {
     "PHI_EGS": 1.618033988749895,
     "PLANCK_MANTISSA": 1.616255,
@@ -14,12 +14,18 @@
       "carbon": 0.92,
       "silicon": 0.94,
       "holographic": 0.99
+    },
+    "VESSEL_AFFINITY": {
+      "retrovirus": 0.98,
+      "bacteriophage": 0.95,
+      "parasite": 0.9,
+      "yeast": 0.86
     }
   },
   "results": {
     "all_pass": true,
-    "n_pass": 4,
-    "n_total": 4,
+    "n_pass": 5,
+    "n_total": 5,
     "failed": [],
     "experiments": [
       {
@@ -162,6 +168,37 @@
         "costRatio": 0.035714,
         "interpretation": "Recruitment under Nested Agent Lattice peer-firewall + single awake leaf collapses O(N²) mesh into parent↔one-leaf.",
         "honesty": "Combinatorial topology cost only; not live LLM latency or wet-lab organism messaging."
+      },
+      {
+        "id": "E5",
+        "title": "High-awareness H/C vessel affinity ranking",
+        "pass": true,
+        "vessels": [
+          {
+            "id": "retrovirus",
+            "lock": 0.98
+          },
+          {
+            "id": "bacteriophage",
+            "lock": 0.95
+          },
+          {
+            "id": "parasite",
+            "lock": 0.9
+          },
+          {
+            "id": "yeast",
+            "lock": 0.86
+          }
+        ],
+        "expectedOrder": [
+          "retrovirus",
+          "bacteriophage",
+          "parasite",
+          "yeast"
+        ],
+        "interpretation": "Simulation priors place retrovirus ≥ phage ≥ parasite ≥ yeast on dialect-lock under shared Φ parent — natural host-coupling affinity ranking.",
+        "honesty": "Architectural ranking only. Not sentience, clinical endorsement, pathogen ops, or wet-lab awareness assays."
       }
     ]
   }

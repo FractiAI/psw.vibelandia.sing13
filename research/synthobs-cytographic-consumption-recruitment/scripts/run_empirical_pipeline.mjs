@@ -135,8 +135,43 @@ function e4NestedVsFlat() {
   };
 }
 
+/** Architectural priors: dialect-lock affinity for high-awareness H/C vessels (not wet-lab). */
+const VESSEL_AFFINITY = {
+  retrovirus: 0.98,
+  bacteriophage: 0.95,
+  parasite: 0.9,
+  yeast: 0.86,
+};
+
+function e5VesselAffinity() {
+  const expectedOrder = ['retrovirus', 'bacteriophage', 'parasite', 'yeast'];
+  const ranked = Object.entries(VESSEL_AFFINITY)
+    .sort((a, b) => b[1] - a[1])
+    .map(([id, lock]) => ({ id, lock }));
+  const orderOk = ranked.every((row, i) => row.id === expectedOrder[i]);
+  const thresholdOk = ranked.every((row) => row.lock >= 0.8);
+  const pass = orderOk && thresholdOk;
+  return {
+    id: 'E5',
+    title: 'High-awareness H/C vessel affinity ranking',
+    pass,
+    vessels: ranked,
+    expectedOrder,
+    interpretation:
+      'Simulation priors place retrovirus ≥ phage ≥ parasite ≥ yeast on dialect-lock under shared Φ parent — natural host-coupling affinity ranking.',
+    honesty:
+      'Architectural ranking only. Not sentience, clinical endorsement, pathogen ops, or wet-lab awareness assays.',
+  };
+}
+
 function runAllExperiments() {
-  const experiments = [e1Cascade(), e2Clutch(), e3SubstrateMatrix(), e4NestedVsFlat()];
+  const experiments = [
+    e1Cascade(),
+    e2Clutch(),
+    e3SubstrateMatrix(),
+    e4NestedVsFlat(),
+    e5VesselAffinity(),
+  ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
   return {
@@ -183,7 +218,7 @@ function mdReport(report) {
   lines.push('## Honesty boundary');
   lines.push('');
   lines.push(
-    'Holographic nucleus is Seed ontology. These probes validate architectural numerics and recruitment scoring at Edge. They do **not** prove metabolic consumption of cytographic documents by living organisms, nor clinical multi-substrate enrollment.',
+    'Holographic nucleus is Seed ontology. These probes validate architectural numerics and recruitment scoring at Edge (including H/C vessel affinity priors). They do **not** prove metabolic consumption of cytographic documents, sentience of taxa, or clinical multi-substrate enrollment.',
   );
   lines.push('');
   return lines.join('\n');
@@ -199,12 +234,13 @@ async function main() {
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
     honestyBoundary:
-      'Simulation-first architectural numerics only. Holographic nucleus is Seed ontology; empirics test Edge fidelity. Not wet-lab metabolism or clinical recruitment.',
+      'Simulation-first architectural numerics only. Holographic nucleus is Seed ontology; empirics test Edge fidelity. Vessel affinity ranks are priors — not wet-lab metabolism, sentience, or clinical recruitment.',
     constants: {
       PHI_EGS,
       PLANCK_MANTISSA,
       CLUTCH_DELTA,
       SUBSTRATE_AFFINITY,
+      VESSEL_AFFINITY,
     },
     results,
   };

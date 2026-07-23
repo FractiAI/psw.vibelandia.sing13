@@ -192,8 +192,13 @@ OMNIVERSAL GOLDILOCKS NEST (universally attractive to nest seekers)
 | High-awareness H/C vessel study | Nucleus supplies scale priors for vessel ranking | Retrovirus / phage / parasite / yeast affinity sims | Simulation-first; not therapy or pathogen ops |
 | Omniversal Goldilocks nest climate | Universal attractor for nest seekers (definition) | Hold just-right nest; seekers arrive; Gate admits | Attraction ≠ unfiltered sprawl |
 | Silica-shelled C↔Si bridge | Biosilica vessels as dielectric/photonic hinge | Diatom / radiolarian adjacency to semiconducting Si Edges | SiO₂ ≠ wafer Si; simulation-first |
+| **Diatoms → EcoReset value** | Living C↔Si nest seekers amplify EcoReset (ecosystem invited back in) | Watershed/coastal Goldilocks nests + Beehive/OGRP EcoReset surfaces | Stewardship · Fair Exchange · not extractive bloom mining |
 
 ### 5.1 Worked example · making + planet (biosilica nest under Lattice parent)
+
+**Player 1 lock:** Diatoms helping EcoResets is **excellent value** — planetary service nested under Fair Exchange, not a side note.
+
+**EcoReset (catalog):** Ecosystem invited back in — not pet sitting / asset management (`interfaces/nesting/nest-goldilocks-beehive.html`, OGRP EcoReset franchise). Diatoms are a natural EcoReset co-worker: they reset water chemistry toward silica–carbon balance, signal bloom rhythm, and leave regenerative frustule stock for maker nests.
 
 **Intent:** Meaningful, beneficial application — not extractive plankton mining theater.
 
@@ -219,7 +224,7 @@ PLANETARY NEST (diatom Goldilocks water)     MAKER NEST (frustule-inspired parts
 | **Host as co-processor in a nest** | **Partial / architectural** — frustule as dielectric/photonic interface + carbon core as sensor/actuator; **synthetic compute stays on silicon / Nested Agent Lattice / holographic Edges** that nest *with* the host. |
 | **Hybrid Goldilocks stack (recommended)** | **Yes, as a system:** Host provides living C↔Si bridge + planetary service; Lattice parent provides synthetic compute (MCA, routing, Fair Exchange ledgers); human Sovereign Nodes hold honor rails. The *host* does not replace the semiconductor — it **recruits into** the nest that already computes. |
 
-**Honesty:** No claim that diatoms run transformers, that frustules are certified transistors, or that planetary restoration is proven by this simulation lane. Beneficial path = stewardship + maker hybridization + Lattice synthetic compute — Fair Exchange, simulation-first until Player 1 wet-lab waiver.
+**Honesty:** No claim that diatoms run transformers, that frustules are certified transistors, or that EcoReset planetary outcomes are proven by this simulation lane alone. Beneficial path = diatom EcoReset co-work + stewardship + maker hybridization + Lattice synthetic compute — Fair Exchange, simulation-first until Player 1 wet-lab waiver.
 
 **Out of scope:** gene therapy, glycemic clinical claims, weaponized recruitment, pathogen weaponization, unverified Y→1420 MHz medical biophysics.
 

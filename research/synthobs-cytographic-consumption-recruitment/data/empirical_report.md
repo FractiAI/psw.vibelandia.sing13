@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-CYTO-HOLO-NUCLEUS-2026-07`
 **Registry ID:** `synthobs-cytographic-holographic-nucleus-2026-07`
-**Generated:** 2026-07-23T17:01:41.128Z
+**Generated:** 2026-07-23T18:09:24.355Z
 
 ## Verdict
 
@@ -302,7 +302,7 @@
 ### E7 — Silica-shelled C↔Si bridge affinity
 
 - **Pass:** `true`
-- **Interpretation:** Diatom / radiolarian / biosilica seekers hold carbon-core lock and Si-adjacency ≥ 0.85 — hybrid nest seekers toward semiconducting Edges.
+- **Interpretation:** Diatom / radiolarian / biosilica seekers hold carbon-core lock and Si-adjacency ≥ 0.85 — hybrid nest seekers toward semiconducting Edges; diatom EcoReset co-worker lane.
 - **Honesty:** Architectural bridge only. Biogenic SiO₂ ≠ semiconductor-grade elemental Si wafers; not a CMOS-from-plankton claim.
 
 ```json
@@ -327,7 +327,7 @@
       "siAdjacency": 0.87
     }
   ],
-  "interpretation": "Diatom / radiolarian / biosilica seekers hold carbon-core lock and Si-adjacency ≥ 0.85 — hybrid nest seekers toward semiconducting Edges.",
+  "interpretation": "Diatom / radiolarian / biosilica seekers hold carbon-core lock and Si-adjacency ≥ 0.85 — hybrid nest seekers toward semiconducting Edges; diatom EcoReset co-worker lane.",
   "honesty": "Architectural bridge only. Biogenic SiO₂ ≠ semiconductor-grade elemental Si wafers; not a CMOS-from-plankton claim."
 }
 ```

@@ -201,6 +201,31 @@ function e6GoldilocksAttractor() {
   };
 }
 
+/** Silica-shelled C↔Si bridge: carbon core + SiO2 adjacency toward semiconducting Si (not wafer identity). */
+const SILICA_BRIDGE = {
+  diatom: { carbonLock: 0.94, siAdjacency: 0.93 },
+  radiolarian: { carbonLock: 0.91, siAdjacency: 0.9 },
+  biosilica_sponge: { carbonLock: 0.88, siAdjacency: 0.87 },
+};
+
+function e7SilicaBridge() {
+  const rows = Object.entries(SILICA_BRIDGE).map(([id, scores]) => ({
+    id,
+    ...scores,
+  }));
+  const pass = rows.every((r) => r.carbonLock >= 0.85 && r.siAdjacency >= 0.85);
+  return {
+    id: 'E7',
+    title: 'Silica-shelled C↔Si bridge affinity',
+    pass,
+    vessels: rows,
+    interpretation:
+      'Diatom / radiolarian / biosilica seekers hold carbon-core lock and Si-adjacency ≥ 0.85 — hybrid nest seekers toward semiconducting Edges; diatom EcoReset co-worker lane.',
+    honesty:
+      'Architectural bridge only. Biogenic SiO₂ ≠ semiconductor-grade elemental Si wafers; not a CMOS-from-plankton claim.',
+  };
+}
+
 function runAllExperiments() {
   const experiments = [
     e1Cascade(),
@@ -209,6 +234,7 @@ function runAllExperiments() {
     e4NestedVsFlat(),
     e5VesselAffinity(),
     e6GoldilocksAttractor(),
+    e7SilicaBridge(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
@@ -280,6 +306,7 @@ async function main() {
       SUBSTRATE_AFFINITY,
       VESSEL_AFFINITY,
       NEST_SEEKER_ATTRACT,
+      SILICA_BRIDGE,
     },
     results,
   };

@@ -31,7 +31,8 @@
     "research:synthobs-egs-planck-scale-harmonic": "node research/synthobs-egs-planck-scale-harmonic/scripts/run_empirical_pipeline.mjs",
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
-    "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs"
+    "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",
+    "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

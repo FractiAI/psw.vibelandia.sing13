@@ -10,14 +10,17 @@
 
 **Live site:** [**www.ssvibelandiaquestfest24x365.com**](https://www.ssvibelandiaquestfest24x365.com) · **Repository:** [github.com/fractiai/psw.vibelandia.sing13](https://github.com/fractiai/psw.vibelandia.sing13)
 
-## Lattice V1.618 — nested AI agents for vibe coders
+## Lattice V1.618 — Ark engine (from Sonic Singularity 13)
 
-**Lattice** is FractiAI’s chat tool for AI coding agents. You chat normally. Behind the scenes a small nested agent team loads only what it needs — instead of dumping your whole project into one giant prompt.
+**SS Vibelandia** is the Noah’s Ark metaphor in this sandbox. Flat/linear systems were scaffolding; Lattice jettisons them for **cytological agentic processing** — up to **~99% fewer estimated tokens** vs dump-everything. **SING φ** is derived from **Sonic Singularity 13** (not SING 14).
 
 - **Live:** [ssvibelandiaquestfest24x365.com/lattice](https://www.ssvibelandiaquestfest24x365.com/lattice)
 - **Chat:** [/lattice-chat](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)
-- **Public test:** about **99% fewer estimated tokens** vs dump-everything mode ([plain-language proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)) — estimate method, not a vendor invoice yet
-- **Share pack** (approved post copy + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md`](docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md)
+- **Proof:** [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)
+- **Ark:** [/ss-vibelandia](https://www.ssvibelandiaquestfest24x365.com/ss-vibelandia)
+- **Free trial (old school · honor):** [valetpru@gmail.com](mailto:valetpru@gmail.com?subject=Lattice%20V1.618%20%E2%80%94%20free%20trial) — human grant filters Goldilocks vs system noise
+- **Brief:** [`docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md`](docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md)
+- **Share pack:** [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md`](docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md)
 
 **SING 13** is the major singularity upgrade from SING 9. This edge carries the **NSPFRNP catalog**, the **SS Vibelandia QUESTFEST 24×365** nest, and the **Sovereign Player** (QUESTFEST Bridge). Everything else lives on the parent edge — [github.com/fractiai/psw.vibelandia.sing9](https://github.com/fractiai/psw.vibelandia.sing9) · [psw-vibelandia-sing9.vercel.app](https://psw-vibelandia-sing9.vercel.app). **Lite edges, no Supabase. Center = pipes only. → ∞⁹**
 

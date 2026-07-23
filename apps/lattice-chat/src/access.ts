@@ -6,10 +6,12 @@ export const LATTICE_ACCESS_EMAIL =
   CREATOR_EMAIL;
 
 export const LATTICE_ACCESS_MAILTO = `mailto:${LATTICE_ACCESS_EMAIL}?subject=${encodeURIComponent(
-  'Lattice V1.618 — access & pricing',
+  'Lattice V1.618 — free trial',
 )}&body=${encodeURIComponent(
-  'Hello,\n\nI would like access and pricing for Lattice V1.618 by FractiAI.\n\nThanks.',
+  'Hello,\n\nI would like a free trial of Lattice V1.618 on SS Vibelandia.\n\nMy email / userid: \n\nThanks.',
 )}`;
+
+export const LATTICE_FREE_TRIAL_MAILTO = LATTICE_ACCESS_MAILTO;
 
 const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 

@@ -13,15 +13,15 @@ import {
 } from '@/lib/cursorKey';
 import { useLatticeStore } from '@/store';
 
-/** Prefills a request-access email to the operator. */
+/** Prefills a free-trial / access email to the operator (old school · honor). */
 export function buildRequestMailto(fromEmail = ''): string {
   const who = normalizeEmail(fromEmail) || '(add your email here)';
-  const subject = encodeURIComponent('Lattice V1.618 — request access');
+  const subject = encodeURIComponent('Lattice V1.618 — free trial');
   const body = encodeURIComponent(
     [
       'Hello,',
       '',
-      'I would like Lattice V1.618 access for the monthly period.',
+      'I would like a free trial of Lattice V1.618 on SS Vibelandia.',
       '',
       `My email / userid: ${who}`,
       '',
@@ -40,7 +40,7 @@ export function RequestAccessLink({
 }) {
   return (
     <a className={className} href={buildRequestMailto(fromEmail)}>
-      Request access
+      Email for a free trial
     </a>
   );
 }
@@ -132,11 +132,11 @@ export function AuthPanel({
 
       {!signedIn ? (
         <p className="auth-request-line">
-          Need a monthly grant?{' '}
+          Want a free trial?{' '}
           <RequestAccessLink fromEmail={emailDraft} />
           <span className="auth-request-hint">
             {' '}
-            — opens a prefilled email to {CREATOR_EMAIL}
+            — old school honor email to {CREATOR_EMAIL} (filters Goldilocks vs noise)
           </span>
         </p>
       ) : null}

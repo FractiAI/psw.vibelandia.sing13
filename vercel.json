@@ -31,6 +31,9 @@
     { "source": "/lattice/", "destination": "/interfaces/lattice-v1618.html" },
     { "source": "/lattice/proof", "destination": "/interfaces/lattice-token-proof.html" },
     { "source": "/lattice/proof/", "destination": "/interfaces/lattice-token-proof.html" },
+    { "source": "/singularities", "destination": "/interfaces/awareness-singularities-one-pager.html" },
+    { "source": "/singularities/", "destination": "/interfaces/awareness-singularities-one-pager.html" },
+    { "source": "/awareness-singularities", "destination": "/interfaces/awareness-singularities-one-pager.html" },
     { "source": "/lattice-v1618", "destination": "/interfaces/lattice-v1618.html" },
     { "source": "/lattice-v1618/", "destination": "/interfaces/lattice-v1618.html" },
     { "source": "/lattice-chat", "destination": "/interfaces/lattice-chat/index.html" },
@@ -324,6 +327,12 @@
     },
     {
       "source": "/interfaces/lattice-v1618.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/interfaces/awareness-singularities-one-pager.html",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]

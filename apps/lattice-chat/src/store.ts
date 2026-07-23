@@ -84,7 +84,7 @@ export const useLatticeStore = create<LatticeState>()(
       pending: null,
       error: null,
       agentMode: 'agent',
-      modelId: 'auto',
+      modelId: 'composer-2.5',
       models: LATTICE_MODEL_CATALOG,
 
       ensureThread: () => {

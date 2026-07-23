@@ -29,6 +29,8 @@
     { "source": "/executive-onboarding/", "destination": "/interfaces/executive-onboarding.html" },
     { "source": "/lattice", "destination": "/interfaces/lattice-v1618.html" },
     { "source": "/lattice/", "destination": "/interfaces/lattice-v1618.html" },
+    { "source": "/lattice/proof", "destination": "/interfaces/lattice-token-proof.html" },
+    { "source": "/lattice/proof/", "destination": "/interfaces/lattice-token-proof.html" },
     { "source": "/lattice-v1618", "destination": "/interfaces/lattice-v1618.html" },
     { "source": "/lattice-v1618/", "destination": "/interfaces/lattice-v1618.html" },
     { "source": "/lattice-chat", "destination": "/interfaces/lattice-chat/index.html" },
@@ -322,6 +324,12 @@
     },
     {
       "source": "/interfaces/lattice-v1618.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/interfaces/lattice-token-proof.html",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]

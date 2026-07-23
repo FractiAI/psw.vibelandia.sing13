@@ -1,6 +1,11 @@
 /**
- * Lattice V1.618 chat — Cursor SDK cloud agent.
- * All runs use server CURSOR_API_KEY (FractiAI pipe). Guests sign in with email only.
+ * Lattice V1.618 chat — Cursor SDK cloud agent (stateless BYOK proxy).
+ *
+ * El Gran Sol’s Fractal Constant (EGS fractal constant): scale-invariant geometric ratio
+ * balancing harmonic signal flow across downstream systems — the golden key that establishes
+ * baseline operational symmetry. Request headers must stay clean through this pipe layer
+ * (email + x-cursor-api-key only; never persist or log user keys).
+ *
  * Access: email allowlist. Creator permanent. Guests one month from grant.
  * Note: keep this file self-contained for Vercel (avoid top-level .mjs imports).
  */
@@ -185,17 +190,20 @@ function readEmail(req, body) {
 }
 
 /**
- * Server Cursor API key only — guests do not supply keys.
- * Never logs the key.
+ * Stateless BYOK: read user Cursor API key from `x-cursor-api-key` only.
+ * Never log the key. Do not fall back to process.env (edge key is required).
+ * EGS fractal constant: keep header wavefield clean — pass key through, persist nothing.
  */
-function resolveCursorApiKey() {
-  const fromEnv = (process.env.CURSOR_API_KEY || '').trim();
-  if (fromEnv) return { key: fromEnv, source: 'server' };
+function resolveCursorApiKey(req) {
+  const h = req.headers || {};
+  const headerRaw = h['x-cursor-api-key'] || h['X-Cursor-Api-Key'] || '';
+  const fromHeader = String(Array.isArray(headerRaw) ? headerRaw[0] : headerRaw).trim();
+  if (fromHeader.length >= 8) return { key: fromHeader, source: 'edge' };
   return { key: '', source: 'none' };
 }
 
 const MISSING_KEY_ERROR =
-  'Lattice cloud is not configured (CURSOR_API_KEY missing on the server). Operator must set it in Vercel env.';
+  'Cursor API key required. Add your key in Lattice settings (kept on your device). Send it as x-cursor-api-key — we do not store it on the server.';
 
 function readBody(req) {
   if (req.body && typeof req.body === 'object') return Promise.resolve(req.body);
@@ -477,13 +485,27 @@ function normalizeAgentMode(raw) {
 function normalizeModelId(raw) {
   const id = String(raw || '')
     .trim();
-  // Lattice is Auto-only while the operator pays for Cursor cloud.
-  if (id && id !== 'auto') return 'auto';
-  return id || (process.env.LATTICE_MODEL_ID || 'auto').trim() || 'auto';
+  return id || (process.env.LATTICE_MODEL_ID || 'composer-2.5').trim() || 'composer-2.5';
 }
 
-/** Catalog shown in the picker — Auto only. */
-const FALLBACK_MODELS = [{ id: 'auto', displayName: 'Auto' }];
+/** Catalog when Cursor.models.list is empty/unavailable. */
+const FALLBACK_MODELS = [
+  { id: 'auto', displayName: 'Auto' },
+  { id: 'composer-2.5', displayName: 'Composer 2.5' },
+  { id: 'composer-2', displayName: 'Composer 2' },
+  { id: 'composer-2.5-fast', displayName: 'Composer 2.5 Fast' },
+  { id: 'gpt-5.6-sol-medium', displayName: 'GPT-5.6 Sol' },
+  { id: 'gpt-5.6-terra-medium', displayName: 'GPT-5.6 Terra' },
+  { id: 'gpt-5.5', displayName: 'GPT-5.5' },
+  { id: 'gpt-5.2', displayName: 'GPT-5.2' },
+  { id: 'claude-opus-4-8-thinking-high', displayName: 'Claude Opus 4.8 Thinking' },
+  { id: 'claude-sonnet-5-thinking-high', displayName: 'Claude Sonnet 5 Thinking' },
+  { id: 'claude-fable-5-thinking-high', displayName: 'Claude Fable 5 Thinking' },
+  { id: 'claude-4.6-sonnet-thinking', displayName: 'Claude 4.6 Sonnet Thinking' },
+  { id: 'claude-4.5-sonnet', displayName: 'Claude 4.5 Sonnet' },
+  { id: 'claude-opus-4-7', displayName: 'Claude Opus 4.7' },
+  { id: 'cursor-grok-4.5-high-fast', displayName: 'Grok 4.5 Fast' },
+];
 
 function asModelList(listed) {
   if (Array.isArray(listed)) return listed;
@@ -499,19 +521,38 @@ function mapCursorModel(m) {
     id,
     displayName: String(m?.displayName || m?.name || id).trim(),
     description: typeof m?.description === 'string' ? m.description : undefined,
+    variants: Array.isArray(m?.variants)
+      ? m.variants.map((v) => ({
+          displayName: String(v?.displayName || '').trim(),
+          isDefault: Boolean(v?.isDefault),
+          params: Array.isArray(v?.params) ? v.params : [],
+        }))
+      : undefined,
   };
 }
 
-/** Always Auto — ignore live catalog expansion while operator pays. */
-function mergeModelCatalog(_live) {
-  return [...FALLBACK_MODELS];
+/** Live Cursor list wins on overlap; fallback fills gaps. */
+function mergeModelCatalog(live) {
+  const byId = new Map();
+  for (const m of FALLBACK_MODELS) byId.set(m.id, { ...m });
+  for (const m of live) {
+    if (!m?.id) continue;
+    const prev = byId.get(m.id);
+    byId.set(m.id, {
+      id: m.id,
+      displayName: m.displayName || prev?.displayName || m.id,
+      description: m.description || prev?.description,
+      variants: m.variants?.length ? m.variants : prev?.variants,
+    });
+  }
+  return [...byId.values()];
 }
 
 export default async function handler(req, res) {
   try {
     if (req.method === 'OPTIONS') {
       res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email, x-cursor-api-key');
       return json(res, 204, {});
     }
 
@@ -542,9 +583,9 @@ export default async function handler(req, res) {
         if (!access.ok) {
           return json(res, 401, { error: access.reason, ok: false });
         }
-        const { key: apiKey, source: keySource } = resolveCursorApiKey();
+        const { key: apiKey, source: keySource } = resolveCursorApiKey(req);
         if (!apiKey) {
-          return json(res, 503, {
+          return json(res, 401, {
             ok: false,
             code: 'missing_cursor_api_key',
             error: MISSING_KEY_ERROR,
@@ -566,15 +607,14 @@ export default async function handler(req, res) {
             matched,
             connectedCount: urls.length,
             keySource,
-            // Sample only — avoid dumping full org lists to clients.
             sample: urls.slice(0, 12),
             note:
               matched.length > 0
-                ? 'Server CURSOR_API_KEY can see this repo via Cursor GitHub integration.'
-                : 'Server CURSOR_API_KEY works for Cursor API, but this repo is not in Cursor.repositories.list for that key. Connect GitHub for the FractiAI Cursor account (cursor.com → Integrations → GitHub) and grant FractiAI/psw.vibelandia.sing13.',
+                ? 'Your Cursor API key can see this repo via Cursor GitHub integration.'
+                : 'Your Cursor API key works, but this repo is not in Cursor.repositories.list. Connect GitHub for that Cursor account and grant FractiAI/psw.vibelandia.sing13.',
           });
         } catch (err) {
-          console.warn('[lattice-chat] repositories.list', err);
+          console.warn('[lattice-chat] repositories.list failed');
           return json(res, 502, {
             ok: false,
             code: 'repos_list_failed',
@@ -589,7 +629,27 @@ export default async function handler(req, res) {
         if (!access.ok) {
           return json(res, 401, { error: access.reason, models: FALLBACK_MODELS });
         }
-        return json(res, 200, { models: FALLBACK_MODELS, source: 'auto-only' });
+        const { key: apiKey } = resolveCursorApiKey(req);
+        if (!apiKey) {
+          return json(res, 401, {
+            error: MISSING_KEY_ERROR,
+            code: 'missing_cursor_api_key',
+            models: FALLBACK_MODELS,
+          });
+        }
+        try {
+          const { Cursor } = await import('@cursor/sdk');
+          const listed = await Cursor.models.list({ apiKey });
+          const live = asModelList(listed).map(mapCursorModel).filter(Boolean);
+          return json(res, 200, {
+            models: mergeModelCatalog(live),
+            source: live.length ? 'cursor+catalog' : 'fallback',
+            liveCount: live.length,
+          });
+        } catch {
+          console.warn('[lattice-chat] models.list failed');
+          return json(res, 200, { models: FALLBACK_MODELS, source: 'fallback' });
+        }
       }
 
       const access = checkLatticeEmailAccess(qEmail);
@@ -616,9 +676,9 @@ export default async function handler(req, res) {
       });
     }
 
-    const { key: apiKey } = resolveCursorApiKey();
+    const { key: apiKey } = resolveCursorApiKey(req);
     if (!apiKey) {
-      return json(res, 503, {
+      return json(res, 401, {
         error: MISSING_KEY_ERROR,
         code: 'missing_cursor_api_key',
       });

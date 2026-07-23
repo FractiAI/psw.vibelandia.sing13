@@ -5,6 +5,12 @@ import {
   isValidEmailShape,
   normalizeEmail,
 } from '@/access';
+import { KeyStatusChip } from '@/components/KeySettings';
+import {
+  hasUserCursorApiKey,
+  readUserCursorApiKey,
+  saveUserCursorApiKey,
+} from '@/lib/cursorKey';
 import { useLatticeStore } from '@/store';
 
 /** Prefills a request-access email to the operator. */
@@ -39,12 +45,24 @@ export function RequestAccessLink({
   );
 }
 
-/** Sign in = email / userid only (remembered 30 days on this device). */
-export function AuthPanel({ compact = false }: { compact?: boolean }) {
+/**
+ * Sign in captures email (30 days) + Cursor API key (`user_cursor_api_key` on this device).
+ * Key is required on Sign in — edge-only; never sent to durable server storage.
+ */
+export function AuthPanel({
+  compact = false,
+  onSignedIn,
+}: {
+  compact?: boolean;
+  onSignedIn?: () => void;
+}) {
   const userEmail = useLatticeStore((s) => s.userEmail);
   const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
   const setUserEmail = useLatticeStore((s) => s.setUserEmail);
   const [emailDraft, setEmailDraft] = useState(userEmail);
+  const [keyDraft, setKeyDraft] = useState(() =>
+    hasUserCursorApiKey() ? readUserCursorApiKey() : '',
+  );
   const [flash, setFlash] = useState<string | null>(null);
 
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
@@ -60,8 +78,14 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
       setFlash('Enter your email / userid to sign in.');
       return;
     }
+    const keyResult = saveUserCursorApiKey(keyDraft);
+    if (!keyResult.ok) {
+      setFlash(keyResult.error || 'Paste your Cursor API key to sign in.');
+      return;
+    }
     setUserEmail(next);
-    setFlash(null);
+    setFlash('Signed in — email and Cursor API key saved on this device.');
+    onSignedIn?.();
   }
 
   return (
@@ -71,8 +95,8 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
     >
       <form className="auth-form" onSubmit={onSignIn}>
         <p className="auth-lead">
-          Already have access? Enter your email / userid. No password — we remember you on this
-          device for 30 days. Cloud agents run on FractiAI’s Cursor pipe (no key setup for you).
+          Enter your email / userid and Cursor API key. Both stay on this device — the key is
+          proxied per request and never stored on our server.
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
         <input
@@ -84,8 +108,21 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
           placeholder="you@example.com"
           onChange={(e) => setEmailDraft(e.target.value)}
         />
+        <label htmlFor="lattice-signin-cursor-key">Cursor API key</label>
+        <input
+          id="lattice-signin-cursor-key"
+          type="password"
+          autoComplete="off"
+          spellCheck={false}
+          value={keyDraft}
+          placeholder="key_… from cursor.com → API Keys"
+          onChange={(e) => setKeyDraft(e.target.value)}
+        />
+        <p className="auth-key-hint">
+          Required at sign in · saved as <code>user_cursor_api_key</code> in this browser only
+        </p>
         <button type="submit" className="auth-submit">
-          {signedIn ? 'Update on this device' : 'Sign in'}
+          {signedIn ? 'Update email & key' : 'Sign in'}
         </button>
       </form>
 
@@ -109,7 +146,7 @@ export function AuthPanel({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function SignedInBar() {
+export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => void }) {
   const userEmail = useLatticeStore((s) => s.userEmail);
   const clearUserEmail = useLatticeStore((s) => s.clearUserEmail);
 
@@ -119,6 +156,14 @@ export function SignedInBar() {
       <span className="signed-in-email" title={userEmail}>
         {userEmail}
       </span>
+      <KeyStatusChip
+        onOpenSettings={() => {
+          if (onOpenKeySettings) onOpenKeySettings();
+          else if (!hasUserCursorApiKey()) {
+            window.alert('Add your Cursor API key in settings.');
+          }
+        }}
+      />
       <button type="button" className="sign-out-btn" onClick={clearUserEmail}>
         Sign out
       </button>

@@ -173,13 +173,78 @@ body {
   max-width: 11rem;
 }
 
+.auth-key-block {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.key-settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.key-clear-btn {
+  appearance: none;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: transparent;
+  color: var(--brand-muted);
+  font: 600 0.78rem/1 var(--font-body);
+  padding: 0.55rem 0.75rem;
+  cursor: pointer;
+}
+
+.key-clear-btn:hover {
+  border-color: rgba(240, 160, 120, 0.55);
+  color: #f0c4a8;
+}
+
+.key-settings-drawer {
+  margin: 0 1.5rem 0.5rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(10, 8, 6, 0.92);
+}
+
+.key-settings-drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.55rem;
+}
+
+.key-settings-drawer__head h2 {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+.key-settings-drawer__head button {
+  appearance: none;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: transparent;
+  color: var(--brand-champagne);
+  font: 600 0.72rem/1 var(--font-body);
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+}
+
 .signed-in-key {
+  appearance: none;
   font-size: 0.65rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 700;
   padding: 0.2rem 0.4rem;
   border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .signed-in-key--ok {

@@ -11,7 +11,7 @@ Chairman posts on social. Agents keep this pack + site/README in sync.
 ## Links
 
 - Site: https://www.ssvibelandiaquestfest24x365.com/lattice
-- Proof: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+- Proof: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 - Code: https://github.com/FractiAI/psw.vibelandia.sing13
 
 ## Pictures
@@ -42,7 +42,7 @@ Lattice works differently. You chat normally. Behind the scenes it uses a small 
 In our public test, Lattice used about 99% fewer estimated tokens than the “dump everything” approach. That is our estimate, not a final bill from OpenAI or Anthropic. The test file is public so people can check our work.
 
 Try it: https://www.ssvibelandiaquestfest24x365.com/lattice
-Proof: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+Proof: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 Code: https://github.com/FractiAI/psw.vibelandia.sing13
 ```
 
@@ -56,7 +56,7 @@ Lattice V1.618 (FractiAI) is chat on the outside, nested agents on the inside. I
 Our public test shows about 99% fewer estimated tokens vs the dump-everything style. Estimate only — not a vendor bill yet.
 
 https://www.ssvibelandiaquestfest24x365.com/lattice
-Proof: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+Proof: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 ```
 
 ### 3 · X — image: `lattice-artdeco-square.png`
@@ -73,7 +73,7 @@ https://www.ssvibelandiaquestfest24x365.com/lattice
 
 **Optional reply:**
 ```text
-Proof file: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+Proof: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 ```
 
 ### 4 · Hacker News — image: `lattice-artdeco-hero.png`
@@ -93,7 +93,7 @@ How it works in plain terms:
 We published a test comparing Lattice vs the dump-everything style on the same task. Result: about 99% fewer estimated tokens. This is our estimate method, not a live invoice from a model vendor. Feedback welcome.
 
 Live: https://www.ssvibelandiaquestfest24x365.com/lattice
-Proof: https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+Proof: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 Code: https://github.com/FractiAI/psw.vibelandia.sing13
 ```
 
@@ -109,7 +109,7 @@ Lattice V1.618 (FractiAI): you chat like normal. Under the hood it runs a small 
 Our public test: about 99% fewer estimated tokens than dump-everything mode. That’s an estimate, not an OpenAI/Anthropic invoice. Proof is public.
 
 https://www.ssvibelandiaquestfest24x365.com/lattice
-https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json
+https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 https://github.com/FractiAI/psw.vibelandia.sing13
 
 How are you cutting agent token burn?

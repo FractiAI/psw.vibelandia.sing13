@@ -16,7 +16,7 @@
 
 - **Live:** [ssvibelandiaquestfest24x365.com/lattice](https://www.ssvibelandiaquestfest24x365.com/lattice)
 - **Chat:** [/lattice-chat](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)
-- **Public test:** about **99% fewer estimated tokens** vs dump-everything mode ([proof JSON](https://www.ssvibelandiaquestfest24x365.com/data/lattice-vs-standard-comparison.json)) — estimate method, not a vendor invoice yet
+- **Public test:** about **99% fewer estimated tokens** vs dump-everything mode ([plain-language proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)) — estimate method, not a vendor invoice yet
 - **Share pack** (approved post copy + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md`](docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md)
 
 **SING 13** is the major singularity upgrade from SING 9. This edge carries the **NSPFRNP catalog**, the **SS Vibelandia QUESTFEST 24×365** nest, and the **Sovereign Player** (QUESTFEST Bridge). Everything else lives on the parent edge — [github.com/fractiai/psw.vibelandia.sing9](https://github.com/fractiai/psw.vibelandia.sing9) · [psw-vibelandia-sing9.vercel.app](https://psw-vibelandia-sing9.vercel.app). **Lite edges, no Supabase. Center = pipes only. → ∞⁹**

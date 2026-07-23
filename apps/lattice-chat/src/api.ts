@@ -1,5 +1,6 @@
 import { isRememberedEmailFresh } from '@/access';
 import { estimateTokenCompare } from '@/components/TokenCompare';
+import { hasUserCursorApiKey, readUserCursorApiKey } from '@/lib/cursorKey';
 import { mergeLatticeModels, LATTICE_MODEL_CATALOG } from '@/modelCatalog';
 import { useLatticeStore } from '@/store';
 import type { AgentMode, TokenCompare, TranscriptItem } from '@/types';
@@ -104,10 +105,13 @@ function isBusyPayload(data: LatticeResponse, status: number): boolean {
 }
 
 function latticeHeaders(email: string): HeadersInit {
-  return {
+  const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     'x-lattice-email': email,
   };
+  const key = readUserCursorApiKey();
+  if (key) headers['x-cursor-api-key'] = key;
+  return headers;
 }
 
 async function postLattice(
@@ -195,13 +199,14 @@ export async function loadLatticeModels(): Promise<void> {
   const email = store.userEmail.trim();
   if (!isRememberedEmailFresh(email, store.emailRememberedAt)) return;
 
-  // Always seed the full catalog immediately so the picker is never stuck on one model.
-  store.setModels(mergeLatticeModels(store.models.length > 1 ? store.models : []));
+  // Always seed full catalog so the picker never collapses to Auto-only.
+  store.setModels(mergeLatticeModels(store.models));
+  if (!hasUserCursorApiKey()) return;
 
   try {
     const res = await fetch(
       `/api/lattice-chat?models=1&email=${encodeURIComponent(email)}`,
-      { headers: { 'x-lattice-email': email } },
+      { headers: latticeHeaders(email) as Record<string, string> },
     );
     const data = (await res.json().catch(() => ({}))) as {
       models?: { id: string; displayName?: string; description?: string }[];
@@ -215,10 +220,11 @@ export async function loadLatticeModels(): Promise<void> {
       .filter((m) => m.id);
     const models = mergeLatticeModels(live.length ? live : LATTICE_MODEL_CATALOG);
     store.setModels(models);
-    store.setModelId('auto');
+    if (!models.some((m) => m.id === store.modelId)) {
+      store.setModelId(models[0]?.id || 'composer-2.5');
+    }
   } catch {
     store.setModels(LATTICE_MODEL_CATALOG);
-    store.setModelId('auto');
   }
 }
 
@@ -240,7 +246,7 @@ async function tryRecoverOnce(
       recover: true,
       agentId,
       email,
-      model: 'auto',
+      model: store.modelId,
       mode: store.agentMode,
       message: prompt,
       history,
@@ -386,13 +392,26 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     return;
   }
 
+  if (!hasUserCursorApiKey()) {
+    store.appendMessage(threadId, {
+      role: 'assistant',
+      content: [
+        'Add your Cursor API key before chatting.',
+        '',
+        'Open settings / the sign-in panel, paste your key (saved only on this device as user_cursor_api_key), then send again.',
+      ].join('\n'),
+    });
+    store.setSending(false);
+    return;
+  }
+
   const baseBody = {
     threadId,
     message: trimmed,
     history,
     agentId: thread.agentId,
     email,
-    model: 'auto',
+    model: store.modelId,
     mode: store.agentMode,
   };
 
@@ -493,17 +512,18 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       if (isHardLatticeFailure(data, res.status)) {
         throw new LatticeHardFail(
           data.error ||
-            (res.status === 401 || res.status === 403
-              ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
-              : `Request failed (${res.status})`),
+            (data.code === 'missing_cursor_api_key'
+              ? 'Cursor API key required. Add or update your key in Lattice settings.'
+              : res.status === 401 || res.status === 403
+                ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
+                : `Request failed (${res.status})`),
           data.code,
         );
       }
       if (res.status === 503) {
         throw new LatticeHardFail(
-          data.error ||
-            'Lattice cloud is not configured yet (server Cursor key missing). Ask the operator to set CURSOR_API_KEY on Vercel.',
-          data.code || 'missing_cursor_api_key',
+          data.error || 'Lattice cloud is temporarily unavailable.',
+          data.code,
         );
       }
       throw new Error(

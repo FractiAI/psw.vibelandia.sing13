@@ -66,7 +66,8 @@ export function TokenCompareFooter({ tokens }: { tokens: TokenCompare }) {
         </span>
       </p>
       <p className="token-compare-honesty">
-        Estimate only (not a vendor bill). Same idea as the public Lattice proof file.
+        Estimate only (not a vendor bill). Same idea as the{' '}
+        <a href="/lattice/proof">public Lattice token-reduction proof</a>.
       </p>
     </div>
   );

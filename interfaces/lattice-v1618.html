@@ -330,7 +330,7 @@
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/lattice-chat">Open Lattice chat</a>
-        <a class="btn btn-ghost" href="/data/lattice-vs-standard-comparison.json">See the proof</a>
+        <a class="btn btn-ghost" href="/lattice/proof">See the proof</a>
       </div>
     </header>
 
@@ -400,7 +400,7 @@
         </li>
         <li>
           <strong>4 · Check the proof</strong>
-          <span>Read the public comparison file anytime — same method we cite in posts.</span>
+          <span>Read the plain-language token-savings brief anytime — same numbers we cite in posts.</span>
         </li>
       </ul>
       <div class="cta-row">
@@ -462,8 +462,10 @@
       </table>
       <p class="honesty" id="honesty">
         Honesty: this is our estimate (characters ÷ 4), same prompt both ways.
-        Not a final bill from OpenAI or Anthropic. Proof file:
-        <a href="/data/lattice-vs-standard-comparison.json">lattice-vs-standard-comparison.json</a>.
+        Not a final bill from OpenAI or Anthropic.
+        Human proof: <a href="/lattice/proof">Lattice token reduction brief</a>.
+        Machine receipt:
+        <a href="/data/lattice-vs-standard-comparison.json">JSON</a>.
         Re-run: <code>npm run compare:lattice</code>.
       </p>
     </section>
@@ -500,7 +502,8 @@
         if (data.honesty && el('honesty')) {
           el('honesty').innerHTML =
             'Honesty: ' + data.honesty +
-            ' Receipt: <a href="/data/lattice-vs-standard-comparison.json">lattice-vs-standard-comparison.json</a>.' +
+            ' Human proof: <a href="/lattice/proof">token reduction brief</a>.' +
+            ' Machine receipt: <a href="/data/lattice-vs-standard-comparison.json">JSON</a>.' +
             ' Re-run: <code>node scripts/lattice-vs-standard-comparison.mjs</code>.';
         }
       } catch (_) { /* keep static fallbacks */ }

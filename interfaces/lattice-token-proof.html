@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Proof · Lattice cuts token load by ~99% · FractiAI</title>
+  <meta
+    name="description"
+    content="Executive plain-language proof: Lattice V1.618 used about 99% fewer estimated context tokens than dump-everything agent mode on the same coding ask."
+  />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice/proof" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --text: #f5f0e8;
+      --soft: #d6cfc4;
+      --muted: #a8a29e;
+      --bg: #0a0806;
+      --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+      --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -8%, rgba(212, 175, 55, 0.18), transparent 55%),
+        radial-gradient(ellipse 65% 40% at 100% 85%, rgba(90, 55, 15, 0.26), transparent 50%),
+        linear-gradient(165deg, #120e0a 0%, var(--bg) 48%, #050403 100%);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--champagne); }
+    a:hover { color: var(--gold-hi); }
+    .wrap { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.35rem 4rem; }
+    .kicker {
+      margin: 0 0 0.65rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(2.1rem, 6vw, 3rem);
+      font-weight: 600;
+      line-height: 1.12;
+      color: var(--gold-hi);
+    }
+    .by { margin: 0 0 1.25rem; color: var(--muted); font-size: 0.92rem; }
+    .lede {
+      margin: 0 0 1.75rem;
+      font-size: 1.15rem;
+      color: var(--champagne);
+      font-weight: 500;
+    }
+    .hero-stat {
+      margin: 0 0 2rem;
+      padding: 1.25rem 1.35rem;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(10, 8, 6, 0.55));
+    }
+    .hero-stat .pct {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 10vw, 4.25rem);
+      line-height: 1;
+      color: var(--gold-hi);
+      font-weight: 600;
+    }
+    .hero-stat .pct-label {
+      margin: 0.45rem 0 0;
+      font-size: 1.05rem;
+      color: var(--champagne);
+      font-weight: 600;
+    }
+    .hero-stat .pct-sub {
+      margin: 0.55rem 0 0;
+      font-size: 0.88rem;
+      color: var(--soft);
+    }
+    h2 {
+      margin: 2.1rem 0 0.65rem;
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    p { margin: 0 0 1rem; color: var(--soft); }
+    .cmp {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin: 1.25rem 0 1.5rem;
+    }
+    @media (max-width: 560px) { .cmp { grid-template-columns: 1fr; } }
+    .cmp-col {
+      padding: 1rem 1.05rem;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      background: rgba(20, 14, 10, 0.55);
+    }
+    .cmp-col.win {
+      border-color: rgba(212, 175, 55, 0.55);
+      background: rgba(212, 175, 55, 0.08);
+    }
+    .cmp-col h3 {
+      margin: 0 0 0.4rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .cmp-col .num {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      color: var(--champagne);
+      line-height: 1.1;
+    }
+    .cmp-col.win .num { color: var(--gold-hi); }
+    .cmp-col .note { margin: 0.45rem 0 0; font-size: 0.82rem; color: var(--muted); }
+    ul { margin: 0 0 1.1rem; padding-left: 1.15rem; color: var(--soft); }
+    li { margin-bottom: 0.45rem; }
+    .honesty {
+      margin: 2rem 0 1.25rem;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid rgba(212, 175, 55, 0.55);
+      background: rgba(26, 18, 12, 0.65);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.15rem;
+      font: 600 0.88rem/1 var(--font-body);
+      text-decoration: none;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .btn-primary {
+      background: linear-gradient(180deg, #e8c547, #b8860b);
+      color: #1a1208;
+      border-color: transparent;
+    }
+    .btn-primary:hover { color: #0a0806; filter: brightness(1.05); }
+    .btn-ghost { color: var(--champagne); background: transparent; }
+    .footer {
+      margin-top: 2.5rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.14);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <article class="wrap">
+    <p class="kicker">Public proof · token consumption</p>
+    <h1>Lattice cut estimated token load by about 99%</h1>
+    <p class="by">Lattice V1.618 · FractiAI · executive brief for humans</p>
+
+    <p class="lede">
+      Same hard coding ask. Two ways to feed an AI agent. One burns a mountain of context.
+      The other uses nested agents and file pointers. The gap is not a rounding error —
+      it is nearly the entire bill.
+    </p>
+
+    <div class="hero-stat" aria-label="Headline savings">
+      <p class="pct" id="pct">−99%</p>
+      <p class="pct-label">fewer estimated context tokens</p>
+      <p class="pct-sub" id="saved-sub">
+        Roughly 298,000 tokens left on the table vs dump-everything mode on this public test.
+      </p>
+    </div>
+
+    <h2>What we compared</h2>
+    <p>
+      We ran one realistic multi-part coding question — map docs, UI, APIs, and a nested plan —
+      under two loading styles:
+    </p>
+    <ul>
+      <li>
+        <strong style="color: var(--champagne)">Standard agentic (fat context)</strong> —
+        paste large slices of docs, protocols, and code into the model, then re-use that fat
+        context across map → plan → synthesize.
+      </li>
+      <li>
+        <strong style="color: var(--champagne)">Lattice V1.618</strong> —
+        a small nested team with RAG-style pointers and a short history window, instead of
+        dumping the corpus.
+      </li>
+    </ul>
+
+    <div class="cmp" aria-label="Token comparison">
+      <div class="cmp-col">
+        <h3>Dump-everything</h3>
+        <p class="num" id="std-tok">~301,025</p>
+        <p class="note">Estimated context tokens</p>
+      </div>
+      <div class="cmp-col win">
+        <h3>Lattice V1.618</h3>
+        <p class="num" id="lat-tok">~3,121</p>
+        <p class="note">Estimated context tokens</p>
+      </div>
+    </div>
+
+    <h2>Why the reduction is so large</h2>
+    <p>
+      Tokens are the fuel of AI coding agents. Every file you paste costs money and burns
+      rate limits. Dump-everything mode treats the whole project as one meal. Lattice treats
+      the project like a library: the lead agent points helpers at the few shelves they need,
+      then folds the answers back together.
+    </p>
+    <p>
+      On this test, that difference meant <strong style="color: var(--gold-hi)" id="saved-line">≈ 297,904 tokens saved</strong>
+      — about ninety-nine percent of the estimated load. That is the proof of tremendous
+      token-consumption reduction: not a nicer UI alone, but a smaller context appetite for
+      the same kind of work.
+    </p>
+
+    <h2>What this means in practice</h2>
+    <ul>
+      <li>Longer sessions before you hit plan limits.</li>
+      <li>Lower cost per turn when you pay by usage.</li>
+      <li>Room for real multi-band work (docs + UI + API) without stuffing the entire repo.</li>
+    </ul>
+
+    <div class="honesty" id="honesty">
+      <strong style="color: var(--champagne)">Honesty boundary.</strong>
+      These numbers are structural estimates (about 4 characters ≈ 1 token), same prompt both
+      ways. They are <em>not</em> a final invoice from OpenAI, Anthropic, or Cursor. They
+      illustrate context load. The machine receipt stays available for auditors who want the
+      raw table.
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/lattice-chat">Try Lattice chat</a>
+      <a class="btn btn-ghost" href="/lattice">Back to Lattice</a>
+      <a class="btn btn-ghost" href="/data/lattice-vs-standard-comparison.json">Machine receipt (JSON)</a>
+    </div>
+
+    <p class="footer">
+      Document ID: LATTICE-TOKEN-PROOF-2026-07 · SynthOBS Autonomous Agent · Syntheverse Sandbox ·
+      markdown in repo:
+      <a href="https://github.com/FractiAI/psw.vibelandia.sing13/blob/main/docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md">LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md</a>
+      · → ∞¹³
+    </p>
+  </article>
+
+  <script>
+    (async function hydrate() {
+      try {
+        const res = await fetch('/data/lattice-vs-standard-comparison.json', { cache: 'no-store' });
+        if (!res.ok) return;
+        const data = await res.json();
+        const c = data.comparison || {};
+        const el = (id) => document.getElementById(id);
+        if (el('pct') && c.percentSaved != null) el('pct').textContent = '−' + c.percentSaved + '%';
+        if (el('std-tok') && c.standardTokens != null) {
+          el('std-tok').textContent = '~' + Number(c.standardTokens).toLocaleString();
+        }
+        if (el('lat-tok') && c.latticeTokens != null) {
+          el('lat-tok').textContent = '~' + Number(c.latticeTokens).toLocaleString();
+        }
+        if (el('saved-line') && c.tokensSaved != null) {
+          el('saved-line').textContent =
+            '≈ ' + Number(c.tokensSaved).toLocaleString() + ' tokens saved';
+        }
+        if (el('saved-sub') && c.tokensSaved != null) {
+          el('saved-sub').textContent =
+            'Roughly ' +
+            Math.round(Number(c.tokensSaved) / 1000) +
+            ',000 tokens left on the table vs dump-everything mode on this public test.';
+        }
+        if (data.honesty && el('honesty')) {
+          el('honesty').innerHTML =
+            '<strong style="color: var(--champagne)">Honesty boundary.</strong> ' +
+            data.honesty +
+            ' Machine receipt: <a href="/data/lattice-vs-standard-comparison.json">JSON</a>.';
+        }
+      } catch (_) { /* static fallbacks remain */ }
+    })();
+  </script>
+</body>
+</html>

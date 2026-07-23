@@ -12,7 +12,9 @@ import {
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { ComposerOptions } from '@/components/ComposerOptions';
+import { KeySettingsPanel } from '@/components/KeySettings';
 import { TokenCompareFooter } from '@/components/TokenCompare';
+import { hasUserCursorApiKey, subscribeUserCursorApiKey } from '@/lib/cursorKey';
 import { useLatticeStore } from '@/store';
 
 export function ChatPane({
@@ -40,6 +42,8 @@ export function ChatPane({
   const [draft, setDraft] = useState('');
   const [elapsedSec, setElapsedSec] = useState(0);
   const [checking, setChecking] = useState(false);
+  const [keySettingsOpen, setKeySettingsOpen] = useState(false);
+  const [hasEdgeKey, setHasEdgeKey] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const resumedRef = useRef(false);
@@ -48,6 +52,8 @@ export function ChatPane({
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
   const needsAccessGrant =
     Boolean(error) && /not on the access list|Request access|access expired/i.test(error || '');
+  const needsCursorKey =
+    Boolean(error) && /Cursor API key|missing_cursor_api_key|x-cursor-api-key/i.test(error || '');
   const lastIsUser =
     Boolean(thread?.messages.length) &&
     thread!.messages[thread!.messages.length - 1].role === 'user';
@@ -65,12 +71,18 @@ export function ChatPane({
   }, [ensureThread]);
 
   useEffect(() => {
+    const sync = () => setHasEdgeKey(hasUserCursorApiKey());
+    sync();
+    return subscribeUserCursorApiKey(sync);
+  }, []);
+
+  useEffect(() => {
     if (signedIn) void loadLatticeModels();
-  }, [signedIn, userEmail]);
+  }, [signedIn, userEmail, hasEdgeKey]);
 
   // Resume a waiting turn after refresh — only when we still have a pending soft wait.
   useEffect(() => {
-    if (!signedIn || resumedRef.current) return;
+    if (!signedIn || !hasEdgeKey || resumedRef.current) return;
     if (!threadAwaitingAssistant(activeThreadId)) return;
     const s = useLatticeStore.getState();
     if (!s.pending) return;
@@ -80,7 +92,7 @@ export function ChatPane({
     }
     resumedRef.current = true;
     void checkPendingLatticeReply();
-  }, [signedIn, activeThreadId]);
+  }, [signedIn, hasEdgeKey, activeThreadId]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -177,7 +189,9 @@ export function ChatPane({
               + New chat
             </button>
           </div>
-          {signedIn ? <SignedInBar /> : null}
+          {signedIn ? (
+            <SignedInBar onOpenKeySettings={() => setKeySettingsOpen(true)} />
+          ) : null}
         </div>
         <p className="chat-sub">
           Nested agents as simple as chat.{' '}
@@ -185,16 +199,44 @@ export function ChatPane({
         </p>
       </header>
 
+      {keySettingsOpen ? (
+        <div className="key-settings-drawer" role="dialog" aria-label="Cursor API key settings">
+          <div className="key-settings-drawer__head">
+            <h2>Cursor API key</h2>
+            <button type="button" onClick={() => setKeySettingsOpen(false)}>
+              Close
+            </button>
+          </div>
+          <KeySettingsPanel
+            onSaved={() => {
+              setKeySettingsOpen(false);
+              void loadLatticeModels();
+            }}
+          />
+        </div>
+      ) : null}
+
       <div className="message-scroll" role="log" aria-live="polite">
         {!signedIn ? (
           <div className="auth-stage">
             <p className="empty-lead">Sign in to use Lattice</p>
             <p className="empty-hint">
-              Enter your email / userid. Request access only appears when you are not signed in
-              for the current monthly period. No Cursor key setup — FractiAI’s cloud pipe runs
-              the agents.
+              Sign in with your email / userid and Cursor API key together. The key stays on this
+              device and is proxied per request — never stored on our server.
             </p>
-            <AuthPanel />
+            <AuthPanel
+              onSignedIn={() => {
+                void loadLatticeModels();
+              }}
+            />
+          </div>
+        ) : !hasEdgeKey ? (
+          <div className="empty-state">
+            <p className="empty-lead">Add your Cursor API key</p>
+            <p className="empty-hint">
+              Required for cloud agents. Saved only in this browser (`user_cursor_api_key`).
+            </p>
+            <KeySettingsPanel onSaved={() => void loadLatticeModels()} />
           </div>
         ) : !thread || thread.messages.length === 0 ? (
           <div className="empty-state">
@@ -279,6 +321,18 @@ export function ChatPane({
               <RequestAccessLink fromEmail={userEmail} />
             </>
           ) : null}
+          {needsCursorKey ? (
+            <>
+              {' '}
+              <button
+                type="button"
+                className="error-check-btn"
+                onClick={() => setKeySettingsOpen(true)}
+              >
+                Open key settings
+              </button>
+            </>
+          ) : null}
           {lastIsUser ? (
             <>
               {' '}
@@ -295,7 +349,7 @@ export function ChatPane({
           mode={agentMode}
           modelId={modelId}
           models={models}
-          disabled={sending || !signedIn}
+          disabled={sending || !signedIn || !hasEdgeKey}
           onModeChange={setAgentMode}
           onModelChange={setModelId}
         />
@@ -312,16 +366,19 @@ export function ChatPane({
           placeholder={
             showWorking
               ? 'Waiting on Lattice… use Check for reply instead of re-pasting'
-              : signedIn
-                ? 'Message Lattice…'
-                : 'Sign in above to chat…'
+              : !signedIn
+                ? 'Sign in above to chat…'
+                : !hasEdgeKey
+                  ? 'Add your Cursor API key above…'
+                  : 'Message Lattice…'
           }
-          disabled={!signedIn || (sending && sendPhase !== 'stuck')}
+          disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
         />
         <button
           type="submit"
           disabled={
             !signedIn ||
+            !hasEdgeKey ||
             !draft.trim() ||
             (sending && sendPhase !== 'stuck' && draft.trim() !== pending?.prompt)
           }

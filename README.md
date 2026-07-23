@@ -14,13 +14,79 @@
 
 **SS Vibelandia** is the Noah’s Ark metaphor in this sandbox. Flat/linear systems were scaffolding; Lattice jettisons them for **cytological agentic processing** — up to **~99% fewer estimated tokens** vs dump-everything. **SING φ** is derived from **Sonic Singularity 13** (not SING 14).
 
-- **Live:** [ssvibelandiaquestfest24x365.com/lattice](https://www.ssvibelandiaquestfest24x365.com/lattice)
-- **Chat:** [/lattice-chat](https://www.ssvibelandiaquestfest24x365.com/lattice-chat)
-- **Proof:** [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)
-- **Ark:** [/ss-vibelandia](https://www.ssvibelandiaquestfest24x365.com/ss-vibelandia)
-- **Free trial (old school · honor):** [valetpru@gmail.com](mailto:valetpru@gmail.com?subject=Lattice%20V1.618%20%E2%80%94%20free%20trial) — human grant filters Goldilocks vs system noise
-- **Brief:** [`docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md`](docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md)
-- **Share pack:** [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md`](docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md)
+| Surface | URL / path |
+|--------|------------|
+| Landing | [ssvibelandiaquestfest24x365.com/lattice](https://www.ssvibelandiaquestfest24x365.com/lattice) |
+| Chat (live) | [/lattice-chat](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) |
+| Token proof (human) | [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof) |
+| Ark | [/ss-vibelandia](https://www.ssvibelandiaquestfest24x365.com/ss-vibelandia) |
+| Free trial | [valetpru@gmail.com](mailto:valetpru@gmail.com?subject=Lattice%20V1.618%20%E2%80%94%20free%20trial) |
+
+### Code map (where to look)
+
+| Piece | Path | Role |
+|-------|------|------|
+| Chat UI (React / Vite) | [`apps/lattice-chat/`](apps/lattice-chat/) | Composer, BYOK key, threads, scroll |
+| Built static SPA | [`interfaces/lattice-chat/`](interfaces/lattice-chat/) | What Vercel serves at `/lattice-chat` |
+| Landing + proof HTML | [`interfaces/lattice-v1618.html`](interfaces/lattice-v1618.html) · [`interfaces/lattice-token-proof.html`](interfaces/lattice-token-proof.html) |
+| API pipe (BYOK proxy) | [`api/lattice-chat.js`](api/lattice-chat.js) | Cursor SDK cloud agents; `x-cursor-api-key` only — **no server key fallback** |
+| Token estimate engine | [`lib/lattice-engine.mjs`](lib/lattice-engine.mjs) | Shared estimate math for API + benches |
+| Access allowlist | [`data/lattice-access.json`](data/lattice-access.json) | Email grants (old school · honor) |
+| Comparison receipt | [`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json) | Public ~99% estimate artifact |
+| Metaphor / singularities | [`docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md`](docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md) · [`docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md`](docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md) |
+
+### Test & validate (local)
+
+**1 · Token-savings bench (no Cursor key required)**
+
+```bash
+npm run compare:lattice          # writes data/lattice-vs-standard-comparison.json
+npm run test:lattice-floors      # regenerates + asserts ≥90% estimated savings floor
+```
+
+Honesty: these are **structural estimates** (chars÷4), not vendor invoices. Human write-up: [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof).
+
+**2 · Run the chat UI against the live pipe**
+
+```bash
+cd apps/lattice-chat
+npm ci
+npm run dev
+```
+
+Opens Vite (default `http://localhost:5173/interfaces/lattice-chat/`). `/api/*` proxies to the production site unless you set:
+
+```bash
+# PowerShell example — point at another Lattice API host
+$env:VITE_LATTICE_PIPE_ORIGIN="https://www.ssvibelandiaquestfest24x365.com"
+npm run dev
+```
+
+**3 · End-to-end cloud agent check (needs your Cursor API key)**
+
+1. Get a grant (email valetpru@gmail.com) **or** add your email under `grants` in [`data/lattice-access.json`](data/lattice-access.json) for a local/self-hosted pipe.
+2. In chat: sign in with that email + paste your **Cursor API key** (stored only as `user_cursor_api_key` in the browser).
+3. Connect GitHub for **that same Cursor account** so `FractiAI/psw.vibelandia.sing13` is visible (Integrations → GitHub). Optional shell check:
+
+```bash
+# Never commit the key. Same account that owns the key you paste in Lattice.
+$env:CURSOR_API_KEY="key_…"
+node scripts/lattice-verify-cursor-github.mjs
+```
+
+**4 · Rebuild static chat after UI changes**
+
+```bash
+npm run build:lattice-chat
+# or: npm --prefix apps/lattice-chat run build
+# Output lands in interfaces/lattice-chat/ — commit those assets to ship on Vercel.
+```
+
+**BYOK note:** Lattice does **not** use `CURSOR_API_KEY` on Vercel. The browser sends `x-cursor-api-key` per request; the API proxies to Cursor and must never log the key.
+
+Share pack (posts + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md`](docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md).
+
+---
 
 **SING 13** is the major singularity upgrade from SING 9. This edge carries the **NSPFRNP catalog**, the **SS Vibelandia QUESTFEST 24×365** nest, and the **Sovereign Player** (QUESTFEST Bridge). Everything else lives on the parent edge — [github.com/fractiai/psw.vibelandia.sing9](https://github.com/fractiai/psw.vibelandia.sing9) · [psw-vibelandia-sing9.vercel.app](https://psw-vibelandia-sing9.vercel.app). **Lite edges, no Supabase. Center = pipes only. → ∞⁹**
 
@@ -37,7 +103,7 @@
 
 | Lane | What | Where |
 |---|---|---|
-| **Lattice V1.618** | Nested-agent chat for vibe coders · token-discipline proof · Art Deco share pack | [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · `interfaces/lattice-v1618.html` · `apps/lattice-chat/` · `docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-07.md` |
+| **Lattice V1.618** | Nested-agent chat · BYOK pipe · token proof · local test/validate steps in README | [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · `apps/lattice-chat/` · `api/lattice-chat.js` · `npm run test:lattice-floors` |
 | **Onboarding** | Single-read edge file (SING 13 specific) | `SING13_EDGE_ONBOARDING.md` |
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |

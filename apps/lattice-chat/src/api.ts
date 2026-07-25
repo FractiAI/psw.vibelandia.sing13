@@ -1,7 +1,17 @@
 import { isRememberedEmailFresh } from '@/access';
 import { estimateTokenCompare } from '@/components/TokenCompare';
-import { hasUserCursorApiKey, readUserCursorApiKey } from '@/lib/cursorKey';
-import { mergeLatticeModels, LATTICE_MODEL_CATALOG } from '@/modelCatalog';
+import {
+  hasProviderApiKey,
+  LATTICE_PROVIDERS,
+  readProviderApiKey,
+  type LatticeProvider,
+} from '@/lib/providerKeys';
+import {
+  catalogForProvider,
+  mergeProviderModels,
+  LATTICE_MODEL_CATALOG,
+  PROVIDER_DEFAULT_MODEL,
+} from '@/modelCatalog';
 import { useLatticeStore } from '@/store';
 import type { AgentMode, TokenCompare, TranscriptItem } from '@/types';
 
@@ -37,11 +47,14 @@ function isHardLatticeFailure(data: LatticeResponse, status: number): boolean {
     data.code === 'invalid_model' ||
     data.code === 'cursor_auth' ||
     data.code === 'missing_cursor_api_key' ||
+    data.code === 'missing_provider_api_key' ||
+    data.code === 'claude_auth' ||
+    data.code === 'gemini_auth' ||
     data.code === 'agent_not_found'
   ) {
     return true;
   }
-  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github|agent not found|agent_not_found/i.test(
+  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github|agent not found|agent_not_found|anthropic|gemini/i.test(
     data.error || '',
   );
 }
@@ -112,13 +125,19 @@ function isBusyPayload(data: LatticeResponse, status: number): boolean {
   );
 }
 
-function latticeHeaders(email: string): HeadersInit {
+function latticeHeaders(email: string, provider?: LatticeProvider): HeadersInit {
+  const active = provider || useLatticeStore.getState().provider || 'cursor';
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     'x-lattice-email': email,
+    'x-lattice-provider': active,
   };
-  const key = readUserCursorApiKey();
-  if (key) headers['x-cursor-api-key'] = key;
+  const cursor = readProviderApiKey('cursor');
+  const claude = readProviderApiKey('claude');
+  const gemini = readProviderApiKey('gemini');
+  if (cursor) headers['x-cursor-api-key'] = cursor;
+  if (claude) headers['x-anthropic-api-key'] = claude;
+  if (gemini) headers['x-gemini-api-key'] = gemini;
   return headers;
 }
 
@@ -207,14 +226,24 @@ export async function loadLatticeModels(): Promise<void> {
   const email = store.userEmail.trim();
   if (!isRememberedEmailFresh(email, store.emailRememberedAt)) return;
 
-  // Always seed full catalog so the picker never collapses to Auto-only.
-  store.setModels(mergeLatticeModels(store.models));
-  if (!hasUserCursorApiKey()) return;
+  const provider = store.provider || 'cursor';
+  // Always seed provider catalog so the picker never collapses.
+  store.setModels(catalogForProvider(provider));
+  if (!hasProviderApiKey(provider)) return;
+
+  if (provider !== 'cursor') {
+    const models = catalogForProvider(provider);
+    store.setModels(models);
+    if (!models.some((m) => m.id === store.modelId)) {
+      store.setModelId(PROVIDER_DEFAULT_MODEL[provider]);
+    }
+    return;
+  }
 
   try {
     const res = await fetch(
-      `/api/lattice-chat?models=1&email=${encodeURIComponent(email)}`,
-      { headers: latticeHeaders(email) as Record<string, string> },
+      `/api/lattice-chat?models=1&email=${encodeURIComponent(email)}&provider=cursor`,
+      { headers: latticeHeaders(email, 'cursor') as Record<string, string> },
     );
     const data = (await res.json().catch(() => ({}))) as {
       models?: { id: string; displayName?: string; description?: string }[];
@@ -226,10 +255,10 @@ export async function loadLatticeModels(): Promise<void> {
         description: m.description,
       }))
       .filter((m) => m.id);
-    const models = mergeLatticeModels(live.length ? live : LATTICE_MODEL_CATALOG);
+    const models = mergeProviderModels('cursor', live.length ? live : LATTICE_MODEL_CATALOG);
     store.setModels(models);
     if (!models.some((m) => m.id === store.modelId)) {
-      store.setModelId(models[0]?.id || 'composer-2.5');
+      store.setModelId(models[0]?.id || PROVIDER_DEFAULT_MODEL.cursor);
     }
   } catch {
     store.setModels(LATTICE_MODEL_CATALOG);
@@ -258,6 +287,7 @@ async function tryRecoverOnce(
       mode: store.agentMode,
       message: prompt,
       history,
+      provider: store.provider,
     },
     email,
   );
@@ -401,13 +431,14 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     return;
   }
 
-  if (!hasUserCursorApiKey()) {
+  if (!hasProviderApiKey(store.provider)) {
+    const meta = LATTICE_PROVIDERS.find((p) => p.id === store.provider);
     store.appendMessage(threadId, {
       role: 'assistant',
       content: [
-        'Add your Cursor API key before chatting.',
+        `Add your ${meta?.label || store.provider} API key before chatting.`,
         '',
-        'Open settings / the sign-in panel, paste your key (saved only on this device as user_cursor_api_key), then send again.',
+        'Open key settings, paste the key for the active provider (saved only on this device), then send again.',
       ].join('\n'),
     });
     store.setSending(false);
@@ -422,6 +453,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     email,
     model: store.modelId,
     mode: store.agentMode,
+    provider: store.provider,
   };
 
   let settled = false;

@@ -14,7 +14,7 @@ import { AgentTranscript } from '@/components/AgentTranscript';
 import { ComposerOptions } from '@/components/ComposerOptions';
 import { KeySettingsPanel } from '@/components/KeySettings';
 import { TokenCompareFooter } from '@/components/TokenCompare';
-import { hasUserCursorApiKey, subscribeUserCursorApiKey } from '@/lib/cursorKey';
+import { hasProviderApiKey, subscribeProviderKeys } from '@/lib/providerKeys';
 import { useLatticeStore } from '@/store';
 
 export function ChatPane({
@@ -36,8 +36,10 @@ export function ChatPane({
   const agentMode = useLatticeStore((s) => s.agentMode);
   const modelId = useLatticeStore((s) => s.modelId);
   const models = useLatticeStore((s) => s.models);
+  const provider = useLatticeStore((s) => s.provider);
   const setAgentMode = useLatticeStore((s) => s.setAgentMode);
   const setModelId = useLatticeStore((s) => s.setModelId);
+  const setProvider = useLatticeStore((s) => s.setProvider);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const [draft, setDraft] = useState('');
   const [elapsedSec, setElapsedSec] = useState(0);
@@ -54,8 +56,11 @@ export function ChatPane({
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
   const needsAccessGrant =
     Boolean(error) && /not on the access list|Request access|access expired/i.test(error || '');
-  const needsCursorKey =
-    Boolean(error) && /Cursor API key|missing_cursor_api_key|x-cursor-api-key/i.test(error || '');
+  const needsProviderKey =
+    Boolean(error) &&
+    /API key|missing_.*api_key|x-cursor-api-key|x-anthropic-api-key|x-gemini-api-key/i.test(
+      error || '',
+    );
   const lastIsUser =
     Boolean(thread?.messages.length) &&
     thread!.messages[thread!.messages.length - 1].role === 'user';
@@ -74,8 +79,8 @@ export function ChatPane({
 
   useEffect(() => {
     const sync = (detail?: { changed?: boolean }) => {
-      setHasEdgeKey(hasUserCursorApiKey());
-      // New Cursor key ⇒ old cloud agent ids are invalid (BYOK hang fix).
+      setHasEdgeKey(hasProviderApiKey(useLatticeStore.getState().provider));
+      // New key / provider ⇒ old cloud agent ids are invalid.
       if (detail?.changed) {
         const s = useLatticeStore.getState();
         s.clearCloudAgents();
@@ -86,12 +91,12 @@ export function ChatPane({
       }
     };
     sync();
-    return subscribeUserCursorApiKey(sync);
-  }, []);
+    return subscribeProviderKeys(sync);
+  }, [provider]);
 
   useEffect(() => {
     if (signedIn) void loadLatticeModels();
-  }, [signedIn, userEmail, hasEdgeKey]);
+  }, [signedIn, userEmail, hasEdgeKey, provider]);
 
   // Resume a waiting turn after refresh — only when we still have a pending soft wait.
   useEffect(() => {
@@ -361,7 +366,7 @@ export function ChatPane({
               <RequestAccessLink fromEmail={userEmail} />
             </>
           ) : null}
-          {needsCursorKey ? (
+          {needsProviderKey ? (
             <>
               {' '}
               <button
@@ -386,10 +391,12 @@ export function ChatPane({
 
       <form className="composer" onSubmit={onSubmit}>
         <ComposerOptions
+          provider={provider}
           mode={agentMode}
           modelId={modelId}
           models={models}
           disabled={sending || !signedIn || !hasEdgeKey}
+          onProviderChange={setProvider}
           onModeChange={setAgentMode}
           onModelChange={setModelId}
         />

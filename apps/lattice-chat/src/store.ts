@@ -1,7 +1,16 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { isRememberedEmailFresh, normalizeEmail } from '@/access';
-import { LATTICE_MODEL_CATALOG } from '@/modelCatalog';
+import {
+  catalogForProvider,
+  LATTICE_MODEL_CATALOG,
+  PROVIDER_DEFAULT_MODEL,
+} from '@/modelCatalog';
+import {
+  readActiveProvider,
+  saveActiveProvider,
+  type LatticeProvider,
+} from '@/lib/providerKeys';
 import type {
   AgentMode,
   ChatMessage,
@@ -48,6 +57,7 @@ type LatticeState = {
   agentMode: AgentMode;
   modelId: string;
   models: LatticeModelOption[];
+  provider: LatticeProvider;
   ensureThread: () => string;
   newChat: () => void;
   selectThread: (id: string) => void;
@@ -65,11 +75,12 @@ type LatticeState = {
   clearPending: () => void;
   setError: (msg: string | null) => void;
   setAgentId: (threadId: string, agentId: string | null) => void;
-  /** Drop cloud agent ids when the edge Cursor key changes (agents are per-key). */
+  /** Drop cloud agent ids when the edge key or provider changes. */
   clearCloudAgents: () => void;
   setAgentMode: (mode: AgentMode) => void;
   setModelId: (modelId: string) => void;
   setModels: (models: LatticeModelOption[]) => void;
+  setProvider: (provider: LatticeProvider) => void;
   hasRememberedEmail: () => boolean;
 };
 
@@ -88,6 +99,7 @@ export const useLatticeStore = create<LatticeState>()(
       agentMode: 'agent',
       modelId: 'composer-2.5',
       models: LATTICE_MODEL_CATALOG,
+      provider: readActiveProvider(),
 
       ensureThread: () => {
         const { threads, activeThreadId } = get();
@@ -238,6 +250,18 @@ export const useLatticeStore = create<LatticeState>()(
       setAgentMode: (mode) => set({ agentMode: mode }),
       setModelId: (modelId) => set({ modelId }),
       setModels: (models) => set({ models }),
+      setProvider: (provider) => {
+        saveActiveProvider(provider);
+        const models = catalogForProvider(provider);
+        const defaultId = PROVIDER_DEFAULT_MODEL[provider];
+        set((s) => ({
+          provider,
+          models,
+          modelId: models.some((m) => m.id === s.modelId) ? s.modelId : defaultId,
+          threads: s.threads.map((t) => ({ ...t, agentId: undefined })),
+          pending: s.pending ? { ...s.pending, agentId: undefined } : null,
+        }));
+      },
       hasRememberedEmail: () => {
         const { userEmail, emailRememberedAt } = get();
         return isRememberedEmailFresh(userEmail, emailRememberedAt);
@@ -252,8 +276,19 @@ export const useLatticeStore = create<LatticeState>()(
         emailRememberedAt: s.emailRememberedAt,
         agentMode: s.agentMode,
         modelId: s.modelId,
+        provider: s.provider,
         pending: s.pending,
       }),
+      onRehydrateStorage: () => (state) => {
+        if (!state) return;
+        const provider = state.provider || readActiveProvider();
+        saveActiveProvider(provider);
+        const models = catalogForProvider(provider);
+        const modelId = models.some((m) => m.id === state.modelId)
+          ? state.modelId
+          : PROVIDER_DEFAULT_MODEL[provider];
+        useLatticeStore.setState({ provider, models, modelId });
+      },
     },
   ),
 );

@@ -1,10 +1,10 @@
 /**
- * Lattice V1.618 chat — Cursor SDK cloud agent (stateless BYOK proxy).
+ * Lattice V1.618 chat — multi-provider BYOK proxy (Cursor cloud · Claude Messages · Gemini Antigravity).
  *
  * El Gran Sol’s Fractal Constant (EGS fractal constant): scale-invariant geometric ratio
  * balancing harmonic signal flow across downstream systems — the golden key that establishes
  * baseline operational symmetry. Request headers must stay clean through this pipe layer
- * (email + x-cursor-api-key only; never persist or log user keys).
+ * (email + provider key headers only; never persist or log user keys).
  *
  * Access: email allowlist. Creator permanent. Guests one month from grant.
  * Note: keep this file self-contained for Vercel (avoid top-level .mjs imports).
@@ -190,9 +190,8 @@ function readEmail(req, body) {
 }
 
 /**
- * Stateless BYOK: read user Cursor API key from `x-cursor-api-key` only.
- * Never log the key. Do not fall back to process.env (edge key is required).
- * EGS fractal constant: keep header wavefield clean — pass key through, persist nothing.
+ * Stateless BYOK: read user provider keys from headers only.
+ * Never log keys. Do not fall back to process.env (edge key is required).
  */
 function resolveCursorApiKey(req) {
   const h = req.headers || {};
@@ -202,8 +201,306 @@ function resolveCursorApiKey(req) {
   return { key: '', source: 'none' };
 }
 
+function resolveHeaderKey(req, names) {
+  const h = req.headers || {};
+  for (const name of names) {
+    const raw = h[name] || h[name.toLowerCase()] || '';
+    const v = String(Array.isArray(raw) ? raw[0] : raw).trim();
+    if (v.length >= 8) return v;
+  }
+  return '';
+}
+
+function resolveProvider(req, body) {
+  const h = req.headers || {};
+  const raw =
+    body?.provider ||
+    h['x-lattice-provider'] ||
+    h['X-Lattice-Provider'] ||
+    'cursor';
+  const p = String(Array.isArray(raw) ? raw[0] : raw)
+    .trim()
+    .toLowerCase();
+  if (p === 'claude' || p === 'anthropic') return 'claude';
+  if (p === 'gemini' || p === 'antigravity') return 'gemini';
+  return 'cursor';
+}
+
+function resolveProviderApiKey(req, provider) {
+  if (provider === 'claude') {
+    return resolveHeaderKey(req, ['x-anthropic-api-key', 'X-Anthropic-Api-Key']);
+  }
+  if (provider === 'gemini') {
+    return resolveHeaderKey(req, ['x-gemini-api-key', 'X-Gemini-Api-Key']);
+  }
+  return resolveCursorApiKey(req).key;
+}
+
 const MISSING_KEY_ERROR =
-  'Cursor API key required. Add your key in Lattice settings (kept on your device). Send it as x-cursor-api-key — we do not store it on the server.';
+  'API key required for the selected provider. Add it in Lattice settings (kept on your device).';
+
+const CLAUDE_MODELS = [
+  { id: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5' },
+  { id: 'claude-opus-4', displayName: 'Claude Opus 4' },
+  { id: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5' },
+  { id: 'claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4' },
+  { id: 'claude-3-5-haiku-latest', displayName: 'Claude 3.5 Haiku' },
+];
+
+const GEMINI_MODELS = [
+  {
+    id: 'antigravity-preview-05-2026',
+    displayName: 'Antigravity (managed)',
+  },
+];
+
+function encodeGeminiAgentId(interactionId, environmentId) {
+  return `gma:${interactionId || ''}|${environmentId || ''}`;
+}
+
+function decodeGeminiAgentId(agentId) {
+  const raw = String(agentId || '');
+  if (!raw.startsWith('gma:')) return null;
+  const rest = raw.slice(4);
+  const pipe = rest.indexOf('|');
+  if (pipe < 0) return { interactionId: rest, environmentId: '' };
+  return {
+    interactionId: rest.slice(0, pipe),
+    environmentId: rest.slice(pipe + 1),
+  };
+}
+
+function extractGeminiText(interaction) {
+  if (!interaction) return '';
+  if (typeof interaction.output_text === 'string' && interaction.output_text.trim()) {
+    return interaction.output_text.trim();
+  }
+  const outputs = Array.isArray(interaction.outputs) ? interaction.outputs : [];
+  const chunks = [];
+  for (const o of outputs) {
+    if (typeof o?.text === 'string') chunks.push(o.text);
+    if (typeof o?.content === 'string') chunks.push(o.content);
+    if (Array.isArray(o?.content)) {
+      for (const c of o.content) {
+        if (typeof c?.text === 'string') chunks.push(c.text);
+      }
+    }
+  }
+  if (chunks.length) return chunks.join('\n').trim();
+  const steps = Array.isArray(interaction.steps) ? interaction.steps : [];
+  for (const s of steps) {
+    if (s?.type === 'text' && typeof s.text === 'string') chunks.push(s.text);
+  }
+  return chunks.join('\n').trim();
+}
+
+async function runClaudeTurn({ apiKey, message, history, modelId, agentMode, access }) {
+  const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
+  const messages = prior
+    .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
+    .map((m) => ({ role: m.role, content: String(m.content).trim() }))
+    .filter((m) => m.content);
+  if (!messages.length || messages[messages.length - 1].content !== String(message || '').trim()) {
+    messages.push({ role: 'user', content: String(message || '').trim() });
+  }
+  const system = `${PREAMBLE}
+
+Provider note: You are running via the Anthropic Messages API (BYOK). The public repo is ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}.`;
+
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+    },
+    body: JSON.stringify({
+      model: modelId || 'claude-sonnet-4-5',
+      max_tokens: 8192,
+      system,
+      messages,
+    }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const err = new Error(data?.error?.message || data?.message || `Anthropic HTTP ${res.status}`);
+    err.code = res.status === 401 || res.status === 403 ? 'claude_auth' : 'claude_error';
+    err.status = res.status;
+    throw err;
+  }
+  const reply = Array.isArray(data.content)
+    ? data.content
+        .filter((c) => c?.type === 'text')
+        .map((c) => c.text)
+        .join('\n')
+        .trim()
+    : '';
+  const usageTokens =
+    typeof data?.usage?.input_tokens === 'number' && typeof data?.usage?.output_tokens === 'number'
+      ? data.usage.input_tokens + data.usage.output_tokens
+      : null;
+  const execution = buildLatticeExecution({
+    message,
+    history,
+    mode: 'claude',
+    resumed: prior.length > 0,
+    reply,
+    usageTokens,
+  });
+  return {
+    reply: reply || '(No reply text returned.)',
+    transcript: [{ type: 'assistant', text: reply || '(No reply text returned.)' }],
+    model: modelId || 'claude-sonnet-4-5',
+    mode: agentMode,
+    agentId: null,
+    tokens: execution.tokens,
+    execution,
+    access: {
+      privilege: access.privilege,
+      email: access.email,
+      expiresAt: access.expiresAt,
+      reason: access.reason,
+    },
+    provider: 'claude',
+  };
+}
+
+async function runGeminiTurn({
+  apiKey,
+  message,
+  history,
+  modelId,
+  agentMode,
+  access,
+  agentId,
+  recoverOnly,
+  repoUrl,
+}) {
+  const decoded = decodeGeminiAgentId(agentId);
+  const agentName = modelId || 'antigravity-preview-05-2026';
+  const prompt = decoded?.interactionId
+    ? String(message || '').trim()
+    : buildPrompt(message, history);
+
+  if (recoverOnly && decoded?.interactionId) {
+    const getRes = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/interactions/${encodeURIComponent(decoded.interactionId)}`,
+      { headers: { 'x-goog-api-key': apiKey } },
+    );
+    const interaction = await getRes.json().catch(() => ({}));
+    if (!getRes.ok) {
+      const err = new Error(interaction?.error?.message || `Gemini HTTP ${getRes.status}`);
+      err.code = getRes.status === 401 || getRes.status === 403 ? 'gemini_auth' : 'gemini_error';
+      throw err;
+    }
+    const status = String(interaction.status || '').toLowerCase();
+    if (status && status !== 'completed' && status !== 'failed' && status !== 'cancelled') {
+      const wait = new Error('Antigravity interaction still running');
+      wait.code = 'agent_busy';
+      wait.agentId = encodeGeminiAgentId(interaction.id, interaction.environment_id || decoded.environmentId);
+      throw wait;
+    }
+    const reply = extractGeminiText(interaction) || '(No reply text returned.)';
+    const execution = buildLatticeExecution({
+      message: message || '(recovered run)',
+      history,
+      mode: 'gemini',
+      resumed: true,
+      reply,
+    });
+    return {
+      reply,
+      transcript: [{ type: 'assistant', text: reply }],
+      model: agentName,
+      mode: agentMode,
+      agentId: encodeGeminiAgentId(interaction.id, interaction.environment_id || decoded.environmentId),
+      recovered: true,
+      tokens: execution.tokens,
+      execution,
+      access: {
+        privilege: access.privilege,
+        email: access.email,
+        expiresAt: access.expiresAt,
+        reason: access.reason,
+      },
+      provider: 'gemini',
+    };
+  }
+
+  const body = {
+    agent: agentName,
+    input: prompt,
+  };
+  if (decoded?.interactionId && decoded?.environmentId) {
+    body.previous_interaction_id = decoded.interactionId;
+    body.environment = decoded.environmentId;
+  } else {
+    body.environment = 'remote';
+    // Seed sandbox with public repo clone instruction on first turn.
+    body.input = `${prompt}
+
+Working tip: the public Lattice repo is ${repoUrl}. Clone it in the sandbox if you need file context.`;
+  }
+
+  const res = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'x-goog-api-key': apiKey,
+    },
+    body: JSON.stringify(body),
+  });
+  const interaction = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const err = new Error(interaction?.error?.message || interaction?.message || `Gemini HTTP ${res.status}`);
+    err.code = res.status === 401 || res.status === 403 ? 'gemini_auth' : 'gemini_error';
+    err.status = res.status;
+    throw err;
+  }
+
+  let finalInteraction = interaction;
+  let status = String(interaction.status || '').toLowerCase();
+  // Poll briefly if background/incomplete (Vercel still has maxDuration budget).
+  for (let i = 0; i < 40 && status && !['completed', 'failed', 'cancelled'].includes(status); i++) {
+    await new Promise((r) => setTimeout(r, 2500));
+    const poll = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/interactions/${encodeURIComponent(interaction.id)}`,
+      { headers: { 'x-goog-api-key': apiKey } },
+    );
+    finalInteraction = await poll.json().catch(() => ({}));
+    status = String(finalInteraction.status || '').toLowerCase();
+    if (!poll.ok) break;
+  }
+
+  const reply = extractGeminiText(finalInteraction) || '(No reply text returned.)';
+  const nextAgentId = encodeGeminiAgentId(
+    finalInteraction.id || interaction.id,
+    finalInteraction.environment_id || interaction.environment_id || '',
+  );
+  const execution = buildLatticeExecution({
+    message,
+    history,
+    mode: 'gemini',
+    resumed: Boolean(decoded?.interactionId),
+    reply,
+  });
+  return {
+    reply,
+    transcript: [{ type: 'assistant', text: reply }],
+    model: agentName,
+    mode: agentMode,
+    agentId: nextAgentId,
+    tokens: execution.tokens,
+    execution,
+    access: {
+      privilege: access.privilege,
+      email: access.email,
+      expiresAt: access.expiresAt,
+      reason: access.reason,
+    },
+    provider: 'gemini',
+  };
+}
 
 function readBody(req) {
   if (req.body && typeof req.body === 'object') return Promise.resolve(req.body);
@@ -640,6 +937,15 @@ export default async function handler(req, res) {
         if (!access.ok) {
           return json(res, 401, { error: access.reason, models: FALLBACK_MODELS });
         }
+        const provider = resolveProvider(req, {
+          provider: url?.searchParams.get('provider') || req.query?.provider,
+        });
+        if (provider === 'claude') {
+          return json(res, 200, { models: CLAUDE_MODELS, source: 'claude-catalog', provider });
+        }
+        if (provider === 'gemini') {
+          return json(res, 200, { models: GEMINI_MODELS, source: 'gemini-catalog', provider });
+        }
         const { key: apiKey } = resolveCursorApiKey(req);
         if (!apiKey) {
           return json(res, 401, {
@@ -656,10 +962,11 @@ export default async function handler(req, res) {
             models: mergeModelCatalog(live),
             source: live.length ? 'cursor+catalog' : 'fallback',
             liveCount: live.length,
+            provider: 'cursor',
           });
         } catch {
           console.warn('[lattice-chat] models.list failed');
-          return json(res, 200, { models: FALLBACK_MODELS, source: 'fallback' });
+          return json(res, 200, { models: FALLBACK_MODELS, source: 'fallback', provider: 'cursor' });
         }
       }
 
@@ -687,11 +994,13 @@ export default async function handler(req, res) {
       });
     }
 
-    const { key: apiKey } = resolveCursorApiKey(req);
+    const provider = resolveProvider(req, body);
+    const apiKey = resolveProviderApiKey(req, provider);
     if (!apiKey) {
       return json(res, 401, {
         error: MISSING_KEY_ERROR,
-        code: 'missing_cursor_api_key',
+        code: 'missing_provider_api_key',
+        provider,
       });
     }
 
@@ -707,11 +1016,79 @@ export default async function handler(req, res) {
       console.warn('[lattice-chat] correcting LATTICE_REPO_URL typo cing13 → sing13');
       repoUrl = repoUrl.replace(/psw\.vibelandia\.cing13/gi, 'psw.vibelandia.sing13');
     }
-    const modelId = normalizeModelId(body.model || body.modelId);
+    const modelId =
+      provider === 'cursor'
+        ? normalizeModelId(body.model || body.modelId)
+        : String(body.model || body.modelId || '').trim() ||
+          (provider === 'claude' ? 'claude-sonnet-4-5' : 'antigravity-preview-05-2026');
     const agentMode = normalizeAgentMode(body.mode || body.agentMode);
-    const startingRef = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
     let agentId =
       typeof body.agentId === 'string' && body.agentId.trim() ? body.agentId.trim() : null;
+
+    if (provider === 'claude') {
+      try {
+        if (recoverOnly && !message) {
+          return json(res, 409, {
+            error: 'Claude (Messages API) has no cloud run to recover — resend the prompt.',
+            code: 'nothing_to_recover',
+            provider,
+          });
+        }
+        const out = await runClaudeTurn({
+          apiKey,
+          message,
+          history: body.history,
+          modelId,
+          agentMode,
+          access,
+        });
+        return json(res, 200, out);
+      } catch (err) {
+        const code = err?.code || 'claude_error';
+        const status = code === 'claude_auth' ? 401 : 502;
+        return json(res, status, {
+          error: err instanceof Error ? err.message : String(err),
+          code,
+          provider,
+        });
+      }
+    }
+
+    if (provider === 'gemini') {
+      try {
+        const out = await runGeminiTurn({
+          apiKey,
+          message,
+          history: body.history,
+          modelId,
+          agentMode,
+          access,
+          agentId,
+          recoverOnly,
+          repoUrl,
+        });
+        return json(res, 200, out);
+      } catch (err) {
+        if (err?.code === 'agent_busy') {
+          return json(res, 409, {
+            error: err.message || 'Antigravity still running',
+            code: 'agent_busy',
+            agentId: err.agentId || agentId,
+            provider,
+          });
+        }
+        const code = err?.code || 'gemini_error';
+        const status = code === 'gemini_auth' ? 401 : 502;
+        return json(res, status, {
+          error: err instanceof Error ? err.message : String(err),
+          code,
+          provider,
+        });
+      }
+    }
+
+    // --- Cursor cloud path (default) ---
+    const startingRef = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
 
     let agent;
     let completedOk = false;
@@ -730,7 +1107,7 @@ export default async function handler(req, res) {
       }
 
       let resumedOk = false;
-      if (agentId) {
+      if (agentId && !String(agentId).startsWith('gma:')) {
         try {
           agent = await Agent.resume(agentId, { apiKey });
           resumedOk = Boolean(agent);
@@ -740,6 +1117,8 @@ export default async function handler(req, res) {
           agent = null;
           resumedOk = false;
         }
+      } else if (agentId && String(agentId).startsWith('gma:')) {
+        agentId = null;
       }
 
       const modelSelection = { id: modelId };

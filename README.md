@@ -45,7 +45,7 @@ When the factorial suite / manuscript lands under `research/`, that tier superse
 | Chat UI (React / Vite) | [`apps/lattice-chat/`](apps/lattice-chat/) | Composer, BYOK key, threads, scroll |
 | Built static SPA | [`interfaces/lattice-chat/`](interfaces/lattice-chat/) | What Vercel serves at `/lattice-chat` |
 | Landing + proof HTML | [`interfaces/lattice-v1618.html`](interfaces/lattice-v1618.html) · [`interfaces/lattice-token-proof.html`](interfaces/lattice-token-proof.html) |
-| API pipe (BYOK proxy) | [`api/lattice-chat.js`](api/lattice-chat.js) | Cursor SDK cloud agents; `x-cursor-api-key` only — **no server key fallback** |
+| API pipe (BYOK proxy) | [`api/lattice-chat.js`](api/lattice-chat.js) | Multi-provider: Cursor cloud · Claude Messages · Gemini Antigravity; header keys only — **no server key fallback** |
 | Token estimate engine | [`lib/lattice-engine.mjs`](lib/lattice-engine.mjs) | Shared estimate math for API + benches |
 | Access allowlist | [`data/lattice-access.json`](data/lattice-access.json) | Email grants (old school · honor) |
 | Comparison receipt | [`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json) | Public structural estimate (chars÷4) |
@@ -78,11 +78,11 @@ $env:VITE_LATTICE_PIPE_ORIGIN="https://www.ssvibelandiaquestfest24x365.com"
 npm run dev
 ```
 
-**3 · End-to-end cloud agent check (needs your Cursor API key)**
+**3 · End-to-end provider check (needs your API key for the active provider)**
 
 1. Get a grant (email valetpru@gmail.com) **or** add your email under `grants` in [`data/lattice-access.json`](data/lattice-access.json) for a local/self-hosted pipe.
-2. In chat: sign in with that email + paste your **Cursor API key** (stored only as `user_cursor_api_key` in the browser).
-3. Connect GitHub for **that same Cursor account** so `FractiAI/psw.vibelandia.sing13` is visible (Integrations → GitHub). Optional shell check:
+2. In chat: sign in with that email + paste a key for **Cursor**, **Claude** (Anthropic), or **Gemini Antigravity**. Toggle provider in the composer. Keys stay on-device only.
+3. **Cursor:** connect GitHub for that Cursor account so `FractiAI/psw.vibelandia.sing13` is visible. **Claude:** Anthropic Messages API (full Claude Code CLI is local-only). **Gemini:** Managed Antigravity via Interactions API. Optional Cursor shell check:
 
 ```bash
 # Never commit the key. Same account that owns the key you paste in Lattice.

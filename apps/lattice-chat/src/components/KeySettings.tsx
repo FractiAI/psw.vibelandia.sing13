@@ -1,15 +1,18 @@
 import { FormEvent, useEffect, useState } from 'react';
 import {
-  clearUserCursorApiKey,
-  hasUserCursorApiKey,
-  readUserCursorApiKey,
-  saveUserCursorApiKey,
-  subscribeUserCursorApiKey,
-} from '@/lib/cursorKey';
+  LATTICE_PROVIDERS,
+  clearProviderApiKey,
+  hasProviderApiKey,
+  readProviderApiKey,
+  saveProviderApiKey,
+  subscribeProviderKeys,
+  type LatticeProvider,
+} from '@/lib/providerKeys';
+import { useLatticeStore } from '@/store';
 
 /**
- * Edge settings: enter / update / clear Cursor API key in localStorage (`user_cursor_api_key`).
- * Key is forwarded per-request as `x-cursor-api-key` — never persisted on our server.
+ * Edge settings: BYOK keys for Cursor / Claude / Gemini Antigravity.
+ * Keys stay in localStorage and are sent only as request headers.
  */
 export function KeySettingsPanel({
   compact = false,
@@ -18,72 +21,122 @@ export function KeySettingsPanel({
   compact?: boolean;
   onSaved?: () => void;
 }) {
-  const [draft, setDraft] = useState('');
-  const [hasKey, setHasKey] = useState(false);
+  const provider = useLatticeStore((s) => s.provider);
+  const setProvider = useLatticeStore((s) => s.setProvider);
+  const [drafts, setDrafts] = useState<Record<LatticeProvider, string>>({
+    cursor: '',
+    claude: '',
+    gemini: '',
+  });
+  const [hasKeys, setHasKeys] = useState<Record<LatticeProvider, boolean>>({
+    cursor: false,
+    claude: false,
+    gemini: false,
+  });
   const [flash, setFlash] = useState<string | null>(null);
 
   useEffect(() => {
     const sync = () => {
-      setHasKey(hasUserCursorApiKey());
-      setDraft(hasUserCursorApiKey() ? readUserCursorApiKey() : '');
+      const nextDrafts: Record<LatticeProvider, string> = {
+        cursor: '',
+        claude: '',
+        gemini: '',
+      };
+      const nextHas: Record<LatticeProvider, boolean> = {
+        cursor: false,
+        claude: false,
+        gemini: false,
+      };
+      for (const p of LATTICE_PROVIDERS) {
+        nextHas[p.id] = hasProviderApiKey(p.id);
+        nextDrafts[p.id] = nextHas[p.id] ? readProviderApiKey(p.id) : '';
+      }
+      setDrafts(nextDrafts);
+      setHasKeys(nextHas);
     };
     sync();
-    return subscribeUserCursorApiKey(sync);
+    return subscribeProviderKeys(sync);
   }, []);
 
-  function onSave(e: FormEvent) {
+  function onSave(e: FormEvent, id: LatticeProvider) {
     e.preventDefault();
-    const result = saveUserCursorApiKey(draft);
+    const meta = LATTICE_PROVIDERS.find((p) => p.id === id);
+    const result = saveProviderApiKey(id, drafts[id]);
     if (!result.ok) {
       setFlash(result.error || 'Could not save key.');
       return;
     }
-    setFlash('Cursor API key saved on this device.');
-    setHasKey(true);
+    if (result.changed) useLatticeStore.getState().clearCloudAgents();
+    setFlash(`${meta?.short || id} API key saved on this device.`);
+    setHasKeys((h) => ({ ...h, [id]: true }));
     onSaved?.();
   }
 
-  function onClear() {
-    clearUserCursorApiKey();
-    setDraft('');
-    setHasKey(false);
-    setFlash('Cursor API key cleared from this device.');
+  function onClear(id: LatticeProvider) {
+    clearProviderApiKey(id);
+    setDrafts((d) => ({ ...d, [id]: '' }));
+    setHasKeys((h) => ({ ...h, [id]: false }));
+    useLatticeStore.getState().clearCloudAgents();
+    setFlash(`${id} API key cleared from this device.`);
   }
 
   return (
     <section
       className={`key-settings${compact ? ' key-settings--compact' : ''}`}
-      aria-label="Cursor API key"
+      aria-label="Provider API keys"
     >
-      <form className="auth-form" onSubmit={onSave}>
-        <p className="auth-lead">
-          Paste your Cursor API key. It stays in this browser only and is sent with each Lattice
-          turn — Vercel proxies it to Cursor and does not store it.
-        </p>
-        <label htmlFor="lattice-cursor-api-key">Cursor API key</label>
-        <input
-          id="lattice-cursor-api-key"
-          type="password"
-          autoComplete="off"
-          spellCheck={false}
-          value={draft}
-          placeholder="key_… from cursor.com → API Keys"
-          onChange={(e) => setDraft(e.target.value)}
-        />
-        <p className="auth-key-hint">
-          Status: {hasKey ? 'key on this edge' : 'no key yet'} · get one at cursor.com/dashboard
-        </p>
-        <div className="key-settings-actions">
-          <button type="submit" className="auth-submit">
-            {hasKey ? 'Update key' : 'Save key'}
+      <p className="auth-lead">
+        Paste API keys for the providers you use. Keys stay in this browser and are sent only
+        with each turn — we do not store them on the server. Toggle the active provider in the
+        composer.
+      </p>
+      <div className="provider-tabs" role="tablist" aria-label="Active provider">
+        {LATTICE_PROVIDERS.map((p) => (
+          <button
+            key={p.id}
+            type="button"
+            role="tab"
+            aria-selected={provider === p.id}
+            className={provider === p.id ? 'is-active' : undefined}
+            onClick={() => setProvider(p.id)}
+          >
+            {p.short}
           </button>
-          {hasKey ? (
-            <button type="button" className="key-clear-btn" onClick={onClear}>
-              Clear
+        ))}
+      </div>
+      {LATTICE_PROVIDERS.map((p) => (
+        <form
+          key={p.id}
+          className={`auth-form provider-key-form${provider === p.id ? ' is-active' : ''}`}
+          onSubmit={(e) => onSave(e, p.id)}
+          hidden={provider !== p.id}
+        >
+          <label htmlFor={`lattice-key-${p.id}`}>{p.label} API key</label>
+          <input
+            id={`lattice-key-${p.id}`}
+            type="password"
+            autoComplete="off"
+            spellCheck={false}
+            value={drafts[p.id]}
+            placeholder={p.keyPlaceholder}
+            onChange={(e) => setDrafts((d) => ({ ...d, [p.id]: e.target.value }))}
+          />
+          <p className="auth-key-hint">
+            Status: {hasKeys[p.id] ? 'key on this edge' : 'no key yet'} · {p.keyHelp}
+          </p>
+          <p className="auth-key-hint">{p.honesty}</p>
+          <div className="key-settings-actions">
+            <button type="submit" className="auth-submit">
+              {hasKeys[p.id] ? 'Update key' : 'Save key'}
             </button>
-          ) : null}
-        </div>
-      </form>
+            {hasKeys[p.id] ? (
+              <button type="button" className="key-clear-btn" onClick={() => onClear(p.id)}>
+                Clear
+              </button>
+            ) : null}
+          </div>
+        </form>
+      ))}
       {flash ? (
         <p className="auth-flash" role="status">
           {flash}
@@ -94,22 +147,26 @@ export function KeySettingsPanel({
 }
 
 export function KeyStatusChip({ onOpenSettings }: { onOpenSettings?: () => void }) {
+  const provider = useLatticeStore((s) => s.provider);
   const [hasKey, setHasKey] = useState(false);
 
   useEffect(() => {
-    const sync = () => setHasKey(hasUserCursorApiKey());
+    const sync = () => setHasKey(hasProviderApiKey(provider));
     sync();
-    return subscribeUserCursorApiKey(sync);
-  }, []);
+    return subscribeProviderKeys(sync);
+  }, [provider]);
+
+  const label =
+    LATTICE_PROVIDERS.find((p) => p.id === provider)?.short || provider;
 
   return (
     <button
       type="button"
       className={`signed-in-key${hasKey ? ' signed-in-key--ok' : ' signed-in-key--missing'}`}
-      title={hasKey ? 'Cursor API key on this device' : 'Add your Cursor API key'}
+      title={hasKey ? `${label} API key on this device` : `Add your ${label} API key`}
       onClick={onOpenSettings}
     >
-      {hasKey ? 'Key on edge' : 'Add Cursor key'}
+      {hasKey ? `${label} key` : `Add ${label} key`}
     </button>
   );
 }

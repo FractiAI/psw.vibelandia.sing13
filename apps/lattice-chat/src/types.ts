@@ -2,6 +2,8 @@ export type ChatRole = 'user' | 'assistant' | 'system';
 
 export type AgentMode = 'agent' | 'plan';
 
+export type LatticeProvider = 'cursor' | 'claude' | 'gemini';
+
 export type LatticeModelOption = {
   id: string;
   displayName: string;

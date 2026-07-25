@@ -7,10 +7,14 @@ import {
 } from '@/access';
 import { KeyStatusChip } from '@/components/KeySettings';
 import {
-  hasUserCursorApiKey,
-  readUserCursorApiKey,
-  saveUserCursorApiKey,
-} from '@/lib/cursorKey';
+  LATTICE_PROVIDERS,
+  hasProviderApiKey,
+  readActiveProvider,
+  readProviderApiKey,
+  saveActiveProvider,
+  saveProviderApiKey,
+  type LatticeProvider,
+} from '@/lib/providerKeys';
 import { useLatticeStore } from '@/store';
 
 /** Prefills a free-trial / access email to the operator (old school · honor). */
@@ -46,8 +50,7 @@ export function RequestAccessLink({
 }
 
 /**
- * Sign in captures email (30 days) + Cursor API key (`user_cursor_api_key` on this device).
- * Key is required on Sign in — edge-only; never sent to durable server storage.
+ * Sign in captures email (30 days) + at least one provider API key on this device.
  */
 export function AuthPanel({
   compact = false,
@@ -59,17 +62,25 @@ export function AuthPanel({
   const userEmail = useLatticeStore((s) => s.userEmail);
   const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
   const setUserEmail = useLatticeStore((s) => s.setUserEmail);
+  const setProvider = useLatticeStore((s) => s.setProvider);
   const [emailDraft, setEmailDraft] = useState(userEmail);
+  const [providerDraft, setProviderDraft] = useState<LatticeProvider>(() => readActiveProvider());
   const [keyDraft, setKeyDraft] = useState(() =>
-    hasUserCursorApiKey() ? readUserCursorApiKey() : '',
+    hasProviderApiKey(readActiveProvider()) ? readProviderApiKey(readActiveProvider()) : '',
   );
   const [flash, setFlash] = useState<string | null>(null);
 
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
+  const meta = LATTICE_PROVIDERS.find((p) => p.id === providerDraft)!;
 
   useEffect(() => {
     setEmailDraft(userEmail);
   }, [userEmail]);
+
+  function onProviderPick(next: LatticeProvider) {
+    setProviderDraft(next);
+    setKeyDraft(hasProviderApiKey(next) ? readProviderApiKey(next) : '');
+  }
 
   function onSignIn(e: FormEvent) {
     e.preventDefault();
@@ -78,17 +89,19 @@ export function AuthPanel({
       setFlash('Enter your email / userid to sign in.');
       return;
     }
-    const keyResult = saveUserCursorApiKey(keyDraft);
+    const keyResult = saveProviderApiKey(providerDraft, keyDraft);
     if (!keyResult.ok) {
-      setFlash(keyResult.error || 'Paste your Cursor API key to sign in.');
+      setFlash(keyResult.error || `Paste your ${meta.short} API key to sign in.`);
       return;
     }
+    saveActiveProvider(providerDraft);
+    setProvider(providerDraft);
     if (keyResult.changed) {
       useLatticeStore.getState().clearCloudAgents();
       useLatticeStore.getState().clearPending();
     }
     setUserEmail(next);
-    setFlash('Signed in — email and Cursor API key saved on this device.');
+    setFlash(`Signed in — email and ${meta.short} key saved on this device.`);
     onSignedIn?.();
   }
 
@@ -99,8 +112,8 @@ export function AuthPanel({
     >
       <form className="auth-form" onSubmit={onSignIn}>
         <p className="auth-lead">
-          Enter your email / userid and Cursor API key. Both stay on this device — the key is
-          proxied per request and never stored on our server.
+          Enter your email / userid and an API key for Cursor, Claude, or Gemini Antigravity.
+          Keys stay on this device and are proxied per request — never stored on our server.
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
         <input
@@ -112,38 +125,41 @@ export function AuthPanel({
           placeholder="you@example.com"
           onChange={(e) => setEmailDraft(e.target.value)}
         />
-        <label htmlFor="lattice-signin-cursor-key">Cursor API key</label>
+        <label htmlFor="lattice-signin-provider">Provider</label>
+        <select
+          id="lattice-signin-provider"
+          value={providerDraft}
+          onChange={(e) => onProviderPick(e.target.value as LatticeProvider)}
+        >
+          {LATTICE_PROVIDERS.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.label}
+            </option>
+          ))}
+        </select>
+        <label htmlFor="lattice-signin-api-key">{meta.label} API key</label>
         <input
-          id="lattice-signin-cursor-key"
+          id="lattice-signin-api-key"
           type="password"
           autoComplete="off"
           spellCheck={false}
           value={keyDraft}
-          placeholder="key_… from cursor.com → API Keys"
+          placeholder={meta.keyPlaceholder}
           onChange={(e) => setKeyDraft(e.target.value)}
         />
-        <p className="auth-key-hint">
-          Required at sign in · saved as <code>user_cursor_api_key</code> in this browser only
-        </p>
+        <p className="auth-key-hint">{meta.honesty}</p>
         <button type="submit" className="auth-submit">
-          {signedIn ? 'Update email & key' : 'Sign in'}
+          Sign in
         </button>
       </form>
-
-      {!signedIn ? (
-        <p className="auth-request-line">
-          Want a free trial?{' '}
-          <RequestAccessLink fromEmail={emailDraft} />
-          <span className="auth-request-hint">
-            {' '}
-            — old school honor email to {CREATOR_EMAIL} (filters Goldilocks vs noise)
-          </span>
-        </p>
-      ) : null}
-
       {flash ? (
         <p className="auth-flash" role="status">
           {flash}
+        </p>
+      ) : null}
+      {!signedIn ? (
+        <p className="auth-request">
+          Need access? <RequestAccessLink fromEmail={emailDraft} />
         </p>
       ) : null}
     </section>
@@ -153,22 +169,22 @@ export function AuthPanel({
 export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => void }) {
   const userEmail = useLatticeStore((s) => s.userEmail);
   const clearUserEmail = useLatticeStore((s) => s.clearUserEmail);
+  const provider = useLatticeStore((s) => s.provider);
 
   return (
     <div className="signed-in-bar">
-      <span className="signed-in-label">Signed in</span>
       <span className="signed-in-email" title={userEmail}>
         {userEmail}
       </span>
       <KeyStatusChip
         onOpenSettings={() => {
           if (onOpenKeySettings) onOpenKeySettings();
-          else if (!hasUserCursorApiKey()) {
-            window.alert('Add your Cursor API key in settings.');
+          else if (!hasProviderApiKey(provider)) {
+            onOpenKeySettings?.();
           }
         }}
       />
-      <button type="button" className="sign-out-btn" onClick={clearUserEmail}>
+      <button type="button" className="signed-in-out" onClick={() => clearUserEmail()}>
         Sign out
       </button>
     </div>

@@ -1157,6 +1157,46 @@ body {
   opacity: 0.45;
 }
 
+.composer-roster {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+}
+.composer-roster-label {
+  font-size: 0.72rem;
+  color: var(--brand-muted);
+  line-height: 1.35;
+}
+.composer-roster-label em {
+  font-style: normal;
+  color: var(--brand-champagne);
+}
+.composer-roster textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 2.6rem;
+  max-height: 7rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(6, 5, 4, 0.65);
+  color: var(--brand-text);
+  font: 500 0.82rem/1.4 var(--font-body);
+}
+.composer-roster textarea:focus {
+  outline: 1px solid rgba(212, 175, 55, 0.55);
+}
+.composer-roster textarea:disabled {
+  opacity: 0.5;
+}
+.composer-roster-hint {
+  flex: 1 1 100%;
+  margin: 0.1rem 0 0;
+  font-size: 0.72rem;
+  color: var(--brand-muted);
+}
+
 .composer textarea {
   grid-area: input;
   resize: none;

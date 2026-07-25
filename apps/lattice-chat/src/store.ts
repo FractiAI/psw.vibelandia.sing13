@@ -16,6 +16,7 @@ import type {
   ChatMessage,
   ChatThread,
   LatticeModelOption,
+  NestTopology,
   TranscriptItem,
 } from '@/types';
 
@@ -58,6 +59,9 @@ type LatticeState = {
   modelId: string;
   models: LatticeModelOption[];
   provider: LatticeProvider;
+  nestTopology: NestTopology;
+  /** Optional user-defined roster (one agent per line: Name — role). Empty = Goldilocks auto. */
+  agentRoster: string;
   ensureThread: () => string;
   newChat: () => void;
   selectThread: (id: string) => void;
@@ -81,6 +85,8 @@ type LatticeState = {
   setModelId: (modelId: string) => void;
   setModels: (models: LatticeModelOption[]) => void;
   setProvider: (provider: LatticeProvider) => void;
+  setNestTopology: (nest: NestTopology) => void;
+  setAgentRoster: (roster: string) => void;
   hasRememberedEmail: () => boolean;
 };
 
@@ -100,6 +106,8 @@ export const useLatticeStore = create<LatticeState>()(
       modelId: 'composer-2.5',
       models: LATTICE_MODEL_CATALOG,
       provider: readActiveProvider(),
+      nestTopology: 'goldilocks',
+      agentRoster: '',
 
       ensureThread: () => {
         const { threads, activeThreadId } = get();
@@ -250,6 +258,8 @@ export const useLatticeStore = create<LatticeState>()(
       setAgentMode: (mode) => set({ agentMode: mode }),
       setModelId: (modelId) => set({ modelId }),
       setModels: (models) => set({ models }),
+      setNestTopology: (nestTopology) => set({ nestTopology }),
+      setAgentRoster: (agentRoster) => set({ agentRoster }),
       setProvider: (provider) => {
         saveActiveProvider(provider);
         const models = catalogForProvider(provider);
@@ -277,6 +287,8 @@ export const useLatticeStore = create<LatticeState>()(
         agentMode: s.agentMode,
         modelId: s.modelId,
         provider: s.provider,
+        nestTopology: s.nestTopology,
+        agentRoster: s.agentRoster,
         pending: s.pending,
       }),
       onRehydrateStorage: () => (state) => {

@@ -2,6 +2,9 @@ export type ChatRole = 'user' | 'assistant' | 'system';
 
 export type AgentMode = 'agent' | 'plan';
 
+/** How Lattice should nest work for this turn. */
+export type NestTopology = 'single' | 'multi' | 'goldilocks';
+
 export type LatticeProvider = 'cursor' | 'claude' | 'gemini';
 
 export type LatticeModelOption = {

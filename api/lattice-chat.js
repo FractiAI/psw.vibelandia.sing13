@@ -30,6 +30,79 @@ Prefer precise, corpus-faithful replies. Do not invent repo paths or protocols.
 Keep self-talk brief. Close substantive answers with → ∞¹³.
 Return a clear text reply (not a PR or code edit unless asked).`;
 
+function normalizeNestTopology(raw) {
+  const v = String(raw || '')
+    .trim()
+    .toLowerCase();
+  if (v === 'single' || v === 'one' || v === 'solo') return 'single';
+  if (v === 'multi' || v === 'nested' || v === 'multiple') return 'multi';
+  return 'goldilocks';
+}
+
+function parseAgentRoster(raw) {
+  const text = String(raw || '').trim();
+  if (!text) return [];
+  return text
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .slice(0, 12)
+    .map((line, i) => {
+      const parts = line.split(/\s+[—–\-]\s+|:/);
+      const name = (parts[0] || `Agent ${i + 1}`).trim().slice(0, 64);
+      const role = (parts.slice(1).join(' — ').trim() || 'User-defined band').slice(0, 160);
+      return { name, role };
+    });
+}
+
+function buildNestDirective(nestTopology, agentRoster) {
+  const nest = normalizeNestTopology(nestTopology);
+  const roster = parseAgentRoster(agentRoster);
+
+  if (nest === 'single') {
+    return `Nest topology (user toggle): SINGLE NODE.
+Run as one agent only. Do not spawn nested children, parallel bands, or multi-agent handoffs.
+Prefer the smallest useful context (pointers, not corpus dumps). This mode is for lower token burn.`;
+  }
+
+  if (roster.length) {
+    const lines = roster.map((a, i) => `${i + 1}. ${a.name} — ${a.role}`).join('\n');
+    return `Nest topology (user toggle): ${nest === 'multi' ? 'MULTI' : 'GOLDILOCKS'} with EXPLICIT user-defined roster.
+Use ONLY these agents (do not replace with auto Goldilocks bands):
+${lines}
+Parent (or lead) synthesizes; peer-firewall — children do not mesh-sync with each other.
+Prefer pointers over full-file dumps.`;
+  }
+
+  if (nest === 'multi') {
+    return `Nest topology (user toggle): MULTI (nested).
+Use a parent meta-optimizer plus intent-matched children (e.g. Seed·RAG / Edge UI / Pipe Runtime), then Squeeze/synthesize.
+Cap children sensibly (≤3 leaf bands). Prefer pointers over dumps. Peer-firewall on.`;
+  }
+
+  return `Nest topology (user toggle): GOLDILOCKS (auto).
+Choose single-node vs nested from the ask: trivial → parent alone; multi-band → nested children.
+If nesting, pick only the bands needed. Prefer pointers over dumps. Peer-firewall on.`;
+}
+
+function buildPrompt(message, history, nestTopology, agentRoster) {
+  const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
+  const lines = prior
+    .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
+    .map((m) => `${m.role === 'user' ? 'User' : 'Assistant'}: ${String(m.content).trim()}`)
+    .filter((line) => line.length > 8);
+  const transcript = lines.length ? `Conversation so far:\n${lines.join('\n\n')}\n\n` : '';
+  const nest = buildNestDirective(nestTopology, agentRoster);
+  return `${PREAMBLE}
+
+${nest}
+
+${transcript}Latest user message:
+${String(message || '').trim()}
+
+Respond as Lattice with a helpful chat reply.`;
+}
+
 function json(res, status, body) {
   res.statusCode = status;
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -294,7 +367,16 @@ function extractGeminiText(interaction) {
   return chunks.join('\n').trim();
 }
 
-async function runClaudeTurn({ apiKey, message, history, modelId, agentMode, access }) {
+async function runClaudeTurn({
+  apiKey,
+  message,
+  history,
+  modelId,
+  agentMode,
+  access,
+  nestTopology,
+  agentRoster,
+}) {
   const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
   const messages = prior
     .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
@@ -303,7 +385,10 @@ async function runClaudeTurn({ apiKey, message, history, modelId, agentMode, acc
   if (!messages.length || messages[messages.length - 1].content !== String(message || '').trim()) {
     messages.push({ role: 'user', content: String(message || '').trim() });
   }
+  const nest = buildNestDirective(nestTopology, agentRoster);
   const system = `${PREAMBLE}
+
+${nest}
 
 Provider note: You are running via the Anthropic Messages API (BYOK). The public repo is ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}.`;
 
@@ -375,12 +460,14 @@ async function runGeminiTurn({
   agentId,
   recoverOnly,
   repoUrl,
+  nestTopology,
+  agentRoster,
 }) {
   const decoded = decodeGeminiAgentId(agentId);
   const agentName = modelId || 'antigravity-preview-05-2026';
   const prompt = decoded?.interactionId
-    ? String(message || '').trim()
-    : buildPrompt(message, history);
+    ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${String(message || '').trim()}`
+    : buildPrompt(message, history, nestTopology, agentRoster);
 
   if (recoverOnly && decoded?.interactionId) {
     const getRes = await fetch(
@@ -525,21 +612,6 @@ function readBody(req) {
     });
     req.on('error', reject);
   });
-}
-
-function buildPrompt(message, history) {
-  const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
-  const lines = prior
-    .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
-    .map((m) => `${m.role === 'user' ? 'User' : 'Assistant'}: ${String(m.content).trim()}`)
-    .filter((line) => line.length > 8);
-  const transcript = lines.length ? `Conversation so far:\n${lines.join('\n\n')}\n\n` : '';
-  return `${PREAMBLE}
-
-${transcript}Latest user message:
-${String(message || '').trim()}
-
-Respond as Lattice with a helpful chat reply.`;
 }
 
 function extractAssistantText(result) {
@@ -1022,6 +1094,8 @@ export default async function handler(req, res) {
         : String(body.model || body.modelId || '').trim() ||
           (provider === 'claude' ? 'claude-sonnet-4-5' : 'antigravity-preview-05-2026');
     const agentMode = normalizeAgentMode(body.mode || body.agentMode);
+    const nestTopology = normalizeNestTopology(body.nestTopology || body.nest);
+    const agentRoster = typeof body.agentRoster === 'string' ? body.agentRoster : '';
     let agentId =
       typeof body.agentId === 'string' && body.agentId.trim() ? body.agentId.trim() : null;
 
@@ -1041,6 +1115,8 @@ export default async function handler(req, res) {
           modelId,
           agentMode,
           access,
+          nestTopology,
+          agentRoster,
         });
         return json(res, 200, out);
       } catch (err) {
@@ -1066,6 +1142,8 @@ export default async function handler(req, res) {
           agentId,
           recoverOnly,
           repoUrl,
+          nestTopology,
+          agentRoster,
         });
         return json(res, 200, out);
       } catch (err) {
@@ -1196,7 +1274,10 @@ export default async function handler(req, res) {
         resumedOk = false;
       }
 
-      const prompt = resumedOk && message ? message : buildPrompt(message, body.history);
+      const prompt =
+        resumedOk && message
+          ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${message}`
+          : buildPrompt(message, body.history, nestTopology, agentRoster);
       const sendOpts = {
         model: modelSelection,
         mode: agentMode,
@@ -1235,7 +1316,7 @@ export default async function handler(req, res) {
           ({ run, recovered } = await sendPromptHandlingBusy(
             Agent,
             agent,
-            buildPrompt(message, body.history),
+            buildPrompt(message, body.history, nestTopology, agentRoster),
             sendOpts,
             apiKey,
           ));

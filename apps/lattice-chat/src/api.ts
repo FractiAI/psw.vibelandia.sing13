@@ -186,6 +186,7 @@ function applyAssistantReply(
           history: estimateArgs.history,
           reply: content,
           resumed: estimateArgs.resumed,
+          nestTopology: store.nestTopology,
         })
       : undefined);
 
@@ -288,6 +289,8 @@ async function tryRecoverOnce(
       message: prompt,
       history,
       provider: store.provider,
+      nestTopology: store.nestTopology,
+      agentRoster: store.agentRoster,
     },
     email,
   );
@@ -454,6 +457,8 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     model: store.modelId,
     mode: store.agentMode,
     provider: store.provider,
+    nestTopology: store.nestTopology,
+    agentRoster: store.agentRoster,
   };
 
   let settled = false;

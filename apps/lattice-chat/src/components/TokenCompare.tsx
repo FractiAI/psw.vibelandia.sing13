@@ -15,6 +15,7 @@ export function estimateTokenCompare(args: {
   reply?: string;
   resumed?: boolean;
   usageTokens?: number | null;
+  nestTopology?: 'single' | 'multi' | 'goldilocks';
 }): TokenCompare {
   const history = Array.isArray(args.history) ? args.history.slice(-16) : [];
   const historyText = history.map((m) => `${m.role || ''}: ${m.content || ''}`).join('\n');
@@ -26,11 +27,13 @@ export function estimateTokenCompare(args: {
   );
   const naiveTokens = naiveHistory + NAIVE_CORPUS_DUMP_TOKENS + msgTok + Math.max(replyTok, 400);
   const resumeDiscount = args.resumed ? Math.floor(histTok * 0.55) : 0;
+  const nestOverhead =
+    args.nestTopology === 'single' ? 0 : LATTICE_NEST_OVERHEAD_TOKENS;
   let latticeTokens =
     histTok +
     msgTok +
     LATTICE_RAG_POINTER_TOKENS +
-    LATTICE_NEST_OVERHEAD_TOKENS +
+    nestOverhead +
     replyTok -
     resumeDiscount;
   if (typeof args.usageTokens === 'number' && args.usageTokens > 0) {
@@ -45,7 +48,8 @@ export function estimateTokenCompare(args: {
     savedTokens,
     savedPercent,
     standardLabel: 'Standard agentic (est.)',
-    latticeLabel: 'Lattice (est.)',
+    latticeLabel:
+      args.nestTopology === 'single' ? 'Lattice single (est.)' : 'Lattice (est.)',
     method: 'Estimate chars÷4 · standard corpus dump vs Lattice RAG pointers',
   };
 }

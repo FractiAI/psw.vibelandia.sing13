@@ -37,9 +37,13 @@ export function ChatPane({
   const modelId = useLatticeStore((s) => s.modelId);
   const models = useLatticeStore((s) => s.models);
   const provider = useLatticeStore((s) => s.provider);
+  const nestTopology = useLatticeStore((s) => s.nestTopology);
+  const agentRoster = useLatticeStore((s) => s.agentRoster);
   const setAgentMode = useLatticeStore((s) => s.setAgentMode);
   const setModelId = useLatticeStore((s) => s.setModelId);
   const setProvider = useLatticeStore((s) => s.setProvider);
+  const setNestTopology = useLatticeStore((s) => s.setNestTopology);
+  const setAgentRoster = useLatticeStore((s) => s.setAgentRoster);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const [draft, setDraft] = useState('');
   const [elapsedSec, setElapsedSec] = useState(0);
@@ -287,8 +291,9 @@ export function ChatPane({
           <div className="empty-state">
             <p className="empty-lead">You’re signed in — ask anything.</p>
             <p className="empty-hint">
-              Pick Agent or Plan and a model below — same Cursor agent options. Replies show
-              thinking, tools, and text in the chat like Cursor.
+              Toggle Single / Multi / Goldilocks below. Single = one node (fewer nest tokens).
+              Multi or Goldilocks: leave agents blank for auto bands, or define your own roster
+              (Name — role). Pick provider, Agent/Plan, and model as usual.
             </p>
           </div>
         ) : (
@@ -393,11 +398,15 @@ export function ChatPane({
         <ComposerOptions
           provider={provider}
           mode={agentMode}
+          nestTopology={nestTopology}
+          agentRoster={agentRoster}
           modelId={modelId}
           models={models}
           disabled={sending || !signedIn || !hasEdgeKey}
           onProviderChange={setProvider}
           onModeChange={setAgentMode}
+          onNestChange={setNestTopology}
+          onRosterChange={setAgentRoster}
           onModelChange={setModelId}
         />
         <label className="sr-only" htmlFor="lattice-composer">

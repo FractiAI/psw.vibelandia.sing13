@@ -22,7 +22,9 @@
     path.includes('turner-bison-herd-management') ||
     path.includes('bulletin-board') ||
     path === '/' ||
-    path.endsWith('vibelandia-questfest.html')
+    path.endsWith('vibelandia-questfest.html') ||
+    path.includes('ss-vibelandia') ||
+    path.includes('noahs-ark')
   ) {
     return;
   }

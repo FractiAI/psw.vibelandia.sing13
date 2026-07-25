@@ -1,4 +1,4 @@
-/** Per-page visit counter — fixed bottom-right, small print. */
+/** Per-page visit counter — one mark, fixed bottom-right, small print. */
 (function () {
   if (window.__qvPageViewsBoot) return;
   window.__qvPageViewsBoot = true;
@@ -6,10 +6,11 @@
   var lastSent = { key: '', at: 0 };
 
   function loadCss() {
-    if (document.querySelector('link[href*="site-page-views.css"]')) return;
+    if (document.querySelector('link[data-qv-page-views-css]')) return;
     var link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = '/interfaces/site-page-views.css';
+    link.setAttribute('data-qv-page-views-css', '1');
     document.head.appendChild(link);
   }
 
@@ -25,6 +26,10 @@
       path === '/listen'
     ) {
       path = '/';
+    }
+    // Ark about page aliases
+    if (path === '/interfaces/ss-vibelandia' || path === '/noahs-ark') {
+      path = '/ss-vibelandia';
     }
     var parts = [path];
     var q = new URLSearchParams(loc.search || '');
@@ -53,14 +58,23 @@
     return typeof n === 'number' && Number.isFinite(n) ? n.toLocaleString('en-US') : '—';
   }
 
+  /** Exactly one counter node on body. */
   function ensureEl() {
-    var el = document.getElementById('site-page-visits');
+    var nodes = document.querySelectorAll('#site-page-visits, .site-page-visits');
+    var el = nodes[0] || null;
+    for (var i = 1; i < nodes.length; i++) {
+      nodes[i].parentNode && nodes[i].parentNode.removeChild(nodes[i]);
+    }
     if (!el) {
       el = document.createElement('div');
       el.id = 'site-page-visits';
       el.className = 'site-page-visits';
       el.setAttribute('aria-live', 'polite');
       document.body.appendChild(el);
+    } else {
+      el.id = 'site-page-visits';
+      el.className = 'site-page-visits';
+      if (el.parentNode !== document.body) document.body.appendChild(el);
     }
     return el;
   }

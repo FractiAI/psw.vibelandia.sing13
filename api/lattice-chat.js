@@ -1,5 +1,5 @@
 /**
- * Lattice V1.618 chat — multi-provider BYOK proxy (Cursor cloud · Claude Messages · Gemini Antigravity).
+ * Lattice Chat V1.618 chat — multi-provider BYOK proxy (Cursor cloud · Claude Messages · Gemini Antigravity).
  *
  * El Gran Sol’s Fractal Constant (EGS fractal constant): scale-invariant geometric ratio
  * balancing harmonic signal flow across downstream systems — the golden key that establishes
@@ -24,7 +24,7 @@ const NAIVE_CORPUS_DUMP_TOKENS = 72_000;
 const LATTICE_RAG_POINTER_TOKENS = 1_800;
 const LATTICE_NEST_OVERHEAD_TOKENS = 420;
 
-const PREAMBLE = `You are Lattice V1.618 by FractiAI — the Nested Agent Lattice chat surface over SING13.
+const PREAMBLE = `You are Lattice Chat V1.618 by FractiAI — the Nested Agent Lattice chat surface over SING13.
 Ground answers in docs/, protocols/, research/, and nested-agent / NSPFRNP rules when relevant.
 Prefer precise, corpus-faithful replies. Do not invent repo paths or protocols.
 Keep self-talk brief. Close substantive answers with → ∞¹³.
@@ -229,7 +229,7 @@ function buildLatticeExecution(args) {
   ];
 
   return {
-    engine: 'Lattice V1.618 · Nested Agent Lattice',
+    engine: 'Lattice Chat V1.618 · Nested Agent Lattice',
     mode: args.mode === 'edge' ? 'edge' : 'cloud',
     cycle: 'Metabolize → Crystallize → Animate → Squeeze (MCA)',
     selfTalk: [

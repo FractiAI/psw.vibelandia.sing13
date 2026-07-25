@@ -1,4 +1,4 @@
-# Lattice V1.618 — Vibe Coder Share Pack
+# Lattice Chat V1.618 — Vibe Coder Share Pack
 
 **Document ID:** LATTICE-SHARE-PACK-2026-07  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -30,10 +30,10 @@ Chairman posts on social. Agents keep this pack + site/README in sync.
 
 ### 1 · GitHub — image: `lattice-artdeco-hero.png`
 
-**Title:** Lattice V1.618 — nested AI coding agents (pointers, not dump-everything)
+**Title:** Lattice Chat V1.618 — nested AI coding agents (pointers, not dump-everything)
 
 ```text
-Lattice V1.618 is a tool from FractiAI.
+Lattice Chat V1.618 is a tool from FractiAI.
 
 Most AI coding tools dump large piles of files into the model. That inflates context load.
 
@@ -51,7 +51,7 @@ Code: https://github.com/FractiAI/psw.vibelandia.sing13
 ```text
 Hey — for people using AI agents to code:
 
-Lattice V1.618 (FractiAI) is chat on the outside, nested agents on the inside. It avoids dumping your whole project into the AI every time.
+Lattice Chat V1.618 (FractiAI) is chat on the outside, nested agents on the inside. It avoids dumping your whole project into the AI every time.
 
 Public structural estimate of context load (not a vendor invoice): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 
@@ -61,7 +61,7 @@ https://www.ssvibelandiaquestfest24x365.com/lattice
 ### 3 · X — image: `lattice-artdeco-square.png`
 
 ```text
-Lattice V1.618 by FractiAI
+Lattice Chat V1.618 by FractiAI
 
 Chat-simple AI coding agents that nest and point at files instead of dumping the whole repo into context.
 
@@ -71,12 +71,12 @@ https://www.ssvibelandiaquestfest24x365.com/lattice
 
 ### 4 · Hacker News — image: `lattice-artdeco-hero.png`
 
-**Title:** Show HN: Lattice V1.618 – nested agents with pointer loading (public estimate)
+**Title:** Show HN: Lattice Chat V1.618 – nested agents with pointer loading (public estimate)
 
 ```text
 Hi HN —
 
-Lattice V1.618 is our chat tool for AI coding agents. The idea is simple: stop stuffing the whole codebase into one giant prompt.
+Lattice Chat V1.618 is our chat tool for AI coding agents. The idea is simple: stop stuffing the whole codebase into one giant prompt.
 
 How it works in plain terms:
 - One lead agent breaks the job up
@@ -92,12 +92,12 @@ Code: https://github.com/FractiAI/psw.vibelandia.sing13
 
 ### 5 · Reddit — image: `lattice-artdeco-hero.png`
 
-**Title:** Lattice V1.618 — nested AI agents for vibe coders (pointer loading; public estimate)
+**Title:** Lattice Chat V1.618 — nested AI agents for vibe coders (pointer loading; public estimate)
 
 ```text
 Built for people who code with AI agents and hate watching context explode.
 
-Lattice V1.618 (FractiAI): you chat like normal. Under the hood it runs a small nested agent team instead of pasting your whole project into one prompt.
+Lattice Chat V1.618 (FractiAI): you chat like normal. Under the hood it runs a small nested agent team instead of pasting your whole project into one prompt.
 
 Public structural estimate (not an OpenAI/Anthropic invoice): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 

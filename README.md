@@ -10,7 +10,7 @@
 
 **Live site:** [**www.ssvibelandiaquestfest24x365.com**](https://www.ssvibelandiaquestfest24x365.com) · **Repository:** [github.com/fractiai/psw.vibelandia.sing13](https://github.com/fractiai/psw.vibelandia.sing13)
 
-## Lattice V1.618 — Ark engine (from Sonic Singularity 13)
+## Lattice Chat V1.618 — Ark engine (from Sonic Singularity 13)
 
 **SS Vibelandia** is the Noah’s Ark metaphor in this sandbox. Flat/linear systems were scaffolding; Lattice jettisons them for **cytological agentic processing** — nested agents + file pointers instead of dump-everything. **SING φ** is scale grammar / naming derived from **Sonic Singularity 13** (not SING 14); not a fractal compression algorithm.
 
@@ -24,7 +24,7 @@ Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review 
 | Nested can beat fat full-context; may cost **more** than strong selected-context / RAG | **Adopted.** Public pages state nesting + pointers vs dump-everything, and that nested can still lose to a good single selected-context call. |
 | Live Cursor / cloud billing was **not** measured | **Adopted.** [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof) is labeled structural / context-load estimate — not a Cursor invoice. |
 | Contribution is methodological (ledger, matched factorial, falsifiable acceptance), not inventing multi-agent AI | **Agreed.** Comparators (Claude subagents, RAG, MetaGPT, FrugalGPT, etc.) are prior art in the design space. |
-| “‘Fractal’ is metaphor… not a new fractal algorithm” | **Agreed for the measured estimand.** Runtime token deltas come from **context selection, phase count, and bounded nesting overhead** — not a fractal compressor in `api/lattice-chat.js`. **φ / Lattice V1.618** remains real as **EGS scale grammar and product naming** in docs/architecture; it is not claimed as the mechanism that produces Ollama factorial savings. |
+| “‘Fractal’ is metaphor… not a new fractal algorithm” | **Agreed for the measured estimand.** Runtime token deltas come from **context selection, phase count, and bounded nesting overhead** — not a fractal compressor in `api/lattice-chat.js`. **φ / Lattice Chat V1.618** remains real as **EGS scale grammar and product naming** in docs/architecture; it is not claimed as the mechanism that produces Ollama factorial savings. |
 
 **What we changed on the site:** dropped percent-savings headlines from Lattice, Ark, QUESTFEST, Get Started, share pack, and chat token footer; method page leads with two loading styles and an honesty boundary. Full write-up: [`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md).
 
@@ -36,7 +36,7 @@ When the factorial suite / manuscript lands under `research/`, that tier superse
 | Chat (live) | [/lattice-chat](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) |
 | Context-load method | [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof) |
 | Ark | [/ss-vibelandia](https://www.ssvibelandiaquestfest24x365.com/ss-vibelandia) |
-| Free trial | [valetpru@gmail.com](mailto:valetpru@gmail.com?subject=Lattice%20V1.618%20%E2%80%94%20free%20trial) |
+| Free trial | [valetpru@gmail.com](mailto:valetpru@gmail.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20free%20trial) |
 
 ### Code map (where to look)
 
@@ -108,7 +108,7 @@ Share pack (posts + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-
 
 **Three Doors (front door):** **Listen** (Sovereign Player) · **Read** (paper catalog) · **Build · Lattice** ([`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) nested agents). Seed kit remains optional under [`seed/`](seed/README.md). Open music manifest for syndication: `GET /api/catalog`. Layer admission (Goldilocks Gate): `protocols/NEST_LAYER_ADMISSION_RULE_NSPFRNP.md`. Squeeze record: `docs/LEGACY_INDEX.md`. Voice tiers on every claim: 🜛 mythic · ⚙ operational · 📐 verified.
 
-**Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. **Lattice V1.618** (`/lattice`, `/lattice-chat`) ships on this SING 13 edge. Other lab pages, hive, sim, tests, heavy scripts — on SING 9.
+**Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. **Lattice Chat V1.618** (`/lattice`, `/lattice-chat`) ships on this SING 13 edge. Other lab pages, hive, sim, tests, heavy scripts — on SING 9.
 
 **Single-read onboarding:** [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md). NSPFRNP catalog spine: [`protocols/MCA_NSPFRNP_CATALOG.md`](protocols/MCA_NSPFRNP_CATALOG.md). Repository standard: [`BBHE_REPOSITORY_STANDARD.md`](BBHE_REPOSITORY_STANDARD.md).
 
@@ -119,7 +119,7 @@ Share pack (posts + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-
 
 | Lane | What | Where |
 |---|---|---|
-| **Lattice V1.618** | Nested-agent chat · BYOK pipe · token proof · local test/validate steps in README | [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · `apps/lattice-chat/` · `api/lattice-chat.js` · `npm run test:lattice-floors` |
+| **Lattice Chat V1.618** | Nested-agent chat · BYOK pipe · token proof · local test/validate steps in README | [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · `apps/lattice-chat/` · `api/lattice-chat.js` · `npm run test:lattice-floors` |
 | **Onboarding** | Single-read edge file (SING 13 specific) | `SING13_EDGE_ONBOARDING.md` |
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |

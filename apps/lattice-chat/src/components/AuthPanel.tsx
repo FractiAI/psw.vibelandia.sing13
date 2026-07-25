@@ -20,12 +20,12 @@ import { useLatticeStore } from '@/store';
 /** Prefills a free-trial / access email to the operator (old school · honor). */
 export function buildRequestMailto(fromEmail = ''): string {
   const who = normalizeEmail(fromEmail) || '(add your email here)';
-  const subject = encodeURIComponent('Lattice V1.618 — free trial');
+  const subject = encodeURIComponent('Lattice Chat V1.618 — free trial');
   const body = encodeURIComponent(
     [
       'Hello,',
       '',
-      'I would like a free trial of Lattice V1.618 on SS Vibelandia.',
+      'I would like a free trial of Lattice Chat V1.618 on SS Vibelandia.',
       '',
       `My email / userid: ${who}`,
       '',

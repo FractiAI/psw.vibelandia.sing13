@@ -219,7 +219,7 @@ export function ChatPane({
               ☰
             </button>
             <h1 className="chat-title">
-              <span className="chat-wordmark">Lattice V1.618</span>
+              <span className="chat-wordmark">Lattice Chat V1.618</span>
               <span className="chat-by">by FractiAI</span>
             </h1>
             <button

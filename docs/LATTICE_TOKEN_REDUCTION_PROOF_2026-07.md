@@ -1,4 +1,4 @@
-# Lattice V1.618 · Nested + pointer context load (structural estimate)
+# Lattice Chat V1.618 · Nested + pointer context load (structural estimate)
 
 **Document ID:** LATTICE-TOKEN-PROOF-2026-07  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -28,7 +28,7 @@ Same complex coding-style ask, two loading styles:
 | Mode | Estimated context tokens | What it does |
 |------|--------------------------|--------------|
 | **Standard agentic (fat context)** | **~301,025** | Loads large docs / protocols / code slices; multiplies across phases |
-| **Lattice V1.618 (nested + RAG)** | **~3,121** | Nested agents + file pointers + short history window |
+| **Lattice Chat V1.618 (nested + RAG)** | **~3,121** | Nested agents + file pointers + short history window |
 
 Absolute difference on this bench is large because the fat path pastes volume and reuses it; the Lattice path pays for selection. Re-run: `npm run compare:lattice`.
 

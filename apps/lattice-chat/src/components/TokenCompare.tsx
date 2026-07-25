@@ -61,13 +61,11 @@ export function TokenCompareFooter({ tokens }: { tokens: TokenCompare }) {
           {standard} ~{tokens.naiveTokens.toLocaleString()}
           <span className="token-compare-dot">·</span>
           {lattice} ~{tokens.latticeTokens.toLocaleString()}
-          <span className="token-compare-dot">·</span>
-          saved ~{tokens.savedTokens.toLocaleString()} (−{tokens.savedPercent}%)
         </span>
       </p>
       <p className="token-compare-honesty">
-        Estimate only (not a vendor bill). Same idea as the{' '}
-        <a href="/lattice/proof">public Lattice token-reduction proof</a>.
+        Structural estimate only (chars÷4 · not a vendor bill). Method:{' '}
+        <a href="/lattice/proof">nested + pointer context load</a>.
       </p>
     </div>
   );

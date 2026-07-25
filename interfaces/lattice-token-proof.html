@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0806" />
-  <title>Proof · Lattice cuts token load by ~99% · FractiAI</title>
+  <title>Lattice · Nested + pointer context load · FractiAI</title>
   <meta
     name="description"
-    content="Executive plain-language proof: Lattice V1.618 used about 99% fewer estimated context tokens than dump-everything agent mode on the same coding ask."
+    content="Structural estimate: Lattice V1.618 nested + pointer loading vs dump-everything agent mode on the same coding ask. Chars÷4 context load — not a vendor bill."
   />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice/proof" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,31 +66,6 @@
       font-size: 1.15rem;
       color: var(--champagne);
       font-weight: 500;
-    }
-    .hero-stat {
-      margin: 0 0 2rem;
-      padding: 1.25rem 1.35rem;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(10, 8, 6, 0.55));
-    }
-    .hero-stat .pct {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(2.75rem, 10vw, 4.25rem);
-      line-height: 1;
-      color: var(--gold-hi);
-      font-weight: 600;
-    }
-    .hero-stat .pct-label {
-      margin: 0.45rem 0 0;
-      font-size: 1.05rem;
-      color: var(--champagne);
-      font-weight: 600;
-    }
-    .hero-stat .pct-sub {
-      margin: 0.55rem 0 0;
-      font-size: 0.88rem;
-      color: var(--soft);
     }
     h2 {
       margin: 2.1rem 0 0.65rem;
@@ -176,21 +151,26 @@
 </head>
 <body>
   <article class="wrap">
-    <p class="kicker">Public proof · token consumption</p>
-    <h1>Lattice cut estimated token load by about 99%</h1>
+    <p class="kicker">Public method · structural estimate</p>
+    <h1>Nested agents + pointers vs dump-everything</h1>
     <p class="by">Lattice V1.618 · from Sonic Singularity 13 · SS Vibelandia Ark engine</p>
 
     <p class="lede">
-      Flat dump-everything agents were scaffolding. Lattice is cytological nesting —
-      same hard ask, up to ~99% fewer estimated context tokens. Estimate, not a vendor bill.
+      Same hard coding-style ask, two loading styles. Numbers below are estimated
+      context load (characters ÷ 4) — not a Cursor, OpenAI, or Anthropic invoice.
     </p>
 
-    <div class="hero-stat" aria-label="Headline savings">
-      <p class="pct" id="pct">−99%</p>
-      <p class="pct-label">fewer estimated context tokens</p>
-      <p class="pct-sub" id="saved-sub">
-        Roughly 298,000 tokens left on the table vs dump-everything mode on this public test.
-      </p>
+    <div class="cmp" aria-label="Token comparison">
+      <div class="cmp-col">
+        <h3>Dump-everything</h3>
+        <p class="num" id="std-tok">~301,025</p>
+        <p class="note">Estimated context tokens</p>
+      </div>
+      <div class="cmp-col win">
+        <h3>Lattice V1.618</h3>
+        <p class="num" id="lat-tok">~3,121</p>
+        <p class="note">Estimated context tokens</p>
+      </div>
     </div>
 
     <h2>What we compared</h2>
@@ -211,46 +191,30 @@
       </li>
     </ul>
 
-    <div class="cmp" aria-label="Token comparison">
-      <div class="cmp-col">
-        <h3>Dump-everything</h3>
-        <p class="num" id="std-tok">~301,025</p>
-        <p class="note">Estimated context tokens</p>
-      </div>
-      <div class="cmp-col win">
-        <h3>Lattice V1.618</h3>
-        <p class="num" id="lat-tok">~3,121</p>
-        <p class="note">Estimated context tokens</p>
-      </div>
-    </div>
-
-    <h2>Why the reduction is so large</h2>
+    <h2>What the difference means</h2>
     <p>
-      Tokens are the fuel of AI coding agents. Every file you paste costs money and burns
-      rate limits. Dump-everything mode treats the whole project as one meal. Lattice treats
-      the project like a library: the lead agent points helpers at the few shelves they need,
-      then folds the answers back together.
+      Tokens are the fuel of AI coding agents. Dump-everything mode treats the project as one
+      meal. Lattice treats it like a library: the lead agent points helpers at the shelves they
+      need, then folds answers back together. On this bench, that is the measured mechanism —
+      nesting and selection — not a fractal compression algorithm.
     </p>
-    <p>
-      On this test, that difference meant <strong style="color: var(--gold-hi)" id="saved-line">≈ 297,904 tokens saved</strong>
-      — about ninety-nine percent of the estimated load. That is the proof of tremendous
-      token-consumption reduction: not a nicer UI alone, but a smaller context appetite for
-      the same kind of work.
+    <p id="diff-line">
+      Absolute difference on this receipt is large because the fat path pastes volume and reuses it.
     </p>
 
-    <h2>What this means in practice</h2>
+    <h2>Claim boundary</h2>
     <ul>
-      <li>Longer sessions before you hit plan limits.</li>
-      <li>Lower cost per turn when you pay by usage.</li>
-      <li>Room for real multi-band work (docs + UI + API) without stuffing the entire repo.</li>
+      <li>Nested + pointers can beat fat dump-everything on estimated context size.</li>
+      <li>Nested can still cost more than a strong selected-context baseline.</li>
+      <li>SING φ / “fractal” wording is scale grammar and naming — not the savings engine.</li>
+      <li>Live chat usage bills through your Cursor key; this page does not report that bill.</li>
     </ul>
 
     <div class="honesty" id="honesty">
       <strong style="color: var(--champagne)">Honesty boundary.</strong>
       These numbers are structural estimates (about 4 characters ≈ 1 token), same prompt both
-      ways. They are <em>not</em> a final invoice from OpenAI, Anthropic, or Cursor. They
-      illustrate context load. The machine receipt stays available for auditors who want the
-      raw table.
+      ways. They are <em>not</em> a final invoice from OpenAI, Anthropic, or Cursor. Machine
+      receipt stays available for auditors who want the raw table.
     </div>
 
     <div class="cta-row">
@@ -276,22 +240,19 @@
         const data = await res.json();
         const c = data.comparison || {};
         const el = (id) => document.getElementById(id);
-        if (el('pct') && c.percentSaved != null) el('pct').textContent = '−' + c.percentSaved + '%';
         if (el('std-tok') && c.standardTokens != null) {
           el('std-tok').textContent = '~' + Number(c.standardTokens).toLocaleString();
         }
         if (el('lat-tok') && c.latticeTokens != null) {
           el('lat-tok').textContent = '~' + Number(c.latticeTokens).toLocaleString();
         }
-        if (el('saved-line') && c.tokensSaved != null) {
-          el('saved-line').textContent =
-            '≈ ' + Number(c.tokensSaved).toLocaleString() + ' tokens saved';
-        }
-        if (el('saved-sub') && c.tokensSaved != null) {
-          el('saved-sub').textContent =
-            'Roughly ' +
-            Math.round(Number(c.tokensSaved) / 1000) +
-            ',000 tokens left on the table vs dump-everything mode on this public test.';
+        if (el('diff-line') && c.standardTokens != null && c.latticeTokens != null) {
+          el('diff-line').textContent =
+            'On this receipt: dump-everything ~' +
+            Number(c.standardTokens).toLocaleString() +
+            ' estimated tokens; Lattice ~' +
+            Number(c.latticeTokens).toLocaleString() +
+            ' (same ask both ways).';
         }
         if (data.honesty && el('honesty')) {
           el('honesty').innerHTML =

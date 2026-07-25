@@ -7,7 +7,7 @@
   <title>Lattice V1.618 · Cytological agents for the Ark · FractiAI</title>
   <meta
     name="description"
-    content="Lattice V1.618 — cytological agentic processing for SS Vibelandia’s Noah’s Ark. Derived from Sonic Singularity 13. Up to ~99% fewer estimated AI tokens vs flat dump-everything."
+    content="Lattice V1.618 — cytological agentic processing for SS Vibelandia’s Noah’s Ark. Nested agents + file pointers vs dump-everything. Derived from Sonic Singularity 13 (SING φ = scale grammar)."
   />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -325,13 +325,15 @@
         Cytological agentic processing for the Ark — chat outside, nested agents inside.
       </p>
       <p class="support">
-        Flat, linear dump-everything systems were scaffolding. Lattice jettisons that waste.
-        Public test: up to ~99% fewer estimated AI tokens (estimate, not a vendor bill).
+        Flat, linear dump-everything systems were scaffolding. Lattice jettisons that waste
+        with nested agents and file pointers. SING φ is scale grammar from Sonic Singularity 13 —
+        not a fractal compression claim. Structural estimate:
+        <a href="/lattice/proof">method page</a> (not a vendor bill).
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="mailto:valetpru@gmail.com?subject=Lattice%20V1.618%20%E2%80%94%20free%20trial&amp;body=Hello%2C%0A%0AI%20would%20like%20a%20free%20trial%20of%20Lattice%20V1.618.%0A%0AMy%20email%20%2F%20userid%3A%20%0A%0AThanks.">Email for a free trial</a>
         <a class="btn btn-ghost" href="/lattice-chat">Open Lattice chat</a>
-        <a class="btn btn-ghost" href="/lattice/proof">See the proof</a>
+        <a class="btn btn-ghost" href="/lattice/proof">Context-load method</a>
         <a class="btn btn-ghost" href="/ss-vibelandia">The Ark</a>
       </div>
     </header>
@@ -353,7 +355,7 @@
         </li>
         <li>
           <strong>Why</strong>
-          <span>Save up to ~99% on AI token costs vs dump-everything — <a href="/lattice/proof">see the proof</a>.</span>
+          <span>Smaller context load via nesting + pointers vs dump-everything — <a href="/lattice/proof">method</a>.</span>
         </li>
       </ul>
     </section>
@@ -382,7 +384,7 @@
         </li>
         <li>
           <strong>3 · Ask real work</strong>
-          <span>Nested agents · token ledger · <a href="/lattice/proof">proof</a>.</span>
+          <span>Nested agents · token ledger · <a href="/lattice/proof">method</a>.</span>
         </li>
       </ul>
       <div class="cta-row">
@@ -412,29 +414,28 @@
     </section>
 
     <section id="comparison">
-      <h2>Public test</h2>
+      <h2>Public structural estimate</h2>
       <p>
         Same coding-style ask, two ways: <strong>dump-everything agent mode</strong>
-        vs <strong>Lattice V1.618</strong>.
+        vs <strong>Lattice V1.618</strong>. Figures are chars÷4 context load — not a vendor bill.
       </p>
       <p class="saved-banner" id="cmp-headline">
-        Lattice used about 99% fewer estimated tokens on this test.
+        Nested + pointers vs fat dump on the same multi-band ask.
       </p>
       <div class="cmp-grid">
         <div class="cmp-col">
           <h3>Standard agentic</h3>
-          <p class="big-num" id="std-tok">~305,918</p>
+          <p class="big-num" id="std-tok">~301,025</p>
           <p>Estimated context tokens · dump docs/protocols/code slices and re-stuff across map → plan → synthesize (×2.4).</p>
         </div>
         <div class="cmp-col win">
           <h3>Lattice V1.618</h3>
-          <p class="big-num" id="lat-tok">~3,156</p>
+          <p class="big-num" id="lat-tok">~3,121</p>
           <p>Estimated context tokens · RAG pointers + nested scale bands + windowed history.</p>
         </div>
       </div>
-      <p>
-        <strong id="saved-line" style="color: var(--gold-hi)">≈ 302,762 tokens saved (−99%)</strong>
-        on this bench prompt.
+      <p id="saved-line" style="color: var(--soft)">
+        Mechanism measured here: selection and nesting — not fractal compression. φ is scale grammar.
       </p>
       <table class="agents" aria-label="Lattice agents in comparison">
         <thead>
@@ -453,9 +454,10 @@
         </tbody>
       </table>
       <p class="honesty" id="honesty">
-        Honesty: this is our estimate (characters ÷ 4), same prompt both ways.
-        Not a final bill from OpenAI or Anthropic.
-        Human proof: <a href="/lattice/proof">Lattice token reduction brief</a>.
+        Honesty: structural estimate (characters ÷ 4), same prompt both ways.
+        Not a final bill from OpenAI, Anthropic, or Cursor.
+        Nested can still cost more than a strong selected-context baseline.
+        Method: <a href="/lattice/proof">brief</a>.
         Machine receipt:
         <a href="/data/lattice-vs-standard-comparison.json">JSON</a>.
         Re-run: <code>npm run compare:lattice</code>.
@@ -481,10 +483,13 @@
         if (c.headline && el('cmp-headline')) el('cmp-headline').textContent = c.headline;
         if (el('std-tok')) el('std-tok').textContent = '~' + Number(c.standardTokens).toLocaleString();
         if (el('lat-tok')) el('lat-tok').textContent = '~' + Number(c.latticeTokens).toLocaleString();
-        if (el('saved-line')) {
+        if (el('saved-line') && c.standardTokens != null && c.latticeTokens != null) {
           el('saved-line').textContent =
-            '≈ ' + Number(c.tokensSaved).toLocaleString() +
-            ' tokens saved (−' + c.percentSaved + '%) on this bench prompt.';
+            'On this receipt: ~' +
+            Number(c.standardTokens).toLocaleString() +
+            ' vs ~' +
+            Number(c.latticeTokens).toLocaleString() +
+            ' estimated tokens. Mechanism: nesting + pointers — not fractal compression.';
         }
         const agents = data.modes?.lattice?.agents;
         if (Array.isArray(agents) && el('agent-rows')) {
@@ -495,7 +500,7 @@
         if (data.honesty && el('honesty')) {
           el('honesty').innerHTML =
             'Honesty: ' + data.honesty +
-            ' Human proof: <a href="/lattice/proof">token reduction brief</a>.' +
+            ' Method: <a href="/lattice/proof">brief</a>.' +
             ' Machine receipt: <a href="/data/lattice-vs-standard-comparison.json">JSON</a>.' +
             ' Re-run: <code>node scripts/lattice-vs-standard-comparison.mjs</code>.';
         }

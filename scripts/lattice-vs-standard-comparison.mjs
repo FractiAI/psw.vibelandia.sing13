@@ -19,7 +19,7 @@ Map how SING13 Nested Agent Lattice + NSPFRNP + RAG should execute a multi-band 
 (2) identify edge UI touchpoints under apps/ and interfaces/,
 (3) identify pipe/API touchpoints under api/ and lib/,
 (4) propose a token-efficient nested-agent plan with peer-firewall and scale-to-zero,
-(5) estimate token savings vs dumping the corpus into one fat agent.
+(5) compare estimated context load vs dumping the corpus into one fat agent.
 
 Deliver a structured plan a chat user could follow.`;
 
@@ -174,11 +174,7 @@ const receipt = {
     tokensSaved: saved,
     percentSaved: savedPct,
     headline:
-      savedPct >= 90
-        ? 'Lattice cut estimated context load by roughly an order of magnitude on this complex multi-band ask.'
-        : savedPct >= 70
-          ? 'Lattice cut estimated context load by about three-quarters on this complex multi-band ask.'
-          : `Lattice saved an estimated ${savedPct}% of context tokens vs standard fat-context agentic mode.`,
+      'Nested + pointers vs fat dump on the same multi-band ask (structural chars÷4 estimate).',
   },
 };
 

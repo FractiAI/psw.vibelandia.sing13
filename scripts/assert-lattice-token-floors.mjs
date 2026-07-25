@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Goldilocks floors for Lattice token-savings claim.
- * Regenerates the comparison receipt, then asserts schema + savings floors.
- * Honesty: structural estimate — not vendor invoices.
+ * Goldilocks floors for Lattice vs fat-dump structural estimate.
+ * Regenerates the comparison receipt, then asserts schema + load floors.
+ * Honesty: structural estimate — not vendor invoices; not public % marketing.
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';

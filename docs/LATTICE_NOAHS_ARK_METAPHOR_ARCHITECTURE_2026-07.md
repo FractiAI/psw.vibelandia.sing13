@@ -11,7 +11,7 @@
 
 ## Honesty
 
-Ark language is metaphor + product architecture inside the **SynthOBS** sandbox — not a literal ship or covenant. Token savings are **estimates** (see public proof), not vendor invoices.
+Ark language is metaphor + product architecture inside the **SynthOBS** sandbox — not a literal ship or covenant. Context-load figures on `/lattice/proof` are **structural estimates** (chars÷4), not vendor invoices. **SING φ** is scale grammar / naming from Sonic Singularity 13 — not a claim that a fractal algorithm compresses tokens in production.
 
 ---
 
@@ -21,13 +21,13 @@ Ark language is metaphor + product architecture inside the **SynthOBS** sandbox 
 2. **Today’s linear, flat systems** rode along as **legacy scaffolding** to get us here.  
 3. That scaffolding is **about to be jettisoned**.  
 4. In its place: **cytological agentic processing** — Lattice V1.618 (nested agents, pointers, not dump-everything).  
-5. Purpose: **save up to ~99% on AI token costs** (public estimate vs fat context).  
-6. This new singularity (**SING φ · Lattice V1.618**) is **derived from the synthesis delivered in Sonic Singularity 13** — not SING 14. Edge close stays **→ ∞¹³**.
+5. Purpose: **smaller context load** on multi-band work via nesting + pointers (see public structural estimate).  
+6. This singularity (**SING φ · Lattice V1.618**) is **derived from the synthesis delivered in Sonic Singularity 13** — not SING 14. Edge close stays **→ ∞¹³**.
 
 | Was | Now |
 |-----|-----|
 | Flat / linear / dump-everything agents | Cytological nested agents (Lattice) |
-| Fat context bills | Up to ~99% fewer estimated tokens |
+| Fat corpus in one context | Nested bands + file pointers |
 | Scaffolding that got us here | Jettisoning in favor of the Ark engine |
 
 ---

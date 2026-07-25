@@ -12,13 +12,13 @@
 
 ## Lattice V1.618 — Ark engine (from Sonic Singularity 13)
 
-**SS Vibelandia** is the Noah’s Ark metaphor in this sandbox. Flat/linear systems were scaffolding; Lattice jettisons them for **cytological agentic processing** — up to **~99% fewer estimated tokens** vs dump-everything. **SING φ** is derived from **Sonic Singularity 13** (not SING 14).
+**SS Vibelandia** is the Noah’s Ark metaphor in this sandbox. Flat/linear systems were scaffolding; Lattice jettisons them for **cytological agentic processing** — nested agents + file pointers instead of dump-everything. **SING φ** is scale grammar / naming derived from **Sonic Singularity 13** (not SING 14); not a fractal compression algorithm.
 
 | Surface | URL / path |
 |--------|------------|
 | Landing | [ssvibelandiaquestfest24x365.com/lattice](https://www.ssvibelandiaquestfest24x365.com/lattice) |
 | Chat (live) | [/lattice-chat](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) |
-| Token proof (human) | [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof) |
+| Context-load method | [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof) |
 | Ark | [/ss-vibelandia](https://www.ssvibelandiaquestfest24x365.com/ss-vibelandia) |
 | Free trial | [valetpru@gmail.com](mailto:valetpru@gmail.com?subject=Lattice%20V1.618%20%E2%80%94%20free%20trial) |
 
@@ -32,19 +32,19 @@
 | API pipe (BYOK proxy) | [`api/lattice-chat.js`](api/lattice-chat.js) | Cursor SDK cloud agents; `x-cursor-api-key` only — **no server key fallback** |
 | Token estimate engine | [`lib/lattice-engine.mjs`](lib/lattice-engine.mjs) | Shared estimate math for API + benches |
 | Access allowlist | [`data/lattice-access.json`](data/lattice-access.json) | Email grants (old school · honor) |
-| Comparison receipt | [`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json) | Public ~99% estimate artifact |
+| Comparison receipt | [`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json) | Public structural estimate (chars÷4) |
 | Metaphor / singularities | [`docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md`](docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md) · [`docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md`](docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md) |
 
 ### Test & validate (local)
 
-**1 · Token-savings bench (no Cursor key required)**
+**1 · Context-load bench (no Cursor key required)**
 
 ```bash
 npm run compare:lattice          # writes data/lattice-vs-standard-comparison.json
-npm run test:lattice-floors      # regenerates + asserts ≥90% estimated savings floor
+npm run test:lattice-floors      # regenerates + asserts estimate floor vs fat dump
 ```
 
-Honesty: these are **structural estimates** (chars÷4), not vendor invoices. Human write-up: [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof).
+Honesty: **structural estimates** (chars÷4), not vendor invoices. Nested + pointers vs dump-everything — not a billed Cursor usage report. Brief: [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof).
 
 **2 · Run the chat UI against the live pipe**
 

@@ -14,6 +14,22 @@
 
 **SS Vibelandia** is the Noah’s Ark metaphor in this sandbox. Flat/linear systems were scaffolding; Lattice jettisons them for **cytological agentic processing** — nested agents + file pointers instead of dump-everything. **SING φ** is scale grammar / naming derived from **Sonic Singularity 13** (not SING 14); not a fractal compression algorithm.
 
+### Response to Daniel’s Lattice token-economics review (2026-07-24)
+
+Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review claim boundary**, not a marketing brief. We agree with the substance and have aligned public copy accordingly.
+
+| Review point | Our response |
+|--------------|--------------|
+| Historical chars÷4 “~99%” receipt is continuity evidence only | **Adopted.** That figure is **not** used in public marketing. Structural receipt remains a machine artifact only ([`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json)). |
+| Nested can beat fat full-context; may cost **more** than strong selected-context / RAG | **Adopted.** Public pages state nesting + pointers vs dump-everything, and that nested can still lose to a good single selected-context call. |
+| Live Cursor / cloud billing was **not** measured | **Adopted.** [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof) is labeled structural / context-load estimate — not a Cursor invoice. |
+| Contribution is methodological (ledger, matched factorial, falsifiable acceptance), not inventing multi-agent AI | **Agreed.** Comparators (Claude subagents, RAG, MetaGPT, FrugalGPT, etc.) are prior art in the design space. |
+| “‘Fractal’ is metaphor… not a new fractal algorithm” | **Agreed for the measured estimand.** Runtime token deltas come from **context selection, phase count, and bounded nesting overhead** — not a fractal compressor in `api/lattice-chat.js`. **φ / Lattice V1.618** remains real as **EGS scale grammar and product naming** in docs/architecture; it is not claimed as the mechanism that produces Ollama factorial savings. |
+
+**What we changed on the site:** dropped percent-savings headlines from Lattice, Ark, QUESTFEST, Get Started, share pack, and chat token footer; method page leads with two loading styles and an honesty boundary. Full write-up: [`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md).
+
+When the factorial suite / manuscript lands under `research/`, that tier supersedes the structural receipt for empirical numbers.
+
 | Surface | URL / path |
 |--------|------------|
 | Landing | [ssvibelandiaquestfest24x365.com/lattice](https://www.ssvibelandiaquestfest24x365.com/lattice) |

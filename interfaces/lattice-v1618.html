@@ -197,11 +197,31 @@
       font-size: 0.9rem;
     }
 
-    .price-block {
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
       margin-top: 1rem;
+    }
+    @media (max-width: 640px) {
+      .price-grid { grid-template-columns: 1fr; }
+    }
+    .price-block {
       padding: 1.15rem 1.2rem;
       border: 1px solid rgba(212, 175, 55, 0.35);
       background: rgba(212, 175, 55, 0.07);
+    }
+    .price-block--plus {
+      border-color: rgba(251, 191, 36, 0.55);
+      background: rgba(251, 191, 36, 0.1);
+    }
+    .price-tier {
+      margin: 0 0 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--champagne);
     }
     .price-amt {
       margin: 0;
@@ -225,6 +245,11 @@
     .price-note em {
       font-style: normal;
       color: var(--champagne);
+    }
+    .price-foot {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     .cmp-grid {
@@ -402,13 +427,27 @@
 
     <section id="pricing">
       <h2>Pricing</h2>
-      <div class="price-block">
-        <p class="price-amt">$200<small>/ month</small></p>
-        <p class="price-note">
-          Lattice Chat service · plus your own model key and plan.
-          Ask about access inside <a href="/lattice-chat">chat</a> after your trial grant.
-        </p>
+      <div class="price-grid">
+        <div class="price-block">
+          <p class="price-tier">Starter</p>
+          <p class="price-amt">$20<small>/ month</small></p>
+          <p class="price-note">
+            Lattice Chat service · <em>500 calls / month</em>.
+            Plus your own model key and plan.
+          </p>
+        </div>
+        <div class="price-block price-block--plus">
+          <p class="price-tier">Pro</p>
+          <p class="price-amt">$100<small>/ month</small></p>
+          <p class="price-note">
+            Fuller monthly lane for builders who live in the chat.
+            Plus your own model key and plan.
+          </p>
+        </div>
       </div>
+      <p class="price-foot">
+        Free trial by email · ask about your tier inside <a href="/lattice-chat">chat</a> after your grant.
+      </p>
     </section>
 
     <section id="comparison">

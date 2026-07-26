@@ -19,13 +19,19 @@
     var path = (loc.pathname || '/').replace(/\/index\.html$/i, '').replace(/\.html$/i, '') || '/';
     if (path.length > 1 && path.charAt(path.length - 1) === '/') path = path.slice(0, -1);
     if (path.charAt(0) !== '/') path = '/' + path;
-    // Same jukebox surface at / and /interfaces/questfest-bridge
+    // QUESTFEST landing aliases (site root is the deck, not the jukebox)
     if (
-      path === '/interfaces/questfest-bridge' ||
-      path === '/questfest-bridge' ||
-      path === '/listen'
+      path === '/questfest' ||
+      path === '/interfaces/vibelandia-questfest'
     ) {
       path = '/';
+    }
+    // Same jukebox surface at /listen and questfest-bridge
+    if (
+      path === '/interfaces/questfest-bridge' ||
+      path === '/questfest-bridge'
+    ) {
+      path = '/listen';
     }
     // Ark about page aliases
     if (path === '/interfaces/ss-vibelandia' || path === '/noahs-ark') {

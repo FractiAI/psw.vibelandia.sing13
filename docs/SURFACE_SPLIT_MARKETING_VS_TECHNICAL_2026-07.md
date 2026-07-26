@@ -16,7 +16,7 @@ This is an **editorial topology**, not a claim that marketing pages hide product
 
 | Lane | Job | Voice | Examples |
 |------|-----|-------|----------|
-| **Marketing** | Board visitors, feel the Ark, convert to Listen / trial / chat | Narrative, emotion, cloud-product clarity, short CTAs | `/` QUESTFEST, `/ss-vibelandia`, `/get-started`, `/lattice`, FractiAI home, Commons brochure |
+| **Marketing** | Board visitors, feel the Ark, convert to Listen / trial / chat | Narrative, emotion, cloud-product clarity, short CTAs | `/` QUESTFEST landing (`vibelandia-questfest`), `/ss-vibelandia`, `/get-started`, `/lattice`, FractiAI home, Commons brochure |
 | **Technical** | Peer-review honesty, methods, papers, nest guides | Document ID, honesty tiers, chars÷4, BYOK plumbing, φ grammar | `/lattice/proof`, `/singularities`, whitepapers, `/hood`, `interfaces/nesting/*`, protocols, research |
 
 ## Rules

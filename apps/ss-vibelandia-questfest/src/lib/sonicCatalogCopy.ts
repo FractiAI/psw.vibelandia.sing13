@@ -39,7 +39,7 @@ export const JUKEBOX_MEMBER_INVITE_BODY =
 
 export const JUKEBOX_MEMBER_INVITE_CTA_UPLOAD = 'Open DJ tab — upload tracks';
 
-export const JUKEBOX_MEMBER_INVITE_CTA_PASS = 'Get members pass';
+export const JUKEBOX_MEMBER_INVITE_CTA_PASS = 'Claim free month · tip jar after';
 
 /** DJ / upload tab — member upload invitation (below intro). */
 export const UPLOAD_MEMBER_INVITE =

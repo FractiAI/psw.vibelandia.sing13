@@ -68,7 +68,7 @@ export const PLAIN = {
   searchPlaceholder: 'Search tracks…',
   refresh: 'Refresh',
   refreshing: 'Refreshing…',
-  getPass: 'Get pass',
+  getPass: 'Free month / tip jar',
   captain: 'Captain',
   loading: 'Loading…',
   loadingCatalog: 'Loading…',

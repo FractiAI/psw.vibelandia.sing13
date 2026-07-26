@@ -25,7 +25,11 @@ export const RAIL_LABEL: Record<LiveRail, string> = {
 };
 
 export function boardingNote(): string {
-  return 'MACHOTE FOLLOWERS · Master Music Catalog pass · $16.18/mo';
+  return 'TIP JAR · Master Music Catalog · $16.18/mo after free month';
+}
+
+export function tipJarNote(): string {
+  return boardingNote();
 }
 
 export function exportNote(trackTitle: string): string {

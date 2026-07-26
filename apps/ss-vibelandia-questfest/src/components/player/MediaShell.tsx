@@ -20,6 +20,7 @@ export function MediaShell() {
   const location = useLocation();
   const hydrateSession = useSessionStore((s) => s.hydrateFromStorage);
   const completeBoarding = useSessionStore((s) => s.completeBoarding);
+  const claimFreeTrialMonth = useSessionStore((s) => s.claimFreeTrialMonth);
   const boardingBusy = useSessionStore((s) => s.boardingBusy);
   const boardingError = useSessionStore((s) => s.boardingError);
   const isPassenger = useSessionStore((s) => s.isPassenger);
@@ -72,6 +73,17 @@ export function MediaShell() {
     }
   };
 
+  const handleClaimTrial = async (payload: { email: string; magazineFollowAck: boolean }) => {
+    const ok = await claimFreeTrialMonth(payload);
+    if (ok) {
+      clearBoardingHonorDraft();
+      usePlaybackStore.getState().applyPassHolderPlaybackDefaults();
+      setBoardingOpen(false);
+      setFairOpen(false);
+      setGain(1);
+    }
+  };
+
   const exportTrack = exportTrackId ? getTrack(exportTrackId) : undefined;
 
   return (
@@ -93,6 +105,7 @@ export function MediaShell() {
         open={boardingOpen}
         onClose={() => setBoardingOpen(false)}
         onSubmit={handleBoarding}
+        onClaimTrial={handleClaimTrial}
         busy={boardingBusy}
         error={boardingError}
       />

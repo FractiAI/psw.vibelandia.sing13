@@ -4,9 +4,12 @@ import { verifyCaptainPassword } from '@/lib/captainAuth';
 import {
   clearLocalMonthlyHonor,
   computeValidUntilFromPaidDate,
+  hasClaimedCatalogTrial,
+  honorPassKind,
   isHonorDateActive,
   type LocalMonthlyHonor,
   localTodayISO,
+  markCatalogTrialClaimed,
   readLocalMonthlyHonor,
   writeLocalMonthlyHonor,
 } from '@/lib/localMonthlyHonor';
@@ -45,11 +48,14 @@ interface SessionDerived {
   /** Pass from confirm + dates on this device only */
   localHonorOnly: boolean;
   honorValidUntil: string | null;
+  /** Active free first-month window */
+  honorIsTrial: boolean;
 }
 
 function load(): SessionDerived {
   let lh = readLocalMonthlyHonor();
   if (lh && !isHonorDateActive(lh.validUntil)) {
+    if (honorPassKind(lh) === 'trial') markCatalogTrialClaimed();
     clearLocalMonthlyHonor();
     lh = null;
   }
@@ -64,6 +70,7 @@ function load(): SessionDerived {
       jti: lh.jti,
       localHonorOnly: true,
       honorValidUntil: lh.validUntil,
+      honorIsTrial: honorPassKind(lh) === 'trial',
     };
   }
 
@@ -74,6 +81,7 @@ function load(): SessionDerived {
       jti: p.jti,
       localHonorOnly: false,
       honorValidUntil: null,
+      honorIsTrial: false,
     };
   }
 
@@ -83,6 +91,7 @@ function load(): SessionDerived {
     jti: null,
     localHonorOnly: false,
     honorValidUntil: null,
+    honorIsTrial: false,
   };
 }
 
@@ -91,6 +100,8 @@ interface SessionState extends SessionDerived {
   boardingBusy: boolean;
   boardingError: string | null;
   completeBoarding: (input: BoardingHonorPayload) => Promise<boolean>;
+  /** First month of full listens on us — no tip yet. */
+  claimFreeTrialMonth: (input: { email: string; magazineFollowAck: boolean }) => Promise<boolean>;
   disembark: () => void;
   tryCaptainPassword: (password: string) => boolean;
   hydrateFromStorage: () => void;
@@ -101,9 +112,71 @@ export const useSessionStore = create<SessionState>((set) => ({
   captainUnlocked: readCaptainUnlocked(),
   boardingBusy: false,
   boardingError: null,
+  claimFreeTrialMonth: async (input) => {
+    set({ boardingBusy: true, boardingError: null });
+    try {
+      if (!input.magazineFollowAck) {
+        set({
+          boardingBusy: false,
+          boardingError: 'Follow Machote Moderno Magazine to claim your free month.',
+        });
+        return false;
+      }
+      const email = input.email.trim().toLowerCase();
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        set({ boardingBusy: false, boardingError: 'Enter a valid email address.' });
+        return false;
+      }
+      const existing = readLocalMonthlyHonor();
+      if (existing && isHonorDateActive(existing.validUntil)) {
+        set({ boardingBusy: false, boardingError: 'You already have active access on this device.' });
+        return false;
+      }
+      if (hasClaimedCatalogTrial()) {
+        set({
+          boardingBusy: false,
+          boardingError: 'Your free month was already claimed on this device — tip $16.18 to keep listening.',
+        });
+        return false;
+      }
+
+      const start = localTodayISO();
+      const honor: LocalMonthlyHonor = {
+        rail: 'trial',
+        email,
+        paidDate: start,
+        validUntil: computeValidUntilFromPaidDate(start),
+        jti: randomJti(),
+        kind: 'trial',
+      };
+
+      clearPassToken();
+      writeLocalMonthlyHonor(honor);
+      markCatalogTrialClaimed();
+      usePlaybackStore.getState().applyPassHolderPlaybackDefaults();
+
+      set({
+        ...load(),
+        boardingBusy: false,
+        boardingError: null,
+        captainUnlocked: readCaptainUnlocked(),
+      });
+      return true;
+    } catch (e) {
+      const msg =
+        e instanceof Error && e.message === 'storage_failed'
+          ? 'Could not save on this browser — check that cookies/storage are allowed (not private mode).'
+          : e instanceof Error
+            ? e.message
+            : 'trial_failed';
+      set({ boardingBusy: false, boardingError: msg });
+      return false;
+    }
+  },
   completeBoarding: async (input) => {
     if (!input.honorConfirm) {
-      set({ boardingError: 'Confirm payment on honor to continue.', boardingBusy: false });
+      set({ boardingError: 'Confirm your tip on honor to continue.', boardingBusy: false });
       return false;
     }
     set({ boardingBusy: true, boardingError: null });
@@ -119,7 +192,7 @@ export const useSessionStore = create<SessionState>((set) => ({
       if (paidDate.length < 10 || paidDate > localTodayISO()) {
         set({
           boardingBusy: false,
-          boardingError: 'Enter the date you paid (today or earlier).',
+          boardingError: 'Enter the date you tipped (today or earlier).',
         });
         return false;
       }
@@ -131,11 +204,13 @@ export const useSessionStore = create<SessionState>((set) => ({
         paidDate,
         validUntil,
         jti: randomJti(),
+        kind: 'paid',
       };
 
       /** Client-only honor — no POST /api/boarding; localStorage is source of truth */
       clearPassToken();
       writeLocalMonthlyHonor(honor);
+      markCatalogTrialClaimed();
 
       usePlaybackStore.getState().applyPassHolderPlaybackDefaults();
 
@@ -169,6 +244,7 @@ export const useSessionStore = create<SessionState>((set) => ({
       captainUnlocked: false,
       localHonorOnly: false,
       honorValidUntil: null,
+      honorIsTrial: false,
     });
   },
   tryCaptainPassword: (password: string) => {

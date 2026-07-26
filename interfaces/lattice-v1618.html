@@ -13,10 +13,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/park-map-orient.css" />
   <style>
     :root {
       --gold: #d4af37;
@@ -252,6 +253,67 @@
       font-size: 0.9rem;
     }
 
+    .brochure-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 0;
+      margin-top: 1.15rem;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(20, 16, 12, 0.72);
+      text-decoration: none;
+      overflow: hidden;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+    .brochure-card:hover {
+      border-color: rgba(251, 191, 36, 0.75);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .brochure-card__copy {
+      padding: 1.15rem 1.25rem;
+    }
+    .brochure-card__pill {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #1a120c;
+      background: linear-gradient(90deg, #fbbf24, #f59e0b);
+      padding: 0.2rem 0.5rem;
+      margin-bottom: 0.55rem;
+    }
+    .brochure-card__title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+      color: var(--gold-hi);
+      font-weight: 400;
+    }
+    .brochure-card__sub {
+      margin: 0.45rem 0 0;
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+    .brochure-card__cta {
+      display: inline-block;
+      margin-top: 0.85rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--champagne);
+    }
+    .brochure-card__art {
+      min-height: 9.5rem;
+      background: #0a0806 center / cover no-repeat;
+    }
+    @media (max-width: 640px) {
+      .brochure-card { grid-template-columns: 1fr; }
+      .brochure-card__art { min-height: 8rem; order: -1; }
+    }
+
     .cmp-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -347,7 +409,7 @@
       <h1 class="brand">Lattice Chat V1.618</h1>
       <p class="by">by FractiAI · for builders who still want to feel the craft</p>
       <p class="lede">
-        AI coding that feels like a conversation — not a warehouse fire of context.
+        AI coding that feels like a conversation.
       </p>
       <p class="support">
         You ask in plain language. A small team behind the chat opens only what matters.
@@ -356,6 +418,7 @@
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20free%20trial&amp;body=Hello%2C%0A%0AI%20would%20like%20a%20free%20trial%20of%20Lattice%20Chat%20V1.618.%0A%0AMy%20email%20%2F%20userid%3A%20%0A%0AThanks.">Email for a free trial</a>
+        <a class="btn btn-ghost" href="/lattice/brochure">Product brochure</a>
         <a class="btn btn-ghost" href="/lattice-chat">Open Lattice Chat</a>
         <a class="btn btn-ghost" href="/ss-vibelandia">Meet the Ark</a>
       </div>
@@ -389,7 +452,47 @@
         A living chat for real coding work on the FractiAI ship. Toggle single-agent calm or a multi-agent team.
         Name your own helpers if you want — or let Lattice choose a Goldilocks mix. History stays on your browser.
       </p>
+      <a class="brochure-card" href="/lattice/brochure">
+        <div class="brochure-card__copy">
+          <span class="brochure-card__pill">Product brochure</span>
+          <p class="brochure-card__title">The Lattice Chat story</p>
+          <p class="brochure-card__sub">
+            Full brochure experience — conversation, craft, keys, and pricing — with the plates that carry the feeling.
+          </p>
+          <span class="brochure-card__cta">Open brochure →</span>
+        </div>
+        <div
+          class="brochure-card__art"
+          style="background-image:url('/interfaces/images/lattice-brochure-conversation.png')"
+          role="img"
+          aria-label="Lattice Chat brochure art — conversation with nested agents"
+        ></div>
+      </a>
     </section>
+
+    <aside class="park-map-orient" aria-labelledby="park-map-orient-h">
+      <h2 class="park-map-orient__head" id="park-map-orient-h">Park map · find your district</h2>
+      <p class="park-map-orient__kick">You are in the Lattice Chat district — here is the whole park.</p>
+      <a class="park-map-orient__frame" href="/interfaces/assets/sonic-singularity-park-map.png" target="_blank" rel="noopener">
+        <img
+          src="/interfaces/assets/sonic-singularity-park-map.png"
+          width="1200"
+          height="900"
+          alt="The Sonic Singularity Park Map — districts for Lattice Chat, Cytological Agents, Sonic Singularity, Carousel of Media, Reno Singularity, Machote Moderno Magazine, and Renovation Realm"
+          loading="lazy"
+          decoding="async"
+        />
+        <p class="park-map-orient__caption">Open full map →</p>
+      </a>
+      <ul class="park-map-orient__legend">
+        <li><a href="/lattice"><strong>Lattice Chat</strong> Build · conversation district</a></li>
+        <li><a href="/listen"><strong>Carousel of Media</strong> Listen · catalog &amp; play</a></li>
+        <li><a href="/"><strong>Sonic Singularity</strong> QUESTFEST top deck</a></li>
+        <li><a href="/ss-vibelandia"><strong>SS Vibelandia</strong> The Ark profile</a></li>
+        <li><a href="/hire-a-goldilocks-valet-concierge"><strong>Reno Singularity</strong> Room service · Puerto Reno</a></li>
+        <li><a href="/get-started"><strong>Renovation Realm</strong> Get Started · board here</a></li>
+      </ul>
+    </aside>
 
     <section id="primer">
       <h2>How to board</h2>

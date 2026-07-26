@@ -1,0 +1,84 @@
+/* Sonic Singularity Park Map — visitor orientation on key surfaces */
+.park-map-orient {
+  margin: 2rem 0;
+  padding: 0;
+}
+.park-map-orient__head {
+  margin: 0 0 0.45rem;
+  font-family: 'Bebas Neue', Impact, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  letter-spacing: 0.06em;
+  color: #fef3c7;
+}
+.park-map-orient__kick {
+  margin: 0 0 0.85rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #f5e6c8;
+  max-width: 36rem;
+}
+.park-map-orient__frame {
+  display: block;
+  margin: 0;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #14100c;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+a.park-map-orient__frame:hover {
+  border-color: rgba(251, 191, 36, 0.75);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.park-map-orient__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+.park-map-orient__caption {
+  margin: 0;
+  padding: 0.55rem 0.9rem 0.7rem;
+  font-size: 0.78rem;
+  color: #a8a29e;
+  border-top: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(10, 8, 6, 0.65);
+}
+.park-map-orient__legend {
+  list-style: none;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.45rem;
+}
+.park-map-orient__legend a {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 6px;
+  background: rgba(20, 16, 12, 0.72);
+  color: #f5e6c8;
+  text-decoration: none;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.park-map-orient__legend a:hover {
+  border-color: #d4af37;
+  color: #fef3c7;
+  text-decoration: none;
+}
+.park-map-orient__legend strong {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d4af37;
+  margin-bottom: 0.15rem;
+}

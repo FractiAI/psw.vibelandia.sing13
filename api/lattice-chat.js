@@ -18,6 +18,8 @@ export const config = {
 
 const DEFAULT_REPO = 'https://github.com/FractiAI/psw.vibelandia.sing13';
 const CREATOR_EMAIL = 'valetpru@gmail.com';
+/** Only creator privilege may attach Cursor cloud agents to the SING13 repo (git-write capable). */
+const SING13_REPO_HOST_RE = /github\.com[/:]FractiAI\/psw\.vibelandia\.sing13(?:\.git)?(?:\/|$|\?|#)/i;
 const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const HISTORY_WINDOW = 16;
 const NAIVE_CORPUS_DUMP_TOKENS = 72_000;
@@ -28,7 +30,8 @@ const PREAMBLE = `You are Lattice Chat V1.618 by FractiAI — the Nested Agent L
 Ground answers in docs/, protocols/, research/, and nested-agent / NSPFRNP rules when relevant.
 Prefer precise, corpus-faithful replies. Do not invent repo paths or protocols.
 Keep self-talk brief. Close substantive answers with → ∞¹³.
-Return a clear text reply (not a PR or code edit unless asked).`;
+Return a clear text reply (not a PR or code edit unless asked).
+Never commit, push, or open a PR against FractiAI/psw.vibelandia.sing13 unless the user explicitly asks.`;
 
 function normalizeNestTopology(raw) {
   const v = String(raw || '')
@@ -1517,6 +1520,25 @@ function normalizeAgentMode(raw) {
   return m === 'plan' ? 'plan' : 'agent';
 }
 
+function isSing13RepoUrl(url) {
+  return SING13_REPO_HOST_RE.test(String(url || '').trim());
+}
+
+/**
+ * Cursor cloud agents clone the repo under the caller's GitHub App grants.
+ * Guests must not attach to SING13 — only creator privilege may (owner API key path).
+ */
+function assertCursorMayWriteSing13(access, repoUrl) {
+  if (!isSing13RepoUrl(repoUrl)) return { ok: true };
+  if (access?.privilege === 'creator') return { ok: true };
+  return {
+    ok: false,
+    code: 'sing13_write_locked',
+    error:
+      'SING13 repository writes are locked to the creator Cursor API key path. Guests: use Claude or Gemini (chat-only), or ask the creator to run Cursor cloud against this repo.',
+  };
+}
+
 function normalizeModelId(raw) {
   const id = String(raw || '')
     .trim();
@@ -1617,6 +1639,16 @@ export default async function handler(req, res) {
         const access = checkLatticeEmailAccess(qEmail || readEmail(req, {}));
         if (!access.ok) {
           return json(res, 401, { error: access.reason, ok: false });
+        }
+        const writeGate = assertCursorMayWriteSing13(access, DEFAULT_REPO);
+        if (!writeGate.ok) {
+          return json(res, 403, {
+            ok: false,
+            error: writeGate.error,
+            code: writeGate.code,
+            privilege: access.privilege,
+            targetRepo: DEFAULT_REPO,
+          });
         }
         const { key: apiKey, source: keySource } = resolveCursorApiKey(req);
         if (!apiKey) {
@@ -1742,6 +1774,17 @@ export default async function handler(req, res) {
     if (/psw\.vibelandia\.cing13/i.test(repoUrl)) {
       console.warn('[lattice-chat] correcting LATTICE_REPO_URL typo cing13 → sing13');
       repoUrl = repoUrl.replace(/psw\.vibelandia\.cing13/gi, 'psw.vibelandia.sing13');
+    }
+    if (provider === 'cursor') {
+      const writeGate = assertCursorMayWriteSing13(access, repoUrl);
+      if (!writeGate.ok) {
+        return json(res, 403, {
+          error: writeGate.error,
+          code: writeGate.code,
+          privilege: access.privilege,
+          provider,
+        });
+      }
     }
     const modelId =
       provider === 'cursor'

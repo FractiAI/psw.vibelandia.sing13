@@ -31,6 +31,8 @@
     { "source": "/lattice/", "destination": "/interfaces/lattice-v1618.html" },
     { "source": "/lattice/brochure", "destination": "/interfaces/lattice-brochure.html" },
     { "source": "/lattice/brochure/", "destination": "/interfaces/lattice-brochure.html" },
+    { "source": "/lattice/learn", "destination": "/interfaces/lattice-learn-more.html" },
+    { "source": "/lattice/learn/", "destination": "/interfaces/lattice-learn-more.html" },
     { "source": "/lattice/proof", "destination": "/interfaces/lattice-token-proof.html" },
     { "source": "/lattice/proof/", "destination": "/interfaces/lattice-token-proof.html" },
     { "source": "/singularities", "destination": "/interfaces/awareness-singularities-one-pager.html" },
@@ -335,6 +337,12 @@
     },
     {
       "source": "/interfaces/lattice-brochure.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/interfaces/lattice-learn-more.html",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]

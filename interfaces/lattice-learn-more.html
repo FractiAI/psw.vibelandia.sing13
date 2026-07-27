@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0806" />
+  <title>Learn more · Lattice Chat V1.618 · FractiAI</title>
+  <meta
+    name="description"
+    content="Lattice Chat V1.618 in plain speak — what it is, how nested agents help, Goldilocks intentions, and links to the papers. FractiAI · SS Vibelandia."
+  />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice/learn" />
+  <meta property="og:title" content="Learn more · Lattice Chat V1.618" />
+  <meta property="og:description" content="Plain speak on Lattice Chat — nested help, the Ark story, and the papers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/lattice/learn" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/images/lattice-artdeco-square.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --text: #f5f0e8;
+      --soft: #d6cfc4;
+      --muted: #a8a29e;
+      --bg: #0a0806;
+      --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+      --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(90% 55% at 50% -10%, rgba(212, 175, 55, 0.14), transparent 55%),
+        radial-gradient(70% 40% at 100% 0%, rgba(245, 230, 200, 0.06), transparent 50%),
+        linear-gradient(165deg, #1a120c 0%, var(--bg) 42%, #050403 100%);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .wrap {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 3.5rem;
+    }
+    .topnav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.55rem;
+      align-items: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+      color: var(--muted);
+    }
+    .topnav a { color: var(--champagne); text-decoration: none; }
+    .topnav a:hover { color: var(--gold-hi); text-decoration: underline; }
+    .topnav .dot { opacity: 0.5; }
+    .topnav .here { color: var(--gold); }
+    .eyebrow {
+      margin: 0 0 0.4rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 7vw, 2.75rem);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--gold-hi);
+      line-height: 1.1;
+    }
+    .lede {
+      margin: 0.85rem 0 0;
+      font-size: 1.12rem;
+      color: var(--soft);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.25rem 0 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1rem;
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: var(--champagne);
+      background: transparent;
+    }
+    .btn:hover { border-color: var(--gold); color: var(--gold-hi); text-decoration: none; }
+    .btn-primary {
+      border-color: transparent;
+      color: #1a120c;
+      background: linear-gradient(90deg, #c9a227, #8a6a14);
+    }
+    .btn-primary:hover { color: #0a0806; filter: brightness(1.06); }
+    section {
+      margin-top: 2.25rem;
+      padding-top: 0.25rem;
+    }
+    h2 {
+      margin: 0 0 0.55rem;
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--gold-hi);
+      letter-spacing: 0.03em;
+    }
+    p { margin: 0 0 0.85rem; color: var(--soft); }
+    p strong { color: var(--text); }
+    .rule {
+      margin: 1.75rem 0 0;
+      border: 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.28);
+    }
+    .paper-list {
+      list-style: none;
+      margin: 0.85rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.65rem;
+    }
+    .footer {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .footer a { color: var(--champagne); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="topnav" aria-label="Lattice">
+      <a href="/">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/lattice">Lattice</a><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Learn more</span><span class="dot" aria-hidden="true">·</span>
+      <a href="/lattice/brochure">Brochure</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/lattice-chat">Chat</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/ss-vibelandia">The Ark</a>
+    </nav>
+
+    <p class="eyebrow">Lattice Chat V1.618 · plain speak</p>
+    <h1>Learn more about Lattice Chat</h1>
+    <p class="lede">
+      You talk. A small, smart crew helps — only opening what matters.
+      Built for guests of <a href="/ss-vibelandia" style="color:var(--champagne);font-weight:700;">SS Vibelandia</a>,
+      FractiAI’s 24×365 Ark of the Intelligence Age.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/lattice-chat">Open Lattice Chat</a>
+      <a class="btn" href="/lattice">Back to Lattice</a>
+      <a class="btn" href="/lattice/brochure">Product brochure</a>
+    </div>
+
+    <section aria-labelledby="what-h">
+      <h2 id="what-h">What it is</h2>
+      <p>
+        Lattice Chat is a coding chat that feels human. You write a normal ask.
+        Behind the curtain, helpers open only the files and facts that fit the job —
+        not the whole project every turn.
+      </p>
+      <p>
+        You can keep it calm (<strong>Single</strong>), name a small team (<strong>Multi</strong>),
+        or let <strong>Goldilocks</strong> pick a mix that is not too much and not too little.
+      </p>
+    </section>
+
+    <section aria-labelledby="steward-h">
+      <h2 id="steward-h">Your Goldilocks steward</h2>
+      <p>
+        On SS Vibelandia, Lattice is the latest steward: smart, efficient, and careful.
+        It helps with craft, curiosity, building, and care —
+        <strong>within Goldilocks</strong>. Intentions matter.
+        It will not help with malice, harm, or ill will. That is house rule, not a slogan.
+      </p>
+    </section>
+
+    <section aria-labelledby="keys-h">
+      <h2 id="keys-h">Your keys stay with you</h2>
+      <p>
+        Bring a Cursor, Claude, or Gemini key. It stays in your browser on this device.
+        Boarding is old-school: email a human for a trial, then sign in.
+        We do not need your GitHub password.
+      </p>
+    </section>
+
+    <section aria-labelledby="ark-h">
+      <h2 id="ark-h">The Ark story (in one breath)</h2>
+      <p>
+        SS Vibelandia is our Noah’s Ark picture for this work:
+        leave the noisy “dump everything” tools behind, and carry craft forward
+        with nested help that stays honest. Metaphor + product — not a literal ship you book.
+      </p>
+      <p>
+        Deeper story:
+        <a href="/whitepaper/lattice-noahs-ark-metaphor-2026-07" style="color:var(--champagne);font-weight:600;">Noah’s Ark metaphor paper →</a>
+      </p>
+    </section>
+
+    <hr class="rule" />
+
+    <section aria-labelledby="papers-h">
+      <h2 id="papers-h">Papers worth one click</h2>
+      <p>Short doors into the long form. Start anywhere. Skip what you do not need.</p>
+      <ul class="paper-list">
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/omniversal-nested-agent-lattice">
+            <span class="deck-paper-card__pill deck-paper-card__pill--featured">Core</span>
+            <span class="deck-paper-card__title">Nested Agent Lattice</span>
+            <span class="deck-paper-card__sub">How a parent steward and small nested helpers work together — without a peer mesh free-for-all.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-holographic-operators">
+            <span class="deck-paper-card__pill">Theory</span>
+            <span class="deck-paper-card__title">Holographic Operators</span>
+            <span class="deck-paper-card__sub">Why conversation can act like wiring — with reproducible experiments, not vibes alone.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/lattice-noahs-ark-metaphor-2026-07">
+            <span class="deck-paper-card__pill">Story</span>
+            <span class="deck-paper-card__title">Noah’s Ark metaphor · Lattice</span>
+            <span class="deck-paper-card__sub">The Ark picture for SING / Lattice — what we keep, what we leave behind.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/lattice-token-reduction-proof-2026-07">
+            <span class="deck-paper-card__pill">Method</span>
+            <span class="deck-paper-card__title">Token load proof</span>
+            <span class="deck-paper-card__sub">Pointers over paste — how we estimate context load. Also see the builders page.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-egs-planck-scale-harmonic">
+            <span class="deck-paper-card__pill">EGS</span>
+            <span class="deck-paper-card__title">Planck–1.6 / EGS bridge</span>
+            <span class="deck-paper-card__sub">The φ ≈ 1.618 scale key used as architecture — honesty boundary included.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/omniversal-goldilocks-rideshare">
+            <span class="deck-paper-card__pill">Goldilocks</span>
+            <span class="deck-paper-card__title">Goldilocks rideshare protocol</span>
+            <span class="deck-paper-card__sub">Not too much, not too little — routing help in the Goldilocks band.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/coherence-plain-speak">
+            <span class="deck-paper-card__pill">Honesty</span>
+            <span class="deck-paper-card__title">Coherence · plain speak</span>
+            <span class="deck-paper-card__sub">What is real on this ship — claim tiers, not hype.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="more-h">
+      <h2 id="more-h">Also useful</h2>
+      <ul class="paper-list">
+        <li>
+          <a class="deck-paper-card" href="/lattice/proof">
+            <span class="deck-paper-card__pill">Builders</span>
+            <span class="deck-paper-card__title">Method &amp; receipts</span>
+            <span class="deck-paper-card__sub">Same ask, two loading styles — dump vs Lattice. Numbers and honesty notes.</span>
+            <span class="deck-paper-card__cta">Open builders page →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/interfaces/nesting/nest-lattice-chat.html">
+            <span class="deck-paper-card__pill">Nest</span>
+            <span class="deck-paper-card__title">Layer guide · Lattice Chat</span>
+            <span class="deck-paper-card__sub">Where Lattice sits on the nesting ladder — one-screen plain talk.</span>
+            <span class="deck-paper-card__cta">Open nest guide →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/papers">
+            <span class="deck-paper-card__pill">Library</span>
+            <span class="deck-paper-card__title">Full paper catalog</span>
+            <span class="deck-paper-card__sub">Search the quiet library when curiosity outruns this short list.</span>
+            <span class="deck-paper-card__cta">Open catalog →</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <p class="footer">
+      Lattice Chat V1.618 · FractiAI ·
+      <a href="/lattice">Landing</a> ·
+      <a href="/lattice-chat">Chat</a> ·
+      <a href="/ss-vibelandia">The Ark</a>
+      · → ∞¹³
+    </p>
+  </div>
+</body>
+</html>

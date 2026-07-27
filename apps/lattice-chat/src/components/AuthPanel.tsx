@@ -112,7 +112,7 @@ export function AuthPanel({
     >
       <form className="auth-form" onSubmit={onSignIn}>
         <p className="auth-lead">
-          Enter your email / userid and an API key for Cursor, Claude, or Gemini Antigravity.
+          Board with your email and bring a key to the bridge — Cursor, Claude, or Gemini.
           Keys stay on this device and are proxied per request — never stored on our server.
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
@@ -149,7 +149,7 @@ export function AuthPanel({
         />
         <p className="auth-key-hint">{meta.honesty}</p>
         <button type="submit" className="auth-submit">
-          Sign in
+          Board · Sign in
         </button>
       </form>
       {flash ? (

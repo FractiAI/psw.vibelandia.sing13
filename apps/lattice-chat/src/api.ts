@@ -77,29 +77,29 @@ class LatticeHardFail extends Error {
   }
 }
 
-/** Live status copy so the wait feels progressive, not frozen. */
+/** Live status copy — ship steward voice, progressive wait. */
 export function latticeProgressHint(elapsedSec: number, phase: string): string {
   const provider = useLatticeStore.getState().provider || 'cursor';
   const label =
-    provider === 'claude' ? 'Claude' : provider === 'gemini' ? 'Antigravity' : 'Lattice cloud agent';
+    provider === 'claude' ? 'Claude' : provider === 'gemini' ? 'Antigravity' : 'your steward';
 
   if (phase === 'recovering') {
     if (provider === 'claude') {
       return 'Claude has no separate cloud run to recover — wait on the live stream or resend.';
     }
-    if (elapsedSec < 60) return `Looking up the active ${label} run…`;
-    return `${label} still running — attaching when it finishes…`;
+    if (elapsedSec < 60) return `Finding the active run for ${label}…`;
+    return `${label} still on deck — attaching when ready…`;
   }
   if (phase === 'stuck') {
     return provider === 'claude'
-      ? 'Still waiting on Claude stream — keep this tab open.'
-      : 'Still waiting — tap Check for reply (do not re-paste the prompt).';
+      ? 'Still waiting on Claude — keep this tab open.'
+      : 'Still preparing — tap Check for reply (do not re-paste).';
   }
-  if (elapsedSec < 8) return `Starting ${label}…`;
-  if (elapsedSec < 25) return `${label} is up — stream of thought opening…`;
-  if (elapsedSec < 50) return 'Follow the live thought stream — tools and reasoning below…';
-  if (elapsedSec < 90) return `Still working — ${label} auto-checks when needed…`;
-  if (elapsedSec < 150) return 'Long run — keep this tab open; Check for reply is safe';
+  if (elapsedSec < 8) return `On deck — starting ${label}…`;
+  if (elapsedSec < 25) return 'Preparing — opening the thought stream…';
+  if (elapsedSec < 50) return 'Your steward is working — follow tools and reasoning below…';
+  if (elapsedSec < 90) return `Still on it — ${label} will auto-check when needed…`;
+  if (elapsedSec < 150) return 'Longer run — keep this tab open; Check for reply is safe';
   return 'Taking longer than usual — Check for reply, don’t re-enter the prompt';
 }
 
@@ -111,9 +111,9 @@ export function latticeProgressStep(elapsedSec: number): number {
 }
 
 export const LATTICE_PROGRESS_STEPS = [
-  'Start',
-  'Repo',
-  'Work',
+  'On deck',
+  'Preparing',
+  'Working',
   'Reply',
 ] as const;
 

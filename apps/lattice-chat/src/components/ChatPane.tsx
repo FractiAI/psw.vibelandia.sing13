@@ -222,7 +222,7 @@ export function ChatPane({
             </button>
             <h1 className="chat-title">
               <span className="chat-wordmark">Lattice Chat V1.618</span>
-              <span className="chat-by">by FractiAI</span>
+              <span className="chat-by">SS Vibelandia · Goldilocks steward</span>
             </h1>
             <button
               type="button"
@@ -239,11 +239,13 @@ export function ChatPane({
           ) : null}
         </div>
         <p className="chat-sub">
-          Live stream of thought · measured token balances (before→after) ·{' '}
-          <a href="/lattice">What is Lattice?</a>
+          Your Goldilocks steward on the Ark ·{' '}
+          <a href="/lattice/learn">Learn more</a>
+          {' · '}
+          <a href="/ss-vibelandia">Meet the ship</a>
         </p>
-        <p className="chat-build-stamp" data-lattice-build="measured-stream-v4-markdown">
-          Build: measured tokens · live thought · Markdown · Cursor · Claude · Gemini
+        <p className="chat-build-stamp" data-lattice-build="steward-lounge-v1">
+          Within Goldilocks · intentions matter · craft, curiosity, care
         </p>
       </header>
 
@@ -272,33 +274,60 @@ export function ChatPane({
         onScroll={onMessageScroll}
       >
         {!signedIn ? (
-          <div className="auth-stage">
-            <p className="empty-lead">Sign in to use Lattice</p>
+          <div className="auth-stage empty-state">
+            <p className="empty-eyebrow">SS Vibelandia · 24×365</p>
+            <p className="empty-lead">Welcome aboard</p>
             <p className="empty-hint">
-              Sign in with your email / userid and Cursor API key together. The key stays on this
-              device and is proxied per request — never stored on our server.
+              Lattice is your Goldilocks steward — smart, efficient help for craft, curiosity, and
+              care. Within Goldilocks. Intentions matter: we do not help with malice or ill will.
+            </p>
+            <p className="empty-hint empty-hint--bridge">
+              Board with your email and bring your own key to the bridge (Cursor, Claude, or
+              Gemini). The key stays on this device.
             </p>
             <AuthPanel
               onSignedIn={() => {
                 void loadLatticeModels();
               }}
             />
+            <div className="empty-cta-row">
+              <a className="empty-cta" href="/lattice/learn">
+                Learn more
+              </a>
+              <a className="empty-cta empty-cta--ghost" href="/ss-vibelandia">
+                Meet the Ark
+              </a>
+            </div>
           </div>
         ) : !hasEdgeKey ? (
           <div className="empty-state">
-            <p className="empty-lead">Add your Cursor API key</p>
+            <p className="empty-eyebrow">Bridge access</p>
+            <p className="empty-lead">Bring your key to the bridge</p>
             <p className="empty-hint">
-              Required for cloud agents. Saved only in this browser (`user_cursor_api_key`).
+              Paste a Cursor, Claude, or Gemini key for this device. We never store it on our
+              server — Fair Exchange, your edge.
             </p>
             <KeySettingsPanel onSaved={() => void loadLatticeModels()} />
           </div>
         ) : !thread || thread.messages.length === 0 ? (
           <div className="empty-state">
-            <p className="empty-lead">You’re signed in — ask anything.</p>
+            <p className="empty-eyebrow">Lounge · steward ready</p>
+            <p className="empty-lead">Welcome aboard — how may we help?</p>
             <p className="empty-hint">
-              Compact controls below: provider · mode · nest · model. Expand Agents when you want
-              an explicit roster; otherwise Goldilocks auto-picks bands.
+              Ask in plain language. Lattice opens only what matters. Advanced options stay under
+              the hatch below when you want them.
             </p>
+            <p className="empty-intention">
+              Within Goldilocks · intentions matter — craft, curiosity, and care; never malice.
+            </p>
+            <div className="empty-cta-row">
+              <a className="empty-cta" href="/lattice/learn">
+                Learn more
+              </a>
+              <a className="empty-cta empty-cta--ghost" href="/lattice/brochure">
+                Brochure
+              </a>
+            </div>
           </div>
         ) : (
           thread.messages.map((m) => (
@@ -311,8 +340,8 @@ export function ChatPane({
                 {m.role === 'user'
                   ? 'You'
                   : m.mode || m.model
-                    ? `Lattice · ${m.mode || 'agent'}${m.model ? ` · ${m.model}` : ''}`
-                    : 'Lattice'}
+                    ? `Steward · ${m.mode || 'agent'}${m.model ? ` · ${m.model}` : ''}`
+                    : 'Steward'}
               </span>
               {m.role === 'assistant' && m.transcript?.length ? (
                 <AgentTranscript items={m.transcript} />
@@ -334,7 +363,7 @@ export function ChatPane({
             className={`bubble bubble-assistant thinking thought-stream-panel${sendPhase === 'stuck' ? ' thinking--stuck' : ''}`}
           >
             <div className="thought-stream-head">
-              <span className="bubble-role">Stream of thought</span>
+              <span className="bubble-role">Your steward is thinking</span>
               <span className="thought-stream-timer">
                 {mm}:{ss}
                 {sendPhase === 'stuck' ? ' · may still finish' : ''}
@@ -359,7 +388,7 @@ export function ChatPane({
                   ))}
                 </div>
                 <p className="working-stream-hint">
-                  Waiting for live thought / tool events from the cloud agent…
+                  Waiting for live thought from your steward…
                 </p>
               </div>
             )}
@@ -373,7 +402,7 @@ export function ChatPane({
                 {checking ? 'Checking…' : 'Check for reply'}
               </button>
               <span className="working-hint">
-                Don’t re-paste — this attaches to the active cloud run.
+                Don’t re-paste — this attaches to the active run.
               </span>
             </div>
           </article>
@@ -413,39 +442,41 @@ export function ChatPane({
         </p>
       ) : null}
 
-      <form className="composer" onSubmit={onSubmit}>
-        <ComposerOptions
-          provider={provider}
-          mode={agentMode}
-          nestTopology={nestTopology}
-          agentRoster={agentRoster}
-          modelId={modelId}
-          models={models}
-          disabled={sending || !signedIn || !hasEdgeKey}
-          onProviderChange={setProvider}
-          onModeChange={setAgentMode}
-          onNestChange={setNestTopology}
-          onRosterChange={setAgentRoster}
-          onModelChange={setModelId}
-        />
+      <form className={`composer${signedIn && hasEdgeKey ? '' : ' composer--boarding'}`} onSubmit={onSubmit}>
+        {signedIn && hasEdgeKey ? (
+          <ComposerOptions
+            provider={provider}
+            mode={agentMode}
+            nestTopology={nestTopology}
+            agentRoster={agentRoster}
+            modelId={modelId}
+            models={models}
+            disabled={sending}
+            onProviderChange={setProvider}
+            onModeChange={setAgentMode}
+            onNestChange={setNestTopology}
+            onRosterChange={setAgentRoster}
+            onModelChange={setModelId}
+          />
+        ) : null}
         <label className="sr-only" htmlFor="lattice-composer">
           Message
         </label>
         <textarea
           id="lattice-composer"
           ref={inputRef}
-          rows={2}
+          rows={3}
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           onKeyDown={onKeyDown}
           placeholder={
             showWorking
-              ? 'Waiting on Lattice… use Check for reply instead of re-pasting'
+              ? 'Your steward is working… use Check for reply instead of re-pasting'
               : !signedIn
-                ? 'Sign in above to chat…'
+                ? 'Welcome aboard — sign in above to chat…'
                 : !hasEdgeKey
-                  ? 'Add your Cursor API key above…'
-                  : 'Message Lattice…'
+                  ? 'Bring your key to the bridge above…'
+                  : 'Message your Goldilocks steward…'
           }
           disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
         />

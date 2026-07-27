@@ -86,9 +86,9 @@ export function KeySettingsPanel({
       aria-label="Provider API keys"
     >
       <p className="auth-lead">
-        Paste API keys for the providers you use. Keys stay in this browser and are sent only
-        with each turn — we do not store them on the server. Toggle the active provider in the
-        composer.
+        Bring your key to the bridge — Cursor, Claude, or Gemini. Keys stay in this browser and
+        are sent only with each turn — we do not store them on the server. Toggle the active
+        provider under Advanced.
       </p>
       <div className="provider-tabs" role="tablist" aria-label="Active provider">
         {LATTICE_PROVIDERS.map((p) => (

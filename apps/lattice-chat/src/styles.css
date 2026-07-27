@@ -180,6 +180,25 @@ body {
   max-width: 11rem;
 }
 
+.signed-in-out {
+  appearance: none;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: transparent;
+  color: var(--brand-champagne);
+  font: 600 0.68rem/1 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.55rem;
+  min-height: 2rem;
+  cursor: pointer;
+}
+
+.signed-in-out:hover {
+  border-color: var(--brand-gold);
+  color: var(--brand-gold-hi);
+  background: rgba(212, 175, 55, 0.1);
+}
+
 .auth-key-block {
   margin-top: 0.85rem;
   padding-top: 0.85rem;
@@ -285,15 +304,23 @@ body {
   width: min(28rem, 100%);
   padding: 1rem 0.5rem 1.5rem;
   animation: fade-up 420ms ease both;
+  text-align: center;
 }
 
-.auth-stage .empty-lead {
+.auth-stage .empty-lead,
+.auth-stage .empty-hint,
+.auth-stage .empty-eyebrow,
+.auth-stage .empty-cta-row {
   text-align: center;
 }
 
 .auth-stage .empty-hint {
-  text-align: center;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.55rem;
+}
+
+.auth-stage .auth-panel {
+  text-align: left;
+  margin-top: 0.85rem;
 }
 
 .auth-panel {
@@ -615,7 +642,9 @@ body {
 }
 
 .chat-header {
-  padding: 0.7rem 1.25rem 0.45rem;
+  padding: calc(0.7rem + env(safe-area-inset-top, 0px)) 1.25rem 0.45rem;
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
   border-bottom: 1px solid rgba(212, 175, 55, 0.12);
 }
 
@@ -694,6 +723,15 @@ body {
   animation: fade-up 480ms ease both;
 }
 
+.empty-eyebrow {
+  margin: 0 0 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
 .empty-lead {
   margin: 0;
   font-family: var(--font-display);
@@ -709,16 +747,46 @@ body {
   line-height: 1.45;
 }
 
+.empty-hint--bridge {
+  margin-top: 0.45rem;
+}
+
+.empty-intention {
+  margin: 1rem auto 0;
+  max-width: 24rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  background: rgba(212, 175, 55, 0.07);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--brand-champagne);
+}
+
+.empty-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.15rem;
+}
+
 .empty-cta {
   display: inline-block;
-  margin-top: 1.1rem;
+  margin-top: 0;
   padding: 0.65rem 1rem;
+  min-height: 2.5rem;
   border: 1px solid rgba(212, 175, 55, 0.5);
   color: var(--brand-gold-hi);
   text-decoration: none;
   font: 700 0.82rem/1.2 var(--font-body);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.empty-cta--ghost {
+  border-color: rgba(212, 175, 55, 0.28);
+  color: var(--brand-champagne);
+  font-weight: 600;
 }
 
 .empty-cta:hover {
@@ -782,7 +850,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
-  min-height: min(58vh, 28rem);
+  min-height: min(42vh, 18rem);
   border: 1px solid rgba(212, 175, 55, 0.28);
   background: linear-gradient(180deg, rgba(26, 18, 12, 0.55), rgba(10, 8, 6, 0.35));
   padding: 0.75rem 0.9rem 0.85rem;
@@ -1301,9 +1369,15 @@ body {
     'input send';
   gap: 0.4rem 0.55rem;
   align-items: end;
-  padding: 0.5rem 1.25rem 0.7rem;
+  padding: 0.5rem 1.25rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
   border-top: 1px solid rgba(212, 175, 55, 0.14);
   background: rgba(10, 8, 6, 0.55);
+}
+
+.composer--boarding {
+  grid-template-areas: 'input send';
 }
 
 .composer-options {
@@ -1312,6 +1386,51 @@ body {
   flex-direction: column;
   gap: 0.35rem;
   min-width: 0;
+}
+
+.composer-advanced-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  min-width: 0;
+}
+
+.composer-advanced-toggle {
+  appearance: none;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(6, 5, 4, 0.65);
+  color: var(--brand-champagne);
+  font: 700 0.68rem/1 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.7rem;
+  min-height: 2.35rem;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.composer-advanced-toggle.is-open,
+.composer-advanced-toggle:hover:not(:disabled) {
+  border-color: rgba(212, 175, 55, 0.55);
+  color: var(--brand-gold-hi);
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.composer-advanced-toggle:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.composer-summary {
+  margin: 0;
+  flex: 1 1 10rem;
+  min-width: 0;
+  font-size: 0.72rem;
+  color: var(--brand-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .composer-options-bar {
@@ -1332,12 +1451,12 @@ body {
   border: 0;
   background: transparent;
   color: var(--brand-muted);
-  font: 600 0.65rem/1 var(--font-body);
+  font: 600 0.68rem/1 var(--font-body);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 0.28rem 0.48rem;
+  padding: 0.45rem 0.55rem;
   cursor: pointer;
-  min-height: auto;
+  min-height: 2.35rem;
 }
 
 .composer-mode button.is-active {
@@ -1359,10 +1478,11 @@ body {
   border: 1px solid rgba(212, 175, 55, 0.28);
   background: rgba(6, 5, 4, 0.65);
   color: var(--brand-muted);
-  font: 600 0.65rem/1 var(--font-body);
+  font: 600 0.68rem/1 var(--font-body);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 0.28rem 0.5rem;
+  padding: 0.45rem 0.55rem;
+  min-height: 2.35rem;
   cursor: pointer;
 }
 
@@ -1477,13 +1597,14 @@ body {
 .composer textarea {
   grid-area: input;
   resize: none;
-  min-height: 2.6rem;
-  max-height: 8rem;
-  padding: 0.55rem 0.75rem;
+  width: 100%;
+  min-height: 3.4rem;
+  max-height: 10rem;
+  padding: 0.7rem 0.85rem;
   border: 1px solid rgba(212, 175, 55, 0.28);
   background: rgba(6, 5, 4, 0.85);
   color: var(--brand-text);
-  font: 400 0.92rem/1.4 var(--font-body);
+  font: 400 0.95rem/1.45 var(--font-body);
   outline: none;
 }
 
@@ -1569,13 +1690,33 @@ body {
   }
 
   .chat-header {
-    padding: 0.85rem 1rem 0.65rem;
+    padding: calc(0.75rem + env(safe-area-inset-top, 0px)) 1rem 0.55rem;
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
   }
 
-  .message-scroll,
+  .message-scroll {
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+  }
+
   .composer {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .thought-stream-panel {
+    min-height: min(36vh, 14rem);
+  }
+
+  .working-meter__step {
+    padding: 0.4rem 0.55rem;
+    min-height: 2.1rem;
+  }
+
+  .composer > button[type='submit'] {
+    min-height: 3.4rem;
   }
 }
 

@@ -1,12 +1,20 @@
 import { useState } from 'react';
 import type { TranscriptItem } from '@/types';
 
-function ThinkingBlock({ text, durationMs }: { text: string; durationMs?: number }) {
-  const [open, setOpen] = useState(false);
+function ThinkingBlock({
+  text,
+  durationMs,
+  defaultOpen = true,
+}: {
+  text: string;
+  durationMs?: number;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
   const label =
     typeof durationMs === 'number' && durationMs > 0
-      ? `Thought for ${Math.max(1, Math.round(durationMs / 1000))}s`
-      : 'Thinking';
+      ? `Stream of thought · ${Math.max(1, Math.round(durationMs / 1000))}s`
+      : 'Stream of thought';
 
   return (
     <div className="cx-block cx-thinking">
@@ -80,15 +88,32 @@ function ToolCallBlock({
   );
 }
 
-export function AgentTranscript({ items }: { items: TranscriptItem[] }) {
+export function AgentTranscript({
+  items,
+  live = false,
+}: {
+  items: TranscriptItem[];
+  live?: boolean;
+}) {
   if (!items.length) return null;
 
   return (
-    <div className="cx-transcript" aria-label="Agent output">
+    <div
+      className={`cx-transcript${live ? ' cx-transcript--live' : ''}`}
+      aria-label={live ? 'Live stream of thought' : 'Agent output'}
+      aria-live={live ? 'polite' : undefined}
+    >
       {items.map((item, i) => {
         const key = `${item.type}-${i}`;
         if (item.type === 'thinking') {
-          return <ThinkingBlock key={key} text={item.text} durationMs={item.durationMs} />;
+          return (
+            <ThinkingBlock
+              key={key}
+              text={item.text}
+              durationMs={item.durationMs}
+              defaultOpen={true}
+            />
+          );
         }
         if (item.type === 'tool_call') {
           return (

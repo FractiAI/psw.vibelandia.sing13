@@ -32,6 +32,7 @@ export function ChatPane({
   const sendPhase = useLatticeStore((s) => s.sendPhase);
   const statusHint = useLatticeStore((s) => s.statusHint);
   const pending = useLatticeStore((s) => s.pending);
+  const liveTranscript = useLatticeStore((s) => s.liveTranscript);
   const error = useLatticeStore((s) => s.error);
   const agentMode = useLatticeStore((s) => s.agentMode);
   const modelId = useLatticeStore((s) => s.modelId);
@@ -132,7 +133,7 @@ export function ChatPane({
     const el = scrollRef.current;
     if (!el) return;
     el.scrollTop = el.scrollHeight;
-  }, [thread?.messages.length, showWorking, signedIn, activeThreadId]);
+  }, [thread?.messages.length, showWorking, signedIn, activeThreadId, liveTranscript.length]);
 
   function onMessageScroll() {
     const el = scrollRef.current;
@@ -340,6 +341,13 @@ export function ChatPane({
               <span className="working-pulse" aria-hidden="true" />
               {workingLabel}
             </div>
+            {liveTranscript.length ? (
+              <AgentTranscript items={liveTranscript} live />
+            ) : (
+              <p className="working-stream-hint">
+                Stream of thought will appear here as the cloud agent thinks and uses tools.
+              </p>
+            )}
             <p className="working-timer">
               Elapsed {mm}:{ss}
               {sendPhase === 'stuck' ? ' · may still finish' : ' · typically 1–3 min'}

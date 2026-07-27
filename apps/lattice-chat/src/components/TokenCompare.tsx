@@ -15,6 +15,8 @@ export function estimateTokenCompare(args: {
   reply?: string;
   resumed?: boolean;
   usageTokens?: number | null;
+  balanceBefore?: number | null;
+  balanceAfter?: number | null;
   nestTopology?: 'single' | 'multi' | 'goldilocks';
 }): TokenCompare {
   const history = Array.isArray(args.history) ? args.history.slice(-16) : [];
@@ -29,47 +31,89 @@ export function estimateTokenCompare(args: {
   const resumeDiscount = args.resumed ? Math.floor(histTok * 0.55) : 0;
   const nestOverhead =
     args.nestTopology === 'single' ? 0 : LATTICE_NEST_OVERHEAD_TOKENS;
-  let latticeTokens =
-    histTok +
-    msgTok +
-    LATTICE_RAG_POINTER_TOKENS +
-    nestOverhead +
-    replyTok -
-    resumeDiscount;
-  if (typeof args.usageTokens === 'number' && args.usageTokens > 0) {
-    latticeTokens = Math.min(latticeTokens, args.usageTokens);
-  }
-  latticeTokens = Math.max(msgTok + 200, Math.round(latticeTokens));
+  const estimatedLatticeTokens = Math.max(
+    msgTok + 200,
+    Math.round(
+      histTok + msgTok + LATTICE_RAG_POINTER_TOKENS + nestOverhead + replyTok - resumeDiscount,
+    ),
+  );
+
+  const balanceBefore =
+    typeof args.balanceBefore === 'number' ? args.balanceBefore : null;
+  const balanceAfter = typeof args.balanceAfter === 'number' ? args.balanceAfter : null;
+  const balanceDelta =
+    balanceBefore != null && balanceAfter != null
+      ? Math.max(0, Math.round(balanceAfter - balanceBefore))
+      : null;
+  const measuredTokens =
+    balanceDelta != null && balanceDelta > 0
+      ? balanceDelta
+      : typeof args.usageTokens === 'number' && args.usageTokens > 0
+        ? Math.round(args.usageTokens)
+        : null;
+
+  const latticeTokens = measuredTokens != null ? measuredTokens : estimatedLatticeTokens;
   const savedTokens = Math.max(0, naiveTokens - latticeTokens);
   const savedPercent = naiveTokens > 0 ? Math.round((savedTokens / naiveTokens) * 1000) / 10 : 0;
+  const measured = measuredTokens != null;
+
   return {
     naiveTokens,
     latticeTokens,
+    estimatedLatticeTokens,
+    measuredTokens,
+    balanceBefore,
+    balanceAfter,
+    balanceDelta,
     savedTokens,
     savedPercent,
     standardLabel: 'Standard agentic (est.)',
-    latticeLabel:
-      args.nestTopology === 'single' ? 'Lattice single (est.)' : 'Lattice (est.)',
-    method: 'Estimate chars÷4 · standard corpus dump vs Lattice RAG pointers',
+    latticeLabel: measured
+      ? 'Lattice (measured)'
+      : args.nestTopology === 'single'
+        ? 'Lattice single (est.)'
+        : 'Lattice (est.)',
+    method: measured
+      ? balanceBefore != null && balanceAfter != null
+        ? 'Measured from provider token balances (before → after delta)'
+        : 'Measured from provider run usage'
+      : 'Estimate chars÷4 · standard corpus dump vs Lattice RAG pointers',
   };
 }
 
 export function TokenCompareFooter({ tokens }: { tokens: TokenCompare }) {
   const standard = tokens.standardLabel || 'Standard agentic (est.)';
   const lattice = tokens.latticeLabel || 'Lattice (est.)';
+  const measured = typeof tokens.measuredTokens === 'number' && tokens.measuredTokens > 0;
+  const hasBalances =
+    typeof tokens.balanceBefore === 'number' && typeof tokens.balanceAfter === 'number';
+
   return (
-    <div className="token-compare" aria-label="Token estimate">
+    <div className="token-compare" aria-label={measured ? 'Token usage' : 'Token estimate'}>
       <p className="token-compare-row">
         <span className="token-compare-label">Tokens</span>
         <span className="token-compare-text">
           {standard} ~{tokens.naiveTokens.toLocaleString()}
           <span className="token-compare-dot">·</span>
-          {lattice} ~{tokens.latticeTokens.toLocaleString()}
+          {lattice} {measured ? '' : '~'}
+          {tokens.latticeTokens.toLocaleString()}
         </span>
       </p>
+      {hasBalances ? (
+        <p className="token-compare-row">
+          <span className="token-compare-label">Balance</span>
+          <span className="token-compare-text">
+            {tokens.balanceBefore!.toLocaleString()} → {tokens.balanceAfter!.toLocaleString()}
+            <span className="token-compare-dot">·</span>
+            used {(tokens.balanceDelta ?? tokens.latticeTokens).toLocaleString()}
+          </span>
+        </p>
+      ) : null}
       <p className="token-compare-honesty">
-        Structural estimate only (chars÷4 · not a vendor bill). Method:{' '}
-        <a href="/lattice/proof">nested + pointer context load</a>.
+        {measured
+          ? 'Actual provider balance/usage for this run (not an estimate). Standard column remains a structural context-load comparison. '
+          : 'Structural estimate only (chars÷4 · not a vendor bill). '}
+        Method: <a href="/lattice/proof">nested + pointer context load</a>.
       </p>
     </div>
   );

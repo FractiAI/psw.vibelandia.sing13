@@ -84,8 +84,8 @@ export function latticeProgressHint(elapsedSec: number, phase: string): string {
     return 'Still waiting — tap Check for reply (do not re-paste the prompt).';
   }
   if (elapsedSec < 8) return 'Starting Lattice cloud agent…';
-  if (elapsedSec < 25) return 'Cloud agent is up — reading the repo…';
-  if (elapsedSec < 50) return 'Working… tools and reasoning often take 1–3 min';
+  if (elapsedSec < 25) return 'Cloud agent is up — stream of thought opening…';
+  if (elapsedSec < 50) return 'Follow the live thought stream — tools and reasoning below…';
   if (elapsedSec < 90) return 'Still working — Lattice auto-checks for a finished reply…';
   if (elapsedSec < 150) return 'Long cloud run — keep this tab open; Check for reply is safe';
   return 'Taking longer than usual — Check for reply, don’t re-enter the prompt';
@@ -141,15 +141,135 @@ function latticeHeaders(email: string, provider?: LatticeProvider): HeadersInit 
   return headers;
 }
 
+function parseSseChunk(
+  buffer: string,
+  onEvent: (event: string, data: unknown) => void,
+): string {
+  const parts = buffer.split('\n\n');
+  const rest = parts.pop() ?? '';
+  for (const part of parts) {
+    const lines = part.split('\n');
+    let event = 'message';
+    const dataLines: string[] = [];
+    for (const line of lines) {
+      if (line.startsWith('event:')) event = line.slice(6).trim();
+      else if (line.startsWith('data:')) dataLines.push(line.slice(5).trim());
+    }
+    if (!dataLines.length) continue;
+    const raw = dataLines.join('\n');
+    try {
+      onEvent(event, JSON.parse(raw));
+    } catch {
+      onEvent(event, raw);
+    }
+  }
+  return rest;
+}
+
 async function postLattice(
   body: Record<string, unknown>,
   email: string,
 ): Promise<{ res: Response; data: LatticeResponse }> {
+  const provider = useLatticeStore.getState().provider || 'cursor';
+  const wantStream = provider === 'cursor' && body.stream !== false;
+  const headers = {
+    ...(latticeHeaders(email) as Record<string, string>),
+    ...(wantStream ? { Accept: 'text/event-stream' } : {}),
+  };
   const res = await fetch('/api/lattice-chat', {
     method: 'POST',
-    headers: latticeHeaders(email),
-    body: JSON.stringify(body),
+    headers,
+    body: JSON.stringify(wantStream ? { ...body, stream: true } : body),
   });
+
+  const contentType = String(res.headers.get('content-type') || '');
+  if (wantStream && /text\/event-stream/i.test(contentType) && res.body) {
+    const store = useLatticeStore.getState();
+    store.clearLiveTranscript();
+    let donePayload: LatticeResponse | null = null;
+    let errorPayload: LatticeResponse | null = null;
+    let buffer = '';
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+
+    const handleEvent = (event: string, data: unknown) => {
+      const payload = (data && typeof data === 'object' ? data : {}) as LatticeResponse & {
+        message?: string;
+        balanceBefore?: number;
+        balanceAfter?: number;
+        phase?: string;
+        type?: string;
+      };
+      if (event === 'transcript' && payload && 'type' in payload) {
+        store.pushLiveTranscript(payload as TranscriptItem);
+        return;
+      }
+      if (event === 'status') {
+        const msg = payload.message || payload.error;
+        if (msg) store.setSendProgress(store.sendPhase === 'idle' ? 'sending' : store.sendPhase, msg);
+        if (payload.message) {
+          store.pushLiveTranscript({ type: 'status', status: 'live', message: payload.message });
+        }
+        return;
+      }
+      if (event === 'agent' && payload.agentId) {
+        const threadId = String(body.threadId || store.activeThreadId || '');
+        if (threadId) store.setAgentId(threadId, payload.agentId);
+        return;
+      }
+      if (event === 'balance') {
+        const before = payload.balanceBefore;
+        const after = payload.balanceAfter;
+        if (payload.phase === 'before' && typeof before === 'number') {
+          store.pushLiveTranscript({
+            type: 'status',
+            status: 'balance',
+            message: `Token balance before · ${before.toLocaleString()}`,
+          });
+        } else if (typeof before === 'number' && typeof after === 'number') {
+          store.pushLiveTranscript({
+            type: 'status',
+            status: 'balance',
+            message: `Token balance ${before.toLocaleString()} → ${after.toLocaleString()}`,
+          });
+        }
+        return;
+      }
+      if (event === 'done') {
+        donePayload = payload as LatticeResponse;
+        return;
+      }
+      if (event === 'error') {
+        errorPayload = payload as LatticeResponse;
+      }
+    };
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      buffer = parseSseChunk(buffer, handleEvent);
+    }
+    if (buffer.trim()) parseSseChunk(`${buffer}\n\n`, handleEvent);
+
+    if (errorPayload) {
+      return {
+        res: {
+          ok: false,
+          status: typeof (errorPayload as { status?: number }).status === 'number'
+            ? (errorPayload as { status: number }).status
+            : 502,
+          statusText: 'SSE Error',
+        } as Response,
+        data: errorPayload,
+      };
+    }
+    return {
+      res: { ok: true, status: 200, statusText: 'OK' } as Response,
+      data: donePayload || {},
+    };
+  }
+
   const data = (await res.json().catch(() => ({}))) as LatticeResponse;
   return { res, data };
 }
@@ -167,7 +287,12 @@ function applyAssistantReply(
 ): void {
   const store = useLatticeStore.getState();
   const reply = (data.reply || '').trim();
-  const transcript = Array.isArray(data.transcript) ? data.transcript : [];
+  const live = useLatticeStore.getState().liveTranscript;
+  const transcript = Array.isArray(data.transcript) && data.transcript.length
+    ? data.transcript
+    : live.length
+      ? live
+      : [];
   const content =
     reply ||
     transcript
@@ -199,6 +324,7 @@ function applyAssistantReply(
     tokens,
   });
   if (data.agentId) store.setAgentId(threadId, data.agentId);
+  store.clearLiveTranscript();
   store.clearPending();
 }
 

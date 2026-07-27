@@ -882,6 +882,37 @@ body {
   margin-left: 1.1rem;
 }
 
+.cx-transcript--live {
+  margin-top: 0.55rem;
+  max-height: min(42vh, 28rem);
+  overflow: auto;
+  padding-right: 0.25rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  padding-top: 0.45rem;
+}
+
+.working-stream-hint {
+  margin: 0.45rem 0 0;
+  font-size: 0.75rem;
+  color: var(--brand-muted);
+  opacity: 0.85;
+}
+
+.cx-thinking-body {
+  animation: lattice-thought-in 0.35s ease-out;
+}
+
+@keyframes lattice-thought-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .token-compare {
   margin: 0.55rem 0 0;
   padding-top: 0.4rem;

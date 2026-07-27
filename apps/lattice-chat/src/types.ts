@@ -28,15 +28,21 @@ export type TranscriptItem =
   | { type: 'status'; status: string; message?: string }
   | { type: 'task'; status?: string; text?: string };
 
-/** Standard agentic vs Lattice token estimate (heuristic). */
+/** Standard agentic vs Lattice token compare (measured when provider balances available). */
 export type TokenCompare = {
   naiveTokens: number;
   latticeTokens: number;
   savedTokens: number;
   savedPercent: number;
+  estimatedLatticeTokens?: number | null;
+  measuredTokens?: number | null;
+  balanceBefore?: number | null;
+  balanceAfter?: number | null;
+  balanceDelta?: number | null;
   standardLabel?: string;
   latticeLabel?: string;
   method?: string;
+  assumptions?: string[];
 };
 
 export type ChatMessage = {

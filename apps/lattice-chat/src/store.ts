@@ -54,6 +54,8 @@ type LatticeState = {
   sendPhase: SendPhase;
   statusHint: string | null;
   pending: PendingSend | null;
+  /** Live stream-of-thought transcript while a run is in flight. */
+  liveTranscript: TranscriptItem[];
   error: string | null;
   agentMode: AgentMode;
   modelId: string;
@@ -77,6 +79,9 @@ type LatticeState = {
   setSendProgress: (phase: SendPhase, hint?: string | null) => void;
   setPending: (pending: PendingSend | null) => void;
   clearPending: () => void;
+  setLiveTranscript: (items: TranscriptItem[]) => void;
+  pushLiveTranscript: (item: TranscriptItem) => void;
+  clearLiveTranscript: () => void;
   setError: (msg: string | null) => void;
   setAgentId: (threadId: string, agentId: string | null) => void;
   /** Drop cloud agent ids when the edge key or provider changes. */
@@ -101,6 +106,7 @@ export const useLatticeStore = create<LatticeState>()(
       sendPhase: 'idle',
       statusHint: null,
       pending: null,
+      liveTranscript: [],
       error: null,
       agentMode: 'agent',
       modelId: 'composer-2.5',
@@ -129,6 +135,7 @@ export const useLatticeStore = create<LatticeState>()(
             sendPhase: 'idle',
             statusHint: null,
             pending: null,
+            liveTranscript: [],
             sending: false,
           });
           return;
@@ -141,6 +148,7 @@ export const useLatticeStore = create<LatticeState>()(
             sendPhase: 'idle',
             statusHint: null,
             pending: null,
+            liveTranscript: [],
             sending: false,
           });
           return;
@@ -153,6 +161,7 @@ export const useLatticeStore = create<LatticeState>()(
           sendPhase: 'idle',
           statusHint: null,
           pending: null,
+          liveTranscript: [],
           sending: false,
         }));
       },
@@ -232,7 +241,44 @@ export const useLatticeStore = create<LatticeState>()(
           sending: phase !== 'idle',
         }),
       setPending: (pending) => set({ pending }),
-      clearPending: () => set({ pending: null }),
+      clearPending: () => set({ pending: null, liveTranscript: [] }),
+      setLiveTranscript: (items) => set({ liveTranscript: items }),
+      pushLiveTranscript: (item) =>
+        set((s) => {
+          const items = [...s.liveTranscript];
+          if (item.type === 'assistant' && items.length) {
+            const last = items[items.length - 1];
+            if (last.type === 'assistant') {
+              items[items.length - 1] = {
+                ...last,
+                text: `${last.text || ''}${item.text || ''}`,
+              };
+              return { liveTranscript: items };
+            }
+          }
+          if (item.type === 'thinking' && items.length) {
+            const last = items[items.length - 1];
+            if (last.type === 'thinking' && item.durationMs == null) {
+              items[items.length - 1] = {
+                ...last,
+                text: `${last.text || ''}${item.text || ''}`,
+              };
+              return { liveTranscript: items };
+            }
+          }
+          if (item.type === 'tool_call' && item.callId) {
+            const idx = items.findIndex(
+              (x) => x.type === 'tool_call' && x.callId === item.callId,
+            );
+            if (idx >= 0) {
+              items[idx] = { ...items[idx], ...item };
+              return { liveTranscript: items };
+            }
+          }
+          items.push(item);
+          return { liveTranscript: items };
+        }),
+      clearLiveTranscript: () => set({ liveTranscript: [] }),
       setError: (msg) => set({ error: msg }),
       setAgentId: (threadId, agentId) => {
         set((s) => ({
@@ -251,6 +297,7 @@ export const useLatticeStore = create<LatticeState>()(
         set((s) => ({
           threads: s.threads.map((t) => ({ ...t, agentId: undefined })),
           pending: s.pending ? { ...s.pending, agentId: undefined } : null,
+          liveTranscript: [],
           sending: false,
           sendPhase: 'idle' as const,
           statusHint: null,

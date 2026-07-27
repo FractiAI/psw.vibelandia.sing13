@@ -110,6 +110,68 @@ function json(res, status, body) {
   res.end(JSON.stringify(body ?? {}));
 }
 
+function wantsStream(req, body) {
+  if (body?.stream === true || body?.stream === 1 || body?.stream === '1') return true;
+  const accept = String(req.headers?.accept || req.headers?.Accept || '');
+  return /text\/event-stream/i.test(accept);
+}
+
+function initSse(res) {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/event-stream; charset=utf-8');
+  res.setHeader('Cache-Control', 'no-cache, no-transform');
+  res.setHeader('Connection', 'keep-alive');
+  res.setHeader('X-Accel-Buffering', 'no');
+  if (typeof res.flushHeaders === 'function') res.flushHeaders();
+}
+
+function sseWrite(res, event, data) {
+  if (!res || res.writableEnded) return;
+  res.write(`event: ${event}\ndata: ${JSON.stringify(data ?? {})}\n\n`);
+}
+
+function cursorAuthHeaders(apiKey) {
+  return {
+    Authorization: `Bearer ${apiKey}`,
+    Accept: 'application/json',
+  };
+}
+
+/** Cumulative agent token balance from Cloud Agents usage API (actual ledger, not estimate). */
+async function fetchAgentTokenBalance(apiKey, agentId) {
+  if (!apiKey || !agentId) return null;
+  try {
+    const res = await fetch(
+      `https://api.cursor.com/v1/agents/${encodeURIComponent(agentId)}/usage`,
+      { headers: cursorAuthHeaders(apiKey) },
+    );
+    if (!res.ok) return null;
+    const data = await res.json().catch(() => ({}));
+    const total = data?.totalUsage?.totalTokens;
+    return typeof total === 'number' && Number.isFinite(total) ? total : null;
+  } catch {
+    return null;
+  }
+}
+
+/** Best-effort per-run usage when balance delta is unavailable. */
+async function fetchRunTokenUsage(apiKey, agentId, runId) {
+  if (!apiKey || !agentId || !runId) return null;
+  try {
+    const res = await fetch(
+      `https://api.cursor.com/v1/agents/${encodeURIComponent(agentId)}/usage?runId=${encodeURIComponent(runId)}`,
+      { headers: cursorAuthHeaders(apiKey) },
+    );
+    if (!res.ok) return null;
+    const data = await res.json().catch(() => ({}));
+    const run = Array.isArray(data?.runs) ? data.runs[0] : null;
+    const total = run?.usage?.totalTokens ?? data?.totalUsage?.totalTokens;
+    return typeof total === 'number' && Number.isFinite(total) ? total : null;
+  } catch {
+    return null;
+  }
+}
+
 function normalizeEmail(raw) {
   return String(raw || '')
     .trim()
@@ -213,20 +275,54 @@ function buildLatticeExecution(args) {
     : histTok;
   const naiveTokens = naiveHistory + NAIVE_CORPUS_DUMP_TOKENS + msgTok + Math.max(replyTok, 400);
   const resumeDiscount = args.resumed ? Math.floor(histTok * 0.55) : 0;
-  let latticeTokens =
-    histTok + msgTok + LATTICE_RAG_POINTER_TOKENS + LATTICE_NEST_OVERHEAD_TOKENS + replyTok - resumeDiscount;
-  if (typeof args.usageTokens === 'number' && args.usageTokens > 0) {
-    latticeTokens = Math.min(latticeTokens, args.usageTokens);
-  }
-  latticeTokens = Math.max(msgTok + 200, Math.round(latticeTokens));
+  const estimatedLatticeTokens = Math.max(
+    msgTok + 200,
+    Math.round(
+      histTok +
+        msgTok +
+        LATTICE_RAG_POINTER_TOKENS +
+        LATTICE_NEST_OVERHEAD_TOKENS +
+        replyTok -
+        resumeDiscount,
+    ),
+  );
+
+  const balanceBefore =
+    typeof args.balanceBefore === 'number' && Number.isFinite(args.balanceBefore)
+      ? args.balanceBefore
+      : null;
+  const balanceAfter =
+    typeof args.balanceAfter === 'number' && Number.isFinite(args.balanceAfter)
+      ? args.balanceAfter
+      : null;
+  const balanceDelta =
+    balanceBefore != null && balanceAfter != null
+      ? Math.max(0, Math.round(balanceAfter - balanceBefore))
+      : null;
+  const measuredTokens =
+    balanceDelta != null && balanceDelta > 0
+      ? balanceDelta
+      : typeof args.usageTokens === 'number' && args.usageTokens > 0
+        ? Math.round(args.usageTokens)
+        : null;
+
+  const latticeTokens = measuredTokens != null ? measuredTokens : estimatedLatticeTokens;
   const savedTokens = Math.max(0, naiveTokens - latticeTokens);
   const savedPercent = naiveTokens > 0 ? Math.round((savedTokens / naiveTokens) * 1000) / 10 : 0;
+  const measured = measuredTokens != null;
 
   const agents = [
     { id: 'phi-parent', name: 'Φ-Parent', role: 'Meta-optimizer', scale: 'outer', status: 'complete', progress: 100 },
     { id: 'seed-rag', name: 'Seed·RAG', role: 'Corpus pointers', scale: 'seed', status: 'complete', progress: 100 },
     { id: 'squeeze', name: 'Squeeze', role: 'Fold results', scale: 'MCA', status: 'complete', progress: 100 },
   ];
+
+  const balanceLine =
+    balanceBefore != null && balanceAfter != null
+      ? `Balance ${balanceBefore.toLocaleString()} → ${balanceAfter.toLocaleString()} (Δ ${latticeTokens.toLocaleString()})`
+      : measured
+        ? `Measured ${latticeTokens.toLocaleString()} tokens`
+        : `Est. saved ~${savedTokens.toLocaleString()}`;
 
   return {
     engine: 'Lattice Chat V1.618 · Nested Agent Lattice',
@@ -236,22 +332,35 @@ function buildLatticeExecution(args) {
       { id: 'm', phase: 'Metabolize', voice: 'Φ-Parent', detail: 'Ingest ask' },
       { id: 'c', phase: 'Crystallize', voice: 'Lattice', detail: 'Spawn nested bands' },
       { id: 'a', phase: 'Animate', voice: 'Pipe', detail: args.resumed ? 'Resume' : 'Fresh' },
-      { id: 't', phase: 'Token ledger', voice: 'Engine', detail: `Saved ~${savedTokens}` },
+      { id: 't', phase: 'Token ledger', voice: 'Engine', detail: balanceLine },
       { id: 's', phase: 'Squeeze', voice: 'Φ-Parent', detail: 'Fold → ∞¹³' },
     ],
     agents,
     tokens: {
       naiveTokens,
       latticeTokens,
+      estimatedLatticeTokens,
+      measuredTokens,
+      balanceBefore,
+      balanceAfter,
+      balanceDelta,
       savedTokens,
       savedPercent,
       standardLabel: 'Standard agentic (est.)',
-      latticeLabel: 'Lattice (est.)',
-      method:
-        'Estimate chars÷4 · standard ≈ full corpus dump + history + reply; Lattice ≈ RAG pointers + nest overhead + reply',
-      assumptions: ['Heuristic meter — not vendor billing'],
+      latticeLabel: measured ? 'Lattice (measured)' : 'Lattice (est.)',
+      method: measured
+        ? balanceBefore != null && balanceAfter != null
+          ? 'Measured from provider token balances (before → after delta)'
+          : 'Measured from provider run usage'
+        : 'Estimate chars÷4 · standard ≈ full corpus dump + history + reply; Lattice ≈ RAG pointers + nest overhead + reply',
+      assumptions: measured
+        ? [
+            'Tokens used = actual provider balance/usage delta for this run',
+            'Standard column remains a structural context-load estimate for comparison',
+          ]
+        : ['Heuristic meter — provider usage unavailable on this run'],
     },
-    organization: ['Edge history', 'RAG pointers', 'Nested scale bands'],
+    organization: ['Edge history', 'RAG pointers', 'Nested scale bands', 'Live stream of thought'],
     closedAt: new Date().toISOString(),
   };
 }
@@ -424,6 +533,8 @@ Provider note: You are running via the Anthropic Messages API (BYOK). The public
     typeof data?.usage?.input_tokens === 'number' && typeof data?.usage?.output_tokens === 'number'
       ? data.usage.input_tokens + data.usage.output_tokens
       : null;
+  const balanceBefore = 0;
+  const balanceAfter = usageTokens != null ? usageTokens : null;
   const execution = buildLatticeExecution({
     message,
     history,
@@ -431,6 +542,8 @@ Provider note: You are running via the Anthropic Messages API (BYOK). The public
     resumed: prior.length > 0,
     reply,
     usageTokens,
+    balanceBefore,
+    balanceAfter,
   });
   return {
     reply: reply || '(No reply text returned.)',
@@ -799,9 +912,73 @@ function summarizeUnknown(value, max = 400) {
   }
 }
 
-async function collectRunTranscript(run) {
+async function resolveCursorBalances({ apiKey, agentId, runId, resultUsage, balanceBefore }) {
+  let balanceAfter = agentId ? await fetchAgentTokenBalance(apiKey, agentId) : null;
+  if (
+    balanceBefore != null &&
+    balanceAfter != null &&
+    balanceAfter <= balanceBefore
+  ) {
+    await new Promise((r) => setTimeout(r, 900));
+    const retry = await fetchAgentTokenBalance(apiKey, agentId);
+    if (typeof retry === 'number') balanceAfter = retry;
+  }
+
+  let usageTokens =
+    typeof resultUsage?.totalTokens === 'number' && resultUsage.totalTokens > 0
+      ? resultUsage.totalTokens
+      : null;
+  if (usageTokens == null && runId) {
+    usageTokens = await fetchRunTokenUsage(apiKey, agentId, runId);
+  }
+  if (
+    usageTokens == null &&
+    balanceBefore != null &&
+    balanceAfter != null &&
+    balanceAfter > balanceBefore
+  ) {
+    usageTokens = balanceAfter - balanceBefore;
+  }
+  if (balanceBefore == null && typeof balanceAfter === 'number') {
+    if (usageTokens != null) {
+      return {
+        balanceBefore: Math.max(0, balanceAfter - usageTokens),
+        balanceAfter,
+        usageTokens,
+      };
+    }
+    return { balanceBefore: 0, balanceAfter, usageTokens: balanceAfter > 0 ? balanceAfter : null };
+  }
+  return {
+    balanceBefore: balanceBefore ?? null,
+    balanceAfter: balanceAfter ?? null,
+    usageTokens,
+  };
+}
+
+function respondLattice(res, stream, payload, status = 200) {
+  if (stream) {
+    if (status >= 400) {
+      sseWrite(res, 'error', { ...payload, status });
+      res.end();
+      return;
+    }
+    sseWrite(res, 'done', payload);
+    res.end();
+    return;
+  }
+  return json(res, status, payload);
+}
+
+async function collectRunTranscript(run, opts = {}) {
   const transcript = [];
   let text = '';
+  const onEvent = typeof opts.onEvent === 'function' ? opts.onEvent : null;
+  const emit = (item) => {
+    if (!item) return;
+    pushTranscript(transcript, item);
+    if (onEvent) onEvent(item);
+  };
   if (run && typeof run.supports === 'function' && run.supports('stream') && typeof run.stream === 'function') {
     try {
       for await (const event of run.stream()) {
@@ -810,18 +987,18 @@ async function collectRunTranscript(run) {
           for (const block of event.message.content) {
             if (block?.type === 'text' && typeof block.text === 'string') {
               text += block.text;
-              pushTranscript(transcript, { type: 'assistant', text: block.text });
+              emit({ type: 'assistant', text: block.text });
             }
           }
         } else if (event.type === 'thinking' && typeof event.text === 'string') {
-          pushTranscript(transcript, {
+          emit({
             type: 'thinking',
             text: event.text,
             durationMs:
               typeof event.thinking_duration_ms === 'number' ? event.thinking_duration_ms : undefined,
           });
         } else if (event.type === 'tool_call') {
-          pushTranscript(transcript, {
+          emit({
             type: 'tool_call',
             callId: String(event.call_id || ''),
             name: String(event.name || 'tool'),
@@ -830,16 +1007,22 @@ async function collectRunTranscript(run) {
             resultPreview: summarizeUnknown(event.result),
           });
         } else if (event.type === 'status') {
-          pushTranscript(transcript, {
+          emit({
             type: 'status',
             status: String(event.status || ''),
             message: typeof event.message === 'string' ? event.message : undefined,
           });
         } else if (event.type === 'task') {
-          pushTranscript(transcript, {
+          emit({
             type: 'task',
             status: typeof event.status === 'string' ? event.status : undefined,
             text: typeof event.text === 'string' ? event.text : undefined,
+          });
+        } else if (event.type === 'usage' && event.usage) {
+          emit({
+            type: 'status',
+            status: 'usage',
+            message: `Turn usage · ${Number(event.usage.totalTokens || 0).toLocaleString()} tokens`,
           });
         }
       }
@@ -850,7 +1033,7 @@ async function collectRunTranscript(run) {
   const result = run && typeof run.wait === 'function' ? await run.wait() : null;
   if (!text.trim()) text = extractAssistantText(result);
   if (text.trim() && !transcript.some((i) => i.type === 'assistant' && String(i.text || '').trim())) {
-    pushTranscript(transcript, { type: 'assistant', text: text.trim() });
+    emit({ type: 'assistant', text: text.trim() });
   }
   return { text: text.trim(), transcript, result, runId: result?.id ?? run?.id };
 }
@@ -1167,6 +1350,8 @@ export default async function handler(req, res) {
 
     // --- Cursor cloud path (default) ---
     const startingRef = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
+    const stream = wantsStream(req, body);
+    if (stream) initSse(res);
 
     let agent;
     let completedOk = false;
@@ -1176,12 +1361,17 @@ export default async function handler(req, res) {
         ({ Agent } = await import('@cursor/sdk'));
       } catch (sdkErr) {
         console.error('[lattice-chat] SDK import failed', sdkErr);
-        return json(res, 503, {
-          error:
-            'Cursor SDK failed to load on the server. Confirm Node 22+ and @cursor/sdk are installed, then redeploy.',
-          code: 'sdk_import_failed',
-          detail: sdkErr instanceof Error ? sdkErr.message : String(sdkErr),
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error:
+              'Cursor SDK failed to load on the server. Confirm Node 22+ and @cursor/sdk are installed, then redeploy.',
+            code: 'sdk_import_failed',
+            detail: sdkErr instanceof Error ? sdkErr.message : String(sdkErr),
+          },
+          503,
+        );
       }
 
       let resumedOk = false;
@@ -1200,13 +1390,29 @@ export default async function handler(req, res) {
       }
 
       const modelSelection = { id: modelId };
+      const onStreamItem = (item) => {
+        if (stream) sseWrite(res, 'transcript', item);
+      };
 
       // Tab-blur / reconnect: attach to the in-flight or latest cloud run and return it.
       if (recoverOnly && agent) {
         try {
+          if (stream) {
+            sseWrite(res, 'status', { message: 'Recovering active cloud run…', agentId: agent.agentId ?? agentId });
+          }
           const recovered = await recoverCloudRun(Agent, agent.agentId ?? agentId, apiKey);
           if (recovered && (recovered.text?.trim() || recovered.transcript?.length)) {
             const reply = recovered.text || extractAssistantText(recovered.result) || '';
+            if (stream && Array.isArray(recovered.transcript)) {
+              for (const item of recovered.transcript) onStreamItem(item);
+            }
+            const balances = await resolveCursorBalances({
+              apiKey,
+              agentId: agent.agentId ?? agentId,
+              runId: recovered.runId,
+              resultUsage: recovered.result?.usage,
+              balanceBefore: null,
+            });
             const execution = buildLatticeExecution({
               message: message || '(recovered run)',
               history: body.history,
@@ -1215,13 +1421,12 @@ export default async function handler(req, res) {
               reply,
               runId: recovered.runId,
               agentId: agent.agentId ?? agentId,
-              usageTokens:
-                typeof recovered.result?.usage?.totalTokens === 'number'
-                  ? recovered.result.usage.totalTokens
-                  : null,
+              usageTokens: balances.usageTokens,
+              balanceBefore: balances.balanceBefore,
+              balanceAfter: balances.balanceAfter,
             });
             completedOk = true;
-            return json(res, 200, {
+            return respondLattice(res, stream, {
               reply,
               transcript: recovered.transcript || [],
               model: modelId,
@@ -1242,26 +1447,37 @@ export default async function handler(req, res) {
           }
         } catch (recoverErr) {
           if (isAgentNotFoundError(recoverErr)) {
-            return json(res, 422, {
-              error:
-                'That cloud agent is gone (often after switching Cursor API keys). Start a new message — Lattice will create a fresh agent.',
-              code: 'agent_not_found',
-              clearAgent: true,
-              agentId: null,
-            });
+            return respondLattice(
+              res,
+              stream,
+              {
+                error:
+                  'That cloud agent is gone (often after switching Cursor API keys). Start a new message — Lattice will create a fresh agent.',
+                code: 'agent_not_found',
+                clearAgent: true,
+                agentId: null,
+              },
+              422,
+            );
           }
           throw recoverErr;
         }
         if (!message) {
-          return json(res, 409, {
-            error: 'No active or finished run to recover yet. Wait a moment and retry.',
-            code: 'nothing_to_recover',
-            agentId: agent.agentId ?? agentId,
-          });
+          return respondLattice(
+            res,
+            stream,
+            {
+              error: 'No active or finished run to recover yet. Wait a moment and retry.',
+              code: 'nothing_to_recover',
+              agentId: agent.agentId ?? agentId,
+            },
+            409,
+          );
         }
       }
 
       if (!agent) {
+        if (stream) sseWrite(res, 'status', { message: 'Creating Lattice cloud agent…' });
         agent = await Agent.create({
           apiKey,
           model: modelSelection,
@@ -1272,6 +1488,21 @@ export default async function handler(req, res) {
         });
         agentId = agent.agentId ?? null;
         resumedOk = false;
+      }
+
+      if (stream && (agent.agentId || agentId)) {
+        sseWrite(res, 'agent', { agentId: agent.agentId ?? agentId });
+      }
+
+      const balanceBefore = await fetchAgentTokenBalance(apiKey, agent.agentId ?? agentId);
+      if (stream && balanceBefore != null) {
+        sseWrite(res, 'balance', { balanceBefore, phase: 'before' });
+      }
+      if (stream) {
+        sseWrite(res, 'status', {
+          message: 'Stream of thought live — follow tools and reasoning below…',
+          balanceBefore,
+        });
       }
 
       const prompt =
@@ -1313,6 +1544,7 @@ export default async function handler(req, res) {
           });
           agentId = agent.agentId ?? null;
           resumedOk = false;
+          if (stream) sseWrite(res, 'agent', { agentId });
           ({ run, recovered } = await sendPromptHandlingBusy(
             Agent,
             agent,
@@ -1327,50 +1559,75 @@ export default async function handler(req, res) {
 
       const packed = recovered
         ? recovered
-        : await collectRunTranscript(run);
+        : await collectRunTranscript(run, { onEvent: onStreamItem });
+      if (recovered && stream && Array.isArray(recovered.transcript)) {
+        for (const item of recovered.transcript) onStreamItem(item);
+      }
       const { text, transcript, result, runId } = packed;
 
       if (result?.status === 'error') {
-        return json(res, 502, {
-          error: result?.error?.message || 'Agent run failed',
-          runId,
-          agentId: agent.agentId ?? agentId,
-          transcript,
-          model: modelId,
-          mode: agentMode,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error: result?.error?.message || 'Agent run failed',
+            runId,
+            agentId: agent.agentId ?? agentId,
+            transcript,
+            model: modelId,
+            mode: agentMode,
+          },
+          502,
+        );
       }
 
       const reply = text || extractAssistantText(result);
       if (!reply && !(transcript && transcript.length)) {
-        return json(res, 502, {
-          error: 'Agent finished without reply text',
-          runId,
-          agentId: agent.agentId ?? agentId,
-          transcript,
-          model: modelId,
-          mode: agentMode,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error: 'Agent finished without reply text',
+            runId,
+            agentId: agent.agentId ?? agentId,
+            transcript,
+            model: modelId,
+            mode: agentMode,
+          },
+          502,
+        );
       }
 
-      const usageTokens =
-        typeof result?.usage?.totalTokens === 'number'
-          ? result.usage.totalTokens
-          : null;
+      const balances = await resolveCursorBalances({
+        apiKey,
+        agentId: agent.agentId ?? agentId,
+        runId,
+        resultUsage: result?.usage,
+        balanceBefore,
+      });
+      if (stream && balances.balanceAfter != null) {
+        sseWrite(res, 'balance', {
+          balanceBefore: balances.balanceBefore,
+          balanceAfter: balances.balanceAfter,
+          phase: 'after',
+        });
+      }
 
       const execution = buildLatticeExecution({
         message: message || '(recovered run)',
         history: body.history,
         mode: 'cloud',
-        resumed: Boolean(agentId),
+        resumed: Boolean(resumedOk),
         reply: reply || '',
         runId,
         agentId: agent.agentId ?? agentId,
-        usageTokens,
+        usageTokens: balances.usageTokens,
+        balanceBefore: balances.balanceBefore,
+        balanceAfter: balances.balanceAfter,
       });
 
       completedOk = true;
-      return json(res, 200, {
+      return respondLattice(res, stream, {
         reply: reply || '',
         transcript,
         model: modelId,
@@ -1392,60 +1649,90 @@ export default async function handler(req, res) {
       console.error('[lattice-chat]', err);
       const msg = err instanceof Error ? err.message : 'Lattice agent failed';
       if (isBusyError(err)) {
-        return json(res, 409, {
-          error:
-            'Agent still has an active run. Lattice will recover it — wait a few seconds and retry, or stay on this tab until Working finishes.',
-          code: 'agent_busy',
-          agentId: agent?.agentId ?? agentId,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error:
+              'Agent still has an active run. Lattice will recover it — wait a few seconds and retry, or stay on this tab until Working finishes.',
+            code: 'agent_busy',
+            agentId: agent?.agentId ?? agentId,
+          },
+          409,
+        );
       }
 
       // Expected config/access failures — do not count as 500s (clients must stop retry storms).
       if (/unauthorized|invalid.?api.?key|api key.*(invalid|missing)|401\b/i.test(msg)) {
-        return json(res, 401, {
-          error: msg,
-          code: 'cursor_auth',
-          agentId: agent?.agentId ?? agentId,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error: msg,
+            code: 'cursor_auth',
+            agentId: agent?.agentId ?? agentId,
+          },
+          401,
+        );
       }
       const branchFail =
         /default branch|verify existence of branch|repository access|GitHub App|cursor github|not in cursor|failed to (clone|access).*repo|repositories?/i.test(
           msg,
         );
       if (branchFail) {
-        return json(res, 422, {
-          error:
-            msg +
-            ` Lattice uses ${repoUrl} @ ${startingRef}. Connect GitHub for the Cursor account that owns this API key (cursor.com/dashboard/integrations) and ensure FractiAI/psw.vibelandia.sing13 is visible — public clone ≠ Cursor cloud access.`,
-          code: 'cursor_github_access',
-          repoUrl,
-          startingRef,
-          agentId: agent?.agentId ?? agentId,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error:
+              msg +
+              ` Lattice uses ${repoUrl} @ ${startingRef}. Connect GitHub for the Cursor account that owns this API key (cursor.com/dashboard/integrations) and ensure FractiAI/psw.vibelandia.sing13 is visible — public clone ≠ Cursor cloud access.`,
+            code: 'cursor_github_access',
+            repoUrl,
+            startingRef,
+            agentId: agent?.agentId ?? agentId,
+          },
+          422,
+        );
       }
       if (/unknown model|invalid model|model .+ not (found|available)|unsupported model/i.test(msg)) {
-        return json(res, 422, {
-          error: msg,
-          code: 'invalid_model',
-          model: modelId,
-          agentId: agent?.agentId ?? agentId,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error: msg,
+            code: 'invalid_model',
+            model: modelId,
+            agentId: agent?.agentId ?? agentId,
+          },
+          422,
+        );
       }
       if (isAgentNotFoundError(err)) {
-        return json(res, 422, {
-          error:
-            'That cloud agent is gone (often after switching Cursor API keys). Send again — Lattice will start a fresh agent.',
-          code: 'agent_not_found',
-          clearAgent: true,
-          agentId: null,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error:
+              'That cloud agent is gone (often after switching Cursor API keys). Send again — Lattice will start a fresh agent.',
+            code: 'agent_not_found',
+            clearAgent: true,
+            agentId: null,
+          },
+          422,
+        );
       }
 
-      return json(res, 500, {
-        error: msg,
-        code: 'agent_error',
-        agentId: agent?.agentId ?? agentId,
-      });
+      return respondLattice(
+        res,
+        stream,
+        {
+          error: msg,
+          code: 'agent_error',
+          agentId: agent?.agentId ?? agentId,
+        },
+        500,
+      );
     } finally {
       // Do not dispose on client abort / mid-flight errors — cloud run must stay recoverable.
       if (completedOk) await disposeAgent(agent);

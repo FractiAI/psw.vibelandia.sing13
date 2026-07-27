@@ -22,10 +22,6 @@ export function BridgeExplainerPage() {
     <div className="jb-bridge">
       <header className="jb-top jb-top--slim">
         <nav className="jb-nav" aria-label="Site">
-          <a className="jb-nav__link" href="/interfaces/vibelandia-questfest.html">
-            ← QUESTFEST
-          </a>
-          <span aria-hidden="true">·</span>
           <span className="jb-nav__here">Bridge</span>
           <span aria-hidden="true">·</span>
           <Link to="/listen">Jukebox</Link>

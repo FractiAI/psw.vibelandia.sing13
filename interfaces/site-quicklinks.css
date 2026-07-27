@@ -1,4 +1,4 @@
-/* Fixed sitewide jukebox + QUESTFEST dock (injected by site-jukebox.js) */
+/* Fixed sitewide jukebox launcher (injected by site-jukebox.js; skipped on jukebox/bridge) */
 .qv-site-dock {
   position: fixed;
   top: 0.65rem;
@@ -16,8 +16,7 @@
   pointer-events: auto;
 }
 
-.qv-site-dock__jukebox,
-.qv-site-dock__quest {
+.qv-site-dock__jukebox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -32,9 +31,6 @@
   border: 1px solid rgba(212, 175, 55, 0.55);
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-}
-
-.qv-site-dock__jukebox {
   background: linear-gradient(165deg, #2a1c0e 0%, #120e0a 100%);
   color: #fef3c7;
 }
@@ -43,33 +39,6 @@
   border-color: #d4af37;
   background: linear-gradient(165deg, #3a2814 0%, #1a140c 100%);
   color: #fff8e7;
-}
-
-.qv-site-dock__quest {
-  background: rgba(10, 8, 6, 0.88);
-  color: #f5e6c8;
-}
-
-.qv-site-dock__quest:hover {
-  border-color: #d4af37;
-  color: #fef3c7;
-}
-
-.qv-site-dock__note {
-  margin: 0;
-  padding: 0.4rem 0.55rem;
-  font-size: 0.68rem;
-  line-height: 1.35;
-  font-weight: 700;
-  color: #d6cfc4;
-  background: rgba(10, 8, 6, 0.9);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 8px;
-}
-
-.qv-site-dock--jukebox-window {
-  top: auto;
-  bottom: 0.75rem;
 }
 
 .site-quicklinks a.qv-open-jukebox,

@@ -72,10 +72,7 @@ export function JukeboxNowPlayingPage() {
           {track.story ? <p className="jb-now__story">{track.story}</p> : null}
         </div>
 
-        <p className="jb-now__hint">
-          Controls stay in the jukebox bar below. Keep this jukebox window open while you browse QUESTFEST in another tab —
-          playback continues.
-        </p>
+        <p className="jb-now__hint">Controls stay in the jukebox bar below.</p>
       </main>
     </div>
   );

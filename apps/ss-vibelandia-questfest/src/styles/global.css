@@ -7360,13 +7360,6 @@ html.qf-jukebox-page .sp-now-add-pl {
   -webkit-user-select: text;
 }
 
-.jb-eyebrow--jukebox-window {
-  letter-spacing: 0.08em;
-  text-transform: none;
-  font-size: 0.72rem;
-  color: #fef3c7;
-}
-
 .jb-brand-selectable {
   user-select: text;
   -webkit-user-select: text;

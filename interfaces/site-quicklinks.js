@@ -50,7 +50,7 @@
   nav.setAttribute('aria-label', 'Global quick links');
   nav.innerHTML =
     '<p>SS Vibelandia</p>' +
-    '<a href="#" class="qv-open-jukebox" data-qv-jukebox>Listen · Jukebox</a>' +
+    '<a href="/listen" class="qv-open-jukebox" data-qv-jukebox>Listen · Jukebox</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/interfaces/vibelandia-questfest.html">← QUESTFEST</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +

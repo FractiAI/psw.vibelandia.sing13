@@ -296,7 +296,9 @@
     { "source": "/bulk-upload", "destination": "/interfaces/questfest-bridge/#/bulk-upload", "permanent": false },
     { "source": "/bulk-upload/", "destination": "/interfaces/questfest-bridge/#/bulk-upload", "permanent": false },
     { "source": "/listen", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
-    { "source": "/listen/", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false }
+    { "source": "/listen/", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
+    { "source": "/jukebox", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
+    { "source": "/jukebox/", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false }
   ],
   "headers": [
     {

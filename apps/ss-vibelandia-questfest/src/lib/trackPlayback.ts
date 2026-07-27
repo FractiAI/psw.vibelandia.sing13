@@ -73,7 +73,7 @@ export function startTrackPlayback(
     pb.setPlaying(true);
     void playAudioNow(url, 1, startAt)
       .then(() => pb.setPlaying(true))
-      .catch(() => fail('Could not start — tap ▶ on the player bar or Safari controls below.'));
+      .catch(() => fail('Could not start — tap ▶ on the jukebox bar or Safari controls below.'));
     return;
   }
 
@@ -83,7 +83,7 @@ export function startTrackPlayback(
   );
 }
 
-/** Resume the track already shown in the player bar (same gesture as ▶). */
+/** Resume the track already shown in the jukebox bar (same gesture as ▶). */
 export function resumeOrPlayTrack(
   track: TrackDef,
   opts?: { onError?: (msg: string | null) => void; beginSession?: () => void },

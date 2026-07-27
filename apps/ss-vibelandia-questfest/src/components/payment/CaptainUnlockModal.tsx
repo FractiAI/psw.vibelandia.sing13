@@ -69,7 +69,7 @@ export function CaptainUnlockModal({ open, onClose, onUnlocked }: CaptainUnlockM
         </div>
         <p className="modal-fine">
           Session-only unlock. To clear captain access and your stored members pass, open the Machote members pass window (from
-          the player bar or after preview ends) and use{' '}
+          the jukebox bar or after preview ends) and use{' '}
           <strong>{isPassenger ? 'Sign out · clear pass & captain' : 'Clear captain unlock'}</strong> at the bottom.
         </p>
       </div>

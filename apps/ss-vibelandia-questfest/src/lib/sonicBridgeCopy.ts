@@ -19,7 +19,7 @@ export const BRIDGE_SECTIONS: BridgeSection[] = [
     title: 'What is the Sonic Singularity?',
     paragraphs: [
       'The Sonic Singularity is where music stops being background noise and becomes the operating signal — catalog, story, and frequency in one living broadcast.',
-      'On this edge you get a sovereign player: master catalog, playlists you build, Reno swamp beats caliente, and the hydrogen Y line carried in every track — not just a list of file names.',
+      'On this edge you get a sovereign jukebox: master catalog, playlists you build, Reno swamp beats caliente, and the hydrogen Y line carried in every track — not just a list of file names.',
       'Listen is the jukebox. Bridge is this explanation. DJ is where you upload and feed the ship.',
     ],
   },
@@ -62,7 +62,7 @@ export const BRIDGE_SECTIONS: BridgeSection[] = [
 ];
 
 export const BRIDGE_HONESTY_NOTE =
-  'Honesty boundary: Noah\'s Ark, OS awareness, and disruption language are narrative and architectural frames in the Syntheverse catalog — paired with real software (this player, server catalog, honor passes). The HGAI OS plain minimum and boundaries above state what is and is not claimed. Not weather prophecy, not financial advice.';
+  'Honesty boundary: Noah\'s Ark, OS awareness, and disruption language are narrative and architectural frames in the Syntheverse catalog — paired with real software (this jukebox, server catalog, honor passes). The HGAI OS plain minimum and boundaries above state what is and is not claimed. Not weather prophecy, not financial advice.';
 
 export const BRIDGE_CTA_LISTEN = 'Open Listen — sovereign jukebox';
 

@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-holographic-operators",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Empirical suite — Holographic Operators language wiring (WP-SYNTHOBS-HOLO-OPERATORS-2026-07)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "license": "MIT"
+}

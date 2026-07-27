@@ -1,0 +1,48 @@
+{
+  "schema": "synthobs-holographic-operators-corpus/v1",
+  "license": "Public domain (Project Gutenberg / US Government)",
+  "sources": [
+    {
+      "id": "gutenberg-alice",
+      "title": "Alice's Adventures in Wonderland (Lewis Carroll, 1865)",
+      "url": "https://www.gutenberg.org/ebooks/11"
+    },
+    {
+      "id": "us-constitution-preamble",
+      "title": "US Constitution Preamble (1787)",
+      "url": "https://www.archives.gov/founding-docs/constitution-transcript"
+    },
+    {
+      "id": "gutenberg-frankenstein",
+      "title": "Frankenstein (Mary Shelley, 1818)",
+      "url": "https://www.gutenberg.org/ebooks/84"
+    },
+    {
+      "id": "gutenberg-pride",
+      "title": "Pride and Prejudice (Jane Austen, 1813)",
+      "url": "https://www.gutenberg.org/ebooks/1342"
+    }
+  ],
+  "sentences": [
+    { "id": "alice-01", "source": "gutenberg-alice", "text": "Alice was beginning to get very tired of sitting by her sister on the bank." },
+    { "id": "alice-02", "source": "gutenberg-alice", "text": "So she was considering in her own mind whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies." },
+    { "id": "alice-03", "source": "gutenberg-alice", "text": "Suddenly a White Rabbit with pink eyes ran close by her." },
+    { "id": "alice-04", "source": "gutenberg-alice", "text": "There was nothing so very remarkable in that nor did Alice think it so very much out of the way to hear the Rabbit say to itself Oh dear oh dear I shall be late." },
+    { "id": "const-01", "source": "us-constitution-preamble", "text": "We the People of the United States in Order to form a more perfect Union establish Justice insure domestic Tranquility provide for the common defence promote the general Welfare and secure the Blessings of Liberty to ourselves and our Posterity do ordain and establish this Constitution for the United States of America." },
+    { "id": "frank-01", "source": "gutenberg-frankenstein", "text": "It was on a dreary night of November that I beheld the accomplishment of my toils." },
+    { "id": "frank-02", "source": "gutenberg-frankenstein", "text": "With an anxiety that almost amounted to agony I collected the instruments of life around me that I might infuse a spark of being into the lifeless thing that lay at my feet." },
+    { "id": "pride-01", "source": "gutenberg-pride", "text": "It is a truth universally acknowledged that a single man in possession of a good fortune must be in want of a wife." },
+    { "id": "pride-02", "source": "gutenberg-pride", "text": "However little known the feelings or views of such a man may be on his first entering a neighbourhood this truth is so well fixed in the minds of the surrounding families that he is considered the rightful property of some one or other of their daughters." },
+    { "id": "alice-05", "source": "gutenberg-alice", "text": "Down down down would the fall never come to an end." },
+    { "id": "alice-06", "source": "gutenberg-alice", "text": "Curiouser and curiouser cried Alice she was so much surprised that for the moment she quite forgot how to speak good English." },
+    { "id": "frank-03", "source": "gutenberg-frankenstein", "text": "I see by your eagerness and the wonder and hope which your eyes express my friend that you expect to be informed of the secret with which I am acquainted." },
+    { "id": "pride-03", "source": "gutenberg-pride", "text": "My dear Mr Bennet have you heard that Netherfield Park is let at last." },
+    { "id": "alice-07", "source": "gutenberg-alice", "text": "The Caterpillar and Alice looked at each other for some time in silence at last the Caterpillar took the hookah out of its mouth and addressed her in a languid sleepy voice." },
+    { "id": "frank-04", "source": "gutenberg-frankenstein", "text": "Life and death appeared to me ideal bounds which I should first break through and pour a torrent of light into our dark world." },
+    { "id": "pride-04", "source": "gutenberg-pride", "text": "Mr Bennet was so odd a mixture of quick parts sarcastic humour reserve and caprice that the experience of three and twenty years had been insufficient to make his wife understand his character." },
+    { "id": "alice-08", "source": "gutenberg-alice", "text": "Who are you said the Caterpillar." },
+    { "id": "const-02", "source": "us-constitution-preamble", "text": "All legislative Powers herein granted shall be vested in a Congress of the United States which shall consist of a Senate and House of Representatives." },
+    { "id": "frank-05", "source": "gutenberg-frankenstein", "text": "Nothing is so painful to the human mind as a great and sudden change." },
+    { "id": "pride-05", "source": "gutenberg-pride", "text": "Elizabeth listened in silence but was not convinced their behaviour at the assembly had not been calculated to please in general and with more quickness of observation and less pliancy of temper than her sister she felt that she could not like them." }
+  ]
+}

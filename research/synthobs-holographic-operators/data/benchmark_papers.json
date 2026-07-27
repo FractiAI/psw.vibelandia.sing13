@@ -1,0 +1,76 @@
+{
+  "schema": "synthobs-holographic-operators-benchmark/v1",
+  "honesty": "Factual summaries and public abstract paraphrases for syntactic-matrix scoring only — not full paper text. Citation counts are order-of-magnitude references from public bibliometrics discourse, not live Crossref pulls in this pipeline.",
+  "papers": [
+    {
+      "id": "maldacena-1997",
+      "rank": 1,
+      "author": "J. Maldacena",
+      "year": 1997,
+      "title": "The Large N Limit of Superconformal Field Theories and Supergravity",
+      "citations_order_of_magnitude": "28000+",
+      "core_achievement": "Concrete proof of AdS/CFT duality (boundary CFT equals bulk supergravity).",
+      "summary": "Superconformal field theory on the boundary of anti-de Sitter space is dual to supergravity in the bulk. The correspondence maps boundary operators to bulk fields and provides a dictionary between conformal field theory observables and gravitational physics in one higher dimension."
+    },
+    {
+      "id": "thooft-1993",
+      "rank": 2,
+      "author": "G. 't Hooft",
+      "year": 1993,
+      "title": "Dimensional Reduction in Quantum Gravity",
+      "citations_order_of_magnitude": "12000+",
+      "core_achievement": "Formalized the holographic principle.",
+      "summary": "The holographic principle proposes that physics in a volume can be described by degrees of freedom living on the boundary surface. Information in spatial regions is bounded by area scales rather than volume, suggesting reality is projected like a hologram from boundary data."
+    },
+    {
+      "id": "witten-1998",
+      "rank": 3,
+      "author": "E. Witten",
+      "year": 1998,
+      "title": "Anti De Sitter Space And Holography",
+      "citations_order_of_magnitude": "15000+",
+      "core_achievement": "Established the computational dictionary for AdS/CFT.",
+      "summary": "Anti-de Sitter space holography relates quantum gravity in the bulk to a conformal field theory on the boundary. Witten establishes the dictionary connecting bulk states and boundary correlators, making AdS/CFT a calculable framework for quantum gravity observables."
+    },
+    {
+      "id": "weinberg-1967",
+      "rank": 4,
+      "author": "S. Weinberg",
+      "year": 1967,
+      "title": "A Model of Leptons",
+      "citations_order_of_magnitude": "15000+",
+      "core_achievement": "Laid the foundation stone of the Standard Model.",
+      "summary": "A renormalizable model of leptons introduces gauge currents and broken symmetries to describe weak and electromagnetic interactions. The framework unifies charged leptons and vector bosons through a spontaneously broken gauge theory without holographic boundary-bulk correspondence."
+    },
+    {
+      "id": "hawking-1974",
+      "rank": 5,
+      "author": "S. Hawking",
+      "year": 1974,
+      "title": "Black Hole Explosions?",
+      "citations_order_of_magnitude": "10000+",
+      "core_achievement": "Bekenstein-Hawking entropy and horizon thermodynamics.",
+      "summary": "Quantum effects near black hole horizons imply thermal radiation and entropy proportional to horizon area. Information at the horizon links gravitational geometry to thermodynamic degrees of freedom, connecting bulk black hole physics to boundary area laws."
+    },
+    {
+      "id": "kitaev-preskill-2006",
+      "rank": 6,
+      "author": "A. Kitaev, J. Preskill",
+      "year": 2006,
+      "title": "Topological Entanglement Entropy",
+      "citations_order_of_magnitude": "4000+",
+      "core_achievement": "Linked non-local quantum order to spatial geometry.",
+      "summary": "Topological entanglement entropy measures hidden order in quantum ground states and relates entanglement structure to spatial geometry. The framework connects non-local quantum information patterns with emergent geometric descriptions of many-body systems."
+    },
+    {
+      "id": "fractiai-2026",
+      "rank": 7,
+      "author": "FractiAI Research Group",
+      "year": 2026,
+      "title": "Holographic Operators: Language as the Conductive Wiring of Spacetime",
+      "citations_order_of_magnitude": "n/a (submission draft)",
+      "core_achievement": "Linguistic operator wiring with Φ_EGS phase lock (architectural).",
+      "summary": "Natural language structures act as interferometric operators wiring a holographic substrate. Words are phase gates, sentences are resonant loops, and physical matter is modeled as a downstream shadow projected from primary semantic wiring. El Gran Sol fractal constant phi approximately 1.618 scales operator products for phase coherence. The framework addresses epistemic inversion where language is origin control code rather than passive narrative description of independent matter."
+    }
+  ]
+}

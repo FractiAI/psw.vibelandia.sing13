@@ -29,6 +29,7 @@
     "research:omniversal-goldilocks-rideshare": "node research/omniversal-goldilocks-rideshare/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-egs-epigenetic-phase-locking": "node research/synthobs-egs-epigenetic-phase-locking/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-egs-planck-scale-harmonic": "node research/synthobs-egs-planck-scale-harmonic/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-holographic-operators": "node research/synthobs-holographic-operators/scripts/run_empirical_pipeline.mjs",
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs"

@@ -1,0 +1,13 @@
+{
+  "schema": "noaa-solar-regions-offline-fallback/v1",
+  "source": "NOAA SWPC solar_regions.json (cached receipt)",
+  "note": "Used when live fetch fails. Operational space weather must be confirmed at swpc.noaa.gov.",
+  "regions": [
+    { "region": "4491" },
+    { "region": "4492" },
+    { "region": "4493" },
+    { "region": "4494" },
+    { "region": "4495" },
+    { "region": "4496" }
+  ]
+}

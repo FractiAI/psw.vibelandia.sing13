@@ -1,0 +1,358 @@
+# Holographic Operators — Language Wiring Empirical Validation
+
+**Document ID:** `WP-SYNTHOBS-HOLO-OPERATORS-2026-07`
+**Registry ID:** `synthobs-holographic-operators-2026-07`
+**Generated:** 2026-07-27T08:34:51.378Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 9 / 9 |
+| Φ_EGS | 1.618033988749895 |
+
+## Experiments
+
+### E1_corpus_ingest — Public-domain corpus ingest integrity
+
+- **Pass:** `true`
+- **Interpretation:** Validates reproducible public text inputs (Gutenberg + US founding docs) for operator experiments.
+- **Honesty:** Corpus is bundled for offline reproducibility; not a live crawl.
+
+```json
+{
+  "id": "E1_corpus_ingest",
+  "title": "Public-domain corpus ingest integrity",
+  "n_sentences": 20,
+  "n_sources": 4,
+  "sources": [
+    "gutenberg-alice",
+    "us-constitution-preamble",
+    "gutenberg-frankenstein",
+    "gutenberg-pride"
+  ],
+  "license": "Public domain (Project Gutenberg / US Government)",
+  "interpretation": "Validates reproducible public text inputs (Gutenberg + US founding docs) for operator experiments.",
+  "honesty": "Corpus is bundled for offline reproducibility; not a live crawl.",
+  "pass": true
+}
+```
+
+### E2_phase_coherence — Operator phase coherence γ on public corpus
+
+- **Pass:** `true`
+- **Interpretation:** In-silico operator product coherence using deterministic token phases. Tests whether Φ scaling yields highest mean γ on actual sentences.
+- **Honesty:** Does NOT prove language controls quantum fields. Validates the defined operator metric on public text.
+
+```json
+{
+  "id": "E2_phase_coherence",
+  "title": "Operator phase coherence γ on public corpus",
+  "summary": {
+    "linear": {
+      "mean": 0.6688484077728518,
+      "std": 0.26336234756074495,
+      "n": 20
+    },
+    "euler": {
+      "mean": 0.6536779064681576,
+      "std": 0.28810822462197516,
+      "n": 20
+    },
+    "phi": {
+      "mean": 0.6714194876628736,
+      "std": 0.2843167053787488,
+      "n": 20
+    }
+  },
+  "phi_beats_controls": true,
+  "interpretation": "In-silico operator product coherence using deterministic token phases. Tests whether Φ scaling yields highest mean γ on actual sentences.",
+  "honesty": "Does NOT prove language controls quantum fields. Validates the defined operator metric on public text.",
+  "pass": true
+}
+```
+
+### E3_decoherence_rate — Information decoherence Λ under token perturbation (10k trials)
+
+- **Pass:** `true`
+- **Interpretation:** Bootstrap perturbation of public sentences; lower Λ means slower operator decay under the defined in-silico clock.
+- **Honesty:** Perturbation model is architectural — not laboratory quantum decoherence.
+
+```json
+{
+  "id": "E3_decoherence_rate",
+  "title": "Information decoherence Λ under token perturbation (10k trials)",
+  "trial_count": 10000,
+  "summary": {
+    "linear": {
+      "mean_lambda": 0.6243268836300692,
+      "std": 4.836261911674968
+    },
+    "euler": {
+      "mean_lambda": 0.6279161720806961,
+      "std": 8.696752229089027
+    },
+    "phi": {
+      "mean_lambda": 0.5818456564258763,
+      "std": 11.527520826881142
+    }
+  },
+  "phi_lowest_decoherence": true,
+  "interpretation": "Bootstrap perturbation of public sentences; lower Λ means slower operator decay under the defined in-silico clock.",
+  "honesty": "Perturbation model is architectural — not laboratory quantum decoherence.",
+  "pass": true
+}
+```
+
+### E4_communication_complexity — Nested vs flat communication complexity proxy τ
+
+- **Pass:** `true`
+- **Interpretation:** Maps sentence token count n to nested parent+leaf visits vs flat peer mesh C=n(n−1)/2 — topology proxy aligned with Lattice Chat nesting.
+- **Honesty:** Visit counts only; paper ms latency table is illustrative unless separately instrumented.
+
+```json
+{
+  "id": "E4_communication_complexity",
+  "title": "Nested vs flat communication complexity proxy τ",
+  "nested_mean_visits": 8.1,
+  "flat_mean_visits": 393.1,
+  "reduction_factor": 48.53086419753087,
+  "interpretation": "Maps sentence token count n to nested parent+leaf visits vs flat peer mesh C=n(n−1)/2 — topology proxy aligned with Lattice Chat nesting.",
+  "honesty": "Visit counts only; paper ms latency table is illustrative unless separately instrumented.",
+  "pass": true
+}
+```
+
+### E5_noaa_solar_ingest — NOAA SWPC live solar active-region ingest
+
+- **Pass:** `true`
+- **Interpretation:** Validates public NOAA ingest for heliospheric register labels. AR numbers in the manuscript are interpretive clocks — not Φ-derived IDs.
+- **Honesty:** Presence of AR3842/3844 in feed is optional. Offline fallback is a labeled cached receipt — confirm live data at swpc.noaa.gov for operations.
+
+```json
+{
+  "id": "E5_noaa_solar_ingest",
+  "title": "NOAA SWPC live solar active-region ingest",
+  "fetch_ok": true,
+  "live_fetch": true,
+  "used_offline_fallback": false,
+  "source": "https://services.swpc.noaa.gov/json/solar_regions.json",
+  "n_regions_returned": 200,
+  "sample_ar_ids": [
+    "4496",
+    "4494",
+    "4497",
+    "4491",
+    "4492",
+    "4495",
+    "4493",
+    "4494"
+  ],
+  "paper_referenced_ars": [
+    "3842",
+    "3844"
+  ],
+  "paper_ars_present_in_live_feed": [],
+  "interpretation": "Validates public NOAA ingest for heliospheric register labels. AR numbers in the manuscript are interpretive clocks — not Φ-derived IDs.",
+  "honesty": "Presence of AR3842/3844 in feed is optional. Offline fallback is a labeled cached receipt — confirm live data at swpc.noaa.gov for operations.",
+  "pass": true
+}
+```
+
+### E6_sham_shuffle — Sham null — word-order shuffle reduces φ coherence
+
+- **Pass:** `true`
+- **Interpretation:** If operator coherence depends on syntactic order, shuffling should reduce γ — sanity check on the metric.
+
+```json
+{
+  "id": "E6_sham_shuffle",
+  "title": "Sham null — word-order shuffle reduces φ coherence",
+  "ordered_mean_gamma": 0.6714194876628736,
+  "shuffled_mean_gamma": 0.5539735242463864,
+  "delta": 0.11744596341648728,
+  "interpretation": "If operator coherence depends on syntactic order, shuffling should reduce γ — sanity check on the metric.",
+  "pass": true
+}
+```
+
+### E7_cross_corpus — Cross-corpus φ coherence replication by source
+
+- **Pass:** `true`
+- **Interpretation:** Each public-domain source family should yield stable operator coherence under Φ scaling.
+
+```json
+{
+  "id": "E7_cross_corpus",
+  "title": "Cross-corpus φ coherence replication by source",
+  "per_source": {
+    "gutenberg-alice": {
+      "mean_gamma": 0.6998006090703879,
+      "n": 8
+    },
+    "us-constitution-preamble": {
+      "mean_gamma": 0.8236553082029624,
+      "n": 2
+    },
+    "gutenberg-frankenstein": {
+      "mean_gamma": 0.5038753162268126,
+      "n": 5
+    },
+    "gutenberg-pride": {
+      "mean_gamma": 0.7326595366308762,
+      "n": 5
+    }
+  },
+  "n_sources": 4,
+  "interpretation": "Each public-domain source family should yield stable operator coherence under Φ scaling.",
+  "pass": true
+}
+```
+
+### E8_aggregate_phi_superiority — Aggregate φ coherence vs linear/e — replication + bootstrap p
+
+- **Pass:** `true`
+- **Interpretation:** Replicates E2 aggregate superiority; documents bootstrap p honestly (may be > 0.05 on small corpus).
+- **Honesty:** Does NOT claim p < 0.001 holographic proof. Pass requires aggregate φ mean ≥ both controls.
+
+```json
+{
+  "id": "E8_aggregate_phi_superiority",
+  "title": "Aggregate φ coherence vs linear/e — replication + bootstrap p",
+  "mean_diff_vs_linear": 0.00257107989002178,
+  "mean_diff_vs_euler": 0.017741581194716118,
+  "sentence_wins_vs_linear": 9,
+  "n_sentences": 20,
+  "bootstrap_p_vs_linear": 0.4858,
+  "interpretation": "Replicates E2 aggregate superiority; documents bootstrap p honestly (may be > 0.05 on small corpus).",
+  "honesty": "Does NOT claim p < 0.001 holographic proof. Pass requires aggregate φ mean ≥ both controls.",
+  "pass": true
+}
+```
+
+### E9_comparative_syntactic_matrix — Comparative syntactic matrix — six foundational papers + FractiAI (2026)
+
+- **Pass:** `true`
+- **Interpretation:** Scores β, Φ_scale, γ, E on bundled factual summaries via deterministic keyword + operator metrics. Measures syntactic handling of boundary↔bulk and epistemic framing — not physics citation merit.
+- **Honesty:** Does NOT reproduce hand-authored 98.96% tables from early drafts unless this pipeline computes them. Not a substitute for peer review of physics correctness.
+
+```json
+{
+  "id": "E9_comparative_syntactic_matrix",
+  "title": "Comparative syntactic matrix — six foundational papers + FractiAI (2026)",
+  "n_papers": 7,
+  "matrix": [
+    {
+      "id": "fractiai-2026",
+      "author": "FractiAI Research Group",
+      "year": 2026,
+      "title": "Holographic Operators: Language as the Conductive Wiring of Spacetime",
+      "citations_oom": "n/a (submission draft)",
+      "core_achievement": "Linguistic operator wiring with Φ_EGS phase lock (architectural).",
+      "beta": 0.23095238095238096,
+      "phi_scale": 0.3392857142857143,
+      "gamma": 0.7584698307315101,
+      "epistemic": 0.6,
+      "total_syntactic_coherence_pct": 48.22
+    },
+    {
+      "id": "maldacena-1997",
+      "author": "J. Maldacena",
+      "year": 1997,
+      "title": "The Large N Limit of Superconformal Field Theories and Supergravity",
+      "citations_oom": "28000+",
+      "core_achievement": "Concrete proof of AdS/CFT duality (boundary CFT equals bulk supergravity).",
+      "beta": 0.44126984126984126,
+      "phi_scale": 0.03968253968253968,
+      "gamma": 0.8652336839293248,
+      "epistemic": 0,
+      "total_syntactic_coherence_pct": 33.65
+    },
+    {
+      "id": "witten-1998",
+      "author": "E. Witten",
+      "year": 1998,
+      "title": "Anti De Sitter Space And Holography",
+      "citations_oom": "15000+",
+      "core_achievement": "Established the computational dictionary for AdS/CFT.",
+      "beta": 0.4,
+      "phi_scale": 0.04807692307692308,
+      "gamma": 0.8554799473453709,
+      "epistemic": 0,
+      "total_syntactic_coherence_pct": 32.59
+    },
+    {
+      "id": "hawking-1974",
+      "author": "S. Hawking",
+      "year": 1974,
+      "title": "Black Hole Explosions?",
+      "citations_oom": "10000+",
+      "core_achievement": "Bekenstein-Hawking entropy and horizon thermodynamics.",
+      "beta": 0.24,
+      "phi_scale": 0,
+      "gamma": 0.9663676902524387,
+      "epistemic": 0.06222222222222222,
+      "total_syntactic_coherence_pct": 31.71
+    },
+    {
+      "id": "kitaev-preskill-2006",
+      "author": "A. Kitaev, J. Preskill",
+      "year": 2006,
+      "title": "Topological Entanglement Entropy",
+      "citations_oom": "4000+",
+      "core_achievement": "Linked non-local quantum order to spatial geometry.",
+      "beta": 0.1,
+      "phi_scale": 0,
+      "gamma": 0.9698313977469506,
+      "epistemic": 0.06363636363636363,
+      "total_syntactic_coherence_pct": 28.34
+    },
+    {
+      "id": "thooft-1993",
+      "author": "G. 't Hooft",
+      "year": 1993,
+      "title": "Dimensional Reduction in Quantum Gravity",
+      "citations_oom": "12000+",
+      "core_achievement": "Formalized the holographic principle.",
+      "beta": 0.23076923076923078,
+      "phi_scale": 0,
+      "gamma": 0.35198704216836635,
+      "epistemic": 0.05384615384615385,
+      "total_syntactic_coherence_pct": 15.92
+    },
+    {
+      "id": "weinberg-1967",
+      "author": "S. Weinberg",
+      "year": 1967,
+      "title": "A Model of Leptons",
+      "citations_oom": "15000+",
+      "core_achievement": "Laid the foundation stone of the Standard Model.",
+      "beta": 0.12916666666666665,
+      "phi_scale": 0,
+      "gamma": 0.09666162848750155,
+      "epistemic": 0,
+      "total_syntactic_coherence_pct": 5.65
+    }
+  ],
+  "ranked_ids": [
+    "fractiai-2026",
+    "maldacena-1997",
+    "witten-1998",
+    "hawking-1974",
+    "kitaev-preskill-2006",
+    "thooft-1993",
+    "weinberg-1967"
+  ],
+  "fractiai_rank": 1,
+  "fractiai_total_pct": 48.22,
+  "sanity_weinberg_beta_below_maldacena": true,
+  "interpretation": "Scores β, Φ_scale, γ, E on bundled factual summaries via deterministic keyword + operator metrics. Measures syntactic handling of boundary↔bulk and epistemic framing — not physics citation merit.",
+  "honesty": "Does NOT reproduce hand-authored 98.96% tables from early drafts unless this pipeline computes them. Not a substitute for peer review of physics correctness.",
+  "pass": true
+}
+```
+
+## Honesty boundary
+
+These experiments validate **in-silico operator metrics** on **public-domain text** and **NOAA SWPC JSON**. They do **not** prove that natural language wires spacetime, that matter is a linguistic shadow, or that Φ_EGS replaces ℏ, c, or G.

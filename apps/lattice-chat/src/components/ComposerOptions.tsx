@@ -151,7 +151,7 @@ export function ComposerOptions({
             disabled={disabled}
             spellCheck={false}
             placeholder={
-              'Seed·RAG — docs/protocols pointers\nEdge UI — apps/interfaces\nPipe Runtime — api/lib'
+              'Seed·RAG — docs/protocols pointers\nHolographic Operators — docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md\nNested Lattice — docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md\nEdge UI — apps/interfaces\nPipe Runtime — api/lib'
             }
             value={agentRoster}
             onChange={(e) => onRosterChange(e.target.value)}

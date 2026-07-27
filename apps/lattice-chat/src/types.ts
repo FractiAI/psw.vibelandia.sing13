@@ -28,8 +28,9 @@ export type TranscriptItem =
   | { type: 'status'; status: string; message?: string }
   | { type: 'task'; status?: string; text?: string };
 
-/** Standard agentic vs Lattice token compare (measured when provider balances available). */
+/** Token meter — chat UI shows measured balances only (not chars÷4 estimates). */
 export type TokenCompare = {
+  /** Kept for proof/bench payloads; chat UI does not display estimates. */
   naiveTokens: number;
   latticeTokens: number;
   savedTokens: number;

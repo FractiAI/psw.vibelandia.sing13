@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { LATTICE_PROVIDERS, type LatticeProvider } from '@/lib/providerKeys';
 import { catalogForProvider, mergeProviderModels } from '@/modelCatalog';
 import type { AgentMode, LatticeModelOption, NestTopology } from '@/types';
@@ -11,17 +12,17 @@ const NESTS: { id: NestTopology; label: string; title: string }[] = [
   {
     id: 'single',
     label: 'Single',
-    title: 'One node only — lowest nest overhead / fewer estimated tokens',
+    title: 'One node only — no nested children',
   },
   {
     id: 'multi',
     label: 'Multi',
-    title: 'Nested parent + children (or your explicit roster below)',
+    title: 'Nested parent + children (or your explicit roster)',
   },
   {
     id: 'goldilocks',
     label: 'Goldilocks',
-    title: 'Auto: Lattice picks bands from the ask unless you define agents below',
+    title: 'Auto: Lattice picks bands from the ask unless you define agents',
   },
 ];
 
@@ -57,78 +58,93 @@ export function ComposerOptions({
       ? mergeProviderModels('cursor', models)
       : catalogForProvider(provider);
 
-  const showRoster = nestTopology === 'multi' || nestTopology === 'goldilocks';
+  const canRoster = nestTopology === 'multi' || nestTopology === 'goldilocks';
+  const [rosterOpen, setRosterOpen] = useState(() => Boolean(agentRoster.trim()));
 
   return (
     <div className="composer-options" role="group" aria-label="Agent options">
-      <div className="composer-mode composer-provider" role="tablist" aria-label="Provider">
-        {LATTICE_PROVIDERS.map((p) => (
-          <button
-            key={p.id}
-            type="button"
-            role="tab"
-            aria-selected={provider === p.id}
-            className={provider === p.id ? 'is-active' : undefined}
-            disabled={disabled}
-            title={p.honesty}
-            onClick={() => onProviderChange(p.id)}
-          >
-            {p.short}
-          </button>
-        ))}
-      </div>
-      <div className="composer-mode" role="tablist" aria-label="Mode">
-        {MODES.map((m) => (
-          <button
-            key={m.id}
-            type="button"
-            role="tab"
-            aria-selected={mode === m.id}
-            className={mode === m.id ? 'is-active' : undefined}
-            disabled={disabled || provider === 'gemini'}
-            title={
-              provider === 'gemini' ? 'Antigravity runs as a managed agent' : undefined
-            }
-            onClick={() => onModeChange(m.id)}
-          >
-            {m.label}
-          </button>
-        ))}
-      </div>
-      <div className="composer-mode" role="tablist" aria-label="Nest topology">
-        {NESTS.map((n) => (
-          <button
-            key={n.id}
-            type="button"
-            role="tab"
-            aria-selected={nestTopology === n.id}
-            className={nestTopology === n.id ? 'is-active' : undefined}
-            disabled={disabled}
-            title={n.title}
-            onClick={() => onNestChange(n.id)}
-          >
-            {n.label}
-          </button>
-        ))}
-      </div>
-      <label className="composer-model">
-        <span className="sr-only">Model</span>
-        <select
-          value={options.some((o) => o.id === modelId) ? modelId : options[0]?.id}
-          disabled={disabled}
-          onChange={(e) => onModelChange(e.target.value)}
-        >
-          {options.map((m) => (
-            <option key={m.id} value={m.id}>
-              {m.displayName || m.id}
-            </option>
+      <div className="composer-options-bar">
+        <div className="composer-mode composer-provider" role="tablist" aria-label="Provider">
+          {LATTICE_PROVIDERS.map((p) => (
+            <button
+              key={p.id}
+              type="button"
+              role="tab"
+              aria-selected={provider === p.id}
+              className={provider === p.id ? 'is-active' : undefined}
+              disabled={disabled}
+              title={p.honesty}
+              onClick={() => onProviderChange(p.id)}
+            >
+              {p.short}
+            </button>
           ))}
-        </select>
-      </label>
-      {showRoster ? (
+        </div>
+        <div className="composer-mode" role="tablist" aria-label="Mode">
+          {MODES.map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              role="tab"
+              aria-selected={mode === m.id}
+              className={mode === m.id ? 'is-active' : undefined}
+              disabled={disabled || provider === 'gemini'}
+              title={
+                provider === 'gemini' ? 'Antigravity runs as a managed agent' : undefined
+              }
+              onClick={() => onModeChange(m.id)}
+            >
+              {m.label}
+            </button>
+          ))}
+        </div>
+        <div className="composer-mode" role="tablist" aria-label="Nest topology">
+          {NESTS.map((n) => (
+            <button
+              key={n.id}
+              type="button"
+              role="tab"
+              aria-selected={nestTopology === n.id}
+              className={nestTopology === n.id ? 'is-active' : undefined}
+              disabled={disabled}
+              title={n.title}
+              onClick={() => onNestChange(n.id)}
+            >
+              {n.label}
+            </button>
+          ))}
+        </div>
+        <label className="composer-model">
+          <span className="sr-only">Model</span>
+          <select
+            value={options.some((o) => o.id === modelId) ? modelId : options[0]?.id}
+            disabled={disabled}
+            onChange={(e) => onModelChange(e.target.value)}
+          >
+            {options.map((m) => (
+              <option key={m.id} value={m.id}>
+                {m.displayName || m.id}
+              </option>
+            ))}
+          </select>
+        </label>
+        {canRoster ? (
+          <button
+            type="button"
+            className={`composer-roster-toggle${rosterOpen || agentRoster.trim() ? ' is-active' : ''}`}
+            disabled={disabled}
+            aria-expanded={rosterOpen}
+            title="Optional agent roster"
+            onClick={() => setRosterOpen((v) => !v)}
+          >
+            Agents{agentRoster.trim() ? ' ·' : ''}
+          </button>
+        ) : null}
+      </div>
+      {canRoster && rosterOpen ? (
         <label className="composer-roster">
           <span className="composer-roster-label">
-            Agents (optional) — one per line: <em>Name — role</em>. Empty = Goldilocks auto.
+            Optional — one per line: <em>Name — role</em>. Empty = Goldilocks auto.
           </span>
           <textarea
             rows={2}
@@ -141,11 +157,7 @@ export function ComposerOptions({
             onChange={(e) => onRosterChange(e.target.value)}
           />
         </label>
-      ) : (
-        <p className="composer-roster-hint">
-          Single node: no nested children. Clearer and usually fewer estimated tokens.
-        </p>
-      )}
+      ) : null}
     </div>
   );
 }

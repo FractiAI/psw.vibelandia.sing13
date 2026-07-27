@@ -306,9 +306,13 @@ function buildLatticeExecution(args) {
         ? Math.round(args.usageTokens)
         : null;
 
-  const latticeTokens = measuredTokens != null ? measuredTokens : estimatedLatticeTokens;
-  const savedTokens = Math.max(0, naiveTokens - latticeTokens);
-  const savedPercent = naiveTokens > 0 ? Math.round((savedTokens / naiveTokens) * 1000) / 10 : 0;
+  const latticeTokens = measuredTokens != null ? measuredTokens : null;
+  const savedTokens =
+    measuredTokens != null ? Math.max(0, naiveTokens - measuredTokens) : 0;
+  const savedPercent =
+    measuredTokens != null && naiveTokens > 0
+      ? Math.round((savedTokens / naiveTokens) * 1000) / 10
+      : 0;
   const measured = measuredTokens != null;
 
   const agents = [
@@ -319,10 +323,10 @@ function buildLatticeExecution(args) {
 
   const balanceLine =
     balanceBefore != null && balanceAfter != null
-      ? `Balance ${balanceBefore.toLocaleString()} → ${balanceAfter.toLocaleString()} (Δ ${latticeTokens.toLocaleString()})`
+      ? `Balance ${balanceBefore.toLocaleString()} → ${balanceAfter.toLocaleString()} (used ${(latticeTokens ?? 0).toLocaleString()})`
       : measured
-        ? `Measured ${latticeTokens.toLocaleString()} tokens`
-        : `Est. saved ~${savedTokens.toLocaleString()}`;
+        ? `Used ${latticeTokens.toLocaleString()} tokens`
+        : 'Usage pending — no provider balance yet';
 
   return {
     engine: 'Lattice Chat V1.618 · Nested Agent Lattice',
@@ -338,7 +342,7 @@ function buildLatticeExecution(args) {
     agents,
     tokens: {
       naiveTokens,
-      latticeTokens,
+      latticeTokens: latticeTokens ?? 0,
       estimatedLatticeTokens,
       measuredTokens,
       balanceBefore,
@@ -346,19 +350,16 @@ function buildLatticeExecution(args) {
       balanceDelta,
       savedTokens,
       savedPercent,
-      standardLabel: 'Standard agentic (est.)',
-      latticeLabel: measured ? 'Lattice (measured)' : 'Lattice (est.)',
+      standardLabel: undefined,
+      latticeLabel: measured ? 'Tokens used' : undefined,
       method: measured
         ? balanceBefore != null && balanceAfter != null
           ? 'Measured from provider token balances (before → after delta)'
           : 'Measured from provider run usage'
-        : 'Estimate chars÷4 · standard ≈ full corpus dump + history + reply; Lattice ≈ RAG pointers + nest overhead + reply',
+        : 'Provider balance/usage not yet available for this run',
       assumptions: measured
-        ? [
-            'Tokens used = actual provider balance/usage delta for this run',
-            'Standard column remains a structural context-load estimate for comparison',
-          ]
-        : ['Heuristic meter — provider usage unavailable on this run'],
+        ? ['Tokens used = actual provider balance/usage delta for this run']
+        : ['No estimate shown — waiting on provider balance/usage'],
     },
     organization: ['Edge history', 'RAG pointers', 'Nested scale bands', 'Live stream of thought'],
     closedAt: new Date().toISOString(),

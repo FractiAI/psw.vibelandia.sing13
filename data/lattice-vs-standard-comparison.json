@@ -1,7 +1,7 @@
 {
   "id": "lattice-vs-standard-complex-work-v1",
   "title": "Lattice Chat V1.618 vs standard agentic mode — complex multi-band work",
-  "ranAt": "2026-07-27T05:03:00.750Z",
+  "ranAt": "2026-07-27T05:22:19.057Z",
   "honesty": "Structural token estimate (chars÷4). Same prompt for both modes. Not vendor-billed usage; illustrates context load. Lattice path uses RAG pointers + nested scale bands; standard path dumps large doc/protocol/code slices and re-stuffs across phases.",
   "prompt": "Complex work (same ask for both modes):\n\nMap how SING13 Nested Agent Lattice + NSPFRNP + RAG should execute a multi-band change:\n(1) ground the ask in docs/ and protocols/,\n(2) identify edge UI touchpoints under apps/ and interfaces/,\n(3) identify pipe/API touchpoints under api/ and lib/,\n(4) propose a token-efficient nested-agent plan with peer-firewall and scale-to-zero,\n(5) compare estimated context load vs dumping the corpus into one fat agent.\n\nDeliver a structured plan a chat user could follow.",
   "modes": {
@@ -97,18 +97,14 @@
         "balanceBefore": null,
         "balanceAfter": null,
         "balanceDelta": null,
-        "savedTokens": 70165,
-        "savedPercent": 96.5,
-        "standardLabel": "Standard agentic (est.)",
-        "latticeLabel": "Lattice (est.)",
-        "method": "Estimate: chars÷4. Naive = unbounded history + ~72k corpus dump. Lattice = 16-turn window + RAG pointers + nest briefs.",
+        "savedTokens": 0,
+        "savedPercent": 0,
+        "standardLabel": "Standard agentic (structural)",
+        "latticeLabel": "Lattice (structural)",
+        "method": "Structural chars÷4 for proof benches only — chat meter requires provider balance/usage",
         "assumptions": [
-          "~4 characters ≈ 1 token (heuristic, not vendor billing)",
-          "Naive corpus dump modeled at 72,000 tokens",
-          "Lattice RAG pointer budget 1,800 tokens",
-          "Nested briefing overhead 420 tokens",
-          "Fresh agent included preamble once",
-          "No SDK usage meter on this run — estimate only"
+          "Chat UI does not show this estimate — provider balance/usage required",
+          "Structural naive corpus dump modeled at 72,000 tokens"
         ]
       },
       "agents": [

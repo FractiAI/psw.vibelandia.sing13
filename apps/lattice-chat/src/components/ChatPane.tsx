@@ -13,7 +13,7 @@ import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPane
 import { AgentTranscript } from '@/components/AgentTranscript';
 import { ComposerOptions } from '@/components/ComposerOptions';
 import { KeySettingsPanel } from '@/components/KeySettings';
-import { TokenCompareFooter } from '@/components/TokenCompare';
+import { TokenCompareFooter, hasMeasuredTokens } from '@/components/TokenCompare';
 import { hasProviderApiKey, subscribeProviderKeys } from '@/lib/providerKeys';
 import { useLatticeStore } from '@/store';
 
@@ -238,7 +238,7 @@ export function ChatPane({
           ) : null}
         </div>
         <p className="chat-sub">
-          Nested agents as simple as chat.{' '}
+          Nested agents as simple as chat · live stream of thought ·{' '}
           <a href="/lattice">What is Lattice?</a>
         </p>
       </header>
@@ -292,9 +292,8 @@ export function ChatPane({
           <div className="empty-state">
             <p className="empty-lead">You’re signed in — ask anything.</p>
             <p className="empty-hint">
-              Toggle Single / Multi / Goldilocks below. Single = one node (fewer nest tokens).
-              Multi or Goldilocks: leave agents blank for auto bands, or define your own roster
-              (Name — role). Pick provider, Agent/Plan, and model as usual.
+              Compact controls below: provider · mode · nest · model. Expand Agents when you want
+              an explicit roster; otherwise Goldilocks auto-picks bands.
             </p>
           </div>
         ) : (
@@ -316,7 +315,7 @@ export function ChatPane({
               ) : (
                 <div className="bubble-body">{m.content}</div>
               )}
-              {m.role === 'assistant' && m.tokens ? (
+              {m.role === 'assistant' && m.tokens && hasMeasuredTokens(m.tokens) ? (
                 <TokenCompareFooter tokens={m.tokens} />
               ) : null}
             </article>
@@ -327,31 +326,42 @@ export function ChatPane({
             className={`bubble bubble-assistant thinking${sendPhase === 'stuck' ? ' thinking--stuck' : ''}`}
           >
             <span className="bubble-role">Lattice</span>
-            <div className="working-meter" aria-hidden="true">
-              {LATTICE_PROGRESS_STEPS.map((label, i) => (
-                <span
-                  key={label}
-                  className={`working-meter__step${i <= step ? ' is-active' : ''}${i === step ? ' is-current' : ''}`}
-                >
-                  {label}
-                </span>
-              ))}
-            </div>
-            <div className="cx-block cx-status">
-              <span className="working-pulse" aria-hidden="true" />
-              {workingLabel}
-            </div>
             {liveTranscript.length ? (
-              <AgentTranscript items={liveTranscript} live />
+              <>
+                <div className="cx-block cx-status working-live-status">
+                  <span className="working-pulse" aria-hidden="true" />
+                  {workingLabel}
+                  <span className="working-timer-inline">
+                    · {mm}:{ss}
+                  </span>
+                </div>
+                <AgentTranscript items={liveTranscript} live />
+              </>
             ) : (
-              <p className="working-stream-hint">
-                Stream of thought will appear here as the cloud agent thinks and uses tools.
-              </p>
+              <>
+                <div className="working-meter" aria-hidden="true">
+                  {LATTICE_PROGRESS_STEPS.map((label, i) => (
+                    <span
+                      key={label}
+                      className={`working-meter__step${i <= step ? ' is-active' : ''}${i === step ? ' is-current' : ''}`}
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+                <div className="cx-block cx-status">
+                  <span className="working-pulse" aria-hidden="true" />
+                  {workingLabel}
+                </div>
+                <p className="working-stream-hint">
+                  Stream of thought will appear here as the cloud agent thinks and uses tools.
+                </p>
+                <p className="working-timer">
+                  Elapsed {mm}:{ss}
+                  {sendPhase === 'stuck' ? ' · may still finish' : ' · typically 1–3 min'}
+                </p>
+              </>
             )}
-            <p className="working-timer">
-              Elapsed {mm}:{ss}
-              {sendPhase === 'stuck' ? ' · may still finish' : ' · typically 1–3 min'}
-            </p>
             <div className="working-actions">
               <button
                 type="button"

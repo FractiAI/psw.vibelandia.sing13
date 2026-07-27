@@ -1,5 +1,8 @@
 import { isRememberedEmailFresh } from '@/access';
-import { estimateTokenCompare } from '@/components/TokenCompare';
+import {
+  buildMeasuredTokenCompare,
+  hasMeasuredTokens,
+} from '@/components/TokenCompare';
 import {
   hasProviderApiKey,
   LATTICE_PROVIDERS,
@@ -274,16 +277,36 @@ async function postLattice(
   return { res, data };
 }
 
+function pickMeasuredTokens(data: LatticeResponse): TokenCompare | undefined {
+  const raw = data.tokens || data.execution?.tokens;
+  if (raw && hasMeasuredTokens(raw)) {
+    return {
+      ...raw,
+      latticeTokens:
+        (typeof raw.measuredTokens === 'number' && raw.measuredTokens > 0
+          ? raw.measuredTokens
+          : null) ??
+        (typeof raw.balanceDelta === 'number' ? raw.balanceDelta : null) ??
+        raw.latticeTokens,
+      latticeLabel: 'Tokens used',
+      method:
+        typeof raw.balanceBefore === 'number' && typeof raw.balanceAfter === 'number'
+          ? 'Measured from provider token balances (before → after delta)'
+          : 'Measured from provider run usage',
+    };
+  }
+  return buildMeasuredTokenCompare({
+    usageTokens: raw?.measuredTokens ?? raw?.latticeTokens,
+    balanceBefore: raw?.balanceBefore,
+    balanceAfter: raw?.balanceAfter,
+  });
+}
+
 function applyAssistantReply(
   threadId: string,
   data: LatticeResponse,
   fallbackModel: string,
   fallbackMode: AgentMode,
-  estimateArgs?: {
-    message: string;
-    history?: { role?: string; content?: string }[];
-    resumed?: boolean;
-  },
 ): void {
   const store = useLatticeStore.getState();
   const reply = (data.reply || '').trim();
@@ -302,18 +325,8 @@ function applyAssistantReply(
       .trim() ||
     '(No reply text returned.)';
 
-  const tokens =
-    data.tokens ||
-    data.execution?.tokens ||
-    (estimateArgs
-      ? estimateTokenCompare({
-          message: estimateArgs.message,
-          history: estimateArgs.history,
-          reply: content,
-          resumed: estimateArgs.resumed,
-          nestTopology: store.nestTopology,
-        })
-      : undefined);
+  // Chat meter = actual balances/usage only — never chars÷4 estimates.
+  const tokens = pickMeasuredTokens(data);
 
   store.appendMessage(threadId, {
     role: 'assistant',
@@ -433,11 +446,7 @@ async function tryRecoverOnce(
   }
   if (!awaitingAssistant(threadId)) return true;
 
-  applyAssistantReply(threadId, data, store.modelId, store.agentMode, {
-    message: prompt,
-    history,
-    resumed: true,
-  });
+  applyAssistantReply(threadId, data, store.modelId, store.agentMode);
   store.setError(null);
   return true;
 }
@@ -598,11 +607,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       return;
     }
     settled = true;
-    applyAssistantReply(threadId, data, store.modelId, store.agentMode, {
-      message: trimmed,
-      history,
-      resumed: Boolean(thread.agentId),
-    });
+    applyAssistantReply(threadId, data, store.modelId, store.agentMode);
     store.setError(null);
     store.setSending(false);
   };

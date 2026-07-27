@@ -79,18 +79,27 @@ class LatticeHardFail extends Error {
 
 /** Live status copy so the wait feels progressive, not frozen. */
 export function latticeProgressHint(elapsedSec: number, phase: string): string {
+  const provider = useLatticeStore.getState().provider || 'cursor';
+  const label =
+    provider === 'claude' ? 'Claude' : provider === 'gemini' ? 'Antigravity' : 'Lattice cloud agent';
+
   if (phase === 'recovering') {
-    if (elapsedSec < 60) return 'Looking up the active cloud run…';
-    return 'Cloud agent still running — attaching when it finishes…';
+    if (provider === 'claude') {
+      return 'Claude has no separate cloud run to recover — wait on the live stream or resend.';
+    }
+    if (elapsedSec < 60) return `Looking up the active ${label} run…`;
+    return `${label} still running — attaching when it finishes…`;
   }
   if (phase === 'stuck') {
-    return 'Still waiting — tap Check for reply (do not re-paste the prompt).';
+    return provider === 'claude'
+      ? 'Still waiting on Claude stream — keep this tab open.'
+      : 'Still waiting — tap Check for reply (do not re-paste the prompt).';
   }
-  if (elapsedSec < 8) return 'Starting Lattice cloud agent…';
-  if (elapsedSec < 25) return 'Cloud agent is up — stream of thought opening…';
+  if (elapsedSec < 8) return `Starting ${label}…`;
+  if (elapsedSec < 25) return `${label} is up — stream of thought opening…`;
   if (elapsedSec < 50) return 'Follow the live thought stream — tools and reasoning below…';
-  if (elapsedSec < 90) return 'Still working — Lattice auto-checks for a finished reply…';
-  if (elapsedSec < 150) return 'Long cloud run — keep this tab open; Check for reply is safe';
+  if (elapsedSec < 90) return `Still working — ${label} auto-checks when needed…`;
+  if (elapsedSec < 150) return 'Long run — keep this tab open; Check for reply is safe';
   return 'Taking longer than usual — Check for reply, don’t re-enter the prompt';
 }
 
@@ -173,8 +182,8 @@ async function postLattice(
   body: Record<string, unknown>,
   email: string,
 ): Promise<{ res: Response; data: LatticeResponse }> {
-  const provider = useLatticeStore.getState().provider || 'cursor';
-  const wantStream = provider === 'cursor' && body.stream !== false;
+  // Live stream-of-thought for Cursor, Claude, and Gemini when the pipe supports SSE.
+  const wantStream = body.stream !== false;
   const headers = {
     ...(latticeHeaders(email) as Record<string, string>),
     ...(wantStream ? { Accept: 'text/event-stream' } : {}),
@@ -416,6 +425,8 @@ async function tryRecoverOnce(
   email: string,
 ): Promise<boolean> {
   const store = useLatticeStore.getState();
+  // Claude Messages API has no durable cloud run to recover.
+  if (store.provider === 'claude') return false;
   const thread = store.threads.find((t) => t.id === threadId);
   const agentId = store.pending?.agentId || thread?.agentId;
   if (!agentId) return false;

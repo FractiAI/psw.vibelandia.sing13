@@ -28,7 +28,7 @@ export const LATTICE_PROVIDERS: {
     keyPlaceholder: 'sk-ant-… from console.anthropic.com',
     keyHelp: 'console.anthropic.com → API keys',
     honesty:
-      'Anthropic Messages API (BYOK). Full Claude Code Agent SDK needs a local CLI binary — not available on this serverless pipe.',
+      'Anthropic Messages API (BYOK) with live stream of thought (thinking + reply deltas). Full Claude Code Agent SDK needs a local CLI binary — not on this serverless pipe.',
   },
   {
     id: 'gemini',
@@ -37,7 +37,8 @@ export const LATTICE_PROVIDERS: {
     keyHeader: 'x-gemini-api-key',
     keyPlaceholder: 'AIza… from Google AI Studio',
     keyHelp: 'aistudio.google.com → API key',
-    honesty: 'Google Managed Antigravity agent via Interactions API (remote Linux sandbox).',
+    honesty:
+      'Google Managed Antigravity via Interactions API — live thought/tool stream when the agent emits steps.',
   },
 ];
 

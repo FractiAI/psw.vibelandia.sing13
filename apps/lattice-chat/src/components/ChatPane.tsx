@@ -241,8 +241,8 @@ export function ChatPane({
           Live stream of thought · measured token balances (before→after) ·{' '}
           <a href="/lattice">What is Lattice?</a>
         </p>
-        <p className="chat-build-stamp" data-lattice-build="measured-stream-v2">
-          Build: measured tokens · live thought stream
+        <p className="chat-build-stamp" data-lattice-build="measured-stream-v3-all-providers">
+          Build: measured tokens · live thought · Cursor · Claude · Gemini
         </p>
       </header>
 

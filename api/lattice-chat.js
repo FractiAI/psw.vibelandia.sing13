@@ -477,6 +477,105 @@ function extractGeminiText(interaction) {
   return chunks.join('\n').trim();
 }
 
+function extractGeminiUsageTokens(interaction) {
+  const usage = interaction?.usage || interaction?.usage_metadata || null;
+  if (!usage || typeof usage !== 'object') return null;
+  if (typeof usage.total_tokens === 'number' && usage.total_tokens > 0) {
+    return Math.round(usage.total_tokens);
+  }
+  const input = usage.total_input_tokens ?? usage.prompt_token_count ?? usage.input_tokens;
+  const output = usage.total_output_tokens ?? usage.candidates_token_count ?? usage.output_tokens;
+  const thought = usage.total_thought_tokens ?? usage.thoughts_token_count ?? 0;
+  if (typeof input === 'number' && typeof output === 'number') {
+    return Math.round(input + output + (typeof thought === 'number' ? thought : 0));
+  }
+  return null;
+}
+
+function claudeSupportsThinking(modelId) {
+  const id = String(modelId || '');
+  if (!id) return true;
+  if (/3-5-haiku|3\.5-haiku|claude-3-5-haiku/i.test(id)) return false;
+  return true;
+}
+
+function claudeThinkingConfig(modelId) {
+  if (!claudeSupportsThinking(modelId)) return null;
+  const id = String(modelId || '');
+  if (/opus-4-8|fable|mythos|opus-4\.8/i.test(id)) {
+    return { type: 'adaptive', display: 'summarized' };
+  }
+  return { type: 'enabled', budget_tokens: 8000 };
+}
+
+/** Read an upstream SSE body and invoke onChunk(eventName, dataObj|string). */
+async function consumeUpstreamSse(res, onChunk) {
+  if (!res.body) {
+    const text = await res.text().catch(() => '');
+    if (text.trim()) {
+      try {
+        onChunk('message', JSON.parse(text));
+      } catch {
+        onChunk('raw', text);
+      }
+    }
+    return;
+  }
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    buffer = buffer.replace(/\r\n/g, '\n');
+    let sep;
+    while ((sep = buffer.indexOf('\n\n')) >= 0) {
+      const raw = buffer.slice(0, sep);
+      buffer = buffer.slice(sep + 2);
+      if (!raw.trim() || raw.startsWith(':')) continue;
+      let eventName = 'message';
+      const dataLines = [];
+      for (const line of raw.split('\n')) {
+        if (line.startsWith('event:')) eventName = line.slice(6).trim();
+        else if (line.startsWith('data:')) dataLines.push(line.slice(5).trim());
+      }
+      if (!dataLines.length) continue;
+      const joined = dataLines.join('\n');
+      if (joined === '[DONE]') {
+        onChunk('done', {});
+        continue;
+      }
+      try {
+        onChunk(eventName, JSON.parse(joined));
+      } catch {
+        onChunk(eventName, joined);
+      }
+    }
+  }
+}
+
+function wrapProviderAccess(access) {
+  return {
+    privilege: access.privilege,
+    email: access.email,
+    expiresAt: access.expiresAt,
+    reason: access.reason,
+  };
+}
+
+function buildClaudeMessages(message, history) {
+  const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
+  const messages = prior
+    .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
+    .map((m) => ({ role: m.role, content: String(m.content).trim() }))
+    .filter((m) => m.content);
+  if (!messages.length || messages[messages.length - 1].content !== String(message || '').trim()) {
+    messages.push({ role: 'user', content: String(message || '').trim() });
+  }
+  return { prior, messages };
+}
+
 async function runClaudeTurn({
   apiKey,
   message,
@@ -486,15 +585,10 @@ async function runClaudeTurn({
   access,
   nestTopology,
   agentRoster,
+  stream = false,
+  onEvent = null,
 }) {
-  const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
-  const messages = prior
-    .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
-    .map((m) => ({ role: m.role, content: String(m.content).trim() }))
-    .filter((m) => m.content);
-  if (!messages.length || messages[messages.length - 1].content !== String(message || '').trim()) {
-    messages.push({ role: 'user', content: String(message || '').trim() });
-  }
+  const { prior, messages } = buildClaudeMessages(message, history);
   const nest = buildNestDirective(nestTopology, agentRoster);
   const system = `${PREAMBLE}
 
@@ -502,66 +596,360 @@ ${nest}
 
 Provider note: You are running via the Anthropic Messages API (BYOK). The public repo is ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}.`;
 
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
+  const model = modelId || 'claude-sonnet-4-5';
+  const thinking = claudeThinkingConfig(model);
+  const maxTokens = thinking ? 16000 : 8192;
+  const emit = (item) => {
+    if (typeof onEvent === 'function' && item) onEvent(item);
+  };
+
+  const requestBody = {
+    model,
+    max_tokens: maxTokens,
+    system,
+    messages,
+    stream: true,
+  };
+  if (thinking) requestBody.thinking = thinking;
+
+  emit({ type: 'status', status: 'live', message: 'Claude stream of thought opening…' });
+
+  let res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
       'x-api-key': apiKey,
       'anthropic-version': '2023-06-01',
+      accept: 'text/event-stream',
     },
-    body: JSON.stringify({
-      model: modelId || 'claude-sonnet-4-5',
-      max_tokens: 8192,
-      system,
-      messages,
-    }),
+    body: JSON.stringify(requestBody),
   });
-  const data = await res.json().catch(() => ({}));
+
+  // If thinking config is rejected, retry once without thinking (still stream text).
+  if (!res.ok && thinking) {
+    const errBody = await res.json().catch(() => ({}));
+    const msg = String(errBody?.error?.message || errBody?.message || '');
+    if (/thinking|budget_tokens|adaptive/i.test(msg) || res.status === 400) {
+      emit({
+        type: 'status',
+        status: 'live',
+        message: 'Thinking unsupported on this model — streaming reply text…',
+      });
+      delete requestBody.thinking;
+      requestBody.max_tokens = 8192;
+      res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          accept: 'text/event-stream',
+        },
+        body: JSON.stringify(requestBody),
+      });
+    } else {
+      const err = new Error(msg || `Anthropic HTTP ${res.status}`);
+      err.code = res.status === 401 || res.status === 403 ? 'claude_auth' : 'claude_error';
+      err.status = res.status;
+      throw err;
+    }
+  }
+
   if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
     const err = new Error(data?.error?.message || data?.message || `Anthropic HTTP ${res.status}`);
     err.code = res.status === 401 || res.status === 403 ? 'claude_auth' : 'claude_error';
     err.status = res.status;
     throw err;
   }
-  const reply = Array.isArray(data.content)
-    ? data.content
-        .filter((c) => c?.type === 'text')
-        .map((c) => c.text)
-        .join('\n')
-        .trim()
-    : '';
+
+  const transcript = [];
+  let reply = '';
+  let inputTokens = null;
+  let outputTokens = null;
+  const contentType = String(res.headers.get('content-type') || '');
+
+  const handleAnthropicEvent = (_eventName, data) => {
+    if (!data || typeof data !== 'object') return;
+    const type = data.type || _eventName;
+    if (type === 'message_start') {
+      const usage = data.message?.usage;
+      if (typeof usage?.input_tokens === 'number') inputTokens = usage.input_tokens;
+      emit({ type: 'status', status: 'live', message: 'Claude is thinking…' });
+      return;
+    }
+    if (type === 'content_block_start') {
+      const block = data.content_block || {};
+      if (block.type === 'thinking') {
+        emit({ type: 'status', status: 'live', message: 'Stream of thought…' });
+      } else if (block.type === 'tool_use') {
+        const item = {
+          type: 'tool_call',
+          callId: String(block.id || `tool_${data.index || 0}`),
+          name: String(block.name || 'tool'),
+          status: 'running',
+        };
+        pushTranscript(transcript, item);
+        emit(item);
+      }
+      return;
+    }
+    if (type === 'content_block_delta') {
+      const delta = data.delta || {};
+      if (delta.type === 'thinking_delta' && typeof delta.thinking === 'string') {
+        const item = { type: 'thinking', text: delta.thinking };
+        pushTranscript(transcript, item);
+        emit(item);
+      } else if (delta.type === 'text_delta' && typeof delta.text === 'string') {
+        reply += delta.text;
+        const item = { type: 'assistant', text: delta.text };
+        pushTranscript(transcript, item);
+        emit(item);
+      } else if (delta.type === 'input_json_delta' && typeof delta.partial_json === 'string') {
+        // Tool args stream — keep a short preview on the latest tool_call.
+        const last = [...transcript].reverse().find((x) => x.type === 'tool_call');
+        if (last) {
+          const item = {
+            ...last,
+            argsPreview: `${last.argsPreview || ''}${delta.partial_json}`.slice(0, 400),
+          };
+          pushTranscript(transcript, item);
+          emit(item);
+        }
+      }
+      return;
+    }
+    if (type === 'content_block_stop') {
+      const last = [...transcript].reverse().find((x) => x.type === 'tool_call' && x.status === 'running');
+      if (last) {
+        const item = { ...last, status: 'completed' };
+        pushTranscript(transcript, item);
+        emit(item);
+      }
+      return;
+    }
+    if (type === 'message_delta') {
+      const usage = data.usage;
+      if (typeof usage?.output_tokens === 'number') outputTokens = usage.output_tokens;
+      return;
+    }
+    if (type === 'error') {
+      const msg = data.error?.message || data.message || 'Claude stream error';
+      const err = new Error(msg);
+      err.code = 'claude_error';
+      throw err;
+    }
+  };
+
+  if (/text\/event-stream|stream/i.test(contentType) || stream) {
+    await consumeUpstreamSse(res, (eventName, data) => {
+      handleAnthropicEvent(eventName, data);
+    });
+  } else {
+    const data = await res.json().catch(() => ({}));
+    reply = Array.isArray(data.content)
+      ? data.content
+          .filter((c) => c?.type === 'text')
+          .map((c) => c.text)
+          .join('\n')
+          .trim()
+      : '';
+    if (Array.isArray(data.content)) {
+      for (const block of data.content) {
+        if (block?.type === 'thinking' && typeof block.thinking === 'string') {
+          pushTranscript(transcript, { type: 'thinking', text: block.thinking });
+          emit({ type: 'thinking', text: block.thinking });
+        } else if (block?.type === 'text' && typeof block.text === 'string') {
+          pushTranscript(transcript, { type: 'assistant', text: block.text });
+          emit({ type: 'assistant', text: block.text });
+        }
+      }
+    }
+    if (typeof data?.usage?.input_tokens === 'number') inputTokens = data.usage.input_tokens;
+    if (typeof data?.usage?.output_tokens === 'number') outputTokens = data.usage.output_tokens;
+  }
+
   const usageTokens =
-    typeof data?.usage?.input_tokens === 'number' && typeof data?.usage?.output_tokens === 'number'
-      ? data.usage.input_tokens + data.usage.output_tokens
-      : null;
-  const balanceBefore = 0;
-  const balanceAfter = usageTokens != null ? usageTokens : null;
+    typeof inputTokens === 'number' && typeof outputTokens === 'number'
+      ? inputTokens + outputTokens
+      : typeof outputTokens === 'number'
+        ? outputTokens
+        : null;
+
+  const finalReply = reply.trim() || '(No reply text returned.)';
+  if (!transcript.some((t) => t.type === 'assistant')) {
+    pushTranscript(transcript, { type: 'assistant', text: finalReply });
+  }
+
   const execution = buildLatticeExecution({
     message,
     history,
     mode: 'claude',
     resumed: prior.length > 0,
-    reply,
+    reply: finalReply,
     usageTokens,
-    balanceBefore,
-    balanceAfter,
   });
+
   return {
-    reply: reply || '(No reply text returned.)',
-    transcript: [{ type: 'assistant', text: reply || '(No reply text returned.)' }],
-    model: modelId || 'claude-sonnet-4-5',
+    reply: finalReply,
+    transcript: transcript.length ? transcript : [{ type: 'assistant', text: finalReply }],
+    model,
     mode: agentMode,
     agentId: null,
     tokens: execution.tokens,
     execution,
-    access: {
-      privilege: access.privilege,
-      email: access.email,
-      expiresAt: access.expiresAt,
-      reason: access.reason,
-    },
+    access: wrapProviderAccess(access),
     provider: 'claude',
   };
+}
+
+async function pollGeminiInteraction(apiKey, interactionId, { onStatus, maxPolls = 40 } = {}) {
+  let finalInteraction = null;
+  let status = '';
+  for (let i = 0; i < maxPolls; i++) {
+    await new Promise((r) => setTimeout(r, 2500));
+    const poll = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/interactions/${encodeURIComponent(interactionId)}`,
+      { headers: { 'x-goog-api-key': apiKey } },
+    );
+    finalInteraction = await poll.json().catch(() => ({}));
+    status = String(finalInteraction.status || '').toLowerCase();
+    if (typeof onStatus === 'function') {
+      onStatus({
+        type: 'status',
+        status: 'live',
+        message: `Antigravity ${status || 'running'}… (${i + 1}/${maxPolls})`,
+      });
+    }
+    if (!poll.ok) break;
+    if (['completed', 'failed', 'cancelled'].includes(status)) break;
+  }
+  return finalInteraction;
+}
+
+function mapGeminiStreamEvent(data, state, emit, push) {
+  if (!data || typeof data !== 'object') return;
+  const eventType = String(data.event_type || data.type || data.event || '').toLowerCase();
+  const step = data.step || data.delta || data;
+  const stepType = String(step?.type || step?.step_type || data.step_type || '').toLowerCase();
+
+  if (eventType.includes('created') || eventType === 'interaction.created') {
+    const id = data.interaction?.id || data.id;
+    const env = data.interaction?.environment_id || data.environment_id;
+    if (id) state.interactionId = id;
+    if (env) state.environmentId = env;
+    emit({ type: 'status', status: 'live', message: 'Antigravity interaction created…' });
+    return;
+  }
+
+  if (eventType.includes('status')) {
+    const st = data.status || data.interaction?.status || '';
+    if (st) emit({ type: 'status', status: 'live', message: `Antigravity ${st}…` });
+    return;
+  }
+
+  // Thought / stream-of-thought
+  if (
+    stepType.includes('thought') ||
+    eventType.includes('thought') ||
+    data.thought_summary ||
+    step?.thought_summary
+  ) {
+    const text =
+      step?.delta?.content?.text ||
+      step?.content?.text ||
+      data.delta?.content?.text ||
+      (typeof data.thought_summary === 'string' ? data.thought_summary : '') ||
+      (typeof step?.thought_summary === 'string' ? step.thought_summary : '') ||
+      (typeof step?.text === 'string' && stepType.includes('thought') ? step.text : '');
+    if (text) {
+      const item = { type: 'thinking', text };
+      push(item);
+      emit(item);
+    } else if (eventType.includes('start') || stepType.includes('start')) {
+      emit({ type: 'status', status: 'live', message: 'Stream of thought…' });
+    }
+    return;
+  }
+
+  // Tool / server function calls
+  if (
+    stepType.includes('tool') ||
+    stepType.includes('function_call') ||
+    stepType.includes('google_search') ||
+    stepType.includes('code_execution') ||
+    eventType.includes('tool')
+  ) {
+    const callId = String(step?.id || data.step_id || data.id || `gem_tool_${state.toolSeq++}`);
+    const name = String(
+      step?.name || step?.tool_name || stepType || data.name || 'tool',
+    ).replace(/^step\./, '');
+    const status =
+      eventType.includes('stop') || eventType.includes('complete')
+        ? 'completed'
+        : eventType.includes('error')
+          ? 'error'
+          : 'running';
+    const argsPreview =
+      typeof step?.arguments === 'string'
+        ? step.arguments.slice(0, 400)
+        : step?.arguments
+          ? summarizeUnknown(step.arguments, 400)
+          : typeof step?.delta?.arguments === 'string'
+            ? step.delta.arguments.slice(0, 400)
+            : undefined;
+    const item = { type: 'tool_call', callId, name, status, argsPreview };
+    push(item);
+    emit(item);
+    return;
+  }
+
+  // Model text output
+  if (
+    stepType.includes('text') ||
+    stepType.includes('model_output') ||
+    eventType.includes('content') ||
+    typeof data.delta?.content?.text === 'string' ||
+    typeof step?.delta?.content?.text === 'string' ||
+    typeof step?.text === 'string'
+  ) {
+    const text =
+      data.delta?.content?.text ||
+      step?.delta?.content?.text ||
+      (typeof step?.text === 'string' && !stepType.includes('thought') ? step.text : '') ||
+      (typeof data.text === 'string' ? data.text : '');
+    if (text) {
+      state.reply += text;
+      const item = { type: 'assistant', text };
+      push(item);
+      emit(item);
+    }
+    return;
+  }
+
+  if (eventType.includes('completed') || eventType.includes('complete')) {
+    const interaction = data.interaction || data;
+    if (interaction?.id) state.interactionId = interaction.id;
+    if (interaction?.environment_id) state.environmentId = interaction.environment_id;
+    const usage = extractGeminiUsageTokens(interaction);
+    if (usage != null) state.usageTokens = usage;
+    const finalText = extractGeminiText(interaction);
+    if (finalText && !state.reply.trim()) {
+      state.reply = finalText;
+      const item = { type: 'assistant', text: finalText };
+      push(item);
+      emit(item);
+    }
+    state.completed = true;
+    state.finalInteraction = interaction;
+  }
+
+  if (eventType === 'error' || data.error) {
+    const msg = data.error?.message || data.message || 'Gemini stream error';
+    const err = new Error(msg);
+    err.code = 'gemini_error';
+    throw err;
+  }
 }
 
 async function runGeminiTurn({
@@ -576,14 +964,20 @@ async function runGeminiTurn({
   repoUrl,
   nestTopology,
   agentRoster,
+  stream = false,
+  onEvent = null,
 }) {
   const decoded = decodeGeminiAgentId(agentId);
   const agentName = modelId || 'antigravity-preview-05-2026';
   const prompt = decoded?.interactionId
     ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${String(message || '').trim()}`
     : buildPrompt(message, history, nestTopology, agentRoster);
+  const emit = (item) => {
+    if (typeof onEvent === 'function' && item) onEvent(item);
+  };
 
   if (recoverOnly && decoded?.interactionId) {
+    emit({ type: 'status', status: 'live', message: 'Recovering Antigravity interaction…' });
     const getRes = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/interactions/${encodeURIComponent(decoded.interactionId)}`,
       { headers: { 'x-goog-api-key': apiKey } },
@@ -602,13 +996,16 @@ async function runGeminiTurn({
       throw wait;
     }
     const reply = extractGeminiText(interaction) || '(No reply text returned.)';
+    const usageTokens = extractGeminiUsageTokens(interaction);
     const execution = buildLatticeExecution({
       message: message || '(recovered run)',
       history,
       mode: 'gemini',
       resumed: true,
       reply,
+      usageTokens,
     });
+    emit({ type: 'assistant', text: reply });
     return {
       reply,
       transcript: [{ type: 'assistant', text: reply }],
@@ -618,12 +1015,7 @@ async function runGeminiTurn({
       recovered: true,
       tokens: execution.tokens,
       execution,
-      access: {
-        privilege: access.privilege,
-        email: access.email,
-        expiresAt: access.expiresAt,
-        reason: access.reason,
-      },
+      access: wrapProviderAccess(access),
       provider: 'gemini',
     };
   }
@@ -631,77 +1023,155 @@ async function runGeminiTurn({
   const body = {
     agent: agentName,
     input: prompt,
+    stream: true,
   };
   if (decoded?.interactionId && decoded?.environmentId) {
     body.previous_interaction_id = decoded.interactionId;
     body.environment = decoded.environmentId;
   } else {
     body.environment = 'remote';
-    // Seed sandbox with public repo clone instruction on first turn.
     body.input = `${prompt}
 
 Working tip: the public Lattice repo is ${repoUrl}. Clone it in the sandbox if you need file context.`;
   }
 
-  const res = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
+  emit({ type: 'status', status: 'live', message: 'Antigravity stream of thought opening…' });
+
+  let res = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
       'x-goog-api-key': apiKey,
+      accept: 'text/event-stream',
     },
     body: JSON.stringify(body),
   });
-  const interaction = await res.json().catch(() => ({}));
+
+  // Some deployments reject stream:true — fall back to create + poll.
   if (!res.ok) {
+    const errBody = await res.json().catch(() => ({}));
+    const msg = String(errBody?.error?.message || errBody?.message || '');
+    if (/stream/i.test(msg) || res.status === 400) {
+      emit({
+        type: 'status',
+        status: 'live',
+        message: 'Stream flag unsupported — creating interaction and polling…',
+      });
+      delete body.stream;
+      res = await fetch('https://generativelanguage.googleapis.com/v1beta/interactions', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-goog-api-key': apiKey,
+        },
+        body: JSON.stringify(body),
+      });
+    } else {
+      const err = new Error(msg || `Gemini HTTP ${res.status}`);
+      err.code = res.status === 401 || res.status === 403 ? 'gemini_auth' : 'gemini_error';
+      err.status = res.status;
+      throw err;
+    }
+  }
+
+  if (!res.ok) {
+    const interaction = await res.json().catch(() => ({}));
     const err = new Error(interaction?.error?.message || interaction?.message || `Gemini HTTP ${res.status}`);
     err.code = res.status === 401 || res.status === 403 ? 'gemini_auth' : 'gemini_error';
     err.status = res.status;
     throw err;
   }
 
-  let finalInteraction = interaction;
-  let status = String(interaction.status || '').toLowerCase();
-  // Poll briefly if background/incomplete (Vercel still has maxDuration budget).
-  for (let i = 0; i < 40 && status && !['completed', 'failed', 'cancelled'].includes(status); i++) {
-    await new Promise((r) => setTimeout(r, 2500));
-    const poll = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/interactions/${encodeURIComponent(interaction.id)}`,
-      { headers: { 'x-goog-api-key': apiKey } },
-    );
-    finalInteraction = await poll.json().catch(() => ({}));
-    status = String(finalInteraction.status || '').toLowerCase();
-    if (!poll.ok) break;
+  const transcript = [];
+  const state = {
+    reply: '',
+    interactionId: '',
+    environmentId: '',
+    usageTokens: null,
+    completed: false,
+    finalInteraction: null,
+    toolSeq: 1,
+  };
+  const push = (item) => pushTranscript(transcript, item);
+  const contentType = String(res.headers.get('content-type') || '');
+
+  if (/text\/event-stream|stream/i.test(contentType) || stream) {
+    await consumeUpstreamSse(res, (_eventName, data) => {
+      mapGeminiStreamEvent(data, state, emit, push);
+    });
+  } else {
+    const interaction = await res.json().catch(() => ({}));
+    state.interactionId = interaction.id || '';
+    state.environmentId = interaction.environment_id || '';
+    state.finalInteraction = interaction;
+    let status = String(interaction.status || '').toLowerCase();
+    if (status && !['completed', 'failed', 'cancelled'].includes(status) && interaction.id) {
+      state.finalInteraction = await pollGeminiInteraction(apiKey, interaction.id, {
+        onStatus: emit,
+      });
+    }
+    state.reply = extractGeminiText(state.finalInteraction) || '';
+    state.usageTokens = extractGeminiUsageTokens(state.finalInteraction);
+    if (state.reply) {
+      push({ type: 'assistant', text: state.reply });
+      emit({ type: 'assistant', text: state.reply });
+    }
   }
 
-  const reply = extractGeminiText(finalInteraction) || '(No reply text returned.)';
+  // If stream ended without completion, poll for the final result.
+  if (
+    !state.completed &&
+    state.interactionId &&
+    !(state.reply || '').trim()
+  ) {
+    emit({ type: 'status', status: 'live', message: 'Antigravity still working — polling for reply…' });
+    state.finalInteraction = await pollGeminiInteraction(apiKey, state.interactionId, {
+      onStatus: emit,
+    });
+    const polled = extractGeminiText(state.finalInteraction);
+    if (polled) {
+      state.reply = polled;
+      push({ type: 'assistant', text: polled });
+      emit({ type: 'assistant', text: polled });
+    }
+    const usage = extractGeminiUsageTokens(state.finalInteraction);
+    if (usage != null) state.usageTokens = usage;
+    if (state.finalInteraction?.environment_id) {
+      state.environmentId = state.finalInteraction.environment_id;
+    }
+  }
+
+  const finalReply = (state.reply || '').trim() || '(No reply text returned.)';
+  if (!transcript.some((t) => t.type === 'assistant')) {
+    push({ type: 'assistant', text: finalReply });
+  }
+
   const nextAgentId = encodeGeminiAgentId(
-    finalInteraction.id || interaction.id,
-    finalInteraction.environment_id || interaction.environment_id || '',
+    state.finalInteraction?.id || state.interactionId,
+    state.finalInteraction?.environment_id || state.environmentId || '',
   );
   const execution = buildLatticeExecution({
     message,
     history,
     mode: 'gemini',
     resumed: Boolean(decoded?.interactionId),
-    reply,
+    reply: finalReply,
+    usageTokens: state.usageTokens,
   });
+
   return {
-    reply,
-    transcript: [{ type: 'assistant', text: reply }],
+    reply: finalReply,
+    transcript: transcript.length ? transcript : [{ type: 'assistant', text: finalReply }],
     model: agentName,
     mode: agentMode,
     agentId: nextAgentId,
     tokens: execution.tokens,
     execution,
-    access: {
-      privilege: access.privilege,
-      email: access.email,
-      expiresAt: access.expiresAt,
-      reason: access.reason,
-    },
+    access: wrapProviderAccess(access),
     provider: 'gemini',
   };
 }
+
 
 function readBody(req) {
   if (req.body && typeof req.body === 'object') return Promise.resolve(req.body);
@@ -1285,13 +1755,23 @@ export default async function handler(req, res) {
       typeof body.agentId === 'string' && body.agentId.trim() ? body.agentId.trim() : null;
 
     if (provider === 'claude') {
+      const stream = wantsStream(req, body);
+      if (stream) initSse(res);
       try {
         if (recoverOnly && !message) {
-          return json(res, 409, {
-            error: 'Claude (Messages API) has no cloud run to recover — resend the prompt.',
-            code: 'nothing_to_recover',
-            provider,
-          });
+          return respondLattice(
+            res,
+            stream,
+            {
+              error: 'Claude (Messages API) has no cloud run to recover — resend the prompt.',
+              code: 'nothing_to_recover',
+              provider,
+            },
+            409,
+          );
+        }
+        if (stream) {
+          sseWrite(res, 'status', { message: 'Starting Claude stream of thought…' });
         }
         const out = await runClaudeTurn({
           apiKey,
@@ -1302,21 +1782,37 @@ export default async function handler(req, res) {
           access,
           nestTopology,
           agentRoster,
+          stream,
+          onEvent: stream
+            ? (item) => {
+                sseWrite(res, 'transcript', item);
+              }
+            : null,
         });
-        return json(res, 200, out);
+        return respondLattice(res, stream, out);
       } catch (err) {
         const code = err?.code || 'claude_error';
         const status = code === 'claude_auth' ? 401 : 502;
-        return json(res, status, {
-          error: err instanceof Error ? err.message : String(err),
-          code,
-          provider,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error: err instanceof Error ? err.message : String(err),
+            code,
+            provider,
+          },
+          status,
+        );
       }
     }
 
     if (provider === 'gemini') {
+      const stream = wantsStream(req, body);
+      if (stream) initSse(res);
       try {
+        if (stream) {
+          sseWrite(res, 'status', { message: 'Starting Antigravity stream of thought…' });
+        }
         const out = await runGeminiTurn({
           apiKey,
           message,
@@ -1329,24 +1825,46 @@ export default async function handler(req, res) {
           repoUrl,
           nestTopology,
           agentRoster,
+          stream,
+          onEvent: stream
+            ? (item) => {
+                sseWrite(res, 'transcript', item);
+                if (item?.type === 'status' && /created|interaction/i.test(item.message || '')) {
+                  /* agent id arrives in final payload */
+                }
+              }
+            : null,
         });
-        return json(res, 200, out);
+        if (stream && out.agentId) {
+          sseWrite(res, 'agent', { agentId: out.agentId });
+        }
+        return respondLattice(res, stream, out);
       } catch (err) {
         if (err?.code === 'agent_busy') {
-          return json(res, 409, {
-            error: err.message || 'Antigravity still running',
-            code: 'agent_busy',
-            agentId: err.agentId || agentId,
-            provider,
-          });
+          return respondLattice(
+            res,
+            stream,
+            {
+              error: err.message || 'Antigravity still running',
+              code: 'agent_busy',
+              agentId: err.agentId || agentId,
+              provider,
+            },
+            409,
+          );
         }
         const code = err?.code || 'gemini_error';
         const status = code === 'gemini_auth' ? 401 : 502;
-        return json(res, status, {
-          error: err instanceof Error ? err.message : String(err),
-          code,
-          provider,
-        });
+        return respondLattice(
+          res,
+          stream,
+          {
+            error: err instanceof Error ? err.message : String(err),
+            code,
+            provider,
+          },
+          status,
+        );
       }
     }
 

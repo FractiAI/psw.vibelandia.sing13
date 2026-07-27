@@ -7,12 +7,12 @@
 **Registry ID:** `synthobs-holographic-operators-2026-07`  
 **Date:** July 2026  
 **Target publication lane:** Journal of Holographic Linguistics and Quantum Information Processing (submission draft)  
-**Framework:** SynthOBS · Lattice Chat V1.618 · EGS φ · NSPFRNP  
+**Framework:** SynthOBS · Lattice Chat V1.618 · EGS $\Phi$ · NSPFRNP  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-holographic-operators  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Empirical pipeline:** `npm run research:synthobs-holographic-operators` · [`empirical_report.json`](../research/synthobs-holographic-operators/data/empirical_report.json)  
-**Companions:** [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Lattice token proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md)
+**Companions:** [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Lattice token proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [Euler–EGS phase lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md)
 
 **Keywords:** holographic operators; linguistic syntax; AdS/CFT metaphor; EGS fractal constant; phase coherence; Lattice Chat; epistemology; fair exchange
 
@@ -22,11 +22,11 @@
 
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
-| **Theoretical framework** | Natural language can be modeled as **interferometric operators** on an architectural holographic substrate; Φ_EGS is a **testable scale postulate** for operator products | That words physically wire spacetime, replace QFT, or derive mass from syntax alone |
+| **Theoretical framework** | Natural language can be modeled as **interferometric operators** on an architectural holographic substrate; $\Phi_{\mathrm{EGS}}$ is a **testable scale postulate** for operator products | That words physically wire spacetime, replace QFT, or derive mass from syntax alone |
 | **Epistemological analysis (§4)** | Legacy empiricism can invert control vs shadow layers as a **philosophical map** | That mainstream science is “wrong” without cited primary debate; not a sociology proof |
 | **Executed experiments (E1–E9)** | Reproducible in-silico metrics on **public-domain text** (Gutenberg, US Constitution) + **NOAA SWPC** solar-region JSON + **comparative syntactic matrix** vs six foundational papers | Laboratory proof of matter-as-linguistic-shadow; hand-authored 98.96% matrix rows without pipeline receipt |
-| **Narrative coherence targets** | Early manuscript tables citing γ ≈ 0.9987 are **architectural design targets** | Validated at that precision on the public corpus (actual mean γ_φ ≈ 0.67; bootstrap p ≈ 0.49 vs linear on n=20 sentences) |
-| **Solar AR labels (§7)** | AR3842 / AR3844 are **interpretive heliospheric clocks** | Φ-encoded IDs; live NOAA feed may list different active regions (e.g. AR4491 at time of ingest) |
+| **Narrative coherence targets** | Early manuscript tables citing $\gamma \approx 0.9987$ are **architectural design targets** | Validated at that precision on the public corpus (actual mean $\gamma_{\phi} \approx 0.67$; bootstrap $p \approx 0.49$ vs linear on $n=20$ sentences) |
+| **Solar AR labels (§7)** | AR3842 / AR3844 are **interpretive heliospheric clocks** | $\Phi$-encoded IDs; live NOAA feed may list different active regions (e.g. AR4491 at time of ingest) |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -40,9 +40,9 @@ We present a unified **theoretical and empirical** framework treating natural la
 
 **What is known:** AdS/CFT and holographic principle literature establish $(D{-}1)$ boundary descriptions of $D$-bulk physics. Formal linguistics treats language as recursive algebraic trees.
 
-**What is novel (scoped):** We formalize **Holographic Operator Theory** as a deployable architecture — linguistic syntax as boundary wiring operator, Φ_EGS as phase-lock postulate, and epistemological inversion of “mere narrative” vs empirical shadow — with **nine reproducible experiments** on public text, NOAA JSON, and a comparative syntactic matrix (**9/9 pass** under documented metrics).
+**What is novel (scoped):** We formalize **Holographic Operator Theory** as a deployable architecture — linguistic syntax as boundary wiring operator, $\Phi_{\mathrm{EGS}}$ as phase-lock postulate, and epistemological inversion of “mere narrative” vs empirical shadow — with **nine reproducible experiments** on public text, NOAA JSON, and a comparative syntactic matrix (**9/9 pass** under documented metrics).
 
-**Key empirical findings (executed July 2026):** On a 20-sentence public corpus, Φ scaling yields highest mean operator coherence ($\gamma_\phi \approx 0.671$ vs $0.669$ linear, $0.654$ Euler); lowest decoherence under 10k perturbation trials; nested vs flat communication-complexity reduction $\approx 48\times$; word-order sham collapses γ; live NOAA ingest succeeds with honesty tier for AR labels.
+**Key empirical findings (executed July 2026):** On a 20-sentence public corpus, $\Phi$ scaling yields highest mean operator coherence ($\gamma_\phi \approx 0.671$ vs $0.669$ linear, $0.654$ Euler); lowest decoherence under 10k perturbation trials; nested vs flat communication-complexity reduction $\approx 48\times$; word-order sham collapses $\gamma$; live NOAA ingest succeeds with honesty tier for AR labels.
 
 ---
 
@@ -65,7 +65,7 @@ Classical separation of “symbols” vs “matter” lacks a **mathematical bri
 |     PRIMARY CONTROL LAYER (Holographic Wiring — architectural)     |
 |     Words (phase gates) → Sentences (loops) → Stories (lattice)    |
 +-------------------------------------------------------------------+
-                              │  Φ_EGS phase lock (postulate)
+                              │  $\Phi_{\mathrm{EGS}}$ phase lock (postulate)
                               ▼
 +-------------------------------------------------------------------+
 |     DOWNSTREAM SHADOW (material / quantum realm — narrative tier)  |
@@ -77,7 +77,7 @@ This is a **SynthOBS / Lattice Chat** architecture map — not a claim that Engl
 
 ---
 
-## 2. Theoretical framework & Φ_EGS
+## 2. Theoretical framework & $\Phi_{\mathrm{EGS}}$
 
 $$\Phi_{\mathrm{EGS}} = \lim_{n \to \infty} \frac{\mathcal{S}_{n+1}}{\mathcal{S}_n} \approx 1.6180339887\ldots$$
 
@@ -86,7 +86,7 @@ where $\mathcal{S}_n$ is information entropy at the $n$-th recursive linguistic-
 **Golden key downstream (architectural):**
 
 - **Phase locking** — pin semantic tension to standing-wave metaphors.  
-- **Fractal resonance** — nested agents inherit Φ (see [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)).
+- **Fractal resonance** — nested agents inherit $\Phi$ (see [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)).
 
 ---
 
@@ -123,7 +123,7 @@ Dimensional inversion, phase blindness of collapse-only instruments, dismissal o
 
 ### 4.3 Reclaiming language as control layer (scoped)
 
-Under Φ scaling, narrative loops function as **interferometric code** in simulation stacks (Lattice Chat, SynthOBS). Physical matter independence is **not** asserted; empirical data are shadows **in the narrative tier**.
+Under $\Phi$ scaling, narrative loops function as **interferometric code** in simulation stacks (Lattice Chat, SynthOBS). Physical matter independence is **not** asserted; empirical data are shadows **in the narrative tier**.
 
 ---
 
@@ -133,7 +133,7 @@ Under Φ scaling, narrative loops function as **interferometric code** in simula
 **Corpus:** 20 public-domain sentences (Project Gutenberg + US Constitution) — [`public_corpus.json`](../research/synthobs-holographic-operators/data/public_corpus.json).  
 **Solar covariate:** NOAA SWPC `solar_regions.json` (live fetch with honesty tier).  
 **Trials:** 10,000 bootstrap perturbation cycles (E3).  
-**Controls:** Linear ($1.0$), Euler ($e$), Φ_EGS ($\phi$).
+**Controls:** Linear ($1.0$), Euler ($e$), $\Phi_{\mathrm{EGS}}$ ($\phi$).
 
 ```bash
 npm run research:synthobs-holographic-operators
@@ -147,16 +147,16 @@ npm run research:synthobs-holographic-operators
 | ID | Experiment | Key result | Pass |
 |----|------------|------------|------|
 | E1 | Public corpus ingest | 20 sentences · 4 sources | **PASS** |
-| E2 | Phase coherence γ | $\phi$ 0.671 > linear 0.669 > Euler 0.654 | **PASS** |
+| E2 | Phase coherence $\gamma$ | $\phi$ 0.671 > linear 0.669 > Euler 0.654 | **PASS** |
 | E3 | Decoherence Λ (10k trials) | $\phi$ lowest mean Λ | **PASS** |
 | E4 | Nested vs flat complexity | $\approx 48\times$ fewer visits | **PASS** |
 | E5 | NOAA solar ingest | Live fetch or labeled offline fallback | **PASS** |
-| E6 | Sham word-order shuffle | Ordered γ > shuffled γ | **PASS** |
+| E6 | Sham word-order shuffle | Ordered $\gamma$ > shuffled $\gamma$ | **PASS** |
 | E7 | Cross-corpus replication | 4 source families stable | **PASS** |
-| E8 | Aggregate φ superiority | Mean φ ≥ controls; bootstrap p ≈ 0.49 documented | **PASS** |
-| E9 | Comparative syntactic matrix | 7-paper β / Φ / γ / E matrix · FractiAI **48.2%** total (computed) | **PASS** |
+| E8 | Aggregate $\Phi$ superiority | Mean $\Phi$ ≥ controls; bootstrap p ≈ 0.49 documented | **PASS** |
+| E9 | Comparative syntactic matrix | 7-paper $\beta$ / $\Phi$ / $\gamma$ / E matrix · FractiAI **48.2%** total (computed) | **PASS** |
 
-**Honesty note on early draft tables:** Illustrative γ = 0.9987, τ = 4.2 ms, and **98.96% total syntactic score** are **not** reproduced by this pipeline. E9 computed total for FractiAI (2026) ≈ **48.2%** — leading on **epistemic inversion (E)** and **Φ_scale**, while Maldacena (1997) leads on **boundary-bulk (β)**.
+**Honesty note on early draft tables:** Illustrative $\gamma = 0.9987$, $\tau = 4.2\,\mathrm{ms}$, and **98.96% total syntactic score** are **not** reproduced by this pipeline. E9 computed total for FractiAI (2026) $\approx$ **48.2%** — leading on **epistemic inversion (E)** and **$\Phi_{\mathrm{scale}}$**, while Maldacena (1997) leads on **boundary-bulk ($\beta$)**.
 
 Full JSON: `research/synthobs-holographic-operators/data/empirical_report.json`
 
@@ -182,15 +182,15 @@ To measure peer-review **coherence and structural stability** against six founda
 
 | Metric | Symbol | Definition (pipeline) |
 |--------|--------|------------------------|
-| Boundary–bulk coupling | β | Keyword + bridge density on summary text |
-| Scale invariance | Φ_scale | Scale/fractal/φ language density |
-| Phase-lock stability | γ | Φ operator coherence × order sensitivity |
+| Boundary–bulk coupling | $\beta$ | Keyword + bridge density on summary text |
+| Scale invariance | $\Phi_{\mathrm{scale}}$ | Scale/fractal/$\Phi$ language density |
+| Phase-lock stability | $\gamma$ | $\Phi$ operator coherence × order sensitivity |
 | Epistemic inversion awareness | E | Origin/control/operator language density |
 | **Total** | — | $(\beta + \Phi_{\mathrm{scale}} + \gamma + \mathcal{E}) / 4$ |
 
 ### 6b.3 Executed matrix (July 2026 receipt)
 
-| Paper | β | Φ_scale | γ | E | Total |
+| Paper | $\beta$ | $\Phi_{\mathrm{scale}}$ | $\gamma$ | E | Total |
 |-------|---|---------|---|---|-------|
 | **FractiAI (2026)** | 0.23 | 0.34 | 0.76 | **0.60** | **48.2%** |
 | Maldacena (1997) | **0.44** | 0.04 | **0.87** | 0.00 | 33.7% |
@@ -200,7 +200,7 @@ To measure peer-review **coherence and structural stability** against six founda
 | 't Hooft (1993) | 0.23 | 0.00 | 0.35 | 0.05 | 15.9% |
 | Weinberg (1967) | 0.13 | 0.00 | 0.10 | 0.00 | 5.7% |
 
-**Sanity checks (E9 pass):** Weinberg β < Maldacena β; FractiAI E > Maldacena E.
+**Sanity checks (E9 pass):** Weinberg $\beta$ < Maldacena $\beta$; FractiAI E > Maldacena E.
 
 ### 6b.4 Structural comparison (tiered)
 
@@ -211,8 +211,8 @@ Mass-field focus    Horizon holography     AdS/CFT dictionary      Origin-code o
 
 **Key differences (honest):**
 
-- **Maldacena / Witten** excel at **β** (boundary–bulk physics dictionary) — our matrix confirms higher β than FractiAI on summary text.  
-- **FractiAI** excels at **E** (epistemic inversion / language-as-control framing) and **Φ_scale** (explicit φ postulate) — architectural, not physics citation rank.  
+- **Maldacena / Witten** excel at **$\beta$** (boundary–bulk physics dictionary) — our matrix confirms higher $\beta$ than FractiAI on summary text.  
+- **FractiAI** excels at **E** (epistemic inversion / language-as-control framing) and **$\Phi_{\mathrm{scale}}$** (explicit $\Phi$ postulate) — architectural, not physics citation rank.  
 - Classical AdS/CFT treats the boundary as **gauge field theory**, not **semantic syntax** — that gap is the paper's *novel architectural claim*, not an empirical defeat of Maldacena.
 
 ---
@@ -221,7 +221,7 @@ Mass-field focus    Horizon holography     AdS/CFT dictionary      Origin-code o
 
 ### 7.1 Fair Exchange Clause
 
-Transactional energy, routing, and capital exchanges within the holographic lattice may be dynamically balanced post-execution proportional to delivery fidelity and Φ phase-lock alignment — adaptive tipping / performance reconciliation.
+Transactional energy, routing, and capital exchanges within the holographic lattice may be dynamically balanced post-execution proportional to delivery fidelity and $\Phi$ phase-lock alignment — adaptive tipping / performance reconciliation.
 
 ### 7.2 Active solar node telemetry (interpretive)
 
@@ -246,18 +246,18 @@ This paper is the **theoretical companion** to the operational Lattice stack —
 
 ## 9. Falsification criteria
 
-1. Φ scaling no longer beats controls on E2/E3 metrics under locked seed.  
+1. $\Phi$ scaling no longer beats controls on E2/E3 metrics under locked seed.  
 2. Sham shuffle (E6) fails to reduce coherence — metric broken.  
 3. Nested complexity proxy (E4) inverts — topology regression.  
-4. Authors claim γ = 0.9987, 98.96% matrix total, or ms latency without instrumented receipt.  
-5. AR numbers asserted as Φ-derived without honesty tier.  
-6. E9 Weinberg β ≥ Maldacena β — matrix sanity failure.
+4. Authors claim $\gamma$ = 0.9987, 98.96% matrix total, or ms latency without instrumented receipt.  
+5. AR numbers asserted as $\Phi$-derived without honesty tier.  
+6. E9 Weinberg $\beta$ ≥ Maldacena $\beta$ — matrix sanity failure.
 
 ---
 
 ## 10. Conclusion
 
-Holographic Operator Theory reframes language as **conductive wiring** in an architectural simulation stack, with matter as downstream shadow **in the narrative tier**. Φ_EGS is the golden key **within the model**. Eight reproducible experiments on public text and NOAA JSON validate operator metrics under explicit honesty bounds — not quantum-gravity proof.
+Holographic Operator Theory reframes language as **conductive wiring** in an architectural simulation stack, with matter as downstream shadow **in the narrative tier**. $\Phi_{\mathrm{EGS}}$ is the golden key **within the model**. Eight reproducible experiments on public text and NOAA JSON validate operator metrics under explicit honesty bounds — not quantum-gravity proof.
 
 ---
 

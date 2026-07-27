@@ -4,7 +4,7 @@
 **Affiliation:** Center for Theoretical Biophysics and Complex Systems Simulation  
 **Document ID:** WP-SYNTHOBS-CHROM-ELCD-2026-07  
 **Date:** July 2026  
-**Framework:** SYNTHOBS · EGS φ · NSPFRNP Snap PRA  
+**Framework:** SYNTHOBS · EGS $\Phi$ · NSPFRNP Snap PRA  
 **Companion:** [Cross-Scale Biological Antennae](./SYNTHOBS_CROSS_SCALE_BIOLOGICAL_ANTENNAE_WAVE_DAMPING_2026-07.md) · [Recursive Attention Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) · [AC-HMM T2T](./FRACTIAI_AC_HMM_SATELLITES_T2T_2026.md) · [Planck–1.6 scale-harmonic bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -20,7 +20,7 @@
 |------|---------------------------|------------------------|
 | **Theoretical SYNTHOBS model** | An idealized, linearized Y-chromosome polymer can be modeled as a discrete LC lattice; dispersion math yields $v_g \to 0$ at the first Brillouin zone edge within that model | Empirical proof that living chromosomes behave as engineered transmission lines in vivo |
 | **Executed experiments (E1–E4)** | **Four reproducible empirical tests were run** on public UCSC hs1 assembly, RCSB PDB 6VXX, Garten 2015 THz peaks, and numeric LC dispersion (2026-07-03) | That these public-data tests substitute for bench spectroscopy on isolated linearized chromatin |
-| **EGS φ scaling** | $\Phi_{\text{EGS}} \approx 1.618$ is a **testable organizing postulate**; E3 yields **moderate** integer-tier support (2/3 pairs) on public lengths | That φ is derived from first principles or replaces established biochemistry |
+| **EGS $\Phi$ scaling** | $\Phi_{\text{EGS}} \approx 1.618$ is a **testable organizing postulate**; E3 yields **moderate** integer-tier support (2/3 pairs) on public lengths | That $\Phi$ is derived from first principles or replaces established biochemistry |
 | **Biological hypotheses (H1–H3)** | Falsifiable hypotheses tied to measurable RF/THz workflows | That epigenetic marks directly equal $L_k$/$C_k$ without impedance spectroscopy |
 | **Proposed lab protocols (future)** | Optical tweezers linearization, terahertz sweep, in situ impedance mapping — **not yet executed** | That any bench protocol in §8 has been run in this repository |
 
@@ -207,7 +207,7 @@ Mid-$v_p = 2.0 \times 10^7$ m·s⁻¹ (literature band). Inverse length–freque
 
 Numerical LC lattice sweep with per-bp parameters calibrated to $v_g(0) = 2.0 \times 10^7$ m·s⁻¹ confirms $|v_g|/v_g(0) < 10^{-9}$ at $k = \pi/\Delta x$ — analytic Brillouin-edge brake reproduced in silico.
 
-### 6.4 E3 — EGS φ integer-tier scaling (moderate)
+### 6.4 E3 — EGS $\Phi$ integer-tier scaling (moderate)
 
 Cross-scale length ratios vs integer $n \cdot \log_{10}(\Phi_{\text{EGS}})$:
 
@@ -217,7 +217,7 @@ Cross-scale length ratios vs integer $n \cdot \log_{10}(\Phi_{\text{EGS}})$:
 | chrY vs spike | 6.125 | 29 | 1.04% | yes |
 | chrY vs antenna | 1.151 | 6 | 8.94% | no |
 
-**2/3 pairs** pass integer-tier test → **moderate support** for φ-stepping across virus-to-genome spans; chrY–antenna pair fails at 5% threshold.
+**2/3 pairs** pass integer-tier test → **moderate support** for $\Phi$-stepping across virus-to-genome spans; chrY–antenna pair fails at 5% threshold.
 
 ### 6.5 E4 — THz peak proximity (no_support)
 
@@ -229,7 +229,7 @@ Macro chrY $f_0 \approx 0.37$–$0.57$ GHz (literature $v_p$ band) lies **~2.6 d
 |------|--------|----------------|
 | E1 genomic lengths | **support** | Public T2T coordinates validate $L_Y \approx 2.12$ cm |
 | E2 band-edge $v_g$ | **support** | Discrete LC model brake confirmed numerically |
-| E3 EGS integer tiers | **moderate** | φ-tier fit strong virus↔genome; weak chrY↔antenna |
+| E3 EGS integer tiers | **moderate** | $\Phi$-tier fit strong virus↔genome; weak chrY↔antenna |
 | E4 THz alignment | **no_support** | Macro $f_0$ ≠ Garten 2015 molecular peaks |
 
 Correlation of public geometry with model coordinates is an **empirical result at the public-data tier** — it does not by itself establish in vivo electrodynamic mechanism.
@@ -353,7 +353,7 @@ This paper has mathematically demonstrated that an idealized, linearized represe
 
 We introduced El Gran Sol's Fractal constant ($\Phi_{\text{EGS}} \approx 1.618$) as a foundational scaling invariant regulating multi-scale step-down cascade across downstream biological geometries. The July 2026 Planck–$1.6$ bridge (§4.3) anchors that cascade to a shared scale-harmonic floor and 81-digit register shared with the EGS Nested Agent Lattice.
 
-We **executed** empirical experiments E1–E4 on public data (2026-07-03): genomic coordinates (**support**), LC band-edge numerics (**support**), EGS φ tier stepping (**moderate**), and THz peak alignment (**no_support**). Mathematical derivations and E1–E3 are consistent within stated tiers. Bench-tier terahertz spectroscopy and in situ impedance mapping (§8) remain proposed for biological mechanism confirmation.
+We **executed** empirical experiments E1–E4 on public data (2026-07-03): genomic coordinates (**support**), LC band-edge numerics (**support**), EGS $\Phi$ tier stepping (**moderate**), and THz peak alignment (**no_support**). Mathematical derivations and E1–E3 are consistent within stated tiers. Bench-tier terahertz spectroscopy and in situ impedance mapping (§8) remain proposed for biological mechanism confirmation.
 
 ---
 
@@ -399,7 +399,7 @@ A fair exchange clause is in effect for this comprehensive theoretical manuscrip
 4. Mirny, The fractal globule as a model of chromatin architecture, *Chromosome Res.* (2011).  
 5. [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md) — NSPFRNP-SNAP-PRA-2026-06.  
 6. [Coherence plain speak honesty boundary](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).  
-7. [Recursive Attention Quantum–Solar–DNA Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) — cross-scale φ postulate.  
+7. [Recursive Attention Quantum–Solar–DNA Loop](./RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md) — cross-scale $\Phi$ postulate.  
 8. Wrapp et al., Cryo-EM structure of SARS-CoV-2 spike, *Science* (2020); PDB 6VXX.  
 9. Wetmore & Sen, DNA electromagnetic transmission-line model, *Phys. Rev. E* (2006).
 

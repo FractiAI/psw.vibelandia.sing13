@@ -11,7 +11,7 @@
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Companions:** [Planck–1.6 scale-harmonic bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [EGS-NLRF](./FRACTIAI_EGS_NLRF_HYDROGEN_2026.md) · [Chromosomal electrodynamics (cytographic LC lattice)](./SYNTHOBS_CHROMOSOMAL_ELECTRODYNAMICS_LINEARIZED_TOPOLOGY_2026-07.md) · [Emergent sync multi-agent](./SYNTHEVERSE_EMERGENT_SYNC_RECURSIVE_MULTI_AGENT_2026-06.md)
 
-**Keywords:** nested agents; EGS Nested Agent Lattice; Goldilocks nesting; micro-snapshot; Φ_EGS; Planck 1.6 bridge; 81-digit metapattern; k/81; systemic compression
+**Keywords:** nested agents; EGS Nested Agent Lattice; Goldilocks nesting; micro-snapshot; $\Phi_{\mathrm{EGS}}$; Planck 1.6 bridge; 81-digit metapattern; k/81; systemic compression
 
 ---
 
@@ -65,7 +65,7 @@ These rows are **architectural contrasts**, not instrumented production benchmar
 ```
 +---------------------------------------------------------+
 | OUTER LOOP (Parent Meta-Optimizer)                      |
-| Space: EGS Scale Length = Φ_EGS                         |
+| Space: EGS Scale Length = $\Phi_{\mathrm{EGS}}$                         |
 | Monitors: Macro Drift & Structural Loss                 |
 |                                                         |
 |    +-----------------------------------------------+    |

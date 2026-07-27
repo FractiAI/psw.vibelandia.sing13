@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-egs-euler-phase-lock",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Empirical suite — Phase-Locked Scale Invariance Euler ↔ EGS (WP-SYNTHOBS-EGS-EULER-PHASE-LOCK-2026-07)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "license": "MIT"
+}

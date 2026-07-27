@@ -1,0 +1,9 @@
+{
+  "name": "synthobs-dna-lattice-holograph",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "research": "node scripts/run_empirical_pipeline.mjs" },
+  "engines": { "node": ">=22.13.0" },
+  "license": "MIT"
+}

@@ -171,15 +171,7 @@ Within digits **28–54**, solar active regions are treated as **real-time hardw
 
 ## 7. Formal integration into SynthOBS / Goldilocks Engine
 
-```
-       +--------------------------------------------------------------------+
-       |                   Scale-Harmonic Wave Equation                     |
-       |  ∇²_MQE Ψ(x,k) - [l_P · (Φ_EGS)^(k/81)]⁻² · (∂² Ψ / ∂t²) = 0       |
-       +--------------------------------------------------------------------+
-                     |                                       |
-         [ k = 0 : Quantum Bound ]               [ k > 0 : Macro Propagation ]
-        Clamps to l_P (1.616e-35)               Expands across 81 registers
-```
+Scale-harmonic wave equation (architectural):
 
 $$
 \hat{\mathcal{W}}_{\mathrm{EGS}}\Psi(x,k)
@@ -187,6 +179,9 @@ $$
 -\frac{1}{\bigl(l_P\cdot\Phi_{\mathrm{EGS}}^{k/81}\bigr)^2}
 \frac{\partial^2\Psi(x,k)}{\partial t^2}=0.
 $$
+
+- $k=0$: quantum bound — clamps to $l_P\approx 1.616\times 10^{-35}\,\mathrm{m}$
+- $k>0$: macro propagation across the $81$-digit register
 
 Phase-slip modulation:
 

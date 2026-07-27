@@ -238,8 +238,11 @@ export function ChatPane({
           ) : null}
         </div>
         <p className="chat-sub">
-          Nested agents as simple as chat · live stream of thought ·{' '}
+          Live stream of thought · measured token balances (before→after) ·{' '}
           <a href="/lattice">What is Lattice?</a>
+        </p>
+        <p className="chat-build-stamp" data-lattice-build="measured-stream-v2">
+          Build: measured tokens · live thought stream
         </p>
       </header>
 
@@ -323,22 +326,23 @@ export function ChatPane({
         )}
         {showWorking ? (
           <article
-            className={`bubble bubble-assistant thinking${sendPhase === 'stuck' ? ' thinking--stuck' : ''}`}
+            className={`bubble bubble-assistant thinking thought-stream-panel${sendPhase === 'stuck' ? ' thinking--stuck' : ''}`}
           >
-            <span className="bubble-role">Lattice</span>
+            <div className="thought-stream-head">
+              <span className="bubble-role">Stream of thought</span>
+              <span className="thought-stream-timer">
+                {mm}:{ss}
+                {sendPhase === 'stuck' ? ' · may still finish' : ''}
+              </span>
+            </div>
+            <div className="cx-block cx-status working-live-status">
+              <span className="working-pulse" aria-hidden="true" />
+              {workingLabel}
+            </div>
             {liveTranscript.length ? (
-              <>
-                <div className="cx-block cx-status working-live-status">
-                  <span className="working-pulse" aria-hidden="true" />
-                  {workingLabel}
-                  <span className="working-timer-inline">
-                    · {mm}:{ss}
-                  </span>
-                </div>
-                <AgentTranscript items={liveTranscript} live />
-              </>
+              <AgentTranscript items={liveTranscript} live />
             ) : (
-              <>
+              <div className="thought-stream-waiting">
                 <div className="working-meter" aria-hidden="true">
                   {LATTICE_PROGRESS_STEPS.map((label, i) => (
                     <span
@@ -349,18 +353,10 @@ export function ChatPane({
                     </span>
                   ))}
                 </div>
-                <div className="cx-block cx-status">
-                  <span className="working-pulse" aria-hidden="true" />
-                  {workingLabel}
-                </div>
                 <p className="working-stream-hint">
-                  Stream of thought will appear here as the cloud agent thinks and uses tools.
+                  Waiting for live thought / tool events from the cloud agent…
                 </p>
-                <p className="working-timer">
-                  Elapsed {mm}:{ss}
-                  {sendPhase === 'stuck' ? ' · may still finish' : ' · typically 1–3 min'}
-                </p>
-              </>
+              </div>
             )}
             <div className="working-actions">
               <button

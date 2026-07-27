@@ -188,7 +188,10 @@ async function postLattice(
   const contentType = String(res.headers.get('content-type') || '');
   if (wantStream && /text\/event-stream/i.test(contentType) && res.body) {
     const store = useLatticeStore.getState();
-    store.clearLiveTranscript();
+    // Recover/watchdog must not wipe the live thought stream from the primary SSE.
+    if (!body.recover) {
+      store.clearLiveTranscript();
+    }
     let donePayload: LatticeResponse | null = null;
     let errorPayload: LatticeResponse | null = null;
     let buffer = '';
@@ -224,6 +227,7 @@ async function postLattice(
         const before = payload.balanceBefore;
         const after = payload.balanceAfter;
         if (payload.phase === 'before' && typeof before === 'number') {
+          store.patchPending({ balanceBefore: before });
           store.pushLiveTranscript({
             type: 'status',
             status: 'balance',
@@ -430,6 +434,7 @@ async function tryRecoverOnce(
       provider: store.provider,
       nestTopology: store.nestTopology,
       agentRoster: store.agentRoster,
+      balanceBefore: store.pending?.balanceBefore ?? null,
     },
     email,
   );
@@ -597,6 +602,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   };
 
   let settled = false;
+  let primaryStreamActive = false;
   const startedAt = Date.now();
 
   const settleSuccess = (data: LatticeResponse) => {
@@ -629,6 +635,8 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   const watchdog = setInterval(() => {
     void (async () => {
       if (settled) return;
+      // Primary SSE still open — do not open a second recover stream that races it.
+      if (primaryStreamActive) return;
       const elapsed = Date.now() - startedAt;
       if (elapsed < WATCHDOG_MS) return;
       store.setSendProgress(
@@ -660,7 +668,9 @@ export async function sendLatticeMessage(text: string): Promise<void> {
 
   try {
     store.setSendProgress('sending', latticeProgressHint(0, 'sending'));
+    primaryStreamActive = true;
     let { res, data } = await postLattice(baseBody, email);
+    primaryStreamActive = false;
     if (settled) return;
     if (data.agentId) store.setAgentId(threadId, data.agentId);
 
@@ -803,6 +813,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       );
     })();
   } finally {
+    primaryStreamActive = false;
     clearInterval(watchdog);
     clearInterval(statusTick);
     if (settled) store.setSending(false);

@@ -948,7 +948,8 @@ async function resolveCursorBalances({ apiKey, agentId, runId, resultUsage, bala
         usageTokens,
       };
     }
-    return { balanceBefore: 0, balanceAfter, usageTokens: balanceAfter > 0 ? balanceAfter : null };
+    // Do not invent balanceBefore: 0 — that falsely marks cumulative total as "used".
+    return { balanceBefore: null, balanceAfter, usageTokens: null };
   }
   return {
     balanceBefore: balanceBefore ?? null,
@@ -1407,12 +1408,16 @@ export default async function handler(req, res) {
             if (stream && Array.isArray(recovered.transcript)) {
               for (const item of recovered.transcript) onStreamItem(item);
             }
+            const clientBalanceBefore =
+              typeof body.balanceBefore === 'number' && Number.isFinite(body.balanceBefore)
+                ? body.balanceBefore
+                : null;
             const balances = await resolveCursorBalances({
               apiKey,
               agentId: agent.agentId ?? agentId,
               runId: recovered.runId,
               resultUsage: recovered.result?.usage,
-              balanceBefore: null,
+              balanceBefore: clientBalanceBefore,
             });
             const execution = buildLatticeExecution({
               message: message || '(recovered run)',

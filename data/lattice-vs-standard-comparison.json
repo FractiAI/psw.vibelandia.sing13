@@ -1,7 +1,7 @@
 {
   "id": "lattice-vs-standard-complex-work-v1",
   "title": "Lattice Chat V1.618 vs standard agentic mode — complex multi-band work",
-  "ranAt": "2026-07-27T05:22:19.057Z",
+  "ranAt": "2026-07-27T05:35:53.788Z",
   "honesty": "Structural token estimate (chars÷4). Same prompt for both modes. Not vendor-billed usage; illustrates context load. Lattice path uses RAG pointers + nested scale bands; standard path dumps large doc/protocol/code slices and re-stuffs across phases.",
   "prompt": "Complex work (same ask for both modes):\n\nMap how SING13 Nested Agent Lattice + NSPFRNP + RAG should execute a multi-band change:\n(1) ground the ask in docs/ and protocols/,\n(2) identify edge UI touchpoints under apps/ and interfaces/,\n(3) identify pipe/API touchpoints under api/ and lib/,\n(4) propose a token-efficient nested-agent plan with peer-firewall and scale-to-zero,\n(5) compare estimated context load vs dumping the corpus into one fat agent.\n\nDeliver a structured plan a chat user could follow.",
   "modes": {

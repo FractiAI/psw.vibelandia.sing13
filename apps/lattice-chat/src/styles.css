@@ -651,6 +651,14 @@ body {
   max-width: 42rem;
 }
 
+.chat-build-stamp {
+  margin: 0.2rem 0 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.72);
+}
+
 .chat-access-line {
   margin: 0.55rem 0 0;
   font-size: 0.85rem;
@@ -765,6 +773,43 @@ body {
   max-width: min(56rem, 100%);
   width: 100%;
   min-height: min(42vh, 18rem);
+}
+
+.thought-stream-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: min(58vh, 28rem);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: linear-gradient(180deg, rgba(26, 18, 12, 0.55), rgba(10, 8, 6, 0.35));
+  padding: 0.75rem 0.9rem 0.85rem;
+}
+
+.thought-stream-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.thought-stream-timer {
+  font-size: 0.72rem;
+  color: var(--brand-muted);
+  letter-spacing: 0.02em;
+}
+
+.thought-stream-waiting {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 8rem;
+}
+
+.thought-stream-panel .cx-transcript--live {
+  flex: 1 1 auto;
+  max-height: min(68vh, 48rem);
 }
 
 .bubble-assistant {
@@ -941,6 +986,13 @@ body {
   line-height: 1.4;
   color: var(--brand-muted);
   opacity: 0.9;
+}
+
+.token-compare--measured {
+  opacity: 1;
+  border-top-color: rgba(212, 175, 55, 0.28);
+  padding: 0.45rem 0.55rem 0.35rem;
+  background: rgba(212, 175, 55, 0.06);
 }
 
 .token-compare-row {

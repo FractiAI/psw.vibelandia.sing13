@@ -89,24 +89,24 @@ export function TokenCompareFooter({ tokens }: { tokens: TokenCompare }) {
     tokens.latticeTokens;
 
   return (
-    <div className="token-compare" aria-label="Token usage">
-      {hasBalances ? (
-        <p className="token-compare-row">
-          <span className="token-compare-label">Balance</span>
-          <span className="token-compare-text">
-            {tokens.balanceBefore!.toLocaleString()} → {tokens.balanceAfter!.toLocaleString()}
-            <span className="token-compare-dot">·</span>
-            used {used.toLocaleString()}
-          </span>
-        </p>
-      ) : (
-        <p className="token-compare-row">
-          <span className="token-compare-label">Used</span>
-          <span className="token-compare-text">{used.toLocaleString()} tokens</span>
-        </p>
-      )}
+    <div className="token-compare token-compare--measured" aria-label="Measured token usage">
+      <p className="token-compare-row">
+        <span className="token-compare-label">Measured</span>
+        <span className="token-compare-text">
+          {hasBalances ? (
+            <>
+              balance {tokens.balanceBefore!.toLocaleString()} →{' '}
+              {tokens.balanceAfter!.toLocaleString()}
+              <span className="token-compare-dot">·</span>
+              used {used.toLocaleString()}
+            </>
+          ) : (
+            <>used {used.toLocaleString()} tokens</>
+          )}
+        </span>
+      </p>
       <p className="token-compare-honesty">
-        Actual provider balance/usage for this run — not an estimate.
+        Actual provider ledger for this run — estimates removed from chat.
       </p>
     </div>
   );

@@ -43,6 +43,8 @@ type PendingSend = {
   prompt: string;
   startedAt: number;
   agentId?: string;
+  /** Cumulative provider token balance captured at run start. */
+  balanceBefore?: number | null;
 };
 
 type LatticeState = {
@@ -78,6 +80,7 @@ type LatticeState = {
   setSending: (v: boolean) => void;
   setSendProgress: (phase: SendPhase, hint?: string | null) => void;
   setPending: (pending: PendingSend | null) => void;
+  patchPending: (patch: Partial<PendingSend>) => void;
   clearPending: () => void;
   setLiveTranscript: (items: TranscriptItem[]) => void;
   pushLiveTranscript: (item: TranscriptItem) => void;
@@ -241,6 +244,8 @@ export const useLatticeStore = create<LatticeState>()(
           sending: phase !== 'idle',
         }),
       setPending: (pending) => set({ pending }),
+      patchPending: (patch) =>
+        set((s) => (s.pending ? { pending: { ...s.pending, ...patch } } : {})),
       clearPending: () => set({ pending: null, liveTranscript: [] }),
       setLiveTranscript: (items) => set({ liveTranscript: items }),
       pushLiveTranscript: (item) =>

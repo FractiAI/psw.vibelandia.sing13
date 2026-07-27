@@ -11,6 +11,7 @@ import {
 } from '@/api';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
+import { MarkdownBody } from '@/components/MarkdownBody';
 import { ComposerOptions } from '@/components/ComposerOptions';
 import { KeySettingsPanel } from '@/components/KeySettings';
 import { TokenCompareFooter, hasMeasuredTokens } from '@/components/TokenCompare';
@@ -241,8 +242,8 @@ export function ChatPane({
           Live stream of thought · measured token balances (before→after) ·{' '}
           <a href="/lattice">What is Lattice?</a>
         </p>
-        <p className="chat-build-stamp" data-lattice-build="measured-stream-v3-all-providers">
-          Build: measured tokens · live thought · Cursor · Claude · Gemini
+        <p className="chat-build-stamp" data-lattice-build="measured-stream-v4-markdown">
+          Build: measured tokens · live thought · Markdown · Cursor · Claude · Gemini
         </p>
       </header>
 
@@ -315,6 +316,10 @@ export function ChatPane({
               </span>
               {m.role === 'assistant' && m.transcript?.length ? (
                 <AgentTranscript items={m.transcript} />
+              ) : m.role === 'assistant' ? (
+                <div className="bubble-body">
+                  <MarkdownBody>{m.content}</MarkdownBody>
+                </div>
               ) : (
                 <div className="bubble-body">{m.content}</div>
               )}

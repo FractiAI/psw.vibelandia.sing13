@@ -749,7 +749,6 @@ body {
 }
 
 .bubble-body {
-  white-space: pre-wrap;
   word-break: break-word;
   font-size: 0.95rem;
   line-height: 1.55;
@@ -757,6 +756,10 @@ body {
   border: 1px solid rgba(212, 175, 55, 0.16);
   background: rgba(26, 18, 12, 0.55);
   color: var(--brand-text);
+}
+
+.bubble-user .bubble-body {
+  white-space: pre-wrap;
 }
 
 .bubble-user .bubble-body {
@@ -831,9 +834,157 @@ body {
 }
 
 .cx-assistant-text {
-  white-space: pre-wrap;
   word-break: break-word;
   padding: 0.15rem 0;
+}
+
+/* Rendered Markdown in assistant bubbles and transcript text blocks */
+.md-body {
+  word-break: break-word;
+}
+
+.md-body > :first-child {
+  margin-top: 0;
+}
+
+.md-body > :last-child {
+  margin-bottom: 0;
+}
+
+.md-body h1,
+.md-body h2,
+.md-body h3,
+.md-body h4,
+.md-body h5,
+.md-body h6 {
+  margin: 1.1em 0 0.45em;
+  line-height: 1.25;
+  color: var(--brand-champagne);
+  font-weight: 600;
+}
+
+.md-body h1 {
+  font-size: 1.35rem;
+}
+
+.md-body h2 {
+  font-size: 1.2rem;
+}
+
+.md-body h3 {
+  font-size: 1.05rem;
+}
+
+.md-body h4,
+.md-body h5,
+.md-body h6 {
+  font-size: 0.98rem;
+}
+
+.md-body p {
+  margin: 0.55em 0;
+}
+
+.md-body ul,
+.md-body ol {
+  margin: 0.55em 0;
+  padding-left: 1.35rem;
+}
+
+.md-body li {
+  margin: 0.2em 0;
+}
+
+.md-body li > p {
+  margin: 0.2em 0;
+}
+
+.md-body blockquote {
+  margin: 0.65em 0;
+  padding: 0.35rem 0.75rem;
+  border-left: 3px solid rgba(212, 175, 55, 0.45);
+  color: var(--brand-text-soft);
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.md-body a {
+  color: var(--brand-gold-hi);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.md-body a:hover {
+  color: var(--brand-gold);
+}
+
+.md-body strong {
+  color: var(--brand-champagne);
+  font-weight: 600;
+}
+
+.md-body em {
+  color: var(--brand-text-soft);
+}
+
+.md-body code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: 0.88em;
+  padding: 0.12em 0.35em;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  color: var(--brand-gold-hi);
+}
+
+.md-body pre {
+  margin: 0.7em 0;
+  padding: 0.75rem 0.9rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.md-body pre code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 0.84rem;
+  color: var(--brand-text);
+}
+
+.md-body table {
+  width: 100%;
+  margin: 0.75em 0;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.md-body th,
+.md-body td {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  text-align: left;
+  vertical-align: top;
+}
+
+.md-body th {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--brand-champagne);
+  font-weight: 600;
+}
+
+.md-body tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.md-body hr {
+  margin: 1em 0;
+  border: 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .cx-status {

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { MarkdownBody } from '@/components/MarkdownBody';
 import type { TranscriptItem } from '@/types';
 
 function ThinkingBlock({
@@ -129,7 +130,7 @@ export function AgentTranscript({
         if (item.type === 'assistant') {
           return (
             <div key={key} className="cx-block cx-assistant-text">
-              {item.text}
+              <MarkdownBody>{item.text || ''}</MarkdownBody>
             </div>
           );
         }

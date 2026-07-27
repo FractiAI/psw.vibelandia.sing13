@@ -31,7 +31,7 @@ export function JukeboxSiteNav({ mode }: JukeboxSiteNavProps) {
       </nav>
       <p className="jb-eyebrow">
         {SONIC_LISTEN_EYEBROW_PREFIX}{' '}
-        <a className="jb-brand-selectable" href={QUESTFEST_DECK_HREF} title="Opens QUESTFEST in a browse window — jukebox keeps playing here">
+        <a className="jb-brand-selectable" href={QUESTFEST_DECK_HREF}>
           {SONIC_BRAND_NAME}
         </a>
       </p>

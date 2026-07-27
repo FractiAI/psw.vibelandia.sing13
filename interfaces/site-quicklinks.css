@@ -1,62 +1,32 @@
-/* Fixed sitewide jukebox launcher (injected by site-jukebox.js; skipped on jukebox/bridge) */
-.qv-site-dock {
-  position: fixed;
-  top: 0.65rem;
-  right: 0.65rem;
-  z-index: 1200;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.35rem;
-  max-width: min(220px, calc(100vw - 1.3rem));
-  pointer-events: none;
-}
-
-.qv-site-dock > * {
-  pointer-events: auto;
-}
-
-.qv-site-dock__jukebox {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 0.85rem;
-  font: inherit;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 8px;
-  border: 1px solid rgba(212, 175, 55, 0.55);
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
-  background: linear-gradient(165deg, #2a1c0e 0%, #120e0a 100%);
-  color: #fef3c7;
-}
-
-.qv-site-dock__jukebox:hover {
-  border-color: #d4af37;
-  background: linear-gradient(165deg, #3a2814 0%, #1a140c 100%);
-  color: #fff8e7;
-}
-
-.site-quicklinks a.qv-open-jukebox,
-.site-quicklinks button.qv-open-jukebox {
-  color: #f5e6c8;
+/* In-flow top quicklinks — same idea as deck-skin-nav / jukebox jb-nav (not a floating overlay) */
+.qv-top-quicklinks {
+  margin: 0;
+  padding: 0.65rem 1.1rem 0.55rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  text-decoration: none;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
+  letter-spacing: 0.04em;
+  background: linear-gradient(180deg, rgba(20, 14, 8, 0.96), rgba(10, 8, 6, 0.88));
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+  color: #d6cfc4;
 }
 
-.site-quicklinks a.qv-open-jukebox:hover,
-.site-quicklinks button.qv-open-jukebox:hover {
+.qv-top-quicklinks a {
+  color: #f5e6c8;
+  text-decoration: none;
+}
+
+.qv-top-quicklinks a:hover {
   color: #fef3c7;
   text-decoration: underline;
+}
+
+.qv-top-quicklinks .sep {
+  margin: 0 0.45rem;
+  opacity: 0.55;
+}
+
+.qv-top-quicklinks__here {
+  color: #fef3c7;
 }
 
 .site-quicklinks {

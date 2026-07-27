@@ -2,6 +2,8 @@
  * Jukebox stays in this tab. Links that leave the bridge open in a browse
  * window so playback is not unloaded. Listen CTAs navigate (or refocus) the
  * jukebox — they do not spawn a second player.
+ *
+ * No floating overlay buttons — site chrome uses top quicklinks instead.
  */
 (function () {
   var JUKEBOX_NAME = 'qv-jukebox';
@@ -64,7 +66,6 @@
     if (url.origin === window.location.origin && isJukeboxDestination(url)) {
       return false;
     }
-    // Same document, hash-only change (should already be caught by #)
     if (
       url.origin === window.location.origin &&
       url.pathname === window.location.pathname &&
@@ -78,7 +79,6 @@
   function openBrowse(url) {
     var win = null;
     try {
-      // Keep opener so the browse window can refocus the jukebox.
       win = window.open(url, BROWSE_NAME, BROWSE_FEATURES);
     } catch (e) {
       win = null;
@@ -147,23 +147,9 @@
     openBrowse(url.href);
   }
 
-  function injectDock() {
-    if (document.querySelector('.qv-site-dock')) return;
-    if (isBridgeSurface()) return;
-
-    var dock = document.createElement('aside');
-    dock.className = 'qv-site-dock';
-    dock.setAttribute('aria-label', 'Open jukebox');
-    dock.innerHTML =
-      '<button type="button" class="qv-site-dock__jukebox" data-qv-jukebox title="Return to the jukebox (keeps playing in its tab)">' +
-      '♪ Listen · Jukebox</button>';
-    document.body.appendChild(dock);
-  }
-
   function boot() {
     claimJukeboxName();
     document.addEventListener('click', onClick, true);
-    injectDock();
   }
 
   if (document.readyState === 'loading') {

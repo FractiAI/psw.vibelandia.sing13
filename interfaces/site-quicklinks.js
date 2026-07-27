@@ -1,4 +1,4 @@
-/** Injects global Bulletin Board + jukebox / QUESTFEST quick links. */
+/** Injects top QUESTFEST · Listen quicklinks (in-flow) + footer Bulletin Board. */
 (function () {
   if (!window.__qvPageViewsBoot && !document.querySelector('script[data-qv-page-views]')) {
     var pv = document.createElement('script');
@@ -30,36 +30,100 @@
     document.head.appendChild(jb);
   }
 
-  if (document.querySelector('.site-quicklinks')) return;
-
   var path = window.location.pathname || '';
-  if (
-    path.includes('turner-bison-herd-management') ||
-    path.includes('bulletin-board') ||
+  var onBridge = path.indexOf('questfest-bridge') !== -1;
+  var onQuestfestHome =
     path === '/' ||
     path.endsWith('vibelandia-questfest.html') ||
-    path.includes('ss-vibelandia') ||
-    path.includes('noahs-ark') ||
-    path.includes('questfest-bridge')
-  ) {
-    return;
+    path.endsWith('/vibelandia-questfest');
+
+  function hasListenLink(root) {
+    if (!root) return false;
+    return !!root.querySelector(
+      'a[href*="/listen"], a[href*="#/listen"], a[href*="jukebox"], a[data-qv-jukebox], a.qv-open-jukebox'
+    );
   }
 
-  var nav = document.createElement('nav');
-  nav.className = 'site-quicklinks';
-  nav.setAttribute('aria-label', 'Global quick links');
-  nav.innerHTML =
-    '<p>SS Vibelandia</p>' +
-    '<a href="/listen" class="qv-open-jukebox" data-qv-jukebox>Listen · Jukebox</a>' +
-    '<span class="sep" aria-hidden="true">·</span>' +
-    '<a href="/interfaces/vibelandia-questfest.html">← QUESTFEST</a>' +
-    '<span class="sep" aria-hidden="true">·</span>' +
-    '<a href="/bulletin-board">SS Vibelandia Bulletin Board</a>';
+  function injectTopQuicklinks() {
+    if (onBridge) return;
+    if (document.querySelector('.qv-top-quicklinks')) return;
+    if (document.querySelector('.jb-nav')) return;
 
-  var footer = document.querySelector('footer');
-  if (footer && footer.parentNode) {
-    footer.parentNode.insertBefore(nav, footer);
+    var deckNav = document.querySelector('.deck-skin-nav');
+    if (deckNav) {
+      if (!hasListenLink(deckNav)) {
+        deckNav.insertAdjacentHTML(
+          'beforeend',
+          '<span class="dot" aria-hidden="true">·</span><a href="/listen" data-qv-jukebox>Listen</a>'
+        );
+      }
+      return;
+    }
+
+    var skinNav = document.querySelector('.skin-nav');
+    if (skinNav) {
+      if (!hasListenLink(skinNav)) {
+        skinNav.insertAdjacentHTML(
+          'beforeend',
+          '<span class="dot" aria-hidden="true">·</span><a href="/listen" data-qv-jukebox>Listen</a>'
+        );
+      }
+      return;
+    }
+
+    var nav = document.createElement('nav');
+    nav.className = 'qv-top-quicklinks';
+    nav.setAttribute('aria-label', 'Site');
+    if (onQuestfestHome) {
+      nav.innerHTML =
+        '<span class="qv-top-quicklinks__here">QUESTFEST</span>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/listen" data-qv-jukebox>Listen</a>';
+    } else {
+      nav.innerHTML =
+        '<a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/listen" data-qv-jukebox>Listen</a>';
+    }
+    document.body.insertBefore(nav, document.body.firstChild);
+  }
+
+  function injectFooterQuicklinks() {
+    if (document.querySelector('.site-quicklinks')) return;
+    if (
+      path.includes('turner-bison-herd-management') ||
+      path.includes('bulletin-board') ||
+      onQuestfestHome ||
+      path.includes('ss-vibelandia') ||
+      path.includes('noahs-ark') ||
+      onBridge
+    ) {
+      return;
+    }
+
+    var nav = document.createElement('nav');
+    nav.className = 'site-quicklinks';
+    nav.setAttribute('aria-label', 'Global quick links');
+    nav.innerHTML =
+      '<p>SS Vibelandia</p>' +
+      '<a href="/bulletin-board">SS Vibelandia Bulletin Board</a>';
+
+    var footer = document.querySelector('footer');
+    if (footer && footer.parentNode) {
+      footer.parentNode.insertBefore(nav, footer);
+    } else {
+      document.body.appendChild(nav);
+    }
+  }
+
+  function boot() {
+    injectTopQuicklinks();
+    injectFooterQuicklinks();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    document.body.appendChild(nav);
+    boot();
   }
 })();

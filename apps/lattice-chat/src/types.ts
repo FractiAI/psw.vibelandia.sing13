@@ -1,6 +1,7 @@
 export type ChatRole = 'user' | 'assistant' | 'system';
 
 export type AgentMode = 'agent' | 'plan';
+export type ReasoningLens = 'standard' | 'lths';
 
 /** How Lattice should nest work for this turn. */
 export type NestTopology = 'single' | 'multi' | 'goldilocks';
@@ -54,6 +55,7 @@ export type ChatMessage = {
   transcript?: TranscriptItem[];
   model?: string;
   mode?: AgentMode;
+  lens?: ReasoningLens;
   tokens?: TokenCompare;
 };
 

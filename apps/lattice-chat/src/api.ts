@@ -16,7 +16,7 @@ import {
   PROVIDER_DEFAULT_MODEL,
 } from '@/modelCatalog';
 import { useLatticeStore } from '@/store';
-import type { AgentMode, TokenCompare, TranscriptItem } from '@/types';
+import type { AgentMode, ReasoningLens, TokenCompare, TranscriptItem } from '@/types';
 
 type LatticeResponse = {
   reply?: string;
@@ -29,6 +29,7 @@ type LatticeResponse = {
   transcript?: TranscriptItem[];
   model?: string;
   mode?: AgentMode;
+  lens?: ReasoningLens;
   recovered?: boolean;
   tokens?: TokenCompare;
   execution?: { tokens?: TokenCompare };
@@ -320,6 +321,7 @@ function applyAssistantReply(
   data: LatticeResponse,
   fallbackModel: string,
   fallbackMode: AgentMode,
+  fallbackLens: ReasoningLens,
 ): void {
   const store = useLatticeStore.getState();
   const reply = (data.reply || '').trim();
@@ -347,6 +349,7 @@ function applyAssistantReply(
     transcript: transcript.length ? transcript : [{ type: 'assistant', text: content }],
     model: data.model || fallbackModel,
     mode: data.mode || fallbackMode,
+    lens: data.lens || fallbackLens,
     tokens,
   });
   if (data.agentId) store.setAgentId(threadId, data.agentId);
@@ -444,6 +447,7 @@ async function tryRecoverOnce(
       history,
       provider: store.provider,
       nestTopology: store.nestTopology,
+      reasoningLens: store.reasoningLens,
       agentRoster: store.agentRoster,
       balanceBefore: store.pending?.balanceBefore ?? null,
     },
@@ -462,7 +466,7 @@ async function tryRecoverOnce(
   }
   if (!awaitingAssistant(threadId)) return true;
 
-  applyAssistantReply(threadId, data, store.modelId, store.agentMode);
+  applyAssistantReply(threadId, data, store.modelId, store.agentMode, store.reasoningLens);
   store.setError(null);
   return true;
 }
@@ -609,6 +613,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     mode: store.agentMode,
     provider: store.provider,
     nestTopology: store.nestTopology,
+    reasoningLens: store.reasoningLens,
     agentRoster: store.agentRoster,
   };
 
@@ -624,7 +629,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       return;
     }
     settled = true;
-    applyAssistantReply(threadId, data, store.modelId, store.agentMode);
+    applyAssistantReply(threadId, data, store.modelId, store.agentMode, store.reasoningLens);
     store.setError(null);
     store.setSending(false);
   };

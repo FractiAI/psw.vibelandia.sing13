@@ -158,6 +158,24 @@ function normalizeNestTopology(raw) {
   return 'goldilocks';
 }
 
+function normalizeReasoningLens(raw) {
+  const v = String(raw || '')
+    .trim()
+    .toLowerCase();
+  if (v === 'lths' || v === 'lths1.1' || v === 'lths-1.1' || v === 'uos' || v === 'uos1.1') {
+    return 'lths';
+  }
+  return 'standard';
+}
+
+function buildReasoningLensDirective(reasoningLens) {
+  if (normalizeReasoningLens(reasoningLens) !== 'lths') return '';
+  return `Reasoning lens: LTHS 1.1 (Layered Ternary Harmony Story / UOS).
+Use layered story-consciousness framing as a SOFT guide for explanation style, while keeping claims operational and bounded.
+Do not inflate metaphors into empirical facts; keep honesty boundaries explicit.
+If trade-offs appear, prefer concrete implementation steps and measurable outcomes.`;
+}
+
 function parseAgentRoster(raw) {
   const text = String(raw || '').trim();
   if (!text) return [];
@@ -240,7 +258,7 @@ If nesting, pick only the bands needed. Prefer pointers over dumps. Peer-firewal
 Obey Context discipline (plan → pinch-read ≤6 files → squeeze). No repo tours.`;
 }
 
-function buildPrompt(message, history, nestTopology, agentRoster) {
+function buildPrompt(message, history, nestTopology, agentRoster, reasoningLens) {
   const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
   const lines = prior
     .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
@@ -250,9 +268,11 @@ function buildPrompt(message, history, nestTopology, agentRoster) {
   const nest = buildNestDirective(nestTopology, agentRoster, message);
   const complex = buildComplexWorkProtocol(message);
   const seed = buildComplexSeedPack(message);
+  const lens = buildReasoningLensDirective(reasoningLens);
   return `${PREAMBLE}
 
 ${nest}
+${lens ? `\n\n${lens}` : ''}
 
 ${complex}
 ${seed ? `\n${seed}\n` : ''}
@@ -744,15 +764,18 @@ async function runClaudeTurn({
   access,
   nestTopology,
   agentRoster,
+  reasoningLens,
   stream = false,
   onEvent = null,
 }) {
   const { prior, messages } = buildClaudeMessages(message, history);
   const nest = buildNestDirective(nestTopology, agentRoster, message);
   const seed = buildComplexSeedPack(message);
+  const lens = buildReasoningLensDirective(reasoningLens);
   const system = `${PREAMBLE}
 
 ${nest}
+${lens ? `\n\n${lens}` : ''}
 
 ${buildComplexWorkProtocol(message)}
 ${seed ? `\n${seed}\n` : ''}
@@ -957,6 +980,7 @@ Provider note: You are running via the Anthropic Messages API (BYOK). The public
     transcript: transcript.length ? transcript : [{ type: 'assistant', text: finalReply }],
     model,
     mode: agentMode,
+    lens: normalizeReasoningLens(reasoningLens),
     agentId: null,
     tokens: execution.tokens,
     execution,
@@ -1126,14 +1150,15 @@ async function runGeminiTurn({
   repoUrl,
   nestTopology,
   agentRoster,
+  reasoningLens,
   stream = false,
   onEvent = null,
 }) {
   const decoded = decodeGeminiAgentId(agentId);
   const agentName = modelId || 'antigravity-preview-05-2026';
   const prompt = decoded?.interactionId
-    ? `${buildNestDirective(nestTopology, agentRoster, message)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${String(message || '').trim()}`
-    : buildPrompt(message, history, nestTopology, agentRoster);
+    ? `${buildNestDirective(nestTopology, agentRoster, message)}\n\n${buildReasoningLensDirective(reasoningLens)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${String(message || '').trim()}`
+    : buildPrompt(message, history, nestTopology, agentRoster, reasoningLens);
   const emit = (item) => {
     if (typeof onEvent === 'function' && item) onEvent(item);
   };
@@ -1326,6 +1351,7 @@ Working tip: the public Lattice repo is ${repoUrl}. Clone it in the sandbox if y
     transcript: transcript.length ? transcript : [{ type: 'assistant', text: finalReply }],
     model: agentName,
     mode: agentMode,
+    lens: normalizeReasoningLens(reasoningLens),
     agentId: nextAgentId,
     tokens: execution.tokens,
     execution,
@@ -1966,6 +1992,7 @@ export default async function handler(req, res) {
           (provider === 'claude' ? 'claude-sonnet-4-5' : 'antigravity-preview-05-2026');
     const agentMode = resolveAgentMode(body.mode || body.agentMode, message);
     const nestTopology = normalizeNestTopology(body.nestTopology || body.nest);
+    const reasoningLens = normalizeReasoningLens(body.reasoningLens || body.lens);
     const agentRoster = typeof body.agentRoster === 'string' ? body.agentRoster : '';
     let agentId =
       typeof body.agentId === 'string' && body.agentId.trim() ? body.agentId.trim() : null;
@@ -1997,6 +2024,7 @@ export default async function handler(req, res) {
           agentMode,
           access,
           nestTopology,
+          reasoningLens,
           agentRoster,
           stream,
           onEvent: stream
@@ -2040,6 +2068,7 @@ export default async function handler(req, res) {
           recoverOnly,
           repoUrl,
           nestTopology,
+          reasoningLens,
           agentRoster,
           stream,
           onEvent: stream
@@ -2171,6 +2200,7 @@ export default async function handler(req, res) {
               transcript: recovered.transcript || [],
               model: modelId,
               mode: agentMode,
+              lens: reasoningLens,
               runId: recovered.runId,
               agentId: agent.agentId ?? agentId,
               threadId: body.threadId ?? null,
@@ -2247,8 +2277,8 @@ export default async function handler(req, res) {
 
       const prompt =
         resumedOk && message
-          ? `${buildNestDirective(nestTopology, agentRoster, message)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${message}`
-          : buildPrompt(message, body.history, nestTopology, agentRoster);
+          ? `${buildNestDirective(nestTopology, agentRoster, message)}\n\n${buildReasoningLensDirective(reasoningLens)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${message}`
+          : buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens);
       const sendOpts = {
         model: modelSelection,
         mode: agentMode,
@@ -2288,7 +2318,7 @@ export default async function handler(req, res) {
           ({ run, recovered } = await sendPromptHandlingBusy(
             Agent,
             agent,
-            buildPrompt(message, body.history, nestTopology, agentRoster),
+            buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
             sendOpts,
             apiKey,
           ));
@@ -2316,6 +2346,7 @@ export default async function handler(req, res) {
             transcript,
             model: modelId,
             mode: agentMode,
+            lens: reasoningLens,
           },
           502,
         );
@@ -2333,6 +2364,7 @@ export default async function handler(req, res) {
             transcript,
             model: modelId,
             mode: agentMode,
+            lens: reasoningLens,
           },
           502,
         );
@@ -2372,6 +2404,7 @@ export default async function handler(req, res) {
         transcript,
         model: modelId,
         mode: agentMode,
+        lens: reasoningLens,
         runId,
         agentId: agent.agentId ?? agentId,
         threadId: body.threadId ?? null,

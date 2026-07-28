@@ -40,11 +40,13 @@ export function ChatPane({
   const models = useLatticeStore((s) => s.models);
   const provider = useLatticeStore((s) => s.provider);
   const nestTopology = useLatticeStore((s) => s.nestTopology);
+  const reasoningLens = useLatticeStore((s) => s.reasoningLens);
   const agentRoster = useLatticeStore((s) => s.agentRoster);
   const setAgentMode = useLatticeStore((s) => s.setAgentMode);
   const setModelId = useLatticeStore((s) => s.setModelId);
   const setProvider = useLatticeStore((s) => s.setProvider);
   const setNestTopology = useLatticeStore((s) => s.setNestTopology);
+  const setReasoningLens = useLatticeStore((s) => s.setReasoningLens);
   const setAgentRoster = useLatticeStore((s) => s.setAgentRoster);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const [draft, setDraft] = useState('');
@@ -244,8 +246,8 @@ export function ChatPane({
           {' · '}
           <a href="/ss-vibelandia">Meet the ship</a>
         </p>
-        <p className="chat-build-stamp" data-lattice-build="steward-lounge-v1">
-          Within Goldilocks · intentions matter · craft, curiosity, care
+        <p className="chat-build-stamp" data-lattice-build="steward-lounge-v2-lths-lens">
+          Within Goldilocks · intentions matter · craft, curiosity, care · LTHS lens ready
         </p>
       </header>
 
@@ -449,6 +451,7 @@ export function ChatPane({
             provider={provider}
             mode={agentMode}
             nestTopology={nestTopology}
+            reasoningLens={reasoningLens}
             agentRoster={agentRoster}
             modelId={modelId}
             models={models}
@@ -456,6 +459,7 @@ export function ChatPane({
             onProviderChange={setProvider}
             onModeChange={setAgentMode}
             onNestChange={setNestTopology}
+            onReasoningLensChange={setReasoningLens}
             onRosterChange={setAgentRoster}
             onModelChange={setModelId}
           />

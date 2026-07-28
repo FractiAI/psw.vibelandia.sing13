@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { LATTICE_PROVIDERS, type LatticeProvider } from '@/lib/providerKeys';
 import { catalogForProvider, mergeProviderModels } from '@/modelCatalog';
-import type { AgentMode, LatticeModelOption, NestTopology } from '@/types';
+import type { AgentMode, LatticeModelOption, NestTopology, ReasoningLens } from '@/types';
 
 const MODES: { id: AgentMode; label: string }[] = [
   { id: 'agent', label: 'Agent' },
@@ -26,6 +26,19 @@ const NESTS: { id: NestTopology; label: string; title: string }[] = [
   },
 ];
 
+const LENSES: { id: ReasoningLens; label: string; title: string }[] = [
+  {
+    id: 'standard',
+    label: 'Standard',
+    title: 'Default Lattice reasoning profile',
+  },
+  {
+    id: 'lths',
+    label: 'LTHS 1.1',
+    title: 'Layered Ternary Harmony Story (UOS) guidance',
+  },
+];
+
 const ADVANCED_KEY = 'lattice_composer_advanced_open';
 
 function nestLabel(id: NestTopology): string {
@@ -44,6 +57,7 @@ export function ComposerOptions({
   provider,
   mode,
   nestTopology,
+  reasoningLens,
   agentRoster,
   modelId,
   models,
@@ -51,12 +65,14 @@ export function ComposerOptions({
   onProviderChange,
   onModeChange,
   onNestChange,
+  onReasoningLensChange,
   onRosterChange,
   onModelChange,
 }: {
   provider: LatticeProvider;
   mode: AgentMode;
   nestTopology: NestTopology;
+  reasoningLens: ReasoningLens;
   agentRoster: string;
   modelId: string;
   models: LatticeModelOption[];
@@ -64,6 +80,7 @@ export function ComposerOptions({
   onProviderChange: (provider: LatticeProvider) => void;
   onModeChange: (mode: AgentMode) => void;
   onNestChange: (nest: NestTopology) => void;
+  onReasoningLensChange: (lens: ReasoningLens) => void;
   onRosterChange: (roster: string) => void;
   onModelChange: (modelId: string) => void;
 }) {
@@ -94,7 +111,8 @@ export function ComposerOptions({
     options.find((o) => o.id === modelId)?.displayName ||
     options.find((o) => o.id === modelId)?.id ||
     modelId;
-  const summary = `${providerShort(provider)} · ${modeLabel(mode)} · ${nestLabel(nestTopology)} · ${modelName}`;
+  const lensLabel = LENSES.find((l) => l.id === reasoningLens)?.label || reasoningLens;
+  const summary = `${providerShort(provider)} · ${modeLabel(mode)} · ${nestLabel(nestTopology)} · ${lensLabel} · ${modelName}`;
 
   return (
     <div className="composer-options" role="group" aria-label="Steward options">
@@ -165,6 +183,22 @@ export function ComposerOptions({
                   onClick={() => onNestChange(n.id)}
                 >
                   {n.label}
+                </button>
+              ))}
+            </div>
+            <div className="composer-mode" role="tablist" aria-label="Reasoning lens">
+              {LENSES.map((l) => (
+                <button
+                  key={l.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={reasoningLens === l.id}
+                  className={reasoningLens === l.id ? 'is-active' : undefined}
+                  disabled={disabled}
+                  title={l.title}
+                  onClick={() => onReasoningLensChange(l.id)}
+                >
+                  {l.label}
                 </button>
               ))}
             </div>

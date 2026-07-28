@@ -280,9 +280,9 @@ export function ChatPane({
             <p className="empty-eyebrow">SS Vibelandia · 24×365</p>
             <p className="empty-lead">Welcome aboard</p>
             <p className="empty-hint">
-              Lattice is your Goldilocks steward — smart help for craft, curiosity, and care.
-              On our public matrix: about ~35–70% less Cursor usage vs a fat dump, depending on
-              the work. Within Goldilocks. Intentions matter: we do not help with malice or ill will.
+              A high-agency coding cockpit for serious vibecoders — faster signal, less prompt bloat,
+              operator-grade transparency. LTHS + Neutrino lenses in the composer. Within Goldilocks;
+              intentions matter: we do not help with malice or ill will.
             </p>
             <p className="empty-hint empty-hint--bridge">
               Board with your email and bring your own key to the bridge (Cursor, Claude, or

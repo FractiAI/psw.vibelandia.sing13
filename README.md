@@ -28,6 +28,8 @@ Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review 
 
 **What we claim on the site now:** **~35–70% less Cursor usage vs fat corpus paste, depending on the work** (public multi-task matrix). Structural chars÷4 estimate is secondary continuity evidence — not the marketing %. Method: [`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md).
 
+**Power vibecoder pitch:** A high-agency coding cockpit for serious vibecoders — faster signal, less prompt bloat, operator-grade transparency. LTHS + Neutrino reasoning lenses in the composer.
+
 | Surface | URL / path |
 |--------|------------|
 | Landing | [ssvibelandiaquestfest24x365.com/lattice](https://www.ssvibelandiaquestfest24x365.com/lattice) |

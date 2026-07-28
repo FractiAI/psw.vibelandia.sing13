@@ -37,6 +37,11 @@ const LENSES: { id: ReasoningLens; label: string; title: string }[] = [
     label: 'LTHS 1.1',
     title: 'Layered Ternary Harmony Story (UOS) guidance',
   },
+  {
+    id: 'neutrino',
+    label: 'Neutrino 8B',
+    title: 'Neutrino-style concise, grounded reasoning profile',
+  },
 ];
 
 const ADVANCED_KEY = 'lattice_composer_advanced_open';

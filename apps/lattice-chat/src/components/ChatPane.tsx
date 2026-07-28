@@ -246,8 +246,8 @@ export function ChatPane({
           {' · '}
           <a href="/ss-vibelandia">Meet the ship</a>
         </p>
-        <p className="chat-build-stamp" data-lattice-build="steward-lounge-v2-lths-lens">
-          Within Goldilocks · intentions matter · craft, curiosity, care · LTHS lens ready
+        <p className="chat-build-stamp" data-lattice-build="steward-lounge-v3-lths-neutrino-lens">
+          Within Goldilocks · intentions matter · craft, curiosity, care · LTHS + Neutrino lenses ready
         </p>
       </header>
 

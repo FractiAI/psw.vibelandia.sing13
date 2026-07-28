@@ -165,15 +165,27 @@ function normalizeReasoningLens(raw) {
   if (v === 'lths' || v === 'lths1.1' || v === 'lths-1.1' || v === 'uos' || v === 'uos1.1') {
     return 'lths';
   }
+  if (v === 'neutrino' || v === 'neutrino-8b' || v === 'fermion-neutrino-8b') {
+    return 'neutrino';
+  }
   return 'standard';
 }
 
 function buildReasoningLensDirective(reasoningLens) {
-  if (normalizeReasoningLens(reasoningLens) !== 'lths') return '';
-  return `Reasoning lens: LTHS 1.1 (Layered Ternary Harmony Story / UOS).
+  const lens = normalizeReasoningLens(reasoningLens);
+  if (lens === 'lths') {
+    return `Reasoning lens: LTHS 1.1 (Layered Ternary Harmony Story / UOS).
 Use layered story-consciousness framing as a SOFT guide for explanation style, while keeping claims operational and bounded.
 Do not inflate metaphors into empirical facts; keep honesty boundaries explicit.
 If trade-offs appear, prefer concrete implementation steps and measurable outcomes.`;
+  }
+  if (lens === 'neutrino') {
+    return `Reasoning lens: Neutrino 8B alignment.
+Favor concise, high-signal answers with explicit assumptions and verifiable steps.
+Prefer practical comparisons, bounded claims, and measurable outcomes over expansive metaphors.
+When uncertainty exists, state it directly and provide the smallest useful next action.`;
+  }
+  return '';
 }
 
 function parseAgentRoster(raw) {

@@ -12,6 +12,7 @@ import { readdirSync, readFileSync, statSync, writeFileSync, existsSync } from '
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Agent } from '@cursor/sdk';
+import { assembleLatticePrompt } from '../lib/lattice-prompt.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'data', 'lattice-vs-standard-cursor-usage-matrix.json');
@@ -141,65 +142,13 @@ function buildFatCorpusPaste() {
   return { paste: body, included, chars: body.length };
 }
 
-function readPinch(relPath, maxChars = 1600) {
-  try {
-    const abs = join(ROOT, relPath);
-    if (!existsSync(abs)) return null;
-    const text = readFileSync(abs, 'utf8').slice(0, maxChars);
-    return { path: relPath, text };
-  } catch {
-    return null;
-  }
-}
-
-function seedPackForTask(task) {
-  if (task.class === 'no_repo') return '';
-  const paths = [];
-  if (task.class === 'pointer_rag' || task.class === 'multi_band') {
-    paths.push(
-      'docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md',
-      'docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md',
-      'docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md',
-    );
-  }
-  if (task.class === 'code_locate') {
-    paths.push('api/lattice-chat.js');
-  }
-  if (task.class === 'ops') {
-    paths.push('README.md', '.env.example');
-  }
-  if (task.class === 'multi_band') {
-    paths.push('apps/lattice-chat/src/components/ComposerOptions.tsx');
-  }
-  const uniq = [...new Set(paths)].slice(0, 3);
-  const pinches = uniq.map((p) => readPinch(p)).filter(Boolean);
-  if (!pinches.length) return '';
-  return `## Seed pack (already loaded — prefer this over tools)
-${pinches.map((p) => `### ${p.path}\n\`\`\`\n${p.text}\n\`\`\``).join('\n\n')}
-HARD: Do not open other files if this seed is enough. Max 2 extra tool reads only if blocked.`;
-}
-
 function latticePrompt(task) {
-  const seed = seedPackForTask(task);
-  let complexBlock;
-  if (task.class === 'no_repo') {
-    complexBlock = `Work class: LIGHT. No tools. No file reads. Answer from the ask alone.`;
-  } else if (task.class === 'multi_band') {
-    complexBlock = `Work class: COMPLEX PLAN (seed-only).
-The seed pack below is enough to outline bands. Do NOT call tools. Do NOT open files. Do NOT grep.
-Write the nested plan from the seed + your allowlisted path names only.`;
-  } else {
-    complexBlock = `Work class: COMPLEX.
-Context discipline: use seed pack first → squeeze. No repo tour.
-Max 2 additional file opens beyond the seed, and only if blocked. Stop when you can answer.`;
-  }
-
-  return `You are Lattice Chat V1.618 — Your Goldilocks steward (NSPFRNP).
-Prefer pointers + seed pack over corpus dumps. Peer-firewall on. No PR. No commits.
-${complexBlock}
-${seed ? `\n${seed}\n` : ''}
-Task class: ${task.class}
-Task: ${task.ask}`;
+  return assembleLatticePrompt({
+    message: task.ask,
+    root: ROOT,
+    nestTopology: 'goldilocks',
+    closingLine: 'No PR. No commits.',
+  });
 }
 
 function agentModeForTask(task) {

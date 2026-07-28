@@ -38,6 +38,7 @@ type LatticeResponse = {
 const WATCHDOG_MS = 45_000;
 const RECOVER_POLL_MS = 8_000;
 const STATUS_TICK_MS = 2_000;
+const HISTORY_WINDOW = 16;
 const MAX_RECOVER_ATTEMPTS = 6;
 
 function sleep(ms: number): Promise<void> {
@@ -145,13 +146,20 @@ function latticeHeaders(email: string, provider?: LatticeProvider): HeadersInit 
     'x-lattice-email': email,
     'x-lattice-provider': active,
   };
-  const cursor = readProviderApiKey('cursor');
-  const claude = readProviderApiKey('claude');
-  const gemini = readProviderApiKey('gemini');
-  if (cursor) headers['x-cursor-api-key'] = cursor;
-  if (claude) headers['x-anthropic-api-key'] = claude;
-  if (gemini) headers['x-gemini-api-key'] = gemini;
+  const key = readProviderApiKey(active);
+  if (key) {
+    if (active === 'cursor') headers['x-cursor-api-key'] = key;
+    else if (active === 'claude') headers['x-anthropic-api-key'] = key;
+    else if (active === 'gemini') headers['x-gemini-api-key'] = key;
+  }
   return headers;
+}
+
+function buildHistoryWindow(
+  messages: { role: string; content: string }[],
+  limit = HISTORY_WINDOW,
+): { role: string; content: string }[] {
+  return messages.slice(-limit).map((m) => ({ role: m.role, content: m.content }));
 }
 
 function parseSseChunk(
@@ -422,8 +430,8 @@ export async function loadLatticeModels(): Promise<void> {
 
 async function tryRecoverOnce(
   threadId: string,
-  prompt: string,
-  history: { role: string; content: string }[],
+  _prompt: string,
+  _history: { role: string; content: string }[],
   email: string,
 ): Promise<boolean> {
   const store = useLatticeStore.getState();
@@ -440,13 +448,7 @@ async function tryRecoverOnce(
       recover: true,
       agentId,
       email,
-      model: store.modelId,
-      mode: store.agentMode,
-      message: prompt,
-      history,
       provider: store.provider,
-      nestTopology: store.nestTopology,
-      agentRoster: store.agentRoster,
       balanceBefore: store.pending?.balanceBefore ?? null,
     },
     email,
@@ -487,7 +489,7 @@ export async function checkPendingLatticeReply(): Promise<boolean> {
   const email = store.userEmail.trim();
   if (!isRememberedEmailFresh(email, store.emailRememberedAt)) return false;
 
-  const history = thread.messages.map((m) => ({ role: m.role, content: m.content }));
+  const history = buildHistoryWindow(thread.messages);
   if (!store.pending) {
     store.setPending({
       threadId,
@@ -568,10 +570,10 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     agentId: thread.agentId,
   });
 
-  const history = [
+  const history = buildHistoryWindow([
     ...thread.messages.map((m) => ({ role: m.role, content: m.content })),
-    { role: 'user' as const, content: trimmed },
-  ];
+    { role: 'user', content: trimmed },
+  ]);
 
   const email = store.userEmail.trim();
   if (!isRememberedEmailFresh(email, store.emailRememberedAt)) {
@@ -601,7 +603,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     return;
   }
 
-  const baseBody = {
+  const baseBody: Record<string, unknown> = {
     threadId,
     message: trimmed,
     history,
@@ -611,8 +613,10 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     mode: store.agentMode,
     provider: store.provider,
     nestTopology: store.nestTopology,
-    agentRoster: store.agentRoster,
   };
+  if (store.agentRoster.trim()) {
+    baseBody.agentRoster = store.agentRoster;
+  }
 
   let settled = false;
   let primaryStreamActive = false;

@@ -16,6 +16,7 @@ import { readdirSync, readFileSync, statSync, writeFileSync, existsSync } from '
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Agent } from '@cursor/sdk';
+import { assembleLatticePrompt } from '../lib/lattice-prompt.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'data', 'lattice-vs-standard-cursor-usage.json');
@@ -113,18 +114,12 @@ function buildFatCorpusPaste() {
 }
 
 function latticePrompt() {
-  return `You are Lattice Chat V1.618 — Your Goldilocks steward (NSPFRNP).
-Prefer pointers over corpus dumps. Do NOT open or paste large docs unless essential.
-Seed·RAG pointers only:
-- docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md
-- docs/SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md
-- docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md
-- docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md
-- protocols/ (MCA / NSPFRNP catalog)
-Nest: GOLDILOCKS — parent alone if trivial; else ≤3 leaf bands. Peer-firewall on.
-Answer from this brief + pointers. Keep reply under 350 words. No file edits. No PR.
-
-${ASK}`;
+  return assembleLatticePrompt({
+    message: ASK,
+    root: ROOT,
+    nestTopology: 'goldilocks',
+    closingLine: 'Keep reply under 350 words. No file edits. No PR.',
+  });
 }
 
 function fatPrompt(paste) {

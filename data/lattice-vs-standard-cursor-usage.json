@@ -1,7 +1,7 @@
 {
   "id": "lattice-vs-standard-cursor-usage-v1",
   "title": "Lattice vs standard — real Cursor SDK usage (paired local runs)",
-  "ranAt": "2026-07-28T14:30:54.382Z",
+  "ranAt": "2026-07-28T15:12:27.537Z",
   "model": "composer-2.5",
   "runtime": "local",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
@@ -66,57 +66,57 @@
     "label": "lattice_pointers",
     "ok": true,
     "status": "finished",
-    "agentId": "agent-e64b1c42-c38b-45fa-bea8-b36d19ed6757",
-    "runId": "run-a422dbfe-5a66-4e79-b5c8-49be879f973c",
-    "durationMs": 16587,
-    "promptChars": 1024,
-    "promptTokensEstimate": 256,
-    "assistantChars": 2550,
+    "agentId": "agent-307b3494-8059-4e89-b2a5-61da5a31eb3a",
+    "runId": "run-fae20d15-4dd8-4a3e-a65f-f13485bde407",
+    "durationMs": 24249,
+    "promptChars": 7694,
+    "promptTokensEstimate": 1924,
+    "assistantChars": 2366,
     "usage": {
       "raw": {
-        "inputTokens": 27663,
-        "outputTokens": 1256,
-        "cacheReadTokens": 16704,
+        "inputTokens": 45225,
+        "outputTokens": 1519,
+        "cacheReadTokens": 25056,
         "cacheWriteTokens": 0,
-        "totalTokens": 45623
+        "totalTokens": 71800
       },
-      "totalTokens": 45623,
-      "inputTokens": 27663,
-      "outputTokens": 1256
+      "totalTokens": 71800,
+      "inputTokens": 45225,
+      "outputTokens": 1519
     },
-    "replyPreview": "## SING13 Multi-Band Change · Goldilocks Nested Plan\n\n**Steward:** Lattice Chat V1.618 · **Nest:** GOLDILOCKS · **Peer-firewall:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` (NSPFRNP-SNAP-PRA-2026-06)\n\n---\n\n### 0 · Intake (MCA)\n**Metabolize:** name change, honesty tier (🜛 / ⚙"
+    "replyPreview": "## Multi-band change — SING13 Nested Agent Lattice + NSPFRNP + RAG\n\n**Work class:** COMPLEX · bands: Φ-Parent · Seed·RAG · Edge UI · Pipe Runtime\n\n---\n\n### 1. Ground (docs / protocols)\n- **Metabolize:** name the ask’s work class and honesty tier (`docs/ARCHITECTURE_OMNIVERSAL_COM"
   },
   "standard": {
     "label": "standard_fat_dump",
     "ok": true,
     "status": "finished",
-    "agentId": "agent-7f5a3298-9b24-4a7b-9d60-90f3c2215d48",
-    "runId": "run-6bc94bae-5de2-4e0e-9e85-a5bbe72179a9",
-    "durationMs": 9644,
+    "agentId": "agent-a3a23750-e9ad-4481-95e0-51b9ad49d0c6",
+    "runId": "run-7c9683ac-ca83-4902-81b6-6dec070f4bd3",
+    "durationMs": 8669,
     "promptChars": 120691,
     "promptTokensEstimate": 30173,
-    "assistantChars": 2520,
+    "assistantChars": 3129,
     "usage": {
       "raw": {
-        "inputTokens": 40782,
-        "outputTokens": 1104,
+        "inputTokens": 40836,
+        "outputTokens": 1141,
         "cacheReadTokens": 8352,
         "cacheWriteTokens": 0,
-        "totalTokens": 50238
+        "totalTokens": 50329
       },
-      "totalTokens": 50238,
-      "inputTokens": 40782,
-      "outputTokens": 1104
+      "totalTokens": 50329,
+      "inputTokens": 40836,
+      "outputTokens": 1141
     },
-    "replyPreview": "## SING13 multi-band change plan (Nested Lattice · NSPFRNP · RAG)\n\n### 1. Ground in docs/protocols\n- **Parent meta-plan** anchors on registry IDs + honesty tiers (`NSPFRNP-SNAP-PRA-2026-06`, narrative vs operational split in coherence/plain-speak docs).\n- Map the change onto **S₀"
+    "replyPreview": "# SING13 Multi-Band Change Plan\n\n## 1. Ground in docs/protocols\n\nStart at **NSPFRNP Snap PRA** (`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`): separate narrative vs operational tiers before any band work. Anchor topology in **EGS Nested Agent Lattice** (parent↔child at Φ_EGS ≈ 1"
   },
   "comparison": {
-    "latticeUsageTotal": 45623,
-    "standardUsageTotal": 50238,
-    "savedTokens": 4615,
-    "savedPct": 9.2,
-    "latticePromptTokensEstimate": 256,
+    "latticeUsageTotal": 71800,
+    "standardUsageTotal": 50329,
+    "savedTokens": 0,
+    "savedPct": 0,
+    "latticePromptTokensEstimate": 1924,
     "standardPromptTokensEstimate": 30173,
-    "promptEstimateSavedPct": 99.2
+    "promptEstimateSavedPct": 93.6
   }
 }

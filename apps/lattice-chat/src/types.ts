@@ -1,7 +1,7 @@
 export type ChatRole = 'user' | 'assistant' | 'system';
 
 export type AgentMode = 'agent' | 'plan';
-export type ReasoningLens = 'standard' | 'lths' | 'neutrino';
+export type ReasoningLens = 'engine';
 
 /** How Lattice should nest work for this turn. */
 export type NestTopology = 'single' | 'multi' | 'goldilocks';

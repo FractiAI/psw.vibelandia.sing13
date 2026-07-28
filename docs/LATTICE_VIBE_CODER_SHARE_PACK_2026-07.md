@@ -12,7 +12,7 @@ Chairman posts on social. Agents keep this pack + site/README in sync.
 
 **A high-agency coding cockpit for serious vibecoders: faster signal, less prompt bloat, and operator-grade transparency.**
 
-Supporting bullets: BYOK multi-provider · nested orchestration · LTHS + Neutrino reasoning lenses · ~35–70% less usage vs fat paste on focused work (public matrix — not a universal SLA).
+Supporting bullets: BYOK multi-provider · nested orchestration · LTHS + Neutrino reasoning built into the engine · ~35–70% less usage vs fat paste on focused work (public matrix — not a universal SLA).
 
 ## Links
 
@@ -43,7 +43,7 @@ Lattice Chat V1.618 is a tool from FractiAI.
 
 A high-agency coding cockpit for serious vibecoders: faster signal, less prompt bloat, operator-grade transparency.
 
-BYOK Cursor/Claude/Gemini. Nested agents + pointers — not dump-everything. LTHS + Neutrino reasoning lenses in the composer.
+BYOK Cursor/Claude/Gemini. Nested agents + pointers — not dump-everything. LTHS + Neutrino reasoning built into the engine.
 
 On paired Cursor runs across six work types, Lattice used about 35–70% fewer tokens than a fat corpus paste — depending on the work. Not a universal invoice SLA. Method and receipts are public.
 
@@ -57,7 +57,7 @@ Code: https://github.com/FractiAI/psw.vibelandia.sing13
 ```text
 Hey — for people using AI agents to code:
 
-Lattice Chat V1.618 (FractiAI) — high-agency coding cockpit for power vibecoders. LTHS + Neutrino lenses. Pointers over paste.
+Lattice Chat V1.618 (FractiAI) — high-agency coding cockpit for power vibecoders. LTHS + Neutrino in the engine. Pointers over paste.
 
 Public Cursor matrix: ~35–70% less usage vs fat paste, depending on the work (not a universal SLA): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 
@@ -69,7 +69,7 @@ https://www.ssvibelandiaquestfest24x365.com/lattice
 ```text
 Lattice Chat V1.618 by FractiAI
 
-High-agency coding cockpit for serious vibecoders — faster signal, less bloat, operator-grade transparency. LTHS + Neutrino lenses.
+High-agency coding cockpit for serious vibecoders — faster signal, less bloat, operator-grade transparency. LTHS + Neutrino built into the engine.
 
 Method: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 https://www.ssvibelandiaquestfest24x365.com/lattice

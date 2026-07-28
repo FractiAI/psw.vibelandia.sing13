@@ -17,7 +17,6 @@ import type {
   ChatThread,
   LatticeModelOption,
   NestTopology,
-  ReasoningLens,
   TranscriptItem,
 } from '@/types';
 
@@ -65,7 +64,6 @@ type LatticeState = {
   models: LatticeModelOption[];
   provider: LatticeProvider;
   nestTopology: NestTopology;
-  reasoningLens: ReasoningLens;
   /** Optional user-defined roster (one agent per line: Name — role). Empty = Goldilocks auto. */
   agentRoster: string;
   ensureThread: () => string;
@@ -96,7 +94,6 @@ type LatticeState = {
   setModels: (models: LatticeModelOption[]) => void;
   setProvider: (provider: LatticeProvider) => void;
   setNestTopology: (nest: NestTopology) => void;
-  setReasoningLens: (lens: ReasoningLens) => void;
   setAgentRoster: (roster: string) => void;
   hasRememberedEmail: () => boolean;
 };
@@ -119,7 +116,6 @@ export const useLatticeStore = create<LatticeState>()(
       models: LATTICE_MODEL_CATALOG,
       provider: readActiveProvider(),
       nestTopology: 'goldilocks',
-      reasoningLens: 'standard',
       agentRoster: '',
 
       ensureThread: () => {
@@ -315,7 +311,6 @@ export const useLatticeStore = create<LatticeState>()(
       setModelId: (modelId) => set({ modelId }),
       setModels: (models) => set({ models }),
       setNestTopology: (nestTopology) => set({ nestTopology }),
-      setReasoningLens: (reasoningLens) => set({ reasoningLens }),
       setAgentRoster: (agentRoster) => set({ agentRoster }),
       setProvider: (provider) => {
         saveActiveProvider(provider);
@@ -345,7 +340,6 @@ export const useLatticeStore = create<LatticeState>()(
         modelId: s.modelId,
         provider: s.provider,
         nestTopology: s.nestTopology,
-        reasoningLens: s.reasoningLens,
         agentRoster: s.agentRoster,
         pending: s.pending,
       }),

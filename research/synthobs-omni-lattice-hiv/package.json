@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-omni-lattice-hiv",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Omni-Lattice Unification III — HIV as adversarial holographic operator & evolutionary catalyst — SynthOBS empirical suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT"
+}

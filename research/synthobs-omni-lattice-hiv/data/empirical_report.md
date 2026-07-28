@@ -1,0 +1,217 @@
+# Omni-Lattice Unification III — HIV as Adversarial Holographic Operator & Evolutionary Catalyst
+
+**Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-HIV-2026-07`
+**Registry ID:** `synthobs-omni-lattice-hiv-2026-07`
+**Generated:** 2026-07-28T23:55:50.190Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 9 / 9 |
+| Φ_EGS / E_F | 1.618033988749895 |
+| λ_EGS | 0.07658724063250828 |
+
+## Experiments
+
+### E1_word_gates — Three HIV word gates (gp120/gp41, TAR, LTR)
+
+- **Pass:** `true`
+- **Honesty:** Operator poetry — not a replacement for virology nomenclature.
+
+```json
+{
+  "id": "E1_word_gates",
+  "title": "Three HIV word gates (gp120/gp41, TAR, LTR)",
+  "gates": {
+    "gp120_gp41": "boundary_breach",
+    "tar": "attention_overdrive",
+    "ltr": "proviral_identity_lock"
+  },
+  "honesty": "Operator poetry — not a replacement for virology nomenclature.",
+  "pass": true
+}
+```
+
+### E2_lambda_egs_identity — λ_EGS = ln(E_F) / 2π
+
+- **Pass:** `true`
+- **Honesty:** Architectural constant identity — not a clinical constant.
+
+```json
+{
+  "id": "E2_lambda_egs_identity",
+  "title": "λ_EGS = ln(E_F) / 2π",
+  "E_F": 1.618033988749895,
+  "lambda_egs": 0.07658724063250828,
+  "abs_err": 0,
+  "honesty": "Architectural constant identity — not a clinical constant.",
+  "pass": true
+}
+```
+
+### E3_sentence_loops — Three retroviral sentence loops
+
+- **Pass:** `true`
+- **Honesty:** Lifecycle metaphor — not an enzyme kinetics paper.
+
+```json
+{
+  "id": "E3_sentence_loops",
+  "title": "Three retroviral sentence loops",
+  "loops": {
+    "reverse_transcriptase": "rna_to_dsdna_variance",
+    "integrase": "host_lattice_splice",
+    "protease": "virion_assembly"
+  },
+  "honesty": "Lifecycle metaphor — not an enzyme kinetics paper.",
+  "pass": true
+}
+```
+
+### E4_viral_adapt_reharmonization — Non-harmonic δ + O_adapt restores host phase (model)
+
+- **Pass:** `true`
+- **Honesty:** Simulation algebra — not intracellular entropy therapy or a cure.
+
+```json
+{
+  "id": "E4_viral_adapt_reharmonization",
+  "title": "Non-harmonic δ + O_adapt restores host phase (model)",
+  "delta": 0.91,
+  "phase_err_after_adapt": 0,
+  "arg_infected": 1.28,
+  "arg_adapted": 0.36999999999999994,
+  "arg_host": 0.36999999999999994,
+  "arg_residual": 0,
+  "shannon_drop": 0.48935435145605993,
+  "honesty": "Simulation algebra — not intracellular entropy therapy or a cure.",
+  "pass": true
+}
+```
+
+### E5_catalyst_matrix — Viral–catalyst operator matrix (3 rows)
+
+- **Pass:** `true`
+- **Honesty:** Historical tooling map — does not romanticize disease or justify harm.
+
+```json
+{
+  "id": "E5_catalyst_matrix",
+  "title": "Viral–catalyst operator matrix (3 rows)",
+  "rows": [
+    [
+      "high_mutation",
+      "bnAbs_mrna",
+      "EF_context_filter",
+      "vaccine_platforms"
+    ],
+    [
+      "proviral_splice",
+      "crispr_ccr5",
+      "graph_reroute",
+      "gene_editing_tooling"
+    ],
+    [
+      "latent_reservoir",
+      "shock_block_lock",
+      "memory_reharmonize",
+      "epigenetic_maps"
+    ]
+  ],
+  "honesty": "Historical tooling map — does not romanticize disease or justify harm.",
+  "pass": true
+}
+```
+
+### E6_latent_proviral_story — Latent proviral narrative tier present
+
+- **Pass:** `true`
+- **Honesty:** Narrative architecture — not a clinical latency protocol.
+
+```json
+{
+  "id": "E6_latent_proviral_story",
+  "title": "Latent proviral narrative tier present",
+  "story": {
+    "passenger": true,
+    "resting_memory_nodes": true,
+    "activation_awakening": true
+  },
+  "honesty": "Narrative architecture — not a clinical latency protocol.",
+  "pass": true
+}
+```
+
+### E7_companion_linkage — Companion registry IDs (holo / omni / nested lattice)
+
+- **Pass:** `true`
+
+```json
+{
+  "id": "E7_companion_linkage",
+  "title": "Companion registry IDs (holo / omni / nested lattice)",
+  "rows": [
+    {
+      "id": "synthobs-holographic-operators-2026-07",
+      "in_registry_file": true
+    },
+    {
+      "id": "synthobs-omni-lattice-unification-2026-07",
+      "in_registry_file": true
+    },
+    {
+      "id": "omniversal-nested-agent-lattice-2026-07",
+      "in_registry_file": true
+    }
+  ],
+  "pass": true
+}
+```
+
+### E8_honesty_gate — Honesty receipt — medical boundary + EX-HIV drafts gated
+
+- **Pass:** `true`
+
+```json
+{
+  "id": "E8_honesty_gate",
+  "title": "Honesty receipt — medical boundary + EX-HIV drafts gated",
+  "labeled": {
+    "draft_context_loss_pct": 0.1,
+    "draft_resilience_fold": 48,
+    "clinical_cure_claim": false,
+    "replaces_art": false,
+    "romanticizes_disease": false,
+    "status": "design_targets_not_clinical"
+  },
+  "pass": true
+}
+```
+
+### E9_lattice_surfaces — Lattice Chat HIV Omni-Lattice III ↔ surface map
+
+- **Pass:** `true`
+- **Honesty:** Structural product map — not a claim chat treats HIV.
+
+```json
+{
+  "id": "E9_lattice_surfaces",
+  "title": "Lattice Chat HIV Omni-Lattice III ↔ surface map",
+  "surfaces": [
+    "/whitepaper/synthobs-omni-lattice-hiv",
+    "/lattice/learn",
+    "/interfaces/nesting/nest-lattice-chat.html",
+    "/lattice",
+    "/lattice-chat",
+    "docs/SYNTHOBS_OMNI_LATTICE_HIV_ADVERSARIAL_OPERATOR_2026-07.md"
+  ],
+  "honesty": "Structural product map — not a claim chat treats HIV.",
+  "pass": true
+}
+```
+
+## Honesty boundary
+
+Architectural adversarial-operator + catalyst metaphors. Not clinical HIV science, not a cure, does not replace ART. Draft EX-HIV / 48× are design targets.

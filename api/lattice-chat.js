@@ -64,7 +64,39 @@ function initSse(res) {
 
 function sseWrite(res, event, data) {
   if (!res || res.writableEnded) return;
-  res.write(`event: ${event}\ndata: ${JSON.stringify(data ?? {})}\n\n`);
+  try {
+    res.write(`event: ${event}\ndata: ${JSON.stringify(data ?? {})}\n\n`);
+  } catch {
+    /* client gone */
+  }
+}
+
+/** Keep proxies/browsers from stalling during long Agent.create / cloud runs. */
+function startSseHeartbeat(res, intervalMs = 12_000) {
+  if (!res || res.writableEnded) return () => {};
+  const tick = () => {
+    if (!res || res.writableEnded) return;
+    try {
+      res.write(`: keepalive ${Date.now()}\n\n`);
+    } catch {
+      /* ignore */
+    }
+  };
+  tick();
+  const id = setInterval(tick, intervalMs);
+  return () => clearInterval(id);
+}
+
+function withTimeout(promise, ms, label = 'operation') {
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => {
+      const err = new Error(`${label} timed out after ${Math.round(ms / 1000)}s`);
+      err.code = 'timeout';
+      reject(err);
+    }, ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
 }
 
 function cursorAuthHeaders(apiKey) {
@@ -78,9 +110,12 @@ function cursorAuthHeaders(apiKey) {
 async function fetchAgentTokenBalance(apiKey, agentId) {
   if (!apiKey || !agentId) return null;
   try {
-    const res = await fetch(
-      `https://api.cursor.com/v1/agents/${encodeURIComponent(agentId)}/usage`,
-      { headers: cursorAuthHeaders(apiKey) },
+    const res = await withTimeout(
+      fetch(`https://api.cursor.com/v1/agents/${encodeURIComponent(agentId)}/usage`, {
+        headers: cursorAuthHeaders(apiKey),
+      }),
+      8_000,
+      'token balance fetch',
     );
     if (!res.ok) return null;
     const data = await res.json().catch(() => ({}));
@@ -95,9 +130,13 @@ async function fetchAgentTokenBalance(apiKey, agentId) {
 async function fetchRunTokenUsage(apiKey, agentId, runId) {
   if (!apiKey || !agentId || !runId) return null;
   try {
-    const res = await fetch(
-      `https://api.cursor.com/v1/agents/${encodeURIComponent(agentId)}/usage?runId=${encodeURIComponent(runId)}`,
-      { headers: cursorAuthHeaders(apiKey) },
+    const res = await withTimeout(
+      fetch(
+        `https://api.cursor.com/v1/agents/${encodeURIComponent(agentId)}/usage?runId=${encodeURIComponent(runId)}`,
+        { headers: cursorAuthHeaders(apiKey) },
+      ),
+      8_000,
+      'run usage fetch',
     );
     if (!res.ok) return null;
     const data = await res.json().catch(() => ({}));
@@ -1756,6 +1795,7 @@ export default async function handler(req, res) {
     if (provider === 'claude') {
       const stream = wantsStream(req, body);
       if (stream) initSse(res);
+      const stopHeartbeat = stream ? startSseHeartbeat(res) : () => {};
       try {
         if (recoverOnly && !message) {
           return respondLattice(
@@ -1803,12 +1843,15 @@ export default async function handler(req, res) {
           },
           status,
         );
+      } finally {
+        stopHeartbeat();
       }
     }
 
     if (provider === 'gemini') {
       const stream = wantsStream(req, body);
       if (stream) initSse(res);
+      const stopHeartbeat = stream ? startSseHeartbeat(res) : () => {};
       try {
         if (stream) {
           sseWrite(res, 'status', { message: 'Starting Antigravity stream of thought…' });
@@ -1866,6 +1909,8 @@ export default async function handler(req, res) {
           },
           status,
         );
+      } finally {
+        stopHeartbeat();
       }
     }
 
@@ -1873,10 +1918,19 @@ export default async function handler(req, res) {
     const startingRef = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
     const stream = wantsStream(req, body);
     if (stream) initSse(res);
+    const stopHeartbeat = stream ? startSseHeartbeat(res) : () => {};
 
     let agent;
     let completedOk = false;
     try {
+      if (stream) {
+        sseWrite(res, 'status', {
+          message: recoverOnly
+            ? 'Attaching to your cloud run…'
+            : 'Opening Lattice pipe — loading Cursor SDK…',
+        });
+      }
+
       let Agent;
       try {
         ({ Agent } = await import('@cursor/sdk'));
@@ -1898,13 +1952,28 @@ export default async function handler(req, res) {
       let resumedOk = false;
       if (agentId && !String(agentId).startsWith('gma:')) {
         try {
-          agent = await Agent.resume(agentId, { apiKey });
+          if (stream) {
+            sseWrite(res, 'status', { message: 'Resuming your cloud agent…' });
+          }
+          agent = await withTimeout(
+            Agent.resume(agentId, { apiKey }),
+            15_000,
+            'Agent.resume',
+          );
           resumedOk = Boolean(agent);
         } catch (resumeErr) {
-          console.warn('[lattice-chat] resume failed, creating new agent');
+          console.warn(
+            '[lattice-chat] resume failed/timed out, creating new agent',
+            resumeErr?.code || resumeErr?.message || resumeErr,
+          );
           agentId = null;
           agent = null;
           resumedOk = false;
+          if (stream) {
+            sseWrite(res, 'status', {
+              message: 'Prior agent unavailable — starting a fresh cloud agent…',
+            });
+          }
         }
       } else if (agentId && String(agentId).startsWith('gma:')) {
         agentId = null;
@@ -2003,15 +2072,37 @@ export default async function handler(req, res) {
       }
 
       if (!agent) {
-        if (stream) sseWrite(res, 'status', { message: 'Creating Lattice cloud agent…' });
-        agent = await Agent.create({
-          apiKey,
-          model: modelSelection,
-          mode: agentMode,
-          cloud: {
-            repos: [{ url: repoUrl, startingRef }],
-          },
-        });
+        if (stream) sseWrite(res, 'status', { message: 'Creating Lattice cloud agent (repo spin-up can take a minute)…' });
+        try {
+          agent = await withTimeout(
+            Agent.create({
+              apiKey,
+              model: modelSelection,
+              mode: agentMode,
+              cloud: {
+                repos: [{ url: repoUrl, startingRef }],
+              },
+            }),
+            120_000,
+            'Agent.create',
+          );
+        } catch (createErr) {
+          if (createErr?.code === 'timeout') {
+            return respondLattice(
+              res,
+              stream,
+              {
+                error:
+                  'Cloud agent creation timed out after 120s. Check Cursor GitHub access for this API key, then send again.',
+                code: 'agent_create_timeout',
+                repoUrl,
+                startingRef,
+              },
+              504,
+            );
+          }
+          throw createErr;
+        }
         agentId = agent.agentId ?? null;
         resumedOk = false;
       }
@@ -2263,6 +2354,7 @@ export default async function handler(req, res) {
         500,
       );
     } finally {
+      stopHeartbeat();
       // Do not dispose on client abort / mid-flight errors — cloud run must stay recoverable.
       if (completedOk) await disposeAgent(agent);
     }

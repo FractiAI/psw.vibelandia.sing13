@@ -65,7 +65,11 @@ function isHardLatticeFailure(data: LatticeResponse, status: number): boolean {
 }
 
 function clearStaleAgentIfNeeded(threadId: string, data: LatticeResponse): void {
-  if (data.code === 'agent_not_found' || data.clearAgent) {
+  if (
+    data.code === 'agent_not_found' ||
+    data.code === 'agent_create_timeout' ||
+    data.clearAgent
+  ) {
     useLatticeStore.getState().setAgentId(threadId, null);
   }
 }
@@ -190,6 +194,7 @@ function parseSseChunk(
 async function postLattice(
   body: Record<string, unknown>,
   email: string,
+  opts?: { signal?: AbortSignal },
 ): Promise<{ res: Response; data: LatticeResponse }> {
   // Live stream-of-thought for Cursor, Claude, and Gemini when the pipe supports SSE.
   const wantStream = body.stream !== false;
@@ -201,6 +206,7 @@ async function postLattice(
     method: 'POST',
     headers,
     body: JSON.stringify(wantStream ? { ...body, stream: true } : body),
+    signal: opts?.signal,
   });
 
   const contentType = String(res.headers.get('content-type') || '');
@@ -621,6 +627,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   let settled = false;
   let primaryStreamActive = false;
   const startedAt = Date.now();
+  const primaryAbort = new AbortController();
 
   const settleSuccess = (data: LatticeResponse) => {
     if (settled || !awaitingAssistant(threadId)) {
@@ -652,10 +659,23 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   const watchdog = setInterval(() => {
     void (async () => {
       if (settled) return;
-      // Primary SSE still open — do not open a second recover stream that races it.
-      if (primaryStreamActive) return;
       const elapsed = Date.now() - startedAt;
       if (elapsed < WATCHDOG_MS) return;
+      // After 2× watchdog, abort a silent/zombie primary SSE so recover can attach.
+      if (primaryStreamActive && elapsed >= WATCHDOG_MS * 2) {
+        try {
+          primaryAbort.abort();
+        } catch {
+          /* ignore */
+        }
+        primaryStreamActive = false;
+        store.setSendProgress(
+          'stuck',
+          'Stream stalled — attaching to the cloud run instead…',
+        );
+      }
+      // Primary SSE still open — do not open a second recover stream that races it.
+      if (primaryStreamActive) return;
       store.setSendProgress(
         elapsed > WATCHDOG_MS * 2 ? 'stuck' : 'recovering',
         latticeProgressHint(Math.round(elapsed / 1000), elapsed > WATCHDOG_MS * 2 ? 'stuck' : 'recovering'),
@@ -686,7 +706,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   try {
     store.setSendProgress('sending', latticeProgressHint(0, 'sending'));
     primaryStreamActive = true;
-    let { res, data } = await postLattice(baseBody, email);
+    let { res, data } = await postLattice(baseBody, email, { signal: primaryAbort.signal });
     primaryStreamActive = false;
     if (settled) return;
     if (data.agentId) store.setAgentId(threadId, data.agentId);
@@ -753,14 +773,15 @@ export async function sendLatticeMessage(text: string): Promise<void> {
         err instanceof Error ? err.message : String(err),
       );
 
-    if (err instanceof LatticeHardFail && err.code === 'agent_not_found') {
+    if (err instanceof LatticeHardFail && (err.code === 'agent_not_found' || err.code === 'agent_create_timeout')) {
       store.setAgentId(threadId, null);
     }
 
     if (
       !hardFail &&
       agentId &&
-      (isNetworkFailure(err) || /active run|busy/i.test(String(err)))
+      (isNetworkFailure(err) ||
+        /active run|busy|aborted|The user aborted|AbortError/i.test(String(err)))
     ) {
       store.setSendProgress('recovering', 'Connection hiccup — recovering cloud run…');
       try {

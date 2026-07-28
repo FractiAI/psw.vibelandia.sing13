@@ -96,6 +96,11 @@ type LatticeState = {
   setNestTopology: (nest: NestTopology) => void;
   setAgentRoster: (roster: string) => void;
   hasRememberedEmail: () => boolean;
+  /**
+   * Clear chat cache / stuck runs and reload fresh assets.
+   * Keeps email, remembered access, BYOK keys, and composer prefs.
+   */
+  hardRefreshEdge: () => void;
 };
 
 export const useLatticeStore = create<LatticeState>()(
@@ -327,6 +332,36 @@ export const useLatticeStore = create<LatticeState>()(
       hasRememberedEmail: () => {
         const { userEmail, emailRememberedAt } = get();
         return isRememberedEmailFresh(userEmail, emailRememberedAt);
+      },
+
+      hardRefreshEdge: () => {
+        // Wipe conversation + stuck cloud agent ids / pending runs only.
+        set({
+          threads: [],
+          activeThreadId: null,
+          pending: null,
+          liveTranscript: [],
+          sending: false,
+          sendPhase: 'idle',
+          statusHint: null,
+          error: null,
+        });
+        try {
+          sessionStorage.removeItem('lattice_composer_advanced_open');
+        } catch {
+          /* ignore */
+        }
+        // Persist middleware writes on set; brief delay then cache-bust reload.
+        // BYOK keys live in separate localStorage keys — never touched here.
+        window.setTimeout(() => {
+          try {
+            const url = new URL(window.location.href);
+            url.searchParams.set('_r', String(Date.now()));
+            window.location.replace(url.toString());
+          } catch {
+            window.location.reload();
+          }
+        }, 60);
       },
     }),
     {

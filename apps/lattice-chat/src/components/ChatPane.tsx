@@ -46,6 +46,7 @@ export function ChatPane({
   const setProvider = useLatticeStore((s) => s.setProvider);
   const setNestTopology = useLatticeStore((s) => s.setNestTopology);
   const setAgentRoster = useLatticeStore((s) => s.setAgentRoster);
+  const hardRefreshEdge = useLatticeStore((s) => s.hardRefreshEdge);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const [draft, setDraft] = useState('');
   const [elapsedSec, setElapsedSec] = useState(0);
@@ -244,8 +245,8 @@ export function ChatPane({
           {' · '}
           <a href="/ss-vibelandia">Meet the ship</a>
         </p>
-        <p className="chat-build-stamp" data-lattice-build="steward-lounge-v4-engine-reasoning">
-          Within Goldilocks · intentions matter · craft, curiosity, care · LTHS + Neutrino built into the engine
+        <p className="chat-build-stamp" data-lattice-build="steward-lounge-v5-hard-refresh">
+          Within Goldilocks · intentions matter · craft, curiosity, care · Hard refresh keeps your keys
         </p>
       </header>
 
@@ -437,6 +438,19 @@ export function ChatPane({
               {' '}
               <button type="button" className="error-check-btn" onClick={() => void onCheckReply()}>
                 Check for reply
+              </button>
+            </>
+          ) : null}
+          {signedIn ? (
+            <>
+              {' '}
+              <button
+                type="button"
+                className="error-check-btn"
+                title="Clear chat cache and stuck runs, then reload. Keeps your email and API keys."
+                onClick={() => hardRefreshEdge()}
+              >
+                Hard refresh
               </button>
             </>
           ) : null}

@@ -169,7 +169,9 @@ export function AuthPanel({
 export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => void }) {
   const userEmail = useLatticeStore((s) => s.userEmail);
   const clearUserEmail = useLatticeStore((s) => s.clearUserEmail);
+  const hardRefreshEdge = useLatticeStore((s) => s.hardRefreshEdge);
   const provider = useLatticeStore((s) => s.provider);
+  const [refreshing, setRefreshing] = useState(false);
 
   return (
     <div className="signed-in-bar">
@@ -184,6 +186,18 @@ export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => v
           }
         }}
       />
+      <button
+        type="button"
+        className="signed-in-refresh"
+        disabled={refreshing}
+        title="Clear chat cache and stuck runs, then reload. Keeps your email and API keys."
+        onClick={() => {
+          setRefreshing(true);
+          hardRefreshEdge();
+        }}
+      >
+        {refreshing ? 'Refreshing…' : 'Hard refresh'}
+      </button>
       <button type="button" className="signed-in-out" onClick={() => clearUserEmail()}>
         Sign out
       </button>

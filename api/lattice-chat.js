@@ -7,21 +7,11 @@
  * (email + provider key headers only; never persist or log user keys).
  *
  * Access: email allowlist. Creator permanent. Guests one month from grant.
- * Prompt assembly: lib/lattice-prompt.mjs (shared with bench scripts).
+ * Prompt assembly: dynamic-import lib/lattice-prompt.mjs (Vercel compiles this file to CJS —
+ * never use a top-level static .mjs import here).
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import {
-  HISTORY_WINDOW,
-  assembleLatticePrompt,
-  assembleResumePrompt,
-  buildComplexSeedPack,
-  buildComplexWorkProtocol,
-  buildNestDirective,
-  buildPrompt,
-  classifyAsk,
-  normalizeNestTopology,
-} from '../lib/lattice-prompt.mjs';
 
 export const config = {
   maxDuration: 300,
@@ -35,6 +25,31 @@ const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const NAIVE_CORPUS_DUMP_TOKENS = 72_000;
 const LATTICE_RAG_POINTER_TOKENS = 1_800;
 const LATTICE_NEST_OVERHEAD_TOKENS = 420;
+
+/** Populated by loadLatticePromptLib() — dynamic import survives Vercel ESM→CJS compile. */
+let HISTORY_WINDOW = 16;
+let assembleLatticePrompt;
+let assembleResumePrompt;
+let buildComplexSeedPack;
+let buildComplexWorkProtocol;
+let buildNestDirective;
+let buildPrompt;
+let classifyAsk;
+let normalizeNestTopology;
+
+async function loadLatticePromptLib() {
+  if (typeof assembleLatticePrompt === 'function') return;
+  const m = await import('../lib/lattice-prompt.mjs');
+  HISTORY_WINDOW = m.HISTORY_WINDOW;
+  assembleLatticePrompt = m.assembleLatticePrompt;
+  assembleResumePrompt = m.assembleResumePrompt;
+  buildComplexSeedPack = m.buildComplexSeedPack;
+  buildComplexWorkProtocol = m.buildComplexWorkProtocol;
+  buildNestDirective = m.buildNestDirective;
+  buildPrompt = m.buildPrompt;
+  classifyAsk = m.classifyAsk;
+  normalizeNestTopology = m.normalizeNestTopology;
+}
 
 function normalizeReasoningLens(_raw) {
   return 'engine';
@@ -1605,6 +1620,17 @@ export default async function handler(req, res) {
       res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
       res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email, x-cursor-api-key');
       return json(res, 204, {});
+    }
+
+    try {
+      await loadLatticePromptLib();
+    } catch (libErr) {
+      console.error('[lattice-chat] prompt lib load failed', libErr);
+      return json(res, 503, {
+        error: 'Lattice prompt engine failed to load on the server. Redeploy or check lib/lattice-prompt.mjs.',
+        code: 'prompt_lib_load_failed',
+        detail: libErr instanceof Error ? libErr.message : String(libErr),
+      });
     }
 
     if (req.method === 'GET') {

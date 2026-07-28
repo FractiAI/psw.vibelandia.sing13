@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-omni-lattice-unification",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Omni-Lattice Unification — holographic operators, 81-electron manifold, chemical bonds, ILAM — SynthOBS empirical suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,101 @@
+{
+  "id": "lattice-vs-standard-cursor-usage-matrix-v1",
+  "title": "Lattice vs standard Cursor usage — varied work types",
+  "ranAt": "2026-07-28T02:58:26.310Z",
+  "model": "composer-2.5",
+  "runtime": "local",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honesty": {
+    "claim": "Paired Cursor SDK local runs across varied task classes: Lattice pointer brief vs fat corpus paste.",
+    "notClaim": "Not a universal invoice guarantee. Local agents may still tool-explore. Fat paste capped.",
+    "fatCapChars": 60000
+  },
+  "fatCorpus": {
+    "chars": 60000,
+    "files": 6
+  },
+  "summaryByClass": {
+    "multi_band": {
+      "n": 1,
+      "latticeWins": 0,
+      "standardWins": 1,
+      "ties": 0
+    }
+  },
+  "overall": {
+    "latticeWins": 0,
+    "standardWins": 1,
+    "ties": 0,
+    "n": 1
+  },
+  "rows": [
+    {
+      "task": {
+        "id": "T5_multi_band_plan",
+        "class": "multi_band",
+        "title": "Multi-band nesting plan",
+        "ask": "In under 250 words, outline a Goldilocks nested plan for a multi-band SING13 change (docs ground → edge UI → api/lib pipes → squeeze). Name peer-firewall. No edits. No PR."
+      },
+      "lattice": {
+        "label": "lattice",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-c99a5293-77bc-4f9c-a257-64c25906574c",
+        "durationMs": 15405,
+        "promptChars": 806,
+        "promptTokensEstimate": 202,
+        "assistantChars": 145,
+        "toolCalls": 16,
+        "usage": {
+          "raw": {
+            "inputTokens": 34213,
+            "outputTokens": 2202,
+            "cacheReadTokens": 22176,
+            "cacheWriteTokens": 0,
+            "totalTokens": 58591
+          },
+          "totalTokens": 58591,
+          "inputTokens": 34213,
+          "outputTokens": 2202,
+          "cacheReadTokens": 22176
+        },
+        "replyPreview": "Six allowlisted paths read. Synthesizing the nested multi-band plan.\n"
+      },
+      "standard": {
+        "label": "standard_fat",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-c0ab02e8-339e-4149-9a93-46aa5394bc8a",
+        "durationMs": 5330,
+        "promptChars": 60408,
+        "promptTokensEstimate": 15102,
+        "assistantChars": 1652,
+        "toolCalls": 0,
+        "usage": {
+          "raw": {
+            "inputTokens": 26788,
+            "outputTokens": 607,
+            "cacheReadTokens": 8352,
+            "cacheWriteTokens": 0,
+            "totalTokens": 35747
+          },
+          "totalTokens": 35747,
+          "inputTokens": 26788,
+          "outputTokens": 607,
+          "cacheReadTokens": 8352
+        },
+        "replyPreview": "## Goldilocks nested plan · multi-band SING13\n\n**Anchor:** S₁₃ (Sonic Singularity · cloud skin ∞¹³) → φ crossing (Lattice Chat V1.618) on the 9×9 register, with **peer-firewall** enforced: parent↔one awake leaf only; sib"
+      },
+      "comparison": {
+        "latticeTotal": 58591,
+        "standardTotal": 35747,
+        "deltaStandardMinusLattice": -22844,
+        "latticeSavedPctVsStandard": -63.9,
+        "winner": "standard_fat",
+        "latticeFaster": false,
+        "latticeFewerTools": false,
+        "promptEstimateSavedPct": 98.7
+      }
+    }
+  ]
+}

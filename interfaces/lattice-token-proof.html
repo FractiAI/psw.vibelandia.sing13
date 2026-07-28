@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0806" />
-  <title>Lattice · Nested + pointer context load · FractiAI</title>
+  <title>Lattice · ~35–70% less Cursor usage · FractiAI</title>
   <meta
     name="description"
-    content="Structural estimate: Lattice Chat V1.618 nested + pointer loading vs dump-everything agent mode on the same coding ask. Chars÷4 context load — not a vendor bill."
+    content="Lattice Chat V1.618: paired Cursor usage matrix shows ~35–70% less tokens vs fat corpus paste, depending on the work. Method + honesty boundary — not a universal invoice SLA."
   />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice/proof" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,6 +75,43 @@
       color: var(--gold);
     }
     p { margin: 0 0 1rem; color: var(--soft); }
+    .hero-num {
+      margin: 0.5rem 0 1.25rem;
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 8vw, 3.6rem);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--gold-hi);
+    }
+    .hero-num small {
+      display: block;
+      margin-top: 0.45rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--soft);
+      letter-spacing: 0;
+    }
+    table.matrix {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0 1.25rem;
+      font-size: 0.88rem;
+    }
+    table.matrix th,
+    table.matrix td {
+      text-align: left;
+      padding: 0.45rem 0.5rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+      color: var(--soft);
+    }
+    table.matrix th {
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    table.matrix td.num { font-variant-numeric: tabular-nums; color: var(--champagne); }
     .cmp {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -100,44 +137,41 @@
       font-weight: 700;
     }
     .cmp-col .num {
-      margin: 0;
+      margin: 0 0 0.35rem;
       font-family: var(--font-display);
       font-size: 1.85rem;
-      color: var(--champagne);
+      font-weight: 600;
+      color: var(--gold-hi);
       line-height: 1.1;
     }
-    .cmp-col.win .num { color: var(--gold-hi); }
-    .cmp-col .note { margin: 0.45rem 0 0; font-size: 0.82rem; color: var(--muted); }
-    ul { margin: 0 0 1.1rem; padding-left: 1.15rem; color: var(--soft); }
-    li { margin-bottom: 0.45rem; }
+    .cmp-col .note { margin: 0; font-size: 0.86rem; color: var(--soft); }
     .honesty {
-      margin: 2rem 0 1.25rem;
-      padding: 1rem 1.1rem;
-      border-left: 3px solid rgba(212, 175, 55, 0.55);
-      background: rgba(26, 18, 12, 0.65);
-      font-size: 0.9rem;
-      color: var(--muted);
+      margin: 1.5rem 0;
+      padding: 1rem 1.05rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(20, 14, 10, 0.65);
+      color: var(--soft);
+      font-size: 0.92rem;
     }
+    ul { margin: 0 0 1rem; padding-left: 1.15rem; color: var(--soft); }
+    li { margin: 0.35rem 0; }
     .cta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.65rem;
-      margin-top: 1.5rem;
+      margin: 1.5rem 0 0;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.7rem 1.15rem;
-      font: 600 0.88rem/1 var(--font-body);
+      padding: 0.7rem 1.05rem;
+      border: 1px solid rgba(212, 175, 55, 0.45);
       text-decoration: none;
-      border: 1px solid rgba(212, 175, 55, 0.4);
+      font-weight: 600;
+      font-size: 0.9rem;
     }
-    .btn-primary {
-      background: linear-gradient(180deg, #e8c547, #b8860b);
-      color: #1a1208;
-      border-color: transparent;
-    }
+    .btn-primary { color: #0a0806; background: var(--gold); border-color: var(--gold); }
     .btn-primary:hover { color: #0a0806; filter: brightness(1.05); }
     .btn-ghost { color: var(--champagne); background: transparent; }
     .footer {
@@ -151,84 +185,87 @@
 </head>
 <body>
   <article class="wrap">
-    <p class="kicker">Public method · structural estimate</p>
-    <h1>Nested agents + pointers vs dump-everything</h1>
-    <p class="by">Lattice Chat V1.618 · from Sonic Singularity 13 · SS Vibelandia Ark engine</p>
+    <p class="kicker">Public method · Cursor usage matrix</p>
+    <h1>~35–70% less · depending on the work</h1>
+    <p class="by">Lattice Chat V1.618 · paired Cursor SDK runs · SS Vibelandia</p>
 
-    <p class="lede">
-      Same hard coding-style ask, two loading styles. Numbers below are estimated
-      context load (characters ÷ 4) — not a Cursor, OpenAI, or Anthropic invoice.
+    <p class="lede" id="lede">
+      On six varied coding-style asks, Lattice (seed pack + hard rails) used about
+      <strong>35–70% fewer tokens</strong> than the same asks with a fat corpus paste.
+      The range depends on the job — not a single magic percent.
     </p>
 
-    <div class="cmp" aria-label="Token comparison">
+    <p class="hero-num" id="hero-range">
+      ~35–70%
+      <small id="hero-sub">less Cursor usage vs fat paste · latest public matrix</small>
+    </p>
+
+    <h2>What we measured</h2>
+    <p>
+      Same model (<code>composer-2.5</code>), paired local Cursor SDK runs:
+      Lattice-style prompts (pointers / seed pinches / no roam when seed is enough)
+      vs a capped fat corpus dump. Re-run: <code>npm run compare:lattice:cursor:matrix</code>.
+    </p>
+
+    <table class="matrix" aria-label="Usage savings by work type">
+      <thead>
+        <tr>
+          <th>Work type</th>
+          <th>Saved</th>
+        </tr>
+      </thead>
+      <tbody id="matrix-body">
+        <tr><td>Trivial / no repo</td><td class="num">~35–43%</td></tr>
+        <tr><td>Single-doc pointer</td><td class="num">~64%</td></tr>
+        <tr><td>Locate a symbol</td><td class="num">~51%</td></tr>
+        <tr><td>Multi-band plan (seed-only)</td><td class="num">~38%</td></tr>
+        <tr><td>Ops / config</td><td class="num">~69%</td></tr>
+      </tbody>
+    </table>
+    <p id="scoreboard">Latest receipt: Lattice 6 / Standard 0 / Ties 0.</p>
+
+    <h2>Claim boundary</h2>
+    <ul>
+      <li>Public marketing range is <strong>~35–70%</strong>, tied to work class on this matrix.</li>
+      <li>Not a universal invoice SLA — your traffic and roaming habits differ.</li>
+      <li>Open-ended asks that tool-tour the repo can erase the savings (or lose).</li>
+      <li>Live chat bills through <em>your</em> Cursor key; this page reports the bench receipt.</li>
+    </ul>
+
+    <h2>Secondary · structural context-load estimate</h2>
+    <p>
+      Separately we still publish a chars÷4 <em>context-load</em> estimate (not billed usage)
+      for dump-everything vs nested + pointers on one multi-band ask:
+    </p>
+    <div class="cmp" aria-label="Structural token comparison">
       <div class="cmp-col">
         <h3>Dump-everything</h3>
         <p class="num" id="std-tok">~301,025</p>
         <p class="note">Estimated context tokens</p>
       </div>
       <div class="cmp-col win">
-        <h3>Lattice Chat V1.618</h3>
+        <h3>Lattice nested + pointers</h3>
         <p class="num" id="lat-tok">~3,121</p>
         <p class="note">Estimated context tokens</p>
       </div>
     </div>
-
-    <h2>What we compared</h2>
-    <p>
-      We ran one realistic multi-part coding question — map docs, UI, APIs, and a nested plan —
-      under two loading styles:
-    </p>
-    <ul>
-      <li>
-        <strong style="color: var(--champagne)">Standard agentic (fat context)</strong> —
-        paste large slices of docs, protocols, and code into the model, then re-use that fat
-        context across map → plan → synthesize.
-      </li>
-      <li>
-        <strong style="color: var(--champagne)">Lattice Chat V1.618</strong> —
-        a small nested team with RAG-style pointers and a short history window, instead of
-        dumping the corpus.
-      </li>
-    </ul>
-
-    <h2>What the difference means</h2>
-    <p>
-      Tokens are the fuel of AI coding agents. Dump-everything mode treats the project as one
-      meal. Lattice treats it like a library: the lead agent points helpers at the shelves they
-      need, then folds answers back together. On this bench, that is the measured mechanism —
-      nesting and selection — not a fractal compression algorithm.
-    </p>
     <p id="diff-line">
-      Absolute difference on this receipt is large because the fat path pastes volume and reuses it.
+      That structural receipt is continuity evidence for loading style — marketing % leads with the Cursor matrix above.
     </p>
-
-    <h2>Companion theory</h2>
-    <p>
-      <a href="/whitepaper/synthobs-holographic-operators"><strong>Holographic Operators</strong></a>
-      — language-as-wiring operator model · Φ phase coherence · 8/8 empirical pass on public text + NOAA.
-      <a href="/whitepaper/omniversal-nested-agent-lattice">Nested Agent Lattice</a> — Goldilocks topology.
-    </p>
-
-    <h2>Claim boundary</h2>
-    <ul>
-      <li>Nested + pointers can beat fat dump-everything on estimated context size.</li>
-      <li>Nested can still cost more than a strong selected-context baseline.</li>
-      <li>SING φ / “fractal” wording is scale grammar and naming — not the savings engine.</li>
-      <li>Live chat usage bills through your Cursor key; this page does not report that bill.</li>
-    </ul>
 
     <div class="honesty" id="honesty">
       <strong style="color: var(--champagne)">Honesty boundary.</strong>
-      These numbers are structural estimates (about 4 characters ≈ 1 token), same prompt both
-      ways. They are <em>not</em> a final invoice from OpenAI, Anthropic, or Cursor. Machine
-      receipt stays available for auditors who want the raw table.
+      Primary claim: ~35–70% less Cursor usage vs fat paste on the public multi-task matrix,
+      depending on the work. Secondary: structural chars÷4 context-load estimate is not a vendor invoice.
+      Historical ~99% structural figures are not used as marketing headlines.
     </div>
 
     <div class="cta-row">
       <a class="btn btn-primary" href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20free%20trial&amp;body=Hello%2C%0A%0AI%20would%20like%20a%20free%20trial%20of%20Lattice%20Chat%20V1.618.%0A%0AMy%20email%20%2F%20userid%3A%20%0A%0AThanks.">Email for a free trial</a>
       <a class="btn btn-ghost" href="/lattice-chat">Try Lattice chat</a>
       <a class="btn btn-ghost" href="/lattice">Back to Lattice</a>
-      <a class="btn btn-ghost" href="/data/lattice-vs-standard-comparison.json">Machine receipt (JSON)</a>
+      <a class="btn btn-ghost" href="/data/lattice-vs-standard-cursor-usage-matrix.json">Cursor matrix (JSON)</a>
+      <a class="btn btn-ghost" href="/data/lattice-vs-standard-comparison.json">Structural receipt (JSON)</a>
     </div>
 
     <p class="footer">
@@ -241,12 +278,73 @@
 
   <script>
     (async function hydrate() {
+      const el = (id) => document.getElementById(id);
+      try {
+        const res = await fetch('/data/lattice-vs-standard-cursor-usage-matrix.json', { cache: 'no-store' });
+        if (res.ok) {
+          const data = await res.json();
+          const rows = Array.isArray(data.rows) ? data.rows : [];
+          const pcts = [];
+          const body = el('matrix-body');
+          if (body && rows.length) {
+            body.innerHTML = '';
+            for (const r of rows) {
+              const lt = r.lattice?.usage?.totalTokens;
+              const st = r.standard?.usage?.totalTokens;
+              let pct = null;
+              if (lt > 0 && st > 0 && st > lt) pct = Math.round(((st - lt) / st) * 1000) / 10;
+              if (typeof pct === 'number') pcts.push(pct);
+              const tr = document.createElement('tr');
+              const title = r.task?.title || r.task?.id || 'task';
+              const cls = r.task?.class ? ' (' + r.task.class + ')' : '';
+              tr.innerHTML =
+                '<td>' +
+                title +
+                cls +
+                '</td><td class="num">' +
+                (pct != null ? '~' + pct + '%' : '—') +
+                '</td>';
+              body.appendChild(tr);
+            }
+          }
+          if (pcts.length) {
+            const lo = Math.round(Math.min(...pcts));
+            const hi = Math.round(Math.max(...pcts));
+            const range = '~' + lo + '–' + hi + '%';
+            if (el('hero-range')) {
+              el('hero-range').innerHTML =
+                range +
+                '<small id="hero-sub">less Cursor usage vs fat paste · hydrated from public matrix</small>';
+            }
+            if (el('lede')) {
+              el('lede').innerHTML =
+                'On ' +
+                (data.overall?.n || pcts.length) +
+                ' varied coding-style asks, Lattice used about <strong>' +
+                lo +
+                '–' +
+                hi +
+                '% fewer tokens</strong> than the same asks with a fat corpus paste. The range depends on the job.';
+            }
+          }
+          if (el('scoreboard') && data.overall) {
+            el('scoreboard').textContent =
+              'Latest receipt: Lattice ' +
+              data.overall.latticeWins +
+              ' / Standard ' +
+              data.overall.standardWins +
+              ' / Ties ' +
+              data.overall.ties +
+              '.';
+          }
+        }
+      } catch (_) { /* static matrix fallbacks */ }
+
       try {
         const res = await fetch('/data/lattice-vs-standard-comparison.json', { cache: 'no-store' });
         if (!res.ok) return;
         const data = await res.json();
         const c = data.comparison || {};
-        const el = (id) => document.getElementById(id);
         if (el('std-tok') && c.standardTokens != null) {
           el('std-tok').textContent = '~' + Number(c.standardTokens).toLocaleString();
         }
@@ -255,19 +353,13 @@
         }
         if (el('diff-line') && c.standardTokens != null && c.latticeTokens != null) {
           el('diff-line').textContent =
-            'On this receipt: dump-everything ~' +
+            'Structural receipt: dump-everything ~' +
             Number(c.standardTokens).toLocaleString() +
             ' estimated tokens; Lattice ~' +
             Number(c.latticeTokens).toLocaleString() +
-            ' (same ask both ways).';
+            ' (chars÷4 — not the marketing %).';
         }
-        if (data.honesty && el('honesty')) {
-          el('honesty').innerHTML =
-            '<strong style="color: var(--champagne)">Honesty boundary.</strong> ' +
-            data.honesty +
-            ' Machine receipt: <a href="/data/lattice-vs-standard-comparison.json">JSON</a>.';
-        }
-      } catch (_) { /* static fallbacks remain */ }
+      } catch (_) { /* static structural fallbacks */ }
     })();
   </script>
 </body>

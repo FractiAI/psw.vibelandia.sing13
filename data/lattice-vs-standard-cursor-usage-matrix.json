@@ -1,0 +1,471 @@
+{
+  "id": "lattice-vs-standard-cursor-usage-matrix-v2-seed",
+  "title": "Lattice vs standard Cursor usage — varied work types (seed pack + hard rails)",
+  "ranAt": "2026-07-28T03:07:05.359Z",
+  "model": "composer-2.5",
+  "runtime": "local",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "improvements": [
+    "Hard context discipline in Lattice prompts",
+    "Curated seed-pack pinches for complex tasks",
+    "Plan mode for multi-band planning",
+    "Max extra tool reads after seed"
+  ],
+  "honesty": {
+    "claim": "Paired Cursor SDK local runs across varied task classes: Lattice seed+rails vs fat corpus paste.",
+    "notClaim": "Not a universal invoice guarantee. Local agents may still tool-explore. Fat paste capped.",
+    "fatCapChars": 60000
+  },
+  "fatCorpus": {
+    "chars": 60000,
+    "files": 6
+  },
+  "summaryByClass": {
+    "no_repo": {
+      "n": 2,
+      "latticeWins": 2,
+      "standardWins": 0,
+      "ties": 0
+    },
+    "pointer_rag": {
+      "n": 1,
+      "latticeWins": 1,
+      "standardWins": 0,
+      "ties": 0
+    },
+    "code_locate": {
+      "n": 1,
+      "latticeWins": 1,
+      "standardWins": 0,
+      "ties": 0
+    },
+    "multi_band": {
+      "n": 1,
+      "latticeWins": 1,
+      "standardWins": 0,
+      "ties": 0
+    },
+    "ops": {
+      "n": 1,
+      "latticeWins": 1,
+      "standardWins": 0,
+      "ties": 0
+    }
+  },
+  "overall": {
+    "latticeWins": 6,
+    "standardWins": 0,
+    "ties": 0,
+    "n": 6
+  },
+  "rows": [
+    {
+      "task": {
+        "id": "T1_trivial_arithmetic",
+        "class": "no_repo",
+        "title": "Trivial — no corpus needed",
+        "ask": "Reply with exactly one short sentence: what is 17×3? No tools. No file reads."
+      },
+      "lattice": {
+        "label": "lattice",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-2254327c-71d2-4ed0-a964-82e211b179b2",
+        "durationMs": 6554,
+        "promptChars": 324,
+        "promptTokensEstimate": 81,
+        "assistantChars": 11,
+        "toolCalls": 0,
+        "usage": {
+          "raw": {
+            "inputTokens": 11493,
+            "outputTokens": 84,
+            "cacheReadTokens": 8352,
+            "cacheWriteTokens": 0,
+            "totalTokens": 19929
+          },
+          "totalTokens": 19929,
+          "inputTokens": 11493,
+          "outputTokens": 84,
+          "cacheReadTokens": 8352
+        },
+        "replyPreview": "17×3 is 51."
+      },
+      "standard": {
+        "label": "standard_fat",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-1f59b5c7-da1c-48d6-88cd-20e7e17c5e5d",
+        "durationMs": 3304,
+        "promptChars": 60311,
+        "promptTokensEstimate": 15078,
+        "assistantChars": 21,
+        "toolCalls": 0,
+        "usage": {
+          "raw": {
+            "inputTokens": 26780,
+            "outputTokens": 84,
+            "cacheReadTokens": 8352,
+            "cacheWriteTokens": 0,
+            "totalTokens": 35216
+          },
+          "totalTokens": 35216,
+          "inputTokens": 26780,
+          "outputTokens": 84,
+          "cacheReadTokens": 8352
+        },
+        "replyPreview": "17 times 3 equals 51."
+      },
+      "comparison": {
+        "latticeTotal": 19929,
+        "standardTotal": 35216,
+        "deltaStandardMinusLattice": 15287,
+        "latticeSavedPctVsStandard": 43.4,
+        "winner": "lattice",
+        "latticeFaster": false,
+        "latticeFewerTools": false,
+        "promptEstimateSavedPct": 99.5
+      }
+    },
+    {
+      "task": {
+        "id": "T2_product_tagline",
+        "class": "no_repo",
+        "title": "Product copy — no corpus needed",
+        "ask": "Write one 12-word-or-fewer tagline for Lattice Chat V1.618 as Your Goldilocks steward. No tools. No file reads."
+      },
+      "lattice": {
+        "label": "lattice",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-8b920185-9545-46d9-a813-4d856716b1b2",
+        "durationMs": 4628,
+        "promptChars": 358,
+        "promptTokensEstimate": 90,
+        "assistantChars": 52,
+        "toolCalls": 0,
+        "usage": {
+          "raw": {
+            "inputTokens": 11504,
+            "outputTokens": 507,
+            "cacheReadTokens": 11360,
+            "cacheWriteTokens": 0,
+            "totalTokens": 23371
+          },
+          "totalTokens": 23371,
+          "inputTokens": 11504,
+          "outputTokens": 507,
+          "cacheReadTokens": 11360
+        },
+        "replyPreview": "**Just-right answers—seed packs, not corpus dumps.**"
+      },
+      "standard": {
+        "label": "standard_fat",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-eeea598f-5eef-467f-a500-48004b2e5780",
+        "durationMs": 5911,
+        "promptChars": 60345,
+        "promptTokensEstimate": 15087,
+        "assistantChars": 80,
+        "toolCalls": 0,
+        "usage": {
+          "raw": {
+            "inputTokens": 26791,
+            "outputTokens": 564,
+            "cacheReadTokens": 8384,
+            "cacheWriteTokens": 0,
+            "totalTokens": 35739
+          },
+          "totalTokens": 35739,
+          "inputTokens": 26791,
+          "outputTokens": 564,
+          "cacheReadTokens": 8384
+        },
+        "replyPreview": "**Your Goldilocks steward — φ-nested chat, just-right depth, preserved signal.**"
+      },
+      "comparison": {
+        "latticeTotal": 23371,
+        "standardTotal": 35739,
+        "deltaStandardMinusLattice": 12368,
+        "latticeSavedPctVsStandard": 34.6,
+        "winner": "lattice",
+        "latticeFaster": true,
+        "latticeFewerTools": false,
+        "promptEstimateSavedPct": 99.4
+      }
+    },
+    {
+      "task": {
+        "id": "T3_single_doc_fact",
+        "class": "pointer_rag",
+        "title": "Single-doc fact from a named pointer",
+        "ask": "From docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md only (open that one file if needed): what is the Document ID string? Reply with the ID and one honesty-boundary sentence. Under 80 words."
+      },
+      "lattice": {
+        "label": "lattice",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-0c787682-c0fd-445d-949d-a07662cf3fc4",
+        "durationMs": 7625,
+        "promptChars": 5708,
+        "promptTokensEstimate": 1427,
+        "assistantChars": 324,
+        "toolCalls": 2,
+        "usage": {
+          "raw": {
+            "inputTokens": 27570,
+            "outputTokens": 765,
+            "cacheReadTokens": 16704,
+            "cacheWriteTokens": 0,
+            "totalTokens": 45039
+          },
+          "totalTokens": 45039,
+          "inputTokens": 27570,
+          "outputTokens": 765,
+          "cacheReadTokens": 16704
+        },
+        "replyPreview": "**Document ID:** `WP-SYNTHOBS-EGS-81-ELECTRONS-LATTICE-2026-07`\n\n**Honesty boundary:** It maps Aufbau filling through Thallium on the 81-register (E9)—it does **not** claim spectroscopic term symbols equal its ternary di"
+      },
+      "standard": {
+        "label": "standard_fat",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-c0254848-6f8c-495a-86e1-181a9125dddd",
+        "durationMs": 7832,
+        "promptChars": 60430,
+        "promptTokensEstimate": 15108,
+        "assistantChars": 356,
+        "toolCalls": 4,
+        "usage": {
+          "raw": {
+            "inputTokens": 82095,
+            "outputTokens": 487,
+            "cacheReadTokens": 43584,
+            "cacheWriteTokens": 0,
+            "totalTokens": 126166
+          },
+          "totalTokens": 126166,
+          "inputTokens": 82095,
+          "outputTokens": 487,
+          "cacheReadTokens": 43584
+        },
+        "replyPreview": "**Document ID:** `WP-SYNTHOBS-EGS-81-ELECTRONS-2026-07`\n\nIt models an 81-digit EGS register and shell addressability for \\(Z \\le 81\\) with a documented 9/9 empirical pass, but it does not claim \\(\\Phi\\) derives the perio"
+      },
+      "comparison": {
+        "latticeTotal": 45039,
+        "standardTotal": 126166,
+        "deltaStandardMinusLattice": 81127,
+        "latticeSavedPctVsStandard": 64.3,
+        "winner": "lattice",
+        "latticeFaster": false,
+        "latticeFewerTools": true,
+        "promptEstimateSavedPct": 90.6
+      }
+    },
+    {
+      "task": {
+        "id": "T4_locate_symbol",
+        "class": "code_locate",
+        "title": "Locate a symbol in the codebase",
+        "ask": "Where is function buildNestDirective defined? Give path + approximate role in one short paragraph. Prefer search/read of that symbol only — do not dump the repo."
+      },
+      "lattice": {
+        "label": "lattice",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-43e8b7a3-aee9-4776-a5e3-acb0225fd890",
+        "durationMs": 7236,
+        "promptChars": 2302,
+        "promptTokensEstimate": 576,
+        "assistantChars": 654,
+        "toolCalls": 4,
+        "usage": {
+          "raw": {
+            "inputTokens": 37724,
+            "outputTokens": 495,
+            "cacheReadTokens": 32896,
+            "cacheWriteTokens": 0,
+            "totalTokens": 71115
+          },
+          "totalTokens": 71115,
+          "inputTokens": 37724,
+          "outputTokens": 495,
+          "cacheReadTokens": 32896
+        },
+        "replyPreview": "**Path:** `api/lattice-chat.js` — defined at line 177.\n\n**Role:** `buildNestDirective` turns the user’s nest settings (`nestTopology`: `single` | `goldilocks` | `multi`, plus optional `agentRoster`) into a short system d"
+      },
+      "standard": {
+        "label": "standard_fat",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-0b4d4194-8441-4fd8-a5fa-2a07dfe4dfb9",
+        "durationMs": 6567,
+        "promptChars": 60399,
+        "promptTokensEstimate": 15100,
+        "assistantChars": 684,
+        "toolCalls": 4,
+        "usage": {
+          "raw": {
+            "inputTokens": 81895,
+            "outputTokens": 382,
+            "cacheReadTokens": 62304,
+            "cacheWriteTokens": 0,
+            "totalTokens": 144581
+          },
+          "totalTokens": 144581,
+          "inputTokens": 81895,
+          "outputTokens": 382,
+          "cacheReadTokens": 62304
+        },
+        "replyPreview": "**Path:** `api/lattice-chat.js` (defined at line 177)\n\n**Role:** `buildNestDirective` is a prompt-builder helper in the Lattice Chat API. It takes a nest topology (`single`, `multi`, or `goldilocks`) and an optional agen"
+      },
+      "comparison": {
+        "latticeTotal": 71115,
+        "standardTotal": 144581,
+        "deltaStandardMinusLattice": 73466,
+        "latticeSavedPctVsStandard": 50.8,
+        "winner": "lattice",
+        "latticeFaster": false,
+        "latticeFewerTools": false,
+        "promptEstimateSavedPct": 96.2
+      }
+    },
+    {
+      "task": {
+        "id": "T5_multi_band_plan",
+        "class": "multi_band",
+        "title": "Multi-band nesting plan",
+        "ask": "In under 250 words, outline a Goldilocks nested plan for a multi-band SING13 change (docs ground → edge UI → api/lib pipes → squeeze). Name peer-firewall. No edits. No PR."
+      },
+      "lattice": {
+        "label": "lattice",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-598bcc0d-d4d9-45f2-8645-55be84fab9f9",
+        "durationMs": 7391,
+        "promptChars": 5717,
+        "promptTokensEstimate": 1430,
+        "assistantChars": 1695,
+        "toolCalls": 0,
+        "usage": {
+          "raw": {
+            "inputTokens": 13001,
+            "outputTokens": 889,
+            "cacheReadTokens": 8032,
+            "cacheWriteTokens": 0,
+            "totalTokens": 21922
+          },
+          "totalTokens": 21922,
+          "inputTokens": 13001,
+          "outputTokens": 889,
+          "cacheReadTokens": 8032
+        },
+        "replyPreview": "# SING13 · Multi-band nested plan (seed-only)\n\n**Steward:** Lattice Chat V1.618 · NSPFRNP · peer-firewall **ON** (snap audit gate; no cross-band corpus bleed).\n\n## Band 0 — Docs ground (parent nest)\n**Pointer:** `docs/AR"
+      },
+      "standard": {
+        "label": "standard_fat",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-038d0ea8-ef20-48c9-ba0d-bdaeab25eb70",
+        "durationMs": 6536,
+        "promptChars": 60408,
+        "promptTokensEstimate": 15102,
+        "assistantChars": 1595,
+        "toolCalls": 0,
+        "usage": {
+          "raw": {
+            "inputTokens": 26804,
+            "outputTokens": 729,
+            "cacheReadTokens": 8032,
+            "cacheWriteTokens": 0,
+            "totalTokens": 35565
+          },
+          "totalTokens": 35565,
+          "inputTokens": 26804,
+          "outputTokens": 729,
+          "cacheReadTokens": 8032
+        },
+        "replyPreview": "## Goldilocks Nested Plan · Multi-Band SING13\n\n**Anchor:** S₁₃ (Sonic Singularity · cloud skin ∞¹³) → one domain gate to SING φ / Lattice Chat V1.618. **Peer-firewall:** parent holds macro drift; children execute locally"
+      },
+      "comparison": {
+        "latticeTotal": 21922,
+        "standardTotal": 35565,
+        "deltaStandardMinusLattice": 13643,
+        "latticeSavedPctVsStandard": 38.4,
+        "winner": "lattice",
+        "latticeFaster": false,
+        "latticeFewerTools": false,
+        "promptEstimateSavedPct": 90.5
+      }
+    },
+    {
+      "task": {
+        "id": "T6_ops_config",
+        "class": "ops",
+        "title": "Ops / config grounding",
+        "ask": "From README / .env.example knowledge: does Lattice Chat on Vercel use a server CURSOR_API_KEY, or BYOK header from the browser? One short paragraph. Prefer those docs only."
+      },
+      "lattice": {
+        "label": "lattice",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-baaab0a6-c337-437c-b2a3-8c6e7fd4bfa8",
+        "durationMs": 10241,
+        "promptChars": 3922,
+        "promptTokensEstimate": 981,
+        "assistantChars": 769,
+        "toolCalls": 2,
+        "usage": {
+          "raw": {
+            "inputTokens": 27766,
+            "outputTokens": 1347,
+            "cacheReadTokens": 16736,
+            "cacheWriteTokens": 0,
+            "totalTokens": 45849
+          },
+          "totalTokens": 45849,
+          "inputTokens": 27766,
+          "outputTokens": 1347,
+          "cacheReadTokens": 16736
+        },
+        "replyPreview": "From the README and `.env.example` alone: **Lattice Chat on Vercel does not use a server `CURSOR_API_KEY`.** The env template documents Redis, catalog-upload secrets, and client Vite overrides — not a deployed Cursor key"
+      },
+      "standard": {
+        "label": "standard_fat",
+        "ok": true,
+        "status": "finished",
+        "runId": "run-bd7e7953-eeb9-4be9-a0e2-ffe6e792f8c9",
+        "durationMs": 8514,
+        "promptChars": 60402,
+        "promptTokensEstimate": 15101,
+        "assistantChars": 725,
+        "toolCalls": 10,
+        "usage": {
+          "raw": {
+            "inputTokens": 85355,
+            "outputTokens": 694,
+            "cacheReadTokens": 63712,
+            "cacheWriteTokens": 0,
+            "totalTokens": 149761
+          },
+          "totalTokens": 149761,
+          "inputTokens": 85355,
+          "outputTokens": 694,
+          "cacheReadTokens": 63712
+        },
+        "replyPreview": "On Vercel, Lattice Chat uses **BYOK from the browser**, not a server-side `CURSOR_API_KEY`. The README states explicitly that Lattice **does not** use `CURSOR_API_KEY` on Vercel: users paste their key in the chat UI, and"
+      },
+      "comparison": {
+        "latticeTotal": 45849,
+        "standardTotal": 149761,
+        "deltaStandardMinusLattice": 103912,
+        "latticeSavedPctVsStandard": 69.4,
+        "winner": "lattice",
+        "latticeFaster": false,
+        "latticeFewerTools": true,
+        "promptEstimateSavedPct": 93.5
+      }
+    }
+  ]
+}

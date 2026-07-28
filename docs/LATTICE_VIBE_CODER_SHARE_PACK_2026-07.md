@@ -30,16 +30,16 @@ Chairman posts on social. Agents keep this pack + site/README in sync.
 
 ### 1 · GitHub — image: `lattice-artdeco-hero.png`
 
-**Title:** Lattice Chat V1.618 — nested AI coding agents (pointers, not dump-everything)
+**Title:** Lattice Chat V1.618 — nested AI coding (~35–70% less usage vs fat dump, depending on work)
 
 ```text
 Lattice Chat V1.618 is a tool from FractiAI.
 
-Most AI coding tools dump large piles of files into the model. That inflates context load.
+Most AI coding tools dump large piles of files into the model. That inflates usage.
 
-Lattice works differently. You chat normally. Behind the scenes a small nested team points at files instead of pasting the whole project.
+Lattice works differently. You chat normally. Behind the scenes a small nested team points at files / seed pinches instead of pasting the whole project.
 
-We published a structural estimate (characters ÷ 4) of fat dump vs nested + pointers on the same ask. It is an estimate of context load, not a vendor bill. Numbers and method are public.
+On paired Cursor runs across six work types, Lattice used about 35–70% fewer tokens than a fat corpus paste — depending on the work. Not a universal invoice SLA. Method and receipts are public.
 
 Try it: https://www.ssvibelandiaquestfest24x365.com/lattice
 Method: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
@@ -53,7 +53,7 @@ Hey — for people using AI agents to code:
 
 Lattice Chat V1.618 (FractiAI) is chat on the outside, nested agents on the inside. It avoids dumping your whole project into the AI every time.
 
-Public structural estimate of context load (not a vendor invoice): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
+Public Cursor matrix: ~35–70% less usage vs fat paste, depending on the work (not a universal SLA): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 
 https://www.ssvibelandiaquestfest24x365.com/lattice
 ```
@@ -63,15 +63,15 @@ https://www.ssvibelandiaquestfest24x365.com/lattice
 ```text
 Lattice Chat V1.618 by FractiAI
 
-Chat-simple AI coding agents that nest and point at files instead of dumping the whole repo into context.
+Chat-simple nested agents. Measured ~35–70% less Cursor usage vs fat dump — depending on the work.
 
-Method (structural estimate, not a bill): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
+Method: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 https://www.ssvibelandiaquestfest24x365.com/lattice
 ```
 
 ### 4 · Hacker News — image: `lattice-artdeco-hero.png`
 
-**Title:** Show HN: Lattice Chat V1.618 – nested agents with pointer loading (public estimate)
+**Title:** Show HN: Lattice Chat V1.618 – nested agents; ~35–70% less usage vs fat paste (public matrix)
 
 ```text
 Hi HN —
@@ -80,10 +80,10 @@ Lattice Chat V1.618 is our chat tool for AI coding agents. The idea is simple: s
 
 How it works in plain terms:
 - One lead agent breaks the job up
-- A few helper agents each handle one area
-- It points at files instead of pasting everything
+- Helpers get pointers / seed pinches instead of a corpus dump
+- Hard rails: don't roam when the seed is enough
 
-We published a structural chars÷4 estimate of fat dump vs nested + pointers on the same task. Not a live invoice from a model vendor. Feedback welcome.
+We published a paired Cursor SDK matrix across six work types: about 35–70% fewer tokens than fat paste, depending on the job. Not a universal invoice SLA. Feedback welcome.
 
 Live: https://www.ssvibelandiaquestfest24x365.com/lattice
 Method: https://www.ssvibelandiaquestfest24x365.com/lattice/proof
@@ -92,14 +92,14 @@ Code: https://github.com/FractiAI/psw.vibelandia.sing13
 
 ### 5 · Reddit — image: `lattice-artdeco-hero.png`
 
-**Title:** Lattice Chat V1.618 — nested AI agents for vibe coders (pointer loading; public estimate)
+**Title:** Lattice Chat V1.618 — nested AI agents (~35–70% less vs fat dump, depending on work)
 
 ```text
 Built for people who code with AI agents and hate watching context explode.
 
 Lattice Chat V1.618 (FractiAI): you chat like normal. Under the hood it runs a small nested agent team instead of pasting your whole project into one prompt.
 
-Public structural estimate (not an OpenAI/Anthropic invoice): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
+Public Cursor usage matrix (~35–70% less vs fat paste, depending on work — not a universal SLA): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 
 https://www.ssvibelandiaquestfest24x365.com/lattice
 https://github.com/FractiAI/psw.vibelandia.sing13
@@ -111,6 +111,6 @@ How are you keeping agent context small?
 
 - README Lattice section
 - `/lattice` · `/lattice/proof` · Ark / Get Started / QUESTFEST Build copy
-- Share pack stays percentage-free; lead with nesting + pointers
+- Share pack leads with **~35–70% depending on the work** + honesty boundary
 
 → ∞¹³

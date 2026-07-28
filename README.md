@@ -20,15 +20,13 @@ Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review 
 
 | Review point | Our response |
 |--------------|--------------|
-| Historical chars÷4 “~99%” receipt is continuity evidence only | **Adopted.** That figure is **not** used in public marketing. Structural receipt remains a machine artifact only ([`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json)). |
-| Nested can beat fat full-context; may cost **more** than strong selected-context / RAG | **Adopted.** Public pages state nesting + pointers vs dump-everything, and that nested can still lose to a good single selected-context call. |
-| Live Cursor / cloud billing was **not** measured | **Adopted.** [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof) is labeled structural / context-load estimate — not a Cursor invoice. |
+| Historical chars÷4 “~99%” receipt is continuity evidence only | **Adopted.** That figure is **not** used as a marketing headline. Structural receipt remains available ([`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json)). |
+| Nested can beat fat full-context; may cost **more** than strong selected-context / RAG | **Adopted.** Public pages state nesting + pointers vs dump-everything, and that roaming / open-ended tool tours can erase savings. |
+| Live Cursor / cloud billing was **not** measured | **Superseded (2026-07-28).** Paired Cursor SDK matrix now published: **~35–70% less usage vs fat paste, depending on the work** ([`data/lattice-vs-standard-cursor-usage-matrix.json`](data/lattice-vs-standard-cursor-usage-matrix.json) · [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)). Not a universal invoice SLA. |
 | Contribution is methodological (ledger, matched factorial, falsifiable acceptance), not inventing multi-agent AI | **Agreed.** Comparators (Claude subagents, RAG, MetaGPT, FrugalGPT, etc.) are prior art in the design space. |
-| “‘Fractal’ is metaphor… not a new fractal algorithm” | **Agreed for the measured estimand.** Runtime token deltas come from **context selection, phase count, and bounded nesting overhead** — not a fractal compressor in `api/lattice-chat.js`. **φ / Lattice Chat V1.618** remains real as **EGS scale grammar and product naming** in docs/architecture; it is not claimed as the mechanism that produces Ollama factorial savings. |
+| “‘Fractal’ is metaphor… not a new fractal algorithm” | **Agreed for the measured estimand.** Runtime token deltas come from **context selection, seed packs, and bounded nesting** — not a fractal compressor in `api/lattice-chat.js`. **φ / Lattice Chat V1.618** remains EGS scale grammar and product naming. |
 
-**What we changed on the site:** dropped percent-savings headlines from Lattice, Ark, QUESTFEST, Get Started, share pack, and chat token footer; method page leads with two loading styles and an honesty boundary. Full write-up: [`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md).
-
-When the factorial suite / manuscript lands under `research/`, that tier supersedes the structural receipt for empirical numbers.
+**What we claim on the site now:** **~35–70% less Cursor usage vs fat corpus paste, depending on the work** (public multi-task matrix). Structural chars÷4 estimate is secondary continuity evidence — not the marketing %. Method: [`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md).
 
 | Surface | URL / path |
 |--------|------------|
@@ -48,7 +46,8 @@ When the factorial suite / manuscript lands under `research/`, that tier superse
 | API pipe (BYOK proxy) | [`api/lattice-chat.js`](api/lattice-chat.js) | Multi-provider: Cursor cloud · Claude Messages · Gemini Antigravity; header keys only — **no server key fallback** |
 | Token estimate engine | [`lib/lattice-engine.mjs`](lib/lattice-engine.mjs) | Shared estimate math for API + benches |
 | Access allowlist | [`data/lattice-access.json`](data/lattice-access.json) | Email grants (old school · honor) |
-| Comparison receipt | [`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json) | Public structural estimate (chars÷4) |
+| Comparison receipt | [`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json) | Structural estimate (chars÷4) — secondary |
+| Cursor usage matrix | [`data/lattice-vs-standard-cursor-usage-matrix.json`](data/lattice-vs-standard-cursor-usage-matrix.json) | Primary marketing evidence (~35–70%) |
 | Metaphor / singularities | [`docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md`](docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md) · [`docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md`](docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md) |
 
 ### Test & validate (local)
@@ -56,11 +55,12 @@ When the factorial suite / manuscript lands under `research/`, that tier superse
 **1 · Context-load bench (no Cursor key required)**
 
 ```bash
-npm run compare:lattice          # writes data/lattice-vs-standard-comparison.json
+npm run compare:lattice          # writes data/lattice-vs-standard-comparison.json (structural)
 npm run test:lattice-floors      # regenerates + asserts estimate floor vs fat dump
+npm run compare:lattice:cursor:matrix   # needs CURSOR_API_KEY — writes usage matrix JSON
 ```
 
-Honesty: **structural estimates** (chars÷4), not vendor invoices. Nested + pointers vs dump-everything — not a billed Cursor usage report. Brief: [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof).
+Honesty: marketing range **~35–70%** comes from the Cursor usage matrix (not chars÷4). Structural estimates remain secondary. Nested + pointers vs dump-everything — roaming can erase savings. Brief: [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof).
 
 **2 · Run the chat UI against the live pipe**
 

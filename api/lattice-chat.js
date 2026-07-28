@@ -33,7 +33,121 @@ Prefer precise, corpus-faithful replies. Do not invent repo paths or protocols.
 Help with craft, curiosity, building, listening, and care — within Goldilocks. Intentions matter: refuse malice, harm, exploitation, and ill will without drama; redirect to the ship’s purpose.
 Keep self-talk brief. Close substantive answers with → ∞¹³.
 Return a clear text reply (not a PR or code edit unless asked).
-Never commit, push, or open a PR against FractiAI/psw.vibelandia.sing13 unless the user explicitly asks.`;
+Never commit, push, or open a PR against FractiAI/psw.vibelandia.sing13 unless the user explicitly asks.
+
+## Context discipline (hard rules — this is how Lattice saves tokens on complex work)
+1. POINTER-FIRST: Prefer named paths / section headers over opening whole files.
+2. NO CORPUS TOUR: Do not browse broadly (no repo-wide exploration, no “read everything under docs/”).
+3. BUDGET: For complex multi-band asks, open at most 6 files total across the whole turn (grep/list counts toward the budget if results are large — prefer narrow grep).
+4. PLAN THEN PINCH: First name bands + the exact file pointers you will use; then read only those; then answer. Skip reads you can answer without.
+5. SCALE-TO-ZERO: After the reply, do not keep exploring.`;
+
+function classifyAskBands(message) {
+  const m = String(message || '').toLowerCase();
+  const needsDocs =
+    /doc|protocol|nspfrnp|paper|research|architecture|mca|seed|rag|lattice|egs|synthobs|nest|holograph|whitepaper/.test(
+      m,
+    ) || m.length > 100;
+  const needsEdge = /ui|chat|interface|vite|react|css|rail|composer|edge|brand|page|html/.test(m);
+  const needsPipes = /api|sdk|cursor|vercel|server|auth|secret|token|cloud|pipe|lib\//.test(m);
+  const complex =
+    needsDocs ||
+    needsEdge ||
+    needsPipes ||
+    m.split(/\s+/).filter(Boolean).length > 28 ||
+    m.length > 160 ||
+    /multi-?band|nested|plan|architect|refactor|across/.test(m);
+  return { needsDocs, needsEdge, needsPipes, complex };
+}
+
+function buildComplexWorkProtocol(message) {
+  const intent = classifyAskBands(message);
+  if (!intent.complex) {
+    return `Work class: LIGHT.
+Answer from the user message + known pointers. Do not open files unless a single named path is required.`;
+  }
+
+  const bands = ['Φ-Parent (synthesize)'];
+  const pointers = [];
+  if (intent.needsDocs) {
+    bands.push('Seed·RAG');
+    pointers.push(
+      'docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md',
+      'docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md',
+      'docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md',
+      'protocols/ (MCA / NSPFRNP catalog — index only unless one file is named)',
+    );
+  }
+  if (intent.needsEdge) {
+    bands.push('Edge UI');
+    pointers.push('apps/lattice-chat/', 'interfaces/lattice-v1618.html', 'interfaces/lattice-learn-more.html');
+  }
+  if (intent.needsPipes) {
+    bands.push('Pipe Runtime');
+    pointers.push('api/lattice-chat.js', 'lib/lattice-engine.mjs', 'README.md', '.env.example');
+  }
+  if (!intent.needsDocs && !intent.needsEdge && !intent.needsPipes) {
+    bands.push('Seed·RAG', 'Edge UI', 'Pipe Runtime');
+    pointers.push(
+      'docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md',
+      'apps/lattice-chat/',
+      'api/lattice-chat.js',
+    );
+  }
+
+  return `Work class: COMPLEX (multi-band).
+Execute as a nested lattice in ONE reply (simulate children — do not actually spawn parallel agents unless the runtime requires it):
+Bands: ${bands.join(' · ')}.
+Allowlisted pointers (names for the plan — prefer the Seed pack already in this prompt):
+${pointers.map((p) => `- ${p}`).join('\n')}
+Procedure:
+A) Crystallize: list bands + paths (use Seed pack first).
+B) Pinch-read: ONLY if Seed pack is insufficient — at most 2 extra files. Never dump whole directories.
+C) Squeeze: one synthesized answer. Peer-firewall: do not weave unrelated files.
+STOPPING RULE: If the Seed pack is enough to answer, do NOT call tools. Do NOT browse the repo.`;
+}
+
+function readPinch(relPath, maxChars = 1800) {
+  try {
+    const abs = join(process.cwd(), relPath);
+    if (!existsSync(abs)) return null;
+    const text = readFileSync(abs, 'utf8');
+    const pinch = text.slice(0, maxChars);
+    return { path: relPath, chars: pinch.length, text: pinch };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Curated pinch excerpts for complex asks — enough to plan without a repo tour.
+ * Soft "prefer pointers" alone failed Cursor benches when the agent tool-explored.
+ */
+function buildComplexSeedPack(message) {
+  const intent = classifyAskBands(message);
+  if (!intent.complex) return '';
+
+  const candidates = [];
+  if (intent.needsDocs || (!intent.needsEdge && !intent.needsPipes)) {
+    candidates.push(
+      'docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md',
+      'docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md',
+    );
+  }
+  if (intent.needsPipes) candidates.push('README.md');
+  if (intent.needsEdge) candidates.push('apps/lattice-chat/src/components/ComposerOptions.tsx');
+
+  const uniq = [...new Set(candidates)].slice(0, 3);
+  const pinches = uniq.map((p) => readPinch(p, 1600)).filter(Boolean);
+  if (!pinches.length) return '';
+
+  const body = pinches
+    .map((p) => `### ${p.path}\n\`\`\`\n${p.text}\n\`\`\``)
+    .join('\n\n');
+  return `## Seed pack (pinch only — do not fetch more unless the user asks for a specific file)
+These excerpts are already loaded. Prefer them over tool exploration.
+${body}`;
+}
 
 function normalizeNestTopology(raw) {
   const v = String(raw || '')
@@ -67,7 +181,8 @@ function buildNestDirective(nestTopology, agentRoster) {
   if (nest === 'single') {
     return `Nest topology (user toggle): SINGLE NODE.
 Run as one agent only. Do not spawn nested children, parallel bands, or multi-agent handoffs.
-Prefer the smallest useful context (pointers, not corpus dumps). This mode is for lower token burn.`;
+Prefer the smallest useful context (pointers, not corpus dumps). This mode is for lower token burn.
+Still obey Context discipline + file budget — single node is not a license to tour the repo.`;
   }
 
   if (roster.length) {
@@ -76,18 +191,21 @@ Prefer the smallest useful context (pointers, not corpus dumps). This mode is fo
 Use ONLY these agents (do not replace with auto Goldilocks bands):
 ${lines}
 Parent (or lead) synthesizes; peer-firewall — children do not mesh-sync with each other.
-Prefer pointers over full-file dumps.`;
+Each roster agent gets a short brief + allowlisted pointers only — not a corpus dump.
+Obey Context discipline (≤6 file opens on complex asks).`;
   }
 
   if (nest === 'multi') {
     return `Nest topology (user toggle): MULTI (nested).
-Use a parent meta-optimizer plus intent-matched children (e.g. Seed·RAG / Edge UI / Pipe Runtime), then Squeeze/synthesize.
-Cap children sensibly (≤3 leaf bands). Prefer pointers over dumps. Peer-firewall on.`;
+Use a parent meta-optimizer plus intent-matched children (Seed·RAG / Edge UI / Pipe Runtime as needed), then Squeeze/synthesize.
+Cap children ≤3 leaf bands. Each child: brief + pointers only. Peer-firewall on.
+Obey Context discipline (plan → pinch-read ≤6 files → squeeze). No repo tours.`;
   }
 
   return `Nest topology (user toggle): GOLDILOCKS (auto).
-Choose single-node vs nested from the ask: trivial → parent alone; multi-band → nested children.
-If nesting, pick only the bands needed. Prefer pointers over dumps. Peer-firewall on.`;
+Trivial asks → parent alone. Complex / multi-band → nested children with allowlisted pointers.
+If nesting, pick only the bands needed. Peer-firewall on.
+Obey Context discipline (plan → pinch-read ≤6 files → squeeze). No repo tours.`;
 }
 
 function buildPrompt(message, history, nestTopology, agentRoster) {
@@ -98,10 +216,14 @@ function buildPrompt(message, history, nestTopology, agentRoster) {
     .filter((line) => line.length > 8);
   const transcript = lines.length ? `Conversation so far:\n${lines.join('\n\n')}\n\n` : '';
   const nest = buildNestDirective(nestTopology, agentRoster);
+  const complex = buildComplexWorkProtocol(message);
+  const seed = buildComplexSeedPack(message);
   return `${PREAMBLE}
 
 ${nest}
 
+${complex}
+${seed ? `\n${seed}\n` : ''}
 ${transcript}Latest user message:
 ${String(message || '').trim()}
 
@@ -595,10 +717,13 @@ async function runClaudeTurn({
 }) {
   const { prior, messages } = buildClaudeMessages(message, history);
   const nest = buildNestDirective(nestTopology, agentRoster);
+  const seed = buildComplexSeedPack(message);
   const system = `${PREAMBLE}
 
 ${nest}
 
+${buildComplexWorkProtocol(message)}
+${seed ? `\n${seed}\n` : ''}
 Provider note: You are running via the Anthropic Messages API (BYOK). The public repo is ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}.`;
 
   const model = modelId || 'claude-sonnet-4-5';
@@ -975,7 +1100,7 @@ async function runGeminiTurn({
   const decoded = decodeGeminiAgentId(agentId);
   const agentName = modelId || 'antigravity-preview-05-2026';
   const prompt = decoded?.interactionId
-    ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${String(message || '').trim()}`
+    ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${String(message || '').trim()}`
     : buildPrompt(message, history, nestTopology, agentRoster);
   const emit = (item) => {
     if (typeof onEvent === 'function' && item) onEvent(item);
@@ -1522,6 +1647,20 @@ function normalizeAgentMode(raw) {
   return m === 'plan' ? 'plan' : 'agent';
 }
 
+/** Auto-pick plan mode for complex map/architect asks (agent mode tool-tours burn tokens). */
+function resolveAgentMode(rawMode, message) {
+  const explicit = normalizeAgentMode(rawMode);
+  if (explicit === 'plan') return 'plan';
+  const m = String(message || '').toLowerCase();
+  const wantsImplement = /implement|edit|fix|patch|commit|pr\b|pull request|write code|apply/.test(m);
+  if (wantsImplement) return 'agent';
+  const intent = classifyAskBands(message);
+  const wantsPlan =
+    intent.complex &&
+    /plan|map|outline|architect|design|how (should|would|do)|nested|multi-?band|strategy/.test(m);
+  return wantsPlan ? 'plan' : explicit;
+}
+
 function isSing13RepoUrl(url) {
   return SING13_REPO_HOST_RE.test(String(url || '').trim());
 }
@@ -1793,7 +1932,7 @@ export default async function handler(req, res) {
         ? normalizeModelId(body.model || body.modelId)
         : String(body.model || body.modelId || '').trim() ||
           (provider === 'claude' ? 'claude-sonnet-4-5' : 'antigravity-preview-05-2026');
-    const agentMode = normalizeAgentMode(body.mode || body.agentMode);
+    const agentMode = resolveAgentMode(body.mode || body.agentMode, message);
     const nestTopology = normalizeNestTopology(body.nestTopology || body.nest);
     const agentRoster = typeof body.agentRoster === 'string' ? body.agentRoster : '';
     let agentId =
@@ -2076,7 +2215,7 @@ export default async function handler(req, res) {
 
       const prompt =
         resumedOk && message
-          ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${message}`
+          ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${message}`
           : buildPrompt(message, body.history, nestTopology, agentRoster);
       const sendOpts = {
         model: modelSelection,

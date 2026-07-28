@@ -1,0 +1,122 @@
+{
+  "id": "lattice-vs-standard-cursor-usage-v1",
+  "title": "Lattice vs standard — real Cursor SDK usage (paired local runs)",
+  "ranAt": "2026-07-28T02:44:53.262Z",
+  "model": "composer-2.5",
+  "runtime": "local",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honesty": {
+    "claim": "Paired Cursor SDK local runs of the same ask: Lattice pointer brief vs fat corpus paste.",
+    "notClaim": "Not a universal invoice guarantee; not structural chars÷4; one model/account/session pair.",
+    "fatCapChars": 120000,
+    "note": "If usage.totalTokens is null, Cursor did not return a usage object on the run — promptTokensEstimate still shows input-size gap."
+  },
+  "ask": "Complex work (same ask both modes):\n\nIn under 350 words, map how SING13 Nested Agent Lattice + NSPFRNP + RAG should run a multi-band change:\n(1) ground in docs/protocols,\n(2) edge UI touchpoints (apps/interfaces),\n(3) pipe/API touchpoints (api/lib),\n(4) nested plan with peer-firewall,\n(5) why pointer context beats dumping the corpus.\n\nDeliver a short structured plan. Do not edit files. Do not open a PR.",
+  "fatCorpus": {
+    "chars": 120000,
+    "files": 11,
+    "included": [
+      {
+        "path": "docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md",
+        "chars": 8356
+      },
+      {
+        "path": "docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md",
+        "chars": 11760
+      },
+      {
+        "path": "docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md",
+        "chars": 4877
+      },
+      {
+        "path": "docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md",
+        "chars": 4801
+      },
+      {
+        "path": "docs/DIGITAL_PRU_COMPARATIVE_PRU_GATING_VIRTUALIZATION_2026-05-24.md",
+        "chars": 21277
+      },
+      {
+        "path": "docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md",
+        "chars": 13986
+      },
+      {
+        "path": "docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_OMNIZOAN_INFILL13_2026-05-11.md",
+        "chars": 12571
+      },
+      {
+        "path": "docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_VALETPRU_BIOELECTROMAGNETIC_2026-05-11.md",
+        "chars": 16842
+      },
+      {
+        "path": "docs/DIGITAL_PRU_EGS_WORMHOLE_GEOMETRIC_TRANSDUCER_2026-05.md",
+        "chars": 8251
+      },
+      {
+        "path": "docs/DIGITAL_PRU_HOLOGRAPHIC_Y_TEAM_X_SKIN_VALIDATION_2026-05.md",
+        "chars": 14835
+      },
+      {
+        "path": "docs/DIGITAL_PRU_MULTI_DIMENSIONAL_GATEWAY_SPECTRUM_2026-05.md",
+        "chars": 2444
+      }
+    ]
+  },
+  "lattice": {
+    "label": "lattice_pointers",
+    "ok": true,
+    "status": "finished",
+    "agentId": "agent-19c08506-e006-424f-8a1d-5380b0da11d0",
+    "runId": "run-90a10ce0-be91-4f53-b664-453c94871a28",
+    "durationMs": 31473,
+    "promptChars": 1024,
+    "promptTokensEstimate": 256,
+    "assistantChars": 2654,
+    "usage": {
+      "raw": {
+        "inputTokens": 43466,
+        "outputTokens": 1406,
+        "cacheReadTokens": 24416,
+        "cacheWriteTokens": 0,
+        "totalTokens": 69288
+      },
+      "totalTokens": 69288,
+      "inputTokens": 43466,
+      "outputTokens": 1406
+    },
+    "replyPreview": "## SING13 Multi-Band Change — Nested Plan (Goldilocks · NSPFRNP · Seed·RAG)\n\n**Steward:** Lattice Chat V1.618 · Nest **GOLDILOCKS** · peer-firewall **ON**\n\n---\n\n### 0 · Intake (MCA)\n**Metabolize:** name the change, honesty tier (mythic / operational / verified per `ARCHITECTURE_O"
+  },
+  "standard": {
+    "label": "standard_fat_dump",
+    "ok": true,
+    "status": "finished",
+    "agentId": "agent-7b76f3cf-f00c-43eb-9b39-0bb698529caf",
+    "runId": "run-ab572abc-5b25-47f1-9b70-7ea94d5b4ee6",
+    "durationMs": 9997,
+    "promptChars": 120691,
+    "promptTokensEstimate": 30173,
+    "assistantChars": 2606,
+    "usage": {
+      "raw": {
+        "inputTokens": 40774,
+        "outputTokens": 1103,
+        "cacheReadTokens": 8352,
+        "cacheWriteTokens": 0,
+        "totalTokens": 50229
+      },
+      "totalTokens": 50229,
+      "inputTokens": 40774,
+      "outputTokens": 1103
+    },
+    "replyPreview": "# SING13 Multi-Band Change Plan  \n**Nested Agent Lattice · NSPFRNP · RAG**\n\n## 1. Ground (docs/protocols)\n**Parent agent** opens with **NSPFRNP Snap PRA** honesty tiers (narrative / operational / not claimed). Index the change on **S₀–S₈₁** bands: coarse **k/81** outer loops (hel"
+  },
+  "comparison": {
+    "latticeUsageTotal": 69288,
+    "standardUsageTotal": 50229,
+    "savedTokens": 0,
+    "savedPct": 0,
+    "latticePromptTokensEstimate": 256,
+    "standardPromptTokensEstimate": 30173,
+    "promptEstimateSavedPct": 99.2
+  }
+}

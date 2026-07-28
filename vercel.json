@@ -374,6 +374,12 @@
       ]
     },
     {
+      "source": "/data/lattice-vs-standard-cursor-usage-matrix.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=60, stale-while-revalidate=300" }
+      ]
+    },
+    {
       "source": "/interfaces/lattice-chat/assets/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }

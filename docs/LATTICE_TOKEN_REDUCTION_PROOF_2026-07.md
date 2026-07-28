@@ -1,58 +1,66 @@
-# Lattice Chat V1.618 · Nested + pointer context load (structural estimate)
+# Lattice Chat V1.618 · Usage claim (~35–70%) + structural estimate
 
 **Document ID:** LATTICE-TOKEN-PROOF-2026-07  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Audience:** Builders and operators who care about agent context size  
+**Audience:** Builders and operators who care about agent usage  
 **Live page:** [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)  
-**Machine receipt:** [`data/lattice-vs-standard-comparison.json`](../data/lattice-vs-standard-comparison.json)
+**Primary receipt:** [`data/lattice-vs-standard-cursor-usage-matrix.json`](../data/lattice-vs-standard-cursor-usage-matrix.json)  
+**Secondary receipt:** [`data/lattice-vs-standard-comparison.json`](../data/lattice-vs-standard-comparison.json)
 
 ---
 
 ## Honesty boundary
 
-These figures are **structural token estimates** (roughly characters ÷ 4) on the **same prompt** under two loading styles. They are **not** a vendor invoice from OpenAI, Anthropic, or Cursor. They illustrate **context load** — how much text a loading style asks a model to carry — not billed usage.
+**Primary marketing claim:** On paired Cursor SDK runs across varied work types, Lattice (seed pack + hard rails) used about **35–70% fewer tokens** than the same asks with a fat corpus paste. The range **depends on the work**.
 
-**Claim discipline (factual):**
+This is **not** a universal invoice SLA. Open-ended asks that tool-tour the repo can erase the savings (or lose). Live chat bills through **your** Cursor key.
 
-- Nested agents + file **pointers** can use a much smaller estimated context than **dump-everything** (fat corpus re-stuffed across phases) on multi-band coding asks.
-- Nested loading can still cost **more** than a strong **selected-context** baseline that already loads only the right files.
-- **φ / “fractal” language** in this product is **scale grammar and naming** (EGS Φ_EGS ≈ 1.618, nest bands). It is **not** a claim that a fractal algorithm in production compresses tokens.
-- Live Lattice chat bills through **your Cursor key**; this bench does not report Cursor invoices.
+**Secondary (continuity):** A chars÷4 **structural context-load** estimate still compares dump-everything vs nested + pointers on one multi-band ask. That estimate is **not** the marketing percentage. Historical ~99% structural figures are **not** used as headlines.
+
+**Claim discipline:**
+
+- Public % range is **~35–70%**, work-class dependent, from the Cursor usage matrix.
+- Nested + pointers can still cost **more** than a strong selected-context baseline that already loads only the right files.
+- **φ / “fractal” language** is scale grammar and naming — not a fractal compressor that produces the savings.
 
 ---
 
-## What we measured
+## Primary · Cursor usage matrix
 
-Same complex coding-style ask, two loading styles:
+Re-run: `npm run compare:lattice:cursor:matrix` (requires `CURSOR_API_KEY`).
+
+Latest public matrix (composer-2.5, local SDK, fat paste capped): Lattice won **6/6** paired tasks. Observed savings landed roughly:
+
+| Work class | Approx. saved vs fat paste |
+|------------|----------------------------|
+| No-repo / trivial | ~35–43% |
+| Single-doc pointer | ~64% |
+| Code locate | ~51% |
+| Multi-band plan (seed-only) | ~38% |
+| Ops / config | ~69% |
+
+**Mechanism that held the multi-band win:** curated seed pinches + **no tool roam** when the seed is enough — soft nesting language alone was not enough.
+
+---
+
+## Secondary · Structural context-load estimate
+
+Same complex coding-style ask, two loading styles (chars÷4):
 
 | Mode | Estimated context tokens | What it does |
 |------|--------------------------|--------------|
 | **Standard agentic (fat context)** | **~301,025** | Loads large docs / protocols / code slices; multiplies across phases |
 | **Lattice Chat V1.618 (nested + RAG)** | **~3,121** | Nested agents + file pointers + short history window |
 
-Absolute difference on this bench is large because the fat path pastes volume and reuses it; the Lattice path pays for selection. Re-run: `npm run compare:lattice`.
-
----
-
-## What we asked (same ask both ways)
-
-Map how SING13 Nested Agent Lattice + NSPFRNP + RAG should run a multi-band change: ground in docs/protocols, find edge UI touchpoints, find pipe/API touchpoints, propose a nested plan, and compare estimated context load vs dumping the corpus. Deliver a structured plan a chat user could follow.
-
----
-
-## Why the loads differ
-
-1. **Fat path** — dozens of files enter context once, then the same stack is reused across map → plan → synthesize (estimate uses a ×2.4 phase multiplier on the sampled corpus).
-2. **Lattice path** — a Φ-Parent lead crystallizes Seed·RAG, Edge UI, Pipe Runtime, and Squeeze helpers; each band gets a brief and pointers, not a corpus dump; history stays windowed.
+Re-run: `npm run compare:lattice`. Use for loading-style continuity — **not** as the ~35–70% marketing claim.
 
 ---
 
 ## What this is not
 
-- Not a percentage marketing claim for every future chat.
+- Not a guarantee of lower Cursor or cloud invoices on every future chat.
 - Not a substitute for vendor usage dashboards.
-- Not a guarantee of lower Cursor or cloud invoices without measuring your own traffic.
-- Not evidence that “fractal math” alone produces the smaller load — the measured mechanism here is **nesting + pointers vs fat dump**.
+- Not evidence that “fractal math” alone produces the savings — the measured mechanism is **selection + seed packs (+ no roam when seed suffices)** vs fat dump.
 
 ---
 
@@ -60,6 +68,6 @@ Map how SING13 Nested Agent Lattice + NSPFRNP + RAG should run a multi-band chan
 
 1. Read this brief.
 2. Open [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof).
-3. Optional: open the JSON receipt and/or re-run `node scripts/lattice-vs-standard-comparison.mjs`.
+3. Open the Cursor matrix JSON and/or re-run `npm run compare:lattice:cursor:matrix`.
 
 → ∞¹³

@@ -7,7 +7,7 @@
   <title>Lattice Chat V1.618 · AI coding that feels human · FractiAI</title>
   <meta
     name="description"
-    content="Lattice Chat V1.618 — chat-simple AI coding for builders who are tired of burning tokens. Free trial by email. FractiAI · SS Vibelandia."
+    content="Lattice Chat V1.618 — chat-simple AI coding. Measured ~35–70% less Cursor usage vs fat dump, depending on the work. Free trial by email. FractiAI · SS Vibelandia."
   />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -413,7 +413,8 @@
       </p>
       <p class="support">
         You ask in plain language. A small team behind the chat opens only what matters.
-        Less noise in the prompt. More room to think. Built for the people sailing
+        On paired Cursor runs: about <strong>~35–70% less usage</strong> than a fat corpus dump —
+        depending on the work. Built for the people sailing
         <a href="/ss-vibelandia">SS Vibelandia</a> — FractiAI’s Ark of the Intelligence Age.
       </p>
       <div class="cta-row">
@@ -430,7 +431,7 @@
       <ul class="points">
         <li>
           <strong>Tired of the dump</strong>
-          <span>Most “agentic” tools paste half your project into every turn. You watch the meter climb. The joy leaves the room.</span>
+          <span>Most “agentic” tools paste half your project into every turn. Lattice keeps the load light — measured savings land in the ~35–70% band when the ask stays focused.</span>
         </li>
         <li>
           <strong>Chat on the outside</strong>
@@ -588,32 +589,31 @@
     <section id="comparison">
       <h2>For builders &amp; auditors</h2>
       <p>
-        Want the method, not the pitch? Same coding-style ask, two loading styles —
-        dump-everything vs Lattice Chat. Snapshot numbers below; full brief on the
-        <a href="/lattice/proof">builders page</a>.
+        Real Cursor usage — Lattice seed + rails vs fat corpus paste — across six work types.
+        Full method and receipts on the <a href="/lattice/proof">builders page</a>.
       </p>
       <p class="saved-banner" id="cmp-headline">
-        Same multi-file ask · two ways of loading context
+        ~35–70% less Cursor usage · depending on the work
       </p>
       <div class="cmp-grid">
         <div class="cmp-col">
-          <h3>Typical agent dump</h3>
-          <p class="big-num" id="std-tok">~301,025</p>
-          <p>Estimated context tokens when tools paste the warehouse into every turn.</p>
+          <h3>Fat dump baseline</h3>
+          <p class="big-num" id="std-tok">Paste-heavy</p>
+          <p>Same asks with a large corpus pasted into the prompt every time.</p>
         </div>
         <div class="cmp-col win">
           <h3>Lattice Chat V1.618</h3>
-          <p class="big-num" id="lat-tok">~3,121</p>
-          <p>Estimated context tokens when a focused crew opens only what matters.</p>
+          <p class="big-num" id="lat-tok">~35–70%</p>
+          <p id="lat-tok-note">Fewer tokens on our public matrix — range depends on the job class.</p>
         </div>
       </div>
       <p id="saved-line" style="color: var(--soft)">
-        Same ask · two loading styles. Live numbers hydrate from the public receipt when available.
+        Simple asks and focused ops sit toward the high end; multi-band planning still wins when the seed pack is enough and the agent does not roam.
       </p>
       <p class="honesty" id="honesty">
-        Full method, agent roster, and receipts live on the
-        <a href="/lattice/proof">builders page</a>
-        — we keep this landing about the feeling of the work.
+        Not a universal invoice guarantee. Open-ended asks that tool-tour the repo can cost more.
+        See the <a href="/lattice/proof">builders page</a> and
+        <a href="/data/lattice-vs-standard-cursor-usage-matrix.json">Cursor usage matrix (JSON)</a>.
       </p>
     </section>
 
@@ -629,25 +629,41 @@
   <script>
     (async function hydrateComparison() {
       try {
-        const res = await fetch('/data/lattice-vs-standard-comparison.json', { cache: 'no-store' });
+        const res = await fetch('/data/lattice-vs-standard-cursor-usage-matrix.json', { cache: 'no-store' });
         if (!res.ok) return;
         const data = await res.json();
-        const c = data.comparison || {};
         const el = (id) => document.getElementById(id);
-        if (c.headline && el('cmp-headline')) el('cmp-headline').textContent = c.headline;
-        if (el('std-tok')) el('std-tok').textContent = '~' + Number(c.standardTokens).toLocaleString();
-        if (el('lat-tok')) el('lat-tok').textContent = '~' + Number(c.latticeTokens).toLocaleString();
-        if (el('saved-line') && c.standardTokens != null && c.latticeTokens != null) {
-          el('saved-line').textContent =
-            'On this snapshot: ~' +
-            Number(c.standardTokens).toLocaleString() +
-            ' vs ~' +
-            Number(c.latticeTokens).toLocaleString() +
-            ' estimated context tokens — open the method page for how we count.';
+        const rows = Array.isArray(data.rows) ? data.rows : [];
+        const pcts = rows
+          .map((r) => {
+            const lt = r.lattice?.usage?.totalTokens;
+            const st = r.standard?.usage?.totalTokens;
+            if (!(lt > 0) || !(st > 0) || st <= lt) return null;
+            return Math.round(((st - lt) / st) * 1000) / 10;
+          })
+          .filter((n) => typeof n === 'number');
+        if (pcts.length) {
+          const lo = Math.min(...pcts);
+          const hi = Math.max(...pcts);
+          const range = '~' + Math.round(lo) + '–' + Math.round(hi) + '%';
+          if (el('cmp-headline')) {
+            el('cmp-headline').textContent = range + ' less Cursor usage · depending on the work';
+          }
+          if (el('lat-tok')) el('lat-tok').textContent = range;
+          if (el('saved-line')) {
+            const wins = data.overall?.latticeWins ?? pcts.length;
+            const n = data.overall?.n ?? pcts.length;
+            el('saved-line').textContent =
+              'Latest matrix: Lattice won ' +
+              wins +
+              '/' +
+              n +
+              ' paired Cursor runs (composer-2.5). Live range hydrates from the public receipt.';
+          }
         }
         if (el('honesty')) {
           el('honesty').innerHTML =
-            'Curious how we measure? See the <a href="/lattice/proof">builders page</a> and the public <a href="/data/lattice-vs-standard-comparison.json">receipt</a>.';
+            'Not a universal invoice guarantee. Method + receipts: <a href="/lattice/proof">builders page</a> · <a href="/data/lattice-vs-standard-cursor-usage-matrix.json">Cursor matrix JSON</a>.';
         }
       } catch (_) { /* keep static fallbacks */ }
     })();

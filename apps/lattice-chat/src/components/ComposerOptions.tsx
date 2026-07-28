@@ -205,7 +205,7 @@ export function ComposerOptions({
                 disabled={disabled}
                 spellCheck={false}
                 placeholder={
-                  'Seed·RAG — docs/protocols pointers\nHolographic Operators — docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md\nChemical Bond Metaphors — docs/SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md\n81-Digit Electrons — docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md\nDNA Lattice Holograph — docs/SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md\nNested Lattice — docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md\nEdge UI — apps/interfaces\nPipe Runtime — api/lib'
+                  'Seed·RAG — docs/protocols pointers\nHolographic Operators — docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md\nUnified Neutronic Agent — docs/SYNTHOBS_UNIFIED_NEUTRONIC_AGENT_ISOTOPIC_LOAD_BALANCING_2026-07.md\nChemical Bond Metaphors — docs/SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md\n81-Digit Electrons — docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md\nDNA Lattice Holograph — docs/SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md\nNested Lattice — docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md\nEdge UI — apps/interfaces\nPipe Runtime — api/lib'
                 }
                 value={agentRoster}
                 onChange={(e) => onRosterChange(e.target.value)}

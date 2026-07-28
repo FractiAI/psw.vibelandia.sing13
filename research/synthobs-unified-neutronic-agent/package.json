@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-unified-neutronic-agent",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Unified Neutronic Agent / Isotopic Load Balancing (ILAM) — SynthOBS empirical suite for Lattice Chat",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT"
+}

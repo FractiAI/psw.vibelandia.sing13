@@ -1,0 +1,378 @@
+# Unified Neutronic Agent — Isotopic Load Balancing & Lattice Metaphor (ILAM)
+
+**Document ID:** `WP-SYNTHOBS-UNIFIED-NEUTRONIC-AGENT-2026-07`
+**Registry ID:** `synthobs-unified-neutronic-agent-2026-07`
+**Generated:** 2026-07-28T23:17:54.189Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 9 / 9 |
+| Φ_EGS / E_F | 1.618033988749895 |
+| λ_EGS | 0.07658724063250828 |
+
+## Experiments
+
+### E1_agent_taxonomy — Neutronic agent role taxonomy (4 maps)
+
+- **Pass:** `true`
+- **Interpretation:** ILAM enumerates four operationally distinct agent functions.
+- **Honesty:** Metaphorical orchestration grammar — not a claim that neutrons are not udd hadrons.
+
+```json
+{
+  "id": "E1_agent_taxonomy",
+  "title": "Neutronic agent role taxonomy (4 maps)",
+  "roles": [
+    "repulsion_damping",
+    "mass_energy_tuning",
+    "decay_gating",
+    "spin_balancing"
+  ],
+  "distinct_maps": 4,
+  "interpretation": "ILAM enumerates four operationally distinct agent functions.",
+  "honesty": "Metaphorical orchestration grammar — not a claim that neutrons are not udd hadrons.",
+  "pass": true
+}
+```
+
+### E2_lambda_egs_identity — λ_EGS = ln(E_F) / 2π
+
+- **Pass:** `true`
+- **Interpretation:** EGS phase operator coefficient matches Definition 1.
+- **Honesty:** Architectural constant identity — not a replacement for ℏ.
+
+```json
+{
+  "id": "E2_lambda_egs_identity",
+  "title": "λ_EGS = ln(E_F) / 2π",
+  "E_F": 1.618033988749895,
+  "lambda_egs": 0.07658724063250828,
+  "abs_err": 0,
+  "interpretation": "EGS phase operator coefficient matches Definition 1.",
+  "honesty": "Architectural constant identity — not a replacement for ℏ.",
+  "pass": true
+}
+```
+
+### E3_phase_zero_delta_s — ILAM buffer — E_F^k factoring + Shannon ΔS≈0 on weights
+
+- **Pass:** `true`
+- **Interpretation:** Normalized buffer weights are depth-invariant under global E_F^k scaling.
+- **Honesty:** Algebraic model property — not thermodynamic entropy of nuclei or LLMs.
+
+```json
+{
+  "id": "E3_phase_zero_delta_s",
+  "title": "ILAM buffer — E_F^k factoring + Shannon ΔS≈0 on weights",
+  "M": 8,
+  "k": 12,
+  "shannon_before": 1.6357969259071545,
+  "shannon_after": 1.6357969259071548,
+  "delta_s": 2.220446049250313e-16,
+  "factor_err": 5.684341886080801e-13,
+  "interpretation": "Normalized buffer weights are depth-invariant under global E_F^k scaling.",
+  "honesty": "Algebraic model property — not thermodynamic entropy of nuclei or LLMs.",
+  "pass": true
+}
+```
+
+### E4_isotope_nz_bands — Isotope N/Z bands — C / Fe / Pb / U
+
+- **Pass:** `true`
+- **Interpretation:** Draft manuscript N/Z intervals contain listed isotope neighbors.
+- **Honesty:** Structural band check — not a nuclear data evaluation.
+
+```json
+{
+  "id": "E4_isotope_nz_bands",
+  "title": "Isotope N/Z bands — C / Fe / Pb / U",
+  "rows": [
+    {
+      "name": "carbon",
+      "z": 6,
+      "n": 6,
+      "nz": 1,
+      "inBand": true
+    },
+    {
+      "name": "carbon",
+      "z": 6,
+      "n": 7,
+      "nz": 1.1666666666666667,
+      "inBand": true
+    },
+    {
+      "name": "carbon",
+      "z": 6,
+      "n": 8,
+      "nz": 1.3333333333333333,
+      "inBand": true
+    },
+    {
+      "name": "iron",
+      "z": 26,
+      "n": 28,
+      "nz": 1.0769230769230769,
+      "inBand": true
+    },
+    {
+      "name": "iron",
+      "z": 26,
+      "n": 29,
+      "nz": 1.1153846153846154,
+      "inBand": true
+    },
+    {
+      "name": "iron",
+      "z": 26,
+      "n": 30,
+      "nz": 1.1538461538461537,
+      "inBand": true
+    },
+    {
+      "name": "iron",
+      "z": 26,
+      "n": 31,
+      "nz": 1.1923076923076923,
+      "inBand": true
+    },
+    {
+      "name": "iron",
+      "z": 26,
+      "n": 32,
+      "nz": 1.2307692307692308,
+      "inBand": true
+    },
+    {
+      "name": "lead",
+      "z": 82,
+      "n": 122,
+      "nz": 1.4878048780487805,
+      "inBand": true
+    },
+    {
+      "name": "lead",
+      "z": 82,
+      "n": 123,
+      "nz": 1.5,
+      "inBand": true
+    },
+    {
+      "name": "lead",
+      "z": 82,
+      "n": 124,
+      "nz": 1.5121951219512195,
+      "inBand": true
+    },
+    {
+      "name": "lead",
+      "z": 82,
+      "n": 125,
+      "nz": 1.524390243902439,
+      "inBand": true
+    },
+    {
+      "name": "lead",
+      "z": 82,
+      "n": 126,
+      "nz": 1.5365853658536586,
+      "inBand": true
+    },
+    {
+      "name": "uranium",
+      "z": 92,
+      "n": 143,
+      "nz": 1.5543478260869565,
+      "inBand": true
+    },
+    {
+      "name": "uranium",
+      "z": 92,
+      "n": 144,
+      "nz": 1.565217391304348,
+      "inBand": true
+    },
+    {
+      "name": "uranium",
+      "z": 92,
+      "n": 145,
+      "nz": 1.576086956521739,
+      "inBand": true
+    },
+    {
+      "name": "uranium",
+      "z": 92,
+      "n": 146,
+      "nz": 1.5869565217391304,
+      "inBand": true
+    }
+  ],
+  "interpretation": "Draft manuscript N/Z intervals contain listed isotope neighbors.",
+  "honesty": "Structural band check — not a nuclear data evaluation.",
+  "pass": true
+}
+```
+
+### E5_binding_correlation_semf_ref — E_F ILAM potential vs SEMF reference (Z=1…92)
+
+- **Pass:** `true`
+- **Interpretation:** Sandbox correlation of architectural ILAM potential against classical SEMF curve.
+- **Honesty:** NOT an experimental nuclear binding-energy fit. Draft R²=0.9997 is a design target; receipt R² is computed here.
+
+```json
+{
+  "id": "E5_binding_correlation_semf_ref",
+  "title": "E_F ILAM potential vs SEMF reference (Z=1…92)",
+  "r": 0.9999634095678639,
+  "r2": 0.9999268204745875,
+  "draft_r2_target": 0.9997,
+  "sample_points": [
+    {
+      "z": 6,
+      "n": 7,
+      "semf": 7.17916044566151,
+      "ilam": 7.174518495574944
+    },
+    {
+      "z": 26,
+      "n": 32,
+      "semf": 8.784119005551736,
+      "ilam": 8.78936255210039
+    },
+    {
+      "z": 82,
+      "n": 110,
+      "semf": 7.857484905700858,
+      "ilam": 7.878697972469856
+    },
+    {
+      "z": 92,
+      "n": 124,
+      "semf": 7.632237552758068,
+      "ilam": 7.653735577451578
+    }
+  ],
+  "interpretation": "Sandbox correlation of architectural ILAM potential against classical SEMF curve.",
+  "honesty": "NOT an experimental nuclear binding-energy fit. Draft R²=0.9997 is a design target; receipt R² is computed here.",
+  "pass": true
+}
+```
+
+### E6_metaphor_matrix — Grand Lattice cross-domain metaphor matrix
+
+- **Pass:** `true`
+- **Interpretation:** Six-row ILAM ↔ Lattice Chat isomorphism table is complete.
+- **Honesty:** Operational metaphor matrix — not literal physics–software identity.
+
+```json
+{
+  "id": "E6_metaphor_matrix",
+  "title": "Grand Lattice cross-domain metaphor matrix",
+  "rows": [
+    [
+      "primary_core",
+      "orchestrator",
+      "proton"
+    ],
+    [
+      "valence_bus",
+      "api_ui",
+      "electron"
+    ],
+    [
+      "specialized_pair",
+      "subagent_buffer",
+      "neutron_pair"
+    ],
+    [
+      "isotopic_tuning",
+      "context_resize",
+      "add_neutrons"
+    ],
+    [
+      "decay_unbonding",
+      "timeout_saturation",
+      "free_neutron_decay"
+    ],
+    [
+      "golden_key",
+      "token_scaling_EF",
+      "binding_ratio_EF"
+    ]
+  ],
+  "interpretation": "Six-row ILAM ↔ Lattice Chat isomorphism table is complete.",
+  "honesty": "Operational metaphor matrix — not literal physics–software identity.",
+  "pass": true
+}
+```
+
+### E7_depth_lock — Depth lock k≥10 — E_F^k magnitude identity
+
+- **Pass:** `true`
+- **Interpretation:** Phase trajectory magnitudes track E_F^k through depth 10.
+- **Honesty:** Numerical identity of Definition 1 — not a nuclear stability proof.
+
+```json
+{
+  "id": "E7_depth_lock",
+  "title": "Depth lock k≥10 — E_F^k magnitude identity",
+  "k_max": 10,
+  "max_abs_err": 7.105427357601002e-14,
+  "interpretation": "Phase trajectory magnitudes track E_F^k through depth 10.",
+  "honesty": "Numerical identity of Definition 1 — not a nuclear stability proof.",
+  "pass": true
+}
+```
+
+### E8_honesty_gate — Honesty receipt — draft R² / 41.8% labeled as targets
+
+- **Pass:** `true`
+- **Interpretation:** Draft abstract figures remain design targets unless receipt-matched elsewhere.
+- **Honesty:** Gate passes only if draft figures are explicitly labeled non-invoice / non-evaluation.
+
+```json
+{
+  "id": "E8_honesty_gate",
+  "title": "Honesty receipt — draft R² / 41.8% labeled as targets",
+  "labeled": {
+    "draft_binding_r2": 0.9997,
+    "draft_token_savings_pct": 41.8,
+    "receipt_simulated_savings_pct": 40.69,
+    "status": "design_targets_not_invoices"
+  },
+  "interpretation": "Draft abstract figures remain design targets unless receipt-matched elsewhere.",
+  "honesty": "Gate passes only if draft figures are explicitly labeled non-invoice / non-evaluation.",
+  "pass": true
+}
+```
+
+### E9_lattice_surfaces — Lattice Chat ILAM ↔ surface map
+
+- **Pass:** `true`
+- **Interpretation:** ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat.
+- **Honesty:** Structural product map — not a claim every turn runs a nuclear simulation.
+
+```json
+{
+  "id": "E9_lattice_surfaces",
+  "title": "Lattice Chat ILAM ↔ surface map",
+  "surfaces": [
+    "/whitepaper/synthobs-unified-neutronic-agent",
+    "/lattice/learn",
+    "/interfaces/nesting/nest-lattice-chat.html",
+    "/lattice",
+    "/lattice-chat",
+    "docs/SYNTHOBS_UNIFIED_NEUTRONIC_AGENT_ISOTOPIC_LOAD_BALANCING_2026-07.md"
+  ],
+  "interpretation": "ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat.",
+  "honesty": "Structural product map — not a claim every turn runs a nuclear simulation.",
+  "pass": true
+}
+```
+
+## Honesty boundary
+
+Architectural ILAM / Lattice Chat metaphor. Draft R²=0.9997 and 41.8% are design targets — receipt values are computed. Not QCD replacement or Cursor invoices.

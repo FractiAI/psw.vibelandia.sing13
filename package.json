@@ -36,6 +36,7 @@
     "research:synthobs-dna-lattice-holograph": "node research/synthobs-dna-lattice-holograph/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-egs-81-electrons": "node research/synthobs-egs-81-electrons/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-phase-locked-chemical-bonds": "node research/synthobs-phase-locked-chemical-bonds/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-unified-neutronic-agent": "node research/synthobs-unified-neutronic-agent/scripts/run_empirical_pipeline.mjs",
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",

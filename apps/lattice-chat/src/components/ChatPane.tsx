@@ -222,7 +222,7 @@ export function ChatPane({
             </button>
             <h1 className="chat-title">
               <span className="chat-wordmark">Lattice Chat V1.618</span>
-              <span className="chat-by">SS Vibelandia · Goldilocks steward</span>
+              <span className="chat-by">SS Vibelandia · Your Goldilocks steward</span>
             </h1>
             <button
               type="button"

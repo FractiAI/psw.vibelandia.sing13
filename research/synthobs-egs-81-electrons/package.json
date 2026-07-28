@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-egs-81-electrons",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Empirical suite — 81-Digit Electronic Lattice (EGS ↔ Z≤81)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

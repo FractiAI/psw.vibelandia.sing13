@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-x-chromosome-holographic",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Human X Chromosome holographic operator translation — SynthOBS empirical suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT"
+}

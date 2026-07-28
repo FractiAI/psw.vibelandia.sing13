@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-three-foundational-proteins",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Holographic decoding of hemoglobin, ATP synthase, DNA polymerase — SynthOBS empirical suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT"
+}

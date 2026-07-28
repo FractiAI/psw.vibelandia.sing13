@@ -174,9 +174,36 @@ function parseAgentRoster(raw) {
     });
 }
 
-function buildNestDirective(nestTopology, agentRoster) {
+function classifyAskComplexity(message) {
+  const text = String(message || '').trim();
+  if (!text) return 'trivial';
+  const lower = text.toLowerCase();
+  const multiBandSignals = [
+    /\bcompare\b/,
+    /\brefactor\b/,
+    /\breview\b/,
+    /\baudit\b/,
+    /\barchitecture\b/,
+    /\bintegration\b/,
+    /\bmulti[\s-]?file\b/,
+    /\bend[\s-]?to[\s-]?end\b/,
+    /\bdebug\b/,
+    /\boptimi[sz]e\b/,
+    /\bapi\b/,
+    /\bui\b/,
+    /\bruntime\b/,
+    /\btoken\b/,
+    /\bstream\b/,
+  ];
+  const hasSignal = multiBandSignals.some((re) => re.test(lower));
+  if (text.length > 360 || hasSignal) return 'complex';
+  return 'trivial';
+}
+
+function buildNestDirective(nestTopology, agentRoster, message) {
   const nest = normalizeNestTopology(nestTopology);
   const roster = parseAgentRoster(agentRoster);
+  const complexity = classifyAskComplexity(message);
 
   if (nest === 'single') {
     return `Nest topology (user toggle): SINGLE NODE.
@@ -202,9 +229,14 @@ Cap children ≤3 leaf bands. Each child: brief + pointers only. Peer-firewall o
 Obey Context discipline (plan → pinch-read ≤6 files → squeeze). No repo tours.`;
   }
 
+  const route =
+    complexity === 'complex'
+      ? 'Complex / multi-band ask detected → nested children allowed (pick only needed bands).'
+      : 'Trivial ask detected → parent alone.';
   return `Nest topology (user toggle): GOLDILOCKS (auto).
 Trivial asks → parent alone. Complex / multi-band → nested children with allowlisted pointers.
-If nesting, pick only the bands needed. Peer-firewall on.
+${route}
+If nesting, pick only the bands needed. Prefer pointers over dumps. Peer-firewall on.
 Obey Context discipline (plan → pinch-read ≤6 files → squeeze). No repo tours.`;
 }
 
@@ -215,7 +247,7 @@ function buildPrompt(message, history, nestTopology, agentRoster) {
     .map((m) => `${m.role === 'user' ? 'User' : 'Assistant'}: ${String(m.content).trim()}`)
     .filter((line) => line.length > 8);
   const transcript = lines.length ? `Conversation so far:\n${lines.join('\n\n')}\n\n` : '';
-  const nest = buildNestDirective(nestTopology, agentRoster);
+  const nest = buildNestDirective(nestTopology, agentRoster, message);
   const complex = buildComplexWorkProtocol(message);
   const seed = buildComplexSeedPack(message);
   return `${PREAMBLE}
@@ -716,7 +748,7 @@ async function runClaudeTurn({
   onEvent = null,
 }) {
   const { prior, messages } = buildClaudeMessages(message, history);
-  const nest = buildNestDirective(nestTopology, agentRoster);
+  const nest = buildNestDirective(nestTopology, agentRoster, message);
   const seed = buildComplexSeedPack(message);
   const system = `${PREAMBLE}
 
@@ -1100,7 +1132,7 @@ async function runGeminiTurn({
   const decoded = decodeGeminiAgentId(agentId);
   const agentName = modelId || 'antigravity-preview-05-2026';
   const prompt = decoded?.interactionId
-    ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${String(message || '').trim()}`
+    ? `${buildNestDirective(nestTopology, agentRoster, message)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${String(message || '').trim()}`
     : buildPrompt(message, history, nestTopology, agentRoster);
   const emit = (item) => {
     if (typeof onEvent === 'function' && item) onEvent(item);
@@ -2215,7 +2247,7 @@ export default async function handler(req, res) {
 
       const prompt =
         resumedOk && message
-          ? `${buildNestDirective(nestTopology, agentRoster)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${message}`
+          ? `${buildNestDirective(nestTopology, agentRoster, message)}\n\n${buildComplexWorkProtocol(message)}\n\n${buildComplexSeedPack(message)}\n\n${message}`
           : buildPrompt(message, body.history, nestTopology, agentRoster);
       const sendOpts = {
         model: modelSelection,

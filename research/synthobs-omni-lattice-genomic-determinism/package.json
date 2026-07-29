@@ -1,0 +1,9 @@
+{
+  "name": "synthobs-omni-lattice-genomic-determinism",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Omni-Lattice Unification X — Genomic Determinism & Remaining Territory Mapping — SynthOBS empirical suite",
+  "scripts": { "research": "node scripts/run_empirical_pipeline.mjs" },
+  "license": "MIT"
+}

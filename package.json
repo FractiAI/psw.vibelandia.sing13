@@ -45,6 +45,7 @@
     "research:synthobs-omni-lattice-pogonomyrmex": "node research/synthobs-omni-lattice-pogonomyrmex/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-y-chromosome-holographic": "node research/synthobs-y-chromosome-holographic/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-omni-lattice-prompt-capture": "node research/synthobs-omni-lattice-prompt-capture/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-omni-lattice-genomic-determinism": "node research/synthobs-omni-lattice-genomic-determinism/scripts/run_empirical_pipeline.mjs",
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",

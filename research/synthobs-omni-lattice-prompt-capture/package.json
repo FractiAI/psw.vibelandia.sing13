@@ -1,0 +1,9 @@
+{
+  "name": "synthobs-omni-lattice-prompt-capture",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Omni-Lattice Unification IX — Recursive Inter-Agent Prompt Capture into Genomic DNA — SynthOBS empirical suite",
+  "scripts": { "research": "node scripts/run_empirical_pipeline.mjs" },
+  "license": "MIT"
+}

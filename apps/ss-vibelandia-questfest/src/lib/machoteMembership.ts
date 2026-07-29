@@ -8,10 +8,10 @@ export const MACHOTE_MAGAZINE_COVER_ALT =
   'Machote Moderno Magazine — your badge to qualify for the members-only music catalog';
 
 export const MACHOTE_CAMPAIGN_COVER_SRC =
-  '/interfaces/goldilocks-deliveries/assets/grs-menu-food-delivery.jpg';
+  '/interfaces/goldilocks-deliveries/assets/valet-pru-downtown-reno-poster.jpg';
 
 export const MACHOTE_CAMPAIGN_COVER_ALT =
-  'Golden-age valet on a bicycle carrying a silver room-service cloche through neon-lit downtown Reno';
+  "Valet Pru's Concierge Service · Downtown Reno — Art Deco poster, e-scooter powered personal valet";
 
 export const MACHOTE_MASTER_CATALOG_TITLE = 'Master Music Catalog · Reno swamp beats caliente';
 

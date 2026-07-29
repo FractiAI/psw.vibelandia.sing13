@@ -47,7 +47,7 @@ export const MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB =
 
 export const MACHOTE_ROOM_SERVICE_CTA = 'Hire a Concierge · Book Now';
 
-export const MACHOTE_QUESTFEST_UNIVERSE_PATH = '/hire-a-goldilocks-valet-concierge#questfest-universe';
+export const MACHOTE_QUESTFEST_UNIVERSE_PATH = '/questfest';
 
 export const MACHOTE_GUEST_PATH = '/hire-a-goldilocks-valet-concierge/guest';
 

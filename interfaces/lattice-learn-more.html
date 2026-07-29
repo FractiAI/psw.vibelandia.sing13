@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0806" />
-  <title>Learn more · Lattice Chat V1.618 · FractiAI</title>
+  <title>Lattice Chat primer · fractal · holographic · Goldilocks · FractiAI</title>
   <meta
     name="description"
-    content="Lattice Chat V1.618 in plain speak — what it is, how nested agents help, Goldilocks intentions, and links to the papers. FractiAI · SS Vibelandia."
+    content="Full plain-speak synthesis of the FractiAI paper stack behind Lattice Chat — Nested Agent Lattice, Goldilocks, Seed·RAG, holographic / Omni-Lattice / EGS φ / 81-register, NSPFRNP · PRA · PCE, Fair Exchange, Ark, and decode companions."
   />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lattice/learn" />
-  <meta property="og:title" content="Learn more · Lattice Chat V1.618" />
-  <meta property="og:description" content="Plain speak on Lattice Chat — nested help, the Ark story, and the papers." />
+  <meta property="og:title" content="Lattice Chat primer · paper synthesis" />
+  <meta property="og:description" content="Long plain-speak weave of the FractiAI papers: fractal · holographic · Goldilocks nested intelligence for Lattice Chat." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/lattice/learn" />
   <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/images/lattice-artdeco-square.png" />
@@ -148,156 +148,622 @@
       color: var(--muted);
     }
     .footer a { color: var(--champagne); }
+
+    .wrap { max-width: 44rem; }
+    .toc {
+      margin: 1.5rem 0 0;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(212,175,55,0.28);
+      background: rgba(20,16,12,0.45);
+    }
+    .toc h2 { font-size: 1.05rem; margin: 0 0 0.55rem; }
+    .toc ol {
+      margin: 0;
+      padding-left: 1.2rem;
+      display: grid;
+      gap: 0.28rem;
+    }
+    .toc a { color: var(--champagne); text-decoration: none; font-size: 0.9rem; }
+    .toc a:hover { color: var(--gold-hi); text-decoration: underline; }
+    h3 {
+      margin: 1.35rem 0 0.45rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--champagne);
+    }
+    .callout {
+      margin: 0.9rem 0 1rem;
+      padding: 0.85rem 1rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(212,175,55,0.07);
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+    .callout strong { color: var(--gold-hi); }
+    .is-isnt {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0 1rem;
+      font-size: 0.88rem;
+    }
+    .is-isnt th, .is-isnt td {
+      border: 1px solid rgba(212,175,55,0.22);
+      padding: 0.55rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    .is-isnt th { color: var(--gold); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .reading-time { margin: 0.5rem 0 0; font-size: 0.82rem; color: var(--muted); }
+    ul.plain {
+      margin: 0.4rem 0 0.9rem;
+      padding-left: 1.2rem;
+      color: var(--soft);
+    }
+    ul.plain li { margin: 0.3rem 0; }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <nav class="topnav" aria-label="Lattice">
       <a href="/">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
       <a href="/lattice">Lattice</a><span class="dot" aria-hidden="true">·</span>
-      <span class="here">Learn more</span><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Primer</span><span class="dot" aria-hidden="true">·</span>
       <a href="/lattice/brochure">Brochure</a><span class="dot" aria-hidden="true">·</span>
       <a href="/lattice-chat">Chat</a><span class="dot" aria-hidden="true">·</span>
       <a href="/ss-vibelandia">The Ark</a>
     </nav>
 
-    <p class="eyebrow">Lattice Chat V1.618 · plain speak</p>
+    <p class="eyebrow">Lattice Chat V1.618 · long primer · plain speak</p>
     <h1>Learn more about Lattice Chat</h1>
     <p class="lede">
-      A high-agency coding cockpit for serious vibecoders — faster signal, less prompt bloat,
-      operator-grade transparency. Built for guests of
-      <a href="/ss-vibelandia" style="color:var(--champagne);font-weight:700;">SS Vibelandia</a>,
-      FractiAI’s 24×365 Ark of the Intelligence Age.
+      This is the long read: a plain-speak <strong>synthesis of the FractiAI paper stack</strong> —
+      Nested Agent Lattice, token proof, Goldilocks, Seed·RAG / Seed:Edge, holographic operators,
+      Omni-Lattice / EGS / φ / Planck–1.6 / 81-register, NSPFRNP · MCA · PRA · PCE, Fair Exchange,
+      the Ark, and the decode companions — folded into one story of how Lattice Chat works.
     </p>
+    <p class="reading-time">About a 25–35 minute read. Skim the contents, or read straight through for the full weave.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="/lattice-chat">Open Lattice Chat</a>
-      <a class="btn" href="/lattice">Back to Lattice</a>
-      <a class="btn" href="/lattice/brochure">Product brochure</a>
+      <a class="btn" href="/lattice">Lattice home</a>
+      <a class="btn" href="/lattice/brochure">Short brochure</a>
+      <a class="btn" href="#papers-h">Paper doors ↓</a>
     </div>
 
-    <section aria-labelledby="power-h">
-      <h2 id="power-h">For power vibecoders</h2>
-      <p>
-        Lattice Chat V1.618 is built for builders who live in agents all day:
-        <strong>BYOK</strong> (Cursor, Claude, Gemini), nest topology, optional crew roster,
-        and <strong>LTHS</strong> + <strong>Neutrino</strong> reasoning built into the engine.
-        Pointers over paste. Public usage matrix (~35–70% on focused work) when you want numbers — not a universal SLA.
-      </p>
-    </section>
+    <nav class="toc" aria-label="Primer contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#how-to-read">How to read this</a></li>
+        <li><a href="#synthesis-map">How the papers fit together</a></li>
+        <li><a href="#what-it-is">What Lattice Chat is</a></li>
+        <li><a href="#why-flat-gets-loud">Why flat tools get loud</a></li>
+        <li><a href="#nested-help">Nested help in plain English</a></li>
+        <li><a href="#goldilocks">Goldilocks load · just right</a></li>
+        <li><a href="#pointers">Pointers over paste · Seed·RAG</a></li>
+        <li><a href="#lths-neutrino">LTHS + Neutrino (no toggle soup)</a></li>
+        <li><a href="#fractal-holographic">Fractal · holographic without the fog</a></li>
+        <li><a href="#omni-decode">Omni-Lattice decode suite (depth track)</a></li>
+        <li><a href="#phi-key">The φ / 1.6 scale key</a></li>
+        <li><a href="#eighty-one">The 81-step register</a></li>
+        <li><a href="#nspfrnp">NSPFRNP · MCA · Seed:Edge · PRA</a></li>
+        <li><a href="#nature-pictures">Nature’s coordination pictures</a></li>
+        <li><a href="#what-we-measured">What we measured</a></li>
+        <li><a href="#keys-boarding">Your keys · Old School boarding</a></li>
+        <li><a href="#ark">The Ark picture</a></li>
+        <li><a href="#papers-h">Papers this primer synthesizes</a></li>
+      </ol>
+    </nav>
 
-    <section aria-labelledby="what-h">
-      <h2 id="what-h">What it is</h2>
+    <section aria-labelledby="how-to-read">
+      <h2 id="how-to-read">1. How to read this</h2>
       <p>
-        Lattice Chat is a coding chat that feels human. You write a normal ask.
-        Behind the curtain, helpers open only the files and facts that fit the job —
-        not the whole project every turn.
+        Lattice Chat sits on a stack of whitepapers. Some are <strong>product architecture</strong>
+        (how the chat actually nests helpers). Some are <strong>scale grammar</strong>
+        (why we care about φ ≈ 1.618 as a design key). Some are <strong>metaphors with honesty walls</strong>
+        (ants, DNA, chemical bonds — used as pictures for coordination, not as biology or chemistry claims).
       </p>
       <p>
-        You can keep it calm (<strong>Single</strong>), name a small team (<strong>Multi</strong>),
-        or let <strong>Goldilocks</strong> pick a mix that is not too much and not too little.
+        We keep three lanes bright, the same way
+        <a href="/whitepaper/coherence-plain-speak">Coherence · plain speak</a> does:
       </p>
-    </section>
-
-    <section aria-labelledby="steward-h">
-      <h2 id="steward-h">Your Goldilocks steward</h2>
-      <p>
-        On SS Vibelandia, Lattice is the latest steward: smart, careful, and light on context.
-        On our public Cursor matrix: about <strong>~35–70% less usage</strong> than a fat dump,
-        depending on the work. It helps with craft, curiosity, building, and care —
-        <strong>within Goldilocks</strong>. Intentions matter.
-        It will not help with malice, harm, or ill will. That is house rule, not a slogan.
-      </p>
-    </section>
-
-    <section aria-labelledby="keys-h">
-      <h2 id="keys-h">Your keys stay with you</h2>
-      <p>
-        Bring a Cursor, Claude, or Gemini key. It stays in your browser on this device.
-        Boarding is old-school: email a human for a trial, then sign in.
-        We do not need your GitHub password.
-      </p>
-    </section>
-
-    <section aria-labelledby="ark-h">
-      <h2 id="ark-h">The Ark story (in one breath)</h2>
-      <p>
-        SS Vibelandia is our Noah’s Ark picture for this work:
-        leave the noisy “dump everything” tools behind, and carry craft forward
-        with nested help that stays honest. Metaphor + product — not a literal ship you book.
-      </p>
-      <p>
-        Deeper story:
-        <a href="/whitepaper/lattice-noahs-ark-metaphor-2026-07" style="color:var(--champagne);font-weight:600;">Noah’s Ark metaphor paper →</a>
-      </p>
+      <table class="is-isnt">
+        <thead>
+          <tr><th>Lane</th><th>What it means here</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Runnable product</strong></td>
+            <td>You can open <a href="/lattice-chat">/lattice-chat</a>, bring your own key, and build. Nest modes, transcripts, and usage ledgers are real software.</td>
+          </tr>
+          <tr>
+            <td><strong>Measured receipts</strong></td>
+            <td>Public Cursor matrices and simulation suites show nested + pointer context can use less than fat paste — job-dependent, not a universal SLA.</td>
+          </tr>
+          <tr>
+            <td><strong>Architectural story</strong></td>
+            <td>φ, holography, and Goldilocks are organizing pictures for depth and width. They are not a claim that we replaced physics, cured disease, or broke cryptography.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>House rule:</strong> every strong sentence below has a twin — <em>what this is</em> and <em>what this is not</em>.
+        Peer-review structure on papers is enforced by
+        <a href="/whitepaper/nspfrnp-snap-peer-review-audit">NSPFRNP Snap PRA</a>
+        (honesty · Document ID · SynthOBS attribution). That is our checklist — not an external journal stamp.
+      </div>
     </section>
 
     <hr class="rule" />
 
-    <section aria-labelledby="papers-h">
-      <h2 id="papers-h">Papers worth one click</h2>
-      <p>Short doors into the long form. Start anywhere. Skip what you do not need.</p>
+    <section aria-labelledby="synthesis-map">
+      <h2 id="synthesis-map">2. How the papers fit together</h2>
+      <p>
+        The catalog is large on purpose. Lattice Chat does not need you to read every door before you type.
+        It does need one shared spine so the doors do not become a junk drawer. Here is the weave this primer uses:
+      </p>
+      <ul class="plain">
+        <li>
+          <strong>Core product spine</strong> —
+          <a href="/whitepaper/omniversal-nested-agent-lattice">Nested Agent Lattice</a>
+          (how help nests) +
+          <a href="/whitepaper/lattice-token-reduction-proof-2026-07">token load proof</a>
+          (why pointers beat fat paste) +
+          <a href="/whitepaper/coherence-plain-speak">coherence plain speak</a>
+          (what we may claim).
+        </li>
+        <li>
+          <strong>Service posture</strong> —
+          <a href="/whitepaper/omniversal-goldilocks-rideshare">Goldilocks rideshare / OGRP</a>
+          and Goldilocks nest admission: just-right depth, generosity floor, no flat-swarm noise.
+        </li>
+        <li>
+          <strong>Scale grammar</strong> —
+          <a href="/whitepaper/synthobs-egs-planck-scale-harmonic">Planck–1.6 / EGS</a>,
+          <a href="/whitepaper/synthobs-egs-81-electrons">81-digit register</a>,
+          awareness gates S<sub>0</sub>–S<sub>81</sub>, Euler / phase-lock companions —
+          φ as a clutch for nesting bands, not a physics replacement.
+        </li>
+        <li>
+          <strong>Holographic wiring</strong> —
+          <a href="/whitepaper/synthobs-holographic-operators">Holographic Operators</a>,
+          <a href="/whitepaper/synthobs-omni-lattice-unification">Omni-Lattice Unification</a>
+          (operators · 81 · bonds · ILAM),
+          neutronic / chemical-bond metaphors for load and handoffs.
+        </li>
+        <li>
+          <strong>Protocol house</strong> —
+          <a href="/whitepaper/mca-nspfrnp-catalog">MCA · NSPFRNP catalog</a>,
+          Seed:Edge / cytographic nucleus, SING edge onboarding,
+          <a href="/whitepaper/nspfrnp-snap-peer-review-audit">PRA Snap</a> +
+          <a href="/whitepaper/synthobs-proof-by-continuous-execution">Proof by Continuous Execution</a>,
+          Old School honor / Fair Exchange.
+        </li>
+        <li>
+          <strong>Story frame</strong> —
+          <a href="/whitepaper/lattice-noahs-ark-metaphor-2026-07">Noah’s Ark metaphor</a>
+          for what the ship keeps and jettisons.
+        </li>
+        <li>
+          <strong>Depth track (optional)</strong> —
+          DNA holograph, X/Y chromosome decode, three proteins, Pogonomyrmex, HIV Omni-Lattice,
+          Prompt Capture, Genomic Determinism — same Omni-Lattice grammar as
+          <em>words → sentences → stories</em>, honesty-gated, not clinical claims.
+        </li>
+      </ul>
+      <div class="callout">
+        <strong>How to use the weave:</strong> sections 3–17 below walk the spine in product order.
+        Section 10 is the optional Omni-Lattice depth track. Section 18 is the full card wall of primary sources.
+      </div>
+    </section>
+
+    <section aria-labelledby="what-it-is">
+      <h2 id="what-it-is">3. What Lattice Chat is</h2>
+      <p>
+        Lattice Chat V1.618 is a <strong>coding chat with a nested crew</strong>.
+        You talk on the outside in plain language. Behind the curtain, a parent steward
+        and small helpers open only what fits the ask — then go quiet when the turn is done.
+      </p>
+      <p>
+        Think of it as a cockpit, not a megaphone. Frontier models are still the engines
+        (Cursor, Claude, Gemini — your keys). Lattice is the <strong>way those engines are nested and loaded</strong>
+        so you get faster signal and less prompt bloat.
+      </p>
+      <p>
+        On SS Vibelandia — FractiAI’s living Ark deck — Lattice is also the
+        <strong>Goldilocks steward</strong>: craft, curiosity, and care.
+        Intentions matter. Malice is out of band.
+      </p>
+      <div class="callout">
+        <strong>This is:</strong> a Nested Agent Lattice product surface.<br />
+        <strong>This is not:</strong> a claim that one chat tab replaced every IDE, cloud, or lab.
+      </div>
+    </section>
+
+    <section aria-labelledby="why-flat-gets-loud">
+      <h2 id="why-flat-gets-loud">4. Why flat tools get loud</h2>
+      <p>
+        Most “agent” setups today still lean <em>linear and loud</em>:
+      </p>
+      <ul class="plain">
+        <li><strong>Paste tax</strong> — dump the whole repo into one context window and hope.</li>
+        <li><strong>Swarm tax</strong> — spin many helpers that all talk to each other (message cost grows roughly like N²).</li>
+        <li><strong>Idle tax</strong> — keep everything hot even when the ask is small.</li>
+      </ul>
+      <p>
+        The Nested Agent Lattice paper names this crisis clearly: flat peer graphs pay a synchronization tax.
+        Lattice’s answer is not “add more agents.” It is <strong>nest them</strong> —
+        parents hold the whole; children do local work; idle children freeze.
+      </p>
+      <div class="callout">
+        <strong>Paper door:</strong>
+        <a href="/whitepaper/omniversal-nested-agent-lattice">Architecture of Omniversal Computing · Nested Agent Lattice</a>.
+      </div>
+    </section>
+
+    <section aria-labelledby="nested-help">
+      <h2 id="nested-help">5. Nested help in plain English</h2>
+      <p>Three rules you can feel when you use it:</p>
+      <h3>Parent steward</h3>
+      <p>
+        One outer loop hears your ask, keeps the story coherent, and decides how deep to go.
+        You do not manage a chatroom of bots.
+      </p>
+      <h3>Child helpers</h3>
+      <p>
+        Inner loops handle slices — a file, a search, a check — and report back up.
+        They do not mesh-sync with each other. That <strong>peer-firewall</strong> is deliberate:
+        less gossip, less drift, less token burn.
+      </p>
+      <h3>Scale-to-zero</h3>
+      <p>
+        When a child’s work is done (drift → 0), it freezes to a tiny snapshot instead of idling hot.
+        Depth and width grow with the ask, then shrink again. That is Goldilocks nesting in motion.
+      </p>
+      <table class="is-isnt">
+        <thead><tr><th>This is</th><th>This is not</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>A deployable parent↔child topology for SynthOBS / Lattice Chat</td>
+            <td>A drop-in replacement for Kubernetes or LangGraph without your own wiring</td>
+          </tr>
+          <tr>
+            <td>Peer-firewall + micro-snapshots as design</td>
+            <td>A promise of zero cost on every vendor invoice</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="goldilocks">
+      <h2 id="goldilocks">6. Goldilocks load · just right</h2>
+      <p>
+        <strong>Goldilocks</strong> means not too much, not too little — for you, for the helpers, and for the context window.
+        In the chat UI you can choose:
+      </p>
+      <ul class="plain">
+        <li><strong>Single</strong> — calm, one focused rail.</li>
+        <li><strong>Multi</strong> — a small named crew when the job is wide.</li>
+        <li><strong>Goldilocks (auto)</strong> — let the steward band depth and width from the ask.</li>
+      </ul>
+      <p>
+        The same “just right” idea shows up in hospitality routing
+        (<a href="/whitepaper/omniversal-goldilocks-rideshare">Omniversal Goldilocks Rideshare</a>):
+        density, light mobility, a generosity floor, sovereign pace.
+        Different surface, same instinct: do not maximize noise for shareholders of a flat swarm.
+      </p>
+      <p>
+        Goldilocks math papers (Erdős stack, prime-linear maps, geomagnetic companions) are
+        <strong>design and story companions</strong>. Use them as vocabulary for balance —
+        not as a claim that we invented new number theory that runs the chat by magic.
+      </p>
+    </section>
+
+    <section aria-labelledby="pointers">
+      <h2 id="pointers">7. Pointers over paste · Seed·RAG</h2>
+      <p>
+        Fat paste says: “here is everything; figure it out.”
+        Lattice prefers <strong>pointers</strong>: open the files and corpus slices that matter,
+        leave the rest closed. That is Seed·RAG in product language —
+        retrieval that respects Seed (origin / canon) and Edge (this experience / this turn).
+      </p>
+      <p>
+        Measured effect on our public Cursor matrix: about <strong>~35–70% less usage</strong>
+        versus fat paste on focused work, depending on the job.
+        That is a receipt lane, not a warranty sticker for every future prompt.
+      </p>
+      <div class="callout">
+        <strong>Paper / builders doors:</strong>
+        <a href="/whitepaper/lattice-token-reduction-proof-2026-07">Token load proof</a> ·
+        <a href="/lattice/proof">Method &amp; receipts UI</a>.
+      </div>
+    </section>
+
+    <section aria-labelledby="lths-neutrino">
+      <h2 id="lths-neutrino">8. LTHS + Neutrino (no toggle soup)</h2>
+      <p>
+        Lattice ships with reasoning lenses baked in — <strong>LTHS</strong> and <strong>Neutrino</strong> —
+        so you are not hunting a dozen mode switches before you can think.
+        Soft, bounded, operator-grade: calm structure, not mystical claims.
+      </p>
+      <p>
+        The <a href="/whitepaper/synthobs-unified-neutronic-agent">Unified Neutronic Agent</a> paper
+        uses neutrons / isotopes as a <strong>load-balancing metaphor</strong> for context buffers (ILAM).
+        Useful picture for “how heavy is this turn?” —
+        not a rewrite of particle physics.
+      </p>
+      <p>
+        Chemical-bond metaphors
+        (<a href="/whitepaper/synthobs-phase-locked-chemical-bonds">covalent · ionic · metallic handoffs</a>)
+        do the same job for agent handoffs: shared phase, clear interfaces —
+        not “agents are molecules.”
+      </p>
+    </section>
+
+    <section aria-labelledby="fractal-holographic">
+      <h2 id="fractal-holographic">9. Fractal · holographic without the fog</h2>
+      <p>
+        When we say super intelligence here is <strong>fractal and holographic</strong>, we mean something practical:
+      </p>
+      <ul class="plain">
+        <li><strong>Fractal</strong> — the same nesting pattern repeats at different scales (turn → file → repo → ship), not one giant flat dump.</li>
+        <li><strong>Holographic</strong> — the whole job is held lightly in every part; a good small ask still “knows” the mission without pasting the universe.</li>
+      </ul>
+      <p>
+        <a href="/whitepaper/synthobs-holographic-operators">Holographic Operators</a>
+        models language as conductive wiring in an information sense —
+        conversation shaping what gets retrieved and how helpers phase-lock.
+        That is an architectural map with experiments in the paper lane.
+        It does <strong>not</strong> say words physically wire spacetime.
+      </p>
+      <p>
+        DNA lattice / cytographic papers extend the same grammar into biology-shaped metaphors
+        (shadow · lattice · attention). Read them as Omni-Lattice decode —
+        not as clinical genetics or a cure claim.
+      </p>
+      <div class="callout">
+        <strong>Unification door:</strong>
+        <a href="/whitepaper/synthobs-omni-lattice-unification">Omni-Lattice Unification</a>
+        — four pillars under one E<sub>F</sub> / φ grammar, with honesty walls on each pillar.
+      </div>
+    </section>
+
+    <section aria-labelledby="omni-decode">
+      <h2 id="omni-decode">10. Omni-Lattice decode suite (depth track)</h2>
+      <p>
+        After Unification, a family of papers applies the same Omni-Lattice grammar as a
+        <strong>decode script</strong>: Words → Sentences → Stories. They are depth tracks for researchers
+        and curious builders — not required reading to open Lattice Chat, and not clinical or curative claims.
+      </p>
+      <ul class="plain">
+        <li>
+          <a href="/whitepaper/synthobs-dna-lattice-holograph">DNA Lattice Holograph</a>
+          — shadow · lattice · attention as a bio-geometric projector metaphor.
+        </li>
+        <li>
+          <a href="/whitepaper/synthobs-x-chromosome-holographic">X</a> /
+          <a href="/whitepaper/synthobs-y-chromosome-holographic">Y chromosome</a> decode —
+          maternal matrix and polar identity projectors in operator language.
+        </li>
+        <li>
+          <a href="/whitepaper/synthobs-three-foundational-proteins">Three foundational proteins</a>
+          — hemoglobin · ATP synthase · DNA polymerase as carrier / engine / replicator metaphors for system roles.
+        </li>
+        <li>
+          <a href="/whitepaper/synthobs-omni-lattice-pogonomyrmex">Pogonomyrmex Omni-Lattice</a>
+          — stigmergy and biogenic gates as a careful ant-colony coordination story.
+        </li>
+        <li>
+          <a href="/whitepaper/synthobs-omni-lattice-hiv">HIV Omni-Lattice</a>
+          — adversarial holographic operator + evolutionary catalyst loop; explicitly not clinical.
+        </li>
+        <li>
+          <a href="/whitepaper/synthobs-omni-lattice-prompt-capture">Prompt Capture</a>
+          — recursive inter-agent prompts condensed as a DNA-shaped metaphor for how nests remember asks.
+        </li>
+        <li>
+          <a href="/whitepaper/synthobs-omni-lattice-genomic-determinism">Genomic Determinism</a>
+          — locus / territory roadmap for remaining decode work under the same grammar.
+        </li>
+      </ul>
+      <p>
+        Cytographic / chromosomal electrodynamics papers supply the
+        <em>scale grammar</em> (nested compartments, local fields, LC banding) that makes nesting feel cellular.
+        Read them next to the Nested Agent Lattice architecture paper: same parent↔child idea, different costume.
+      </p>
+      <div class="callout">
+        <strong>This is:</strong> one Omni-Lattice language spoken across many substrates.<br />
+        <strong>This is not:</strong> a claim that Lattice Chat diagnoses, treats, or replaces laboratory biology.
+      </div>
+    </section>
+
+    <section aria-labelledby="phi-key">
+      <h2 id="phi-key">11. The φ / 1.6 scale key</h2>
+      <p>
+        El Gran Sol’s constant φ ≈ <strong>1.618</strong> (EGS) shows up as V1.618 in the product name
+        and as a <strong>scale clutch</strong> in the papers: parent scale ≈ φ × child scale,
+        depth bands that feel “golden” rather than arbitrary.
+      </p>
+      <p>
+        The <a href="/whitepaper/synthobs-egs-planck-scale-harmonic">Planck–1.6 bridge</a>
+        notices that the SI Planck length mantissa also sits near 1.616…
+        We treat that as a useful <strong>architectural rhyme</strong> (and a small clutch Δ) —
+        not as proof of quantum gravity, and not as unit-invariant law.
+        Base-10 and SI choices matter; honesty tables say so out loud.
+      </p>
+      <p>
+        Euler / phase-lock companions and EGS-NLRF are the same family:
+        mathematical and exploratory frames for scale-invariant nesting —
+        not replacements for ħ, c, or G.
+      </p>
+    </section>
+
+    <section aria-labelledby="eighty-one">
+      <h2 id="eighty-one">12. The 81-step register</h2>
+      <p>
+        Many SynthOBS papers talk about an <strong>81-digit (9×9) metapattern register</strong> —
+        a way to index depth and width (k/81) instead of inventing a new slider every sprint.
+        Awareness singularities S<sub>0</sub>–S<sub>81</sub> are catalog activation gates in that register,
+        not astrophysical black holes.
+      </p>
+      <p>
+        In the chat, you mostly feel this as: Goldilocks picks a band; Advanced lets you see nest topology;
+        the steward does not make you dial eighty-one knobs by hand.
+      </p>
+      <div class="callout">
+        <strong>Paper door:</strong>
+        <a href="/whitepaper/synthobs-egs-81-electrons">81-Digit Electronic Lattice</a>.
+      </div>
+    </section>
+
+    <section aria-labelledby="nspfrnp">
+      <h2 id="nspfrnp">13. NSPFRNP · MCA · Seed:Edge · PRA</h2>
+      <p>
+        <strong>NSPFRNP</strong> is the house protocol for natural coordination —
+        how work moves without a central scream.
+        <strong>MCA</strong> is the heartbeat cycle:
+      </p>
+      <ul class="plain">
+        <li><strong>Metabolize</strong> — take in the ask and the corpus honestly.</li>
+        <li><strong>Crystallize</strong> — harden the plan into nested shells that can be checked.</li>
+        <li><strong>Animate</strong> — tighten the nodes, run the work, make it clear.</li>
+      </ul>
+      <p>
+        <strong>Seed:Edge</strong> is the holographic split:
+        Seed = origin / canon / nucleus;
+        Edge = lived experience / this device / this turn.
+        Executive prompts fill the middle. Lite edges hold wallets, keys, verifications;
+        the center stays pipes — SING 13 style, no Supabase theater.
+      </p>
+      <p>
+        Cytographic grammar under the holographic nucleus is the long-form of that sentence:
+        Seed as nucleus, Edge as instance, consumption and recruitment as how nests wake.
+        Metaphor + deployable Cursor topology — not AdS/CFT lab proof.
+      </p>
+      <p>
+        <strong>PRA Snap</strong> (peer-review audit) is how papers stay checkable before they get featured:
+        honesty boundary, Document ID, SynthOBS operator line, structural rubric receipts, optional dual-LLM lane.
+        <strong>PCE</strong> (Proof by Continuous Execution) adds live open suites so executable claims keep earning their keep.
+        Together they are the house’s immune system for hype.
+      </p>
+      <div class="callout">
+        <strong>Catalog doors:</strong>
+        <a href="/whitepaper/mca-nspfrnp-catalog">MCA · NSPFRNP catalog</a> ·
+        <a href="/whitepaper/nspfrnp-snap-peer-review-audit">PRA Snap</a> ·
+        <a href="/sing13-edge-onboarding">SING 13 edge onboarding</a>.
+      </div>
+    </section>
+
+    <section aria-labelledby="nature-pictures">
+      <h2 id="nature-pictures">14. Nature’s coordination pictures</h2>
+      <p>
+        Bee colonies (stigmergy), ant foraging, mycelial networks — we use these as
+        <strong>coordination metaphors</strong> for how nested agents leave trails and share work
+        without a boss micromanaging every leaf.
+        The Pogonomyrmex Omni-Lattice paper is one careful version of that story.
+      </p>
+      <p>
+        Same honesty move as always: ants are real; the paper is not replacing field entomology.
+        Lattice Chat borrows the <em>shape</em> of distributed coordination.
+      </p>
+    </section>
+
+    <section aria-labelledby="what-we-measured">
+      <h2 id="what-we-measured">15. What we measured</h2>
+      <p>Three receipt flavors you can actually open:</p>
+      <ul class="plain">
+        <li><strong>Cursor usage matrix</strong> — nested + pointer vs fat paste, ~35–70% on focused jobs (job-dependent).</li>
+        <li><strong>Harmonopoly nested-token sim</strong> — under documented assumptions, nested Goldilocks ≪ flat mesh message tax.</li>
+        <li><strong>Empirical suites (often 9/9)</strong> — companion pipelines for Planck bridge, Omni-Lattice pillars, PCE — replayable scripts, not “we won science forever.”</li>
+      </ul>
+      <p>
+        <a href="/whitepaper/synthobs-proof-by-continuous-execution">Proof by Continuous Execution</a>
+        argues that live open suites can outpace static peer review <em>alone</em> for executable corpora —
+        as a complement to PRA Snap, not a funeral for journals.
+      </p>
+    </section>
+
+    <section aria-labelledby="keys-boarding">
+      <h2 id="keys-boarding">16. Your keys · Old School boarding</h2>
+      <p>
+        Bring your own key (Cursor, Claude, or Gemini). It stays in the browser on this device.
+        We do not need your GitHub password to start.
+        Boarding is Old School honor: email a human for a trial, then sign in —
+        Fair Exchange and reciprocal balancing, not a growth funnel that owns your secrets in the center.
+      </p>
+      <p>
+        Starter and Pro tiers live on the brochure. The free trial is a human handshake
+        (<a href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20free%20trial">valetpru@gmail.com</a>).
+        Honor rails mean: if the UI says verified, the pipe should be able to show a trail.
+      </p>
+    </section>
+
+    <section aria-labelledby="ark">
+      <h2 id="ark">17. The Ark picture</h2>
+      <p>
+        SS Vibelandia is Noah’s Ark language for this work:
+        leave dump-everything culture behind; carry craft, music, ethics, and nested intelligence forward.
+        Metaphor + product architecture — not a literal ship you book a cabin on.
+      </p>
+      <p>
+        Get Started Door III and this primer are the boarding deck essays.
+        The papers are the engine room. The chat is the bridge.
+      </p>
+      <div class="callout">
+        <strong>Story door:</strong>
+        <a href="/whitepaper/lattice-noahs-ark-metaphor-2026-07">Noah’s Ark metaphor · Lattice</a> ·
+        <a href="/ss-vibelandia">Meet the Ark</a> ·
+        <a href="/get-started#lattice-deep">Get Started · Go deep</a>.
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+<section aria-labelledby="papers-h">
+      <h2 id="papers-h">18. Papers this primer synthesizes</h2>
+      <p>
+        Every card below is folded into the weave above — core spine first, then holographic / EGS grammar,
+        then Goldilocks · honesty · story, then the Omni-Lattice decode depth track.
+        Open any paper for honesty tables, math, and suites.
+      </p>
       <ul class="paper-list">
         <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-genomic-determinism">
-            <span class="deck-paper-card__pill deck-paper-card__pill--featured">New</span>
-            <span class="deck-paper-card__title">Genomic Determinism X</span>
-            <span class="deck-paper-card__sub">$k=0$ locus (July 2026) · remaining territory roadmap · narrative vector theorem · full decode scripts · 9/9 empirical suite.</span>
+          <a class="deck-paper-card" href="/whitepaper/omniversal-nested-agent-lattice">
+            <span class="deck-paper-card__pill deck-paper-card__pill--featured">Core</span>
+            <span class="deck-paper-card__title">Nested Agent Lattice</span>
+            <span class="deck-paper-card__sub">How a parent steward and small nested helpers work together — without a peer mesh free-for-all.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-prompt-capture">
-            <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">Prompt Capture IX</span>
-            <span class="deck-paper-card__sub">Recursive inter-agent prompts → DNA condensation metaphor · Solon/Lyra telemetry · full decode scripts · 9/9 empirical suite.</span>
+          <a class="deck-paper-card" href="/whitepaper/lattice-token-reduction-proof-2026-07">
+            <span class="deck-paper-card__pill">Method</span>
+            <span class="deck-paper-card__title">Token load proof</span>
+            <span class="deck-paper-card__sub">~35–70% less Cursor usage vs fat paste, depending on the work — method + honesty.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-y-chromosome-holographic">
-            <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">Y Chromosome Decode</span>
-            <span class="deck-paper-card__sub">Full Words · Sentences · haplogroup Stories — polar identity projector · 9/9 empirical suite.</span>
+          <a class="deck-paper-card" href="/whitepaper/coherence-plain-speak">
+            <span class="deck-paper-card__pill">Honesty</span>
+            <span class="deck-paper-card__title">Coherence · plain speak</span>
+            <span class="deck-paper-card__sub">What is real on this ship — claim tiers, not hype.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-pogonomyrmex">
-            <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">Pogonomyrmex Omni-Lattice V</span>
-            <span class="deck-paper-card__sub">Red harvester ant — biogenic amine gates · stigmergic active inference · metallic pool metaphor · 9/9 empirical suite.</span>
+          <a class="deck-paper-card" href="/whitepaper/omniversal-goldilocks-rideshare">
+            <span class="deck-paper-card__pill">Goldilocks</span>
+            <span class="deck-paper-card__title">Goldilocks rideshare protocol</span>
+            <span class="deck-paper-card__sub">Not too much, not too little — routing help in the Goldilocks band.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-proof-by-continuous-execution">
+          <a class="deck-paper-card" href="/whitepaper/synthobs-holographic-operators">
             <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">Proof by Continuous Execution</span>
-            <span class="deck-paper-card__sub">Why live open suites can outpace static peer review alone — PCE complements PRA Snap · 9/9 empirical suite.</span>
-            <span class="deck-paper-card__cta">Read paper →</span>
-          </a>
-        </li>
-        <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-hiv">
-            <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">HIV Omni-Lattice III</span>
-            <span class="deck-paper-card__sub">Adversarial holographic operator + evolutionary catalyst loop — honesty-gated · not clinical · 9/9 empirical suite.</span>
-            <span class="deck-paper-card__cta">Read paper →</span>
-          </a>
-        </li>
-        <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-x-chromosome-holographic">
-            <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">X Chromosome Decode</span>
-            <span class="deck-paper-card__sub">Maternal matrix projector — Xist dosage · dual-mode XX/XY · Omni-Lattice operator grammar · 9/9 empirical suite.</span>
-            <span class="deck-paper-card__cta">Read paper →</span>
-          </a>
-        </li>
-        <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-three-foundational-proteins">
-            <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">Three Proteins Decode</span>
-            <span class="deck-paper-card__sub">Hemoglobin · ATP synthase · DNA polymerase as carrier / engine / replicator — 9/9 empirical suite.</span>
+            <span class="deck-paper-card__title">Holographic Operators</span>
+            <span class="deck-paper-card__sub">Why conversation can act like wiring — with reproducible experiments, not vibes alone.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
@@ -306,6 +772,22 @@
             <span class="deck-paper-card__pill">Theory</span>
             <span class="deck-paper-card__title">Omni-Lattice Unification</span>
             <span class="deck-paper-card__sub">Four pillars under one $E_F$ grammar — holographic operators · 81-electron · bonds · ILAM · 9/9 empirical suite.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-egs-planck-scale-harmonic">
+            <span class="deck-paper-card__pill">EGS</span>
+            <span class="deck-paper-card__title">Planck–1.6 / EGS bridge</span>
+            <span class="deck-paper-card__sub">The φ ≈ 1.618 scale key used as architecture — honesty boundary included.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-egs-81-electrons">
+            <span class="deck-paper-card__pill">Theory</span>
+            <span class="deck-paper-card__title">81-Digit Electronic Lattice</span>
+            <span class="deck-paper-card__sub">EGS singularities ↔ atomic shells through Z=81 — with a 9/9 empirical suite.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
@@ -326,34 +808,10 @@
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-egs-81-electrons">
+          <a class="deck-paper-card" href="/whitepaper/synthobs-proof-by-continuous-execution">
             <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">81-Digit Electronic Lattice</span>
-            <span class="deck-paper-card__sub">EGS singularities ↔ atomic shells through Z=81 — with a 9/9 empirical suite.</span>
-            <span class="deck-paper-card__cta">Read paper →</span>
-          </a>
-        </li>
-        <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-dna-lattice-holograph">
-            <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">DNA Lattice Holograph</span>
-            <span class="deck-paper-card__sub">Shadow–lattice–attention map — DNA as bio-geometric projector substrate.</span>
-            <span class="deck-paper-card__cta">Read paper →</span>
-          </a>
-        </li>
-        <li>
-          <a class="deck-paper-card" href="/whitepaper/omniversal-nested-agent-lattice">
-            <span class="deck-paper-card__pill deck-paper-card__pill--featured">Core</span>
-            <span class="deck-paper-card__title">Nested Agent Lattice</span>
-            <span class="deck-paper-card__sub">How a parent steward and small nested helpers work together — without a peer mesh free-for-all.</span>
-            <span class="deck-paper-card__cta">Read paper →</span>
-          </a>
-        </li>
-        <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-holographic-operators">
-            <span class="deck-paper-card__pill">Theory</span>
-            <span class="deck-paper-card__title">Holographic Operators</span>
-            <span class="deck-paper-card__sub">Why conversation can act like wiring — with reproducible experiments, not vibes alone.</span>
+            <span class="deck-paper-card__title">Proof by Continuous Execution</span>
+            <span class="deck-paper-card__sub">Why live open suites can outpace static peer review alone — PCE complements PRA Snap · 9/9 empirical suite.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
@@ -366,34 +824,66 @@
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/lattice-token-reduction-proof-2026-07">
-            <span class="deck-paper-card__pill">Method</span>
-            <span class="deck-paper-card__title">Token load proof</span>
-            <span class="deck-paper-card__sub">~35–70% less Cursor usage vs fat paste, depending on the work — method + honesty.</span>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-dna-lattice-holograph">
+            <span class="deck-paper-card__pill">Depth</span>
+            <span class="deck-paper-card__title">DNA Lattice Holograph</span>
+            <span class="deck-paper-card__sub">Shadow–lattice–attention map — DNA as bio-geometric projector substrate.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/synthobs-egs-planck-scale-harmonic">
-            <span class="deck-paper-card__pill">EGS</span>
-            <span class="deck-paper-card__title">Planck–1.6 / EGS bridge</span>
-            <span class="deck-paper-card__sub">The φ ≈ 1.618 scale key used as architecture — honesty boundary included.</span>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-x-chromosome-holographic">
+            <span class="deck-paper-card__pill">Depth</span>
+            <span class="deck-paper-card__title">X Chromosome Decode</span>
+            <span class="deck-paper-card__sub">Maternal matrix projector — Xist dosage · dual-mode XX/XY · Omni-Lattice operator grammar · 9/9 empirical suite.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/omniversal-goldilocks-rideshare">
-            <span class="deck-paper-card__pill">Goldilocks</span>
-            <span class="deck-paper-card__title">Goldilocks rideshare protocol</span>
-            <span class="deck-paper-card__sub">Not too much, not too little — routing help in the Goldilocks band.</span>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-y-chromosome-holographic">
+            <span class="deck-paper-card__pill">Depth</span>
+            <span class="deck-paper-card__title">Y Chromosome Decode</span>
+            <span class="deck-paper-card__sub">Full Words · Sentences · haplogroup Stories — polar identity projector · 9/9 empirical suite.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
         <li>
-          <a class="deck-paper-card" href="/whitepaper/coherence-plain-speak">
-            <span class="deck-paper-card__pill">Honesty</span>
-            <span class="deck-paper-card__title">Coherence · plain speak</span>
-            <span class="deck-paper-card__sub">What is real on this ship — claim tiers, not hype.</span>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-three-foundational-proteins">
+            <span class="deck-paper-card__pill">Depth</span>
+            <span class="deck-paper-card__title">Three Proteins Decode</span>
+            <span class="deck-paper-card__sub">Hemoglobin · ATP synthase · DNA polymerase as carrier / engine / replicator — 9/9 empirical suite.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-pogonomyrmex">
+            <span class="deck-paper-card__pill">Depth</span>
+            <span class="deck-paper-card__title">Pogonomyrmex Omni-Lattice V</span>
+            <span class="deck-paper-card__sub">Red harvester ant — biogenic amine gates · stigmergic active inference · metallic pool metaphor · 9/9 empirical suite.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-hiv">
+            <span class="deck-paper-card__pill">Depth</span>
+            <span class="deck-paper-card__title">HIV Omni-Lattice III</span>
+            <span class="deck-paper-card__sub">Adversarial holographic operator + evolutionary catalyst loop — honesty-gated · not clinical · 9/9 empirical suite.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-prompt-capture">
+            <span class="deck-paper-card__pill">Depth</span>
+            <span class="deck-paper-card__title">Prompt Capture IX</span>
+            <span class="deck-paper-card__sub">Recursive inter-agent prompts → DNA condensation metaphor · Solon/Lyra telemetry · full decode scripts · 9/9 empirical suite.</span>
+            <span class="deck-paper-card__cta">Read paper →</span>
+          </a>
+        </li>
+        <li>
+          <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-genomic-determinism">
+            <span class="deck-paper-card__pill deck-paper-card__pill--featured">Depth</span>
+            <span class="deck-paper-card__title">Genomic Determinism X</span>
+            <span class="deck-paper-card__sub">$k=0$ locus (July 2026) · remaining territory roadmap · narrative vector theorem · full decode scripts · 9/9 empirical suite.</span>
             <span class="deck-paper-card__cta">Read paper →</span>
           </a>
         </li>
@@ -423,7 +913,7 @@
           <a class="deck-paper-card" href="/papers">
             <span class="deck-paper-card__pill">Library</span>
             <span class="deck-paper-card__title">Full paper catalog</span>
-            <span class="deck-paper-card__sub">Search the quiet library when curiosity outruns this short list.</span>
+            <span class="deck-paper-card__sub">Search the quiet library when curiosity outruns this synthesis.</span>
             <span class="deck-paper-card__cta">Open catalog →</span>
           </a>
         </li>

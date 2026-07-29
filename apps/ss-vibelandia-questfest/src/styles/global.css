@@ -8408,6 +8408,26 @@ html.qf-jukebox-page .sp-now-add-pl {
   box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.22);
 }
 
+.jb-sort-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.4rem;
+  flex-shrink: 0;
+  padding: 0.35rem 0.45rem 0.45rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.jb-sort-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a8070;
+  margin-right: 0.15rem;
+}
+
 .jb-tool-btn {
   padding: 0.28rem 0.55rem;
   font-size: 0.58rem;

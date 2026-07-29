@@ -16,6 +16,8 @@ import { nextSequentialTrackId, nextShuffledTrackId } from '@/lib/playlistShuffl
 import { PLAIN } from '@/lib/plainSpeak';
 import type { TrackDef } from '@/lib/catalogTypes';
 
+type SortMode = 'playlistOrder' | 'titleAsc' | 'titleDesc';
+
 interface JukeboxTrackPanelProps {
   playlistId: string;
   /** Navigate to /listen/now after starting playback from this panel. */
@@ -42,6 +44,7 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
   const [dupMessage, setDupMessage] = useState<string | null>(null);
   const [metaOpen, setMetaOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortMode, setSortMode] = useState<SortMode>('playlistOrder');
 
   const shuffleEnabled = usePlaybackStore((s) => s.shuffleEnabled);
   const shuffleQueue = usePlaybackStore((s) => s.shuffleQueue);
@@ -50,7 +53,8 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
   const isMyLikes = isMyLikesPlaylist(playlistId);
   const canEditPlaylist = !isMyLikes;
   const searchActive = searchQuery.trim().length > 0;
-  const canReorder = !isMaster && resolvedIds.length > 1 && !searchActive;
+  const canReorder =
+    !isMaster && resolvedIds.length > 1 && !searchActive && sortMode === 'playlistOrder';
 
   const { listRef, dragIndex, overIndex, onGripPointerDown, onGripPointerMove, onGripPointerUp } =
     usePlaylistReorder(playlistId, canReorder, reorderTrackInPlaylist);
@@ -61,24 +65,36 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
     setDupDismissed(false);
     setDupMessage(null);
     setSearchQuery('');
+    setSortMode('playlistOrder');
   }, [playlistId]);
 
   const { rows, totalBeforeSearch } = useMemo(() => {
     const playlistIndexById = new Map(resolvedIds.map((id, i) => [id, i]));
-    const allRows = resolvedIds
+    let allRows = resolvedIds
       .map((id) => {
         const track = getTrack(id);
         if (!track) return null;
         return { track, playlistIndex: playlistIndexById.get(id) ?? -1 };
       })
       .filter((row): row is { track: TrackDef; playlistIndex: number } => !!row);
+
+    if (sortMode === 'titleAsc') {
+      allRows = [...allRows].sort((a, b) =>
+        a.track.title.localeCompare(b.track.title, undefined, { sensitivity: 'base' }),
+      );
+    } else if (sortMode === 'titleDesc') {
+      allRows = [...allRows].sort((a, b) =>
+        b.track.title.localeCompare(a.track.title, undefined, { sensitivity: 'base' }),
+      );
+    }
+
     const totalBeforeSearch = allRows.length;
     if (!searchActive) return { rows: allRows, totalBeforeSearch };
     return {
       rows: allRows.filter((row) => trackMatchesSearchQuery(row.track, searchQuery)),
       totalBeforeSearch,
     };
-  }, [resolvedIds, getTrack, searchQuery, searchActive]);
+  }, [resolvedIds, getTrack, searchQuery, searchActive, sortMode]);
 
   const duplicateGroups = useMemo(
     () => findDuplicateTrackGroups(resolvedIds, getTrack),
@@ -257,6 +273,33 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
         </form>
       ) : null}
 
+      {totalBeforeSearch > 0 ? (
+        <div className="jb-sort-bar" role="group" aria-label={PLAIN.sortBy}>
+          <span className="jb-sort-label">{PLAIN.sortBy}</span>
+          <button
+            type="button"
+            className={`jb-tool-btn${sortMode === 'playlistOrder' ? ' jb-tool-btn--on' : ''}`}
+            onClick={() => setSortMode('playlistOrder')}
+          >
+            {PLAIN.sortOrder}
+          </button>
+          <button
+            type="button"
+            className={`jb-tool-btn${sortMode === 'titleAsc' ? ' jb-tool-btn--on' : ''}`}
+            onClick={() => setSortMode('titleAsc')}
+          >
+            {PLAIN.sortAscending}
+          </button>
+          <button
+            type="button"
+            className={`jb-tool-btn${sortMode === 'titleDesc' ? ' jb-tool-btn--on' : ''}`}
+            onClick={() => setSortMode('titleDesc')}
+          >
+            {PLAIN.sortDescending}
+          </button>
+        </div>
+      ) : null}
+
       {!dupDismissed && duplicateGroups.length > 0 ? (
         <div className="jb-dup-banner" role="status">
           <p>
@@ -298,7 +341,11 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
       ) : null}
 
       <p className="jb-gesture-hint jb-gesture-hint--compact">
-        Swipe left to remove · hold &amp; drag to reorder
+        {canReorder
+          ? 'Swipe left to remove · hold & drag to reorder'
+          : sortMode !== 'playlistOrder'
+            ? 'Sorted by title · switch to Playlist order to reorder'
+            : 'Swipe left to remove'}
       </p>
 
       {rows.length === 0 ? (

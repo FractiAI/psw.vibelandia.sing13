@@ -100,10 +100,10 @@ export const MACHOTE_CREW_LINE =
 export const MACHOTE_CAMPAIGN_STORAGE_KEY = 'machote-members-campaign-dismissed-v2';
 
 export const MACHOTE_CAMPAIGN_LEDE =
-  'I help residents, visitors, professionals, seniors, and travelers with everyday tasks throughout Downtown Reno, Midtown, Idlewild, and nearby districts — on electric bike, not in a car idling at the curb.';
+  'I help residents, visitors, professionals, seniors, and travelers with everyday tasks throughout Downtown Reno, Midtown, Idlewild, and nearby districts — on e-scooter, not in a car idling at the curb.';
 
 export const MACHOTE_CAMPAIGN_CHECKLIST: string[] = [
-  'E-bike courier — low emissions, no parking cruise or sprawl markup downtown',
+  'E-scooter courier — low emissions, no parking cruise or sprawl markup downtown',
   'Fair for operators — your valet keeps 67%, not a gig-app squeeze',
   'Real human assistance — not another app',
 ];

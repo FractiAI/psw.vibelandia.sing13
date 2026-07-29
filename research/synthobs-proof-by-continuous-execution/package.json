@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-proof-by-continuous-execution",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Proof by Continuous Execution (PCE) epistemology — SynthOBS empirical suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT"
+}

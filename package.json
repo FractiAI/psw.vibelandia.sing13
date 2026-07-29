@@ -41,6 +41,7 @@
     "research:synthobs-x-chromosome-holographic": "node research/synthobs-x-chromosome-holographic/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-three-foundational-proteins": "node research/synthobs-three-foundational-proteins/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-omni-lattice-hiv": "node research/synthobs-omni-lattice-hiv/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-proof-by-continuous-execution": "node research/synthobs-proof-by-continuous-execution/scripts/run_empirical_pipeline.mjs",
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",

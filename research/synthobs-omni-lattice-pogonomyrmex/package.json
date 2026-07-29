@@ -1,0 +1,11 @@
+{
+  "name": "synthobs-omni-lattice-pogonomyrmex",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Omni-Lattice Unification V — Pogonomyrmex barbatus biogenic amine / stigmergic active inference — SynthOBS empirical suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT"
+}

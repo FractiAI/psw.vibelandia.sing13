@@ -109,9 +109,10 @@ Wrong IDs deploy to the wrong team and can create stray Blob usage.
 
 ## Step 5 — Prevent refill
 
-- Track **delete** in the Bridge now removes catalog media blobs when possible (see `deleteTrackMediaBlobs` in `lib/catalog-server.mjs`).  
+- Track **delete** in the Bridge removes catalog media blobs when possible (see `deleteTrackMediaBlobs` in `lib/catalog-server.mjs`), and **skips pathnames still referenced by other tracks** so shared `src` twins are not nuked.  
 - Prefer **MP3** over huge **WAV** uploads.  
-- Run `blob-storage-audit.mjs` monthly on the **FractiAI** store token.
+- Run `blob-storage-audit.mjs` monthly on the **FractiAI** store token.  
+- Dead `src` HEADs: `node scripts/heal-dead-catalog-src.mjs` (optional `--dry-run`).
 
 ---
 

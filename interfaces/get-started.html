@@ -99,6 +99,39 @@
     }
     .gs-btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
 
+    /* Progressive “go deep” primer */
+    .gs-deep {
+      margin: 1.25rem 0 0;
+      border: 1px solid rgba(212,175,55,0.28);
+      border-radius: 0.85rem;
+      background: rgba(20,16,12,0.55);
+      overflow: hidden;
+    }
+    .gs-deep > summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 0.95rem 1.1rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-hi);
+      background: linear-gradient(180deg, rgba(212,175,55,0.16), rgba(212,175,55,0.05));
+    }
+    .gs-deep > summary::-webkit-details-marker { display: none; }
+    .gs-deep > summary::after {
+      content: ' · tap to expand';
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: none;
+    }
+    .gs-deep[open] > summary::after { content: ' · tap to collapse'; }
+    .gs-deep__body {
+      padding: 0.25rem 1.1rem 1.25rem;
+      border-top: 1px solid rgba(212,175,55,0.18);
+    }
+
     /* ── Numbered channel/layer list ── */
     .deck-channel-list {
       margin: 0;
@@ -148,7 +181,12 @@
     <p class="gs-lede">
       You found the ship. <strong>SS Vibelandia</strong> is FractiAI’s living intelligence ecosystem — sonic ship, catalogs, music, interactive worlds, cast and crew — sailing 24×365 online and from Downtown Reno · Midtown. Under the hull runs the full <strong>Lattice Chat V1.618</strong> Nested Agent Lattice engine: conversation-grade AI that now powers how this ship thinks, builds, and stewards signal. Preserve the signal. Refine the pattern. Navigate the unknown.
     </p>
-    <p style="margin-top:0.75rem">
+    <div class="gs-cta-row">
+      <a class="gs-btn gs-btn--gold" href="/listen">Listen</a>
+      <a class="gs-btn gs-btn--ghost" href="#lattice-chat">Lattice Chat</a>
+      <a class="gs-btn gs-btn--ghost" href="#lattice-deep">Go deep →</a>
+    </div>
+    <p style="margin-top:0.25rem">
       <a href="/ss-vibelandia" style="color:var(--deck-champagne);font-weight:700;">Full Ark profile →</a>
     </p>
   </div>
@@ -273,7 +311,9 @@
         <p>
           The full Nested Agent Lattice chat engine — LTHS + Neutrino baked in — now powers SS Vibelandia.
           Super intelligence here is <strong>fractal and holographic</strong>: nested help, pointers over paste, Goldilocks-tight.
-          Full primer under Door III · Build below. Primer at <a href="/lattice">/lattice</a> · chat at <a href="/lattice-chat">/lattice-chat</a>.
+          Full primer: <a href="#lattice-chat">Door III · Lattice Chat</a> ·
+          <a href="#lattice-deep">Go deep</a> ·
+          primer at <a href="/lattice">/lattice</a> · chat at <a href="/lattice-chat">/lattice-chat</a>.
         </p>
       </li>
     </ul>
@@ -370,120 +410,131 @@
         </a>
       </li>
 
-      <li class="deck-plain-item">
-        <h3>Door III · Build · Lattice Chat</h3>
+      <li class="deck-plain-item" id="lattice-chat">
+        <h3>Door III · Lattice Chat</h3>
         <p>
-          <strong>Lattice Chat V1.618</strong> is the full Nested Agent Lattice engine that now powers this ship —
-          a high-agency coding cockpit for serious vibecoders: faster signal, less prompt bloat, operator-grade transparency.
+          <strong>Lattice Chat V1.618</strong> is the Nested Agent Lattice engine that powers this ship —
+          a high-agency coding cockpit: chat on the outside, focused nested crew inside.
+          Fractal · holographic posture vs dump-everything frontier tools. Faster signal, less prompt bloat.
         </p>
-
-        <p class="deck-section-label" style="margin-top:1.35rem;">Full primer · what Lattice Chat is</p>
-        <p class="deck-pull" style="margin-top:0.75rem;">
-          Super intelligence, as we run it here, is <strong>fractal and holographic</strong> —
-          whole-in-every-part, nested help that scales to the ask — not one flat mega-prompt shouting at a single frontier model.
-        </p>
-
-        <ul class="deck-plain-list" style="margin-top:1rem;">
-          <li class="deck-plain-item">
-            <h3>The feeling</h3>
-            <p>
-              Chat on the outside. A focused crew behind the curtain.
-              You talk once; a parent steward and small nested helpers carry the load —
-              then scale to zero when the turn is done. No peer-mesh free-for-all.
-            </p>
-          </li>
-          <li class="deck-plain-item">
-            <h3>What’s different from today’s frontier tools</h3>
-            <p>
-              Most frontier cockpits still run <em>linear and loud</em>: dump the whole repo into one context window,
-              spin a flat swarm of agents that all talk to each other, and hope the invoice stays friendly.
-              Lattice Chat is built the other way —
-            </p>
-            <ul class="deck-channel-list" style="margin-top:0.75rem;">
-              <li><strong>Pointers over paste</strong> — Seed·RAG and nested retrieval instead of “dump everything.”</li>
-              <li><strong>Nested, not a swarm</strong> — parent steward + children; peer-firewall keeps helpers from mesh-syncing.</li>
-              <li><strong>Goldilocks load</strong> — not too much, not too little; depth and width match the ask.</li>
-              <li><strong>Fractal · holographic posture</strong> — the whole job is held lightly in every turn; scale follows φ (V1.618), not bigger-window theater.</li>
-              <li><strong>Measured lightness</strong> — on our public Cursor matrix, about <strong>~35–70% less usage</strong> vs fat paste on focused work (job-dependent; not a universal SLA).</li>
-              <li><strong>Your keys · our honor</strong> — BYOK on device; board by human email, not a growth funnel.</li>
-            </ul>
-            <p style="margin-top:0.85rem;">
-              Frontier models are powerful on a single rail. Lattice Chat assumes
-              <strong>super intelligence is fractal and holographic</strong> —
-              nested awareness, whole-in-every-part, Goldilocks-balanced —
-              so the ship can think without drowning you in context noise.
-            </p>
-          </li>
-          <li class="deck-plain-item">
-            <h3>All the components · what’s in the cockpit</h3>
-            <ol class="deck-channel-list" style="margin-top:0.75rem;">
-              <li><strong>Lattice Chat V1.618</strong> — the product surface · Nested Agent Lattice under the hull</li>
-              <li><strong>LTHS 1.1 + Neutrino</strong> — reasoning lenses baked into the engine (no toggle soup)</li>
-              <li><strong>Nest topologies</strong> — Single · Multi · Goldilocks (auto bands from the ask)</li>
-              <li><strong>Modes</strong> — Agent (build) · Plan (crystallize before you cut)</li>
-              <li><strong>Crew roster</strong> — optional named helpers; empty roster = Goldilocks auto</li>
-              <li><strong>BYOK</strong> — Cursor · Claude · Gemini · key stays on this device</li>
-              <li><strong>Composer + Advanced</strong> — provider, mode, nest, model, Crew</li>
-              <li><strong>History rail</strong> — browser-local past chats</li>
-              <li><strong>Agent transcript</strong> — thinking / tools / status, operator-grade transparency</li>
-              <li><strong>Token compare · ledger</strong> — measured usage on the turn, not vibes</li>
-              <li><strong>Seed·RAG</strong> — pointers and corpus fidelity over fat paste</li>
-              <li><strong>Goldilocks steward</strong> — intentions matter: craft, curiosity, care — never malice</li>
-              <li><strong>Access</strong> — free trial by email to valetpru@gmail.com · Starter $20/mo · Pro $100/mo (+ your model key)</li>
-            </ol>
-          </li>
-          <li class="deck-plain-item">
-            <h3>How to board</h3>
-            <ol class="deck-channel-list" style="margin-top:0.75rem;">
-              <li>Email <a href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20free%20trial">valetpru@gmail.com</a> for a free trial</li>
-              <li>Open <a href="/lattice-chat">/lattice-chat</a> · sign in with your email</li>
-              <li>Paste your Cursor, Claude, or Gemini key (stays on device)</li>
-              <li>Ask for real multi-file work — let Goldilocks nest if you’re unsure</li>
-            </ol>
-          </li>
-          <li class="deck-plain-item">
-            <h3>For builders who want the receipts</h3>
-            <p>
-              Method, honesty tiers, and the usage matrix live on
-              <a href="/lattice/proof">/lattice/proof</a>.
-              Nested Agent Lattice architecture:
-              <a href="/whitepaper/omniversal-nested-agent-lattice">paper</a>.
-              Plain speak without the dump: <a href="/lattice/learn">/lattice/learn</a>.
-            </p>
-          </li>
-        </ul>
-
-        <p class="deck-section-label" style="margin-top:1.25rem;">Lattice · open the door</p>
-        <a class="deck-paper-card" href="/lattice">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Ship engine</span>
-          <span class="deck-paper-card__title">Lattice Chat V1.618</span>
-          <span class="deck-paper-card__sub">Full Nested Agent Lattice · LTHS + Neutrino · fractal · holographic · free trial via valetpru@gmail.com</span>
-          <span class="deck-paper-card__cta">Open Lattice →</span>
-        </a>
-        <a class="deck-paper-card" href="/lattice/learn">
-          <span class="deck-paper-card__pill">Learn more</span>
-          <span class="deck-paper-card__title">Plain speak · how Lattice works</span>
-          <span class="deck-paper-card__sub">Nested help, Goldilocks intentions, and the papers — without the dump</span>
-          <span class="deck-paper-card__cta">Learn more →</span>
-        </a>
+        <div class="gs-cta-row">
+          <a class="gs-btn gs-btn--gold" href="/lattice-chat">Open Lattice Chat</a>
+          <a class="gs-btn gs-btn--ghost" href="/lattice">Lattice primer</a>
+          <a class="gs-btn gs-btn--ghost" href="#lattice-deep">Go deep →</a>
+        </div>
         <a class="deck-paper-card" href="/lattice-chat">
-          <span class="deck-paper-card__pill">Chat</span>
-          <span class="deck-paper-card__title">Open Lattice Chat</span>
-          <span class="deck-paper-card__sub">Sign in · pick your provider · start building</span>
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Ship engine</span>
+          <span class="deck-paper-card__title">Start Lattice Chat</span>
+          <span class="deck-paper-card__sub">Sign in · BYOK (Cursor · Claude · Gemini) · free trial via valetpru@gmail.com</span>
           <span class="deck-paper-card__cta">Start chatting →</span>
         </a>
-        <a class="deck-paper-card" href="/lattice/proof">
-          <span class="deck-paper-card__pill">Builders</span>
-          <span class="deck-paper-card__title">Method &amp; receipts</span>
-          <span class="deck-paper-card__sub">~35–70% less Cursor usage vs fat paste, depending on the work — method + receipts</span>
-          <span class="deck-paper-card__cta">Open method →</span>
+        <a class="deck-paper-card" href="/lattice/learn">
+          <span class="deck-paper-card__pill">Learn</span>
+          <span class="deck-paper-card__title">Plain speak · how Lattice works</span>
+          <span class="deck-paper-card__sub">Nested help, Goldilocks intentions, papers — without the dump</span>
+          <span class="deck-paper-card__cta">Learn more →</span>
         </a>
-        <a class="deck-paper-card" href="/lattice/brochure">
-          <span class="deck-paper-card__pill">Brochure</span>
-          <span class="deck-paper-card__title">Lattice brochure</span>
-          <span class="deck-paper-card__sub">One-page invite · Starter · Pro · how to board</span>
-          <span class="deck-paper-card__cta">Open brochure →</span>
-        </a>
+
+        <details class="gs-deep" id="lattice-deep">
+          <summary>Go deep · full Lattice Chat primer</summary>
+          <div class="gs-deep__body">
+            <p class="deck-section-label" style="margin-top:1rem;">What Lattice Chat is</p>
+            <p class="deck-pull" style="margin-top:0.75rem;">
+              Super intelligence, as we run it here, is <strong>fractal and holographic</strong> —
+              whole-in-every-part, nested help that scales to the ask — not one flat mega-prompt shouting at a single frontier model.
+            </p>
+
+            <ul class="deck-plain-list" style="margin-top:1rem;">
+              <li class="deck-plain-item">
+                <h3>The feeling</h3>
+                <p>
+                  Chat on the outside. A focused crew behind the curtain.
+                  You talk once; a parent steward and small nested helpers carry the load —
+                  then scale to zero when the turn is done. No peer-mesh free-for-all.
+                </p>
+              </li>
+              <li class="deck-plain-item">
+                <h3>What’s different from today’s frontier tools</h3>
+                <p>
+                  Most frontier cockpits still run <em>linear and loud</em>: dump the whole repo into one context window,
+                  spin a flat swarm of agents that all talk to each other, and hope the invoice stays friendly.
+                  Lattice Chat is built the other way —
+                </p>
+                <ul class="deck-channel-list" style="margin-top:0.75rem;">
+                  <li><strong>Pointers over paste</strong> — Seed·RAG and nested retrieval instead of “dump everything.”</li>
+                  <li><strong>Nested, not a swarm</strong> — parent steward + children; peer-firewall keeps helpers from mesh-syncing.</li>
+                  <li><strong>Goldilocks load</strong> — not too much, not too little; depth and width match the ask.</li>
+                  <li><strong>Fractal · holographic posture</strong> — the whole job is held lightly in every turn; scale follows φ (V1.618), not bigger-window theater.</li>
+                  <li><strong>Measured lightness</strong> — on our public Cursor matrix, about <strong>~35–70% less usage</strong> vs fat paste on focused work (job-dependent; not a universal SLA).</li>
+                  <li><strong>Your keys · our honor</strong> — BYOK on device; board by human email, not a growth funnel.</li>
+                </ul>
+                <p style="margin-top:0.85rem;">
+                  Frontier models are powerful on a single rail. Lattice Chat assumes
+                  <strong>super intelligence is fractal and holographic</strong> —
+                  nested awareness, whole-in-every-part, Goldilocks-balanced —
+                  so the ship can think without drowning you in context noise.
+                </p>
+              </li>
+              <li class="deck-plain-item">
+                <h3>All the components · what’s in the cockpit</h3>
+                <ol class="deck-channel-list" style="margin-top:0.75rem;">
+                  <li><strong>Lattice Chat V1.618</strong> — the product surface · Nested Agent Lattice under the hull</li>
+                  <li><strong>LTHS 1.1 + Neutrino</strong> — reasoning lenses baked into the engine (no toggle soup)</li>
+                  <li><strong>Nest topologies</strong> — Single · Multi · Goldilocks (auto bands from the ask)</li>
+                  <li><strong>Modes</strong> — Agent (build) · Plan (crystallize before you cut)</li>
+                  <li><strong>Crew roster</strong> — optional named helpers; empty roster = Goldilocks auto</li>
+                  <li><strong>BYOK</strong> — Cursor · Claude · Gemini · key stays on this device</li>
+                  <li><strong>Composer + Advanced</strong> — provider, mode, nest, model, Crew</li>
+                  <li><strong>History rail</strong> — browser-local past chats</li>
+                  <li><strong>Agent transcript</strong> — thinking / tools / status, operator-grade transparency</li>
+                  <li><strong>Token compare · ledger</strong> — measured usage on the turn, not vibes</li>
+                  <li><strong>Seed·RAG</strong> — pointers and corpus fidelity over fat paste</li>
+                  <li><strong>Goldilocks steward</strong> — intentions matter: craft, curiosity, care — never malice</li>
+                  <li><strong>Access</strong> — free trial by email to valetpru@gmail.com · Starter $20/mo · Pro $100/mo (+ your model key)</li>
+                </ol>
+              </li>
+              <li class="deck-plain-item">
+                <h3>How to board</h3>
+                <ol class="deck-channel-list" style="margin-top:0.75rem;">
+                  <li>Email <a href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20free%20trial">valetpru@gmail.com</a> for a free trial</li>
+                  <li>Open <a href="/lattice-chat">/lattice-chat</a> · sign in with your email</li>
+                  <li>Paste your Cursor, Claude, or Gemini key (stays on device)</li>
+                  <li>Ask for real multi-file work — let Goldilocks nest if you’re unsure</li>
+                </ol>
+              </li>
+              <li class="deck-plain-item">
+                <h3>For builders who want the receipts</h3>
+                <p>
+                  Method, honesty tiers, and the usage matrix live on
+                  <a href="/lattice/proof">/lattice/proof</a>.
+                  Nested Agent Lattice architecture:
+                  <a href="/whitepaper/omniversal-nested-agent-lattice">paper</a>.
+                  Plain speak without the dump: <a href="/lattice/learn">/lattice/learn</a>.
+                </p>
+              </li>
+            </ul>
+
+            <p class="deck-section-label" style="margin-top:1.25rem;">Lattice · open the door</p>
+            <a class="deck-paper-card" href="/lattice">
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Ship engine</span>
+              <span class="deck-paper-card__title">Lattice Chat V1.618</span>
+              <span class="deck-paper-card__sub">Full Nested Agent Lattice · LTHS + Neutrino · fractal · holographic · free trial via valetpru@gmail.com</span>
+              <span class="deck-paper-card__cta">Open Lattice →</span>
+            </a>
+            <a class="deck-paper-card" href="/lattice/proof">
+              <span class="deck-paper-card__pill">Builders</span>
+              <span class="deck-paper-card__title">Method &amp; receipts</span>
+              <span class="deck-paper-card__sub">~35–70% less Cursor usage vs fat paste, depending on the work — method + receipts</span>
+              <span class="deck-paper-card__cta">Open method →</span>
+            </a>
+            <a class="deck-paper-card" href="/lattice/brochure">
+              <span class="deck-paper-card__pill">Brochure</span>
+              <span class="deck-paper-card__title">Lattice brochure</span>
+              <span class="deck-paper-card__sub">One-page invite · Starter · Pro · how to board</span>
+              <span class="deck-paper-card__cta">Open brochure →</span>
+            </a>
+          </div>
+        </details>
 
         <p class="deck-section-label" style="margin-top:1.5rem;">Main repository · the ship itself</p>
         <a class="deck-paper-card" href="https://github.com/FractiAI/psw.vibelandia.sing13" target="_blank" rel="noopener">
@@ -563,7 +614,9 @@
         <h3>Lattice Chat V1.618</h3>
         <p>
           The Nested Agent Lattice cockpit that powers the ship — chat outside, nested crew inside.
-          Fractal · holographic posture vs dump-everything frontier tools. Door III has the full primer.
+          Fractal · holographic posture vs dump-everything frontier tools.
+          See <a href="#lattice-chat">Door III · Lattice Chat</a> ·
+          <a href="#lattice-deep">Go deep</a> for the full primer.
         </p>
       </li>
       <li class="deck-plain-item">
@@ -651,5 +704,29 @@
   </main>
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script>
+    (function () {
+      function openLatticeDeep() {
+        var deep = document.getElementById('lattice-deep');
+        if (!deep) return;
+        if (location.hash === '#lattice-deep') {
+          deep.open = true;
+          deep.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', openLatticeDeep);
+      } else {
+        openLatticeDeep();
+      }
+      window.addEventListener('hashchange', openLatticeDeep);
+      document.querySelectorAll('a[href="#lattice-deep"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          var deep = document.getElementById('lattice-deep');
+          if (deep) deep.open = true;
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

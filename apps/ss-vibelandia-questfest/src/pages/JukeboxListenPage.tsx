@@ -12,6 +12,7 @@ import { JUKEBOX_NOW_PLAYING_PATH } from '@/lib/jukeboxRoutes';
 import { setSharedTrackAutoplaySeed } from '@/lib/sharedTrackPlayback';
 import { playTrackById } from '@/lib/trackPlayback';
 import { PLAIN } from '@/lib/plainSpeak';
+import { JUKEBOX_WELCOME, JUKEBOX_WELCOME_TITLE } from '@/lib/sonicCatalogCopy';
 
 export const JUKEBOX_HERO_SRC = '/interfaces/assets/jukebox-golden-era-1940s.png';
 
@@ -89,6 +90,11 @@ export function JukeboxListenPage() {
   return (
     <div className="jb-app jb-app--browse">
       <JukeboxSiteNav mode="browse" />
+
+      <section className="jb-welcome jb-welcome--compact" aria-label="Welcome">
+        <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
+        <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
+      </section>
 
       <div className="jb-stage" aria-label="Jukebox selector">
         <JukeboxPlaylistMenu

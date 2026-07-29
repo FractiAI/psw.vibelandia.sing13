@@ -1,9 +1,9 @@
-/** Valet Pru's Concierge Service · Downtown Reno · edge channel + menu items (no server state). */
+/** Valet Pru's Valet & Concierge Service · Downtown Reno · edge channel + menu items (no server state). */
 (function (global) {
   var ASSET_BASE = '/interfaces/goldilocks-deliveries';
   var HOME = '/hire-a-goldilocks-valet-concierge';
   var CHANNEL_KEY = 'grs-guest-channel';
-  var JOIN_MAIL = 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent("Valet Pru's Concierge Service · Downtown Reno — join as guest") +
+  var JOIN_MAIL = 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent("Valet Pru's Valet & Concierge Service · Downtown Reno — join as guest") +
     '&body=' + encodeURIComponent('Name:\nNeighborhood:\nWhatsApp number:');
 
   var ITEMS = {
@@ -188,7 +188,7 @@
   }
 
   function bookMail(item) {
-    var subject = "Valet Pru's Concierge Service — " + item.title;
+    var subject = "Valet Pru's Valet & Concierge Service — " + item.title;
     var body = 'Name:\nNeighborhood:\nWhat I need:\nPreferred time:\n';
     return 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(body);

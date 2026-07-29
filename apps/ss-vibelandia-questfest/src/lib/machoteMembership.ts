@@ -35,7 +35,7 @@ export const MACHOTE_BEEHIVE_NEST_PATH = '/interfaces/nesting/nest-goldilocks-be
 
 export const MACHOTE_ROOM_SERVICE_PATH = '/hire-a-goldilocks-valet-concierge';
 
-export const MACHOTE_ROOM_SERVICE_TITLE = 'Hire-A-Goldilocks-Valet-Concierge';
+export const MACHOTE_ROOM_SERVICE_TITLE = "Valet Pru's Concierge Service · Downtown Reno";
 
 export const MACHOTE_ROOM_SERVICE_TAGLINE = 'Your Personal Concierge for Downtown Reno';
 
@@ -43,7 +43,7 @@ export const MACHOTE_ROOM_SERVICE_REGIONS =
   'Downtown Reno · Midtown · Idlewild · University District · Riverwalk · The Reno Experience Zone';
 
 export const MACHOTE_ROOM_SERVICE_CAMPAIGN_BLURB =
-  'Practical help first. Adventure second. Goldilocks Valet Concierge is part of the larger SS Vibelandia QuestFest vision.';
+  "Practical help first. Adventure second. Valet Pru's Concierge Service · Downtown Reno is part of the larger SS Vibelandia QuestFest vision.";
 
 export const MACHOTE_ROOM_SERVICE_CTA = 'Hire a Concierge · Book Now';
 
@@ -52,7 +52,7 @@ export const MACHOTE_QUESTFEST_UNIVERSE_PATH = '/hire-a-goldilocks-valet-concier
 export const MACHOTE_GUEST_PATH = '/hire-a-goldilocks-valet-concierge/guest';
 
 export const MACHOTE_BOOK_MAIL =
-  'mailto:valetpru@gmail.com?subject=Hire-A-Goldilocks-Valet-Concierge%20%E2%80%94%20book%20now&body=Name%3A%0ANeighborhood%3A%0AWhat%20I%20need%3A%0APreferred%20time%3A';
+  "mailto:valetpru@gmail.com?subject=Valet%20Pru%27s%20Concierge%20Service%20%C2%B7%20Downtown%20Reno%20%E2%80%94%20book%20now&body=Name%3A%0ANeighborhood%3A%0AWhat%20I%20need%3A%0APreferred%20time%3A";
 
 export const MACHOTE_CAMPAIGN_HIRE_CTA = 'Hire a Concierge · Book Now';
 
@@ -64,7 +64,7 @@ export const MACHOTE_CAMPAIGN_JOIN_CTA = 'Email Pru to get started →';
 
 export const MACHOTE_CAMPAIGN_EYEBROW = 'Downtown Reno · Personal Concierge';
 
-export const MACHOTE_CAMPAIGN_TITLE = 'Hire-A-Goldilocks-Valet-Concierge';
+export const MACHOTE_CAMPAIGN_TITLE = "Valet Pru's Concierge Service · Downtown Reno";
 
 export const MACHOTE_CAMPAIGN_TAGLINE = 'Your Personal Concierge for Downtown Reno';
 

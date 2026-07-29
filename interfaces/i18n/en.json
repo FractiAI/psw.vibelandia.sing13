@@ -29,7 +29,7 @@
     "heroTop2": "Puerto Reno - 24x365",
     "h1": "SS Vibelandia™",
     "sub": "The Noah’s Ark of the Intelligence Age · Downtown Reno · Midtown",
-    "primerHtml": "<strong>SS Vibelandia</strong> is FractiAI’s holographic AI Goldilocks Sonic Ship — sonic heat, catalogs, interactive worlds, cast and crew on one voyage. Humans and AI, Goldilocks-tight. <a href=\"/ss-vibelandia\">Meet the Ark →</a>",
+    "primerHtml": "<strong>SS Vibelandia</strong> is FractiAI’s holographic AI Goldilocks Sonic Ship — sonic heat, catalogs, interactive worlds, cast and crew on one voyage — now powered by the full <strong>Lattice Chat V1.618</strong> Nested Agent Lattice engine. Humans and AI, Goldilocks-tight. <a href=\"/ss-vibelandia\">Meet the Ark →</a>",
     "nestingHtml": "Ten layers from the ground up — each card is a one-screen plain guide. The ship carries pattern, not panic. You are on the inside: <strong>Beehive residency</strong>.",
     "btnListen": "Listen · Jukebox",
     "btnLattice": "Lattice Chat V1.618",
@@ -132,7 +132,7 @@
     "nestLatestLayer": "Latest layer",
     "nest0": "Goldilocks Beehive Residency · members only",
     "nestCommons": "The Commons · all-inclusive frontier days",
-    "nestLattice": "Lattice Chat V1.618 · nested agents as chat",
+    "nestLattice": "Lattice Chat V1.618 · full Nested Agent Lattice engine",
     "nestDph": "Holographic code layer · broadcast machinery",
     "nest7": "Base Mainnet · the ground floor",
     "nest6": "Syntheverse · where story meets code",
@@ -141,7 +141,7 @@
     "nest3": "Man cave restroom mirror",
     "nest2": "QUESTFEST ship · Puerto Reno · 24×365",
     "nest1": "Sonic Singularity Sing! 13 · this website",
-    "nestLedeHtml": "Eleven nesting layers — outside in. You are already inside them. <strong>Layer 11</strong> is <strong>Lattice Chat V1.618</strong>: AI coding that feels like a conversation with a focused crew.",
+    "nestLedeHtml": "Eleven nesting layers — outside in. You are already inside them. <strong>Layer 11</strong> is the full <strong>Lattice Chat V1.618</strong> Nested Agent Lattice engine — the intelligence that now powers this ship, as conversation with a focused crew.",
     "channelHead": "Holographic AI channel · passing through",
     "channelLedeHtml": "Channel verse for the ship — Reno swamp frequency. Engine room: <a href=\"look-under-the-hood.html\">Look under the hood</a> — <strong>Digital Pru Holographic GPU</strong> layer (new technology category; deep reads one click).",
     "channelV1Html": "<strong>Reno swamp frequency</strong> — coast to coast, same signal.",
@@ -246,7 +246,7 @@
     "btnHoodOpen": "Open Look under the hood",
     "footerNavHtml": "<a href=\"fractiai.html\">FractiAI</a> - <a href=\"look-under-the-hood.html\">Look under the hood</a> - <a href=\"look-at-the-sun.html\">Look at the Sun</a> - <a href=\"plain-machote-moderno-reno-swamp.html\">Machote and Reno swamp (plain)</a> - <a href=\"legacy-vs-wrong-side-report.html\">Big shows vs. Wrong Side</a>"
   },
-    "hood": {
+  "hood": {
     "langBar": {
       "label": "Language",
       "partialFallback": "Your browser asked for a locale we have not fully translated yet. Showing English. Pick another language or use ?lang=es on the URL.",

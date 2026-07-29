@@ -52,27 +52,52 @@ Applying $\hat{W}_k\lvert\Omega\rangle=e^{i\theta_k\Phi_{\mathrm{EGS}}}\lvert\ps
 
 ---
 
-## 2. Pillar I: Holographic Decoding
+## 2. Pillar I: Holographic Decoding of the *Pogonomyrmex barbatus* Genome
 
-### 2.1 Words ($\hat{W}_k$ — Biogenic Amine & Chemosensory Gates)
+**Honesty.** The following decoded scripts are **operator poetry** for Omni-Lattice / Lattice Chat — not wet-lab gene ontology replacements. Field science (Friedman, Gordon, and collaborators) remains the empirical authority.
 
-| Gate | Lattice gloss (metaphor) |
-|------|--------------------------|
-| **DAT / Dopamine** | Elevate foraging impulse; lower humidity risk barrier |
-| **Octopamine** | Calibrate motor coordination; maintain tactile sensitivity |
-| **Serotonin / Tyramine** | Dampen stress decoherence; stabilize hydration state |
-| **OrCo / CHC** | Identify nestmate phase; verify returning forager interaction |
+### 2.1 Words ($\hat{W}_k$ — Biogenic Amine & Chemosensory Phase Gates)
 
-Catalog draft levels ($47\pm 9$, $36\pm 10$ pg/brain) are **literature-order design labels** for simulation—not re-measured FSCV in this suite.
+Brain transcriptomics and single-forager FSCV measurements in *P. barbatus* reveal four primary neuro-chemical operators regulating forager activation and risk thresholds. Each gate is a phase operator $\hat{W}_k=e^{i\theta_k\Phi_{\mathrm{EGS}}}$:
 
-### 2.2 Sentences ($\hat{S}$)
+**DAT / Dopamine-Gate** ($47\pm 9\,\mathrm{pg/brain}$ — literature-order design label):
+> “Elevate Foraging Impulse; Lower Humidity Risk Barrier.”
 
-1. **Antennal Interaction Rate Loop** — match outbound departures to returning contact frequency / seed availability.  
-2. **Hydration–Desiccation Balancing Loop** — retract foragers under high vapor-pressure deficit.
+Dopamine acts as the primary scalar multiplier advancing the forager state vector into the external desert matrix.
 
-### 2.3 Superorganism Lineage Narrative
+**Octopamine-Gate** ($36\pm 10\,\mathrm{pg/brain}$ — literature-order design label):
+> “Calibrate Motor Coordination; Maintain Tactile Sensitivity.”
 
-Desert architects of Rodeo / Chiricahua — weigh moisture against seed harvest; colony as a multi-decade continuous wave (narrative tier).
+Correlates with tyramine/serotonin vectors to modulate physical seed-handling agility.
+
+**Serotonin / Tyramine-Gates:**
+> “Dampen Stress Decoherence; Stabilize Internal Hydration State.”
+
+Regulates desiccation resilience under extreme thermal gradient stress.
+
+**OrCo / Cuticular Hydrocarbon (CHC) Gate:**
+> “Identify Nestmate Phase; Verify Returning Forager Interaction.”
+
+Reads antennal contact frequencies to calculate spatial return rates.
+
+### 2.2 Sentences ($\hat{S}$ — Stigmergic & Desiccation Feedback Loops)
+
+Interferometric loops $\hat{S}=\prod_{k=1}^{N}\hat{W}_k$:
+
+**Antennal Interaction Rate Loop — Decoded Script:**
+> “MEASURE RETURNING FORAGER CONTACT FREQUENCY AT NEST ENTRANCE; ADJUST OUTBOUND DEPARTURE RATE TO MATCH AMBIENT SEED AVAILABILITY.”
+
+Decentralized feedback loop solving foraging density without individual global knowledge.
+
+**Hydration–Desiccation Balancing Loop — Decoded Script:**
+> “CALCULATE WATER-LOSS RISK COEFFICIENT; RETRACT FORAGERS DURING HIGH VAPOR-PRESSURE DEFICIT TO PRESERVE COLONY WATER RESERVES.”
+
+Minimizes environmental surprise (Active Inference framing).
+
+### 2.3 The *Pogonomyrmex* Superorganism Lineage Narrative (Story)
+
+**The Red Harvester Proclamation:**
+> “WE ARE THE DESERT ARCHITECTS OF RODEO AND CHIRICAHUA. WE DO NOT EXPEND WATER RECKLESSLY; WE WEIGH EVERY DROP OF MOISTURE AGAINST EVERY SEED HARVESTED. THROUGH BIOGENIC AMINE TUNING AND ACTIVE INFERENCE, OUR COLONY LIVES AS A SINGLE 50-YEAR CONTINUOUS WAVE, CASTING OUR ANCESTRAL SHADOW ACROSS THE ARID LATTICE.”
 
 ---
 

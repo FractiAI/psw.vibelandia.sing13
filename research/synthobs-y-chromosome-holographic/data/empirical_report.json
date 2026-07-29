@@ -1,0 +1,107 @@
+{
+  "docId": "WP-SYNTHOBS-Y-CHROMOSOME-HOLO-OPERATORS-2026-07",
+  "registryId": "synthobs-y-chromosome-holographic-2026-07",
+  "title": "Decoded Genomic Script — Human Y Chromosome Holographic Operator Translation",
+  "generatedAt": "2026-07-29T02:58:16.589Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Y holographic operator poetry. Not wet-lab gene ontology.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_word_gates",
+        "title": "Five Y codon / box word gates",
+        "gates": {
+          "atg": "ignite_sensing_vector",
+          "tata": "align_base_lattice",
+          "sry_hmg": "pivot_polar_geometry",
+          "azf_yda": "germline_signal_stream",
+          "stop_codons": "lock_shadow_state"
+        },
+        "pass": true
+      },
+      {
+        "id": "E2_lambda_egs_identity",
+        "title": "λ_EGS = ln(E_F) / 2π",
+        "abs_err": 0,
+        "pass": true
+      },
+      {
+        "id": "E3_sentence_loops",
+        "title": "Three palindromic sentence loops",
+        "loops": {
+          "p8_p7_sentinel": "unbroken_anchor",
+          "p6_p4_somatic": "dense_shadow_strength",
+          "p3_p1_azfc": "recursive_seed_generation"
+        },
+        "pass": true
+      },
+      {
+        "id": "E4_haplogroup_story",
+        "title": "Y haplogroup lineage story present",
+        "story": {
+          "tree": "A→CT→R1b/E1b1b/I/J/O/N",
+          "polar_vector": true
+        },
+        "pass": true
+      },
+      {
+        "id": "E5_decoded_scripts_in_paper",
+        "title": "Full decoded Word/Sentence script strings present in paper",
+        "missing": [],
+        "pass": true
+      },
+      {
+        "id": "E6_companion_linkage",
+        "title": "Companion registry IDs linked",
+        "rows": [
+          {
+            "id": "synthobs-holographic-operators-2026-07",
+            "ok": true
+          },
+          {
+            "id": "synthobs-omni-lattice-unification-2026-07",
+            "ok": true
+          },
+          {
+            "id": "synthobs-x-chromosome-holographic-2026-07",
+            "ok": true
+          }
+        ],
+        "pass": true
+      },
+      {
+        "id": "E7_phase_zero_delta_s",
+        "title": "E_F^k + ΔS≈0 on weights",
+        "delta_s": 2.220446049250313e-16,
+        "pass": true
+      },
+      {
+        "id": "E8_honesty_gate",
+        "title": "Honesty — operator poetry not wet-lab ontology",
+        "labeled": {
+          "status": "operator_poetry_not_wet_lab",
+          "replaces_genomics": false
+        },
+        "pass": true
+      },
+      {
+        "id": "E9_lattice_surfaces",
+        "title": "Lattice Chat Y-script ↔ surface map",
+        "surfaces": [
+          "/whitepaper/synthobs-y-chromosome-holographic",
+          "/lattice/learn",
+          "/interfaces/nesting/nest-lattice-chat.html",
+          "/lattice",
+          "/lattice-chat",
+          "docs/SYNTHOBS_Y_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md"
+        ],
+        "pass": true
+      }
+    ],
+    "n_pass": 9,
+    "n_total": 9,
+    "all_pass": true
+  },
+  "phi": 1.618033988749895,
+  "lambda": 0.07658724063250828
+}

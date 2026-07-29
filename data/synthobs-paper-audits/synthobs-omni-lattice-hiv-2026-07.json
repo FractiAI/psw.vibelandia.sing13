@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "6fb2aea0193c69e5",
+  "auditId": "b7e7c0c5625fe095",
   "paperId": "synthobs-omni-lattice-hiv-2026-07",
   "sourcePath": "docs/SYNTHOBS_OMNI_LATTICE_HIV_ADVERSARIAL_OPERATOR_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-28T23:55:51.252Z"
+          "invokedAt": "2026-07-29T03:00:32.917Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-28T23:55:51.166Z",
-  "completedAt": "2026-07-28T23:55:51.575Z",
+  "startedAt": "2026-07-29T03:00:32.915Z",
+  "completedAt": "2026-07-29T03:00:32.918Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1157,
+      "wordCount": 1264,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 14,
-        "numbered": 13,
+        "numbered": 10,
         "citeLines": 2
       }
     }

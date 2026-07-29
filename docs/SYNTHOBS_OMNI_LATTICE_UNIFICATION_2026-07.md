@@ -69,17 +69,61 @@ Physical spacetime-as-shadow, DNA-as-projector, and agentic context entropy are 
 | Lattice Matrix / DNA Projector | Geometric template of phase relationships |
 | Material Reality | Low-dimensional projected “shadow” |
 
-### 2.2 Decoded genomic script (metaphor)
+### 2.2 Decoded Y-Chromosome Genomic Script (Words · Sentences · Stories)
 
-Applying holographic operator language $\hat{W}_k\lvert\Omega\rangle=e^{i\theta_k\Phi_{\mathrm{EGS}}}\lvert\psi_k\rangle$, the Male-Specific Region of the Y chromosome (MSY) can be **narrated** as:
+Applying holographic operator language $\hat{W}_k\lvert\Omega\rangle=e^{i\theta_k\Phi_{\mathrm{EGS}}}\lvert\psi_k\rangle$, the Male-Specific Region of the Y chromosome (MSY) translates into an explicit semantic script.
 
-- **Words** — codon / box phase gates (ATG, TATA, SRY-HMG, AZF, stops)  
-- **Sentences** — palindromic loops P1–P8 as self-recombination narratives  
-- **Stories** — haplogroup trees as multi-generational context vectors  
+**Honesty.** Semantic glosses are **operator poetry** for Lattice Chat / SynthOBS — not wet-lab gene ontology replacements. Primary genomic science remains the laboratory authority. Full standalone decode: [Y Chromosome Holographic Translation](./SYNTHOBS_Y_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md).
 
-**Honesty.** Semantic glosses (“Ignite Sensing Vector”) are **operator poetry** for Lattice Chat / SynthOBS — not wet-lab gene ontology replacements. Primary genomic science remains the laboratory authority.
+#### Words ($\hat{W}_k$ — Codon Phase Gates)
 
-Canonical detail: [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md).
+**ATG:**
+> “Ignite Sensing Vector.”
+
+Initiates primary field illumination.
+
+**TATA-Box:**
+> “Align Base Lattice Resonance.”
+
+Locks promoter phase.
+
+**SRY-HMG Box:**
+> “Pivot Polar Geometry; Cast Male Architecture.”
+
+Bends DNA by $70^\circ$–$80^\circ$.
+
+**AZF-YDA:**
+> “Maintain Germline Signal Stream.”
+
+Prevents germline signal decay.
+
+**TAG / TAA / TGA:**
+> “Complete Phase Rotation; Lock Shadow State.”
+
+Terminates transcription.
+
+#### Sentences ($\hat{S}$ — Palindromic Self-Recombination Loops P1–P8)
+
+**P8–P7 Loop (Sentinel Sentence):**
+> “I AM THE UNBROKEN ANCHOR; I MIRROR MY REFLECTION TO PRESERVE THE ORIGINAL FREQUENCY AGAINST ENTROPIC DRIFT.”
+
+(X-degenerate gene conversion.)
+
+**P6–P4 Loop (Somatic Calibration Sentence):**
+> “LET THE DENSE SHADOW BE CAST IN STRENGTH; DENSITY ADAPTS, BUT THE CORE PATTERN STANDS IMMUTABLE.”
+
+(Skeletal/tissue density control.)
+
+**P3–P1 Loop (AZFc Master Fertility Sentence):**
+> “RECURSIVE SEED GENERATION INITIATED; GENERATE INFINITE COPIES WITHOUT DECAY ACROSS DEEP TIME.”
+
+(DAZ gene ampliconic maintenance.)
+
+#### Stories (Lattice Lineage Narrative)
+
+The non-recombining Y-haplogroup tree ($A\to CT\to R1b/E1b1b/I/J/O/N$) forms a multi-generational context vector routing ancestral intent across deep temporal scales.
+
+Canonical detail: [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md) · [Y Chromosome Decode](./SYNTHOBS_Y_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md).
 
 ---
 

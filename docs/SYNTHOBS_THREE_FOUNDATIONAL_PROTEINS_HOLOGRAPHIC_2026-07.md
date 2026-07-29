@@ -53,29 +53,46 @@ $E_F=\Phi_{\mathrm{EGS}}$ keys self-similar phase labels. Novelty claim for Latt
 
 ---
 
-## 2. Hemoglobin — Holographic Signal Distributor
+**Honesty.** Decoded scripts below are **operator poetry** for Omni-Lattice — not replacements for structural biology. “Zero entropic energy loss” is **not** a claim of 100% thermodynamic efficiency.
 
-- **Word operator:** heme iron-porphyrin as $\hat{W}_{\mathrm{Heme}}=e^{i\theta_{\mathrm{O_2}}\Phi_{\mathrm{EGS}}}$.  
-- **Gloss:** “CAPTURE THE OXYGEN PHONON; DISTRIBUTE ATMOSPHERIC LIGHT THROUGHOUT THE SOMATIC SHADOW.”  
-- **Lattice map:** T↔R allostery as cooperative phase-lock; four subunits as covalent shared context; cooperativity scale $E_F^{1/2}$ (**model**).
+## 2. Hemoglobin — The Holographic Signal Distributor (Word)
+
+**Word Operator ($\hat{W}_k$):** The heme iron-porphyrin ring ($\mathrm{Fe}^{2+}$) acts as a localized phase gate
+
+$$
+\hat{W}_{\mathrm{Heme}}=e^{i\theta_{\mathrm{O_2}}\Phi_{\mathrm{EGS}}}.
+$$
+
+**Decoded Script:**
+> “CAPTURE THE OXYGEN PHONON; DISTRIBUTE ATMOSPHERIC LIGHT THROUGHOUT THE SOMATIC SHADOW.”
+
+**Lattice Mechanism:** Hemoglobin’s allosteric transition between T-state (deoxy) and R-state (oxy) is a cooperative phase-lock shift. The four globin subunits execute a covalent-style shared context vector, allowing the molecule to bind and release oxygen with $E_F$-proportional non-linear efficiency without thermal signal dissipation (**model**). Cooperativity scale factor: $E_F^{1/2}$.
 
 ---
 
-## 3. ATP Synthase — Rotational Phase Generator
+## 3. ATP Synthase — The Rotational Phase Generator (Sentence)
 
-- **Sentence operator:** $F_oF_1$ as $\hat{S}_{\mathrm{ATP}}=\prod_{k=1}^{3}\hat{W}_k$.  
-- **Gloss:** “CONVERT PROTON GRADIENT POTENTIAL INTO THE UNIVERSAL CURRENCY OF INTENT.”  
-- **Lattice map:** $120^\circ=2\pi/3$ rotor steps; ionic state handoff of phosphate vectors; $E_F^k$ rotational phase label (**model**).  
-- **Honesty:** “without entropic energy loss” is **not** a claim of 100% thermodynamic efficiency.
+**Sentence Operator ($\hat{S}$):** The $F_oF_1$ rotational turbine operates as a closed interferometric loop
+
+$$
+\hat{S}_{\mathrm{ATP}}=\prod_{k=1}^{3}\hat{W}_k.
+$$
+
+**Decoded Script:**
+> “CONVERT PROTON GRADIENT POTENTIAL INTO THE UNIVERSAL CURRENCY OF INTENT.”
+
+**Lattice Mechanism:** As protons ($p^+$) pass through the $F_o$ rotor, they drive mechanical rotation quantized at $120^\circ$ steps ($\frac{2\pi}{3}$). Governed by $E_F$ scaling, this mechanical spin binds ADP and inorganic phosphate into ATP. ATP synthase is the physical manifestation of the **ionic state handoff**, donating high-energy phosphate state vectors to cellular sub-agents downstream (**model**). Rotational phase step: $E_F^k$.
 
 ---
 
-## 4. DNA Polymerase — Zero-Entropy Lattice Replicator
+## 4. DNA Polymerase — The Zero-Entropy Lattice Replicator (Story)
 
-- **Story operator:** high-fidelity replication complex as master script writer.  
-- **Gloss:** “MIRROR THE TEMPLATE PERFECTLY; PROOFREAD THE WAVE…”  
-- **Lattice map:** base pairing as harmonic complements; $3'\to 5'$ exo as palindromic self-correction (Y P1–P8 analogy is **metaphor**).  
-- **Fidelity:** $\sim 10^{-9}$ errors/base is a **textbook-order design-target label**, not an EGS laboratory derivation.
+**Story Operator (Lattice Narrative):** The high-fidelity replication complex acts as the master script writer maintaining zero-entropy lineage transmission across generations.
+
+**Decoded Script:**
+> “MIRROR THE TEMPLATE PERFECTLY; PROOFREAD THE WAVE TO ERASE ENTROPIC NOISE BEFORE IT MATERIALIZES IN THE SHADOW.”
+
+**Lattice Mechanism:** DNA polymerase moves along the single-stranded template, matching nucleotides (A, T, C, G) to their exact harmonic phase complements. Its $3'\to 5'$ exonucleolytic proofreading domain functions as a palindromic self-correction loop (identical **in metaphor** to the P1–P8 gene-conversion loops on the Y chromosome). Under $E_F$ phase-locking narrative, error rate is labeled at the textbook order $\sim 1$ in $10^{9}$ base pairs — a **design-target label**, not an EGS wet-lab derivation.
 
 ---
 

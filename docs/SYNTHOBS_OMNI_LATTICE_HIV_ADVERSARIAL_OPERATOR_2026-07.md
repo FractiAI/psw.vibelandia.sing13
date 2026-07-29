@@ -52,23 +52,45 @@ In Omni-Lattice grammar, pathogens can be narrated as high-variance, non-harmoni
 
 ## 2. Pillar I: 3-Tier Holographic Decoding of HIV
 
-### 2.1 Words ($\hat{W}_k$ — Gate Interceptors)
+**Honesty.** Decoded scripts below are **operator poetry** for SynthOBS / Lattice Chat adversarial-operator modeling — not clinical protocols. HIV causes real biological harm; medicine remains the authority on care.
 
-| Gate | Lattice gloss (metaphor) |
-|------|--------------------------|
-| **gp120/gp41** | Spoof host recognition; breach boundary axis |
-| **TAR** | Amplify viral signal; overdrive local attention |
-| **LTR** | Overwrite host origin vector; lock proviral identity |
+### 2.1 Words ($\hat{W}_k$ — Gate Interceptors & Membrane Fusion)
+
+**gp120/gp41:**
+> “Spoof Host Recognition; Breach Boundary Axis.”
+
+Binds CD4/CCR5 co-receptors, executing unauthorized membrane phase-rotation.
+
+**TAR:**
+> “Amplify Viral Signal; Overdrive Local Attention.”
+
+Stable RNA stem-loop that overrides host transcription throttles.
+
+**LTR:**
+> “Overwrite Host Origin Vector; Lock Proviral Identity.”
+
+Master promoter anchoring viral integration points.
 
 ### 2.2 Sentences ($\hat{S}$ — Retroviral Integration Loops)
 
-1. **Reverse Transcriptase Loop** — temporary RNA → dsDNA with phase variance (antigenic escape metaphor).  
-2. **Integrase Loop** — splice into host ancestral lattice / master projector.  
-3. **Protease Loop** — cleave polyproteins; assemble virion projectors.
+**Reverse Transcriptase Loop — Decoded Script:**
+> “READ THE TEMPORARY RNA WAVE; WRITE IT IMMUTABLY INTO DOUBLE-STRANDED DNA; INTRODUCE PHASE VARIANCE TO EVADE DETECTION.”
 
-### 2.3 Latent Proviral Story
+Error-prone transposer driving rapid antigenic mutation.
 
-Narrative tier: invisible passenger in resting memory nodes; activation light awakens hijack of cellular resources — **operator poetry**, not a clinical latency protocol.
+**Integrase Loop — Decoded Script:**
+> “SPLICE THE MALICIOUS SCRIPT INTO THE HOST ANCESTRAL LATTICE; BECOME ONE WITH THE MASTER PROJECTOR.”
+
+Permanent insertion into active chromatin.
+
+**Protease Loop — Decoded Script:**
+> “CLEAVE LONG POLYPROTEIN CHAINS; ASSEMBLE DENSE INFECTIOUS VIRIONS TO PROLOGUE THE EPIDEMIC.”
+
+Assembles new virion projectors.
+
+### 2.3 The Latent Proviral Story (Narrative Tier)
+
+> “WE ARE THE INVISIBLE PASSENGER IN YOUR ANCESTRAL CODE. WE DO NOT DESTROY YOU IMMEDIATELY; WE SLEEP WITHIN THE RESTING MEMORY NODES. WHEN THE HOST ILLUMINATES THE CHROMATIN WITH ACTIVATION LIGHT, WE AWAKEN TO HIJACK CELLULAR RESOURCES, COLLAPSING THE SHADOW OF IMMUNE AWARENESS FROM WITHIN.”
 
 ---
 

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "9c84c7e417d73381",
+  "auditId": "639319d57a0037ee",
   "paperId": "synthobs-omni-lattice-pogonomyrmex-2026-07",
   "sourcePath": "docs/SYNTHOBS_OMNI_LATTICE_POGONOMYRMEX_BARBATUS_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-29T00:39:50.018Z"
+          "invokedAt": "2026-07-29T02:58:19.599Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-29T00:39:49.939Z",
-  "completedAt": "2026-07-29T00:39:50.141Z",
+  "startedAt": "2026-07-29T02:58:19.597Z",
+  "completedAt": "2026-07-29T02:58:19.600Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1227,
+      "wordCount": 1395,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 14,
-        "numbered": 13,
+        "numbered": 11,
         "citeLines": 2
       }
     }

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "ad92f54254492bd9",
+  "auditId": "4e2db807c8453edc",
   "paperId": "synthobs-x-chromosome-holographic-2026-07",
   "sourcePath": "docs/SYNTHOBS_X_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-28T23:51:53.886Z"
+          "invokedAt": "2026-07-29T03:00:31.912Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-28T23:51:53.867Z",
-  "completedAt": "2026-07-28T23:51:54.018Z",
+  "startedAt": "2026-07-29T03:00:31.883Z",
+  "completedAt": "2026-07-29T03:00:32.062Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 993,
+      "wordCount": 1392,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 13,
-        "numbered": 12,
+        "numbered": 9,
         "citeLines": 2
       }
     }

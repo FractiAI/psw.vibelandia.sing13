@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "86923cd38e7371fc",
-  "paperId": "synthobs-three-foundational-proteins-2026-07",
-  "sourcePath": "docs/SYNTHOBS_THREE_FOUNDATIONAL_PROTEINS_HOLOGRAPHIC_2026-07.md",
+  "auditId": "d00dcf1b2e4f711e",
+  "paperId": "synthobs-y-chromosome-holographic-2026-07",
+  "sourcePath": "docs/SYNTHOBS_Y_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-29T03:00:33.642Z"
+          "invokedAt": "2026-07-29T02:58:18.250Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-29T03:00:33.639Z",
-  "completedAt": "2026-07-29T03:00:33.643Z",
+  "startedAt": "2026-07-29T02:58:18.098Z",
+  "completedAt": "2026-07-29T02:58:18.974Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,12 +125,12 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1160,
+      "wordCount": 733,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 14,
-        "numbered": 13,
+        "links": 12,
+        "numbered": 6,
         "citeLines": 2
       }
     }

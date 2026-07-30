@@ -9,16 +9,16 @@
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0f1a" />
-  <title>SS Vibelandia™ · QUESTFEST · Valet Pru welcomes you · Downtown Reno</title>
-  <meta name="description" content="SS Vibelandia QUESTFEST — Valet Pru is your host. Listen, get Downtown Reno concierge help, or board Get Started. Real human, old-school honor." />
-  <meta property="og:title" content="SS Vibelandia™ · QUESTFEST · hosted by Valet Pru" />
-  <meta property="og:description" content="Preserve the signal. Refine the pattern. Navigate the unknown. Living intelligence ecosystem — Lattice Chat engine under the hull. Puerto Reno harbor." />
+  <title>SS Vibelandia™ · QUESTFEST · Real help in Downtown Reno and beyond</title>
+  <meta name="description" content="SS Vibelandia QUESTFEST — Valet Pru hosts real help in Downtown Reno and beyond. Listen, book Concierge, or Get Started. Real human, old-school honor." />
+  <meta property="og:title" content="SS Vibelandia™ · QUESTFEST · Real help in Downtown Reno and beyond" />
+  <meta property="og:description" content="Real help in Downtown Reno and beyond — Valet Pru hosts QUESTFEST. Listen, Concierge, Get Started. Honor over funnels." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SS Vibelandia™ · Noah’s Ark of the Intelligence Age" />
-  <meta name="twitter:description" content="FractiAI sonic ship · Lattice Chat V1.618 engine · Downtown Reno · Midtown · 24×365." />
-  <meta name="twitter:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-puerto-reno.png" />
+  <meta name="twitter:title" content="SS Vibelandia™ · Real help in Downtown Reno and beyond" />
+  <meta name="twitter:description" content="QUESTFEST · Valet Pru · real help in Downtown Reno and beyond · Midtown · 24×365." />
+  <meta name="twitter:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-puerto-reno.png" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png" />
   <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html" />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +70,7 @@
       background:
         linear-gradient(180deg, rgba(26,18,12,0.25) 0%, rgba(10,8,6,0.82) 48%, var(--bg) 100%),
         linear-gradient(120deg, rgba(212,175,55,0.12) 0%, transparent 42%),
-        url('assets/questfest-hero-ss-vibelandia-puerto-reno.png') center 42% / cover no-repeat;
+        url('assets/questfest-hero-ss-vibelandia-cruiseship.png') center 42% / cover no-repeat;
       min-height: min(88vh, 720px);
       position: relative;
     }
@@ -897,12 +897,31 @@
       overflow: hidden;
       border: 1px solid rgba(212,175,55,0.28);
     }
+    .qf-trust-strip a.qf-trust-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .qf-trust-strip a.qf-trust-link:hover {
+      text-decoration: none;
+    }
+    .qf-trust-strip a.qf-trust-link:hover figure {
+      border-color: rgba(212,175,55,0.65);
+    }
+    .qf-trust-strip a.qf-trust-link:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
     .qf-trust-strip img {
       display: block;
       width: 100%;
       height: auto;
       aspect-ratio: 16 / 10;
       object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .qf-trust-strip a.qf-trust-link:hover img {
+      transform: scale(1.03);
     }
     .qf-trust-strip figcaption {
       position: absolute;
@@ -933,17 +952,17 @@
         />
       </figure>
       <div class="qf-host-hero__copy">
-        <p class="qf-host-hero__eyebrow">Your host · Valet Pru · Downtown Reno</p>
+        <p class="qf-host-hero__eyebrow">Your host · Valet Pru · Downtown Reno and beyond</p>
         <h1 class="kicker"><span class="kicker-brand">SS Vibelandia™</span></h1>
-        <p class="sub">QUESTFEST · music, worlds, and real help in Downtown Reno</p>
+        <p class="sub">Real help in Downtown Reno and beyond.</p>
         <p class="qf-host-hero__line">I’m Valet Pru — welcome aboard. I’ll host you across the whole ship.</p>
         <p class="qf-host-hero__primer">
-          Press play, ask a human when you need one, or book concierge help downtown.
+          Press play, ask a human when you need one, or book Concierge help in Downtown Reno and beyond.
           Honor over funnels. Signal over noise.
         </p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="/listen" data-qv-jukebox>Listen</a>
-          <a class="btn btn-primary" href="/hire-a-goldilocks-valet-concierge">Get help · Concierge</a>
+          <a class="btn btn-primary" href="/listen" data-qv-jukebox>Listen · Jukebox</a>
+          <a class="btn btn-primary" href="/hire-a-goldilocks-valet-concierge">Real help · Concierge</a>
           <a class="btn btn-primary" href="/get-started">Get Started</a>
         </div>
         <p class="cta-row" style="margin-top:0.55rem;">
@@ -971,13 +990,15 @@
       <p class="qf-welcome__body">
         Everything useful lives behind a few clear doors.
         <strong>Listen</strong> for music.
-        <strong>Get help</strong> for Downtown Reno concierge.
+        <strong>Real help</strong> for Concierge in Downtown Reno and beyond.
         <strong>Get Started</strong> if you want the short boarding map.
         I’m your host either way — same human, same email, old-school honor.
       </p>
-      <p class="qf-welcome__intentions">
+      <p class="qf-welcome__intentions" data-i18n-html="qf.intentionsHtml">
         <strong>Intentions matter</strong>
-        Board with craft, curiosity, and care. We amplify good will — not malice, not noise farming.
+        We deliver old-school, Goldilocks, human-centered service to our local community that appreciates it —
+        aided and enhanced by super AI.
+        What our intentions are <em>not</em>: maximizing profit for our shareholders.
         Fair Exchange holds the rail.
       </p>
       <p class="qf-welcome__sign">
@@ -988,27 +1009,31 @@
     </div>
   </section>
 
-  <div class="qf-trust-strip" aria-label="Valet Pru in Reno">
-    <figure>
-      <img src="/interfaces/goldilocks-deliveries/assets/valet-pru-downtown-reno-poster.jpg" width="1024" height="640" alt="Valet Pru's Concierge — Downtown Reno art deco poster" loading="lazy" decoding="async" />
-      <figcaption>Concierge · Downtown Reno</figcaption>
-    </figure>
-    <figure>
-      <img src="/interfaces/assets/questfest-2026-capitan-welcome.png" width="1200" height="750" alt="Capitan welcome aboard SS Vibelandia QUESTFEST" loading="lazy" decoding="async" />
-      <figcaption>QUESTFEST · welcome aboard</figcaption>
-    </figure>
+  <div class="qf-trust-strip" aria-label="Concierge and QUESTFEST">
+    <a class="qf-trust-link" href="/hire-a-goldilocks-valet-concierge">
+      <figure>
+        <img src="/interfaces/goldilocks-deliveries/assets/valet-pru-concierge-poster-2026-07.jpg" width="1024" height="640" alt="Valet Pru's Concierge — Downtown Reno and beyond art deco poster" loading="lazy" decoding="async" />
+        <figcaption>Concierge · Downtown Reno and beyond →</figcaption>
+      </figure>
+    </a>
+    <a class="qf-trust-link" href="/get-started">
+      <figure>
+        <img src="/interfaces/assets/questfest-2026-capitan-welcome.png" width="1200" height="750" alt="Capitan welcome aboard SS Vibelandia QUESTFEST" loading="lazy" decoding="async" />
+        <figcaption>QUESTFEST · welcome aboard →</figcaption>
+      </figure>
+    </a>
   </div>
 
 
   <section class="qf-doors" id="doors" aria-labelledby="qf-doors-h2">
     <h2 id="qf-doors-h2" class="qf-doors-head">Three Doors</h2>
-    <p class="qf-doors-sub">Three clear doors. Valet Pru hosts all of them. <a href="/get-started" style="color:var(--champagne);font-weight:700;">New here? Get Started →</a> · <a href="/hire-a-goldilocks-valet-concierge" style="color:var(--champagne);font-weight:700;">Need help in Reno? →</a></p>
+    <p class="qf-doors-sub">Three clear doors. Valet Pru hosts all of them. <a href="/get-started" style="color:var(--champagne);font-weight:700;">New here? Get Started →</a> · <a href="/hire-a-goldilocks-valet-concierge" style="color:var(--champagne);font-weight:700;">Need real help in Reno and beyond? →</a></p>
     <div class="qf-door-grid">
       <a class="qf-door" href="/interfaces/questfest-bridge/#/listen" data-qv-jukebox>
         <span class="qf-door-numeral" aria-hidden>I</span>
-        <h3>Listen</h3>
+        <h3>Listen · Jukebox</h3>
         <p>Press play into Reno swamp heat, caliente swing, Golden Bachdoor counterpoint. First month of listens on us; then $16.18/mo in the tip jar keeps you in the room.</p>
-        <span class="cta">What Listen is →</span>
+        <span class="cta">Open the Jukebox →</span>
       </a>
       <a class="qf-door" href="/interfaces/whitepaper-catalog.html">
         <span class="qf-door-numeral" aria-hidden>II</span>
@@ -1112,7 +1137,7 @@
         <li><a href="/listen"><strong>Carousel of Media</strong> Listen · catalog &amp; play</a></li>
         <li><a href="/"><strong>Sonic Singularity</strong> QUESTFEST top deck</a></li>
         <li><a href="/ss-vibelandia"><strong>SS Vibelandia</strong> The Ark profile</a></li>
-        <li><a href="/hire-a-goldilocks-valet-concierge"><strong>Reno Singularity</strong> Valet Pru's Concierge · Downtown Reno</a></li>
+        <li><a href="/hire-a-goldilocks-valet-concierge"><strong>Reno Singularity</strong> Valet Pru's Concierge · Downtown Reno and beyond</a></li>
         <li><a href="/get-started"><strong>Renovation Realm</strong> Get Started · board here</a></li>
       </ul>
     </aside>

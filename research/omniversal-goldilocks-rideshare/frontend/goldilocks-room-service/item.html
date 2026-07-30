@@ -76,7 +76,19 @@
       if (lead) lead.textContent = item.lead;
       if (img) { img.src = item.image; img.alt = item.imageAlt; }
       if (body) {
-        body.innerHTML = item.body.map(function (p) { return '<p>' + p + '</p>'; }).join('') +
+        body.innerHTML = (item.body || []).map(function (block) {
+          if (typeof block === 'string') return '<p>' + block + '</p>';
+          if (!block || !block.type) return '';
+          if (block.type === 'h3') return '<h3 class="grs-item-body__h">' + block.text + '</h3>';
+          if (block.type === 'quote') return '<blockquote class="grs-item-body__quote">' + block.text + '</blockquote>';
+          if (block.type === 'ul') {
+            return (block.title ? '<p class="grs-item-body__list-title"><strong>' + block.title + '</strong></p>' : '') +
+              '<ul class="grs-item-body__list">' +
+              (block.items || []).map(function (i) { return '<li>' + i + '</li>'; }).join('') +
+              '</ul>';
+          }
+          return '';
+        }).join('') +
           '<p><strong>Floor:</strong> ' + item.floorLabel + '</p>';
       }
 

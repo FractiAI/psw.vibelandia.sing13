@@ -71,6 +71,16 @@ a:hover { color: #fef3c7; text-decoration: underline; }
 .bh-terms {
   margin-bottom: 2rem;
 }
+.bh-quote {
+  margin: 1rem 0 1.15rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--bh-gold);
+  background: rgba(232, 208, 137, 0.08);
+  color: var(--bh-foam);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-style: italic;
+}
 .bh-manifesto h2,
 .bh-protocol h2,
 .bh-terms h2,

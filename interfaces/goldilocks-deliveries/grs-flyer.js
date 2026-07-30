@@ -8,7 +8,7 @@
   var HOME = 'https://www.ssvibelandiaquestfest24x365.com/hire-a-goldilocks-valet-concierge';
   var ASSET = '/interfaces/goldilocks-deliveries/assets';
   var QR_SRC = ASSET + '/valet-pru-concierge-qr-print.png';
-  var PHOTO_SRC = ASSET + '/valet-pru-downtown-reno-poster.jpg';
+  var PHOTO_SRC = ASSET + '/valet-pru-concierge-poster-2026-07.jpg';
   var HOST_SRC = '/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg';
 
   // 6" × 4" at 300 dpi

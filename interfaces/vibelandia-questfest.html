@@ -897,12 +897,31 @@
       overflow: hidden;
       border: 1px solid rgba(212,175,55,0.28);
     }
+    .qf-trust-strip a.qf-trust-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .qf-trust-strip a.qf-trust-link:hover {
+      text-decoration: none;
+    }
+    .qf-trust-strip a.qf-trust-link:hover figure {
+      border-color: rgba(212,175,55,0.65);
+    }
+    .qf-trust-strip a.qf-trust-link:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
     .qf-trust-strip img {
       display: block;
       width: 100%;
       height: auto;
       aspect-ratio: 16 / 10;
       object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .qf-trust-strip a.qf-trust-link:hover img {
+      transform: scale(1.03);
     }
     .qf-trust-strip figcaption {
       position: absolute;
@@ -975,9 +994,11 @@
         <strong>Get Started</strong> if you want the short boarding map.
         I’m your host either way — same human, same email, old-school honor.
       </p>
-      <p class="qf-welcome__intentions">
+      <p class="qf-welcome__intentions" data-i18n-html="qf.intentionsHtml">
         <strong>Intentions matter</strong>
-        Board with craft, curiosity, and care. We amplify good will — not malice, not noise farming.
+        We deliver old-school, Goldilocks, human-centered service to our local community that appreciates it —
+        aided and enhanced by super AI.
+        What our intentions are <em>not</em>: maximizing profit for our shareholders.
         Fair Exchange holds the rail.
       </p>
       <p class="qf-welcome__sign">
@@ -988,15 +1009,19 @@
     </div>
   </section>
 
-  <div class="qf-trust-strip" aria-label="Valet Pru in Reno">
-    <figure>
-      <img src="/interfaces/goldilocks-deliveries/assets/valet-pru-downtown-reno-poster.jpg" width="1024" height="640" alt="Valet Pru's Concierge — Downtown Reno and beyond art deco poster" loading="lazy" decoding="async" />
-      <figcaption>Concierge · Downtown Reno and beyond</figcaption>
-    </figure>
-    <figure>
-      <img src="/interfaces/assets/questfest-2026-capitan-welcome.png" width="1200" height="750" alt="Capitan welcome aboard SS Vibelandia QUESTFEST" loading="lazy" decoding="async" />
-      <figcaption>QUESTFEST · welcome aboard</figcaption>
-    </figure>
+  <div class="qf-trust-strip" aria-label="Concierge and QUESTFEST">
+    <a class="qf-trust-link" href="/hire-a-goldilocks-valet-concierge">
+      <figure>
+        <img src="/interfaces/goldilocks-deliveries/assets/valet-pru-concierge-poster-2026-07.jpg" width="1024" height="640" alt="Valet Pru's Concierge — Downtown Reno and beyond art deco poster" loading="lazy" decoding="async" />
+        <figcaption>Concierge · Downtown Reno and beyond →</figcaption>
+      </figure>
+    </a>
+    <a class="qf-trust-link" href="/get-started">
+      <figure>
+        <img src="/interfaces/assets/questfest-2026-capitan-welcome.png" width="1200" height="750" alt="Capitan welcome aboard SS Vibelandia QUESTFEST" loading="lazy" decoding="async" />
+        <figcaption>QUESTFEST · welcome aboard →</figcaption>
+      </figure>
+    </a>
   </div>
 
 

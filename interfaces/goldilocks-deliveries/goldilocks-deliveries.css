@@ -771,7 +771,11 @@ body.grs-deco-bg .grs-join {
   transition: filter 0.15s ease, transform 0.15s ease;
 }
 .grs-top-nav__btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
-.grs-top-nav__btn--hire {
+.grs-top-nav__btn--hire,
+a.grs-top-nav__btn--hire,
+a.grs-top-nav__btn--hire:any-link,
+a.grs-top-nav__btn--hire:hover,
+a.grs-top-nav__btn--hire:focus-visible {
   color: #1a1208;
   background: linear-gradient(180deg, var(--grs-hire-hi), var(--grs-hire));
   border: 1px solid rgba(234, 179, 8, 0.65);
@@ -887,7 +891,11 @@ body.grs-deco-bg .grs-join {
 }
 .grs-hero-cta-row .grs-btn { margin-top: 0; }
 
-.grs-btn--hire {
+.grs-btn--hire,
+a.grs-btn--hire,
+a.grs-btn--hire:any-link,
+a.grs-btn--hire:hover,
+a.grs-btn--hire:focus-visible {
   color: #1a1208;
   background: linear-gradient(180deg, var(--grs-hire-hi), var(--grs-hire));
   border-color: rgba(234, 179, 8, 0.7);

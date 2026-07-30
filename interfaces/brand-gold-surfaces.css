@@ -46,7 +46,7 @@ samp {
   padding: 0.05em 0.3em;
 }
 
-/* Button-styled links keep their own colors */
+/* Button-styled links keep their own colors (a:any-link must not win) */
 a.deck-btn,
 a.gs-btn,
 a.li-btn,
@@ -61,6 +61,25 @@ a.cm-btn,
 a.bh-btn,
 a.nest-member-bar__btn,
 a.machote-campaign-btn,
-a.deck-paper-card {
+a.deck-paper-card,
+a.grs-btn,
+a.grs-top-nav__btn {
+  text-decoration: none;
+}
+
+/* Solid gold CTAs need dark ink — cream/white text fails contrast on gold fill */
+a.grs-btn--hire,
+a.grs-btn--hire:any-link,
+a.grs-btn--hire:hover,
+a.grs-btn--hire:focus-visible,
+a.grs-top-nav__btn--hire,
+a.grs-top-nav__btn--hire:any-link,
+a.grs-top-nav__btn--hire:hover,
+a.grs-top-nav__btn--hire:focus-visible,
+a.nest-member-bar__btn--gold,
+a.nest-member-bar__btn--gold:any-link,
+a.nest-member-bar__btn--gold:hover,
+a.nest-member-bar__btn--gold:focus-visible {
+  color: #1a1208;
   text-decoration: none;
 }

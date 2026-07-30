@@ -20,7 +20,7 @@ export const BRIDGE_SECTIONS: BridgeSection[] = [
     paragraphs: [
       'The Sonic Singularity is where music stops being background noise and becomes the operating signal — catalog, story, and frequency in one living broadcast.',
       'On this edge you get a sovereign jukebox: master catalog, playlists you build, Reno swamp beats caliente, and the hydrogen Y line carried in every track — not just a list of file names.',
-      'Listen is the jukebox. Bridge is this explanation. DJ is where you upload and feed the ship.',
+      'Listen is the jukebox. Bridge routes back to QUESTFEST — Capitan\'s Bridge home. DJ is where you upload and feed the ship. About explains Reno Holographic Swamp Beats Caliente.',
     ],
   },
   {
@@ -38,7 +38,7 @@ export const BRIDGE_SECTIONS: BridgeSection[] = [
     paragraphs: [
       'SS Vibelandia™ is FractiAI’s Ark archetype: not escape from the world, but preserving and carrying forward the living patterns of knowledge, creativity, wisdom, and emerging AI into the next intelligence epoch.',
       'Mission: preserve the signal, refine the pattern, navigate the unknown. Catalog as archive, playlist as lifeboat, broadcast as beacon. Goldilocks destination: technology without alienation, intelligence without domination, human agency with AI amplification.',
-      'Operational tier: this site is software — audio hosting, playlists, honor passes, Downtown Reno · Midtown harbor. Story tier: the Ark names the why. New covenant: intelligence must evolve in service of life.',
+      'Operational tier: this site is software — audio hosting, playlists, honor passes, Downtown Reno and beyond harbor. Story tier: the Ark names the why. New covenant: intelligence must evolve in service of life.',
     ],
   },
   {
@@ -64,6 +64,6 @@ export const BRIDGE_SECTIONS: BridgeSection[] = [
 export const BRIDGE_HONESTY_NOTE =
   'Honesty boundary: Noah\'s Ark, OS awareness, and disruption language are narrative and architectural frames in the Syntheverse catalog — paired with real software (this jukebox, server catalog, honor passes). The HGAI OS plain minimum and boundaries above state what is and is not claimed. Not weather prophecy, not financial advice.';
 
-export const BRIDGE_CTA_LISTEN = 'Open Listen — sovereign jukebox';
+export const BRIDGE_CTA_LISTEN = 'Open Listen — jukebox';
 
 export const BRIDGE_CTA_UPLOAD = 'Upload on DJ tab';

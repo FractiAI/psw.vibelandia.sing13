@@ -10,7 +10,7 @@ export const SONIC_CATALOG_DISPLAY_NAME =
 
 /** What the master list *is* — not file-management instructions. */
 export const SONIC_SINGULARITY_DESCRIPTION =
-  "Sovereign broadcast from the Holographic Goldilocks Sonic Ship — Reno swamp beats caliente, the living hydrogen Y line, φ, and the Y-frontiersmen Machote Modernos in one frequency that creates reality. Hero Jo's Golden Bachdoor Hit Factory holds the conductor rail; this catalog is the full sound on your device.";
+  "Broadcast from the Holographic Goldilocks Sonic Ship — Reno swamp beats caliente, the living hydrogen Y line, φ, and the Y-frontiersmen Machote Modernos in one frequency that creates reality. Hero Jo's Golden Bachdoor Hit Factory holds the conductor rail; this catalog is the full sound on your device.";
 
 /** One-line tag for playlist cards / sidebar hint row. */
 export const SONIC_SINGULARITY_TAGLINE =

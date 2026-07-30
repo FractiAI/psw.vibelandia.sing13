@@ -22,7 +22,13 @@ export function BridgeExplainerPage() {
     <div className="jb-bridge">
       <header className="jb-top jb-top--slim">
         <nav className="jb-nav" aria-label="Site">
-          <span className="jb-nav__here">Bridge</span>
+          <a href="/questfest" className="jb-nav__link">
+            Bridge
+          </a>
+          <span aria-hidden="true">·</span>
+          <a href="/about/reno-holographic-swamp-beats-caliente" className="jb-nav__link">
+            About
+          </a>
           <span aria-hidden="true">·</span>
           <Link to="/listen">Jukebox</Link>
           <span aria-hidden="true">·</span>

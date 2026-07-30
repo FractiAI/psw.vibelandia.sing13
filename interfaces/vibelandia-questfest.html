@@ -9,12 +9,12 @@
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0f1a" />
-  <title>SS Vibelandia™ · QUESTFEST · Real help in Downtown Reno and beyond</title>
+  <title>SS Vibelandia · QUESTFEST · Real help in Downtown Reno and beyond</title>
   <meta name="description" content="SS Vibelandia QUESTFEST — Valet Pru hosts real help in Downtown Reno and beyond. Listen, book Concierge, or Get Started. Real human, old-school honor." />
-  <meta property="og:title" content="SS Vibelandia™ · QUESTFEST · Real help in Downtown Reno and beyond" />
+  <meta property="og:title" content="SS Vibelandia · QUESTFEST · Real help in Downtown Reno and beyond" />
   <meta property="og:description" content="Real help in Downtown Reno and beyond — Valet Pru hosts QUESTFEST. Listen, Concierge, Get Started. Honor over funnels." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SS Vibelandia™ · Real help in Downtown Reno and beyond" />
+  <meta name="twitter:title" content="SS Vibelandia · Real help in Downtown Reno and beyond" />
   <meta name="twitter:description" content="QUESTFEST · Valet Pru · real help in Downtown Reno and beyond · Midtown · 24×365." />
   <meta name="twitter:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png" />
   <meta property="og:type" content="website" />
@@ -87,16 +87,21 @@
       font-family: 'Bebas Neue', Impact, sans-serif;
       font-size: clamp(2.6rem, 10vw, 5rem);
       line-height: 0.95;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.04em;
       color: var(--gold-hi);
       text-shadow: 0 4px 24px rgba(0,0,0,.85);
-        max-width: 14ch;
+      max-width: none;
       font-weight: 400;
     }
     .kicker-brand {
+      display: inline-block;
+      white-space: nowrap;
       user-select: text;
       -webkit-user-select: text;
       cursor: text;
+    }
+    @media (max-width: 380px) {
+      .kicker { font-size: clamp(2.2rem, 11vw, 3.2rem); letter-spacing: 0.03em; }
     }
 
     .sub {
@@ -428,7 +433,7 @@
       border-radius: 4px;
       background: rgba(212, 175, 55, 0.1);
     }
-    .hero .kicker { max-width: 22ch; }
+    .hero .kicker { max-width: none; }
 
     .qf-theater {
       max-width: 36rem;
@@ -861,7 +866,7 @@
       color: var(--gold);
       text-shadow: 0 2px 12px rgba(0,0,0,.75);
     }
-    .qf-host-hero .kicker { max-width: 12ch; }
+    .qf-host-hero .kicker { max-width: none; }
     .qf-host-hero .sub { max-width: 34ch; }
     .qf-host-hero__line {
       margin: 0.55rem 0 0;
@@ -982,7 +987,7 @@
       </figure>
       <div class="qf-host-hero__copy">
         <p class="qf-host-hero__eyebrow">Your host · Valet Pru · Downtown Reno and beyond</p>
-        <h1 class="kicker"><span class="kicker-brand">SS Vibelandia™</span></h1>
+        <h1 class="kicker"><span class="kicker-brand">SS Vibelandia</span></h1>
         <p class="sub">Real help in Downtown Reno and beyond.</p>
         <p class="qf-host-hero__line">I’m Valet Pru — welcome aboard. I’ll host you across the whole ship.</p>
         <p class="qf-host-hero__primer">

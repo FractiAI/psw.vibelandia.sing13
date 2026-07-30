@@ -793,25 +793,42 @@
     .qf-welcome__sign a { color: var(--champagne); font-weight: 700; }
 
     /* Host-first hero · Valet Pru */
-    .hero { justify-content: flex-end; min-height: min(92vh, 780px); }
+    .hero {
+      justify-content: flex-end;
+      align-items: center;
+      min-height: min(92vh, 780px);
+    }
     .qf-host-hero {
       display: grid;
       gap: 1.25rem;
-      align-items: end;
+      align-items: center;
+      justify-items: center;
+      width: 100%;
       max-width: 52rem;
+      margin: 0 auto;
+      text-align: center;
     }
     @media (min-width: 760px) {
       .qf-host-hero {
-        grid-template-columns: minmax(10.5rem, 14rem) 1fr;
+        grid-template-columns: minmax(11rem, 15rem) 1fr;
         gap: 1.75rem 2rem;
+        justify-items: stretch;
+        text-align: left;
         align-items: center;
       }
     }
     .qf-host-hero__photo {
-      margin: 0;
-      width: 100%;
-      max-width: 14rem;
+      margin: 0 auto;
+      width: min(100%, 15rem);
+      max-width: 15rem;
       justify-self: center;
+    }
+    @media (min-width: 760px) {
+      .qf-host-hero__photo {
+        margin: 0;
+        width: 100%;
+        max-width: none;
+      }
     }
     .qf-host-hero__photo img {
       display: block;
@@ -819,9 +836,21 @@
       height: auto;
       aspect-ratio: 3 / 4;
       object-fit: cover;
-      object-position: center center;
+      object-position: 50% 28%;
+      margin: 0 auto;
       border: 1px solid rgba(212, 175, 55, 0.35);
       box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
+    .qf-host-hero__copy {
+      width: 100%;
+    }
+    .qf-host-hero .cta-row {
+      justify-content: center;
+    }
+    @media (min-width: 760px) {
+      .qf-host-hero .cta-row {
+        justify-content: flex-start;
+      }
     }
     .qf-host-hero__eyebrow {
       margin: 0 0 0.35rem;

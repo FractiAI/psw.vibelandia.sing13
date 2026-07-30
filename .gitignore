@@ -24,6 +24,7 @@ voice-config.js
 # Build / output
 dist/
 build/
+output/
 .vercel
 demo-output/
 scripts/.migrate-tmp/

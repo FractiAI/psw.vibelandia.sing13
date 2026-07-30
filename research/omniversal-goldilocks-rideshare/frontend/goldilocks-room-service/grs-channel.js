@@ -75,20 +75,20 @@
     },
     ecoreset: {
       id: 'ecoreset',
-      title: 'EcoReset',
+      title: 'Goldilocks EcoReset Service',
       pill: 'Home · Estate · Business',
       floorLabel: 'Old School Protocol · no payment layer',
       image: ASSET_BASE + '/assets/grs-menu-ecoreset.jpg',
       imageAlt: 'Mid-century modern home at dusk with tended gardens and art deco sun rays',
       lead: 'Two-week test drive for your home, estate, or business — human to human.',
       body: [
-        'EcoReset is not a menu order — it is a residency conversation with PL Taino directly. Property type: home, estate, or business inside or near the bubble.',
+        'Goldilocks EcoReset Service is not a menu order — it is a residency conversation with PL Taino directly. Property type: home, estate, or business inside or near the bubble.',
         'No WhatsApp channel, no honor rail on this door. Email what resonates and we schedule the two-week test drive.',
         'Old School Protocol — no forms funnel, no CRM, no surveillance.'
       ],
-      mailto: 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Goldilocks EcoReset — interested node') +
+      mailto: 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Goldilocks EcoReset Service — interested node') +
         '&body=' + encodeURIComponent('Property type (home / estate / business):\nNeighborhood:\nWindow of interest:\nWhat resonates:'),
-      broadcastLabel: 'EcoReset residency'
+      broadcastLabel: 'Goldilocks EcoReset Service'
     }
   };
 

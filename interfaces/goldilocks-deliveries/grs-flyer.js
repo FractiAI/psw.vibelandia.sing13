@@ -119,18 +119,19 @@
       'Food deliveries · Errands · Pharmacy pickup',
       'Personal assistance · Event planning',
       'House & pet sitting · Hotel / Airbnb help',
+      'Goldilocks EcoReset Service',
       'E-scooter courier · Downtown · Midtown · Idlewild'
     ];
-    ctx.font = '500 28px Inter, system-ui, sans-serif';
+    ctx.font = '500 26px Inter, system-ui, sans-serif';
     ctx.fillStyle = '#d6cfc4';
-    var y = 340;
+    var y = 325;
     for (var i = 0; i < services.length; i++) {
       ctx.fillText('·  ' + services[i], left, y);
-      y += 48;
+      y += 40;
     }
 
     // Contact card
-    roundRect(ctx, left, 560, 520, 280, 18);
+    roundRect(ctx, left, 545, 520, 280, 18);
     ctx.fillStyle = 'rgba(26,18,12,0.72)';
     ctx.fill();
     ctx.strokeStyle = 'rgba(212,175,55,0.4)';
@@ -139,20 +140,20 @@
 
     ctx.fillStyle = '#fef3c7';
     ctx.font = '700 26px Inter, system-ui, sans-serif';
-    ctx.fillText('BOOK NOW', left + 36, 615);
+    ctx.fillText('BOOK NOW', left + 36, 600);
     ctx.fillStyle = '#f5e6c8';
     ctx.font = '600 36px Inter, system-ui, sans-serif';
-    ctx.fillText('(775) 203-1281', left + 36, 675);
+    ctx.fillText('(775) 203-1281', left + 36, 660);
     ctx.font = '500 26px Inter, system-ui, sans-serif';
     ctx.fillStyle = '#d4af37';
-    ctx.fillText('valetpru@gmail.com', left + 36, 725);
+    ctx.fillText('valetpru@gmail.com', left + 36, 710);
     ctx.fillStyle = '#a8a29e';
     ctx.font = '400 22px Inter, system-ui, sans-serif';
-    ctx.fillText('Text, call, or email — I’ll take care of the rest.', left + 36, 780);
+    ctx.fillText('Text, call, or email — I’ll take care of the rest.', left + 36, 765);
 
     // QR panel
     var qx = 1340;
-    var qy = 560;
+    var qy = 545;
     var qs = 320;
     roundRect(ctx, qx - 16, qy - 16, qs + 32, qs + 100, 18);
     ctx.fillStyle = '#ffffff';

@@ -85,13 +85,13 @@
         ctaRow.innerHTML = '';
 
         if (item.mailto) {
-          if (status) status.textContent = 'EcoReset uses the Old School email door — no WhatsApp channel.';
+          if (status) status.textContent = 'Goldilocks EcoReset Service uses the Old School email door — no WhatsApp channel.';
           if (tipWrap) tipWrap.hidden = true;
           if (qtyWrap) qtyWrap.hidden = true;
           var mailBtn = document.createElement('a');
           mailBtn.className = 'grs-btn';
           mailBtn.href = item.mailto;
-          mailBtn.textContent = 'Request EcoReset · email PL Taino →';
+          mailBtn.textContent = 'Request Goldilocks EcoReset Service · email PL Taino →';
           ctaRow.appendChild(mailBtn);
           if (note) note.textContent = 'Human to human. No payment layer on this door.';
           return;

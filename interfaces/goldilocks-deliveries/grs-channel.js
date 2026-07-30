@@ -16,7 +16,7 @@
       imageAlt: 'Golden-age valet on a bicycle carrying a silver room-service cloche through neon-lit downtown Reno',
       lead: 'Order from any purveyor you choose inside our service area — book a Valet for pickup and delivery, or we handle everything for 18% of the total bill.',
       body: [
-        'You may order from wherever you wish inside the Puerto Reno bubble — Downtown · Midtown · UNR · Idlewild · Reno Experience District. You order and pay your purveyor directly, then book a Valet to pick up and deliver. Micro-mobility only: no parking cruise, no sprawl markup, no corporate clock.',
+        'You may order from wherever you wish inside the Puerto Reno bubble — Downtown · Midtown · Southern UNR · Idlewild · Riverwalk. You order and pay your purveyor directly, then book a Valet to pick up and deliver. Micro-mobility only: no parking cruise, no sprawl markup, no corporate clock.',
         'Prefer hands-off? Book us to handle ordering, payment, pickup, and delivery for an additional 18% of the total bill.',
         'Valet tip splits 33% to the app · 67% to the franchisee who accepts and delivers.'
       ],
@@ -183,7 +183,7 @@
       '',
       'What I want:',
       'Tip offered: ' + floorStr + ' (floor)' + (tipExtra ? ' + ' + tipExtra : ''),
-      'Neighborhood (Downtown / Midtown / UNR / Idlewild / Reno Experience District):'
+      'Neighborhood (Downtown / Midtown / Southern UNR / Idlewild / Riverwalk):'
     ];
     if (item.quantity) {
       lines.push('Quantity: ' + qty + ' ' + item.quantity.unitLabel + (qty > 1 ? 's' : ''));

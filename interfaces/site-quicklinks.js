@@ -85,7 +85,7 @@
         '<a href="/lattice">Lattice</a>';
     } else {
       nav.innerHTML =
-        '<a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a>' +
+        '<a href="/questfest">QUESTFEST</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/listen" data-qv-jukebox>Listen</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +

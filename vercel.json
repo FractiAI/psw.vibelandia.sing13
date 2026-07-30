@@ -86,6 +86,30 @@
     { "source": "/executive-ai/", "destination": "/interfaces/executive-ai-onboard/index.html" },
     { "source": "/get-started", "destination": "/interfaces/get-started.html" },
     { "source": "/get-started/", "destination": "/interfaces/get-started.html" },
+    {
+      "source": "/about/reno-holographic-swamp-beats-caliente",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/about/reno-holographic-swamp-beats-caliente/",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/about/reno-swamp-beats",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/about/reno-swamp-beats/",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/plain-machote-moderno-reno-swamp",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/plain-machote-moderno-reno-swamp/",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
     { "source": "/ss-vibelandia", "destination": "/interfaces/ss-vibelandia.html" },
     { "source": "/ss-vibelandia/", "destination": "/interfaces/ss-vibelandia.html" },
     { "source": "/noahs-ark", "destination": "/interfaces/ss-vibelandia.html" },

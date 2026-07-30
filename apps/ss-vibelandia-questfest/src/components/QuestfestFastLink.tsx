@@ -1,1 +1,2 @@
-export const QUESTFEST_DECK_HREF = '/interfaces/vibelandia-questfest.html';
+/** Prefer public rewrite — QUESTFEST is also Capitan's Bridge home. */
+export const QUESTFEST_DECK_HREF = '/questfest';

@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-COMP-COSMO-2026-07-30-REV2`
 **Registry ID:** `synthobs-omni-lattice-report-card-q3-2026`
-**Generated:** 2026-07-30T15:42:06.287Z
+**Generated:** 2026-07-30T20:51:56.179Z
 
 ## Verdict
 

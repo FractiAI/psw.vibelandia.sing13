@@ -27,7 +27,7 @@
 |------|---------------------------|------------------------|
 | **Comparative rubric** | A reproducible **structural scorecard** scoring $\Lambda$CDM+QFT vs Omni-Lattice on Internal Coherence ($\mathcal{C}$) and Parameter Irreducibility ($\mathcal{I}$) | That Omni-Lattice has replaced CMB / BAO / collider empirical calibration |
 | **Published scores** | Standard **68.0/100** ($C{=}82$, $I{=}54$); Omni-Lattice **92.5/100** ($C{=}94$, $I{=}91$) under this equal-weight rubric | A Bayesian evidence ratio or observational falsification of dark matter / dark energy |
-| **$E_F$ role** | One architectural scale invariant (~1.618) used as the Omni-Lattice organizing key | That $E_F$ replaces $\hbar$, $c$, or $G$, or that dark-sector particles are proven nonexistent |
+| **$E_F$ role** | One architectural scale invariant (≈1.618) used as the Omni-Lattice organizing key | That $E_F$ replaces $\hbar$, $c$, or $G$, or that dark-sector particles are proven nonexistent |
 | **Empirical calibration row** | Explicitly awards **Standard Model** the edge on decades of collider/CMB history | That Omni-Lattice already matches that laboratory/sky precision |
 | **Executed suite (E1–E9)** | Rubric arithmetic, fixture coherence/irreducibility ranking, dark-sector bookkeeping, domain outcomes (**9/9**) | Live $N$-body replacement of ΛCDM codes without new observation receipts |
 | **Product scope** | Catalog report card + **standalone** research package | Lattice Chat **engine** wiring |
@@ -40,7 +40,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-**Background.** Modern astrophysics relies on the standard cosmological model ($\Lambda$CDM) combined with Quantum Field Theory (QFT). While empirically validated across localized regimes, $\Lambda$CDM inserts unobserved mass-energy components—Dark Matter (~27%) and Dark Energy (~68%)—alongside approximately 26 fine-tuned fundamental constants. Concurrently, QFT and General Relativity remain mathematically incompatible at Planck scales.
+**Background.** Modern astrophysics relies on the standard cosmological model ($\Lambda$CDM) combined with Quantum Field Theory (QFT). While empirically validated across localized regimes, $\Lambda$CDM inserts unobserved mass-energy components—Dark Matter ($\sim 27\%$) and Dark Energy ($\sim 68\%$)—alongside approximately 26 fine-tuned fundamental constants. Concurrently, QFT and General Relativity remain mathematically incompatible at Planck scales.
 
 **What is novel (scoped).** This **Omni-Lattice Report Card Q3 2026** presents a comparative **structural** evaluation of the Omni-Lattice / SynthOBS Holographic Model against the standard consensus, scoring both frameworks on Internal Coherence ($\mathcal{C}$) and Parameter Irreducibility ($\mathcal{I}$). The Omni-Lattice map uses El Gran Sol’s Fractal Constant ($E_F \approx 1.618$) as a universal scale-invariant operator, introducing a single phase-scaling parameter ($\lambda_{\mathrm{EGS}}$) into wavefield transformations $z(\theta)=e^{(\lambda_{\mathrm{EGS}}+i)\theta}$, and treating gravitational / “dark” effects as **phase-boundary artifacts in the architectural map** rather than separate free entities.
 
@@ -83,7 +83,7 @@ $$\mathrm{Overall} = \frac{C + I}{2}$$
 |----------------------------|--------------------------------|
 | Disjoint micro/macro rules | Unified scale-invariant operator ($E_F$) |
 | 26+ free parameters | Single foundational invariant ($E_F \approx 1.618$) |
-| ~95% unobserved dark sector | Emergent spacetime phase-shadow (map) |
+| ≈95% unobserved dark sector | Emergent spacetime phase-shadow (map) |
 
 ### 2.1 Dark sector
 
@@ -103,7 +103,7 @@ $$\mathrm{Overall} = \frac{C + I}{2}$$
 
 | Domain | Standard Model | Omni-Lattice | Outcome |
 |--------|----------------|--------------|---------|
-| Cosmological mass deficit | ~27% unobserved particles | $E_F$ 2D→3D boundary dispersion (map) | Omni-Lattice |
+| Cosmological mass deficit | ≈27% unobserved particles | $E_F$ 2D→3D boundary dispersion (map) | Omni-Lattice |
 | Cosmic acceleration | Vacuum catastrophe vs $\Lambda$ | $E_F$-scaled expansion pressure (map) | Omni-Lattice |
 | Micro/macro unification | Metric breaks at Planck | Emergent phase-shadow geometry | Omni-Lattice |
 | Empirical calibration | Decades of collider + CMB | Conceptual; interferometric testing ongoing | **Standard Model** |

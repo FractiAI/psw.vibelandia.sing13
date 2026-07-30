@@ -21,7 +21,7 @@
   "domains": [
     {
       "id": "cosmological_mass_deficit",
-      "standard": "Requires ~27% unobserved physical particles (WIMPs/axions).",
+      "standard": "Requires ≈27% unobserved physical particles (WIMPs/axions).",
       "omni": "Derived via 2D→3D E_F holographic boundary dispersion (architectural map).",
       "outcome": "omni_lattice"
     },

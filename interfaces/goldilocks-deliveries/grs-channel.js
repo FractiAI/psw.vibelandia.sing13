@@ -153,11 +153,11 @@
     ecoreset: {
       id: 'ecoreset',
       title: 'Goldilocks EcoReset Service',
-      pill: 'Home · Estate · Business · Steward',
-      floorLabel: 'Old School Protocol · no payment layer',
+      pill: 'Email for quote · no payment layer',
+      floorLabel: 'Email for quote · no payment layer',
       image: ASSET_BASE + '/assets/grs-menu-ecoreset.jpg',
       imageAlt: 'Mid-century modern home at dusk with tended gardens and art deco sun rays',
-      lead: 'A trusted steward relationship — not a job with housing, not a tenant lease. Presence that makes the place function better.',
+      lead: 'A trusted steward relationship — not a job with housing, not a tenant lease. No tip floor, no honor rail, no checkout. Email for a quote.',
       body: [
         'Goldilocks EcoReset Service is another layer of the Goldilocks model: the resident guest at an estate who connects hospitality, care, and creation. You are not hiring a traditional employee or filling a tenant slot. You are opening a <strong>trusted steward</strong> relationship.',
         {
@@ -205,10 +205,16 @@
           type: 'quote',
           text: 'A modern steward’s life: part concierge, part caretaker, part creative resident — where your contribution earns your place.'
         },
-        'That is a different search than a job with housing. It is a patronage-style relationship built around trust. Start as a two-week test drive for home, estate, or business — human to human with PL Taino. Old School Protocol: no WhatsApp channel, no honor rail, no forms funnel on this door.'
+        'That is a different search than a job with housing. It is a patronage-style relationship built around trust. Start as a two-week test drive for home, estate, or business — human to human with PL Taino.',
+        {
+          type: 'h3',
+          text: 'How to engage'
+        },
+        '<strong>No payment layer on this door.</strong> EcoReset is not on the tip-floor / WhatsApp broadcast rail used for food runs and hourly assistance. <strong>Email for a quote</strong> — describe the property, window, and what you need; PL Taino answers human to human. Old School Protocol: no checkout, no honor rail, no forms funnel.'
       ],
-      mailto: 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Goldilocks EcoReset Service — interested node') +
-        '&body=' + encodeURIComponent('Property type (home / estate / business / retreat):\nNeighborhood or region:\nWindow of interest:\nWhat resonates (steward / hospitality / digital bridge):\n'),
+      mailto: 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Goldilocks EcoReset Service — quote request') +
+        '&body=' + encodeURIComponent('Quote request — Goldilocks EcoReset Service\n\nProperty type (home / estate / business / retreat):\nNeighborhood or region:\nWindow of interest:\nWhat you need (steward / hospitality / digital bridge):\nNotes for the quote:\n'),
+      quoteOnly: true,
       broadcastLabel: 'Goldilocks EcoReset Service'
     }
   };

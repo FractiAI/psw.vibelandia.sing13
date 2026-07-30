@@ -96,16 +96,20 @@
         var tipExtra = tipInput ? tipInput.value.trim() : '';
         ctaRow.innerHTML = '';
 
-        if (item.mailto) {
-          if (status) status.textContent = 'Goldilocks EcoReset Service uses the Old School email door — no WhatsApp channel.';
+        if (item.mailto || item.quoteOnly) {
+          if (status) {
+            status.textContent = item.floorLabel
+              ? item.floorLabel + ' — Old School email door, no WhatsApp channel, no tip floor.'
+              : 'Email for quote — no payment layer on this door.';
+          }
           if (tipWrap) tipWrap.hidden = true;
           if (qtyWrap) qtyWrap.hidden = true;
           var mailBtn = document.createElement('a');
-          mailBtn.className = 'grs-btn';
+          mailBtn.className = 'grs-btn grs-btn--hire';
           mailBtn.href = item.mailto;
-          mailBtn.textContent = 'Request Goldilocks EcoReset Service · email PL Taino →';
+          mailBtn.textContent = 'Email for quote →';
           ctaRow.appendChild(mailBtn);
-          if (note) note.textContent = 'Human to human. No payment layer on this door.';
+          if (note) note.textContent = 'No payment layer. No Venmo / PayPal / Cash App checkout here — email Pru for a human quote.';
           return;
         }
 

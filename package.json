@@ -13,6 +13,8 @@
     "compare:lattice": "node scripts/lattice-vs-standard-comparison.mjs",
     "compare:lattice:cursor": "node scripts/lattice-vs-standard-cursor-usage.mjs",
     "compare:lattice:cursor:matrix": "node scripts/lattice-vs-standard-cursor-usage-matrix.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "test:lattice-floors": "node scripts/assert-lattice-token-floors.mjs",
     "build:look-at-the-sun-study": "node scripts/build-look-at-the-sun-study.mjs",
     "build:erdos-catalog": "node scripts/build-erdos-catalog.mjs",
@@ -58,5 +60,8 @@
     "@vercel/blob": "^2.3.3",
     "marked": "^9.1.6",
     "ws": "^8.20.1"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.10"
   }
 }

@@ -417,13 +417,16 @@ body {
   border-radius: 10px;
   font-size: 0.88rem;
   font-weight: 700;
+  font-family: inherit;
   text-decoration: none;
   border: 1px solid var(--grs-gold);
   background: linear-gradient(180deg, rgba(212,175,55,0.2), rgba(212,175,55,0.08));
   color: var(--grs-gold-hi);
   margin-top: 0.5rem;
+  cursor: pointer;
 }
 .grs-btn:hover { filter: brightness(1.1); }
+.grs-btn:disabled { opacity: 0.55; cursor: wait; filter: none; }
 .grs-btn--ghost {
   background: transparent;
   border-color: var(--grs-line);
@@ -1011,6 +1014,64 @@ body.grs-deco-bg .grs-join {
 .grs-title--section {
   font-size: clamp(1.65rem, 5vw, 2.1rem);
 }
+
+/* Scan / postcard flyer */
+.grs-flyer-block {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: linear-gradient(145deg, rgba(36, 26, 16, 0.9), rgba(12, 10, 8, 0.7));
+}
+.grs-flyer-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+@media (min-width: 640px) {
+  .grs-flyer-grid {
+    grid-template-columns: minmax(9rem, 11rem) 1fr;
+    gap: 1.5rem;
+  }
+}
+.grs-flyer-qr {
+  margin: 0;
+  justify-self: center;
+  width: 100%;
+  max-width: 11rem;
+  background: #fff;
+  padding: 0.65rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+.grs-flyer-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.grs-flyer-qr figcaption {
+  margin: 0.45rem 0 0;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1208;
+}
+.grs-flyer-actions__lede {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--grs-champagne);
+}
+.grs-flyer-actions__meta {
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  color: var(--grs-muted);
+}
+.grs-flyer__status {
+  margin: 0.65rem 0 0;
+  font-size: 0.85rem;
+  color: var(--grs-gold-hi);
+}
+.grs-flyer__status--err { color: #fca5a5; }
 
 html.ss-vibelandia-deck .grs-top-nav__btn,
 html.ss-vibelandia-deck .grs-top-nav__btn:hover,

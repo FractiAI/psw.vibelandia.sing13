@@ -43,12 +43,40 @@
         <a class="grs-btn grs-btn--hire" href="tel:+17752031281">(775) 203-1281</a>
         <a class="grs-btn grs-btn--hire" href="mailto:valetpru@gmail.com?subject=Valet%20Pru%27s%20Concierge%20Service%20%E2%80%94%20book%20now&amp;body=Name%3A%0ANeighborhood%3A%0AWhat%20I%20need%3A%0APreferred%20time%3A">Email Pru →</a>
         <a class="grs-btn grs-btn--ghost" href="/hire-a-goldilocks-valet-concierge/guest">Browse services →</a>
+        <a class="grs-btn grs-btn--quest" href="#scan-share">Scan / download flyer →</a>
         <a class="grs-btn grs-btn--quest" href="#about-goldilocks-h2">About Goldilocks →</a>
       </div>
     </div>
   </header>
 
   <main class="grs-wrap grs-business">
+    <section class="grs-regions grs-business-block grs-flyer-block" aria-labelledby="scan-share-h2" id="scan-share">
+      <h2 id="scan-share-h2">Scan · save · print</h2>
+      <p class="grs-business-note">Share Valet Pru’s Concierge with a guest — QR on your phone, or a rich 6×4″ postcard flyer to download and print.</p>
+      <div class="grs-flyer-grid">
+        <figure class="grs-flyer-qr">
+          <img
+            src="/interfaces/goldilocks-deliveries/assets/valet-pru-concierge-qr-print.png"
+            width="540"
+            height="540"
+            alt="QR code linking to Valet Pru's Concierge Service page"
+            decoding="async"
+            loading="lazy"
+          />
+          <figcaption>Scan to open this page</figcaption>
+        </figure>
+        <div class="grs-flyer-actions">
+          <p class="grs-flyer-actions__lede">Postcard flyer includes Downtown Reno art, host photo, booking contacts, and this QR.</p>
+          <div class="grs-hero-cta-row">
+            <button type="button" class="grs-btn grs-btn--hire" id="grs-download-flyer">Download postcard flyer</button>
+            <a class="grs-btn grs-btn--ghost" href="/hire-a-goldilocks-valet-concierge/flyer">Open print flyer →</a>
+          </div>
+          <p class="grs-flyer__status" id="grs-flyer-status" hidden></p>
+          <p class="grs-flyer-actions__meta">PNG · 6×4″ landscape · save to camera roll or print at any shop</p>
+        </div>
+      </div>
+    </section>
+
     <section class="grs-regions grs-business-block" aria-labelledby="services-h2">
       <h2 id="services-h2">Services</h2>
       <ul class="grs-bullet-list">
@@ -328,6 +356,7 @@
     <p><a href="mailto:valetpru@gmail.com?subject=Valet%20Pru%27s%20Concierge%20Service">valetpru@gmail.com</a> · SS Vibelandia QUESTFEST 24×365 · Downtown Reno</p>
   </footer>
   <script src="/interfaces/goldilocks-deliveries/grs-channel.js"></script>
+  <script src="/interfaces/goldilocks-deliveries/grs-flyer.js" defer></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

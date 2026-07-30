@@ -1,7 +1,7 @@
 {
   "name": "psw-vibelandia-sing13",
   "private": true,
-  "description": "SING 13 edge — major singularity upgrade from SING 9. NSPFRNP catalog + SS Vibelandia QUESTFEST 24X365 nest. 13-channel fractal pathfinding spine. Lite edges; no Supabase.",
+  "description": "SING 13 edge \u2014 major singularity upgrade from SING 9. NSPFRNP catalog + SS Vibelandia QUESTFEST 24X365 nest. 13-channel fractal pathfinding spine. Lite edges; no Supabase.",
   "version": "0.1.0",
   "engines": {
     "node": ">=22.13.0"
@@ -49,7 +49,8 @@
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",
-    "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-pchpp": "node research/synthobs-pchpp/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

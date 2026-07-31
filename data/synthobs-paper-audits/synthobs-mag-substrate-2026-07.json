@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "b21e664ecabf4967",
+  "auditId": "69ef6c798d2b87fc",
   "paperId": "synthobs-mag-substrate-2026-07",
   "sourcePath": "docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-31T00:50:46.695Z"
+          "invokedAt": "2026-07-31T18:01:40.980Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-31T00:50:46.693Z",
-  "completedAt": "2026-07-31T00:50:46.695Z",
+  "startedAt": "2026-07-31T18:01:40.980Z",
+  "completedAt": "2026-07-31T18:01:40.980Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,

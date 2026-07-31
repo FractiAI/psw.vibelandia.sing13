@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "49516c3cc7c3039f",
-  "paperId": "dp-aromatic-qed-cavity",
-  "sourcePath": "docs/DIGITAL_PRU_MULTI_SCALE_AROMATIC_QED_CAVITY_2026-05-24.md",
+  "auditId": "0bac5f3eef30c166",
+  "paperId": "awareness-singularities-0-81-2026-07",
+  "sourcePath": "docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-31T18:01:40.947Z"
+          "invokedAt": "2026-07-31T18:01:40.977Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-31T18:01:40.946Z",
-  "completedAt": "2026-07-31T18:01:40.947Z",
+  "startedAt": "2026-07-31T18:01:40.977Z",
+  "completedAt": "2026-07-31T18:01:40.977Z",
   "iterations": 1,
-  "overallScore": 0.847,
+  "overallScore": 0.845,
   "passThreshold": 0.85,
   "convergence": {
     "status": "soft_pass",
@@ -95,15 +95,15 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.847,
+      "overallScore": 0.845,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
         "methodsRepro": 0.6,
         "claimsProportionate": 1,
         "structure": 0.95,
-        "references": 0.35,
-        "abstractTitle": 1,
+        "references": 0.7,
+        "abstractTitle": 0.55,
         "synthobsAttribution": 1,
         "technicalPrecision": 0.85
       }
@@ -116,25 +116,24 @@
       "methodsRepro": 0.6,
       "claimsProportionate": 1,
       "structure": 0.95,
-      "references": 0.35,
-      "abstractTitle": 1,
+      "references": 0.7,
+      "abstractTitle": 0.55,
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.847,
+    "overallScore": 0.845,
     "criticalBlockers": [],
     "suggestions": [
-      "Expand References with ≥3 citable sources or repo cross-links.",
       "Document methods, data sources, and reproducibility commands."
     ],
     "meta": {
-      "wordCount": 2359,
+      "wordCount": 752,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 2,
-        "numbered": 8,
-        "citeLines": 0
+        "links": 4,
+        "numbered": 5,
+        "citeLines": 1
       }
     }
   },

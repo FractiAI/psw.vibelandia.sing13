@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "cb23236b5526ab73",
+  "auditId": "8585a092f09fad7d",
   "paperId": "synthobs-unified-neutronic-agent-2026-07",
   "sourcePath": "docs/SYNTHOBS_UNIFIED_NEUTRONIC_AGENT_ISOTOPIC_LOAD_BALANCING_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-28T23:19:14.709Z"
+          "invokedAt": "2026-07-31T18:01:40.971Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-28T23:19:14.696Z",
-  "completedAt": "2026-07-28T23:19:14.855Z",
+  "startedAt": "2026-07-31T18:01:40.971Z",
+  "completedAt": "2026-07-31T18:01:40.972Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

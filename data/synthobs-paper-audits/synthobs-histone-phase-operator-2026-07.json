@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "f7c38aacc6a79066",
+  "auditId": "4cbdd38596f9ceb4",
   "paperId": "synthobs-histone-phase-operator-2026-07",
   "sourcePath": "docs/SYNTHOBS_TBME_HISTONE_PHASE_LOCK_OPERATOR_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-31T17:59:01.680Z"
+          "invokedAt": "2026-07-31T18:01:40.983Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-31T17:59:01.679Z",
-  "completedAt": "2026-07-31T17:59:01.680Z",
+  "startedAt": "2026-07-31T18:01:40.983Z",
+  "completedAt": "2026-07-31T18:01:40.983Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

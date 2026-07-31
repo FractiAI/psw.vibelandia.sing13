@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "5012e1001c5c225d",
+  "auditId": "fb873eeeb9e9e7a9",
   "paperId": "synthobs-prion-refold-2026-07",
   "sourcePath": "docs/SYNTHOBS_PRION_REFOLD_HOLOGRAPHIC_MAGNETIC_PHASE_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-31T17:03:51.431Z"
+          "invokedAt": "2026-07-31T18:01:40.982Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-31T17:03:51.430Z",
-  "completedAt": "2026-07-31T17:03:51.431Z",
+  "startedAt": "2026-07-31T18:01:40.982Z",
+  "completedAt": "2026-07-31T18:01:40.982Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1880,
+      "wordCount": 1886,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

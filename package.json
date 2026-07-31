@@ -57,7 +57,8 @@
     "research:synthobs-pchpp": "node research/synthobs-pchpp/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-omni-lattice-report-card-q3-2026": "node research/synthobs-omni-lattice-report-card-q3-2026/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-mag-substrate": "node research/synthobs-mag-substrate/scripts/run_empirical_pipeline.mjs",
-    "research:synthobs-recursive-attn-mag": "node research/synthobs-recursive-attn-mag/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-recursive-attn-mag": "node research/synthobs-recursive-attn-mag/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-prion-refold": "node research/synthobs-prion-refold/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

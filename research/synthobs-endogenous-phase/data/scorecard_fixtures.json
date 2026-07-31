@@ -1,0 +1,37 @@
+{
+  "schema": "synthobs-endogenous-phase-scorecard/v1",
+  "honesty": "Authored architectural rubric inputs. Not wet-lab magnetometry, clinical HRV trials, or medical outcomes.",
+  "standard": {
+    "label": "External Device Exogenous Control Model",
+    "coherence": 78,
+    "irreducibility": 68,
+    "overall": 73.0,
+    "n_paradox": 7,
+    "n_singularities": 4,
+    "n_domain_intersections": 50,
+    "n_derived": 20,
+    "n_primitives": 24,
+    "n_unexplained": 8
+  },
+  "omni": {
+    "label": "Omni-Lattice Endogenous Consciousness Phase Operator Model",
+    "coherence": 99,
+    "irreducibility": 97,
+    "overall": 98.0,
+    "n_paradox": 0,
+    "n_singularities": 0,
+    "n_domain_intersections": 50,
+    "n_derived": 45,
+    "n_primitives": 1,
+    "n_unexplained": 1
+  },
+  "protocol": {
+    "breath_Hz": 0.1,
+    "inhale_s": 5.0,
+    "exhale_s": 5.0,
+    "hold_min": 1.618,
+    "f0_Hz": 1.618,
+    "theta_egs_deg": 137.508,
+    "steps": 4
+  }
+}

@@ -44,17 +44,11 @@ import {
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { JUKEBOX_LISTEN_PATH, JUKEBOX_NOW_PLAYING_PATH } from '@/lib/jukeboxRoutes';
 import { resolvePlaylistTrackIds } from '@/lib/playlistNest';
+import { playingCoverUrl, resolvePlayingCoverSrc } from '@/lib/playingCover';
 import type { KillReason } from '@/hooks/useStreamLock';
-import type { TrackDef } from '@/lib/catalogTypes';
 
 const GATE_SEC = 29;
 const FADE_START = 28.85;
-
-function trackCoverUrl(track: TrackDef): string | undefined {
-  if (!track.posterSrc) return undefined;
-  const sep = track.posterSrc.includes('?') ? '&' : '?';
-  return `${track.posterSrc}${sep}v=${encodeURIComponent(track.id)}`;
-}
 
 function fmtTime(s: number): string {
   const m = Math.floor(s / 60);
@@ -483,13 +477,16 @@ export function BridgePlayer({
     }
   };
 
+  const coverSrc = track ? resolvePlayingCoverSrc(track, pl) : undefined;
+  const coverUrl = track ? playingCoverUrl(track, pl) : undefined;
+
   return (
     <footer className={`sp-now sp-bridge-player${jukeboxBrowse ? ' sp-bridge-player--jukebox' : ''}`}>
       <div
-        className={`sp-now-bar${!jukeboxBrowse && track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}
+        className={`sp-now-bar${!jukeboxBrowse && coverSrc ? ' sp-now-bar--with-cover' : ''}`}
       >
-        {!jukeboxBrowse && track?.posterSrc ? (
-          <img className="sp-now-cover" src={trackCoverUrl(track)} alt="" width={56} height={56} />
+        {!jukeboxBrowse && coverUrl ? (
+          <img className="sp-now-cover" src={coverUrl} alt="" width={56} height={56} />
         ) : null}
         <div
           className={`sp-now-track${jukeboxBrowse && track ? ' sp-now-track--open-now' : ''}`}

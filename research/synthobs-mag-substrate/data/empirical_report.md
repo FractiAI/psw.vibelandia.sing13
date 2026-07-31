@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-MAG-SUBSTRATE-2026-07-30-REV2`
 **Registry ID:** `synthobs-mag-substrate-2026-07`
-**Generated:** 2026-07-31T00:50:26.026Z
+**Generated:** 2026-07-31T01:00:42.260Z
 
 ## Verdict
 

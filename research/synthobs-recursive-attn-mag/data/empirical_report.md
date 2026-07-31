@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-RECURSIVE-ATTN-MAG-2026-07-30`
 **Registry ID:** `synthobs-recursive-attn-mag-2026-07`
-**Generated:** 2026-07-31T00:54:12.903Z
+**Generated:** 2026-07-31T01:00:42.358Z
 
 ## Verdict
 

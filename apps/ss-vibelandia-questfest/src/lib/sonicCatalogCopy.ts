@@ -4,6 +4,15 @@
 export const SONIC_SINGULARITY_HERO_SRC =
   '/interfaces/assets/nesting/nest-sonic-singularity.png';
 
+/** Default cover for every playlist without a custom posterSrc. */
+export const DEFAULT_PLAYLIST_COVER_SRC =
+  '/interfaces/assets/fractiai-studios-musical-empire-playlist-default.png';
+
+/** Custom poster when set; otherwise the FractiAI Studios musical-empire default. */
+export function resolvePlaylistCoverSrc(posterSrc?: string | null): string {
+  return posterSrc || DEFAULT_PLAYLIST_COVER_SRC;
+}
+
 /** Listen hero + sidebar title for the full library (Layer 3 frequency). */
 export const SONIC_CATALOG_DISPLAY_NAME =
   "Sonic Singularity Master Catalog · SS VIBELANDIA QUESTFEST · Hero Jo's Golden Bachdoor Hit Factory";

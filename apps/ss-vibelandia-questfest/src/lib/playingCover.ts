@@ -1,6 +1,5 @@
-import { isMasterPlaylist } from '@/lib/catalogSeed';
 import type { PlaylistDef, TrackDef } from '@/lib/catalogTypes';
-import { SONIC_SINGULARITY_HERO_SRC } from '@/lib/sonicCatalogCopy';
+import { resolvePlaylistCoverSrc } from '@/lib/sonicCatalogCopy';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
@@ -19,14 +18,14 @@ export function getPlaybackPlaylistCoverSource(): PlaylistCoverSource | undefine
 /**
  * Cover for the track currently playing: prefer the active playlist image
  * so the player matches the playlist tile the listener started from.
+ * Playlists without a custom poster use the FractiAI Studios default cover.
  */
 export function resolvePlayingCoverSrc(
   track: TrackCoverSource,
   playlist?: PlaylistCoverSource | null,
 ): string | undefined {
-  if (playlist?.posterSrc) return playlist.posterSrc;
-  if (playlist && isMasterPlaylist(playlist.id)) return SONIC_SINGULARITY_HERO_SRC;
-  return track.posterSrc;
+  if (playlist) return resolvePlaylistCoverSrc(playlist.posterSrc);
+  return track.posterSrc || resolvePlaylistCoverSrc(null);
 }
 
 /** Cache-bust URL for player / now-playing surfaces. */

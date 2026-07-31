@@ -3,7 +3,7 @@
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
-  "generatedAt": "2026-07-31T09:41:52.276Z",
+  "generatedAt": "2026-07-31T17:03:51.471Z",
   "mca": {
     "metabolize": "batch audit",
     "crystallize": "compliance blocks",
@@ -11,8 +11,8 @@
     "squeeze": "this index"
   },
   "summary": {
-    "total": 41,
-    "pass": 35,
+    "total": 42,
+    "pass": 36,
     "softPass": 6,
     "plateau": 0,
     "capped": 0,
@@ -383,6 +383,21 @@
         "authorModel": "gpt-4o-2024-08-06",
         "reviewerMake": "Anthropic",
         "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-prion-refold-2026-07",
+      "title": "Epigenetic Phase-Locking & Prion Refolding Pathways · Holographic Magnetic-Phase Contrast Protocol",
+      "sourcePath": "docs/SYNTHOBS_PRION_REFOLD_HOLOGRAPHIC_MAGNETIC_PHASE_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "blockers": [],
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only"
       }
     },
     {

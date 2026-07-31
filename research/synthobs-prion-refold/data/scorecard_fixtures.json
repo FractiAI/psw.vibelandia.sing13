@@ -1,0 +1,38 @@
+{
+  "schema": "synthobs-prion-refold-scorecard/v1",
+  "honesty": "Authored architectural rubric inputs. Not wet-lab magnetometry or clinical outcomes.",
+  "standard": {
+    "label": "Biochemical Kinetic Trap Model",
+    "coherence": 74,
+    "irreducibility": 62,
+    "overall": 68.0,
+    "n_paradox": 7,
+    "n_singularities": 4,
+    "n_domain_intersections": 42,
+    "n_derived": 18,
+    "n_primitives": 22,
+    "n_unexplained": 7
+  },
+  "omni": {
+    "label": "Omni-Lattice Phase-Refolding Switch Model",
+    "coherence": 99,
+    "irreducibility": 97,
+    "overall": 98.0,
+    "n_paradox": 0,
+    "n_singularities": 0,
+    "n_domain_intersections": 42,
+    "n_derived": 40,
+    "n_primitives": 1,
+    "n_unexplained": 1
+  },
+  "protocol": {
+    "f0_kHz": 16.18,
+    "f1_MHz": 1.618,
+    "theta_egs_deg": 137.508,
+    "B_uT_min": 50,
+    "B_uT_max": 161.8,
+    "duration_min": 16.18,
+    "pam_Hz": 1.618,
+    "duty_cycle": 0.618
+  }
+}

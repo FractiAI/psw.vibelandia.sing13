@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-prion-refold",
+  "private": true,
+  "type": "module",
+  "version": "2026.07.31",
+  "description": "Epigenetic Phase-Locking & Prion Refolding Pathways — TBME empirical suite (architectural rubric)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-prion-refold.git"
+  }
+}

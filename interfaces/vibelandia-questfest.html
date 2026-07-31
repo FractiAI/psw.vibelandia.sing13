@@ -615,100 +615,6 @@
       border: 1px solid rgba(212, 175, 55, 0.5);
     }
 
-    /* ── Three Doors · golden-age Gödel era ── */
-    .qf-doors {
-      max-width: 36rem;
-      margin: 0 auto;
-      padding: 0 1.25rem 1.618rem;
-      flex-shrink: 0;
-    }
-    .qf-doors-head {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--gold-hi);
-      text-align: center;
-      margin-bottom: 0.25rem;
-    }
-    .qf-doors-sub {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic;
-      font-size: 1.02rem;
-      color: var(--champagne);
-      text-align: center;
-      opacity: 0.85;
-      margin-bottom: 1.1rem;
-    }
-    .qf-door-grid {
-      display: grid;
-      gap: 0.65rem;
-    }
-    .qf-door {
-      display: block;
-      position: relative;
-      padding: 1.05rem 1.15rem 1.1rem;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background:
-        linear-gradient(160deg, rgba(212, 175, 55, 0.07), rgba(10, 8, 6, 0.94)),
-        var(--card);
-      color: inherit;
-      text-decoration: none;
-      transition: border-color .15s, box-shadow .15s, transform .15s;
-    }
-    .qf-door:hover {
-      border-color: var(--gold);
-      box-shadow: 0 0 28px rgba(212, 175, 55, 0.16);
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-    .qf-door-numeral {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.9rem;
-      font-weight: 500;
-      line-height: 1;
-      color: var(--gold);
-      float: right;
-      margin-left: 0.75rem;
-      opacity: 0.9;
-    }
-    .qf-door h3 {
-      font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: 1.45rem;
-      font-weight: 400;
-      letter-spacing: 0.06em;
-      color: var(--gold-hi);
-      margin-bottom: 0.25rem;
-    }
-    .qf-door p {
-      font-size: 0.88rem;
-      line-height: 1.5;
-      color: var(--text-soft);
-      max-width: 40ch;
-      margin-bottom: 0.5rem;
-    }
-    .qf-door .cta {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--champagne);
-    }
-    .qf-doors-pass {
-      margin-top: 1.1rem;
-      text-align: center;
-    }
-    .qf-doors-rule {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic;
-      text-align: center;
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-top: 0.85rem;
-    }
-    .qf-doors-rule strong { color: var(--champagne); font-style: normal; }
-
     /* Sitewide welcome · Valet Pru */
     .qf-welcome {
       max-width: 52rem;
@@ -888,9 +794,18 @@
       max-width: 36rem;
       text-shadow: 0 2px 12px rgba(0,0,0,.65);
     }
-    .cta-row .btn-primary { flex: 0 1 auto; }
-    .cta-row .btn-ghost {
-      background: rgba(10,8,6,0.55);
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      align-items: center;
+    }
+    .cta-row .btn-primary {
+      flex: 0 1 auto;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.25;
+      max-width: 100%;
     }
     .qf-bridge-tower--dock {
       max-width: 44rem;
@@ -993,18 +908,17 @@
         <p class="sub">Real help in Downtown Reno and beyond.</p>
         <p class="qf-host-hero__line">I’m Valet Pru — welcome aboard. I’ll host you across the whole ship.</p>
         <p class="qf-host-hero__primer">
-          Press play, ask a human when you need one, or book Concierge help in Downtown Reno and beyond.
+          Press play, ask a human when you need one, or book Valet Pru Concierge Service - Downtown Reno.
           Honor over funnels. Signal over noise.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="/listen" data-qv-jukebox>Listen · Jukebox</a>
-          <a class="btn btn-primary" href="/hire-a-goldilocks-valet-concierge">Real help · Concierge</a>
+          <a class="btn btn-primary" href="/hire-a-goldilocks-valet-concierge">Valet Pru Concierge Service - Downtown Reno</a>
           <a class="btn btn-primary" href="/get-started">Get Started</a>
+          <a class="btn btn-primary" href="/interfaces/whitepaper-catalog.html">Read</a>
+          <a class="btn btn-primary" href="/lattice">Build</a>
+          <a class="btn btn-primary" href="mailto:valetpru@gmail.com?subject=QUESTFEST%20welcome">Email Valet Pru</a>
         </div>
-        <p class="cta-row" style="margin-top:0.55rem;">
-          <a class="btn btn-ghost" href="#doors">Three Doors ↓</a>
-          <a class="btn btn-ghost" href="mailto:valetpru@gmail.com?subject=QUESTFEST%20welcome">Email Pru</a>
-        </p>
       </div>
     </div>
   </header>
@@ -1024,10 +938,11 @@
       <p class="qf-welcome__eyebrow">From Valet Pru · host for the entire site</p>
       <h2 class="qf-welcome__title" id="qf-welcome-h2">How to use this ship</h2>
       <p class="qf-welcome__body">
-        Everything useful lives behind a few clear doors.
+        Start with what you need.
         <strong>Listen</strong> for music.
-        <strong>Real help</strong> for Concierge in Downtown Reno and beyond.
-        <strong>Get Started</strong> if you want the short boarding map.
+        <strong>Valet Pru Concierge Service - Downtown Reno</strong> for real help on the ground.
+        <strong>Read</strong> the catalog, <strong>Build</strong> with Lattice, or
+        <strong>Get Started</strong> for the short boarding map.
         I’m your host either way — same human, same email, old-school honor.
       </p>
       <p class="qf-welcome__intentions" data-i18n-html="qf.intentionsHtml">
@@ -1049,7 +964,7 @@
     <a class="qf-trust-link" href="/hire-a-goldilocks-valet-concierge">
       <figure>
         <img src="/interfaces/goldilocks-deliveries/assets/valet-pru-concierge-poster-2026-07.jpg" width="1024" height="640" alt="Valet Pru's Concierge — Downtown Reno and beyond art deco poster" loading="lazy" decoding="async" />
-        <figcaption>Concierge · Downtown Reno and beyond →</figcaption>
+        <figcaption>Valet Pru Concierge Service - Downtown Reno →</figcaption>
       </figure>
     </a>
     <a class="qf-trust-link" href="/get-started">
@@ -1059,36 +974,6 @@
       </figure>
     </a>
   </div>
-
-
-  <section class="qf-doors" id="doors" aria-labelledby="qf-doors-h2">
-    <h2 id="qf-doors-h2" class="qf-doors-head">Three Doors</h2>
-    <p class="qf-doors-sub">Three clear doors. Valet Pru hosts all of them. <a href="/get-started" style="color:var(--champagne);font-weight:700;">New here? Get Started →</a> · <a href="/hire-a-goldilocks-valet-concierge" style="color:var(--champagne);font-weight:700;">Need real help in Reno and beyond? →</a></p>
-    <div class="qf-door-grid">
-      <a class="qf-door" href="/interfaces/questfest-bridge/#/listen" data-qv-jukebox>
-        <span class="qf-door-numeral" aria-hidden>I</span>
-        <h3>Listen · Jukebox</h3>
-        <p>Press play into Reno swamp heat, caliente swing, Golden Bachdoor counterpoint. First month of listens on us; then $16.18/mo in the tip jar keeps you in the room.</p>
-        <span class="cta">Open the Jukebox →</span>
-      </a>
-      <a class="qf-door" href="/interfaces/whitepaper-catalog.html">
-        <span class="qf-door-numeral" aria-hidden>II</span>
-        <h3>Read</h3>
-        <p>Stories, press, and the deep papers — when you want to go further than the feeling. Browse the catalog at your own pace.</p>
-        <span class="cta">Open the catalog →</span>
-      </a>
-      <a class="qf-door" href="/lattice">
-        <span class="qf-door-numeral" aria-hidden>III</span>
-        <h3>Build · Lattice Chat</h3>
-        <p>A coding chat with nested help — for builders who want to go further. Start with the short primer, then open chat when you’re ready.</p>
-        <span class="cta">Lattice primer →</span>
-      </a>
-    </div>
-    <div class="qf-doors-pass">
-      <a class="btn btn-pass" href="/interfaces/questfest-bridge/#/listen?checkout=1">Free trial · 1st month of listens on us · then $16.18/mo in the tip jar keeps you in</a>
-    </div>
-    <p class="qf-doors-rule"><strong>Goldilocks rule:</strong> not too much, not too little — every layer earns its rung. Spirit team on deck below.</p>
-  </section>
 
   <aside class="qf-bridge-tower qf-bridge-tower--dock" aria-label="Bridge tower — optional live billboard">
     <details>

@@ -2,7 +2,7 @@
   "docId": "WP-SYNTHOBS-COMP-COSMO-2026-07-30-REV2",
   "registryId": "synthobs-omni-lattice-report-card-q3-2026",
   "title": "Omni-Lattice Report Card Q3 2026 — Comparative Cosmology Suite",
-  "generatedAt": "2026-07-30T20:51:56.179Z",
+  "generatedAt": "2026-07-31T00:45:32.607Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "Q3 report card is a comparative structural evaluation. Empirical receipts validate rubric math and fixtures — not CMB likelihood contests or Lattice Chat engine wiring.",
   "results": {
@@ -109,17 +109,25 @@
       },
       {
         "id": "E9_report_card_surfaces",
-        "title": "Report-card surfaces — comparative lane; no Lattice Chat engine wiring",
+        "title": "Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
         "paper_exists": true,
         "hasDocId": true,
         "hasHonesty": true,
         "hasOperator": true,
         "hasTitle": true,
-        "claimsEngine": false,
+        "seedRagPointer": true,
+        "claimsRuntime": false,
         "engineImport": false,
+        "surfaces": [
+          "docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md",
+          "/whitepaper/synthobs-omni-lattice-report-card-q3-2026",
+          "/lattice/learn",
+          "/interfaces/nesting/nest-lattice-chat.html",
+          "lib/lattice-prompt.mjs"
+        ],
         "registryId": "synthobs-omni-lattice-report-card-q3-2026",
-        "interpretation": "Q3 report card ships as catalog comparative evaluation + standalone suite.",
-        "honesty": "Surface presence — featuring requires PRA pass.",
+        "interpretation": "Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+        "honesty": "Surface / pointer presence — featuring requires PRA pass; not observational ΛCDM falsification.",
         "pass": true
       }
     ]

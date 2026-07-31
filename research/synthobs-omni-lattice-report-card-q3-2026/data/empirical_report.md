@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-COMP-COSMO-2026-07-30-REV2`
 **Registry ID:** `synthobs-omni-lattice-report-card-q3-2026`
-**Generated:** 2026-07-30T20:51:56.179Z
+**Generated:** 2026-07-31T00:45:32.607Z
 
 ## Verdict
 
@@ -182,26 +182,34 @@
 }
 ```
 
-### E9_report_card_surfaces — Report-card surfaces — comparative lane; no Lattice Chat engine wiring
+### E9_report_card_surfaces — Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime
 
 - **Pass:** `true`
-- **Interpretation:** Q3 report card ships as catalog comparative evaluation + standalone suite.
-- **Honesty:** Surface presence — featuring requires PRA pass.
+- **Interpretation:** Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).
+- **Honesty:** Surface / pointer presence — featuring requires PRA pass; not observational ΛCDM falsification.
 
 ```json
 {
   "id": "E9_report_card_surfaces",
-  "title": "Report-card surfaces — comparative lane; no Lattice Chat engine wiring",
+  "title": "Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
   "paper_exists": true,
   "hasDocId": true,
   "hasHonesty": true,
   "hasOperator": true,
   "hasTitle": true,
-  "claimsEngine": false,
+  "seedRagPointer": true,
+  "claimsRuntime": false,
   "engineImport": false,
+  "surfaces": [
+    "docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md",
+    "/whitepaper/synthobs-omni-lattice-report-card-q3-2026",
+    "/lattice/learn",
+    "/interfaces/nesting/nest-lattice-chat.html",
+    "lib/lattice-prompt.mjs"
+  ],
   "registryId": "synthobs-omni-lattice-report-card-q3-2026",
-  "interpretation": "Q3 report card ships as catalog comparative evaluation + standalone suite.",
-  "honesty": "Surface presence — featuring requires PRA pass.",
+  "interpretation": "Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+  "honesty": "Surface / pointer presence — featuring requires PRA pass; not observational ΛCDM falsification.",
   "pass": true
 }
 ```

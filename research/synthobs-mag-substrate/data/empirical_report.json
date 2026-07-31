@@ -1,0 +1,135 @@
+{
+  "docId": "WP-SYNTHOBS-MAG-SUBSTRATE-2026-07-30-REV2",
+  "registryId": "synthobs-mag-substrate-2026-07",
+  "title": "Magnetism as the Universal Foundational Substrate — Empirical Suite",
+  "generatedAt": "2026-07-31T00:50:26.026Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Magnetic substrate paper is an architectural foundational map. Empirical receipts validate rubric math and fixtures — not magnetometry contests or Lattice Chat runtime wiring.",
+  "results": {
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_overall_identity",
+        "title": "Overall score = (C + I) / 2",
+        "standard": {
+          "c": 82,
+          "i": 70,
+          "overall": 76
+        },
+        "omni": {
+          "c": 97,
+          "i": 95,
+          "overall": 96
+        },
+        "interpretation": "Scorecard overalls are the equal-weight mean of coherence and irreducibility.",
+        "honesty": "Rubric arithmetic — not an observational likelihood ratio vs magnetometry.",
+        "pass": true
+      },
+      {
+        "id": "E2_coherence_formula",
+        "title": "Coherence metric C from paradox/singularity counts",
+        "standard_C": 82,
+        "omni_C": 97,
+        "published": {
+          "standard": 82,
+          "omni": 97
+        },
+        "interpretation": "C formula tracks published magnetic-substrate coherence bands.",
+        "honesty": "Counts are authored scorecard inputs — not laboratory field reductions.",
+        "pass": true
+      },
+      {
+        "id": "E3_irreducibility_ranking",
+        "title": "Irreducibility I — Omni exceeds Standard",
+        "I_standard": 0.4666666666666667,
+        "I_omni": 14,
+        "ratio": 30,
+        "interpretation": "Single E_F invariant raises Occam-style irreducibility for magnetic substrate map.",
+        "honesty": "Derived-phenomena counts are rubric-authored; not a claim gauge bosons are nonexistent.",
+        "pass": true
+      },
+      {
+        "id": "E4_four_interaction_bookkeeping",
+        "title": "Interaction bookkeeping — 4 forces vs 1 substrate map",
+        "standard_interactions": 4,
+        "omni_interactions": 1,
+        "free_constants_standard": 26,
+        "interpretation": "Scorecard contrasts four-interaction reductionism with singular magnetic substrate map.",
+        "honesty": "Bookkeeping for comparative architecture — not a collider null result.",
+        "pass": true
+      },
+      {
+        "id": "E5_scorecard_domains",
+        "title": "Five-domain architectural scorecard",
+        "domains": [
+          "quantum_spin_coherence",
+          "chemical_bond_unification",
+          "biological_macromolecular_organization",
+          "empirical_calibration",
+          "cross_domain_portability"
+        ],
+        "outcomesOk": true,
+        "empirical_calibration_to_standard": true,
+        "interpretation": "Scorecard covers quantum, chemical, biological, empirical history, and portability.",
+        "honesty": "Empirical-calibration row correctly credits Standard Model / QED observational history.",
+        "pass": true
+      },
+      {
+        "id": "E6_ef_identity",
+        "title": "E_F contrast invariant + λ_EGS + golden angle",
+        "E_F": 1.618033988749895,
+        "lambda_egs": 0.07658724063250828,
+        "golden_angle_deg": 137.50776405003785,
+        "abs_err_lambda": 0,
+        "abs_err_angle": 0,
+        "interpretation": "Magnetic substrate map anchors to E_F and golden-angle phase rotation.",
+        "honesty": "Architectural keys — not replacements for ℏ, c, or G.",
+        "pass": true
+      },
+      {
+        "id": "E7_comparative_margin",
+        "title": "Omni overall exceeds Standard (published margin)",
+        "standard_overall": 76,
+        "omni_overall": 96,
+        "margin": 20,
+        "interpretation": "Under this structural rubric, magnetic substrate scores higher on C×I mean.",
+        "honesty": "Comparative architecture score — Standard Model retains empirical-calibration advantage (E5).",
+        "pass": true
+      },
+      {
+        "id": "E8_portability_token_note",
+        "title": "Cross-domain portability — token routing design target 41.8%",
+        "reduction": 0.418,
+        "interpretation": "Applications cite Vector Field Context Buffering / E_F delta-routing design target as companion papers.",
+        "honesty": "Design-target citation — not a new live invoice receipt in this package.",
+        "pass": true
+      },
+      {
+        "id": "E9_mag_substrate_surfaces",
+        "title": "Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
+        "paper_exists": true,
+        "hasDocId": true,
+        "hasHonesty": true,
+        "hasOperator": true,
+        "hasTitle": true,
+        "seedRagPointer": true,
+        "claimsRuntime": false,
+        "engineImport": false,
+        "surfaces": [
+          "docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md",
+          "/whitepaper/synthobs-mag-substrate",
+          "/lattice/learn",
+          "/interfaces/nesting/nest-lattice-chat.html",
+          "lib/lattice-prompt.mjs"
+        ],
+        "registryId": "synthobs-mag-substrate-2026-07",
+        "interpretation": "Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+        "honesty": "Surface / pointer presence — featuring requires PRA pass; not Maxwell/QED replacement.",
+        "pass": true
+      }
+    ]
+  }
+}

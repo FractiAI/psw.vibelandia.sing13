@@ -13,6 +13,7 @@
     "compare:lattice": "node scripts/lattice-vs-standard-comparison.mjs",
     "compare:lattice:cursor": "node scripts/lattice-vs-standard-cursor-usage.mjs",
     "compare:lattice:cursor:matrix": "node scripts/lattice-vs-standard-cursor-usage-matrix.mjs",
+    "hermes:lattice-chat": "node scripts/hermes-lattice-chat.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:lattice-floors": "node scripts/assert-lattice-token-floors.mjs",

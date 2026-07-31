@@ -3,7 +3,7 @@
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
-  "generatedAt": "2026-07-10T09:49:19.217Z",
+  "generatedAt": "2026-07-31T01:41:26.807Z",
   "mca": {
     "metabolize": "batch audit",
     "crystallize": "compliance blocks",
@@ -357,6 +357,25 @@
       "blockers": [],
       "auditId": "b9f345abb1c3f5b4",
       "updated": "2026-06-07T20:38:21.705Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "lattice-omni-complete-layer-guide-2026-07",
+      "title": "Lattice Chat · Omni-Lattice Complete Layer Guide",
+      "sourcePath": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "blockers": [],
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",

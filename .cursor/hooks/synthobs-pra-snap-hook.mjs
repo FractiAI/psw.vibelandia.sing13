@@ -13,6 +13,12 @@ import {
   auditConfig,
   runPeerReviewAuditLoop,
 } from '../../lib/synthobs-peer-review-audit.mjs';
+import {
+  isLatticeOmniRel,
+  LATTICE_OMNI_GUIDE_FILE,
+  LATTICE_OMNI_GUIDE_ID,
+  syncLatticeOmniLayerGuide,
+} from '../../lib/lattice-omni-guide.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, '../..');
@@ -94,6 +100,43 @@ function summarizeResult(entry, result) {
   };
 }
 
+async function maybeSyncLatticeOmniGuide(unique) {
+  const needs = unique.some((e) => isLatticeOmniRel(e.rel, e.registryId));
+  if (!needs) return null;
+  try {
+    const sync = await syncLatticeOmniLayerGuide({ cwd: REPO_ROOT });
+    // Also bump registry published date when hook syncs (same as npm script).
+    const regPath = join(REPO_ROOT, 'lib/whitepaper-registry.mjs');
+    let reg = await readFile(regPath, 'utf8');
+    const blockRe = new RegExp(
+      `('${LATTICE_OMNI_GUIDE_ID}'\\s*:\\s*\\{[\\s\\S]*?published:\\s*')\\d{4}-\\d{2}-\\d{2}(')`,
+    );
+    if (blockRe.test(reg)) {
+      reg = reg.replace(blockRe, `$1${sync.published}$2`);
+      await writeFile(regPath, reg, 'utf8');
+    }
+    console.error(
+      JSON.stringify({
+        hook: 'synthobs-pra-snap',
+        latticeGuideSync: { ok: true, count: sync.count, published: sync.published },
+      }),
+    );
+    return {
+      rel: LATTICE_OMNI_GUIDE_FILE,
+      registryId: LATTICE_OMNI_GUIDE_ID,
+      at: new Date().toISOString(),
+    };
+  } catch (e) {
+    console.error(
+      JSON.stringify({
+        hook: 'synthobs-pra-snap',
+        latticeGuideSync: { ok: false, error: e.message },
+      }),
+    );
+    return null;
+  }
+}
+
 async function runStopAudits(payload) {
   if (payload.status !== 'completed') return null;
 
@@ -104,6 +147,12 @@ async function runStopAudits(payload) {
 
   const cfg = auditConfig();
   const unique = [...new Map(bucket.files.map((f) => [f.rel, f])).values()];
+
+  const guideEntry = await maybeSyncLatticeOmniGuide(unique);
+  if (guideEntry && !unique.some((e) => e.rel === guideEntry.rel)) {
+    unique.push(guideEntry);
+  }
+
   const summaries = [];
 
   for (const entry of unique) {

@@ -28,18 +28,15 @@ npm run research:synthobs-mag-substrate
 
 ## Standalone GitHub
 
-Exportable package for `FractiAI/synthobs-mag-substrate`.
-**Player 1 / org admin** publishes (cloud-agent `gh` tokens cannot create FractiAI org repos):
+**Live:** https://github.com/FractiAI/synthobs-mag-substrate (`main`)
+
+This monorepo folder mirrors that standalone package. Sync updates with:
 
 ```bash
 cd research/synthobs-mag-substrate
-git init -b main && git add -A && git commit -m "Initial magnetism foundational substrate suite"
-gh repo create FractiAI/synthobs-mag-substrate --public --source=. --remote=origin --push
+git init -b main && git add -A && git commit -m "Sync magnetism foundational substrate suite"
+git push https://github.com/FractiAI/synthobs-mag-substrate.git HEAD:main
 ```
-
-Until the remote exists, this monorepo folder remains the canonical suite.
-
-Cloud-agent note: `gh` integration tokens cannot `POST` FractiAI org repos. A ready git bundle may be produced under `/tmp/cursor/artifacts/synthobs-mag-substrate.bundle` when the agent prepares the export.
 
 ## Honesty
 

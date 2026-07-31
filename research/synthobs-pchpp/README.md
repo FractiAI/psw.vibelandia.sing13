@@ -32,18 +32,16 @@ scripts/       # pipeline runner
 
 ## Standalone GitHub
 
-This folder is the **exportable** standalone package for `https://github.com/FractiAI/synthobs-pchpp`.
+**Live:** https://github.com/FractiAI/synthobs-pchpp (`main`)
 
-To publish (Player 1 / org admin):
+This monorepo folder mirrors that standalone package. Sync updates with:
 
 ```bash
 cd research/synthobs-pchpp
 git init -b main
-git add -A && git commit -m "Initial PCHPP observation suite"
-gh repo create FractiAI/synthobs-pchpp --public --source=. --remote=origin --push
+git add -A && git commit -m "Sync PCHPP observation suite"
+git push https://github.com/FractiAI/synthobs-pchpp.git HEAD:main
 ```
-
-Until the remote exists, the monorepo catalog mirror remains canonical.
 
 ## Honesty
 

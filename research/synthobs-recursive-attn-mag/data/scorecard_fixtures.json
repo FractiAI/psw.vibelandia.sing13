@@ -1,0 +1,73 @@
+{
+  "docId": "WP-SYNTHOBS-RECURSIVE-ATTN-MAG-2026-07-30",
+  "title": "Recursive Attention Squeezing & Holographic Magnetic Projections",
+  "note": "Authored architectural scorecard inputs for comparative C/I metrics. Not completed SQUID time series.",
+  "classical": {
+    "n_paradox": 6,
+    "n_singularities": 4,
+    "n_domain_intersections": 50,
+    "n_derived_phenomena": 14,
+    "n_p": 26,
+    "n_u": 4
+  },
+  "holographic": {
+    "n_paradox": 1,
+    "n_singularities": 1,
+    "n_domain_intersections": 100,
+    "n_derived_phenomena": 14,
+    "n_p": 1,
+    "n_u": 0
+  },
+  "validation_tiers": [
+    {
+      "id": "tier1_digital_software",
+      "setting": "Multi-agent recursive state window",
+      "measures": "Token squeeze / ΔS"
+    },
+    {
+      "id": "tier2_quantum_optical",
+      "setting": "SQUID + laser cavity",
+      "measures": "ΔB induced (proposed)"
+    },
+    {
+      "id": "tier3_macro_biomagnetic",
+      "setting": "DNA chromatin coiling",
+      "measures": "Transcription Δ / LF field (proposed)"
+    }
+  ],
+  "domains": [
+    {
+      "id": "observer_field_coupling",
+      "classical": "No mechanism linking attention / recursion to physical fields.",
+      "holographic": "S_attn squeeze maps onto B_shadow (architectural).",
+      "outcome": "omni_lattice"
+    },
+    {
+      "id": "force_unification",
+      "classical": "Disjoint gauge / curvature stacks.",
+      "holographic": "Single squeezed-state geometry under E_F (map).",
+      "outcome": "omni_lattice"
+    },
+    {
+      "id": "multi_agent_token_routing",
+      "classical": "Fat context windows; no squeeze grammar.",
+      "holographic": "Squeezed Context Windows / E_F phase lock (map).",
+      "outcome": "omni_lattice"
+    },
+    {
+      "id": "empirical_calibration",
+      "classical": "Decades of collider + GR / QED tests.",
+      "holographic": "Three-tier protocol proposed; SQUID receipts pending.",
+      "outcome": "standard_model"
+    },
+    {
+      "id": "cross_domain_portability",
+      "classical": "Disjoint math across AI, quantum, and biology.",
+      "holographic": "E_F scales across AI tokens, quantum optics maps, and bio maps.",
+      "outcome": "omni_lattice"
+    }
+  ],
+  "applications": {
+    "enterprise_token_routing_reduction": 0.418
+  }
+}

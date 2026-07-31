@@ -1,0 +1,35 @@
+{
+  "schema": "synthobs-phase-toxicity-scorecard/v1",
+  "honesty": "Authored architectural rubric inputs. Not wet-lab toxicology, radiobiology, or clinical outcomes.",
+  "standard": {
+    "label": "Classical Molecular Mass/Dose Model",
+    "coherence": 76,
+    "irreducibility": 66,
+    "overall": 71.0,
+    "n_paradox": 8,
+    "n_singularities": 4,
+    "n_domain_intersections": 50,
+    "n_derived": 19,
+    "n_primitives": 25,
+    "n_unexplained": 8
+  },
+  "omni": {
+    "label": "Omni-Lattice Phase-Modulated Safety Inversion Model",
+    "coherence": 98,
+    "irreducibility": 97,
+    "overall": 97.5,
+    "n_paradox": 1,
+    "n_singularities": 0,
+    "n_domain_intersections": 50,
+    "n_derived": 46,
+    "n_primitives": 1,
+    "n_unexplained": 1
+  },
+  "protocol": {
+    "pulse_Hz": 16.18,
+    "sugar_MHz": 1.618,
+    "theta_egs_deg": 137.508,
+    "audit_safe_to_unsafe": 6,
+    "audit_unsafe_to_safe": 6
+  }
+}

@@ -201,22 +201,24 @@ export function experimentPortabilityTokenNote() {
   };
 }
 
-/** E9 — Surfaces: report-card paper exists; observation/comparative lane; no engine wiring. */
+/** E9 — Surfaces: report-card paper + Seed·RAG / nest pointer; not runtime engine source. */
 export function experimentReportCardSurfaces() {
-  const root = path.resolve(__dirname, '..', '..', '..');
-  const paper = path.join(
-    root,
-    'docs',
-    'SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md',
-  );
+  const pkgRoot = path.resolve(__dirname, '..');
+  const monoRoot = path.resolve(__dirname, '..', '..', '..');
+  const localPaper = path.join(pkgRoot, 'docs', 'SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md');
+  const monoPaper = path.join(monoRoot, 'docs', 'SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md');
+  const paper = fs.existsSync(localPaper) ? localPaper : monoPaper;
+  const root = fs.existsSync(path.join(monoRoot, 'apps', 'lattice-chat')) ? monoRoot : pkgRoot;
   const ok = fs.existsSync(paper);
   const text = ok ? fs.readFileSync(paper, 'utf8') : '';
   const hasDocId = text.includes(DOC_ID);
   const hasHonesty = /Honesty boundary/i.test(text);
   const hasOperator = /SynthOBS Autonomous Agent/i.test(text);
   const hasTitle = /Omni-Lattice Report Card Q3 2026/i.test(text);
-  const claimsEngine =
-    /(powers the Lattice Chat engine|wired into Lattice Chat engine|Lattice Chat engine feature)/i.test(
+  const seedRagPointer = /Seed·RAG|Seed·RAG pointer|nest pointer/i.test(text);
+  // Affirmative engine claims only (honesty boundary may negate "runtime source" in prose).
+  const claimsRuntime =
+    /(powers the Lattice Chat engine|wired into Lattice Chat engine|Lattice Chat engine feature|\bis Lattice Chat engine code\b)/i.test(
       text,
     );
   let engineImport = false;
@@ -224,27 +226,39 @@ export function experimentReportCardSurfaces() {
   if (fs.existsSync(pkg)) {
     engineImport = /report-card-q3|comp-cosmo/i.test(fs.readFileSync(pkg, 'utf8'));
   }
+  const surfaces = [
+    'docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md',
+    '/whitepaper/synthobs-omni-lattice-report-card-q3-2026',
+    '/lattice/learn',
+    '/interfaces/nesting/nest-lattice-chat.html',
+    'lib/lattice-prompt.mjs',
+  ];
   return {
     id: 'E9_report_card_surfaces',
-    title: 'Report-card surfaces — comparative lane; no Lattice Chat engine wiring',
+    title: 'Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime',
     paper_exists: ok,
     hasDocId,
     hasHonesty,
     hasOperator,
     hasTitle,
-    claimsEngine,
+    seedRagPointer,
+    claimsRuntime,
     engineImport,
+    surfaces,
     registryId: REGISTRY_ID,
-    interpretation: 'Q3 report card ships as catalog comparative evaluation + standalone suite.',
-    honesty: 'Surface presence — featuring requires PRA pass.',
+    interpretation:
+      'Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).',
+    honesty: 'Surface / pointer presence — featuring requires PRA pass; not observational ΛCDM falsification.',
     pass:
       ok &&
       hasDocId &&
       hasHonesty &&
       hasOperator &&
       hasTitle &&
-      !claimsEngine &&
-      !engineImport,
+      seedRagPointer &&
+      !claimsRuntime &&
+      !engineImport &&
+      surfaces.length >= 5,
   };
 }
 

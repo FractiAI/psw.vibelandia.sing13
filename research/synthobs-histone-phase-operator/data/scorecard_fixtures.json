@@ -1,0 +1,33 @@
+{
+  "schema": "synthobs-histone-phase-operator-scorecard/v1",
+  "honesty": "Authored architectural rubric inputs. Not wet-lab epigenomics or clinical outcomes.",
+  "standard": {
+    "label": "Standard Epigenetic Spool Model",
+    "coherence": 78,
+    "irreducibility": 66,
+    "overall": 72.0,
+    "n_paradox": 7,
+    "n_singularities": 4,
+    "n_domain_intersections": 50,
+    "n_derived": 20,
+    "n_primitives": 26,
+    "n_unexplained": 9
+  },
+  "omni": {
+    "label": "Omni-Lattice Histone Phase-Operator Model",
+    "coherence": 98,
+    "irreducibility": 95,
+    "overall": 96.5,
+    "n_paradox": 1,
+    "n_singularities": 0,
+    "n_domain_intersections": 50,
+    "n_derived": 44,
+    "n_primitives": 1,
+    "n_unexplained": 1
+  },
+  "nucleosome": {
+    "wrap_bp": 147,
+    "turns": 1.65,
+    "E_F": 1.618033988749895
+  }
+}

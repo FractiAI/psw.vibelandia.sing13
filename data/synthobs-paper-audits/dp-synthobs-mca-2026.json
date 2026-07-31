@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "6ca8b3de38b5fb26",
+  "auditId": "fe64f8320d9b223a",
   "paperId": "dp-synthobs-mca-2026",
   "sourcePath": "docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,20 +43,20 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T20:38:21.744Z"
+          "invokedAt": "2026-07-31T18:01:40.961Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T20:38:21.743Z",
-  "completedAt": "2026-06-07T20:38:21.744Z",
+  "startedAt": "2026-07-31T18:01:40.961Z",
+  "completedAt": "2026-07-31T18:01:40.961Z",
   "iterations": 1,
-  "overallScore": 0.845,
+  "overallScore": 0.906,
   "passThreshold": 0.85,
   "convergence": {
-    "status": "soft_pass",
-    "reason": "soft_structural"
+    "status": "pass",
+    "reason": "threshold_met"
   },
   "rubric": {
     "honestyBoundary": {
@@ -95,11 +95,11 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.845,
+      "overallScore": 0.906,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
-        "methodsRepro": 0.6,
+        "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
         "references": 0.7,
@@ -113,7 +113,7 @@
     "mode": "structural",
     "scores": {
       "honestyBoundary": 1,
-      "methodsRepro": 0.6,
+      "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
       "references": 0.7,
@@ -121,19 +121,17 @@
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.845,
+    "overallScore": 0.906,
     "criticalBlockers": [],
-    "suggestions": [
-      "Document methods, data sources, and reproducibility commands."
-    ],
+    "suggestions": [],
     "meta": {
-      "wordCount": 781,
+      "wordCount": 1418,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 16,
+        "links": 44,
         "numbered": 12,
-        "citeLines": 0
+        "citeLines": 25
       }
     }
   },

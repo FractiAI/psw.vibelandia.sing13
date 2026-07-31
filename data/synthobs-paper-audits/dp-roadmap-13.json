@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "e618e5c436530396",
+  "auditId": "c243a414f7724ea9",
   "paperId": "dp-roadmap-13",
   "sourcePath": "docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-12.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T20:38:21.568Z"
+          "invokedAt": "2026-07-31T18:01:40.936Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T20:38:21.567Z",
-  "completedAt": "2026-06-07T20:38:21.569Z",
+  "startedAt": "2026-07-31T18:01:40.936Z",
+  "completedAt": "2026-07-31T18:01:40.936Z",
   "iterations": 1,
   "overallScore": 0.882,
   "passThreshold": 0.85,

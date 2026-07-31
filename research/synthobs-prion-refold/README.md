@@ -3,7 +3,7 @@
 **GitHub:** https://github.com/FractiAI/synthobs-prion-refold · **License:** MIT  
 **Document ID:** `WP-SYNTHOBS-PRION-REFOLD-FULL-REV2-2026-07-31`  
 **Registry ID:** `synthobs-prion-refold-2026-07`  
-**Category:** TBME · Theoretical Bio-Medical Explorations  
+**Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
 **Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
 
 ## TBME scope & disclaimer

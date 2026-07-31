@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "3a25eead8406ba5d",
+  "auditId": "5589ac131ef2372c",
   "paperId": "synthobs-egs-planck-scale-harmonic-2026-07",
   "sourcePath": "docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-21T17:40:54.829Z"
+          "invokedAt": "2026-07-31T18:01:40.968Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-21T17:40:54.826Z",
-  "completedAt": "2026-07-21T17:40:54.831Z",
+  "startedAt": "2026-07-31T18:01:40.967Z",
+  "completedAt": "2026-07-31T18:01:40.968Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1831,
+      "wordCount": 1803,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "86923cd38e7371fc",
+  "auditId": "814393849f506482",
   "paperId": "synthobs-three-foundational-proteins-2026-07",
   "sourcePath": "docs/SYNTHOBS_THREE_FOUNDATIONAL_PROTEINS_HOLOGRAPHIC_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-29T03:00:33.642Z"
+          "invokedAt": "2026-07-31T18:01:40.973Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-29T03:00:33.639Z",
-  "completedAt": "2026-07-29T03:00:33.643Z",
+  "startedAt": "2026-07-31T18:01:40.973Z",
+  "completedAt": "2026-07-31T18:01:40.973Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

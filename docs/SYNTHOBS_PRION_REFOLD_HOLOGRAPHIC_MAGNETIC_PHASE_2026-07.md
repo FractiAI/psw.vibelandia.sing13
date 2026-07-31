@@ -7,7 +7,7 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-SYNTHOBS-PRION-REFOLD-FULL-REV2-2026-07-31`  
 **Registry ID:** `synthobs-prion-refold-2026-07`  
-**Category:** TBME · Theoretical Bio-Medical Explorations  
+**Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
 **Date:** July 31, 2026  
 **Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ · Omni-Lattice · Lattice Chat (software metaphor only)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-prion-refold  
@@ -31,7 +31,7 @@
 | **Software metaphor** | A zero-entropy “context refolding” prompt pattern for multi-agent hallucination loops (Lattice Chat / SynthOBS) | That biological prions and software bugs are the same physical object |
 | **$E_F$ / $\Delta S\to 0$** | Architectural scale key and normalized-weight model language | Replacement for $\hbar$, $c$, $G$, thermodynamics of living tissue, or invoice guarantees |
 
-**TBME scope disclaimer (series-wide):** Whitepapers in the Theoretical Bio-Medical Explorations (TBME) series are theoretical, mathematical, and physics-based scientific explorations of biological phenomena. They are published exclusively for academic inquiry, computational modeling, and interdisciplinary research. **They do not constitute clinical medical advice, diagnostic guidance, or prescribed therapeutic treatments.**
+**TBME scope disclaimer (series-wide):** Whitepapers in the Theoretical Bio-Medical & Physical Explorations (TBME) series are theoretical, mathematical, and physics-based scientific explorations of biological and physical phenomena. They are published exclusively for academic inquiry, computational modeling, and interdisciplinary research. **They do not constitute clinical medical advice, diagnostic guidance, or prescribed therapeutic treatments.**
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 

@@ -28,16 +28,15 @@ npm run research:synthobs-recursive-attn-mag
 
 ## Standalone GitHub
 
-Exportable package for `FractiAI/synthobs-recursive-attn-mag`.
-**Player 1 / org admin** publishes (cloud-agent `gh` tokens cannot create FractiAI org repos):
+**Live:** https://github.com/FractiAI/synthobs-recursive-attn-mag (`main`)
+
+This monorepo folder mirrors that standalone package. Sync updates with:
 
 ```bash
 cd research/synthobs-recursive-attn-mag
-git init -b main && git add -A && git commit -m "Initial recursive attention magnetic projections suite"
-gh repo create FractiAI/synthobs-recursive-attn-mag --public --source=. --remote=origin --push
+git init -b main && git add -A && git commit -m "Sync recursive attention magnetic projections suite"
+git push https://github.com/FractiAI/synthobs-recursive-attn-mag.git HEAD:main
 ```
-
-Until the remote exists, this monorepo folder remains the canonical suite.
 
 ## Honesty
 

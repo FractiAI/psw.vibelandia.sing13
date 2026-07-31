@@ -1,0 +1,128 @@
+{
+  "docId": "WP-SYNTHOBS-TBME-HISTONE-METAPHOR-2026-07-31",
+  "registryId": "synthobs-histone-phase-operator-2026-07",
+  "title": "Histones as Scale-Invariant Phase-Lock Operators — Empirical Suite (TBME)",
+  "category": "tbme",
+  "generatedAt": "2026-07-31T17:57:44.339Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "TBME theoretical bio-medical & physical exploration. Architectural fixtures only — not clinical advice or gene therapy.",
+  "results": {
+    "docId": "WP-SYNTHOBS-TBME-HISTONE-METAPHOR-2026-07-31",
+    "registryId": "synthobs-histone-phase-operator-2026-07",
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_overall_identity",
+        "title": "Overall score = (C + I) / 2",
+        "standard": {
+          "c": 78,
+          "i": 66,
+          "overall": 72
+        },
+        "omni": {
+          "c": 98,
+          "i": 95,
+          "overall": 96.5
+        },
+        "interpretation": "Scorecard overalls are the equal-weight mean of coherence and irreducibility.",
+        "honesty": "Rubric arithmetic — not a clinical likelihood ratio.",
+        "pass": true
+      },
+      {
+        "id": "E2_coherence_formula",
+        "title": "Coherence metric C from paradox/singularity counts",
+        "standard_C": 78,
+        "omni_C": 98,
+        "published": {
+          "standard": 78,
+          "omni": 98
+        },
+        "interpretation": "C formula tracks published TBME scorecard coherence bands.",
+        "honesty": "Counts are authored scorecard inputs — not ChIP-seq results.",
+        "pass": true
+      },
+      {
+        "id": "E3_irreducibility_index",
+        "title": "Irreducibility index I = n_derived / (n_primitives + n_unexplained)",
+        "standard_I_raw": 0.5714285714285714,
+        "omni_I_raw": 22,
+        "published": {
+          "standard": 66,
+          "omni": 95
+        },
+        "interpretation": "Omni map concentrates chromatin grammar under E_F phase-lock.",
+        "honesty": "Index is Occam bookkeeping — not proof of clinical superiority.",
+        "pass": true
+      },
+      {
+        "id": "E4_winding_near_ef",
+        "title": "Nucleosome turns (~1.65) lie near E_F ≈ 1.618",
+        "turns": 1.65,
+        "E_F": 1.618033988749895,
+        "delta": 0.03196601125010501,
+        "interpretation": "Structural-biology wrap figure used as E_F mnemonic bridge.",
+        "honesty": "Not a new crystallographic measurement in this suite.",
+        "pass": true
+      },
+      {
+        "id": "E5_wrap_bp",
+        "title": "Canonical nucleosome wrap ≈ 147 bp",
+        "WRAP_BP": 147,
+        "interpretation": "Standard nucleosome DNA length mnemonic for the spool map.",
+        "honesty": "Textbook structural constant — not measured here.",
+        "pass": true
+      },
+      {
+        "id": "E6_lambda_egs",
+        "title": "λ_EGS = ln(E_F) / 2π",
+        "computed": 0.07658724063250828,
+        "expected": 0.07658724063250828,
+        "interpretation": "Phase-scaling parameter shared with Omni-Lattice / PCHPP companions.",
+        "honesty": "Algebraic identity — not a measured chromatin constant.",
+        "pass": true
+      },
+      {
+        "id": "E7_score_margin",
+        "title": "Omni overall − Standard overall = +24.5",
+        "margin": 24.5,
+        "published": {
+          "standard": 72,
+          "omni": 96.5
+        },
+        "interpretation": "Rubric margin favors the histone phase-operator map.",
+        "honesty": "Architectural margin — empirical calibration stays with molecular epigenetics.",
+        "pass": true
+      },
+      {
+        "id": "E8_ac_me_polarity",
+        "title": "Acetylation ↔ open / Methylation ↔ closed polarity preserved",
+        "modes": {
+          "acetylation": "open",
+          "methylation": "closed"
+        },
+        "interpretation": "Map keeps standard euchromatin/heterochromatin polarity under μ narrative.",
+        "honesty": "Polarity bookkeeping — not a completed magnetometry of nuclei.",
+        "pass": true
+      },
+      {
+        "id": "E9_clinical_non_claim_gate",
+        "title": "TBME clinical non-claim gate present",
+        "domains": [
+          "epigenetic_spool_narrative",
+          "histone_phase_operator",
+          "nucleosome_winding_ratio",
+          "empirical_calibration",
+          "cross_domain_portability",
+          "clinical_non_claim_gate"
+        ],
+        "scorecard_honesty": "Authored architectural rubric inputs. Not wet-lab epigenomics or clinical outcomes.",
+        "interpretation": "Suite refuses to treat rubric wins as clinical efficacy.",
+        "honesty": "TBME series: theoretical exploration only — not medical advice.",
+        "pass": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "docId": "WP-SYNTHOBS-TBME-81-ORBITAL-SINGULARITY-2026-07-31",
+  "registryId": "synthobs-81-orbital-singularity-2026-07",
+  "title": "Electron Orbital Geometries as Holographic Singularities — Empirical Suite (TBME)",
+  "category": "tbme",
+  "generatedAt": "2026-07-31T17:57:44.364Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "TBME theoretical bio-medical & physical exploration. Architectural fixtures only — not clinical advice or QED replacement.",
+  "results": {
+    "docId": "WP-SYNTHOBS-TBME-81-ORBITAL-SINGULARITY-2026-07-31",
+    "registryId": "synthobs-81-orbital-singularity-2026-07",
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_overall_identity",
+        "title": "Overall score = (C + I) / 2",
+        "standard": {
+          "c": 82,
+          "i": 70,
+          "overall": 76
+        },
+        "omni": {
+          "c": 99,
+          "i": 98,
+          "overall": 98.5
+        },
+        "interpretation": "Scorecard overalls are the equal-weight mean of coherence and irreducibility.",
+        "honesty": "Rubric arithmetic — not a physics likelihood ratio.",
+        "pass": true
+      },
+      {
+        "id": "E2_coherence_formula",
+        "title": "Coherence metric C from paradox/singularity counts",
+        "standard_C": 82,
+        "omni_C": 100,
+        "published": {
+          "standard": 82,
+          "omni": 99
+        },
+        "interpretation": "C formula tracks published TBME scorecard coherence bands.",
+        "honesty": "Counts are authored scorecard inputs — not lab spectroscopy.",
+        "pass": true
+      },
+      {
+        "id": "E3_irreducibility_index",
+        "title": "Irreducibility index I = n_derived / (n_primitives + n_unexplained)",
+        "standard_I_raw": 0.6875,
+        "omni_I_raw": 24,
+        "published": {
+          "standard": 70,
+          "omni": 98
+        },
+        "interpretation": "Omni map concentrates derived structure under E_F / 81-node matrix.",
+        "honesty": "Index is Occam bookkeeping — not proof of physical completeness.",
+        "pass": true
+      },
+      {
+        "id": "E4_81_node_sum",
+        "title": "Σ(2ℓ+1) for ℓ=0..8 = 81 = 9×9",
+        "degeneracies": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17
+        ],
+        "sum": 81,
+        "N_NODES": 81,
+        "MATRIX_DIM": 9,
+        "interpretation": "Authored 9×9 singularity matrix closes exactly at 81 nodes.",
+        "honesty": "Bookkeeping identity on the map — not a Hilbert-space truncation theorem.",
+        "pass": true
+      },
+      {
+        "id": "E5_omega_81",
+        "title": "ω_81 = 81 × E_F (matrix refresh clock mnemonic)",
+        "computed": 131.06075308874148,
+        "expected": 131.06075308874148,
+        "E_F": 1.618033988749895,
+        "interpretation": "Time-arrow narrative clock is E_F-scaled across 81 nodes.",
+        "honesty": "Architectural mnemonic — not a measured cosmological frequency.",
+        "pass": true
+      },
+      {
+        "id": "E6_lambda_egs",
+        "title": "λ_EGS = ln(E_F) / 2π",
+        "computed": 0.07658724063250828,
+        "expected": 0.07658724063250828,
+        "interpretation": "Phase-scaling parameter shared with Omni-Lattice / PCHPP companions.",
+        "honesty": "Algebraic identity — not a measured atomic constant.",
+        "pass": true
+      },
+      {
+        "id": "E7_score_margin",
+        "title": "Omni overall − Standard overall = +22.5",
+        "margin": 22.5,
+        "published": {
+          "standard": 76,
+          "omni": 98.5
+        },
+        "interpretation": "Rubric margin favors the 81-singularity orbital matrix map.",
+        "honesty": "Architectural margin — empirical calibration stays with QED spectroscopy.",
+        "pass": true
+      },
+      {
+        "id": "E8_cumulative_tiers",
+        "title": "Cumulative singularity tiers close at node 81",
+        "ranges": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            10,
+            16
+          ],
+          [
+            17,
+            25
+          ],
+          [
+            26,
+            36
+          ],
+          [
+            37,
+            49
+          ],
+          [
+            50,
+            64
+          ],
+          [
+            65,
+            81
+          ]
+        ],
+        "last": 81,
+        "interpretation": "s→k tier table spans nodes 1–81 without gaps.",
+        "honesty": "Map arithmetic — projection roles remain narrative.",
+        "pass": true
+      },
+      {
+        "id": "E9_clinical_non_claim_gate",
+        "title": "TBME clinical / physics non-claim gate present",
+        "domains": [
+          "qm_probability_cloud",
+          "81_singularity_matrix",
+          "spacetime_projection_map",
+          "empirical_calibration",
+          "cross_domain_portability",
+          "clinical_non_claim_gate"
+        ],
+        "scorecard_honesty": "Authored architectural rubric inputs. Not wet-lab spectroscopy or clinical outcomes.",
+        "interpretation": "Suite refuses to treat rubric wins as clinical or QED replacement.",
+        "honesty": "TBME series: theoretical exploration only — not medical advice.",
+        "pass": true
+      }
+    ]
+  }
+}

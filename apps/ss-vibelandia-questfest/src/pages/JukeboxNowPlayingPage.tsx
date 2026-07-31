@@ -7,13 +7,8 @@ import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { SONIC_BRAND_NAME } from '@/lib/sonicCatalogCopy';
 import { fmtDuration } from '@/lib/formatDuration';
-import type { TrackDef } from '@/lib/catalogTypes';
-
-function trackCoverUrl(track: TrackDef): string | undefined {
-  if (!track.posterSrc) return undefined;
-  const sep = track.posterSrc.includes('?') ? '&' : '?';
-  return `${track.posterSrc}${sep}v=${encodeURIComponent(track.id)}`;
-}
+import { playingCoverUrl } from '@/lib/playingCover';
+import { usePlaybackPlaylist } from '@/stores/catalogSelectors';
 
 export function JukeboxNowPlayingPage() {
   useJukeboxListenSetup('qf-jukebox-now-page');
@@ -22,6 +17,7 @@ export function JukeboxNowPlayingPage() {
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
   const displayTime = usePlaybackStore((s) => s.displayTime);
   const getTrack = useCatalogStore((s) => s.getTrack);
+  const pl = usePlaybackPlaylist();
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
 
@@ -37,7 +33,7 @@ export function JukeboxNowPlayingPage() {
     return <Navigate to={JUKEBOX_LISTEN_PATH} replace />;
   }
 
-  const cover = trackCoverUrl(track);
+  const cover = playingCoverUrl(track, pl);
 
   return (
     <div className="jb-app jb-app--now">

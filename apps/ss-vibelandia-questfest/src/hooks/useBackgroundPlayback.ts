@@ -3,8 +3,13 @@ import type { TrackDef } from '@/lib/catalogTypes';
 import { resolvePlaybackUrl } from '@/lib/localPlayback';
 import { getPlaybackMedia, readLivePlaybackPosition } from '@/lib/playbackMediaRegistry';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
+import {
+  getPlaybackPlaylistCoverSource,
+  resolvePlayingCoverSrc,
+} from '@/lib/playingCover';
 import { getSimpleAudioElement, urlMatchesElement } from '@/lib/simplePlayback';
 import { usePlaybackStore } from '@/stores/playbackStore';
+import { useCatalogStore } from '@/stores/catalogStore';
 
 interface UseBackgroundPlaybackOptions {
   mediaRef: RefObject<HTMLVideoElement | HTMLAudioElement | null>;
@@ -121,6 +126,13 @@ export function useBackgroundPlayback({
 }: UseBackgroundPlaybackOptions) {
   const backgroundHandoffActive = usePlaybackStore((s) => s.backgroundHandoffActive);
   const setBackgroundHandoffActive = usePlaybackStore((s) => s.setBackgroundHandoffActive);
+  const playbackPlaylistId = usePlaybackStore((s) => s.playbackPlaylistId);
+  const playlistCoverKey = useCatalogStore((s) => {
+    const id = playbackPlaylistId ?? s.activePlaylistId;
+    const pl = id ? s.playlists.find((p) => p.id === id) : undefined;
+    if (!pl) return '';
+    return `${pl.id}:${pl.posterSrc ?? ''}`;
+  });
   const isPlayingRef = useRef(isPlaying);
   const trackRef = useRef(track);
   const handoffBusyRef = useRef(false);
@@ -430,8 +442,9 @@ export function useBackgroundPlayback({
     }
 
     try {
-      const artwork = track.posterSrc
-        ? [{ src: track.posterSrc, sizes: '512x512', type: 'image/jpeg' }]
+      const coverSrc = resolvePlayingCoverSrc(track, getPlaybackPlaylistCoverSource());
+      const artwork = coverSrc
+        ? [{ src: coverSrc, sizes: '512x512', type: 'image/jpeg' }]
         : [];
       navigator.mediaSession.metadata = new MediaMetadata({
         title: track.title,
@@ -461,5 +474,15 @@ export function useBackgroundPlayback({
         /* ignore */
       }
     };
-  }, [allowBackgroundPlay, isPlaying, onNextTrack, setPlaying, track?.artist, track?.id, track?.posterSrc, track?.title]);
+  }, [
+    allowBackgroundPlay,
+    isPlaying,
+    onNextTrack,
+    playlistCoverKey,
+    setPlaying,
+    track?.artist,
+    track?.id,
+    track?.posterSrc,
+    track?.title,
+  ]);
 }

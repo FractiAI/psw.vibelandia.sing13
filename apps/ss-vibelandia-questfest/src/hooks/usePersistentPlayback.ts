@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import { flushPlaybackSession } from '@/hooks/usePlaybackSessionPersistence';
 import { resumeOrPlayTrack, resumePlaybackIfNeeded } from '@/lib/trackPlayback';
+import {
+  getPlaybackPlaylistCoverSource,
+  resolvePlayingCoverSrc,
+} from '@/lib/playingCover';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 
@@ -11,7 +15,12 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 export function usePersistentPlayback() {
   const trackId = usePlaybackStore((s) => s.currentTrackId);
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
+  const playbackPlaylistId = usePlaybackStore((s) => s.playbackPlaylistId);
   const getTrack = useCatalogStore((s) => s.getTrack);
+  const playlistPoster = useCatalogStore((s) => {
+    const id = playbackPlaylistId ?? s.activePlaylistId;
+    return s.playlists.find((p) => p.id === id)?.posterSrc;
+  });
   const track = trackId ? getTrack(trackId) : undefined;
 
   useEffect(() => {
@@ -54,8 +63,9 @@ export function usePersistentPlayback() {
     }
 
     try {
-      const artwork = track.posterSrc
-        ? [{ src: track.posterSrc, sizes: '512x512', type: 'image/jpeg' }]
+      const coverSrc = resolvePlayingCoverSrc(track, getPlaybackPlaylistCoverSource());
+      const artwork = coverSrc
+        ? [{ src: coverSrc, sizes: '512x512', type: 'image/jpeg' }]
         : [];
       navigator.mediaSession.metadata = new MediaMetadata({
         title: track.title,
@@ -88,5 +98,5 @@ export function usePersistentPlayback() {
         /* ignore */
       }
     };
-  }, [isPlaying, track?.artist, track?.id, track?.posterSrc, track?.title]);
+  }, [isPlaying, playlistPoster, track?.artist, track?.id, track?.posterSrc, track?.title]);
 }

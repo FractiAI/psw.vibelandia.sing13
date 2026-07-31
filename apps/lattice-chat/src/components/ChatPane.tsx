@@ -279,9 +279,9 @@ export function ChatPane({
             <p className="empty-eyebrow">SS Vibelandia · 24×365</p>
             <p className="empty-lead">Welcome aboard</p>
             <p className="empty-hint">
-              A high-agency coding cockpit for serious vibecoders — faster signal, less prompt bloat,
-              operator-grade transparency. LTHS + Neutrino reasoning built into the engine. Within Goldilocks;
-              intentions matter: we do not help with malice or ill will.
+              For builders looking to leverage fractal, holographic super intelligent agents while reducing
+              their token consumption — faster signal, less prompt bloat, operator-grade transparency.
+              Within Goldilocks; intentions matter: we do not help with malice or ill will.
             </p>
             <p className="empty-hint empty-hint--bridge">
               Board with your email and bring your own key to the bridge (Cursor, Claude, or

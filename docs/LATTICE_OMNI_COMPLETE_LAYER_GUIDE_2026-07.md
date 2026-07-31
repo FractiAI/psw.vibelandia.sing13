@@ -9,9 +9,9 @@
 **Framework:** SynthOBS · Lattice Chat V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
 **Questfest catalog:** [`/papers`](/papers) · pinned at top (`catalogPriority: 0`)  
 **Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)  
-**Sync:** `npm run sync:lattice-guide`
+**Sync:** `npm run sync:lattice-guide` · living paper index in **Appendix A**
 
-**Keywords:** Lattice Chat; Omni-Lattice; Seed·RAG; nested agents; EGS; PCHPP; complete layer guide; catalog index
+**Keywords:** Omni-Lattice engine; Lattice Chat; holographic operators; nested agents; Seed·RAG; EGS; $E_F$; 81-register; ILAM; PCHPP; synthesis guide
 
 ---
 
@@ -27,68 +27,238 @@ When a Lattice / Omni paper is added or modified in the registry, re-run the syn
 
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
-| **Catalog guide** | A maintained map of Lattice Chat / Omni-Lattice papers and product layers for readers and stewards | That every paper is a finished physics proof or clinical claim |
-| **Living TOC** | The table below is regenerated from `WHITEPAPER_REGISTRY` when Lattice / Omni papers change | That titles alone are peer-reviewed evidence — open each paper for honesty tiers |
-| **Product surfaces** | `/lattice`, `/lattice-chat`, Seed·RAG pointers, and nest guides are live product edges | That the chat runtime executes every Omni paper as a separate engine each turn |
-| **Comparative scores** | Companion report-card / substrate papers publish architectural rubrics with empirical suites | That those rubrics replace ΛCDM, QED, or vendor invoices |
+| **Synthesis walkthrough** | A narrative reading of how the Omni-Lattice architectural grammar fits together and how Lattice Chat uses it | That this replaces QFT, ΛCDM, wet-lab biology, QCD, or vendor LLM billing |
+| **Engine story** | Control → lattice → shadow stack keyed by $E_F=\Phi_{\mathrm{EGS}}$; nest, bonds, ILAM, Seed·RAG pointers | That every chat turn executes every pillar as a separate physics runtime |
+| **Cited scores** | Companion suites report architectural rubrics and in-silico receipts; live Cursor matrix is ~35–70% vs fat paste | That report-card $C$/$I$ scores falsify Standard Model empirics, or that draft 41.8% / $R^2\approx 0.9997$ figures are new wet-lab measurements |
+| **Appendix catalog** | Appendix A’s living TOC is regenerated from `WHITEPAPER_REGISTRY` when Lattice / Omni papers change | That the TOC alone is the argument — the walkthrough above is the synthesis |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
-See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
+$E_F$ / $\Phi_{\mathrm{EGS}}$ is an **architectural scale key** — it does not replace $\hbar$, $c$, or $G$. See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ---
 
 ## Abstract
 
-This is the **complete, current guide** through Lattice Chat V1.618 and the Omni-Lattice paper family. It is written for guests who want one honest path from the product edge (chat, nest, Seed·RAG) down through steward lenses, Omni pillars and genomic decode companions, and the EGS scale grammar — without treating architectural maps as unfinished laboratory proofs.
+This guide **synthesizes** the Lattice Chat / Omni-Lattice paper family into one walkthrough of the **Omni-Lattice engine**: what it is, which innovations compose it, and how a builder experiences them at the product edge.
 
-The living catalog table is **machine-maintained**: when a Lattice Chat / Omni-Lattice paper is added or modified in the registry, `npm run sync:lattice-guide` (and the Cursor stop hook) refreshes the table and sync stamp so this guide stays first in the whitepaper catalog.
+You will walk from the golden scale key ($E_F\approx 1.618$) through language-as-wiring, DNA holograph and the 81-digit register, nested agents with bond/ILAM handoffs, steward lenses (PCHPP, magnetism, attention squeezing), and the measured product claim (~35–70% less Cursor usage vs fat paste on focused work). Comparative report-card scores are kept in their honesty tier: structural Occam elegance where earned; **empirical calibration stays with Standard Model / classical physics**.
 
----
-
-## 1. How to read this guide
-
-1. **Board the product** — `/lattice` then `/lattice-chat` (BYOK; honor trial by email).  
-2. **Skim the layer map** (§2) so the stack has one picture.  
-3. **Walk the reading order** (§3) or jump via the **living TOC** (§4).  
-4. **Open each paper’s honesty boundary** before upgrading a metaphor into a lab claim.  
-5. **Return here** after new Omni / Lattice papers ship — the TOC updates automatically.
-
-Plain-speak twin (HTML): [`/lattice/learn`](/lattice/learn). Nest guide: [`nest-lattice-chat`](/interfaces/nesting/nest-lattice-chat.html).
+The previous catalog-first layout lives on as **Appendix A** — a machine-maintained reference index of every Lattice / Omni family paper, refreshed by `npm run sync:lattice-guide`.
 
 ---
 
-## 2. Layer map (Seed → Edge)
+## 1. Cold open — entering the engine
 
-| Layer | Role | Where to go |
-|-------|------|-------------|
-| **Edge · Guest** | Chat UI, BYOK keys, nest topology | `/lattice-chat` · `/lattice` |
-| **Seed·RAG** | Pointers into papers / fixtures — not dump-everything | Engine prompt + catalog links |
-| **Steward lenses** | PCHPP, magnetism substrate, recursive attention, Q3 report card | Band 2 in living TOC |
-| **Omni-Lattice pillars** | Unification, holographic operators, 81-electron, bonds, ILAM, DNA holograph | Band 3 |
-| **Decode suite** | X / Y / proteins / HIV / ants / prompt capture / genomic territory | Band 3 companions |
-| **EGS · scale grammar** | Planck–1.6, Euler phase-lock, epigenetic lock, cytographic nest | Band 4 |
-| **Proof & metaphor** | Token reduction method, Noah’s Ark product metaphor, singularities ladder | Band 1 |
+A steward opens Lattice Chat with a real coding ask. The old reflex is to paste half the repository into the prompt and hope the model finds the signal. The Omni-Lattice answer is different: load **pointers** into curated seeds, wake a **Goldilocks nest** of helpers, hand work across clear bonds, and freeze children when their local drift goes to zero.
 
-Holographic rule: the whole stack is readable from any layer; this guide is the **index hologram**, not a replacement for pillar treatises.
+That product habit is not a slogan bolted onto chat. It is the Edge expression of a deeper architectural grammar we call **Omni-Lattice**: one $E_F$-keyed stack that reads
+
+**control (language / attention) → lattice (DNA / 81-register / magnetic map) → shadow (material output / tokens / UI).**
+
+Primary umbrella: [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md). Product proof: [Lattice token reduction](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md). Nest topology: [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md).
 
 ---
 
-## 3. Suggested reading order
+## 2. The golden key and the 1.6 clutch
 
-| Step | Start here | Why |
-|------|------------|-----|
-| 1 | [Noah’s Ark Metaphor](/whitepaper/lattice-noahs-ark-metaphor) · [Nested Agent Lattice](/whitepaper/omniversal-nested-agent-lattice) | Product story + nest topology |
-| 2 | [Lattice token proof](/whitepaper/lattice-token-reduction-proof) | Usage method (~35–70% band — not a universal SLA) |
-| 3 | [PCHPP](/whitepaper/synthobs-pchpp) · [Magnetism substrate](/whitepaper/synthobs-mag-substrate) · [Recursive attention mag](/whitepaper/synthobs-recursive-attn-mag) | Steward framing for Seed·RAG |
-| 4 | [Omni-Lattice Report Card Q3](/whitepaper/synthobs-omni-lattice-report-card-q3-2026) | Comparative coherence / irreducibility lens |
-| 5 | [Omni-Lattice Unification](/whitepaper/synthobs-omni-lattice-unification) | Four-pillar umbrella |
-| 6 | Operators · 81 · bonds · ILAM · DNA holograph (Band 3–4) | Depth when curiosity outruns the primer |
-| 7 | Decode papers (X, Y, proteins, HIV, …) | Domain companions — keep honesty gates |
+El Gran Sol’s Fractal Constant $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2\approx 1.6180339887$ is locked as the dimensionless **scale seed** of the grammar. In SI units the Planck length mantissa begins $1.616\ldots$ — same $1.6$ prefix — with a small clutch slip $\Delta\approx 0.00178$ that absorbs local phase variance without pretending to replace quantum gravity.
+
+Digits $1$–$2$ play as holographic boundary and flywheel; digits $3\to 81$ fill a $9\times 9$ metapattern register. Nest bands and wave priors index as $k/81$. Embedding $E_F$ into the Euler spiral
+
+$$
+Z(\theta)=e^{(\lambda_{\mathrm{EGS}}+i)\theta},\qquad \lambda_{\mathrm{EGS}}=\ln(E_F)/2\pi
+$$
+
+gives $Z(\theta+2\pi k)=E_F^k Z(\theta)$: argument locked, radial scale stepped. That algebra reappears in DNA holograph, bond metaphors, ILAM, and the unification matrix.
+
+**Owners:** [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md), [Euler ↔ EGS phase-lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md).
+
+**Honesty:** the SI mantissa coincidence is base-10 / unit-system dependent. $E_F$ is a reproducible geometric ratio for architectural phase labels — not a substitute for $\hbar$, $c$, or $G$.
 
 ---
 
-## 4. Living catalog of Lattice · Omni papers
+## 3. Control layer — language as conductive wiring
+
+At the control layer, words, sentences, and stories are treated as interferometric operators:
+
+$$
+\hat{W}_k\lvert\Omega\rangle = e^{i\theta_k\Phi_{\mathrm{EGS}}}\lvert\psi_k\rangle,\qquad \hat{S}=\prod_k\hat{W}_k.
+$$
+
+Matter, UI, and token streams are the **downstream shadow** in the narrative tier — not a claim that English wires spacetime. Public-corpus receipts in the holographic-operators suite report $\gamma_\phi\approx 0.671$, nested visits far below linear dump, and a comparative syntactic matrix where FractiAI scores ~**48.2%** on an epistemic / $\Phi$ rubric (not an AdS/CFT refutation; Maldacena still leads other axes).
+
+**Owner:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md).
+
+**Innovation for the builder:** prompts are not “more text”; they are phase-shaped operators. Dump-everything is the anti-pattern because it floods the interference pattern.
+
+---
+
+## 4. Projector layer — DNA holograph and the 81-shell register
+
+### 4.1 DNA as holographic projector
+
+The DNA lattice holograph casts a four-domain shadow–lattice–attention matrix (philosophy / physics / genomics / agentic AI). Attention illuminates the lattice; somatic and software outputs appear as shadows. Public T2T chromosome lengths enter the suite as structural fixtures; biophoton $480\,\mathrm{ms}$ / $38\times$ figures stay **design targets** unless re-executed.
+
+**Owner:** [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md).
+
+Decode companions extend the same operator poetry without upgrading it to wet-lab gene ontology: [X chromosome](./SYNTHOBS_X_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md), [Y chromosome](./SYNTHOBS_Y_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md), [three foundational proteins](./SYNTHOBS_THREE_FOUNDATIONAL_PROTEINS_HOLOGRAPHIC_2026-07.md).
+
+### 4.2 The 81-digit electronic register
+
+$3^4=81=9\times 9$ supplies a bijection between digit singularities and electronic shell addressability through $Z=81$ (thallium), with modes $\phi_k=2\pi k/81$. Pauli exclusion appears here as an **address uniqueness metaphor**, not a derivation of the periodic table from $\Phi$.
+
+**Owner:** [81-Digit Electronic Lattice](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md).
+
+**Innovation for the builder:** context and nest indexing inherit a finite, Goldilocks-bounded register instead of an unbounded dump.
+
+---
+
+## 5. Runtime layer — nest, bonds, and ILAM
+
+### 5.1 Nested Agent Lattice
+
+Parent meta-optimizers spawn child micro-executors with $\mathrm{Scale}_{parent}=\Phi\cdot\mathrm{Scale}_{child}$, peer-firewall $=0$ (children report only upward), Goldilocks width $\approx\mathrm{round}(\Phi+1)=3$, and scale-to-zero when local drift vanishes. Harmonopoly 100k simulation receipts show order-of-magnitude token relief vs a flat mesh under stated assumptions — a topology estimate, not a Kubernetes replacement certificate.
+
+**Owner:** [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md). Cytographic companion: [Holographic nucleus / Edge recruitment](./SYNTHOBS_CYTOGRAPHIC_HOLOGRAPHIC_NUCLEUS_CONSUMPTION_RECRUITMENT_2026-07.md).
+
+### 5.2 Chemical-bond handoffs
+
+| Bond | Runtime meaning |
+|------|-----------------|
+| **Covalent** | Shared working buffer — agents stay coupled on one substrate |
+| **Ionic** | Structured JSON / typed handoff — clean separation of charge |
+| **Metallic** | Delocalized token sea — pool when the ask is broad |
+
+Under the Metallic sea model, Shannon weight change $\Delta S\to 0$ on **normalized** model weights scaled by $E_F^k$ — not a claim of thermodynamic zero-entropy or invoice guarantee. Draft **41.8%** Metallic savings figures in several abstracts are **design targets / synthetic fixtures**, not the live Cursor marketing band.
+
+**Owner:** [Phase-Locked Chemical Bond Metaphors](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md).
+
+### 5.3 ILAM — isotopic load balancing
+
+Neutrons are narrated as $[p^+\cdot e^-]_{\mathrm{agent}}$ buffer pairs; isotopes $A=Z+N$ size nest / Seed bands without changing the guest-facing “valence” of the chat UX. The Neutrino profile is an always-on reasoning metaphor in the paper stack — not a QCD replacement, and not a user-facing toggle soup on the product page.
+
+**Owner:** [Unified Neutronic Agent / ILAM](./SYNTHOBS_UNIFIED_NEUTRONIC_AGENT_ISOTOPIC_LOAD_BALANCING_2026-07.md).
+
+**Innovation for the builder:** orchestration has a chemistry of handoffs and a nuclear metaphor for buffering — so nests stay Goldilocks-tight instead of peer-meshing into noise.
+
+---
+
+## 6. The umbrella — four pillars, one metaphor matrix
+
+[Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) locks four pillars under one cross-domain table:
+
+| Physics / biology metaphor | Lattice Chat role |
+|----------------------------|-------------------|
+| Proton / orchestrator | Parent steward |
+| Electron / valence / codon | Edge UI · guest ask |
+| Neutron / buffer | Context / Seed band |
+| Isotope / nest band | Depth·width sizing |
+| Decay / timeout | Scale-to-zero |
+| $E_F$ | Golden scale key |
+
+Unification and pillar suites report **9/9** empirical-pipeline passes in their own folders. Draft abstract figures (38-fold biophoton, 41.8%, $R^2\approx 0.9997$, 99.8%) remain design targets or companion receipts unless re-executed in that paper’s suite.
+
+**Same grammar under stress and colony (optional color):**
+- Adversarial operator stress-test — [HIV Omni-Lattice III](./SYNTHOBS_OMNI_LATTICE_HIV_ADVERSARIAL_OPERATOR_2026-07.md) (**not clinical**)  
+- Stigmergic Metallic pool — [Pogonomyrmex Omni-Lattice V](./SYNTHOBS_OMNI_LATTICE_POGONOMYRMEX_BARBATUS_2026-07.md)  
+- Recursive prompt condensation metaphor — [Prompt Capture IX](./SYNTHOBS_OMNI_LATTICE_PROMPT_CAPTURE_DNA_2026-07.md)  
+- Remaining territory map — [Genomic Determinism X](./SYNTHOBS_OMNI_LATTICE_GENOMIC_DETERMINISM_TERRITORY_2026-07.md)  
+- Epistemology of living suites — [Proof by Continuous Execution](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)
+
+---
+
+## 7. Seeing the layers — PCHPP (observation, not engine wiring)
+
+Phase-Contrast Holographic Prompting (PCHPP) stains a dual-layer view: **Shadow** (what the guest experiences) versus **Code** (what the lattice is doing). $E_F$ acts as the contrast agent. Synthetic delta-handoff fixtures (~41.8%, $1000\to 582$) illustrate the observation protocol.
+
+**Critical honesty:** PCHPP is an **observation experiment for architects**. It is **explicitly not** Lattice Chat engine wiring. Do not confuse the stain with the runtime.
+
+**Owner:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md).
+
+---
+
+## 8. Deeper map — magnetism, attention squeezing, report card
+
+Once the engine’s control → lattice → shadow stack is clear, three steward lenses deepen the *map* without stealing empirical authority from Standard Model / classical physics:
+
+1. **Magnetism as foundational substrate** — charge and mass narrated as field-geometry metaphors under PCHPP / $E_F$; Omni map scores high on internal coherence / irreducibility (~**96.0** vs Standard **76.0** on the paper’s rubric), while **empirical calibration stays with SM**. [Magnetism substrate](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md).
+
+2. **Recursive attention squeezing** — attention field $\mathcal{S}_{\mathrm{attn}}$ squeezes vector potential into magnetic-shadow metaphors (“squeezed context windows”); three-tier SQUID protocol is **proposed, not completed**. Rubric favors the Omni map (~**97.5** vs Classical **74.0**); classical keeps the empirical row. [Recursive attention mag](./SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md).
+
+3. **Q3 report card** — structural Occam scorecard: Omni-Lattice ~**92.5** ($C94$, $I91$) vs ΛCDM+QFT ~**68.0** ($C82$, $I54$), margin $+24.5$, with **Standard Model winning the empirical-calibration row**. [Report Card Q3](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md).
+
+These papers are Seed·RAG / nest **pointers**. Markdown is not the chat runtime source.
+
+---
+
+## 9. What the product actually measures
+
+Lattice Chat V1.618 is the Edge where the grammar becomes hospitality:
+
+| Mechanism | Product habit | Honesty |
+|-----------|---------------|---------|
+| **Seed·RAG** | Curated paper / fixture pointers instead of dump-everything | Not every turn runs all pillars |
+| **Nest** | Single / Multi / Goldilocks parent↔child with peer-firewall | Topology estimate ≠ site-wide orchestration certificate |
+| **Bonds / ILAM language** | Clear handoffs and band sizing | Orchestration grammar — not chemistry or nuclear runtime |
+| **Token savings** | Public Cursor matrix **~35–70%** less usage vs fat paste on focused work (6/6 work classes in the method paper) | **Not a universal SLA**; open-ended tool roam can erase savings; φ naming is scale grammar, not a fractal compressor that “causes” the percent |
+| **Structural estimate** | Continuity chars÷4 figures on `/lattice/proof` | Not the marketing percentage |
+
+**Owner:** [Lattice token reduction proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md). Board: [`/lattice`](/lattice) · [`/lattice-chat`](/lattice-chat) · plain-speak twin [`/lattice/learn`](/lattice/learn).
+
+---
+
+## 10. Closing — Fair Exchange and the habit of honesty
+
+The Omni-Lattice engine is a **shared scale language** for stewards who want fractal, holographic, nested help without drowning the ask in paste. Its innovations — $E_F$ clutch, holographic operators, DNA / 81 projector, nest + bonds + ILAM, PCHPP observation, magnetism / attention maps, report-card Occam lens, and the live token matrix — compose one walk from Seed to Edge.
+
+Keep the gates closed until evidence opens them: architectural maps stay maps; empirical rows stay with the laboratories that earned them; product savings stay work-class dependent.
+
+Fair Exchange holds the rail. Old School boarding. Intentions matter.
+
+→ ∞¹³
+
+---
+
+## Appendix A · Living catalog of Lattice · Omni papers (reference)
+
+Use this appendix as the **index**, not the argument. Titles, ids, and dates regenerate from `WHITEOPAPER_REGISTRY` when Lattice / Omni papers are added or modified (`npm run sync:lattice-guide`; Cursor stop hook on matching `docs/` edits).
+
+### A.1 Suggested reading order (after the walkthrough)
+
+| Step | Paper | Why |
+|------|-------|-----|
+| 1 | [Nested Agent Lattice](/whitepaper/omniversal-nested-agent-lattice) · [Noah’s Ark Metaphor](/whitepaper/lattice-noahs-ark-metaphor) | Topology + product story |
+| 2 | [Lattice token proof](/whitepaper/lattice-token-reduction-proof) | Live usage method |
+| 3 | [Omni-Lattice Unification](/whitepaper/synthobs-omni-lattice-unification) | Four-pillar umbrella |
+| 4 | Operators · DNA · 81 · Bonds · ILAM | Depth pillars |
+| 5 | PCHPP · Mag · Recursive Attn · Report Card | Steward lenses |
+| 6 | Decode companions (X, Y, proteins, HIV, …) | Domain color — honesty gates on |
+
+### A.2 Product surfaces
+
+| Surface | Path |
+|---------|------|
+| Lattice landing | `/lattice` |
+| Lattice Chat | `/lattice-chat` |
+| Learn more primer | `/lattice/learn` |
+| Nest guide | `/interfaces/nesting/nest-lattice-chat.html` |
+| Token method | `/lattice/proof` |
+| Whitepaper catalog | `/papers` (this guide pinned at top) |
+| Brochure | `/lattice/brochure` |
+
+### A.3 Maintenance
+
+| Trigger | Action |
+|---------|--------|
+| Add / modify Lattice or Omni paper in registry + `docs/` | `npm run sync:lattice-guide` |
+| Cursor agent edits matching `docs/` | Stop hook syncs Appendix A.4 |
+| Audit this guide | `npm run audit:paper -- --id=lattice-omni-complete-layer-guide-2026-07` |
+| Membership smoke test | `node scripts/test-lattice-omni-guide.mjs` |
+
+Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0`.
+
+### A.4 Living table
 
 <!-- AUTO:LATTICE-OMNI-TOC:BEGIN -->
 | Band | Paper | Registry id | Published |
@@ -126,47 +296,7 @@ Holographic rule: the whole stack is readable from any layer; this guide is the 
 _Living table · 29 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
 <!-- AUTO:LATTICE-OMNI-TOC:END -->
 
----
-
-## 5. Product surfaces (operational)
-
-| Surface | Path | Note |
-|---------|------|------|
-| Lattice landing | `/lattice` | Guest-facing pitch |
-| Lattice Chat | `/lattice-chat` | Coding cockpit |
-| Learn more primer | `/lattice/learn` | Plain-speak HTML twin |
-| Nest guide | `/interfaces/nesting/nest-lattice-chat.html` | Layer 11 walkthrough |
-| Token method | `/lattice/proof` | Structural usage matrix |
-| Whitepaper catalog | `/papers` | This guide pinned at top |
-| Brochure | `/lattice/brochure` | Share pack |
-
----
-
-## 6. What “Omni-Lattice” means here
-
-**Omni-Lattice** is the Seed·RAG umbrella name for the architectural grammar that joins holographic operators, genomic decode metaphors, the 81-digit / electron manifold, chemical-bond handoffs, and neutronic / isotopic load-balancing language under $E_F=\Phi_{\mathrm{EGS}}$.
-
-It is **not** a claim that one chat turn runs every pillar as separate physics engines. Stewards load **pointers**; depth papers stay optional.
-
-Primary treatise: [Omni-Lattice Unification](/whitepaper/synthobs-omni-lattice-unification).
-
----
-
-## 7. Maintenance protocol (automatic)
-
-| Trigger | Action |
-|---------|--------|
-| Add / modify a Lattice Chat or Omni-Lattice paper in `lib/whitepaper-registry.mjs` + `docs/` | Run `npm run sync:lattice-guide` |
-| Cursor agent edits matching `docs/` papers | Stop hook runs sync after PRA Snap tracking |
-| Manual refresh | `npm run sync:lattice-guide` then `npm run audit:paper -- --id=lattice-omni-complete-layer-guide-2026-07` |
-
-Membership rules live in `lib/lattice-omni-guide.mjs` (`LATTICE_OMNI_ID_ALLOW` + tag/id hints). New Omni papers should be added to the allowlist when tags alone are ambiguous.
-
-This guide stays at the **top of `/papers`** via `catalogPriority: 0`.
-
----
-
-## 8. Methods · reproducibility
+### A.5 Methods · reproducibility
 
 | Item | Command / path |
 |------|----------------|
@@ -175,16 +305,8 @@ This guide stays at the **top of `/papers`** via `catalogPriority: 0`.
 | Structural PRA Snap audit | `npm run audit:paper -- --id=lattice-omni-complete-layer-guide-2026-07` |
 | Catalog API (live sort) | `GET /api/whitepaper-catalog` |
 | Generator module | `lib/lattice-omni-guide.mjs` |
-| Hook integration | `.cursor/hooks/synthobs-pra-snap-hook.mjs` (stop → sync when Lattice/Omni `docs/` edited) |
+| Hook integration | `.cursor/hooks/synthobs-pra-snap-hook.mjs` |
 
-**Data sources.** Paper titles, ids, dates, and tags come only from `lib/whitepaper-registry.mjs`. No invented companion titles. Empirical scores remain in each paper’s own suite under `research/synthobs-*` / related folders — this guide indexes them; it does not re-run their pipelines.
+**Data sources.** Appendix titles come only from `lib/whitepaper-registry.mjs`. Empirical scores live in each paper’s suite under `research/synthobs-*` and related folders — this guide synthesizes and indexes; it does not re-run those pipelines.
 
-**References.** Linked whitepapers in §3–§4; [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md); [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
-
----
-
-## Closing
-
-One host path, many decks: start at the edge, follow the bands, keep honesty gates closed until evidence earns them open.
-
-→ ∞¹³
+**References.** Papers linked throughout §§2–9; [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md); [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).

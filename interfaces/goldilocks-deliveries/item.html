@@ -87,16 +87,16 @@
           mailBtn.textContent = 'Email for quote →';
           ctaRow.appendChild(mailBtn);
           if (note) {
-            note.textContent = 'No payment layer. No Venmo / PayPal / Cash App checkout here — email Pru for a human quote.';
+            note.textContent = 'No payment layer. No Venmo / PayPal / Cash App checkout here — email Valet Pru for a human quote.';
           }
           return;
         }
 
-        if (status) status.textContent = 'Email Pru to get signed up as a guest and book this service.';
+        if (status) status.textContent = 'Email Valet Pru to get signed up as a guest and book this service.';
         var mailBtn = document.createElement('a');
         mailBtn.className = 'grs-btn grs-btn--hire';
         mailBtn.href = GRS.bookMail(item);
-        mailBtn.textContent = 'Email Pru →';
+        mailBtn.textContent = 'Email Valet Pru →';
         ctaRow.appendChild(mailBtn);
         if (note) note.textContent = 'One email, one human answer. No forms, no app.';
       }

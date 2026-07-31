@@ -1,0 +1,137 @@
+{
+  "docId": "WP-SYNTHOBS-RECURSIVE-ATTN-MAG-2026-07-30",
+  "registryId": "synthobs-recursive-attn-mag-2026-07",
+  "title": "Recursive Attention Squeezing & Holographic Magnetic Projections — Empirical Suite",
+  "generatedAt": "2026-07-31T01:00:42.358Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Recursive attention magnetic projections paper is an architectural validation protocol. Empirical receipts validate rubric math and protocol fixtures — not completed SQUID contests or Lattice Chat runtime wiring.",
+  "results": {
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_overall_identity",
+        "title": "Overall score = (C + I) / 2",
+        "classical": {
+          "c": 80,
+          "i": 68,
+          "overall": 74
+        },
+        "holographic": {
+          "c": 98,
+          "i": 97,
+          "overall": 97.5
+        },
+        "interpretation": "Scorecard overalls are the equal-weight mean of coherence and irreducibility.",
+        "honesty": "Rubric arithmetic — not a completed SQUID likelihood ratio.",
+        "pass": true
+      },
+      {
+        "id": "E2_coherence_formula",
+        "title": "Coherence metric C from paradox/singularity counts",
+        "classical_C": 80,
+        "holographic_C": 98,
+        "published": {
+          "classical": 80,
+          "holographic": 98
+        },
+        "interpretation": "C formula tracks published attention-squeeze coherence bands.",
+        "honesty": "Counts are authored scorecard inputs — not magnetometer reductions.",
+        "pass": true
+      },
+      {
+        "id": "E3_irreducibility_ranking",
+        "title": "Irreducibility I — Holographic exceeds Classical",
+        "I_classical": 0.4666666666666667,
+        "I_holographic": 14,
+        "ratio": 30,
+        "interpretation": "Single E_F invariant raises Occam-style irreducibility for attention-shadow map.",
+        "honesty": "Derived-phenomena counts are rubric-authored; not a claim forces are nonexistent.",
+        "pass": true
+      },
+      {
+        "id": "E4_three_tier_protocol",
+        "title": "Three-tier validation protocol completeness",
+        "tiers": [
+          "tier1_digital_software",
+          "tier2_quantum_optical",
+          "tier3_macro_biomagnetic"
+        ],
+        "interpretation": "Digital, quantum-optical, and biomagnetic tiers are specified as a testbed.",
+        "honesty": "Protocol completeness — Tier-2/3 lab receipts are not claimed executed here.",
+        "pass": true
+      },
+      {
+        "id": "E5_scorecard_domains",
+        "title": "Five-domain architectural scorecard",
+        "domains": [
+          "observer_field_coupling",
+          "force_unification",
+          "multi_agent_token_routing",
+          "empirical_calibration",
+          "cross_domain_portability"
+        ],
+        "outcomesOk": true,
+        "empirical_calibration_to_classical": true,
+        "interpretation": "Scorecard covers observer–field coupling, unification, multi-agent routing, empirical history, portability.",
+        "honesty": "Empirical-calibration row correctly credits Classical/Standard observational history.",
+        "pass": true
+      },
+      {
+        "id": "E6_ef_attention_identity",
+        "title": "E_F + λ_EGS + Softmax attention scale (√d · E_F)",
+        "E_F": 1.618033988749895,
+        "lambda_egs": 0.07658724063250828,
+        "attention_scale_d64": 12.94427190999916,
+        "abs_err_lambda": 0,
+        "abs_err_scale": 0,
+        "interpretation": "Attention squeeze formula anchors Softmax temperature to E_F in the map.",
+        "honesty": "Architectural keys — not a claim GPUs curl physical A via Softmax.",
+        "pass": true
+      },
+      {
+        "id": "E7_comparative_margin",
+        "title": "Holographic overall exceeds Classical (published margin)",
+        "classical_overall": 74,
+        "holographic_overall": 97.5,
+        "margin": 23.5,
+        "interpretation": "Under this structural rubric, attention-squeezed model scores higher on C×I mean.",
+        "honesty": "Comparative architecture score — Classical retains empirical-calibration advantage (E5).",
+        "pass": true
+      },
+      {
+        "id": "E8_portability_token_note",
+        "title": "Squeezed Context Windows — token routing design target 41.8%",
+        "reduction": 0.418,
+        "interpretation": "Applications cite Squeezed Context Windows / E_F delta-routing design target as companion papers.",
+        "honesty": "Design-target citation — not a new live invoice receipt in this package.",
+        "pass": true
+      },
+      {
+        "id": "E9_recursive_attn_surfaces",
+        "title": "Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
+        "paper_exists": true,
+        "hasDocId": true,
+        "hasHonesty": true,
+        "hasOperator": true,
+        "hasTitle": true,
+        "seedRagPointer": true,
+        "claimsRuntime": false,
+        "engineImport": false,
+        "surfaces": [
+          "docs/SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md",
+          "/whitepaper/synthobs-recursive-attn-mag",
+          "/lattice/learn",
+          "/interfaces/nesting/nest-lattice-chat.html",
+          "lib/lattice-prompt.mjs"
+        ],
+        "registryId": "synthobs-recursive-attn-mag-2026-07",
+        "interpretation": "Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+        "honesty": "Surface / pointer presence — featuring requires PRA pass; not completed SQUID proof.",
+        "pass": true
+      }
+    ]
+  }
+}

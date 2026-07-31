@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "9c4eca04fd0f40a8",
-  "paperId": "synthobs-omni-lattice-report-card-q3-2026",
-  "sourcePath": "docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md",
+  "auditId": "b21e664ecabf4967",
+  "paperId": "synthobs-mag-substrate-2026-07",
+  "sourcePath": "docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-31T00:45:07.975Z"
+          "invokedAt": "2026-07-31T00:50:46.695Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-31T00:45:07.974Z",
-  "completedAt": "2026-07-31T00:45:07.975Z",
+  "startedAt": "2026-07-31T00:50:46.693Z",
+  "completedAt": "2026-07-31T00:50:46.695Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,11 +125,11 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1304,
+      "wordCount": 1735,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 10,
+        "links": 13,
         "numbered": 6,
         "citeLines": 3
       }

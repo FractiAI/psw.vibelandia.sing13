@@ -9,7 +9,7 @@
 
 Comparative **structural** report card: $\Lambda$CDM+QFT vs Omni-Lattice on Internal Coherence ($\mathcal{C}$) and Parameter Irreducibility ($\mathcal{I}$), anchored to $E_F \approx 1.618$.
 
-**Not** Lattice Chat engine code. **Not** an observational falsification of dark matter.
+Wired as a **Lattice Chat V1.618 Seed·RAG pointer** (comparative scorecard in the nest catalog). **Not** Lattice Chat runtime source. **Not** an observational falsification of dark matter.
 
 ## Scores (rubric)
 
@@ -28,12 +28,14 @@ npm run research:synthobs-omni-lattice-report-card-q3-2026
 
 ## Standalone GitHub
 
-Exportable package for `FractiAI/synthobs-omni-lattice-report-card-q3-2026`:
+**Live:** https://github.com/FractiAI/synthobs-omni-lattice-report-card-q3-2026 (`main`)
+
+This monorepo folder mirrors that standalone package. Sync updates with:
 
 ```bash
 cd research/synthobs-omni-lattice-report-card-q3-2026
-git init -b main && git add -A && git commit -m "Initial Q3 2026 report card suite"
-gh repo create FractiAI/synthobs-omni-lattice-report-card-q3-2026 --public --source=. --remote=origin --push
+git init -b main && git add -A && git commit -m "Sync Q3 2026 report card suite"
+git push https://github.com/FractiAI/synthobs-omni-lattice-report-card-q3-2026.git HEAD:main
 ```
 
 ## Honesty

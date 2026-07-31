@@ -1,6 +1,6 @@
 /**
- * Omni-Lattice Report Card Q3 2026 — comparative cosmology scoring suite.
- * Architectural rubric validation. NOT a claim that ΛCDM is observationally falsified.
+ * Magnetism Universal Foundational Substrate — comparative scoring suite.
+ * Architectural rubric validation. NOT a Maxwell/QED laboratory replacement.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import {
   E_F,
   LAMBDA_EGS,
+  GOLDEN_ANGLE_DEG,
   DOC_ID,
   REGISTRY_ID,
   STANDARD,
@@ -17,24 +18,22 @@ import {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SCORECARD_PATH = path.join(__dirname, '..', 'data', 'scorecard_fixtures.json');
+const PAPER_NAME = 'SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md';
 
 function loadScorecard() {
   return JSON.parse(fs.readFileSync(SCORECARD_PATH, 'utf8'));
 }
 
-/** Equal-weight overall from C and I. */
 export function overallFromCI(c, i) {
   return (c + i) / 2;
 }
 
-/** Coherence formula from paper §1.1 (bounded to [0,1] then ×100). */
 export function coherenceScore(nParadox, nSingularities, nDomainIntersections) {
   const den = Math.max(1, nDomainIntersections);
   const raw = 1 - (nParadox + nSingularities) / den;
   return Math.max(0, Math.min(1, raw)) * 100;
 }
 
-/** Irreducibility formula from paper §1.2 (mapped to 0–100 via logistic-ish clamp). */
 export function irreducibilityIndex(nDerived, nP, nU) {
   const den = Math.max(1, nP + nU);
   return nDerived / den;
@@ -49,11 +48,10 @@ export function experimentOverallIdentity() {
     title: 'Overall score = (C + I) / 2',
     standard: { c: STANDARD.coherence, i: STANDARD.irreducibility, overall: std },
     omni: { c: OMNI.coherence, i: OMNI.irreducibility, overall: omni },
-    interpretation: 'Report-card overalls are the equal-weight mean of coherence and irreducibility.',
-    honesty: 'Rubric arithmetic — not an observational likelihood ratio vs CMB data.',
+    interpretation: 'Scorecard overalls are the equal-weight mean of coherence and irreducibility.',
+    honesty: 'Rubric arithmetic — not an observational likelihood ratio vs magnetometry.',
     pass:
-      Math.abs(std - STANDARD.overall) < 1e-9 &&
-      Math.abs(omni - OMNI.overall) < 1e-9,
+      Math.abs(std - STANDARD.overall) < 1e-9 && Math.abs(omni - OMNI.overall) < 1e-9,
   };
 }
 
@@ -70,15 +68,14 @@ export function experimentCoherenceFormula() {
     sc.omni.n_singularities,
     sc.omni.n_domain_intersections,
   );
-  // Fixtures are calibrated to land near published C scores (±2).
   return {
     id: 'E2_coherence_formula',
     title: 'Coherence metric C from paradox/singularity counts',
     standard_C: std,
     omni_C: omni,
     published: { standard: STANDARD.coherence, omni: OMNI.coherence },
-    interpretation: 'C formula tracks published report-card coherence bands.',
-    honesty: 'Counts are authored scorecard inputs for comparative architecture — not telescope reductions.',
+    interpretation: 'C formula tracks published magnetic-substrate coherence bands.',
+    honesty: 'Counts are authored scorecard inputs — not laboratory field reductions.',
     pass:
       Math.abs(std - STANDARD.coherence) <= 2 &&
       Math.abs(omni - OMNI.coherence) <= 2 &&
@@ -105,27 +102,25 @@ export function experimentIrreducibilityRanking() {
     I_standard: iStd,
     I_omni: iOmni,
     ratio: iOmni / Math.max(1e-12, iStd),
-    interpretation: 'Fewer free/unobserved inputs raise Occam-style irreducibility for Omni-Lattice map.',
-    honesty: 'Derived-phenomena counts are rubric-authored; not a claim DM/DE are nonexistent.',
+    interpretation: 'Single E_F invariant raises Occam-style irreducibility for magnetic substrate map.',
+    honesty: 'Derived-phenomena counts are rubric-authored; not a claim gauge bosons are nonexistent.',
     pass: iOmni > iStd && iOmni / iStd >= 2,
   };
 }
 
-/** E4 — Dark-sector fraction bookkeeping (~95% = 27%+68%). */
-export function experimentDarkSectorBookkeeping() {
-  const sum = STANDARD.dark_matter + STANDARD.dark_energy;
-  const err = Math.abs(sum - STANDARD.dark_fraction);
+/** E4 — Four fundamental interactions vs single magnetic substrate bookkeeping. */
+export function experimentFourInteractionBookkeeping() {
+  const stdN = STANDARD.fundamental_interactions;
+  const omniN = OMNI.fundamental_interactions;
   return {
-    id: 'E4_dark_sector_bookkeeping',
-    title: 'Dark sector fractions — 27% + 68% ≈ 95%',
-    dark_matter: STANDARD.dark_matter,
-    dark_energy: STANDARD.dark_energy,
-    sum,
-    published_fraction: STANDARD.dark_fraction,
-    abs_err: err,
-    interpretation: 'Scorecard uses consensus-order dark-sector mass-energy shares.',
-    honesty: 'Consensus textbook shares for comparison — not a new cosmological fit.',
-    pass: err < 0.02,
+    id: 'E4_four_interaction_bookkeeping',
+    title: 'Interaction bookkeeping — 4 forces vs 1 substrate map',
+    standard_interactions: stdN,
+    omni_interactions: omniN,
+    free_constants_standard: STANDARD.free_constants,
+    interpretation: 'Scorecard contrasts four-interaction reductionism with singular magnetic substrate map.',
+    honesty: 'Bookkeeping for comparative architecture — not a collider null result.',
+    pass: stdN === 4 && omniN === 1 && STANDARD.free_constants === 26,
   };
 }
 
@@ -146,8 +141,8 @@ export function experimentScorecardDomains() {
     outcomesOk,
     empirical_calibration_to_standard: empiricalToStandard?.outcome === 'standard_model',
     interpretation:
-      'Report card covers mass deficit, acceleration, unification, empirical history, portability.',
-    honesty: 'Empirical-calibration row correctly credits Standard Model’s observational history.',
+      'Scorecard covers quantum, chemical, biological, empirical history, and portability.',
+    honesty: 'Empirical-calibration row correctly credits Standard Model / QED observational history.',
     pass:
       hasAll &&
       domains.length === 5 &&
@@ -156,19 +151,27 @@ export function experimentScorecardDomains() {
   };
 }
 
-/** E6 — E_F / λ_EGS identities. */
+/** E6 — E_F / λ_EGS / golden-angle identities. */
 export function experimentEFIdentity() {
-  const expect = Math.log(E_F) / (2 * Math.PI);
-  const err = Math.abs(LAMBDA_EGS - expect);
+  const expectLambda = Math.log(E_F) / (2 * Math.PI);
+  const expectAngle = 360 / (E_F * E_F);
+  const errL = Math.abs(LAMBDA_EGS - expectLambda);
+  const errA = Math.abs(GOLDEN_ANGLE_DEG - expectAngle);
   return {
     id: 'E6_ef_identity',
-    title: 'E_F contrast invariant + λ_EGS identity',
+    title: 'E_F contrast invariant + λ_EGS + golden angle',
     E_F,
     lambda_egs: LAMBDA_EGS,
-    abs_err: err,
-    interpretation: 'Report card anchors Omni-Lattice to a single architectural invariant.',
-    honesty: 'Architectural key — not a replacement for ℏ, c, or G.',
-    pass: err < 1e-15 && Math.abs(E_F - (1 + Math.sqrt(5)) / 2) < 1e-15,
+    golden_angle_deg: GOLDEN_ANGLE_DEG,
+    abs_err_lambda: errL,
+    abs_err_angle: errA,
+    interpretation: 'Magnetic substrate map anchors to E_F and golden-angle phase rotation.',
+    honesty: 'Architectural keys — not replacements for ℏ, c, or G.',
+    pass:
+      errL < 1e-15 &&
+      errA < 1e-12 &&
+      Math.abs(E_F - (1 + Math.sqrt(5)) / 2) < 1e-15 &&
+      Math.abs(GOLDEN_ANGLE_DEG - 137.508) < 0.01,
   };
 }
 
@@ -181,13 +184,13 @@ export function experimentComparativeMargin() {
     standard_overall: STANDARD.overall,
     omni_overall: OMNI.overall,
     margin,
-    interpretation: 'Under this structural rubric, Omni-Lattice scores higher on C×I mean.',
+    interpretation: 'Under this structural rubric, magnetic substrate scores higher on C×I mean.',
     honesty: 'Comparative architecture score — Standard Model retains empirical-calibration advantage (E5).',
-    pass: margin === 24.5 && OMNI.overall > STANDARD.overall,
+    pass: margin === 20 && OMNI.overall > STANDARD.overall,
   };
 }
 
-/** E8 — Token-routing portability note links to 41.8% design target consistently. */
+/** E8 — Token-routing portability note links to 41.8% design target. */
 export function experimentPortabilityTokenNote() {
   const sc = loadScorecard();
   const port = sc.applications?.enterprise_token_routing_reduction;
@@ -195,18 +198,19 @@ export function experimentPortabilityTokenNote() {
     id: 'E8_portability_token_note',
     title: 'Cross-domain portability — token routing design target 41.8%',
     reduction: port,
-    interpretation: 'Report card applications cite the same E_F delta-routing design target as companion papers.',
-    honesty: 'Design-target citation to companion suites — not a new live invoice receipt in this package.',
+    interpretation:
+      'Applications cite Vector Field Context Buffering / E_F delta-routing design target as companion papers.',
+    honesty: 'Design-target citation — not a new live invoice receipt in this package.',
     pass: Math.abs(port - 0.418) < 1e-9,
   };
 }
 
-/** E9 — Surfaces: report-card paper + Seed·RAG / nest pointer; not runtime engine source. */
-export function experimentReportCardSurfaces() {
+/** E9 — Surfaces: paper + Seed·RAG / nest pointer; not runtime engine source. */
+export function experimentMagSubstrateSurfaces() {
   const pkgRoot = path.resolve(__dirname, '..');
   const monoRoot = path.resolve(__dirname, '..', '..', '..');
-  const localPaper = path.join(pkgRoot, 'docs', 'SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md');
-  const monoPaper = path.join(monoRoot, 'docs', 'SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md');
+  const localPaper = path.join(pkgRoot, 'docs', PAPER_NAME);
+  const monoPaper = path.join(monoRoot, 'docs', PAPER_NAME);
   const paper = fs.existsSync(localPaper) ? localPaper : monoPaper;
   const root = fs.existsSync(path.join(monoRoot, 'apps', 'lattice-chat')) ? monoRoot : pkgRoot;
   const ok = fs.existsSync(paper);
@@ -214,9 +218,8 @@ export function experimentReportCardSurfaces() {
   const hasDocId = text.includes(DOC_ID);
   const hasHonesty = /Honesty boundary/i.test(text);
   const hasOperator = /SynthOBS Autonomous Agent/i.test(text);
-  const hasTitle = /Omni-Lattice Report Card Q3 2026/i.test(text);
+  const hasTitle = /Magnetism as the Universal Foundational Substrate/i.test(text);
   const seedRagPointer = /Seed·RAG|Seed·RAG pointer|nest pointer/i.test(text);
-  // Affirmative engine claims only (honesty boundary may negate "runtime source" in prose).
   const claimsRuntime =
     /(powers the Lattice Chat engine|wired into Lattice Chat engine|Lattice Chat engine feature|\bis Lattice Chat engine code\b)/i.test(
       text,
@@ -224,18 +227,18 @@ export function experimentReportCardSurfaces() {
   let engineImport = false;
   const pkg = path.join(root, 'apps', 'lattice-chat', 'package.json');
   if (fs.existsSync(pkg)) {
-    engineImport = /report-card-q3|comp-cosmo/i.test(fs.readFileSync(pkg, 'utf8'));
+    engineImport = /mag-substrate|mag_substrate/i.test(fs.readFileSync(pkg, 'utf8'));
   }
   const surfaces = [
-    'docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md',
-    '/whitepaper/synthobs-omni-lattice-report-card-q3-2026',
+    `docs/${PAPER_NAME}`,
+    '/whitepaper/synthobs-mag-substrate',
     '/lattice/learn',
     '/interfaces/nesting/nest-lattice-chat.html',
     'lib/lattice-prompt.mjs',
   ];
   return {
-    id: 'E9_report_card_surfaces',
-    title: 'Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime',
+    id: 'E9_mag_substrate_surfaces',
+    title: 'Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime',
     paper_exists: ok,
     hasDocId,
     hasHonesty,
@@ -247,8 +250,8 @@ export function experimentReportCardSurfaces() {
     surfaces,
     registryId: REGISTRY_ID,
     interpretation:
-      'Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).',
-    honesty: 'Surface / pointer presence — featuring requires PRA pass; not observational ΛCDM falsification.',
+      'Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).',
+    honesty: 'Surface / pointer presence — featuring requires PRA pass; not Maxwell/QED replacement.',
     pass:
       ok &&
       hasDocId &&
@@ -267,12 +270,12 @@ export async function runAllExperiments() {
     experimentOverallIdentity(),
     experimentCoherenceFormula(),
     experimentIrreducibilityRanking(),
-    experimentDarkSectorBookkeeping(),
+    experimentFourInteractionBookkeeping(),
     experimentScorecardDomains(),
     experimentEFIdentity(),
     experimentComparativeMargin(),
     experimentPortabilityTokenNote(),
-    experimentReportCardSurfaces(),
+    experimentMagSubstrateSurfaces(),
   ];
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);
   return {

@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "9c4eca04fd0f40a8",
-  "paperId": "synthobs-omni-lattice-report-card-q3-2026",
-  "sourcePath": "docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md",
+  "auditId": "9edf3a24c8beb7c5",
+  "paperId": "synthobs-recursive-attn-mag-2026-07",
+  "sourcePath": "docs/SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-31T00:45:07.975Z"
+          "invokedAt": "2026-07-31T00:54:13.004Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-31T00:45:07.974Z",
-  "completedAt": "2026-07-31T00:45:07.975Z",
+  "startedAt": "2026-07-31T00:54:13.003Z",
+  "completedAt": "2026-07-31T00:54:13.005Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1304,
+      "wordCount": 1724,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,

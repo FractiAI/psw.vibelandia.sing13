@@ -60,7 +60,8 @@
     "research:synthobs-recursive-attn-mag": "node research/synthobs-recursive-attn-mag/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-prion-refold": "node research/synthobs-prion-refold/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-81-orbital-singularity": "node research/synthobs-81-orbital-singularity/scripts/run_empirical_pipeline.mjs",
-    "research:synthobs-histone-phase-operator": "node research/synthobs-histone-phase-operator/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-histone-phase-operator": "node research/synthobs-histone-phase-operator/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-phase-toxicity": "node research/synthobs-phase-toxicity/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

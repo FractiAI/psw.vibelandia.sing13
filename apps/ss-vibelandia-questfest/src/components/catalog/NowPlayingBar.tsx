@@ -65,11 +65,12 @@ export function NowPlayingBar({
 
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
-  const fullPlayUnlocked = isPassenger || captainUnlocked;
-  const allowBackgroundPlay = fullPlayUnlocked && backgroundPlayEnabled;
+  /** Streaming is always free. */
+  const fullPlayUnlocked = true;
+  const allowBackgroundPlay = backgroundPlayEnabled;
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
-  const solenoidActive = pl?.kind === 'sovereign' && !fullPlayUnlocked;
+  const solenoidActive = false;
   const primaryMediaRef = audioRef;
   const [mediaMountGen, setMediaMountGen] = useState(0);
   const wiredUrlRef = useRef<string | null>(null);
@@ -513,12 +514,9 @@ export function NowPlayingBar({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
-              {solenoidActive && <span className="sp-now-badge">30s preview</span>}
-              {fullPlayUnlocked && (
-                <span className="sp-now-badge sp-now-badge--pass" title="Member playback">
-                  {captainUnlocked && !isPassenger ? 'Capitan · full play' : 'Members pass · full play'}
-                </span>
-              )}
+              <span className="sp-now-badge sp-now-badge--pass" title="Free streaming">
+                Free stream
+              </span>
             </>
           ) : (
             <p className="sp-now-empty">Pick a track to play</p>

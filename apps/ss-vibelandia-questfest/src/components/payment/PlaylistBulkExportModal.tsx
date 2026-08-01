@@ -116,12 +116,8 @@ export function PlaylistBulkExportModal({
       setDoneMsg('Every track in this playlist is already licensed on this device.');
       return;
     }
-    if (!isPassenger && !captainUnlocked) {
-      setStep('need_access');
-      return;
-    }
-    setStep('confirm');
-  }, [open, pl, targets.length, toLicense.length, isPassenger, captainUnlocked, reset]);
+    setStep(captainUnlocked ? 'confirm' : 'confirm');
+  }, [open, pl, targets.length, toLicense.length, captainUnlocked, reset]);
 
   const runBulkDownloads = async (
     onTrack: (track: (typeof toLicense)[0]['track'], index: number) => Promise<void>,
@@ -171,11 +167,6 @@ export function PlaylistBulkExportModal({
     const passToken = readPassToken();
     const devSkip = import.meta.env.DEV && email.trim() === 'dev@local';
 
-    if (!passToken && !devSkip && !localHonorOnly) {
-      setError('Machote members pass required — confirm honor boarding first.');
-      return;
-    }
-
     const failures = await runBulkDownloads(async (track) => {
       if (import.meta.env.DEV && email.trim() === 'dev@local') {
         saveExportLicense({
@@ -183,9 +174,9 @@ export function PlaylistBulkExportModal({
           licensedAt: new Date().toISOString(),
           licenseId: 'dev-local-bulk',
         });
-      } else if (passToken) {
+      } else {
         const res = await requestExport({
-          passToken,
+          passToken: passToken || undefined,
           rail,
           honorConfirm: true,
           paidDate,
@@ -198,12 +189,6 @@ export function PlaylistBulkExportModal({
           licensedAt: new Date().toISOString(),
           licenseId: res.licenseId,
           passengerJti: res.passengerJti,
-        });
-      } else {
-        saveExportLicense({
-          trackId: track.id,
-          licensedAt: new Date().toISOString(),
-          licenseId: 'honor-local-bulk',
         });
       }
       await downloadTrackToDevice(track);
@@ -249,15 +234,12 @@ export function PlaylistBulkExportModal({
         {step === 'need_access' && (
           <>
             <p className="modal-body">
-              You need an <strong>active Machote members pass</strong> or <strong>captain access</strong> before bulk
-              downloads.
+              Catalog streaming is free. Bulk downloads use the playlist bundle rate — continue to confirm Fair
+              Exchange.
             </p>
             <div className="modal-actions">
-              <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => { close(); onNeedPass(); }}>
-                Get members-only pass
-              </button>
-              <button type="button" className="voxel-btn" onClick={() => { close(); onCaptainRequest(); }}>
-                I am the captain — password
+              <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('confirm')}>
+                Continue to download
               </button>
               <button type="button" className="voxel-btn voxel-btn--ghost" onClick={close}>
                 Cancel

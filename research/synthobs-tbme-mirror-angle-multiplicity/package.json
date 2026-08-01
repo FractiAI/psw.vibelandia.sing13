@@ -1,0 +1,24 @@
+{
+  "name": "synthobs-tbme-mirror-angle-multiplicity",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone TBME / Omni-Lattice lens — Holographic Mirror-Angle Multiplicity (WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01). Not Lattice engine runtime.",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "SynthOBS",
+    "TBME",
+    "Omni-Lattice",
+    "PCHPP",
+    "mirror-angle",
+    "Born",
+    "EGS",
+    "lens"
+  ]
+}

@@ -21,12 +21,13 @@ function writeSet(ids: Set<string>) {
   }
 }
 
-/** Visitor has not yet used their one free full play on this track. */
+/** @deprecated Catalog streaming is always free — kept for localStorage cleanup compatibility. */
 export function hasFreeFullPlayRemaining(trackId: string): boolean {
   if (!trackId) return false;
   return !readSet().has(trackId);
 }
 
+/** @deprecated No longer consumed — streaming is free. */
 export function markFreeFullPlayConsumed(trackId: string) {
   if (!trackId) return;
   const ids = readSet();
@@ -35,13 +36,14 @@ export function markFreeFullPlayConsumed(trackId: string) {
   writeSet(ids);
 }
 
-/** Preview gate applies after the free full play is consumed (members always exempt). */
+/**
+ * Preview gate is retired: streaming the Sonic Singularity catalog is always free.
+ * Downloads remain Fair Exchange at $1.61/track.
+ */
 export function shouldPreviewGate(
-  trackId: string | null | undefined,
-  fullPlayUnlocked: boolean,
-  playlistKind: 'open_deck' | 'sovereign' | undefined,
+  _trackId: string | null | undefined,
+  _fullPlayUnlocked: boolean,
+  _playlistKind: 'open_deck' | 'sovereign' | undefined,
 ): boolean {
-  if (fullPlayUnlocked || !trackId) return false;
-  if (playlistKind !== 'sovereign') return false;
-  return !hasFreeFullPlayRemaining(trackId);
+  return false;
 }

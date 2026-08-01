@@ -26,8 +26,6 @@ import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useSessionStore } from '@/stores/sessionStore';
 import {
-  hasFreeFullPlayRemaining,
-  markFreeFullPlayConsumed,
   shouldPreviewGate,
 } from '@/lib/freeFullPlay';
 import {
@@ -37,6 +35,7 @@ import {
   playlistOrderFingerprint,
 } from '@/lib/playlistShuffle';
 import { PLAIN } from '@/lib/plainSpeak';
+import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 import {
   clearSharedTrackAutoplaySeed,
   sharedTrackAutoplayFromMaster,
@@ -106,11 +105,11 @@ export function BridgePlayer({
   const resolvedTrackIdsKey = useResolvedTrackIdsKey(pl?.id);
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
-  const fullPlayUnlocked = isPassenger || captainUnlocked;
-  const allowBackgroundPlay = fullPlayUnlocked && backgroundPlayEnabled;
+  /** Streaming is always free — pass/captain no longer gate full play. */
+  const fullPlayUnlocked = true;
+  const allowBackgroundPlay = backgroundPlayEnabled;
   const solenoidActive = shouldPreviewGate(currentTrackId, fullPlayUnlocked, pl?.kind);
-  const freeFullRemaining =
-    Boolean(currentTrackId) && !fullPlayUnlocked && hasFreeFullPlayRemaining(currentTrackId);
+  const freeFullRemaining = false;
 
   const [playlistModalOpen, setPlaylistModalOpen] = useState(false);
   const [shareNote, setShareNote] = useState<string | null>(null);
@@ -265,12 +264,6 @@ export function BridgePlayer({
     if (pb.backgroundHandoffActive) {
       const bg = getPlaybackMedia().background;
       if (bg?.src && !bg.ended) return;
-    }
-    const tid = pb.currentTrackId;
-    const member =
-      useSessionStore.getState().isPassenger || useSessionStore.getState().captainUnlocked;
-    if (tid && !member && hasFreeFullPlayRemaining(tid)) {
-      markFreeFullPlayConsumed(tid);
     }
     if (!usePlaybackStore.getState().autoplayEnabled) {
       setPlaying(false);
@@ -511,15 +504,9 @@ export function BridgePlayer({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
-              {!jukeboxBrowse && freeFullRemaining && (
-                <span className="sp-now-badge sp-now-badge--free">{PLAIN.freeFullPlay}</span>
-              )}
-              {!jukeboxBrowse && solenoidActive && (
-                <span className="sp-now-badge">{PLAIN.freePreview}</span>
-              )}
-              {!jukeboxBrowse && fullPlayUnlocked && (
-                <span className="sp-now-badge sp-now-badge--pass" title="Member playback">
-                  {captainUnlocked && !isPassenger ? 'Capitan · full play' : 'Members pass · full play'}
+              {!jukeboxBrowse && (
+                <span className="sp-now-badge sp-now-badge--pass" title="Free streaming">
+                  Free stream · download ${EGS_EXPORT_USD.toFixed(2)}
                 </span>
               )}
             </>

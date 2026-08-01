@@ -1,5 +1,5 @@
 /**
- * Per-track export license — active monthly Passenger JWT + Fair Exchange honor or receipt proof.
+ * Per-track export license — Fair Exchange honor ($1.61). Catalog streaming is free; no monthly pass required.
  */
 const crypto = require('node:crypto');
 
@@ -33,16 +33,7 @@ module.exports = async function handler(req, res) {
 
   const { verifyPassToken } = await import('../lib/pass-token.mjs');
   const { redisLpush, upstashConfigured } = await import('../lib/upstash.mjs');
-  const { getPassTokenSecret, PASS_TOKEN_SECRET_SETUP_MESSAGE } = await import('../lib/pass-env.mjs');
-
-  const secret = getPassTokenSecret();
-  if (!secret) {
-    return res.status(503).json({
-      error: 'export_unconfigured',
-      message: PASS_TOKEN_SECRET_SETUP_MESSAGE,
-    });
-  }
-
+  const { getPassTokenSecret } = await import('../lib/pass-env.mjs');
   const { validateHonorAttestation } = require('./honor-attest.js');
 
   const body = readBody(req);
@@ -51,13 +42,9 @@ module.exports = async function handler(req, res) {
     String(body.passToken || '').trim() ||
     (authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : '');
 
-  const passenger = verifyPassToken(passToken, secret);
-  if (!passenger) {
-    return res.status(401).json({
-      error: 'monthly_pass_required',
-      message: 'Active Machote Magazine members pass required before track download.',
-    });
-  }
+  /** Optional legacy JWT — streaming no longer requires a pass; honor download is enough. */
+  const secret = getPassTokenSecret();
+  const passenger = secret && passToken ? verifyPassToken(passToken, secret) : null;
 
   const rail = String(body.rail || '').toLowerCase();
   const trackId = String(body.trackId || '').trim();
@@ -95,8 +82,8 @@ module.exports = async function handler(req, res) {
     trackId,
     trackTitle: trackTitle || null,
     rail,
-    passengerJti: passenger.jti,
-    passengerSub: passenger.sub,
+    passengerJti: passenger?.jti ?? null,
+    passengerSub: passenger?.sub ?? null,
     exportUsd: EXPORT_USD,
     honor: !!honorMeta,
     honorPaidDate: honorMeta?.paidDate ?? null,
@@ -119,7 +106,6 @@ module.exports = async function handler(req, res) {
     licenseId,
     trackId,
     exportUsd: EXPORT_USD,
-    passengerJti: passenger.jti,
-    message: 'Export licensed. Save the file to your device for offline play.',
+    passengerJti: passenger?.jti ?? null,
   });
 };

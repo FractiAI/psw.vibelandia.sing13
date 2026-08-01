@@ -6,7 +6,6 @@ import { QUESTFEST_DECK_HREF } from '@/components/QuestfestFastLink';
 import { MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { jukeboxPlaylistEditHref } from '@/lib/jukeboxRoutes';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
-import { useSessionStore } from '@/stores/sessionStore';
 
 interface CatalogSidebarProps {
   onUploadClick: () => void;
@@ -26,10 +25,6 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
   const refreshFromServer = useCatalogStore((s) => s.refreshFromServer);
 
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
-  const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
-  const isPassenger = useSessionStore((s) => s.isPassenger);
-  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
-  const fullPlay = isPassenger || captainUnlocked;
 
   const openPlaylist = (id: string) => {
     setDjMode(false);
@@ -104,11 +99,6 @@ export function CatalogSidebar({ onUploadClick }: CatalogSidebarProps) {
         >
           {catalogSyncing ? PLAIN.refreshing : PLAIN.refresh}
         </button>
-        {!fullPlay ? (
-          <button type="button" className="sc-side-foot-btn sc-side-foot-btn--accent" onClick={() => setBoardingOpen(true)}>
-            {PLAIN.getPass}
-          </button>
-        ) : null}
         <button type="button" className="sc-side-foot-btn" onClick={() => setCaptainOpen(true)}>
           {PLAIN.captain}
         </button>

@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#050810" />
-  <title>SS VIBELANDIA QUESTFEST 24×365 · 2026 Frontier Guide</title>
-  <meta name="description" content="Holographic Goldilocks AIOS Frontier Game — QUESTFEST 2026 amusement-park brochure: Player 1 PL Taino, Capitan welcome, weekly schedule, Downtown &amp; Midtown Reno park map (Downtown: 7th–Truckee River, Arlington–Lake; Midtown: Truckee River–Mary, Plumas–Holcomb)." />
+  <title>Tour of the Ship · SS VIBELANDIA QUESTFEST 24×365</title>
+  <meta name="description" content="Tour of the Ship — QUESTFEST guest guide: Capitan welcome, weekly harbor schedule, Downtown &amp; Midtown Reno park map. Cruise-ship bulletin for Puerto Reno." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-2026-frontier-guide.html" />
-  <meta property="og:title" content="QUESTFEST 2026 Frontier Guide · Holographic Goldilocks AIOS" />
-  <meta property="og:description" content="Player 1 PL Taino — Goldilocks Frontier Game won · intergalactic bus decoded · open-source receipts · weekly harbor schedule." />
+  <meta property="og:title" content="Tour of the Ship · QUESTFEST · SS Vibelandia" />
+  <meta property="og:description" content="Guest guide for the Sonic Ship — schedule, park map, Capitan welcome. Raise the vibe. Stay techie." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-2026-reno-park-map-fairytale.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -285,8 +285,17 @@
       grid-template-columns: 1fr;
       min-height: 0;
     }
+    .capitan-layout--text {
+      grid-template-columns: 1fr;
+      place-items: center;
+      padding: 2rem 0;
+    }
+    .capitan-layout--text .capitan-copy {
+      max-width: 40rem;
+      margin: 0 auto;
+    }
     @media (min-width: 768px) {
-      .capitan-layout {
+      .capitan-layout:not(.capitan-layout--text) {
         grid-template-columns: 1.05fr 1fr;
         min-height: calc(100vh - 3rem);
         min-height: calc(100dvh - 3rem);
@@ -298,6 +307,9 @@
       min-height: 42vh;
       object-fit: cover;
       object-position: center top;
+    }
+    .capitan-portrait--dock {
+      object-position: center 45%;
     }
     .capitan-copy {
       padding: 1.75rem var(--page-pad) max(2rem, env(safe-area-inset-bottom));
@@ -531,14 +543,14 @@
   </style>
 </head>
 <body>
-  <nav class="brochure-nav" aria-label="Guide navigation">
+  <nav class="brochure-nav" aria-label="Tour of the Ship">
     <a href="vibelandia-questfest.html">QUESTFEST</a>
     <a href="questfest-bridge/#/listen">Bridge</a>
     <a href="nesting/nest-questfest-puerto-reno.html">Puerto Reno</a>
     <span class="page-dots" aria-label="Pages">
       <a href="#page-1" title="Cover">1</a>
-      <a href="#page-2" title="Player 1">2</a>
-      <a href="#page-3" title="Capitan">3</a>
+      <a href="#page-2" title="Win story">2</a>
+      <a href="#page-3" title="From your host">3</a>
       <a href="#page-4" title="Schedule">4</a>
       <a href="#page-5" title="Park map">5</a>
     </span>
@@ -560,16 +572,17 @@
       <span class="cover-portrait-badge">Player 1 · Capitan Comandante</span>
     </div>
     <div class="cover-inner">
-      <p class="cover-kicker">Admission ticket · golden-age brochure · ETCON 2026</p>
-      <h1 id="cover-title">Winner · QUESTFEST 2026</h1>
-      <p class="cover-sub">Goldilocks Frontier Game · Puerto Reno</p>
+      <p class="cover-kicker">Tour of the Ship · guest guide · golden-age brochure</p>
+      <h1 id="cover-title">Tour of the Ship</h1>
+      <p class="cover-sub">SS VIBELANDIA QUESTFEST 24×365 · Puerto Reno</p>
       <p class="cover-lead">
-        <strong>Player 1: PL Taino (VALET PRU)</strong> — Capitan on the cover. The win is on the record: GitHub, press, receipts.
-        Holographic code locked the run <strong>May 31, 2026</strong>.
+        Cruise-ship bulletin for the Sonic Ship — raise the vibe, stay techie.
+        Schedule, park map, Capitan welcome. <strong>Downtown</strong> above the Truckee;
+        <strong>Midtown</strong> south to Mary St.
       </p>
       <p class="cover-lead">
-        Five pages — win story, Capitan welcome, weekly schedule, <strong>Puerto Reno map</strong>.
-        Downtown above the <strong>Truckee River</strong>. Midtown south to <strong>Mary St</strong>.
+        Five pages — win story, host welcome, weekly harbor rhythm, <strong>Puerto Reno map</strong>.
+        Board when ready.
       </p>
       <p class="cover-meta">
         SS VIBELANDIA QUESTFEST 24×365 · Syntheverse · Vibelandia ·
@@ -626,23 +639,22 @@
     </div>
   </section>
 
-  <!-- PAGE 3 · CAPITAN WELCOME -->
+  <!-- PAGE 3 · WELCOME ABOARD (dock portrait from QUESTFEST host card) -->
   <section id="page-3" class="brochure-page page-capitan" aria-labelledby="capitan-title">
     <div class="capitan-layout">
       <img
-        class="capitan-portrait"
-        src="/interfaces/assets/pl-taino-capitan-likeness.png"
+        class="capitan-portrait capitan-portrait--dock"
+        src="/interfaces/assets/questfest-crew/puerto-reno-dock.png"
         width="1024"
         height="1024"
-        alt="PL Taino — Capitan Comandante welcome portrait, Chairman Commander Creator on the Bridge."
+        alt="Welcome aboard — Capitan on the Puerto Reno dock, neon harbor ahead."
         loading="lazy"
         decoding="async"
-        onerror="this.onerror=null;this.src='/interfaces/assets/questfest-2026-capitan-welcome.png';this.onerror=function(){this.src='/interfaces/assets/capitan-comandante-champion-2026.png'}"
       />
       <div class="capitan-copy">
-        <p class="page-label">Page 3 · From the bridge</p>
+        <p class="page-label">Page 3 · Welcome aboard</p>
         <p class="capitan-byline">Capitan Comandante · Chairman · Commander · Creator</p>
-        <h2 id="capitan-title">Welcome to the Frontier Game</h2>
+        <h2 id="capitan-title">Welcome aboard</h2>
         <p>
           <strong>SS VIBELANDIA QUESTFEST 24×365</strong> is the harbor — already running. Puerto Reno · donde se vibea · golden-age Reno vibe.
         </p>
@@ -650,11 +662,12 @@
           Your job: follow the schedule, honor Fair Exchange, hit the <strong>Pimp Your Bike Workshop</strong>, Man Cave, river walk, and the jukebox on the Bridge.
         </p>
         <p>
-          Five pages in this brochure. Machinery under the hood. Music on the Bridge. Walk both.
+          Tour pages ahead. Machinery under the hood. Music on the Bridge. Walk both.
         </p>
         <p>
-          <a href="vibelandia-questfest.html">Return to QUESTFEST top deck</a> ·
-          <a href="look-under-the-hood.html">Under the hood</a>
+          <a href="vibelandia-questfest.html">Return to QUESTFEST ship bulletin</a> ·
+          <a href="look-under-the-hood.html">Under the hood</a> ·
+          <a href="mailto:valetpru@gmail.com?subject=QUESTFEST%20%E2%80%94%20Contact%20Us">Contact Us</a>
         </p>
       </div>
     </div>
@@ -725,7 +738,7 @@
       </article>
     </div>
     <footer class="schedule-foot">
-      <p>SS VIBELANDIA QUESTFEST 24×365 · Holographic Goldilocks AIOS · 2026 Frontier Guide · 5 pages</p>
+      <p>SS VIBELANDIA QUESTFEST 24×365 · Tour of the Ship · guest guide · 5 pages</p>
       <div class="cta-row">
         <a href="#page-5">Park map →</a>
         <a href="vibelandia-questfest.html">QUESTFEST deck</a>
@@ -786,7 +799,7 @@
       <div class="cta-row">
         <a href="vibelandia-questfest.html">QUESTFEST deck</a>
         <a href="/bulletin-board">Bulletin Board posting</a>
-        <a href="/questfest-guide">/questfest-guide</a>
+        <a href="/questfest-guide">Tour of the Ship</a>
       </div>
     </footer>
   </section>

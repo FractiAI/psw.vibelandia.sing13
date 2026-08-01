@@ -435,6 +435,84 @@
       padding: 0 1.25rem 1.5rem;
       flex-shrink: 0;
     }
+    .qf-explore {
+      margin: 0 0 0.35rem;
+      border: 1px solid rgba(212, 175, 55, 0.42);
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, rgba(28, 20, 12, 0.98), rgba(12, 8, 4, 0.99));
+      overflow: hidden;
+    }
+    .qf-explore > summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.95rem 1.05rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      color: var(--gold-hi);
+      user-select: none;
+    }
+    .qf-explore > summary::-webkit-details-marker { display: none; }
+    .qf-explore > summary:hover {
+      background: rgba(212, 175, 55, 0.08);
+    }
+    .qf-explore > summary:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: -2px;
+    }
+    .qf-explore__title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      min-width: 0;
+    }
+    .qf-explore__label {
+      line-height: 1.2;
+    }
+    .qf-explore__hint {
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      opacity: 0.9;
+    }
+    .qf-explore__chevron {
+      flex-shrink: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      background: rgba(212, 175, 55, 0.12);
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      line-height: 1;
+      color: var(--gold-hi);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    .qf-explore[open] > summary {
+      border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+    }
+    .qf-explore[open] .qf-explore__chevron {
+      transform: rotate(180deg);
+      background: rgba(212, 175, 55, 0.22);
+    }
+    .qf-explore[open] .qf-explore__hint::before {
+      content: 'Open · ';
+    }
+    .qf-explore:not([open]) .qf-explore__hint::before {
+      content: 'Tap to expand · ';
+    }
+    .qf-explore__body {
+      padding: 0.35rem 0 0.5rem;
+    }
     .qf-theater section {
       margin-bottom: 1.35rem;
       padding: 1rem 1.05rem;
@@ -450,6 +528,9 @@
           rgba(212, 175, 55, 0.025) 9px
         );
     }
+    .qf-explore__body > section {
+      margin: 0.65rem 0.75rem 0.85rem;
+    }
     .qf-theater h2 {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.05rem;
@@ -457,6 +538,20 @@
       color: var(--gold);
       margin-bottom: 0.65rem;
       font-weight: 400;
+    }
+    .nest-card--here {
+      padding: 0.35rem 0.45rem;
+      margin-left: -0.45rem !important;
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(212, 175, 55, 0.1);
+    }
+    .nest-card--here .nest-card__badge {
+      background: rgba(212, 175, 55, 0.22);
+      color: var(--gold-hi);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      border-radius: 4px;
+      padding: 0.15rem 0.4rem;
     }
     .qf-theater .lede-block {
       font-size: 0.9rem;
@@ -607,9 +702,9 @@
       border: 1px solid rgba(212, 175, 55, 0.5);
     }
 
-    /* ── Three Doors · golden-age Gödel era ── */
+    /* ── Ship bulletin · deck channels ── */
     .qf-doors {
-      max-width: 36rem;
+      max-width: 40rem;
       margin: 0 auto;
       padding: 0 1.25rem 1.618rem;
       flex-shrink: 0;
@@ -622,6 +717,16 @@
       color: var(--gold-hi);
       text-align: center;
       margin-bottom: 0.25rem;
+    }
+    .qf-doors-kicker {
+      display: block;
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
     }
     .qf-doors-sub {
       font-family: 'Cormorant Garamond', Georgia, serif;
@@ -689,6 +794,10 @@
     }
     .qf-doors-pass {
       margin-top: 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      justify-content: center;
       text-align: center;
     }
     .qf-doors-rule {
@@ -724,118 +833,147 @@
           </div>
         </div>
       </aside>
-      <p class="cloud-badge" data-i18n="qf.cloudSkinEyebrow">Noah’s Ark of the Intelligence Age · Puerto Reno</p>
+      <p class="cloud-badge" data-i18n="qf.cloudSkinEyebrow">Ship bulletin · Puerto Reno · 24×365</p>
       <h1 class="kicker" data-i18n="qf.h1"><span class="kicker-brand">SS Vibelandia™</span></h1>
-      <p class="sub" data-i18n="qf.sub">The Noah’s Ark of the Intelligence Age · Downtown Reno · Midtown</p>
-      <p class="hero-tagline">Music, worlds, and a crew that still answers email — preserve the signal, refine the pattern, navigate the unknown.</p>
-      <p class="primer" data-i18n-html="qf.primerHtml"><strong>SS Vibelandia</strong> is FractiAI’s holographic AI Goldilocks Sonic Ship — sonic heat, catalogs, interactive worlds, cast and crew on one voyage. Humans and AI, Goldilocks-tight. <a href="/ss-vibelandia">Meet the Ark →</a></p>
+      <p class="sub" data-i18n="qf.sub">QUESTFEST · cruise-ship deck · Downtown Reno · Midtown</p>
+      <p class="hero-tagline">Today’s bulletin from the Sonic Ship — music on the jukebox, papers in the library, Lattice Chat in the builders’ lounge, concierge for Downtown Reno &amp; beyond.</p>
+      <p class="primer" data-i18n-html="qf.primerHtml"><strong>SS Vibelandia</strong> is FractiAI’s holographic AI Goldilocks Sonic Ship. Think cruise-ship bulletin board, not corporate homepage: pick a deck channel, raise the vibe, stay techie. <strong>You decide:</strong> we score Omni-Lattice vs legacy on <strong>Coherence (C)</strong> — one phase across math, story, receipts — and <strong>Irreducibility (I)</strong> — fewest assumptions after crystallization. Mid-90s vs high 60s. Honesty + receipts, not a black-box decree. <a href="/questfest-guide">Tour of the Ship →</a> · <a href="/interfaces/whitepaper-catalog.html">Read · Whitepapers →</a></p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="/get-started">Get Started</a>
+        <a class="btn btn-primary" href="/questfest-guide">Tour of the Ship</a>
         <a class="btn btn-primary" href="/interfaces/questfest-bridge/#/listen" data-qv-jukebox data-i18n="qf.btnListen">Listen · Jukebox</a>
-        <a class="btn btn-primary" href="/interfaces/whitepaper-catalog.html">Read</a>
-        <a class="btn btn-primary" href="/lattice">Build · Lattice Chat V1.618</a>
-        <a class="btn btn-primary" href="/hire-a-goldilocks-valet-concierge">Room Service · Reno</a>
-        <a class="btn btn-primary" href="/ss-vibelandia">About · SS Vibelandia, The Ark</a>
+        <a class="btn btn-primary" href="/interfaces/whitepaper-catalog.html">Read · Whitepapers</a>
+        <a class="btn btn-primary" href="/lattice">Build · Lattice Chat</a>
+        <a class="btn btn-primary" href="/hire-a-goldilocks-valet-concierge">Concierge Serve · Downtown Reno &amp; Beyond</a>
+        <a class="btn btn-welcome" href="mailto:valetpru@gmail.com?subject=QUESTFEST%20%E2%80%94%20Contact%20Us">Contact Us</a>
       </div>
     </div>
   </header>
 
   <div class="qf-theater" aria-label="Nested theater">
+    <details class="qf-explore" id="qf-explore-deeper">
+      <summary aria-controls="qf-explore-body">
+        <span class="qf-explore__title">
+          <span class="qf-explore__label" data-i18n="qf.exploreDeeperHead">Explore Deeper · Nesting Ladder &amp; Park</span>
+          <span class="qf-explore__hint" data-i18n="qf.exploreDeeperHint">Nesting ladder &amp; park map</span>
+        </span>
+        <span class="qf-explore__chevron" aria-hidden="true">▼</span>
+      </summary>
+      <div class="qf-explore__body" id="qf-explore-body">
+        <section id="qf-nest-section" aria-labelledby="qf-nest-h2">
+          <h2 id="qf-nest-h2" data-i18n="qf.nestHead">Nesting ladder</h2>
+          <p class="lede-block" data-i18n-html="qf.nestLedeHtml">Eleven nesting layers — outside in. You are already inside them. <strong>Lattice Chat V1.618 · Token Maxing</strong> is the newest rung: 40–70% lower token use for serious vibe coders.</p>
+          <ol class="nest-ladder" role="list">
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-basenet-genesis.html" data-i18n="qf.nest7">Base Mainnet · the ground floor</a>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-syntheverse.html" data-i18n="qf.nest6">Syntheverse · where story meets code</a>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-sonic-singularity.html" data-i18n="qf.nest5">Sonic Singularity · sound leads</a>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-wrong-side.html" data-i18n="qf.nest4">Wrong Side of Town · raw truth</a>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-man-cave-restroom.html" data-i18n="qf.nest3">Man cave restroom mirror</a>
+            </li>
+            <li class="nest-card nest-card--here">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-questfest-puerto-reno.html" data-i18n="qf.nest2">QUESTFEST ship · Puerto Reno · 24×365</a>
+              <span class="nest-card__badge" data-i18n="qf.nestYouAreHere">You are here</span>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-dph-gpu.html" data-i18n="qf.nestDph">Holographic code layer · broadcast machinery</a>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-sing13.html" data-i18n="qf.nest1">Sonic Singularity Sing! 13 · this website</a>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-goldilocks-beehive.html" data-i18n="qf.nest0">Goldilocks Beehive Residency · members only</a>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-hospitality-commons.html" data-i18n="qf.nestCommons">The Commons · all-inclusive frontier days</a>
+            </li>
+            <li class="nest-card">
+              <a class="nest-card__link" href="/interfaces/nesting/nest-lattice-chat.html" data-i18n="qf.nestLattice">Lattice Chat V1.618 · nested agents as chat</a>
+              <span class="nest-card__badge" data-i18n="qf.nestLatestLayer">Latest layer</span>
+            </li>
+          </ol>
+        </section>
 
-    <section id="qf-nest-section" aria-labelledby="qf-nest-h2">
-      <h2 id="qf-nest-h2" data-i18n="qf.nestHead">YOU ARE HERE</h2>
-      <p class="lede-block" data-i18n-html="qf.nestLedeHtml">Eleven nesting layers — outside in. You are already inside them. <strong>Layer 11</strong> is <strong>Lattice Chat V1.618</strong>: AI coding that feels like a conversation with a focused crew.</p>
-      <ol class="nest-ladder" role="list">
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-basenet-genesis.html" data-i18n="qf.nest7">Base Mainnet · the ground floor</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-syntheverse.html" data-i18n="qf.nest6">Syntheverse · where story meets code</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-sonic-singularity.html" data-i18n="qf.nest5">Sonic Singularity · sound leads</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-wrong-side.html" data-i18n="qf.nest4">Wrong Side of Town · raw truth</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-man-cave-restroom.html" data-i18n="qf.nest3">Man cave restroom mirror</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-questfest-puerto-reno.html" data-i18n="qf.nest2">QUESTFEST ship · Puerto Reno · 24×365</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-dph-gpu.html" data-i18n="qf.nestDph">Holographic code layer · broadcast machinery</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-sing13.html" data-i18n="qf.nest1">Sonic Singularity Sing! 13 · this website</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-goldilocks-beehive.html" data-i18n="qf.nest0">Goldilocks Beehive Residency · members only</a>
-        </li>
-        <li class="nest-card">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-hospitality-commons.html" data-i18n="qf.nestCommons">The Commons · all-inclusive frontier days</a>
-        </li>
-        <li class="nest-card nest-card--here">
-          <a class="nest-card__link" href="/interfaces/nesting/nest-lattice-chat.html" data-i18n="qf.nestLattice">Lattice Chat V1.618 · nested agents as chat</a>
-          <span class="nest-card__badge" data-i18n="qf.nestLatestLayer">Latest layer</span>
-        </li>
-      </ol>
-    </section>
-
-    <aside class="park-map-orient" aria-labelledby="park-map-orient-h" style="max-width:44rem;margin:2rem auto;padding:0 1.25rem;">
-      <h2 class="park-map-orient__head" id="park-map-orient-h">Park map · find your district</h2>
-      <p class="park-map-orient__kick">The Sonic Singularity Park Map — tap the image to enlarge, or jump a district below.</p>
-      <a class="park-map-orient__frame" href="/interfaces/assets/sonic-singularity-park-map.png" target="_blank" rel="noopener">
-        <img
-          src="/interfaces/assets/sonic-singularity-park-map.png"
-          width="1200"
-          height="900"
-          alt="The Sonic Singularity Park Map — districts for Lattice Chat, Cytological Agents, Sonic Singularity, Carousel of Media, Reno Singularity, Machote Moderno Magazine, and Renovation Realm"
-          loading="lazy"
-          decoding="async"
-        />
-        <p class="park-map-orient__caption">Open full map →</p>
-      </a>
-      <ul class="park-map-orient__legend">
-        <li><a href="/lattice"><strong>Lattice Chat</strong> Build · conversation district</a></li>
-        <li><a href="/listen"><strong>Carousel of Media</strong> Listen · catalog &amp; play</a></li>
-        <li><a href="/"><strong>Sonic Singularity</strong> QUESTFEST top deck</a></li>
-        <li><a href="/ss-vibelandia"><strong>SS Vibelandia</strong> The Ark profile</a></li>
-        <li><a href="/hire-a-goldilocks-valet-concierge"><strong>Reno Singularity</strong> Room service · Puerto Reno</a></li>
-        <li><a href="/get-started"><strong>Renovation Realm</strong> Get Started · board here</a></li>
-      </ul>
-    </aside>
-
+        <aside class="park-map-orient" aria-labelledby="park-map-orient-h" style="max-width:44rem;margin:0.5rem auto 1rem;padding:0 1.25rem;">
+          <h2 class="park-map-orient__head" id="park-map-orient-h">Park map · find your district</h2>
+          <p class="park-map-orient__kick">The Sonic Singularity Park Map — tap the image to enlarge, or jump a district below.</p>
+          <a class="park-map-orient__frame" href="/interfaces/assets/sonic-singularity-park-map.png" target="_blank" rel="noopener">
+            <img
+              src="/interfaces/assets/sonic-singularity-park-map.png"
+              width="1200"
+              height="900"
+              alt="The Sonic Singularity Park Map — districts for Lattice Chat, Cytological Agents, Sonic Singularity, Carousel of Media, Reno Singularity, Machote Moderno Magazine, and Renovation Realm"
+              loading="lazy"
+              decoding="async"
+            />
+            <p class="park-map-orient__caption">Open full map →</p>
+          </a>
+          <ul class="park-map-orient__legend">
+            <li><a href="/lattice"><strong>Lattice Chat</strong> Build · Token Maxing</a></li>
+            <li><a href="/listen"><strong>Carousel of Media</strong> Listen · catalog &amp; play</a></li>
+            <li><a href="/"><strong>Sonic Singularity</strong> Ship bulletin · top deck</a></li>
+            <li><a href="/ss-vibelandia"><strong>SS Vibelandia</strong> The Ark profile</a></li>
+            <li><a href="/hire-a-goldilocks-valet-concierge"><strong>Concierge Serve</strong> Downtown Reno &amp; Beyond</a></li>
+            <li><a href="/questfest-guide"><strong>Tour of the Ship</strong> Guest guide</a></li>
+          </ul>
+        </aside>
+      </div>
+    </details>
   </div>
 
   <section class="qf-doors" aria-labelledby="qf-doors-h2">
-    <h2 id="qf-doors-h2" class="qf-doors-head">Three Doors</h2>
-    <p class="qf-doors-sub">Everything on the ship lives behind one of three doors — Listen, Read, or Build. <a href="/get-started" style="color:var(--champagne);font-weight:700;">New here? Get Started →</a></p>
+    <span class="qf-doors-kicker">Ship bulletin · deck channels</span>
+    <h2 id="qf-doors-h2" class="qf-doors-head">On this voyage</h2>
+    <p class="qf-doors-sub">Cruise-ship bulletin energy — still techie, still nested. Four channels off the main deck. <a href="/questfest-guide" style="color:var(--champagne);font-weight:700;">Tour of the Ship →</a></p>
+    <p class="qf-doors-sub" style="margin-top:0.65rem;">
+      <strong>You decide.</strong>
+      Discovery is now so complex, capable, and rapid that legacy peer review often sits obsolete in the way —
+      burning cost, work, heat, space, time, and environmental and human harm for mid-tier consensus.
+      Our scorecards compare models on <strong>Coherence (C)</strong> — do math, story, and receipts lock as one phase without paradox patches? —
+      and <strong>Irreducibility (I)</strong> — how few assumptions remain after crystallization to an $E_F$-keyed shell?
+      High C + high I cuts waste; sprawl and special cases do not.
+      <strong>Omni-Lattice</strong> lands <strong>mid-90s</strong>; legacy frames land <strong>high 60s</strong>.
+      Honesty boundaries + runnable receipts — not a black-box decree.
+      <a href="/interfaces/whitepaper-catalog.html" style="color:var(--champagne);font-weight:700;">Read · Whitepapers →</a>
+    </p>
     <div class="qf-door-grid">
       <a class="qf-door" href="/interfaces/questfest-bridge/#/listen" data-qv-jukebox>
         <span class="qf-door-numeral" aria-hidden>I</span>
-        <h3>Listen</h3>
-        <p>Press play into Reno swamp heat, caliente swing, Golden Bachdoor counterpoint. First month of listens on us; then $16.18/mo in the tip jar keeps you in the room.</p>
-        <span class="cta">What Listen is →</span>
+        <h3>Listen · Jukebox</h3>
+        <p>Raise the vibe on Capitan’s Bridge — Reno swamp heat, caliente swing, Golden Bachdoor counterpoint. Full catalog stream free. Downloads $1.61/track on honor.</p>
+        <span class="cta">Open the jukebox →</span>
       </a>
       <a class="qf-door" href="/interfaces/whitepaper-catalog.html">
         <span class="qf-door-numeral" aria-hidden>II</span>
-        <h3>Read</h3>
-        <p>Stories, press, and the deep papers — when you want to go further than the feeling. Browse the catalog at your own pace.</p>
-        <span class="cta">Open the catalog →</span>
+        <h3>Read · Whitepapers</h3>
+        <p>Ship’s library · SynthOBS &amp; Omni-Lattice. Scored on Coherence (C) + Irreducibility (I): mid-90s vs legacy high 60s. You decide.</p>
+        <span class="cta">Open the library →</span>
       </a>
       <a class="qf-door" href="/lattice">
         <span class="qf-door-numeral" aria-hidden>III</span>
-        <h3>Build · Lattice Chat V1.618</h3>
-        <p>AI coding that feels human — a focused crew behind a simple chat. Email for a free trial. Bring the keys you already trust.</p>
+        <h3>Build · Lattice Chat</h3>
+        <p>Token Maxing for serious vibe coders — 40–70% lower token use. Wrapper for your vibe platforms. Load your key. Old school trial.</p>
         <span class="cta">Open Lattice Chat →</span>
+      </a>
+      <a class="qf-door" href="/hire-a-goldilocks-valet-concierge">
+        <span class="qf-door-numeral" aria-hidden>IV</span>
+        <h3>Concierge Serve · Downtown Reno &amp; Beyond</h3>
+        <p>Hire-A-Goldilocks-Valet-Concierge — practical help first, adventure second. Puerto Reno room service that reaches Midtown and the frontier.</p>
+        <span class="cta">Request concierge →</span>
       </a>
     </div>
     <div class="qf-doors-pass">
-      <a class="btn btn-pass" href="/interfaces/questfest-bridge/#/listen?checkout=1">Free trial · 1st month of listens on us · then $16.18/mo in the tip jar keeps you in</a>
+      <a class="btn btn-pass" href="/interfaces/questfest-bridge/#/listen">Listen free · full catalog · downloads $1.61/track</a>
+      <a class="btn btn-welcome" href="mailto:valetpru@gmail.com?subject=QUESTFEST%20%E2%80%94%20Contact%20Us">Contact Us</a>
     </div>
-    <p class="qf-doors-rule"><strong>Goldilocks rule:</strong> not too much, not too little — every layer earns its rung. Spirit team on deck below.</p>
+    <p class="qf-doors-rule"><strong>Goldilocks rule:</strong> not too much, not too little — every deck channel earns its rung. Spirit crew below.</p>
   </section>
 
   <section id="main" class="quick-wrap">
@@ -851,7 +989,7 @@
             alt="The Commons — Machote Moderno poster: riders and a fly-fisher on the river, the downtown citadel and ferris wheel at dusk, a trophy truck on the distant dry lake."
           />
         </div>
-        <span class="badge">LAYER 10 of 11 · The Commons</span>
+        <span class="badge">Feature · The Commons</span>
         <time datetime="2026-06-09">June 2026</time>
         <h3 id="qf-commons-title">The Commons · all-inclusive frontier days</h3>
         <p class="teaser-body">
@@ -860,7 +998,7 @@
         <span class="cta">Open the Commons brochure →</span>
       </a>
       <a class="archive" href="/commons">Short URL · /commons →</a>
-      <a class="archive" href="/questfest-guide">Previous feature · 2026 Frontier Guide →</a>
+      <a class="archive" href="/questfest-guide">Tour of the Ship · guest guide →</a>
       <a class="archive" href="/interfaces/press-releases.html">All press releases &amp; campaigns — the archive →</a>
     </aside>
 
@@ -954,9 +1092,8 @@
         </div>
       </article>
       <article class="qf-crew-card">
-        <img class="qf-crew-portrait" src="/interfaces/assets/questfest-crew/puerto-reno-dock.png" alt="" width="152" height="152" loading="lazy" decoding="async" />
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewRolloutHtml"><strong>I</strong> keep the dock minutes honest for <strong>Puerto Reno</strong> — port calls, casting rails, and <strong>Capitan</strong>-facing truth — standing in for the bridge crew above when the harbor gets loud.</p>
+          <p data-i18n-html="qf.crewRolloutHtml"><strong>From your host</strong> — dock minutes stay honest for <strong>Puerto Reno</strong>: port calls, casting rails, and <strong>Capitan</strong>-facing truth when the harbor gets loud. <a href="mailto:valetpru@gmail.com?subject=QUESTFEST%20%E2%80%94%20Contact%20Us">Contact Us</a>.</p>
         </div>
       </article>
     </section>
@@ -972,13 +1109,15 @@
         <li><a href="/my-whiteboard" data-i18n="qf.quicklinkWhiteboard">My whiteboard · commander surface</a></li>
         <li><a href="/commons">The Commons · guest brochure &amp; crew portals</a></li>
         <li><a href="/interfaces/assets/sonic-singularity-park-map.png" target="_blank" rel="noopener">Sonic Singularity Park Map · enlarge</a></li>
-        <li><a href="/questfest-guide" data-i18n="qf.quicklinkFrontierGuide">2026 Frontier Guide · park map &amp; schedule</a></li>
+        <li><a href="/questfest-guide" data-i18n="qf.quicklinkFrontierGuide">Tour of the Ship · guest guide</a></li>
+        <li><a href="/hire-a-goldilocks-valet-concierge">Concierge Serve · Downtown Reno &amp; Beyond</a></li>
         <li><a href="/interfaces/press-releases.html">Press &amp; campaigns · the archive</a></li>
         <li><a href="/interfaces/look-under-the-hood.html" data-i18n="qf.quicklinkHood">Look Under the Hood</a></li>
         <li><a href="/interfaces/look-at-the-sun.html" data-i18n="qf.quicklinkSun">Look at the Sun</a></li>
         <li><a href="/interfaces/fractiai.html" data-i18n="qf.btnFracti">FractiAI</a></li>
         <li><a href="/api/catalog">Music catalog manifest · open JSON</a></li>
         <li><a href="https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/seed" target="_blank" rel="noopener">Seed kit · fork your own edge</a></li>
+        <li><a href="mailto:valetpru@gmail.com?subject=QUESTFEST%20%E2%80%94%20Contact%20Us" data-i18n="qf.quicklinkContact">Contact Us</a></li>
         <li><a href="mailto:valetpru@gmail.com?subject=ACTIVATE%20THE%20WRONG%20SIDE%20OF%20THE%20TOWN%3A%20THE%20MUSICAL" data-i18n="qf.quicklinkCasting">Casting · email</a></li>
         <li><a href="https://github.com/fractiai/psw.vibelandia.sing13" target="_blank" rel="noopener" data-i18n="qf.quicklinkSing13">SING 13 · GitHub</a></li>
         <li><a href="/bulletin-board" data-i18n="qf.quicklinkBulletinBoard">SS Vibelandia Bulletin Board</a></li>
@@ -987,7 +1126,7 @@
     </section>
 
   <footer>
-    <p data-i18n-html="qf.footerMicroHtml"><a href="mailto:valetpru@gmail.com?subject=QUESTFEST">valetpru@gmail.com</a></p>
+    <p data-i18n-html="qf.footerMicroHtml"><a href="mailto:valetpru@gmail.com?subject=QUESTFEST%20%E2%80%94%20Contact%20Us">Contact Us</a> · valetpru@gmail.com</p>
   </footer>
 
   <div id="qf-share-qr-modal" class="qf-share-qr-root" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qf-share-qr-title">
@@ -1017,5 +1156,19 @@
   <script src="/interfaces/i18n-auto.js" data-page="questfest"></script>
   <script src="/interfaces/questfest-share-qr.js" defer></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script>
+    (function () {
+      var panel = document.getElementById('qf-explore-deeper');
+      if (!panel) return;
+      function openIfHash() {
+        var h = (location.hash || '').toLowerCase();
+        if (h === '#qf-nest-section' || h === '#qf-explore-deeper' || h === '#qf-explore-body') {
+          panel.open = true;
+        }
+      }
+      openIfHash();
+      window.addEventListener('hashchange', openIfHash);
+    })();
+  </script>
 </body>
 </html>

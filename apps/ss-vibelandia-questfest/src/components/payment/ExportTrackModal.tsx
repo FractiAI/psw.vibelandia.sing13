@@ -56,8 +56,7 @@ export function ExportTrackModal({
     if (!open || !track) return;
     if (licensed) setStep('done');
     else if (captainUnlocked) setStep('captain_bypass');
-    else if (isPassenger) setStep('rail');
-    else setStep('gate');
+    else setStep('rail');
     setRail(null);
     setPaidDate(todayISO());
     setEmail('');
@@ -65,7 +64,7 @@ export function ExportTrackModal({
     setBusy(false);
     setError(null);
     setMsg(null);
-  }, [open, track?.id, isPassenger, captainUnlocked, licensed]);
+  }, [open, track?.id, captainUnlocked, licensed]);
 
   if (!open || !track) return null;
 
@@ -128,9 +127,9 @@ export function ExportTrackModal({
           licensedAt: new Date().toISOString(),
           licenseId: 'dev-local',
         });
-      } else if (passToken) {
+      } else {
         const res = await requestExport({
-          passToken,
+          passToken: passToken || undefined,
           rail,
           honorConfirm: true,
           paidDate,
@@ -143,12 +142,6 @@ export function ExportTrackModal({
           licensedAt: new Date().toISOString(),
           licenseId: res.licenseId,
           passengerJti: res.passengerJti,
-        });
-      } else {
-        saveExportLicense({
-          trackId: track.id,
-          licensedAt: new Date().toISOString(),
-          licenseId: 'honor-local',
         });
       }
       await runDownload();
@@ -170,21 +163,19 @@ export function ExportTrackModal({
       <div className="voxel-panel modal-card modal-card--wide">
         <h2 className="modal-title">Download to device · ${EGS_EXPORT_USD.toFixed(2)}</h2>
         <p className="modal-body">
-          <strong>{title}</strong> — save the file for offline listening in any player. Machote Magazine
-          members pass holders only; each download is <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> Fair Exchange.
+          <strong>{title}</strong> — save the file for offline listening in any player. Catalog streaming is free;
+          each download is <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> Fair Exchange on honor.
         </p>
 
         {step === 'gate' && (
           <>
             <p className="modal-body">
-              You need an <strong>active Machote members pass</strong> or <strong>captain access</strong> before you can
-              buy a track download. Streaming stays on the pass; downloads are per track. Captain unlock lives inside{' '}
-              <strong>Get members-only pass</strong> — expand <strong>Are you the captain?</strong> there, or use the
-              Fair Exchange screen after a 30s preview (or the <strong>Capitan</strong> link in the header).
+              Streaming is free for everyone. Downloads are <strong>${EGS_EXPORT_USD.toFixed(2)}</strong> per track —
+              pick a rail below to continue.
             </p>
             <div className="modal-actions">
-              <button type="button" className="voxel-btn voxel-btn--orange" onClick={onNeedPass}>
-                Get members-only pass
+              <button type="button" className="voxel-btn voxel-btn--orange" onClick={() => setStep('rail')}>
+                Continue to download
               </button>
               <button type="button" className="voxel-btn voxel-btn--ghost" onClick={close}>
                 Back

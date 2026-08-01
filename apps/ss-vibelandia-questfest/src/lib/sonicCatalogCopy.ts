@@ -32,26 +32,26 @@ export const JUKEBOX_WELCOME =
   'Welcome to the Sonic Singularity — sovereign broadcast on Holographic Goldilocks Sonic Ship SS VIBELANDIA QUESTFEST where catalog, story, and frequency converge and create reality. Pick a playlist, build playlists: every track carries the living hydrogen Y line, not just juicy beats.';
 
 /** Paying members — upload invitation on /listen footer. */
-export const JUKEBOX_MEMBER_INVITE_TITLE = 'Members — upload your original line';
+export const JUKEBOX_MEMBER_INVITE_TITLE = 'Upload your original line';
 
 export const JUKEBOX_MEMBER_INVITE_BODY =
-  'Paying members with an active Machote catalog pass can feed the Sonic Ship on the DJ tab: upload your own original work—including AI music you have rights to—that passes the Holographic Goldilocks AI OS minimum above. Curate it in playlists you build here. Set a playlist Sovereign to keep visitor previews tight, or Open deck when you are ready for others to listen through.';
+  'Feed the Sonic Ship on the DJ tab: upload your own original work—including AI music you have rights to—that passes the Holographic Goldilocks AI OS minimum. Streaming the catalog is free for everyone; offline downloads are $1.61 per track on honor.';
 
 export const JUKEBOX_MEMBER_INVITE_CTA_UPLOAD = 'Open DJ tab — upload tracks';
 
-export const JUKEBOX_MEMBER_INVITE_CTA_PASS = 'Claim free month · tip jar after';
+export const JUKEBOX_MEMBER_INVITE_CTA_PASS = 'Download a track · $1.61';
 
 /** DJ / upload tab — member upload invitation (below intro). */
 export const UPLOAD_MEMBER_INVITE =
-  'Members pass holders: upload audio that meets the Holographic Goldilocks AI OS minimum (whole-in-every-part, balanced band, coordinated layers)—including AI music you have rights to—then curate it in your own playlists. Sovereign playlists keep the preview gate for visitors; Open deck playlists let others listen through without that gate.';
+  'Upload audio that meets the Holographic Goldilocks AI OS minimum (whole-in-every-part, balanced band, coordinated layers)—including AI music you have rights to—then curate it in your own playlists. The master catalog streams free; downloads are Fair Exchange per track.';
 
 /** Playlist editor — visibility labels (maps to playlist kind). */
-export const PLAYLIST_KIND_SOVEREIGN_LABEL = 'Sovereign · tighter for visitors';
+export const PLAYLIST_KIND_SOVEREIGN_LABEL = 'Sovereign · curated set';
 
-export const PLAYLIST_KIND_OPEN_LABEL = 'Open deck · others can listen through';
+export const PLAYLIST_KIND_OPEN_LABEL = 'Open deck · open listen-through';
 
 export const PLAYLIST_KIND_HINT =
-  'Sovereign keeps the 30s preview gate for non-members after their one free full play. Open deck removes that gate so others can hear your line.';
+  'Both kinds stream free end-to-end. Offline export is still $1.61 per track on Fair Exchange.';
 
 /** Technical note — playlists UI only, never the Listen hero story. */
 export const MASTER_LIBRARY_UI_HINT =

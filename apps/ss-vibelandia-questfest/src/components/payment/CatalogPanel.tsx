@@ -38,8 +38,8 @@ export function CatalogPanel({ isPassenger }: CatalogPanelProps) {
             <div className="catalog-track-info">
               <span className="catalog-track-title">{tr.title}</span>
               <span className="catalog-track-artist">{tr.artist}</span>
-              {!isPassenger && <span className="catalog-free-pill">Free · 30s preview</span>}
-              {isPassenger && <span className="catalog-pass-pill">Member · full play</span>}
+              {!isPassenger && <span className="catalog-free-pill">Free stream</span>}
+              {isPassenger && <span className="catalog-pass-pill">Free stream</span>}
             </div>
             <LikeButton trackId={tr.id} />
             <button

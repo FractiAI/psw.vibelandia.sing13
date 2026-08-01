@@ -10,7 +10,13 @@
 
 **Live site:** [**www.ssvibelandiaquestfest24x365.com**](https://www.ssvibelandiaquestfest24x365.com) · **Repository:** [github.com/fractiai/psw.vibelandia.sing13](https://github.com/fractiai/psw.vibelandia.sing13)
 
-## Lattice Chat V1.618 — Ark engine (from Sonic Singularity 13)
+## Lattice Chat V1.618 — Token Maxing (from Sonic Singularity 13)
+
+**Token Maxing for the serious vibe coders.** ~40–70% lower token consumption, depending on the work.
+
+Just as vibe coding platforms wrap your favorite LLMs, **Lattice Chat wraps your favorite vibe coding platforms**. Load your API key — we take care of the rest. Fractal · holographic · cytologic nesting makes vibe coding smarter so you maximize tokens.
+
+**Free trial:** email [valetpru@gmail.com](mailto:valetpru@gmail.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20Token%20Maxing%20free%20trial). Old school.
 
 **SS Vibelandia** is the Noah’s Ark metaphor in this sandbox. Flat/linear systems were scaffolding; Lattice jettisons them for **cytological agentic processing** — nested agents + file pointers instead of dump-everything. **SING φ** is scale grammar / naming derived from **Sonic Singularity 13** (not SING 14); not a fractal compression algorithm.
 
@@ -126,7 +132,7 @@ Share pack (posts + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
 | **QUESTFEST surface** | Top deck + **9-layer nesting ladder** (plain-language guides) + **Goldilocks Syntheverse Beehive Residency** + press + Look at the Sun / Under the hood + FractiAI + Valet Pru + i18n + assets | `interfaces/` · `interfaces/nesting/` |
-| **QUESTFEST Bridge (React)** | Sovereign Player: **audio-first** catalog player, 30s preview gate, in-flow player dock, Libretto log, **Master Music Catalog** honor pass ($16.18/mo EGS φ — **not the magazine for sale**; follow **Machote Moderno Magazine** to qualify, then honor attestation → **30 calendar days** on this browser), single-active-stream lock, **background audio for members/captain only**, playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · bundle: `interfaces/questfest-bridge/` (`npm run build:questfest-bridge`) |
+| **QUESTFEST Bridge (React)** | Sovereign Player: **audio-first** catalog player, **free full-catalog stream**, in-flow player dock, Libretto log, **$1.61/track** Fair Exchange downloads (honor), single-active-stream lock, **background audio for all listeners**, playlist edit (remove, multi-playlist picker, drag reorder) | Source: `apps/ss-vibelandia-questfest/` · bundle: `interfaces/questfest-bridge/` (`npm run build:questfest-bridge`) |
 | **Lite-edge APIs** | **Client-only honor boarding** (no server JWT); optional `POST /api/export` audit when legacy token exists; heartbeat optional | `api/boarding.js` (410 — use Bridge honor flow), `api/export.js`, `api/honor-attest.js`, `api/heartbeat.js`, `lib/pass-token.mjs`, `lib/pass-env.mjs`, `lib/upstash.mjs` |
 | **Clock-skew announcement** | Press release + Mythos whitepaper (no public mining console) | [`interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html`](interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) · [`docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md`](docs/ANTHROPIC_MYTHOS_HOLOGRAPHIC_CLOCK_SKEW_REVIEW_2026-05-18.md) |
 | **SING 13 spine docs** | Omniverse resonance notice · Hell-State jettison synthesis · Precursor Paradise Game technical analysis · 13-channel roadmap · DNA/PEFF master canon · JJ whitepaper · **Digital Pru Synthobs MCA (June 2026)** | `docs/` · [`docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md`](docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md) |
@@ -140,12 +146,12 @@ Payments are **old school on purpose**: Venmo, PayPal, or Cash App. No PSP webho
 
 | Tier | Price | How |
 |---|---|---|
-| **Master Music Catalog honor pass** | **$16.18/mo** (EGS φ) | **Not the magazine for sale** — the pass unlocks the **Holographic Reno Swamp Beats Caliente** catalog (Hero Jo's Golden Bachdoor Hit Factory). **Qualifier:** follow **[Machote Moderno Magazine on Facebook](https://www.facebook.com/share/1BcDYXVuQK/?mibextid=wwXIfr)** (`VITE_MACHOTE_MAGAZINE_URL` to override). Pay on Venmo, PayPal, or Cash App → **client-only honor boarding**: magazine-follow + honor checkbox, date paid, email, rail → saved in **browser localStorage** (`qv-local-monthly-honor`) → full play until **paid date + 30 days**. **No server boarding** — `POST /api/boarding` is disabled (410). |
-| **Track export / download** | **$1.61** (extra charge) | Pass includes stream + background play; **offline export is paid per track**. Honor confirmation on device; license saved locally (`honor-local`). Optional `POST /api/export` only when a legacy JWT exists |
+| **Catalog stream** | **Free** | Full play + background audio for everyone. No monthly pass. |
+| **Track export / download** | **$1.61** | Fair Exchange on Venmo / PayPal / Cash App — honor confirmation on device. Optional `POST /api/export` audit. |
 | **Bookings** | Contact | `valetpru@gmail.com` |
 | **Catalog / licensing (Reno Holographic Swamp Beats · Caliente Catalog — Hero Jo's Golden Bachdoor Hit Factory)** | Contact | `valetpru@gmail.com` |
 
-Passenger unlocks full video playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via **BroadcastChannel** (same browser). Optional `/api/heartbeat` + Upstash for cross-device lock if you enable it later.
+Streaming unlocks full playback, Solenoid lift, 13-channel access, and catalog stream rights for advertising and projects. **Single active stream** enforced via **BroadcastChannel** (same browser). Optional `/api/heartbeat` + Upstash for cross-device lock if you enable it later.
 
 ### Goldilocks Syntheverse Beehive Residency (Layer 9 · Machote members)
 
@@ -159,7 +165,7 @@ Exclusively for **Machote Moderno Magazine** members — targeting the **0.001%*
 | **Calendar** | Open slots for the **rest of 2026** — fills very fast; don't hesitate if the message resonates. |
 | **Walkthrough** | [`interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) · nest guide: [`interfaces/nesting/nest-goldilocks-beehive.html`](interfaces/nesting/nest-goldilocks-beehive.html) |
 
-Requires magazine follow + active catalog honor pass. Bookings / residency signal: **valetpru@gmail.com**.
+Requires magazine follow for Beehive residency signal. Bookings / residency: **valetpru@gmail.com**.
 
 ### Nesting ladder (9 layers)
 
@@ -172,8 +178,8 @@ Top deck ladder: [`interfaces/vibelandia-questfest.html#qf-nest-section`](interf
 ### Playback layout and background audio
 
 - **Player dock** — `PlayerDock` sits at the bottom of the Bridge column (`sp-main`), not fixed to the viewport; the page scrolls naturally and the player moves with the content.
-- **Free (no members pass)** — 30s Solenoid preview on sovereign playlists; playback **pauses** when the listener switches apps, locks the screen, or backgrounds the tab (`visibilitychange`, `pagehide`, `freeze`, `blur`).
-- **Paid (Machote members pass or Captain unlock)** — full play; audio **continues in background** via hidden audio handoff (audio + video), **Media Session** (lock-screen controls), and **Wake Lock** where supported (`useBackgroundPlayback`). Mobile OS limits still apply on some devices.
+- **Everyone** — full play on sovereign playlists; audio **continues in background** via hidden audio handoff, **Media Session** (lock-screen controls), and **Wake Lock** where supported (`useBackgroundPlayback`). Mobile OS limits still apply on some devices.
+- **Downloads** — $1.61 per track on Fair Exchange honor (or Captain unlock for operators).
 
 ### Catalog playlists (Bridge Listen / Playlists)
 
@@ -210,7 +216,7 @@ Full doc: [`docs/DIGITAL_PRU_DEEP_RESEARCH_13CHANNEL_SEED_NODE_ROADMAP_2026-05-1
 - **QUESTFEST short path:** `/questfest`
 - **Nesting ladder (9 layers):** [`/interfaces/vibelandia-questfest.html#qf-nest-section`](interfaces/vibelandia-questfest.html#qf-nest-section)
 - **Goldilocks Syntheverse Beehive Residency:** [`/interfaces/goldilocks-beehive-residency.html`](interfaces/goldilocks-beehive-residency.html) — manifesto, Old School Protocol (contact PL Taino), 2-week test drive terms, 2026 calendar
-- **Master Music Catalog pass (checkout):** [`/interfaces/questfest-bridge/#/listen?checkout=1`](interfaces/questfest-bridge/) — **$16.18/mo** honor pass (catalog access; magazine is the qualifier badge). Top deck CTA: **Unlock Master Music Catalog · Machote followers · $16.18/mo honor pass**.
+- **Listen (catalog):** [`/interfaces/questfest-bridge/#/listen`](interfaces/questfest-bridge/) — **free full stream**. Downloads **$1.61/track** on honor. Top deck CTA: **Listen free · download $1.61/track**.
 - **QUESTFEST Bridge (Sovereign Player):** [`/interfaces/questfest-bridge/#/`](interfaces/questfest-bridge/) · **`/sovereign-gate`** → same entry
 - **Look at the Sun:** [`interfaces/look-at-the-sun.html`](interfaces/look-at-the-sun.html) · **Under the hood:** [`interfaces/look-under-the-hood.html`](interfaces/look-under-the-hood.html)
 - **Press releases:** `/press` → [`interfaces/press-releases.html`](interfaces/press-releases.html)
@@ -233,7 +239,7 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 
 - **NSPFRNP mode always.** Operate as team. MCA cycle: Metabolize → Crystallize → Animate → squeeze. See [`.cursor/rules/team-nspfrnp-mode.mdc`](.cursor/rules/team-nspfrnp-mode.mdc).
 - **Voice:** Spanglish 80/20, edgy raw — natural Gold Heart filter.
-- **Pass Ladder (1.618 tiers):** $16.18 · $161.80 · $1,618 · $16,180 · export micro-tier **$1.61**.
+- **Pass Ladder (1.618 tiers for residency/experiences):** $16.18 · $161.80 · $1,618 · $16,180 · catalog download micro-tier **$1.61** (streaming free).
 - **Honesty rails:** Simulation-first / metaphor-forward. NOAA SWPC for space weather. Instrument-grade claims require bench evidence.
 - **A2A bar:** Definition retained; autonomous A2A commerce ended on SING 9 in Mar 2026 (zero revenue) and not revived on SING 13.
 

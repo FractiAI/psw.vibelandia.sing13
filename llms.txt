@@ -14,7 +14,7 @@
 - **Sonic Singularity Sing! 13 edge** — the next octave of the FractiAI / Vibelandia transmedia stack. NSPFRNP catalog + QUESTFEST 24×365 nest + Sovereign Player.
 - **Lite edges** — wallets, keys, verifications at the edge; center = pipes only (see plain onboarding deck).
 - **13-channel spine** — Seed Node → Terminal Edge pathfinding; PEFF infill-13 framing.
-- **Fair Exchange (manual)** — no Stripe. Venmo / PayPal / Cash App. $16.18/mo Passenger pass · $1.61 track export · honor-system receipt → JWT.
+- **Fair Exchange (manual)** — no Stripe. Venmo / PayPal / Cash App. Catalog stream is free. $1.61 track download · honor-system receipt.
 
 ## Primary entry points
 
@@ -34,7 +34,7 @@
 - Operational anchor: 0x3563388d0e1c2d66a004e5e57717dc6d7e568be3
 - Press release · Anthropic Mythos review: https://www.ssvibelandiaquestfest24x365.com/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html
 - Sovereign Player (QUESTFEST Bridge): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/
-- Reno Swamp checkout ($16.18/mo): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/#/listen?checkout=1
+- Reno Swamp listen (free stream): https://www.ssvibelandiaquestfest24x365.com/interfaces/questfest-bridge/#/listen
 - Short path Sovereign gate: https://www.ssvibelandiaquestfest24x365.com/sovereign-gate
 - Sonic Singularity Sing! 13 onboarding (plain deck): https://www.ssvibelandiaquestfest24x365.com/interfaces/sing13-edge-onboarding.html
 - NSPFRNP catalog (reader): https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=mca-nspfrnp-catalog
@@ -63,13 +63,13 @@
 
 ## Sovereign Player — Fair Exchange
 
-- Passenger pass: $16.18/mo (EGS φ) — pay on Venmo, PayPal, or Cash App; client-only honor boarding (localStorage on device, 30 days from paid date); no server JWT
-- Track export: $1.61 — same rails; email proof with track id
+- Catalog stream: free (full play + background audio)
+- Track download: $1.61 — Venmo / PayPal / Cash App; honor confirmation on device; optional `/api/export` audit
 - Bookings: valetpru@gmail.com
 - Catalog / licensing (500+ Reno swamp · caliente tracks): valetpru@gmail.com
 - Stream lock: BroadcastChannel (same browser); /api/heartbeat optional
 - Build: npm run build:questfest-bridge (source: apps/ss-vibelandia-questfest/)
-- Vercel env: PASS_TOKEN_SECRET optional (legacy export audit only); honor boarding needs no server secret
+- Vercel env: PASS_TOKEN_SECRET optional (legacy export audit only); honor download needs no monthly pass
 
 ## Sonic Singularity Sing! 13 spine — 13-channel fractal pathfinding
 

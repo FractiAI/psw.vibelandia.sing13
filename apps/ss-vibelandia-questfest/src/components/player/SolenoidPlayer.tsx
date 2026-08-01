@@ -43,7 +43,7 @@ export function SolenoidPlayer({
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
   const pl = getActivePlaylist();
-  const solenoidActive = pl?.kind === 'sovereign' && !isPassenger;
+  const solenoidActive = false;
 
   useEffect(() => {
     if (killReason === 'vessel_switch' || killReason === 'tab_preempt') {
@@ -154,7 +154,7 @@ export function SolenoidPlayer({
         <div className="player-time">
           <span>{fmt(displayTime)}</span>
           {solenoidActive && <span className="solenoid-badge">30s preview</span>}
-          {isPassenger && <span className="pass-badge">Full play</span>}
+          <span className="pass-badge">Free stream</span>
         </div>
       </div>
 
@@ -179,11 +179,7 @@ export function SolenoidPlayer({
       </div>
 
       <p className="player-hint">
-        {pl?.kind === 'sovereign' && !isPassenger
-          ? '30 seconds free — then the Machote members-only pass.'
-          : isPassenger
-            ? 'Full catalog unlocked.'
-            : 'Open deck — full preview on this playlist.'}
+        Full catalog stream is free. Offline downloads are Fair Exchange at $1.61 per track.
       </p>
     </div>
   );

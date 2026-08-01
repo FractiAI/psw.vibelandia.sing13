@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-GENOMIC-DETERMINISM-2026-07`
 **Registry ID:** `synthobs-omni-lattice-genomic-determinism-2026-07`
-**Generated:** 2026-07-29T05:00:30.636Z
+**Generated:** 2026-07-29T13:23:26.798Z
 
 | Passed | 9 / 9 |
 | Φ_EGS | 1.618033988749895 |

@@ -19,17 +19,17 @@ export class ApiHttpError extends Error {
   }
 }
 
-/** Optional server audit log when a legacy JWT exists — honor boarding does not use this. */
+/** Fair Exchange download audit — monthly pass is optional (streaming is free). */
 export type ExportRequestBody =
   | {
-      passToken: string;
+      passToken?: string;
       rail: LiveRail;
       trackId: string;
       trackTitle?: string;
       receipt: string;
     }
   | {
-      passToken: string;
+      passToken?: string;
       rail: LiveRail;
       trackId: string;
       trackTitle?: string;

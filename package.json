@@ -49,7 +49,9 @@
     "audit:paper": "node scripts/run-synthobs-paper-audit.mjs",
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",
-    "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-tbme-nonlocal-field-phaselock": "node research/synthobs-tbme-nonlocal-field-phaselock/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-tbme-mirror-angle-multiplicity": "node research/synthobs-tbme-mirror-angle-multiplicity/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

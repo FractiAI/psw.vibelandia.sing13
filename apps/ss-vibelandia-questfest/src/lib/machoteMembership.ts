@@ -5,7 +5,7 @@ export const MACHOTE_MAGAZINE_NAME = 'Machote Moderno Magazine';
 export const MACHOTE_MAGAZINE_COVER_SRC = '/interfaces/assets/machote-moderno-magazine-cover.png';
 
 export const MACHOTE_MAGAZINE_COVER_ALT =
-  'Machote Moderno Magazine — your badge to qualify for the members-only music catalog';
+  'Machote Moderno Magazine — Reno swamp frequency · free catalog stream';
 
 export const MACHOTE_CAMPAIGN_COVER_SRC =
   '/interfaces/goldilocks-deliveries/assets/grs-menu-food-delivery.jpg';
@@ -68,14 +68,14 @@ export const MACHOTE_CAMPAIGN_TITLE = 'Hire-A-Goldilocks-Valet-Concierge';
 
 export const MACHOTE_CAMPAIGN_TAGLINE = 'Your Personal Concierge for Downtown Reno';
 
-export const MACHOTE_MEMBERS_PASS_TITLE = 'Members pass · full music catalog';
+export const MACHOTE_MEMBERS_PASS_TITLE = 'Stream free · download $1.61';
 
-export const MACHOTE_MEMBERS_PASS_SHORT = 'Machote members · catalog pass';
+export const MACHOTE_MEMBERS_PASS_SHORT = 'Free catalog stream · paid downloads';
 
 export const MACHOTE_HUB_PASS_CTA =
-  'Unlock full Sonic Singularity catalog · Machote members · $16.18/mo on honor';
+  'Listen free · download any track for $1.61 on honor';
 
-export const MACHOTE_CAMPAIGN_CTA = 'Get catalog pass · $16.18/mo';
+export const MACHOTE_CAMPAIGN_CTA = 'Listen free · download $1.61/track';
 
 export const MACHOTE_BEEHIVE_CTA = 'Beehive residency · full walkthrough';
 

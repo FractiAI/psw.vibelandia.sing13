@@ -1,7 +1,6 @@
 import { useCatalogStore } from '@/stores/catalogStore';
 import { PLAIN } from '@/lib/plainSpeak';
 import { useMediaChromeStore } from '@/stores/mediaChromeStore';
-import { useSessionStore } from '@/stores/sessionStore';
 
 interface ListenTopBarProps {
   djMode: boolean;
@@ -13,10 +12,6 @@ export function ListenTopBar({ djMode, onListen, onUpload }: ListenTopBarProps) 
   const catalogSyncing = useCatalogStore((s) => s.catalogSyncing);
   const refreshFromServer = useCatalogStore((s) => s.refreshFromServer);
   const setCaptainOpen = useMediaChromeStore((s) => s.setCaptainOpen);
-  const setBoardingOpen = useMediaChromeStore((s) => s.setBoardingOpen);
-  const isPassenger = useSessionStore((s) => s.isPassenger);
-  const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
-  const fullPlay = isPassenger || captainUnlocked;
 
   return (
     <header className="sc-bar">
@@ -36,11 +31,6 @@ export function ListenTopBar({ djMode, onListen, onUpload }: ListenTopBarProps) 
       >
         {catalogSyncing ? PLAIN.refreshing : PLAIN.refresh}
       </button>
-      {!fullPlay ? (
-        <button type="button" className="sc-bar-link sc-bar-link--accent" onClick={() => setBoardingOpen(true)}>
-          {PLAIN.getPass}
-        </button>
-      ) : null}
       <button type="button" className="sc-bar-link" onClick={() => setCaptainOpen(true)}>
         {PLAIN.captain}
       </button>

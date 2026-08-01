@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "c253ddbdae8de708",
+  "auditId": "a9c5f66a9dc736d7",
   "paperId": "dp-omniversal-node-alignment-2026",
   "sourcePath": "docs/SYNTHEVERSE_OMNIVERSAL_NODE_ALIGNMENT_MAPPING_2026-06-01.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T20:38:21.695Z"
+          "invokedAt": "2026-07-31T18:01:40.954Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T20:38:21.695Z",
-  "completedAt": "2026-06-07T20:38:21.695Z",
+  "startedAt": "2026-07-31T18:01:40.954Z",
+  "completedAt": "2026-07-31T18:01:40.954Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

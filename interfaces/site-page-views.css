@@ -1,15 +1,20 @@
-/* One visit mark — fixed bottom-right, small print. */
-.site-page-visits {
+/* One visit mark — fixed bottom-right, small print. Host uses Shadow DOM + inline styles. */
+.site-page-visits,
+[data-qv-page-visits-host] {
   position: fixed !important;
   right: 0.55rem !important;
   bottom: 0.4rem !important;
   left: auto !important;
   top: auto !important;
-  z-index: 60;
-  margin: 0;
-  padding: 0;
-  width: auto;
-  max-width: none;
+  z-index: 2147483000 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: min(42vw, 12rem) !important;
+  max-height: 1.4rem !important;
+  overflow: hidden !important;
+  display: block !important;
   text-align: right;
   font-family: Inter, system-ui, sans-serif;
   font-size: 0.62rem;
@@ -17,14 +22,19 @@
   letter-spacing: 0.02em;
   line-height: 1.2;
   color: rgba(168, 162, 158, 0.82);
-  background: transparent;
-  border: 0;
-  pointer-events: none;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
   user-select: none;
+  contain: layout style;
+  isolation: isolate;
+  transform: translateZ(0);
 }
 
 @media (max-width: 480px) {
-  .site-page-visits {
+  .site-page-visits,
+  [data-qv-page-visits-host] {
     right: 0.45rem !important;
     bottom: max(0.35rem, env(safe-area-inset-bottom, 0.35rem)) !important;
     font-size: 0.58rem;

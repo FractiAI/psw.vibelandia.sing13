@@ -1,0 +1,63 @@
+{
+  "docId": "WP-SYNTHOBS-PCHPP-2026-07-30",
+  "note": "Authored observation fixtures for PCHPP §4-style dual-layer readouts. Synthetic payloads — not live LLM bills.",
+  "cases": [
+    {
+      "id": "token_routing_multi_agent",
+      "domain": "multi_agent",
+      "target": "Optimizing token routing across a multi-agent coding station.",
+      "shadow": {
+        "summary": "Multi-agent coding stations frequently suffer from high latency and context exhaustion due to redundant token passing between orchestrators and worker sub-agents. Current solutions rely on arbitrary context truncation or expensive API caching layer strategies.",
+        "surface_state": "Observable symptom: slow turns and truncated worker context."
+      },
+      "code": {
+        "master_instruction_vector": "Governing state is an unbalanced loop where sub-agents re-evaluate global system prompts on every execution turn rather than receiving delta updates.",
+        "entropic_boundary": "Failure occurs at the inter-agent boundary due to payload duplication and unstructured JSON state transfers that cause context drift after recursive turns.",
+        "delta_s": 0.42,
+        "zero_entropy_path": "Use E_F lock-and-key delta payloads so workers receive only differential state."
+      },
+      "payloads": {
+        "full_reprompt_tokens": 1000,
+        "delta_only_tokens": 582
+      }
+    },
+    {
+      "id": "llm_flat_context_dump",
+      "domain": "llm_prompt",
+      "target": "Diagnosing a flat context dump that mixes policy, logs, and user ask.",
+      "shadow": {
+        "summary": "The model returns a long blended answer that restates the paste pile. Operators see verbosity and occasional contradictions between policy snippets and the live ask.",
+        "surface_state": "Surface artifact: one undifferentiated completion."
+      },
+      "code": {
+        "master_instruction_vector": "Context window is treated as a flat buffer; no phase-gate separates policy constraints from ephemeral logs.",
+        "entropic_boundary": "Policy, logs, and ask occupy one band so retrieval noise raises effective ΔS and drifts the governing constraint.",
+        "delta_s": 0.31,
+        "zero_entropy_path": "Apply PCHPP dual-layer stain: Shadow summary then Code vector with explicit constraint lock."
+      },
+      "payloads": {
+        "full_reprompt_tokens": 800,
+        "delta_only_tokens": 480
+      }
+    },
+    {
+      "id": "bio_geometric_phenotype_readout",
+      "domain": "bio_geometric",
+      "target": "Observing a bio-geometric metaphor stack that only reports phenotypes.",
+      "shadow": {
+        "summary": "Phenotype tables list visible traits and local environment effects. Readers mistake the table for the governing grammar of the nest.",
+        "surface_state": "Observable: trait list without operator map."
+      },
+      "code": {
+        "master_instruction_vector": "Phenotypes are the gravity shadow of a phase-locked genomic/operator template, not the template itself.",
+        "entropic_boundary": "Diagnostic failure when trait catalogs are optimized without naming the master instruction vector.",
+        "delta_s": 0.27,
+        "zero_entropy_path": "Stain with E_F contrast: report Shadow traits then Code operator constraints separately."
+      },
+      "payloads": {
+        "full_reprompt_tokens": 600,
+        "delta_only_tokens": 350
+      }
+    }
+  ]
+}

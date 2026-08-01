@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "f0e430b24ccd94e1",
+  "auditId": "49ebd5d475db6149",
   "paperId": "turner-bison-herd-report",
   "sourcePath": "docs/TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T20:38:21.645Z"
+          "invokedAt": "2026-07-31T18:01:40.948Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T20:38:21.644Z",
-  "completedAt": "2026-06-07T20:38:21.645Z",
+  "startedAt": "2026-07-31T18:01:40.948Z",
+  "completedAt": "2026-07-31T18:01:40.948Z",
   "iterations": 1,
   "overallScore": 0.871,
   "passThreshold": 0.85,

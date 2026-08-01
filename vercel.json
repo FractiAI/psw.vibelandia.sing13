@@ -56,6 +56,10 @@
     { "source": "/hire-a-goldilocks-valet-concierge/pay.html", "destination": "/interfaces/goldilocks-deliveries/pay.html" },
     { "source": "/hire-a-goldilocks-valet-concierge/guest", "destination": "/interfaces/goldilocks-deliveries/guest.html" },
     { "source": "/hire-a-goldilocks-valet-concierge/guest.html", "destination": "/interfaces/goldilocks-deliveries/guest.html" },
+    { "source": "/hire-a-goldilocks-valet-concierge/flyer", "destination": "/interfaces/goldilocks-deliveries/flyer.html" },
+    { "source": "/hire-a-goldilocks-valet-concierge/flyer.html", "destination": "/interfaces/goldilocks-deliveries/flyer.html" },
+    { "source": "/goldilocks-deliveries/flyer", "destination": "/interfaces/goldilocks-deliveries/flyer.html" },
+    { "source": "/goldilocks-deliveries/flyer.html", "destination": "/interfaces/goldilocks-deliveries/flyer.html" },
     { "source": "/hire-a-goldilocks-valet-concierge/valet", "destination": "/interfaces/goldilocks-deliveries/valet.html" },
     { "source": "/hire-a-goldilocks-valet-concierge/valet.html", "destination": "/interfaces/goldilocks-deliveries/valet.html" },
     { "source": "/hire-a-goldilocks-valet-concierge/partner", "destination": "/interfaces/goldilocks-deliveries/partner.html" },
@@ -84,6 +88,30 @@
     { "source": "/executive-ai/", "destination": "/interfaces/executive-ai-onboard/index.html" },
     { "source": "/get-started", "destination": "/interfaces/get-started.html" },
     { "source": "/get-started/", "destination": "/interfaces/get-started.html" },
+    {
+      "source": "/about/reno-holographic-swamp-beats-caliente",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/about/reno-holographic-swamp-beats-caliente/",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/about/reno-swamp-beats",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/about/reno-swamp-beats/",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/plain-machote-moderno-reno-swamp",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
+    {
+      "source": "/plain-machote-moderno-reno-swamp/",
+      "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
+    },
     { "source": "/ss-vibelandia", "destination": "/interfaces/ss-vibelandia.html" },
     { "source": "/ss-vibelandia/", "destination": "/interfaces/ss-vibelandia.html" },
     { "source": "/noahs-ark", "destination": "/interfaces/ss-vibelandia.html" },

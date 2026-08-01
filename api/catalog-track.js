@@ -172,14 +172,18 @@ module.exports = async function handler(req, res) {
       if (!verified) {
         console.warn('[catalog-track] verify soft-fail (still returning saved track)', trackId);
       }
+
+      // Prefer the in-memory saved row when reload races (Redis/Blob lag).
+      if (verified) {
+        const fresh = await ensureDynamicTrack(req, trackId);
+        const track = fresh?.tracks?.[trackId] ?? savedTrack;
+        return res.status(200).json({ track, catalog: fresh ?? next });
+      }
+      return res.status(200).json({ track: savedTrack, catalog: next, verifySoftFail: true });
     } catch (e) {
       console.error('[catalog-track] update save', e);
       return res.status(500).json({ error: 'catalog_save_failed', message: e?.message });
     }
-
-    const fresh = await ensureDynamicTrack(req, trackId);
-    const track = fresh?.tracks?.[trackId] ?? next.tracks[trackId];
-    return res.status(200).json({ track, catalog: fresh ?? next });
   }
 
   return res.status(400).json({ error: 'invalid_action' });

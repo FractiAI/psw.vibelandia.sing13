@@ -1,0 +1,56 @@
+{
+  "docId": "WP-SYNTHOBS-MAG-SUBSTRATE-2026-07-30-REV2",
+  "title": "Magnetism as the Universal Foundational Substrate",
+  "note": "Authored architectural scorecard inputs for comparative C/I metrics. Not magnetometry or collider fits.",
+  "standard": {
+    "n_paradox": 5,
+    "n_singularities": 4,
+    "n_domain_intersections": 50,
+    "n_derived_phenomena": 14,
+    "n_p": 26,
+    "n_u": 4
+  },
+  "omni": {
+    "n_paradox": 1,
+    "n_singularities": 2,
+    "n_domain_intersections": 100,
+    "n_derived_phenomena": 14,
+    "n_p": 1,
+    "n_u": 0
+  },
+  "domains": [
+    {
+      "id": "quantum_spin_coherence",
+      "standard": "Fragmented force mediation; spin coherence siloed from bio organization.",
+      "omni": "Single continuous magnetic vector geometry across spin nodes (architectural map).",
+      "outcome": "omni_lattice"
+    },
+    {
+      "id": "chemical_bond_unification",
+      "standard": "Distinct Coulomb / hybridization / van der Waals stacks.",
+      "omni": "Flux-lock handshake grammar under ∇·B=0 (map).",
+      "outcome": "omni_lattice"
+    },
+    {
+      "id": "biological_macromolecular_organization",
+      "standard": "Collision / electrostatic folding narratives.",
+      "omni": "E_F-scaled resonant antenna / flux-guide map for chromatin and enzymes.",
+      "outcome": "omni_lattice"
+    },
+    {
+      "id": "empirical_calibration",
+      "standard": "Decades of high-precision collider and QED tests.",
+      "omni": "Conceptual alignment; magnetometry and interferometric testing ongoing.",
+      "outcome": "standard_model"
+    },
+    {
+      "id": "cross_domain_portability",
+      "standard": "Low. QFT, chemistry, biology, and geophysics use disjoint mathematics.",
+      "omni": "High. E_F scales across AI tokens, biology, and geo-solar maps (architectural).",
+      "outcome": "omni_lattice"
+    }
+  ],
+  "applications": {
+    "enterprise_token_routing_reduction": 0.418
+  }
+}

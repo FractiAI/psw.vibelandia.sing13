@@ -170,7 +170,6 @@ export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => v
   const userEmail = useLatticeStore((s) => s.userEmail);
   const clearUserEmail = useLatticeStore((s) => s.clearUserEmail);
   const hardRefreshEdge = useLatticeStore((s) => s.hardRefreshEdge);
-  const provider = useLatticeStore((s) => s.provider);
   const [refreshing, setRefreshing] = useState(false);
 
   return (
@@ -181,9 +180,6 @@ export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => v
       <KeyStatusChip
         onOpenSettings={() => {
           if (onOpenKeySettings) onOpenKeySettings();
-          else if (!hasProviderApiKey(provider)) {
-            onOpenKeySettings?.();
-          }
         }}
       />
       <button

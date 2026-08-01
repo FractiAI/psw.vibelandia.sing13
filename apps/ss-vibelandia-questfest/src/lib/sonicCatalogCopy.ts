@@ -4,13 +4,22 @@
 export const SONIC_SINGULARITY_HERO_SRC =
   '/interfaces/assets/nesting/nest-sonic-singularity.png';
 
+/** Default cover for every playlist without a custom posterSrc. */
+export const DEFAULT_PLAYLIST_COVER_SRC =
+  '/interfaces/assets/fractiai-studios-musical-empire-playlist-default.png';
+
+/** Custom poster when set; otherwise the FractiAI Studios musical-empire default. */
+export function resolvePlaylistCoverSrc(posterSrc?: string | null): string {
+  return posterSrc || DEFAULT_PLAYLIST_COVER_SRC;
+}
+
 /** Listen hero + sidebar title for the full library (Layer 3 frequency). */
 export const SONIC_CATALOG_DISPLAY_NAME =
   "Sonic Singularity Master Catalog · SS VIBELANDIA QUESTFEST · Hero Jo's Golden Bachdoor Hit Factory";
 
 /** What the master list *is* — not file-management instructions. */
 export const SONIC_SINGULARITY_DESCRIPTION =
-  "Sovereign broadcast from the Holographic Goldilocks Sonic Ship — Reno swamp beats caliente, the living hydrogen Y line, φ, and the Y-frontiersmen Machote Modernos in one frequency that creates reality. Hero Jo's Golden Bachdoor Hit Factory holds the conductor rail; this catalog is the full sound on your device.";
+  "Broadcast from the Holographic Goldilocks Sonic Ship — Reno swamp beats caliente, the living hydrogen Y line, φ, and the Y-frontiersmen Machote Modernos in one frequency that creates reality. Hero Jo's Golden Bachdoor Hit Factory holds the conductor rail; this catalog is the full sound on your device.";
 
 /** One-line tag for playlist cards / sidebar hint row. */
 export const SONIC_SINGULARITY_TAGLINE =
@@ -29,7 +38,7 @@ export const SONIC_LISTEN_EYEBROW = `${SONIC_LISTEN_EYEBROW_PREFIX} ${SONIC_BRAN
 export const JUKEBOX_WELCOME_TITLE = 'More than juicy beats. More than a jukebox.';
 
 export const JUKEBOX_WELCOME =
-  'Welcome to the Sonic Singularity — sovereign broadcast on Holographic Goldilocks Sonic Ship SS VIBELANDIA QUESTFEST where catalog, story, and frequency converge and create reality. Pick a playlist, build playlists: every track carries the living hydrogen Y line, not just juicy beats.';
+  'Welcome to the Sonic Singularity on SS VIBELANDIA QUESTFEST — catalog, story, and frequency under one hull, now powered by the full Lattice Chat V1.618 Nested Agent Lattice engine. Pick a playlist, build playlists: every track carries the living hydrogen Y line, not just juicy beats.';
 
 /** Paying members — upload invitation on /listen footer. */
 export const JUKEBOX_MEMBER_INVITE_TITLE = 'Upload your original line';

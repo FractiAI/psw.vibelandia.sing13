@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "b3e7cc2a495456e4",
+  "auditId": "f4b54ac95842480b",
   "paperId": "omniversal-nested-agent-lattice-2026-07",
   "sourcePath": "docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-21T17:40:52.260Z"
+          "invokedAt": "2026-07-31T18:01:40.968Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-21T17:40:52.225Z",
-  "completedAt": "2026-07-21T17:40:52.330Z",
+  "startedAt": "2026-07-31T18:01:40.968Z",
+  "completedAt": "2026-07-31T18:01:40.968Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

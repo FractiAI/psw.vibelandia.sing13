@@ -10,18 +10,12 @@ import { releasePlaybackUrl, resolvePlaybackUrl } from '@/lib/localPlayback';
 import { LikeButton } from '@/components/catalog/LikeButton';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { useCatalogStore } from '@/stores/catalogStore';
-import { useActivePlaylist } from '@/stores/catalogSelectors';
+import { usePlaybackPlaylist } from '@/stores/catalogSelectors';
 import { useSessionStore } from '@/stores/sessionStore';
+import { playingCoverUrl, resolvePlayingCoverSrc } from '@/lib/playingCover';
 import type { KillReason } from '@/hooks/useStreamLock';
-import type { TrackDef } from '@/lib/catalogTypes';
 
 const GATE_SEC = 29;
-
-function trackCoverUrl(track: TrackDef): string | undefined {
-  if (!track.posterSrc) return undefined;
-  const sep = track.posterSrc.includes('?') ? '&' : '?';
-  return `${track.posterSrc}${sep}v=${encodeURIComponent(track.id)}`;
-}
 const FADE_START = 28.85;
 
 interface NowPlayingBarProps {
@@ -61,7 +55,7 @@ export function NowPlayingBar({
   const setBackgroundPlayEnabled = usePlaybackStore((s) => s.setBackgroundPlayEnabled);
 
   const getTrack = useCatalogStore((s) => s.getTrack);
-  const pl = useActivePlaylist();
+  const pl = usePlaybackPlaylist();
 
   const isPassenger = useSessionStore((s) => s.isPassenger);
   const captainUnlocked = useSessionStore((s) => s.captainUnlocked);
@@ -488,6 +482,9 @@ export function NowPlayingBar({
     [bumpMediaMount],
   );
 
+  const coverSrc = track ? resolvePlayingCoverSrc(track, pl) : undefined;
+  const coverUrl = track ? playingCoverUrl(track, pl) : undefined;
+
   return (
     <footer className="sp-now">
       {track && (
@@ -499,11 +496,11 @@ export function NowPlayingBar({
           aria-hidden
         />
       )}
-      <div className={`sp-now-bar${track?.posterSrc ? ' sp-now-bar--with-cover' : ''}`}>
-        {track?.posterSrc && (
+      <div className={`sp-now-bar${coverSrc ? ' sp-now-bar--with-cover' : ''}`}>
+        {coverUrl && (
           <img
             className="sp-now-cover"
-            src={trackCoverUrl(track)}
+            src={coverUrl}
             alt=""
             width={56}
             height={56}

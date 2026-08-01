@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "f7dcdb51f0cd4780",
+  "auditId": "bf06f1b767a5af49",
   "paperId": "ops-egs-btc-mining",
   "sourcePath": "docs/EGS_LEGAL_SOVEREIGN_MINING_OPERATION_2026-05-18.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T20:38:21.617Z"
+          "invokedAt": "2026-07-31T18:01:40.945Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T20:38:21.616Z",
-  "completedAt": "2026-06-07T20:38:21.617Z",
+  "startedAt": "2026-07-31T18:01:40.944Z",
+  "completedAt": "2026-07-31T18:01:40.945Z",
   "iterations": 1,
   "overallScore": 0.845,
   "passThreshold": 0.85,

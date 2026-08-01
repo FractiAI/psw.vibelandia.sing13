@@ -60,6 +60,13 @@ Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review 
 
 ### Test & validate (local)
 
+**0 · Run the test suite (vitest)**
+
+```bash
+npm test                    # 47 tests across lib/ and research/
+npm run test:watch          # watch mode
+```
+
 **1 · Context-load bench (no Cursor key required)**
 
 ```bash

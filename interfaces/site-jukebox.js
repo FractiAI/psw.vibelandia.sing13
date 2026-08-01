@@ -105,12 +105,17 @@
       window.focus();
       return;
     }
+    // Always navigate this tab so "Open Jukebox" never looks dead when a
+    // hidden opener exists (browse popups used to only focus the player).
     if (window.opener && !window.opener.closed) {
       try {
-        window.opener.focus();
         if (String(window.opener.location.pathname || '').indexOf('questfest-bridge') !== -1) {
           window.opener.location.hash = '#/listen';
-          return;
+          try {
+            window.opener.focus();
+          } catch (eFocus) {
+            /* ignore */
+          }
         }
       } catch (e) {
         /* cross-origin opener — fall through */

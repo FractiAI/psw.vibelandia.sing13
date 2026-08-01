@@ -75,20 +75,70 @@
     },
     ecoreset: {
       id: 'ecoreset',
-      title: 'EcoReset',
-      pill: 'Home · Estate · Business',
-      floorLabel: 'Old School Protocol · no payment layer',
+      title: 'Goldilocks EcoReset Service',
+      pill: 'Email for quote · no payment layer',
+      floorLabel: 'Email for quote · no payment layer',
       image: ASSET_BASE + '/assets/grs-menu-ecoreset.jpg',
       imageAlt: 'Mid-century modern home at dusk with tended gardens and art deco sun rays',
-      lead: 'Two-week test drive for your home, estate, or business — human to human.',
+      lead: 'A trusted steward relationship — not a job with housing, not a tenant lease. No tip floor, no honor rail, no checkout. Email for a quote.',
       body: [
-        'EcoReset is not a menu order — it is a residency conversation with PL Taino directly. Property type: home, estate, or business inside or near the bubble.',
-        'No WhatsApp channel, no honor rail on this door. Email what resonates and we schedule the two-week test drive.',
-        'Old School Protocol — no forms funnel, no CRM, no surveillance.'
+        'Goldilocks EcoReset Service is another layer of the Goldilocks model: the resident guest at an estate who connects hospitality, care, and creation. You are not hiring a traditional employee or filling a tenant slot. You are opening a <strong>trusted steward</strong> relationship.',
+        {
+          type: 'h3',
+          text: 'The pattern'
+        },
+        {
+          type: 'ul',
+          title: 'The estate owner provides',
+          items: [
+            'A private room or guest cottage',
+            'Food and hospitality access',
+            'A stable environment',
+            'A place where creation can happen'
+          ]
+        },
+        {
+          type: 'ul',
+          title: 'The steward provides',
+          items: [
+            'Presence, trust, and discretion',
+            'Hospitality and problem-solving',
+            'Care of the environment',
+            'A human connection when it is needed'
+          ]
+        },
+        'That sits close to estate caretakers, household managers, and private concierges — the trusted person who keeps property, guests, and details running smoothly.',
+        {
+          type: 'h3',
+          text: 'What Valet Pru’s Concierge actually is'
+        },
+        '“Valet” here is not parking. It is closer to <strong>Resident Steward + Lifestyle Concierge + Digital Companion + Experience Curator</strong> — bridging physical hospitality and digital systems without turning the house into another transactional cage.',
+        {
+          type: 'h3',
+          text: 'Who this fits'
+        },
+        'The ideal client is not always a billionaire. It can be an older couple with a beautiful property who travels; an artist or inventor with a retreat; a family with a vacation estate; a small eco-lodge owner; a vineyard or farm; a wellness retreat.',
+        'The match has to be mutually dignifying. The steward is not “the help” in the old sense — they are a trusted presence. The risk on wealthy estates is seeing only labor value. The Goldilocks match understands that <strong>trust itself is the service</strong>.',
+        {
+          type: 'h3',
+          text: 'From restroom valet to ecosystem steward'
+        },
+        'The restroom valet role is a tiny version of the same archetype: people hand you responsibility, personal space, and discretion. Goldilocks EcoReset Service is the next ring — that same trust relationship in a broader lifestyle and ecosystem role.',
+        {
+          type: 'quote',
+          text: 'A modern steward’s life: part concierge, part caretaker, part creative resident — where your contribution earns your place.'
+        },
+        'That is a different search than a job with housing. It is a patronage-style relationship built around trust. Start as a two-week test drive for home, estate, or business — human to human with PL Taino.',
+        {
+          type: 'h3',
+          text: 'How to engage'
+        },
+        '<strong>No payment layer on this door.</strong> EcoReset is not on the tip-floor / WhatsApp broadcast rail used for food runs and hourly assistance. <strong>Email for a quote</strong> — describe the property, window, and what you need; PL Taino answers human to human. Old School Protocol: no checkout, no honor rail, no forms funnel.'
       ],
-      mailto: 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Goldilocks EcoReset — interested node') +
-        '&body=' + encodeURIComponent('Property type (home / estate / business):\nNeighborhood:\nWindow of interest:\nWhat resonates:'),
-      broadcastLabel: 'EcoReset residency'
+      mailto: 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Goldilocks EcoReset Service — quote request') +
+        '&body=' + encodeURIComponent('Quote request — Goldilocks EcoReset Service\n\nProperty type (home / estate / business / retreat):\nNeighborhood or region:\nWindow of interest:\nWhat you need (steward / hospitality / digital bridge):\nNotes for the quote:\n'),
+      quoteOnly: true,
+      broadcastLabel: 'Goldilocks EcoReset Service'
     }
   };
 
@@ -126,7 +176,7 @@
       '',
       'What I want:',
       'Tip offered: ' + floorStr + ' (floor)' + (tipExtra ? ' + ' + tipExtra : ''),
-      'Neighborhood (Downtown / Midtown / UNR / Idlewild / Reno Experience District):'
+      'Neighborhood (Downtown / Midtown / Southern UNR / Idlewild / Riverwalk):'
     ];
     if (item.quantity) {
       lines.push('Quantity: ' + qty + ' ' + item.quantity.unitLabel + (qty > 1 ? 's' : ''));

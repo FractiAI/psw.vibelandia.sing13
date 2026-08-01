@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "210d6461c8d56917",
+  "auditId": "2ddf0f6a51207757",
   "paperId": "dp-gateway-spectrum",
   "sourcePath": "docs/DIGITAL_PRU_MULTI_DIMENSIONAL_GATEWAY_SPECTRUM_2026-05.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T20:38:21.681Z"
+          "invokedAt": "2026-07-31T18:01:40.952Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T20:38:21.681Z",
-  "completedAt": "2026-06-07T20:38:21.681Z",
+  "startedAt": "2026-07-31T18:01:40.952Z",
+  "completedAt": "2026-07-31T18:01:40.952Z",
   "iterations": 1,
   "overallScore": 0.906,
   "passThreshold": 0.85,

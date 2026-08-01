@@ -78,12 +78,20 @@
       nav.innerHTML =
         '<span class="qv-top-quicklinks__here">QUESTFEST</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/listen" data-qv-jukebox>Listen</a>';
+        '<a href="/listen" data-qv-jukebox>Listen</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/hire-a-goldilocks-valet-concierge">Concierge</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/lattice">Lattice</a>';
     } else {
       nav.innerHTML =
-        '<a href="/interfaces/vibelandia-questfest.html">QUESTFEST</a>' +
+        '<a href="/questfest">QUESTFEST</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/listen" data-qv-jukebox>Listen</a>';
+        '<a href="/listen" data-qv-jukebox>Listen</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/hire-a-goldilocks-valet-concierge">Concierge</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/lattice">Lattice</a>';
     }
     document.body.insertBefore(nav, document.body.firstChild);
   }

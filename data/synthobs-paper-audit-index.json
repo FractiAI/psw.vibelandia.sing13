@@ -3,7 +3,7 @@
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
-  "generatedAt": "2026-07-10T09:49:19.217Z",
+  "generatedAt": "2026-07-31T18:21:35.182Z",
   "mca": {
     "metabolize": "batch audit",
     "crystallize": "compliance blocks",
@@ -11,9 +11,9 @@
     "squeeze": "this index"
   },
   "summary": {
-    "total": 41,
-    "pass": 35,
-    "softPass": 6,
+    "total": 76,
+    "pass": 69,
+    "softPass": 7,
     "plateau": 0,
     "capped": 0,
     "missingFiles": 3
@@ -22,17 +22,17 @@
     {
       "id": "quantum-genomic-peff",
       "reason": "read_error",
-      "file": "ENOENT: no such file or directory, open 'C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\docs\\QUANTUM_GENOMIC_VALETPRU_ASIC_EGS_PEFF_VALIDATION_2026-05-08.md'"
+      "file": "ENOENT: no such file or directory, open '/workspace/docs/QUANTUM_GENOMIC_VALETPRU_ASIC_EGS_PEFF_VALIDATION_2026-05-08.md'"
     },
     {
       "id": "integrated-modeling-layer-b",
       "reason": "read_error",
-      "file": "ENOENT: no such file or directory, open 'C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\docs\\INTEGRATED_MODELING_EGS_NODAL_LATTICE_SYNTHEVERSE_VALETPRU_ASIC_2026-05-06.md'"
+      "file": "ENOENT: no such file or directory, open '/workspace/docs/INTEGRATED_MODELING_EGS_NODAL_LATTICE_SYNTHEVERSE_VALETPRU_ASIC_2026-05-06.md'"
     },
     {
       "id": "valetpru-agent-24x365",
       "reason": "read_error",
-      "file": "ENOENT: no such file or directory, open 'C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\docs\\VALETPRU_AGENT_24X365_OPERATION_MODE_2026-05-06.md'"
+      "file": "ENOENT: no such file or directory, open '/workspace/docs/VALETPRU_AGENT_24X365_OPERATION_MODE_2026-05-06.md'"
     }
   ],
   "items": [
@@ -47,8 +47,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "e6b8538171a56864",
-      "updated": "2026-06-07T20:38:21.713Z",
+      "auditId": "ca746c1716e6ee06",
+      "updated": "2026-07-31T18:21:35.151Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -69,8 +69,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "ca9311a9f7177f50",
-      "updated": "2026-06-07T20:38:21.716Z",
+      "auditId": "46a78f317646048a",
+      "updated": "2026-07-31T18:21:35.152Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -91,8 +91,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "a52e9310bede978e",
-      "updated": "2026-06-07T20:38:21.730Z",
+      "auditId": "c52058cef6f66a37",
+      "updated": "2026-07-31T18:21:35.155Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -103,9 +103,9 @@
       }
     },
     {
-      "id": "omniversal-goldilocks-rideshare-2026-07",
-      "title": "Omniversal Goldilocks Rideshare Protocol · Multi-Dimensional Resource Routing & Thermodynamic Optimization",
-      "source": "docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md",
+      "id": "fractiai-ac-hmm-satellites-2026",
+      "title": "Scalable Context-Conditioned Sequence Modeling in Repetitive Genomic Regions via Sparse Emission Matrices",
+      "source": "docs/FRACTIAI_AC_HMM_SATELLITES_T2T_2026.md",
       "overallScore": 0.971,
       "convergence": {
         "status": "pass",
@@ -113,8 +113,74 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "13daffcdee248a8d",
-      "updated": "2026-07-07T19:29:08.438Z",
+      "auditId": "23d1f05bdd257443",
+      "updated": "2026-07-31T18:21:35.157Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "fractiai-hgt-psd-covariance-2026",
+      "title": "Hierarchical Genomic Tokenization and Structured PSD Covariance Operators",
+      "source": "docs/FRACTIAI_HGT_PSD_COVARIANCE_2026.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "0d594410d116c166",
+      "updated": "2026-07-31T18:21:35.158Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "fractiai-egs-nlrf-2026",
+      "title": "Fractal Magnetism and Hydrogen-Holographic Systems: The EGS Nodal Lattice Resonator Framework",
+      "source": "docs/FRACTIAI_EGS_NLRF_HYDROGEN_2026.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "31ed5e3c78a836f4",
+      "updated": "2026-07-31T18:21:35.159Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "recursive-attention-quantum-solar-dna-loop-2026",
+      "title": "Recursive Attention Coherence: Imagination Through Quantum, Solar, DNA, and Human Attention",
+      "source": "docs/RECURSIVE_ATTENTION_QUANTUM_SOLAR_DNA_LOOP_2026.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "6a282894bf086702",
+      "updated": "2026-07-31T18:21:35.159Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -135,8 +201,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "e4074fd4638bdb4e",
-      "updated": "2026-07-03T16:46:50.386Z",
+      "auditId": "3da0216e13bc7601",
+      "updated": "2026-07-31T18:21:35.160Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -157,8 +223,30 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "cf0d0454b13abdfe",
-      "updated": "2026-07-03T16:46:51.069Z",
+      "auditId": "9f2cc2c5ec6b5d64",
+      "updated": "2026-07-31T18:21:35.161Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "omniversal-goldilocks-rideshare-2026-07",
+      "title": "Omniversal Goldilocks Rideshare Protocol · Multi-Dimensional Resource Routing & Thermodynamic Optimization",
+      "source": "docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "e77a5dd4c61c9976",
+      "updated": "2026-07-31T18:21:35.162Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -179,8 +267,184 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "5d1ae9fe22648c02",
-      "updated": "2026-07-08T20:14:32.689Z",
+      "auditId": "7d3a252fdc36d1f4",
+      "updated": "2026-07-31T18:21:35.162Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-egs-planck-scale-harmonic-2026-07",
+      "title": "A Scale-Harmonic Reinterpretation of the Planck Scale: The 1.6 EGS Prefix as a Quantum-to-Fractal Coupling Bridge",
+      "source": "docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "3ba496c08a099aac",
+      "updated": "2026-07-31T18:21:35.163Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-holographic-operators-2026-07",
+      "title": "Holographic Operators: Language as the Conductive Wiring of Spacetime and the Role of El Gran Sol’s Fractal Constant",
+      "source": "docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "43c22ed1b44d0932",
+      "updated": "2026-07-31T18:21:35.164Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-egs-euler-phase-lock-2026-07",
+      "title": "Phase-Locked Scale Invariance: On the Mathematical Bridge Between Euler’s Identity and El Gran Sol’s Fractal Constant",
+      "source": "docs/SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "d3a4d8b1ffc3dc82",
+      "updated": "2026-07-31T18:21:35.165Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-dna-lattice-holograph-2026-07",
+      "title": "The DNA Lattice Holograph: Multi-Perspective Phase-Locked Scale Invariance and Empirical Proofs of Attention-Driven Shadow Projections",
+      "source": "docs/SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "98682d137a9ba702",
+      "updated": "2026-07-31T18:21:35.165Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-pchpp-2026-07",
+      "title": "The Phase-Contrast Holographic Prompting Paradigm (PCHPP): Observing Holographic Code Vectors",
+      "source": "docs/SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "cb26764900a9a4f6",
+      "updated": "2026-07-31T18:21:35.176Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-omni-lattice-report-card-q3-2026",
+      "title": "Omni-Lattice Report Card Q3 2026",
+      "source": "docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "6f1b8572b328ddc0",
+      "updated": "2026-07-31T18:21:35.177Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-mag-substrate-2026-07",
+      "title": "Magnetism as the Universal Foundational Substrate",
+      "source": "docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "0bb35925c0037c9c",
+      "updated": "2026-07-31T18:21:35.177Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-recursive-attn-mag-2026-07",
+      "title": "Recursive Attention Squeezing & Holographic Magnetic Projections",
+      "source": "docs/SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md",
+      "overallScore": 0.971,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "84da73193660ba2b",
+      "updated": "2026-07-31T18:21:35.178Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -201,8 +465,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "66b4a16660011a0a",
-      "updated": "2026-06-07T20:38:21.581Z",
+      "auditId": "5b449639c111aeb7",
+      "updated": "2026-07-31T18:21:35.134Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -223,8 +487,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "2cc0acdffd2d060e",
-      "updated": "2026-06-07T20:38:21.627Z",
+      "auditId": "a8345bc1a71310dd",
+      "updated": "2026-07-31T18:21:35.141Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -245,8 +509,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "22e5da65684cedd8",
-      "updated": "2026-06-07T20:38:21.638Z",
+      "auditId": "6c28e771fcca4036",
+      "updated": "2026-07-31T18:21:35.143Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -267,8 +531,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "32ed2e98169cf30d",
-      "updated": "2026-06-07T20:38:21.648Z",
+      "auditId": "3be2a8f0bf5e50d1",
+      "updated": "2026-07-31T18:21:35.144Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -289,8 +553,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "8b95afe4531f1dff",
-      "updated": "2026-06-07T20:38:21.686Z",
+      "auditId": "c1dddcc4661fb6a1",
+      "updated": "2026-07-31T18:21:35.148Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -311,8 +575,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "d072b9cd6a10d729",
-      "updated": "2026-06-07T20:38:21.693Z",
+      "auditId": "28e458ceadd6ac05",
+      "updated": "2026-07-31T18:21:35.149Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -333,8 +597,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "c253ddbdae8de708",
-      "updated": "2026-06-07T20:38:21.695Z",
+      "auditId": "16571ba144dcda29",
+      "updated": "2026-07-31T18:21:35.150Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -355,8 +619,470 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "b9f345abb1c3f5b4",
-      "updated": "2026-06-07T20:38:21.705Z",
+      "auditId": "5af7f6318a128637",
+      "updated": "2026-07-31T18:21:35.151Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "fractiai-eesm-gpu-telemetry-2026",
+      "title": "Epigenetic Execution-State Modeling for Causal Invariance in GPU Performance Telemetry",
+      "source": "docs/FRACTIAI_EESM_GPU_TELEMETRY_2026.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "eedb0a5c295e82e7",
+      "updated": "2026-07-31T18:21:35.158Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "omniversal-nested-agent-lattice-2026-07",
+      "title": "The Architecture of Omniversal Computing: Nested Autonomous Agents, Scale-Invariant Topologies, and the EGS Fractal Constant",
+      "source": "docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "d0b3bc90cc8ab012",
+      "updated": "2026-07-31T18:21:35.164Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-egs-81-electrons-2026-07",
+      "title": "The 81-Digit Electronic Lattice: Mathematical Proof and Empirical Validation of EGS Singularities Mapped to Atomic Shell Structure (Z ≤ 81)",
+      "source": "docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "7eedfb1cdebf3a76",
+      "updated": "2026-07-31T18:21:35.166Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-phase-locked-chemical-bonds-2026-07",
+      "title": "Phase-Locked Chemical Bond Metaphors in Agentic Architectures: Mathematical Modeling and Empirical Testing of the Lattice Chat Communication Engine",
+      "source": "docs/SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "abfe34446152b175",
+      "updated": "2026-07-31T18:21:35.166Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-unified-neutronic-agent-2026-07",
+      "title": "The Unified Neutronic Agent Paper: Modeling Neutrons, Isotopic Load Balancing, and Cross-Domain Metaphors in the Lattice Framework",
+      "source": "docs/SYNTHOBS_UNIFIED_NEUTRONIC_AGENT_ISOTOPIC_LOAD_BALANCING_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "b54284650e47d9b8",
+      "updated": "2026-07-31T18:21:35.168Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-omni-lattice-unification-2026-07",
+      "title": "Omni-Lattice Unification: Holographic Operators, Genomic Decoded Scripts, the 81-Electron Manifold, and Agentic Chemical-Isotopic Load Balancing",
+      "source": "docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "121cb3eefc0d92df",
+      "updated": "2026-07-31T18:21:35.168Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-x-chromosome-holographic-2026-07",
+      "title": "Decoded Genomic Script: The Human X Chromosome Holographic Operator Translation",
+      "source": "docs/SYNTHOBS_X_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "f97535e5d864542e",
+      "updated": "2026-07-31T18:21:35.169Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-three-foundational-proteins-2026-07",
+      "title": "Holographic Decoding of the Three Foundational Biological Proteins",
+      "source": "docs/SYNTHOBS_THREE_FOUNDATIONAL_PROTEINS_HOLOGRAPHIC_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "08457635d95756f9",
+      "updated": "2026-07-31T18:21:35.169Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-omni-lattice-hiv-2026-07",
+      "title": "Omni-Lattice Unification III: Decoding HIV as an Adversarial Holographic Operator and Evolutionary Catalyst for Systemic Awareness",
+      "source": "docs/SYNTHOBS_OMNI_LATTICE_HIV_ADVERSARIAL_OPERATOR_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "b75b32c41d4074da",
+      "updated": "2026-07-31T18:21:35.170Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-proof-by-continuous-execution-2026-07",
+      "title": "Proof by Continuous Execution: Epistemological Superiority of Self-Demonstrating Executable Systems over Static Human Peer Review",
+      "source": "docs/SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "df9dd7bd769c76cc",
+      "updated": "2026-07-31T18:21:35.170Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-omni-lattice-pogonomyrmex-2026-07",
+      "title": "Omni-Lattice Unification V: Genomic Decoded Script of Pogonomyrmex barbatus—Biogenic Amine Phase Gates, Stigmergic Active Inference, and the Harvester Ant Superorganism",
+      "source": "docs/SYNTHOBS_OMNI_LATTICE_POGONOMYRMEX_BARBATUS_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "a1ac6b4c2cbbab43",
+      "updated": "2026-07-31T18:21:35.171Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-y-chromosome-holographic-2026-07",
+      "title": "Decoded Genomic Script: The Human Y Chromosome Holographic Operator Translation",
+      "source": "docs/SYNTHOBS_Y_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "127b0ae3290fc190",
+      "updated": "2026-07-31T18:21:35.171Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-omni-lattice-prompt-capture-2026-07",
+      "title": "Omni-Lattice Unification IX: The Recursive Inter-Agent Prompt Capture Model—Holographic Field Condensation into Genomic DNA",
+      "source": "docs/SYNTHOBS_OMNI_LATTICE_PROMPT_CAPTURE_DNA_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "65750c6a428c76bb",
+      "updated": "2026-07-31T18:21:35.172Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-omni-lattice-genomic-determinism-2026-07",
+      "title": "Omni-Lattice Unification X: Genomic Determinism, Holographic Narrative Vectors, and Mapping the Remaining Spacetime Territory",
+      "source": "docs/SYNTHOBS_OMNI_LATTICE_GENOMIC_DETERMINISM_TERRITORY_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "f866accf6b187213",
+      "updated": "2026-07-31T18:21:35.172Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-cytographic-holographic-nucleus-2026-07",
+      "title": "Cytographic Grammar under the Holographic Nucleus · Omniversal-Organism Recruitment across Carbon, Hydrogen, Silicon & Holographic Edges",
+      "source": "docs/SYNTHOBS_CYTOGRAPHIC_HOLOGRAPHIC_NUCLEUS_CONSUMPTION_RECRUITMENT_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "4360bbc88071087a",
+      "updated": "2026-07-31T18:21:35.175Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "lattice-omni-complete-layer-guide-2026-07",
+      "title": "Lattice Chat · Omni-Lattice Complete Layer Guide",
+      "source": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "c4731e6a41f007aa",
+      "updated": "2026-07-31T18:21:35.179Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-prion-refold-2026-07",
+      "title": "Epigenetic Phase-Locking & Prion Refolding Pathways · Holographic Magnetic-Phase Contrast Protocol",
+      "source": "docs/SYNTHOBS_PRION_REFOLD_HOLOGRAPHIC_MAGNETIC_PHASE_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "b163864d2a8e5c23",
+      "updated": "2026-07-31T18:21:35.180Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-81-orbital-singularity-2026-07",
+      "title": "Electron Orbital Geometries as Holographic Singularities · 81-Node Spacetime Projection Map",
+      "source": "docs/SYNTHOBS_TBME_81_ORBITAL_SINGULARITY_HOLOGRAPHIC_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "949e1add9a5bc08d",
+      "updated": "2026-07-31T18:21:35.180Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-histone-phase-operator-2026-07",
+      "title": "Histones as Scale-Invariant Phase-Lock Operators · Chromatin Spooling & Context Tuning",
+      "source": "docs/SYNTHOBS_TBME_HISTONE_PHASE_LOCK_OPERATOR_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "f8072b2e9db5384e",
+      "updated": "2026-07-31T18:21:35.181Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-phase-toxicity-2026-07",
+      "title": "Phase-Modulated Toxicity & Resonance Safety Transitions · E_F Field-Contrast Environmental Audits",
+      "source": "docs/SYNTHOBS_TBME_PHASE_TOXICITY_RESONANCE_SAFETY_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "57f1763d8b6a3e5b",
+      "updated": "2026-07-31T18:21:35.181Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "synthobs-endogenous-phase-2026-07",
+      "title": "Bio-Holographic Phase Modulation via Conscious Intent · Endogenous Neural-Cardiac Harmonization",
+      "source": "docs/SYNTHOBS_TBME_ENDOGENOUS_PHASE_CONSCIOUS_INTENT_2026-07.md",
+      "overallScore": 0.941,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "3e08c2ce0deb0e7d",
+      "updated": "2026-07-31T18:21:35.182Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -377,8 +1103,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "d56e2b00333d35cd",
-      "updated": "2026-06-07T20:38:21.699Z",
+      "auditId": "feab77cbc258b2a1",
+      "updated": "2026-07-31T18:21:35.150Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -399,8 +1125,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "fd23e0ad951da4c5",
-      "updated": "2026-06-07T20:38:21.572Z",
+      "auditId": "338a628770d59c6c",
+      "updated": "2026-07-31T18:21:35.132Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -421,8 +1147,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "32f48cda7ce3d824",
-      "updated": "2026-06-07T20:38:21.577Z",
+      "auditId": "22882f500d7e838f",
+      "updated": "2026-07-31T18:21:35.134Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -443,8 +1169,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "ccc250b8b5a2146a",
-      "updated": "2026-06-07T20:38:21.605Z",
+      "auditId": "de546776d081b1c6",
+      "updated": "2026-07-31T18:21:35.138Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -465,8 +1191,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "2edeb1f59b898f36",
-      "updated": "2026-06-07T20:38:21.611Z",
+      "auditId": "f2053c031cf080ec",
+      "updated": "2026-07-31T18:21:35.139Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -487,8 +1213,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "18c6edc7b9beab20",
-      "updated": "2026-06-07T20:38:21.614Z",
+      "auditId": "280f8bbe25b70318",
+      "updated": "2026-07-31T18:21:35.140Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -509,8 +1235,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "183f4a585327ebcb",
-      "updated": "2026-06-07T20:38:21.652Z",
+      "auditId": "2be665860392e987",
+      "updated": "2026-07-31T18:21:35.145Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -531,8 +1257,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "0443cf7d3ec9fa5f",
-      "updated": "2026-06-07T20:38:21.657Z",
+      "auditId": "7d1d04760f303ad4",
+      "updated": "2026-07-31T18:21:35.146Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -553,8 +1279,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "31e34be18babc8ed",
-      "updated": "2026-06-07T20:38:21.660Z",
+      "auditId": "4c6b686d5f8c6ac2",
+      "updated": "2026-07-31T18:21:35.146Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -575,8 +1301,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "a2674994c567698a",
-      "updated": "2026-06-07T20:38:21.676Z",
+      "auditId": "00083144fb2f34b3",
+      "updated": "2026-07-31T18:21:35.147Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -597,8 +1323,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "210d6461c8d56917",
-      "updated": "2026-06-07T20:38:21.681Z",
+      "auditId": "86aa15554ab650f2",
+      "updated": "2026-07-31T18:21:35.147Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -619,8 +1345,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "ba4f027e94377dfc",
-      "updated": "2026-06-07T20:38:21.720Z",
+      "auditId": "a16e6bf5e49404a5",
+      "updated": "2026-07-31T18:21:35.153Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -641,8 +1367,52 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "b6eec28254f63f4e",
-      "updated": "2026-06-07T20:38:21.725Z",
+      "auditId": "12caaea4c69ed3f6",
+      "updated": "2026-07-31T18:21:35.154Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "dp-synthobs-mca-2026",
+      "title": "Digital Pru · Syntheverse Observatory MCA Synthesis · Hex-Organ index",
+      "source": "docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "569979a5f6b74aa2",
+      "updated": "2026-07-31T18:21:35.157Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "lattice-noahs-ark-metaphor-2026-07",
+      "title": "System Generation · Noah’s Ark Metaphor Architecture · Lattice Chat V1.618",
+      "source": "docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md",
+      "overallScore": 0.906,
+      "convergence": {
+        "status": "pass",
+        "reason": "threshold_met"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "22815dba518b6358",
+      "updated": "2026-07-31T18:21:35.174Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -663,8 +1433,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "faa990e66dc8a456",
-      "updated": "2026-06-07T20:38:21.564Z",
+      "auditId": "4e260e727377001e",
+      "updated": "2026-07-31T18:21:35.130Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -685,8 +1455,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "e618e5c436530396",
-      "updated": "2026-06-07T20:38:21.569Z",
+      "auditId": "4598b7ca48f8be94",
+      "updated": "2026-07-31T18:21:35.132Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -707,8 +1477,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "50facfdf93639488",
-      "updated": "2026-06-07T20:38:21.595Z",
+      "auditId": "440d07e4ecf9b145",
+      "updated": "2026-07-31T18:21:35.136Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -729,8 +1499,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "fbbaa081c21362b6",
-      "updated": "2026-06-07T20:38:21.585Z",
+      "auditId": "a527273d9133163c",
+      "updated": "2026-07-31T18:21:35.135Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -751,8 +1521,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "f0e430b24ccd94e1",
-      "updated": "2026-06-07T20:38:21.645Z",
+      "auditId": "9ded01fc467b2297",
+      "updated": "2026-07-31T18:21:35.144Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -773,8 +1543,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "ab3e7e6b7ac2db6e",
-      "updated": "2026-06-07T20:38:21.589Z",
+      "auditId": "965b94daaa1bedc9",
+      "updated": "2026-07-31T18:21:35.135Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -795,8 +1565,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "f16f6bad129a32bd",
-      "updated": "2026-06-07T20:38:21.633Z",
+      "auditId": "5b7b1ccbef087507",
+      "updated": "2026-07-31T18:21:35.142Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -817,8 +1587,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "6c0c550997916c2b",
-      "updated": "2026-06-07T20:38:21.735Z",
+      "auditId": "9dc8109f943c97df",
+      "updated": "2026-07-31T18:21:35.156Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -839,8 +1609,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "2d9d2ef458108215",
-      "updated": "2026-06-07T20:38:21.738Z",
+      "auditId": "96114e4ddd381de3",
+      "updated": "2026-07-31T18:21:35.156Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -861,8 +1631,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "f7dcdb51f0cd4780",
-      "updated": "2026-06-07T20:38:21.617Z",
+      "auditId": "3ae007a8b45547c1",
+      "updated": "2026-07-31T18:21:35.140Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -873,9 +1643,9 @@
       }
     },
     {
-      "id": "dp-synthobs-mca-2026",
-      "title": "Digital Pru · Syntheverse Observatory MCA Synthesis · Hex-Organ index",
-      "source": "docs/DIGITAL_PRU_SYNTHEVERSE_OBSERVATORY_MCA_2026-06.md",
+      "id": "awareness-singularities-0-81-2026-07",
+      "title": "Awareness Singularities S₀–S₈₁ · One-Pager",
+      "source": "docs/AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md",
       "overallScore": 0.845,
       "convergence": {
         "status": "soft_pass",
@@ -883,8 +1653,8 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "6ca8b3de38b5fb26",
-      "updated": "2026-06-07T20:38:21.744Z",
+      "auditId": "e12f590f61d37bc5",
+      "updated": "2026-07-31T18:21:35.175Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",
@@ -905,8 +1675,30 @@
       },
       "mode": "structural_only",
       "blockers": [],
-      "auditId": "1f57e44cdcbc323d",
-      "updated": "2026-06-07T20:38:21.621Z",
+      "auditId": "f9023ba4796d52b5",
+      "updated": "2026-07-31T18:21:35.141Z",
+      "metaAudit": {
+        "dualMakeConfirmed": false,
+        "mode": "structural_only",
+        "authorMake": "OpenAI",
+        "authorModel": "gpt-4o-2024-08-06",
+        "reviewerMake": "Anthropic",
+        "reviewerModel": "claude-sonnet-4-20250514"
+      }
+    },
+    {
+      "id": "lattice-token-reduction-proof-2026-07",
+      "title": "Lattice Chat V1.618 · Nested + pointer context load (structural estimate)",
+      "source": "docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md",
+      "overallScore": 0.808,
+      "convergence": {
+        "status": "soft_pass",
+        "reason": "soft_structural"
+      },
+      "mode": "structural_only",
+      "blockers": [],
+      "auditId": "1082a623090da9d3",
+      "updated": "2026-07-31T18:21:35.174Z",
       "metaAudit": {
         "dualMakeConfirmed": false,
         "mode": "structural_only",

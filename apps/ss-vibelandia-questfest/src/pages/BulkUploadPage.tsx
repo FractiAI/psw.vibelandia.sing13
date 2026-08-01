@@ -34,8 +34,8 @@ export function BulkUploadPage() {
   return (
     <div className="sp-app bulk-upload-page">
       <header className="bulk-upload-top">
-        <Link to="/bridge" className="bulk-upload-back">
-          ← Bridge Listen
+        <Link to="/listen" className="bulk-upload-back">
+          ← Jukebox
         </Link>
         <a href="/my-whiteboard" className="bulk-upload-back">
           Whiteboard

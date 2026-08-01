@@ -3930,9 +3930,9 @@ a.boarding-pay-open {
 }
 
 .machote-campaign-dual-nav__btn--quest {
-  color: #f5f0ff;
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.55), rgba(126, 34, 206, 0.45));
-  border: 1px solid rgba(168, 85, 247, 0.55);
+  color: #1a1208;
+  background: linear-gradient(180deg, #fef9c3, #eab308);
+  border: 1px solid rgba(234, 179, 8, 0.65);
 }
 
 .machote-campaign-universe-teaser {
@@ -8406,6 +8406,26 @@ html.qf-jukebox-page .sp-now-add-pl {
   outline: none;
   border-color: #d4af37;
   box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.22);
+}
+
+.jb-sort-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.4rem;
+  flex-shrink: 0;
+  padding: 0.35rem 0.45rem 0.45rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.jb-sort-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a8070;
+  margin-right: 0.15rem;
 }
 
 .jb-tool-btn {

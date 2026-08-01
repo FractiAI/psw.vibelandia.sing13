@@ -11,9 +11,13 @@ export function JukeboxSiteNav({ mode }: JukeboxSiteNavProps) {
   return (
     <header className="jb-top jb-top--slim">
       <nav className="jb-nav" aria-label="Site">
-        <Link to="/bridge" className="jb-nav__link">
+        <a href="/questfest" className="jb-nav__link">
           Bridge
-        </Link>
+        </a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/reno-holographic-swamp-beats-caliente" className="jb-nav__link">
+          About
+        </a>
         <span aria-hidden="true">·</span>
         {mode === 'browse' ? (
           <span className="jb-nav__here">Jukebox</span>

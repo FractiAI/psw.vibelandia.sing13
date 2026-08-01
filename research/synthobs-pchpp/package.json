@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-pchpp",
+  "private": true,
+  "type": "module",
+  "version": "2026.07.30",
+  "description": "Phase-Contrast Holographic Prompting Paradigm (PCHPP) — observation experiment suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-pchpp.git"
+  }
+}

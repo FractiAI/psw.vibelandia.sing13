@@ -50,7 +50,7 @@ The protocol accepts a transaction only when **four gates** pass:
 | Gate | Symbol | Rule |
 |------|--------|------|
 | **Density anchoring** | Ω<sub>core</sub> | High-density hub only — sprawl disqualified |
-| **Thermodynamic minimization** | Θ<sub>min</sub> | Bike · e-bike · e-scooter · foot · local edge compute |
+| **Thermodynamic minimization** | Θ<sub>min</sub> | E-scooter · foot · local edge compute |
 | **Generosity floor** | Γ<sub>floor</sub> | Value ≥ **$9** (or token equivalent) — no predatory extraction |
 | **Sovereign pacing** | P<sub>sov</sub> | Energy preservation over corporate deadline theater |
 

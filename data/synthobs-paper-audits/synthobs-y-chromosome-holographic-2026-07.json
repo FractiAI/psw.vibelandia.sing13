@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "d00dcf1b2e4f711e",
+  "auditId": "70d509b54579f8e5",
   "paperId": "synthobs-y-chromosome-holographic-2026-07",
   "sourcePath": "docs/SYNTHOBS_Y_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-29T02:58:18.250Z"
+          "invokedAt": "2026-07-31T18:01:40.975Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-29T02:58:18.098Z",
-  "completedAt": "2026-07-29T02:58:18.974Z",
+  "startedAt": "2026-07-31T18:01:40.975Z",
+  "completedAt": "2026-07-31T18:01:40.975Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,

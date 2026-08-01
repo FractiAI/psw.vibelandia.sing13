@@ -28,7 +28,7 @@ export const UW_URBAN_FREIGHT_LAB = {
 };
 
 /**
- * OGRP micro-mobility operating cost model (electric scooter / e-bike, operating-only).
+ * OGRP micro-mobility operating cost model (e-scooter, operating-only).
  * electricity_kwh_per_mile * $/kWh + maintenance_amortization_per_mile
  */
 export const MICRO_MOBILITY_OPERATING = {
@@ -39,7 +39,7 @@ export const MICRO_MOBILITY_OPERATING = {
     return this.kwhPerMile * this.usdPerKwh + this.maintenancePerMileUsd;
   },
   parkingCruisingFraction: 0,
-  vector: 'electric micro-mobility (e-scooter / e-bike)',
+  vector: 'electric micro-mobility (e-scooter)',
 };
 
 /** Generosity gate floor (USD) */

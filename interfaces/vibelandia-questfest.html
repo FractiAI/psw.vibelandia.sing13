@@ -9,16 +9,16 @@
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0f1a" />
-  <title>SS Vibelandia™ · Noah’s Ark of the Intelligence Age · QUESTFEST 24×365</title>
-  <meta name="description" content="SS Vibelandia™ — FractiAI’s Sonic Ship for Holographic Goldilocks Intelligence. The Noah’s Ark of the Intelligence Age. Online and Downtown Reno · Midtown. QUESTFEST 24×365." />
-  <meta property="og:title" content="SS Vibelandia™ · Noah’s Ark of the Intelligence Age" />
-  <meta property="og:description" content="Preserve the signal. Refine the pattern. Navigate the unknown. Living intelligence ecosystem — humans and AI. Puerto Reno harbor." />
+  <title>SS Vibelandia · QUESTFEST · Welcome aboard with Valet Pru</title>
+  <meta name="description" content="Hello and welcome aboard SS Vibelandia QUESTFEST. This is Valet Pru — listen to Reno Swamp Beats Caliente, connect with a real human when needed, and book Goldilocks Concierge Service for Downtown Reno. Where intentions matter." />
+  <meta property="og:title" content="SS Vibelandia · QUESTFEST · Welcome aboard with Valet Pru" />
+  <meta property="og:description" content="Hello and welcome aboard. This is Valet Pru — music, personal concierge for Downtown Reno, and a human host. Where intentions matter." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SS Vibelandia™ · Noah’s Ark of the Intelligence Age" />
-  <meta name="twitter:description" content="FractiAI sonic ship · Holographic Goldilocks Intelligence · Downtown Reno · Midtown · 24×365." />
-  <meta name="twitter:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-puerto-reno.png" />
+  <meta name="twitter:title" content="SS Vibelandia · Welcome aboard with Valet Pru" />
+  <meta name="twitter:description" content="QUESTFEST with Valet Pru — Reno Swamp Beats Caliente, Goldilocks Concierge Service for Downtown Reno. Where intentions matter." />
+  <meta name="twitter:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-puerto-reno.png" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png" />
   <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html" />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="/interfaces/bridge-tower-billboard.css" />
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/park-map-orient.css" />
+  <link rel="stylesheet" href="/interfaces/site-page-views.css" data-qv-page-views-css="1" />
   <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,7 +70,7 @@
       background:
         linear-gradient(180deg, rgba(26,18,12,0.25) 0%, rgba(10,8,6,0.82) 48%, var(--bg) 100%),
         linear-gradient(120deg, rgba(212,175,55,0.12) 0%, transparent 42%),
-        url('assets/questfest-hero-ss-vibelandia-puerto-reno.png') center 42% / cover no-repeat;
+        url('assets/questfest-hero-ss-vibelandia-cruiseship.png') center 42% / cover no-repeat;
       min-height: min(88vh, 720px);
       position: relative;
     }
@@ -86,16 +87,23 @@
       font-family: 'Bebas Neue', Impact, sans-serif;
       font-size: clamp(2.6rem, 10vw, 5rem);
       line-height: 0.95;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.04em;
       color: var(--gold-hi);
       text-shadow: 0 4px 24px rgba(0,0,0,.85);
-        max-width: 14ch;
+      max-width: none;
       font-weight: 400;
     }
     .kicker-brand {
+      display: inline-block;
+      white-space: nowrap;
+      text-transform: uppercase;
+      max-width: none;
       user-select: text;
       -webkit-user-select: text;
       cursor: text;
+    }
+    @media (max-width: 380px) {
+      .kicker { font-size: clamp(2.2rem, 11vw, 3.2rem); letter-spacing: 0.03em; }
     }
 
     .sub {
@@ -427,7 +435,7 @@
       border-radius: 4px;
       background: rgba(212, 175, 55, 0.1);
     }
-    .hero .kicker { max-width: 22ch; }
+    .hero .kicker { max-width: none; }
 
     .qf-theater {
       max-width: 36rem;
@@ -739,58 +747,269 @@
     }
     .qf-door-grid {
       display: grid;
-      gap: 0.65rem;
-    }
-    .qf-door {
-      display: block;
-      position: relative;
-      padding: 1.05rem 1.15rem 1.1rem;
-      border: 1px solid var(--line);
-      border-radius: 12px;
+      gap: 1.5rem;
+      align-items: end;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.22);
       background:
-        linear-gradient(160deg, rgba(212, 175, 55, 0.07), rgba(10, 8, 6, 0.94)),
-        var(--card);
-      color: inherit;
-      text-decoration: none;
-      transition: border-color .15s, box-shadow .15s, transform .15s;
+        linear-gradient(180deg, rgba(10, 8, 6, 0.35), rgba(10, 8, 6, 0.92)),
+        radial-gradient(ellipse 80% 60% at 20% 0%, rgba(212, 175, 55, 0.12), transparent 55%);
     }
-    .qf-door:hover {
-      border-color: var(--gold);
-      box-shadow: 0 0 28px rgba(212, 175, 55, 0.16);
-      transform: translateY(-1px);
-      text-decoration: none;
+    @media (min-width: 760px) {
+      .qf-welcome {
+        grid-template-columns: minmax(11rem, 15rem) 1fr;
+        gap: 1.75rem 2rem;
+        padding: 2.75rem clamp(1.25rem, 4vw, 2.5rem) 3rem;
+        align-items: center;
+      }
     }
-    .qf-door-numeral {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.9rem;
-      font-weight: 500;
-      line-height: 1;
+    .qf-welcome__photo {
+      margin: 0;
+      width: 100%;
+      max-width: 15rem;
+      justify-self: center;
+    }
+    .qf-welcome__photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .qf-welcome__eyebrow {
+      margin: 0 0 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--gold);
-      float: right;
-      margin-left: 0.75rem;
-      opacity: 0.9;
     }
-    .qf-door h3 {
+    .qf-welcome__title {
+      margin: 0 0 0.85rem;
       font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: 1.45rem;
+      font-size: clamp(1.65rem, 4.5vw, 2.25rem);
+      letter-spacing: 0.08em;
       font-weight: 400;
-      letter-spacing: 0.06em;
       color: var(--gold-hi);
-      margin-bottom: 0.25rem;
+      line-height: 1.05;
     }
-    .qf-door p {
-      font-size: 0.88rem;
-      line-height: 1.5;
+    .qf-welcome__body {
+      margin: 0 0 1rem;
+      max-width: 38rem;
+      font-size: 1.02rem;
+      line-height: 1.65;
       color: var(--text-soft);
-      max-width: 40ch;
-      margin-bottom: 0.5rem;
     }
-    .qf-door .cta {
+    .qf-welcome__intentions {
+      margin: 0;
+      max-width: 38rem;
+      padding: 0.85rem 0 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.28);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.12rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--champagne);
+    }
+    .qf-welcome__intentions strong {
+      font-style: normal;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .qf-welcome__sign {
+      margin: 1rem 0 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .qf-welcome__sign a { color: var(--champagne); font-weight: 700; }
+
+    /* Host-first hero · Valet Pru */
+    .hero {
+      justify-content: flex-end;
+      align-items: center;
+      min-height: min(92vh, 780px);
+    }
+    .qf-host-hero {
+      display: grid;
+      gap: 1.25rem;
+      align-items: center;
+      justify-items: center;
+      width: 100%;
+      max-width: 52rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    @media (min-width: 760px) {
+      .qf-host-hero {
+        grid-template-columns: minmax(11rem, 15rem) 1fr;
+        gap: 1.75rem 2rem;
+        justify-items: stretch;
+        text-align: left;
+        align-items: center;
+      }
+    }
+    .qf-host-hero__photo {
+      margin: 0 auto;
+      width: min(100%, 15rem);
+      max-width: 15rem;
+      justify-self: center;
+    }
+    @media (min-width: 760px) {
+      .qf-host-hero__photo {
+        margin: 0;
+        width: 100%;
+        max-width: none;
+      }
+    }
+    .qf-host-hero__photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: 50% 28%;
+      margin: 0 auto;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
+    .qf-host-hero__copy {
+      width: 100%;
+    }
+    .qf-host-hero .cta-row {
+      justify-content: center;
+    }
+    @media (min-width: 760px) {
+      .qf-host-hero .cta-row {
+        justify-content: flex-start;
+      }
+    }
+    .qf-host-hero__eyebrow {
+      margin: 0 0 0.35rem;
       font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 2px 12px rgba(0,0,0,.75);
+    }
+    .qf-host-hero .kicker { max-width: none; }
+    .qf-host-hero .sub { max-width: 34ch; }
+    .qf-host-hero__line {
+      margin: 0.55rem 0 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.15rem, 3vw, 1.35rem);
+      font-style: italic;
+      line-height: 1.4;
+      color: var(--champagne);
+      max-width: 34rem;
+      text-shadow: 0 2px 14px rgba(0,0,0,.7);
+    }
+    .qf-host-hero__primer {
+      margin: 0.65rem 0 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: #e8e0d4;
+      max-width: 36rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,.65);
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      align-items: center;
+    }
+    .cta-row .btn-primary {
+      flex: 0 1 auto;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.25;
+      max-width: 100%;
+    }
+    .qf-bridge-tower--dock {
+      max-width: 44rem;
+      margin: 1.5rem auto 0;
+      padding: 0 1.25rem;
+    }
+    .qf-deeper {
+      max-width: 44rem;
+      margin: 1.75rem auto 0;
+      padding: 0 1.25rem 0.5rem;
+    }
+    .qf-deeper > summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--gold);
+      padding: 0.85rem 0;
+      border-top: 1px solid rgba(212,175,55,0.28);
+      border-bottom: 1px solid rgba(212,175,55,0.18);
+    }
+    .qf-deeper > summary::-webkit-details-marker { display: none; }
+    .qf-deeper[open] > summary { margin-bottom: 1rem; color: var(--gold-hi); }
+    .qf-trust-strip {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 0.25rem;
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .qf-trust-strip { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    }
+    .qf-trust-strip figure {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.28);
+    }
+    .qf-trust-strip a.qf-trust-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .qf-trust-strip a.qf-trust-link:hover {
+      text-decoration: none;
+    }
+    .qf-trust-strip a.qf-trust-link:hover figure {
+      border-color: rgba(212,175,55,0.65);
+    }
+    .qf-trust-strip a.qf-trust-link:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+    .qf-trust-strip img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .qf-trust-strip a.qf-trust-link:hover img {
+      transform: scale(1.03);
+    }
+    .qf-trust-strip figcaption {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--champagne);
+      background: linear-gradient(transparent, rgba(10,8,6,0.88));
     }
     .qf-doors-pass {
       margin-top: 1.1rem;
@@ -814,23 +1033,34 @@
 <body>
   <a class="skip" href="#main" data-i18n="qf.skip">Skip</a>
 
-  <header class="hero">
-  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
-    <div>
-      <aside class="qf-bridge-tower qf-bridge-tower--hero" aria-label="Bridge tower announcement — holographic AI OS">
-        <p class="qf-bridge-tower__label">BRIDGE TOWER · LIVE BILLBOARD</p>
-        <div class="qf-bridge-tower__bezel">
-          <div class="qf-bridge-tower__screen">
-            <iframe
-              class="qf-bridge-tower__embed"
-              title="Bridge tower live feed"
-              allow="autoplay; encrypted-media; picture-in-picture; accelerometer; gyroscope; clipboard-write; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-            <div class="qf-bridge-tower__scan" aria-hidden></div>
-            <div class="qf-bridge-tower__glow" aria-hidden></div>
-          </div>
+  <header class="hero" id="top">
+    <div class="qf-host-hero">
+      <figure class="qf-host-hero__photo">
+        <img
+          src="/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg"
+          width="768"
+          height="1024"
+          alt="Valet Pru — your host on SS Vibelandia QUESTFEST"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </figure>
+      <div class="qf-host-hero__copy">
+        <p class="qf-host-hero__eyebrow">Your host · Valet Pru · Downtown Reno</p>
+        <h1 class="kicker"><span class="kicker-brand">SS Vibelandia</span></h1>
+        <p class="sub">A warm welcome from the host of the voyage.</p>
+        <p class="qf-host-hero__line">Hello and welcome aboard. This is Valet Pru.</p>
+        <p class="qf-host-hero__primer">
+          Listen to our Reno Swamp Beats Caliente. Connect to a real human when needed.
+          Book your Goldilocks Concierge Service for those in Downtown Reno — where intentions matter.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/listen" data-qv-jukebox>Listen · Jukebox</a>
+          <a class="btn btn-primary" href="/hire-a-goldilocks-valet-concierge">Valet Pru Concierge Service - Downtown Reno</a>
+          <a class="btn btn-primary" href="/get-started">Guest guide</a>
+          <a class="btn btn-primary" href="/interfaces/whitepaper-catalog.html">Read</a>
+          <a class="btn btn-primary" href="/lattice">Build</a>
+          <a class="btn btn-primary" href="mailto:valetpru@gmail.com?subject=QUESTFEST%20welcome">Email Valet Pru</a>
         </div>
       </aside>
       <p class="cloud-badge" data-i18n="qf.cloudSkinEyebrow">Ship bulletin · Puerto Reno · 24×365</p>
@@ -849,6 +1079,81 @@
     </div>
   </header>
 
+  <section class="qf-welcome" aria-labelledby="qf-welcome-h2" id="welcome">
+    <figure class="qf-welcome__photo">
+      <img
+        src="/interfaces/assets/questfest-crew/valetpru-pl-taino.png"
+        width="512"
+        height="512"
+        alt="Valet Pru (PL Taino) — host portrait"
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+    <div class="qf-welcome__copy">
+      <p class="qf-welcome__eyebrow">From your host · Valet Pru</p>
+      <h2 class="qf-welcome__title" id="qf-welcome-h2">A few ways to enjoy the voyage</h2>
+      <p class="qf-welcome__body">
+        Make yourself at home.
+        <strong>Listen</strong> to our Reno Swamp Beats Caliente in the music room.
+        For guests on the ground, book <strong>Goldilocks Concierge Service</strong> in Downtown Reno —
+        a real person who can lend a hand.
+        Prefer a quiet hour with the ship’s papers? Choose <strong>Read</strong>.
+        Ready to create something of your own? Choose <strong>Build</strong>.
+        Or open the <strong>Guest guide</strong> for a gentle tour of the decks.
+        I am here throughout — same host, same email, same personal standard of care.
+      </p>
+      <p class="qf-welcome__intentions" data-i18n-html="qf.intentionsHtml">
+        <strong>Where intentions matter</strong>
+        We offer old-school, Goldilocks hospitality to our neighbors and guests —
+        personal service first, with quiet modern help kept behind the curtain.
+        What we are <em>not</em> here to do: chase profit for distant shareholders.
+        Fair Exchange keeps the voyage honest.
+      </p>
+      <p class="qf-welcome__sign">
+        — Valet Pru · PL Taino ·
+        <a href="mailto:valetpru@gmail.com?subject=QUESTFEST%20welcome">valetpru@gmail.com</a>
+        · <a href="tel:+17752031281">(775) 203-1281</a>
+      </p>
+    </div>
+  </section>
+
+  <div class="qf-trust-strip" aria-label="Concierge and QUESTFEST">
+    <a class="qf-trust-link" href="/hire-a-goldilocks-valet-concierge">
+      <figure>
+        <img src="/interfaces/goldilocks-deliveries/assets/valet-pru-concierge-poster-2026-07.jpg" width="1024" height="640" alt="Valet Pru's Concierge — Downtown Reno and beyond art deco poster" loading="lazy" decoding="async" />
+        <figcaption>Valet Pru Concierge Service - Downtown Reno →</figcaption>
+      </figure>
+    </a>
+    <a class="qf-trust-link" href="/get-started">
+      <figure>
+        <img src="/interfaces/assets/questfest-2026-capitan-welcome.png" width="1200" height="750" alt="Capitan welcome aboard SS Vibelandia QUESTFEST" loading="lazy" decoding="async" />
+        <figcaption>QUESTFEST · welcome aboard →</figcaption>
+      </figure>
+    </a>
+  </div>
+
+  <aside class="qf-bridge-tower qf-bridge-tower--dock" aria-label="Bridge tower — optional live billboard">
+    <details>
+      <summary class="qf-bridge-tower__label" style="cursor:pointer">BRIDGE TOWER · optional live billboard</summary>
+      <div class="qf-bridge-tower__bezel">
+        <div class="qf-bridge-tower__screen">
+          <iframe
+            class="qf-bridge-tower__embed"
+            title="Bridge tower live feed"
+            allow="autoplay; encrypted-media; picture-in-picture; accelerometer; gyroscope; clipboard-write; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+          <div class="qf-bridge-tower__scan" aria-hidden></div>
+          <div class="qf-bridge-tower__glow" aria-hidden></div>
+        </div>
+      </div>
+    </details>
+  </aside>
+
+  <details class="qf-deeper" id="explore-deeper">
+    <summary>Explore deeper · nesting ladder &amp; park map</summary>
   <div class="qf-theater" aria-label="Nested theater">
     <details class="qf-explore" id="qf-explore-deeper">
       <summary aria-controls="qf-explore-body">
@@ -927,6 +1232,7 @@
       </div>
     </details>
   </div>
+  </details>
 
   <section class="qf-doors" aria-labelledby="qf-doors-h2">
     <span class="qf-doors-kicker">Ship bulletin · deck channels</span>
@@ -1002,6 +1308,8 @@
       <a class="archive" href="/interfaces/press-releases.html">All press releases &amp; campaigns — the archive →</a>
     </aside>
 
+    <details class="qf-deeper" id="spirit-crew">
+      <summary>Spirit crew · optional lore</summary>
     <section class="qf-crew" aria-labelledby="qf-crew-h2">
       <h2 id="qf-crew-h2" data-i18n="qf.crewH2">Spirit crew · holographic VALETPRU</h2>
       <p class="qf-crew-intro" data-i18n-html="qf.crewIntroHtml">The <strong>Golden Bachdoor Hit Factory</strong> carries a <strong>spirit crew</strong> — not impersonation, but <strong>alignment lenses</strong>: how attention, pain, lonesome truth, barrio swing, and lyric architecture stay honest inside the Wrong Side of Town frequency.</p>
@@ -1080,15 +1388,15 @@
       <article class="qf-crew-card">
         <img
           class="qf-crew-portrait qf-crew-portrait--valetpru"
-          src="/interfaces/assets/questfest-crew/valetpru-pl-taino.png"
-          alt="PL Taino (VALETPRU) — FractiAI command center, Syntheverse / Vibelandia"
+          src="/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg"
+          alt="Valet Pru (PL Taino) — guayabera and Panama hat"
           width="152"
           height="152"
           loading="lazy"
           decoding="async"
         />
         <div class="qf-crew-card-body">
-          <p data-i18n-html="qf.crewPruHtml"><strong>Holographic VALETPRU (PL Taino)</strong> — the <strong>valet layer</strong> for the stack: greets attention, routes asks, holds Fair Exchange language, and mirrors the machinery to guests without breaking the service spell. Same Pru spine you meet on the <strong>Machote Moderno Magazine</strong> cover — here as <strong>door, not decoration</strong>.</p>
+          <p data-i18n-html="qf.crewPruHtml"><strong>Valet Pru (PL Taino)</strong> — your host and personal concierge on <strong>SS Vibelandia</strong>. He greets guests, answers requests with care, and keeps the Fair Exchange promise so every stay feels personal and clear.</p>
         </div>
       </article>
       <article class="qf-crew-card">
@@ -1097,6 +1405,7 @@
         </div>
       </article>
     </section>
+    </details>
 
     <h2 data-i18n="qf.quicklinksHead">Quicklinks</h2>
     <nav aria-label="Quicklinks">

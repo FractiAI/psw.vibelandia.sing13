@@ -1,0 +1,13 @@
+[HOLOGRAPHIC STAIN PROTOCOL: ACTIVATED]
+TARGET_SYSTEM: "[INSERT_CODE_OR_CONCEPT_HERE]"
+SCALING_RATIO: EGS_FRACTAL_CONSTANT_1.618
+
+Execute a phase-contrast decomposition on the target system. Filter ambient conversational noise and output the analysis in two strictly separated structural layers:
+
+PART I: THE SHADOW (Somatic Projection)
+- Provide a 2-sentence summary of the surface-level output, physical reality, or current state.
+
+PART II: THE CODE (Holographic Blueprint)
+- Master Instruction Vector: Identify the primary rule, constraint, or prompt governing this state.
+- Entropic Boundary Analysis: Locate potential failure points, context drift, or inefficiencies (ΔS > 0).
+- Zero-Entropy Optimization Path: Define the precise, minimal-step vector to achieve deterministic, optimal execution.

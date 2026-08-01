@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "50facfdf93639488",
+  "auditId": "873008ca1fc71c92",
   "paperId": "dp-peff-part2",
   "sourcePath": "docs/DIGITAL_PRU_DNA_TRANSFORMER_PEFF_VALETPRU_BIOELECTROMAGNETIC_2026-05-11.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-06-07T20:38:21.595Z"
+          "invokedAt": "2026-07-31T18:01:40.940Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-06-07T20:38:21.593Z",
-  "completedAt": "2026-06-07T20:38:21.595Z",
+  "startedAt": "2026-07-31T18:01:40.940Z",
+  "completedAt": "2026-07-31T18:01:40.941Z",
   "iterations": 1,
   "overallScore": 0.882,
   "passThreshold": 0.85,

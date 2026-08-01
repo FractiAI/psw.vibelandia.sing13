@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "13daffcdee248a8d",
+  "auditId": "7a463770d9ad78ea",
   "paperId": "omniversal-goldilocks-rideshare-2026-07",
   "sourcePath": "docs/OMNIVERSAL_GOLDILOCKS_RIDESHARE_PROTOCOL_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-07T19:29:08.381Z"
+          "invokedAt": "2026-07-31T18:01:40.966Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-07T19:29:08.363Z",
-  "completedAt": "2026-07-07T19:29:08.438Z",
+  "startedAt": "2026-07-31T18:01:40.966Z",
+  "completedAt": "2026-07-31T18:01:40.966Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,

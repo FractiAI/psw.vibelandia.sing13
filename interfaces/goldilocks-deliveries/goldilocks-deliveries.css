@@ -417,13 +417,16 @@ body {
   border-radius: 10px;
   font-size: 0.88rem;
   font-weight: 700;
+  font-family: inherit;
   text-decoration: none;
   border: 1px solid var(--grs-gold);
   background: linear-gradient(180deg, rgba(212,175,55,0.2), rgba(212,175,55,0.08));
   color: var(--grs-gold-hi);
   margin-top: 0.5rem;
+  cursor: pointer;
 }
 .grs-btn:hover { filter: brightness(1.1); }
+.grs-btn:disabled { opacity: 0.55; cursor: wait; filter: none; }
 .grs-btn--ghost {
   background: transparent;
   border-color: var(--grs-line);
@@ -434,6 +437,34 @@ body {
 .grs-item-wrap .grs-item-hero { margin-bottom: 1.25rem; }
 .grs-item-body p { margin: 0 0 0.75rem; font-size: 0.9rem; line-height: 1.65; color: var(--grs-muted); }
 .grs-item-body p:last-child { margin-bottom: 0; color: var(--grs-champagne); }
+.grs-item-body__h {
+  margin: 1.15rem 0 0.45rem;
+  font-family: var(--grs-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--grs-champagne);
+  letter-spacing: 0.02em;
+}
+.grs-item-body__list-title { margin-bottom: 0.35rem !important; color: var(--grs-champagne) !important; }
+.grs-item-body__list {
+  margin: 0 0 0.9rem;
+  padding-left: 1.15rem;
+  color: var(--grs-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.grs-item-body__list li { margin: 0.25rem 0; }
+.grs-item-body__quote {
+  margin: 1rem 0 1.1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--grs-gold);
+  background: rgba(212, 175, 55, 0.07);
+  font-family: var(--grs-serif);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--grs-champagne);
+  font-style: italic;
+}
 
 .grs-valet-picks { margin-bottom: 1.25rem; }
 .grs-valet-picks__title {
@@ -740,22 +771,103 @@ body.grs-deco-bg .grs-join {
   transition: filter 0.15s ease, transform 0.15s ease;
 }
 .grs-top-nav__btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
-.grs-top-nav__btn--hire {
+.grs-top-nav__btn--hire,
+a.grs-top-nav__btn--hire,
+a.grs-top-nav__btn--hire:any-link,
+a.grs-top-nav__btn--hire:hover,
+a.grs-top-nav__btn--hire:focus-visible {
   color: #1a1208;
   background: linear-gradient(180deg, var(--grs-hire-hi), var(--grs-hire));
   border: 1px solid rgba(234, 179, 8, 0.65);
   box-shadow: 0 2px 12px rgba(234, 179, 8, 0.25);
 }
 .grs-top-nav__btn--quest {
-  color: #f5f0ff;
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.55), rgba(126, 34, 206, 0.45));
-  border: 1px solid rgba(168, 85, 247, 0.55);
-  box-shadow: 0 2px 12px rgba(168, 85, 247, 0.2);
+  color: #1a1208;
+  background: linear-gradient(180deg, var(--grs-hire-hi), var(--grs-hire));
+  border: 1px solid rgba(234, 179, 8, 0.65);
+  box-shadow: 0 2px 12px rgba(234, 179, 8, 0.25);
 }
 
 .grs-wrap.grs-business { padding-top: 1.5rem; }
 .grs-hero--business { margin-bottom: 1.25rem; }
 .grs-hero--business .grs-title { margin-bottom: 0.35rem; }
+
+/* Full-bleed Valet Pru Art Deco poster — first viewport */
+.grs-poster-hero {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: min(92vh, 56rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  isolation: isolate;
+  overflow: hidden;
+  background: #1a1208;
+}
+.grs-poster-hero__img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.grs-poster-hero__cta {
+  position: relative;
+  z-index: 1;
+  padding: 1.35rem 1.15rem 1.5rem;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(10, 8, 6, 0.55) 28%,
+    rgba(10, 8, 6, 0.92) 100%
+  );
+}
+.grs-poster-hero__kicker {
+  margin: 0 0 0.35rem;
+  font-family: var(--grs-serif);
+  font-size: clamp(1.35rem, 4.5vw, 1.85rem);
+  font-weight: 600;
+  color: var(--grs-gold-hi);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+.grs-poster-hero__line {
+  margin: 0 0 0.95rem;
+  max-width: 36rem;
+  font-size: 1rem;
+  color: var(--grs-champagne);
+  line-height: 1.45;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (min-width: 720px) {
+  .grs-poster-hero {
+    min-height: min(94vh, 62rem);
+  }
+  .grs-poster-hero__img {
+    object-position: center center;
+  }
+  .grs-poster-hero__cta {
+    padding: 1.75rem clamp(1.25rem, 4vw, 2.5rem) 1.85rem;
+  }
+}
+
 .grs-hero-tagline {
   font-family: var(--grs-serif);
   font-size: clamp(1.25rem, 4vw, 1.65rem);
@@ -779,15 +891,19 @@ body.grs-deco-bg .grs-join {
 }
 .grs-hero-cta-row .grs-btn { margin-top: 0; }
 
-.grs-btn--hire {
+.grs-btn--hire,
+a.grs-btn--hire,
+a.grs-btn--hire:any-link,
+a.grs-btn--hire:hover,
+a.grs-btn--hire:focus-visible {
   color: #1a1208;
   background: linear-gradient(180deg, var(--grs-hire-hi), var(--grs-hire));
   border-color: rgba(234, 179, 8, 0.7);
 }
 .grs-btn--quest {
-  color: #faf5ff;
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.5), rgba(126, 34, 206, 0.4));
-  border-color: rgba(168, 85, 247, 0.6);
+  color: #1a1208;
+  background: linear-gradient(180deg, var(--grs-hire-hi), var(--grs-hire));
+  border-color: rgba(234, 179, 8, 0.7);
   margin-top: 0.75rem;
 }
 
@@ -906,6 +1022,64 @@ body.grs-deco-bg .grs-join {
 .grs-title--section {
   font-size: clamp(1.65rem, 5vw, 2.1rem);
 }
+
+/* Scan / postcard flyer */
+.grs-flyer-block {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: linear-gradient(145deg, rgba(36, 26, 16, 0.9), rgba(12, 10, 8, 0.7));
+}
+.grs-flyer-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+@media (min-width: 640px) {
+  .grs-flyer-grid {
+    grid-template-columns: minmax(9rem, 11rem) 1fr;
+    gap: 1.5rem;
+  }
+}
+.grs-flyer-qr {
+  margin: 0;
+  justify-self: center;
+  width: 100%;
+  max-width: 11rem;
+  background: #fff;
+  padding: 0.65rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+.grs-flyer-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.grs-flyer-qr figcaption {
+  margin: 0.45rem 0 0;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1208;
+}
+.grs-flyer-actions__lede {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--grs-champagne);
+}
+.grs-flyer-actions__meta {
+  margin: 0.65rem 0 0;
+  font-size: 0.78rem;
+  color: var(--grs-muted);
+}
+.grs-flyer__status {
+  margin: 0.65rem 0 0;
+  font-size: 0.85rem;
+  color: var(--grs-gold-hi);
+}
+.grs-flyer__status--err { color: #fca5a5; }
 
 html.ss-vibelandia-deck .grs-top-nav__btn,
 html.ss-vibelandia-deck .grs-top-nav__btn:hover,

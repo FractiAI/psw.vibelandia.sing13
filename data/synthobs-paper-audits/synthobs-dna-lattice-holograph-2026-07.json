@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "efaabf606065a82f",
+  "auditId": "10dd987049bb2b02",
   "paperId": "synthobs-dna-lattice-holograph-2026-07",
   "sourcePath": "docs/SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-07-27T16:54:32.987Z"
+          "invokedAt": "2026-07-31T18:01:40.970Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-07-27T16:54:32.964Z",
-  "completedAt": "2026-07-27T16:54:32.994Z",
+  "startedAt": "2026-07-31T18:01:40.970Z",
+  "completedAt": "2026-07-31T18:01:40.970Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,
@@ -125,11 +125,11 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1059,
+      "wordCount": 1063,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
-        "links": 8,
+        "links": 9,
         "numbered": 13,
         "citeLines": 5
       }

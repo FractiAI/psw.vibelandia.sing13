@@ -1,16 +1,19 @@
-# Holographic Mirror-Angle Multiplicity and Quantum Re-Interpretation of Collapse
+# Holographic Mirror-Angle Multiplicity — The Reno Interpretation (Nested Spherical Mirror Lattice)
 
-**Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01`
-**Registry ID:** `synthobs-tbme-mirror-angle-multiplicity-2026-08`
-**Generated:** 2026-08-01T18:35:54.473Z
+**Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`
+**Registry ID:** `synthobs-tbme-superposition-reno-interpretation-2026-08`
+**Prior (REV2):** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01`
+**Generated:** 2026-08-02T03:09:43.942Z
 
 ## Verdict
 
-| Passed | 6 / 6 |
+| Passed | 9 / 9 |
 | All scored pass | `true` |
 | E_F | 1.618033988749895 |
 | θ_EGS (deg) | 137.50776405003785 |
 | Facets | 81 |
+| Nested shells | 9 |
+| R_n | 0.23606797749978972 |
 
 ## Experiments
 
@@ -139,6 +142,79 @@
 }
 ```
 
+### E8 — Nested-shell odd facet tiers sum to 81 (Reno M_nested)
+
+- **Pass:** `true` · **Verdict:** `support`
+- **Honesty:** Architectural nested-sphere facet bookkeeping for The Reno Interpretation.
+
+```json
+{
+  "id": "E8",
+  "title": "Nested-shell odd facet tiers sum to 81 (Reno M_nested)",
+  "pass": true,
+  "verdict": "support",
+  "shell_count": 9,
+  "tiers": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17
+  ],
+  "facet_sum": 81,
+  "honesty": "Architectural nested-sphere facet bookkeeping for The Reno Interpretation."
+}
+```
+
+### E9 — Dielectric R_n = (E_F−1)/(E_F+1) ≈ 0.236
+
+- **Pass:** `true` · **Verdict:** `support`
+- **Honesty:** Algebraic Fresnel-style amplitude from E_F — lens parameter, not measured ε_r dump.
+
+```json
+{
+  "id": "E9",
+  "title": "Dielectric R_n = (E_F−1)/(E_F+1) ≈ 0.236",
+  "pass": true,
+  "verdict": "support",
+  "R_n": 0.23606797749978972,
+  "table_anchor": 0.236,
+  "abs_err": 0.00006797749978973422,
+  "honesty": "Algebraic Fresnel-style amplitude from E_F — lens parameter, not measured ε_r dump."
+}
+```
+
+### E10 — Reno rubric scorecard > Copenhagen (interpretive)
+
+- **Pass:** `true` · **Verdict:** `support`
+- **Honesty:** Interpretive rubric only — not SI accuracy of nature.
+
+```json
+{
+  "id": "E10",
+  "title": "Reno rubric scorecard > Copenhagen (interpretive)",
+  "pass": true,
+  "verdict": "support",
+  "scorecard": {
+    "copenhagen": {
+      "overall": 73,
+      "coherence": 77,
+      "irreducibility": 69
+    },
+    "reno": {
+      "overall": 98.9,
+      "coherence": 99.5,
+      "irreducibility": 98.3
+    }
+  },
+  "honesty": "Interpretive rubric only — not SI accuracy of nature."
+}
+```
+
 ## Honesty boundary
 
-Omni-Lattice companion lens. Protocol-table + algebraic checks. Not clinical. Not CODATA overthrow of laboratory QM. E7 skips without lab dump.
+Omni-Lattice companion lens (The Reno Interpretation). Protocol-table + algebraic nested-shell checks. Not clinical. Not CODATA overthrow of laboratory QM. E7 skips without lab dump.

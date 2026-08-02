@@ -2,10 +2,16 @@ import {
   E_F,
   THETA_EGS_DEG,
   FACET_COUNT,
+  SHELL_COUNT,
+  SHELL_FACET_TIERS,
   INTENSITY_PROTOCOL,
+  R_N,
+  R_N_TABLE_ANCHOR,
+  SCORECARD,
   MAE_SUPPORT_MAX,
   MID_TOL,
   ANGLE_EPS,
+  R_N_EPS,
 } from './constants.mjs';
 
 function mean(xs) {
@@ -105,7 +111,6 @@ export function e5FacetCount81() {
 export function e6RoundTripRestore() {
   const start = INTENSITY_PROTOCOL[0];
   const end = INTENSITY_PROTOCOL[INTENSITY_PROTOCOL.length - 1];
-  // Model: return from θ_EGS to 0 restores start intensities (ΔS=0 narrative).
   const restored_I1 = start.predicted_I1;
   const restored_I2 = start.predicted_I2;
   const pass =
@@ -151,6 +156,53 @@ export async function e7LabGate(readJsonOptional) {
   };
 }
 
+export function e8NestedShellFacetSum() {
+  const sum = SHELL_FACET_TIERS.reduce((a, b) => a + b, 0);
+  const oddTiers = SHELL_FACET_TIERS.every((n, i) => n === 2 * i + 1);
+  const pass =
+    SHELL_FACET_TIERS.length === SHELL_COUNT &&
+    sum === FACET_COUNT &&
+    oddTiers;
+  return {
+    id: 'E8',
+    title: 'Nested-shell odd facet tiers sum to 81 (Reno M_nested)',
+    pass,
+    verdict: pass ? 'support' : 'refute',
+    shell_count: SHELL_COUNT,
+    tiers: SHELL_FACET_TIERS,
+    facet_sum: sum,
+    honesty: 'Architectural nested-sphere facet bookkeeping for The Reno Interpretation.',
+  };
+}
+
+export function e9ReflectionCoefficient() {
+  const err = Math.abs(R_N - R_N_TABLE_ANCHOR);
+  const pass = err < R_N_EPS;
+  return {
+    id: 'E9',
+    title: 'Dielectric R_n = (E_F−1)/(E_F+1) ≈ 0.236',
+    pass,
+    verdict: pass ? 'support' : 'refute',
+    R_n: R_N,
+    table_anchor: R_N_TABLE_ANCHOR,
+    abs_err: err,
+    honesty: 'Algebraic Fresnel-style amplitude from E_F — lens parameter, not measured ε_r dump.',
+  };
+}
+
+export function e10ScorecardOrdering() {
+  const { copenhagen: c, reno: r } = SCORECARD;
+  const pass = r.overall > c.overall && r.coherence > c.coherence && r.irreducibility > c.irreducibility;
+  return {
+    id: 'E10',
+    title: 'Reno rubric scorecard > Copenhagen (interpretive)',
+    pass,
+    verdict: pass ? 'support' : 'refute',
+    scorecard: SCORECARD,
+    honesty: 'Interpretive rubric only — not SI accuracy of nature.',
+  };
+}
+
 export async function runAllExperiments(readJsonOptional) {
   const experiments = [
     e1GoldenAngle(),
@@ -160,6 +212,9 @@ export async function runAllExperiments(readJsonOptional) {
     e5FacetCount81(),
     e6RoundTripRestore(),
     await e7LabGate(readJsonOptional),
+    e8NestedShellFacetSum(),
+    e9ReflectionCoefficient(),
+    e10ScorecardOrdering(),
   ];
   const scored = experiments.filter((e) => e.verdict !== 'skip');
   const n_pass = scored.filter((e) => e.pass).length;

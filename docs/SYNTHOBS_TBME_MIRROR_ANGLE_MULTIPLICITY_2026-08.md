@@ -1,5 +1,7 @@
 # Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation
 
+> **Catalog status:** REV2 archive. Canonical successor is **The Reno Interpretation** — [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md) (`WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`). Lens package `research/synthobs-tbme-mirror-angle-multiplicity/` now tracks the Reno Document ID.
+
 **Subtitle:** A Formal Phase-Contrast Derivation, Mathematical Proof, and Empirical Validation Protocol for Replacing Wavefunction Collapse with Reflective Phase-Angle Geometry
 
 **Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
@@ -12,7 +14,8 @@
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-mirror-angle-multiplicity/` (companion GitHub target: `FractiAI/synthobs-tbme-mirror-angle-multiplicity`)  
 **Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-**TBME sibling:** [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
+**TBME sibling:** [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)  
+**Successor:** [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
 
 ---
 

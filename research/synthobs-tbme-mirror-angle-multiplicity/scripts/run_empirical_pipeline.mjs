@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * Empirical pipeline — TBME Mirror-Angle Multiplicity (Omni-Lattice companion lens)
- * Doc: WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01
+ * Empirical pipeline — TBME Reno Interpretation (Nested Spherical Mirror Lattice)
+ * Doc: WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01
+ * Omni-Lattice companion lens — not Lattice Chat engine runtime.
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -10,12 +11,17 @@ import {
   DOC_ID,
   REGISTRY_ID,
   STUDY_TITLE,
+  PRIOR_DOC_ID,
   PHI_EGS,
   E_F,
   LAMBDA_EGS,
   THETA_EGS_DEG,
   INTENSITY_PROTOCOL,
   FACET_COUNT,
+  SHELL_COUNT,
+  SHELL_FACET_TIERS,
+  R_N,
+  SCORECARD,
 } from '../src/constants.mjs';
 import { runAllExperiments } from '../src/experiments.mjs';
 
@@ -37,6 +43,7 @@ function mdReport(report) {
     '',
     `**Document ID:** \`${DOC_ID}\``,
     `**Registry ID:** \`${REGISTRY_ID}\``,
+    `**Prior (REV2):** \`${PRIOR_DOC_ID}\``,
     `**Generated:** ${report.generatedAt}`,
     '',
     '## Verdict',
@@ -46,6 +53,8 @@ function mdReport(report) {
     `| E_F | ${E_F} |`,
     `| θ_EGS (deg) | ${THETA_EGS_DEG} |`,
     `| Facets | ${FACET_COUNT} |`,
+    `| Nested shells | ${SHELL_COUNT} |`,
+    `| R_n | ${R_N} |`,
     '',
     '## Experiments',
     '',
@@ -64,7 +73,7 @@ function mdReport(report) {
   lines.push('## Honesty boundary');
   lines.push('');
   lines.push(
-    'Omni-Lattice companion lens. Protocol-table + algebraic checks. Not clinical. Not CODATA overthrow of laboratory QM. E7 skips without lab dump.',
+    'Omni-Lattice companion lens (The Reno Interpretation). Protocol-table + algebraic nested-shell checks. Not clinical. Not CODATA overthrow of laboratory QM. E7 skips without lab dump.',
   );
   lines.push('');
   return lines.join('\n');
@@ -76,15 +85,27 @@ async function main() {
   const report = {
     docId: DOC_ID,
     registryId: REGISTRY_ID,
+    priorDocId: PRIOR_DOC_ID,
     title: STUDY_TITLE,
+    interpretation: 'Reno',
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
     omniLatticeCompanion: true,
     lensOnly: true,
     latticeEngineWired: false,
     honestyBoundary:
-      'Mirror-angle / Born-as-optics architectural lens + protocol intensity table. Not Lattice engine runtime. Lab interferometry gate is E7.',
-    constants: { E_F, PHI_EGS, LAMBDA_EGS, THETA_EGS_DEG, FACET_COUNT },
+      'Reno Interpretation nested spherical mirror lattice + Born-as-optics architectural lens + protocol intensity table. Not Lattice engine runtime. Lab interferometry gate is E7.',
+    constants: {
+      E_F,
+      PHI_EGS,
+      LAMBDA_EGS,
+      THETA_EGS_DEG,
+      FACET_COUNT,
+      SHELL_COUNT,
+      SHELL_FACET_TIERS,
+      R_N,
+      SCORECARD,
+    },
     intensityProtocol: INTENSITY_PROTOCOL,
     results,
   };
@@ -95,6 +116,7 @@ async function main() {
       {
         ok: results.all_pass,
         repo: 'https://github.com/FractiAI/synthobs-tbme-mirror-angle-multiplicity',
+        interpretation: 'Reno',
         omniLatticeCompanion: true,
         latticeEngineWired: false,
         passed: `${results.n_pass}/${results.n_total}`,

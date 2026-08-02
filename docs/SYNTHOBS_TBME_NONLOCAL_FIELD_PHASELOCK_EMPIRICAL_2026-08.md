@@ -12,7 +12,7 @@
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-nonlocal-field-phaselock/` (companion GitHub target: `FractiAI/synthobs-tbme-nonlocal-field-phaselock`)  
 **Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-**TBME sibling:** [`docs/SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md`](./SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md)
+**TBME siblings:** [Reno Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md) · [Mirror-Angle Multiplicity (REV2 archive)](./SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md)
 
 ---
 

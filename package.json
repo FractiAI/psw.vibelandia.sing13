@@ -53,6 +53,7 @@
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",
     "sync:lattice-guide": "node scripts/sync-lattice-omni-layer-guide.mjs",
+    "sync:interfaces-index": "node scripts/sync-interfaces-readme-index.mjs",
     "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-pchpp": "node research/synthobs-pchpp/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-omni-lattice-report-card-q3-2026": "node research/synthobs-omni-lattice-report-card-q3-2026/scripts/run_empirical_pipeline.mjs",

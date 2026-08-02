@@ -4,12 +4,18 @@
     "afterFileEdit": [
       {
         "command": "node .cursor/hooks/synthobs-pra-snap-hook.mjs"
+      },
+      {
+        "command": "node .cursor/hooks/interfaces-readme-index-hook.mjs"
       }
     ],
     "stop": [
       {
         "command": "node .cursor/hooks/synthobs-pra-snap-hook.mjs",
         "loop_limit": 3
+      },
+      {
+        "command": "node .cursor/hooks/interfaces-readme-index-hook.mjs"
       }
     ]
   }

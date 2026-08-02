@@ -334,3 +334,132 @@ npm run cron:coherence
 ---
 
 **NSPFRNP ⊃ SING 13 ⊃ 9-layer nest ⊃ Goldilocks Syntheverse Beehive ⊃ Master Music Catalog ⊃ QUESTFEST 24×365 ⊃ Coherence rail ⊃ Sovereign Player ⊃ Lite Edges → ∞⁹**
+
+## Interfaces · HTML pages
+
+Listing of ship UI HTML entry points under `interfaces/`.
+
+<!-- interfaces-index:start -->
+
+> Auto-generated **2026-08-02** · **76** HTML pages under `interfaces/`.
+> Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when `interfaces/**/*.html` changes).
+> Skips `assets/`, `partials/`, and `node_modules/`.
+
+### Root (`/interfaces/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/awareness-singularities-one-pager.html`](/interfaces/awareness-singularities-one-pager.html) | Awareness Singularities S0–S81 · SynthOBS · FractiAI |
+| [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
+| [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |
+| [`/interfaces/bridge-tower-billboard.html`](/interfaces/bridge-tower-billboard.html) | — |
+| [`/interfaces/bridge-tower-preview.html`](/interfaces/bridge-tower-preview.html) | Bridge Tower · 8s tease preview |
+| [`/interfaces/bulk-track-upload.html`](/interfaces/bulk-track-upload.html) | Bulk track upload · QUESTFEST |
+| [`/interfaces/bulletin-board.html`](/interfaces/bulletin-board.html) | SS Vibelandia Bulletin Board · QUESTFEST 24×365 |
+| [`/interfaces/digital-pru-awareness-whitepaper.html`](/interfaces/digital-pru-awareness-whitepaper.html) | Redirect · Deep reads · Look under the hood |
+| [`/interfaces/etcon-reno-desert.html`](/interfaces/etcon-reno-desert.html) | ETCon: Reno Desert Interdimensional Edition · May 28–31, 2026 · Golden Bachdoor Hit Factory |
+| [`/interfaces/executive-onboarding.html`](/interfaces/executive-onboarding.html) | Executive Onboarding · FractiAI |
+| [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
+| [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
+| [`/interfaces/get-started.html`](/interfaces/get-started.html) | Guest guide · Welcome aboard SS Vibelandia QUESTFEST |
+| [`/interfaces/goldilocks-beehive-residency.html`](/interfaces/goldilocks-beehive-residency.html) | Goldilocks Syntheverse Beehive Residency · Machote Moderno members |
+| [`/interfaces/goldilocks-os.html`](/interfaces/goldilocks-os.html) | Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia |
+| [`/interfaces/harmonopoly-guide.html`](/interfaces/harmonopoly-guide.html) | Harmonopoly · Game, tech & math guide |
+| [`/interfaces/harmonopoly.html`](/interfaces/harmonopoly.html) | Harmonopoly · Goldilocks Rush |
+| [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
+| [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
+| [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Lattice Chat V1.618 · Token Maxing · Product brochure · FractiAI |
+| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | Learn more · Lattice Chat V1.618 · Token Maxing · FractiAI |
+| [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
+| [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Lattice Chat V1.618 · Token Maxing for serious vibe coders · FractiAI |
+| [`/interfaces/listen.html`](/interfaces/listen.html) | Listen · Golden Era Jukebox · SS Vibelandia QUESTFEST |
+| [`/interfaces/look-at-the-sun.html`](/interfaces/look-at-the-sun.html) | Look at the Sun · Digital Pru · SS Vibelandia QUESTFEST |
+| [`/interfaces/look-under-the-hood-legacy-catalog.html`](/interfaces/look-under-the-hood-legacy-catalog.html) | Redirect · Master canon |
+| [`/interfaces/look-under-the-hood.html`](/interfaces/look-under-the-hood.html) | Look Under the Hood · Engine Room · SS Vibelandia |
+| [`/interfaces/my-whiteboard.html`](/interfaces/my-whiteboard.html) | My whiteboard · Commander surface |
+| [`/interfaces/plain-machote-moderno-reno-swamp.html`](/interfaces/plain-machote-moderno-reno-swamp.html) | About · Sonic Singularity · SS Vibelandia |
+| [`/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html`](/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html) | The Omniversal 1-2-3 Wormhole Campaign · SS Vibelandia QUESTFEST |
+| [`/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html`](/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) | FOR IMMEDIATE RELEASE — Holographic review of Anthropic’s Mythos · Clock-skew disclosure |
+| [`/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html`](/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html) | FOR IMMEDIATE RELEASE — Erdős 353 response · Holographic Goldilocks AIOS |
+| [`/interfaces/press-release-etcon-reno-desert-may-2026.html`](/interfaces/press-release-etcon-reno-desert-may-2026.html) | FOR IMMEDIATE RELEASE — ETCon: Reno Desert Interdimensional Edition · final call |
+| [`/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html`](/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html) | FOR IMMEDIATE RELEASE — Golden Bachdoor Hit Factory wins the 30-day streaming showdown |
+| [`/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html`](/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html) | FOR IMMEDIATE RELEASE — Machote Moderno Magazine launches members-only catalog & Goldilocks Beehive offers |
+| [`/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html`](/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html) | FOR IMMEDIATE RELEASE — Universal Checkmate Royal Flush · King Bee stratification |
+| [`/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html`](/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html) | FOR IMMEDIATE RELEASE — Chipless, Datacenterless AI · SynthOBS RSI validation |
+| [`/interfaces/press-releases.html`](/interfaces/press-releases.html) | Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9 |
+| [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Tour of the Ship · SS VIBELANDIA QUESTFEST 24×365 |
+| [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
+| [`/interfaces/sing13-edge-onboarding.html`](/interfaces/sing13-edge-onboarding.html) | Sonic Singularity Sing! 13 · Edge onboarding · plain talk |
+| [`/interfaces/ss-vibelandia.html`](/interfaces/ss-vibelandia.html) | SS Vibelandia · The Noah’s Ark of the Intelligence Age |
+| [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
+| [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
+| [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · QUESTFEST · Welcome aboard with Valet Pru |
+| [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) | Read · SS Vibelandia |
+| [`/interfaces/whitepaper-surface.html`](/interfaces/whitepaper-surface.html) | Reader · SS Vibelandia |
+
+### `commons/` (`/interfaces/commons/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/commons/chef.html`](/interfaces/commons/chef.html) | Chef portal · Sanctuary Gastronomy Director · The Commons |
+| [`/interfaces/commons/guide.html`](/interfaces/commons/guide.html) | Guide portal · Outfitter & Guide Commander · The Commons |
+| [`/interfaces/commons/host.html`](/interfaces/commons/host.html) | Host portal · Downtown Citadel Host · The Commons |
+| [`/interfaces/commons/index.html`](/interfaces/commons/index.html) | The Commons · all-inclusive frontier days · SS Vibelandia QUESTFEST |
+
+### `executive-ai-onboard/` (`/interfaces/executive-ai-onboard/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/executive-ai-onboard/index.html`](/interfaces/executive-ai-onboard/index.html) | Executive AI Onboarding · FractiAI |
+
+### `goldilocks-deliveries/` (`/interfaces/goldilocks-deliveries/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/goldilocks-deliveries/flyer.html`](/interfaces/goldilocks-deliveries/flyer.html) | Valet Pru Concierge · postcard flyer (print) |
+| [`/interfaces/goldilocks-deliveries/guest.html`](/interfaces/goldilocks-deliveries/guest.html) | Guest · Valet Pru's Concierge Service · SS Vibelandia |
+| [`/interfaces/goldilocks-deliveries/index.html`](/interfaces/goldilocks-deliveries/index.html) | Valet Pru Concierge Service - Downtown Reno |
+| [`/interfaces/goldilocks-deliveries/item.html`](/interfaces/goldilocks-deliveries/item.html) | Menu item · Valet Pru's Concierge Service |
+| [`/interfaces/goldilocks-deliveries/partner.html`](/interfaces/goldilocks-deliveries/partner.html) | Menu partner · Valet Pru's Concierge Service · SS Vibelandia |
+| [`/interfaces/goldilocks-deliveries/pay.html`](/interfaces/goldilocks-deliveries/pay.html) | Honor payment · Valet Pru's Concierge Service · SS Vibelandia |
+| [`/interfaces/goldilocks-deliveries/valet.html`](/interfaces/goldilocks-deliveries/valet.html) | Goldilocks Valet Franchise · Puerto Reno · SS Vibelandia QUESTFEST |
+
+### `lattice-chat/` (`/interfaces/lattice-chat/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Lattice Chat V1.618 · FractiAI |
+
+### `nesting/` (`/interfaces/nesting/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/nesting/nest-basenet-genesis.html`](/interfaces/nesting/nest-basenet-genesis.html) | Base Mainnet · genesis contracts · nesting guide |
+| [`/interfaces/nesting/nest-dph-gpu.html`](/interfaces/nesting/nest-dph-gpu.html) | Holographic code layer · nesting guide |
+| [`/interfaces/nesting/nest-goldilocks-beehive.html`](/interfaces/nesting/nest-goldilocks-beehive.html) | Goldilocks Syntheverse Beehive Residency · nesting guide |
+| [`/interfaces/nesting/nest-hospitality-commons.html`](/interfaces/nesting/nest-hospitality-commons.html) | The Commons · Sustainable Hospitality · nesting guide |
+| [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html) | Lattice Chat V1.618 · Token Maxing · nesting guide |
+| [`/interfaces/nesting/nest-man-cave-restroom.html`](/interfaces/nesting/nest-man-cave-restroom.html) | Man cave mirror · nesting guide |
+| [`/interfaces/nesting/nest-questfest-puerto-reno.html`](/interfaces/nesting/nest-questfest-puerto-reno.html) | QUESTFEST · Puerto Reno · nesting guide |
+| [`/interfaces/nesting/nest-sing13.html`](/interfaces/nesting/nest-sing13.html) | Sonic Singularity Sing! 13 · cloud skin · nesting guide |
+| [`/interfaces/nesting/nest-sonic-singularity.html`](/interfaces/nesting/nest-sonic-singularity.html) | Sonic Singularity · nesting guide |
+| [`/interfaces/nesting/nest-syntheverse.html`](/interfaces/nesting/nest-syntheverse.html) | Syntheverse · nesting guide |
+| [`/interfaces/nesting/nest-wrong-side.html`](/interfaces/nesting/nest-wrong-side.html) | Wrong Side of Town · nesting guide |
+
+### `questfest-bridge/` (`/interfaces/questfest-bridge/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/questfest-bridge/index.html`](/interfaces/questfest-bridge/index.html) | Jukebox · SS Vibelandia QUESTFEST |
+
+### `special-projects/` (`/interfaces/special-projects/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/special-projects/erdos-holographic-aios-audit.html`](/interfaces/special-projects/erdos-holographic-aios-audit.html) | Erdős 353 · Holographic Goldilocks AIOS Audit · Syntheverse |
+| [`/interfaces/special-projects/geomagnetic-herbivore-study.html`](/interfaces/special-projects/geomagnetic-herbivore-study.html) | Geomagnetic Herbivore Study · Multi-Taxa Wavefield |
+| [`/interfaces/special-projects/turner-bison-herd-management.html`](/interfaces/special-projects/turner-bison-herd-management.html) | Turner Enterprise · Rangeland herd intelligence |
+| [`/interfaces/special-projects/wavefield-echo-test.html`](/interfaces/special-projects/wavefield-echo-test.html) | Wavefield Echo Test · Plain-speak results |
+
+<!-- interfaces-index:end -->
+

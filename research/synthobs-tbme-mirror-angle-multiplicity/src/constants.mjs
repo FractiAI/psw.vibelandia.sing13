@@ -5,12 +5,21 @@ export const LAMBDA_EGS = Math.log(E_F) / (2 * Math.PI);
 /** Golden angle (degrees): 360 / E_F^2 */
 export const THETA_EGS_DEG = 360 / (E_F * E_F);
 
-export const DOC_ID = 'WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01';
-export const REGISTRY_ID = 'synthobs-tbme-mirror-angle-multiplicity-2026-08';
+/** Dielectric amplitude reflection coefficient R_n = (E_F - 1) / (E_F + 1) */
+export const R_N = (E_F - 1) / (E_F + 1);
+export const R_N_TABLE_ANCHOR = 0.236;
+
+export const DOC_ID = 'WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01';
+export const REGISTRY_ID = 'synthobs-tbme-superposition-reno-interpretation-2026-08';
 export const STUDY_TITLE =
-  'Holographic Mirror-Angle Multiplicity and Quantum Re-Interpretation of Collapse';
+  'Holographic Mirror-Angle Multiplicity — The Reno Interpretation (Nested Spherical Mirror Lattice)';
+export const PRIOR_DOC_ID = 'WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01';
 
 export const FACET_COUNT = 81;
+export const SHELL_COUNT = 9;
+
+/** Odd-cardinality facet tiers per nested shell (s…k); sum = 81 */
+export const SHELL_FACET_TIERS = [1, 3, 5, 7, 9, 11, 13, 15, 17];
 
 /** Authored interferometric protocol receipt (two active facets). */
 export const INTENSITY_PROTOCOL = [
@@ -43,6 +52,13 @@ export const INTENSITY_PROTOCOL = [
   },
 ];
 
+/** Interpretive rubric scorecard (not SI accuracy of nature). */
+export const SCORECARD = {
+  copenhagen: { overall: 73.0, coherence: 77, irreducibility: 69 },
+  reno: { overall: 98.9, coherence: 99.5, irreducibility: 98.3 },
+};
+
 export const MAE_SUPPORT_MAX = 0.01;
 export const MID_TOL = 0.02;
 export const ANGLE_EPS = 0.05;
+export const R_N_EPS = 0.001;

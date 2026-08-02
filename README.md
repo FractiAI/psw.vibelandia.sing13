@@ -341,7 +341,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-02** · **76** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-02** · **77** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when `interfaces/**/*.html` changes).
 > Skips `assets/`, `partials/`, and `node_modules/`.
 
@@ -389,6 +389,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/press-releases.html`](/interfaces/press-releases.html) | Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9 |
 | [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Tour of the Ship · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
+| [`/interfaces/reno-interpretation.html`](/interfaces/reno-interpretation.html) | The Reno Interpretation · Mirror Lattice · FractiAI |
 | [`/interfaces/sing13-edge-onboarding.html`](/interfaces/sing13-edge-onboarding.html) | Sonic Singularity Sing! 13 · Edge onboarding · plain talk |
 | [`/interfaces/ss-vibelandia.html`](/interfaces/ss-vibelandia.html) | SS Vibelandia · The Noah’s Ark of the Intelligence Age |
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |

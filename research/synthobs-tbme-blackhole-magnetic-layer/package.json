@@ -1,0 +1,24 @@
+{
+  "name": "synthobs-tbme-blackhole-magnetic-layer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone TBME / Omni-Lattice lens — Event Horizon ≡ Magnetic Vector Layer (WP-SYNTHOBS-TBME-BLACKHOLE-MAGNETIC-LAYER-2026-08-01). Not Lattice engine runtime.",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "SynthOBS",
+    "TBME",
+    "Omni-Lattice",
+    "Reno Interpretation",
+    "event-horizon",
+    "magnetic-vector",
+    "EGS",
+    "lens"
+  ]
+}

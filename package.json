@@ -65,7 +65,9 @@
     "research:synthobs-phase-toxicity": "node research/synthobs-phase-toxicity/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-endogenous-phase": "node research/synthobs-endogenous-phase/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-nonlocal-field-phaselock": "node research/synthobs-tbme-nonlocal-field-phaselock/scripts/run_empirical_pipeline.mjs",
-    "research:synthobs-tbme-mirror-angle-multiplicity": "node research/synthobs-tbme-mirror-angle-multiplicity/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-tbme-mirror-angle-multiplicity": "node research/synthobs-tbme-mirror-angle-multiplicity/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-tbme-blackhole-filaments-reno": "node research/synthobs-tbme-blackhole-filaments-reno/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-tbme-blackhole-magnetic-layer": "node research/synthobs-tbme-blackhole-magnetic-layer/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

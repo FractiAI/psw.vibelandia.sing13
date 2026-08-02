@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Standalone TBME / Omni-Lattice lens — Holographic Mirror-Angle Multiplicity (WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01). Not Lattice engine runtime.",
+  "description": "Standalone TBME / Omni-Lattice lens — The Reno Interpretation nested spherical mirror lattice (WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01). Not Lattice engine runtime.",
   "scripts": {
     "research": "node scripts/run_empirical_pipeline.mjs"
   },
@@ -16,7 +16,9 @@
     "TBME",
     "Omni-Lattice",
     "PCHPP",
+    "Reno Interpretation",
     "mirror-angle",
+    "nested spheres",
     "Born",
     "EGS",
     "lens"

@@ -13,7 +13,7 @@
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-mirror-angle-multiplicity/` (companion GitHub target: `FractiAI/synthobs-tbme-mirror-angle-multiplicity`)  
 **Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-**TBME sibling:** [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
+**TBME siblings:** [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md) · [Toroidal Micro-Black Hole Filaments (follow-on)](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md)
 
 ---
 

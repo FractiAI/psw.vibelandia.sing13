@@ -1,0 +1,24 @@
+{
+  "name": "synthobs-tbme-blackhole-filaments-reno",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone TBME / Omni-Lattice lens — Toroidal Micro-Black Hole Filaments Reno follow-on (WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01). Not Lattice engine runtime.",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "SynthOBS",
+    "TBME",
+    "Omni-Lattice",
+    "Reno Interpretation",
+    "Kerr-Newman",
+    "filaments",
+    "EGS",
+    "lens"
+  ]
+}

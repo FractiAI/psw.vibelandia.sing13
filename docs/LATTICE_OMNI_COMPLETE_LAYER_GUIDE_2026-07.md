@@ -194,6 +194,8 @@ These papers are Seed·RAG / nest **pointers**. Markdown is not the chat runtime
 
 ## 8b. Reno Interpretation trilogy — mirror lattice → filaments → horizon≡A
 
+**Public story page:** [`/reno`](/reno) · [`interfaces/reno-interpretation.html`](../interfaces/reno-interpretation.html) — narrative + C/I score contrast for the superintelligence-era steward map.
+
 August 2026 TBME follow-ons extend the steward map with a single Reno grammar. All three are **architectural / protocol / interpretive-rubric** lenses — not SI QFT/GR overthrow, not clinical, not Lattice Chat engine wiring.
 
 ### 8b.1 Mirror-angle multiplicity (parent)

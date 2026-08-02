@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "97bfa925a6797952",
+  "auditId": "adfcab282025db6b",
   "paperId": "lattice-omni-complete-layer-guide-2026-07",
   "sourcePath": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-08-02T04:29:29.403Z"
+          "invokedAt": "2026-08-02T04:34:39.973Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-08-02T04:29:29.401Z",
-  "completedAt": "2026-08-02T04:29:29.404Z",
+  "startedAt": "2026-08-02T04:34:39.971Z",
+  "completedAt": "2026-08-02T04:34:39.973Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,11 +125,11 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 3704,
+      "wordCount": 3721,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 85,
+        "links": 87,
         "numbered": 3,
         "citeLines": 0
       }

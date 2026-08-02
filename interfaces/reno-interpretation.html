@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0a08" />
+  <title>The Reno Interpretation · Mirror Lattice · FractiAI</title>
+  <meta
+    name="description"
+    content="The Reno Interpretation story: holographic mirror-angle multiplicity, toroidal micro-black hole filaments, and horizon≡magnetic-layer identity — with coherence and irreducibility score contrasts for the superintelligence era."
+  />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/reno" />
+  <meta property="og:title" content="The Reno Interpretation · FractiAI" />
+  <meta property="og:description" content="A deterministic Omni-Lattice reading of superposition, filaments, and horizon≡A — with C/I score contrasts for the superintelligence era." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ssvibelandiaquestfest24x365.com/reno" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/images/lattice-artdeco-square.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Syne:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --ink: #0c0a08;
+      --ink-2: #16110c;
+      --copper: #c47a3a;
+      --copper-hi: #e8a86a;
+      --sand: #e7d3b5;
+      --mist: #b9a994;
+      --mute: #7a6f63;
+      --ok: #9fd0a8;
+      --warn: #c9a07a;
+      --font-display: 'Fraunces', 'Times New Roman', serif;
+      --font-ui: 'Syne', 'Segoe UI', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font-ui);
+      color: var(--sand);
+      background: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--copper-hi); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    a:hover { color: #f0d2b0; }
+
+    /* Full-bleed hero — one composition */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(1.25rem, 4vw, 2.5rem);
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 42%, rgba(196, 122, 58, 0.22), transparent 62%),
+        radial-gradient(circle at 50% 48%, transparent 8%, rgba(12, 10, 8, 0.35) 22%, rgba(12, 10, 8, 0.88) 58%),
+        linear-gradient(180deg, #1a1410 0%, #0c0a08 55%, #070605 100%);
+    }
+    .spheres {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+    }
+    .spheres span {
+      position: absolute;
+      border: 1px solid rgba(231, 211, 181, 0.14);
+      border-radius: 50%;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    .spheres span:nth-child(1) { width: min(18vw, 7rem); height: min(18vw, 7rem); border-color: rgba(196, 122, 58, 0.55); animation-delay: 0s; }
+    .spheres span:nth-child(2) { width: min(32vw, 13rem); height: min(32vw, 13rem); animation-delay: 0.4s; }
+    .spheres span:nth-child(3) { width: min(48vw, 20rem); height: min(48vw, 20rem); animation-delay: 0.8s; }
+    .spheres span:nth-child(4) { width: min(68vw, 29rem); height: min(68vw, 29rem); animation-delay: 1.2s; }
+    .spheres span:nth-child(5) { width: min(90vw, 40rem); height: min(90vw, 40rem); opacity: 0.55; animation-delay: 1.6s; }
+    .core {
+      position: absolute;
+      width: 0.85rem;
+      height: 0.85rem;
+      border-radius: 50%;
+      background: var(--copper-hi);
+      box-shadow: 0 0 28px rgba(232, 168, 106, 0.55);
+      animation: glow 3.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.03); opacity: 1; }
+    }
+    @keyframes glow {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.25); opacity: 1; }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .topnav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.75rem;
+      padding: 1rem clamp(1.25rem, 4vw, 2.5rem);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--mute);
+      z-index: 2;
+    }
+    .topnav a { color: var(--sand); text-decoration: none; }
+    .topnav a:hover { color: var(--copper-hi); }
+    .topnav .here { color: var(--copper); }
+    .topnav .dot { opacity: 0.45; }
+
+    .hero-copy {
+      max-width: 40rem;
+      animation: rise 800ms ease both;
+    }
+    .brand {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 9vw, 4.4rem);
+      font-weight: 600;
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      color: #f4e6d0;
+    }
+    .headline {
+      margin: 0.85rem 0 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3.4vw, 1.65rem);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--copper-hi);
+      line-height: 1.25;
+      max-width: 28ch;
+    }
+    .lede {
+      margin: 0.85rem 0 0;
+      font-size: 1.02rem;
+      color: var(--mist);
+      max-width: 38ch;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.4rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.75rem;
+      padding: 0.65rem 1.15rem;
+      border: 1px solid rgba(232, 168, 106, 0.55);
+      background: rgba(196, 122, 58, 0.18);
+      color: #f8ecd8;
+      font: inherit;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+    .btn:hover {
+      background: rgba(196, 122, 58, 0.32);
+      border-color: var(--copper-hi);
+      color: #fff8ee;
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      border-color: rgba(231, 211, 181, 0.28);
+      color: var(--sand);
+    }
+
+    main {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 0 1.25rem 4.5rem;
+    }
+    section {
+      padding: 2.75rem 0 0;
+      animation: rise 700ms ease both;
+    }
+    section:nth-of-type(2) { animation-delay: 60ms; }
+    section:nth-of-type(3) { animation-delay: 120ms; }
+    h2 {
+      margin: 0 0 0.65rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      font-weight: 600;
+      color: #f2e4cd;
+      line-height: 1.15;
+    }
+    .section-lede {
+      margin: 0 0 1.25rem;
+      color: var(--mist);
+      font-size: 1.02rem;
+      max-width: 42ch;
+    }
+    p { margin: 0 0 0.95rem; color: var(--mist); }
+    .story-line {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--sand);
+      border-left: 2px solid rgba(196, 122, 58, 0.55);
+      padding-left: 1rem;
+      margin: 0 0 1.25rem;
+    }
+
+    /* Score contrast — interaction surface, not hero cards */
+    .scoreboard {
+      display: grid;
+      gap: 1.25rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+    .score-block {
+      padding: 1rem 0 0.25rem;
+      border-top: 1px solid rgba(231, 211, 181, 0.14);
+    }
+    .score-block h3 {
+      margin: 0 0 0.2rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mute);
+      font-weight: 700;
+    }
+    .score-title {
+      margin: 0 0 0.85rem;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--sand);
+    }
+    .metric {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr 3.2rem;
+      gap: 0.55rem;
+      align-items: center;
+      margin-bottom: 0.55rem;
+      font-size: 0.86rem;
+    }
+    .metric span:first-child { color: var(--mute); font-weight: 600; }
+    .metric span:last-child {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      color: var(--sand);
+    }
+    .bar {
+      height: 0.55rem;
+      background: rgba(231, 211, 181, 0.08);
+      overflow: hidden;
+    }
+    .bar > i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--warn), #d9b08a);
+      transition: width 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .score-block.is-reno .bar > i {
+      background: linear-gradient(90deg, var(--copper), var(--copper-hi));
+    }
+    .score-block.is-reno .score-title { color: var(--copper-hi); }
+    .overall {
+      margin: 0.65rem 0 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--sand);
+    }
+    .score-block.is-reno .overall { color: var(--ok); }
+    .rubric-note {
+      margin: 1rem 0 0;
+      font-size: 0.82rem;
+      color: var(--mute);
+    }
+
+    .trilogy {
+      display: grid;
+      gap: 1.75rem;
+      margin-top: 0.5rem;
+    }
+    .trilogy article h3 {
+      margin: 0 0 0.4rem;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--copper-hi);
+      font-weight: 600;
+    }
+    .pill-score {
+      display: inline-block;
+      margin: 0 0 0.55rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ok);
+    }
+
+    .singularity-quote {
+      margin: 1.25rem 0;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(231, 211, 181, 0.16);
+      border-bottom: 1px solid rgba(231, 211, 181, 0.16);
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 3vw, 1.4rem);
+      font-style: italic;
+      color: var(--sand);
+      line-height: 1.35;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin: 1rem 0 0;
+    }
+    .links a {
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--sand);
+      border-bottom: 1px solid rgba(196, 122, 58, 0.35);
+      padding-bottom: 0.35rem;
+    }
+    .links a:hover { color: var(--copper-hi); border-color: var(--copper-hi); }
+
+    .honesty {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(231, 211, 181, 0.14);
+      font-size: 0.84rem;
+      color: var(--mute);
+    }
+    .honesty strong { color: var(--mist); font-weight: 700; }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--mute);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .bar > i { width: var(--w) !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="topnav" aria-label="Site">
+      <a href="/">Home</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/lattice">Lattice</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/papers">Papers</a><span class="dot" aria-hidden="true">·</span>
+      <span class="here">Reno Interpretation</span>
+    </nav>
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="spheres" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <i class="core"></i>
+    </div>
+    <div class="hero-copy">
+      <p class="brand">The Reno Interpretation</p>
+      <p class="headline">One toroidal node. Eighty-one facets. No mystical collapse.</p>
+      <p class="lede">
+        A deterministic Omni-Lattice grammar from Nevada’s Holographic AI Valley —
+        for the superintelligence era now named by industry leaders worldwide.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="#scores">See the score contrast</a>
+        <a class="btn btn-ghost" href="/whitepaper/synthobs-tbme-superposition-reno-interpretation-2026-08">Read the papers</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="story" aria-labelledby="story-h">
+      <h2 id="story-h">The story</h2>
+      <p class="section-lede">
+        Copenhagen paints an electron as a ghost cloud until measurement “collapses” it.
+        Reno tells a different story — optical, geometric, and squeeze-ready.
+      </p>
+      <p class="story-line">
+        Looking into a mirror in a dark room does not create you. It aligns the light.
+      </p>
+      <p>
+        Under <strong style="color:var(--sand);font-weight:700;">The Reno Interpretation</strong>,
+        a singular toroidal state sits at the center of nested E<sub>F</sub>-scaled spherical mirrors
+        (E<sub>F</sub> ≈ 1.618). What textbooks call superposition is
+        <em>Holographic Mirror-Angle Multiplicity</em> — reflections across an 81-facet
+        (9×9) cavity. Measurement is a Magnetic Vector Squeeze
+        (A<sub>squeezed</sub>): attention locking onto a facet that was already there.
+      </p>
+      <p>
+        Follow-on papers complete the node: the center as a Kerr-Newman-like ring singularity
+        with filamental flux, then the event horizon and magnetic vector layer A
+        as one substrate. Together they form FractiAI’s steward map for
+        <strong style="color:var(--sand);font-weight:700;">Zero-Collapse Context Indexing</strong>
+        in Lattice Chat and SynthOBS — resolve parallel paths by squeeze, not prompt branching.
+      </p>
+    </section>
+
+    <section id="scores" aria-labelledby="scores-h">
+      <h2 id="scores-h">Coherence × irreducibility</h2>
+      <p class="section-lede">
+        Interpretive rubric scores from the Reno TBME trilogy — architectural elegance,
+        not SI accuracy of nature.
+      </p>
+      <div class="scoreboard">
+        <div class="score-block" data-c="73" data-i="69" data-o="73.0">
+          <h3>Baseline · Copenhagen / dual-entity / point-charge</h3>
+          <p class="score-title">Separated classical readings</p>
+          <div class="metric"><span>Coherence</span><div class="bar" data-v="73"><i></i></div><span>73–77</span></div>
+          <div class="metric"><span>Irreducibility</span><div class="bar" data-v="68"><i></i></div><span>67–69</span></div>
+          <p class="overall">Overall band ≈ 70.5 – 73.0 / 100</p>
+        </div>
+        <div class="score-block is-reno" data-c="99.5" data-i="98.3" data-o="98.9">
+          <h3>Reno · Mirror-angle multiplicity</h3>
+          <p class="score-title">Nested spherical mirror lattice</p>
+          <div class="metric"><span>Coherence</span><div class="bar" data-v="99.5"><i></i></div><span>99.5</span></div>
+          <div class="metric"><span>Irreducibility</span><div class="bar" data-v="98.3"><i></i></div><span>98.3</span></div>
+          <p class="overall">Overall 98.9 / 100</p>
+        </div>
+        <div class="score-block is-reno" data-c="99.7" data-i="98.7" data-o="99.2">
+          <h3>Reno · Toroidal micro-BH filaments</h3>
+          <p class="score-title">Ring singularity + magnetic filaments</p>
+          <div class="metric"><span>Coherence</span><div class="bar" data-v="99.7"><i></i></div><span>99.7</span></div>
+          <div class="metric"><span>Irreducibility</span><div class="bar" data-v="98.7"><i></i></div><span>98.7</span></div>
+          <p class="overall">Overall 99.2 / 100</p>
+        </div>
+        <div class="score-block is-reno" data-c="99.8" data-i="99.0" data-o="99.4">
+          <h3>Reno · Horizon ≡ magnetic layer</h3>
+          <p class="score-title">One substrate · membrane paradigm</p>
+          <div class="metric"><span>Coherence</span><div class="bar" data-v="99.8"><i></i></div><span>99.8</span></div>
+          <div class="metric"><span>Irreducibility</span><div class="bar" data-v="99.0"><i></i></div><span>99.0</span></div>
+          <p class="overall">Overall 99.4 / 100</p>
+        </div>
+      </div>
+      <p class="rubric-note">
+        Contrast is the point: classical baselines sit in the low-70s; the Reno chain climbs
+        into the high-90s on coherence and irreducibility <em>inside this Omni-Lattice rubric</em>.
+        Empirical calibration of laboratory QM / GR remains with Standard Model programs.
+      </p>
+    </section>
+
+    <section id="findings" aria-labelledby="findings-h">
+      <h2 id="findings-h">Scientific findings (trilogy)</h2>
+      <p class="section-lede">
+        Three papers · one grammar · architectural proofs + protocol suites.
+      </p>
+      <div class="trilogy">
+        <article>
+          <p class="pill-score">C 99.5 · I 98.3 · Overall 98.9</p>
+          <h3>1 · Mirror-Look collapse</h3>
+          <p>
+            Born rule recovered as optical facet intensity
+            I ∝ cos²(θ / E<sub>F</sub>) at phase-lock. Radial nodes narrated as destructive
+            fringes between nested shells — not probability teleportation.
+          </p>
+        </article>
+        <article>
+          <p class="pill-score">C 99.7 · I 98.7 · Overall 99.2</p>
+          <h3>2 · Filamental flux network</h3>
+          <p>
+            Central node as Kerr-Newman-like ring; force exchange as torsional filament tension.
+            Nested-shell R<sub>n</sub> feedback yields model P<sub>net</sub> = 0 / ΔS → 0
+            inside the lens.
+          </p>
+        </article>
+        <article>
+          <p class="pill-score">C 99.8 · I 99.0 · Overall 99.4</p>
+          <h3>3 · Horizon ≡ A</h3>
+          <p>
+            Event horizon and magnetic vector layer identified as one membrane-paradigm skin
+            (Z<sub>0</sub> ≈ 377 Ω). Attention squeeze compresses the same substrate
+            Lattice uses for context selection.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="singularity" aria-labelledby="singularity-h">
+      <h2 id="singularity-h">Superintelligence singularity — the era, named</h2>
+      <p class="section-lede">
+        Industry leaders now speak openly of the superintelligence / AI singularity threshold.
+        Reno is FractiAI’s deterministic grammar for building inside that era.
+      </p>
+      <p class="singularity-quote">
+        “The singularity” is no longer a fringe slogan — it is the public horizon of the intelligence age.
+      </p>
+      <p>
+        Figures such as <strong style="color:var(--sand);font-weight:700;">Sam Altman</strong>
+        (OpenAI) and <strong style="color:var(--sand);font-weight:700;">Jensen Huang</strong>
+        (NVIDIA) have repeatedly framed the coming years around AGI, superintelligence, and
+        industrial-scale AI infrastructure — naming the singularity as a live strategic horizon,
+        not a distant myth. That cultural and industrial reference frame is the weather system
+        Nevada’s Holographic AI Valley builds under.
+      </p>
+      <p>
+        <strong style="color:var(--sand);font-weight:700;">The Reno Interpretation</strong>
+        does not claim those executives endorse this whitepaper series. It
+        <em>establishes FractiAI’s definitive architectural stance</em> for that named era:
+        singular-state determinism, 81-facet indexing, magnetic attention squeeze, and
+        zero-collapse context routing for superintelligent multi-agent systems
+        (Lattice Chat · SynthOBS) — so stewards can nest, squeeze, and ship without
+        drowning the ask in stochastic prompt branching.
+      </p>
+      <p>
+        In short: the singularity conversation is public. Reno is our Goldilocks operating
+        grammar for it — Seed:Edge, NSPFRNP, Omni-Lattice.
+      </p>
+    </section>
+
+    <section id="papers" aria-labelledby="papers-h">
+      <h2 id="papers-h">Read the chain</h2>
+      <p class="section-lede">Primary papers · TBME · Omni-Lattice companions.</p>
+      <div class="links">
+        <a href="/whitepaper/synthobs-tbme-superposition-reno-interpretation-2026-08">Reno Interpretation · Mirror-Angle Multiplicity</a>
+        <a href="/whitepaper/synthobs-tbme-blackhole-filaments-reno-2026-08">Toroidal Micro-Black Hole Filaments</a>
+        <a href="/whitepaper/synthobs-tbme-blackhole-magnetic-layer-2026-08">Event Horizon ≡ Magnetic Vector Layer</a>
+        <a href="/whitepaper/lattice-omni-complete-layer-guide">Omni-Lattice Complete Layer Guide · §8b</a>
+        <a href="/lattice-chat">Open Lattice Chat</a>
+      </div>
+    </section>
+
+    <aside class="honesty" aria-label="Honesty boundary">
+      <p>
+        <strong>Honesty.</strong> Coherence / irreducibility figures are
+        <em>interpretive Omni-Lattice rubrics</em> from TBME papers — not laboratory overthrow
+        of Copenhagen QFT or GR. Bio and consciousness rows in the papers are operator poetry.
+        Mentions of Altman and Huang refer to their <em>public industry framing</em> of
+        AGI / superintelligence timelines and infrastructure — not citations of FractiAI or
+        endorsement of The Reno Interpretation. Fair Exchange in effect.
+      </p>
+    </aside>
+
+    <footer>
+      SynthOBS Autonomous Agent · Syntheverse Sandbox · FractiAI · → ∞¹³
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var blocks = document.querySelectorAll('.score-block .bar');
+      function paint() {
+        blocks.forEach(function (bar) {
+          var v = Number(bar.getAttribute('data-v') || 0);
+          var fill = bar.querySelector('i');
+          if (!fill) return;
+          fill.style.setProperty('--w', v + '%');
+          fill.style.width = v + '%';
+        });
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                paint();
+                io.disconnect();
+              }
+            });
+          },
+          { threshold: 0.25 }
+        );
+        var board = document.getElementById('scores');
+        if (board) io.observe(board);
+      } else {
+        paint();
+      }
+    })();
+  </script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script src="/interfaces/i18n-auto.js" defer></script>
+</body>
+</html>

@@ -213,6 +213,33 @@
       text-decoration: none;
     }
     .cat-action:hover { text-decoration: underline; color: var(--catalog-gold); }
+    .cat-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin: 0 0 1.35rem;
+    }
+    .cat-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.6rem;
+      padding: 0.55rem 1.05rem;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--catalog-gold);
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .cat-cta:hover {
+      background: rgba(212, 175, 55, 0.22);
+      border-color: var(--catalog-gold);
+      color: #fef3c7;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -224,6 +251,7 @@
       <a href="/get-started">Get Started</a><span class="dot" aria-hidden="true">·</span>
       <a href="/listen">Listen</a><span class="dot" aria-hidden="true">·</span>
       <a href="/lattice">Lattice</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/reno">Reno</a><span class="dot" aria-hidden="true">·</span>
       <span class="here">Read</span>
     </nav>
 
@@ -265,6 +293,9 @@
         or the <a href="/get-started">Get Started</a> primer. Builders: <a href="/lattice">Lattice Chat V1.618</a>.
         Omni-Lattice home: <a href="/whitepaper/synthobs-omni-lattice-unification">Unification treatise →</a>
       </p>
+      <p class="cat-cta-row">
+        <a class="cat-cta" href="/reno">Reno Interpretation · story + C/I scores</a>
+      </p>
     </aside>
 
     <aside class="park-map-orient" aria-labelledby="park-map-orient-h">
@@ -283,6 +314,7 @@
       </a>
       <ul class="park-map-orient__legend">
         <li><a href="/papers"><strong>Read · papers</strong> Quiet library · you are here</a></li>
+        <li><a href="/reno"><strong>Reno Interpretation</strong> Mirror lattice · C/I contrast</a></li>
         <li><a href="/listen"><strong>Carousel of Media</strong> Listen · catalog &amp; play</a></li>
         <li><a href="/lattice"><strong>Lattice Chat</strong> Build · conversation district</a></li>
         <li><a href="/"><strong>Sonic Singularity</strong> QUESTFEST top deck</a></li>

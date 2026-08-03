@@ -741,8 +741,12 @@ export async function sendLatticeMessage(text: string): Promise<void> {
               ? 'Cursor API key required. Add or update your key in Lattice settings.'
               : data.code === 'agent_not_found'
                 ? 'Previous cloud agent is gone (common after a new Cursor key). Send your message again.'
-              : res.status === 401 || res.status === 403
+              : data.code === 'sing13_write_locked'
+                ? 'SING13 write-attach is creator-only. Guests can keep chatting — Cursor uses a chat-only workspace, or switch to Claude / Gemini.'
+              : res.status === 401
                 ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
+              : res.status === 403
+                ? data.error || 'Request blocked. Try Claude or Gemini, or ask the creator if this is unexpected.'
                 : `Request failed (${res.status})`),
           data.code,
         );

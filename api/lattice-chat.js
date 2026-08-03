@@ -7,6 +7,7 @@
  * (email + provider key headers only; never persist or log user keys).
  *
  * Access: email allowlist. Creator permanent. Guests one month from grant.
+ * Guests get full chat; SING13 Cursor cloud write-attach stays creator-only.
  * Prompt assembly: dynamic-import lib/lattice-prompt.mjs (Vercel compiles this file to CJS —
  * never use a top-level static .mjs import here).
  */
@@ -18,9 +19,16 @@ export const config = {
 };
 
 const DEFAULT_REPO = 'https://github.com/FractiAI/psw.vibelandia.sing13';
+/** Public chat-only VM for guests — never FractiAI SING13 (app self-modify lock). */
+const DEFAULT_GUEST_CHAT_REPO = 'https://github.com/octocat/Hello-World';
 const CREATOR_EMAIL = 'valetpru@gmail.com';
 /** Only creator privilege may attach Cursor cloud agents to the SING13 repo (git-write capable). */
 const SING13_REPO_HOST_RE = /github\.com[/:]FractiAI\/psw\.vibelandia\.sing13(?:\.git)?(?:\/|$|\?|#)/i;
+const GUEST_CHAT_ONLY_DIRECTIVE = `## Guest session (chat-only)
+You are helping a Lattice Chat guest. Full conversational use is allowed.
+Do NOT edit, create, delete, commit, push, or open pull requests against FractiAI/psw.vibelandia.sing13 or any production ship app.
+Application code changes are reserved for creators through designated developer channels.
+Answer questions, explain, plan, and teach — do not apply changes onto the live SING13 repository.`;
 const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const NAIVE_CORPUS_DUMP_TOKENS = 72_000;
 const LATTICE_RAG_POINTER_TOKENS = 1_800;
@@ -1534,9 +1542,45 @@ function isSing13RepoUrl(url) {
 }
 
 /**
- * Cursor cloud agents clone the repo under the caller's GitHub App grants.
- * Guests must not attach to SING13 — only creator privilege may (owner API key path).
+ * Creator may attach Cursor cloud to SING13 (developer channel).
+ * Guests get full chat on a separate chat-only workspace — never SING13 write attach.
  */
+function resolveCursorCloudAttach(access, creatorRepoUrl, startingRef) {
+  if (access?.privilege === 'creator') {
+    return {
+      repos: [{ url: creatorRepoUrl, startingRef }],
+      chatOnly: false,
+      forcePlan: false,
+      workspace: creatorRepoUrl,
+    };
+  }
+
+  const guestUrl = (process.env.LATTICE_GUEST_REPO_URL || '').trim();
+  if (guestUrl && !isSing13RepoUrl(guestUrl)) {
+    const guestRef =
+      (process.env.LATTICE_GUEST_STARTING_REF || 'main').trim() || 'main';
+    return {
+      repos: [{ url: guestUrl, startingRef: guestRef }],
+      chatOnly: true,
+      forcePlan: true,
+      workspace: guestUrl,
+    };
+  }
+
+  return {
+    repos: [{ url: DEFAULT_GUEST_CHAT_REPO, startingRef: 'master' }],
+    chatOnly: true,
+    forcePlan: true,
+    workspace: DEFAULT_GUEST_CHAT_REPO,
+  };
+}
+
+function withGuestChatGuard(prompt, chatOnly) {
+  if (!chatOnly) return prompt;
+  return `${GUEST_CHAT_ONLY_DIRECTIVE}\n\n${prompt}`;
+}
+
+/** @deprecated Prefer resolveCursorCloudAttach — kept for soft privilege probes. */
 function assertCursorMayWriteSing13(access, repoUrl) {
   if (!isSing13RepoUrl(repoUrl)) return { ok: true };
   if (access?.privilege === 'creator') return { ok: true };
@@ -1544,7 +1588,7 @@ function assertCursorMayWriteSing13(access, repoUrl) {
     ok: false,
     code: 'sing13_write_locked',
     error:
-      'SING13 repository writes are locked to the creator Cursor API key path. Guests: use Claude or Gemini (chat-only), or ask the creator to run Cursor cloud against this repo.',
+      'SING13 repository write-attach is creator-only (developer channel). Guests still have full Lattice Chat — Cursor runs in a chat-only workspace, or use Claude / Gemini.',
   };
 }
 
@@ -1662,12 +1706,15 @@ export default async function handler(req, res) {
         }
         const writeGate = assertCursorMayWriteSing13(access, DEFAULT_REPO);
         if (!writeGate.ok) {
-          return json(res, 403, {
+          // Soft probe — guests may still chat; SING13 attach stays creator-only.
+          return json(res, 200, {
             ok: false,
+            chatAllowed: true,
             error: writeGate.error,
             code: writeGate.code,
             privilege: access.privilege,
             targetRepo: DEFAULT_REPO,
+            note: 'Guest Cursor chat uses a separate chat-only workspace. SING13 write-attach is creator-only.',
           });
         }
         const { key: apiKey, source: keySource } = resolveCursorApiKey(req);
@@ -1795,23 +1842,23 @@ export default async function handler(req, res) {
       console.warn('[lattice-chat] correcting LATTICE_REPO_URL typo cing13 → sing13');
       repoUrl = repoUrl.replace(/psw\.vibelandia\.cing13/gi, 'psw.vibelandia.sing13');
     }
-    if (provider === 'cursor') {
-      const writeGate = assertCursorMayWriteSing13(access, repoUrl);
-      if (!writeGate.ok) {
-        return json(res, 403, {
-          error: writeGate.error,
-          code: writeGate.code,
-          privilege: access.privilege,
-          provider,
-        });
-      }
+    const startingRefEarly = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
+    const cloudAttach =
+      provider === 'cursor'
+        ? resolveCursorCloudAttach(access, repoUrl, startingRefEarly)
+        : null;
+    if (cloudAttach?.workspace) {
+      repoUrl = cloudAttach.workspace;
     }
     const modelId =
       provider === 'cursor'
         ? normalizeModelId(body.model || body.modelId)
         : String(body.model || body.modelId || '').trim() ||
           (provider === 'claude' ? 'claude-sonnet-4-5' : 'antigravity-preview-05-2026');
-    const agentMode = resolveAgentMode(body.mode || body.agentMode, message);
+    let agentMode = resolveAgentMode(body.mode || body.agentMode, message);
+    if (cloudAttach?.forcePlan) {
+      agentMode = 'plan';
+    }
     const nestTopology = normalizeNestTopology(body.nestTopology || body.nest);
     const reasoningLens = normalizeReasoningLens(body.reasoningLens || body.lens);
     const agentRoster = typeof body.agentRoster === 'string' ? body.agentRoster : '';
@@ -1941,7 +1988,14 @@ export default async function handler(req, res) {
     }
 
     // --- Cursor cloud path (default) ---
-    const startingRef = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
+    const startingRef =
+      cloudAttach?.repos?.[0]?.startingRef ||
+      (process.env.LATTICE_STARTING_REF || 'main').trim() ||
+      'main';
+    const cursorRepos = cloudAttach?.repos?.length
+      ? cloudAttach.repos
+      : [{ url: repoUrl, startingRef }];
+    const guestChatOnly = Boolean(cloudAttach?.chatOnly);
     const stream = wantsStream(req, body);
     if (stream) initSse(res);
     const stopHeartbeat = stream ? startSseHeartbeat(res) : () => {};
@@ -1953,7 +2007,9 @@ export default async function handler(req, res) {
         sseWrite(res, 'status', {
           message: recoverOnly
             ? 'Attaching to your cloud run…'
-            : 'Opening Lattice pipe — loading Cursor SDK…',
+            : guestChatOnly
+              ? 'Opening Lattice chat (guest chat-only workspace)…'
+              : 'Opening Lattice pipe — loading Cursor SDK…',
         });
       }
 
@@ -2106,7 +2162,7 @@ export default async function handler(req, res) {
               model: modelSelection,
               mode: agentMode,
               cloud: {
-                repos: [{ url: repoUrl, startingRef }],
+                repos: cursorRepos,
               },
             }),
             120_000,
@@ -2148,10 +2204,12 @@ export default async function handler(req, res) {
         });
       }
 
-      const prompt =
+      const prompt = withGuestChatGuard(
         resumedOk && message
           ? assembleResumePrompt(message, nestTopology, agentRoster)
-          : buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens);
+          : buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
+        guestChatOnly,
+      );
       const sendOpts = {
         model: modelSelection,
         mode: agentMode,
@@ -2182,7 +2240,7 @@ export default async function handler(req, res) {
             model: modelSelection,
             mode: agentMode,
             cloud: {
-              repos: [{ url: repoUrl, startingRef }],
+              repos: cursorRepos,
             },
           });
           agentId = agent.agentId ?? null;
@@ -2191,7 +2249,10 @@ export default async function handler(req, res) {
           ({ run, recovered } = await sendPromptHandlingBusy(
             Agent,
             agent,
-            buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
+            withGuestChatGuard(
+              buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
+              guestChatOnly,
+            ),
             sendOpts,
             apiKey,
           ));
@@ -2289,6 +2350,8 @@ export default async function handler(req, res) {
           email: access.email,
           expiresAt: access.expiresAt,
           reason: access.reason,
+          chatOnly: guestChatOnly,
+          workspace: repoUrl,
         },
       });
     } catch (err) {
@@ -2332,7 +2395,7 @@ export default async function handler(req, res) {
           {
             error:
               msg +
-              ` Lattice uses ${repoUrl} @ ${startingRef}. Connect GitHub for the Cursor account that owns this API key (cursor.com/dashboard/integrations) and ensure FractiAI/psw.vibelandia.sing13 is visible — public clone ≠ Cursor cloud access.`,
+              ` Lattice uses ${repoUrl} @ ${startingRef}. Connect GitHub for the Cursor account that owns this API key (cursor.com/dashboard/integrations) and ensure that workspace repo is visible — public clone ≠ Cursor cloud access.`,
             code: 'cursor_github_access',
             repoUrl,
             startingRef,

@@ -237,8 +237,9 @@ Omni-Lattice is the **umbrella** Seed·RAG entry for stewards who want one door 
 | Nest guide | [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html) |
 | Landing | [`/lattice`](/lattice) |
 | Chat | [`/lattice-chat`](/lattice-chat) |
+| THALIA Goldilocks harness | [`/whitepaper/synthobs-omni-lattice-thalia-goldilocks`](/whitepaper/synthobs-omni-lattice-thalia-goldilocks) · `lib/thalia-omni-contract.mjs` |
 
-Pointer: `docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`.
+Pointer: `docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`. THALIA companion: `docs/SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md` (contract stages in engine; not a Python port).
 
 ---
 

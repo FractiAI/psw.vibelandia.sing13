@@ -1,5 +1,5 @@
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
-import { isRememberedEmailFresh } from '@/access';
+import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
 import {
   checkPendingLatticeReply,
   LATTICE_PROGRESS_STEPS,
@@ -223,7 +223,12 @@ export function ChatPane({
             </button>
             <h1 className="chat-title">
               <span className="chat-wordmark">Lattice Chat V1.618</span>
-              <span className="chat-by">SS Vibelandia · Your Goldilocks Valet</span>
+              <span className="chat-by">
+                <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
+                  {MAIN_DECK_LABEL}
+                </a>
+                {' · Your Goldilocks Valet'}
+              </span>
             </h1>
             <button
               type="button"
@@ -241,6 +246,8 @@ export function ChatPane({
         </div>
         <p className="chat-sub">
           Your Goldilocks Valet on the Ark ·{' '}
+          <a href={MAIN_DECK_HREF}>Main deck</a>
+          {' · '}
           <a href="/lattice/learn">Learn more</a>
           {' · '}
           <a href="/ss-vibelandia">Meet the ship</a>
@@ -276,7 +283,12 @@ export function ChatPane({
       >
         {!signedIn ? (
           <div className="auth-stage empty-state">
-            <p className="empty-eyebrow">SS Vibelandia · 24×365</p>
+            <p className="empty-eyebrow">
+              <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
+                {MAIN_DECK_LABEL}
+              </a>
+              {' · 24×365'}
+            </p>
             <p className="empty-lead">Welcome aboard</p>
             <p className="empty-hint">
               For builders looking to leverage fractal, holographic super intelligent agents while reducing

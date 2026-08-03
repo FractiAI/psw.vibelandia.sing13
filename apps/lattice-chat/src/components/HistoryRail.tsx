@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLatticeStore } from '@/store';
-import { isRememberedEmailFresh } from '@/access';
+import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
 
 export function HistoryRail({
   open,
@@ -43,7 +43,12 @@ export function HistoryRail({
       <div className="rail-top">
         <div className="rail-brand">
           <p className="wordmark">Lattice</p>
-          <p className="byline">SS Vibelandia · Valet</p>
+          <p className="byline">
+            <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
+              {MAIN_DECK_LABEL}
+            </a>
+            {' · Valet'}
+          </p>
         </div>
         {onClose ? (
           <button type="button" className="rail-close" aria-label="Close sidebar" onClick={onClose}>

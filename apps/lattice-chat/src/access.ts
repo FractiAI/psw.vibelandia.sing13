@@ -1,6 +1,10 @@
 /** Public contact / creator — never put API keys in the Vite bundle. */
 export const CREATOR_EMAIL = 'valetpru@gmail.com';
 
+/** QUESTFEST top deck — home for guests leaving Lattice Chat. */
+export const MAIN_DECK_HREF = '/';
+export const MAIN_DECK_LABEL = 'SS Vibelandia';
+
 export const LATTICE_ACCESS_EMAIL =
   (import.meta.env.VITE_LATTICE_ACCESS_EMAIL as string | undefined)?.trim() ||
   CREATOR_EMAIL;

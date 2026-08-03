@@ -18,7 +18,9 @@ import {
   SONIC_SINGULARITY_DESCRIPTION,
 } from '@/lib/sonicCatalogCopy';
 import type { PlaylistKind } from '@/lib/catalogTypes';
+import { TRACK_GENRE_MAX, TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { PlaylistCoverArt } from '@/components/catalog/PlaylistCoverArt';
+import { TrackEditModal } from '@/components/catalog/TrackEditModal';
 
 interface PlaylistEditorProps {
   playlistId: string;
@@ -50,6 +52,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [genre, setGenre] = useState('');
   const [kind, setKind] = useState<PlaylistKind>('sovereign');
   const [coverPreview, setCoverPreview] = useState<string | undefined>();
   const [coverFile, setCoverFile] = useState<File | null>(null);
@@ -61,6 +64,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const [showAdd, setShowAdd] = useState(false);
   const [addSearch, setAddSearch] = useState('');
   const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
+  const [editTrackId, setEditTrackId] = useState<string | null>(null);
 
   const isMaster = isMasterPlaylist(playlistId);
   const isMyLikes = isMyLikesPlaylist(playlistId);
@@ -70,6 +74,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     if (!current) return;
     setName(current.name);
     setDescription(current.description);
+    setGenre(current.genre ?? '');
     setKind(current.kind);
     setCoverPreview(current.posterSrc);
     setCoverFile(null);
@@ -81,6 +86,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     }
     setShowAdd(false);
     setAddSearch('');
+    setEditTrackId(null);
   }, [playlistId]);
 
   const setCoverPreviewSafe = (url?: string) => {
@@ -165,7 +171,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     try {
       await updatePlaylist(
         playlistId,
-        { name, description, kind },
+        { name, description, genre, kind },
         coverFile ? { coverFile, onProgress: setCoverMsg } : undefined,
       );
       setCoverFile(null);
@@ -241,8 +247,13 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
       {!isMyLikes && (
       <div className="sp-pl-edit-meta">
+        <datalist id="qf-genre-suggestions-playlist">
+          {TRACK_GENRE_SUGGESTIONS.map((g) => (
+            <option key={g} value={g} />
+          ))}
+        </datalist>
         <div className="spotify-field sp-track-cover-field">
-          <span>Cover image</span>
+          <span>{PLAIN.changeCover}</span>
           <div className="spotify-file-pick">
             <input
               key={coverInputKey}
@@ -278,7 +289,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                 <PlaylistCoverArt playlist={pl} className="sp-track-cover-preview sp-track-cover-preview--empty" size={72} />
               )}
               <label htmlFor={coverInputId} className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
-                {coverFile ? coverFile.name : 'Choose image'}
+                {coverFile ? coverFile.name : PLAIN.changeCover}
               </label>
               {(coverPreview || pl.posterSrc) && (
                 <button
@@ -292,7 +303,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                     void updatePlaylist(playlistId, { posterSrc: null });
                   }}
                 >
-                  Remove
+                  {PLAIN.removeCover}
                 </button>
               )}
             </div>
@@ -305,23 +316,34 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           )}
         </div>
         <label className="sp-library-field">
-          Playlist name
+          {PLAIN.title}
           <input
             className="sp-library-input sp-pl-edit-name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Playlist name"
+            placeholder={PLAIN.title}
             autoComplete="off"
           />
         </label>
         <label className="sp-library-field">
-          Description
+          {PLAIN.genre}
+          <input
+            className="sp-library-input"
+            list="qf-genre-suggestions-playlist"
+            value={genre}
+            onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
+            placeholder={PLAIN.genrePlaceholder}
+            autoComplete="off"
+          />
+        </label>
+        <label className="sp-library-field">
+          {PLAIN.description}
           <textarea
             className="sp-library-input sp-library-textarea"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={2}
-            placeholder="Optional description"
+            placeholder={PLAIN.descriptionPlaceholder}
           />
         </label>
         {!isMaster ? (
@@ -519,6 +541,13 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                       <button
                         type="button"
                         className="sp-pl-edit-secondary"
+                        onClick={() => setEditTrackId(tr.id)}
+                      >
+                        {PLAIN.editTrack}
+                      </button>
+                      <button
+                        type="button"
+                        className="sp-pl-edit-secondary"
                         onClick={() => setTrackPlModal({ id: tr.id, title: tr.title })}
                       >
                         Playlists
@@ -548,6 +577,14 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
         trackTitle={trackPlModal?.title ?? ''}
         onClose={() => setTrackPlModal(null)}
       />
+
+      {editTrackId && getTrack(editTrackId) ? (
+        <TrackEditModal
+          track={getTrack(editTrackId)!}
+          open
+          onClose={() => setEditTrackId(null)}
+        />
+      ) : null}
 
       {!isMaster && !isMyLikes && (
         <footer className="sp-pl-edit-foot">

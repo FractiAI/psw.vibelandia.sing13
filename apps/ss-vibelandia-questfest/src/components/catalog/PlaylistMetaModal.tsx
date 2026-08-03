@@ -7,6 +7,7 @@ import {
   isMyLikesPlaylist,
   MASTER_PLAYLIST_DEFAULT_NAME,
 } from '@/lib/catalogSeed';
+import { TRACK_GENRE_MAX, TRACK_GENRE_SUGGESTIONS } from '@/lib/catalogTypes';
 import { PLAIN } from '@/lib/plainSpeak';
 
 interface PlaylistMetaModalProps {
@@ -22,6 +23,7 @@ export function PlaylistMetaModal({ playlistId, open, onClose }: PlaylistMetaMod
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [genre, setGenre] = useState('');
   const [coverPreview, setCoverPreview] = useState<string | undefined>();
   const [coverFile, setCoverFile] = useState<File | null>(null);
   const [coverInputKey, setCoverInputKey] = useState(0);
@@ -46,6 +48,7 @@ export function PlaylistMetaModal({ playlistId, open, onClose }: PlaylistMetaMod
     if (!open || !pl) return;
     setName(isMaster ? pl.name || MASTER_PLAYLIST_DEFAULT_NAME : pl.name);
     setDescription(pl.description ?? '');
+    setGenre(pl.genre ?? '');
     setCoverPreview(pl.posterSrc);
     setCoverFile(null);
     setCoverInputKey((k) => k + 1);
@@ -68,7 +71,11 @@ export function PlaylistMetaModal({ playlistId, open, onClose }: PlaylistMetaMod
     try {
       await updatePlaylist(
         playlistId,
-        { name: isMaster ? name.trim() || MASTER_PLAYLIST_DEFAULT_NAME : name, description },
+        {
+          name: isMaster ? name.trim() || MASTER_PLAYLIST_DEFAULT_NAME : name,
+          description,
+          genre,
+        },
         coverFile ? { coverFile, onProgress: setMsg } : undefined,
       );
       setCoverFile(null);
@@ -103,6 +110,12 @@ export function PlaylistMetaModal({ playlistId, open, onClose }: PlaylistMetaMod
         </div>
 
         <div className="sc-meta-body">
+          <datalist id="qf-genre-suggestions-pl-meta">
+            {TRACK_GENRE_SUGGESTIONS.map((g) => (
+              <option key={g} value={g} />
+            ))}
+          </datalist>
+
           <div className="sc-meta-cover">
             {coverPreview ? (
               <img className="sc-meta-cover-img" src={coverPreview} alt="" width={96} height={96} />
@@ -114,7 +127,7 @@ export function PlaylistMetaModal({ playlistId, open, onClose }: PlaylistMetaMod
                 key={coverInputKey}
                 id={coverInputId}
                 type="file"
-                accept="image/jpeg,image/png,image/webp,image/*"
+                accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
                 className="sr-only"
                 disabled={busy}
                 onChange={(e) => {
@@ -159,11 +172,24 @@ export function PlaylistMetaModal({ playlistId, open, onClose }: PlaylistMetaMod
           </div>
 
           <label className="sc-meta-field">
-            <span>{PLAIN.playlistName}</span>
+            <span>{PLAIN.title}</span>
             <input
               className="sc-search"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              disabled={busy}
+              autoComplete="off"
+            />
+          </label>
+
+          <label className="sc-meta-field">
+            <span>{PLAIN.genre}</span>
+            <input
+              className="sc-search"
+              list="qf-genre-suggestions-pl-meta"
+              value={genre}
+              onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
+              placeholder={PLAIN.genrePlaceholder}
               disabled={busy}
               autoComplete="off"
             />

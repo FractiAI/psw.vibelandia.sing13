@@ -178,7 +178,13 @@ interface CatalogState {
   renamePlaylist: (id: string, name: string) => void;
   updatePlaylist: (
     id: string,
-    patch: { name?: string; description?: string; posterSrc?: string | null; kind?: PlaylistKind },
+    patch: {
+      name?: string;
+      description?: string;
+      genre?: string;
+      posterSrc?: string | null;
+      kind?: PlaylistKind;
+    },
     opts?: { coverFile?: File | null; onProgress?: (message: string) => void },
   ) => Promise<void>;
   deletePlaylist: (id: string) => void;
@@ -245,6 +251,7 @@ interface CatalogState {
       artist?: string;
       genre?: string;
       description?: string;
+      posterSrc?: string | null;
     },
     opts?: { coverFile?: File | null; onProgress?: (message: string) => void },
   ) => Promise<void>;
@@ -636,6 +643,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           ...(patch.description !== undefined ? { description: patch.description } : {}),
           ...(patch.kind !== undefined ? { kind: patch.kind } : {}),
         };
+        if (patch.genre !== undefined) {
+          const genre = clampGenre(patch.genre);
+          if (genre) next.genre = genre;
+          else delete next.genre;
+        }
         if (posterSrc) next.posterSrc = posterSrc;
         else delete next.posterSrc;
         return next;
@@ -676,6 +688,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
           kind: 'sovereign' as const,
           description: src.description,
           trackIds: [...src.trackIds],
+          ...(src.genre ? { genre: src.genre } : {}),
           ...(src.posterSrc ? { posterSrc: src.posterSrc } : {}),
         },
       ],
@@ -1055,12 +1068,18 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
     if (genre) next.genre = genre;
     else delete next.genre;
 
+    if (patch.posterSrc === null) {
+      delete next.posterSrc;
+    } else if (patch.posterSrc !== undefined && patch.posterSrc) {
+      next.posterSrc = patch.posterSrc;
+    }
+
     const shouldSyncServer = isServerUploadConfigured() && isUserUploadTrack(trackId, prev);
 
     report?.('Saving…');
 
     if (shouldSyncServer) {
-      let posterSrc = prev.posterSrc;
+      let posterSrc = next.posterSrc;
       if (opts?.coverFile) {
         posterSrc = await uploadCoverBlob(trackId, opts.coverFile, { onProgress: report });
         next.posterSrc = posterSrc;
@@ -1078,6 +1097,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         playlistIds: userPlaylistIds,
       };
       if (opts?.coverFile && posterSrc) serverPatch.posterSrc = posterSrc;
+      else if (patch.posterSrc === null) serverPatch.posterSrc = '';
       const { track: saved } = await updateTrackOnServer(trackId, serverPatch);
       Object.assign(next, {
         ...saved,
@@ -1087,6 +1107,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
         downloadedLocally: prev.downloadedLocally,
         localMediaKey: prev.localMediaKey,
       });
+      if (patch.posterSrc === null) delete next.posterSrc;
     } else {
       report?.('Saving on this device…');
       if (opts?.coverFile) {

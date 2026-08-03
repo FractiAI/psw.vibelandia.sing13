@@ -10,6 +10,7 @@ import {
   TRACK_GENRE_SUGGESTIONS,
   type TrackDef,
 } from '@/lib/catalogTypes';
+import { PLAIN } from '@/lib/plainSpeak';
 
 export interface TrackMetadataEditorProps {
   track: TrackDef;
@@ -160,8 +161,13 @@ export function TrackMetadataEditor({
 
   return (
     <div className={wrapClass}>
+      <datalist id="qf-genre-suggestions">
+        {TRACK_GENRE_SUGGESTIONS.map((g) => (
+          <option key={g} value={g} />
+        ))}
+      </datalist>
       <div className="spotify-field sp-track-cover-field">
-        <span>Cover foto</span>
+        <span>{PLAIN.changeCover}</span>
         <div className="spotify-file-pick">
           <input
             key={coverInputKey}
@@ -197,14 +203,29 @@ export function TrackMetadataEditor({
               <span className="sp-track-cover-preview sp-track-cover-preview--empty" aria-hidden />
             )}
             <label htmlFor={coverInputId} className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
-              {coverFile ? coverFile.name : 'Choose image'}
+              {coverFile ? coverFile.name : PLAIN.changeCover}
             </label>
+            {(coverPreview || track.posterSrc) && (
+              <button
+                type="button"
+                className="spotify-btn spotify-btn--ghost spotify-btn--tiny"
+                disabled={busy || disabled}
+                onClick={() => {
+                  setCoverFile(null);
+                  setCoverPreviewSafe(undefined);
+                  setCoverInputKey((k) => k + 1);
+                  void updateTrack(track.id, { posterSrc: null });
+                }}
+              >
+                {PLAIN.removeCover}
+              </button>
+            )}
           </div>
         </div>
         <span className="spotify-field-hint">JPEG, PNG, WebP, or iPhone photo · saved with Save</span>
       </div>
       <label className="spotify-field">
-        Title
+        {PLAIN.title}
         <input
           className="spotify-input"
           value={title}
@@ -222,18 +243,18 @@ export function TrackMetadataEditor({
         />
       </label>
       <label className="spotify-field">
-        Genre
+        {PLAIN.genre}
         <input
           className="spotify-input"
           list="qf-genre-suggestions"
           value={genre}
           onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
-          placeholder="e.g. Reno Swamp"
+          placeholder={PLAIN.genrePlaceholder}
           disabled={busy || disabled}
         />
       </label>
       <label className="spotify-field">
-        Description
+        {PLAIN.description}
         <textarea
           className="spotify-input spotify-textarea"
           value={description}
@@ -292,4 +313,3 @@ export function TrackMetadataEditor({
     </div>
   );
 }
-

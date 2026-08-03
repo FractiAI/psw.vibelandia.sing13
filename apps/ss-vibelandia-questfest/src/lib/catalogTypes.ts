@@ -50,6 +50,8 @@ export interface PlaylistDef {
   name: string;
   kind: PlaylistKind;
   description: string;
+  /** Optional genre tag — same free-text / suggestion list as tracks. */
+  genre?: string;
   trackIds: string[];
   /** Nested playlists — folders inside this playlist (one parent per playlist). */
   childPlaylistIds?: string[];

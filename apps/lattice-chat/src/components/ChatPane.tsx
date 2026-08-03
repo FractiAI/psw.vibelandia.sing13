@@ -8,6 +8,7 @@ import {
   loadLatticeModels,
   sendLatticeMessage,
   threadAwaitingAssistant,
+  verifyLatticeAccess,
 } from '@/api';
 import { AuthPanel, RequestAccessLink, SignedInBar } from '@/components/AuthPanel';
 import { AgentTranscript } from '@/components/AgentTranscript';
@@ -29,6 +30,7 @@ export function ChatPane({
   const activeThreadId = useLatticeStore((s) => s.activeThreadId);
   const userEmail = useLatticeStore((s) => s.userEmail);
   const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
+  const privilege = useLatticeStore((s) => s.privilege);
   const sending = useLatticeStore((s) => s.sending);
   const sendPhase = useLatticeStore((s) => s.sendPhase);
   const statusHint = useLatticeStore((s) => s.statusHint);
@@ -61,6 +63,7 @@ export function ChatPane({
 
   const thread = threads.find((t) => t.id === activeThreadId) ?? null;
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
+  const planOnly = privilege !== 'creator';
   const needsAccessGrant =
     Boolean(error) && /not on the access list|Request access|access expired/i.test(error || '');
   const needsProviderKey =
@@ -104,6 +107,11 @@ export function ChatPane({
   useEffect(() => {
     if (signedIn) void loadLatticeModels();
   }, [signedIn, userEmail, hasEdgeKey, provider]);
+
+  useEffect(() => {
+    if (!signedIn || !userEmail) return;
+    void verifyLatticeAccess(userEmail);
+  }, [signedIn, userEmail]);
 
   // Resume a waiting turn after refresh — only when we still have a pending soft wait.
   useEffect(() => {
@@ -296,8 +304,7 @@ export function ChatPane({
               Within Goldilocks; intentions matter: we do not help with malice or ill will.
             </p>
             <p className="empty-hint empty-hint--bridge">
-              Board with your email and bring your own key to the bridge (Cursor, Claude, or
-              Gemini). The key stays on this device.
+              Email + your key + pick Cursor, Claude, or Gemini. Keys stay on this device.
             </p>
             <AuthPanel
               onSignedIn={() => {
@@ -479,6 +486,7 @@ export function ChatPane({
             modelId={modelId}
             models={models}
             disabled={sending}
+            planOnly={planOnly}
             onProviderChange={setProvider}
             onModeChange={setAgentMode}
             onNestChange={setNestTopology}

@@ -47,11 +47,15 @@ type PendingSend = {
   balanceBefore?: number | null;
 };
 
+type LatticePrivilege = 'creator' | 'guest' | 'none' | null;
+
 type LatticeState = {
   threads: ChatThread[];
   activeThreadId: string | null;
   userEmail: string;
   emailRememberedAt: string | null;
+  /** Server allowlist privilege — guests chat; only creator may agent-write SING13. */
+  privilege: LatticePrivilege;
   sending: boolean;
   sendPhase: SendPhase;
   statusHint: string | null;
@@ -76,6 +80,7 @@ type LatticeState = {
     message: Omit<ChatMessage, 'id' | 'createdAt'> & { id?: string },
   ) => string;
   setUserEmail: (email: string) => void;
+  setPrivilege: (privilege: LatticePrivilege) => void;
   clearUserEmail: () => void;
   setSending: (v: boolean) => void;
   setSendProgress: (phase: SendPhase, hint?: string | null) => void;
@@ -110,6 +115,7 @@ export const useLatticeStore = create<LatticeState>()(
       activeThreadId: null,
       userEmail: '',
       emailRememberedAt: null,
+      privilege: null,
       sending: false,
       sendPhase: 'idle',
       statusHint: null,
@@ -231,7 +237,12 @@ export const useLatticeStore = create<LatticeState>()(
           emailRememberedAt: normalized ? new Date().toISOString() : null,
         });
       },
-      clearUserEmail: () => set({ userEmail: '', emailRememberedAt: null }),
+      setPrivilege: (privilege) =>
+        set({
+          privilege,
+          ...(privilege && privilege !== 'creator' ? { agentMode: 'plan' as const } : {}),
+        }),
+      clearUserEmail: () => set({ userEmail: '', emailRememberedAt: null, privilege: null }),
       setSending: (v) =>
         set(
           v
@@ -312,7 +323,10 @@ export const useLatticeStore = create<LatticeState>()(
           sendPhase: 'idle' as const,
           statusHint: null,
         })),
-      setAgentMode: (mode) => set({ agentMode: mode }),
+      setAgentMode: (mode) =>
+        set((s) => ({
+          agentMode: s.privilege && s.privilege !== 'creator' ? 'plan' : mode,
+        })),
       setModelId: (modelId) => set({ modelId }),
       setModels: (models) => set({ models }),
       setNestTopology: (nestTopology) => set({ nestTopology }),

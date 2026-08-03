@@ -18,7 +18,8 @@ export const LATTICE_PROVIDERS: {
     keyHeader: 'x-cursor-api-key',
     keyPlaceholder: 'key_… from cursor.com → API Keys',
     keyHelp: 'cursor.com/dashboard → API Keys',
-    honesty: 'Cursor cloud on SING13 — chat/plan for guests; agent-write is creator-only. Just your API key.',
+    honesty:
+      'Cursor cloud on SING13. Guests chat in plan mode (no repo writes). Creators may use agent mode.',
   },
   {
     id: 'claude',

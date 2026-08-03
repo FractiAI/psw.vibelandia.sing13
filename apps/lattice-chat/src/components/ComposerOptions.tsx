@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
-import { isCreatorEmail } from '@/access';
 import { LATTICE_PROVIDERS, type LatticeProvider } from '@/lib/providerKeys';
 import { catalogForProvider, mergeProviderModels } from '@/modelCatalog';
-import { useLatticeStore } from '@/store';
 import type { AgentMode, LatticeModelOption, NestTopology } from '@/types';
 
 const MODES: { id: AgentMode; label: string }[] = [
@@ -50,6 +48,7 @@ export function ComposerOptions({
   modelId,
   models,
   disabled,
+  planOnly = false,
   onProviderChange,
   onModeChange,
   onNestChange,
@@ -63,23 +62,21 @@ export function ComposerOptions({
   modelId: string;
   models: LatticeModelOption[];
   disabled?: boolean;
+  /** Guests: Agent (write) locked — plan/chat only protects SING13. */
+  planOnly?: boolean;
   onProviderChange: (provider: LatticeProvider) => void;
   onModeChange: (mode: AgentMode) => void;
   onNestChange: (nest: NestTopology) => void;
   onRosterChange: (roster: string) => void;
   onModelChange: (modelId: string) => void;
 }) {
-  const userEmail = useLatticeStore((s) => s.userEmail);
-  const guestCursorPlanOnly = provider === 'cursor' && !isCreatorEmail(userEmail);
-  const effectiveMode: AgentMode =
-    provider === 'gemini' ? 'agent' : guestCursorPlanOnly ? 'plan' : mode;
-
   const options =
     provider === 'cursor'
       ? mergeProviderModels('cursor', models)
       : catalogForProvider(provider);
 
   const canRoster = nestTopology === 'multi' || nestTopology === 'goldilocks';
+  const effectiveMode: AgentMode = planOnly ? 'plan' : mode;
   const [rosterOpen, setRosterOpen] = useState(() => Boolean(agentRoster.trim()));
   const [advancedOpen, setAdvancedOpen] = useState(() => {
     try {
@@ -98,14 +95,16 @@ export function ComposerOptions({
   }, [advancedOpen]);
 
   useEffect(() => {
-    if (guestCursorPlanOnly && mode !== 'plan') onModeChange('plan');
-  }, [guestCursorPlanOnly, mode, onModeChange]);
+    if (planOnly && mode !== 'plan') onModeChange('plan');
+  }, [planOnly, mode, onModeChange]);
 
   const modelName =
     options.find((o) => o.id === modelId)?.displayName ||
     options.find((o) => o.id === modelId)?.id ||
     modelId;
-  const summary = `${providerShort(provider)} · ${modeLabel(effectiveMode)} · ${nestLabel(nestTopology)} · ${modelName}`;
+  const summary = `${providerShort(provider)} · ${modeLabel(effectiveMode)}${
+    planOnly ? ' (guest)' : ''
+  } · ${nestLabel(nestTopology)} · ${modelName}`;
 
   return (
     <div className="composer-options" role="group" aria-label="Valet options">
@@ -146,30 +145,30 @@ export function ComposerOptions({
               ))}
             </div>
             <div className="composer-mode" role="tablist" aria-label="Mode">
-              {MODES.map((m) => (
-                <button
-                  key={m.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={effectiveMode === m.id}
-                  className={effectiveMode === m.id ? 'is-active' : undefined}
-                  disabled={
-                    disabled ||
-                    provider === 'gemini' ||
-                    (guestCursorPlanOnly && m.id === 'agent')
-                  }
-                  title={
-                    provider === 'gemini'
-                      ? 'Antigravity runs as a managed agent'
-                      : guestCursorPlanOnly && m.id === 'agent'
-                        ? 'Agent-write on SING13 is creator-only — guests stay in Plan/chat'
-                        : undefined
-                  }
-                  onClick={() => onModeChange(m.id)}
-                >
-                  {m.label}
-                </button>
-              ))}
+              {MODES.map((m) => {
+                const agentLocked = planOnly && m.id === 'agent';
+                const geminiLock = provider === 'gemini';
+                return (
+                  <button
+                    key={m.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={effectiveMode === m.id}
+                    className={effectiveMode === m.id ? 'is-active' : undefined}
+                    disabled={disabled || geminiLock || agentLocked}
+                    title={
+                      agentLocked
+                        ? 'Guest seat: plan/chat only — protects SING13 from overwrite'
+                        : geminiLock
+                          ? 'Antigravity runs as a managed agent'
+                          : undefined
+                    }
+                    onClick={() => onModeChange(m.id)}
+                  >
+                    {m.label}
+                  </button>
+                );
+              })}
             </div>
             <div className="composer-mode" role="tablist" aria-label="Nest topology">
               {NESTS.map((n) => (

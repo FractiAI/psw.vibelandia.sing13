@@ -18,6 +18,8 @@ import {
 import { useLatticeStore } from '@/store';
 import type { AgentMode, ReasoningLens, TokenCompare, TranscriptItem } from '@/types';
 
+type LatticePrivilege = 'creator' | 'guest' | 'none';
+
 type LatticeResponse = {
   reply?: string;
   runId?: string;
@@ -33,7 +35,43 @@ type LatticeResponse = {
   recovered?: boolean;
   tokens?: TokenCompare;
   execution?: { tokens?: TokenCompare };
+  privilege?: LatticePrivilege;
+  chatOnly?: boolean;
 };
+
+function applyAccessMeta(data: LatticeResponse | { privilege?: string }): void {
+  const p = data.privilege;
+  if (p !== 'creator' && p !== 'guest' && p !== 'none') return;
+  useLatticeStore.getState().setPrivilege(p);
+}
+
+/** Email allowlist check — privilege drives plan-only vs agent. */
+export async function verifyLatticeAccess(email: string): Promise<{
+  ok: boolean;
+  privilege: LatticePrivilege;
+  reason?: string;
+  expiresAt?: string | null;
+}> {
+  const res = await fetch(`/api/lattice-chat?email=${encodeURIComponent(email.trim())}`);
+  const data = (await res.json().catch(() => ({}))) as {
+    ok?: boolean;
+    privilege?: string;
+    reason?: string;
+    error?: string;
+    expiresAt?: string | null;
+  };
+  const privilege: LatticePrivilege =
+    data.privilege === 'creator' || data.privilege === 'guest' || data.privilege === 'none'
+      ? data.privilege
+      : 'none';
+  applyAccessMeta({ privilege });
+  return {
+    ok: Boolean(data.ok ?? res.ok),
+    privilege,
+    reason: data.reason || data.error,
+    expiresAt: data.expiresAt ?? null,
+  };
+}
 
 const WATCHDOG_MS = 45_000;
 const RECOVER_POLL_MS = 8_000;
@@ -62,7 +100,7 @@ function isHardLatticeFailure(data: LatticeResponse, status: number): boolean {
   ) {
     return true;
   }
-  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github|agent not found|agent_not_found|anthropic|gemini|timed out|chat-only workspace/i.test(
+  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github|agent not found|agent_not_found|anthropic|gemini|timed out|chat-only|plan mode|write-attach/i.test(
     data.error || '',
   );
 }
@@ -360,6 +398,7 @@ function applyAssistantReply(
   // Chat meter = actual balances/usage only — never chars÷4 estimates.
   const tokens = pickMeasuredTokens(data);
 
+  applyAccessMeta(data);
   store.appendMessage(threadId, {
     role: 'assistant',
     content,
@@ -749,7 +788,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
                 ? data.error ||
                   'Cursor cloud timed out. Send again, or switch to Claude / Gemini.'
               : data.code === 'sing13_write_locked'
-                ? 'SING13 agent-write is creator-only. Guests stay in Plan/chat on SING13 — or switch to Claude / Gemini.'
+                ? 'Agent (write) mode on SING13 is creator-only. Guests stay in plan/chat — pick Cursor, Claude, or Gemini and send.'
               : res.status === 401
                 ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
               : res.status === 403
@@ -788,7 +827,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       settled = true;
       const tip =
         store.provider === 'cursor'
-          ? 'Cursor cloud is still spinning up. Wait a few seconds and send again — or switch provider to Claude / Gemini.'
+          ? 'Cursor cloud did not finish spinning up. Send again, or switch provider to Claude / Gemini.'
           : 'The chat stream stalled before a reply. Send again, or switch provider.';
       store.setError(tip);
       store.setSendProgress('idle', null);
@@ -799,7 +838,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
 
     const hardFail =
       err instanceof LatticeHardFail ||
-      /access list|API key|GitHub|repository|branch|401|403|503|504|invalid model|cursor_github|agent not found|agent_not_found|timed out|chat-only workspace/i.test(
+      /access list|API key|GitHub|repository|branch|401|403|503|504|invalid model|cursor_github|agent not found|agent_not_found|timed out|chat-only|plan mode|write-attach/i.test(
         err instanceof Error ? err.message : String(err),
       );
 

@@ -5,6 +5,7 @@ import {
   isValidEmailShape,
   normalizeEmail,
 } from '@/access';
+import { verifyLatticeAccess } from '@/api';
 import { KeyStatusChip } from '@/components/KeySettings';
 import {
   LATTICE_PROVIDERS,
@@ -50,7 +51,8 @@ export function RequestAccessLink({
 }
 
 /**
- * Sign in captures email (30 days) + at least one provider API key on this device.
+ * Sign in: email + provider + API key. Privilege (creator vs guest) comes from the allowlist.
+ * Guests chat; agent/write on SING13 stays creator-only.
  */
 export function AuthPanel({
   compact = false,
@@ -69,6 +71,7 @@ export function AuthPanel({
     hasProviderApiKey(readActiveProvider()) ? readProviderApiKey(readActiveProvider()) : '',
   );
   const [flash, setFlash] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
 
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
   const meta = LATTICE_PROVIDERS.find((p) => p.id === providerDraft)!;
@@ -82,7 +85,7 @@ export function AuthPanel({
     setKeyDraft(hasProviderApiKey(next) ? readProviderApiKey(next) : '');
   }
 
-  function onSignIn(e: FormEvent) {
+  async function onSignIn(e: FormEvent) {
     e.preventDefault();
     const next = normalizeEmail(emailDraft);
     if (!isValidEmailShape(next)) {
@@ -94,15 +97,35 @@ export function AuthPanel({
       setFlash(keyResult.error || `Paste your ${meta.short} API key to sign in.`);
       return;
     }
-    saveActiveProvider(providerDraft);
-    setProvider(providerDraft);
-    if (keyResult.changed) {
-      useLatticeStore.getState().clearCloudAgents();
-      useLatticeStore.getState().clearPending();
+    setBusy(true);
+    setFlash(null);
+    try {
+      const access = await verifyLatticeAccess(next);
+      if (!access.ok) {
+        setFlash(
+          access.reason ||
+            'This email is not on the access list yet. Request a free trial, then sign in.',
+        );
+        return;
+      }
+      saveActiveProvider(providerDraft);
+      setProvider(providerDraft);
+      if (keyResult.changed) {
+        useLatticeStore.getState().clearCloudAgents();
+        useLatticeStore.getState().clearPending();
+      }
+      setUserEmail(next);
+      const seat =
+        access.privilege === 'creator'
+          ? 'creator seat — agent mode available'
+          : 'guest seat — plan/chat (SING13 write-safe)';
+      setFlash(`Signed in · ${meta.short} key on this device · ${seat}.`);
+      onSignedIn?.();
+    } catch {
+      setFlash('Could not reach Lattice access check. Try again.');
+    } finally {
+      setBusy(false);
     }
-    setUserEmail(next);
-    setFlash(`Signed in — email and ${meta.short} key saved on this device.`);
-    onSignedIn?.();
   }
 
   return (
@@ -110,10 +133,10 @@ export function AuthPanel({
       className={`auth-panel${compact ? ' auth-panel--compact' : ''}`}
       aria-label="Sign in"
     >
-      <form className="auth-form" onSubmit={onSignIn}>
+      <form className="auth-form" onSubmit={(e) => void onSignIn(e)}>
         <p className="auth-lead">
-          Enter your email, pick a platform, paste your API key — then chat.
-          Keys stay on this device (never stored on our server).
+          Enter your email, choose Cursor / Claude / Gemini, and paste your key. That is the whole
+          board — keys stay on this device.
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
         <input
@@ -124,12 +147,14 @@ export function AuthPanel({
           value={emailDraft}
           placeholder="you@example.com"
           onChange={(e) => setEmailDraft(e.target.value)}
+          disabled={busy}
         />
         <label htmlFor="lattice-signin-provider">Provider</label>
         <select
           id="lattice-signin-provider"
           value={providerDraft}
           onChange={(e) => onProviderPick(e.target.value as LatticeProvider)}
+          disabled={busy}
         >
           {LATTICE_PROVIDERS.map((p) => (
             <option key={p.id} value={p.id}>
@@ -146,10 +171,11 @@ export function AuthPanel({
           value={keyDraft}
           placeholder={meta.keyPlaceholder}
           onChange={(e) => setKeyDraft(e.target.value)}
+          disabled={busy}
         />
         <p className="auth-key-hint">{meta.honesty}</p>
-        <button type="submit" className="auth-submit">
-          Board · Sign in
+        <button type="submit" className="auth-submit" disabled={busy}>
+          {busy ? 'Checking access…' : 'Board · Sign in'}
         </button>
       </form>
       {flash ? (
@@ -168,6 +194,7 @@ export function AuthPanel({
 
 export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => void }) {
   const userEmail = useLatticeStore((s) => s.userEmail);
+  const privilege = useLatticeStore((s) => s.privilege);
   const clearUserEmail = useLatticeStore((s) => s.clearUserEmail);
   const hardRefreshEdge = useLatticeStore((s) => s.hardRefreshEdge);
   const [refreshing, setRefreshing] = useState(false);
@@ -176,6 +203,7 @@ export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => v
     <div className="signed-in-bar">
       <span className="signed-in-email" title={userEmail}>
         {userEmail}
+        {privilege === 'guest' ? ' · plan' : privilege === 'creator' ? ' · creator' : ''}
       </span>
       <KeyStatusChip
         onOpenSettings={() => {

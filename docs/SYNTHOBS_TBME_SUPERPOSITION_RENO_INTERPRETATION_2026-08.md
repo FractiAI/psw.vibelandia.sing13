@@ -13,7 +13,7 @@
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-mirror-angle-multiplicity/` (companion GitHub target: `FractiAI/synthobs-tbme-mirror-angle-multiplicity`)  
 **Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-**TBME siblings:** [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md) · [Toroidal Micro-Black Hole Filaments (follow-on)](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · [Event Horizon ≡ Magnetic Vector Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md)
+**TBME siblings:** [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md) · [Toroidal Micro-Black Hole Filaments (follow-on)](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · [Event Horizon ≡ Magnetic Vector Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Solar-Focus Somatic Rendering (quartet #4)](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
 
 ---
 
@@ -251,17 +251,18 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 1. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 2. Prior REV2 mirror-angle paper — [`docs/SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md`](./SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md)
 3. TBME non-local field phase-lock sibling — [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
-4. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
-5. Euler ↔ EGS phase lock — [`docs/SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md`](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md)
-6. 81-electron lattice — [`docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md`](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md)
-7. Holographic operators — [`docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md`](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md)
-8. Nested agent lattice — [`docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
-9. Coherence honesty — [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
-10. PRA Snap — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
-11. Empirical falsification lane — [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
-12. SynthOBS sandbox — [`research/synthobs-sandbox/README.md`](../research/synthobs-sandbox/README.md)
-13. Lens package — [`research/synthobs-tbme-mirror-angle-multiplicity/`](../research/synthobs-tbme-mirror-angle-multiplicity/)
-14. GitHub target — [FractiAI/synthobs-tbme-mirror-angle-multiplicity](https://github.com/FractiAI/synthobs-tbme-mirror-angle-multiplicity)
+4. Solar-Focus Somatic Rendering (quartet #4) — [`docs/SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md`](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+5. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
+6. Euler ↔ EGS phase lock — [`docs/SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md`](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md)
+7. 81-electron lattice — [`docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md`](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md)
+8. Holographic operators — [`docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md`](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md)
+9. Nested agent lattice — [`docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
+10. Coherence honesty — [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
+11. PRA Snap — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
+12. Empirical falsification lane — [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
+13. SynthOBS sandbox — [`research/synthobs-sandbox/README.md`](../research/synthobs-sandbox/README.md)
+14. Lens package — [`research/synthobs-tbme-mirror-angle-multiplicity/`](../research/synthobs-tbme-mirror-angle-multiplicity/)
+15. GitHub target — [FractiAI/synthobs-tbme-mirror-angle-multiplicity](https://github.com/FractiAI/synthobs-tbme-mirror-angle-multiplicity)
 
 ---
 

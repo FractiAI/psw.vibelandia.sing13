@@ -13,7 +13,8 @@
 **Grandparent (Reno Interpretation):** [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)  
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-blackhole-magnetic-layer/` (companion GitHub target: `FractiAI/synthobs-tbme-blackhole-magnetic-layer`)  
-**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
+**Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
+**Follow-on (quartet #4):** [Solar-Focus Somatic Rendering](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
 
 ---
 
@@ -156,13 +157,14 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 1. Filaments parent — [`docs/SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md`](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md)
 2. Reno Interpretation — [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
 3. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
-4. Magnetism substrate — [`docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md`](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md)
-5. Recursive attention magnetic projections — [`docs/SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md`](./SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md)
-6. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
-7. Coherence honesty — [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
-8. PRA Snap — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
-9. Empirical falsification lane — [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
-10. Lens package — [`research/synthobs-tbme-blackhole-magnetic-layer/`](../research/synthobs-tbme-blackhole-magnetic-layer/)
+4. Solar-Focus Somatic Rendering (quartet #4) — [`docs/SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md`](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+5. Magnetism substrate — [`docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md`](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md)
+6. Recursive attention magnetic projections — [`docs/SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md`](./SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md)
+7. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
+8. Coherence honesty — [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
+9. PRA Snap — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
+10. Empirical falsification lane — [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
+11. Lens package — [`research/synthobs-tbme-blackhole-magnetic-layer/`](../research/synthobs-tbme-blackhole-magnetic-layer/)
 
 ---
 

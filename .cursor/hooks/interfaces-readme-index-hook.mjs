@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * Cursor hook · keep README interfaces HTML index fresh.
- * afterFileEdit / stop: if any interfaces HTML page (non-assets/partials) was touched, resync README.
+ * Cursor hook · keep README + interfaces/index.html listing fresh.
+ * afterFileEdit / stop: if any interfaces HTML page (non-assets/partials) was touched, resync both.
  */
 import { resolve, relative, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  syncInterfacesReadmeIndex,
+  syncInterfacesIndex,
   isInterfacesHtmlRel,
 } from '../../lib/interfaces-readme-index.mjs';
 
@@ -44,7 +44,7 @@ async function main() {
   }
 
   try {
-    const result = await syncInterfacesReadmeIndex({ cwd: REPO_ROOT });
+    const result = await syncInterfacesIndex({ cwd: REPO_ROOT });
     console.error(
       JSON.stringify({
         hook: 'interfaces-readme-index',

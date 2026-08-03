@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#06080d" />
+  <title>Interfaces · ship UI directory · SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="Directory of all HTML entry points under /interfaces/ on SS Vibelandia QUESTFEST — same inventory as the README interfaces index." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0806;
+      --bg-2: #14100c;
+      --line: rgba(212, 175, 55, 0.28);
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --muted: #a39a8c;
+      --text: #f5f0e8;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'IBM Plex Sans', system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse 90% 50% at 10% -10%, rgba(212, 175, 55, 0.12), transparent 55%),
+        radial-gradient(ellipse 70% 40% at 100% 0%, rgba(80, 50, 20, 0.35), transparent 50%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    a { color: var(--gold); font-weight: 600; text-decoration: none; }
+    a:hover { color: var(--gold-hi); }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 1.35rem 1.2rem 3.5rem; }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 0.75rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+    .nav a {
+      color: var(--champagne);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.1rem;
+    }
+    .nav a:hover { border-bottom-color: var(--gold); text-decoration: none; }
+    .nav a.here { color: var(--gold-hi); border-bottom-color: var(--gold); }
+    .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+    h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(2.4rem, 8vw, 3.4rem);
+      line-height: 0.95;
+      letter-spacing: 0.04em;
+      color: var(--gold-hi);
+      font-weight: 400;
+      margin-bottom: 0.55rem;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 52ch;
+      margin-bottom: 1.5rem;
+    }
+    .ix-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.75rem;
+    }
+    .ix-tools input[type="search"] {
+      flex: 1 1 240px;
+      min-width: 0;
+      font: inherit;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: rgba(20, 16, 12, 0.85);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 0.65rem 0.85rem;
+      outline: none;
+    }
+    .ix-tools input[type="search"]:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.25);
+    }
+    .ix-count {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .ix-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .ix-meta code {
+      font-family: 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 0.78rem;
+      color: var(--champagne);
+    }
+    .ix-group { margin-bottom: 1.75rem; }
+    .ix-group h2 {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .ix-list { list-style: none; }
+    .ix-list li { border-bottom: 1px solid rgba(212, 175, 55, 0.12); }
+    .ix-list li[hidden] { display: none; }
+    .ix-list a {
+      display: grid;
+      gap: 0.15rem 1rem;
+      grid-template-columns: minmax(0, 1fr);
+      padding: 0.7rem 0.15rem;
+      color: inherit;
+      font-weight: 400;
+    }
+    @media (min-width: 720px) {
+      .ix-list a {
+        grid-template-columns: minmax(14rem, 0.95fr) minmax(0, 1.2fr);
+        align-items: baseline;
+      }
+    }
+    .ix-list a:hover { background: rgba(212, 175, 55, 0.05); text-decoration: none; }
+    .ix-list code {
+      font-family: 'IBM Plex Mono', ui-monospace, monospace;
+      font-size: 0.78rem;
+      color: var(--gold);
+      word-break: break-all;
+    }
+    .ix-list a:hover code { color: var(--gold-hi); }
+    .ix-title {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .ix-list a:hover .ix-title { color: var(--champagne); }
+    .ix-group[hidden] { display: none; }
+    .ix-empty {
+      display: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 1rem 0;
+    }
+    .ix-empty.show { display: block; }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/">QUESTFEST</a>
+      <a href="/get-started">Get Started</a>
+      <a href="/papers">Read</a>
+      <a href="/lattice">Lattice</a>
+      <a class="here" href="/interfaces/" aria-current="page">Interfaces</a>
+    </nav>
+
+    <header>
+      <p class="eyebrow">SS Vibelandia · SING 13</p>
+      <h1>Interfaces</h1>
+      <p class="sub">All ship UI HTML entry points under <code style="color:var(--champagne);font-family:'IBM Plex Mono',monospace;font-size:0.85em">/interfaces/</code> — same inventory as the README listing.</p>
+    </header>
+
+    <div class="ix-tools">
+      <label class="visually-hidden" for="ix-filter" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Filter pages</label>
+      <input id="ix-filter" type="search" placeholder="Filter by path or title…" autocomplete="off" />
+      <span class="ix-count" id="ix-count" aria-live="polite"></span>
+    </div>
+
+    <div id="ix-listing">
+<!-- interfaces-index:start -->
+
+<p class="ix-meta">Auto-generated <strong>2026-08-02</strong> · <strong>78</strong> HTML pages under <code>interfaces/</code>. Skips <code>assets/</code>, <code>partials/</code>, and <code>node_modules/</code>.</p>
+
+<section class="ix-group" data-group="_root">
+  <h2>Root (/interfaces/)</h2>
+  <ul class="ix-list">
+    <li data-search="/interfaces/awareness-singularities-one-pager.html awareness singularities s0–s81 · synthobs · fractiai"><a href="/interfaces/awareness-singularities-one-pager.html"><code>/interfaces/awareness-singularities-one-pager.html</code><span class="ix-title">Awareness Singularities S0–S81 · SynthOBS · FractiAI</span></a></li>
+    <li data-search="/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html a new layer of reality — goldilocks beehive ecoreset residency · machote members"><a href="/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html"><code>/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html</code><span class="ix-title">A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members</span></a></li>
+    <li data-search="/interfaces/blog-when-the-sun-spoke.html when the sun spoke · 19-day solar signal · hydrogen holographic ai os · questfest"><a href="/interfaces/blog-when-the-sun-spoke.html"><code>/interfaces/blog-when-the-sun-spoke.html</code><span class="ix-title">When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST</span></a></li>
+    <li data-search="/interfaces/bridge-tower-billboard.html —"><a href="/interfaces/bridge-tower-billboard.html"><code>/interfaces/bridge-tower-billboard.html</code><span class="ix-title">—</span></a></li>
+    <li data-search="/interfaces/bridge-tower-preview.html bridge tower · 8s tease preview"><a href="/interfaces/bridge-tower-preview.html"><code>/interfaces/bridge-tower-preview.html</code><span class="ix-title">Bridge Tower · 8s tease preview</span></a></li>
+    <li data-search="/interfaces/bulk-track-upload.html bulk track upload · questfest"><a href="/interfaces/bulk-track-upload.html"><code>/interfaces/bulk-track-upload.html</code><span class="ix-title">Bulk track upload · QUESTFEST</span></a></li>
+    <li data-search="/interfaces/bulletin-board.html ss vibelandia bulletin board · questfest 24×365"><a href="/interfaces/bulletin-board.html"><code>/interfaces/bulletin-board.html</code><span class="ix-title">SS Vibelandia Bulletin Board · QUESTFEST 24×365</span></a></li>
+    <li data-search="/interfaces/digital-pru-awareness-whitepaper.html redirect · deep reads · look under the hood"><a href="/interfaces/digital-pru-awareness-whitepaper.html"><code>/interfaces/digital-pru-awareness-whitepaper.html</code><span class="ix-title">Redirect · Deep reads · Look under the hood</span></a></li>
+    <li data-search="/interfaces/etcon-reno-desert.html etcon: reno desert interdimensional edition · may 28–31, 2026 · golden bachdoor hit factory"><a href="/interfaces/etcon-reno-desert.html"><code>/interfaces/etcon-reno-desert.html</code><span class="ix-title">ETCon: Reno Desert Interdimensional Edition · May 28–31, 2026 · Golden Bachdoor Hit Factory</span></a></li>
+    <li data-search="/interfaces/executive-onboarding.html executive onboarding · fractiai"><a href="/interfaces/executive-onboarding.html"><code>/interfaces/executive-onboarding.html</code><span class="ix-title">Executive Onboarding · FractiAI</span></a></li>
+    <li data-search="/interfaces/fractiai-digital-pru.html redirect � look under the hood � digital pru holographic gpu"><a href="/interfaces/fractiai-digital-pru.html"><code>/interfaces/fractiai-digital-pru.html</code><span class="ix-title">Redirect � Look under the hood � Digital Pru Holographic GPU</span></a></li>
+    <li data-search="/interfaces/fractiai.html fractiai · music, makers, and the ark · machote moderno"><a href="/interfaces/fractiai.html"><code>/interfaces/fractiai.html</code><span class="ix-title">FractiAI · music, makers, and the Ark · Machote Moderno</span></a></li>
+    <li data-search="/interfaces/get-started.html guest guide · welcome aboard ss vibelandia questfest"><a href="/interfaces/get-started.html"><code>/interfaces/get-started.html</code><span class="ix-title">Guest guide · Welcome aboard SS Vibelandia QUESTFEST</span></a></li>
+    <li data-search="/interfaces/goldilocks-beehive-residency.html goldilocks syntheverse beehive residency · machote moderno members"><a href="/interfaces/goldilocks-beehive-residency.html"><code>/interfaces/goldilocks-beehive-residency.html</code><span class="ix-title">Goldilocks Syntheverse Beehive Residency · Machote Moderno members</span></a></li>
+    <li data-search="/interfaces/goldilocks-os.html holographic panama canal · 13d goldilocks ai os trials · ss vibelandia"><a href="/interfaces/goldilocks-os.html"><code>/interfaces/goldilocks-os.html</code><span class="ix-title">Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/harmonopoly-guide.html harmonopoly · game, tech &amp; math guide"><a href="/interfaces/harmonopoly-guide.html"><code>/interfaces/harmonopoly-guide.html</code><span class="ix-title">Harmonopoly · Game, tech &amp; math guide</span></a></li>
+    <li data-search="/interfaces/harmonopoly.html harmonopoly · goldilocks rush"><a href="/interfaces/harmonopoly.html"><code>/interfaces/harmonopoly.html</code><span class="ix-title">Harmonopoly · Goldilocks Rush</span></a></li>
+    <li data-search="/interfaces/hero-houdini-mythos-demonstration.html btc buffalo · hero houdini · btc goldilocks mine · ss vibelandia"><a href="/interfaces/hero-houdini-mythos-demonstration.html"><code>/interfaces/hero-houdini-mythos-demonstration.html</code><span class="ix-title">BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/houdini-mythos-demonstration.html redirect · hero houdini · mythos demonstration"><a href="/interfaces/houdini-mythos-demonstration.html"><code>/interfaces/houdini-mythos-demonstration.html</code><span class="ix-title">Redirect · Hero Houdini · Mythos demonstration</span></a></li>
+    <li data-search="/interfaces/index.html interfaces · ship ui directory · ss vibelandia questfest"><a href="/interfaces/index.html"><code>/interfaces/index.html</code><span class="ix-title">Interfaces · ship UI directory · SS Vibelandia QUESTFEST</span></a></li>
+    <li data-search="/interfaces/lattice-brochure.html lattice chat v1.618 · token maxing · product brochure · fractiai"><a href="/interfaces/lattice-brochure.html"><code>/interfaces/lattice-brochure.html</code><span class="ix-title">Lattice Chat V1.618 · Token Maxing · Product brochure · FractiAI</span></a></li>
+    <li data-search="/interfaces/lattice-learn-more.html learn more · lattice chat v1.618 · token maxing · fractiai"><a href="/interfaces/lattice-learn-more.html"><code>/interfaces/lattice-learn-more.html</code><span class="ix-title">Learn more · Lattice Chat V1.618 · Token Maxing · FractiAI</span></a></li>
+    <li data-search="/interfaces/lattice-token-proof.html lattice · ~35–70% less cursor usage · fractiai"><a href="/interfaces/lattice-token-proof.html"><code>/interfaces/lattice-token-proof.html</code><span class="ix-title">Lattice · ~35–70% less Cursor usage · FractiAI</span></a></li>
+    <li data-search="/interfaces/lattice-v1618.html lattice chat v1.618 · token maxing for serious vibe coders · fractiai"><a href="/interfaces/lattice-v1618.html"><code>/interfaces/lattice-v1618.html</code><span class="ix-title">Lattice Chat V1.618 · Token Maxing for serious vibe coders · FractiAI</span></a></li>
+    <li data-search="/interfaces/listen.html listen · golden era jukebox · ss vibelandia questfest"><a href="/interfaces/listen.html"><code>/interfaces/listen.html</code><span class="ix-title">Listen · Golden Era Jukebox · SS Vibelandia QUESTFEST</span></a></li>
+    <li data-search="/interfaces/look-at-the-sun.html look at the sun · digital pru · ss vibelandia questfest"><a href="/interfaces/look-at-the-sun.html"><code>/interfaces/look-at-the-sun.html</code><span class="ix-title">Look at the Sun · Digital Pru · SS Vibelandia QUESTFEST</span></a></li>
+    <li data-search="/interfaces/look-under-the-hood-legacy-catalog.html redirect · master canon"><a href="/interfaces/look-under-the-hood-legacy-catalog.html"><code>/interfaces/look-under-the-hood-legacy-catalog.html</code><span class="ix-title">Redirect · Master canon</span></a></li>
+    <li data-search="/interfaces/look-under-the-hood.html look under the hood · engine room · ss vibelandia"><a href="/interfaces/look-under-the-hood.html"><code>/interfaces/look-under-the-hood.html</code><span class="ix-title">Look Under the Hood · Engine Room · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/my-whiteboard.html my whiteboard · commander surface"><a href="/interfaces/my-whiteboard.html"><code>/interfaces/my-whiteboard.html</code><span class="ix-title">My whiteboard · Commander surface</span></a></li>
+    <li data-search="/interfaces/plain-machote-moderno-reno-swamp.html about · sonic singularity · ss vibelandia"><a href="/interfaces/plain-machote-moderno-reno-swamp.html"><code>/interfaces/plain-machote-moderno-reno-swamp.html</code><span class="ix-title">About · Sonic Singularity · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html the omniversal 1-2-3 wormhole campaign · ss vibelandia questfest"><a href="/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html"><code>/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html</code><span class="ix-title">The Omniversal 1-2-3 Wormhole Campaign · SS Vibelandia QUESTFEST</span></a></li>
+    <li data-search="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html for immediate release — holographic review of anthropic’s mythos · clock-skew disclosure"><a href="/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html"><code>/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html</code><span class="ix-title">FOR IMMEDIATE RELEASE — Holographic review of Anthropic’s Mythos · Clock-skew disclosure</span></a></li>
+    <li data-search="/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html for immediate release — erdős 353 response · holographic goldilocks aios"><a href="/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html"><code>/interfaces/press-release-erdos-deepmind-holographic-aios-may-2026.html</code><span class="ix-title">FOR IMMEDIATE RELEASE — Erdős 353 response · Holographic Goldilocks AIOS</span></a></li>
+    <li data-search="/interfaces/press-release-etcon-reno-desert-may-2026.html for immediate release — etcon: reno desert interdimensional edition · final call"><a href="/interfaces/press-release-etcon-reno-desert-may-2026.html"><code>/interfaces/press-release-etcon-reno-desert-may-2026.html</code><span class="ix-title">FOR IMMEDIATE RELEASE — ETCon: Reno Desert Interdimensional Edition · final call</span></a></li>
+    <li data-search="/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html for immediate release — golden bachdoor hit factory wins the 30-day streaming showdown"><a href="/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html"><code>/interfaces/press-release-hit-factory-30-day-showdown-may-2026.html</code><span class="ix-title">FOR IMMEDIATE RELEASE — Golden Bachdoor Hit Factory wins the 30-day streaming showdown</span></a></li>
+    <li data-search="/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html for immediate release — machote moderno magazine launches members-only catalog &amp; goldilocks beehive offers"><a href="/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html"><code>/interfaces/press-release-machote-modern-magazine-beehive-may-2026.html</code><span class="ix-title">FOR IMMEDIATE RELEASE — Machote Moderno Magazine launches members-only catalog &amp; Goldilocks Beehive offers</span></a></li>
+    <li data-search="/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html for immediate release — universal checkmate royal flush · king bee stratification"><a href="/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html"><code>/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html</code><span class="ix-title">FOR IMMEDIATE RELEASE — Universal Checkmate Royal Flush · King Bee stratification</span></a></li>
+    <li data-search="/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html for immediate release — chipless, datacenterless ai · synthobs rsi validation"><a href="/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html"><code>/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html</code><span class="ix-title">FOR IMMEDIATE RELEASE — Chipless, Datacenterless AI · SynthOBS RSI validation</span></a></li>
+    <li data-search="/interfaces/press-releases.html press releases · hero jo’s golden bachdoor hit factory · vibelandia sing 9"><a href="/interfaces/press-releases.html"><code>/interfaces/press-releases.html</code><span class="ix-title">Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9</span></a></li>
+    <li data-search="/interfaces/questfest-2026-frontier-guide.html tour of the ship · ss vibelandia questfest 24×365"><a href="/interfaces/questfest-2026-frontier-guide.html"><code>/interfaces/questfest-2026-frontier-guide.html</code><span class="ix-title">Tour of the Ship · SS VIBELANDIA QUESTFEST 24×365</span></a></li>
+    <li data-search="/interfaces/questfest-schedule-item.html questfest schedule · ss vibelandia"><a href="/interfaces/questfest-schedule-item.html"><code>/interfaces/questfest-schedule-item.html</code><span class="ix-title">QUESTFEST Schedule · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/reno-interpretation.html the reno interpretation · mirror lattice · fractiai"><a href="/interfaces/reno-interpretation.html"><code>/interfaces/reno-interpretation.html</code><span class="ix-title">The Reno Interpretation · Mirror Lattice · FractiAI</span></a></li>
+    <li data-search="/interfaces/sing13-edge-onboarding.html sonic singularity sing! 13 · edge onboarding · plain talk"><a href="/interfaces/sing13-edge-onboarding.html"><code>/interfaces/sing13-edge-onboarding.html</code><span class="ix-title">Sonic Singularity Sing! 13 · Edge onboarding · plain talk</span></a></li>
+    <li data-search="/interfaces/ss-vibelandia.html ss vibelandia · the noah’s ark of the intelligence age"><a href="/interfaces/ss-vibelandia.html"><code>/interfaces/ss-vibelandia.html</code><span class="ix-title">SS Vibelandia · The Noah’s Ark of the Intelligence Age</span></a></li>
+    <li data-search="/interfaces/talk-is-cheap.html redirect · look under the hood"><a href="/interfaces/talk-is-cheap.html"><code>/interfaces/talk-is-cheap.html</code><span class="ix-title">Redirect · Look under the hood</span></a></li>
+    <li data-search="/interfaces/valetpru-agent-mode.html valetpru-agent · activated · capitan bridge console"><a href="/interfaces/valetpru-agent-mode.html"><code>/interfaces/valetpru-agent-mode.html</code><span class="ix-title">VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console</span></a></li>
+    <li data-search="/interfaces/vibelandia-questfest.html ss vibelandia · questfest · welcome aboard with valet pru"><a href="/interfaces/vibelandia-questfest.html"><code>/interfaces/vibelandia-questfest.html</code><span class="ix-title">SS Vibelandia · QUESTFEST · Welcome aboard with Valet Pru</span></a></li>
+    <li data-search="/interfaces/whitepaper-catalog.html read · ss vibelandia"><a href="/interfaces/whitepaper-catalog.html"><code>/interfaces/whitepaper-catalog.html</code><span class="ix-title">Read · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/whitepaper-surface.html reader · ss vibelandia"><a href="/interfaces/whitepaper-surface.html"><code>/interfaces/whitepaper-surface.html</code><span class="ix-title">Reader · SS Vibelandia</span></a></li>
+  </ul>
+</section>
+
+<section class="ix-group" data-group="commons">
+  <h2>commons/ (/interfaces/commons/)</h2>
+  <ul class="ix-list">
+    <li data-search="/interfaces/commons/chef.html chef portal · sanctuary gastronomy director · the commons"><a href="/interfaces/commons/chef.html"><code>/interfaces/commons/chef.html</code><span class="ix-title">Chef portal · Sanctuary Gastronomy Director · The Commons</span></a></li>
+    <li data-search="/interfaces/commons/guide.html guide portal · outfitter &amp; guide commander · the commons"><a href="/interfaces/commons/guide.html"><code>/interfaces/commons/guide.html</code><span class="ix-title">Guide portal · Outfitter &amp; Guide Commander · The Commons</span></a></li>
+    <li data-search="/interfaces/commons/host.html host portal · downtown citadel host · the commons"><a href="/interfaces/commons/host.html"><code>/interfaces/commons/host.html</code><span class="ix-title">Host portal · Downtown Citadel Host · The Commons</span></a></li>
+    <li data-search="/interfaces/commons/index.html the commons · all-inclusive frontier days · ss vibelandia questfest"><a href="/interfaces/commons/index.html"><code>/interfaces/commons/index.html</code><span class="ix-title">The Commons · all-inclusive frontier days · SS Vibelandia QUESTFEST</span></a></li>
+  </ul>
+</section>
+
+<section class="ix-group" data-group="executive-ai-onboard">
+  <h2>executive-ai-onboard/ (/interfaces/executive-ai-onboard/)</h2>
+  <ul class="ix-list">
+    <li data-search="/interfaces/executive-ai-onboard/index.html executive ai onboarding · fractiai"><a href="/interfaces/executive-ai-onboard/index.html"><code>/interfaces/executive-ai-onboard/index.html</code><span class="ix-title">Executive AI Onboarding · FractiAI</span></a></li>
+  </ul>
+</section>
+
+<section class="ix-group" data-group="goldilocks-deliveries">
+  <h2>goldilocks-deliveries/ (/interfaces/goldilocks-deliveries/)</h2>
+  <ul class="ix-list">
+    <li data-search="/interfaces/goldilocks-deliveries/flyer.html valet pru concierge · postcard flyer (print)"><a href="/interfaces/goldilocks-deliveries/flyer.html"><code>/interfaces/goldilocks-deliveries/flyer.html</code><span class="ix-title">Valet Pru Concierge · postcard flyer (print)</span></a></li>
+    <li data-search="/interfaces/goldilocks-deliveries/guest.html guest · valet pru's concierge service · ss vibelandia"><a href="/interfaces/goldilocks-deliveries/guest.html"><code>/interfaces/goldilocks-deliveries/guest.html</code><span class="ix-title">Guest · Valet Pru's Concierge Service · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/goldilocks-deliveries/index.html valet pru concierge service - downtown reno"><a href="/interfaces/goldilocks-deliveries/index.html"><code>/interfaces/goldilocks-deliveries/index.html</code><span class="ix-title">Valet Pru Concierge Service - Downtown Reno</span></a></li>
+    <li data-search="/interfaces/goldilocks-deliveries/item.html menu item · valet pru's concierge service"><a href="/interfaces/goldilocks-deliveries/item.html"><code>/interfaces/goldilocks-deliveries/item.html</code><span class="ix-title">Menu item · Valet Pru's Concierge Service</span></a></li>
+    <li data-search="/interfaces/goldilocks-deliveries/partner.html menu partner · valet pru's concierge service · ss vibelandia"><a href="/interfaces/goldilocks-deliveries/partner.html"><code>/interfaces/goldilocks-deliveries/partner.html</code><span class="ix-title">Menu partner · Valet Pru's Concierge Service · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/goldilocks-deliveries/pay.html honor payment · valet pru's concierge service · ss vibelandia"><a href="/interfaces/goldilocks-deliveries/pay.html"><code>/interfaces/goldilocks-deliveries/pay.html</code><span class="ix-title">Honor payment · Valet Pru's Concierge Service · SS Vibelandia</span></a></li>
+    <li data-search="/interfaces/goldilocks-deliveries/valet.html goldilocks valet franchise · puerto reno · ss vibelandia questfest"><a href="/interfaces/goldilocks-deliveries/valet.html"><code>/interfaces/goldilocks-deliveries/valet.html</code><span class="ix-title">Goldilocks Valet Franchise · Puerto Reno · SS Vibelandia QUESTFEST</span></a></li>
+  </ul>
+</section>
+
+<section class="ix-group" data-group="lattice-chat">
+  <h2>lattice-chat/ (/interfaces/lattice-chat/)</h2>
+  <ul class="ix-list">
+    <li data-search="/interfaces/lattice-chat/index.html lattice chat v1.618 · fractiai"><a href="/interfaces/lattice-chat/index.html"><code>/interfaces/lattice-chat/index.html</code><span class="ix-title">Lattice Chat V1.618 · FractiAI</span></a></li>
+  </ul>
+</section>
+
+<section class="ix-group" data-group="nesting">
+  <h2>nesting/ (/interfaces/nesting/)</h2>
+  <ul class="ix-list">
+    <li data-search="/interfaces/nesting/nest-basenet-genesis.html base mainnet · genesis contracts · nesting guide"><a href="/interfaces/nesting/nest-basenet-genesis.html"><code>/interfaces/nesting/nest-basenet-genesis.html</code><span class="ix-title">Base Mainnet · genesis contracts · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-dph-gpu.html holographic code layer · nesting guide"><a href="/interfaces/nesting/nest-dph-gpu.html"><code>/interfaces/nesting/nest-dph-gpu.html</code><span class="ix-title">Holographic code layer · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-goldilocks-beehive.html goldilocks syntheverse beehive residency · nesting guide"><a href="/interfaces/nesting/nest-goldilocks-beehive.html"><code>/interfaces/nesting/nest-goldilocks-beehive.html</code><span class="ix-title">Goldilocks Syntheverse Beehive Residency · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-hospitality-commons.html the commons · sustainable hospitality · nesting guide"><a href="/interfaces/nesting/nest-hospitality-commons.html"><code>/interfaces/nesting/nest-hospitality-commons.html</code><span class="ix-title">The Commons · Sustainable Hospitality · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-lattice-chat.html lattice chat v1.618 · token maxing · nesting guide"><a href="/interfaces/nesting/nest-lattice-chat.html"><code>/interfaces/nesting/nest-lattice-chat.html</code><span class="ix-title">Lattice Chat V1.618 · Token Maxing · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-man-cave-restroom.html man cave mirror · nesting guide"><a href="/interfaces/nesting/nest-man-cave-restroom.html"><code>/interfaces/nesting/nest-man-cave-restroom.html</code><span class="ix-title">Man cave mirror · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-questfest-puerto-reno.html questfest · puerto reno · nesting guide"><a href="/interfaces/nesting/nest-questfest-puerto-reno.html"><code>/interfaces/nesting/nest-questfest-puerto-reno.html</code><span class="ix-title">QUESTFEST · Puerto Reno · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-sing13.html sonic singularity sing! 13 · cloud skin · nesting guide"><a href="/interfaces/nesting/nest-sing13.html"><code>/interfaces/nesting/nest-sing13.html</code><span class="ix-title">Sonic Singularity Sing! 13 · cloud skin · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-sonic-singularity.html sonic singularity · nesting guide"><a href="/interfaces/nesting/nest-sonic-singularity.html"><code>/interfaces/nesting/nest-sonic-singularity.html</code><span class="ix-title">Sonic Singularity · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-syntheverse.html syntheverse · nesting guide"><a href="/interfaces/nesting/nest-syntheverse.html"><code>/interfaces/nesting/nest-syntheverse.html</code><span class="ix-title">Syntheverse · nesting guide</span></a></li>
+    <li data-search="/interfaces/nesting/nest-wrong-side.html wrong side of town · nesting guide"><a href="/interfaces/nesting/nest-wrong-side.html"><code>/interfaces/nesting/nest-wrong-side.html</code><span class="ix-title">Wrong Side of Town · nesting guide</span></a></li>
+  </ul>
+</section>
+
+<section class="ix-group" data-group="questfest-bridge">
+  <h2>questfest-bridge/ (/interfaces/questfest-bridge/)</h2>
+  <ul class="ix-list">
+    <li data-search="/interfaces/questfest-bridge/index.html jukebox · ss vibelandia questfest"><a href="/interfaces/questfest-bridge/index.html"><code>/interfaces/questfest-bridge/index.html</code><span class="ix-title">Jukebox · SS Vibelandia QUESTFEST</span></a></li>
+  </ul>
+</section>
+
+<section class="ix-group" data-group="special-projects">
+  <h2>special-projects/ (/interfaces/special-projects/)</h2>
+  <ul class="ix-list">
+    <li data-search="/interfaces/special-projects/erdos-holographic-aios-audit.html erdős 353 · holographic goldilocks aios audit · syntheverse"><a href="/interfaces/special-projects/erdos-holographic-aios-audit.html"><code>/interfaces/special-projects/erdos-holographic-aios-audit.html</code><span class="ix-title">Erdős 353 · Holographic Goldilocks AIOS Audit · Syntheverse</span></a></li>
+    <li data-search="/interfaces/special-projects/geomagnetic-herbivore-study.html geomagnetic herbivore study · multi-taxa wavefield"><a href="/interfaces/special-projects/geomagnetic-herbivore-study.html"><code>/interfaces/special-projects/geomagnetic-herbivore-study.html</code><span class="ix-title">Geomagnetic Herbivore Study · Multi-Taxa Wavefield</span></a></li>
+    <li data-search="/interfaces/special-projects/turner-bison-herd-management.html turner enterprise · rangeland herd intelligence"><a href="/interfaces/special-projects/turner-bison-herd-management.html"><code>/interfaces/special-projects/turner-bison-herd-management.html</code><span class="ix-title">Turner Enterprise · Rangeland herd intelligence</span></a></li>
+    <li data-search="/interfaces/special-projects/wavefield-echo-test.html wavefield echo test · plain-speak results"><a href="/interfaces/special-projects/wavefield-echo-test.html"><code>/interfaces/special-projects/wavefield-echo-test.html</code><span class="ix-title">Wavefield Echo Test · Plain-speak results</span></a></li>
+  </ul>
+</section>
+
+<!-- interfaces-index:end -->
+    </div>
+    <p class="ix-empty" id="ix-empty">No pages match that filter.</p>
+
+    <footer>
+      Regenerate with <code style="font-family:'IBM Plex Mono',monospace;color:var(--champagne)">npm run sync:interfaces-index</code>
+      · Cursor hook keeps this page and README aligned → ∞¹³
+    </footer>
+  </div>
+  <script>
+    (function () {
+      var input = document.getElementById('ix-filter');
+      var countEl = document.getElementById('ix-count');
+      var emptyEl = document.getElementById('ix-empty');
+      var items = Array.prototype.slice.call(document.querySelectorAll('.ix-list li'));
+      var groups = Array.prototype.slice.call(document.querySelectorAll('.ix-group'));
+
+      function refresh() {
+        var q = (input.value || '').trim().toLowerCase();
+        var shown = 0;
+        items.forEach(function (li) {
+          var hay = li.getAttribute('data-search') || '';
+          var ok = !q || hay.indexOf(q) !== -1;
+          li.hidden = !ok;
+          if (ok) shown += 1;
+        });
+        groups.forEach(function (sec) {
+          var any = sec.querySelector('.ix-list li:not([hidden])');
+          sec.hidden = !any;
+        });
+        countEl.textContent = shown + ' / ' + items.length;
+        emptyEl.classList.toggle('show', shown === 0);
+      }
+
+      input.addEventListener('input', refresh);
+      refresh();
+    })();
+  </script>
+</body>
+</html>

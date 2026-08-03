@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Sync README.md interfaces HTML index (end-of-file listing).
+ * Sync README.md + interfaces/index.html interfaces HTML index.
  * Usage: npm run sync:interfaces-index
  */
-import { syncInterfacesReadmeIndex } from '../lib/interfaces-readme-index.mjs';
+import { syncInterfacesIndex } from '../lib/interfaces-readme-index.mjs';
 
-const result = await syncInterfacesReadmeIndex({ cwd: process.cwd() });
+const result = await syncInterfacesIndex({ cwd: process.cwd() });
 console.log(JSON.stringify({ ok: true, ...result }, null, 2));
 process.exit(0);

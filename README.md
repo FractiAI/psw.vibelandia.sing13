@@ -341,9 +341,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-02** · **77** HTML pages under `interfaces/`.
-> Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when `interfaces/**/*.html` changes).
-> Skips `assets/`, `partials/`, and `node_modules/`.
+> Auto-generated **2026-08-02** · **78** HTML pages under `interfaces/`.
+> Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
+> Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
 ### Root (`/interfaces/`)
 
@@ -368,6 +368,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/harmonopoly.html`](/interfaces/harmonopoly.html) | Harmonopoly · Goldilocks Rush |
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
+| [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
 | [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Lattice Chat V1.618 · Token Maxing · Product brochure · FractiAI |
 | [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | Learn more · Lattice Chat V1.618 · Token Maxing · FractiAI |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |

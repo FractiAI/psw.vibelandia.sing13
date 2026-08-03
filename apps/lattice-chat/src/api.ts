@@ -747,9 +747,9 @@ export async function sendLatticeMessage(text: string): Promise<void> {
                 ? 'Previous cloud agent is gone (common after a new Cursor key). Send your message again.'
               : data.code === 'agent_create_timeout' || data.code === 'guest_cursor_cloud_unavailable'
                 ? data.error ||
-                  'Cursor cloud is unavailable for this key. Connect GitHub, or switch to Claude / Gemini.'
+                  'Cursor cloud timed out. Send again, or switch to Claude / Gemini.'
               : data.code === 'sing13_write_locked'
-                ? 'SING13 write-attach is creator-only. Guests can keep chatting — Cursor uses a chat-only workspace, or switch to Claude / Gemini.'
+                ? 'SING13 agent-write is creator-only. Guests stay in Plan/chat on SING13 — or switch to Claude / Gemini.'
               : res.status === 401
                 ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
               : res.status === 403
@@ -788,7 +788,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       settled = true;
       const tip =
         store.provider === 'cursor'
-          ? 'Cursor cloud did not finish spinning up. Connect GitHub for this Cursor API key (cursor.com/dashboard → Integrations), or switch provider to Claude / Gemini and send again.'
+          ? 'Cursor cloud is still spinning up. Wait a few seconds and send again — or switch provider to Claude / Gemini.'
           : 'The chat stream stalled before a reply. Send again, or switch provider.';
       store.setError(tip);
       store.setSendProgress('idle', null);

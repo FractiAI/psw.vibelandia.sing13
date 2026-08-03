@@ -112,8 +112,8 @@ export function AuthPanel({
     >
       <form className="auth-form" onSubmit={onSignIn}>
         <p className="auth-lead">
-          Board with your email and bring a key to the bridge — Cursor, Claude, or Gemini.
-          Keys stay on this device and are proxied per request — never stored on our server.
+          Enter your email, pick a platform, paste your API key — then chat.
+          Keys stay on this device (never stored on our server).
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
         <input

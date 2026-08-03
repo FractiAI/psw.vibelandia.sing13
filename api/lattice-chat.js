@@ -7,7 +7,7 @@
  * (email + provider key headers only; never persist or log user keys).
  *
  * Access: email allowlist. Creator permanent. Guests one month from grant.
- * Guests get full chat; SING13 Cursor cloud write-attach stays creator-only.
+ * Guests: key + platform chat (Cursor plan-only on SING13, or Claude/Gemini). Agent-write is creator-only.
  * Prompt assembly: dynamic-import lib/lattice-prompt.mjs (Vercel compiles this file to CJS —
  * never use a top-level static .mjs import here).
  */
@@ -19,16 +19,14 @@ export const config = {
 };
 
 const DEFAULT_REPO = 'https://github.com/FractiAI/psw.vibelandia.sing13';
-/** Public chat-only VM for guests — never FractiAI SING13 (app self-modify lock). */
-const DEFAULT_GUEST_CHAT_REPO = 'https://github.com/octocat/Hello-World';
 const CREATOR_EMAIL = 'valetpru@gmail.com';
-/** Only creator privilege may attach Cursor cloud agents to the SING13 repo (git-write capable). */
+/** Only creator privilege may run Cursor cloud in agent (write) mode against SING13. */
 const SING13_REPO_HOST_RE = /github\.com[/:]FractiAI\/psw\.vibelandia\.sing13(?:\.git)?(?:\/|$|\?|#)/i;
-const GUEST_CHAT_ONLY_DIRECTIVE = `## Guest session (chat-only)
+const GUEST_CHAT_ONLY_DIRECTIVE = `## Guest session (chat · plan only)
 You are helping a Lattice Chat guest. Full conversational use is allowed.
-Do NOT edit, create, delete, commit, push, or open pull requests against FractiAI/psw.vibelandia.sing13 or any production ship app.
+Do NOT edit, create, delete, commit, push, or open pull requests against this repository or any production ship app.
 Application code changes are reserved for creators through designated developer channels.
-Answer questions, explain, plan, and teach — do not apply changes onto the live SING13 repository.`;
+Answer questions, explain, plan, and teach — chat only.`;
 const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const NAIVE_CORPUS_DUMP_TOKENS = 72_000;
 const LATTICE_RAG_POINTER_TOKENS = 1_800;
@@ -1542,8 +1540,11 @@ function isSing13RepoUrl(url) {
 }
 
 /**
- * Creator may attach Cursor cloud to SING13 (developer channel).
- * Guests get full chat on a separate chat-only workspace — never SING13 write attach.
+ * Key + platform UX:
+ * - Everyone (guest + creator) may attach Cursor cloud to SING13 for chat context.
+ * - Guests are forced to plan/chat-only (no agent write mode) + prompt guard.
+ * - Creators keep full agent mode for designated developer work.
+ * Optional LATTICE_GUEST_REPO_URL overrides guest workspace if set and not SING13.
  */
 function resolveCursorCloudAttach(access, creatorRepoUrl, startingRef) {
   if (access?.privilege === 'creator') {
@@ -1555,23 +1556,24 @@ function resolveCursorCloudAttach(access, creatorRepoUrl, startingRef) {
     };
   }
 
-  const guestUrl = (process.env.LATTICE_GUEST_REPO_URL || '').trim();
-  if (guestUrl && !isSing13RepoUrl(guestUrl)) {
+  const guestOverride = (process.env.LATTICE_GUEST_REPO_URL || '').trim();
+  if (guestOverride && !isSing13RepoUrl(guestOverride)) {
     const guestRef =
       (process.env.LATTICE_GUEST_STARTING_REF || 'main').trim() || 'main';
     return {
-      repos: [{ url: guestUrl, startingRef: guestRef }],
+      repos: [{ url: guestOverride, startingRef: guestRef }],
       chatOnly: true,
       forcePlan: true,
-      workspace: guestUrl,
+      workspace: guestOverride,
     };
   }
 
+  // Same public SING13 context guests used before the write-lock — chat works with just a Cursor key.
   return {
-    repos: [{ url: DEFAULT_GUEST_CHAT_REPO, startingRef: 'master' }],
+    repos: [{ url: creatorRepoUrl, startingRef }],
     chatOnly: true,
     forcePlan: true,
-    workspace: DEFAULT_GUEST_CHAT_REPO,
+    workspace: creatorRepoUrl,
   };
 }
 
@@ -1580,67 +1582,7 @@ function withGuestChatGuard(prompt, chatOnly) {
   return `${GUEST_CHAT_ONLY_DIRECTIVE}\n\n${prompt}`;
 }
 
-/**
- * Guest Cursor cloud needs the caller's GitHub App to see the chat-only workspace.
- * Fail fast instead of spinning Agent.create for 90–120s (client aborts and soft-hangs).
- */
-async function preflightGuestCursorGithub(apiKey, targetRepoUrl) {
-  try {
-    const { Cursor } = await import('@cursor/sdk');
-    const listed = await withTimeout(
-      Cursor.repositories.list({ apiKey }),
-      12_000,
-      'Cursor.repositories.list',
-    );
-    const urls = (Array.isArray(listed) ? listed : [])
-      .map((r) => String(r?.url || '').trim().toLowerCase())
-      .filter(Boolean);
-    if (!urls.length) {
-      return {
-        ok: false,
-        code: 'guest_cursor_cloud_unavailable',
-        error:
-          'Cursor cloud needs GitHub connected for this API key. Open cursor.com/dashboard → Integrations → connect GitHub, then retry — or switch Lattice provider to Claude / Gemini for chat without a repo.',
-      };
-    }
-    const needle = String(targetRepoUrl || '')
-      .toLowerCase()
-      .replace(/^https?:\/\//, '')
-      .replace(/\.git$/, '');
-    const hostPath = needle.replace(/^github\.com[/:]/, '');
-    const matched = urls.some(
-      (u) => u.includes(hostPath) || (hostPath && u.includes(hostPath.split('/').slice(-2).join('/'))),
-    );
-    // Public repos may still clone without appearing in the private list — only hard-fail when list is empty.
-    if (!matched) {
-      console.warn(
-        '[lattice-chat] guest Cursor GitHub list missing target repo (may still clone if public)',
-        targetRepoUrl,
-        'connected',
-        urls.length,
-      );
-    }
-    return { ok: true, connectedCount: urls.length, matched };
-  } catch (err) {
-    if (err?.code === 'timeout') {
-      return {
-        ok: false,
-        code: 'guest_cursor_cloud_unavailable',
-        error:
-          'Could not verify Cursor GitHub access in time. Connect GitHub for this Cursor API key, or switch to Claude / Gemini.',
-      };
-    }
-    const msg = err instanceof Error ? err.message : String(err);
-    if (/unauthorized|invalid.?api.?key|401/i.test(msg)) {
-      return { ok: false, code: 'cursor_auth', error: msg };
-    }
-    console.warn('[lattice-chat] guest GitHub preflight failed', msg);
-    // Soft: allow create to try — public Hello-World may still work.
-    return { ok: true, connectedCount: 0, matched: false, soft: true };
-  }
-}
-
-/** @deprecated Prefer resolveCursorCloudAttach — kept for soft privilege probes. */
+/** Soft probe only — guests may chat on SING13; write/agent mode stays creator-only. */
 function assertCursorMayWriteSing13(access, repoUrl) {
   if (!isSing13RepoUrl(repoUrl)) return { ok: true };
   if (access?.privilege === 'creator') return { ok: true };
@@ -1648,7 +1590,7 @@ function assertCursorMayWriteSing13(access, repoUrl) {
     ok: false,
     code: 'sing13_write_locked',
     error:
-      'SING13 repository write-attach is creator-only (developer channel). Guests still have full Lattice Chat — Cursor runs in a chat-only workspace, or use Claude / Gemini.',
+      'SING13 agent-write mode is creator-only. Guests still chat normally (plan/chat-only) with their own Cursor, Claude, or Gemini key.',
   };
 }
 
@@ -1766,7 +1708,7 @@ export default async function handler(req, res) {
         }
         const writeGate = assertCursorMayWriteSing13(access, DEFAULT_REPO);
         if (!writeGate.ok) {
-          // Soft probe — guests may still chat; SING13 attach stays creator-only.
+          // Soft probe — guests may still chat (plan-only); agent-write stays creator-only.
           return json(res, 200, {
             ok: false,
             chatAllowed: true,
@@ -1774,7 +1716,7 @@ export default async function handler(req, res) {
             code: writeGate.code,
             privilege: access.privilege,
             targetRepo: DEFAULT_REPO,
-            note: 'Guest Cursor chat uses a separate chat-only workspace. SING13 write-attach is creator-only.',
+            note: 'Guests chat on SING13 in plan/chat-only mode. Agent-write is creator-only.',
           });
         }
         const { key: apiKey, source: keySource } = resolveCursorApiKey(req);
@@ -2214,33 +2156,10 @@ export default async function handler(req, res) {
       }
 
       if (!agent) {
-        if (guestChatOnly) {
-          if (stream) {
-            sseWrite(res, 'status', {
-              message: 'Checking Cursor GitHub for chat-only workspace…',
-            });
-          }
-          const pre = await preflightGuestCursorGithub(apiKey, repoUrl);
-          if (!pre.ok) {
-            return respondLattice(
-              res,
-              stream,
-              {
-                error: pre.error,
-                code: pre.code || 'guest_cursor_cloud_unavailable',
-                privilege: access.privilege,
-                provider,
-                clearAgent: true,
-              },
-              pre.code === 'cursor_auth' ? 401 : 422,
-            );
-          }
-        }
-        const createTimeoutMs = guestChatOnly ? 55_000 : 120_000;
         if (stream) {
           sseWrite(res, 'status', {
             message: guestChatOnly
-              ? 'Creating chat-only cloud agent…'
+              ? 'Opening Lattice chat…'
               : 'Creating Lattice cloud agent (repo spin-up can take a minute)…',
           });
         }
@@ -2254,7 +2173,7 @@ export default async function handler(req, res) {
                 repos: cursorRepos,
               },
             }),
-            createTimeoutMs,
+            120_000,
             'Agent.create',
           );
         } catch (createErr) {
@@ -2263,9 +2182,8 @@ export default async function handler(req, res) {
               res,
               stream,
               {
-                error: guestChatOnly
-                  ? `Chat-only cloud agent timed out after ${Math.round(createTimeoutMs / 1000)}s. Connect GitHub for this Cursor key (cursor.com/dashboard → Integrations), or switch to Claude / Gemini.`
-                  : 'Cloud agent creation timed out after 120s. Check Cursor GitHub access for this API key, then send again.',
+                error:
+                  'Cloud agent creation timed out after 120s. Check your Cursor API key, then send again — or switch to Claude / Gemini.',
                 code: 'agent_create_timeout',
                 repoUrl,
                 startingRef,
@@ -2335,7 +2253,7 @@ export default async function handler(req, res) {
                 repos: cursorRepos,
               },
             }),
-            guestChatOnly ? 55_000 : 120_000,
+            120_000,
             'Agent.create',
           );
           agentId = agent.agentId ?? null;

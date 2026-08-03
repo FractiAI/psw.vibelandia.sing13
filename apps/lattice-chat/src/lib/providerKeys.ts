@@ -18,7 +18,7 @@ export const LATTICE_PROVIDERS: {
     keyHeader: 'x-cursor-api-key',
     keyPlaceholder: 'key_… from cursor.com → API Keys',
     keyHelp: 'cursor.com/dashboard → API Keys',
-    honesty: 'Cursor cloud agents on FractiAI/psw.vibelandia.sing13 (needs your Cursor↔GitHub link).',
+    honesty: 'Cursor cloud on SING13 — chat/plan for guests; agent-write is creator-only. Just your API key.',
   },
   {
     id: 'claude',

@@ -46,7 +46,7 @@ function sleep(ms: number): Promise<void> {
 }
 
 function isHardLatticeFailure(data: LatticeResponse, status: number): boolean {
-  if ([401, 403, 422].includes(status)) return true;
+  if ([401, 403, 422, 504].includes(status)) return true;
   if (
     data.code === 'cursor_github_access' ||
     data.code === 'invalid_model' ||
@@ -55,11 +55,14 @@ function isHardLatticeFailure(data: LatticeResponse, status: number): boolean {
     data.code === 'missing_provider_api_key' ||
     data.code === 'claude_auth' ||
     data.code === 'gemini_auth' ||
-    data.code === 'agent_not_found'
+    data.code === 'agent_not_found' ||
+    data.code === 'agent_create_timeout' ||
+    data.code === 'guest_cursor_cloud_unavailable' ||
+    data.code === 'sing13_write_locked'
   ) {
     return true;
   }
-  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github|agent not found|agent_not_found|anthropic|gemini/i.test(
+  return /GitHub|repository|branch|API key|access list|invalid model|cursor_github|agent not found|agent_not_found|anthropic|gemini|timed out|chat-only workspace/i.test(
     data.error || '',
   );
 }
@@ -245,6 +248,7 @@ async function postLattice(
       if (event === 'agent' && payload.agentId) {
         const threadId = String(body.threadId || store.activeThreadId || '');
         if (threadId) store.setAgentId(threadId, payload.agentId);
+        store.patchPending({ agentId: payload.agentId });
         return;
       }
       if (event === 'balance') {
@@ -741,6 +745,9 @@ export async function sendLatticeMessage(text: string): Promise<void> {
               ? 'Cursor API key required. Add or update your key in Lattice settings.'
               : data.code === 'agent_not_found'
                 ? 'Previous cloud agent is gone (common after a new Cursor key). Send your message again.'
+              : data.code === 'agent_create_timeout' || data.code === 'guest_cursor_cloud_unavailable'
+                ? data.error ||
+                  'Cursor cloud is unavailable for this key. Connect GitHub, or switch to Claude / Gemini.'
               : data.code === 'sing13_write_locked'
                 ? 'SING13 write-attach is creator-only. Guests can keep chatting — Cursor uses a chat-only workspace, or switch to Claude / Gemini.'
               : res.status === 401
@@ -768,16 +775,40 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   } catch (err) {
     if (settled) return;
     const agentId =
+      useLatticeStore.getState().pending?.agentId ||
       useLatticeStore.getState().threads.find((t) => t.id === threadId)?.agentId ||
       thread.agentId;
 
+    const aborted =
+      (err instanceof Error && err.name === 'AbortError') ||
+      /aborted|The user aborted|AbortError/i.test(err instanceof Error ? err.message : String(err));
+
+    // Abort during Agent.create (no agentId yet) used to soft-hang forever — fail loud instead.
+    if (aborted && !agentId) {
+      settled = true;
+      const tip =
+        store.provider === 'cursor'
+          ? 'Cursor cloud did not finish spinning up. Connect GitHub for this Cursor API key (cursor.com/dashboard → Integrations), or switch provider to Claude / Gemini and send again.'
+          : 'The chat stream stalled before a reply. Send again, or switch provider.';
+      store.setError(tip);
+      store.setSendProgress('idle', null);
+      store.setSending(false);
+      store.clearPending();
+      return;
+    }
+
     const hardFail =
       err instanceof LatticeHardFail ||
-      /access list|API key|GitHub|repository|branch|401|403|503|invalid model|cursor_github|agent not found|agent_not_found/i.test(
+      /access list|API key|GitHub|repository|branch|401|403|503|504|invalid model|cursor_github|agent not found|agent_not_found|timed out|chat-only workspace/i.test(
         err instanceof Error ? err.message : String(err),
       );
 
-    if (err instanceof LatticeHardFail && (err.code === 'agent_not_found' || err.code === 'agent_create_timeout')) {
+    if (
+      err instanceof LatticeHardFail &&
+      (err.code === 'agent_not_found' ||
+        err.code === 'agent_create_timeout' ||
+        err.code === 'guest_cursor_cloud_unavailable')
+    ) {
       store.setAgentId(threadId, null);
     }
 
@@ -812,7 +843,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     if (settled) return;
     const msg = err instanceof Error ? err.message : 'Chat request failed';
     store.setError(msg);
-    if (hardFail) {
+    if (hardFail || !agentId) {
       store.setSendProgress('idle', null);
       store.setSending(false);
       store.clearPending();
@@ -823,7 +854,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
       'Send interrupted — tap Check for reply before re-pasting the prompt.',
     );
     store.setSending(true);
-    // Soft hang only — auto-check without hammering on hard GitHub/auth failures.
+    // Soft recover only when we already have a cloud agent id to attach to.
     void (async () => {
       for (let i = 0; i < MAX_RECOVER_ATTEMPTS && awaitingAssistant(threadId); i++) {
         await sleep(RECOVER_POLL_MS);
@@ -853,6 +884,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
         'stuck',
         latticeProgressHint(Math.round((Date.now() - startedAt) / 1000), 'stuck'),
       );
+      store.setSending(false);
     })();
   } finally {
     primaryStreamActive = false;

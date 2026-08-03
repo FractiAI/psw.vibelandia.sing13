@@ -1580,6 +1580,66 @@ function withGuestChatGuard(prompt, chatOnly) {
   return `${GUEST_CHAT_ONLY_DIRECTIVE}\n\n${prompt}`;
 }
 
+/**
+ * Guest Cursor cloud needs the caller's GitHub App to see the chat-only workspace.
+ * Fail fast instead of spinning Agent.create for 90–120s (client aborts and soft-hangs).
+ */
+async function preflightGuestCursorGithub(apiKey, targetRepoUrl) {
+  try {
+    const { Cursor } = await import('@cursor/sdk');
+    const listed = await withTimeout(
+      Cursor.repositories.list({ apiKey }),
+      12_000,
+      'Cursor.repositories.list',
+    );
+    const urls = (Array.isArray(listed) ? listed : [])
+      .map((r) => String(r?.url || '').trim().toLowerCase())
+      .filter(Boolean);
+    if (!urls.length) {
+      return {
+        ok: false,
+        code: 'guest_cursor_cloud_unavailable',
+        error:
+          'Cursor cloud needs GitHub connected for this API key. Open cursor.com/dashboard → Integrations → connect GitHub, then retry — or switch Lattice provider to Claude / Gemini for chat without a repo.',
+      };
+    }
+    const needle = String(targetRepoUrl || '')
+      .toLowerCase()
+      .replace(/^https?:\/\//, '')
+      .replace(/\.git$/, '');
+    const hostPath = needle.replace(/^github\.com[/:]/, '');
+    const matched = urls.some(
+      (u) => u.includes(hostPath) || (hostPath && u.includes(hostPath.split('/').slice(-2).join('/'))),
+    );
+    // Public repos may still clone without appearing in the private list — only hard-fail when list is empty.
+    if (!matched) {
+      console.warn(
+        '[lattice-chat] guest Cursor GitHub list missing target repo (may still clone if public)',
+        targetRepoUrl,
+        'connected',
+        urls.length,
+      );
+    }
+    return { ok: true, connectedCount: urls.length, matched };
+  } catch (err) {
+    if (err?.code === 'timeout') {
+      return {
+        ok: false,
+        code: 'guest_cursor_cloud_unavailable',
+        error:
+          'Could not verify Cursor GitHub access in time. Connect GitHub for this Cursor API key, or switch to Claude / Gemini.',
+      };
+    }
+    const msg = err instanceof Error ? err.message : String(err);
+    if (/unauthorized|invalid.?api.?key|401/i.test(msg)) {
+      return { ok: false, code: 'cursor_auth', error: msg };
+    }
+    console.warn('[lattice-chat] guest GitHub preflight failed', msg);
+    // Soft: allow create to try — public Hello-World may still work.
+    return { ok: true, connectedCount: 0, matched: false, soft: true };
+  }
+}
+
 /** @deprecated Prefer resolveCursorCloudAttach — kept for soft privilege probes. */
 function assertCursorMayWriteSing13(access, repoUrl) {
   if (!isSing13RepoUrl(repoUrl)) return { ok: true };
@@ -2154,7 +2214,36 @@ export default async function handler(req, res) {
       }
 
       if (!agent) {
-        if (stream) sseWrite(res, 'status', { message: 'Creating Lattice cloud agent (repo spin-up can take a minute)…' });
+        if (guestChatOnly) {
+          if (stream) {
+            sseWrite(res, 'status', {
+              message: 'Checking Cursor GitHub for chat-only workspace…',
+            });
+          }
+          const pre = await preflightGuestCursorGithub(apiKey, repoUrl);
+          if (!pre.ok) {
+            return respondLattice(
+              res,
+              stream,
+              {
+                error: pre.error,
+                code: pre.code || 'guest_cursor_cloud_unavailable',
+                privilege: access.privilege,
+                provider,
+                clearAgent: true,
+              },
+              pre.code === 'cursor_auth' ? 401 : 422,
+            );
+          }
+        }
+        const createTimeoutMs = guestChatOnly ? 55_000 : 120_000;
+        if (stream) {
+          sseWrite(res, 'status', {
+            message: guestChatOnly
+              ? 'Creating chat-only cloud agent…'
+              : 'Creating Lattice cloud agent (repo spin-up can take a minute)…',
+          });
+        }
         try {
           agent = await withTimeout(
             Agent.create({
@@ -2165,7 +2254,7 @@ export default async function handler(req, res) {
                 repos: cursorRepos,
               },
             }),
-            120_000,
+            createTimeoutMs,
             'Agent.create',
           );
         } catch (createErr) {
@@ -2174,11 +2263,13 @@ export default async function handler(req, res) {
               res,
               stream,
               {
-                error:
-                  'Cloud agent creation timed out after 120s. Check Cursor GitHub access for this API key, then send again.',
+                error: guestChatOnly
+                  ? `Chat-only cloud agent timed out after ${Math.round(createTimeoutMs / 1000)}s. Connect GitHub for this Cursor key (cursor.com/dashboard → Integrations), or switch to Claude / Gemini.`
+                  : 'Cloud agent creation timed out after 120s. Check Cursor GitHub access for this API key, then send again.',
                 code: 'agent_create_timeout',
                 repoUrl,
                 startingRef,
+                clearAgent: true,
               },
               504,
             );
@@ -2235,14 +2326,18 @@ export default async function handler(req, res) {
           } catch {
             /* ignore */
           }
-          agent = await Agent.create({
-            apiKey,
-            model: modelSelection,
-            mode: agentMode,
-            cloud: {
-              repos: cursorRepos,
-            },
-          });
+          agent = await withTimeout(
+            Agent.create({
+              apiKey,
+              model: modelSelection,
+              mode: agentMode,
+              cloud: {
+                repos: cursorRepos,
+              },
+            }),
+            guestChatOnly ? 55_000 : 120_000,
+            'Agent.create',
+          );
           agentId = agent.agentId ?? null;
           resumedOk = false;
           if (stream) sseWrite(res, 'agent', { agentId });

@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-PCE-EPISTEMOLOGY-2026-07`
 **Registry ID:** `synthobs-proof-by-continuous-execution-2026-07`
-**Generated:** 2026-07-29T00:09:59.834Z
+**Generated:** 2026-08-03T04:36:31.844Z
 
 ## Verdict
 
@@ -144,7 +144,7 @@
 {
   "id": "E7_research_scripts_present",
   "title": "Monorepo research:* scripts enact PCE",
-  "research_script_count": 18,
+  "research_script_count": 36,
   "has_self_script": true,
   "has_holo_script": true,
   "honesty": "Structural inventory — not a claim every script is a journal substitute.",

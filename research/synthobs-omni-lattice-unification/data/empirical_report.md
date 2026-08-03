@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-UNIFICATION-2026-07`
 **Registry ID:** `synthobs-omni-lattice-unification-2026-07`
-**Generated:** 2026-07-28T23:35:03.478Z
+**Generated:** 2026-08-03T04:36:02.188Z
 
 ## Verdict
 
@@ -83,7 +83,7 @@
   "shannon_before": 1.6357969259071545,
   "shannon_after": 1.6357969259071548,
   "delta_s": 2.220446049250313e-16,
-  "factor_err": 5.684341886080801e-13,
+  "factor_err": 5.518497755175417e-13,
   "interpretation": "Normalized weights are depth-invariant under global E_F^k scaling.",
   "honesty": "Algebraic model property — not thermodynamic entropy of genomes, nuclei, or LLMs.",
   "pass": true

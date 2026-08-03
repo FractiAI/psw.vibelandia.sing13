@@ -223,7 +223,7 @@ export function ChatPane({
             </button>
             <h1 className="chat-title">
               <span className="chat-wordmark">Lattice Chat V1.618</span>
-              <span className="chat-by">SS Vibelandia · Your Goldilocks steward</span>
+              <span className="chat-by">SS Vibelandia · Your Goldilocks Valet</span>
             </h1>
             <button
               type="button"
@@ -240,12 +240,12 @@ export function ChatPane({
           ) : null}
         </div>
         <p className="chat-sub">
-          Your Goldilocks steward on the Ark ·{' '}
+          Your Goldilocks Valet on the Ark ·{' '}
           <a href="/lattice/learn">Learn more</a>
           {' · '}
           <a href="/ss-vibelandia">Meet the ship</a>
         </p>
-        <p className="chat-build-stamp" data-lattice-build="steward-lounge-v5-hard-refresh">
+        <p className="chat-build-stamp" data-lattice-build="valet-lounge-v5-hard-refresh">
           Within Goldilocks · intentions matter · craft, curiosity, care · Hard refresh keeps your keys
         </p>
       </header>
@@ -313,7 +313,7 @@ export function ChatPane({
           </div>
         ) : !thread || thread.messages.length === 0 ? (
           <div className="empty-state">
-            <p className="empty-eyebrow">Lounge · steward ready</p>
+            <p className="empty-eyebrow">Lounge · Valet ready</p>
             <p className="empty-lead">Welcome aboard — how may we help?</p>
             <p className="empty-hint">
               Ask in plain language. Lattice opens only what matters. Advanced options stay under
@@ -342,8 +342,8 @@ export function ChatPane({
                 {m.role === 'user'
                   ? 'You'
                   : m.mode || m.model
-                    ? `Steward · ${m.mode || 'agent'}${m.model ? ` · ${m.model}` : ''}`
-                    : 'Steward'}
+                    ? `Valet · ${m.mode || 'agent'}${m.model ? ` · ${m.model}` : ''}`
+                    : 'Valet'}
               </span>
               {m.role === 'assistant' && m.transcript?.length ? (
                 <AgentTranscript items={m.transcript} />
@@ -365,7 +365,7 @@ export function ChatPane({
             className={`bubble bubble-assistant thinking thought-stream-panel${sendPhase === 'stuck' ? ' thinking--stuck' : ''}`}
           >
             <div className="thought-stream-head">
-              <span className="bubble-role">Your steward is thinking</span>
+              <span className="bubble-role">Your Valet is thinking</span>
               <span className="thought-stream-timer">
                 {mm}:{ss}
                 {sendPhase === 'stuck' ? ' · may still finish' : ''}
@@ -390,7 +390,7 @@ export function ChatPane({
                   ))}
                 </div>
                 <p className="working-stream-hint">
-                  Waiting for live thought from your steward…
+                  Waiting for live thought from your Valet…
                 </p>
               </div>
             )}
@@ -486,12 +486,12 @@ export function ChatPane({
           onKeyDown={onKeyDown}
           placeholder={
             showWorking
-              ? 'Your steward is working… use Check for reply instead of re-pasting'
+              ? 'Your Valet is working… use Check for reply instead of re-pasting'
               : !signedIn
                 ? 'Welcome aboard — sign in above to chat…'
                 : !hasEdgeKey
                   ? 'Bring your key to the bridge above…'
-                  : 'Message your Goldilocks steward…'
+                  : 'Message your Goldilocks Valet…'
           }
           disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
         />

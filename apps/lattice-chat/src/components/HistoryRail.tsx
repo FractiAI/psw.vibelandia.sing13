@@ -43,7 +43,7 @@ export function HistoryRail({
       <div className="rail-top">
         <div className="rail-brand">
           <p className="wordmark">Lattice</p>
-          <p className="byline">SS Vibelandia · steward</p>
+          <p className="byline">SS Vibelandia · Valet</p>
         </div>
         {onClose ? (
           <button type="button" className="rail-close" aria-label="Close sidebar" onClick={onClose}>

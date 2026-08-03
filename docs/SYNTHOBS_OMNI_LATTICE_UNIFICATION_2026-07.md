@@ -26,7 +26,7 @@
 | **$E_F$ scaling key** | $E_F=\Phi_{\mathrm{EGS}}$ supplies a reproducible geometric ratio for phase labels across pillars (**E2–E3**, **E7**) | That $E_F$ replaces $\hbar$, $c$, $G$, or tokenizers |
 | **Executed experiments (E1–E9)** | Pillar presence, $\lambda_{\mathrm{EGS}}$, zero-$\Delta S$ model, Aufbau $81=3^4$, bond+ILAM taxonomies, metaphor matrix, companion linkage, honesty gate, Lattice surfaces — **9/9 pass** | That draft abstract **38-fold DNA biophoton**, **41.8%** tokens, **$R^2=0.9997$** nuclear binding, or **48.2%** syntactic matrix are new wet-lab / invoice measurements in *this* suite (they are **design targets / companion receipts** unless re-executed here; see **E8**) |
 | **Comparative matrix** | Companion holographic-operators suite reports a **comparative syntactic** score (~48.2%) vs landmark literature as an **in-silico structural** rubric | That FractiAI “beats” Maldacena/Witten as physics — the matrix is architectural / epistemic scoring, not AdS/CFT refutation |
-| **Lattice Chat product** | Omni-Lattice is the Seed·RAG umbrella for Goldilocks stewards | That every chat turn runs all four pillars as separate runtimes |
+| **Lattice Chat product** | Omni-Lattice is the Seed·RAG umbrella for Goldilocks Valets | That every chat turn runs all four pillars as separate runtimes |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -228,7 +228,7 @@ NOAA SWPC solar-region feeds may act as **interpretive** heliospheric clocks (AR
 
 ## 9. Lattice Chat V1.618 integration
 
-Omni-Lattice is the **umbrella** Seed·RAG entry for stewards who want one door into operators, 81-manifold, bonds, and ILAM.
+Omni-Lattice is the **umbrella** Seed·RAG entry for Valets who want one door into operators, 81-manifold, bonds, and ILAM.
 
 | Surface | Link |
 |---------|------|
@@ -254,7 +254,7 @@ Pointer: `docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`. THALIA companion: 
 
 ## 11. Conclusion
 
-The Omni-Lattice Architecture bridges holographic genomic language, the 81-electron manifold, chemical-bond agent orchestration, and neutronic-isotopic load balancing under one $E_F$-keyed grammar. This treatise is a **unification catalog** with a **9/9** linkage suite — not a claim that material reality has been laboratory-proven as a linguistic hologram. Lattice Chat V1.618 carries it as the umbrella companion for Goldilocks stewards.
+The Omni-Lattice Architecture bridges holographic genomic language, the 81-electron manifold, chemical-bond agent orchestration, and neutronic-isotopic load balancing under one $E_F$-keyed grammar. This treatise is a **unification catalog** with a **9/9** linkage suite — not a claim that material reality has been laboratory-proven as a linguistic hologram. Lattice Chat V1.618 carries it as the umbrella companion for Goldilocks Valets.
 
 ---
 

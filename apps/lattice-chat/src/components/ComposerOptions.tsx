@@ -97,7 +97,7 @@ export function ComposerOptions({
   const summary = `${providerShort(provider)} · ${modeLabel(mode)} · ${nestLabel(nestTopology)} · ${modelName}`;
 
   return (
-    <div className="composer-options" role="group" aria-label="Steward options">
+    <div className="composer-options" role="group" aria-label="Valet options">
       <div className="composer-advanced-bar">
         <button
           type="button"

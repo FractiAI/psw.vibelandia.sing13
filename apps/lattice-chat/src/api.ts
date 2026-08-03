@@ -83,11 +83,11 @@ class LatticeHardFail extends Error {
   }
 }
 
-/** Live status copy — ship steward voice, progressive wait. */
+/** Live status copy — ship Valet voice, progressive wait. */
 export function latticeProgressHint(elapsedSec: number, phase: string): string {
   const provider = useLatticeStore.getState().provider || 'cursor';
   const label =
-    provider === 'claude' ? 'Claude' : provider === 'gemini' ? 'Antigravity' : 'your steward';
+    provider === 'claude' ? 'Claude' : provider === 'gemini' ? 'Antigravity' : 'your Valet';
 
   if (phase === 'recovering') {
     if (provider === 'claude') {
@@ -103,7 +103,7 @@ export function latticeProgressHint(elapsedSec: number, phase: string): string {
   }
   if (elapsedSec < 8) return `On deck — starting ${label}…`;
   if (elapsedSec < 25) return 'Preparing — opening the thought stream…';
-  if (elapsedSec < 50) return 'Your steward is working — follow tools and reasoning below…';
+  if (elapsedSec < 50) return 'Your Valet is working — follow tools and reasoning below…';
   if (elapsedSec < 90) return `Still on it — ${label} will auto-check when needed…`;
   if (elapsedSec < 150) return 'Longer run — keep this tab open; Check for reply is safe';
   return 'Taking longer than usual — Check for reply, don’t re-enter the prompt';

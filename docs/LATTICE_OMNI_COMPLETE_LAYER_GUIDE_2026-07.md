@@ -16,7 +16,7 @@
 ---
 
 <!-- AUTO:LATTICE-OMNI-META:BEGIN -->
-**Catalog sync:** 2026-08-03 · **40** Lattice Chat / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
+**Catalog sync:** 2026-08-03 · **41** Lattice Chat / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
 
 When a Lattice / Omni paper is added or modified in the registry, re-run the sync (Cursor stop hook does this automatically for matching `docs/` edits).
 <!-- AUTO:LATTICE-OMNI-META:END -->
@@ -42,7 +42,7 @@ $E_F$ / $\Phi_{\mathrm{EGS}}$ is an **architectural scale key** — it does not 
 
 This guide **synthesizes** the Lattice Chat / Omni-Lattice paper family into one walkthrough of the **Omni-Lattice engine**: what it is, which innovations compose it, and how a builder experiences them at the product edge.
 
-You will walk from the golden scale key ($E_F\approx 1.618$) through language-as-wiring, DNA holograph and the 81-digit register, nested agents with bond/ILAM handoffs, steward lenses (PCHPP, magnetism, attention squeezing), the **Reno Interpretation** TBME quartet (mirror-angle multiplicity → toroidal micro-BH filaments → horizon≡$\mathbf{A}$ identity → solar-focus somatic rendering), and the measured product claim (~35–70% less Cursor usage vs fat paste on focused work). Comparative report-card scores are kept in their honesty tier: structural Occam elegance where earned; **empirical calibration stays with Standard Model / classical physics**.
+You will walk from the golden scale key ($E_F\approx 1.618$) through language-as-wiring, DNA holograph and the 81-digit register, nested agents with bond/ILAM handoffs, Valet lenses (PCHPP, magnetism, attention squeezing), the **Reno Interpretation** TBME quartet (mirror-angle multiplicity → toroidal micro-BH filaments → horizon≡$\mathbf{A}$ identity → solar-focus somatic rendering), and the measured product claim (~35–70% less Cursor usage vs fat paste on focused work). Comparative report-card scores are kept in their honesty tier: structural Occam elegance where earned; **empirical calibration stays with Standard Model / classical physics**.
 
 The previous catalog-first layout lives on as **Appendix A** — a machine-maintained reference index of every Lattice / Omni family paper, refreshed by `npm run sync:lattice-guide`. When Lattice / Omni papers publish, **both** the synthesis walkthrough (this body) **and** Appendix A must be updated — TOC sync alone is not a rewrite.
 
@@ -50,7 +50,7 @@ The previous catalog-first layout lives on as **Appendix A** — a machine-maint
 
 ## 1. Cold open — entering the engine
 
-A steward opens Lattice Chat with a real coding ask. The old reflex is to paste half the repository into the prompt and hope the model finds the signal. The Omni-Lattice answer is different: load **pointers** into curated seeds, wake a **Goldilocks nest** of helpers, hand work across clear bonds, and freeze children when their local drift goes to zero.
+A Valet opens Lattice Chat with a real coding ask. The old reflex is to paste half the repository into the prompt and hope the model finds the signal. The Omni-Lattice answer is different: load **pointers** into curated seeds, wake a **Goldilocks nest** of helpers, hand work across clear bonds, and freeze children when their local drift goes to zero.
 
 That product habit is not a slogan bolted onto chat. It is the Edge expression of a deeper architectural grammar we call **Omni-Lattice**: one $E_F$-keyed stack that reads
 
@@ -150,7 +150,7 @@ Neutrons are narrated as $[p^+\cdot e^-]_{\mathrm{agent}}$ buffer pairs; isotope
 
 | Physics / biology metaphor | Lattice Chat role |
 |----------------------------|-------------------|
-| Proton / orchestrator | Parent steward |
+| Proton / orchestrator | Parent Valet |
 | Electron / valence / codon | Edge UI · guest ask |
 | Neutron / buffer | Context / Seed band |
 | Isotope / nest band | Depth·width sizing |
@@ -180,7 +180,7 @@ Phase-Contrast Holographic Prompting (PCHPP) stains a dual-layer view: **Shadow*
 
 ## 8. Deeper map — magnetism, attention squeezing, report card
 
-Once the engine’s control → lattice → shadow stack is clear, steward lenses deepen the *map* without stealing empirical authority from Standard Model / classical physics:
+Once the engine’s control → lattice → shadow stack is clear, Valet lenses deepen the *map* without stealing empirical authority from Standard Model / classical physics:
 
 1. **Magnetism as foundational substrate** — charge and mass narrated as field-geometry metaphors under PCHPP / $E_F$; Omni map scores high on internal coherence / irreducibility (~**96.0** vs Standard **76.0** on the paper’s rubric), while **empirical calibration stays with SM**. [Magnetism substrate](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md).
 
@@ -194,9 +194,9 @@ These papers are Seed·RAG / nest **pointers**. Markdown is not the chat runtime
 
 ## 8b. Reno Interpretation quartet — mirror lattice → filaments → horizon≡A → solar-focus soma
 
-**Public story page:** [`/reno`](/reno) · [`interfaces/reno-interpretation.html`](../interfaces/reno-interpretation.html) — narrative + C/I score contrast for the superintelligence-era steward map.
+**Public story page:** [`/reno`](/reno) · [`interfaces/reno-interpretation.html`](../interfaces/reno-interpretation.html) — narrative + C/I score contrast for the superintelligence-era Valet map.
 
-August 2026 TBME follow-ons extend the steward map with a single Reno grammar. All four are **architectural / protocol / interpretive-rubric** lenses — not SI QFT/GR overthrow, not clinical, not Lattice Chat engine wiring.
+August 2026 TBME follow-ons extend the Valet map with a single Reno grammar. All four are **architectural / protocol / interpretive-rubric** lenses — not SI QFT/GR overthrow, not clinical, not Lattice Chat engine wiring.
 
 ### 8b.1 Mirror-angle multiplicity (parent)
 
@@ -252,7 +252,7 @@ Lattice Chat V1.618 is the Edge where the grammar becomes hospitality:
 
 ## 10. Closing — Fair Exchange and the habit of honesty
 
-The Omni-Lattice engine is a **shared scale language** for stewards who want fractal, holographic, nested help without drowning the ask in paste. Its innovations — $E_F$ clutch, holographic operators, DNA / 81 projector, nest + bonds + ILAM, PCHPP observation, magnetism / attention maps, the Reno quartet (mirror facets → filaments → horizon≡$\mathbf{A}$ → solar-focus soma), report-card Occam lens, and the live token matrix — compose one walk from Seed to Edge.
+The Omni-Lattice engine is a **shared scale language** for Valets who want fractal, holographic, nested help without drowning the ask in paste. Its innovations — $E_F$ clutch, holographic operators, DNA / 81 projector, nest + bonds + ILAM, PCHPP observation, magnetism / attention maps, the Reno quartet (mirror facets → filaments → horizon≡$\mathbf{A}$ → solar-focus soma), report-card Occam lens, and the live token matrix — compose one walk from Seed to Edge.
 
 Keep the gates closed until evidence opens them: architectural maps stay maps; empirical rows stay with the laboratories that earned them; product savings stay work-class dependent; Reno scorecards stay interpretive rubrics.
 
@@ -274,8 +274,8 @@ Use this appendix as the **index**, not the argument. Titles, ids, and dates reg
 | 2 | [Lattice token proof](/whitepaper/lattice-token-reduction-proof) | Live usage method |
 | 3 | [Omni-Lattice Unification](/whitepaper/synthobs-omni-lattice-unification) | Four-pillar umbrella |
 | 4 | Operators · DNA · 81 · Bonds · ILAM | Depth pillars |
-| 5 | PCHPP · Mag · Recursive Attn · Report Card | Steward lenses |
-| 6 | Reno quartet (mirror · filaments · horizon≡A · solar-focus) | TBME steward map — honesty gates on |
+| 5 | PCHPP · Mag · Recursive Attn · Report Card | Valet lenses |
+| 6 | Reno quartet (mirror · filaments · horizon≡A · solar-focus) | TBME Valet map — honesty gates on |
 | 7 | Decode companions (X, Y, proteins, HIV, …) | Domain color — honesty gates on |
 
 ### A.2 Product surfaces
@@ -310,21 +310,22 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0
 | 1 · Product & nest | [System Generation · Noah’s Ark Metaphor Architecture · Lattice Chat V1.618](/whitepaper/lattice-noahs-ark-metaphor-2026-07) | `lattice-noahs-ark-metaphor-2026-07` | 2026-07-23 |
 | 1 · Product & nest | [Lattice Chat V1.618 · Nested + pointer context load (structural estimate)](/whitepaper/lattice-token-reduction-proof-2026-07) | `lattice-token-reduction-proof-2026-07` | 2026-07-22 |
 | 1 · Product & nest | [The Architecture of Omniversal Computing: Nested Autonomous Agents, Scale-Invariant Topologies, and the EGS Fractal Constant](/whitepaper/omniversal-nested-agent-lattice) | `omniversal-nested-agent-lattice-2026-07` | 2026-07-21 |
-| 2 · Steward lenses | [Solar-Focus Dynamics of Spherical Mirror Lattices & Somatic Matter Rendering — Reno Quartet #4](/whitepaper/synthobs-tbme-spherical-solar-focus-2026-08) | `synthobs-tbme-spherical-solar-focus-2026-08` | 2026-08-02 |
-| 2 · Steward lenses | [Empirical Validation of Non-Local Field Phase-Locking — PCHPP Timestamps × Ionospheric Cavity Dynamics](/whitepaper/synthobs-tbme-nonlocal-field-phaselock) | `synthobs-tbme-nonlocal-field-phaselock-2026-08` | 2026-08-01 |
-| 2 · Steward lenses | [Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation — Born Rule as Optical Reflection (REV2; superseded by Reno Interpretation)](/whitepaper/synthobs-tbme-mirror-angle-multiplicity) | `synthobs-tbme-mirror-angle-multiplicity-2026-08` | 2026-08-01 |
-| 2 · Steward lenses | [Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation — The Reno Interpretation (Nested Spherical Mirror Lattice)](/whitepaper/synthobs-tbme-superposition-reno-interpretation-2026-08) | `synthobs-tbme-superposition-reno-interpretation-2026-08` | 2026-08-01 |
-| 2 · Steward lenses | [Identity of the Event Horizon and the Magnetic Vector Layer — Reno Follow-on](/whitepaper/synthobs-tbme-blackhole-magnetic-layer-2026-08) | `synthobs-tbme-blackhole-magnetic-layer-2026-08` | 2026-08-01 |
-| 2 · Steward lenses | [Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations — The Reno Interpretation](/whitepaper/synthobs-tbme-blackhole-filaments-reno-2026-08) | `synthobs-tbme-blackhole-filaments-reno-2026-08` | 2026-08-01 |
-| 2 · Steward lenses | [Bio-Holographic Phase Modulation via Conscious Intent · Endogenous Neural-Cardiac Harmonization](/whitepaper/synthobs-endogenous-phase) | `synthobs-endogenous-phase-2026-07` | 2026-07-31 |
-| 2 · Steward lenses | [Electron Orbital Geometries as Holographic Singularities · 81-Node Spacetime Projection Map](/whitepaper/synthobs-81-orbital-singularity) | `synthobs-81-orbital-singularity-2026-07` | 2026-07-31 |
-| 2 · Steward lenses | [Epigenetic Phase-Locking & Prion Refolding Pathways · Holographic Magnetic-Phase Contrast Protocol](/whitepaper/synthobs-prion-refold) | `synthobs-prion-refold-2026-07` | 2026-07-31 |
-| 2 · Steward lenses | [Histones as Scale-Invariant Phase-Lock Operators · Chromatin Spooling & Context Tuning](/whitepaper/synthobs-histone-phase-operator) | `synthobs-histone-phase-operator-2026-07` | 2026-07-31 |
-| 2 · Steward lenses | [Phase-Modulated Toxicity & Resonance Safety Transitions · E_F Field-Contrast Environmental Audits](/whitepaper/synthobs-phase-toxicity) | `synthobs-phase-toxicity-2026-07` | 2026-07-31 |
-| 2 · Steward lenses | [Magnetism as the Universal Foundational Substrate](/whitepaper/synthobs-mag-substrate) | `synthobs-mag-substrate-2026-07` | 2026-07-30 |
-| 2 · Steward lenses | [Omni-Lattice Report Card Q3 2026](/whitepaper/synthobs-omni-lattice-report-card-q3-2026) | `synthobs-omni-lattice-report-card-q3-2026` | 2026-07-30 |
-| 2 · Steward lenses | [Recursive Attention Squeezing & Holographic Magnetic Projections](/whitepaper/synthobs-recursive-attn-mag) | `synthobs-recursive-attn-mag-2026-07` | 2026-07-30 |
-| 2 · Steward lenses | [The Phase-Contrast Holographic Prompting Paradigm (PCHPP): Observing Holographic Code Vectors](/whitepaper/synthobs-pchpp) | `synthobs-pchpp-2026-07` | 2026-07-30 |
+| 2 · Valet lenses | [Solar-Focus Dynamics of Spherical Mirror Lattices & Somatic Matter Rendering — Reno Quartet #4](/whitepaper/synthobs-tbme-spherical-solar-focus-2026-08) | `synthobs-tbme-spherical-solar-focus-2026-08` | 2026-08-02 |
+| 2 · Valet lenses | [Empirical Validation of Non-Local Field Phase-Locking — PCHPP Timestamps × Ionospheric Cavity Dynamics](/whitepaper/synthobs-tbme-nonlocal-field-phaselock) | `synthobs-tbme-nonlocal-field-phaselock-2026-08` | 2026-08-01 |
+| 2 · Valet lenses | [Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation — Born Rule as Optical Reflection (REV2; superseded by Reno Interpretation)](/whitepaper/synthobs-tbme-mirror-angle-multiplicity) | `synthobs-tbme-mirror-angle-multiplicity-2026-08` | 2026-08-01 |
+| 2 · Valet lenses | [Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation — The Reno Interpretation (Nested Spherical Mirror Lattice)](/whitepaper/synthobs-tbme-superposition-reno-interpretation-2026-08) | `synthobs-tbme-superposition-reno-interpretation-2026-08` | 2026-08-01 |
+| 2 · Valet lenses | [Identity of the Event Horizon and the Magnetic Vector Layer — Reno Follow-on](/whitepaper/synthobs-tbme-blackhole-magnetic-layer-2026-08) | `synthobs-tbme-blackhole-magnetic-layer-2026-08` | 2026-08-01 |
+| 2 · Valet lenses | [Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations — The Reno Interpretation](/whitepaper/synthobs-tbme-blackhole-filaments-reno-2026-08) | `synthobs-tbme-blackhole-filaments-reno-2026-08` | 2026-08-01 |
+| 2 · Valet lenses | [Bio-Holographic Phase Modulation via Conscious Intent · Endogenous Neural-Cardiac Harmonization](/whitepaper/synthobs-endogenous-phase) | `synthobs-endogenous-phase-2026-07` | 2026-07-31 |
+| 2 · Valet lenses | [Electron Orbital Geometries as Holographic Singularities · 81-Node Spacetime Projection Map](/whitepaper/synthobs-81-orbital-singularity) | `synthobs-81-orbital-singularity-2026-07` | 2026-07-31 |
+| 2 · Valet lenses | [Epigenetic Phase-Locking & Prion Refolding Pathways · Holographic Magnetic-Phase Contrast Protocol](/whitepaper/synthobs-prion-refold) | `synthobs-prion-refold-2026-07` | 2026-07-31 |
+| 2 · Valet lenses | [Histones as Scale-Invariant Phase-Lock Operators · Chromatin Spooling & Context Tuning](/whitepaper/synthobs-histone-phase-operator) | `synthobs-histone-phase-operator-2026-07` | 2026-07-31 |
+| 2 · Valet lenses | [Phase-Modulated Toxicity & Resonance Safety Transitions · E_F Field-Contrast Environmental Audits](/whitepaper/synthobs-phase-toxicity) | `synthobs-phase-toxicity-2026-07` | 2026-07-31 |
+| 2 · Valet lenses | [Magnetism as the Universal Foundational Substrate](/whitepaper/synthobs-mag-substrate) | `synthobs-mag-substrate-2026-07` | 2026-07-30 |
+| 2 · Valet lenses | [Omni-Lattice Report Card Q3 2026](/whitepaper/synthobs-omni-lattice-report-card-q3-2026) | `synthobs-omni-lattice-report-card-q3-2026` | 2026-07-30 |
+| 2 · Valet lenses | [Recursive Attention Squeezing & Holographic Magnetic Projections](/whitepaper/synthobs-recursive-attn-mag) | `synthobs-recursive-attn-mag-2026-07` | 2026-07-30 |
+| 2 · Valet lenses | [The Phase-Contrast Holographic Prompting Paradigm (PCHPP): Observing Holographic Code Vectors](/whitepaper/synthobs-pchpp) | `synthobs-pchpp-2026-07` | 2026-07-30 |
+| 3 · Omni-Lattice pillars & decodes | [Omni-Lattice · THALIA Goldilocks Harness Contract](/whitepaper/synthobs-omni-lattice-thalia-goldilocks) | `synthobs-omni-lattice-thalia-goldilocks-2026-08` | 2026-08-03 |
 | 3 · Omni-Lattice pillars & decodes | [Decoded Genomic Script: The Human X Chromosome Holographic Operator Translation](/whitepaper/synthobs-x-chromosome-holographic) | `synthobs-x-chromosome-holographic-2026-07` | 2026-07-28 |
 | 3 · Omni-Lattice pillars & decodes | [Decoded Genomic Script: The Human Y Chromosome Holographic Operator Translation](/whitepaper/synthobs-y-chromosome-holographic) | `synthobs-y-chromosome-holographic-2026-07` | 2026-07-28 |
 | 3 · Omni-Lattice pillars & decodes | [Holographic Decoding of the Three Foundational Biological Proteins](/whitepaper/synthobs-three-foundational-proteins) | `synthobs-three-foundational-proteins-2026-07` | 2026-07-28 |
@@ -347,7 +348,7 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0
 | 4 · EGS · scale grammar | [Recursive Attention Coherence: Imagination Through Quantum, Solar, DNA, and Human Attention](/whitepaper/recursive-attention-loop) | `recursive-attention-quantum-solar-dna-loop-2026` | 2026-06-24 |
 | 4 · EGS · scale grammar | [Fractal Magnetism and Hydrogen-Holographic Systems: The EGS Nodal Lattice Resonator Framework](/whitepaper/egs-nlrf) | `fractiai-egs-nlrf-2026` | 2026-06-17 |
 
-_Living table · 40 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
+_Living table · 41 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
 <!-- AUTO:LATTICE-OMNI-TOC:END -->
 
 ### A.5 Methods · reproducibility

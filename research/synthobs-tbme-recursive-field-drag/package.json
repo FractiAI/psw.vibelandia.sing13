@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-tbme-recursive-field-drag",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.04",
+  "description": "Recursive Field-Drag Theorem — Omni-Lattice Core Part V lens suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-tbme-recursive-field-drag.git"
+  }
+}

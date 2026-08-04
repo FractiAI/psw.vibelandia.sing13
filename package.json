@@ -59,6 +59,7 @@
     "research:synthobs-omni-lattice-report-card-q3-2026": "node research/synthobs-omni-lattice-report-card-q3-2026/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-mag-substrate": "node research/synthobs-mag-substrate/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-recursive-attn-mag": "node research/synthobs-recursive-attn-mag/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-omni-prime-hourglass-skeleton": "node research/synthobs-omni-prime-hourglass-skeleton/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-prion-refold": "node research/synthobs-prion-refold/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-81-orbital-singularity": "node research/synthobs-81-orbital-singularity/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-histone-phase-operator": "node research/synthobs-histone-phase-operator/scripts/run_empirical_pipeline.mjs",

@@ -223,6 +223,83 @@
       opacity: 0.9;
       margin-bottom: 1.25rem;
     }
+
+    /* Host dispatch · Valet Pru */
+    .host-dispatch {
+      display: grid;
+      gap: 1.1rem;
+      margin: 0 0 1.75rem;
+      padding: 1.1rem 0 1.35rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+      text-align: center;
+    }
+    @media (min-width: 640px) {
+      .host-dispatch {
+        grid-template-columns: minmax(7.5rem, 9.5rem) 1fr;
+        gap: 1.35rem 1.5rem;
+        text-align: left;
+        align-items: start;
+      }
+    }
+    .host-dispatch__photo {
+      margin: 0 auto;
+      width: min(100%, 9.5rem);
+    }
+    .host-dispatch__photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: 50% 28%;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .host-dispatch__eyebrow {
+      margin: 0 0 0.35rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .host-dispatch__welcome {
+      margin: 0 0 0.55rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 3vw, 1.35rem);
+      line-height: 1.4;
+      color: var(--champagne);
+    }
+    .host-dispatch__body {
+      margin: 0 0 0.75rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--text-soft);
+    }
+    .host-dispatch__news {
+      margin: 0;
+      padding: 0.75rem 0 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.22);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--text-soft);
+    }
+    .host-dispatch__news strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .host-dispatch__sign {
+      margin: 0.85rem 0 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .host-dispatch__sign a { color: var(--champagne); font-weight: 700; }
+
     .bulletin-board {
       list-style: none;
       border-top: 1px solid rgba(212, 175, 55, 0.35);
@@ -386,7 +463,43 @@
   <section class="bulletin" id="bulletin" aria-labelledby="bulletin-h2">
     <span class="bulletin-kicker">Today’s board</span>
     <h2 id="bulletin-h2" class="bulletin-head">Ship bulletin</h2>
-    <p class="bulletin-sub">Pick a channel. Stay Goldilocks. Wrong side means honest.</p>
+    <p class="bulletin-sub">From your host · then the day’s channels.</p>
+
+    <article class="host-dispatch" aria-labelledby="host-welcome-h">
+      <figure class="host-dispatch__photo">
+        <img
+          src="/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg"
+          width="768"
+          height="1024"
+          alt="Valet Pru — host of SS Vibelandia"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </figure>
+      <div>
+        <p class="host-dispatch__eyebrow">Your host · Valet Pru · Downtown Reno</p>
+        <h3 id="host-welcome-h" class="host-dispatch__welcome">Hello and welcome aboard. This is Valet Pru.</h3>
+        <p class="host-dispatch__body">
+          You are on <strong style="color:var(--champagne)">SS Vibelandia</strong> — FractiAI’s Goldilocks Sonic Ship
+          on the wrong side of town. Everything is just right: music on the jukebox, papers in the library,
+          Lattice Chat for builders, and personal concierge for Downtown Reno &amp; beyond.
+          Where intentions matter.
+        </p>
+        <p class="host-dispatch__news">
+          <strong>News for the day · Aug 4, 2026</strong>
+          This board is live as the ship’s daily bulletin. Omni-Lattice Core Part V —
+          the Recursive Field-Drag Theorem — is in the library. Listen free on Capitan’s Bridge;
+          book concierge if you need a real human on the ground. I am here throughout —
+          same host, same email, same standard of care.
+        </p>
+        <p class="host-dispatch__sign">
+          — Valet Pru · PL Taino ·
+          <a href="mailto:valetpru@gmail.com?subject=SS%20Vibelandia%20bulletin">valetpru@gmail.com</a>
+          · <a href="tel:+17752031281">(775) 203-1281</a>
+        </p>
+      </div>
+    </article>
+
     <ul class="bulletin-board" role="list">
       <li>
         <a href="/listen" data-qv-jukebox>

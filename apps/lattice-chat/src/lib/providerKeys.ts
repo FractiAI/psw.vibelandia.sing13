@@ -19,7 +19,7 @@ export const LATTICE_PROVIDERS: {
     keyPlaceholder: 'key_… from cursor.com → API Keys',
     keyHelp: 'cursor.com/dashboard → API Keys',
     honesty:
-      'Cursor cloud agents. Guests run on a sandbox (SING13 write locked). Creators attach SING13.',
+      'Cursor cloud agents. Guests use an empty sandbox VM (no SING13 write). Creators attach SING13.',
   },
   {
     id: 'claude',

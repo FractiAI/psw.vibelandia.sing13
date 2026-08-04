@@ -20,17 +20,17 @@ export const config = {
 };
 
 const DEFAULT_REPO = 'https://github.com/FractiAI/psw.vibelandia.sing13';
-/** Public sandbox for guest agents — never FractiAI SING13 (overwrite lock). */
-const DEFAULT_GUEST_AGENT_REPO = 'https://github.com/octocat/Hello-World';
 const CREATOR_EMAIL = 'valetpru@gmail.com';
 /**
- * Guests run full Agent mode on a non-SING13 sandbox.
- * Creators attach SING13 with write. That split is the anti-overwrite control.
+ * Guests run full Agent mode on a Cursor **no-repo** cloud workspace (empty VM).
+ * That avoids GitHub branch verification and never clones SING13.
+ * Optional LATTICE_GUEST_REPO_URL attaches a non-SING13 repo instead.
+ * Creators attach SING13 with write — that split is the anti-overwrite control.
  */
 const SING13_REPO_HOST_RE = /github\.com[/:]FractiAI\/psw\.vibelandia\.sing13(?:\.git)?(?:\/|$|\?|#)/i;
 const GUEST_SANDBOX_DIRECTIVE = `## Guest session (sandbox agents)
-You are helping a paid Lattice Chat guest. Full agent tools are allowed on this **sandbox workspace**.
-You MAY edit, create, delete, run tools, and iterate inside the attached sandbox.
+You are helping a paid Lattice Chat guest. Full agent tools are allowed in this **sandbox workspace** (empty cloud VM or a non-SING13 repo).
+You MAY edit, create, delete, run tools, and iterate inside this sandbox.
 Do NOT clone, edit, commit, push, or open pull requests against FractiAI/psw.vibelandia.sing13 or any production ship app.
 SING13 product context comes from Lattice prompts / RAG pointers — never by writing the live repository.`;
 const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
@@ -1547,14 +1547,15 @@ function isSing13RepoUrl(url) {
 
 /**
  * Creators → SING13 (agent write OK).
- * Guests → non-SING13 sandbox (full agent OK). Never attach SING13 for guests.
- * Override sandbox with LATTICE_GUEST_REPO_URL / LATTICE_GUEST_STARTING_REF (must not be SING13).
+ * Guests → no-repo cloud agent by default (full agent, no branch/GitHub gate).
+ * Optional LATTICE_GUEST_REPO_URL / LATTICE_GUEST_STARTING_REF (must not be SING13).
  */
 function resolveCursorCloudAttach(access, creatorRepoUrl, startingRef) {
   if (access?.privilege === 'creator') {
     return {
       repos: [{ url: creatorRepoUrl, startingRef }],
       guestSandbox: false,
+      noRepo: false,
       forcePlan: false,
       workspace: creatorRepoUrl,
       allowAgentMode: true,
@@ -1563,20 +1564,27 @@ function resolveCursorCloudAttach(access, creatorRepoUrl, startingRef) {
   }
 
   const configured = (process.env.LATTICE_GUEST_REPO_URL || '').trim();
-  let guestUrl =
-    configured && !isSing13RepoUrl(configured) ? configured : DEFAULT_GUEST_AGENT_REPO;
-  if (isSing13RepoUrl(guestUrl)) guestUrl = DEFAULT_GUEST_AGENT_REPO;
+  if (configured && !isSing13RepoUrl(configured)) {
+    const guestRef =
+      (process.env.LATTICE_GUEST_STARTING_REF || 'main').trim() || 'main';
+    return {
+      repos: [{ url: configured, startingRef: guestRef }],
+      guestSandbox: true,
+      noRepo: false,
+      forcePlan: false,
+      workspace: configured,
+      allowAgentMode: true,
+      sing13Write: false,
+    };
+  }
 
-  const helloWorld = /github\.com[/:]octocat\/Hello-World/i.test(guestUrl);
-  const guestRef =
-    (process.env.LATTICE_GUEST_STARTING_REF || '').trim() ||
-    (helloWorld ? 'master' : 'main');
-
+  // Default guest path: empty Cursor cloud workspace — no clone, no branch verify.
   return {
-    repos: [{ url: guestUrl, startingRef: guestRef }],
+    repos: [],
     guestSandbox: true,
+    noRepo: true,
     forcePlan: false,
-    workspace: guestUrl,
+    workspace: '',
     allowAgentMode: true,
     sing13Write: false,
   };
@@ -1585,6 +1593,61 @@ function resolveCursorCloudAttach(access, creatorRepoUrl, startingRef) {
 function withGuestSandboxGuard(prompt, guestSandbox) {
   if (!guestSandbox) return prompt;
   return `${GUEST_SANDBOX_DIRECTIVE}\n\n${prompt}`;
+}
+
+function isBranchVerifyError(err) {
+  const msg = err instanceof Error ? err.message : String(err || '');
+  return /verify existence of branch|default branch|repository access|GitHub App|cursor github|not in cursor|failed to (clone|access).*repo/i.test(
+    msg,
+  );
+}
+
+/** Cloud create opts — guests default to no-repo empty VM (SDK: omit repos). */
+function buildCursorCloudOpts(cloudAttach, cursorRepos) {
+  if (cloudAttach?.noRepo) {
+    return { env: { type: 'cloud' } };
+  }
+  return { repos: cursorRepos };
+}
+
+async function createCursorCloudAgent(
+  Agent,
+  { apiKey, modelSelection, agentMode, cloudAttach, cursorRepos, timeoutMs },
+) {
+  const cloud = buildCursorCloudOpts(cloudAttach, cursorRepos);
+  try {
+    return await withTimeout(
+      Agent.create({
+        apiKey,
+        model: modelSelection,
+        mode: agentMode,
+        cloud,
+      }),
+      timeoutMs,
+      'Agent.create',
+    );
+  } catch (err) {
+    if (cloudAttach?.noRepo || !isBranchVerifyError(err)) throw err;
+    const first = cursorRepos?.[0];
+    if (!first?.url || !first?.startingRef) throw err;
+    const alt =
+      first.startingRef === 'main'
+        ? 'master'
+        : first.startingRef === 'master'
+          ? 'main'
+          : null;
+    if (!alt) throw err;
+    return await withTimeout(
+      Agent.create({
+        apiKey,
+        model: modelSelection,
+        mode: agentMode,
+        cloud: { repos: [{ url: first.url, startingRef: alt }] },
+      }),
+      timeoutMs,
+      'Agent.create',
+    );
+  }
 }
 
 /** Soft probe — SING13 write-attach is creator-only; guests agent on sandbox. */
@@ -1855,7 +1918,9 @@ export default async function handler(req, res) {
       provider === 'cursor'
         ? resolveCursorCloudAttach(access, repoUrl, startingRefEarly)
         : null;
-    if (cloudAttach?.workspace) {
+    if (cloudAttach?.noRepo) {
+      repoUrl = '';
+    } else if (cloudAttach?.workspace) {
       repoUrl = cloudAttach.workspace;
     }
     const modelId =
@@ -2002,11 +2067,14 @@ export default async function handler(req, res) {
     // --- Cursor cloud path (default) ---
     const startingRef =
       cloudAttach?.repos?.[0]?.startingRef ||
-      (process.env.LATTICE_STARTING_REF || 'main').trim() ||
-      'main';
-    const cursorRepos = cloudAttach?.repos?.length
-      ? cloudAttach.repos
-      : [{ url: repoUrl, startingRef }];
+      (cloudAttach?.noRepo
+        ? ''
+        : (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main');
+    const cursorRepos = cloudAttach?.noRepo
+      ? []
+      : cloudAttach?.repos?.length
+        ? cloudAttach.repos
+        : [{ url: repoUrl, startingRef }];
     const guestSandbox = Boolean(cloudAttach?.guestSandbox);
     const stream = wantsStream(req, body);
     if (stream) initSse(res);
@@ -2166,28 +2234,26 @@ export default async function handler(req, res) {
       }
 
       if (!agent) {
-        // Guests: full agent on sandbox (never SING13). Creators: SING13 agent.
+        // Guests: no-repo sandbox agent (never SING13). Creators: SING13 agent.
         const createTimeoutMs = guestSandbox ? 90_000 : 120_000;
         if (stream) {
           sseWrite(res, 'status', {
             message: guestSandbox
-              ? 'Creating Lattice sandbox agent…'
+              ? cloudAttach?.noRepo
+                ? 'Creating Lattice sandbox agent (empty workspace)…'
+                : 'Creating Lattice sandbox agent…'
               : 'Creating Lattice cloud agent (repo spin-up can take a minute)…',
           });
         }
         try {
-          agent = await withTimeout(
-            Agent.create({
-              apiKey,
-              model: modelSelection,
-              mode: agentMode,
-              cloud: {
-                repos: cursorRepos,
-              },
-            }),
-            createTimeoutMs,
-            'Agent.create',
-          );
+          agent = await createCursorCloudAgent(Agent, {
+            apiKey,
+            modelSelection,
+            agentMode,
+            cloudAttach,
+            cursorRepos,
+            timeoutMs: createTimeoutMs,
+          });
         } catch (createErr) {
           if (createErr?.code === 'timeout') {
             return respondLattice(
@@ -2198,11 +2264,28 @@ export default async function handler(req, res) {
                   ? `Sandbox agent timed out after ${Math.round(createTimeoutMs / 1000)}s. Send again, or switch provider to Claude / Gemini.`
                   : 'Cloud agent creation timed out after 120s. Check Cursor GitHub access for this API key, then send again.',
                 code: 'agent_create_timeout',
-                repoUrl,
-                startingRef,
+                repoUrl: repoUrl || null,
+                startingRef: startingRef || null,
                 clearAgent: true,
               },
               504,
+            );
+          }
+          if (isBranchVerifyError(createErr)) {
+            return respondLattice(
+              res,
+              stream,
+              {
+                error: guestSandbox
+                  ? `${createErr instanceof Error ? createErr.message : String(createErr)} Guest sandbox could not open that GitHub branch. Hard refresh and send again (empty sandbox has no branch), or switch to Claude / Gemini.`
+                  : `${createErr instanceof Error ? createErr.message : String(createErr)} Lattice uses ${repoUrl} @ ${startingRef}.`,
+                code: 'cursor_github_access',
+                repoUrl: repoUrl || null,
+                startingRef: startingRef || null,
+                clearAgent: true,
+                guestSandbox,
+              },
+              422,
             );
           }
           throw createErr;
@@ -2248,27 +2331,29 @@ export default async function handler(req, res) {
           apiKey,
         ));
       } catch (sendErr) {
-        // BYOK: stale agent ids from another key must not 500-loop the client.
-        if (isAgentNotFoundError(sendErr)) {
-          console.warn('[lattice-chat] stale agent — recreating under current edge key');
+        // BYOK: stale agent ids / old Hello-World branch locks must not 500-loop the client.
+        if (
+          isAgentNotFoundError(sendErr) ||
+          (guestSandbox && isBranchVerifyError(sendErr))
+        ) {
+          console.warn(
+            '[lattice-chat] stale/branch-locked agent — recreating under current edge key',
+            sendErr instanceof Error ? sendErr.message : sendErr,
+          );
           agentId = null;
           try {
             await disposeAgent(agent);
           } catch {
             /* ignore */
           }
-          agent = await withTimeout(
-            Agent.create({
-              apiKey,
-              model: modelSelection,
-              mode: agentMode,
-              cloud: {
-                repos: cursorRepos,
-              },
-            }),
-            guestSandbox ? 90_000 : 120_000,
-            'Agent.create',
-          );
+          agent = await createCursorCloudAgent(Agent, {
+            apiKey,
+            modelSelection,
+            agentMode,
+            cloudAttach,
+            cursorRepos,
+            timeoutMs: guestSandbox ? 90_000 : 120_000,
+          });
           agentId = agent.agentId ?? null;
           resumedOk = false;
           if (stream) sseWrite(res, 'agent', { agentId });
@@ -2421,13 +2506,14 @@ export default async function handler(req, res) {
           stream,
           {
             error: guestSandbox
-              ? `${msg} Cursor could not open the guest sandbox for this key. Send again, or switch provider to Claude / Gemini.`
+              ? `${msg} Guest Cursor sandbox could not open a GitHub branch. Tap Hard refresh, then send again (default sandbox is empty — no branch). Or switch to Claude / Gemini.`
               : `${msg} Lattice uses ${repoUrl} @ ${startingRef}. Connect GitHub for the Cursor account that owns this API key (cursor.com/dashboard/integrations) and ensure that workspace repo is visible — public clone ≠ Cursor cloud access.`,
             code: 'cursor_github_access',
-            repoUrl,
-            startingRef,
+            repoUrl: repoUrl || null,
+            startingRef: startingRef || null,
             agentId: agent?.agentId ?? agentId,
             guestSandbox,
+            clearAgent: true,
           },
           422,
         );

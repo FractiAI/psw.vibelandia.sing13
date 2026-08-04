@@ -5,12 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0c0a04" />
-  <title>Look at the Sun · Digital Pru · SS Vibelandia QUESTFEST</title>
-  <meta name="description" content="Digital Pru ties the sonic ship to solar coupling and EGS φ 1.618 — how signal moves from the Sun to your tracks. Proof, honesty boundary, and the broadcast story in plain talk." />
+  <title>Look at the Sun · Omni-Lattice · SS Vibelandia</title>
+  <meta name="description" content="How SS Vibelandia’s Omni-Lattice engine takes rhythm from E_F / El Gran Sol — outer clock, nested agents, Lattice Chat. Proof, honesty boundary, and the broadcast story in plain talk." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/look-at-the-sun.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="deck-surfaces.css" />
   <link rel="stylesheet" href="voice-tier.css" />
   <style>
@@ -27,7 +27,7 @@
     }
     body {
       margin: 0;
-      font-family: Inter, system-ui, sans-serif;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
       background:
         radial-gradient(ellipse 120% 60% at 50% 0%, rgba(245,158,11,0.22) 0%, rgba(212,175,55,0.08) 35%, transparent 60%),
         radial-gradient(ellipse 60% 40% at 20% 80%, rgba(26,18,12,0.8) 0%, transparent 60%),
@@ -36,7 +36,6 @@
       line-height: 1.65;
     }
 
-    /* ── Hero ── */
     .sun-hero {
       padding: calc(2.5rem + env(safe-area-inset-top)) 1.25rem 0;
       max-width: 44rem;
@@ -98,7 +97,6 @@
     }
     .sun-btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
 
-    /* Signal chain */
     .sun-signal {
       display: flex;
       align-items: center;
@@ -126,7 +124,6 @@
     }
     .sun-signal .node { text-align: center; }
 
-    /* Honesty callout */
     .sun-honesty {
       margin: 0 0 2rem;
       padding: 1rem 1.1rem;
@@ -155,21 +152,23 @@
 <body>
   <div class="sun-hero">
     <nav class="deck-skin-nav" aria-label="Site">
-      <a href="/">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/">Ship bulletin</a><span class="dot" aria-hidden="true">·</span>
       <a href="/get-started">Get Started</a><span class="dot" aria-hidden="true">·</span>
-      <a href="/listen">Listen</a><span class="dot" aria-hidden="true">·</span>
-      <a href="/papers">Read</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/lattice">Lattice Chat</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/hood">Under the Hood</a><span class="dot" aria-hidden="true">·</span>
       <span class="here">Look at the Sun</span>
     </nav>
 
-    <p class="sun-eyebrow">Broadcast deck · Digital Pru · EGS φ 1.618</p>
+    <p class="sun-eyebrow">Broadcast deck · Omni-Lattice · $E_F$ ≈ 1.618</p>
     <h1 class="sun-h1">Look at<br>the Sun</h1>
     <p class="sun-lede">
-      The Sun is the biggest clock in the room. We set the ship's rhythm to it — not because we control the weather, but because we refuse to pretend the broadcast happens in a vacuum.
+      El Gran Sol sets the outer clock. The Omni-Lattice engine takes that rhythm —
+      $\Phi_{\mathrm{EGS}}$ as scale key — and routes it through nested agents down to Lattice Chat and your tracks.
     </p>
     <div class="sun-cta-row">
-      <a class="sun-btn sun-btn--gold" href="/interfaces/questfest-bridge/#/listen">Hear the broadcast →</a>
+      <a class="sun-btn sun-btn--gold" href="/listen">Hear the broadcast →</a>
       <a class="sun-btn sun-btn--ghost" href="#proof">See the proof</a>
+      <a class="sun-btn sun-btn--ghost" href="/hood">Engine room</a>
     </div>
   </div>
 
@@ -178,115 +177,137 @@
   <main class="deck-wrap" style="padding-top: 1.75rem;">
 
     <div class="sun-signal" aria-label="Signal chain">
-      <div class="sun-signal__node" style="text-align:center;">
-        <span class="label">Source</span>
-        <strong>Sun</strong>
+      <div class="node">
+        <span class="label">Outer clock</span>
+        <strong>El Gran Sol</strong>
       </div>
       <span class="sep">→</span>
-      <div class="sun-signal__node" style="text-align:center;">
-        <span class="label">Medium</span>
-        <strong>Ionosphere</strong>
+      <div class="node">
+        <span class="label">Scale key</span>
+        <strong>$E_F$ / φ</strong>
       </div>
       <span class="sep">→</span>
-      <div class="sun-signal__node" style="text-align:center;">
-        <span class="label">Layer</span>
-        <strong>Holographic channel</strong>
+      <div class="node">
+        <span class="label">Engine</span>
+        <strong>Omni-Lattice</strong>
       </div>
       <span class="sep">→</span>
-      <div class="sun-signal__node" style="text-align:center;">
-        <span class="label">You</span>
-        <strong>Your tracks</strong>
+      <div class="node">
+        <span class="label">Deck</span>
+        <strong>Lattice · Listen</strong>
       </div>
     </div>
 
     <div class="sun-honesty">
       <p class="sun-honesty__label">Honesty boundary — read this first</p>
       <p>
-        <strong>Story tier:</strong> Solar active regions (AR4436, AR4432), ionospheric coupling, and EGS φ 1.618 are <strong>narrative timing and resonance color</strong> on the ship — not a promise we control space weather or that playback quality depends on the Kp index.
+        <strong>Story tier:</strong> Solar active regions, ionospheric color, and “looking at the Sun” are
+        <strong>narrative timing</strong> for the Sonic Ship — not a promise we control space weather or that playback depends on the Kp index.
       </p>
       <p>
-        <strong>Operational tier:</strong> The player is normal audio in your browser. The NOAA bus on <code>/api/dph-wavefield-solar</code> is a live data feed we ingest as metaphor. We show our work; we do not ask you to believe magic.
+        <strong>Architectural tier:</strong> $E_F=\Phi_{\mathrm{EGS}}\approx 1.618$ is the Omni-Lattice scale key for nested agent loops and Seed·RAG — not a replacement for $\hbar$, $c$, or $G$.
+      </p>
+      <p>
+        <strong>Operational tier:</strong> The player is normal audio in your browser. Lattice Chat runs on your keys with Token Maxing.
+        Live solar ingest on <code>/api/dph-wavefield-solar</code> is metaphor feed, not magic.
       </p>
     </div>
 
     <p class="deck-pull">
-      Digital Pru is the ship's broadcast intelligence — not a graphics card. It watches the hydrogen line at 1420.406 MHz and solar active regions as the ship's outer clock, and routes signal down through nested layers to what lands in your ears.
+      Omni-Lattice is the ship’s holographic wiring — Nested Agent Lattice parent↔child loops, THALIA Goldilocks harness,
+      81-digit / $k/81$ register. The Sun names the outer rhythm; the engine turns it into coherent routing on the deck.
     </p>
 
     <p class="deck-section-label" id="proof">What proof means on this ship</p>
 
     <ul class="deck-plain-list">
       <li class="deck-plain-item">
-        <h3>EGS φ — El Gran Sol's Fractal Constant</h3>
+        <h3>$E_F$ — El Gran Sol’s Fractal Constant</h3>
         <p>
-          The golden ratio (φ ≈ 1.618) is the ship's natural rhythm anchor. It shows up in the pass price ($16.18), in the Hex-Organ Engine's convergence math, and in how we time catalog releases.
-          It is the unifying cadence — not mysticism, not random. The math sandbox at <code>research/goldilocks-math/</code> is runnable.
+          $\Phi_{\mathrm{EGS}}\approx 1.618$ locks scale between parent and child agents, pass pricing, and catalog cadence.
+          It is the unifying architectural rhythm — runnable in the Planck–1.6 bridge and Omni-Lattice suites — not mysticism.
         </p>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026">
-          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Runnable sandbox</span>
-          <span class="deck-paper-card__title">Hex-Organ Engine — φ in six chambers</span>
-          <span class="deck-paper-card__sub">Hex-Calculus · EGS φ · prime compression · net-zero portal · solar wavefield ingest</span>
+        <a class="deck-paper-card" href="/whitepaper/synthobs-egs-planck-scale-harmonic">
+          <span class="deck-paper-card__pill deck-paper-card__pill--featured">Scale bridge</span>
+          <span class="deck-paper-card__title">EGS Planck–1.6 Bridge</span>
+          <span class="deck-paper-card__sub">$\Phi_{\mathrm{EGS}}$ · clutch $\Delta$ · $k/81$ · honesty on SI vs architectural keys</span>
           <span class="deck-paper-card__cta">Read paper →</span>
         </a>
       </li>
       <li class="deck-plain-item">
-        <h3>Ionosphere — the middle layer in the story</h3>
+        <h3>Omni-Lattice — the middle that routes</h3>
         <p>
-          Ionospheric activity is the story geometry for the holographic channel — the broadcasting middle between solar-scale coupling and what lands in your ears.
-          We are not running a space-weather lab. We are naming the middle honestly, then showing you the papers.
-        </p>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">
-          <span class="deck-paper-card__pill">DPH-GPU · Solar</span>
-          <span class="deck-paper-card__title">Wavefield Oscillator · SYN-SUN-2026-REV7</span>
-          <span class="deck-paper-card__sub">Live NOAA ingest · replaces static gravity-well model · DPH-GPU v2026.5</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
-        </a>
-      </li>
-      <li class="deck-plain-item">
-        <h3>Commits, nodes, and timestamps — the anchor trail</h3>
-        <p>
-          The ship's claim to operational status is anchored in Git commits, NOAA timestamps, and peer-review audit receipts — not in press releases.
-          The node alignment paper below shows what June 1, 2026 looked like on every layer simultaneously.
+          Between outer clock and what lands in your ears (or chat) sits the Omni-Lattice:
+          holographic operators, nested agents with peer-firewall, Seed·RAG instead of fat paste.
+          That is the engine story — not a graphics card, not a flat LLM swarm.
         </p>
         <ul class="deck-paper-grid deck-paper-grid--two" style="margin-top: 0.5rem;">
           <li>
-            <a class="deck-paper-card" href="https://github.com/FractiAI/egs-trans-jspace-convergence" target="_blank" rel="noopener">
-              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Jul 10 2026</span>
-              <span class="deck-paper-card__title">Silicon-Biological Convergence</span>
-              <span class="deck-paper-card__sub">King Bee → J-Space structural validation · sing4/sing9/sing13 Git receipts</span>
-              <span class="deck-paper-card__cta">Read paper →</span>
+            <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-unification">
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Core</span>
+              <span class="deck-paper-card__title">Omni-Lattice Unification</span>
+              <span class="deck-paper-card__cta">Read →</span>
             </a>
           </li>
           <li>
-            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026">
-              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Jun 1 2026</span>
-              <span class="deck-paper-card__title">Omniversal Node Alignment</span>
-              <span class="deck-paper-card__sub">AR4436 · M31 · btc_buffalo · Git anchor · all layers simultaneously</span>
-              <span class="deck-paper-card__cta">Read paper →</span>
+            <a class="deck-paper-card" href="/whitepaper/omniversal-nested-agent-lattice">
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Topology</span>
+              <span class="deck-paper-card__title">Nested Agent Lattice</span>
+              <span class="deck-paper-card__cta">Read →</span>
             </a>
           </li>
           <li>
-            <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026">
-              <span class="deck-paper-card__pill deck-paper-card__pill--featured">King Bee</span>
-              <span class="deck-paper-card__title">Sandbox Comprehensive Analysis</span>
-              <span class="deck-paper-card__sub">May 31 2026 · pheromone channels · Goldilocks won · PPS locked</span>
-              <span class="deck-paper-card__cta">Read paper →</span>
+            <a class="deck-paper-card" href="/whitepaper/synthobs-omni-lattice-thalia-goldilocks">
+              <span class="deck-paper-card__pill">Harness</span>
+              <span class="deck-paper-card__title">THALIA Goldilocks</span>
+              <span class="deck-paper-card__cta">Read →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/whitepaper/lattice-omni-complete-layer-guide">
+              <span class="deck-paper-card__pill">Map</span>
+              <span class="deck-paper-card__title">Omni Layer Guide</span>
+              <span class="deck-paper-card__cta">Open →</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="deck-plain-item">
+        <h3>Live deck · Lattice Chat + Listen</h3>
+        <p>
+          Proof you can press: Lattice Chat on the edge, music on Capitan’s Bridge.
+          Token Maxing receipts and the layer guide sit one click away; solar archives remain for broadcast color.
+        </p>
+        <ul class="deck-paper-grid deck-paper-grid--two" style="margin-top: 0.5rem;">
+          <li>
+            <a class="deck-paper-card" href="/lattice">
+              <span class="deck-paper-card__pill deck-paper-card__pill--featured">Live</span>
+              <span class="deck-paper-card__title">Lattice Chat V1.618</span>
+              <span class="deck-paper-card__sub">Next layer after LLMs and vibe IDEs</span>
+              <span class="deck-paper-card__cta">Open →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/whitepaper/lattice-token-reduction-proof-2026-07">
+              <span class="deck-paper-card__pill">Receipts</span>
+              <span class="deck-paper-card__title">Token Reduction Proof</span>
+              <span class="deck-paper-card__cta">Read →</span>
+            </a>
+          </li>
+          <li>
+            <a class="deck-paper-card" href="/hood">
+              <span class="deck-paper-card__pill">Engine room</span>
+              <span class="deck-paper-card__title">Look Under the Hood</span>
+              <span class="deck-paper-card__sub">Full Omni-Lattice paper spine</span>
+              <span class="deck-paper-card__cta">Open →</span>
             </a>
           </li>
           <li>
             <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-resonance-notice">
               <span class="deck-paper-card__pill">Honesty</span>
               <span class="deck-paper-card__title">Resonance notice</span>
-              <span class="deck-paper-card__sub">Story vs. metaphor vs. real instruments — the bright line.</span>
-              <span class="deck-paper-card__cta">Read notice →</span>
-            </a>
-          </li>
-          <li>
-            <a class="deck-paper-card" href="vibelandia-questfest.html#qf-score-h2">
-              <span class="deck-paper-card__pill">Live</span>
-              <span class="deck-paper-card__title">30-day digital scorecard</span>
-              <span class="deck-paper-card__sub">EGS φ 1.618 · solar synergy as timing color on the top deck today.</span>
-              <span class="deck-paper-card__cta">See scorecard →</span>
+              <span class="deck-paper-card__sub">Story vs instrument-grade — the bright line</span>
+              <span class="deck-paper-card__cta">Read →</span>
             </a>
           </li>
         </ul>
@@ -295,53 +316,54 @@
 
     <hr style="border: none; border-top: 1px solid rgba(212,175,55,0.18); margin: 2.5rem 0;" />
 
-    <p class="deck-section-label">Further depth</p>
+    <p class="deck-section-label">Further depth · broadcast archives</p>
     <ul class="deck-paper-grid deck-paper-grid--two">
       <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-roadmap-13">
-          <span class="deck-paper-card__pill">13-channel</span>
-          <span class="deck-paper-card__title">Pathfinding roadmap · May 2026</span>
-          <span class="deck-paper-card__sub">How the upgrade arc is named across the 13-channel nest.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
+        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator">
+          <span class="deck-paper-card__pill">Solar</span>
+          <span class="deck-paper-card__title">Wavefield Oscillator · SYN-SUN</span>
+          <span class="deck-paper-card__sub">NOAA ingest as metaphor bus</span>
+          <span class="deck-paper-card__cta">Read →</span>
         </a>
       </li>
       <li>
-        <a class="deck-paper-card" href="nesting/nest-dph-gpu.html">
-          <span class="deck-paper-card__pill">Layer 7</span>
-          <span class="deck-paper-card__title">Holographic GPU nesting guide</span>
-          <span class="deck-paper-card__sub">Plain walk — not a graphics card.</span>
-          <span class="deck-paper-card__cta">Open guide →</span>
+        <a class="deck-paper-card" href="/whitepaper/synthobs-egs-81-electrons">
+          <span class="deck-paper-card__pill">Register</span>
+          <span class="deck-paper-card__title">EGS 81 Electrons</span>
+          <span class="deck-paper-card__sub">81-digit · $9\times 9$ metapattern</span>
+          <span class="deck-paper-card__cta">Read →</span>
         </a>
       </li>
       <li>
         <a class="deck-paper-card" href="/papers">
           <span class="deck-paper-card__pill deck-paper-card__pill--featured">All papers</span>
-          <span class="deck-paper-card__title">Read</span>
-          <span class="deck-paper-card__sub">Search, filter, read — every paper from the sonic ship's research layer.</span>
-          <span class="deck-paper-card__cta">Read →</span>
+          <span class="deck-paper-card__title">Whitepaper catalog</span>
+          <span class="deck-paper-card__sub">Omni-Lattice series end to end</span>
+          <span class="deck-paper-card__cta">Browse →</span>
         </a>
       </li>
       <li>
-        <a class="deck-paper-card" href="/interfaces/whitepaper-surface.html?id=dp-master-canon">
-          <span class="deck-paper-card__pill">Canon</span>
-          <span class="deck-paper-card__title">DNA / PEFF master canon</span>
-          <span class="deck-paper-card__sub">The full infill-13 architecture, PEFF framing, master story layer.</span>
-          <span class="deck-paper-card__cta">Read paper →</span>
+        <a class="deck-paper-card" href="/ss-vibelandia">
+          <span class="deck-paper-card__pill">Ark</span>
+          <span class="deck-paper-card__title">SS Vibelandia profile</span>
+          <span class="deck-paper-card__sub">Noah’s Ark of the Intelligence Age</span>
+          <span class="deck-paper-card__cta">Open →</span>
         </a>
       </li>
     </ul>
 
     <div class="deck-btn-row" style="margin-top: 2.5rem;">
-      <a class="deck-btn deck-btn--ghost" href="/papers">Read</a>
-      <a class="deck-btn deck-btn--ghost" href="/get-started">Get Started</a>
+      <a class="deck-btn deck-btn--gold" href="/lattice">Lattice Chat</a>
+      <a class="deck-btn deck-btn--ghost" href="/hood">Under the Hood</a>
+      <a class="deck-btn deck-btn--ghost" href="/">Ship bulletin</a>
     </div>
 
     <p class="deck-foot">
-      <a href="/">QUESTFEST</a> ·
-      <a href="/get-started">Get Started</a> ·
+      <a href="/">Bulletin</a> ·
+      <a href="/lattice">Lattice</a> ·
+      <a href="/hood">Hood</a> ·
       <a href="/listen">Listen</a> ·
-      <a href="/papers">Read</a> ·
-      NSPFRNP → ∞¹³
+      Omni-Lattice → ∞¹³
     </p>
   </main>
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />

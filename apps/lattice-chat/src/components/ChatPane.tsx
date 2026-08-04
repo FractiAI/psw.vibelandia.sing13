@@ -297,9 +297,9 @@ export function ChatPane({
             </p>
             <p className="empty-lead">Welcome aboard</p>
             <p className="empty-hint">
-              For builders looking to leverage fractal, holographic super intelligent agents while reducing
-              their token consumption — faster signal, less prompt bloat, operator-grade transparency.
-              Within Goldilocks; intentions matter: we do not help with malice or ill will.
+              First the LLMs. Then Cursor AI, Claude Code, and the vibe platforms. Now Lattice Chat —
+              the next layer in the stack: to slow down and cool off GPUs and deliver new function.
+              Token Maxing on your keys; intentions matter — we do not help with malice or ill will.
             </p>
             <p className="empty-hint empty-hint--bridge">
               Email + your key + pick Cursor, Claude, or Gemini. Keys stay on this device.
@@ -333,8 +333,8 @@ export function ChatPane({
             <p className="empty-eyebrow">Lounge · Valet ready</p>
             <p className="empty-lead">Welcome aboard — how may we help?</p>
             <p className="empty-hint">
-              Ask in plain language. Lattice opens only what matters. Advanced options stay under
-              the hatch below when you want them.
+              Ask in plain language. Lattice is the layer above your vibe stack — cooler GPUs, new
+              function, less prompt bloat. Advanced options stay under the hatch when you want them.
             </p>
             <p className="empty-intention">
               Within Goldilocks · intentions matter — craft, curiosity, and care; never malice.

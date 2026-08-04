@@ -10,11 +10,11 @@
 
 **Live site:** [**www.ssvibelandiaquestfest24x365.com**](https://www.ssvibelandiaquestfest24x365.com) · **Repository:** [github.com/fractiai/psw.vibelandia.sing13](https://github.com/fractiai/psw.vibelandia.sing13)
 
-## Lattice Chat V1.618 — Token Maxing (from Sonic Singularity 13)
+## Lattice Chat V1.618 — next layer in the stack (from Sonic Singularity 13)
 
-**Token Maxing for the serious vibe coders.** ~40–70% lower token consumption, depending on the work.
+**First the LLMs. Then Cursor AI, Claude Code, and the vibe platforms. Now Lattice Chat** — the next layer: to slow down and cool off GPUs and deliver new function.
 
-Just as vibe coding platforms wrap your favorite LLMs, **Lattice Chat wraps your favorite vibe coding platforms**. Load your API key — we take care of the rest. Fractal · holographic · cytologic nesting makes vibe coding smarter so you maximize tokens.
+Token Maxing on your keys: ~40–70% lower token consumption on focused work, depending on the ask. Fractal · holographic · cytologic nesting makes vibe coding smarter so you maximize tokens instead of flooding the window.
 
 **Free trial:** email [valetpru@gmail.com](mailto:valetpru@gmail.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20Token%20Maxing%20free%20trial). Old school.
 

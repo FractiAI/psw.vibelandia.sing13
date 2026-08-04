@@ -176,6 +176,8 @@ export function ChatPane({
       if (document.visibilityState !== 'visible') return;
       const s = useLatticeStore.getState();
       if (!threadAwaitingAssistant(s.activeThreadId)) return;
+      // Do not pile recover on a live primary SSE (sending) — that causes attach thrash.
+      if (s.sending && s.sendPhase === 'sending') return;
       if (!s.sending && s.sendPhase === 'idle' && !s.pending) return;
       void checkPendingLatticeReply();
     }

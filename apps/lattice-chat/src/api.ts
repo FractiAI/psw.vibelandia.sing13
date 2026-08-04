@@ -74,10 +74,26 @@ export async function verifyLatticeAccess(email: string): Promise<{
 }
 
 const WATCHDOG_MS = 45_000;
-const RECOVER_POLL_MS = 8_000;
+/** Abort primary SSE only after this long with zero bytes (heartbeats count). */
+const IDLE_ABORT_MS = 90_000;
+/** Hard ceiling under Vercel maxDuration (~300s) before one recover attach. */
+const PRIMARY_MAX_MS = 200_000;
+const RECOVER_POLL_MS = 15_000;
 const STATUS_TICK_MS = 2_000;
 const HISTORY_WINDOW = 16;
 const MAX_RECOVER_ATTEMPTS = 6;
+
+/** Serialize recover so watchdog + visibility + Check don't stack attach races. */
+let recoverGate: Promise<unknown> = Promise.resolve();
+
+function withRecoverLock<T>(fn: () => Promise<T>): Promise<T> {
+  const run = recoverGate.then(fn, fn);
+  recoverGate = run.then(
+    () => undefined,
+    () => undefined,
+  );
+  return run;
+}
 
 function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
@@ -179,8 +195,9 @@ function isBusyPayload(data: LatticeResponse, status: number): boolean {
   return (
     status === 409 ||
     data.code === 'agent_busy' ||
+    data.code === 'still_running' ||
     data.code === 'nothing_to_recover' ||
-    /active run|agent[_\s-]?busy/i.test(data.error || '')
+    /active run|agent[_\s-]?busy|still running/i.test(data.error || '')
   );
 }
 
@@ -235,7 +252,7 @@ function parseSseChunk(
 async function postLattice(
   body: Record<string, unknown>,
   email: string,
-  opts?: { signal?: AbortSignal },
+  opts?: { signal?: AbortSignal; onActivity?: () => void },
 ): Promise<{ res: Response; data: LatticeResponse }> {
   // Live stream-of-thought for Cursor, Claude, and Gemini when the pipe supports SSE.
   const wantStream = body.stream !== false;
@@ -262,8 +279,16 @@ async function postLattice(
     let buffer = '';
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
+    const bump = () => {
+      try {
+        opts?.onActivity?.();
+      } catch {
+        /* ignore */
+      }
+    };
 
     const handleEvent = (event: string, data: unknown) => {
+      bump();
       const payload = (data && typeof data === 'object' ? data : {}) as LatticeResponse & {
         message?: string;
         balanceBefore?: number;
@@ -277,7 +302,13 @@ async function postLattice(
       }
       if (event === 'status') {
         const msg = payload.message || payload.error;
-        if (msg) store.setSendProgress(store.sendPhase === 'idle' ? 'sending' : store.sendPhase, msg);
+        if (msg) {
+          // Keep phase on sending while primary is live — don't flip to recovering from status alone.
+          const phase = store.sendPhase === 'recovering' || store.sendPhase === 'stuck'
+            ? store.sendPhase
+            : 'sending';
+          store.setSendProgress(phase === 'idle' ? 'sending' : phase, msg);
+        }
         if (payload.message) {
           store.pushLiveTranscript({ type: 'status', status: 'live', message: payload.message });
         }
@@ -320,6 +351,8 @@ async function postLattice(
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
+      // Any bytes (including `: keepalive` comments) count as live activity.
+      bump();
       buffer += decoder.decode(value, { stream: true });
       buffer = parseSseChunk(buffer, handleEvent);
     }
@@ -483,41 +516,43 @@ async function tryRecoverOnce(
   _history: { role: string; content: string }[],
   email: string,
 ): Promise<boolean> {
-  const store = useLatticeStore.getState();
-  // Claude Messages API has no durable cloud run to recover.
-  if (store.provider === 'claude') return false;
-  const thread = store.threads.find((t) => t.id === threadId);
-  const agentId = store.pending?.agentId || thread?.agentId;
-  if (!agentId) return false;
-  if (!awaitingAssistant(threadId)) return true;
+  return withRecoverLock(async () => {
+    const store = useLatticeStore.getState();
+    // Claude Messages API has no durable cloud run to recover.
+    if (store.provider === 'claude') return false;
+    const thread = store.threads.find((t) => t.id === threadId);
+    const agentId = store.pending?.agentId || thread?.agentId;
+    if (!agentId) return false;
+    if (!awaitingAssistant(threadId)) return true;
 
-  const { res, data } = await postLattice(
-    {
-      threadId,
-      recover: true,
-      agentId,
+    const { res, data } = await postLattice(
+      {
+        threadId,
+        recover: true,
+        agentId,
+        email,
+        provider: store.provider,
+        balanceBefore: store.pending?.balanceBefore ?? null,
+      },
       email,
-      provider: store.provider,
-      balanceBefore: store.pending?.balanceBefore ?? null,
-    },
-    email,
-  );
-  if (data.agentId) store.setAgentId(threadId, data.agentId);
-  if (!res.ok) {
-    clearStaleAgentIfNeeded(threadId, data);
-    if (isHardLatticeFailure(data, res.status)) {
-      throw new LatticeHardFail(
-        data.error || `Recover failed (${res.status})`,
-        data.code,
-      );
+    );
+    if (data.agentId) store.setAgentId(threadId, data.agentId);
+    if (!res.ok) {
+      clearStaleAgentIfNeeded(threadId, data);
+      if (isHardLatticeFailure(data, res.status)) {
+        throw new LatticeHardFail(
+          data.error || `Recover failed (${res.status})`,
+          data.code,
+        );
+      }
+      return false;
     }
-    return false;
-  }
-  if (!awaitingAssistant(threadId)) return true;
+    if (!awaitingAssistant(threadId)) return true;
 
-  applyAssistantReply(threadId, data, store.modelId, store.agentMode);
-  store.setError(null);
-  return true;
+    applyAssistantReply(threadId, data, store.modelId, store.agentMode);
+    store.setError(null);
+    return true;
+  });
 }
 
 /** Manual / visibility recover — no duplicate user bubble. */
@@ -670,7 +705,11 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   let settled = false;
   let primaryStreamActive = false;
   const startedAt = Date.now();
+  let lastActivityAt = Date.now();
   const primaryAbort = new AbortController();
+  const markActivity = () => {
+    lastActivityAt = Date.now();
+  };
 
   const settleSuccess = (data: LatticeResponse) => {
     if (settled || !awaitingAssistant(threadId)) {
@@ -685,40 +724,55 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     store.setSending(false);
   };
 
-  // Dual timers: frequent status ticks + recover polls (keep running until settled).
+  // Status ticks: while primary SSE is live, stay on "sending" — do not fake recover/stuck.
   const statusTick = setInterval(() => {
     if (settled) return;
     const elapsed = Math.round((Date.now() - startedAt) / 1000);
-    const phase = useLatticeStore.getState().sendPhase;
+    if (primaryStreamActive) {
+      const phase = useLatticeStore.getState().sendPhase;
+      if (phase === 'sending' || phase === 'idle') {
+        store.setSendProgress('sending', latticeProgressHint(elapsed, 'sending'));
+      }
+      return;
+    }
     const nextPhase =
       elapsed * 1000 >= WATCHDOG_MS * 2
         ? 'stuck'
         : elapsed * 1000 >= WATCHDOG_MS
           ? 'recovering'
           : 'sending';
-    store.setSendProgress(nextPhase, latticeProgressHint(elapsed, nextPhase || phase));
+    store.setSendProgress(nextPhase, latticeProgressHint(elapsed, nextPhase));
   }, STATUS_TICK_MS);
 
   const watchdog = setInterval(() => {
     void (async () => {
       if (settled) return;
-      const elapsed = Date.now() - startedAt;
-      if (elapsed < WATCHDOG_MS) return;
-      // After 2× watchdog, abort a silent/zombie primary SSE so recover can attach.
-      if (primaryStreamActive && elapsed >= WATCHDOG_MS * 2) {
-        try {
-          primaryAbort.abort();
-        } catch {
-          /* ignore */
+      const now = Date.now();
+      const elapsed = now - startedAt;
+      const idleFor = now - lastActivityAt;
+
+      // Never open a recover stream while the primary SSE is still alive and active.
+      if (primaryStreamActive) {
+        const idleDead = idleFor >= IDLE_ABORT_MS;
+        const hardCap = elapsed >= PRIMARY_MAX_MS;
+        if (idleDead || hardCap) {
+          try {
+            primaryAbort.abort();
+          } catch {
+            /* ignore */
+          }
+          primaryStreamActive = false;
+          store.setSendProgress(
+            'stuck',
+            hardCap
+              ? 'Long cloud run — attaching to finish the reply…'
+              : 'Stream went quiet — attaching to the cloud run…',
+          );
         }
-        primaryStreamActive = false;
-        store.setSendProgress(
-          'stuck',
-          'Stream stalled — attaching to the cloud run instead…',
-        );
+        return;
       }
-      // Primary SSE still open — do not open a second recover stream that races it.
-      if (primaryStreamActive) return;
+
+      if (elapsed < WATCHDOG_MS) return;
       store.setSendProgress(
         elapsed > WATCHDOG_MS * 2 ? 'stuck' : 'recovering',
         latticeProgressHint(Math.round(elapsed / 1000), elapsed > WATCHDOG_MS * 2 ? 'stuck' : 'recovering'),
@@ -749,7 +803,11 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   try {
     store.setSendProgress('sending', latticeProgressHint(0, 'sending'));
     primaryStreamActive = true;
-    let { res, data } = await postLattice(baseBody, email, { signal: primaryAbort.signal });
+    markActivity();
+    let { res, data } = await postLattice(baseBody, email, {
+      signal: primaryAbort.signal,
+      onActivity: markActivity,
+    });
     primaryStreamActive = false;
     if (settled) return;
     if (data.agentId) store.setAgentId(threadId, data.agentId);

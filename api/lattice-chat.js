@@ -19,6 +19,9 @@ export const config = {
   maxDuration: 300,
 };
 
+/** Leave headroom under Vercel 300s for create/resume/balances — never sit in collect until hard kill. */
+const COLLECT_BUDGET_MS = 180_000;
+
 const DEFAULT_REPO = 'https://github.com/FractiAI/psw.vibelandia.sing13';
 const CREATOR_EMAIL = 'valetpru@gmail.com';
 /**
@@ -1311,7 +1314,7 @@ async function recoverCloudRun(Agent, agentId, apiKey) {
   const run = await resolveCloudRun(Agent, agentId, targetMeta, apiKey);
   if (!run) return null;
 
-  const collected = await collectRunTranscript(run);
+  const collected = await collectRunTranscript(run, { timeoutMs: COLLECT_BUDGET_MS });
   return {
     ...collected,
     agentId,
@@ -1454,14 +1457,42 @@ async function collectRunTranscript(run, opts = {}) {
   const transcript = [];
   let text = '';
   const onEvent = typeof opts.onEvent === 'function' ? opts.onEvent : null;
+  const timeoutMs =
+    typeof opts.timeoutMs === 'number' && opts.timeoutMs > 0
+      ? opts.timeoutMs
+      : COLLECT_BUDGET_MS;
+  const deadline = Date.now() + timeoutMs;
+  let timedOut = false;
   const emit = (item) => {
     if (!item) return;
     pushTranscript(transcript, item);
     if (onEvent) onEvent(item);
   };
+  const budgetLeft = () => deadline - Date.now();
+  const hitBudget = () => {
+    if (Date.now() < deadline) return false;
+    timedOut = true;
+    return true;
+  };
+
   if (run && typeof run.supports === 'function' && run.supports('stream') && typeof run.stream === 'function') {
     try {
-      for await (const event of run.stream()) {
+      const iterator = run.stream()[Symbol.asyncIterator]();
+      while (!hitBudget()) {
+        const left = budgetLeft();
+        const nextPromise = iterator.next();
+        const raced = await Promise.race([
+          nextPromise.then((v) => ({ kind: 'val', v })),
+          new Promise((resolve) => {
+            setTimeout(() => resolve({ kind: 'tick' }), Math.min(Math.max(left, 1), 12_000));
+          }),
+        ]);
+        if (raced.kind === 'tick') {
+          if (hitBudget()) break;
+          continue;
+        }
+        const { done, value: event } = raced.v;
+        if (done) break;
         if (!event || typeof event.type !== 'string') continue;
         if (event.type === 'assistant' && Array.isArray(event.message?.content)) {
           for (const block of event.message.content) {
@@ -1506,16 +1537,52 @@ async function collectRunTranscript(run, opts = {}) {
           });
         }
       }
+      try {
+        if (typeof iterator.return === 'function') await iterator.return();
+      } catch {
+        /* ignore iterator cleanup */
+      }
     } catch (err) {
       console.warn('[lattice-chat] stream read', err);
     }
   }
-  const result = run && typeof run.wait === 'function' ? await run.wait() : null;
+
+  let result = null;
+  if (!timedOut && run && typeof run.wait === 'function') {
+    const waitMs = Math.max(5_000, budgetLeft());
+    try {
+      result = await withTimeout(run.wait(), waitMs, 'run.wait');
+    } catch (err) {
+      if (err && err.code === 'timeout') {
+        timedOut = true;
+        console.warn('[lattice-chat] run.wait budget hit', `${Math.round(waitMs / 1000)}s`);
+      } else {
+        throw err;
+      }
+    }
+  }
+
   if (!text.trim()) text = extractAssistantText(result);
   if (text.trim() && !transcript.some((i) => i.type === 'assistant' && String(i.text || '').trim())) {
     emit({ type: 'assistant', text: text.trim() });
   }
-  return { text: text.trim(), transcript, result, runId: result?.id ?? run?.id };
+
+  if (timedOut) {
+    console.warn(
+      '[lattice-chat] collectRunTranscript budget hit',
+      `${Math.round(timeoutMs / 1000)}s`,
+      'partialChars=',
+      text.length,
+    );
+  }
+
+  return {
+    text: text.trim(),
+    transcript,
+    result,
+    runId: result?.id ?? run?.id ?? null,
+    timedOut,
+  };
 }
 
 function normalizeAgentMode(raw) {
@@ -2110,6 +2177,30 @@ export default async function handler(req, res) {
             sseWrite(res, 'status', { message: 'Recovering active cloud run…', agentId: agent.agentId ?? agentId });
           }
           const recovered = await recoverCloudRun(Agent, agent.agentId ?? agentId, apiKey);
+          if (recovered?.timedOut) {
+            if (stream && Array.isArray(recovered.transcript)) {
+              for (const item of recovered.transcript) onStreamItem(item);
+            }
+            if (stream) {
+              sseWrite(res, 'status', {
+                message: 'Cloud run still working past the pipe budget — attaching again shortly…',
+              });
+            }
+            return respondLattice(
+              res,
+              stream,
+              {
+                error:
+                  'Cloud agent still running — keep this tab open. Lattice will attach again automatically.',
+                code: 'still_running',
+                agentId: agent.agentId ?? agentId,
+                runId: recovered.runId ?? null,
+                transcript: recovered.transcript || [],
+                reply: recovered.text || '',
+              },
+              409,
+            );
+          }
           if (recovered && (recovered.text?.trim() || recovered.transcript?.length)) {
             const reply = recovered.text || extractAssistantText(recovered.result) || '';
             if (stream && Array.isArray(recovered.transcript)) {
@@ -2321,9 +2412,36 @@ export default async function handler(req, res) {
 
       const packed = recovered
         ? recovered
-        : await collectRunTranscript(run, { onEvent: onStreamItem });
+        : await collectRunTranscript(run, {
+            onEvent: onStreamItem,
+            timeoutMs: COLLECT_BUDGET_MS,
+          });
       if (recovered && stream && Array.isArray(recovered.transcript)) {
         for (const item of recovered.transcript) onStreamItem(item);
+      }
+      if (packed?.timedOut) {
+        if (stream) {
+          sseWrite(res, 'status', {
+            message: 'Cloud run still working past the pipe budget — attaching again shortly…',
+          });
+        }
+        return respondLattice(
+          res,
+          stream,
+          {
+            error:
+              'Cloud agent still running — keep this tab open. Lattice will attach again automatically.',
+            code: 'still_running',
+            agentId: agent.agentId ?? agentId,
+            runId: packed.runId ?? null,
+            transcript: packed.transcript || [],
+            reply: packed.text || '',
+            model: modelId,
+            mode: agentMode,
+            lens: reasoningLens,
+          },
+          409,
+        );
       }
       const { text, transcript, result, runId } = packed;
 

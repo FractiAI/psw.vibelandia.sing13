@@ -54,7 +54,7 @@ type LatticeState = {
   activeThreadId: string | null;
   userEmail: string;
   emailRememberedAt: string | null;
-  /** Server allowlist privilege — guests chat; only creator may agent-write SING13. */
+  /** Server allowlist privilege — guests agent on sandbox; creator may write SING13. */
   privilege: LatticePrivilege;
   sending: boolean;
   sendPhase: SendPhase;
@@ -237,11 +237,7 @@ export const useLatticeStore = create<LatticeState>()(
           emailRememberedAt: normalized ? new Date().toISOString() : null,
         });
       },
-      setPrivilege: (privilege) =>
-        set({
-          privilege,
-          ...(privilege && privilege !== 'creator' ? { agentMode: 'plan' as const } : {}),
-        }),
+      setPrivilege: (privilege) => set({ privilege }),
       clearUserEmail: () => set({ userEmail: '', emailRememberedAt: null, privilege: null }),
       setSending: (v) =>
         set(
@@ -323,10 +319,7 @@ export const useLatticeStore = create<LatticeState>()(
           sendPhase: 'idle' as const,
           statusHint: null,
         })),
-      setAgentMode: (mode) =>
-        set((s) => ({
-          agentMode: s.privilege && s.privilege !== 'creator' ? 'plan' : mode,
-        })),
+      setAgentMode: (mode) => set({ agentMode: mode }),
       setModelId: (modelId) => set({ modelId }),
       setModels: (models) => set({ models }),
       setNestTopology: (nestTopology) => set({ nestTopology }),

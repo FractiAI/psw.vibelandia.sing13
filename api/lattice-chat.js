@@ -7,7 +7,8 @@
  * (email + provider key headers only; never persist or log user keys).
  *
  * Access: email allowlist. Creator permanent. Guests one month from grant.
- * Guests get full chat; SING13 Cursor cloud write-attach stays creator-only.
+ * Paid guests get full Lattice agents on a sandbox workspace — SING13 Cursor
+ * write-attach stays creator-only (anti-overwrite).
  * Prompt assembly: dynamic-import lib/lattice-prompt.mjs (Vercel compiles this file to CJS —
  * never use a top-level static .mjs import here).
  */
@@ -19,17 +20,19 @@ export const config = {
 };
 
 const DEFAULT_REPO = 'https://github.com/FractiAI/psw.vibelandia.sing13';
+/** Public sandbox for guest agents — never FractiAI SING13 (overwrite lock). */
+const DEFAULT_GUEST_AGENT_REPO = 'https://github.com/octocat/Hello-World';
 const CREATOR_EMAIL = 'valetpru@gmail.com';
 /**
- * Guests chat with the same SING13 workspace for product context, but only in plan/chat mode.
- * Agent (write) mode against SING13 is creator-only — that is the anti-overwrite control.
+ * Guests run full Agent mode on a non-SING13 sandbox.
+ * Creators attach SING13 with write. That split is the anti-overwrite control.
  */
 const SING13_REPO_HOST_RE = /github\.com[/:]FractiAI\/psw\.vibelandia\.sing13(?:\.git)?(?:\/|$|\?|#)/i;
-const GUEST_CHAT_ONLY_DIRECTIVE = `## Guest session (chat-only)
-You are helping a Lattice Chat guest. Full conversational use is allowed.
-Do NOT edit, create, delete, commit, push, or open pull requests against FractiAI/psw.vibelandia.sing13 or any production ship app.
-Application code changes are reserved for creators through designated developer channels.
-Answer questions, explain, plan, and teach — do not apply changes onto the live SING13 repository.`;
+const GUEST_SANDBOX_DIRECTIVE = `## Guest session (sandbox agents)
+You are helping a paid Lattice Chat guest. Full agent tools are allowed on this **sandbox workspace**.
+You MAY edit, create, delete, run tools, and iterate inside the attached sandbox.
+Do NOT clone, edit, commit, push, or open pull requests against FractiAI/psw.vibelandia.sing13 or any production ship app.
+SING13 product context comes from Lattice prompts / RAG pointers — never by writing the live repository.`;
 const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const NAIVE_CORPUS_DUMP_TOKENS = 72_000;
 const LATTICE_RAG_POINTER_TOKENS = 1_800;
@@ -1543,26 +1546,48 @@ function isSing13RepoUrl(url) {
 }
 
 /**
- * Same SING13 workspace for everyone (product context).
- * Guests: plan/chat-only (no agent writes). Creators: full agent mode allowed.
+ * Creators → SING13 (agent write OK).
+ * Guests → non-SING13 sandbox (full agent OK). Never attach SING13 for guests.
+ * Override sandbox with LATTICE_GUEST_REPO_URL / LATTICE_GUEST_STARTING_REF (must not be SING13).
  */
 function resolveCursorCloudAttach(access, creatorRepoUrl, startingRef) {
-  const isCreator = access?.privilege === 'creator';
+  if (access?.privilege === 'creator') {
+    return {
+      repos: [{ url: creatorRepoUrl, startingRef }],
+      guestSandbox: false,
+      forcePlan: false,
+      workspace: creatorRepoUrl,
+      allowAgentMode: true,
+      sing13Write: true,
+    };
+  }
+
+  const configured = (process.env.LATTICE_GUEST_REPO_URL || '').trim();
+  let guestUrl =
+    configured && !isSing13RepoUrl(configured) ? configured : DEFAULT_GUEST_AGENT_REPO;
+  if (isSing13RepoUrl(guestUrl)) guestUrl = DEFAULT_GUEST_AGENT_REPO;
+
+  const helloWorld = /github\.com[/:]octocat\/Hello-World/i.test(guestUrl);
+  const guestRef =
+    (process.env.LATTICE_GUEST_STARTING_REF || '').trim() ||
+    (helloWorld ? 'master' : 'main');
+
   return {
-    repos: [{ url: creatorRepoUrl, startingRef }],
-    chatOnly: !isCreator,
-    forcePlan: !isCreator,
-    workspace: creatorRepoUrl,
-    allowAgentMode: isCreator,
+    repos: [{ url: guestUrl, startingRef: guestRef }],
+    guestSandbox: true,
+    forcePlan: false,
+    workspace: guestUrl,
+    allowAgentMode: true,
+    sing13Write: false,
   };
 }
 
-function withGuestChatGuard(prompt, chatOnly) {
-  if (!chatOnly) return prompt;
-  return `${GUEST_CHAT_ONLY_DIRECTIVE}\n\n${prompt}`;
+function withGuestSandboxGuard(prompt, guestSandbox) {
+  if (!guestSandbox) return prompt;
+  return `${GUEST_SANDBOX_DIRECTIVE}\n\n${prompt}`;
 }
 
-/** Soft probe for admin tooling — chat itself no longer hard-blocks guests on SING13 attach. */
+/** Soft probe — SING13 write-attach is creator-only; guests agent on sandbox. */
 function assertCursorMayWriteSing13(access, repoUrl) {
   if (!isSing13RepoUrl(repoUrl)) return { ok: true };
   if (access?.privilege === 'creator') return { ok: true };
@@ -1570,7 +1595,7 @@ function assertCursorMayWriteSing13(access, repoUrl) {
     ok: false,
     code: 'sing13_write_locked',
     error:
-      'SING13 agent (write) mode is creator-only. Guests still chat on SING13 in plan mode — pick Cursor, Claude, or Gemini and send.',
+      'SING13 write-attach is creator-only. Paid guests use full Lattice agents on a sandbox workspace (not SING13).',
   };
 }
 
@@ -1697,7 +1722,7 @@ export default async function handler(req, res) {
             code: writeGate.code,
             privilege: access.privilege,
             targetRepo: DEFAULT_REPO,
-            note: 'Guests: email + key + provider. Cursor chat uses plan mode on SING13 (no write).',
+            note: 'Guests: full agents on sandbox. SING13 write-attach is creator-only.',
           });
         }
         const { key: apiKey, source: keySource } = resolveCursorApiKey(req);
@@ -1839,8 +1864,11 @@ export default async function handler(req, res) {
         : String(body.model || body.modelId || '').trim() ||
           (provider === 'claude' ? 'claude-sonnet-4-5' : 'antigravity-preview-05-2026');
     let agentMode = resolveAgentMode(body.mode || body.agentMode, message);
-    // Anti-overwrite: only creators may run agent/write mode. Guests stay plan/chat.
-    if (access.privilege !== 'creator' || cloudAttach?.forcePlan) {
+    // Belt: never agent-write SING13 unless creator (even if misconfigured attach).
+    if (
+      cloudAttach?.forcePlan ||
+      (isSing13RepoUrl(repoUrl) && access.privilege !== 'creator')
+    ) {
       agentMode = 'plan';
     }
     const nestTopology = normalizeNestTopology(body.nestTopology || body.nest);
@@ -1979,7 +2007,7 @@ export default async function handler(req, res) {
     const cursorRepos = cloudAttach?.repos?.length
       ? cloudAttach.repos
       : [{ url: repoUrl, startingRef }];
-    const guestChatOnly = Boolean(cloudAttach?.chatOnly);
+    const guestSandbox = Boolean(cloudAttach?.guestSandbox);
     const stream = wantsStream(req, body);
     if (stream) initSse(res);
     const stopHeartbeat = stream ? startSseHeartbeat(res) : () => {};
@@ -1991,8 +2019,8 @@ export default async function handler(req, res) {
         sseWrite(res, 'status', {
           message: recoverOnly
             ? 'Attaching to your cloud run…'
-            : guestChatOnly
-              ? 'Opening Lattice chat…'
+            : guestSandbox
+              ? 'Opening Lattice sandbox agent…'
               : 'Opening Lattice pipe — loading Cursor SDK…',
         });
       }
@@ -2138,12 +2166,12 @@ export default async function handler(req, res) {
       }
 
       if (!agent) {
-        // Guests: plan/chat on SING13. Creators: full agent. No separate Hello-World / GitHub gate.
-        const createTimeoutMs = guestChatOnly ? 75_000 : 120_000;
+        // Guests: full agent on sandbox (never SING13). Creators: SING13 agent.
+        const createTimeoutMs = guestSandbox ? 90_000 : 120_000;
         if (stream) {
           sseWrite(res, 'status', {
-            message: guestChatOnly
-              ? 'Opening Lattice chat…'
+            message: guestSandbox
+              ? 'Creating Lattice sandbox agent…'
               : 'Creating Lattice cloud agent (repo spin-up can take a minute)…',
           });
         }
@@ -2166,8 +2194,8 @@ export default async function handler(req, res) {
               res,
               stream,
               {
-                error: guestChatOnly
-                  ? `Cloud chat timed out after ${Math.round(createTimeoutMs / 1000)}s. Send again, or switch provider to Claude / Gemini.`
+                error: guestSandbox
+                  ? `Sandbox agent timed out after ${Math.round(createTimeoutMs / 1000)}s. Send again, or switch provider to Claude / Gemini.`
                   : 'Cloud agent creation timed out after 120s. Check Cursor GitHub access for this API key, then send again.',
                 code: 'agent_create_timeout',
                 repoUrl,
@@ -2198,11 +2226,11 @@ export default async function handler(req, res) {
         });
       }
 
-      const prompt = withGuestChatGuard(
+      const prompt = withGuestSandboxGuard(
         resumedOk && message
           ? assembleResumePrompt(message, nestTopology, agentRoster)
           : buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
-        guestChatOnly,
+        guestSandbox,
       );
       const sendOpts = {
         model: modelSelection,
@@ -2238,7 +2266,7 @@ export default async function handler(req, res) {
                 repos: cursorRepos,
               },
             }),
-            guestChatOnly ? 75_000 : 120_000,
+            guestSandbox ? 90_000 : 120_000,
             'Agent.create',
           );
           agentId = agent.agentId ?? null;
@@ -2247,9 +2275,9 @@ export default async function handler(req, res) {
           ({ run, recovered } = await sendPromptHandlingBusy(
             Agent,
             agent,
-            withGuestChatGuard(
+            withGuestSandboxGuard(
               buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
-              guestChatOnly,
+              guestSandbox,
             ),
             sendOpts,
             apiKey,
@@ -2348,7 +2376,8 @@ export default async function handler(req, res) {
           email: access.email,
           expiresAt: access.expiresAt,
           reason: access.reason,
-          chatOnly: guestChatOnly,
+          guestSandbox,
+          allowAgentMode: Boolean(cloudAttach?.allowAgentMode ?? true),
           workspace: repoUrl,
         },
       });
@@ -2391,14 +2420,14 @@ export default async function handler(req, res) {
           res,
           stream,
           {
-            error: guestChatOnly
-              ? `${msg} Cursor could not open the Lattice workspace for this key. Send again, or switch provider to Claude / Gemini (no Cursor↔GitHub needed).`
+            error: guestSandbox
+              ? `${msg} Cursor could not open the guest sandbox for this key. Send again, or switch provider to Claude / Gemini.`
               : `${msg} Lattice uses ${repoUrl} @ ${startingRef}. Connect GitHub for the Cursor account that owns this API key (cursor.com/dashboard/integrations) and ensure that workspace repo is visible — public clone ≠ Cursor cloud access.`,
             code: 'cursor_github_access',
             repoUrl,
             startingRef,
             agentId: agent?.agentId ?? agentId,
-            chatOnly: guestChatOnly,
+            guestSandbox,
           },
           422,
         );

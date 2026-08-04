@@ -45,7 +45,7 @@ function applyAccessMeta(data: LatticeResponse | { privilege?: string }): void {
   useLatticeStore.getState().setPrivilege(p);
 }
 
-/** Email allowlist check — privilege drives plan-only vs agent. */
+/** Email allowlist check — privilege is creator vs paid guest (sandbox agents). */
 export async function verifyLatticeAccess(email: string): Promise<{
   ok: boolean;
   privilege: LatticePrivilege;
@@ -788,7 +788,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
                 ? data.error ||
                   'Cursor cloud timed out. Send again, or switch to Claude / Gemini.'
               : data.code === 'sing13_write_locked'
-                ? 'Agent (write) mode on SING13 is creator-only. Guests stay in plan/chat — pick Cursor, Claude, or Gemini and send.'
+                ? 'SING13 write-attach is creator-only. Guests still get full Lattice agents on a sandbox — pick Cursor, Claude, or Gemini and send.'
               : res.status === 401
                 ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
               : res.status === 403

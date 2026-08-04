@@ -62,7 +62,7 @@ export function ComposerOptions({
   modelId: string;
   models: LatticeModelOption[];
   disabled?: boolean;
-  /** Guests: Agent (write) locked — plan/chat only protects SING13. */
+  /** Escape hatch: lock Agent mode in UI (unused for paid guests — sandbox agents are allowed). */
   planOnly?: boolean;
   onProviderChange: (provider: LatticeProvider) => void;
   onModeChange: (mode: AgentMode) => void;
@@ -158,7 +158,7 @@ export function ComposerOptions({
                     disabled={disabled || geminiLock || agentLocked}
                     title={
                       agentLocked
-                        ? 'Guest seat: plan/chat only — protects SING13 from overwrite'
+                        ? 'Agent mode locked for this seat'
                         : geminiLock
                           ? 'Antigravity runs as a managed agent'
                           : undefined

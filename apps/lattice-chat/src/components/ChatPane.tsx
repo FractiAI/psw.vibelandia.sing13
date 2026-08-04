@@ -30,7 +30,6 @@ export function ChatPane({
   const activeThreadId = useLatticeStore((s) => s.activeThreadId);
   const userEmail = useLatticeStore((s) => s.userEmail);
   const emailRememberedAt = useLatticeStore((s) => s.emailRememberedAt);
-  const privilege = useLatticeStore((s) => s.privilege);
   const sending = useLatticeStore((s) => s.sending);
   const sendPhase = useLatticeStore((s) => s.sendPhase);
   const statusHint = useLatticeStore((s) => s.statusHint);
@@ -63,7 +62,6 @@ export function ChatPane({
 
   const thread = threads.find((t) => t.id === activeThreadId) ?? null;
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
-  const planOnly = privilege !== 'creator';
   const needsAccessGrant =
     Boolean(error) && /not on the access list|Request access|access expired/i.test(error || '');
   const needsProviderKey =
@@ -486,7 +484,6 @@ export function ChatPane({
             modelId={modelId}
             models={models}
             disabled={sending}
-            planOnly={planOnly}
             onProviderChange={setProvider}
             onModeChange={setAgentMode}
             onNestChange={setNestTopology}

@@ -117,8 +117,8 @@ export function AuthPanel({
       setUserEmail(next);
       const seat =
         access.privilege === 'creator'
-          ? 'creator seat — agent mode available'
-          : 'guest seat — plan/chat (SING13 write-safe)';
+          ? 'creator seat — SING13 agents'
+          : 'guest seat — full agents on sandbox (SING13 write-safe)';
       setFlash(`Signed in · ${meta.short} key on this device · ${seat}.`);
       onSignedIn?.();
     } catch {
@@ -203,7 +203,7 @@ export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => v
     <div className="signed-in-bar">
       <span className="signed-in-email" title={userEmail}>
         {userEmail}
-        {privilege === 'guest' ? ' · plan' : privilege === 'creator' ? ' · creator' : ''}
+        {privilege === 'guest' ? ' · guest' : privilege === 'creator' ? ' · creator' : ''}
       </span>
       <KeyStatusChip
         onOpenSettings={() => {

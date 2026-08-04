@@ -54,7 +54,7 @@ type LatticeState = {
   activeThreadId: string | null;
   userEmail: string;
   emailRememberedAt: string | null;
-  /** Server allowlist privilege — guests agent on sandbox; creator may write SING13. */
+  /** Server allowlist privilege — all seats agent on SING13; guests get honor rail. */
   privilege: LatticePrivilege;
   sending: boolean;
   sendPhase: SendPhase;

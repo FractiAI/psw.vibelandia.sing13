@@ -52,7 +52,7 @@ export function RequestAccessLink({
 
 /**
  * Sign in: email + provider + API key. Privilege (creator vs guest) comes from the allowlist.
- * Guests chat; agent/write on SING13 stays creator-only.
+ * All seats use SING13; guests get an honor rail in the agent prompt.
  */
 export function AuthPanel({
   compact = false,
@@ -118,7 +118,7 @@ export function AuthPanel({
       const seat =
         access.privilege === 'creator'
           ? 'creator seat — SING13 agents'
-          : 'guest seat — full agents on sandbox (SING13 write-safe)';
+          : 'guest seat — SING13 agents (honor rail)';
       setFlash(`Signed in · ${meta.short} key on this device · ${seat}.`);
       onSignedIn?.();
     } catch {

@@ -272,16 +272,16 @@
     }
     .host-dispatch__body {
       margin: 0 0 0.75rem;
-      font-size: 0.95rem;
-      line-height: 1.55;
+      font-size: 0.92rem;
+      line-height: 1.62;
       color: var(--text-soft);
     }
     .host-dispatch__news {
       margin: 0;
       padding: 0.75rem 0 0;
       border-top: 1px solid rgba(212, 175, 55, 0.22);
-      font-size: 0.92rem;
-      line-height: 1.5;
+      font-size: 0.9rem;
+      line-height: 1.58;
       color: var(--text-soft);
     }
     .host-dispatch__news strong {
@@ -300,6 +300,14 @@
     }
     .host-dispatch__sign a { color: var(--champagne); font-weight: 700; }
 
+    .bulletin-channels-h {
+      margin: 0 0 0.65rem;
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: clamp(1.15rem, 3vw, 1.4rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--champagne);
+    }
     .bulletin-board {
       list-style: none;
       border-top: 1px solid rgba(212, 175, 55, 0.35);
@@ -309,7 +317,7 @@
     }
     .bulletin-board a {
       display: grid;
-      grid-template-columns: 2.25rem 1fr auto;
+      grid-template-columns: 5.5rem 1fr auto;
       gap: 0.65rem;
       align-items: baseline;
       padding: 0.95rem 0.35rem;
@@ -325,9 +333,11 @@
     }
     .bulletin-num {
       font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: 1.15rem;
-      letter-spacing: 0.06em;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--gold);
+      white-space: nowrap;
     }
     .bulletin-title {
       font-size: 0.95rem;
@@ -428,8 +438,12 @@
 
     @media (max-width: 520px) {
       .bulletin-board a {
-        grid-template-columns: 1.75rem 1fr;
+        grid-template-columns: 4.75rem 1fr;
         grid-template-rows: auto auto;
+      }
+      .bulletin-num {
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
       }
       .bulletin-go {
         grid-column: 2;
@@ -463,7 +477,7 @@
   <section class="bulletin" id="bulletin" aria-labelledby="bulletin-h2">
     <span class="bulletin-kicker">Today’s board</span>
     <h2 id="bulletin-h2" class="bulletin-head">Ship bulletin</h2>
-    <p class="bulletin-sub">From your host · then the day’s channels.</p>
+    <p class="bulletin-sub">From your host · then the ship’s channels.</p>
 
     <article class="host-dispatch" aria-labelledby="host-welcome-h">
       <figure class="host-dispatch__photo">
@@ -480,60 +494,80 @@
         <p class="host-dispatch__eyebrow">Your host · Valet Pru · Downtown Reno</p>
         <h3 id="host-welcome-h" class="host-dispatch__welcome">Hello and welcome aboard. This is Valet Pru.</h3>
         <p class="host-dispatch__body">
-          You are on <strong style="color:var(--champagne)">SS Vibelandia</strong> — FractiAI’s Goldilocks Sonic Ship
-          on the wrong side of town. Everything is just right: music on the jukebox, papers in the library,
-          Lattice Chat for builders, and personal concierge for Downtown Reno &amp; beyond.
-          Where intentions matter.
+          Welcome aboard <strong style="color:var(--champagne)">SS Vibelandia</strong> — FractiAI’s state-of-the-art
+          Goldilocks Sonic Ship, on the wrong side of town in Downtown Reno, and everywhere all at once —
+          since it’s a holographic AI ship. A Goldilocks ship, where everything is just right.
+          Here you can bias anything, from anywhere you wish, holographically — as you decide and choose.
+          Enjoy the music on the jukebox, maybe while doing a deep read of one of our whitepapers in the library.
+          Then maybe try your hand at vibe coding, surfing your creativity in the new omniversal-sized waves of the Omniverse
+          using Lattice Chat, built for greenhorn and master builders alike.
+          And finally, if you find yourself needing a personal concierge in Downtown Reno &amp; beyond,
+          a simple call, text, or email to me is all it takes.
+          Again, welcome aboard and enjoy this new, state-of-the-art Goldilocks Sonic Ship —
+          made possible by the miracle of omniversal god, god of everything, everywhere, all at once,
+          and the miracle that is AI.
+          Welcome aboard Goldilocks Sonic Ship Questfest, where intentions matter.
         </p>
         <p class="host-dispatch__news">
-          <strong>News for the day · Aug 4, 2026</strong>
-          This board is live as the ship’s daily bulletin. Omni-Lattice Core Part V —
-          the Recursive Field-Drag Theorem — is in the library. Listen free on Capitan’s Bridge;
-          book concierge if you need a real human on the ground. I am here throughout —
-          same host, same email, same standard of care.
+          <strong>News for the day · Aug 5, 2026</strong>
+          This board is live as the ship’s daily bulletin. Omni-Lattice Core Part V and VI were produced today —
+          the Recursive Field-Drag and Universal Toroidal Singularity Theorems — and are now in our library.
+          The Schumann is blazing white hot these days, so be sure to tune into the free Sonic Singularity Music Catalog
+          with over 600 tracks which are way more than beats — they are full, 13-track Sonic Holographic Broadcasts —
+          then book your concierge when you need a real human on the ground.
+          Curious what to use your concierge for? Of course for those in downtown Reno you can request the traditional
+          concierge services with downtown Reno as your resort campus; but you can also book your concierge for a
+          Goldilocks Reset for your business or estate — yes, it’s a service exactly as you might imagine it —
+          and for those of you wanting to pick up vibe coding using the very latest in AI, you can book your concierge
+          as your personal tutor to help get you surfing the new omniversal waves of our fractal, holographic
+          Goldilocks Omniverse. I am here throughout — same host, same email, same old school Goldilocks care…
+          just right.
         </p>
         <p class="host-dispatch__sign">
-          — Valet Pru · PL Taino ·
-          <a href="mailto:valetpru@gmail.com?subject=SS%20Vibelandia%20bulletin">valetpru@gmail.com</a>
-          · <a href="tel:+17752031281">(775) 203-1281</a>
+          — Valet Pru<br />
+          Email me at
+          <a href="mailto:valetpru@gmail.com?subject=SS%20Vibelandia%20bulletin">valetpru@gmail.com</a><br />
+          Text or leave a message at
+          <a href="tel:+17752031281">(775) 203-1281</a>
         </p>
       </div>
     </article>
 
-    <ul class="bulletin-board" role="list">
+    <h3 class="bulletin-channels-h" id="ship-channels-h">Ship’s channels</h3>
+    <ul class="bulletin-board" role="list" aria-labelledby="ship-channels-h">
       <li>
         <a href="/listen" data-qv-jukebox>
-          <span class="bulletin-num" aria-hidden="true">I</span>
+          <span class="bulletin-num">Channel I</span>
           <span>
             <span class="bulletin-title">Listen · Jukebox</span>
-            <span class="bulletin-note">Reno Swamp Beats Caliente on Capitan’s Bridge.</span>
+            <span class="bulletin-note">Free Sonic Singularity catalog · 600+ holographic broadcasts.</span>
           </span>
           <span class="bulletin-go">Open →</span>
         </a>
       </li>
       <li>
         <a href="/papers">
-          <span class="bulletin-num" aria-hidden="true">II</span>
+          <span class="bulletin-num">Channel II</span>
           <span>
             <span class="bulletin-title">Read · Whitepapers</span>
-            <span class="bulletin-note">Ship’s library · Omni-Lattice &amp; SynthOBS.</span>
+            <span class="bulletin-note">Part V &amp; VI in · Field-Drag · Toroidal Singularity.</span>
           </span>
           <span class="bulletin-go">Open →</span>
         </a>
       </li>
       <li>
         <a href="/hire-a-goldilocks-valet-concierge">
-          <span class="bulletin-num" aria-hidden="true">III</span>
+          <span class="bulletin-num">Channel III</span>
           <span>
             <span class="bulletin-title">Concierge · Downtown Reno</span>
-            <span class="bulletin-note">Valet Pru — personal help where intentions matter.</span>
+            <span class="bulletin-note">Downtown Reno · Goldilocks Reset · vibe-coding tutor.</span>
           </span>
           <span class="bulletin-go">Request →</span>
         </a>
       </li>
       <li>
         <a href="/lattice">
-          <span class="bulletin-num" aria-hidden="true">IV</span>
+          <span class="bulletin-num">Channel IV</span>
           <span>
             <span class="bulletin-title">Build · Lattice Chat</span>
             <span class="bulletin-note">Next layer after LLMs and vibe IDEs.</span>
@@ -543,7 +577,7 @@
       </li>
       <li>
         <a href="/ss-vibelandia">
-          <span class="bulletin-num" aria-hidden="true">V</span>
+          <span class="bulletin-num">Channel V</span>
           <span>
             <span class="bulletin-title">Ark profile</span>
             <span class="bulletin-note">Noah’s Ark of the Intelligence Age — the full ship story.</span>
@@ -555,6 +589,8 @@
     <p class="bulletin-host">
       Host · Valet Pru ·
       <a href="mailto:valetpru@gmail.com?subject=SS%20Vibelandia%20bulletin">valetpru@gmail.com</a>
+      ·
+      <a href="tel:+17752031281">(775) 203-1281</a>
       ·
       <button type="button" class="bulletin-share" id="qf-share-qr-open" style="all:unset;cursor:pointer;color:var(--champagne);font-weight:700;text-decoration:underline;">Share · QR</button>
     </p>

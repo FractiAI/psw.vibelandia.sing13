@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-tbme-protein-phase-collapse",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.05",
+  "description": "TBME biomedical field exploration — Universal Phase-Lock Collapse in Protein Misfolding Pathologies. Uses Reno/Omni grammar; not Omni-Lattice Core Series.",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-tbme-protein-phase-collapse.git"
+  }
+}

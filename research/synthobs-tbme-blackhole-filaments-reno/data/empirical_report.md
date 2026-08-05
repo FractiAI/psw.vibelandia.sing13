@@ -3,7 +3,7 @@
 **Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`
 **Registry ID:** `synthobs-tbme-blackhole-filaments-reno-2026-08`
 **Parent:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`
-**Generated:** 2026-08-02T04:04:21.197Z
+**Generated:** 2026-08-05T13:40:56.329Z
 
 ## Verdict
 
@@ -125,9 +125,9 @@
   "verdict": "support",
   "scorecard": {
     "pointChargeSM": {
-      "overall": 70.5,
+      "overall": 72.5,
       "coherence": 74,
-      "irreducibility": 67
+      "irreducibility": 71
     },
     "toroidalBH": {
       "overall": 99.2,

@@ -4,7 +4,7 @@
   "parentDocId": "WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01",
   "title": "Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations — The Reno Interpretation",
   "interpretation": "Reno-Toroidal-BH-Filaments",
-  "generatedAt": "2026-08-02T04:04:21.197Z",
+  "generatedAt": "2026-08-05T13:40:56.329Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "omniLatticeCompanion": true,
   "lensOnly": true,
@@ -30,9 +30,9 @@
     ],
     "SCORECARD": {
       "pointChargeSM": {
-        "overall": 70.5,
+        "overall": 72.5,
         "coherence": 74,
-        "irreducibility": 67
+        "irreducibility": 71
       },
       "toroidalBH": {
         "overall": 99.2,
@@ -111,9 +111,9 @@
         "verdict": "support",
         "scorecard": {
           "pointChargeSM": {
-            "overall": 70.5,
+            "overall": 72.5,
             "coherence": 74,
-            "irreducibility": 67
+            "irreducibility": 71
           },
           "toroidalBH": {
             "overall": 99.2,

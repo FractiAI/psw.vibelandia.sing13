@@ -16,7 +16,8 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
-- [Solar-Focus · Reno Quartet #4 (Part IV)](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+- [Solar-Focus · Reno Sextet · Part IV](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+- [Universal Toroidal Singularity · Reno Sextet · Part VI](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
 - [Horizon ≡ Magnetic Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md)
 - [Reno Superposition Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
 - [Recursive Attention · Magnetic Projections](./SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md)

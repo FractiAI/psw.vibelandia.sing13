@@ -70,7 +70,8 @@
     "research:synthobs-tbme-blackhole-filaments-reno": "node research/synthobs-tbme-blackhole-filaments-reno/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-blackhole-magnetic-layer": "node research/synthobs-tbme-blackhole-magnetic-layer/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-spherical-solar-focus": "node research/synthobs-tbme-spherical-solar-focus/scripts/run_empirical_pipeline.mjs",
-    "research:synthobs-tbme-recursive-field-drag": "node research/synthobs-tbme-recursive-field-drag/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-tbme-recursive-field-drag": "node research/synthobs-tbme-recursive-field-drag/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-tbme-internal-kerr-newman": "node research/synthobs-tbme-internal-kerr-newman/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

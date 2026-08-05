@@ -1,0 +1,151 @@
+{
+  "docId": "WP-SYNTHOBS-TBME-INTERNAL-KERR-NEWMAN-2026-08-05",
+  "registryId": "synthobs-tbme-internal-kerr-newman-2026-08",
+  "title": "The Universal Toroidal Singularity Theorem — Empirical Suite",
+  "generatedAt": "2026-08-05T13:57:51.990Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Universal Toroidal Singularity is an Omni-Lattice / TBME architectural lens. Suite validates E_F identities, Z0, θ_EGS, scale ladder, and catalog fidelity — not production physics overthrow.",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "E_F = Φ_EGS fixture",
+        "E_F": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Catalog harmonic key for internal Kerr–Newman scale layers.",
+        "honesty": "Architectural constant — not a replacement for G, c, e, or ℏ."
+      },
+      {
+        "id": "E2_ef_squared_identity",
+        "title": "E_F² = E_F + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity closing scale ladders and phase-lock narratives.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_z0_horizon",
+        "title": "Free-space Z₀ ≈ 377 Ω fixture",
+        "Z0": 376.730313668,
+        "pass": true,
+        "interpretation": "Event-horizon skin impedance narrative anchor.",
+        "honesty": "SI free-space impedance constant — not a measured horizon resistivity."
+      },
+      {
+        "id": "E4_theta_egs",
+        "title": "θ_EGS = 360 / E_F² golden-angle seed",
+        "THETA_EGS_DEG": 137.50776405003785,
+        "expected": 137.50776405003785,
+        "abs_err_vs_table": 0.00023594996216047548,
+        "pass": true,
+        "interpretation": "Phase seed for socio-cognitive / facet lock narrative.",
+        "honesty": "Geometric angle — not a social-force measurement."
+      },
+      {
+        "id": "E5_scale_ladder",
+        "title": "Attraction scale ladder E_F^n monotone for n ∈ {1,2,3,6,9}",
+        "radii": [
+          {
+            "n": 1,
+            "r": 1.618033988749895
+          },
+          {
+            "n": 2,
+            "r": 2.618033988749895
+          },
+          {
+            "n": 3,
+            "r": 4.23606797749979
+          },
+          {
+            "n": 6,
+            "r": 17.944271909999163
+          },
+          {
+            "n": 9,
+            "r": 76.01315561749645
+          }
+        ],
+        "pass": true,
+        "interpretation": "Layered r_n = r_0 · E_F^n for grav/mag/chem/social indices.",
+        "honesty": "Catalog radii — not measured force ranges."
+      },
+      {
+        "id": "E6_dna_ratio",
+        "title": "DNA 34/21 ≈ E_F (chemical-layer companion)",
+        "DNA_RATIO": 1.619047619047619,
+        "E_F": 1.618033988749895,
+        "absErr": 0.0010136302977241662,
+        "pass": true,
+        "interpretation": "Chemical / molecular layer geometric companion from Part IV.",
+        "honesty": "Narrative ratio match — not a wet-lab DNA measurement in this suite."
+      },
+      {
+        "id": "E7_attraction_layers",
+        "title": "Attraction-layer diagnostic map has four rows",
+        "n": 4,
+        "layers": [
+          [
+            "Gravitational",
+            6
+          ],
+          [
+            "Magnetic / Vector",
+            3
+          ],
+          [
+            "Chemical / Molecular",
+            2
+          ],
+          [
+            "Socio-Cognitive",
+            9
+          ]
+        ],
+        "pass": true,
+        "interpretation": "Catalog completeness for grav / mag / chem / social layers.",
+        "honesty": "Structural table — not multi-force empirical unification."
+      },
+      {
+        "id": "E8_paper_on_disk",
+        "title": "Canonical paper + Doc ID + Honesty + TBME disclaimer",
+        "monoOk": true,
+        "mirrorOk": true,
+        "hasDocId": true,
+        "hasHonesty": true,
+        "hasTbme": true,
+        "registryId": "synthobs-tbme-internal-kerr-newman-2026-08",
+        "pass": true,
+        "interpretation": "Catalog fidelity for Omni-Lattice appendix sync.",
+        "honesty": "Filesystem receipt."
+      },
+      {
+        "id": "E9_scorecard_order",
+        "title": "Unified-attraction rubric overall > Separated-forces overall",
+        "sepOverall": 73,
+        "uniOverall": 97.6,
+        "fixtures": {
+          "SEPARATED_FORCES": {
+            "coherence": 74,
+            "irreducibility": 72,
+            "overall": 73
+          },
+          "UNIFIED_ATTRACTION": {
+            "coherence": 98.2,
+            "irreducibility": 97,
+            "overall": 97.6
+          }
+        },
+        "pass": true,
+        "interpretation": "Interpretive scorecard ordering for Part VI lens.",
+        "honesty": "Rubric arithmetic — not SI accuracy of nature."
+      }
+    ]
+  }
+}

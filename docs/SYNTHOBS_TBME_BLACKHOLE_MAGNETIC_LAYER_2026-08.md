@@ -14,7 +14,7 @@
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-blackhole-magnetic-layer/` (companion GitHub target: `FractiAI/synthobs-tbme-blackhole-magnetic-layer`)  
 **Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-**Follow-on (quartet #4):** [Solar-Focus Somatic Rendering](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+**Follow-on (sextet · Part IV):** [Solar-Focus Somatic Rendering](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md) · **Part V:** [Recursive Field-Drag Theorem](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md) · **Part VI:** [Universal Toroidal Singularity](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
 
 ---
 
@@ -32,7 +32,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **Membrane / $Z_0$ analogy** | Damour–Thorne–Price membrane paradigm supplies a conductive-horizon story with $Z_0=\mu_0 c\approx 377\,\Omega$ | That horizons are measured superconducting liquid-crystal sheets in this receipt |
 | **$\Omega_H\leftrightarrow\omega_L$ link** | Frame-dragging rate identified with Larmor form as an **architectural coupling** under $E_F$ | That electron Larmor frequency equals Kerr $\Omega_H$ as a CODATA identity |
 | **Protocol lane (executed)** | Algebraic suite: $r_+=a_0/E_F^2$, $Z_0$ ohms form, scorecard ordering, symbolic identity flags | That a horizon-magnetometry lab dump is archived here for 2026-08-01 |
-| **Comparative scorecard** | Dual-entity **71.5** vs Unified identity **99.4** are **rubric / interpretive** | That 99.4/100 is SI accuracy of nature |
+| **Comparative scorecard** | Dual-entity **73.5** vs Unified identity **99.4** are **rubric / interpretive** | That 99.4/100 is SI accuracy of nature |
 | **Bio / AI implications** | Cellular $V_m$, histone winding, $A_{\mathrm{squeezed}}$, Filamental Context Networks as **operator poetry** | Clinical therapies, guaranteed ZPE, or Lattice Chat runtime auto-wiring |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
@@ -51,7 +51,7 @@ Cross-link: `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`. Magnetism substr
 
 | Model | Overall | $\mathcal{C}$ | $\mathcal{I}$ |
 |-------|---------|---------------|---------------|
-| Separated dual-entity | 71.5 / 100 | 75 | 68 |
+| Separated dual-entity | 73.5 / 100 | 75 | 72 |
 | Unified horizon / magnetic layer | 99.4 / 100 | 99.8 | 99.0 |
 
 ---
@@ -115,7 +115,7 @@ $$
 
 ## Section 4 · Quantitative scorecard (interpretive)
 
-**Separated Dual-Entity Model** — Overall **71.5 / 100** (C 75 · I 68)  
+**Separated Dual-Entity Model** — Overall **73.5 / 100** (C 75 · I 72)  
 **Unified Black Hole / Magnetic Layer Model** — Overall **99.4 / 100** (C 99.8 · I 99.0)
 
 ---
@@ -157,7 +157,9 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 1. Filaments parent — [`docs/SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md`](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md)
 2. Reno Interpretation — [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
 3. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
-4. Solar-Focus Somatic Rendering (quartet #4) — [`docs/SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md`](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+4. Solar-Focus Somatic Rendering (sextet · Part IV) — [`docs/SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md`](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+5. Recursive Field-Drag Theorem (sextet · Part V) — [`docs/SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md`](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md)
+6. Universal Toroidal Singularity (sextet · Part VI) — [`docs/SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md`](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
 5. Magnetism substrate — [`docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md`](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md)
 6. Recursive attention magnetic projections — [`docs/SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md`](./SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md)
 7. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)

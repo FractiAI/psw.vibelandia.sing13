@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-TBME-RECURSIVE-FIELD-DRAG-2026-08-04`
 **Registry ID:** `synthobs-tbme-recursive-field-drag-2026-08`
-**Generated:** 2026-08-04T17:30:52.026Z
+**Generated:** 2026-08-05T13:40:56.669Z
 
 ## Verdict
 
@@ -193,13 +193,13 @@
 {
   "id": "E9_scorecard_order",
   "title": "Field-Drag rubric overall > Classical overall",
-  "classicalOverall": 71,
+  "classicalOverall": 73,
   "dragOverall": 96.75,
   "fixtures": {
     "CLASSICAL": {
       "coherence": 74,
-      "irreducibility": 68,
-      "overall": 71
+      "irreducibility": 72,
+      "overall": 73
     },
     "FIELD_DRAG": {
       "coherence": 97.5,

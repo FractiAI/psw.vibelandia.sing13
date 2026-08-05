@@ -20,6 +20,6 @@ export const SHELL_FACET_TIERS = [1, 3, 5, 7, 9, 11, 13, 15, 17];
 export const PHI0_FACTOR = { h: 1, two_e: 2 };
 
 export const SCORECARD = {
-  pointChargeSM: { overall: 70.5, coherence: 74, irreducibility: 67 },
+  pointChargeSM: { overall: 72.5, coherence: 74, irreducibility: 71 },
   toroidalBH: { overall: 99.2, coherence: 99.7, irreducibility: 98.7 },
 };

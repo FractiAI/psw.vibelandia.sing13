@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Standalone TBME / Omni-Lattice lens — Solar-Focus Somatic Rendering Reno quartet #4 (WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02). Not Lattice engine runtime.",
+  "description": "Standalone TBME / Omni-Lattice lens — Solar-Focus Somatic Rendering Reno sextet · Part IV (WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02). Not Lattice engine runtime.",
   "scripts": {
     "research": "node scripts/run_empirical_pipeline.mjs"
   },

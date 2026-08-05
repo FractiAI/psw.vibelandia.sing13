@@ -4,7 +4,7 @@
   "priorDocId": "WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01",
   "title": "Holographic Mirror-Angle Multiplicity — The Reno Interpretation (Nested Spherical Mirror Lattice)",
   "interpretation": "Reno",
-  "generatedAt": "2026-08-02T03:09:43.942Z",
+  "generatedAt": "2026-08-05T13:40:56.196Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "omniLatticeCompanion": true,
   "lensOnly": true,
@@ -31,9 +31,9 @@
     "R_N": 0.23606797749978972,
     "SCORECARD": {
       "copenhagen": {
-        "overall": 73,
+        "overall": 75,
         "coherence": 77,
-        "irreducibility": 69
+        "irreducibility": 73
       },
       "reno": {
         "overall": 98.9,
@@ -183,9 +183,9 @@
         "verdict": "support",
         "scorecard": {
           "copenhagen": {
-            "overall": 73,
+            "overall": 75,
             "coherence": 77,
-            "irreducibility": 69
+            "irreducibility": 73
           },
           "reno": {
             "overall": 98.9,

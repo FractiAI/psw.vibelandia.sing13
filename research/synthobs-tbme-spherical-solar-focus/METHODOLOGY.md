@@ -12,7 +12,7 @@
 | E3 | $34/21\approx E_F$ | Unrelated ratio |
 | E4 | $R_n\approx 0.236$ | Unrelated coeff |
 | E5 | Solar-focus rubric > random | Ordering inverted |
-| E6 | Quartet DOC chain | Orphan |
+| E6 | Quintet DOC chain | Orphan |
 | E7 | Optional lab JSON | skip if absent |
 
 No hardcoded “pass” without computation.

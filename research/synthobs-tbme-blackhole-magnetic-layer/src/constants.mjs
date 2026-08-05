@@ -17,6 +17,6 @@ export const GRANDPARENT_DOC_ID = 'WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRET
 
 /** Architectural identity: r+ = a0 / E_F^2 when r0 = a0/E_F and r+ = r0/E_F */
 export const SCORECARD = {
-  dualEntity: { overall: 71.5, coherence: 75, irreducibility: 68 },
+  dualEntity: { overall: 73.5, coherence: 75, irreducibility: 72 },
   unifiedHorizonA: { overall: 99.4, coherence: 99.8, irreducibility: 99.0 },
 };

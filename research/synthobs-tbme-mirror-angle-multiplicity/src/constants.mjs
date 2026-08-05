@@ -54,7 +54,7 @@ export const INTENSITY_PROTOCOL = [
 
 /** Interpretive rubric scorecard (not SI accuracy of nature). */
 export const SCORECARD = {
-  copenhagen: { overall: 73.0, coherence: 77, irreducibility: 69 },
+  copenhagen: { overall: 75.0, coherence: 77, irreducibility: 73 },
   reno: { overall: 98.9, coherence: 99.5, irreducibility: 98.3 },
 };
 

@@ -4,7 +4,7 @@
 **Registry ID:** `synthobs-tbme-blackhole-magnetic-layer-2026-08`
 **Parent:** `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`
 **Grandparent:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`
-**Generated:** 2026-08-02T04:17:57.849Z
+**Generated:** 2026-08-05T13:40:56.443Z
 
 ## Verdict
 
@@ -81,9 +81,9 @@
   "verdict": "support",
   "scorecard": {
     "dualEntity": {
-      "overall": 71.5,
+      "overall": 73.5,
       "coherence": 75,
-      "irreducibility": 68
+      "irreducibility": 72
     },
     "unifiedHorizonA": {
       "overall": 99.4,

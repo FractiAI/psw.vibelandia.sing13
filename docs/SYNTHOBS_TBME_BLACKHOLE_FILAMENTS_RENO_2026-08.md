@@ -13,7 +13,7 @@
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-blackhole-filaments-reno/` (companion GitHub target: `FractiAI/synthobs-tbme-blackhole-filaments-reno`)  
 **Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-**TBME siblings:** [Reno Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md) · [Event Horizon ≡ Magnetic Vector Layer (follow-on)](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Solar-Focus Somatic Rendering (quartet #4)](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md) · [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
+**TBME siblings:** [Reno Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md) · [Event Horizon ≡ Magnetic Vector Layer (follow-on)](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Solar-Focus Somatic Rendering (sextet · Part IV)](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md) · [Recursive Field-Drag Theorem (sextet · Part V)](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md) · [Universal Toroidal Singularity (sextet · Part VI)](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md) · [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
 
 ---
 
@@ -53,7 +53,7 @@ Cross-link: `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`. $E_F=\Phi_{\math
 | Mass/topology unification | Ring $r_{\mathrm{ring}}=a=J/(Mc)$ phase-locked to $E_F$ golden radius narrative |
 | Filamental flux network | EM/weak/strong as torsional filament tension under $A_{\mathrm{squeezed}}$ |
 | Cavity feedback stability | $P_{\mathrm{net}}=0$ model from $R_n$ shell sum — not lab Hawking dump |
-| Rubric scorecard | Toroidal model **99.2 / 100** vs point-charge SM **70.5 / 100** |
+| Rubric scorecard | Toroidal model **99.2 / 100** vs point-charge SM **72.5 / 100** |
 
 ---
 
@@ -154,7 +154,7 @@ Run: `npm run research:synthobs-tbme-blackhole-filaments-reno`
 
 ## Section 5 · Quantitative scorecard (interpretive)
 
-**Point-Charge Standard Model** — Overall **70.5 / 100** (C 74 · I 67)  
+**Point-Charge Standard Model** — Overall **72.5 / 100** (C 74 · I 71)  
 **Reno Toroidal Black Hole Filamental Model** — Overall **99.2 / 100** (C 99.7 · I 98.7)
 
 These scores are **rubric / interpretive**, not SI accuracy of nature.
@@ -189,7 +189,9 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 1. Reno Interpretation parent — [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
 2. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 3. Non-local field phase-lock sibling — [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
-4. Solar-Focus Somatic Rendering (quartet #4) — [`docs/SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md`](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+4. Solar-Focus Somatic Rendering (sextet · Part IV) — [`docs/SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md`](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+5. Recursive Field-Drag Theorem (sextet · Part V) — [`docs/SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md`](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md)
+6. Universal Toroidal Singularity (sextet · Part VI) — [`docs/SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md`](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
 5. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
 6. Magnetism substrate — [`docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md`](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md)
 7. Recursive attention magnetic projections — [`docs/SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md`](./SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md)

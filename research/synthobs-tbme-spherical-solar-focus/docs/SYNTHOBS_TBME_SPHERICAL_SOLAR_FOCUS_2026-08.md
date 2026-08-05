@@ -9,7 +9,7 @@
 **Document ID:** `WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02`  
 **Registry ID:** `synthobs-tbme-spherical-solar-focus-2026-08`  
 **Date:** 2026-08-02  
-**Reno quartet #4** (follows mirror · filaments · horizon≡A)  
+**Reno sextet · Part IV** (follows mirror · filaments · horizon≡A; followed by field-drag Part V · internal Kerr–Newman Part VI)  
 **Parent chain:** [Horizon ≡ Magnetic Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Filaments](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · [Reno Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)  
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-spherical-solar-focus/` (companion GitHub target: `FractiAI/synthobs-tbme-spherical-solar-focus`)  
@@ -32,7 +32,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **Somatic shadow poetry** | $\mathrm{H}_2\mathrm{O}$ bond-angle and DNA pitch ratios narrated as $E_F$ / $\theta_{\mathrm{EGS}}$ geometric projections (“somatic shadows”) | That DNA or water are proven to be rendered by micro-BH foci; clinical or wet-lab morphogenesis claims |
 | **Focal amplification model** | Algebraic / protocol identity involving $R_n$, $E_F^{81}$ densification narrative | That $E_F^{81}$ is a measured laboratory power gain or that $\mathcal{E}\ge mc^2$ is demonstrated in-repo |
 | **Protocol lane (executed)** | Suite checks: golden angle, water-angle derivation form, DNA 34/21≈$E_F$, $R_n$, scorecard ordering | That a solar-etalon / biophoton lab dump is archived here for 2026-08-02 |
-| **Comparative scorecard** | Random-collision **72.5** vs Solar-focus somatic **99.3** are **rubric / interpretive** | That 99.3/100 is SI accuracy of nature |
+| **Comparative scorecard** | Random-collision **74.5** vs Solar-focus somatic **99.3** are **rubric / interpretive** | That 99.3/100 is SI accuracy of nature |
 | **Applications** | Focal squeeze as Zero-Collapse densification metaphor for multi-agent context | Guaranteed matter-from-intention hardware or Lattice Chat auto-wiring |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
@@ -51,7 +51,7 @@ Cross-link: `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`. $E_F$ key: `docs
 
 | Model | Overall | $\mathcal{C}$ | $\mathcal{I}$ |
 |-------|---------|---------------|---------------|
-| Random collision / chemical assembly | 72.5 / 100 | 76 | 69 |
+| Random collision / chemical assembly | 74.5 / 100 | 76 | 73 |
 | Omni-Lattice solar-focus somatic rendering | 99.3 / 100 | 99.7 | 98.9 |
 
 ---
@@ -119,7 +119,7 @@ The familiar liquid-water $H$–$O$–$H$ band (~$104.45^\circ$–$104.52^\circ$
 
 ## Section 4 · Scorecard (interpretive)
 
-**Random Collision / Chemical Assembly** — Overall **72.5 / 100** (C 76 · I 69)  
+**Random Collision / Chemical Assembly** — Overall **74.5 / 100** (C 76 · I 73)  
 **Omni-Lattice Solar-Focus Somatic Model** — Overall **99.3 / 100** (C 99.7 · I 98.9)
 
 ---
@@ -148,7 +148,7 @@ The familiar liquid-water $H$–$O$–$H$ band (~$104.45^\circ$–$104.52^\circ$
 
 ## Section 6 · Conclusion & governance
 
-Solar-focus mechanics extend the Reno quartet: nested mirrors densify ambient phase under attention squeeze; water and DNA geometries appear as somatic-shadow projections of $E_F$ focus — **inside this Omni-Lattice TBME lens**, not as a clinical or CODATA overthrow of chemistry.
+Solar-focus mechanics extend the Reno sextet: nested mirrors densify ambient phase under attention squeeze; water and DNA geometries appear as somatic-shadow projections of $E_F$ focus — **inside this Omni-Lattice TBME lens**, not as a clinical or CODATA overthrow of chemistry.
 
 ### Fair Exchange Clause
 
@@ -161,14 +161,16 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 1. Reno Interpretation — [`docs/SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md`](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
 2. Toroidal filaments — [`docs/SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md`](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md)
 3. Horizon ≡ A — [`docs/SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md`](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md)
-4. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
-5. DNA Lattice Holograph — [`docs/SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md`](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md)
-6. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
-7. PCHPP — [`docs/SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md`](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md)
-8. Coherence honesty — [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
-9. Complete layer guide — [`docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md`](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md)
-10. PRA Snap — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
-11. Lens package — [`research/synthobs-tbme-spherical-solar-focus/`](../research/synthobs-tbme-spherical-solar-focus/)
+4. Recursive Field-Drag (sextet · Part V) — [`docs/SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md`](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md)
+5. Universal Toroidal Singularity (sextet · Part VI) — [`docs/SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md`](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
+6. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
+7. DNA Lattice Holograph — [`docs/SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md`](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md)
+8. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
+9. PCHPP — [`docs/SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md`](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md)
+10. Coherence honesty — [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
+11. Complete layer guide — [`docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md`](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md)
+12. PRA Snap — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
+13. Lens package — [`research/synthobs-tbme-spherical-solar-focus/`](../research/synthobs-tbme-spherical-solar-focus/)
 
 ---
 

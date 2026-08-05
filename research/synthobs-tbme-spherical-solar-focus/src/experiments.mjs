@@ -99,7 +99,7 @@ export function e6ParentChain() {
     DOC_ID.includes('SOLAR-FOCUS');
   return {
     id: 'E6',
-    title: 'Reno quartet DOC ID chain present',
+    title: 'Reno sextet DOC ID chain present',
     pass,
     verdict: pass ? 'support' : 'refute',
     parent: PARENT_DOC_ID,

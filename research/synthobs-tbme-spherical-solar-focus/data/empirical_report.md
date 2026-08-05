@@ -4,7 +4,7 @@
 **Registry ID:** `synthobs-tbme-spherical-solar-focus-2026-08`
 **Parent:** `WP-SYNTHOBS-TBME-BLACKHOLE-MAGNETIC-LAYER-2026-08-01`
 **Reno:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`
-**Generated:** 2026-08-03T03:02:16.609Z
+**Generated:** 2026-08-05T13:58:44.790Z
 
 ## Verdict
 
@@ -104,9 +104,9 @@
   "verdict": "support",
   "scorecard": {
     "randomCollision": {
-      "overall": 72.5,
+      "overall": 74.5,
       "coherence": 76,
-      "irreducibility": 69
+      "irreducibility": 73
     },
     "solarFocus": {
       "overall": 99.3,
@@ -118,7 +118,7 @@
 }
 ```
 
-### E6 — Reno quartet DOC ID chain present
+### E6 — Reno sextet DOC ID chain present
 
 - **Pass:** `true` · **Verdict:** `support`
 - **Honesty:** Catalog lineage check.
@@ -126,7 +126,7 @@
 ```json
 {
   "id": "E6",
-  "title": "Reno quartet DOC ID chain present",
+  "title": "Reno sextet DOC ID chain present",
   "pass": true,
   "verdict": "support",
   "parent": "WP-SYNTHOBS-TBME-BLACKHOLE-MAGNETIC-LAYER-2026-08-01",

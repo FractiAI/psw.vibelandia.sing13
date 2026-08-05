@@ -3,7 +3,7 @@
 **Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`
 **Registry ID:** `synthobs-tbme-superposition-reno-interpretation-2026-08`
 **Prior (REV2):** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01`
-**Generated:** 2026-08-02T03:09:43.942Z
+**Generated:** 2026-08-05T13:40:56.196Z
 
 ## Verdict
 
@@ -201,9 +201,9 @@
   "verdict": "support",
   "scorecard": {
     "copenhagen": {
-      "overall": 73,
+      "overall": 75,
       "coherence": 77,
-      "irreducibility": 69
+      "irreducibility": 73
     },
     "reno": {
       "overall": 98.9,

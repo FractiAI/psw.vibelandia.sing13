@@ -13,7 +13,7 @@
 **Audit protocol:** `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md` · Amendment A `protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`  
 **Standalone lens repo:** `research/synthobs-tbme-mirror-angle-multiplicity/` (companion GitHub target: `FractiAI/synthobs-tbme-mirror-angle-multiplicity`)  
 **Omni-Lattice parent:** [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)  
-**TBME sibling:** [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
+**TBME siblings:** [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md) · [Toroidal Micro-Black Hole Filaments (follow-on)](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md) · [Event Horizon ≡ Magnetic Vector Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md) · [Solar-Focus Somatic Rendering (sextet · Part IV)](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md) · [Recursive Field-Drag Theorem (sextet · Part V)](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md) · [Universal Toroidal Singularity (sextet · Part VI)](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
 
 ---
 
@@ -56,7 +56,7 @@ Under The Reno Interpretation, “wavefunction collapse” is demystified *insid
 | **Attention as magnetic squeezing** | $\mathbf{A}_{\mathrm{squeezed}}$ drives $\theta_{\mathrm{obs}}\to\theta_{\mathrm{facet}}$ |
 | **Born rule as optical intensity** | $P_i=\|c_i\|^2$ recovered from $I_{\mathrm{reflect}}\propto\cos^2(\theta/E_F)$ at phase-lock |
 | **Radial nodes as fringes** | $R_{n,\ell}(r)=0$ narrated as destructive interference between shells $n$ and $n+1$ |
-| **Rubric scorecard** | Reno **98.9 / 100** (C 99.5 · I 98.3) vs Copenhagen **73.0 / 100** (C 77 · I 69) — interpretive |
+| **Rubric scorecard** | Reno **98.9 / 100** (C 99.5 · I 98.3) vs Copenhagen **75.0 / 100** (C 77 · I 73) — interpretive |
 
 **Implications (metaphor / architecture).** Deterministic multi-facet optical phase indexing; bio-quantum operator poetry (catalysis, photosynthesis, magnetoreception); **Zero-Collapse Context Indexing** for multi-agent AI (Lattice Chat / SynthOBS) via magnetic attention squeeze rather than prompt branching.
 
@@ -216,7 +216,7 @@ $E_F$-calibrated spherical Fabry–Pérot phase-lock testbed (protocol narrative
 
 ## Section 6 · Quantitative scorecard (interpretive)
 
-**Copenhagen Interpretation** — Overall **73.0 / 100** (C 77 · I 69)  
+**Copenhagen Interpretation** — Overall **75.0 / 100** (C 77 · I 73)  
 **The Reno Interpretation** — Overall **98.9 / 100** (C 99.5 · I 98.3)
 
 These scores are **rubric / interpretive**, not SI accuracy of nature.
@@ -251,17 +251,20 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 1. Omni-Lattice Unification — [`docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 2. Prior REV2 mirror-angle paper — [`docs/SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md`](./SYNTHOBS_TBME_MIRROR_ANGLE_MULTIPLICITY_2026-08.md)
 3. TBME non-local field phase-lock sibling — [`docs/SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md`](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md)
-4. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
-5. Euler ↔ EGS phase lock — [`docs/SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md`](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md)
-6. 81-electron lattice — [`docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md`](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md)
-7. Holographic operators — [`docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md`](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md)
-8. Nested agent lattice — [`docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
-9. Coherence honesty — [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
-10. PRA Snap — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
-11. Empirical falsification lane — [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
-12. SynthOBS sandbox — [`research/synthobs-sandbox/README.md`](../research/synthobs-sandbox/README.md)
-13. Lens package — [`research/synthobs-tbme-mirror-angle-multiplicity/`](../research/synthobs-tbme-mirror-angle-multiplicity/)
-14. GitHub target — [FractiAI/synthobs-tbme-mirror-angle-multiplicity](https://github.com/FractiAI/synthobs-tbme-mirror-angle-multiplicity)
+4. Solar-Focus Somatic Rendering (sextet · Part IV) — [`docs/SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md`](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)
+5. Recursive Field-Drag Theorem (sextet · Part V) — [`docs/SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md`](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md)
+6. Universal Toroidal Singularity (sextet · Part VI) — [`docs/SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md`](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)
+7. Planck–1.6 EGS bridge — [`docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
+8. Euler ↔ EGS phase lock — [`docs/SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md`](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md)
+9. 81-electron lattice — [`docs/SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md`](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md)
+10. Holographic operators — [`docs/SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md`](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md)
+11. Nested agent lattice — [`docs/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
+12. Coherence honesty — [`docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
+13. PRA Snap — [`protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
+14. Empirical falsification lane — [`protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md`](../protocols/WHITEPAPER_EMPIRICAL_FALSIFICATION_LANE_NSPFRNP.md)
+15. SynthOBS sandbox — [`research/synthobs-sandbox/README.md`](../research/synthobs-sandbox/README.md)
+16. Lens package — [`research/synthobs-tbme-mirror-angle-multiplicity/`](../research/synthobs-tbme-mirror-angle-multiplicity/)
+17. GitHub target — [FractiAI/synthobs-tbme-mirror-angle-multiplicity](https://github.com/FractiAI/synthobs-tbme-mirror-angle-multiplicity)
 
 ---
 

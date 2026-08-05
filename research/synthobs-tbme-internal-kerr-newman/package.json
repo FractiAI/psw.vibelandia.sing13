@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-tbme-internal-kerr-newman",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.05",
+  "description": "Universal Toroidal Singularity Theorem — Omni-Lattice Core Part VI / Reno sextet lens suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-tbme-internal-kerr-newman.git"
+  }
+}

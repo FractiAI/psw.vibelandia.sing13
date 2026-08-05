@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Empirical pipeline — TBME Spherical Solar-Focus Somatic Rendering (Reno quartet #4)
+ * Empirical pipeline — TBME Spherical Solar-Focus Somatic Rendering (Reno sextet · Part IV)
  * Doc: WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02
  */
 import fs from 'node:fs/promises';
@@ -80,7 +80,7 @@ async function main() {
     renoDocId: RENO_DOC_ID,
     title: STUDY_TITLE,
     interpretation: 'Reno-Solar-Focus-Somatic',
-    quartetIndex: 4,
+    sextetIndex: 4,
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
     omniLatticeCompanion: true,

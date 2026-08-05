@@ -2,7 +2,7 @@
   "docId": "WP-SYNTHOBS-TBME-RECURSIVE-FIELD-DRAG-2026-08-04",
   "registryId": "synthobs-tbme-recursive-field-drag-2026-08",
   "title": "The Recursive Field-Drag Theorem — Empirical Suite",
-  "generatedAt": "2026-08-04T17:30:52.026Z",
+  "generatedAt": "2026-08-05T13:40:56.669Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "Recursive Field-Drag is an Omni-Lattice / TBME architectural lens. Suite validates E_F identities, Z0 fixture, model scaling, and catalog fidelity — not production physics overthrow.",
   "results": {
@@ -111,13 +111,13 @@
       {
         "id": "E9_scorecard_order",
         "title": "Field-Drag rubric overall > Classical overall",
-        "classicalOverall": 71,
+        "classicalOverall": 73,
         "dragOverall": 96.75,
         "fixtures": {
           "CLASSICAL": {
             "coherence": 74,
-            "irreducibility": 68,
-            "overall": 71
+            "irreducibility": 72,
+            "overall": 73
           },
           "FIELD_DRAG": {
             "coherence": 97.5,

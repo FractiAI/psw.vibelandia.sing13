@@ -51,7 +51,7 @@ Cross-link: `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`. $E_F=\Phi_{\math
 
 | Model | Overall | Coherence $\mathcal{C}$ | Irreducibility $\mathcal{I}$ |
 |-------|---------|-------------------------|------------------------------|
-| Copenhagen Superposition | 72.0 / 100 | 76/100 | 68/100 |
+| Copenhagen Superposition | 74.0 / 100 | 76/100 | 72/100 |
 | Omni-Lattice Holographic Mirror | 98.6 / 100 | 99/100 | 98.2/100 |
 
 ---
@@ -158,7 +158,7 @@ where $\mathcal{N}$ normalizes $\sum_i I_i=1$ over active facets. At phase-lock 
 
 ## Section 5 · Quantitative scorecard (interpretive)
 
-**Copenhagen Superposition Theory** — Overall **72.0 / 100** (C 76 · I 68)  
+**Copenhagen Superposition Theory** — Overall **74.0 / 100** (C 76 · I 72)  
 **Omni-Lattice Holographic Mirror Model** — Overall **98.6 / 100** (C 99 · I 98.2)
 
 ---

@@ -5,7 +5,7 @@
   "grandparentDocId": "WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01",
   "title": "Identity of the Event Horizon and the Magnetic Vector Layer — Reno Follow-on",
   "interpretation": "Reno-Horizon-Magnetic-Layer-Identity",
-  "generatedAt": "2026-08-02T04:17:57.849Z",
+  "generatedAt": "2026-08-05T13:40:56.443Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "omniLatticeCompanion": true,
   "lensOnly": true,
@@ -17,9 +17,9 @@
     "Z0": 376.7303136668535,
     "SCORECARD": {
       "dualEntity": {
-        "overall": 71.5,
+        "overall": 73.5,
         "coherence": 75,
-        "irreducibility": 68
+        "irreducibility": 72
       },
       "unifiedHorizonA": {
         "overall": 99.4,
@@ -70,9 +70,9 @@
         "verdict": "support",
         "scorecard": {
           "dualEntity": {
-            "overall": 71.5,
+            "overall": 73.5,
             "coherence": 75,
-            "irreducibility": 68
+            "irreducibility": 72
           },
           "unifiedHorizonA": {
             "overall": 99.4,

@@ -28,6 +28,6 @@ export const DNA_RATIO = DNA_TURN_A / DNA_DIAMETER_A;
 export const DNA_RATIO_TOL = 0.01;
 
 export const SCORECARD = {
-  randomCollision: { overall: 72.5, coherence: 76, irreducibility: 69 },
+  randomCollision: { overall: 74.5, coherence: 76, irreducibility: 73 },
   solarFocus: { overall: 99.3, coherence: 99.7, irreducibility: 98.9 },
 };

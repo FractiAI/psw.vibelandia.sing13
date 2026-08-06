@@ -22,73 +22,94 @@
       font-family: "Source Serif 4", Georgia, serif;
       margin: 0;
       color: var(--deck-text);
-      background:
-        radial-gradient(ellipse 100% 60% at 50% -5%, rgba(212, 175, 55, 0.16), transparent 55%),
-        radial-gradient(ellipse 70% 40% at 100% 80%, rgba(245, 158, 11, 0.06), transparent 50%),
-        var(--deck-bg);
+      background: #071018;
+    }
+    .ark-shell {
+      margin: 0;
+      padding: 0;
     }
     .ark-hero {
-      text-align: center;
-      padding: 1rem 0 1.75rem;
-      min-height: min(72vh, 560px);
+      position: relative;
+      text-align: left;
+      min-height: min(92vh, 720px);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      padding: calc(1.1rem + env(safe-area-inset-top)) 1.25rem 2.2rem;
+      background:
+        linear-gradient(180deg, rgba(7,16,24,0.2) 0%, rgba(7,16,24,0.62) 48%, #071018 100%),
+        url('/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png') center 38% / cover no-repeat;
+    }
+    .ark-hero .deck-eyebrow {
+      color: #c4a35a;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.65);
     }
     .ark-hero .deck-h1 {
-      font-size: clamp(2.4rem, 10vw, 4rem);
-      letter-spacing: 0.05em;
+      font-size: clamp(2.6rem, 11vw, 4.4rem);
+      letter-spacing: 0.04em;
       margin-bottom: 0.35rem;
       max-width: none;
       white-space: nowrap;
       text-transform: uppercase;
+      color: #f0e0b8;
+      text-shadow: 0 4px 24px rgba(0,0,0,0.8);
+    }
+    .ark-hero .deck-tagline {
+      color: #e6d5b8;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.7);
     }
     .ark-mission {
       font-size: clamp(1.15rem, 3.2vw, 1.45rem);
-      color: var(--deck-champagne);
+      color: #e6d5b8;
       max-width: 28rem;
-      margin: 0.85rem auto 0;
+      margin: 0.85rem 0 0;
       line-height: 1.45;
       font-style: italic;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.65);
     }
     .ark-where {
       margin-top: 1rem;
       font-size: 0.92rem;
-      color: var(--deck-muted);
+      color: #9aa8b5;
     }
     .ark-cta {
       display: inline-block;
-      margin: 1.25rem 0.35rem 0;
+      margin: 1.25rem 0.35rem 0 0;
       padding: 0.75rem 1.2rem;
-      border-radius: 8px;
+      border-radius: 2px;
       font-weight: 700;
       text-decoration: none;
-      background: linear-gradient(135deg, #fbbf24, #d97706);
-      color: #1a120c;
+      background: linear-gradient(180deg, #e8d4a8, #b8923e);
+      color: #2a1c12;
     }
     .ark-cta--ghost {
-      background: transparent;
-      color: var(--deck-champagne);
-      border: 1px solid var(--deck-line);
+      background: rgba(7,16,24,0.55);
+      color: #e6d5b8;
+      border: 1px solid rgba(198,163,90,0.35);
+    }
+    .deck-wrap {
+      background:
+        radial-gradient(ellipse 100% 60% at 50% -5%, rgba(196, 163, 90, 0.12), transparent 55%),
+        #071018;
     }
     .ark-section h2 {
       font-family: "Bebas Neue", Impact, sans-serif;
       font-size: 1.55rem;
       letter-spacing: 0.04em;
-      color: var(--deck-gold-hi);
+      color: #f0e0b8;
       font-weight: 400;
       margin: 2rem 0 0.55rem;
     }
     .ark-section p, .ark-section li {
-      color: var(--deck-text-soft);
+      color: #c5ced6;
       line-height: 1.55;
       font-size: 1.02rem;
     }
     .ark-section ul { padding-left: 1.2rem; }
     .ark-box {
-      border: 1px solid var(--deck-line);
-      border-radius: 12px;
-      background: rgba(26, 18, 12, 0.72);
+      border: 1px solid rgba(198,163,90,0.28);
+      border-radius: 4px;
+      background: rgba(12, 24, 36, 0.85);
       padding: 1rem 1.15rem;
       margin: 1rem 0;
     }
@@ -96,50 +117,61 @@
       margin: 0;
       font-family: ui-monospace, Consolas, monospace;
       font-size: 0.82rem;
-      color: #fef3c7;
+      color: #f0e0b8;
       white-space: pre-wrap;
       line-height: 1.5;
     }
     .ark-honesty {
       font-size: 0.85rem;
-      color: var(--deck-muted);
-      border-top: 1px solid rgba(212, 175, 55, 0.25);
+      color: #9aa8b5;
+      border-top: 1px solid rgba(198, 163, 90, 0.25);
       margin-top: 2rem;
       padding-top: 1rem;
       line-height: 1.45;
     }
+    .ark-hero__nav {
+      position: absolute;
+      top: calc(0.85rem + env(safe-area-inset-top));
+      left: 1.25rem;
+      right: 1.25rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(232,238,244,0.75);
+    }
+    .ark-hero__nav a { color: #e6d5b8; font-weight: 600; text-decoration: none; }
+    .ark-hero__nav .here { color: #f0e0b8; font-weight: 700; }
+    .ark-hero__nav .dot { margin: 0 0.4rem; opacity: 0.5; }
   </style>
 </head>
 <body>
-  <main class="deck-wrap">
-    <a class="deck-back" href="/">&larr; QUESTFEST top deck</a>
-    <nav class="deck-skin-nav" aria-label="Site">
+  <header class="ark-hero" role="banner">
+    <nav class="ark-hero__nav" aria-label="Site">
       <a href="/">QUESTFEST</a><span class="dot" aria-hidden="true">·</span>
-      <a href="/get-started">Get Started</a><span class="dot" aria-hidden="true">·</span>
+      <a href="/get-started">Board</a><span class="dot" aria-hidden="true">·</span>
       <span class="here">SS Vibelandia</span>
     </nav>
+    <p class="deck-eyebrow">FractiAI · living cruise of the Intelligence Age</p>
+    <h1 class="deck-h1">SS VIBELANDIA</h1>
+    <p class="deck-tagline">The Noah’s Ark of the Intelligence Age</p>
+    <p class="ark-mission">Preserve the signal. Refine the pattern. Navigate the unknown.</p>
+    <p class="ark-where">Online 24×365 · Downtown Reno · Midtown too</p>
+    <p>
+      <a class="ark-cta" href="/get-started">Board here</a>
+      <a class="ark-cta" href="/lattice">Lattice Chat V1.618</a>
+      <a class="ark-cta ark-cta--ghost" href="/">Enter QUESTFEST</a>
+      <a class="ark-cta ark-cta--ghost" href="/listen">Listen</a>
+    </p>
+  </header>
 
-    <header class="ark-hero">
-      <p class="deck-eyebrow">FractiAI · living holographic ship</p>
-      <h1 class="deck-h1">SS VIBELANDIA</h1>
-      <p class="deck-tagline">The Noah’s Ark of the Intelligence Age</p>
-      <p class="ark-mission">Preserve the signal. Refine the pattern. Navigate the unknown.</p>
-      <p class="ark-where">Online 24×365 · Downtown Reno · Midtown too</p>
-      <p>
-        <a class="ark-cta" href="/">Enter QUESTFEST</a>
-        <a class="ark-cta" href="/lattice">Lattice Chat V1.618</a>
-        <a class="ark-cta ark-cta--ghost" href="/get-started">Get Started</a>
-        <a class="ark-cta ark-cta--ghost" href="/listen">Listen</a>
-      </p>
-    </header>
-
-    <article class="ark-section">
+  <main class="deck-wrap">
+    <article class="ark-section" style="max-width:42rem;margin:0 auto;padding:0 1.25rem 2.5rem;">
       <h2>What she is</h2>
       <p>
         <strong>SS Vibelandia</strong> is FractiAI’s Ark — a living holographic ship where music, catalogs,
         worlds, and human–AI crew share one hull. The intelligence under that hull is the full
         <a href="/lattice"><strong>Lattice Chat V1.618</strong></a> Nested Agent Lattice engine —
-        conversation-grade AI that now powers how the ship builds, stewards, and answers.
+        conversation-grade AI that powers how Valets build and answer aboard.
         Not a metaphor stuck on a landing page. A feeling you can board: Reno swamp heat, honor rails,
         and a crew that still answers email.
       </p>

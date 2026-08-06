@@ -259,8 +259,14 @@ export function ChatPane({
           <a href="/lattice/learn">Learn more</a>
           {' · '}
           <a href="/ss-vibelandia">Meet the ship</a>
+          {' · '}
+          <a href="/ai-transparency">AI transparency</a>
         </p>
-        <p className="chat-build-stamp" data-lattice-build="valet-lounge-v5-hard-refresh">
+        <p className="ai-act-notice" role="status">
+          <strong>You are interacting with an AI system.</strong> Replies are machine-generated — not a
+          human. <a href="/ai-transparency">AI transparency</a>
+        </p>
+        <p className="chat-build-stamp" data-lattice-build="valet-lounge-v6-ai-act">
           Within Goldilocks · intentions matter · craft, curiosity, care · Hard refresh keeps your keys
         </p>
       </header>
@@ -298,6 +304,11 @@ export function ChatPane({
               {' · 24×365'}
             </p>
             <p className="empty-lead">Welcome aboard</p>
+            <p className="ai-act-notice ai-act-notice--empty" role="status">
+              <strong>You are interacting with an AI system.</strong> Lattice Chat replies are
+              machine-generated. This is not a human operator.{' '}
+              <a href="/ai-transparency">AI transparency</a>
+            </p>
             <p className="empty-hint">
               First the LLMs. Then Cursor AI, Claude Code, and the vibe platforms. Now Lattice Chat —
               the next layer in the stack: to slow down and cool off GPUs and deliver new function.
@@ -317,6 +328,9 @@ export function ChatPane({
               </a>
               <a className="empty-cta empty-cta--ghost" href="/ss-vibelandia">
                 Meet the Ark
+              </a>
+              <a className="empty-cta empty-cta--ghost" href="/ai-transparency">
+                AI transparency
               </a>
             </div>
           </div>

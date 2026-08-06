@@ -717,6 +717,34 @@ body {
   max-width: 42rem;
 }
 
+.ai-act-notice {
+  margin: 0.45rem 0 0;
+  max-width: 42rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(28, 20, 12, 0.72);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  color: var(--brand-champagne);
+}
+
+.ai-act-notice strong {
+  color: var(--brand-gold-hi);
+  font-weight: 700;
+}
+
+.ai-act-notice a {
+  color: var(--brand-gold);
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.45);
+}
+
+.ai-act-notice--empty {
+  margin: 0.75rem auto 0;
+  max-width: 26rem;
+  text-align: left;
+}
+
 .chat-build-stamp {
   margin: 0.2rem 0 0;
   font-size: 0.62rem;

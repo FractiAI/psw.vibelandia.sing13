@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-tbme-spin-phase-polarity",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.06",
+  "description": "Universal Spin-Phase-Polarity Triad Theorem — Omni-Lattice Core Part VIII / Reno octet lens suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-tbme-spin-phase-polarity.git"
+  }
+}

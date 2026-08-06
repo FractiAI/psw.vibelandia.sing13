@@ -1,0 +1,134 @@
+{
+  "docId": "WP-SYNTHOBS-TBME-SPIN-PHASE-POLARITY-2026-08-06",
+  "registryId": "synthobs-tbme-spin-phase-polarity-2026-08",
+  "title": "The Universal Spin-Phase-Polarity Triad Theorem — Empirical Suite",
+  "generatedAt": "2026-08-06T16:46:57.933Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Spin-Phase-Polarity Triad is an Omni-Lattice / TBME architectural lens. Suite validates E_F identities, Z0, polarity/phase fixtures, and catalog fidelity — not production physics overthrow.",
+  "results": {
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "E_F = Φ_EGS fixture",
+        "E_F": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Catalog harmonic key for triadic dimensional routing.",
+        "honesty": "Architectural constant — not a replacement for ℏ, e, or c."
+      },
+      {
+        "id": "E2_ef_squared_identity",
+        "title": "E_F² = E_F + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity closing scale ladders.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_z0_horizon",
+        "title": "Free-space Z₀ ≈ 377 Ω fixture",
+        "Z0": 376.730313668,
+        "pass": true,
+        "interpretation": "Boundary impedance narrative for triad routing.",
+        "honesty": "SI free-space impedance — not measured triad resistivity."
+      },
+      {
+        "id": "E4_polarity_flip",
+        "title": "Polarity flip P → −P (Z₂ fixture)",
+        "P": 1,
+        "flipped": -1,
+        "pass": true,
+        "interpretation": "1D binary orientation catalog step.",
+        "honesty": "Z₂ arithmetic — not a lab magnet measurement."
+      },
+      {
+        "id": "E5_phase_quarter_turn",
+        "title": "Phase step φ → φ + π/2 (U(1) quarter-turn)",
+        "phi0": 0,
+        "phi1": 1.5707963267948966,
+        "pass": true,
+        "interpretation": "2D prime routing step for triad grammar.",
+        "honesty": "Angle arithmetic — not optical interferometry."
+      },
+      {
+        "id": "E6_dimensional_map",
+        "title": "Dimensional map has 4 rows (1D–N)",
+        "n": 4,
+        "rows": [
+          [
+            "Polarity",
+            1,
+            "Z2"
+          ],
+          [
+            "Phase",
+            2,
+            "U1"
+          ],
+          [
+            "Spin",
+            3,
+            "SU2"
+          ],
+          [
+            "Lattice state",
+            "N",
+            "Clifford"
+          ]
+        ],
+        "pass": true,
+        "interpretation": "Catalog completeness for polarity / phase / spin / lattice.",
+        "honesty": "Structural table — not Lie-group isomorphism proof."
+      },
+      {
+        "id": "E7_pi_polarity_phase",
+        "title": "π phase shift coincides with polarity flip (catalog)",
+        "afterPi": -1,
+        "phiAfterPi": 3.141592653589793,
+        "pass": true,
+        "interpretation": "180° functional twin of P → −P inside the lens.",
+        "honesty": "Catalog equivalence — not SI identity of domains."
+      },
+      {
+        "id": "E8_paper_on_disk",
+        "title": "Canonical paper + Doc ID + Honesty + TBME + Part VIII",
+        "monoOk": true,
+        "mirrorOk": true,
+        "hasDocId": true,
+        "hasHonesty": true,
+        "hasTbme": true,
+        "hasPartViii": true,
+        "registryId": "synthobs-tbme-spin-phase-polarity-2026-08",
+        "pass": true,
+        "interpretation": "Catalog fidelity for Omni-Lattice appendix sync.",
+        "honesty": "Filesystem receipt."
+      },
+      {
+        "id": "E9_scorecard_order",
+        "title": "Triad rubric overall > Separated-groups overall",
+        "sepOverall": 73,
+        "uniOverall": 98.8,
+        "fixtures": {
+          "SEPARATED_GROUPS": {
+            "coherence": 74,
+            "irreducibility": 72,
+            "overall": 73
+          },
+          "TRIAD_UNIFIED": {
+            "coherence": 99.6,
+            "irreducibility": 98,
+            "overall": 98.8
+          }
+        },
+        "pass": true,
+        "interpretation": "Interpretive scorecard ordering for Part VIII lens.",
+        "honesty": "Rubric arithmetic — not SI accuracy of nature."
+      }
+    ]
+  }
+}

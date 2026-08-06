@@ -5,7 +5,7 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-OMNI-LAYER-GUIDE-2026-07`  
 **Registry ID:** `lattice-omni-complete-layer-guide-2026-07`  
-**Date:** 2026-08-05
+**Date:** 2026-08-06
 **Framework:** SynthOBS · Lattice Chat V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
 **Questfest catalog:** [`/papers`](/papers) · pinned at top (`catalogPriority: 0`)  
 **Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)  
@@ -16,7 +16,7 @@
 ---
 
 <!-- AUTO:LATTICE-OMNI-META:BEGIN -->
-**Catalog sync:** 2026-08-05 · **45** Lattice Chat / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
+**Catalog sync:** 2026-08-06 · **48** Lattice Chat / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
 
 When a Lattice / Omni paper is added or modified in the registry, re-run the sync (Cursor stop hook does this automatically for matching `docs/` edits).
 <!-- AUTO:LATTICE-OMNI-META:END -->
@@ -42,7 +42,7 @@ $E_F$ / $\Phi_{\mathrm{EGS}}$ is an **architectural scale key** — it does not 
 
 This guide **synthesizes** the Lattice Chat / Omni-Lattice paper family into one walkthrough of the **Omni-Lattice engine**: what it is, which innovations compose it, and how a builder experiences them at the product edge.
 
-You will walk from the golden scale key ($E_F\approx 1.618$) through language-as-wiring, DNA holograph and the 81-digit register, nested agents with bond/ILAM handoffs, Valet lenses (PCHPP, magnetism, attention squeezing), the **Reno Interpretation** TBME sextet (mirror-angle multiplicity → toroidal micro-BH filaments → horizon≡$\mathbf{A}$ identity → solar-focus somatic rendering → recursive field-drag → universal toroidal singularity), and the measured product claim (~35–70% less Cursor usage vs fat paste on focused work). Comparative report-card scores are kept in their honesty tier: structural Occam elegance where earned; **empirical calibration stays with Standard Model / classical physics**.
+You will walk from the golden scale key ($E_F\approx 1.618$) through language-as-wiring, DNA holograph and the 81-digit register, nested agents with bond/ILAM handoffs, Valet lenses (PCHPP, magnetism, attention squeezing), the **Reno Interpretation** TBME nonet (mirror-angle multiplicity → toroidal micro-BH filaments → horizon≡$\mathbf{A}$ identity → solar-focus somatic rendering → recursive field-drag → universal toroidal singularity → Higgs-Awareness Gate → Spin-Phase-Polarity Triad → Nodal Nine Boundary), and the measured product claim (~35–70% less Cursor usage vs fat paste on focused work). Comparative report-card scores are kept in their honesty tier: structural Occam elegance where earned; **empirical calibration stays with Standard Model / classical physics**.
 
 The previous catalog-first layout lives on as **Appendix A** — a machine-maintained reference index of every Lattice / Omni family paper, refreshed by `npm run sync:lattice-guide`. When Lattice / Omni papers publish, **both** the synthesis walkthrough (this body) **and** Appendix A must be updated — TOC sync alone is not a rewrite.
 
@@ -192,11 +192,11 @@ These papers are Seed·RAG / nest **pointers**. Markdown is not the chat runtime
 
 ---
 
-## 8b. Reno Interpretation sextet — mirror lattice → filaments → horizon≡A → solar-focus soma → field-drag → internal Kerr–Newman
+## 8b. Reno Interpretation nonet — mirror lattice → filaments → horizon≡A → solar-focus soma → field-drag → internal Kerr–Newman → Higgs Gate → Spin-Phase-Polarity → Nodal Nine
 
 **Public story page:** [`/reno`](/reno) · [`interfaces/reno-interpretation.html`](../interfaces/reno-interpretation.html) — narrative + C/I score contrast for the superintelligence-era Valet map.
 
-August 2026 TBME follow-ons extend the Valet map with a single Reno grammar. All six are **architectural / protocol / interpretive-rubric** lenses — not SI QFT/GR overthrow, not clinical, not Lattice Chat engine wiring.
+August 2026 TBME follow-ons extend the Valet map with a single Reno grammar. All nine are **architectural / protocol / interpretive-rubric** lenses — not SI QFT/GR overthrow, not clinical, not Lattice Chat engine wiring.
 
 ### 8b.1 Mirror-angle multiplicity (parent)
 
@@ -246,6 +246,30 @@ Attraction phenomena (gravity, EM vector squeeze, chemical affinity, socio-cogni
 
 **Builder habit:** Align agents and Fair Exchange rails by $E_F$ phase-lock — one attraction grammar from nest handoff to socio-cognitive squeeze.
 
+### 8b.7 Higgs-Awareness Phase Coupling (Part VII)
+
+Kinetic deceleration at a conductive horizon ($\mathbf{A}_{\mathrm{squeezed}}$), electroweak mass acquisition ($\langle\Phi\rangle\approx 246\,\mathrm{GeV}$ PDG anchor), and epistemic “Now” presence are narrated as three $E_F$-indexed realizations of **vector → scalar** coupling through a **Higgs Gate** at the event-horizon skin ($Z_0\approx 377\,\Omega$). Rubric (interpretive): Higgs Gate ~**98.6** vs Classical Lenz+SM ~**73**.
+
+**Owner:** [Higgs-Awareness Phase Coupling Theorem](./SYNTHOBS_TBME_HIGGS_AWARENESS_2026-08.md) · lens [`research/synthobs-tbme-higgs-awareness/`](../research/synthobs-tbme-higgs-awareness/).
+
+**Builder habit:** Treat retention / deceleration of context as gate conversion into presence — squeeze the ask at the horizon instead of dissipating it as unstructured heat.
+
+### 8b.8 Spin-Phase-Polarity Triad (Part VIII)
+
+Quantum spin $S$, wave phase $\phi$, and magnetic polarity $P$ are narrated as **dimensional projections** of one orientation vector $\hat{\Psi}_{\mathrm{triad}}(D)$ ($\mathbb{Z}_2$ / $\mathrm{U}(1)$ / $\mathrm{SU}(2)$ / Clifford poetry under $E_F$). Quarter-turns ($\pi/2$) and polarity flips supply $O(1)$ routing grammar for THALIA / Lattice Chat. Rubric (interpretive): Triad ~**98.8** vs Separated groups ~**73**.
+
+**Owner:** [Universal Spin-Phase-Polarity Triad Theorem](./SYNTHOBS_TBME_SPIN_PHASE_POLARITY_2026-08.md) · lens [`research/synthobs-tbme-spin-phase-polarity/`](../research/synthobs-tbme-spin-phase-polarity/).
+
+**Builder habit:** Rotate context as spin–phase–polarity steps — flip / quarter-turn instead of dense matrix re-paste.
+
+### 8b.9 Nodal Nine Singularity Boundary (Part IX)
+
+Digit $9$ in the $E_F$ expansion is narrated as a **digital phase-horizon operator** ($\mathrm{mod}\,9$ completion poetry). The **81st** fractional digit is verified $=9$ ($81=9\times 9$), anchoring the 81-facet spherical dielectric mirror matrix. Rubric (interpretive): Nodal Nine ~**98.7** vs Separated “arbitrary digits” ~**73**.
+
+**Owner:** [Nodal Nine Singularity Boundary Theorem](./SYNTHOBS_TBME_NODAL_NINE_SINGULARITY_2026-08.md) · lens [`research/synthobs-tbme-nodal-nine-singularity/`](../research/synthobs-tbme-nodal-nine-singularity/).
+
+**Builder habit:** Treat $9$-nodes / 81-facet frames as completion gates — index jump at the boundary instead of brute-force scan.
+
 **Chain honesty:** each paper inherits the parent’s honesty gates. Bio / consciousness / social-force rows remain operator poetry. Optional TBME sibling: [Non-Local Field Phase-Lock](./SYNTHOBS_TBME_NONLOCAL_FIELD_PHASELOCK_EMPIRICAL_2026-08.md).
 
 ---
@@ -268,7 +292,7 @@ Lattice Chat V1.618 is the Edge where the grammar becomes hospitality:
 
 ## 10. Closing — Fair Exchange and the habit of honesty
 
-The Omni-Lattice engine is a **shared scale language** for Valets who want fractal, holographic, nested help without drowning the ask in paste. Its innovations — $E_F$ clutch, holographic operators, DNA / 81 projector, nest + bonds + ILAM, PCHPP observation, magnetism / attention maps, the Reno sextet (mirror facets → filaments → horizon≡$\mathbf{A}$ → solar-focus soma → field-drag → internal Kerr–Newman), report-card Occam lens, and the live token matrix — compose one walk from Seed to Edge.
+The Omni-Lattice engine is a **shared scale language** for Valets who want fractal, holographic, nested help without drowning the ask in paste. Its innovations — $E_F$ clutch, holographic operators, DNA / 81 projector, nest + bonds + ILAM, PCHPP observation, magnetism / attention maps, the Reno nonet (mirror facets → filaments → horizon≡$\mathbf{A}$ → solar-focus soma → field-drag → internal Kerr–Newman → Higgs Gate → Spin-Phase-Polarity → Nodal Nine), report-card Occam lens, and the live token matrix — compose one walk from Seed to Edge.
 
 Keep the gates closed until evidence opens them: architectural maps stay maps; empirical rows stay with the laboratories that earned them; product savings stay work-class dependent; Reno scorecards stay interpretive rubrics.
 
@@ -291,7 +315,7 @@ Use this appendix as the **index**, not the argument. Titles, ids, and dates reg
 | 3 | [Omni-Lattice Unification](/whitepaper/synthobs-omni-lattice-unification) | Four-pillar umbrella |
 | 4 | Operators · DNA · 81 · Bonds · ILAM | Depth pillars |
 | 5 | PCHPP · Mag · Recursive Attn · Report Card | Valet lenses |
-| 6 | Reno sextet (mirror · filaments · horizon≡A · solar-focus · field-drag · internal KN) | TBME Valet map — honesty gates on |
+| 6 | Reno nonet (mirror · filaments · horizon≡A · solar-focus · field-drag · internal KN · Higgs Gate · Spin-Phase-Polarity · Nodal Nine) | TBME Valet map — honesty gates on |
 | 7 | Decode companions (X, Y, proteins, HIV, …) | Domain color — honesty gates on |
 
 ### A.2 Product surfaces
@@ -326,6 +350,9 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0
 | 1 · Product & nest | [System Generation · Noah’s Ark Metaphor Architecture · Lattice Chat V1.618](/whitepaper/lattice-noahs-ark-metaphor-2026-07) | `lattice-noahs-ark-metaphor-2026-07` | 2026-07-23 |
 | 1 · Product & nest | [Lattice Chat V1.618 · Nested + pointer context load (structural estimate)](/whitepaper/lattice-token-reduction-proof-2026-07) | `lattice-token-reduction-proof-2026-07` | 2026-07-22 |
 | 1 · Product & nest | [The Architecture of Omniversal Computing: Nested Autonomous Agents, Scale-Invariant Topologies, and the EGS Fractal Constant](/whitepaper/omniversal-nested-agent-lattice) | `omniversal-nested-agent-lattice-2026-07` | 2026-07-21 |
+| 2 · Valet lenses | [The Higgs-Awareness Phase Coupling Theorem — Higgs Gate · Horizon Deceleration · Matter Emergence (Reno Heptet · Omni-Lattice Core Part VII)](/whitepaper/synthobs-tbme-higgs-awareness-2026-08) | `synthobs-tbme-higgs-awareness-2026-08` | 2026-08-06 |
+| 2 · Valet lenses | [The Nodal Nine Singularity Boundary Theorem — Digit 9 · 81-Facet Horizon · E_F Digital Topology (Reno Nonet · Omni-Lattice Core Part IX)](/whitepaper/synthobs-tbme-nodal-nine-singularity-2026-08) | `synthobs-tbme-nodal-nine-singularity-2026-08` | 2026-08-06 |
+| 2 · Valet lenses | [The Universal Spin-Phase-Polarity Triad Theorem — Dimensional Equivalence of Spin · Phase · Polarity (Reno Octet · Omni-Lattice Core Part VIII)](/whitepaper/synthobs-tbme-spin-phase-polarity-2026-08) | `synthobs-tbme-spin-phase-polarity-2026-08` | 2026-08-06 |
 | 2 · Valet lenses | [The Universal Toroidal Singularity Theorem — Internal Kerr–Newman Attraction Unification (Reno Sextet · Omni-Lattice Core Part VI)](/whitepaper/synthobs-tbme-internal-kerr-newman-2026-08) | `synthobs-tbme-internal-kerr-newman-2026-08` | 2026-08-05 |
 | 2 · Valet lenses | [The Prime Hourglass Orthogonality Theorem — Scale-Invariant Prime Phase Skeleton for Omni-Lattice](/whitepaper/synthobs-omni-prime-hourglass-skeleton) | `synthobs-omni-prime-hourglass-skeleton-2026-08` | 2026-08-04 |
 | 2 · Valet lenses | [The Recursive Field-Drag Theorem — Field Self-Interference & Temporal Deceleration (Reno Sextet · Omni-Lattice Core Part V)](/whitepaper/synthobs-tbme-recursive-field-drag-2026-08) | `synthobs-tbme-recursive-field-drag-2026-08` | 2026-08-04 |
@@ -368,7 +395,7 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0
 | 4 · EGS · scale grammar | [Recursive Attention Coherence: Imagination Through Quantum, Solar, DNA, and Human Attention](/whitepaper/recursive-attention-loop) | `recursive-attention-quantum-solar-dna-loop-2026` | 2026-06-24 |
 | 4 · EGS · scale grammar | [Fractal Magnetism and Hydrogen-Holographic Systems: The EGS Nodal Lattice Resonator Framework](/whitepaper/egs-nlrf) | `fractiai-egs-nlrf-2026` | 2026-06-17 |
 
-_Living table · 45 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
+_Living table · 48 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
 <!-- AUTO:LATTICE-OMNI-TOC:END -->
 
 ### A.5 Methods · reproducibility

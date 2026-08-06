@@ -336,6 +336,10 @@
       "memory": 1024,
       "maxDuration": 300,
       "includeFiles": "{lib/**,data/lattice-access.json}"
+    },
+    "api/lattice-collaborate-feed.js": {
+      "memory": 256,
+      "maxDuration": 10
     }
   },
   "redirects": [

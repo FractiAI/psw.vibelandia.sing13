@@ -22,9 +22,15 @@ import { useLatticeStore } from '@/store';
 export function ChatPane({
   onOpenHistory,
   onNewChat,
+  onOpenCollaborate,
+  agentSeedPrompt,
+  onAgentSeedConsumed,
 }: {
   onOpenHistory?: () => void;
   onNewChat?: () => void;
+  onOpenCollaborate?: () => void;
+  agentSeedPrompt?: string | null;
+  onAgentSeedConsumed?: () => void;
 } = {}) {
   const threads = useLatticeStore((s) => s.threads);
   const activeThreadId = useLatticeStore((s) => s.activeThreadId);
@@ -84,6 +90,13 @@ export function ChatPane({
   useEffect(() => {
     ensureThread();
   }, [ensureThread]);
+
+  useEffect(() => {
+    if (!agentSeedPrompt) return;
+    setDraft(agentSeedPrompt);
+    onAgentSeedConsumed?.();
+    inputRef.current?.focus();
+  }, [agentSeedPrompt, onAgentSeedConsumed]);
 
   useEffect(() => {
     const sync = (detail?: { changed?: boolean }) => {
@@ -236,6 +249,14 @@ export function ChatPane({
                   {MAIN_DECK_LABEL}
                 </a>
                 {' · Your Goldilocks Valet'}
+                {onOpenCollaborate ? (
+                  <>
+                    {' · '}
+                    <button type="button" className="chat-collab-link" onClick={() => onOpenCollaborate()}>
+                      Collaborate
+                    </button>
+                  </>
+                ) : null}
               </span>
             </h1>
             <button
@@ -247,6 +268,16 @@ export function ChatPane({
             >
               + New chat
             </button>
+            {onOpenCollaborate ? (
+              <button
+                type="button"
+                className="header-collab-btn"
+                aria-label="Open Lattice Collaborate"
+                onClick={() => onOpenCollaborate()}
+              >
+                Collaborate
+              </button>
+            ) : null}
           </div>
           {signedIn ? (
             <SignedInBar onOpenKeySettings={() => setKeySettingsOpen(true)} />

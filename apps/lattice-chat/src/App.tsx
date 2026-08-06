@@ -1,13 +1,47 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { HistoryRail, HistoryRailOverlay } from '@/components/HistoryRail';
 import { ChatPane } from '@/components/ChatPane';
+import { CollaborateShell } from '@/components/collaborate/CollaborateShell';
 import { useLatticeStore } from '@/store';
+
+const MODE_KEY = 'lattice-workspace-mode';
 
 export function App() {
   const [railOpen, setRailOpen] = useState(false);
+  const [mode, setMode] = useState<'chat' | 'collaborate'>(() => {
+    try {
+      return sessionStorage.getItem(MODE_KEY) === 'collaborate' ? 'collaborate' : 'chat';
+    } catch {
+      return 'chat';
+    }
+  });
+  const [agentSeed, setAgentSeed] = useState<string | null>(null);
   const newChat = useLatticeStore((s) => s.newChat);
   const closeRail = useCallback(() => setRailOpen(false), []);
   const openRail = useCallback(() => setRailOpen(true), []);
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem(MODE_KEY, mode);
+    } catch {
+      /* ignore */
+    }
+  }, [mode]);
+
+  const enterCollaborate = useCallback(() => setMode('collaborate'), []);
+  const exitCollaborate = useCallback(() => setMode('chat'), []);
+
+  const sendToAgent = useCallback((prompt: string) => {
+    setAgentSeed(prompt);
+    setMode('chat');
+    newChat();
+  }, [newChat]);
+
+  if (mode === 'collaborate') {
+    return (
+      <CollaborateShell onExit={exitCollaborate} onSendToAgent={sendToAgent} />
+    );
+  }
 
   return (
     <div className={`lattice-shell${railOpen ? ' rail-open' : ''}`}>
@@ -19,6 +53,9 @@ export function App() {
           newChat();
           closeRail();
         }}
+        onOpenCollaborate={enterCollaborate}
+        agentSeedPrompt={agentSeed}
+        onAgentSeedConsumed={() => setAgentSeed(null)}
       />
     </div>
   );

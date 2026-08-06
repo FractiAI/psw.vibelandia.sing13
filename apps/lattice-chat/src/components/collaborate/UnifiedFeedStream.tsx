@@ -52,7 +52,8 @@ export function UnifiedFeedStream({
     [rawItems, integrations, eventFilters],
   );
 
-  const typing = peers.find((p) => p.typing || (p.online && p.id === 'peer_alex'));
+  const typing = peers.find((p) => p.typing);
+  const anyFeedOn = integrations.some((i) => i.enabled);
 
   function onOpenContext(item: UnifiedFeedItem) {
     const prompt = `Convert this unified-feed item into a task/commit:\n${feedItemToAgentContext(item)}`;
@@ -62,7 +63,18 @@ export function UnifiedFeedStream({
   return (
     <div className={`uf-stream${compact ? ' uf-stream--compact' : ''}`}>
       {items.length === 0 ? (
-        <p className="uf-empty">No events match your integration filters.</p>
+        <div className="uf-empty">
+          <p className="uf-empty__lead">
+            {anyFeedOn
+              ? 'Feed is quiet — waiting for the next event.'
+              : 'Your feed is ready. Configure integrations to begin.'}
+          </p>
+          <p className="uf-empty__hint">
+            {anyFeedOn
+              ? 'GitHub pushes, WhatsApp bridges, and Lattice messages appear here as they arrive.'
+              : 'Open Settings → enable GitHub, WhatsApp, or Facebook. Only Valet Pru and Daniel are seated for now.'}
+          </p>
+        </div>
       ) : (
         items.map((item) => (
           <UnifiedFeedCard key={item.id} item={item} onOpenContext={onOpenContext} />

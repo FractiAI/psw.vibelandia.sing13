@@ -22,8 +22,10 @@ export function CollaborateShell({
   const dockCollapsed = useUnifiedFeed((s) => s.dockCollapsed);
   const setDockCollapsed = useUnifiedFeed((s) => s.setDockCollapsed);
   const openRepoFile = useUnifiedFeed((s) => s.openRepoFile);
+  const openRepoWorkspace = useUnifiedFeed((s) => s.openRepoWorkspace);
   const integrations = useUnifiedFeed((s) => s.integrations);
   const setIntegrationEnabled = useUnifiedFeed((s) => s.setIntegrationEnabled);
+  const peers = useUnifiedFeed((s) => s.peers);
   const pendingAgentPrompt = useUnifiedFeed((s) => s.pendingAgentPrompt);
   const clearPendingAgentPrompt = useUnifiedFeed((s) => s.clearPendingAgentPrompt);
   const [wide, setWide] = useState(() =>
@@ -46,11 +48,6 @@ export function CollaborateShell({
     [onExit, onSendToAgent],
   );
 
-  useEffect(() => {
-    if (!pendingAgentPrompt) return;
-    // Keep prompt in dock; user can send to agent from dock or auto-handoff on convert from menu
-  }, [pendingAgentPrompt]);
-
   return (
     <div className={`collab-shell${wide ? ' collab-shell--desktop' : ' collab-shell--mobile'}`}>
       <header className="collab-topbar">
@@ -62,7 +59,10 @@ export function CollaborateShell({
           type="button"
           className="collab-topbar__gear"
           aria-label="Settings"
-          onClick={() => setMobileTab('settings')}
+          onClick={() => {
+            setMobileTab('settings');
+            setLayoutMode('settings');
+          }}
         >
           ⚙
         </button>
@@ -75,18 +75,14 @@ export function CollaborateShell({
             <button type="button" className="collab-navbtn" onClick={() => setLayoutMode('feed')}>
               Unified Feed
             </button>
-            <button
-              type="button"
-              className="collab-navbtn"
-              onClick={() => openRepoFile(useUnifiedFeed.getState().repoFiles[0])}
-            >
-              Project Phoenix
+            <button type="button" className="collab-navbtn" onClick={() => openRepoWorkspace()}>
+              Repository
             </button>
             <button type="button" className="collab-navbtn" onClick={() => setLayoutMode('settings')}>
               Integrations
             </button>
             <div className="collab-left__feeds">
-              <p className="collab-left__label">Active feeds</p>
+              <p className="collab-left__label">Feeds</p>
               {integrations.map((i) => (
                 <label key={i.id} className="collab-feed-toggle">
                   <input
@@ -94,8 +90,22 @@ export function CollaborateShell({
                     checked={i.enabled}
                     onChange={(e) => setIntegrationEnabled(i.id, e.target.checked)}
                   />
-                  {i.label}
+                  {i.id === 'facebook'
+                    ? 'Facebook'
+                    : i.id === 'whatsapp'
+                      ? 'WhatsApp'
+                      : i.id === 'github'
+                        ? 'GitHub'
+                        : 'GitLab'}
                 </label>
+              ))}
+            </div>
+            <div className="collab-left__feeds">
+              <p className="collab-left__label">Seats</p>
+              {peers.map((p) => (
+                <p key={p.id} className="collab-seat">
+                  {p.name}
+                </p>
               ))}
             </div>
             <a className="collab-left__deck" href={MAIN_DECK_HREF}>
@@ -130,7 +140,9 @@ export function CollaborateShell({
             {mobileTab === 'settings' || layoutMode === 'settings' ? (
               <IntegrationSettings />
             ) : layoutMode === 'repo' ? (
-              <div className={`collab-split${isDocked ? ' is-docked' : ''}${dockCollapsed ? ' dock-collapsed' : ''}`}>
+              <div
+                className={`collab-split${isDocked ? ' is-docked' : ''}${dockCollapsed ? ' dock-collapsed' : ''}`}
+              >
                 <div className="collab-split__repo">
                   <RepoViewerOverlay
                     showDockHint
@@ -149,7 +161,7 @@ export function CollaborateShell({
                 />
               </div>
             ) : mobileTab === 'channels' ? (
-              <ChannelsPane onOpenRepo={() => openRepoFile(useUnifiedFeed.getState().repoFiles[0])} />
+              <ChannelsPane onOpenRepo={() => openRepoWorkspace()} />
             ) : mobileTab === 'dms' ? (
               <DmsPane />
             ) : (
@@ -164,6 +176,7 @@ export function CollaborateShell({
             onChange={(tab) => {
               setMobileTab(tab);
               if (tab === 'home') openRepoFile(null);
+              if (tab === 'settings') setLayoutMode('settings');
             }}
           />
         </div>
@@ -195,7 +208,6 @@ function MobileBottomNav({
           onClick={() => onChange(item.id)}
         >
           {item.label}
-          {item.id === 'dms' ? <span className="collab-bottomnav__badge">1</span> : null}
         </button>
       ))}
     </nav>
@@ -206,25 +218,31 @@ function ChannelsPane({ onOpenRepo }: { onOpenRepo: () => void }) {
   return (
     <div className="collab-center__feed">
       <h2 className="collab-center__title">Channels</h2>
+      <p className="uf-empty__hint">Shared workspace for Valet Pru and Daniel.</p>
       <button type="button" className="collab-navbtn collab-navbtn--block" onClick={onOpenRepo}>
-        # project-phoenix
-      </button>
-      <button type="button" className="collab-navbtn collab-navbtn--block">
-        # machote-moderno
-      </button>
-      <button type="button" className="collab-navbtn collab-navbtn--block">
-        # lattice-ops
+        # lattice-collaborate
       </button>
     </div>
   );
 }
 
 function DmsPane() {
+  const peers = useUnifiedFeed((s) => s.peers);
   return (
     <div className="collab-center__feed">
       <h2 className="collab-center__title">DMs</h2>
-      <p className="uf-msg__text">Alex (WhatsApp) · Check the new merge in the UI folder.</p>
-      <p className="uf-msg__text">Maria (Lattice) · I&apos;m reviewing index.html now.</p>
+      <p className="uf-empty__hint">No messages yet — start a thread when you are ready.</p>
+      <ul className="int-peers" style={{ marginTop: '1rem' }}>
+        {peers.map((p) => (
+          <li key={p.id}>
+            <span className="int-peer" data-hue={p.hue}>
+              {p.name.slice(0, 1)}
+              {p.online ? <i className="int-peer__online" /> : null}
+            </span>
+            <span className="int-peer__name">{p.name}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

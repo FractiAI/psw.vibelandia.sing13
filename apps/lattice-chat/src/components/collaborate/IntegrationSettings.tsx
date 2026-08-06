@@ -14,16 +14,21 @@ export function IntegrationSettings() {
   const integrations = useUnifiedFeed((s) => s.integrations);
   const eventFilters = useUnifiedFeed((s) => s.eventFilters);
   const setIntegrationEnabled = useUnifiedFeed((s) => s.setIntegrationEnabled);
+  const setIntegrationAccount = useUnifiedFeed((s) => s.setIntegrationAccount);
   const setEventFilter = useUnifiedFeed((s) => s.setEventFilter);
   const peers = useUnifiedFeed((s) => s.peers);
-  const resetDemoFeed = useUnifiedFeed((s) => s.resetDemoFeed);
+  const clearFeed = useUnifiedFeed((s) => s.clearFeed);
+  const resetWorkspace = useUnifiedFeed((s) => s.resetWorkspace);
+  const anyEnabled = integrations.some((i) => i.enabled);
 
   return (
     <div className="int-settings">
       <header className="int-settings__hero">
         <p className="int-settings__eyebrow">Lattice Workspace</p>
         <h2>Settings</h2>
-        <p className="int-settings__lede">Integrations · Centralized Feed</p>
+        <p className="int-settings__lede">
+          Turn on the feeds you use. Empty until you enable one — no sample stream.
+        </p>
       </header>
 
       <section className="int-card" aria-label="Centralized Feed">
@@ -31,11 +36,17 @@ export function IntegrationSettings() {
           <span className="int-card__icon" aria-hidden>
             ◎
           </span>
-          <h3>Centralized Feed</h3>
+          <h3>Integrations</h3>
         </header>
+        {!anyEnabled ? (
+          <p className="int-card__hint">
+            Enable GitHub, WhatsApp, or Facebook when you are ready. Webhooks POST to{' '}
+            <code>/api/lattice-collaborate-feed</code>, then land in your feed.
+          </p>
+        ) : null}
         <ul className="int-list">
           {integrations.map((integ) => (
-            <li key={integ.id}>
+            <li key={integ.id} className="int-row">
               <label className="int-toggle">
                 <input
                   type="checkbox"
@@ -45,12 +56,23 @@ export function IntegrationSettings() {
                 <span className="int-toggle__badge" data-id={integ.id}>
                   {badge(integ.id)}
                 </span>
-                <span>{integ.label}</span>
+                <span>{integ.id === 'facebook' ? 'Facebook' : integ.id === 'whatsapp' ? 'WhatsApp' : integ.id === 'github' ? 'GitHub' : 'GitLab'}</span>
               </label>
+              {integ.enabled ? (
+                <input
+                  className="int-account"
+                  type="text"
+                  placeholder="Account or repo label (optional)"
+                  value={integ.accountLabel}
+                  onChange={(e) => setIntegrationAccount(integ.id as IntegrationId, e.target.value)}
+                  aria-label={`${integ.id} account label`}
+                />
+              ) : null}
             </li>
           ))}
         </ul>
         <div className="int-filters" role="group" aria-label="Event filters">
+          <p className="int-filters__label">Show in feed</p>
           {FILTER_LABELS.map(({ key, label }) => (
             <label key={key} className="int-check">
               <input
@@ -65,7 +87,8 @@ export function IntegrationSettings() {
       </section>
 
       <section className="int-card" aria-label="Connected Peers">
-        <h3>Connected Peers</h3>
+        <h3>Workspace seats</h3>
+        <p className="int-card__hint">Lattice access for now — you and Daniel.</p>
         <ul className="int-peers">
           {peers.map((p) => (
             <li key={p.id} title={p.name}>
@@ -79,9 +102,14 @@ export function IntegrationSettings() {
         </ul>
       </section>
 
-      <button type="button" className="int-reset" onClick={() => resetDemoFeed()}>
-        Reset demo feed
-      </button>
+      <div className="int-actions">
+        <button type="button" className="int-reset" onClick={() => clearFeed()}>
+          Clear feed
+        </button>
+        <button type="button" className="int-reset" onClick={() => resetWorkspace()}>
+          Reset integrations
+        </button>
+      </div>
     </div>
   );
 }

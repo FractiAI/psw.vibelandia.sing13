@@ -58,32 +58,42 @@ export function RepoViewerOverlay({
           </button>
         ) : null}
       </header>
-      {showDockHint ? (
+      {showDockHint && files.length > 0 ? (
         <p className="repo-viewer__hint">Long-press a file · Open · Share to Chat · Convert to Task/Commit</p>
       ) : null}
-      <ul className="repo-file-list">
-        {files.map((file) => (
-          <li key={file.id}>
-            <button
-              type="button"
-              className={`repo-file${active?.id === file.id ? ' is-active' : ''}`}
-              onClick={(e) => onSelect(file, e)}
-              onContextMenu={(e) => onContextMenu(file, e)}
-              onPointerDown={() => {
-                if (file.kind === 'file') onLongPressStart(file);
-              }}
-            >
-              <span className="repo-file__kind" aria-hidden>
-                {file.kind === 'folder' ? '▸' : '·'}
-              </span>
-              <span className="repo-file__name">{file.name}</span>
-              {file.presence?.map((p) => (
-                <span key={p.peerId} className="repo-file__presence" data-hue={p.hue} title={p.peerId} />
-              ))}
-            </button>
-          </li>
-        ))}
-      </ul>
+      {files.length === 0 ? (
+        <div className="uf-empty">
+          <p className="uf-empty__lead">No repository connected</p>
+          <p className="uf-empty__hint">
+            Enable GitHub or GitLab under Integrations. When events arrive, the tree opens here for Valet Pru and
+            Daniel.
+          </p>
+        </div>
+      ) : (
+        <ul className="repo-file-list">
+          {files.map((file) => (
+            <li key={file.id}>
+              <button
+                type="button"
+                className={`repo-file${active?.id === file.id ? ' is-active' : ''}`}
+                onClick={(e) => onSelect(file, e)}
+                onContextMenu={(e) => onContextMenu(file, e)}
+                onPointerDown={() => {
+                  if (file.kind === 'file') onLongPressStart(file);
+                }}
+              >
+                <span className="repo-file__kind" aria-hidden>
+                  {file.kind === 'folder' ? '▸' : '·'}
+                </span>
+                <span className="repo-file__name">{file.name}</span>
+                {file.presence?.map((p) => (
+                  <span key={p.peerId} className="repo-file__presence" data-hue={p.hue} title={p.peerId} />
+                ))}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
       {active ? (
         <div className="repo-preview">
           <p className="repo-preview__path">{active.path}</p>

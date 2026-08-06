@@ -5,9 +5,10 @@ import { feedItemToAgentContext } from '@/feed/sanitize';
 import {
   DEFAULT_EVENT_FILTERS,
   DEFAULT_INTEGRATIONS,
-  SEED_PEERS,
-  SEED_REPO_FILES,
-  buildSeedFeed,
+  DEFAULT_REPO_NAME,
+  EMPTY_REPO_FILES,
+  WORKSPACE_PEERS,
+  emptyFeed,
 } from '@/feed/seed';
 import type {
   CollabLayoutMode,
@@ -21,7 +22,8 @@ import type {
   UnifiedFeedItem,
 } from '@/feed/types';
 
-const FEED_KEY = 'lattice-collaborate-feed-v1';
+/** v2 drops persisted demo timelines from v1. */
+const FEED_KEY = 'lattice-collaborate-feed-v2';
 
 type UnifiedFeedState = {
   items: UnifiedFeedItem[];
@@ -39,18 +41,21 @@ type UnifiedFeedState = {
   pendingAgentPrompt: string | null;
   ingestPayload: (raw: unknown) => UnifiedFeedItem | null;
   setIntegrationEnabled: (id: IntegrationId, enabled: boolean) => void;
+  setIntegrationAccount: (id: IntegrationId, accountLabel: string) => void;
   setEventFilter: (key: EventFilterKey, enabled: boolean) => void;
   setMobileTab: (tab: CollabMobileTab) => void;
   setLayoutMode: (mode: CollabLayoutMode) => void;
   setDocked: (v: boolean) => void;
   setDockCollapsed: (v: boolean) => void;
   openRepoFile: (file: RepoFileNode | null) => void;
+  openRepoWorkspace: () => void;
   openRepoFromItem: (item: UnifiedFeedItem) => void;
   setContextMenu: (menu: UnifiedFeedState['contextMenu']) => void;
   runContextAction: (action: ContextMenuAction) => void;
   clearPendingAgentPrompt: () => void;
   visibleItems: () => UnifiedFeedItem[];
-  resetDemoFeed: () => void;
+  clearFeed: () => void;
+  resetWorkspace: () => void;
 };
 
 function passesFilters(
@@ -81,15 +86,21 @@ function passesFilters(
   return true;
 }
 
+function freshWorkspace() {
+  return {
+    items: emptyFeed(),
+    integrations: DEFAULT_INTEGRATIONS.map((i) => ({ ...i })),
+    eventFilters: { ...DEFAULT_EVENT_FILTERS } as Record<EventFilterKey, boolean>,
+    peers: WORKSPACE_PEERS.map((p) => ({ ...p })),
+    repoFiles: [...EMPTY_REPO_FILES],
+    repoName: DEFAULT_REPO_NAME,
+  };
+}
+
 export const useUnifiedFeed = create<UnifiedFeedState>()(
   persist(
     (set, get) => ({
-      items: buildSeedFeed(),
-      integrations: DEFAULT_INTEGRATIONS,
-      eventFilters: { ...DEFAULT_EVENT_FILTERS } as Record<EventFilterKey, boolean>,
-      peers: SEED_PEERS,
-      repoFiles: SEED_REPO_FILES,
-      repoName: 'Project Phoenix',
+      ...freshWorkspace(),
       mobileTab: 'home',
       layoutMode: 'feed',
       isDocked: true,
@@ -108,6 +119,28 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       setIntegrationEnabled(id, enabled) {
         set((s) => ({
           integrations: s.integrations.map((i) => (i.id === id ? { ...i, enabled } : i)),
+        }));
+      },
+
+      setIntegrationAccount(id, accountLabel) {
+        set((s) => ({
+          integrations: s.integrations.map((i) =>
+            i.id === id
+              ? {
+                  ...i,
+                  accountLabel,
+                  label: accountLabel.trim()
+                    ? `${i.id === 'facebook' ? 'Facebook' : i.id === 'whatsapp' ? 'WhatsApp' : i.id === 'github' ? 'GitHub' : 'GitLab'} (${accountLabel.trim()})`
+                    : i.id === 'facebook'
+                      ? 'Facebook'
+                      : i.id === 'whatsapp'
+                        ? 'WhatsApp'
+                        : i.id === 'github'
+                          ? 'GitHub'
+                          : 'GitLab',
+                }
+              : i,
+          ),
         }));
       },
 
@@ -144,18 +177,29 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
         });
       },
 
+      openRepoWorkspace() {
+        set({
+          layoutMode: 'repo',
+          isDocked: true,
+          dockCollapsed: false,
+          contextMenu: null,
+        });
+      },
+
       openRepoFromItem(item) {
         const files = get().repoFiles;
+        if (!files.length) {
+          get().openRepoWorkspace();
+          return;
+        }
         if (item.artifact?.path) {
-          const match = files.find((f) => f.path === item.artifact?.path || f.name === item.artifact?.title);
-          get().openRepoFile(match || files.find((f) => f.name.includes('White-paper')) || files[0]);
+          const match = files.find(
+            (f) => f.path === item.artifact?.path || f.name === item.artifact?.title,
+          );
+          get().openRepoFile(match || files[0]);
           return;
         }
-        if (item.git || item.kind === 'git_event') {
-          get().openRepoFile(files.find((f) => f.path.startsWith('UI')) || files[0]);
-          return;
-        }
-        get().openRepoFile(files.find((f) => f.presence?.length) || files[0]);
+        get().openRepoFile(files[0]);
       },
 
       setContextMenu(menu) {
@@ -186,10 +230,11 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
           return;
         }
         if (action === 'convert' || action === 'ask_agent') {
+          const repo = get().repoName;
           const prompt =
             action === 'convert'
-              ? `Convert this workspace context into a task/commit:\nFile: ${file.path}\nPropose a focused commit message and checklist.`
-              : `Ask agent about \`${file.path}\` in Project Phoenix — summarize intent and next steps.`;
+              ? `Convert this workspace context into a task/commit:\nRepo: ${repo}\nFile: ${file.path}\nPropose a focused commit message and checklist.`
+              : `Ask agent about \`${file.path}\` in ${repo} — summarize intent and next steps.`;
           set({ pendingAgentPrompt: prompt });
         }
       },
@@ -206,12 +251,18 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
           .sort((a, b) => a.createdAt.localeCompare(b.createdAt));
       },
 
-      resetDemoFeed() {
+      clearFeed() {
+        set({ items: emptyFeed() });
+      },
+
+      resetWorkspace() {
         set({
-          items: buildSeedFeed(),
-          integrations: DEFAULT_INTEGRATIONS,
-          eventFilters: { ...DEFAULT_EVENT_FILTERS } as Record<EventFilterKey, boolean>,
-          peers: SEED_PEERS.map((p) => ({ ...p, typing: p.id === 'peer_alex' })),
+          ...freshWorkspace(),
+          activeContextFile: null,
+          contextMenu: null,
+          pendingAgentPrompt: null,
+          layoutMode: 'feed',
+          mobileTab: 'home',
         });
       },
     }),

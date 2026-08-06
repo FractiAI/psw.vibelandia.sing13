@@ -54,7 +54,7 @@ export default async function handler(req, res) {
       ok: true,
       product: 'Lattice Collaborate',
       honesty:
-        'Stateless sanitizer only — client zustand timeline owns persistence. Bridges (GitHub/WhatsApp/Facebook) are demo + webhook-shaped ingest.',
+        'Stateless sanitizer only — client owns the timeline. No demo feed. Guests enable integrations; current seats: Valet Pru + Daniel.',
       accept: [
         'SocialPost',
         'MessagingEvent',

@@ -11,6 +11,8 @@
     { "source": "/questfest/", "destination": "/interfaces/vibelandia-questfest.html" },
     { "source": "/commons", "destination": "/interfaces/commons/index.html" },
     { "source": "/commons/", "destination": "/interfaces/commons/index.html" },
+    { "source": "/puerto-reno", "destination": "/interfaces/commons/index.html" },
+    { "source": "/puerto-reno/", "destination": "/interfaces/commons/index.html" },
     { "source": "/commons/host", "destination": "/interfaces/commons/host.html" },
     { "source": "/commons/host/", "destination": "/interfaces/commons/host.html" },
     { "source": "/commons/guide", "destination": "/interfaces/commons/guide.html" },

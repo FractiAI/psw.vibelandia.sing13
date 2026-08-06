@@ -1,4 +1,7 @@
-/** Injects top QUESTFEST · Listen quicklinks (in-flow) + footer Bulletin Board. */
+/** Injects top QUESTFEST · Listen quicklinks (in-flow) + footer Bulletin Board.
+ * Skip pages that already ship their own primary nav (hero / brochure / ark).
+ * Canonical doors: / · /listen · /lattice · Concierge — never a separate “Bridge”.
+ */
 (function () {
   if (!window.__qvPageViewsBoot && !document.querySelector('script[data-qv-page-views]')) {
     var pv = document.createElement('script');
@@ -35,7 +38,9 @@
   var onQuestfestHome =
     path === '/' ||
     path.endsWith('vibelandia-questfest.html') ||
-    path.endsWith('/vibelandia-questfest');
+    path.endsWith('/vibelandia-questfest') ||
+    path === '/questfest' ||
+    path === '/questfest/';
 
   function hasListenLink(root) {
     if (!root) return false;
@@ -44,26 +49,29 @@
     );
   }
 
+  /** Pages that already own an in-flow primary nav — do not stack a second bar. */
+  function hasOwnPrimaryNav() {
+    return !!(
+      document.querySelector('.deck-skin-nav') ||
+      document.querySelector('.skin-nav') ||
+      document.querySelector('.jb-nav') ||
+      document.querySelector('.hero__nav') ||
+      document.querySelector('.brochure-nav') ||
+      document.querySelector('.ark-hero__nav') ||
+      document.querySelector('.cm-topnav')
+    );
+  }
+
   function injectTopQuicklinks() {
     if (onBridge) return;
     if (document.querySelector('.qv-top-quicklinks')) return;
-    if (document.querySelector('.jb-nav')) return;
-
-    var deckNav = document.querySelector('.deck-skin-nav');
-    if (deckNav) {
-      if (!hasListenLink(deckNav)) {
-        deckNav.insertAdjacentHTML(
-          'beforeend',
-          '<span class="dot" aria-hidden="true">·</span><a href="/listen" data-qv-jukebox>Listen</a>'
-        );
-      }
-      return;
-    }
-
-    var skinNav = document.querySelector('.skin-nav');
-    if (skinNav) {
-      if (!hasListenLink(skinNav)) {
-        skinNav.insertAdjacentHTML(
+    if (hasOwnPrimaryNav()) {
+      var existing =
+        document.querySelector('.deck-skin-nav') ||
+        document.querySelector('.skin-nav') ||
+        document.querySelector('.jb-nav');
+      if (existing && !hasListenLink(existing)) {
+        existing.insertAdjacentHTML(
           'beforeend',
           '<span class="dot" aria-hidden="true">·</span><a href="/listen" data-qv-jukebox>Listen</a>'
         );
@@ -85,7 +93,7 @@
         '<a href="/lattice">Lattice</a>';
     } else {
       nav.innerHTML =
-        '<a href="/questfest">QUESTFEST</a>' +
+        '<a href="/">QUESTFEST</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/listen" data-qv-jukebox>Listen</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
@@ -104,6 +112,9 @@
       onQuestfestHome ||
       path.includes('ss-vibelandia') ||
       path.includes('noahs-ark') ||
+      path.includes('get-started') ||
+      path.includes('questfest-2026-frontier-guide') ||
+      path.includes('questfest-guide') ||
       onBridge
     ) {
       return;
@@ -114,7 +125,9 @@
     nav.setAttribute('aria-label', 'Global quick links');
     nav.innerHTML =
       '<p>SS Vibelandia</p>' +
-      '<a href="/bulletin-board">SS Vibelandia Bulletin Board</a>';
+      '<a href="/">QUESTFEST</a><span class="sep" aria-hidden="true"> · </span>' +
+      '<a href="/listen" data-qv-jukebox>Listen</a><span class="sep" aria-hidden="true"> · </span>' +
+      '<a href="/get-started">Board</a>';
 
     var footer = document.querySelector('footer');
     if (footer && footer.parentNode) {

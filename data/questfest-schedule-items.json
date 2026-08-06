@@ -13,13 +13,13 @@
       "summary": "Land in Puerto Reno, check in, and settle into QUESTFEST week before the main harbor rhythm kicks in.",
       "details": [
         "Meet at the Reno Arch corridor and pregame staging near Virginia St.",
-        "Pick up your pass rhythm on Capitan's Bridge — listen before you roam.",
+        "Pick up your pass rhythm on Listen — free catalog before you roam.",
         "Light orientation to Downtown Zone A boundaries on the park map (page 5 of the Frontier Guide)."
       ],
       "related": [
         { "label": "Frontier Guide · schedule", "href": "/questfest-guide#page-4" },
         { "label": "Park map", "href": "/questfest-guide#page-5" },
-        { "label": "Capitan's Bridge", "href": "/interfaces/questfest-bridge/#/listen" }
+        { "label": "Listen", "href": "/listen" }
       ]
     },
     {
@@ -72,12 +72,12 @@
       "summary": "Pregame energy in the Man Cave — music, tables, and the first full-throated night of the week.",
       "details": [
         "Dress code: come correct for Puerto Reno — donde se vibea.",
-        "Members pass honored on the Bridge; tables by invitation where noted.",
+        "Members pass honored on Listen; tables by invitation where noted.",
         "Connects to Friday/Saturday VIP table rhythm — this is the warm-up."
       ],
       "related": [
         { "label": "Man Cave nest", "href": "/interfaces/nesting/nest-man-cave-restroom.html" },
-        { "label": "Listen", "href": "/interfaces/questfest-bridge/#/listen" }
+        { "label": "Listen", "href": "/listen" }
       ]
     },
     {
@@ -164,7 +164,7 @@
       "zone": "Midtown · Man Cave overflow",
       "summary": "Members-only perreo country set — late night movement culture on the Midtown grid.",
       "details": [
-        "Members pass required; honor rail on the Bridge.",
+        "Members pass required; honor rail on Listen.",
         "Midtown zone (Plumas–Holcomb) is the story geography for this night.",
         "After party is invitation-only — separate listing."
       ],
@@ -266,7 +266,7 @@
       "zone": "Midtown",
       "summary": "Saturday peak dance night — perreo country until the lights come up.",
       "details": [
-        "Members pass · Bridge honor rail.",
+        "Members pass · Listen honor rail.",
         "Midtown Mary St southern edge is your geographic footer on the map."
       ],
       "related": []

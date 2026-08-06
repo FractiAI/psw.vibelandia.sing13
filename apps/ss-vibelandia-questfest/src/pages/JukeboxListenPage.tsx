@@ -91,18 +91,22 @@ export function JukeboxListenPage() {
     <div className="jb-app jb-app--browse">
       <JukeboxSiteNav mode="browse" />
 
-      <section className="jb-welcome jb-welcome--compact" aria-label="Welcome">
-        <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
-        <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
-      </section>
+      {!editingPlaylistId ? (
+        <section className="jb-welcome jb-welcome--compact" aria-label="Welcome">
+          <p className="jb-welcome__title">{JUKEBOX_WELCOME_TITLE}</p>
+          <p className="jb-welcome__body">{JUKEBOX_WELCOME}</p>
+        </section>
+      ) : null}
 
-      <div className="jb-stage" aria-label="Jukebox selector">
-        <JukeboxPlaylistMenu
-          activeId={playlistId}
-          onSelect={handleSelectPlaylist}
-          onCreatePlaylist={handleCreatePlaylist}
-          onManagePlaylists={() => setManagePlaylistsOpen(true)}
-        />
+      <div className={`jb-stage${editingPlaylistId ? ' jb-stage--editing' : ''}`} aria-label="Jukebox selector">
+        {!editingPlaylistId ? (
+          <JukeboxPlaylistMenu
+            activeId={playlistId}
+            onSelect={handleSelectPlaylist}
+            onCreatePlaylist={handleCreatePlaylist}
+            onManagePlaylists={() => setManagePlaylistsOpen(true)}
+          />
+        ) : null}
         <PlaylistManageModal
           open={managePlaylistsOpen}
           onClose={() => setManagePlaylistsOpen(false)}

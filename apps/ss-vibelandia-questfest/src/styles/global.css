@@ -3302,16 +3302,59 @@ html.ios .sp-now-video {
 
 .sp-pl-edit-row {
   display: grid;
-  grid-template-columns: auto auto 1fr auto auto;
+  grid-template-columns: auto auto minmax(0, 1fr) auto auto;
   align-items: center;
-  gap: 0.5rem 0.65rem;
+  gap: 0.5rem 0.55rem;
   padding: 0.55rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Master playlist has no Remove column — match grid to four children */
+/* Master playlist has no Remove — still keeps nudge + actions */
 .sp-pl-edit-row--master {
-  grid-template-columns: auto auto minmax(0, 1fr) auto;
+  grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+}
+
+.sp-pl-edit-track-main {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.sp-pl-edit-track-main:focus-visible {
+  outline: 2px solid #1ed760;
+  outline-offset: 2px;
+}
+
+.sp-pl-edit-save-meta {
+  border: none;
+  border-radius: 999px;
+  background: #1ed760;
+  color: #121212;
+  font: inherit;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 0.65rem 1.1rem;
+  min-height: 44px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.sp-pl-edit-save-meta:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.sp-pl-edit-secondary--primary {
+  color: #1ed760;
+  border-color: rgba(30, 215, 96, 0.55);
 }
 
 .sp-pl-edit-row--dragging {
@@ -5203,19 +5246,21 @@ html.qf-jukebox-page .sp-now-track--open-now:hover .sp-now-title {
     min-height: 44px;
   }
 
-  /* Playlist editor rows (inside .sp-pl-edit only — does not affect Listen) */
-  .sp-pl-edit .sp-pl-edit-row:not(.sp-pl-edit-row--listen):not(.sp-pl-edit-row--master) {
-    grid-template-columns: auto auto 1fr auto;
+  /* Playlist editor rows — match DOM: grip · idx · main · moves · actions */
+  .sp-pl-edit .sp-pl-edit-row:not(.sp-pl-edit-row--listen) {
+    grid-template-columns: auto auto minmax(0, 1fr);
     grid-template-areas:
-      'grip idx info remove'
-      'grip idx moves remove';
+      'grip idx main'
+      'moves moves actions';
+    gap: 0.4rem 0.45rem;
+    padding: 0.65rem 0.75rem;
   }
 
   .sp-pl-edit .sp-pl-edit-row--master {
     grid-template-columns: auto auto minmax(0, 1fr);
     grid-template-areas:
-      'grip idx info'
-      'grip idx moves';
+      'grip idx main'
+      'moves moves actions';
   }
 
   .sp-pl-edit .sp-row-grip {
@@ -5228,19 +5273,48 @@ html.qf-jukebox-page .sp-now-track--open-now:hover .sp-now-title {
     align-self: center;
   }
 
+  .sp-pl-edit .sp-pl-edit-track-main {
+    grid-area: main;
+    min-width: 0;
+  }
+
   .sp-pl-edit .sp-pl-edit-track-info {
-    grid-area: info;
     min-width: 0;
   }
 
   .sp-pl-edit .sp-pl-edit-moves {
     grid-area: moves;
-    justify-self: end;
+    justify-self: start;
+  }
+
+  .sp-pl-edit .sp-pl-edit-row-actions {
+    grid-area: actions;
+    margin-left: 0;
+    justify-content: flex-end;
+    width: 100%;
   }
 
   .sp-pl-edit .sp-pl-edit-remove {
-    grid-area: remove;
     align-self: center;
+  }
+
+  .sp-pl-edit-head {
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    margin: -0.15rem -0.15rem 0.85rem;
+    padding: 0.55rem 0.35rem;
+    background: rgba(12, 10, 8, 0.96);
+    backdrop-filter: blur(8px);
+  }
+
+  .sp-pl-edit-foot {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .sp-pl-edit-nudge {
+    min-width: 44px;
+    min-height: 44px;
   }
 
   /* Listen tab — flex row (grid overlap fix on iOS Safari) */
@@ -5579,6 +5653,24 @@ html.qf-jukebox-page .sp-now-track--open-now:hover .sp-now-title {
   align-items: flex-start;
   justify-content: center;
   padding: 4rem 1rem 1rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 480px) {
+  .sc-pick-backdrop {
+    align-items: flex-end;
+    padding: max(0.5rem, env(safe-area-inset-top, 0px)) 0 0;
+  }
+
+  .sc-pick-backdrop .sc-meta-panel,
+  .sc-pick-backdrop .sc-meta-panel--wide {
+    width: 100%;
+    max-width: none;
+    max-height: min(92dvh, 100%);
+    border-radius: 14px 14px 0 0;
+    margin: 0;
+  }
 }
 
 .sc-pick-panel {
@@ -5768,16 +5860,19 @@ html.qf-jukebox-page .sp-now-track--open-now:hover .sp-now-title {
 
 .sc-meta-panel {
   width: min(24rem, 100%);
-  max-height: min(85vh, 36rem);
+  max-height: min(90dvh, 36rem);
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   background: #181818;
   border: 1px solid #333;
   border-radius: 10px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .sc-meta-panel--wide {
   width: min(28rem, 100%);
+  max-height: min(92dvh, 40rem);
 }
 
 .sc-meta-body {
@@ -7479,7 +7574,7 @@ html.qf-jukebox-page .sp-now-add-pl {
 
 .jb-pl-manage-panel {
   width: min(100%, 28rem);
-  max-height: min(88vh, 36rem);
+  max-height: min(88dvh, 36rem);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -7703,7 +7798,17 @@ html.qf-jukebox-page .sp-now-add-pl {
   min-height: 0;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0.65rem 0.75rem 1rem;
+  overscroll-behavior: contain;
+  padding: 0.65rem 0.75rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+}
+
+.jb-stage--editing .jb-stage__tracks {
+  flex: 1;
+  min-height: 0;
+}
+
+.jb-stage--editing {
+  /* Full stage for editor — playlist carousel hidden while editing */
 }
 
 .jb-body {

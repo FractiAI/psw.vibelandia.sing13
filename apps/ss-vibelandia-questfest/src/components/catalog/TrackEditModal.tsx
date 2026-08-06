@@ -29,7 +29,7 @@ export function TrackEditModal({ track, open, onClose }: TrackEditModalProps) {
           </button>
         </div>
         <div className="sc-meta-body">
-          <p className="sc-meta-subtitle">{track.title}</p>
+          <p className="sc-meta-subtitle">Change name, artist, genre, and cover image override</p>
           <TrackMetadataEditor
             track={track}
             variant="panel"

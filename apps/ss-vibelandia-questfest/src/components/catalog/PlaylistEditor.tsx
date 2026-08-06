@@ -4,8 +4,6 @@ import { normalizeCoverForUpload } from '@/lib/coverImageFile';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import { usePlaylistReorder } from '@/hooks/usePlaylistReorder';
-import { TrackPlaylistsModal } from '@/components/catalog/TrackPlaylistsModal';
-import { LikeButton } from '@/components/catalog/LikeButton';
 import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
@@ -63,7 +61,6 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const coverBlobRef = useRef<string | null>(null);
   const [showAdd, setShowAdd] = useState(false);
   const [addSearch, setAddSearch] = useState('');
-  const [trackPlModal, setTrackPlModal] = useState<{ id: string; title: string } | null>(null);
   const [editTrackId, setEditTrackId] = useState<string | null>(null);
 
   const isMaster = isMasterPlaylist(playlistId);
@@ -308,7 +305,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
               )}
             </div>
           </div>
-          <span className="spotify-field-hint">JPEG, PNG, WebP, or iPhone photo · saved when you tap Done</span>
+          <span className="spotify-field-hint">JPEG, PNG, WebP, or iPhone photo · tap Save playlist below</span>
           {coverMsg && (
             <span className={`spotify-dj-msg${coverMsg.startsWith('Save failed') || coverMsg.includes('must be') || coverMsg.includes('too large') ? ' spotify-dj-msg--error' : coverMsg === 'Saved' ? ' spotify-dj-msg--success' : ''}`}>
               {coverMsg}
@@ -321,8 +318,12 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
             className="sp-library-input sp-pl-edit-name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            onBlur={() => {
+              if (name.trim() && name !== pl.name) void saveMeta();
+            }}
             placeholder={PLAIN.title}
             autoComplete="off"
+            enterKeyHint="done"
           />
         </label>
         <label className="sp-library-field">
@@ -370,6 +371,14 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           <span className="spotify-field-hint">{PLAYLIST_KIND_HINT}</span>
         </fieldset>
         ) : null}
+        <button
+          type="button"
+          className="sp-pl-edit-save-meta"
+          disabled={coverBusy}
+          onClick={() => void saveMeta()}
+        >
+          {coverBusy ? 'Saving…' : 'Save playlist name & cover'}
+        </button>
       </div>
       )}
 
@@ -495,9 +504,15 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           </p>
         ) : (
           <>
-            {!isMaster && <p className="sp-reorder-hint sp-pl-edit-hint">Hold ⋮⋮ and drag to reorder</p>}
+            {!isMaster && (
+              <p className="sp-reorder-hint sp-pl-edit-hint">
+                Drag ⋮⋮ or tap ↑ ↓ to reorder · Edit for track name &amp; cover
+              </p>
+            )}
             {isMaster && (
-              <p className="sp-reorder-hint sp-pl-edit-hint">Order updates when you upload. Drag to sort your library.</p>
+              <p className="sp-reorder-hint sp-pl-edit-hint">
+                Drag ⋮⋮ or tap ↑ ↓ to sort · Edit for track name &amp; cover override
+              </p>
             )}
             <ol className="sp-pl-edit-list" ref={listRef}>
               {playlistTracks.map((row, displayIndex) => {
@@ -505,6 +520,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                 const dragging = dragIndex === row.index;
                 const dropBefore =
                   overIndex === row.index && dragIndex !== null && dragIndex !== row.index;
+                const thumb = tr.posterSrc || undefined;
                 return (
                   <li
                     key={tr.id}
@@ -524,12 +540,50 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                       ⋮⋮
                     </button>
                     <span className="sp-pl-edit-idx">{displayIndex + 1}</span>
-                    <span className="sp-pl-edit-track-info">
-                      <strong>{tr.title}</strong>
-                      <span>{tr.artist}</span>
-                    </span>
+                    <button
+                      type="button"
+                      className="sp-pl-edit-track-main"
+                      onClick={() => setEditTrackId(tr.id)}
+                      aria-label={`Edit ${tr.title}`}
+                    >
+                      {thumb ? (
+                        <img className="sp-track-cover-thumb" src={thumb} alt="" width={40} height={40} />
+                      ) : (
+                        <span className="sp-track-cover-thumb sp-track-cover-thumb--empty" aria-hidden />
+                      )}
+                      <span className="sp-pl-edit-track-info">
+                        <strong>{tr.title}</strong>
+                        <span>{tr.artist}</span>
+                      </span>
+                    </button>
+                    <div className="sp-pl-edit-moves" role="group" aria-label="Reorder">
+                      <button
+                        type="button"
+                        className="sp-pl-edit-nudge"
+                        disabled={!canReorder || row.index <= 0}
+                        aria-label={`Move ${tr.title} up`}
+                        onClick={() => reorderTrackInPlaylist(playlistId, row.index, row.index - 1)}
+                      >
+                        ↑
+                      </button>
+                      <button
+                        type="button"
+                        className="sp-pl-edit-nudge"
+                        disabled={!canReorder || row.index >= playlistTracks.length - 1}
+                        aria-label={`Move ${tr.title} down`}
+                        onClick={() => reorderTrackInPlaylist(playlistId, row.index, row.index + 1)}
+                      >
+                        ↓
+                      </button>
+                    </div>
                     <div className="sp-pl-edit-row-actions">
-                      <LikeButton trackId={tr.id} />
+                      <button
+                        type="button"
+                        className="sp-pl-edit-secondary sp-pl-edit-secondary--primary"
+                        onClick={() => setEditTrackId(tr.id)}
+                      >
+                        {PLAIN.editTrack}
+                      </button>
                       <button
                         type="button"
                         className="sp-pl-edit-play"
@@ -537,20 +591,6 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                         aria-label={`Play ${tr.title}`}
                       >
                         {currentTrackId === tr.id && isPlaying ? '♪' : '▶'}
-                      </button>
-                      <button
-                        type="button"
-                        className="sp-pl-edit-secondary"
-                        onClick={() => setEditTrackId(tr.id)}
-                      >
-                        {PLAIN.editTrack}
-                      </button>
-                      <button
-                        type="button"
-                        className="sp-pl-edit-secondary"
-                        onClick={() => setTrackPlModal({ id: tr.id, title: tr.title })}
-                      >
-                        Playlists
                       </button>
                       {!isMaster && (
                         <button
@@ -570,13 +610,6 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
           </>
         )}
       </div>
-
-      <TrackPlaylistsModal
-        open={!!trackPlModal}
-        trackId={trackPlModal?.id ?? ''}
-        trackTitle={trackPlModal?.title ?? ''}
-        onClose={() => setTrackPlModal(null)}
-      />
 
       {editTrackId && getTrack(editTrackId) ? (
         <TrackEditModal

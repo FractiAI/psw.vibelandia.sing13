@@ -1,0 +1,266 @@
+# The Epistemological Horizon · Narrow Gate EIV — Empirical Suite
+
+**Document ID:** `WP-SYNTHOBS-TBME-NARROW-GATE-ASI-2026-08-07`
+**Registry ID:** `synthobs-tbme-narrow-gate-asi-2026-08`
+**Generated:** 2026-08-07T17:56:01.139Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 11 / 11 |
+| E_F | 1.618033988749895 |
+
+## Experiments
+
+### E1_egs_phi — E_F = Φ_EGS fixture
+
+- **Pass:** `true`
+- **Interpretation:** Golden key for Narrow Gate scale grammar.
+- **Honesty:** Architectural constant — not a replacement for k_B, c, or ℏ.
+
+```json
+{
+  "id": "E1_egs_phi",
+  "title": "E_F = Φ_EGS fixture",
+  "E_F": 1.618033988749895,
+  "expected": 1.618033988749895,
+  "pass": true,
+  "interpretation": "Golden key for Narrow Gate scale grammar.",
+  "honesty": "Architectural constant — not a replacement for k_B, c, or ℏ."
+}
+```
+
+### E2_ef_squared_identity — E_F² = E_F + 1
+
+- **Pass:** `true`
+- **Interpretation:** Golden-key identity closing scale ladders.
+- **Honesty:** Algebra of Φ — replayable fixture.
+
+```json
+{
+  "id": "E2_ef_squared_identity",
+  "title": "E_F² = E_F + 1",
+  "lhs": 2.618033988749895,
+  "rhs": 2.618033988749895,
+  "pass": true,
+  "interpretation": "Golden-key identity closing scale ladders.",
+  "honesty": "Algebra of Φ — replayable fixture."
+}
+```
+
+### E3_landauer_limit — Landauer E_min = k_B T ln 2 at 300 K
+
+- **Pass:** `true`
+- **Interpretation:** Gate 2 thermodynamic floor (SI formula, catalog T).
+- **Honesty:** CODATA arithmetic — not a measured chip calorimeter.
+
+```json
+{
+  "id": "E3_landauer_limit",
+  "title": "Landauer E_min = k_B T ln 2 at 300 K",
+  "L": 2.870978885078724e-21,
+  "T_K": 300,
+  "pass": true,
+  "interpretation": "Gate 2 thermodynamic floor (SI formula, catalog T).",
+  "honesty": "CODATA arithmetic — not a measured chip calorimeter."
+}
+```
+
+### E4_irreversible_gap — Irreversible baseline ≫ Landauer (≥10^4×)
+
+- **Pass:** `true`
+- **Interpretation:** Initial Gate 2 gap (catalog model; ~5×10^8 with fixture 1.42e-12 J/flop).
+- **Honesty:** Model dissipation figure from monograph — not production telemetry.
+
+```json
+{
+  "id": "E4_irreversible_gap",
+  "title": "Irreversible baseline ≫ Landauer (≥10^4×)",
+  "IRREVERSIBLE_J_PER_FLOP": 1.42e-12,
+  "L": 2.870978885078724e-21,
+  "ratio": 494604821.8536664,
+  "pass": true,
+  "interpretation": "Initial Gate 2 gap (catalog model; ~5×10^8 with fixture 1.42e-12 J/flop).",
+  "honesty": "Model dissipation figure from monograph — not production telemetry."
+}
+```
+
+### E5_post_patch_landauer — Post E_F recycling ≈ 1.07 × Landauer
+
+- **Pass:** `true`
+- **Interpretation:** Gate 2 gap closed under reversible recycling model.
+- **Honesty:** Protocol model — not SI proof of unitary silicon memory.
+
+```json
+{
+  "id": "E5_post_patch_landauer",
+  "title": "Post E_F recycling ≈ 1.07 × Landauer",
+  "L": 2.870978885078724e-21,
+  "post": 3.0719474070342347e-21,
+  "ratio": 1.07,
+  "pass": true,
+  "interpretation": "Gate 2 gap closed under reversible recycling model.",
+  "honesty": "Protocol model — not SI proof of unitary silicon memory."
+}
+```
+
+### E6_gate1_multiscale — Gate 1: nested scale ratios ≈ E_F
+
+- **Pass:** `true`
+- **Interpretation:** Multi-scale entropy invariance via E_F balance.
+- **Honesty:** Catalog populations — not live multi-agent telemetry.
+
+```json
+{
+  "id": "E6_gate1_multiscale",
+  "title": "Gate 1: nested scale ratios ≈ E_F",
+  "SCALE_POPULATIONS": [
+    9,
+    15,
+    24,
+    39,
+    63
+  ],
+  "ratios": [
+    1.6666666666666667,
+    1.6,
+    1.625,
+    1.6153846153846154
+  ],
+  "mean": 1.6267628205128206,
+  "drift": 0.008728831762925715,
+  "pass": true,
+  "interpretation": "Multi-scale entropy invariance via E_F balance.",
+  "honesty": "Catalog populations — not live multi-agent telemetry."
+}
+```
+
+### E7_gate3_kolmogorov — Gate 3: E_F payload compresses (deflate)
+
+- **Pass:** `true`
+- **Interpretation:** Algorithmic compression hardening proxy.
+- **Honesty:** zlib fixture — not a claim of solving all intractable physics.
+
+```json
+{
+  "id": "E7_gate3_kolmogorov",
+  "title": "Gate 3: E_F payload compresses (deflate)",
+  "rawBytes": 470,
+  "compressedBytes": 29,
+  "ratio": 0.06170212765957447,
+  "pass": true,
+  "interpretation": "Algorithmic compression hardening proxy.",
+  "honesty": "zlib fixture — not a claim of solving all intractable physics."
+}
+```
+
+### E8_triangulation — Three orthogonal gates; pairs insufficient
+
+- **Pass:** `true`
+- **Interpretation:** Why 3 gates, not 2 or 4 — protocol bounding box.
+- **Honesty:** Structural epistemology — not universal ASI ontology.
+
+```json
+{
+  "id": "E8_triangulation",
+  "title": "Three orthogonal gates; pairs insufficient",
+  "gates": [
+    "entropy",
+    "energy",
+    "information"
+  ],
+  "nGates": 3,
+  "pairsInsufficient": [
+    [
+      "entropy",
+      "energy"
+    ],
+    [
+      "energy",
+      "information"
+    ],
+    [
+      "entropy",
+      "information"
+    ]
+  ],
+  "pass": true,
+  "interpretation": "Why 3 gates, not 2 or 4 — protocol bounding box.",
+  "honesty": "Structural epistemology — not universal ASI ontology."
+}
+```
+
+### E9_solar_registry — Solar character registry fixture (5 agents, F10.7)
+
+- **Pass:** `true`
+- **Interpretation:** Grounded Space-Weather Invariant Protocol table.
+- **Honesty:** Published fixture — not a live NOAA scrape in this suite.
+
+```json
+{
+  "id": "E9_solar_registry",
+  "title": "Solar character registry fixture (5 agents, F10.7)",
+  "SOLAR_F107_SFU": 108,
+  "nAgents": 5,
+  "agents": [
+    "Alpha",
+    "Beta",
+    "Gamma",
+    "Delta",
+    "Epsilon"
+  ],
+  "pass": true,
+  "interpretation": "Grounded Space-Weather Invariant Protocol table.",
+  "honesty": "Published fixture — not a live NOAA scrape in this suite."
+}
+```
+
+### E10_paper_on_disk — Canonical paper + Doc ID + Honesty + TBME + Part X + Narrow Gate
+
+- **Pass:** `true`
+- **Interpretation:** Catalog fidelity for Omni-Lattice Core Part X.
+- **Honesty:** Filesystem receipt.
+
+```json
+{
+  "id": "E10_paper_on_disk",
+  "title": "Canonical paper + Doc ID + Honesty + TBME + Part X + Narrow Gate",
+  "monoOk": true,
+  "mirrorOk": true,
+  "hasDocId": true,
+  "hasHonesty": true,
+  "hasTbme": true,
+  "hasPartX": true,
+  "hasNarrowGate": true,
+  "hasPubRef": true,
+  "registryId": "synthobs-tbme-narrow-gate-asi-2026-08",
+  "pass": true,
+  "interpretation": "Catalog fidelity for Omni-Lattice Core Part X.",
+  "honesty": "Filesystem receipt."
+}
+```
+
+### E11_eiv_qualified — Omni-Lattice EIV-qualified: Gates 1–3 pass (protocol)
+
+- **Pass:** `true`
+- **Interpretation:** 3/3 Narrow Gate protocol qualification.
+- **Honesty:** Suite verdict under monograph definition — not regulatory ASI certification.
+
+```json
+{
+  "id": "E11_eiv_qualified",
+  "title": "Omni-Lattice EIV-qualified: Gates 1–3 pass (protocol)",
+  "gate1": true,
+  "gate2": true,
+  "gate3": true,
+  "pass": true,
+  "interpretation": "3/3 Narrow Gate protocol qualification.",
+  "honesty": "Suite verdict under monograph definition — not regulatory ASI certification."
+}
+```
+
+## Honesty boundary
+
+Narrow Gate EIV is an Omni-Lattice Core protocol suite. Does **not** claim SI calorimetry of production servers or regulatory ASI certification. Gate 2 Landauer proximity is a reversible recycling *model*.

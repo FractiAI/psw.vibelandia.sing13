@@ -42,6 +42,16 @@ type UnifiedFeedState = {
   ingestPayload: (raw: unknown) => UnifiedFeedItem | null;
   setIntegrationEnabled: (id: IntegrationId, enabled: boolean) => void;
   setIntegrationAccount: (id: IntegrationId, accountLabel: string) => void;
+  setIntegrationConnection: (
+    id: IntegrationId,
+    patch: {
+      connectionStatus?: IntegrationConfig['connectionStatus'];
+      connectionMessage?: string;
+      connectionHint?: string;
+      enabled?: boolean;
+      accountLabel?: string;
+    },
+  ) => void;
   setEventFilter: (key: EventFilterKey, enabled: boolean) => void;
   setMobileTab: (tab: CollabMobileTab) => void;
   setLayoutMode: (mode: CollabLayoutMode) => void;
@@ -118,7 +128,17 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
 
       setIntegrationEnabled(id, enabled) {
         set((s) => ({
-          integrations: s.integrations.map((i) => (i.id === id ? { ...i, enabled } : i)),
+          integrations: s.integrations.map((i) =>
+            i.id === id
+              ? {
+                  ...i,
+                  enabled,
+                  connectionStatus: enabled ? i.connectionStatus : 'idle',
+                  connectionMessage: enabled ? i.connectionMessage : undefined,
+                  connectionHint: enabled ? i.connectionHint : undefined,
+                }
+              : i,
+          ),
         }));
       },
 
@@ -129,9 +149,12 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
               ? {
                   ...i,
                   accountLabel,
-                  label: accountLabel.trim()
-                    ? `${i.id === 'facebook' ? 'Facebook' : i.id === 'whatsapp' ? 'WhatsApp' : i.id === 'github' ? 'GitHub' : 'GitLab'} (${accountLabel.trim()})`
-                    : i.id === 'facebook'
+                  connectionStatus: 'idle',
+                  connectionMessage: undefined,
+                  connectionHint: undefined,
+                  enabled: false,
+                  label:
+                    i.id === 'facebook'
                       ? 'Facebook'
                       : i.id === 'whatsapp'
                         ? 'WhatsApp'
@@ -144,6 +167,30 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
         }));
       },
 
+      setIntegrationConnection(id, patch) {
+        set((s) => ({
+          integrations: s.integrations.map((i) => {
+            if (i.id !== id) return i;
+            const accountLabel =
+              patch.accountLabel !== undefined ? patch.accountLabel : i.accountLabel;
+            const baseName =
+              i.id === 'facebook'
+                ? 'Facebook'
+                : i.id === 'whatsapp'
+                  ? 'WhatsApp'
+                  : i.id === 'github'
+                    ? 'GitHub'
+                    : 'GitLab';
+            return {
+              ...i,
+              ...patch,
+              accountLabel,
+              label: accountLabel.trim() ? `${baseName} (${accountLabel.trim()})` : baseName,
+            };
+          }),
+        }));
+      },
+
       setEventFilter(key, enabled) {
         set((s) => ({ eventFilters: { ...s.eventFilters, [key]: enabled } }));
       },
@@ -151,7 +198,8 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       setMobileTab(tab) {
         set({
           mobileTab: tab,
-          layoutMode: tab === 'settings' ? 'settings' : tab === 'home' ? 'feed' : get().layoutMode,
+          layoutMode: tab === 'settings' ? 'settings' : 'feed',
+          ...(tab !== 'settings' ? { activeContextFile: null } : {}),
         });
       },
 

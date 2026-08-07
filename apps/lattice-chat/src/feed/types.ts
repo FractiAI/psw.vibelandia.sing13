@@ -26,6 +26,10 @@ export type IntegrationConfig = {
   label: string;
   enabled: boolean;
   accountLabel: string;
+  /** Last verify attempt */
+  connectionStatus?: 'idle' | 'checking' | 'connected' | 'error';
+  connectionMessage?: string;
+  connectionHint?: string;
 };
 
 export type GitPayload = {
@@ -72,6 +76,8 @@ export type UnifiedFeedItem = {
   /** Short status line (e.g. Automated, Facebook) */
   sourceLabel: string;
   body?: string;
+  /** Seat chat thread — peer id when kind is chat */
+  threadPeerId?: string;
   git?: GitPayload;
   social?: SocialPayload;
   messaging?: MessagingPayload;
@@ -97,7 +103,7 @@ export type CollabPeer = {
   platform?: FeedPlatform;
 };
 
-export type CollabMobileTab = 'home' | 'channels' | 'dms' | 'settings';
+export type CollabMobileTab = 'home' | 'channels' | 'chat' | 'settings';
 
 export type CollabLayoutMode = 'feed' | 'repo' | 'settings';
 

@@ -52,6 +52,8 @@
     { "source": "/lattice-v1618/", "destination": "/interfaces/lattice-v1618.html" },
     { "source": "/lattice-chat", "destination": "/interfaces/lattice-chat/index.html" },
     { "source": "/lattice-chat/", "destination": "/interfaces/lattice-chat/index.html" },
+    { "source": "/lattice-chat/collaborate", "destination": "/interfaces/lattice-chat/index.html" },
+    { "source": "/collaborate", "destination": "/interfaces/lattice-chat/index.html" },
     { "source": "/ai-transparency", "destination": "/interfaces/ai-transparency.html" },
     { "source": "/ai-transparency/", "destination": "/interfaces/ai-transparency.html" },
     { "source": "/ai-disclosure", "destination": "/interfaces/ai-transparency.html" },

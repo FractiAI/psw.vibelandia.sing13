@@ -19,6 +19,8 @@ type RawEnvelope = {
   createdAt?: string;
   body?: string;
   presenceHue?: UnifiedFeedItem['presenceHue'];
+  threadPeerId?: string;
+  threadId?: string;
   git?: GitPayload;
   social?: SocialPayload;
   messaging?: MessagingPayload;
@@ -168,6 +170,7 @@ export function parseIncomingPayload(raw: unknown): UnifiedFeedItem | null {
       actor: data.actor || 'Peer',
       sourceLabel: 'Lattice',
       body: data.body || data.message || data.text,
+      threadPeerId: data.threadPeerId || data.threadId || data.messaging?.threadId,
       presenceHue: data.presenceHue || 'purple',
     };
   }

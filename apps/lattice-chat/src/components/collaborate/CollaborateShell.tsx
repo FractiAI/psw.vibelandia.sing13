@@ -1,11 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ContextualChatDock } from '@/components/collaborate/ContextualChatDock';
 import { IntegrationSettings } from '@/components/collaborate/IntegrationSettings';
 import { RepoViewerOverlay } from '@/components/collaborate/RepoViewerOverlay';
 import { UnifiedFeedStream } from '@/components/collaborate/UnifiedFeedStream';
 import { MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
 import { useUnifiedFeed } from '@/feed/store';
-import type { CollabMobileTab } from '@/feed/types';
+import type { CollabMobileTab, CollabPeer } from '@/feed/types';
+import { displayName } from '@/feed/verifyConnection';
 
 export function CollaborateShell({
   onExit,
@@ -24,7 +25,6 @@ export function CollaborateShell({
   const openRepoFile = useUnifiedFeed((s) => s.openRepoFile);
   const openRepoWorkspace = useUnifiedFeed((s) => s.openRepoWorkspace);
   const integrations = useUnifiedFeed((s) => s.integrations);
-  const setIntegrationEnabled = useUnifiedFeed((s) => s.setIntegrationEnabled);
   const peers = useUnifiedFeed((s) => s.peers);
   const pendingAgentPrompt = useUnifiedFeed((s) => s.pendingAgentPrompt);
   const clearPendingAgentPrompt = useUnifiedFeed((s) => s.clearPendingAgentPrompt);
@@ -48,6 +48,11 @@ export function CollaborateShell({
     [onExit, onSendToAgent],
   );
 
+  const goTab = (tab: CollabMobileTab) => {
+    if (tab !== 'settings') openRepoFile(null);
+    setMobileTab(tab);
+  };
+
   return (
     <div className={`collab-shell${wide ? ' collab-shell--desktop' : ' collab-shell--mobile'}`}>
       <header className="collab-topbar">
@@ -59,10 +64,7 @@ export function CollaborateShell({
           type="button"
           className="collab-topbar__gear"
           aria-label="Settings"
-          onClick={() => {
-            setMobileTab('settings');
-            setLayoutMode('settings');
-          }}
+          onClick={() => goTab('settings')}
         >
           ⚙
         </button>
@@ -84,21 +86,19 @@ export function CollaborateShell({
             <div className="collab-left__feeds">
               <p className="collab-left__label">Feeds</p>
               {integrations.map((i) => (
-                <label key={i.id} className="collab-feed-toggle">
-                  <input
-                    type="checkbox"
-                    checked={i.enabled}
-                    onChange={(e) => setIntegrationEnabled(i.id, e.target.checked)}
-                  />
-                  {i.id === 'facebook'
-                    ? 'Facebook'
-                    : i.id === 'whatsapp'
-                      ? 'WhatsApp'
-                      : i.id === 'github'
-                        ? 'GitHub'
-                        : 'GitLab'}
-                </label>
+                <p
+                  key={i.id}
+                  className={`collab-feed-status${i.enabled ? ' is-on' : ''}`}
+                  title={i.connectionMessage || displayName(i.id)}
+                >
+                  <span className={`collab-feed-dot${i.enabled ? ' is-on' : ''}`} aria-hidden />
+                  {displayName(i.id)}
+                  {i.enabled ? ' · on' : ''}
+                </p>
               ))}
+              <button type="button" className="collab-navbtn collab-navbtn--quiet" onClick={() => setLayoutMode('settings')}>
+                Connect feeds…
+              </button>
             </div>
             <div className="collab-left__feeds">
               <p className="collab-left__label">Seats</p>
@@ -137,7 +137,7 @@ export function CollaborateShell({
       ) : (
         <div className="collab-mobile">
           <div className="collab-mobile__stage">
-            {mobileTab === 'settings' || layoutMode === 'settings' ? (
+            {mobileTab === 'settings' ? (
               <IntegrationSettings />
             ) : layoutMode === 'repo' ? (
               <div
@@ -162,8 +162,8 @@ export function CollaborateShell({
               </div>
             ) : mobileTab === 'channels' ? (
               <ChannelsPane onOpenRepo={() => openRepoWorkspace()} />
-            ) : mobileTab === 'dms' ? (
-              <DmsPane />
+            ) : mobileTab === 'chat' ? (
+              <WorkspaceChatPane peers={peers} onConvert={handoffAgent} />
             ) : (
               <div className="collab-center__feed">
                 <h2 className="collab-center__title">Home</h2>
@@ -171,14 +171,7 @@ export function CollaborateShell({
               </div>
             )}
           </div>
-          <MobileBottomNav
-            tab={mobileTab}
-            onChange={(tab) => {
-              setMobileTab(tab);
-              if (tab === 'home') openRepoFile(null);
-              if (tab === 'settings') setLayoutMode('settings');
-            }}
-          />
+          <MobileBottomNav tab={mobileTab} onChange={goTab} />
         </div>
       )}
     </div>
@@ -195,7 +188,7 @@ function MobileBottomNav({
   const items: { id: CollabMobileTab; label: string }[] = [
     { id: 'home', label: 'Home' },
     { id: 'channels', label: 'Channels' },
-    { id: 'dms', label: 'DMs' },
+    { id: 'chat', label: 'Chat' },
     { id: 'settings', label: 'Settings' },
   ];
   return (
@@ -226,23 +219,178 @@ function ChannelsPane({ onOpenRepo }: { onOpenRepo: () => void }) {
   );
 }
 
-function DmsPane() {
-  const peers = useUnifiedFeed((s) => s.peers);
+function WorkspaceChatPane({
+  peers,
+  onConvert,
+}: {
+  peers: CollabPeer[];
+  onConvert: (prompt: string) => void;
+}) {
+  const ingestPayload = useUnifiedFeed((s) => s.ingestPayload);
+  const items = useUnifiedFeed((s) => s.items);
+  const [activePeerId, setActivePeerId] = useState<string | null>(null);
+  const [draft, setDraft] = useState('');
+  const listRef = useRef<HTMLUListElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const activePeer = peers.find((p) => p.id === activePeerId) || null;
+
+  const threadItems = useMemo(() => {
+    if (!activePeerId) return [];
+    return items
+      .filter(
+        (i) =>
+          i.kind === 'chat' &&
+          i.platform === 'lattice' &&
+          i.threadPeerId === activePeerId,
+      )
+      .slice()
+      .sort((a, b) => a.createdAt.localeCompare(b.createdAt));
+  }, [items, activePeerId]);
+
+  const previewFor = (peerId: string) => {
+    const thread = items
+      .filter(
+        (i) =>
+          i.kind === 'chat' &&
+          i.platform === 'lattice' &&
+          i.threadPeerId === peerId,
+      )
+      .slice()
+      .sort((a, b) => a.createdAt.localeCompare(b.createdAt));
+    const last = thread[thread.length - 1];
+    return last?.body || 'Tap to open chat';
+  };
+
+  useEffect(() => {
+    if (!activePeerId) return;
+    const el = listRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+    const t = window.setTimeout(() => inputRef.current?.focus(), 60);
+    return () => window.clearTimeout(t);
+  }, [activePeerId, threadItems.length]);
+
+  const openPeer = (id: string) => {
+    setDraft('');
+    setActivePeerId(id);
+  };
+
+  const send = () => {
+    const body = draft.trim();
+    if (!body || !activePeer) return;
+    ingestPayload({
+      type: 'chat',
+      platform: 'lattice',
+      actor: 'You',
+      body,
+      threadPeerId: activePeer.id,
+      presenceHue: 'gold',
+    });
+    setDraft('');
+  };
+
+  if (!activePeer) {
+    return (
+      <div className="collab-chat collab-chat--roster">
+        <header className="collab-chat__head">
+          <h2 className="collab-center__title">Chat</h2>
+        </header>
+        <p className="uf-empty__hint">Select someone to open their chat.</p>
+        <ul className="collab-chat__roster" role="list">
+          {peers.map((p) => (
+            <li key={p.id}>
+              <button
+                type="button"
+                className="collab-chat__roster-row"
+                onClick={() => openPeer(p.id)}
+              >
+                <span className="int-peer" data-hue={p.hue}>
+                  {p.name.slice(0, 1)}
+                  {p.online ? <i className="int-peer__online" /> : null}
+                </span>
+                <span className="collab-chat__roster-meta">
+                  <strong>{p.name}</strong>
+                  <span>{previewFor(p.id)}</span>
+                </span>
+                <span className="collab-chat__roster-chevron" aria-hidden>
+                  ›
+                </span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
   return (
-    <div className="collab-center__feed">
-      <h2 className="collab-center__title">DMs</h2>
-      <p className="uf-empty__hint">No messages yet — start a thread when you are ready.</p>
-      <ul className="int-peers" style={{ marginTop: '1rem' }}>
-        {peers.map((p) => (
-          <li key={p.id}>
-            <span className="int-peer" data-hue={p.hue}>
-              {p.name.slice(0, 1)}
-              {p.online ? <i className="int-peer__online" /> : null}
-            </span>
-            <span className="int-peer__name">{p.name}</span>
-          </li>
-        ))}
+    <div className="collab-chat collab-chat--thread">
+      <header className="collab-chat__head collab-chat__head--thread">
+        <button
+          type="button"
+          className="collab-chat__back"
+          onClick={() => setActivePeerId(null)}
+          aria-label="Back to chats"
+        >
+          ‹
+        </button>
+        <div className="collab-chat__thread-peer">
+          <span className="int-peer" data-hue={activePeer.hue}>
+            {activePeer.name.slice(0, 1)}
+            {activePeer.online ? <i className="int-peer__online" /> : null}
+          </span>
+          <div>
+            <h2 className="collab-chat__thread-name">{activePeer.name}</h2>
+            <p className="collab-chat__thread-status">{activePeer.online ? 'Online' : 'Offline'}</p>
+          </div>
+        </div>
+      </header>
+
+      <ul className="collab-chat__list" aria-live="polite" ref={listRef}>
+        {threadItems.length === 0 ? (
+          <li className="collab-chat__empty">No messages yet — say hello to {activePeer.name}.</li>
+        ) : (
+          threadItems.map((m) => {
+            const mine = m.actor === 'You';
+            return (
+              <li
+                key={m.id}
+                className={`collab-chat__bubble${mine ? ' collab-chat__bubble--mine' : ''}`}
+              >
+                {!mine ? <strong>{m.actor}</strong> : null}
+                <span>{m.body}</span>
+                <button
+                  type="button"
+                  className="collab-chat__ask"
+                  onClick={() => onConvert(m.body || '')}
+                >
+                  Ask agent
+                </button>
+              </li>
+            );
+          })
+        )}
       </ul>
+
+      <div className="collab-chat__composer">
+        <input
+          ref={inputRef}
+          type="text"
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          placeholder={`Message ${activePeer.name}…`}
+          enterKeyHint="send"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              send();
+            }
+          }}
+        />
+        <button type="button" onClick={send} disabled={!draft.trim()}>
+          Send
+        </button>
+      </div>
     </div>
   );
 }

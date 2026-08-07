@@ -12,24 +12,28 @@ export const DEFAULT_INTEGRATIONS: IntegrationConfig[] = [
     label: 'Facebook',
     enabled: false,
     accountLabel: '',
+    connectionStatus: 'idle',
   },
   {
     id: 'whatsapp',
     label: 'WhatsApp',
     enabled: false,
     accountLabel: '',
+    connectionStatus: 'idle',
   },
   {
     id: 'github',
     label: 'GitHub',
     enabled: false,
     accountLabel: '',
+    connectionStatus: 'idle',
   },
   {
     id: 'gitlab',
     label: 'GitLab',
     enabled: false,
     accountLabel: '',
+    connectionStatus: 'idle',
   },
 ];
 

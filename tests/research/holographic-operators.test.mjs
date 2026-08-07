@@ -31,6 +31,7 @@ describe('operatorCoherence', () => {
     // Order should matter for the operator coherence metric
     expect(typeof a).toBe('number');
     expect(typeof b).toBe('number');
+    expect(a).not.toBe(b);
   });
 
   it('works with single word', () => {

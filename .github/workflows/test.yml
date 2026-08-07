@@ -9,6 +9,12 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/test.yml'
+      - 'api/**'
+      - 'apps/**'
+      - 'interfaces/**'
+      - 'scripts/**'
+      - 'vercel.json'
+      - '.github/workflows/**'
   pull_request:
     paths:
       - 'lib/**'
@@ -16,6 +22,12 @@ on:
       - 'tests/**'
       - 'package.json'
       - 'package-lock.json'
+      - 'api/**'
+      - 'apps/**'
+      - 'interfaces/**'
+      - 'scripts/**'
+      - 'vercel.json'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 jobs:
@@ -34,3 +46,35 @@ jobs:
 
       - name: Run vitest suite
         run: npm test
+
+  coverage:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run coverage
+        run: npm run test:coverage
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build QUESTFEST Bridge
+        run: npm run build:questfest-bridge
+      - name: Build Executive Onboard
+        run: npm run build:executive-onboard
+      - name: Build Lattice Chat
+        run: npm run build:lattice-chat

@@ -78,15 +78,18 @@
     "research:synthobs-tbme-narrow-gate-asi": "node research/synthobs-tbme-narrow-gate-asi/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-protein-phase-collapse": "node research/synthobs-tbme-protein-phase-collapse/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-thermal-meissner": "node research/synthobs-tbme-thermal-meissner/scripts/run_empirical_pipeline.mjs",
-    "research:synthobs-tbme-equine-asi": "node research/synthobs-tbme-equine-asi/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-tbme-equine-asi": "node research/synthobs-tbme-equine-asi/scripts/run_empirical_pipeline.mjs",
+    "test:coverage": "vitest run --coverage",
+    "build:all": "npm run build:questfest-bridge && npm run build:executive-onboard && npm run build:lattice-chat"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",
     "@vercel/blob": "^2.3.3",
     "marked": "^9.1.6",
-    "ws": "^8.20.1"
+    "ws": "^8.21.0"
   },
   "devDependencies": {
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.10",
+    "@vitest/coverage-v8": "^4.1.10"
   }
 }

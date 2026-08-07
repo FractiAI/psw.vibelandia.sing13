@@ -5,6 +5,7 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     include: ['tests/**/*.test.mjs'],
+    // Thresholds are intentionally unset until api/ and apps/ enter coverage scope (follow-up).
     coverage: {
       provider: 'v8',
       include: ['lib/**/*.mjs', 'research/**/src/*.mjs'],

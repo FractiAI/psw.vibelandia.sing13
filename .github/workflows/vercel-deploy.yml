@@ -20,7 +20,7 @@ jobs:
           node-version: "22"
 
       - name: Build QUESTFEST Bridge (React)
-        run: npm run build:questfest-bridge
+        run: npm run build:questfest-bridge && npm run build:executive-onboard && npm run build:lattice-chat
 
       - name: Deploy to Vercel (production)
         env:

@@ -1,0 +1,77 @@
+{
+  "docId": "WP-SYNTHOBS-TBME-THERMAL-MEISSNER-2026-08-06",
+  "registryId": "synthobs-tbme-thermal-meissner-2026-08",
+  "title": "Thermal Meissner Expulsion — Omni-Lattice Lens Empirical Suite",
+  "generatedAt": "2026-08-07T02:08:03.594Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Thermal Meissner Omni-Lattice lens — catalog exploration only; not Core / Engine.",
+  "results": {
+    "docId": "WP-SYNTHOBS-TBME-THERMAL-MEISSNER-2026-08-06",
+    "registryId": "synthobs-tbme-thermal-meissner-2026-08",
+    "all_pass": true,
+    "n_pass": 6,
+    "n_total": 6,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "E_F = Φ_EGS fixture",
+        "E_F": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Golden key for Omni-Lattice scale ladders in this exploration.",
+        "honesty": "Architectural constant — not a Meissner critical exponent."
+      },
+      {
+        "id": "E2_ef_squared_identity",
+        "title": "E_F² = E_F + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_phase_switch_table",
+        "title": "Normal vs SC catalog metric polarity",
+        "NORMAL_STATE": {
+          "resistance": "R>0",
+          "bulkB": "threaded",
+          "entropy": "high"
+        },
+        "SC_STATE": {
+          "resistance": "R=0",
+          "bulkB": "expelled",
+          "entropy": "low"
+        },
+        "pass": true,
+        "interpretation": "Table integrity for thermal phase-switch narrative.",
+        "honesty": "Idealized textbook polarity — not sample-specific Tc data."
+      },
+      {
+        "id": "E4_publication_ref",
+        "title": "Publication ref FAI-EGSC-2026-08",
+        "PUBLICATION_REF": "FAI-EGSC-2026-08",
+        "pass": true,
+        "interpretation": "Stable publication handle for catalog.",
+        "honesty": "Bibliographic fixture."
+      },
+      {
+        "id": "E5_paper_on_disk",
+        "title": "Canonical paper present",
+        "local": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\research\\synthobs-tbme-thermal-meissner\\docs\\SYNTHOBS_TBME_THERMAL_MEISSNER_2026-08.md",
+        "mono": "C:\\Users\\info\\OneDrive\\Desktop\\psw.vibelandia.sing13\\docs\\SYNTHOBS_TBME_THERMAL_MEISSNER_2026-08.md",
+        "pass": true,
+        "interpretation": "Suite linked to published docs/.",
+        "honesty": "Filesystem fidelity check."
+      },
+      {
+        "id": "E6_not_core_part",
+        "title": "Explicit non-Core catalog status",
+        "pass": true,
+        "interpretation": "Exploration lens — excluded from Core / Engine allowlist by design.",
+        "honesty": "Governance fixture for NSPFRNP catalog fidelity."
+      }
+    ]
+  }
+}

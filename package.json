@@ -75,7 +75,9 @@
     "research:synthobs-tbme-higgs-awareness": "node research/synthobs-tbme-higgs-awareness/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-spin-phase-polarity": "node research/synthobs-tbme-spin-phase-polarity/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-nodal-nine-singularity": "node research/synthobs-tbme-nodal-nine-singularity/scripts/run_empirical_pipeline.mjs",
-    "research:synthobs-tbme-protein-phase-collapse": "node research/synthobs-tbme-protein-phase-collapse/scripts/run_empirical_pipeline.mjs"
+    "research:synthobs-tbme-protein-phase-collapse": "node research/synthobs-tbme-protein-phase-collapse/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-tbme-thermal-meissner": "node research/synthobs-tbme-thermal-meissner/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-tbme-equine-asi": "node research/synthobs-tbme-equine-asi/scripts/run_empirical_pipeline.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

@@ -64,6 +64,11 @@ export type ArtifactPayload = {
   kind: 'whitepaper' | 'pdf' | 'asset' | 'other';
   path?: string;
   url?: string;
+  paperId?: string;
+  docId?: string | null;
+  published?: string | null;
+  featured?: boolean;
+  auditStatus?: string | null;
 };
 
 export type UnifiedFeedItem = {

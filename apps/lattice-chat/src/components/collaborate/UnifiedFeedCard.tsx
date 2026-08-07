@@ -103,13 +103,19 @@ export function UnifiedFeedCard({
           <>
             <p className="uf-card__title">{item.artifact.title}</p>
             <p className="uf-card__sub">
-              {item.artifact.kind}
-              {item.artifact.path ? ` · ${item.artifact.path}` : ''}
+              {item.artifact.kind === 'whitepaper' ? 'Whitepaper' : item.artifact.kind}
+              {item.artifact.published ? ` · ${item.artifact.published}` : ''}
             </p>
             <div className="uf-card__actions">
-              <button type="button" onClick={() => openRepoFromItem(item)}>
-                Open artifact
-              </button>
+              {item.artifact.url ? (
+                <a className="uf-card__linkbtn" href={item.artifact.url}>
+                  Read
+                </a>
+              ) : (
+                <button type="button" onClick={() => openRepoFromItem(item)}>
+                  Open artifact
+                </button>
+              )}
               <button type="button" onClick={() => onOpenContext?.(item)}>
                 Convert to Task
               </button>

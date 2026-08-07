@@ -18,6 +18,8 @@ type RawEnvelope = {
   actor?: string;
   createdAt?: string;
   body?: string;
+  id?: string;
+  sourceLabel?: string;
   presenceHue?: UnifiedFeedItem['presenceHue'];
   threadPeerId?: string;
   threadId?: string;
@@ -148,12 +150,12 @@ export function parseIncomingPayload(raw: unknown): UnifiedFeedItem | null {
       url: data.url,
     };
     return {
-      id: uid('art'),
+      id: typeof data.id === 'string' && data.id ? data.id : uid('art'),
       kind: 'artifact',
       platform: asPlatform(data.platform) || 'lattice',
       createdAt,
       actor: data.actor || 'Lattice',
-      sourceLabel: 'Artifact',
+      sourceLabel: data.sourceLabel || 'Artifact',
       body: artifact.title,
       artifact,
       presenceHue: data.presenceHue,
@@ -163,7 +165,7 @@ export function parseIncomingPayload(raw: unknown): UnifiedFeedItem | null {
   // Default: chat / lattice native
   if (data.body || data.message || data.text) {
     return {
-      id: uid('chat'),
+      id: typeof data.id === 'string' && data.id ? data.id : uid('chat'),
       kind: 'chat',
       platform: asPlatform(data.platform) || 'lattice',
       createdAt,

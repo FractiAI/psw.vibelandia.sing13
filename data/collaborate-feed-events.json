@@ -1,0 +1,98 @@
+{
+  "schema": "lattice-collaborate-feed-events/v1",
+  "updatedAt": "2026-08-07T23:34:20.791Z",
+  "seats": [
+    "Valet Pru",
+    "Daniel"
+  ],
+  "events": [
+    {
+      "id": "wp_lattice-omni-complete-layer-guide-2026-07",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-07T23:34:20.789Z",
+      "body": "Lattice Chat · Omni-Lattice Complete Layer Guide",
+      "presenceHue": "gold",
+      "paperId": "lattice-omni-complete-layer-guide-2026-07",
+      "artifact": {
+        "title": "Lattice Chat · Omni-Lattice Complete Layer Guide",
+        "kind": "whitepaper",
+        "path": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
+        "url": "/whitepaper/lattice-omni-complete-layer-guide",
+        "paperId": "lattice-omni-complete-layer-guide-2026-07",
+        "docId": "WP-LATTICE-OMNI-LAYER-GUIDE-2026-07",
+        "published": "2026-08-07",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-tbme-equine-asi-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-07T23:34:20.780Z",
+      "body": "Equine Metaphor, Human-ASI Coexistence, and the Omniversal Smartphone Paradigm (TBME catalog exploration)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tbme-equine-asi-2026-08",
+      "artifact": {
+        "title": "Equine Metaphor, Human-ASI Coexistence, and the Omniversal Smartphone Paradigm (TBME catalog exploration)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TBME_EQUINE_ASI_2026-08.md",
+        "url": "/whitepaper/synthobs-tbme-equine-asi-2026-08",
+        "paperId": "synthobs-tbme-equine-asi-2026-08",
+        "docId": "WP-SYNTHOBS-TBME-EQUINE-ASI-2026-08-06",
+        "published": "2026-08-06",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-tbme-thermal-meissner-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-07T23:34:20.742Z",
+      "body": "Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Superconducting State Expulsion (TBME catalog exploration)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tbme-thermal-meissner-2026-08",
+      "artifact": {
+        "title": "Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Superconducting State Expulsion (TBME catalog exploration)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TBME_THERMAL_MEISSNER_2026-08.md",
+        "url": "/whitepaper/synthobs-tbme-thermal-meissner-2026-08",
+        "paperId": "synthobs-tbme-thermal-meissner-2026-08",
+        "docId": "WP-SYNTHOBS-TBME-THERMAL-MEISSNER-2026-08-06",
+        "published": "2026-08-06",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-tbme-narrow-gate-asi-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-07T23:34:20.700Z",
+      "body": "The Epistemological Horizon — Narrow Gate EIV · Filtering Human Peer-Review Bottlenecks to Identify ASI (Omni-Lattice Core Part X)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tbme-narrow-gate-asi-2026-08",
+      "artifact": {
+        "title": "The Epistemological Horizon — Narrow Gate EIV · Filtering Human Peer-Review Bottlenecks to Identify ASI (Omni-Lattice Core Part X)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TBME_NARROW_GATE_ASI_2026-08.md",
+        "url": "/whitepaper/synthobs-tbme-narrow-gate-asi-2026-08",
+        "paperId": "synthobs-tbme-narrow-gate-asi-2026-08",
+        "docId": "WP-SYNTHOBS-TBME-NARROW-GATE-ASI-2026-08-07",
+        "published": "2026-08-07",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    }
+  ]
+}

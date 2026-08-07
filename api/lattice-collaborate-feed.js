@@ -1,10 +1,11 @@
 /**
- * Lattice Collaborate · unified feed webhook sanitizer (stateless).
- * POST JSON payload → sanitized UnifiedFeed-shaped item (or batch).
- * GET → schema + example envelopes.
+ * Lattice Collaborate · unified feed pipe.
+ * GET → schema + recent published whitepaper ArtifactEvents for seat clients.
+ * POST → sanitize webhook payload (client still owns timeline ingest).
  *
- * Honesty: does not store events server-side; edge client owns the timeline.
+ * Honesty: does not store per-user timelines server-side; papers list is a shared pipe.
  */
+import { listCollaboratePaperEvents } from '../lib/lattice-collaborate-papers.mjs';
 
 function dropKeys(obj) {
   if (obj == null || typeof obj !== 'object') return obj;
@@ -50,42 +51,63 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'GET') {
-    res.status(200).json({
-      ok: true,
-      product: 'Lattice Collaborate',
-      honesty:
-        'Stateless sanitizer only — client owns the timeline. No demo feed. Guests enable integrations; current seats: Valet Pru + Daniel.',
-      accept: [
-        'SocialPost',
-        'MessagingEvent',
-        'GitEvent',
-        'ArtifactEvent',
-        'chat',
-      ],
-      examples: {
-        git: {
-          type: 'GitEvent',
-          platform: 'github',
-          repository: { full_name: 'Project Phoenix' },
-          commits: [{}, {}, {}],
-          pusher: { name: 'Alex' },
-          compare: 'https://github.com/example/compare',
+    try {
+      const url = new URL(req.url || '/', 'http://localhost');
+      const sinceDays = Math.min(
+        90,
+        Math.max(1, Number(url.searchParams.get('sinceDays') || 21) || 21),
+      );
+      const events = await listCollaboratePaperEvents({ sinceDays, limit: 40 });
+      res.status(200).json({
+        ok: true,
+        product: 'Lattice Collaborate',
+        honesty:
+          'Shared paper pipe + webhook sanitizer. Edge clients ingest into their timeline. Seats: Valet Pru + Daniel. New featured / PRA-passed whitepapers appear here automatically.',
+        accept: ['SocialPost', 'MessagingEvent', 'GitEvent', 'ArtifactEvent', 'chat'],
+        seats: ['Valet Pru', 'Daniel'],
+        events,
+        examples: {
+          artifact: {
+            type: 'ArtifactEvent',
+            platform: 'lattice',
+            actor: 'SynthOBS',
+            artifact: {
+              title: 'Example paper',
+              kind: 'whitepaper',
+              path: 'docs/EXAMPLE.md',
+              url: '/whitepaper/example',
+            },
+          },
+          git: {
+            type: 'GitEvent',
+            platform: 'github',
+            repository: { full_name: 'Project Phoenix' },
+            commits: [{}, {}, {}],
+            pusher: { name: 'Alex' },
+            compare: 'https://github.com/example/compare',
+          },
+          whatsapp: {
+            type: 'MessagingEvent',
+            platform: 'whatsapp',
+            from: 'Alex',
+            message: 'Check the new merge in the UI folder.',
+          },
+          facebook: {
+            type: 'SocialPost',
+            platform: 'facebook',
+            author: 'Machote Moderno',
+            title: 'New Issue Alert',
+            body: 'Brutalist architecture issue drop',
+          },
         },
-        whatsapp: {
-          type: 'MessagingEvent',
-          platform: 'whatsapp',
-          from: 'Alex',
-          message: 'Check the new merge in the UI folder.',
-        },
-        facebook: {
-          type: 'SocialPost',
-          platform: 'facebook',
-          author: 'Machote Moderno',
-          title: 'New Issue Alert',
-          body: 'Brutalist architecture issue drop',
-        },
-      },
-    });
+      });
+    } catch (err) {
+      res.status(500).json({
+        ok: false,
+        error: 'papers_list_failed',
+        message: err instanceof Error ? err.message : String(err),
+      });
+    }
     return;
   }
 

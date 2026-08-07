@@ -5,6 +5,7 @@ import { RepoViewerOverlay } from '@/components/collaborate/RepoViewerOverlay';
 import { UnifiedFeedStream } from '@/components/collaborate/UnifiedFeedStream';
 import { MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
 import { useUnifiedFeed } from '@/feed/store';
+import { syncPublishedPapers } from '@/feed/syncPublishedPapers';
 import type { CollabMobileTab, CollabPeer } from '@/feed/types';
 import { displayName } from '@/feed/verifyConnection';
 
@@ -38,6 +39,25 @@ export function CollaborateShell({
     onChange();
     mq.addEventListener('change', onChange);
     return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    const run = () => {
+      if (cancelled) return;
+      void syncPublishedPapers();
+    };
+    run();
+    const id = window.setInterval(run, 5 * 60 * 1000);
+    const onVis = () => {
+      if (document.visibilityState === 'visible') run();
+    };
+    document.addEventListener('visibilitychange', onVis);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+      document.removeEventListener('visibilitychange', onVis);
+    };
   }, []);
 
   const handoffAgent = useCallback(

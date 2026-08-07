@@ -122,6 +122,15 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       ingestPayload(raw) {
         const item = parseIncomingPayload(raw);
         if (!item) return null;
+        const existing = get().items;
+        if (existing.some((i) => i.id === item.id)) return item;
+        if (
+          item.kind === 'artifact' &&
+          item.artifact?.url &&
+          existing.some((i) => i.artifact?.url === item.artifact?.url)
+        ) {
+          return item;
+        }
         set((s) => ({ items: [...s.items, item].slice(-200) }));
         return item;
       },

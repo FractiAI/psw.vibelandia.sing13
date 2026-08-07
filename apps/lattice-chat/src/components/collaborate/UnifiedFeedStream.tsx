@@ -54,6 +54,7 @@ export function UnifiedFeedStream({
 
   const typing = peers.find((p) => p.typing);
   const anyFeedOn = integrations.some((i) => i.enabled);
+  const hasPaperFilter = eventFilters.whitepapers !== false;
 
   function onOpenContext(item: UnifiedFeedItem) {
     const prompt = `Convert this unified-feed item into a task/commit:\n${feedItemToAgentContext(item)}`;
@@ -65,14 +66,14 @@ export function UnifiedFeedStream({
       {items.length === 0 ? (
         <div className="uf-empty">
           <p className="uf-empty__lead">
-            {anyFeedOn
+            {anyFeedOn || hasPaperFilter
               ? 'Feed is quiet — waiting for the next event.'
-              : 'Your feed is ready. Configure integrations to begin.'}
+              : 'Your feed is ready. New whitepapers land here automatically for seated members.'}
           </p>
           <p className="uf-empty__hint">
             {anyFeedOn
-              ? 'GitHub pushes, WhatsApp bridges, and Lattice messages appear here as they arrive.'
-              : 'Open Settings → enable GitHub, WhatsApp, or Facebook. Only Valet Pru and Daniel are seated for now.'}
+              ? 'GitHub pushes, WhatsApp bridges, Lattice papers, and messages appear here as they arrive.'
+              : 'Published whitepapers sync for Valet Pru and Daniel. Optional: connect GitHub / WhatsApp / Facebook in Settings.'}
           </p>
         </div>
       ) : (

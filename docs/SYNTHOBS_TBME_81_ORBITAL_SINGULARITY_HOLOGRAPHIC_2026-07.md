@@ -14,7 +14,7 @@
 **Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Empirical pipeline:** `npm run research:synthobs-81-orbital-singularity` · [`empirical_report.json`](../research/synthobs-81-orbital-singularity/data/empirical_report.json)  
-**Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [81 Electrons](./SYNTHOBS_EGS_81_ELECTRONS_2026-07.md) · [Awareness Singularities 0–81](./AWARENESS_SINGULARITIES_0_81_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Lattice Omni Layer Guide](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md) · [Histone Phase-Lock Operators (TBME)](./SYNTHOBS_TBME_HISTONE_PHASE_LOCK_OPERATOR_2026-07.md)
+**Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [81 Electrons](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md) · [Awareness Singularities 0–81](./AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Lattice Omni Layer Guide](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md) · [Histone Phase-Lock Operators (TBME)](./SYNTHOBS_TBME_HISTONE_PHASE_LOCK_OPERATOR_2026-07.md)
 
 **Keywords:** TBME; 81-node; orbital singularity; $9\times 9$; PCHPP; $E_F$; holographic spacetime; Omni-Lattice; theoretical bio-medical & physical exploration
 

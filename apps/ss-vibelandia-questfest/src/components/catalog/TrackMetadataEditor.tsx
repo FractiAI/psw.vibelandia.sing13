@@ -15,8 +15,8 @@ import { PLAIN } from '@/lib/plainSpeak';
 export interface TrackMetadataEditorProps {
   track: TrackDef;
   disabled?: boolean;
-  /** Compact row for listen view vs full card in DJ library */
-  variant?: 'panel' | 'inline';
+  /** Compact row for listen view vs full card in DJ library vs phone sheet */
+  variant?: 'panel' | 'inline' | 'sheet';
   onSaved?: () => void;
   onDeleted?: () => void;
 }
@@ -44,6 +44,8 @@ export function TrackMetadataEditor({
   const [coverInputKey, setCoverInputKey] = useState(0);
   const coverInputId = useId();
   const coverBlobRef = useRef<string | null>(null);
+  const titleRef = useRef<HTMLInputElement | null>(null);
+  const isSheet = variant === 'sheet';
 
   const revokeCoverBlob = () => {
     if (coverBlobRef.current) {
@@ -70,6 +72,12 @@ export function TrackMetadataEditor({
 
   useEffect(() => () => revokeCoverBlob(), []);
 
+  useEffect(() => {
+    if (!isSheet) return;
+    const t = window.setTimeout(() => titleRef.current?.focus(), 80);
+    return () => window.clearTimeout(t);
+  }, [isSheet, track.id]);
+
   const handleSave = async () => {
     setBusy(true);
     setMsg(null);
@@ -92,8 +100,7 @@ export function TrackMetadataEditor({
         setDescription(latest.description ?? '');
         setCoverPreviewSafe(latest.posterSrc);
       }
-      const synced =
-        isServerUploadConfigured() && isUserUploadTrack(track.id, track);
+      const synced = isServerUploadConfigured() && isUserUploadTrack(track.id, track);
       setMsg(synced ? 'Saved to server.' : 'Saved on this device only.');
       onSaved?.();
     } catch (err) {
@@ -136,6 +143,7 @@ export function TrackMetadataEditor({
   };
 
   const handleDelete = async () => {
+    if (!window.confirm(`Delete “${track.title}”? This cannot be undone.`)) return;
     setBusy(true);
     setMsg(null);
     setProgress('Deleting track…');
@@ -150,7 +158,11 @@ export function TrackMetadataEditor({
   };
 
   const wrapClass =
-    variant === 'inline' ? 'sp-track-edit sp-track-edit--inline' : 'spotify-dj-track-edit';
+    variant === 'inline'
+      ? 'sp-track-edit sp-track-edit--inline'
+      : isSheet
+        ? 'spotify-dj-track-edit spotify-dj-track-edit--sheet'
+        : 'spotify-dj-track-edit';
 
   const msgClass =
     msg?.startsWith('Save failed') || msg?.startsWith('Delete failed')
@@ -159,43 +171,47 @@ export function TrackMetadataEditor({
         ? 'spotify-dj-msg spotify-dj-msg--success'
         : 'spotify-dj-msg';
 
-  return (
-    <div className={wrapClass}>
-      <datalist id="qf-genre-suggestions">
-        {TRACK_GENRE_SUGGESTIONS.map((g) => (
-          <option key={g} value={g} />
-        ))}
-      </datalist>
-      <div className="spotify-field sp-track-cover-field">
-        <span>{PLAIN.changeCover}</span>
-        <div className="spotify-file-pick">
-          <input
-            key={coverInputKey}
-            id={coverInputId}
-            type="file"
-            accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
-            className="spotify-file-pick-input"
-            disabled={busy || disabled}
-            onChange={(e) => {
-              const picked = e.target.files?.[0] ?? null;
-              e.target.value = '';
-              void (async () => {
-                if (!picked) {
-                  setCoverFile(null);
-                  setCoverPreviewSafe(track.posterSrc);
-                  return;
-                }
-                try {
-                  const normalized = await normalizeCoverForUpload(picked);
-                  setCoverFile(normalized);
-                  setCoverPreviewSafe(URL.createObjectURL(normalized));
-                  setMsg(null);
-                } catch {
-                  setMsg('Could not use that image — try JPEG or PNG.');
-                }
-              })();
-            }}
-          />
+  const coverBlock = (
+    <div className={`spotify-field sp-track-cover-field${isSheet ? ' sp-track-cover-field--sheet' : ''}`}>
+      {!isSheet && <span>{PLAIN.changeCover}</span>}
+      <div className="spotify-file-pick">
+        <input
+          key={coverInputKey}
+          id={coverInputId}
+          type="file"
+          accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
+          className="spotify-file-pick-input"
+          disabled={busy || disabled}
+          onChange={(e) => {
+            const picked = e.target.files?.[0] ?? null;
+            e.target.value = '';
+            void (async () => {
+              if (!picked) {
+                setCoverFile(null);
+                setCoverPreviewSafe(track.posterSrc);
+                return;
+              }
+              try {
+                const normalized = await normalizeCoverForUpload(picked);
+                setCoverFile(normalized);
+                setCoverPreviewSafe(URL.createObjectURL(normalized));
+                setMsg(null);
+              } catch {
+                setMsg('Could not use that image — try JPEG or PNG.');
+              }
+            })();
+          }}
+        />
+        {isSheet ? (
+          <label htmlFor={coverInputId} className="sp-track-cover-sheet">
+            {coverPreview ? (
+              <img src={coverPreview} alt="" width={140} height={140} />
+            ) : (
+              <span className="sp-track-cover-preview sp-track-cover-preview--empty" aria-hidden />
+            )}
+            <span className="sp-track-cover-sheet-badge">{PLAIN.changeCover}</span>
+          </label>
+        ) : (
           <div className="sp-track-cover-row">
             {coverPreview ? (
               <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
@@ -221,16 +237,48 @@ export function TrackMetadataEditor({
               </button>
             )}
           </div>
-        </div>
-        <span className="spotify-field-hint">JPEG, PNG, WebP, or iPhone photo · saved with Save</span>
+        )}
       </div>
-      <label className="spotify-field">
+      {!isSheet && (
+        <span className="spotify-field-hint">JPEG, PNG, WebP, or iPhone photo · saved with Save</span>
+      )}
+      {isSheet && (coverPreview || track.posterSrc) && (
+        <button
+          type="button"
+          className="sp-track-cover-sheet-remove"
+          disabled={busy || disabled}
+          onClick={() => {
+            setCoverFile(null);
+            setCoverPreviewSafe(undefined);
+            setCoverInputKey((k) => k + 1);
+            void updateTrack(track.id, { posterSrc: null });
+          }}
+        >
+          {PLAIN.removeCover}
+        </button>
+      )}
+    </div>
+  );
+
+  return (
+    <div className={wrapClass}>
+      <datalist id="qf-genre-suggestions">
+        {TRACK_GENRE_SUGGESTIONS.map((g) => (
+          <option key={g} value={g} />
+        ))}
+      </datalist>
+
+      {coverBlock}
+
+      <label className={`spotify-field${isSheet ? ' spotify-field--sheet-title' : ''}`}>
         {PLAIN.title}
         <input
-          className="spotify-input"
+          ref={titleRef}
+          className={`spotify-input${isSheet ? ' spotify-input--sheet-title' : ''}`}
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           disabled={busy || disabled}
+          enterKeyHint="next"
         />
       </label>
       <label className="spotify-field">
@@ -240,32 +288,66 @@ export function TrackMetadataEditor({
           value={artist}
           onChange={(e) => setArtist(e.target.value)}
           disabled={busy || disabled}
+          enterKeyHint="done"
         />
       </label>
-      <label className="spotify-field">
-        {PLAIN.genre}
-        <input
-          className="spotify-input"
-          list="qf-genre-suggestions"
-          value={genre}
-          onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
-          placeholder={PLAIN.genrePlaceholder}
-          disabled={busy || disabled}
-        />
-      </label>
-      <label className="spotify-field">
-        {PLAIN.description}
-        <textarea
-          className="spotify-input spotify-textarea"
-          value={description}
-          onChange={(e) => setDescription(e.target.value.slice(0, TRACK_DESCRIPTION_MAX))}
-          rows={variant === 'inline' ? 2 : 3}
-          disabled={busy || disabled}
-        />
-        <span className="spotify-field-hint">
-          {description.length}/{TRACK_DESCRIPTION_MAX}
-        </span>
-      </label>
+
+      {isSheet ? (
+        <details className="sp-track-more">
+          <summary>Genre &amp; description</summary>
+          <div className="sp-track-more-body">
+            <label className="spotify-field">
+              {PLAIN.genre}
+              <input
+                className="spotify-input"
+                list="qf-genre-suggestions"
+                value={genre}
+                onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
+                placeholder={PLAIN.genrePlaceholder}
+                disabled={busy || disabled}
+              />
+            </label>
+            <label className="spotify-field">
+              {PLAIN.description}
+              <textarea
+                className="spotify-input spotify-textarea"
+                value={description}
+                onChange={(e) => setDescription(e.target.value.slice(0, TRACK_DESCRIPTION_MAX))}
+                rows={2}
+                disabled={busy || disabled}
+              />
+            </label>
+          </div>
+        </details>
+      ) : (
+        <>
+          <label className="spotify-field">
+            {PLAIN.genre}
+            <input
+              className="spotify-input"
+              list="qf-genre-suggestions"
+              value={genre}
+              onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
+              placeholder={PLAIN.genrePlaceholder}
+              disabled={busy || disabled}
+            />
+          </label>
+          <label className="spotify-field">
+            {PLAIN.description}
+            <textarea
+              className="spotify-input spotify-textarea"
+              value={description}
+              onChange={(e) => setDescription(e.target.value.slice(0, TRACK_DESCRIPTION_MAX))}
+              rows={variant === 'inline' ? 2 : 3}
+              disabled={busy || disabled}
+            />
+            <span className="spotify-field-hint">
+              {description.length}/{TRACK_DESCRIPTION_MAX}
+            </span>
+          </label>
+        </>
+      )}
+
       {busy && progress && (
         <div className="sp-save-progress" role="status" aria-live="polite">
           <p className="sp-save-progress__label">{progress}</p>
@@ -275,10 +357,11 @@ export function TrackMetadataEditor({
         </div>
       )}
       {!busy && msg && <p className={msgClass}>{msg}</p>}
-      <div className="spotify-dj-track-edit-actions">
+
+      <div className={`spotify-dj-track-edit-actions${isSheet ? ' spotify-dj-track-edit-actions--sheet' : ''}`}>
         <button
           type="button"
-          className="spotify-btn spotify-btn--gold spotify-btn--tiny"
+          className={`spotify-btn spotify-btn--gold${isSheet ? ' spotify-btn--sheet-save' : ' spotify-btn--tiny'}`}
           disabled={busy || disabled}
           onClick={() => void handleSave()}
         >

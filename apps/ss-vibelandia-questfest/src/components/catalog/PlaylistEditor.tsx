@@ -8,6 +8,7 @@ import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/c
 import { fmtPlaylistTotalTime } from '@/lib/formatDuration';
 import { PLAIN } from '@/lib/plainSpeak';
 import { isBlankDraftPlaylist } from '@/lib/playlistDrafts';
+import { nestablePlaylistsForParent } from '@/lib/playlistNest';
 import {
   MASTER_LIBRARY_UI_HINT,
   PLAYLIST_KIND_HINT,
@@ -62,6 +63,8 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
   const [showAdd, setShowAdd] = useState(false);
   const [addSearch, setAddSearch] = useState('');
   const [editTrackId, setEditTrackId] = useState<string | null>(null);
+  const [menuTrackId, setMenuTrackId] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   const isMaster = isMasterPlaylist(playlistId);
   const isMyLikes = isMyLikesPlaylist(playlistId);
@@ -84,7 +87,19 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     setShowAdd(false);
     setAddSearch('');
     setEditTrackId(null);
+    setMenuTrackId(null);
   }, [playlistId]);
+
+  useEffect(() => {
+    if (!menuTrackId) return;
+    const onDoc = (e: PointerEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuTrackId(null);
+      }
+    };
+    document.addEventListener('pointerdown', onDoc);
+    return () => document.removeEventListener('pointerdown', onDoc);
+  }, [menuTrackId]);
 
   const setCoverPreviewSafe = (url?: string) => {
     if (coverBlobRef.current) {
@@ -161,15 +176,16 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
 
   const masterTrackCount = masterPl?.trackIds.length ?? 0;
 
-  const saveMeta = async () => {
+  const saveMeta = async (fileOverride?: File | null) => {
     if (isMyLikes) return;
+    const file = fileOverride !== undefined ? fileOverride : coverFile;
     setCoverBusy(true);
     setCoverMsg(null);
     try {
       await updatePlaylist(
         playlistId,
         { name, description, genre, kind },
-        coverFile ? { coverFile, onProgress: setCoverMsg } : undefined,
+        file ? { coverFile: file, onProgress: setCoverMsg } : undefined,
       );
       setCoverFile(null);
       setCoverInputKey((k) => k + 1);
@@ -220,16 +236,40 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
     });
   };
 
+  const pickCover = async (picked: File | null) => {
+    if (!picked) {
+      setCoverFile(null);
+      setCoverPreviewSafe(pl.posterSrc);
+      return;
+    }
+    try {
+      const normalized = await normalizeCoverForUpload(picked);
+      setCoverFile(normalized);
+      setCoverPreviewSafe(URL.createObjectURL(normalized));
+      setCoverMsg(null);
+      await saveMeta(normalized);
+    } catch {
+      setCoverMsg('Could not use that image — try JPEG or PNG.');
+    }
+  };
+
+  const coverMsgBad =
+    !!coverMsg &&
+    (coverMsg.startsWith('Save failed') || coverMsg.includes('must be') || coverMsg.includes('too large') || coverMsg.includes('Could not'));
+
   return (
-    <section className="sp-pl-edit">
+    <section className="sp-pl-edit sp-pl-edit--sc">
       <header className="sp-pl-edit-head">
         <button type="button" className="sp-pl-edit-back" onClick={handleDone}>
           Done
         </button>
-        {onPlay && (
+        <span className="sp-pl-edit-head-title">Edit playlist</span>
+        {onPlay ? (
           <button type="button" className="sp-pl-edit-play" onClick={onPlay}>
             Play
           </button>
+        ) : (
+          <span className="sp-pl-edit-head-spacer" aria-hidden />
         )}
       </header>
 
@@ -243,210 +283,204 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
       {isMyLikes && <p className="sp-pl-edit-banner">{PLAIN.myLikesHint}</p>}
 
       {!isMyLikes && (
-      <div className="sp-pl-edit-meta">
-        <datalist id="qf-genre-suggestions-playlist">
-          {TRACK_GENRE_SUGGESTIONS.map((g) => (
-            <option key={g} value={g} />
-          ))}
-        </datalist>
-        <div className="spotify-field sp-track-cover-field">
-          <span>{PLAIN.changeCover}</span>
-          <div className="spotify-file-pick">
-            <input
-              key={coverInputKey}
-              id={coverInputId}
-              type="file"
-              accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
-              className="spotify-file-pick-input"
-              disabled={coverBusy}
-              onChange={(e) => {
-                const picked = e.target.files?.[0] ?? null;
-                e.target.value = '';
-                void (async () => {
-                  if (!picked) {
-                    setCoverFile(null);
-                    setCoverPreviewSafe(pl.posterSrc);
-                    return;
-                  }
-                  try {
-                    const normalized = await normalizeCoverForUpload(picked);
-                    setCoverFile(normalized);
-                    setCoverPreviewSafe(URL.createObjectURL(normalized));
-                    setCoverMsg(null);
-                  } catch {
-                    setCoverMsg('Could not use that image — try JPEG or PNG.');
-                  }
-                })();
-              }}
-            />
-            <div className="sp-track-cover-row">
-              {coverPreview ? (
-                <img className="sp-track-cover-preview" src={coverPreview} alt="" width={72} height={72} />
-              ) : (
-                <PlaylistCoverArt playlist={pl} className="sp-track-cover-preview sp-track-cover-preview--empty" size={72} />
-              )}
-              <label htmlFor={coverInputId} className="spotify-btn spotify-btn--ghost spotify-btn--tiny">
-                {coverFile ? coverFile.name : PLAIN.changeCover}
-              </label>
-              {(coverPreview || pl.posterSrc) && (
-                <button
-                  type="button"
-                  className="spotify-btn spotify-btn--ghost spotify-btn--tiny"
-                  disabled={coverBusy}
-                  onClick={() => {
-                    setCoverFile(null);
-                    setCoverPreviewSafe(undefined);
-                    setCoverInputKey((k) => k + 1);
-                    void updatePlaylist(playlistId, { posterSrc: null });
-                  }}
-                >
-                  {PLAIN.removeCover}
-                </button>
-              )}
-            </div>
-          </div>
-          <span className="spotify-field-hint">JPEG, PNG, WebP, or iPhone photo · tap Save playlist below</span>
-          {coverMsg && (
-            <span className={`spotify-dj-msg${coverMsg.startsWith('Save failed') || coverMsg.includes('must be') || coverMsg.includes('too large') ? ' spotify-dj-msg--error' : coverMsg === 'Saved' ? ' spotify-dj-msg--success' : ''}`}>
-              {coverMsg}
-            </span>
-          )}
-        </div>
-        <label className="sp-library-field">
-          {PLAIN.title}
+        <div className="sp-pl-edit-hero">
+          <datalist id="qf-genre-suggestions-playlist">
+            {TRACK_GENRE_SUGGESTIONS.map((g) => (
+              <option key={g} value={g} />
+            ))}
+          </datalist>
+
           <input
-            className="sp-library-input sp-pl-edit-name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            onBlur={() => {
-              if (name.trim() && name !== pl.name) void saveMeta();
+            key={coverInputKey}
+            id={coverInputId}
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*,.jpg,.jpeg,.png,.webp,.heic"
+            className="sp-pl-edit-hero-file"
+            disabled={coverBusy}
+            onChange={(e) => {
+              const picked = e.target.files?.[0] ?? null;
+              e.target.value = '';
+              void pickCover(picked);
             }}
-            placeholder={PLAIN.title}
-            autoComplete="off"
-            enterKeyHint="done"
           />
-        </label>
-        <label className="sp-library-field">
-          {PLAIN.genre}
-          <input
-            className="sp-library-input"
-            list="qf-genre-suggestions-playlist"
-            value={genre}
-            onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
-            placeholder={PLAIN.genrePlaceholder}
-            autoComplete="off"
-          />
-        </label>
-        <label className="sp-library-field">
-          {PLAIN.description}
-          <textarea
-            className="sp-library-input sp-library-textarea"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            rows={2}
-            placeholder={PLAIN.descriptionPlaceholder}
-          />
-        </label>
-        {!isMaster ? (
-        <fieldset className="sp-library-field sp-pl-visibility">
-          <legend>Who can listen</legend>
-          <label className="sp-pl-visibility__opt">
-            <input
-              type="radio"
-              name={`pl-kind-${playlistId}`}
-              checked={kind === 'sovereign'}
-              onChange={() => setKind('sovereign')}
-            />
-            {PLAYLIST_KIND_SOVEREIGN_LABEL}
+
+          <label htmlFor={coverInputId} className="sp-pl-edit-hero-cover" aria-label={PLAIN.changeCover}>
+            {coverPreview ? (
+              <img src={coverPreview} alt="" width={160} height={160} />
+            ) : (
+              <PlaylistCoverArt playlist={pl} className="sp-pl-edit-hero-cover-fallback" size={160} />
+            )}
+            <span className="sp-pl-edit-hero-cover-badge">{coverBusy ? 'Saving…' : PLAIN.changeCover}</span>
           </label>
-          <label className="sp-pl-visibility__opt">
-            <input
-              type="radio"
-              name={`pl-kind-${playlistId}`}
-              checked={kind === 'open_deck'}
-              onChange={() => setKind('open_deck')}
-            />
-            {PLAYLIST_KIND_OPEN_LABEL}
-          </label>
-          <span className="spotify-field-hint">{PLAYLIST_KIND_HINT}</span>
-        </fieldset>
-        ) : null}
-        <button
-          type="button"
-          className="sp-pl-edit-save-meta"
-          disabled={coverBusy}
-          onClick={() => void saveMeta()}
-        >
-          {coverBusy ? 'Saving…' : 'Save playlist name & cover'}
-        </button>
-      </div>
+
+          <div className="sp-pl-edit-hero-fields">
+            <label className="sp-pl-edit-hero-title-field">
+              <span className="sp-visually-hidden">{PLAIN.title}</span>
+              <input
+                className="sp-pl-edit-hero-title"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                onBlur={() => {
+                  if (name.trim() && name !== pl.name) void saveMeta();
+                }}
+                placeholder="Playlist title"
+                autoComplete="off"
+                enterKeyHint="done"
+              />
+            </label>
+            <p className="sp-pl-edit-hero-stats">
+              {playlistTracks.length} {PLAIN.songs} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)}
+            </p>
+            {coverMsg && (
+              <span
+                className={`spotify-dj-msg${coverMsgBad ? ' spotify-dj-msg--error' : coverMsg === 'Saved' ? ' spotify-dj-msg--success' : ''}`}
+              >
+                {coverMsg}
+              </span>
+            )}
+            {(coverPreview || pl.posterSrc) && (
+              <button
+                type="button"
+                className="sp-pl-edit-hero-remove-cover"
+                disabled={coverBusy}
+                onClick={() => {
+                  setCoverFile(null);
+                  setCoverPreviewSafe(undefined);
+                  setCoverInputKey((k) => k + 1);
+                  void updatePlaylist(playlistId, { posterSrc: null });
+                }}
+              >
+                {PLAIN.removeCover}
+              </button>
+            )}
+          </div>
+        </div>
       )}
 
-      {!isMaster && !isMyLikes && (
-        <div className="sc-nest-editor">
-          <div className="sc-nest-editor-head">
-            <h2>{PLAIN.nestedPlaylists}</h2>
-            <button
-              type="button"
-              className="sc-ghost-btn"
-              onClick={() => {
-                const newId = createPlaylist(PLAIN.newPlaylist, playlistId);
-                onDuplicated?.(newId);
-              }}
-            >
-              + {PLAIN.newNestedPlaylist}
-            </button>
-          </div>
-          {childPlaylists.length > 0 ? (
-            <ul className="sc-nest-editor-list">
-              {childPlaylists.map((child) => (
-                <li key={child.id} className="sc-nest-editor-row">
-                  <PlaylistCoverArt playlist={child} size={36} />
-                  <span className="sc-nest-editor-name">{child.name}</span>
+      {!isMyLikes && (
+        <details className="sp-pl-edit-more">
+          <summary>More details</summary>
+          <div className="sp-pl-edit-more-body">
+            <label className="sp-library-field">
+              {PLAIN.genre}
+              <input
+                className="sp-library-input"
+                list="qf-genre-suggestions-playlist"
+                value={genre}
+                onChange={(e) => setGenre(e.target.value.slice(0, TRACK_GENRE_MAX))}
+                onBlur={() => void saveMeta()}
+                placeholder={PLAIN.genrePlaceholder}
+                autoComplete="off"
+              />
+            </label>
+            <label className="sp-library-field">
+              {PLAIN.description}
+              <textarea
+                className="sp-library-input sp-library-textarea"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                onBlur={() => void saveMeta()}
+                rows={2}
+                placeholder={PLAIN.descriptionPlaceholder}
+              />
+            </label>
+            {!isMaster ? (
+              <fieldset className="sp-library-field sp-pl-visibility">
+                <legend>Who can listen</legend>
+                <label className="sp-pl-visibility__opt">
+                  <input
+                    type="radio"
+                    name={`pl-kind-${playlistId}`}
+                    checked={kind === 'sovereign'}
+                    onChange={() => {
+                      setKind('sovereign');
+                      void updatePlaylist(playlistId, { kind: 'sovereign' });
+                    }}
+                  />
+                  {PLAYLIST_KIND_SOVEREIGN_LABEL}
+                </label>
+                <label className="sp-pl-visibility__opt">
+                  <input
+                    type="radio"
+                    name={`pl-kind-${playlistId}`}
+                    checked={kind === 'open_deck'}
+                    onChange={() => {
+                      setKind('open_deck');
+                      void updatePlaylist(playlistId, { kind: 'open_deck' });
+                    }}
+                  />
+                  {PLAYLIST_KIND_OPEN_LABEL}
+                </label>
+                <span className="spotify-field-hint">{PLAYLIST_KIND_HINT}</span>
+              </fieldset>
+            ) : null}
+
+            {!isMaster && (
+              <div className="sc-nest-editor sc-nest-editor--compact">
+                <div className="sc-nest-editor-head">
+                  <h2>{PLAIN.nestedPlaylists}</h2>
                   <button
                     type="button"
                     className="sc-ghost-btn"
-                    onClick={() => removePlaylistFromPlaylist(child.id, playlistId)}
+                    onClick={() => {
+                      const newId = createPlaylist(PLAIN.newPlaylist, playlistId);
+                      onDuplicated?.(newId);
+                    }}
                   >
-                    {PLAIN.removeNested}
+                    + {PLAIN.newNestedPlaylist}
                   </button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="sc-nest-editor-empty">{PLAIN.emptyPlaylist}</p>
-          )}
-          {nestCandidates.length > 0 ? (
-            <label className="sc-nest-picker">
-              <span>{PLAIN.addNestedPlaylist}</span>
-              <select
-                className="sc-nest-select"
-                defaultValue=""
-                onChange={(e) => {
-                  const id = e.target.value;
-                  e.target.value = '';
-                  if (id) addPlaylistToPlaylist(id, playlistId);
-                }}
-              >
-                <option value="" disabled>
-                  Choose playlist…
-                </option>
-                {nestCandidates.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-          ) : null}
-        </div>
+                </div>
+                {childPlaylists.length > 0 ? (
+                  <ul className="sc-nest-editor-list">
+                    {childPlaylists.map((child) => (
+                      <li key={child.id} className="sc-nest-editor-row">
+                        <PlaylistCoverArt playlist={child} size={36} />
+                        <span className="sc-nest-editor-name">{child.name}</span>
+                        <button
+                          type="button"
+                          className="sc-ghost-btn"
+                          onClick={() => removePlaylistFromPlaylist(child.id, playlistId)}
+                        >
+                          {PLAIN.removeNested}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="sc-nest-editor-empty">{PLAIN.emptyPlaylist}</p>
+                )}
+                {nestCandidates.length > 0 ? (
+                  <label className="sc-nest-picker">
+                    <span>{PLAIN.addNestedPlaylist}</span>
+                    <select
+                      className="sc-nest-select"
+                      defaultValue=""
+                      onChange={(e) => {
+                        const id = e.target.value;
+                        e.target.value = '';
+                        if (id) addPlaylistToPlaylist(id, playlistId);
+                      }}
+                    >
+                      <option value="" disabled>
+                        Choose playlist…
+                      </option>
+                      {nestCandidates.map((c) => (
+                        <option key={c.id} value={c.id}>
+                          {c.name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                ) : null}
+              </div>
+            )}
+          </div>
+        </details>
       )}
 
       <div className="sp-pl-edit-tracks">
         <div className="sp-pl-edit-tracks-bar">
-          <h2 className="sp-pl-edit-tracks-title">
-            {playlistTracks.length} {PLAIN.songs} · {fmtPlaylistTotalTime(pl.trackIds, getTrack)} {PLAIN.totalTime}
-          </h2>
+          <h2 className="sp-pl-edit-tracks-title">Tracks</h2>
           {!isMaster && !isMyLikes && (
             <button
               type="button"
@@ -454,7 +488,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
               onClick={() => setShowAdd((v) => !v)}
               aria-expanded={showAdd}
             >
-              {showAdd ? 'Hide add' : '+ Add from Master catalog'}
+              {showAdd ? 'Close' : '+ Add'}
             </button>
           )}
         </div>
@@ -467,6 +501,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
               placeholder="Search Master catalog"
               value={addSearch}
               onChange={(e) => setAddSearch(e.target.value)}
+              autoFocus
             />
             {masterTrackCount === 0 ? (
               <p className="sp-pl-edit-add-empty">Master catalog is empty — add tracks on the Upload tab first.</p>
@@ -493,27 +528,25 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
         {playlistTracks.length === 0 ? (
           <p className="sp-pl-edit-empty">
             {isMaster ? (
-              <>No uploads yet. Use the <strong>Upload</strong> tab.</>
+              <>
+                No uploads yet. Use the <strong>Upload</strong> tab.
+              </>
             ) : isMyLikes ? (
-              <>No likes yet. Tap the <strong>♥</strong> on any track while you listen.</>
+              <>
+                No likes yet. Tap the <strong>♥</strong> on any track while you listen.
+              </>
             ) : (
               <>
-                No songs yet. Tap <strong>+ Add from Master catalog</strong> above.
+                No songs yet. Tap <strong>+ Add</strong> above.
               </>
             )}
           </p>
         ) : (
           <>
-            {!isMaster && (
-              <p className="sp-reorder-hint sp-pl-edit-hint">
-                Drag ⋮⋮ or tap ↑ ↓ to reorder · Edit for track name &amp; cover
-              </p>
+            {canReorder && (
+              <p className="sp-reorder-hint sp-pl-edit-hint">Hold the ⋮⋮ handle to drag · tap a song to edit</p>
             )}
-            {isMaster && (
-              <p className="sp-reorder-hint sp-pl-edit-hint">
-                Drag ⋮⋮ or tap ↑ ↓ to sort · Edit for track name &amp; cover override
-              </p>
-            )}
+            {!canReorder && <p className="sp-reorder-hint sp-pl-edit-hint">Tap a song to edit name &amp; cover</p>}
             <ol className="sp-pl-edit-list" ref={listRef}>
               {playlistTracks.map((row, displayIndex) => {
                 const tr = row.track;
@@ -521,11 +554,12 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                 const dropBefore =
                   overIndex === row.index && dragIndex !== null && dragIndex !== row.index;
                 const thumb = tr.posterSrc || undefined;
+                const menuOpen = menuTrackId === tr.id;
                 return (
                   <li
                     key={tr.id}
                     data-reorder-idx={row.index}
-                    className={`sp-pl-edit-row${isMaster ? ' sp-pl-edit-row--master' : ''}${dragging ? ' sp-pl-edit-row--dragging' : ''}${dropBefore ? ' sp-pl-edit-row--drop' : ''}`}
+                    className={`sp-pl-edit-row sp-pl-edit-row--sc${isMaster ? ' sp-pl-edit-row--master' : ''}${dragging ? ' sp-pl-edit-row--dragging' : ''}${dropBefore ? ' sp-pl-edit-row--drop' : ''}`}
                   >
                     <button
                       type="button"
@@ -543,11 +577,14 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                     <button
                       type="button"
                       className="sp-pl-edit-track-main"
-                      onClick={() => setEditTrackId(tr.id)}
+                      onClick={() => {
+                        setMenuTrackId(null);
+                        setEditTrackId(tr.id);
+                      }}
                       aria-label={`Edit ${tr.title}`}
                     >
                       {thumb ? (
-                        <img className="sp-track-cover-thumb" src={thumb} alt="" width={40} height={40} />
+                        <img className="sp-track-cover-thumb" src={thumb} alt="" width={48} height={48} />
                       ) : (
                         <span className="sp-track-cover-thumb sp-track-cover-thumb--empty" aria-hidden />
                       )}
@@ -556,51 +593,52 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
                         <span>{tr.artist}</span>
                       </span>
                     </button>
-                    <div className="sp-pl-edit-moves" role="group" aria-label="Reorder">
+                    <div className="sp-pl-edit-row-menu" ref={menuOpen ? menuRef : undefined}>
                       <button
                         type="button"
-                        className="sp-pl-edit-nudge"
-                        disabled={!canReorder || row.index <= 0}
-                        aria-label={`Move ${tr.title} up`}
-                        onClick={() => reorderTrackInPlaylist(playlistId, row.index, row.index - 1)}
+                        className="sp-pl-edit-more-btn"
+                        aria-label={`More for ${tr.title}`}
+                        aria-expanded={menuOpen}
+                        onClick={() => setMenuTrackId(menuOpen ? null : tr.id)}
                       >
-                        ↑
+                        ⋯
                       </button>
-                      <button
-                        type="button"
-                        className="sp-pl-edit-nudge"
-                        disabled={!canReorder || row.index >= playlistTracks.length - 1}
-                        aria-label={`Move ${tr.title} down`}
-                        onClick={() => reorderTrackInPlaylist(playlistId, row.index, row.index + 1)}
-                      >
-                        ↓
-                      </button>
-                    </div>
-                    <div className="sp-pl-edit-row-actions">
-                      <button
-                        type="button"
-                        className="sp-pl-edit-secondary sp-pl-edit-secondary--primary"
-                        onClick={() => setEditTrackId(tr.id)}
-                      >
-                        {PLAIN.editTrack}
-                      </button>
-                      <button
-                        type="button"
-                        className="sp-pl-edit-play"
-                        onClick={() => playTrack(tr.id)}
-                        aria-label={`Play ${tr.title}`}
-                      >
-                        {currentTrackId === tr.id && isPlaying ? '♪' : '▶'}
-                      </button>
-                      {!isMaster && (
-                        <button
-                          type="button"
-                          className="sp-pl-edit-remove"
-                          onClick={() => removeTrackFromPlaylist(tr.id, playlistId)}
-                          aria-label={isMyLikes ? `Unlike ${tr.title}` : `Remove ${tr.title}`}
-                        >
-                          {isMyLikes ? 'Unlike' : 'Remove'}
-                        </button>
+                      {menuOpen && (
+                        <div className="sp-pl-edit-menu-pop" role="menu">
+                          <button
+                            type="button"
+                            role="menuitem"
+                            onClick={() => {
+                              setMenuTrackId(null);
+                              setEditTrackId(tr.id);
+                            }}
+                          >
+                            Edit
+                          </button>
+                          <button
+                            type="button"
+                            role="menuitem"
+                            onClick={() => {
+                              setMenuTrackId(null);
+                              playTrack(tr.id);
+                            }}
+                          >
+                            {currentTrackId === tr.id && isPlaying ? 'Playing' : 'Play'}
+                          </button>
+                          {!isMaster && (
+                            <button
+                              type="button"
+                              role="menuitem"
+                              className="sp-pl-edit-menu-pop--danger"
+                              onClick={() => {
+                                setMenuTrackId(null);
+                                removeTrackFromPlaylist(tr.id, playlistId);
+                              }}
+                            >
+                              {isMyLikes ? 'Unlike' : 'Remove'}
+                            </button>
+                          )}
+                        </div>
                       )}
                     </div>
                   </li>
@@ -612,11 +650,7 @@ export function PlaylistEditor({ playlistId, onDone, onPlay, onDuplicated }: Pla
       </div>
 
       {editTrackId && getTrack(editTrackId) ? (
-        <TrackEditModal
-          track={getTrack(editTrackId)!}
-          open
-          onClose={() => setEditTrackId(null)}
-        />
+        <TrackEditModal track={getTrack(editTrackId)!} open onClose={() => setEditTrackId(null)} />
       ) : null}
 
       {!isMaster && !isMyLikes && (

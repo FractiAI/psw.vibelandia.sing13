@@ -15,24 +15,27 @@ export function TrackEditModal({ track, open, onClose }: TrackEditModalProps) {
   const canDelete = isUserUploadTrack(track.id, track);
 
   return (
-    <div className="sc-pick-backdrop" role="presentation" onClick={onClose}>
+    <div className="sc-pick-backdrop sc-pick-backdrop--sheet" role="presentation" onClick={onClose}>
       <div
-        className="sc-meta-panel sc-meta-panel--wide"
+        className="sc-meta-panel sc-meta-panel--sheet"
         role="dialog"
         aria-label={PLAIN.editTrack}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sc-pick-head">
-          <h2>{PLAIN.editTrack}</h2>
-          <button type="button" className="sc-pick-close" onClick={onClose} aria-label="Close">
-            ×
-          </button>
+        <div className="sc-sheet-handle" aria-hidden>
+          <span />
         </div>
-        <div className="sc-meta-body">
-          <p className="sc-meta-subtitle">Change name, artist, genre, and cover image override</p>
+        <div className="sc-pick-head sc-pick-head--sheet">
+          <button type="button" className="sc-sheet-cancel" onClick={onClose}>
+            Cancel
+          </button>
+          <h2>{PLAIN.editTrack}</h2>
+          <span className="sc-sheet-head-spacer" aria-hidden />
+        </div>
+        <div className="sc-meta-body sc-meta-body--sheet">
           <TrackMetadataEditor
             track={track}
-            variant="panel"
+            variant="sheet"
             onSaved={onClose}
             onDeleted={canDelete ? onClose : undefined}
           />

@@ -63,7 +63,7 @@ Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review 
 **0 · Run the test suite (vitest)**
 
 ```bash
-npm test                    # 47 tests across lib/ and research/
+npm test                    # vitest suite — see AGENTS.md "Test suite" for the current inventory
 npm run test:watch          # watch mode
 ```
 
@@ -257,7 +257,7 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 
 ## Deploy
 
-**Stack:** Static HTML/CSS/assets plus the **Vite React** QUESTFEST Bridge bundle under `interfaces/questfest-bridge/`, plus **lite-edge** serverless routes in `api/`. [`vercel.json`](vercel.json) defines the production build (`buildCommand: npm run build:questfest-bridge`), short-path rewrites, and NSPFRNP headers.
+**Stack:** Static HTML/CSS/assets plus the **Vite React** QUESTFEST Bridge bundle under `interfaces/questfest-bridge/`, plus **lite-edge** serverless routes in `api/`. [`vercel.json`](vercel.json) defines the production build (`buildCommand` runs all three app builds: `questfest-bridge`, `executive-onboard`, `lattice-chat`), short-path rewrites, and NSPFRNP headers. The manual [`vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) workflow builds the same set.
 
 **Autodeploy:** Push to **`main`** → **Vercel ↔ GitHub** on team **[FractiAI](https://vercel.com/fractiai)** builds and ships production. The duplicate project on **FractiVerse** (`aiwona1`) was removed; do not recreate it.
 
@@ -284,7 +284,7 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 Optional manual deploy: [`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) (`workflow_dispatch`). Set GitHub secrets **`VERCEL_TOKEN`** (FractiAI team token), **`VERCEL_ORG_ID`**, **`VERCEL_PROJECT_ID`** from the FractiAI project settings — not the retired FractiVerse IDs.
 
 ```bash
-npm run build:questfest-bridge
+npm run build:all
 ```
 
 **Vercel env — music upload (Bridge Upload tab):**
@@ -292,8 +292,8 @@ npm run build:questfest-bridge
 | Variable | Purpose |
 |---|---|
 | `BLOB_READ_WRITE_TOKEN` | **Required.** Create a **Blob store** on the FractiAI project (Storage → Connect to project). Vercel injects this token automatically. Without it, `/api/catalog-upload` returns `catalog_upload_unconfigured`. |
-| `CATALOG_UPLOAD_SECRET` | Server auth for `/api/catalog-upload` (≥8 chars). Defaults to edge captain secret if unset on Vercel. |
-| `VITE_CATALOG_UPLOAD_SECRET` | **Build-time** — set in FractiAI project env so the Bridge bundle sends the same secret (or rely on baked captain default; must match server). |
+| `CATALOG_UPLOAD_SECRET` | Server auth for `/api/catalog-upload` (≥8 chars). Required. No fallback — production fails closed (catalog_upload_unconfigured) when unset. |
+| `VITE_CATALOG_UPLOAD_SECRET` | **Build-time** — set in FractiAI project env so the Bridge bundle sends the same secret (must match CATALOG_UPLOAD_SECRET). |
 
 After adding Blob + secrets, **redeploy** production. Smoke test: `curl -s -X POST https://www.ssvibelandiaquestfest24x365.com/api/catalog-upload -H "Content-Type: application/json" -d "{}"` should **not** return `catalog_upload_unconfigured` (expect `401`/`403` without `X-Catalog-Secret`, not `503`).
 

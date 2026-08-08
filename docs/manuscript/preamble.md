@@ -8,6 +8,7 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{graphicx}
+\usepackage[margin=0.55in]{geometry}
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{microtype}

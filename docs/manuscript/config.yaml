@@ -3,6 +3,9 @@ paper:
   subtitle: "Deterministic high-n follow-up and performance boundaries"
   version: "follow-up-1.0"
   date: "2026-08-08"
+  cover:
+    image: "../../interfaces/images/lattice-artdeco-hero.png"
+    alt: "Lattice Art Deco network and context-efficiency visualization"
 
 authors:
   - name: "Daniel Ari Friedman"

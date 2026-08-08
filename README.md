@@ -73,7 +73,13 @@ npm run test:watch          # watch mode
 npm run compare:lattice          # writes data/lattice-vs-standard-comparison.json (structural)
 npm run test:lattice-floors      # regenerates + asserts estimate floor vs fat dump
 npm run compare:lattice:cursor:matrix   # needs CURSOR_API_KEY — writes usage matrix JSON
+npm run compare:lattice:openrouter      # paired direct OpenRouter Lattice vs plain experiment
+npm run experiment:openrouter -- --dry-run  # print protocol without provider calls
 ```
+
+The OpenRouter experiment uses the same model, task battery, temperature, and repository snapshot for paired Lattice-pointer and plain-context treatments. It records provider-reported token usage, latency, accuracy, tokens per correct answer, paired statistics, and a self-contained HTML/SVG report. Set `OPENROUTER_API_KEY` to run it; `--dry-run` is safe without a key. Repeats below 10 are descriptive only.
+
+The CLI and web composer also expose a direct/plain treatment: `--plain` or the UI's Plain nest choice sends `nestTopology: "none"`, disabling Lattice nesting and pointer context for BYOK providers. `--top-p 0.0..1.0` forwards validated sampling control, and `--json` emits completion metadata on stderr without changing the assistant reply on stdout.
 
 Honesty: marketing range **~35–70%** comes from the Cursor usage matrix (not chars÷4). Structural estimates remain secondary. Nested + pointers vs dump-everything — roaming can erase savings. Brief: [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof).
 

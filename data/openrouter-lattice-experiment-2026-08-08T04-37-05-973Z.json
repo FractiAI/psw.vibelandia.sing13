@@ -1,0 +1,833 @@
+{
+  "title": "OpenRouter · Lattice pointer context vs plain standard context — accuracy, latency, token efficiency",
+  "protocol": "Within-pair treatment comparison; same model/task/temperature/repo snapshot; alternating order per repeat. Treatments: lattice (Lattice pointer envelope), standard (lean), naive (corpus dump baseline).",
+  "model": "openai/gpt-4.1",
+  "repeats": 2,
+  "tasks": [
+    "qa_default_cursor_model",
+    "qa_cli_email_env",
+    "qa_cli_default_nest",
+    "qa_openrouter_header",
+    "qa_cli_auth_exit_code",
+    "coding_add_top_p_flag",
+    "reasoning_arithmetic",
+    "reasoning_remainder",
+    "reasoning_sequence"
+  ],
+  "treatments": [
+    "lattice",
+    "standard"
+  ],
+  "serverArms": false,
+  "measurement": [
+    "provider usage tokens",
+    "latency",
+    "accuracy (exact-match QA/reasoning, patch-apply+test coding)",
+    "lenient accuracy (answer contained)",
+    "tokens per correct",
+    "paired t / Wilcoxon / d_z",
+    "HTML+SVG report"
+  ],
+  "limitations": [
+    "one model/key unless configured",
+    "patch-generation is not autonomous tool-use",
+    "small n is descriptive; repeats ≥ 10 for claims"
+  ],
+  "ranAt": "2026-08-08T04:37:05.973Z",
+  "byTask": [
+    {
+      "taskId": "qa_default_cursor_model",
+      "n": 2,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 2452,
+        "latency": 752.5,
+        "tokensPerCorrect": 2452,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 89,
+        "latency": 993.5,
+        "tokensPerCorrect": 89
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "qa_cli_email_env",
+      "n": 2,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 2428,
+        "latency": 1039,
+        "tokensPerCorrect": 2428,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 86,
+        "latency": 959.5,
+        "tokensPerCorrect": 86
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "qa_cli_default_nest",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 2426,
+        "latency": 666.5,
+        "tokensPerCorrect": 2426,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 84,
+        "latency": 872,
+        "tokensPerCorrect": 84
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_openrouter_header",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 2461,
+        "latency": 882,
+        "tokensPerCorrect": 2461,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 88,
+        "latency": 631,
+        "tokensPerCorrect": 88
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_cli_auth_exit_code",
+      "n": 2,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 2451,
+        "latency": 728,
+        "tokensPerCorrect": 2451,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 82,
+        "latency": 999.5,
+        "tokensPerCorrect": 82
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "coding_add_top_p_flag",
+      "n": 2,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 12426.5,
+        "latency": 10841,
+        "tokensPerCorrect": 12426.5,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 8990,
+        "latency": 22772,
+        "tokensPerCorrect": 8990
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_arithmetic",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 370,
+        "latency": 675,
+        "tokensPerCorrect": 370,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 70,
+        "latency": 730,
+        "tokensPerCorrect": 70
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_remainder",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 382,
+        "latency": 1450,
+        "tokensPerCorrect": 382,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 76,
+        "latency": 791.5,
+        "tokensPerCorrect": 76
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_sequence",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 1959,
+        "latency": 774.5,
+        "tokensPerCorrect": 1959,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 93,
+        "latency": 1110,
+        "tokensPerCorrect": 93
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    }
+  ],
+  "overall": {
+    "n": 18,
+    "lattice": {
+      "accuracy": 0.5555555555555556,
+      "accuracyLenient": 0.5555555555555556,
+      "tokens": 3039.5,
+      "latency": 1978.7222222222222,
+      "tokensPerCorrect": 3039.5
+    },
+    "standard": {
+      "accuracy": 0.3333333333333333,
+      "accuracyLenient": 0.3333333333333333,
+      "tokens": 1073.111111111111,
+      "latency": 3317.6666666666665,
+      "tokensPerCorrect": 1073.111111111111
+    },
+    "paired": {
+      "p": 0.04160473901625972,
+      "dz": 0.5194624816493196
+    }
+  },
+  "results": [
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 2449,
+      "completionTokens": 3,
+      "tokens": 2452,
+      "latencyMs": 863,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 80,
+      "completionTokens": 9,
+      "tokens": 89,
+      "latencyMs": 915,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 2422,
+      "completionTokens": 6,
+      "tokens": 2428,
+      "latencyMs": 819,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 80,
+      "completionTokens": 6,
+      "tokens": 86,
+      "latencyMs": 926,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 2422,
+      "completionTokens": 4,
+      "tokens": 2426,
+      "latencyMs": 701,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 80,
+      "completionTokens": 4,
+      "tokens": 84,
+      "latencyMs": 972,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 2455,
+      "completionTokens": 6,
+      "tokens": 2461,
+      "latencyMs": 952,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 83,
+      "completionTokens": 5,
+      "tokens": 88,
+      "latencyMs": 652,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 2449,
+      "completionTokens": 2,
+      "tokens": 2451,
+      "latencyMs": 667,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 80,
+      "completionTokens": 2,
+      "tokens": 82,
+      "latencyMs": 1460,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "detail": {
+        "diffChars": 0,
+        "applied": false,
+        "passed": false,
+        "reason": "no unified diff returned"
+      },
+      "promptTokens": 9616,
+      "completionTokens": 2806,
+      "tokens": 12422,
+      "latencyMs": 11380,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "detail": {
+        "diffChars": 0,
+        "applied": false,
+        "passed": false,
+        "reason": "no unified diff returned"
+      },
+      "promptTokens": 7152,
+      "completionTokens": 1937,
+      "tokens": 9089,
+      "latencyMs": 24060,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 368,
+      "completionTokens": 2,
+      "tokens": 370,
+      "latencyMs": 702,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 68,
+      "completionTokens": 2,
+      "tokens": 70,
+      "latencyMs": 684,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 380,
+      "completionTokens": 2,
+      "tokens": 382,
+      "latencyMs": 1844,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 74,
+      "completionTokens": 2,
+      "tokens": 76,
+      "latencyMs": 835,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 1957,
+      "completionTokens": 2,
+      "tokens": 1959,
+      "latencyMs": 781,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 91,
+      "completionTokens": 2,
+      "tokens": 93,
+      "latencyMs": 1257,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 80,
+      "completionTokens": 9,
+      "tokens": 89,
+      "latencyMs": 1072,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 2449,
+      "completionTokens": 3,
+      "tokens": 2452,
+      "latencyMs": 642,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 80,
+      "completionTokens": 6,
+      "tokens": 86,
+      "latencyMs": 993,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 2422,
+      "completionTokens": 6,
+      "tokens": 2428,
+      "latencyMs": 1259,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 80,
+      "completionTokens": 4,
+      "tokens": 84,
+      "latencyMs": 772,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 2422,
+      "completionTokens": 4,
+      "tokens": 2426,
+      "latencyMs": 632,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 83,
+      "completionTokens": 5,
+      "tokens": 88,
+      "latencyMs": 610,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 2455,
+      "completionTokens": 6,
+      "tokens": 2461,
+      "latencyMs": 812,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 80,
+      "completionTokens": 2,
+      "tokens": 82,
+      "latencyMs": 539,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": false,
+      "correctLenient": false,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 2449,
+      "completionTokens": 2,
+      "tokens": 2451,
+      "latencyMs": 789,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "detail": {
+        "diffChars": 0,
+        "applied": false,
+        "passed": false,
+        "reason": "no unified diff returned"
+      },
+      "promptTokens": 7152,
+      "completionTokens": 1739,
+      "tokens": 8891,
+      "latencyMs": 21484,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "detail": {
+        "diffChars": 0,
+        "applied": false,
+        "passed": false,
+        "reason": "no unified diff returned"
+      },
+      "promptTokens": 9616,
+      "completionTokens": 2815,
+      "tokens": 12431,
+      "latencyMs": 10302,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 68,
+      "completionTokens": 2,
+      "tokens": 70,
+      "latencyMs": 776,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 368,
+      "completionTokens": 2,
+      "tokens": 370,
+      "latencyMs": 648,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 74,
+      "completionTokens": 2,
+      "tokens": 76,
+      "latencyMs": 748,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 380,
+      "completionTokens": 2,
+      "tokens": 382,
+      "latencyMs": 1056,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 91,
+      "completionTokens": 2,
+      "tokens": 93,
+      "latencyMs": 963,
+      "model": "openai/gpt-4.1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": true,
+      "correctLenient": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 1957,
+      "completionTokens": 2,
+      "tokens": 1959,
+      "latencyMs": 768,
+      "model": "openai/gpt-4.1"
+    }
+  ]
+}

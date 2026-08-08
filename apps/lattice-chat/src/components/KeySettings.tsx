@@ -11,7 +11,7 @@ import {
 import { useLatticeStore } from '@/store';
 
 /**
- * Edge settings: BYOK keys for Cursor / Claude / Gemini Antigravity.
+ * Edge settings: BYOK keys for Cursor / Claude / Gemini Antigravity / OpenRouter.
  * Keys stay in localStorage and are sent only as request headers.
  */
 export function KeySettingsPanel({
@@ -27,11 +27,13 @@ export function KeySettingsPanel({
     cursor: '',
     claude: '',
     gemini: '',
+    openrouter: '',
   });
   const [hasKeys, setHasKeys] = useState<Record<LatticeProvider, boolean>>({
     cursor: false,
     claude: false,
     gemini: false,
+    openrouter: false,
   });
   const [flash, setFlash] = useState<string | null>(null);
 
@@ -41,11 +43,13 @@ export function KeySettingsPanel({
         cursor: '',
         claude: '',
         gemini: '',
+        openrouter: '',
       };
       const nextHas: Record<LatticeProvider, boolean> = {
         cursor: false,
         claude: false,
         gemini: false,
+        openrouter: false,
       };
       for (const p of LATTICE_PROVIDERS) {
         nextHas[p.id] = hasProviderApiKey(p.id);
@@ -86,7 +90,7 @@ export function KeySettingsPanel({
       aria-label="Provider API keys"
     >
       <p className="auth-lead">
-        Bring your key to the bridge — Cursor, Claude, or Gemini. Keys stay in this browser and
+        Bring your key to the bridge — Cursor, Claude, Gemini, or OpenRouter. Keys stay in this browser and
         are sent only with each turn — we do not store them on the server. Toggle the active
         provider under Advanced.
       </p>

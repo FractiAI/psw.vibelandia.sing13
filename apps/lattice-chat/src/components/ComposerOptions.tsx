@@ -10,6 +10,11 @@ const MODES: { id: AgentMode; label: string }[] = [
 
 const NESTS: { id: NestTopology; label: string; title: string }[] = [
   {
+    id: 'none',
+    label: 'Plain',
+    title: 'Direct provider call — Lattice nesting and pointer context are off',
+  },
+  {
     id: 'single',
     label: 'Single',
     title: 'One node only — no nested children',

@@ -59,6 +59,34 @@ describe('hermes-lattice-chat CLI', () => {
     expect(r.stderr).toContain('antigravity');
   });
 
+  it('--dry-run with --provider openrouter', () => {
+    const r = run(['--dry-run', '--prompt', 'test', '--provider', 'openrouter']);
+    expect(r.status).toBe(0);
+    expect(r.stderr).toContain('openrouter');
+    expect(r.stderr).toContain('deepseek/deepseek-chat');
+  });
+
+  it('--dry-run supports direct/plain mode and top-p without exposing a key', () => {
+    const r = run(['--dry-run', '--plain', '--top-p', '0.3', '--prompt', 'test']);
+    expect(r.status).toBe(0);
+    expect(r.stderr).toContain('none (plain/direct)');
+    expect(r.stderr).toContain('topP: 0.3');
+    expect(r.stderr).not.toMatch(/sk-[a-z0-9]|key_[a-z0-9]|AIza/i);
+  });
+
+  it('rejects an out-of-range top-p value without calling the API', () => {
+    const r = run(['--top-p', '1.1', '--prompt', 'test']);
+    expect(r.status).toBe(2);
+    expect(r.stderr).toContain('--top-p must be a number');
+  });
+
+  it('--help documents plain, json, and top-p', () => {
+    const r = run(['--help']);
+    expect(r.stderr).toContain('--plain');
+    expect(r.stderr).toContain('--json');
+    expect(r.stderr).toContain('--top-p');
+  });
+
   it('--dry-run with --model override', () => {
     const r = run(['--dry-run', '--prompt', 'test', '--model', 'claude-sonnet-5-thinking-high']);
     expect(r.status).toBe(0);

@@ -1,6 +1,6 @@
 /** Edge-only BYOK keys. Never sent to durable server storage — only request headers. */
 
-export type LatticeProvider = 'cursor' | 'claude' | 'gemini';
+export type LatticeProvider = 'cursor' | 'claude' | 'gemini' | 'openrouter';
 
 export const LATTICE_PROVIDERS: {
   id: LatticeProvider;
@@ -41,12 +41,23 @@ export const LATTICE_PROVIDERS: {
     honesty:
       'Google Managed Antigravity via Interactions API — live thought/tool stream when the agent emits steps.',
   },
+  {
+    id: 'openrouter',
+    label: 'OpenRouter',
+    short: 'OpenRouter',
+    keyHeader: 'x-openrouter-api-key',
+    keyPlaceholder: 'sk-or-v1-… from openrouter.ai/keys',
+    keyHelp: 'openrouter.ai → Keys',
+    honesty:
+      'OpenRouter chat completions (BYOK) with provider-reported prompt + completion token usage. Stateless: no cloud agent recovery.',
+  },
 ];
 
 const STORAGE: Record<LatticeProvider, { key: string; fp: string }> = {
   cursor: { key: 'user_cursor_api_key', fp: 'user_cursor_api_key_fp' },
   claude: { key: 'user_anthropic_api_key', fp: 'user_anthropic_api_key_fp' },
   gemini: { key: 'user_gemini_api_key', fp: 'user_gemini_api_key_fp' },
+  openrouter: { key: 'user_openrouter_api_key', fp: 'user_openrouter_api_key_fp' },
 };
 
 const PROVIDER_STORAGE = 'lattice_active_provider';
@@ -59,7 +70,7 @@ function fingerprintKey(key: string): string {
 }
 
 export function isLatticeProvider(v: unknown): v is LatticeProvider {
-  return v === 'cursor' || v === 'claude' || v === 'gemini';
+  return v === 'cursor' || v === 'claude' || v === 'gemini' || v === 'openrouter';
 }
 
 export function readActiveProvider(): LatticeProvider {

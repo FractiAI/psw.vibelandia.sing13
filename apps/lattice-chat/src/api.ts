@@ -144,7 +144,13 @@ class LatticeHardFail extends Error {
 export function latticeProgressHint(elapsedSec: number, phase: string): string {
   const provider = useLatticeStore.getState().provider || 'cursor';
   const label =
-    provider === 'claude' ? 'Claude' : provider === 'gemini' ? 'Antigravity' : 'your Valet';
+    provider === 'claude'
+      ? 'Claude'
+      : provider === 'gemini'
+        ? 'Antigravity'
+        : provider === 'openrouter'
+          ? 'OpenRouter'
+          : 'your Valet';
 
   if (phase === 'recovering') {
     if (provider === 'claude') {
@@ -213,6 +219,7 @@ function latticeHeaders(email: string, provider?: LatticeProvider): HeadersInit 
     if (active === 'cursor') headers['x-cursor-api-key'] = key;
     else if (active === 'claude') headers['x-anthropic-api-key'] = key;
     else if (active === 'gemini') headers['x-gemini-api-key'] = key;
+    else if (active === 'openrouter') headers['x-openrouter-api-key'] = key;
   }
   return headers;
 }
@@ -254,7 +261,7 @@ async function postLattice(
   email: string,
   opts?: { signal?: AbortSignal; onActivity?: () => void },
 ): Promise<{ res: Response; data: LatticeResponse }> {
-  // Live stream-of-thought for Cursor, Claude, and Gemini when the pipe supports SSE.
+  // Live stream-of-thought for Cursor, Claude, Gemini, and OpenRouter when the pipe supports SSE.
   const wantStream = body.stream !== false;
   const headers = {
     ...(latticeHeaders(email) as Record<string, string>),

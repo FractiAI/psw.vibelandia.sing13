@@ -4,9 +4,9 @@ export type AgentMode = 'agent' | 'plan';
 export type ReasoningLens = 'engine';
 
 /** How Lattice should nest work for this turn. */
-export type NestTopology = 'single' | 'multi' | 'goldilocks';
+export type NestTopology = 'none' | 'single' | 'multi' | 'goldilocks';
 
-export type LatticeProvider = 'cursor' | 'claude' | 'gemini';
+export type LatticeProvider = 'cursor' | 'claude' | 'gemini' | 'openrouter';
 
 export type LatticeModelOption = {
   id: string;

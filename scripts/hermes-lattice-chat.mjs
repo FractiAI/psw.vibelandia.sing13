@@ -9,8 +9,8 @@
  * Environment (all optional for dry-run):
  *   LATTICE_CHAT_ENDPOINT  Default: https://www.ssvibelandiaquestfest24x365.com
  *   LATTICE_CHAT_EMAIL     Your email (must be in the Lattice access list)
- *   LATTICE_CHAT_API_KEY   Provider API key (Cursor / Anthropic / Gemini)
- *   LATTICE_CHAT_PROVIDER  Default: cursor
+ *   LATTICE_CHAT_API_KEY   Provider API key (Cursor / Anthropic / Gemini / OpenRouter)
+ *   LATTICE_CHAT_PROVIDER  Default: cursor (or claude / gemini / openrouter)
  *   LATTICE_CHAT_MODEL     Default: auto (Cursor) / varies by provider
  *
  * Output:
@@ -38,6 +38,7 @@ const PROVIDER = process.env.LATTICE_CHAT_PROVIDER?.trim().toLowerCase() || 'cur
 function defaultModelFor(provider) {
   if (provider === 'claude') return 'claude-sonnet-4-5';
   if (provider === 'gemini') return 'antigravity-preview-05-2026';
+  if (provider === 'openrouter') return 'deepseek/deepseek-chat';
   return 'auto';
 }
 
@@ -46,11 +47,22 @@ const MODEL = process.env.LATTICE_CHAT_MODEL?.trim() || 'auto';
 // ---- CLI args ----
 
 function parseArgs(argv) {
-  const args = { prompt: '', model: MODEL, provider: PROVIDER, history: null, threadId: null, agentId: null, dryRun: false, help: false };
+  const args = { prompt: '', model: MODEL, provider: PROVIDER, history: null, threadId: null, agentId: null, dryRun: false, help: false, plain: false, json: false, topP: null, topPError: null };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--help' || a === '-h') { args.help = true; }
     else if (a === '--dry-run') { args.dryRun = true; }
+    else if (a === '--plain') { args.plain = true; }
+    else if (a === '--json') { args.json = true; }
+    else if (a === '--top-p' && i + 1 < argv.length) {
+      const raw = argv[++i];
+      const value = Number(raw);
+      if (raw.trim() !== '' && Number.isFinite(value) && value >= 0 && value <= 1) {
+        args.topP = value;
+      } else {
+        args.topPError = `--top-p must be a number in 0.0..1.0 (got "${raw}")`;
+      }
+    }
     else if (a === '--prompt' && i + 1 < argv.length) { args.prompt = argv[++i]; }
     else if (a === '--model' && i + 1 < argv.length) { args.model = argv[++i]; }
     else if (a === '--provider' && i + 1 < argv.length) { args.provider = argv[++i].toLowerCase(); }
@@ -75,7 +87,10 @@ USAGE
 OPTIONS
   --prompt <text>    The message to send
   --model <id>       Model ID (default: auto · claude-sonnet-4-5 · antigravity-preview-05-2026)
-  --provider <name>  cursor | claude | gemini (default: cursor)
+  --provider <name>  cursor | claude | gemini | openrouter (default: cursor)
+  --plain            Direct mode: send nestTopology 'none' (Lattice nest OFF; BYOK providers only)
+  --json             Emit one JSON metadata object on stderr after completion (provider, model, elapsedMs, measuredTokens)
+  --top-p <0.0..1.0> Forward a validated sampling value as topP in the request body
   --thread-id <id>   Resume an existing thread
   --agent-id <id>    Reattach to an existing agent
   --history <json>   Chat history as JSON array [{role,content}]
@@ -86,7 +101,7 @@ ENVIRONMENT
   LATTICE_CHAT_ENDPOINT   API base URL
   LATTICE_CHAT_EMAIL      Your email (Lattice access list)
   LATTICE_CHAT_API_KEY    Provider API key
-  LATTICE_CHAT_PROVIDER   cursor | claude | gemini
+  LATTICE_CHAT_PROVIDER  cursor | claude | gemini | openrouter
   LATTICE_CHAT_MODEL      Model ID
 
 EXIT CODES
@@ -101,6 +116,10 @@ EXIT CODES
 async function main() {
   const args = parseArgs(process.argv);
   if (args.help) { showHelp(); process.exit(0); }
+  if (args.topPError) {
+    process.stderr.write(`Error: ${args.topPError}\n`);
+    process.exit(2);
+  }
 
   // Resolve default model from provider if not explicitly set
   if (!process.env.LATTICE_CHAT_MODEL && args.model === 'auto') {
@@ -128,6 +147,8 @@ DRY RUN — would POST to ${API_URL}
   model: ${args.model}
   email: ${EMAIL || '(not set)'}
   key: ${API_KEY ? API_KEY.slice(0, 8) + '…' : '(not set)'}
+  nest: ${args.plain ? 'none (plain/direct)' : 'goldilocks'}
+  topP: ${typeof args.topP === 'number' ? args.topP : '(unset)'}
   thread: ${args.threadId || '(new)'}
   agent: ${args.agentId || '(none)'}
   prompt (${args.prompt.length} chars): ${args.prompt.slice(0, 120)}${args.prompt.length > 120 ? '…' : ''}
@@ -150,9 +171,10 @@ DRY RUN — would POST to ${API_URL}
     stream: true,
     model: args.model,
     provider: args.provider,
-    nestTopology: 'goldilocks',
+    nestTopology: args.plain ? 'none' : 'goldilocks',
     mode: 'agent',
   };
+  if (typeof args.topP === 'number') body.topP = args.topP;
   if (args.threadId) body.threadId = args.threadId;
   if (args.agentId) body.agentId = args.agentId;
   if (args.history) body.history = args.history;
@@ -166,6 +188,7 @@ DRY RUN — would POST to ${API_URL}
   if (args.provider === 'cursor') headers['x-cursor-api-key'] = API_KEY;
   else if (args.provider === 'claude') headers['x-anthropic-api-key'] = API_KEY;
   else if (args.provider === 'gemini') headers['x-gemini-api-key'] = API_KEY;
+  else if (args.provider === 'openrouter') headers['x-openrouter-api-key'] = API_KEY;
 
   process.stderr.write(`→ Lattice Chat · ${args.provider} · ${args.model}\n`);
   const startedAt = Date.now();
@@ -235,11 +258,15 @@ DRY RUN — would POST to ${API_URL}
       }
 
       const tokens = donePayload?.tokens || donePayload?.execution?.tokens;
+      const measuredTokens = tokens?.measuredTokens ?? tokens?.balanceDelta ?? null;
       if (tokens?.balanceDelta || tokens?.measuredTokens) {
         const used = tokens.measuredTokens || tokens.balanceDelta;
         process.stderr.write(`← ${used?.toLocaleString()} tokens used · ${elapsed}s\n`);
       } else {
         process.stderr.write(`← ${elapsed}s\n`);
+      }
+      if (args.json) {
+        process.stderr.write(`${JSON.stringify({ provider: args.provider, model: donePayload?.model || args.model, elapsedMs: Date.now() - startedAt, measuredTokens })}\n`);
       }
 
       if (donePayload?.agentId) {
@@ -254,6 +281,9 @@ DRY RUN — would POST to ${API_URL}
       process.stdout.write(data.reply.trim() + '\n');
       const elapsed = ((Date.now() - startedAt) / 1000).toFixed(1);
       process.stderr.write(`← ${elapsed}s\n`);
+      if (args.json) {
+        process.stderr.write(`${JSON.stringify({ provider: args.provider, model: data.model || args.model, elapsedMs: Date.now() - startedAt, measuredTokens: data.tokens?.measuredTokens ?? data.tokens?.balanceDelta ?? null })}\n`);
+      }
     } else if (data.error) {
       process.stderr.write(`Lattice error: ${data.error}\n`);
       process.exit(1);

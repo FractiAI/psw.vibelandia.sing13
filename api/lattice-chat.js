@@ -34,6 +34,7 @@ You are helping a paid Lattice Chat guest on FractiAI/psw.vibelandia.sing13.
 Full agent tools are allowed for exploration, explanation, planning, and local iteration in the cloud VM.
 Do NOT commit, push, force-push, open pull requests, or permanently alter production ship apps unless the guest is explicitly coordinating a creator-approved change.
 Prefer answers, plans, and reversible exploration over durable repo writes.`;
+const PLAIN_SYSTEM = `You are a helpful, careful assistant. Answer the user directly and concisely. Do not mention Lattice, nesting, or repositories unless asked.`;
 const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const NAIVE_CORPUS_DUMP_TOKENS = 72_000;
 const LATTICE_RAG_POINTER_TOKENS = 1_800;
@@ -410,6 +411,7 @@ function resolveProvider(req, body) {
     .toLowerCase();
   if (p === 'claude' || p === 'anthropic') return 'claude';
   if (p === 'gemini' || p === 'antigravity') return 'gemini';
+  if (p === 'openrouter' || p === 'or') return 'openrouter';
   return 'cursor';
 }
 
@@ -419,6 +421,9 @@ function resolveProviderApiKey(req, provider) {
   }
   if (provider === 'gemini') {
     return resolveHeaderKey(req, ['x-gemini-api-key', 'X-Gemini-Api-Key']);
+  }
+  if (provider === 'openrouter') {
+    return resolveHeaderKey(req, ['x-openrouter-api-key', 'X-Openrouter-Api-Key']);
   }
   return resolveCursorApiKey(req).key;
 }
@@ -439,6 +444,19 @@ const GEMINI_MODELS = [
     id: 'antigravity-preview-05-2026',
     displayName: 'Antigravity (managed)',
   },
+];
+
+const OPENROUTER_MODELS = [
+  { id: 'deepseek/deepseek-chat', displayName: 'DeepSeek Chat' },
+  { id: 'deepseek/deepseek-r1', displayName: 'DeepSeek R1' },
+  { id: 'anthropic/claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4' },
+  { id: 'anthropic/claude-opus-4-20250514', displayName: 'Claude Opus 4' },
+  { id: 'anthropic/claude-3.5-sonnet', displayName: 'Claude 3.5 Sonnet' },
+  { id: 'openai/gpt-4.1', displayName: 'GPT-4.1' },
+  { id: 'openai/o3', displayName: 'OpenAI o3' },
+  { id: 'google/gemini-2.5-pro', displayName: 'Gemini 2.5 Pro' },
+  { id: 'google/gemini-2.5-flash', displayName: 'Gemini 2.5 Flash' },
+  { id: 'qwen/qwen3-235b-a22b', displayName: 'Qwen3 235B' },
 ];
 
 function encodeGeminiAgentId(interactionId, environmentId) {
@@ -590,19 +608,23 @@ async function runClaudeTurn({
   nestTopology,
   agentRoster,
   reasoningLens,
+  plain = false,
+  topP = null,
   stream = false,
   onEvent = null,
 }) {
   const { prior, messages } = buildClaudeMessages(message, history);
-  const system = assembleLatticePrompt({
-    message,
-    nestTopology,
-    agentRoster,
-    mode: 'full',
-    omitHistory: true,
-    omitUserMessage: true,
-    providerNote: `Provider note: You are running via the Anthropic Messages API (BYOK). The public repo is ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}.`,
-  });
+  const system = plain
+    ? PLAIN_SYSTEM
+    : assembleLatticePrompt({
+        message,
+        nestTopology,
+        agentRoster,
+        mode: 'full',
+        omitHistory: true,
+        omitUserMessage: true,
+        providerNote: `Provider note: You are running via the Anthropic Messages API (BYOK). The public repo is ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}.`,
+      });
 
   const model = modelId || 'claude-sonnet-4-5';
   const thinking = claudeThinkingConfig(model);
@@ -619,6 +641,9 @@ async function runClaudeTurn({
     stream: true,
   };
   if (thinking) requestBody.thinking = thinking;
+  if (typeof topP === 'number' && Number.isFinite(topP) && topP >= 0 && topP <= 1) {
+    requestBody.top_p = topP;
+  }
 
   emit({ type: 'status', status: 'live', message: 'Claude stream of thought opening…' });
 
@@ -812,6 +837,161 @@ async function runClaudeTurn({
   };
 }
 
+/**
+ * OpenRouter chat completions (stateless BYOK) — nested-agent prompt assembled
+ * server-side, usage measured from OpenRouter's real usage object (prompt +
+ * completion tokens). No agent/thread recovery: OpenRouter is stateless, so
+ * --thread-id / --agent-id are ignored for this provider.
+ */
+async function runOpenRouterTurn({
+  apiKey,
+  message,
+  history,
+  modelId,
+  agentMode,
+  access,
+  nestTopology,
+  reasoningLens,
+  agentRoster,
+  plain = false,
+  topP = null,
+  stream = false,
+  onEvent = null,
+}) {
+  const { prior, messages } = buildClaudeMessages(message, history);
+  const system = plain
+    ? PLAIN_SYSTEM
+    : assembleLatticePrompt({
+        message,
+        nestTopology,
+        agentRoster,
+        mode: 'full',
+        omitHistory: true,
+        omitUserMessage: true,
+        providerNote: `Provider note: You are running via OpenRouter (BYOK). The public repo is ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}.`,
+      });
+
+  const model = modelId || 'deepseek/deepseek-chat';
+  const emit = (item) => {
+    if (typeof onEvent === 'function' && item) onEvent(item);
+  };
+
+  const requestBody = {
+    model,
+    messages: [{ role: 'system', content: system }, ...messages],
+    stream: true,
+    stream_options: { include_usage: true },
+  };
+  if (typeof topP === 'number' && Number.isFinite(topP) && topP >= 0 && topP <= 1) {
+    requestBody.top_p = topP;
+  }
+
+  emit({ type: 'status', status: 'live', message: 'OpenRouter stream opening…' });
+
+  let res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      authorization: `Bearer ${apiKey}`,
+      accept: 'text/event-stream',
+    },
+    body: JSON.stringify(requestBody),
+  });
+
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    const err = new Error(
+      data?.error?.message || data?.error || `OpenRouter HTTP ${res.status}`,
+    );
+    err.code = res.status === 401 || res.status === 403 ? 'openrouter_auth' : 'openrouter_error';
+    err.status = res.status;
+    throw err;
+  }
+
+  const transcript = [];
+  let reply = '';
+  let inputTokens = null;
+  let outputTokens = null;
+  const contentType = String(res.headers.get('content-type') || '');
+
+  const handleOpenRouterChunk = (_eventName, data) => {
+    if (!data || typeof data !== 'object') return;
+    if (data.error) {
+      const err = new Error(data.error.message || 'OpenRouter stream error');
+      err.code = 'openrouter_error';
+      throw err;
+    }
+    // OpenRouter includes usage on the final chunk (stream_options.include_usage).
+    if (typeof data.usage?.prompt_tokens === 'number') inputTokens = data.usage.prompt_tokens;
+    if (typeof data.usage?.completion_tokens === 'number') {
+      outputTokens = data.usage.completion_tokens;
+    }
+    const choice = Array.isArray(data.choices) ? data.choices[0] : null;
+    if (!choice) return;
+    const delta = choice.delta || choice.message || {};
+    if (typeof delta.reasoning === 'string' && delta.reasoning) {
+      pushTranscript(transcript, { type: 'thinking', text: delta.reasoning });
+      emit({ type: 'thinking', text: delta.reasoning });
+    }
+    if (typeof delta.content === 'string' && delta.content) {
+      reply += delta.content;
+      pushTranscript(transcript, { type: 'assistant', text: delta.content });
+      emit({ type: 'assistant', text: delta.content });
+    }
+  };
+
+  if (/text\/event-stream|stream/i.test(contentType) || stream) {
+    await consumeUpstreamSse(res, handleOpenRouterChunk);
+  } else {
+    const data = await res.json().catch(() => ({}));
+    if (data.error) {
+      const err = new Error(data.error.message || 'OpenRouter error');
+      err.code = 'openrouter_error';
+      throw err;
+    }
+    const choice = Array.isArray(data.choices) ? data.choices[0] : null;
+    reply = String(choice?.message?.content || '').trim();
+    if (typeof data.usage?.prompt_tokens === 'number') inputTokens = data.usage.prompt_tokens;
+    if (typeof data.usage?.completion_tokens === 'number') {
+      outputTokens = data.usage.completion_tokens;
+    }
+  }
+
+  const usageTokens =
+    typeof inputTokens === 'number' && typeof outputTokens === 'number'
+      ? inputTokens + outputTokens
+      : typeof outputTokens === 'number'
+        ? outputTokens
+        : null;
+
+  const finalReply = reply.trim() || '(No reply text returned.)';
+  if (!transcript.some((t) => t.type === 'assistant')) {
+    pushTranscript(transcript, { type: 'assistant', text: finalReply });
+  }
+
+  const execution = buildLatticeExecution({
+    message,
+    history,
+    mode: 'openrouter',
+    resumed: prior.length > 0,
+    reply: finalReply,
+    usageTokens,
+  });
+
+  return {
+    reply: finalReply,
+    transcript: transcript.length ? transcript : [{ type: 'assistant', text: finalReply }],
+    model,
+    mode: agentMode,
+    lens: normalizeReasoningLens(reasoningLens),
+    agentId: null,
+    tokens: execution.tokens,
+    execution,
+    access: wrapProviderAccess(access),
+    provider: 'openrouter',
+  };
+}
+
 async function pollGeminiInteraction(apiKey, interactionId, { onStatus, maxPolls = 40 } = {}) {
   let finalInteraction = null;
   let status = '';
@@ -974,14 +1154,17 @@ async function runGeminiTurn({
   nestTopology,
   agentRoster,
   reasoningLens,
+  plain = false,
   stream = false,
   onEvent = null,
 }) {
   const decoded = decodeGeminiAgentId(agentId);
   const agentName = modelId || 'antigravity-preview-05-2026';
-  const prompt = decoded?.interactionId
-    ? assembleResumePrompt(message, nestTopology, agentRoster)
-    : buildPrompt(message, history, nestTopology, agentRoster, reasoningLens);
+  const prompt = plain
+    ? `${PLAIN_SYSTEM}\n\n${String(message || '').trim()}`
+    : decoded?.interactionId
+      ? assembleResumePrompt(message, nestTopology, agentRoster)
+      : buildPrompt(message, history, nestTopology, agentRoster, reasoningLens);
   const emit = (item) => {
     if (typeof onEvent === 'function' && item) onEvent(item);
   };
@@ -1768,7 +1951,10 @@ export default async function handler(req, res) {
   try {
     if (req.method === 'OPTIONS') {
       res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email, x-cursor-api-key');
+      res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Content-Type, x-lattice-email, x-cursor-api-key, x-anthropic-api-key, x-gemini-api-key, x-openrouter-api-key',
+      );
       return json(res, 204, {});
     }
 
@@ -1878,6 +2064,13 @@ export default async function handler(req, res) {
         if (provider === 'gemini') {
           return json(res, 200, { models: GEMINI_MODELS, source: 'gemini-catalog', provider });
         }
+        if (provider === 'openrouter') {
+          return json(res, 200, {
+            models: OPENROUTER_MODELS,
+            source: 'openrouter-catalog',
+            provider,
+          });
+        }
         const { key: apiKey } = resolveCursorApiKey(req);
         if (!apiKey) {
           return json(res, 401, {
@@ -1960,12 +2153,25 @@ export default async function handler(req, res) {
       provider === 'cursor'
         ? normalizeModelId(body.model || body.modelId)
         : String(body.model || body.modelId || '').trim() ||
-          (provider === 'claude' ? 'claude-sonnet-4-5' : 'antigravity-preview-05-2026');
+          (provider === 'claude'
+            ? 'claude-sonnet-4-5'
+            : provider === 'openrouter'
+              ? 'deepseek/deepseek-chat'
+              : 'antigravity-preview-05-2026');
     let agentMode = resolveAgentMode(body.mode || body.agentMode, message);
     if (cloudAttach?.forcePlan) {
       agentMode = 'plan';
     }
     const nestTopology = normalizeNestTopology(body.nestTopology || body.nest);
+    const plain =
+      body.plain === true || normalizeNestTopology(body.nestTopology || body.nest) === 'none';
+    const topP =
+      typeof body.topP === 'number' &&
+      Number.isFinite(body.topP) &&
+      body.topP >= 0 &&
+      body.topP <= 1
+        ? body.topP
+        : null;
     const reasoningLens = normalizeReasoningLens(body.reasoningLens || body.lens);
     const agentRoster = typeof body.agentRoster === 'string' ? body.agentRoster : '';
     let agentId =
@@ -2001,6 +2207,8 @@ export default async function handler(req, res) {
           nestTopology,
           reasoningLens,
           agentRoster,
+          plain,
+          topP,
           stream,
           onEvent: stream
             ? (item) => {
@@ -2048,6 +2256,7 @@ export default async function handler(req, res) {
           nestTopology,
           reasoningLens,
           agentRoster,
+          plain,
           stream,
           onEvent: stream
             ? (item) => {
@@ -2078,6 +2287,64 @@ export default async function handler(req, res) {
         }
         const code = err?.code || 'gemini_error';
         const status = code === 'gemini_auth' ? 401 : 502;
+        return respondLattice(
+          res,
+          stream,
+          {
+            error: err instanceof Error ? err.message : String(err),
+            code,
+            provider,
+          },
+          status,
+        );
+      } finally {
+        stopHeartbeat();
+      }
+    }
+
+    if (provider === 'openrouter') {
+      const stream = wantsStream(req, body);
+      if (stream) initSse(res);
+      const stopHeartbeat = stream ? startSseHeartbeat(res) : () => {};
+      try {
+        if (recoverOnly && !message) {
+          return respondLattice(
+            res,
+            stream,
+            {
+              error: 'OpenRouter (chat completions) has no cloud run to recover — resend the prompt.',
+              code: 'nothing_to_recover',
+              provider,
+            },
+            409,
+          );
+        }
+        if (stream) {
+          sseWrite(res, 'status', { message: 'Starting OpenRouter stream of thought…' });
+        }
+        const out = await runOpenRouterTurn({
+          apiKey,
+          message,
+          history: body.history,
+          modelId,
+          agentMode,
+          access,
+          nestTopology,
+          reasoningLens,
+          agentRoster,
+          plain,
+          topP,
+          stream,
+          onEvent: stream
+            ? (item) => {
+                sseWrite(res, 'transcript', item);
+              }
+            : null,
+        });
+        return respondLattice(res, stream, out);
+      } catch (err) {
+        const code = err?.code || 'openrouter_error';
+        const status = code === 'openrouter_auth' ? 401 : 502;
         return respondLattice(
           res,
           stream,

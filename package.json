@@ -13,6 +13,8 @@
     "compare:lattice": "node scripts/lattice-vs-standard-comparison.mjs",
     "compare:lattice:cursor": "node scripts/lattice-vs-standard-cursor-usage.mjs",
     "compare:lattice:cursor:matrix": "node scripts/lattice-vs-standard-cursor-usage-matrix.mjs",
+    "compare:lattice:openrouter": "node scripts/lattice-vs-standard-openrouter-usage.mjs",
+    "experiment:openrouter": "node scripts/lattice-vs-standard-openrouter-usage.mjs",
     "hermes:lattice-chat": "node scripts/hermes-lattice-chat.mjs",
     "test": "vitest run",
     "test:watch": "vitest",

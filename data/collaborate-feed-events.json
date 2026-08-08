@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-07T23:34:20.791Z",
+  "updatedAt": "2026-08-08T05:35:51.926Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-siqhft-ef-2187-monograph-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-08T05:35:51.926Z",
+      "body": "Scale-Invariant Quantum Holographic Field Theory: A Unified 2,187-Node Monograph on E_F across Octaves I–III (Digits 1–2187)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-siqhft-ef-2187-monograph-2026-08",
+      "artifact": {
+        "title": "Scale-Invariant Quantum Holographic Field Theory: A Unified 2,187-Node Monograph on E_F across Octaves I–III (Digits 1–2187)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_SIQHFT_EF_2187_MONOGRAPH_2026-08.md",
+        "url": "/whitepaper/synthobs-siqhft-ef-2187-monograph",
+        "paperId": "synthobs-siqhft-ef-2187-monograph-2026-08",
+        "docId": "WP-SYNTHOBS-SIQHFT-EF-2187-MONOGRAPH-2026-08",
+        "published": "2026-08-07",
+        "featured": false,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_lattice-omni-complete-layer-guide-2026-07",
       "type": "ArtifactEvent",

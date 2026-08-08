@@ -1,0 +1,3239 @@
+{
+  "title": "Lattice Chat follow-up deterministic control receipt",
+  "status": "synthetic-deterministic-control",
+  "evidenceBoundary": "No provider calls or provider results. Fixture responses exercise frozen builders/scorers only; token and latency values are structural controls.",
+  "protocol": "Secondary/post-hoc paired follow-up; alternating treatment order; 10 repeats; 9 fixed tasks; no optional stopping within this generated receipt.",
+  "model": "deterministic-fixture-v1",
+  "repeats": 10,
+  "tasks": [
+    "qa_default_cursor_model",
+    "qa_cli_email_env",
+    "qa_cli_default_nest",
+    "qa_openrouter_header",
+    "qa_cli_auth_exit_code",
+    "coding_add_top_p_flag",
+    "reasoning_arithmetic",
+    "reasoning_remainder",
+    "reasoning_sequence"
+  ],
+  "treatments": [
+    "lattice",
+    "standard",
+    "naive"
+  ],
+  "generatedAt": "deterministic-fixture-v1",
+  "corpusFiles": 4,
+  "corpusChars": 69995,
+  "byTask": [
+    {
+      "taskId": "qa_default_cursor_model",
+      "n": 10,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 1323,
+        "latency": 242.5,
+        "tokensPerCorrect": 1323
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 90,
+        "latency": 290.5,
+        "tokensPerCorrect": 90
+      },
+      "naive": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 17618,
+        "latency": 218.5,
+        "tokensPerCorrect": 17618
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_cli_email_env",
+      "n": 10,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 1318,
+        "latency": 216.5,
+        "tokensPerCorrect": 1318
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 92,
+        "latency": 300.5,
+        "tokensPerCorrect": 92
+      },
+      "naive": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 17623,
+        "latency": 228.5,
+        "tokensPerCorrect": 17623
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_cli_default_nest",
+      "n": 10,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 1310,
+        "latency": 190.5,
+        "tokensPerCorrect": 1310
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 89,
+        "latency": 287.5,
+        "tokensPerCorrect": 89
+      },
+      "naive": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 17618,
+        "latency": 215.5,
+        "tokensPerCorrect": 17618
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_openrouter_header",
+      "n": 10,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 1332,
+        "latency": 270.5,
+        "tokensPerCorrect": 1332
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 93,
+        "latency": 304.5,
+        "tokensPerCorrect": 93
+      },
+      "naive": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 17624,
+        "latency": 232.5,
+        "tokensPerCorrect": 17624
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_cli_auth_exit_code",
+      "n": 10,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 1318,
+        "latency": 232.5,
+        "tokensPerCorrect": 1318
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 88,
+        "latency": 285.5,
+        "tokensPerCorrect": 88
+      },
+      "naive": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 17615,
+        "latency": 213.5,
+        "tokensPerCorrect": 17615
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "coding_add_top_p_flag",
+      "n": 10,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 1557,
+        "latency": 325.5,
+        "tokensPerCorrect": 1557
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 219,
+        "latency": 147.5,
+        "tokensPerCorrect": 219
+      },
+      "naive": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 17701,
+        "latency": 214.5,
+        "tokensPerCorrect": 17701
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_arithmetic",
+      "n": 10,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 371,
+        "latency": 251.5,
+        "tokensPerCorrect": 371
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 66,
+        "latency": 224.5,
+        "tokensPerCorrect": 66
+      },
+      "naive": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 17600,
+        "latency": 325.5,
+        "tokensPerCorrect": 17600
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_remainder",
+      "n": 10,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 387,
+        "latency": 315.5,
+        "tokensPerCorrect": 387
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 74,
+        "latency": 256.5,
+        "tokensPerCorrect": 74
+      },
+      "naive": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 17608,
+        "latency": 184.5,
+        "tokensPerCorrect": 17608
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_sequence",
+      "n": 10,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 848,
+        "latency": 256.5,
+        "tokensPerCorrect": 848
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 78,
+        "latency": 273.5,
+        "tokensPerCorrect": 78
+      },
+      "naive": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 17612,
+        "latency": 201.5,
+        "tokensPerCorrect": 17612
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    }
+  ],
+  "overall": {
+    "lattice": {
+      "accuracy": 0.8888888888888888,
+      "accuracyLenient": 0.8888888888888888,
+      "tokens": 1084.888888888889,
+      "latency": 255.72222222222223,
+      "tokensPerCorrect": 1084.888888888889
+    },
+    "standard": {
+      "accuracy": 0.3333333333333333,
+      "accuracyLenient": 0.3333333333333333,
+      "tokens": 98.77777777777777,
+      "latency": 263.3888888888889,
+      "tokensPerCorrect": 98.77777777777777
+    },
+    "naive": {
+      "accuracy": 0.8888888888888888,
+      "accuracyLenient": 0.8888888888888888,
+      "tokens": 17624.333333333332,
+      "latency": 226.05555555555554,
+      "tokensPerCorrect": 17624.333333333332
+    }
+  },
+  "statistics": {
+    "metrics": {
+      "accuracy": {
+        "metric": "accuracy",
+        "n": 90,
+        "lattice": {
+          "mean": 0.8888888888888888,
+          "sd": 0.3160303087599848,
+          "sem": 0.033312519510927174,
+          "ci": {
+            "low": 0.8227968501792093,
+            "high": 0.9549809275985683
+          }
+        },
+        "standard": {
+          "mean": 0.3333333333333333,
+          "sd": 0.474045463139977,
+          "sem": 0.049968779266390734,
+          "ci": {
+            "low": 0.23419527526881412,
+            "high": 0.4324713913978525
+          }
+        },
+        "diff": 0.5555555555555556,
+        "pairedT": {
+          "t": 10.547511554864485,
+          "df": 89,
+          "p": 0,
+          "meanDiff": 0.5555555555555556,
+          "sdDiff": 0.49968779266390806
+        },
+        "wilcoxon": {
+          "wPlus": 2500,
+          "wMinus": 0,
+          "W": 0,
+          "z": -8.23850278732705,
+          "p": 2.220446049250313e-16,
+          "n": 50
+        },
+        "cohensDz": 1.1118053386771936,
+        "mde": {
+          "alpha": 0.05,
+          "power": 0.8,
+          "note": "Approximate paired-normal planning note; not an achieved power calculation. With n=90 paired observations, detectable standardized mean difference is approximately 0.30."
+        }
+      },
+      "accuracyLenient": {
+        "metric": "accuracyLenient",
+        "n": 90,
+        "lattice": {
+          "mean": 0.8888888888888888,
+          "sd": 0.3160303087599848,
+          "sem": 0.033312519510927174,
+          "ci": {
+            "low": 0.8227968501792093,
+            "high": 0.9549809275985683
+          }
+        },
+        "standard": {
+          "mean": 0.3333333333333333,
+          "sd": 0.474045463139977,
+          "sem": 0.049968779266390734,
+          "ci": {
+            "low": 0.23419527526881412,
+            "high": 0.4324713913978525
+          }
+        },
+        "diff": 0.5555555555555556,
+        "pairedT": {
+          "t": 10.547511554864485,
+          "df": 89,
+          "p": 0,
+          "meanDiff": 0.5555555555555556,
+          "sdDiff": 0.49968779266390806
+        },
+        "wilcoxon": {
+          "wPlus": 2500,
+          "wMinus": 0,
+          "W": 0,
+          "z": -8.23850278732705,
+          "p": 2.220446049250313e-16,
+          "n": 50
+        },
+        "cohensDz": 1.1118053386771936,
+        "mde": {
+          "alpha": 0.05,
+          "power": 0.8,
+          "note": "Approximate paired-normal planning note; not an achieved power calculation. With n=90 paired observations, detectable standardized mean difference is approximately 0.30."
+        }
+      },
+      "tokens": {
+        "metric": "tokens",
+        "n": 90,
+        "lattice": {
+          "mean": 1084.888888888889,
+          "sd": 417.6995437679099,
+          "sem": 44.029397863992855,
+          "ci": {
+            "low": 997.5345635267271,
+            "high": 1172.2432142510506
+          }
+        },
+        "standard": {
+          "mean": 98.77777777777777,
+          "sd": 43.62964093411669,
+          "sem": 4.598967961570836,
+          "ci": {
+            "low": 89.65342534202124,
+            "high": 107.9021302135343
+          }
+        },
+        "diff": 986.1111111111111,
+        "pairedT": {
+          "t": 23.717855351002317,
+          "df": 89,
+          "p": 0,
+          "meanDiff": 986.1111111111111,
+          "sdDiff": 394.43159058376284
+        },
+        "wilcoxon": {
+          "wPlus": 4500,
+          "wMinus": 0,
+          "W": 0,
+          "z": -8.23850278732705,
+          "p": 2.220446049250313e-16,
+          "n": 90
+        },
+        "cohensDz": 2.5000814707859895,
+        "mde": {
+          "alpha": 0.05,
+          "power": 0.8,
+          "note": "Approximate paired-normal planning note; not an achieved power calculation. With n=90 paired observations, detectable standardized mean difference is approximately 0.30."
+        }
+      },
+      "latency": {
+        "metric": "latency",
+        "n": 90,
+        "lattice": {
+          "mean": 255.72222222222223,
+          "sd": 45.98950241179931,
+          "sem": 4.847719202636425,
+          "ci": {
+            "low": 246.10434732419156,
+            "high": 265.3400971202529
+          }
+        },
+        "standard": {
+          "mean": 263.3888888888889,
+          "sd": 51.4979424579589,
+          "sem": 5.4283597659813365,
+          "ci": {
+            "low": 252.61902311318195,
+            "high": 274.1587546645959
+          }
+        },
+        "diff": -7.666666666666686,
+        "pairedT": {
+          "t": -0.8979683706172694,
+          "df": 89,
+          "p": 0.37162525224309007,
+          "meanDiff": -7.666666666666667,
+          "sdDiff": 80.99660139908492
+        },
+        "wilcoxon": {
+          "wPlus": 1700,
+          "wMinus": 2800,
+          "W": 1700,
+          "z": -1.3982318527942124,
+          "p": 0.5180029508027426,
+          "n": 90
+        },
+        "cohensDz": -0.09465417726469302,
+        "mde": {
+          "alpha": 0.05,
+          "power": 0.8,
+          "note": "Approximate paired-normal planning note; not an achieved power calculation. With n=90 paired observations, detectable standardized mean difference is approximately 0.30."
+        }
+      },
+      "tokensPerCorrect": {
+        "metric": "tokensPerCorrect",
+        "n": 90,
+        "lattice": {
+          "mean": 1084.888888888889,
+          "sd": 417.6995437679099,
+          "sem": 44.029397863992855,
+          "ci": {
+            "low": 997.5345635267271,
+            "high": 1172.2432142510506
+          }
+        },
+        "standard": {
+          "mean": 98.77777777777777,
+          "sd": 43.62964093411669,
+          "sem": 4.598967961570836,
+          "ci": {
+            "low": 89.65342534202124,
+            "high": 107.9021302135343
+          }
+        },
+        "diff": 986.1111111111111,
+        "pairedT": {
+          "t": 23.717855351002317,
+          "df": 89,
+          "p": 0,
+          "meanDiff": 986.1111111111111,
+          "sdDiff": 394.43159058376284
+        },
+        "wilcoxon": {
+          "wPlus": 4500,
+          "wMinus": 0,
+          "W": 0,
+          "z": -8.23850278732705,
+          "p": 2.220446049250313e-16,
+          "n": 90
+        },
+        "cohensDz": 2.5000814707859895,
+        "mde": {
+          "alpha": 0.05,
+          "power": 0.8,
+          "note": "Approximate paired-normal planning note; not an achieved power calculation. With n=90 paired observations, detectable standardized mean difference is approximately 0.30."
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 211,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 259,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 187,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 185,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 269,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 197,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 159,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 256,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 184,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 239,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 273,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 201,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 201,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 254,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 182,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 294,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 116,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 183,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 220,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 193,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 294,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 284,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 225,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 153,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 225,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 242,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 170,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 194,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 266,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 218,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 204,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 276,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 192,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 191,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 263,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 166,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 208,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 280,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 246,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 189,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 261,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 208,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 190,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 123,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 301,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 301,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 200,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 227,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 160,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 232,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 291,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 177,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 249,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 232,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 225,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 273,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 201,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 199,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 283,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 211,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 173,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 270,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 198,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 253,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 287,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 215,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 215,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 268,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 196,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 308,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 130,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 197,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 234,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 207,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 308,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 298,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 239,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 167,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 239,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 256,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 184,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 208,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 280,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 232,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 218,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 290,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 206,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 205,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 277,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 180,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 222,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 294,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 260,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 203,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 275,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 222,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 204,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 137,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 315,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 315,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 214,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 241,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 174,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 246,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 305,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 191,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 263,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 4,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 246,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 239,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 287,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 215,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 213,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 297,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 225,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 187,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 284,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 212,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 267,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 301,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 229,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 229,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 282,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 210,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 322,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 144,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 211,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 248,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 221,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 322,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 312,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 253,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 181,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 253,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 270,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 5,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 198,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 222,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 294,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 246,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 232,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 304,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 220,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 219,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 291,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 194,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 236,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 308,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 274,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 217,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 289,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 236,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 218,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 151,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 329,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 329,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 228,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 255,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 188,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 260,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 319,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 205,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 277,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 6,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 260,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 253,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 301,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 229,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 227,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 311,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 239,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 201,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 298,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 226,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 281,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 315,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 243,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 243,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 296,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 224,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 336,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 158,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 225,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 262,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 235,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 336,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 326,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 267,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 195,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 267,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 284,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 7,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 212,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 236,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 308,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 260,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 246,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 318,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 234,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 233,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 305,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 208,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 250,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 322,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 288,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 231,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 303,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 250,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 232,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 165,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 343,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 343,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 242,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 269,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 202,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 274,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 333,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 219,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 291,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 8,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 274,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 267,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 315,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 243,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 241,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 325,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 253,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 215,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 312,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 240,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 295,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 329,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 257,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 257,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 310,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 238,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 350,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 172,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 239,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 276,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 249,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 350,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 340,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 281,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 209,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 281,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 298,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 9,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 226,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 250,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 90,
+      "latencyMs": 322,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1323,
+      "latencyMs": 274,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_email_env",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17623,
+      "latencyMs": 260,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 92,
+      "latencyMs": 332,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 248,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17618,
+      "latencyMs": 247,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 89,
+      "latencyMs": 319,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1310,
+      "latencyMs": 222,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_openrouter_header",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17624,
+      "latencyMs": 264,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 93,
+      "latencyMs": 336,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1332,
+      "latencyMs": 302,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17615,
+      "latencyMs": 245,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 88,
+      "latencyMs": 317,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 1318,
+      "latencyMs": 264,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "naive",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 17701,
+      "latencyMs": 246,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 219,
+      "latencyMs": 179,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": 1557,
+      "latencyMs": 357,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17600,
+      "latencyMs": 357,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 66,
+      "latencyMs": 256,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 371,
+      "latencyMs": 283,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_remainder",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17608,
+      "latencyMs": 216,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 74,
+      "latencyMs": 288,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 387,
+      "latencyMs": 347,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_sequence",
+      "treatment": "naive",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 17612,
+      "latencyMs": 233,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 78,
+      "latencyMs": 305,
+      "model": "deterministic-fixture-v1"
+    },
+    {
+      "rep": 10,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": 1,
+      "correctLenient": 1,
+      "tokens": 848,
+      "latencyMs": 288,
+      "model": "deterministic-fixture-v1"
+    }
+  ]
+}

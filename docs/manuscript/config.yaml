@@ -1,0 +1,50 @@
+paper:
+  title: "Lattice Chat Context Efficiency: Grounding, Token Economy, and Performance Boundaries"
+  subtitle: "Deterministic high-n follow-up and performance boundaries"
+  version: "follow-up-1.0"
+  date: "2026-08-08"
+
+authors:
+  - name: "Daniel Ari Friedman"
+    orcid: "0000-0001-6232-9096"
+    email: "daniel@activeinference.institute"
+    affiliation: "Active Inference Institute"
+    corresponding: true
+
+keywords:
+  - "context engineering"
+  - "retrieval grounding"
+  - "token efficiency"
+  - "paired experiment"
+  - "reproducibility"
+  - "deterministic control"
+
+metadata:
+  license: "Apache-2.0"
+  language: "en"
+
+publication:
+  doi: ""
+  version_doi: ""
+  github_repository: ""
+
+render:
+  formats:
+    pdf: true
+    html: true
+    slides: false
+    docx: false
+    epub: false
+
+llm:
+  reviews:
+    enabled: false
+  translations:
+    enabled: false
+
+experiment:
+  primary_dataset: "data/openrouter-lattice-followup-deterministic.json"
+  statistics_dataset: "data/openrouter-lattice-followup-statistics.json"
+  task_count: 9
+  repeats: 10
+  evidence_status: "synthetic-deterministic-control"

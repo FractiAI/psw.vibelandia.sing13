@@ -91,4 +91,25 @@ describe('OpenRouter experiment core', () => {
     expect(report).toContain('&lt;report&gt;');
     expect(report).toContain('<svg');
   });
+
+  it('generates a deterministic high-n control receipt with the frozen task/scoring path', async () => {
+    const { execFileSync } = await import('node:child_process');
+    execFileSync(process.execPath, ['scripts/generate-deterministic-lattice-followup.mjs'], { cwd: process.cwd(), stdio: 'pipe' });
+    const { readFileSync } = await import('node:fs');
+    const receipt = JSON.parse(readFileSync('data/openrouter-lattice-followup-deterministic.json', 'utf8'));
+    expect(receipt).toMatchObject({ status: 'synthetic-deterministic-control', model: 'deterministic-fixture-v1', repeats: 10, treatments: ['lattice', 'standard', 'naive'] });
+    expect(receipt.results).toHaveLength(270);
+    expect(receipt.evidenceBoundary).toContain('No provider calls');
+    expect(receipt.overall.lattice).toHaveProperty('tokensPerCorrect');
+  });
+
+  it('keeps the larger-run statistics receipt complete across all requested metrics', async () => {
+    const { execFileSync } = await import('node:child_process');
+    execFileSync(process.execPath, ['scripts/generate-manuscript-stats.mjs'], { cwd: process.cwd(), stdio: 'pipe' });
+    const { readFileSync } = await import('node:fs');
+    const stats = JSON.parse(readFileSync('data/openrouter-lattice-followup-statistics.json', 'utf8'));
+    expect(stats.observationsPerTreatment).toBe(90);
+    expect(Object.keys(stats.metrics)).toEqual(['accuracy', 'accuracyLenient', 'tokens', 'latency', 'tokensPerCorrect']);
+    for (const row of Object.values(stats.metrics)) expect(row).toHaveProperty('mde.note');
+  });
 });

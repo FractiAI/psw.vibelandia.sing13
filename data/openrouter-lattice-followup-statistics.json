@@ -1,0 +1,232 @@
+{
+  "source": "data/openrouter-lattice-followup-deterministic.json",
+  "status": "synthetic-deterministic-control",
+  "evidenceBoundary": "No provider calls or provider results. Fixture responses exercise frozen builders/scorers only; token and latency values are structural controls.",
+  "model": "deterministic-fixture-v1",
+  "repeats": 10,
+  "tasks": 9,
+  "observationsPerTreatment": 90,
+  "generatedAt": "deterministic-fixture-v1",
+  "metrics": {
+    "accuracy": {
+      "metric": "accuracy",
+      "n": 90,
+      "lattice": {
+        "mean": 0.8888888888888888,
+        "sd": 0.3160303087599848,
+        "sem": 0.033312519510927174,
+        "ci": {
+          "low": 0.8227968501792093,
+          "high": 0.9549809275985683
+        }
+      },
+      "standard": {
+        "mean": 0.3333333333333333,
+        "sd": 0.474045463139977,
+        "sem": 0.049968779266390734,
+        "ci": {
+          "low": 0.23419527526881412,
+          "high": 0.4324713913978525
+        }
+      },
+      "diff": 0.5555555555555556,
+      "pairedT": {
+        "t": 10.547511554864485,
+        "df": 89,
+        "p": 0,
+        "meanDiff": 0.5555555555555556,
+        "sdDiff": 0.49968779266390806
+      },
+      "wilcoxon": {
+        "wPlus": 2500,
+        "wMinus": 0,
+        "W": 0,
+        "z": -8.23850278732705,
+        "p": 2.220446049250313e-16,
+        "n": 50
+      },
+      "cohensDz": 1.1118053386771936,
+      "mde": {
+        "alpha": 0.05,
+        "targetPower": 0.8,
+        "note": "Approximate planning note for a paired-normal mean difference; not an achieved power calculation. At n=90, standardized mean difference near 0.30 is a rough MDE target; binary accuracy needs a dedicated power model."
+      }
+    },
+    "accuracyLenient": {
+      "metric": "accuracyLenient",
+      "n": 90,
+      "lattice": {
+        "mean": 0.8888888888888888,
+        "sd": 0.3160303087599848,
+        "sem": 0.033312519510927174,
+        "ci": {
+          "low": 0.8227968501792093,
+          "high": 0.9549809275985683
+        }
+      },
+      "standard": {
+        "mean": 0.3333333333333333,
+        "sd": 0.474045463139977,
+        "sem": 0.049968779266390734,
+        "ci": {
+          "low": 0.23419527526881412,
+          "high": 0.4324713913978525
+        }
+      },
+      "diff": 0.5555555555555556,
+      "pairedT": {
+        "t": 10.547511554864485,
+        "df": 89,
+        "p": 0,
+        "meanDiff": 0.5555555555555556,
+        "sdDiff": 0.49968779266390806
+      },
+      "wilcoxon": {
+        "wPlus": 2500,
+        "wMinus": 0,
+        "W": 0,
+        "z": -8.23850278732705,
+        "p": 2.220446049250313e-16,
+        "n": 50
+      },
+      "cohensDz": 1.1118053386771936,
+      "mde": {
+        "alpha": 0.05,
+        "targetPower": 0.8,
+        "note": "Approximate planning note for a paired-normal mean difference; not an achieved power calculation. At n=90, standardized mean difference near 0.30 is a rough MDE target; binary accuracy needs a dedicated power model."
+      }
+    },
+    "tokens": {
+      "metric": "tokens",
+      "n": 90,
+      "lattice": {
+        "mean": 1084.888888888889,
+        "sd": 417.6995437679099,
+        "sem": 44.029397863992855,
+        "ci": {
+          "low": 997.5345635267271,
+          "high": 1172.2432142510506
+        }
+      },
+      "standard": {
+        "mean": 98.77777777777777,
+        "sd": 43.62964093411669,
+        "sem": 4.598967961570836,
+        "ci": {
+          "low": 89.65342534202124,
+          "high": 107.9021302135343
+        }
+      },
+      "diff": 986.1111111111111,
+      "pairedT": {
+        "t": 23.717855351002317,
+        "df": 89,
+        "p": 0,
+        "meanDiff": 986.1111111111111,
+        "sdDiff": 394.43159058376284
+      },
+      "wilcoxon": {
+        "wPlus": 4500,
+        "wMinus": 0,
+        "W": 0,
+        "z": -8.23850278732705,
+        "p": 2.220446049250313e-16,
+        "n": 90
+      },
+      "cohensDz": 2.5000814707859895,
+      "mde": {
+        "alpha": 0.05,
+        "targetPower": 0.8,
+        "note": "Approximate planning note for a paired-normal mean difference; not an achieved power calculation. At n=90, standardized mean difference near 0.30 is a rough MDE target; binary accuracy needs a dedicated power model."
+      }
+    },
+    "latency": {
+      "metric": "latency",
+      "n": 90,
+      "lattice": {
+        "mean": 255.72222222222223,
+        "sd": 45.98950241179931,
+        "sem": 4.847719202636425,
+        "ci": {
+          "low": 246.10434732419156,
+          "high": 265.3400971202529
+        }
+      },
+      "standard": {
+        "mean": 263.3888888888889,
+        "sd": 51.4979424579589,
+        "sem": 5.4283597659813365,
+        "ci": {
+          "low": 252.61902311318195,
+          "high": 274.1587546645959
+        }
+      },
+      "diff": -7.666666666666686,
+      "pairedT": {
+        "t": -0.8979683706172694,
+        "df": 89,
+        "p": 0.37162525224309007,
+        "meanDiff": -7.666666666666667,
+        "sdDiff": 80.99660139908492
+      },
+      "wilcoxon": {
+        "wPlus": 1700,
+        "wMinus": 2800,
+        "W": 1700,
+        "z": -1.3982318527942124,
+        "p": 0.5180029508027426,
+        "n": 90
+      },
+      "cohensDz": -0.09465417726469302,
+      "mde": {
+        "alpha": 0.05,
+        "targetPower": 0.8,
+        "note": "Approximate planning note for a paired-normal mean difference; not an achieved power calculation. At n=90, standardized mean difference near 0.30 is a rough MDE target; binary accuracy needs a dedicated power model."
+      }
+    },
+    "tokensPerCorrect": {
+      "metric": "tokensPerCorrect",
+      "n": 90,
+      "lattice": {
+        "mean": 1084.888888888889,
+        "sd": 417.6995437679099,
+        "sem": 44.029397863992855,
+        "ci": {
+          "low": 997.5345635267271,
+          "high": 1172.2432142510506
+        }
+      },
+      "standard": {
+        "mean": 98.77777777777777,
+        "sd": 43.62964093411669,
+        "sem": 4.598967961570836,
+        "ci": {
+          "low": 89.65342534202124,
+          "high": 107.9021302135343
+        }
+      },
+      "diff": 986.1111111111111,
+      "pairedT": {
+        "t": 23.717855351002317,
+        "df": 89,
+        "p": 0,
+        "meanDiff": 986.1111111111111,
+        "sdDiff": 394.43159058376284
+      },
+      "wilcoxon": {
+        "wPlus": 4500,
+        "wMinus": 0,
+        "W": 0,
+        "z": -8.23850278732705,
+        "p": 2.220446049250313e-16,
+        "n": 90
+      },
+      "cohensDz": 2.5000814707859895,
+      "mde": {
+        "alpha": 0.05,
+        "targetPower": 0.8,
+        "note": "Approximate planning note for a paired-normal mean difference; not an achieved power calculation. At n=90, standardized mean difference near 0.30 is a rough MDE target; binary accuracy needs a dedicated power model."
+      }
+    }
+  }
+}

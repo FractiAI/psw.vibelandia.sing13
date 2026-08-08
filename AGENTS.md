@@ -4,7 +4,7 @@
 
 SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 - **SS Vibelandia QUESTFEST 24×365** nest (interfaces, catalogs, music, interactive worlds)
-- **Lattice Chat V1.618** — nested-agent BYOK chat with token-economics measurement
+- **Lattice Chat Agent V1.618** — nested-agent BYOK chat with token-economics measurement
 - **NSPFRNP catalog** — Seed:Edge protocol spine
 - **Sovereign Player** (QUESTFEST Bridge) — audio catalog React SPA
 - **SynthOBS research pipeline** — 20+ empirical experiment suites with constants/experiments modules
@@ -33,13 +33,13 @@ SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 │   ├── catalog*.js       # Catalog CRUD + playlist
 │   └── *.js              # CRON rails, telemetry, exports, etc.
 ├── apps/                 # React/Vite SPAs (built → interfaces/)
-│   ├── lattice-chat/     # Lattice Chat V1.618 UI
+│   ├── lattice-chat/     # Lattice Chat Agent V1.618 UI
 │   ├── ss-vibelandia-questfest/  # Sovereign Player
 │   ├── executive-ai-onboard/
 │   └── goldilocks-deliveries/
 ├── lib/                  # Shared modules (47 files — pure ESM)
 │   ├── lattice-engine.mjs    # Token estimate + MCA execution envelope
-│   ├── lattice-access.mjs    # Email allowlist for Lattice Chat
+│   ├── lattice-access.mjs    # Email allowlist for Lattice Chat Agent
 │   ├── lattice-prompt.mjs    # Prompt assembly
 │   ├── metrology/            # Wavefield metrology constants + types
 │   └── turner-*.mjs          # Turner bison/satellite modules
@@ -81,7 +81,7 @@ npm run test:lattice-floors  # legacy structural comparison floor assertions
 
 ```bash
 npm run build:questfest-bridge    # Sovereign Player
-npm run build:lattice-chat        # Lattice Chat UI
+npm run build:lattice-chat        # Lattice Chat Agent UI
 npm run build:executive-onboard   # Executive AI onboarding
 ```
 
@@ -130,7 +130,7 @@ No formatter or linter is configured. `.cursorrules` and `.cursor/rules/` carry 
 ## Key invariants
 
 1. **No Supabase** — lite edges only. State lives on-device (localStorage, BroadcastChannel) or in Vercel Blob.
-2. **BYOK** — Lattice Chat never stores API keys server-side. Keys travel in request headers only.
+2. **BYOK** — Lattice Chat Agent never stores API keys server-side. Keys travel in request headers only.
 3. **Honesty boundaries** — every doc carries an explicit honesty section stating what it does and does not claim.
 4. **Seed:Edge** — all content follows Seed (origin) : Edge (experience) pair structure per BBHE_REPOSITORY_STANDARD.md.
 5. **No framework lock-in** — plain HTML interfaces alongside React SPAs; no Next.js, no Tailwind requirement.
@@ -145,12 +145,12 @@ No formatter or linter is configured. `.cursorrules` and `.cursor/rules/` carry 
 4. Add a `package.json` script in root
 5. Add tests under `tests/research/`
 
-### Update Lattice Chat UI
+### Update Lattice Chat Agent UI
 
 1. Edit under `apps/lattice-chat/src/`
 2. `npm run build:lattice-chat` → output lands in `interfaces/lattice-chat/`
 3. Commit the built output (it ships as static assets on Vercel)
 
-### Add a grant to Lattice Chat access
+### Add a grant to Lattice Chat Agent access
 
 Edit `data/lattice-access.json` → add email under `grants` array with `grantedAt` timestamp.

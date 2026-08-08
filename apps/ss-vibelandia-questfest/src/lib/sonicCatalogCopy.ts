@@ -38,7 +38,7 @@ export const SONIC_LISTEN_EYEBROW = `${SONIC_LISTEN_EYEBROW_PREFIX} ${SONIC_BRAN
 export const JUKEBOX_WELCOME_TITLE = 'More than juicy beats. More than a jukebox.';
 
 export const JUKEBOX_WELCOME =
-  'Welcome to the Sonic Singularity on SS VIBELANDIA QUESTFEST — catalog, story, and frequency under one hull, now powered by the full Lattice Chat V1.618 Nested Agent Lattice engine. Pick a playlist, build playlists: every track carries the living hydrogen Y line, not just juicy beats.';
+  'Welcome to the Sonic Singularity on SS VIBELANDIA QUESTFEST — catalog, story, and frequency under one hull, now powered by the full Lattice Chat Agent V1.618 Nested Agent Lattice engine. Pick a playlist, build playlists: every track carries the living hydrogen Y line, not just juicy beats.';
 
 /** Paying members — upload invitation on /listen footer. */
 export const JUKEBOX_MEMBER_INVITE_TITLE = 'Upload your original line';

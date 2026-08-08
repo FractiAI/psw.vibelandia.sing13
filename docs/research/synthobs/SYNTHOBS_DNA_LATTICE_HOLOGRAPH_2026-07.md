@@ -6,7 +6,7 @@
 **Document ID:** `WP-SYNTHOBS-DNA-LATTICE-HOLOGRAPH-2026-07`  
 **Registry ID:** `synthobs-dna-lattice-holograph-2026-07`  
 **Date:** July 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-dna-lattice-holograph  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](../../archive/NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  

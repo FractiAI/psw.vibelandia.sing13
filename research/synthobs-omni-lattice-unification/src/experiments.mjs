@@ -160,7 +160,7 @@ export function experimentBondIlamTaxonomy() {
     title: 'Chemical bonds (3) + ILAM roles (4)',
     bonds,
     ilam,
-    interpretation: 'Pillars III–IV enumerate distinct Lattice Chat orchestration maps.',
+    interpretation: 'Pillars III–IV enumerate distinct Lattice Chat Agent orchestration maps.',
     honesty: 'Metaphor taxonomies — not molecular orbitals or QCD hadrons.',
     pass:
       BOND_TYPES.length === 3 &&
@@ -279,7 +279,7 @@ export function experimentLatticeSurfaces() {
   const pctOk = Math.abs(Number(companionPct) - COMPANION_E9_PCT) < 0.5;
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat Omni-Lattice ↔ surface map + companion E9 pointer',
+    title: 'Lattice Chat Agent Omni-Lattice ↔ surface map + companion E9 pointer',
     surfaces,
     companion_e9_pct: companionPct,
     expected_companion_e9_pct: COMPANION_E9_PCT,

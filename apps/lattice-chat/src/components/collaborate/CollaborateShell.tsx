@@ -76,7 +76,7 @@ export function CollaborateShell({
   return (
     <div className={`collab-shell${wide ? ' collab-shell--desktop' : ' collab-shell--mobile'}`}>
       <header className="collab-topbar">
-        <button type="button" className="collab-topbar__back" onClick={onExit} aria-label="Back to Lattice Chat">
+        <button type="button" className="collab-topbar__back" onClick={onExit} aria-label="Back to Lattice Chat Agent">
           ‹
         </button>
         <h1>Lattice Workspace</h1>

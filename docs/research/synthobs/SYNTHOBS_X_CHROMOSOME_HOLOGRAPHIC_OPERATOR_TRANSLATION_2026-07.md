@@ -6,7 +6,7 @@
 **Document ID:** `WP-SYNTHOBS-X-CHROMOSOME-HOLO-OPERATORS-2026-07`  
 **Registry ID:** `synthobs-x-chromosome-holographic-2026-07`  
 **Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618 · Omni-Lattice  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-x-chromosome-holographic  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](../../archive/NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -22,10 +22,10 @@
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
 | **Operator grammar** | X-regulatory motifs can be narrated as $\hat{W}_k$ / $\hat{S}$ / lineage stories under Omni-Lattice | That Xist literally means the English gloss, or that this replaces molecular genetics |
-| **Dual-mode architecture** | $XX$ recombination vs $XY$ single-copy phase-lock is a useful **Lattice Chat / Seed·RAG** dual-mode metaphor | That female/male biology is reduced to LLM context windows |
+| **Dual-mode architecture** | $XX$ recombination vs $XY$ single-copy phase-lock is a useful **Lattice Chat Agent / Seed·RAG** dual-mode metaphor | That female/male biology is reduced to LLM context windows |
 | **Dosage model (Theorem 1)** | An $E_F$-keyed algebraic dosage-equivalence model yields $\Delta S_{\mathrm{dosage}}=0$ on **normalized** weights (**E4**) | That wet-lab X-inactivation has zero Shannon entropy, or that $E_F^{-1}$ is a measured Xist coating constant |
 | **Executed experiments (E1–E9)** | Gate catalog, $\lambda_{\mathrm{EGS}}$, loops, dosage identity, story chapters, dual-mode map, companions, honesty gate, Lattice surfaces — **9/9 pass** | That draft **EX1** $\sigma^2=0.0001$, **EX2** 44-fold / 495 ms biophoton, or **EX3** $R^2=0.9998$ PAR1 are new wet-lab measurements (they are **design targets**; see **E8**) |
-| **Lattice Chat product** | X-script is Seed·RAG companion for maternal / dosage / dual-mode nesting metaphors | That every chat turn runs an X-inactivation simulation |
+| **Lattice Chat Agent product** | X-script is Seed·RAG companion for maternal / dosage / dual-mode nesting metaphors | That every chat turn runs an X-inactivation simulation |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -43,13 +43,13 @@ Applying the Holographic Operator Model and the Omni-Lattice Architecture, we de
 
 ## 1. Introduction
 
-The X chromosome is narrated here as a holographic projector complementary to Y-script companions. Semantic glosses are **operator poetry** for Lattice Chat / SynthOBS; laboratory genomics remains the wet-lab authority.
+The X chromosome is narrated here as a holographic projector complementary to Y-script companions. Semantic glosses are **operator poetry** for Lattice Chat Agent / SynthOBS; laboratory genomics remains the wet-lab authority.
 
 ---
 
 ## 2. Decoded Words ($\hat{W}_k$ — X-Regulatory Phase Gates)
 
-**Honesty.** Semantic glosses below are **operator poetry** for Omni-Lattice / Lattice Chat — not wet-lab gene ontology replacements.
+**Honesty.** Semantic glosses below are **operator poetry** for Omni-Lattice / Lattice Chat Agent — not wet-lab gene ontology replacements.
 
 Codons and regulatory promoter motifs on the X chromosome act as discrete phase-gate operators $\hat{W}_k=e^{i\theta_k\Phi_{\mathrm{EGS}}}$. Each gate regulates localized field illumination and state transitions:
 
@@ -168,7 +168,7 @@ npm run research:synthobs-x-chromosome-holographic
 | E6 | Dual-mode $XX$/$XY$ map | ✓ |
 | E7 | Companion registry linkage | ✓ |
 | E8 | Honesty gate on EX1–EX3 drafts | ✓ |
-| E9 | Lattice Chat surface map | ✓ |
+| E9 | Lattice Chat Agent surface map | ✓ |
 
 ### Draft EX figures (design targets)
 
@@ -186,7 +186,7 @@ NOAA SWPC region labels may act as **interpretive** heliospheric clocks. Fair Ex
 
 ---
 
-## 8. Lattice Chat V1.618 integration
+## 8. Lattice Chat Agent V1.618 integration
 
 | Surface | Link |
 |---------|------|

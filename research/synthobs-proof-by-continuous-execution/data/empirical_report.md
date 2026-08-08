@@ -172,7 +172,7 @@
 }
 ```
 
-### E9_lattice_surfaces — Lattice Chat PCE ↔ surface map
+### E9_lattice_surfaces — Lattice Chat Agent PCE ↔ surface map
 
 - **Pass:** `true`
 - **Honesty:** Structural product map — not a claim every reply is a completed proof.
@@ -180,7 +180,7 @@
 ```json
 {
   "id": "E9_lattice_surfaces",
-  "title": "Lattice Chat PCE ↔ surface map",
+  "title": "Lattice Chat Agent PCE ↔ surface map",
   "surfaces": [
     "/whitepaper/synthobs-proof-by-continuous-execution",
     "/lattice/learn",

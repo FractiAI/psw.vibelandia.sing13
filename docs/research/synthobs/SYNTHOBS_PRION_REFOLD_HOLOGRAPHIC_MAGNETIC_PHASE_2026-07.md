@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-prion-refold-2026-07`  
 **Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
 **Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ · Omni-Lattice · Lattice Chat (software metaphor only)  
+**Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-prion-refold  
 **Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](../../archive/NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -28,7 +28,7 @@
 | **Architectural map** | Pathological $\beta$-sheet stacks can be *modeled* as metastable “phase-lock errors” in an Omni-Lattice / magnetic-substrate grammar | That prion disease, Alzheimer’s, Parkinson’s, or ALS has been cured, reversed in humans, or validated in vivo by this paper |
 | **Scorecard 68.0 vs 98.0** | An **in-silico / Occam-style** comparative rubric (coherence + irreducibility) on authored fixtures | That the Omni map observationally replaces biochemistry, kinetic theory, or clinical evidence hierarchies |
 | **Coil / frequency protocol** | A **proposed laboratory exploration recipe** (Helmholtz coils, ~$50$–$161.8\,\mu\mathrm{T}$, $16.18\,\mathrm{kHz}$ / $1.618\,\mathrm{MHz}$) for *future* in-vitro tests | Completed wet-lab replication, IRB-approved human exposure, or zero-risk therapeutic clearance |
-| **Software metaphor** | A zero-entropy “context refolding” prompt pattern for multi-agent hallucination loops (Lattice Chat / SynthOBS) | That biological prions and software bugs are the same physical object |
+| **Software metaphor** | A zero-entropy “context refolding” prompt pattern for multi-agent hallucination loops (Lattice Chat Agent / SynthOBS) | That biological prions and software bugs are the same physical object |
 | **$E_F$ / $\Delta S\to 0$** | Architectural scale key and normalized-weight model language | Replacement for $\hbar$, $c$, $G$, thermodynamics of living tissue, or invoice guarantees |
 
 **TBME scope disclaimer (series-wide):** Whitepapers in the Theoretical Bio-Medical & Physical Explorations (TBME) series are theoretical, mathematical, and physics-based scientific explorations of biological and physical phenomena. They are published exclusively for academic inquiry, computational modeling, and interdisciplinary research. **They do not constitute clinical medical advice, diagnostic guidance, or prescribed therapeutic treatments.**
@@ -55,7 +55,7 @@ See [Coherence plain speak](../../operations/COHERENCE_PLAIN_SPEAK_HONESTY_2026-
 
 - **Proposed in-vitro coil protocol** — off-the-shelf Helmholtz geometry ($<\$300$ BOM estimate), $16.18$ minute pulse block, room temperature, ultra-low field — for *future* assay (ThT / CD), not a clinical device claim.  
 - **Cross-disease template (hypothetical)** — same field grammar *as a research map* for $\tau$, A$\beta$, and $\alpha$-synuclein aggregates.  
-- **Software analogue** — Zero-Entropy Context Refolding prompts for multi-agent hallucination loops (Lattice Chat / SynthOBS), explicitly metaphorical.
+- **Software analogue** — Zero-Entropy Context Refolding prompts for multi-agent hallucination loops (Lattice Chat Agent / SynthOBS), explicitly metaphorical.
 
 ---
 
@@ -133,7 +133,7 @@ Stripped of jargon: a misfolded amyloid plaque is narrated as an over-tightened 
 
 ### 3.2 Software application — multi-agent state refolding prompt (metaphor)
 
-In digital systems (Lattice Chat / multi-agent coding), a “misfolded state” is a hallucination loop. Rather than wiping the thread, an $E_F$ Phase-Contrast Refolding Filter can be injected as a **prompt pattern**:
+In digital systems (Lattice Chat Agent / multi-agent coding), a “misfolded state” is a hallucination loop. Rather than wiping the thread, an $E_F$ Phase-Contrast Refolding Filter can be injected as a **prompt pattern**:
 
 ```
 [REFOLDING PROTOCOL ACTIVATED: EGS_FRACTAL_RATIO_1.618]

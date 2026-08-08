@@ -22,8 +22,8 @@
     "naive"
   ],
   "generatedAt": "deterministic-fixture-v1",
-  "corpusFiles": 4,
-  "corpusChars": 69995,
+  "corpusFiles": 3,
+  "corpusChars": 69966,
   "byTask": [
     {
       "taskId": "qa_default_cursor_model",
@@ -31,9 +31,9 @@
       "lattice": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 1323,
-        "latency": 242.5,
-        "tokensPerCorrect": 1323
+        "tokens": 1353,
+        "latency": 189.5,
+        "tokensPerCorrect": 1353
       },
       "standard": {
         "accuracy": 0,
@@ -45,9 +45,9 @@
       "naive": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 17618,
-        "latency": 218.5,
-        "tokensPerCorrect": 17618
+        "tokens": 17606,
+        "latency": 169.5,
+        "tokensPerCorrect": 17606
       },
       "paired": {
         "p": 0,
@@ -60,9 +60,9 @@
       "lattice": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 1318,
-        "latency": 216.5,
-        "tokensPerCorrect": 1318
+        "tokens": 1348,
+        "latency": 163.5,
+        "tokensPerCorrect": 1348
       },
       "standard": {
         "accuracy": 0,
@@ -74,9 +74,9 @@
       "naive": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 17623,
-        "latency": 228.5,
-        "tokensPerCorrect": 17623
+        "tokens": 17611,
+        "latency": 179.5,
+        "tokensPerCorrect": 17611
       },
       "paired": {
         "p": 0,
@@ -89,9 +89,9 @@
       "lattice": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 1310,
-        "latency": 190.5,
-        "tokensPerCorrect": 1310
+        "tokens": 1340,
+        "latency": 310.5,
+        "tokensPerCorrect": 1340
       },
       "standard": {
         "accuracy": 0,
@@ -103,9 +103,9 @@
       "naive": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 17618,
-        "latency": 215.5,
-        "tokensPerCorrect": 17618
+        "tokens": 17605,
+        "latency": 339.5,
+        "tokensPerCorrect": 17605
       },
       "paired": {
         "p": 0,
@@ -118,9 +118,9 @@
       "lattice": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 1332,
-        "latency": 270.5,
-        "tokensPerCorrect": 1332
+        "tokens": 1362,
+        "latency": 217.5,
+        "tokensPerCorrect": 1362
       },
       "standard": {
         "accuracy": 0,
@@ -132,9 +132,9 @@
       "naive": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 17624,
-        "latency": 232.5,
-        "tokensPerCorrect": 17624
+        "tokens": 17612,
+        "latency": 183.5,
+        "tokensPerCorrect": 17612
       },
       "paired": {
         "p": 0,
@@ -147,9 +147,9 @@
       "lattice": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 1318,
-        "latency": 232.5,
-        "tokensPerCorrect": 1318
+        "tokens": 1348,
+        "latency": 179.5,
+        "tokensPerCorrect": 1348
       },
       "standard": {
         "accuracy": 0,
@@ -161,9 +161,9 @@
       "naive": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 17615,
-        "latency": 213.5,
-        "tokensPerCorrect": 17615
+        "tokens": 17603,
+        "latency": 337.5,
+        "tokensPerCorrect": 17603
       },
       "paired": {
         "p": 0,
@@ -176,9 +176,9 @@
       "lattice": {
         "accuracy": 0,
         "accuracyLenient": 0,
-        "tokens": 1557,
-        "latency": 325.5,
-        "tokensPerCorrect": 1557
+        "tokens": 1587,
+        "latency": 272.5,
+        "tokensPerCorrect": 1587
       },
       "standard": {
         "accuracy": 0,
@@ -190,9 +190,9 @@
       "naive": {
         "accuracy": 0,
         "accuracyLenient": 0,
-        "tokens": 17701,
-        "latency": 214.5,
-        "tokensPerCorrect": 17701
+        "tokens": 17689,
+        "latency": 338.5,
+        "tokensPerCorrect": 17689
       },
       "paired": {
         "p": 1,
@@ -205,9 +205,9 @@
       "lattice": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 371,
-        "latency": 251.5,
-        "tokensPerCorrect": 371
+        "tokens": 373,
+        "latency": 257.5,
+        "tokensPerCorrect": 373
       },
       "standard": {
         "accuracy": 1,
@@ -219,9 +219,9 @@
       "naive": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 17600,
-        "latency": 325.5,
-        "tokensPerCorrect": 17600
+        "tokens": 17588,
+        "latency": 276.5,
+        "tokensPerCorrect": 17588
       },
       "paired": {
         "p": 1,
@@ -234,9 +234,9 @@
       "lattice": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 387,
-        "latency": 315.5,
-        "tokensPerCorrect": 387
+        "tokens": 389,
+        "latency": 321.5,
+        "tokensPerCorrect": 389
       },
       "standard": {
         "accuracy": 1,
@@ -248,9 +248,9 @@
       "naive": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 17608,
-        "latency": 184.5,
-        "tokensPerCorrect": 17608
+        "tokens": 17596,
+        "latency": 308.5,
+        "tokensPerCorrect": 17596
       },
       "paired": {
         "p": 1,
@@ -263,9 +263,9 @@
       "lattice": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 848,
-        "latency": 256.5,
-        "tokensPerCorrect": 848
+        "tokens": 878,
+        "latency": 203.5,
+        "tokensPerCorrect": 878
       },
       "standard": {
         "accuracy": 1,
@@ -277,9 +277,9 @@
       "naive": {
         "accuracy": 1,
         "accuracyLenient": 1,
-        "tokens": 17612,
-        "latency": 201.5,
-        "tokensPerCorrect": 17612
+        "tokens": 17600,
+        "latency": 325.5,
+        "tokensPerCorrect": 17600
       },
       "paired": {
         "p": 1,
@@ -291,9 +291,9 @@
     "lattice": {
       "accuracy": 0.8888888888888888,
       "accuracyLenient": 0.8888888888888888,
-      "tokens": 1084.888888888889,
-      "latency": 255.72222222222223,
-      "tokensPerCorrect": 1084.888888888889
+      "tokens": 1108.6666666666667,
+      "latency": 235.05555555555554,
+      "tokensPerCorrect": 1108.6666666666667
     },
     "standard": {
       "accuracy": 0.3333333333333333,
@@ -305,9 +305,9 @@
     "naive": {
       "accuracy": 0.8888888888888888,
       "accuracyLenient": 0.8888888888888888,
-      "tokens": 17624.333333333332,
-      "latency": 226.05555555555554,
-      "tokensPerCorrect": 17624.333333333332
+      "tokens": 17612.222222222223,
+      "latency": 273.1666666666667,
+      "tokensPerCorrect": 17612.222222222223
     }
   },
   "statistics": {
@@ -404,12 +404,12 @@
         "metric": "tokens",
         "n": 90,
         "lattice": {
-          "mean": 1084.888888888889,
-          "sd": 417.6995437679099,
-          "sem": 44.029397863992855,
+          "mean": 1108.6666666666667,
+          "sd": 428.36086855344905,
+          "sem": 45.15320017056319,
           "ci": {
-            "low": 997.5345635267271,
-            "high": 1172.2432142510506
+            "low": 1019.0827175282693,
+            "high": 1198.2506158050642
           }
         },
         "standard": {
@@ -421,13 +421,13 @@
             "high": 107.9021302135343
           }
         },
-        "diff": 986.1111111111111,
+        "diff": 1009.8888888888889,
         "pairedT": {
-          "t": 23.717855351002317,
+          "t": 23.64084379488819,
           "df": 89,
           "p": 0,
-          "meanDiff": 986.1111111111111,
-          "sdDiff": 394.43159058376284
+          "meanDiff": 1009.8888888888889,
+          "sdDiff": 405.2582598523156
         },
         "wilcoxon": {
           "wPlus": 4500,
@@ -437,7 +437,7 @@
           "p": 2.220446049250313e-16,
           "n": 90
         },
-        "cohensDz": 2.5000814707859895,
+        "cohensDz": 2.4919637400035057,
         "mde": {
           "alpha": 0.05,
           "power": 0.8,
@@ -448,12 +448,12 @@
         "metric": "latency",
         "n": 90,
         "lattice": {
-          "mean": 255.72222222222223,
-          "sd": 45.98950241179931,
-          "sem": 4.847719202636425,
+          "mean": 235.05555555555554,
+          "sd": 58.34272262584045,
+          "sem": 6.149862946436516,
           "ci": {
-            "low": 246.10434732419156,
-            "high": 265.3400971202529
+            "low": 222.8542274698255,
+            "high": 247.25688364128558
           }
         },
         "standard": {
@@ -465,23 +465,23 @@
             "high": 274.1587546645959
           }
         },
-        "diff": -7.666666666666686,
+        "diff": -28.33333333333337,
         "pairedT": {
-          "t": -0.8979683706172694,
+          "t": -3.099862659879766,
           "df": 89,
-          "p": 0.37162525224309007,
-          "meanDiff": -7.666666666666667,
-          "sdDiff": 80.99660139908492
+          "p": 0.0025922938813540686,
+          "meanDiff": -28.333333333333332,
+          "sdDiff": 86.71145486320931
         },
         "wilcoxon": {
-          "wPlus": 1700,
-          "wMinus": 2800,
-          "W": 1700,
-          "z": -1.3982318527942124,
-          "p": 0.5180029508027426,
+          "wPlus": 1400,
+          "wMinus": 3100,
+          "W": 1400,
+          "z": -2.6053384883000072,
+          "p": 0.023939214171218914,
           "n": 90
         },
-        "cohensDz": -0.09465417726469302,
+        "cohensDz": -0.32675421463093046,
         "mde": {
           "alpha": 0.05,
           "power": 0.8,
@@ -492,12 +492,12 @@
         "metric": "tokensPerCorrect",
         "n": 90,
         "lattice": {
-          "mean": 1084.888888888889,
-          "sd": 417.6995437679099,
-          "sem": 44.029397863992855,
+          "mean": 1108.6666666666667,
+          "sd": 428.36086855344905,
+          "sem": 45.15320017056319,
           "ci": {
-            "low": 997.5345635267271,
-            "high": 1172.2432142510506
+            "low": 1019.0827175282693,
+            "high": 1198.2506158050642
           }
         },
         "standard": {
@@ -509,13 +509,13 @@
             "high": 107.9021302135343
           }
         },
-        "diff": 986.1111111111111,
+        "diff": 1009.8888888888889,
         "pairedT": {
-          "t": 23.717855351002317,
+          "t": 23.64084379488819,
           "df": 89,
           "p": 0,
-          "meanDiff": 986.1111111111111,
-          "sdDiff": 394.43159058376284
+          "meanDiff": 1009.8888888888889,
+          "sdDiff": 405.2582598523156
         },
         "wilcoxon": {
           "wPlus": 4500,
@@ -525,7 +525,7 @@
           "p": 2.220446049250313e-16,
           "n": 90
         },
-        "cohensDz": 2.5000814707859895,
+        "cohensDz": 2.4919637400035057,
         "mde": {
           "alpha": 0.05,
           "power": 0.8,
@@ -541,8 +541,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 211,
+      "tokens": 1353,
+      "latencyMs": 158,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -561,8 +561,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 187,
+      "tokens": 17606,
+      "latencyMs": 138,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -571,8 +571,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 185,
+      "tokens": 1348,
+      "latencyMs": 132,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -591,8 +591,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 197,
+      "tokens": 17611,
+      "latencyMs": 148,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -601,8 +601,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 159,
+      "tokens": 1340,
+      "latencyMs": 279,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -621,8 +621,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 184,
+      "tokens": 17605,
+      "latencyMs": 308,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -631,8 +631,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 239,
+      "tokens": 1362,
+      "latencyMs": 186,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -651,8 +651,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 201,
+      "tokens": 17612,
+      "latencyMs": 152,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -661,8 +661,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 201,
+      "tokens": 1348,
+      "latencyMs": 148,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -681,8 +681,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 182,
+      "tokens": 17603,
+      "latencyMs": 306,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -691,8 +691,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 294,
+      "tokens": 1587,
+      "latencyMs": 241,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -711,8 +711,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 183,
+      "tokens": 17689,
+      "latencyMs": 307,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -721,8 +721,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 220,
+      "tokens": 373,
+      "latencyMs": 226,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -741,8 +741,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 294,
+      "tokens": 17588,
+      "latencyMs": 245,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -751,8 +751,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 284,
+      "tokens": 389,
+      "latencyMs": 290,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -771,8 +771,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 153,
+      "tokens": 17596,
+      "latencyMs": 277,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -781,8 +781,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 225,
+      "tokens": 878,
+      "latencyMs": 172,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -801,8 +801,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 170,
+      "tokens": 17600,
+      "latencyMs": 294,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -811,8 +811,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 194,
+      "tokens": 17606,
+      "latencyMs": 145,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -831,8 +831,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 218,
+      "tokens": 1353,
+      "latencyMs": 165,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -841,8 +841,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 204,
+      "tokens": 17611,
+      "latencyMs": 155,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -861,8 +861,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 192,
+      "tokens": 1348,
+      "latencyMs": 139,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -871,8 +871,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 191,
+      "tokens": 17605,
+      "latencyMs": 315,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -891,8 +891,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 166,
+      "tokens": 1340,
+      "latencyMs": 286,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -901,8 +901,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 208,
+      "tokens": 17612,
+      "latencyMs": 159,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -921,8 +921,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 246,
+      "tokens": 1362,
+      "latencyMs": 193,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -931,8 +931,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 189,
+      "tokens": 17603,
+      "latencyMs": 313,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -951,8 +951,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 208,
+      "tokens": 1348,
+      "latencyMs": 155,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -961,8 +961,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 190,
+      "tokens": 17689,
+      "latencyMs": 314,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -981,8 +981,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 301,
+      "tokens": 1587,
+      "latencyMs": 248,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -991,8 +991,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 301,
+      "tokens": 17588,
+      "latencyMs": 252,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1011,8 +1011,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 227,
+      "tokens": 373,
+      "latencyMs": 233,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1021,8 +1021,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 160,
+      "tokens": 17596,
+      "latencyMs": 284,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1041,8 +1041,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 291,
+      "tokens": 389,
+      "latencyMs": 297,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1051,8 +1051,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 177,
+      "tokens": 17600,
+      "latencyMs": 301,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1071,8 +1071,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 232,
+      "tokens": 878,
+      "latencyMs": 179,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1081,8 +1081,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 225,
+      "tokens": 1353,
+      "latencyMs": 172,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1101,8 +1101,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 201,
+      "tokens": 17606,
+      "latencyMs": 152,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1111,8 +1111,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 199,
+      "tokens": 1348,
+      "latencyMs": 146,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1131,8 +1131,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 211,
+      "tokens": 17611,
+      "latencyMs": 162,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1141,8 +1141,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 173,
+      "tokens": 1340,
+      "latencyMs": 293,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1161,8 +1161,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 198,
+      "tokens": 17605,
+      "latencyMs": 322,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1171,8 +1171,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 253,
+      "tokens": 1362,
+      "latencyMs": 200,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1191,8 +1191,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 215,
+      "tokens": 17612,
+      "latencyMs": 166,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1201,8 +1201,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 215,
+      "tokens": 1348,
+      "latencyMs": 162,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1221,8 +1221,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 196,
+      "tokens": 17603,
+      "latencyMs": 320,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1231,8 +1231,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 308,
+      "tokens": 1587,
+      "latencyMs": 255,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1251,8 +1251,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 197,
+      "tokens": 17689,
+      "latencyMs": 321,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1261,8 +1261,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 234,
+      "tokens": 373,
+      "latencyMs": 240,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1281,8 +1281,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 308,
+      "tokens": 17588,
+      "latencyMs": 259,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1291,8 +1291,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 298,
+      "tokens": 389,
+      "latencyMs": 304,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1311,8 +1311,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 167,
+      "tokens": 17596,
+      "latencyMs": 291,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1321,8 +1321,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 239,
+      "tokens": 878,
+      "latencyMs": 186,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1341,8 +1341,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 184,
+      "tokens": 17600,
+      "latencyMs": 308,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1351,8 +1351,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 208,
+      "tokens": 17606,
+      "latencyMs": 159,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1371,8 +1371,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 232,
+      "tokens": 1353,
+      "latencyMs": 179,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1381,8 +1381,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 218,
+      "tokens": 17611,
+      "latencyMs": 169,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1401,8 +1401,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 206,
+      "tokens": 1348,
+      "latencyMs": 153,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1411,8 +1411,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 205,
+      "tokens": 17605,
+      "latencyMs": 329,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1431,8 +1431,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 180,
+      "tokens": 1340,
+      "latencyMs": 300,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1441,8 +1441,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 222,
+      "tokens": 17612,
+      "latencyMs": 173,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1461,8 +1461,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 260,
+      "tokens": 1362,
+      "latencyMs": 207,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1471,8 +1471,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 203,
+      "tokens": 17603,
+      "latencyMs": 327,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1491,8 +1491,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 222,
+      "tokens": 1348,
+      "latencyMs": 169,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1501,8 +1501,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 204,
+      "tokens": 17689,
+      "latencyMs": 328,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1521,8 +1521,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 315,
+      "tokens": 1587,
+      "latencyMs": 262,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1531,8 +1531,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 315,
+      "tokens": 17588,
+      "latencyMs": 266,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1551,8 +1551,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 241,
+      "tokens": 373,
+      "latencyMs": 247,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1561,8 +1561,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 174,
+      "tokens": 17596,
+      "latencyMs": 298,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1581,8 +1581,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 305,
+      "tokens": 389,
+      "latencyMs": 311,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1591,8 +1591,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 191,
+      "tokens": 17600,
+      "latencyMs": 315,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1611,8 +1611,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 246,
+      "tokens": 878,
+      "latencyMs": 193,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1621,8 +1621,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 239,
+      "tokens": 1353,
+      "latencyMs": 186,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1641,8 +1641,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 215,
+      "tokens": 17606,
+      "latencyMs": 166,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1651,8 +1651,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 213,
+      "tokens": 1348,
+      "latencyMs": 160,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1671,8 +1671,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 225,
+      "tokens": 17611,
+      "latencyMs": 176,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1681,8 +1681,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 187,
+      "tokens": 1340,
+      "latencyMs": 307,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1701,8 +1701,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 212,
+      "tokens": 17605,
+      "latencyMs": 336,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1711,8 +1711,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 267,
+      "tokens": 1362,
+      "latencyMs": 214,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1731,8 +1731,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 229,
+      "tokens": 17612,
+      "latencyMs": 180,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1741,8 +1741,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 229,
+      "tokens": 1348,
+      "latencyMs": 176,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1761,8 +1761,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 210,
+      "tokens": 17603,
+      "latencyMs": 334,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1771,8 +1771,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 322,
+      "tokens": 1587,
+      "latencyMs": 269,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1791,8 +1791,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 211,
+      "tokens": 17689,
+      "latencyMs": 335,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1801,8 +1801,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 248,
+      "tokens": 373,
+      "latencyMs": 254,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1821,8 +1821,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 322,
+      "tokens": 17588,
+      "latencyMs": 273,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1831,8 +1831,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 312,
+      "tokens": 389,
+      "latencyMs": 318,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1851,8 +1851,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 181,
+      "tokens": 17596,
+      "latencyMs": 305,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1861,8 +1861,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 253,
+      "tokens": 878,
+      "latencyMs": 200,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1881,8 +1881,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 198,
+      "tokens": 17600,
+      "latencyMs": 322,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1891,8 +1891,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 222,
+      "tokens": 17606,
+      "latencyMs": 173,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1911,8 +1911,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 246,
+      "tokens": 1353,
+      "latencyMs": 193,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1921,8 +1921,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 232,
+      "tokens": 17611,
+      "latencyMs": 183,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1941,8 +1941,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 220,
+      "tokens": 1348,
+      "latencyMs": 167,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1951,8 +1951,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 219,
+      "tokens": 17605,
+      "latencyMs": 343,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1971,8 +1971,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 194,
+      "tokens": 1340,
+      "latencyMs": 314,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -1981,8 +1981,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 236,
+      "tokens": 17612,
+      "latencyMs": 187,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2001,8 +2001,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 274,
+      "tokens": 1362,
+      "latencyMs": 221,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2011,8 +2011,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 217,
+      "tokens": 17603,
+      "latencyMs": 341,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2031,8 +2031,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 236,
+      "tokens": 1348,
+      "latencyMs": 183,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2041,8 +2041,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 218,
+      "tokens": 17689,
+      "latencyMs": 342,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2061,8 +2061,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 329,
+      "tokens": 1587,
+      "latencyMs": 276,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2071,8 +2071,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 329,
+      "tokens": 17588,
+      "latencyMs": 280,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2091,8 +2091,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 255,
+      "tokens": 373,
+      "latencyMs": 261,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2101,8 +2101,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 188,
+      "tokens": 17596,
+      "latencyMs": 312,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2121,8 +2121,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 319,
+      "tokens": 389,
+      "latencyMs": 325,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2131,8 +2131,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 205,
+      "tokens": 17600,
+      "latencyMs": 329,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2151,8 +2151,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 260,
+      "tokens": 878,
+      "latencyMs": 207,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2161,8 +2161,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 253,
+      "tokens": 1353,
+      "latencyMs": 200,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2181,8 +2181,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 229,
+      "tokens": 17606,
+      "latencyMs": 180,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2191,8 +2191,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 227,
+      "tokens": 1348,
+      "latencyMs": 174,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2211,8 +2211,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 239,
+      "tokens": 17611,
+      "latencyMs": 190,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2221,8 +2221,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 201,
+      "tokens": 1340,
+      "latencyMs": 321,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2241,8 +2241,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 226,
+      "tokens": 17605,
+      "latencyMs": 350,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2251,8 +2251,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 281,
+      "tokens": 1362,
+      "latencyMs": 228,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2271,8 +2271,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 243,
+      "tokens": 17612,
+      "latencyMs": 194,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2281,8 +2281,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 243,
+      "tokens": 1348,
+      "latencyMs": 190,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2301,8 +2301,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 224,
+      "tokens": 17603,
+      "latencyMs": 348,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2311,8 +2311,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 336,
+      "tokens": 1587,
+      "latencyMs": 283,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2331,8 +2331,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 225,
+      "tokens": 17689,
+      "latencyMs": 349,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2341,8 +2341,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 262,
+      "tokens": 373,
+      "latencyMs": 268,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2361,8 +2361,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 336,
+      "tokens": 17588,
+      "latencyMs": 287,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2371,8 +2371,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 326,
+      "tokens": 389,
+      "latencyMs": 332,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2391,8 +2391,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 195,
+      "tokens": 17596,
+      "latencyMs": 319,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2401,8 +2401,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 267,
+      "tokens": 878,
+      "latencyMs": 214,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2421,8 +2421,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 212,
+      "tokens": 17600,
+      "latencyMs": 336,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2431,8 +2431,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 236,
+      "tokens": 17606,
+      "latencyMs": 187,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2451,8 +2451,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 260,
+      "tokens": 1353,
+      "latencyMs": 207,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2461,8 +2461,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 246,
+      "tokens": 17611,
+      "latencyMs": 197,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2481,8 +2481,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 234,
+      "tokens": 1348,
+      "latencyMs": 181,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2491,8 +2491,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 233,
+      "tokens": 17605,
+      "latencyMs": 357,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2511,8 +2511,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 208,
+      "tokens": 1340,
+      "latencyMs": 328,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2521,8 +2521,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 250,
+      "tokens": 17612,
+      "latencyMs": 201,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2541,8 +2541,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 288,
+      "tokens": 1362,
+      "latencyMs": 235,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2551,8 +2551,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 231,
+      "tokens": 17603,
+      "latencyMs": 355,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2571,8 +2571,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 250,
+      "tokens": 1348,
+      "latencyMs": 197,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2581,8 +2581,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 232,
+      "tokens": 17689,
+      "latencyMs": 356,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2601,8 +2601,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 343,
+      "tokens": 1587,
+      "latencyMs": 290,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2611,8 +2611,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 343,
+      "tokens": 17588,
+      "latencyMs": 294,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2631,8 +2631,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 269,
+      "tokens": 373,
+      "latencyMs": 275,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2641,8 +2641,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 202,
+      "tokens": 17596,
+      "latencyMs": 326,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2661,8 +2661,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 333,
+      "tokens": 389,
+      "latencyMs": 339,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2671,8 +2671,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 219,
+      "tokens": 17600,
+      "latencyMs": 343,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2691,8 +2691,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 274,
+      "tokens": 878,
+      "latencyMs": 221,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2701,8 +2701,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 267,
+      "tokens": 1353,
+      "latencyMs": 214,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2721,8 +2721,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 243,
+      "tokens": 17606,
+      "latencyMs": 194,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2731,8 +2731,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 241,
+      "tokens": 1348,
+      "latencyMs": 188,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2751,8 +2751,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 253,
+      "tokens": 17611,
+      "latencyMs": 204,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2761,8 +2761,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 215,
+      "tokens": 1340,
+      "latencyMs": 335,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2781,8 +2781,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 240,
+      "tokens": 17605,
+      "latencyMs": 364,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2791,8 +2791,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 295,
+      "tokens": 1362,
+      "latencyMs": 242,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2811,8 +2811,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 257,
+      "tokens": 17612,
+      "latencyMs": 208,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2821,8 +2821,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 257,
+      "tokens": 1348,
+      "latencyMs": 204,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2841,8 +2841,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 238,
+      "tokens": 17603,
+      "latencyMs": 362,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2851,8 +2851,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 350,
+      "tokens": 1587,
+      "latencyMs": 297,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2871,8 +2871,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 239,
+      "tokens": 17689,
+      "latencyMs": 363,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2881,8 +2881,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 276,
+      "tokens": 373,
+      "latencyMs": 282,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2901,8 +2901,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 350,
+      "tokens": 17588,
+      "latencyMs": 301,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2911,8 +2911,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 340,
+      "tokens": 389,
+      "latencyMs": 346,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2931,8 +2931,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 209,
+      "tokens": 17596,
+      "latencyMs": 333,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2941,8 +2941,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 281,
+      "tokens": 878,
+      "latencyMs": 228,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2961,8 +2961,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 226,
+      "tokens": 17600,
+      "latencyMs": 350,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2971,8 +2971,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 250,
+      "tokens": 17606,
+      "latencyMs": 201,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -2991,8 +2991,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1323,
-      "latencyMs": 274,
+      "tokens": 1353,
+      "latencyMs": 221,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3001,8 +3001,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17623,
-      "latencyMs": 260,
+      "tokens": 17611,
+      "latencyMs": 211,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3021,8 +3021,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 248,
+      "tokens": 1348,
+      "latencyMs": 195,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3031,8 +3031,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17618,
-      "latencyMs": 247,
+      "tokens": 17605,
+      "latencyMs": 371,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3051,8 +3051,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1310,
-      "latencyMs": 222,
+      "tokens": 1340,
+      "latencyMs": 342,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3061,8 +3061,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17624,
-      "latencyMs": 264,
+      "tokens": 17612,
+      "latencyMs": 215,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3081,8 +3081,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1332,
-      "latencyMs": 302,
+      "tokens": 1362,
+      "latencyMs": 249,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3091,8 +3091,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17615,
-      "latencyMs": 245,
+      "tokens": 17603,
+      "latencyMs": 369,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3111,8 +3111,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 1318,
-      "latencyMs": 264,
+      "tokens": 1348,
+      "latencyMs": 211,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3121,8 +3121,8 @@
       "treatment": "naive",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 17701,
-      "latencyMs": 246,
+      "tokens": 17689,
+      "latencyMs": 370,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3141,8 +3141,8 @@
       "treatment": "lattice",
       "correct": 0,
       "correctLenient": 0,
-      "tokens": 1557,
-      "latencyMs": 357,
+      "tokens": 1587,
+      "latencyMs": 304,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3151,8 +3151,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17600,
-      "latencyMs": 357,
+      "tokens": 17588,
+      "latencyMs": 308,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3171,8 +3171,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 371,
-      "latencyMs": 283,
+      "tokens": 373,
+      "latencyMs": 289,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3181,8 +3181,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17608,
-      "latencyMs": 216,
+      "tokens": 17596,
+      "latencyMs": 340,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3201,8 +3201,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 387,
-      "latencyMs": 347,
+      "tokens": 389,
+      "latencyMs": 353,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3211,8 +3211,8 @@
       "treatment": "naive",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 17612,
-      "latencyMs": 233,
+      "tokens": 17600,
+      "latencyMs": 357,
       "model": "deterministic-fixture-v1"
     },
     {
@@ -3231,8 +3231,8 @@
       "treatment": "lattice",
       "correct": 1,
       "correctLenient": 1,
-      "tokens": 848,
-      "latencyMs": 288,
+      "tokens": 878,
+      "latencyMs": 235,
       "model": "deterministic-fixture-v1"
     }
   ]

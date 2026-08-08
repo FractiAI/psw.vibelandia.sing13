@@ -227,7 +227,7 @@ export function experimentRecursiveAttnSurfaces() {
   const hasTitle = /Recursive Attention Squeezing/i.test(text);
   const seedRagPointer = /Seed·RAG|Seed·RAG pointer|nest pointer/i.test(text);
   const claimsRuntime =
-    /(powers the Lattice Chat engine|wired into Lattice Chat engine|Lattice Chat engine feature|\bis Lattice Chat engine code\b)/i.test(
+    /(powers the Lattice Chat Agent engine|wired into Lattice Chat Agent engine|Lattice Chat Agent engine feature|\bis Lattice Chat Agent engine code\b)/i.test(
       text,
     );
   let engineImport = false;
@@ -244,7 +244,7 @@ export function experimentRecursiveAttnSurfaces() {
   ];
   return {
     id: 'E9_recursive_attn_surfaces',
-    title: 'Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime',
+    title: 'Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime',
     paper_exists: ok,
     hasDocId,
     hasHonesty,
@@ -256,7 +256,7 @@ export function experimentRecursiveAttnSurfaces() {
     surfaces,
     registryId: REGISTRY_ID,
     interpretation:
-      'Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).',
+      'Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).',
     honesty: 'Surface / pointer presence — featuring requires PRA pass; not completed SQUID proof.',
     pass:
       ok &&

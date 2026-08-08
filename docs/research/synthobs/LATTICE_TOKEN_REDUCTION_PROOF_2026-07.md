@@ -1,4 +1,4 @@
-# Lattice Chat V1.618 · Usage claim (~35–70%) + structural estimate
+# Lattice Chat Agent V1.618 · Usage claim (~35–70%) + structural estimate
 
 **Document ID:** LATTICE-TOKEN-PROOF-2026-07  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -50,7 +50,7 @@ Same complex coding-style ask, two loading styles (chars÷4):
 | Mode | Estimated context tokens | What it does |
 |------|--------------------------|--------------|
 | **Standard agentic (fat context)** | **~301,025** | Loads large docs / protocols / code slices; multiplies across phases |
-| **Lattice Chat V1.618 (nested + RAG)** | **~3,121** | Nested agents + file pointers + short history window |
+| **Lattice Chat Agent V1.618 (nested + RAG)** | **~3,121** | Nested agents + file pointers + short history window |
 
 Re-run: `npm run compare:lattice`. Use for loading-style continuity — **not** as the ~35–70% marketing claim.
 

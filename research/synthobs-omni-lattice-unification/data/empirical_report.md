@@ -173,7 +173,7 @@
 ### E5_bond_ilam_taxonomy — Chemical bonds (3) + ILAM roles (4)
 
 - **Pass:** `true`
-- **Interpretation:** Pillars III–IV enumerate distinct Lattice Chat orchestration maps.
+- **Interpretation:** Pillars III–IV enumerate distinct Lattice Chat Agent orchestration maps.
 - **Honesty:** Metaphor taxonomies — not molecular orbitals or QCD hadrons.
 
 ```json
@@ -191,7 +191,7 @@
     "decay_gating": "subagent_timeout_gate",
     "spin_balancing": "priority_routing_bus"
   },
-  "interpretation": "Pillars III–IV enumerate distinct Lattice Chat orchestration maps.",
+  "interpretation": "Pillars III–IV enumerate distinct Lattice Chat Agent orchestration maps.",
   "honesty": "Metaphor taxonomies — not molecular orbitals or QCD hadrons.",
   "pass": true
 }
@@ -308,7 +308,7 @@
 }
 ```
 
-### E9_lattice_surfaces — Lattice Chat Omni-Lattice ↔ surface map + companion E9 pointer
+### E9_lattice_surfaces — Lattice Chat Agent Omni-Lattice ↔ surface map + companion E9 pointer
 
 - **Pass:** `true`
 - **Interpretation:** Omni-Lattice is wired as umbrella Seed·RAG; ~48.22% is companion holographic-operators in-silico rubric.
@@ -317,7 +317,7 @@
 ```json
 {
   "id": "E9_lattice_surfaces",
-  "title": "Lattice Chat Omni-Lattice ↔ surface map + companion E9 pointer",
+  "title": "Lattice Chat Agent Omni-Lattice ↔ surface map + companion E9 pointer",
   "surfaces": [
     "/whitepaper/synthobs-omni-lattice-unification",
     "/lattice/learn",

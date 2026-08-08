@@ -4,7 +4,7 @@
   "title": "Magnetism as the Universal Foundational Substrate — Empirical Suite",
   "generatedAt": "2026-07-31T01:00:42.260Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "honestyBoundary": "Magnetic substrate paper is an architectural foundational map. Empirical receipts validate rubric math and fixtures — not magnetometry contests or Lattice Chat runtime wiring.",
+  "honestyBoundary": "Magnetic substrate paper is an architectural foundational map. Empirical receipts validate rubric math and fixtures — not magnetometry contests or Lattice Chat Agent runtime wiring.",
   "results": {
     "n_total": 9,
     "n_pass": 9,
@@ -109,7 +109,7 @@
       },
       {
         "id": "E9_mag_substrate_surfaces",
-        "title": "Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
+        "title": "Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime",
         "paper_exists": true,
         "hasDocId": true,
         "hasHonesty": true,
@@ -126,7 +126,7 @@
           "lib/lattice-prompt.mjs"
         ],
         "registryId": "synthobs-mag-substrate-2026-07",
-        "interpretation": "Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+        "interpretation": "Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).",
         "honesty": "Surface / pointer presence — featuring requires PRA pass; not Maxwell/QED replacement.",
         "pass": true
       }

@@ -218,7 +218,7 @@ export function experimentReportCardSurfaces() {
   const seedRagPointer = /Seed·RAG|Seed·RAG pointer|nest pointer/i.test(text);
   // Affirmative engine claims only (honesty boundary may negate "runtime source" in prose).
   const claimsRuntime =
-    /(powers the Lattice Chat engine|wired into Lattice Chat engine|Lattice Chat engine feature|\bis Lattice Chat engine code\b)/i.test(
+    /(powers the Lattice Chat Agent engine|wired into Lattice Chat Agent engine|Lattice Chat Agent engine feature|\bis Lattice Chat Agent engine code\b)/i.test(
       text,
     );
   let engineImport = false;
@@ -235,7 +235,7 @@ export function experimentReportCardSurfaces() {
   ];
   return {
     id: 'E9_report_card_surfaces',
-    title: 'Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime',
+    title: 'Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime',
     paper_exists: ok,
     hasDocId,
     hasHonesty,
@@ -247,7 +247,7 @@ export function experimentReportCardSurfaces() {
     surfaces,
     registryId: REGISTRY_ID,
     interpretation:
-      'Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).',
+      'Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).',
     honesty: 'Surface / pointer presence — featuring requires PRA pass; not observational ΛCDM falsification.',
     pass:
       ok &&

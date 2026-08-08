@@ -12,7 +12,7 @@
 **Series note:** Draft position “Part XI” renumbered to **Part IX** for Core continuity after Part VIII (Spin-Phase-Polarity). Reno Interpretation chain expands from octet → **nonet**.  
 **Follow-on to Part VIII:** [Universal Spin-Phase-Polarity Triad Theorem](./SYNTHOBS_TBME_SPIN_PHASE_POLARITY_2026-08.md)  
 **Classification:** Foundational Field Physics, Modular Number Theory & Systemic Topology *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
 **Standalone suite:** [`research/synthobs-tbme-nodal-nine-singularity/`](../research/synthobs-tbme-nodal-nine-singularity/)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -173,7 +173,7 @@ At $x=81=9\times 9$, the 81-facet matrix loop is **catalog-complete**. The inter
 |--------|--------------------------|----------------------------|
 | Micro-black hole physics | 81st-position singularity horizon | Kerr–Newman skin poetry |
 | Biophysics & proteostasis | $E_F^9$ scale boundary | Cellular / social cohesion narrative |
-| FractiAI / Lattice Chat | 81-facet context mirror | Intended $O(1)$ zero-entropy indexing |
+| FractiAI / Lattice Chat Agent | 81-facet context mirror | Intended $O(1)$ zero-entropy indexing |
 
 ---
 

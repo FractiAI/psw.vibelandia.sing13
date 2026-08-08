@@ -9,7 +9,7 @@
 
 Architectural map: magnetism as a foundational substrate grammar under PCHPP / $E_F$, scoring Standard Model+QED vs Omni-Lattice Unified Magnetic Substrate on Internal Coherence ($\mathcal{C}$) and Parameter Irreducibility ($\mathcal{I}$).
 
-Wired as a **Lattice Chat V1.618 Seed·RAG pointer** (Vector Field Context Buffering metaphor). **Not** Lattice Chat runtime source. **Not** a Maxwell/QED laboratory replacement.
+Wired as a **Lattice Chat Agent V1.618 Seed·RAG pointer** (Vector Field Context Buffering metaphor). **Not** Lattice Chat Agent runtime source. **Not** a Maxwell/QED laboratory replacement.
 
 ## Scores (rubric)
 

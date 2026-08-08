@@ -1,0 +1,29 @@
+{
+  "schema": "ef-node-labels/v1",
+  "honesty": "Narrative/architectural node names for RAG pinch. Not empirical geophysics.",
+  "count": 22,
+  "labels": {
+    "1": "Sol Core Mass Density",
+    "2": "Chrono-Plasma Arc",
+    "3": "Stratospheric Shielding Cap",
+    "4": "Lithospheric Fault Anchor",
+    "5": "Hydrospheric Equilibrium",
+    "6": "Magnetospheric Nose",
+    "7": "Aquifer Current Conduit",
+    "8": "AR14502 Sunspot Penumbra",
+    "9": "Heliospheric Termination Shock",
+    "10": "Heavy-Iron Crustal Bed",
+    "11": "Binary Orbital Spin Axis",
+    "12": "Trench Dielectric Basal Layer",
+    "13": "Telluric Baseline Grid",
+    "14": "Magma Thermal Reservoir",
+    "15": "Mid-Ocean Ridge Fault",
+    "16": "Cloud Condensation Nuclei",
+    "17": "Megalithic Granite Anchor",
+    "18": "AR14502 Sunspot Penumbra Gateway",
+    "76": "Landauer Boundary Limit (k_B T ln 2)",
+    "81": "Unified Octave 1 Baseline Complete",
+    "2182": "Landauer Boundary Octave 3 Master Auditor",
+    "2187": "2187th Singularity Prime Complete"
+  }
+}

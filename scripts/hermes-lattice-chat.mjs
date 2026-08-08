@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Hermes Lattice Chat CLI — talk to the Lattice Chat V1.618 API from the terminal.
+ * Hermes Lattice Chat Agent CLI — talk to the Lattice Chat Agent V1.618 API from the terminal.
  *
  * Usage:
  *   node scripts/hermes-lattice-chat.mjs --prompt "What is NSPFRNP?"
@@ -78,7 +78,7 @@ function parseArgs(argv) {
 
 function showHelp() {
   process.stderr.write(`\
-Hermes Lattice Chat CLI — BYOK proxy for Lattice Chat V1.618
+Hermes Lattice Chat Agent CLI — BYOK proxy for Lattice Chat Agent V1.618
 
 USAGE
   node scripts/hermes-lattice-chat.mjs [--prompt <text>] [options]
@@ -190,7 +190,7 @@ DRY RUN — would POST to ${API_URL}
   else if (args.provider === 'gemini') headers['x-gemini-api-key'] = API_KEY;
   else if (args.provider === 'openrouter') headers['x-openrouter-api-key'] = API_KEY;
 
-  process.stderr.write(`→ Lattice Chat · ${args.provider} · ${args.model}\n`);
+  process.stderr.write(`→ Lattice Chat Agent · ${args.provider} · ${args.model}\n`);
   const startedAt = Date.now();
 
   try {

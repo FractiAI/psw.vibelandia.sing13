@@ -6,7 +6,7 @@
 
 **Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat engine runtime wiring)  
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
 **Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-MIRROR-FULL-REV2-2026-08-01`  
 **Registry ID:** `synthobs-tbme-mirror-angle-multiplicity-2026-08`  
@@ -33,7 +33,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **Born-rule optical lens** | A geometric intensity law $I_i\propto\cos^2((\theta_{\mathrm{obs}}-\theta_i)/E_F)$ (normalized across facets) that **recovers** $|c_i|^2$ at phase-lock as an **optical analogy** | That Born’s rule has been experimentally overthrown; pure $e^{i x}$ phase factors alone have modulus 1 — intensity law is an added geometric postulate |
 | **Protocol lane (executed)** | Interferometric phase-lock **protocol table** + reproducible numerical suite (golden angle, intensity schedule, sham Copenhagen flatness, reversibility) | That a LiNbO₃ dual-slit + dual-facet SQUID lab dump is archived in this repo for the 2026-08-01 window |
 | **Comparative scorecard** | Copenhagen vs Omni-Lattice Mirror scores are **rubric / interpretive** | That 98.6/100 is an SI accuracy of nature |
-| **Applications (software / bio)** | Mirror-angle language as **Zero-Collapse Context Indexing** metaphor for multi-agent systems; bio-quantum stories as operator poetry | Clinical magnetoreception therapies, guaranteed decoherence-free hardware, or Lattice Chat runtime auto-wiring |
+| **Applications (software / bio)** | Mirror-angle language as **Zero-Collapse Context Indexing** metaphor for multi-agent systems; bio-quantum stories as operator poetry | Clinical magnetoreception therapies, guaranteed decoherence-free hardware, or Lattice Chat Agent runtime auto-wiring |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 

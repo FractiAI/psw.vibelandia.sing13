@@ -1,6 +1,6 @@
 # SynthOBS · TBME Reno Interpretation (Nested Spherical Mirror Lattice)
 
-**Standalone Omni-Lattice companion lens** — not wired into Lattice Chat / Lattice engine runtime.  
+**Standalone Omni-Lattice companion lens** — not wired into Lattice Chat Agent / Lattice engine runtime.  
 **GitHub target:** https://github.com/FractiAI/synthobs-tbme-mirror-angle-multiplicity · **License:** MIT  
 **Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`  
 **Registry ID:** `synthobs-tbme-superposition-reno-interpretation-2026-08`  

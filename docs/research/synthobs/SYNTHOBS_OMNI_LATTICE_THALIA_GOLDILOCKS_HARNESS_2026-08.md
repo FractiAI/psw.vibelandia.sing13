@@ -6,12 +6,12 @@
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-THALIA-GOLDILOCKS-2026-08`  
 **Registry ID:** `synthobs-omni-lattice-thalia-goldilocks-2026-08`  
 **Date:** August 3, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · Omni-Lattice · Lattice Chat V1.618 · NSPFRNP  
+**Framework:** SynthOBS · Goldilocks Engine · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP  
 **External source:** [docxology/thalia](https://github.com/docxology/thalia) · Zenodo DOI [10.5281/zenodo.21763245](https://doi.org/10.5281/zenodo.21763245) (v0.1.0)  
 **Umbrella:** [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Nested Agent Lattice](../../architecture/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)  
 **Engine contract:** `lib/thalia-omni-contract.mjs` · wired via `lib/lattice-engine.mjs`
 
-**Keywords:** THALIA; Omni-Lattice; Goldilocks; typed harness; Inspector; lexical-first; Memory Gate; Lattice Chat
+**Keywords:** THALIA; Omni-Lattice; Goldilocks; typed harness; Inspector; lexical-first; Memory Gate; Lattice Chat Agent
 
 ---
 
@@ -32,7 +32,7 @@ See [Coherence plain speak](../../operations/COHERENCE_PLAIN_SPEAK_HONESTY_2026-
 
 ## Abstract
 
-We include **THALIA** (Typed Harness with Analytical Lexical-Integrated Architecture) inside the **Omni-Lattice engine** at Goldilocks depth: stage contracts and documenting pointers — not a full port. Five stages (Inspector → Retriever → Reasoner → Memory Gate → Compiler) become named processing invariants on Lattice Chat V1.618’s nested-agent envelope, aligning Seed·RAG pinch discipline with THALIA’s evidence-first methodology.
+We include **THALIA** (Typed Harness with Analytical Lexical-Integrated Architecture) inside the **Omni-Lattice engine** at Goldilocks depth: stage contracts and documenting pointers — not a full port. Five stages (Inspector → Retriever → Reasoner → Memory Gate → Compiler) become named processing invariants on Lattice Chat Agent V1.618’s nested-agent envelope, aligning Seed·RAG pinch discipline with THALIA’s evidence-first methodology.
 
 ---
 

@@ -20,7 +20,7 @@ describe('hermes-lattice-chat CLI', () => {
   it('--help exits 0 and prints usage', () => {
     const r = run(['--help']);
     expect(r.status).toBe(0);
-    expect(r.stderr).toContain('Hermes Lattice Chat CLI');
+    expect(r.stderr).toContain('Hermes Lattice Chat Agent CLI');
     expect(r.stderr).toContain('USAGE');
   });
 

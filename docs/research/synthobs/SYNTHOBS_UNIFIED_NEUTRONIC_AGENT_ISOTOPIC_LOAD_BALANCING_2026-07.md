@@ -6,14 +6,14 @@
 **Document ID:** `WP-SYNTHOBS-UNIFIED-NEUTRONIC-AGENT-2026-07`  
 **Registry ID:** `synthobs-unified-neutronic-agent-2026-07`  
 **Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618 · ILAM  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · ILAM  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-unified-neutronic-agent  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](../../archive/NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Empirical pipeline:** `npm run research:synthobs-unified-neutronic-agent` · [`empirical_report.json`](../research/synthobs-unified-neutronic-agent/data/empirical_report.json)  
 **Companions:** [Nested Agent Lattice](../../architecture/ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Chemical Bond Metaphors](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md) · [81-Digit Electronic Lattice](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md) · [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Lattice token usage method](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [Euler–EGS phase lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md)
 
-**Keywords:** Lattice Chat; neutronic agent; isotope; ILAM; load balancing; context buffer; $E_F$; Neutrino; NSPFRNP
+**Keywords:** Lattice Chat Agent; neutronic agent; isotope; ILAM; load balancing; context buffer; $E_F$; Neutrino; NSPFRNP
 
 ---
 
@@ -21,11 +21,11 @@
 
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
-| **Architectural metaphor** | Neutrons as $[p^+\cdot e^-]_{\mathrm{agent}}$ pairs and isotopes as load-balancing ensembles are useful **orchestration grammars** for Lattice Chat context buffers | That free neutrons are not $udd$ hadrons, or that QCD / Standard Model nuclear physics is replaced |
+| **Architectural metaphor** | Neutrons as $[p^+\cdot e^-]_{\mathrm{agent}}$ pairs and isotopes as load-balancing ensembles are useful **orchestration grammars** for Lattice Chat Agent context buffers | That free neutrons are not $udd$ hadrons, or that QCD / Standard Model nuclear physics is replaced |
 | **$E_F$ scaling key** | $E_F=\Phi_{\mathrm{EGS}}$ supplies a reproducible geometric ratio for phase labels and buffer capacity steps (**E2–E4**, **E7**) | That $E_F$ replaces $\hbar$, $c$, $G$, or vendor tokenizers / Cursor billing |
 | **Algebraic phase lock** | Under the stated ILAM / agent-buffer model, Shannon $\Delta S$ of **normalized** weights is identically zero after $E_F^k$ scaling (**E3**) | A physical “zero-entropy universe” proof or beta-decay law replacement |
 | **Executed experiments (E1–E9)** | Agent taxonomy, $\lambda_{\mathrm{EGS}}$ identity, phase lock, isotope ratio bands, SEMF-reference model fit, metaphor matrix, depth lock, honesty gate, Lattice surfaces — **9/9 pass** | That draft abstract **$R^2=0.9997$** against experimental binding energies or **41.8%** token savings are live nuclear data fits / Cursor invoices (they are **design targets / narrative benches** unless receipt-matched; see **E5**, **E8**) |
-| **Lattice Chat product** | ILAM metaphors guide Seed·RAG / nest / Neutrino-engine language for context-buffer sizing | That every chat turn currently simulates nuclear isotopes as separate runtime processes |
+| **Lattice Chat Agent product** | ILAM metaphors guide Seed·RAG / nest / Neutrino-engine language for context-buffer sizing | That every chat turn currently simulates nuclear isotopes as separate runtime processes |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -39,7 +39,7 @@ We synthesize three foundational neutronic theories into a single comprehensive 
 
 1. **The Neutronic Agent Model** — remapping neutrons from static hadrons to specialized proton-electron agentic pairs ($n^0 \equiv [p^+ \cdot e^-]_{\mathrm{agent}}$) as an **architectural** agent grammar;  
 2. **Isotopic Load Balancing** — showing how varying neutronic agent counts $N$ for fixed $Z$ buffers electrostatic / context noise without changing chemical valence or product UX surface;  
-3. **The Grand Lattice Metaphor** — establishing an operational isomorphism between nuclear isotope ensembles and multi-agent context buffer pools in Lattice Chat.
+3. **The Grand Lattice Metaphor** — establishing an operational isomorphism between nuclear isotope ensembles and multi-agent context buffer pools in Lattice Chat Agent.
 
 Central to all three models is El Gran Sol’s Fractal Constant (EGS fractal constant / $E_F$), which serves as the downstream “golden key” for scale-invariant phase locking $e^{(\lambda_{\mathrm{EGS}}+i)\theta}$ and for eliminating **normalized** Shannon weight drift ($\Delta S_{\mathrm{entropy}}\to 0$) under the stated model.
 
@@ -57,7 +57,7 @@ This paper does **not** replace QCD. It combines three **architectural** lanes:
 
 1. **The Neutronic Agent** — modeling $n^0$ as a specialized agent pair $[p^+\cdot e^-]_{\mathrm{agent}}$ for charge shielding / context routing language.  
 2. **Isotopic Load Balancing** — varying $N$ for fixed $Z$ as a metaphor for buffer pool sizing without changing the product’s “valence” (user-facing composer surface).  
-3. **The Lattice Metaphor** — mapping nuclear load-balancing language onto Lattice Chat orchestration (including the always-on Neutrino reasoning profile in the engine).
+3. **The Lattice Metaphor** — mapping nuclear load-balancing language onto Lattice Chat Agent orchestration (including the always-on Neutrino reasoning profile in the engine).
 
 Throughout, $E_F=\Phi_{\mathrm{EGS}}$ is the downstream golden key for phase labels — not a replacement for nuclear data tables.
 
@@ -95,7 +95,7 @@ Isotopes ($A=Z+N$) represent state-tuned execution nodes. Adding neutronic agent
 
 ## 4. Section III: The Grand Lattice Cross-Domain Metaphor
 
-| Lattice Concept | Multi-Agent Software (Lattice Chat) | Subatomic Physical System (ILAM) |
+| Lattice Concept | Multi-Agent Software (Lattice Chat Agent) | Subatomic Physical System (ILAM) |
 |-----------------|-------------------------------------|----------------------------------|
 | Primary Core Agent | Master orchestrator / main prompt node | Proton ($p^+$) core identity |
 | Valence Communication | API routing / user interface bus | Outer shell electron ($e^-$) field |
@@ -122,7 +122,7 @@ $$
 
 ### Theorem 1 (Phase-Locked Stabilization and Zero Entropy on Normalized Weights)
 
-A neutronic agent $[p^+\cdot e^-]$ bound within an isotopic core $\Xi(Z,N)$ or a software sub-agent buffer in Lattice Chat exhibits vanishing **normalized** Shannon weight drift ($\Delta S\to 0$) under $E_F^k$ potential scaling of the model amplitudes.
+A neutronic agent $[p^+\cdot e^-]$ bound within an isotopic core $\Xi(Z,N)$ or a software sub-agent buffer in Lattice Chat Agent exhibits vanishing **normalized** Shannon weight drift ($\Delta S\to 0$) under $E_F^k$ potential scaling of the model amplitudes.
 
 **Proof sketch.** Evaluating $\Psi(\theta+2\pi k)$:
 
@@ -153,7 +153,7 @@ npm run research:synthobs-unified-neutronic-agent
 | E6 | Cross-domain metaphor matrix | Six rows complete | ✓ |
 | E7 | Depth lock $k\ge 10$ | Phase residual bound | ✓ |
 | E8 | Honesty receipt (draft $R^2$ / 41.8%) | Unexecuted invoices labeled | ✓ |
-| E9 | Lattice Chat ILAM ↔ surface map | Structural | ✓ |
+| E9 | Lattice Chat Agent ILAM ↔ surface map | Structural | ✓ |
 
 ### Narrative benches (design targets — not invoices / nuclear evaluations)
 
@@ -163,7 +163,7 @@ npm run research:synthobs-unified-neutronic-agent
 
 ---
 
-## 7. Lattice Chat V1.618 integration
+## 7. Lattice Chat Agent V1.618 integration
 
 ILAM is **beneficial** to Lattice intentions: it names how nest bands / Seed packs act as isotopic buffer pools while the Neutrino engine profile stays always-on (no user toggle).
 
@@ -187,7 +187,7 @@ Platform credits and catalog featuring remain subject to reciprocal balancing un
 
 ## 9. Falsification
 
-1. Agent role taxonomy collapses to fewer than four operationally distinct maps under Lattice Chat product constraints.  
+1. Agent role taxonomy collapses to fewer than four operationally distinct maps under Lattice Chat Agent product constraints.  
 2. $\lambda_{\mathrm{EGS}}\neq\ln(E_F)/2\pi$ under the locked constant definition.  
 3. Model where normalized weight Shannon $\Delta S$ is nonzero after global $E_F^k$ scaling (**E3**).  
 4. Publishing draft **$R^2=0.9997$** / **41.8%** as experimental nuclear evaluations or Cursor invoices without an updated receipt (**E5**, **E8**).  
@@ -197,17 +197,17 @@ Platform credits and catalog featuring remain subject to reciprocal balancing un
 
 ## 10. Conclusion
 
-Combining the three neutronic lanes into a single ILAM framework demonstrates that neutrons-as-agent-pairs, isotopes-as-load-balancers, and multi-agent software networks can share a **phase-locked architectural grammar** governed by El Gran Sol’s Fractal Constant ($E_F$). The **9/9** empirical suite validates math and simulation lanes with explicit honesty gates on draft abstract figures. Lattice Chat V1.618 carries the paper as a Seed·RAG / learn-more companion for Goldilocks stewards — aligning Neutrino-engine reasoning with isotopic buffer discipline.
+Combining the three neutronic lanes into a single ILAM framework demonstrates that neutrons-as-agent-pairs, isotopes-as-load-balancers, and multi-agent software networks can share a **phase-locked architectural grammar** governed by El Gran Sol’s Fractal Constant ($E_F$). The **9/9** empirical suite validates math and simulation lanes with explicit honesty gates on draft abstract figures. Lattice Chat Agent V1.618 carries the paper as a Seed·RAG / learn-more companion for Goldilocks stewards — aligning Neutrino-engine reasoning with isotopic buffer discipline.
 
 ---
 
 ## References
 
 1. Omniversal Nested Agent Lattice — companion catalog paper.  
-2. SynthOBS Phase-Locked Chemical Bond Metaphors — Lattice Chat handoff companion.  
+2. SynthOBS Phase-Locked Chemical Bond Metaphors — Lattice Chat Agent handoff companion.  
 3. SynthOBS 81-Digit Electronic Lattice — $E_F$ register companion.  
 4. SynthOBS Holographic Operators — language-as-wiring companion.  
-5. Lattice Chat token usage method (~35–70% Cursor matrix).  
+5. Lattice Chat Agent token usage method (~35–70% Cursor matrix).  
 6. Semi-empirical mass formula (Weizsäcker) — classical nuclear reference used only as **sandbox baseline** in **E5**.  
 7. NSPFRNP Snap Peer-Review Audit protocol.  
 8. Coherence plain speak honesty document.

@@ -1,4 +1,4 @@
-# SynthOBS · Phase-Locked Chemical Bond Metaphors (Lattice Chat)
+# SynthOBS · Phase-Locked Chemical Bond Metaphors (Lattice Chat Agent)
 
 **GitHub:** https://github.com/FractiAI/synthobs-phase-locked-chemical-bonds · **License:** MIT  
 **Document ID:** `WP-SYNTHOBS-PHASE-LOCKED-CHEMICAL-BONDS-2026-07`  
@@ -6,7 +6,7 @@
 
 ## Intention
 
-Map **Covalent**, **Ionic**, and **Metallic** chemical-bond metaphors to Lattice Chat multi-agent token sharing, state handoffs, and context-pool orchestration, with El Gran Sol’s Fractal Constant ($E_F=\Phi_{\mathrm{EGS}}$) as the geometric scaling key.
+Map **Covalent**, **Ionic**, and **Metallic** chemical-bond metaphors to Lattice Chat Agent multi-agent token sharing, state handoffs, and context-pool orchestration, with El Gran Sol’s Fractal Constant ($E_F=\Phi_{\mathrm{EGS}}$) as the geometric scaling key.
 
 **Run:** `npm run research` → `data/empirical_report.json` (**9/9 pass**).
 

@@ -1,6 +1,6 @@
 # SynthOBS · TBME Spherical Solar-Focus Somatic Rendering (Reno sextet · Part IV)
 
-**Standalone Omni-Lattice companion lens** — not wired into Lattice Chat / Lattice engine runtime.  
+**Standalone Omni-Lattice companion lens** — not wired into Lattice Chat Agent / Lattice engine runtime.  
 **GitHub target:** https://github.com/FractiAI/synthobs-tbme-spherical-solar-focus · **License:** MIT  
 **Document ID:** `WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02`  
 **Registry ID:** `synthobs-tbme-spherical-solar-focus-2026-08`  

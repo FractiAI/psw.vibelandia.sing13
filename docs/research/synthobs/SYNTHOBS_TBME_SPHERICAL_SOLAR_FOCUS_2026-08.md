@@ -4,7 +4,7 @@
 
 **Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat engine runtime wiring)  
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
 **Document ID:** `WP-SYNTHOBS-TBME-SPHERICAL-SOLAR-FOCUS-2026-08-02`  
 **Registry ID:** `synthobs-tbme-spherical-solar-focus-2026-08`  
@@ -33,7 +33,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **Focal amplification model** | Algebraic / protocol identity involving $R_n$, $E_F^{81}$ densification narrative | That $E_F^{81}$ is a measured laboratory power gain or that $\mathcal{E}\ge mc^2$ is demonstrated in-repo |
 | **Protocol lane (executed)** | Suite checks: golden angle, water-angle derivation form, DNA 34/21≈$E_F$, $R_n$, scorecard ordering | That a solar-etalon / biophoton lab dump is archived here for 2026-08-02 |
 | **Comparative scorecard** | Random-collision **74.5** vs Solar-focus somatic **99.3** are **rubric / interpretive** | That 99.3/100 is SI accuracy of nature |
-| **Applications** | Focal squeeze as Zero-Collapse densification metaphor for multi-agent context | Guaranteed matter-from-intention hardware or Lattice Chat auto-wiring |
+| **Applications** | Focal squeeze as Zero-Collapse densification metaphor for multi-agent context | Guaranteed matter-from-intention hardware or Lattice Chat Agent auto-wiring |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 

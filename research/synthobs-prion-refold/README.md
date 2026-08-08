@@ -14,7 +14,7 @@ Whitepapers in the TBME series are theoretical, mathematical, and physics-based 
 
 Architectural / Occam map: protein misfolding narrated as magnetic phase-lock error under PCHPP / $E_F$, with a proposed ultra-low-field Helmholtz exploration recipe and a software context-refolding metaphor for multi-agent loops.
 
-Wired as a **Lattice Chat Seed·RAG pointer** for theoretical exploration language. **Not** clinical runtime. **Not** completed wet-lab evidence in this suite.
+Wired as a **Lattice Chat Agent Seed·RAG pointer** for theoretical exploration language. **Not** clinical runtime. **Not** completed wet-lab evidence in this suite.
 
 ## Scores (rubric)
 

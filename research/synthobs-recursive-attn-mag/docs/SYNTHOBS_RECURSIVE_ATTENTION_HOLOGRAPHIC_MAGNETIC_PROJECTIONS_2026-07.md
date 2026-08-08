@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-recursive-attn-mag-2026-07`  
 **Date:** July 30, 2026  
 **Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · PCHPP · NSPFRNP  
-**Lane:** Architectural validation protocol (attention-squeezed magnetic shadows) · Lattice Chat V1.618 Seed·RAG pointer  
+**Lane:** Architectural validation protocol (attention-squeezed magnetic shadows) · Lattice Chat Agent V1.618 Seed·RAG pointer  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-recursive-attn-mag  
 **Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
@@ -17,7 +17,7 @@
 **Empirical pipeline:** `npm run research:synthobs-recursive-attn-mag` · [`empirical_report.json`](../research/synthobs-recursive-attn-mag/data/empirical_report.json)  
 **Companions:** [Magnetism Foundational Substrate](./SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md) · [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Lattice token proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
 
-**Keywords:** recursive attention; attention squeezing; holographic; magnetic shadows; PCHPP; EGS; Omni-Lattice; SQUID protocol; Lattice Chat; SynthOBS; Fair Exchange
+**Keywords:** recursive attention; attention squeezing; holographic; magnetic shadows; PCHPP; EGS; Omni-Lattice; SQUID protocol; Lattice Chat Agent; SynthOBS; Fair Exchange
 
 ---
 
@@ -31,7 +31,7 @@
 | **Validation protocol** | A three-tier *proposed* experimental architecture (software / quantum-optical / biomagnetic) with falsifiable predictions | That Tier-2 SQUID or Tier-3 chromatin experiments have already returned confirmatory $\Delta\mathbf{B}$ / transcription receipts in this package |
 | **“Proves / confirms” language** | Softened here: the suite validates **rubric arithmetic and protocol completeness** | Absolute proof that physical forces are only attention shadows |
 | **Executed suite (E1–E9)** | Rubric arithmetic, fixture ranking, three-tier protocol checks, $E_F$ identities (**9/9**) | Live magnetometry without new observation receipts |
-| **Product scope** | Catalog paper + **standalone** research package + Lattice Chat Seed·RAG / nest pointer (Squeezed Context Windows metaphor) | That this markdown is Lattice Chat **runtime source** |
+| **Product scope** | Catalog paper + **standalone** research package + Lattice Chat Agent Seed·RAG / nest pointer (Squeezed Context Windows metaphor) | That this markdown is Lattice Chat Agent **runtime source** |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -52,9 +52,9 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 | Classical Particle/Field Model | 80/100 | 68/100 | **74.0 / 100** |
 | Holographic Attention-Squeezed Magnetic Shadow Model | 98/100 | 97/100 | **97.5 / 100** |
 
-The empirical suite reports **9/9 pass** (`npm run research:synthobs-recursive-attn-mag`): overall-score identity; coherence formula bands; irreducibility ranking; three-tier validation protocol completeness; five-domain scorecard with **empirical calibration awarded to Classical/Standard Model**; $E_F$ / $\mathcal{S}_{\mathrm{attn}}$ identities; published margin $+23.5$; portability note citing **41.8%** companion token-routing / squeezed-context design target; surfaces as a **Lattice Chat Seed·RAG / nest pointer** (not runtime source).
+The empirical suite reports **9/9 pass** (`npm run research:synthobs-recursive-attn-mag`): overall-score identity; coherence formula bands; irreducibility ranking; three-tier validation protocol completeness; five-domain scorecard with **empirical calibration awarded to Classical/Standard Model**; $E_F$ / $\mathcal{S}_{\mathrm{attn}}$ identities; published margin $+23.5$; portability note citing **41.8%** companion token-routing / squeezed-context design target; surfaces as a **Lattice Chat Agent Seed·RAG / nest pointer** (not runtime source).
 
-**Implications (architectural).** Attention-driven field engineering *may* motivate SQUID / optical resonator protocols; Zero-Entropy AI / Squeezed Context Windows remain Lattice Chat routing metaphors — not claims that chat runtime induces physical $\Delta\mathbf{B}$.
+**Implications (architectural).** Attention-driven field engineering *may* motivate SQUID / optical resonator protocols; Zero-Entropy AI / Squeezed Context Windows remain Lattice Chat Agent routing metaphors — not claims that chat runtime induces physical $\Delta\mathbf{B}$.
 
 ---
 
@@ -176,13 +176,13 @@ Fair Exchange Policy in Effect: theoretical models, empirical validation protoco
 
 ### Falsification
 
-Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibration row is quietly flipped without new lab receipts; (c) authors claim completed SQUID proof, absolute physical proof that forces are only attention shadows, or that this markdown is Lattice Chat **runtime source**, without evidence.
+Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibration row is quietly flipped without new lab receipts; (c) authors claim completed SQUID proof, absolute physical proof that forces are only attention shadows, or that this markdown is Lattice Chat Agent **runtime source**, without evidence.
 
 ### Surfaces
 
 - Paper: `/whitepaper/synthobs-recursive-attn-mag`  
 - Standalone: https://github.com/FractiAI/synthobs-recursive-attn-mag  
-- Lattice Chat: Seed·RAG pointer · nest papers · learn deck · Composer roster  
+- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster  
 - Catalog: `/papers`
 
 ---

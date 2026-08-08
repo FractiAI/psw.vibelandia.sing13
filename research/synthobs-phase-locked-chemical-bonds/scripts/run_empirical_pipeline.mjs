@@ -54,7 +54,7 @@ function mdReport(report) {
   lines.push('## Honesty boundary');
   lines.push('');
   lines.push(
-    'Architectural / numerical Lattice Chat Bond Model. Draft abstract 41.8% and σ²=0.0002 are design targets — receipt values are computed. Not chemistry derivation or Cursor invoices.',
+    'Architectural / numerical Lattice Chat Agent Bond Model. Draft abstract 41.8% and σ²=0.0002 are design targets — receipt values are computed. Not chemistry derivation or Cursor invoices.',
   );
   lines.push('');
   return lines.join('\n');
@@ -70,7 +70,7 @@ async function main() {
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
     honestyBoundary:
-      'Architectural Lattice Chat bond metaphors + simulation. Draft abstract figures are design targets unless receipt-matched. Not chemistry or invoice claims.',
+      'Architectural Lattice Chat Agent bond metaphors + simulation. Draft abstract figures are design targets unless receipt-matched. Not chemistry or invoice claims.',
     results,
   };
   const jsonPath = path.join(OUT, 'empirical_report.json');

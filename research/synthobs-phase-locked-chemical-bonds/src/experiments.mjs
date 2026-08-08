@@ -1,5 +1,5 @@
 /**
- * Empirical suite — Phase-Locked Chemical Bond Metaphors (Lattice Chat).
+ * Empirical suite — Phase-Locked Chemical Bond Metaphors (Lattice Chat Agent).
  * Architectural / numerical validation — NOT chemistry derivation or Cursor invoices.
  */
 import {
@@ -45,7 +45,7 @@ function normalize(xs) {
   return xs.map((x) => x / t);
 }
 
-/** Bond maps used by Lattice Chat grammar. */
+/** Bond maps used by Lattice Chat Agent grammar. */
 export function bondCatalog() {
   return {
     covalent: {
@@ -76,7 +76,7 @@ export function experimentBondTaxonomy() {
     title: 'Bond taxonomy — Covalent / Ionic / Metallic',
     bonds: keys,
     distinct_maps: lattices.size,
-    interpretation: 'Lattice Chat Bond Model enumerates three operationally distinct handoff grammars.',
+    interpretation: 'Lattice Chat Agent Bond Model enumerates three operationally distinct handoff grammars.',
     honesty: 'Metaphorical orchestration grammar — not a claim that agents are chemical systems.',
     pass: keys.length === 3 && BOND_TYPES.every((b) => keys.includes(b)) && lattices.size === 3,
   };
@@ -282,7 +282,7 @@ export function experimentHonestyReceipt() {
   };
 }
 
-/** E9 — Lattice Chat surfaces ↔ bond roles. */
+/** E9 — Lattice Chat Agent surfaces ↔ bond roles. */
 export function experimentLatticeSurfaceMap() {
   const surfaces = [
     { surface: '/whitepaper/synthobs-phase-locked-chemical-bonds', bond: 'all' },
@@ -294,7 +294,7 @@ export function experimentLatticeSurfaceMap() {
   const bondsHit = new Set(surfaces.map((s) => s.bond));
   return {
     id: 'E9_lattice_chat_surface_map',
-    title: 'Lattice Chat bond ↔ surface map',
+    title: 'Lattice Chat Agent bond ↔ surface map',
     surfaces,
     interpretation: 'Paper integrates as Seed·RAG / learn-more / chat grammar — not a separate chemistry runtime.',
     honesty: 'Structural product map — runtime may still use soft prompts rather than hard bond engines.',

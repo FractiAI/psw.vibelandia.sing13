@@ -1,6 +1,6 @@
 # SynthOBS · Unified Neutronic Agent (ILAM)
 
-Isotopic Lattice Agent Model — neutronic agent roles, isotopic load balancing, and Lattice Chat cross-domain metaphors under El Gran Sol’s Fractal Constant ($E_F$).
+Isotopic Lattice Agent Model — neutronic agent roles, isotopic load balancing, and Lattice Chat Agent cross-domain metaphors under El Gran Sol’s Fractal Constant ($E_F$).
 
 | Field | Value |
 |-------|-------|

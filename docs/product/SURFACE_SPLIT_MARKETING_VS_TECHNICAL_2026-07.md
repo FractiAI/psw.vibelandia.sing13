@@ -24,7 +24,7 @@ This is an **editorial topology**, not a claim that marketing pages hide product
 1. **Marketing first paint** — no “honesty boundary,” chars÷4, BYOK, NSPFRNP expansions, or peer-review jargon in the hero or first section.
 2. **Deep link, don’t dump** — one quiet “For builders” or “Method” link to the technical twin is enough.
 3. **Technical stays dense** — do not dilute `/lattice/proof`, papers, or nest guides to match marketing tone.
-4. **Product name on marketing** — **Lattice Chat V1.618** (human); architecture keys (SING φ, Φ_EGS) live on technical pages.
+4. **Product name on marketing** — **Lattice Chat Agent V1.618** (human); architecture keys (SING φ, Φ_EGS) live on technical pages.
 
 ## Digital / cloud marketing bar
 

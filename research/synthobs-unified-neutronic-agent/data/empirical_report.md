@@ -264,7 +264,7 @@
 ### E6_metaphor_matrix — Grand Lattice cross-domain metaphor matrix
 
 - **Pass:** `true`
-- **Interpretation:** Six-row ILAM ↔ Lattice Chat isomorphism table is complete.
+- **Interpretation:** Six-row ILAM ↔ Lattice Chat Agent isomorphism table is complete.
 - **Honesty:** Operational metaphor matrix — not literal physics–software identity.
 
 ```json
@@ -303,7 +303,7 @@
       "binding_ratio_EF"
     ]
   ],
-  "interpretation": "Six-row ILAM ↔ Lattice Chat isomorphism table is complete.",
+  "interpretation": "Six-row ILAM ↔ Lattice Chat Agent isomorphism table is complete.",
   "honesty": "Operational metaphor matrix — not literal physics–software identity.",
   "pass": true
 }
@@ -349,16 +349,16 @@
 }
 ```
 
-### E9_lattice_surfaces — Lattice Chat ILAM ↔ surface map
+### E9_lattice_surfaces — Lattice Chat Agent ILAM ↔ surface map
 
 - **Pass:** `true`
-- **Interpretation:** ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat.
+- **Interpretation:** ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat Agent.
 - **Honesty:** Structural product map — not a claim every turn runs a nuclear simulation.
 
 ```json
 {
   "id": "E9_lattice_surfaces",
-  "title": "Lattice Chat ILAM ↔ surface map",
+  "title": "Lattice Chat Agent ILAM ↔ surface map",
   "surfaces": [
     "/whitepaper/synthobs-unified-neutronic-agent",
     "/lattice/learn",
@@ -367,7 +367,7 @@
     "/lattice-chat",
     "docs/SYNTHOBS_UNIFIED_NEUTRONIC_AGENT_ISOTOPIC_LOAD_BALANCING_2026-07.md"
   ],
-  "interpretation": "ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat.",
+  "interpretation": "ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat Agent.",
   "honesty": "Structural product map — not a claim every turn runs a nuclear simulation.",
   "pass": true
 }
@@ -375,4 +375,4 @@
 
 ## Honesty boundary
 
-Architectural ILAM / Lattice Chat metaphor. Draft R²=0.9997 and 41.8% are design targets — receipt values are computed. Not QCD replacement or Cursor invoices.
+Architectural ILAM / Lattice Chat Agent metaphor. Draft R²=0.9997 and 41.8% are design targets — receipt values are computed. Not QCD replacement or Cursor invoices.

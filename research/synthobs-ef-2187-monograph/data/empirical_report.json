@@ -1,0 +1,62 @@
+{
+  "docId": "WP-SYNTHOBS-SIQHFT-EF-2187-MONOGRAPH-2026-08",
+  "registryId": "synthobs-siqhft-ef-2187-monograph-2026-08",
+  "generatedAt": "2026-08-08T05:35:51.817Z",
+  "standalone": "https://github.com/FractiAI/synthobs-ef-2187-monograph",
+  "honestyBoundary": "Structural monograph + kernel index suite. Narrative AR/SDR metrics are not lab receipts.",
+  "results": {
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_paper_honesty_boundary",
+        "pass": true
+      },
+      {
+        "id": "E2_document_id",
+        "pass": true
+      },
+      {
+        "id": "E3_synthobs_operator",
+        "pass": true
+      },
+      {
+        "id": "E4_digits_2187",
+        "pass": true,
+        "length": 2187
+      },
+      {
+        "id": "E5_matrices_27",
+        "pass": true
+      },
+      {
+        "id": "E6_landauer_not_claimed_as_calorimeter",
+        "pass": true
+      },
+      {
+        "id": "E7_si_not_authorized",
+        "pass": true
+      },
+      {
+        "id": "E8_standalone_pointer",
+        "pass": true
+      },
+      {
+        "id": "E9_node_2187",
+        "pass": true,
+        "node": {
+          "node_id": 2187,
+          "digit": 7,
+          "octave": 3,
+          "matrix_id": 27,
+          "matrix_name": "Master Closure III",
+          "matrix_row": 9,
+          "matrix_col": 9,
+          "role": "Octave III: Master synthesis 3×729=2187"
+        }
+      }
+    ]
+  }
+}

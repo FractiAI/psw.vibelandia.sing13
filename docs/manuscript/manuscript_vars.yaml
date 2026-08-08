@@ -31,9 +31,9 @@
       "accuracy": "0.889",
       "accuracy_count": "80/90",
       "lenient_accuracy": "0.889",
-      "tokens": "1,085",
-      "latency_ms": "256",
-      "tokens_per_correct": "1,085"
+      "tokens": "1,109",
+      "latency_ms": "235",
+      "tokens_per_correct": "1,109"
     },
     "standard": {
       "accuracy": "0.333",
@@ -47,12 +47,12 @@
       "accuracy": "0.889",
       "accuracy_count": "80/90",
       "lenient_accuracy": "0.889",
-      "tokens": "17,624",
-      "latency_ms": "226",
-      "tokens_per_correct": "17,624"
+      "tokens": "17,612",
+      "latency_ms": "273",
+      "tokens_per_correct": "17,612"
     },
-    "lattice_naive_token_ratio": "0.062",
-    "lattice_naive_token_savings_percent": "93.844"
+    "lattice_naive_token_ratio": "0.063",
+    "lattice_naive_token_savings_percent": "93.705"
   },
   "statistics": {
     "accuracy": {
@@ -81,38 +81,38 @@
     },
     "tokens": {
       "n": 90,
-      "difference": "986",
-      "lattice_mean": "1,085",
+      "difference": "1,010",
+      "lattice_mean": "1,109",
       "standard_mean": "99",
-      "lattice_ci": "[997.535, 1172.243]",
+      "lattice_ci": "[1019.083, 1198.251]",
       "standard_ci": "[89.653, 107.902]",
-      "paired_t": "t=23.718; p=0.000; df=89",
+      "paired_t": "t=23.641; p=0.000; df=89",
       "wilcoxon": "W=0, p=0.000 (n=90 nonzero pairs)",
-      "cohens_dz": "2.500",
+      "cohens_dz": "2.492",
       "mde_note": "Approximate planning note for a paired-normal mean difference; not an achieved power calculation. At n=90, standardized mean difference near 0.30 is a rough MDE target; binary accuracy needs a dedicated power model."
     },
     "latency": {
       "n": 90,
-      "difference": "-8",
-      "lattice_mean": "256",
+      "difference": "-28",
+      "lattice_mean": "235",
       "standard_mean": "263",
-      "lattice_ci": "[246.104, 265.340]",
+      "lattice_ci": "[222.854, 247.257]",
       "standard_ci": "[252.619, 274.159]",
-      "paired_t": "t=-0.898; p=0.372; df=89",
-      "wilcoxon": "W=1700, p=0.518 (n=90 nonzero pairs)",
-      "cohens_dz": "-0.095",
+      "paired_t": "t=-3.100; p=0.003; df=89",
+      "wilcoxon": "W=1400, p=0.024 (n=90 nonzero pairs)",
+      "cohens_dz": "-0.327",
       "mde_note": "Approximate planning note for a paired-normal mean difference; not an achieved power calculation. At n=90, standardized mean difference near 0.30 is a rough MDE target; binary accuracy needs a dedicated power model."
     },
     "tokens_per_correct": {
       "n": 90,
-      "difference": "986",
-      "lattice_mean": "1,085",
+      "difference": "1,010",
+      "lattice_mean": "1,109",
       "standard_mean": "99",
-      "lattice_ci": "[997.535, 1172.243]",
+      "lattice_ci": "[1019.083, 1198.251]",
       "standard_ci": "[89.653, 107.902]",
-      "paired_t": "t=23.718; p=0.000; df=89",
+      "paired_t": "t=23.641; p=0.000; df=89",
       "wilcoxon": "W=0, p=0.000 (n=90 nonzero pairs)",
-      "cohens_dz": "2.500",
+      "cohens_dz": "2.492",
       "mde_note": "Approximate planning note for a paired-normal mean difference; not an achieved power calculation. At n=90, standardized mean difference near 0.30 is a rough MDE target; binary accuracy needs a dedicated power model."
     }
   },
@@ -121,9 +121,9 @@
       "lattice": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "1,323",
-        "latency_ms": "242",
-        "tokens_per_correct": "1,323"
+        "tokens": "1,353",
+        "latency_ms": "190",
+        "tokens_per_correct": "1,353"
       },
       "standard": {
         "accuracy": "0.000",
@@ -135,18 +135,18 @@
       "naive": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "17,618",
-        "latency_ms": "218",
-        "tokens_per_correct": "17,618"
+        "tokens": "17,606",
+        "latency_ms": "170",
+        "tokens_per_correct": "17,606"
       }
     },
     "qa_cli_email_env": {
       "lattice": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "1,318",
-        "latency_ms": "216",
-        "tokens_per_correct": "1,318"
+        "tokens": "1,348",
+        "latency_ms": "164",
+        "tokens_per_correct": "1,348"
       },
       "standard": {
         "accuracy": "0.000",
@@ -158,18 +158,18 @@
       "naive": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "17,623",
-        "latency_ms": "228",
-        "tokens_per_correct": "17,623"
+        "tokens": "17,611",
+        "latency_ms": "180",
+        "tokens_per_correct": "17,611"
       }
     },
     "qa_cli_default_nest": {
       "lattice": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "1,310",
-        "latency_ms": "190",
-        "tokens_per_correct": "1,310"
+        "tokens": "1,340",
+        "latency_ms": "310",
+        "tokens_per_correct": "1,340"
       },
       "standard": {
         "accuracy": "0.000",
@@ -181,18 +181,18 @@
       "naive": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "17,618",
-        "latency_ms": "216",
-        "tokens_per_correct": "17,618"
+        "tokens": "17,605",
+        "latency_ms": "340",
+        "tokens_per_correct": "17,605"
       }
     },
     "qa_openrouter_header": {
       "lattice": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "1,332",
-        "latency_ms": "270",
-        "tokens_per_correct": "1,332"
+        "tokens": "1,362",
+        "latency_ms": "218",
+        "tokens_per_correct": "1,362"
       },
       "standard": {
         "accuracy": "0.000",
@@ -204,18 +204,18 @@
       "naive": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "17,624",
-        "latency_ms": "232",
-        "tokens_per_correct": "17,624"
+        "tokens": "17,612",
+        "latency_ms": "184",
+        "tokens_per_correct": "17,612"
       }
     },
     "qa_cli_auth_exit_code": {
       "lattice": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "1,318",
-        "latency_ms": "232",
-        "tokens_per_correct": "1,318"
+        "tokens": "1,348",
+        "latency_ms": "180",
+        "tokens_per_correct": "1,348"
       },
       "standard": {
         "accuracy": "0.000",
@@ -227,18 +227,18 @@
       "naive": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "17,615",
-        "latency_ms": "214",
-        "tokens_per_correct": "17,615"
+        "tokens": "17,603",
+        "latency_ms": "338",
+        "tokens_per_correct": "17,603"
       }
     },
     "coding_add_top_p_flag": {
       "lattice": {
         "accuracy": "0.000",
         "lenient_accuracy": "0.000",
-        "tokens": "1,557",
-        "latency_ms": "326",
-        "tokens_per_correct": "1,557"
+        "tokens": "1,587",
+        "latency_ms": "272",
+        "tokens_per_correct": "1,587"
       },
       "standard": {
         "accuracy": "0.000",
@@ -250,18 +250,18 @@
       "naive": {
         "accuracy": "0.000",
         "lenient_accuracy": "0.000",
-        "tokens": "17,701",
-        "latency_ms": "214",
-        "tokens_per_correct": "17,701"
+        "tokens": "17,689",
+        "latency_ms": "338",
+        "tokens_per_correct": "17,689"
       }
     },
     "reasoning_arithmetic": {
       "lattice": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "371",
-        "latency_ms": "252",
-        "tokens_per_correct": "371"
+        "tokens": "373",
+        "latency_ms": "258",
+        "tokens_per_correct": "373"
       },
       "standard": {
         "accuracy": "1.000",
@@ -273,18 +273,18 @@
       "naive": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "17,600",
-        "latency_ms": "326",
-        "tokens_per_correct": "17,600"
+        "tokens": "17,588",
+        "latency_ms": "276",
+        "tokens_per_correct": "17,588"
       }
     },
     "reasoning_remainder": {
       "lattice": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "387",
-        "latency_ms": "316",
-        "tokens_per_correct": "387"
+        "tokens": "389",
+        "latency_ms": "322",
+        "tokens_per_correct": "389"
       },
       "standard": {
         "accuracy": "1.000",
@@ -296,18 +296,18 @@
       "naive": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "17,608",
-        "latency_ms": "184",
-        "tokens_per_correct": "17,608"
+        "tokens": "17,596",
+        "latency_ms": "308",
+        "tokens_per_correct": "17,596"
       }
     },
     "reasoning_sequence": {
       "lattice": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "848",
-        "latency_ms": "256",
-        "tokens_per_correct": "848"
+        "tokens": "878",
+        "latency_ms": "204",
+        "tokens_per_correct": "878"
       },
       "standard": {
         "accuracy": "1.000",
@@ -319,9 +319,9 @@
       "naive": {
         "accuracy": "1.000",
         "lenient_accuracy": "1.000",
-        "tokens": "17,612",
-        "latency_ms": "202",
-        "tokens_per_correct": "17,612"
+        "tokens": "17,600",
+        "latency_ms": "326",
+        "tokens_per_correct": "17,600"
       }
     }
   }

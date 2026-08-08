@@ -243,7 +243,7 @@
             "binding_ratio_EF"
           ]
         ],
-        "interpretation": "Six-row ILAM ↔ Lattice Chat isomorphism table is complete.",
+        "interpretation": "Six-row ILAM ↔ Lattice Chat Agent isomorphism table is complete.",
         "honesty": "Operational metaphor matrix — not literal physics–software identity.",
         "pass": true
       },
@@ -271,7 +271,7 @@
       },
       {
         "id": "E9_lattice_surfaces",
-        "title": "Lattice Chat ILAM ↔ surface map",
+        "title": "Lattice Chat Agent ILAM ↔ surface map",
         "surfaces": [
           "/whitepaper/synthobs-unified-neutronic-agent",
           "/lattice/learn",
@@ -280,7 +280,7 @@
           "/lattice-chat",
           "docs/SYNTHOBS_UNIFIED_NEUTRONIC_AGENT_ISOTOPIC_LOAD_BALANCING_2026-07.md"
         ],
-        "interpretation": "ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat.",
+        "interpretation": "ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat Agent.",
         "honesty": "Structural product map — not a claim every turn runs a nuclear simulation.",
         "pass": true
       }

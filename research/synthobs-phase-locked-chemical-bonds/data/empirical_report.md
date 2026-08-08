@@ -1,4 +1,4 @@
-# Phase-Locked Chemical Bond Metaphors — Lattice Chat Bond Model (Covalent / Ionic / Metallic)
+# Phase-Locked Chemical Bond Metaphors — Lattice Chat Agent Bond Model (Covalent / Ionic / Metallic)
 
 **Document ID:** `WP-SYNTHOBS-PHASE-LOCKED-CHEMICAL-BONDS-2026-07`
 **Registry ID:** `synthobs-phase-locked-chemical-bonds-2026-07`
@@ -18,7 +18,7 @@
 ### E1_bond_taxonomy — Bond taxonomy — Covalent / Ionic / Metallic
 
 - **Pass:** `true`
-- **Interpretation:** Lattice Chat Bond Model enumerates three operationally distinct handoff grammars.
+- **Interpretation:** Lattice Chat Agent Bond Model enumerates three operationally distinct handoff grammars.
 - **Honesty:** Metaphorical orchestration grammar — not a claim that agents are chemical systems.
 
 ```json
@@ -31,7 +31,7 @@
     "metallic"
   ],
   "distinct_maps": 3,
-  "interpretation": "Lattice Chat Bond Model enumerates three operationally distinct handoff grammars.",
+  "interpretation": "Lattice Chat Agent Bond Model enumerates three operationally distinct handoff grammars.",
   "honesty": "Metaphorical orchestration grammar — not a claim that agents are chemical systems.",
   "pass": true
 }
@@ -190,7 +190,7 @@
 }
 ```
 
-### E9_lattice_chat_surface_map — Lattice Chat bond ↔ surface map
+### E9_lattice_chat_surface_map — Lattice Chat Agent bond ↔ surface map
 
 - **Pass:** `true`
 - **Interpretation:** Paper integrates as Seed·RAG / learn-more / chat grammar — not a separate chemistry runtime.
@@ -199,7 +199,7 @@
 ```json
 {
   "id": "E9_lattice_chat_surface_map",
-  "title": "Lattice Chat bond ↔ surface map",
+  "title": "Lattice Chat Agent bond ↔ surface map",
   "surfaces": [
     {
       "surface": "/whitepaper/synthobs-phase-locked-chemical-bonds",
@@ -230,4 +230,4 @@
 
 ## Honesty boundary
 
-Architectural / numerical Lattice Chat Bond Model. Draft abstract 41.8% and σ²=0.0002 are design targets — receipt values are computed. Not chemistry derivation or Cursor invoices.
+Architectural / numerical Lattice Chat Agent Bond Model. Draft abstract 41.8% and σ²=0.0002 are design targets — receipt values are computed. Not chemistry derivation or Cursor invoices.

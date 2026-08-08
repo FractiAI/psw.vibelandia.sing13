@@ -1,0 +1,50 @@
+{
+  "docId": "WP-SYNTHOBS-OMNI-LATTICE-EF-2187-HYBRID-2026-08",
+  "generatedAt": "2026-08-08T05:23:57.335Z",
+  "honestyBoundary": "Structural kernel/index suite. Not wet-lab, calorimeter, NOAA validation, or SI arrival.",
+  "results": {
+    "n_total": 5,
+    "n_pass": 5,
+    "all_pass": true,
+    "experiments": [
+      {
+        "id": "E1_digits_2187",
+        "pass": true,
+        "length": 2187
+      },
+      {
+        "id": "E2_matrices_27",
+        "pass": true,
+        "count": 27
+      },
+      {
+        "id": "E3_node_2187_closure",
+        "pass": true,
+        "node": {
+          "node_id": 2187,
+          "digit": 7,
+          "octave": 3,
+          "matrix_id": 27,
+          "matrix_name": "Master Closure III",
+          "matrix_row": 9,
+          "matrix_col": 9,
+          "role": "Octave III: Master synthesis 3×729=2187"
+        }
+      },
+      {
+        "id": "E4_landauer_honesty",
+        "pass": true,
+        "landauer": {
+          "joules_per_bit": 3.0719474070342347e-21,
+          "temp_kelvin": 300,
+          "scaling_factor": 1.07,
+          "honesty": "Architectural label (scaling × k_B T ln 2). Not empirical GPU/FPGA calorimetry."
+        }
+      },
+      {
+        "id": "E5_pinch_bounded",
+        "pass": true
+      }
+    ]
+  }
+}

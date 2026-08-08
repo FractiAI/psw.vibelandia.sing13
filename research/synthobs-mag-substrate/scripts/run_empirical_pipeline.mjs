@@ -63,7 +63,7 @@ async function main() {
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
     honestyBoundary:
-      'Magnetic substrate paper is an architectural foundational map. Empirical receipts validate rubric math and fixtures — not magnetometry contests or Lattice Chat runtime wiring.',
+      'Magnetic substrate paper is an architectural foundational map. Empirical receipts validate rubric math and fixtures — not magnetometry contests or Lattice Chat Agent runtime wiring.',
     results,
   };
   await fs.writeFile(path.join(OUT, 'empirical_report.json'), JSON.stringify(report, null, 2), 'utf8');

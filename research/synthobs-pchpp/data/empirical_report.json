@@ -4,7 +4,7 @@
   "title": "Phase-Contrast Holographic Prompting Paradigm (PCHPP) — Observation Suite",
   "generatedAt": "2026-07-30T15:32:14.292Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "honestyBoundary": "PCHPP is an observation experiment lane. Empirical receipts validate protocol structure and fixture metrics — not Lattice Chat engine wiring or physics proofs.",
+  "honestyBoundary": "PCHPP is an observation experiment lane. Empirical receipts validate protocol structure and fixture metrics — not Lattice Chat Agent engine wiring or physics proofs.",
   "results": {
     "n_total": 9,
     "n_pass": 9,
@@ -150,7 +150,7 @@
       },
       {
         "id": "E9_observation_lane_surfaces",
-        "title": "Observation lane — paper surfaces; no Lattice Chat engine wiring",
+        "title": "Observation lane — paper surfaces; no Lattice Chat Agent engine wiring",
         "paper_exists": true,
         "hasDocId": true,
         "hasHonesty": true,

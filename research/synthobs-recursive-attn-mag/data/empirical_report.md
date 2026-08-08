@@ -184,16 +184,16 @@
 }
 ```
 
-### E9_recursive_attn_surfaces — Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime
+### E9_recursive_attn_surfaces — Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime
 
 - **Pass:** `true`
-- **Interpretation:** Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).
+- **Interpretation:** Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).
 - **Honesty:** Surface / pointer presence — featuring requires PRA pass; not completed SQUID proof.
 
 ```json
 {
   "id": "E9_recursive_attn_surfaces",
-  "title": "Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
+  "title": "Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime",
   "paper_exists": true,
   "hasDocId": true,
   "hasHonesty": true,
@@ -210,7 +210,7 @@
     "lib/lattice-prompt.mjs"
   ],
   "registryId": "synthobs-recursive-attn-mag-2026-07",
-  "interpretation": "Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+  "interpretation": "Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).",
   "honesty": "Surface / pointer presence — featuring requires PRA pass; not completed SQUID proof.",
   "pass": true
 }

@@ -36,7 +36,7 @@ const TASKS = [
     id: 'T2_product_tagline',
     class: 'no_repo',
     title: 'Product copy — no corpus needed',
-    ask: 'Write one 12-word-or-fewer tagline for Lattice Chat V1.618 as Your Goldilocks steward. No tools. No file reads.',
+    ask: 'Write one 12-word-or-fewer tagline for Lattice Chat Agent V1.618 as Your Goldilocks steward. No tools. No file reads.',
   },
   {
     id: 'T3_single_doc_fact',
@@ -60,7 +60,7 @@ const TASKS = [
     id: 'T6_ops_config',
     class: 'ops',
     title: 'Ops / config grounding',
-    ask: `From README / .env.example knowledge: does Lattice Chat on Vercel use a server CURSOR_API_KEY, or BYOK header from the browser? One short paragraph. Prefer those docs only.`,
+    ask: `From README / .env.example knowledge: does Lattice Chat Agent on Vercel use a server CURSOR_API_KEY, or BYOK header from the browser? One short paragraph. Prefer those docs only.`,
   },
 ];
 

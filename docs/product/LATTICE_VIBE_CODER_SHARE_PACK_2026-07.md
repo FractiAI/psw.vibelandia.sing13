@@ -1,4 +1,4 @@
-# Lattice Chat V1.618 — Vibe Coder Share Pack
+# Lattice Chat Agent V1.618 — Vibe Coder Share Pack
 
 **Document ID:** LATTICE-SHARE-PACK-2026-07  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -10,7 +10,7 @@ Chairman posts on social. Agents keep this pack + site/README in sync.
 
 ## Power vibecoder pitch (lead line)
 
-**First the LLMs. Then Cursor AI / Claude Code. Now Lattice Chat — the next layer in the stack: to slow down and cool off GPUs and deliver new function.**
+**First the LLMs. Then Cursor AI / Claude Code. Now Lattice Chat Agent — the next layer in the stack: to slow down and cool off GPUs and deliver new function.**
 
 Supporting bullets: BYOK multi-provider · nested orchestration · LTHS + Neutrino reasoning · Token Maxing (~35–70% less usage vs fat paste on focused work — public matrix, not a universal SLA).
 
@@ -36,12 +36,12 @@ Supporting bullets: BYOK multi-provider · nested orchestration · LTHS + Neutri
 
 ### 1 · GitHub — image: `lattice-artdeco-hero.png`
 
-**Title:** Lattice Chat V1.618 — next layer after Cursor & Claude Code
+**Title:** Lattice Chat Agent V1.618 — next layer after Cursor & Claude Code
 
 ```text
-Lattice Chat V1.618 is a tool from FractiAI.
+Lattice Chat Agent V1.618 is a tool from FractiAI.
 
-First the LLMs. Then Cursor AI / Claude Code. Now Lattice Chat — the next layer in the stack: to slow down and cool off GPUs and deliver new function.
+First the LLMs. Then Cursor AI / Claude Code. Now Lattice Chat Agent — the next layer in the stack: to slow down and cool off GPUs and deliver new function.
 
 BYOK Cursor/Claude/Gemini. Nested agents + pointers — not dump-everything. Token Maxing on your keys.
 
@@ -57,7 +57,7 @@ Code: https://github.com/FractiAI/psw.vibelandia.sing13
 ```text
 Hey — for people using AI agents to code:
 
-First LLMs → then Cursor / Claude Code → now Lattice Chat V1.618 (FractiAI): next layer to cool GPUs and deliver new function. Pointers over paste.
+First LLMs → then Cursor / Claude Code → now Lattice Chat Agent V1.618 (FractiAI): next layer to cool GPUs and deliver new function. Pointers over paste.
 
 Public Cursor matrix: ~35–70% less usage vs fat paste, depending on the work (not a universal SLA): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 
@@ -67,7 +67,7 @@ https://www.ssvibelandiaquestfest24x365.com/lattice
 ### 3 · X — image: `lattice-artdeco-square.png`
 
 ```text
-Lattice Chat V1.618 by FractiAI
+Lattice Chat Agent V1.618 by FractiAI
 
 First LLMs → then Cursor / Claude Code → now Lattice: next layer to cool GPUs and deliver new function.
 
@@ -77,12 +77,12 @@ https://www.ssvibelandiaquestfest24x365.com/lattice
 
 ### 4 · Hacker News — image: `lattice-artdeco-hero.png`
 
-**Title:** Show HN: Lattice Chat V1.618 – nested agents; ~35–70% less usage vs fat paste (public matrix)
+**Title:** Show HN: Lattice Chat Agent V1.618 – nested agents; ~35–70% less usage vs fat paste (public matrix)
 
 ```text
 Hi HN —
 
-Lattice Chat V1.618 is our chat tool for AI coding agents. The idea is simple: stop stuffing the whole codebase into one giant prompt.
+Lattice Chat Agent V1.618 is our chat tool for AI coding agents. The idea is simple: stop stuffing the whole codebase into one giant prompt.
 
 How it works in plain terms:
 - One lead agent breaks the job up
@@ -98,12 +98,12 @@ Code: https://github.com/FractiAI/psw.vibelandia.sing13
 
 ### 5 · Reddit — image: `lattice-artdeco-hero.png`
 
-**Title:** Lattice Chat V1.618 — nested AI agents (~35–70% less vs fat dump, depending on work)
+**Title:** Lattice Chat Agent V1.618 — nested AI agents (~35–70% less vs fat dump, depending on work)
 
 ```text
 Built for people who code with AI agents and hate watching context explode.
 
-Lattice Chat V1.618 (FractiAI): you chat like normal. Under the hood it runs a small nested agent team instead of pasting your whole project into one prompt.
+Lattice Chat Agent V1.618 (FractiAI): you chat like normal. Under the hood it runs a small nested agent team instead of pasting your whole project into one prompt.
 
 Public Cursor usage matrix (~35–70% less vs fat paste, depending on work — not a universal SLA): https://www.ssvibelandiaquestfest24x365.com/lattice/proof
 

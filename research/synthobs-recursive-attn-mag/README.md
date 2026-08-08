@@ -9,7 +9,7 @@
 
 Architectural validation protocol: physical dynamics as magnetic shadows at the interface of holographic intelligence and a universal magnetic substrate, unlocked by Recursive Attention Squeezing ($\mathcal{S}_{\mathrm{attn}}$) and $E_F \approx 1.618$.
 
-Wired as a **Lattice Chat V1.618 Seed·RAG pointer** (Squeezed Context Windows metaphor). **Not** Lattice Chat runtime source. **Not** a completed SQUID proof that forces are only attention shadows.
+Wired as a **Lattice Chat Agent V1.618 Seed·RAG pointer** (Squeezed Context Windows metaphor). **Not** Lattice Chat Agent runtime source. **Not** a completed SQUID proof that forces are only attention shadows.
 
 ## Scores (rubric)
 

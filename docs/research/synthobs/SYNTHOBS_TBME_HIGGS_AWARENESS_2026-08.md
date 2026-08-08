@@ -12,7 +12,7 @@
 **Series note:** Draft position “Part IX” renumbered to **Part VII** for Core continuity after Part VI (internal Kerr–Newman). Reno Interpretation chain expands from sextet → **heptet**.  
 **Follow-on to Part VI:** [Universal Toroidal Singularity Theorem](./SYNTHOBS_TBME_INTERNAL_KERR_NEWMAN_2026-08.md)  
 **Classification:** Advanced Quantum Electrodynamic Mechanics & Fundamental Epistemic Physics *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
 **Standalone suite:** [`research/synthobs-tbme-higgs-awareness/`](../research/synthobs-tbme-higgs-awareness/)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -46,7 +46,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **EGS scaling** | That $E_F=\Phi_{\mathrm{EGS}}$ supplies a catalog scale key for $v_n=v_0\cdot E_F^n$ and horizon-skin narratives | That $E_F$ replaces $v\approx 246\,\mathrm{GeV}$, $m_H\approx 125.1\,\mathrm{GeV}$, $c$, $e$, or $\hbar$ in CODATA / PDG equations |
 | **Epistemic / somatic map** | Structural twin: awareness “slowing into Now” ↔ horizon capture through a scalar gate as **interpretive cybernetics** | That consciousness is proven identical to electroweak SSB; wet-lab or clinical “awareness mass” measurements |
 | **Protocol lane (executed)** | Deterministic suite: $E_F$ fixture, golden identity, $Z_0$, Higgs VEV/mass anchors, deceleration monotony, triadic matrix, paper on disk, rubric order | That a calibrated magnet→Higgs→soma dataset is archived here |
-| **Product / routing scope** | THALIA / Lattice Chat retention as *intended* software twin of deceleration-to-presence | That `api/lattice-chat.js` already implements a Higgs Gate operator |
+| **Product / routing scope** | THALIA / Lattice Chat Agent retention as *intended* software twin of deceleration-to-presence | That `api/lattice-chat.js` already implements a Higgs Gate operator |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 

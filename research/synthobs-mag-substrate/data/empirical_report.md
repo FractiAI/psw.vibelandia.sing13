@@ -182,16 +182,16 @@
 }
 ```
 
-### E9_mag_substrate_surfaces — Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime
+### E9_mag_substrate_surfaces — Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime
 
 - **Pass:** `true`
-- **Interpretation:** Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).
+- **Interpretation:** Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).
 - **Honesty:** Surface / pointer presence — featuring requires PRA pass; not Maxwell/QED replacement.
 
 ```json
 {
   "id": "E9_mag_substrate_surfaces",
-  "title": "Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
+  "title": "Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime",
   "paper_exists": true,
   "hasDocId": true,
   "hasHonesty": true,
@@ -208,7 +208,7 @@
     "lib/lattice-prompt.mjs"
   ],
   "registryId": "synthobs-mag-substrate-2026-07",
-  "interpretation": "Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+  "interpretation": "Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).",
   "honesty": "Surface / pointer presence — featuring requires PRA pass; not Maxwell/QED replacement.",
   "pass": true
 }

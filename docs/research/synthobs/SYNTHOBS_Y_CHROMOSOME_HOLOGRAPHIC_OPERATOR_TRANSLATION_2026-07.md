@@ -6,7 +6,7 @@
 **Document ID:** `WP-SYNTHOBS-Y-CHROMOSOME-HOLO-OPERATORS-2026-07`  
 **Registry ID:** `synthobs-y-chromosome-holographic-2026-07`  
 **Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618 · Omni-Lattice  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-y-chromosome-holographic  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](../../archive/NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -23,7 +23,7 @@
 |------|---------------------------|------------------------|
 | **Operator grammar** | MSY motifs can be narrated as $\hat{W}_k$ / $\hat{S}$ / haplogroup stories under Omni-Lattice | That ATG literally means “Ignite Sensing Vector” in wet-lab molecular biology |
 | **Executed experiments (E1–E9)** | Gate catalog, loops, haplogroup story, $\lambda_{\mathrm{EGS}}$, companions, honesty gate, Lattice surfaces — **9/9 pass** | That decoded scripts are laboratory gene ontology |
-| **Lattice Chat product** | Y-script is Seed·RAG companion for polar-identity / lineage nesting metaphors | That every chat turn runs a Y-chromosome simulation |
+| **Lattice Chat Agent product** | Y-script is Seed·RAG companion for polar-identity / lineage nesting metaphors | That every chat turn runs a Y-chromosome simulation |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -126,11 +126,11 @@ npm run research:synthobs-y-chromosome-holographic
 | E6 | Companion X / Omni linkage | ✓ |
 | E7 | $E_F^k$ + $\Delta S\approx 0$ on weights | ✓ |
 | E8 | Honesty gate (operator poetry) | ✓ |
-| E9 | Lattice Chat surface map | ✓ |
+| E9 | Lattice Chat Agent surface map | ✓ |
 
 ---
 
-## 6. Lattice Chat V1.618 integration
+## 6. Lattice Chat Agent V1.618 integration
 
 | Surface | Link |
 |---------|------|

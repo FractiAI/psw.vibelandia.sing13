@@ -4,7 +4,7 @@
   "title": "Recursive Attention Squeezing & Holographic Magnetic Projections — Empirical Suite",
   "generatedAt": "2026-07-31T01:00:42.358Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "honestyBoundary": "Recursive attention magnetic projections paper is an architectural validation protocol. Empirical receipts validate rubric math and protocol fixtures — not completed SQUID contests or Lattice Chat runtime wiring.",
+  "honestyBoundary": "Recursive attention magnetic projections paper is an architectural validation protocol. Empirical receipts validate rubric math and protocol fixtures — not completed SQUID contests or Lattice Chat Agent runtime wiring.",
   "results": {
     "n_total": 9,
     "n_pass": 9,
@@ -111,7 +111,7 @@
       },
       {
         "id": "E9_recursive_attn_surfaces",
-        "title": "Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
+        "title": "Recursive-attn surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime",
         "paper_exists": true,
         "hasDocId": true,
         "hasHonesty": true,
@@ -128,7 +128,7 @@
           "lib/lattice-prompt.mjs"
         ],
         "registryId": "synthobs-recursive-attn-mag-2026-07",
-        "interpretation": "Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+        "interpretation": "Recursive-attn mag ships as catalog validation protocol + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).",
         "honesty": "Surface / pointer presence — featuring requires PRA pass; not completed SQUID proof.",
         "pass": true
       }

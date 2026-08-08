@@ -34,6 +34,6 @@
 ### E8_honesty_gate — Honesty — EX-CAP drafts gated; DNA≠literal AI logs
 - **Pass:** `true`
 
-### E9_lattice_surfaces — Lattice Chat Prompt Capture IX ↔ surface map
+### E9_lattice_surfaces — Lattice Chat Agent Prompt Capture IX ↔ surface map
 - **Pass:** `true`
 - **Honesty:** Structural product map — not a claim chat writes nucleotides.

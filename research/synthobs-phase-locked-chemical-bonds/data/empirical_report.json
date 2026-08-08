@@ -1,10 +1,10 @@
 {
   "docId": "WP-SYNTHOBS-PHASE-LOCKED-CHEMICAL-BONDS-2026-07",
   "registryId": "synthobs-phase-locked-chemical-bonds-2026-07",
-  "title": "Phase-Locked Chemical Bond Metaphors — Lattice Chat Bond Model (Covalent / Ionic / Metallic)",
+  "title": "Phase-Locked Chemical Bond Metaphors — Lattice Chat Agent Bond Model (Covalent / Ionic / Metallic)",
   "generatedAt": "2026-07-28T03:47:42.102Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "honestyBoundary": "Architectural Lattice Chat bond metaphors + simulation. Draft abstract figures are design targets unless receipt-matched. Not chemistry or invoice claims.",
+  "honestyBoundary": "Architectural Lattice Chat Agent bond metaphors + simulation. Draft abstract figures are design targets unless receipt-matched. Not chemistry or invoice claims.",
   "results": {
     "experiments": [
       {
@@ -16,7 +16,7 @@
           "metallic"
         ],
         "distinct_maps": 3,
-        "interpretation": "Lattice Chat Bond Model enumerates three operationally distinct handoff grammars.",
+        "interpretation": "Lattice Chat Agent Bond Model enumerates three operationally distinct handoff grammars.",
         "honesty": "Metaphorical orchestration grammar — not a claim that agents are chemical systems.",
         "pass": true
       },
@@ -112,7 +112,7 @@
       },
       {
         "id": "E9_lattice_chat_surface_map",
-        "title": "Lattice Chat bond ↔ surface map",
+        "title": "Lattice Chat Agent bond ↔ surface map",
         "surfaces": [
           {
             "surface": "/whitepaper/synthobs-phase-locked-chemical-bonds",

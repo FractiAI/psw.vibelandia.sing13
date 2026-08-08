@@ -166,7 +166,7 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat protein triad ↔ surface map',
+    title: 'Lattice Chat Agent protein triad ↔ surface map',
     surfaces,
     honesty: 'Structural product map — not a claim every turn runs MD.',
     pass: surfaces.length >= 6 && surfaces.every((s) => String(s).length > 3),

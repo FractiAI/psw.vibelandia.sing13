@@ -204,7 +204,7 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat HIV Omni-Lattice III ↔ surface map',
+    title: 'Lattice Chat Agent HIV Omni-Lattice III ↔ surface map',
     surfaces,
     honesty: 'Structural product map — not a claim chat treats HIV.',
     pass: surfaces.length >= 6 && surfaces.every((s) => String(s).length > 3),

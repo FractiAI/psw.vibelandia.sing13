@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-pchpp-2026-07`  
 **Date:** July 30, 2026  
 **Framework:** SynthOBS · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · NSPFRNP · Omni-Lattice companions  
-**Lane:** Observation experiment (diagnostic protocol) — **not** a Lattice Chat engine integration  
+**Lane:** Observation experiment (diagnostic protocol) — **not** a Lattice Chat Agent engine integration  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-pchpp  
 **Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
@@ -29,7 +29,7 @@
 | **Architectural contrast agent** | $E_F \approx 1.618$ is used as an **informational scale key** for structuring observation prompts | That $E_F$ replaces $\hbar$, $c$, or $G$, or that phase-contrast microscopy is literally running inside an LLM |
 | **Executed experiments (E1–E9)** | Reproducible checks on template completeness, dual-layer fixtures, synthetic payload reduction, and observation-lane surfaces (**9/9** under documented metrics) | Live multi-vendor invoice proof; clinical genomics; quantum-gravity derivation |
 | **Triadic metaphor** | Software / mind / body map as an **architectural triangulation** for diagnostics | That chromosomes are software agents or that spacetime is a prompt |
-| **Product scope** | Catalog paper + **standalone** research repository for observers and architects | Wiring into the Lattice Chat **engine** / product runtime (explicitly out of scope) |
+| **Product scope** | Catalog paper + **standalone** research repository for observers and architects | Wiring into the Lattice Chat Agent **engine** / product runtime (explicitly out of scope) |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -45,9 +45,9 @@ By using El Gran Sol’s Fractal Constant ($E_F \approx 1.618$) as an informatio
 
 **What is known:** Phase-contrast and staining metaphors are established in microscopy; holographic/operator maps already appear in SynthOBS companions (Holographic Operators, Omni-Lattice). Multi-agent stacks commonly suffer prompt re-broadcast and token bloat.
 
-**What is novel (scoped):** A single **observation protocol** (phase-gate template + dual-layer schema + $E_F$ contrast framing) reusable across LLM, multi-agent, and bio-geometric diagnostic cases — shipped as a **standalone research repo**, not as Lattice Chat engine code.
+**What is novel (scoped):** A single **observation protocol** (phase-gate template + dual-layer schema + $E_F$ contrast framing) reusable across LLM, multi-agent, and bio-geometric diagnostic cases — shipped as a **standalone research repo**, not as Lattice Chat Agent engine code.
 
-**Key empirical findings (executed July 30, 2026):** The observation suite reports **9/9 pass** (`npm run research:synthobs-pchpp`). Findings include: (1) phase-gate template completeness for Shadow/Code keys; (2) exact $E_F$ / $\lambda_{\mathrm{EGS}}$ contrast-agent identities; (3) dual-layer schema across ≥3 domain fixtures; (4) Shadow vs Code lexical separation (mean Jaccard $< 0.45$); (5) synthetic token-routing fixture shows **41.8%** payload reduction under delta-only handoff vs full re-prompt ($1000 \to 582$ tokens; $\Delta S = 0.42$ on the authored boundary score); (6) zero-entropy paths remain compact relative to boundary writeups; (7) one protocol covers multi-agent, LLM, and bio-geometric domains; (8) $E_F$-scaled phase proxy competitive with linear on instruction vectors; (9) paper surfaces assert **observation lane** with **no Lattice Chat engine wiring**.
+**Key empirical findings (executed July 30, 2026):** The observation suite reports **9/9 pass** (`npm run research:synthobs-pchpp`). Findings include: (1) phase-gate template completeness for Shadow/Code keys; (2) exact $E_F$ / $\lambda_{\mathrm{EGS}}$ contrast-agent identities; (3) dual-layer schema across ≥3 domain fixtures; (4) Shadow vs Code lexical separation (mean Jaccard $< 0.45$); (5) synthetic token-routing fixture shows **41.8%** payload reduction under delta-only handoff vs full re-prompt ($1000 \to 582$ tokens; $\Delta S = 0.42$ on the authored boundary score); (6) zero-entropy paths remain compact relative to boundary writeups; (7) one protocol covers multi-agent, LLM, and bio-geometric domains; (8) $E_F$-scaled phase proxy competitive with linear on instruction vectors; (9) paper surfaces assert **observation lane** with **no Lattice Chat Agent engine wiring**.
 
 ---
 
@@ -155,7 +155,7 @@ Multi-agent coding stations frequently suffer from high latency and context exha
 | E6 | Zero-entropy path | Compact optimization vectors |
 | E7 | Scale-invariant domains | multi-agent · llm · bio-geometric |
 | E8 | Phase coherence proxy | $E_F$ vs linear |
-| E9 | Observation lane | No Lattice Chat engine wiring |
+| E9 | Observation lane | No Lattice Chat Agent engine wiring |
 
 Run: `npm run research:synthobs-pchpp` → [`data/empirical_report.json`](../research/synthobs-pchpp/data/empirical_report.json).
 
@@ -163,7 +163,7 @@ Run: `npm run research:synthobs-pchpp` → [`data/empirical_report.json`](../res
 
 ## 5. Conclusion & governance
 
-PCHPP turns holographic / triadic metaphors into a **practical observation tool**: stain the window, read Shadow and Code apart, and keep claims inside honesty tiers. It is deliberately a **standalone observation experiment** for architects and researchers — not a Lattice Chat product-engine feature.
+PCHPP turns holographic / triadic metaphors into a **practical observation tool**: stain the window, read Shadow and Code apart, and keep claims inside honesty tiers. It is deliberately a **standalone observation experiment** for architects and researchers — not a Lattice Chat Agent product-engine feature.
 
 ### Fair Exchange clause
 
@@ -171,7 +171,7 @@ Fair Exchange Policy in Effect: computational token usage, diagnostic routing, a
 
 ### Falsification
 
-This paper is weakened if: (a) the phase-gate template cannot be shown to enforce dual-layer structure; (b) the empirical suite fails reproducibly; (c) authors claim Lattice Chat engine integration or physics replacement without new receipts.
+This paper is weakened if: (a) the phase-gate template cannot be shown to enforce dual-layer structure; (b) the empirical suite fails reproducibly; (c) authors claim Lattice Chat Agent engine integration or physics replacement without new receipts.
 
 ### Surfaces
 

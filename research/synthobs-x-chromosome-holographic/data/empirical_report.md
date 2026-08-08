@@ -187,7 +187,7 @@
 }
 ```
 
-### E9_lattice_surfaces — Lattice Chat X-script ↔ surface map
+### E9_lattice_surfaces — Lattice Chat Agent X-script ↔ surface map
 
 - **Pass:** `true`
 - **Honesty:** Structural product map — not a claim every turn runs X-inactivation.
@@ -195,7 +195,7 @@
 ```json
 {
   "id": "E9_lattice_surfaces",
-  "title": "Lattice Chat X-script ↔ surface map",
+  "title": "Lattice Chat Agent X-script ↔ surface map",
   "surfaces": [
     "/whitepaper/synthobs-x-chromosome-holographic",
     "/lattice/learn",

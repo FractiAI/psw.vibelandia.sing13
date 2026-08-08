@@ -4,7 +4,7 @@
 
 **Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat engine runtime wiring)  
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
 **Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`  
 **Registry ID:** `synthobs-tbme-blackhole-filaments-reno-2026-08`  
@@ -32,7 +32,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **Evaporation-suppression model** | Nested-shell $R_n$ feedback yields a **model identity** $P_{\mathrm{net}}=0$ / $\Delta S\to 0$ inside the lens | That Hawking radiation is experimentally cancelled for $m_e$; that $\Delta S=0$ is a thermodynamic laboratory proof |
 | **Protocol lane (executed)** | Algebraic / protocol suite: $E_F$ identities, $R_n$, shell facet sum, flux quantum form, net-power cancellation identity, interpretive scorecard | That a Kerr-ring interferometry / SQUID filament dump is archived here for 2026-08-01 |
 | **Comparative scorecard** | Point-charge SM vs Toroidal BH Filamental scores are **rubric / interpretive** | That 99.2/100 is SI accuracy of nature |
-| **Applications** | Filamental Context Networks as multi-agent routing metaphor; $A_{\mathrm{squeezed}}$ qubit / ZPE stories as operator poetry | Guaranteed ZPE harvesting hardware, clinical therapies, or Lattice Chat runtime auto-wiring |
+| **Applications** | Filamental Context Networks as multi-agent routing metaphor; $A_{\mathrm{squeezed}}$ qubit / ZPE stories as operator poetry | Guaranteed ZPE harvesting hardware, clinical therapies, or Lattice Chat Agent runtime auto-wiring |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 

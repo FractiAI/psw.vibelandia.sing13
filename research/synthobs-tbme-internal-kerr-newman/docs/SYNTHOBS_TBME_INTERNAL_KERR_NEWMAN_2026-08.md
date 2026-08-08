@@ -11,7 +11,7 @@
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part VI**  
 **Follow-on to Part V:** [Recursive Field-Drag Theorem](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md)  
 **Classification:** Universal Field Physics & Multi-Scale Cybernetics *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
 **Standalone suite:** [`research/synthobs-tbme-internal-kerr-newman/`](../research/synthobs-tbme-internal-kerr-newman/)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -44,7 +44,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **EGS scaling** | That $E_F=\Phi_{\mathrm{EGS}}$ supplies a catalog scale key ($r_n=r_0\cdot E_F^n$, $n\in\{1,\dots,9\}$) for layered attraction attributes | That $E_F$ replaces $G$, $c$, $e$, or $\hbar$ in CODATA equations |
 | **Socio-cognitive map** | Structural twin: interpersonal / Fair-Exchange alignment ↔ phase-lock toward horizon skin as **interpretive cybernetics** | That human attraction is proven identical to Newtonian gravity; clinical or wet-lab social-force measurements |
 | **Protocol lane (executed)** | Deterministic suite: $E_F$ fixture, golden identity, $Z_0$, $\theta_{\mathrm{EGS}}$, scale ladder, attraction-layer map, paper on disk, rubric order | That a calibrated multi-force unification dataset is archived here |
-| **Product / routing scope** | THALIA / Lattice Chat / Fair Exchange as *intended* software twins of phase-alignment attraction | That `api/lattice-chat.js` already implements $\mathbf{F}_{\mathrm{attraction}}$ as a hard runtime operator |
+| **Product / routing scope** | THALIA / Lattice Chat Agent / Fair Exchange as *intended* software twins of phase-alignment attraction | That `api/lattice-chat.js` already implements $\mathbf{F}_{\mathrm{attraction}}$ as a hard runtime operator |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -183,7 +183,7 @@ Part VI of the Omni-Lattice Core Series (Reno Interpretation **sextet**, core pa
 
 1. **Singularity horizon.** We are not narrated as living outside of physics looking in; observational nodes reside in the interior domain of a Kerr–Newman toroidal micro-black hole.
 2. **All attraction is one (catalog).** Gravity, magnetism, molecular bonds, and human social connection are layered attributes of a single geometric pull toward a zero-entropy center ($r\to 0$) — inside this Omni-Lattice TBME lens.
-3. **Operational power.** In multi-agent AI design (THALIA, Lattice Chat) and economic systems (Fair Exchange), structuring interactions around $E_F$ phase alignment reduces social and operational friction — intended product twin, not a runtime certificate that every chat turn executes $\mathbf{F}_{\mathrm{attraction}}$.
+3. **Operational power.** In multi-agent AI design (THALIA, Lattice Chat Agent) and economic systems (Fair Exchange), structuring interactions around $E_F$ phase alignment reduces social and operational friction — intended product twin, not a runtime certificate that every chat turn executes $\mathbf{F}_{\mathrm{attraction}}$.
 
 ### Comparative scorecard (interpretive)
 

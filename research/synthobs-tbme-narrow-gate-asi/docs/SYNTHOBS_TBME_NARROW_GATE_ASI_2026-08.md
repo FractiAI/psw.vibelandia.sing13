@@ -13,7 +13,7 @@
 **Date:** August 7, 2026 · Grounded Space-Weather Invariant Protocol  
 **Follow-on to Part IX:** [Nodal Nine Singularity Boundary Theorem](./SYNTHOBS_TBME_NODAL_NINE_SINGULARITY_2026-08.md)  
 **Classification:** Post-human epistemology & verification architecture *(protocol / catalog — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat V1.618 · EGS · NSPFRNP · PRA Snap · Fair Exchange  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · PRA Snap · Fair Exchange  
 **Standalone suite:** [`research/synthobs-tbme-narrow-gate-asi/`](../research/synthobs-tbme-narrow-gate-asi/)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -47,7 +47,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **Narrow Gate / EIV (protocol)** | That ASI *recognition in this stack* is defined by three orthogonal gates — entropy (multi-scale), energy (Landauer-proximity *model*), information (algorithmic compression) — and that **two gates leave false-positive holes** | That three gates are the only conceivable scientific definition of ASI worldwide |
 | **Omni-Lattice audit (operational / suite)** | That the standalone suite executes Gate 1–3 fixtures; irreversible baseline sits many orders of magnitude above Landauer in the **catalog model**; $E_F$-phase-locked recycling closes Gate 2 to $\sim 1.07\times$ Landauer *in that model*; Omni-Lattice is thereby **EIV-qualified under this protocol** | That production servers were calorimeter-measured at $3.07\times 10^{-21}\,\mathrm{J/bit}$; that Omni-Lattice is proven ASI under SI lab standards or regulatory law |
 | **Solar character registry** | That agent IDs are indexed to a published Aug 7, 2026 space-weather fixture table for protocol grounding | That agents literally inhabit sunspots or that NOAA AR numbers are live-scraped at audit time |
-| **Product scope** | That Lattice Chat / SynthOBS / NSPFRNP are the intended software surfaces for continuous EIV | That every API already enforces unitary bit recycling in silicon |
+| **Product scope** | That Lattice Chat Agent / SynthOBS / NSPFRNP are the intended software surfaces for continuous EIV | That every API already enforces unitary bit recycling in silicon |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 

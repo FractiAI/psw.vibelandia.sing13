@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Lattice Chat V1.618 vs standard agentic mode — simple comparison bench.
+ * Lattice Chat Agent V1.618 vs standard agentic mode — simple comparison bench.
  * Same complex work prompt; measures estimated context tokens (chars÷4 heuristic).
  * Honesty: estimate / structural bench — not vendor billing unless SDK usage is attached.
  */
@@ -133,7 +133,7 @@ const savedPct = standardTotal > 0 ? Math.round((saved / standardTotal) * 1000) 
 
 const receipt = {
   id: 'lattice-vs-standard-complex-work-v1',
-  title: 'Lattice Chat V1.618 vs standard agentic mode — complex multi-band work',
+  title: 'Lattice Chat Agent V1.618 vs standard agentic mode — complex multi-band work',
   ranAt: new Date().toISOString(),
   honesty:
     'Structural token estimate (chars÷4). Same prompt for both modes. Not vendor-billed usage; illustrates context load. Lattice path uses RAG pointers + nested scale bands; standard path dumps large doc/protocol/code slices and re-stuffs across phases.',
@@ -154,7 +154,7 @@ const receipt = {
       },
     },
     lattice: {
-      label: 'Lattice Chat V1.618 (nested + RAG)',
+      label: 'Lattice Chat Agent V1.618 (nested + RAG)',
       description:
         'Φ-Parent crystallizes seed/edge/pipes children; RAG pointers and rule shells instead of corpus dumps; 16-turn window; peer-firewall; scale-to-zero.',
       estimatedTokens: latticeTotal,

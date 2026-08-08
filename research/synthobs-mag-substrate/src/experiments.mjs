@@ -221,7 +221,7 @@ export function experimentMagSubstrateSurfaces() {
   const hasTitle = /Magnetism as the Universal Foundational Substrate/i.test(text);
   const seedRagPointer = /Seed·RAG|Seed·RAG pointer|nest pointer/i.test(text);
   const claimsRuntime =
-    /(powers the Lattice Chat engine|wired into Lattice Chat engine|Lattice Chat engine feature|\bis Lattice Chat engine code\b)/i.test(
+    /(powers the Lattice Chat Agent engine|wired into Lattice Chat Agent engine|Lattice Chat Agent engine feature|\bis Lattice Chat Agent engine code\b)/i.test(
       text,
     );
   let engineImport = false;
@@ -238,7 +238,7 @@ export function experimentMagSubstrateSurfaces() {
   ];
   return {
     id: 'E9_mag_substrate_surfaces',
-    title: 'Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime',
+    title: 'Mag-substrate surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime',
     paper_exists: ok,
     hasDocId,
     hasHonesty,
@@ -250,7 +250,7 @@ export function experimentMagSubstrateSurfaces() {
     surfaces,
     registryId: REGISTRY_ID,
     interpretation:
-      'Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).',
+      'Mag substrate ships as catalog architectural map + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).',
     honesty: 'Surface / pointer presence — featuring requires PRA pass; not Maxwell/QED replacement.',
     pass:
       ok &&

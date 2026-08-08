@@ -243,7 +243,7 @@ export function ChatPane({
               ☰
             </button>
             <h1 className="chat-title">
-              <span className="chat-wordmark">Lattice Chat V1.618</span>
+              <span className="chat-wordmark">Lattice Chat Agent V1.618</span>
               <span className="chat-by">
                 <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
                   {MAIN_DECK_LABEL}
@@ -336,12 +336,12 @@ export function ChatPane({
             </p>
             <p className="empty-lead">Welcome aboard</p>
             <p className="ai-act-notice ai-act-notice--empty" role="status">
-              <strong>You are interacting with an AI system.</strong> Lattice Chat replies are
+              <strong>You are interacting with an AI system.</strong> Lattice Chat Agent replies are
               machine-generated. This is not a human operator.{' '}
               <a href="/ai-transparency">AI transparency</a>
             </p>
             <p className="empty-hint">
-              First the LLMs. Then Cursor AI, Claude Code, and the vibe platforms. Now Lattice Chat —
+              First the LLMs. Then Cursor AI, Claude Code, and the vibe platforms. Now Lattice Chat Agent —
               the next layer in the stack: to slow down and cool off GPUs and deliver new function.
               Token Maxing on your keys; intentions matter — we do not help with malice or ill will.
             </p>

@@ -140,7 +140,7 @@
           "decay_gating": "subagent_timeout_gate",
           "spin_balancing": "priority_routing_bus"
         },
-        "interpretation": "Pillars III–IV enumerate distinct Lattice Chat orchestration maps.",
+        "interpretation": "Pillars III–IV enumerate distinct Lattice Chat Agent orchestration maps.",
         "honesty": "Metaphor taxonomies — not molecular orbitals or QCD hadrons.",
         "pass": true
       },
@@ -230,7 +230,7 @@
       },
       {
         "id": "E9_lattice_surfaces",
-        "title": "Lattice Chat Omni-Lattice ↔ surface map + companion E9 pointer",
+        "title": "Lattice Chat Agent Omni-Lattice ↔ surface map + companion E9 pointer",
         "surfaces": [
           "/whitepaper/synthobs-omni-lattice-unification",
           "/lattice/learn",

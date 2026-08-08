@@ -366,7 +366,7 @@ export function experimentTraversalLatency() {
     flat_mean_visits: flatMean,
     reduction_factor: flatMean / nestedMean,
     interpretation:
-      'Maps sentence token count n to nested parent+leaf visits vs flat peer mesh C=n(n−1)/2 — topology proxy aligned with Lattice Chat nesting.',
+      'Maps sentence token count n to nested parent+leaf visits vs flat peer mesh C=n(n−1)/2 — topology proxy aligned with Lattice Chat Agent nesting.',
     honesty: 'Visit counts only; paper ms latency table is illustrative unless separately instrumented.',
     pass: nestedMean < flatMean && nested.length >= 10,
   };

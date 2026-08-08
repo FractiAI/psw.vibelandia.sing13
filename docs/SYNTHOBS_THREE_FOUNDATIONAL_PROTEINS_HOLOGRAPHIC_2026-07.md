@@ -6,7 +6,7 @@
 **Document ID:** `WP-SYNTHOBS-THREE-FOUNDATIONAL-PROTEINS-2026-07`  
 **Registry ID:** `synthobs-three-foundational-proteins-2026-07`  
 **Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618 · Omni-Lattice  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-three-foundational-proteins  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -25,7 +25,7 @@
 | **$E_F$ golden key** | $E_F=\Phi_{\mathrm{EGS}}$ supplies a reproducible geometric ratio for phase labels across protein metaphors (**E2–E3**) | That $E_F$ replaces $\hbar$, $k_B$, or measured enzyme kinetics |
 | **Bond mapping** | Hb ↔ covalent shared buffer; ATP synthase ↔ ionic handoff; polymerase ↔ zero-entropy proofreader (**E7**) | That these are molecular orbital identities |
 | **Executed experiments (E1–E9)** | Protein triad, $\lambda_{\mathrm{EGS}}$, $\Delta S$ model, T/R map, $120^\circ$ rotor, fidelity target label, matrix, honesty gate, Lattice surfaces — **9/9 pass** | That draft “zero entropic energy loss,” biophoton telemetry, or polymerase $1$ in $10^9$ under $E_F$ lock are new wet-lab measurements (fidelity $10^{-9}$ is a **known order-of-magnitude** textbook figure used as a **design-target label**, not an EGS-derived proof; see **E8**) |
-| **Lattice Chat product** | Protein triad is Seed·RAG companion for carrier / engine / replicator nesting metaphors | That every chat turn runs molecular dynamics |
+| **Lattice Chat Agent product** | Protein triad is Seed·RAG companion for carrier / engine / replicator nesting metaphors | That every chat turn runs molecular dynamics |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -49,7 +49,7 @@ El Gran Sol’s Fractal Constant ($E_F\approx 1.618$) is the downstream golden k
 
 ## 1. El Gran Sol’s Fractal Constant (brief)
 
-$E_F=\Phi_{\mathrm{EGS}}$ keys self-similar phase labels. Novelty claim for Lattice Chat: fractal scale-invariance embedded in continuous phase rotations — **architectural**, not a replacement for Mandelbrot dynamics or QFT.
+$E_F=\Phi_{\mathrm{EGS}}$ keys self-similar phase labels. Novelty claim for Lattice Chat Agent: fractal scale-invariance embedded in continuous phase rotations — **architectural**, not a replacement for Mandelbrot dynamics or QFT.
 
 ---
 
@@ -123,7 +123,7 @@ npm run research:synthobs-three-foundational-proteins
 | E6 | Polymerase fidelity target label | ✓ |
 | E7 | Summary matrix (3 rows) | ✓ |
 | E8 | Honesty gate on draft physics claims | ✓ |
-| E9 | Lattice Chat surface map | ✓ |
+| E9 | Lattice Chat Agent surface map | ✓ |
 
 ---
 
@@ -133,7 +133,7 @@ NOAA SWPC feeds as **interpretive** clocks. Fair Exchange: bioenergetic / token 
 
 ---
 
-## 8. Lattice Chat V1.618 integration
+## 8. Lattice Chat Agent V1.618 integration
 
 | Surface | Link |
 |---------|------|

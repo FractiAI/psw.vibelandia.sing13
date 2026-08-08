@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Phase-Locked Chemical Bond Metaphors — Lattice Chat Bond Model empirical suite",
+  "description": "Phase-Locked Chemical Bond Metaphors — Lattice Chat Agent Bond Model empirical suite",
   "license": "MIT",
   "scripts": {
     "research": "node scripts/run_empirical_pipeline.mjs"

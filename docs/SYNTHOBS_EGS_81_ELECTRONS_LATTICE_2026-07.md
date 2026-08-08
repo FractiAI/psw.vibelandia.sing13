@@ -6,14 +6,14 @@
 **Document ID:** `WP-SYNTHOBS-EGS-81-ELECTRONS-2026-07`  
 **Registry ID:** `synthobs-egs-81-electrons-2026-07`  
 **Date:** July 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-egs-81-electrons  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Empirical pipeline:** `npm run research:synthobs-egs-81-electrons` · [`empirical_report.json`](../research/synthobs-egs-81-electrons/data/empirical_report.json)  
 **Companions:** [Planck–1.6 bridge / $k/81$](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Euler–EGS phase lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md) · [Awareness Singularities $S_0$–$S_{81}$](./AWARENESS_SINGULARITIES_0_81_ONE_PAGER_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)
 
-**Keywords:** EGS; $E_F$; 81-digit register; atomic shells; phase singularities; Pauli metaphor; Thallium; Lattice Chat
+**Keywords:** EGS; $E_F$; 81-digit register; atomic shells; phase singularities; Pauli metaphor; Thallium; Lattice Chat Agent
 
 ---
 
@@ -111,7 +111,7 @@ npm run research:synthobs-egs-81-electrons
 
 ---
 
-## 5. Lattice Chat V1.618 integration
+## 5. Lattice Chat Agent V1.618 integration
 
 | Surface | Link |
 |---------|------|
@@ -142,7 +142,7 @@ Platform credits and catalog featuring remain subject to reciprocal balancing un
 
 ## 8. Conclusion
 
-The 81-digit electronic lattice supplies a **peer-facing architectural** map from $E_F$ singularities to $Z\le 81$ shell addressability, with a **9/9** empirical suite and explicit honesty gates on draft abstract figures. Lattice Chat V1.618 carries the paper as a Seed·RAG / learn-more companion for Goldilocks stewards working atomic-scale ↔ agent-scale recursion.
+The 81-digit electronic lattice supplies a **peer-facing architectural** map from $E_F$ singularities to $Z\le 81$ shell addressability, with a **9/9** empirical suite and explicit honesty gates on draft abstract figures. Lattice Chat Agent V1.618 carries the paper as a Seed·RAG / learn-more companion for Goldilocks stewards working atomic-scale ↔ agent-scale recursion.
 
 ---
 

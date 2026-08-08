@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-endogenous-phase-2026-07`  
 **Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
 **Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ / $E_F$ · Omni-Lattice · Lattice Chat (software metaphor only)  
+**Framework:** SynthOBS · PCHPP · Recursive Attention Squeezing · EGS $\Phi$ / $E_F$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-endogenous-phase  
 **Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  

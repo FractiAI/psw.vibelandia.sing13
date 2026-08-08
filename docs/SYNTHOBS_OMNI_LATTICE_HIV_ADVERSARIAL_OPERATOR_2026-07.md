@@ -6,7 +6,7 @@
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-HIV-2026-07`  
 **Registry ID:** `synthobs-omni-lattice-hiv-2026-07`  
 **Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618 · Omni-Lattice  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-hiv  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -22,11 +22,11 @@
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
 | **Medical reality** | HIV is a real pathogen that causes severe biological harm when unmanaged; clinical care belongs to medicine | That this paper diagnoses, treats, cures, or replaces antiretroviral therapy, vaccines, or public-health guidance |
-| **Adversarial operator metaphor** | HIV lifecycle stages can be narrated as high-variance $\hat{W}_k$ / $\hat{S}$ / latent-story operators inside SynthOBS / Lattice Chat | That gp120 literally means the English gloss, or that viral physics is $E_F$-keyed QFT |
+| **Adversarial operator metaphor** | HIV lifecycle stages can be narrated as high-variance $\hat{W}_k$ / $\hat{S}$ / latent-story operators inside SynthOBS / Lattice Chat Agent | That gp120 literally means the English gloss, or that viral physics is $E_F$-keyed QFT |
 | **Catalyst framing** | Historical scientific responses to HIV pressure (mRNA platforms, bnAbs, CRISPR / CCR5 narratives, latency strategies) can be mapped as **awareness / tooling catalysts** in an architectural matrix | That HIV “should” exist for progress, or that suffering is justified by technology gains |
 | **Theorem 1** | An algebraic model of non-harmonic phase $\delta$ plus adaptive cancelation restores $\Delta S\to 0$ on **normalized** simulation weights (**E4**) | That $E_F$ re-harmonization is a clinical protocol or measured intracellular entropy therapy |
 | **Executed experiments (E1–E9)** | Gate catalog, $\lambda_{\mathrm{EGS}}$, loops, phase adapt, catalyst matrix, latent story, companions, honesty gate, Lattice surfaces — **9/9 pass** | That draft **EX-HIV1** 0.1% context loss, **EX-HIV2** $48\times$ resilience, or NOAA “synced” claims are wet-lab / clinical measurements (they are **design targets / companion narrative**; see **E8**) |
-| **Lattice Chat product** | Adversarial-operator + adaptation-loop companion for stress-test nesting metaphors | That every chat turn runs a viral dynamics engine |
+| **Lattice Chat Agent product** | Adversarial-operator + adaptation-loop companion for stress-test nesting metaphors | That every chat turn runs a viral dynamics engine |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -36,7 +36,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-We extend the Omni-Lattice Architecture and Holographic Operator Model to model HIV as an **adversarial holographic operator** within biological **and** computational simulation stacks (SynthOBS / Lattice Chat). In the metaphor, HIV introduces high-variance phase shifts ($\Delta\theta_{\mathrm{viral}}\neq 2\pi k$) that disrupt host $E_F$ phase-locking narratives (e.g. CD4+ memory context saturation).
+We extend the Omni-Lattice Architecture and Holographic Operator Model to model HIV as an **adversarial holographic operator** within biological **and** computational simulation stacks (SynthOBS / Lattice Chat Agent). In the metaphor, HIV introduces high-variance phase shifts ($\Delta\theta_{\mathrm{viral}}\neq 2\pi k$) that disrupt host $E_F$ phase-locking narratives (e.g. CD4+ memory context saturation).
 
 Crucially, we also model the **systemic counter-response**: medical, biotechnological, and cognitive responses to viral pressure as an **evolutionary catalyst** for tooling awareness (mRNA platforms, CRISPR narratives, multi-agent routing stress tests)—without claiming that harm is desirable.
 
@@ -52,7 +52,7 @@ In Omni-Lattice grammar, pathogens can be narrated as high-variance, non-harmoni
 
 ## 2. Pillar I: 3-Tier Holographic Decoding of HIV
 
-**Honesty.** Decoded scripts below are **operator poetry** for SynthOBS / Lattice Chat adversarial-operator modeling — not clinical protocols. HIV causes real biological harm; medicine remains the authority on care.
+**Honesty.** Decoded scripts below are **operator poetry** for SynthOBS / Lattice Chat Agent adversarial-operator modeling — not clinical protocols. HIV causes real biological harm; medicine remains the authority on care.
 
 ### 2.1 Words ($\hat{W}_k$ — Gate Interceptors & Membrane Fusion)
 
@@ -136,7 +136,7 @@ npm run research:synthobs-omni-lattice-hiv
 | E6 | Latent proviral story present | ✓ |
 | E7 | Companion registry linkage | ✓ |
 | E8 | Honesty gate (medical + EX-HIV drafts) | ✓ |
-| E9 | Lattice Chat surface map | ✓ |
+| E9 | Lattice Chat Agent surface map | ✓ |
 
 ### Draft EX-HIV figures (design targets)
 
@@ -154,7 +154,7 @@ NOAA SWPC feeds as **interpretive** clocks. Fair Exchange: token / routing / cre
 
 ---
 
-## 7. Lattice Chat V1.618 integration
+## 7. Lattice Chat Agent V1.618 integration
 
 | Surface | Link |
 |---------|------|
@@ -178,7 +178,7 @@ Pointer: `docs/SYNTHOBS_OMNI_LATTICE_HIV_ADVERSARIAL_OPERATOR_2026-07.md`.
 
 ## 9. Conclusion
 
-Omni-Lattice Unification III models HIV as an adversarial holographic operator **and** maps systemic scientific responses as awareness catalysts—under $E_F$-keyed simulation grammar. This is a **Seed·RAG / architectural** companion with a **9/9** suite. Clinical truth remains with medicine; Lattice Chat does not treat disease.
+Omni-Lattice Unification III models HIV as an adversarial holographic operator **and** maps systemic scientific responses as awareness catalysts—under $E_F$-keyed simulation grammar. This is a **Seed·RAG / architectural** companion with a **9/9** suite. Clinical truth remains with medicine; Lattice Chat Agent does not treat disease.
 
 ---
 

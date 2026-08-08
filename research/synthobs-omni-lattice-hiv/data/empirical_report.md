@@ -190,7 +190,7 @@
 }
 ```
 
-### E9_lattice_surfaces — Lattice Chat HIV Omni-Lattice III ↔ surface map
+### E9_lattice_surfaces — Lattice Chat Agent HIV Omni-Lattice III ↔ surface map
 
 - **Pass:** `true`
 - **Honesty:** Structural product map — not a claim chat treats HIV.
@@ -198,7 +198,7 @@
 ```json
 {
   "id": "E9_lattice_surfaces",
-  "title": "Lattice Chat HIV Omni-Lattice III ↔ surface map",
+  "title": "Lattice Chat Agent HIV Omni-Lattice III ↔ surface map",
   "surfaces": [
     "/whitepaper/synthobs-omni-lattice-hiv",
     "/lattice/learn",

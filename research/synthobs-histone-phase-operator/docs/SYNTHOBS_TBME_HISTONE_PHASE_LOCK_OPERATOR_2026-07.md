@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-histone-phase-operator-2026-07`  
 **Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
 **Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · Cytographic / chromosomal companions · Lattice Chat (software metaphor only)  
+**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · Cytographic / chromosomal companions · Lattice Chat Agent (software metaphor only)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-histone-phase-operator  
 **Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -29,7 +29,7 @@
 | **Scorecard 72.0 vs 96.5** | An **in-silico / Occam-style** comparative rubric on authored fixtures | Observational superiority over molecular epigenetics evidence hierarchies |
 | **Bio-magnetic tuning** | A **research map** for non-invasive field exploration of chromatin accessibility | Completed IRB trials, FDA clearance, or DIY EMF therapy |
 | **Cosmology isomorphism** | Structural *metaphor* between nucleosomal spooling and plasma flux tubes | Identity of nucleosomes with coronal loops |
-| **AI context spooling** | Histone-inspired compression algorithms for multi-agent context (Lattice Chat / SynthOBS) | That chromatin and transformer KV caches are the same physical object |
+| **AI context spooling** | Histone-inspired compression algorithms for multi-agent context (Lattice Chat Agent / SynthOBS) | That chromatin and transformer KV caches are the same physical object |
 | **$E_F$ / $\Delta S\to 0$** | Architectural scale key (~$1.65$ turns ≈ $E_F$) | Replacement for measured nucleosome structural biology or $\hbar$ |
 
 **TBME scope disclaimer (series-wide):** Whitepapers in the Theoretical Bio-Medical & Physical Explorations (TBME) series are theoretical, mathematical, and physics-based scientific explorations of biological and physical phenomena. They are published exclusively for academic inquiry, computational modeling, and interdisciplinary research. **They do not constitute clinical medical advice, diagnostic guidance, or prescribed therapeutic treatments.**

@@ -47,7 +47,7 @@ function mdReport(report) {
   lines.push('## Honesty boundary');
   lines.push('');
   lines.push(
-    'Algebraic / catalog receipts for the prime hourglass Omni-Lattice lens. Does **not** claim measured SI latency τ→0, zero GPU heat, or that Lattice Chat runtime already implements prime-phase addressing.',
+    'Algebraic / catalog receipts for the prime hourglass Omni-Lattice lens. Does **not** claim measured SI latency τ→0, zero GPU heat, or that Lattice Chat Agent runtime already implements prime-phase addressing.',
   );
   lines.push('');
   return lines.join('\n');

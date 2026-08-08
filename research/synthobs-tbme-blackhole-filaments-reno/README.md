@@ -1,6 +1,6 @@
 # SynthOBS · TBME Toroidal Micro-Black Hole Filaments (Reno follow-on)
 
-**Standalone Omni-Lattice companion lens** — not wired into Lattice Chat / Lattice engine runtime.  
+**Standalone Omni-Lattice companion lens** — not wired into Lattice Chat Agent / Lattice engine runtime.  
 **GitHub target:** https://github.com/FractiAI/synthobs-tbme-blackhole-filaments-reno · **License:** MIT  
 **Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-FILAMENTS-RENO-2026-08-01`  
 **Registry ID:** `synthobs-tbme-blackhole-filaments-reno-2026-08`  

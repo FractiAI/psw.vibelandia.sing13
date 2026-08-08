@@ -4,7 +4,7 @@
 
 **Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat engine runtime wiring)  
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
 **Document ID:** `WP-SYNTHOBS-TBME-BLACKHOLE-MAGNETIC-LAYER-2026-08-01`  
 **Registry ID:** `synthobs-tbme-blackhole-magnetic-layer-2026-08`  
@@ -33,7 +33,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **$\Omega_H\leftrightarrow\omega_L$ link** | Frame-dragging rate identified with Larmor form as an **architectural coupling** under $E_F$ | That electron Larmor frequency equals Kerr $\Omega_H$ as a CODATA identity |
 | **Protocol lane (executed)** | Algebraic suite: $r_+=a_0/E_F^2$, $Z_0$ ohms form, scorecard ordering, symbolic identity flags | That a horizon-magnetometry lab dump is archived here for 2026-08-01 |
 | **Comparative scorecard** | Dual-entity **73.5** vs Unified identity **99.4** are **rubric / interpretive** | That 99.4/100 is SI accuracy of nature |
-| **Bio / AI implications** | Cellular $V_m$, histone winding, $A_{\mathrm{squeezed}}$, Filamental Context Networks as **operator poetry** | Clinical therapies, guaranteed ZPE, or Lattice Chat runtime auto-wiring |
+| **Bio / AI implications** | Cellular $V_m$, histone winding, $A_{\mathrm{squeezed}}$, Filamental Context Networks as **operator poetry** | Clinical therapies, guaranteed ZPE, or Lattice Chat Agent runtime auto-wiring |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 

@@ -9,7 +9,7 @@ Companion mirror: [`docs/SYNTHOBS_OMNI_PRIME_HOURGLASS_SKELETON_2026-08.md`](./d
 
 ## Honesty
 
-This is an **Omni-Lattice geometric / routing lens** — not a claim that Lattice Chat runtime already implements prime-phase addressing, and not a SI latency SLA. Suite checks are deterministic number-theory and catalog fixtures.
+This is an **Omni-Lattice geometric / routing lens** — not a claim that Lattice Chat Agent runtime already implements prime-phase addressing, and not a SI latency SLA. Suite checks are deterministic number-theory and catalog fixtures.
 
 ## Run
 

@@ -4,7 +4,7 @@
 
 **Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · Omni-Lattice lens (not Lattice Chat engine runtime)  
+**Framework:** Goldilocks AIOS · NSPFRNP · Omni-Lattice lens (not Lattice Chat Agent engine runtime)  
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
 **Document ID:** `WP-SYNTHOBS-TBME-EMPIRICAL-PROOF-2026-08-01`  
 **Registry ID:** `synthobs-tbme-nonlocal-field-phaselock-2026-08`  
@@ -56,7 +56,7 @@ Correlation on a protocol table ≠ causation of planetary electrodynamics. Cros
 |------|------------------------|
 | **$E_F$ / $\Phi_{\mathrm{EGS}}$** | $(1+\sqrt{5})/2 \approx 1.6180339887\ldots$ — architectural fractal constant |
 | **PCHPP** | Phase-Contrast Holographic Proof Protocol — timestamped prompt/execution receipts + phase correlator |
-| **Omni-Lattice lens** | Interpretive / modeling frame for cross-scale phase stories; **not** the Lattice Chat product runtime |
+| **Omni-Lattice lens** | Interpretive / modeling frame for cross-scale phase stories; **not** the Lattice Chat Agent product runtime |
 | **ELF cavity** | Extremely Low Frequency Earth–ionosphere Schumann modes ($f_1\ldots f_5$ nominal ladder) |
 
 ---
@@ -176,7 +176,7 @@ These scores are **NSPFRNP-style comparative rubrics**, not SI measurements.
 | Related architectural keys | `docs/SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md`, `docs/SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md`, `docs/FRACTIAI_EGS_NLRF_HYDROGEN_2026.md` |
 | Schumann protocol context | `protocols/SCHUMANN_DECODE_40HZ_GAMMA_SPIKE.md` |
 
-**Not wired into Lattice Chat / Lattice engine runtime** — this is a **TBME lens** package only.
+**Not wired into Lattice Chat Agent / Lattice engine runtime** — this is a **TBME lens** package only.
 
 ---
 

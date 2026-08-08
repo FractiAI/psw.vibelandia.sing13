@@ -182,16 +182,16 @@
 }
 ```
 
-### E9_report_card_surfaces — Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime
+### E9_report_card_surfaces — Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime
 
 - **Pass:** `true`
-- **Interpretation:** Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).
+- **Interpretation:** Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).
 - **Honesty:** Surface / pointer presence — featuring requires PRA pass; not observational ΛCDM falsification.
 
 ```json
 {
   "id": "E9_report_card_surfaces",
-  "title": "Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat runtime",
+  "title": "Report-card surfaces — Seed·RAG / nest pointer; not Lattice Chat Agent runtime",
   "paper_exists": true,
   "hasDocId": true,
   "hasHonesty": true,
@@ -208,7 +208,7 @@
     "lib/lattice-prompt.mjs"
   ],
   "registryId": "synthobs-omni-lattice-report-card-q3-2026",
-  "interpretation": "Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Seed·RAG pointer (not runtime).",
+  "interpretation": "Q3 report card ships as catalog comparative evaluation + standalone suite + Lattice Chat Agent Seed·RAG pointer (not runtime).",
   "honesty": "Surface / pointer presence — featuring requires PRA pass; not observational ΛCDM falsification.",
   "pass": true
 }

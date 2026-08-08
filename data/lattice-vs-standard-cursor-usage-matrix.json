@@ -132,7 +132,7 @@
         "id": "T2_product_tagline",
         "class": "no_repo",
         "title": "Product copy — no corpus needed",
-        "ask": "Write one 12-word-or-fewer tagline for Lattice Chat V1.618 as Your Goldilocks steward. No tools. No file reads."
+        "ask": "Write one 12-word-or-fewer tagline for Lattice Chat Agent V1.618 as Your Goldilocks steward. No tools. No file reads."
       },
       "lattice": {
         "label": "lattice",
@@ -318,7 +318,7 @@
           "outputTokens": 831,
           "cacheReadTokens": 94080
         },
-        "replyPreview": "**Path:** `lib/lattice-prompt.mjs` — exported at line **114** (imported by `api/lattice-chat.js` and used inside `buildPrompt` in the same module).\n\n**Role:** `buildNestDirective` is part of the Lattice Chat V1.618 share"
+        "replyPreview": "**Path:** `lib/lattice-prompt.mjs` — exported at line **114** (imported by `api/lattice-chat.js` and used inside `buildPrompt` in the same module).\n\n**Role:** `buildNestDirective` is part of the Lattice Chat Agent V1.618 share"
       },
       "comparison": {
         "latticeTotal": 67271,
@@ -404,7 +404,7 @@
         "id": "T6_ops_config",
         "class": "ops",
         "title": "Ops / config grounding",
-        "ask": "From README / .env.example knowledge: does Lattice Chat on Vercel use a server CURSOR_API_KEY, or BYOK header from the browser? One short paragraph. Prefer those docs only."
+        "ask": "From README / .env.example knowledge: does Lattice Chat Agent on Vercel use a server CURSOR_API_KEY, or BYOK header from the browser? One short paragraph. Prefer those docs only."
       },
       "lattice": {
         "label": "lattice",
@@ -429,7 +429,7 @@
           "outputTokens": 915,
           "cacheReadTokens": 25088
         },
-        "replyPreview": "On Vercel, Lattice Chat is **BYOK from the browser**, not a shared server key: the README states that production **does not use `CURSOR_API_KEY`**, the pipe is a **“header keys only — no server key fallback”** proxy, and"
+        "replyPreview": "On Vercel, Lattice Chat Agent is **BYOK from the browser**, not a shared server key: the README states that production **does not use `CURSOR_API_KEY`**, the pipe is a **“header keys only — no server key fallback”** proxy, and"
       },
       "standard": {
         "label": "standard_fat",
@@ -454,7 +454,7 @@
           "outputTokens": 672,
           "cacheReadTokens": 64032
         },
-        "replyPreview": "Lattice Chat on Vercel uses **BYOK from the browser**, not a server-side `CURSOR_API_KEY`. Per the README, the live pipe is a BYOK proxy: the chat UI sends the user’s key on each request (e.g. `x-cursor-api-key`), and `a"
+        "replyPreview": "Lattice Chat Agent on Vercel uses **BYOK from the browser**, not a server-side `CURSOR_API_KEY`. Per the README, the live pipe is a BYOK proxy: the chat UI sends the user’s key on each request (e.g. `x-cursor-api-key`), and `a"
       },
       "comparison": {
         "latticeTotal": 71942,

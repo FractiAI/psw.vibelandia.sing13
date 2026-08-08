@@ -60,7 +60,7 @@
       },
       {
         "id": "E6_metaphor_matrix",
-        "title": "Five-row P. barbatus ↔ Lattice Chat metaphor matrix",
+        "title": "Five-row P. barbatus ↔ Lattice Chat Agent metaphor matrix",
         "rows": [
           [
             "master_orchestrator",
@@ -115,7 +115,7 @@
       },
       {
         "id": "E9_lattice_surfaces",
-        "title": "Lattice Chat Pogonomyrmex Omni-Lattice V ↔ surface map",
+        "title": "Lattice Chat Agent Pogonomyrmex Omni-Lattice V ↔ surface map",
         "surfaces": [
           "/whitepaper/synthobs-omni-lattice-pogonomyrmex",
           "/lattice/learn",

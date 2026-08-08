@@ -1,4 +1,4 @@
-# Lattice Chat · Omni-Lattice Complete Layer Guide
+# Lattice Chat Agent · Omni-Lattice Complete Layer Guide
 
 **Authors:** FractiAI Research Group  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
@@ -6,17 +6,17 @@
 **Document ID:** `WP-LATTICE-OMNI-LAYER-GUIDE-2026-07`  
 **Registry ID:** `lattice-omni-complete-layer-guide-2026-07`  
 **Date:** 2026-08-08
-**Framework:** SynthOBS · Lattice Chat V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
+**Framework:** SynthOBS · Lattice Chat Agent V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
 **Questfest catalog:** [`/papers`](/papers) · pinned at top (`catalogPriority: 0`)  
 **Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)  
 **Sync:** `npm run sync:lattice-guide` · living paper index in **Appendix A**
 
-**Keywords:** Omni-Lattice engine; Lattice Chat; holographic operators; nested agents; Seed·RAG; EGS; $E_F$; 81-register; ILAM; PCHPP; Reno Interpretation; synthesis guide
+**Keywords:** Omni-Lattice engine; Lattice Chat Agent; holographic operators; nested agents; Seed·RAG; EGS; $E_F$; 81-register; ILAM; PCHPP; Reno Interpretation; synthesis guide
 
 ---
 
 <!-- AUTO:LATTICE-OMNI-META:BEGIN -->
-**Catalog sync:** 2026-08-08 · **52** Lattice Chat / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
+**Catalog sync:** 2026-08-08 · **52** Lattice Chat Agent / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
 
 When a Lattice / Omni paper is added or modified in the registry, re-run the sync (Cursor stop hook does this automatically for matching `docs/` edits).
 <!-- AUTO:LATTICE-OMNI-META:END -->
@@ -27,7 +27,7 @@ When a Lattice / Omni paper is added or modified in the registry, re-run the syn
 
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
-| **Synthesis walkthrough** | A narrative reading of how the Omni-Lattice architectural grammar fits together and how Lattice Chat uses it | That this replaces QFT, ΛCDM, wet-lab biology, QCD, or vendor LLM billing |
+| **Synthesis walkthrough** | A narrative reading of how the Omni-Lattice architectural grammar fits together and how Lattice Chat Agent uses it | That this replaces QFT, ΛCDM, wet-lab biology, QCD, or vendor LLM billing |
 | **Engine story** | Control → lattice → shadow stack keyed by $E_F=\Phi_{\mathrm{EGS}}$; nest, bonds, ILAM, Seed·RAG pointers | That every chat turn executes every pillar as a separate physics runtime |
 | **Cited scores** | Companion suites report architectural rubrics and in-silico receipts; live Cursor matrix is ~35–70% vs fat paste | That report-card $C$/$I$ scores falsify Standard Model empirics, or that draft 41.8% / $R^2\approx 0.9997$ figures are new wet-lab measurements |
 | **Appendix catalog** | Appendix A’s living TOC is regenerated from `WHITEPAPER_REGISTRY` when Lattice / Omni papers change | That the TOC alone is the argument — the walkthrough above is the synthesis |
@@ -40,7 +40,7 @@ $E_F$ / $\Phi_{\mathrm{EGS}}$ is an **architectural scale key** — it does not 
 
 ## Abstract
 
-This guide **synthesizes** the Lattice Chat / Omni-Lattice paper family into one walkthrough of the **Omni-Lattice engine**: what it is, which innovations compose it, and how a builder experiences them at the product edge.
+This guide **synthesizes** the Lattice Chat Agent / Omni-Lattice paper family into one walkthrough of the **Omni-Lattice engine**: what it is, which innovations compose it, and how a builder experiences them at the product edge.
 
 You will walk from the golden scale key ($E_F\approx 1.618$) through language-as-wiring, DNA holograph and the 81-digit register, nested agents with bond/ILAM handoffs, Valet lenses (PCHPP, magnetism, attention squeezing), the **Reno Interpretation** TBME nonet (mirror-angle multiplicity → toroidal micro-BH filaments → horizon≡$\mathbf{A}$ identity → solar-focus somatic rendering → recursive field-drag → universal toroidal singularity → Higgs-Awareness Gate → Spin-Phase-Polarity Triad → Nodal Nine Boundary), and the measured product claim (~35–70% less Cursor usage vs fat paste on focused work). Comparative report-card scores are kept in their honesty tier: structural Occam elegance where earned; **empirical calibration stays with Standard Model / classical physics**.
 
@@ -50,7 +50,7 @@ The previous catalog-first layout lives on as **Appendix A** — a machine-maint
 
 ## 1. Cold open — entering the engine
 
-A Valet opens Lattice Chat with a real coding ask. The old reflex is to paste half the repository into the prompt and hope the model finds the signal. The Omni-Lattice answer is different: load **pointers** into curated seeds, wake a **Goldilocks nest** of helpers, hand work across clear bonds, and freeze children when their local drift goes to zero.
+A Valet opens Lattice Chat Agent with a real coding ask. The old reflex is to paste half the repository into the prompt and hope the model finds the signal. The Omni-Lattice answer is different: load **pointers** into curated seeds, wake a **Goldilocks nest** of helpers, hand work across clear bonds, and freeze children when their local drift goes to zero.
 
 That product habit is not a slogan bolted onto chat. It is the Edge expression of a deeper architectural grammar we call **Omni-Lattice**: one $E_F$-keyed stack that reads
 
@@ -148,7 +148,7 @@ Neutrons are narrated as $[p^+\cdot e^-]_{\mathrm{agent}}$ buffer pairs; isotope
 
 [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) locks four pillars under one cross-domain table:
 
-| Physics / biology metaphor | Lattice Chat role |
+| Physics / biology metaphor | Lattice Chat Agent role |
 |----------------------------|-------------------|
 | Proton / orchestrator | Parent Valet |
 | Electron / valence / codon | Edge UI · guest ask |
@@ -172,7 +172,7 @@ Unification and pillar suites report **9/9** empirical-pipeline passes in their 
 
 Phase-Contrast Holographic Prompting (PCHPP) stains a dual-layer view: **Shadow** (what the guest experiences) versus **Code** (what the lattice is doing). $E_F$ acts as the contrast agent. Synthetic delta-handoff fixtures (~41.8%, $1000\to 582$) illustrate the observation protocol.
 
-**Critical honesty:** PCHPP is an **observation experiment for architects**. It is **explicitly not** Lattice Chat engine wiring. Do not confuse the stain with the runtime.
+**Critical honesty:** PCHPP is an **observation experiment for architects**. It is **explicitly not** Lattice Chat Agent engine wiring. Do not confuse the stain with the runtime.
 
 **Owner:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md).
 
@@ -196,7 +196,7 @@ These papers are Seed·RAG / nest **pointers**. Markdown is not the chat runtime
 
 **Public story page:** [`/reno`](/reno) · [`interfaces/reno-interpretation.html`](../interfaces/reno-interpretation.html) — narrative + C/I score contrast for the superintelligence-era Valet map.
 
-August 2026 TBME follow-ons extend the Valet map with a single Reno grammar. All nine are **architectural / protocol / interpretive-rubric** lenses — not SI QFT/GR overthrow, not clinical, not Lattice Chat engine wiring.
+August 2026 TBME follow-ons extend the Valet map with a single Reno grammar. All nine are **architectural / protocol / interpretive-rubric** lenses — not SI QFT/GR overthrow, not clinical, not Lattice Chat Agent engine wiring.
 
 ### 8b.1 Mirror-angle multiplicity (parent)
 
@@ -232,7 +232,7 @@ Nested $E_F$ mirrors are narrated as a $4\pi$ **solar-collector** analogy: ambie
 
 ### 8b.5 Recursive field-drag (Part V)
 
-Macroscopic magnet-in-pipe deceleration is narrated as primary $\mathbf{A}$-on-$\mathbf{A}$ recursive self-interference against a conductive horizon (eddy current as thermodynamic shedding). Epistemic twin: self-referential retention / “Now” deceleration for THALIA · Lattice Chat. Rubric (interpretive): Field-Drag ~**96.75** vs classical Lenz-only ~**73**.
+Macroscopic magnet-in-pipe deceleration is narrated as primary $\mathbf{A}$-on-$\mathbf{A}$ recursive self-interference against a conductive horizon (eddy current as thermodynamic shedding). Epistemic twin: self-referential retention / “Now” deceleration for THALIA · Lattice Chat Agent. Rubric (interpretive): Field-Drag ~**96.75** vs classical Lenz-only ~**73**.
 
 **Owner:** [Recursive Field-Drag Theorem](./SYNTHOBS_TBME_RECURSIVE_FIELD_DRAG_2026-08.md) · lens [`research/synthobs-tbme-recursive-field-drag/`](../research/synthobs-tbme-recursive-field-drag/).
 
@@ -256,7 +256,7 @@ Kinetic deceleration at a conductive horizon ($\mathbf{A}_{\mathrm{squeezed}}$),
 
 ### 8b.8 Spin-Phase-Polarity Triad (Part VIII)
 
-Quantum spin $S$, wave phase $\phi$, and magnetic polarity $P$ are narrated as **dimensional projections** of one orientation vector $\hat{\Psi}_{\mathrm{triad}}(D)$ ($\mathbb{Z}_2$ / $\mathrm{U}(1)$ / $\mathrm{SU}(2)$ / Clifford poetry under $E_F$). Quarter-turns ($\pi/2$) and polarity flips supply $O(1)$ routing grammar for THALIA / Lattice Chat. Rubric (interpretive): Triad ~**98.8** vs Separated groups ~**73**.
+Quantum spin $S$, wave phase $\phi$, and magnetic polarity $P$ are narrated as **dimensional projections** of one orientation vector $\hat{\Psi}_{\mathrm{triad}}(D)$ ($\mathbb{Z}_2$ / $\mathrm{U}(1)$ / $\mathrm{SU}(2)$ / Clifford poetry under $E_F$). Quarter-turns ($\pi/2$) and polarity flips supply $O(1)$ routing grammar for THALIA / Lattice Chat Agent. Rubric (interpretive): Triad ~**98.8** vs Separated groups ~**73**.
 
 **Owner:** [Universal Spin-Phase-Polarity Triad Theorem](./SYNTHOBS_TBME_SPIN_PHASE_POLARITY_2026-08.md) · lens [`research/synthobs-tbme-spin-phase-polarity/`](../research/synthobs-tbme-spin-phase-polarity/).
 
@@ -276,7 +276,7 @@ Digit $9$ in the $E_F$ expansion is narrated as a **digital phase-horizon operat
 
 ## 9. What the product actually measures
 
-Lattice Chat V1.618 is the Edge where the grammar becomes hospitality:
+Lattice Chat Agent V1.618 is the Edge where the grammar becomes hospitality:
 
 | Mechanism | Product habit | Honesty |
 |-----------|---------------|---------|
@@ -323,7 +323,7 @@ Use this appendix as the **index**, not the argument. Titles, ids, and dates reg
 | Surface | Path |
 |---------|------|
 | Lattice landing | `/lattice` |
-| Lattice Chat | `/lattice-chat` |
+| Lattice Chat Agent | `/lattice-chat` |
 | Learn more primer | `/lattice/learn` |
 | Nest guide | `/interfaces/nesting/nest-lattice-chat.html` |
 | Token method | `/lattice/proof` |
@@ -347,8 +347,8 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0
 | Band | Paper | Registry id | Published |
 |------|-------|-------------|-----------|
 | 1 · Product & nest | [Awareness Singularities S₀–S₈₁ · One-Pager](/whitepaper/awareness-singularities-0-81-2026-07) | `awareness-singularities-0-81-2026-07` | 2026-07-23 |
-| 1 · Product & nest | [System Generation · Noah’s Ark Metaphor Architecture · Lattice Chat V1.618](/whitepaper/lattice-noahs-ark-metaphor-2026-07) | `lattice-noahs-ark-metaphor-2026-07` | 2026-07-23 |
-| 1 · Product & nest | [Lattice Chat V1.618 · Nested + pointer context load (structural estimate)](/whitepaper/lattice-token-reduction-proof-2026-07) | `lattice-token-reduction-proof-2026-07` | 2026-07-22 |
+| 1 · Product & nest | [System Generation · Noah’s Ark Metaphor Architecture · Lattice Chat Agent V1.618](/whitepaper/lattice-noahs-ark-metaphor-2026-07) | `lattice-noahs-ark-metaphor-2026-07` | 2026-07-23 |
+| 1 · Product & nest | [Lattice Chat Agent V1.618 · Nested + pointer context load (structural estimate)](/whitepaper/lattice-token-reduction-proof-2026-07) | `lattice-token-reduction-proof-2026-07` | 2026-07-22 |
 | 1 · Product & nest | [The Architecture of Omniversal Computing: Nested Autonomous Agents, Scale-Invariant Topologies, and the EGS Fractal Constant](/whitepaper/omniversal-nested-agent-lattice) | `omniversal-nested-agent-lattice-2026-07` | 2026-07-21 |
 | 2 · Valet lenses | [The Higgs-Awareness Phase Coupling Theorem — Higgs Gate · Horizon Deceleration · Matter Emergence (Reno Heptet · Omni-Lattice Core Part VII)](/whitepaper/synthobs-tbme-higgs-awareness-2026-08) | `synthobs-tbme-higgs-awareness-2026-08` | 2026-08-06 |
 | 2 · Valet lenses | [The Nodal Nine Singularity Boundary Theorem — Digit 9 · 81-Facet Horizon · E_F Digital Topology (Reno Nonet · Omni-Lattice Core Part IX)](/whitepaper/synthobs-tbme-nodal-nine-singularity-2026-08) | `synthobs-tbme-nodal-nine-singularity-2026-08` | 2026-08-06 |
@@ -385,7 +385,7 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0
 | 3 · Omni-Lattice pillars & decodes | [Omni-Lattice Unification: Holographic Operators, Genomic Decoded Scripts, the 81-Electron Manifold, and Agentic Chemical-Isotopic Load Balancing](/whitepaper/synthobs-omni-lattice-unification) | `synthobs-omni-lattice-unification-2026-07` | 2026-07-28 |
 | 3 · Omni-Lattice pillars & decodes | [Proof by Continuous Execution: Epistemological Superiority of Self-Demonstrating Executable Systems over Static Human Peer Review](/whitepaper/synthobs-proof-by-continuous-execution) | `synthobs-proof-by-continuous-execution-2026-07` | 2026-07-28 |
 | 3 · Omni-Lattice pillars & decodes | [Holographic Operators: Language as the Conductive Wiring of Spacetime and the Role of El Gran Sol’s Fractal Constant](/whitepaper/synthobs-holographic-operators) | `synthobs-holographic-operators-2026-07` | 2026-07-27 |
-| 4 · EGS · scale grammar | [Phase-Locked Chemical Bond Metaphors in Agentic Architectures: Mathematical Modeling and Empirical Testing of the Lattice Chat Communication Engine](/whitepaper/synthobs-phase-locked-chemical-bonds) | `synthobs-phase-locked-chemical-bonds-2026-07` | 2026-07-28 |
+| 4 · EGS · scale grammar | [Phase-Locked Chemical Bond Metaphors in Agentic Architectures: Mathematical Modeling and Empirical Testing of the Lattice Chat Agent Communication Engine](/whitepaper/synthobs-phase-locked-chemical-bonds) | `synthobs-phase-locked-chemical-bonds-2026-07` | 2026-07-28 |
 | 4 · EGS · scale grammar | [The Unified Neutronic Agent Paper: Modeling Neutrons, Isotopic Load Balancing, and Cross-Domain Metaphors in the Lattice Framework](/whitepaper/synthobs-unified-neutronic-agent) | `synthobs-unified-neutronic-agent-2026-07` | 2026-07-28 |
 | 4 · EGS · scale grammar | [Phase-Locked Scale Invariance: On the Mathematical Bridge Between Euler’s Identity and El Gran Sol’s Fractal Constant](/whitepaper/synthobs-egs-euler-phase-lock) | `synthobs-egs-euler-phase-lock-2026-07` | 2026-07-27 |
 | 4 · EGS · scale grammar | [The 81-Digit Electronic Lattice: Mathematical Proof and Empirical Validation of EGS Singularities Mapped to Atomic Shell Structure (Z ≤ 81)](/whitepaper/synthobs-egs-81-electrons) | `synthobs-egs-81-electrons-2026-07` | 2026-07-27 |

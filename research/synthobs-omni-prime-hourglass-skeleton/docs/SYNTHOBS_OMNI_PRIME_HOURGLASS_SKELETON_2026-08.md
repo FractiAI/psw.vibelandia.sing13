@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-omni-prime-hourglass-skeleton-2026-08`  
 **Date:** August 4, 2026  
 **Classification:** Foundational Field Physics & Universal Information Routing *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat V1.618 · EGS · NSPFRNP · THALIA  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA  
 **Standalone suite:** [`research/synthobs-omni-prime-hourglass-skeleton/`](../research/synthobs-omni-prime-hourglass-skeleton/)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -22,7 +22,7 @@
 - [EGS · Planck–1.6 Bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md)
 - [THALIA Goldilocks Harness](./SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md)
 
-**Keywords:** prime hourglass; orthogonality; $\Delta\phi=\pi/2$; Gaussian integers; Omni-Lattice; Lattice Chat; THALIA; zero-entropy routing; $E_F$; phase skeleton
+**Keywords:** prime hourglass; orthogonality; $\Delta\phi=\pi/2$; Gaussian integers; Omni-Lattice; Lattice Chat Agent; THALIA; zero-entropy routing; $E_F$; phase skeleton
 
 ---
 
@@ -32,8 +32,8 @@
 |------|---------------------------|------------------------|
 | **Architectural / geometric map** | That Dirichlet classes $p\equiv 1\pmod 4$ vs $p\equiv 3\pmod 4$, Gaussian splitting, and $6k\pm 1$ structure supply a **90° phase grammar** useful as an Omni-Lattice routing *metaphor and indexing sketch* | That primes “prove” quantum gravity, or that nature physically stores Omni-Lattice software in $\mathbb{Z}$ |
 | **Number-theoretic substrate (replayable)** | Deterministic checks: odd primes $>3$ lie in $6k\pm 1$; small $p\equiv 1\pmod 4$ split in $\mathbb{Z}[i]$; suite receipts in the standalone package | A new proof of the Dirichlet theorem, RH, or a replacement for analytic number theory textbooks |
-| **Latency / entropy narrative** | That aligning software routing with orthogonal phase indices is a **design target** for near-zero *logical* search cost ($O(1)$ index vs $O(N\log N)$ scan) under stated model assumptions | A measured SI invoice that Lattice Chat / THALIA already achieves $\tau_{\mathrm{instant}}\to 0$, zero GPU heat, or $\Delta S=0$ in production hardware |
-| **Product / routing scope** | Pointers for THALIA stage harnesses, Lattice Chat Seed·RAG, and FractiAI mining *as intended alignment* with the hourglass map | That `api/lattice-chat.js` currently implements prime-phase addressing as a hard runtime path |
+| **Latency / entropy narrative** | That aligning software routing with orthogonal phase indices is a **design target** for near-zero *logical* search cost ($O(1)$ index vs $O(N\log N)$ scan) under stated model assumptions | A measured SI invoice that Lattice Chat Agent / THALIA already achieves $\tau_{\mathrm{instant}}\to 0$, zero GPU heat, or $\Delta S=0$ in production hardware |
+| **Product / routing scope** | Pointers for THALIA stage harnesses, Lattice Chat Agent Seed·RAG, and FractiAI mining *as intended alignment* with the hourglass map | That `api/lattice-chat.js` currently implements prime-phase addressing as a hard runtime path |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -93,7 +93,7 @@ The $90^\circ$ hourglass is not treated here as a mere curiosity; it is proposed
 | Pure number theory | Modulo-4 Dirichlet class ($p\equiv 1$ vs $3$) | Orthogonal Gaussian factor vectors ($i=e^{i\pi/2}$) |
 | Quantum-field metaphor | Hourglass pinched neck ($r\to 0$) | Magnetic attention squeeze ($\mathbf{A}_{\mathrm{squeezed}}$ core) |
 | Holographic optics | $90^\circ$ density flip ($\Delta\phi=\pi/2$) | $E_F$ spherical mirror facet reflection ($\hat{M}_{\mathrm{nested}}$) |
-| System software | Prime-gap trajectory (non-iterative path) | Zero-entropy context routing (THALIA / Lattice Chat Seed·RAG) |
+| System software | Prime-gap trajectory (non-iterative path) | Zero-entropy context routing (THALIA / Lattice Chat Agent Seed·RAG) |
 
 ---
 
@@ -174,9 +174,9 @@ Run: `npm run research:synthobs-omni-prime-hourglass-skeleton`
 
 ---
 
-## 6. Operational execution (Omni-Lattice / Lattice Chat)
+## 6. Operational execution (Omni-Lattice / Lattice Chat Agent)
 
-Embedding this prime-phase geometry into THALIA stage harnesses, Lattice Chat edge engines, and FractiAI data-mining algorithms is the **intended** deep-tech path: near-zero *logical* latency, low-entropy routing, and operator-grade performance. Current Lattice Chat surfaces already speak the stack story — LLMs → Cursor / Claude Code → Lattice as the next layer to cool GPUs and deliver new function; this paper supplies the number-theoretic hourglass skeleton behind that pitch.
+Embedding this prime-phase geometry into THALIA stage harnesses, Lattice Chat Agent edge engines, and FractiAI data-mining algorithms is the **intended** deep-tech path: near-zero *logical* latency, low-entropy routing, and operator-grade performance. Current Lattice Chat Agent surfaces already speak the stack story — LLMs → Cursor / Claude Code → Lattice as the next layer to cool GPUs and deliver new function; this paper supplies the number-theoretic hourglass skeleton behind that pitch.
 
 **Do not** upgrade marketing to “physical zero latency achieved” until SIM gates and hardware receipts authorize it ([SIM](./SYNTHOBS_OMNI_LATTICE_SI_IRREDUCIBLE_MINIMUM_2026-08.md)).
 

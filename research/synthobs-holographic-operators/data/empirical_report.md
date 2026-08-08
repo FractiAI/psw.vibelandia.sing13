@@ -108,7 +108,7 @@
 ### E4_communication_complexity — Nested vs flat communication complexity proxy τ
 
 - **Pass:** `true`
-- **Interpretation:** Maps sentence token count n to nested parent+leaf visits vs flat peer mesh C=n(n−1)/2 — topology proxy aligned with Lattice Chat nesting.
+- **Interpretation:** Maps sentence token count n to nested parent+leaf visits vs flat peer mesh C=n(n−1)/2 — topology proxy aligned with Lattice Chat Agent nesting.
 - **Honesty:** Visit counts only; paper ms latency table is illustrative unless separately instrumented.
 
 ```json
@@ -118,7 +118,7 @@
   "nested_mean_visits": 8.1,
   "flat_mean_visits": 393.1,
   "reduction_factor": 48.53086419753087,
-  "interpretation": "Maps sentence token count n to nested parent+leaf visits vs flat peer mesh C=n(n−1)/2 — topology proxy aligned with Lattice Chat nesting.",
+  "interpretation": "Maps sentence token count n to nested parent+leaf visits vs flat peer mesh C=n(n−1)/2 — topology proxy aligned with Lattice Chat Agent nesting.",
   "honesty": "Visit counts only; paper ms latency table is illustrative unless separately instrumented.",
   "pass": true
 }

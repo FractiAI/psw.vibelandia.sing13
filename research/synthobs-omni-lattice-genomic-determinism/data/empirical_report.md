@@ -34,6 +34,6 @@
 ### E8_honesty_gate — Honesty — EX-LOC drafts gated; k=0≠physics singularity
 - **Pass:** `true`
 
-### E9_lattice_surfaces — Lattice Chat Genomic Determinism X ↔ surface map
+### E9_lattice_surfaces — Lattice Chat Agent Genomic Determinism X ↔ surface map
 - **Pass:** `true`
 - **Honesty:** Structural product map — not a claim chat rewrites destiny.

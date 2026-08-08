@@ -222,7 +222,7 @@
 }
 ```
 
-### E9_observation_lane_surfaces — Observation lane — paper surfaces; no Lattice Chat engine wiring
+### E9_observation_lane_surfaces — Observation lane — paper surfaces; no Lattice Chat Agent engine wiring
 
 - **Pass:** `true`
 - **Interpretation:** PCHPP ships as a catalog observation paper + standalone suite — not an engine dependency.
@@ -231,7 +231,7 @@
 ```json
 {
   "id": "E9_observation_lane_surfaces",
-  "title": "Observation lane — paper surfaces; no Lattice Chat engine wiring",
+  "title": "Observation lane — paper surfaces; no Lattice Chat Agent engine wiring",
   "paper_exists": true,
   "hasDocId": true,
   "hasHonesty": true,

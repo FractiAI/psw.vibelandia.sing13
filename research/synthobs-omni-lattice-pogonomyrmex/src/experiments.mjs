@@ -121,7 +121,7 @@ export function experimentMetaphorMatrix() {
   ];
   return {
     id: 'E6_metaphor_matrix',
-    title: 'Five-row P. barbatus ↔ Lattice Chat metaphor matrix',
+    title: 'Five-row P. barbatus ↔ Lattice Chat Agent metaphor matrix',
     rows,
     honesty: 'Operational metaphor matrix — not literal biology–software identity.',
     pass: rows.length === 5 && rows.every((r) => r.length === 3),
@@ -194,7 +194,7 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat Pogonomyrmex Omni-Lattice V ↔ surface map',
+    title: 'Lattice Chat Agent Pogonomyrmex Omni-Lattice V ↔ surface map',
     surfaces,
     honesty: 'Structural product map — not a claim every turn runs a colony sim.',
     pass: surfaces.length >= 6 && surfaces.every((s) => String(s).length > 3),

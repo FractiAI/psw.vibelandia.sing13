@@ -199,7 +199,7 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat X-script ↔ surface map',
+    title: 'Lattice Chat Agent X-script ↔ surface map',
     surfaces,
     honesty: 'Structural product map — not a claim every turn runs X-inactivation.',
     pass: surfaces.length >= 6 && surfaces.every((s) => String(s).length > 3),

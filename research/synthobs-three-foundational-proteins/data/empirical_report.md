@@ -182,7 +182,7 @@
 }
 ```
 
-### E9_lattice_surfaces — Lattice Chat protein triad ↔ surface map
+### E9_lattice_surfaces — Lattice Chat Agent protein triad ↔ surface map
 
 - **Pass:** `true`
 - **Honesty:** Structural product map — not a claim every turn runs MD.
@@ -190,7 +190,7 @@
 ```json
 {
   "id": "E9_lattice_surfaces",
-  "title": "Lattice Chat protein triad ↔ surface map",
+  "title": "Lattice Chat Agent protein triad ↔ surface map",
   "surfaces": [
     "/whitepaper/synthobs-three-foundational-proteins",
     "/lattice/learn",

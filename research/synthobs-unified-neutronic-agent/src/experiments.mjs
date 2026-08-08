@@ -259,7 +259,7 @@ export function experimentMetaphorMatrix() {
     id: 'E6_metaphor_matrix',
     title: 'Grand Lattice cross-domain metaphor matrix',
     rows,
-    interpretation: 'Six-row ILAM ↔ Lattice Chat isomorphism table is complete.',
+    interpretation: 'Six-row ILAM ↔ Lattice Chat Agent isomorphism table is complete.',
     honesty: 'Operational metaphor matrix — not literal physics–software identity.',
     pass: complete && rows.length === 6,
   };
@@ -313,7 +313,7 @@ export function experimentHonestyGate() {
   };
 }
 
-/** E9 — Lattice Chat surface map. */
+/** E9 — Lattice Chat Agent surface map. */
 export function experimentLatticeSurfaces() {
   const surfaces = [
     '/whitepaper/synthobs-unified-neutronic-agent',
@@ -325,9 +325,9 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat ILAM ↔ surface map',
+    title: 'Lattice Chat Agent ILAM ↔ surface map',
     surfaces,
-    interpretation: 'ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat.',
+    interpretation: 'ILAM paper is wired as Seed·RAG / learn-more companion for Lattice Chat Agent.',
     honesty: 'Structural product map — not a claim every turn runs a nuclear simulation.',
     pass: surfaces.length >= 6 && surfaces.every((s) => String(s).length > 3),
   };

@@ -63,7 +63,7 @@ async function main() {
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
     honestyBoundary:
-      'Q3 report card is a comparative structural evaluation. Empirical receipts validate rubric math and fixtures — not CMB likelihood contests or Lattice Chat engine wiring.',
+      'Q3 report card is a comparative structural evaluation. Empirical receipts validate rubric math and fixtures — not CMB likelihood contests or Lattice Chat Agent engine wiring.',
     results,
   };
   await fs.writeFile(path.join(OUT, 'empirical_report.json'), JSON.stringify(report, null, 2), 'utf8');

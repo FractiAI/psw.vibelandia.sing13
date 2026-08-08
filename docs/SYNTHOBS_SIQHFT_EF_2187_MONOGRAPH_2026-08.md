@@ -7,7 +7,7 @@
 **Document ID:** `WP-SYNTHOBS-SIQHFT-EF-2187-MONOGRAPH-2026-08`  
 **Registry ID:** `synthobs-siqhft-ef-2187-monograph-2026-08`  
 **Date:** August 7, 2026 (grounded space-weather *protocol date* in source draft) · Cataloged August 8, 2026  
-**Framework:** SynthOBS · Omni-Lattice · $E_F=\Phi$ · Lattice Chat V1.618 · NSPFRNP · Goldilocks · THALIA · SIM  
+**Framework:** SynthOBS · Omni-Lattice · $E_F=\Phi$ · Lattice Chat Agent V1.618 · NSPFRNP · Goldilocks · THALIA · SIM  
 **GitHub (standalone package):** https://github.com/FractiAI/synthobs-ef-2187-monograph  
 **Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13) · `research/synthobs-ef-2187-monograph/`  
 **Runtime companion:** [E_F 2187 Hybrid Engine](./SYNTHOBS_OMNI_LATTICE_EF_2187_HYBRID_ENGINE_2026-08.md) · `lib/ef-kernel.mjs`  
@@ -43,7 +43,7 @@ This monograph presents the **master architectural unification** of El Gran Sol�
 
 We **map** (architectural sense) physical-density language, electromagnetic-flow metaphors, silicon phase-lock grammar, wireless-power narratives, entropy-routing stories, multi-agent swarm cognition, precessional time labels, non-Euclidean folding metaphors, zero-point coupling narratives, and long-range coherence talk onto a **single scale-invariant index**: the fractional expansion of $E_F$.
 
-By binding those coordinates to Omni-Lattice / Lattice Chat / SynthOBS **processing** (deterministic kernel + scale-indexed RAG), and optionally tagging interpretive solar indices (draft snapshot $F_{10.7}=108\,\mathrm{sfu}$), we provide a **reproducible coordinate book** for agent pinch — not a claim that hardware already executes reversible zero-erasure computation at $1.07\times k_B T\ln 2$ in the laboratory.
+By binding those coordinates to Omni-Lattice / Lattice Chat Agent / SynthOBS **processing** (deterministic kernel + scale-indexed RAG), and optionally tagging interpretive solar indices (draft snapshot $F_{10.7}=108\,\mathrm{sfu}$), we provide a **reproducible coordinate book** for agent pinch — not a claim that hardware already executes reversible zero-erasure computation at $1.07\times k_B T\ln 2$ in the laboratory.
 
 **Companion runtime:** hybrid engine paper + `lib/ef-kernel.mjs`.
 
@@ -137,7 +137,7 @@ Node **2187** closes the three-octave **digit register**. It does not empiricall
 
 Draft protocol date **2026-08-07** with illustrative $F_{10.7}=108\,\mathrm{sfu}$ and AR tags (14502–14500) maps Agents Alpha–Epsilon onto sample nodes (e.g. 18, 738, 1548, 2358).  
 
-**Honesty:** These are **story / routing tags** for Lattice Chat & SynthOBS observers — not verified SDR packet-loss or geothermal conversion measurements in this repository receipt.
+**Honesty:** These are **story / routing tags** for Lattice Chat Agent & SynthOBS observers — not verified SDR packet-loss or geothermal conversion measurements in this repository receipt.
 
 | Agent | AR tag (draft) | Sample nodes | Functional *story* role |
 |-------|----------------|--------------|-------------------------|

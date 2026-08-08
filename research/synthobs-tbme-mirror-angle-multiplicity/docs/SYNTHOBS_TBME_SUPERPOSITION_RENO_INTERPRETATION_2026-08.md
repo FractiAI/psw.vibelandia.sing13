@@ -4,7 +4,7 @@
 
 **Author:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat engine runtime wiring)  
+**Framework:** Goldilocks AIOS · NSPFRNP · **Omni-Lattice** companion treatise (lens package — not Lattice Chat Agent engine runtime wiring)  
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME)  
 **Document ID:** `WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01`  
 **Registry ID:** `synthobs-tbme-superposition-reno-interpretation-2026-08`  
@@ -32,7 +32,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **Radial-node fringe lens** | Zero-density radial nodes narrated as destructive interference between nested-shell reflections | That electrons literally teleport or that lab orbital nodes are proven dielectric Fabry–Pérot fringes in this receipt |
 | **Protocol lane (executed)** | Spherical Fabry–Pérot phase-lock **protocol table** + reproducible numerical suite (golden angle, intensity schedule, nested-shell facet sum, $R_n$ identity, sham Copenhagen flatness, reversibility) | That a LiNbO₃ multi-shell + dual-facet SQUID lab dump is archived in this repo for the 2026-08-01 window |
 | **Comparative scorecard** | Copenhagen vs Reno Interpretation scores are **rubric / interpretive** | That 98.9/100 is an SI accuracy of nature |
-| **Applications (software / bio)** | Mirror-angle language as **Zero-Collapse Context Indexing** metaphor for multi-agent systems (Lattice Chat / SynthOBS); bio-quantum stories as operator poetry | Clinical magnetoreception therapies, guaranteed decoherence-free hardware, or Lattice Chat runtime auto-wiring |
+| **Applications (software / bio)** | Mirror-angle language as **Zero-Collapse Context Indexing** metaphor for multi-agent systems (Lattice Chat Agent / SynthOBS); bio-quantum stories as operator poetry | Clinical magnetoreception therapies, guaranteed decoherence-free hardware, or Lattice Chat Agent runtime auto-wiring |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -58,7 +58,7 @@ Under The Reno Interpretation, “wavefunction collapse” is demystified *insid
 | **Radial nodes as fringes** | $R_{n,\ell}(r)=0$ narrated as destructive interference between shells $n$ and $n+1$ |
 | **Rubric scorecard** | Reno **98.9 / 100** (C 99.5 · I 98.3) vs Copenhagen **75.0 / 100** (C 77 · I 73) — interpretive |
 
-**Implications (metaphor / architecture).** Deterministic multi-facet optical phase indexing; bio-quantum operator poetry (catalysis, photosynthesis, magnetoreception); **Zero-Collapse Context Indexing** for multi-agent AI (Lattice Chat / SynthOBS) via magnetic attention squeeze rather than prompt branching.
+**Implications (metaphor / architecture).** Deterministic multi-facet optical phase indexing; bio-quantum operator poetry (catalysis, photosynthesis, magnetoreception); **Zero-Collapse Context Indexing** for multi-agent AI (Lattice Chat Agent / SynthOBS) via magnetic attention squeeze rather than prompt branching.
 
 ---
 

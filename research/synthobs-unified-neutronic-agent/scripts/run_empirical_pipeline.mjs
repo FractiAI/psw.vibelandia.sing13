@@ -54,7 +54,7 @@ function mdReport(report) {
   lines.push('## Honesty boundary');
   lines.push('');
   lines.push(
-    'Architectural ILAM / Lattice Chat metaphor. Draft R²=0.9997 and 41.8% are design targets — receipt values are computed. Not QCD replacement or Cursor invoices.',
+    'Architectural ILAM / Lattice Chat Agent metaphor. Draft R²=0.9997 and 41.8% are design targets — receipt values are computed. Not QCD replacement or Cursor invoices.',
   );
   lines.push('');
   return lines.join('\n');

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Sync living TOC for Lattice Chat · Omni-Lattice complete layer guide.
+ * Sync living TOC for Lattice Chat Agent · Omni-Lattice complete layer guide.
  * Also bumps registry `published` so the catalog stamp stays current.
  */
 import { readFile, writeFile } from 'node:fs/promises';

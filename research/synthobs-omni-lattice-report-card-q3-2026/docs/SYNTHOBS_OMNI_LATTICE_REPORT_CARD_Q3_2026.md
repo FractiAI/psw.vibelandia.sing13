@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-omni-lattice-report-card-q3-2026`  
 **Date:** July 30, 2026 (Q3 2026 report card)  
 **Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · NSPFRNP  
-**Lane:** Comparative structural evaluation (report card) · Lattice Chat V1.618 Seed·RAG pointer  
+**Lane:** Comparative structural evaluation (report card) · Lattice Chat Agent V1.618 Seed·RAG pointer  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-omni-lattice-report-card-q3-2026  
 **Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
@@ -30,7 +30,7 @@
 | **$E_F$ role** | One architectural scale invariant (≈1.618) used as the Omni-Lattice organizing key | That $E_F$ replaces $\hbar$, $c$, or $G$, or that dark-sector particles are proven nonexistent |
 | **Empirical calibration row** | Explicitly awards **Standard Model** the edge on decades of collider/CMB history | That Omni-Lattice already matches that laboratory/sky precision |
 | **Executed suite (E1–E9)** | Rubric arithmetic, fixture coherence/irreducibility ranking, dark-sector bookkeeping, domain outcomes (**9/9**) | Live $N$-body replacement of ΛCDM codes without new observation receipts |
-| **Product scope** | Catalog report card + **standalone** research package + Lattice Chat Seed·RAG / nest pointer | That this markdown is Lattice Chat **runtime source**, or that the rubric falsifies ΛCDM observationally |
+| **Product scope** | Catalog report card + **standalone** research package + Lattice Chat Agent Seed·RAG / nest pointer | That this markdown is Lattice Chat Agent **runtime source**, or that the rubric falsifies ΛCDM observationally |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -51,7 +51,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 | Standard Model ($\Lambda$CDM + QFT) | 82/100 | 54/100 | **68.0 / 100** |
 | Omni-Lattice Holographic Model | 94/100 | 91/100 | **92.5 / 100** |
 
-The empirical suite reports **9/9 pass** (`npm run research:synthobs-omni-lattice-report-card-q3-2026`): overall-score identity; coherence formula bands; irreducibility ranking (Omni ≫ Standard); dark-sector bookkeeping (27%+68%≈95%); five-domain scorecard with **empirical calibration awarded to Standard Model**; $E_F$ identities; published margin $+24.5$; portability note citing **41.8%** companion token-routing design target; report-card surfaces as a **Lattice Chat Seed·RAG / nest pointer** (not runtime source).
+The empirical suite reports **9/9 pass** (`npm run research:synthobs-omni-lattice-report-card-q3-2026`): overall-score identity; coherence formula bands; irreducibility ranking (Omni ≫ Standard); dark-sector bookkeeping (27%+68%≈95%); five-domain scorecard with **empirical calibration awarded to Standard Model**; $E_F$ identities; published margin $+24.5$; portability note citing **41.8%** companion token-routing design target; report-card surfaces as a **Lattice Chat Agent Seed·RAG / nest pointer** (not runtime source).
 
 **Implications (architectural).** Cosmological simulation software *may* explore $E_F$ boundary operators as parameter-light alternatives to dark-fluid knobs; quantum-information and multi-agent routing *may* reuse the same scale key — always honesty-gated as design maps until observation receipts catch up.
 
@@ -149,13 +149,13 @@ Fair Exchange Policy in Effect: theoretical models, comparative evaluations, and
 
 ### Falsification
 
-Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibration row is quietly flipped without new sky/lab receipts; (c) authors claim observational falsification of ΛCDM, or that this markdown is Lattice Chat **runtime source**, without evidence.
+Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibration row is quietly flipped without new sky/lab receipts; (c) authors claim observational falsification of ΛCDM, or that this markdown is Lattice Chat Agent **runtime source**, without evidence.
 
 ### Surfaces
 
 - Paper: `/whitepaper/synthobs-omni-lattice-report-card-q3-2026`  
 - Standalone: https://github.com/FractiAI/synthobs-omni-lattice-report-card-q3-2026  
-- Lattice Chat: Seed·RAG pointer · nest papers · learn deck · Composer roster  
+- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster  
 - Catalog: `/papers`
 
 ---

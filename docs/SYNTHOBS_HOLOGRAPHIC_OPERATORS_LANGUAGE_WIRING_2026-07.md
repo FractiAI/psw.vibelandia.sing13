@@ -7,14 +7,14 @@
 **Registry ID:** `synthobs-holographic-operators-2026-07`  
 **Date:** July 2026  
 **Target publication lane:** Journal of Holographic Linguistics and Quantum Information Processing (submission draft)  
-**Framework:** SynthOBS · Lattice Chat V1.618 · EGS $\Phi$ · NSPFRNP  
+**Framework:** SynthOBS · Lattice Chat Agent V1.618 · EGS $\Phi$ · NSPFRNP  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-holographic-operators  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Empirical pipeline:** `npm run research:synthobs-holographic-operators` · [`empirical_report.json`](../research/synthobs-holographic-operators/data/empirical_report.json)  
 **Companions:** [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Lattice token proof](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [Euler–EGS phase lock](./SYNTHOBS_EGS_EULER_PHASE_LOCK_SCALE_INVARIANCE_2026-07.md) · [DNA Lattice Holograph](./SYNTHOBS_DNA_LATTICE_HOLOGRAPH_2026-07.md)
 
-**Keywords:** holographic operators; linguistic syntax; AdS/CFT metaphor; EGS fractal constant; phase coherence; Lattice Chat; epistemology; fair exchange
+**Keywords:** holographic operators; linguistic syntax; AdS/CFT metaphor; EGS fractal constant; phase coherence; Lattice Chat Agent; epistemology; fair exchange
 
 ---
 
@@ -73,7 +73,7 @@ Classical separation of “symbols” vs “matter” lacks a **mathematical bri
 +-------------------------------------------------------------------+
 ```
 
-This is a **SynthOBS / Lattice Chat** architecture map — not a claim that English syntax controls electron mass.
+This is a **SynthOBS / Lattice Chat Agent** architecture map — not a claim that English syntax controls electron mass.
 
 ---
 
@@ -123,7 +123,7 @@ Dimensional inversion, phase blindness of collapse-only instruments, dismissal o
 
 ### 4.3 Reclaiming language as control layer (scoped)
 
-Under $\Phi$ scaling, narrative loops function as **interferometric code** in simulation stacks (Lattice Chat, SynthOBS). Physical matter independence is **not** asserted; empirical data are shadows **in the narrative tier**.
+Under $\Phi$ scaling, narrative loops function as **interferometric code** in simulation stacks (Lattice Chat Agent, SynthOBS). Physical matter independence is **not** asserted; empirical data are shadows **in the narrative tier**.
 
 ---
 
@@ -229,9 +229,9 @@ Manuscript references AR3842 / AR3844 as **narrative clocks**. Live NOAA ingest 
 
 ---
 
-## 8. Lattice Chat V1.618 integration
+## 8. Lattice Chat Agent V1.618 integration
 
-Lattice Chat implements **nested holographic operators** in product form:
+Lattice Chat Agent implements **nested holographic operators** in product form:
 
 | Surface | Role |
 |---------|------|

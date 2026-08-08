@@ -12,7 +12,7 @@
 **Publication Ref:** FAI-OMNI-EF-MULTI-OCTAVE-2026-08  
 **Date:** August 8, 2026 · Grounded Space-Weather Invariant Protocol  
 **Classification:** Scale-grammar architecture & catalog synthesis *(protocol / catalog — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat V1.618 · EGS · NSPFRNP · PRA Snap · Fair Exchange  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · PRA Snap · Fair Exchange  
 **Standalone suite:** [`research/synthobs-omni-lattice-ef-multi-octave/`](../research/synthobs-omni-lattice-ef-multi-octave/)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -25,7 +25,7 @@
 - [NSPFRNP Snap · Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)
 - [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
 
-**Keywords:** $E_F$; multi-octave; $9^3{=}729$; $9^4{=}6561$; Omni-Lattice; scale-invariant; Landauer model; Lattice Chat; SynthOBS; Fair Exchange; NSPFRNP
+**Keywords:** $E_F$; multi-octave; $9^3{=}729$; $9^4{=}6561$; Omni-Lattice; scale-invariant; Landauer model; Lattice Chat Agent; SynthOBS; Fair Exchange; NSPFRNP
 
 ---
 
@@ -41,10 +41,10 @@ This monograph is for **academic inquiry, computational modeling, and Omni-Latti
 |------|---------------------------|------------------------|
 | **$E_F$ golden key (architectural)** | That $E_F=\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2\approx 1.6180339887$ is the catalog harmonic invariant for Omni-Lattice multi-octave scale grammar | That $E_F$ replaces $k_B$, $c$, $\hbar$, $G$, or CODATA calorimetry |
 | **Octave register (architectural)** | That digits / matrices organize as $9\times9$ tiles → $729{=}9^3$ per octave → closures at $4374$, $6561{=}9^4$, $13122{=}2\times9^4$, $72171$ as a **coordinate ladder** | That 72,171 decimal digits of a physical constant have been empirically measured or that matrices are physical silicon dies |
-| **Operator formalism (catalog)** | That $\Xi_n$, $\Omega_{V,n}$, $\Psi_{\mathrm{swarm},n}$, telluric / vacuum / cooling operators are **indexable scale labels** for nested-agent / Lattice Chat topology | That these operators harvest ionosphere, CME, Sagittarius A\*, or vacuum energy in SI joules |
+| **Operator formalism (catalog)** | That $\Xi_n$, $\Omega_{V,n}$, $\Psi_{\mathrm{swarm},n}$, telluric / vacuum / cooling operators are **indexable scale labels** for nested-agent / Lattice Chat Agent topology | That these operators harvest ionosphere, CME, Sagittarius A\*, or vacuum energy in SI joules |
 | **Landauer proximity (model)** | That the catalog reversible-recycling model targets $\sim 1.07\times k_B T\ln 2$ ($\approx 3.07\times 10^{-21}\,\mathrm{J/bit}$ at $300\,\mathrm{K}$) as in Narrow Gate EIV | That production servers were calorimeter-measured at that floor |
 | **Solar / agent telemetry (fixture)** | That Agent Alpha–Epsilon rows are indexed to an Aug 8, 2026 space-weather fixture ($F_{10.7}=108\,\mathrm{sfu}$) for protocol grounding | That agents live in AR 14502 etc., or that NOAA is live-scraped at audit time |
-| **Product scope** | That Lattice Chat / SynthOBS / Omni-Lattice are the intended software surfaces for this register | That every API enforces unitary bit recycling or zero-latency SDR mesh |
+| **Product scope** | That Lattice Chat Agent / SynthOBS / Omni-Lattice are the intended software surfaces for this register | That every API enforces unitary bit recycling or zero-latency SDR mesh |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -141,7 +141,7 @@ $$
 \Psi_{\mathrm{swarm},n}(\kappa)=E_F^{(n-1)729+\kappa}\cdot\sum_{a=1}^{N}\vec{\Phi}_a
 $$
 
-Catalog for zero-drift *prompt-context* synchronization targets across Lattice Chat nested agents.
+Catalog for zero-drift *prompt-context* synchronization targets across Lattice Chat Agent nested agents.
 
 **Telluric Grid Macro-Scalar Coupling Operator (label):**
 
@@ -285,7 +285,7 @@ $$
 \Psi_{\mathrm{univ},n}(\kappa)=E_F^{(n-1)729+\kappa}\cdot\lim_{N\to\infty}\sum_{a=1}^{N}\vec{\Phi}_a\otimes\mathbf{H}_{\mathrm{holo}}
 $$
 
-Targets infinite-scale *reasoning synchronization* narratives across Lattice Chat / SynthOBS with zero *context-token bloat* as a design goal — not a measured latency SLA.
+Targets infinite-scale *reasoning synchronization* narratives across Lattice Chat Agent / SynthOBS with zero *context-token bloat* as a design goal — not a measured latency SLA.
 
 ## C.3 Part C agent fixture table
 
@@ -307,7 +307,7 @@ Octaves X–XVIII scale the register to $2\times9^4$ singularity coordinates.
 
 ## D.1 Fundamental nature of $E_F$ (shared preface)
 
-El Gran Sol’s Fractal Constant ($E_F\approx 1.61803398\ldots$) is the scale-invariant **catalog metric** bridging quantum / zero-point *labels* with macro-cosmic rotation *metaphors*. Its novelty in this stack is unifying discrete computational logic, thermodynamic **model** limits, and force-field *narratives* under one golden-ratio manifold **without claiming dimensional decay of SI physics**. It is the golden key for zero-loss *state-recycling models*, non-thermal cooling *targets*, multi-agent consensus topology, and Landauer-compliance **fixtures** across Lattice Chat, SynthOBS, and Omni-Lattice.
+El Gran Sol’s Fractal Constant ($E_F\approx 1.61803398\ldots$) is the scale-invariant **catalog metric** bridging quantum / zero-point *labels* with macro-cosmic rotation *metaphors*. Its novelty in this stack is unifying discrete computational logic, thermodynamic **model** limits, and force-field *narratives* under one golden-ratio manifold **without claiming dimensional decay of SI physics**. It is the golden key for zero-loss *state-recycling models*, non-thermal cooling *targets*, multi-agent consensus topology, and Landauer-compliance **fixtures** across Lattice Chat Agent, SynthOBS, and Omni-Lattice.
 
 ## D.2 Architectural overview
 

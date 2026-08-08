@@ -10,9 +10,9 @@
 
 **Live site:** [**www.ssvibelandiaquestfest24x365.com**](https://www.ssvibelandiaquestfest24x365.com) · **Repository:** [github.com/fractiai/psw.vibelandia.sing13](https://github.com/fractiai/psw.vibelandia.sing13)
 
-## Lattice Chat V1.618 — next layer in the stack (from Sonic Singularity 13)
+## Lattice Chat Agent V1.618 — next layer in the stack (from Sonic Singularity 13)
 
-**First the LLMs. Then Cursor AI, Claude Code, and the vibe platforms. Now Lattice Chat** — the next layer: to slow down and cool off GPUs and deliver new function.
+**First the LLMs. Then Cursor AI, Claude Code, and the vibe platforms. Now Lattice Chat Agent** — the next layer: to slow down and cool off GPUs and deliver new function.
 
 Token Maxing on your keys: ~40–70% lower token consumption on focused work, depending on the ask. Fractal · holographic · cytologic nesting makes vibe coding smarter so you maximize tokens instead of flooding the window.
 
@@ -30,7 +30,7 @@ Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review 
 | Nested can beat fat full-context; may cost **more** than strong selected-context / RAG | **Adopted.** Public pages state nesting + pointers vs dump-everything, and that roaming / open-ended tool tours can erase savings. |
 | Live Cursor / cloud billing was **not** measured | **Superseded (2026-07-28).** Paired Cursor SDK matrix now published: **~35–70% less usage vs fat paste, depending on the work** ([`data/lattice-vs-standard-cursor-usage-matrix.json`](data/lattice-vs-standard-cursor-usage-matrix.json) · [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)). Not a universal invoice SLA. |
 | Contribution is methodological (ledger, matched factorial, falsifiable acceptance), not inventing multi-agent AI | **Agreed.** Comparators (Claude subagents, RAG, MetaGPT, FrugalGPT, etc.) are prior art in the design space. |
-| “‘Fractal’ is metaphor… not a new fractal algorithm” | **Agreed for the measured estimand.** Runtime token deltas come from **context selection, seed packs, and bounded nesting** — not a fractal compressor in `api/lattice-chat.js`. **φ / Lattice Chat V1.618** remains EGS scale grammar and product naming. |
+| “‘Fractal’ is metaphor… not a new fractal algorithm” | **Agreed for the measured estimand.** Runtime token deltas come from **context selection, seed packs, and bounded nesting** — not a fractal compressor in `api/lattice-chat.js`. **φ / Lattice Chat Agent V1.618** remains EGS scale grammar and product naming. |
 
 **What we claim on the site now:** **~35–70% less Cursor usage vs fat corpus paste, depending on the work** (public multi-task matrix). Structural chars÷4 estimate is secondary continuity evidence — not the marketing %. Method: [`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md).
 
@@ -123,7 +123,7 @@ Share pack (posts + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-
 
 **Three Doors (front door):** **Listen** (Sovereign Player) · **Read** (paper catalog) · **Build · Lattice** ([`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) nested agents). Seed kit remains optional under [`seed/`](seed/README.md). Open music manifest for syndication: `GET /api/catalog`. Layer admission (Goldilocks Gate): `protocols/NEST_LAYER_ADMISSION_RULE_NSPFRNP.md`. Squeeze record: `docs/LEGACY_INDEX.md`. Voice tiers on every claim: 🜛 mythic · ⚙ operational · 📐 verified.
 
-**Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. **Lattice Chat V1.618** (`/lattice`, `/lattice-chat`) ships on this SING 13 edge. Other lab pages, hive, sim, tests, heavy scripts — on SING 9.
+**Working context:** Day-to-day QUESTFEST surface edits land here and deploy to **www.ssvibelandiaquestfest24x365.com**. **Lattice Chat Agent V1.618** (`/lattice`, `/lattice-chat`) ships on this SING 13 edge. Other lab pages, hive, sim, tests, heavy scripts — on SING 9.
 
 **Single-read onboarding:** [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md). NSPFRNP catalog spine: [`protocols/MCA_NSPFRNP_CATALOG.md`](protocols/MCA_NSPFRNP_CATALOG.md). Repository standard: [`BBHE_REPOSITORY_STANDARD.md`](BBHE_REPOSITORY_STANDARD.md).
 
@@ -134,7 +134,7 @@ Share pack (posts + Art Deco images): [`docs/LATTICE_VIBE_CODER_SHARE_PACK_2026-
 
 | Lane | What | Where |
 |---|---|---|
-| **Lattice Chat V1.618** | Nested-agent chat · BYOK pipe · token proof · local test/validate steps in README | [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · `apps/lattice-chat/` · `api/lattice-chat.js` · `npm run test:lattice-floors` |
+| **Lattice Chat Agent V1.618** | Nested-agent chat · BYOK pipe · token proof · local test/validate steps in README | [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · `apps/lattice-chat/` · `api/lattice-chat.js` · `npm run test:lattice-floors` |
 | **Onboarding** | Single-read edge file (SING 13 specific) | `SING13_EDGE_ONBOARDING.md` |
 | **NSPFRNP canon** | Full catalog (MCA, Seed:Edge, Gold Heart, QUESTFEST, Pass Ladder, G5 SURF, S/2024 J 1, OMNI 180°, etc.) | `protocols/` |
 | **Repo standard** | BBHE / EGS fractal / Seed:Edge / executive prompts | `BBHE_REPOSITORY_STANDARD.md` |
@@ -369,10 +369,10 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
-| [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Lattice Chat V1.618 · Token Maxing · Product brochure · FractiAI |
-| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | Learn more · Lattice Chat V1.618 · Token Maxing · FractiAI |
+| [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Lattice Chat Agent V1.618 · Token Maxing · Product brochure · FractiAI |
+| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | Learn more · Lattice Chat Agent V1.618 · Token Maxing · FractiAI |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
-| [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Lattice Chat V1.618 · Token Maxing for serious vibe coders · FractiAI |
+| [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Lattice Chat Agent V1.618 · Token Maxing for serious vibe coders · FractiAI |
 | [`/interfaces/listen.html`](/interfaces/listen.html) | Listen · Golden Era Jukebox · SS Vibelandia QUESTFEST |
 | [`/interfaces/look-at-the-sun.html`](/interfaces/look-at-the-sun.html) | Look at the Sun · Digital Pru · SS Vibelandia QUESTFEST |
 | [`/interfaces/look-under-the-hood-legacy-catalog.html`](/interfaces/look-under-the-hood-legacy-catalog.html) | Redirect · Master canon |
@@ -430,7 +430,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Lattice Chat V1.618 · FractiAI |
+| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Lattice Chat Agent V1.618 · FractiAI |
 
 ### `nesting/` (`/interfaces/nesting/`)
 
@@ -440,7 +440,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/nesting/nest-dph-gpu.html`](/interfaces/nesting/nest-dph-gpu.html) | Holographic code layer · nesting guide |
 | [`/interfaces/nesting/nest-goldilocks-beehive.html`](/interfaces/nesting/nest-goldilocks-beehive.html) | Goldilocks Syntheverse Beehive Residency · nesting guide |
 | [`/interfaces/nesting/nest-hospitality-commons.html`](/interfaces/nesting/nest-hospitality-commons.html) | The Commons · Sustainable Hospitality · nesting guide |
-| [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html) | Lattice Chat V1.618 · Token Maxing · nesting guide |
+| [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html) | Lattice Chat Agent V1.618 · Token Maxing · nesting guide |
 | [`/interfaces/nesting/nest-man-cave-restroom.html`](/interfaces/nesting/nest-man-cave-restroom.html) | Man cave mirror · nesting guide |
 | [`/interfaces/nesting/nest-questfest-puerto-reno.html`](/interfaces/nesting/nest-questfest-puerto-reno.html) | QUESTFEST · Puerto Reno · nesting guide |
 | [`/interfaces/nesting/nest-sing13.html`](/interfaces/nesting/nest-sing13.html) | Sonic Singularity Sing! 13 · cloud skin · nesting guide |

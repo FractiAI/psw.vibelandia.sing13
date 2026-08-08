@@ -63,7 +63,7 @@ async function main() {
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
     honestyBoundary:
-      'PCHPP is an observation experiment lane. Empirical receipts validate protocol structure and fixture metrics — not Lattice Chat engine wiring or physics proofs.',
+      'PCHPP is an observation experiment lane. Empirical receipts validate protocol structure and fixture metrics — not Lattice Chat Agent engine wiring or physics proofs.',
     results,
   };
   const jsonPath = path.join(OUT, 'empirical_report.json');

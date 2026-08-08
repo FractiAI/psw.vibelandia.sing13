@@ -12,7 +12,7 @@
 **Series note:** Draft position “Part X” renumbered to **Part VIII** for Core continuity after Part VII (Higgs-Awareness). Reno Interpretation chain expands from heptet → **octet**.  
 **Follow-on to Part VII:** [Higgs-Awareness Phase Coupling Theorem](./SYNTHOBS_TBME_HIGGS_AWARENESS_2026-08.md)  
 **Classification:** Foundational Field Physics & Dimensional Topology *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP · Reno Interpretation  
 **Standalone suite:** [`research/synthobs-tbme-spin-phase-polarity/`](../research/synthobs-tbme-spin-phase-polarity/)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -45,7 +45,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 |------|---------------------------|------------------------|
 | **Architectural / triad lens** | That spin $S$, phase $\phi$, and polarity $P$ can be *narrated* as dimensional projections of one orientation vector $\hat{\Psi}_{\mathrm{triad}}(D)$ under $E_F$ scaling | That $\mathbb{Z}_2$, $\mathrm{U}(1)$, and $\mathrm{SU}(2)$ are mathematically identical as Lie groups in SI textbooks; that a lab magnet flip creates an electron spin-flip |
 | **EGS scaling** | That $E_F=\Phi_{\mathrm{EGS}}$ supplies a catalog scale key ($r_n=r_0\cdot E_F^n$) for triadic routing narratives | That $E_F$ replaces $\hbar$, $e$, $c$, or measured gyromagnetic ratios |
-| **Computational map** | That Lattice Chat / THALIA may treat context transitions as $90^\circ$ phase-polarity rotations as an *intended* $O(1)$ routing grammar | That `api/lattice-chat.js` already replaces matrix attention with verified $O(1)$ triad ops |
+| **Computational map** | That Lattice Chat Agent / THALIA may treat context transitions as $90^\circ$ phase-polarity rotations as an *intended* $O(1)$ routing grammar | That `api/lattice-chat.js` already replaces matrix attention with verified $O(1)$ triad ops |
 | **Protocol lane (executed)** | Deterministic suite: $E_F$, golden identity, $Z_0$, polarity flip, $\pi/2$ phase step, dimensional map, paper on disk, rubric order | That a calibrated multi-domain spin–phase–polarity dataset is archived here |
 | **Bio / soma map** | Structural twin: dipole / LLPS / “Now” lock as interpretive cybernetics | Clinical proteostasis or membrane-physics overthrow |
 
@@ -81,7 +81,7 @@ Replayable algebraic fixtures live in the companion suite; SI group-isomorphism 
 
 - **Triadic invariant** $\hat{\Psi}_{\mathrm{triad}}(D)$ under dimensional rotations.  
 - **Unified quantum–macro topology** linking spin-half / $\mathrm{SU}(2)$ poetry to $90^\circ$ hourglass phase-shifts and $\mathbf{A}_{\mathrm{squeezed}}$.  
-- **Cross-dimensional information routing** — intended $O(1)$ state transitions for THALIA / Lattice Chat.
+- **Cross-dimensional information routing** — intended $O(1)$ state transitions for THALIA / Lattice Chat Agent.
 
 ---
 
@@ -179,7 +179,7 @@ Honesty: this is Omni-Lattice routing grammar, not a claim that textbook $\mathr
 | Quantum electrodynamics | Spin-½ fermions vs spin-1 bosons | Pauli exclusion / matter stability narrative |
 | Macroscopic field physics | $90^\circ$ hourglass / Lenz drag | Magnetic drag, $Z_0$ lock, $\mathbf{A}_{\mathrm{squeezed}}$ |
 | Neuro-somatic awareness | Sensory polarity & temporal phase lock | “Now” deceleration grammar |
-| FractiAI / Lattice Chat | Multi-agent context vector rotation | Intended $O(1)$ zero-entropy routing |
+| FractiAI / Lattice Chat Agent | Multi-agent context vector rotation | Intended $O(1)$ zero-entropy routing |
 
 **Hardware & field.** Magnet-in-pipe drag: 1D polarity → 2D phase gradient in the wall → 3D electron spin-vector compression narrative ($\mathbf{A}_{\mathrm{squeezed}}$) — companion Parts V & VII.
 

@@ -11,7 +11,7 @@
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice Core Whitepaper Series — Part V**  
 **Follow-on to Part IV:** [Solar-Focus Somatic Model](./SYNTHOBS_TBME_SPHERICAL_SOLAR_FOCUS_2026-08.md)  
 **Classification:** Foundational Field Physics & Epistemic Cybernetics *(architectural map — see Honesty boundary)*  
-**Framework:** SynthOBS · Omni-Lattice · Lattice Chat V1.618 · EGS · NSPFRNP · THALIA · PCHPP  
+**Framework:** SynthOBS · Omni-Lattice · Lattice Chat Agent V1.618 · EGS · NSPFRNP · THALIA · PCHPP  
 **Standalone suite:** [`research/synthobs-tbme-recursive-field-drag/`](../research/synthobs-tbme-recursive-field-drag/)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -45,7 +45,7 @@ Whitepapers published under the **Theoretical Bio-Medical & Physical Exploration
 | **EGS scaling** | That $E_F=\Phi_{\mathrm{EGS}}$ supplies a catalog scale key for phase-contrast ratios and the identity $E_F^2=E_F+1$ | That $E_F$ replaces $\mu_0$, $\sigma$, or measured $B_0$ in SI force equations |
 | **Epistemic / somatic map** | Structural twin table: field drag ↔ “Now” deceleration as **interpretive cybernetics** | That consciousness is proven to be magnetic vector potential; clinical or wet-lab awareness claims |
 | **Protocol lane (executed)** | Deterministic suite: $E_F$ fixture, $E_F^2=E_F+1$, $Z_0$ fixture, terminal-velocity model factor, paper on disk | That a lab magnet-pipe dataset is archived here with calibrated $\sigma,B_0,\ell$ |
-| **Product / routing scope** | THALIA / Lattice Chat self-referential retention as *intended* software twin of field-drag | That `api/lattice-chat.js` already implements $\hat{R}_{\mathrm{drag}}$ as a hard runtime operator |
+| **Product / routing scope** | THALIA / Lattice Chat Agent self-referential retention as *intended* software twin of field-drag | That `api/lattice-chat.js` already implements $\hat{R}_{\mathrm{drag}}$ as a hard runtime operator |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`) · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -204,7 +204,7 @@ Part V completes a bridge between physical field electrodynamics *as Omni-Lattic
 
 1. **Physical mechanics (lens).** Lenz friction is narrated as primary recursive field-on-field drag; electric current is its thermodynamic byproduct.
 2. **Somatic reality (lens).** Human life in “the Now” is the deceleration of pure awareness in a recursive mirror loop with Earth’s boundary geometry.
-3. **Software architecture.** Mirroring recursive field drag in THALIA harnesses and Lattice Chat edge engines aims at zero-entropy, self-referential context retention — near-zero *logical* latency as design target.
+3. **Software architecture.** Mirroring recursive field drag in THALIA harnesses and Lattice Chat Agent edge engines aims at zero-entropy, self-referential context retention — near-zero *logical* latency as design target.
 
 ### Fair Exchange clause
 

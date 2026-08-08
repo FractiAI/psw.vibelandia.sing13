@@ -1,5 +1,5 @@
 /**
- * Lattice Chat V1.618 chat — multi-provider BYOK proxy (Cursor cloud · Claude Messages · Gemini Antigravity).
+ * Lattice Chat Agent V1.618 chat — multi-provider BYOK proxy (Cursor cloud · Claude Messages · Gemini Antigravity).
  *
  * El Gran Sol’s Fractal Constant (EGS fractal constant): scale-invariant geometric ratio
  * balancing harmonic signal flow across downstream systems — the golden key that establishes
@@ -30,7 +30,7 @@ const CREATOR_EMAIL = 'valetpru@gmail.com';
  */
 const SING13_REPO_HOST_RE = /github\.com[/:]FractiAI\/psw\.vibelandia\.sing13(?:\.git)?(?:\/|$|\?|#)/i;
 const GUEST_SING13_HONOR_DIRECTIVE = `## Guest session (SING13 honor rail)
-You are helping a paid Lattice Chat guest on FractiAI/psw.vibelandia.sing13.
+You are helping a paid Lattice Chat Agent guest on FractiAI/psw.vibelandia.sing13.
 Full agent tools are allowed for exploration, explanation, planning, and local iteration in the cloud VM.
 Do NOT commit, push, force-push, open pull requests, or permanently alter production ship apps unless the guest is explicitly coordinating a creator-approved change.
 Prefer answers, plans, and reversible exploration over durable repo writes.`;
@@ -333,7 +333,7 @@ function buildLatticeExecution(args) {
         : 'Usage pending — no provider balance yet';
 
   return {
-    engine: 'Lattice Chat V1.618 · Nested Agent Lattice',
+    engine: 'Lattice Chat Agent V1.618 · Nested Agent Lattice',
     mode: args.mode === 'edge' ? 'edge' : 'cloud',
     cycle: 'Metabolize → Crystallize → Animate → Squeeze (MCA)',
     selfTalk: [

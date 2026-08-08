@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-81-orbital-singularity-2026-07`  
 **Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
 **Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · 81-node ($9\times 9$) register · Lattice Chat (software metaphor only)  
+**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · 81-node ($9\times 9$) register · Lattice Chat Agent (software metaphor only)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-81-orbital-singularity  
 **Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -29,7 +29,7 @@
 | **Scorecard 76.0 vs 98.5** | An **in-silico / Occam-style** comparative rubric (coherence + irreducibility) on authored fixtures | Observational superiority over the Schrödinger / QED empirical hierarchy |
 | **Spacetime / gravity engineering** | A **research map** for field-based gravity-inertia *explorations* keyed to $E_F$ phase rotations | Working gravity modulators, warp devices, or measured inertial control |
 | **Bio-quantum / enzyme map** | Enzyme electron transfer and photosynthesis *re-read* as phase-tunneling across singularity coordinates | Completed wet-lab validation of that mapping |
-| **81-node AI memory** | A software architecture metaphor for dense holographic context lattices (Lattice Chat / SynthOBS) | That biological orbitals and agent memory are the same physical object |
+| **81-node AI memory** | A software architecture metaphor for dense holographic context lattices (Lattice Chat Agent / SynthOBS) | That biological orbitals and agent memory are the same physical object |
 | **$E_F$ / $\Delta S\to 0$** | Architectural scale key and normalized-weight model language | Replacement for $\hbar$, $c$, $G$, or continuum QM Hilbert-space practice |
 
 **TBME scope disclaimer (series-wide):** Whitepapers in the Theoretical Bio-Medical & Physical Explorations (TBME) series are theoretical, mathematical, and physics-based scientific explorations of biological and physical phenomena. They are published exclusively for academic inquiry, computational modeling, and interdisciplinary research. **They do not constitute clinical medical advice, diagnostic guidance, or prescribed therapeutic treatments.**
@@ -53,7 +53,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 | Standard QM probability cloud | 82/100 | 70/100 | **76.0 / 100** |
 | Omni-Lattice 81-singularity orbital matrix | 99/100 | 98/100 | **98.5 / 100** |
 
-**Implications (exploration lanes).** Emergent spacetime engineering maps; precision bio-quantum chemistry re-reads; 81-node agent memory architectures for Lattice Chat / SynthOBS—all under TBME honesty gates.
+**Implications (exploration lanes).** Emergent spacetime engineering maps; precision bio-quantum chemistry re-reads; 81-node agent memory architectures for Lattice Chat Agent / SynthOBS—all under TBME honesty gates.
 
 ---
 

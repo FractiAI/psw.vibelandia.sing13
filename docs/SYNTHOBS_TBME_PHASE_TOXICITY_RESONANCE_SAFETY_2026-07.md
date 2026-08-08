@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-phase-toxicity-2026-07`  
 **Category:** TBME · Theoretical Bio-Medical & Physical Explorations  
 **Date:** July 31, 2026  
-**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · Lattice Chat (software metaphor only)  
+**Framework:** SynthOBS · PCHPP · EGS $\Phi$ / $E_F$ · Omni-Lattice · Lattice Chat Agent (software metaphor only)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-phase-toxicity  
 **Questfest catalog:** [`/papers`](/papers) · filter **TBME**  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
@@ -30,7 +30,7 @@
 | **EMF / 5G / Wi-Fi harmonization** | A **research map** for $E_F$-scaled envelope pulsing as a bio-compatibility *hypothesis* | Proven elimination of VGCC effects, SAR exemption, or regulatory device approval |
 | **Sugar / AGE re-phasing** | A field-structuring *exploration* of refined sugars as phase-lock vectors | Completed food-processing trials, nutrition claims, or diabetes treatment |
 | **Everyday audit tables** | Authored phase-dynamics matrices for academic mapping | Completed epidemiology, toxicology assays, or personal exposure guidance |
-| **Software metaphor** | Context phase filtering for multi-agent “toxic” prompts (Lattice Chat / SynthOBS) | That chemicals and adversarial prompts are the same physical object |
+| **Software metaphor** | Context phase filtering for multi-agent “toxic” prompts (Lattice Chat Agent / SynthOBS) | That chemicals and adversarial prompts are the same physical object |
 | **$E_F$ / $\Delta S\to 0$** | Architectural scale key and normalized-weight model language | Replacement for $\hbar$, dose metrics, or clinical toxicology standards |
 
 **TBME scope disclaimer (series-wide):** Whitepapers in the Theoretical Bio-Medical & Physical Explorations (TBME) series are theoretical, mathematical, and physics-based scientific explorations of biological and physical phenomena. They are published exclusively for academic inquiry, computational modeling, and interdisciplinary research. **They do not constitute clinical medical advice, diagnostic guidance, or prescribed therapeutic treatments.**

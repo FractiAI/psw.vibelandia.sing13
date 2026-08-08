@@ -106,7 +106,7 @@
 }
 ```
 
-### E6_metaphor_matrix — Five-row P. barbatus ↔ Lattice Chat metaphor matrix
+### E6_metaphor_matrix — Five-row P. barbatus ↔ Lattice Chat Agent metaphor matrix
 
 - **Pass:** `true`
 - **Honesty:** Operational metaphor matrix — not literal biology–software identity.
@@ -114,7 +114,7 @@
 ```json
 {
   "id": "E6_metaphor_matrix",
-  "title": "Five-row P. barbatus ↔ Lattice Chat metaphor matrix",
+  "title": "Five-row P. barbatus ↔ Lattice Chat Agent metaphor matrix",
   "rows": [
     [
       "master_orchestrator",
@@ -184,7 +184,7 @@
 }
 ```
 
-### E9_lattice_surfaces — Lattice Chat Pogonomyrmex Omni-Lattice V ↔ surface map
+### E9_lattice_surfaces — Lattice Chat Agent Pogonomyrmex Omni-Lattice V ↔ surface map
 
 - **Pass:** `true`
 - **Honesty:** Structural product map — not a claim every turn runs a colony sim.
@@ -192,7 +192,7 @@
 ```json
 {
   "id": "E9_lattice_surfaces",
-  "title": "Lattice Chat Pogonomyrmex Omni-Lattice V ↔ surface map",
+  "title": "Lattice Chat Agent Pogonomyrmex Omni-Lattice V ↔ surface map",
   "surfaces": [
     "/whitepaper/synthobs-omni-lattice-pogonomyrmex",
     "/lattice/learn",

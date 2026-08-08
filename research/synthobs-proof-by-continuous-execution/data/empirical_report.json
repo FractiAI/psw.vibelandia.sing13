@@ -103,7 +103,7 @@
       },
       {
         "id": "E9_lattice_surfaces",
-        "title": "Lattice Chat PCE ↔ surface map",
+        "title": "Lattice Chat Agent PCE ↔ surface map",
         "surfaces": [
           "/whitepaper/synthobs-proof-by-continuous-execution",
           "/lattice/learn",

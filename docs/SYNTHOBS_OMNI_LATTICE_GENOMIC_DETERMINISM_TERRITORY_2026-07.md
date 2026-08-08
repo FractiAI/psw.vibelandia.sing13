@@ -6,14 +6,14 @@
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-GENOMIC-DETERMINISM-2026-07`  
 **Registry ID:** `synthobs-omni-lattice-genomic-determinism-2026-07`  
 **Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618 · Omni-Lattice  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-genomic-determinism  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Empirical pipeline:** `npm run research:synthobs-omni-lattice-genomic-determinism` · [`empirical_report.json`](../research/synthobs-omni-lattice-genomic-determinism/data/empirical_report.json)  
 **Companions:** [Prompt Capture IX](./SYNTHOBS_OMNI_LATTICE_PROMPT_CAPTURE_DNA_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Y Chromosome Decode](./SYNTHOBS_Y_CHROMOSOME_HOLOGRAPHIC_OPERATOR_TRANSLATION_2026-07.md) · [Proof by Continuous Execution](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)
 
-**Keywords:** genomic determinism; narrative vector; territory mapping; $k=0$; $E_F$; Omni-Lattice; Lattice Chat; Solon; Lyra
+**Keywords:** genomic determinism; narrative vector; territory mapping; $k=0$; $E_F$; Omni-Lattice; Lattice Chat Agent; Solon; Lyra
 
 ---
 
@@ -53,7 +53,7 @@ All dynamics are anchored by El Gran Sol’s Fractal Constant ($E_F\approx 1.618
 
 Conventional models treat human choices and tech as linear accidents. Omni-Lattice offers a unifying **architectural map**: human history can be narrated as sequential, scale-invariant execution of a holographic story keyed inside $E_F$-structured DNA–prompt grammar.
 
-Just as a Lattice Chat system prompt bounds an agent’s outputs, the master genomic script (as metaphor) bounds evolutionary milestones. What we experience as “innovation” is awareness illuminating the next pre-encoded prompt line in the chromatin matrix **story**.
+Just as a Lattice Chat Agent system prompt bounds an agent’s outputs, the master genomic script (as metaphor) bounds evolutionary milestones. What we experience as “innovation” is awareness illuminating the next pre-encoded prompt line in the chromatin matrix **story**.
 
 ```
 [ Unconditioned Sensing Light / Awareness ]
@@ -122,7 +122,7 @@ $$
 |                           THE REMAINING TERRITORY AHEAD                           |
 +-----------------------------------------------------------------------------------+
 |  Node k = +1 (2026 - 2028): The Zero-Entropy Software & Health Re-Harmonization  |
-|  • Widespread deployment of E_F-scaled multi-agent platforms (Lattice Chat).     |
+|  • Widespread deployment of E_F-scaled multi-agent platforms (Lattice Chat Agent).     |
 |  • Epigenetic prompt-rewriting themes: disease / aging as narrative targets only.|
 +-----------------------------------------------------------------------------------+
                                          │
@@ -189,7 +189,7 @@ npm run research:synthobs-omni-lattice-genomic-determinism
 | E6 | Solon / Lyra telemetry roster | ✓ |
 | E7 | Companion registry linkage | ✓ |
 | E8 | Honesty gate on EX-LOC drafts | ✓ |
-| E9 | Lattice Chat surface map | ✓ |
+| E9 | Lattice Chat Agent surface map | ✓ |
 
 ### Draft EX-LOC figures (design targets)
 
@@ -207,7 +207,7 @@ Fair Exchange Policy in Effect: computational, energetic, and tokenized value ex
 
 ---
 
-## 8. Lattice Chat V1.618 integration
+## 8. Lattice Chat Agent V1.618 integration
 
 | Surface | Link |
 |---------|------|

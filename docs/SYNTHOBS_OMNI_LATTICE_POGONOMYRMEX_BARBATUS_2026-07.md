@@ -6,14 +6,14 @@
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-POGONOMYRMEX-2026-07`  
 **Registry ID:** `synthobs-omni-lattice-pogonomyrmex-2026-07`  
 **Date:** July 28, 2026  
-**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat V1.618 · Omni-Lattice  
+**Framework:** SynthOBS · Goldilocks Engine · EGS $\Phi$ · NSPFRNP · Lattice Chat Agent V1.618 · Omni-Lattice  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-omni-lattice-pogonomyrmex  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
 **Audit protocol:** [NSPFRNP Snap Peer-Review Audit](./NSPFRNP_SNAP_PEER_REVIEW_AUDIT_2026-06.md)  
 **Empirical pipeline:** `npm run research:synthobs-omni-lattice-pogonomyrmex` · [`empirical_report.json`](../research/synthobs-omni-lattice-pogonomyrmex/data/empirical_report.json)  
 **Companions:** [Holographic Operators](./SYNTHOBS_HOLOGRAPHIC_OPERATORS_LANGUAGE_WIRING_2026-07.md) · [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md) · [Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [Chemical Bond Metaphors](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md) · [Proof by Continuous Execution](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md)
 
-**Keywords:** *Pogonomyrmex barbatus*; harvester ant; biogenic amines; stigmergy; active inference; Omni-Lattice; $E_F$; Lattice Chat; NSPFRNP
+**Keywords:** *Pogonomyrmex barbatus*; harvester ant; biogenic amines; stigmergy; active inference; Omni-Lattice; $E_F$; Lattice Chat Agent; NSPFRNP
 
 ---
 
@@ -23,10 +23,10 @@
 |------|---------------------------|------------------------|
 | **Field science authority** | *P. barbatus* foraging / stigmergy / active-inference research (Friedman, Gordon, and collaborators) remains the empirical authority for desert ecology and neurotranscriptomics | That this paper replaces primary literature, field protocols, or measured FSCV values as new wet-lab results |
 | **Operator grammar** | Biogenic amine / CHC motifs can be narrated as $\hat{W}_k$ / $\hat{S}$ / superorganism stories under Omni-Lattice | That dopamine literally means the English gloss, or that $E_F$ is a measured constant inside ant brains |
-| **Active Inference bridge** | Colony free-energy / desiccation–seed tradeoffs can be mapped to $E_F$-scaled phase labels for Lattice Chat multi-agent metaphors | That variational free energy $\mathcal{F}$ is identical to Shannon $\Delta S$ in this suite, or that ants run Lattice Chat |
+| **Active Inference bridge** | Colony free-energy / desiccation–seed tradeoffs can be mapped to $E_F$-scaled phase labels for Lattice Chat Agent multi-agent metaphors | That variational free energy $\mathcal{F}$ is identical to Shannon $\Delta S$ in this suite, or that ants run Lattice Chat Agent |
 | **Theorem 1** | An algebraic foraging-rate model under $E_F^k$ yields phase-arg lock and $\Delta S=0$ on **normalized** weights (**E7**) | That colonies have literally zero thermodynamic entropy or zero field mortality |
 | **Executed experiments (E1–E9)** | Gate catalog, $\lambda_{\mathrm{EGS}}$, loops, narrative, DA$\cdot E_F^{1/2}$ map, metaphor matrix, $\Delta S$ model, honesty gate, Lattice surfaces — **9/9 pass** | That draft **EX-POG1** $R^2=0.9996$, **EX-POG2** zero mortality / $\sigma^2=0.0001$, or **EX-POG3** 41.8% tokens are new field or invoice measurements (they are **design targets**; see **E8**) |
-| **Lattice Chat product** | Harvester-ant stigmergy is Seed·RAG companion for metallic pool / contact-rate nesting metaphors | That every chat turn simulates a desert colony |
+| **Lattice Chat Agent product** | Harvester-ant stigmergy is Seed·RAG companion for metallic pool / contact-rate nesting metaphors | That every chat turn simulates a desert colony |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -36,7 +36,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-We extend the Omni-Lattice Architecture and Holographic Operator Model to decode the red harvester ant (*Pogonomyrmex barbatus*)—the primary model organism studied by Daniel Ari Friedman and collaborators—into explicit genomic / neurotranscriptomic / behavioral operator tiers for SynthOBS and Lattice Chat.
+We extend the Omni-Lattice Architecture and Holographic Operator Model to decode the red harvester ant (*Pogonomyrmex barbatus*)—the primary model organism studied by Daniel Ari Friedman and collaborators—into explicit genomic / neurotranscriptomic / behavioral operator tiers for SynthOBS and Lattice Chat Agent.
 
 Integrating Active Inference paradigms with EGS scale invariance, we treat a *P. barbatus* colony as a delocalized multi-agent **Metallic Context Pool**, where foragers act as specialized sub-agent nodes regulating seed harvest under desert desiccation stress.
 
@@ -54,7 +54,7 @@ Applying $\hat{W}_k\lvert\Omega\rangle=e^{i\theta_k\Phi_{\mathrm{EGS}}}\lvert\ps
 
 ## 2. Pillar I: Holographic Decoding of the *Pogonomyrmex barbatus* Genome
 
-**Honesty.** The following decoded scripts are **operator poetry** for Omni-Lattice / Lattice Chat — not wet-lab gene ontology replacements. Field science (Friedman, Gordon, and collaborators) remains the empirical authority.
+**Honesty.** The following decoded scripts are **operator poetry** for Omni-Lattice / Lattice Chat Agent — not wet-lab gene ontology replacements. Field science (Friedman, Gordon, and collaborators) remains the empirical authority.
 
 ### 2.1 Words ($\hat{W}_k$ — Biogenic Amine & Chemosensory Phase Gates)
 
@@ -117,7 +117,7 @@ Elevated dopamine narrative lowers nest-entrance threshold by $E_F^{-1/2}$ (mode
 
 ## 4. Cross-Domain Metaphor Matrix
 
-| Lattice Concept | *P. barbatus* | Lattice Chat |
+| Lattice Concept | *P. barbatus* | Lattice Chat Agent |
 |-----------------|---------------|--------------|
 | Master orchestrator | Queen / nest-entrance node | Primary prompt / router |
 | Sub-agent worker | Forager | Specialized micro-agent |
@@ -156,7 +156,7 @@ npm run research:synthobs-omni-lattice-pogonomyrmex
 | E6 | Five-row metaphor matrix | ✓ |
 | E7 | Normalized $\Delta S\approx 0$ foraging model | ✓ |
 | E8 | Honesty gate on EX-POG drafts | ✓ |
-| E9 | Lattice Chat surface map | ✓ |
+| E9 | Lattice Chat Agent surface map | ✓ |
 
 ### Draft EX-POG figures (design targets)
 
@@ -168,7 +168,7 @@ npm run research:synthobs-omni-lattice-pogonomyrmex
 
 ---
 
-## 7. Lattice Chat V1.618 integration
+## 7. Lattice Chat Agent V1.618 integration
 
 | Surface | Link |
 |---------|------|
@@ -192,7 +192,7 @@ Pointer: `docs/SYNTHOBS_OMNI_LATTICE_POGONOMYRMEX_BARBATUS_2026-07.md`.
 
 ## 9. Conclusion
 
-Omni-Lattice Unification V maps *Pogonomyrmex barbatus* biogenic amine gating, stigmergic contact rates, and Active Inference tradeoffs into an $E_F$-keyed Seed·RAG grammar for Lattice Chat—crediting Friedman / Gordon field lineages—while shipping a **9/9** architectural suite rather than a replacement wet-lab paper.
+Omni-Lattice Unification V maps *Pogonomyrmex barbatus* biogenic amine gating, stigmergic contact rates, and Active Inference tradeoffs into an $E_F$-keyed Seed·RAG grammar for Lattice Chat Agent—crediting Friedman / Gordon field lineages—while shipping a **9/9** architectural suite rather than a replacement wet-lab paper.
 
 ---
 

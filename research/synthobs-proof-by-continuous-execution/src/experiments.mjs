@@ -207,7 +207,7 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat PCE ↔ surface map',
+    title: 'Lattice Chat Agent PCE ↔ surface map',
     surfaces,
     honesty: 'Structural product map — not a claim every reply is a completed proof.',
     pass: surfaces.length >= 6 && surfaces.every((s) => String(s).length > 3),

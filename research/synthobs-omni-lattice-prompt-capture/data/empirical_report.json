@@ -88,7 +88,7 @@
       },
       {
         "id": "E9_lattice_surfaces",
-        "title": "Lattice Chat Prompt Capture IX ↔ surface map",
+        "title": "Lattice Chat Agent Prompt Capture IX ↔ surface map",
         "surfaces": [
           "/whitepaper/synthobs-omni-lattice-prompt-capture",
           "/lattice/learn",

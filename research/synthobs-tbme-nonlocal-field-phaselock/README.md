@@ -1,6 +1,6 @@
 # SynthOBS · TBME Non-Local Field Phase-Lock (lens)
 
-**Standalone lens repository** — not wired into Lattice Chat / Lattice engine runtime.  
+**Standalone lens repository** — not wired into Lattice Chat Agent / Lattice engine runtime.  
 **GitHub target:** https://github.com/FractiAI/synthobs-tbme-nonlocal-field-phaselock · **License:** MIT  
 **Document ID:** `WP-SYNTHOBS-TBME-EMPIRICAL-PROOF-2026-08-01`  
 **Registry ID:** `synthobs-tbme-nonlocal-field-phaselock-2026-08`  

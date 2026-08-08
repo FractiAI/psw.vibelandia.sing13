@@ -151,7 +151,7 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat Y-script ↔ surface map',
+    title: 'Lattice Chat Agent Y-script ↔ surface map',
     surfaces,
     pass: surfaces.length >= 6,
   };

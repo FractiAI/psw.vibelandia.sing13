@@ -698,7 +698,7 @@
     },
     {
       "id": "synthobs-phase-locked-chemical-bonds-2026-07",
-      "title": "Phase-Locked Chemical Bond Metaphors in Agentic Architectures: Mathematical Modeling and Empirical Testing of the Lattice Chat Communication Engine",
+      "title": "Phase-Locked Chemical Bond Metaphors in Agentic Architectures: Mathematical Modeling and Empirical Testing of the Lattice Chat Agent Communication Engine",
       "source": "docs/SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md",
       "overallScore": 0.941,
       "convergence": {
@@ -962,7 +962,7 @@
     },
     {
       "id": "lattice-omni-complete-layer-guide-2026-07",
-      "title": "Lattice Chat · Omni-Lattice Complete Layer Guide",
+      "title": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
       "source": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
       "overallScore": 0.941,
       "convergence": {
@@ -1402,7 +1402,7 @@
     },
     {
       "id": "lattice-noahs-ark-metaphor-2026-07",
-      "title": "System Generation · Noah’s Ark Metaphor Architecture · Lattice Chat V1.618",
+      "title": "System Generation · Noah’s Ark Metaphor Architecture · Lattice Chat Agent V1.618",
       "source": "docs/LATTICE_NOAHS_ARK_METAPHOR_ARCHITECTURE_2026-07.md",
       "overallScore": 0.906,
       "convergence": {
@@ -1688,7 +1688,7 @@
     },
     {
       "id": "lattice-token-reduction-proof-2026-07",
-      "title": "Lattice Chat V1.618 · Nested + pointer context load (structural estimate)",
+      "title": "Lattice Chat Agent V1.618 · Nested + pointer context load (structural estimate)",
       "source": "docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md",
       "overallScore": 0.808,
       "convergence": {

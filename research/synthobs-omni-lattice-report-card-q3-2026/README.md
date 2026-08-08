@@ -9,7 +9,7 @@
 
 Comparative **structural** report card: $\Lambda$CDM+QFT vs Omni-Lattice on Internal Coherence ($\mathcal{C}$) and Parameter Irreducibility ($\mathcal{I}$), anchored to $E_F \approx 1.618$.
 
-Wired as a **Lattice Chat V1.618 Seed·RAG pointer** (comparative scorecard in the nest catalog). **Not** Lattice Chat runtime source. **Not** an observational falsification of dark matter.
+Wired as a **Lattice Chat Agent V1.618 Seed·RAG pointer** (comparative scorecard in the nest catalog). **Not** Lattice Chat Agent runtime source. **Not** an observational falsification of dark matter.
 
 ## Scores (rubric)
 

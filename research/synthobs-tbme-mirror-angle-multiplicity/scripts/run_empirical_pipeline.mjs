@@ -2,7 +2,7 @@
 /**
  * Empirical pipeline — TBME Reno Interpretation (Nested Spherical Mirror Lattice)
  * Doc: WP-SYNTHOBS-TBME-SUPERPOSITION-RENO-INTERPRETATION-2026-08-01
- * Omni-Lattice companion lens — not Lattice Chat engine runtime.
+ * Omni-Lattice companion lens — not Lattice Chat Agent engine runtime.
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';

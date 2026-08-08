@@ -1,6 +1,6 @@
 /**
  * PCHPP empirical suite — observation / diagnostic protocol validation.
- * NOT a Lattice Chat engine integration. NOT physics derivation.
+ * NOT a Lattice Chat Agent engine integration. NOT physics derivation.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -253,7 +253,7 @@ export function experimentPhaseCoherenceProxy() {
   };
 }
 
-/** E9 — Observation lane: docs + registry IDs exist; not claimed as Lattice Chat engine. */
+/** E9 — Observation lane: docs + registry IDs exist; not claimed as Lattice Chat Agent engine. */
 export function experimentObservationLaneSurfaces() {
   const root = path.resolve(__dirname, '..', '..', '..');
   const paper = path.join(root, 'docs', 'SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md');
@@ -263,9 +263,9 @@ export function experimentObservationLaneSurfaces() {
   const hasHonesty = /Honesty boundary/i.test(paperText);
   const hasOperator = /SynthOBS Autonomous Agent/i.test(paperText);
   const claimsEngine =
-    /(^|[^.])\s*(is wired into the Lattice Chat engine|wired into Lattice Chat engine|Lattice Chat engine integration required|powers the Lattice Chat engine)/im.test(
+    /(^|[^.])\s*(is wired into the Lattice Chat Agent engine|wired into Lattice Chat Agent engine|Lattice Chat Agent engine integration required|powers the Lattice Chat Agent engine)/im.test(
       paperText,
-    ) || /\*\*Lattice Chat engine feature\*\*/i.test(paperText);
+    ) || /\*\*Lattice Chat Agent engine feature\*\*/i.test(paperText);
   const observationLane = /observation experiment|observation protocol|diagnostic protocol/i.test(
     paperText,
   );
@@ -281,7 +281,7 @@ export function experimentObservationLaneSurfaces() {
   }
   return {
     id: 'E9_observation_lane_surfaces',
-    title: 'Observation lane — paper surfaces; no Lattice Chat engine wiring',
+    title: 'Observation lane — paper surfaces; no Lattice Chat Agent engine wiring',
     paper_exists: paperOk,
     hasDocId,
     hasHonesty,

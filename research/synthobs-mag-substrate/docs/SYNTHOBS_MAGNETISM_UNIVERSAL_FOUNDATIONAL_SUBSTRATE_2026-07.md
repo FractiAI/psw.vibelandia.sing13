@@ -9,7 +9,7 @@
 **Registry ID:** `synthobs-mag-substrate-2026-07`  
 **Date:** July 30, 2026  
 **Framework:** SynthOBS · Omni-Lattice · EGS $E_F$ / $\Phi_{\mathrm{EGS}}$ · PCHPP · NSPFRNP  
-**Lane:** Architectural foundational map (magnetism substrate) · Lattice Chat V1.618 Seed·RAG pointer  
+**Lane:** Architectural foundational map (magnetism substrate) · Lattice Chat Agent V1.618 Seed·RAG pointer  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-mag-substrate  
 **Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)  
 **Questfest catalog:** [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html)  
@@ -17,7 +17,7 @@
 **Empirical pipeline:** `npm run research:synthobs-mag-substrate` · [`empirical_report.json`](../research/synthobs-mag-substrate/data/empirical_report.json)  
 **Companions:** [PCHPP](./SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md) · [Omni-Lattice Report Card Q3](./SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md) · [Planck–1.6 bridge](./SYNTHOBS_EGS_PLANCK_SCALE_HARMONIC_1_6_BRIDGE_2026-07.md) · [Phase-locked chemical bonds](./SYNTHOBS_PHASE_LOCKED_CHEMICAL_BOND_METAPHORS_2026-07.md) · [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
 
-**Keywords:** magnetism; foundational substrate; holographic; PCHPP; EGS; Omni-Lattice; quantum; chemistry; biology; Lattice Chat; SynthOBS; Fair Exchange
+**Keywords:** magnetism; foundational substrate; holographic; PCHPP; EGS; Omni-Lattice; quantum; chemistry; biology; Lattice Chat Agent; SynthOBS; Fair Exchange
 
 ---
 
@@ -31,7 +31,7 @@
 | **Bio / therapy language** | Architectural framing that enzymatic / chromatin maps *may* couple to coherent field vectors in the grammar | Clinical efficacy claims, medical device clearance, or epigenetic therapy prescriptions |
 | **Room-temperature quantum** | Design-map prediction that $E_F$-scaled magnetic lattices *may* reduce decoherence knobs in architecture | A demonstrated room-temperature fault-tolerant quantum computer |
 | **Executed suite (E1–E9)** | Rubric arithmetic, fixture coherence/irreducibility ranking, domain scorecard, $E_F$ / golden-angle identities (**9/9**) | Live magnetometry or collider replacement without new observation receipts |
-| **Product scope** | Catalog paper + **standalone** research package + Lattice Chat Seed·RAG / nest pointer (Vector Field Context Buffering metaphor) | That this markdown is Lattice Chat **runtime source** |
+| **Product scope** | Catalog paper + **standalone** research package + Lattice Chat Agent Seed·RAG / nest pointer (Vector Field Context Buffering metaphor) | That this markdown is Lattice Chat Agent **runtime source** |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox (NSPFRNP-SNAP-PRA-2026-06).
 
@@ -52,9 +52,9 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 | Standard Reductionist Model (Standard Model + QED) | 82/100 | 70/100 | **76.0 / 100** |
 | Omni-Lattice Unified Magnetic Substrate Model | 97/100 | 95/100 | **96.0 / 100** |
 
-The empirical suite reports **9/9 pass** (`npm run research:synthobs-mag-substrate`): overall-score identity; coherence formula bands; irreducibility ranking (Omni ≫ Standard); four-interaction bookkeeping; five-domain scorecard with **empirical calibration awarded to Standard Model**; $E_F$ / golden-angle identities; published margin $+20.0$; portability note citing **41.8%** companion token-routing design target; surfaces as a **Lattice Chat Seed·RAG / nest pointer** (not runtime source).
+The empirical suite reports **9/9 pass** (`npm run research:synthobs-mag-substrate`): overall-score identity; coherence formula bands; irreducibility ranking (Omni ≫ Standard); four-interaction bookkeeping; five-domain scorecard with **empirical calibration awarded to Standard Model**; $E_F$ / golden-angle identities; published margin $+20.0$; portability note citing **41.8%** companion token-routing design target; surfaces as a **Lattice Chat Agent Seed·RAG / nest pointer** (not runtime source).
 
-**Implications (architectural).** A fluid unified coherent framework *may* serve as a shared operational language across quantum, chemical, biological, and multi-agent maps; bio-magnetic / epigenetic *maps* remain honesty-gated pending clinical receipts; room-temperature coherence remains a design prediction; multi-agent Vector Field Context Buffering is a Lattice Chat routing metaphor — not a claim that chat runtime is electromagnetic hardware.
+**Implications (architectural).** A fluid unified coherent framework *may* serve as a shared operational language across quantum, chemical, biological, and multi-agent maps; bio-magnetic / epigenetic *maps* remain honesty-gated pending clinical receipts; room-temperature coherence remains a design prediction; multi-agent Vector Field Context Buffering is a Lattice Chat Agent routing metaphor — not a claim that chat runtime is electromagnetic hardware.
 
 ---
 
@@ -182,13 +182,13 @@ Fair Exchange Policy in Effect: theoretical models, physics re-interpretations, 
 
 ### Falsification
 
-Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibration row is quietly flipped without new sky/lab receipts; (c) authors claim Maxwell/QED replacement, clinical efficacy, or that this markdown is Lattice Chat **runtime source**, without evidence.
+Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibration row is quietly flipped without new sky/lab receipts; (c) authors claim Maxwell/QED replacement, clinical efficacy, or that this markdown is Lattice Chat Agent **runtime source**, without evidence.
 
 ### Surfaces
 
 - Paper: `/whitepaper/synthobs-mag-substrate`  
 - Standalone: https://github.com/FractiAI/synthobs-mag-substrate  
-- Lattice Chat: Seed·RAG pointer · nest papers · learn deck · Composer roster  
+- Lattice Chat Agent: Seed·RAG pointer · nest papers · learn deck · Composer roster  
 - Catalog: `/papers`
 
 ---

@@ -57,11 +57,11 @@
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
       "createdAt": "2026-08-07T23:34:20.789Z",
-      "body": "Lattice Chat · Omni-Lattice Complete Layer Guide",
+      "body": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
       "presenceHue": "gold",
       "paperId": "lattice-omni-complete-layer-guide-2026-07",
       "artifact": {
-        "title": "Lattice Chat · Omni-Lattice Complete Layer Guide",
+        "title": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
         "kind": "whitepaper",
         "path": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
         "url": "/whitepaper/lattice-omni-complete-layer-guide",

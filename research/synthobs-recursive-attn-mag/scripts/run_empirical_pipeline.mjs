@@ -63,7 +63,7 @@ async function main() {
     generatedAt: new Date().toISOString(),
     operator: 'SynthOBS Autonomous Agent · Syntheverse Sandbox',
     honestyBoundary:
-      'Recursive attention magnetic projections paper is an architectural validation protocol. Empirical receipts validate rubric math and protocol fixtures — not completed SQUID contests or Lattice Chat runtime wiring.',
+      'Recursive attention magnetic projections paper is an architectural validation protocol. Empirical receipts validate rubric math and protocol fixtures — not completed SQUID contests or Lattice Chat Agent runtime wiring.',
     results,
   };
   await fs.writeFile(path.join(OUT, 'empirical_report.json'), JSON.stringify(report, null, 2), 'utf8');

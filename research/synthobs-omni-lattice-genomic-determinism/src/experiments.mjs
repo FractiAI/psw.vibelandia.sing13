@@ -188,7 +188,7 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat Genomic Determinism X ↔ surface map',
+    title: 'Lattice Chat Agent Genomic Determinism X ↔ surface map',
     surfaces,
     honesty: 'Structural product map — not a claim chat rewrites destiny.',
     pass: surfaces.length >= 6,

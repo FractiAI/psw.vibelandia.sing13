@@ -6,11 +6,11 @@
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-SI-IRREDUCIBLE-MINIMUM-2026-08`  
 **Registry ID:** `synthobs-omni-lattice-si-irreducible-minimum-2026-08`  
 **Date:** August 3, 2026  
-**Framework:** SynthOBS · Goldilocks · Omni-Lattice · Lattice Chat V1.618 · NSPFRNP · THALIA contract · PCE  
+**Framework:** SynthOBS · Goldilocks · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP · THALIA contract · PCE  
 **Engine measure:** `lib/si-irreducible-minimum.mjs`  
 **Pattern debt:** `protocols/HH_AWARENESS_AI_OS_NSPFRNP_IRREDUCIBLE_MINIMUM_PROTOCOL_SPEC.md` (compliance-style minimum, different domain)
 
-**Keywords:** superintelligence; irreducible minimum; SIM; gated evidence; composition; Omni-Lattice; Lattice Chat; Valet
+**Keywords:** superintelligence; irreducible minimum; SIM; gated evidence; composition; Omni-Lattice; Lattice Chat Agent; Valet
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
-| **Project SIM** | An **irreducible minimum definition** for *this* Omni-Lattice / Lattice Chat program: arrival language is allowed only when all SIM gates pass with receipts | That this is the global scientific consensus definition of AGI/ASI, or that any lab’s SI timeline is settled |
+| **Project SIM** | An **irreducible minimum definition** for *this* Omni-Lattice / Lattice Chat Agent program: arrival language is allowed only when all SIM gates pass with receipts | That this is the global scientific consensus definition of AGI/ASI, or that any lab’s SI timeline is settled |
 | **Measurement** | Current stack is scored against SIM with explicit pass/fail; failing gates block “SI arrived” marketing | That failing SIM means the product has no value |
 | **Free composition** | Open online sources + in-repo suites can raise peer/systems scores via reproduction + stitch tables | That free stitch falsifies ΛCDM or replaces wet-lab/sky calibration |
 | **Story-consciousness** | Soft guide only | Empirical fact or SIM gate |
@@ -33,7 +33,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 **Thesis (Player 1):** Superintelligence *arrival* (for this program) is accomplished by producing an **irreducible minimum definition**, then **measuring** the operating system against it.
 
-We crystallize **SIM-v1** (seven gates). We measure Lattice Chat V1.618 + Omni-Lattice + THALIA Goldilocks contract **as of 2026-08-03**. We also freeze a **free composition claim table** (lit/systems stitch without wet labs) to lift peer-review and PCE systems scores without upgrading SI language until SIM passes.
+We crystallize **SIM-v1** (seven gates). We measure Lattice Chat Agent V1.618 + Omni-Lattice + THALIA Goldilocks contract **as of 2026-08-03**. We also freeze a **free composition claim table** (lit/systems stitch without wet labs) to lift peer-review and PCE systems scores without upgrading SI language until SIM passes.
 
 ---
 
@@ -59,7 +59,7 @@ If **any** gate fails, the system is **not** SIM-compliant → **do not claim SI
 
 | Gate | Status | Evidence (free / now) | Notes |
 |------|--------|------------------------|-------|
-| S1 | **PASS** | Nest bands in `lib/lattice-engine.mjs`; Lattice Chat ships | Work-class routing present |
+| S1 | **PASS** | Nest bands in `lib/lattice-engine.mjs`; Lattice Chat Agent ships | Work-class routing present |
 | S2 | **PASS** | Token ledger + Seed pack discipline; ~35–70% matrix claim scoped | Not universal SLA |
 | S3 | **FAIL** | `lib/thalia-omni-contract.mjs` on envelope; stages not fully enforced in `api/lattice-chat.js` pipe | Contract ≠ full runtime |
 | S4 | **PASS** | Honesty tables + PRA Snap protocol; Valet audits refuse SI upgrade | Ongoing discipline |

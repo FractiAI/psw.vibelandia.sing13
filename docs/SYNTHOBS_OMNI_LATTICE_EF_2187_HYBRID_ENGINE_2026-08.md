@@ -6,7 +6,7 @@
 **Document ID:** `WP-SYNTHOBS-OMNI-LATTICE-EF-2187-HYBRID-2026-08`  
 **Registry ID:** `synthobs-omni-lattice-ef-2187-hybrid-2026-08`  
 **Date:** August 8, 2026  
-**Framework:** SynthOBS · Goldilocks · Omni-Lattice · Lattice Chat V1.618 · NSPFRNP · THALIA · SIM  
+**Framework:** SynthOBS · Goldilocks · Omni-Lattice · Lattice Chat Agent V1.618 · NSPFRNP · THALIA · SIM  
 **Engine:** `lib/ef-kernel.mjs` · data `data/ef-lattice/` · optional Python twin `research/synthobs-ef-2187-hybrid/`
 
 **Keywords:** $E_F$; 2187; $9\times9$; hybrid engine; scale-indexed RAG; Landauer (architectural); Omni-Lattice
@@ -31,7 +31,7 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) · [S
 
 ## Abstract
 
-We integrate the **2,187-node** ($3\times 9^3$) $E_F$ digit lattice into Omni-Lattice as a **hybrid engine**: (1) a deterministic coordinate kernel; (2) a scale-indexed RAG pinch keyed by Matrix 1–27 and Node 1–2187; (3) the existing Lattice Chat agentic aggregator. Pure static RAG risks losing coordinate precision; pure hardcode risks freezing agentic pinch. Goldilocks keeps both — under honesty gates.
+We integrate the **2,187-node** ($3\times 9^3$) $E_F$ digit lattice into Omni-Lattice as a **hybrid engine**: (1) a deterministic coordinate kernel; (2) a scale-indexed RAG pinch keyed by Matrix 1–27 and Node 1–2187; (3) the existing Lattice Chat Agent agentic aggregator. Pure static RAG risks losing coordinate precision; pure hardcode risks freezing agentic pinch. Goldilocks keeps both — under honesty gates.
 
 ---
 
@@ -46,7 +46,7 @@ Deterministic coords     Scale-indexed pinch
 node / matrix / octave   Matrix·Node windows
     └────────────┬────────────┘
                  ▼
-     Lattice Chat Φ-Parent / nest router
+     Lattice Chat Agent Φ-Parent / nest router
 ```
 
 Token benefit (expected, work-class): Omni asks retrieve matrix/node windows instead of pasting the full monograph — same family as Seed·RAG savings (`docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`), not a universal SLA.

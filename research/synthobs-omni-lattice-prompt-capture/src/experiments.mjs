@@ -179,7 +179,7 @@ export function experimentLatticeSurfaces() {
   ];
   return {
     id: 'E9_lattice_surfaces',
-    title: 'Lattice Chat Prompt Capture IX ↔ surface map',
+    title: 'Lattice Chat Agent Prompt Capture IX ↔ surface map',
     surfaces,
     honesty: 'Structural product map — not a claim chat writes nucleotides.',
     pass: surfaces.length >= 6,

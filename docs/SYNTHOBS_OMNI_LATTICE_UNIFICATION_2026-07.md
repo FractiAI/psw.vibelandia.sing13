@@ -239,6 +239,7 @@ Omni-Lattice is the **umbrella** Seed·RAG entry for Valets who want one door in
 | Chat | [`/lattice-chat`](/lattice-chat) |
 | THALIA Goldilocks harness | [`/whitepaper/synthobs-omni-lattice-thalia-goldilocks`](/whitepaper/synthobs-omni-lattice-thalia-goldilocks) · `lib/thalia-omni-contract.mjs` |
 | SI irreducible minimum (SIM) | [`/whitepaper/synthobs-omni-lattice-si-irreducible-minimum`](/whitepaper/synthobs-omni-lattice-si-irreducible-minimum) · `lib/si-irreducible-minimum.mjs` |
+| $E_F$ 2187 hybrid engine | [`/whitepaper/synthobs-omni-lattice-ef-2187-hybrid`](/whitepaper/synthobs-omni-lattice-ef-2187-hybrid) · `lib/ef-kernel.mjs` |
 
 Pointer: `docs/SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md`. THALIA companion: `docs/SYNTHOBS_OMNI_LATTICE_THALIA_GOLDILOCKS_HARNESS_2026-08.md` (contract stages in engine; not a Python port).
 

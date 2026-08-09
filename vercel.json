@@ -249,98 +249,77 @@
   ],
   "functions": {
     "api/catalog.js": {
-      "memory": 512,
       "maxDuration": 30
     },
     "api/catalog-upload.js": {
-      "memory": 1024,
       "maxDuration": 300
     },
     "api/catalog-track.js": {
-      "memory": 1024,
       "maxDuration": 60
     },
     "api/catalog-playlist.js": {
-      "memory": 512,
       "maxDuration": 60,
       "includeFiles": "{lib/**}"
     },
     "api/catalog-reconcile.js": {
-      "memory": 1024,
       "maxDuration": 300
     },
     "api/cron-coherence-rail.js": {
-      "memory": 512,
       "maxDuration": 60
     },
     "api/cron-websdr-capture.js": {
-      "memory": 512,
       "maxDuration": 60
     },
     "api/websdr-iq.js": {
-      "memory": 512,
       "maxDuration": 60
     },
     "api/goldilocks-pulse.js": {
-      "memory": 512,
       "maxDuration": 60
     },
     "api/goldilocks-predictions.js": {
-      "memory": 512,
       "maxDuration": 60
     },
     "api/whitepaper.js": {
-      "memory": 512,
       "maxDuration": 30,
       "includeFiles": "{docs/**,protocols/**,data/synthobs-paper-audits/**,data/synthobs-agent-manifest.json,BBHE_REPOSITORY_STANDARD.md,lib/**}"
     },
     "api/synthobs-paper-audit.js": {
-      "memory": 512,
       "maxDuration": 120,
       "includeFiles": "{docs/**,data/**,lib/**}"
     },
     "api/whitepaper-catalog.js": {
-      "memory": 256,
       "maxDuration": 15,
       "includeFiles": "{lib/**,data/synthobs-paper-audit-index.json}"
     },
     "api/dph-wavefield-solar.js": {
-      "memory": 512,
       "maxDuration": 60,
       "includeFiles": "lib/**"
     },
     "api/turner-bison-telemetry.js": {
-      "memory": 512,
       "maxDuration": 300,
       "includeFiles": "{data/**,lib/**}"
     },
     "api/turner-recent-anomaly-report.js": {
-      "memory": 512,
       "maxDuration": 300,
       "includeFiles": "{data/**,lib/**}"
     },
     "api/cron-turner-bison-ingest.js": {
-      "memory": 512,
       "maxDuration": 60,
       "includeFiles": "{data/**,lib/**}"
     },
     "api/bulletin-board.js": {
-      "memory": 256,
       "maxDuration": 15,
       "includeFiles": "data/bulletin-board-posts.json"
     },
     "api/page-views.js": {
-      "memory": 256,
       "maxDuration": 10,
       "includeFiles": "{lib/**}"
     },
     "api/lattice-chat.js": {
-      "memory": 1024,
       "maxDuration": 300,
       "includeFiles": "{lib/**,data/lattice-access.json}"
     },
     "api/lattice-collaborate-feed.js": {
-      "memory": 256,
       "maxDuration": 10,
       "includeFiles": "{lib/**,data/collaborate-feed-events.json,data/synthobs-paper-audits/**}"
     }

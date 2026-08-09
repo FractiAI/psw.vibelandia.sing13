@@ -56,11 +56,11 @@ function readBody(req) {
   return {};
 }
 
-async function optionalVerifyToken(token) {
-  if (!token) return true;
+async function requireValidToken(token) {
   const { getPassTokenSecret } = await import('../lib/pass-env.mjs');
   const secret = getPassTokenSecret();
-  if (!secret) return true;
+  if (!secret) return false;
+  if (!token) return false;
   const { passLib } = await libs();
   return !!passLib.verifyPassToken(String(token), secret);
 }
@@ -75,6 +75,10 @@ module.exports = async function handler(req, res) {
 
   try {
     if (req.method === 'GET') {
+      const token = req.query?.token;
+      if (!(await requireValidToken(token))) {
+        return res.status(401).json({ error: 'invalid_pass' });
+      }
       const jti = req.query?.jti;
       const deviceId = req.query?.deviceId;
       if (!jti || !deviceId) {
@@ -103,7 +107,7 @@ module.exports = async function handler(req, res) {
       if (!jti || !deviceId) {
         return res.status(400).json({ error: 'jti and deviceId required' });
       }
-      if (!(await optionalVerifyToken(token))) {
+      if (!(await requireValidToken(token))) {
         return res.status(401).json({ error: 'invalid_pass' });
       }
       const row = await writeRow(jti, deviceId);

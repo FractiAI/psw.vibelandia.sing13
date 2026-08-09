@@ -83,7 +83,12 @@
     "research:synthobs-tbme-thermal-meissner": "node research/synthobs-tbme-thermal-meissner/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-equine-asi": "node research/synthobs-tbme-equine-asi/scripts/run_empirical_pipeline.mjs",
     "test:coverage": "vitest run --coverage",
-    "build:all": "npm run build:questfest-bridge && npm run build:executive-onboard && npm run build:lattice-chat"
+    "build:all": "npm run build:questfest-bridge && npm run build:executive-onboard && npm run build:lattice-chat",
+    "compare:lattice:openrouter": "node scripts/lattice-vs-standard-openrouter-usage.mjs",
+    "experiment:openrouter": "node scripts/lattice-vs-standard-openrouter-usage.mjs",
+    "manuscript:followup": "node scripts/generate-deterministic-lattice-followup.mjs",
+    "manuscript:stats": "node scripts/generate-manuscript-stats.mjs",
+    "manuscript:figures": "node scripts/generate-manuscript-figures.mjs"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

@@ -1,0 +1,1040 @@
+{
+  "title": "OpenRouter · Lattice pointer context vs plain standard context — accuracy, latency, token efficiency",
+  "protocol": "Within-pair treatment comparison; same model/task/temperature/repo snapshot; alternating order per repeat.",
+  "model": "deepseek/deepseek-chat",
+  "repeats": 3,
+  "tasks": [
+    "qa_default_cursor_model",
+    "qa_cli_email_env",
+    "qa_cli_default_nest",
+    "qa_openrouter_header",
+    "qa_cli_auth_exit_code",
+    "coding_add_top_p_flag",
+    "reasoning_arithmetic",
+    "reasoning_remainder",
+    "reasoning_sequence"
+  ],
+  "treatments": [
+    "lattice",
+    "standard"
+  ],
+  "serverArms": false,
+  "measurement": [
+    "provider usage tokens",
+    "latency",
+    "accuracy (exact-match QA/reasoning, patch-apply+test coding)",
+    "tokens per correct",
+    "paired t / Wilcoxon / d_z",
+    "HTML+SVG report"
+  ],
+  "limitations": [
+    "one model/key unless configured",
+    "patch-generation is not autonomous tool-use",
+    "small n is descriptive; repeats ≥ 10 for claims"
+  ],
+  "ranAt": "2026-08-08T04:12:08.759Z",
+  "byTask": [
+    {
+      "taskId": "qa_default_cursor_model",
+      "n": 3,
+      "lattice": {
+        "accuracy": 0,
+        "tokens": 2611.3333333333335,
+        "latency": 2401.3333333333335,
+        "tokensPerCorrect": 2611.3333333333335,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "tokens": 82.33333333333333,
+        "latency": 1554.3333333333333,
+        "tokensPerCorrect": 82.33333333333333
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "qa_cli_email_env",
+      "n": 3,
+      "lattice": {
+        "accuracy": 0,
+        "tokens": 2542.3333333333335,
+        "latency": 1083.6666666666667,
+        "tokensPerCorrect": 2542.3333333333335,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "tokens": 82,
+        "latency": 1025.3333333333333,
+        "tokensPerCorrect": 82
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "qa_cli_default_nest",
+      "n": 3,
+      "lattice": {
+        "accuracy": 1,
+        "tokens": 2538.6666666666665,
+        "latency": 677,
+        "tokensPerCorrect": 2538.6666666666665,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "tokens": 79.66666666666667,
+        "latency": 1225,
+        "tokensPerCorrect": 79.66666666666667
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_openrouter_header",
+      "n": 3,
+      "lattice": {
+        "accuracy": 0.3333333333333333,
+        "tokens": 2575.6666666666665,
+        "latency": 797.3333333333334,
+        "tokensPerCorrect": 2575.6666666666665,
+        "sem": 0.33333333333333337
+      },
+      "standard": {
+        "accuracy": 0,
+        "tokens": 81,
+        "latency": 625,
+        "tokensPerCorrect": 81
+      },
+      "paired": {
+        "p": 0.4226497308104018,
+        "dz": 0.5773502691896256
+      }
+    },
+    {
+      "taskId": "qa_cli_auth_exit_code",
+      "n": 3,
+      "lattice": {
+        "accuracy": 0.3333333333333333,
+        "tokens": 2586,
+        "latency": 1541.6666666666667,
+        "tokensPerCorrect": 2586,
+        "sem": 0.33333333333333337
+      },
+      "standard": {
+        "accuracy": 1,
+        "tokens": 77,
+        "latency": 783.6666666666666,
+        "tokensPerCorrect": 77
+      },
+      "paired": {
+        "p": 0.18350341907226309,
+        "dz": -1.1547005383792512
+      }
+    },
+    {
+      "taskId": "coding_add_top_p_flag",
+      "n": 3,
+      "lattice": {
+        "accuracy": 0,
+        "tokens": 11788.666666666666,
+        "latency": 47580.666666666664,
+        "tokensPerCorrect": 11788.666666666666,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "tokens": 8628.666666666666,
+        "latency": 25356,
+        "tokensPerCorrect": 8628.666666666666
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_arithmetic",
+      "n": 3,
+      "lattice": {
+        "accuracy": 1,
+        "tokens": 373.3333333333333,
+        "latency": 949.6666666666666,
+        "tokensPerCorrect": 373.3333333333333,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "tokens": 63,
+        "latency": 764,
+        "tokensPerCorrect": 63
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_remainder",
+      "n": 3,
+      "lattice": {
+        "accuracy": 1,
+        "tokens": 385.3333333333333,
+        "latency": 957,
+        "tokensPerCorrect": 385.3333333333333,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "tokens": 69,
+        "latency": 548,
+        "tokensPerCorrect": 69
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_sequence",
+      "n": 3,
+      "lattice": {
+        "accuracy": 1,
+        "tokens": 2056,
+        "latency": 1816,
+        "tokensPerCorrect": 2056,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "tokens": 86,
+        "latency": 712,
+        "tokensPerCorrect": 86
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    }
+  ],
+  "overall": {
+    "n": 27,
+    "lattice": {
+      "accuracy": 0.5185185185185185,
+      "tokens": 3050.814814814815,
+      "latency": 6422.7037037037035,
+      "tokensPerCorrect": 3050.814814814815
+    },
+    "standard": {
+      "accuracy": 0.4444444444444444,
+      "tokens": 1027.6296296296296,
+      "latency": 3621.4814814814813,
+      "tokensPerCorrect": 1027.6296296296296
+    },
+    "paired": {
+      "p": 0.42455154281176855,
+      "dz": 0.15613714865122835
+    }
+  },
+  "results": [
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 2556,
+      "completionTokens": 16,
+      "tokens": 2572,
+      "latencyMs": 1088,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 74,
+      "completionTokens": 10,
+      "tokens": 84,
+      "latencyMs": 2555,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 2530,
+      "completionTokens": 13,
+      "tokens": 2543,
+      "latencyMs": 1335,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 74,
+      "completionTokens": 8,
+      "tokens": 82,
+      "latencyMs": 1025,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 2532,
+      "completionTokens": 8,
+      "tokens": 2540,
+      "latencyMs": 591,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 75,
+      "completionTokens": 4,
+      "tokens": 79,
+      "latencyMs": 1572,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 2562,
+      "completionTokens": 13,
+      "tokens": 2575,
+      "latencyMs": 580,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 77,
+      "completionTokens": 4,
+      "tokens": 81,
+      "latencyMs": 788,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 2558,
+      "completionTokens": 80,
+      "tokens": 2638,
+      "latencyMs": 3250,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 75,
+      "completionTokens": 2,
+      "tokens": 77,
+      "latencyMs": 1506,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "detail": {
+        "diffChars": 4212,
+        "applied": false,
+        "passed": false,
+        "reason": "patch rejected: error: patch failed: scripts/hermes-lattice-chat.mjs:30\nerror: scripts/hermes-lattice-chat.mjs: patch does not apply\nerror: patch failed: tests/scripts/hermes-lattice-chat.test.mjs:50\nerror: tests/scripts/hermes-lattice-chat.test.mjs: patch does not apply\n"
+      },
+      "promptTokens": 10347,
+      "completionTokens": 1498,
+      "tokens": 11845,
+      "latencyMs": 37707,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "detail": {
+        "diffChars": 0,
+        "applied": false,
+        "passed": false,
+        "reason": "no unified diff returned"
+      },
+      "promptTokens": 7769,
+      "completionTokens": 992,
+      "tokens": 8761,
+      "latencyMs": 26767,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 370,
+      "completionTokens": 2,
+      "tokens": 372,
+      "latencyMs": 1238,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 61,
+      "completionTokens": 2,
+      "tokens": 63,
+      "latencyMs": 500,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 382,
+      "completionTokens": 2,
+      "tokens": 384,
+      "latencyMs": 1220,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 67,
+      "completionTokens": 2,
+      "tokens": 69,
+      "latencyMs": 500,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 2050,
+      "completionTokens": 6,
+      "tokens": 2056,
+      "latencyMs": 1648,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 84,
+      "completionTokens": 2,
+      "tokens": 86,
+      "latencyMs": 400,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 74,
+      "completionTokens": 5,
+      "tokens": 79,
+      "latencyMs": 440,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 2556,
+      "completionTokens": 65,
+      "tokens": 2621,
+      "latencyMs": 2812,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 74,
+      "completionTokens": 8,
+      "tokens": 82,
+      "latencyMs": 964,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 2530,
+      "completionTokens": 12,
+      "tokens": 2542,
+      "latencyMs": 688,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 75,
+      "completionTokens": 4,
+      "tokens": 79,
+      "latencyMs": 1592,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 2532,
+      "completionTokens": 8,
+      "tokens": 2540,
+      "latencyMs": 1088,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 77,
+      "completionTokens": 4,
+      "tokens": 81,
+      "latencyMs": 628,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 2562,
+      "completionTokens": 15,
+      "tokens": 2577,
+      "latencyMs": 808,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 75,
+      "completionTokens": 2,
+      "tokens": 77,
+      "latencyMs": 408,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 2558,
+      "completionTokens": 2,
+      "tokens": 2560,
+      "latencyMs": 312,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "detail": {
+        "diffChars": 0,
+        "applied": false,
+        "passed": false,
+        "reason": "no unified diff returned"
+      },
+      "promptTokens": 7769,
+      "completionTokens": 957,
+      "tokens": 8726,
+      "latencyMs": 32864,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "detail": {
+        "diffChars": 0,
+        "applied": false,
+        "passed": false,
+        "reason": "no unified diff returned"
+      },
+      "promptTokens": 10347,
+      "completionTokens": 1448,
+      "tokens": 11795,
+      "latencyMs": 66036,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 61,
+      "completionTokens": 2,
+      "tokens": 63,
+      "latencyMs": 383,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 370,
+      "completionTokens": 2,
+      "tokens": 372,
+      "latencyMs": 1115,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 67,
+      "completionTokens": 2,
+      "tokens": 69,
+      "latencyMs": 860,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 382,
+      "completionTokens": 2,
+      "tokens": 384,
+      "latencyMs": 1095,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 84,
+      "completionTokens": 2,
+      "tokens": 86,
+      "latencyMs": 1324,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 2050,
+      "completionTokens": 6,
+      "tokens": 2056,
+      "latencyMs": 1228,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 2556,
+      "completionTokens": 85,
+      "tokens": 2641,
+      "latencyMs": 3304,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "composer-2.5"
+      },
+      "promptTokens": 74,
+      "completionTokens": 10,
+      "tokens": 84,
+      "latencyMs": 1668,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 2530,
+      "completionTokens": 12,
+      "tokens": 2542,
+      "latencyMs": 1228,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "LATTICE_CHAT_EMAIL"
+      },
+      "promptTokens": 74,
+      "completionTokens": 8,
+      "tokens": 82,
+      "latencyMs": 1087,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 2532,
+      "completionTokens": 4,
+      "tokens": 2536,
+      "latencyMs": 352,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "goldilocks"
+      },
+      "promptTokens": 75,
+      "completionTokens": 6,
+      "tokens": 81,
+      "latencyMs": 511,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "correct": false,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 2562,
+      "completionTokens": 13,
+      "tokens": 2575,
+      "latencyMs": 1004,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "correct": false,
+      "detail": {
+        "expected": "x-openrouter-api-key"
+      },
+      "promptTokens": 77,
+      "completionTokens": 4,
+      "tokens": 81,
+      "latencyMs": 459,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 2558,
+      "completionTokens": 2,
+      "tokens": 2560,
+      "latencyMs": 1063,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "expected": "1"
+      },
+      "promptTokens": 75,
+      "completionTokens": 2,
+      "tokens": 77,
+      "latencyMs": 437,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "correct": 0,
+      "detail": {
+        "diffChars": 0,
+        "applied": false,
+        "passed": false,
+        "reason": "no unified diff returned"
+      },
+      "promptTokens": 10347,
+      "completionTokens": 1379,
+      "tokens": 11726,
+      "latencyMs": 38999,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "correct": 0,
+      "detail": {
+        "diffChars": 1890,
+        "applied": false,
+        "passed": false,
+        "reason": "patch rejected: error: corrupt patch at line 20\n"
+      },
+      "promptTokens": 7769,
+      "completionTokens": 630,
+      "tokens": 8399,
+      "latencyMs": 16437,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 370,
+      "completionTokens": 6,
+      "tokens": 376,
+      "latencyMs": 496,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 731,
+        "answer": 731
+      },
+      "promptTokens": 61,
+      "completionTokens": 2,
+      "tokens": 63,
+      "latencyMs": 1409,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 382,
+      "completionTokens": 6,
+      "tokens": 388,
+      "latencyMs": 556,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 2,
+        "answer": 2
+      },
+      "promptTokens": 67,
+      "completionTokens": 2,
+      "tokens": 69,
+      "latencyMs": 284,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "correct": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 2050,
+      "completionTokens": 6,
+      "tokens": 2056,
+      "latencyMs": 2572,
+      "model": "deepseek/deepseek-chat"
+    },
+    {
+      "rep": 3,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "correct": true,
+      "detail": {
+        "got": 42,
+        "answer": 42
+      },
+      "promptTokens": 84,
+      "completionTokens": 2,
+      "tokens": 86,
+      "latencyMs": 412,
+      "model": "deepseek/deepseek-chat"
+    }
+  ]
+}

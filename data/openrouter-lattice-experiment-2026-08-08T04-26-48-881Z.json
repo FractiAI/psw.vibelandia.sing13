@@ -1,0 +1,619 @@
+{
+  "title": "OpenRouter · Lattice pointer context vs plain standard context — accuracy, latency, token efficiency",
+  "protocol": "Within-pair treatment comparison; same model/task/temperature/repo snapshot; alternating order per repeat. Treatments: lattice (Lattice pointer envelope), standard (lean), naive (corpus dump baseline).",
+  "model": "anthropic/claude-sonnet-4-20250514",
+  "repeats": 2,
+  "tasks": [
+    "qa_default_cursor_model",
+    "qa_cli_email_env",
+    "qa_cli_default_nest",
+    "qa_openrouter_header",
+    "qa_cli_auth_exit_code",
+    "coding_add_top_p_flag",
+    "reasoning_arithmetic",
+    "reasoning_remainder",
+    "reasoning_sequence"
+  ],
+  "treatments": [
+    "lattice",
+    "standard"
+  ],
+  "serverArms": false,
+  "measurement": [
+    "provider usage tokens",
+    "latency",
+    "accuracy (exact-match QA/reasoning, patch-apply+test coding)",
+    "lenient accuracy (answer contained)",
+    "tokens per correct",
+    "paired t / Wilcoxon / d_z",
+    "HTML+SVG report"
+  ],
+  "limitations": [
+    "one model/key unless configured",
+    "patch-generation is not autonomous tool-use",
+    "small n is descriptive; repeats ≥ 10 for claims"
+  ],
+  "ranAt": "2026-08-08T04:26:48.882Z",
+  "byTask": [
+    {
+      "taskId": "qa_default_cursor_model",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_cli_email_env",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_cli_default_nest",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_openrouter_header",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_cli_auth_exit_code",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    },
+    {
+      "taskId": "coding_add_top_p_flag",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    },
+    {
+      "taskId": "reasoning_arithmetic",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    },
+    {
+      "taskId": "reasoning_remainder",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    },
+    {
+      "taskId": "reasoning_sequence",
+      "n": 0,
+      "lattice": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null,
+        "sem": null
+      },
+      "standard": {
+        "accuracy": null,
+        "accuracyLenient": null,
+        "tokens": null,
+        "latency": null,
+        "tokensPerCorrect": null
+      },
+      "paired": {
+        "dz": null
+      }
+    }
+  ],
+  "overall": {
+    "n": 0,
+    "lattice": {
+      "accuracy": null,
+      "accuracyLenient": null,
+      "tokens": null,
+      "latency": null,
+      "tokensPerCorrect": null
+    },
+    "standard": {
+      "accuracy": null,
+      "accuracyLenient": null,
+      "tokens": null,
+      "latency": null,
+      "tokensPerCorrect": null
+    },
+    "paired": {
+      "dz": null
+    }
+  },
+  "results": [
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 1,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_default_cursor_model",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_email_env",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_default_nest",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_openrouter_header",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "qa_cli_auth_exit_code",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "coding_add_top_p_flag",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_arithmetic",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_remainder",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "standard",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    },
+    {
+      "rep": 2,
+      "taskId": "reasoning_sequence",
+      "treatment": "lattice",
+      "error": "anthropic/claude-sonnet-4-20250514 is not a valid model ID",
+      "correct": 0,
+      "correctLenient": 0,
+      "tokens": null,
+      "latencyMs": null
+    }
+  ]
+}

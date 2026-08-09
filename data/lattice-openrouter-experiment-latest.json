@@ -1,0 +1,234 @@
+{
+  "byTask": [
+    {
+      "taskId": "qa_default_cursor_model",
+      "n": 2,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 2452,
+        "latency": 752.5,
+        "tokensPerCorrect": 2452,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 89,
+        "latency": 993.5,
+        "tokensPerCorrect": 89
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "qa_cli_email_env",
+      "n": 2,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 2428,
+        "latency": 1039,
+        "tokensPerCorrect": 2428,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 86,
+        "latency": 959.5,
+        "tokensPerCorrect": 86
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "qa_cli_default_nest",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 2426,
+        "latency": 666.5,
+        "tokensPerCorrect": 2426,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 84,
+        "latency": 872,
+        "tokensPerCorrect": 84
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_openrouter_header",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 2461,
+        "latency": 882,
+        "tokensPerCorrect": 2461,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 88,
+        "latency": 631,
+        "tokensPerCorrect": 88
+      },
+      "paired": {
+        "p": 0,
+        "dz": null
+      }
+    },
+    {
+      "taskId": "qa_cli_auth_exit_code",
+      "n": 2,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 2451,
+        "latency": 728,
+        "tokensPerCorrect": 2451,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 82,
+        "latency": 999.5,
+        "tokensPerCorrect": 82
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "coding_add_top_p_flag",
+      "n": 2,
+      "lattice": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 12426.5,
+        "latency": 10841,
+        "tokensPerCorrect": 12426.5,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 0,
+        "accuracyLenient": 0,
+        "tokens": 8990,
+        "latency": 22772,
+        "tokensPerCorrect": 8990
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_arithmetic",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 370,
+        "latency": 675,
+        "tokensPerCorrect": 370,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 70,
+        "latency": 730,
+        "tokensPerCorrect": 70
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_remainder",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 382,
+        "latency": 1450,
+        "tokensPerCorrect": 382,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 76,
+        "latency": 791.5,
+        "tokensPerCorrect": 76
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    },
+    {
+      "taskId": "reasoning_sequence",
+      "n": 2,
+      "lattice": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 1959,
+        "latency": 774.5,
+        "tokensPerCorrect": 1959,
+        "sem": 0
+      },
+      "standard": {
+        "accuracy": 1,
+        "accuracyLenient": 1,
+        "tokens": 93,
+        "latency": 1110,
+        "tokensPerCorrect": 93
+      },
+      "paired": {
+        "p": 1,
+        "dz": 0
+      }
+    }
+  ],
+  "overall": {
+    "n": 18,
+    "lattice": {
+      "accuracy": 0.5555555555555556,
+      "accuracyLenient": 0.5555555555555556,
+      "tokens": 3039.5,
+      "latency": 1978.7222222222222,
+      "tokensPerCorrect": 3039.5
+    },
+    "standard": {
+      "accuracy": 0.3333333333333333,
+      "accuracyLenient": 0.3333333333333333,
+      "tokens": 1073.111111111111,
+      "latency": 3317.6666666666665,
+      "tokensPerCorrect": 1073.111111111111
+    },
+    "paired": {
+      "p": 0.04160473901625972,
+      "dz": 0.5194624816493196
+    }
+  },
+  "html": "reports/openrouter-lattice-experiment-2026-08-08T04-37-05-973Z.html",
+  "ranAt": "2026-08-08T04:37:05.973Z"
+}

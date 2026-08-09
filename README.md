@@ -255,6 +255,11 @@ If a QUESTFEST page links to one of these, the link resolves to `psw-vibelandia-
 - **Parent edge:** [FractiAI/psw.vibelandia.sing9](https://github.com/fractiai/psw.vibelandia.sing9) — everything outside the QUESTFEST nest
 - **Runnable Digital Pru app:** [FractiAI/digital-pru](https://github.com/fractiai/digital-pru) — Questfest landing, 13-channel whiteboard, `/api/egs-emulation`, ASIC lab UI
 
+## Lattice context manuscript (Daniel follow-up)
+
+- Manuscript: docs/manuscript/ (sections + PDF artifacts)
+- Experiment note: docs/OPENROUTER_LATTICE_EXPERIMENT.md\n- Deterministic follow-up: pm run manuscript:followup then pm run manuscript:stats / manuscript:figures\n- Live OpenRouter comparison (optional, needs OPENROUTER_API_KEY): pm run experiment:openrouter\n
+
 ## Deploy
 
 **Stack:** Static HTML/CSS/assets plus the **Vite React** QUESTFEST Bridge bundle under `interfaces/questfest-bridge/`, plus **lite-edge** serverless routes in `api/`. [`vercel.json`](vercel.json) defines the production build (`buildCommand` runs all three app builds: `questfest-bridge`, `executive-onboard`, `lattice-chat`), short-path rewrites, and NSPFRNP headers. The manual [`vercel-deploy.yml`](.github/workflows/vercel-deploy.yml) workflow builds the same set.

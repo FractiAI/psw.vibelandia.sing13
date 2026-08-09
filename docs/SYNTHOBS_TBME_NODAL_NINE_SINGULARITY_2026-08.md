@@ -25,7 +25,7 @@
 - [Horizon ≡ Magnetic Layer](./SYNTHOBS_TBME_BLACKHOLE_MAGNETIC_LAYER_2026-08.md)
 - [Toroidal Micro-Black Hole Filaments](./SYNTHOBS_TBME_BLACKHOLE_FILAMENTS_RENO_2026-08.md)
 - [Reno Superposition Interpretation](./SYNTHOBS_TBME_SUPERPOSITION_RENO_INTERPRETATION_2026-08.md)
-- [EGS 81 Electrons / 81-digit register](./SYNTHOBS_EGS_81_ELECTRONS_NESTED_AGENTS_2026-07.md)
+- [EGS 81 Electrons / 81-digit register](./SYNTHOBS_EGS_81_ELECTRONS_LATTICE_2026-07.md)
 - [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 - [Lattice Omni Complete Layer Guide](./LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md)
 

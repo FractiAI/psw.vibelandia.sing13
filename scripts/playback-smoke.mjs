@@ -3,6 +3,7 @@
  * Usage: node scripts/playback-smoke.mjs
  */
 import { spawn } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 
@@ -10,6 +11,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const APP = path.join(ROOT, 'apps', 'ss-vibelandia-questfest');
 const ORIGIN = process.env.CATALOG_PIPE_ORIGIN || 'https://psw-vibelandia-sing13-nine.vercel.app';
 const PORT = Number(process.env.PLAYBACK_TEST_PORT || 4173);
+const npmBin = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 const BASE = `http://127.0.0.1:${PORT}/interfaces/questfest-bridge/`;
 
 async function waitForServer(ms = 60_000) {
@@ -28,11 +30,11 @@ async function waitForServer(ms = 60_000) {
 
 function run(cmd, args, extraEnv = {}) {
   return new Promise((resolve, reject) => {
-    const child = spawn(cmd, args, {
+    const child = spawn(cmd === 'npm' ? npmBin : cmd, args, {
       cwd: APP,
       env: { ...process.env, ...extraEnv },
       stdio: 'inherit',
-      shell: true,
+      shell: false,
     });
     child.on('exit', (code) => (code === 0 ? resolve() : reject(new Error(`${cmd} exit ${code}`))));
   });
@@ -40,13 +42,13 @@ function run(cmd, args, extraEnv = {}) {
 
 function runPreview() {
   return spawn(
-    'npm',
+    npmBin,
     ['run', 'preview', '--', '--host', '127.0.0.1', '--port', String(PORT), '--strictPort'],
     {
       cwd: APP,
       env: { ...process.env, VITE_CATALOG_PIPE_ORIGIN: ORIGIN },
       stdio: ['ignore', 'pipe', 'pipe'],
-      shell: true,
+      shell: false,
     },
   );
 }
@@ -57,6 +59,11 @@ async function main() {
 
   const playwrightEntry = path.join(APP, 'node_modules', 'playwright', 'index.mjs');
   const { chromium } = await import(pathToFileURL(playwrightEntry).href);
+  if (!existsSync(chromium.executablePath())) {
+    console.error('playback-smoke: Playwright browser not installed — run `npx playwright install chromium` first');
+    process.exitCode = 1;
+    return;
+  }
   const preview = runPreview();
   let previewOut = '';
   preview.stdout?.on('data', (d) => {

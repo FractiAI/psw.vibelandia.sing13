@@ -1,6 +1,6 @@
 /** Edge-only BYOK keys. Never sent to durable server storage — only request headers. */
 
-export type LatticeProvider = 'cursor' | 'claude' | 'gemini';
+export type LatticeProvider = 'cursor' | 'claude' | 'gemini' | 'openrouter';
 
 export const LATTICE_PROVIDERS: {
   id: LatticeProvider;
@@ -20,6 +20,16 @@ export const LATTICE_PROVIDERS: {
     keyHelp: 'cursor.com/dashboard → API Keys',
     honesty:
       'Cursor cloud agents on FractiAI/psw.vibelandia.sing13. Guests share SING13 with an honor rail (prefer reversible exploration).',
+  },
+  {
+    id: 'openrouter',
+    label: 'OpenRouter',
+    short: 'OpenRouter',
+    keyHeader: 'x-openrouter-api-key',
+    keyPlaceholder: 'sk-or-… from openrouter.ai',
+    keyHelp: 'openrouter.ai → Keys',
+    honesty:
+      'OpenRouter BYOK via the SING13 99 Octave Omni-Lattice Bridge pipe — many models, one key. Keys stay on-device.',
   },
   {
     id: 'claude',
@@ -45,6 +55,7 @@ export const LATTICE_PROVIDERS: {
 
 const STORAGE: Record<LatticeProvider, { key: string; fp: string }> = {
   cursor: { key: 'user_cursor_api_key', fp: 'user_cursor_api_key_fp' },
+  openrouter: { key: 'user_openrouter_api_key', fp: 'user_openrouter_api_key_fp' },
   claude: { key: 'user_anthropic_api_key', fp: 'user_anthropic_api_key_fp' },
   gemini: { key: 'user_gemini_api_key', fp: 'user_gemini_api_key_fp' },
 };
@@ -59,7 +70,7 @@ function fingerprintKey(key: string): string {
 }
 
 export function isLatticeProvider(v: unknown): v is LatticeProvider {
-  return v === 'cursor' || v === 'claude' || v === 'gemini';
+  return v === 'cursor' || v === 'claude' || v === 'gemini' || v === 'openrouter';
 }
 
 export function readActiveProvider(): LatticeProvider {

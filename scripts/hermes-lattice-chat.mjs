@@ -38,6 +38,7 @@ const PROVIDER = process.env.LATTICE_CHAT_PROVIDER?.trim().toLowerCase() || 'cur
 function defaultModelFor(provider) {
   if (provider === 'claude') return 'claude-sonnet-4-5';
   if (provider === 'gemini') return 'antigravity-preview-05-2026';
+  if (provider === 'openrouter') return 'deepseek/deepseek-chat';
   return 'auto';
 }
 
@@ -75,7 +76,7 @@ USAGE
 OPTIONS
   --prompt <text>    The message to send
   --model <id>       Model ID (default: auto · claude-sonnet-4-5 · antigravity-preview-05-2026)
-  --provider <name>  cursor | claude | gemini (default: cursor)
+  --provider <name>  cursor | claude | gemini | openrouter (default: cursor)
   --thread-id <id>   Resume an existing thread
   --agent-id <id>    Reattach to an existing agent
   --history <json>   Chat history as JSON array [{role,content}]
@@ -148,7 +149,7 @@ DRY RUN — would POST to ${API_URL}
   const body = {
     message: args.prompt,
     stream: true,
-    model: args.model,
+    model: args.model === 'auto' ? defaultModelFor(args.provider) : args.model,
     provider: args.provider,
     nestTopology: 'octave99',
     mode: 'agent',
@@ -166,6 +167,7 @@ DRY RUN — would POST to ${API_URL}
   if (args.provider === 'cursor') headers['x-cursor-api-key'] = API_KEY;
   else if (args.provider === 'claude') headers['x-anthropic-api-key'] = API_KEY;
   else if (args.provider === 'gemini') headers['x-gemini-api-key'] = API_KEY;
+  else if (args.provider === 'openrouter') headers['x-openrouter-api-key'] = API_KEY;
 
   process.stderr.write(`→ Lattice Chat Agent · ${args.provider} · ${args.model}\n`);
   const startedAt = Date.now();

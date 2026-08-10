@@ -77,6 +77,12 @@ export function BridgeExplainerPage() {
           <a href="/lattice-chat?nest=octave99" className="jb-link-btn">
             99 Octave Lattice Chat Agent
           </a>
+          <a href="/octave99-bridge" className="jb-link-btn">
+            Omni-Lattice Bridge
+          </a>
+          <a href="/octave99-chart" className="jb-link-btn">
+            99 Octave Chart
+          </a>
           <a href="/whitepaper/synthobs-99-octave-digits-master" className="jb-link-btn">
             99 Octave Master Treatise
           </a>

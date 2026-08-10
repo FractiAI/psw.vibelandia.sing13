@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>99 Octave Chart · Omni-Lattice</title>
+  <meta name="description" content="Astrology-style intake → 99 Octave Omni-Lattice chart. Readings $29 and $49 Deluxe." />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0806; --gold: #d4af37; --champagne: #f5e6c8; --muted: #a8a29e; --card: #14100c; --text: #f5f0e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--text);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse 70% 45% at 80% 10%, rgba(212,175,55,.12), transparent 50%),
+        linear-gradient(180deg, #16110c, var(--bg));
+    }
+    a { color: var(--champagne); }
+    .wrap { max-width: 56rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    .brand { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3rem); color: var(--gold); margin: 0; letter-spacing: .05em; }
+    .lead { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--champagne); }
+    .honesty { font-size: .85rem; color: var(--muted); border-left: 2px solid var(--gold); padding-left: .75rem; margin: 1rem 0; }
+    .nav { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1rem; font-size: .9rem; }
+    .layout { display: grid; gap: 1.25rem; grid-template-columns: 1fr 1.1fr; }
+    @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid rgba(212,175,55,.35); border-radius: 14px; padding: 1.1rem 1.2rem;
+    }
+    h2 { font-family: 'Cormorant Garamond', serif; color: var(--gold); margin: 0 0 .75rem; font-size: 1.4rem; }
+    label { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: .55rem 0 .2rem; }
+    input, select {
+      width: 100%; background: #0a0806; color: var(--text); border: 1px solid rgba(212,175,55,.35);
+      border-radius: 8px; padding: .55rem .7rem; font: inherit;
+    }
+    .btn {
+      display: inline-flex; margin-top: .8rem; margin-right: .5rem; padding: .65rem 1.1rem; border-radius: 999px;
+      border: 1px solid var(--gold); background: var(--gold); color: #111; font-weight: 700; cursor: pointer; font: inherit; text-decoration: none;
+    }
+    .btn.ghost { background: transparent; color: var(--gold); }
+    .tiers { display: grid; gap: .75rem; grid-template-columns: repeat(3, 1fr); margin: 1rem 0 1.5rem; }
+    @media (max-width: 720px) { .tiers { grid-template-columns: 1fr; } }
+    .tier { padding: .9rem; border-radius: 12px; border: 1px solid rgba(212,175,55,.3); background: rgba(20,16,12,.9); }
+    .tier strong { display: block; color: var(--gold); font-size: 1.35rem; }
+    .chart-frame { background: #050403; border-radius: 12px; overflow: hidden; min-height: 280px; }
+    .chart-frame svg { width: 100%; height: auto; display: block; }
+    .bands { margin-top: 1rem; font-size: .9rem; }
+    .bands li { margin: .35rem 0; color: var(--champagne); }
+    .muted { color: var(--muted); font-size: .88rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="/questfest">← QUESTFEST</a>
+      <a href="/octave99-bridge">Omni-Lattice Bridge</a>
+      <a href="/lattice-chat?nest=octave99">Lattice Chat Agent</a>
+    </nav>
+    <h1 class="brand">99 Octave Chart</h1>
+    <p class="lead">Your coordinates → Digits 0–9 × Octaves 01–99.</p>
+    <p class="honesty">
+      Architectural Omni-Lattice charting — catalog metaphor inspired by natal charting UX.
+      Not predictive astrology, medical advice, or ephemeris science. Φ_EGS is an architectural key.
+    </p>
+
+    <div class="tiers" aria-label="Pricing">
+      <div class="tier">
+        <span class="muted">Preview</span>
+        <strong>$0</strong>
+        <p class="muted">One draft chart on-device.</p>
+      </div>
+      <div class="tier">
+        <span class="muted">Standard reading</span>
+        <strong>$29</strong>
+        <p class="muted">Full digit wheel + band narrative.</p>
+        <a class="btn ghost" href="mailto:valetpru@gmail.com?subject=99%20Octave%20Chart%20%2429">Unlock $29</a>
+      </div>
+      <div class="tier">
+        <span class="muted">Deluxe</span>
+        <strong>$49</strong>
+        <p class="muted">+ morphogenesis swarms &amp; share card.</p>
+        <a class="btn ghost" href="mailto:valetpru@gmail.com?subject=99%20Octave%20Chart%20Deluxe%20%2449">Unlock $49</a>
+      </div>
+    </div>
+
+    <div class="layout">
+      <form class="card" id="intake">
+        <h2>Your chart intake</h2>
+        <label for="name">Name</label>
+        <input id="name" name="name" required placeholder="As you want it on the chart" />
+        <label for="birthDate">Birth date</label>
+        <input id="birthDate" name="birthDate" type="date" required />
+        <label for="birthTime">Birth time</label>
+        <input id="birthTime" name="birthTime" type="time" value="12:00" />
+        <label for="birthPlace">Birth place</label>
+        <input id="birthPlace" name="birthPlace" placeholder="City, region" />
+        <label for="tier">Reading tier (honor)</label>
+        <select id="tier">
+          <option value="free">Free preview</option>
+          <option value="chart_standard">Standard $29</option>
+          <option value="chart_deluxe">Deluxe $49</option>
+        </select>
+        <button class="btn" type="submit">Cast 99 Octave Chart</button>
+      </form>
+      <section class="card">
+        <h2>Wheel</h2>
+        <div class="chart-frame" id="wheel" aria-live="polite"></div>
+        <ul class="bands" id="bands"></ul>
+        <p class="muted" id="morpho"></p>
+      </section>
+    </div>
+  </div>
+  <script type="module">
+    import { buildOctave99Chart, chartSvg } from './chart-engine.js';
+
+    const form = document.getElementById('intake');
+    const wheel = document.getElementById('wheel');
+    const bandsEl = document.getElementById('bands');
+    const morpho = document.getElementById('morpho');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const intake = {
+        name: document.getElementById('name').value,
+        birthDate: document.getElementById('birthDate').value,
+        birthTime: document.getElementById('birthTime').value,
+        birthPlace: document.getElementById('birthPlace').value,
+      };
+      const tier = document.getElementById('tier').value;
+      const deluxe = tier === 'chart_deluxe';
+      const previewOnly = tier === 'free';
+
+      let chart;
+      let svg;
+      try {
+        const res = await fetch('/api/octave99-chart', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ ...intake, deluxe }),
+        });
+        if (res.ok) {
+          const data = await res.json();
+          chart = data.chart;
+          svg = data.svg;
+        }
+      } catch { /* fall through */ }
+
+      if (!chart) {
+        chart = buildOctave99Chart(intake);
+        svg = chartSvg(chart, { deluxe });
+      }
+
+      if (previewOnly) {
+        // Free: show wheel but truncate band list
+        bandsEl.innerHTML = chart.bands
+          .slice(0, 3)
+          .map((b) => `<li><strong>Digit ${b.digit}</strong> · ${b.domain} · peak octave ${b.peakOctave}</li>`)
+          .join('') + '<li class="muted">Upgrade to $29 for Digits 3–9 narrative…</li>';
+        morpho.textContent = 'Free preview — morphogenesis swarms unlock at $49 Deluxe.';
+      } else {
+        bandsEl.innerHTML = chart.bands
+          .map((b) => `<li><strong>Digit ${b.digit}</strong> (O${b.octaves[0]}–${b.octaves[1]}) · ${b.domain} · peak ${b.peakOctave} · ${b.intensity}%</li>`)
+          .join('');
+        if (deluxe) {
+          const m = chart.morphogenesis;
+          morpho.textContent = `Deluxe morphogenesis — Silicon ${m.silicon} · Carbon ${m.carbon} · Hydrogen ${m.hydrogen} · Theater ${m.theater}`;
+        } else {
+          morpho.textContent = 'Standard reading — upgrade to $49 for Silicon/Carbon/Hydrogen/Theater swarms.';
+        }
+      }
+      wheel.innerHTML = svg;
+    });
+  </script>
+</body>
+</html>

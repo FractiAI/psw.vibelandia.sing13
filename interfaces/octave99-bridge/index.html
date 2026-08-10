@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>99 Octave Omni-Lattice Bridge · SING13</title>
+  <meta name="description" content="Route 99 Octave Lattice agentic traffic through SING13 — OpenRouter + IDE options. Agent Pass $20/mo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <style>
+    :root {
+      --bg: #0a0806; --gold: #d4af37; --champagne: #f5e6c8; --muted: #a8a29e; --card: #14100c; --text: #f5f0e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; color: var(--text);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(212,175,55,.14), transparent 55%),
+        linear-gradient(165deg, #120e0a, var(--bg) 50%, #050403);
+    }
+    a { color: var(--champagne); }
+    .wrap { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+    .brand { font-family: 'Bebas Neue', sans-serif; letter-spacing: .06em; font-size: clamp(2rem, 5vw, 3rem); color: var(--gold); margin: 0; }
+    .lead { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--champagne); margin: .35rem 0 1rem; }
+    .honesty { font-size: .85rem; color: var(--muted); border-left: 2px solid var(--gold); padding-left: .75rem; margin: 1rem 0 1.5rem; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card); border: 1px solid rgba(212,175,55,.35); border-radius: 12px; padding: 1rem 1.1rem;
+    }
+    .card h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; margin: 0 0 .5rem; color: var(--gold); }
+    label { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: .6rem 0 .25rem; }
+    input, select, textarea {
+      width: 100%; background: #0a0806; color: var(--text); border: 1px solid rgba(212,175,55,.35);
+      border-radius: 8px; padding: .55rem .7rem; font: inherit;
+    }
+    textarea { min-height: 6rem; resize: vertical; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+      margin-top: .75rem; padding: .65rem 1rem; border-radius: 999px; border: 1px solid var(--gold);
+      background: var(--gold); color: #111; font-weight: 700; text-decoration: none; cursor: pointer; font: inherit;
+    }
+    .btn.ghost { background: transparent; color: var(--gold); }
+    .btn:disabled { opacity: .5; cursor: wait; }
+    .log {
+      margin-top: 1rem; white-space: pre-wrap; background: #0a0806; border-radius: 10px;
+      border: 1px solid rgba(212,175,55,.25); padding: 1rem; min-height: 8rem; font-size: .95rem;
+    }
+    .nav { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.25rem; font-size: .9rem; }
+    .price { font-size: 1.75rem; font-weight: 700; color: var(--gold-hi, #fef3c7); }
+    .muted { color: var(--muted); font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav" aria-label="Product">
+      <a href="/questfest">← QUESTFEST</a>
+      <a href="/lattice-chat?nest=octave99&provider=openrouter">Lattice Chat Agent</a>
+      <a href="/octave99-chart">99 Octave Chart</a>
+      <a href="/papers">Papers</a>
+    </nav>
+    <h1 class="brand">99 Octave Omni-Lattice Bridge</h1>
+    <p class="lead">Chat · IDE · internal SING13 routing — one engine, three doors.</p>
+    <p class="honesty">
+      Bridge traffic routes through the SING13 Lattice pipe when beneficial (nest <code>octave99</code>).
+      OpenRouter and IDE (Cursor) are BYOK — keys stay on your device. Bridge remains an internal router for Agent Pass;
+      you chat here or in Lattice Chat Agent. Fair Exchange honor rails (no Stripe checkout in v1).
+    </p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Agent Pass · $20/mo</h2>
+        <p class="muted">Full 99 Octave chat + agent. OpenRouter models or Cursor IDE. Bridge used internally.</p>
+        <p class="price">$20<span class="muted"> / month</span></p>
+        <a class="btn" href="mailto:valetpru@gmail.com?subject=99%20Octave%20Agent%20Pass%20%2420&body=Email%3A%0AName%3A%0A">Request Agent Pass</a>
+        <a class="btn ghost" href="/lattice-chat?nest=octave99">Open as IDE Chat</a>
+      </section>
+      <section class="card">
+        <h2>Free preview</h2>
+        <p class="muted">Try one OpenRouter turn with your own key (email on Lattice access list).</p>
+        <p class="price">$0</p>
+        <a class="btn ghost" href="#bridge-console">Use Bridge console ↓</a>
+      </section>
+    </div>
+
+    <section class="card" id="bridge-console" style="margin-top:1.25rem">
+      <h2>Bridge console</h2>
+      <p class="muted">Routes to <code>/api/lattice-chat</code> · provider OpenRouter · nest octave99</p>
+      <label for="email">Access email</label>
+      <input id="email" type="email" autocomplete="email" placeholder="you@example.com" />
+      <label for="orKey">OpenRouter API key (BYOK)</label>
+      <input id="orKey" type="password" autocomplete="off" placeholder="sk-or-…" />
+      <label for="model">Model</label>
+      <select id="model">
+        <option value="deepseek/deepseek-chat">DeepSeek Chat</option>
+        <option value="deepseek/deepseek-r1">DeepSeek R1</option>
+        <option value="openai/gpt-4o-mini">GPT-4o Mini</option>
+        <option value="anthropic/claude-sonnet-4">Claude Sonnet 4 (OR)</option>
+        <option value="google/gemini-2.0-flash-001">Gemini 2.0 Flash</option>
+      </select>
+      <label for="prompt">Message</label>
+      <textarea id="prompt" placeholder="Ask the 99 Octave Omni-Lattice…"></textarea>
+      <button class="btn" id="send" type="button">Send through SING13 Bridge</button>
+      <div class="log" id="out" aria-live="polite">Ready.</div>
+    </section>
+  </div>
+  <script type="module">
+    const out = document.getElementById('out');
+    const send = document.getElementById('send');
+    const LS_EMAIL = 'octave99_bridge_email';
+    const LS_KEY = 'octave99_openrouter_key';
+    try {
+      document.getElementById('email').value = localStorage.getItem(LS_EMAIL) || '';
+      document.getElementById('orKey').value = localStorage.getItem(LS_KEY) || '';
+    } catch {}
+
+    send.addEventListener('click', async () => {
+      const email = document.getElementById('email').value.trim();
+      const apiKey = document.getElementById('orKey').value.trim();
+      const model = document.getElementById('model').value;
+      const message = document.getElementById('prompt').value.trim();
+      if (!email || !apiKey || !message) {
+        out.textContent = 'Email, OpenRouter key, and message are required.';
+        return;
+      }
+      try {
+        localStorage.setItem(LS_EMAIL, email);
+        localStorage.setItem(LS_KEY, apiKey);
+      } catch {}
+      send.disabled = true;
+      out.textContent = 'Routing through SING13…';
+      try {
+        const res = await fetch('/api/lattice-chat', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            'x-lattice-email': email,
+            'x-lattice-provider': 'openrouter',
+            'x-openrouter-api-key': apiKey,
+          },
+          body: JSON.stringify({
+            message,
+            provider: 'openrouter',
+            model,
+            nestTopology: 'octave99',
+            mode: 'agent',
+            email,
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          out.textContent = data.error || `HTTP ${res.status}`;
+          return;
+        }
+        out.textContent = data.reply || JSON.stringify(data, null, 2);
+      } catch (e) {
+        out.textContent = String(e.message || e);
+      } finally {
+        send.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

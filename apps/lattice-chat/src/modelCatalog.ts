@@ -36,8 +36,19 @@ export const GEMINI_MODEL_CATALOG: LatticeModelOption[] = [
   },
 ];
 
+export const OPENROUTER_MODEL_CATALOG: LatticeModelOption[] = [
+  { id: 'deepseek/deepseek-chat', displayName: 'DeepSeek Chat' },
+  { id: 'deepseek/deepseek-r1', displayName: 'DeepSeek R1' },
+  { id: 'openai/gpt-4o-mini', displayName: 'GPT-4o Mini' },
+  { id: 'openai/gpt-4o', displayName: 'GPT-4o' },
+  { id: 'anthropic/claude-sonnet-4', displayName: 'Claude Sonnet 4 (OpenRouter)' },
+  { id: 'google/gemini-2.0-flash-001', displayName: 'Gemini 2.0 Flash' },
+  { id: 'meta-llama/llama-3.3-70b-instruct', displayName: 'Llama 3.3 70B' },
+];
+
 export const PROVIDER_DEFAULT_MODEL: Record<LatticeProvider, string> = {
   cursor: 'composer-2.5',
+  openrouter: 'deepseek/deepseek-chat',
   claude: 'claude-sonnet-4-5',
   gemini: 'antigravity-preview-05-2026',
 };
@@ -45,6 +56,7 @@ export const PROVIDER_DEFAULT_MODEL: Record<LatticeProvider, string> = {
 export function catalogForProvider(provider: LatticeProvider): LatticeModelOption[] {
   if (provider === 'claude') return CLAUDE_MODEL_CATALOG;
   if (provider === 'gemini') return GEMINI_MODEL_CATALOG;
+  if (provider === 'openrouter') return OPENROUTER_MODEL_CATALOG;
   return LATTICE_MODEL_CATALOG;
 }
 

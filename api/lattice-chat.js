@@ -1,5 +1,6 @@
 /**
- * Lattice Chat Agent V1.618 chat — multi-provider BYOK proxy (Cursor cloud · Claude Messages · Gemini Antigravity).
+ * Lattice Chat Agent V1.618 chat — multi-provider BYOK proxy
+ * (Cursor cloud · Claude Messages · Gemini Antigravity · OpenRouter).
  *
  * El Gran Sol’s Fractal Constant (EGS fractal constant): scale-invariant geometric ratio
  * balancing harmonic signal flow across downstream systems — the golden key that establishes
@@ -410,6 +411,7 @@ function resolveProvider(req, body) {
     .toLowerCase();
   if (p === 'claude' || p === 'anthropic') return 'claude';
   if (p === 'gemini' || p === 'antigravity') return 'gemini';
+  if (p === 'openrouter' || p === 'or') return 'openrouter';
   return 'cursor';
 }
 
@@ -419,6 +421,9 @@ function resolveProviderApiKey(req, provider) {
   }
   if (provider === 'gemini') {
     return resolveHeaderKey(req, ['x-gemini-api-key', 'X-Gemini-Api-Key']);
+  }
+  if (provider === 'openrouter') {
+    return resolveHeaderKey(req, ['x-openrouter-api-key', 'X-OpenRouter-Api-Key']);
   }
   return resolveCursorApiKey(req).key;
 }
@@ -439,6 +444,16 @@ const GEMINI_MODELS = [
     id: 'antigravity-preview-05-2026',
     displayName: 'Antigravity (managed)',
   },
+];
+
+const OPENROUTER_MODELS = [
+  { id: 'deepseek/deepseek-chat', displayName: 'DeepSeek Chat' },
+  { id: 'deepseek/deepseek-r1', displayName: 'DeepSeek R1' },
+  { id: 'openai/gpt-4o-mini', displayName: 'GPT-4o Mini' },
+  { id: 'openai/gpt-4o', displayName: 'GPT-4o' },
+  { id: 'anthropic/claude-sonnet-4', displayName: 'Claude Sonnet 4 (via OpenRouter)' },
+  { id: 'google/gemini-2.0-flash-001', displayName: 'Gemini 2.0 Flash' },
+  { id: 'meta-llama/llama-3.3-70b-instruct', displayName: 'Llama 3.3 70B' },
 ];
 
 function encodeGeminiAgentId(interactionId, environmentId) {
@@ -809,6 +824,102 @@ async function runClaudeTurn({
     execution,
     access: wrapProviderAccess(access),
     provider: 'claude',
+  };
+}
+
+async function runOpenRouterTurn({
+  apiKey,
+  message,
+  history,
+  modelId,
+  agentMode,
+  access,
+  nestTopology,
+  agentRoster,
+  reasoningLens,
+  stream = false,
+  onEvent = null,
+}) {
+  const { prior, messages } = buildClaudeMessages(message, history);
+  const system = assembleLatticePrompt({
+    message,
+    nestTopology,
+    agentRoster,
+    mode: 'full',
+    omitHistory: true,
+    omitUserMessage: true,
+    providerNote: `Provider note: You are running via OpenRouter (BYOK) on the SING13 Lattice pipe. Repo ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}. Nest: ${nestTopology || 'octave99'}.`,
+  });
+  const model = modelId || 'deepseek/deepseek-chat';
+  const emit = (item) => {
+    if (typeof onEvent === 'function' && item) onEvent(item);
+  };
+
+  const orMessages = [{ role: 'system', content: system }, ...messages];
+  emit({ type: 'status', status: 'live', message: 'OpenRouter turn opening…' });
+
+  const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      authorization: `Bearer ${apiKey}`,
+      'http-referer': 'https://www.ssvibelandiaquestfest24x365.com',
+      'x-title': 'SING13 99 Octave Omni-Lattice Bridge',
+    },
+    body: JSON.stringify({
+      model,
+      messages: orMessages,
+      temperature: 0.4,
+      max_tokens: 8192,
+      stream: false,
+    }),
+    signal: AbortSignal.timeout(COLLECT_BUDGET_MS),
+  });
+
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const msg = data?.error?.message || data?.error || `OpenRouter HTTP ${res.status}`;
+    const err = new Error(String(msg));
+    err.code = res.status === 401 || res.status === 403 ? 'openrouter_auth' : 'openrouter_error';
+    throw err;
+  }
+
+  const reply = String(data?.choices?.[0]?.message?.content || '').trim() || '(No reply text returned.)';
+  emit({ type: 'assistant', text: reply });
+
+  const usage = data?.usage || {};
+  const usageTokens =
+    typeof usage.total_tokens === 'number'
+      ? usage.total_tokens
+      : typeof usage.prompt_tokens === 'number' && typeof usage.completion_tokens === 'number'
+        ? usage.prompt_tokens + usage.completion_tokens
+        : null;
+
+  const execution = buildLatticeExecution({
+    message,
+    history,
+    mode: 'openrouter',
+    resumed: prior.length > 0,
+    reply,
+    usageTokens,
+  });
+
+  if (stream) {
+    /* non-SSE completion still returns via respondLattice */
+  }
+
+  return {
+    reply,
+    transcript: [{ type: 'assistant', text: reply }],
+    model: data?.model || model,
+    mode: agentMode,
+    lens: normalizeReasoningLens(reasoningLens),
+    agentId: null,
+    tokens: execution.tokens,
+    execution,
+    access: wrapProviderAccess(access),
+    provider: 'openrouter',
+    bridge: { route: 'sing13-pipe', nest: nestTopology || 'octave99' },
   };
 }
 
@@ -1878,6 +1989,9 @@ export default async function handler(req, res) {
         if (provider === 'gemini') {
           return json(res, 200, { models: GEMINI_MODELS, source: 'gemini-catalog', provider });
         }
+        if (provider === 'openrouter') {
+          return json(res, 200, { models: OPENROUTER_MODELS, source: 'openrouter-catalog', provider });
+        }
         const { key: apiKey } = resolveCursorApiKey(req);
         if (!apiKey) {
           return json(res, 401, {
@@ -1960,12 +2074,18 @@ export default async function handler(req, res) {
       provider === 'cursor'
         ? normalizeModelId(body.model || body.modelId)
         : String(body.model || body.modelId || '').trim() ||
-          (provider === 'claude' ? 'claude-sonnet-4-5' : 'antigravity-preview-05-2026');
+          (provider === 'claude'
+            ? 'claude-sonnet-4-5'
+            : provider === 'openrouter'
+              ? 'deepseek/deepseek-chat'
+              : 'antigravity-preview-05-2026');
     let agentMode = resolveAgentMode(body.mode || body.agentMode, message);
     if (cloudAttach?.forcePlan) {
       agentMode = 'plan';
     }
-    const nestTopology = normalizeNestTopology(body.nestTopology || body.nest);
+    const nestTopology = normalizeNestTopology(
+      body.nestTopology || body.nest || (provider === 'openrouter' ? 'octave99' : 'goldilocks'),
+    );
     const reasoningLens = normalizeReasoningLens(body.reasoningLens || body.lens);
     const agentRoster = typeof body.agentRoster === 'string' ? body.agentRoster : '';
     let agentId =
@@ -2078,6 +2198,62 @@ export default async function handler(req, res) {
         }
         const code = err?.code || 'gemini_error';
         const status = code === 'gemini_auth' ? 401 : 502;
+        return respondLattice(
+          res,
+          stream,
+          {
+            error: err instanceof Error ? err.message : String(err),
+            code,
+            provider,
+          },
+          status,
+        );
+      } finally {
+        stopHeartbeat();
+      }
+    }
+
+    if (provider === 'openrouter') {
+      const stream = wantsStream(req, body);
+      if (stream) initSse(res);
+      const stopHeartbeat = stream ? startSseHeartbeat(res) : () => {};
+      try {
+        if (recoverOnly && !message) {
+          return respondLattice(
+            res,
+            stream,
+            {
+              error: 'OpenRouter has no cloud run to recover — resend the prompt.',
+              code: 'nothing_to_recover',
+              provider,
+            },
+            409,
+          );
+        }
+        if (stream) {
+          sseWrite(res, 'status', { message: 'Routing through SING13 99 Octave Omni-Lattice Bridge…' });
+        }
+        const out = await runOpenRouterTurn({
+          apiKey,
+          message,
+          history: body.history,
+          modelId,
+          agentMode,
+          access,
+          nestTopology,
+          reasoningLens,
+          agentRoster,
+          stream,
+          onEvent: stream
+            ? (item) => {
+                sseWrite(res, 'transcript', item);
+              }
+            : null,
+        });
+        return respondLattice(res, stream, out);
+      } catch (err) {
+        const code = err?.code || 'openrouter_error';
+        const status = code === 'openrouter_auth' ? 401 : 502;
         return respondLattice(
           res,
           stream,

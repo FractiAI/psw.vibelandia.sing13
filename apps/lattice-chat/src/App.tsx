@@ -3,6 +3,7 @@ import { HistoryRail, HistoryRailOverlay } from '@/components/HistoryRail';
 import { ChatPane } from '@/components/ChatPane';
 import { CollaborateShell } from '@/components/collaborate/CollaborateShell';
 import { useLatticeStore } from '@/store';
+import { saveActiveProvider } from '@/lib/providerKeys';
 import type { NestTopology } from '@/types';
 
 const MODE_KEY = 'lattice-workspace-mode';
@@ -17,6 +18,20 @@ function readNestFromUrl(): NestTopology | null {
     if (v === 'single') return 'single';
     if (v === 'multi') return 'multi';
     if (v === 'goldilocks') return 'goldilocks';
+  } catch {
+    /* ignore */
+  }
+  return null;
+}
+
+function readProviderFromUrl(): 'cursor' | 'claude' | 'gemini' | 'openrouter' | null {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const raw = String(params.get('provider') || '').trim().toLowerCase();
+    if (raw === 'openrouter' || raw === 'or') return 'openrouter';
+    if (raw === 'claude' || raw === 'anthropic') return 'claude';
+    if (raw === 'gemini' || raw === 'antigravity') return 'gemini';
+    if (raw === 'cursor') return 'cursor';
   } catch {
     /* ignore */
   }
@@ -46,13 +61,19 @@ export function App() {
   const [agentSeed, setAgentSeed] = useState<string | null>(null);
   const newChat = useLatticeStore((s) => s.newChat);
   const setNestTopology = useLatticeStore((s) => s.setNestTopology);
+  const setProvider = useLatticeStore((s) => s.setProvider);
   const closeRail = useCallback(() => setRailOpen(false), []);
   const openRail = useCallback(() => setRailOpen(true), []);
 
   useEffect(() => {
     const nest = readNestFromUrl();
     if (nest) setNestTopology(nest);
-  }, [setNestTopology]);
+    const provider = readProviderFromUrl();
+    if (provider) {
+      saveActiveProvider(provider);
+      setProvider(provider);
+    }
+  }, [setNestTopology, setProvider]);
 
   useEffect(() => {
     try {

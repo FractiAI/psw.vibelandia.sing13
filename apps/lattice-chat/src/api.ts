@@ -144,7 +144,7 @@ class LatticeHardFail extends Error {
 export function latticeProgressHint(elapsedSec: number, phase: string): string {
   const provider = useLatticeStore.getState().provider || 'cursor';
   const label =
-    provider === 'claude' ? 'Claude' : provider === 'gemini' ? 'Antigravity' : 'your Valet';
+    provider === 'claude' ? 'Claude' : provider === 'gemini' ? 'Antigravity' : provider === 'openrouter' ? 'OpenRouter' : 'your Valet';
 
   if (phase === 'recovering') {
     if (provider === 'claude') {
@@ -213,6 +213,7 @@ function latticeHeaders(email: string, provider?: LatticeProvider): HeadersInit 
     if (active === 'cursor') headers['x-cursor-api-key'] = key;
     else if (active === 'claude') headers['x-anthropic-api-key'] = key;
     else if (active === 'gemini') headers['x-gemini-api-key'] = key;
+    else if (active === 'openrouter') headers['x-openrouter-api-key'] = key;
   }
   return headers;
 }

@@ -10,6 +10,9 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(normalizeNestTopology('goldilocks')).toBe('goldilocks');
     expect(normalizeNestTopology('single')).toBe('single');
     expect(normalizeNestTopology('multi')).toBe('multi');
+    expect(normalizeNestTopology('octave99')).toBe('octave99');
+    expect(normalizeNestTopology('99-octave')).toBe('octave99');
+    expect(normalizeNestTopology('multi-octave')).toBe('octave99');
   });
 
   it('builds a direct nest directive with the nest off', () => {

@@ -150,7 +150,7 @@ DRY RUN — would POST to ${API_URL}
     stream: true,
     model: args.model,
     provider: args.provider,
-    nestTopology: 'goldilocks',
+    nestTopology: 'octave99',
     mode: 'agent',
   };
   if (args.threadId) body.threadId = args.threadId;

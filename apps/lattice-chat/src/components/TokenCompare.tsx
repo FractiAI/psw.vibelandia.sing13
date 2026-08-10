@@ -71,7 +71,7 @@ export function estimateTokenCompare(args: {
   history?: { role?: string; content?: string }[];
   reply?: string;
   resumed?: boolean;
-  nestTopology?: 'single' | 'multi' | 'goldilocks';
+  nestTopology?: 'single' | 'multi' | 'goldilocks' | 'octave99';
 }): TokenCompare | undefined {
   return buildMeasuredTokenCompare(args);
 }

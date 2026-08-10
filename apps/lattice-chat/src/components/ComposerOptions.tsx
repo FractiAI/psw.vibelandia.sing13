@@ -10,6 +10,11 @@ const MODES: { id: AgentMode; label: string }[] = [
 
 const NESTS: { id: NestTopology; label: string; title: string }[] = [
   {
+    id: 'octave99',
+    label: '99 Octave',
+    title: 'Digits 0–9 × Octaves 01–99 — master Lattice Chat Agent mode (λ_EGS)',
+  },
+  {
     id: 'single',
     label: 'Single',
     title: 'One node only — no nested children',
@@ -75,7 +80,8 @@ export function ComposerOptions({
       ? mergeProviderModels('cursor', models)
       : catalogForProvider(provider);
 
-  const canRoster = nestTopology === 'multi' || nestTopology === 'goldilocks';
+  const canRoster =
+    nestTopology === 'multi' || nestTopology === 'goldilocks' || nestTopology === 'octave99';
   const effectiveMode: AgentMode = planOnly ? 'plan' : mode;
   const [rosterOpen, setRosterOpen] = useState(() => Boolean(agentRoster.trim()));
   const [advancedOpen, setAdvancedOpen] = useState(() => {

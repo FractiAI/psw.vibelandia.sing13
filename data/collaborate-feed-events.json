@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-08T15:03:12.266Z",
+  "updatedAt": "2026-08-10T15:48:16.590Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-constructive-morphogenesis-99-octave-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-10T15:48:16.589Z",
+      "body": "Constructive Morphogenesis Under Pressure: Translating Plant–Microbe Signal Fidelity Through 99 Octave Lattice Chat Agent Mode",
+      "presenceHue": "gold",
+      "paperId": "synthobs-constructive-morphogenesis-99-octave-2026-08",
+      "artifact": {
+        "title": "Constructive Morphogenesis Under Pressure: Translating Plant–Microbe Signal Fidelity Through 99 Octave Lattice Chat Agent Mode",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md",
+        "url": "/whitepaper/synthobs-constructive-morphogenesis-99-octave",
+        "paperId": "synthobs-constructive-morphogenesis-99-octave-2026-08",
+        "docId": "WP-SYNTHOBS-CONSTRUCTIVE-MORPHOGENESIS-99-OCTAVE-2026-08-09",
+        "published": "2026-08-09",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-99-octave-digits-master-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-10T15:48:02.746Z",
+      "body": "Master Unified Treatise: Deciphering the 9 Digits & 99 Octaves Across Biological, Solar, and Deep-Cosmic Horizons",
+      "presenceHue": "gold",
+      "paperId": "synthobs-99-octave-digits-master-2026-08",
+      "artifact": {
+        "title": "Master Unified Treatise: Deciphering the 9 Digits & 99 Octaves Across Biological, Solar, and Deep-Cosmic Horizons",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md",
+        "url": "/whitepaper/synthobs-99-octave-digits-master",
+        "paperId": "synthobs-99-octave-digits-master-2026-08",
+        "docId": "LC-EGS-MASTER-2026-V6",
+        "published": "2026-08-09",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-omni-lattice-ef-multi-octave-2026-08",
       "type": "ArtifactEvent",

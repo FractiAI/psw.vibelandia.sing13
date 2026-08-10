@@ -126,7 +126,7 @@ export const useLatticeStore = create<LatticeState>()(
       modelId: 'composer-2.5',
       models: LATTICE_MODEL_CATALOG,
       provider: readActiveProvider(),
-      nestTopology: 'goldilocks',
+      nestTopology: 'octave99',
       agentRoster: '',
 
       ensureThread: () => {

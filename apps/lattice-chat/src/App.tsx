@@ -3,7 +3,7 @@ import { HistoryRail, HistoryRailOverlay } from '@/components/HistoryRail';
 import { ChatPane } from '@/components/ChatPane';
 import { CollaborateShell } from '@/components/collaborate/CollaborateShell';
 import { useLatticeStore } from '@/store';
-import { saveActiveProvider } from '@/lib/providerKeys';
+import { migrateActiveProvider, saveActiveProvider } from '@/lib/providerKeys';
 import type { NestTopology } from '@/types';
 
 const MODE_KEY = 'lattice-workspace-mode';
@@ -18,20 +18,6 @@ function readNestFromUrl(): NestTopology | null {
     if (v === 'single') return 'single';
     if (v === 'multi') return 'multi';
     if (v === 'goldilocks') return 'goldilocks';
-  } catch {
-    /* ignore */
-  }
-  return null;
-}
-
-function readProviderFromUrl(): 'cursor' | 'claude' | 'gemini' | 'openrouter' | null {
-  try {
-    const params = new URLSearchParams(window.location.search);
-    const raw = String(params.get('provider') || '').trim().toLowerCase();
-    if (raw === 'openrouter' || raw === 'or') return 'openrouter';
-    if (raw === 'claude' || raw === 'anthropic') return 'claude';
-    if (raw === 'gemini' || raw === 'antigravity') return 'gemini';
-    if (raw === 'cursor') return 'cursor';
   } catch {
     /* ignore */
   }
@@ -66,13 +52,12 @@ export function App() {
   const openRail = useCallback(() => setRailOpen(true), []);
 
   useEffect(() => {
+    // Lattice Chat stays Cursor/Claude/Gemini only. OpenRouter lives on the Bridge product.
+    const provider = migrateActiveProvider();
+    saveActiveProvider(provider);
+    setProvider(provider);
     const nest = readNestFromUrl();
     if (nest) setNestTopology(nest);
-    const provider = readProviderFromUrl();
-    if (provider) {
-      saveActiveProvider(provider);
-      setProvider(provider);
-    }
   }, [setNestTopology, setProvider]);
 
   useEffect(() => {
@@ -82,9 +67,6 @@ export function App() {
       /* ignore */
     }
   }, [mode]);
-
-  const enterCollaborate = useCallback(() => setMode('collaborate'), []);
-  const exitCollaborate = useCallback(() => setMode('chat'), []);
 
   const sendToAgent = useCallback(
     (prompt: string) => {
@@ -96,7 +78,7 @@ export function App() {
   );
 
   if (mode === 'collaborate') {
-    return <CollaborateShell onExit={exitCollaborate} onSendToAgent={sendToAgent} />;
+    return <CollaborateShell onExit={() => setMode('chat')} onSendToAgent={sendToAgent} />;
   }
 
   return (
@@ -109,7 +91,7 @@ export function App() {
           newChat();
           closeRail();
         }}
-        onOpenCollaborate={enterCollaborate}
+        onOpenCollaborate={() => setMode('collaborate')}
         agentSeedPrompt={agentSeed}
         onAgentSeedConsumed={() => setAgentSeed(null)}
       />

@@ -135,8 +135,8 @@ export function AuthPanel({
     >
       <form className="auth-form" onSubmit={(e) => void onSignIn(e)}>
         <p className="auth-lead">
-          First LLMs, then Cursor / Claude Code — now Lattice. Enter your email, choose a provider,
-          paste your key. Keys stay on this device.
+          Enter your email and Cursor API key (or Claude / Gemini). One key for the provider you
+          use — nothing else required. Keys stay on this device.
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
         <input

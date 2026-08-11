@@ -1,0 +1,87 @@
+{
+  "docId": "WP-SYNTHOBS-SYNC-SUBTERRANEAN-DISCHARGE-99-OCTAVE-2026-08-11",
+  "registryId": "synthobs-sync-subterranean-discharge-99-octave-2026-08",
+  "title": "Synchronized Subterranean Discharge: Puracé + 2026 Seismic Cluster through Solar-Driven Phase-Locking",
+  "generatedAt": "2026-08-11T17:45:17.581Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Sync subterranean discharge 99-octave application validates Φ, 8019 matrix, Colombia/Puracé fixtures — not operational forecasts.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "pass": true,
+        "honesty": "Architectural key — not a CODATA replacement."
+      },
+      {
+        "id": "E2_phi_identity",
+        "title": "Φ² = Φ + 1",
+        "pass": true
+      },
+      {
+        "id": "E3_matrix_99x81",
+        "title": "99 × 81 = 8019 holographic catalog digits",
+        "OCTAVE_SEGMENTS": 99,
+        "PRECISION_PER_SEGMENT": 81,
+        "HOLOGRAPHIC_KEY_DIGITS": 8019,
+        "pass": true,
+        "honesty": "Catalog register size — not measured magma-chamber bits."
+      },
+      {
+        "id": "E4_phi_pow_99",
+        "title": "Φ^99 and Φ^-99 finite positive",
+        "scale": 489526700523970300000,
+        "inv": 2.0427894922373773e-21,
+        "pass": true,
+        "honesty": "Scale-grammar numerics for dashboard thresholds."
+      },
+      {
+        "id": "E5_colombia_seismic",
+        "title": "Colombia M≥7.4 fixture (2026-08-10)",
+        "region": "Western Colombia",
+        "magnitude": 7.4,
+        "date": "2026-08-10",
+        "note": "Chocó / western Colombia narrative",
+        "pass": true,
+        "honesty": "Protocol fixture — verify against USGS for operations."
+      },
+      {
+        "id": "E6_purace_orange",
+        "title": "Puracé orange-alert concurrent fixture",
+        "name": "Puracé",
+        "department": "Cauca",
+        "alert": "orange",
+        "concurrentWithSeismic": true,
+        "pass": true,
+        "honesty": "Narrative volcanic context — not an official SGC bulletin."
+      },
+      {
+        "id": "E7_dual_paths",
+        "title": "Dual discharge paths: seismic + volcanic",
+        "DISCHARGE_PATHS": [
+          "seismic",
+          "volcanic"
+        ],
+        "NEST_TOPOLOGY": "octave99",
+        "pass": true
+      },
+      {
+        "id": "E8_paper_on_disk",
+        "title": "Subterranean-discharge markdown present",
+        "pass": true
+      },
+      {
+        "id": "E9_doc_ids",
+        "title": "Document / registry IDs locked",
+        "DOC_ID": "WP-SYNTHOBS-SYNC-SUBTERRANEAN-DISCHARGE-99-OCTAVE-2026-08-11",
+        "REGISTRY_ID": "synthobs-sync-subterranean-discharge-99-octave-2026-08",
+        "pass": true
+      }
+    ],
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": []
+  }
+}

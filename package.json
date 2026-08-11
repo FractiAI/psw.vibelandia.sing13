@@ -47,6 +47,7 @@
     "research:synthobs-99-octave-digits-master": "node research/synthobs-99-octave-digits-master/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-constructive-morphogenesis-99-octave": "node research/synthobs-constructive-morphogenesis-99-octave/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-macro-seismic-phase-lock-99-octave": "node research/synthobs-macro-seismic-phase-lock-99-octave/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-sync-subterranean-discharge-99-octave": "node research/synthobs-sync-subterranean-discharge-99-octave/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-x-chromosome-holographic": "node research/synthobs-x-chromosome-holographic/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-three-foundational-proteins": "node research/synthobs-three-foundational-proteins/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-omni-lattice-hiv": "node research/synthobs-omni-lattice-hiv/scripts/run_empirical_pipeline.mjs",

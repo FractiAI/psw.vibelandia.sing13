@@ -445,6 +445,78 @@
     }
     .o99-price-card .btn { width: 100%; justify-content: center; display: inline-flex; }
 
+    /* Ship blog · six newest papers */
+    .qf-blog {
+      padding: 2.5rem 1.25rem 3rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.28);
+      background: linear-gradient(180deg, var(--bg), #070605);
+    }
+    .qf-blog .bulletin-kicker { display: block; text-align: center; }
+    .qf-blog h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.45rem, 4vw, 1.95rem);
+      color: var(--gold-hi);
+      text-align: center;
+      margin: 0.35rem 0 0.5rem;
+    }
+    .qf-blog-lead {
+      text-align: center;
+      color: var(--champagne);
+      max-width: 38rem;
+      margin: 0 auto 1.5rem;
+      font-size: 1.02rem;
+    }
+    .qf-blog-grid {
+      display: grid;
+      gap: 1rem;
+      max-width: 56rem;
+      margin: 0 auto;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 900px) {
+      .qf-blog-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .qf-blog-grid { grid-template-columns: 1fr; }
+    }
+    .qf-blog-card {
+      background: var(--card);
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      border-radius: 14px;
+      padding: 1rem 1.05rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .qf-blog-date {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin: 0;
+    }
+    .qf-blog-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--gold-hi);
+      margin: 0;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .qf-blog-blurb {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      margin: 0;
+      flex: 1;
+    }
+    .qf-blog-link {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--champagne);
+      margin-top: 0.25rem;
+    }
+
     .qf-share-qr-root[hidden] { display: none !important; }
     .qf-share-qr-root {
       position: fixed; inset: 0; z-index: 200;
@@ -713,6 +785,55 @@
       </article>
     </div>
   </section>
+
+<!-- QUESTFEST_BLOG_START -->
+  <section class="qf-blog" id="ship-blog" aria-labelledby="qf-blog-h2">
+    <span class="bulletin-kicker">Ship blog · plain speak</span>
+    <h2 id="qf-blog-h2">Six newest papers</h2>
+    <p class="qf-blog-lead">
+      Short, human notes on what just landed in the library. Technical claims stay in the papers —
+      each link opens the honesty-bounded whitepaper.
+    </p>
+    <div class="qf-blog-grid">
+      <article class="qf-blog-card">
+        <p class="qf-blog-date">2026-08-11</p>
+        <h3 class="qf-blog-title">Macro-Seismic Phase-Locking: Analyzing Major 2026 Earthquake Activity and Solar Telemetry Thr…</h3>
+        <p class="qf-blog-blurb">Big 2026 quakes next to solar weather — a 99 Octave discussion lens, not a prediction service.</p>
+        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-macro-seismic-phase-lock-99-octave-2026-08">Read the paper →</a>
+      </article>
+      <article class="qf-blog-card">
+        <p class="qf-blog-date">2026-08-09</p>
+        <h3 class="qf-blog-title">Master Unified Treatise: Deciphering the 9 Digits &amp; 99 Octaves Across Biological, Solar, and …</h3>
+        <p class="qf-blog-blurb">Nine digits, ninety-nine octaves — the big map from sunspots to the CMB (catalog grammar).</p>
+        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-99-octave-digits-master-2026-08">Read the paper →</a>
+      </article>
+      <article class="qf-blog-card">
+        <p class="qf-blog-date">2026-08-09</p>
+        <h3 class="qf-blog-title">Constructive Morphogenesis Under Pressure: Translating Plant–Microbe Signal Fidelity Through …</h3>
+        <p class="qf-blog-blurb">How plants keep building under stress — Silicon, Carbon, and Hydrogen as agent swarms.</p>
+        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-constructive-morphogenesis-99-octave-2026-08">Read the paper →</a>
+      </article>
+      <article class="qf-blog-card">
+        <p class="qf-blog-date">2026-08-08</p>
+        <h3 class="qf-blog-title">Omni-Lattice · E_F 2,187-Node Hybrid Engine (Kernel + Scale-Indexed RAG)</h3>
+        <p class="qf-blog-blurb">A smaller E_F hybrid pack — how the golden key shows up in a tighter octave bundle.</p>
+        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-omni-lattice-ef-2187-hybrid-2026-08">Read the paper →</a>
+      </article>
+      <article class="qf-blog-card">
+        <p class="qf-blog-date">2026-08-08</p>
+        <h3 class="qf-blog-title">Unified Multi-Octave Scale-Invariant Architecture of El Gran Sol’s Fractal Constant (E_F) — C…</h3>
+        <p class="qf-blog-blurb">One long ladder of octaves — from the first rung to ninety-nine — told as coordinate grammar.</p>
+        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-omni-lattice-ef-multi-octave-2026-08">Read the paper →</a>
+      </article>
+      <article class="qf-blog-card">
+        <p class="qf-blog-date">2026-08-07</p>
+        <h3 class="qf-blog-title">Scale-Invariant Quantum Holographic Field Theory: A Unified 2,187-Node Monograph on E_F acros…</h3>
+        <p class="qf-blog-blurb">SIQHFT walk through E_F — technical monograph with honesty rails up front.</p>
+        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-siqhft-ef-2187-monograph-2026-08">Read the paper →</a>
+      </article>
+    </div>
+  </section>
+<!-- QUESTFEST_BLOG_END -->
 
   <footer>
     <p data-i18n-html="qf.footerMicroHtml">

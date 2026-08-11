@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-10T15:48:16.590Z",
+  "updatedAt": "2026-08-11T15:08:34.113Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-macro-seismic-phase-lock-99-octave-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-11T15:08:34.111Z",
+      "body": "Macro-Seismic Phase-Locking: Analyzing Major 2026 Earthquake Activity and Solar Telemetry Through the 99th-Octave Omni-Lattice Lens",
+      "presenceHue": "gold",
+      "paperId": "synthobs-macro-seismic-phase-lock-99-octave-2026-08",
+      "artifact": {
+        "title": "Macro-Seismic Phase-Locking: Analyzing Major 2026 Earthquake Activity and Solar Telemetry Through the 99th-Octave Omni-Lattice Lens",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md",
+        "url": "/whitepaper/synthobs-macro-seismic-phase-lock-99-octave",
+        "paperId": "synthobs-macro-seismic-phase-lock-99-octave-2026-08",
+        "docId": "WP-SYNTHOBS-MACRO-SEISMIC-PHASE-LOCK-99-OCTAVE-2026-08-11",
+        "published": "2026-08-11",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-constructive-morphogenesis-99-octave-2026-08",
       "type": "ArtifactEvent",

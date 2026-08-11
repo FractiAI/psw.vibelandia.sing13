@@ -405,7 +405,7 @@
       color: var(--muted);
     }
 
-    /* Ship blog · six newest papers */
+    /* Ship blog · six newest plain-language notes */
     .qf-blog {
       padding: 2.5rem 1.25rem 3rem;
       border-top: 1px solid rgba(212, 175, 55, 0.28);
@@ -470,11 +470,22 @@
       margin: 0;
       flex: 1;
     }
+    .qf-blog-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
     .qf-blog-link {
       font-size: 0.88rem;
       font-weight: 700;
       color: var(--champagne);
-      margin-top: 0.25rem;
+    }
+    .qf-blog-paper {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
     }
 
     .qf-share-qr-root[hidden] { display: none !important; }
@@ -714,47 +725,65 @@
 <!-- QUESTFEST_BLOG_START -->
   <section class="qf-blog" id="ship-blog" aria-labelledby="qf-blog-h2">
     <span class="bulletin-kicker">Ship blog · plain speak</span>
-    <h2 id="qf-blog-h2">Six newest papers</h2>
+    <h2 id="qf-blog-h2">Six newest notes</h2>
     <p class="qf-blog-lead">
-      Short, human notes on what just landed in the library. Technical claims stay in the papers —
-      each link opens the honesty-bounded whitepaper.
+      Real plain-language posts about what just landed — not title cards for the library.
+      Each note keeps an honesty rail and links through to its whitepaper.
     </p>
     <div class="qf-blog-grid">
       <article class="qf-blog-card">
         <p class="qf-blog-date">2026-08-11</p>
-        <h3 class="qf-blog-title">Macro-Seismic Phase-Locking: Analyzing Major 2026 Earthquake Activity and Solar Telemetry Thr…</h3>
-        <p class="qf-blog-blurb">Big 2026 quakes next to solar weather — a 99 Octave discussion lens, not a prediction service.</p>
-        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-macro-seismic-phase-lock-99-octave-2026-08">Read the paper →</a>
+        <h3 class="qf-blog-title">Quakes and solar weather on the same bulletin</h3>
+        <p class="qf-blog-blurb">When big earthquakes and noisy solar weather show up in the same news week, it is tempting to invent a single cause. This note keeps them on one discussion board — and refuses to turn that board into a prediction service.</p>
+        <div class="qf-blog-actions">
+          <a class="qf-blog-link" href="/ship-blog/quakes-and-solar-weather">Read the note →</a>
+          <a class="qf-blog-paper" href="/interfaces/whitepaper-surface.html?id=synthobs-macro-seismic-phase-lock-99-octave-2026-08">Whitepaper</a>
+        </div>
       </article>
       <article class="qf-blog-card">
         <p class="qf-blog-date">2026-08-11</p>
-        <h3 class="qf-blog-title">Synchronized Subterranean Discharge: Linking the Puracé Volcanic Eruption and the 2026 Seismi…</h3>
-        <p class="qf-blog-blurb">Colombia’s quake and Puracé’s orange alert in one window — solar phase-lock as a story lens, not a warning system.</p>
-        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-sync-subterranean-discharge-99-octave-2026-08">Read the paper →</a>
+        <h3 class="qf-blog-title">August 12 is a crowded calendar — not a prophecy</h3>
+        <p class="qf-blog-blurb">A planet parade, an eclipse path, Perseids, Earth-stress headlines, AI chatter, and inner weather all land near the same date. Here is how we hold that pile as one catalog story without claiming the sky runs your life.</p>
+        <div class="qf-blog-actions">
+          <a class="qf-blog-link" href="/ship-blog/august-12-catalog-window">Read the note →</a>
+          <a class="qf-blog-paper" href="/interfaces/whitepaper-surface.html?id=synthobs-master-synthesis-99-octave-omni-lattice-2026-08">Whitepaper</a>
+        </div>
+      </article>
+      <article class="qf-blog-card">
+        <p class="qf-blog-date">2026-08-11</p>
+        <h3 class="qf-blog-title">Colombia’s quake and Puracé’s orange alert, told as one window</h3>
+        <p class="qf-blog-blurb">A strong western-Colombia quake and an orange-alert volcano in the same stretch of days make a dramatic pair. We write them as co-timed labels for conversation — not as an official warning bulletin.</p>
+        <div class="qf-blog-actions">
+          <a class="qf-blog-link" href="/ship-blog/colombia-quake-and-purace">Read the note →</a>
+          <a class="qf-blog-paper" href="/interfaces/whitepaper-surface.html?id=synthobs-sync-subterranean-discharge-99-octave-2026-08">Whitepaper</a>
+        </div>
       </article>
       <article class="qf-blog-card">
         <p class="qf-blog-date">2026-08-09</p>
-        <h3 class="qf-blog-title">Master Unified Treatise: Deciphering the 9 Digits &amp; 99 Octaves Across Biological, Solar, and …</h3>
-        <p class="qf-blog-blurb">Nine digits, ninety-nine octaves — the big map from sunspots to the CMB (catalog grammar).</p>
-        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-99-octave-digits-master-2026-08">Read the paper →</a>
+        <h3 class="qf-blog-title">Nine digits, ninety-nine octaves — a map you can actually walk</h3>
+        <p class="qf-blog-blurb">The big 9×99 register sounds mystical until you treat it like a filing cabinet: nine kinds of digit, ninety-nine octave shelves. This note walks the map in plain speech.</p>
+        <div class="qf-blog-actions">
+          <a class="qf-blog-link" href="/ship-blog/nine-digits-ninety-nine-octaves">Read the note →</a>
+          <a class="qf-blog-paper" href="/interfaces/whitepaper-surface.html?id=synthobs-99-octave-digits-master-2026-08">Whitepaper</a>
+        </div>
       </article>
       <article class="qf-blog-card">
         <p class="qf-blog-date">2026-08-09</p>
-        <h3 class="qf-blog-title">Constructive Morphogenesis Under Pressure: Translating Plant–Microbe Signal Fidelity Through …</h3>
-        <p class="qf-blog-blurb">How plants keep building under stress — Silicon, Carbon, and Hydrogen as agent swarms.</p>
-        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-constructive-morphogenesis-99-octave-2026-08">Read the paper →</a>
+        <h3 class="qf-blog-title">How plants keep building when the pressure is on</h3>
+        <p class="qf-blog-blurb">Under drought and heat, plant–microbe partnerships still try to grow. We borrow that story as agent language — Silicon, Carbon, Hydrogen swarms — without pretending the notebook is a farm manual.</p>
+        <div class="qf-blog-actions">
+          <a class="qf-blog-link" href="/ship-blog/plants-keep-building-under-stress">Read the note →</a>
+          <a class="qf-blog-paper" href="/interfaces/whitepaper-surface.html?id=synthobs-constructive-morphogenesis-99-octave-2026-08">Whitepaper</a>
+        </div>
       </article>
       <article class="qf-blog-card">
         <p class="qf-blog-date">2026-08-08</p>
-        <h3 class="qf-blog-title">Omni-Lattice · E_F 2,187-Node Hybrid Engine (Kernel + Scale-Indexed RAG)</h3>
-        <p class="qf-blog-blurb">A smaller E_F hybrid pack — how the golden key shows up in a tighter octave bundle.</p>
-        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-omni-lattice-ef-2187-hybrid-2026-08">Read the paper →</a>
-      </article>
-      <article class="qf-blog-card">
-        <p class="qf-blog-date">2026-08-08</p>
-        <h3 class="qf-blog-title">Unified Multi-Octave Scale-Invariant Architecture of El Gran Sol’s Fractal Constant (E_F) — C…</h3>
-        <p class="qf-blog-blurb">One long ladder of octaves — from the first rung to ninety-nine — told as coordinate grammar.</p>
-        <a class="qf-blog-link" href="/interfaces/whitepaper-surface.html?id=synthobs-omni-lattice-ef-multi-octave-2026-08">Read the paper →</a>
+        <h3 class="qf-blog-title">A smaller pack for the golden key</h3>
+        <p class="qf-blog-blurb">Not every voyage needs the whole ninety-nine-octave ladder. This note explains the tighter 2,187-node hybrid pack — enough engine to steer, light enough to carry.</p>
+        <div class="qf-blog-actions">
+          <a class="qf-blog-link" href="/ship-blog/smaller-golden-key-pack">Read the note →</a>
+          <a class="qf-blog-paper" href="/interfaces/whitepaper-surface.html?id=synthobs-omni-lattice-ef-2187-hybrid-2026-08">Whitepaper</a>
+        </div>
       </article>
     </div>
   </section>

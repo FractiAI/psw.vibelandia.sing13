@@ -379,71 +379,31 @@
     }
     footer a { color: var(--champagne); font-weight: 600; }
 
-    /* 99 Octave products · pricing (below fold) */
-    .o99-products {
-      padding: 2.5rem 1.25rem 3rem;
+    /* Slim door to Bridge & Chart pricing (full grid lives on /octave99-pricing) */
+    .o99-door {
+      padding: 1.5rem 1.25rem 1.75rem;
       border-top: 1px solid rgba(212, 175, 55, 0.28);
-      background: linear-gradient(180deg, rgba(20,16,12,0.9), var(--bg));
+      text-align: center;
+      background: linear-gradient(180deg, rgba(20,16,12,0.75), var(--bg));
     }
-    .o99-products .bulletin-kicker { display: block; text-align: center; }
-    .o99-products h2 {
+    .o99-door a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      font-weight: 600;
       color: var(--gold-hi);
-      text-align: center;
-      margin: 0.35rem 0 0.5rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+      padding-bottom: 0.1rem;
     }
-    .o99-products .o99-lead {
-      text-align: center;
-      color: var(--champagne);
-      max-width: 36rem;
-      margin: 0 auto 1.5rem;
-      font-size: 1.05rem;
-    }
-    .o99-cta-row {
-      display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;
-      margin-bottom: 1.75rem;
-    }
-    .o99-price-grid {
-      display: grid;
-      gap: 1rem;
-      max-width: 56rem;
-      margin: 0 auto;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    @media (max-width: 900px) {
-      .o99-price-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 520px) {
-      .o99-price-grid { grid-template-columns: 1fr; }
-    }
-    .o99-price-card {
-      background: var(--card);
-      border: 1px solid rgba(212, 175, 55, 0.38);
-      border-radius: 14px;
-      padding: 1.1rem 1rem 1.25rem;
-      text-align: center;
-    }
-    .o99-price-card h3 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      color: var(--gold);
-      font-size: 1.2rem;
-      margin: 0 0 0.35rem;
-    }
-    .o99-amt {
-      font-size: 1.85rem;
-      font-weight: 800;
-      color: var(--gold-hi);
-      line-height: 1.1;
-    }
-    .o99-amt span { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
-    .o99-price-card p {
+    .o99-door a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .o99-door p {
+      margin-top: 0.45rem;
       font-size: 0.88rem;
-      color: var(--text-soft);
-      margin: 0.55rem 0 0.9rem;
-      min-height: 3.2em;
+      color: var(--muted);
     }
-    .o99-price-card .btn { width: 100%; justify-content: center; display: inline-flex; }
 
     /* Ship blog · six newest papers */
     .qf-blog {
@@ -746,44 +706,9 @@
     </p>
   </section>
 
-  <section class="o99-products" id="octave99-products" aria-labelledby="o99-h2">
-    <span class="bulletin-kicker">New · 99 Octave Omni-Lattice</span>
-    <h2 id="o99-h2">Bridge &amp; Chart</h2>
-    <p class="o99-lead">
-      Chat and Agent on the SING13 pipe (OpenRouter + IDE). Charts map your intake across Digits 0–9 × Octaves 01–99.
-      Bridge routes internally for Agent Pass.
-    </p>
-    <div class="o99-cta-row">
-      <a class="btn btn-primary" href="/octave99-bridge">Open Omni-Lattice Bridge</a>
-      <a class="btn btn-primary" href="/octave99-chart">Cast 99 Octave Chart</a>
-      <a class="btn btn-ghost" href="/lattice-chat?nest=octave99">Lattice Chat Agent</a>
-    </div>
-    <div class="o99-price-grid">
-      <article class="o99-price-card">
-        <h3>Free</h3>
-        <p class="o99-amt">$0</p>
-        <p>Preview Bridge console + one draft chart wheel.</p>
-        <a class="btn btn-ghost" href="/octave99-chart">Try free</a>
-      </article>
-      <article class="o99-price-card">
-        <h3>Agent Pass</h3>
-        <p class="o99-amt">$20 <span>/ mo</span></p>
-        <p>99 Octave chat &amp; agent · OpenRouter + Cursor IDE · Bridge internal.</p>
-        <a class="btn btn-primary" href="/octave99-bridge">Get Agent Pass</a>
-      </article>
-      <article class="o99-price-card">
-        <h3>Chart</h3>
-        <p class="o99-amt">$29</p>
-        <p>Full digit wheel + band narrative (standard reading).</p>
-        <a class="btn btn-primary" href="/octave99-chart">Chart $29</a>
-      </article>
-      <article class="o99-price-card">
-        <h3>Chart Deluxe</h3>
-        <p class="o99-amt">$49</p>
-        <p>Standard + morphogenesis swarms &amp; extended horizons.</p>
-        <a class="btn btn-primary" href="/octave99-chart">Chart $49</a>
-      </article>
-    </div>
+  <section class="o99-door" aria-label="99 Octave Bridge and Chart">
+    <a href="/octave99-pricing">99 Octave Bridge &amp; Chart →</a>
+    <p>Pricing and product doors live on their own page.</p>
   </section>
 
 <!-- QUESTFEST_BLOG_START -->
@@ -866,6 +791,11 @@
     </div>
   </div>
 
+  <script>
+    if (location.hash === '#octave99-products') {
+      location.replace('/octave99-pricing');
+    }
+  </script>
   <script src="/interfaces/i18n-auto.js" data-page="questfest"></script>
   <script src="/interfaces/questfest-share-qr.js" defer></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>

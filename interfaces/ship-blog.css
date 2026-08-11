@@ -1,0 +1,128 @@
+/* Shared ship-blog post chrome · SS Vibelandia QUESTFEST */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0806;
+  --card: #14100c;
+  --line: rgba(212, 175, 55, 0.35);
+  --gold: #d4af37;
+  --gold-hi: #fef3c7;
+  --champagne: #f5e6c8;
+  --muted: #a8a29e;
+  --text: #f5f0e8;
+  --soft: #d6cfc4;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse 70% 40% at 15% 0%, rgba(212,175,55,.12), transparent 55%),
+    linear-gradient(165deg, #120e0a, var(--bg) 55%, #050403);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 1.05rem;
+  min-height: 100vh;
+}
+a { color: var(--champagne); font-weight: 600; text-decoration: none; }
+a:hover { color: var(--gold-hi); text-decoration: underline; }
+.wrap { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1.25rem 3.5rem; }
+.nav {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.nav a {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(15, 20, 28, 0.9);
+  color: var(--gold-hi);
+}
+.nav a:hover { border-color: var(--gold); text-decoration: none; }
+.kicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 800;
+  margin-bottom: 0.45rem;
+}
+h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.85rem, 5vw, 2.55rem);
+  line-height: 1.12;
+  color: var(--gold-hi);
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+.dateline {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin-bottom: 1.35rem;
+}
+.dateline strong { color: var(--text); }
+p { margin-bottom: 1rem; color: var(--text); }
+p.lead {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.28rem;
+  color: var(--champagne);
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+}
+h2 {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 1.85rem 0 0.65rem;
+}
+.honesty {
+  border-left: 3px solid var(--gold);
+  padding: 0.85rem 1rem;
+  margin: 1.25rem 0 1.5rem;
+  background: rgba(212, 175, 55, 0.06);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.92rem;
+  color: var(--soft);
+}
+.honesty strong { color: var(--gold-hi); }
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.75rem 0 1rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.btn-gold { background: var(--gold); color: #0a0f1a; }
+.btn-gold:hover { filter: brightness(1.06); color: #0a0f1a; text-decoration: none; }
+.btn-ghost {
+  border: 1px solid var(--line);
+  color: var(--gold-hi);
+  background: rgba(15, 20, 28, 0.9);
+}
+.btn-ghost:hover { border-color: var(--gold); text-decoration: none; }
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+ul.plain {
+  margin: 0.5rem 0 1.15rem 1.15rem;
+  color: var(--soft);
+}
+ul.plain li { margin-bottom: 0.45rem; }

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
- * Inject six most recent paper blog cards into interfaces/vibelandia-questfest.html
+ * Inject six most recent ship-blog notes into interfaces/vibelandia-questfest.html
  * Markers: <!-- QUESTFEST_BLOG_START --> … <!-- QUESTFEST_BLOG_END -->
+ * Cards open plain-language posts from lib/questfest-blog-posts.mjs (not bare paper titles).
  */
 import fs from 'node:fs';
 import path from 'node:path';

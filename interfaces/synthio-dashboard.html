@@ -87,6 +87,9 @@
       width: 0.55rem; height: 0.55rem; border-radius: 50%;
       background: currentColor;
       box-shadow: 0 0 0 0 currentColor;
+      opacity: 0.9;
+    }
+    .status-pill[data-busy="true"] .dot {
       animation: pulse 1.8s ease-out infinite;
     }
     @keyframes pulse {
@@ -229,7 +232,7 @@
         </p>
       </div>
       <div style="text-align:right">
-        <div class="status-pill" id="statusPill" data-ok="false" aria-live="polite">
+        <div class="status-pill" id="statusPill" data-ok="false" data-busy="true" aria-live="polite">
           <span class="dot" aria-hidden="true"></span>
           <span id="statusText">loading…</span>
         </div>
@@ -287,12 +290,35 @@
 
   <script>
     const el = (id) => document.getElementById(id);
+    const PANEL_IDS = ['simBody', 'engBody', 'metBody', 'chkBody', 'extBody', 'pulseBody', 'winBody'];
+    let inflight = null;
+    let loadGen = 0;
 
     function row(label, value, cls) {
       return `<div class="metric-row"><span>${label}</span><b class="${cls || ''}">${value}</b></div>`;
     }
 
+    function setBusy(busy) {
+      el('statusPill').dataset.busy = busy ? 'true' : 'false';
+      el('btnRefresh').disabled = !!busy;
+      el('btnActivate').disabled = !!busy;
+    }
+
+    function showError(msg) {
+      setBusy(false);
+      el('statusPill').dataset.ok = 'false';
+      el('statusText').textContent = 'ERROR';
+      el('intention').textContent = msg;
+      for (const id of PANEL_IDS) {
+        const node = el(id);
+        node.className = 'err';
+        node.textContent = msg;
+      }
+    }
+
     function render(data) {
+      setBusy(false);
+      for (const id of PANEL_IDS) el(id).className = '';
       const m = data.metrics || {};
       const ok = data.ok && m.activeInSandbox && m.coherent && m.sandboxInclusionConfirmed;
       el('statusPill').dataset.ok = ok ? 'true' : 'false';
@@ -367,6 +393,7 @@
         row('Discriminant', p.discriminant || '—', 'ok'),
         row('Natural occurrence', String(p.naturalOccurrence === false ? false : p.naturalOccurrence), 'ok'),
         row('Cadence (s)', p.cadenceSec),
+        row('Persist', p.persist || data.pulsePersist || '—'),
         row('Verify ok', String(v.ok), v.ok ? 'ok' : 'bad'),
         row('Novel', String(v.novel), v.novel ? 'ok' : 'bad'),
         row('Pulse ID', v.pulseId || p.latest?.pulseId || '—'),
@@ -384,23 +411,51 @@
     }
 
     async function load(force) {
+      if (inflight) {
+        try { inflight.abort(); } catch { /* ignore */ }
+      }
+      const ac = new AbortController();
+      inflight = ac;
+      const gen = ++loadGen;
+      const timer = window.setTimeout(() => ac.abort(), 28000);
+      setBusy(true);
       el('statusText').textContent = 'loading…';
       try {
-        const q = force ? '?activate=1&forcePulse=1' : '';
-        const res = await fetch('/api/synthio-activation' + q, { cache: 'no-store' });
-        const data = await res.json();
-        if (!data.ok) throw new Error(data.message || 'activation failed');
+        const q = force ? '?activate=1&forcePulse=1' : '?activate=1';
+        const res = await fetch('/api/synthio-activation' + q, {
+          cache: 'no-store',
+          signal: ac.signal,
+        });
+        let data;
+        try {
+          data = await res.json();
+        } catch {
+          throw new Error(res.ok ? 'invalid JSON from activation API' : `HTTP ${res.status}`);
+        }
+        if (!res.ok || !data.ok) {
+          throw new Error(data?.message || `activation failed (HTTP ${res.status})`);
+        }
+        if (gen !== loadGen) return;
         render(data);
       } catch (e) {
-        el('statusPill').dataset.ok = 'false';
-        el('statusText').textContent = 'ERROR';
-        el('intention').textContent = e.message || String(e);
+        if (e?.name === 'AbortError') {
+          if (gen === loadGen) {
+            showError('Activation request timed out or was cancelled. Tap Refresh to retry.');
+          }
+          return;
+        }
+        if (gen !== loadGen) return;
+        showError(e.message || String(e));
+      } finally {
+        window.clearTimeout(timer);
+        if (inflight === ac) inflight = null;
       }
     }
 
     el('btnRefresh').addEventListener('click', () => load(false));
     el('btnActivate').addEventListener('click', () => load(true));
-    load(true);
+    // Soft boot — do not force FS write; Activate button still force-pulses.
+    load(false);
     setInterval(() => load(false), 161000);
   </script>
 </body>

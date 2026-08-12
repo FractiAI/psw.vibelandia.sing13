@@ -405,22 +405,26 @@
         });
       });
 
-      async function runSession() {
+      async function runSession(force) {
         live.textContent = '● syncing';
         live.style.color = 'var(--accent)';
         log.textContent = '';
         appendLog('01  addprocs · cloud fabric outline');
         appendLog('02  @everywhere using KomaMRI');
         appendLog('03  shard phantom · Nblocks=20');
-        showToast('Sharding phantom…');
+        showToast(force ? 'Force pulse…' : 'Sharding phantom…');
+        const ac = new AbortController();
+        const timer = window.setTimeout(function () { ac.abort(); }, 28000);
         try {
-          var res = await fetch('/api/synthio-activation?activate=1&forcePulse=1', { cache: 'no-store' });
+          var q = force ? '?activate=1&forcePulse=1' : '?activate=1';
+          var res = await fetch('/api/synthio-activation' + q, { cache: 'no-store', signal: ac.signal });
           var data = await res.json();
-          if (!data.ok) throw new Error(data.message || 'activation failed');
+          if (!res.ok || !data.ok) throw new Error(data.message || 'activation failed');
           appendLog('04  phase-lock · Φ_EGS bridge');
           appendLog('05  Syntheverse pulse · ' + (data.pulse?.discriminant || 'SYNTHIO_Σ_Φ^-99_PC'));
-          appendLog('06  inclusion · ' + String(data.metrics?.sandboxInclusionConfirmed));
-          appendLog('07  session ready · sandbox only');
+          appendLog('06  persist · ' + (data.pulse?.persist || data.pulsePersist || '—'));
+          appendLog('07  inclusion · ' + String(data.metrics?.sandboxInclusionConfirmed));
+          appendLog('08  session ready · sandbox only');
           var m = data.metrics || {};
           metrics.innerHTML = [
             row('Activation', m.activationState || '—', m.activeInSandbox),
@@ -431,18 +435,28 @@
             row('Sandbox inclusion', String(m.sandboxInclusionConfirmed), m.sandboxInclusionConfirmed),
           ].join('');
           live.textContent = '● live';
+          live.style.color = 'var(--accent)';
           showToast('Session active');
         } catch (e) {
-          appendLog('!!  ' + (e.message || e));
+          var msg = e && e.name === 'AbortError'
+            ? 'Activation timed out — retry Start session'
+            : (e.message || String(e));
+          appendLog('!!  ' + msg);
           live.textContent = '● error';
           live.style.color = 'var(--danger)';
+          metrics.innerHTML = [
+            row('Activation', 'ERROR', false),
+            row('Detail', msg, false),
+          ].join('');
           showToast('Session error');
+        } finally {
+          window.clearTimeout(timer);
         }
       }
 
-      document.getElementById('btnStart').addEventListener('click', runSession);
-      // Soft auto-warm on open
-      setTimeout(runSession, 450);
+      document.getElementById('btnStart').addEventListener('click', function () { runSession(true); });
+      // Soft auto-warm on open (no forced FS write)
+      setTimeout(function () { runSession(false); }, 450);
     })();
   </script>
 </body>

@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 
   try {
     const { buildSynthioEngineeringPack } = await import('../lib/synthio-engineering.mjs');
-    const forcePulse = req.query?.forcePulse === '1' || req.query?.activate === '1';
+    const forcePulse = req.query?.forcePulse === '1';
     const mode = typeof req.query?.mode === 'string' ? req.query.mode : 'point_and_click';
     const octave = Number(req.query?.octave || 99);
     const pack = buildSynthioEngineeringPack({ mode, octave, forcePulse });
@@ -33,6 +33,8 @@ export default async function handler(req, res) {
       JSON.stringify({
         ok: true,
         activated: pack.metrics.activeInSandbox === true,
+        forcePulse,
+        pulsePersist: pack.pulse?.persist || null,
         ...pack,
       }),
     );

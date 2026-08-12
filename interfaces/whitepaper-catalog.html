@@ -161,6 +161,12 @@
       padding: 0.15rem 0.45rem;
       border-radius: 3px;
     }
+    .cat-card__pill--pinned {
+      color: #0c1a12;
+      background: linear-gradient(90deg, #86efac, #34d399);
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+    }
     .cat-card__title {
       font-weight: 700;
       font-size: 1rem;
@@ -415,6 +421,10 @@
           var pillClass = it.featured ? 'cat-card__pill cat-card__pill--featured' : 'cat-card__pill';
           var pillLabel = it.type === 'whitepaper' ? 'Whitepaper' : it.type;
           if (it.featured && it.type === 'whitepaper') pillLabel = 'Featured · Whitepaper';
+          if (it.pinned || it.catalogPriority === 0) {
+            pillClass = 'cat-card__pill cat-card__pill--pinned';
+            pillLabel = it.pinLabel || 'Pinned · Engineering bridge';
+          }
           var auditBit = '';
           if (it.audit && it.audit.overallScore != null) {
             var pct = Math.round(it.audit.overallScore * 100);

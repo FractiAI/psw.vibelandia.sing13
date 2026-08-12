@@ -7,7 +7,7 @@
 **Registry ID:** `lattice-omni-complete-layer-guide-2026-07`  
 **Date:** 2026-08-10
 **Framework:** SynthOBS · Lattice Chat Agent V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
-**Questfest catalog:** [`/papers`](/papers) · pinned at top (`catalogPriority: 0`)  
+**Questfest catalog:** [`/papers`](/papers) · high pin (`catalogPriority: 1`; CMOS engineering bridge holds `0` for linear systems)  
 **Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)  
 **Sync:** `npm run sync:lattice-guide` · living paper index in **Appendix A**
 
@@ -339,7 +339,7 @@ Use this appendix as the **index**, not the argument. Titles, ids, and dates reg
 | Audit this guide | `npm run audit:paper -- --id=lattice-omni-complete-layer-guide-2026-07` |
 | Membership smoke test | `node scripts/test-lattice-omni-guide.mjs` |
 
-Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0`.
+Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 1` (CMOS engineering bridge holds `0` for linear systems).
 
 ### A.4 Living table
 

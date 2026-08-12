@@ -448,6 +448,13 @@
       flex-direction: column;
       gap: 0.45rem;
     }
+    .qf-blog-card--pinned {
+      border-color: rgba(52, 211, 153, 0.55);
+      box-shadow: 0 0 0 1px rgba(52, 211, 153, 0.22);
+    }
+    .qf-blog-card--pinned .qf-blog-date {
+      color: #34d399;
+    }
     .qf-blog-date {
       font-size: 0.72rem;
       letter-spacing: 0.12em;
@@ -731,10 +738,10 @@
       Each note keeps an honesty rail and links through to its whitepaper.
     </p>
     <div class="qf-blog-grid">
-      <article class="qf-blog-card">
-        <p class="qf-blog-date">2026-08-12</p>
+      <article class="qf-blog-card qf-blog-card--pinned" aria-label="Pinned engineering bridge for linear systems">
+        <p class="qf-blog-date">📌 PINNED · Engineering bridge · 2026-08-12</p>
         <h3 class="qf-blog-title">Putting the 99 Octave engine on a silicon shelf</h3>
-        <p class="qf-blog-blurb">Binary gates as the first octave shelf — CMOS 2.0 and protonic switches in one Omni-Lattice filing cabinet, not a foundry tape-out.</p>
+        <p class="qf-blog-blurb">Linear systems first: binary gates as the first octave shelf — CMOS 2.0 and protonic switches in one Omni-Lattice filing cabinet, not a foundry tape-out.</p>
         <div class="qf-blog-actions">
           <a class="qf-blog-link" href="/ship-blog/cmos-protonic-99-octave">Read the note →</a>
           <a class="qf-blog-paper" href="/interfaces/whitepaper-surface.html?id=synthobs-cmos-protonic-99-octave-omni-lattice-2026-08">Whitepaper</a>

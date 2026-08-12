@@ -360,7 +360,7 @@
     },
     "api/synthio-chat.js": {
       "maxDuration": 120,
-      "includeFiles": "{lib/**,data/lattice-access.json,data/synthio-agent-manifest.json}"
+      "includeFiles": "{lib/**,data/lattice-access.json,data/synthio-agent-manifest.json,node_modules/@cursor/sdk/**}"
     },
     "api/synthio-pulse.js": {
       "maxDuration": 30,

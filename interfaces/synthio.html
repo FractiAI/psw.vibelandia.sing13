@@ -160,14 +160,15 @@
         <div>
           <label for="provider">Provider</label>
           <select id="provider">
+            <option value="cursor">Cursor</option>
             <option value="claude">Claude (Anthropic)</option>
             <option value="gemini">Gemini</option>
             <option value="openrouter">OpenRouter</option>
           </select>
         </div>
       </div>
-      <label for="key">API key (stays on this device · captured from Lattice when present)</label>
-      <input id="key" type="password" autocomplete="off" placeholder="sk-… / AIza…" />
+      <label for="key">API key (stays on this device · Cursor key from Lattice is enough)</label>
+      <input id="key" type="password" autocomplete="off" placeholder="Cursor / Claude / Gemini / OpenRouter key" />
       <button type="button" id="btn-unlock">Unlock Synthio</button>
       <p class="flash" id="gate-flash" hidden></p>
     </section>
@@ -254,17 +255,20 @@
 
       function pickProvider(captured) {
         var preferred = ls(LS_PROV);
-        if ((preferred === 'claude' || preferred === 'gemini' || preferred === 'openrouter') &&
+        if ((preferred === 'cursor' || preferred === 'claude' || preferred === 'gemini' || preferred === 'openrouter') &&
             (ls(LS_KEY + preferred) || preferred === 'openrouter')) {
           if (preferred === 'openrouter' || ls(LS_KEY + preferred)) return preferred;
         }
         var latticeProv = ls(LATTICE_PROVIDER).toLowerCase();
+        if (latticeProv === 'cursor' && captured.cursor) return 'cursor';
         if (latticeProv === 'claude' && captured.claude) return 'claude';
         if (latticeProv === 'gemini' && captured.gemini) return 'gemini';
+        if (captured.cursor) return 'cursor';
         if (captured.claude) return 'claude';
         if (captured.gemini) return 'gemini';
         if (ls(LS_KEY + 'openrouter')) return 'openrouter';
-        return 'claude';
+        if (ls(LS_KEY + 'cursor')) return 'cursor';
+        return 'cursor';
       }
 
       function hydrateFromLattice() {
@@ -311,7 +315,7 @@
         }
         // Soft unlock: email alone verifies Lattice allowlist. Key needed only to send.
         if (!opts.soft && !key) {
-          show(gateFlash, 'API key required to chat — paste one or unlock Lattice Chat with Claude/Gemini first.', false);
+          show(gateFlash, 'API key required to chat — your Lattice Cursor key is enough (or paste Claude/Gemini/OpenRouter).', false);
           return false;
         }
         if (key) {
@@ -335,7 +339,7 @@
           var seat = data.privilege === 'guest' ? 'guest seat · Lattice session' : 'creator seat · Lattice session';
           var keyNote = key
             ? ' · ' + provider + ' key ready'
-            : ' · add Claude/Gemini/OpenRouter key to send';
+            : ' · Cursor key from Lattice is enough to send';
           show(gateFlash, 'Synthio unlocked · ' + seat + keyNote + '.', true);
           chat.hidden = false;
           if (opts.hideGate && key) gate.hidden = true;
@@ -362,7 +366,7 @@
         var message = (msgEl.value || '').trim();
         if (!message) return;
         if (!key) {
-          show(chatFlash, 'Paste a Claude, Gemini, or OpenRouter key (or unlock that provider in Lattice Chat).', false);
+          show(chatFlash, 'Need a key to send — Cursor from Lattice Chat is enough (or paste Claude/Gemini/OpenRouter).', false);
           gate.hidden = false;
           return;
         }
@@ -371,7 +375,8 @@
           'x-lattice-email': email,
           'x-synthio-provider': provider,
         };
-        if (provider === 'claude') headers['x-anthropic-api-key'] = key;
+        if (provider === 'cursor') headers['x-cursor-api-key'] = key;
+        else if (provider === 'claude') headers['x-anthropic-api-key'] = key;
         else if (provider === 'gemini') headers['x-gemini-api-key'] = key;
         else headers['x-openrouter-api-key'] = key;
         append('you', message);

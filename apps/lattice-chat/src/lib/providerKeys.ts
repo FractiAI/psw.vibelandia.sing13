@@ -147,8 +147,12 @@ export function mirrorKeysToSynthio(): void {
     if (gemini) localStorage.setItem('synthio.key.gemini', gemini);
     if (cursor) localStorage.setItem('synthio.key.cursor', cursor);
     const active = readActiveProvider();
-    if (active === 'claude' || active === 'gemini') {
+    if (active === 'cursor' && cursor) {
+      localStorage.setItem('synthio.provider', 'cursor');
+    } else if (active === 'claude' || active === 'gemini') {
       localStorage.setItem('synthio.provider', active);
+    } else if (cursor) {
+      localStorage.setItem('synthio.provider', 'cursor');
     } else if (claude) {
       localStorage.setItem('synthio.provider', 'claude');
     } else if (gemini) {

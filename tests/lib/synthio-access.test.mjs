@@ -176,4 +176,14 @@ describe('Synthio activate + coherence (sandbox)', () => {
     expect(missRow.mriSimExpect).toMatch(/MRI sim/i);
     expect(result.pulseCompare.matches).toBe(true);
   });
+
+  it('accepts Cursor as a Synthio provider (no Claude-only force)', async () => {
+    const src = await import('node:fs').then((fs) =>
+      fs.promises.readFile(new URL('../../api/synthio-chat.js', import.meta.url), 'utf8'),
+    );
+    expect(src).toMatch(/acceptsProviders:\s*\[[^\]]*['"]cursor['"]/);
+    expect(src).toMatch(/cursorKeySufficient:\s*true/);
+    expect(src).toMatch(/async function callCursor/);
+    expect(src).not.toMatch(/synthio_provider_use_lattice_key/);
+  });
 });

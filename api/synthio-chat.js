@@ -1,6 +1,6 @@
 /**
- * Synthio chat — Lattice allowlisted BYOK proxy (Claude / Gemini / OpenRouter).
- * Captures Lattice edge session; guests do not need a second allowlist.
+ * Synthio chat — Lattice allowlisted BYOK proxy (Cursor / Claude / Gemini / OpenRouter).
+ * Reuses Lattice edge session + on-device keys; Cursor key alone is enough.
  */
 export const config = { maxDuration: 120 };
 
@@ -60,6 +60,36 @@ function resolveApiKey(req, provider) {
     return header(req, ['x-cursor-api-key', 'X-Cursor-Api-Key']);
   }
   return header(req, ['x-openrouter-api-key', 'X-OpenRouter-Api-Key']);
+}
+
+function extractAssistantText(result) {
+  if (!result) return '';
+  if (typeof result === 'string') return result;
+  if (typeof result.result === 'string') return result.result;
+  if (typeof result.text === 'string') return result.text;
+  if (Array.isArray(result.content)) {
+    return result.content
+      .filter((b) => b && (b.type === 'text' || typeof b.text === 'string'))
+      .map((b) => b.text || '')
+      .join('\n')
+      .trim();
+  }
+  return '';
+}
+
+function withTimeout(promise, ms, label) {
+  let timer;
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      timer = setTimeout(() => {
+        const err = new Error(`${label || 'operation'} timed out after ${ms}ms`);
+        err.code = 'timeout';
+        err.status = 504;
+        reject(err);
+      }, ms);
+    }),
+  ]).finally(() => clearTimeout(timer));
 }
 
 async function callClaude(apiKey, messages, model) {
@@ -144,6 +174,93 @@ async function callOpenRouter(apiKey, messages, model) {
   return { text, provider: 'openrouter', model: data.model || model };
 }
 
+/**
+ * Cursor BYOK via @cursor/sdk cloud agent (same key as Lattice Chat).
+ * Keep Synthio turns short: cloud agent + single send/wait.
+ */
+async function callCursor(apiKey, messages, model) {
+  let Agent;
+  try {
+    ({ Agent } = await import('@cursor/sdk'));
+  } catch (sdkErr) {
+    const err = new Error(
+      'Cursor SDK failed to load. Confirm Node 22+ and @cursor/sdk, then redeploy.',
+    );
+    err.status = 503;
+    err.detail = sdkErr instanceof Error ? sdkErr.message : String(sdkErr);
+    throw err;
+  }
+
+  const modelId =
+    String(model || process.env.SYNTHIO_CURSOR_MODEL || process.env.LATTICE_MODEL_ID || 'composer-2.5')
+      .trim() || 'composer-2.5';
+  const system = messages.find((m) => m.role === 'system')?.content || '';
+  const chat = messages.filter((m) => m.role !== 'system');
+  const transcript = chat
+    .map((m) => `${m.role === 'assistant' ? 'Assistant' : 'User'}: ${m.content}`)
+    .join('\n\n');
+  const prompt = [
+    system ? `System (Synthio · Syntheverse Sandbox):\n${system}` : '',
+    transcript ? `Conversation so far:\n${transcript}` : '',
+    'Reply as Synthio. Stay inside Syntheverse Sandbox honesty bounds. Keep the answer concise and useful.',
+  ]
+    .filter(Boolean)
+    .join('\n\n');
+
+  let agent;
+  try {
+    agent = await withTimeout(
+      Agent.create({
+        apiKey,
+        model: { id: modelId },
+        cloud: { type: 'cloud' },
+      }),
+      45_000,
+      'Synthio Agent.create',
+    );
+
+    const run = await withTimeout(agent.send(prompt), 30_000, 'Synthio agent.send');
+    let text = '';
+    let result = null;
+    if (run && typeof run.wait === 'function') {
+      result = await withTimeout(run.wait(), 90_000, 'Synthio run.wait');
+      text = extractAssistantText(result);
+    }
+    if (!text.trim() && typeof run?.result !== 'undefined') {
+      text = extractAssistantText(run.result);
+    }
+    if (!text.trim()) {
+      const err = new Error('Cursor agent returned an empty Synthio reply.');
+      err.status = 502;
+      throw err;
+    }
+    return { text: text.trim(), provider: 'cursor', model: modelId };
+  } catch (err) {
+    if (err && (err.status === 401 || err.status === 403)) throw err;
+    const msg = String(err?.message || err || 'Cursor provider error');
+    if (/unauthorized|invalid api key|401|403/i.test(msg)) {
+      const e = new Error(msg);
+      e.status = 401;
+      throw e;
+    }
+    if (err?.code === 'timeout' || /timed out/i.test(msg)) {
+      const e = new Error(msg);
+      e.status = 504;
+      throw e;
+    }
+    const e = new Error(msg);
+    e.status = err?.status || 502;
+    throw e;
+  } finally {
+    try {
+      if (agent && typeof agent[Symbol.asyncDispose] === 'function') await agent[Symbol.asyncDispose]();
+      else if (agent && typeof agent.close === 'function') await agent.close();
+    } catch {
+      /* ignore */
+    }
+  }
+}
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
@@ -167,8 +284,9 @@ export default async function handler(req, res) {
       agent: 'Synthio',
       shortFor: 'Syntheverse Sandbox',
       engineStack: 'excluded',
-      acceptsProviders: ['claude', 'gemini', 'openrouter'],
+      acceptsProviders: ['cursor', 'claude', 'gemini', 'openrouter'],
       latticeSessionReusable: true,
+      cursorKeySufficient: true,
       systemPromptPreview: SYNTHIO_SYSTEM_PROMPT.slice(0, 240) + '…',
     });
   }
@@ -194,19 +312,17 @@ export default async function handler(req, res) {
     });
   }
 
-  let provider = resolveProvider(req, body);
-  if (provider === 'cursor') {
-    return json(res, 400, {
-      error:
-        'Synthio chat uses Claude, Gemini, or OpenRouter. Your Cursor key stays on-device for Lattice Chat — pick Claude/Gemini if you already unlocked those in Lattice.',
-      code: 'synthio_provider_use_lattice_key',
-      privilege: access.privilege,
-    });
-  }
-
+  const provider = resolveProvider(req, body);
   const apiKey = resolveApiKey(req, provider);
   if (!apiKey) {
-    return json(res, 401, { error: MISSING_KEY, code: 'missing_provider_api_key', provider });
+    return json(res, 401, {
+      error:
+        provider === 'cursor'
+          ? 'Cursor key missing. Unlock Lattice Chat with your Cursor key on this device — Synthio reuses it.'
+          : MISSING_KEY,
+      code: 'missing_provider_api_key',
+      provider,
+    });
   }
 
   const message = typeof body.message === 'string' ? body.message.trim() : '';
@@ -219,7 +335,8 @@ export default async function handler(req, res) {
 
   try {
     let out;
-    if (provider === 'claude') out = await callClaude(apiKey, messages, model);
+    if (provider === 'cursor') out = await callCursor(apiKey, messages, model);
+    else if (provider === 'claude') out = await callClaude(apiKey, messages, model);
     else if (provider === 'gemini') out = await callGemini(apiKey, messages, model);
     else out = await callOpenRouter(apiKey, messages, model);
     return json(res, 200, {
@@ -235,6 +352,7 @@ export default async function handler(req, res) {
     return json(res, err.status || 502, {
       error: err.message || 'Synthio provider error',
       provider,
+      detail: err.detail || undefined,
     });
   }
 }

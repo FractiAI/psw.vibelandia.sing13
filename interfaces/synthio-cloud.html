@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Synthio Cloud Services · session</title>
-  <meta name="description" content="Try Synthio Cloud Services — interference-based MRI compute session with distributed KomaMRI.jl. Syntheverse Sandbox." />
+  <title>Synthio Cloud Services · home</title>
+  <meta name="description" content="Synthio Cloud Services home — interference-based MRI compute session with distributed KomaMRI.jl. Syntheverse Sandbox." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/synthio-cloud" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #f2fbf6;
-      --soft: #c5ddd0;
-      --muted: #7f9e90;
-      --accent: #3dd68c;
-      --accent-2: #86efac;
-      --sheet: rgba(14, 28, 22, 0.88);
-      --glass: rgba(255, 255, 255, 0.06);
-      --line: rgba(61, 214, 140, 0.28);
-      --danger: #fb7185;
+      --ink: #ecfdf5;
+      --soft: #b7d4c6;
+      --muted: #6f8f80;
+      --accent: #2dd4a0;
+      --accent-hi: #a7f3d0;
+      --warn: #fbbf24;
+      --danger: #f87171;
+      --glass: rgba(8, 22, 16, 0.55);
+      --glass-hi: rgba(255, 255, 255, 0.08);
+      --line: rgba(45, 212, 160, 0.28);
       --font: 'Outfit', system-ui, sans-serif;
-      --display: 'Fraunces', Georgia, serif;
+      --display: 'Syne', system-ui, sans-serif;
       --safe-top: env(safe-area-inset-top, 0px);
       --safe-bot: env(safe-area-inset-bottom, 0px);
       --spring: cubic-bezier(0.22, 1, 0.36, 1);
@@ -30,336 +31,578 @@
     body {
       font-family: var(--font);
       color: var(--ink);
-      background:
-        radial-gradient(ellipse 90% 60% at 50% -20%, rgba(61, 214, 140, 0.28), transparent 55%),
-        radial-gradient(ellipse 50% 40% at 100% 80%, rgba(16, 185, 129, 0.12), transparent 50%),
-        linear-gradient(180deg, #06110c 0%, #0a1712 45%, #040a08 100%);
+      background: #04100c;
       overflow: hidden;
     }
 
-    /* Device frame — session feel, not a platform clone */
-    .stage {
-      height: 100%;
-      display: grid;
-      place-items: center;
-      padding: calc(0.75rem + var(--safe-top)) 0.75rem calc(0.75rem + var(--safe-bot));
-    }
-    .device {
-      width: min(420px, 100%);
-      height: min(860px, 100%);
-      border-radius: 36px;
-      border: 1px solid rgba(255,255,255,0.12);
+    /* Wallpaper — full-bleed home plane */
+    .wallpaper {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
       background:
-        linear-gradient(165deg, rgba(255,255,255,0.07), transparent 40%),
-        rgba(8, 16, 13, 0.94);
-      box-shadow:
-        0 30px 80px rgba(0,0,0,0.45),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+        radial-gradient(ellipse 80% 55% at 18% 12%, rgba(45, 212, 160, 0.32), transparent 58%),
+        radial-gradient(ellipse 70% 50% at 88% 78%, rgba(16, 185, 129, 0.18), transparent 55%),
+        linear-gradient(165deg, #062018 0%, #04140f 42%, #020a08 100%);
+      animation: wallpaperDrift 22s ease-in-out infinite alternate;
+    }
+    .wallpaper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 60h120M60 0v120' stroke='%232dd4a0' stroke-opacity='0.045' stroke-width='1'/%3E%3C/svg%3E");
+      opacity: 0.9;
+      pointer-events: none;
+    }
+    @keyframes wallpaperDrift {
+      from { filter: hue-rotate(-6deg) saturate(1); transform: scale(1); }
+      to { filter: hue-rotate(8deg) saturate(1.08); transform: scale(1.03); }
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      max-width: 480px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
-      position: relative;
-      animation: deviceIn 0.7s var(--spring) both;
+      padding: calc(0.55rem + var(--safe-top)) 1rem 0;
     }
-    @keyframes deviceIn {
-      from { opacity: 0; transform: translateY(28px) scale(0.97); }
-      to { opacity: 1; transform: none; }
-    }
-    .status {
+
+    /* Status bar — iOS lean */
+    .statusbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.85rem 1.25rem 0.35rem;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.02em;
       color: var(--soft);
+      padding: 0.15rem 0.2rem 0.55rem;
     }
-    .grab {
-      width: 2.4rem;
-      height: 0.28rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.28);
-      margin: 0.15rem auto 0.55rem;
+    .statusbar #live[data-state="live"] { color: var(--accent-hi); }
+    .statusbar #live[data-state="sync"] { color: var(--warn); }
+    .statusbar #live[data-state="error"] { color: var(--danger); }
+
+    /* Brand hero — must read without nav */
+    .brand {
+      text-align: center;
+      padding: 0.35rem 0.5rem 0.85rem;
+      animation: brandIn 0.85s var(--spring) both;
     }
-    .scroll {
+    @keyframes brandIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: none; }
+    }
+    .brand h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(2.1rem, 9vw, 2.75rem);
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      color: var(--accent-hi);
+      text-shadow: 0 12px 40px rgba(45, 212, 160, 0.25);
+    }
+    .brand p {
+      margin: 0.45rem 0 0;
+      color: var(--soft);
+      font-size: 0.92rem;
+      line-height: 1.35;
+    }
+
+    .home {
       flex: 1;
       overflow: auto;
-      padding: 0 1.15rem 1.25rem;
       -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-    }
-    .kicker {
-      margin: 0;
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    h1 {
-      margin: 0.35rem 0 0.4rem;
-      font-family: var(--display);
-      font-size: 1.85rem;
-      line-height: 1.15;
-      font-weight: 600;
-      color: var(--accent-2);
-    }
-    .lede {
-      margin: 0 0 1rem;
-      color: var(--soft);
-      font-size: 0.95rem;
-      line-height: 1.45;
+      padding-bottom: 0.5rem;
     }
 
-    .seg {
+    /* Live tile — Windows lean */
+    .live-tile {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.25rem;
-      padding: 0.25rem;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.06);
-      margin-bottom: 1rem;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 0.55rem;
+      margin-bottom: 1.1rem;
+      animation: rise 0.7s var(--spring) 0.08s both;
     }
-    .seg button {
-      border: 0;
-      background: transparent;
-      color: var(--muted);
-      font: inherit;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.55rem 0.2rem;
-      border-radius: 11px;
-      cursor: pointer;
-      transition: background 0.25s var(--spring), color 0.25s;
-    }
-    .seg button[aria-selected="true"] {
-      background: rgba(61, 214, 140, 0.22);
-      color: var(--accent-2);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.08);
-    }
-
-    .card {
-      background: var(--sheet);
+    .tile {
       border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 0.95rem 1rem;
-      margin-bottom: 0.75rem;
+      background: var(--glass);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      animation: rise 0.55s var(--spring) both;
+      border-radius: 18px;
+      padding: 0.9rem 0.95rem;
+      min-height: 7.2rem;
+      position: relative;
+      overflow: hidden;
+      text-align: left;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      transition: transform 0.22s var(--spring), border-color 0.2s;
     }
-    .card h2 {
-      margin: 0 0 0.45rem;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
-    .card p { margin: 0; color: var(--soft); font-size: 0.86rem; line-height: 1.45; }
-    .row {
+    .tile:active { transform: scale(0.97); }
+    .tile--wide {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      gap: 0.75rem;
-      padding: 0.4rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 0.84rem;
     }
-    .row:last-child { border-bottom: 0; }
-    .row span { color: var(--muted); }
-    .row b { color: var(--ink); font-weight: 600; text-align: right; }
-    .row b.ok { color: var(--accent-2); }
-
-    .grid-viz {
+    .tile--pulse {
+      background:
+        linear-gradient(145deg, rgba(45, 212, 160, 0.22), rgba(8, 22, 16, 0.5)),
+        var(--glass);
+    }
+    .tile__label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 0;
+    }
+    .tile__value {
+      margin: 0.35rem 0 0;
+      font-family: var(--display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+    .tile__meta {
+      margin: 0.35rem 0 0;
+      font-size: 0.78rem;
+      color: var(--soft);
+      line-height: 1.35;
+    }
+    .tile__viz {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.35rem;
-      margin-top: 0.65rem;
+      height: 100%;
+      align-content: center;
     }
     .node {
       aspect-ratio: 1;
-      border-radius: 12px;
-      background: rgba(61, 214, 140, 0.08);
-      border: 1px solid rgba(61, 214, 140, 0.25);
+      border-radius: 10px;
+      border: 1px solid rgba(45, 212, 160, 0.28);
+      background: rgba(45, 212, 160, 0.08);
       position: relative;
       overflow: hidden;
     }
     .node::after {
       content: '';
       position: absolute;
-      inset: 18%;
+      inset: 20%;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(134, 239, 172, 0.75), transparent 70%);
-      animation: interfere 2.4s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(167, 243, 208, 0.8), transparent 70%);
+      animation: interfere 2.6s ease-in-out infinite;
     }
-    .node:nth-child(2)::after { animation-delay: 0.2s; }
-    .node:nth-child(3)::after { animation-delay: 0.4s; }
-    .node:nth-child(4)::after { animation-delay: 0.55s; }
-    .node:nth-child(5)::after { animation-delay: 0.15s; }
-    .node:nth-child(6)::after { animation-delay: 0.7s; }
-    .node:nth-child(7)::after { animation-delay: 0.35s; }
-    .node:nth-child(8)::after { animation-delay: 0.9s; }
+    .node:nth-child(2)::after { animation-delay: 0.35s; }
+    .node:nth-child(3)::after { animation-delay: 0.55s; }
+    .node:nth-child(4)::after { animation-delay: 0.15s; }
     @keyframes interfere {
-      0%, 100% { transform: scale(0.65); opacity: 0.35; }
-      50% { transform: scale(1.15); opacity: 1; }
+      0%, 100% { transform: scale(0.6); opacity: 0.3; }
+      50% { transform: scale(1.2); opacity: 1; }
     }
     @keyframes rise {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: none; }
     }
 
-    .dock {
-      padding: 0.75rem 1.15rem calc(0.9rem + var(--safe-bot));
-      border-top: 1px solid rgba(255,255,255,0.06);
-      background: rgba(6, 14, 11, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+    /* App icon grid — iOS lean */
+    .apps {
       display: grid;
-      gap: 0.55rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem 0.55rem;
+      padding: 0.15rem 0.15rem 1.1rem;
+      list-style: none;
+      margin: 0;
     }
-    .dock button, .dock a.btn {
-      display: block;
-      text-align: center;
-      text-decoration: none;
+    .apps li {
+      animation: rise 0.65s var(--spring) both;
+    }
+    .apps li:nth-child(1) { animation-delay: 0.12s; }
+    .apps li:nth-child(2) { animation-delay: 0.16s; }
+    .apps li:nth-child(3) { animation-delay: 0.2s; }
+    .apps li:nth-child(4) { animation-delay: 0.24s; }
+    .apps li:nth-child(5) { animation-delay: 0.28s; }
+    .apps li:nth-child(6) { animation-delay: 0.32s; }
+    .apps li:nth-child(7) { animation-delay: 0.36s; }
+    .apps li:nth-child(8) { animation-delay: 0.4s; }
+
+    .app {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
       border: 0;
-      border-radius: 16px;
-      padding: 0.85rem 1rem;
+      background: transparent;
+      color: inherit;
       font: inherit;
-      font-weight: 700;
-      font-size: 0.95rem;
+      text-decoration: none;
       cursor: pointer;
-      transition: transform 0.2s var(--spring), opacity 0.2s;
+      padding: 0;
+      width: 100%;
+      transition: transform 0.2s var(--spring);
     }
-    .dock button:active, .dock a.btn:active { transform: scale(0.98); }
-    .primary {
-      background: linear-gradient(180deg, #4ade80, #16a34a);
-      color: #052e16;
-      box-shadow: 0 8px 24px rgba(22, 163, 74, 0.35);
+    .app:active { transform: scale(0.92); }
+    .app__icon {
+      width: 3.55rem;
+      height: 3.55rem;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: -0.04em;
+      color: #042f1e;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
     }
-    .secondary {
-      background: var(--glass);
-      color: var(--accent-2);
-      border: 1px solid var(--line) !important;
+    .app__icon--mint { background: linear-gradient(160deg, #6ee7b7, #059669); }
+    .app__icon--teal { background: linear-gradient(160deg, #5eead4, #0f766e); }
+    .app__icon--lime { background: linear-gradient(160deg, #bef264, #65a30d); color: #1a2e05; }
+    .app__icon--slate { background: linear-gradient(160deg, #94a3b8, #334155); color: #f8fafc; }
+    .app__icon--sand { background: linear-gradient(160deg, #fde68a, #d97706); color: #422006; }
+    .app__icon--frost { background: linear-gradient(160deg, #a7f3d0, #2dd4a0); }
+    .app__icon--deep { background: linear-gradient(160deg, #34d399, #115e59); }
+    .app__icon--ink { background: linear-gradient(160deg, #6ee7b7, #134e4a); }
+    .app__name {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--soft);
+      text-align: center;
+      line-height: 1.2;
+      max-width: 4.6rem;
     }
-    .home-bar {
-      width: 7.5rem;
-      height: 0.3rem;
+
+    /* Dock — hybrid */
+    .dock {
+      margin: 0.15rem -0.15rem calc(0.55rem + var(--safe-bot));
+      padding: 0.55rem;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(6, 18, 14, 0.72);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+      animation: rise 0.7s var(--spring) 0.2s both;
+    }
+    .dock .app__icon { width: 3.25rem; height: 3.25rem; border-radius: 16px; }
+    .dock .app__name { font-size: 0.62rem; color: var(--muted); }
+
+    /* Sheet overlays */
+    .sheet {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: grid;
+      align-items: end;
+      background: rgba(2, 8, 6, 0.45);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease;
+    }
+    .sheet[data-open="true"] {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sheet__panel {
+      max-width: 480px;
+      width: 100%;
+      margin: 0 auto;
+      max-height: min(78vh, 640px);
+      border-radius: 22px 22px 0 0;
+      border: 1px solid var(--line);
+      border-bottom: 0;
+      background: linear-gradient(180deg, rgba(12, 32, 24, 0.97), rgba(4, 14, 10, 0.98));
+      padding: 0.55rem 1.1rem calc(1rem + var(--safe-bot));
+      transform: translateY(24px);
+      transition: transform 0.35s var(--spring);
+      overflow: auto;
+    }
+    .sheet[data-open="true"] .sheet__panel { transform: none; }
+    .sheet__grab {
+      width: 2.6rem;
+      height: 0.28rem;
       border-radius: 999px;
-      background: rgba(255,255,255,0.35);
-      margin: 0.35rem auto 0;
+      background: rgba(255, 255, 255, 0.28);
+      margin: 0.2rem auto 0.75rem;
     }
+    .sheet__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .sheet__head h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .sheet__close {
+      border: 0;
+      background: var(--glass-hi);
+      color: var(--soft);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 0.7rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.42rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.86rem;
+    }
+    .metric-row:last-child { border-bottom: 0; }
+    .metric-row span { color: var(--muted); }
+    .metric-row b { color: var(--ink); font-weight: 600; text-align: right; }
+    .metric-row b.ok { color: var(--accent-hi); }
     .log {
       font-size: 0.8rem;
       color: var(--soft);
       white-space: pre-wrap;
       line-height: 1.45;
-      max-height: 9rem;
+      max-height: 10rem;
       overflow: auto;
       font-variant-numeric: tabular-nums;
+      margin: 0.65rem 0 0;
+      padding: 0.65rem 0.75rem;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
+    .sheet p {
+      margin: 0 0 0.75rem;
+      color: var(--soft);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .sheet a { color: var(--accent-hi); }
+    .actions {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 0.85rem;
+    }
+    .actions button, .actions a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: 0;
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      font: inherit;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s var(--spring);
+    }
+    .actions button:active, .actions a:active { transform: scale(0.98); }
+    .actions button:disabled { opacity: 0.55; cursor: wait; }
+    .primary {
+      background: linear-gradient(180deg, #4ade80, #15803d);
+      color: #052e16;
+    }
+    .secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--accent-hi);
+      border: 1px solid var(--line) !important;
+    }
+    .fine {
+      margin-top: 0.75rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
     .toast {
-      position: absolute;
+      position: fixed;
       left: 50%;
-      top: 3.4rem;
-      transform: translateX(-50%) translateY(-8px);
-      background: rgba(20, 40, 30, 0.95);
+      top: calc(0.75rem + var(--safe-top));
+      transform: translateX(-50%) translateY(-10px);
+      z-index: 40;
+      background: rgba(8, 28, 20, 0.94);
       border: 1px solid var(--line);
-      color: var(--accent-2);
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
+      color: var(--accent-hi);
+      padding: 0.5rem 0.9rem;
+      border-radius: 12px;
+      font-size: 0.78rem;
       font-weight: 600;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s, transform 0.35s var(--spring);
-      z-index: 5;
-      white-space: nowrap;
+      max-width: min(90vw, 360px);
+      text-align: center;
     }
     .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
-    .fine { margin-top: 0.65rem; font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
-    a.link { color: var(--accent-2); }
+
+    @media (min-width: 720px) {
+      .shell { max-width: 520px; padding-top: calc(1rem + var(--safe-top)); }
+      .apps { gap: 1rem 0.75rem; }
+    }
   </style>
 </head>
 <body>
-  <div class="stage">
-    <div class="device" role="application" aria-label="Synthio Cloud Services session">
-      <div class="toast" id="toast" role="status"></div>
-      <div class="status">
-        <span id="clock">Synthio</span>
-        <span id="live">● session</span>
-      </div>
-      <div class="grab" aria-hidden="true"></div>
-      <div class="scroll">
-        <p class="kicker">Synthio Cloud Services</p>
-        <h1>Interference compute session</h1>
-        <p class="lede">
-          Distributed <strong>KomaMRI.jl</strong> memory + cloud-as-antenna networking —
-          a cooler alternative to hot, capital-heavy racks. Sandbox session · simulator floats only.
-        </p>
+  <div class="wallpaper" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status"></div>
 
-        <div class="seg" role="tablist" aria-label="Session mode">
-          <button type="button" role="tab" aria-selected="true" data-tab="run">Run</button>
-          <button type="button" role="tab" aria-selected="false" data-tab="arch">Architecture</button>
-          <button type="button" role="tab" aria-selected="false" data-tab="honesty">Honesty</button>
-        </div>
+  <div class="shell">
+    <header class="statusbar" aria-label="Status">
+      <span id="clock">Synthio</span>
+      <span id="live" data-state="idle">session idle</span>
+    </header>
 
-        <div id="pane-run">
-          <section class="card">
-            <h2>Wave-interference fabric</h2>
-            <p>Master tensor bridge · Φ_EGS phase-lock labels across cloud nodes.</p>
-            <div class="grid-viz" aria-hidden="true">
-              <div class="node"></div><div class="node"></div><div class="node"></div><div class="node"></div>
-              <div class="node"></div><div class="node"></div><div class="node"></div><div class="node"></div>
-            </div>
-          </section>
-          <section class="card">
-            <h2>Live activation</h2>
-            <div id="metrics">
-              <div class="row"><span>State</span><b>…</b></div>
-            </div>
-          </section>
-          <section class="card">
-            <h2>Session log</h2>
-            <div class="log" id="log">Tap Start session to shard phantom blocks and sync pulse…</div>
-          </section>
-        </div>
+    <div class="brand">
+      <h1>Synthio</h1>
+      <p>Cloud Services · interference compute home</p>
+    </div>
 
-        <div id="pane-arch" hidden>
-          <section class="card">
-            <h2>Phantom sharding</h2>
-            <p>Virtual phantom partitioned across Julia workers via Distributed.jl / SharedArrays — lifts single-node RAM ceilings.</p>
-          </section>
-          <section class="card">
-            <h2>Block-wise Nblocks</h2>
-            <p>KomaMRI sequence blocks route across TCP/MPI fabric. Default outline: Nblocks = 20.</p>
-          </section>
-          <section class="card">
-            <h2>Cloud-as-antenna</h2>
-            <p>Workers coordinate phase-lock labels under Φ_EGS — macroscopic wave-interference grid story, not clinical RF.</p>
-          </section>
-          <section class="card">
-            <h2>Read the note</h2>
-            <p><a class="link" href="/interfaces/whitepaper-surface.html?id=synthio-komamri-distributed-cloud-2026-08">Distributed KomaMRI architecture →</a></p>
-          </section>
-        </div>
-
-        <div id="pane-honesty" hidden>
-          <section class="card">
-            <h2>What this is</h2>
-            <p>Syntheverse Sandbox product session for interference-based MRI super-intelligent computing with industry KomaMRI.jl distributed outline.</p>
-          </section>
-          <section class="card">
-            <h2>What this is not</h2>
-            <p>Not a clinical magnet. Not wet-lab RF into living tissue. Not proven displacement of hyperscale data centers. Edge UI does not run Julia workers.</p>
-          </section>
-          <p class="fine">Intention: as close as possible to empirical, safe, wet-style experimentation via industry MRI simulator + sandbox. → ∞¹³</p>
+    <main class="home" id="home">
+      <div class="live-tile">
+        <button type="button" class="tile tile--wide tile--pulse" id="tileSession" aria-label="Open session">
+          <p class="tile__label">Live session</p>
+          <p class="tile__value" id="tileState">Warming…</p>
+          <p class="tile__meta" id="tileMeta">KomaMRI · Φ_EGS phase-lock · sandbox only</p>
+        </button>
+        <div class="tile" aria-hidden="true">
+          <div class="tile__viz">
+            <div class="node"></div><div class="node"></div>
+            <div class="node"></div><div class="node"></div>
+          </div>
         </div>
       </div>
 
-      <div class="dock">
-        <button type="button" class="primary" id="btnStart">Start session</button>
-        <a class="btn secondary" href="/synthio">Ask Synthio</a>
-        <div class="home-bar" aria-hidden="true"></div>
+      <ul class="apps" aria-label="Synthio apps">
+        <li>
+          <button type="button" class="app" data-sheet="session">
+            <span class="app__icon app__icon--mint">Σ</span>
+            <span class="app__name">Session</span>
+          </button>
+        </li>
+        <li>
+          <a class="app" href="/synthio">
+            <span class="app__icon app__icon--teal">Chat</span>
+            <span class="app__name">Ask Synthio</span>
+          </a>
+        </li>
+        <li>
+          <a class="app" href="/synthio-dashboard">
+            <span class="app__icon app__icon--lime">Act</span>
+            <span class="app__name">Activation</span>
+          </a>
+        </li>
+        <li>
+          <a class="app" href="/synthio-one-pager">
+            <span class="app__icon app__icon--sand">1×</span>
+            <span class="app__name">One-pager</span>
+          </a>
+        </li>
+        <li>
+          <button type="button" class="app" data-sheet="arch">
+            <span class="app__icon app__icon--frost">Grid</span>
+            <span class="app__name">Architecture</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="app" data-sheet="honesty">
+            <span class="app__icon app__icon--slate">Note</span>
+            <span class="app__name">Honesty</span>
+          </button>
+        </li>
+        <li>
+          <a class="app" href="/interfaces/whitepaper-surface.html?id=synthio-komamri-distributed-cloud-2026-08">
+            <span class="app__icon app__icon--deep">WP</span>
+            <span class="app__name">Whitepaper</span>
+          </a>
+        </li>
+        <li>
+          <a class="app" href="/my-whiteboard">
+            <span class="app__icon app__icon--ink">WB</span>
+            <span class="app__name">Whiteboard</span>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <nav class="dock" aria-label="Dock">
+      <button type="button" class="app" data-sheet="session" id="dockStart">
+        <span class="app__icon app__icon--mint">Go</span>
+        <span class="app__name">Start</span>
+      </button>
+      <a class="app" href="/synthio">
+        <span class="app__icon app__icon--teal">Ai</span>
+        <span class="app__name">Chat</span>
+      </a>
+      <a class="app" href="/synthio-dashboard">
+        <span class="app__icon app__icon--lime">Dash</span>
+        <span class="app__name">Dash</span>
+      </a>
+      <a class="app" href="/">
+        <span class="app__icon app__icon--slate">QF</span>
+        <span class="app__name">QUESTFEST</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Session sheet -->
+  <div class="sheet" id="sheet-session" data-open="false" role="dialog" aria-modal="true" aria-labelledby="sessionTitle" hidden>
+    <div class="sheet__panel">
+      <div class="sheet__grab" aria-hidden="true"></div>
+      <div class="sheet__head">
+        <h2 id="sessionTitle">Cloud session</h2>
+        <button type="button" class="sheet__close" data-close>Done</button>
       </div>
+      <p>Distributed KomaMRI.jl memory + cloud-as-antenna networking — cooler alternative to hot racks. Simulator floats only.</p>
+      <div id="metrics">
+        <div class="metric-row"><span>State</span><b>…</b></div>
+      </div>
+      <div class="log" id="log">Open Start to shard phantom blocks and sync pulse…</div>
+      <div class="actions">
+        <button type="button" class="primary" id="btnStart">Start / force pulse</button>
+        <button type="button" class="secondary" id="btnRefresh">Refresh soft</button>
+      </div>
+      <p class="fine">Soft warm runs on open. Force pulse only from Start. → ∞¹³</p>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet-arch" data-open="false" role="dialog" aria-modal="true" aria-labelledby="archTitle" hidden>
+    <div class="sheet__panel">
+      <div class="sheet__grab" aria-hidden="true"></div>
+      <div class="sheet__head">
+        <h2 id="archTitle">Architecture</h2>
+        <button type="button" class="sheet__close" data-close>Done</button>
+      </div>
+      <p><strong>Phantom sharding.</strong> Virtual phantom partitioned across Julia workers via Distributed.jl / SharedArrays — lifts single-node RAM ceilings.</p>
+      <p><strong>Block-wise Nblocks.</strong> KomaMRI sequence blocks route across TCP/MPI fabric. Default outline: Nblocks = 20.</p>
+      <p><strong>Cloud-as-antenna.</strong> Workers coordinate phase-lock labels under Φ_EGS — macroscopic wave-interference grid story, not clinical RF.</p>
+      <p><a href="/interfaces/whitepaper-surface.html?id=synthio-komamri-distributed-cloud-2026-08">Distributed KomaMRI architecture →</a></p>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet-honesty" data-open="false" role="dialog" aria-modal="true" aria-labelledby="honestyTitle" hidden>
+    <div class="sheet__panel">
+      <div class="sheet__grab" aria-hidden="true"></div>
+      <div class="sheet__head">
+        <h2 id="honestyTitle">Honesty</h2>
+        <button type="button" class="sheet__close" data-close>Done</button>
+      </div>
+      <p><strong>What this is.</strong> Syntheverse Sandbox product home for interference-based MRI compute with industry KomaMRI.jl distributed outline.</p>
+      <p><strong>What this is not.</strong> Not a clinical magnet. Not wet-lab RF into living tissue. Not proven displacement of hyperscale data centers. This edge UI does not run Julia workers.</p>
+      <p class="fine">Intention: as close as possible to empirical, safe, wet-style experimentation via industry MRI simulator + sandbox. → ∞¹³</p>
     </div>
   </div>
 
@@ -370,6 +613,10 @@
       var metrics = document.getElementById('metrics');
       var clock = document.getElementById('clock');
       var live = document.getElementById('live');
+      var tileState = document.getElementById('tileState');
+      var tileMeta = document.getElementById('tileMeta');
+      var btnStart = document.getElementById('btnStart');
+      var btnRefresh = document.getElementById('btnRefresh');
 
       function tick() {
         var d = new Date();
@@ -384,8 +631,13 @@
         setTimeout(function () { toast.classList.remove('on'); }, 2200);
       }
 
+      function setLive(state, label) {
+        live.dataset.state = state;
+        live.textContent = label;
+      }
+
       function row(k, v, ok) {
-        return '<div class="row"><span>' + k + '</span><b class="' + (ok ? 'ok' : '') + '">' + v + '</b></div>';
+        return '<div class="metric-row"><span>' + k + '</span><b class="' + (ok ? 'ok' : '') + '">' + v + '</b></div>';
       }
 
       function appendLog(line) {
@@ -393,37 +645,63 @@
         log.scrollTop = log.scrollHeight;
       }
 
-      document.querySelectorAll('.seg button').forEach(function (btn) {
+      function openSheet(id) {
+        var sheet = document.getElementById('sheet-' + id);
+        if (!sheet) return;
+        sheet.hidden = false;
+        requestAnimationFrame(function () {
+          sheet.dataset.open = 'true';
+        });
+      }
+
+      function closeSheet(sheet) {
+        sheet.dataset.open = 'false';
+        setTimeout(function () {
+          if (sheet.dataset.open !== 'true') sheet.hidden = true;
+        }, 280);
+      }
+
+      document.querySelectorAll('[data-sheet]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          openSheet(el.getAttribute('data-sheet'));
+        });
+      });
+      document.getElementById('tileSession').addEventListener('click', function () {
+        openSheet('session');
+      });
+      document.querySelectorAll('[data-close]').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          document.querySelectorAll('.seg button').forEach(function (b) {
-            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
-          });
-          var tab = btn.getAttribute('data-tab');
-          document.getElementById('pane-run').hidden = tab !== 'run';
-          document.getElementById('pane-arch').hidden = tab !== 'arch';
-          document.getElementById('pane-honesty').hidden = tab !== 'honesty';
+          closeSheet(btn.closest('.sheet'));
+        });
+      });
+      document.querySelectorAll('.sheet').forEach(function (sheet) {
+        sheet.addEventListener('click', function (e) {
+          if (e.target === sheet) closeSheet(sheet);
         });
       });
 
       async function runSession(force) {
-        live.textContent = '● syncing';
-        live.style.color = 'var(--accent)';
+        setLive('sync', 'syncing…');
+        tileState.textContent = 'Syncing…';
+        tileMeta.textContent = force ? 'Force pulse in flight' : 'Soft warm · no forced write';
         log.textContent = '';
         appendLog('01  addprocs · cloud fabric outline');
         appendLog('02  @everywhere using KomaMRI');
         appendLog('03  shard phantom · Nblocks=20');
-        showToast(force ? 'Force pulse…' : 'Sharding phantom…');
-        const ac = new AbortController();
-        const timer = window.setTimeout(function () { ac.abort(); }, 28000);
+        showToast(force ? 'Force pulse…' : 'Warming session…');
+        btnStart.disabled = true;
+        btnRefresh.disabled = true;
+        var ac = new AbortController();
+        var timer = window.setTimeout(function () { ac.abort(); }, 28000);
         try {
           var q = force ? '?activate=1&forcePulse=1' : '?activate=1';
           var res = await fetch('/api/synthio-activation' + q, { cache: 'no-store', signal: ac.signal });
           var data = await res.json();
           if (!res.ok || !data.ok) throw new Error(data.message || 'activation failed');
           appendLog('04  phase-lock · Φ_EGS bridge');
-          appendLog('05  Syntheverse pulse · ' + (data.pulse?.discriminant || 'SYNTHIO_Σ_Φ^-99_PC'));
-          appendLog('06  persist · ' + (data.pulse?.persist || data.pulsePersist || '—'));
-          appendLog('07  inclusion · ' + String(data.metrics?.sandboxInclusionConfirmed));
+          appendLog('05  Syntheverse pulse · ' + ((data.pulse && data.pulse.discriminant) || 'SYNTHIO_Σ_Φ^-99_PC'));
+          appendLog('06  persist · ' + ((data.pulse && data.pulse.persist) || data.pulsePersist || '—'));
+          appendLog('07  inclusion · ' + String(data.metrics && data.metrics.sandboxInclusionConfirmed));
           appendLog('08  session ready · sandbox only');
           var m = data.metrics || {};
           metrics.innerHTML = [
@@ -434,16 +712,21 @@
             row('Pulse novel', String(m.pulseNovel), m.pulseNovel),
             row('Sandbox inclusion', String(m.sandboxInclusionConfirmed), m.sandboxInclusionConfirmed),
           ].join('');
-          live.textContent = '● live';
-          live.style.color = 'var(--accent)';
+          tileState.textContent = m.activationState || 'LIVE';
+          tileMeta.textContent =
+            'Coherence ' + String(m.coherenceScore) +
+            ' · ' + (m.externalAligned || 0) + '/' + (m.externalExpected || 6) +
+            ' expectations · ' + ((data.pulse && data.pulse.persist) || 'pulse');
+          setLive('live', 'live');
           showToast('Session active');
         } catch (e) {
           var msg = e && e.name === 'AbortError'
-            ? 'Activation timed out — retry Start session'
+            ? 'Activation timed out — retry Start'
             : (e.message || String(e));
           appendLog('!!  ' + msg);
-          live.textContent = '● error';
-          live.style.color = 'var(--danger)';
+          setLive('error', 'error');
+          tileState.textContent = 'ERROR';
+          tileMeta.textContent = msg;
           metrics.innerHTML = [
             row('Activation', 'ERROR', false),
             row('Detail', msg, false),
@@ -451,11 +734,13 @@
           showToast('Session error');
         } finally {
           window.clearTimeout(timer);
+          btnStart.disabled = false;
+          btnRefresh.disabled = false;
         }
       }
 
-      document.getElementById('btnStart').addEventListener('click', function () { runSession(true); });
-      // Soft auto-warm on open (no forced FS write)
+      btnStart.addEventListener('click', function () { runSession(true); });
+      btnRefresh.addEventListener('click', function () { runSession(false); });
       setTimeout(function () { runSession(false); }, 450);
     })();
   </script>

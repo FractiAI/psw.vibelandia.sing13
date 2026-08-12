@@ -49,6 +49,9 @@ describe('Synthio prompt', () => {
     expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/Synthio/);
     expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/creator-only/i);
     expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/not.*clinical/i);
+    expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/point-and-click/i);
+    expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/Syntheverse Sandbox/);
+    expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/new moon/i);
   });
 
   it('builds messages with system + user', () => {

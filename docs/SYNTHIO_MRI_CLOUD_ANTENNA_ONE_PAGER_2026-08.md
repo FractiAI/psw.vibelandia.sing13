@@ -21,6 +21,8 @@
 | **Antenna metaphor** | Catalog phase-lock / macro-array **discussion** | Clinical RF into living tissue from data centers |
 | **Agent** | Synthio creator-only request handling | Guest Lattice seats operating Synthio |
 | **Scale key** | $\Phi_{\mathrm{EGS}}$ architectural grammar | FDA device / patient-care / diagnostic imaging |
+| **Activation** | Natural (Bloch clocks) vs point-and-click (Goldilocks Φ jump) **in sandbox** | Physical wormhole · sky causes clinical MRI |
+| **Aug 12 window** | New moon · six-planet · eclipse as amplification **labels** | Prophecy / destiny engine |
 
 **Operator line:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -30,22 +32,24 @@
 
 Industry MRI simulators compute spin physics as floats. **Synthio** (Syntheverse Sandbox) files that work under 99-octave grammar and lets Player 1 talk about distributed cloud nodes as a macro antenna *story* — without shipping a magnet or claiming non-local clinical imaging.
 
+**Omniversal Goldilocks** is loaded as **point-and-click activation** (timeline-shift / wormhole *labels*) vs **natural** Bloch chronologies — sandbox only. Filed under **2026-08-12** new moon · six-planet parade · eclipse for max amplification *discussion*.
+
 ---
 
 ## Methods & reproducibility
 
 | Step | Path |
 |------|------|
-| Full paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` |
+| Full paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` (§5 activation) |
 | Suite | `npm run research:synthio-mri-cloud-antenna` |
 | PRA | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-one-pager-2026-08` |
-| Chat | `/synthio` · creator BYOK only |
+| Chat | `/synthio` · creator BYOK only · **sandbox only** |
 
 ---
 
 ## Separate from the engine pin
 
-Synthio is **always-on** for **creator keys** only. It is **not** a shelf on the 99 Octave Omni-Lattice **engine** sync (CMOS → tensor → master synthesis).
+Synthio is **always-on** for **creator keys** only. It is **not** a shelf on the 99 Octave Omni-Lattice **engine** sync (CMOS → tensor → master synthesis). Goldilocks point-and-click lives **inside** Synthio MRI — not as a public click UI.
 
 ## Fair Exchange
 

@@ -19,3 +19,32 @@ export const B0_TESLA_LABELS = Object.freeze([1.5, 3.0]);
 export const CLOUD_NODE_LABELS = Object.freeze(['C0', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7']);
 export const ENGINE_STACK_EXCLUDED = true;
 export const ACCESS_MODE = 'creator_only';
+
+/** Activation modalities — catalog switches inside sandbox simulator wrap. */
+export const ACTIVATION_MODES = Object.freeze(['natural', 'point_and_click']);
+/** Default load: Omniversal Goldilocks point-and-click (vs Bloch natural timelines). */
+export const DEFAULT_ACTIVATION_MODE = 'point_and_click';
+export const GOLDILOCKS_ACTIVATION_LOADED = true;
+export const SANDBOX_ONLY = true;
+export const SANDBOX_NAME = 'Syntheverse Sandbox';
+
+/**
+ * Aug 12, 2026 catalog amplification window — co-timing labels (verify ephemerides).
+ * Not celestial causation of MRI physics.
+ */
+export const AMPLIFICATION_WINDOW = Object.freeze({
+  date: '2026-08-12',
+  newMoon: true,
+  sixPlanetParade: true,
+  solarEclipse: true,
+  planets: Object.freeze([
+    'Jupiter',
+    'Mercury',
+    'Mars',
+    'Uranus',
+    'Saturn',
+    'Neptune',
+  ]),
+  maxAmplificationLabel: true,
+  honesty: 'Catalog co-timing labels — not prophecy or sky→spin causation.',
+});

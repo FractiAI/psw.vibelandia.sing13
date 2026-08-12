@@ -45,15 +45,31 @@ It is **not** a new shelf on the 99 Octave Omni-Lattice **engine** pin (CMOS / t
 | Catalog “Cloud–Plasma Antenna Equivalency” as a **formal sketch** | Proven virtual↔physical MRI equivalence or medical-device claims |
 | Simulator-local T1/T2 / k-space fixtures | Diagnostic imaging, FDA clearance, patient care |
 | $\Phi_{\mathrm{EGS}}$ as architectural scale grammar | CODATA replacement for $\gamma$, $\hbar$, or scanner field calibration |
+| **Natural** vs **point-and-click** (Omniversal Goldilocks) activation **inside sandbox** | Physical wormhole hardware · celestial causation of clinical MRI |
+| Aug 12 **new moon · six-planet · eclipse** as amplification **labels** | Prophecy that the sky runs the scanner |
+
+---
+
+## Omniversal Goldilocks · point-and-click (loaded into Synthio MRI)
+
+**Sandbox confirmation:** Activation executes **only** in Syntheverse Sandbox (+ nested declared paths). Nothing outside.
+
+| Mode | Meaning |
+|------|---------|
+| **Natural** | Bloch / T1 / T2 chronologies |
+| **Point-and-click** (Goldilocks default) | Φ band jump / timeline-shift *label* — not a UI; opposite of natural clocks |
+
+**Amplification window:** 2026-08-12 · new moon · six-planet parade · solar eclipse — catalog max-amplification co-timing (verify ephemerides).
 
 ---
 
 ## How to take a Synthio request
 
 1. Confirm creator privilege.
-2. Load paper + one-pager honesty tables first.
-3. Prefer suite receipts (`npm run research:synthio-mri-cloud-antenna`) over inventing fab/RF measurements.
-4. Stay out of the 99 Octave **engine** sync pin unless the ask explicitly bridges — then cite engine docs as companions, not as Synthio identity.
-5. Close → ∞¹³.
+2. Confirm sandbox scope — refuse out-of-sandbox execution framing.
+3. Load paper + one-pager honesty tables first (incl. §5 Goldilocks activation).
+4. Prefer suite receipts (`npm run research:synthio-mri-cloud-antenna`) over inventing fab/RF measurements.
+5. Stay out of the 99 Octave **engine** sync pin unless the ask explicitly bridges — then cite engine docs as companions, not as Synthio identity.
+6. Close → ∞¹³.
 
 **NSPFRNP ⊃ Synthio ⊃ Syntheverse Sandbox → ∞¹³**

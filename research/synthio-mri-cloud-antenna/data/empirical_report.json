@@ -2,13 +2,13 @@
   "docId": "WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12",
   "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
   "title": "Simulating Magnetic Resonance via the 99th-Octave Omni-Lattice: Cloud Infrastructure as an Interconnected Antenna Array",
-  "generatedAt": "2026-08-12T17:36:38.492Z",
+  "generatedAt": "2026-08-12T17:48:54.121Z",
   "operator": "Synthio · Syntheverse Sandbox · SynthOBS family",
   "honestyBoundary": "Synthio MRI cloud-antenna suite validates Φ, 8019 matrix, B0/cloud labels — not clinical imaging.",
   "results": {
     "all_pass": true,
-    "n_pass": 9,
-    "n_total": 9,
+    "n_pass": 12,
+    "n_total": 12,
     "failed": [],
     "experiments": [
       {
@@ -70,6 +70,47 @@
         "ACCESS_MODE": "creator_only",
         "AGENT_ID": "Synthio.sandbox",
         "pass": true
+      },
+      {
+        "id": "E10_activation_modes",
+        "title": "Natural + point_and_click modes; Goldilocks default point_and_click",
+        "ACTIVATION_MODES": [
+          "natural",
+          "point_and_click"
+        ],
+        "DEFAULT_ACTIVATION_MODE": "point_and_click",
+        "GOLDILOCKS_ACTIVATION_LOADED": true,
+        "pass": true,
+        "honesty": "Catalog activation switches — not a GUI; not physical wormhole hardware."
+      },
+      {
+        "id": "E11_sandbox_only",
+        "title": "Activation executes only in Syntheverse Sandbox",
+        "SANDBOX_ONLY": true,
+        "SANDBOX_NAME": "Syntheverse Sandbox",
+        "pass": true
+      },
+      {
+        "id": "E12_aug12_amplification_window",
+        "title": "New moon · six-planet · eclipse amplification labels (2026-08-12)",
+        "window": {
+          "date": "2026-08-12",
+          "newMoon": true,
+          "sixPlanetParade": true,
+          "solarEclipse": true,
+          "planets": [
+            "Jupiter",
+            "Mercury",
+            "Mars",
+            "Uranus",
+            "Saturn",
+            "Neptune"
+          ],
+          "maxAmplificationLabel": true,
+          "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
+        },
+        "pass": true,
+        "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
       }
     ],
     "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",

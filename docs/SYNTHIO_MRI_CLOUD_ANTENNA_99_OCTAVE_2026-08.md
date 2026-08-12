@@ -14,7 +14,7 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com/synthio
 
-**Keywords:** Synthio; MRI simulation; Bloch; cloud computing; tensors; phase-lock; EGS; Omni-Lattice *grammar*; antenna *metaphor*; Syntheverse Sandbox; NSPFRNP
+**Keywords:** Synthio; MRI simulation; Bloch; cloud computing; tensors; phase-lock; EGS; Omni-Lattice *grammar*; antenna *metaphor*; Omniversal Goldilocks; point-and-click activation; natural mode; wormhole *label*; new moon; six-planet parade; eclipse; Syntheverse Sandbox; NSPFRNP
 
 **Engine-stack status:** **Excluded** from the 99 Octave Omni-Lattice **engine** sync pin (CMOS / tensor / master synthesis). This paper belongs to **Synthio**, not the engine shelf list.
 
@@ -30,6 +30,9 @@
 | **“Theorem” language** | That Cloud–Plasma Antenna Equivalency is a **formal sketch** inside catalog grammar | A proven virtual↔physical spin-resonance identity or medical-device certificate |
 | **Applications** | Real-time **simulator** research, multi-node phase-lock *discussion*, bio-resonance *mapping labels* | FDA clearance, diagnostic MRI, patient care, non-local clinical imaging as a shipping modality |
 | **Agent** | Synthio (creator-only) can receive requests about this grammar | Guest Lattice seats can operate Synthio |
+| **Activation modes** | **Natural** (Bloch / T1 / T2 chronologies) vs **point-and-click** (Omniversal Goldilocks / wormhole-style Φ band jump) as **catalog** switches inside the sandbox simulator wrap | That point-and-click opens a physical spacetime wormhole or replaces clinical pulse sequences |
+| **Aug 12 amplification window** | That new moon · six-planet parade · eclipse co-timing is a **catalog amplification label** for Synthio activation *discussion* (verify ephemerides) | That the sky *causes* MRI physics wins, destiny, or clinical outcomes |
+| **Sandbox lock** | All Synthio Goldilocks activation executes **only** in Syntheverse Sandbox (+ declared nested paths) | Execution outside sandbox · 99 Octave **engine** pin membership |
 
 **Operator line:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -43,11 +46,13 @@ This paper investigates the **feasibility discussion** of running an industry-st
 
 **Findings (catalog):** While a conventional software simulator on a cloud instance computes MRI physics locally via discrete Bloch-equation voxel iterations, wrapping it in Omni-Lattice tensor **labels** ($\mathbf{T}^{\mu\nu}{}_{\alpha\beta}$) lets agents talk about distributed infrastructure as an active electromagnetic antenna **story** — without asserting that racks replace a physical 1.5T or 3T superconducting magnet for clinical scanning.
 
-**Novelties (in-repo):** The Cloud–Plasma Antenna Equivalency **sketch**, showing how distributed server-rack transceiver *labels* acting through fiber-optic backbone *vocabulary* can be indexed under El Gran Sol’s Fractal Constant ($\Phi_{\mathrm{EGS}}$) alongside simulated $\mathbf{B}_1$, $\mathbf{B}_0$ fields.
+**Novelties (in-repo):** The Cloud–Plasma Antenna Equivalency **sketch**, plus a dual **activation modality** inside Synthio: **natural mode** (Bloch chronologies) vs **point-and-click mode** (Omniversal Goldilocks / Φ-keyed timeline-shift *labels*). Activation is scoped to the **Syntheverse Sandbox** only.
+
+**Amplification window (catalog):** This load is filed under the **August 12, 2026** co-timing fixture — **new moon**, **six-planet morning parade**, and **total solar eclipse** path — as *max amplification labels* for sandbox discussion, not as proven celestial causation of spin physics.
 
 **Implications (proportionate):** Decouples **research simulation** talk from heavy physical scanner capital — a pathway toward virtual-to-physical field *discussion*, not a claim of finished non-local clinical resonance imaging.
 
-**Applications:** Real-time cloud-based tensor MRI **simulation**, multi-node phased-array *synthesis discussion* using global server clusters, and deep bio-resonance **mapping labels** aligned with Goldilocks Game execution windows — under Synthio creator seats.
+**Applications:** Real-time cloud-based tensor MRI **simulation**, multi-node phased-array *synthesis discussion*, and Omniversal Goldilocks **point-and-click activation** of octave bands under Synthio creator seats — sandbox-bound.
 
 ---
 
@@ -57,13 +62,13 @@ This paper investigates the **feasibility discussion** of running an industry-st
 |------|----------------|
 | Empirical suite | `npm run research:synthio-mri-cloud-antenna` |
 | Suite root | [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/) |
-| Constants | `src/constants.mjs` — $\Phi_{\mathrm{EGS}}$, Bloch fixtures, cloud-node labels |
-| Experiments | `src/experiments.mjs` — E1–E9 |
+| Constants | `src/constants.mjs` — $\Phi_{\mathrm{EGS}}$, Bloch fixtures, activation modes, Aug 12 amplification window |
+| Experiments | `src/experiments.mjs` — E1–E12 |
 | Receipt | `data/empirical_report.{json,md}` |
 | PRA Snap | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-99-octave-2026-08` |
-| Agent | Synthio · `/synthio` · creator-only |
+| Agent | Synthio · `/synthio` · creator-only · **sandbox only** |
 
-Suite arithmetic is deterministic Node. Hardware / clinical claims remain **protocol fixtures**.
+Suite arithmetic is deterministic Node. Hardware / clinical / celestial-causation claims remain **protocol fixtures**.
 
 ---
 
@@ -130,6 +135,41 @@ $$\mathbf{B}_{\mathrm{eff}}(\mathbf{x}, t) = \sum_{k} \Phi_{\mathrm{EGS}}^{-n} \
 ### 4.2 Synthio product window
 
 Synthio (creator-only) hosts this grammar for Player 1 requests: simulator design talk, tensor indexing, honesty-gated narrative arcs — synchronized with catalog calendars without prophecy claims.
+
+---
+
+## 5. Omniversal Goldilocks activation · natural vs point-and-click *(sandbox)*
+
+**Sandbox lock:** This activation loads **only** inside the Syntheverse Sandbox (Synthio MRI suite + declared nested SynthOBS sandbox paths). It does **not** execute outside the sandbox and is **not** an engine-pin shelf.
+
+### 5.1 Two activation modalities
+
+| Mode | Simulator meaning | Catalog companion |
+|------|-------------------|-------------------|
+| **Natural mode** | Bloch evolution along **natural timelines** — $T_1$, $T_2$, Larmor chronologies, voxel clock as usual | Carbon / chronological clocks |
+| **Point-and-click mode** | Omniversal Goldilocks **activation** — operator selects octave / tensor band; $\Phi_{\mathrm{EGS}}$ indexes an instant **timeline-shift / wormhole-style transposition label** without waiting on natural relaxation clocks | PPS-style “point-and-click clocks” · EGS wormhole *grammar* (campaign / catalog — not physical tunneling hardware) |
+
+Point-and-click here is **not** a GUI. It is the opposite of natural-mode chronology: a **catalog jump** of phase-lock band under Goldilocks / $\Phi_{\mathrm{EGS}}$ filing.
+
+### 5.2 August 12 amplification window (co-timing labels)
+
+Synthio files this activation under the **2026-08-12** catalog window for **max amplification discussion**:
+
+| Fixture | Role in Synthio |
+|---------|-----------------|
+| **New moon** | Low optical-glare *narrative* — attention on field / spin *labels* |
+| **Six-planet morning parade** | Jupiter · Mercury · Mars · Uranus · Saturn · Neptune — orbital **cadence label** (verify ephemerides) |
+| **Total solar eclipse** | Path fixture (North Atlantic / Europe *narrative*) — alignment **amplifier label** |
+
+Companion honesty: [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md) §6 — co-timing is a **catalog window**, not a prophecy that the sky causes MRI outcomes.
+
+### 5.3 Formal sketch (activation operator)
+
+Let $\mathcal{A}_{\mathrm{nat}}$ advance simulated magnetization along Bloch time. Let $\mathcal{A}_{\mathrm{pc}}$ be the point-and-click Goldilocks activation:
+
+$$\mathcal{A}_{\mathrm{pc}}(n) \;=\; \Phi_{\mathrm{EGS}}^{-n}\cdot \mathcal{R}_{n}^{\mathrm{jump}}(t_{\star})$$
+
+where $t_{\star}$ is the catalog window stamp (new moon ∩ six-planet ∩ eclipse *labels*) and $n\in[1,99]$ is the selected octave shelf. **Honesty:** $\mathcal{A}_{\mathrm{pc}}$ rewrites **simulator / filing state**, not spacetime geometry or clinical $\mathbf{B}_1$ coils.
 
 ---
 

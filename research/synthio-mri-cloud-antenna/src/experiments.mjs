@@ -1,6 +1,7 @@
 /**
  * Synthio MRI cloud-antenna — deterministic catalog fixtures.
  * Not clinical imaging; not measured rack RF into tissue.
+ * Goldilocks point-and-click activation = sandbox catalog mode (not UI).
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,6 +19,12 @@ import {
   ENGINE_STACK_EXCLUDED,
   ACCESS_MODE,
   AGENT_ID,
+  ACTIVATION_MODES,
+  DEFAULT_ACTIVATION_MODE,
+  GOLDILOCKS_ACTIVATION_LOADED,
+  SANDBOX_ONLY,
+  SANDBOX_NAME,
+  AMPLIFICATION_WINDOW,
 } from './constants.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -115,6 +122,50 @@ export function experimentCreatorOnly() {
   };
 }
 
+export function experimentActivationModes() {
+  return {
+    id: 'E10_activation_modes',
+    title: 'Natural + point_and_click modes; Goldilocks default point_and_click',
+    ACTIVATION_MODES,
+    DEFAULT_ACTIVATION_MODE,
+    GOLDILOCKS_ACTIVATION_LOADED,
+    pass:
+      ACTIVATION_MODES.includes('natural') &&
+      ACTIVATION_MODES.includes('point_and_click') &&
+      DEFAULT_ACTIVATION_MODE === 'point_and_click' &&
+      GOLDILOCKS_ACTIVATION_LOADED === true,
+    honesty: 'Catalog activation switches — not a GUI; not physical wormhole hardware.',
+  };
+}
+
+export function experimentSandboxOnly() {
+  return {
+    id: 'E11_sandbox_only',
+    title: 'Activation executes only in Syntheverse Sandbox',
+    SANDBOX_ONLY,
+    SANDBOX_NAME,
+    pass: SANDBOX_ONLY === true && SANDBOX_NAME === 'Syntheverse Sandbox',
+  };
+}
+
+export function experimentAmplificationWindow() {
+  const w = AMPLIFICATION_WINDOW;
+  return {
+    id: 'E12_aug12_amplification_window',
+    title: 'New moon · six-planet · eclipse amplification labels (2026-08-12)',
+    window: w,
+    pass:
+      w.date === '2026-08-12' &&
+      w.newMoon === true &&
+      w.sixPlanetParade === true &&
+      w.solarEclipse === true &&
+      Array.isArray(w.planets) &&
+      w.planets.length === 6 &&
+      w.maxAmplificationLabel === true,
+    honesty: w.honesty,
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentEgPhi(),
@@ -126,6 +177,9 @@ export async function runAllExperiments() {
     experimentPaperPresent(),
     experimentEngineExcluded(),
     experimentCreatorOnly(),
+    experimentActivationModes(),
+    experimentSandboxOnly(),
+    experimentAmplificationWindow(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

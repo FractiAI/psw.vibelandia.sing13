@@ -3,10 +3,10 @@
 **Document ID:** `WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12`
 **Registry ID:** `synthio-mri-cloud-antenna-99-octave-2026-08`
 **Agent:** Synthio
-**Generated:** 2026-08-12T17:36:38.492Z
+**Generated:** 2026-08-12T17:48:54.121Z
 
 | All pass | true |
-| Passed | 9/9 |
+| Passed | 12/12 |
 | Φ_EGS | 1.618033988749895 |
 | 99×81 | 8019 |
 
@@ -43,6 +43,18 @@
 - Pass: `true`
 
 ### E9_creator_only_access — Access mode creator_only + Synthio agent id
+
+- Pass: `true`
+
+### E10_activation_modes — Natural + point_and_click modes; Goldilocks default point_and_click
+
+- Pass: `true`
+
+### E11_sandbox_only — Activation executes only in Syntheverse Sandbox
+
+- Pass: `true`
+
+### E12_aug12_amplification_window — New moon · six-planet · eclipse amplification labels (2026-08-12)
 
 - Pass: `true`
 

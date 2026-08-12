@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLatticeStore } from '@/store';
 import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
+import { RepoWorkstreamList } from '@/components/RepoWorkstreamList';
 
 export function HistoryRail({
   open,
@@ -68,6 +69,8 @@ export function HistoryRail({
         </span>
         New chat
       </button>
+
+      <RepoWorkstreamList onSwitched={() => onClose?.()} />
 
       <div className="rail-section">
         <h2 className="rail-section-title">Past chats</h2>

@@ -150,6 +150,96 @@ body {
   font-weight: 700;
 }
 
+.repo-workstreams {
+  flex: 0 1 auto;
+  min-height: 0;
+  max-height: 42%;
+  overflow: hidden;
+}
+
+.repo-workstreams__hint {
+  margin: 0;
+  padding: 0 0.35rem;
+  font-size: 0.72rem;
+  color: var(--brand-muted);
+  line-height: 1.35;
+}
+
+.repo-filter {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--brand-text);
+  padding: 0.4rem 0.55rem;
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+.repo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  min-height: 0;
+  flex: 1;
+}
+
+.repo-list li {
+  margin: 0;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.repo-list li.active {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.repo-select {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.45rem 0.55rem;
+  display: grid;
+  gap: 0.12rem;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.repo-select:hover {
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.repo-select__label {
+  font-size: 0.82rem;
+  font-weight: 650;
+  color: var(--brand-gold-hi);
+}
+
+.repo-select__name {
+  font-size: 0.68rem;
+  color: var(--brand-muted);
+  word-break: break-all;
+}
+
+.chat-repo-chip {
+  display: inline-block;
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+  color: var(--brand-gold);
+  font-weight: 600;
+}
+
 .history-rail .edge-note {
   margin: 0;
   font-size: 0.68rem;

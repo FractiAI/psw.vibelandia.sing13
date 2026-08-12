@@ -17,6 +17,12 @@ import {
 } from '@/modelCatalog';
 import { useLatticeStore } from '@/store';
 import type { AgentMode, ReasoningLens, TokenCompare, TranscriptItem } from '@/types';
+import {
+  DEFAULT_REPO_ID,
+  findRepository,
+  LATTICE_REPOSITORIES_FALLBACK,
+  type LatticeRepository,
+} from '@/repositories';
 
 type LatticePrivilege = 'creator' | 'guest' | 'none';
 
@@ -215,6 +221,32 @@ function latticeHeaders(email: string, provider?: LatticeProvider): HeadersInit 
     else if (active === 'gemini') headers['x-gemini-api-key'] = key;
   }
   return headers;
+}
+
+/** Load curated + optional live repositories for the workstream switcher. */
+export async function loadLatticeRepositories(): Promise<LatticeRepository[]> {
+  const store = useLatticeStore.getState();
+  const email = store.userEmail.trim();
+  if (!isRememberedEmailFresh(email, store.emailRememberedAt)) {
+    return LATTICE_REPOSITORIES_FALLBACK;
+  }
+  try {
+    const qs = new URLSearchParams({
+      repositories: '1',
+      email,
+      provider: store.provider,
+    });
+    const res = await fetch(`/api/lattice-chat?${qs}`, {
+      headers: latticeHeaders(email, store.provider),
+    });
+    const data = await res.json();
+    if (res.ok && Array.isArray(data.repositories) && data.repositories.length) {
+      return data.repositories as LatticeRepository[];
+    }
+  } catch {
+    /* fallback */
+  }
+  return LATTICE_REPOSITORIES_FALLBACK;
 }
 
 function buildHistoryWindow(
@@ -697,6 +729,11 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     mode: store.agentMode,
     provider: store.provider,
     nestTopology: store.nestTopology,
+    repoId: store.activeRepoId || DEFAULT_REPO_ID,
+    repoUrl:
+      findRepository(store.activeRepoId || DEFAULT_REPO_ID, store.repositories)?.url ||
+      findRepository(store.activeRepoId || DEFAULT_REPO_ID)?.url ||
+      undefined,
   };
   if (store.agentRoster.trim()) {
     baseBody.agentRoster = store.agentRoster;

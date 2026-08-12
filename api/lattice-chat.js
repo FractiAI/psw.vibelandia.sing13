@@ -1915,6 +1915,62 @@ export default async function handler(req, res) {
         req.query?.repos === 'true' ||
         url?.searchParams.get('repos') === '1' ||
         url?.searchParams.get('repos') === 'true';
+      const wantRepositories =
+        req.query?.repositories === '1' ||
+        req.query?.repositories === 'true' ||
+        url?.searchParams.get('repositories') === '1' ||
+        url?.searchParams.get('repositories') === 'true' ||
+        req.query?.workstreams === '1' ||
+        url?.searchParams.get('workstreams') === '1';
+
+      if (wantRepositories) {
+        const access = checkLatticeEmailAccess(qEmail || readEmail(req, {}));
+        if (!access.ok) {
+          return json(res, 401, { error: access.reason, ok: false, repositories: [] });
+        }
+        try {
+          const { loadLatticeRepositoriesCatalog, listGuestRepositories } = await import(
+            '../lib/lattice-repositories.mjs'
+          );
+          const catalog = loadLatticeRepositoriesCatalog();
+          const guestList = listGuestRepositories();
+          let live = [];
+          const provider = resolveProvider(req, {
+            provider: url?.searchParams.get('provider') || req.query?.provider,
+          });
+          if (provider === 'cursor') {
+            const { key: apiKey } = resolveCursorApiKey(req);
+            if (apiKey) {
+              try {
+                const { Cursor } = await import('@cursor/sdk');
+                const listed = await Cursor.repositories.list({ apiKey });
+                live = (Array.isArray(listed) ? listed : [])
+                  .map((r) => String(r?.url || '').trim())
+                  .filter(Boolean);
+              } catch {
+                /* catalog still works without live Cursor list */
+              }
+            }
+          }
+          return json(res, 200, {
+            ok: true,
+            schema: catalog.schema,
+            defaultId: catalog.defaultId,
+            repositories: guestList,
+            liveUrls: live.slice(0, 48),
+            liveCount: live.length,
+            privilege: access.privilege,
+            note: 'Click a repository to switch Lattice workstream. Guests may select any listed project.',
+          });
+        } catch (err) {
+          return json(res, 500, {
+            ok: false,
+            error: err instanceof Error ? err.message : String(err),
+            code: 'repositories_catalog_failed',
+            repositories: [],
+          });
+        }
+      }
 
       if (wantRepos) {
         const access = checkLatticeEmailAccess(qEmail || readEmail(req, {}));
@@ -2062,7 +2118,42 @@ export default async function handler(req, res) {
       console.warn('[lattice-chat] correcting LATTICE_REPO_URL typo cing13 → sing13');
       repoUrl = repoUrl.replace(/psw\.vibelandia\.cing13/gi, 'psw.vibelandia.sing13');
     }
-    const startingRefEarly = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
+    let startingRefEarly = (process.env.LATTICE_STARTING_REF || 'main').trim() || 'main';
+    // Guest/creator workstream selector — allowlisted curated repos (or Cursor live URLs).
+    const requestedRepo =
+      (typeof body.repoUrl === 'string' && body.repoUrl.trim()) ||
+      (typeof body.repository === 'string' && body.repository.trim()) ||
+      (typeof body.repoId === 'string' && body.repoId.trim()) ||
+      '';
+    if (requestedRepo) {
+      try {
+        const { resolveLatticeRepoSelection } = await import('../lib/lattice-repositories.mjs');
+        let liveUrls = [];
+        if (provider === 'cursor') {
+          try {
+            const { Cursor } = await import('@cursor/sdk');
+            const listed = await Cursor.repositories.list({ apiKey });
+            liveUrls = (Array.isArray(listed) ? listed : [])
+              .map((r) => String(r?.url || '').trim())
+              .filter(Boolean);
+          } catch {
+            /* allowlist-only */
+          }
+        }
+        const resolved = resolveLatticeRepoSelection(requestedRepo, liveUrls);
+        if (!resolved.ok) {
+          return json(res, 400, {
+            error: resolved.error,
+            code: resolved.code,
+            repository: requestedRepo,
+          });
+        }
+        repoUrl = resolved.repo.url;
+        startingRefEarly = resolved.repo.startingRef || startingRefEarly;
+      } catch (err) {
+        console.warn('[lattice-chat] repo selection failed', err);
+      }
+    }
     const cloudAttach =
       provider === 'cursor'
         ? resolveCursorCloudAttach(access, repoUrl, startingRefEarly)

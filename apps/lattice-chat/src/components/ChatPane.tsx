@@ -18,6 +18,7 @@ import { KeySettingsPanel } from '@/components/KeySettings';
 import { TokenCompareFooter, hasMeasuredTokens } from '@/components/TokenCompare';
 import { hasProviderApiKey, subscribeProviderKeys } from '@/lib/providerKeys';
 import { useLatticeStore } from '@/store';
+import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
 
 export function ChatPane({
   onOpenHistory,
@@ -48,6 +49,8 @@ export function ChatPane({
   const provider = useLatticeStore((s) => s.provider);
   const nestTopology = useLatticeStore((s) => s.nestTopology);
   const agentRoster = useLatticeStore((s) => s.agentRoster);
+  const activeRepoId = useLatticeStore((s) => s.activeRepoId);
+  const repositories = useLatticeStore((s) => s.repositories);
   const setAgentMode = useLatticeStore((s) => s.setAgentMode);
   const setModelId = useLatticeStore((s) => s.setModelId);
   const setProvider = useLatticeStore((s) => s.setProvider);
@@ -68,6 +71,9 @@ export function ChatPane({
 
   const thread = threads.find((t) => t.id === activeThreadId) ?? null;
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
+  const activeRepo =
+    findRepository(activeRepoId || DEFAULT_REPO_ID, repositories) ||
+    findRepository(activeRepoId || DEFAULT_REPO_ID);
   const needsAccessGrant =
     Boolean(error) && /not on the access list|Request access|access expired/i.test(error || '');
   const needsProviderKey =
@@ -249,6 +255,14 @@ export function ChatPane({
                   {MAIN_DECK_LABEL}
                 </a>
                 {' · Your Goldilocks Valet'}
+                {activeRepo ? (
+                  <>
+                    {' · '}
+                    <span className="chat-repo-chip" title={activeRepo.url}>
+                      {activeRepo.label}
+                    </span>
+                  </>
+                ) : null}
                 {onOpenCollaborate ? (
                   <>
                     {' · '}

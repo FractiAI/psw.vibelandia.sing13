@@ -1,0 +1,152 @@
+/** Curated Lattice repositories / workstreams (client catalog + live fetch). */
+
+export type LatticeRepository = {
+  id: string;
+  name: string;
+  label: string;
+  url: string;
+  startingRef?: string;
+  blurb?: string;
+  tags?: string[];
+  guestSelectable?: boolean;
+};
+
+export const DEFAULT_REPO_ID = 'sing13';
+
+/** Bundled fallback when API is offline — keep in sync with data/lattice-repositories.json */
+export const LATTICE_REPOSITORIES_FALLBACK: LatticeRepository[] = [
+  {
+    id: 'sing13',
+    name: 'psw.vibelandia.sing13',
+    label: 'SING 13 · QUESTFEST',
+    url: 'https://github.com/FractiAI/psw.vibelandia.sing13',
+    startingRef: 'main',
+    blurb: 'Primary Lattice / SS Vibelandia SING 13 edge — 99 Octave home nest.',
+    tags: ['primary', 'lattice', '99-octave'],
+    guestSelectable: true,
+  },
+  {
+    id: 'sing9',
+    name: 'psw.vibelandia.sing9',
+    label: 'SING 9 · legacy edge',
+    url: 'https://github.com/FractiAI/psw.vibelandia.sing9',
+    startingRef: 'main',
+    blurb: 'Post-Singularity Black Hole Core SING! 9 release.',
+    tags: ['legacy', 'sing'],
+    guestSelectable: true,
+  },
+  {
+    id: 'digits-master',
+    name: 'synthobs-99-octave-digits-master',
+    label: '99 Octave · Digits Master',
+    url: 'https://github.com/FractiAI/synthobs-99-octave-digits-master',
+    startingRef: 'main',
+    blurb: 'Standalone SynthOBS 99 Octave digits master suite.',
+    tags: ['99-octave', 'synthobs'],
+    guestSelectable: true,
+  },
+  {
+    id: 'morphogenesis',
+    name: 'synthobs-constructive-morphogenesis-99-octave',
+    label: '99 Octave · Morphogenesis',
+    url: 'https://github.com/FractiAI/synthobs-constructive-morphogenesis-99-octave',
+    startingRef: 'main',
+    blurb: 'Constructive morphogenesis through 99 Octave lens.',
+    tags: ['99-octave', 'synthobs'],
+    guestSelectable: true,
+  },
+  {
+    id: 'macro-seismic',
+    name: 'synthobs-macro-seismic-phase-lock-99-octave',
+    label: '99 Octave · Macro-Seismic',
+    url: 'https://github.com/FractiAI/synthobs-macro-seismic-phase-lock-99-octave',
+    startingRef: 'main',
+    blurb: 'Macro-seismic phase-locking companion suite.',
+    tags: ['99-octave', 'synthobs'],
+    guestSelectable: true,
+  },
+  {
+    id: 'subterranean',
+    name: 'synthobs-sync-subterranean-discharge-99-octave',
+    label: '99 Octave · Subterranean',
+    url: 'https://github.com/FractiAI/synthobs-sync-subterranean-discharge-99-octave',
+    startingRef: 'main',
+    blurb: 'Synchronized subterranean discharge · Puracé / Colombia seismic.',
+    tags: ['99-octave', 'synthobs'],
+    guestSelectable: true,
+  },
+  {
+    id: 'omni-unification',
+    name: 'synthobs-omni-lattice-unification',
+    label: 'Omni-Lattice Unification',
+    url: 'https://github.com/FractiAI/synthobs-omni-lattice-unification',
+    startingRef: 'main',
+    blurb: 'Holographic operators · 81-electron · bonds · ILAM.',
+    tags: ['omni-lattice', 'synthobs'],
+    guestSelectable: true,
+  },
+  {
+    id: 'holographic-ops',
+    name: 'synthobs-holographic-operators',
+    label: 'Holographic Operators',
+    url: 'https://github.com/FractiAI/synthobs-holographic-operators',
+    startingRef: 'main',
+    blurb: 'Language-as-wiring holographic operators suite.',
+    tags: ['synthobs'],
+    guestSelectable: true,
+  },
+  {
+    id: 'planck-bridge',
+    name: 'synthobs-egs-planck-scale-harmonic',
+    label: 'Planck ↔ Φ_EGS Bridge',
+    url: 'https://github.com/FractiAI/synthobs-egs-planck-scale-harmonic',
+    startingRef: 'main',
+    blurb: 'Planck 1.6 ↔ Φ_EGS scale-harmonic bridge.',
+    tags: ['egs', 'synthobs'],
+    guestSelectable: true,
+  },
+  {
+    id: 'goldilocks-rideshare',
+    name: 'omniversal-goldilocks-rideshare',
+    label: 'Omniversal Goldilocks',
+    url: 'https://github.com/FractiAI/omniversal-goldilocks-rideshare',
+    startingRef: 'main',
+    blurb: 'Omniversal Goldilocks rideshare / timeline-shift labels.',
+    tags: ['goldilocks'],
+    guestSelectable: true,
+  },
+  {
+    id: 'btc-goldilocks',
+    name: 'btc-goldilocks-mine',
+    label: 'BTC Goldilocks Mine',
+    url: 'https://github.com/FractiAI/btc-goldilocks-mine',
+    startingRef: 'main',
+    blurb: 'Clock-skew coherence rail · signed Bitcoin pulses.',
+    tags: ['goldilocks', 'btc'],
+    guestSelectable: true,
+  },
+  {
+    id: 'lattice-eval',
+    name: 'lattice-nested-agent-eval-corrected',
+    label: 'Lattice Nested-Agent Eval',
+    url: 'https://github.com/FractiAI/lattice-nested-agent-eval-corrected',
+    startingRef: 'main',
+    blurb: 'Corrected Lattice nested-agent evaluation harness.',
+    tags: ['lattice', 'eval'],
+    guestSelectable: true,
+  },
+];
+
+export function findRepository(
+  idOrUrl: string,
+  list: LatticeRepository[] = LATTICE_REPOSITORIES_FALLBACK,
+): LatticeRepository | null {
+  const needle = String(idOrUrl || '').trim().toLowerCase();
+  if (!needle) return null;
+  return (
+    list.find((r) => r.id.toLowerCase() === needle) ||
+    list.find((r) => r.url.toLowerCase() === needle) ||
+    list.find((r) => r.name.toLowerCase() === needle) ||
+    null
+  );
+}

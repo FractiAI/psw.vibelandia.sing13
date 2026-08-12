@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-11T17:45:19.509Z",
+  "updatedAt": "2026-08-12T22:49:34.674Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthio-mri-vs-legacy-perf-proxy-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-12T22:49:34.674Z",
+      "body": "Performance Proxies: MRI Interference-Phase Computing vs Legacy GPU/Token Workloads in Syntheverse Sandbox",
+      "presenceHue": "gold",
+      "paperId": "synthio-mri-vs-legacy-perf-proxy-2026-08",
+      "artifact": {
+        "title": "Performance Proxies: MRI Interference-Phase Computing vs Legacy GPU/Token Workloads in Syntheverse Sandbox",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md",
+        "url": "/whitepaper/synthio-mri-vs-legacy-perf",
+        "paperId": "synthio-mri-vs-legacy-perf-proxy-2026-08",
+        "docId": "WP-SYNTHIO-MRI-VS-LEGACY-PERF-PROXY-2026-08-12",
+        "published": "2026-08-12",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-sync-subterranean-discharge-99-octave-2026-08",
       "type": "ArtifactEvent",

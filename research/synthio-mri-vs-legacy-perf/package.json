@@ -1,0 +1,8 @@
+{
+  "name": "synthio-mri-vs-legacy-perf",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

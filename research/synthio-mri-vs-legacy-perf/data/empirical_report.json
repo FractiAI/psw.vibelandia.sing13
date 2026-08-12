@@ -1,0 +1,269 @@
+{
+  "docId": "WP-SYNTHIO-MRI-VS-LEGACY-PERF-PROXY-2026-08-12",
+  "registryId": "synthio-mri-vs-legacy-perf-proxy-2026-08",
+  "title": "Performance Proxies: MRI Interference-Phase Computing vs Legacy GPU/Token Workloads in Syntheverse Sandbox",
+  "paperName": "SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md",
+  "generatedAt": "2026-08-12T22:49:18.831Z",
+  "operator": "Synthio · Syntheverse Sandbox · SynthOBS family",
+  "honestyBoundary": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement.",
+  "results": {
+    "all_pass": true,
+    "n_pass": 6,
+    "n_total": 6,
+    "failed": [],
+    "summary": {
+      "meanEdgeReduction": 24.8,
+      "meanTokenReduction": 0.9986974948034468,
+      "meanSpeedup": 1.8680798207226403,
+      "meanOpsRatio": 4180.305961370075,
+      "meanOpsSaving": 0.9986976901159469
+    },
+    "experiments": [
+      {
+        "id": "E1_topology_message_tax",
+        "title": "Nested MRI phase-lock edges beat flat legacy mesh",
+        "rows": [
+          {
+            "n": 8,
+            "legacyEdges": 28,
+            "mriEdges": 7,
+            "edgeReduction": 4,
+            "pass": true
+          },
+          {
+            "n": 16,
+            "legacyEdges": 120,
+            "mriEdges": 15,
+            "edgeReduction": 8,
+            "pass": true
+          },
+          {
+            "n": 32,
+            "legacyEdges": 496,
+            "mriEdges": 31,
+            "edgeReduction": 16,
+            "pass": true
+          },
+          {
+            "n": 64,
+            "legacyEdges": 2016,
+            "mriEdges": 63,
+            "edgeReduction": 32,
+            "pass": true
+          },
+          {
+            "n": 128,
+            "legacyEdges": 8128,
+            "mriEdges": 127,
+            "edgeReduction": 64,
+            "pass": true
+          }
+        ],
+        "meanEdgeReduction": 24.8,
+        "pass": true,
+        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+      },
+      {
+        "id": "E2_token_payload",
+        "title": "Shared holographic phase packet cuts token payload vs full-context dumps",
+        "rows": [
+          {
+            "n": 8,
+            "legacyTokens": 336000,
+            "mriTokens": 1440,
+            "tokenReduction": 0.9957142857142857,
+            "pass": true
+          },
+          {
+            "n": 16,
+            "legacyTokens": 1440000,
+            "mriTokens": 2100,
+            "tokenReduction": 0.9985416666666667,
+            "pass": true
+          },
+          {
+            "n": 32,
+            "legacyTokens": 5952000,
+            "mriTokens": 2925,
+            "tokenReduction": 0.9995085685483871,
+            "pass": true
+          },
+          {
+            "n": 64,
+            "legacyTokens": 24192000,
+            "mriTokens": 4821,
+            "tokenReduction": 0.9998007192460318,
+            "pass": true
+          },
+          {
+            "n": 128,
+            "legacyTokens": 97536000,
+            "mriTokens": 7585,
+            "tokenReduction": 0.9999222338418635,
+            "pass": true
+          }
+        ],
+        "meanTokenReduction": 0.9986974948034468,
+        "pass": true,
+        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+      },
+      {
+        "id": "E3_wall_time_proxy",
+        "title": "Ops-proxy wall time favors MRI interference arm",
+        "rows": [
+          {
+            "n": 8,
+            "legacyMs": 0.2340284285714286,
+            "mriMs": 0.20097228571428463,
+            "legacyStd": 0.16567774572676366,
+            "mriStd": 0.12769836141661986,
+            "opsRatio": 233.33333333333334,
+            "speedup": 1.1644811011610763,
+            "pass": true
+          },
+          {
+            "n": 16,
+            "legacyMs": 0.15025071428571377,
+            "mriMs": 0.07746542857142812,
+            "legacyStd": 0.044804068921452916,
+            "mriStd": 0.023862509584565504,
+            "opsRatio": 685.7142857142857,
+            "speedup": 1.939584109409179,
+            "pass": true
+          },
+          {
+            "n": 32,
+            "legacyMs": 0.07106742857142885,
+            "mriMs": 0.03484428571428566,
+            "legacyStd": 0.00009710356348219943,
+            "mriStd": 0.000031083823471971236,
+            "opsRatio": 2034.871794871795,
+            "speedup": 2.0395719732688398,
+            "pass": true
+          },
+          {
+            "n": 64,
+            "legacyMs": 0.07800142857142792,
+            "mriMs": 0.03678528571428684,
+            "legacyStd": 0.0005878711853894444,
+            "mriStd": 0.00003121681911867753,
+            "opsRatio": 5034.493522709537,
+            "speedup": 2.1204518887597863,
+            "pass": true
+          },
+          {
+            "n": 128,
+            "legacyMs": 0.08444857142857184,
+            "mriMs": 0.04067242857142921,
+            "legacyStd": 0.00007423102382336899,
+            "mriStd": 0.004147671011100514,
+            "opsRatio": 12913.116870221427,
+            "speedup": 2.0763100310143185,
+            "pass": true
+          }
+        ],
+        "meanSpeedup": 1.8680798207226403,
+        "meanOpsRatio": 4180.305961370075,
+        "pass": true,
+        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+      },
+      {
+        "id": "E4_energy_ops_proxy",
+        "title": "Char-touch ops proxy (energy stand-in) drops under phase-lock sharing",
+        "rows": [
+          {
+            "n": 8,
+            "legacyOps": 1344000,
+            "mriOps": 5760,
+            "opsSaving": 0.9957142857142857,
+            "pass": true
+          },
+          {
+            "n": 16,
+            "legacyOps": 5760000,
+            "mriOps": 8400,
+            "opsSaving": 0.9985416666666667,
+            "pass": true
+          },
+          {
+            "n": 32,
+            "legacyOps": 23808000,
+            "mriOps": 11700,
+            "opsSaving": 0.9995085685483871,
+            "pass": true
+          },
+          {
+            "n": 64,
+            "legacyOps": 96768000,
+            "mriOps": 19221,
+            "opsSaving": 0.9998013702876984,
+            "pass": true
+          },
+          {
+            "n": 128,
+            "legacyOps": 390144000,
+            "mriOps": 30213,
+            "opsSaving": 0.9999225593626968,
+            "pass": true
+          }
+        ],
+        "meanOpsSaving": 0.9986976901159469,
+        "pass": true,
+        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+      },
+      {
+        "id": "E5_cloud_apps_inside_mri_sim",
+        "title": "Cloud home apps costed as MRI-sim resident (not external legacy OS)",
+        "apps": [
+          {
+            "id": "chat",
+            "residesIn": "mri_simulation",
+            "mriTokens": 2925,
+            "legacyTokensIfOutside": 5952000,
+            "tokenAdvantage": 0.9995085685483871
+          },
+          {
+            "id": "messages",
+            "residesIn": "mri_simulation",
+            "mriTokens": 2925,
+            "legacyTokensIfOutside": 5952000,
+            "tokenAdvantage": 0.9995085685483871
+          },
+          {
+            "id": "files",
+            "residesIn": "mri_simulation",
+            "mriTokens": 2925,
+            "legacyTokensIfOutside": 5952000,
+            "tokenAdvantage": 0.9995085685483871
+          },
+          {
+            "id": "photos",
+            "residesIn": "mri_simulation",
+            "mriTokens": 2925,
+            "legacyTokensIfOutside": 5952000,
+            "tokenAdvantage": 0.9995085685483871
+          }
+        ],
+        "pass": true,
+        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+      },
+      {
+        "id": "E6_scale_invariant_advantage",
+        "title": "Token-reduction advantage stays high across node scales",
+        "minReduction": 0.9957142857142857,
+        "maxReduction": 0.9999222338418635,
+        "spread": 0.004207948127577854,
+        "pass": true,
+        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+      }
+    ],
+    "honesty": {
+      "empiricalProxy": true,
+      "wetLabEquivalent": false,
+      "clinicalMagnet": false,
+      "hyperscaleDisplacement": false,
+      "juliaWorkersOnEdge": false,
+      "note": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+    }
+  }
+}

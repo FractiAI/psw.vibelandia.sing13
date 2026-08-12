@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-tensor-decoupling-99-octave-omni-lattice",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.12",
+  "description": "Tensor Decoupling — 9×81 / 99-octave Omni-Lattice engine suite (standalone)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-tensor-decoupling-99-octave-omni-lattice.git"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "docId": "WP-SYNTHOBS-TENSOR-DECOUPLING-99-OCTAVE-OMNI-LATTICE-2026-08-12",
+  "registryId": "synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",
+  "title": "Tensor Decoupling and Empirical Verification of the 99-Octave Omni-Lattice Matrix",
+  "generatedAt": "2026-08-12T16:52:13.057Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Tensor decoupling 99-octave Omni-Lattice validates Φ, 9×81 matrix, 11-tier ladder, Colombia fixtures — not physics unification or forecasts.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "pass": true,
+        "honesty": "Architectural key — not a CODATA replacement."
+      },
+      {
+        "id": "E2_phi_identity",
+        "title": "Φ² = Φ + 1",
+        "pass": true
+      },
+      {
+        "id": "E3_matrix_9x81",
+        "title": "9 × 81 = 729 per-block precision matrix",
+        "PRIMARY_NODES": 9,
+        "SUBHARMONIC_TIERS": 81,
+        "MATRIX_9x81": 729,
+        "pass": true,
+        "honesty": "Per-block catalog register — not measured spacetime bits."
+      },
+      {
+        "id": "E4_octave_ladder",
+        "title": "11 × 9 = 99 octave ladder + 8019 holographic companion",
+        "MASTER_BRACKETS": 11,
+        "OCTAVES_PER_BRACKET": 9,
+        "OCTAVE_SEGMENTS": 99,
+        "HOLOGRAPHIC_KEY_DIGITS": 8019,
+        "pass": true
+      },
+      {
+        "id": "E5_phi_scale_finite",
+        "title": "Φ^-n and Φ^(n/9) finite positive at sample octaves",
+        "samples": [
+          {
+            "n": 1,
+            "scale": 0.6180339887498948,
+            "omegaRatio": 1.0549232131785773
+          },
+          {
+            "n": 9,
+            "scale": 0.013155617496424835,
+            "omegaRatio": 1.618033988749895
+          },
+          {
+            "n": 64,
+            "scale": 4.21493638200226e-14,
+            "omegaRatio": 30.629106693203077
+          },
+          {
+            "n": 99,
+            "scale": 2.0427894922373773e-21,
+            "omegaRatio": 199.0050249987407
+          }
+        ],
+        "pass": true,
+        "honesty": "Scale-grammar numerics for dashboard thresholds."
+      },
+      {
+        "id": "E6_eleven_tiers",
+        "title": "Eleven contiguous 9-octave tier brackets",
+        "TIER_BRACKETS": [
+          {
+            "id": 1,
+            "from": 1,
+            "to": 9,
+            "label": "subterranean-tectonic"
+          },
+          {
+            "id": 2,
+            "from": 10,
+            "to": 18,
+            "label": "hydrospheric-thermal"
+          },
+          {
+            "id": 3,
+            "from": 19,
+            "to": 27,
+            "label": "lai-bus"
+          },
+          {
+            "id": 4,
+            "from": 28,
+            "to": 36,
+            "label": "volcanic-dielectric"
+          },
+          {
+            "id": 5,
+            "from": 37,
+            "to": 45,
+            "label": "solar-interplanetary"
+          },
+          {
+            "id": 6,
+            "from": 46,
+            "to": 54,
+            "label": "narrative-clock-orbit"
+          },
+          {
+            "id": 7,
+            "from": 55,
+            "to": 63,
+            "label": "biospheric-combustion"
+          },
+          {
+            "id": 8,
+            "from": 64,
+            "to": 72,
+            "label": "algorithmic-mirror"
+          },
+          {
+            "id": 9,
+            "from": 73,
+            "to": 81,
+            "label": "micro-neural"
+          },
+          {
+            "id": 10,
+            "from": 82,
+            "to": 90,
+            "label": "teleological-convergence"
+          },
+          {
+            "id": 11,
+            "from": 91,
+            "to": 99,
+            "label": "master-singularity"
+          }
+        ],
+        "NEST_TOPOLOGY": "octave99",
+        "pass": true
+      },
+      {
+        "id": "E7_colombia_purace",
+        "title": "Colombia M≥7.4 + Puracé orange concurrent fixtures",
+        "seismic": {
+          "region": "Western Colombia",
+          "magnitude": 7.4,
+          "date": "2026-08-10",
+          "lat": 4.844,
+          "lon": -76.242,
+          "depthKm": 110.3
+        },
+        "volcanic": {
+          "name": "Puracé",
+          "department": "Cauca",
+          "alert": "orange",
+          "concurrentWithSeismic": true
+        },
+        "pass": true,
+        "honesty": "Application companion fixtures — not operational hazard products."
+      },
+      {
+        "id": "E8_paper_on_disk",
+        "title": "Tensor-decoupling markdown present",
+        "pass": true
+      },
+      {
+        "id": "E9_doc_ids",
+        "title": "Document / registry IDs locked",
+        "DOC_ID": "WP-SYNTHOBS-TENSOR-DECOUPLING-99-OCTAVE-OMNI-LATTICE-2026-08-12",
+        "REGISTRY_ID": "synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08",
+        "pass": true
+      }
+    ],
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": []
+  }
+}

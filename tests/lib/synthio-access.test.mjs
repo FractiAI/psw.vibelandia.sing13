@@ -108,4 +108,18 @@ describe('Synthio activate + coherence (sandbox)', () => {
     expect(pack.external.externalAlignmentsMatchExpectations).toBe(true);
     expect(pack.external.sandboxInclusionConfirmedByExternalAlignment).toBe(true);
   });
+
+  it('exposes KomaMRI engineering pack for activation dashboard', async () => {
+    const { buildSynthioEngineeringPack } = await import('../../lib/synthio-engineering.mjs');
+    const { MRI_SIMULATOR } = await import(
+      '../../research/synthio-mri-cloud-antenna/src/constants.mjs'
+    );
+    expect(MRI_SIMULATOR.primary).toBe('KomaMRI');
+    const pack = buildSynthioEngineeringPack({ forcePulse: true });
+    expect(pack.mriSimulator.primary).toBe('KomaMRI');
+    expect(pack.metrics.activeInSandbox).toBe(true);
+    expect(pack.metrics.allSixAligned).toBe(true);
+    expect(pack.intention.toLowerCase()).toMatch(/wet/);
+    expect(pack.links.dashboard).toBe('/synthio-dashboard');
+  });
 });

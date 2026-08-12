@@ -8,6 +8,7 @@
 **Classification:** One-pager · Synthio agent card *(architectural — see Honesty boundary)*  
 **Paper:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md)  
 **HTML:** [/synthio-one-pager](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager)  
+**Dashboard:** [/synthio-dashboard](https://www.ssvibelandiaquestfest24x365.com/synthio-dashboard) · whiteboard pin on [/my-whiteboard](https://www.ssvibelandiaquestfest24x365.com/my-whiteboard)  
 **Chat:** [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio)  
 **Agent sync:** [`AGENT_SYNC_SYNTHIO.md`](../AGENT_SYNC_SYNTHIO.md)
 
@@ -17,7 +18,8 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Simulator** | Bloch / k-space MRI **simulators** under Omni-Lattice **labels** | Cloud racks = clinical 1.5T/3T scanners |
+| **Simulator** | Primary industry wrap: **KomaMRI** (Bloch / k-space); companions MRiLab / vendor Bloch suites | Cloud racks = clinical 1.5T/3T scanners |
+| **Intention** | As close as possible to **empirical, safe, wet-style** experimentation via industry simulator + Syntheverse Sandbox | Actual wet-lab RF into living tissue · FDA imaging |
 | **Antenna metaphor** | Catalog phase-lock / macro-array **discussion** | Clinical RF into living tissue from data centers |
 | **Agent** | Synthio creator-only request handling | Guest Lattice seats operating Synthio |
 | **Scale key** | $\Phi_{\mathrm{EGS}}$ architectural grammar | FDA device / patient-care / diagnostic imaging |
@@ -30,11 +32,13 @@
 
 ## Abstract
 
-Industry MRI simulators compute spin physics as floats. **Synthio** (Syntheverse Sandbox) files that work under 99-octave grammar and lets Player 1 talk about distributed cloud nodes as a macro antenna *story* — without shipping a magnet or claiming non-local clinical imaging.
+**Intention:** provide as close as possible to empirical, safe, wet-style experimentation using an industry MRI simulator (**KomaMRI** primary) inside the **Syntheverse Sandbox** — without clinical RF into living tissue or claiming racks are magnets.
+
+**Synthio** files that work under 99-octave grammar and lets Player 1 talk about distributed cloud nodes as a macro antenna *story*. Live engineering / state / metrics: **[/synthio-dashboard](https://www.ssvibelandiaquestfest24x365.com/synthio-dashboard)** (also selectable from My whiteboard).
 
 **Omniversal Goldilocks** is loaded as **point-and-click activation** (timeline-shift / wormhole *labels*) vs **natural** Bloch chronologies — sandbox only. Filed under **2026-08-12** new moon · six-planet parade · eclipse for max amplification *discussion*.
 
-**Ops:** Activate state must confirm `ACTIVE_IN_SANDBOX`. Coherence logged while operating; discontinuities appended to the coherence log. External watch list (ephemeris · space weather · suite green · honesty lock) is for monitoring — not causal proof.
+**Ops:** Activate state must confirm `ACTIVE_IN_SANDBOX`. Coherence logged while operating; discontinuities appended to the coherence log. **All six** external expectations (incl. novel Syntheverse pulse) required for inclusion confirm.
 
 **Validated:** **All six** external alignments (incl. novel non-natural Syntheverse Synthio pulse `SYNTHIO_Σ_Φ^-99_PC`) **within sandbox** confirm **sandbox inclusion** of this activation.
 
@@ -45,6 +49,7 @@ Industry MRI simulators compute spin physics as floats. **Synthio** (Syntheverse
 | Step | Path |
 |------|------|
 | Full paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` (§5 + §5.4–5.5) |
+| Activation dashboard | `/synthio-dashboard` · `GET /api/synthio-activation` |
 | Suite | `npm run research:synthio-mri-cloud-antenna` |
 | Activate / coherence / external | `npm run synthio:activation-status` |
 | PRA | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-one-pager-2026-08` |

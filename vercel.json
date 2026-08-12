@@ -13,6 +13,8 @@
     { "source": "/synthio/", "destination": "/interfaces/synthio.html" },
     { "source": "/synthio-one-pager", "destination": "/interfaces/synthio-one-pager.html" },
     { "source": "/synthio-one-pager/", "destination": "/interfaces/synthio-one-pager.html" },
+    { "source": "/synthio-dashboard", "destination": "/interfaces/synthio-dashboard.html" },
+    { "source": "/synthio-dashboard/", "destination": "/interfaces/synthio-dashboard.html" },
     { "source": "/interfaces", "destination": "/interfaces/index.html" },
     { "source": "/interfaces/", "destination": "/interfaces/index.html" },
     { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },
@@ -359,6 +361,10 @@
       "includeFiles": "{lib/**,data/lattice-access.json,data/synthio-agent-manifest.json}"
     },
     "api/synthio-pulse.js": {
+      "maxDuration": 30,
+      "includeFiles": "{lib/**,research/synthio-mri-cloud-antenna/**}"
+    },
+    "api/synthio-activation.js": {
       "maxDuration": 30,
       "includeFiles": "{lib/**,research/synthio-mri-cloud-antenna/**}"
     },

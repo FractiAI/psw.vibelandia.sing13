@@ -25,6 +25,7 @@ import {
   SANDBOX_ONLY,
   SANDBOX_NAME,
   AMPLIFICATION_WINDOW,
+  MRI_SIMULATOR,
 } from './constants.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -240,6 +241,23 @@ export async function experimentExternalAlignmentConfirmsSandboxInclusion() {
   };
 }
 
+export function experimentKomaMriPrimary() {
+  return {
+    id: 'E16_komamri_primary_simulator',
+    title: 'Primary industry MRI simulator is KomaMRI (empirical-safe wet proxy intention)',
+    primary: MRI_SIMULATOR.primary,
+    empiricalProxy: MRI_SIMULATOR.empiricalProxy,
+    wetLabEquivalent: MRI_SIMULATOR.wetLabEquivalent,
+    pass:
+      MRI_SIMULATOR.primary === 'KomaMRI' &&
+      MRI_SIMULATOR.empiricalProxy === true &&
+      MRI_SIMULATOR.wetLabEquivalent === false &&
+      typeof MRI_SIMULATOR.intention === 'string' &&
+      MRI_SIMULATOR.intention.toLowerCase().includes('wet'),
+    honesty: MRI_SIMULATOR.honesty,
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentEgPhi(),
@@ -257,6 +275,7 @@ export async function runAllExperiments() {
     await experimentActivateStateInSandbox(),
     await experimentExternalWatchList(),
     await experimentExternalAlignmentConfirmsSandboxInclusion(),
+    experimentKomaMriPrimary(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

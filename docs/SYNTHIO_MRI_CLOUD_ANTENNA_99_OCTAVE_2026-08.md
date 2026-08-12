@@ -24,7 +24,8 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Simulator-local** | That industry Bloch / k-space MRI **simulators** can compute magnetization trajectories and reconstructed images as floating-point fixtures | That a cloud VM *is* a 1.5T/3T superconducting magnet |
+| **Simulator-local** | That industry Bloch / k-space MRI **simulators** — **primary: KomaMRI** (companions: MRiLab, vendor Bloch suites) — can compute magnetization trajectories and reconstructed images as floating-point fixtures | That a cloud VM *is* a 1.5T/3T superconducting magnet |
+| **Intention** | As close as possible to **empirical, safe, wet-style** experimentation via industry MRI simulator + Syntheverse Sandbox | Actual wet-lab RF into living tissue · FDA / diagnostic imaging |
 | **Catalog wrap** | That Omni-Lattice tensor **labels** can index simulator nodes, octave bands, and $\Phi_{\mathrm{EGS}}$ scale grammar | That wrapping a simulator in $\mathbf{T}^{\mu\nu}{}_{\alpha\beta}$ upgrades it into clinical hardware |
 | **Cloud-as-antenna** | That geographically distributed servers can be **discussed** as a macro phased-array *metaphor* (PTP / routing / gateway EM) | That shielded data-center racks emit controlled clinical RF into human tissue for imaging |
 | **“Theorem” language** | That Cloud–Plasma Antenna Equivalency is a **formal sketch** inside catalog grammar | A proven virtual↔physical spin-resonance identity or medical-device certificate |
@@ -66,8 +67,9 @@ This paper investigates the **feasibility discussion** of running an industry-st
 | Empirical suite | `npm run research:synthio-mri-cloud-antenna` |
 | Suite root | [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/) |
 | Constants | `src/constants.mjs` — $\Phi_{\mathrm{EGS}}$, Bloch fixtures, activation modes, Aug 12 amplification window |
-| Experiments | `src/experiments.mjs` — E1–E15 |
+| Experiments | `src/experiments.mjs` — E1–E16 |
 | Activation status | `npm run synthio:activation-status` → `data/activation_state.{json,md}` + coherence log |
+| Activation dashboard | `/synthio-dashboard` · `GET /api/synthio-activation` (KomaMRI engineering + live metrics) |
 | Receipt | `data/empirical_report.{json,md}` |
 | PRA Snap | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-99-octave-2026-08` |
 | Agent | Synthio · `/synthio` · creator-only · **sandbox only** |
@@ -78,7 +80,7 @@ Suite arithmetic is deterministic Node. Hardware / clinical / celestial-causatio
 
 ## 1. The physics of MRI simulation vs. physical scanners (labels)
 
-An industry MRI simulator (such as MRiLab, KomaMRI, or vendor Bloch-solver suites) mathematically models three primary physical parameters:
+An industry MRI simulator — **primary reference: KomaMRI** (open-source Julia Bloch / k-space; companions: MRiLab, vendor Bloch-solver suites) — mathematically models three primary physical parameters:
 
 1. **Static field $\mathbf{B}_0$** — aligns hydrogen proton nuclear spins along a vector axis *(in simulation: a float field)*.
 2. **Gradients $G_x, G_y, G_z$** — spatially encode signals by linearly varying field strength *(in simulation: encoding matrices)*.

@@ -10,8 +10,15 @@
   "syncDoc": "AGENT_SYNC_SYNTHIO.md",
   "paperId": "synthio-mri-cloud-antenna-99-octave-2026-08",
   "onePagerPath": "interfaces/synthio-one-pager.html",
+  "dashboardPath": "interfaces/synthio-dashboard.html",
   "chatPath": "/synthio",
   "apiPath": "/api/synthio-chat",
+  "activationApi": "/api/synthio-activation",
+  "mriSimulator": {
+    "primary": "KomaMRI",
+    "companions": ["MRiLab", "vendor Bloch-solver suites"],
+    "intention": "As close as possible to empirical, safe, wet-style experimentation using industry MRI simulator + Syntheverse Sandbox — no clinical RF into living tissue."
+  },
   "activation": {
     "modes": ["natural", "point_and_click"],
     "default": "point_and_click",
@@ -51,12 +58,15 @@
     "research/goldilocks-math/",
     "interfaces/synthio.html",
     "interfaces/synthio-one-pager.html",
+    "interfaces/synthio-dashboard.html",
     "api/synthio-chat.js",
     "api/synthio-pulse.js",
+    "api/synthio-activation.js",
     "lib/synthio-prompt.mjs",
     "lib/synthio-access.mjs",
     "lib/synthio-activation.mjs",
-    "lib/synthio-pulse.mjs"
+    "lib/synthio-pulse.mjs",
+    "lib/synthio-engineering.mjs"
   ],
   "operatorStatement": "Synthio is the creator-only Syntheverse Sandbox agent for MRI-simulator / cloud-antenna catalog work with Omniversal Goldilocks point-and-click activation loaded. Separate from the 99 Octave Omni-Lattice engine sync pin. Sandbox only.",
   "auditSnap": "NSPFRNP-SNAP-PRA-2026-06",

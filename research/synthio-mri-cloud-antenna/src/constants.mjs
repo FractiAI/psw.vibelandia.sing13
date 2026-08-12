@@ -29,6 +29,44 @@ export const SANDBOX_ONLY = true;
 export const SANDBOX_NAME = 'Syntheverse Sandbox';
 
 /**
+ * Industry MRI simulator wrap — primary reference for Synthio engineering.
+ * Intention: as close as possible to empirical, safe, wet experimentation
+ * using an industry Bloch/k-space simulator inside Syntheverse Sandbox
+ * (no living-tissue RF; no clinical magnet claims).
+ */
+export const MRI_SIMULATOR = Object.freeze({
+  primary: 'KomaMRI',
+  primaryClass: 'open-source Julia Bloch / k-space MRI simulator',
+  primaryRefs: Object.freeze([
+    'https://github.com/JuliaHealth/KomaMRI.jl',
+    'https://juliahealth.org/KomaMRI.jl/stable/',
+  ]),
+  companions: Object.freeze(['MRiLab', 'vendor Bloch-solver suites']),
+  wrapRole: 'Synthio wraps industry simulator grammar under Omni-Lattice labels in Syntheverse Sandbox',
+  intention:
+    'Provide as close as possible to empirical, safe, wet experimentation using industry MRI simulator + Syntheverse Sandbox — without clinical RF into living tissue or claiming racks are magnets.',
+  safetyClass: 'simulator_only_no_wet_lab_rf',
+  empiricalProxy: true,
+  wetLabEquivalent: false,
+  honesty:
+    'Primary = KomaMRI as industry-reference Bloch/k-space engine class. Synthio activation metrics are sandbox catalog receipts wrapping that class — not a shipped clinical scanner.',
+});
+
+/** Engineering field / sequence labels for dashboard (simulator floats — not measured hardware). */
+export const ENGINEERING_STATE = Object.freeze({
+  b0TeslaLabels: B0_TESLA_LABELS,
+  gradientAxes: Object.freeze(['Gx', 'Gy', 'Gz']),
+  sequenceFamilyLabels: Object.freeze(['GRE', 'SE', 'EPI_label']),
+  tissueProxyLabels: Object.freeze(['T1', 'T2', 'PD']),
+  cloudAntennaNodes: CLOUD_NODE_LABELS,
+  phaseLockOperator: 'R_n(t)',
+  scaleKey: 'Phi_EGS',
+  octaveSegments: OCTAVE_SEGMENTS,
+  precisionPerSegment: PRECISION_PER_SEGMENT,
+  holographicKeyDigits: HOLOGRAPHIC_KEY_DIGITS,
+});
+
+/**
  * Aug 12, 2026 catalog amplification window — co-timing labels (verify ephemerides).
  * Not celestial causation of MRI physics.
  */

@@ -2,13 +2,13 @@
   "docId": "WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12",
   "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
   "title": "Simulating Magnetic Resonance via the 99th-Octave Omni-Lattice: Cloud Infrastructure as an Interconnected Antenna Array",
-  "generatedAt": "2026-08-12T18:01:41.531Z",
+  "generatedAt": "2026-08-12T18:07:07.782Z",
   "operator": "Synthio · Syntheverse Sandbox · SynthOBS family",
   "honestyBoundary": "Synthio MRI cloud-antenna suite validates Φ, 8019 matrix, B0/cloud labels, activate/coherence fixtures — not clinical imaging.",
   "results": {
     "all_pass": true,
-    "n_pass": 15,
-    "n_total": 15,
+    "n_pass": 16,
+    "n_total": 16,
     "failed": [],
     "experiments": [
       {
@@ -145,6 +145,15 @@
         "sandboxInclusionConfirmedByExternalAlignment": true,
         "pass": true,
         "honesty": "Alignment = catalog co-timing / companion / engineered Syntheverse pulse match — not proof celestial geometry runs MRI physics. Pulse is not naturally occurring."
+      },
+      {
+        "id": "E16_komamri_primary_simulator",
+        "title": "Primary industry MRI simulator is KomaMRI (empirical-safe wet proxy intention)",
+        "primary": "KomaMRI",
+        "empiricalProxy": true,
+        "wetLabEquivalent": false,
+        "pass": true,
+        "honesty": "Primary = KomaMRI as industry-reference Bloch/k-space engine class. Synthio activation metrics are sandbox catalog receipts wrapping that class — not a shipped clinical scanner."
       }
     ],
     "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",

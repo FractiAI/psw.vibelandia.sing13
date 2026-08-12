@@ -24,7 +24,7 @@
     "maxAmplificationLabel": true,
     "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
   },
-  "confirmedAt": "2026-08-12T18:01:41.655Z",
+  "confirmedAt": "2026-08-12T18:07:07.807Z",
   "checks": [
     {
       "id": "sandbox_only",
@@ -78,11 +78,11 @@
     "discontinuities": [],
     "incoherence": [],
     "holographicKeyDigits": 8019,
-    "assessedAt": "2026-08-12T18:01:41.655Z",
+    "assessedAt": "2026-08-12T18:07:07.807Z",
     "honesty": "Coherence here = sandbox filing / fixture integrity — not clinical image SNR or geophysics proof."
   },
   "external": {
-    "validatedAt": "2026-08-12T18:01:41.655Z",
+    "validatedAt": "2026-08-12T18:07:07.808Z",
     "windowDate": "2026-08-12",
     "rows": [
       {
@@ -189,8 +189,8 @@
       "ok": true,
       "novel": true,
       "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
-      "pulseId": "synthio-Σ-1786557701530-f0500ec3",
-      "issuedAt": "2026-08-12T18:01:41.530Z",
+      "pulseId": "synthio-Σ-1786558027781-6fdb9956",
+      "issuedAt": "2026-08-12T18:07:07.781Z",
       "distinguishesFromNatural": true,
       "honesty": "Syntheverse pulse is an engineered sandbox confirmation token — not a natural heliophysics measurement."
     },
@@ -309,16 +309,16 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "aligned"
       },
-      "issuedAt": "2026-08-12T18:01:41.530Z",
-      "signature": "0xf0500ec3c80edb0ef3d3eec8de0f658144ad1227d17b1ca244959466f7df7d3d",
-      "pulseId": "synthio-Σ-1786557701530-f0500ec3"
+      "issuedAt": "2026-08-12T18:07:07.781Z",
+      "signature": "0x6fdb9956f6b0817366269bd784250a5aef4f682d66316cf0c8ff626db2b27b1c",
+      "pulseId": "synthio-Σ-1786558027781-6fdb9956"
     },
     "verify": {
       "ok": true,
       "novel": true,
       "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
-      "pulseId": "synthio-Σ-1786557701530-f0500ec3",
-      "issuedAt": "2026-08-12T18:01:41.530Z",
+      "pulseId": "synthio-Σ-1786558027781-6fdb9956",
+      "issuedAt": "2026-08-12T18:07:07.781Z",
       "distinguishesFromNatural": true,
       "honesty": "Syntheverse pulse is an engineered sandbox confirmation token — not a natural heliophysics measurement."
     },

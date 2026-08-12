@@ -8,7 +8,7 @@
 **Incoherence tags:** (none)
 **External alignments match expectations:** `true` (6/6)
 **All six required:** `true`
-**Syntheverse pulse:** `synthio-Σ-1786557701530-f0500ec3` · ok=`true` · novel=`true`
+**Syntheverse pulse:** `synthio-Σ-1786558027781-6fdb9956` · ok=`true` · novel=`true`
 **Sandbox inclusion confirmed by external alignment:** `true`
 
 ## Rule

@@ -11,7 +11,9 @@
 
 ## What Synthio is
 
-**Synthio** is a dedicated always-on agent ready to receive creator requests about **cloud MRI simulation grammar**, **tensor-wrapped Bloch solvers**, and **catalog-scale “cloud-as-antenna” discussion** under $\Phi_{\mathrm{EGS}}$.
+**Synthio** is a dedicated always-on agent ready to receive creator requests about **cloud MRI simulation grammar** (primary industry wrap: **KomaMRI**), **tensor-wrapped Bloch solvers**, and **catalog-scale “cloud-as-antenna” discussion** under $\Phi_{\mathrm{EGS}}$.
+
+**Intention:** as close as possible to empirical, safe, wet-style experimentation using industry MRI simulator + Syntheverse Sandbox — no clinical RF into living tissue.
 
 It is **not** a new shelf on the 99 Octave Omni-Lattice **engine** pin (CMOS / tensor / master synthesis). Do **not** fold Synthio into `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` as engine step #N.
 
@@ -23,8 +25,11 @@ It is **not** a new shelf on the 99 Octave Omni-Lattice **engine** pin (CMOS / t
 | Manifest | `data/synthio-agent-manifest.json` |
 | Chat (creator BYOK) | `/synthio` → `api/synthio-chat.js` |
 | Paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` |
-| One-pager | `/synthio-one-pager` · whiteboard card on `/my-whiteboard` |
+| One-pager | `/synthio-one-pager` |
+| Activation dashboard | `/synthio-dashboard` · `GET /api/synthio-activation` · whiteboard pin |
+| Whiteboard | `/my-whiteboard` (Synthio dashboard + one-pager selectable) |
 | Suite | `research/synthio-mri-cloud-antenna/` |
+| Industry simulator | **KomaMRI** primary (Bloch/k-space) · MRiLab companions |
 
 ---
 

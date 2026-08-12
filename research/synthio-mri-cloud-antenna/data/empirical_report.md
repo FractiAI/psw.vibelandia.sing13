@@ -3,10 +3,10 @@
 **Document ID:** `WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12`
 **Registry ID:** `synthio-mri-cloud-antenna-99-octave-2026-08`
 **Agent:** Synthio
-**Generated:** 2026-08-12T18:01:41.531Z
+**Generated:** 2026-08-12T18:07:07.782Z
 
 | All pass | true |
-| Passed | 15/15 |
+| Passed | 16/16 |
 | Φ_EGS | 1.618033988749895 |
 | 99×81 | 8019 |
 
@@ -67,6 +67,10 @@
 - Pass: `true`
 
 ### E15_external_alignment_confirms_sandbox_inclusion — All six alignments (incl. novel Syntheverse pulse) confirm sandbox inclusion
+
+- Pass: `true`
+
+### E16_komamri_primary_simulator — Primary industry MRI simulator is KomaMRI (empirical-safe wet proxy intention)
 
 - Pass: `true`
 

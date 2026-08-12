@@ -62,6 +62,38 @@ export const CLOUD_SERVICES = Object.freeze({
   sessionPath: '/synthio-cloud',
   primaryEngine: 'KomaMRI.jl',
   architectureDoc: 'docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md',
+  /**
+   * Home apps — all reside inside the MRI simulation wrap for demo/test of
+   * interference-phase computing (Syntheverse Sandbox · KomaMRI grammar).
+   */
+  appsInsideMriSimulation: Object.freeze([
+    Object.freeze({
+      id: 'chat',
+      label: 'AI Chat',
+      residesIn: 'mri_simulation',
+      role: 'Synthio valet turns routed as sandbox MRI-sim compute dialogue',
+    }),
+    Object.freeze({
+      id: 'messages',
+      label: 'Messages',
+      residesIn: 'mri_simulation',
+      role: 'Seat DMs as phase-locked collab channels inside the MRI-sim session',
+    }),
+    Object.freeze({
+      id: 'files',
+      label: 'Files',
+      residesIn: 'mri_simulation',
+      role: 'Phase notes + MRI paper filings stored inside the sim sandbox cabinet',
+    }),
+    Object.freeze({
+      id: 'photos',
+      label: 'Photos',
+      residesIn: 'mri_simulation',
+      role: 'Interference / phase-field simulator frames (not clinical scanner photos)',
+    }),
+  ]),
+  demonstration:
+    'Synthio Cloud home demonstrates interference-phase computing by running Chat, Messages, Files, and Photos entirely inside the KomaMRI / Syntheverse MRI simulation wrap.',
   distributed: Object.freeze({
     libraries: Object.freeze(['Distributed.jl', 'ClusterManagers.jl', 'SharedArrays', 'DistributedArrays', 'MPI.jl']),
     phantomSharding: true,
@@ -78,7 +110,7 @@ export const CLOUD_SERVICES = Object.freeze({
   replacesDataCentersStory: true,
   juliaClusterLiveOnEdge: false,
   honesty:
-    'Distributed KomaMRI is an architecture + session outline. Edge UI does not run Julia workers. Data-center replacement is a product story, not a proven hyperscale displacement.',
+    'All four Cloud home apps reside inside the MRI simulation sandbox for demonstration. Distributed KomaMRI is an architecture + session outline; the edge UI does not run Julia workers. Not clinical RF or proven hyperscale displacement.',
 });
 
 /** Engineering field / sequence labels for dashboard (simulator floats — not measured hardware). */

@@ -24,7 +24,9 @@
     "name": "Synthio Cloud Services",
     "session": "/synthio-cloud",
     "architectureDoc": "docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md",
-    "productStory": "Interference-based MRI super-intelligent computing — alternative to hot capital-heavy data-center narratives (sandbox story, not proven displacement)."
+    "productStory": "Interference-based MRI super-intelligent computing — alternative to hot capital-heavy data-center narratives (sandbox story, not proven displacement).",
+    "appsInsideMriSimulation": ["chat", "messages", "files", "photos"],
+    "demonstration": "Home apps (AI Chat, Messages, Files, Photos) all reside inside the KomaMRI / Syntheverse MRI simulation wrap — what Synthio Cloud is testing and demonstrating."
   },
   "activation": {
     "modes": ["natural", "point_and_click"],

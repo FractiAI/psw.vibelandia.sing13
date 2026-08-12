@@ -186,4 +186,25 @@ describe('Synthio activate + coherence (sandbox)', () => {
     expect(src).toMatch(/async function callCursor/);
     expect(src).not.toMatch(/synthio_provider_use_lattice_key/);
   });
+
+  it('confirms Cloud home apps reside inside the MRI simulation', async () => {
+    const { CLOUD_SERVICES } = await import(
+      '../../research/synthio-mri-cloud-antenna/src/constants.mjs'
+    );
+    const ids = CLOUD_SERVICES.appsInsideMriSimulation.map((a) => a.id);
+    expect(ids).toEqual(['chat', 'messages', 'files', 'photos']);
+    expect(CLOUD_SERVICES.appsInsideMriSimulation.every((a) => a.residesIn === 'mri_simulation')).toBe(
+      true,
+    );
+    expect(CLOUD_SERVICES.demonstration.toLowerCase()).toMatch(/inside/);
+    const pack = await (
+      await import('../../lib/synthio-engineering.mjs')
+    ).buildSynthioEngineeringPack({
+      forcePulse: true,
+      skipCompanionProbe: true,
+      publishBlob: false,
+    });
+    expect(pack.appsInsideMriSimulation).toHaveLength(4);
+    expect(pack.cloudDemonstration).toMatch(/MRI simulation/i);
+  });
 });

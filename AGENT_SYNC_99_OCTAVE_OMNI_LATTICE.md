@@ -41,7 +41,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 2. **$\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2$** — architectural key / dashboard scale grammar — **not** a CODATA replacement for $\hbar$, $c$, or $G$.
 3. **$99\times 81=8019$** holographic catalog digits; CMOS/tensor papers also use **$9\times 81=729`** per-block and **$11\times 9=99`** tier brackets.
 4. **Lite edges only** — no Supabase; wallets/keys/verifications on-device; center = pipes only.
-5. **BYOK** — Lattice Chat never stores API keys server-side.
+5. **BYOK — your key is your password** — for 99 Octave Omni-Lattice Chat the provider API key is the credential; it stays with you on-device. No separate passwords to manage. Lattice Chat never stores API keys server-side.
 6. **Claims discipline** — narrative / catalog ≠ empirical ≠ operational. Read each paper’s Honesty boundary first.
 7. **PRA Snap** before featuring papers: `npm run audit:paper -- --id=<registryId>`.
 8. **Fair Exchange** — honor rails; elastic settlement; Player 1 veto.

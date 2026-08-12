@@ -346,7 +346,9 @@ export function ChatPane({
               Token Maxing on your keys; intentions matter — we do not help with malice or ill will.
             </p>
             <p className="empty-hint empty-hint--bridge">
-              Email + your key + pick Cursor, Claude, or Gemini. Keys stay on this device.
+              Email + your key + pick Cursor, Claude, or Gemini.{' '}
+              <strong>Your key is your password</strong> — it stays with you. No separate passwords
+              to manage.
             </p>
             <AuthPanel
               onSignedIn={() => {
@@ -370,8 +372,9 @@ export function ChatPane({
             <p className="empty-eyebrow">Bridge access</p>
             <p className="empty-lead">Bring your key to the bridge</p>
             <p className="empty-hint">
-              Paste a Cursor, Claude, or Gemini key for this device. We never store it on our
-              server — Fair Exchange, your edge.
+              <strong>Your key is your password</strong> for 99 Octave Omni-Lattice Chat — paste a
+              Cursor, Claude, or Gemini key for this device. It stays with you. No separate
+              passwords to manage. We never store it on our server — Fair Exchange, your edge.
             </p>
             <KeySettingsPanel onSaved={() => void loadLatticeModels()} />
           </div>

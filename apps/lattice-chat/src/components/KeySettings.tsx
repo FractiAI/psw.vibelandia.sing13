@@ -86,9 +86,10 @@ export function KeySettingsPanel({
       aria-label="Provider API keys"
     >
       <p className="auth-lead">
-        Bring your key — Cursor, Claude, or Gemini. Keys stay in this browser and are sent only
-        with each turn — we do not store them on the server. OpenRouter is on the Omni-Lattice
-        Bridge product, not here. Toggle the active provider under Advanced.
+        Bring your key — Cursor, Claude, or Gemini. <strong>Your key is your password</strong> for
+        99 Octave Omni-Lattice Chat: it stays with you in this browser, sent only with each turn —
+        we do not store it on the server. No separate passwords to manage. OpenRouter is on the
+        Omni-Lattice Bridge product, not here. Toggle the active provider under Advanced.
       </p>
       <div className="provider-tabs" role="tablist" aria-label="Active provider">
         {LATTICE_PROVIDERS.map((p) => (
@@ -111,7 +112,7 @@ export function KeySettingsPanel({
           onSubmit={(e) => onSave(e, p.id)}
           hidden={provider !== p.id}
         >
-          <label htmlFor={`lattice-key-${p.id}`}>{p.label} API key</label>
+          <label htmlFor={`lattice-key-${p.id}`}>{p.label} API key · your password</label>
           <input
             id={`lattice-key-${p.id}`}
             type="password"

@@ -149,7 +149,7 @@ export function CollaborateShell({
             ) : layoutMode === 'repo' ? (
               <RepoViewerOverlay onClose={() => openRepoFile(null)} />
             ) : layoutMode === 'chat' ? (
-              <WorkspaceChatPane peers={peers} onConvert={handoffAgent} />
+              <WorkspaceChatPane peers={peers} />
             ) : (
               <div className="collab-center__feed">
                 <h2 className="collab-center__title">Unified Feed</h2>
@@ -195,7 +195,7 @@ export function CollaborateShell({
             ) : mobileTab === 'channels' ? (
               <ChannelsPane onOpenRepo={() => openRepoWorkspace()} />
             ) : mobileTab === 'chat' ? (
-              <WorkspaceChatPane peers={peers} onConvert={handoffAgent} />
+              <WorkspaceChatPane peers={peers} />
             ) : (
               <div className="collab-center__feed">
                 <h2 className="collab-center__title">Home</h2>
@@ -267,10 +267,8 @@ function ChannelsPane({ onOpenRepo }: { onOpenRepo: () => void }) {
 
 function WorkspaceChatPane({
   peers,
-  onConvert,
 }: {
   peers: CollabPeer[];
-  onConvert: (prompt: string) => void;
 }) {
   const ingestPayload = useUnifiedFeed((s) => s.ingestPayload);
   const items = useUnifiedFeed((s) => s.items);
@@ -434,20 +432,14 @@ function WorkspaceChatPane({
         ) : (
           threadItems.map((m) => {
             const mine = m.actor === 'You';
+            const sender = mine ? 'You' : m.actor || 'Seat';
             return (
               <li
                 key={m.id}
                 className={`collab-chat__bubble${mine ? ' collab-chat__bubble--mine' : ''}`}
               >
-                {!mine ? <strong>{m.actor}</strong> : null}
-                <span>{m.body}</span>
-                <button
-                  type="button"
-                  className="collab-chat__ask"
-                  onClick={() => onConvert(m.body || '')}
-                >
-                  Ask agent
-                </button>
+                <strong className="collab-chat__sender">{sender}</strong>
+                <span className="collab-chat__body">{m.body}</span>
               </li>
             );
           })

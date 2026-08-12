@@ -102,9 +102,16 @@ describe('Synthio activate + coherence (sandbox)', () => {
 
   it('validates all six alignments + novel pulse confirm sandbox inclusion', async () => {
     const { buildActivationMonitorPack } = await import('../../lib/synthio-activation.mjs');
-    const pack = buildActivationMonitorPack({ mode: 'point_and_click', forcePulse: true });
+    const pack = await buildActivationMonitorPack({
+      mode: 'point_and_click',
+      forcePulse: true,
+      skipCompanionProbe: true,
+      publishBlob: false,
+    });
     expect(pack.pulseVerify.ok).toBe(true);
     expect(pack.pulseVerify.novel).toBe(true);
+    expect(pack.pulseCompare.matches).toBe(true);
+    expect(pack.pulseObservation.ok).toBe(true);
     expect(pack.external.alignedCount).toBe(6);
     expect(pack.external.allSixRequired).toBe(true);
     expect(pack.external.externalAlignmentsMatchExpectations).toBe(true);
@@ -119,12 +126,17 @@ describe('Synthio activate + coherence (sandbox)', () => {
     expect(MRI_SIMULATOR.primary).toBe('KomaMRI');
     expect(CLOUD_SERVICES.sessionPath).toBe('/synthio-cloud');
     expect(CLOUD_SERVICES.juliaClusterLiveOnEdge).toBe(false);
-    const pack = buildSynthioEngineeringPack({ forcePulse: true });
+    const pack = await buildSynthioEngineeringPack({
+      forcePulse: true,
+      skipCompanionProbe: true,
+      publishBlob: false,
+    });
     expect(pack.mriSimulator.primary).toBe('KomaMRI');
     expect(pack.cloudServices.name).toBe('Synthio Cloud Services');
     expect(pack.metrics.activeInSandbox).toBe(true);
     expect(pack.metrics.allSixAligned).toBe(true);
     expect(pack.metrics.externalMatchesMriSim).toBe(true);
+    expect(pack.metrics.pulseExternalMatch).toBe(true);
     expect(pack.mriSimMatch.verdict).toBe('MATCH');
     expect(pack.mriSimMatch.matches).toBe(true);
     expect(pack.sandboxMembership.withinSandbox).toBe(true);
@@ -134,20 +146,25 @@ describe('Synthio activate + coherence (sandbox)', () => {
     expect(pack.intention.toLowerCase()).toMatch(/wet/);
     expect(pack.links.dashboard).toBe('/synthio-dashboard');
     expect(pack.links.cloudServices).toBe('/synthio-cloud');
+    expect(pack.links.externalTelemetryApi).toBe('/api/synthio-external-telemetry');
   });
 
   it('reports MISS + outside sandbox when an external observation fails', async () => {
     const { validateExternalAlignments, EXTERNAL_ALIGNMENT_OBSERVATIONS_2026_08_12 } = await import(
       '../../lib/synthio-activation.mjs'
     );
+    const { emitSyntheverseSynthioPulse } = await import('../../lib/synthio-pulse.mjs');
+    const emitted = emitSyntheverseSynthioPulse({ force: true, publishBlob: false }).latest;
     const broken = EXTERNAL_ALIGNMENT_OBSERVATIONS_2026_08_12.map((row) =>
       row.id === 'space_weather_band'
         ? { ...row, matchesExpectation: false, status: 'miss', observed: 'Kp feed unreachable' }
         : row,
     );
-    const result = validateExternalAlignments({
+    const result = await validateExternalAlignments({
       observations: broken,
-      pulseVerify: { ok: true, novel: true },
+      pulseVerify: { ok: true, novel: true, fingerprint: emitted.fingerprint },
+      emittedPulse: emitted,
+      skipCompanionProbe: true,
     });
     expect(result.mriSimMatch.verdict).toBe('MISS');
     expect(result.mriSimMatch.matches).toBe(false);
@@ -157,5 +174,6 @@ describe('Synthio activate + coherence (sandbox)', () => {
     const missRow = result.rows.find((r) => r.id === 'space_weather_band');
     expect(missRow.matchVerdict).toBe('MISS');
     expect(missRow.mriSimExpect).toMatch(/MRI sim/i);
+    expect(result.pulseCompare.matches).toBe(true);
   });
 });

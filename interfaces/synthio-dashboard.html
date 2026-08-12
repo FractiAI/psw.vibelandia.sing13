@@ -308,6 +308,13 @@
       <p class="sim" id="verdictSim"></p>
     </section>
 
+    <section class="verdict" id="pulseVerdict" data-match="false" aria-live="polite">
+      <p class="kicker">Pulse ↔ observed external telemetry</p>
+      <h2 id="pulseVerdictTitle">Checking pulse…</h2>
+      <p id="pulseVerdictSummary"></p>
+      <p class="sim" id="pulseVerdictSim"></p>
+    </section>
+
     <h2 class="section">Slot comparison</h2>
     <div class="tele" id="tele" role="list">
       <div class="row"><span class="chip">…</span><div class="meta"><strong>Loading</strong></div></div>
@@ -346,6 +353,10 @@
       var verdictTitle = document.getElementById('verdictTitle');
       var verdictSummary = document.getElementById('verdictSummary');
       var verdictSim = document.getElementById('verdictSim');
+      var pulseVerdict = document.getElementById('pulseVerdict');
+      var pulseVerdictTitle = document.getElementById('pulseVerdictTitle');
+      var pulseVerdictSummary = document.getElementById('pulseVerdictSummary');
+      var pulseVerdictSim = document.getElementById('pulseVerdictSim');
       var sandboxState = document.getElementById('sandboxState');
       var sandboxTitle = document.getElementById('sandboxTitle');
       var sandboxSummary = document.getElementById('sandboxSummary');
@@ -377,6 +388,10 @@
         verdictTitle.textContent = 'MATCH unknown';
         verdictSummary.textContent = msg;
         verdictSim.textContent = '';
+        pulseVerdict.dataset.match = 'false';
+        pulseVerdictTitle.textContent = 'Pulse compare unknown';
+        pulseVerdictSummary.textContent = msg;
+        pulseVerdictSim.textContent = '';
         sandboxState.dataset.in = 'false';
         sandboxTitle.textContent = 'OUTSIDE OR UNCONFIRMED';
         sandboxSummary.textContent = 'Activation pack unavailable.';
@@ -418,6 +433,24 @@
           'Simulator · ' + simName +
           (data.mriSimulator && data.mriSimulator.primaryClass ? ' · ' + data.mriSimulator.primaryClass : '') +
           ' · empiricalProxy catalog (not clinical magnet)';
+
+        var pc = data.pulseCompare || (data.pulse && data.pulse.compare) || {};
+        var po = data.pulseObservation || (data.pulse && data.pulse.observation) || {};
+        var pulseMatch = pc.matches === true || m.pulseExternalMatch === true;
+        pulseVerdict.dataset.match = pulseMatch ? 'true' : 'false';
+        pulseVerdictTitle.textContent = pulseMatch
+          ? 'MATCH · pulse in external telemetry'
+          : 'MISS · pulse vs external telemetry';
+        pulseVerdictSummary.textContent = pc.summary ||
+          (pulseMatch
+            ? 'Emitted pulse fingerprint matches observed public external telemetry.'
+            : 'Emitted pulse fingerprint does not match observed external telemetry.');
+        pulseVerdictSim.textContent =
+          'Channel · ' + ((data.links && data.links.externalTelemetryApi) || '/api/synthio-external-telemetry') +
+          ' · observe ' + (po.source || m.pulseObserveSource || '—') +
+          ' · companions ' + String(po.companionsReachableCount ?? m.companionsReachable ?? '—') +
+          '/' + String(po.companionsExpected ?? 2) +
+          ' · NOAA companions are reachability-only (cannot carry pulse signature)';
 
         var rows = (data.external && data.external.rows) || [];
         if (!rows.length) {

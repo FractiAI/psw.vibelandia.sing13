@@ -366,6 +366,10 @@
       "maxDuration": 30,
       "includeFiles": "{lib/**,research/synthio-mri-cloud-antenna/**}"
     },
+    "api/synthio-external-telemetry.js": {
+      "maxDuration": 30,
+      "includeFiles": "{lib/**,research/synthio-mri-cloud-antenna/**}"
+    },
     "api/synthio-activation.js": {
       "maxDuration": 30,
       "includeFiles": "{lib/**,research/synthio-mri-cloud-antenna/**}"

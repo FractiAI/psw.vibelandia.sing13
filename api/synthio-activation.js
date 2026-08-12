@@ -26,7 +26,20 @@ export default async function handler(req, res) {
     const forcePulse = req.query?.forcePulse === '1';
     const mode = typeof req.query?.mode === 'string' ? req.query.mode : 'point_and_click';
     const octave = Number(req.query?.octave || 99);
-    const pack = buildSynthioEngineeringPack({ mode, octave, forcePulse });
+    const origin =
+      (typeof req.headers?.['x-forwarded-proto'] === 'string' &&
+      typeof req.headers?.['x-forwarded-host'] === 'string'
+        ? `${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}`
+        : null) ||
+      (typeof req.headers?.host === 'string' ? `https://${req.headers.host}` : null);
+
+    const pack = await buildSynthioEngineeringPack({
+      mode,
+      octave,
+      forcePulse,
+      origin,
+      skipCompanionProbe: req.query?.probe === '0',
+    });
 
     res.statusCode = 200;
     return res.end(

@@ -13,7 +13,7 @@ const OUT = path.resolve(__dirname, '..', 'data');
 
 async function main() {
   await fs.mkdir(OUT, { recursive: true });
-  const pack = buildActivationMonitorPack({
+  const pack = await buildActivationMonitorPack({
     mode: process.env.SYNTHIO_MODE || 'point_and_click',
     octave: Number(process.env.SYNTHIO_OCTAVE || 99),
     forcePulse: process.env.SYNTHIO_FORCE_PULSE === '1',

@@ -216,10 +216,11 @@ export async function experimentExternalWatchList() {
 
 export async function experimentExternalAlignmentConfirmsSandboxInclusion() {
   const { buildActivationMonitorPack } = await import('../../../lib/synthio-activation.mjs');
-  const pack = buildActivationMonitorPack({
+  const pack = await buildActivationMonitorPack({
     mode: 'point_and_click',
     octave: 99,
     forcePulse: true,
+    skipCompanionProbe: true,
   });
   const v = pack.external;
   return {

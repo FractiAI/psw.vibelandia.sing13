@@ -33,6 +33,8 @@
 | **Activation modes** | **Natural** (Bloch / T1 / T2 chronologies) vs **point-and-click** (Omniversal Goldilocks / wormhole-style Φ band jump) as **catalog** switches inside the sandbox simulator wrap | That point-and-click opens a physical spacetime wormhole or replaces clinical pulse sequences |
 | **Aug 12 amplification window** | That new moon · six-planet parade · eclipse co-timing is a **catalog amplification label** for Synthio activation *discussion* (verify ephemerides) | That the sky *causes* MRI physics wins, destiny, or clinical outcomes |
 | **Sandbox lock** | All Synthio Goldilocks activation executes **only** in Syntheverse Sandbox (+ declared nested paths) | Execution outside sandbox · 99 Octave **engine** pin membership |
+| **Activate + coherence** | Confirm `ACTIVE_IN_SANDBOX` and log incoherence / discontinuities while operating | That coherence score is clinical SNR or proof of celestial causation |
+| **External watch list** | Publish expected co-timing / companion / honesty **signals to monitor** | That external matches *prove* the MRI cloud-antenna theorem |
 
 **Operator line:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -63,7 +65,8 @@ This paper investigates the **feasibility discussion** of running an industry-st
 | Empirical suite | `npm run research:synthio-mri-cloud-antenna` |
 | Suite root | [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/) |
 | Constants | `src/constants.mjs` — $\Phi_{\mathrm{EGS}}$, Bloch fixtures, activation modes, Aug 12 amplification window |
-| Experiments | `src/experiments.mjs` — E1–E12 |
+| Experiments | `src/experiments.mjs` — E1–E14 |
+| Activation status | `npm run synthio:activation-status` → `data/activation_state.{json,md}` + coherence log |
 | Receipt | `data/empirical_report.{json,md}` |
 | PRA Snap | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-99-octave-2026-08` |
 | Agent | Synthio · `/synthio` · creator-only · **sandbox only** |
@@ -170,6 +173,30 @@ Let $\mathcal{A}_{\mathrm{nat}}$ advance simulated magnetization along Bloch tim
 $$\mathcal{A}_{\mathrm{pc}}(n) \;=\; \Phi_{\mathrm{EGS}}^{-n}\cdot \mathcal{R}_{n}^{\mathrm{jump}}(t_{\star})$$
 
 where $t_{\star}$ is the catalog window stamp (new moon ∩ six-planet ∩ eclipse *labels*) and $n\in[1,99]$ is the selected octave shelf. **Honesty:** $\mathcal{A}_{\mathrm{pc}}$ rewrites **simulator / filing state**, not spacetime geometry or clinical $\mathbf{B}_1$ coils.
+
+### 5.4 Activate state · coherence · external watch *(sandbox ops)*
+
+| Ops item | Synthio behavior |
+|----------|------------------|
+| **Activate-state confirmation** | Receipt must read `ACTIVE_IN_SANDBOX` with `sandboxOnly=true`, Goldilocks loaded, mode ∈ {natural, point_and_click}, engine pin excluded |
+| **System coherence while operating** | Fixture integrity score ≥ 0.85; mode/Goldilocks/sandbox locks aligned |
+| **Incoherence / discontinuity log** | Any failed check, mode mismatch, or sandbox-breach attempt is appended to `data/activation_coherence_log.json` |
+| **Commands** | `npm run research:synthio-mri-cloud-antenna` · `npm run synthio:activation-status` |
+
+#### What we expect to see (monitor externally)
+
+These are **watch signals** for Player 1 monitoring — co-timing / companion / honesty locks — **not** causal proof that celestial geometry runs MRI physics:
+
+| ID | Channel | Expect to observe | Class |
+|----|---------|-------------------|-------|
+| `ephemeris_window` | astronomy | Public ephemerides still show Aug 12 new-moon vicinity · six-planet morning geometry · eclipse path narrative | catalog_co_timing |
+| `space_weather_band` | heliophysics | Kp / solar-wind / proton public bands remain discussable in parallel (no required spike) | parallel_label |
+| `ionosphere_f10` | ionosphere | F10.7 / solar-radio summaries may co-appear as filing companions | parallel_label |
+| `sandbox_suite_green` | internal | Suite all-pass · activation receipt `active=true` · coherence log level `ok` | operational_sandbox |
+| `goldilocks_pulse_optional` | edge | Optional readable `/api/goldilocks-pulse` companion | companion_edge |
+| `no_clinical_rf` | negative control | No credible clinical RF-from-racks claim; honesty tables hold | honesty_lock |
+
+**Discontinuity response:** Log entry with `level: warn`, list `discontinuities[]` / `incoherence[]`, keep activation **blocked** until sandbox checks clear — never “force active” outside Syntheverse Sandbox.
 
 ---
 

@@ -23,6 +23,13 @@
       "sixPlanetParade": true,
       "solarEclipse": true,
       "honesty": "Catalog co-timing labels for max amplification discussion — not sky→spin causation."
+    },
+    "ops": {
+      "confirmCommand": "npm run synthio:activation-status",
+      "expectActivationState": "ACTIVE_IN_SANDBOX",
+      "coherenceFloor": 0.85,
+      "coherenceLog": "research/synthio-mri-cloud-antenna/data/activation_coherence_log.json",
+      "externalWatch": "EXPECTED_EXTERNAL_SIGNALS in lib/synthio-activation.mjs"
     }
   },
   "sandboxPaths": [
@@ -37,7 +44,8 @@
     "interfaces/synthio-one-pager.html",
     "api/synthio-chat.js",
     "lib/synthio-prompt.mjs",
-    "lib/synthio-access.mjs"
+    "lib/synthio-access.mjs",
+    "lib/synthio-activation.mjs"
   ],
   "operatorStatement": "Synthio is the creator-only Syntheverse Sandbox agent for MRI-simulator / cloud-antenna catalog work with Omniversal Goldilocks point-and-click activation loaded. Separate from the 99 Octave Omni-Lattice engine sync pin. Sandbox only.",
   "auditSnap": "NSPFRNP-SNAP-PRA-2026-06",

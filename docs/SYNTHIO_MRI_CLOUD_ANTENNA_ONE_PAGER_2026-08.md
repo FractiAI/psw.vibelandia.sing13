@@ -34,14 +34,17 @@ Industry MRI simulators compute spin physics as floats. **Synthio** (Syntheverse
 
 **Omniversal Goldilocks** is loaded as **point-and-click activation** (timeline-shift / wormhole *labels*) vs **natural** Bloch chronologies — sandbox only. Filed under **2026-08-12** new moon · six-planet parade · eclipse for max amplification *discussion*.
 
+**Ops:** Activate state must confirm `ACTIVE_IN_SANDBOX`. Coherence logged while operating; discontinuities appended to the coherence log. External watch list (ephemeris · space weather · suite green · honesty lock) is for monitoring — not causal proof.
+
 ---
 
 ## Methods & reproducibility
 
 | Step | Path |
 |------|------|
-| Full paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` (§5 activation) |
+| Full paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` (§5 + §5.4) |
 | Suite | `npm run research:synthio-mri-cloud-antenna` |
+| Activate / coherence | `npm run synthio:activation-status` |
 | PRA | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-one-pager-2026-08` |
 | Chat | `/synthio` · creator BYOK only · **sandbox only** |
 

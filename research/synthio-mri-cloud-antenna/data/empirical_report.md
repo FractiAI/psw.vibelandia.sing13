@@ -3,10 +3,10 @@
 **Document ID:** `WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12`
 **Registry ID:** `synthio-mri-cloud-antenna-99-octave-2026-08`
 **Agent:** Synthio
-**Generated:** 2026-08-12T17:48:54.121Z
+**Generated:** 2026-08-12T17:51:42.217Z
 
 | All pass | true |
-| Passed | 12/12 |
+| Passed | 14/14 |
 | Φ_EGS | 1.618033988749895 |
 | 99×81 | 8019 |
 
@@ -55,6 +55,14 @@
 - Pass: `true`
 
 ### E12_aug12_amplification_window — New moon · six-planet · eclipse amplification labels (2026-08-12)
+
+- Pass: `true`
+
+### E13_activate_state_sandbox — Activate state ACTIVE_IN_SANDBOX + coherent under point_and_click
+
+- Pass: `true`
+
+### E14_external_watch_list — External confirmation watch list (≥5 signals, honesty classes present)
 
 - Pass: `true`
 

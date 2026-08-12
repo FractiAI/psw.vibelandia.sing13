@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "63550d21c000a6f2",
+  "auditId": "995658421d5f7cfc",
   "paperId": "synthio-mri-cloud-antenna-one-pager-2026-08",
   "sourcePath": "docs/SYNTHIO_MRI_CLOUD_ANTENNA_ONE_PAGER_2026-08.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-08-12T17:48:54.368Z"
+          "invokedAt": "2026-08-12T17:51:54.373Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-08-12T17:48:54.367Z",
-  "completedAt": "2026-08-12T17:48:54.368Z",
+  "startedAt": "2026-08-12T17:51:54.372Z",
+  "completedAt": "2026-08-12T17:51:54.373Z",
   "iterations": 1,
-  "overallScore": 0.905,
+  "overallScore": 0.941,
   "passThreshold": 0.85,
   "convergence": {
     "status": "pass",
@@ -95,13 +95,13 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.905,
+      "overallScore": 0.941,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
         "methodsRepro": 1,
         "claimsProportionate": 1,
-        "structure": 0.65,
+        "structure": 0.95,
         "references": 0.7,
         "abstractTitle": 1,
         "synthobsAttribution": 1,
@@ -115,17 +115,17 @@
       "honestyBoundary": 1,
       "methodsRepro": 1,
       "claimsProportionate": 1,
-      "structure": 0.65,
+      "structure": 0.95,
       "references": 0.7,
       "abstractTitle": 1,
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.905,
+    "overallScore": 0.941,
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 384,
+      "wordCount": 430,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

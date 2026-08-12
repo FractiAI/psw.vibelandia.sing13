@@ -166,6 +166,44 @@ export function experimentAmplificationWindow() {
   };
 }
 
+export async function experimentActivateStateInSandbox() {
+  const { confirmSandboxActivation, assessOperatingCoherence, EXPECTED_EXTERNAL_SIGNALS } =
+    await import('../../../lib/synthio-activation.mjs');
+  const activation = confirmSandboxActivation({ mode: 'point_and_click', octave: 99 });
+  const coherence = assessOperatingCoherence(activation);
+  return {
+    id: 'E13_activate_state_sandbox',
+    title: 'Activate state ACTIVE_IN_SANDBOX + coherent under point_and_click',
+    activationState: activation.activationState,
+    coherent: coherence.coherent,
+    coherenceScore: coherence.coherenceScore,
+    discontinuities: coherence.discontinuities.length,
+    pass:
+      activation.active === true &&
+      activation.activationState === 'ACTIVE_IN_SANDBOX' &&
+      coherence.coherent === true &&
+      coherence.discontinuities.length === 0,
+    honesty: 'Sandbox activate + coherence fixtures — not clinical arming.',
+  };
+}
+
+export async function experimentExternalWatchList() {
+  const { EXPECTED_EXTERNAL_SIGNALS } = await import('../../../lib/synthio-activation.mjs');
+  const classes = new Set(EXPECTED_EXTERNAL_SIGNALS.map((s) => s.confirmationClass));
+  return {
+    id: 'E14_external_watch_list',
+    title: 'External confirmation watch list (≥5 signals, honesty classes present)',
+    n: EXPECTED_EXTERNAL_SIGNALS.length,
+    classes: [...classes],
+    pass:
+      EXPECTED_EXTERNAL_SIGNALS.length >= 5 &&
+      classes.has('catalog_co_timing') &&
+      classes.has('honesty_lock') &&
+      classes.has('operational_sandbox'),
+    honesty: 'Watch list for monitoring — not causal sky→MRI proof.',
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentEgPhi(),
@@ -180,6 +218,8 @@ export async function runAllExperiments() {
     experimentActivationModes(),
     experimentSandboxOnly(),
     experimentAmplificationWindow(),
+    await experimentActivateStateInSandbox(),
+    await experimentExternalWatchList(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

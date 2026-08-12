@@ -1,0 +1,144 @@
+{
+  "agent": "Synthio",
+  "agentId": "Synthio.sandbox",
+  "sandbox": "Syntheverse Sandbox",
+  "sandboxOnly": true,
+  "active": true,
+  "activationState": "ACTIVE_IN_SANDBOX",
+  "mode": "point_and_click",
+  "octave": 99,
+  "goldilocksLoaded": true,
+  "amplificationWindow": {
+    "date": "2026-08-12",
+    "newMoon": true,
+    "sixPlanetParade": true,
+    "solarEclipse": true,
+    "planets": [
+      "Jupiter",
+      "Mercury",
+      "Mars",
+      "Uranus",
+      "Saturn",
+      "Neptune"
+    ],
+    "maxAmplificationLabel": true,
+    "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
+  },
+  "confirmedAt": "2026-08-12T17:51:42.360Z",
+  "checks": [
+    {
+      "id": "sandbox_only",
+      "pass": true,
+      "detail": "Syntheverse Sandbox"
+    },
+    {
+      "id": "engine_excluded",
+      "pass": true,
+      "detail": "not on 99 Octave engine pin"
+    },
+    {
+      "id": "creator_access_mode",
+      "pass": true,
+      "detail": "creator_only"
+    },
+    {
+      "id": "goldilocks_loaded",
+      "pass": true,
+      "detail": "Omniversal Goldilocks activation loaded into Synthio MRI"
+    },
+    {
+      "id": "mode_valid",
+      "pass": true,
+      "detail": "point_and_click"
+    },
+    {
+      "id": "octave_in_band",
+      "pass": true,
+      "detail": "n=99"
+    },
+    {
+      "id": "amplification_window_flags",
+      "pass": true,
+      "detail": "2026-08-12"
+    },
+    {
+      "id": "phi_finite",
+      "pass": true,
+      "detail": 1.618033988749895
+    }
+  ],
+  "failed": [],
+  "honesty": "Activate-state confirmation is sandbox catalog arithmetic — not clinical scanner arming.",
+  "coherence": {
+    "coherent": true,
+    "coherenceScore": 1,
+    "coherenceFloor": 0.85,
+    "mode": "point_and_click",
+    "activationState": "ACTIVE_IN_SANDBOX",
+    "discontinuities": [],
+    "incoherence": [],
+    "holographicKeyDigits": 8019,
+    "assessedAt": "2026-08-12T17:51:42.360Z",
+    "honesty": "Coherence here = sandbox filing / fixture integrity — not clinical image SNR or geophysics proof."
+  },
+  "expectedExternalSignals": [
+    {
+      "id": "ephemeris_window",
+      "channel": "astronomy",
+      "expect": "Public ephemerides still show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
+      "sources": [
+        "NASA / IAU eclipse path",
+        "planetarium ephemeris apps"
+      ],
+      "confirmationClass": "catalog_co_timing"
+    },
+    {
+      "id": "space_weather_band",
+      "channel": "heliophysics",
+      "expect": "Kp / solar-wind / proton-flux public bands remain discussable as parallel labels during the window (no required spike)",
+      "sources": [
+        "NOAA SWPC",
+        "GFZ Kp"
+      ],
+      "confirmationClass": "parallel_label"
+    },
+    {
+      "id": "ionosphere_f10",
+      "channel": "ionosphere",
+      "expect": "F10.7 / ionospheric discussion bands may co-appear in public solar radio summaries — filing only",
+      "sources": [
+        "NOAA solar radio",
+        "public SIDC summaries"
+      ],
+      "confirmationClass": "parallel_label"
+    },
+    {
+      "id": "sandbox_suite_green",
+      "channel": "internal_sandbox",
+      "expect": "npm run research:synthio-mri-cloud-antenna stays all-pass; activation receipt active=true",
+      "sources": [
+        "research/synthio-mri-cloud-antenna/data/"
+      ],
+      "confirmationClass": "operational_sandbox"
+    },
+    {
+      "id": "goldilocks_pulse_optional",
+      "channel": "edge_pulse",
+      "expect": "Optional: /api/goldilocks-pulse remains readable (signed pulse) — edge coherence companion, not MRI proof",
+      "sources": [
+        "/api/goldilocks-pulse",
+        "lib/goldilocks-pulse.mjs"
+      ],
+      "confirmationClass": "companion_edge"
+    },
+    {
+      "id": "no_clinical_rf",
+      "channel": "negative_control",
+      "expect": "No credible claim of clinical RF imaging from cloud racks; honesty tables unchanged",
+      "sources": [
+        "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md"
+      ],
+      "confirmationClass": "honesty_lock"
+    }
+  ]
+}

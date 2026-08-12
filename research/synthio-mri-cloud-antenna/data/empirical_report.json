@@ -2,13 +2,13 @@
   "docId": "WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12",
   "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
   "title": "Simulating Magnetic Resonance via the 99th-Octave Omni-Lattice: Cloud Infrastructure as an Interconnected Antenna Array",
-  "generatedAt": "2026-08-12T17:48:54.121Z",
+  "generatedAt": "2026-08-12T17:51:42.217Z",
   "operator": "Synthio · Syntheverse Sandbox · SynthOBS family",
-  "honestyBoundary": "Synthio MRI cloud-antenna suite validates Φ, 8019 matrix, B0/cloud labels — not clinical imaging.",
+  "honestyBoundary": "Synthio MRI cloud-antenna suite validates Φ, 8019 matrix, B0/cloud labels, activate/coherence fixtures — not clinical imaging.",
   "results": {
     "all_pass": true,
-    "n_pass": 12,
-    "n_total": 12,
+    "n_pass": 14,
+    "n_total": 14,
     "failed": [],
     "experiments": [
       {
@@ -111,6 +111,30 @@
         },
         "pass": true,
         "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
+      },
+      {
+        "id": "E13_activate_state_sandbox",
+        "title": "Activate state ACTIVE_IN_SANDBOX + coherent under point_and_click",
+        "activationState": "ACTIVE_IN_SANDBOX",
+        "coherent": true,
+        "coherenceScore": 1,
+        "discontinuities": 0,
+        "pass": true,
+        "honesty": "Sandbox activate + coherence fixtures — not clinical arming."
+      },
+      {
+        "id": "E14_external_watch_list",
+        "title": "External confirmation watch list (≥5 signals, honesty classes present)",
+        "n": 6,
+        "classes": [
+          "catalog_co_timing",
+          "parallel_label",
+          "operational_sandbox",
+          "companion_edge",
+          "honesty_lock"
+        ],
+        "pass": true,
+        "honesty": "Watch list for monitoring — not causal sky→MRI proof."
       }
     ],
     "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",

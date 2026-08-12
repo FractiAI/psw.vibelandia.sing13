@@ -10,6 +10,12 @@ import {
   SYNTHIO_AGENT_ID,
 } from '../../lib/synthio-access.mjs';
 import { buildSynthioMessages, SYNTHIO_SYSTEM_PROMPT } from '../../lib/synthio-prompt.mjs';
+import {
+  confirmSandboxActivation,
+  assessOperatingCoherence,
+  EXPECTED_EXTERNAL_SIGNALS,
+  COHERENCE_FLOOR,
+} from '../../lib/synthio-activation.mjs';
 
 describe('Synthio creator-only access', () => {
   it('lists creator emails including espressolico', () => {
@@ -60,5 +66,30 @@ describe('Synthio prompt', () => {
     });
     expect(msgs[0].role).toBe('system');
     expect(msgs[msgs.length - 1]).toEqual({ role: 'user', content: 'Hello Synthio' });
+  });
+});
+
+describe('Synthio activate + coherence (sandbox)', () => {
+  it('confirms ACTIVE_IN_SANDBOX under point_and_click', () => {
+    const a = confirmSandboxActivation({ mode: 'point_and_click', octave: 99 });
+    expect(a.active).toBe(true);
+    expect(a.activationState).toBe('ACTIVE_IN_SANDBOX');
+    expect(a.sandboxOnly).toBe(true);
+  });
+
+  it('reports coherent with empty discontinuities when healthy', () => {
+    const a = confirmSandboxActivation({ mode: 'point_and_click' });
+    const c = assessOperatingCoherence(a);
+    expect(c.coherent).toBe(true);
+    expect(c.coherenceScore).toBeGreaterThanOrEqual(COHERENCE_FLOOR);
+    expect(c.discontinuities).toEqual([]);
+  });
+
+  it('publishes external watch list for confirmation monitoring', () => {
+    expect(EXPECTED_EXTERNAL_SIGNALS.length).toBeGreaterThanOrEqual(5);
+    expect(EXPECTED_EXTERNAL_SIGNALS.some((s) => s.id === 'ephemeris_window')).toBe(true);
+    expect(EXPECTED_EXTERNAL_SIGNALS.some((s) => s.confirmationClass === 'honesty_lock')).toBe(
+      true,
+    );
   });
 });

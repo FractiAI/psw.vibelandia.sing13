@@ -53,11 +53,19 @@ async function main() {
     generatedAt: new Date().toISOString(),
     operator: 'Synthio · Syntheverse Sandbox · SynthOBS family',
     honestyBoundary:
-      'Synthio MRI cloud-antenna suite validates Φ, 8019 matrix, B0/cloud labels — not clinical imaging.',
+      'Synthio MRI cloud-antenna suite validates Φ, 8019 matrix, B0/cloud labels, activate/coherence fixtures — not clinical imaging.',
     results,
   };
   await fs.writeFile(path.join(OUT, 'empirical_report.json'), JSON.stringify(report, null, 2), 'utf8');
   await fs.writeFile(path.join(OUT, 'empirical_report.md'), mdReport(report), 'utf8');
+
+  // Refresh activate-state + coherence log (sandbox)
+  const { spawnSync } = await import('node:child_process');
+  spawnSync(process.execPath, [path.join(__dirname, 'confirm_activation.mjs')], {
+    stdio: 'inherit',
+    cwd: path.resolve(__dirname, '../../..'),
+  });
+
   console.log(
     JSON.stringify(
       {

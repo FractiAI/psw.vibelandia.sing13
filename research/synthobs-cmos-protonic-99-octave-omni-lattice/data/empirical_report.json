@@ -1,0 +1,94 @@
+{
+  "docId": "WP-SYNTHOBS-CMOS-PROTONIC-99-OCTAVE-OMNI-LATTICE-2026-08-12",
+  "registryId": "synthobs-cmos-protonic-99-octave-omni-lattice-2026-08",
+  "title": "Transistor-Level Integration and Empirical Validation of the 99-Octave Omni-Lattice Matrix Across CMOS 2.0 and Protonic Architectures",
+  "generatedAt": "2026-08-12T17:01:21.626Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "CMOS/protonic 99-octave Omni-Lattice validates Φ, binary n=1, protonic band, CMOS 2.0 fixtures — not fab measurements.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "pass": true,
+        "honesty": "Architectural key — not a CODATA or wafer-measured constant."
+      },
+      {
+        "id": "E2_phi_identity",
+        "title": "Φ² = Φ + 1",
+        "pass": true
+      },
+      {
+        "id": "E3_binary_n1",
+        "title": "Binary degeneracy tier n=1 scale finite",
+        "BINARY_TIER_N": 1,
+        "scale": 0.6180339887498948,
+        "pass": true,
+        "honesty": "Catalog label for CMOS 0/1 — not measured Φ on silicon."
+      },
+      {
+        "id": "E4_protonic_band",
+        "title": "Protonic band n∈[2,99] contiguous to binary tier",
+        "PROTONIC_BAND": {
+          "from": 2,
+          "to": 99
+        },
+        "pass": true
+      },
+      {
+        "id": "E5_matrix_99x81",
+        "title": "99 × 81 = 8019 holographic catalog digits",
+        "OCTAVE_SEGMENTS": 99,
+        "PRECISION_PER_SEGMENT": 81,
+        "HOLOGRAPHIC_KEY_DIGITS": 8019,
+        "pass": true
+      },
+      {
+        "id": "E6_cmos20_fixtures",
+        "title": "CMOS 2.0 vocabulary fixtures locked",
+        "CMOS20_FIXTURES": [
+          "GAA",
+          "CFET",
+          "BEOL",
+          "CoWoS",
+          "SoW",
+          "PPA"
+        ],
+        "pass": true,
+        "honesty": "Vocabulary fixtures for linear-systems discussion — not fab logs."
+      },
+      {
+        "id": "E7_protonic_device",
+        "title": "Protonic two-terminal multi-state fixture",
+        "carrier": "H+",
+        "activeLayerClass": "a-IGZO",
+        "terminalCount": 2,
+        "multiState": true,
+        "pass": true,
+        "honesty": "Device-class label — not a SING13 measured endurance table."
+      },
+      {
+        "id": "E8_paper_on_disk",
+        "title": "CMOS-protonic markdown present",
+        "BENCHMARK_PROTOCOLS": [
+          "beol-latency-vs-tensor-phase-lock",
+          "multi-tier-thermal-dissipation",
+          "dual-domain-translation-lock"
+        ],
+        "pass": true
+      },
+      {
+        "id": "E9_doc_ids",
+        "title": "Document / registry IDs locked",
+        "DOC_ID": "WP-SYNTHOBS-CMOS-PROTONIC-99-OCTAVE-OMNI-LATTICE-2026-08-12",
+        "REGISTRY_ID": "synthobs-cmos-protonic-99-octave-omni-lattice-2026-08",
+        "pass": true
+      }
+    ],
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": []
+  }
+}

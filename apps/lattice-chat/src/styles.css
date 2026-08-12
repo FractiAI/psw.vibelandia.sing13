@@ -2995,11 +2995,18 @@ body {
   background: rgba(212, 175, 55, 0.14);
   border-color: rgba(212, 175, 55, 0.35);
 }
-.collab-chat__bubble strong {
+.collab-chat__bubble strong,
+.collab-chat__sender {
   font-size: 0.75rem;
   color: var(--brand-gold, #d4af37);
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
-.collab-chat__bubble span {
+.collab-chat__bubble--mine .collab-chat__sender {
+  color: var(--brand-gold-hi, #fef3c7);
+}
+.collab-chat__bubble span,
+.collab-chat__body {
   font-size: 0.9rem;
   color: var(--brand-text);
   line-height: 1.35;

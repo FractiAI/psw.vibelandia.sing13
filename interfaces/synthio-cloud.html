@@ -3,524 +3,907 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Synthio Cloud Services · MRI match · sandbox</title>
-  <meta name="description" content="Synthio Cloud Services — external vs KomaMRI simulation match and Syntheverse Sandbox inclusion." />
+  <title>Synthio Cloud · home</title>
+  <meta name="description" content="Synthio Cloud Services home — AI Chat, Messages, Files, and Photos apps inside the MRI interference-phase sandbox." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/synthio-cloud" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #e7f7ef;
-      --soft: #b6d0c3;
+      --ink: #ecfdf5;
+      --soft: #b7d4c6;
       --muted: #6f8f80;
-      --ok: #34d399;
-      --ok-hi: #a7f3d0;
-      --bad: #f87171;
+      --accent: #2dd4a0;
+      --accent-hi: #a7f3d0;
       --warn: #fbbf24;
-      --line: rgba(52, 211, 153, 0.28);
-      --panel: rgba(8, 24, 18, 0.72);
-      --font: 'IBM Plex Sans', system-ui, sans-serif;
+      --danger: #f87171;
+      --glass: rgba(8, 22, 16, 0.72);
+      --line: rgba(45, 212, 160, 0.28);
+      --font: 'Outfit', system-ui, sans-serif;
       --display: 'Syne', system-ui, sans-serif;
-      --mono: 'IBM Plex Mono', ui-monospace, monospace;
+      --safe-top: env(safe-area-inset-top, 0px);
       --safe-bot: env(safe-area-inset-bottom, 0px);
+      --spring: cubic-bezier(0.22, 1, 0.36, 1);
     }
     * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
     body {
-      margin: 0;
-      min-height: 100vh;
       font-family: var(--font);
       color: var(--ink);
-      background:
-        radial-gradient(ellipse 70% 45% at 50% -10%, rgba(52, 211, 153, 0.2), transparent 55%),
-        linear-gradient(180deg, #0a1612, #050c09 70%);
+      background: #04100c;
+      overflow: hidden;
     }
-    a { color: var(--ok-hi); }
-    .wrap { max-width: 42rem; margin: 0 auto; padding: 1.25rem 1rem calc(2rem + var(--safe-bot)); }
-    .nav { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.85rem; }
-    .nav a { margin-right: 0.75rem; text-decoration: none; }
-    .brand { margin-bottom: 1rem; }
+    a { color: var(--accent-hi); }
+    button { font: inherit; }
+
+    .wallpaper {
+      position: fixed; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 55% at 18% 12%, rgba(45, 212, 160, 0.32), transparent 58%),
+        radial-gradient(ellipse 70% 50% at 88% 78%, rgba(16, 185, 129, 0.18), transparent 55%),
+        linear-gradient(165deg, #062018 0%, #04140f 42%, #020a08 100%);
+      animation: wallpaperDrift 22s ease-in-out infinite alternate;
+    }
+    .wallpaper::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 60h120M60 0v120' stroke='%232dd4a0' stroke-opacity='0.045' stroke-width='1'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    @keyframes wallpaperDrift {
+      from { filter: hue-rotate(-6deg); transform: scale(1); }
+      to { filter: hue-rotate(8deg) saturate(1.08); transform: scale(1.03); }
+    }
+
+    .shell {
+      position: relative; z-index: 1;
+      height: 100%; max-width: 480px; margin: 0 auto;
+      display: flex; flex-direction: column;
+      padding: calc(0.45rem + var(--safe-top)) 1rem 0;
+    }
+    .statusbar {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.78rem; font-weight: 600; color: var(--soft);
+      padding: 0.1rem 0.15rem 0.45rem;
+    }
+    .statusbar #live[data-state="live"] { color: var(--accent-hi); }
+    .statusbar #live[data-state="sync"] { color: var(--warn); }
+    .statusbar #live[data-state="error"] { color: var(--danger); }
+
+    .brand { text-align: center; padding: 0.2rem 0.4rem 0.7rem; animation: brandIn 0.8s var(--spring) both; }
+    @keyframes brandIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
     .brand .kicker {
-      margin: 0 0 0.3rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--ok);
+      margin: 0; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      font-weight: 700; color: var(--accent);
     }
     .brand h1 {
-      margin: 0;
-      font-family: var(--display);
-      font-size: clamp(1.85rem, 7vw, 2.35rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--ok-hi);
-      line-height: 0.95;
+      margin: 0.2rem 0 0;
+      font-family: var(--display); font-weight: 800;
+      font-size: clamp(2.15rem, 9vw, 2.8rem);
+      letter-spacing: -0.03em; line-height: 0.94; color: var(--accent-hi);
+      text-shadow: 0 12px 40px rgba(45, 212, 160, 0.25);
     }
     .brand p {
-      margin: 0.45rem 0 0;
-      color: var(--soft);
-      font-size: 0.9rem;
-      line-height: 1.4;
-      max-width: 34rem;
+      margin: 0.4rem 0 0; color: var(--soft); font-size: 0.9rem; line-height: 1.35;
     }
 
-    .status {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.85rem;
-      padding: 1rem 1.1rem;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: var(--panel);
+    .home { flex: 1; overflow: auto; -webkit-overflow-scrolling: touch; padding-bottom: 0.35rem; }
+
+    .live-tile {
+      display: grid; grid-template-columns: 1.55fr 0.85fr; gap: 0.55rem; margin-bottom: 1rem;
     }
-    .light {
-      width: 3.25rem;
-      height: 3.25rem;
-      border-radius: 50%;
+    .tile {
+      border: 1px solid var(--line); border-radius: 18px;
+      background: linear-gradient(160deg, rgba(45, 212, 160, 0.18), rgba(8, 22, 16, 0.65));
+      padding: 0.85rem 0.9rem; text-align: left; color: inherit; cursor: pointer;
+      min-height: 6.2rem; position: relative; overflow: hidden;
+      transition: transform 0.25s var(--spring);
+    }
+    .tile:active { transform: scale(0.97); }
+    .tile__label { margin: 0; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+    .tile__value { margin: 0.35rem 0 0; font-family: var(--display); font-size: 1.2rem; font-weight: 800; }
+    .tile__meta { margin: 0.3rem 0 0; font-size: 0.72rem; color: var(--soft); line-height: 1.3; }
+    .tile--viz { display: grid; place-items: center; }
+    .tile__viz {
+      width: 100%; height: 100%; min-height: 5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; padding: 0.2rem;
+    }
+    .node {
+      border-radius: 10px; background: rgba(45, 212, 160, 0.2);
+      animation: nodePulse 2.4s ease-in-out infinite;
+    }
+    .node:nth-child(2) { animation-delay: 0.3s; }
+    .node:nth-child(3) { animation-delay: 0.6s; }
+    .node:nth-child(4) { animation-delay: 0.9s; }
+    @keyframes nodePulse {
+      0%, 100% { opacity: 0.45; transform: scale(0.96); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    .apps {
+      list-style: none; margin: 0; padding: 0.2rem 0.15rem 1rem;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem 0.45rem;
+    }
+    .app {
+      appearance: none; border: 0; background: transparent; color: inherit;
+      display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
+      cursor: pointer; padding: 0; text-decoration: none;
+      transition: transform 0.22s var(--spring);
+    }
+    .app:active { transform: scale(0.92); }
+    .app__icon {
+      width: 3.65rem; height: 3.65rem; border-radius: 18px;
+      display: grid; place-items: center;
+      font-family: var(--display); font-weight: 800; font-size: 0.95rem;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    }
+    .app__icon--chat { background: linear-gradient(145deg, #34d399, #047857); color: #042f1e; }
+    .app__icon--dm { background: linear-gradient(145deg, #5eead4, #0f766e); color: #042f1e; }
+    .app__icon--files { background: linear-gradient(145deg, #fde68a, #ca8a04); color: #422006; }
+    .app__icon--photos { background: linear-gradient(145deg, #86efac, #15803d); color: #052e16; }
+    .app__name { font-size: 0.7rem; font-weight: 600; color: var(--soft); text-align: center; }
+
+    .dock {
       flex-shrink: 0;
-      background: #334155;
-      transition: background 0.35s ease, box-shadow 0.35s ease;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem;
+      margin: 0.35rem 0 calc(0.65rem + var(--safe-bot));
+      padding: 0.55rem 0.45rem;
+      border-radius: 22px;
+      background: rgba(6, 16, 12, 0.72);
+      border: 1px solid rgba(45, 212, 160, 0.22);
+      backdrop-filter: blur(16px);
     }
-    .light[data-state="ok"] {
-      background: var(--ok);
-      box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.2), 0 0 28px rgba(52, 211, 153, 0.55);
+    .dock .app__icon { width: 3.15rem; height: 3.15rem; border-radius: 15px; }
+    .dock .app__name { font-size: 0.62rem; color: var(--muted); }
+
+    .stage {
+      position: fixed; inset: 0; z-index: 20;
+      display: flex; flex-direction: column;
+      background: #06140f;
+      transform: translateY(104%);
+      transition: transform 0.38s var(--spring);
+      max-width: 560px; margin: 0 auto;
     }
-    .light[data-state="bad"] {
-      background: var(--bad);
-      box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.18);
+    .stage[data-open="true"] { transform: none; }
+    .stage__bar {
+      display: flex; align-items: center; gap: 0.55rem;
+      padding: calc(0.55rem + var(--safe-top)) 0.85rem 0.55rem;
+      border-bottom: 1px solid var(--line);
+      background: rgba(4, 14, 10, 0.92);
+      flex-shrink: 0;
     }
-    .light[data-state="busy"] {
-      background: var(--warn);
-      animation: blink 1.1s ease-in-out infinite;
+    .stage__bar h2 {
+      margin: 0; flex: 1; font-family: var(--display); font-size: 1.05rem; font-weight: 800;
     }
-    @keyframes blink {
-      0%, 100% { opacity: 0.55; }
-      50% { opacity: 1; }
+    .stage__back, .stage__action {
+      appearance: none; border: 1px solid var(--line); background: transparent;
+      color: var(--accent-hi); border-radius: 10px; padding: 0.4rem 0.65rem;
+      font-weight: 700; font-size: 0.8rem; cursor: pointer;
     }
-    .status h2 {
-      margin: 0;
-      font-family: var(--display);
-      font-size: 1.2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+    .stage__body {
+      flex: 1; min-height: 0; overflow: auto;
+      padding: 0.85rem 0.9rem calc(1rem + var(--safe-bot));
     }
-    .status p { margin: 0.25rem 0 0; color: var(--soft); font-size: 0.86rem; }
-    .status .asof {
-      margin-top: 0.3rem;
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--muted);
+    .hint {
+      margin: 0 0 0.75rem; font-size: 0.8rem; color: var(--muted); line-height: 1.4;
     }
 
-    .verdict {
-      margin-bottom: 0.95rem;
-      padding: 0.85rem 1rem;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: var(--panel);
+    .chat-log, .dm-log {
+      white-space: pre-wrap; font-size: 0.9rem; line-height: 1.4;
+      min-height: 10rem; max-height: 42vh; overflow: auto;
+      padding: 0.7rem; border-radius: 12px; border: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.28); margin-bottom: 0.75rem;
     }
-    .verdict[data-match="true"] { border-color: rgba(52, 211, 153, 0.45); }
-    .verdict[data-match="false"] { border-color: rgba(248, 113, 113, 0.45); background: rgba(248, 113, 113, 0.06); }
-    .verdict .kicker {
-      margin: 0 0 0.25rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--muted);
+    label.field {
+      display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--accent); font-weight: 700; margin: 0.45rem 0 0.25rem;
     }
-    .verdict h3 {
-      margin: 0;
-      font-family: var(--display);
-      font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      text-transform: none;
-      color: var(--ink);
+    input, select, textarea {
+      width: 100%; border-radius: 10px; border: 1px solid var(--line);
+      background: #050a08; color: var(--ink); padding: 0.55rem 0.65rem; font: inherit;
     }
-    .verdict p {
-      margin: 0.35rem 0 0;
-      font-size: 0.8rem;
-      color: var(--soft);
-      line-height: 1.4;
+    textarea { min-height: 4.5rem; resize: vertical; }
+    .primary {
+      margin-top: 0.65rem; width: 100%;
+      border: 0; border-radius: 12px; padding: 0.7rem 1rem;
+      font-weight: 700; cursor: pointer;
+      background: linear-gradient(90deg, #059669, #34d399); color: #042f1e;
     }
-    .verdict .sim {
-      margin-top: 0.35rem;
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
+    .primary:disabled { opacity: 0.55; cursor: wait; }
+    .flash { margin-top: 0.5rem; font-size: 0.85rem; }
+    .flash.ok { color: var(--accent); }
+    .flash.err { color: var(--danger); }
 
-    h3.section {
-      margin: 0 0 0.5rem;
-      font-family: var(--display);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ok-hi);
+    .peer-list, .file-list, .photo-grid { list-style: none; margin: 0; padding: 0; }
+    .peer-list li, .file-list li {
+      display: flex; align-items: center; gap: 0.65rem;
+      padding: 0.7rem 0.15rem; border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .tele {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      background: var(--panel);
+    .peer-list button, .file-list button {
+      appearance: none; border: 0; background: transparent; color: inherit;
+      text-align: left; width: 100%; cursor: pointer; padding: 0;
     }
-    .row {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.7rem;
-      padding: 0.7rem 0.85rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    .peer-list strong, .file-list strong { display: block; font-size: 0.92rem; }
+    .peer-list span, .file-list span { font-size: 0.75rem; color: var(--muted); }
+
+    .photo-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem;
     }
-    .row:last-child { border-bottom: 0; }
-    .row[data-align="true"] { border-left: 3px solid var(--ok); }
-    .row[data-align="false"] { border-left: 3px solid var(--bad); background: rgba(248, 113, 113, 0.05); }
-    .chip {
-      font-family: var(--mono);
-      font-size: 0.66rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 0.26rem 0.4rem;
-      border-radius: 6px;
-      height: fit-content;
+    .photo-card {
+      appearance: none; border: 1px solid var(--line); border-radius: 14px;
+      background: rgba(0,0,0,0.25); padding: 0; overflow: hidden; cursor: pointer; color: inherit;
+      text-align: left;
     }
-    .chip.ok { color: #042f1e; background: var(--ok); }
-    .chip.bad { color: #450a0a; background: var(--bad); }
-    .meta strong { display: block; font-size: 0.86rem; margin-bottom: 0.15rem; }
-    .meta .obs, .meta .sim-expect {
-      margin: 0;
-      font-size: 0.78rem;
-      color: var(--soft);
-      line-height: 1.35;
+    .photo-card canvas, .photo-card video, .photo-card img {
+      display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: #03100c;
     }
-    .meta .sim-expect {
-      margin-top: 0.3rem;
-      font-size: 0.7rem;
-      color: var(--muted);
-      font-family: var(--mono);
-      line-height: 1.3;
+    .photo-card figcaption {
+      padding: 0.45rem 0.55rem 0.55rem; font-size: 0.72rem; color: var(--soft);
     }
-    .meta .tag {
-      display: inline-block;
-      margin-right: 0.3rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ok-hi);
-      font-weight: 700;
+    .viewer {
+      display: none; margin-top: 0.75rem; border: 1px solid var(--line); border-radius: 14px;
+      overflow: hidden; background: #020806;
     }
-    .meta .tag.ext { color: #93c5fd; }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.95rem;
+    .viewer.on { display: block; }
+    .viewer canvas, .viewer video, .viewer img { width: 100%; display: block; max-height: 55vh; object-fit: contain; }
+    .viewer p { margin: 0; padding: 0.55rem 0.7rem; font-size: 0.78rem; color: var(--muted); }
+
+    .doc-editor { display: none; }
+    .doc-editor.on { display: block; }
+    .doc-editor textarea { min-height: 12rem; }
+
+    .metrics {
+      display: grid; gap: 0.45rem; margin: 0.5rem 0 0.85rem;
     }
-    .actions button, .actions a {
-      font: inherit;
-      font-weight: 700;
-      font-size: 0.82rem;
-      border-radius: 10px;
-      padding: 0.5rem 0.8rem;
-      border: 1px solid var(--line);
-      background: rgba(52, 211, 153, 0.12);
-      color: var(--ok-hi);
-      text-decoration: none;
-      cursor: pointer;
+    .metrics div {
+      display: flex; justify-content: space-between; gap: 0.5rem;
+      font-size: 0.82rem; padding: 0.45rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .actions button:disabled { opacity: 0.5; }
-    .actions button.primary {
-      background: linear-gradient(180deg, #4ade80, #15803d);
-      color: #052e16;
-      border-color: transparent;
+    .metrics span { color: var(--muted); }
+    .metrics strong { color: var(--accent-hi); font-weight: 700; }
+
+    .toast {
+      position: fixed; left: 50%; bottom: calc(5.5rem + var(--safe-bot));
+      transform: translateX(-50%) translateY(12px);
+      z-index: 40; background: rgba(4, 20, 14, 0.92); border: 1px solid var(--line);
+      color: var(--ink); padding: 0.5rem 0.9rem; border-radius: 12px; font-size: 0.78rem;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.35s var(--spring);
+      max-width: min(90vw, 360px); text-align: center;
     }
-    .err { margin: 0.65rem 0 0; color: var(--bad); font-size: 0.85rem; }
-    .sandbox-state {
-      margin-top: 1.15rem;
-      padding: 1rem 1.05rem;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: var(--panel);
+    .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    @media (min-width: 720px) {
+      .shell { max-width: 520px; }
+      .apps { gap: 1rem 0.75rem; }
     }
-    .sandbox-state[data-in="true"] {
-      border-color: rgba(52, 211, 153, 0.5);
-      box-shadow: 0 0 24px rgba(52, 211, 153, 0.12);
-    }
-    .sandbox-state[data-in="false"] {
-      border-color: rgba(248, 113, 113, 0.45);
-      background: rgba(248, 113, 113, 0.06);
-    }
-    .sandbox-state .kicker {
-      margin: 0 0 0.3rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--muted);
-    }
-    .sandbox-state h3 {
-      margin: 0;
-      font-family: var(--display);
-      font-size: 1.05rem;
-      font-weight: 800;
-      text-transform: none;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-    }
-    .sandbox-state p {
-      margin: 0.4rem 0 0;
-      font-size: 0.8rem;
-      color: var(--soft);
-      line-height: 1.4;
-    }
-    .sandbox-state .rule {
-      margin-top: 0.4rem;
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--muted);
-      line-height: 1.35;
-    }
-    .foot { margin-top: 1rem; font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav class="nav" aria-label="Site">
-      <a href="/synthio">Chat</a>
-      <a href="/synthio-dashboard">Dashboard</a>
-      <a href="/synthio-one-pager">One-pager</a>
-      <a href="/my-whiteboard">Whiteboard</a>
-    </nav>
+  <div class="wallpaper" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status"></div>
 
-    <header class="brand">
-      <p class="kicker">Cloud Services · Syntheverse Sandbox</p>
-      <h1>Synthio</h1>
-      <p>
-        Compare observed external data to the KomaMRI sandbox simulation expectations,
-        then read whether those alignments place external filings <strong>within Syntheverse Sandbox</strong>.
-      </p>
+  <div class="shell" id="homeShell">
+    <header class="statusbar" aria-label="Status">
+      <span id="clock">Synthio</span>
+      <span id="live" data-state="idle">sandbox idle</span>
     </header>
 
-    <section class="status" aria-live="polite">
-      <div class="light" id="light" data-state="busy" aria-hidden="true"></div>
-      <div>
-        <h2 id="title">Synthio</h2>
-        <p id="summary">Checking activation…</p>
-        <p class="asof" id="asOf"></p>
+    <header class="brand">
+      <p class="kicker">Cloud Services · MRI interference sandbox</p>
+      <h1>Synthio</h1>
+      <p>Home for interference-phase computing — chat, messages, files, and media inside Syntheverse Sandbox.</p>
+    </header>
+
+    <main class="home">
+      <div class="live-tile">
+        <button type="button" class="tile" id="tileSession" aria-label="Open MRI session">
+          <p class="tile__label">MRI sandbox session</p>
+          <p class="tile__value" id="tileState">Warming…</p>
+          <p class="tile__meta" id="tileMeta">KomaMRI wrap · Φ_EGS phase-lock · not clinical RF</p>
+        </button>
+        <div class="tile tile--viz" aria-hidden="true">
+          <div class="tile__viz">
+            <div class="node"></div><div class="node"></div>
+            <div class="node"></div><div class="node"></div>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section class="verdict" id="verdict" data-match="false" aria-live="polite">
-      <p class="kicker">External vs MRI simulation</p>
-      <h3 id="verdictTitle">Checking match…</h3>
-      <p id="verdictSummary"></p>
-      <p class="sim" id="verdictSim"></p>
-    </section>
+      <ul class="apps" aria-label="Synthio Cloud apps">
+        <li>
+          <button type="button" class="app" data-app="chat">
+            <span class="app__icon app__icon--chat">AI</span>
+            <span class="app__name">Chat</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="app" data-app="messages">
+            <span class="app__icon app__icon--dm">DM</span>
+            <span class="app__name">Messages</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="app" data-app="files">
+            <span class="app__icon app__icon--files">Fs</span>
+            <span class="app__name">Files</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="app" data-app="photos">
+            <span class="app__icon app__icon--photos">Ph</span>
+            <span class="app__name">Photos</span>
+          </button>
+        </li>
+      </ul>
+    </main>
 
-    <section class="verdict" id="pulseVerdict" data-match="false" aria-live="polite">
-      <p class="kicker">Pulse ↔ observed external telemetry</p>
-      <h3 id="pulseVerdictTitle">Checking pulse…</h3>
-      <p id="pulseVerdictSummary"></p>
-      <p class="sim" id="pulseVerdictSim"></p>
-    </section>
-
-    <h3 class="section">Slot comparison</h3>
-    <div class="tele" id="tele" role="list"></div>
-    <p class="err" id="err" hidden></p>
-
-    <div class="actions">
-      <button type="button" class="primary" id="btnRefresh">Refresh</button>
-      <button type="button" id="btnActivate">Force pulse</button>
-      <a href="/synthio">Ask Synthio</a>
-      <a href="/synthio-dashboard">Full dashboard</a>
-    </div>
-
-    <section class="sandbox-state" id="sandboxState" data-in="false" aria-live="polite">
-      <p class="kicker">Bottom state · Syntheverse Sandbox</p>
-      <h3 id="sandboxTitle">Checking inclusion…</h3>
-      <p id="sandboxSummary"></p>
-      <p class="rule" id="sandboxRule"></p>
-    </section>
-
-    <p class="foot">
-      Green = active + coherent. Match panel = external vs KomaMRI sim. Bottom = sandbox inclusion.
-      Not clinical RF. → ∞¹³
-    </p>
+    <nav class="dock" aria-label="Dock">
+      <button type="button" class="app" data-app="chat"><span class="app__icon app__icon--chat">AI</span><span class="app__name">Chat</span></button>
+      <button type="button" class="app" data-app="messages"><span class="app__icon app__icon--dm">DM</span><span class="app__name">Messages</span></button>
+      <button type="button" class="app" data-app="files"><span class="app__icon app__icon--files">Fs</span><span class="app__name">Files</span></button>
+      <button type="button" class="app" data-app="photos"><span class="app__icon app__icon--photos">Ph</span><span class="app__name">Photos</span></button>
+    </nav>
   </div>
+
+  <!-- Session -->
+  <section class="stage" id="stage-session" data-open="false" hidden aria-label="MRI session">
+    <div class="stage__bar">
+      <button type="button" class="stage__back" data-close>‹ Home</button>
+      <h2>MRI session</h2>
+      <button type="button" class="stage__action" id="btnPulse">Pulse</button>
+    </div>
+    <div class="stage__body">
+      <p class="hint">Sandbox inclusion metrics for interference-phase computing. Catalog receipts — not clinical imaging.</p>
+      <div class="metrics" id="sessionMetrics"></div>
+      <button type="button" class="primary" id="btnRefreshSession">Refresh activation</button>
+      <p class="flash" id="sessionFlash"></p>
+    </div>
+  </section>
+
+  <!-- AI Chat -->
+  <section class="stage" id="stage-chat" data-open="false" hidden aria-label="AI Chat">
+    <div class="stage__bar">
+      <button type="button" class="stage__back" data-close>‹ Home</button>
+      <h2>AI Chat</h2>
+      <a class="stage__action" href="/synthio">Full</a>
+    </div>
+    <div class="stage__body">
+      <p class="hint">Synthio valet · reuses your Lattice Cursor/Claude/Gemini key · MRI sandbox honesty on.</p>
+      <div class="chat-log" id="chatLog" aria-live="polite"></div>
+      <label class="field" for="chatMsg">Ask Synthio</label>
+      <textarea id="chatMsg" placeholder="Ask about interference-phase MRI compute, KomaMRI wrap, honesty bounds…"></textarea>
+      <button type="button" class="primary" id="btnChatSend">Send</button>
+      <p class="flash" id="chatFlash"></p>
+    </div>
+  </section>
+
+  <!-- Messages -->
+  <section class="stage" id="stage-messages" data-open="false" hidden aria-label="Messages">
+    <div class="stage__bar">
+      <button type="button" class="stage__back" data-close>‹ Home</button>
+      <h2>Messages</h2>
+      <a class="stage__action" href="/collaborate">Collaborate</a>
+    </div>
+    <div class="stage__body">
+      <p class="hint">Direct messages on the Lattice Collaborate pipe — seats Valet Pru ↔ Daniel, framed in Synthio Cloud.</p>
+      <ul class="peer-list" id="peerList"></ul>
+      <div id="dmThread" hidden>
+        <div class="dm-log" id="dmLog"></div>
+        <label class="field" for="dmMsg">Message</label>
+        <input id="dmMsg" type="text" placeholder="Say something…" enterkeyhint="send" />
+        <button type="button" class="primary" id="btnDmSend">Send</button>
+      </div>
+      <p class="flash" id="dmFlash"></p>
+    </div>
+  </section>
+
+  <!-- Files -->
+  <section class="stage" id="stage-files" data-open="false" hidden aria-label="Files">
+    <div class="stage__bar">
+      <button type="button" class="stage__back" data-close>‹ Home</button>
+      <h2>Files</h2>
+      <button type="button" class="stage__action" id="btnNewDoc">New</button>
+    </div>
+    <div class="stage__body">
+      <p class="hint">Sandbox filing cabinet — phase notes on this device plus published MRI / Synthio papers.</p>
+      <ul class="file-list" id="fileList"></ul>
+      <div class="doc-editor" id="docEditor">
+        <label class="field" for="docTitle">Title</label>
+        <input id="docTitle" type="text" placeholder="Phase note title" />
+        <label class="field" for="docBody">Document</label>
+        <textarea id="docBody" placeholder="Write a sandbox note about interference-phase computing…"></textarea>
+        <button type="button" class="primary" id="btnSaveDoc">Save to sandbox Files</button>
+      </div>
+      <p class="flash" id="filesFlash"></p>
+    </div>
+  </section>
+
+  <!-- Photos -->
+  <section class="stage" id="stage-photos" data-open="false" hidden aria-label="Photos">
+    <div class="stage__bar">
+      <button type="button" class="stage__back" data-close>‹ Home</button>
+      <h2>Photos</h2>
+      <button type="button" class="stage__action" id="btnRegenFrames">Regen</button>
+    </div>
+    <div class="stage__body">
+      <p class="hint">MRI simulator frames — interference / phase-field visuals generated in the sandbox (not scanner photos).</p>
+      <ul class="photo-grid" id="photoGrid"></ul>
+      <div class="viewer" id="photoViewer">
+        <canvas id="viewerCanvas" width="720" height="720" aria-label="Phase frame viewer"></canvas>
+        <p id="viewerCaption"></p>
+      </div>
+    </div>
+  </section>
 
   <script>
     (function () {
-      var light = document.getElementById('light');
-      var title = document.getElementById('title');
-      var summary = document.getElementById('summary');
-      var asOf = document.getElementById('asOf');
-      var tele = document.getElementById('tele');
-      var err = document.getElementById('err');
-      var verdict = document.getElementById('verdict');
-      var verdictTitle = document.getElementById('verdictTitle');
-      var verdictSummary = document.getElementById('verdictSummary');
-      var verdictSim = document.getElementById('verdictSim');
-      var pulseVerdict = document.getElementById('pulseVerdict');
-      var pulseVerdictTitle = document.getElementById('pulseVerdictTitle');
-      var pulseVerdictSummary = document.getElementById('pulseVerdictSummary');
-      var pulseVerdictSim = document.getElementById('pulseVerdictSim');
-      var sandboxState = document.getElementById('sandboxState');
-      var sandboxTitle = document.getElementById('sandboxTitle');
-      var sandboxSummary = document.getElementById('sandboxSummary');
-      var sandboxRule = document.getElementById('sandboxRule');
-      var btnRefresh = document.getElementById('btnRefresh');
-      var btnActivate = document.getElementById('btnActivate');
-      var inflight = null;
-      var gen = 0;
+      var LS_DOCS = 'synthio.cloud.files.v1';
+      var LS_EMAIL = 'synthio.email';
+      var LS_KEY = 'synthio.key.';
+      var LS_PROV = 'synthio.provider';
+      var LATTICE_STORE = 'lattice-v1618-edge';
+      var LATTICE_KEYS = {
+        cursor: 'user_cursor_api_key',
+        claude: 'user_anthropic_api_key',
+        gemini: 'user_gemini_api_key',
+      };
+      var LATTICE_PROVIDER = 'lattice_active_provider';
+      var PEERS = [
+        { id: 'peer_valet_pru', name: 'Valet Pru' },
+        { id: 'peer_daniel', name: 'Daniel' },
+      ];
 
-      function esc(s) {
-        return String(s == null ? '' : s).replace(/</g, '&lt;');
+      var live = document.getElementById('live');
+      var clock = document.getElementById('clock');
+      var tileState = document.getElementById('tileState');
+      var tileMeta = document.getElementById('tileMeta');
+      var toastEl = document.getElementById('toast');
+      var chatHistory = [];
+      var activePeer = null;
+      var myPeerId = null;
+      var dmItems = [];
+      var editingDocId = null;
+      var activationPack = null;
+
+      function ls(k) { try { return String(localStorage.getItem(k) || '').trim(); } catch (e) { return ''; } }
+      function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+      function toast(msg) {
+        toastEl.textContent = msg;
+        toastEl.classList.add('on');
+        clearTimeout(toast._t);
+        toast._t = setTimeout(function () { toastEl.classList.remove('on'); }, 2600);
+      }
+      function flash(el, msg, ok) {
+        el.textContent = msg || '';
+        el.className = 'flash ' + (ok ? 'ok' : 'err');
       }
 
-      function setBusy(b) {
-        btnRefresh.disabled = b;
-        btnActivate.disabled = b;
-        if (b) light.dataset.state = 'busy';
+      function readLatticeEmail() {
+        try {
+          var raw = localStorage.getItem(LATTICE_STORE);
+          if (!raw) return ls(LS_EMAIL);
+          var parsed = JSON.parse(raw);
+          var state = parsed && parsed.state ? parsed.state : parsed;
+          return String((state && state.userEmail) || ls(LS_EMAIL) || '').trim().toLowerCase();
+        } catch (e) { return ls(LS_EMAIL); }
       }
 
-      function showError(msg) {
-        setBusy(false);
-        light.dataset.state = 'bad';
-        title.textContent = 'Synthio';
-        summary.textContent = msg;
-        err.hidden = false;
-        err.textContent = msg;
-        tele.innerHTML = '';
-        verdict.dataset.match = 'false';
-        verdictTitle.textContent = 'MATCH unknown';
-        verdictSummary.textContent = msg;
-        verdictSim.textContent = '';
-        pulseVerdict.dataset.match = 'false';
-        pulseVerdictTitle.textContent = 'Pulse compare unknown';
-        pulseVerdictSummary.textContent = msg;
-        pulseVerdictSim.textContent = '';
-        sandboxState.dataset.in = 'false';
-        sandboxTitle.textContent = 'OUTSIDE OR UNCONFIRMED';
-        sandboxSummary.textContent = 'Activation pack unavailable.';
-        sandboxRule.textContent = '';
+      function captureKeys() {
+        Object.keys(LATTICE_KEYS).forEach(function (p) {
+          var v = ls(LATTICE_KEYS[p]);
+          if (v.length >= 8) lsSet(LS_KEY + p, v);
+        });
       }
 
-      function render(data) {
-        setBusy(false);
-        err.hidden = true;
-        var m = data.metrics || {};
-        var match = data.mriSimMatch || (data.external && data.external.mriSimMatch) || {};
-        var membership = data.sandboxMembership || (data.external && data.external.sandboxMembership) || {};
-        var active = m.activeInSandbox === true;
-        var coherent = m.coherent === true;
-        var matches = match.matches === true || m.externalMatchesMriSim === true;
-        var within = membership.withinSandbox === true || m.withinSyntheverseSandbox === true;
-        var green = data.ok && active && coherent;
-        light.dataset.state = green ? 'ok' : 'bad';
-        title.textContent = green ? 'ACTIVE · COHERENT' : (active ? 'ACTIVE · INCOHERENT' : 'INACTIVE');
-        summary.textContent =
-          (m.activationState || 'UNKNOWN') +
-          ' · coherence ' + String(m.coherenceScore ?? '—') +
-          ' · MRI sim ' + (matches ? 'MATCH' : 'MISS') +
-          ' · ' + String(m.externalAligned || match.alignedCount || 0) + '/' +
-          String(m.externalExpected || match.expectedCount || 6);
-        asOf.textContent = data.asOf ? 'asOf ' + data.asOf : '';
-
-        verdict.dataset.match = matches ? 'true' : 'false';
-        verdictTitle.textContent = matches
-          ? 'MATCH · external ↔ MRI simulation'
-          : 'MISS · external ↔ MRI simulation';
-        verdictSummary.textContent = match.summary ||
-          (matches
-            ? 'Observed external data matches KomaMRI sandbox simulation expectations.'
-            : 'Observed external data does not match KomaMRI sandbox simulation expectations.');
-        var simName = (data.mriSimulator && data.mriSimulator.primary) || match.simulator || 'KomaMRI';
-        verdictSim.textContent =
-          'Simulator · ' + simName +
-          (data.mriSimulator && data.mriSimulator.primaryClass ? ' · ' + data.mriSimulator.primaryClass : '');
-
-        var pc = data.pulseCompare || (data.pulse && data.pulse.compare) || {};
-        var po = data.pulseObservation || (data.pulse && data.pulse.observation) || {};
-        var pulseMatch = pc.matches === true || m.pulseExternalMatch === true;
-        pulseVerdict.dataset.match = pulseMatch ? 'true' : 'false';
-        pulseVerdictTitle.textContent = pulseMatch
-          ? 'MATCH · pulse in external telemetry'
-          : 'MISS · pulse vs external telemetry';
-        pulseVerdictSummary.textContent = pc.summary ||
-          (pulseMatch
-            ? 'Emitted pulse fingerprint matches observed public external telemetry.'
-            : 'Emitted pulse fingerprint does not match observed external telemetry.');
-        pulseVerdictSim.textContent =
-          'Channel · ' + ((data.links && data.links.externalTelemetryApi) || '/api/synthio-external-telemetry') +
-          ' · observe ' + (po.source || m.pulseObserveSource || '—') +
-          ' · companions ' + String(po.companionsReachableCount ?? m.companionsReachable ?? '—') +
-          '/' + String(po.companionsExpected ?? 2);
-
-        var rows = (data.external && data.external.rows) || [];
-        tele.innerHTML = rows.map(function (r) {
-          var aligned = r.aligned === true;
-          var simExpect = String(r.mriSimExpect || r.expect || '');
-          return (
-            '<div class="row" data-align="' + aligned + '" role="listitem">' +
-              '<span class="chip ' + (aligned ? 'ok' : 'bad') + '">' + (aligned ? 'MATCH' : 'MISS') + '</span>' +
-              '<div class="meta">' +
-                '<strong>' + esc(r.label || r.id) + '</strong>' +
-                '<p class="obs"><span class="tag ext">External</span>' + esc(r.observed || '—') + '</p>' +
-                (simExpect
-                  ? '<p class="sim-expect"><span class="tag">MRI sim</span>' + esc(simExpect) + '</p>'
-                  : '') +
-              '</div>' +
-            '</div>'
-          );
-        }).join('') || '<div class="row"><span class="chip bad">none</span><div class="meta"><strong>No comparison</strong></div></div>';
-
-        sandboxState.dataset.in = within ? 'true' : 'false';
-        sandboxTitle.textContent = within
-          ? 'WITHIN SYNTHEVERSE SANDBOX'
-          : (membership.state || 'OUTSIDE_OR_UNCONFIRMED').replace(/_/g, ' ');
-        sandboxSummary.textContent = membership.summary ||
-          (within
-            ? 'External alignments confirm inclusion within Syntheverse Sandbox.'
-            : 'External alignments do not confirm Syntheverse Sandbox inclusion.');
-        sandboxRule.textContent = membership.rule || (data.external && data.external.rule) ||
-          'All six external↔MRI-sim matches + ACTIVE_IN_SANDBOX + coherent ⇒ within sandbox.';
+      function pickProvider() {
+        captureKeys();
+        var preferred = ls(LS_PROV);
+        if (preferred && ls(LS_KEY + preferred)) return preferred;
+        var latticeProv = ls(LATTICE_PROVIDER).toLowerCase();
+        if (latticeProv && ls(LS_KEY + latticeProv)) return latticeProv;
+        if (ls(LS_KEY + 'cursor')) return 'cursor';
+        if (ls(LS_KEY + 'claude')) return 'claude';
+        if (ls(LS_KEY + 'gemini')) return 'gemini';
+        return 'cursor';
       }
 
-      async function load(force) {
-        if (inflight) { try { inflight.abort(); } catch (e) {} }
-        var ac = new AbortController();
-        inflight = ac;
-        var my = ++gen;
-        var timer = window.setTimeout(function () { ac.abort(); }, 28000);
-        setBusy(true);
-        summary.textContent = 'Checking activation…';
+      function openStage(id) {
+        document.querySelectorAll('.stage').forEach(function (s) {
+          s.dataset.open = 'false';
+          s.hidden = true;
+        });
+        var stage = document.getElementById('stage-' + id);
+        if (!stage) return;
+        stage.hidden = false;
+        requestAnimationFrame(function () { stage.dataset.open = 'true'; });
+        if (id === 'chat') prepChat();
+        if (id === 'messages') loadMessages();
+        if (id === 'files') renderFiles();
+        if (id === 'photos') renderPhotos();
+        if (id === 'session') renderSession();
+      }
+
+      function closeStages() {
+        document.querySelectorAll('.stage').forEach(function (s) {
+          s.dataset.open = 'false';
+          setTimeout(function () { if (s.dataset.open !== 'true') s.hidden = true; }, 380);
+        });
+      }
+
+      document.querySelectorAll('[data-app]').forEach(function (btn) {
+        btn.addEventListener('click', function () { openStage(btn.getAttribute('data-app')); });
+      });
+      document.querySelectorAll('[data-close]').forEach(function (btn) {
+        btn.addEventListener('click', closeStages);
+      });
+      document.getElementById('tileSession').addEventListener('click', function () { openStage('session'); });
+
+      function tickClock() {
+        var d = new Date();
+        clock.textContent = d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      }
+      tickClock();
+      setInterval(tickClock, 30000);
+
+      async function loadActivation(force) {
+        live.dataset.state = 'sync';
+        live.textContent = 'syncing…';
         try {
           var q = force ? '?activate=1&forcePulse=1' : '?activate=1';
-          var res = await fetch('/api/synthio-activation' + q, { cache: 'no-store', signal: ac.signal });
+          var res = await fetch('/api/synthio-activation' + q, { cache: 'no-store' });
           var data = await res.json();
           if (!res.ok || !data.ok) throw new Error(data.message || 'activation failed');
-          if (my !== gen) return;
-          render(data);
+          activationPack = data;
+          var m = data.metrics || {};
+          var green = m.activeInSandbox && m.coherent;
+          var match = m.externalMatchesMriSim === true;
+          var within = m.withinSyntheverseSandbox === true;
+          live.dataset.state = green ? 'live' : 'error';
+          live.textContent = green ? 'session live' : 'session blocked';
+          tileState.textContent = green
+            ? (within ? 'ACTIVE · IN SANDBOX' : 'ACTIVE · COHERENT')
+            : (m.activeInSandbox ? 'ACTIVE · INCOHERENT' : 'INACTIVE');
+          tileMeta.textContent =
+            'MRI sim ' + (match ? 'MATCH' : 'MISS') +
+            ' · pulse ' + (m.pulseExternalMatch ? 'MATCH' : (m.pulseOk ? 'ok' : '—')) +
+            ' · Φ_EGS phase-lock labels';
+          return data;
         } catch (e) {
-          if (e && e.name === 'AbortError') {
-            if (my === gen) showError('Timed out — tap Refresh.');
-            return;
-          }
-          if (my !== gen) return;
-          showError(e.message || String(e));
-        } finally {
-          window.clearTimeout(timer);
-          if (inflight === ac) inflight = null;
+          live.dataset.state = 'error';
+          live.textContent = 'session error';
+          tileState.textContent = 'Unavailable';
+          tileMeta.textContent = e.message || String(e);
+          throw e;
         }
       }
 
-      btnRefresh.addEventListener('click', function () { load(false); });
-      btnActivate.addEventListener('click', function () { load(true); });
-      load(false);
-      setInterval(function () { load(false); }, 161000);
+      function renderSession() {
+        var box = document.getElementById('sessionMetrics');
+        var m = (activationPack && activationPack.metrics) || {};
+        var rows = [
+          ['Activation', m.activationState || '—'],
+          ['Coherence', String(m.coherenceScore ?? '—') + ' / floor ' + String(m.coherenceFloor ?? 0.85)],
+          ['MRI sim match', m.mriSimMatchVerdict || (m.externalMatchesMriSim ? 'MATCH' : 'MISS')],
+          ['Pulse ↔ telemetry', m.pulseExternalVerdict || '—'],
+          ['Sandbox membership', m.sandboxMembershipState || '—'],
+          ['Aligned slots', String(m.externalAligned || 0) + '/' + String(m.externalExpected || 6)],
+        ];
+        box.innerHTML = rows.map(function (r) {
+          return '<div><span>' + r[0] + '</span><strong>' + r[1] + '</strong></div>';
+        }).join('');
+      }
+      document.getElementById('btnRefreshSession').addEventListener('click', function () {
+        loadActivation(false).then(function () {
+          renderSession();
+          flash(document.getElementById('sessionFlash'), 'Session refreshed.', true);
+        }).catch(function (e) {
+          flash(document.getElementById('sessionFlash'), e.message || String(e), false);
+        });
+      });
+      document.getElementById('btnPulse').addEventListener('click', function () {
+        loadActivation(true).then(function () {
+          renderSession();
+          toast('Syntheverse pulse forced');
+        }).catch(function (e) { toast(e.message || String(e)); });
+      });
+
+      /* -------- AI Chat -------- */
+      function prepChat() {
+        captureKeys();
+        var provider = pickProvider();
+        var key = ls(LS_KEY + provider);
+        var email = readLatticeEmail();
+        if (!email) flash(document.getElementById('chatFlash'), 'Sign into Lattice Chat once on this device.', false);
+        else if (!key) flash(document.getElementById('chatFlash'), 'Unlock Lattice with your Cursor key (enough for Synthio).', false);
+        else flash(document.getElementById('chatFlash'), 'Ready · ' + provider + ' key from Lattice.', true);
+      }
+      document.getElementById('btnChatSend').addEventListener('click', async function () {
+        var email = readLatticeEmail();
+        var provider = pickProvider();
+        var key = ls(LS_KEY + provider);
+        var message = (document.getElementById('chatMsg').value || '').trim();
+        var flashEl = document.getElementById('chatFlash');
+        var btn = document.getElementById('btnChatSend');
+        if (!message) return;
+        if (!email || !key) {
+          flash(flashEl, 'Need Lattice email + Cursor/Claude/Gemini key on this device.', false);
+          return;
+        }
+        var headers = {
+          'content-type': 'application/json',
+          'x-lattice-email': email,
+          'x-synthio-provider': provider,
+        };
+        if (provider === 'cursor') headers['x-cursor-api-key'] = key;
+        else if (provider === 'claude') headers['x-anthropic-api-key'] = key;
+        else if (provider === 'gemini') headers['x-gemini-api-key'] = key;
+        else headers['x-openrouter-api-key'] = key;
+
+        var log = document.getElementById('chatLog');
+        log.textContent += (log.textContent ? '\n\n' : '') + 'YOU\n' + message;
+        document.getElementById('chatMsg').value = '';
+        btn.disabled = true;
+        flash(flashEl, 'Synthio thinking…', true);
+        try {
+          var res = await fetch('/api/synthio-chat', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({ email: email, provider: provider, message: message, history: chatHistory }),
+          });
+          var data = await res.json();
+          if (!res.ok) throw new Error(data.error || 'chat failed');
+          chatHistory.push({ role: 'user', content: message });
+          chatHistory.push({ role: 'assistant', content: data.reply || '' });
+          log.textContent += '\n\nSYNTHIO\n' + (data.reply || '(empty)');
+          log.scrollTop = log.scrollHeight;
+          flash(flashEl, 'Ready · ' + (data.provider || provider), true);
+        } catch (e) {
+          flash(flashEl, e.message || String(e), false);
+          log.textContent += '\n\nSYNTHIO\n' + (e.message || 'error');
+        } finally {
+          btn.disabled = false;
+        }
+      });
+
+      /* -------- Messages -------- */
+      function otherPeers() {
+        return PEERS.filter(function (p) { return p.id !== myPeerId; });
+      }
+      function renderPeerList() {
+        var list = document.getElementById('peerList');
+        if (!myPeerId) {
+          list.innerHTML = '<li><strong>No Collaborate seat</strong><span>Sign into Lattice with a seat email (Valet Pru / Daniel).</span></li>';
+          return;
+        }
+        list.innerHTML = otherPeers().map(function (p) {
+          return '<li><button type="button" data-peer="' + p.id + '"><strong>' + p.name + '</strong><span>Open DM thread</span></button></li>';
+        }).join('');
+        list.querySelectorAll('[data-peer]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            activePeer = btn.getAttribute('data-peer');
+            document.getElementById('dmThread').hidden = false;
+            renderDmLog();
+          });
+        });
+      }
+      function renderDmLog() {
+        var log = document.getElementById('dmLog');
+        var peer = PEERS.find(function (p) { return p.id === activePeer; });
+        var thread = dmItems.filter(function (m) {
+          return m.threadPeerId === activePeer || m.fromPeerId === activePeer;
+        }).sort(function (a, b) { return String(a.createdAt).localeCompare(String(b.createdAt)); });
+        if (!thread.length) {
+          log.textContent = 'No messages yet with ' + (peer ? peer.name : 'peer') + '.';
+          return;
+        }
+        log.textContent = thread.map(function (m) {
+          var mine = m.fromPeerId === myPeerId;
+          var name = mine ? 'You' : ((PEERS.find(function (p) { return p.id === m.fromPeerId; }) || {}).name || 'Seat');
+          return name.toUpperCase() + '\n' + (m.text || m.body || '');
+        }).join('\n\n');
+        log.scrollTop = log.scrollHeight;
+      }
+      async function loadMessages() {
+        var email = readLatticeEmail();
+        var flashEl = document.getElementById('dmFlash');
+        if (!email) {
+          flash(flashEl, 'Sign into Lattice Chat to use Messages.', false);
+          return;
+        }
+        flash(flashEl, 'Loading DMs…', true);
+        try {
+          var res = await fetch('/api/lattice-collaborate-feed?dms=1', {
+            headers: { 'x-lattice-email': email },
+            cache: 'no-store',
+          });
+          var data = await res.json();
+          if (!res.ok || !data.ok) throw new Error(data.message || data.error || 'DM load failed');
+          myPeerId = data.myPeerId;
+          dmItems = data.dms || [];
+          renderPeerList();
+          if (activePeer) renderDmLog();
+          flash(flashEl, 'Messages ready · seat ' + myPeerId, true);
+        } catch (e) {
+          flash(flashEl, e.message || String(e), false);
+          renderPeerList();
+        }
+      }
+      document.getElementById('btnDmSend').addEventListener('click', async function () {
+        var email = readLatticeEmail();
+        var text = (document.getElementById('dmMsg').value || '').trim();
+        var flashEl = document.getElementById('dmFlash');
+        if (!activePeer || !text) return;
+        try {
+          var res = await fetch('/api/lattice-collaborate-feed?dms=1', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json', 'x-lattice-email': email },
+            body: JSON.stringify({ threadPeerId: activePeer, text: text }),
+          });
+          var data = await res.json();
+          if (!res.ok || !data.ok) throw new Error(data.message || data.error || 'send failed');
+          document.getElementById('dmMsg').value = '';
+          await loadMessages();
+          flash(flashEl, 'Sent.', true);
+        } catch (e) {
+          flash(flashEl, e.message || String(e), false);
+        }
+      });
+      document.getElementById('dmMsg').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          document.getElementById('btnDmSend').click();
+        }
+      });
+
+      /* -------- Files -------- */
+      function readDocs() {
+        try { return JSON.parse(ls(LS_DOCS) || '[]'); } catch (e) { return []; }
+      }
+      function writeDocs(docs) { lsSet(LS_DOCS, JSON.stringify(docs)); }
+      function renderFiles() {
+        var list = document.getElementById('fileList');
+        var docs = readDocs();
+        var html = docs.map(function (d) {
+          return '<li><button type="button" data-doc="' + d.id + '"><strong>' + escapeHtml(d.title) + '</strong><span>Sandbox note · ' + (d.updatedAt || '').slice(0, 10) + '</span></button></li>';
+        }).join('');
+        list.innerHTML = html || '<li><strong>No sandbox notes yet</strong><span>Tap New to create a phase note.</span></li>';
+        list.querySelectorAll('[data-doc]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var doc = docs.find(function (d) { return d.id === btn.getAttribute('data-doc'); });
+            if (!doc) return;
+            editingDocId = doc.id;
+            document.getElementById('docTitle').value = doc.title;
+            document.getElementById('docBody').value = doc.body;
+            document.getElementById('docEditor').classList.add('on');
+          });
+        });
+        // Append published papers (read-only links)
+        fetch('/api/whitepaper-catalog', { cache: 'no-store' })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            var papers = (data.papers || data.items || data.catalog || []).filter(function (p) {
+              var id = String(p.id || p.registryId || '');
+              return /synthio|komamri|mri/i.test(id + ' ' + (p.title || ''));
+            }).slice(0, 8);
+            if (!papers.length) return;
+            papers.forEach(function (p) {
+              var id = p.id || p.registryId;
+              var li = document.createElement('li');
+              li.innerHTML = '<a href="/interfaces/whitepaper-surface.html?id=' + encodeURIComponent(id) + '"><strong>' +
+                escapeHtml(p.title || id) + '</strong><span>Published paper · sandbox filing</span></a>';
+              list.appendChild(li);
+            });
+          })
+          .catch(function () { /* optional */ });
+      }
+      function escapeHtml(s) {
+        return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+      document.getElementById('btnNewDoc').addEventListener('click', function () {
+        editingDocId = null;
+        document.getElementById('docTitle').value = '';
+        document.getElementById('docBody').value = '';
+        document.getElementById('docEditor').classList.add('on');
+      });
+      document.getElementById('btnSaveDoc').addEventListener('click', function () {
+        var title = (document.getElementById('docTitle').value || '').trim() || 'Untitled phase note';
+        var body = (document.getElementById('docBody').value || '').trim();
+        var docs = readDocs();
+        var now = new Date().toISOString();
+        if (editingDocId) {
+          docs = docs.map(function (d) {
+            return d.id === editingDocId ? { id: d.id, title: title, body: body, updatedAt: now } : d;
+          });
+        } else {
+          docs.unshift({ id: 'doc_' + Date.now().toString(36), title: title, body: body, updatedAt: now });
+        }
+        writeDocs(docs);
+        document.getElementById('docEditor').classList.remove('on');
+        renderFiles();
+        flash(document.getElementById('filesFlash'), 'Saved in sandbox Files.', true);
+        toast('File saved');
+      });
+
+      /* -------- Photos (MRI interference frames) -------- */
+      var FRAMES = [
+        { id: 'gre_phase', title: 'GRE phase map', mode: 'phase' },
+        { id: 'epi_interference', title: 'EPI interference grid', mode: 'grid' },
+        { id: 'b0_ripple', title: 'B0 ripple proxy', mode: 'ripple' },
+        { id: 'antenna_lock', title: 'Cloud-antenna lock', mode: 'lock' },
+        { id: 'phi_egs_field', title: 'Φ_EGS field label', mode: 'phi' },
+        { id: 'kspace_echo', title: 'k-space echo proxy', mode: 'kspace' },
+      ];
+
+      function drawFrame(canvas, mode, seed) {
+        var ctx = canvas.getContext('2d');
+        var w = canvas.width;
+        var h = canvas.height;
+        var img = ctx.createImageData(w, h);
+        var t = seed || 1;
+        for (var y = 0; y < h; y++) {
+          for (var x = 0; x < w; x++) {
+            var nx = x / w - 0.5;
+            var ny = y / h - 0.5;
+            var r = Math.sqrt(nx * nx + ny * ny);
+            var ang = Math.atan2(ny, nx);
+            var v = 0;
+            if (mode === 'phase') v = 0.5 + 0.5 * Math.sin(18 * ang + 10 * r * t);
+            else if (mode === 'grid') v = 0.5 + 0.5 * Math.sin(40 * nx * t) * Math.sin(40 * ny);
+            else if (mode === 'ripple') v = 0.5 + 0.5 * Math.sin(55 * r - 4 * t);
+            else if (mode === 'lock') v = 0.5 + 0.5 * Math.cos(12 * nx + 12 * ny) * Math.sin(8 * r * t);
+            else if (mode === 'phi') v = 0.5 + 0.5 * Math.sin((1.618 * 28) * nx + 10 * ny * t);
+            else v = 0.5 + 0.5 * Math.sin(70 * nx) * Math.cos(70 * ny + t);
+            var g = Math.max(0, Math.min(255, Math.floor(40 + v * 200)));
+            var i = (y * w + x) * 4;
+            img.data[i] = Math.floor(g * 0.35);
+            img.data[i + 1] = g;
+            img.data[i + 2] = Math.floor(g * 0.72);
+            img.data[i + 3] = 255;
+          }
+        }
+        ctx.putImageData(img, 0, 0);
+      }
+
+      function renderPhotos() {
+        var grid = document.getElementById('photoGrid');
+        grid.innerHTML = '';
+        var seed = 1 + (Date.now() % 7) * 0.07;
+        FRAMES.forEach(function (f, idx) {
+          var li = document.createElement('li');
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'photo-card';
+          btn.setAttribute('data-frame', f.id);
+          var c = document.createElement('canvas');
+          c.width = 240; c.height = 240;
+          drawFrame(c, f.mode, seed + idx * 0.2);
+          var cap = document.createElement('figcaption');
+          cap.textContent = f.title;
+          btn.appendChild(c);
+          btn.appendChild(cap);
+          btn.addEventListener('click', function () {
+            var viewer = document.getElementById('photoViewer');
+            var big = document.getElementById('viewerCanvas');
+            drawFrame(big, f.mode, seed + idx * 0.2);
+            document.getElementById('viewerCaption').textContent =
+              f.title + ' · interference-phase simulator frame · Syntheverse Sandbox (not clinical MRI)';
+            viewer.classList.add('on');
+          });
+          li.appendChild(btn);
+          grid.appendChild(li);
+        });
+      }
+      document.getElementById('btnRegenFrames').addEventListener('click', function () {
+        document.getElementById('photoViewer').classList.remove('on');
+        renderPhotos();
+        toast('Phase frames regenerated');
+      });
+
+      loadActivation(false).catch(function () {});
+      setInterval(function () { loadActivation(false).catch(function () {}); }, 161000);
     })();
   </script>
 </body>

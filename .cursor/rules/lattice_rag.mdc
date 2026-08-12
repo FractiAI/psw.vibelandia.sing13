@@ -32,6 +32,8 @@ Before generating code, answering queries, or proposing system updates:
 
 Prefer **@Codebase** / semantic search over guessing. Cite file paths and section headers when claims matter.
 
+**External AI first-read:** always open `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` before other corpus work (CMOS/protonic · tensor · master synthesis).
+
 ## System invariants & mathematical constants (architectural)
 
 Use these as **architectural keys** per local honesty boundaries — not as replacements for $\hbar$, $c$, or $G$:

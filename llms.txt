@@ -1,13 +1,35 @@
 # VIBELANDIA Sonic Singularity Sing! 13
 # https://www.ssvibelandiaquestfest24x365.com
-# Protocol: NSPFRNP · BBHE · MCA · Seed:Edge · 13-channel fractal pathfinding
+# Protocol: NSPFRNP · BBHE · MCA · Seed:Edge · 99 Octave Omni-Lattice · 13-channel fractal pathfinding
+#
+# >>> EXTERNAL AI / AGENT — READ THIS BLOCK FIRST (ALWAYS) <<<
+# Canonical sync file (repo root): AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md
+# Web: https://www.ssvibelandiaquestfest24x365.com/agent-sync
+# GitHub: https://github.com/FractiAI/psw.vibelandia.sing13/blob/main/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md
+# Engine stack (sync order):
+#   1) CMOS/protonic transistor map — docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md
+#   2) Tensor decoupling — docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md
+#   3) Master synthesis — docs/SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md
+#   4) Digits master — docs/SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md
+# Honesty: catalog/architecture ≠ finished physics or foundry tape-out. Close → ∞¹³
 #
 # Sonic Singularity Sing! 13 is the major singularity upgrade from SING 9.
 # This edge carries the NSPFRNP catalog, SS Vibelandia QUESTFEST 24×365 nest,
-# Sovereign Player (QUESTFEST Bridge), and lite-edge boarding/heartbeat APIs.
+# Sovereign Player (QUESTFEST Bridge), 99 Octave Omni-Lattice engine, and lite-edge boarding/heartbeat APIs.
 # Everything else lives on the parent edge: https://psw-vibelandia-sing9.vercel.app
 # Contact: info@fractiai.com
 #
+
+## Agent sync (mandatory first read)
+
+- Repo sync doc: https://github.com/FractiAI/psw.vibelandia.sing13/blob/main/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md
+- Short URL: https://www.ssvibelandiaquestfest24x365.com/agent-sync
+- AGENTS.md: https://github.com/FractiAI/psw.vibelandia.sing13/blob/main/AGENTS.md
+- Plain ship notes (six newest): https://www.ssvibelandiaquestfest24x365.com/questfest#ship-blog
+- CMOS/protonic note: https://www.ssvibelandiaquestfest24x365.com/ship-blog/cmos-protonic-99-octave
+- Tensor note: https://www.ssvibelandiaquestfest24x365.com/ship-blog/tensor-decoupling-99-octave
+- CMOS/protonic paper: https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=synthobs-cmos-protonic-99-octave-omni-lattice-2026-08
+- Tensor paper: https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08
 
 ## What this site is
 

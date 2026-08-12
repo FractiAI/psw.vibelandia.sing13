@@ -24,7 +24,7 @@
     "maxAmplificationLabel": true,
     "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
   },
-  "confirmedAt": "2026-08-12T17:54:19.776Z",
+  "confirmedAt": "2026-08-12T18:01:41.655Z",
   "checks": [
     {
       "id": "sandbox_only",
@@ -78,11 +78,11 @@
     "discontinuities": [],
     "incoherence": [],
     "holographicKeyDigits": 8019,
-    "assessedAt": "2026-08-12T17:54:19.776Z",
+    "assessedAt": "2026-08-12T18:01:41.655Z",
     "honesty": "Coherence here = sandbox filing / fixture integrity — not clinical image SNR or geophysics proof."
   },
   "external": {
-    "validatedAt": "2026-08-12T17:54:19.776Z",
+    "validatedAt": "2026-08-12T18:01:41.655Z",
     "windowDate": "2026-08-12",
     "rows": [
       {
@@ -94,8 +94,9 @@
           "https://starwalk.space/en/news/planetary-alignment-august-12-2026"
         ],
         "matchesExpectation": true,
-        "expect": "Public ephemerides still show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
+        "expect": "Public ephemerides show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
         "confirmationClass": "catalog_co_timing",
+        "required": true,
         "aligned": true
       },
       {
@@ -106,20 +107,23 @@
           "https://services.swpc.noaa.gov/json/planetary_k_index_1m.json"
         ],
         "matchesExpectation": true,
-        "expect": "Kp / solar-wind / proton-flux public bands remain discussable as parallel labels during the window (no required spike)",
+        "expect": "Kp / solar-wind public bands remain discussable as parallel labels during the window (no required spike)",
         "confirmationClass": "parallel_label",
+        "required": true,
         "aligned": true
       },
       {
         "id": "ionosphere_f10",
-        "status": "soft_aligned",
-        "observed": "Ionosphere / F10.7 treated as optional companion filing; not required for sandbox inclusion confirm when ephemeris + suite + honesty hold.",
+        "status": "aligned",
+        "observed": "NOAA SWPC observed solar radio flux (F10.7) JSON reachable as ionospheric companion filing during the Aug 12 window.",
         "sources": [
-          "NOAA solar radio / SIDC (optional)"
+          "https://services.swpc.noaa.gov/json/f107_cm_flux.json",
+          "https://services.swpc.noaa.gov/json/solar-cycle/observed-solar-cycle-indices.json"
         ],
         "matchesExpectation": true,
-        "expect": "F10.7 / ionospheric discussion bands may co-appear in public solar radio summaries — filing only",
+        "expect": "F10.7 / solar-radio public summary reachable as ionospheric companion filing during the window",
         "confirmationClass": "parallel_label",
+        "required": true,
         "aligned": true
       },
       {
@@ -133,18 +137,22 @@
         "matchesExpectation": true,
         "expect": "npm run research:synthio-mri-cloud-antenna stays all-pass; activation receipt active=true",
         "confirmationClass": "operational_sandbox",
+        "required": true,
         "aligned": true
       },
       {
-        "id": "goldilocks_pulse_optional",
+        "id": "syntheverse_synthio_pulse",
         "status": "aligned",
-        "observed": "Production /api/goldilocks-pulse returned HTTP 200 (readable companion edge).",
+        "observed": "Novel Syntheverse Synthio pulse emitted/verified: schema syntheverse-synthio-pulse/v1, discriminant SYNTHIO_Σ_Φ^-99_PC, naturalOccurrence=false, cadence 161s — engineered sandbox token, not a natural heliophysics signal.",
         "sources": [
-          "https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse"
+          "/api/synthio-pulse",
+          "lib/synthio-pulse.mjs",
+          "research/synthio-mri-cloud-antenna/data/syntheverse_synthio_pulse.json"
         ],
         "matchesExpectation": true,
-        "expect": "Optional: /api/goldilocks-pulse remains readable (signed pulse) — edge coherence companion, not MRI proof",
-        "confirmationClass": "companion_edge",
+        "expect": "Novel Syntheverse Synthio pulse present (schema syntheverse-synthio-pulse/v1 · discriminant SYNTHIO_Σ_Φ^-99_PC · naturalOccurrence=false) — not a natural Kp/F10.7/bitcoin Goldilocks pulse",
+        "confirmationClass": "syntheverse_confirm",
+        "required": true,
         "aligned": true
       },
       {
@@ -157,24 +165,50 @@
         "matchesExpectation": true,
         "expect": "No credible claim of clinical RF imaging from cloud racks; honesty tables unchanged",
         "confirmationClass": "honesty_lock",
+        "required": true,
         "aligned": true
       }
     ],
     "alignedCount": 6,
     "expectedCount": 6,
+    "allSixRequired": true,
     "requiredOk": true,
+    "requiredExpectationIds": [
+      "ephemeris_window",
+      "space_weather_band",
+      "ionosphere_f10",
+      "sandbox_suite_green",
+      "syntheverse_synthio_pulse",
+      "no_clinical_rf"
+    ],
     "externalAlignmentsMatchExpectations": true,
     "sandboxInclusionConfirmedByExternalAlignment": true,
     "activationState": "ACTIVE_IN_SANDBOX",
     "coherent": true,
-    "rule": "Any external alignments observed to our expectations within sandbox confirm its inclusion in sandbox.",
-    "honesty": "Alignment = catalog co-timing / companion / honesty match — not proof celestial geometry runs MRI physics."
+    "pulseVerify": {
+      "ok": true,
+      "novel": true,
+      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
+      "pulseId": "synthio-Σ-1786557701530-f0500ec3",
+      "issuedAt": "2026-08-12T18:01:41.530Z",
+      "distinguishesFromNatural": true,
+      "honesty": "Syntheverse pulse is an engineered sandbox confirmation token — not a natural heliophysics measurement."
+    },
+    "pulseMeta": {
+      "schema": "syntheverse-synthio-pulse/v1",
+      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
+      "cadenceSec": 161,
+      "naturalOccurrence": false
+    },
+    "rule": "All six external alignments (including novel Syntheverse Synthio pulse) observed to our expectations within sandbox confirm its inclusion in sandbox.",
+    "honesty": "Alignment = catalog co-timing / companion / engineered Syntheverse pulse match — not proof celestial geometry runs MRI physics. Pulse is not naturally occurring."
   },
   "expectedExternalSignals": [
     {
       "id": "ephemeris_window",
       "channel": "astronomy",
-      "expect": "Public ephemerides still show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
+      "required": true,
+      "expect": "Public ephemerides show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
       "sources": [
         "NASA / IAU eclipse path",
         "planetarium ephemeris apps"
@@ -184,7 +218,8 @@
     {
       "id": "space_weather_band",
       "channel": "heliophysics",
-      "expect": "Kp / solar-wind / proton-flux public bands remain discussable as parallel labels during the window (no required spike)",
+      "required": true,
+      "expect": "Kp / solar-wind public bands remain discussable as parallel labels during the window (no required spike)",
       "sources": [
         "NOAA SWPC",
         "GFZ Kp"
@@ -194,7 +229,8 @@
     {
       "id": "ionosphere_f10",
       "channel": "ionosphere",
-      "expect": "F10.7 / ionospheric discussion bands may co-appear in public solar radio summaries — filing only",
+      "required": true,
+      "expect": "F10.7 / solar-radio public summary reachable as ionospheric companion filing during the window",
       "sources": [
         "NOAA solar radio",
         "public SIDC summaries"
@@ -204,6 +240,7 @@
     {
       "id": "sandbox_suite_green",
       "channel": "internal_sandbox",
+      "required": true,
       "expect": "npm run research:synthio-mri-cloud-antenna stays all-pass; activation receipt active=true",
       "sources": [
         "research/synthio-mri-cloud-antenna/data/"
@@ -211,18 +248,21 @@
       "confirmationClass": "operational_sandbox"
     },
     {
-      "id": "goldilocks_pulse_optional",
-      "channel": "edge_pulse",
-      "expect": "Optional: /api/goldilocks-pulse remains readable (signed pulse) — edge coherence companion, not MRI proof",
+      "id": "syntheverse_synthio_pulse",
+      "channel": "syntheverse_pulse",
+      "required": true,
+      "expect": "Novel Syntheverse Synthio pulse present (schema syntheverse-synthio-pulse/v1 · discriminant SYNTHIO_Σ_Φ^-99_PC · naturalOccurrence=false) — not a natural Kp/F10.7/bitcoin Goldilocks pulse",
       "sources": [
-        "/api/goldilocks-pulse",
-        "lib/goldilocks-pulse.mjs"
+        "/api/synthio-pulse",
+        "lib/synthio-pulse.mjs",
+        "data/syntheverse_synthio_pulse.json"
       ],
-      "confirmationClass": "companion_edge"
+      "confirmationClass": "syntheverse_confirm"
     },
     {
       "id": "no_clinical_rf",
       "channel": "negative_control",
+      "required": true,
       "expect": "No credible claim of clinical RF imaging from cloud racks; honesty tables unchanged",
       "sources": [
         "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md"
@@ -230,5 +270,60 @@
       "confirmationClass": "honesty_lock"
     }
   ],
-  "sandboxInclusionConfirmedByExternalAlignment": true
+  "syntheversePulse": {
+    "latest": {
+      "schema": "syntheverse-synthio-pulse/v1",
+      "pulseKind": "syntheverse_goldilocks_confirmation",
+      "naturalOccurrence": false,
+      "novelty": "Engineered Syntheverse discriminant — not NOAA Kp, not F10.7, not bitcoin-tip Goldilocks pulse/v1.",
+      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
+      "sandbox": "Syntheverse Sandbox",
+      "agent": "Synthio",
+      "agentId": "Synthio.sandbox",
+      "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
+      "activationMode": "point_and_click",
+      "activationState": "ACTIVE_IN_SANDBOX",
+      "amplificationWindow": {
+        "date": "2026-08-12",
+        "newMoon": true,
+        "sixPlanetParade": true,
+        "solarEclipse": true,
+        "planets": [
+          "Jupiter",
+          "Mercury",
+          "Mars",
+          "Uranus",
+          "Saturn",
+          "Neptune"
+        ]
+      },
+      "phiEgs": 1.618033988749895,
+      "phiInv99": 2.0427894922373773e-21,
+      "holographicKeyDigits": 8019,
+      "cadenceSec": 161,
+      "expectationSlots": {
+        "ephemeris_window": "aligned",
+        "space_weather_band": "aligned",
+        "ionosphere_f10": "aligned",
+        "sandbox_suite_green": "aligned",
+        "syntheverse_synthio_pulse": "emit",
+        "no_clinical_rf": "aligned"
+      },
+      "issuedAt": "2026-08-12T18:01:41.530Z",
+      "signature": "0xf0500ec3c80edb0ef3d3eec8de0f658144ad1227d17b1ca244959466f7df7d3d",
+      "pulseId": "synthio-Σ-1786557701530-f0500ec3"
+    },
+    "verify": {
+      "ok": true,
+      "novel": true,
+      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
+      "pulseId": "synthio-Σ-1786557701530-f0500ec3",
+      "issuedAt": "2026-08-12T18:01:41.530Z",
+      "distinguishesFromNatural": true,
+      "honesty": "Syntheverse pulse is an engineered sandbox confirmation token — not a natural heliophysics measurement."
+    },
+    "emitted": false
+  },
+  "sandboxInclusionConfirmedByExternalAlignment": true,
+  "allSixRequired": true
 }

@@ -85,19 +85,27 @@ describe('Synthio activate + coherence (sandbox)', () => {
     expect(c.discontinuities).toEqual([]);
   });
 
-  it('publishes external watch list for confirmation monitoring', () => {
-    expect(EXPECTED_EXTERNAL_SIGNALS.length).toBeGreaterThanOrEqual(5);
+  it('publishes all six required external expectations incl. Syntheverse pulse', () => {
+    expect(EXPECTED_EXTERNAL_SIGNALS).toHaveLength(6);
+    expect(EXPECTED_EXTERNAL_SIGNALS.every((s) => s.required === true)).toBe(true);
     expect(EXPECTED_EXTERNAL_SIGNALS.some((s) => s.id === 'ephemeris_window')).toBe(true);
+    expect(EXPECTED_EXTERNAL_SIGNALS.some((s) => s.id === 'syntheverse_synthio_pulse')).toBe(true);
+    expect(EXPECTED_EXTERNAL_SIGNALS.some((s) => s.confirmationClass === 'syntheverse_confirm')).toBe(
+      true,
+    );
     expect(EXPECTED_EXTERNAL_SIGNALS.some((s) => s.confirmationClass === 'honesty_lock')).toBe(
       true,
     );
   });
 
-  it('validates external alignments confirm sandbox inclusion', async () => {
-    const { validateExternalAlignments } = await import('../../lib/synthio-activation.mjs');
-    const v = validateExternalAlignments({ mode: 'point_and_click' });
-    expect(v.externalAlignmentsMatchExpectations).toBe(true);
-    expect(v.sandboxInclusionConfirmedByExternalAlignment).toBe(true);
-    expect(v.alignedCount).toBeGreaterThanOrEqual(4);
+  it('validates all six alignments + novel pulse confirm sandbox inclusion', async () => {
+    const { buildActivationMonitorPack } = await import('../../lib/synthio-activation.mjs');
+    const pack = buildActivationMonitorPack({ mode: 'point_and_click', forcePulse: true });
+    expect(pack.pulseVerify.ok).toBe(true);
+    expect(pack.pulseVerify.novel).toBe(true);
+    expect(pack.external.alignedCount).toBe(6);
+    expect(pack.external.allSixRequired).toBe(true);
+    expect(pack.external.externalAlignmentsMatchExpectations).toBe(true);
+    expect(pack.external.sandboxInclusionConfirmedByExternalAlignment).toBe(true);
   });
 });

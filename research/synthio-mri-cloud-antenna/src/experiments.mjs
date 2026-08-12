@@ -188,35 +188,54 @@ export async function experimentActivateStateInSandbox() {
 }
 
 export async function experimentExternalWatchList() {
-  const { EXPECTED_EXTERNAL_SIGNALS } = await import('../../../lib/synthio-activation.mjs');
+  const { EXPECTED_EXTERNAL_SIGNALS, ALL_SIX_EXPECTATION_IDS } = await import(
+    '../../../lib/synthio-activation.mjs'
+  );
   const classes = new Set(EXPECTED_EXTERNAL_SIGNALS.map((s) => s.confirmationClass));
+  const ids = new Set(EXPECTED_EXTERNAL_SIGNALS.map((s) => s.id));
   return {
     id: 'E14_external_watch_list',
-    title: 'External confirmation watch list (≥5 signals, honesty classes present)',
+    title: 'All six external expectations required (incl. novel Syntheverse pulse)',
     n: EXPECTED_EXTERNAL_SIGNALS.length,
     classes: [...classes],
     pass:
-      EXPECTED_EXTERNAL_SIGNALS.length >= 5 &&
+      EXPECTED_EXTERNAL_SIGNALS.length === 6 &&
+      ALL_SIX_EXPECTATION_IDS.length === 6 &&
+      EXPECTED_EXTERNAL_SIGNALS.every((s) => s.required === true) &&
+      ids.has('syntheverse_synthio_pulse') &&
       classes.has('catalog_co_timing') &&
+      classes.has('syntheverse_confirm') &&
       classes.has('honesty_lock') &&
       classes.has('operational_sandbox'),
-    honesty: 'Watch list for monitoring — not causal sky→MRI proof.',
+    honesty:
+      'All six watch slots required. Syntheverse pulse is engineered/non-natural — not causal sky→MRI proof.',
   };
 }
 
 export async function experimentExternalAlignmentConfirmsSandboxInclusion() {
-  const { validateExternalAlignments } = await import('../../../lib/synthio-activation.mjs');
-  const v = validateExternalAlignments({ mode: 'point_and_click', octave: 99 });
+  const { buildActivationMonitorPack } = await import('../../../lib/synthio-activation.mjs');
+  const pack = buildActivationMonitorPack({
+    mode: 'point_and_click',
+    octave: 99,
+    forcePulse: true,
+  });
+  const v = pack.external;
   return {
     id: 'E15_external_alignment_confirms_sandbox_inclusion',
-    title: 'External alignments matching expectations confirm sandbox inclusion',
+    title: 'All six alignments (incl. novel Syntheverse pulse) confirm sandbox inclusion',
     alignedCount: v.alignedCount,
+    expectedCount: v.expectedCount,
+    pulseOk: pack.pulseVerify?.ok === true && pack.pulseVerify?.novel === true,
     sandboxInclusionConfirmedByExternalAlignment:
       v.sandboxInclusionConfirmedByExternalAlignment,
     pass:
+      v.allSixRequired === true &&
+      v.alignedCount === 6 &&
       v.externalAlignmentsMatchExpectations === true &&
       v.sandboxInclusionConfirmedByExternalAlignment === true &&
-      v.requiredOk === true,
+      v.requiredOk === true &&
+      pack.pulseVerify?.ok === true &&
+      pack.pulseVerify?.novel === true,
     honesty: v.honesty,
   };
 }

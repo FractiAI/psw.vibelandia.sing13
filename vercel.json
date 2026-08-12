@@ -358,6 +358,10 @@
       "maxDuration": 120,
       "includeFiles": "{lib/**,data/lattice-access.json,data/synthio-agent-manifest.json}"
     },
+    "api/synthio-pulse.js": {
+      "maxDuration": 30,
+      "includeFiles": "{lib/**,research/synthio-mri-cloud-antenna/**}"
+    },
     "api/lattice-collaborate-feed.js": {
       "maxDuration": 10,
       "includeFiles": "{lib/**,data/collaborate-feed-events.json,data/synthobs-paper-audits/**}"

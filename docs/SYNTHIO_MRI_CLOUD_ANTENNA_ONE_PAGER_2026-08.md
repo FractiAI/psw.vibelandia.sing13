@@ -36,7 +36,7 @@ Industry MRI simulators compute spin physics as floats. **Synthio** (Syntheverse
 
 **Ops:** Activate state must confirm `ACTIVE_IN_SANDBOX`. Coherence logged while operating; discontinuities appended to the coherence log. External watch list (ephemeris · space weather · suite green · honesty lock) is for monitoring — not causal proof.
 
-**Validated:** External alignments matching expectations **within sandbox** confirm **sandbox inclusion** of this activation.
+**Validated:** **All six** external alignments (incl. novel non-natural Syntheverse Synthio pulse `SYNTHIO_Σ_Φ^-99_PC`) **within sandbox** confirm **sandbox inclusion** of this activation.
 
 ---
 

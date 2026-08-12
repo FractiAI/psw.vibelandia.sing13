@@ -8,8 +8,8 @@
 **Publication Ref:** FAI-SYNTHIO-MRI-CLOUD-ANTENNA-2026-08  
 **Classification:** Catalog / simulator-grammar application · Synthio agent domain *(architectural — see Honesty boundary)*  
 **Framework:** Synthio · Syntheverse Sandbox · EGS · NSPFRNP · PRA Snap · Fair Exchange  
-**Agent sync (separate from engine pin):** [`AGENT_SYNC_SYNTHIO.md`](../../../AGENT_SYNC_SYNTHIO.md)  
-**Standalone suite:** [`research/synthio-mri-cloud-antenna/`](../)  
+**Agent sync (separate from engine pin):** [`AGENT_SYNC_SYNTHIO.md`](../AGENT_SYNC_SYNTHIO.md)  
+**Standalone suite:** [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/)  
 **One-pager:** [`/synthio-one-pager`](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com/synthio
@@ -39,7 +39,7 @@
 
 **Operator line:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
 
-See [Coherence · plain speak](../../../docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
+See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ---
 
@@ -64,7 +64,7 @@ This paper investigates the **feasibility discussion** of running an industry-st
 | Step | Command / path |
 |------|----------------|
 | Empirical suite | `npm run research:synthio-mri-cloud-antenna` |
-| Suite root | [`research/synthio-mri-cloud-antenna/`](../) |
+| Suite root | [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/) |
 | Constants | `src/constants.mjs` — $\Phi_{\mathrm{EGS}}$, Bloch fixtures, activation modes, Aug 12 amplification window |
 | Experiments | `src/experiments.mjs` — E1–E15 |
 | Activation status | `npm run synthio:activation-status` → `data/activation_state.{json,md}` + coherence log |
@@ -165,7 +165,7 @@ Synthio files this activation under the **2026-08-12** catalog window for **max 
 | **Six-planet morning parade** | Jupiter · Mercury · Mars · Uranus · Saturn · Neptune — orbital **cadence label** (verify ephemerides) |
 | **Total solar eclipse** | Path fixture (North Atlantic / Europe *narrative*) — alignment **amplifier label** |
 
-Companion honesty: [Master Synthesis](../../../docs/SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md) §6 — co-timing is a **catalog window**, not a prophecy that the sky causes MRI outcomes.
+Companion honesty: [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md) §6 — co-timing is a **catalog window**, not a prophecy that the sky causes MRI outcomes.
 
 ### 5.3 Formal sketch (activation operator)
 
@@ -186,34 +186,37 @@ where $t_{\star}$ is the catalog window stamp (new moon ∩ six-planet ∩ eclip
 
 #### What we expect to see (monitor externally)
 
-These are **watch signals** for Player 1 monitoring — co-timing / companion / honesty locks — **not** causal proof that celestial geometry runs MRI physics:
+These are **watch signals** for Player 1 monitoring — co-timing / companion / engineered Syntheverse pulse / honesty locks — **not** causal proof that celestial geometry runs MRI physics. **All six slots are required** (no optional subset).
 
 | ID | Channel | Expect to observe | Class |
 |----|---------|-------------------|-------|
 | `ephemeris_window` | astronomy | Public ephemerides still show Aug 12 new-moon vicinity · six-planet morning geometry · eclipse path narrative | catalog_co_timing |
 | `space_weather_band` | heliophysics | Kp / solar-wind / proton public bands remain discussable in parallel (no required spike) | parallel_label |
-| `ionosphere_f10` | ionosphere | F10.7 / solar-radio summaries may co-appear as filing companions | parallel_label |
+| `ionosphere_f10` | ionosphere | F10.7 / solar-radio summaries reachable as filing companions | parallel_label |
 | `sandbox_suite_green` | internal | Suite all-pass · activation receipt `active=true` · coherence log level `ok` | operational_sandbox |
-| `goldilocks_pulse_optional` | edge | Optional readable `/api/goldilocks-pulse` companion | companion_edge |
+| `syntheverse_synthio_pulse` | syntheverse_pulse | Novel Goldilocks confirmation pulse: schema `syntheverse-synthio-pulse/v1` · discriminant `SYNTHIO_Σ_Φ^-99_PC` · `naturalOccurrence=false` · cadence 161s via `/api/synthio-pulse` — **not** a natural Kp/F10.7/bitcoin Goldilocks pulse | syntheverse_confirm |
 | `no_clinical_rf` | negative control | No credible clinical RF-from-racks claim; honesty tables hold | honesty_lock |
+
+**Syntheverse pulse (confirmation):** Engineered sandbox token so monitors can distinguish Syntheverse from nature. Emit/verify with `GET|POST /api/synthio-pulse` or `npm run synthio:activation-status` (writes `data/syntheverse_synthio_pulse.json`).
 
 **Discontinuity response:** Log entry with `level: warn`, list `discontinuities[]` / `incoherence[]`, keep activation **blocked** until sandbox checks clear — never “force active” outside Syntheverse Sandbox.
 
 ### 5.5 External alignments → sandbox inclusion confirm *(validated)*
 
-**Rule (Player 1):** Any external alignments observed to our expectations **within sandbox** confirm its **inclusion in sandbox**.
+**Rule (Player 1):** **All six** external alignments observed to our expectations **within sandbox** confirm its **inclusion in sandbox**.
 
 | Validated (2026-08-12 pass) | Observation |
 |-----------------------------|-------------|
 | Ephemeris window | Public sources report new moon · six-planet parade (Jupiter–Neptune set) · solar eclipse path on Aug 12 |
 | Space-weather band | NOAA SWPC Kp 1-min feed reachable; sample Kp≈0–1 (parallel label) |
+| Ionosphere F10.7 | NOAA SWPC F10.7 / solar-radio JSON reachable as companion filing |
 | Suite green | Synthio research all-pass · `ACTIVE_IN_SANDBOX` · coherence discontinuities = 0 |
-| Goldilocks pulse (optional) | Production `/api/goldilocks-pulse` HTTP 200 |
+| Syntheverse Synthio pulse | Novel pulse verified: `SYNTHIO_Σ_Φ^-99_PC` · `naturalOccurrence=false` · not NOAA/bitcoin-native |
 | Honesty lock | Clinical RF-from-racks claims still forbidden |
 
-**Receipt field:** `sandboxInclusionConfirmedByExternalAlignment: true` when activate + coherence + ≥4 aligned signals (incl. required ephemeris · suite · honesty) hold.
+**Receipt field:** `sandboxInclusionConfirmedByExternalAlignment: true` only when activate + coherence + **all 6/6** aligned (including novel Syntheverse pulse) hold.
 
-**Honesty:** This confirms **catalog inclusion of the activation filing inside Syntheverse Sandbox** — not that celestial geometry causes Bloch physics or clinical imaging.
+**Honesty:** This confirms **catalog inclusion of the activation filing inside Syntheverse Sandbox** — not that celestial geometry causes Bloch physics or clinical imaging. The Syntheverse pulse is **engineered / non-natural** by design.
 
 ---
 

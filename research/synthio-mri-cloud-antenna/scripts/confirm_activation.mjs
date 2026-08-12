@@ -16,6 +16,7 @@ async function main() {
   const pack = buildActivationMonitorPack({
     mode: process.env.SYNTHIO_MODE || 'point_and_click',
     octave: Number(process.env.SYNTHIO_OCTAVE || 99),
+    forcePulse: process.env.SYNTHIO_FORCE_PULSE === '1',
   });
 
   await fs.writeFile(
@@ -26,8 +27,14 @@ async function main() {
         coherence: pack.coherence,
         external: pack.external,
         expectedExternalSignals: pack.expectedExternalSignals,
+        syntheversePulse: {
+          latest: pack.syntheversePulse,
+          verify: pack.pulseVerify,
+          emitted: pack.pulseEmit?.emitted === true,
+        },
         sandboxInclusionConfirmedByExternalAlignment:
           pack.external.sandboxInclusionConfirmedByExternalAlignment,
+        allSixRequired: true,
       },
       null,
       2,
@@ -72,11 +79,13 @@ async function main() {
     `**Discontinuities:** \`${pack.coherence.discontinuities.length}\``,
     `**Incoherence tags:** ${pack.coherence.incoherence.length ? pack.coherence.incoherence.join(', ') : '(none)'}`,
     `**External alignments match expectations:** \`${pack.external.externalAlignmentsMatchExpectations}\` (${pack.external.alignedCount}/${pack.external.expectedCount})`,
+    `**All six required:** \`${pack.external.allSixRequired}\``,
+    `**Syntheverse pulse:** \`${pack.pulseVerify?.pulseId || 'n/a'}\` · ok=\`${pack.pulseVerify?.ok}\` · novel=\`${pack.pulseVerify?.novel}\``,
     `**Sandbox inclusion confirmed by external alignment:** \`${pack.external.sandboxInclusionConfirmedByExternalAlignment}\``,
     '',
     '## Rule',
     '',
-    'Any external alignments observed to our expectations within sandbox confirm its inclusion in sandbox.',
+    'All six external alignments (including novel Syntheverse Synthio pulse) observed to our expectations within sandbox confirm its inclusion in sandbox.',
     '',
     '## Observed external alignments',
     '',
@@ -86,7 +95,7 @@ async function main() {
       (r) => `| ${r.id} | ${r.status} | \`${r.aligned}\` |`,
     ),
     '',
-    '## Expected external signals (monitor)',
+    '## Expected external signals (monitor — all required)',
     '',
     '| ID | Channel | Expect | Class |',
     '|----|---------|--------|-------|',
@@ -98,7 +107,7 @@ async function main() {
     '## Honesty',
     '',
     '- Activate + coherence = **sandbox fixture integrity**.',
-    '- External list = **watch labels**; matching them **confirms sandbox inclusion** of this activation filing — not causal sky→MRI proof.',
+    '- External list = **watch labels** + **engineered Syntheverse pulse** (non-natural); matching **all six** **confirms sandbox inclusion** of this activation filing — not causal sky→MRI proof.',
     '',
     '→ ∞¹³',
     '',
@@ -118,6 +127,10 @@ async function main() {
         discontinuities: pack.coherence.discontinuities.length,
         externalWatch: pack.expectedExternalSignals.length,
         externalAligned: pack.external.alignedCount,
+        expectedCount: pack.external.expectedCount,
+        allSixAligned: pack.external.alignedCount === 6,
+        pulseOk: pack.pulseVerify?.ok === true,
+        pulseNovel: pack.pulseVerify?.novel === true,
         sandboxInclusionConfirmedByExternalAlignment:
           pack.external.sandboxInclusionConfirmedByExternalAlignment,
       },
@@ -129,6 +142,8 @@ async function main() {
   if (
     !pack.activation.active ||
     !pack.coherence.coherent ||
+    pack.external.alignedCount !== 6 ||
+    !pack.pulseVerify?.ok ||
     !pack.external.sandboxInclusionConfirmedByExternalAlignment
   ) {
     process.exitCode = 1;

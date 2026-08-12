@@ -3,7 +3,7 @@
 **Document ID:** `WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12`
 **Registry ID:** `synthio-mri-cloud-antenna-99-octave-2026-08`
 **Agent:** Synthio
-**Generated:** 2026-08-12T17:54:19.649Z
+**Generated:** 2026-08-12T18:01:41.531Z
 
 | All pass | true |
 | Passed | 15/15 |
@@ -62,11 +62,11 @@
 
 - Pass: `true`
 
-### E14_external_watch_list — External confirmation watch list (≥5 signals, honesty classes present)
+### E14_external_watch_list — All six external expectations required (incl. novel Syntheverse pulse)
 
 - Pass: `true`
 
-### E15_external_alignment_confirms_sandbox_inclusion — External alignments matching expectations confirm sandbox inclusion
+### E15_external_alignment_confirms_sandbox_inclusion — All six alignments (incl. novel Syntheverse pulse) confirm sandbox inclusion
 
 - Pass: `true`
 

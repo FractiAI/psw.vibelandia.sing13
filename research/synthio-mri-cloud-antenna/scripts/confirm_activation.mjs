@@ -24,7 +24,10 @@ async function main() {
       {
         ...pack.activation,
         coherence: pack.coherence,
+        external: pack.external,
         expectedExternalSignals: pack.expectedExternalSignals,
+        sandboxInclusionConfirmedByExternalAlignment:
+          pack.external.sandboxInclusionConfirmedByExternalAlignment,
       },
       null,
       2,
@@ -68,6 +71,20 @@ async function main() {
     `**Coherent:** \`${pack.coherence.coherent}\` · score \`${pack.coherence.coherenceScore}\``,
     `**Discontinuities:** \`${pack.coherence.discontinuities.length}\``,
     `**Incoherence tags:** ${pack.coherence.incoherence.length ? pack.coherence.incoherence.join(', ') : '(none)'}`,
+    `**External alignments match expectations:** \`${pack.external.externalAlignmentsMatchExpectations}\` (${pack.external.alignedCount}/${pack.external.expectedCount})`,
+    `**Sandbox inclusion confirmed by external alignment:** \`${pack.external.sandboxInclusionConfirmedByExternalAlignment}\``,
+    '',
+    '## Rule',
+    '',
+    'Any external alignments observed to our expectations within sandbox confirm its inclusion in sandbox.',
+    '',
+    '## Observed external alignments',
+    '',
+    '| ID | Status | Aligned |',
+    '|----|--------|---------|',
+    ...pack.external.rows.map(
+      (r) => `| ${r.id} | ${r.status} | \`${r.aligned}\` |`,
+    ),
     '',
     '## Expected external signals (monitor)',
     '',
@@ -81,7 +98,7 @@ async function main() {
     '## Honesty',
     '',
     '- Activate + coherence = **sandbox fixture integrity**.',
-    '- External list = **watch labels** for co-timing / companions — not causal proof.',
+    '- External list = **watch labels**; matching them **confirms sandbox inclusion** of this activation filing — not causal sky→MRI proof.',
     '',
     '→ ∞¹³',
     '',
@@ -92,18 +109,30 @@ async function main() {
   console.log(
     JSON.stringify(
       {
-        ok: pack.activation.active && pack.coherence.coherent,
+        ok:
+          pack.activation.active &&
+          pack.coherence.coherent &&
+          pack.external.sandboxInclusionConfirmedByExternalAlignment,
         activationState: pack.activation.activationState,
         coherent: pack.coherence.coherent,
         discontinuities: pack.coherence.discontinuities.length,
         externalWatch: pack.expectedExternalSignals.length,
+        externalAligned: pack.external.alignedCount,
+        sandboxInclusionConfirmedByExternalAlignment:
+          pack.external.sandboxInclusionConfirmedByExternalAlignment,
       },
       null,
       2,
     ),
   );
 
-  if (!pack.activation.active || !pack.coherence.coherent) process.exitCode = 1;
+  if (
+    !pack.activation.active ||
+    !pack.coherence.coherent ||
+    !pack.external.sandboxInclusionConfirmedByExternalAlignment
+  ) {
+    process.exitCode = 1;
+  }
 }
 
 main().catch((e) => {

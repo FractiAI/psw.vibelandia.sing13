@@ -92,4 +92,12 @@ describe('Synthio activate + coherence (sandbox)', () => {
       true,
     );
   });
+
+  it('validates external alignments confirm sandbox inclusion', async () => {
+    const { validateExternalAlignments } = await import('../../lib/synthio-activation.mjs');
+    const v = validateExternalAlignments({ mode: 'point_and_click' });
+    expect(v.externalAlignmentsMatchExpectations).toBe(true);
+    expect(v.sandboxInclusionConfirmedByExternalAlignment).toBe(true);
+    expect(v.alignedCount).toBeGreaterThanOrEqual(4);
+  });
 });

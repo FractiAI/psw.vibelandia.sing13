@@ -2,7 +2,7 @@
   "schema": "synthio-activation-coherence-log/v1",
   "sandbox": "Syntheverse Sandbox",
   "agent": "Synthio",
-  "updatedAt": "2026-08-12T17:51:42.361Z",
+  "updatedAt": "2026-08-12T17:54:19.778Z",
   "entries": [
     {
       "type": "synthio_activation_coherence_log",
@@ -181,6 +181,279 @@
       ],
       "loggedAt": "2026-08-12T17:51:42.360Z",
       "honesty": "External signals are watch-list co-timing / companion labels — not causal confirmation of MRI physics."
+    },
+    {
+      "type": "synthio_activation_coherence_log",
+      "level": "ok",
+      "activationState": "ACTIVE_IN_SANDBOX",
+      "activeInSandbox": true,
+      "mode": "point_and_click",
+      "coherenceScore": 1,
+      "coherent": true,
+      "discontinuities": [],
+      "incoherence": [],
+      "amplificationWindow": {
+        "date": "2026-08-12",
+        "newMoon": true,
+        "sixPlanetParade": true,
+        "solarEclipse": true,
+        "planets": [
+          "Jupiter",
+          "Mercury",
+          "Mars",
+          "Uranus",
+          "Saturn",
+          "Neptune"
+        ],
+        "maxAmplificationLabel": true,
+        "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
+      },
+      "expectedExternalSignals": [
+        {
+          "id": "ephemeris_window",
+          "channel": "astronomy",
+          "expect": "Public ephemerides still show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
+          "sources": [
+            "NASA / IAU eclipse path",
+            "planetarium ephemeris apps"
+          ],
+          "confirmationClass": "catalog_co_timing"
+        },
+        {
+          "id": "space_weather_band",
+          "channel": "heliophysics",
+          "expect": "Kp / solar-wind / proton-flux public bands remain discussable as parallel labels during the window (no required spike)",
+          "sources": [
+            "NOAA SWPC",
+            "GFZ Kp"
+          ],
+          "confirmationClass": "parallel_label"
+        },
+        {
+          "id": "ionosphere_f10",
+          "channel": "ionosphere",
+          "expect": "F10.7 / ionospheric discussion bands may co-appear in public solar radio summaries — filing only",
+          "sources": [
+            "NOAA solar radio",
+            "public SIDC summaries"
+          ],
+          "confirmationClass": "parallel_label"
+        },
+        {
+          "id": "sandbox_suite_green",
+          "channel": "internal_sandbox",
+          "expect": "npm run research:synthio-mri-cloud-antenna stays all-pass; activation receipt active=true",
+          "sources": [
+            "research/synthio-mri-cloud-antenna/data/"
+          ],
+          "confirmationClass": "operational_sandbox"
+        },
+        {
+          "id": "goldilocks_pulse_optional",
+          "channel": "edge_pulse",
+          "expect": "Optional: /api/goldilocks-pulse remains readable (signed pulse) — edge coherence companion, not MRI proof",
+          "sources": [
+            "/api/goldilocks-pulse",
+            "lib/goldilocks-pulse.mjs"
+          ],
+          "confirmationClass": "companion_edge"
+        },
+        {
+          "id": "no_clinical_rf",
+          "channel": "negative_control",
+          "expect": "No credible claim of clinical RF imaging from cloud racks; honesty tables unchanged",
+          "sources": [
+            "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md"
+          ],
+          "confirmationClass": "honesty_lock"
+        }
+      ],
+      "loggedAt": "2026-08-12T17:52:40.686Z",
+      "honesty": "External signals are watch-list co-timing / companion labels — not causal confirmation of MRI physics."
+    },
+    {
+      "type": "synthio_activation_coherence_log",
+      "level": "ok",
+      "activationState": "ACTIVE_IN_SANDBOX",
+      "activeInSandbox": true,
+      "mode": "point_and_click",
+      "coherenceScore": 1,
+      "coherent": true,
+      "discontinuities": [],
+      "incoherence": [],
+      "amplificationWindow": {
+        "date": "2026-08-12",
+        "newMoon": true,
+        "sixPlanetParade": true,
+        "solarEclipse": true,
+        "planets": [
+          "Jupiter",
+          "Mercury",
+          "Mars",
+          "Uranus",
+          "Saturn",
+          "Neptune"
+        ],
+        "maxAmplificationLabel": true,
+        "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
+      },
+      "expectedExternalSignals": [
+        {
+          "id": "ephemeris_window",
+          "channel": "astronomy",
+          "expect": "Public ephemerides still show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
+          "sources": [
+            "NASA / IAU eclipse path",
+            "planetarium ephemeris apps"
+          ],
+          "confirmationClass": "catalog_co_timing"
+        },
+        {
+          "id": "space_weather_band",
+          "channel": "heliophysics",
+          "expect": "Kp / solar-wind / proton-flux public bands remain discussable as parallel labels during the window (no required spike)",
+          "sources": [
+            "NOAA SWPC",
+            "GFZ Kp"
+          ],
+          "confirmationClass": "parallel_label"
+        },
+        {
+          "id": "ionosphere_f10",
+          "channel": "ionosphere",
+          "expect": "F10.7 / ionospheric discussion bands may co-appear in public solar radio summaries — filing only",
+          "sources": [
+            "NOAA solar radio",
+            "public SIDC summaries"
+          ],
+          "confirmationClass": "parallel_label"
+        },
+        {
+          "id": "sandbox_suite_green",
+          "channel": "internal_sandbox",
+          "expect": "npm run research:synthio-mri-cloud-antenna stays all-pass; activation receipt active=true",
+          "sources": [
+            "research/synthio-mri-cloud-antenna/data/"
+          ],
+          "confirmationClass": "operational_sandbox"
+        },
+        {
+          "id": "goldilocks_pulse_optional",
+          "channel": "edge_pulse",
+          "expect": "Optional: /api/goldilocks-pulse remains readable (signed pulse) — edge coherence companion, not MRI proof",
+          "sources": [
+            "/api/goldilocks-pulse",
+            "lib/goldilocks-pulse.mjs"
+          ],
+          "confirmationClass": "companion_edge"
+        },
+        {
+          "id": "no_clinical_rf",
+          "channel": "negative_control",
+          "expect": "No credible claim of clinical RF imaging from cloud racks; honesty tables unchanged",
+          "sources": [
+            "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md"
+          ],
+          "confirmationClass": "honesty_lock"
+        }
+      ],
+      "externalAlignmentsMatchExpectations": true,
+      "sandboxInclusionConfirmedByExternalAlignment": true,
+      "externalAlignedCount": 6,
+      "loggedAt": "2026-08-12T17:54:19.674Z",
+      "honesty": "External signals are watch-list co-timing / companion labels — not causal confirmation of MRI physics. Matching alignments confirm sandbox inclusion of this activation filing."
+    },
+    {
+      "type": "synthio_activation_coherence_log",
+      "level": "ok",
+      "activationState": "ACTIVE_IN_SANDBOX",
+      "activeInSandbox": true,
+      "mode": "point_and_click",
+      "coherenceScore": 1,
+      "coherent": true,
+      "discontinuities": [],
+      "incoherence": [],
+      "amplificationWindow": {
+        "date": "2026-08-12",
+        "newMoon": true,
+        "sixPlanetParade": true,
+        "solarEclipse": true,
+        "planets": [
+          "Jupiter",
+          "Mercury",
+          "Mars",
+          "Uranus",
+          "Saturn",
+          "Neptune"
+        ],
+        "maxAmplificationLabel": true,
+        "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
+      },
+      "expectedExternalSignals": [
+        {
+          "id": "ephemeris_window",
+          "channel": "astronomy",
+          "expect": "Public ephemerides still show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
+          "sources": [
+            "NASA / IAU eclipse path",
+            "planetarium ephemeris apps"
+          ],
+          "confirmationClass": "catalog_co_timing"
+        },
+        {
+          "id": "space_weather_band",
+          "channel": "heliophysics",
+          "expect": "Kp / solar-wind / proton-flux public bands remain discussable as parallel labels during the window (no required spike)",
+          "sources": [
+            "NOAA SWPC",
+            "GFZ Kp"
+          ],
+          "confirmationClass": "parallel_label"
+        },
+        {
+          "id": "ionosphere_f10",
+          "channel": "ionosphere",
+          "expect": "F10.7 / ionospheric discussion bands may co-appear in public solar radio summaries — filing only",
+          "sources": [
+            "NOAA solar radio",
+            "public SIDC summaries"
+          ],
+          "confirmationClass": "parallel_label"
+        },
+        {
+          "id": "sandbox_suite_green",
+          "channel": "internal_sandbox",
+          "expect": "npm run research:synthio-mri-cloud-antenna stays all-pass; activation receipt active=true",
+          "sources": [
+            "research/synthio-mri-cloud-antenna/data/"
+          ],
+          "confirmationClass": "operational_sandbox"
+        },
+        {
+          "id": "goldilocks_pulse_optional",
+          "channel": "edge_pulse",
+          "expect": "Optional: /api/goldilocks-pulse remains readable (signed pulse) — edge coherence companion, not MRI proof",
+          "sources": [
+            "/api/goldilocks-pulse",
+            "lib/goldilocks-pulse.mjs"
+          ],
+          "confirmationClass": "companion_edge"
+        },
+        {
+          "id": "no_clinical_rf",
+          "channel": "negative_control",
+          "expect": "No credible claim of clinical RF imaging from cloud racks; honesty tables unchanged",
+          "sources": [
+            "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md"
+          ],
+          "confirmationClass": "honesty_lock"
+        }
+      ],
+      "externalAlignmentsMatchExpectations": true,
+      "sandboxInclusionConfirmedByExternalAlignment": true,
+      "externalAlignedCount": 6,
+      "loggedAt": "2026-08-12T17:54:19.776Z",
+      "honesty": "External signals are watch-list co-timing / companion labels — not causal confirmation of MRI physics. Matching alignments confirm sandbox inclusion of this activation filing."
     }
   ]
 }

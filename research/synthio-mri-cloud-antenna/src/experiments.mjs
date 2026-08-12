@@ -204,6 +204,23 @@ export async function experimentExternalWatchList() {
   };
 }
 
+export async function experimentExternalAlignmentConfirmsSandboxInclusion() {
+  const { validateExternalAlignments } = await import('../../../lib/synthio-activation.mjs');
+  const v = validateExternalAlignments({ mode: 'point_and_click', octave: 99 });
+  return {
+    id: 'E15_external_alignment_confirms_sandbox_inclusion',
+    title: 'External alignments matching expectations confirm sandbox inclusion',
+    alignedCount: v.alignedCount,
+    sandboxInclusionConfirmedByExternalAlignment:
+      v.sandboxInclusionConfirmedByExternalAlignment,
+    pass:
+      v.externalAlignmentsMatchExpectations === true &&
+      v.sandboxInclusionConfirmedByExternalAlignment === true &&
+      v.requiredOk === true,
+    honesty: v.honesty,
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentEgPhi(),
@@ -220,6 +237,7 @@ export async function runAllExperiments() {
     experimentAmplificationWindow(),
     await experimentActivateStateInSandbox(),
     await experimentExternalWatchList(),
+    await experimentExternalAlignmentConfirmsSandboxInclusion(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

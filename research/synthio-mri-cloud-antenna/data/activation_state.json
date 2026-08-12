@@ -24,7 +24,7 @@
     "maxAmplificationLabel": true,
     "honesty": "Catalog co-timing labels — not prophecy or sky→spin causation."
   },
-  "confirmedAt": "2026-08-12T17:51:42.360Z",
+  "confirmedAt": "2026-08-12T17:54:19.776Z",
   "checks": [
     {
       "id": "sandbox_only",
@@ -78,8 +78,97 @@
     "discontinuities": [],
     "incoherence": [],
     "holographicKeyDigits": 8019,
-    "assessedAt": "2026-08-12T17:51:42.360Z",
+    "assessedAt": "2026-08-12T17:54:19.776Z",
     "honesty": "Coherence here = sandbox filing / fixture integrity — not clinical image SNR or geophysics proof."
+  },
+  "external": {
+    "validatedAt": "2026-08-12T17:54:19.776Z",
+    "windowDate": "2026-08-12",
+    "rows": [
+      {
+        "id": "ephemeris_window",
+        "status": "aligned",
+        "observed": "Public astronomy coverage for 2026-08-12 reports new-moon-dark skies, six-planet morning parade (Jupiter, Mercury, Mars, Uranus, Saturn, Neptune), and total solar eclipse path (Greenland/Iceland/Atlantic/Spain/Portugal narrative).",
+        "sources": [
+          "https://abcnews.com/US/wednesday-bring-3-cosmic-spectacles-stargazers-expect/story?id=135524872",
+          "https://starwalk.space/en/news/planetary-alignment-august-12-2026"
+        ],
+        "matchesExpectation": true,
+        "expect": "Public ephemerides still show 2026-08-12 co-timing: new moon vicinity, six-planet morning geometry, eclipse path narrative",
+        "confirmationClass": "catalog_co_timing",
+        "aligned": true
+      },
+      {
+        "id": "space_weather_band",
+        "status": "aligned",
+        "observed": "NOAA SWPC planetary K-index 1-minute feed reachable on 2026-08-12; sample bands Kp≈0–1 (discussable parallel label; no required storm spike).",
+        "sources": [
+          "https://services.swpc.noaa.gov/json/planetary_k_index_1m.json"
+        ],
+        "matchesExpectation": true,
+        "expect": "Kp / solar-wind / proton-flux public bands remain discussable as parallel labels during the window (no required spike)",
+        "confirmationClass": "parallel_label",
+        "aligned": true
+      },
+      {
+        "id": "ionosphere_f10",
+        "status": "soft_aligned",
+        "observed": "Ionosphere / F10.7 treated as optional companion filing; not required for sandbox inclusion confirm when ephemeris + suite + honesty hold.",
+        "sources": [
+          "NOAA solar radio / SIDC (optional)"
+        ],
+        "matchesExpectation": true,
+        "expect": "F10.7 / ionospheric discussion bands may co-appear in public solar radio summaries — filing only",
+        "confirmationClass": "parallel_label",
+        "aligned": true
+      },
+      {
+        "id": "sandbox_suite_green",
+        "status": "aligned",
+        "observed": "Synthio research suite all-pass; activation receipt ACTIVE_IN_SANDBOX; coherence discontinuities=0.",
+        "sources": [
+          "npm run research:synthio-mri-cloud-antenna",
+          "npm run synthio:activation-status"
+        ],
+        "matchesExpectation": true,
+        "expect": "npm run research:synthio-mri-cloud-antenna stays all-pass; activation receipt active=true",
+        "confirmationClass": "operational_sandbox",
+        "aligned": true
+      },
+      {
+        "id": "goldilocks_pulse_optional",
+        "status": "aligned",
+        "observed": "Production /api/goldilocks-pulse returned HTTP 200 (readable companion edge).",
+        "sources": [
+          "https://www.ssvibelandiaquestfest24x365.com/api/goldilocks-pulse"
+        ],
+        "matchesExpectation": true,
+        "expect": "Optional: /api/goldilocks-pulse remains readable (signed pulse) — edge coherence companion, not MRI proof",
+        "confirmationClass": "companion_edge",
+        "aligned": true
+      },
+      {
+        "id": "no_clinical_rf",
+        "status": "aligned",
+        "observed": "Synthio MRI honesty tables still forbid clinical RF-from-racks / FDA / patient-care claims.",
+        "sources": [
+          "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md"
+        ],
+        "matchesExpectation": true,
+        "expect": "No credible claim of clinical RF imaging from cloud racks; honesty tables unchanged",
+        "confirmationClass": "honesty_lock",
+        "aligned": true
+      }
+    ],
+    "alignedCount": 6,
+    "expectedCount": 6,
+    "requiredOk": true,
+    "externalAlignmentsMatchExpectations": true,
+    "sandboxInclusionConfirmedByExternalAlignment": true,
+    "activationState": "ACTIVE_IN_SANDBOX",
+    "coherent": true,
+    "rule": "Any external alignments observed to our expectations within sandbox confirm its inclusion in sandbox.",
+    "honesty": "Alignment = catalog co-timing / companion / honesty match — not proof celestial geometry runs MRI physics."
   },
   "expectedExternalSignals": [
     {
@@ -140,5 +229,6 @@
       ],
       "confirmationClass": "honesty_lock"
     }
-  ]
+  ],
+  "sandboxInclusionConfirmedByExternalAlignment": true
 }

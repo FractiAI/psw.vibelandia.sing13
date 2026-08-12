@@ -36,15 +36,17 @@ Industry MRI simulators compute spin physics as floats. **Synthio** (Syntheverse
 
 **Ops:** Activate state must confirm `ACTIVE_IN_SANDBOX`. Coherence logged while operating; discontinuities appended to the coherence log. External watch list (ephemeris · space weather · suite green · honesty lock) is for monitoring — not causal proof.
 
+**Validated:** External alignments matching expectations **within sandbox** confirm **sandbox inclusion** of this activation.
+
 ---
 
 ## Methods & reproducibility
 
 | Step | Path |
 |------|------|
-| Full paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` (§5 + §5.4) |
+| Full paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` (§5 + §5.4–5.5) |
 | Suite | `npm run research:synthio-mri-cloud-antenna` |
-| Activate / coherence | `npm run synthio:activation-status` |
+| Activate / coherence / external | `npm run synthio:activation-status` |
 | PRA | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-one-pager-2026-08` |
 | Chat | `/synthio` · creator BYOK only · **sandbox only** |
 

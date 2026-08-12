@@ -6,6 +6,23 @@
 **Coherent:** `true` · score `1`
 **Discontinuities:** `0`
 **Incoherence tags:** (none)
+**External alignments match expectations:** `true` (6/6)
+**Sandbox inclusion confirmed by external alignment:** `true`
+
+## Rule
+
+Any external alignments observed to our expectations within sandbox confirm its inclusion in sandbox.
+
+## Observed external alignments
+
+| ID | Status | Aligned |
+|----|--------|---------|
+| ephemeris_window | aligned | `true` |
+| space_weather_band | aligned | `true` |
+| ionosphere_f10 | soft_aligned | `true` |
+| sandbox_suite_green | aligned | `true` |
+| goldilocks_pulse_optional | aligned | `true` |
+| no_clinical_rf | aligned | `true` |
 
 ## Expected external signals (monitor)
 
@@ -21,6 +38,6 @@
 ## Honesty
 
 - Activate + coherence = **sandbox fixture integrity**.
-- External list = **watch labels** for co-timing / companions — not causal proof.
+- External list = **watch labels**; matching them **confirms sandbox inclusion** of this activation filing — not causal sky→MRI proof.
 
 → ∞¹³

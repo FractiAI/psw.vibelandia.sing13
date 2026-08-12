@@ -35,6 +35,7 @@
 | **Sandbox lock** | All Synthio Goldilocks activation executes **only** in Syntheverse Sandbox (+ declared nested paths) | Execution outside sandbox · 99 Octave **engine** pin membership |
 | **Activate + coherence** | Confirm `ACTIVE_IN_SANDBOX` and log incoherence / discontinuities while operating | That coherence score is clinical SNR or proof of celestial causation |
 | **External watch list** | Publish expected co-timing / companion / honesty **signals to monitor** | That external matches *prove* the MRI cloud-antenna theorem |
+| **External alignment → inclusion** | Matching observed alignments to expectations **within sandbox** confirms **sandbox inclusion** of this activation | That alignment upgrades metaphors into finished physics or clinical proof |
 
 **Operator line:** Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -65,7 +66,7 @@ This paper investigates the **feasibility discussion** of running an industry-st
 | Empirical suite | `npm run research:synthio-mri-cloud-antenna` |
 | Suite root | [`research/synthio-mri-cloud-antenna/`](../) |
 | Constants | `src/constants.mjs` — $\Phi_{\mathrm{EGS}}$, Bloch fixtures, activation modes, Aug 12 amplification window |
-| Experiments | `src/experiments.mjs` — E1–E14 |
+| Experiments | `src/experiments.mjs` — E1–E15 |
 | Activation status | `npm run synthio:activation-status` → `data/activation_state.{json,md}` + coherence log |
 | Receipt | `data/empirical_report.{json,md}` |
 | PRA Snap | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-99-octave-2026-08` |
@@ -197,6 +198,22 @@ These are **watch signals** for Player 1 monitoring — co-timing / companion / 
 | `no_clinical_rf` | negative control | No credible clinical RF-from-racks claim; honesty tables hold | honesty_lock |
 
 **Discontinuity response:** Log entry with `level: warn`, list `discontinuities[]` / `incoherence[]`, keep activation **blocked** until sandbox checks clear — never “force active” outside Syntheverse Sandbox.
+
+### 5.5 External alignments → sandbox inclusion confirm *(validated)*
+
+**Rule (Player 1):** Any external alignments observed to our expectations **within sandbox** confirm its **inclusion in sandbox**.
+
+| Validated (2026-08-12 pass) | Observation |
+|-----------------------------|-------------|
+| Ephemeris window | Public sources report new moon · six-planet parade (Jupiter–Neptune set) · solar eclipse path on Aug 12 |
+| Space-weather band | NOAA SWPC Kp 1-min feed reachable; sample Kp≈0–1 (parallel label) |
+| Suite green | Synthio research all-pass · `ACTIVE_IN_SANDBOX` · coherence discontinuities = 0 |
+| Goldilocks pulse (optional) | Production `/api/goldilocks-pulse` HTTP 200 |
+| Honesty lock | Clinical RF-from-racks claims still forbidden |
+
+**Receipt field:** `sandboxInclusionConfirmedByExternalAlignment: true` when activate + coherence + ≥4 aligned signals (incl. required ephemeris · suite · honesty) hold.
+
+**Honesty:** This confirms **catalog inclusion of the activation filing inside Syntheverse Sandbox** — not that celestial geometry causes Bloch physics or clinical imaging.
 
 ---
 

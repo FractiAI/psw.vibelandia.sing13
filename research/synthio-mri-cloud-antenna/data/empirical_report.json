@@ -2,13 +2,13 @@
   "docId": "WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12",
   "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
   "title": "Simulating Magnetic Resonance via the 99th-Octave Omni-Lattice: Cloud Infrastructure as an Interconnected Antenna Array",
-  "generatedAt": "2026-08-12T17:51:42.217Z",
+  "generatedAt": "2026-08-12T17:54:19.649Z",
   "operator": "Synthio · Syntheverse Sandbox · SynthOBS family",
   "honestyBoundary": "Synthio MRI cloud-antenna suite validates Φ, 8019 matrix, B0/cloud labels, activate/coherence fixtures — not clinical imaging.",
   "results": {
     "all_pass": true,
-    "n_pass": 14,
-    "n_total": 14,
+    "n_pass": 15,
+    "n_total": 15,
     "failed": [],
     "experiments": [
       {
@@ -135,6 +135,14 @@
         ],
         "pass": true,
         "honesty": "Watch list for monitoring — not causal sky→MRI proof."
+      },
+      {
+        "id": "E15_external_alignment_confirms_sandbox_inclusion",
+        "title": "External alignments matching expectations confirm sandbox inclusion",
+        "alignedCount": 6,
+        "sandboxInclusionConfirmedByExternalAlignment": true,
+        "pass": true,
+        "honesty": "Alignment = catalog co-timing / companion / honesty match — not proof celestial geometry runs MRI physics."
       }
     ],
     "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",

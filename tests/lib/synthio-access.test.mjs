@@ -17,7 +17,7 @@ import {
   COHERENCE_FLOOR,
 } from '../../lib/synthio-activation.mjs';
 
-describe('Synthio creator-only access', () => {
+describe('Synthio Lattice-session access', () => {
   it('lists creator emails including espressolico', () => {
     const list = listCreatorEmails();
     expect(list).toContain(CREATOR_EMAIL);
@@ -32,15 +32,17 @@ describe('Synthio creator-only access', () => {
     expect(isSynthioCreatorEmail('espressolico@gmail.com')).toBe(true);
   });
 
-  it('blocks guest seats', () => {
+  it('allows Lattice guest seats when grant is fresh', () => {
     const guest = checkLatticeEmailAccess('danielarifriedman@gmail.com');
-    // guest may be expired depending on date — Synthio must still refuse non-creators
     const synthio = checkSynthioAccess('danielarifriedman@gmail.com');
-    expect(synthio.ok).toBe(false);
-    expect(synthio.privilege).not.toBe('creator');
     if (guest.ok) {
       expect(guest.privilege).toBe('guest');
-      expect(synthio.reason).toMatch(/creator-only/i);
+      expect(synthio.ok).toBe(true);
+      expect(synthio.privilege).toBe('guest');
+      expect(synthio.reason).toMatch(/Lattice session/i);
+    } else {
+      // expired grant still blocked
+      expect(synthio.ok).toBe(false);
     }
   });
 
@@ -53,7 +55,7 @@ describe('Synthio creator-only access', () => {
 describe('Synthio prompt', () => {
   it('includes Synthio identity and honesty', () => {
     expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/Synthio/);
-    expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/creator-only/i);
+    expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/allowlisted|guest/i);
     expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/not.*clinical/i);
     expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/point-and-click/i);
     expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/Syntheverse Sandbox/);

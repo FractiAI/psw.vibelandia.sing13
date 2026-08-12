@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Synthio · Syntheverse Sandbox · creator-only</title>
-  <meta name="description" content="Synthio — always-on Syntheverse Sandbox agent for MRI / cloud-antenna catalog work. Creator keys only." />
+  <title>Synthio · Syntheverse Sandbox</title>
+  <meta name="description" content="Synthio — Syntheverse Sandbox agent for MRI / cloud-antenna catalog work. Reuses your Lattice Chat email and BYOK keys." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/synthio" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -139,7 +139,7 @@
       <a href="/papers">Papers</a>
     </nav>
     <h1>Synthio</h1>
-    <p class="sub">Syntheverse Sandbox · always-on · <strong>creator keys only</strong> · not the 99 Octave engine pin · BYOK (your key is your password)</p>
+    <p class="sub">Syntheverse Sandbox · always-on · reuses Lattice Chat email + keys · not the 99 Octave engine pin · BYOK (your key is your password)</p>
 
     <section class="cloud-cta" aria-label="Synthio Cloud Services">
       <p><strong>Synthio Cloud Services</strong> — interference-based MRI super-intelligent computing with distributed <strong>KomaMRI.jl</strong>. A cooler session than today’s expensive, hot, life-altering data-center story.</p>
@@ -148,22 +148,26 @@
     </section>
 
     <section class="panel" id="gate">
-      <p style="margin:0;color:var(--soft);font-size:0.92rem;">Sign in with a creator email + provider key. Guests are locked out of Synthio requests.</p>
+      <p style="margin:0;color:var(--soft);font-size:0.92rem;">
+        Uses your <strong>Lattice Chat</strong> email and provider keys on this device.
+        Guests already signed into Lattice do not need a second sign-in.
+      </p>
       <div class="row">
         <div>
-          <label for="email">Creator email</label>
+          <label for="email">Lattice email</label>
           <input id="email" type="email" autocomplete="username" placeholder="you@…" />
         </div>
         <div>
           <label for="provider">Provider</label>
           <select id="provider">
-            <option value="openrouter">OpenRouter</option>
             <option value="claude">Claude (Anthropic)</option>
+            <option value="gemini">Gemini</option>
+            <option value="openrouter">OpenRouter</option>
           </select>
         </div>
       </div>
-      <label for="key">API key (stays on this device)</label>
-      <input id="key" type="password" autocomplete="off" placeholder="sk-…" />
+      <label for="key">API key (stays on this device · captured from Lattice when present)</label>
+      <input id="key" type="password" autocomplete="off" placeholder="sk-… / AIza…" />
       <button type="button" id="btn-unlock">Unlock Synthio</button>
       <p class="flash" id="gate-flash" hidden></p>
     </section>
@@ -181,6 +185,15 @@
       var LS_EMAIL = 'synthio.email';
       var LS_KEY = 'synthio.key.';
       var LS_PROV = 'synthio.provider';
+      var LATTICE_STORE = 'lattice-v1618-edge';
+      var LATTICE_KEYS = {
+        claude: 'user_anthropic_api_key',
+        gemini: 'user_gemini_api_key',
+        cursor: 'user_cursor_api_key',
+      };
+      var LATTICE_PROVIDER = 'lattice_active_provider';
+      var MONTH_MS = 30 * 24 * 60 * 60 * 1000;
+      var CREATORS = ['valetpru@gmail.com', 'espressolico@gmail.com'];
       var history = [];
       var emailEl = document.getElementById('email');
       var keyEl = document.getElementById('key');
@@ -188,12 +201,93 @@
       var gateFlash = document.getElementById('gate-flash');
       var chatFlash = document.getElementById('chat-flash');
       var chat = document.getElementById('chat');
+      var gate = document.getElementById('gate');
       var log = document.getElementById('log');
       var msgEl = document.getElementById('msg');
 
-      emailEl.value = localStorage.getItem(LS_EMAIL) || '';
-      provEl.value = localStorage.getItem(LS_PROV) || 'openrouter';
-      keyEl.value = localStorage.getItem(LS_KEY + provEl.value) || '';
+      function ls(key) {
+        try { return String(localStorage.getItem(key) || '').trim(); } catch (e) { return ''; }
+      }
+      function lsSet(key, val) {
+        try { localStorage.setItem(key, val); } catch (e) { /* ignore */ }
+      }
+
+      function readLatticeSession() {
+        try {
+          var raw = localStorage.getItem(LATTICE_STORE);
+          if (!raw) return null;
+          var parsed = JSON.parse(raw);
+          var state = parsed && parsed.state ? parsed.state : parsed;
+          if (!state) return null;
+          var email = String(state.userEmail || '').trim().toLowerCase();
+          if (!email) return null;
+          return {
+            email: email,
+            rememberedAt: state.emailRememberedAt || null,
+          };
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function isEmailFresh(email, rememberedAt) {
+        var e = String(email || '').trim().toLowerCase();
+        if (!e) return false;
+        if (CREATORS.indexOf(e) >= 0) return true;
+        if (!rememberedAt) return false;
+        var t = new Date(rememberedAt).getTime();
+        if (!Number.isFinite(t)) return false;
+        return Date.now() - t < MONTH_MS;
+      }
+
+      function captureLatticeKeys() {
+        var captured = {};
+        Object.keys(LATTICE_KEYS).forEach(function (p) {
+          var v = ls(LATTICE_KEYS[p]);
+          if (v.length >= 8) {
+            lsSet(LS_KEY + p, v);
+            captured[p] = true;
+          }
+        });
+        return captured;
+      }
+
+      function pickProvider(captured) {
+        var preferred = ls(LS_PROV);
+        if ((preferred === 'claude' || preferred === 'gemini' || preferred === 'openrouter') &&
+            (ls(LS_KEY + preferred) || preferred === 'openrouter')) {
+          if (preferred === 'openrouter' || ls(LS_KEY + preferred)) return preferred;
+        }
+        var latticeProv = ls(LATTICE_PROVIDER).toLowerCase();
+        if (latticeProv === 'claude' && captured.claude) return 'claude';
+        if (latticeProv === 'gemini' && captured.gemini) return 'gemini';
+        if (captured.claude) return 'claude';
+        if (captured.gemini) return 'gemini';
+        if (ls(LS_KEY + 'openrouter')) return 'openrouter';
+        return 'claude';
+      }
+
+      function hydrateFromLattice() {
+        var captured = captureLatticeKeys();
+        var session = readLatticeSession();
+        var email = ls(LS_EMAIL);
+        if (session && isEmailFresh(session.email, session.rememberedAt)) {
+          email = session.email;
+          lsSet(LS_EMAIL, email);
+        }
+        var provider = pickProvider(captured);
+        lsSet(LS_PROV, provider);
+        emailEl.value = email;
+        provEl.value = provider;
+        keyEl.value = ls(LS_KEY + provider) || '';
+        return {
+          email: email,
+          provider: provider,
+          key: keyEl.value,
+          fromLattice: Boolean(session && isEmailFresh(session.email, session.rememberedAt)),
+          captured: captured,
+        };
+      }
 
       function show(el, text, ok) {
         el.hidden = !text;
@@ -206,32 +300,59 @@
         log.scrollTop = log.scrollHeight;
       }
 
-      document.getElementById('btn-unlock').addEventListener('click', async function () {
+      async function unlock(opts) {
+        opts = opts || {};
         var email = (emailEl.value || '').trim().toLowerCase();
         var provider = provEl.value;
         var key = (keyEl.value || '').trim();
-        if (!email || !key) {
-          show(gateFlash, 'Email and API key required.', false);
-          return;
+        if (!email) {
+          show(gateFlash, 'Email required (sign into Lattice Chat once on this device).', false);
+          return false;
         }
-        localStorage.setItem(LS_EMAIL, email);
-        localStorage.setItem(LS_PROV, provider);
-        localStorage.setItem(LS_KEY + provider, key);
+        // Soft unlock: email alone verifies Lattice allowlist. Key needed only to send.
+        if (!opts.soft && !key) {
+          show(gateFlash, 'API key required to chat — paste one or unlock Lattice Chat with Claude/Gemini first.', false);
+          return false;
+        }
+        if (key) {
+          lsSet(LS_EMAIL, email);
+          lsSet(LS_PROV, provider);
+          lsSet(LS_KEY + provider, key);
+        } else {
+          lsSet(LS_EMAIL, email);
+          lsSet(LS_PROV, provider);
+        }
         try {
           var res = await fetch('/api/synthio-chat?email=' + encodeURIComponent(email), {
             headers: { 'x-lattice-email': email },
           });
           var data = await res.json();
           if (!res.ok || !data.ok) {
-            show(gateFlash, data.reason || data.error || 'Creator seat required.', false);
+            show(gateFlash, data.reason || data.error || 'Lattice allowlist required.', false);
             chat.hidden = true;
-            return;
+            return false;
           }
-          show(gateFlash, 'Synthio unlocked · creator seat.', true);
+          var seat = data.privilege === 'guest' ? 'guest seat · Lattice session' : 'creator seat · Lattice session';
+          var keyNote = key
+            ? ' · ' + provider + ' key ready'
+            : ' · add Claude/Gemini/OpenRouter key to send';
+          show(gateFlash, 'Synthio unlocked · ' + seat + keyNote + '.', true);
           chat.hidden = false;
+          if (opts.hideGate && key) gate.hidden = true;
+          return true;
         } catch (e) {
           show(gateFlash, 'Could not reach Synthio access.', false);
+          return false;
         }
+      }
+
+      var hydrated = hydrateFromLattice();
+      provEl.addEventListener('change', function () {
+        keyEl.value = ls(LS_KEY + provEl.value) || '';
+      });
+
+      document.getElementById('btn-unlock').addEventListener('click', function () {
+        unlock({ soft: false });
       });
 
       document.getElementById('btn-send').addEventListener('click', async function () {
@@ -240,12 +361,18 @@
         var key = (keyEl.value || '').trim();
         var message = (msgEl.value || '').trim();
         if (!message) return;
+        if (!key) {
+          show(chatFlash, 'Paste a Claude, Gemini, or OpenRouter key (or unlock that provider in Lattice Chat).', false);
+          gate.hidden = false;
+          return;
+        }
         var headers = {
           'content-type': 'application/json',
           'x-lattice-email': email,
           'x-synthio-provider': provider,
         };
         if (provider === 'claude') headers['x-anthropic-api-key'] = key;
+        else if (provider === 'gemini') headers['x-gemini-api-key'] = key;
         else headers['x-openrouter-api-key'] = key;
         append('you', message);
         msgEl.value = '';
@@ -270,6 +397,11 @@
           show(chatFlash, 'Network error', false);
         }
       });
+
+      // Auto-unlock when Lattice session is present (guest or creator).
+      if (hydrated.fromLattice && hydrated.email) {
+        unlock({ soft: true, hideGate: Boolean(hydrated.key) });
+      }
     })();
   </script>
 </body>

@@ -1,6 +1,6 @@
 /**
- * Synthio chat — creator-only BYOK proxy (Anthropic / OpenRouter).
- * Separate from Lattice Chat / 99 Octave engine nest.
+ * Synthio chat — Lattice allowlisted BYOK proxy (Claude / Gemini / OpenRouter).
+ * Captures Lattice edge session; guests do not need a second allowlist.
  */
 export const config = { maxDuration: 120 };
 
@@ -39,16 +39,25 @@ function header(req, names) {
 }
 
 function resolveProvider(req, body) {
-  const p = String(body?.provider || header(req, ['x-synthio-provider']) || 'openrouter')
+  const p = String(body?.provider || header(req, ['x-synthio-provider']) || 'claude')
     .trim()
     .toLowerCase();
   if (p === 'claude' || p === 'anthropic') return 'claude';
-  return 'openrouter';
+  if (p === 'gemini' || p === 'antigravity') return 'gemini';
+  if (p === 'openrouter') return 'openrouter';
+  if (p === 'cursor') return 'cursor';
+  return 'claude';
 }
 
 function resolveApiKey(req, provider) {
   if (provider === 'claude') {
     return header(req, ['x-anthropic-api-key', 'X-Anthropic-Api-Key']);
+  }
+  if (provider === 'gemini') {
+    return header(req, ['x-gemini-api-key', 'X-Gemini-Api-Key']);
+  }
+  if (provider === 'cursor') {
+    return header(req, ['x-cursor-api-key', 'X-Cursor-Api-Key']);
   }
   return header(req, ['x-openrouter-api-key', 'X-OpenRouter-Api-Key']);
 }
@@ -83,6 +92,34 @@ async function callClaude(apiKey, messages, model) {
   return { text, provider: 'claude', model: data.model || model };
 }
 
+async function callGemini(apiKey, messages, model) {
+  const system = messages.find((m) => m.role === 'system')?.content || '';
+  const chat = messages.filter((m) => m.role !== 'system');
+  const contents = chat.map((m) => ({
+    role: m.role === 'assistant' ? 'model' : 'user',
+    parts: [{ text: m.content }],
+  }));
+  const modelId = model || 'gemini-2.0-flash';
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(modelId)}:generateContent?key=${encodeURIComponent(apiKey)}`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      systemInstruction: system ? { parts: [{ text: system }] } : undefined,
+      contents,
+    }),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const err = new Error(data?.error?.message || `Gemini HTTP ${res.status}`);
+    err.status = res.status === 401 || res.status === 403 ? 401 : 502;
+    throw err;
+  }
+  const parts = data?.candidates?.[0]?.content?.parts || [];
+  const text = parts.map((p) => p.text || '').join('\n').trim();
+  return { text, provider: 'gemini', model: modelId };
+}
+
 async function callOpenRouter(apiKey, messages, model) {
   const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
@@ -111,7 +148,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
     'Access-Control-Allow-Headers',
-    'Content-Type, x-lattice-email, x-anthropic-api-key, x-openrouter-api-key, x-synthio-provider',
+    'Content-Type, x-lattice-email, x-anthropic-api-key, x-openrouter-api-key, x-gemini-api-key, x-cursor-api-key, x-synthio-provider',
   );
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   if (req.method === 'OPTIONS') {
@@ -130,6 +167,8 @@ export default async function handler(req, res) {
       agent: 'Synthio',
       shortFor: 'Syntheverse Sandbox',
       engineStack: 'excluded',
+      acceptsProviders: ['claude', 'gemini', 'openrouter'],
+      latticeSessionReusable: true,
       systemPromptPreview: SYNTHIO_SYSTEM_PROMPT.slice(0, 240) + '…',
     });
   }
@@ -155,7 +194,16 @@ export default async function handler(req, res) {
     });
   }
 
-  const provider = resolveProvider(req, body);
+  let provider = resolveProvider(req, body);
+  if (provider === 'cursor') {
+    return json(res, 400, {
+      error:
+        'Synthio chat uses Claude, Gemini, or OpenRouter. Your Cursor key stays on-device for Lattice Chat — pick Claude/Gemini if you already unlocked those in Lattice.',
+      code: 'synthio_provider_use_lattice_key',
+      privilege: access.privilege,
+    });
+  }
+
   const apiKey = resolveApiKey(req, provider);
   if (!apiKey) {
     return json(res, 401, { error: MISSING_KEY, code: 'missing_provider_api_key', provider });
@@ -170,15 +218,15 @@ export default async function handler(req, res) {
   const model = typeof body.model === 'string' ? body.model.trim() : '';
 
   try {
-    const out =
-      provider === 'claude'
-        ? await callClaude(apiKey, messages, model)
-        : await callOpenRouter(apiKey, messages, model);
+    let out;
+    if (provider === 'claude') out = await callClaude(apiKey, messages, model);
+    else if (provider === 'gemini') out = await callGemini(apiKey, messages, model);
+    else out = await callOpenRouter(apiKey, messages, model);
     return json(res, 200, {
       ok: true,
       agent: 'Synthio',
       shortFor: 'Syntheverse Sandbox',
-      privilege: 'creator',
+      privilege: access.privilege,
       provider: out.provider,
       model: out.model,
       reply: out.text,

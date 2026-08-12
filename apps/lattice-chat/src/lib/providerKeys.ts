@@ -115,6 +115,7 @@ export function saveProviderApiKey(
     const changed = !prevFp || prevFp !== nextFp;
     localStorage.setItem(STORAGE[provider].key, key);
     localStorage.setItem(STORAGE[provider].fp, nextFp);
+    mirrorKeysToSynthio();
     window.dispatchEvent(
       new CustomEvent(KEY_CHANGE_EVENT, { detail: { changed, provider } }),
     );
@@ -134,6 +135,38 @@ export function clearProviderApiKey(provider: LatticeProvider): void {
   window.dispatchEvent(
     new CustomEvent(KEY_CHANGE_EVENT, { detail: { changed: true, provider } }),
   );
+}
+
+/** Mirror Lattice BYOK keys into Synthio edge storage so /synthio reuses them. */
+export function mirrorKeysToSynthio(): void {
+  try {
+    const claude = readProviderApiKey('claude');
+    const gemini = readProviderApiKey('gemini');
+    const cursor = readProviderApiKey('cursor');
+    if (claude) localStorage.setItem('synthio.key.claude', claude);
+    if (gemini) localStorage.setItem('synthio.key.gemini', gemini);
+    if (cursor) localStorage.setItem('synthio.key.cursor', cursor);
+    const active = readActiveProvider();
+    if (active === 'claude' || active === 'gemini') {
+      localStorage.setItem('synthio.provider', active);
+    } else if (claude) {
+      localStorage.setItem('synthio.provider', 'claude');
+    } else if (gemini) {
+      localStorage.setItem('synthio.provider', 'gemini');
+    }
+  } catch {
+    /* ignore */
+  }
+}
+
+/** Persist Lattice email into Synthio so guests need not sign in twice. */
+export function mirrorEmailToSynthio(email: string): void {
+  try {
+    const e = String(email || '').trim().toLowerCase();
+    if (e) localStorage.setItem('synthio.email', e);
+  } catch {
+    /* ignore */
+  }
 }
 
 export function subscribeProviderKeys(

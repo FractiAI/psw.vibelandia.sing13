@@ -10,6 +10,8 @@ import { KeyStatusChip } from '@/components/KeySettings';
 import {
   LATTICE_PROVIDERS,
   hasProviderApiKey,
+  mirrorEmailToSynthio,
+  mirrorKeysToSynthio,
   readActiveProvider,
   readProviderApiKey,
   saveActiveProvider,
@@ -115,6 +117,8 @@ export function AuthPanel({
         useLatticeStore.getState().clearPending();
       }
       setUserEmail(next);
+      mirrorEmailToSynthio(next);
+      mirrorKeysToSynthio();
       const seat =
         access.privilege === 'creator'
           ? 'creator seat — SING13 agents'

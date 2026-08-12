@@ -19,7 +19,7 @@ This README is the **current map** of the monorepo, its **sibling empirical suit
 | **SynthOBS research** | ~50 local empirical suites (`research/synthobs-*/` + siblings); many also publish as standalone GitHub repos | `research/`, `npm run research:*`, [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) |
 | **Whitepaper catalog** | Registered papers + honesty rails + PRA Snap audits | `docs/`, `lib/whitepaper-registry.mjs`, `/papers` |
 | **QUESTFEST 24×365** | SS Vibelandia ship bulletin, plain-language ship blog, nesting ladder | `/questfest`, `interfaces/vibelandia-questfest.html` |
-| **Lattice Chat Agent V1.618** | Nested-agent BYOK chat · token-economics measurement | `/lattice`, `/lattice-chat`, `apps/lattice-chat/`, `api/lattice-chat.js` |
+| **Lattice Chat Agent V1.618** | Nested-agent BYOK chat · **your key is your password** (stays with you) · token-economics measurement | `/lattice`, `/lattice-chat`, `apps/lattice-chat/`, `api/lattice-chat.js` |
 | **Sovereign Player** | Audio catalog React SPA · Fair Exchange honor downloads | `/listen`, `apps/ss-vibelandia-questfest/` → `interfaces/questfest-bridge/` |
 | **NSPFRNP / BBHE** | Protocol spine · Seed:Edge · repository standard | `protocols/MCA_NSPFRNP_CATALOG.md`, `BBHE_REPOSITORY_STANDARD.md` |
 | **Lite edges** | No Supabase; wallets/keys/verifications on-device; center = pipes only | `AGENTS.md` invariants |
@@ -163,6 +163,8 @@ npm run sync:interfaces-index       # refresh README + /interfaces/ HTML index
 
 ### Lattice Chat validate (optional · BYOK)
 
+**Your key is your password** for 99 Octave Omni-Lattice Chat — it stays with you on-device; no separate passwords to manage.
+
 ```bash
 npm run compare:lattice             # structural chars÷4 receipt
 npm run test:lattice-floors
@@ -176,7 +178,7 @@ Deep Lattice UI / provider steps: [`AGENTS.md`](AGENTS.md) and the Lattice secti
 1. **Honesty boundary** on every technical paper; do not upgrade catalog claims to unfinished physics/fab proofs.  
 2. **PRA Snap** before `featured: true`.  
 3. Register papers in `lib/whitepaper-registry.mjs` (+ catalog / plain-surface lines when shipping a standalone).  
-4. **No Supabase**; BYOK keys never stored server-side.  
+4. **No Supabase**; BYOK — **your key is your password** for 99 Octave Omni-Lattice Chat (stays with you; no separate passwords; never stored server-side).  
 5. Operate **NSPFRNP** (MCA · Seed:Edge). Close agent turns → **∞¹³**.  
 6. Fair Exchange honor rails on paid edges (no Stripe required).
 

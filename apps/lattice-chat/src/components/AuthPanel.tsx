@@ -135,8 +135,10 @@ export function AuthPanel({
     >
       <form className="auth-form" onSubmit={(e) => void onSignIn(e)}>
         <p className="auth-lead">
-          Enter your email and Cursor API key (or Claude / Gemini). One key for the provider you
-          use — nothing else required. Keys stay on this device.
+          Enter your email and your provider API key (Cursor, Claude, or Gemini).{' '}
+          <strong>Your key is your password</strong> for 99 Octave Omni-Lattice Chat — it stays
+          with you on this device. No separate passwords to manage. We never store the key on the
+          server.
         </p>
         <label htmlFor="lattice-signin-email">Email / userid</label>
         <input
@@ -162,7 +164,9 @@ export function AuthPanel({
             </option>
           ))}
         </select>
-        <label htmlFor="lattice-signin-api-key">{meta.label} API key</label>
+        <label htmlFor="lattice-signin-api-key">
+          {meta.label} API key · your password
+        </label>
         <input
           id="lattice-signin-api-key"
           type="password"

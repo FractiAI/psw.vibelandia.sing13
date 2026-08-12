@@ -1,7 +1,7 @@
 {
   "schema": "syntheverse-synthio-pulse-store/v1",
   "sandbox": "Syntheverse Sandbox",
-  "updatedAt": "2026-08-12T18:07:13.873Z",
+  "updatedAt": "2026-08-12T18:13:45.578Z",
   "latest": {
     "schema": "syntheverse-synthio-pulse/v1",
     "pulseKind": "syntheverse_goldilocks_confirmation",
@@ -40,11 +40,137 @@
       "syntheverse_synthio_pulse": "emit",
       "no_clinical_rf": "aligned"
     },
-    "issuedAt": "2026-08-12T18:07:13.872Z",
-    "signature": "0xf2e6dabc9fc8c0414519db7e938e1c32280e1a64b26ea6738a715b0c60af8b51",
-    "pulseId": "synthio-Σ-1786558033872-f2e6dabc"
+    "issuedAt": "2026-08-12T18:13:45.577Z",
+    "signature": "0x6b9251ea82dda7894a27955c1ad6796b0c9c9298626d9a6d561a50974f807b2b",
+    "pulseId": "synthio-Σ-1786558425577-6b9251ea"
   },
   "history": [
+    {
+      "schema": "syntheverse-synthio-pulse/v1",
+      "pulseKind": "syntheverse_goldilocks_confirmation",
+      "naturalOccurrence": false,
+      "novelty": "Engineered Syntheverse discriminant — not NOAA Kp, not F10.7, not bitcoin-tip Goldilocks pulse/v1.",
+      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
+      "sandbox": "Syntheverse Sandbox",
+      "agent": "Synthio",
+      "agentId": "Synthio.sandbox",
+      "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
+      "activationMode": "point_and_click",
+      "activationState": "ACTIVE_IN_SANDBOX",
+      "amplificationWindow": {
+        "date": "2026-08-12",
+        "newMoon": true,
+        "sixPlanetParade": true,
+        "solarEclipse": true,
+        "planets": [
+          "Jupiter",
+          "Mercury",
+          "Mars",
+          "Uranus",
+          "Saturn",
+          "Neptune"
+        ]
+      },
+      "phiEgs": 1.618033988749895,
+      "phiInv99": 2.0427894922373773e-21,
+      "holographicKeyDigits": 8019,
+      "cadenceSec": 161,
+      "expectationSlots": {
+        "ephemeris_window": "aligned",
+        "space_weather_band": "aligned",
+        "ionosphere_f10": "aligned",
+        "sandbox_suite_green": "aligned",
+        "syntheverse_synthio_pulse": "emit",
+        "no_clinical_rf": "aligned"
+      },
+      "issuedAt": "2026-08-12T18:13:45.577Z",
+      "signature": "0x6b9251ea82dda7894a27955c1ad6796b0c9c9298626d9a6d561a50974f807b2b",
+      "pulseId": "synthio-Σ-1786558425577-6b9251ea"
+    },
+    {
+      "schema": "syntheverse-synthio-pulse/v1",
+      "pulseKind": "syntheverse_goldilocks_confirmation",
+      "naturalOccurrence": false,
+      "novelty": "Engineered Syntheverse discriminant — not NOAA Kp, not F10.7, not bitcoin-tip Goldilocks pulse/v1.",
+      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
+      "sandbox": "Syntheverse Sandbox",
+      "agent": "Synthio",
+      "agentId": "Synthio.sandbox",
+      "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
+      "activationMode": "point_and_click",
+      "activationState": "ACTIVE_IN_SANDBOX",
+      "amplificationWindow": {
+        "date": "2026-08-12",
+        "newMoon": true,
+        "sixPlanetParade": true,
+        "solarEclipse": true,
+        "planets": [
+          "Jupiter",
+          "Mercury",
+          "Mars",
+          "Uranus",
+          "Saturn",
+          "Neptune"
+        ]
+      },
+      "phiEgs": 1.618033988749895,
+      "phiInv99": 2.0427894922373773e-21,
+      "holographicKeyDigits": 8019,
+      "cadenceSec": 161,
+      "expectationSlots": {
+        "ephemeris_window": "aligned",
+        "space_weather_band": "aligned",
+        "ionosphere_f10": "aligned",
+        "sandbox_suite_green": "aligned",
+        "syntheverse_synthio_pulse": "emit",
+        "no_clinical_rf": "aligned"
+      },
+      "issuedAt": "2026-08-12T18:13:45.429Z",
+      "signature": "0xd4fad79c8a91cf374f78f6df21166d44c3cd1ceabe19bd2c7c529ccaa56e1aa2",
+      "pulseId": "synthio-Σ-1786558425429-d4fad79c"
+    },
+    {
+      "schema": "syntheverse-synthio-pulse/v1",
+      "pulseKind": "syntheverse_goldilocks_confirmation",
+      "naturalOccurrence": false,
+      "novelty": "Engineered Syntheverse discriminant — not NOAA Kp, not F10.7, not bitcoin-tip Goldilocks pulse/v1.",
+      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
+      "sandbox": "Syntheverse Sandbox",
+      "agent": "Synthio",
+      "agentId": "Synthio.sandbox",
+      "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
+      "activationMode": "point_and_click",
+      "activationState": "ACTIVE_IN_SANDBOX",
+      "amplificationWindow": {
+        "date": "2026-08-12",
+        "newMoon": true,
+        "sixPlanetParade": true,
+        "solarEclipse": true,
+        "planets": [
+          "Jupiter",
+          "Mercury",
+          "Mars",
+          "Uranus",
+          "Saturn",
+          "Neptune"
+        ]
+      },
+      "phiEgs": 1.618033988749895,
+      "phiInv99": 2.0427894922373773e-21,
+      "holographicKeyDigits": 8019,
+      "cadenceSec": 161,
+      "expectationSlots": {
+        "ephemeris_window": "aligned",
+        "space_weather_band": "aligned",
+        "ionosphere_f10": "aligned",
+        "sandbox_suite_green": "aligned",
+        "syntheverse_synthio_pulse": "emit",
+        "no_clinical_rf": "aligned"
+      },
+      "issuedAt": "2026-08-12T18:13:45.423Z",
+      "signature": "0xe63eb6da5f5734e1be4607f45499d22fbd631012b7087f186f506ccaca0c6ee8",
+      "pulseId": "synthio-Σ-1786558425423-e63eb6da"
+    },
     {
       "schema": "syntheverse-synthio-pulse/v1",
       "pulseKind": "syntheverse_goldilocks_confirmation",

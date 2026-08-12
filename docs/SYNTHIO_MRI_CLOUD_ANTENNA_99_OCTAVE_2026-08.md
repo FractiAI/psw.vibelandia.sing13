@@ -67,9 +67,11 @@ This paper investigates the **feasibility discussion** of running an industry-st
 | Empirical suite | `npm run research:synthio-mri-cloud-antenna` |
 | Suite root | [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/) |
 | Constants | `src/constants.mjs` — $\Phi_{\mathrm{EGS}}$, Bloch fixtures, activation modes, Aug 12 amplification window |
-| Experiments | `src/experiments.mjs` — E1–E16 |
+| Experiments | `src/experiments.mjs` — E1–E17 |
 | Activation status | `npm run synthio:activation-status` → `data/activation_state.{json,md}` + coherence log |
 | Activation dashboard | `/synthio-dashboard` · `GET /api/synthio-activation` (KomaMRI engineering + live metrics) |
+| Cloud Services session | `/synthio-cloud` · distributed KomaMRI architecture note |
+| Distributed KomaMRI note | `docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md` |
 | Receipt | `data/empirical_report.{json,md}` |
 | PRA Snap | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-99-octave-2026-08` |
 | Agent | Synthio · `/synthio` · creator-only · **sandbox only** |

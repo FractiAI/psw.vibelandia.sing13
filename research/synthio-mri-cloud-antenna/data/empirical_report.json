@@ -2,13 +2,13 @@
   "docId": "WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12",
   "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
   "title": "Simulating Magnetic Resonance via the 99th-Octave Omni-Lattice: Cloud Infrastructure as an Interconnected Antenna Array",
-  "generatedAt": "2026-08-12T18:07:07.782Z",
+  "generatedAt": "2026-08-12T18:13:45.579Z",
   "operator": "Synthio · Syntheverse Sandbox · SynthOBS family",
   "honestyBoundary": "Synthio MRI cloud-antenna suite validates Φ, 8019 matrix, B0/cloud labels, activate/coherence fixtures — not clinical imaging.",
   "results": {
     "all_pass": true,
-    "n_pass": 16,
-    "n_total": 16,
+    "n_pass": 17,
+    "n_total": 17,
     "failed": [],
     "experiments": [
       {
@@ -154,6 +154,14 @@
         "wetLabEquivalent": false,
         "pass": true,
         "honesty": "Primary = KomaMRI as industry-reference Bloch/k-space engine class. Synthio activation metrics are sandbox catalog receipts wrapping that class — not a shipped clinical scanner."
+      },
+      {
+        "id": "E17_synthio_cloud_services_distributed",
+        "title": "Synthio Cloud Services distributed KomaMRI outline filed",
+        "name": "Synthio Cloud Services",
+        "sessionPath": "/synthio-cloud",
+        "pass": true,
+        "honesty": "Distributed KomaMRI is an architecture + session outline. Edge UI does not run Julia workers. Data-center replacement is a product story, not a proven hyperscale displacement."
       }
     ],
     "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",

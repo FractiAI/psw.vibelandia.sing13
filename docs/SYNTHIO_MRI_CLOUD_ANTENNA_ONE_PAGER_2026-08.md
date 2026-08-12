@@ -9,6 +9,7 @@
 **Paper:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md)  
 **HTML:** [/synthio-one-pager](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager)  
 **Dashboard:** [/synthio-dashboard](https://www.ssvibelandiaquestfest24x365.com/synthio-dashboard) · whiteboard pin on [/my-whiteboard](https://www.ssvibelandiaquestfest24x365.com/my-whiteboard)  
+**Cloud Services:** [/synthio-cloud](https://www.ssvibelandiaquestfest24x365.com/synthio-cloud) · [distributed KomaMRI note](./SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md)  
 **Chat:** [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio)  
 **Agent sync:** [`AGENT_SYNC_SYNTHIO.md`](../AGENT_SYNC_SYNTHIO.md)
 
@@ -50,6 +51,8 @@
 |------|------|
 | Full paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` (§5 + §5.4–5.5) |
 | Activation dashboard | `/synthio-dashboard` · `GET /api/synthio-activation` |
+| Cloud Services session | `/synthio-cloud` |
+| Distributed KomaMRI | `docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md` |
 | Suite | `npm run research:synthio-mri-cloud-antenna` |
 | Activate / coherence / external | `npm run synthio:activation-status` |
 | PRA | `npm run audit:paper -- --id=synthio-mri-cloud-antenna-one-pager-2026-08` |

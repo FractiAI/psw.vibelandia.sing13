@@ -27,9 +27,11 @@ It is **not** a new shelf on the 99 Octave Omni-Lattice **engine** pin (CMOS / t
 | Paper | `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` |
 | One-pager | `/synthio-one-pager` |
 | Activation dashboard | `/synthio-dashboard` · `GET /api/synthio-activation` · whiteboard pin |
-| Whiteboard | `/my-whiteboard` (Synthio dashboard + one-pager selectable) |
+| Cloud Services | `/synthio-cloud` · try-out session (distributed KomaMRI) |
+| Whiteboard | `/my-whiteboard` (Synthio Cloud + dashboard + one-pager selectable) |
 | Suite | `research/synthio-mri-cloud-antenna/` |
-| Industry simulator | **KomaMRI** primary (Bloch/k-space) · MRiLab companions |
+| Industry simulator | **KomaMRI.jl** primary (distributed memory + cloud-networking outline) · MRiLab companions |
+| Distributed architecture | `docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md` |
 
 ---
 

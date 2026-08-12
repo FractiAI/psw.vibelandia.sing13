@@ -15,6 +15,8 @@
     { "source": "/synthio-one-pager/", "destination": "/interfaces/synthio-one-pager.html" },
     { "source": "/synthio-dashboard", "destination": "/interfaces/synthio-dashboard.html" },
     { "source": "/synthio-dashboard/", "destination": "/interfaces/synthio-dashboard.html" },
+    { "source": "/synthio-cloud", "destination": "/interfaces/synthio-cloud.html" },
+    { "source": "/synthio-cloud/", "destination": "/interfaces/synthio-cloud.html" },
     { "source": "/interfaces", "destination": "/interfaces/index.html" },
     { "source": "/interfaces/", "destination": "/interfaces/index.html" },
     { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },

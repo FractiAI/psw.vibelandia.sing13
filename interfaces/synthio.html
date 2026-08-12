@@ -87,12 +87,52 @@
       border-color: rgba(252, 165, 165, 0.45);
       color: var(--danger);
     }
+    .cloud-cta {
+      margin: 0 0 0.85rem;
+      padding: 1rem 1.05rem;
+      border-radius: 16px;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      background:
+        linear-gradient(135deg, rgba(52, 211, 153, 0.18), rgba(12, 28, 22, 0.9));
+      display: grid;
+      gap: 0.55rem;
+    }
+    .cloud-cta p {
+      margin: 0;
+      color: var(--soft);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .cloud-cta strong { color: var(--hi); }
+    .cloud-cta .btn-cloud {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.15rem;
+      text-decoration: none;
+      border: 0;
+      border-radius: 14px;
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      font-size: 0.98rem;
+      background: linear-gradient(180deg, #6ee7b7, #059669);
+      color: #042f1e;
+      box-shadow: 0 10px 28px rgba(5, 150, 105, 0.28);
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .cloud-cta .btn-cloud:active { transform: scale(0.98); }
+    .cloud-cta .fine {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <nav class="nav" aria-label="Site">
       <a href="/my-whiteboard">Whiteboard</a>
+      <a href="/synthio-cloud">Cloud Services</a>
       <a href="/synthio-dashboard">Dashboard</a>
       <a href="/synthio-one-pager">One-pager</a>
       <a href="/agent-sync-synthio">Agent sync</a>
@@ -100,6 +140,12 @@
     </nav>
     <h1>Synthio</h1>
     <p class="sub">Syntheverse Sandbox · always-on · <strong>creator keys only</strong> · not the 99 Octave engine pin · BYOK (your key is your password)</p>
+
+    <section class="cloud-cta" aria-label="Synthio Cloud Services">
+      <p><strong>Synthio Cloud Services</strong> — interference-based MRI super-intelligent computing with distributed <strong>KomaMRI.jl</strong>. A cooler session than today’s expensive, hot, life-altering data-center story.</p>
+      <a class="btn-cloud" href="/synthio-cloud">Try out our new Synthio Cloud Services</a>
+      <p class="fine">Session feel · Syntheverse Sandbox · simulator floats only · no clinical RF</p>
+    </section>
 
     <section class="panel" id="gate">
       <p style="margin:0;color:var(--soft);font-size:0.92rem;">Sign in with a creator email + provider key. Guests are locked out of Synthio requests.</p>

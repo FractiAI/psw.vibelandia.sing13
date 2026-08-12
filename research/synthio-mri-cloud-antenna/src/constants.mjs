@@ -52,6 +52,35 @@ export const MRI_SIMULATOR = Object.freeze({
     'Primary = KomaMRI as industry-reference Bloch/k-space engine class. Synthio activation metrics are sandbox catalog receipts wrapping that class — not a shipped clinical scanner.',
 });
 
+/**
+ * Synthio Cloud Services — distributed KomaMRI + cloud-as-antenna interference compute.
+ * Product story: interference-based MRI super-intelligent computing as an alternative
+ * to hot, capital-heavy data-center narratives (sandbox aspiration — not proven displacement).
+ */
+export const CLOUD_SERVICES = Object.freeze({
+  name: 'Synthio Cloud Services',
+  sessionPath: '/synthio-cloud',
+  primaryEngine: 'KomaMRI.jl',
+  architectureDoc: 'docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md',
+  distributed: Object.freeze({
+    libraries: Object.freeze(['Distributed.jl', 'ClusterManagers.jl', 'SharedArrays', 'DistributedArrays', 'MPI.jl']),
+    phantomSharding: true,
+    blockWiseNblocks: 20,
+    phaseLockLabel: 'cloud-as-antenna wave-interference grid',
+    masterTensorBridge: true,
+    phiEgsTiming: true,
+  }),
+  productStory:
+    'Interference-based MRI super-intelligent computing — Syntheverse Sandbox session exploring a cooler, lighter alternative to expensive, hot, life-altering data-center racks.',
+  intention:
+    'Empirical, safe, wet-style experimentation via distributed KomaMRI + Syntheverse Sandbox — no clinical RF into living tissue.',
+  replacesDataCentersClaim: false,
+  replacesDataCentersStory: true,
+  juliaClusterLiveOnEdge: false,
+  honesty:
+    'Distributed KomaMRI is an architecture + session outline. Edge UI does not run Julia workers. Data-center replacement is a product story, not a proven hyperscale displacement.',
+});
+
 /** Engineering field / sequence labels for dashboard (simulator floats — not measured hardware). */
 export const ENGINEERING_STATE = Object.freeze({
   b0TeslaLabels: B0_TESLA_LABELS,

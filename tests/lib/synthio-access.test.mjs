@@ -111,15 +111,19 @@ describe('Synthio activate + coherence (sandbox)', () => {
 
   it('exposes KomaMRI engineering pack for activation dashboard', async () => {
     const { buildSynthioEngineeringPack } = await import('../../lib/synthio-engineering.mjs');
-    const { MRI_SIMULATOR } = await import(
+    const { MRI_SIMULATOR, CLOUD_SERVICES } = await import(
       '../../research/synthio-mri-cloud-antenna/src/constants.mjs'
     );
     expect(MRI_SIMULATOR.primary).toBe('KomaMRI');
+    expect(CLOUD_SERVICES.sessionPath).toBe('/synthio-cloud');
+    expect(CLOUD_SERVICES.juliaClusterLiveOnEdge).toBe(false);
     const pack = buildSynthioEngineeringPack({ forcePulse: true });
     expect(pack.mriSimulator.primary).toBe('KomaMRI');
+    expect(pack.cloudServices.name).toBe('Synthio Cloud Services');
     expect(pack.metrics.activeInSandbox).toBe(true);
     expect(pack.metrics.allSixAligned).toBe(true);
     expect(pack.intention.toLowerCase()).toMatch(/wet/);
     expect(pack.links.dashboard).toBe('/synthio-dashboard');
+    expect(pack.links.cloudServices).toBe('/synthio-cloud');
   });
 });

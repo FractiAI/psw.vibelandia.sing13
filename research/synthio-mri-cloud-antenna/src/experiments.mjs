@@ -26,6 +26,7 @@ import {
   SANDBOX_NAME,
   AMPLIFICATION_WINDOW,
   MRI_SIMULATOR,
+  CLOUD_SERVICES,
 } from './constants.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -258,6 +259,25 @@ export function experimentKomaMriPrimary() {
   };
 }
 
+export function experimentCloudServicesDistributed() {
+  return {
+    id: 'E17_synthio_cloud_services_distributed',
+    title: 'Synthio Cloud Services distributed KomaMRI outline filed',
+    name: CLOUD_SERVICES.name,
+    sessionPath: CLOUD_SERVICES.sessionPath,
+    pass:
+      CLOUD_SERVICES.primaryEngine === 'KomaMRI.jl' &&
+      CLOUD_SERVICES.sessionPath === '/synthio-cloud' &&
+      CLOUD_SERVICES.distributed.phantomSharding === true &&
+      CLOUD_SERVICES.distributed.blockWiseNblocks === 20 &&
+      CLOUD_SERVICES.juliaClusterLiveOnEdge === false &&
+      CLOUD_SERVICES.replacesDataCentersClaim === false &&
+      CLOUD_SERVICES.replacesDataCentersStory === true &&
+      fs.existsSync(path.join(MONOREPO_DOCS, 'SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md')),
+    honesty: CLOUD_SERVICES.honesty,
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentEgPhi(),
@@ -276,6 +296,7 @@ export async function runAllExperiments() {
     await experimentExternalWatchList(),
     await experimentExternalAlignmentConfirmsSandboxInclusion(),
     experimentKomaMriPrimary(),
+    experimentCloudServicesDistributed(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const failed = experiments.filter((e) => !e.pass).map((e) => e.id);

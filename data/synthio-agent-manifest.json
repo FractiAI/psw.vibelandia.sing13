@@ -11,6 +11,7 @@
   "paperId": "synthio-mri-cloud-antenna-99-octave-2026-08",
   "onePagerPath": "interfaces/synthio-one-pager.html",
   "dashboardPath": "interfaces/synthio-dashboard.html",
+  "cloudServicesPath": "interfaces/synthio-cloud.html",
   "chatPath": "/synthio",
   "apiPath": "/api/synthio-chat",
   "activationApi": "/api/synthio-activation",
@@ -18,6 +19,12 @@
     "primary": "KomaMRI",
     "companions": ["MRiLab", "vendor Bloch-solver suites"],
     "intention": "As close as possible to empirical, safe, wet-style experimentation using industry MRI simulator + Syntheverse Sandbox — no clinical RF into living tissue."
+  },
+  "cloudServices": {
+    "name": "Synthio Cloud Services",
+    "session": "/synthio-cloud",
+    "architectureDoc": "docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md",
+    "productStory": "Interference-based MRI super-intelligent computing — alternative to hot capital-heavy data-center narratives (sandbox story, not proven displacement)."
   },
   "activation": {
     "modes": ["natural", "point_and_click"],
@@ -59,6 +66,7 @@
     "interfaces/synthio.html",
     "interfaces/synthio-one-pager.html",
     "interfaces/synthio-dashboard.html",
+    "interfaces/synthio-cloud.html",
     "api/synthio-chat.js",
     "api/synthio-pulse.js",
     "api/synthio-activation.js",

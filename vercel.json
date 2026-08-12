@@ -5,6 +5,8 @@
   "framework": null,
   "rewrites": [
     { "source": "/", "destination": "/interfaces/vibelandia-questfest.html" },
+    { "source": "/agent-sync", "destination": "/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md" },
+    { "source": "/agent-sync/", "destination": "/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md" },
     { "source": "/interfaces", "destination": "/interfaces/index.html" },
     { "source": "/interfaces/", "destination": "/interfaces/index.html" },
     { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },

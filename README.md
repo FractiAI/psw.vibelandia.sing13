@@ -1,5 +1,9 @@
 # psw.vibelandia.sing13 — SING 13 Edge
 
+> **External AI / agent — READ THIS FIRST (always):**  
+> **[`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)** — sync to the 99 Octave Omni-Lattice engine (CMOS/protonic → tensor → master synthesis) before evaluating anything else.  
+> Also: [`AGENTS.md`](AGENTS.md) · [`llms.txt`](llms.txt) · [`SING13_EDGE_ONBOARDING.md`](SING13_EDGE_ONBOARDING.md)
+
 ## Clock-skew vulnerability · press release
 
 **Public announcement:** [Press release · May 18, 2026](https://www.ssvibelandiaquestfest24x365.com/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) — Holographic Clock-Skew Vulnerability disclosure (REV-EGS-HHF-2026-007). Full text: [Mythos whitepaper reader](https://www.ssvibelandiaquestfest24x365.com/interfaces/whitepaper-surface.html?id=rev-egs-hhf-mythos).
@@ -346,7 +350,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-02** · **78** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-12** · **90** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -354,8 +358,17 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
+| [`/interfaces/ai-transparency.html`](/interfaces/ai-transparency.html) | AI transparency · FractiAI · SS Vibelandia |
 | [`/interfaces/awareness-singularities-one-pager.html`](/interfaces/awareness-singularities-one-pager.html) | Awareness Singularities S0–S81 · SynthOBS · FractiAI |
+| [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 is a crowded calendar — not a prophecy · Ship blog · QUESTFEST |
+| [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · QUESTFEST |
+| [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · QUESTFEST |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
+| [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine digits, ninety-nine octaves — a map you can actually walk · Ship blog · QUESTFEST |
+| [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · QUESTFEST |
+| [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · QUESTFEST |
+| [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A smaller pack for the golden key · Ship blog · QUESTFEST |
+| [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · QUESTFEST |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |
 | [`/interfaces/bridge-tower-billboard.html`](/interfaces/bridge-tower-billboard.html) | — |
 | [`/interfaces/bridge-tower-preview.html`](/interfaces/bridge-tower-preview.html) | Bridge Tower · 8s tease preview |
@@ -366,7 +379,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/executive-onboarding.html`](/interfaces/executive-onboarding.html) | Executive Onboarding · FractiAI |
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
 | [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
-| [`/interfaces/get-started.html`](/interfaces/get-started.html) | Guest guide · Welcome aboard SS Vibelandia QUESTFEST |
+| [`/interfaces/get-started.html`](/interfaces/get-started.html) | Welcome aboard · SS Vibelandia · Goldilocks Cruiseship |
 | [`/interfaces/goldilocks-beehive-residency.html`](/interfaces/goldilocks-beehive-residency.html) | Goldilocks Syntheverse Beehive Residency · Machote Moderno members |
 | [`/interfaces/goldilocks-os.html`](/interfaces/goldilocks-os.html) | Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia |
 | [`/interfaces/harmonopoly-guide.html`](/interfaces/harmonopoly-guide.html) | Harmonopoly · Game, tech & math guide |
@@ -374,15 +387,16 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
-| [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Lattice Chat Agent V1.618 · Token Maxing · Product brochure · FractiAI |
-| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | Learn more · Lattice Chat Agent V1.618 · Token Maxing · FractiAI |
+| [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Lattice Chat Agent V1.618 · Next layer in the stack · Product brochure · FractiAI |
+| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | Learn more · Lattice Chat Agent V1.618 · Next layer in the stack · FractiAI |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
-| [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Lattice Chat Agent V1.618 · Token Maxing for serious vibe coders · FractiAI |
+| [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Lattice Chat Agent V1.618 · Next layer after Cursor & Claude Code · FractiAI |
 | [`/interfaces/listen.html`](/interfaces/listen.html) | Listen · Golden Era Jukebox · SS Vibelandia QUESTFEST |
-| [`/interfaces/look-at-the-sun.html`](/interfaces/look-at-the-sun.html) | Look at the Sun · Digital Pru · SS Vibelandia QUESTFEST |
+| [`/interfaces/look-at-the-sun.html`](/interfaces/look-at-the-sun.html) | Look at the Sun · Omni-Lattice · SS Vibelandia |
 | [`/interfaces/look-under-the-hood-legacy-catalog.html`](/interfaces/look-under-the-hood-legacy-catalog.html) | Redirect · Master canon |
-| [`/interfaces/look-under-the-hood.html`](/interfaces/look-under-the-hood.html) | Look Under the Hood · Engine Room · SS Vibelandia |
+| [`/interfaces/look-under-the-hood.html`](/interfaces/look-under-the-hood.html) | Look Under the Hood · Omni-Lattice Engine · SS Vibelandia |
 | [`/interfaces/my-whiteboard.html`](/interfaces/my-whiteboard.html) | My whiteboard · Commander surface |
+| [`/interfaces/octave99-pricing.html`](/interfaces/octave99-pricing.html) | Bridge & Chart Pricing · 99 Octave · SING13 |
 | [`/interfaces/plain-machote-moderno-reno-swamp.html`](/interfaces/plain-machote-moderno-reno-swamp.html) | About · Sonic Singularity · SS Vibelandia |
 | [`/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html`](/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html) | The Omniversal 1-2-3 Wormhole Campaign · SS Vibelandia QUESTFEST |
 | [`/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html`](/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html) | FOR IMMEDIATE RELEASE — Holographic review of Anthropic’s Mythos · Clock-skew disclosure |
@@ -393,14 +407,14 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html`](/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html) | FOR IMMEDIATE RELEASE — Universal Checkmate Royal Flush · King Bee stratification |
 | [`/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html`](/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html) | FOR IMMEDIATE RELEASE — Chipless, Datacenterless AI · SynthOBS RSI validation |
 | [`/interfaces/press-releases.html`](/interfaces/press-releases.html) | Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9 |
-| [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Tour of the Ship · SS VIBELANDIA QUESTFEST 24×365 |
+| [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Ship Map · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
 | [`/interfaces/reno-interpretation.html`](/interfaces/reno-interpretation.html) | The Reno Interpretation · Mirror Lattice · FractiAI |
 | [`/interfaces/sing13-edge-onboarding.html`](/interfaces/sing13-edge-onboarding.html) | Sonic Singularity Sing! 13 · Edge onboarding · plain talk |
 | [`/interfaces/ss-vibelandia.html`](/interfaces/ss-vibelandia.html) | SS Vibelandia · The Noah’s Ark of the Intelligence Age |
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
-| [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · QUESTFEST · Welcome aboard with Valet Pru |
+| [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Daily Ship Bulletin · Sonic Ship |
 | [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) | Read · SS Vibelandia |
 | [`/interfaces/whitepaper-surface.html`](/interfaces/whitepaper-surface.html) | Reader · SS Vibelandia |
 
@@ -408,10 +422,10 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/commons/chef.html`](/interfaces/commons/chef.html) | Chef portal · Sanctuary Gastronomy Director · The Commons |
-| [`/interfaces/commons/guide.html`](/interfaces/commons/guide.html) | Guide portal · Outfitter & Guide Commander · The Commons |
-| [`/interfaces/commons/host.html`](/interfaces/commons/host.html) | Host portal · Downtown Citadel Host · The Commons |
-| [`/interfaces/commons/index.html`](/interfaces/commons/index.html) | The Commons · all-inclusive frontier days · SS Vibelandia QUESTFEST |
+| [`/interfaces/commons/chef.html`](/interfaces/commons/chef.html) | Chef portal · Sanctuary Gastronomy Director · Puerto Reno |
+| [`/interfaces/commons/guide.html`](/interfaces/commons/guide.html) | Guide portal · Outfitter & Guide Commander · Puerto Reno |
+| [`/interfaces/commons/host.html`](/interfaces/commons/host.html) | Host portal · Downtown Citadel Host · Puerto Reno |
+| [`/interfaces/commons/index.html`](/interfaces/commons/index.html) | Puerto Reno Guest Brochure & Crew Portals · SS Vibelandia |
 
 ### `executive-ai-onboard/` (`/interfaces/executive-ai-onboard/`)
 
@@ -435,7 +449,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Lattice Chat Agent V1.618 · FractiAI |
+| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Lattice Chat Agent · Collaborate · V1.618 |
 
 ### `nesting/` (`/interfaces/nesting/`)
 
@@ -444,14 +458,26 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/nesting/nest-basenet-genesis.html`](/interfaces/nesting/nest-basenet-genesis.html) | Base Mainnet · genesis contracts · nesting guide |
 | [`/interfaces/nesting/nest-dph-gpu.html`](/interfaces/nesting/nest-dph-gpu.html) | Holographic code layer · nesting guide |
 | [`/interfaces/nesting/nest-goldilocks-beehive.html`](/interfaces/nesting/nest-goldilocks-beehive.html) | Goldilocks Syntheverse Beehive Residency · nesting guide |
-| [`/interfaces/nesting/nest-hospitality-commons.html`](/interfaces/nesting/nest-hospitality-commons.html) | The Commons · Sustainable Hospitality · nesting guide |
-| [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html) | Lattice Chat Agent V1.618 · Token Maxing · nesting guide |
+| [`/interfaces/nesting/nest-hospitality-commons.html`](/interfaces/nesting/nest-hospitality-commons.html) | Puerto Reno Guest Brochure & Crew Portals · nesting guide |
+| [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html) | Lattice Chat Agent V1.618 · Next layer · nesting guide |
 | [`/interfaces/nesting/nest-man-cave-restroom.html`](/interfaces/nesting/nest-man-cave-restroom.html) | Man cave mirror · nesting guide |
 | [`/interfaces/nesting/nest-questfest-puerto-reno.html`](/interfaces/nesting/nest-questfest-puerto-reno.html) | QUESTFEST · Puerto Reno · nesting guide |
 | [`/interfaces/nesting/nest-sing13.html`](/interfaces/nesting/nest-sing13.html) | Sonic Singularity Sing! 13 · cloud skin · nesting guide |
 | [`/interfaces/nesting/nest-sonic-singularity.html`](/interfaces/nesting/nest-sonic-singularity.html) | Sonic Singularity · nesting guide |
 | [`/interfaces/nesting/nest-syntheverse.html`](/interfaces/nesting/nest-syntheverse.html) | Syntheverse · nesting guide |
 | [`/interfaces/nesting/nest-wrong-side.html`](/interfaces/nesting/nest-wrong-side.html) | Wrong Side of Town · nesting guide |
+
+### `octave99-bridge/` (`/interfaces/octave99-bridge/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/octave99-bridge/index.html`](/interfaces/octave99-bridge/index.html) | 99 Octave Omni-Lattice Bridge · SING13 |
+
+### `octave99-chart/` (`/interfaces/octave99-chart/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | 99 Octave Chart · Omni-Lattice |
 
 ### `questfest-bridge/` (`/interfaces/questfest-bridge/`)
 

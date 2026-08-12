@@ -1,0 +1,32 @@
+{
+  "schema": "synthio-agent/v1",
+  "agentId": "Synthio.sandbox",
+  "displayName": "Synthio",
+  "shortFor": "Syntheverse Sandbox",
+  "sandbox": "Syntheverse Sandbox",
+  "access": "creator_only",
+  "engineStack": "excluded",
+  "syncDoc": "AGENT_SYNC_SYNTHIO.md",
+  "paperId": "synthio-mri-cloud-antenna-99-octave-2026-08",
+  "onePagerPath": "interfaces/synthio-one-pager.html",
+  "chatPath": "/synthio",
+  "apiPath": "/api/synthio-chat",
+  "sandboxPaths": [
+    "AGENT_SYNC_SYNTHIO.md",
+    "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md",
+    "docs/SYNTHIO_MRI_CLOUD_ANTENNA_ONE_PAGER_2026-08.md",
+    "research/synthio-mri-cloud-antenna/",
+    "interfaces/synthio.html",
+    "interfaces/synthio-one-pager.html",
+    "api/synthio-chat.js",
+    "lib/synthio-prompt.mjs",
+    "lib/synthio-access.mjs"
+  ],
+  "operatorStatement": "Synthio is the creator-only Syntheverse Sandbox agent for MRI-simulator / cloud-antenna catalog work. Separate from the 99 Octave Omni-Lattice engine sync pin.",
+  "auditSnap": "NSPFRNP-SNAP-PRA-2026-06",
+  "parentOrchestrator": "SynthOBS Autonomous Agent",
+  "status": "operational_always_on",
+  "contact": "valetpru@gmail.com",
+  "creatorEmails": ["valetpru@gmail.com", "espressolico@gmail.com"],
+  "effectiveDate": "2026-08-12"
+}

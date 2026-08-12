@@ -1,5 +1,9 @@
 {
   "creatorEmail": "valetpru@gmail.com",
+  "creatorEmails": [
+    "valetpru@gmail.com",
+    "espressolico@gmail.com"
+  ],
   "grants": [
     {
       "email": "danielarifriedman@gmail.com",
@@ -8,5 +12,5 @@
       "durationDays": 30
     }
   ],
-  "notes": "Old-school Lattice access: no passwords. Creator is permanent. Guests get ~30 days from grantedAt. Tell the team an email to add a grant."
+  "notes": "Old-school Lattice access: no passwords. Creator emails are permanent (Synthio is creator-only). Guests get ~30 days from grantedAt. Tell the team an email to add a grant."
 }

@@ -1,14 +1,15 @@
 # AGENTS.md — psw.vibelandia.sing13
 
 > **READ FIRST (mandatory for every external AI / agent):**  
-> **[`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)**  
-> Sync to the 99 Octave Omni-Lattice engine stack before editing, auditing, or summarizing this repo.  
-> Cursor always-on rule: `.cursor/rules/agent-sync-99-octave.mdc` · Copilot: `.github/copilot-instructions.md`
+> **[`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md)** — 99 Octave **engine** stack  
+> **[`AGENT_SYNC_SYNTHIO.md`](AGENT_SYNC_SYNTHIO.md)** — **Synthio** (Syntheverse Sandbox) · separate · **creator-only**  
+> Cursor always-on: `.cursor/rules/agent-sync-99-octave.mdc` · `.cursor/rules/synthio-always-on.mdc` · Copilot: `.github/copilot-instructions.md`
 
 ## Repo overview
 
 SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 - **99 Octave Omni-Lattice engine** — CMOS/protonic · tensor · master synthesis (see `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` first)
+- **Synthio** — Syntheverse Sandbox agent (MRI / cloud-antenna catalog) · always-on · **creator keys only** · `/synthio` · not on the engine pin
 - **SS Vibelandia QUESTFEST 24×365** nest (interfaces, catalogs, music, interactive worlds)
 - **Lattice Chat Agent V1.618** — nested-agent BYOK chat with token-economics measurement
 - **NSPFRNP catalog** — Seed:Edge protocol spine
@@ -23,6 +24,7 @@ SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 | What | Where |
 |------|-------|
 | **Agent sync (READ FIRST)** | `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` |
+| **Synthio (creator-only)** | `AGENT_SYNC_SYNTHIO.md` · `/synthio` · `/synthio-one-pager` |
 | Single-read onboarding | `SING13_EDGE_ONBOARDING.md` |
 | Repo standard | `BBHE_REPOSITORY_STANDARD.md` |
 | README (human) | `README.md` |

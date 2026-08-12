@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Synthio · Syntheverse Sandbox · creator-only</title>
+  <meta name="description" content="Synthio — always-on Syntheverse Sandbox agent for MRI / cloud-antenna catalog work. Creator keys only." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/synthio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <style>
+    :root {
+      --bg: #07120e;
+      --panel: rgba(12, 28, 22, 0.92);
+      --line: rgba(52, 211, 153, 0.35);
+      --accent: #34d399;
+      --hi: #a7f3d0;
+      --soft: #b7cfc4;
+      --muted: #7a9a8c;
+      --danger: #fca5a5;
+      --font-d: 'Cormorant Garamond', Georgia, serif;
+      --font-b: 'IBM Plex Sans', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-b);
+      color: #e8f5ef;
+      background:
+        radial-gradient(ellipse 70% 45% at 10% 0%, rgba(52, 211, 153, 0.16), transparent 50%),
+        linear-gradient(165deg, #0c1a14, var(--bg) 60%);
+    }
+    .wrap { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
+    .nav a { color: var(--hi); margin-right: 0.85rem; font-size: 0.85rem; }
+    h1 {
+      font-family: var(--font-d);
+      font-size: clamp(2rem, 5vw, 2.6rem);
+      color: var(--hi);
+      margin: 0.75rem 0 0.25rem;
+    }
+    .sub { color: var(--muted); margin: 0 0 1rem; font-size: 0.92rem; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem 1.05rem;
+      margin-bottom: 0.85rem;
+    }
+    label { display: block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin: 0.55rem 0 0.3rem; }
+    input, select, textarea {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #050a08;
+      color: #e8f5ef;
+      padding: 0.55rem 0.65rem;
+      font: inherit;
+    }
+    textarea { min-height: 5.5rem; resize: vertical; }
+    .row { display: grid; gap: 0.65rem; }
+    @media (min-width: 560px) { .row { grid-template-columns: 1fr 1fr; } }
+    button {
+      margin-top: 0.75rem;
+      border: 0;
+      border-radius: 8px;
+      padding: 0.65rem 1rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #059669, #34d399);
+      color: #042f1e;
+      cursor: pointer;
+    }
+    button:disabled { opacity: 0.55; cursor: not-allowed; }
+    .flash { margin-top: 0.65rem; font-size: 0.9rem; }
+    .flash.err { color: var(--danger); }
+    .flash.ok { color: var(--accent); }
+    .log {
+      white-space: pre-wrap;
+      font-size: 0.92rem;
+      color: var(--soft);
+      line-height: 1.5;
+      max-height: 22rem;
+      overflow: auto;
+    }
+    .lock {
+      border-color: rgba(252, 165, 165, 0.45);
+      color: var(--danger);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/my-whiteboard">Whiteboard</a>
+      <a href="/synthio-one-pager">One-pager</a>
+      <a href="/agent-sync-synthio">Agent sync</a>
+      <a href="/papers">Papers</a>
+    </nav>
+    <h1>Synthio</h1>
+    <p class="sub">Syntheverse Sandbox · always-on · <strong>creator keys only</strong> · not the 99 Octave engine pin · BYOK (your key is your password)</p>
+
+    <section class="panel" id="gate">
+      <p style="margin:0;color:var(--soft);font-size:0.92rem;">Sign in with a creator email + provider key. Guests are locked out of Synthio requests.</p>
+      <div class="row">
+        <div>
+          <label for="email">Creator email</label>
+          <input id="email" type="email" autocomplete="username" placeholder="you@…" />
+        </div>
+        <div>
+          <label for="provider">Provider</label>
+          <select id="provider">
+            <option value="openrouter">OpenRouter</option>
+            <option value="claude">Claude (Anthropic)</option>
+          </select>
+        </div>
+      </div>
+      <label for="key">API key (stays on this device)</label>
+      <input id="key" type="password" autocomplete="off" placeholder="sk-…" />
+      <button type="button" id="btn-unlock">Unlock Synthio</button>
+      <p class="flash" id="gate-flash" hidden></p>
+    </section>
+
+    <section class="panel" id="chat" hidden>
+      <div class="log" id="log" aria-live="polite"></div>
+      <label for="msg">Request</label>
+      <textarea id="msg" placeholder="Ask Synthio about MRI simulator grammar, cloud-antenna labels, honesty bounds…"></textarea>
+      <button type="button" id="btn-send">Send to Synthio</button>
+      <p class="flash" id="chat-flash" hidden></p>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var LS_EMAIL = 'synthio.email';
+      var LS_KEY = 'synthio.key.';
+      var LS_PROV = 'synthio.provider';
+      var history = [];
+      var emailEl = document.getElementById('email');
+      var keyEl = document.getElementById('key');
+      var provEl = document.getElementById('provider');
+      var gateFlash = document.getElementById('gate-flash');
+      var chatFlash = document.getElementById('chat-flash');
+      var chat = document.getElementById('chat');
+      var log = document.getElementById('log');
+      var msgEl = document.getElementById('msg');
+
+      emailEl.value = localStorage.getItem(LS_EMAIL) || '';
+      provEl.value = localStorage.getItem(LS_PROV) || 'openrouter';
+      keyEl.value = localStorage.getItem(LS_KEY + provEl.value) || '';
+
+      function show(el, text, ok) {
+        el.hidden = !text;
+        el.textContent = text || '';
+        el.className = 'flash ' + (ok ? 'ok' : 'err');
+      }
+
+      function append(role, text) {
+        log.textContent += (log.textContent ? '\n\n' : '') + role.toUpperCase() + '\n' + text;
+        log.scrollTop = log.scrollHeight;
+      }
+
+      document.getElementById('btn-unlock').addEventListener('click', async function () {
+        var email = (emailEl.value || '').trim().toLowerCase();
+        var provider = provEl.value;
+        var key = (keyEl.value || '').trim();
+        if (!email || !key) {
+          show(gateFlash, 'Email and API key required.', false);
+          return;
+        }
+        localStorage.setItem(LS_EMAIL, email);
+        localStorage.setItem(LS_PROV, provider);
+        localStorage.setItem(LS_KEY + provider, key);
+        try {
+          var res = await fetch('/api/synthio-chat?email=' + encodeURIComponent(email), {
+            headers: { 'x-lattice-email': email },
+          });
+          var data = await res.json();
+          if (!res.ok || !data.ok) {
+            show(gateFlash, data.reason || data.error || 'Creator seat required.', false);
+            chat.hidden = true;
+            return;
+          }
+          show(gateFlash, 'Synthio unlocked · creator seat.', true);
+          chat.hidden = false;
+        } catch (e) {
+          show(gateFlash, 'Could not reach Synthio access.', false);
+        }
+      });
+
+      document.getElementById('btn-send').addEventListener('click', async function () {
+        var email = (emailEl.value || '').trim().toLowerCase();
+        var provider = provEl.value;
+        var key = (keyEl.value || '').trim();
+        var message = (msgEl.value || '').trim();
+        if (!message) return;
+        var headers = {
+          'content-type': 'application/json',
+          'x-lattice-email': email,
+          'x-synthio-provider': provider,
+        };
+        if (provider === 'claude') headers['x-anthropic-api-key'] = key;
+        else headers['x-openrouter-api-key'] = key;
+        append('you', message);
+        msgEl.value = '';
+        show(chatFlash, 'Synthio thinking…', true);
+        try {
+          var res = await fetch('/api/synthio-chat', {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify({ email: email, provider: provider, message: message, history: history }),
+          });
+          var data = await res.json();
+          if (!res.ok) {
+            show(chatFlash, data.error || 'Request failed', false);
+            append('synthio', data.error || 'error');
+            return;
+          }
+          history.push({ role: 'user', content: message });
+          history.push({ role: 'assistant', content: data.reply || '' });
+          append('synthio', data.reply || '(empty)');
+          show(chatFlash, 'Ready.', true);
+        } catch (e) {
+          show(chatFlash, 'Network error', false);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

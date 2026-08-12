@@ -1,0 +1,61 @@
+import { describe, it, expect } from 'vitest';
+import {
+  checkLatticeEmailAccess,
+  listCreatorEmails,
+  CREATOR_EMAIL,
+} from '../../lib/lattice-access.mjs';
+import {
+  checkSynthioAccess,
+  isSynthioCreatorEmail,
+  SYNTHIO_AGENT_ID,
+} from '../../lib/synthio-access.mjs';
+import { buildSynthioMessages, SYNTHIO_SYSTEM_PROMPT } from '../../lib/synthio-prompt.mjs';
+
+describe('Synthio creator-only access', () => {
+  it('lists creator emails including espressolico', () => {
+    const list = listCreatorEmails();
+    expect(list).toContain(CREATOR_EMAIL);
+    expect(list).toContain('espressolico@gmail.com');
+  });
+
+  it('allows creator seats', () => {
+    const a = checkSynthioAccess('valetpru@gmail.com');
+    expect(a.ok).toBe(true);
+    expect(a.privilege).toBe('creator');
+    expect(a.agent).toBe(SYNTHIO_AGENT_ID);
+    expect(isSynthioCreatorEmail('espressolico@gmail.com')).toBe(true);
+  });
+
+  it('blocks guest seats', () => {
+    const guest = checkLatticeEmailAccess('danielarifriedman@gmail.com');
+    // guest may be expired depending on date — Synthio must still refuse non-creators
+    const synthio = checkSynthioAccess('danielarifriedman@gmail.com');
+    expect(synthio.ok).toBe(false);
+    expect(synthio.privilege).not.toBe('creator');
+    if (guest.ok) {
+      expect(guest.privilege).toBe('guest');
+      expect(synthio.reason).toMatch(/creator-only/i);
+    }
+  });
+
+  it('blocks unknown emails', () => {
+    const a = checkSynthioAccess('nobody@example.com');
+    expect(a.ok).toBe(false);
+  });
+});
+
+describe('Synthio prompt', () => {
+  it('includes Synthio identity and honesty', () => {
+    expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/Synthio/);
+    expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/creator-only/i);
+    expect(SYNTHIO_SYSTEM_PROMPT).toMatch(/not.*clinical/i);
+  });
+
+  it('builds messages with system + user', () => {
+    const msgs = buildSynthioMessages('Hello Synthio', {
+      history: [{ role: 'user', content: 'prior' }, { role: 'assistant', content: 'ack' }],
+    });
+    expect(msgs[0].role).toBe('system');
+    expect(msgs[msgs.length - 1]).toEqual({ role: 'user', content: 'Hello Synthio' });
+  });
+});

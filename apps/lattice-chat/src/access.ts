@@ -31,7 +31,12 @@ export function isValidEmailShape(email: string): boolean {
 }
 
 export function isCreatorEmail(email: string): boolean {
-  return normalizeEmail(email) === normalizeEmail(CREATOR_EMAIL);
+  const e = normalizeEmail(email);
+  const creators = [
+    normalizeEmail(CREATOR_EMAIL),
+    'espressolico@gmail.com',
+  ];
+  return creators.includes(e);
 }
 
 /** Edge remember: creator never expires; guests re-prompt after 30 days on-device. */

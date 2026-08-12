@@ -7,6 +7,12 @@
     { "source": "/", "destination": "/interfaces/vibelandia-questfest.html" },
     { "source": "/agent-sync", "destination": "/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md" },
     { "source": "/agent-sync/", "destination": "/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md" },
+    { "source": "/agent-sync-synthio", "destination": "/AGENT_SYNC_SYNTHIO.md" },
+    { "source": "/agent-sync-synthio/", "destination": "/AGENT_SYNC_SYNTHIO.md" },
+    { "source": "/synthio", "destination": "/interfaces/synthio.html" },
+    { "source": "/synthio/", "destination": "/interfaces/synthio.html" },
+    { "source": "/synthio-one-pager", "destination": "/interfaces/synthio-one-pager.html" },
+    { "source": "/synthio-one-pager/", "destination": "/interfaces/synthio-one-pager.html" },
     { "source": "/interfaces", "destination": "/interfaces/index.html" },
     { "source": "/interfaces/", "destination": "/interfaces/index.html" },
     { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },
@@ -347,6 +353,10 @@
     "api/lattice-chat.js": {
       "maxDuration": 300,
       "includeFiles": "{lib/**,data/lattice-access.json}"
+    },
+    "api/synthio-chat.js": {
+      "maxDuration": 120,
+      "includeFiles": "{lib/**,data/lattice-access.json,data/synthio-agent-manifest.json}"
     },
     "api/lattice-collaborate-feed.js": {
       "maxDuration": 10,

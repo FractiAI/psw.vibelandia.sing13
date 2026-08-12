@@ -19,6 +19,12 @@ import type {
   NestTopology,
   TranscriptItem,
 } from '@/types';
+import {
+  DEFAULT_REPO_ID,
+  findRepository,
+  LATTICE_REPOSITORIES_FALLBACK,
+  type LatticeRepository,
+} from '@/repositories';
 
 const STORAGE_KEY = 'lattice-v1618-edge';
 
@@ -70,6 +76,11 @@ type LatticeState = {
   nestTopology: NestTopology;
   /** Optional user-defined roster (one agent per line: Name — role). Empty = Goldilocks auto. */
   agentRoster: string;
+  /** Active repository workstream (curated FractiAI projects). */
+  activeRepoId: string;
+  repositories: LatticeRepository[];
+  setRepositories: (repos: LatticeRepository[]) => void;
+  switchRepositoryWorkstream: (repoId: string) => void;
   ensureThread: () => string;
   newChat: () => void;
   selectThread: (id: string) => void;
@@ -128,6 +139,32 @@ export const useLatticeStore = create<LatticeState>()(
       provider: readActiveProvider(),
       nestTopology: 'octave99',
       agentRoster: '',
+      activeRepoId: DEFAULT_REPO_ID,
+      repositories: LATTICE_REPOSITORIES_FALLBACK,
+
+      setRepositories: (repositories) => set({ repositories }),
+
+      switchRepositoryWorkstream: (repoId) => {
+        const list = get().repositories.length
+          ? get().repositories
+          : LATTICE_REPOSITORIES_FALLBACK;
+        const repo = findRepository(repoId, list) || findRepository(repoId);
+        if (!repo) return;
+        const t = emptyThread();
+        t.title = `Workstream · ${repo.label}`;
+        set((s) => ({
+          activeRepoId: repo.id,
+          threads: [t, ...s.threads.filter((x) => x.messages.length > 0)],
+          activeThreadId: t.id,
+          error: null,
+          sendPhase: 'idle',
+          statusHint: null,
+          pending: null,
+          liveTranscript: [],
+          sending: false,
+          nestTopology: (repo.tags || []).includes('99-octave') ? 'octave99' : s.nestTopology,
+        }));
+      },
 
       ensureThread: () => {
         const { threads, activeThreadId } = get();
@@ -383,6 +420,7 @@ export const useLatticeStore = create<LatticeState>()(
         provider: s.provider,
         nestTopology: s.nestTopology,
         agentRoster: s.agentRoster,
+        activeRepoId: s.activeRepoId,
         pending: s.pending,
       }),
       onRehydrateStorage: () => (state) => {
@@ -393,7 +431,16 @@ export const useLatticeStore = create<LatticeState>()(
         const modelId = models.some((m) => m.id === state.modelId)
           ? state.modelId
           : PROVIDER_DEFAULT_MODEL[provider];
-        useLatticeStore.setState({ provider, models, modelId });
+        const activeRepoId = state.activeRepoId || DEFAULT_REPO_ID;
+        useLatticeStore.setState({
+          provider,
+          models,
+          modelId,
+          activeRepoId,
+          repositories: state.repositories?.length
+            ? state.repositories
+            : LATTICE_REPOSITORIES_FALLBACK,
+        });
       },
     },
   ),

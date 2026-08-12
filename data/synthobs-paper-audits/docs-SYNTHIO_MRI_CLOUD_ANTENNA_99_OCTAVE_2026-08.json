@@ -1,8 +1,8 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "ede2ef72d8569821",
-  "paperId": "synthio-mri-cloud-antenna-99-octave-2026-08",
+  "auditId": "a2c6aede433a1cd7",
+  "paperId": "docs-SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08",
   "sourcePath": "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-08-12T18:14:14.355Z"
+          "invokedAt": "2026-08-12T17:38:02.644Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-08-12T18:14:14.354Z",
-  "completedAt": "2026-08-12T18:14:14.355Z",
+  "startedAt": "2026-08-12T17:38:02.642Z",
+  "completedAt": "2026-08-12T17:38:02.644Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,11 +125,11 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 2310,
+      "wordCount": 1149,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 6,
+        "links": 5,
         "numbered": 3,
         "citeLines": 2
       }

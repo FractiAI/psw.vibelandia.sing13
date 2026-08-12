@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "ede2ef72d8569821",
-  "paperId": "synthio-mri-cloud-antenna-99-octave-2026-08",
-  "sourcePath": "docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md",
+  "auditId": "f79c86c3e5bdad9c",
+  "paperId": "docs-SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08",
+  "sourcePath": "docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-08-12T18:14:14.355Z"
+          "invokedAt": "2026-08-12T18:14:14.352Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-08-12T18:14:14.354Z",
-  "completedAt": "2026-08-12T18:14:14.355Z",
+  "startedAt": "2026-08-12T18:14:14.352Z",
+  "completedAt": "2026-08-12T18:14:14.353Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 2310,
+      "wordCount": 979,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 6,
-        "numbered": 3,
-        "citeLines": 2
+        "links": 5,
+        "numbered": 0,
+        "citeLines": 3
       }
     }
   },

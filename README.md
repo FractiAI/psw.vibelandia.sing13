@@ -51,7 +51,7 @@ Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review 
 | Chat UI (React / Vite) | [`apps/lattice-chat/`](apps/lattice-chat/) | Composer, BYOK key, threads, scroll |
 | Built static SPA | [`interfaces/lattice-chat/`](interfaces/lattice-chat/) | What Vercel serves at `/lattice-chat` |
 | Landing + proof HTML | [`interfaces/lattice-v1618.html`](interfaces/lattice-v1618.html) · [`interfaces/lattice-token-proof.html`](interfaces/lattice-token-proof.html) |
-| API pipe (BYOK proxy) | [`api/lattice-chat.js`](api/lattice-chat.js) | Multi-provider: Cursor cloud · Claude Messages · Gemini Antigravity; header keys only — **no server key fallback** |
+| API pipe (BYOK proxy) | [`api/lattice-chat.js`](api/lattice-chat.js) | Multi-provider: Cursor cloud · Claude Messages · Gemini Antigravity · OpenRouter; header keys only — **no server key fallback** |
 | Token estimate engine | [`lib/lattice-engine.mjs`](lib/lattice-engine.mjs) | Shared estimate math for API + benches |
 | Access allowlist | [`data/lattice-access.json`](data/lattice-access.json) | Email grants (old school · honor) |
 | Comparison receipt | [`data/lattice-vs-standard-comparison.json`](data/lattice-vs-standard-comparison.json) | Structural estimate (chars÷4) — secondary |
@@ -66,6 +66,24 @@ Daniel’s manuscript (*Lattice Token Economics*) is treated as a **peer-review 
 npm test                    # vitest suite — see AGENTS.md "Test suite" for the current inventory
 npm run test:watch          # watch mode
 ```
+
+### Terminal OpenRouter quickstart
+
+The terminal runtime env file lives at the repository root as `.env` (or another local runtime env file you load explicitly); keep real credentials out of source control. Set these variables in that file or in your shell:
+
+- `LATTICE_CHAT_ENDPOINT`
+- `LATTICE_CHAT_EMAIL`
+- `LATTICE_CHAT_API_KEY`
+- `LATTICE_CHAT_PROVIDER=openrouter`
+- `LATTICE_CHAT_MODEL=deepseek/deepseek-chat`
+
+From the repository root, run:
+
+```bash
+node scripts/hermes-lattice-chat.mjs --provider openrouter --prompt "…"
+```
+
+The assistant reply is written to stdout; progress and status messages are written to stderr. Exit code `0` indicates success, `1` indicates an auth/access/key error, and `2` indicates a transient error such as timeout or network failure. Never commit the runtime env file or any provider key.
 
 **1 · Context-load bench (no Cursor key required)**
 

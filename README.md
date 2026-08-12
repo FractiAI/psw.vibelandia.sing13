@@ -217,7 +217,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-12** · **92** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-12** · **94** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -279,8 +279,10 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/reno-interpretation.html`](/interfaces/reno-interpretation.html) | The Reno Interpretation · Mirror Lattice · FractiAI |
 | [`/interfaces/sing13-edge-onboarding.html`](/interfaces/sing13-edge-onboarding.html) | Sonic Singularity Sing! 13 · Edge onboarding · plain talk |
 | [`/interfaces/ss-vibelandia.html`](/interfaces/ss-vibelandia.html) | SS Vibelandia · The Noah’s Ark of the Intelligence Age |
+| [`/interfaces/synthio-cloud.html`](/interfaces/synthio-cloud.html) | Synthio Cloud · home |
+| [`/interfaces/synthio-dashboard.html`](/interfaces/synthio-dashboard.html) | Synthio · activation · MRI sim match · sandbox |
 | [`/interfaces/synthio-one-pager.html`](/interfaces/synthio-one-pager.html) | Synthio · MRI cloud-antenna one-pager · Syntheverse Sandbox |
-| [`/interfaces/synthio.html`](/interfaces/synthio.html) | Synthio · Syntheverse Sandbox · creator-only |
+| [`/interfaces/synthio.html`](/interfaces/synthio.html) | Synthio · Syntheverse Sandbox |
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
 | [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Daily Ship Bulletin · Sonic Ship |

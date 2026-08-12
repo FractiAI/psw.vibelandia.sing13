@@ -19,6 +19,7 @@ import { TokenCompareFooter, hasMeasuredTokens } from '@/components/TokenCompare
 import { hasProviderApiKey, subscribeProviderKeys } from '@/lib/providerKeys';
 import { useLatticeStore } from '@/store';
 import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
+import { CollabDmBadge } from '@/components/collaborate/CollabDmNotifier';
 
 export function ChatPane({
   onOpenHistory,
@@ -268,6 +269,7 @@ export function ChatPane({
                     {' · '}
                     <button type="button" className="chat-collab-link" onClick={() => onOpenCollaborate()}>
                       Collaborate
+                      <CollabDmBadge />
                     </button>
                   </>
                 ) : null}
@@ -290,6 +292,7 @@ export function ChatPane({
                 onClick={() => onOpenCollaborate()}
               >
                 Collaborate
+                <CollabDmBadge />
               </button>
             ) : null}
           </div>

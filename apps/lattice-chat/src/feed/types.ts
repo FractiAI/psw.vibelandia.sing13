@@ -110,6 +110,6 @@ export type CollabPeer = {
 
 export type CollabMobileTab = 'home' | 'channels' | 'chat' | 'settings';
 
-export type CollabLayoutMode = 'feed' | 'repo' | 'settings';
+export type CollabLayoutMode = 'feed' | 'repo' | 'settings' | 'chat';
 
 export type ContextMenuAction = 'open' | 'share' | 'convert' | 'ask_agent';

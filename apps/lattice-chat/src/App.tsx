@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { HistoryRail, HistoryRailOverlay } from '@/components/HistoryRail';
 import { ChatPane } from '@/components/ChatPane';
 import { CollaborateShell } from '@/components/collaborate/CollaborateShell';
+import { CollabDmNotifier } from '@/components/collaborate/CollabDmNotifier';
 import { useLatticeStore } from '@/store';
 import { migrateActiveProvider, saveActiveProvider } from '@/lib/providerKeys';
 import type { NestTopology } from '@/types';
@@ -78,7 +79,12 @@ export function App() {
   );
 
   if (mode === 'collaborate') {
-    return <CollaborateShell onExit={() => setMode('chat')} onSendToAgent={sendToAgent} />;
+    return (
+      <>
+        <CollaborateShell onExit={() => setMode('chat')} onSendToAgent={sendToAgent} />
+        <CollabDmNotifier onOpenCollaborate={() => setMode('collaborate')} />
+      </>
+    );
   }
 
   return (
@@ -95,6 +101,7 @@ export function App() {
         agentSeedPrompt={agentSeed}
         onAgentSeedConsumed={() => setAgentSeed(null)}
       />
+      <CollabDmNotifier onOpenCollaborate={() => setMode('collaborate')} />
     </div>
   );
 }

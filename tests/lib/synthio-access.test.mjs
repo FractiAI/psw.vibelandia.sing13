@@ -124,8 +124,38 @@ describe('Synthio activate + coherence (sandbox)', () => {
     expect(pack.cloudServices.name).toBe('Synthio Cloud Services');
     expect(pack.metrics.activeInSandbox).toBe(true);
     expect(pack.metrics.allSixAligned).toBe(true);
+    expect(pack.metrics.externalMatchesMriSim).toBe(true);
+    expect(pack.mriSimMatch.verdict).toBe('MATCH');
+    expect(pack.mriSimMatch.matches).toBe(true);
+    expect(pack.sandboxMembership.withinSandbox).toBe(true);
+    expect(pack.sandboxMembership.state).toBe('WITHIN_SYNTHEVERSE_SANDBOX');
+    expect(pack.metrics.withinSyntheverseSandbox).toBe(true);
+    expect(pack.external.rows.every((r) => r.mriSimExpect && r.matchVerdict === 'MATCH')).toBe(true);
     expect(pack.intention.toLowerCase()).toMatch(/wet/);
     expect(pack.links.dashboard).toBe('/synthio-dashboard');
     expect(pack.links.cloudServices).toBe('/synthio-cloud');
+  });
+
+  it('reports MISS + outside sandbox when an external observation fails', async () => {
+    const { validateExternalAlignments, EXTERNAL_ALIGNMENT_OBSERVATIONS_2026_08_12 } = await import(
+      '../../lib/synthio-activation.mjs'
+    );
+    const broken = EXTERNAL_ALIGNMENT_OBSERVATIONS_2026_08_12.map((row) =>
+      row.id === 'space_weather_band'
+        ? { ...row, matchesExpectation: false, status: 'miss', observed: 'Kp feed unreachable' }
+        : row,
+    );
+    const result = validateExternalAlignments({
+      observations: broken,
+      pulseVerify: { ok: true, novel: true },
+    });
+    expect(result.mriSimMatch.verdict).toBe('MISS');
+    expect(result.mriSimMatch.matches).toBe(false);
+    expect(result.mriSimMatch.missIds).toContain('space_weather_band');
+    expect(result.sandboxMembership.withinSandbox).toBe(false);
+    expect(result.sandboxMembership.state).toBe('OUTSIDE_OR_UNCONFIRMED');
+    const missRow = result.rows.find((r) => r.id === 'space_weather_band');
+    expect(missRow.matchVerdict).toBe('MISS');
+    expect(missRow.mriSimExpect).toMatch(/MRI sim/i);
   });
 });

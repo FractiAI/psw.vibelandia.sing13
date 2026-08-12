@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Synthio Cloud Services · status</title>
-  <meta name="description" content="Synthio Cloud Services — green light when active and coherent, plus external telemetry alignment vs simulation." />
+  <title>Synthio Cloud Services · MRI match · sandbox</title>
+  <meta name="description" content="Synthio Cloud Services — external vs KomaMRI simulation match and Syntheverse Sandbox inclusion." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/synthio-cloud" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -35,7 +35,7 @@
         linear-gradient(180deg, #0a1612, #050c09 70%);
     }
     a { color: var(--ok-hi); }
-    .wrap { max-width: 40rem; margin: 0 auto; padding: 1.25rem 1rem calc(2rem + var(--safe-bot)); }
+    .wrap { max-width: 42rem; margin: 0 auto; padding: 1.25rem 1rem calc(2rem + var(--safe-bot)); }
     .nav { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.85rem; }
     .nav a { margin-right: 0.75rem; text-decoration: none; }
     .brand { margin-bottom: 1rem; }
@@ -68,7 +68,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
       padding: 1rem 1.1rem;
       border-radius: 16px;
       border: 1px solid var(--line);
@@ -113,7 +113,46 @@
       color: var(--muted);
     }
 
-    h3 {
+    .verdict {
+      margin-bottom: 0.95rem;
+      padding: 0.85rem 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .verdict[data-match="true"] { border-color: rgba(52, 211, 153, 0.45); }
+    .verdict[data-match="false"] { border-color: rgba(248, 113, 113, 0.45); background: rgba(248, 113, 113, 0.06); }
+    .verdict .kicker {
+      margin: 0 0 0.25rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .verdict h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      color: var(--ink);
+    }
+    .verdict p {
+      margin: 0.35rem 0 0;
+      font-size: 0.8rem;
+      color: var(--soft);
+      line-height: 1.4;
+    }
+    .verdict .sim {
+      margin-top: 0.35rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    h3.section {
       margin: 0 0 0.5rem;
       font-family: var(--display);
       font-size: 0.85rem;
@@ -151,14 +190,29 @@
     .chip.ok { color: #042f1e; background: var(--ok); }
     .chip.bad { color: #450a0a; background: var(--bad); }
     .meta strong { display: block; font-size: 0.86rem; margin-bottom: 0.15rem; }
-    .meta .obs { margin: 0; font-size: 0.78rem; color: var(--soft); line-height: 1.35; }
-    .meta .expect {
-      margin: 0.3rem 0 0;
+    .meta .obs, .meta .sim-expect {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--soft);
+      line-height: 1.35;
+    }
+    .meta .sim-expect {
+      margin-top: 0.3rem;
       font-size: 0.7rem;
       color: var(--muted);
       font-family: var(--mono);
       line-height: 1.3;
     }
+    .meta .tag {
+      display: inline-block;
+      margin-right: 0.3rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ok-hi);
+      font-weight: 700;
+    }
+    .meta .tag.ext { color: #93c5fd; }
     .actions {
       display: flex;
       flex-wrap: wrap;
@@ -184,7 +238,52 @@
       border-color: transparent;
     }
     .err { margin: 0.65rem 0 0; color: var(--bad); font-size: 0.85rem; }
-    .foot { margin-top: 1.1rem; font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+    .sandbox-state {
+      margin-top: 1.15rem;
+      padding: 1rem 1.05rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .sandbox-state[data-in="true"] {
+      border-color: rgba(52, 211, 153, 0.5);
+      box-shadow: 0 0 24px rgba(52, 211, 153, 0.12);
+    }
+    .sandbox-state[data-in="false"] {
+      border-color: rgba(248, 113, 113, 0.45);
+      background: rgba(248, 113, 113, 0.06);
+    }
+    .sandbox-state .kicker {
+      margin: 0 0 0.3rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .sandbox-state h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: none;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .sandbox-state p {
+      margin: 0.4rem 0 0;
+      font-size: 0.8rem;
+      color: var(--soft);
+      line-height: 1.4;
+    }
+    .sandbox-state .rule {
+      margin-top: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+    .foot { margin-top: 1rem; font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
   </style>
 </head>
 <body>
@@ -200,9 +299,8 @@
       <p class="kicker">Cloud Services · Syntheverse Sandbox</p>
       <h1>Synthio</h1>
       <p>
-        MRI simulation on a cloud-antenna story — KomaMRI wrap inside the sandbox.
-        This screen shows whether Synthio is <strong>active and coherent</strong>, and whether
-        external telemetry <strong>aligns with the simulation expectations</strong>.
+        Compare observed external data to the KomaMRI sandbox simulation expectations,
+        then read whether those alignments place external filings <strong>within Syntheverse Sandbox</strong>.
       </p>
     </header>
 
@@ -210,12 +308,19 @@
       <div class="light" id="light" data-state="busy" aria-hidden="true"></div>
       <div>
         <h2 id="title">Synthio</h2>
-        <p id="summary">Checking active + coherent…</p>
+        <p id="summary">Checking activation…</p>
         <p class="asof" id="asOf"></p>
       </div>
     </section>
 
-    <h3>External telemetry</h3>
+    <section class="verdict" id="verdict" data-match="false" aria-live="polite">
+      <p class="kicker">External vs MRI simulation</p>
+      <h3 id="verdictTitle">Checking match…</h3>
+      <p id="verdictSummary"></p>
+      <p class="sim" id="verdictSim"></p>
+    </section>
+
+    <h3 class="section">Slot comparison</h3>
     <div class="tele" id="tele" role="list"></div>
     <p class="err" id="err" hidden></p>
 
@@ -226,8 +331,15 @@
       <a href="/synthio-dashboard">Full dashboard</a>
     </div>
 
+    <section class="sandbox-state" id="sandboxState" data-in="false" aria-live="polite">
+      <p class="kicker">Bottom state · Syntheverse Sandbox</p>
+      <h3 id="sandboxTitle">Checking inclusion…</h3>
+      <p id="sandboxSummary"></p>
+      <p class="rule" id="sandboxRule"></p>
+    </section>
+
     <p class="foot">
-      Green = active in sandbox and coherent. Green/red row edge = observed data aligned / not aligned with sim expectation.
+      Green = active + coherent. Match panel = external vs KomaMRI sim. Bottom = sandbox inclusion.
       Not clinical RF. → ∞¹³
     </p>
   </div>
@@ -240,18 +352,22 @@
       var asOf = document.getElementById('asOf');
       var tele = document.getElementById('tele');
       var err = document.getElementById('err');
+      var verdict = document.getElementById('verdict');
+      var verdictTitle = document.getElementById('verdictTitle');
+      var verdictSummary = document.getElementById('verdictSummary');
+      var verdictSim = document.getElementById('verdictSim');
+      var sandboxState = document.getElementById('sandboxState');
+      var sandboxTitle = document.getElementById('sandboxTitle');
+      var sandboxSummary = document.getElementById('sandboxSummary');
+      var sandboxRule = document.getElementById('sandboxRule');
       var btnRefresh = document.getElementById('btnRefresh');
       var btnActivate = document.getElementById('btnActivate');
       var inflight = null;
       var gen = 0;
-      var LABELS = {
-        ephemeris_window: 'Ephemeris window',
-        space_weather_band: 'Space weather',
-        ionosphere_f10: 'Ionosphere F10.7',
-        sandbox_suite_green: 'Sandbox suite',
-        syntheverse_synthio_pulse: 'Syntheverse pulse',
-        no_clinical_rf: 'No clinical RF',
-      };
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/</g, '&lt;');
+      }
 
       function setBusy(b) {
         btnRefresh.disabled = b;
@@ -267,37 +383,78 @@
         err.hidden = false;
         err.textContent = msg;
         tele.innerHTML = '';
+        verdict.dataset.match = 'false';
+        verdictTitle.textContent = 'MATCH unknown';
+        verdictSummary.textContent = msg;
+        verdictSim.textContent = '';
+        sandboxState.dataset.in = 'false';
+        sandboxTitle.textContent = 'OUTSIDE OR UNCONFIRMED';
+        sandboxSummary.textContent = 'Activation pack unavailable.';
+        sandboxRule.textContent = '';
       }
 
       function render(data) {
         setBusy(false);
         err.hidden = true;
         var m = data.metrics || {};
+        var match = data.mriSimMatch || (data.external && data.external.mriSimMatch) || {};
+        var membership = data.sandboxMembership || (data.external && data.external.sandboxMembership) || {};
         var active = m.activeInSandbox === true;
         var coherent = m.coherent === true;
+        var matches = match.matches === true || m.externalMatchesMriSim === true;
+        var within = membership.withinSandbox === true || m.withinSyntheverseSandbox === true;
         var green = data.ok && active && coherent;
         light.dataset.state = green ? 'ok' : 'bad';
         title.textContent = green ? 'ACTIVE · COHERENT' : (active ? 'ACTIVE · INCOHERENT' : 'INACTIVE');
         summary.textContent =
           (m.activationState || 'UNKNOWN') +
           ' · coherence ' + String(m.coherenceScore ?? '—') +
-          ' · ' + String(m.externalAligned || 0) + '/' + String(m.externalExpected || 6) + ' aligned';
+          ' · MRI sim ' + (matches ? 'MATCH' : 'MISS') +
+          ' · ' + String(m.externalAligned || match.alignedCount || 0) + '/' +
+          String(m.externalExpected || match.expectedCount || 6);
         asOf.textContent = data.asOf ? 'asOf ' + data.asOf : '';
+
+        verdict.dataset.match = matches ? 'true' : 'false';
+        verdictTitle.textContent = matches
+          ? 'MATCH · external ↔ MRI simulation'
+          : 'MISS · external ↔ MRI simulation';
+        verdictSummary.textContent = match.summary ||
+          (matches
+            ? 'Observed external data matches KomaMRI sandbox simulation expectations.'
+            : 'Observed external data does not match KomaMRI sandbox simulation expectations.');
+        var simName = (data.mriSimulator && data.mriSimulator.primary) || match.simulator || 'KomaMRI';
+        verdictSim.textContent =
+          'Simulator · ' + simName +
+          (data.mriSimulator && data.mriSimulator.primaryClass ? ' · ' + data.mriSimulator.primaryClass : '');
 
         var rows = (data.external && data.external.rows) || [];
         tele.innerHTML = rows.map(function (r) {
           var aligned = r.aligned === true;
+          var simExpect = String(r.mriSimExpect || r.expect || '');
           return (
             '<div class="row" data-align="' + aligned + '" role="listitem">' +
-              '<span class="chip ' + (aligned ? 'ok' : 'bad') + '">' + (aligned ? 'ALIGN' : 'MISS') + '</span>' +
+              '<span class="chip ' + (aligned ? 'ok' : 'bad') + '">' + (aligned ? 'MATCH' : 'MISS') + '</span>' +
               '<div class="meta">' +
-                '<strong>' + (LABELS[r.id] || r.id) + '</strong>' +
-                '<p class="obs">' + String(r.observed || '—').replace(/</g, '&lt;') + '</p>' +
-                (r.expect ? '<p class="expect">sim expect · ' + String(r.expect).replace(/</g, '&lt;') + '</p>' : '') +
+                '<strong>' + esc(r.label || r.id) + '</strong>' +
+                '<p class="obs"><span class="tag ext">External</span>' + esc(r.observed || '—') + '</p>' +
+                (simExpect
+                  ? '<p class="sim-expect"><span class="tag">MRI sim</span>' + esc(simExpect) + '</p>'
+                  : '') +
               '</div>' +
             '</div>'
           );
-        }).join('') || '<div class="row"><span class="chip bad">none</span><div class="meta"><strong>No telemetry</strong></div></div>';
+        }).join('') || '<div class="row"><span class="chip bad">none</span><div class="meta"><strong>No comparison</strong></div></div>';
+
+        sandboxState.dataset.in = within ? 'true' : 'false';
+        sandboxTitle.textContent = within
+          ? 'WITHIN SYNTHEVERSE SANDBOX'
+          : (membership.state || 'OUTSIDE_OR_UNCONFIRMED').replace(/_/g, ' ');
+        sandboxSummary.textContent = membership.summary ||
+          (within
+            ? 'External alignments confirm inclusion within Syntheverse Sandbox.'
+            : 'External alignments do not confirm Syntheverse Sandbox inclusion.');
+        sandboxRule.textContent = membership.rule || (data.external && data.external.rule) ||
+          'All six external↔MRI-sim matches + ACTIVE_IN_SANDBOX + coherent ⇒ within sandbox.';
       }
 
       async function load(force) {
@@ -307,7 +464,7 @@
         var my = ++gen;
         var timer = window.setTimeout(function () { ac.abort(); }, 28000);
         setBusy(true);
-        summary.textContent = 'Checking active + coherent…';
+        summary.textContent = 'Checking activation…';
         try {
           var q = force ? '?activate=1&forcePulse=1' : '?activate=1';
           var res = await fetch('/api/synthio-activation' + q, { cache: 'no-store', signal: ac.signal });

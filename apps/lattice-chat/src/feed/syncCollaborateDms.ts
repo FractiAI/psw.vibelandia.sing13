@@ -5,55 +5,19 @@
 import { useLatticeStore } from '@/store';
 import { useUnifiedFeed } from '@/feed/store';
 import {
-  peerHueForId,
-  peerNameForId,
   resolveClientCollabPeerId,
+  rewriteSharedDmForSeat,
+  type SharedDmEnvelope,
 } from '@/feed/seatIdentity';
 
-export type SharedDmEnvelope = {
-  id?: string;
-  kind?: string;
-  fromPeerId?: string;
-  threadPeerId?: string;
-  text?: string;
-  body?: string;
-  createdAt?: string;
-};
+export { rewriteSharedDmForSeat } from '@/feed/seatIdentity';
+export type { SharedDmEnvelope } from '@/feed/seatIdentity';
 
 type DmsResponse = {
   ok?: boolean;
   myPeerId?: string;
   dms?: SharedDmEnvelope[];
 };
-
-export function rewriteSharedDmForSeat(
-  raw: SharedDmEnvelope,
-  myPeerId: string,
-): Record<string, unknown> | null {
-  const id = typeof raw.id === 'string' ? raw.id : '';
-  const fromPeerId = typeof raw.fromPeerId === 'string' ? raw.fromPeerId : '';
-  const other = typeof raw.threadPeerId === 'string' ? raw.threadPeerId : '';
-  const text = String(raw.text ?? raw.body ?? '').trim();
-  if (!id || !fromPeerId || !other || !text) return null;
-  if (fromPeerId !== myPeerId && other !== myPeerId) return null;
-
-  const isMine = fromPeerId === myPeerId;
-  const threadPeerId = isMine ? other : fromPeerId;
-
-  return {
-    id,
-    type: 'chat',
-    platform: 'lattice',
-    actor: isMine ? 'You' : peerNameForId(fromPeerId),
-    body: text,
-    threadPeerId,
-    presenceHue: isMine ? 'gold' : peerHueForId(fromPeerId),
-    createdAt:
-      typeof raw.createdAt === 'string' && raw.createdAt
-        ? raw.createdAt
-        : new Date().toISOString(),
-  };
-}
 
 /** POST one DM to the shared pipe. Returns server event id on success. */
 export async function postCollaborateDm(opts: {

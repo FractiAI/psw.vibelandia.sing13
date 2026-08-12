@@ -21,3 +21,43 @@ export function peerNameForId(peerId: string): string {
 export function peerHueForId(peerId: string): 'green' | 'purple' | 'gold' | 'cyan' {
   return WORKSPACE_PEERS.find((p) => p.id === peerId)?.hue || 'purple';
 }
+
+export type SharedDmEnvelope = {
+  id?: string;
+  kind?: string;
+  fromPeerId?: string;
+  threadPeerId?: string;
+  text?: string;
+  body?: string;
+  createdAt?: string;
+};
+
+/** Rewrite a shared-pipe DM into a client ingest envelope for one seat. */
+export function rewriteSharedDmForSeat(
+  raw: SharedDmEnvelope,
+  myPeerId: string,
+): Record<string, unknown> | null {
+  const id = typeof raw.id === 'string' ? raw.id : '';
+  const fromPeerId = typeof raw.fromPeerId === 'string' ? raw.fromPeerId : '';
+  const other = typeof raw.threadPeerId === 'string' ? raw.threadPeerId : '';
+  const text = String(raw.text ?? raw.body ?? '').trim();
+  if (!id || !fromPeerId || !other || !text) return null;
+  if (fromPeerId !== myPeerId && other !== myPeerId) return null;
+
+  const isMine = fromPeerId === myPeerId;
+  const threadPeerId = isMine ? other : fromPeerId;
+
+  return {
+    id,
+    type: 'chat',
+    platform: 'lattice',
+    actor: isMine ? 'You' : peerNameForId(fromPeerId),
+    body: text,
+    threadPeerId,
+    presenceHue: isMine ? 'gold' : peerHueForId(fromPeerId),
+    createdAt:
+      typeof raw.createdAt === 'string' && raw.createdAt
+        ? raw.createdAt
+        : new Date().toISOString(),
+  };
+}

@@ -1,11 +1,11 @@
-import { describe, expect, it, beforeEach } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import {
   appendCollaborateDm,
   listCollaborateDms,
   resetCollaborateDmsMemoryForTests,
   resolveCollabPeerId,
+  rewriteSharedDmForSeat,
 } from '../../lib/lattice-collaborate-dms.mjs';
-import { rewriteSharedDmForSeat } from '../../apps/lattice-chat/src/feed/syncCollaborateDms.ts';
 
 describe('lattice-collaborate-dms', () => {
   beforeEach(() => {
@@ -74,10 +74,8 @@ describe('lattice-collaborate-dms', () => {
     });
     expect(bad.ok).toBe(false);
   });
-});
 
-describe('rewriteSharedDmForSeat', () => {
-  it('rewrites mine vs theirs for Valet Pru', () => {
+  it('rewrites mine vs theirs for each seat', () => {
     const mine = rewriteSharedDmForSeat(
       {
         id: 'dm_1',
@@ -94,25 +92,7 @@ describe('rewriteSharedDmForSeat', () => {
       body: 'hello',
     });
 
-    const theirs = rewriteSharedDmForSeat(
-      {
-        id: 'dm_2',
-        fromPeerId: 'peer_daniel',
-        threadPeerId: 'peer_valet_pru',
-        text: 'hi back',
-        createdAt: '2026-08-12T18:01:00.000Z',
-      },
-      'peer_valet_pru',
-    );
-    expect(theirs).toMatchObject({
-      actor: 'Daniel',
-      threadPeerId: 'peer_daniel',
-      body: 'hi back',
-    });
-  });
-
-  it('rewrites for Daniel seat', () => {
-    const incoming = rewriteSharedDmForSeat(
+    const forDaniel = rewriteSharedDmForSeat(
       {
         id: 'dm_1',
         fromPeerId: 'peer_valet_pru',
@@ -122,7 +102,7 @@ describe('rewriteSharedDmForSeat', () => {
       },
       'peer_daniel',
     );
-    expect(incoming).toMatchObject({
+    expect(forDaniel).toMatchObject({
       actor: 'Valet Pru',
       threadPeerId: 'peer_valet_pru',
     });

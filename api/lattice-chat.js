@@ -827,6 +827,11 @@ async function runClaudeTurn({
   };
 }
 
+/**
+ * Stateless, non-streaming BYOK completion through OpenRouter.
+ * No agent recovery and no SSE thinking stream: one shot to
+ * /chat/completions, reply returned synchronously.
+ */
 async function runOpenRouterTurn({
   apiKey,
   message,
@@ -1879,7 +1884,7 @@ export default async function handler(req, res) {
   try {
     if (req.method === 'OPTIONS') {
       res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email, x-cursor-api-key');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lattice-email, x-lattice-provider, x-cursor-api-key, x-anthropic-api-key, x-gemini-api-key, x-openrouter-api-key');
       return json(res, 204, {});
     }
 

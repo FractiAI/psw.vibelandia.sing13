@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ContextualChatDock } from '@/components/collaborate/ContextualChatDock';
+import { ChatPane } from '@/components/ChatPane';
+import { RepoWorkstreamList } from '@/components/RepoWorkstreamList';
 import { IntegrationSettings } from '@/components/collaborate/IntegrationSettings';
-import { RepoViewerOverlay } from '@/components/collaborate/RepoViewerOverlay';
-import { UnifiedFeedStream } from '@/components/collaborate/UnifiedFeedStream';
 import { MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
 import { useLatticeStore } from '@/store';
 import { useUnifiedFeed } from '@/feed/store';
@@ -15,38 +14,34 @@ import {
   syncCollaborateDms,
 } from '@/feed/syncCollaborateDms';
 import { formatDmThreadForAgent } from '@/feed/sessionBridge';
-import type { CollabMobileTab, CollabPeer } from '@/feed/types';
-import { displayName } from '@/feed/verifyConnection';
+import type { CollabPeer } from '@/feed/types';
 
 export function CollaborateShell({
   onExit,
   onSendToAgent,
+  agentSeedPrompt,
+  onAgentSeedConsumed,
 }: {
   onExit: () => void;
   onSendToAgent: (prompt: string, opts?: { title?: string }) => void;
+  agentSeedPrompt?: string | null;
+  onAgentSeedConsumed?: () => void;
 }) {
   const mobileTab = useUnifiedFeed((s) => s.mobileTab);
   const setMobileTab = useUnifiedFeed((s) => s.setMobileTab);
-  const layoutMode = useUnifiedFeed((s) => s.layoutMode);
   const setLayoutMode = useUnifiedFeed((s) => s.setLayoutMode);
-  const isDocked = useUnifiedFeed((s) => s.isDocked);
-  const dockCollapsed = useUnifiedFeed((s) => s.dockCollapsed);
-  const setDockCollapsed = useUnifiedFeed((s) => s.setDockCollapsed);
-  const openRepoFile = useUnifiedFeed((s) => s.openRepoFile);
-  const openRepoWorkspace = useUnifiedFeed((s) => s.openRepoWorkspace);
-  const integrations = useUnifiedFeed((s) => s.integrations);
   const peersAll = useUnifiedFeed((s) => s.peers);
   const userEmail = useLatticeStore((s) => s.userEmail);
+  const newChat = useLatticeStore((s) => s.newChat);
   const myPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
   const peers = useMemo(
     () => (myPeerId ? peersAll.filter((p) => p.id !== myPeerId) : peersAll),
     [peersAll, myPeerId],
   );
-  const pendingAgentPrompt = useUnifiedFeed((s) => s.pendingAgentPrompt);
-  const clearPendingAgentPrompt = useUnifiedFeed((s) => s.clearPendingAgentPrompt);
   const [wide, setWide] = useState(() =>
     typeof window !== 'undefined' ? window.matchMedia('(min-width: 768px)').matches : true,
   );
+  const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia('(min-width: 768px)');
@@ -96,151 +91,135 @@ export function CollaborateShell({
 
   const handoffAgent = useCallback(
     (prompt: string, opts?: { title?: string }) => {
+      // Seed embedded Lattice Chat in-place — stay on Collaborate.
       onSendToAgent(prompt, opts);
-      onExit();
     },
-    [onExit, onSendToAgent],
+    [onSendToAgent],
   );
 
-  const goTab = (tab: CollabMobileTab) => {
-    if (tab !== 'settings') openRepoFile(null);
-    setMobileTab(tab);
-  };
+  const agentHalf = (
+    <div className="collab-agent-band">
+      <aside className="collab-agent-band__repos" aria-label="Repositories">
+        <p className="collab-agent-band__label">Repositories</p>
+        <RepoWorkstreamList />
+        <a className="collab-left__deck" href={MAIN_DECK_HREF}>
+          {MAIN_DECK_LABEL}
+        </a>
+      </aside>
+      <div className="collab-agent-band__chat">
+        <ChatPane
+          compact
+          onNewChat={() => newChat()}
+          agentSeedPrompt={agentSeedPrompt}
+          onAgentSeedConsumed={onAgentSeedConsumed}
+        />
+      </div>
+    </div>
+  );
+
+  const dmHalf = (
+    <div className="collab-dm-band">
+      <div className="collab-dm-band__head">
+        <h2>Direct messages</h2>
+        <div className="collab-dm-band__seats">
+          {peers.map((p) => (
+            <button
+              key={p.id}
+              type="button"
+              className="collab-seat collab-seat--btn"
+              onClick={() => useUnifiedFeed.getState().openPeerDm(p.id)}
+            >
+              {p.name}
+              <SeatUnreadBadge peerId={p.id} />
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="collab-dm-band__pane">
+        <WorkspaceChatPane peers={peers} onSendToAgent={handoffAgent} />
+      </div>
+    </div>
+  );
 
   return (
     <div className={`collab-shell${wide ? ' collab-shell--desktop' : ' collab-shell--mobile'}`}>
       <header className="collab-topbar">
-        <button type="button" className="collab-topbar__back" onClick={onExit} aria-label="Back to Lattice Chat Agent">
+        <button type="button" className="collab-topbar__back" onClick={onExit} aria-label="Back to full Lattice Chat">
           ‹
         </button>
-        <h1>Lattice Workspace</h1>
+        <h1>Lattice Collaborate</h1>
         <button
           type="button"
           className="collab-topbar__gear"
-          aria-label="Settings"
-          onClick={() => goTab('settings')}
+          aria-label="Integrations"
+          onClick={() => setShowSettings((v) => !v)}
         >
           ⚙
         </button>
       </header>
 
-      {wide ? (
-        <div className="collab-desktop">
-          <nav className="collab-left" aria-label="Nav & Integrations">
-            <p className="collab-left__brand">Lattice Collaborate</p>
-            <button type="button" className="collab-navbtn" onClick={() => setLayoutMode('feed')}>
-              Unified Feed
-            </button>
-            <button type="button" className="collab-navbtn" onClick={() => openRepoWorkspace()}>
-              Repository
-            </button>
-            <button type="button" className="collab-navbtn" onClick={() => setLayoutMode('settings')}>
-              Integrations
-            </button>
-            <div className="collab-left__feeds">
-              <p className="collab-left__label">Feeds</p>
-              {integrations.map((i) => (
-                <p
-                  key={i.id}
-                  className={`collab-feed-status${i.enabled ? ' is-on' : ''}`}
-                  title={i.connectionMessage || displayName(i.id)}
-                >
-                  <span className={`collab-feed-dot${i.enabled ? ' is-on' : ''}`} aria-hidden />
-                  {displayName(i.id)}
-                  {i.enabled ? ' · on' : ''}
-                </p>
-              ))}
-              <button type="button" className="collab-navbtn collab-navbtn--quiet" onClick={() => setLayoutMode('settings')}>
-                Connect feeds…
-              </button>
-            </div>
-            <button type="button" className="collab-navbtn" onClick={() => setLayoutMode('chat')}>
-              Direct messages
-            </button>
-            <div className="collab-left__feeds">
-              <p className="collab-left__label">Seats</p>
-              {peers.map((p) => (
-                <button
-                  key={p.id}
-                  type="button"
-                  className="collab-seat collab-seat--btn"
-                  onClick={() => useUnifiedFeed.getState().openPeerDm(p.id)}
-                >
-                  {p.name}
-                  <SeatUnreadBadge peerId={p.id} />
-                </button>
-              ))}
-            </div>
-            <a className="collab-left__deck" href={MAIN_DECK_HREF}>
-              {MAIN_DECK_LABEL}
-            </a>
-          </nav>
-
-          <main className="collab-center">
-            {layoutMode === 'settings' ? (
-              <IntegrationSettings />
-            ) : layoutMode === 'repo' ? (
-              <RepoViewerOverlay onClose={() => openRepoFile(null)} />
-            ) : layoutMode === 'chat' ? (
-              <WorkspaceChatPane peers={peers} onSendToAgent={handoffAgent} />
-            ) : (
-              <div className="collab-center__feed">
-                <h2 className="collab-center__title">Unified Feed</h2>
-                <UnifiedFeedStream onConvert={handoffAgent} />
-              </div>
-            )}
-          </main>
-
-          <ContextualChatDock
-            collapsed={dockCollapsed}
-            onToggleCollapse={() => setDockCollapsed(!dockCollapsed)}
-            onConvertToAgent={handoffAgent}
-            agentPrompt={pendingAgentPrompt}
-            onAgentPromptConsumed={clearPendingAgentPrompt}
-          />
+      {showSettings ? (
+        <div className="collab-settings-overlay">
+          <button type="button" className="collab-settings-overlay__back" onClick={() => setShowSettings(false)}>
+            ‹ Back to workspace
+          </button>
+          <IntegrationSettings />
+        </div>
+      ) : wide ? (
+        <div className="collab-workspace-split">
+          {agentHalf}
+          {dmHalf}
         </div>
       ) : (
         <div className="collab-mobile">
           <div className="collab-mobile__stage">
             {mobileTab === 'settings' ? (
               <IntegrationSettings />
-            ) : layoutMode === 'repo' ? (
-              <div
-                className={`collab-split${isDocked ? ' is-docked' : ''}${dockCollapsed ? ' dock-collapsed' : ''}`}
-              >
-                <div className="collab-split__repo">
-                  <RepoViewerOverlay
-                    showDockHint
-                    onClose={() => {
-                      openRepoFile(null);
-                      setMobileTab('home');
-                    }}
-                  />
-                </div>
-                <ContextualChatDock
-                  collapsed={dockCollapsed}
-                  onToggleCollapse={() => setDockCollapsed(!dockCollapsed)}
-                  onConvertToAgent={handoffAgent}
-                  agentPrompt={pendingAgentPrompt}
-                  onAgentPromptConsumed={clearPendingAgentPrompt}
-                />
-              </div>
-            ) : mobileTab === 'channels' ? (
-              <ChannelsPane onOpenRepo={() => openRepoWorkspace()} />
             ) : mobileTab === 'chat' ? (
-              <WorkspaceChatPane peers={peers} onSendToAgent={handoffAgent} />
+              dmHalf
             ) : (
-              <div className="collab-center__feed">
-                <h2 className="collab-center__title">Home</h2>
-                <UnifiedFeedStream onConvert={handoffAgent} />
-              </div>
+              agentHalf
             )}
           </div>
-          <MobileBottomNav tab={mobileTab} onChange={goTab} />
+          <nav className="collab-bottomnav" aria-label="Workspace">
+            <button
+              type="button"
+              className={mobileTab !== 'chat' && mobileTab !== 'settings' ? 'is-active' : undefined}
+              onClick={() => setMobileTab('home')}
+            >
+              Agent
+            </button>
+            <button
+              type="button"
+              className={mobileTab === 'chat' ? 'is-active' : undefined}
+              onClick={() => {
+                setMobileTab('chat');
+                setLayoutMode('chat');
+              }}
+            >
+              DMs
+              <MobileDmBadge />
+            </button>
+            <button
+              type="button"
+              className={mobileTab === 'settings' ? 'is-active' : undefined}
+              onClick={() => setMobileTab('settings')}
+            >
+              Settings
+            </button>
+          </nav>
         </div>
       )}
     </div>
   );
+}
+
+function MobileDmBadge() {
+  const items = useUnifiedFeed((s) => s.items);
+  const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
+  const unread = countUnreadDms(items, dmLastReadAt);
+  if (unread <= 0) return null;
+  return <span className="collab-dm-badge">{unread > 9 ? '9+' : unread}</span>;
 }
 
 function SeatUnreadBadge({ peerId }: { peerId: string }) {
@@ -249,53 +228,6 @@ function SeatUnreadBadge({ peerId }: { peerId: string }) {
   const n = unreadCountForPeer(items, peerId, dmLastReadAt);
   if (n <= 0) return null;
   return <span className="collab-dm-badge collab-dm-badge--seat">{n > 9 ? '9+' : n}</span>;
-}
-
-function MobileBottomNav({
-  tab,
-  onChange,
-}: {
-  tab: CollabMobileTab;
-  onChange: (t: CollabMobileTab) => void;
-}) {
-  const items = useUnifiedFeed((s) => s.items);
-  const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
-  const unread = countUnreadDms(items, dmLastReadAt);
-  const navItems: { id: CollabMobileTab; label: string }[] = [
-    { id: 'home', label: 'Home' },
-    { id: 'channels', label: 'Channels' },
-    { id: 'chat', label: 'Chat' },
-    { id: 'settings', label: 'Settings' },
-  ];
-  return (
-    <nav className="collab-bottomnav" aria-label="Workspace">
-      {navItems.map((item) => (
-        <button
-          key={item.id}
-          type="button"
-          className={tab === item.id ? 'is-active' : undefined}
-          onClick={() => onChange(item.id)}
-        >
-          {item.label}
-          {item.id === 'chat' && unread > 0 ? (
-            <span className="collab-bottomnav__badge">{unread > 9 ? '9+' : unread}</span>
-          ) : null}
-        </button>
-      ))}
-    </nav>
-  );
-}
-
-function ChannelsPane({ onOpenRepo }: { onOpenRepo: () => void }) {
-  return (
-    <div className="collab-center__feed">
-      <h2 className="collab-center__title">Channels</h2>
-      <p className="uf-empty__hint">Shared workspace for Valet Pru and Daniel.</p>
-      <button type="button" className="collab-navbtn collab-navbtn--block" onClick={onOpenRepo}>
-        # lattice-collaborate
-      </button>
-    </div>
-  );
 }
 
 function WorkspaceChatPane({

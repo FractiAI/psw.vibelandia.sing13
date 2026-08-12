@@ -86,6 +86,16 @@ export function App() {
     [newChat, renameThread],
   );
 
+  /** Seed Lattice Chat while staying on Collaborate (embedded half-view). */
+  const seedAgentInPlace = useCallback(
+    (prompt: string, opts?: { title?: string }) => {
+      const threadId = newChat();
+      if (opts?.title) renameThread(threadId, opts.title);
+      setAgentSeed(prompt);
+    },
+    [newChat, renameThread],
+  );
+
   const bringChatIntoDm = useCallback((peerId: string) => {
     const { threads, activeThreadId } = useLatticeStore.getState();
     const thread = threads.find((t) => t.id === activeThreadId);
@@ -110,7 +120,12 @@ export function App() {
   if (mode === 'collaborate') {
     return (
       <>
-        <CollaborateShell onExit={() => setMode('chat')} onSendToAgent={sendToAgent} />
+        <CollaborateShell
+          onExit={() => setMode('chat')}
+          onSendToAgent={seedAgentInPlace}
+          agentSeedPrompt={agentSeed}
+          onAgentSeedConsumed={() => setAgentSeed(null)}
+        />
         <CollabDmNotifier onOpenCollaborate={() => setMode('collaborate')} />
       </>
     );

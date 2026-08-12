@@ -30,6 +30,7 @@ export function ChatPane({
   onBringIntoDm,
   agentSeedPrompt,
   onAgentSeedConsumed,
+  compact = false,
 }: {
   onOpenHistory?: () => void;
   onNewChat?: () => void;
@@ -38,6 +39,8 @@ export function ChatPane({
   onBringIntoDm?: (peerId: string) => void;
   agentSeedPrompt?: string | null;
   onAgentSeedConsumed?: () => void;
+  /** Half-height embed inside Collaborate (messages + composer only). */
+  compact?: boolean;
 } = {}) {
   const threads = useLatticeStore((s) => s.threads);
   const activeThreadId = useLatticeStore((s) => s.activeThreadId);
@@ -260,43 +263,55 @@ export function ChatPane({
   const ss = String(elapsedSec % 60).padStart(2, '0');
 
   return (
-    <main className="chat-pane">
+    <main className={`chat-pane${compact ? ' chat-pane--compact' : ''}`}>
       <header className="chat-header">
         <div className="chat-header-row">
           <div className="chat-header-lead">
-            <button
-              type="button"
-              className="header-rail-btn"
-              aria-label="Open past chats"
-              onClick={onOpenHistory}
-            >
-              ☰
-            </button>
+            {onOpenHistory && !compact ? (
+              <button
+                type="button"
+                className="header-rail-btn"
+                aria-label="Open past chats"
+                onClick={onOpenHistory}
+              >
+                ☰
+              </button>
+            ) : null}
             <h1 className="chat-title">
-              <span className="chat-wordmark">Lattice Chat Agent V1.618</span>
-              <span className="chat-by">
-                <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
-                  {MAIN_DECK_LABEL}
-                </a>
-                {' · Your Goldilocks Valet'}
-                {activeRepo ? (
-                  <>
-                    {' · '}
-                    <span className="chat-repo-chip" title={activeRepo.url}>
-                      {activeRepo.label}
-                    </span>
-                  </>
-                ) : null}
-                {onOpenCollaborate ? (
-                  <>
-                    {' · '}
-                    <button type="button" className="chat-collab-link" onClick={() => onOpenCollaborate()}>
-                      Collaborate
-                      <CollabDmBadge />
-                    </button>
-                  </>
-                ) : null}
+              <span className="chat-wordmark">
+                {compact ? 'Lattice Chat' : 'Lattice Chat Agent V1.618'}
               </span>
+              {!compact ? (
+                <span className="chat-by">
+                  <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
+                    {MAIN_DECK_LABEL}
+                  </a>
+                  {' · Your Goldilocks Valet'}
+                  {activeRepo ? (
+                    <>
+                      {' · '}
+                      <span className="chat-repo-chip" title={activeRepo.url}>
+                        {activeRepo.label}
+                      </span>
+                    </>
+                  ) : null}
+                  {onOpenCollaborate ? (
+                    <>
+                      {' · '}
+                      <button type="button" className="chat-collab-link" onClick={() => onOpenCollaborate()}>
+                        Collaborate
+                        <CollabDmBadge />
+                      </button>
+                    </>
+                  ) : null}
+                </span>
+              ) : activeRepo ? (
+                <span className="chat-by">
+                  <span className="chat-repo-chip" title={activeRepo.url}>
+                    {activeRepo.label}
+                  </span>
+                </span>
+              ) : null}
             </h1>
             <button
               type="button"
@@ -305,9 +320,9 @@ export function ChatPane({
               disabled={!signedIn}
               onClick={() => onNewChat?.()}
             >
-              + New chat
+              {compact ? '+' : '+ New chat'}
             </button>
-            {onOpenCollaborate ? (
+            {!compact && onOpenCollaborate ? (
               <button
                 type="button"
                 className="header-collab-btn"
@@ -318,7 +333,7 @@ export function ChatPane({
                 <CollabDmBadge />
               </button>
             ) : null}
-            {onBringIntoDm && dmPeers.length > 0 ? (
+            {!compact && onBringIntoDm && dmPeers.length > 0 ? (
               <div className="header-dm-menu" ref={dmMenuRef}>
                 <button
                   type="button"
@@ -350,27 +365,31 @@ export function ChatPane({
               </div>
             ) : null}
           </div>
-          {signedIn ? (
+          {signedIn && !compact ? (
             <SignedInBar onOpenKeySettings={() => setKeySettingsOpen(true)} />
           ) : null}
         </div>
-        <p className="chat-sub">
-          Your Goldilocks Valet on the Ark ·{' '}
-          <a href={MAIN_DECK_HREF}>Main deck</a>
-          {' · '}
-          <a href="/lattice/learn">Learn more</a>
-          {' · '}
-          <a href="/ss-vibelandia">Meet the ship</a>
-          {' · '}
-          <a href="/ai-transparency">AI transparency</a>
-        </p>
-        <p className="ai-act-notice" role="status">
-          <strong>You are interacting with an AI system.</strong> Replies are machine-generated — not a
-          human. <a href="/ai-transparency">AI transparency</a>
-        </p>
-        <p className="chat-build-stamp" data-lattice-build="valet-lounge-v6-ai-act">
-          Within Goldilocks · intentions matter · craft, curiosity, care · Hard refresh keeps your keys
-        </p>
+        {!compact ? (
+          <>
+            <p className="chat-sub">
+              Your Goldilocks Valet on the Ark ·{' '}
+              <a href={MAIN_DECK_HREF}>Main deck</a>
+              {' · '}
+              <a href="/lattice/learn">Learn more</a>
+              {' · '}
+              <a href="/ss-vibelandia">Meet the ship</a>
+              {' · '}
+              <a href="/ai-transparency">AI transparency</a>
+            </p>
+            <p className="ai-act-notice" role="status">
+              <strong>You are interacting with an AI system.</strong> Replies are machine-generated — not a
+              human. <a href="/ai-transparency">AI transparency</a>
+            </p>
+            <p className="chat-build-stamp" data-lattice-build="valet-lounge-v6-ai-act">
+              Within Goldilocks · intentions matter · craft, curiosity, care · Hard refresh keeps your keys
+            </p>
+          </>
+        ) : null}
       </header>
 
       {keySettingsOpen ? (

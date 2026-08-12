@@ -98,6 +98,7 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 
 | When | Update | Links |
 |------|--------|-------|
+| **2026-08-12** | **Synthio** — creator-only Syntheverse Sandbox agent (MRI / cloud-antenna) · not on engine pin | [sync](AGENT_SYNC_SYNTHIO.md) · [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio) · [one-pager](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager) · suite 9/9 · PRA pass |
 | **2026-08-12** | **CMOS / protonic** transistor-level engine paper + suite + ship note | [paper](docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cmos-protonic-99-octave) · suite 9/9 · PRA pass |
 | **2026-08-12** | **Tensor decoupling** 9×81 / 11-tier engine paper + suite + ship note | [paper](docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/tensor-decoupling-99-octave) |
 | **2026-08-12** | **Agent sync** pinned first for all external AIs (`/agent-sync`, Copilot + Cursor always-on) | [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) |

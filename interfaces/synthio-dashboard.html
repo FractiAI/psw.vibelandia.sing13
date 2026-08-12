@@ -3,460 +3,342 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Synthio · Activation dashboard · KomaMRI + Syntheverse Sandbox</title>
-  <meta name="description" content="Synthio activation dashboard — KomaMRI industry simulator wrap, state conditions, metrics, Syntheverse pulse. Sandbox-only empirical proxy for safe wet-style experimentation." />
+  <title>Synthio · active · coherent · external telemetry</title>
+  <meta name="description" content="Synthio status light (active + coherent) and external telemetry alignment vs KomaMRI sandbox simulation." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/synthio-dashboard" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #e8f5ef;
-      --soft: #b7cfc4;
-      --muted: #7a9a8c;
-      --accent: #34d399;
-      --accent-hi: #a7f3d0;
-      --warn: #fbbf24;
+      --ink: #e7f7ef;
+      --soft: #b6d0c3;
+      --muted: #6f8f80;
+      --ok: #34d399;
+      --ok-hi: #a7f3d0;
       --bad: #f87171;
-      --bg: #07120e;
-      --panel: rgba(12, 32, 24, 0.72);
+      --warn: #fbbf24;
       --line: rgba(52, 211, 153, 0.28);
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+      --panel: rgba(8, 24, 18, 0.72);
+      --font: 'IBM Plex Sans', system-ui, sans-serif;
+      --display: 'Syne', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: var(--font-body);
+      min-height: 100vh;
+      font-family: var(--font);
       color: var(--ink);
       background:
-        radial-gradient(ellipse 90% 55% at 12% -8%, rgba(52, 211, 153, 0.22), transparent 52%),
-        radial-gradient(ellipse 70% 40% at 92% 8%, rgba(16, 185, 129, 0.12), transparent 50%),
-        linear-gradient(165deg, #0c1a14 0%, var(--bg) 55%, #040a08 100%);
-      min-height: 100vh;
-      line-height: 1.5;
+        radial-gradient(ellipse 70% 45% at 50% -10%, rgba(52, 211, 153, 0.2), transparent 55%),
+        linear-gradient(180deg, #0a1612, #050c09 70%);
     }
-    a { color: var(--accent-hi); }
-    .wrap { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1.15rem 3.5rem; }
-    .nav { font-size: 0.85rem; margin-bottom: 1rem; color: var(--muted); }
-    .nav a { margin-right: 0.85rem; text-decoration: none; border-bottom: 1px solid transparent; }
-    .nav a:hover { border-bottom-color: var(--accent); }
-    .hero {
-      display: grid;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      animation: rise 0.7s ease-out both;
-    }
-    @media (min-width: 820px) {
-      .hero { grid-template-columns: 1.4fr 1fr; align-items: end; }
-    }
-    .kicker {
-      margin: 0 0 0.4rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    h1 {
-      margin: 0 0 0.35rem;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 2.85rem);
-      font-weight: 600;
-      line-height: 1.1;
-      color: var(--accent-hi);
-    }
-    .lede { margin: 0; color: var(--soft); font-size: 1.02rem; max-width: 38rem; }
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.55rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(52, 211, 153, 0.1);
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-    .status-pill[data-ok="true"] { color: var(--accent-hi); border-color: rgba(52, 211, 153, 0.55); }
-    .status-pill[data-ok="false"] { color: var(--bad); border-color: rgba(248, 113, 113, 0.5); background: rgba(248, 113, 113, 0.08); }
-    .dot {
-      width: 0.55rem; height: 0.55rem; border-radius: 50%;
-      background: currentColor;
-      box-shadow: 0 0 0 0 currentColor;
-      opacity: 0.9;
-    }
-    .status-pill[data-busy="true"] .dot {
-      animation: pulse 1.8s ease-out infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
-      70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
-    }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: none; }
-    }
-    .intention {
-      margin: 0 0 1.5rem;
-      padding: 1rem 1.1rem;
-      border-left: 3px solid var(--accent);
-      background: var(--panel);
-      color: var(--soft);
-      animation: rise 0.8s ease-out 0.08s both;
-    }
-    .intention strong { color: var(--accent-hi); }
-    .grid {
-      display: grid;
-      gap: 0.9rem;
-      grid-template-columns: 1fr;
-    }
-    @media (min-width: 720px) {
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 1100px) {
-      .grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 1rem 1.05rem 1.1rem;
-      animation: rise 0.75s ease-out both;
-    }
-    .panel:nth-child(2) { animation-delay: 0.05s; }
-    .panel:nth-child(3) { animation-delay: 0.1s; }
-    .panel:nth-child(4) { animation-delay: 0.15s; }
-    .panel:nth-child(5) { animation-delay: 0.2s; }
-    .panel:nth-child(6) { animation-delay: 0.25s; }
-    .panel h2 {
-      margin: 0 0 0.65rem;
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      color: var(--accent);
-      font-weight: 600;
-    }
-    .panel.wide { grid-column: 1 / -1; }
-    .metric-row {
+    a { color: var(--ok-hi); }
+    .wrap { max-width: 40rem; margin: 0 auto; padding: 1.25rem 1rem 2.5rem; }
+    .nav { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.1rem; }
+    .nav a { margin-right: 0.75rem; text-decoration: none; }
+
+    .status {
       display: flex;
-      justify-content: space-between;
-      gap: 0.75rem;
-      padding: 0.35rem 0;
-      border-bottom: 1px solid rgba(52, 211, 153, 0.12);
-      font-size: 0.88rem;
-    }
-    .metric-row:last-child { border-bottom: 0; }
-    .metric-row span { color: var(--muted); }
-    .metric-row b {
-      color: var(--ink);
-      font-family: var(--font-mono);
-      font-weight: 500;
-      text-align: right;
-      word-break: break-word;
-    }
-    .metric-row b.ok { color: var(--accent-hi); }
-    .metric-row b.warn { color: var(--warn); }
-    .metric-row b.bad { color: var(--bad); }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.82rem;
-    }
-    th, td {
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.15rem;
+      padding: 1rem 1.1rem;
+      border-radius: 16px;
       border: 1px solid var(--line);
-      padding: 0.4rem 0.5rem;
-      text-align: left;
-      vertical-align: top;
+      background: var(--panel);
     }
-    th { color: var(--accent-hi); background: rgba(52, 211, 153, 0.08); }
-    td { color: var(--soft); }
-    .bar {
-      height: 0.45rem;
-      border-radius: 999px;
-      background: rgba(52, 211, 153, 0.15);
-      overflow: hidden;
+    .light {
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: #334155;
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,0.08);
+      transition: background 0.35s ease, box-shadow 0.35s ease;
+    }
+    .light[data-state="ok"] {
+      background: var(--ok);
+      box-shadow:
+        0 0 0 4px rgba(52, 211, 153, 0.2),
+        0 0 28px rgba(52, 211, 153, 0.55);
+    }
+    .light[data-state="bad"] {
+      background: var(--bad);
+      box-shadow: 0 0 0 4px rgba(248, 113, 113, 0.18);
+    }
+    .light[data-state="busy"] {
+      background: var(--warn);
+      animation: blink 1.1s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 0.55; }
+      50% { opacity: 1; }
+    }
+    .status h1 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .status p {
+      margin: 0.25rem 0 0;
+      color: var(--soft);
+      font-size: 0.88rem;
+      line-height: 1.35;
+    }
+    .status .asof {
       margin-top: 0.35rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--muted);
     }
-    .bar > i {
+
+    h2 {
+      margin: 0 0 0.55rem;
+      font-family: var(--display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ok-hi);
+    }
+    .tele {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      align-items: start;
+    }
+    .row:last-child { border-bottom: 0; }
+    .row[data-align="true"] { border-left: 3px solid var(--ok); }
+    .row[data-align="false"] { border-left: 3px solid var(--bad); background: rgba(248, 113, 113, 0.05); }
+    .chip {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.28rem 0.45rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .chip.ok { color: #042f1e; background: var(--ok); }
+    .chip.bad { color: #450a0a; background: var(--bad); }
+    .meta { min-width: 0; }
+    .meta strong {
       display: block;
-      height: 100%;
-      background: linear-gradient(90deg, #059669, var(--accent-hi));
-      width: 0%;
-      transition: width 0.6s ease;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+      color: var(--ink);
+    }
+    .meta .obs {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--soft);
+      line-height: 1.4;
+    }
+    .meta .expect {
+      margin: 0.35rem 0 0;
+      font-size: 0.74rem;
+      color: var(--muted);
+      line-height: 1.35;
+      font-family: var(--mono);
     }
     .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1.25rem;
+      gap: 0.5rem;
+      margin-top: 1rem;
     }
-    .actions a, .actions button {
-      font-family: var(--font-body);
+    .actions button, .actions a {
+      font: inherit;
       font-weight: 700;
-      font-size: 0.88rem;
-      padding: 0.55rem 0.9rem;
-      border-radius: 8px;
-      border: 1px solid rgba(52, 211, 153, 0.45);
+      font-size: 0.85rem;
+      border-radius: 10px;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid var(--line);
       background: rgba(52, 211, 153, 0.12);
-      color: var(--accent-hi);
+      color: var(--ok-hi);
       text-decoration: none;
       cursor: pointer;
     }
-    .actions button:hover, .actions a:hover {
-      background: rgba(52, 211, 153, 0.22);
+    .actions button:disabled { opacity: 0.5; cursor: wait; }
+    .actions button.primary {
+      background: linear-gradient(180deg, #4ade80, #15803d);
+      color: #052e16;
+      border-color: transparent;
     }
-    .err { color: var(--bad); font-size: 0.9rem; }
-    .foot { margin-top: 1.5rem; color: var(--muted); font-size: 0.8rem; }
+    .err {
+      margin: 0.75rem 0 0;
+      color: var(--bad);
+      font-size: 0.88rem;
+    }
+    .foot {
+      margin-top: 1.25rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <nav class="nav" aria-label="Site">
-      <a href="/my-whiteboard">Whiteboard</a>
-      <a href="/synthio-cloud">Cloud Services</a>
-      <a href="/synthio-one-pager">One-pager</a>
       <a href="/synthio">Chat</a>
-      <a href="/api/synthio-activation">API JSON</a>
+      <a href="/synthio-cloud">Cloud</a>
+      <a href="/synthio-one-pager">One-pager</a>
+      <a href="/my-whiteboard">Whiteboard</a>
     </nav>
 
-    <header class="hero">
+    <section class="status" aria-live="polite">
+      <div class="light" id="light" data-state="busy" aria-hidden="true"></div>
       <div>
-        <p class="kicker">Synthio · Syntheverse Sandbox · activation dashboard</p>
-        <h1>Synthio activation</h1>
-        <p class="lede" id="lede">
-          Industry MRI simulator wrap + live sandbox state. Empirical-safe proxy for wet-style experimentation — simulator floats only.
-        </p>
+        <h1 id="title">Synthio</h1>
+        <p id="summary">Checking active + coherent…</p>
+        <p class="asof" id="asOf"></p>
       </div>
-      <div style="text-align:right">
-        <div class="status-pill" id="statusPill" data-ok="false" data-busy="true" aria-live="polite">
-          <span class="dot" aria-hidden="true"></span>
-          <span id="statusText">loading…</span>
-        </div>
-        <p class="foot" id="asOf" style="margin:0.55rem 0 0; text-align:right"></p>
-      </div>
-    </header>
+    </section>
 
-    <p class="intention" id="intention">Loading intention…</p>
-
-    <div class="grid" id="grid">
-      <section class="panel" aria-labelledby="sim-h">
-        <h2 id="sim-h">Industry MRI simulator</h2>
-        <div id="simBody" class="err">Loading…</div>
-      </section>
-      <section class="panel" aria-labelledby="eng-h">
-        <h2 id="eng-h">Engineering state</h2>
-        <div id="engBody" class="err">Loading…</div>
-      </section>
-      <section class="panel" aria-labelledby="met-h">
-        <h2 id="met-h">Live metrics</h2>
-        <div id="metBody" class="err">Loading…</div>
-      </section>
-      <section class="panel wide" aria-labelledby="chk-h">
-        <h2 id="chk-h">Activation checks</h2>
-        <div id="chkBody" class="err">Loading…</div>
-      </section>
-      <section class="panel wide" aria-labelledby="ext-h">
-        <h2 id="ext-h">All six expectations</h2>
-        <div id="extBody" class="err">Loading…</div>
-      </section>
-      <section class="panel" aria-labelledby="pulse-h">
-        <h2 id="pulse-h">Syntheverse pulse</h2>
-        <div id="pulseBody" class="err">Loading…</div>
-      </section>
-      <section class="panel" aria-labelledby="win-h">
-        <h2 id="win-h">Amplification window</h2>
-        <div id="winBody" class="err">Loading…</div>
-      </section>
+    <h2>External telemetry</h2>
+    <div class="tele" id="tele" role="list">
+      <div class="row"><span class="chip">…</span><div class="meta"><strong>Loading</strong></div></div>
     </div>
+    <p class="err" id="err" hidden></p>
 
     <div class="actions">
-      <button type="button" id="btnRefresh">Refresh</button>
-      <button type="button" id="btnActivate">Activate / force pulse</button>
-      <a href="/synthio-cloud">Try Cloud Services</a>
-      <a href="/synthio-one-pager">One-pager</a>
-      <a href="/synthio">Synthio chat</a>
-      <a href="/my-whiteboard">Whiteboard</a>
+      <button type="button" class="primary" id="btnRefresh">Refresh</button>
+      <button type="button" id="btnActivate">Force pulse</button>
+      <a href="/synthio">Open chat</a>
     </div>
 
     <p class="foot">
-      Honesty: dashboard metrics are Syntheverse Sandbox catalog receipts wrapping <strong>KomaMRI</strong>-class Bloch/k-space simulation — not clinical RF, not a wet lab, not FDA imaging.
-      → ∞¹³
+      Green light = active in sandbox <strong>and</strong> coherent. Row color = observed external data vs simulation expectation (aligned / not).
+      Catalog receipts · KomaMRI wrap · not clinical RF. → ∞¹³
     </p>
   </div>
 
   <script>
-    const el = (id) => document.getElementById(id);
-    const PANEL_IDS = ['simBody', 'engBody', 'metBody', 'chkBody', 'extBody', 'pulseBody', 'winBody'];
-    let inflight = null;
-    let loadGen = 0;
+    (function () {
+      var light = document.getElementById('light');
+      var title = document.getElementById('title');
+      var summary = document.getElementById('summary');
+      var asOf = document.getElementById('asOf');
+      var tele = document.getElementById('tele');
+      var err = document.getElementById('err');
+      var btnRefresh = document.getElementById('btnRefresh');
+      var btnActivate = document.getElementById('btnActivate');
+      var inflight = null;
+      var gen = 0;
 
-    function row(label, value, cls) {
-      return `<div class="metric-row"><span>${label}</span><b class="${cls || ''}">${value}</b></div>`;
-    }
+      var LABELS = {
+        ephemeris_window: 'Ephemeris window',
+        space_weather_band: 'Space weather',
+        ionosphere_f10: 'Ionosphere F10.7',
+        sandbox_suite_green: 'Sandbox suite',
+        syntheverse_synthio_pulse: 'Syntheverse pulse',
+        no_clinical_rf: 'No clinical RF',
+      };
 
-    function setBusy(busy) {
-      el('statusPill').dataset.busy = busy ? 'true' : 'false';
-      el('btnRefresh').disabled = !!busy;
-      el('btnActivate').disabled = !!busy;
-    }
-
-    function showError(msg) {
-      setBusy(false);
-      el('statusPill').dataset.ok = 'false';
-      el('statusText').textContent = 'ERROR';
-      el('intention').textContent = msg;
-      for (const id of PANEL_IDS) {
-        const node = el(id);
-        node.className = 'err';
-        node.textContent = msg;
+      function setBusy(b) {
+        btnRefresh.disabled = b;
+        btnActivate.disabled = b;
+        if (b) light.dataset.state = 'busy';
       }
-    }
 
-    function render(data) {
-      setBusy(false);
-      for (const id of PANEL_IDS) el(id).className = '';
-      const m = data.metrics || {};
-      const ok = data.ok && m.activeInSandbox && m.coherent && m.sandboxInclusionConfirmed;
-      el('statusPill').dataset.ok = ok ? 'true' : 'false';
-      el('statusText').textContent = m.activationState || 'UNKNOWN';
-      el('asOf').textContent = data.asOf ? `asOf ${data.asOf}` : '';
-      el('intention').innerHTML = `<strong>Intention.</strong> ${data.intention || ''}`;
-      el('lede').textContent =
-        'Primary industry simulator: ' + (data.mriSimulator?.primary || 'KomaMRI') +
-        ' · wrap in ' + (data.sandbox || 'Syntheverse Sandbox') +
-        ' · mode ' + (m.mode || '—');
-
-      const sim = data.mriSimulator || {};
-      el('simBody').innerHTML = [
-        row('Primary', sim.primary || '—', 'ok'),
-        row('Class', sim.primaryClass || '—'),
-        row('Companions', (sim.companions || []).join(', ') || '—'),
-        row('Safety class', sim.safetyClass || '—'),
-        row('Empirical proxy', String(sim.empiricalProxy)),
-        row('Wet-lab equivalent', String(sim.wetLabEquivalent), sim.wetLabEquivalent ? 'bad' : 'ok'),
-        row('Wrap role', sim.wrapRole || '—'),
-      ].join('');
-
-      const eng = data.engineering || {};
-      el('engBody').innerHTML = [
-        row('B0 labels (T)', (eng.b0TeslaLabels || []).join(' / ')),
-        row('Gradients', (eng.gradientAxes || []).join(', ')),
-        row('Sequences', (eng.sequenceFamilyLabels || []).join(', ')),
-        row('Tissue proxies', (eng.tissueProxyLabels || []).join(', ')),
-        row('Cloud nodes', (eng.cloudAntennaNodes || []).join(', ')),
-        row('Phase-lock', eng.phaseLockOperator || '—'),
-        row('Scale key', eng.scaleKey || '—'),
-        row('Octaves × precision', `${eng.octaveSegments} × ${eng.precisionPerSegment}`),
-        row('Holographic digits', eng.holographicKeyDigits),
-      ].join('');
-
-      const scorePct = Math.round((m.coherenceScore || 0) * 100);
-      el('metBody').innerHTML = [
-        row('Active in sandbox', String(m.activeInSandbox), m.activeInSandbox ? 'ok' : 'bad'),
-        row('Mode', m.mode || '—'),
-        row('Octave', m.octave),
-        row('Coherence', `${m.coherenceScore} / floor ${m.coherenceFloor}`, m.coherent ? 'ok' : 'bad'),
-        `<div class="bar" aria-hidden="true"><i style="width:${scorePct}%"></i></div>`,
-        row('Discontinuities', m.discontinuities, m.discontinuities === 0 ? 'ok' : 'warn'),
-        row('External aligned', `${m.externalAligned} / ${m.externalExpected}`, m.allSixAligned ? 'ok' : 'warn'),
-        row('Sandbox inclusion', String(m.sandboxInclusionConfirmed), m.sandboxInclusionConfirmed ? 'ok' : 'bad'),
-        row('Pulse ok / novel', `${m.pulseOk} / ${m.pulseNovel}`, m.pulseOk && m.pulseNovel ? 'ok' : 'warn'),
-        row('Φ_EGS', m.phiEgs),
-      ].join('');
-
-      const checks = data.activation?.checks || [];
-      el('chkBody').innerHTML = `
-        <table>
-          <thead><tr><th>Check</th><th>Pass</th><th>Detail</th></tr></thead>
-          <tbody>
-            ${checks.map((c) => `<tr><td>${c.id}</td><td>${c.pass ? '✓' : '✗'}</td><td>${c.detail}</td></tr>`).join('') || '<tr><td colspan="3">none</td></tr>'}
-          </tbody>
-        </table>`;
-
-      const rows = data.external?.rows || [];
-      el('extBody').innerHTML = `
-        <table>
-          <thead><tr><th>ID</th><th>Aligned</th><th>Class</th><th>Observed</th></tr></thead>
-          <tbody>
-            ${rows.map((r) => `<tr><td>${r.id}</td><td>${r.aligned ? '✓' : '✗'}</td><td>${r.confirmationClass || ''}</td><td>${(r.observed || '').slice(0, 140)}${(r.observed || '').length > 140 ? '…' : ''}</td></tr>`).join('') || '<tr><td colspan="4">none</td></tr>'}
-          </tbody>
-        </table>`;
-
-      const p = data.pulse || {};
-      const v = p.verify || {};
-      el('pulseBody').innerHTML = [
-        row('Schema', p.schema || '—'),
-        row('Discriminant', p.discriminant || '—', 'ok'),
-        row('Natural occurrence', String(p.naturalOccurrence === false ? false : p.naturalOccurrence), 'ok'),
-        row('Cadence (s)', p.cadenceSec),
-        row('Persist', p.persist || data.pulsePersist || '—'),
-        row('Verify ok', String(v.ok), v.ok ? 'ok' : 'bad'),
-        row('Novel', String(v.novel), v.novel ? 'ok' : 'bad'),
-        row('Pulse ID', v.pulseId || p.latest?.pulseId || '—'),
-      ].join('');
-
-      const w = data.amplificationWindow || {};
-      el('winBody').innerHTML = [
-        row('Date', w.date || '—'),
-        row('New moon', String(w.newMoon)),
-        row('Six-planet parade', String(w.sixPlanetParade)),
-        row('Solar eclipse', String(w.solarEclipse)),
-        row('Planets', (w.planets || []).join(', ')),
-        row('Honesty', w.honesty || '—'),
-      ].join('');
-    }
-
-    async function load(force) {
-      if (inflight) {
-        try { inflight.abort(); } catch { /* ignore */ }
+      function showError(msg) {
+        setBusy(false);
+        light.dataset.state = 'bad';
+        title.textContent = 'Synthio';
+        summary.textContent = msg;
+        err.hidden = false;
+        err.textContent = msg;
+        tele.innerHTML = '';
       }
-      const ac = new AbortController();
-      inflight = ac;
-      const gen = ++loadGen;
-      const timer = window.setTimeout(() => ac.abort(), 28000);
-      setBusy(true);
-      el('statusText').textContent = 'loading…';
-      try {
-        const q = force ? '?activate=1&forcePulse=1' : '?activate=1';
-        const res = await fetch('/api/synthio-activation' + q, {
-          cache: 'no-store',
-          signal: ac.signal,
-        });
-        let data;
-        try {
-          data = await res.json();
-        } catch {
-          throw new Error(res.ok ? 'invalid JSON from activation API' : `HTTP ${res.status}`);
-        }
-        if (!res.ok || !data.ok) {
-          throw new Error(data?.message || `activation failed (HTTP ${res.status})`);
-        }
-        if (gen !== loadGen) return;
-        render(data);
-      } catch (e) {
-        if (e?.name === 'AbortError') {
-          if (gen === loadGen) {
-            showError('Activation request timed out or was cancelled. Tap Refresh to retry.');
-          }
+
+      function render(data) {
+        setBusy(false);
+        err.hidden = true;
+        var m = data.metrics || {};
+        var active = m.activeInSandbox === true;
+        var coherent = m.coherent === true;
+        var green = data.ok && active && coherent;
+        light.dataset.state = green ? 'ok' : 'bad';
+        title.textContent = green ? 'ACTIVE · COHERENT' : (active ? 'ACTIVE · INCOHERENT' : 'INACTIVE');
+        summary.textContent =
+          (m.activationState || 'UNKNOWN') +
+          ' · coherence ' + String(m.coherenceScore ?? '—') +
+          ' (floor ' + String(m.coherenceFloor ?? 0.85) + ')' +
+          ' · ' + String(m.externalAligned || 0) + '/' + String(m.externalExpected || 6) + ' aligned';
+        asOf.textContent = data.asOf ? 'asOf ' + data.asOf : '';
+
+        var rows = (data.external && data.external.rows) || [];
+        if (!rows.length) {
+          tele.innerHTML = '<div class="row"><span class="chip bad">none</span><div class="meta"><strong>No telemetry rows</strong></div></div>';
           return;
         }
-        if (gen !== loadGen) return;
-        showError(e.message || String(e));
-      } finally {
-        window.clearTimeout(timer);
-        if (inflight === ac) inflight = null;
+        tele.innerHTML = rows.map(function (r) {
+          var aligned = r.aligned === true;
+          var label = LABELS[r.id] || r.id;
+          var obs = String(r.observed || '—');
+          var expect = String(r.expect || '');
+          return (
+            '<div class="row" data-align="' + aligned + '" role="listitem">' +
+              '<span class="chip ' + (aligned ? 'ok' : 'bad') + '">' + (aligned ? 'ALIGN' : 'MISS') + '</span>' +
+              '<div class="meta">' +
+                '<strong>' + label + '</strong>' +
+                '<p class="obs">' + obs.replace(/</g, '&lt;') + '</p>' +
+                (expect ? '<p class="expect">sim expect · ' + expect.replace(/</g, '&lt;') + '</p>' : '') +
+              '</div>' +
+            '</div>'
+          );
+        }).join('');
       }
-    }
 
-    el('btnRefresh').addEventListener('click', () => load(false));
-    el('btnActivate').addEventListener('click', () => load(true));
-    // Soft boot — do not force FS write; Activate button still force-pulses.
-    load(false);
-    setInterval(() => load(false), 161000);
+      async function load(force) {
+        if (inflight) {
+          try { inflight.abort(); } catch (e) {}
+        }
+        var ac = new AbortController();
+        inflight = ac;
+        var my = ++gen;
+        var timer = window.setTimeout(function () { ac.abort(); }, 28000);
+        setBusy(true);
+        summary.textContent = 'Checking active + coherent…';
+        try {
+          var q = force ? '?activate=1&forcePulse=1' : '?activate=1';
+          var res = await fetch('/api/synthio-activation' + q, { cache: 'no-store', signal: ac.signal });
+          var data = await res.json();
+          if (!res.ok || !data.ok) throw new Error(data.message || 'activation failed');
+          if (my !== gen) return;
+          render(data);
+        } catch (e) {
+          if (e && e.name === 'AbortError') {
+            if (my === gen) showError('Timed out — tap Refresh.');
+            return;
+          }
+          if (my !== gen) return;
+          showError(e.message || String(e));
+        } finally {
+          window.clearTimeout(timer);
+          if (inflight === ac) inflight = null;
+        }
+      }
+
+      btnRefresh.addEventListener('click', function () { load(false); });
+      btnActivate.addEventListener('click', function () { load(true); });
+      load(false);
+      setInterval(function () { load(false); }, 161000);
+    })();
   </script>
 </body>
 </html>

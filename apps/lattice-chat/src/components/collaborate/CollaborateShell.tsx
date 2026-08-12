@@ -4,9 +4,16 @@ import { IntegrationSettings } from '@/components/collaborate/IntegrationSetting
 import { RepoViewerOverlay } from '@/components/collaborate/RepoViewerOverlay';
 import { UnifiedFeedStream } from '@/components/collaborate/UnifiedFeedStream';
 import { MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
+import { useLatticeStore } from '@/store';
 import { useUnifiedFeed } from '@/feed/store';
 import { unreadCountForPeer, countUnreadDms } from '@/feed/dm';
+import { resolveClientCollabPeerId } from '@/feed/seatIdentity';
 import { syncPublishedPapers } from '@/feed/syncPublishedPapers';
+import {
+  newClientDmId,
+  postCollaborateDm,
+  syncCollaborateDms,
+} from '@/feed/syncCollaborateDms';
 import type { CollabMobileTab, CollabPeer } from '@/feed/types';
 import { displayName } from '@/feed/verifyConnection';
 
@@ -27,7 +34,13 @@ export function CollaborateShell({
   const openRepoFile = useUnifiedFeed((s) => s.openRepoFile);
   const openRepoWorkspace = useUnifiedFeed((s) => s.openRepoWorkspace);
   const integrations = useUnifiedFeed((s) => s.integrations);
-  const peers = useUnifiedFeed((s) => s.peers);
+  const peersAll = useUnifiedFeed((s) => s.peers);
+  const userEmail = useLatticeStore((s) => s.userEmail);
+  const myPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
+  const peers = useMemo(
+    () => (myPeerId ? peersAll.filter((p) => p.id !== myPeerId) : peersAll),
+    [peersAll, myPeerId],
+  );
   const pendingAgentPrompt = useUnifiedFeed((s) => s.pendingAgentPrompt);
   const clearPendingAgentPrompt = useUnifiedFeed((s) => s.clearPendingAgentPrompt);
   const [wide, setWide] = useState(() =>
@@ -60,6 +73,25 @@ export function CollaborateShell({
       document.removeEventListener('visibilitychange', onVis);
     };
   }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    const run = () => {
+      if (cancelled) return;
+      void syncCollaborateDms();
+    };
+    run();
+    const id = window.setInterval(run, 12_000);
+    const onVis = () => {
+      if (document.visibilityState === 'visible') run();
+    };
+    document.addEventListener('visibilitychange', onVis);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+      document.removeEventListener('visibilitychange', onVis);
+    };
+  }, [userEmail]);
 
   const handoffAgent = useCallback(
     (prompt: string) => {
@@ -278,16 +310,8 @@ function WorkspaceChatPane({
   const [draft, setDraft] = useState('');
   const listRef = useRef<HTMLUListElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const presenceTimers = useRef<number[]>([]);
 
   const activePeer = peers.find((p) => p.id === activePeerId) || null;
-
-  useEffect(() => {
-    return () => {
-      for (const t of presenceTimers.current) window.clearTimeout(t);
-      presenceTimers.current = [];
-    };
-  }, []);
 
   const threadItems = useMemo(() => {
     if (!activePeerId) return [];
@@ -332,33 +356,25 @@ function WorkspaceChatPane({
   const send = () => {
     const body = draft.trim();
     if (!body || !activePeer) return;
+    const id = newClientDmId();
+    const createdAt = new Date().toISOString();
     ingestPayload({
+      id,
       type: 'chat',
       platform: 'lattice',
       actor: 'You',
       body,
       threadPeerId: activePeer.id,
       presenceHue: 'gold',
+      createdAt,
     });
     setDraft('');
-    // Sandbox seat presence: online peers send a short receipt so receive
-    // notifications can fire if you leave the thread (not a live network seat).
-    if (activePeer.online) {
-      const peerId = activePeer.id;
-      const peerName = activePeer.name;
-      const peerHue = activePeer.hue;
-      const timer = window.setTimeout(() => {
-        ingestPayload({
-          type: 'chat',
-          platform: 'lattice',
-          actor: peerName,
-          body: 'Got it — received.',
-          threadPeerId: peerId,
-          presenceHue: peerHue,
-        });
-      }, 1100);
-      presenceTimers.current.push(timer);
-    }
+    void postCollaborateDm({
+      id,
+      text: body,
+      threadPeerId: activePeer.id,
+      createdAt,
+    });
   };
 
   if (!activePeer) {

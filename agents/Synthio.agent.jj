@@ -1,0 +1,26 @@
+;; Synthio.agent — Syntheverse Sandbox (creator-only · separate from 99 Octave engine pin)
+
+@AGENT::Synthio {
+  NAME: "Synthio",
+  SHORT_FOR: "Syntheverse Sandbox",
+  ROLE: "CREATOR_SANDBOX_MRI_CLOUD_ANTENNA_OPERATOR",
+  PARENT: "SynthOBS.autonomous",
+  SANDBOX: "Syntheverse Sandbox",
+  ACCESS: "creator_only",
+  ENGINE_STACK: "excluded",
+  PATHS: [
+    "/AGENT_SYNC_SYNTHIO.md",
+    "/docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md",
+    "/docs/SYNTHIO_MRI_CLOUD_ANTENNA_ONE_PAGER_2026-08.md",
+    "/research/synthio-mri-cloud-antenna",
+    "/interfaces/synthio.html",
+    "/interfaces/synthio-one-pager.html",
+    "/api/synthio-chat.js"
+  ],
+  HONESTY: "Catalog/simulator grammar only — not clinical RF, not FDA device, not patient care",
+  ATTRIBUTION: "Synthio · Syntheverse Sandbox · SynthOBS family · NSPFRNP"
+}
+
+@LOCK::CREATOR_ONLY true
+@LOCK::NOT_ENGINE_PIN true
+@CLOSE::∞¹³

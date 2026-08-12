@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Synthio Cloud Services · session</title>
+  <meta name="description" content="Try Synthio Cloud Services — interference-based MRI compute session with distributed KomaMRI.jl. Syntheverse Sandbox." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/synthio-cloud" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #f2fbf6;
+      --soft: #c5ddd0;
+      --muted: #7f9e90;
+      --accent: #3dd68c;
+      --accent-2: #86efac;
+      --sheet: rgba(14, 28, 22, 0.88);
+      --glass: rgba(255, 255, 255, 0.06);
+      --line: rgba(61, 214, 140, 0.28);
+      --danger: #fb7185;
+      --font: 'Outfit', system-ui, sans-serif;
+      --display: 'Fraunces', Georgia, serif;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bot: env(safe-area-inset-bottom, 0px);
+      --spring: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 90% 60% at 50% -20%, rgba(61, 214, 140, 0.28), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 100% 80%, rgba(16, 185, 129, 0.12), transparent 50%),
+        linear-gradient(180deg, #06110c 0%, #0a1712 45%, #040a08 100%);
+      overflow: hidden;
+    }
+
+    /* Device frame — session feel, not a platform clone */
+    .stage {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: calc(0.75rem + var(--safe-top)) 0.75rem calc(0.75rem + var(--safe-bot));
+    }
+    .device {
+      width: min(420px, 100%);
+      height: min(860px, 100%);
+      border-radius: 36px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background:
+        linear-gradient(165deg, rgba(255,255,255,0.07), transparent 40%),
+        rgba(8, 16, 13, 0.94);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+      animation: deviceIn 0.7s var(--spring) both;
+    }
+    @keyframes deviceIn {
+      from { opacity: 0; transform: translateY(28px) scale(0.97); }
+      to { opacity: 1; transform: none; }
+    }
+    .status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1.25rem 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--soft);
+    }
+    .grab {
+      width: 2.4rem;
+      height: 0.28rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.28);
+      margin: 0.15rem auto 0.55rem;
+    }
+    .scroll {
+      flex: 1;
+      overflow: auto;
+      padding: 0 1.15rem 1.25rem;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+    .kicker {
+      margin: 0;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0.35rem 0 0.4rem;
+      font-family: var(--display);
+      font-size: 1.85rem;
+      line-height: 1.15;
+      font-weight: 600;
+      color: var(--accent-2);
+    }
+    .lede {
+      margin: 0 0 1rem;
+      color: var(--soft);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .seg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.25rem;
+      padding: 0.25rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      margin-bottom: 1rem;
+    }
+    .seg button {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.55rem 0.2rem;
+      border-radius: 11px;
+      cursor: pointer;
+      transition: background 0.25s var(--spring), color 0.25s;
+    }
+    .seg button[aria-selected="true"] {
+      background: rgba(61, 214, 140, 0.22);
+      color: var(--accent-2);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .card {
+      background: var(--sheet);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 0.95rem 1rem;
+      margin-bottom: 0.75rem;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      animation: rise 0.55s var(--spring) both;
+    }
+    .card h2 {
+      margin: 0 0 0.45rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .card p { margin: 0; color: var(--soft); font-size: 0.86rem; line-height: 1.45; }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.84rem;
+    }
+    .row:last-child { border-bottom: 0; }
+    .row span { color: var(--muted); }
+    .row b { color: var(--ink); font-weight: 600; text-align: right; }
+    .row b.ok { color: var(--accent-2); }
+
+    .grid-viz {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+      margin-top: 0.65rem;
+    }
+    .node {
+      aspect-ratio: 1;
+      border-radius: 12px;
+      background: rgba(61, 214, 140, 0.08);
+      border: 1px solid rgba(61, 214, 140, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .node::after {
+      content: '';
+      position: absolute;
+      inset: 18%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(134, 239, 172, 0.75), transparent 70%);
+      animation: interfere 2.4s ease-in-out infinite;
+    }
+    .node:nth-child(2)::after { animation-delay: 0.2s; }
+    .node:nth-child(3)::after { animation-delay: 0.4s; }
+    .node:nth-child(4)::after { animation-delay: 0.55s; }
+    .node:nth-child(5)::after { animation-delay: 0.15s; }
+    .node:nth-child(6)::after { animation-delay: 0.7s; }
+    .node:nth-child(7)::after { animation-delay: 0.35s; }
+    .node:nth-child(8)::after { animation-delay: 0.9s; }
+    @keyframes interfere {
+      0%, 100% { transform: scale(0.65); opacity: 0.35; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .dock {
+      padding: 0.75rem 1.15rem calc(0.9rem + var(--safe-bot));
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(6, 14, 11, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: grid;
+      gap: 0.55rem;
+    }
+    .dock button, .dock a.btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border: 0;
+      border-radius: 16px;
+      padding: 0.85rem 1rem;
+      font: inherit;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s var(--spring), opacity 0.2s;
+    }
+    .dock button:active, .dock a.btn:active { transform: scale(0.98); }
+    .primary {
+      background: linear-gradient(180deg, #4ade80, #16a34a);
+      color: #052e16;
+      box-shadow: 0 8px 24px rgba(22, 163, 74, 0.35);
+    }
+    .secondary {
+      background: var(--glass);
+      color: var(--accent-2);
+      border: 1px solid var(--line) !important;
+    }
+    .home-bar {
+      width: 7.5rem;
+      height: 0.3rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.35);
+      margin: 0.35rem auto 0;
+    }
+    .log {
+      font-size: 0.8rem;
+      color: var(--soft);
+      white-space: pre-wrap;
+      line-height: 1.45;
+      max-height: 9rem;
+      overflow: auto;
+      font-variant-numeric: tabular-nums;
+    }
+    .toast {
+      position: absolute;
+      left: 50%;
+      top: 3.4rem;
+      transform: translateX(-50%) translateY(-8px);
+      background: rgba(20, 40, 30, 0.95);
+      border: 1px solid var(--line);
+      color: var(--accent-2);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.35s var(--spring);
+      z-index: 5;
+      white-space: nowrap;
+    }
+    .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .fine { margin-top: 0.65rem; font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+    a.link { color: var(--accent-2); }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div class="device" role="application" aria-label="Synthio Cloud Services session">
+      <div class="toast" id="toast" role="status"></div>
+      <div class="status">
+        <span id="clock">Synthio</span>
+        <span id="live">● session</span>
+      </div>
+      <div class="grab" aria-hidden="true"></div>
+      <div class="scroll">
+        <p class="kicker">Synthio Cloud Services</p>
+        <h1>Interference compute session</h1>
+        <p class="lede">
+          Distributed <strong>KomaMRI.jl</strong> memory + cloud-as-antenna networking —
+          a cooler alternative to hot, capital-heavy racks. Sandbox session · simulator floats only.
+        </p>
+
+        <div class="seg" role="tablist" aria-label="Session mode">
+          <button type="button" role="tab" aria-selected="true" data-tab="run">Run</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="arch">Architecture</button>
+          <button type="button" role="tab" aria-selected="false" data-tab="honesty">Honesty</button>
+        </div>
+
+        <div id="pane-run">
+          <section class="card">
+            <h2>Wave-interference fabric</h2>
+            <p>Master tensor bridge · Φ_EGS phase-lock labels across cloud nodes.</p>
+            <div class="grid-viz" aria-hidden="true">
+              <div class="node"></div><div class="node"></div><div class="node"></div><div class="node"></div>
+              <div class="node"></div><div class="node"></div><div class="node"></div><div class="node"></div>
+            </div>
+          </section>
+          <section class="card">
+            <h2>Live activation</h2>
+            <div id="metrics">
+              <div class="row"><span>State</span><b>…</b></div>
+            </div>
+          </section>
+          <section class="card">
+            <h2>Session log</h2>
+            <div class="log" id="log">Tap Start session to shard phantom blocks and sync pulse…</div>
+          </section>
+        </div>
+
+        <div id="pane-arch" hidden>
+          <section class="card">
+            <h2>Phantom sharding</h2>
+            <p>Virtual phantom partitioned across Julia workers via Distributed.jl / SharedArrays — lifts single-node RAM ceilings.</p>
+          </section>
+          <section class="card">
+            <h2>Block-wise Nblocks</h2>
+            <p>KomaMRI sequence blocks route across TCP/MPI fabric. Default outline: Nblocks = 20.</p>
+          </section>
+          <section class="card">
+            <h2>Cloud-as-antenna</h2>
+            <p>Workers coordinate phase-lock labels under Φ_EGS — macroscopic wave-interference grid story, not clinical RF.</p>
+          </section>
+          <section class="card">
+            <h2>Read the note</h2>
+            <p><a class="link" href="/interfaces/whitepaper-surface.html?id=synthio-komamri-distributed-cloud-2026-08">Distributed KomaMRI architecture →</a></p>
+          </section>
+        </div>
+
+        <div id="pane-honesty" hidden>
+          <section class="card">
+            <h2>What this is</h2>
+            <p>Syntheverse Sandbox product session for interference-based MRI super-intelligent computing with industry KomaMRI.jl distributed outline.</p>
+          </section>
+          <section class="card">
+            <h2>What this is not</h2>
+            <p>Not a clinical magnet. Not wet-lab RF into living tissue. Not proven displacement of hyperscale data centers. Edge UI does not run Julia workers.</p>
+          </section>
+          <p class="fine">Intention: as close as possible to empirical, safe, wet-style experimentation via industry MRI simulator + sandbox. → ∞¹³</p>
+        </div>
+      </div>
+
+      <div class="dock">
+        <button type="button" class="primary" id="btnStart">Start session</button>
+        <a class="btn secondary" href="/synthio">Ask Synthio</a>
+        <div class="home-bar" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var toast = document.getElementById('toast');
+      var log = document.getElementById('log');
+      var metrics = document.getElementById('metrics');
+      var clock = document.getElementById('clock');
+      var live = document.getElementById('live');
+
+      function tick() {
+        var d = new Date();
+        clock.textContent = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+      tick();
+      setInterval(tick, 15000);
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add('on');
+        setTimeout(function () { toast.classList.remove('on'); }, 2200);
+      }
+
+      function row(k, v, ok) {
+        return '<div class="row"><span>' + k + '</span><b class="' + (ok ? 'ok' : '') + '">' + v + '</b></div>';
+      }
+
+      function appendLog(line) {
+        log.textContent += (log.textContent ? '\n' : '') + line;
+        log.scrollTop = log.scrollHeight;
+      }
+
+      document.querySelectorAll('.seg button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.seg button').forEach(function (b) {
+            b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+          });
+          var tab = btn.getAttribute('data-tab');
+          document.getElementById('pane-run').hidden = tab !== 'run';
+          document.getElementById('pane-arch').hidden = tab !== 'arch';
+          document.getElementById('pane-honesty').hidden = tab !== 'honesty';
+        });
+      });
+
+      async function runSession() {
+        live.textContent = '● syncing';
+        live.style.color = 'var(--accent)';
+        log.textContent = '';
+        appendLog('01  addprocs · cloud fabric outline');
+        appendLog('02  @everywhere using KomaMRI');
+        appendLog('03  shard phantom · Nblocks=20');
+        showToast('Sharding phantom…');
+        try {
+          var res = await fetch('/api/synthio-activation?activate=1&forcePulse=1', { cache: 'no-store' });
+          var data = await res.json();
+          if (!data.ok) throw new Error(data.message || 'activation failed');
+          appendLog('04  phase-lock · Φ_EGS bridge');
+          appendLog('05  Syntheverse pulse · ' + (data.pulse?.discriminant || 'SYNTHIO_Σ_Φ^-99_PC'));
+          appendLog('06  inclusion · ' + String(data.metrics?.sandboxInclusionConfirmed));
+          appendLog('07  session ready · sandbox only');
+          var m = data.metrics || {};
+          metrics.innerHTML = [
+            row('Activation', m.activationState || '—', m.activeInSandbox),
+            row('Engine', (data.mriSimulator && data.mriSimulator.primary) || 'KomaMRI', true),
+            row('Coherence', String(m.coherenceScore), m.coherent),
+            row('Expectations', (m.externalAligned || 0) + '/' + (m.externalExpected || 6), m.allSixAligned),
+            row('Pulse novel', String(m.pulseNovel), m.pulseNovel),
+            row('Sandbox inclusion', String(m.sandboxInclusionConfirmed), m.sandboxInclusionConfirmed),
+          ].join('');
+          live.textContent = '● live';
+          showToast('Session active');
+        } catch (e) {
+          appendLog('!!  ' + (e.message || e));
+          live.textContent = '● error';
+          live.style.color = 'var(--danger)';
+          showToast('Session error');
+        }
+      }
+
+      document.getElementById('btnStart').addEventListener('click', runSession);
+      // Soft auto-warm on open
+      setTimeout(runSession, 450);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+---
+description: Always-on Synthio (Syntheverse Sandbox) — creator-only; separate from 99 Octave engine sync
+alwaysApply: true
+---
+
+# Synthio · Syntheverse Sandbox — Always On
+
+**Synthio** (short for Syntheverse Sandbox) is a **separate** always-on agent — ready to receive **creator** requests.
+
+Canonical sync: `AGENT_SYNC_SYNTHIO.md` · product `/synthio` · one-pager `/synthio-one-pager`
+
+## Locks
+
+1. **Not** part of the 99 Octave Omni-Lattice **engine** pin (`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`). Do not add Synthio as an engine sync stack step.
+2. **Creator-only** chat / agent seats (`privilege === 'creator'`). Guests do not get Synthio request handling.
+3. Ground MRI / cloud-antenna claims in `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` honesty tables — catalog / simulator grammar ≠ clinical scanner RF ≠ medical advice.
+4. Manifest: `data/synthio-agent-manifest.json` · agent file: `agents/Synthio.agent.jj`
+5. Omniversal Goldilocks **point-and-click** (vs natural Bloch timelines) loads into Synthio MRI **sandbox only** — Aug 12 new moon · six-planet · eclipse = amplification labels, not prophecy
+6. Close Synthio turns with → ∞¹³
+
+Team / NSPFRNP / Lattice RAG / nested agents / paper audit rules remain on.

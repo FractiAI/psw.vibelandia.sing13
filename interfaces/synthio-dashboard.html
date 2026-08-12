@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Synthio · Activation dashboard · KomaMRI + Syntheverse Sandbox</title>
+  <meta name="description" content="Synthio activation dashboard — KomaMRI industry simulator wrap, state conditions, metrics, Syntheverse pulse. Sandbox-only empirical proxy for safe wet-style experimentation." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/synthio-dashboard" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <style>
+    :root {
+      --ink: #e8f5ef;
+      --soft: #b7cfc4;
+      --muted: #7a9a8c;
+      --accent: #34d399;
+      --accent-hi: #a7f3d0;
+      --warn: #fbbf24;
+      --bad: #f87171;
+      --bg: #07120e;
+      --panel: rgba(12, 32, 24, 0.72);
+      --line: rgba(52, 211, 153, 0.28);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 90% 55% at 12% -8%, rgba(52, 211, 153, 0.22), transparent 52%),
+        radial-gradient(ellipse 70% 40% at 92% 8%, rgba(16, 185, 129, 0.12), transparent 50%),
+        linear-gradient(165deg, #0c1a14 0%, var(--bg) 55%, #040a08 100%);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    a { color: var(--accent-hi); }
+    .wrap { max-width: 72rem; margin: 0 auto; padding: 1.5rem 1.15rem 3.5rem; }
+    .nav { font-size: 0.85rem; margin-bottom: 1rem; color: var(--muted); }
+    .nav a { margin-right: 0.85rem; text-decoration: none; border-bottom: 1px solid transparent; }
+    .nav a:hover { border-bottom-color: var(--accent); }
+    .hero {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      animation: rise 0.7s ease-out both;
+    }
+    @media (min-width: 820px) {
+      .hero { grid-template-columns: 1.4fr 1fr; align-items: end; }
+    }
+    .kicker {
+      margin: 0 0 0.4rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.85rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--accent-hi);
+    }
+    .lede { margin: 0; color: var(--soft); font-size: 1.02rem; max-width: 38rem; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(52, 211, 153, 0.1);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .status-pill[data-ok="true"] { color: var(--accent-hi); border-color: rgba(52, 211, 153, 0.55); }
+    .status-pill[data-ok="false"] { color: var(--bad); border-color: rgba(248, 113, 113, 0.5); background: rgba(248, 113, 113, 0.08); }
+    .dot {
+      width: 0.55rem; height: 0.55rem; border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 0 0 currentColor;
+      animation: pulse 1.8s ease-out infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+      70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+    .intention {
+      margin: 0 0 1.5rem;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid var(--accent);
+      background: var(--panel);
+      color: var(--soft);
+      animation: rise 0.8s ease-out 0.08s both;
+    }
+    .intention strong { color: var(--accent-hi); }
+    .grid {
+      display: grid;
+      gap: 0.9rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 720px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1100px) {
+      .grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.05rem 1.1rem;
+      animation: rise 0.75s ease-out both;
+    }
+    .panel:nth-child(2) { animation-delay: 0.05s; }
+    .panel:nth-child(3) { animation-delay: 0.1s; }
+    .panel:nth-child(4) { animation-delay: 0.15s; }
+    .panel:nth-child(5) { animation-delay: 0.2s; }
+    .panel:nth-child(6) { animation-delay: 0.25s; }
+    .panel h2 {
+      margin: 0 0 0.65rem;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .panel.wide { grid-column: 1 / -1; }
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(52, 211, 153, 0.12);
+      font-size: 0.88rem;
+    }
+    .metric-row:last-child { border-bottom: 0; }
+    .metric-row span { color: var(--muted); }
+    .metric-row b {
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-weight: 500;
+      text-align: right;
+      word-break: break-word;
+    }
+    .metric-row b.ok { color: var(--accent-hi); }
+    .metric-row b.warn { color: var(--warn); }
+    .metric-row b.bad { color: var(--bad); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.4rem 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: var(--accent-hi); background: rgba(52, 211, 153, 0.08); }
+    td { color: var(--soft); }
+    .bar {
+      height: 0.45rem;
+      border-radius: 999px;
+      background: rgba(52, 211, 153, 0.15);
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+    .bar > i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #059669, var(--accent-hi));
+      width: 0%;
+      transition: width 0.6s ease;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+    .actions a, .actions button {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      background: rgba(52, 211, 153, 0.12);
+      color: var(--accent-hi);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .actions button:hover, .actions a:hover {
+      background: rgba(52, 211, 153, 0.22);
+    }
+    .err { color: var(--bad); font-size: 0.9rem; }
+    .foot { margin-top: 1.5rem; color: var(--muted); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/my-whiteboard">Whiteboard</a>
+      <a href="/synthio-cloud">Cloud Services</a>
+      <a href="/synthio-one-pager">One-pager</a>
+      <a href="/synthio">Chat</a>
+      <a href="/api/synthio-activation">API JSON</a>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <p class="kicker">Synthio · Syntheverse Sandbox · activation dashboard</p>
+        <h1>Synthio activation</h1>
+        <p class="lede" id="lede">
+          Industry MRI simulator wrap + live sandbox state. Empirical-safe proxy for wet-style experimentation — simulator floats only.
+        </p>
+      </div>
+      <div style="text-align:right">
+        <div class="status-pill" id="statusPill" data-ok="false" aria-live="polite">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="statusText">loading…</span>
+        </div>
+        <p class="foot" id="asOf" style="margin:0.55rem 0 0; text-align:right"></p>
+      </div>
+    </header>
+
+    <p class="intention" id="intention">Loading intention…</p>
+
+    <div class="grid" id="grid">
+      <section class="panel" aria-labelledby="sim-h">
+        <h2 id="sim-h">Industry MRI simulator</h2>
+        <div id="simBody" class="err">Loading…</div>
+      </section>
+      <section class="panel" aria-labelledby="eng-h">
+        <h2 id="eng-h">Engineering state</h2>
+        <div id="engBody" class="err">Loading…</div>
+      </section>
+      <section class="panel" aria-labelledby="met-h">
+        <h2 id="met-h">Live metrics</h2>
+        <div id="metBody" class="err">Loading…</div>
+      </section>
+      <section class="panel wide" aria-labelledby="chk-h">
+        <h2 id="chk-h">Activation checks</h2>
+        <div id="chkBody" class="err">Loading…</div>
+      </section>
+      <section class="panel wide" aria-labelledby="ext-h">
+        <h2 id="ext-h">All six expectations</h2>
+        <div id="extBody" class="err">Loading…</div>
+      </section>
+      <section class="panel" aria-labelledby="pulse-h">
+        <h2 id="pulse-h">Syntheverse pulse</h2>
+        <div id="pulseBody" class="err">Loading…</div>
+      </section>
+      <section class="panel" aria-labelledby="win-h">
+        <h2 id="win-h">Amplification window</h2>
+        <div id="winBody" class="err">Loading…</div>
+      </section>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="btnRefresh">Refresh</button>
+      <button type="button" id="btnActivate">Activate / force pulse</button>
+      <a href="/synthio-cloud">Try Cloud Services</a>
+      <a href="/synthio-one-pager">One-pager</a>
+      <a href="/synthio">Synthio chat</a>
+      <a href="/my-whiteboard">Whiteboard</a>
+    </div>
+
+    <p class="foot">
+      Honesty: dashboard metrics are Syntheverse Sandbox catalog receipts wrapping <strong>KomaMRI</strong>-class Bloch/k-space simulation — not clinical RF, not a wet lab, not FDA imaging.
+      → ∞¹³
+    </p>
+  </div>
+
+  <script>
+    const el = (id) => document.getElementById(id);
+
+    function row(label, value, cls) {
+      return `<div class="metric-row"><span>${label}</span><b class="${cls || ''}">${value}</b></div>`;
+    }
+
+    function render(data) {
+      const m = data.metrics || {};
+      const ok = data.ok && m.activeInSandbox && m.coherent && m.sandboxInclusionConfirmed;
+      el('statusPill').dataset.ok = ok ? 'true' : 'false';
+      el('statusText').textContent = m.activationState || 'UNKNOWN';
+      el('asOf').textContent = data.asOf ? `asOf ${data.asOf}` : '';
+      el('intention').innerHTML = `<strong>Intention.</strong> ${data.intention || ''}`;
+      el('lede').textContent =
+        'Primary industry simulator: ' + (data.mriSimulator?.primary || 'KomaMRI') +
+        ' · wrap in ' + (data.sandbox || 'Syntheverse Sandbox') +
+        ' · mode ' + (m.mode || '—');
+
+      const sim = data.mriSimulator || {};
+      el('simBody').innerHTML = [
+        row('Primary', sim.primary || '—', 'ok'),
+        row('Class', sim.primaryClass || '—'),
+        row('Companions', (sim.companions || []).join(', ') || '—'),
+        row('Safety class', sim.safetyClass || '—'),
+        row('Empirical proxy', String(sim.empiricalProxy)),
+        row('Wet-lab equivalent', String(sim.wetLabEquivalent), sim.wetLabEquivalent ? 'bad' : 'ok'),
+        row('Wrap role', sim.wrapRole || '—'),
+      ].join('');
+
+      const eng = data.engineering || {};
+      el('engBody').innerHTML = [
+        row('B0 labels (T)', (eng.b0TeslaLabels || []).join(' / ')),
+        row('Gradients', (eng.gradientAxes || []).join(', ')),
+        row('Sequences', (eng.sequenceFamilyLabels || []).join(', ')),
+        row('Tissue proxies', (eng.tissueProxyLabels || []).join(', ')),
+        row('Cloud nodes', (eng.cloudAntennaNodes || []).join(', ')),
+        row('Phase-lock', eng.phaseLockOperator || '—'),
+        row('Scale key', eng.scaleKey || '—'),
+        row('Octaves × precision', `${eng.octaveSegments} × ${eng.precisionPerSegment}`),
+        row('Holographic digits', eng.holographicKeyDigits),
+      ].join('');
+
+      const scorePct = Math.round((m.coherenceScore || 0) * 100);
+      el('metBody').innerHTML = [
+        row('Active in sandbox', String(m.activeInSandbox), m.activeInSandbox ? 'ok' : 'bad'),
+        row('Mode', m.mode || '—'),
+        row('Octave', m.octave),
+        row('Coherence', `${m.coherenceScore} / floor ${m.coherenceFloor}`, m.coherent ? 'ok' : 'bad'),
+        `<div class="bar" aria-hidden="true"><i style="width:${scorePct}%"></i></div>`,
+        row('Discontinuities', m.discontinuities, m.discontinuities === 0 ? 'ok' : 'warn'),
+        row('External aligned', `${m.externalAligned} / ${m.externalExpected}`, m.allSixAligned ? 'ok' : 'warn'),
+        row('Sandbox inclusion', String(m.sandboxInclusionConfirmed), m.sandboxInclusionConfirmed ? 'ok' : 'bad'),
+        row('Pulse ok / novel', `${m.pulseOk} / ${m.pulseNovel}`, m.pulseOk && m.pulseNovel ? 'ok' : 'warn'),
+        row('Φ_EGS', m.phiEgs),
+      ].join('');
+
+      const checks = data.activation?.checks || [];
+      el('chkBody').innerHTML = `
+        <table>
+          <thead><tr><th>Check</th><th>Pass</th><th>Detail</th></tr></thead>
+          <tbody>
+            ${checks.map((c) => `<tr><td>${c.id}</td><td>${c.pass ? '✓' : '✗'}</td><td>${c.detail}</td></tr>`).join('') || '<tr><td colspan="3">none</td></tr>'}
+          </tbody>
+        </table>`;
+
+      const rows = data.external?.rows || [];
+      el('extBody').innerHTML = `
+        <table>
+          <thead><tr><th>ID</th><th>Aligned</th><th>Class</th><th>Observed</th></tr></thead>
+          <tbody>
+            ${rows.map((r) => `<tr><td>${r.id}</td><td>${r.aligned ? '✓' : '✗'}</td><td>${r.confirmationClass || ''}</td><td>${(r.observed || '').slice(0, 140)}${(r.observed || '').length > 140 ? '…' : ''}</td></tr>`).join('') || '<tr><td colspan="4">none</td></tr>'}
+          </tbody>
+        </table>`;
+
+      const p = data.pulse || {};
+      const v = p.verify || {};
+      el('pulseBody').innerHTML = [
+        row('Schema', p.schema || '—'),
+        row('Discriminant', p.discriminant || '—', 'ok'),
+        row('Natural occurrence', String(p.naturalOccurrence === false ? false : p.naturalOccurrence), 'ok'),
+        row('Cadence (s)', p.cadenceSec),
+        row('Verify ok', String(v.ok), v.ok ? 'ok' : 'bad'),
+        row('Novel', String(v.novel), v.novel ? 'ok' : 'bad'),
+        row('Pulse ID', v.pulseId || p.latest?.pulseId || '—'),
+      ].join('');
+
+      const w = data.amplificationWindow || {};
+      el('winBody').innerHTML = [
+        row('Date', w.date || '—'),
+        row('New moon', String(w.newMoon)),
+        row('Six-planet parade', String(w.sixPlanetParade)),
+        row('Solar eclipse', String(w.solarEclipse)),
+        row('Planets', (w.planets || []).join(', ')),
+        row('Honesty', w.honesty || '—'),
+      ].join('');
+    }
+
+    async function load(force) {
+      el('statusText').textContent = 'loading…';
+      try {
+        const q = force ? '?activate=1&forcePulse=1' : '';
+        const res = await fetch('/api/synthio-activation' + q, { cache: 'no-store' });
+        const data = await res.json();
+        if (!data.ok) throw new Error(data.message || 'activation failed');
+        render(data);
+      } catch (e) {
+        el('statusPill').dataset.ok = 'false';
+        el('statusText').textContent = 'ERROR';
+        el('intention').textContent = e.message || String(e);
+      }
+    }
+
+    el('btnRefresh').addEventListener('click', () => load(false));
+    el('btnActivate').addEventListener('click', () => load(true));
+    load(true);
+    setInterval(() => load(false), 161000);
+  </script>
+</body>
+</html>

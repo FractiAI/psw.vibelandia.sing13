@@ -5,6 +5,7 @@ import { RepoViewerOverlay } from '@/components/collaborate/RepoViewerOverlay';
 import { UnifiedFeedStream } from '@/components/collaborate/UnifiedFeedStream';
 import { MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
 import { useUnifiedFeed } from '@/feed/store';
+import { unreadCountForPeer, countUnreadDms } from '@/feed/dm';
 import { syncPublishedPapers } from '@/feed/syncPublishedPapers';
 import type { CollabMobileTab, CollabPeer } from '@/feed/types';
 import { displayName } from '@/feed/verifyConnection';
@@ -120,12 +121,21 @@ export function CollaborateShell({
                 Connect feeds…
               </button>
             </div>
+            <button type="button" className="collab-navbtn" onClick={() => setLayoutMode('chat')}>
+              Direct messages
+            </button>
             <div className="collab-left__feeds">
               <p className="collab-left__label">Seats</p>
               {peers.map((p) => (
-                <p key={p.id} className="collab-seat">
+                <button
+                  key={p.id}
+                  type="button"
+                  className="collab-seat collab-seat--btn"
+                  onClick={() => useUnifiedFeed.getState().openPeerDm(p.id)}
+                >
                   {p.name}
-                </p>
+                  <SeatUnreadBadge peerId={p.id} />
+                </button>
               ))}
             </div>
             <a className="collab-left__deck" href={MAIN_DECK_HREF}>
@@ -138,6 +148,8 @@ export function CollaborateShell({
               <IntegrationSettings />
             ) : layoutMode === 'repo' ? (
               <RepoViewerOverlay onClose={() => openRepoFile(null)} />
+            ) : layoutMode === 'chat' ? (
+              <WorkspaceChatPane peers={peers} onConvert={handoffAgent} />
             ) : (
               <div className="collab-center__feed">
                 <h2 className="collab-center__title">Unified Feed</h2>
@@ -198,6 +210,14 @@ export function CollaborateShell({
   );
 }
 
+function SeatUnreadBadge({ peerId }: { peerId: string }) {
+  const items = useUnifiedFeed((s) => s.items);
+  const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
+  const n = unreadCountForPeer(items, peerId, dmLastReadAt);
+  if (n <= 0) return null;
+  return <span className="collab-dm-badge collab-dm-badge--seat">{n > 9 ? '9+' : n}</span>;
+}
+
 function MobileBottomNav({
   tab,
   onChange,
@@ -205,7 +225,10 @@ function MobileBottomNav({
   tab: CollabMobileTab;
   onChange: (t: CollabMobileTab) => void;
 }) {
-  const items: { id: CollabMobileTab; label: string }[] = [
+  const items = useUnifiedFeed((s) => s.items);
+  const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
+  const unread = countUnreadDms(items, dmLastReadAt);
+  const navItems: { id: CollabMobileTab; label: string }[] = [
     { id: 'home', label: 'Home' },
     { id: 'channels', label: 'Channels' },
     { id: 'chat', label: 'Chat' },
@@ -213,7 +236,7 @@ function MobileBottomNav({
   ];
   return (
     <nav className="collab-bottomnav" aria-label="Workspace">
-      {items.map((item) => (
+      {navItems.map((item) => (
         <button
           key={item.id}
           type="button"
@@ -221,6 +244,9 @@ function MobileBottomNav({
           onClick={() => onChange(item.id)}
         >
           {item.label}
+          {item.id === 'chat' && unread > 0 ? (
+            <span className="collab-bottomnav__badge">{unread > 9 ? '9+' : unread}</span>
+          ) : null}
         </button>
       ))}
     </nav>
@@ -248,12 +274,22 @@ function WorkspaceChatPane({
 }) {
   const ingestPayload = useUnifiedFeed((s) => s.ingestPayload);
   const items = useUnifiedFeed((s) => s.items);
-  const [activePeerId, setActivePeerId] = useState<string | null>(null);
+  const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
+  const activePeerId = useUnifiedFeed((s) => s.dmActivePeerId);
+  const setDmActivePeerId = useUnifiedFeed((s) => s.setDmActivePeerId);
   const [draft, setDraft] = useState('');
   const listRef = useRef<HTMLUListElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const presenceTimers = useRef<number[]>([]);
 
   const activePeer = peers.find((p) => p.id === activePeerId) || null;
+
+  useEffect(() => {
+    return () => {
+      for (const t of presenceTimers.current) window.clearTimeout(t);
+      presenceTimers.current = [];
+    };
+  }, []);
 
   const threadItems = useMemo(() => {
     if (!activePeerId) return [];
@@ -292,7 +328,7 @@ function WorkspaceChatPane({
 
   const openPeer = (id: string) => {
     setDraft('');
-    setActivePeerId(id);
+    setDmActivePeerId(id);
   };
 
   const send = () => {
@@ -307,6 +343,24 @@ function WorkspaceChatPane({
       presenceHue: 'gold',
     });
     setDraft('');
+    // Sandbox seat presence: online peers send a short receipt so receive
+    // notifications can fire if you leave the thread (not a live network seat).
+    if (activePeer.online) {
+      const peerId = activePeer.id;
+      const peerName = activePeer.name;
+      const peerHue = activePeer.hue;
+      const timer = window.setTimeout(() => {
+        ingestPayload({
+          type: 'chat',
+          platform: 'lattice',
+          actor: peerName,
+          body: 'Got it — received.',
+          threadPeerId: peerId,
+          presenceHue: peerHue,
+        });
+      }, 1100);
+      presenceTimers.current.push(timer);
+    }
   };
 
   if (!activePeer) {
@@ -317,27 +371,35 @@ function WorkspaceChatPane({
         </header>
         <p className="uf-empty__hint">Select someone to open their chat.</p>
         <ul className="collab-chat__roster" role="list">
-          {peers.map((p) => (
-            <li key={p.id}>
-              <button
-                type="button"
-                className="collab-chat__roster-row"
-                onClick={() => openPeer(p.id)}
-              >
-                <span className="int-peer" data-hue={p.hue}>
-                  {p.name.slice(0, 1)}
-                  {p.online ? <i className="int-peer__online" /> : null}
-                </span>
-                <span className="collab-chat__roster-meta">
-                  <strong>{p.name}</strong>
-                  <span>{previewFor(p.id)}</span>
-                </span>
-                <span className="collab-chat__roster-chevron" aria-hidden>
-                  ›
-                </span>
-              </button>
-            </li>
-          ))}
+          {peers.map((p) => {
+            const unread = unreadCountForPeer(items, p.id, dmLastReadAt);
+            return (
+              <li key={p.id}>
+                <button
+                  type="button"
+                  className="collab-chat__roster-row"
+                  onClick={() => openPeer(p.id)}
+                >
+                  <span className="int-peer" data-hue={p.hue}>
+                    {p.name.slice(0, 1)}
+                    {p.online ? <i className="int-peer__online" /> : null}
+                  </span>
+                  <span className="collab-chat__roster-meta">
+                    <strong>
+                      {p.name}
+                      {unread > 0 ? (
+                        <span className="collab-dm-badge collab-dm-badge--inline">{unread}</span>
+                      ) : null}
+                    </strong>
+                    <span>{previewFor(p.id)}</span>
+                  </span>
+                  <span className="collab-chat__roster-chevron" aria-hidden>
+                    ›
+                  </span>
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </div>
     );
@@ -349,7 +411,7 @@ function WorkspaceChatPane({
         <button
           type="button"
           className="collab-chat__back"
-          onClick={() => setActivePeerId(null)}
+          onClick={() => setDmActivePeerId(null)}
           aria-label="Back to chats"
         >
           ‹

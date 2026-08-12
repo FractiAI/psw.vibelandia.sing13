@@ -10,6 +10,13 @@ import {
   WORKSPACE_PEERS,
   emptyFeed,
 } from '@/feed/seed';
+import {
+  countUnreadDms,
+  DM_BROADCAST_CHANNEL,
+  isIncomingCollabDm,
+  type DmToastState,
+  unreadCountForPeer,
+} from '@/feed/dm';
 import type {
   CollabLayoutMode,
   CollabMobileTab,
@@ -39,7 +46,16 @@ type UnifiedFeedState = {
   activeContextFile: RepoFileNode | null;
   contextMenu: { x: number; y: number; file: RepoFileNode } | null;
   pendingAgentPrompt: string | null;
-  ingestPayload: (raw: unknown) => UnifiedFeedItem | null;
+  dmActivePeerId: string | null;
+  dmLastReadAt: Record<string, string>;
+  dmToast: DmToastState | null;
+  ingestPayload: (raw: unknown, opts?: { fromBroadcast?: boolean }) => UnifiedFeedItem | null;
+  setDmActivePeerId: (peerId: string | null) => void;
+  markDmRead: (peerId: string) => void;
+  clearDmToast: () => void;
+  dmUnreadTotal: () => number;
+  dmUnreadForPeer: (peerId: string) => number;
+  openPeerDm: (peerId: string) => void;
   setIntegrationEnabled: (id: IntegrationId, enabled: boolean) => void;
   setIntegrationAccount: (id: IntegrationId, accountLabel: string) => void;
   setIntegrationConnection: (
@@ -67,6 +83,19 @@ type UnifiedFeedState = {
   clearFeed: () => void;
   resetWorkspace: () => void;
 };
+
+let dmBroadcast: BroadcastChannel | null = null;
+function getDmBroadcast(): BroadcastChannel | null {
+  if (typeof BroadcastChannel === 'undefined') return null;
+  if (!dmBroadcast) {
+    try {
+      dmBroadcast = new BroadcastChannel(DM_BROADCAST_CHANNEL);
+    } catch {
+      return null;
+    }
+  }
+  return dmBroadcast;
+}
 
 function passesFilters(
   item: UnifiedFeedItem,
@@ -104,6 +133,7 @@ function freshWorkspace() {
     peers: WORKSPACE_PEERS.map((p) => ({ ...p })),
     repoFiles: [...EMPTY_REPO_FILES],
     repoName: DEFAULT_REPO_NAME,
+    dmLastReadAt: {} as Record<string, string>,
   };
 }
 
@@ -118,8 +148,10 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       activeContextFile: null,
       contextMenu: null,
       pendingAgentPrompt: null,
+      dmActivePeerId: null,
+      dmToast: null,
 
-      ingestPayload(raw) {
+      ingestPayload(raw, opts = {}) {
         const item = parseIncomingPayload(raw);
         if (!item) return null;
         const existing = get().items;
@@ -131,8 +163,87 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
         ) {
           return item;
         }
-        set((s) => ({ items: [...s.items, item].slice(-200) }));
+
+        const viewingPeer = get().dmActivePeerId;
+        const incoming = isIncomingCollabDm(item);
+        const hidden =
+          typeof document !== 'undefined' && document.visibilityState === 'hidden';
+        const shouldNotify =
+          incoming &&
+          Boolean(item.threadPeerId) &&
+          (viewingPeer !== item.threadPeerId || hidden);
+
+        set((s) => ({
+          items: [...s.items, item].slice(-200),
+          ...(shouldNotify && item.threadPeerId
+            ? {
+                dmToast: {
+                  id: item.id,
+                  peerId: item.threadPeerId,
+                  peerName: item.actor || 'Seat',
+                  body: (item.body || '').slice(0, 140),
+                  createdAt: item.createdAt,
+                },
+              }
+            : {}),
+          ...(incoming &&
+          item.threadPeerId &&
+          viewingPeer === item.threadPeerId &&
+          !hidden
+            ? {
+                dmLastReadAt: {
+                  ...s.dmLastReadAt,
+                  [item.threadPeerId]: item.createdAt,
+                },
+              }
+            : {}),
+        }));
+
+        if (!opts.fromBroadcast && item.kind === 'chat' && item.threadPeerId) {
+          try {
+            getDmBroadcast()?.postMessage({ type: 'feed-item', item });
+          } catch {
+            /* ignore */
+          }
+        }
+
         return item;
+      },
+
+      setDmActivePeerId(peerId) {
+        set({ dmActivePeerId: peerId });
+        if (peerId) get().markDmRead(peerId);
+      },
+
+      markDmRead(peerId) {
+        const now = new Date().toISOString();
+        set((s) => ({
+          dmLastReadAt: { ...s.dmLastReadAt, [peerId]: now },
+          dmToast: s.dmToast?.peerId === peerId ? null : s.dmToast,
+        }));
+      },
+
+      clearDmToast() {
+        set({ dmToast: null });
+      },
+
+      dmUnreadTotal() {
+        const { items, dmLastReadAt } = get();
+        return countUnreadDms(items, dmLastReadAt);
+      },
+
+      dmUnreadForPeer(peerId) {
+        const { items, dmLastReadAt } = get();
+        return unreadCountForPeer(items, peerId, dmLastReadAt);
+      },
+
+      openPeerDm(peerId) {
+        set({
+          mobileTab: 'chat',
+          layoutMode: 'chat',
+          activeContextFile: null,
+        });
+        get().setDmActivePeerId(peerId);
       },
 
       setIntegrationEnabled(id, enabled) {
@@ -207,19 +318,22 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       setMobileTab(tab) {
         set({
           mobileTab: tab,
-          layoutMode: tab === 'settings' ? 'settings' : 'feed',
+          layoutMode: tab === 'settings' ? 'settings' : tab === 'chat' ? 'chat' : 'feed',
           ...(tab !== 'settings' ? { activeContextFile: null } : {}),
+          ...(tab !== 'chat' ? { dmActivePeerId: null } : {}),
         });
       },
 
       setLayoutMode(mode) {
-        set({ layoutMode: mode });
+        set({
+          layoutMode: mode,
+          ...(mode !== 'chat' ? { dmActivePeerId: null } : {}),
+        });
       },
 
       setDocked(v) {
         set({ isDocked: v });
       },
-
       setDockCollapsed(v) {
         set({ dockCollapsed: v });
       },
@@ -227,36 +341,19 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       openRepoFile(file) {
         set({
           activeContextFile: file,
-          layoutMode: file ? 'repo' : 'feed',
-          isDocked: true,
-          dockCollapsed: false,
+          layoutMode: file ? 'repo' : get().layoutMode === 'repo' ? 'feed' : get().layoutMode,
           contextMenu: null,
         });
       },
 
       openRepoWorkspace() {
-        set({
-          layoutMode: 'repo',
-          isDocked: true,
-          dockCollapsed: false,
-          contextMenu: null,
-        });
+        set({ layoutMode: 'repo', mobileTab: 'channels', activeContextFile: null });
       },
 
       openRepoFromItem(item) {
-        const files = get().repoFiles;
-        if (!files.length) {
-          get().openRepoWorkspace();
-          return;
+        if (item.git?.repo) {
+          set({ repoName: item.git.repo, layoutMode: 'repo' });
         }
-        if (item.artifact?.path) {
-          const match = files.find(
-            (f) => f.path === item.artifact?.path || f.name === item.artifact?.title,
-          );
-          get().openRepoFile(match || files[0]);
-          return;
-        }
-        get().openRepoFile(files[0]);
       },
 
       setContextMenu(menu) {
@@ -265,34 +362,17 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
 
       runContextAction(action) {
         const menu = get().contextMenu;
-        const file = menu?.file || get().activeContextFile;
+        if (!menu) return;
+        const file = menu.file;
         set({ contextMenu: null });
-        if (!file) return;
         if (action === 'open') {
           get().openRepoFile(file);
           return;
         }
-        if (action === 'share') {
-          const msg: UnifiedFeedItem = {
-            id: `share_${Date.now().toString(36)}`,
-            kind: 'chat',
-            platform: 'lattice',
-            createdAt: new Date().toISOString(),
-            actor: 'You',
-            sourceLabel: 'Lattice',
-            body: `Shared to chat: \`${file.path}\``,
-            presenceHue: 'gold',
-          };
-          set((s) => ({ items: [...s.items, msg], layoutMode: 'repo', isDocked: true }));
-          return;
-        }
-        if (action === 'convert' || action === 'ask_agent') {
-          const repo = get().repoName;
-          const prompt =
-            action === 'convert'
-              ? `Convert this workspace context into a task/commit:\nRepo: ${repo}\nFile: ${file.path}\nPropose a focused commit message and checklist.`
-              : `Ask agent about \`${file.path}\` in ${repo} — summarize intent and next steps.`;
-          set({ pendingAgentPrompt: prompt });
+        if (action === 'ask_agent') {
+          set({
+            pendingAgentPrompt: `Look at ${file.path} in the Lattice collaborate workspace and summarize what matters.`,
+          });
         }
       },
 
@@ -309,7 +389,7 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       },
 
       clearFeed() {
-        set({ items: emptyFeed() });
+        set({ items: emptyFeed(), dmToast: null });
       },
 
       resetWorkspace() {
@@ -320,6 +400,8 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
           pendingAgentPrompt: null,
           layoutMode: 'feed',
           mobileTab: 'home',
+          dmActivePeerId: null,
+          dmToast: null,
         });
       },
     }),
@@ -331,9 +413,57 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
         eventFilters: s.eventFilters,
         repoName: s.repoName,
         isDocked: s.isDocked,
+        dmLastReadAt: s.dmLastReadAt,
       }),
     },
   ),
 );
 
-export { feedItemToAgentContext };
+/** Cross-tab DM / feed sync. */
+export function startCollabDmBridge(): () => void {
+  const bc = getDmBroadcast();
+  const onMsg = (ev: MessageEvent) => {
+    const data = ev?.data;
+    if (!data || data.type !== 'feed-item' || !data.item) return;
+    useUnifiedFeed.getState().ingestPayload(data.item, { fromBroadcast: true });
+  };
+  bc?.addEventListener('message', onMsg);
+
+  const onStorage = (ev: StorageEvent) => {
+    if (ev.key !== FEED_KEY || !ev.newValue) return;
+    try {
+      const parsed = JSON.parse(ev.newValue);
+      const state = parsed?.state;
+      if (!state || !Array.isArray(state.items)) return;
+      const local = useUnifiedFeed.getState().items;
+      const localIds = new Set(local.map((i: UnifiedFeedItem) => i.id));
+      for (const item of state.items as UnifiedFeedItem[]) {
+        if (!localIds.has(item.id)) {
+          useUnifiedFeed.getState().ingestPayload(item, { fromBroadcast: true });
+        }
+      }
+      if (state.dmLastReadAt && typeof state.dmLastReadAt === 'object') {
+        useUnifiedFeed.setState({
+          dmLastReadAt: {
+            ...useUnifiedFeed.getState().dmLastReadAt,
+            ...state.dmLastReadAt,
+          },
+        });
+      }
+    } catch {
+      /* ignore */
+    }
+  };
+  if (typeof window !== 'undefined') {
+    window.addEventListener('storage', onStorage);
+  }
+
+  return () => {
+    bc?.removeEventListener('message', onMsg);
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('storage', onStorage);
+    }
+  };
+}
+
+export { feedItemToAgentContext, countUnreadDms, unreadCountForPeer, isIncomingCollabDm };

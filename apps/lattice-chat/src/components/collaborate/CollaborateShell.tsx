@@ -14,6 +14,7 @@ import {
   postCollaborateDm,
   syncCollaborateDms,
 } from '@/feed/syncCollaborateDms';
+import { formatDmThreadForAgent } from '@/feed/sessionBridge';
 import type { CollabMobileTab, CollabPeer } from '@/feed/types';
 import { displayName } from '@/feed/verifyConnection';
 
@@ -22,7 +23,7 @@ export function CollaborateShell({
   onSendToAgent,
 }: {
   onExit: () => void;
-  onSendToAgent: (prompt: string) => void;
+  onSendToAgent: (prompt: string, opts?: { title?: string }) => void;
 }) {
   const mobileTab = useUnifiedFeed((s) => s.mobileTab);
   const setMobileTab = useUnifiedFeed((s) => s.setMobileTab);
@@ -94,8 +95,8 @@ export function CollaborateShell({
   }, [userEmail]);
 
   const handoffAgent = useCallback(
-    (prompt: string) => {
-      onSendToAgent(prompt);
+    (prompt: string, opts?: { title?: string }) => {
+      onSendToAgent(prompt, opts);
       onExit();
     },
     [onExit, onSendToAgent],
@@ -181,7 +182,7 @@ export function CollaborateShell({
             ) : layoutMode === 'repo' ? (
               <RepoViewerOverlay onClose={() => openRepoFile(null)} />
             ) : layoutMode === 'chat' ? (
-              <WorkspaceChatPane peers={peers} />
+              <WorkspaceChatPane peers={peers} onSendToAgent={handoffAgent} />
             ) : (
               <div className="collab-center__feed">
                 <h2 className="collab-center__title">Unified Feed</h2>
@@ -227,7 +228,7 @@ export function CollaborateShell({
             ) : mobileTab === 'channels' ? (
               <ChannelsPane onOpenRepo={() => openRepoWorkspace()} />
             ) : mobileTab === 'chat' ? (
-              <WorkspaceChatPane peers={peers} />
+              <WorkspaceChatPane peers={peers} onSendToAgent={handoffAgent} />
             ) : (
               <div className="collab-center__feed">
                 <h2 className="collab-center__title">Home</h2>
@@ -299,8 +300,10 @@ function ChannelsPane({ onOpenRepo }: { onOpenRepo: () => void }) {
 
 function WorkspaceChatPane({
   peers,
+  onSendToAgent,
 }: {
   peers: CollabPeer[];
+  onSendToAgent: (prompt: string, opts?: { title?: string }) => void;
 }) {
   const ingestPayload = useUnifiedFeed((s) => s.ingestPayload);
   const items = useUnifiedFeed((s) => s.items);
@@ -377,6 +380,12 @@ function WorkspaceChatPane({
     });
   };
 
+  const addToLatticeChat = () => {
+    if (!activePeer) return;
+    const prompt = formatDmThreadForAgent(activePeer.name, threadItems);
+    onSendToAgent(prompt, { title: `DM · ${activePeer.name}` });
+  };
+
   if (!activePeer) {
     return (
       <div className="collab-chat collab-chat--roster">
@@ -440,6 +449,14 @@ function WorkspaceChatPane({
             <p className="collab-chat__thread-status">{activePeer.online ? 'Online' : 'Offline'}</p>
           </div>
         </div>
+        <button
+          type="button"
+          className="collab-chat__to-agent"
+          onClick={addToLatticeChat}
+          title="Open this DM as a Lattice Chat session"
+        >
+          Add to Lattice Chat
+        </button>
       </header>
 
       <ul className="collab-chat__list" aria-live="polite" ref={listRef}>

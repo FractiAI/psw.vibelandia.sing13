@@ -4,6 +4,12 @@ import { ChatPane } from '@/components/ChatPane';
 import { CollaborateShell } from '@/components/collaborate/CollaborateShell';
 import { CollabDmNotifier } from '@/components/collaborate/CollabDmNotifier';
 import { useLatticeStore } from '@/store';
+import { useUnifiedFeed } from '@/feed/store';
+import { formatChatThreadForDm } from '@/feed/sessionBridge';
+import {
+  newClientDmId,
+  postCollaborateDm,
+} from '@/feed/syncCollaborateDms';
 import { migrateActiveProvider, saveActiveProvider } from '@/lib/providerKeys';
 import type { NestTopology } from '@/types';
 
@@ -47,6 +53,7 @@ export function App() {
   const [mode, setMode] = useState<'chat' | 'collaborate'>(readInitialMode);
   const [agentSeed, setAgentSeed] = useState<string | null>(null);
   const newChat = useLatticeStore((s) => s.newChat);
+  const renameThread = useLatticeStore((s) => s.renameThread);
   const setNestTopology = useLatticeStore((s) => s.setNestTopology);
   const setProvider = useLatticeStore((s) => s.setProvider);
   const closeRail = useCallback(() => setRailOpen(false), []);
@@ -70,13 +77,35 @@ export function App() {
   }, [mode]);
 
   const sendToAgent = useCallback(
-    (prompt: string) => {
+    (prompt: string, opts?: { title?: string }) => {
+      const threadId = newChat();
+      if (opts?.title) renameThread(threadId, opts.title);
       setAgentSeed(prompt);
       setMode('chat');
-      newChat();
     },
-    [newChat],
+    [newChat, renameThread],
   );
+
+  const bringChatIntoDm = useCallback((peerId: string) => {
+    const { threads, activeThreadId } = useLatticeStore.getState();
+    const thread = threads.find((t) => t.id === activeThreadId);
+    const body = formatChatThreadForDm(thread?.title || 'Untitled', thread?.messages || []);
+    const id = newClientDmId();
+    const createdAt = new Date().toISOString();
+    useUnifiedFeed.getState().ingestPayload({
+      id,
+      type: 'chat',
+      platform: 'lattice',
+      actor: 'You',
+      body,
+      threadPeerId: peerId,
+      presenceHue: 'gold',
+      createdAt,
+    });
+    void postCollaborateDm({ id, text: body, threadPeerId: peerId, createdAt });
+    useUnifiedFeed.getState().openPeerDm(peerId);
+    setMode('collaborate');
+  }, []);
 
   if (mode === 'collaborate') {
     return (
@@ -98,6 +127,7 @@ export function App() {
           closeRail();
         }}
         onOpenCollaborate={() => setMode('collaborate')}
+        onBringIntoDm={bringChatIntoDm}
         agentSeedPrompt={agentSeed}
         onAgentSeedConsumed={() => setAgentSeed(null)}
       />

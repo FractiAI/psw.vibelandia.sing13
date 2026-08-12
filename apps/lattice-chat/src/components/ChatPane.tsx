@@ -1,4 +1,4 @@
-import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
+import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
 import {
   checkPendingLatticeReply,
@@ -20,17 +20,22 @@ import { hasProviderApiKey, subscribeProviderKeys } from '@/lib/providerKeys';
 import { useLatticeStore } from '@/store';
 import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
 import { CollabDmBadge } from '@/components/collaborate/CollabDmNotifier';
+import { useUnifiedFeed } from '@/feed/store';
+import { resolveClientCollabPeerId } from '@/feed/seatIdentity';
 
 export function ChatPane({
   onOpenHistory,
   onNewChat,
   onOpenCollaborate,
+  onBringIntoDm,
   agentSeedPrompt,
   onAgentSeedConsumed,
 }: {
   onOpenHistory?: () => void;
   onNewChat?: () => void;
   onOpenCollaborate?: () => void;
+  /** Open Collaborate DM with peer and inject this chat session. */
+  onBringIntoDm?: (peerId: string) => void;
   agentSeedPrompt?: string | null;
   onAgentSeedConsumed?: () => void;
 } = {}) {
@@ -64,11 +69,20 @@ export function ChatPane({
   const [checking, setChecking] = useState(false);
   const [keySettingsOpen, setKeySettingsOpen] = useState(false);
   const [hasEdgeKey, setHasEdgeKey] = useState(false);
+  const [dmMenuOpen, setDmMenuOpen] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const stickToBottomRef = useRef(true);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const resumedRef = useRef(false);
+  const dmMenuRef = useRef<HTMLDivElement>(null);
+
+  const collabPeers = useUnifiedFeed((s) => s.peers);
+  const myCollabPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
+  const dmPeers = useMemo(
+    () => (myCollabPeerId ? collabPeers.filter((p) => p.id !== myCollabPeerId) : collabPeers),
+    [collabPeers, myCollabPeerId],
+  );
 
   const thread = threads.find((t) => t.id === activeThreadId) ?? null;
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
@@ -104,6 +118,15 @@ export function ChatPane({
     onAgentSeedConsumed?.();
     inputRef.current?.focus();
   }, [agentSeedPrompt, onAgentSeedConsumed]);
+
+  useEffect(() => {
+    if (!dmMenuOpen) return;
+    const onDoc = (e: MouseEvent) => {
+      if (!dmMenuRef.current?.contains(e.target as Node)) setDmMenuOpen(false);
+    };
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, [dmMenuOpen]);
 
   useEffect(() => {
     const sync = (detail?: { changed?: boolean }) => {
@@ -294,6 +317,37 @@ export function ChatPane({
                 Collaborate
                 <CollabDmBadge />
               </button>
+            ) : null}
+            {onBringIntoDm && dmPeers.length > 0 ? (
+              <div className="header-dm-menu" ref={dmMenuRef}>
+                <button
+                  type="button"
+                  className="header-collab-btn header-dm-btn"
+                  aria-expanded={dmMenuOpen}
+                  aria-haspopup="menu"
+                  onClick={() => setDmMenuOpen((v) => !v)}
+                >
+                  Bring into DM
+                </button>
+                {dmMenuOpen ? (
+                  <ul className="header-dm-menu__list" role="menu">
+                    {dmPeers.map((p) => (
+                      <li key={p.id} role="none">
+                        <button
+                          type="button"
+                          role="menuitem"
+                          onClick={() => {
+                            setDmMenuOpen(false);
+                            onBringIntoDm(p.id);
+                          }}
+                        >
+                          DM · {p.name}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
             ) : null}
           </div>
           {signedIn ? (

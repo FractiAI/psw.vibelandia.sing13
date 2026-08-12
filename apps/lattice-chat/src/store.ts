@@ -82,7 +82,8 @@ type LatticeState = {
   setRepositories: (repos: LatticeRepository[]) => void;
   switchRepositoryWorkstream: (repoId: string) => void;
   ensureThread: () => string;
-  newChat: () => void;
+  /** Create or reuse an empty draft thread; returns active thread id. */
+  newChat: () => string;
   selectThread: (id: string) => void;
   renameThread: (id: string, title: string) => void;
   deleteThread: (id: string) => void;
@@ -189,7 +190,7 @@ export const useLatticeStore = create<LatticeState>()(
             liveTranscript: [],
             sending: false,
           });
-          return;
+          return active.id;
         }
         const empty = threads.find((t) => t.messages.length === 0);
         if (empty) {
@@ -202,7 +203,7 @@ export const useLatticeStore = create<LatticeState>()(
             liveTranscript: [],
             sending: false,
           });
-          return;
+          return empty.id;
         }
         const t = emptyThread();
         set((s) => ({
@@ -215,6 +216,7 @@ export const useLatticeStore = create<LatticeState>()(
           liveTranscript: [],
           sending: false,
         }));
+        return t.id;
       },
 
       selectThread: (id) => {

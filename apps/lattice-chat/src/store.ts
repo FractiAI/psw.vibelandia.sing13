@@ -25,6 +25,7 @@ import {
   LATTICE_REPOSITORIES_FALLBACK,
   type LatticeRepository,
 } from '@/repositories';
+import { COLLAB_SHARED_AGENT_THREAD_ID } from '@/feed/collabSharedThread';
 
 const STORAGE_KEY = 'lattice-v1618-edge';
 
@@ -68,6 +69,12 @@ type LatticeState = {
   pending: PendingSend | null;
   /** Live stream-of-thought transcript while a run is in flight. */
   liveTranscript: TranscriptItem[];
+  /** Remote seat thought stream on the shared Collaborate agent session. */
+  remoteCollabLive: {
+    fromPeerId: string;
+    senderName: string;
+    transcript: TranscriptItem[];
+  } | null;
   error: string | null;
   agentMode: AgentMode;
   modelId: string;
@@ -82,6 +89,8 @@ type LatticeState = {
   setRepositories: (repos: LatticeRepository[]) => void;
   switchRepositoryWorkstream: (repoId: string) => void;
   ensureThread: () => string;
+  /** Shared Collaborate Lattice Chat thread (all seats). */
+  ensureSharedCollabThread: () => string;
   /** Create or reuse an empty draft thread; returns active thread id. */
   newChat: () => string;
   selectThread: (id: string) => void;
@@ -89,8 +98,13 @@ type LatticeState = {
   deleteThread: (id: string) => void;
   appendMessage: (
     threadId: string,
-    message: Omit<ChatMessage, 'id' | 'createdAt'> & { id?: string },
+    message: Omit<ChatMessage, 'id' | 'createdAt'> & {
+      id?: string;
+      createdAt?: string;
+    },
   ) => string;
+  /** Insert or replace by message id (shared Collaborate sync). */
+  upsertMessage: (threadId: string, message: ChatMessage) => void;
   setUserEmail: (email: string) => void;
   setPrivilege: (privilege: LatticePrivilege) => void;
   clearUserEmail: () => void;
@@ -102,6 +116,14 @@ type LatticeState = {
   setLiveTranscript: (items: TranscriptItem[]) => void;
   pushLiveTranscript: (item: TranscriptItem) => void;
   clearLiveTranscript: () => void;
+  setRemoteCollabLive: (
+    live: {
+      fromPeerId: string;
+      senderName: string;
+      transcript: TranscriptItem[];
+    } | null,
+  ) => void;
+  clearRemoteCollabLive: () => void;
   setError: (msg: string | null) => void;
   setAgentId: (threadId: string, agentId: string | null) => void;
   /** Drop cloud agent ids when the edge key or provider changes. */
@@ -133,6 +155,7 @@ export const useLatticeStore = create<LatticeState>()(
       statusHint: null,
       pending: null,
       liveTranscript: [],
+      remoteCollabLive: null,
       error: null,
       agentMode: 'agent',
       modelId: 'composer-2.5',
@@ -175,6 +198,29 @@ export const useLatticeStore = create<LatticeState>()(
         const t = emptyThread();
         set({ threads: [t, ...threads], activeThreadId: t.id });
         return t.id;
+      },
+
+      ensureSharedCollabThread: () => {
+        const id = COLLAB_SHARED_AGENT_THREAD_ID;
+        const { threads } = get();
+        const existing = threads.find((t) => t.id === id);
+        if (!existing) {
+          const now = new Date().toISOString();
+          const t: ChatThread = {
+            id,
+            title: 'Collaborate · shared session',
+            messages: [],
+            updatedAt: now,
+          };
+          set((s) => ({
+            threads: [t, ...s.threads.filter((x) => x.id !== id)],
+            activeThreadId: id,
+            error: null,
+          }));
+        } else {
+          set({ activeThreadId: id });
+        }
+        return id;
       },
 
       newChat: () => {
@@ -244,7 +290,7 @@ export const useLatticeStore = create<LatticeState>()(
 
       appendMessage: (threadId, message) => {
         const id = message.id ?? uid('msg');
-        const createdAt = new Date().toISOString();
+        const createdAt = message.createdAt ?? new Date().toISOString();
         const full: ChatMessage = {
           id,
           role: message.role,
@@ -253,7 +299,10 @@ export const useLatticeStore = create<LatticeState>()(
           transcript: message.transcript,
           model: message.model,
           mode: message.mode,
+          lens: message.lens,
           tokens: message.tokens,
+          senderPeerId: message.senderPeerId,
+          senderName: message.senderName,
         };
         set((s) => ({
           threads: s.threads.map((t) => {
@@ -267,6 +316,46 @@ export const useLatticeStore = create<LatticeState>()(
           }),
         }));
         return id;
+      },
+
+      upsertMessage: (threadId, message) => {
+        set((s) => {
+          let threads = s.threads;
+          if (!threads.some((t) => t.id === threadId)) {
+            threads = [
+              {
+                id: threadId,
+                title:
+                  threadId === COLLAB_SHARED_AGENT_THREAD_ID
+                    ? 'Collaborate · shared session'
+                    : 'New chat',
+                messages: [],
+                updatedAt: message.createdAt,
+              },
+              ...threads,
+            ];
+          }
+          return {
+            threads: threads.map((t) => {
+              if (t.id !== threadId) return t;
+              const idx = t.messages.findIndex((m) => m.id === message.id);
+              let messages: ChatMessage[];
+              if (idx >= 0) {
+                messages = t.messages.slice();
+                messages[idx] = { ...messages[idx], ...message };
+              } else {
+                messages = [...t.messages, message].sort((a, b) =>
+                  a.createdAt.localeCompare(b.createdAt),
+                );
+              }
+              const title =
+                t.title === 'New chat' && message.role === 'user'
+                  ? message.content.trim().slice(0, 48) || t.title
+                  : t.title;
+              return { ...t, messages, title, updatedAt: message.createdAt };
+            }),
+          };
+        });
       },
 
       setUserEmail: (email) => {
@@ -335,6 +424,8 @@ export const useLatticeStore = create<LatticeState>()(
           return { liveTranscript: items };
         }),
       clearLiveTranscript: () => set({ liveTranscript: [] }),
+      setRemoteCollabLive: (live) => set({ remoteCollabLive: live }),
+      clearRemoteCollabLive: () => set({ remoteCollabLive: null }),
       setError: (msg) => set({ error: msg }),
       setAgentId: (threadId, agentId) => {
         set((s) => ({

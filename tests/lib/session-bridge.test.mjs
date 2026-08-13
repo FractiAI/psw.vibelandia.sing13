@@ -1,10 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import {
-  formatChatThreadForDm,
-  formatDmThreadForAgent,
-} from '../../apps/lattice-chat/src/feed/sessionBridge.ts';
+import { formatDmThreadForAgent } from '../../apps/lattice-chat/src/feed/sessionBridge.ts';
 
-describe('sessionBridge DM ↔ Lattice Chat', () => {
+describe('sessionBridge DM → Lattice Chat', () => {
   it('formats a DM thread for Lattice Chat', () => {
     const prompt = formatDmThreadForAgent('Daniel', [
       { actor: 'You', body: 'hello this is a test message', createdAt: '2026-08-12T18:00:00.000Z' },
@@ -13,15 +10,5 @@ describe('sessionBridge DM ↔ Lattice Chat', () => {
     expect(prompt).toContain('Collaborate DM with Daniel');
     expect(prompt).toContain('You: hello this is a test message');
     expect(prompt).toContain('Daniel: got it');
-  });
-
-  it('formats a Lattice Chat session for DM', () => {
-    const body = formatChatThreadForDm('Workstream · SING13', [
-      { role: 'user', content: 'plan the release' },
-      { role: 'assistant', content: 'here is a plan' },
-    ]);
-    expect(body).toContain('Lattice Chat session · Workstream · SING13');
-    expect(body).toContain('You: plan the release');
-    expect(body).toContain('Agent: here is a plan');
   });
 });

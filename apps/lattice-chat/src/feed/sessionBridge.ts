@@ -1,6 +1,5 @@
-/** Format Collaborate DM ↔ Lattice Chat session handoff payloads. */
+/** Format Collaborate DM → Lattice Chat session handoff payloads. */
 import type { UnifiedFeedItem } from '@/feed/types';
-import type { ChatMessage } from '@/types';
 
 export type DmThreadLine = Pick<UnifiedFeedItem, 'actor' | 'body' | 'createdAt'>;
 
@@ -24,27 +23,5 @@ export function formatDmThreadForAgent(
     lines.push(`${who}: ${body}`);
   }
   lines.push('--- end DM ---', '', 'Respond with next useful steps for this conversation.');
-  return lines.join('\n').slice(0, maxChars);
-}
-
-/** Build a Collaborate DM body from a Lattice Chat session transcript. */
-export function formatChatThreadForDm(
-  title: string,
-  messages: Array<Pick<ChatMessage, 'role' | 'content'>>,
-  opts: { maxChars?: number; maxMessages?: number } = {},
-): string {
-  const maxChars = opts.maxChars ?? 3500;
-  const maxMessages = opts.maxMessages ?? 12;
-  const slice = messages.slice(-maxMessages);
-  const lines = [`[Lattice Chat session · ${title || 'Untitled'}]`];
-  for (const m of slice) {
-    const content = String(m.content || '').trim();
-    if (!content) continue;
-    const who = m.role === 'user' ? 'You' : m.role === 'assistant' ? 'Agent' : m.role;
-    lines.push(`${who}: ${content.slice(0, 600)}`);
-  }
-  if (lines.length === 1) {
-    lines.push('(Empty session — opened from Lattice Chat.)');
-  }
   return lines.join('\n').slice(0, maxChars);
 }

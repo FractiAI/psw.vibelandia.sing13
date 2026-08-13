@@ -9,10 +9,11 @@ import { unreadCountForPeer } from '@/feed/dm';
 import { resolveClientCollabPeerId } from '@/feed/seatIdentity';
 import { syncPublishedPapers } from '@/feed/syncPublishedPapers';
 import {
+  syncCollaborateDms,
   newClientDmId,
   postCollaborateDm,
-  syncCollaborateDms,
 } from '@/feed/syncCollaborateDms';
+import { syncCollaborateAgent } from '@/feed/syncCollaborateAgent';
 import { formatDmThreadForAgent } from '@/feed/sessionBridge';
 import type { CollabPeer } from '@/feed/types';
 
@@ -29,7 +30,7 @@ export function CollaborateShell({
 }) {
   const peersAll = useUnifiedFeed((s) => s.peers);
   const userEmail = useLatticeStore((s) => s.userEmail);
-  const newChat = useLatticeStore((s) => s.newChat);
+  const ensureSharedCollabThread = useLatticeStore((s) => s.ensureSharedCollabThread);
   const myPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
   const peers = useMemo(
     () => (myPeerId ? peersAll.filter((p) => p.id !== myPeerId) : peersAll),
@@ -47,6 +48,10 @@ export function CollaborateShell({
     mq.addEventListener('change', onChange);
     return () => mq.removeEventListener('change', onChange);
   }, []);
+
+  useEffect(() => {
+    ensureSharedCollabThread();
+  }, [ensureSharedCollabThread]);
 
   useEffect(() => {
     let cancelled = false;
@@ -86,9 +91,28 @@ export function CollaborateShell({
     };
   }, [userEmail]);
 
+  useEffect(() => {
+    let cancelled = false;
+    const run = () => {
+      if (cancelled) return;
+      void syncCollaborateAgent();
+    };
+    run();
+    const id = window.setInterval(run, 4_000);
+    const onVis = () => {
+      if (document.visibilityState === 'visible') run();
+    };
+    document.addEventListener('visibilitychange', onVis);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+      document.removeEventListener('visibilitychange', onVis);
+    };
+  }, [userEmail]);
+
   const handoffAgent = useCallback(
     (prompt: string, opts?: { title?: string }) => {
-      // Seed embedded Lattice Chat in-place — stay on Collaborate.
+      // Seed embedded Lattice Chat in-place — stay on Collaborate shared session.
       onSendToAgent(prompt, opts);
     },
     [onSendToAgent],
@@ -106,7 +130,7 @@ export function CollaborateShell({
       <div className="collab-agent-band__chat">
         <ChatPane
           compact
-          onNewChat={() => newChat()}
+          sharedCollab
           agentSeedPrompt={agentSeedPrompt}
           onAgentSeedConsumed={onAgentSeedConsumed}
         />

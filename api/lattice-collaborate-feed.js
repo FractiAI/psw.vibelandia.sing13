@@ -3,9 +3,11 @@
  * GET (default) → schema + recent published whitepaper ArtifactEvents.
  * GET ?dms=1 → shared seat DMs (allowlisted email header).
  * POST ?dms=1 → append DM (x-lattice-email → seat map).
+ * GET ?agent=1 → shared Lattice Chat agent session (inputs/outputs + thought streams).
+ * POST ?agent=1 → append agent session event (user | assistant | live).
  * POST (default) → sanitize webhook payload (client still owns timeline ingest).
  *
- * Honesty: paper list + DM log are shared pipes. Edge clients rewrite actor labels.
+ * Honesty: paper list + DM log + agent session are shared pipes. Edge clients rewrite actor labels.
  */
 import { listCollaboratePaperEvents } from '../lib/lattice-collaborate-papers.mjs';
 import {
@@ -13,6 +15,10 @@ import {
   listCollaborateDms,
   resolveCollabPeerId,
 } from '../lib/lattice-collaborate-dms.mjs';
+import {
+  appendCollaborateAgentEvent,
+  listCollaborateAgentEvents,
+} from '../lib/lattice-collaborate-agent.mjs';
 import { checkLatticeEmailAccess, normalizeEmail } from '../lib/lattice-access.mjs';
 
 function dropKeys(obj) {
@@ -69,6 +75,88 @@ function emailFromReq(req, body) {
 
 function newDmId() {
   return `dm_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
+}
+
+function newAgentEventId() {
+  return `ca_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
+}
+
+async function handleAgentGet(req, res) {
+  const email = emailFromReq(req, null);
+  const access = checkLatticeEmailAccess(email);
+  if (!access.ok) {
+    res.status(401).json({ ok: false, error: 'email_required', message: access.reason });
+    return;
+  }
+  const myPeerId = resolveCollabPeerId(email);
+  if (!myPeerId) {
+    res.status(403).json({
+      ok: false,
+      error: 'no_collab_seat',
+      message: 'This email is allowlisted but has no Collaborate seat yet.',
+    });
+    return;
+  }
+  const url = requestUrl(req);
+  const since = url.searchParams.get('since');
+  const events = await listCollaborateAgentEvents({ since });
+  res.status(200).json({
+    ok: true,
+    product: 'Lattice Collaborate',
+    myPeerId,
+    honesty:
+      'Shared Lattice Chat agent pipe for Collaborate seats. Inputs carry fromPeerId/senderName; assistant events include thought-stream transcripts. Requires BLOB_READ_WRITE_TOKEN for multi-instance durability.',
+    events,
+  });
+}
+
+async function handleAgentPost(req, res) {
+  const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
+  const email = emailFromReq(req, body);
+  const access = checkLatticeEmailAccess(email);
+  if (!access.ok) {
+    res.status(401).json({ ok: false, error: 'email_required', message: access.reason });
+    return;
+  }
+  const fromPeerId = resolveCollabPeerId(email);
+  if (!fromPeerId) {
+    res.status(403).json({
+      ok: false,
+      error: 'no_collab_seat',
+      message: 'This email is allowlisted but has no Collaborate seat yet.',
+    });
+    return;
+  }
+  const role = typeof body.role === 'string' ? body.role.trim() : '';
+  const id =
+    typeof body.id === 'string' && body.id.trim()
+      ? body.id.trim().slice(0, 100)
+      : newAgentEventId();
+  const createdAt =
+    typeof body.createdAt === 'string' && body.createdAt.trim()
+      ? body.createdAt.trim()
+      : new Date().toISOString();
+  const result = await appendCollaborateAgentEvent({
+    id,
+    role,
+    fromPeerId,
+    content: body.content ?? body.text ?? body.body ?? '',
+    transcript: body.transcript,
+    model: body.model,
+    mode: body.mode,
+    senderName: body.senderName,
+    createdAt,
+  });
+  if (!result.ok) {
+    res.status(400).json({ ok: false, error: result.error || 'invalid_agent_event' });
+    return;
+  }
+  res.status(200).json({
+    ok: true,
+    event: result.event,
+    duplicate: Boolean(result.duplicate),
+    myPeerId: fromPeerId,
+  });
 }
 
 async function handleDmsGet(req, res) {
@@ -170,6 +258,28 @@ export default async function handler(req, res) {
 
   const url = requestUrl(req);
   const dmsMode = url.searchParams.get('dms') === '1';
+  const agentMode = url.searchParams.get('agent') === '1';
+
+  if (agentMode) {
+    try {
+      if (req.method === 'GET') {
+        await handleAgentGet(req, res);
+        return;
+      }
+      if (req.method === 'POST') {
+        await handleAgentPost(req, res);
+        return;
+      }
+      res.status(405).json({ ok: false, error: 'method_not_allowed' });
+    } catch (err) {
+      res.status(500).json({
+        ok: false,
+        error: 'agent_session_failed',
+        message: err instanceof Error ? err.message : String(err),
+      });
+    }
+    return;
+  }
 
   if (dmsMode) {
     try {
@@ -203,7 +313,7 @@ export default async function handler(req, res) {
         ok: true,
         product: 'Lattice Collaborate',
         honesty:
-          'Shared paper pipe + webhook sanitizer + optional ?dms=1 seat chat. Edge clients ingest into their timeline. Seats: Valet Pru + Daniel.',
+          'Shared paper pipe + webhook sanitizer + optional ?dms=1 seat chat + optional ?agent=1 shared Lattice Chat session. Edge clients ingest into their timeline. Seats: Valet Pru + Daniel.',
         accept: ['SocialPost', 'MessagingEvent', 'GitEvent', 'ArtifactEvent', 'chat'],
         seats: ['Valet Pru', 'Daniel'],
         events,

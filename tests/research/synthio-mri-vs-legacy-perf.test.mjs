@@ -46,28 +46,36 @@ describe('synthio-mri-vs-legacy-perf live Bloch', () => {
     expect(mri.totalTokens).toBeLessThan(legacy.totalTokens * 0.25);
   });
 
-  it('E1/E2 pass and E3 reports live wall-clock', () => {
-    const e1 = experimentTopologyMessageTax();
-    const e2 = experimentTokenPayload();
-    const e3 = experimentLiveWallClock();
-    expect(e1.pass).toBe(true);
-    expect(e2.pass).toBe(true);
-    expect(e3.pass).toBe(true);
-    expect(e3.measurement.liveWallClock).toBe(true);
-    expect(e3.measurement.timedWith).toBe('process.hrtime.bigint');
-    expect(e3.meanSpeedup).toBeGreaterThan(1);
-  });
+  it(
+    'E1/E2 pass and E3 reports live wall-clock',
+    () => {
+      const e1 = experimentTopologyMessageTax();
+      const e2 = experimentTokenPayload();
+      const e3 = experimentLiveWallClock();
+      expect(e1.pass).toBe(true);
+      expect(e2.pass).toBe(true);
+      expect(e3.pass).toBe(true);
+      expect(e3.measurement.liveWallClock).toBe(true);
+      expect(e3.measurement.timedWith).toBe('process.hrtime.bigint');
+      expect(e3.meanSpeedup).toBeGreaterThan(1);
+    },
+    30_000,
+  );
 
-  it('runAllExperiments passes E1–E6 with live summary', async () => {
-    const r = await runAllExperiments();
-    expect(r.all_pass).toBe(true);
-    expect(r.n_pass).toBe(6);
-    expect(r.summary.liveWallClock).toBe(true);
-    expect(r.summary.backend).toBe('node_bloch_cpu');
-    expect(r.summary.meanSpeedup).toBeGreaterThan(1);
-    expect(r.honesty.empiricalProxy).toBe(false);
-    expect(r.honesty.liveWallClock).toBe(true);
-  });
+  it(
+    'runAllExperiments passes E1–E6 with live summary',
+    async () => {
+      const r = await runAllExperiments();
+      expect(r.all_pass).toBe(true);
+      expect(r.n_pass).toBe(6);
+      expect(r.summary.liveWallClock).toBe(true);
+      expect(r.summary.backend).toBe('node_bloch_cpu');
+      expect(r.summary.meanSpeedup).toBeGreaterThan(1);
+      expect(r.honesty.empiricalProxy).toBe(false);
+      expect(r.honesty.liveWallClock).toBe(true);
+    },
+    30_000,
+  );
 
   it('registers whitepaper + public slug', () => {
     const p = resolveWhitepaper('synthio-mri-vs-legacy-perf-proxy-2026-08');

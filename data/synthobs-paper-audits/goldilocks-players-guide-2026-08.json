@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "17652a220705dcd8",
+  "auditId": "348d7ed12fa03c1f",
   "paperId": "goldilocks-players-guide-2026-08",
   "sourcePath": "docs/HOLOGRAPHIC_GOLDILOCKS_PLAYERS_GUIDE_2026-08.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-08-13T17:26:15.106Z"
+          "invokedAt": "2026-08-13T17:26:43.632Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-08-13T17:26:15.105Z",
-  "completedAt": "2026-08-13T17:26:15.106Z",
+  "startedAt": "2026-08-13T17:26:43.631Z",
+  "completedAt": "2026-08-13T17:26:43.632Z",
   "iterations": 1,
   "overallScore": 0.971,
   "passThreshold": 0.85,

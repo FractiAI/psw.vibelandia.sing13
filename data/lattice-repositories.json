@@ -1,6 +1,6 @@
 {
   "schema": "lattice-repositories/v1",
-  "updatedAt": "2026-08-12",
+  "updatedAt": "2026-08-13",
   "defaultId": "sing13",
   "repositories": [
     {
@@ -121,6 +121,26 @@
       "startingRef": "main",
       "blurb": "Corrected Lattice nested-agent evaluation harness.",
       "tags": ["lattice", "eval"],
+      "guestSelectable": true
+    },
+    {
+      "id": "synthio-mri-cloud-antenna",
+      "name": "synthio-mri-cloud-antenna",
+      "label": "Synthio · MRI cloud-antenna",
+      "url": "https://github.com/FractiAI/synthio-mri-cloud-antenna",
+      "startingRef": "main",
+      "blurb": "Synthio MRI simulator / cloud-antenna catalog + activation suite.",
+      "tags": ["synthio", "mri", "sandbox"],
+      "guestSelectable": true
+    },
+    {
+      "id": "synthio-mri-vs-legacy-perf",
+      "name": "synthio-mri-vs-legacy-perf",
+      "label": "Synthio · MRI vs legacy perf",
+      "url": "https://github.com/FractiAI/synthio-mri-vs-legacy-perf",
+      "startingRef": "main",
+      "blurb": "Live wall-clock MRI interference-phase vs legacy full-mesh Bloch / KomaMRI.jl suite.",
+      "tags": ["synthio", "mri", "performance"],
       "guestSelectable": true
     }
   ]

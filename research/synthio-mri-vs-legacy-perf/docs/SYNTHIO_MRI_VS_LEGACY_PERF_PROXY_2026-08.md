@@ -9,7 +9,8 @@
 **Classification:** Empirical live wall-clock study · Synthio Cloud Services *(sandbox — see Honesty boundary)*  
 **Framework:** Synthio · Syntheverse Sandbox · Bloch CPU kernel · NSPFRNP · PRA Snap  
 **Parent papers:** [`SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md`](./SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md) · [`SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md`](./SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md)  
-**Standalone suite:** [`research/synthio-mri-vs-legacy-perf/`](../research/synthio-mri-vs-legacy-perf/)  
+**GitHub (standalone):** https://github.com/FractiAI/synthio-mri-vs-legacy-perf  
+**Standalone suite:** [FractiAI/synthio-mri-vs-legacy-perf](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) · monorepo [`research/synthio-mri-vs-legacy-perf/`](../research/synthio-mri-vs-legacy-perf/)  
 **Cloud home:** [`/synthio-cloud`](https://www.ssvibelandiaquestfest24x365.com/synthio-cloud)  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com/synthio  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
@@ -62,7 +63,7 @@ We ran a **live wall-clock** performance comparison — not a log-scaled busy-lo
 |------|----------------|
 | Live suite (Node Bloch + optional KomaMRI) | `npm run research:synthio-mri-vs-legacy-perf` |
 | KomaMRI-only live lane | `npm run research:synthio-mri-vs-legacy-perf:komamri` |
-| Suite root | [`research/synthio-mri-vs-legacy-perf/`](../research/synthio-mri-vs-legacy-perf/) |
+| Suite root | [FractiAI/synthio-mri-vs-legacy-perf](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) · monorepo [`research/synthio-mri-vs-legacy-perf/`](../research/synthio-mri-vs-legacy-perf/) |
 | Bloch kernel | `src/bloch_cpu.mjs` — hard-pulse tip, free-precession, T1/T2 relax, GRE train |
 | Live arms | `src/live_workloads.mjs` — `runLegacyLive` / `runMriLive` |
 | KomaMRI live script | `scripts/bench_komamri_live.jl` |

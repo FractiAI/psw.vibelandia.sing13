@@ -1,0 +1,31 @@
+{
+  "schema": "standalone-suite-manifest/v1",
+  "owner": "FractiAI",
+  "updatedAt": "2026-08-13",
+  "suites": [
+    {
+      "id": "synthio-mri-vs-legacy-perf",
+      "path": "research/synthio-mri-vs-legacy-perf",
+      "github": "https://github.com/FractiAI/synthio-mri-vs-legacy-perf",
+      "description": "Live wall-clock MRI interference-phase vs legacy full-mesh Bloch / KomaMRI.jl suite",
+      "paperIds": ["synthio-mri-vs-legacy-perf-proxy-2026-08"],
+      "extraDocs": []
+    },
+    {
+      "id": "synthio-mri-cloud-antenna",
+      "path": "research/synthio-mri-cloud-antenna",
+      "github": "https://github.com/FractiAI/synthio-mri-cloud-antenna",
+      "description": "Synthio MRI simulator / cloud-antenna catalog + activation suite",
+      "paperIds": [
+        "synthio-mri-cloud-antenna-99-octave-2026-08",
+        "synthio-mri-cloud-antenna-one-pager-2026-08",
+        "synthio-komamri-distributed-cloud-2026-08"
+      ],
+      "extraDocs": [
+        "docs/SYNTHIO_MRI_CLOUD_ANTENNA_ONE_PAGER_2026-08.md",
+        "docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md",
+        "AGENT_SYNC_SYNTHIO.md"
+      ]
+    }
+  ]
+}

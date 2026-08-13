@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>A real stopwatch on MRI-style vs mesh-style compute · Ship blog · QUESTFEST</title>
+  <meta name="description" content="Plain-language ship note on live wall-clock MRI interference-phase vs legacy full-mesh timings in the Syntheverse Sandbox — not a clinical scanner." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/mri-vs-legacy-stopwatch" />
+  <meta property="og:title" content="A real stopwatch on MRI-style vs mesh-style compute" />
+  <meta property="og:description" content="Live sandbox timings, not a scanner, not a data-center invoice, and not a claim that Synthio replaces the 99 Octave engine." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">QUESTFEST</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/papers">Papers</a>
+      <a href="/interfaces/whitepaper-surface.html?id=synthio-mri-vs-legacy-perf-proxy-2026-08">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Ship blog · Synthio · live wall-clock</p>
+      <h1>A real stopwatch on MRI-style vs mesh-style compute</h1>
+      <p class="dateline"><strong>SS Vibelandia</strong> — 2026-08-13 — plain speak · Fair Exchange</p>
+    </header>
+
+    <p class="lead">We timed two ways of doing the same sandbox work: redo everything on every connection (legacy mesh), versus share one field and send small phase-acks (MRI-style). The clock is real. The magnet is not.</p>
+
+    <p class="honesty"><strong>Honesty first:</strong> these are Node Bloch + optional KomaMRI.jl CPU timings on one host. Not clinical TR/TE. Not CUDA invoices. Not proof that Synthio displaces hyperscale data centers or that Synthio is the 99 Octave engine identity.</p>
+
+    <h2>What the stopwatch said</h2>
+    <p>On the shipped receipt, the shared-field arm was much cheaper than per-edge recompute — hundreds of times on the Node Bloch lane, tens of times on the live KomaMRI lane. Host-dependent. Re-run the suite to refresh the milliseconds. Receipts live next to the paper.</p>
+
+    <h2>How to use it on QUESTFEST</h2>
+    <ul class="plain">
+      <li>Open Synthio (creator-only) and ask about MRI vs legacy wall-clock — keep the honesty table visible.</li>
+      <li>Run <code>npm run research:synthio-mri-vs-legacy-perf</code> for the live suite.</li>
+      <li>Standalone GitHub: <a href="https://github.com/FractiAI/synthio-mri-vs-legacy-perf">FractiAI/synthio-mri-vs-legacy-perf</a>.</li>
+    </ul>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=synthio-mri-vs-legacy-perf-proxy-2026-08">Open the whitepaper</a>
+      <a class="btn btn-ghost" href="https://github.com/FractiAI/synthio-mri-vs-legacy-perf">Standalone GitHub</a>
+      <a class="btn btn-ghost" href="/questfest#ship-blog">Back to ship blog</a>
+    </div>
+    <footer>
+      Operator: Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox · NSPFRNP · → ∞¹³
+    </footer>
+  </article>
+</body>
+</html>

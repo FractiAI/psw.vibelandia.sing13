@@ -1,0 +1,22 @@
+---
+description: Every new paper gets a QUESTFEST ship-blog post and appears in the latest-six section, newest first
+alwaysApply: true
+---
+
+# QUESTFEST ship blog · latest six papers — Always On
+
+**Do not ship a paper without a plain-language ship-blog post.** Player 1 should not have to remind agents of this.
+
+When you **register, protocol, or feature** a technical paper (`lib/whitepaper-registry.mjs`, `docs/*.md`):
+
+1. **Write a ship-blog HTML note** under `interfaces/blog-<slug>-YYYY-MM.html` (plain speak + honesty rail + link to the whitepaper). Follow `interfaces/blog-metamorphic-octaves-2026-08.html`.
+2. **Register the note** in `lib/questfest-blog-posts.mjs` (`QUESTFEST_BLOG_POSTS[registryId]` → slug, file, headline, excerpt).
+3. **Add Vercel rewrites** in `vercel.json` for `/ship-blog/<slug>` and `/ship-blog/<slug>/`.
+4. **Sync the latest-six section:** `npm run sync:questfest-blog` (injects `interfaces/vibelandia-questfest.html` `#ship-blog`).
+5. **Sync the interfaces index:** `npm run sync:interfaces-index`.
+6. **Order is newest → oldest** (`published` date descending). Never prefer older notes over newer papers.
+7. **Companions only** (one-pagers, living TOCs) may set `shipBlog: false` on the registry entry so they do not steal a latest-six slot. Main papers always get a note.
+
+Tests in `tests/lib/questfest-blog.test.mjs` fail if any of the six newest eligible papers lacks a note, or if the six are not newest-first.
+
+Skip this only when the user explicitly says the work is not a public paper.

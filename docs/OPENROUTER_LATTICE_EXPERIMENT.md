@@ -32,3 +32,9 @@ A live run writes provider-independent metadata to `data/` as JSON/CSV and a sel
 ## Direct/plain mode
 
 The CLI's `--plain` option and the web composer's Plain nest choice send `nestTopology: "none"`. For Claude and OpenRouter BYOK calls this removes the Lattice prompt assembly and uses a short direct system instruction. OpenRouter and Claude also accept validated `topP` values from `0` through `1`. CLI assistant text remains on stdout; progress and optional `--json` metadata remain on stderr.
+
+## OpenRouter proxy boundary and verification status
+
+OpenRouter proxy mode is intentionally stateless at the provider boundary and uses a non-streaming provider request. It does not provide agent or thread recovery; any continuity must be supplied by the caller's request history, and a failed request does not create a recoverable provider-side agent/thread handle. The terminal CLI remains the supported full real-terminal path for this experiment and for explicit local invocation.
+
+The dry-run command above verifies only local argument/configuration assembly and makes no provider call. A live verification requires a separately authorized runtime key and a reachable endpoint; report it as live only when the request, response, and exit behavior have actually been observed. No live verification is implied by the dry-run or by this documentation note.

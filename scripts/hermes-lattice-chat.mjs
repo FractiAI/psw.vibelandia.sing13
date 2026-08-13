@@ -75,7 +75,7 @@ USAGE
 
 OPTIONS
   --prompt <text>    The message to send
-  --model <id>       Model ID (default: auto · claude-sonnet-4-5 · antigravity-preview-05-2026)
+  --model <id>       Model ID (default: auto · claude-sonnet-4-5 · antigravity-preview-05-2026 · deepseek/deepseek-chat for OpenRouter)
   --provider <name>  cursor | claude | gemini | openrouter (default: cursor)
   --thread-id <id>   Resume an existing thread
   --agent-id <id>    Reattach to an existing agent
@@ -87,7 +87,7 @@ ENVIRONMENT
   LATTICE_CHAT_ENDPOINT   API base URL
   LATTICE_CHAT_EMAIL      Your email (Lattice access list)
   LATTICE_CHAT_API_KEY    Provider API key
-  LATTICE_CHAT_PROVIDER   cursor | claude | gemini
+  LATTICE_CHAT_PROVIDER   cursor | claude | gemini | openrouter
   LATTICE_CHAT_MODEL      Model ID
 
 EXIT CODES

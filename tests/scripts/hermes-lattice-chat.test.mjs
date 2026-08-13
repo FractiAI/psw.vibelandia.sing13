@@ -59,6 +59,13 @@ describe('hermes-lattice-chat CLI', () => {
     expect(r.stderr).toContain('antigravity');
   });
 
+  it('--dry-run with --provider openrouter', () => {
+    const r = run(['--dry-run', '--prompt', 'test', '--provider', 'openrouter']);
+    expect(r.status).toBe(0);
+    expect(r.stderr).toContain('openrouter');
+    expect(r.stderr).toContain('deepseek/deepseek-chat');
+  });
+
   it('--dry-run with --model override', () => {
     const r = run(['--dry-run', '--prompt', 'test', '--model', 'claude-sonnet-5-thinking-high']);
     expect(r.status).toBe(0);

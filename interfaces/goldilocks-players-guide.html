@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="vbi18n-pending">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -9,6 +9,10 @@
   <meta property="og:title" content="Holographic Goldilocks Players Guide" />
   <meta property="og:description" content="The free playbook for Goldilocks Earth: zero-entropy fidelity, Fair Exchange, somatic Now, QUESTFEST music, Lattice Chat." />
   <meta property="og:type" content="website" />
+  <style>
+    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-ready body { visibility: visible; }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
@@ -587,5 +591,7 @@
   <footer>
     Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · Fair Exchange · → ∞¹³
   </footer>
+  <script src="/interfaces/i18n-auto.js" data-page="guide"></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

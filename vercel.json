@@ -338,6 +338,10 @@
       "maxDuration": 30,
       "includeFiles": "{docs/**,protocols/**,data/synthobs-paper-audits/**,data/synthobs-agent-manifest.json,BBHE_REPOSITORY_STANDARD.md,lib/**}"
     },
+    "api/i18n-translate.js": {
+      "maxDuration": 60,
+      "includeFiles": "{lib/i18n-translate.mjs}"
+    },
     "api/synthobs-paper-audit.js": {
       "maxDuration": 120,
       "includeFiles": "{docs/**,data/**,lib/**}"

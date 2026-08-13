@@ -26,6 +26,14 @@
         "docs/SYNTHIO_KOMAMRI_DISTRIBUTED_CLOUD_2026-08.md",
         "AGENT_SYNC_SYNTHIO.md"
       ]
+    },
+    {
+      "id": "synthobs-tbme-metamorphic-octaves",
+      "path": "research/synthobs-tbme-metamorphic-octaves",
+      "github": "https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves",
+      "description": "Metamorphic Octave Invariant — 99 Octave Omni-Lattice Core Part XIII",
+      "paperIds": ["synthobs-tbme-metamorphic-octaves-2026-08"],
+      "extraDocs": []
     }
   ]
 }

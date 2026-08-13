@@ -8,8 +8,8 @@
 ## Repo overview
 
 SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
-- **99 Octave Omni-Lattice engine** — CMOS/protonic · tensor · master synthesis (see `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` first)
-- **Synthio** — Syntheverse Sandbox agent (MRI / cloud-antenna catalog) · always-on · **creator keys only** · `/synthio` · not on the engine pin
+- **99 Octave Omni-Lattice engine** — CMOS/protonic · tensor · master synthesis · Metamorphic Octave Invariant Part XIII (see `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` first)
+- **Synthio** — Syntheverse Sandbox agent (MRI / cloud-antenna catalog) · always-on · **creator keys only** · `/synthio` · not CMOS/tensor/master identity; loads Part XIII as companion grammar
 - **SS Vibelandia QUESTFEST 24×365** nest (interfaces, catalogs, music, interactive worlds)
 - **Lattice Chat Agent V1.618** — nested-agent BYOK chat with token-economics measurement
 - **NSPFRNP catalog** — Seed:Edge protocol spine

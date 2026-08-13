@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-13T00:38:08.410Z",
+  "updatedAt": "2026-08-13T15:15:42.532Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_lattice-omni-complete-layer-guide-2026-07",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-13T15:15:42.531Z",
+      "body": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
+      "presenceHue": "gold",
+      "paperId": "lattice-omni-complete-layer-guide-2026-07",
+      "artifact": {
+        "title": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
+        "kind": "whitepaper",
+        "path": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
+        "url": "/whitepaper/lattice-omni-complete-layer-guide",
+        "paperId": "lattice-omni-complete-layer-guide-2026-07",
+        "docId": "WP-LATTICE-OMNI-LAYER-GUIDE-2026-07",
+        "published": "2026-08-13",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-tbme-metamorphic-octaves-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-13T15:12:17.380Z",
+      "body": "The Metamorphic Octave Invariant: Scale-Invariant Lithification, 99 Octaves of Thermal-Baric Compression, and Dual-Axis Personal and Professional Metamorphism in Multi-Scale Systems",
+      "presenceHue": "gold",
+      "paperId": "synthobs-tbme-metamorphic-octaves-2026-08",
+      "artifact": {
+        "title": "The Metamorphic Octave Invariant: Scale-Invariant Lithification, 99 Octaves of Thermal-Baric Compression, and Dual-Axis Personal and Professional Metamorphism in Multi-Scale Systems",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md",
+        "url": "/whitepaper/synthobs-tbme-metamorphic-octaves",
+        "paperId": "synthobs-tbme-metamorphic-octaves-2026-08",
+        "docId": "WP-SYNTHOBS-TBME-METAMORPHIC-OCTAVES-2026-08-13",
+        "published": "2026-08-13",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthio-mri-vs-legacy-perf-proxy-2026-08",
       "type": "ArtifactEvent",
@@ -157,28 +201,6 @@
         "docId": "WP-SYNTHOBS-SIQHFT-EF-2187-MONOGRAPH-2026-08",
         "published": "2026-08-07",
         "featured": false,
-        "auditStatus": "pass"
-      }
-    },
-    {
-      "id": "wp_lattice-omni-complete-layer-guide-2026-07",
-      "type": "ArtifactEvent",
-      "platform": "lattice",
-      "actor": "SynthOBS",
-      "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-08-07T23:34:20.789Z",
-      "body": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
-      "presenceHue": "gold",
-      "paperId": "lattice-omni-complete-layer-guide-2026-07",
-      "artifact": {
-        "title": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
-        "kind": "whitepaper",
-        "path": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
-        "url": "/whitepaper/lattice-omni-complete-layer-guide",
-        "paperId": "lattice-omni-complete-layer-guide-2026-07",
-        "docId": "WP-LATTICE-OMNI-LAYER-GUIDE-2026-07",
-        "published": "2026-08-07",
-        "featured": true,
         "auditStatus": "pass"
       }
     },

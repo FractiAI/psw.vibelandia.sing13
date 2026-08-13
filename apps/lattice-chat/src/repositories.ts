@@ -135,6 +135,36 @@ export const LATTICE_REPOSITORIES_FALLBACK: LatticeRepository[] = [
     tags: ['lattice', 'eval'],
     guestSelectable: true,
   },
+  {
+    id: 'synthio-mri-cloud-antenna',
+    name: 'synthio-mri-cloud-antenna',
+    label: 'Synthio · MRI cloud-antenna',
+    url: 'https://github.com/FractiAI/synthio-mri-cloud-antenna',
+    startingRef: 'main',
+    blurb: 'Synthio MRI simulator / cloud-antenna catalog + activation suite.',
+    tags: ['synthio', 'mri', 'sandbox'],
+    guestSelectable: true,
+  },
+  {
+    id: 'synthio-mri-vs-legacy-perf',
+    name: 'synthio-mri-vs-legacy-perf',
+    label: 'Synthio · MRI vs legacy perf',
+    url: 'https://github.com/FractiAI/synthio-mri-vs-legacy-perf',
+    startingRef: 'main',
+    blurb: 'Live wall-clock MRI interference-phase vs legacy full-mesh Bloch / KomaMRI.jl suite.',
+    tags: ['synthio', 'mri', 'performance'],
+    guestSelectable: true,
+  },
+  {
+    id: 'metamorphic-octaves',
+    name: 'synthobs-tbme-metamorphic-octaves',
+    label: '99 Octave · Metamorphic Invariant',
+    url: 'https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves',
+    startingRef: 'main',
+    blurb: 'Part XIII · shale→schist dual-axis thermal-baric catalog grammar.',
+    tags: ['99-octave', 'synthobs', 'engine'],
+    guestSelectable: true,
+  },
 ];
 
 export function findRepository(

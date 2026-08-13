@@ -6,6 +6,8 @@
   "sandbox": "Syntheverse Sandbox",
   "access": "creator_only",
   "engineStack": "excluded",
+  "engineCompanionPapers": ["synthobs-tbme-metamorphic-octaves-2026-08"],
+  "engineCompanionPaperPath": "docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md",
   "sandboxOnly": true,
   "syncDoc": "AGENT_SYNC_SYNTHIO.md",
   "paperId": "synthio-mri-cloud-antenna-99-octave-2026-08",

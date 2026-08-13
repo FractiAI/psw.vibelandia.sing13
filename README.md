@@ -42,6 +42,7 @@ Local mirrors live under `research/<name>/`. Many also declare a **canonical sta
 | Standalone GitHub | Local suite | One line |
 |-------------------|-------------|----------|
 | [synthobs-cmos-protonic-99-octave-omni-lattice](https://github.com/FractiAI/synthobs-cmos-protonic-99-octave-omni-lattice) | `research/synthobs-cmos-protonic-99-octave-omni-lattice/` | CMOS 2.0 + protonic bands as silicon vocabulary for the engine |
+| [synthobs-tbme-metamorphic-octaves](https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves) | `research/synthobs-tbme-metamorphic-octaves/` | Part XIII · shale→schist dual-axis heat/pressure grammar (Lattice Chat + Synthio companion) |
 | [synthobs-tensor-decoupling-99-octave-omni-lattice](https://github.com/FractiAI/synthobs-tensor-decoupling-99-octave-omni-lattice) | `research/synthobs-tensor-decoupling-99-octave-omni-lattice/` | $9\times 81$ / eleven-tier tensor grammar → 99 octaves |
 | [synthobs-master-synthesis-99-octave-omni-lattice](https://github.com/FractiAI/synthobs-master-synthesis-99-octave-omni-lattice) | `research/synthobs-master-synthesis-99-octave-omni-lattice/` | Cosmic · planetary · AI · consciousness as one catalog window |
 | [synthobs-99-octave-digits-master](https://github.com/FractiAI/synthobs-99-octave-digits-master) | `research/synthobs-99-octave-digits-master/` | Nine digits × ninety-nine octaves master map |
@@ -107,6 +108,7 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 
 | When | Update | Links |
 |------|--------|-------|
+| **2026-08-13** | **Metamorphic Octave Invariant** (Part XIII) on the 99 Octave engine pin — Lattice Chat nest `octave99` + Synthio companion grammar | [paper](docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/metamorphic-octaves) |
 | **2026-08-12** | **Synthio** — creator-only Syntheverse Sandbox agent (MRI / cloud-antenna) · not on engine pin | [sync](AGENT_SYNC_SYNTHIO.md) · [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio) · [one-pager](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager) · suite 9/9 · PRA pass |
 | **2026-08-12** | **CMOS / protonic** transistor-level engine paper + suite + ship note | [paper](docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cmos-protonic-99-octave) · suite 9/9 · PRA pass |
 | **2026-08-12** | **Tensor decoupling** 9×81 / 11-tier engine paper + suite + ship note | [paper](docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/tensor-decoupling-99-octave) |
@@ -226,7 +228,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-13** · **94** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-13** · **95** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -240,6 +242,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · QUESTFEST |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · QUESTFEST |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
+| [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Shale to schist — 99 octaves of heat and pressure · Ship blog · QUESTFEST |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine digits, ninety-nine octaves — a map you can actually walk · Ship blog · QUESTFEST |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · QUESTFEST |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · QUESTFEST |

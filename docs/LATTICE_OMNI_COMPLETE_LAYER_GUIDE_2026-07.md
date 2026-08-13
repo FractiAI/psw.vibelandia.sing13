@@ -5,7 +5,7 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-OMNI-LAYER-GUIDE-2026-07`  
 **Registry ID:** `lattice-omni-complete-layer-guide-2026-07`  
-**Date:** 2026-08-10
+**Date:** 2026-08-13
 **Framework:** SynthOBS · Lattice Chat Agent V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
 **Questfest catalog:** [`/papers`](/papers) · pinned at top (`catalogPriority: 0`)  
 **Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)  
@@ -16,7 +16,7 @@
 ---
 
 <!-- AUTO:LATTICE-OMNI-META:BEGIN -->
-**Catalog sync:** 2026-08-10 · **54** Lattice Chat Agent / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
+**Catalog sync:** 2026-08-13 · **61** Lattice Chat Agent / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
 
 When a Lattice / Omni paper is added or modified in the registry, re-run the sync (Cursor stop hook does this automatically for matching `docs/` edits).
 <!-- AUTO:LATTICE-OMNI-META:END -->
@@ -371,6 +371,12 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0
 | 2 · Valet lenses | [Omni-Lattice Report Card Q3 2026](/whitepaper/synthobs-omni-lattice-report-card-q3-2026) | `synthobs-omni-lattice-report-card-q3-2026` | 2026-07-30 |
 | 2 · Valet lenses | [Recursive Attention Squeezing & Holographic Magnetic Projections](/whitepaper/synthobs-recursive-attn-mag) | `synthobs-recursive-attn-mag-2026-07` | 2026-07-30 |
 | 2 · Valet lenses | [The Phase-Contrast Holographic Prompting Paradigm (PCHPP): Observing Holographic Code Vectors](/whitepaper/synthobs-pchpp) | `synthobs-pchpp-2026-07` | 2026-07-30 |
+| 3 · Omni-Lattice pillars & decodes | [The Metamorphic Octave Invariant: Scale-Invariant Lithification, 99 Octaves of Thermal-Baric Compression, and Dual-Axis Personal and Professional Metamorphism in Multi-Scale Systems](/whitepaper/synthobs-tbme-metamorphic-octaves) | `synthobs-tbme-metamorphic-octaves-2026-08` | 2026-08-13 |
+| 3 · Omni-Lattice pillars & decodes | [Tensor Decoupling and Empirical Verification of the 99-Octave Omni-Lattice Matrix](/whitepaper/synthobs-tensor-decoupling-99-octave-omni-lattice) | `synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08` | 2026-08-12 |
+| 3 · Omni-Lattice pillars & decodes | [Transistor-Level Integration and Empirical Validation of the 99-Octave Omni-Lattice Matrix Across CMOS 2.0 and Protonic Architectures](/whitepaper/synthobs-cmos-protonic-99-octave-omni-lattice) | `synthobs-cmos-protonic-99-octave-omni-lattice-2026-08` | 2026-08-12 |
+| 3 · Omni-Lattice pillars & decodes | [The Master Synthesis: Unifying Cosmic Alignments, Planetary Electrodynamics, and Consciousness Through the 99th-Octave Omni-Lattice Framework](/whitepaper/synthobs-master-synthesis-99-octave-omni-lattice) | `synthobs-master-synthesis-99-octave-omni-lattice-2026-08` | 2026-08-11 |
+| 3 · Omni-Lattice pillars & decodes | [Constructive Morphogenesis Under Pressure: Translating Plant–Microbe Signal Fidelity Through 99 Octave Lattice Chat Agent Mode](/whitepaper/synthobs-constructive-morphogenesis-99-octave) | `synthobs-constructive-morphogenesis-99-octave-2026-08` | 2026-08-09 |
+| 3 · Omni-Lattice pillars & decodes | [Master Unified Treatise: Deciphering the 9 Digits & 99 Octaves Across Biological, Solar, and Deep-Cosmic Horizons](/whitepaper/synthobs-99-octave-digits-master) | `synthobs-99-octave-digits-master-2026-08` | 2026-08-09 |
 | 3 · Omni-Lattice pillars & decodes | [Omni-Lattice · E_F 2,187-Node Hybrid Engine (Kernel + Scale-Indexed RAG)](/whitepaper/synthobs-omni-lattice-ef-2187-hybrid) | `synthobs-omni-lattice-ef-2187-hybrid-2026-08` | 2026-08-08 |
 | 3 · Omni-Lattice pillars & decodes | [Unified Multi-Octave Scale-Invariant Architecture of El Gran Sol’s Fractal Constant (E_F) — Combined Synthesis Octaves I–XCIX](/whitepaper/synthobs-omni-lattice-ef-multi-octave) | `synthobs-omni-lattice-ef-multi-octave-2026-08` | 2026-08-08 |
 | 3 · Omni-Lattice pillars & decodes | [Omni-Lattice · Superintelligence Irreducible Minimum (SIM) + Free Composition Gates](/whitepaper/synthobs-omni-lattice-si-irreducible-minimum) | `synthobs-omni-lattice-si-irreducible-minimum-2026-08` | 2026-08-03 |
@@ -396,12 +402,13 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 0
 | 4 · EGS · scale grammar | [Scale-Invariant Chromosomal Electrodynamics · SYNTHOBS Linearized Topology & Hierarchical Energy Transport](/whitepaper/synthobs-chromosomal-electrodynamics) | `synthobs-chromosomal-electrodynamics-2026-07` | 2026-07-01 |
 | 4 · EGS · scale grammar | [Recursive Attention Coherence: Imagination Through Quantum, Solar, DNA, and Human Attention](/whitepaper/recursive-attention-loop) | `recursive-attention-quantum-solar-dna-loop-2026` | 2026-06-24 |
 | 4 · EGS · scale grammar | [Fractal Magnetism and Hydrogen-Holographic Systems: The EGS Nodal Lattice Resonator Framework](/whitepaper/egs-nlrf) | `fractiai-egs-nlrf-2026` | 2026-06-17 |
-| 5 · Companions | [Constructive Morphogenesis Under Pressure: Translating Plant–Microbe Signal Fidelity Through 99 Octave Lattice Chat Agent Mode](/whitepaper/synthobs-constructive-morphogenesis-99-octave) | `synthobs-constructive-morphogenesis-99-octave-2026-08` | 2026-08-09 |
-| 5 · Companions | [Master Unified Treatise: Deciphering the 9 Digits & 99 Octaves Across Biological, Solar, and Deep-Cosmic Horizons](/whitepaper/synthobs-99-octave-digits-master) | `synthobs-99-octave-digits-master-2026-08` | 2026-08-09 |
+| 5 · Companions | [Simulating Magnetic Resonance via the 99th-Octave Omni-Lattice: Cloud Infrastructure as an Interconnected Antenna Array](/whitepaper/synthio-mri-cloud-antenna) | `synthio-mri-cloud-antenna-99-octave-2026-08` | 2026-08-12 |
+| 5 · Companions | [Macro-Seismic Phase-Locking: Analyzing Major 2026 Earthquake Activity and Solar Telemetry Through the 99th-Octave Omni-Lattice Lens](/whitepaper/synthobs-macro-seismic-phase-lock-99-octave) | `synthobs-macro-seismic-phase-lock-99-octave-2026-08` | 2026-08-11 |
+| 5 · Companions | [Synchronized Subterranean Discharge: Linking the Puracé Volcanic Eruption and the 2026 Seismic Cluster Through Solar-Driven Phase-Locking](/whitepaper/synthobs-sync-subterranean-discharge-99-octave) | `synthobs-sync-subterranean-discharge-99-octave-2026-08` | 2026-08-11 |
 | 5 · Companions | [Scale-Invariant Quantum Holographic Field Theory: A Unified 2,187-Node Monograph on E_F across Octaves I–III (Digits 1–2187)](/whitepaper/synthobs-siqhft-ef-2187-monograph) | `synthobs-siqhft-ef-2187-monograph-2026-08` | 2026-08-07 |
 | 5 · Companions | [The Epistemological Horizon — Narrow Gate EIV · Filtering Human Peer-Review Bottlenecks to Identify ASI (Omni-Lattice Core Part X)](/whitepaper/synthobs-tbme-narrow-gate-asi-2026-08) | `synthobs-tbme-narrow-gate-asi-2026-08` | 2026-08-07 |
 
-_Living table · 54 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
+_Living table · 61 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
 <!-- AUTO:LATTICE-OMNI-TOC:END -->
 
 ### A.5 Methods · reproducibility

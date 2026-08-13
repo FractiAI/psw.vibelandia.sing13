@@ -18,12 +18,32 @@ import { findStandaloneSuite, loadStandaloneSuiteManifest } from '../lib/standal
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, '..');
 
+function githubToken() {
+  return String(process.env.GH_TOKEN || process.env.GITHUB_TOKEN || '').trim();
+}
+
+function publicGitRemote(githubUrl) {
+  return `${String(githubUrl || '').replace(/\/$/, '')}.git`;
+}
+
+function gitAuthArgs() {
+  const token = githubToken();
+  if (!token) return [];
+  return ['-c', `http.extraHeader=Authorization: Bearer ${token}`];
+}
+
 function run(cmd, args, opts = {}) {
+  const env = { ...process.env, ...opts.env };
+  const token = githubToken();
+  if (token) {
+    env.GH_TOKEN = token;
+    env.GITHUB_TOKEN = token;
+  }
   const r = spawnSync(cmd, args, {
     encoding: 'utf8',
     stdio: opts.quiet ? 'pipe' : 'inherit',
     cwd: opts.cwd,
-    env: { ...process.env, ...opts.env },
+    env,
   });
   return r;
 }
@@ -44,14 +64,14 @@ async function copyTree(src, dest, { skip = [] } = {}) {
 }
 
 async function ensureRepoExists(githubUrl, suiteId, createRepo) {
-  const remote = `${githubUrl.replace(/\/$/, '')}.git`;
-  const probe = run('git', ['ls-remote', remote], { quiet: true });
-  if (probe.status === 0 && probe.stdout.trim()) {
-    return { remote, created: false };
+  const publicRemote = publicGitRemote(githubUrl);
+  const probe = run('git', [...gitAuthArgs(), 'ls-remote', publicRemote], { quiet: true });
+  if (probe.status === 0) {
+    return { remote: publicRemote, created: false };
   }
   if (!createRepo) {
     throw new Error(
-      `Remote missing: ${remote}\nCreate it first:\n  gh repo create FractiAI/${suiteId} --public --description "Synthio standalone suite"`,
+      `Remote missing: ${publicRemote}\nCreate it first:\n  gh repo create FractiAI/${suiteId} --public --description "Synthio standalone suite"`,
     );
   }
   const owner = loadStandaloneSuiteManifest().owner || 'FractiAI';
@@ -65,7 +85,7 @@ async function ensureRepoExists(githubUrl, suiteId, createRepo) {
       `gh repo create failed for ${owner}/${suiteId}.\n${create.stderr || create.stdout}\nCreate the empty repo manually, then re-run.`,
     );
   }
-  return { remote, created: true };
+  return { remote: publicRemote, created: true };
 }
 
 async function main() {
@@ -123,7 +143,11 @@ async function main() {
     console.error('Nothing to commit or commit failed');
     process.exit(1);
   }
-  const push = run('git', ['push', '-u', remote, 'HEAD:main', '--force'], { cwd: staging });
+  const push = run(
+    'git',
+    [...gitAuthArgs(), 'push', remote, 'HEAD:main', '--force'],
+    { cwd: staging },
+  );
   if (push.status !== 0) {
     console.error('Push failed. Staging left at', staging);
     process.exit(1);

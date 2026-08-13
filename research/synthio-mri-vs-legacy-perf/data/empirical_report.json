@@ -1,22 +1,113 @@
 {
-  "docId": "WP-SYNTHIO-MRI-VS-LEGACY-PERF-PROXY-2026-08-12",
+  "docId": "WP-SYNTHIO-MRI-VS-LEGACY-PERF-LIVE-2026-08-13",
   "registryId": "synthio-mri-vs-legacy-perf-proxy-2026-08",
-  "title": "Performance Proxies: MRI Interference-Phase Computing vs Legacy GPU/Token Workloads in Syntheverse Sandbox",
+  "title": "Live Wall-Clock Comparison: MRI Interference-Phase Bloch CPU vs Legacy Full-Mesh Recompute in Syntheverse Sandbox",
   "paperName": "SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md",
-  "generatedAt": "2026-08-12T22:49:18.831Z",
+  "generatedAt": "2026-08-13T00:38:08.298Z",
   "operator": "Synthio · Syntheverse Sandbox · SynthOBS family",
-  "honestyBoundary": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement.",
+  "honestyBoundary": "Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement.",
+  "host": {
+    "cpus": 4,
+    "platform": "linux-x64",
+    "node": "v22.14.0",
+    "timedWith": "process.hrtime.bigint",
+    "backend": "node_bloch_cpu",
+    "phantom": {
+      "nx": 10,
+      "ny": 10,
+      "nz": 2,
+      "nTr": 20,
+      "flipDeg": 15,
+      "tr": 0.008,
+      "te": 0.003
+    },
+    "trialsPerScale": 5,
+    "hostname": "cursor"
+  },
+  "komamriLive": {
+    "attempted": false,
+    "reason": "SYNTHIO_SKIP_KOMAMRI=1",
+    "priorReceipt": {
+      "allPass": true,
+      "backend": "komamri_cpu",
+      "generatedAt": "2026-08-13T00:35:49.163",
+      "honesty": "Live KomaMRI.jl CPU simulate() wall-clock on this host. MRI arm = one shared simulate + nested phase-acks; legacy = re-simulate per mesh edge. Not clinical magnet, not CUDA multi-GPU, not multi-node Distributed.jl fabric, not hyperscale displacement.",
+      "juliaVersion": "1.12.6",
+      "komaVersion": "0.13.1",
+      "liveWallClock": true,
+      "meanSpeedup": 46.11896760972998,
+      "nblocks": 2,
+      "rows": [
+        {
+          "legacyEdges": 6,
+          "legacyMs": 238.65622,
+          "legacyStd": 212.3657061238148,
+          "mriEdges": 3,
+          "mriMs": 13.052730666666667,
+          "mriStd": 1.5350126069947727,
+          "n": 4,
+          "pass": true,
+          "speedup": 18.284007085924703,
+          "trials": 3
+        },
+        {
+          "legacyEdges": 15,
+          "legacyMs": 355.49007966666665,
+          "legacyStd": 212.08180937475018,
+          "mriEdges": 5,
+          "mriMs": 11.60836,
+          "mriStd": 0.39104263890612584,
+          "n": 6,
+          "pass": true,
+          "speedup": 30.62362639224375,
+          "trials": 3
+        },
+        {
+          "legacyEdges": 28,
+          "legacyMs": 676.984628,
+          "legacyStd": 215.87761839775203,
+          "mriEdges": 7,
+          "mriMs": 12.716586,
+          "mriStd": 1.5698754643297883,
+          "n": 8,
+          "pass": true,
+          "speedup": 53.23635038523705,
+          "trials": 3
+        },
+        {
+          "legacyEdges": 45,
+          "legacyMs": 1069.5705196666668,
+          "legacyStd": 3.0874000962300676,
+          "mriEdges": 9,
+          "mriMs": 12.990963333333333,
+          "mriStd": 2.0342133297018994,
+          "n": 10,
+          "pass": true,
+          "speedup": 82.33188657551442,
+          "trials": 3
+        }
+      ],
+      "schema": "synthio-komamri-live-bench/v1",
+      "sequence": "PulseDesigner.EPI_example",
+      "spins": 32,
+      "timedWith": "time_ns"
+    }
+  },
   "results": {
     "all_pass": true,
     "n_pass": 6,
     "n_total": 6,
     "failed": [],
     "summary": {
-      "meanEdgeReduction": 24.8,
-      "meanTokenReduction": 0.9986974948034468,
-      "meanSpeedup": 1.8680798207226403,
-      "meanOpsRatio": 4180.305961370075,
-      "meanOpsSaving": 0.9986976901159469
+      "meanEdgeReduction": 15,
+      "meanTokenReduction": 0.9983913100438427,
+      "meanSpeedup": 337.39860998963434,
+      "meanVoxelReduction": 0.9883600550435229,
+      "meanByteReduction": 0.9935586277521762,
+      "liveWallClock": true,
+      "backend": "node_bloch_cpu",
+      "timedWith": "process.hrtime.bigint",
+      "phiEgs": 1.618033988749895
     },
     "experiments": [
       {
@@ -50,18 +141,11 @@
             "mriEdges": 63,
             "edgeReduction": 32,
             "pass": true
-          },
-          {
-            "n": 128,
-            "legacyEdges": 8128,
-            "mriEdges": 127,
-            "edgeReduction": 64,
-            "pass": true
           }
         ],
-        "meanEdgeReduction": 24.8,
+        "meanEdgeReduction": 15,
         "pass": true,
-        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+        "honesty": "Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement."
       },
       {
         "id": "E2_token_payload",
@@ -94,176 +178,258 @@
             "mriTokens": 4821,
             "tokenReduction": 0.9998007192460318,
             "pass": true
-          },
-          {
-            "n": 128,
-            "legacyTokens": 97536000,
-            "mriTokens": 7585,
-            "tokenReduction": 0.9999222338418635,
-            "pass": true
           }
         ],
-        "meanTokenReduction": 0.9986974948034468,
+        "meanTokenReduction": 0.9983913100438427,
         "pass": true,
-        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+        "honesty": "Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement."
       },
       {
-        "id": "E3_wall_time_proxy",
-        "title": "Ops-proxy wall time favors MRI interference arm",
+        "id": "E3_live_wall_clock_bloch_cpu",
+        "title": "Live hrtime wall-clock: MRI shared-field Bloch beats legacy per-edge recompute",
         "rows": [
           {
             "n": 8,
-            "legacyMs": 0.2340284285714286,
-            "mriMs": 0.20097228571428463,
-            "legacyStd": 0.16567774572676366,
-            "mriStd": 0.12769836141661986,
-            "opsRatio": 233.33333333333334,
-            "speedup": 1.1644811011610763,
+            "trials": 5,
+            "legacyEdges": 28,
+            "mriEdges": 7,
+            "edgeReduction": 4,
+            "legacyMs": 11.006998,
+            "mriMs": 0.6207550000000001,
+            "legacyStd": 3.9110636196399047,
+            "mriStd": 0.48420031227044863,
+            "speedup": 17.731630031171715,
+            "legacyVoxelsProcessed": 112000,
+            "mriVoxelsProcessed": 4000,
+            "legacyBytesProcessed": 1344000,
+            "mriBytesProcessed": 19200,
+            "voxelReduction": 0.9642857142857143,
+            "byteReduction": 0.9857142857142858,
+            "pass": true,
+            "host": {
+              "backend": "node_bloch_cpu",
+              "timedWith": "process.hrtime.bigint",
+              "phantom": {
+                "nx": 10,
+                "ny": 10,
+                "nz": 2,
+                "nTr": 20,
+                "flipDeg": 15,
+                "tr": 0.008,
+                "te": 0.003,
+                "voxels": 200
+              }
+            }
+          },
+          {
+            "n": 16,
+            "trials": 5,
+            "legacyEdges": 120,
+            "mriEdges": 15,
+            "edgeReduction": 8,
+            "legacyMs": 38.7311098,
+            "mriMs": 0.29321340000000007,
+            "legacyStd": 1.1923776528790528,
+            "mriStd": 0.008664076236968373,
+            "speedup": 132.09188188534355,
+            "legacyVoxelsProcessed": 480000,
+            "mriVoxelsProcessed": 4000,
+            "legacyBytesProcessed": 5760000,
+            "mriBytesProcessed": 38400,
+            "voxelReduction": 0.9916666666666667,
+            "byteReduction": 0.9933333333333333,
+            "pass": true,
+            "host": {
+              "backend": "node_bloch_cpu",
+              "timedWith": "process.hrtime.bigint",
+              "phantom": {
+                "nx": 10,
+                "ny": 10,
+                "nz": 2,
+                "nTr": 20,
+                "flipDeg": 15,
+                "tr": 0.008,
+                "te": 0.003,
+                "voxels": 200
+              }
+            }
+          },
+          {
+            "n": 32,
+            "trials": 5,
+            "legacyEdges": 496,
+            "mriEdges": 31,
+            "edgeReduction": 16,
+            "legacyMs": 151.76943740000002,
+            "mriMs": 0.589635,
+            "legacyStd": 1.275942827675844,
+            "mriStd": 0.36548256740643603,
+            "speedup": 257.3955708192357,
+            "legacyVoxelsProcessed": 1984000,
+            "mriVoxelsProcessed": 4000,
+            "legacyBytesProcessed": 23808000,
+            "mriBytesProcessed": 76800,
+            "voxelReduction": 0.9979838709677419,
+            "byteReduction": 0.9967741935483871,
+            "pass": true,
+            "host": {
+              "backend": "node_bloch_cpu",
+              "timedWith": "process.hrtime.bigint",
+              "phantom": {
+                "nx": 10,
+                "ny": 10,
+                "nz": 2,
+                "nTr": 20,
+                "flipDeg": 15,
+                "tr": 0.008,
+                "te": 0.003,
+                "voxels": 200
+              }
+            }
+          },
+          {
+            "n": 64,
+            "trials": 5,
+            "legacyEdges": 2016,
+            "mriEdges": 63,
+            "edgeReduction": 32,
+            "legacyMs": 613.0852826,
+            "mriMs": 0.6505744,
+            "legacyStd": 0.6711258208442143,
+            "mriStd": 0.005931217096009874,
+            "speedup": 942.3753572227865,
+            "legacyVoxelsProcessed": 8064000,
+            "mriVoxelsProcessed": 4000,
+            "legacyBytesProcessed": 96768000,
+            "mriBytesProcessed": 153600,
+            "voxelReduction": 0.9995039682539683,
+            "byteReduction": 0.9984126984126984,
+            "pass": true,
+            "host": {
+              "backend": "node_bloch_cpu",
+              "timedWith": "process.hrtime.bigint",
+              "phantom": {
+                "nx": 10,
+                "ny": 10,
+                "nz": 2,
+                "nTr": 20,
+                "flipDeg": 15,
+                "tr": 0.008,
+                "te": 0.003,
+                "voxels": 200
+              }
+            }
+          }
+        ],
+        "meanSpeedup": 337.39860998963434,
+        "meanVoxelReduction": 0.9883600550435229,
+        "meanByteReduction": 0.9935586277521762,
+        "pass": true,
+        "honesty": "Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement.",
+        "measurement": {
+          "timedWith": "process.hrtime.bigint",
+          "backend": "node_bloch_cpu",
+          "liveWallClock": true
+        }
+      },
+      {
+        "id": "E4_voxel_work_measured",
+        "title": "Measured Bloch voxel×TR work drops under shared-field phase-lock",
+        "rows": [
+          {
+            "n": 8,
+            "legacyVoxelsProcessed": 112000,
+            "mriVoxelsProcessed": 4000,
+            "voxelReduction": 0.9642857142857143,
             "pass": true
           },
           {
             "n": 16,
-            "legacyMs": 0.15025071428571377,
-            "mriMs": 0.07746542857142812,
-            "legacyStd": 0.044804068921452916,
-            "mriStd": 0.023862509584565504,
-            "opsRatio": 685.7142857142857,
-            "speedup": 1.939584109409179,
+            "legacyVoxelsProcessed": 480000,
+            "mriVoxelsProcessed": 4000,
+            "voxelReduction": 0.9916666666666667,
             "pass": true
           },
           {
             "n": 32,
-            "legacyMs": 0.07106742857142885,
-            "mriMs": 0.03484428571428566,
-            "legacyStd": 0.00009710356348219943,
-            "mriStd": 0.000031083823471971236,
-            "opsRatio": 2034.871794871795,
-            "speedup": 2.0395719732688398,
+            "legacyVoxelsProcessed": 1984000,
+            "mriVoxelsProcessed": 4000,
+            "voxelReduction": 0.9979838709677419,
             "pass": true
           },
           {
             "n": 64,
-            "legacyMs": 0.07800142857142792,
-            "mriMs": 0.03678528571428684,
-            "legacyStd": 0.0005878711853894444,
-            "mriStd": 0.00003121681911867753,
-            "opsRatio": 5034.493522709537,
-            "speedup": 2.1204518887597863,
-            "pass": true
-          },
-          {
-            "n": 128,
-            "legacyMs": 0.08444857142857184,
-            "mriMs": 0.04067242857142921,
-            "legacyStd": 0.00007423102382336899,
-            "mriStd": 0.004147671011100514,
-            "opsRatio": 12913.116870221427,
-            "speedup": 2.0763100310143185,
+            "legacyVoxelsProcessed": 8064000,
+            "mriVoxelsProcessed": 4000,
+            "voxelReduction": 0.9995039682539683,
             "pass": true
           }
         ],
-        "meanSpeedup": 1.8680798207226403,
-        "meanOpsRatio": 4180.305961370075,
+        "meanVoxelReduction": 0.9883600550435229,
         "pass": true,
-        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
-      },
-      {
-        "id": "E4_energy_ops_proxy",
-        "title": "Char-touch ops proxy (energy stand-in) drops under phase-lock sharing",
-        "rows": [
-          {
-            "n": 8,
-            "legacyOps": 1344000,
-            "mriOps": 5760,
-            "opsSaving": 0.9957142857142857,
-            "pass": true
-          },
-          {
-            "n": 16,
-            "legacyOps": 5760000,
-            "mriOps": 8400,
-            "opsSaving": 0.9985416666666667,
-            "pass": true
-          },
-          {
-            "n": 32,
-            "legacyOps": 23808000,
-            "mriOps": 11700,
-            "opsSaving": 0.9995085685483871,
-            "pass": true
-          },
-          {
-            "n": 64,
-            "legacyOps": 96768000,
-            "mriOps": 19221,
-            "opsSaving": 0.9998013702876984,
-            "pass": true
-          },
-          {
-            "n": 128,
-            "legacyOps": 390144000,
-            "mriOps": 30213,
-            "opsSaving": 0.9999225593626968,
-            "pass": true
-          }
-        ],
-        "meanOpsSaving": 0.9986976901159469,
-        "pass": true,
-        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+        "honesty": "Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement."
       },
       {
         "id": "E5_cloud_apps_inside_mri_sim",
-        "title": "Cloud home apps costed as MRI-sim resident (not external legacy OS)",
+        "title": "Cloud home apps costed as MRI-sim resident using live wall-clock at N≈32",
         "apps": [
           {
             "id": "chat",
             "residesIn": "mri_simulation",
-            "mriTokens": 2925,
-            "legacyTokensIfOutside": 5952000,
+            "mriMs": 0.589635,
+            "legacyMsIfOutside": 151.76943740000002,
+            "liveSpeedup": 257.3955708192357,
             "tokenAdvantage": 0.9995085685483871
           },
           {
             "id": "messages",
             "residesIn": "mri_simulation",
-            "mriTokens": 2925,
-            "legacyTokensIfOutside": 5952000,
+            "mriMs": 0.589635,
+            "legacyMsIfOutside": 151.76943740000002,
+            "liveSpeedup": 257.3955708192357,
             "tokenAdvantage": 0.9995085685483871
           },
           {
             "id": "files",
             "residesIn": "mri_simulation",
-            "mriTokens": 2925,
-            "legacyTokensIfOutside": 5952000,
+            "mriMs": 0.589635,
+            "legacyMsIfOutside": 151.76943740000002,
+            "liveSpeedup": 257.3955708192357,
             "tokenAdvantage": 0.9995085685483871
           },
           {
             "id": "photos",
             "residesIn": "mri_simulation",
-            "mriTokens": 2925,
-            "legacyTokensIfOutside": 5952000,
+            "mriMs": 0.589635,
+            "legacyMsIfOutside": 151.76943740000002,
+            "liveSpeedup": 257.3955708192357,
             "tokenAdvantage": 0.9995085685483871
           }
         ],
         "pass": true,
-        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+        "honesty": "Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement."
       },
       {
-        "id": "E6_scale_invariant_advantage",
-        "title": "Token-reduction advantage stays high across node scales",
-        "minReduction": 0.9957142857142857,
-        "maxReduction": 0.9999222338418635,
-        "spread": 0.004207948127577854,
+        "id": "E6_scale_invariant_live_advantage",
+        "title": "Live wall-clock speedup stays >1× across all measured node scales",
+        "minSpeedup": 17.731630031171715,
+        "maxSpeedup": 942.3753572227865,
+        "spread": 924.6437271916149,
+        "meanSpeedup": 337.39860998963434,
         "pass": true,
-        "honesty": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+        "honesty": "Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement."
       }
     ],
     "honesty": {
-      "empiricalProxy": true,
+      "empiricalProxy": false,
+      "liveWallClock": true,
+      "blochCpuMeasured": true,
       "wetLabEquivalent": false,
       "clinicalMagnet": false,
       "hyperscaleDisplacement": false,
       "juliaWorkersOnEdge": false,
-      "note": "In-silico topology + token/message-tax proxies inside Syntheverse Sandbox. Not measured KomaMRI.jl cluster wall-time, not vendor GPU invoices, not clinical MRI, not proven data-center displacement."
+      "gpuCudaMeasured": false,
+      "note": "Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement."
     }
   }
 }

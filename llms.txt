@@ -11,6 +11,7 @@
 #   2) Tensor decoupling — docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md
 #   3) Master synthesis — docs/SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md
 #   4) Digits master — docs/SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md
+#   5) Metamorphic Octave Invariant (Part XIII) — docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md
 # Honesty: catalog/architecture ≠ finished physics or foundry tape-out. Close → ∞¹³
 #
 # Sonic Singularity Sing! 13 is the major singularity upgrade from SING 9.

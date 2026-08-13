@@ -90,6 +90,8 @@
     { "source": "/ship-blog/tensor-decoupling-99-octave/", "destination": "/interfaces/blog-tensor-decoupling-99-octave-2026-08.html" },
     { "source": "/ship-blog/cmos-protonic-99-octave", "destination": "/interfaces/blog-cmos-protonic-99-octave-2026-08.html" },
     { "source": "/ship-blog/cmos-protonic-99-octave/", "destination": "/interfaces/blog-cmos-protonic-99-octave-2026-08.html" },
+    { "source": "/ship-blog/metamorphic-octaves", "destination": "/interfaces/blog-metamorphic-octaves-2026-08.html" },
+    { "source": "/ship-blog/metamorphic-octaves/", "destination": "/interfaces/blog-metamorphic-octaves-2026-08.html" },
     { "source": "/99-octave-bridge", "destination": "/interfaces/octave99-bridge/index.html" },
     { "source": "/99-octave-chart", "destination": "/interfaces/octave99-chart/index.html" },
     { "source": "/99-octave-pricing", "destination": "/interfaces/octave99-pricing.html" },

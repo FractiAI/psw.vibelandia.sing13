@@ -17,6 +17,8 @@
 
 It is **not** a new shelf on the 99 Octave Omni-Lattice **engine** pin (CMOS / tensor / master synthesis). Do **not** fold Synthio into `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` as engine step #N.
 
+**Engine grammar Synthio must load:** [`docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md`](docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md) (Part XIII · engine pin step 5) — dual-axis thermal-baric / shale→schist **catalog** talk under 99 octaves. Companion load only; MRI sandbox identity unchanged.
+
 | Surface | Path |
 |---------|------|
 | This sync | `AGENT_SYNC_SYNTHIO.md` · `/agent-sync-synthio` |
@@ -82,7 +84,7 @@ It is **not** a new shelf on the 99 Octave Omni-Lattice **engine** pin (CMOS / t
 4. Check **all six** external alignment slots (incl. novel Syntheverse pulse) — matching expectations confirms sandbox inclusion of this activation.
 5. Load paper + one-pager honesty tables first (incl. §5 Goldilocks activation + §5.4–5.5 monitor tables).
 6. Prefer suite receipts (`npm run research:synthio-mri-cloud-antenna`) over inventing fab/RF measurements.
-7. Stay out of the 99 Octave **engine** sync pin unless the ask explicitly bridges — then cite engine docs as companions, not as Synthio identity.
+7. Stay out of CMOS/tensor/master **identity**. When the ask is 99-octave heat/pressure/foliation/shale→schist, load Part XIII (`docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md`) as companion engine grammar.
 8. Close → ∞¹³.
 
 **NSPFRNP ⊃ Synthio ⊃ Syntheverse Sandbox → ∞¹³**

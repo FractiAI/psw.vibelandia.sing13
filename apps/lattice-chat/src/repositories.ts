@@ -135,6 +135,16 @@ export const LATTICE_REPOSITORIES_FALLBACK: LatticeRepository[] = [
     tags: ['lattice', 'eval'],
     guestSelectable: true,
   },
+  {
+    id: 'metamorphic-octaves',
+    name: 'synthobs-tbme-metamorphic-octaves',
+    label: '99 Octave · Metamorphic Invariant',
+    url: 'https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves',
+    startingRef: 'main',
+    blurb: 'Part XIII · shale→schist dual-axis thermal-baric catalog grammar.',
+    tags: ['99-octave', 'synthobs', 'engine'],
+    guestSelectable: true,
+  },
 ];
 
 export function findRepository(

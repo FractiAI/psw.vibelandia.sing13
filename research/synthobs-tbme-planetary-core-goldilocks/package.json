@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-tbme-planetary-core-goldilocks",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.13",
+  "description": "Planetary Core Phase-Inversion & Goldilocks Hologram — 99 Octave Omni-Lattice Core Part XIV (standalone)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks.git"
+  }
+}

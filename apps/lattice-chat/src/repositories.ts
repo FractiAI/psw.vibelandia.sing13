@@ -165,6 +165,16 @@ export const LATTICE_REPOSITORIES_FALLBACK: LatticeRepository[] = [
     tags: ['99-octave', 'synthobs', 'engine'],
     guestSelectable: true,
   },
+  {
+    id: 'planetary-core-goldilocks',
+    name: 'synthobs-tbme-planetary-core-goldilocks',
+    label: '99 Octave · Planetary Core Goldilocks',
+    url: 'https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks',
+    startingRef: 'main',
+    blurb: 'Part XIV · geodynamo phase-inversion · CMB · Goldilocks hologram catalog.',
+    tags: ['99-octave', 'synthobs', 'engine'],
+    guestSelectable: true,
+  },
 ];
 
 export function findRepository(

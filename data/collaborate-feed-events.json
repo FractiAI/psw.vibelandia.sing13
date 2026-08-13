@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-13T15:15:42.532Z",
+  "updatedAt": "2026-08-13T16:49:20.697Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-08-13T15:15:42.531Z",
+      "createdAt": "2026-08-13T16:49:20.697Z",
       "body": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
       "presenceHue": "gold",
       "paperId": "lattice-omni-complete-layer-guide-2026-07",

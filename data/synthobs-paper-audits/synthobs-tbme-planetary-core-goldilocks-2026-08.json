@@ -1,9 +1,9 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "a552fcc39f27c468",
-  "paperId": "lattice-omni-complete-layer-guide-2026-07",
-  "sourcePath": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
+  "auditId": "d36ea785af159962",
+  "paperId": "synthobs-tbme-planetary-core-goldilocks-2026-08",
+  "sourcePath": "docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md",
   "operator": "SynthOBS Autonomous Agent",
   "sandbox": "Syntheverse Sandbox",
   "mode": "structural_only",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-08-13T16:49:20.696Z"
+          "invokedAt": "2026-08-13T16:46:49.883Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-08-13T16:49:20.695Z",
-  "completedAt": "2026-08-13T16:49:20.696Z",
+  "startedAt": "2026-08-13T16:46:49.882Z",
+  "completedAt": "2026-08-13T16:46:49.884Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 4964,
+      "wordCount": 2167,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 122,
-        "numbered": 3,
-        "citeLines": 0
+        "links": 6,
+        "numbered": 11,
+        "citeLines": 4
       }
     }
   },

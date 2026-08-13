@@ -30,6 +30,7 @@ describe('QUESTFEST latest-six ship blog', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
     expect(posts.some((p) => p.id.includes('synthio-mri-vs-legacy'))).toBe(true);
+    expect(posts.some((p) => p.id.includes('planetary-core-goldilocks'))).toBe(true);
     expect(posts.some((p) => p.id.includes('metamorphic-octaves'))).toBe(true);
   });
 });

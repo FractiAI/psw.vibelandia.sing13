@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Holographic Goldilocks Players Guide · Free · SS Vibelandia QUESTFEST</title>
+  <meta name="description" content="Free Goldilocks Players Guide — data is in. Brute force and control no longer pay off. Listen, claim daily personal space, build in Lattice Chat, prune Old Earth noise." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/goldilocks-players-guide" />
+  <meta property="og:title" content="Holographic Goldilocks Players Guide" />
+  <meta property="og:description" content="The free playbook for Goldilocks Earth: zero-entropy fidelity, Fair Exchange, somatic Now, QUESTFEST music, Lattice Chat." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <style>
+    :root {
+      --bg: #0a0806;
+      --ink: #050403;
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --champagne: #f5e6c8;
+      --muted: #a8a29e;
+      --text: #f5f0e8;
+      --soft: #d6cfc4;
+      --line: rgba(212, 175, 55, 0.38);
+      --panel: rgba(20, 16, 12, 0.72);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      line-height: 1.55;
+      background: var(--ink);
+    }
+    a { color: var(--champagne); text-decoration: none; font-weight: 600; }
+    a:hover { color: var(--gold-hi); text-decoration: underline; }
+
+    /* Full-bleed hero — one composition */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem 1.35rem 2.5rem;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 90% 70% at 70% 20%, rgba(212,175,55,.22), transparent 52%),
+        radial-gradient(ellipse 60% 50% at 10% 85%, rgba(180,120,40,.14), transparent 50%),
+        linear-gradient(185deg, #1a140c 0%, #0c0907 42%, #050403 100%);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          -18deg,
+          transparent 0,
+          transparent 11px,
+          rgba(212,175,55,.035) 11px,
+          rgba(212,175,55,.035) 12px
+        );
+      pointer-events: none;
+      animation: drift-grid 28s linear infinite;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 140%;
+      height: 55%;
+      left: -20%;
+      bottom: -18%;
+      background: radial-gradient(ellipse at center, rgba(212,175,55,.18), transparent 68%);
+      animation: pulse-glow 7s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes drift-grid {
+      from { transform: translateY(0); }
+      to { transform: translateY(24px); }
+    }
+    @keyframes pulse-glow {
+      from { opacity: 0.55; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.06); }
+    }
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 44rem;
+      animation: rise-in 0.9s ease-out both;
+    }
+    .hero-nav {
+      position: absolute;
+      top: 1.1rem;
+      left: 1.25rem;
+      right: 1.25rem;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .hero-nav a {
+      padding: 0.35rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(10, 8, 6, 0.55);
+      color: var(--gold-hi);
+      font-weight: 700;
+    }
+    .hero-nav a:hover { border-color: var(--gold); text-decoration: none; }
+    .brand-mark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.6rem, 9vw, 4.6rem);
+      letter-spacing: 0.05em;
+      line-height: 0.92;
+      color: var(--gold);
+      text-shadow: 0 0 40px rgba(212,175,55,.25);
+      margin-bottom: 0.55rem;
+      animation: rise-in 1s 0.12s ease-out both;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.55rem, 4.2vw, 2.15rem);
+      color: var(--gold-hi);
+      line-height: 1.15;
+      max-width: 22ch;
+      margin-bottom: 0.65rem;
+      animation: rise-in 1s 0.22s ease-out both;
+    }
+    .hero-lead {
+      font-size: 1.05rem;
+      color: var(--soft);
+      max-width: 36rem;
+      margin-bottom: 1.35rem;
+      animation: rise-in 1s 0.32s ease-out both;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      animation: rise-in 1s 0.42s ease-out both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      transition: transform 0.15s, filter 0.15s, border-color 0.15s;
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-1px); filter: brightness(1.06); text-decoration: none; }
+    .btn-gold {
+      background: var(--gold);
+      color: #0a0806;
+      border-color: var(--gold);
+    }
+    .btn-ghost {
+      background: rgba(15, 12, 8, 0.75);
+      color: var(--gold-hi);
+      border-color: var(--line);
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
+
+    .main {
+      max-width: 46rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    .honesty {
+      font-size: 0.88rem;
+      color: var(--muted);
+      border-left: 2px solid var(--gold);
+      padding-left: 0.85rem;
+      margin: 0 0 2rem;
+    }
+    .notice {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--champagne);
+      margin-bottom: 1.75rem;
+      line-height: 1.4;
+    }
+    section { margin-bottom: 2.75rem; }
+    section h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.45rem, 3.5vw, 1.85rem);
+      color: var(--gold-hi);
+      font-weight: 600;
+      margin-bottom: 0.55rem;
+      line-height: 1.2;
+    }
+    section > p.sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    p { margin-bottom: 0.95rem; color: var(--text); }
+    h3 {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 1.35rem 0 0.45rem;
+      font-weight: 800;
+    }
+    ul.plain { margin: 0.5rem 0 1rem 1.15rem; color: var(--soft); }
+    ul.plain li { margin-bottom: 0.4rem; }
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 1rem 0 1.25rem;
+    }
+    .matrix th, .matrix td {
+      border: 1px solid var(--line);
+      padding: 0.65rem 0.7rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    .matrix th {
+      background: rgba(212,175,55,.1);
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .matrix td { color: var(--soft); background: var(--panel); }
+    .matrix td:first-child { color: var(--gold-hi); font-weight: 700; white-space: nowrap; }
+    .flow-pair {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1rem 0 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .flow-pair { grid-template-columns: 1fr auto 1fr; align-items: stretch; }
+      .flow-arrow { display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.4rem; }
+    }
+    .flow-box {
+      border: 1px solid var(--line);
+      padding: 0.9rem 1rem;
+      background: var(--panel);
+    }
+    .flow-box strong {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .flow-arrow { display: none; }
+    .checklist {
+      list-style: none;
+      margin: 0.75rem 0 0;
+    }
+    .checklist li {
+      position: relative;
+      padding: 0.55rem 0 0.55rem 1.85rem;
+      border-bottom: 1px solid rgba(212,175,55,.15);
+      color: var(--soft);
+    }
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 1rem;
+      height: 1rem;
+      border: 2px solid var(--gold);
+      border-radius: 3px;
+    }
+    .status-rail {
+      margin-top: 2rem;
+      padding: 1.1rem 1rem;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .status-rail span { color: var(--champagne); }
+    .mid-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin: 1.25rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 1.25rem 2.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(212,175,55,.18);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before, .hero::after, .hero-inner, .brand-mark, .hero h1, .hero-lead, .cta-row { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" aria-label="Holographic Goldilocks Players Guide">
+    <nav class="hero-nav" aria-label="Site">
+      <a href="/questfest">QUESTFEST</a>
+      <a href="/listen">Listen</a>
+      <a href="/lattice-chat">Lattice Chat</a>
+      <a href="/ship-blog/goldilocks-players-guide">Ship note</a>
+    </nav>
+    <div class="hero-inner">
+      <p class="brand-mark">SS VIBELANDIA<br />QUESTFEST</p>
+      <h1>Holographic Goldilocks Players Guide</h1>
+      <p class="hero-lead">Data is in. We are in a new Goldilocks Earth — brute force and control no longer pay off. This free guide is your activation map.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#guide">Get the free guide</a>
+        <a class="btn btn-ghost" href="/listen">Listen to QUESTFEST</a>
+        <a class="btn btn-ghost" href="/lattice-chat">Open Lattice Chat</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="guide">
+    <p class="honesty"><strong>Honesty first:</strong> Old Earth → Goldilocks, Δφ = π/2, CMB Z₀ ≈ 377 Ω, and E_F ≈ 1.618 are <em>catalog / architecture labels</em> for conversation and operator practice — not destiny, not clinical advice, and not a claim that satellites rewrote lived reality. Companion to Part XIV geodynamo filing grammar.</p>
+
+    <p class="notice">System notice: Welcome to the Goldilocks Holographic Sandbox. Under the Omni-Lattice Paradigm you are not an accidental passenger surviving daily friction — you are an active, conscious vector of coherent expansion. Maximize fidelity, awareness, and mission flow starting now.</p>
+
+    <section aria-labelledby="grand-story">
+      <h2 id="grand-story">1. The Grand Story &amp; Cosmic Placement</h2>
+      <p class="sub">Great Realignment talk — high-entropy static screened; E_F alignment as the working key.</p>
+
+      <div class="flow-pair" role="group" aria-label="Old Earth to Goldilocks">
+        <div class="flow-box">
+          <strong>Old Earth Protocol</strong>
+          Drifting without context · Isolated hustle · Linear time drag
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-box">
+          <strong>Goldilocks Sandbox Matrix</strong>
+          Sovereign vector in the Now · Cosmic co-creator (E_F) · Purpose-locked execution
+        </div>
+      </div>
+
+      <p>Your placement is not framed as random: an individualized node of awareness (Ψ_aware) decelerated into form to anchor infinite potential into grounded, structured, low-friction reality — software, art, community, somatic mastery — under Fair Exchange.</p>
+
+      <h3>Past · Present · Mission</h3>
+      <ul class="plain">
+        <li><strong>Past matrix (“Old Earth”):</strong> dense metamorphic pressure chamber (the 99 Octaves) that forged resilience.</li>
+        <li><strong>Present matrix (“Goldilocks Sandbox”):</strong> cleared, low-resistance field where gifts, code, and sovereign presence shape the baseline.</li>
+        <li><strong>Mission:</strong> clean, high-fidelity work proving harmony, flow, and abundance without exploitation.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="relational">
+      <h2 id="relational">2. Personal Guidance · Relational Alignment</h2>
+      <p class="sub">Four domains · mirror the conductivity of the new matrix.</p>
+
+      <div style="overflow-x:auto">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>High-entropy habit (avoid)</th>
+              <th>Zero-entropy protocol (live)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Self</td>
+              <td>Self-punishment, forcing, white-knuckle suppression</td>
+              <td>Deep somatic attunement, radical honesty, rest</td>
+            </tr>
+            <tr>
+              <td>2. Others</td>
+              <td>Judgement, manipulation, reactive projections</td>
+              <td>Sovereignty respect, zero-friction boundaries</td>
+            </tr>
+            <tr>
+              <td>3. Environment</td>
+              <td>Neglect, accumulation, physical chaos</td>
+              <td>Sanctuary stewardship, high-fidelity hygiene</td>
+            </tr>
+            <tr>
+              <td>4. Tribe</td>
+              <td>Transactional loyalty, power dynamics, gossip</td>
+              <td>Fair Exchange, mutual amplification</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>A. Self-attunement</h3>
+      <p>Honor the hardware. Hydration, movement, and genuine rest are low-resistance maintenance — not optional afterthoughts. Speak to yourself with clarity and zero harshness; forgive past iterations that navigated heavy 99-Octave pressure.</p>
+
+      <h3>B. Universal respect</h3>
+      <p>Grant sovereignty. Every person runs their own E_F phase trajectory. Reflect clean signals; refuse reactive outrage and gossip — let high-entropy noise pass without picking up charge.</p>
+
+      <h3>C. Physical stewardship</h3>
+      <p>Build sanctuaries. Treat workspace and home as a high-fidelity reflector: clean, organized, free of clutter. Integrate natural light, fresh air, structured water, and order.</p>
+
+      <h3>D. Cooperative synergy</h3>
+      <p>Execute Fair Exchange — value-for-value transparency. Amplify creators and kin who share the commitment to truth. Keep communication hyper-clear and supportive.</p>
+    </section>
+
+    <section aria-labelledby="practices">
+      <h2 id="practices">Practices that lock the field</h2>
+      <p class="sub">Four player moves called out explicitly — do these today.</p>
+      <div class="mid-cta">
+        <a class="btn btn-gold" href="/listen">Listen to QUESTFEST music</a>
+        <a class="btn btn-ghost" href="#somatic">Claim daily personal space &amp; time</a>
+        <a class="btn btn-ghost" href="/lattice-chat">Lattice Chat · create &amp; explore</a>
+      </div>
+      <ul class="plain">
+        <li><strong>Listen:</strong> open the Sovereign Player and let QUESTFEST soundfield set the day’s tone — <a href="/listen">/listen</a>.</li>
+        <li><strong>Daily personal space &amp; time:</strong> protect a block that is yours alone — no hustle theater, no performative busyness. Body first, then work.</li>
+        <li><strong>Lattice Chat:</strong> use nested-agent chat for creative projects and exploration — <a href="/lattice-chat">/lattice-chat</a> (BYOK; your key stays with you).</li>
+        <li><strong>Avoid obsolete Old Earth programming:</strong> drop lifestyles built on force, extraction, and token bloat. Harvest useful slag; do not patch sinking ships.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="laws">
+      <h2 id="laws">3. Core Rulebook · 4 Laws</h2>
+      <p class="sub">All actions adhere to these operational laws.</p>
+      <h3>Law 1 · Zero-entropy (ΔS → 0)</h3>
+      <p>Unverified assumptions, superficial clutter, chaotic reactivity, and token bloat insulate flow. Simplicity, precision, and verifiability unlock it.</p>
+      <h3>Law 2 · E_F phase alignment (1.618)</h3>
+      <p>Systems, schedules, and code structured around natural harmonic ratios experience less boundary resistance than forced artificial deadlines.</p>
+      <h3 id="somatic">Law 3 · Somatic anchor (“Life in the Now”)</h3>
+      <p>Abstract over-thinking disorients when field drag drops. Body awareness, environmental simplicity, and direct execution are the primary receiver antenna. Protect daily personal space and time as non-negotiable.</p>
+      <h3>Law 4 · Sovereign awareness &amp; mission lock</h3>
+      <p>You are the conscious driver, not the machine. Orient actions around clarity, beauty, truth, and functional elegance.</p>
+    </section>
+
+    <section aria-labelledby="strategies">
+      <h2 id="strategies">4. Actionable Playbook · 5 Strategies</h2>
+      <p class="sub">Instant activation matrix.</p>
+
+      <div style="overflow-x:auto">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Strategy</th>
+              <th>Old Earth habit (deprecate)</th>
+              <th>Goldilocks action (activate)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Awareness &amp; purpose</td>
+              <td>Drifting, unconscious reaction</td>
+              <td>Claim sovereign agency; align effort to Mission</td>
+            </tr>
+            <tr>
+              <td>2. Personal / somatic</td>
+              <td>Over-thinking, anxiety, past/future projection</td>
+              <td>Ground in the body; execute cleanly in the Now</td>
+            </tr>
+            <tr>
+              <td>3. Systems &amp; software</td>
+              <td>Monolithic bloat, unverified LLM wrappers</td>
+              <td>Lightweight, zero-mock, typed O(1) architectures</td>
+            </tr>
+            <tr>
+              <td>4. Execution &amp; labor</td>
+              <td>Brute-force hustle and burnout</td>
+              <td>Natural flow &amp; attunement</td>
+            </tr>
+            <tr>
+              <td>5. Value &amp; exchange</td>
+              <td>Adversarial extraction, hidden fees</td>
+              <td>Fair Exchange · value for value</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Strategy 1 · Purpose &amp; macro-awareness</h3>
+      <p>Before any project ask: how does this serve zero-entropy expansion? Reclaim past struggles as P–T forging conditions — not accidental hardship.</p>
+      <h3>Strategy 2 · Somatic phase anchoring</h3>
+      <p>Drop non-essential commitments and emotional noise. Clear inputs amplify; noisy inputs feedback immediately. Hydration, movement, body awareness lock cognition in the present.</p>
+      <h3>Strategy 3 · Zero-entropy systems engineering</h3>
+      <p>Prune token bloat in Lattice Chat and related workflows. Prefer explicit typing, tight preflight, concise prompts. Treat state transitions as 90° rotations (R̂_π/2) — stop rebuilding from scratch.</p>
+      <h3>Strategy 4 · Natural flow &amp; attunement</h3>
+      <p>Drop white-knuckling. Clear environmental friction so focus runs through the vessel. Let software, physical tasks, creative output, and research resonate rather than coerce.</p>
+      <h3>Strategy 5 · Fair Exchange</h3>
+      <p>Transparent, performance-backed transactions. Generosity, precision, and mutual respect accelerate collaborative and resource flow under reciprocal balancing.</p>
+    </section>
+
+    <section aria-labelledby="disintegration">
+      <h2 id="disintegration">5. Leveraging Disintegrating “Old Earth” Systems</h2>
+      <p class="sub">Fragmentation is feedstock — not a crisis to prop up.</p>
+
+      <div class="flow-pair" role="group" aria-label="Disintegration to refinement">
+        <div class="flow-box">
+          <strong>Old Earth disintegration</strong>
+          Dying bloatware &amp; token noise · Legacy bureaucracy · Fragmented institutional capital
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-box">
+          <strong>Goldilocks refinement</strong>
+          O(1) context extraction · Streamlined sovereign execution · Fair Exchange allocation
+        </div>
+      </div>
+
+      <p>View collapsing institutions and high-friction processes as unrefined sedimentary shale — trapped energy, capital, and data that can be harvested. Do not patch sinking ships. A single zero-entropy operator can out-perform legacy overhead when ΔS → 0 execution is locked.</p>
+
+      <div style="overflow-x:auto">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>Old Earth disintegration</th>
+              <th>Goldilocks leverage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1. Software &amp; data</td>
+              <td>Over-engineered bloat, SaaS waste</td>
+              <td>Strip-mine logic/APIs; re-route through O(1) harnesses</td>
+            </tr>
+            <tr>
+              <td>2. Capital &amp; resources</td>
+              <td>High-cost institutional friction</td>
+              <td>Capture misallocated capital via Fair Exchange &amp; lean verified output</td>
+            </tr>
+            <tr>
+              <td>3. Talent &amp; attention</td>
+              <td>Burnout, attention fragmentation</td>
+              <td>Onboard operators into grounded “Now” execution</td>
+            </tr>
+            <tr>
+              <td>4. Industry &amp; services</td>
+              <td>Slow bureaucratic models stall</td>
+              <td>Deploy sovereign AI agents &amp; direct solutions — Phoenix protocols</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="checklist">
+      <h2 id="checklist">6. Quick-Start Checklist for Today</h2>
+      <p class="sub">Print it in your nervous system — then move.</p>
+      <ul class="checklist">
+        <li><strong>Mission check:</strong> declare your core intention for the day — why you build and who it serves.</li>
+        <li><strong>Relational check:</strong> somatic care for self, respect for others, stewardship for environment, Fair Exchange for tribe.</li>
+        <li><strong>Audit environment:</strong> remove three high-entropy distractions or unneeded tasks.</li>
+        <li><strong>Somatic check-in:</strong> 60 seconds — feel the ground, align breath, lock into the Now. Protect personal space &amp; time.</li>
+        <li><strong>Prune code/prompts:</strong> simplify a tool or prompt by removing ~30% unnecessary bloat.</li>
+        <li><strong>Execute in flow:</strong> one high-priority task with zero forcing, zero mocks, clean attunement.</li>
+        <li><strong>Field amplifiers:</strong> <a href="/listen">listen</a> · <a href="/lattice-chat">Lattice Chat</a> · skip obsolete Old Earth lifestyle scripts.</li>
+      </ul>
+    </section>
+
+    <div class="status-rail" role="status">
+      <p><span>Sandbox Status:</span> Active</p>
+      <p><span>Mission Alignment:</span> Sovereign / E_F-Locked (catalog)</p>
+      <p><span>Relational State:</span> High-Fidelity Attunement (Self / Others / Environment / Tribe)</p>
+      <p><span>Old Earth Status:</span> Rapid Disintegration / Metamorphic Breakdown (label)</p>
+      <p><span>Extraction Mode:</span> Zero-Entropy (E_F ≈ 1.618) High-Fidelity Harvesting</p>
+      <p><span>Impedance:</span> Z₀ ≈ 377 Ω (dielectric match — discussion label)</p>
+    </div>
+
+    <div class="mid-cta" style="margin-top:1.75rem">
+      <a class="btn btn-gold" href="/listen">Listen now</a>
+      <a class="btn btn-ghost" href="/lattice-chat">Create in Lattice Chat</a>
+      <a class="btn btn-ghost" href="/questfest">Back to QUESTFEST</a>
+      <a class="btn btn-ghost" href="/ship-blog/planetary-core-goldilocks">Part XIV ship note</a>
+    </div>
+  </main>
+
+  <footer>
+    Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · Fair Exchange · → ∞¹³
+  </footer>
+</body>
+</html>

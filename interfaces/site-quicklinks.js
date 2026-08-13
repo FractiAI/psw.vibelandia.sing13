@@ -1,6 +1,7 @@
 /** Injects top QUESTFEST · Listen quicklinks (in-flow) + footer Bulletin Board.
  * Skip pages that already ship their own primary nav (hero / brochure / ark).
  * Canonical doors: / · /listen · /lattice · Concierge — never a separate “Bridge”.
+ * Also boots live i18n (language bar + surface/paper translation) when missing.
  */
 (function () {
   if (!window.__qvPageViewsBoot && !document.querySelector('script[data-qv-page-views]')) {
@@ -31,6 +32,36 @@
     jb.defer = true;
     jb.setAttribute('data-qv-jukebox-boot', '1');
     document.head.appendChild(jb);
+  }
+
+  /** Live language bar + surface/paper translation (i18n-auto.js). */
+  if (!document.querySelector('script[src*="i18n-auto.js"]') && !window.__qvI18nBoot) {
+    window.__qvI18nBoot = 1;
+    if (!document.documentElement.classList.contains('vbi18n-ready')) {
+      document.documentElement.classList.add('vbi18n-pending');
+    }
+    if (!document.getElementById('vbi18n-pending-style')) {
+      var st = document.createElement('style');
+      st.id = 'vbi18n-pending-style';
+      st.textContent =
+        'html.vbi18n-pending body{visibility:hidden}html.vbi18n-ready body{visibility:visible}';
+      document.head.appendChild(st);
+    }
+    var i18n = document.createElement('script');
+    i18n.src = '/interfaces/i18n-auto.js';
+    i18n.setAttribute('data-page', 'auto');
+    i18n.setAttribute('data-qv-i18n-boot', '1');
+    i18n.onerror = function () {
+      document.documentElement.classList.remove('vbi18n-pending');
+      document.documentElement.classList.add('vbi18n-ready');
+    };
+    document.head.appendChild(i18n);
+    window.setTimeout(function () {
+      if (!document.documentElement.classList.contains('vbi18n-ready')) {
+        document.documentElement.classList.remove('vbi18n-pending');
+        document.documentElement.classList.add('vbi18n-ready');
+      }
+    }, 12000);
   }
 
   var path = window.location.pathname || '';

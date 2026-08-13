@@ -1,15 +1,23 @@
 /**
- * Vibelandia static i18n: browser language autosense, ?lang= override, explicit user pick.
- * Loads interfaces/i18n/en.json plus best-match locale file and deep-merges.
+ * Vibelandia static + live i18n.
+ * - Dictionary merge for data-i18n* (en.json + locale overlays)
+ * - Live surface/paper translation when locale ≠ en (browser Translator API, else /api/i18n-translate)
+ * - Language bar: ?lang= · localStorage · browser autosense
  */
 (function () {
   'use strict';
 
   var STORAGE_LOCALE = 'vibelandia_locale';
   var STORAGE_USER_PICKED = 'vibelandia_locale_user';
+  var CACHE_PREFIX = 'vbi18n_tx_v1_';
   var I18N_BASE = '/interfaces/i18n/';
+  var TRANSLATE_API = '/api/i18n-translate';
 
-  /** Shipped full locales (must match en.json __locales__). */
+  /** Capture data-page before DOMContentLoaded clears currentScript. */
+  var BOOT_SCRIPT = document.currentScript;
+  var BOOT_PAGE_ATTR =
+    (BOOT_SCRIPT && BOOT_SCRIPT.getAttribute('data-page')) || '';
+
   var SHIPPED_LOCALES = {
     en: true,
     es: true,
@@ -24,6 +32,30 @@
   };
 
   var RTL_PREFIXES = ['ar', 'fa', 'ur', 'he', 'iw', 'yi', 'dv', 'ps', 'sd'];
+
+  var SKIP_TAGS = {
+    SCRIPT: 1,
+    STYLE: 1,
+    NOSCRIPT: 1,
+    CODE: 1,
+    PRE: 1,
+    KBD: 1,
+    SAMP: 1,
+    TEXTAREA: 1,
+    OPTION: 1,
+    SVG: 1,
+    MATH: 1,
+    INPUT: 1,
+    SELECT: 1,
+  };
+
+  var state = {
+    locale: 'en',
+    requested: 'en',
+    page: '',
+    dict: null,
+    translating: false
+  };
 
   function normalizeTag(tag) {
     if (!tag || typeof tag !== 'string') return '';
@@ -206,6 +238,7 @@
     if (page === 'hood') return 'hood';
     if (page === 'fractai') return 'fractai';
     if (page === 'glos') return 'glos';
+    if (page === 'papers' || page === 'surface' || page === 'guide') return 'qf';
     return 'qf';
   }
 
@@ -227,7 +260,21 @@
     if (p.indexOf('vibelandia-questfest') !== -1 || p === '/' || p === '/questfest' || p === '/questfest/') {
       return 'questfest';
     }
-    return '';
+    if (
+      p.indexOf('whitepaper') !== -1 ||
+      p.indexOf('/papers') !== -1 ||
+      p.indexOf('/read') !== -1
+    ) {
+      return 'papers';
+    }
+    if (
+      p.indexOf('players-guide') !== -1 ||
+      p.indexOf('goldilocks-players-guide') !== -1
+    ) {
+      return 'guide';
+    }
+    if (p.indexOf('ship-blog') !== -1 || p.indexOf('/blog-') !== -1) return 'surface';
+    return 'surface';
   }
 
   function applyToDom(dict, page) {
@@ -238,6 +285,7 @@
       var val = get(dict, key);
       if (val == null || val === '') return;
       el.textContent = val;
+      el.setAttribute('data-vbi18n-dict', '1');
     });
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-html');
@@ -245,6 +293,7 @@
       var val = get(dict, key);
       if (val == null || val === '') return;
       el.innerHTML = val;
+      el.setAttribute('data-vbi18n-dict', '1');
     });
     document.querySelectorAll('[data-i18n-attr]').forEach(function (el) {
       var spec = el.getAttribute('data-i18n-attr');
@@ -278,6 +327,217 @@
     setMeta('meta[property="og:description"]', 'ogDesc');
     setMeta('meta[name="twitter:title"]', 'ogTitle');
     setMeta('meta[name="twitter:description"]', 'ogDesc');
+  }
+
+  function shouldSkipText(text) {
+    var t = String(text || '').trim();
+    if (!t) return true;
+    if (t.length < 2) return true;
+    if (/^https?:\/\//i.test(t)) return true;
+    if (/^[\w.+-]+@[\w.-]+\.\w+$/.test(t)) return true;
+    if (/^\/[\w./?#&=%-]*$/.test(t)) return true;
+    if (/^[0-9\s.,:%°ΩφπΔ±×÷+\-/=$#]+$/u.test(t)) return true;
+    return false;
+  }
+
+  function collectTextNodes(root) {
+    var nodes = [];
+    if (!root) return nodes;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (node) {
+        if (!node || !node.nodeValue || !String(node.nodeValue).trim()) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        var p = node.parentElement;
+        if (!p) return NodeFilter.FILTER_REJECT;
+        if (SKIP_TAGS[p.tagName]) return NodeFilter.FILTER_REJECT;
+        if (p.closest && p.closest('#vbi18n-bar, [data-vbi18n-skip], .katex, mjx-container, code, pre')) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        if (p.getAttribute && p.getAttribute('data-vbi18n-dict') === '1') {
+          return NodeFilter.FILTER_REJECT;
+        }
+        if (p.getAttribute && p.getAttribute('data-vbi18n-tx') === state.locale) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        if (shouldSkipText(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    return nodes;
+  }
+
+  function cacheKey(locale, text) {
+    var h = 2166136261;
+    var s = locale + '\0' + text;
+    for (var i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return CACHE_PREFIX + locale + '_' + (h >>> 0).toString(36);
+  }
+
+  function cacheGet(locale, text) {
+    try {
+      return window.sessionStorage.getItem(cacheKey(locale, text));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function cacheSet(locale, text, translated) {
+    try {
+      window.sessionStorage.setItem(cacheKey(locale, text), translated);
+    } catch (e) {}
+  }
+
+  function bcp47ForTranslator(locale) {
+    if (locale === 'zh') return 'zh-Hans';
+    if (locale === 'zh-TW') return 'zh-Hant';
+    return locale;
+  }
+
+  function getBrowserTranslator(targetLocale) {
+    var api = window.Translator || (window.translation && window.translation.createTranslator);
+    if (!window.Translator && !(window.translation && window.translation.createTranslator)) {
+      return Promise.resolve(null);
+    }
+    var target = bcp47ForTranslator(targetLocale);
+    try {
+      if (window.Translator && typeof window.Translator.create === 'function') {
+        return window.Translator.create({ sourceLanguage: 'en', targetLanguage: target });
+      }
+      if (window.translation && typeof window.translation.createTranslator === 'function') {
+        return window.translation.createTranslator({
+          sourceLanguage: 'en',
+          targetLanguage: target
+        });
+      }
+    } catch (e) {}
+    return Promise.resolve(null);
+  }
+
+  function translateViaApi(texts, targetLocale) {
+    return fetch(TRANSLATE_API, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ texts: texts, target: targetLocale, source: 'en' })
+    }).then(function (r) {
+      return r.json().then(function (data) {
+        if (!r.ok || !data.ok || !Array.isArray(data.translations)) {
+          throw new Error(data.code || data.message || 'translate_failed');
+        }
+        return data.translations;
+      });
+    });
+  }
+
+  function translateBatch(texts, targetLocale, translator) {
+    if (translator && typeof translator.translate === 'function') {
+      return Promise.all(
+        texts.map(function (t) {
+          return translator.translate(t).catch(function () {
+            return t;
+          });
+        })
+      );
+    }
+    // API batches of ≤40
+    var out = [];
+    var chain = Promise.resolve();
+    for (var i = 0; i < texts.length; i += 40) {
+      (function (slice, offset) {
+        chain = chain.then(function () {
+          return translateViaApi(slice, targetLocale).then(function (parts) {
+            for (var j = 0; j < parts.length; j++) out[offset + j] = parts[j];
+          });
+        });
+      })(texts.slice(i, i + 40), i);
+    }
+    return chain.then(function () {
+      return out;
+    });
+  }
+
+  function setStatusHint(msg) {
+    var el = document.getElementById('vbi18n-status');
+    if (el) el.textContent = msg || '';
+  }
+
+  /**
+   * Live-translate text nodes under root into state.locale.
+   * @param {Element} [root]
+   * @returns {Promise<void>}
+   */
+  function translateRoot(root) {
+    if (!state.locale || state.locale === 'en') return Promise.resolve();
+    var scope = root || document.body;
+    if (!scope) return Promise.resolve();
+
+    var nodes = collectTextNodes(scope);
+    if (!nodes.length) return Promise.resolve();
+
+    var pending = [];
+    var pendingNodes = [];
+    nodes.forEach(function (node) {
+      var original = node.nodeValue;
+      var trimmed = original.replace(/^\s+|\s+$/g, '');
+      var lead = original.match(/^\s*/)[0];
+      var trail = original.match(/\s*$/)[0];
+      var cached = cacheGet(state.locale, trimmed);
+      if (cached != null) {
+        node.nodeValue = lead + cached + trail;
+        if (node.parentElement) node.parentElement.setAttribute('data-vbi18n-tx', state.locale);
+        return;
+      }
+      pending.push(trimmed);
+      pendingNodes.push({ node: node, lead: lead, trail: trail, trimmed: trimmed });
+    });
+
+    if (!pending.length) return Promise.resolve();
+
+    state.translating = true;
+    setStatusHint('Translating surface…');
+
+    return getBrowserTranslator(state.locale)
+      .then(function (translator) {
+        return translateBatch(pending, state.locale, translator);
+      })
+      .then(function (translated) {
+        for (var i = 0; i < pendingNodes.length; i++) {
+          var item = pendingNodes[i];
+          var tx = translated[i] != null ? String(translated[i]) : item.trimmed;
+          cacheSet(state.locale, item.trimmed, tx);
+          item.node.nodeValue = item.lead + tx + item.trail;
+          if (item.node.parentElement) {
+            item.node.parentElement.setAttribute('data-vbi18n-tx', state.locale);
+          }
+        }
+        setStatusHint('Machine-translated · English source remains canonical');
+      })
+      .catch(function (err) {
+        console.warn('i18n-auto: surface translate failed', err);
+        setStatusHint('Translation unavailable — showing English');
+      })
+      .then(function () {
+        state.translating = false;
+      });
+  }
+
+  function watchDynamicContent() {
+    if (!state.locale || state.locale === 'en' || !document.body) return;
+    var timer = null;
+    var obs = new MutationObserver(function () {
+      if (state.translating) return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(function () {
+        translateRoot(document.body);
+      }, 280);
+    });
+    obs.observe(document.body, { childList: true, subtree: true });
   }
 
   function injectLangBar(effectiveLocale, requestedLocale, dict, page) {
@@ -357,12 +617,11 @@
 
     bar.appendChild(span);
     bar.appendChild(sel);
-    if (hint) {
-      var h = document.createElement('span');
-      h.style.cssText = 'opacity:.85;max-width:48ch;text-align:center;';
-      h.textContent = hint;
-      bar.appendChild(h);
-    }
+    var status = document.createElement('span');
+    status.id = 'vbi18n-status';
+    status.style.cssText = 'opacity:.9;max-width:52ch;text-align:center;';
+    if (hint) status.textContent = hint;
+    bar.appendChild(status);
     document.body.appendChild(bar);
     document.body.style.paddingBottom = '3.25rem';
   }
@@ -383,7 +642,8 @@
   }
 
   function initFromPage(page) {
-    if (!page) return;
+    if (!page) page = 'surface';
+    state.page = page;
     var baseUrl = I18N_BASE + 'en.json';
 
     fetchJson(baseUrl)
@@ -406,17 +666,29 @@
         var dict = res.dict;
         var eff = res.effective;
         var req = res.requested;
+        state.dict = dict;
+        state.locale = eff;
+        state.requested = req;
         setDocumentLocale(eff);
         applyToDom(dict, page);
         injectLangBar(eff, req, dict, page);
-        revealDocument();
         window.__VIBELANDIA_I18N__ = {
           locale: eff,
           requested: req,
           page: page,
           userPicked: userPickedLocale(),
-          browserLanguages: browserCandidates()
+          browserLanguages: browserCandidates(),
+          liveTranslate: eff !== 'en'
         };
+        var done = Promise.resolve();
+        if (eff !== 'en') {
+          done = translateRoot(document.body).then(function () {
+            watchDynamicContent();
+          });
+        }
+        return done.then(function () {
+          revealDocument();
+        });
       })
       .catch(function () {
         revealDocument();
@@ -425,20 +697,22 @@
   }
 
   function boot() {
-    var script = document.currentScript;
-    var page = (script && script.getAttribute('data-page')) || '';
+    var page = BOOT_PAGE_ATTR || '';
     if (!page || page === 'auto') {
-      page = detectPageFromPath();
+      page = detectPageFromPath() || 'surface';
     }
-    if (page === 'questfest') initFromPage('questfest');
-    else if (page) initFromPage(page);
+    initFromPage(page);
   }
 
   window.VibelandiaI18n = {
     initFromPage: initFromPage,
     normalizeTag: normalizeTag,
     detectPageFromPath: detectPageFromPath,
-    browserCandidates: browserCandidates
+    browserCandidates: browserCandidates,
+    translateRoot: translateRoot,
+    getLocale: function () {
+      return state.locale;
+    }
   };
 
   if (document.readyState === 'loading') {

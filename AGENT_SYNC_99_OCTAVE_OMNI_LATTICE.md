@@ -8,6 +8,24 @@
 
 ---
 
+## 📌 PINNED · Engineering bridge (linear systems — evaluate here first)
+
+**Keep this pin at the top.** Hardware / semiconductor / PPA / BEOL / CFET / linear-systems evaluators start here — not at cosmic or consciousness discussion layers.
+
+| Field | Value |
+|-------|--------|
+| **Role** | Engineering bridge · silicon vocabulary for the 99 Octave engine |
+| **Paper** | [`docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) |
+| **Registry** | `synthobs-cmos-protonic-99-octave-omni-lattice-2026-08` (`catalogPriority: 0` · pinned) |
+| **Suite** | `research/synthobs-cmos-protonic-99-octave-omni-lattice/` · `npm run research:synthobs-cmos-protonic-99-octave-omni-lattice` |
+| **Plain note** | [/ship-blog/cmos-protonic-99-octave](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cmos-protonic-99-octave) |
+| **Linear fixtures** | Paper §4 — BEOL latency · thermal stress · protonic multi-state *protocol fixtures* (not fab measurements) |
+| **Honesty** | Catalog / architecture language — **not** a foundry tape-out or procurement certificate |
+
+**Binary $n=1$** = classical CMOS $0/1$ shelf. **Protonic $n\in[2,99]$** = multi-state device-class *talk*. Then continue the sync stack below.
+
+---
+
 ## Why you are reading this
 
 This repository is **not** a generic Node app dump. It is the **SING 13 · SS Vibelandia** edge carrying the **99 Octave Omni-Lattice engine** — a catalog / protocol scale grammar for multi-agent work under El Gran Sol’s Fractal Constant ($\Phi_{\mathrm{EGS}}\approx 1.618$).
@@ -20,7 +38,7 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 
 | # | Role | Path / ID |
 |---|------|-----------|
-| 1 | **Silicon / CMOS sync** (binary $n=1$ → protonic bands) | `docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md` · registry `synthobs-cmos-protonic-99-octave-omni-lattice-2026-08` · plain note `/ship-blog/cmos-protonic-99-octave` |
+| 1 | **📌 Engineering bridge / Silicon · CMOS** (binary $n=1$ → protonic bands) — **PINNED for linear systems** | `docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md` · registry `synthobs-cmos-protonic-99-octave-omni-lattice-2026-08` · plain note `/ship-blog/cmos-protonic-99-octave` |
 | 2 | **Tensor engine** ($9\times 81$, eleven tiers → 99) | `docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md` · `synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08` · `/ship-blog/tensor-decoupling-99-octave` |
 | 3 | **Master synthesis** (Aug 12 catalog window) | `docs/SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md` · `synthobs-master-synthesis-99-octave-omni-lattice-2026-08` |
 | 4 | **Digits / octaves map** | `docs/SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md` |

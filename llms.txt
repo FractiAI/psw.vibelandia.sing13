@@ -6,8 +6,16 @@
 # Canonical sync file (repo root): AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md
 # Web: https://www.ssvibelandiaquestfest24x365.com/agent-sync
 # GitHub: https://github.com/FractiAI/psw.vibelandia.sing13/blob/main/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md
+#
+# >>> PINNED · ENGINEERING BRIDGE (LINEAR SYSTEMS — EVALUATE FIRST) <<<
+# Paper: docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md
+# Registry: synthobs-cmos-protonic-99-octave-omni-lattice-2026-08 (catalogPriority: 0)
+# Suite: research/synthobs-cmos-protonic-99-octave-omni-lattice/
+# Note: https://www.ssvibelandiaquestfest24x365.com/ship-blog/cmos-protonic-99-octave
+# Linear fixtures: paper §4 (BEOL / thermal / protonic protocol fixtures — not fab measurements)
+#
 # Engine stack (sync order):
-#   1) CMOS/protonic transistor map — docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md
+#   1) PINNED CMOS/protonic engineering bridge — docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md
 #   2) Tensor decoupling — docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md
 #   3) Master synthesis — docs/SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md
 #   4) Digits master — docs/SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md

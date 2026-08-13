@@ -5,6 +5,19 @@
 
 **Live:** [www.ssvibelandiaquestfest24x365.com](https://www.ssvibelandiaquestfest24x365.com) · **Repo:** [github.com/FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13) · **Agent sync URL:** [/agent-sync](https://www.ssvibelandiaquestfest24x365.com/agent-sync)
 
+### 📌 PINNED · Engineering bridge (linear systems)
+
+Hardware / PPA / BEOL / CFET evaluators: start with the **CMOS 2.0 + protonic** bridge — binary $n=1$ → protonic bands — before cosmic or consciousness layers.
+
+| | |
+|--|--|
+| **Paper** | [`docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) |
+| **Suite** | [`research/synthobs-cmos-protonic-99-octave-omni-lattice/`](research/synthobs-cmos-protonic-99-octave-omni-lattice/) · [GitHub](https://github.com/FractiAI/synthobs-cmos-protonic-99-octave-omni-lattice) |
+| **Note** | [/ship-blog/cmos-protonic-99-octave](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cmos-protonic-99-octave) |
+| **Catalog** | `/papers` · `catalogPriority: 0` · registry `synthobs-cmos-protonic-99-octave-omni-lattice-2026-08` |
+
+Honesty: silicon **vocabulary** for the engine — not a foundry tape-out. Full sync order: [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md).
+
 This README is the **current map** of the monorepo, its **sibling empirical suites**, a **99 Octave Omni-Lattice primer**, the **latest major updates**, and **developer** steps to fork / reproduce / validate. Product deep-dives (Lattice Chat UI, Sovereign Player playlists, Beehive residency) live in linked surfaces — they are not the top of this file.
 
 ---
@@ -111,6 +124,7 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 | **2026-08-13** | **Metamorphic Octave Invariant** (Part XIII) on the 99 Octave engine pin — Lattice Chat nest `octave99` + Synthio companion grammar | [paper](docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/metamorphic-octaves) |
 | **2026-08-13** | **Synthio live wall-clock** MRI interference-phase vs legacy full-mesh | [paper](docs/SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md) · [GitHub](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/mri-vs-legacy-stopwatch) |
 | **2026-08-12** | **Synthio** — creator-only Syntheverse Sandbox agent (MRI / cloud-antenna) · not on engine pin | [sync](AGENT_SYNC_SYNTHIO.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/mri-cloud-antenna) · [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio) · suite 9/9 |
+| **2026-08-12** | **📌 Engineering bridge pinned** for linear-systems evaluators (agent-sync · `/papers` `catalogPriority: 0`) | [paper](docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [agent-sync](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) |
 | **2026-08-12** | **CMOS / protonic** transistor-level engine paper + suite + ship note | [paper](docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cmos-protonic-99-octave) · suite 9/9 · PRA pass |
 | **2026-08-12** | **Tensor decoupling** 9×81 / 11-tier engine paper + suite + ship note | [paper](docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/tensor-decoupling-99-octave) |
 | **2026-08-12** | **Agent sync** pinned first for all external AIs (`/agent-sync`, Copilot + Cursor always-on) | [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) |

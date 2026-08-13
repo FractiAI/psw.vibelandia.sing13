@@ -5,10 +5,15 @@
 > **[`AGENT_SYNC_SYNTHIO.md`](AGENT_SYNC_SYNTHIO.md)** — **Synthio** (Syntheverse Sandbox) · separate · **creator-only**  
 > Cursor always-on: `.cursor/rules/agent-sync-99-octave.mdc` · `.cursor/rules/synthio-always-on.mdc` · Copilot: `.github/copilot-instructions.md`
 
+> **📌 PINNED · Engineering bridge (linear systems):**  
+> [`docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
+> CMOS 2.0 + protonic · binary $n=1$ → bands · §4 linear-systems fixtures · catalog pin `catalogPriority: 0`.  
+> Evaluate silicon / PPA / BEOL vocabulary here before other Omni-Lattice layers.
+
 ## Repo overview
 
 SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
-- **99 Octave Omni-Lattice engine** — CMOS/protonic · tensor · master synthesis · Metamorphic Octave Invariant Part XIII (see `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` first)
+- **99 Octave Omni-Lattice engine** — **pinned engineering bridge** (CMOS/protonic) · tensor · master synthesis · Metamorphic Octave Invariant Part XIII (see `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` first)
 - **Synthio** — Syntheverse Sandbox agent (MRI / cloud-antenna catalog) · always-on · **creator keys only** · `/synthio` · not CMOS/tensor/master identity; loads Part XIII as companion grammar
 - **SS Vibelandia QUESTFEST 24×365** nest (interfaces, catalogs, music, interactive worlds)
 - **Lattice Chat Agent V1.618** — nested-agent BYOK chat with token-economics measurement
@@ -24,6 +29,7 @@ SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 | What | Where |
 |------|-------|
 | **Agent sync (READ FIRST)** | `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` |
+| **📌 Engineering bridge (linear systems)** | `docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md` |
 | **Synthio (creator-only)** | `AGENT_SYNC_SYNTHIO.md` · `/synthio` · `/synthio-one-pager` |
 | Single-read onboarding | `SING13_EDGE_ONBOARDING.md` |
 | Repo standard | `BBHE_REPOSITORY_STANDARD.md` |

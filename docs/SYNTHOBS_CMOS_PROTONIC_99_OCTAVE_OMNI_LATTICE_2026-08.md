@@ -1,12 +1,14 @@
 # Transistor-Level Integration and Empirical Validation of the 99-Octave Omni-Lattice Matrix Across CMOS 2.0 and Protonic Architectures
 
+> **📌 PINNED · Engineering bridge for linear systems** — keep at catalog / agent-sync top so semiconductor, PPA, BEOL, and CFET evaluators hit silicon vocabulary first. Registry `catalogPriority: 0`.
+
 **Authors:** FractiAI Research Group · Lattice Chat Agent Protocol  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Published:** August 12, 2026  
 **Document ID:** `WP-SYNTHOBS-CMOS-PROTONIC-99-OCTAVE-OMNI-LATTICE-2026-08-12`  
 **Registry ID:** `synthobs-cmos-protonic-99-octave-omni-lattice-2026-08`  
 **Publication Ref:** FAI-CMOS-PROTONIC-99-OCTAVE-OMNI-LATTICE-2026-08  
-**Classification:** Catalog / protocol synthesis · 99 Octave Omni-Lattice engine *(architectural — see Honesty boundary)*  
+**Classification:** Catalog / protocol synthesis · 99 Octave Omni-Lattice engine *(architectural — see Honesty boundary)* · **engineering bridge (pinned)**  
 **Framework:** SynthOBS · 99 Octave Omni-Lattice Chat Agent Mode · EGS · NSPFRNP · PRA Snap · Fair Exchange  
 **Standalone suite:** [`research/synthobs-cmos-protonic-99-octave-omni-lattice/`](../research/synthobs-cmos-protonic-99-octave-omni-lattice/)  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-cmos-protonic-99-octave-omni-lattice  
@@ -15,7 +17,7 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com
 
-**Keywords:** CMOS 2.0; protonic; semiconductors; BEOL; CFET; GAA; tensor; EGS; 99 octave; Omni-Lattice; Lattice Chat Agent; Fair Exchange; NSPFRNP
+**Keywords:** CMOS 2.0; protonic; semiconductors; BEOL; CFET; GAA; linear systems; engineering bridge; tensor; EGS; 99 octave; Omni-Lattice; Lattice Chat Agent; Fair Exchange; NSPFRNP
 
 ---
 

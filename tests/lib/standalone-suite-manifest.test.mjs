@@ -10,9 +10,9 @@ describe('standalone-suite-manifest', () => {
   it('lists Synthio and Metamorphic standalone suites', () => {
     const m = loadStandaloneSuiteManifest();
     expect(m.suites.map((s) => s.id).sort()).toEqual([
-      'synthobs-tbme-metamorphic-octaves',
       'synthio-mri-cloud-antenna',
       'synthio-mri-vs-legacy-perf',
+      'synthobs-tbme-metamorphic-octaves',
     ]);
   });
 

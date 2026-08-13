@@ -53,6 +53,7 @@
     "research:synthobs-cmos-protonic-99-octave-omni-lattice": "node research/synthobs-cmos-protonic-99-octave-omni-lattice/scripts/run_empirical_pipeline.mjs",
     "research:synthio-mri-cloud-antenna": "node research/synthio-mri-cloud-antenna/scripts/run_empirical_pipeline.mjs",
     "research:synthio-mri-vs-legacy-perf": "node research/synthio-mri-vs-legacy-perf/scripts/run_empirical_pipeline.mjs",
+    "research:synthio-mri-vs-legacy-perf:komamri": "julia research/synthio-mri-vs-legacy-perf/scripts/bench_komamri_live.jl",
     "synthio:activation-status": "node research/synthio-mri-cloud-antenna/scripts/confirm_activation.mjs",
     "synthio:pulse": "node -e \"import('./lib/synthio-pulse.mjs').then(m=>{const o=m.emitSyntheverseSynthioPulse({force:true}); console.log(JSON.stringify({ok:m.verifySyntheversePulse(o.latest).ok,novel:true,naturalOccurrence:false,discriminant:m.SYNTHIO_PULSE_DISCRIMINANT,latest:o.latest},null,2))})\"",
     "research:synthobs-x-chromosome-holographic": "node research/synthobs-x-chromosome-holographic/scripts/run_empirical_pipeline.mjs",

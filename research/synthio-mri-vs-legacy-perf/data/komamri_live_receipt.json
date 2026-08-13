@@ -1,0 +1,65 @@
+{
+  "allPass": true,
+  "backend": "komamri_cpu",
+  "generatedAt": "2026-08-13T00:35:49.163",
+  "honesty": "Live KomaMRI.jl CPU simulate() wall-clock on this host. MRI arm = one shared simulate + nested phase-acks; legacy = re-simulate per mesh edge. Not clinical magnet, not CUDA multi-GPU, not multi-node Distributed.jl fabric, not hyperscale displacement.",
+  "juliaVersion": "1.12.6",
+  "komaVersion": "0.13.1",
+  "liveWallClock": true,
+  "meanSpeedup": 46.11896760972998,
+  "nblocks": 2,
+  "rows": [
+    {
+      "legacyEdges": 6,
+      "legacyMs": 238.65622,
+      "legacyStd": 212.3657061238148,
+      "mriEdges": 3,
+      "mriMs": 13.052730666666667,
+      "mriStd": 1.5350126069947727,
+      "n": 4,
+      "pass": true,
+      "speedup": 18.284007085924703,
+      "trials": 3
+    },
+    {
+      "legacyEdges": 15,
+      "legacyMs": 355.49007966666665,
+      "legacyStd": 212.08180937475018,
+      "mriEdges": 5,
+      "mriMs": 11.60836,
+      "mriStd": 0.39104263890612584,
+      "n": 6,
+      "pass": true,
+      "speedup": 30.62362639224375,
+      "trials": 3
+    },
+    {
+      "legacyEdges": 28,
+      "legacyMs": 676.984628,
+      "legacyStd": 215.87761839775203,
+      "mriEdges": 7,
+      "mriMs": 12.716586,
+      "mriStd": 1.5698754643297883,
+      "n": 8,
+      "pass": true,
+      "speedup": 53.23635038523705,
+      "trials": 3
+    },
+    {
+      "legacyEdges": 45,
+      "legacyMs": 1069.5705196666668,
+      "legacyStd": 3.0874000962300676,
+      "mriEdges": 9,
+      "mriMs": 12.990963333333333,
+      "mriStd": 2.0342133297018994,
+      "n": 10,
+      "pass": true,
+      "speedup": 82.33188657551442,
+      "trials": 3
+    }
+  ],
+  "schema": "synthio-komamri-live-bench/v1",
+  "sequence": "PulseDesigner.EPI_example",
+  "spins": 32,
+  "timedWith": "time_ns"
+}

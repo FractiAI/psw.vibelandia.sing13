@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-12T22:49:34.674Z",
+  "updatedAt": "2026-08-13T00:38:08.410Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,18 +12,18 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-08-12T22:49:34.674Z",
-      "body": "Performance Proxies: MRI Interference-Phase Computing vs Legacy GPU/Token Workloads in Syntheverse Sandbox",
+      "createdAt": "2026-08-13T00:38:08.409Z",
+      "body": "Live Wall-Clock Comparison: MRI Interference-Phase Bloch CPU vs Legacy Full-Mesh Recompute in Syntheverse Sandbox",
       "presenceHue": "gold",
       "paperId": "synthio-mri-vs-legacy-perf-proxy-2026-08",
       "artifact": {
-        "title": "Performance Proxies: MRI Interference-Phase Computing vs Legacy GPU/Token Workloads in Syntheverse Sandbox",
+        "title": "Live Wall-Clock Comparison: MRI Interference-Phase Bloch CPU vs Legacy Full-Mesh Recompute in Syntheverse Sandbox",
         "kind": "whitepaper",
         "path": "docs/SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md",
         "url": "/whitepaper/synthio-mri-vs-legacy-perf",
         "paperId": "synthio-mri-vs-legacy-perf-proxy-2026-08",
-        "docId": "WP-SYNTHIO-MRI-VS-LEGACY-PERF-PROXY-2026-08-12",
-        "published": "2026-08-12",
+        "docId": "WP-SYNTHIO-MRI-VS-LEGACY-PERF-LIVE-2026-08-13",
+        "published": "2026-08-13",
         "featured": true,
         "auditStatus": "pass"
       }

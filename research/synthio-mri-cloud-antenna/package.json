@@ -1,0 +1,15 @@
+{
+  "name": "synthio-mri-cloud-antenna",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.12",
+  "description": "Synthio MRI simulator / cloud-antenna catalog + activation suite (standalone)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthio-mri-cloud-antenna.git"
+  }
+}

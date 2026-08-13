@@ -9,7 +9,8 @@
 **Classification:** Catalog / simulator-grammar application · Synthio agent domain *(architectural — see Honesty boundary)*  
 **Framework:** Synthio · Syntheverse Sandbox · EGS · NSPFRNP · PRA Snap · Fair Exchange  
 **Agent sync (separate from engine pin):** [`AGENT_SYNC_SYNTHIO.md`](../AGENT_SYNC_SYNTHIO.md)  
-**Standalone suite:** [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/)  
+**GitHub (standalone):** https://github.com/FractiAI/synthio-mri-cloud-antenna  
+**Standalone suite:** [FractiAI/synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna) · monorepo [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/)  
 **One-pager:** [`/synthio-one-pager`](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06  
 **Ship URL:** https://www.ssvibelandiaquestfest24x365.com/synthio
@@ -65,7 +66,7 @@ This paper investigates the **feasibility discussion** of running an industry-st
 | Step | Command / path |
 |------|----------------|
 | Empirical suite | `npm run research:synthio-mri-cloud-antenna` |
-| Suite root | [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/) |
+| Suite root | [FractiAI/synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna) · monorepo [`research/synthio-mri-cloud-antenna/`](../research/synthio-mri-cloud-antenna/) |
 | Constants | `src/constants.mjs` — $\Phi_{\mathrm{EGS}}$, Bloch fixtures, activation modes, Aug 12 amplification window |
 | Experiments | `src/experiments.mjs` — E1–E17 |
 | Activation status | `npm run synthio:activation-status` → `data/activation_state.{json,md}` + coherence log |

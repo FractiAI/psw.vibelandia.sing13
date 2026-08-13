@@ -1,0 +1,35 @@
+name: Publish standalone suite
+
+on:
+  workflow_dispatch:
+    inputs:
+      suite_id:
+        description: 'Suite id (see data/standalone-suite-manifest.json)'
+        required: true
+        type: choice
+        options:
+          - synthio-mri-vs-legacy-perf
+          - synthio-mri-cloud-antenna
+      create_repo:
+        description: 'Create empty FractiAI repo if missing (needs org PAT)'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Publish suite to FractiAI standalone repo
+        env:
+          GH_TOKEN: ${{ secrets.FRACTIAI_ORG_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          FLAGS=""
+          if [ "${{ inputs.create_repo }}" = "true" ]; then FLAGS="--create-repo"; fi
+          node scripts/publish-standalone-suite.mjs "${{ inputs.suite_id }}" $FLAGS

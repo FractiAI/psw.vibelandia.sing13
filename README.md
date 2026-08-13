@@ -70,6 +70,15 @@ Local mirrors live under `research/<name>/`. Many also declare a **canonical sta
 | [digital-pru](https://github.com/FractiAI/digital-pru) | Runnable Digital Pru app |
 | [omniversal-goldilocks-rideshare](https://github.com/FractiAI/omniversal-goldilocks-rideshare) | OGRP rideshare protocol + frontend |
 
+### Synthio · Syntheverse Sandbox (standalone suites)
+
+| Standalone GitHub | Local suite | One line |
+|-------------------|-------------|----------|
+| [synthio-mri-cloud-antenna](https://github.com/FractiAI/synthio-mri-cloud-antenna) | `research/synthio-mri-cloud-antenna/` | MRI simulator / cloud-antenna catalog + activation (creator-only agent) |
+| [synthio-mri-vs-legacy-perf](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) | `research/synthio-mri-vs-legacy-perf/` | Live wall-clock MRI vs legacy full-mesh Bloch / KomaMRI.jl receipts |
+
+Publish / sync: `npm run publish:standalone:synthio-antenna` · `npm run publish:standalone:synthio-perf` (see `scripts/publish-standalone-suite.mjs`).
+
 Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) · live filter: [/papers](https://www.ssvibelandiaquestfest24x365.com/papers). Not every local `research/` folder has a published FractiAI sibling yet (~28 of ~49 declare `repository.url`).
 
 ---

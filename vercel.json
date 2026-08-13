@@ -385,7 +385,8 @@
     { "source": "/listen", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
     { "source": "/listen/", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
     { "source": "/jukebox", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
-    { "source": "/jukebox/", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false }
+    { "source": "/jukebox/", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
+    { "source": "/research/:path*", "destination": "https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/research/:path*", "permanent": false }
   ],
   "headers": [
     {

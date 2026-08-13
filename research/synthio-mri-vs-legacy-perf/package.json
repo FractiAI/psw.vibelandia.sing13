@@ -2,7 +2,18 @@
   "name": "synthio-mri-vs-legacy-perf",
   "private": true,
   "type": "module",
+  "version": "2026.08.13",
+  "description": "Live wall-clock MRI interference-phase vs legacy full-mesh recompute (Node Bloch + optional KomaMRI.jl). Ships inside FractiAI/psw.vibelandia.sing13 — not a separate GitHub sibling.",
   "scripts": {
     "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/psw.vibelandia.sing13.git",
+    "directory": "research/synthio-mri-vs-legacy-perf"
   }
 }

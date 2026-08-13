@@ -70,6 +70,14 @@ Local mirrors live under `research/<name>/`. Many also declare a **canonical sta
 | [digital-pru](https://github.com/FractiAI/digital-pru) | Runnable Digital Pru app |
 | [omniversal-goldilocks-rideshare](https://github.com/FractiAI/omniversal-goldilocks-rideshare) | OGRP rideshare protocol + frontend |
 
+### Synthio (monorepo folder — no FractiAI sibling repo)
+
+| GitHub tree | Local suite | One line |
+|-------------|-------------|----------|
+| [psw.vibelandia.sing13 / research/synthio-mri-vs-legacy-perf](https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/research/synthio-mri-vs-legacy-perf) | `research/synthio-mri-vs-legacy-perf/` | Live wall-clock MRI vs legacy Bloch / KomaMRI.jl |
+
+There is **no** `FractiAI/synthio-mri-vs-legacy-perf` repository. Clone SING 13 and run `npm run research:synthio-mri-vs-legacy-perf`.
+
 Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) · live filter: [/papers](https://www.ssvibelandiaquestfest24x365.com/papers). Not every local `research/` folder has a published FractiAI sibling yet (~28 of ~49 declare `repository.url`).
 
 ---

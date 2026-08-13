@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-13T00:38:08.410Z",
+  "updatedAt": "2026-08-13T14:05:55.836Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-08-13T00:38:08.409Z",
+      "createdAt": "2026-08-13T14:05:55.835Z",
       "body": "Live Wall-Clock Comparison: MRI Interference-Phase Bloch CPU vs Legacy Full-Mesh Recompute in Syntheverse Sandbox",
       "presenceHue": "gold",
       "paperId": "synthio-mri-vs-legacy-perf-proxy-2026-08",

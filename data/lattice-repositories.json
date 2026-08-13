@@ -1,6 +1,6 @@
 {
   "schema": "lattice-repositories/v1",
-  "updatedAt": "2026-08-12",
+  "updatedAt": "2026-08-13",
   "defaultId": "sing13",
   "repositories": [
     {
@@ -71,6 +71,18 @@
       "startingRef": "main",
       "blurb": "Holographic operators · 81-electron · bonds · ILAM.",
       "tags": ["omni-lattice", "synthobs"],
+      "guestSelectable": true
+    },
+    {
+      "id": "synthio-mri-vs-legacy-perf",
+      "name": "psw.vibelandia.sing13",
+      "label": "Synthio · MRI vs legacy live bench",
+      "url": "https://github.com/FractiAI/psw.vibelandia.sing13",
+      "startingRef": "main",
+      "directory": "research/synthio-mri-vs-legacy-perf",
+      "treeUrl": "https://github.com/FractiAI/psw.vibelandia.sing13/tree/main/research/synthio-mri-vs-legacy-perf",
+      "blurb": "Live wall-clock MRI interference-phase vs legacy full-mesh. Not a separate GitHub sibling — folder inside SING 13.",
+      "tags": ["synthio", "mri", "synthobs"],
       "guestSelectable": true
     },
     {

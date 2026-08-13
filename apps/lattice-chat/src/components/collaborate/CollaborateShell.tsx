@@ -5,7 +5,7 @@ import { IntegrationSettings } from '@/components/collaborate/IntegrationSetting
 import { MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
 import { useLatticeStore } from '@/store';
 import { useUnifiedFeed } from '@/feed/store';
-import { unreadCountForPeer, countUnreadDms } from '@/feed/dm';
+import { unreadCountForPeer } from '@/feed/dm';
 import { resolveClientCollabPeerId } from '@/feed/seatIdentity';
 import { syncPublishedPapers } from '@/feed/syncPublishedPapers';
 import {
@@ -27,9 +27,6 @@ export function CollaborateShell({
   agentSeedPrompt?: string | null;
   onAgentSeedConsumed?: () => void;
 }) {
-  const mobileTab = useUnifiedFeed((s) => s.mobileTab);
-  const setMobileTab = useUnifiedFeed((s) => s.setMobileTab);
-  const setLayoutMode = useUnifiedFeed((s) => s.setLayoutMode);
   const peersAll = useUnifiedFeed((s) => s.peers);
   const userEmail = useLatticeStore((s) => s.userEmail);
   const newChat = useLatticeStore((s) => s.newChat);
@@ -165,61 +162,14 @@ export function CollaborateShell({
           </button>
           <IntegrationSettings />
         </div>
-      ) : wide ? (
-        <div className="collab-workspace-split">
+      ) : (
+        <div className="collab-workspace-split" data-testid="collab-workspace-split">
           {agentHalf}
           {dmHalf}
-        </div>
-      ) : (
-        <div className="collab-mobile">
-          <div className="collab-mobile__stage">
-            {mobileTab === 'settings' ? (
-              <IntegrationSettings />
-            ) : mobileTab === 'chat' ? (
-              dmHalf
-            ) : (
-              agentHalf
-            )}
-          </div>
-          <nav className="collab-bottomnav" aria-label="Workspace">
-            <button
-              type="button"
-              className={mobileTab !== 'chat' && mobileTab !== 'settings' ? 'is-active' : undefined}
-              onClick={() => setMobileTab('home')}
-            >
-              Agent
-            </button>
-            <button
-              type="button"
-              className={mobileTab === 'chat' ? 'is-active' : undefined}
-              onClick={() => {
-                setMobileTab('chat');
-                setLayoutMode('chat');
-              }}
-            >
-              DMs
-              <MobileDmBadge />
-            </button>
-            <button
-              type="button"
-              className={mobileTab === 'settings' ? 'is-active' : undefined}
-              onClick={() => setMobileTab('settings')}
-            >
-              Settings
-            </button>
-          </nav>
         </div>
       )}
     </div>
   );
-}
-
-function MobileDmBadge() {
-  const items = useUnifiedFeed((s) => s.items);
-  const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
-  const unread = countUnreadDms(items, dmLastReadAt);
-  if (unread <= 0) return null;
-  return <span className="collab-dm-badge">{unread > 9 ? '9+' : unread}</span>;
 }
 
 function SeatUnreadBadge({ peerId }: { peerId: string }) {

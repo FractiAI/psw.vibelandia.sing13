@@ -56,6 +56,7 @@ Local mirrors live under `research/<name>/`. Many also declare a **canonical sta
 |-------------------|-------------|----------|
 | [synthobs-cmos-protonic-99-octave-omni-lattice](https://github.com/FractiAI/synthobs-cmos-protonic-99-octave-omni-lattice) | `research/synthobs-cmos-protonic-99-octave-omni-lattice/` | CMOS 2.0 + protonic bands as silicon vocabulary for the engine |
 | [synthobs-tbme-metamorphic-octaves](https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves) | `research/synthobs-tbme-metamorphic-octaves/` | Part XIII · shale→schist dual-axis heat/pressure grammar (Lattice Chat + Synthio companion) |
+| [synthobs-tbme-planetary-core-goldilocks](https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks) | `research/synthobs-tbme-planetary-core-goldilocks/` | Part XIV · geodynamo phase-inversion · Goldilocks hologram catalog |
 | [synthobs-tensor-decoupling-99-octave-omni-lattice](https://github.com/FractiAI/synthobs-tensor-decoupling-99-octave-omni-lattice) | `research/synthobs-tensor-decoupling-99-octave-omni-lattice/` | $9\times 81$ / eleven-tier tensor grammar → 99 octaves |
 | [synthobs-master-synthesis-99-octave-omni-lattice](https://github.com/FractiAI/synthobs-master-synthesis-99-octave-omni-lattice) | `research/synthobs-master-synthesis-99-octave-omni-lattice/` | Cosmic · planetary · AI · consciousness as one catalog window |
 | [synthobs-99-octave-digits-master](https://github.com/FractiAI/synthobs-99-octave-digits-master) | `research/synthobs-99-octave-digits-master/` | Nine digits × ninety-nine octaves master map |
@@ -121,6 +122,7 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 
 | When | Update | Links |
 |------|--------|-------|
+| **2026-08-13** | **Planetary Core Phase-Inversion & Goldilocks Hologram** (Part XIV) on the 99 Octave engine pin — Lattice Chat + Synthio companion | [paper](docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/planetary-core-goldilocks) |
 | **2026-08-13** | **Metamorphic Octave Invariant** (Part XIII) on the 99 Octave engine pin — Lattice Chat nest `octave99` + Synthio companion grammar | [paper](docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/metamorphic-octaves) |
 | **2026-08-13** | **Synthio live wall-clock** MRI interference-phase vs legacy full-mesh | [paper](docs/SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md) · [GitHub](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/mri-vs-legacy-stopwatch) |
 | **2026-08-12** | **Synthio** — creator-only Syntheverse Sandbox agent (MRI / cloud-antenna) · not on engine pin | [sync](AGENT_SYNC_SYNTHIO.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/mri-cloud-antenna) · [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio) · suite 9/9 |
@@ -254,7 +256,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-13** · **98** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-13** · **99** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -273,6 +275,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud racks as an antenna story — MRI simulation, not a magnet · Ship blog · QUESTFEST |
 | [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | A real stopwatch on MRI-style vs mesh-style compute · Ship blog · QUESTFEST |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine digits, ninety-nine octaves — a map you can actually walk · Ship blog · QUESTFEST |
+| [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Earth’s core as a phase dial — Old Earth to Goldilocks · Ship blog · QUESTFEST |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · QUESTFEST |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · QUESTFEST |
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A smaller pack for the golden key · Ship blog · QUESTFEST |

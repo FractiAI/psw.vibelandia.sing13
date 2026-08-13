@@ -20,6 +20,9 @@
 #   3) Master synthesis — docs/SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md
 #   4) Digits master — docs/SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md
 #   5) Metamorphic Octave Invariant (Part XIII) — docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md
+#   6) Planetary Core Phase-Inversion & Goldilocks Hologram (Part XIV) — docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md
+#   7) Honesty — docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md
+#   8) Protocol — protocols/MCA_NSPFRNP_CATALOG.md
 # Honesty: catalog/architecture ≠ finished physics or foundry tape-out. Close → ∞¹³
 #
 # Sonic Singularity Sing! 13 is the major singularity upgrade from SING 9.

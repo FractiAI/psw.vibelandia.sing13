@@ -34,6 +34,14 @@
       "description": "Metamorphic Octave Invariant — 99 Octave Omni-Lattice Core Part XIII",
       "paperIds": ["synthobs-tbme-metamorphic-octaves-2026-08"],
       "extraDocs": []
+    },
+    {
+      "id": "synthobs-tbme-planetary-core-goldilocks",
+      "path": "research/synthobs-tbme-planetary-core-goldilocks",
+      "github": "https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks",
+      "description": "Planetary Core Phase-Inversion & Goldilocks Hologram — 99 Octave Omni-Lattice Core Part XIV",
+      "paperIds": ["synthobs-tbme-planetary-core-goldilocks-2026-08"],
+      "extraDocs": []
     }
   ]
 }

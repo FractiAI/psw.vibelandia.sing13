@@ -11,6 +11,7 @@ on:
           - synthio-mri-vs-legacy-perf
           - synthio-mri-cloud-antenna
           - synthobs-tbme-metamorphic-octaves
+          - synthobs-tbme-planetary-core-goldilocks
       create_repo:
         description: 'Create empty FractiAI repo if missing (needs org PAT)'
         required: false

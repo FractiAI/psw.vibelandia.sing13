@@ -36,6 +36,10 @@ function run(cmd, args, opts = {}) {
     env.GH_TOKEN = token;
     env.GITHUB_TOKEN = token;
   }
+  if (opts.stripGitInsteadOf) {
+    env.GIT_CONFIG_GLOBAL = '/dev/null';
+    env.GIT_CONFIG_SYSTEM = '/dev/null';
+  }
   return spawnSync(cmd, args, {
     encoding: 'utf8',
     stdio: opts.quiet ? 'pipe' : 'inherit',
@@ -58,16 +62,16 @@ async function copyTree(src, dest, { skip = [] } = {}) {
 
 async function ensureRepoExists(githubUrl, suiteId, createRepo) {
   const publicRemote = publicGitRemote(githubUrl);
-  const probe = run('git', [...gitAuthArgs(), 'ls-remote', publicRemote], { quiet: true });
-  if (probe.status === 0) {
+  const owner = loadStandaloneSuiteManifest().owner || 'FractiAI';
+  const api = run('gh', ['api', `repos/${owner}/${suiteId}`], { quiet: true });
+  if (api.status === 0) {
     return { remote: publicRemote, created: false };
   }
   if (!createRepo) {
     throw new Error(
-      `Remote missing: ${publicRemote}\nCreate it first:\n  gh repo create FractiAI/${suiteId} --public`,
+      `Remote missing: ${publicRemote}\nCreate it first:\n  gh repo create ${owner}/${suiteId} --public`,
     );
   }
-  const owner = loadStandaloneSuiteManifest().owner || 'FractiAI';
   const create = run(
     'gh',
     ['repo', 'create', `${owner}/${suiteId}`, '--public', '--description', `SynthOBS · ${suiteId} standalone suite`],
@@ -117,20 +121,42 @@ async function main() {
   }
 
   const { remote, created } = await ensureRepoExists(entry.github, suiteId, createRepo);
-  run('git', ['init', '-b', 'main'], { cwd: staging });
-  run('git', ['add', '-A'], { cwd: staging });
+  run('git', ['init', '-b', 'main'], { cwd: staging, stripGitInsteadOf: true });
+  run('git', ['-c', 'user.email=cursoragent@cursor.com', '-c', 'user.name=Cursor Agent', 'add', '-A'], {
+    cwd: staging,
+    stripGitInsteadOf: true,
+  });
   const commit = run(
     'git',
-    ['commit', '-m', `Publish ${suiteId} standalone suite from psw.vibelandia.sing13`],
-    { cwd: staging },
+    [
+      '-c',
+      'user.email=cursoragent@cursor.com',
+      '-c',
+      'user.name=Cursor Agent',
+      'commit',
+      '-m',
+      `Publish ${suiteId} standalone suite from psw.vibelandia.sing13`,
+    ],
+    { cwd: staging, stripGitInsteadOf: true },
   );
   if (commit.status !== 0) {
     console.error('Nothing to commit or commit failed');
     process.exit(1);
   }
-  const push = run('git', [...gitAuthArgs(), 'push', remote, 'HEAD:main', '--force'], { cwd: staging });
+  const token = githubToken();
+  const ownerRepo = publicGitRemote(entry.github).replace(/^https:\/\/github\.com\//i, '');
+  const pushRemote = token
+    ? `https://x-access-token:${token}@github.com/${ownerRepo}`
+    : remote;
+  const push = run('git', ['push', pushRemote, 'HEAD:main', '--force'], {
+    cwd: staging,
+    stripGitInsteadOf: true,
+    quiet: true,
+  });
   if (push.status !== 0) {
+    const err = String(push.stderr || push.stdout || '').replace(/x-access-token:[^@]+@/g, 'x-access-token:***@');
     console.error('Push failed. Staging left at', staging);
+    console.error(err);
     process.exit(1);
   }
   console.log(JSON.stringify({ ok: true, suite: suiteId, remote, created, url: entry.github }, null, 2));

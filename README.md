@@ -109,7 +109,8 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 | When | Update | Links |
 |------|--------|-------|
 | **2026-08-13** | **Metamorphic Octave Invariant** (Part XIII) on the 99 Octave engine pin — Lattice Chat nest `octave99` + Synthio companion grammar | [paper](docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/metamorphic-octaves) |
-| **2026-08-12** | **Synthio** — creator-only Syntheverse Sandbox agent (MRI / cloud-antenna) · not on engine pin | [sync](AGENT_SYNC_SYNTHIO.md) · [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio) · [one-pager](https://www.ssvibelandiaquestfest24x365.com/synthio-one-pager) · suite 9/9 · PRA pass |
+| **2026-08-13** | **Synthio live wall-clock** MRI interference-phase vs legacy full-mesh | [paper](docs/SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md) · [GitHub](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/mri-vs-legacy-stopwatch) |
+| **2026-08-12** | **Synthio** — creator-only Syntheverse Sandbox agent (MRI / cloud-antenna) · not on engine pin | [sync](AGENT_SYNC_SYNTHIO.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/mri-cloud-antenna) · [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio) · suite 9/9 |
 | **2026-08-12** | **CMOS / protonic** transistor-level engine paper + suite + ship note | [paper](docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/cmos-protonic-99-octave) · suite 9/9 · PRA pass |
 | **2026-08-12** | **Tensor decoupling** 9×81 / 11-tier engine paper + suite + ship note | [paper](docs/SYNTHOBS_TENSOR_DECOUPLING_99_OCTAVE_OMNI_LATTICE_2026-08.md) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/tensor-decoupling-99-octave) |
 | **2026-08-12** | **Agent sync** pinned first for all external AIs (`/agent-sync`, Copilot + Cursor always-on) | [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md) |
@@ -228,7 +229,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-13** · **95** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-13** · **98** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -242,7 +243,10 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · QUESTFEST |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · QUESTFEST |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
+| [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · QUESTFEST |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Shale to schist — 99 octaves of heat and pressure · Ship blog · QUESTFEST |
+| [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud racks as an antenna story — MRI simulation, not a magnet · Ship blog · QUESTFEST |
+| [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | A real stopwatch on MRI-style vs mesh-style compute · Ship blog · QUESTFEST |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine digits, ninety-nine octaves — a map you can actually walk · Ship blog · QUESTFEST |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · QUESTFEST |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · QUESTFEST |

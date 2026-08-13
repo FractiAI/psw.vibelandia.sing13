@@ -17,6 +17,7 @@ All **technical work**, **whitepapers**, **research pipelines**, and **support c
 3. Run peer-review audit:
    - `npm run audit:paper -- --id=<registryId>` OR `--path=docs/<file>.md`
 4. Do not feature on bulletin / set `featured: true` until audit receipt shows `pass` or `soft_pass` (or document why structural-only is acceptable).
+5. **Ship-blog + latest six (mandatory):** write `interfaces/blog-*.html`, register in `lib/questfest-blog-posts.mjs`, add `/ship-blog/<slug>` rewrites, run `npm run sync:questfest-blog`. Latest-six is **newest → oldest**. See `.cursor/rules/questfest-ship-blog-latest-six.mdc`.
 
 ## Automatic Cursor agent audit (no API keys)
 
@@ -41,6 +42,7 @@ No `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` required for this path. Manual re-run
 - Keep claims proportionate; use tier tables (narrative vs empirical vs operational).
 - Cross-link `coherence-plain-speak` honesty doc when making strong claims.
 - Register new papers in `lib/whitepaper-registry.mjs` and run audit before push.
+- **Always** author a QUESTFEST ship-blog post and sync `#ship-blog` (six newest papers, most recent first). Do not skip this.
 
 ## API
 

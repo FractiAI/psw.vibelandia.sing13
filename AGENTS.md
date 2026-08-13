@@ -151,6 +151,15 @@ Counts are maintained by the suite — run `npm test` for the authoritative numb
 
 ## Common tasks
 
+### Add a new paper (mandatory ship blog)
+
+1. Register in `lib/whitepaper-registry.mjs` (Honesty + Document ID + PRA Snap).
+2. Write a plain-language ship-blog HTML note under `interfaces/blog-*.html`.
+3. Add the registry id to `lib/questfest-blog-posts.mjs`.
+4. Add `/ship-blog/<slug>` rewrites in `vercel.json`.
+5. Run `npm run sync:questfest-blog` then `npm run sync:interfaces-index`.
+6. Latest-six on QUESTFEST (`#ship-blog`) is **most recent → least recent**. Do not skip the note.
+
 ### Add a new SynthOBS research module
 
 1. Copy the structure from an existing `research/synthobs-*/` module

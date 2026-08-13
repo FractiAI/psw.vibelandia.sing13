@@ -3,6 +3,7 @@
  * Inject six most recent ship-blog notes into interfaces/vibelandia-questfest.html
  * Markers: <!-- QUESTFEST_BLOG_START --> … <!-- QUESTFEST_BLOG_END -->
  * Cards open plain-language posts from lib/questfest-blog-posts.mjs (not bare paper titles).
+ * Latest six is most recent → least recent. Every new paper needs a note.
  */
 import fs from 'node:fs';
 import path from 'node:path';

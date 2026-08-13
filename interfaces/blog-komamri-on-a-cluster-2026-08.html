@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · QUESTFEST</title>
+  <meta name="description" content="Plain-language ship note on sharding KomaMRI.jl across Julia workers for Synthio — architecture outline, not a live edge cluster." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/komamri-on-a-cluster" />
+  <meta property="og:title" content="KomaMRI on more than one machine — a plan, not a live Vercel cluster" />
+  <meta property="og:description" content="Distributed.jl outline for Synthio’s industry MRI simulator. No clinical RF. No claim Vercel already runs the fabric." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">QUESTFEST</a>
+      <a href="/questfest#ship-blog">Ship blog</a>
+      <a href="/papers">Papers</a>
+      <a href="/interfaces/whitepaper-surface.html?id=synthio-komamri-distributed-cloud-2026-08">Whitepaper</a>
+    </nav>
+    <header>
+      <p class="kicker">Ship blog · Synthio · KomaMRI</p>
+      <h1>KomaMRI on more than one machine — a plan, not a live Vercel cluster</h1>
+      <p class="dateline"><strong>SS Vibelandia</strong> — 2026-08-12 — plain speak · Fair Exchange</p>
+    </header>
+
+    <p class="lead">KomaMRI.jl is Synthio’s industry Bloch / k-space reference. This note is the “what if we split the phantom across Julia workers” filing. It is an architecture outline sitting next to the cloud-antenna paper — not a cluster you can SSH into from the QUESTFEST edge.</p>
+
+    <p class="honesty"><strong>Honesty first:</strong> no clinical magnet, no living-tissue RF, no claim that Vercel serverless already runs <code>Distributed.jl</code> / <code>MPI.jl</code>. Companion to the MRI cloud-antenna paper, not a replacement for the 99 Octave engine pin.</p>
+
+    <h2>Why it is on the bulletin</h2>
+    <p>If you are going to talk about cloud-as-antenna, you should also say how the simulator would shard. Julia already has the libraries. We write the map. We do not pretend the map is the running fabric.</p>
+
+    <h2>How to use it on QUESTFEST</h2>
+    <ul class="plain">
+      <li>Read it after the MRI cloud-antenna note — same sandbox, narrower topic.</li>
+      <li>Keep production claims on <code>/synthio-cloud</code> labeled sandbox.</li>
+      <li>Parent suite: <a href="https://github.com/FractiAI/synthio-mri-cloud-antenna">FractiAI/synthio-mri-cloud-antenna</a>.</li>
+    </ul>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=synthio-komamri-distributed-cloud-2026-08">Open the whitepaper</a>
+      <a class="btn btn-ghost" href="/questfest#ship-blog">Back to ship blog</a>
+    </div>
+    <footer>
+      Operator: Synthio · SynthOBS Autonomous Agent family · Syntheverse Sandbox · NSPFRNP · → ∞¹³
+    </footer>
+  </article>
+</body>
+</html>

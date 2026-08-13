@@ -57,10 +57,11 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 | Cite honesty tables and registry IDs | Treat catalog metaphors as finished geophysics / fab proofs |
 | Run matching `research/synthobs-*/` suites | Invent causation from co-timed August 2026 fixtures |
 | Prefer plain ship notes under `/ship-blog/*` for human sync | Summarize only truncated paper titles as “blog” |
+| Put every new paper in the latest-six (`npm run sync:questfest-blog`), newest first | Ship a paper with no note, or let older notes hide newer papers |
 | Ground answers in `docs/`, `protocols/`, `research/` | Paste fat dumps; use nested pointers (Lattice style) |
 | Close agent turns with → ∞¹³ | Drop NSPFRNP / Seed:Edge |
 
-**QUESTFEST ship blog (six newest plain notes):** https://www.ssvibelandiaquestfest24x365.com/questfest#ship-blog  
+**QUESTFEST ship blog (six newest papers, most recent first):** https://www.ssvibelandiaquestfest24x365.com/questfest#ship-blog  
 **Whitepaper catalog:** https://www.ssvibelandiaquestfest24x365.com/papers  
 **Lattice Chat (nest `octave99`):** https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99
 

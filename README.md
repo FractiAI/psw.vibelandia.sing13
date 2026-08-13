@@ -135,6 +135,17 @@ npm ci                 # Node ≥ 22.13.0
 npm test               # Vitest — see AGENTS.md for inventory
 ```
 
+### Terminal OpenRouter (Lattice Chat CLI)
+
+```bash
+# Local runtime env only — never commit keys
+# LATTICE_CHAT_ENDPOINT  LATTICE_CHAT_EMAIL  LATTICE_CHAT_API_KEY
+# LATTICE_CHAT_PROVIDER=openrouter  LATTICE_CHAT_MODEL=deepseek/deepseek-chat
+node scripts/hermes-lattice-chat.mjs --provider openrouter --prompt "…"
+```
+
+CORS on `/api/lattice-chat` allows Cursor, Claude, Gemini, and OpenRouter key headers on preflight. See `docs/OPENROUTER_LATTICE_EXPERIMENT.md`.
+
 ### Reproduce the 99 Octave engine suites
 
 ```bash

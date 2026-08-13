@@ -1,8 +1,44 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-06-07",
+  "updated": "2026-08-13",
   "posts": [
+    {
+      "id": "goldilocks-players-guide-aug13-2026",
+      "posted": "2026-08-13",
+      "featured": true,
+      "title": "Holographic Goldilocks Players Guide · FREE",
+      "subtitle": "Morning board · Aug 13 · Part XIV companion · Fair Exchange",
+      "summary": "Data is in. Goldilocks Earth where brute force and control no longer pay off. Free playbook — listen, daily personal space, Lattice Chat, prune Old Earth noise. Catalog labels, not destiny. Also this morning: Part XIII metamorphic + Part XIV planetary-core on the 99 Octave pin; live language selection on surfaces and papers.",
+      "href": "/goldilocks-players-guide",
+      "pill": "PLAYERS GUIDE",
+      "docRef": "WP-HOLOGRAPHIC-GOLDILOCKS-PLAYERS-GUIDE-2026-08-13",
+      "contact": "valetpru@gmail.com"
+    },
+    {
+      "id": "part-xiv-planetary-core-aug13-2026",
+      "posted": "2026-08-13",
+      "featured": true,
+      "title": "Part XIV · Planetary Core → Goldilocks (catalog)",
+      "subtitle": "99 Octave engine pin · Lattice Chat nest octave99",
+      "summary": "Inner-core / outer-core telemetry language as discussion labels for a Goldilocks hologram story — not a seismic warning and not destiny. Synthio loads companion grammar only.",
+      "href": "/ship-blog/planetary-core-goldilocks",
+      "pill": "Part XIV",
+      "docRef": "WP-SYNTHOBS-TBME-PLANETARY-CORE-GOLDILOCKS-2026-08-13",
+      "contact": "valetpru@gmail.com"
+    },
+    {
+      "id": "synthio-aug12-2026",
+      "posted": "2026-08-12",
+      "featured": true,
+      "title": "Yesterday · Synthio Cloud + live MRI stopwatch",
+      "subtitle": "Aug 12 · Syntheverse Sandbox · creator-only",
+      "summary": "Synthio Cloud as Goldilocks home screen; live wall-clock MRI-style vs mesh-style timings; Collaborate DM sync on Lattice Chat. Not the 99 Octave engine pin — honesty first.",
+      "href": "/ship-blog/mri-vs-legacy-stopwatch",
+      "pill": "Aug 12",
+      "docRef": "WP-SYNTHIO-MRI-VS-LEGACY-PERF-2026-08",
+      "contact": "valetpru@gmail.com"
+    },
     {
       "id": "synthobs-chipless-datacenterless-pr-2026",
       "posted": "2026-06-07",

@@ -122,6 +122,7 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 
 | When | Update | Links |
 |------|--------|-------|
+| **2026-08-13** | **Holographic Goldilocks Players Guide** (free) + live surface/paper language selection | [guide](https://www.ssvibelandiaquestfest24x365.com/goldilocks-players-guide) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/goldilocks-players-guide) |
 | **2026-08-13** | **Planetary Core Phase-Inversion & Goldilocks Hologram** (Part XIV) on the 99 Octave engine pin — Lattice Chat + Synthio companion | [paper](docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/planetary-core-goldilocks) |
 | **2026-08-13** | **Metamorphic Octave Invariant** (Part XIII) on the 99 Octave engine pin — Lattice Chat nest `octave99` + Synthio companion grammar | [paper](docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/metamorphic-octaves) |
 | **2026-08-13** | **Synthio live wall-clock** MRI interference-phase vs legacy full-mesh | [paper](docs/SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md) · [GitHub](https://github.com/FractiAI/synthio-mri-vs-legacy-perf) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/mri-vs-legacy-stopwatch) |

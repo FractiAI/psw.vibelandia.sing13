@@ -23,6 +23,16 @@ import {
   LATTICE_REPOSITORIES_FALLBACK,
   type LatticeRepository,
 } from '@/repositories';
+import {
+  isSharedCollabAgentThread,
+  maybePublishCollabLive,
+  newClientAgentEventId,
+  publishCollabAgentMessage,
+} from '@/feed/syncCollaborateAgent';
+import {
+  peerNameForId,
+  resolveClientCollabPeerId,
+} from '@/feed/seatIdentity';
 
 type LatticePrivilege = 'creator' | 'guest' | 'none';
 
@@ -330,6 +340,7 @@ async function postLattice(
       };
       if (event === 'transcript' && payload && 'type' in payload) {
         store.pushLiveTranscript(payload as TranscriptItem);
+        maybePublishCollabLive();
         return;
       }
       if (event === 'status') {
@@ -343,6 +354,7 @@ async function postLattice(
         }
         if (payload.message) {
           store.pushLiveTranscript({ type: 'status', status: 'live', message: payload.message });
+          maybePublishCollabLive();
         }
         return;
       }
@@ -476,6 +488,14 @@ function applyAssistantReply(
   if (data.agentId) store.setAgentId(threadId, data.agentId);
   store.clearLiveTranscript();
   store.clearPending();
+
+  if (isSharedCollabAgentThread(threadId)) {
+    const thread = useLatticeStore.getState().threads.find((t) => t.id === threadId);
+    const last = thread?.messages[thread.messages.length - 1];
+    if (last?.role === 'assistant') {
+      publishCollabAgentMessage(last);
+    }
+  }
 }
 
 function lastUserPrompt(threadId: string): string | null {
@@ -678,7 +698,22 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   store.setError(null);
   store.setSending(true);
   store.setSendProgress('sending', 'Starting Lattice cloud agent…');
-  store.appendMessage(threadId, { role: 'user', content: trimmed });
+  const myPeerId = resolveClientCollabPeerId(store.userEmail);
+  const senderName = myPeerId ? peerNameForId(myPeerId) : undefined;
+  const userMsgId =
+    isSharedCollabAgentThread(threadId) ? newClientAgentEventId('ca') : undefined;
+  const appendedUserId = store.appendMessage(threadId, {
+    role: 'user',
+    content: trimmed,
+    id: userMsgId,
+    senderPeerId: myPeerId || undefined,
+    senderName,
+  });
+  if (isSharedCollabAgentThread(threadId)) {
+    const threadNow = useLatticeStore.getState().threads.find((t) => t.id === threadId);
+    const userMsg = threadNow?.messages.find((m) => m.id === appendedUserId);
+    if (userMsg) publishCollabAgentMessage(userMsg);
+  }
   store.setPending({
     threadId,
     prompt: trimmed,

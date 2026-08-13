@@ -20,27 +20,27 @@ import { hasProviderApiKey, subscribeProviderKeys } from '@/lib/providerKeys';
 import { useLatticeStore } from '@/store';
 import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
 import { CollabDmBadge } from '@/components/collaborate/CollabDmNotifier';
-import { useUnifiedFeed } from '@/feed/store';
-import { resolveClientCollabPeerId } from '@/feed/seatIdentity';
+import { resolveClientCollabPeerId, peerNameForId } from '@/feed/seatIdentity';
+import { isSharedCollabAgentThread } from '@/feed/syncCollaborateAgent';
 
 export function ChatPane({
   onOpenHistory,
   onNewChat,
   onOpenCollaborate,
-  onBringIntoDm,
   agentSeedPrompt,
   onAgentSeedConsumed,
   compact = false,
+  sharedCollab = false,
 }: {
   onOpenHistory?: () => void;
   onNewChat?: () => void;
   onOpenCollaborate?: () => void;
-  /** Open Collaborate DM with peer and inject this chat session. */
-  onBringIntoDm?: (peerId: string) => void;
   agentSeedPrompt?: string | null;
   onAgentSeedConsumed?: () => void;
   /** Half-height embed inside Collaborate (messages + composer only). */
   compact?: boolean;
+  /** Shared Collaborate session — all seats see inputs/outputs + thought streams. */
+  sharedCollab?: boolean;
 } = {}) {
   const threads = useLatticeStore((s) => s.threads);
   const activeThreadId = useLatticeStore((s) => s.activeThreadId);
@@ -51,6 +51,7 @@ export function ChatPane({
   const statusHint = useLatticeStore((s) => s.statusHint);
   const pending = useLatticeStore((s) => s.pending);
   const liveTranscript = useLatticeStore((s) => s.liveTranscript);
+  const remoteCollabLive = useLatticeStore((s) => s.remoteCollabLive);
   const error = useLatticeStore((s) => s.error);
   const agentMode = useLatticeStore((s) => s.agentMode);
   const modelId = useLatticeStore((s) => s.modelId);
@@ -67,25 +68,21 @@ export function ChatPane({
   const setAgentRoster = useLatticeStore((s) => s.setAgentRoster);
   const hardRefreshEdge = useLatticeStore((s) => s.hardRefreshEdge);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
+  const ensureSharedCollabThread = useLatticeStore((s) => s.ensureSharedCollabThread);
   const [draft, setDraft] = useState('');
   const [elapsedSec, setElapsedSec] = useState(0);
   const [checking, setChecking] = useState(false);
   const [keySettingsOpen, setKeySettingsOpen] = useState(false);
   const [hasEdgeKey, setHasEdgeKey] = useState(false);
-  const [dmMenuOpen, setDmMenuOpen] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const stickToBottomRef = useRef(true);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const resumedRef = useRef(false);
-  const dmMenuRef = useRef<HTMLDivElement>(null);
 
-  const collabPeers = useUnifiedFeed((s) => s.peers);
   const myCollabPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
-  const dmPeers = useMemo(
-    () => (myCollabPeerId ? collabPeers.filter((p) => p.id !== myCollabPeerId) : collabPeers),
-    [collabPeers, myCollabPeerId],
-  );
+  const onSharedSession =
+    sharedCollab || isSharedCollabAgentThread(activeThreadId);
 
   const thread = threads.find((t) => t.id === activeThreadId) ?? null;
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
@@ -110,10 +107,15 @@ export function ChatPane({
       sendPhase === 'recovering' ||
       sendPhase === 'sending' ||
       Boolean(pending));
+  const showRemoteWorking =
+    onSharedSession &&
+    !showWorking &&
+    Boolean(remoteCollabLive?.transcript?.length);
 
   useEffect(() => {
-    ensureThread();
-  }, [ensureThread]);
+    if (sharedCollab) ensureSharedCollabThread();
+    else ensureThread();
+  }, [ensureThread, ensureSharedCollabThread, sharedCollab]);
 
   useEffect(() => {
     if (!agentSeedPrompt) return;
@@ -121,15 +123,6 @@ export function ChatPane({
     onAgentSeedConsumed?.();
     inputRef.current?.focus();
   }, [agentSeedPrompt, onAgentSeedConsumed]);
-
-  useEffect(() => {
-    if (!dmMenuOpen) return;
-    const onDoc = (e: MouseEvent) => {
-      if (!dmMenuRef.current?.contains(e.target as Node)) setDmMenuOpen(false);
-    };
-    document.addEventListener('mousedown', onDoc);
-    return () => document.removeEventListener('mousedown', onDoc);
-  }, [dmMenuOpen]);
 
   useEffect(() => {
     const sync = (detail?: { changed?: boolean }) => {
@@ -313,15 +306,21 @@ export function ChatPane({
                 </span>
               ) : null}
             </h1>
-            <button
-              type="button"
-              className="header-new-chat"
-              aria-label="New chat"
-              disabled={!signedIn}
-              onClick={() => onNewChat?.()}
-            >
-              {compact ? '+' : '+ New chat'}
-            </button>
+            {!sharedCollab ? (
+              <button
+                type="button"
+                className="header-new-chat"
+                aria-label="New chat"
+                disabled={!signedIn}
+                onClick={() => onNewChat?.()}
+              >
+                {compact ? '+' : '+ New chat'}
+              </button>
+            ) : (
+              <span className="header-shared-session" title="Shared with Collaborate seats">
+                Shared session
+              </span>
+            )}
             {!compact && onOpenCollaborate ? (
               <button
                 type="button"
@@ -332,37 +331,6 @@ export function ChatPane({
                 Collaborate
                 <CollabDmBadge />
               </button>
-            ) : null}
-            {!compact && onBringIntoDm && dmPeers.length > 0 ? (
-              <div className="header-dm-menu" ref={dmMenuRef}>
-                <button
-                  type="button"
-                  className="header-collab-btn header-dm-btn"
-                  aria-expanded={dmMenuOpen}
-                  aria-haspopup="menu"
-                  onClick={() => setDmMenuOpen((v) => !v)}
-                >
-                  Bring into DM
-                </button>
-                {dmMenuOpen ? (
-                  <ul className="header-dm-menu__list" role="menu">
-                    {dmPeers.map((p) => (
-                      <li key={p.id} role="none">
-                        <button
-                          type="button"
-                          role="menuitem"
-                          onClick={() => {
-                            setDmMenuOpen(false);
-                            onBringIntoDm(p.id);
-                          }}
-                        >
-                          DM · {p.name}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </div>
             ) : null}
           </div>
           {signedIn && !compact ? (
@@ -489,15 +457,23 @@ export function ChatPane({
             </div>
           </div>
         ) : (
-          thread.messages.map((m) => (
+          thread.messages.map((m) => {
+            const userLabel =
+              m.role === 'user'
+                ? m.senderPeerId && myCollabPeerId && m.senderPeerId !== myCollabPeerId
+                  ? m.senderName || peerNameForId(m.senderPeerId)
+                  : 'You'
+                : null;
+            return (
             <article
               key={m.id}
               className={`bubble bubble-${m.role}`}
               data-role={m.role}
+              data-sender={m.senderPeerId || undefined}
             >
               <span className="bubble-role">
                 {m.role === 'user'
-                  ? 'You'
+                  ? userLabel
                   : m.mode || m.model
                     ? `Valet · ${m.mode || 'agent'}${m.model ? ` · ${m.model}` : ''}`
                     : 'Valet'}
@@ -515,8 +491,21 @@ export function ChatPane({
                 <TokenCompareFooter tokens={m.tokens} />
               ) : null}
             </article>
-          ))
+            );
+          })
         )}
+        {showRemoteWorking ? (
+          <article className="bubble bubble-assistant thinking thought-stream-panel">
+            <div className="thought-stream-head">
+              <span className="bubble-role">
+                {remoteCollabLive?.senderName || 'Seat'} · thinking
+              </span>
+            </div>
+            {remoteCollabLive?.transcript?.length ? (
+              <AgentTranscript items={remoteCollabLive.transcript} live />
+            ) : null}
+          </article>
+        ) : null}
         {showWorking ? (
           <article
             className={`bubble bubble-assistant thinking thought-stream-panel${sendPhase === 'stuck' ? ' thinking--stuck' : ''}`}

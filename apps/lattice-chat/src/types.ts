@@ -57,6 +57,9 @@ export type ChatMessage = {
   mode?: AgentMode;
   lens?: ReasoningLens;
   tokens?: TokenCompare;
+  /** Collaborate shared session — which seat typed this user input. */
+  senderPeerId?: string;
+  senderName?: string;
 };
 
 export type ChatThread = {

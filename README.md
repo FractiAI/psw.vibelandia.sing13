@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-13** · **101** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-14** · **103** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -270,6 +270,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 is a crowded calendar — not a prophecy · Ship blog · QUESTFEST |
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · QUESTFEST |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · QUESTFEST |
+| [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | The Big Picture: Everything is Connected · Ship blog · QUESTFEST |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | Holographic Goldilocks Players Guide — free activation map · Ship blog · QUESTFEST |
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · QUESTFEST |
@@ -324,6 +325,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Ship Map · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
 | [`/interfaces/reno-interpretation.html`](/interfaces/reno-interpretation.html) | The Reno Interpretation · Mirror Lattice · FractiAI |
+| [`/interfaces/ship-blog-index.html`](/interfaces/ship-blog-index.html) | Ship blog · All plain-language notes · QUESTFEST |
 | [`/interfaces/sing13-edge-onboarding.html`](/interfaces/sing13-edge-onboarding.html) | Sonic Singularity Sing! 13 · Edge onboarding · plain talk |
 | [`/interfaces/ss-vibelandia.html`](/interfaces/ss-vibelandia.html) | SS Vibelandia · The Noah’s Ark of the Intelligence Age |
 | [`/interfaces/synthio-cloud.html`](/interfaces/synthio-cloud.html) | Synthio Cloud · home |

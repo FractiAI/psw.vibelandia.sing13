@@ -75,7 +75,7 @@ SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 ```
 
 ### Stack
-- **Runtime:** Node ≥22.13.0, ESM (.mjs)
+- **Runtime:** Node 24.x (Vercel LTS), ESM (.mjs)
 - **Frontend:** React + Vite (apps/), built to static interfaces/
 - **Hosting:** Vercel (serverless functions from api/)
 - **Tests:** Vitest

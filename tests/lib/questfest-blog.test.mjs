@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { listRecentPaperBlogPosts } from '../../lib/questfest-blog.mjs';
+import { listAllShipBlogPosts, listRecentPaperBlogPosts } from '../../lib/questfest-blog.mjs';
 import { blogPostForPaper } from '../../lib/questfest-blog-posts.mjs';
+import { WHITEPAPER_REGISTRY } from '../../lib/whitepaper-registry.mjs';
 
 describe('QUESTFEST latest-six ship blog', () => {
   it('returns six papers ordered most recent to least recent', () => {
@@ -33,5 +34,28 @@ describe('QUESTFEST latest-six ship blog', () => {
     expect(posts.some((p) => p.id.includes('synthio-mri-vs-legacy'))).toBe(true);
     expect(posts.some((p) => p.id.includes('planetary-core-goldilocks'))).toBe(true);
     expect(posts.some((p) => p.id.includes('metamorphic-octaves'))).toBe(true);
+  });
+});
+
+describe('QUESTFEST ship blog corpus', () => {
+  it('gives every eligible featured paper a ship-blog note', () => {
+    const SKIP_IDS = new Set(['lattice-omni-complete-layer-guide-2026-07']);
+    const missing = Object.entries(WHITEPAPER_REGISTRY)
+      .filter(([id, e]) => {
+        if (SKIP_IDS.has(id)) return false;
+        if (e.shipBlog === false) return false;
+        if (e.featured === false || e.surfaceVisible === false) return false;
+        if (!e.file || !e.published) return false;
+        if (e.auditStatus === 'file_missing') return false;
+        return !blogPostForPaper(id);
+      })
+      .map(([id]) => id);
+    expect(missing).toEqual([]);
+  });
+
+  it('lists all registry notes on the ship-blog index', () => {
+    const all = listAllShipBlogPosts();
+    expect(all.length).toBeGreaterThanOrEqual(80);
+    expect(all.some((p) => p.href === '/ship-blog/everything-is-connected')).toBe(true);
   });
 });

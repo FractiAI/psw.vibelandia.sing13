@@ -148,7 +148,7 @@ Older May–June 2026 Digital Pru / clock-skew / nesting-ladder material remains
 ```bash
 git clone https://github.com/FractiAI/psw.vibelandia.sing13.git
 cd psw.vibelandia.sing13
-npm ci                 # Node ≥ 22.13.0
+npm ci                 # Node 24.x (Vercel LTS)
 npm test               # Vitest — see AGENTS.md for inventory
 ```
 

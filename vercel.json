@@ -4,163 +4,910 @@
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
-    { "source": "/", "destination": "/interfaces/vibelandia-questfest.html" },
-    { "source": "/agent-sync", "destination": "/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md" },
-    { "source": "/agent-sync/", "destination": "/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md" },
-    { "source": "/agent-sync-synthio", "destination": "/AGENT_SYNC_SYNTHIO.md" },
-    { "source": "/agent-sync-synthio/", "destination": "/AGENT_SYNC_SYNTHIO.md" },
-    { "source": "/synthio", "destination": "/interfaces/synthio.html" },
-    { "source": "/synthio/", "destination": "/interfaces/synthio.html" },
-    { "source": "/synthio-one-pager", "destination": "/interfaces/synthio-one-pager.html" },
-    { "source": "/synthio-one-pager/", "destination": "/interfaces/synthio-one-pager.html" },
-    { "source": "/synthio-dashboard", "destination": "/interfaces/synthio-dashboard.html" },
-    { "source": "/synthio-dashboard/", "destination": "/interfaces/synthio-dashboard.html" },
-    { "source": "/synthio-cloud", "destination": "/interfaces/synthio-cloud.html" },
-    { "source": "/synthio-cloud/", "destination": "/interfaces/synthio-cloud.html" },
-    { "source": "/interfaces", "destination": "/interfaces/index.html" },
-    { "source": "/interfaces/", "destination": "/interfaces/index.html" },
-    { "source": "/questfest", "destination": "/interfaces/vibelandia-questfest.html" },
-    { "source": "/questfest/", "destination": "/interfaces/vibelandia-questfest.html" },
-    { "source": "/commons", "destination": "/interfaces/commons/index.html" },
-    { "source": "/commons/", "destination": "/interfaces/commons/index.html" },
-    { "source": "/puerto-reno", "destination": "/interfaces/commons/index.html" },
-    { "source": "/puerto-reno/", "destination": "/interfaces/commons/index.html" },
-    { "source": "/commons/host", "destination": "/interfaces/commons/host.html" },
-    { "source": "/commons/host/", "destination": "/interfaces/commons/host.html" },
-    { "source": "/commons/guide", "destination": "/interfaces/commons/guide.html" },
-    { "source": "/commons/guide/", "destination": "/interfaces/commons/guide.html" },
-    { "source": "/commons/chef", "destination": "/interfaces/commons/chef.html" },
-    { "source": "/commons/chef/", "destination": "/interfaces/commons/chef.html" },
-    { "source": "/commons/:asset(.+\\.(?:jpg|jpeg|png|webp|gif|css|svg|ico))", "destination": "/interfaces/commons/:asset" },
-    { "source": "/questfest-guide", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
-    { "source": "/questfest-guide/", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
-    { "source": "/tour-of-the-ship", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
-    { "source": "/tour-of-the-ship/", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
-    { "source": "/guide/2026", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
-    { "source": "/guide/2026/", "destination": "/interfaces/questfest-2026-frontier-guide.html" },
-    { "source": "/fractiai/digital-pru", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/fractiai/digital-pru/", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/interfaces/fractiai/digital-pru", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/sing13-edge-onboarding", "destination": "/interfaces/sing13-edge-onboarding.html" },
-    { "source": "/sing13-edge-onboarding/", "destination": "/interfaces/sing13-edge-onboarding.html" },
-    { "source": "/executive-onboarding", "destination": "/interfaces/executive-onboarding.html" },
-    { "source": "/executive-onboarding/", "destination": "/interfaces/executive-onboarding.html" },
-    { "source": "/lattice", "destination": "/interfaces/lattice-v1618.html" },
-    { "source": "/lattice/", "destination": "/interfaces/lattice-v1618.html" },
-    { "source": "/lattice/brochure", "destination": "/interfaces/lattice-brochure.html" },
-    { "source": "/lattice/brochure/", "destination": "/interfaces/lattice-brochure.html" },
-    { "source": "/lattice/learn", "destination": "/interfaces/lattice-learn-more.html" },
-    { "source": "/lattice/learn/", "destination": "/interfaces/lattice-learn-more.html" },
-    { "source": "/lattice/proof", "destination": "/interfaces/lattice-token-proof.html" },
-    { "source": "/lattice/proof/", "destination": "/interfaces/lattice-token-proof.html" },
-    { "source": "/reno", "destination": "/interfaces/reno-interpretation.html" },
-    { "source": "/reno/", "destination": "/interfaces/reno-interpretation.html" },
-    { "source": "/reno-interpretation", "destination": "/interfaces/reno-interpretation.html" },
-    { "source": "/reno-interpretation/", "destination": "/interfaces/reno-interpretation.html" },
-    { "source": "/singularities", "destination": "/interfaces/awareness-singularities-one-pager.html" },
-    { "source": "/singularities/", "destination": "/interfaces/awareness-singularities-one-pager.html" },
-    { "source": "/awareness-singularities", "destination": "/interfaces/awareness-singularities-one-pager.html" },
-    { "source": "/lattice-v1618", "destination": "/interfaces/lattice-v1618.html" },
-    { "source": "/lattice-v1618/", "destination": "/interfaces/lattice-v1618.html" },
-    { "source": "/lattice-chat", "destination": "/interfaces/lattice-chat/index.html" },
-    { "source": "/lattice-chat/", "destination": "/interfaces/lattice-chat/index.html" },
-    { "source": "/lattice-chat/collaborate", "destination": "/interfaces/lattice-chat/index.html" },
-    { "source": "/collaborate", "destination": "/interfaces/lattice-chat/index.html" },
-    { "source": "/octave99-bridge", "destination": "/interfaces/octave99-bridge/index.html" },
-    { "source": "/octave99-bridge/", "destination": "/interfaces/octave99-bridge/index.html" },
-    { "source": "/octave99-chart", "destination": "/interfaces/octave99-chart/index.html" },
-    { "source": "/octave99-chart/", "destination": "/interfaces/octave99-chart/index.html" },
-    { "source": "/octave99-pricing", "destination": "/interfaces/octave99-pricing.html" },
-    { "source": "/octave99-pricing/", "destination": "/interfaces/octave99-pricing.html" },
-    { "source": "/questfest/pricing", "destination": "/interfaces/octave99-pricing.html" },
-    { "source": "/questfest/pricing/", "destination": "/interfaces/octave99-pricing.html" },
-    { "source": "/ship-blog/everything-is-connected", "destination": "/interfaces/blog-everything-is-connected-2026-08.html" },
-    { "source": "/ship-blog/everything-is-connected/", "destination": "/interfaces/blog-everything-is-connected-2026-08.html" },
-    { "source": "/ship-blog", "destination": "/interfaces/ship-blog-index.html" },
-    { "source": "/ship-blog/", "destination": "/interfaces/ship-blog-index.html" },
-    { "source": "/ship-blog/quakes-and-solar-weather", "destination": "/interfaces/blog-quakes-and-solar-weather-2026-08.html" },
-    { "source": "/ship-blog/quakes-and-solar-weather/", "destination": "/interfaces/blog-quakes-and-solar-weather-2026-08.html" },
-    { "source": "/ship-blog/august-12-catalog-window", "destination": "/interfaces/blog-august-12-catalog-window-2026-08.html" },
-    { "source": "/ship-blog/august-12-catalog-window/", "destination": "/interfaces/blog-august-12-catalog-window-2026-08.html" },
-    { "source": "/ship-blog/colombia-quake-and-purace", "destination": "/interfaces/blog-colombia-quake-and-purace-2026-08.html" },
-    { "source": "/ship-blog/colombia-quake-and-purace/", "destination": "/interfaces/blog-colombia-quake-and-purace-2026-08.html" },
-    { "source": "/ship-blog/nine-digits-ninety-nine-octaves", "destination": "/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html" },
-    { "source": "/ship-blog/nine-digits-ninety-nine-octaves/", "destination": "/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html" },
-    { "source": "/ship-blog/plants-keep-building-under-stress", "destination": "/interfaces/blog-plants-keep-building-under-stress-2026-08.html" },
-    { "source": "/ship-blog/plants-keep-building-under-stress/", "destination": "/interfaces/blog-plants-keep-building-under-stress-2026-08.html" },
-    { "source": "/ship-blog/smaller-golden-key-pack", "destination": "/interfaces/blog-smaller-golden-key-pack-2026-08.html" },
-    { "source": "/ship-blog/smaller-golden-key-pack/", "destination": "/interfaces/blog-smaller-golden-key-pack-2026-08.html" },
-    { "source": "/ship-blog/tensor-decoupling-99-octave", "destination": "/interfaces/blog-tensor-decoupling-99-octave-2026-08.html" },
-    { "source": "/ship-blog/tensor-decoupling-99-octave/", "destination": "/interfaces/blog-tensor-decoupling-99-octave-2026-08.html" },
-    { "source": "/ship-blog/cmos-protonic-99-octave", "destination": "/interfaces/blog-cmos-protonic-99-octave-2026-08.html" },
-    { "source": "/ship-blog/cmos-protonic-99-octave/", "destination": "/interfaces/blog-cmos-protonic-99-octave-2026-08.html" },
-    { "source": "/ship-blog/metamorphic-octaves", "destination": "/interfaces/blog-metamorphic-octaves-2026-08.html" },
-    { "source": "/ship-blog/metamorphic-octaves/", "destination": "/interfaces/blog-metamorphic-octaves-2026-08.html" },
-    { "source": "/ship-blog/mri-vs-legacy-stopwatch", "destination": "/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html" },
-    { "source": "/ship-blog/mri-vs-legacy-stopwatch/", "destination": "/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html" },
-    { "source": "/ship-blog/mri-cloud-antenna", "destination": "/interfaces/blog-mri-cloud-antenna-2026-08.html" },
-    { "source": "/ship-blog/mri-cloud-antenna/", "destination": "/interfaces/blog-mri-cloud-antenna-2026-08.html" },
-    { "source": "/ship-blog/komamri-on-a-cluster", "destination": "/interfaces/blog-komamri-on-a-cluster-2026-08.html" },
-    { "source": "/ship-blog/komamri-on-a-cluster/", "destination": "/interfaces/blog-komamri-on-a-cluster-2026-08.html" },
-    { "source": "/ship-blog/planetary-core-goldilocks", "destination": "/interfaces/blog-planetary-core-goldilocks-2026-08.html" },
-    { "source": "/ship-blog/planetary-core-goldilocks/", "destination": "/interfaces/blog-planetary-core-goldilocks-2026-08.html" },
-    { "source": "/ship-blog/goldilocks-players-guide", "destination": "/interfaces/blog-goldilocks-players-guide-2026-08.html" },
-    { "source": "/ship-blog/goldilocks-players-guide/", "destination": "/interfaces/blog-goldilocks-players-guide-2026-08.html" },
-    { "source": "/goldilocks-players-guide", "destination": "/interfaces/goldilocks-players-guide.html" },
-    { "source": "/goldilocks-players-guide/", "destination": "/interfaces/goldilocks-players-guide.html" },
-    { "source": "/players-guide", "destination": "/interfaces/goldilocks-players-guide.html" },
-    { "source": "/players-guide/", "destination": "/interfaces/goldilocks-players-guide.html" },
-    { "source": "/99-octave-bridge", "destination": "/interfaces/octave99-bridge/index.html" },
-    { "source": "/99-octave-chart", "destination": "/interfaces/octave99-chart/index.html" },
-    { "source": "/99-octave-pricing", "destination": "/interfaces/octave99-pricing.html" },
-    { "source": "/ai-transparency", "destination": "/interfaces/ai-transparency.html" },
-    { "source": "/ai-transparency/", "destination": "/interfaces/ai-transparency.html" },
-    { "source": "/ai-disclosure", "destination": "/interfaces/ai-transparency.html" },
-    { "source": "/ai-disclosure/", "destination": "/interfaces/ai-transparency.html" },
-    { "source": "/goldilocks-deliveries", "destination": "/interfaces/goldilocks-deliveries/index.html" },
-    { "source": "/goldilocks-deliveries/", "destination": "/interfaces/goldilocks-deliveries/index.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge", "destination": "/interfaces/goldilocks-deliveries/index.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/", "destination": "/interfaces/goldilocks-deliveries/index.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/item", "destination": "/interfaces/goldilocks-deliveries/item.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/item.html", "destination": "/interfaces/goldilocks-deliveries/item.html" },
-    { "source": "/goldilocks-deliveries/item", "destination": "/interfaces/goldilocks-deliveries/item.html" },
-    { "source": "/goldilocks-deliveries/item.html", "destination": "/interfaces/goldilocks-deliveries/item.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/pay", "destination": "/interfaces/goldilocks-deliveries/pay.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/pay.html", "destination": "/interfaces/goldilocks-deliveries/pay.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/guest", "destination": "/interfaces/goldilocks-deliveries/guest.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/guest.html", "destination": "/interfaces/goldilocks-deliveries/guest.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/flyer", "destination": "/interfaces/goldilocks-deliveries/flyer.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/flyer.html", "destination": "/interfaces/goldilocks-deliveries/flyer.html" },
-    { "source": "/goldilocks-deliveries/flyer", "destination": "/interfaces/goldilocks-deliveries/flyer.html" },
-    { "source": "/goldilocks-deliveries/flyer.html", "destination": "/interfaces/goldilocks-deliveries/flyer.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/valet", "destination": "/interfaces/goldilocks-deliveries/valet.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/valet.html", "destination": "/interfaces/goldilocks-deliveries/valet.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/partner", "destination": "/interfaces/goldilocks-deliveries/partner.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/partner.html", "destination": "/interfaces/goldilocks-deliveries/partner.html" },
-    { "source": "/hire-a-goldilocks-valet-concierge/assets/:asset", "destination": "/interfaces/goldilocks-deliveries/assets/:asset" },
-    { "source": "/goldilocks-deliveries/assets/:asset", "destination": "/interfaces/goldilocks-deliveries/assets/:asset" },
-    { "source": "/goldilocks-deliveries/pay", "destination": "/interfaces/goldilocks-deliveries/pay.html" },
-    { "source": "/goldilocks-deliveries/pay.html", "destination": "/interfaces/goldilocks-deliveries/pay.html" },
-    { "source": "/goldilocks-deliveries/guest", "destination": "/interfaces/goldilocks-deliveries/guest.html" },
-    { "source": "/goldilocks-deliveries/guest.html", "destination": "/interfaces/goldilocks-deliveries/guest.html" },
-    { "source": "/goldilocks-deliveries/valet", "destination": "/interfaces/goldilocks-deliveries/valet.html" },
-    { "source": "/goldilocks-deliveries/valet.html", "destination": "/interfaces/goldilocks-deliveries/valet.html" },
-    { "source": "/goldilocks-deliveries/partner", "destination": "/interfaces/goldilocks-deliveries/partner.html" },
-    { "source": "/goldilocks-deliveries/partner.html", "destination": "/interfaces/goldilocks-deliveries/partner.html" },
-    { "source": "/room-service", "destination": "/interfaces/goldilocks-deliveries/index.html" },
-    { "source": "/room-service/", "destination": "/interfaces/goldilocks-deliveries/index.html" },
-    { "source": "/my-whiteboard", "destination": "/interfaces/my-whiteboard.html" },
-    { "source": "/my-whiteboard/", "destination": "/interfaces/my-whiteboard.html" },
-    { "source": "/harmonopoly", "destination": "/interfaces/harmonopoly.html" },
-    { "source": "/harmonopoly/", "destination": "/interfaces/harmonopoly.html" },
-    { "source": "/harmonopoly-guide", "destination": "/interfaces/harmonopoly-guide.html" },
-    { "source": "/harmonopoly-guide/", "destination": "/interfaces/harmonopoly-guide.html" },
-    { "source": "/harmonopoly/guide", "destination": "/interfaces/harmonopoly-guide.html" },
-    { "source": "/harmonopoly/guide/", "destination": "/interfaces/harmonopoly-guide.html" },
-    { "source": "/executive-ai", "destination": "/interfaces/executive-ai-onboard/index.html" },
-    { "source": "/executive-ai/", "destination": "/interfaces/executive-ai-onboard/index.html" },
-    { "source": "/get-started", "destination": "/interfaces/get-started.html" },
-    { "source": "/get-started/", "destination": "/interfaces/get-started.html" },
+    {
+      "source": "/",
+      "destination": "/interfaces/vibelandia-questfest.html"
+    },
+    {
+      "source": "/agent-sync",
+      "destination": "/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md"
+    },
+    {
+      "source": "/agent-sync/",
+      "destination": "/AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md"
+    },
+    {
+      "source": "/agent-sync-synthio",
+      "destination": "/AGENT_SYNC_SYNTHIO.md"
+    },
+    {
+      "source": "/agent-sync-synthio/",
+      "destination": "/AGENT_SYNC_SYNTHIO.md"
+    },
+    {
+      "source": "/synthio",
+      "destination": "/interfaces/synthio.html"
+    },
+    {
+      "source": "/synthio/",
+      "destination": "/interfaces/synthio.html"
+    },
+    {
+      "source": "/synthio-one-pager",
+      "destination": "/interfaces/synthio-one-pager.html"
+    },
+    {
+      "source": "/synthio-one-pager/",
+      "destination": "/interfaces/synthio-one-pager.html"
+    },
+    {
+      "source": "/synthio-dashboard",
+      "destination": "/interfaces/synthio-dashboard.html"
+    },
+    {
+      "source": "/synthio-dashboard/",
+      "destination": "/interfaces/synthio-dashboard.html"
+    },
+    {
+      "source": "/synthio-cloud",
+      "destination": "/interfaces/synthio-cloud.html"
+    },
+    {
+      "source": "/synthio-cloud/",
+      "destination": "/interfaces/synthio-cloud.html"
+    },
+    {
+      "source": "/interfaces",
+      "destination": "/interfaces/index.html"
+    },
+    {
+      "source": "/interfaces/",
+      "destination": "/interfaces/index.html"
+    },
+    {
+      "source": "/questfest",
+      "destination": "/interfaces/vibelandia-questfest.html"
+    },
+    {
+      "source": "/questfest/",
+      "destination": "/interfaces/vibelandia-questfest.html"
+    },
+    {
+      "source": "/commons",
+      "destination": "/interfaces/commons/index.html"
+    },
+    {
+      "source": "/commons/",
+      "destination": "/interfaces/commons/index.html"
+    },
+    {
+      "source": "/puerto-reno",
+      "destination": "/interfaces/commons/index.html"
+    },
+    {
+      "source": "/puerto-reno/",
+      "destination": "/interfaces/commons/index.html"
+    },
+    {
+      "source": "/commons/host",
+      "destination": "/interfaces/commons/host.html"
+    },
+    {
+      "source": "/commons/host/",
+      "destination": "/interfaces/commons/host.html"
+    },
+    {
+      "source": "/commons/guide",
+      "destination": "/interfaces/commons/guide.html"
+    },
+    {
+      "source": "/commons/guide/",
+      "destination": "/interfaces/commons/guide.html"
+    },
+    {
+      "source": "/commons/chef",
+      "destination": "/interfaces/commons/chef.html"
+    },
+    {
+      "source": "/commons/chef/",
+      "destination": "/interfaces/commons/chef.html"
+    },
+    {
+      "source": "/commons/:asset(.+\\.(?:jpg|jpeg|png|webp|gif|css|svg|ico))",
+      "destination": "/interfaces/commons/:asset"
+    },
+    {
+      "source": "/questfest-guide",
+      "destination": "/interfaces/questfest-2026-frontier-guide.html"
+    },
+    {
+      "source": "/questfest-guide/",
+      "destination": "/interfaces/questfest-2026-frontier-guide.html"
+    },
+    {
+      "source": "/tour-of-the-ship",
+      "destination": "/interfaces/questfest-2026-frontier-guide.html"
+    },
+    {
+      "source": "/tour-of-the-ship/",
+      "destination": "/interfaces/questfest-2026-frontier-guide.html"
+    },
+    {
+      "source": "/guide/2026",
+      "destination": "/interfaces/questfest-2026-frontier-guide.html"
+    },
+    {
+      "source": "/guide/2026/",
+      "destination": "/interfaces/questfest-2026-frontier-guide.html"
+    },
+    {
+      "source": "/fractiai/digital-pru",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/fractiai/digital-pru/",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/interfaces/fractiai/digital-pru",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/sing13-edge-onboarding",
+      "destination": "/interfaces/sing13-edge-onboarding.html"
+    },
+    {
+      "source": "/sing13-edge-onboarding/",
+      "destination": "/interfaces/sing13-edge-onboarding.html"
+    },
+    {
+      "source": "/executive-onboarding",
+      "destination": "/interfaces/executive-onboarding.html"
+    },
+    {
+      "source": "/executive-onboarding/",
+      "destination": "/interfaces/executive-onboarding.html"
+    },
+    {
+      "source": "/lattice",
+      "destination": "/interfaces/lattice-v1618.html"
+    },
+    {
+      "source": "/lattice/",
+      "destination": "/interfaces/lattice-v1618.html"
+    },
+    {
+      "source": "/lattice/brochure",
+      "destination": "/interfaces/lattice-brochure.html"
+    },
+    {
+      "source": "/lattice/brochure/",
+      "destination": "/interfaces/lattice-brochure.html"
+    },
+    {
+      "source": "/lattice/learn",
+      "destination": "/interfaces/lattice-learn-more.html"
+    },
+    {
+      "source": "/lattice/learn/",
+      "destination": "/interfaces/lattice-learn-more.html"
+    },
+    {
+      "source": "/lattice/proof",
+      "destination": "/interfaces/lattice-token-proof.html"
+    },
+    {
+      "source": "/lattice/proof/",
+      "destination": "/interfaces/lattice-token-proof.html"
+    },
+    {
+      "source": "/reno",
+      "destination": "/interfaces/reno-interpretation.html"
+    },
+    {
+      "source": "/reno/",
+      "destination": "/interfaces/reno-interpretation.html"
+    },
+    {
+      "source": "/reno-interpretation",
+      "destination": "/interfaces/reno-interpretation.html"
+    },
+    {
+      "source": "/reno-interpretation/",
+      "destination": "/interfaces/reno-interpretation.html"
+    },
+    {
+      "source": "/singularities",
+      "destination": "/interfaces/awareness-singularities-one-pager.html"
+    },
+    {
+      "source": "/singularities/",
+      "destination": "/interfaces/awareness-singularities-one-pager.html"
+    },
+    {
+      "source": "/awareness-singularities",
+      "destination": "/interfaces/awareness-singularities-one-pager.html"
+    },
+    {
+      "source": "/lattice-v1618",
+      "destination": "/interfaces/lattice-v1618.html"
+    },
+    {
+      "source": "/lattice-v1618/",
+      "destination": "/interfaces/lattice-v1618.html"
+    },
+    {
+      "source": "/lattice-chat",
+      "destination": "/interfaces/lattice-chat/index.html"
+    },
+    {
+      "source": "/lattice-chat/",
+      "destination": "/interfaces/lattice-chat/index.html"
+    },
+    {
+      "source": "/lattice-chat/collaborate",
+      "destination": "/interfaces/lattice-chat/index.html"
+    },
+    {
+      "source": "/collaborate",
+      "destination": "/interfaces/lattice-chat/index.html"
+    },
+    {
+      "source": "/octave99-bridge",
+      "destination": "/interfaces/octave99-bridge/index.html"
+    },
+    {
+      "source": "/octave99-bridge/",
+      "destination": "/interfaces/octave99-bridge/index.html"
+    },
+    {
+      "source": "/octave99-chart",
+      "destination": "/interfaces/octave99-chart/index.html"
+    },
+    {
+      "source": "/octave99-chart/",
+      "destination": "/interfaces/octave99-chart/index.html"
+    },
+    {
+      "source": "/octave99-pricing",
+      "destination": "/interfaces/octave99-pricing.html"
+    },
+    {
+      "source": "/octave99-pricing/",
+      "destination": "/interfaces/octave99-pricing.html"
+    },
+    {
+      "source": "/questfest/pricing",
+      "destination": "/interfaces/octave99-pricing.html"
+    },
+    {
+      "source": "/questfest/pricing/",
+      "destination": "/interfaces/octave99-pricing.html"
+    },
+    {
+      "source": "/ship-blog/everything-is-connected",
+      "destination": "/interfaces/blog-everything-is-connected-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/everything-is-connected/",
+      "destination": "/interfaces/blog-everything-is-connected-2026-08.html"
+    },
+    {
+      "source": "/ship-blog",
+      "destination": "/interfaces/ship-blog-index.html"
+    },
+    {
+      "source": "/ship-blog/",
+      "destination": "/interfaces/ship-blog-index.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-ef-multi-octave",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-ef-multi-octave.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-siqhft-ef-2187-monograph",
+      "destination": "/interfaces/blog-synthobs-siqhft-ef-2187-monograph.html"
+    },
+    {
+      "source": "/ship-blog/tbme-narrow-gate-asi",
+      "destination": "/interfaces/blog-tbme-narrow-gate-asi.html"
+    },
+    {
+      "source": "/ship-blog/tbme-equine-asi",
+      "destination": "/interfaces/blog-tbme-equine-asi.html"
+    },
+    {
+      "source": "/ship-blog/tbme-higgs-awareness",
+      "destination": "/interfaces/blog-tbme-higgs-awareness.html"
+    },
+    {
+      "source": "/ship-blog/tbme-nodal-nine-singularity",
+      "destination": "/interfaces/blog-tbme-nodal-nine-singularity.html"
+    },
+    {
+      "source": "/ship-blog/tbme-spin-phase-polarity",
+      "destination": "/interfaces/blog-tbme-spin-phase-polarity.html"
+    },
+    {
+      "source": "/ship-blog/tbme-thermal-meissner",
+      "destination": "/interfaces/blog-tbme-thermal-meissner.html"
+    },
+    {
+      "source": "/ship-blog/tbme-internal-kerr-newman",
+      "destination": "/interfaces/blog-tbme-internal-kerr-newman.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-tbme-protein-phase-collapse",
+      "destination": "/interfaces/blog-synthobs-tbme-protein-phase-collapse.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-prime-hourglass-skeleton",
+      "destination": "/interfaces/blog-synthobs-omni-prime-hourglass-skeleton.html"
+    },
+    {
+      "source": "/ship-blog/tbme-recursive-field-drag",
+      "destination": "/interfaces/blog-tbme-recursive-field-drag.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-si-irreducible-minimum",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-si-irreducible-minimum.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-thalia-goldilocks",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-thalia-goldilocks.html"
+    },
+    {
+      "source": "/ship-blog/tbme-spherical-solar-focus",
+      "destination": "/interfaces/blog-tbme-spherical-solar-focus.html"
+    },
+    {
+      "source": "/ship-blog/tbme-blackhole-filaments-reno",
+      "destination": "/interfaces/blog-tbme-blackhole-filaments-reno.html"
+    },
+    {
+      "source": "/ship-blog/tbme-blackhole-magnetic-layer",
+      "destination": "/interfaces/blog-tbme-blackhole-magnetic-layer.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-tbme-nonlocal-field-phaselock",
+      "destination": "/interfaces/blog-synthobs-tbme-nonlocal-field-phaselock.html"
+    },
+    {
+      "source": "/ship-blog/tbme-superposition-reno-interpretation",
+      "destination": "/interfaces/blog-tbme-superposition-reno-interpretation.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-81-orbital-singularity",
+      "destination": "/interfaces/blog-synthobs-81-orbital-singularity.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-endogenous-phase",
+      "destination": "/interfaces/blog-synthobs-endogenous-phase.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-histone-phase-operator",
+      "destination": "/interfaces/blog-synthobs-histone-phase-operator.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-phase-toxicity",
+      "destination": "/interfaces/blog-synthobs-phase-toxicity.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-prion-refold",
+      "destination": "/interfaces/blog-synthobs-prion-refold.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-mag-substrate",
+      "destination": "/interfaces/blog-synthobs-mag-substrate.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-report-card-q3-2026",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-report-card-q3-2026.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-pchpp",
+      "destination": "/interfaces/blog-synthobs-pchpp.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-recursive-attn-mag",
+      "destination": "/interfaces/blog-synthobs-recursive-attn-mag.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-genomic-determinism",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-genomic-determinism.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-hiv",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-hiv.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-pogonomyrmex",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-pogonomyrmex.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-prompt-capture",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-prompt-capture.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-omni-lattice-unification",
+      "destination": "/interfaces/blog-synthobs-omni-lattice-unification.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-phase-locked-chemical-bonds",
+      "destination": "/interfaces/blog-synthobs-phase-locked-chemical-bonds.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-proof-by-continuous-execution",
+      "destination": "/interfaces/blog-synthobs-proof-by-continuous-execution.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-three-foundational-proteins",
+      "destination": "/interfaces/blog-synthobs-three-foundational-proteins.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-unified-neutronic-agent",
+      "destination": "/interfaces/blog-synthobs-unified-neutronic-agent.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-x-chromosome-holographic",
+      "destination": "/interfaces/blog-synthobs-x-chromosome-holographic.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-y-chromosome-holographic",
+      "destination": "/interfaces/blog-synthobs-y-chromosome-holographic.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-dna-lattice-holograph",
+      "destination": "/interfaces/blog-synthobs-dna-lattice-holograph.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-egs-81-electrons",
+      "destination": "/interfaces/blog-synthobs-egs-81-electrons.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-egs-euler-phase-lock",
+      "destination": "/interfaces/blog-synthobs-egs-euler-phase-lock.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-holographic-operators",
+      "destination": "/interfaces/blog-synthobs-holographic-operators.html"
+    },
+    {
+      "source": "/ship-blog/awareness-singularities-0-81",
+      "destination": "/interfaces/blog-awareness-singularities-0-81.html"
+    },
+    {
+      "source": "/ship-blog/lattice-noahs-ark-metaphor",
+      "destination": "/interfaces/blog-lattice-noahs-ark-metaphor.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-cytographic-holographic-nucleus",
+      "destination": "/interfaces/blog-synthobs-cytographic-holographic-nucleus.html"
+    },
+    {
+      "source": "/ship-blog/omniversal-nested-agent-lattice",
+      "destination": "/interfaces/blog-omniversal-nested-agent-lattice.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-egs-planck-scale-harmonic",
+      "destination": "/interfaces/blog-synthobs-egs-planck-scale-harmonic.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-egs-epigenetic-phase-locking",
+      "destination": "/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html"
+    },
+    {
+      "source": "/ship-blog/omniversal-goldilocks-rideshare",
+      "destination": "/interfaces/blog-omniversal-goldilocks-rideshare.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-chromosomal-electrodynamics",
+      "destination": "/interfaces/blog-synthobs-chromosomal-electrodynamics.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-cross-scale-biological-antennae",
+      "destination": "/interfaces/blog-synthobs-cross-scale-biological-antennae.html"
+    },
+    {
+      "source": "/ship-blog/recursive-attention-loop",
+      "destination": "/interfaces/blog-recursive-attention-loop.html"
+    },
+    {
+      "source": "/ship-blog/ac-hmm-satellites",
+      "destination": "/interfaces/blog-ac-hmm-satellites.html"
+    },
+    {
+      "source": "/ship-blog/eesm-gpu-telemetry",
+      "destination": "/interfaces/blog-eesm-gpu-telemetry.html"
+    },
+    {
+      "source": "/ship-blog/egs-nlrf",
+      "destination": "/interfaces/blog-egs-nlrf.html"
+    },
+    {
+      "source": "/ship-blog/hgt-psd-covariance",
+      "destination": "/interfaces/blog-hgt-psd-covariance.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-emergent-sync-multi-agent",
+      "destination": "/interfaces/blog-synthobs-emergent-sync-multi-agent.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-geomagnetic-wavefield-multitaxa",
+      "destination": "/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html"
+    },
+    {
+      "source": "/ship-blog/nspfrnp-snap-peer-review-audit",
+      "destination": "/interfaces/blog-nspfrnp-snap-peer-review-audit.html"
+    },
+    {
+      "source": "/ship-blog/digital-pru-synthobs-mca",
+      "destination": "/interfaces/blog-digital-pru-synthobs-mca.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-prime-linear-compression",
+      "destination": "/interfaces/blog-goldilocks-prime-linear-compression.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-transfinite-inversion",
+      "destination": "/interfaces/blog-goldilocks-transfinite-inversion.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-hex-organ-engine",
+      "destination": "/interfaces/blog-synthobs-hex-organ-engine.html"
+    },
+    {
+      "source": "/ship-blog/synthobs-intelligence-density",
+      "destination": "/interfaces/blog-synthobs-intelligence-density.html"
+    },
+    {
+      "source": "/ship-blog/omniversal-node-alignment",
+      "destination": "/interfaces/blog-omniversal-node-alignment.html"
+    },
+    {
+      "source": "/ship-blog/geomagnetic-herbivore-2026",
+      "destination": "/interfaces/blog-geomagnetic-herbivore-2026.html"
+    },
+    {
+      "source": "/ship-blog/syntheverse-sandbox-comprehensive",
+      "destination": "/interfaces/blog-syntheverse-sandbox-comprehensive.html"
+    },
+    {
+      "source": "/ship-blog/syn-sun-wavefield-oscillator",
+      "destination": "/interfaces/blog-syn-sun-wavefield-oscillator.html"
+    },
+    {
+      "source": "/ship-blog/quakes-and-solar-weather",
+      "destination": "/interfaces/blog-quakes-and-solar-weather-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/quakes-and-solar-weather/",
+      "destination": "/interfaces/blog-quakes-and-solar-weather-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/august-12-catalog-window",
+      "destination": "/interfaces/blog-august-12-catalog-window-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/august-12-catalog-window/",
+      "destination": "/interfaces/blog-august-12-catalog-window-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/colombia-quake-and-purace",
+      "destination": "/interfaces/blog-colombia-quake-and-purace-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/colombia-quake-and-purace/",
+      "destination": "/interfaces/blog-colombia-quake-and-purace-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/nine-digits-ninety-nine-octaves",
+      "destination": "/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/nine-digits-ninety-nine-octaves/",
+      "destination": "/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/plants-keep-building-under-stress",
+      "destination": "/interfaces/blog-plants-keep-building-under-stress-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/plants-keep-building-under-stress/",
+      "destination": "/interfaces/blog-plants-keep-building-under-stress-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/smaller-golden-key-pack",
+      "destination": "/interfaces/blog-smaller-golden-key-pack-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/smaller-golden-key-pack/",
+      "destination": "/interfaces/blog-smaller-golden-key-pack-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/tensor-decoupling-99-octave",
+      "destination": "/interfaces/blog-tensor-decoupling-99-octave-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/tensor-decoupling-99-octave/",
+      "destination": "/interfaces/blog-tensor-decoupling-99-octave-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/cmos-protonic-99-octave",
+      "destination": "/interfaces/blog-cmos-protonic-99-octave-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/cmos-protonic-99-octave/",
+      "destination": "/interfaces/blog-cmos-protonic-99-octave-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/metamorphic-octaves",
+      "destination": "/interfaces/blog-metamorphic-octaves-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/metamorphic-octaves/",
+      "destination": "/interfaces/blog-metamorphic-octaves-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/mri-vs-legacy-stopwatch",
+      "destination": "/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/mri-vs-legacy-stopwatch/",
+      "destination": "/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/mri-cloud-antenna",
+      "destination": "/interfaces/blog-mri-cloud-antenna-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/mri-cloud-antenna/",
+      "destination": "/interfaces/blog-mri-cloud-antenna-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/komamri-on-a-cluster",
+      "destination": "/interfaces/blog-komamri-on-a-cluster-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/komamri-on-a-cluster/",
+      "destination": "/interfaces/blog-komamri-on-a-cluster-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/planetary-core-goldilocks",
+      "destination": "/interfaces/blog-planetary-core-goldilocks-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/planetary-core-goldilocks/",
+      "destination": "/interfaces/blog-planetary-core-goldilocks-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-players-guide",
+      "destination": "/interfaces/blog-goldilocks-players-guide-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-players-guide/",
+      "destination": "/interfaces/blog-goldilocks-players-guide-2026-08.html"
+    },
+    {
+      "source": "/goldilocks-players-guide",
+      "destination": "/interfaces/goldilocks-players-guide.html"
+    },
+    {
+      "source": "/goldilocks-players-guide/",
+      "destination": "/interfaces/goldilocks-players-guide.html"
+    },
+    {
+      "source": "/players-guide",
+      "destination": "/interfaces/goldilocks-players-guide.html"
+    },
+    {
+      "source": "/players-guide/",
+      "destination": "/interfaces/goldilocks-players-guide.html"
+    },
+    {
+      "source": "/99-octave-bridge",
+      "destination": "/interfaces/octave99-bridge/index.html"
+    },
+    {
+      "source": "/99-octave-chart",
+      "destination": "/interfaces/octave99-chart/index.html"
+    },
+    {
+      "source": "/99-octave-pricing",
+      "destination": "/interfaces/octave99-pricing.html"
+    },
+    {
+      "source": "/ai-transparency",
+      "destination": "/interfaces/ai-transparency.html"
+    },
+    {
+      "source": "/ai-transparency/",
+      "destination": "/interfaces/ai-transparency.html"
+    },
+    {
+      "source": "/ai-disclosure",
+      "destination": "/interfaces/ai-transparency.html"
+    },
+    {
+      "source": "/ai-disclosure/",
+      "destination": "/interfaces/ai-transparency.html"
+    },
+    {
+      "source": "/goldilocks-deliveries",
+      "destination": "/interfaces/goldilocks-deliveries/index.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/",
+      "destination": "/interfaces/goldilocks-deliveries/index.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge",
+      "destination": "/interfaces/goldilocks-deliveries/index.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/",
+      "destination": "/interfaces/goldilocks-deliveries/index.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/item",
+      "destination": "/interfaces/goldilocks-deliveries/item.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/item.html",
+      "destination": "/interfaces/goldilocks-deliveries/item.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/item",
+      "destination": "/interfaces/goldilocks-deliveries/item.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/item.html",
+      "destination": "/interfaces/goldilocks-deliveries/item.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/pay",
+      "destination": "/interfaces/goldilocks-deliveries/pay.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/pay.html",
+      "destination": "/interfaces/goldilocks-deliveries/pay.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/guest",
+      "destination": "/interfaces/goldilocks-deliveries/guest.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/guest.html",
+      "destination": "/interfaces/goldilocks-deliveries/guest.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/flyer",
+      "destination": "/interfaces/goldilocks-deliveries/flyer.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/flyer.html",
+      "destination": "/interfaces/goldilocks-deliveries/flyer.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/flyer",
+      "destination": "/interfaces/goldilocks-deliveries/flyer.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/flyer.html",
+      "destination": "/interfaces/goldilocks-deliveries/flyer.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/valet",
+      "destination": "/interfaces/goldilocks-deliveries/valet.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/valet.html",
+      "destination": "/interfaces/goldilocks-deliveries/valet.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/partner",
+      "destination": "/interfaces/goldilocks-deliveries/partner.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/partner.html",
+      "destination": "/interfaces/goldilocks-deliveries/partner.html"
+    },
+    {
+      "source": "/hire-a-goldilocks-valet-concierge/assets/:asset",
+      "destination": "/interfaces/goldilocks-deliveries/assets/:asset"
+    },
+    {
+      "source": "/goldilocks-deliveries/assets/:asset",
+      "destination": "/interfaces/goldilocks-deliveries/assets/:asset"
+    },
+    {
+      "source": "/goldilocks-deliveries/pay",
+      "destination": "/interfaces/goldilocks-deliveries/pay.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/pay.html",
+      "destination": "/interfaces/goldilocks-deliveries/pay.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/guest",
+      "destination": "/interfaces/goldilocks-deliveries/guest.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/guest.html",
+      "destination": "/interfaces/goldilocks-deliveries/guest.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/valet",
+      "destination": "/interfaces/goldilocks-deliveries/valet.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/valet.html",
+      "destination": "/interfaces/goldilocks-deliveries/valet.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/partner",
+      "destination": "/interfaces/goldilocks-deliveries/partner.html"
+    },
+    {
+      "source": "/goldilocks-deliveries/partner.html",
+      "destination": "/interfaces/goldilocks-deliveries/partner.html"
+    },
+    {
+      "source": "/room-service",
+      "destination": "/interfaces/goldilocks-deliveries/index.html"
+    },
+    {
+      "source": "/room-service/",
+      "destination": "/interfaces/goldilocks-deliveries/index.html"
+    },
+    {
+      "source": "/my-whiteboard",
+      "destination": "/interfaces/my-whiteboard.html"
+    },
+    {
+      "source": "/my-whiteboard/",
+      "destination": "/interfaces/my-whiteboard.html"
+    },
+    {
+      "source": "/harmonopoly",
+      "destination": "/interfaces/harmonopoly.html"
+    },
+    {
+      "source": "/harmonopoly/",
+      "destination": "/interfaces/harmonopoly.html"
+    },
+    {
+      "source": "/harmonopoly-guide",
+      "destination": "/interfaces/harmonopoly-guide.html"
+    },
+    {
+      "source": "/harmonopoly-guide/",
+      "destination": "/interfaces/harmonopoly-guide.html"
+    },
+    {
+      "source": "/harmonopoly/guide",
+      "destination": "/interfaces/harmonopoly-guide.html"
+    },
+    {
+      "source": "/harmonopoly/guide/",
+      "destination": "/interfaces/harmonopoly-guide.html"
+    },
+    {
+      "source": "/executive-ai",
+      "destination": "/interfaces/executive-ai-onboard/index.html"
+    },
+    {
+      "source": "/executive-ai/",
+      "destination": "/interfaces/executive-ai-onboard/index.html"
+    },
+    {
+      "source": "/get-started",
+      "destination": "/interfaces/get-started.html"
+    },
+    {
+      "source": "/get-started/",
+      "destination": "/interfaces/get-started.html"
+    },
     {
       "source": "/about/reno-holographic-swamp-beats-caliente",
       "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
@@ -185,112 +932,430 @@
       "source": "/plain-machote-moderno-reno-swamp/",
       "destination": "/interfaces/plain-machote-moderno-reno-swamp.html"
     },
-    { "source": "/ss-vibelandia", "destination": "/interfaces/ss-vibelandia.html" },
-    { "source": "/ss-vibelandia/", "destination": "/interfaces/ss-vibelandia.html" },
-    { "source": "/noahs-ark", "destination": "/interfaces/ss-vibelandia.html" },
-    { "source": "/noahs-ark/", "destination": "/interfaces/ss-vibelandia.html" },
-    { "source": "/sun", "destination": "/interfaces/look-at-the-sun.html" },
-    { "source": "/sun/", "destination": "/interfaces/look-at-the-sun.html" },
-    { "source": "/look-at-the-sun", "destination": "/interfaces/look-at-the-sun.html" },
-    { "source": "/look-at-the-sun/", "destination": "/interfaces/look-at-the-sun.html" },
-    { "source": "/etcon", "destination": "/interfaces/vibelandia-questfest.html" },
-    { "source": "/etcon/", "destination": "/interfaces/vibelandia-questfest.html" },
-    { "source": "/interfaces/etcon-reno-desert.html", "destination": "/interfaces/vibelandia-questfest.html" },
-    { "source": "/interfaces/press-release-etcon-reno-desert-may-2026.html", "destination": "/interfaces/press-releases.html" },
-    { "source": "/press", "destination": "/interfaces/press-releases.html" },
-    { "source": "/press/", "destination": "/interfaces/press-releases.html" },
-    { "source": "/mythos", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
-    { "source": "/mythos/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
-    { "source": "/coherence", "destination": "/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" },
-    { "source": "/coherence/", "destination": "/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html" },
-    { "source": "/mining-ops", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
-    { "source": "/mining-ops/", "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining" },
-    { "source": "/papers", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/papers/", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/read", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/read/", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/whitepaper-catalog", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/whitepaper-catalog/", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/whitepaper/syn-sun-wavefield-oscillator", "destination": "/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator" },
-    { "source": "/whitepaper/syn-sun-wavefield-oscillator/", "destination": "/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator" },
-    { "source": "/whitepaper/syntheverse-sandbox-comprehensive", "destination": "/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026" },
-    { "source": "/whitepaper/syntheverse-sandbox-comprehensive/", "destination": "/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026" },
-    { "source": "/whitepaper/omniversal-node-alignment", "destination": "/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026" },
-    { "source": "/whitepaper/omniversal-node-alignment/", "destination": "/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026" },
-    { "source": "/press/king-bee-node-sync", "destination": "/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html" },
-    { "source": "/press/king-bee-node-sync/", "destination": "/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html" },
-    { "source": "/campaign/123-wormhole", "destination": "/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html" },
-    { "source": "/campaign/123-wormhole/", "destination": "/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html" },
-    { "source": "/wormhole", "destination": "/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html" },
-    { "source": "/wormhole/", "destination": "/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html" },
-    { "source": "/hhf-wp-2026-v8", "destination": "/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" },
-    { "source": "/hhf-wp-2026-v8/", "destination": "/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8" },
-    { "source": "/whitepaper/goldilocks-erdos-mathematics", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-erdos-mathematics" },
-    { "source": "/whitepaper/goldilocks-erdos-mathematics/", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-erdos-mathematics" },
-    { "source": "/hero-houdini", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
-    { "source": "/hero-houdini/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
-    { "source": "/houdini", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
-    { "source": "/houdini/", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
-    { "source": "/interfaces/houdini-mythos-demonstration.html", "destination": "/interfaces/hero-houdini-mythos-demonstration.html" },
-    { "source": "/hood", "destination": "/interfaces/look-under-the-hood.html" },
-    { "source": "/hood/", "destination": "/interfaces/look-under-the-hood.html" },
-    { "source": "/look-under-the-hood", "destination": "/interfaces/look-under-the-hood.html" },
-    { "source": "/look-under-the-hood/", "destination": "/interfaces/look-under-the-hood.html" },
-    { "source": "/interfaces/digital-pru-awareness-whitepaper", "destination": "/interfaces/digital-pru-awareness-whitepaper.html" },
-    { "source": "/interfaces/digital-pru-awareness-whitepaper/", "destination": "/interfaces/digital-pru-awareness-whitepaper.html" },
-    { "source": "/interfaces/digital-pru-snap-robots.html", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/interfaces/digital-pru-snap-robots", "destination": "/interfaces/whitepaper-catalog.html" },
-    { "source": "/sovereign-gate", "destination": "/interfaces/questfest-bridge/index.html" },
-    { "source": "/sovereign-gate/", "destination": "/interfaces/questfest-bridge/index.html" },
-    { "source": "/holographic-goldilocks-ai-os", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/holographic-goldilocks-ai-os/", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/goldilocks-os", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/goldilocks-os/", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/holographic-panama-canal", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/holographic-panama-canal/", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/panama-canal", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/panama-canal/", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/portal", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/portal/", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/other-side", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/other-side/", "destination": "/interfaces/goldilocks-os.html" },
-    { "source": "/bulletin-board", "destination": "/interfaces/bulletin-board.html" },
-    { "source": "/bulletin-board/", "destination": "/interfaces/bulletin-board.html" },
-    { "source": "/special-projects/turner-bison-herd-management", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" },
-    { "source": "/special-projects/turner-bison-herd-management/", "destination": "/interfaces/special-projects/turner-bison-herd-management.html" },
-    { "source": "/special-projects/erdos-holographic-aios-audit", "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html" },
-    { "source": "/special-projects/erdos-holographic-aios-audit/", "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html" },
-    { "source": "/special-projects/geomagnetic-herbivore-study", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
-    { "source": "/special-projects/geomagnetic-herbivore-study/", "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html" },
-    { "source": "/special-projects/wavefield-echo-test", "destination": "/interfaces/special-projects/wavefield-echo-test.html" },
-    { "source": "/special-projects/wavefield-echo-test/", "destination": "/interfaces/special-projects/wavefield-echo-test.html" },
-    { "source": "/whitepaper/geomagnetic-herbivore-2026", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
-    { "source": "/whitepaper/geomagnetic-herbivore-2026/", "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026" },
-    { "source": "/press/chipless-datacenterless-ai", "destination": "/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html" },
-    { "source": "/press/chipless-datacenterless-ai/", "destination": "/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html" },
-    { "source": "/whitepaper/synthobs-emergent-sync-multi-agent", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026" },
-    { "source": "/whitepaper/synthobs-emergent-sync-multi-agent/", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026" },
-    { "source": "/whitepaper/nspfrnp-snap-peer-review-audit", "destination": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit" },
-    { "source": "/whitepaper/nspfrnp-snap-peer-review-audit/", "destination": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit" },
-    { "source": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-geomagnetic-wavefield-multitaxa" },
-    { "source": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa/", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-geomagnetic-wavefield-multitaxa" },
-    { "source": "/whitepaper/turner-kruse-response", "destination": "/interfaces/whitepaper-surface.html?id=turner-kruse-response" },
-    { "source": "/whitepaper/turner-kruse-response/", "destination": "/interfaces/whitepaper-surface.html?id=turner-kruse-response" },
-    { "source": "/whitepaper/synthobs-hex-organ-engine", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026" },
-    { "source": "/whitepaper/synthobs-hex-organ-engine/", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026" },
-    { "source": "/whitepaper/goldilocks-transfinite-inversion", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-transfinite-inversion-2026" },
-    { "source": "/whitepaper/goldilocks-transfinite-inversion/", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-transfinite-inversion-2026" },
-    { "source": "/whitepaper/goldilocks-prime-linear-compression", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-prime-linear-compression-2026" },
-    { "source": "/whitepaper/goldilocks-prime-linear-compression/", "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-prime-linear-compression-2026" },
-    { "source": "/whitepaper/synthobs-intelligence-density", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-intelligence-density-2026" },
-    { "source": "/whitepaper/synthobs-intelligence-density/", "destination": "/interfaces/whitepaper-surface.html?id=synthobs-intelligence-density-2026" },
-    { "source": "/whitepaper/digital-pru-synthobs-mca", "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026" },
-    { "source": "/whitepaper/digital-pru-synthobs-mca/", "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026" },
-    { "source": "/whitepaper/omniversal-goldilocks-rideshare", "destination": "/interfaces/whitepaper-surface.html?id=omniversal-goldilocks-rideshare-2026-07" },
-    { "source": "/whitepaper/omniversal-goldilocks-rideshare/", "destination": "/interfaces/whitepaper-surface.html?id=omniversal-goldilocks-rideshare-2026-07" },
-    { "source": "/questfest-schedule/:slug", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" },
-    { "source": "/questfest-schedule/:slug/", "destination": "/interfaces/questfest-schedule-item.html?slug=:slug" },
-    { "source": "/whitepaper/:id", "destination": "/interfaces/whitepaper-surface.html?id=:id" }
+    {
+      "source": "/ss-vibelandia",
+      "destination": "/interfaces/ss-vibelandia.html"
+    },
+    {
+      "source": "/ss-vibelandia/",
+      "destination": "/interfaces/ss-vibelandia.html"
+    },
+    {
+      "source": "/noahs-ark",
+      "destination": "/interfaces/ss-vibelandia.html"
+    },
+    {
+      "source": "/noahs-ark/",
+      "destination": "/interfaces/ss-vibelandia.html"
+    },
+    {
+      "source": "/sun",
+      "destination": "/interfaces/look-at-the-sun.html"
+    },
+    {
+      "source": "/sun/",
+      "destination": "/interfaces/look-at-the-sun.html"
+    },
+    {
+      "source": "/look-at-the-sun",
+      "destination": "/interfaces/look-at-the-sun.html"
+    },
+    {
+      "source": "/look-at-the-sun/",
+      "destination": "/interfaces/look-at-the-sun.html"
+    },
+    {
+      "source": "/etcon",
+      "destination": "/interfaces/vibelandia-questfest.html"
+    },
+    {
+      "source": "/etcon/",
+      "destination": "/interfaces/vibelandia-questfest.html"
+    },
+    {
+      "source": "/interfaces/etcon-reno-desert.html",
+      "destination": "/interfaces/vibelandia-questfest.html"
+    },
+    {
+      "source": "/interfaces/press-release-etcon-reno-desert-may-2026.html",
+      "destination": "/interfaces/press-releases.html"
+    },
+    {
+      "source": "/press",
+      "destination": "/interfaces/press-releases.html"
+    },
+    {
+      "source": "/press/",
+      "destination": "/interfaces/press-releases.html"
+    },
+    {
+      "source": "/mythos",
+      "destination": "/interfaces/hero-houdini-mythos-demonstration.html"
+    },
+    {
+      "source": "/mythos/",
+      "destination": "/interfaces/hero-houdini-mythos-demonstration.html"
+    },
+    {
+      "source": "/coherence",
+      "destination": "/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html"
+    },
+    {
+      "source": "/coherence/",
+      "destination": "/interfaces/press-release-anthropic-mythos-holographic-review-may-2026.html"
+    },
+    {
+      "source": "/mining-ops",
+      "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining"
+    },
+    {
+      "source": "/mining-ops/",
+      "destination": "/interfaces/whitepaper-surface.html?id=ops-egs-btc-mining"
+    },
+    {
+      "source": "/papers",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/papers/",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/read",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/read/",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/whitepaper-catalog",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/whitepaper-catalog/",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/whitepaper/syn-sun-wavefield-oscillator",
+      "destination": "/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator"
+    },
+    {
+      "source": "/whitepaper/syn-sun-wavefield-oscillator/",
+      "destination": "/interfaces/whitepaper-surface.html?id=syn-sun-wavefield-oscillator"
+    },
+    {
+      "source": "/whitepaper/syntheverse-sandbox-comprehensive",
+      "destination": "/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026"
+    },
+    {
+      "source": "/whitepaper/syntheverse-sandbox-comprehensive/",
+      "destination": "/interfaces/whitepaper-surface.html?id=dp-syntheverse-sandbox-comprehensive-2026"
+    },
+    {
+      "source": "/whitepaper/omniversal-node-alignment",
+      "destination": "/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026"
+    },
+    {
+      "source": "/whitepaper/omniversal-node-alignment/",
+      "destination": "/interfaces/whitepaper-surface.html?id=dp-omniversal-node-alignment-2026"
+    },
+    {
+      "source": "/press/king-bee-node-sync",
+      "destination": "/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html"
+    },
+    {
+      "source": "/press/king-bee-node-sync/",
+      "destination": "/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html"
+    },
+    {
+      "source": "/campaign/123-wormhole",
+      "destination": "/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html"
+    },
+    {
+      "source": "/campaign/123-wormhole/",
+      "destination": "/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html"
+    },
+    {
+      "source": "/wormhole",
+      "destination": "/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html"
+    },
+    {
+      "source": "/wormhole/",
+      "destination": "/interfaces/post-omniversal-123-wormhole-campaign-june-2026.html"
+    },
+    {
+      "source": "/hhf-wp-2026-v8",
+      "destination": "/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8"
+    },
+    {
+      "source": "/hhf-wp-2026-v8/",
+      "destination": "/interfaces/whitepaper-surface.html?id=hhf-wp-2026-v8"
+    },
+    {
+      "source": "/whitepaper/goldilocks-erdos-mathematics",
+      "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-erdos-mathematics"
+    },
+    {
+      "source": "/whitepaper/goldilocks-erdos-mathematics/",
+      "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-erdos-mathematics"
+    },
+    {
+      "source": "/hero-houdini",
+      "destination": "/interfaces/hero-houdini-mythos-demonstration.html"
+    },
+    {
+      "source": "/hero-houdini/",
+      "destination": "/interfaces/hero-houdini-mythos-demonstration.html"
+    },
+    {
+      "source": "/houdini",
+      "destination": "/interfaces/hero-houdini-mythos-demonstration.html"
+    },
+    {
+      "source": "/houdini/",
+      "destination": "/interfaces/hero-houdini-mythos-demonstration.html"
+    },
+    {
+      "source": "/interfaces/houdini-mythos-demonstration.html",
+      "destination": "/interfaces/hero-houdini-mythos-demonstration.html"
+    },
+    {
+      "source": "/hood",
+      "destination": "/interfaces/look-under-the-hood.html"
+    },
+    {
+      "source": "/hood/",
+      "destination": "/interfaces/look-under-the-hood.html"
+    },
+    {
+      "source": "/look-under-the-hood",
+      "destination": "/interfaces/look-under-the-hood.html"
+    },
+    {
+      "source": "/look-under-the-hood/",
+      "destination": "/interfaces/look-under-the-hood.html"
+    },
+    {
+      "source": "/interfaces/digital-pru-awareness-whitepaper",
+      "destination": "/interfaces/digital-pru-awareness-whitepaper.html"
+    },
+    {
+      "source": "/interfaces/digital-pru-awareness-whitepaper/",
+      "destination": "/interfaces/digital-pru-awareness-whitepaper.html"
+    },
+    {
+      "source": "/interfaces/digital-pru-snap-robots.html",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/interfaces/digital-pru-snap-robots",
+      "destination": "/interfaces/whitepaper-catalog.html"
+    },
+    {
+      "source": "/sovereign-gate",
+      "destination": "/interfaces/questfest-bridge/index.html"
+    },
+    {
+      "source": "/sovereign-gate/",
+      "destination": "/interfaces/questfest-bridge/index.html"
+    },
+    {
+      "source": "/holographic-goldilocks-ai-os",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/holographic-goldilocks-ai-os/",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/goldilocks-os",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/goldilocks-os/",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/holographic-panama-canal",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/holographic-panama-canal/",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/panama-canal",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/panama-canal/",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/portal",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/portal/",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/other-side",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/other-side/",
+      "destination": "/interfaces/goldilocks-os.html"
+    },
+    {
+      "source": "/bulletin-board",
+      "destination": "/interfaces/bulletin-board.html"
+    },
+    {
+      "source": "/bulletin-board/",
+      "destination": "/interfaces/bulletin-board.html"
+    },
+    {
+      "source": "/special-projects/turner-bison-herd-management",
+      "destination": "/interfaces/special-projects/turner-bison-herd-management.html"
+    },
+    {
+      "source": "/special-projects/turner-bison-herd-management/",
+      "destination": "/interfaces/special-projects/turner-bison-herd-management.html"
+    },
+    {
+      "source": "/special-projects/erdos-holographic-aios-audit",
+      "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html"
+    },
+    {
+      "source": "/special-projects/erdos-holographic-aios-audit/",
+      "destination": "/interfaces/special-projects/erdos-holographic-aios-audit.html"
+    },
+    {
+      "source": "/special-projects/geomagnetic-herbivore-study",
+      "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html"
+    },
+    {
+      "source": "/special-projects/geomagnetic-herbivore-study/",
+      "destination": "/interfaces/special-projects/geomagnetic-herbivore-study.html"
+    },
+    {
+      "source": "/special-projects/wavefield-echo-test",
+      "destination": "/interfaces/special-projects/wavefield-echo-test.html"
+    },
+    {
+      "source": "/special-projects/wavefield-echo-test/",
+      "destination": "/interfaces/special-projects/wavefield-echo-test.html"
+    },
+    {
+      "source": "/whitepaper/geomagnetic-herbivore-2026",
+      "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026"
+    },
+    {
+      "source": "/whitepaper/geomagnetic-herbivore-2026/",
+      "destination": "/interfaces/whitepaper-surface.html?id=geomagnetic-herbivore-2026"
+    },
+    {
+      "source": "/press/chipless-datacenterless-ai",
+      "destination": "/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html"
+    },
+    {
+      "source": "/press/chipless-datacenterless-ai/",
+      "destination": "/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html"
+    },
+    {
+      "source": "/whitepaper/synthobs-emergent-sync-multi-agent",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026"
+    },
+    {
+      "source": "/whitepaper/synthobs-emergent-sync-multi-agent/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-emergent-sync-multi-agent-2026"
+    },
+    {
+      "source": "/whitepaper/nspfrnp-snap-peer-review-audit",
+      "destination": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit"
+    },
+    {
+      "source": "/whitepaper/nspfrnp-snap-peer-review-audit/",
+      "destination": "/interfaces/whitepaper-surface.html?id=nspfrnp-snap-peer-review-audit"
+    },
+    {
+      "source": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa",
+      "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-geomagnetic-wavefield-multitaxa"
+    },
+    {
+      "source": "/whitepaper/goldilocks-geomagnetic-wavefield-multitaxa/",
+      "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-geomagnetic-wavefield-multitaxa"
+    },
+    {
+      "source": "/whitepaper/turner-kruse-response",
+      "destination": "/interfaces/whitepaper-surface.html?id=turner-kruse-response"
+    },
+    {
+      "source": "/whitepaper/turner-kruse-response/",
+      "destination": "/interfaces/whitepaper-surface.html?id=turner-kruse-response"
+    },
+    {
+      "source": "/whitepaper/synthobs-hex-organ-engine",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026"
+    },
+    {
+      "source": "/whitepaper/synthobs-hex-organ-engine/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-hex-organ-engine-2026"
+    },
+    {
+      "source": "/whitepaper/goldilocks-transfinite-inversion",
+      "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-transfinite-inversion-2026"
+    },
+    {
+      "source": "/whitepaper/goldilocks-transfinite-inversion/",
+      "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-transfinite-inversion-2026"
+    },
+    {
+      "source": "/whitepaper/goldilocks-prime-linear-compression",
+      "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-prime-linear-compression-2026"
+    },
+    {
+      "source": "/whitepaper/goldilocks-prime-linear-compression/",
+      "destination": "/interfaces/whitepaper-surface.html?id=goldilocks-prime-linear-compression-2026"
+    },
+    {
+      "source": "/whitepaper/synthobs-intelligence-density",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-intelligence-density-2026"
+    },
+    {
+      "source": "/whitepaper/synthobs-intelligence-density/",
+      "destination": "/interfaces/whitepaper-surface.html?id=synthobs-intelligence-density-2026"
+    },
+    {
+      "source": "/whitepaper/digital-pru-synthobs-mca",
+      "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026"
+    },
+    {
+      "source": "/whitepaper/digital-pru-synthobs-mca/",
+      "destination": "/interfaces/whitepaper-surface.html?id=dp-synthobs-mca-2026"
+    },
+    {
+      "source": "/whitepaper/omniversal-goldilocks-rideshare",
+      "destination": "/interfaces/whitepaper-surface.html?id=omniversal-goldilocks-rideshare-2026-07"
+    },
+    {
+      "source": "/whitepaper/omniversal-goldilocks-rideshare/",
+      "destination": "/interfaces/whitepaper-surface.html?id=omniversal-goldilocks-rideshare-2026-07"
+    },
+    {
+      "source": "/questfest-schedule/:slug",
+      "destination": "/interfaces/questfest-schedule-item.html?slug=:slug"
+    },
+    {
+      "source": "/questfest-schedule/:slug/",
+      "destination": "/interfaces/questfest-schedule-item.html?slug=:slug"
+    },
+    {
+      "source": "/whitepaper/:id",
+      "destination": "/interfaces/whitepaper-surface.html?id=:id"
+    }
   ],
   "crons": [
     {
@@ -404,125 +1469,218 @@
     }
   },
   "redirects": [
-    { "source": "/bulk-upload", "destination": "/interfaces/questfest-bridge/#/bulk-upload", "permanent": false },
-    { "source": "/bulk-upload/", "destination": "/interfaces/questfest-bridge/#/bulk-upload", "permanent": false },
-    { "source": "/listen", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
-    { "source": "/listen/", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
-    { "source": "/jukebox", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false },
-    { "source": "/jukebox/", "destination": "/interfaces/questfest-bridge/#/listen", "permanent": false }
+    {
+      "source": "/bulk-upload",
+      "destination": "/interfaces/questfest-bridge/#/bulk-upload",
+      "permanent": false
+    },
+    {
+      "source": "/bulk-upload/",
+      "destination": "/interfaces/questfest-bridge/#/bulk-upload",
+      "permanent": false
+    },
+    {
+      "source": "/listen",
+      "destination": "/interfaces/questfest-bridge/#/listen",
+      "permanent": false
+    },
+    {
+      "source": "/listen/",
+      "destination": "/interfaces/questfest-bridge/#/listen",
+      "permanent": false
+    },
+    {
+      "source": "/jukebox",
+      "destination": "/interfaces/questfest-bridge/#/listen",
+      "permanent": false
+    },
+    {
+      "source": "/jukebox/",
+      "destination": "/interfaces/questfest-bridge/#/listen",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/interfaces/executive-ai-onboard/index.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/interfaces/executive-ai-onboard/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/interfaces/questfest-bridge/index.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/interfaces/questfest-bridge/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/interfaces/lattice-chat/index.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/interfaces/lattice-v1618.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/interfaces/lattice-brochure.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/interfaces/lattice-learn-more.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/interfaces/awareness-singularities-one-pager.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/interfaces/lattice-token-proof.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/interfaces/my-whiteboard.html",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
       ]
     },
     {
       "source": "/data/lattice-vs-standard-comparison.json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=60, stale-while-revalidate=300" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=60, stale-while-revalidate=300"
+        }
       ]
     },
     {
       "source": "/data/lattice-vs-standard-cursor-usage-matrix.json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=60, stale-while-revalidate=300" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=60, stale-while-revalidate=300"
+        }
       ]
     },
     {
       "source": "/interfaces/lattice-chat/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/media/catalog/catalog.json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=60, stale-while-revalidate=300" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=60, stale-while-revalidate=300"
+        }
       ]
     },
     {
       "source": "/media/catalog/tracks/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/interfaces/assets/(.*)\\.svg",
       "headers": [
-        { "key": "Content-Type", "value": "image/svg+xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        {
+          "key": "Content-Type",
+          "value": "image/svg+xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Protocol", "value": "NSPFRNP" },
-        { "key": "X-Octave-0", "value": "Seed" },
-        { "key": "X-Octave-1", "value": "Edge" },
-        { "key": "X-Singularity", "value": "Sonic Singularity Sing! 13" },
-        { "key": "X-Parent-Edge", "value": "https://psw-vibelandia-sing9.vercel.app" }
+        {
+          "key": "X-Protocol",
+          "value": "NSPFRNP"
+        },
+        {
+          "key": "X-Octave-0",
+          "value": "Seed"
+        },
+        {
+          "key": "X-Octave-1",
+          "value": "Edge"
+        },
+        {
+          "key": "X-Singularity",
+          "value": "Sonic Singularity Sing! 13"
+        },
+        {
+          "key": "X-Parent-Edge",
+          "value": "https://psw-vibelandia-sing9.vercel.app"
+        }
       ]
     }
   ]

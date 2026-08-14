@@ -81,6 +81,7 @@
     "sync:questfest-blog": "node scripts/sync-questfest-blog.mjs",
     "sync:ship-blog-index": "node scripts/sync-ship-blog-index.mjs",
     "sync:ship-blog": "npm run sync:questfest-blog && npm run sync:ship-blog-index",
+    "backfill:ship-blog": "node scripts/backfill-ship-blog-posts.mjs",
     "sync:interfaces-index": "node scripts/sync-interfaces-readme-index.mjs",
     "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-pchpp": "node research/synthobs-pchpp/scripts/run_empirical_pipeline.mjs",

@@ -9,17 +9,20 @@
  *
  * Honesty: paper list + DM log + agent session are shared pipes. Edge clients rewrite actor labels.
  */
-import { listCollaboratePaperEvents } from '../lib/lattice-collaborate-papers.mjs';
-import {
-  appendCollaborateDm,
-  listCollaborateDms,
-  resolveCollabPeerId,
-} from '../lib/lattice-collaborate-dms.mjs';
-import {
-  appendCollaborateAgentEvent,
-  listCollaborateAgentEvents,
-} from '../lib/lattice-collaborate-agent.mjs';
-import { checkLatticeEmailAccess, normalizeEmail } from '../lib/lattice-access.mjs';
+/** Vercel compiles api/*.js to CJS — dynamic-import .mjs libs (see api/lattice-chat.js). */
+let collabLibs;
+async function libs() {
+  if (!collabLibs) {
+    const [papers, dms, agent, access] = await Promise.all([
+      import('../lib/lattice-collaborate-papers.mjs'),
+      import('../lib/lattice-collaborate-dms.mjs'),
+      import('../lib/lattice-collaborate-agent.mjs'),
+      import('../lib/lattice-access.mjs'),
+    ]);
+    collabLibs = { ...papers, ...dms, ...agent, ...access };
+  }
+  return collabLibs;
+}
 
 function dropKeys(obj) {
   if (obj == null || typeof obj !== 'object') return obj;
@@ -64,7 +67,7 @@ function requestUrl(req) {
   return new URL(req.url || '/', 'http://localhost');
 }
 
-function emailFromReq(req, body) {
+function emailFromReq(req, body, normalizeEmail) {
   const header =
     req.headers?.['x-lattice-email'] ||
     req.headers?.['X-Lattice-Email'] ||
@@ -81,14 +84,14 @@ function newAgentEventId() {
   return `ca_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 10)}`;
 }
 
-async function handleAgentGet(req, res) {
-  const email = emailFromReq(req, null);
-  const access = checkLatticeEmailAccess(email);
+async function handleAgentGet(req, res, L) {
+  const email = emailFromReq(req, null, L.normalizeEmail);
+  const access = L.checkLatticeEmailAccess(email);
   if (!access.ok) {
     res.status(401).json({ ok: false, error: 'email_required', message: access.reason });
     return;
   }
-  const myPeerId = resolveCollabPeerId(email);
+  const myPeerId = L.resolveCollabPeerId(email);
   if (!myPeerId) {
     res.status(403).json({
       ok: false,
@@ -99,7 +102,7 @@ async function handleAgentGet(req, res) {
   }
   const url = requestUrl(req);
   const since = url.searchParams.get('since');
-  const events = await listCollaborateAgentEvents({ since });
+  const events = await L.listCollaborateAgentEvents({ since });
   res.status(200).json({
     ok: true,
     product: 'Lattice Collaborate',
@@ -110,15 +113,15 @@ async function handleAgentGet(req, res) {
   });
 }
 
-async function handleAgentPost(req, res) {
+async function handleAgentPost(req, res, L) {
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
-  const email = emailFromReq(req, body);
-  const access = checkLatticeEmailAccess(email);
+  const email = emailFromReq(req, body, L.normalizeEmail);
+  const access = L.checkLatticeEmailAccess(email);
   if (!access.ok) {
     res.status(401).json({ ok: false, error: 'email_required', message: access.reason });
     return;
   }
-  const fromPeerId = resolveCollabPeerId(email);
+  const fromPeerId = L.resolveCollabPeerId(email);
   if (!fromPeerId) {
     res.status(403).json({
       ok: false,
@@ -136,7 +139,7 @@ async function handleAgentPost(req, res) {
     typeof body.createdAt === 'string' && body.createdAt.trim()
       ? body.createdAt.trim()
       : new Date().toISOString();
-  const result = await appendCollaborateAgentEvent({
+  const result = await L.appendCollaborateAgentEvent({
     id,
     role,
     fromPeerId,
@@ -159,14 +162,14 @@ async function handleAgentPost(req, res) {
   });
 }
 
-async function handleDmsGet(req, res) {
-  const email = emailFromReq(req, null);
-  const access = checkLatticeEmailAccess(email);
+async function handleDmsGet(req, res, L) {
+  const email = emailFromReq(req, null, L.normalizeEmail);
+  const access = L.checkLatticeEmailAccess(email);
   if (!access.ok) {
     res.status(401).json({ ok: false, error: 'email_required', message: access.reason });
     return;
   }
-  const myPeerId = resolveCollabPeerId(email);
+  const myPeerId = L.resolveCollabPeerId(email);
   if (!myPeerId) {
     res.status(403).json({
       ok: false,
@@ -177,7 +180,7 @@ async function handleDmsGet(req, res) {
   }
   const url = requestUrl(req);
   const since = url.searchParams.get('since');
-  const all = await listCollaborateDms({ since });
+  const all = await L.listCollaborateDms({ since });
   const dms = all.filter((e) => e.fromPeerId === myPeerId || e.threadPeerId === myPeerId);
   res.status(200).json({
     ok: true,
@@ -189,15 +192,15 @@ async function handleDmsGet(req, res) {
   });
 }
 
-async function handleDmsPost(req, res) {
+async function handleDmsPost(req, res, L) {
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body || {};
-  const email = emailFromReq(req, body);
-  const access = checkLatticeEmailAccess(email);
+  const email = emailFromReq(req, body, L.normalizeEmail);
+  const access = L.checkLatticeEmailAccess(email);
   if (!access.ok) {
     res.status(401).json({ ok: false, error: 'email_required', message: access.reason });
     return;
   }
-  const fromPeerId = resolveCollabPeerId(email);
+  const fromPeerId = L.resolveCollabPeerId(email);
   if (!fromPeerId) {
     res.status(403).json({
       ok: false,
@@ -230,7 +233,7 @@ async function handleDmsPost(req, res) {
       ? body.createdAt.trim()
       : new Date().toISOString();
 
-  const result = await appendCollaborateDm({
+  const result = await L.appendCollaborateDm({
     id,
     fromPeerId,
     threadPeerId,
@@ -256,6 +259,18 @@ export default async function handler(req, res) {
     return;
   }
 
+  let L;
+  try {
+    L = await libs();
+  } catch (err) {
+    res.status(500).json({
+      ok: false,
+      error: 'collaborate_libs_failed',
+      message: err instanceof Error ? err.message : String(err),
+    });
+    return;
+  }
+
   const url = requestUrl(req);
   const dmsMode = url.searchParams.get('dms') === '1';
   const agentMode = url.searchParams.get('agent') === '1';
@@ -263,11 +278,11 @@ export default async function handler(req, res) {
   if (agentMode) {
     try {
       if (req.method === 'GET') {
-        await handleAgentGet(req, res);
+        await handleAgentGet(req, res, L);
         return;
       }
       if (req.method === 'POST') {
-        await handleAgentPost(req, res);
+        await handleAgentPost(req, res, L);
         return;
       }
       res.status(405).json({ ok: false, error: 'method_not_allowed' });
@@ -284,11 +299,11 @@ export default async function handler(req, res) {
   if (dmsMode) {
     try {
       if (req.method === 'GET') {
-        await handleDmsGet(req, res);
+        await handleDmsGet(req, res, L);
         return;
       }
       if (req.method === 'POST') {
-        await handleDmsPost(req, res);
+        await handleDmsPost(req, res, L);
         return;
       }
       res.status(405).json({ ok: false, error: 'method_not_allowed' });
@@ -308,7 +323,7 @@ export default async function handler(req, res) {
         90,
         Math.max(1, Number(url.searchParams.get('sinceDays') || 21) || 21),
       );
-      const events = await listCollaboratePaperEvents({ sinceDays, limit: 40 });
+      const events = await L.listCollaboratePaperEvents({ sinceDays, limit: 40 });
       res.status(200).json({
         ok: true,
         product: 'Lattice Collaborate',

@@ -396,7 +396,7 @@
     },
     "api/lattice-collaborate-feed.js": {
       "maxDuration": 10,
-      "includeFiles": "{lib/**,data/collaborate-feed-events.json,data/synthobs-paper-audits/**}"
+      "includeFiles": "{lib/**,data/lattice-access.json,data/collaborate-feed-events.json,data/synthobs-paper-audits/**}"
     }
   },
   "redirects": [

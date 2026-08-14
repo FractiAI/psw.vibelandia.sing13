@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useUnifiedFeed, startCollabDmBridge } from '@/feed/store';
 import { countUnreadDms } from '@/feed/dm';
+import { applyTabFaviconBadge } from '@/lib/tabFavicon';
 
-/** Floating toast + document title when a Collaborate DM is received. */
+/** Floating toast + document title + tab favicon badge when a Collaborate DM is received. */
 export function CollabDmNotifier({
   onOpenCollaborate,
 }: {
@@ -24,6 +25,7 @@ export function CollabDmNotifier({
     } else {
       document.title = base;
     }
+    applyTabFaviconBadge(unread);
   }, [unread]);
 
   useEffect(() => {

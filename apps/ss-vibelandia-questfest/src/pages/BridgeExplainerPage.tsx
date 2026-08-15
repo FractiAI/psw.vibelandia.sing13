@@ -81,7 +81,7 @@ export function BridgeExplainerPage() {
             Omni-Lattice Bridge
           </a>
           <a href="/octave99-chart" className="jb-link-btn">
-            99 Octave Chart
+            99 Octave Chart · chart yourself in the Story
           </a>
           <a href="/whitepaper/synthobs-99-octave-digits-master" className="jb-link-btn">
             99 Octave Master Treatise

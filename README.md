@@ -114,7 +114,7 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 
 **Read order for agents & auditors:** CMOS/protonic → tensor decoupling → master synthesis → digits master → [coherence plain speak](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) → [MCA NSPFRNP catalog](protocols/MCA_NSPFRNP_CATALOG.md). Details: [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md).
 
-**Products on the engine:** Bridge & Chart pricing [/octave99-pricing](https://www.ssvibelandiaquestfest24x365.com/octave99-pricing) · Lattice nest `octave99` [/lattice-chat?nest=octave99](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99).
+**Products on the engine:** **99 Octave Chart** = chart yourself within the grand Story to 99 octaves of depth ($\Phi_{\mathrm{EGS}}$) with fractal · holographic · Goldilocks AI — [/octave99-chart](https://www.ssvibelandiaquestfest24x365.com/octave99-chart) · Bridge & Chart pricing [/octave99-pricing](https://www.ssvibelandiaquestfest24x365.com/octave99-pricing) · Lattice nest `octave99` [/lattice-chat?nest=octave99](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99).
 
 ---
 
@@ -466,7 +466,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | 99 Octave Chart · Omni-Lattice |
+| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | 99 Octave Chart · Chart yourself in the grand Story |
 
 ### `questfest-bridge/` (`/interfaces/questfest-bridge/`)
 

@@ -12,7 +12,8 @@ const NESTS: { id: NestTopology; label: string; title: string }[] = [
   {
     id: 'octave99',
     label: '99 Octave',
-    title: 'Digits 0–9 × Octaves 01–99 — master Lattice Chat Agent mode (λ_EGS)',
+    title:
+      'Chart yourself in the grand Story to 99 octaves of depth (Φ_EGS) — fractal · holographic · Goldilocks AI (Digits 0–9 × Octaves 01–99)',
   },
   {
     id: 'single',

@@ -42,51 +42,51 @@
     'assist-hour': {
       id: 'assist-hour',
       title: 'Personal assistance · hourly',
-      pill: 'Booked by the hour · $16.18/hr',
-      floorLabel: '$16.18 per hour · ship rhythm',
+      pill: 'Booked by the hour · $30/hr',
+      floorLabel: '$30 per hour',
       image: ASSET_BASE + '/assets/grs-menu-assist-hourly.jpg',
       imageAlt: 'Impeccable concierge holding an open gold pocket watch beside a leather notebook',
       lead: 'Hands, wheels, and presence on your pace — booked by the hour.',
       body: [
         'A concierge on your rhythm: tasks, setups, escorts, waiting in lines, whatever the hour needs. Chairman-grade attention without corporate SLA timers.',
-        'Book 1–8 hours at the ship rhythm rate ($16.18/hr). Your tip offer above the floor is what makes a node say yes.',
+        'Book 1–8 hours at $30/hr. Your tip offer above the floor is what makes a node say yes.',
         'Tip splits 33% to the app · 67% to the concierge who accepts and shows up.'
       ],
-      floor: 16.18,
+      floor: 30,
       quantity: { unitLabel: 'hour', min: 1, max: 8 },
       broadcastLabel: 'personal assistance · hourly'
     },
     'assist-day': {
       id: 'assist-day',
       title: 'Personal assistance · full day',
-      pill: 'Booked by the day · $161.80/day',
-      floorLabel: '$161.80 per day · ship rhythm ×10',
+      pill: 'Booked by the day · $300/day',
+      floorLabel: '$300 per day',
       image: ASSET_BASE + '/assets/grs-menu-assist-day.jpg',
       imageAlt: 'Distinguished valet-assistant opening grand lobby doors for a guest at sunrise',
       lead: 'A dedicated concierge for your whole day — sovereign pacing, one human thread.',
       body: [
         'A full day of Chairman-grade attention: your concierge handles the logistics, presence, and runs so you do not have to.',
-        'Book 1–7 days at the Pass Ladder ×10 rate ($161.80/day). No algorithm, no queue — broadcast your offer, a human accepts.',
+        'Book 1–7 days at $300/day. No algorithm, no queue — broadcast your offer, a human accepts.',
         'Tip splits 33% to the app · 67% to the concierge who accepts your day.'
       ],
-      floor: 161.80,
+      floor: 300,
       quantity: { unitLabel: 'day', min: 1, max: 7 },
       broadcastLabel: 'personal assistance · full day'
     },
     'caregiving-respite': {
       id: 'caregiving-respite',
       title: 'Caregiving respite',
-      pill: 'Booked by the hour · $16.18/hr',
-      floorLabel: '$16.18 per hour · ship rhythm',
+      pill: 'Booked by the hour · $30/hr',
+      floorLabel: '$30 per hour',
       image: ASSET_BASE + '/assets/grs-menu-assist-hourly.jpg',
       imageAlt: 'Calm concierge presence with pocket watch and notebook — reliable human company on your pace',
       lead: 'Trusted companion presence so primary caregivers can rest — booked by the hour.',
       body: [
         'Caregiving respite is practical, human company: sit with a loved one, keep a gentle routine, run light errands nearby, or simply be a steady presence while the primary caregiver steps out to rest, work, or breathe.',
         'This is <strong>companion and concierge presence</strong> — not licensed nursing, medical care, therapy, or emergency response. Tell us the window, neighborhood, and what helps most; a human accepts on Fair Exchange.',
-        'Book 1–8 hours at the ship rhythm rate ($16.18/hr). Tip splits 33% to the app · 67% to the concierge who accepts and shows up.'
+        'Book 1–8 hours at $30/hr. Tip splits 33% to the app · 67% to the concierge who accepts and shows up.'
       ],
-      floor: 16.18,
+      floor: 30,
       quantity: { unitLabel: 'hour', min: 1, max: 8 },
       broadcastLabel: 'caregiving respite · hourly'
     },

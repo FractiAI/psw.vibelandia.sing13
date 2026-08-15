@@ -16,11 +16,11 @@ Sign-up is Old School Protocol on every door: no forms funnel, no chatbot gate, 
 |---------|------|-----------|
 | Food delivery | $9 delivery floor | `?role=guest&service=food` |
 | Personal shopping | $9 run floor | `?role=guest&service=shopping` |
-| Personal assistance · hourly | $16.18/hr (1–8 hrs) | `?role=guest&service=assist&unit=hour` |
-| Personal assistance · full day | $161.80/day (1–7 days) | `?role=guest&service=assist&unit=day` |
+| Personal assistance · hourly | $30/hr (1–8 hrs) | `?role=guest&service=assist&unit=hour` |
+| Personal assistance · full day | $300/day (1–7 days) | `?role=guest&service=assist&unit=day` |
 | EcoReset · home, estate, or business | Old School email — no payment layer | mailto PL Taino |
 
-Rates encode EGS φ (16.18 → 161.80, the Pass Ladder ×10 geometry).
+Courtesy floors: $9 run · $30/hr · $300/day — plain and guest-friendly.
 
 ## Run locally
 

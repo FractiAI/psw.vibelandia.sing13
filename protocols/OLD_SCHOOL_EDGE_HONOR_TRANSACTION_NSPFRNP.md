@@ -82,7 +82,7 @@ All **Hire-A-Goldilocks-Valet-Concierge** and **OGRP** transactions inherit:
 1. **Pitch on web** — menu-first landing, gates, regions, join doors (max 3 layers to honor pay).  
 2. **Join by email** — node emails Pru to join as **purveyor, valet, concierge, or guest**; one thread, one human answer.  
 3. **Channel placement** — once accepted, node is placed in the **WhatsApp group for the selected channel**; requests broadcast there, members accept.  
-4. **Broadcast & accept** — guest broadcasts what they want + tip offer; a valet or concierge accepts what fits. No algorithm, no queue. Floors: $9 run · $16.18/hr · $161.80/day.  
+4. **Broadcast & accept** — guest broadcasts what they want + tip offer; a valet or concierge accepts what fits. No algorithm, no queue. Floors: $9 run · $30/hr · $300/day.  
 5. **All else offline** — pay on Venmo/PayPal/Cash App with amount + memo (no embedded checkout SDK); operator procures and delivers whatever was agreed; no automated rider GPS dashboard.  
 6. **Fair Exchange** — refund or tip adjustment by mutual respect; not algorithmic surge pricing.  
 7. **Fork openly** — standalone repo for validation; cite `WP-OGRP-2026-07`.

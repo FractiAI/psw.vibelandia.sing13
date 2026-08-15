@@ -1,6 +1,6 @@
 # Turner Enterprise — Response to Dr. Carter Kruse (one-pager + email draft)
 
-**From:** Pru Mendez · valetpru@gmail.com  
+**From:** Pru Mendez · info@fractiai.com  
 **Re:** Passive bison herd console · honesty · security · optional collaboration  
 **Companion:** [TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md](./TURNER_BISON_HERD_NSPFRNP_ANCHOR_2026-05-25.md) · [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) · live console (see below)
 
@@ -43,7 +43,7 @@ I am happy to correct any overstatement in prior mail. The honest frame is: **pu
 
 Respectfully,  
 Pru Mendez  
-valetpru@gmail.com
+info@fractiai.com
 
 **Optional live reference (external):**  
 https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-management

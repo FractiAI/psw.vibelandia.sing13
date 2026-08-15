@@ -95,7 +95,7 @@
   "auditSnap": "NSPFRNP-SNAP-PRA-2026-06",
   "parentOrchestrator": "SynthOBS Autonomous Agent",
   "status": "operational_always_on",
-  "contact": "valetpru@gmail.com",
+  "contact": "info@fractiai.com",
   "creatorEmails": ["valetpru@gmail.com", "espressolico@gmail.com"],
   "effectiveDate": "2026-08-12"
 }

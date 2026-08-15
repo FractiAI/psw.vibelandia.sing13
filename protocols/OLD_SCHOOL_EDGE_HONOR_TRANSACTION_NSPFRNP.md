@@ -3,7 +3,7 @@
 **Protocol ID:** OLD-SCHOOL-EDGE-HONOR-2026-07  
 **Status:** ⚡ ACTIVE  
 **Aligns:** NSPFRNP · Fair Exchange · Pass Ladder · Lite edges · OGRP · Hire-A-Goldilocks-Valet-Concierge  
-**Operator contact:** [valetpru@gmail.com](mailto:valetpru@gmail.com)
+**Operator contact:** [info@fractiai.com](mailto:info@fractiai.com)
 
 ---
 

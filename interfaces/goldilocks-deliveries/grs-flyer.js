@@ -142,14 +142,11 @@
     ctx.font = '700 26px Inter, system-ui, sans-serif';
     ctx.fillText('BOOK NOW', left + 36, 600);
     ctx.fillStyle = '#f5e6c8';
-    ctx.font = '600 36px Inter, system-ui, sans-serif';
-    ctx.fillText('(775) 203-1281', left + 36, 660);
-    ctx.font = '500 26px Inter, system-ui, sans-serif';
-    ctx.fillStyle = '#d4af37';
-    ctx.fillText('valetpru@gmail.com', left + 36, 710);
+    ctx.font = '600 28px Inter, system-ui, sans-serif';
+    ctx.fillText('info@fractiai.com', left + 36, 660);
     ctx.fillStyle = '#a8a29e';
     ctx.font = '400 22px Inter, system-ui, sans-serif';
-    ctx.fillText('Text, call, or email — I’ll take care of the rest.', left + 36, 765);
+    ctx.fillText('Email me — I’ll take care of the rest.', left + 36, 720);
 
     // QR panel
     var qx = 1340;

@@ -2,7 +2,7 @@
 
 **Document ID:** HHA-GEOMAG-HERBIVORE-2026  
 **Principal investigator (edge):** FractiAI Research Team · PL Taino (systems architect)  
-**Contact:** valetpru@gmail.com  
+**Contact:** info@fractiai.com  
 **Generated:** 2026-06-01 (updated 2026-06-05)  
 **Live report API:** `/api/turner-recent-anomaly-report`  
 **Python pipeline:** `research/geomagnetic-herbivore/scripts/run_pipeline.py`  
@@ -196,7 +196,6 @@ Conservative interpretation of available public data: **no extraordinary magneti
 ---
 
 **→ ∞¹³** · NSPFRNP catalog fidelity · Honesty boundary on public collar GPS layer.
-
 
 ---
 

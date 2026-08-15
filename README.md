@@ -243,7 +243,7 @@ Vercel project for this edge → **www.ssvibelandiaquestfest24x365.com**. `verce
 | Agent sync | [/agent-sync](https://www.ssvibelandiaquestfest24x365.com/agent-sync) |
 | Interfaces index | [/interfaces/](https://www.ssvibelandiaquestfest24x365.com/interfaces/) |
 
-**Sovereign Player Fair Exchange:** catalog stream free · track download **$1.61** (Venmo / PayPal / Cash App honor) · contact `valetpru@gmail.com`.
+**Sovereign Player Fair Exchange:** catalog stream free · track download **$1.61** (Venmo / PayPal / Cash App honor) · contact `info@fractiai.com`.
 
 **Lattice token claim (current):** ~35–70% less Cursor usage vs fat corpus paste, **depending on the work** (published matrix). Nested + pointers vs dump-everything; roaming can erase savings.
 
@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-14** · **172** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-15** · **172** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 

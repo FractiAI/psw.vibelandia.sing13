@@ -248,7 +248,7 @@ with eigenvalues \(+1\), \(-1\) respectively.
 
 ### 6.1 APRA digital handbook
 
-The **APRA** (Association of Pool & Spa Professionals) **digital handbook** pattern is treated here as a **policy gate stack**: chapters = capability modules; digital entitlements = **boolean gates** on content (residential vs. commercial, code year, state amendment). **Digital Pru** maps this to **catalog-faithful** ops: each handbook section is a **Seed:Edge** pair — Seed = normative rule text, Edge = operator UI / valet routing (`valetpru@gmail.com` subject-line gates per MCA catalog).
+The **APRA** (Association of Pool & Spa Professionals) **digital handbook** pattern is treated here as a **policy gate stack**: chapters = capability modules; digital entitlements = **boolean gates** on content (residential vs. commercial, code year, state amendment). **Digital Pru** maps this to **catalog-faithful** ops: each handbook section is a **Seed:Edge** pair — Seed = normative rule text, Edge = operator UI / valet routing (`info@fractiai.com` subject-line gates per MCA catalog).
 
 **Virtualization:** one physical handbook server **virtualizes** hundreds of jurisdictional overlays; the user session sees only the slice passing **entitlement AND jurisdiction** gates.
 
@@ -339,7 +339,6 @@ Across domains, **PRU** always pairs **remote or specialized execution** with an
 ---
 
 **NSPFRNP ⊃ Fair Exchange ⊃ Digital Pru → ∞¹³**
-
 
 ---
 

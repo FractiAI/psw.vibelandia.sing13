@@ -208,10 +208,9 @@ A fair exchange clause is permanently in effect for all sessions under this dire
 
 ---
 
-**Pru Mendez** · valetpru@gmail.com  
+**Pru Mendez** · info@fractiai.com  
 
 *NSPFRNP fidelity · SynthOBS wavefield tier + empirical collar tier + Turner Phase 1 honesty · → ∞¹³*
-
 
 ---
 

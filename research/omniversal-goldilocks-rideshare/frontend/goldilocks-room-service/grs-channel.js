@@ -3,7 +3,7 @@
   var ASSET_BASE = '/interfaces/goldilocks-deliveries';
   var HOME = '/hire-a-goldilocks-valet-concierge';
   var CHANNEL_KEY = 'grs-guest-channel';
-  var JOIN_MAIL = 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Hire-A-Goldilocks-Valet-Concierge — join as guest') +
+  var JOIN_MAIL = 'mailto:info@fractiai.com?subject=' + encodeURIComponent('Hire-A-Goldilocks-Valet-Concierge — join as guest') +
     '&body=' + encodeURIComponent('Name:\nNeighborhood:\nWhatsApp number:');
 
   var ITEMS = {
@@ -135,7 +135,7 @@
         },
         '<strong>No payment layer on this door.</strong> EcoReset is not on the tip-floor / WhatsApp broadcast rail used for food runs and hourly assistance. <strong>Email for a quote</strong> — describe the property, window, and what you need; PL Taino answers human to human. Old School Protocol: no checkout, no honor rail, no forms funnel.'
       ],
-      mailto: 'mailto:valetpru@gmail.com?subject=' + encodeURIComponent('Goldilocks EcoReset Service — quote request') +
+      mailto: 'mailto:info@fractiai.com?subject=' + encodeURIComponent('Goldilocks EcoReset Service — quote request') +
         '&body=' + encodeURIComponent('Quote request — Goldilocks EcoReset Service\n\nProperty type (home / estate / business / retreat):\nNeighborhood or region:\nWindow of interest:\nWhat you need (steward / hospitality / digital bridge):\nNotes for the quote:\n'),
       quoteOnly: true,
       broadcastLabel: 'Goldilocks EcoReset Service'

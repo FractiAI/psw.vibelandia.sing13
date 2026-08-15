@@ -61,6 +61,6 @@
     "perPaperReceipt": "data/synthobs-paper-audits/{paperId}.json"
   },
   "status": "operational_run_lock",
-  "contact": "valetpru@gmail.com",
+  "contact": "info@fractiai.com",
   "effectiveDate": "2026-06-05"
 }

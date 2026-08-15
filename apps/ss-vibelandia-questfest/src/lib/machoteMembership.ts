@@ -135,7 +135,7 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   },
   {
     title: 'How it works',
-    body: 'Email Valet Pru. Tell them what you need. Receive a quote. Relax while it gets handled.',
+    body: 'Email Valet Pru. Tell them what you need. Send your offer. Relax while it gets handled.',
   },
   {
     title: 'Get started',

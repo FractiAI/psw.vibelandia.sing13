@@ -49,12 +49,68 @@
     .bands { margin-top: 1rem; font-size: .9rem; }
     .bands li { margin: .35rem 0; color: var(--champagne); }
     .muted { color: var(--muted); font-size: .88rem; }
+    .wheel-guide {
+      margin: 1.25rem 0 1.5rem;
+      padding: 1.15rem 1.25rem 1.35rem;
+      background: var(--card);
+      border: 1px solid rgba(212,175,55,.38);
+      border-radius: 14px;
+    }
+    .wheel-guide h2 { margin-bottom: .4rem; }
+    .wheel-guide .lede {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--champagne);
+      margin: 0 0 .85rem;
+      max-width: 42rem;
+    }
+    .wheel-guide-grid {
+      display: grid;
+      gap: 1.1rem;
+      grid-template-columns: 1.05fr 1fr;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .wheel-guide-grid { grid-template-columns: 1fr; }
+    }
+    .wheel-guide ol {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--text);
+      font-size: .95rem;
+    }
+    .wheel-guide li { margin: .45rem 0; }
+    .wheel-guide li strong { color: var(--gold); }
+    .example-frame {
+      background: #050403;
+      border-radius: 12px;
+      border: 1px solid rgba(212,175,55,.28);
+      overflow: hidden;
+    }
+    .example-frame svg { width: 100%; height: auto; display: block; }
+    .example-caption {
+      margin: .65rem 0 0;
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+    .example-caption strong { color: var(--champagne); }
+    .wheel-empty {
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: .95rem;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <nav class="nav">
       <a href="/questfest">← QUESTFEST</a>
+      <a href="#how-the-wheel-works">How the wheel works</a>
       <a href="/octave99-pricing">Pricing</a>
       <a href="/octave99-bridge">Omni-Lattice Bridge</a>
       <a href="/lattice-chat?nest=octave99">Lattice Chat Agent</a>
@@ -65,6 +121,31 @@
       This is personal Story-mapping on the Omni-Lattice: Digits 0–9 × Octaves 01–99 as catalog depth, not predictive astrology, medical advice, or ephemeris science.
       Φ<sub>EGS</sub> is an architectural key. Intake feels familiar (name · date · place); the reading is your place in the grand Story.
     </p>
+
+    <section class="wheel-guide" id="how-the-wheel-works" aria-labelledby="wheel-guide-h2">
+      <h2 id="wheel-guide-h2">How the wheel works</h2>
+      <p class="lede">
+        The wheel is a picture of <em>where you sit in the grand Story</em> — ten story-bands (Digits 0–9), each holding about ten octaves of depth, for ninety-nine octaves total under Φ<sub>EGS</sub>.
+      </p>
+      <div class="wheel-guide-grid">
+        <ol>
+          <li><strong>Ten slices = Digits 0–9.</strong> Each digit is one Story band (body, mind, agents, cosmos catalog layers, and so on).</li>
+          <li><strong>Each digit holds ~10 octaves.</strong> Digit 0 → octaves 01–09 · Digit 4 → 40–49 · Digit 9 → 90–99. Together that is the 99-octave depth map.</li>
+          <li><strong>Longer slice = stronger band for you.</strong> Radius shows intensity — how loud that Story band reads from your intake.</li>
+          <li><strong>Gold slices = your signature digits.</strong> Highlighted bands from your name · date · time · place keys (↑ rising · ☉ sun · ☾ moon labels on the chart).</li>
+          <li><strong>Center = Φ<sub>EGS</sub>.</strong> The EGS fractal constant — the depth key, not a fortune-telling planet.</li>
+        </ol>
+        <div>
+          <div class="example-frame" id="example-wheel" aria-label="Illustrated example wheel for Alex">
+            <div class="wheel-empty">Loading illustrated example…</div>
+          </div>
+          <p class="example-caption" id="example-caption">
+            <strong>Read it like this:</strong> ten slices are Digits 0–9. Longer = louder Story band for that person.
+            Gold = signature digits. Φ in the center is the depth key. Your live wheel below uses the same grammar.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <div class="tiers" aria-label="Pricing">
       <div class="tier">
@@ -106,8 +187,11 @@
         <button class="btn" type="submit">Chart yourself · 99 Octaves</button>
       </form>
       <section class="card">
-        <h2>Wheel</h2>
-        <div class="chart-frame" id="wheel" aria-live="polite"></div>
+        <h2>Your wheel · live Story map</h2>
+        <p class="muted" style="margin:0 0 .75rem">Same grammar as the example: Digits around the ring · length = intensity · gold = signature · Φ in the center. Fill the form and chart yourself.</p>
+        <div class="chart-frame" id="wheel" aria-live="polite">
+          <div class="wheel-empty">Your wheel appears here after you chart yourself — start with the illustrated example above if the ring is new to you.</div>
+        </div>
         <ul class="bands" id="bands"></ul>
         <p class="muted" id="morpho"></p>
       </section>
@@ -120,6 +204,32 @@
     const wheel = document.getElementById('wheel');
     const bandsEl = document.getElementById('bands');
     const morpho = document.getElementById('morpho');
+    const exampleWheel = document.getElementById('example-wheel');
+    const exampleCaption = document.getElementById('example-caption');
+
+    // Illustrated example — same engine grammar as a live reading
+    const exampleChart = buildOctave99Chart({
+      name: 'Alex',
+      birthDate: '1990-07-04',
+      birthTime: '09:30',
+      birthPlace: 'Reno, NV',
+      lat: 39.53,
+      lon: -119.81,
+    });
+    if (exampleWheel) {
+      exampleWheel.innerHTML = chartSvg(exampleChart, { example: true });
+    }
+    if (exampleCaption) {
+      const sig = exampleChart.signature;
+      const loudest = [...exampleChart.bands].sort((a, b) => b.intensity - a.intensity)[0];
+      const gold = exampleChart.bands.filter((b) => b.emphasis).map((b) => b.digit).join(', ');
+      exampleCaption.innerHTML =
+        `<strong>Read it like this:</strong> Alex’s wheel uses the same grammar as yours. ` +
+        `Digit <strong>${loudest.digit}</strong> is the longest slice (loudest Story band) and peaks at ` +
+        `<strong>octave ${loudest.peakOctave}</strong> inside octaves ${loudest.octaves[0]}–${loudest.octaves[1]}. ` +
+        `Gold slices are signature digits (<strong>${gold}</strong> · ↑${sig.risingDigit} ☉${sig.sunDigit} ☾${sig.moonDigit}). ` +
+        `Φ in the center is the EGS depth key. Shorter cream slices are quieter bands.`;
+    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();

@@ -100,7 +100,7 @@ export function buildOctave99Chart(intake) {
   };
 }
 
-export function chartSvg(chart, { deluxe = false } = {}) {
+export function chartSvg(chart, { deluxe = false, example = false } = {}) {
   const cx = 200;
   const cy = 200;
   const rOuter = 170;
@@ -122,10 +122,16 @@ export function chartSvg(chart, { deluxe = false } = {}) {
       return `<path d="M ${cx} ${cy} L ${x0} ${y0} A ${r} ${r} 0 ${large} 1 ${x1} ${y1} Z" fill="${fill}" stroke="#0a0806" stroke-width="1"/><text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">${b.digit}</text>`;
     })
     .join('');
-  const title = deluxe
-    ? '99 Octave Chart · Deluxe · Story map'
-    : '99 Octave Chart · Story map';
+  const title = example
+    ? 'Example · Story map wheel'
+    : deluxe
+      ? '99 Octave Chart · Deluxe · Story map'
+      : '99 Octave Chart · Story map';
   const sub = `${chart.intake.name} · Digits ↑${chart.signature.risingDigit} ☉${chart.signature.sunDigit} ☾${chart.signature.moonDigit}`;
+  const loudest = [...chart.bands].sort((a, b) => b.intensity - a.intensity)[0];
+  const footer = example
+    ? `Example only · Digit ${loudest.digit} loudest @ octave ${loudest.peakOctave} · gold = signature · Φ = depth key`
+    : 'Catalog metaphor · Fair Exchange · ∞¹³';
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 460" role="img" aria-label="${title}">
   <rect width="400" height="460" fill="#0a0806"/>
   <text x="200" y="28" text-anchor="middle" fill="#d4af37" font-size="16" font-family="Georgia, serif">${title}</text>
@@ -135,6 +141,6 @@ export function chartSvg(chart, { deluxe = false } = {}) {
   <text x="${cx}" y="${cy - 6}" text-anchor="middle" fill="#fef3c7" font-size="13" font-family="Georgia, serif">Φ</text>
   <text x="${cx}" y="${cy + 12}" text-anchor="middle" fill="#a8a29e" font-size="9">${PHI_EGS.toFixed(4)}</text>
   </g>
-  <text x="200" y="448" text-anchor="middle" fill="#78716c" font-size="9">Catalog metaphor · Fair Exchange · ∞¹³</text>
+  <text x="200" y="448" text-anchor="middle" fill="#78716c" font-size="9">${footer}</text>
 </svg>`;
 }

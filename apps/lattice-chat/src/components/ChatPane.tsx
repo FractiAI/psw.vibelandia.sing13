@@ -343,7 +343,7 @@ export function ChatPane({
               Your Goldilocks Valet on the Ark ·{' '}
               <a href={MAIN_DECK_HREF}>Main deck</a>
               {' · '}
-              <a href="/lattice/learn">Learn more</a>
+              <a href="/lattice/how">How it works</a>
               {' · '}
               <a href="/ss-vibelandia">Meet the ship</a>
               {' · '}
@@ -414,8 +414,8 @@ export function ChatPane({
               }}
             />
             <div className="empty-cta-row">
-              <a className="empty-cta" href="/lattice/learn">
-                Learn more
+              <a className="empty-cta" href="/lattice/how">
+                How it works
               </a>
               <a className="empty-cta empty-cta--ghost" href="/ss-vibelandia">
                 Meet the Ark
@@ -448,8 +448,8 @@ export function ChatPane({
               Within Goldilocks · intentions matter — craft, curiosity, and care; never malice.
             </p>
             <div className="empty-cta-row">
-              <a className="empty-cta" href="/lattice/learn">
-                Learn more
+              <a className="empty-cta" href="/lattice/how">
+                How it works
               </a>
               <a className="empty-cta empty-cta--ghost" href="/lattice/brochure">
                 Brochure

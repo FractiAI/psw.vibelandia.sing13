@@ -324,7 +324,7 @@ Use this appendix as the **index**, not the argument. Titles, ids, and dates reg
 |---------|------|
 | Lattice landing | `/lattice` |
 | Lattice Chat Agent | `/lattice-chat` |
-| Learn more primer | `/lattice/learn` |
+| Learn more / How it works primer | `/lattice/learn` · `/lattice/how` |
 | Nest guide | `/interfaces/nesting/nest-lattice-chat.html` |
 | Token method | `/lattice/proof` |
 | Whitepaper catalog | `/papers` (this guide pinned at top) |

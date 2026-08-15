@@ -5,7 +5,7 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-OMNI-LAYER-GUIDE-2026-07`  
 **Registry ID:** `lattice-omni-complete-layer-guide-2026-07`  
-**Date:** 2026-08-13
+**Date:** 2026-08-15
 **Framework:** SynthOBS · Lattice Chat Agent V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
 **Questfest catalog:** [`/papers`](/papers) · high pin (`catalogPriority: 1`; CMOS engineering bridge holds `0` for linear systems)  
 **Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)  
@@ -16,7 +16,7 @@
 ---
 
 <!-- AUTO:LATTICE-OMNI-META:BEGIN -->
-**Catalog sync:** 2026-08-13 · **63** Lattice Chat Agent / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
+**Catalog sync:** 2026-08-15 · **63** Lattice Chat Agent / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
 
 When a Lattice / Omni paper is added or modified in the registry, re-run the sync (Cursor stop hook does this automatically for matching `docs/` edits).
 <!-- AUTO:LATTICE-OMNI-META:END -->

@@ -131,7 +131,7 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   {
     title: 'Services',
     body:
-      'Food pickup, groceries, errands, pharmacy runs, hotel guest help, personal shopping, walking companion, and hourly concierge — throughout the downtown core.',
+      'Food pickup, groceries, errands, pharmacy runs, hotel guest help, personal shopping, walking companion, caregiving respite, and hourly concierge — throughout the downtown core.',
   },
   {
     title: 'How it works',

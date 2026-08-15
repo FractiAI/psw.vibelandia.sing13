@@ -88,6 +88,14 @@
           desc: 'A dedicated valet for your whole day — Chairman-grade attention, sovereign pacing, one human thread.',
           memo: 'GOLDILOCKS VALET · assistance day'
         },
+        'caregiving-respite': {
+          title: 'Caregiving respite',
+          amount: HOUR_RATE,
+          quantity: { unitLabel: 'hour', rate: HOUR_RATE, min: 1, max: 8 },
+          amountNote: '$16.18 per hour · ship rhythm',
+          desc: 'Companion presence so primary caregivers can rest — not licensed nursing or medical care.',
+          memo: 'GOLDILOCKS VALET · caregiving respite'
+        },
         valet: {
           title: 'Goldilocks Valet franchise · signal interest',
           amount: FLOOR,
@@ -106,6 +114,7 @@
 
       var key;
       if (service === 'assist') key = unit === 'day' ? 'assist-day' : 'assist-hour';
+      else if (service === 'respite' || service === 'caregiving') key = 'caregiving-respite';
       else if (service && config[service]) key = service;
       else if (role !== 'guest' && config[role]) key = role;
       else key = 'food';

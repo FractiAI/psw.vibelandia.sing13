@@ -73,6 +73,23 @@
       quantity: { unitLabel: 'day', min: 1, max: 7 },
       broadcastLabel: 'personal assistance · full day'
     },
+    'caregiving-respite': {
+      id: 'caregiving-respite',
+      title: 'Caregiving respite',
+      pill: 'Booked by the hour · $16.18/hr',
+      floorLabel: '$16.18 per hour · ship rhythm',
+      image: ASSET_BASE + '/assets/grs-menu-assist-hourly.jpg',
+      imageAlt: 'Calm concierge presence with pocket watch and notebook — reliable human company on your pace',
+      lead: 'Trusted companion presence so primary caregivers can rest — booked by the hour.',
+      body: [
+        'Caregiving respite is practical, human company: sit with a loved one, keep a gentle routine, run light errands nearby, or simply be a steady presence while the primary caregiver steps out to rest, work, or breathe.',
+        'This is <strong>companion and concierge presence</strong> — not licensed nursing, medical care, therapy, or emergency response. Tell us the window, neighborhood, and what helps most; a human accepts on Fair Exchange.',
+        'Book 1–8 hours at the ship rhythm rate ($16.18/hr). Tip splits 33% to the app · 67% to the concierge who accepts and shows up.'
+      ],
+      floor: 16.18,
+      quantity: { unitLabel: 'hour', min: 1, max: 8 },
+      broadcastLabel: 'caregiving respite · hourly'
+    },
     ecoreset: {
       id: 'ecoreset',
       title: 'Goldilocks EcoReset Service',
@@ -191,6 +208,7 @@
     var unit = params.get('unit') || '';
     if (item && ITEMS[item]) return item;
     if (service === 'assist') return unit === 'day' ? 'assist-day' : 'assist-hour';
+    if (service === 'respite' || service === 'caregiving' || service === 'caregiving-respite') return 'caregiving-respite';
     if (service && ITEMS[service]) return service;
     return 'food';
   }

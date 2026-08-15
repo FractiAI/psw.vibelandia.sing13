@@ -117,7 +117,7 @@
 
     var services = [
       'Food deliveries · Errands · Pharmacy pickup',
-      'Personal assistance · Event planning',
+      'Personal assistance · Caregiving respite',
       'House & pet sitting · Hotel / Airbnb help',
       'Goldilocks EcoReset Service',
       'E-scooter courier · Downtown · Midtown · Idlewild'

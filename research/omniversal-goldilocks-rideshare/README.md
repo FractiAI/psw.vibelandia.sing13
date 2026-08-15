@@ -148,7 +148,7 @@ Full falsification table: [`METHODOLOGY.md`](METHODOLOGY.md).
 
 The reference frontend demonstrates **how OGRP feels to humans** — not just how it scores in JSON.
 
-**Brand stack:** Hire-A-Goldilocks-Valet-Concierge ⊃ Goldilocks Valet ⊃ food delivery · personal shopping · personal assistance · EcoResets (home · estate · business).
+**Brand stack:** Hire-A-Goldilocks-Valet-Concierge ⊃ Goldilocks Valet ⊃ food delivery · personal shopping · personal assistance · caregiving respite · EcoResets (home · estate · business).
 
 **Regions (current):** Downtown Reno · Midtown Reno · parts of UNR · Idlewild.
 

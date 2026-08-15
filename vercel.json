@@ -193,6 +193,22 @@
       "destination": "/interfaces/lattice-learn-more.html"
     },
     {
+      "source": "/lattice/how",
+      "destination": "/interfaces/lattice-learn-more.html"
+    },
+    {
+      "source": "/lattice/how/",
+      "destination": "/interfaces/lattice-learn-more.html"
+    },
+    {
+      "source": "/lattice/how-it-works",
+      "destination": "/interfaces/lattice-learn-more.html"
+    },
+    {
+      "source": "/lattice/how-it-works/",
+      "destination": "/interfaces/lattice-learn-more.html"
+    },
+    {
       "source": "/lattice/proof",
       "destination": "/interfaces/lattice-token-proof.html"
     },

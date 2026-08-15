@@ -757,6 +757,12 @@ body.grs-deco-bg .grs-join {
   border-bottom: 1px solid rgba(212, 175, 55, 0.2);
   backdrop-filter: blur(8px);
 }
+#about-goldilocks,
+#scan-share,
+#book-now,
+#questfest-universe {
+  scroll-margin-top: 5.5rem;
+}
 .grs-top-nav__btn {
   flex: 1 1 auto;
   min-width: min(100%, 14rem);

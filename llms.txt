@@ -89,18 +89,17 @@
 - Chef portal (Sanctuary Gastronomy Director): https://www.ssvibelandiaquestfest24x365.com/commons/chef
 - Nest guide (rung 10): https://www.ssvibelandiaquestfest24x365.com/interfaces/nesting/nest-hospitality-commons.html
 - Clone a node: seed/hospitality-node.template.json — any port community, same structure, local soul
-- Economics: Fair Exchange honor system; under-utilized assets only (empty floors, idle gear, off-season skill); contact valetpru@gmail.com · 775-404-5233
-
+- Economics: Fair Exchange honor system; under-utilized assets only (empty floors, idle gear, off-season skill); contact info@fractiai.com
 ## Open music catalog manifest (syndication)
 
-- GET https://www.ssvibelandiaquestfest24x365.com/api/catalog — read-only JSON master library (tracks + playlists). Other edges may syndicate; license fields per track where present (stream rights via valetpru@gmail.com).
+- GET https://www.ssvibelandiaquestfest24x365.com/api/catalog — read-only JSON master library (tracks + playlists). Other edges may syndicate; license fields per track where present (stream rights via info@fractiai.com).
 
 ## Sovereign Player — Fair Exchange
 
 - Catalog stream: free (full play + background audio)
 - Track download: $1.61 — Venmo / PayPal / Cash App; honor confirmation on device; optional `/api/export` audit
-- Bookings: valetpru@gmail.com
-- Catalog / licensing (500+ Reno swamp · caliente tracks): valetpru@gmail.com
+- Bookings: info@fractiai.com
+- Catalog / licensing (500+ Reno swamp · caliente tracks): info@fractiai.com
 - Stream lock: BroadcastChannel (same browser); /api/heartbeat optional
 - Build: npm run build:questfest-bridge (source: apps/ss-vibelandia-questfest/)
 - Vercel env: PASS_TOKEN_SECRET optional (legacy export audit only); honor download needs no monthly pass

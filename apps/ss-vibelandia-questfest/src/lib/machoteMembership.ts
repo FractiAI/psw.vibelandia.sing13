@@ -24,10 +24,10 @@ export const MACHOTE_BEEHIVE_RESIDENCY_TITLE = 'Goldilocks Syntheverse Beehive R
 export const MACHOTE_BEEHIVE_RESIDENCY_TAGLINE =
   'Machote members only · call PL Taino direct · top 0.001%';
 
-export const MACHOTE_BEEHIVE_PL_TAINO_EMAIL = 'valetpru@gmail.com';
+export const MACHOTE_BEEHIVE_PL_TAINO_EMAIL = 'info@fractiai.com';
 
 export const MACHOTE_BEEHIVE_MAILTO =
-  'mailto:valetpru@gmail.com?subject=Goldilocks%20Syntheverse%20Beehive%20Residency%20%E2%80%94%20interested%20node';
+  'mailto:info@fractiai.com?subject=Goldilocks%20Syntheverse%20Beehive%20Residency%20%E2%80%94%20interested%20node';
 
 export const MACHOTE_BEEHIVE_RESIDENCY_PATH = '/interfaces/goldilocks-beehive-residency.html';
 
@@ -52,7 +52,7 @@ export const MACHOTE_QUESTFEST_UNIVERSE_PATH = '/questfest';
 export const MACHOTE_GUEST_PATH = '/hire-a-goldilocks-valet-concierge/guest';
 
 export const MACHOTE_BOOK_MAIL =
-  'mailto:valetpru@gmail.com?subject=Valet%20Pru%20Concierge%20Service%20-%20Downtown%20Reno%20%E2%80%94%20book%20now&body=Name%3A%0ANeighborhood%3A%0AWhat%20I%20need%3A%0APreferred%20time%3A';
+  'mailto:info@fractiai.com?subject=Valet%20Pru%20Concierge%20Service%20-%20Downtown%20Reno%20%E2%80%94%20book%20now&body=Name%3A%0ANeighborhood%3A%0AWhat%20I%20need%3A%0APreferred%20time%3A';
 
 export const MACHOTE_CAMPAIGN_HIRE_CTA = 'Hire a Concierge · Book Now';
 
@@ -135,7 +135,7 @@ export const MACHOTE_CAMPAIGN_REASONS: {
   },
   {
     title: 'How it works',
-    body: 'Text or call. Tell Valet Pru what you need. Receive a quote. Relax while it gets handled.',
+    body: 'Email Valet Pru. Tell them what you need. Receive a quote. Relax while it gets handled.',
   },
   {
     title: 'Get started',

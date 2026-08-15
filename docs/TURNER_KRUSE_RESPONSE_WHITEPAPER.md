@@ -3,7 +3,7 @@
 **Document ref:** HHA-TURNER-WP-2026-05-26 (rev. C — multi-taxa SynthOBS wavefield + all public sensors in live pipeline)  
 **Prepared for:** Turner Enterprise leadership & ecological research teams  
 **Prepared by:** Pru Mendez  
-**Contact:** valetpru@gmail.com  
+**Contact:** info@fractiai.com  
 **Classification:** Technical background & operational disclosure  
 **Companion wavefield paper:** [GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md](./GOLDILOCKS_GEOMAGNETIC_WAVEFIELD_MULTI_TAXA_UNGULATE_2026-06.md) (WP-GGM-MULTITAXA-UNGULATE-2026-06)  
 **Empirical collar study:** [GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md](./GEOMAGNETIC_HERBIVORE_MOVEMENT_STUDY_2026.md) (HHA-GEOMAG-HERBIVORE-2026)
@@ -251,10 +251,9 @@ Settlement may adjust in part depending on overall delivery, like tipping — un
 
 ---
 
-**Pru Mendez** · valetpru@gmail.com  
+**Pru Mendez** · info@fractiai.com  
 
 *NSPFRNP fidelity · Phase 1 = all public feeds this repo wires + mapped fence + fusion model + space-bio ranch log · Phase 2 = collaboration & validated trials · → ∞¹³*
-
 
 ---
 
@@ -267,7 +266,6 @@ Settlement may adjust in part depending on overall delivery, like tipping — un
 | **Not claimed** | External journal acceptance, instrument-grade hardware proof, or production breakthroughs without separate validation |
 
 Where empirical or movement data appear: **correlation ≠ causation** until multivariate controls are documented.
-
 
 ---
 

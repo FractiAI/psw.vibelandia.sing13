@@ -372,7 +372,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
 | [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Lattice Chat Agent V1.618 · Next layer in the stack · Product brochure · FractiAI |
-| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | Learn more · Lattice Chat Agent V1.618 · Next layer in the stack · FractiAI |
+| [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | How it works · Learn more · Lattice Chat Agent V1.618 · FractiAI |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
 | [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Lattice Chat Agent V1.618 · Next layer after Cursor & Claude Code · FractiAI |
 | [`/interfaces/listen.html`](/interfaces/listen.html) | Listen · Golden Era Jukebox · SS Vibelandia QUESTFEST |

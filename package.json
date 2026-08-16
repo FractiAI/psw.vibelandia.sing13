@@ -122,10 +122,11 @@
     "@cursor/sdk": "^1.0.24",
     "@vercel/blob": "^2.3.3",
     "marked": "^9.1.6",
+    "pdf-lib": "^1.17.1",
     "ws": "^8.21.0"
   },
   "devDependencies": {
-    "vitest": "^4.1.10",
-    "@vitest/coverage-v8": "^4.1.10"
+    "@vitest/coverage-v8": "^4.1.10",
+    "vitest": "^4.1.10"
   }
 }

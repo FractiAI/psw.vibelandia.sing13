@@ -660,16 +660,16 @@ export function buildChartReading(chart, opts = {}) {
     standard: {
       price: 29,
       href: '/hire-a-goldilocks-valet-concierge/pay?service=chart&unit=standard',
-      title: 'Overall written chart · $29',
-      why: 'Full character + placement applied across all ten life areas, with practical moves and a daily practice rhythm.',
-      useful: 'Worth it when you know your character from free but need the full map to steer a real week.',
+      title: 'Overall chart PDF · $29 · 10 pages',
+      why: 'Downloadable 10-page hybrid natal × 99 Octave PDF — purpose lock, all life-area dials, daily flow, career/family map.',
+      useful: 'Worth it when free showed your character and you need a full week architecture you can download and keep.',
     },
     deluxe: {
       price: 49,
       href: '/hire-a-goldilocks-valet-concierge/pay?service=chart&unit=deluxe',
-      title: 'Deluxe written narrative · $49',
-      why: 'Character + placement + pinning questions + full narrative per area + morning/midday/evening practices tied to your Story role.',
-      useful: 'Worth it when you need the chart to answer a real question and become daily practice.',
+      title: 'Deluxe chart PDF · $49 · 30 pages',
+      why: 'Downloadable 30-page hybrid natal × 99 Octave PDF — Sun/Moon/Rising deep dives, every Digit page, career/family/body architecture, practices, checklist.',
+      useful: 'Worth it when you need to find purpose accurately, get into flow fast, and architect life with a keepable book.',
     },
   };
 

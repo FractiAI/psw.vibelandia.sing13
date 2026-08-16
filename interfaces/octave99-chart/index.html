@@ -208,14 +208,14 @@
       <a href="/lattice-chat?nest=octave99">Lattice Chat Agent</a>
     </nav>
     <h1 class="brand">Your 99 Octave Chart</h1>
-    <p class="lead">Chart yourself within the grand Story — to 99 octaves of depth in the EGS fractal constant (Φ<sub>EGS</sub>) — using new superintelligent, fractal, holographic, Goldilocks AI.</p>
+    <p class="lead">Chart yourself within the grand Story — hybrid natal × 99 Octave — to find purpose accurately and quickly, get into flow, and architect life (relationships, family, career). Downloadable PDF: free 1 page · $29 = 10 pages · $49 = 30 pages.</p>
     <div class="hero-cta-row">
       <a class="btn hero" href="#intake">Get Your 99 Octave Chart</a>
-      <a class="btn ghost hero" href="#intake" id="free-trial-cta">Free trial</a>
+      <a class="btn ghost hero" href="#intake" id="free-trial-cta">Free trial · 1-page PDF</a>
     </div>
     <p class="honesty">
-      This is personal Story-mapping on the Omni-Lattice: Digits 0–9 × Octaves 01–99 as catalog depth, not predictive astrology, medical advice, or ephemeris science.
-      Φ<sub>EGS</sub> is an architectural key. Intake feels familiar (name · date · place); the reading is your place in the grand Story.
+      Hybrid natal-style reading (Sun / Moon / Rising analogs) paired with Digits 0–9 × Octaves 01–99 — architectural Story map for purpose, daily practices, and life design. Not predictive astrology, medical advice, or ephemeris science.
+      Φ<sub>EGS</sub> is an architectural key. Fair Exchange honor rails for paid PDFs.
     </p>
 
     <section class="wheel-guide" id="how-the-wheel-works" aria-labelledby="wheel-guide-h2">
@@ -255,36 +255,36 @@
 
     <div class="tiers" aria-label="What you get">
       <div class="tier">
-        <span class="muted">Free summary</span>
+        <span class="muted">Free · 1-page PDF</span>
         <strong>$0</strong>
         <ul>
-          <li>Your wheel + signature digits</li>
-          <li>Top Story bands summary</li>
-          <li>How to read the wheel</li>
-          <li>Clear preview of $29 &amp; $49</li>
+          <li>Downloadable 1-page hybrid natal × 99 Octave PDF</li>
+          <li>Purpose lock · Sun/Moon/Rising analogs</li>
+          <li>Loudest area + daily flow practices</li>
+          <li>Find yourself fast — then upgrade to keep more</li>
         </ul>
         <a class="btn ghost" href="#intake" data-tier="free">Start free</a>
       </div>
       <div class="tier">
-        <span class="muted">Overall chart</span>
+        <span class="muted">Overall · 10-page PDF</span>
         <strong>$29</strong>
         <ul>
-          <li>Full Digits 0–9 overview</li>
-          <li>Intensity · peak octave · plain labels</li>
-          <li>How to use the overall map</li>
-          <li>No deep narrative pass</li>
+          <li>Downloadable 10-page hybrid natal × 99 Octave PDF</li>
+          <li>Purpose · flow · life architecture overview</li>
+          <li>Relationships · family · career map</li>
+          <li>Daily practices + weekly plan</li>
         </ul>
         <a class="btn ghost" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=standard">Unlock $29</a>
         <div class="honor-rails" data-amount="29" data-memo="Your 99 Octave Chart · Standard $29" aria-label="Pay $29 on honor rails"></div>
       </div>
       <div class="tier">
-        <span class="muted">Narrative deluxe</span>
+        <span class="muted">Deluxe · 30-page PDF</span>
         <strong>$49</strong>
         <ul>
-          <li>Digit→narrative mapping</li>
-          <li>Extra pinning questions</li>
-          <li>Morphogenesis swarms</li>
-          <li>Weekly how-to-use beats</li>
+          <li>Downloadable 30-page hybrid natal × 99 Octave PDF</li>
+          <li>Sun/Moon/Rising deep dives + every Digit page</li>
+          <li>Career · family · relationships architecture</li>
+          <li>Daily practices · checklist · life architecting</li>
         </ul>
         <a class="btn ghost" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=deluxe">Unlock $49</a>
         <div class="honor-rails" data-amount="49" data-memo="Your 99 Octave Chart · Deluxe $49" aria-label="Pay $49 on honor rails"></div>
@@ -305,9 +305,9 @@
         <input id="birthPlace" name="birthPlace" placeholder="City, region" autocomplete="address-level2" />
         <label for="tier">Reading tier (honor)</label>
         <select id="tier">
-          <option value="free" selected>Free · summary</option>
-          <option value="chart_standard">Standard $29 · overall chart</option>
-          <option value="chart_deluxe">Deluxe $49 · narrative mapping</option>
+          <option value="free" selected>Free · 1-page PDF</option>
+          <option value="chart_standard">Standard $29 · 10-page PDF</option>
+          <option value="chart_deluxe">Deluxe $49 · 30-page PDF</option>
         </select>
         <div class="honor-panel" id="honor-panel" hidden>
           <p><strong>Pay on Fair Exchange</strong> — Venmo · PayPal · Cash App, then attest.</p>
@@ -333,6 +333,7 @@
           <input id="question" name="question" placeholder="What should I protect this month?" />
         </div>
         <button class="btn" type="submit" id="cast-btn">Get Your 99 Octave Chart</button>
+        <button class="btn ghost" type="button" id="download-pdf-btn" hidden>Download PDF</button>
         <p class="muted" id="form-status" role="status" aria-live="polite"></p>
       </form>
       <section class="card" id="your-wheel">
@@ -372,6 +373,8 @@
     const honorPanelAttest = document.getElementById('honor-panel-attest');
     const exampleWheel = document.getElementById('example-wheel');
     const exampleCaption = document.getElementById('example-caption');
+    const downloadPdfBtn = document.getElementById('download-pdf-btn');
+    let lastIntake = null;
 
     const HONOR = {
       venmo: 'Pru-Mendez',
@@ -556,27 +559,71 @@
         html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.standard.title)}</h4>`;
         html += `<p>${escapeHtml(reading.upsell.standard.why)}</p>`;
         html += `<p><em>Why it is worth $29:</em> ${escapeHtml(reading.upsell.standard.useful)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.standard.href}">Unlock overall written chart · $29</a>`;
+        html += `<a class="btn ghost" href="${reading.upsell.standard.href}">Unlock 10-page PDF · $29</a>`;
         html += renderUpsellRails(29, 'Your 99 Octave Chart · Standard $29');
         html += `</div>`;
         html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.deluxe.title)}</h4>`;
         html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
         html += `<p><em>Why it is worth $49:</em> ${escapeHtml(reading.upsell.deluxe.useful)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Unlock deluxe narrative · $49</a>`;
+        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Unlock 30-page PDF · $49</a>`;
         html += renderUpsellRails(49, 'Your 99 Octave Chart · Deluxe $49');
         html += `</div>`;
       } else if (tier === 'chart_standard') {
         html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.deluxe.title)}</h4>`;
         html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
         html += `<p><em>Why upgrade:</em> ${escapeHtml(reading.upsell.deluxe.useful)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Upgrade to Deluxe · $49</a>`;
+        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Upgrade to 30-page Deluxe PDF · $49</a>`;
         html += renderUpsellRails(49, 'Your 99 Octave Chart · Deluxe $49');
         html += `</div>`;
       }
 
+      const pdfPages = tier === 'chart_deluxe' ? 30 : tier === 'chart_standard' ? 10 : 1;
+      html += `<div class="upsell"><h4>Download your ${pdfPages}-page PDF</h4>`;
+      html += `<p>Hybrid natal × 99 Octave deliverable — purpose, flow, daily practices, life architecture.</p>`;
+      html += `<button type="button" class="btn ghost" id="reading-download-pdf">Download ${pdfPages}-page PDF</button></div>`;
+
       html += `</div>`;
       readingEl.innerHTML = html;
+      document.getElementById('reading-download-pdf')?.addEventListener('click', () => downloadPdf());
     }
+
+    async function downloadPdf() {
+      if (!lastIntake) {
+        statusEl.textContent = 'Generate a chart first, then download the PDF.';
+        statusEl.className = 'status-err';
+        return;
+      }
+      statusEl.textContent = 'Building your PDF…';
+      statusEl.className = 'muted';
+      try {
+        const res = await fetch('/api/octave99-chart-pdf', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(lastIntake),
+        });
+        if (!res.ok) throw new Error('pdf failed');
+        const blob = await res.blob();
+        const dispo = res.headers.get('content-disposition') || '';
+        const match = /filename="([^"]+)"/.exec(dispo);
+        const filename = match?.[1] || '99-octave-chart.pdf';
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        statusEl.textContent = 'PDF downloaded.';
+        statusEl.className = 'status-ok';
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = 'PDF download failed — try again.';
+        statusEl.className = 'status-err';
+      }
+    }
+
+    downloadPdfBtn?.addEventListener('click', () => downloadPdf());
 
     document.querySelectorAll('.honor-rails[data-amount]').forEach((el) => {
       fillHonorRails(el, el.getAttribute('data-amount'), el.getAttribute('data-memo'));
@@ -606,7 +653,6 @@
       });
       if (exampleWheel) exampleWheel.innerHTML = chartSvg(exampleChart, { example: true });
       if (exampleCaption) {
-        const loudest = [...exampleChart.bands].sort((a, b) => b.intensity - a.intensity)[0];
         exampleCaption.innerHTML =
           `<strong>Example:</strong> Alex’s picture shows ten life areas. ` +
           `The longest slice is loudest right now. Gold slices are home keys. ` +
@@ -652,6 +698,8 @@
           }
         : {};
 
+      lastIntake = { ...intake, deluxe, tier, ...deluxeOpts };
+
       let chart;
       let svg;
       let reading;
@@ -670,7 +718,7 @@
         const res = await fetch('/api/octave99-chart', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ ...intake, deluxe, tier, ...deluxeOpts }),
+          body: JSON.stringify(lastIntake),
         });
         if (res.ok) {
           const data = await res.json();
@@ -682,18 +730,22 @@
         }
       } catch { /* keep on-device chart */ }
 
-      // Written chart is primary; keep band list empty
       bandsEl.innerHTML = '';
       morpho.textContent = '';
 
       renderReading(reading, tier);
       wheel.innerHTML = svg;
+      if (downloadPdfBtn) {
+        downloadPdfBtn.hidden = false;
+        const pages = tier === 'chart_deluxe' ? 30 : tier === 'chart_standard' ? 10 : 1;
+        downloadPdfBtn.textContent = `Download ${pages}-page PDF`;
+      }
       statusEl.textContent =
         tier === 'free'
-          ? 'Free written chart ready — scroll the writing first.'
+          ? 'Free chart ready — download your 1-page PDF.'
           : tier === 'chart_deluxe'
-            ? 'Deluxe written chart ready.'
-            : 'Overall written chart ready.';
+            ? 'Deluxe chart ready — download your 30-page PDF.'
+            : 'Overall chart ready — download your 10-page PDF.';
       statusEl.className = 'status-ok';
       readingEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });

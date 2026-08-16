@@ -52,6 +52,33 @@
     @media (max-width: 720px) { .tiers { grid-template-columns: 1fr; } }
     .tier { padding: .9rem; border-radius: 12px; border: 1px solid rgba(212,175,55,.3); background: rgba(20,16,12,.9); }
     .tier strong { display: block; color: var(--gold); font-size: 1.35rem; }
+    .tier ul { margin: .5rem 0 .65rem; padding-left: 1.1rem; color: var(--champagne); font-size: .86rem; }
+    .tier li { margin: .25rem 0; }
+    .deluxe-fields[hidden] { display: none !important; }
+    .reading-block { margin-top: 1rem; padding-top: .85rem; border-top: 1px solid rgba(212,175,55,.22); }
+    .reading-block h3 {
+      font-family: 'Cormorant Garamond', serif; color: var(--gold);
+      font-size: 1.15rem; margin: 0 0 .5rem;
+    }
+    .reading-block p { margin: .4rem 0; font-size: .92rem; color: var(--text); line-height: 1.45; }
+    .guide-mini {
+      margin: .75rem 0 0; padding: .75rem .85rem;
+      background: rgba(10,8,6,.65); border-radius: 10px;
+      border: 1px solid rgba(212,175,55,.22);
+      font-size: .86rem; color: var(--champagne);
+    }
+    .guide-mini strong { color: var(--gold); }
+    .guide-mini ol { margin: .35rem 0 0; padding-left: 1.1rem; }
+    .guide-mini li { margin: .2rem 0; }
+    .upsell {
+      margin-top: .85rem; padding: .85rem .9rem; border-radius: 10px;
+      border: 1px dashed rgba(212,175,55,.45); background: rgba(212,175,55,.06);
+    }
+    .upsell h4 { margin: 0 0 .35rem; color: var(--gold); font-size: .95rem; }
+    .upsell p { margin: .3rem 0; font-size: .88rem; color: var(--champagne); }
+    .upsell a.btn { margin-top: .55rem; font-size: .85rem; padding: .55rem 1rem; }
+    .narrative-item { margin: .65rem 0; padding-bottom: .55rem; border-bottom: 1px solid rgba(212,175,55,.12); }
+    .narrative-item:last-child { border-bottom: 0; }
     .chart-frame { background: #050403; border-radius: 12px; overflow: hidden; min-height: 280px; }
     .chart-frame svg, .example-frame svg { width: 100%; height: auto; display: block; }
     .bands { margin-top: 1rem; font-size: .9rem; }
@@ -172,23 +199,38 @@
       </div>
     </section>
 
-    <div class="tiers" aria-label="Pricing">
+    <div class="tiers" aria-label="What you get">
       <div class="tier">
-        <span class="muted">Free trial</span>
+        <span class="muted">Free summary</span>
         <strong>$0</strong>
-        <p class="muted">One draft Story map on-device — no account.</p>
-        <a class="btn ghost" href="#intake" data-tier="free">Start free trial</a>
+        <ul>
+          <li>Your wheel + signature digits</li>
+          <li>Top Story bands summary</li>
+          <li>How to read the wheel</li>
+          <li>Clear preview of $29 &amp; $49</li>
+        </ul>
+        <a class="btn ghost" href="#intake" data-tier="free">Start free</a>
       </div>
       <div class="tier">
-        <span class="muted">Standard reading</span>
+        <span class="muted">Overall chart</span>
         <strong>$29</strong>
-        <p class="muted">Full Story map · Digits × Octaves narrative.</p>
+        <ul>
+          <li>Full Digits 0–9 overview</li>
+          <li>Intensity · peak octave · plain labels</li>
+          <li>How to use the overall map</li>
+          <li>No deep narrative pass</li>
+        </ul>
         <a class="btn ghost" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=standard">Unlock $29</a>
       </div>
       <div class="tier">
-        <span class="muted">Deluxe</span>
+        <span class="muted">Narrative deluxe</span>
         <strong>$49</strong>
-        <p class="muted">Deeper Story horizons &amp; share card.</p>
+        <ul>
+          <li>Digit→narrative mapping</li>
+          <li>Extra pinning questions</li>
+          <li>Morphogenesis swarms</li>
+          <li>Weekly how-to-use beats</li>
+        </ul>
         <a class="btn ghost" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=deluxe">Unlock $49</a>
       </div>
     </div>
@@ -196,7 +238,7 @@
     <div class="layout">
       <form class="card" id="intake" novalidate>
         <h2>Get Your 99 Octave Chart</h2>
-        <p class="muted" style="margin:0 0 .5rem">Free trial builds your wheel right here — no page reload, no checkout.</p>
+        <p class="muted" style="margin:0 0 .5rem">Free builds your summary on-device. Paid tiers use Fair Exchange honor rails.</p>
         <label for="name">Name</label>
         <input id="name" name="name" required placeholder="As you want it on the chart" autocomplete="name" />
         <label for="birthDate">Birth date</label>
@@ -207,10 +249,28 @@
         <input id="birthPlace" name="birthPlace" placeholder="City, region" autocomplete="address-level2" />
         <label for="tier">Reading tier (honor)</label>
         <select id="tier">
-          <option value="free" selected>Free trial</option>
-          <option value="chart_standard">Standard $29</option>
-          <option value="chart_deluxe">Deluxe $49</option>
+          <option value="free" selected>Free · summary</option>
+          <option value="chart_standard">Standard $29 · overall chart</option>
+          <option value="chart_deluxe">Deluxe $49 · narrative mapping</option>
         </select>
+        <div class="deluxe-fields" id="deluxe-fields" hidden>
+          <p class="muted" style="margin:.75rem 0 .35rem">Deluxe pinning — a few answers so the narrative lands on your real week.</p>
+          <label for="focus">What are you focusing on?</label>
+          <input id="focus" name="focus" placeholder="Work, relationship, craft, health, a decision…" />
+          <label for="season">Season of life right now</label>
+          <input id="season" name="season" placeholder="Starting over · mid-build · closing a chapter…" />
+          <label for="lens">Preferred lens</label>
+          <select id="lens">
+            <option value="">Choose one (optional)</option>
+            <option value="work">Work / vocation</option>
+            <option value="relationships">Relationships</option>
+            <option value="creative">Creative craft</option>
+            <option value="body">Body / pace</option>
+            <option value="spiritual">Meaning / spirit</option>
+          </select>
+          <label for="question">One question you want the chart to speak to</label>
+          <input id="question" name="question" placeholder="What should I protect this month?" />
+        </div>
         <button class="btn" type="submit" id="cast-btn">Get Your 99 Octave Chart</button>
         <p class="muted" id="form-status" role="status" aria-live="polite"></p>
       </form>
@@ -218,8 +278,9 @@
         <h2>Your wheel · live Story map</h2>
         <p class="muted" style="margin:0 0 .75rem">Same grammar as the example: Digits around the ring · length = intensity · gold = signature · Φ in the center.</p>
         <div class="chart-frame" id="wheel" aria-live="polite">
-          <div class="wheel-empty">Your wheel appears here after you get your chart — use Free trial above.</div>
+          <div class="wheel-empty">Your wheel appears here after you get your chart — start free above.</div>
         </div>
+        <div id="reading" aria-live="polite"></div>
         <ul class="bands" id="bands"></ul>
         <p class="muted" id="morpho"></p>
       </section>
@@ -227,19 +288,31 @@
   </div>
   <script type="module">
     // Absolute path required: /octave99-chart rewrite would break relative ./chart-engine.js
-    import { buildOctave99Chart, chartSvg } from '/interfaces/octave99-chart/chart-engine.js';
+    import {
+      buildOctave99Chart,
+      chartSvg,
+      buildChartReading,
+    } from '/interfaces/octave99-chart/chart-engine.js';
 
     const form = document.getElementById('intake');
     const wheel = document.getElementById('wheel');
     const bandsEl = document.getElementById('bands');
     const morpho = document.getElementById('morpho');
+    const readingEl = document.getElementById('reading');
     const statusEl = document.getElementById('form-status');
     const tierSelect = document.getElementById('tier');
+    const deluxeFields = document.getElementById('deluxe-fields');
     const exampleWheel = document.getElementById('example-wheel');
     const exampleCaption = document.getElementById('example-caption');
 
     function setTier(tier) {
       if (tierSelect && tier) tierSelect.value = tier;
+      syncDeluxeFields();
+    }
+
+    function syncDeluxeFields() {
+      const deluxe = tierSelect?.value === 'chart_deluxe';
+      if (deluxeFields) deluxeFields.hidden = !deluxe;
     }
 
     function focusIntake(tier) {
@@ -248,15 +321,98 @@
       document.getElementById('name')?.focus({ preventScroll: true });
     }
 
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function renderGuide(guide) {
+      return (
+        `<div class="guide-mini"><strong>Simple guide · reading your wheel</strong><ol>` +
+        guide.map((g) => `<li>${escapeHtml(g)}</li>`).join('') +
+        `</ol></div>`
+      );
+    }
+
+    function renderReading(reading, tier) {
+      if (!readingEl) return;
+      let html = renderGuide(reading.guide);
+
+      if (tier === 'free') {
+        const s = reading.summary;
+        html += `<div class="reading-block"><h3>${escapeHtml(s.headline)}</h3>`;
+        html += `<p>${escapeHtml(s.signatureLine)}</p>`;
+        html += `<p><strong>Loudest Story bands</strong></p><ul class="bands">`;
+        for (const b of s.loudest) {
+          html += `<li><strong>Digit ${b.digit}</strong> · ${escapeHtml(b.label)} · peak octave ${b.peakOctave} · ${b.intensity}% — ${escapeHtml(b.use)}</li>`;
+        }
+        html += `</ul><p><strong>Quieter lanes</strong> — Digits ${s.quieter.map((q) => q.digit).join(' &amp; ')} soft on this chart (rest or unused capacity).</p>`;
+        html += `<p><strong>How to use this summary</strong></p><ul class="bands">`;
+        for (const tip of s.howToUse) html += `<li>${escapeHtml(tip)}</li>`;
+        html += `</ul>`;
+        html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.standard.title)}</h4>`;
+        html += `<p>${escapeHtml(reading.upsell.standard.why)}</p>`;
+        html += `<p><em>Why useful:</em> ${escapeHtml(reading.upsell.standard.useful)}</p>`;
+        html += `<a class="btn ghost" href="${reading.upsell.standard.href}">Unlock overall chart · $29</a></div>`;
+        html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.deluxe.title)}</h4>`;
+        html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
+        html += `<p><em>Why useful:</em> ${escapeHtml(reading.upsell.deluxe.useful)}</p>`;
+        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Unlock narrative deluxe · $49</a></div></div>`;
+      } else if (tier === 'chart_standard') {
+        html += `<div class="reading-block"><h3>Overall chart · Digits 0–9</h3>`;
+        html += `<p>${escapeHtml(reading.summary.signatureLine)} This is the full overview map — intensity and peak octave for every band, without the deep narrative pass.</p><ul class="bands">`;
+        for (const row of reading.overview) {
+          const gold = row.emphasis ? ' · gold signature' : '';
+          html += `<li><strong>Digit ${row.digit}</strong> · ${escapeHtml(row.label)} · O${row.octaves[0]}–${row.octaves[1]} · peak ${row.peakOctave} · ${row.intensity}%${gold}<br /><span class="muted">${escapeHtml(row.line.split('—')[1]?.trim() || '')}</span></li>`;
+        }
+        html += `</ul><p><strong>How to use the overall chart</strong></p><ul class="bands">`;
+        for (const tip of reading.summary.howToUse) html += `<li>${escapeHtml(tip)}</li>`;
+        html += `</ul>`;
+        html += `<div class="upsell"><h4>Want digit→narrative detail?</h4>`;
+        html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
+        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Upgrade to Deluxe · $49</a></div></div>`;
+      } else {
+        const d = reading.deluxeBridge;
+        html += `<div class="reading-block"><h3>Deluxe · digit→narrative mapping</h3>`;
+        if (d.focus || d.season || d.question || d.lens) {
+          html += `<p class="muted">Pinned to`;
+          const bits = [];
+          if (d.focus) bits.push(` focus “${escapeHtml(d.focus)}”`);
+          if (d.season) bits.push(` season “${escapeHtml(d.season)}”`);
+          if (d.lens) bits.push(` ${escapeHtml(d.lens)} lens`);
+          if (d.question) bits.push(` question “${escapeHtml(d.question)}”`);
+          html += bits.join(' ·') + `.</p>`;
+        }
+        html += `<p>${escapeHtml(reading.summary.signatureLine)}</p>`;
+        for (const n of reading.narratives) {
+          html += `<div class="narrative-item"><strong>Digit ${n.digit} · ${escapeHtml(n.label)}</strong>`;
+          html += `<p>${escapeHtml(n.narrative)}</p></div>`;
+        }
+        html += `<p>${escapeHtml(d.morphoPlain)}</p>`;
+        html += `<p><strong>Why this deluxe map is useful</strong></p><ul class="bands">`;
+        for (const w of d.whyUseful) html += `<li>${escapeHtml(w)}</li>`;
+        html += `</ul><p><strong>How to use it this week</strong></p><ul class="bands">`;
+        for (const tip of reading.summary.howToUse) html += `<li>${escapeHtml(tip)}</li>`;
+        html += `</ul></div>`;
+      }
+
+      readingEl.innerHTML = html;
+    }
+
     document.querySelectorAll('[href="#intake"], #free-trial-cta, [data-tier]').forEach((el) => {
-      el.addEventListener('click', (ev) => {
+      el.addEventListener('click', () => {
         const t = el.getAttribute('data-tier') || (el.id === 'free-trial-cta' ? 'free' : null);
         if (t === 'free' || el.getAttribute('href') === '#intake') {
-          // keep hash navigation; still set free when intended
           if (t) setTier(t);
         }
       });
     });
+
+    tierSelect?.addEventListener('change', syncDeluxeFields);
+    syncDeluxeFields();
 
     // Refresh example from live engine when module loads (static SVG already visible as fallback)
     try {
@@ -311,14 +467,22 @@
       };
       const tier = tierSelect.value || 'free';
       const deluxe = tier === 'chart_deluxe';
-      const previewOnly = tier === 'free';
+      const deluxeOpts = deluxe
+        ? {
+            focus: document.getElementById('focus')?.value || '',
+            season: document.getElementById('season')?.value || '',
+            question: document.getElementById('question')?.value || '',
+            lens: document.getElementById('lens')?.value || '',
+          }
+        : {};
 
       let chart;
       let svg;
+      let reading;
       try {
-        // Always build on-device first so free trial never depends on the API
         chart = buildOctave99Chart(intake);
-        svg = chartSvg(chart, { deluxe });
+        svg = chartSvg(chart, { deluxe, tier });
+        reading = buildChartReading(chart, { tier, ...deluxeOpts });
       } catch (err) {
         console.error(err);
         statusEl.textContent = 'Could not build your chart — try again.';
@@ -326,12 +490,11 @@
         return;
       }
 
-      // Optional API enrich (non-blocking for free trial)
       try {
         const res = await fetch('/api/octave99-chart', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ ...intake, deluxe }),
+          body: JSON.stringify({ ...intake, deluxe, tier, ...deluxeOpts }),
         });
         if (res.ok) {
           const data = await res.json();
@@ -339,28 +502,31 @@
             chart = data.chart;
             svg = data.svg;
           }
+          if (data.reading) reading = data.reading;
         }
       } catch { /* keep on-device chart */ }
 
-      if (previewOnly) {
-        bandsEl.innerHTML = chart.bands
-          .slice(0, 3)
-          .map((b) => `<li><strong>Digit ${b.digit}</strong> · ${b.domain} · peak octave ${b.peakOctave}</li>`)
-          .join('') + '<li class="muted">Free trial shows Digits 0–2 — <a href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=standard">unlock $29</a> on the honor rail for the full Digits 0–9 narrative.</li>';
-        morpho.innerHTML = 'Free trial — morphogenesis swarms unlock at <a href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=deluxe">$49 Deluxe</a> (Fair Exchange honor rails).';
+      // Free: show summary list in bands; paid: overview/narrative lives in reading
+      if (tier === 'free') {
+        bandsEl.innerHTML = '';
+        morpho.textContent = '';
+      } else if (tier === 'chart_standard') {
+        bandsEl.innerHTML = '';
+        morpho.innerHTML =
+          'Overall chart ready — upgrade to <a href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=deluxe">$49 Deluxe</a> for digit→narrative mapping and pinning questions.';
       } else {
-        bandsEl.innerHTML = chart.bands
-          .map((b) => `<li><strong>Digit ${b.digit}</strong> (O${b.octaves[0]}–${b.octaves[1]}) · ${b.domain} · peak ${b.peakOctave} · ${b.intensity}%</li>`)
-          .join('');
-        if (deluxe) {
-          const m = chart.morphogenesis;
-          morpho.textContent = `Deluxe morphogenesis — Silicon ${m.silicon} · Carbon ${m.carbon} · Hydrogen ${m.hydrogen} · Theater ${m.theater}`;
-        } else {
-          morpho.textContent = 'Standard reading — upgrade to $49 for Silicon/Carbon/Hydrogen/Theater swarms.';
-        }
+        bandsEl.innerHTML = '';
+        morpho.textContent = '';
       }
+
+      renderReading(reading, tier);
       wheel.innerHTML = svg;
-      statusEl.textContent = previewOnly ? 'Free trial ready — your wheel is below.' : 'Your 99 Octave Chart is ready.';
+      statusEl.textContent =
+        tier === 'free'
+          ? 'Free summary ready — your wheel and upgrade path are below.'
+          : tier === 'chart_deluxe'
+            ? 'Deluxe narrative chart ready.'
+            : 'Overall chart ready.';
       statusEl.className = 'status-ok';
       document.getElementById('your-wheel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });

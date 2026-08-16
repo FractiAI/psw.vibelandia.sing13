@@ -2,7 +2,7 @@
  * POST /api/octave99-chart — generate a 99 Octave chart from intake.
  * Free preview always allowed; deluxe flag is client-attested (honor rail).
  */
-import { buildOctave99Chart, chartSvg } from '../lib/octave99-chart.mjs';
+import { buildOctave99Chart, chartSvg, buildChartReading } from '../lib/octave99-chart.mjs';
 import { OCTAVE99_TIERS } from '../lib/octave99-tiers.mjs';
 
 export const config = { maxDuration: 30 };
@@ -57,11 +57,25 @@ export default async function handler(req, res) {
     return json(res, 400, { error: 'name and birthDate are required' });
   }
   const deluxe = Boolean(body.deluxe);
+  const tier = body.tier || (deluxe ? 'chart_deluxe' : 'chart_standard');
   const chart = buildOctave99Chart(intake);
-  const svg = chartSvg(chart, { deluxe });
+  const svg = chartSvg(chart, { deluxe, tier });
+  const reading = buildChartReading(chart, {
+    tier,
+    focus: body.focus,
+    season: body.season,
+    question: body.question,
+    lens: body.lens,
+  });
   return json(res, 200, {
     chart,
     svg,
-    tierHint: deluxe ? OCTAVE99_TIERS.chart_deluxe : OCTAVE99_TIERS.chart_standard,
+    reading,
+    tierHint:
+      tier === 'chart_deluxe' || deluxe
+        ? OCTAVE99_TIERS.chart_deluxe
+        : tier === 'free'
+          ? OCTAVE99_TIERS.free
+          : OCTAVE99_TIERS.chart_standard,
   });
 }

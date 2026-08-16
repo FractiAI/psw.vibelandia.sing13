@@ -30,10 +30,10 @@ export default async function handler(req, res) {
   }
   if (req.method === 'GET') {
     return json(res, 200, {
-      product: '99 Octave Chart · Story map',
+      product: 'Your 99 Octave Chart',
       tiers: OCTAVE99_TIERS,
       honesty:
-        'Chart yourself within the grand Story to 99 octaves of depth (Φ_EGS) using fractal · holographic · Goldilocks AI. Architectural Omni-Lattice map — not predictive astrology or medical advice.',
+        'Get Your 99 Octave Chart — chart yourself within the grand Story to 99 octaves of depth (Φ_EGS) using fractal · holographic · Goldilocks AI. Architectural Omni-Lattice map — not predictive astrology or medical advice.',
     });
   }
   if (req.method !== 'POST') {

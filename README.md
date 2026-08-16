@@ -114,7 +114,7 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 
 **Read order for agents & auditors:** CMOS/protonic → tensor decoupling → master synthesis → digits master → [coherence plain speak](docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) → [MCA NSPFRNP catalog](protocols/MCA_NSPFRNP_CATALOG.md). Details: [`AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md`](AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md).
 
-**Products on the engine:** **99 Octave Chart** = chart yourself within the grand Story to 99 octaves of depth ($\Phi_{\mathrm{EGS}}$) with fractal · holographic · Goldilocks AI — [/octave99-chart](https://www.ssvibelandiaquestfest24x365.com/octave99-chart) · Bridge & Chart pricing [/octave99-pricing](https://www.ssvibelandiaquestfest24x365.com/octave99-pricing) · Lattice nest `octave99` [/lattice-chat?nest=octave99](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99).
+**Products on the engine:** **Your 99 Octave Chart** = chart yourself within the grand Story to 99 octaves of depth ($\Phi_{\mathrm{EGS}}$) with fractal · holographic · Goldilocks AI — [/octave99-chart](https://www.ssvibelandiaquestfest24x365.com/octave99-chart) · Bridge & Chart pricing [/octave99-pricing](https://www.ssvibelandiaquestfest24x365.com/octave99-pricing) · Lattice nest `octave99` [/lattice-chat?nest=octave99](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99).
 
 ---
 
@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-15** · **172** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-16** · **172** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -466,7 +466,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | 99 Octave Chart · Chart yourself in the grand Story |
+| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | Your 99 Octave Chart · Get Your Chart |
 
 ### `questfest-bridge/` (`/interfaces/questfest-bridge/`)
 

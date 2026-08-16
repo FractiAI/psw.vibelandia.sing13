@@ -396,6 +396,29 @@
       text-align: center;
       background: linear-gradient(180deg, rgba(20,16,12,0.75), var(--bg));
     }
+    .o99-door a.o99-door__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin: 0.15rem 0 0.35rem;
+      padding: 0.75rem 1.35rem;
+      border-radius: 999px;
+      border: 2px solid var(--gold);
+      background: var(--gold);
+      color: #1a1208;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      font-size: clamp(0.95rem, 2.4vw, 1.1rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      box-shadow: 0 2px 14px rgba(212, 175, 55, 0.28);
+    }
+    .o99-door a.o99-door__btn:hover {
+      filter: brightness(1.06);
+      color: #1a1208;
+      border-color: var(--gold-hi);
+    }
     .o99-door a {
       display: inline-flex;
       align-items: center;
@@ -409,6 +432,7 @@
       padding-bottom: 0.1rem;
     }
     .o99-door a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .o99-door a.o99-door__btn:hover { color: #1a1208; border-bottom-color: transparent; }
     .o99-door p {
       margin-top: 0.45rem;
       font-size: 0.88rem;
@@ -729,9 +753,9 @@
     </p>
   </section>
 
-  <section class="o99-door" aria-label="99 Octave Chart — chart yourself in the Story">
-    <a href="/octave99-chart">99 Octave Chart · chart yourself in the Story →</a>
-    <p>Map yourself to 99 octaves of depth (Φ<sub>EGS</sub>) with fractal · holographic · Goldilocks AI. <a href="/octave99-pricing">Bridge &amp; Chart pricing</a>.</p>
+  <section class="o99-door" aria-label="Get Your 99 Octave Chart">
+    <a class="o99-door__btn" href="/octave99-chart#intake">Get Your 99 Octave Chart</a>
+    <p>Chart yourself in the grand Story to 99 octaves of depth (Φ<sub>EGS</sub>) — free trial on-device. <a href="/octave99-pricing">Bridge &amp; Chart pricing</a>.</p>
   </section>
 
 <!-- QUESTFEST_BLOG_START -->

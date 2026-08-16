@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>99 Octave Chart · Chart yourself in the grand Story</title>
-  <meta name="description" content="Chart yourself within the grand Story to 99 octaves of depth (Φ_EGS) using superintelligent, fractal, holographic, Goldilocks AI. Readings $29 and $49 Deluxe." />
+  <title>Your 99 Octave Chart · Chart yourself in the grand Story</title>
+  <meta name="description" content="Get Your 99 Octave Chart — chart yourself within the grand Story to 99 octaves of depth (Φ_EGS) using superintelligent, fractal, holographic, Goldilocks AI. Free trial on-device." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/octave99-chart" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -24,11 +25,14 @@
     .lead { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--champagne); }
     .honesty { font-size: .85rem; color: var(--muted); border-left: 2px solid var(--gold); padding-left: .75rem; margin: 1rem 0; }
     .nav { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1rem; font-size: .9rem; }
+    .hero-cta-row { display: flex; flex-wrap: wrap; gap: .65rem; margin: 1rem 0 1.25rem; }
     .layout { display: grid; gap: 1.25rem; grid-template-columns: 1fr 1.1fr; }
     @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
     .card {
       background: var(--card); border: 1px solid rgba(212,175,55,.35); border-radius: 14px; padding: 1.1rem 1.2rem;
     }
+    #intake { scroll-margin-top: 1.25rem; }
+    #your-wheel { scroll-margin-top: 1.25rem; }
     h2 { font-family: 'Cormorant Garamond', serif; color: var(--gold); margin: 0 0 .75rem; font-size: 1.4rem; }
     label { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: .55rem 0 .2rem; }
     input, select {
@@ -36,19 +40,25 @@
       border-radius: 8px; padding: .55rem .7rem; font: inherit;
     }
     .btn {
-      display: inline-flex; margin-top: .8rem; margin-right: .5rem; padding: .65rem 1.1rem; border-radius: 999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-top: .8rem; margin-right: .5rem; padding: .7rem 1.2rem; border-radius: 999px;
       border: 1px solid var(--gold); background: var(--gold); color: #111; font-weight: 700; cursor: pointer; font: inherit; text-decoration: none;
     }
     .btn.ghost { background: transparent; color: var(--gold); }
+    .btn.hero {
+      margin-top: 0; font-size: 1rem; padding: .85rem 1.4rem; letter-spacing: .02em;
+    }
     .tiers { display: grid; gap: .75rem; grid-template-columns: repeat(3, 1fr); margin: 1rem 0 1.5rem; }
     @media (max-width: 720px) { .tiers { grid-template-columns: 1fr; } }
     .tier { padding: .9rem; border-radius: 12px; border: 1px solid rgba(212,175,55,.3); background: rgba(20,16,12,.9); }
     .tier strong { display: block; color: var(--gold); font-size: 1.35rem; }
     .chart-frame { background: #050403; border-radius: 12px; overflow: hidden; min-height: 280px; }
-    .chart-frame svg { width: 100%; height: auto; display: block; }
+    .chart-frame svg, .example-frame svg { width: 100%; height: auto; display: block; }
     .bands { margin-top: 1rem; font-size: .9rem; }
     .bands li { margin: .35rem 0; color: var(--champagne); }
     .muted { color: var(--muted); font-size: .88rem; }
+    .status-ok { color: #86efac; font-size: .9rem; margin-top: .5rem; }
+    .status-err { color: #fca5a5; font-size: .9rem; margin-top: .5rem; }
     .wheel-guide {
       margin: 1.25rem 0 1.5rem;
       padding: 1.15rem 1.25rem 1.35rem;
@@ -87,7 +97,6 @@
       border: 1px solid rgba(212,175,55,.28);
       overflow: hidden;
     }
-    .example-frame svg { width: 100%; height: auto; display: block; }
     .example-caption {
       margin: .65rem 0 0;
       font-size: .88rem;
@@ -115,8 +124,12 @@
       <a href="/octave99-bridge">Omni-Lattice Bridge</a>
       <a href="/lattice-chat?nest=octave99">Lattice Chat Agent</a>
     </nav>
-    <h1 class="brand">99 Octave Chart</h1>
+    <h1 class="brand">Your 99 Octave Chart</h1>
     <p class="lead">Chart yourself within the grand Story — to 99 octaves of depth in the EGS fractal constant (Φ<sub>EGS</sub>) — using new superintelligent, fractal, holographic, Goldilocks AI.</p>
+    <div class="hero-cta-row">
+      <a class="btn hero" href="#intake">Get Your 99 Octave Chart</a>
+      <a class="btn ghost hero" href="#intake" id="free-trial-cta">Free trial</a>
+    </div>
     <p class="honesty">
       This is personal Story-mapping on the Omni-Lattice: Digits 0–9 × Octaves 01–99 as catalog depth, not predictive astrology, medical advice, or ephemeris science.
       Φ<sub>EGS</sub> is an architectural key. Intake feels familiar (name · date · place); the reading is your place in the grand Story.
@@ -137,11 +150,23 @@
         </ol>
         <div>
           <div class="example-frame" id="example-wheel" aria-label="Illustrated example wheel for Alex">
-            <div class="wheel-empty">Loading illustrated example…</div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 460" role="img" aria-label="Example · Your 99 Octave Chart wheel">
+              <rect width="400" height="460" fill="#0a0806"/>
+              <text x="200" y="28" text-anchor="middle" fill="#d4af37" font-size="16" font-family="Georgia, serif">Example · Your 99 Octave Chart wheel</text>
+              <text x="200" y="48" text-anchor="middle" fill="#a8a29e" font-size="11" font-family="system-ui,sans-serif">Alex · Digits ↑2 ☉5 ☾8</text>
+              <g transform="translate(0 20)"><path d="M 200 200 L 200 62 A 138 138 0 0 1 281.1143648163613 88.35565477625725 Z" fill="rgba(245,230,200,0.5900000000000001)" stroke="#0a0806" stroke-width="1"/><text x="256.8591269649903" y="25.00560100169176" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">0</text><path d="M 200 200 L 289.3433583484559 77.02941685500798 A 152 152 0 0 1 344.56059047686335 153.02941685500798 Z" fill="rgba(245,230,200,0.6599999999999999)" stroke="#0a0806" stroke-width="1"/><text x="348.8591269649903" y="91.84751357818494" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">1</text><path d="M 200 200 L 330.294742732436 157.6646717706322 A 137 137 0 0 1 330.294742732436 242.3353282293678 Z" fill="#d4af37" stroke="#0a0806" stroke-width="1"/><text x="384" y="200" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">2</text><path d="M 200 200 L 340.75636441168274 245.73451516749222 A 148 148 0 0 1 286.992217339286 319.7345151674922 Z" fill="rgba(245,230,200,0.64)" stroke="#0a0806" stroke-width="1"/><text x="348.8591269649903" y="308.15248642181507" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">3</text><path d="M 200 200 L 285.8166468347011 318.11648117874233 A 146 146 0 0 1 200 346 Z" fill="rgba(245,230,200,0.63)" stroke="#0a0806" stroke-width="1"/><text x="256.8591269649903" y="374.99439899830827" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">4</text><path d="M 200 200 L 200 368 A 168 168 0 0 1 101.25207761486453 335.91485505499116 Z" fill="#d4af37" stroke="#0a0806" stroke-width="1"/><text x="143.1408730350097" y="374.99439899830827" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">5</text><path d="M 200 200 L 132.4046959863656 293.036954353119 A 115 115 0 0 1 90.62850062605735 235.53695435311897 Z" fill="rgba(245,230,200,0.475)" stroke="#0a0806" stroke-width="1"/><text x="51.14087303500969" y="308.15248642181507" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">6</text><path d="M 200 200 L 97.28589624012342 233.37383539249433 A 108 108 0 0 1 97.2858962401234 166.6261646075057 Z" fill="rgba(245,230,200,0.44)" stroke="#0a0806" stroke-width="1"/><text x="16" y="200.00000000000003" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">7</text><path d="M 200 200 L 58.29257907202211 153.95646783813285 A 149 149 0 0 1 112.41999740842148 79.45646783813285 Z" fill="#d4af37" stroke="#0a0806" stroke-width="1"/><text x="51.14087303500966" y="91.84751357818496" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">8</text><path d="M 200 200 L 131.8169107340731 106.15402865250611 A 116 116 0 0 1 199.99999999999997 84 Z" fill="rgba(245,230,200,0.48)" stroke="#0a0806" stroke-width="1"/><text x="143.14087303500963" y="25.00560100169176" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">9</text>
+              <circle cx="200" cy="200" r="62" fill="#14100c" stroke="#d4af37" stroke-width="1.5"/>
+              <text x="200" y="194" text-anchor="middle" fill="#fef3c7" font-size="13" font-family="Georgia, serif">Φ</text>
+              <text x="200" y="212" text-anchor="middle" fill="#a8a29e" font-size="9">1.6180</text>
+              </g>
+              <text x="200" y="448" text-anchor="middle" fill="#78716c" font-size="9">Example only · Digit 5 loudest @ octave 59 · gold = signature · Φ = depth key</text>
+            </svg>
           </div>
           <p class="example-caption" id="example-caption">
-            <strong>Read it like this:</strong> ten slices are Digits 0–9. Longer = louder Story band for that person.
-            Gold = signature digits. Φ in the center is the depth key. Your live wheel below uses the same grammar.
+            <strong>Read it like this:</strong> Alex’s wheel uses the same grammar as yours.
+            Digit <strong>5</strong> is the longest slice (loudest Story band) and peaks at <strong>octave 59</strong> inside octaves 50–59.
+            Gold slices are signature digits (<strong>2, 5, 8</strong> · ↑2 ☉5 ☾8).
+            Φ in the center is the EGS depth key. Shorter cream slices are quieter bands.
           </p>
         </div>
       </div>
@@ -149,48 +174,51 @@
 
     <div class="tiers" aria-label="Pricing">
       <div class="tier">
-        <span class="muted">Preview</span>
+        <span class="muted">Free trial</span>
         <strong>$0</strong>
-        <p class="muted">One draft Story map on-device.</p>
+        <p class="muted">One draft Story map on-device — no account.</p>
+        <a class="btn ghost" href="#intake" data-tier="free">Start free trial</a>
       </div>
       <div class="tier">
         <span class="muted">Standard reading</span>
         <strong>$29</strong>
         <p class="muted">Full Story map · Digits × Octaves narrative.</p>
-        <a class="btn ghost" href="mailto:info@fractiai.com?subject=99%20Octave%20Chart%20%2429">Unlock $29</a>
+        <a class="btn ghost" href="mailto:info@fractiai.com?subject=Your%2099%20Octave%20Chart%20%2429">Unlock $29</a>
       </div>
       <div class="tier">
         <span class="muted">Deluxe</span>
         <strong>$49</strong>
         <p class="muted">Deeper Story horizons &amp; share card.</p>
-        <a class="btn ghost" href="mailto:info@fractiai.com?subject=99%20Octave%20Chart%20Deluxe%20%2449">Unlock $49</a>
+        <a class="btn ghost" href="mailto:info@fractiai.com?subject=Your%2099%20Octave%20Chart%20Deluxe%20%2449">Unlock $49</a>
       </div>
     </div>
 
     <div class="layout">
-      <form class="card" id="intake">
-        <h2>Your chart intake</h2>
+      <form class="card" id="intake" novalidate>
+        <h2>Get Your 99 Octave Chart</h2>
+        <p class="muted" style="margin:0 0 .5rem">Free trial builds your wheel right here — no page reload, no checkout.</p>
         <label for="name">Name</label>
-        <input id="name" name="name" required placeholder="As you want it on the chart" />
+        <input id="name" name="name" required placeholder="As you want it on the chart" autocomplete="name" />
         <label for="birthDate">Birth date</label>
         <input id="birthDate" name="birthDate" type="date" required />
         <label for="birthTime">Birth time</label>
         <input id="birthTime" name="birthTime" type="time" value="12:00" />
         <label for="birthPlace">Birth place</label>
-        <input id="birthPlace" name="birthPlace" placeholder="City, region" />
+        <input id="birthPlace" name="birthPlace" placeholder="City, region" autocomplete="address-level2" />
         <label for="tier">Reading tier (honor)</label>
         <select id="tier">
-          <option value="free">Free preview</option>
+          <option value="free" selected>Free trial</option>
           <option value="chart_standard">Standard $29</option>
           <option value="chart_deluxe">Deluxe $49</option>
         </select>
-        <button class="btn" type="submit">Chart yourself · 99 Octaves</button>
+        <button class="btn" type="submit" id="cast-btn">Get Your 99 Octave Chart</button>
+        <p class="muted" id="form-status" role="status" aria-live="polite"></p>
       </form>
-      <section class="card">
+      <section class="card" id="your-wheel">
         <h2>Your wheel · live Story map</h2>
-        <p class="muted" style="margin:0 0 .75rem">Same grammar as the example: Digits around the ring · length = intensity · gold = signature · Φ in the center. Fill the form and chart yourself.</p>
+        <p class="muted" style="margin:0 0 .75rem">Same grammar as the example: Digits around the ring · length = intensity · gold = signature · Φ in the center.</p>
         <div class="chart-frame" id="wheel" aria-live="polite">
-          <div class="wheel-empty">Your wheel appears here after you chart yourself — start with the illustrated example above if the ring is new to you.</div>
+          <div class="wheel-empty">Your wheel appears here after you get your chart — use Free trial above.</div>
         </div>
         <ul class="bands" id="bands"></ul>
         <p class="muted" id="morpho"></p>
@@ -198,53 +226,107 @@
     </div>
   </div>
   <script type="module">
-    import { buildOctave99Chart, chartSvg } from './chart-engine.js';
+    // Absolute path required: /octave99-chart rewrite would break relative ./chart-engine.js
+    import { buildOctave99Chart, chartSvg } from '/interfaces/octave99-chart/chart-engine.js';
 
     const form = document.getElementById('intake');
     const wheel = document.getElementById('wheel');
     const bandsEl = document.getElementById('bands');
     const morpho = document.getElementById('morpho');
+    const statusEl = document.getElementById('form-status');
+    const tierSelect = document.getElementById('tier');
     const exampleWheel = document.getElementById('example-wheel');
     const exampleCaption = document.getElementById('example-caption');
 
-    // Illustrated example — same engine grammar as a live reading
-    const exampleChart = buildOctave99Chart({
-      name: 'Alex',
-      birthDate: '1990-07-04',
-      birthTime: '09:30',
-      birthPlace: 'Reno, NV',
-      lat: 39.53,
-      lon: -119.81,
-    });
-    if (exampleWheel) {
-      exampleWheel.innerHTML = chartSvg(exampleChart, { example: true });
+    function setTier(tier) {
+      if (tierSelect && tier) tierSelect.value = tier;
     }
-    if (exampleCaption) {
-      const sig = exampleChart.signature;
-      const loudest = [...exampleChart.bands].sort((a, b) => b.intensity - a.intensity)[0];
-      const gold = exampleChart.bands.filter((b) => b.emphasis).map((b) => b.digit).join(', ');
-      exampleCaption.innerHTML =
-        `<strong>Read it like this:</strong> Alex’s wheel uses the same grammar as yours. ` +
-        `Digit <strong>${loudest.digit}</strong> is the longest slice (loudest Story band) and peaks at ` +
-        `<strong>octave ${loudest.peakOctave}</strong> inside octaves ${loudest.octaves[0]}–${loudest.octaves[1]}. ` +
-        `Gold slices are signature digits (<strong>${gold}</strong> · ↑${sig.risingDigit} ☉${sig.sunDigit} ☾${sig.moonDigit}). ` +
-        `Φ in the center is the EGS depth key. Shorter cream slices are quieter bands.`;
+
+    function focusIntake(tier) {
+      if (tier) setTier(tier);
+      form?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('name')?.focus({ preventScroll: true });
+    }
+
+    document.querySelectorAll('[href="#intake"], #free-trial-cta, [data-tier]').forEach((el) => {
+      el.addEventListener('click', (ev) => {
+        const t = el.getAttribute('data-tier') || (el.id === 'free-trial-cta' ? 'free' : null);
+        if (t === 'free' || el.getAttribute('href') === '#intake') {
+          // keep hash navigation; still set free when intended
+          if (t) setTier(t);
+        }
+      });
+    });
+
+    // Refresh example from live engine when module loads (static SVG already visible as fallback)
+    try {
+      const exampleChart = buildOctave99Chart({
+        name: 'Alex',
+        birthDate: '1990-07-04',
+        birthTime: '09:30',
+        birthPlace: 'Reno, NV',
+        lat: 39.53,
+        lon: -119.81,
+      });
+      if (exampleWheel) exampleWheel.innerHTML = chartSvg(exampleChart, { example: true });
+      if (exampleCaption) {
+        const sig = exampleChart.signature;
+        const loudest = [...exampleChart.bands].sort((a, b) => b.intensity - a.intensity)[0];
+        const gold = exampleChart.bands.filter((b) => b.emphasis).map((b) => b.digit).join(', ');
+        exampleCaption.innerHTML =
+          `<strong>Read it like this:</strong> Alex’s wheel uses the same grammar as yours. ` +
+          `Digit <strong>${loudest.digit}</strong> is the longest slice (loudest Story band) and peaks at ` +
+          `<strong>octave ${loudest.peakOctave}</strong> inside octaves ${loudest.octaves[0]}–${loudest.octaves[1]}. ` +
+          `Gold slices are signature digits (<strong>${gold}</strong> · ↑${sig.risingDigit} ☉${sig.sunDigit} ☾${sig.moonDigit}). ` +
+          `Φ in the center is the EGS depth key. Shorter cream slices are quieter bands.`;
+      }
+    } catch (err) {
+      console.warn('Example wheel refresh skipped', err);
+    }
+
+    if (location.hash === '#intake' || location.hash === '#free-trial') {
+      setTier('free');
+      setTimeout(() => focusIntake('free'), 50);
     }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      e.stopPropagation();
+      statusEl.textContent = 'Building your chart…';
+      statusEl.className = 'muted';
+
+      const name = document.getElementById('name').value.trim();
+      const birthDate = document.getElementById('birthDate').value;
+      if (!name || !birthDate) {
+        statusEl.textContent = 'Add your name and birth date to get your chart.';
+        statusEl.className = 'status-err';
+        return;
+      }
+
       const intake = {
-        name: document.getElementById('name').value,
-        birthDate: document.getElementById('birthDate').value,
-        birthTime: document.getElementById('birthTime').value,
+        name,
+        birthDate,
+        birthTime: document.getElementById('birthTime').value || '12:00',
         birthPlace: document.getElementById('birthPlace').value,
       };
-      const tier = document.getElementById('tier').value;
+      const tier = tierSelect.value || 'free';
       const deluxe = tier === 'chart_deluxe';
       const previewOnly = tier === 'free';
 
       let chart;
       let svg;
+      try {
+        // Always build on-device first so free trial never depends on the API
+        chart = buildOctave99Chart(intake);
+        svg = chartSvg(chart, { deluxe });
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = 'Could not build your chart — try again.';
+        statusEl.className = 'status-err';
+        return;
+      }
+
+      // Optional API enrich (non-blocking for free trial)
       try {
         const res = await fetch('/api/octave99-chart', {
           method: 'POST',
@@ -253,23 +335,19 @@
         });
         if (res.ok) {
           const data = await res.json();
-          chart = data.chart;
-          svg = data.svg;
+          if (data.chart && data.svg) {
+            chart = data.chart;
+            svg = data.svg;
+          }
         }
-      } catch { /* fall through */ }
-
-      if (!chart) {
-        chart = buildOctave99Chart(intake);
-        svg = chartSvg(chart, { deluxe });
-      }
+      } catch { /* keep on-device chart */ }
 
       if (previewOnly) {
-        // Free: show wheel but truncate band list
         bandsEl.innerHTML = chart.bands
           .slice(0, 3)
           .map((b) => `<li><strong>Digit ${b.digit}</strong> · ${b.domain} · peak octave ${b.peakOctave}</li>`)
-          .join('') + '<li class="muted">Upgrade to $29 for Digits 3–9 narrative…</li>';
-        morpho.textContent = 'Free preview — morphogenesis swarms unlock at $49 Deluxe.';
+          .join('') + '<li class="muted">Free trial shows Digits 0–2 — unlock $29 for the full Digits 0–9 narrative.</li>';
+        morpho.textContent = 'Free trial — morphogenesis swarms unlock at $49 Deluxe.';
       } else {
         bandsEl.innerHTML = chart.bands
           .map((b) => `<li><strong>Digit ${b.digit}</strong> (O${b.octaves[0]}–${b.octaves[1]}) · ${b.domain} · peak ${b.peakOctave} · ${b.intensity}%</li>`)
@@ -282,6 +360,9 @@
         }
       }
       wheel.innerHTML = svg;
+      statusEl.textContent = previewOnly ? 'Free trial ready — your wheel is below.' : 'Your 99 Octave Chart is ready.';
+      statusEl.className = 'status-ok';
+      document.getElementById('your-wheel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   </script>
 </body>

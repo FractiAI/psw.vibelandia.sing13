@@ -29,11 +29,17 @@
 
     <div class="grs-panel">
       <p id="pay-desc"></p>
-      <p><strong>How it works:</strong> order directly from your purveyor of choice, then book a Valet to pick up and deliver — or book us to handle everything for <strong>18%</strong> of the total bill. Broadcast what to pick up and your valet tip offer; a franchise valet accepts what fits.</p>
-      <p><strong>Transparency:</strong> your tip splits <strong>33%</strong> to the app, <strong>67%</strong> to the valet or concierge who accepted.</p>
-      <p><strong>Ordering &amp; Payments:</strong> You order and pay directly, and our Valets will pick up and deliver to you — or we can take care of everything for an additional <strong>18%</strong> of the total bill.</p>
-      <p>Email <strong>what you want</strong>, <strong>your tip offer</strong>, and <strong>neighborhood</strong> (Downtown · Midtown · Southern UNR · Idlewild · Riverwalk). Once accepted, pay on your rail and reply with <strong>date paid + rail used</strong>. Fair Exchange — refunds and tips ride on delivery harmony, not algorithms.</p>
-      <p>Regular guest? <a href="/hire-a-goldilocks-valet-concierge#join-h2">Join the guest channel</a> — once accepted you're placed in the WhatsApp group, where you broadcast requests and members accept. All else stays offline on these same rails.</p>
+      <div id="pay-concierge-copy">
+        <p><strong>How it works:</strong> order directly from your purveyor of choice, then book a Valet to pick up and deliver — or book us to handle everything for <strong>18%</strong> of the total bill. Broadcast what to pick up and your valet tip offer; a franchise valet accepts what fits.</p>
+        <p><strong>Transparency:</strong> your tip splits <strong>33%</strong> to the app, <strong>67%</strong> to the valet or concierge who accepted.</p>
+        <p><strong>Ordering &amp; Payments:</strong> You order and pay directly, and our Valets will pick up and deliver to you — or we can take care of everything for an additional <strong>18%</strong> of the total bill.</p>
+        <p>Email <strong>what you want</strong>, <strong>your tip offer</strong>, and <strong>neighborhood</strong> (Downtown · Midtown · Southern UNR · Idlewild · Riverwalk). Once accepted, pay on your rail and reply with <strong>date paid + rail used</strong>. Fair Exchange — refunds and tips ride on delivery harmony, not algorithms.</p>
+        <p>Regular guest? <a href="/hire-a-goldilocks-valet-concierge#join-h2">Join the guest channel</a> — once accepted you're placed in the WhatsApp group, where you broadcast requests and members accept. All else stays offline on these same rails.</p>
+      </div>
+      <div id="pay-digital-copy" hidden>
+        <p><strong>How it works:</strong> pay on an honor rail below (Venmo · PayPal · Cash App), then attest by email with <strong>date paid + rail used</strong>. Fair Exchange — no Stripe checkout; values stay elastic based on delivery.</p>
+        <p>After you pay, return to <a href="/octave99-chart#intake">Your 99 Octave Chart</a> and select the matching reading tier. Questions: <a href="mailto:info@fractiai.com">info@fractiai.com</a>.</p>
+      </div>
     </div>
 
     <div class="grs-rails" id="pay-rails"></div>
@@ -109,18 +115,43 @@
           amountNote: 'Optional honor signal — the email is the door',
           desc: 'Listing food, goods, or services on our menu. Tell us what you serve and where inside the bubble.',
           memo: 'GOLDILOCKS MENU · partner'
+        },
+        'chart-standard': {
+          title: 'Your 99 Octave Chart · Standard',
+          amount: 29,
+          mode: 'digital',
+          amountNote: '$29 · Fair Exchange honor · Digits × Octaves narrative',
+          desc: 'Full Story map reading — Digits 0–9 × 99 Octave wheel. Pay on an honor rail, then attest date paid + rail used.',
+          memo: 'YOUR 99 OCTAVE CHART · Standard $29',
+          backHref: '/octave99-chart'
+        },
+        'chart-deluxe': {
+          title: 'Your 99 Octave Chart · Deluxe',
+          amount: 49,
+          mode: 'digital',
+          amountNote: '$49 · Fair Exchange honor · morphogenesis + share card',
+          desc: 'Deeper Story horizons, morphogenesis swarms, and share card. Pay on an honor rail, then attest date paid + rail used.',
+          memo: 'YOUR 99 OCTAVE CHART · Deluxe $49',
+          backHref: '/octave99-chart'
         }
       };
 
       var key;
       if (service === 'assist') key = unit === 'day' ? 'assist-day' : 'assist-hour';
       else if (service === 'respite' || service === 'caregiving') key = 'caregiving-respite';
-      else if (service && config[service]) key = service;
+      else if (service === 'chart' || service === 'octave99' || service === 'octave99-chart') {
+        key = unit === 'deluxe' || unit === '49' || unit === 'chart_deluxe' ? 'chart-deluxe' : 'chart-standard';
+      } else if (service === 'chart_standard' || service === 'chart-standard' || service === 'chart29') {
+        key = 'chart-standard';
+      } else if (service === 'chart_deluxe' || service === 'chart-deluxe' || service === 'chart49') {
+        key = 'chart-deluxe';
+      } else if (service && config[service]) key = service;
       else if (role !== 'guest' && config[role]) key = role;
       else key = 'food';
 
       var c = config[key];
       var qty = c.quantity ? c.quantity.min : 1;
+      var isDigital = c.mode === 'digital';
 
       var titleEl = document.getElementById('pay-title');
       var subEl = document.getElementById('pay-sub');
@@ -131,11 +162,20 @@
       var qtyVal = document.getElementById('qty-val');
       var railsEl = document.getElementById('pay-rails');
       var mailEl = document.getElementById('pay-mail');
+      var conciergeCopy = document.getElementById('pay-concierge-copy');
+      var digitalCopy = document.getElementById('pay-digital-copy');
+      var backLink = document.querySelector('.deck-back');
 
       if (titleEl) titleEl.textContent = c.title;
       if (subEl) subEl.textContent = 'Fair Exchange · old-school honor rails — no PSP webhooks.';
       if (amountNoteEl) amountNoteEl.textContent = c.amountNote;
       if (descEl) descEl.textContent = c.desc;
+      if (conciergeCopy) conciergeCopy.hidden = isDigital;
+      if (digitalCopy) digitalCopy.hidden = !isDigital;
+      if (backLink && c.backHref) {
+        backLink.href = c.backHref;
+        backLink.innerHTML = '&larr; Back to Your 99 Octave Chart';
+      }
 
       function total() {
         return c.quantity ? c.quantity.rate * qty : c.amount;
@@ -171,8 +211,17 @@
           });
         }
         if (mailEl) {
-          mailEl.href = 'mailto:info@fractiai.com?subject=' + encodeURIComponent(memo()) +
-            '&body=' + encodeURIComponent('What I want (food / beverage / merchandise / other services):\nTip offered: $' + amt + ' (floor) + \nNeighborhood (Downtown / Midtown / Southern UNR / Idlewild / Riverwalk):\n\nAfter acceptance —\nDate paid:\nRail used:');
+          if (isDigital) {
+            mailEl.href = 'mailto:info@fractiai.com?subject=' + encodeURIComponent(memo()) +
+              '&body=' + encodeURIComponent(
+                'I paid for ' + c.title + ' on the Fair Exchange honor rail.\n\n' +
+                'Amount: $' + amt + '\nDate paid:\nRail used (Venmo / PayPal / Cash App):\n\n' +
+                'Name on chart (optional):\nNotes:\n'
+              );
+          } else {
+            mailEl.href = 'mailto:info@fractiai.com?subject=' + encodeURIComponent(memo()) +
+              '&body=' + encodeURIComponent('What I want (food / beverage / merchandise / other services):\nTip offered: $' + amt + ' (floor) + \nNeighborhood (Downtown / Midtown / Southern UNR / Idlewild / Riverwalk):\n\nAfter acceptance —\nDate paid:\nRail used:');
+          }
         }
       }
 

@@ -183,13 +183,13 @@
         <span class="muted">Standard reading</span>
         <strong>$29</strong>
         <p class="muted">Full Story map · Digits × Octaves narrative.</p>
-        <a class="btn ghost" href="mailto:info@fractiai.com?subject=Your%2099%20Octave%20Chart%20%2429">Unlock $29</a>
+        <a class="btn ghost" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=standard">Unlock $29</a>
       </div>
       <div class="tier">
         <span class="muted">Deluxe</span>
         <strong>$49</strong>
         <p class="muted">Deeper Story horizons &amp; share card.</p>
-        <a class="btn ghost" href="mailto:info@fractiai.com?subject=Your%2099%20Octave%20Chart%20Deluxe%20%2449">Unlock $49</a>
+        <a class="btn ghost" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=deluxe">Unlock $49</a>
       </div>
     </div>
 
@@ -346,8 +346,8 @@
         bandsEl.innerHTML = chart.bands
           .slice(0, 3)
           .map((b) => `<li><strong>Digit ${b.digit}</strong> · ${b.domain} · peak octave ${b.peakOctave}</li>`)
-          .join('') + '<li class="muted">Free trial shows Digits 0–2 — unlock $29 for the full Digits 0–9 narrative.</li>';
-        morpho.textContent = 'Free trial — morphogenesis swarms unlock at $49 Deluxe.';
+          .join('') + '<li class="muted">Free trial shows Digits 0–2 — <a href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=standard">unlock $29</a> on the honor rail for the full Digits 0–9 narrative.</li>';
+        morpho.innerHTML = 'Free trial — morphogenesis swarms unlock at <a href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=deluxe">$49 Deluxe</a> (Fair Exchange honor rails).';
       } else {
         bandsEl.innerHTML = chart.bands
           .map((b) => `<li><strong>Digit ${b.digit}</strong> (O${b.octaves[0]}–${b.octaves[1]}) · ${b.domain} · peak ${b.peakOctave} · ${b.intensity}%</li>`)

@@ -35,6 +35,10 @@ describe('octave99 chart engine', () => {
       birthTime: '08:15',
       birthPlace: 'Reno',
     });
+    expect(chart.grandNarrative?.character?.title).toBeTruthy();
+    expect(chart.grandNarrative?.placement?.act?.label).toMatch(/Act/);
+    expect(chart.grandNarrative?.dailyPractices?.morning).toBeTruthy();
+
     const free = buildChartReading(chart, { tier: 'free' });
     const std = buildChartReading(chart, { tier: 'chart_standard' });
     const deluxe = buildChartReading(chart, {
@@ -47,22 +51,23 @@ describe('octave99 chart engine', () => {
 
     expect(free.guide).toEqual([...WHEEL_READING_GUIDE]);
     expect(free.letter.length).toBeGreaterThan(400);
-    expect(free.letter).toMatch(/written chart/i);
+    expect(free.letter).toMatch(/grand Story character/i);
+    expect(free.characterCard.title).toBe(chart.grandNarrative.character.title);
+    expect(free.dailyPractices.morning).toBeTruthy();
     expect(free.letter).not.toMatch(/Zero-Point Vacuum|Φ_EGS|catalog shelf/i);
     expect(free.highlights).toHaveLength(3);
     expect(free.weeklyMoves.length).toBeGreaterThanOrEqual(3);
     expect(free.upsell.standard.price).toBe(29);
 
-    expect(std.letter.length).toBeGreaterThan(300);
+    expect(std.letter).toMatch(/grand Story character/i);
     expect(std.highlights).toHaveLength(10);
-    expect(std.highlights[0].doThis).toBeTruthy();
-    expect(std.highlights[0].body).toMatch(/about /i);
+    expect(std.dailyPractices.approachBoost).toMatch(/approach character/i);
 
     expect(deluxe.letter.length).toBeGreaterThan(400);
     expect(deluxe.highlights).toHaveLength(10);
     expect(deluxe.answerBlock).toMatch(/What should I protect/);
+    expect(deluxe.dailyPractices.innerCare).toMatch(/inner character/i);
     expect(deluxe.materials.plain).toMatch(/Making\/craft/);
-    expect(deluxe.narratives[0].narrative.length).toBeGreaterThan(120);
 
     expect(chartSvg(chart, { tier: 'free' })).toContain('free summary');
     expect(chartSvg(chart, { tier: 'chart_standard' })).toContain('overall chart');

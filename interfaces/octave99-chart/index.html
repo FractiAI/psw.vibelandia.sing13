@@ -396,8 +396,36 @@
           '<p class="status-err">Could not build the written chart. Refresh and try again.</p>';
         return;
       }
+      const card = reading.characterCard;
+      const daily = reading.dailyPractices;
       let html = `<div class="written-chart"><h3>${escapeHtml(reading.writtenTitle || reading.summary?.headline || 'Your written chart')}</h3>`;
+
+      if (card) {
+        html += `<div class="area-card"><h4>Your grand Story character · ${escapeHtml(card.title)}</h4>`;
+        html += `<p><strong>${escapeHtml(card.oneLiner)}</strong></p>`;
+        html += `<p>${escapeHtml(card.role)}</p>`;
+        html += `<p>${escapeHtml(card.vocation)}</p>`;
+        html += `<p>${escapeHtml(card.lifeApply)}</p>`;
+        html += `<p>${escapeHtml(card.placement)}</p>`;
+        html += `<p>Approach (how you enter scenes): <strong>${escapeHtml(card.approach)}</strong>. Inner need: <strong>${escapeHtml(card.inner)}</strong>.</p>`;
+        html += `<p>${escapeHtml(card.applyToLife)}</p></div>`;
+      }
+
       html += `<div class="letter">${escapeHtml(reading.letter)}</div>`;
+
+      if (daily) {
+        html += `<div class="area-card"><h4>Daily practices · live your character</h4>`;
+        html += `<p class="do-this"><strong>Morning:</strong> ${escapeHtml(daily.morning)}</p>`;
+        html += `<p class="do-this"><strong>Midday:</strong> ${escapeHtml(daily.midday)}</p>`;
+        html += `<p class="do-this"><strong>Evening:</strong> ${escapeHtml(daily.evening)}</p>`;
+        if (tier !== 'free') {
+          html += `<p class="do-this"><strong>Approach boost:</strong> ${escapeHtml(daily.approachBoost)}</p>`;
+        }
+        if (tier === 'chart_deluxe') {
+          html += `<p class="do-this"><strong>Inner care:</strong> ${escapeHtml(daily.innerCare)}</p>`;
+        }
+        html += `</div>`;
+      }
 
       if (reading.answerBlock) {
         html += `<div class="area-card"><h4>Answer to your question</h4><p>${escapeHtml(reading.answerBlock)}</p></div>`;

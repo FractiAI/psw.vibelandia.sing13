@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { buildOctave99Chart, chartSvg, PHI_EGS } from '../../lib/octave99-chart.mjs';
-import { OCTAVE99_TIERS } from '../../lib/octave99-tiers.mjs';
+import { OCTAVE99_TIERS, honorPayHref, HONOR_PAY_MAILTO } from '../../lib/octave99-tiers.mjs';
 
 describe('octave99 chart engine', () => {
   it('builds deterministic chart from intake', () => {
@@ -29,5 +29,12 @@ describe('octave99 tiers', () => {
     expect(OCTAVE99_TIERS.agent.priceUsd).toBe(20);
     expect(OCTAVE99_TIERS.chart_standard.priceUsd).toBe(29);
     expect(OCTAVE99_TIERS.chart_deluxe.priceUsd).toBe(49);
+  });
+
+  it('routes paid unlocks to the honor payment rail', () => {
+    expect(honorPayHref('chart_standard')).toContain('/hire-a-goldilocks-valet-concierge/pay');
+    expect(honorPayHref('chart_standard')).toContain('unit=standard');
+    expect(honorPayHref('chart_deluxe')).toContain('unit=deluxe');
+    expect(HONOR_PAY_MAILTO).not.toMatch(/^mailto:/);
   });
 });

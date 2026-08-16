@@ -114,6 +114,25 @@
     .upsell h4 { margin: 0 0 .35rem; color: var(--gold); font-size: .95rem; }
     .upsell p { margin: .3rem 0; font-size: .88rem; color: var(--champagne); }
     .upsell a.btn { margin-top: .55rem; font-size: .85rem; padding: .55rem 1rem; }
+    .honor-rails {
+      display: flex; flex-wrap: wrap; gap: .4rem;
+      margin: .55rem 0 0;
+    }
+    a.honor-rail {
+      font-size: .72rem; padding: .4rem .65rem; border-radius: 8px;
+      border: 1px solid rgba(212,175,55,.35); color: var(--champagne);
+      text-decoration: none; background: rgba(10,8,6,.45);
+    }
+    a.honor-rail:hover {
+      border-color: var(--gold); color: var(--gold); text-decoration: none;
+    }
+    .honor-panel {
+      margin: .75rem 0 0; padding: .75rem .85rem; border-radius: 10px;
+      border: 1px solid rgba(212,175,55,.35); background: rgba(212,175,55,.07);
+    }
+    .honor-panel[hidden] { display: none !important; }
+    .honor-panel p { margin: 0 0 .45rem; font-size: .86rem; color: var(--champagne); }
+    .honor-panel .muted { margin: .45rem 0 0; }
     .narrative-item { margin: .65rem 0; padding-bottom: .55rem; border-bottom: 1px solid rgba(212,175,55,.12); }
     .narrative-item:last-child { border-bottom: 0; }
     .chart-frame { background: #050403; border-radius: 12px; overflow: hidden; min-height: 280px; }
@@ -256,6 +275,7 @@
           <li>No deep narrative pass</li>
         </ul>
         <a class="btn ghost" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=standard">Unlock $29</a>
+        <div class="honor-rails" data-amount="29" data-memo="Your 99 Octave Chart · Standard $29" aria-label="Pay $29 on honor rails"></div>
       </div>
       <div class="tier">
         <span class="muted">Narrative deluxe</span>
@@ -267,6 +287,7 @@
           <li>Weekly how-to-use beats</li>
         </ul>
         <a class="btn ghost" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=deluxe">Unlock $49</a>
+        <div class="honor-rails" data-amount="49" data-memo="Your 99 Octave Chart · Deluxe $49" aria-label="Pay $49 on honor rails"></div>
       </div>
     </div>
 
@@ -288,6 +309,11 @@
           <option value="chart_standard">Standard $29 · overall chart</option>
           <option value="chart_deluxe">Deluxe $49 · narrative mapping</option>
         </select>
+        <div class="honor-panel" id="honor-panel" hidden>
+          <p><strong>Pay on Fair Exchange</strong> — Venmo · PayPal · Cash App, then attest.</p>
+          <div class="honor-rails" id="honor-panel-rails" aria-label="Honor payment rails"></div>
+          <p class="muted">Or open the full <a id="honor-panel-paypage" href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=standard">pay page</a>. Attest: <a id="honor-panel-attest" href="mailto:info@fractiai.com">info@fractiai.com</a></p>
+        </div>
         <div class="deluxe-fields" id="deluxe-fields" hidden>
           <p class="muted" style="margin:.75rem 0 .35rem">Deluxe pinning — a few answers so the narrative lands on your real week.</p>
           <label for="focus">What are you focusing on?</label>
@@ -340,8 +366,62 @@
     const statusEl = document.getElementById('form-status');
     const tierSelect = document.getElementById('tier');
     const deluxeFields = document.getElementById('deluxe-fields');
+    const honorPanel = document.getElementById('honor-panel');
+    const honorPanelRails = document.getElementById('honor-panel-rails');
+    const honorPanelPaypage = document.getElementById('honor-panel-paypage');
+    const honorPanelAttest = document.getElementById('honor-panel-attest');
     const exampleWheel = document.getElementById('example-wheel');
     const exampleCaption = document.getElementById('example-caption');
+
+    const HONOR = {
+      venmo: 'Pru-Mendez',
+      paypal: 'valetpru',
+      cashapp: 'GoldenBachdoor',
+      attestEmail: 'info@fractiai.com',
+    };
+
+    function honorRailLinks(amountUsd, memo) {
+      const amount = Number(amountUsd) > 0 ? Number(amountUsd).toFixed(2) : '29.00';
+      const note = String(memo || 'Your 99 Octave Chart · Fair Exchange').slice(0, 80);
+      return [
+        {
+          id: 'venmo',
+          label: `Venmo @${HONOR.venmo}`,
+          href: `https://venmo.com/${encodeURIComponent(HONOR.venmo)}?txn=pay&amount=${encodeURIComponent(amount)}&note=${encodeURIComponent(note)}`,
+        },
+        {
+          id: 'paypal',
+          label: `PayPal · $${amount}`,
+          href: `https://paypal.me/${encodeURIComponent(HONOR.paypal)}/${amount}`,
+        },
+        {
+          id: 'cashapp',
+          label: `Cash App $${HONOR.cashapp} · $${amount}`,
+          href: `https://cash.app/$${encodeURIComponent(HONOR.cashapp)}/${amount}`,
+        },
+      ];
+    }
+
+    function honorAttestMailto(tierId, amountUsd) {
+      const deluxe = tierId === 'chart_deluxe';
+      const title = deluxe ? 'Your 99 Octave Chart · Deluxe $49' : 'Your 99 Octave Chart · Standard $29';
+      const amt = Number(amountUsd) || (deluxe ? 49 : 29);
+      const subject = encodeURIComponent(title);
+      const body = encodeURIComponent(
+        `I paid for ${title} on the Fair Exchange honor rail.\n\nAmount: $${Number(amt).toFixed(2)}\nDate paid:\nRail used (Venmo / PayPal / Cash App):\n\nName on chart (optional):\nNotes:\n`,
+      );
+      return `mailto:${HONOR.attestEmail}?subject=${subject}&body=${body}`;
+    }
+
+    function fillHonorRails(el, amountUsd, memo) {
+      if (!el) return;
+      el.innerHTML = honorRailLinks(amountUsd, memo)
+        .map(
+          (r) =>
+            `<a class="honor-rail" href="${r.href}" target="_blank" rel="noopener">${escapeHtml(r.label)}</a>`,
+        )
+        .join('');
+    }
 
     function setTier(tier) {
       if (tierSelect && tier) tierSelect.value = tier;
@@ -349,8 +429,23 @@
     }
 
     function syncDeluxeFields() {
-      const deluxe = tierSelect?.value === 'chart_deluxe';
+      const tier = tierSelect?.value || 'free';
+      const deluxe = tier === 'chart_deluxe';
+      const paid = tier === 'chart_standard' || deluxe;
       if (deluxeFields) deluxeFields.hidden = !deluxe;
+      if (honorPanel) honorPanel.hidden = !paid;
+      if (paid) {
+        const amt = deluxe ? 49 : 29;
+        const unit = deluxe ? 'deluxe' : 'standard';
+        const memo = deluxe
+          ? 'Your 99 Octave Chart · Deluxe $49'
+          : 'Your 99 Octave Chart · Standard $29';
+        fillHonorRails(honorPanelRails, amt, memo);
+        if (honorPanelPaypage) {
+          honorPanelPaypage.href = `/hire-a-goldilocks-valet-concierge/pay?service=chart&unit=${unit}`;
+        }
+        if (honorPanelAttest) honorPanelAttest.href = honorAttestMailto(tier, amt);
+      }
     }
 
     function focusIntake(tier) {
@@ -387,6 +482,19 @@
           );
         })
         .join('');
+    }
+
+    function renderUpsellRails(amountUsd, memo) {
+      return (
+        `<div class="honor-rails">` +
+        honorRailLinks(amountUsd, memo)
+          .map(
+            (r) =>
+              `<a class="honor-rail" href="${r.href}" target="_blank" rel="noopener">${escapeHtml(r.label)}</a>`,
+          )
+          .join('') +
+        `</div>`
+      );
     }
 
     function renderReading(reading, tier) {
@@ -448,21 +556,31 @@
         html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.standard.title)}</h4>`;
         html += `<p>${escapeHtml(reading.upsell.standard.why)}</p>`;
         html += `<p><em>Why it is worth $29:</em> ${escapeHtml(reading.upsell.standard.useful)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.standard.href}">Unlock overall written chart · $29</a></div>`;
+        html += `<a class="btn ghost" href="${reading.upsell.standard.href}">Unlock overall written chart · $29</a>`;
+        html += renderUpsellRails(29, 'Your 99 Octave Chart · Standard $29');
+        html += `</div>`;
         html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.deluxe.title)}</h4>`;
         html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
         html += `<p><em>Why it is worth $49:</em> ${escapeHtml(reading.upsell.deluxe.useful)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Unlock deluxe narrative · $49</a></div>`;
+        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Unlock deluxe narrative · $49</a>`;
+        html += renderUpsellRails(49, 'Your 99 Octave Chart · Deluxe $49');
+        html += `</div>`;
       } else if (tier === 'chart_standard') {
         html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.deluxe.title)}</h4>`;
         html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
         html += `<p><em>Why upgrade:</em> ${escapeHtml(reading.upsell.deluxe.useful)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Upgrade to Deluxe · $49</a></div>`;
+        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Upgrade to Deluxe · $49</a>`;
+        html += renderUpsellRails(49, 'Your 99 Octave Chart · Deluxe $49');
+        html += `</div>`;
       }
 
       html += `</div>`;
       readingEl.innerHTML = html;
     }
+
+    document.querySelectorAll('.honor-rails[data-amount]').forEach((el) => {
+      fillHonorRails(el, el.getAttribute('data-amount'), el.getAttribute('data-memo'));
+    });
 
     document.querySelectorAll('[href="#intake"], #free-trial-cta, [data-tier]').forEach((el) => {
       el.addEventListener('click', () => {

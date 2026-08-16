@@ -6,7 +6,7 @@ import {
   buildChartReading,
   WHEEL_READING_GUIDE,
 } from '../../lib/octave99-chart.mjs';
-import { OCTAVE99_TIERS, honorPayHref, HONOR_PAY_MAILTO } from '../../lib/octave99-tiers.mjs';
+import { OCTAVE99_TIERS, honorPayHref, HONOR_PAY_MAILTO, honorRailLinks, honorAttestMailto, HONOR_RAIL_HANDLES } from '../../lib/octave99-tiers.mjs';
 
 describe('octave99 chart engine', () => {
   it('builds deterministic chart from intake', () => {
@@ -88,5 +88,20 @@ describe('octave99 tiers', () => {
     expect(honorPayHref('chart_standard')).toContain('unit=standard');
     expect(honorPayHref('chart_deluxe')).toContain('unit=deluxe');
     expect(HONOR_PAY_MAILTO).not.toMatch(/^mailto:/);
+  });
+
+  it('exposes Venmo PayPal Cash App deep links for paid chart amounts', () => {
+    const std = honorRailLinks(29, { memo: 'Your 99 Octave Chart · Standard $29' });
+    expect(std).toHaveLength(3);
+    expect(std.map((r) => r.id)).toEqual(['venmo', 'paypal', 'cashapp']);
+    expect(std[0].href).toContain(`venmo.com/${HONOR_RAIL_HANDLES.venmo}`);
+    expect(std[0].href).toContain('amount=29.00');
+    expect(std[1].href).toBe(`https://paypal.me/${HONOR_RAIL_HANDLES.paypal}/29.00`);
+    expect(std[2].href).toBe(`https://cash.app/$${HONOR_RAIL_HANDLES.cashapp}/29.00`);
+
+    const deluxe = honorRailLinks(49);
+    expect(deluxe[1].href).toContain('/49.00');
+    expect(honorAttestMailto('chart_deluxe', 49)).toMatch(/^mailto:info@fractiai.com/);
+    expect(honorAttestMailto('chart_deluxe', 49)).toContain('Deluxe');
   });
 });

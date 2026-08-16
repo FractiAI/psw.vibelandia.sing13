@@ -30,7 +30,10 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    expect(posts[0].id).toBe('goldilocks-players-guide-2026-08');
+    // Newest featured note (Apiary Metaphor · 2026-08-16) leads latest-six.
+    expect(posts[0].id).toBe('synthobs-tbme-egs-apiary-2026-08');
+    expect(posts[0].published).toBe('2026-08-16');
+    expect(posts.some((p) => p.id === 'goldilocks-players-guide-2026-08')).toBe(true);
     expect(posts.some((p) => p.id.includes('synthio-mri-vs-legacy'))).toBe(true);
     expect(posts.some((p) => p.id.includes('planetary-core-goldilocks'))).toBe(true);
     expect(posts.some((p) => p.id.includes('metamorphic-octaves'))).toBe(true);

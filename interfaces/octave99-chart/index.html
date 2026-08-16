@@ -55,6 +55,43 @@
     .tier ul { margin: .5rem 0 .65rem; padding-left: 1.1rem; color: var(--champagne); font-size: .86rem; }
     .tier li { margin: .25rem 0; }
     .deluxe-fields[hidden] { display: none !important; }
+    .letter {
+      white-space: pre-wrap;
+      font-size: 1.02rem;
+      line-height: 1.55;
+      color: var(--text);
+      margin: .35rem 0 1rem;
+    }
+    .written-chart {
+      margin: 0 0 1.1rem;
+      padding: 1rem 1.05rem 1.15rem;
+      background: rgba(10,8,6,.55);
+      border: 1px solid rgba(212,175,55,.4);
+      border-radius: 12px;
+    }
+    .written-chart > h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--gold);
+      font-size: 1.35rem;
+      margin: 0 0 .65rem;
+    }
+    .area-card {
+      margin: .75rem 0;
+      padding: .75rem .8rem;
+      border-radius: 10px;
+      border: 1px solid rgba(212,175,55,.2);
+      background: rgba(20,16,12,.7);
+    }
+    .area-card h4 {
+      margin: 0 0 .35rem;
+      color: var(--gold);
+      font-size: 1rem;
+    }
+    .area-card .do-this {
+      margin: .45rem 0 0;
+      color: var(--champagne);
+      font-size: .9rem;
+    }
     .reading-block { margin-top: 1rem; padding-top: .85rem; border-top: 1px solid rgba(212,175,55,.22); }
     .reading-block h3 {
       font-family: 'Cormorant Garamond', serif; color: var(--gold);
@@ -163,37 +200,35 @@
     </p>
 
     <section class="wheel-guide" id="how-the-wheel-works" aria-labelledby="wheel-guide-h2">
-      <h2 id="wheel-guide-h2">How the wheel works</h2>
+      <h2 id="wheel-guide-h2">How to read your chart (plain speak)</h2>
       <p class="lede">
-        The wheel is a picture of <em>where you sit in the grand Story</em> — ten story-bands (Digits 0–9), each holding about ten octaves of depth, for ninety-nine octaves total under Φ<sub>EGS</sub>.
+        You get a <strong>written chart</strong> first — real sentences you can use this week — and a simple picture of ten life areas as a quick reminder.
       </p>
       <div class="wheel-guide-grid">
         <ol>
-          <li><strong>Ten slices = Digits 0–9.</strong> Each digit is one Story band (body, mind, agents, cosmos catalog layers, and so on).</li>
-          <li><strong>Each digit holds ~10 octaves.</strong> Digit 0 → octaves 01–09 · Digit 4 → 40–49 · Digit 9 → 90–99. Together that is the 99-octave depth map.</li>
-          <li><strong>Longer slice = stronger band for you.</strong> Radius shows intensity — how loud that Story band reads from your intake.</li>
-          <li><strong>Gold slices = your signature digits.</strong> Highlighted bands from your name · date · time · place keys (↑ rising · ☉ sun · ☾ moon labels on the chart).</li>
-          <li><strong>Center = Φ<sub>EGS</sub>.</strong> The EGS fractal constant — the depth key, not a fortune-telling planet.</li>
+          <li><strong>Read the writing first.</strong> That is the product. The picture is only a map.</li>
+          <li><strong>Ten areas of life</strong> (0–9): rest, first steps, relationships, craft, body, thinking, help, boundaries, energy, finishing.</li>
+          <li><strong>Longer slice = louder for you right now.</strong> Aim attention there.</li>
+          <li><strong>Gold slices = home keys</strong> — areas that orient you when life gets noisy.</li>
+          <li><strong>Quiet slices</strong> are rest or unused capacity — not failure.</li>
         </ol>
         <div>
-          <div class="example-frame" id="example-wheel" aria-label="Illustrated example wheel for Alex">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 460" role="img" aria-label="Example · Your 99 Octave Chart wheel">
+          <div class="example-frame" id="example-wheel" aria-label="Illustrated example picture for Alex">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 460" role="img" aria-label="Example picture · ten life areas">
               <rect width="400" height="460" fill="#0a0806"/>
-              <text x="200" y="28" text-anchor="middle" fill="#d4af37" font-size="16" font-family="Georgia, serif">Example · Your 99 Octave Chart wheel</text>
-              <text x="200" y="48" text-anchor="middle" fill="#a8a29e" font-size="11" font-family="system-ui,sans-serif">Alex · Digits ↑2 ☉5 ☾8</text>
+              <text x="200" y="28" text-anchor="middle" fill="#d4af37" font-size="16" font-family="Georgia, serif">Example picture · ten life areas</text>
+              <text x="200" y="48" text-anchor="middle" fill="#a8a29e" font-size="11" font-family="system-ui,sans-serif">Alex · home keys 2 · 5 · 8</text>
               <g transform="translate(0 20)"><path d="M 200 200 L 200 62 A 138 138 0 0 1 281.1143648163613 88.35565477625725 Z" fill="rgba(245,230,200,0.5900000000000001)" stroke="#0a0806" stroke-width="1"/><text x="256.8591269649903" y="25.00560100169176" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">0</text><path d="M 200 200 L 289.3433583484559 77.02941685500798 A 152 152 0 0 1 344.56059047686335 153.02941685500798 Z" fill="rgba(245,230,200,0.6599999999999999)" stroke="#0a0806" stroke-width="1"/><text x="348.8591269649903" y="91.84751357818494" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">1</text><path d="M 200 200 L 330.294742732436 157.6646717706322 A 137 137 0 0 1 330.294742732436 242.3353282293678 Z" fill="#d4af37" stroke="#0a0806" stroke-width="1"/><text x="384" y="200" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">2</text><path d="M 200 200 L 340.75636441168274 245.73451516749222 A 148 148 0 0 1 286.992217339286 319.7345151674922 Z" fill="rgba(245,230,200,0.64)" stroke="#0a0806" stroke-width="1"/><text x="348.8591269649903" y="308.15248642181507" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">3</text><path d="M 200 200 L 285.8166468347011 318.11648117874233 A 146 146 0 0 1 200 346 Z" fill="rgba(245,230,200,0.63)" stroke="#0a0806" stroke-width="1"/><text x="256.8591269649903" y="374.99439899830827" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">4</text><path d="M 200 200 L 200 368 A 168 168 0 0 1 101.25207761486453 335.91485505499116 Z" fill="#d4af37" stroke="#0a0806" stroke-width="1"/><text x="143.1408730350097" y="374.99439899830827" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">5</text><path d="M 200 200 L 132.4046959863656 293.036954353119 A 115 115 0 0 1 90.62850062605735 235.53695435311897 Z" fill="rgba(245,230,200,0.475)" stroke="#0a0806" stroke-width="1"/><text x="51.14087303500969" y="308.15248642181507" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">6</text><path d="M 200 200 L 97.28589624012342 233.37383539249433 A 108 108 0 0 1 97.2858962401234 166.6261646075057 Z" fill="rgba(245,230,200,0.44)" stroke="#0a0806" stroke-width="1"/><text x="16" y="200.00000000000003" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">7</text><path d="M 200 200 L 58.29257907202211 153.95646783813285 A 149 149 0 0 1 112.41999740842148 79.45646783813285 Z" fill="#d4af37" stroke="#0a0806" stroke-width="1"/><text x="51.14087303500966" y="91.84751357818496" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">8</text><path d="M 200 200 L 131.8169107340731 106.15402865250611 A 116 116 0 0 1 199.99999999999997 84 Z" fill="rgba(245,230,200,0.48)" stroke="#0a0806" stroke-width="1"/><text x="143.14087303500963" y="25.00560100169176" text-anchor="middle" dominant-baseline="middle" fill="#f5e6c8" font-size="11" font-family="Georgia, serif">9</text>
               <circle cx="200" cy="200" r="62" fill="#14100c" stroke="#d4af37" stroke-width="1.5"/>
-              <text x="200" y="194" text-anchor="middle" fill="#fef3c7" font-size="13" font-family="Georgia, serif">Φ</text>
-              <text x="200" y="212" text-anchor="middle" fill="#a8a29e" font-size="9">1.6180</text>
+              <text x="200" y="194" text-anchor="middle" fill="#fef3c7" font-size="13" font-family="Georgia, serif">map</text>
+              <text x="200" y="212" text-anchor="middle" fill="#a8a29e" font-size="9">read text first</text>
               </g>
-              <text x="200" y="448" text-anchor="middle" fill="#78716c" font-size="9">Example only · Digit 5 loudest @ octave 59 · gold = signature · Φ = depth key</text>
+              <text x="200" y="448" text-anchor="middle" fill="#78716c" font-size="9">Example only · longer = louder · gold = home keys · written chart is the product</text>
             </svg>
           </div>
           <p class="example-caption" id="example-caption">
-            <strong>Read it like this:</strong> Alex’s wheel uses the same grammar as yours.
-            Digit <strong>5</strong> is the longest slice (loudest Story band) and peaks at <strong>octave 59</strong> inside octaves 50–59.
-            Gold slices are signature digits (<strong>2, 5, 8</strong> · ↑2 ☉5 ☾8).
-            Φ in the center is the EGS depth key. Shorter cream slices are quieter bands.
+            <strong>Example:</strong> Alex’s picture shows ten life areas. Longer slices are louder.
+            Gold slices are home keys. Always read the written chart under your form — that is what you pay for.
           </p>
         </div>
       </div>
@@ -275,13 +310,16 @@
         <p class="muted" id="form-status" role="status" aria-live="polite"></p>
       </form>
       <section class="card" id="your-wheel">
-        <h2>Your wheel · live Story map</h2>
-        <p class="muted" style="margin:0 0 .75rem">Same grammar as the example: Digits around the ring · length = intensity · gold = signature · Φ in the center.</p>
-        <div class="chart-frame" id="wheel" aria-live="polite">
-          <div class="wheel-empty">Your wheel appears here after you get your chart — start free above.</div>
+        <h2>Your written chart</h2>
+        <p class="muted" style="margin:0 0 .75rem">The writing is the product. The picture below is only a quick map of the same ten life areas.</p>
+        <div id="reading" aria-live="polite">
+          <p class="muted">Fill the form and press Get Your 99 Octave Chart — your written chart appears here.</p>
         </div>
-        <div id="reading" aria-live="polite"></div>
-        <ul class="bands" id="bands"></ul>
+        <h3 style="font-family:'Cormorant Garamond',serif;color:var(--gold);font-size:1.15rem;margin:1.25rem 0 .5rem">Your picture (optional map)</h3>
+        <div class="chart-frame" id="wheel" aria-live="polite">
+          <div class="wheel-empty">Picture appears after you generate a chart.</div>
+        </div>
+        <ul class="bands" id="bands" hidden></ul>
         <p class="muted" id="morpho"></p>
       </section>
     </div>
@@ -331,74 +369,70 @@
 
     function renderGuide(guide) {
       return (
-        `<div class="guide-mini"><strong>Simple guide · reading your wheel</strong><ol>` +
+        `<div class="guide-mini"><strong>Quick how-to (every tier)</strong><ol>` +
         guide.map((g) => `<li>${escapeHtml(g)}</li>`).join('') +
         `</ol></div>`
       );
     }
 
+    function renderAreas(highlights) {
+      return highlights
+        .map((h) => {
+          return (
+            `<article class="area-card">` +
+            `<h4>${escapeHtml(h.title)}${h.strength ? ` · ${escapeHtml(String(h.strength))}` : ''}</h4>` +
+            `<p>${escapeHtml(h.body)}</p>` +
+            (h.doThis ? `<p class="do-this"><strong>Do this:</strong> ${escapeHtml(h.doThis)}</p>` : '') +
+            `</article>`
+          );
+        })
+        .join('');
+    }
+
     function renderReading(reading, tier) {
       if (!readingEl) return;
-      let html = renderGuide(reading.guide);
+      if (!reading || !reading.letter) {
+        readingEl.innerHTML =
+          '<p class="status-err">Could not build the written chart. Refresh and try again.</p>';
+        return;
+      }
+      let html = `<div class="written-chart"><h3>${escapeHtml(reading.writtenTitle || reading.summary?.headline || 'Your written chart')}</h3>`;
+      html += `<div class="letter">${escapeHtml(reading.letter)}</div>`;
 
-      if (tier === 'free') {
-        const s = reading.summary;
-        html += `<div class="reading-block"><h3>${escapeHtml(s.headline)}</h3>`;
-        html += `<p>${escapeHtml(s.signatureLine)}</p>`;
-        html += `<p><strong>Loudest Story bands</strong></p><ul class="bands">`;
-        for (const b of s.loudest) {
-          html += `<li><strong>Digit ${b.digit}</strong> · ${escapeHtml(b.label)} · peak octave ${b.peakOctave} · ${b.intensity}% — ${escapeHtml(b.use)}</li>`;
-        }
-        html += `</ul><p><strong>Quieter lanes</strong> — Digits ${s.quieter.map((q) => q.digit).join(' &amp; ')} soft on this chart (rest or unused capacity).</p>`;
-        html += `<p><strong>How to use this summary</strong></p><ul class="bands">`;
-        for (const tip of s.howToUse) html += `<li>${escapeHtml(tip)}</li>`;
-        html += `</ul>`;
-        html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.standard.title)}</h4>`;
-        html += `<p>${escapeHtml(reading.upsell.standard.why)}</p>`;
-        html += `<p><em>Why useful:</em> ${escapeHtml(reading.upsell.standard.useful)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.standard.href}">Unlock overall chart · $29</a></div>`;
-        html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.deluxe.title)}</h4>`;
-        html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
-        html += `<p><em>Why useful:</em> ${escapeHtml(reading.upsell.deluxe.useful)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Unlock narrative deluxe · $49</a></div></div>`;
-      } else if (tier === 'chart_standard') {
-        html += `<div class="reading-block"><h3>Overall chart · Digits 0–9</h3>`;
-        html += `<p>${escapeHtml(reading.summary.signatureLine)} This is the full overview map — intensity and peak octave for every band, without the deep narrative pass.</p><ul class="bands">`;
-        for (const row of reading.overview) {
-          const gold = row.emphasis ? ' · gold signature' : '';
-          html += `<li><strong>Digit ${row.digit}</strong> · ${escapeHtml(row.label)} · O${row.octaves[0]}–${row.octaves[1]} · peak ${row.peakOctave} · ${row.intensity}%${gold}<br /><span class="muted">${escapeHtml(row.line.split('—')[1]?.trim() || '')}</span></li>`;
-        }
-        html += `</ul><p><strong>How to use the overall chart</strong></p><ul class="bands">`;
-        for (const tip of reading.summary.howToUse) html += `<li>${escapeHtml(tip)}</li>`;
-        html += `</ul>`;
-        html += `<div class="upsell"><h4>Want digit→narrative detail?</h4>`;
-        html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
-        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Upgrade to Deluxe · $49</a></div></div>`;
-      } else {
-        const d = reading.deluxeBridge;
-        html += `<div class="reading-block"><h3>Deluxe · digit→narrative mapping</h3>`;
-        if (d.focus || d.season || d.question || d.lens) {
-          html += `<p class="muted">Pinned to`;
-          const bits = [];
-          if (d.focus) bits.push(` focus “${escapeHtml(d.focus)}”`);
-          if (d.season) bits.push(` season “${escapeHtml(d.season)}”`);
-          if (d.lens) bits.push(` ${escapeHtml(d.lens)} lens`);
-          if (d.question) bits.push(` question “${escapeHtml(d.question)}”`);
-          html += bits.join(' ·') + `.</p>`;
-        }
-        html += `<p>${escapeHtml(reading.summary.signatureLine)}</p>`;
-        for (const n of reading.narratives) {
-          html += `<div class="narrative-item"><strong>Digit ${n.digit} · ${escapeHtml(n.label)}</strong>`;
-          html += `<p>${escapeHtml(n.narrative)}</p></div>`;
-        }
-        html += `<p>${escapeHtml(d.morphoPlain)}</p>`;
-        html += `<p><strong>Why this deluxe map is useful</strong></p><ul class="bands">`;
-        for (const w of d.whyUseful) html += `<li>${escapeHtml(w)}</li>`;
-        html += `</ul><p><strong>How to use it this week</strong></p><ul class="bands">`;
-        for (const tip of reading.summary.howToUse) html += `<li>${escapeHtml(tip)}</li>`;
-        html += `</ul></div>`;
+      if (reading.answerBlock) {
+        html += `<div class="area-card"><h4>Answer to your question</h4><p>${escapeHtml(reading.answerBlock)}</p></div>`;
       }
 
+      html += `<h3 style="margin-top:1rem">${tier === 'free' ? 'Your top three areas' : tier === 'chart_deluxe' ? 'All ten areas · full narrative' : 'All ten areas · overall map'}</h3>`;
+      html += renderAreas(reading.highlights || []);
+
+      if (reading.materials?.plain) {
+        html += `<div class="area-card"><h4>Materials of your week</h4><p>${escapeHtml(reading.materials.plain)}</p></div>`;
+      }
+
+      html += `<h3 style="margin-top:1rem">This week’s moves</h3><ul class="bands">`;
+      for (const m of reading.weeklyMoves || []) html += `<li>${escapeHtml(m)}</li>`;
+      html += `</ul>`;
+
+      html += renderGuide(reading.plainGuide || reading.guide || []);
+
+      if (tier === 'free') {
+        html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.standard.title)}</h4>`;
+        html += `<p>${escapeHtml(reading.upsell.standard.why)}</p>`;
+        html += `<p><em>Why it is worth $29:</em> ${escapeHtml(reading.upsell.standard.useful)}</p>`;
+        html += `<a class="btn ghost" href="${reading.upsell.standard.href}">Unlock overall written chart · $29</a></div>`;
+        html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.deluxe.title)}</h4>`;
+        html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
+        html += `<p><em>Why it is worth $49:</em> ${escapeHtml(reading.upsell.deluxe.useful)}</p>`;
+        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Unlock deluxe narrative · $49</a></div>`;
+      } else if (tier === 'chart_standard') {
+        html += `<div class="upsell"><h4>${escapeHtml(reading.upsell.deluxe.title)}</h4>`;
+        html += `<p>${escapeHtml(reading.upsell.deluxe.why)}</p>`;
+        html += `<p><em>Why upgrade:</em> ${escapeHtml(reading.upsell.deluxe.useful)}</p>`;
+        html += `<a class="btn ghost" href="${reading.upsell.deluxe.href}">Upgrade to Deluxe · $49</a></div>`;
+      }
+
+      html += `</div>`;
       readingEl.innerHTML = html;
     }
 
@@ -426,15 +460,11 @@
       });
       if (exampleWheel) exampleWheel.innerHTML = chartSvg(exampleChart, { example: true });
       if (exampleCaption) {
-        const sig = exampleChart.signature;
         const loudest = [...exampleChart.bands].sort((a, b) => b.intensity - a.intensity)[0];
-        const gold = exampleChart.bands.filter((b) => b.emphasis).map((b) => b.digit).join(', ');
         exampleCaption.innerHTML =
-          `<strong>Read it like this:</strong> Alex’s wheel uses the same grammar as yours. ` +
-          `Digit <strong>${loudest.digit}</strong> is the longest slice (loudest Story band) and peaks at ` +
-          `<strong>octave ${loudest.peakOctave}</strong> inside octaves ${loudest.octaves[0]}–${loudest.octaves[1]}. ` +
-          `Gold slices are signature digits (<strong>${gold}</strong> · ↑${sig.risingDigit} ☉${sig.sunDigit} ☾${sig.moonDigit}). ` +
-          `Φ in the center is the EGS depth key. Shorter cream slices are quieter bands.`;
+          `<strong>Example:</strong> Alex’s picture shows ten life areas. ` +
+          `The longest slice is loudest right now. Gold slices are home keys. ` +
+          `Always read the written chart first — that is the product you keep.`;
       }
     } catch (err) {
       console.warn('Example wheel refresh skipped', err);
@@ -506,29 +536,20 @@
         }
       } catch { /* keep on-device chart */ }
 
-      // Free: show summary list in bands; paid: overview/narrative lives in reading
-      if (tier === 'free') {
-        bandsEl.innerHTML = '';
-        morpho.textContent = '';
-      } else if (tier === 'chart_standard') {
-        bandsEl.innerHTML = '';
-        morpho.innerHTML =
-          'Overall chart ready — upgrade to <a href="/hire-a-goldilocks-valet-concierge/pay?service=chart&amp;unit=deluxe">$49 Deluxe</a> for digit→narrative mapping and pinning questions.';
-      } else {
-        bandsEl.innerHTML = '';
-        morpho.textContent = '';
-      }
+      // Written chart is primary; keep band list empty
+      bandsEl.innerHTML = '';
+      morpho.textContent = '';
 
       renderReading(reading, tier);
       wheel.innerHTML = svg;
       statusEl.textContent =
         tier === 'free'
-          ? 'Free summary ready — your wheel and upgrade path are below.'
+          ? 'Free written chart ready — scroll the writing first.'
           : tier === 'chart_deluxe'
-            ? 'Deluxe narrative chart ready.'
-            : 'Overall chart ready.';
+            ? 'Deluxe written chart ready.'
+            : 'Overall written chart ready.';
       statusEl.className = 'status-ok';
-      document.getElementById('your-wheel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      readingEl?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   </script>
 </body>

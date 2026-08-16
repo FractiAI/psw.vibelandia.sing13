@@ -28,7 +28,7 @@ describe('octave99 chart engine', () => {
     expect(chartSvg(a)).toContain('<svg');
   });
 
-  it('builds tiered readings with wheel guide on every tier', () => {
+  it('builds plain-speak written charts worth each tier', () => {
     const chart = buildOctave99Chart({
       name: 'Guest',
       birthDate: '1988-03-12',
@@ -44,19 +44,29 @@ describe('octave99 chart engine', () => {
       question: 'What should I protect?',
       lens: 'creative',
     });
+
     expect(free.guide).toEqual([...WHEEL_READING_GUIDE]);
-    expect(std.guide).toHaveLength(WHEEL_READING_GUIDE.length);
-    expect(deluxe.guide).toHaveLength(WHEEL_READING_GUIDE.length);
-    expect(free.summary.loudest).toHaveLength(3);
+    expect(free.letter.length).toBeGreaterThan(400);
+    expect(free.letter).toMatch(/written chart/i);
+    expect(free.letter).not.toMatch(/Zero-Point Vacuum|Φ_EGS|catalog shelf/i);
+    expect(free.highlights).toHaveLength(3);
+    expect(free.weeklyMoves.length).toBeGreaterThanOrEqual(3);
     expect(free.upsell.standard.price).toBe(29);
-    expect(free.upsell.deluxe.price).toBe(49);
-    expect(std.overview).toHaveLength(10);
-    expect(deluxe.narratives).toHaveLength(10);
-    expect(deluxe.narratives[0].narrative).toMatch(/Digit/);
-    expect(deluxe.deluxeBridge.focus).toBe('craft');
-    expect(chartSvg(chart, { tier: 'free' })).toContain('Free summary');
-    expect(chartSvg(chart, { tier: 'chart_standard' })).toContain('Overall');
-    expect(chartSvg(chart, { deluxe: true })).toContain('Deluxe');
+
+    expect(std.letter.length).toBeGreaterThan(300);
+    expect(std.highlights).toHaveLength(10);
+    expect(std.highlights[0].doThis).toBeTruthy();
+    expect(std.highlights[0].body).toMatch(/about /i);
+
+    expect(deluxe.letter.length).toBeGreaterThan(400);
+    expect(deluxe.highlights).toHaveLength(10);
+    expect(deluxe.answerBlock).toMatch(/What should I protect/);
+    expect(deluxe.materials.plain).toMatch(/Making\/craft/);
+    expect(deluxe.narratives[0].narrative.length).toBeGreaterThan(120);
+
+    expect(chartSvg(chart, { tier: 'free' })).toContain('free summary');
+    expect(chartSvg(chart, { tier: 'chart_standard' })).toContain('overall chart');
+    expect(chartSvg(chart, { deluxe: true })).toContain('deluxe');
   });
 });
 

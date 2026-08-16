@@ -1,0 +1,37 @@
+# Daily Ship Bulletin Steward — keep guest news current on main
+name: daily-ship-bulletin
+
+on:
+  schedule:
+    # 15:05 UTC — after Vercel cron warm
+    - cron: '5 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-bulletin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Sync daily ship bulletin
+        run: npm run sync:daily-ship-bulletin
+      - name: Commit if changed
+        run: |
+          git config user.name "Daily Ship Bulletin Steward"
+          git config user.email "bulletin-steward@fractiai.com"
+          git add interfaces/vibelandia-questfest.html data/daily-ship-bulletin.json data/bulletin-board-posts.json
+          if git diff --staged --quiet; then
+            echo "No bulletin changes for today."
+            exit 0
+          fi
+          git commit -m "chore(bulletin): sync daily ship bulletin for guests"
+          git push origin HEAD:main

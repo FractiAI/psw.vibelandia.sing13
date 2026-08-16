@@ -593,6 +593,10 @@
       "destination": "/interfaces/blog-syn-sun-wavefield-oscillator.html"
     },
     {
+      "source": "/ship-blog/tbme-egs-apiary",
+      "destination": "/interfaces/blog-tbme-egs-apiary.html"
+    },
+    {
       "source": "/ship-blog/quakes-and-solar-weather",
       "destination": "/interfaces/blog-quakes-and-solar-weather-2026-08.html"
     },
@@ -1385,6 +1389,10 @@
     {
       "path": "/api/cron-turner-bison-ingest",
       "schedule": "*/5 * * * *"
+    },
+    {
+      "path": "/api/cron-daily-ship-bulletin",
+      "schedule": "0 15 * * *"
     }
   ],
   "functions": {
@@ -1454,6 +1462,14 @@
     "api/bulletin-board.js": {
       "maxDuration": 15,
       "includeFiles": "data/bulletin-board-posts.json"
+    },
+    "api/daily-ship-bulletin.js": {
+      "maxDuration": 30,
+      "includeFiles": "{lib/**,data/bulletin-board-posts.json}"
+    },
+    "api/cron-daily-ship-bulletin.js": {
+      "maxDuration": 60,
+      "includeFiles": "{lib/**,data/bulletin-board-posts.json}"
     },
     "api/page-views.js": {
       "maxDuration": 10,

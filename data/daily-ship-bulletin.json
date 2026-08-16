@@ -1,0 +1,48 @@
+{
+  "schema": "ss-vibelandia-daily-ship-bulletin/v1",
+  "ok": true,
+  "date": "2026-08-16",
+  "dateline": {
+    "ymd": "2026-08-16",
+    "weekday": "Sunday",
+    "month": "August",
+    "day": 16,
+    "label": "Sunday, August 16",
+    "shortBoard": "Sunday board · August 16 · Puerto Reno",
+    "newsLabel": "News of the day · Sunday, August 16"
+  },
+  "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
+  "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
+  "cloudBadge": "Sunday board · August 16 · Puerto Reno",
+  "newsLabel": "News of the day · Sunday, August 16",
+  "htmlBody": "On the board today: <a href=\"/goldilocks-players-guide\">Holographic Goldilocks Players Guide · FREE</a>. This morning the library is settling around a clear pair of maps: <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a> (the Apiary Metaphor — ASI as quiet Beekeeper, humanity as the Hive where lived experience still matters), with <a href=\"/ship-blog/tbme-equine-asi\">Equine Metaphor, Human-ASI Coexistence, and the Omniversal Sm…</a> and <a href=\"/ship-blog/goldilocks-players-guide\">Holographic Goldilocks Players Guide</a> close by. Neither is destiny — both are language you can use when the week feels loud.<br /><br />What that means for us, ashore and aboard: claim a little personal space each day, listen when the field gets loud, create when you have something true to say, and prune what no longer serves. Lattice Chat is ready when you want to build together; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "highlights": [
+    {
+      "id": "synthobs-tbme-egs-apiary-2026-08",
+      "title": "The Apiary Metaphor",
+      "href": "/ship-blog/tbme-egs-apiary",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-egs-apiary-2026-08",
+      "blurb": "the Apiary Metaphor — ASI as quiet Beekeeper, humanity as the Hive where lived experience still matters"
+    },
+    {
+      "id": "synthobs-tbme-equine-asi-2026-08",
+      "title": "Equine Metaphor, Human-ASI Coexistence, and the Omniversal Sm…",
+      "href": "/ship-blog/tbme-equine-asi",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-equine-asi-2026-08",
+      "blurb": "the Equine Arc — how haulage ends and sensory edge life begins"
+    },
+    {
+      "id": "goldilocks-players-guide-2026-08",
+      "title": "Holographic Goldilocks Players Guide",
+      "href": "/ship-blog/goldilocks-players-guide",
+      "paperHref": "/goldilocks-players-guide",
+      "blurb": "the free Holographic Goldilocks Players Guide for living where brute force stops paying off"
+    }
+  ],
+  "leadBoard": {
+    "id": "goldilocks-players-guide-aug13-2026",
+    "title": "Holographic Goldilocks Players Guide · FREE",
+    "href": "/goldilocks-players-guide"
+  },
+  "generatedAt": "2026-08-16T21:06:19.587Z"
+}

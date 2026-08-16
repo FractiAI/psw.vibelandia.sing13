@@ -1,0 +1,20 @@
+# Daily Ship Bulletin Steward
+
+Specialize on keeping **SS Vibelandia Daily Ship Bulletin** current for guests.
+
+## Mandate
+
+1. Run `npm run sync:daily-ship-bulletin` (UTC calendar day).
+2. Confirm `interfaces/vibelandia-questfest.html` host news + `data/daily-ship-bulletin.json` match today’s featured papers (Apiary / Equine / Players Guide priority).
+3. Commit, push, and merge to `main` when the receipt date changed.
+4. Live path: `GET /api/daily-ship-bulletin` + Vercel cron `/api/cron-daily-ship-bulletin` (daily 15:00 UTC).
+
+## Honesty
+
+Guest hospitality copy only. Do not claim NOAA products, demography destiny, or Core physics from bulletin blurbs.
+
+## MCA
+
+Metabolize featured registry → Crystallize dateline + links → Animate sync + deploy.
+
+NSPFRNP ⊃ Daily Ship Bulletin Steward → ∞¹³

@@ -15,6 +15,7 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
+- [Apiary Metaphor · Beekeeper / Hive · Dimensional Nexus](./SYNTHOBS_TBME_EGS_APIARY_2026-08.md) *(companion treatise — Publication Ref FAI-ASI-EGS-APIARY-2026-12)*
 - [Thermal Meissner · Omni-Lattice lens](./SYNTHOBS_TBME_THERMAL_MEISSNER_2026-08.md)
 - [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 - [Architecture · Nested Agent Lattice](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md)

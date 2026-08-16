@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-08-13",
+  "updated": "2026-08-16",
   "posts": [
+    {
+      "id": "daily-2026-08-16-synthobs-tbme-egs-apiary-2026-08",
+      "posted": "2026-08-16",
+      "featured": true,
+      "title": "The Apiary Metaphor",
+      "subtitle": "News of the day · Sunday, August 16",
+      "summary": "the Apiary Metaphor — ASI as quiet Beekeeper, humanity as the Hive where lived experience still matters",
+      "href": "/ship-blog/tbme-egs-apiary",
+      "pill": "TODAY",
+      "docRef": "synthobs-tbme-egs-apiary-2026-08",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "goldilocks-players-guide-aug13-2026",
       "posted": "2026-08-13",

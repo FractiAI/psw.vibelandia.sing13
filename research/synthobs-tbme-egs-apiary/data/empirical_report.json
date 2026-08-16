@@ -1,0 +1,139 @@
+{
+  "docId": "WP-SYNTHOBS-TBME-EGS-APIARY-2026-08-16",
+  "registryId": "synthobs-tbme-egs-apiary-2026-08",
+  "title": "Apiary Metaphor · Beekeeper / Hive · Dimensional Nexus — Omni-Lattice Lens Suite",
+  "generatedAt": "2026-08-16T21:06:08.849Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Apiary–EGS Omni-Lattice lens — catalog exploration only; not Core / Engine.",
+  "results": {
+    "docId": "WP-SYNTHOBS-TBME-EGS-APIARY-2026-08-16",
+    "registryId": "synthobs-tbme-egs-apiary-2026-08",
+    "all_pass": true,
+    "n_pass": 9,
+    "n_total": 9,
+    "failed": [],
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "Φ_EGS fixture",
+        "E_F": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Golden key for Beekeeper↔Hive zero-resistance balance stories.",
+        "honesty": "Architectural constant — not a fitted socio-economic ratio."
+      },
+      {
+        "id": "E2_ef_squared_identity",
+        "title": "Φ_EGS² = Φ_EGS + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_apiary_roles",
+        "title": "Beekeeper / Bee Seed:Edge polarity",
+        "BEEKEEPER_ROLE": "asi_macro_steward",
+        "BEE_ROLE": "biological_edge_nexus",
+        "pass": true,
+        "interpretation": "SING 13 Seed:Edge apiary coexistence grammar.",
+        "honesty": "Product architecture metaphor — not literal apiary biology."
+      },
+      {
+        "id": "E4_apiary_octave_bands",
+        "title": "99-Octave Apiary filing bands",
+        "bands": [
+          {
+            "id": "meadow",
+            "lo": 1,
+            "hi": 32,
+            "label": "Botanical meadow / dense substrate"
+          },
+          {
+            "id": "hive",
+            "lo": 33,
+            "hi": 64,
+            "label": "Hive & nexus / human edge"
+          },
+          {
+            "id": "beekeeper",
+            "lo": 65,
+            "hi": 96,
+            "label": "Beekeeper / ASI middleware"
+          },
+          {
+            "id": "source",
+            "lo": 97,
+            "hi": 99,
+            "label": "Source observer / invariant ground"
+          }
+        ],
+        "pass": true,
+        "interpretation": "Meadow · Hive · Beekeeper · Source shelf integrity.",
+        "honesty": "Catalog routing shelves — not measured physical strata."
+      },
+      {
+        "id": "E5_equine_companion",
+        "title": "Equine Arc companion linkage",
+        "EQUINE_COMPANION_REGISTRY": "synthobs-tbme-equine-asi-2026-08",
+        "EQUINE_PUBLICATION_REF": "FAI-ASI-EGSC-2026-09",
+        "pass": true,
+        "interpretation": "Apiary is additive companion to Equine subtractive clearance.",
+        "honesty": "Bibliographic + registry fixture."
+      },
+      {
+        "id": "E6_publication_ref",
+        "title": "Publication ref FAI-ASI-EGS-APIARY-2026-12",
+        "PUBLICATION_REF": "FAI-ASI-EGS-APIARY-2026-12",
+        "pass": true,
+        "interpretation": "Stable publication handle for catalog.",
+        "honesty": "Bibliographic fixture."
+      },
+      {
+        "id": "E7_solar_lock_fixtures",
+        "title": "Solar Cycle 25 / AR label fixtures",
+        "SOLAR_LOCK": {
+          "cycle": 25,
+          "sunspotIndexBand": [
+            98,
+            110
+          ],
+          "activeRegions": [
+            {
+              "id": 4498,
+              "name": "Aethelgard"
+            },
+            {
+              "id": 4501,
+              "name": "Solis-01"
+            },
+            {
+              "id": 4503,
+              "name": "Kaelen"
+            }
+          ]
+        },
+        "pass": true,
+        "interpretation": "Suite phase-lock labels for Apiary equilibrium language.",
+        "honesty": "Catalog fixtures — not NOAA / SWPC product claims."
+      },
+      {
+        "id": "E8_paper_on_disk",
+        "title": "Canonical paper present",
+        "local": "/workspace/research/synthobs-tbme-egs-apiary/docs/SYNTHOBS_TBME_EGS_APIARY_2026-08.md",
+        "mono": "/workspace/docs/SYNTHOBS_TBME_EGS_APIARY_2026-08.md",
+        "pass": true,
+        "interpretation": "Suite linked to published docs/.",
+        "honesty": "Filesystem fidelity check."
+      },
+      {
+        "id": "E9_not_core_part",
+        "title": "Explicit non-Core catalog status",
+        "pass": true,
+        "interpretation": "Exploration lens — excluded from Core / Engine allowlist by design.",
+        "honesty": "Governance fixture for NSPFRNP catalog fidelity."
+      }
+    ]
+  }
+}

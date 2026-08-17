@@ -597,6 +597,14 @@
       "destination": "/interfaces/blog-tbme-egs-apiary.html"
     },
     {
+      "source": "/ship-blog/tbme-egs-hgaios",
+      "destination": "/interfaces/blog-tbme-egs-hgaios.html"
+    },
+    {
+      "source": "/ship-blog/tbme-egs-hgaios/",
+      "destination": "/interfaces/blog-tbme-egs-hgaios.html"
+    },
+    {
       "source": "/ship-blog/quakes-and-solar-weather",
       "destination": "/interfaces/blog-quakes-and-solar-weather-2026-08.html"
     },

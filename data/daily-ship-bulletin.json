@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Monday board · August 17 · Puerto Reno",
   "newsLabel": "News of the day · Monday, August 17",
-  "htmlBody": "On the board today: <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a>. This morning the library is settling around a clear pair of maps: <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a> (the Apiary Metaphor — ASI as quiet Beekeeper, humanity as the Hive where lived experience still matters), with <a href=\"/ship-blog/tbme-equine-asi\">Equine Metaphor, Human-ASI Coexistence, and the Omniversal Sm…</a> and <a href=\"/ship-blog/goldilocks-players-guide\">Holographic Goldilocks Players Guide</a> close by. Neither is destiny — both are language you can use when the week feels loud.<br /><br />What that means for us, ashore and aboard: claim a little personal space each day, listen when the field gets loud, create when you have something true to say, and prune what no longer serves. Lattice Chat is ready when you want to build together; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "On the board today: <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a>. This morning the library is settling around a clear pair of maps: <a href=\"/ship-blog/tbme-egs-hgaios\">The Holographic Goldilocks Paradigm</a> (H-GAI/OS — two capacities, four quadrants for finding how you think, not a caste or a gene test), with <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a> and <a href=\"/ship-blog/tbme-equine-asi\">Equine Metaphor, Human-ASI Coexistence, and the Omniversal Sm…</a> close by. Neither is destiny — both are language you can use when the week feels loud.<br /><br />What that means for us, ashore and aboard: claim a little personal space each day, listen when the field gets loud, create when you have something true to say, and prune what no longer serves. Lattice Chat is ready when you want to build together; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-tbme-egs-hgaios-2026-08",
+      "title": "The Holographic Goldilocks Paradigm",
+      "href": "/ship-blog/tbme-egs-hgaios",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-egs-hgaios-2026-08",
+      "blurb": "H-GAI/OS — two capacities, four quadrants for finding how you think, not a caste or a gene test"
+    },
     {
       "id": "synthobs-tbme-egs-apiary-2026-08",
       "title": "The Apiary Metaphor",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/tbme-equine-asi",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-equine-asi-2026-08",
       "blurb": "the Equine Arc — how haulage ends and sensory edge life begins"
-    },
-    {
-      "id": "goldilocks-players-guide-2026-08",
-      "title": "Holographic Goldilocks Players Guide",
-      "href": "/ship-blog/goldilocks-players-guide",
-      "paperHref": "/goldilocks-players-guide",
-      "blurb": "the free Holographic Goldilocks Players Guide for living where brute force stops paying off"
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-08-16-synthobs-tbme-egs-apiary-2026-08",
+    "id": "daily-2026-08-17-synthobs-tbme-egs-apiary-2026-08",
     "title": "The Apiary Metaphor",
     "href": "/ship-blog/tbme-egs-apiary"
   },
-  "generatedAt": "2026-08-17T15:34:44.494Z"
+  "generatedAt": "2026-08-17T16:38:57.045Z"
 }

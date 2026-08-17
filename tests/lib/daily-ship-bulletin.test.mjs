@@ -13,12 +13,12 @@ describe('daily-ship-bulletin steward', () => {
     expect(d.shortBoard).toContain('Puerto Reno');
   });
 
-  it('builds apiary-first highlights for 2026-08-16', async () => {
-    const payload = await buildDailyShipBulletin({ date: '2026-08-16' });
+  it('builds hgaios-first highlights for 2026-08-17', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-08-17' });
     expect(payload.ok).toBe(true);
-    expect(payload.date).toBe('2026-08-16');
-    expect(payload.highlights[0].id).toBe('synthobs-tbme-egs-apiary-2026-08');
-    expect(payload.htmlBody).toContain('tbme-egs-apiary');
+    expect(payload.date).toBe('2026-08-17');
+    expect(payload.highlights[0].id).toBe('synthobs-tbme-egs-hgaios-2026-08');
+    expect(payload.htmlBody).toContain('tbme-egs-hgaios');
     expect(payload.honesty).toMatch(/Guest hospitality/i);
   });
 

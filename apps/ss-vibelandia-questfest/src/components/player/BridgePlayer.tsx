@@ -36,6 +36,7 @@ import {
 } from '@/lib/playlistShuffle';
 import { PLAIN } from '@/lib/plainSpeak';
 import { EGS_EXPORT_USD } from '@/lib/paymentRails';
+import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import {
   clearSharedTrackAutoplaySeed,
   sharedTrackAutoplayFromMaster,
@@ -107,6 +108,7 @@ export function BridgePlayer({
 
   const [playlistModalOpen, setPlaylistModalOpen] = useState(false);
   const [shareNote, setShareNote] = useState<string | null>(null);
+  const openExport = useMediaChromeStore((s) => s.openExport);
 
   const mediaRef = useRef<HTMLAudioElement | null>(null);
   const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -501,11 +503,9 @@ export function BridgePlayer({
             <>
               <p className="sp-now-title">{track.title}</p>
               <p className="sp-now-artist">{track.artist}</p>
-              {!jukeboxBrowse && (
-                <span className="sp-now-badge sp-now-badge--pass" title="Free streaming">
-                  Free stream · download ${EGS_EXPORT_USD.toFixed(2)}
-                </span>
-              )}
+              <span className="sp-now-badge sp-now-badge--pass" title={PLAIN.getPass}>
+                Free stream · download ${EGS_EXPORT_USD.toFixed(2)}
+              </span>
             </>
           ) : (
             <p className="sp-now-empty">Tap ▶ {PLAIN.playAll} or pick a track</p>
@@ -561,6 +561,20 @@ export function BridgePlayer({
                   <path
                     fill="currentColor"
                     d="M13 9.5a2.2 2.2 0 0 0-1.4.5l-4.6-2.6a2.3 2.3 0 0 0 0-1l4.6-2.6a2.2 2.2 0 1 0-.4-1l-4.6 2.6a2.2 2.2 0 1 0 0 2.2l4.6 2.6a2.2 2.2 0 1 0 1.4-.7zM3.5 5.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9-4.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                className="sp-now-btn sp-now-btn--download"
+                onClick={() => openExport(track.id)}
+                aria-label={PLAIN.getPass}
+                title={PLAIN.getPass}
+              >
+                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden>
+                  <path
+                    fill="currentColor"
+                    d="M8 1.5a.75.75 0 0 1 .75.75v6.19l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 0 1 1.06-1.06l2.22 2.22V2.25A.75.75 0 0 1 8 1.5zM3 12.25a.75.75 0 0 1 .75-.75h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1-.75-.75z"
                   />
                 </svg>
               </button>

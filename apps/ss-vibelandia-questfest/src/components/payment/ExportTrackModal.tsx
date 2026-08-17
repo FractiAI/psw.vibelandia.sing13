@@ -3,6 +3,7 @@ import {
   BOOKING_EMAIL,
   CATALOG_EMAIL,
   EGS_EXPORT_USD,
+  HONOR_EXPORT_PAY_HREF,
   PAYMENT_HANDLES,
   RAIL_LABEL,
   exportNote,
@@ -225,9 +226,22 @@ export function ExportTrackModal({
                 </button>
               ))}
             </div>
-            <button type="button" className="voxel-btn voxel-btn--ghost" onClick={close}>
-              Cancel
-            </button>
+            <p className="modal-fine">
+              Or pay on the honor page (same Venmo · PayPal · Cash App rails), then come back to attest.
+            </p>
+            <div className="modal-actions">
+              <a
+                className="voxel-btn voxel-btn--cyan"
+                href={HONOR_EXPORT_PAY_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Honor pay page · ${EGS_EXPORT_USD.toFixed(2)}
+              </a>
+              <button type="button" className="voxel-btn voxel-btn--ghost" onClick={close}>
+                Cancel
+              </button>
+            </div>
           </>
         )}
 
@@ -261,6 +275,14 @@ export function ExportTrackModal({
               <button type="button" className="voxel-btn voxel-btn--ghost" onClick={() => setStep('rail')}>
                 Back
               </button>
+              <a
+                className="voxel-btn voxel-btn--ghost"
+                href={HONOR_EXPORT_PAY_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Honor pay page
+              </a>
             </div>
           </>
         )}

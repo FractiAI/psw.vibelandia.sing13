@@ -137,9 +137,25 @@
     return labelEl;
   }
 
-  function render(el, count) {
+  function isListenSurface(loc) {
+    loc = loc || window.location;
+    var path = (loc.pathname || '/').replace(/\/index\.html$/i, '').replace(/\.html$/i, '') || '/';
+    if (path.length > 1 && path.charAt(path.length - 1) === '/') path = path.slice(0, -1);
+    if (
+      path === '/listen' ||
+      path.indexOf('/listen/') === 0 ||
+      path === '/interfaces/questfest-bridge' ||
+      path === '/questfest-bridge'
+    ) {
+      return true;
+    }
+    var hash = (loc.hash || '').replace(/^#/, '').split('?')[0];
+    return hash === '/listen' || hash.indexOf('/listen/') === 0;
+  }
+
+  function render(el, count, label) {
     if (!el) return;
-    el.textContent = 'Visits · ' + fmt(count);
+    el.textContent = (label || 'Visits') + ' · ' + fmt(count);
   }
 
   function postVisits(key, el) {
@@ -154,7 +170,7 @@
         return res.json();
       })
       .then(function (data) {
-        if (data && typeof data.visits === 'number') render(el, data.visits);
+        if (data && typeof data.visits === 'number') render(el, data.visits, 'Visits');
       })
       .catch(function () {
         if (el) el.textContent = '';
@@ -162,6 +178,8 @@
   }
 
   function record(loc, extra) {
+    loc = loc || window.location;
+    if (isListenSurface(loc)) return;
     var key = pageKey(loc, extra);
     if (!shouldSend(key)) return;
     var el = ensureEl();
@@ -173,8 +191,17 @@
     record: record,
     recordWithKey: function (key) {
       if (!key || !shouldSend(key)) return;
+      if (String(key).indexOf('/listen') !== -1) return;
       var el = ensureEl();
       postVisits(key, el);
+    },
+    showCount: function (count, label) {
+      var el = ensureEl();
+      if (typeof count === 'number' && Number.isFinite(count)) render(el, count, label || 'Visits');
+    },
+    clearCount: function () {
+      var el = ensureEl();
+      if (el) el.textContent = '';
     },
   };
 

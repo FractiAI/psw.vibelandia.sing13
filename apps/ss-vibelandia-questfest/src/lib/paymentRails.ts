@@ -11,9 +11,13 @@ const env = import.meta.env;
 
 export const PAYMENT_HANDLES: Record<LiveRail, string> = {
   venmo: env.VITE_VENMO_HANDLE || '@Pru-Mendez',
-  paypal: env.VITE_PAYPAL_HANDLE || 'info@fractiai.com',
+  paypal: env.VITE_PAYPAL_HANDLE || 'valetpru',
   cashapp: env.VITE_CASHAPP_HANDLE || '$GoldenBachdoor',
 };
+
+/** Concierge honor pay page — same Venmo / PayPal / Cash App rails as chart unlocks. */
+export const HONOR_EXPORT_PAY_HREF =
+  '/hire-a-goldilocks-valet-concierge/pay?service=track-download';
 
 export const BOOKING_EMAIL = env.VITE_BOOKING_EMAIL || 'info@fractiai.com';
 export const CATALOG_EMAIL = env.VITE_CATALOG_EMAIL || 'info@fractiai.com';

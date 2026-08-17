@@ -1475,6 +1475,10 @@
       "maxDuration": 10,
       "includeFiles": "{lib/**}"
     },
+    "api/catalog-plays.js": {
+      "maxDuration": 10,
+      "includeFiles": "{lib/**}"
+    },
     "api/lattice-chat.js": {
       "maxDuration": 300,
       "includeFiles": "{lib/**,data/lattice-access.json,data/lattice-repositories.json}"

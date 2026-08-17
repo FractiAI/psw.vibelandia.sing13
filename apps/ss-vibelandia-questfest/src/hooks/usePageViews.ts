@@ -7,6 +7,8 @@ declare global {
       record: (loc?: Location, extra?: string) => void;
       recordWithKey: (key: string) => void;
       pageKey: (loc?: Location, extra?: string) => string;
+      showCount?: (count: number, label?: string) => void;
+      clearCount?: () => void;
     };
     __qvPageViewsBoot?: boolean;
   }
@@ -34,11 +36,12 @@ function loadPageViewsScript(): Promise<void> {
   });
 }
 
-/** Record SPA route views and show per-page visit count bottom-right. */
+/** Record SPA route views. Jukebox listen/now uses track plays instead of page visits. */
 export function usePageViews(extra?: string) {
   const { pathname, search, hash } = useLocation();
 
   useEffect(() => {
+    if (pathname === '/listen' || pathname.startsWith('/listen/')) return;
     let cancelled = false;
     void loadPageViewsScript().then(() => {
       if (cancelled || !window.QVPageViews) return;

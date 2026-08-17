@@ -10,6 +10,7 @@ import { JukeboxNowPlayingPage } from './pages/JukeboxNowPlayingPage';
 import { RegistrationPage } from './pages/RegistrationPage';
 
 import { usePageViews } from '@/hooks/usePageViews';
+import { useTrackPlayVisits } from '@/hooks/useTrackPlayVisits';
 
 function AppChrome() {
   const { pathname } = useLocation();
@@ -25,6 +26,7 @@ function AppChrome() {
 export default function App() {
   useIOSHtmlClass();
   usePageViews();
+  useTrackPlayVisits();
   return (
     <>
       <Routes>

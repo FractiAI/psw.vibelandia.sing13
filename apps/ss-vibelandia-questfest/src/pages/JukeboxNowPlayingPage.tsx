@@ -2,12 +2,16 @@ import { useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { JukeboxSiteNav } from '@/components/jukebox/JukeboxSiteNav';
 import { useJukeboxListenSetup } from '@/hooks/useJukeboxListenSetup';
+import { useTrackPlayVisits } from '@/hooks/useTrackPlayVisits';
 import { JUKEBOX_LISTEN_PATH } from '@/lib/jukeboxRoutes';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
+import { useMediaChromeStore } from '@/stores/mediaChromeStore';
 import { SONIC_BRAND_NAME } from '@/lib/sonicCatalogCopy';
 import { fmtDuration } from '@/lib/formatDuration';
 import { playingCoverUrl } from '@/lib/playingCover';
+import { PLAIN } from '@/lib/plainSpeak';
+import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 import { usePlaybackPlaylist } from '@/stores/catalogSelectors';
 
 export function JukeboxNowPlayingPage() {
@@ -17,6 +21,8 @@ export function JukeboxNowPlayingPage() {
   const isPlaying = usePlaybackStore((s) => s.isPlaying);
   const displayTime = usePlaybackStore((s) => s.displayTime);
   const getTrack = useCatalogStore((s) => s.getTrack);
+  const openExport = useMediaChromeStore((s) => s.openExport);
+  const plays = useTrackPlayVisits();
   const pl = usePlaybackPlaylist();
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
@@ -66,9 +72,24 @@ export function JukeboxNowPlayingPage() {
           ) : null}
           {track.description ? <p className="jb-now__desc">{track.description}</p> : null}
           {track.story ? <p className="jb-now__story">{track.story}</p> : null}
+          {typeof plays === 'number' ? (
+            <p className="jb-now__visits" aria-label="Total plays">
+              Visits · {plays.toLocaleString('en-US')}
+            </p>
+          ) : null}
+          <button
+            type="button"
+            className="jb-now__download"
+            onClick={() => openExport(track.id)}
+          >
+            {PLAIN.getPass}
+          </button>
         </div>
 
-        <p className="jb-now__hint">Controls stay in the jukebox bar below.</p>
+        <p className="jb-now__hint">
+          Controls stay in the jukebox bar below. Download is ${EGS_EXPORT_USD.toFixed(2)} Fair Exchange on honor
+          (Venmo · PayPal · Cash App).
+        </p>
       </main>
     </div>
   );

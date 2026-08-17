@@ -91,6 +91,11 @@ export function MediaShell() {
       <FairExchangeModal
         open={fairOpen}
         onClose={() => setFairOpen(false)}
+        onDownload={() => {
+          setFairOpen(false);
+          const tid = usePlaybackStore.getState().currentTrackId;
+          if (tid) useMediaChromeStore.getState().openExport(tid);
+        }}
         onBoard={() => {
           setFairOpen(false);
           setBoardingOpen(true);

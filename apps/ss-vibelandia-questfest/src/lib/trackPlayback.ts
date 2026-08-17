@@ -7,6 +7,7 @@ import {
   playAudioNow,
   urlMatchesElement,
 } from '@/lib/simplePlayback';
+import { recordCatalogPlay } from '@/lib/catalogPlays';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
 import type { TrackDef } from '@/lib/catalogTypes';
@@ -61,6 +62,7 @@ export function startTrackPlayback(
   else if (startAt > 0.25) pb.setDisplayTime(startAt);
   pb.setGain(1);
   opts?.beginSession?.();
+  if (!resume) recordCatalogPlay(trackId);
 
   const fail = (msg: string) => {
     pb.setPlaybackError(msg);

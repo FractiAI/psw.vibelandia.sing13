@@ -6,10 +6,11 @@ interface FairExchangeModalProps {
   onClose: () => void;
   onBoard: () => void;
   onCaptainAccess?: () => void;
+  onDownload?: () => void;
 }
 
 /** Explains free streaming + paid downloads (no monthly stream pass). */
-export function FairExchangeModal({ open, onClose, onBoard, onCaptainAccess }: FairExchangeModalProps) {
+export function FairExchangeModal({ open, onClose, onBoard, onCaptainAccess, onDownload }: FairExchangeModalProps) {
   if (!open) return null;
 
   return (
@@ -29,6 +30,17 @@ export function FairExchangeModal({ open, onClose, onBoard, onCaptainAccess }: F
           Optional tip jar still lives under Capitan if you want to support the ship — listening never depends on it.
         </p>
         <div className="modal-actions">
+          {onDownload ? (
+            <button
+              type="button"
+              className="voxel-btn voxel-btn--swamp-gold"
+              onClick={() => {
+                onDownload();
+              }}
+            >
+              Download · ${EGS_EXPORT_USD.toFixed(2)}
+            </button>
+          ) : null}
           <button type="button" className="voxel-btn voxel-btn--swamp-gold" onClick={onClose}>
             Keep listening
           </button>

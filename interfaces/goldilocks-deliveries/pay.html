@@ -133,6 +133,15 @@
           desc: 'Deeper Story horizons, morphogenesis swarms, and share card. Pay on an honor rail, then attest date paid + rail used.',
           memo: 'YOUR 99 OCTAVE CHART · Deluxe $49',
           backHref: '/octave99-chart'
+        },
+        'track-download': {
+          title: 'Catalog track download',
+          amount: 1.61,
+          mode: 'digital',
+          amountNote: '$1.61 · Fair Exchange honor · offline file',
+          desc: 'Streaming the catalog is free. This honor payment unlocks saving the track file to your device. Pay on Venmo, PayPal, or Cash App, then attest.',
+          memo: 'EXPORT · catalog track · $1.61',
+          backHref: '/listen'
         }
       };
 
@@ -143,8 +152,10 @@
         key = unit === 'deluxe' || unit === '49' || unit === 'chart_deluxe' ? 'chart-deluxe' : 'chart-standard';
       } else if (service === 'chart_standard' || service === 'chart-standard' || service === 'chart29') {
         key = 'chart-standard';
-      } else if (service === 'chart_deluxe' || service === 'chart-deluxe' || service === 'chart49') {
+      }       else if (service === 'chart_deluxe' || service === 'chart-deluxe' || service === 'chart49') {
         key = 'chart-deluxe';
+      } else if (service === 'track-download' || service === 'export' || service === 'download' || service === 'track') {
+        key = 'track-download';
       } else if (service && config[service]) key = service;
       else if (role !== 'guest' && config[role]) key = role;
       else key = 'food';

@@ -34,7 +34,8 @@ export function scoreSelfTest(axis1Scores, axis2Scores) {
   const map = {
     q1: {
       id: 'q1',
-      label: 'Baseline Scaffolding',
+      label: 'Linear NPC',
+      catalog: 'Baseline Scaffolding',
       vessel: 'Hull Keepers & Deck Crew',
       share: '38.197%',
       strength: 'Concrete execution, procedural reliability, and social grounding.',
@@ -42,7 +43,8 @@ export function scoreSelfTest(axis1Scores, axis2Scores) {
     },
     q2: {
       id: 'q2',
-      label: 'Oracle Engines',
+      label: 'NPC',
+      catalog: 'Oracle Engines',
       vessel: "Ship's Lookout & Chronometer",
       share: '23.607%',
       strength: 'Unconscious compilation — rapid technical, musical, or mathematical intuition.',
@@ -50,7 +52,8 @@ export function scoreSelfTest(axis1Scores, axis2Scores) {
     },
     q3: {
       id: 'q3',
-      label: 'Linear Executives',
+      label: 'Linear',
+      catalog: 'Linear Executives',
       vessel: "Ship's Captain",
       share: '23.607%',
       strength: 'Strategic ambition, self-aware execution, and concrete building.',
@@ -58,7 +61,8 @@ export function scoreSelfTest(axis1Scores, axis2Scores) {
     },
     q4: {
       id: 'q4',
-      label: 'Fractal Synthesizers',
+      label: 'Holographic',
+      catalog: 'Fractal Synthesizers',
       vessel: 'Master Navigator',
       share: '14.590%',
       strength: 'Holographic multi-scale synthesis and deep conscious presence.',
@@ -71,13 +75,15 @@ export function scoreSelfTest(axis1Scores, axis2Scores) {
       total: axis1,
       possesses: hasReflection,
       nick: hasReflection
-        ? 'RP — Self-Reflective / Conscious Observer'
-        : 'NSR — Non-Self-Reflective / Procedural Focus',
+        ? 'Observer — self-awareness on'
+        : 'NPC — no self-awareness',
     },
     axis2: {
       total: axis2,
       possesses: hasMetapattern,
-      nick: hasMetapattern ? 'Holographic / Meta-Pattern Focus' : 'Linear-State / Concrete Focus',
+      nick: hasMetapattern
+        ? 'Holographic — metapattern awareness on'
+        : 'Linear — no metapattern awareness',
     },
     quadrant: map[id],
   };

@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17`
 **Registry ID:** `synthobs-tbme-egs-hgaios-2026-08`
-**Generated:** 2026-08-17T16:39:07.537Z
+**Generated:** 2026-08-17T16:47:57.063Z
 
 ## Verdict
 
@@ -118,25 +118,31 @@
 }
 ```
 
-### E6_quadrant_labels — Four combinatorial state labels
+### E6_quadrant_labels — Four combinatorial state labels + REV4 maritime vessel posts
 
 - **Pass:** `true`
-- **Interpretation:** Neither / meta-only / reflect-only / both.
-- **Honesty:** Coordination labels — not caste.
+- **Interpretation:** Neither / meta-only / reflect-only / both, with complementary vessel posts.
+- **Honesty:** Coordination labels — not caste, naval rank, or hiring grades.
 
 ```json
 {
   "id": "E6_quadrant_labels",
-  "title": "Four combinatorial state labels",
+  "title": "Four combinatorial state labels + REV4 maritime vessel posts",
   "QUADRANT_LABELS": {
     "q1": "Baseline Scaffolding",
     "q2": "Oracle Engines",
     "q3": "Linear Executives",
     "q4": "Fractal Synthesizers"
   },
+  "VESSEL_POSTS": {
+    "q1": "Hull Keepers & Deck Crew",
+    "q2": "Ship's Lookout & Chronometer",
+    "q3": "Ship's Captain",
+    "q4": "Master Navigator"
+  },
   "pass": true,
-  "interpretation": "Neither / meta-only / reflect-only / both.",
-  "honesty": "Coordination labels — not caste."
+  "interpretation": "Neither / meta-only / reflect-only / both, with complementary vessel posts.",
+  "honesty": "Coordination labels — not caste, naval rank, or hiring grades."
 }
 ```
 
@@ -279,7 +285,7 @@
 }
 ```
 
-### E12_publication_ref — Publication ref FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3
+### E12_publication_ref — Publication ref FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4
 
 - **Pass:** `true`
 - **Interpretation:** Stable publication handle.
@@ -288,8 +294,8 @@
 ```json
 {
   "id": "E12_publication_ref",
-  "title": "Publication ref FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3",
-  "PUBLICATION_REF": "FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3",
+  "title": "Publication ref FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4",
+  "PUBLICATION_REF": "FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4",
   "pass": true,
   "interpretation": "Stable publication handle.",
   "honesty": "Bibliographic fixture."
@@ -298,4 +304,4 @@
 
 ## Honesty boundary
 
-Catalog / Omni-Lattice lens arithmetic for H-GAI/OS dual-capacity combinatorics. Does **not** claim census demography, GWAS, clinical psychometrics, or a deployed planetary OS. Catalog exploration only; not Core / Engine.
+Catalog / Omni-Lattice lens arithmetic for H-GAI/OS dual-capacity combinatorics. Does **not** claim census demography, GWAS, clinical psychometrics, naval rank, or a deployed planetary OS. Catalog exploration only; not Core / Engine.

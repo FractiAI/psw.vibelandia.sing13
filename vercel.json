@@ -81,6 +81,22 @@
       "destination": "/interfaces/commons/index.html"
     },
     {
+      "source": "/coexist",
+      "destination": "/interfaces/coexist-ai-asi.html"
+    },
+    {
+      "source": "/coexist/",
+      "destination": "/interfaces/coexist-ai-asi.html"
+    },
+    {
+      "source": "/crew",
+      "destination": "/interfaces/coexist-ai-asi.html"
+    },
+    {
+      "source": "/crew/",
+      "destination": "/interfaces/coexist-ai-asi.html"
+    },
+    {
       "source": "/puerto-reno",
       "destination": "/interfaces/commons/index.html"
     },
@@ -603,6 +619,14 @@
     {
       "source": "/ship-blog/tbme-egs-hgaios/",
       "destination": "/interfaces/blog-tbme-egs-hgaios.html"
+    },
+    {
+      "source": "/ship-blog/coexist-with-ai",
+      "destination": "/interfaces/blog-coexist-ai-asi.html"
+    },
+    {
+      "source": "/ship-blog/coexist-with-ai/",
+      "destination": "/interfaces/blog-coexist-ai-asi.html"
     },
     {
       "source": "/ship-blog/quakes-and-solar-weather",

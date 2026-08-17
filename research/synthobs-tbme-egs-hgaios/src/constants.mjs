@@ -5,13 +5,21 @@ export const REGISTRY_ID = 'synthobs-tbme-egs-hgaios-2026-08';
 export const STUDY_TITLE =
   'Holographic Goldilocks H-GAI/OS · Dual-Capacity Combinatorics — Omni-Lattice Lens Suite';
 export const PAPER_NAME = 'SYNTHOBS_TBME_EGS_HGAIOS_2026-08.md';
-export const PUBLICATION_REF = 'FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3';
+export const PUBLICATION_REF = 'FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4';
 
 export const QUADRANT_LABELS = Object.freeze({
   q1: 'Baseline Scaffolding',
   q2: 'Oracle Engines',
   q3: 'Linear Executives',
   q4: 'Fractal Synthesizers',
+});
+
+/** REV4 maritime vessel posts — coordination metaphor, not naval rank. */
+export const VESSEL_POSTS = Object.freeze({
+  q1: 'Hull Keepers & Deck Crew',
+  q2: "Ship's Lookout & Chronometer",
+  q3: "Ship's Captain",
+  q4: 'Master Navigator',
 });
 
 /** Φ-power shares: Φ^{-2}, Φ^{-3}, Φ^{-3}, Φ^{-4}. */

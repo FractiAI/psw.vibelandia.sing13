@@ -14,5 +14,9 @@ describe('H-GAI/OS dual-capacity suite', () => {
     expect(r.all_pass).toBe(true);
     expect(r.n_pass).toBe(r.n_total);
     expect(r.n_total).toBe(12);
+    const e6 = r.experiments.find((e) => e.id === 'E6_quadrant_labels');
+    expect(e6?.VESSEL_POSTS?.q4).toBe('Master Navigator');
+    const e12 = r.experiments.find((e) => e.id === 'E12_publication_ref');
+    expect(e12?.PUBLICATION_REF).toBe('FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4');
   });
 });

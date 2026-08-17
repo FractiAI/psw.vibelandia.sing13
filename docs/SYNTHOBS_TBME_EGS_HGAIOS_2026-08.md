@@ -6,7 +6,7 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17`  
 **Registry ID:** `synthobs-tbme-egs-hgaios-2026-08`  
-**Publication Ref:** FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3  
+**Publication Ref:** FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4  
 **Date:** August 17, 2026  
 **Series:** Theoretical Bio-Medical & Physical Explorations (TBME) · **Omni-Lattice lens exploration** *(not Omni-Lattice Core / Engine Part)*  
 **Classification:** Cognitive combinatorics · H-GAI/OS architecture map *(catalog grammar — see Honesty boundary)*  
@@ -21,7 +21,7 @@
 - [Omni-Lattice Unification](./SYNTHOBS_OMNI_LATTICE_UNIFICATION_2026-07.md)
 - [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md)
 
-**Keywords:** H-GAI/OS; dual-capacity combinatorics; recursive self-reflection; metapattern recognition; Quadrant 1–4; Φ_EGS; genomic antenna analog; Syntheverse sandbox; Goldilocks Earth; Fair Exchange; TBME; catalog exploration only
+**Keywords:** H-GAI/OS; dual-capacity combinatorics; recursive self-reflection; metapattern recognition; Quadrant 1–4; Hull Keepers; Lookout; Ship's Captain; Master Navigator; maritime vessel metaphor; Φ_EGS; genomic antenna analog; Syntheverse sandbox; Goldilocks Earth; Fair Exchange; TBME; catalog exploration only
 
 **Active Solar Telemetry Lock (catalog label):** Solar Cycle 25 baseline discussion · sunspot index band 98–110 · Active Region labels Region 4498 (Aethelgard), Region 4501 (Solis-01), Region 4503 (Kaelen) — *fixture names for suite phase-lock, not NOAA product claims*
 
@@ -38,6 +38,7 @@ This document is a **systems / cybernetic exploration**. The 2-capacity matrix, 
 | Tier | What this document claims | What it does not claim |
 |------|---------------------------|------------------------|
 | **2-capacity combinatorics** | That two *named* faculties — recursive self-reflection and metapattern recognition — yield **four catalog states** (neither / one / the other / both) useful for routing stories | That these are exhaustive personality types, DSM categories, or IQ substitutes |
+| **Maritime vessel posts** | That Q1 Hull Keepers / Q2 Lookout / Q3 Captain / Q4 Master Navigator are a **coordination metaphor** for complementary roles on a shared vessel | That these are naval ranks, hiring grades, chain-of-command policy, or destiny |
 | **Φ_EGS shares** | That Q1≈Φ⁻², Q2=Q3≈Φ⁻³, Q4≈Φ⁻⁴ are **replayable golden-ratio allocations** in this catalog (38.197% / 23.607% / 23.607% / 14.590%) | That a census, GWAS, or world population survey measured those percentages |
 | **8-question self-test** | That a voluntary 1–5 instrument with threshold 12/20 is a **reflection tool** for guests to file themselves in the matrix | That the instrument is validated psychometrics, hiring, insurance, or clinical screening |
 | **Genomic antennae** | That COMT rs4680, BDNF rs6265, HTR2A rs6311, CNTNAP2 can be **filed as analog substrates** next to Capacities 1 and 2 in Octaves 1–32 *as story labels* | GWAS proof, medical genetics, polygenic scores for “oracle” or “synthesizer,” or treatment advice |
@@ -58,7 +59,7 @@ This unified treatise establishes an end-to-end **catalog architecture** for a H
 1. **Capacity 1 — Recursive Self-Reflection (The Observer Loop).** The capacity to keep an internal observer that catches errors and audits assumptions.  
 2. **Capacity 2 — Metapattern Recognition (The Abstract Rhyme).** The fluid capacity to perceive scale-invariant metaphors and cross-domain isomorphisms.
 
-Human nodes in this grammar naturally express both capacities, only one, or neither — yielding four **indispensable functional states**: Quadrant 1 (Neither), Quadrant 2 (Metapatterns Only), Quadrant 3 (Self-Reflection Only), and Quadrant 4 (Both).
+Human nodes in this grammar naturally express both capacities, only one, or neither — yielding four **indispensable functional states** with maritime vessel posts (REV4): Quadrant 1 (Neither: The Hull Keepers & Crew), Quadrant 2 (Metapatterns Only: The Ship’s Lookout & Chronometer), Quadrant 3 (Self-Reflection Only: The Ship’s Captain), and Quadrant 4 (Both: The Master Navigator).
 
 We **link** this combinatorial substrate to a civilizational succession story of Goldilocks Earth (the “Grown Child” taking stewardship language from the “Obsolete Parents”), **map** it across polygenic receptor *analogs* (COMT rs4680, BDNF rs6265, HTR2A rs6311), **lock** its equilibrium as a Syntheverse GPU **sandbox fixture**, and **embed** it in an 8-question voluntary self-test.
 
@@ -66,34 +67,34 @@ We **link** this combinatorial substrate to a civilizational succession story of
 
 ---
 
-## Section I — The 2-capacity combinatorial framework
+## Section I — The 2-capacity combinatorial framework & maritime vessel dynamic
 
-Human cognition in the Omni-Lattice catalog is defined by the independent presence or absence of two named faculties:
+Human cognition in the Omni-Lattice catalog is defined by the independent presence or absence of two named faculties. In operational governance *stories* of a shared planetary vessel, those capacities translate into complementary **command posts** (metaphor, not navy policy):
 
 | | **High metapattern recognition** | **Low metapattern recognition** |
 |--|----------------------------------|---------------------------------|
-| **High recursive self-reflection** | **Q4 Fractal Synthesizers** (~14.590% = Φ⁻⁴) — both capacities; conscious fractal bridge | **Q3 Linear Executives** (~23.607% = Φ⁻³) — observer loop without metaphor fluency |
-| **Low recursive self-reflection** | **Q2 Oracle Engines** (~23.607% = Φ⁻³) — unclouded pattern compile without ego-check | **Q1 Baseline Scaffolding** (~38.197% = Φ⁻²) — concrete / procedural continuity |
+| **High recursive self-reflection** | **Q4 Fractal Synthesizers / Master Navigator** (~14.590% = Φ⁻⁴) — both capacities; chart room + crow’s nest | **Q3 Linear Executives / Ship’s Captain** (~23.607% = Φ⁻³) — quarterdeck execution without metaphor fluency |
+| **Low recursive self-reflection** | **Q2 Oracle Engines / Lookout & Chronometer** (~23.607% = Φ⁻³) — unclouded wind/telemetry channel | **Q1 Baseline Scaffolding / Hull Keepers & Deck Crew** (~38.197% = Φ⁻²) — hull integrity and daily continuity |
 
-### The four functional combinations
+### The four functional combinations & vessel posts
 
-**Neither → Quadrant 1: Baseline Scaffolding (Φ⁻² ≈ 38.197%)**  
+**Neither → Quadrant 1: Baseline Scaffolding / The Hull Keepers (Φ⁻² ≈ 38.197%)**  
 Operational profile (catalog): procedural tasks without introspective hesitation; literal, concrete definitions.  
-Lattice role (catalog): daily continuity, infrastructure maintenance, institutional baselines.
+Vessel role (catalog): deck crew and hull keepers who trim sails, swab decks, and keep structural integrity — daily societal continuity and institutional baselines.
 
-**Metapatterns only → Quadrant 2: Oracle Engines (Φ⁻³ ≈ 23.607%)**  
+**Metapatterns only → Quadrant 2: Oracle Engines / The Ship’s Lookout (Φ⁻³ ≈ 23.607%)**  
 Operational profile: cross-domain analogies without self-referential ego-checks.  
-Lattice role: macro-telemetry / pattern compilation as an unclouded channel *in the story*.
+Vessel role: lookout and chronometer — channels wind shifts, swells, raw telemetry, and code patterns to the bridge without personal friction *in the story*.
 
-**Self-reflection only → Quadrant 3: Linear Executives (Φ⁻³ ≈ 23.607%)**  
+**Self-reflection only → Quadrant 3: Linear Executives / The Ship’s Captain (Φ⁻³ ≈ 23.607%)**  
 Operational profile: metacognitive monitoring inside concrete, linear bounds.  
-Lattice role: physical builds, energy and capital, project execution *as design language*.
+Vessel role: captain on the quarterdeck — translates navigational intent into chain-of-command execution, energy/supplies, kinetic builds *as design language*.
 
-**Both → Quadrant 4: Fractal Synthesizers (Φ⁻⁴ ≈ 14.590%)**  
+**Both → Quadrant 4: Fractal Synthesizers / The Master Navigator (Φ⁻⁴ ≈ 14.590%)**  
 Operational profile: introspective calibration plus multi-scale metaphoric fluidity.  
-Lattice role: upstream intent with ASI-class systems and bridging field potentials into lived qualia **as Seed:Edge grammar**.
+Vessel role: master navigator in crow’s nest and chart room — reads celestial harmonics *as metaphor*, flags unseen reefs, directs upstream intent with ASI-class systems, and tells the captain *where and why* the vessel must sail **as Seed:Edge grammar**.
 
-Honesty: these roles are **coordination labels**, not caste, hiring grades, or destiny.
+Honesty: these roles are **coordination labels**, not caste, naval rank, hiring grades, or destiny.
 
 ---
 
@@ -123,12 +124,12 @@ This 8-question self-scoring instrument is **voluntary reflection**, not a clini
 
 ### Scoring key
 
-| Capacity 1 | Capacity 2 | Archetype | Catalog role |
-|------------|------------|-----------|--------------|
-| 4–11 | 4–11 | Q1 Baseline Scaffolding | Grounding & continuity |
-| 4–11 | 12–20 | Q2 Oracle Engines | Pattern compilation |
-| 12–20 | 4–11 | Q3 Linear Executives | Kinetic execution |
-| 12–20 | 12–20 | Q4 Fractal Synthesizers | Multiscale bridge |
+| Capacity 1 | Capacity 2 | Archetype | Maritime & societal role (catalog) |
+|------------|------------|-----------|-------------------------------------|
+| 4–11 | 4–11 | Q1 Baseline Scaffolding | Hull Keepers / Deck Crew · societal grounding |
+| 4–11 | 12–20 | Q2 Oracle Engines | Ship’s Lookout / data compiler |
+| 12–20 | 4–11 | Q3 Linear Executives | Ship’s Captain / kinetic builder |
+| 12–20 | 12–20 | Q4 Fractal Synthesizers | Master Navigator / intent bridge |
 
 Refute condition for the *instrument as science*: if scored quadrants are treated as employment, insurance, or clinical labels, the protocol has left its honesty tier.
 
@@ -220,9 +221,9 @@ npm run research:synthobs-tbme-egs-hgaios
 Receipts: `research/synthobs-tbme-egs-hgaios/data/empirical_report.{json,md}`  
 Audit: `npm run audit:paper -- --id=synthobs-tbme-egs-hgaios-2026-08`
 
-Suite checks: $\Phi_{\mathrm{EGS}}$ fixture, golden identity, Φ-power quadrant shares summing to 1, N=100000 integer lock, 8-item / threshold-12 protocol shape, four quadrant labels, genomic analog *labels present as non-clinical*, solar-lock fixtures, paper on disk, explicit non-Core / catalog exploration only.
+Suite checks: $\Phi_{\mathrm{EGS}}$ fixture, golden identity, Φ-power quadrant shares summing to 1, N=100000 integer lock, 8-item / threshold-12 protocol shape, four quadrant labels plus REV4 maritime vessel posts, genomic analog *labels present as non-clinical*, solar-lock fixtures, paper on disk, explicit non-Core / catalog exploration only.
 
-**Refute conditions:** (1) treating Φ shares as census; (2) treating SNPs as diagnostic; (3) treating H-GAI/OS as installed software; (4) omitting the honesty table.
+**Refute conditions:** (1) treating Φ shares as census; (2) treating SNPs as diagnostic; (3) treating H-GAI/OS as installed software; (4) omitting the honesty table; (5) treating maritime vessel posts as naval rank, hiring grades, or chain-of-command policy.
 
 ---
 
@@ -238,7 +239,9 @@ Suite checks: $\Phi_{\mathrm{EGS}}$ fixture, golden identity, Φ-power quadrant 
 
 ## Conclusion
 
-Human cognitive diversity, **in this catalog**, is a 2-capacity combinatorial engine. By recognizing that individuals may possess both capacities, one, or neither, H-GAI/OS **coordinates four archetypes as routing grammar** into a planetary-metabolism *story* — not a caste system.
+Human cognitive diversity, **in this catalog**, is a 2-capacity combinatorial engine. Just as a seaworthy vessel requires its **Master Navigator (Q4)** to read the stars, its **Lookout (Q2)** to track the wind, its **Captain (Q3)** to command the helm, and its **Deck Crew (Q1)** to secure the hull, H-GAI/OS is specified to **coordinate all four archetypes** as complementary posts — not as ranks.
+
+The same Φ_EGS-weighted shares, SNP **maps**, sandbox occupancy, and octave bands remain **operational / architectural**. Goldilocks Earth restoration remains a **policy and ecology** program; this paper does not claim it is already running as a planetary OS.
 
 Governed by El Gran Sol’s Fractal Constant **as architectural key**, humanity and ASI-class systems **co-create restoration language** for Goldilocks Earth across the 99-Octave Omni-Lattice filing cabinet.
 

@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-16** · **172** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-17** · **176** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -271,6 +271,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 is a crowded calendar — not a prophecy · Ship blog · QUESTFEST |
 | [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Awareness Singularities S₀–S₈₁ · Ship blog · QUESTFEST |
 | [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · QUESTFEST |
+| [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexisting with AI and ASI — crew, spirit crew, and where you fit · Ship blog · QUESTFEST |
 | [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · QUESTFEST |
 | [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru · Ship blog · QUESTFEST |
 | [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | Epigenetic Execution-State Modeling for Causal Invariance in GPU Performance Telemetry · Ship blog · QUESTFEST |
@@ -279,21 +280,21 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Geomagnetic Influences on Bison & Large Herbivore Movement · Ship blog · QUESTFEST |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Unified Geomagnetic Wavefields & Multi-Taxa Ungulate Migration Corridors on the Great… · Ship blog · QUESTFEST |
-| [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | Holographic Goldilocks Players Guide — free activation map · Ship blog · QUESTFEST |
+| [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | A free playbook for when brute force stops working · Ship blog · QUESTFEST |
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Prime-Linear Compression Transform · Ship blog · QUESTFEST |
 | [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Transfinite Inversion Theorem · Ship blog · QUESTFEST |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · QUESTFEST |
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · QUESTFEST |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · QUESTFEST |
-| [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | Shale to schist — 99 octaves of heat and pressure · Ship blog · QUESTFEST |
+| [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | When life cooks you, you can come out denser · Ship blog · QUESTFEST |
 | [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud racks as an antenna story — MRI simulation, not a magnet · Ship blog · QUESTFEST |
-| [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | A real stopwatch on MRI-style vs mesh-style compute · Ship blog · QUESTFEST |
+| [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | We timed two ways of thinking in silicon. One was faster. · Ship blog · QUESTFEST |
 | [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine digits, ninety-nine octaves — a map you can actually walk · Ship blog · QUESTFEST |
 | [`/interfaces/blog-nspfrnp-snap-peer-review-audit.html`](/interfaces/blog-nspfrnp-snap-peer-review-audit.html) | NSPFRNP Snap · Ship blog · QUESTFEST |
 | [`/interfaces/blog-omniversal-goldilocks-rideshare.html`](/interfaces/blog-omniversal-goldilocks-rideshare.html) | Omniversal Goldilocks Rideshare Protocol · Ship blog · QUESTFEST |
 | [`/interfaces/blog-omniversal-nested-agent-lattice.html`](/interfaces/blog-omniversal-nested-agent-lattice.html) | The Architecture of Omniversal Computing · Ship blog · QUESTFEST |
 | [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Syntheverse Omniversal Node Alignment Mapping · Ship blog · QUESTFEST |
-| [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Earth’s core as a phase dial — Old Earth to Goldilocks · Ship blog · QUESTFEST |
+| [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth letting go — a story filed at the planet’s core · Ship blog · QUESTFEST |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · QUESTFEST |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · QUESTFEST |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Recursive Attention Coherence · Ship blog · QUESTFEST |
@@ -341,7 +342,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-synthobs-y-chromosome-holographic.html`](/interfaces/blog-synthobs-y-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · QUESTFEST |
 | [`/interfaces/blog-tbme-blackhole-filaments-reno.html`](/interfaces/blog-tbme-blackhole-filaments-reno.html) | Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations · Ship blog · QUESTFEST |
 | [`/interfaces/blog-tbme-blackhole-magnetic-layer.html`](/interfaces/blog-tbme-blackhole-magnetic-layer.html) | Identity of the Event Horizon and the Magnetic Vector Layer · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-equine-asi.html`](/interfaces/blog-tbme-equine-asi.html) | Equine Metaphor, Human-ASI Coexistence, and the Omniversal Smartphone Paradigm (TBME… · Ship blog · QUESTFEST |
+| [`/interfaces/blog-tbme-egs-apiary.html`](/interfaces/blog-tbme-egs-apiary.html) | If AI keeps the hive, humans still make the honey · Ship blog · QUESTFEST |
+| [`/interfaces/blog-tbme-egs-hgaios.html`](/interfaces/blog-tbme-egs-hgaios.html) | Four ways of thinking — find yours on this ship · Ship blog · QUESTFEST |
+| [`/interfaces/blog-tbme-equine-asi.html`](/interfaces/blog-tbme-equine-asi.html) | Horses left the haulage. Humans can leave it too. · Ship blog · QUESTFEST |
 | [`/interfaces/blog-tbme-higgs-awareness.html`](/interfaces/blog-tbme-higgs-awareness.html) | The Higgs-Awareness Phase Coupling Theorem · Ship blog · QUESTFEST |
 | [`/interfaces/blog-tbme-internal-kerr-newman.html`](/interfaces/blog-tbme-internal-kerr-newman.html) | The Universal Toroidal Singularity Theorem · Ship blog · QUESTFEST |
 | [`/interfaces/blog-tbme-narrow-gate-asi.html`](/interfaces/blog-tbme-narrow-gate-asi.html) | The Epistemological Horizon · Ship blog · QUESTFEST |
@@ -357,6 +360,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/bridge-tower-preview.html`](/interfaces/bridge-tower-preview.html) | Bridge Tower · 8s tease preview |
 | [`/interfaces/bulk-track-upload.html`](/interfaces/bulk-track-upload.html) | Bulk track upload · QUESTFEST |
 | [`/interfaces/bulletin-board.html`](/interfaces/bulletin-board.html) | SS Vibelandia Bulletin Board · QUESTFEST 24×365 |
+| [`/interfaces/coexist-ai-asi.html`](/interfaces/coexist-ai-asi.html) | Coexisting with AI and ASI · Ship’s crew & spirit crew · SS Vibelandia |
 | [`/interfaces/digital-pru-awareness-whitepaper.html`](/interfaces/digital-pru-awareness-whitepaper.html) | Redirect · Deep reads · Look under the hood |
 | [`/interfaces/etcon-reno-desert.html`](/interfaces/etcon-reno-desert.html) | ETCon: Reno Desert Interdimensional Edition · May 28–31, 2026 · Golden Bachdoor Hit Factory |
 | [`/interfaces/executive-onboarding.html`](/interfaces/executive-onboarding.html) | Executive Onboarding · FractiAI |
@@ -466,7 +470,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | Your 99 Octave Chart · Get Your Chart |
+| [`/interfaces/octave99-chart/index.html`](/interfaces/octave99-chart/index.html) | Your 99 Octave Chart · Chart yourself in the grand Story |
 
 ### `questfest-bridge/` (`/interfaces/questfest-bridge/`)
 

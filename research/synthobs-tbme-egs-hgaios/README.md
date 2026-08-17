@@ -4,7 +4,7 @@
 **Document ID:** `WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox
 
-Replayable Φ-power fixtures for the 2-capacity matrix, 8-question protocol shape, and Syntheverse N=100000 integer lock.
+Replayable Φ-power fixtures for the 2-capacity matrix, REV4 maritime vessel posts (Hull Keepers / Lookout / Captain / Master Navigator), 8-question protocol shape, and Syntheverse N=100000 integer lock.
 
 ```bash
 npm run research:synthobs-tbme-egs-hgaios

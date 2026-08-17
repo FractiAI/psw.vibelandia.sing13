@@ -35,7 +35,7 @@ function mdReport(report) {
   lines.push(
     '## Honesty boundary',
     '',
-    'Catalog / Omni-Lattice lens arithmetic for H-GAI/OS dual-capacity combinatorics. Does **not** claim census demography, GWAS, clinical psychometrics, or a deployed planetary OS. Catalog exploration only; not Core / Engine.',
+    'Catalog / Omni-Lattice lens arithmetic for H-GAI/OS dual-capacity combinatorics. Does **not** claim census demography, GWAS, clinical psychometrics, naval rank, or a deployed planetary OS. Catalog exploration only; not Core / Engine.',
     '',
   );
   return lines.join('\n');

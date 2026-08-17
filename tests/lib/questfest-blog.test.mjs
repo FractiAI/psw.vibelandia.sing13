@@ -61,5 +61,16 @@ describe('QUESTFEST ship blog corpus', () => {
     const all = listAllShipBlogPosts();
     expect(all.length).toBeGreaterThanOrEqual(80);
     expect(all.some((p) => p.href === '/ship-blog/everything-is-connected')).toBe(true);
+    expect(all.some((p) => p.href === '/ship-blog/coexist-with-ai')).toBe(true);
+  });
+
+  it('writes latest-six blurbs in guest English, not catalog code', () => {
+    const posts = listRecentPaperBlogPosts(6);
+    for (const p of posts) {
+      expect(p.blurb.length).toBeGreaterThan(80);
+      expect(p.blurb).not.toMatch(/^TBME/);
+      expect(p.blurb).not.toMatch(/Φ_EGS/);
+      expect(p.blurb).not.toMatch(/catalog exploration ·/);
+    }
   });
 });

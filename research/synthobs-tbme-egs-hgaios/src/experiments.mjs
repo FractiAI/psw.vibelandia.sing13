@@ -12,6 +12,7 @@ import {
   PAPER_NAME,
   PUBLICATION_REF,
   QUADRANT_LABELS,
+  VESSEL_POSTS,
   QUADRANT_SHARES,
   SANDBOX_N,
   SANDBOX_COUNTS,
@@ -110,14 +111,19 @@ export function experimentQuadrantLabels() {
     QUADRANT_LABELS.q1 === 'Baseline Scaffolding' &&
     QUADRANT_LABELS.q2 === 'Oracle Engines' &&
     QUADRANT_LABELS.q3 === 'Linear Executives' &&
-    QUADRANT_LABELS.q4 === 'Fractal Synthesizers';
+    QUADRANT_LABELS.q4 === 'Fractal Synthesizers' &&
+    VESSEL_POSTS.q1 === 'Hull Keepers & Deck Crew' &&
+    VESSEL_POSTS.q2 === "Ship's Lookout & Chronometer" &&
+    VESSEL_POSTS.q3 === "Ship's Captain" &&
+    VESSEL_POSTS.q4 === 'Master Navigator';
   return {
     id: 'E6_quadrant_labels',
-    title: 'Four combinatorial state labels',
+    title: 'Four combinatorial state labels + REV4 maritime vessel posts',
     QUADRANT_LABELS,
+    VESSEL_POSTS,
     pass,
-    interpretation: 'Neither / meta-only / reflect-only / both.',
-    honesty: 'Coordination labels — not caste.',
+    interpretation: 'Neither / meta-only / reflect-only / both, with complementary vessel posts.',
+    honesty: 'Coordination labels — not caste, naval rank, or hiring grades.',
   };
 }
 
@@ -206,9 +212,9 @@ export function experimentNotCoreClaim() {
 export function experimentPublicationRef() {
   return {
     id: 'E12_publication_ref',
-    title: 'Publication ref FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3',
+    title: 'Publication ref FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4',
     PUBLICATION_REF,
-    pass: PUBLICATION_REF === 'FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3',
+    pass: PUBLICATION_REF === 'FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4',
     interpretation: 'Stable publication handle.',
     honesty: 'Bibliographic fixture.',
   };

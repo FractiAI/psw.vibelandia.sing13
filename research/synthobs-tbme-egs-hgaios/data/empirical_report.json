@@ -2,7 +2,7 @@
   "docId": "WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17",
   "registryId": "synthobs-tbme-egs-hgaios-2026-08",
   "title": "Holographic Goldilocks H-GAI/OS · Dual-Capacity Combinatorics — Omni-Lattice Lens Suite",
-  "generatedAt": "2026-08-17T16:39:07.537Z",
+  "generatedAt": "2026-08-17T16:47:57.063Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "H-GAI/OS Omni-Lattice lens — catalog exploration only; not Core / Engine; not clinical genetics or census.",
   "results": {
@@ -76,16 +76,22 @@
       },
       {
         "id": "E6_quadrant_labels",
-        "title": "Four combinatorial state labels",
+        "title": "Four combinatorial state labels + REV4 maritime vessel posts",
         "QUADRANT_LABELS": {
           "q1": "Baseline Scaffolding",
           "q2": "Oracle Engines",
           "q3": "Linear Executives",
           "q4": "Fractal Synthesizers"
         },
+        "VESSEL_POSTS": {
+          "q1": "Hull Keepers & Deck Crew",
+          "q2": "Ship's Lookout & Chronometer",
+          "q3": "Ship's Captain",
+          "q4": "Master Navigator"
+        },
         "pass": true,
-        "interpretation": "Neither / meta-only / reflect-only / both.",
-        "honesty": "Coordination labels — not caste."
+        "interpretation": "Neither / meta-only / reflect-only / both, with complementary vessel posts.",
+        "honesty": "Coordination labels — not caste, naval rank, or hiring grades."
       },
       {
         "id": "E7_genomic_analogs",
@@ -183,8 +189,8 @@
       },
       {
         "id": "E12_publication_ref",
-        "title": "Publication ref FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3",
-        "PUBLICATION_REF": "FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV3",
+        "title": "Publication ref FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4",
+        "PUBLICATION_REF": "FAI-UNIFIED-EGS-HGAIOS-2026-FINAL-REV4",
         "pass": true,
         "interpretation": "Stable publication handle.",
         "honesty": "Bibliographic fixture."

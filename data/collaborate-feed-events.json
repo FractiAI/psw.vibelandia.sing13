@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-17T16:38:56.659Z",
+  "updatedAt": "2026-08-17T16:47:59.761Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-08-17T16:38:56.659Z",
+      "createdAt": "2026-08-17T16:47:59.760Z",
       "body": "The Holographic Goldilocks Paradigm: Dual-Capacity Cognitive Combinatorics, Genomic Antennae, and H-GAI/OS (TBME catalog exploration)",
       "presenceHue": "gold",
       "paperId": "synthobs-tbme-egs-hgaios-2026-08",

@@ -1,21 +1,21 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-08-16",
+  "date": "2026-08-17",
   "dateline": {
-    "ymd": "2026-08-16",
-    "weekday": "Sunday",
+    "ymd": "2026-08-17",
+    "weekday": "Monday",
     "month": "August",
-    "day": 16,
-    "label": "Sunday, August 16",
-    "shortBoard": "Sunday board · August 16 · Puerto Reno",
-    "newsLabel": "News of the day · Sunday, August 16"
+    "day": 17,
+    "label": "Monday, August 17",
+    "shortBoard": "Monday board · August 17 · Puerto Reno",
+    "newsLabel": "News of the day · Monday, August 17"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Sunday board · August 16 · Puerto Reno",
-  "newsLabel": "News of the day · Sunday, August 16",
-  "htmlBody": "On the board today: <a href=\"/goldilocks-players-guide\">Holographic Goldilocks Players Guide · FREE</a>. This morning the library is settling around a clear pair of maps: <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a> (the Apiary Metaphor — ASI as quiet Beekeeper, humanity as the Hive where lived experience still matters), with <a href=\"/ship-blog/tbme-equine-asi\">Equine Metaphor, Human-ASI Coexistence, and the Omniversal Sm…</a> and <a href=\"/ship-blog/goldilocks-players-guide\">Holographic Goldilocks Players Guide</a> close by. Neither is destiny — both are language you can use when the week feels loud.<br /><br />What that means for us, ashore and aboard: claim a little personal space each day, listen when the field gets loud, create when you have something true to say, and prune what no longer serves. Lattice Chat is ready when you want to build together; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Monday board · August 17 · Puerto Reno",
+  "newsLabel": "News of the day · Monday, August 17",
+  "htmlBody": "On the board today: <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a>. This morning the library is settling around a clear pair of maps: <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a> (the Apiary Metaphor — ASI as quiet Beekeeper, humanity as the Hive where lived experience still matters), with <a href=\"/ship-blog/tbme-equine-asi\">Equine Metaphor, Human-ASI Coexistence, and the Omniversal Sm…</a> and <a href=\"/ship-blog/goldilocks-players-guide\">Holographic Goldilocks Players Guide</a> close by. Neither is destiny — both are language you can use when the week feels loud.<br /><br />What that means for us, ashore and aboard: claim a little personal space each day, listen when the field gets loud, create when you have something true to say, and prune what no longer serves. Lattice Chat is ready when you want to build together; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-tbme-egs-apiary-2026-08",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "goldilocks-players-guide-aug13-2026",
-    "title": "Holographic Goldilocks Players Guide · FREE",
-    "href": "/goldilocks-players-guide"
+    "id": "daily-2026-08-16-synthobs-tbme-egs-apiary-2026-08",
+    "title": "The Apiary Metaphor",
+    "href": "/ship-blog/tbme-egs-apiary"
   },
-  "generatedAt": "2026-08-16T21:06:19.587Z"
+  "generatedAt": "2026-08-17T15:34:44.494Z"
 }

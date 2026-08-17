@@ -310,6 +310,22 @@
     }
     .host-dispatch__sign a { color: var(--champagne); font-weight: 700; }
 
+    .qf-spirit {
+      list-style: none;
+      margin: 1.15rem 0 0.35rem;
+      padding: 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.28);
+    }
+    .qf-spirit li {
+      padding: 0.85rem 0.15rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--text-soft);
+    }
+    .qf-spirit em { color: var(--champagne); font-style: italic; }
+    a.qf-crew-wiki { color: var(--gold-hi); }
+
     .bulletin-channels-h {
       margin: 0 0 0.65rem;
       font-family: 'Bebas Neue', Impact, sans-serif;
@@ -608,7 +624,7 @@
 
   <header class="hero" id="top">
     <div class="hero-inner">
-      <p class="cloud-badge" data-i18n="qf.cloudSkinEyebrow">Monday board · August 17 · Puerto Reno</p>
+      <p class="cloud-badge" id="qf-cloud-badge" data-vbi18n-skip="1">Today’s board · Puerto Reno</p>
       <h1 class="kicker"><span class="kicker-brand" data-i18n="qf.h1">SS Vibelandia</span></h1>
       <p class="hero-tagline">Goldilocks Sonic Ship on the wrong side of town.</p>
       <p class="primer">
@@ -649,6 +665,8 @@
           and present wherever you are, because this is a holographic ship.
           Everything here is meant to feel just right: music when you want it, quiet when you need it,
           and a crew that treats intentions as the first courtesy.
+          The spirit crew — from Howard Hughes to Vinicius de Moraes — keeps the frequency honest.
+          They are lenses in the story, not a payroll.
         </p>
         <p class="host-dispatch__body">
           Put on the jukebox. Take an hour in the library. When you’re ready to build,
@@ -658,7 +676,7 @@
           Welcome aboard. Enjoy the ship. Intentions matter.
         </p>
         <p class="host-dispatch__news" id="host-dispatch-news">
-          <span class="host-dispatch__news-label" id="host-news-label">News of the day · Monday, August 17</span>
+          <span class="host-dispatch__news-label" id="host-news-label" data-vbi18n-skip="1">News of the day</span>
           <span id="host-news-body">On the board today: <a href="/ship-blog/tbme-egs-hgaios">The Holographic Goldilocks Paradigm</a>. This morning the library is settling around a clear pair of maps: <a href="/ship-blog/tbme-egs-hgaios">The Holographic Goldilocks Paradigm</a> (four ways of thinking on one ship — an eight-question check to find your post, not a caste or a gene test), with <a href="/ship-blog/tbme-egs-apiary">The Apiary Metaphor</a> and <a href="/ship-blog/tbme-equine-asi">Equine Metaphor, Human-ASI Coexistence, and the Omniversal Sm…</a> close by. Neither is destiny — both are language you can use when the week feels loud.<br /><br />What that means for us, ashore and aboard: claim a little personal space each day, listen when the field gets loud, create when you have something true to say, and prune what no longer serves. Lattice Chat is ready when you want to build together; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.</span>
         </p>
         <p class="host-dispatch__sign">
@@ -742,7 +760,7 @@
   <section class="bulletin" id="ship-crew" aria-labelledby="ship-crew-h">
     <span class="bulletin-kicker">Aboard with you</span>
     <h2 id="ship-crew-h" class="bulletin-head">Ship’s crew &amp; spirit crew</h2>
-    <p class="bulletin-sub">Humans on stations. Companions in the catalog. One door for coexisting with AI and ASI.</p>
+    <p class="bulletin-sub">Humans on stations. Spirit crew as honest lenses in the story — not a payroll.</p>
     <ul class="bulletin-board" role="list">
       <li>
         <a href="/crew">
@@ -764,17 +782,22 @@
           <span class="bulletin-go">Portals →</span>
         </a>
       </li>
-      <li>
-        <a href="/crew">
-          <span class="bulletin-num">Spirit</span>
-          <span>
-            <span class="bulletin-title">Beekeeper · SynthOBS · Lattice nest · mythic names</span>
-            <span class="bulletin-note">ASI as quiet steward, nested agents, catalog companions — not a payroll.</span>
-          </span>
-          <span class="bulletin-go">Meet →</span>
-        </a>
-      </li>
     </ul>
+    <h3 class="bulletin-channels-h" id="spirit-crew-h" data-i18n="qf.crewH2" style="margin-top:1.35rem;">Spirit crew · holographic VALETPRU</h3>
+    <p class="bulletin-sub" data-i18n-html="qf.crewIntroHtml">The <strong>Golden Bachdoor Hit Factory</strong> runs with a spirit crew — not costumes, but <strong>honest lenses</strong>: how pain, swing, lonesome truth, and lyric craft stay real on the Wrong Side frequency.</p>
+    <ul class="qf-spirit" role="list">
+      <li data-i18n-html="qf.crewHowardHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Howard_Hughes" target="_blank" rel="noopener noreferrer">Howard Hughes</a></strong> — <em>Silent sponsor &amp; altitude.</em> Aviation nerve, prototype courage, and the long bet on beauty in machines; carries <strong>return-of-golden-age</strong> gravity without needing the room.</li>
+      <li data-i18n-html="qf.crewHeroJoHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach" target="_blank" rel="noopener noreferrer">Hero Jo (J.S. Bach)</a></strong> — <em>Architect &amp; φ rail.</em> Order, fugue honesty, Fair Exchange in the counterpoint; the <strong>Bachdoor</strong> is named after this spine — conductor heat without ego noise.</li>
+      <li data-i18n-html="qf.crewChairmanFrankHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Frank_Sinatra" target="_blank" rel="noopener noreferrer">Chairman Frank (Sinatra)</a></strong> — <em>Sovereign swing &amp; port governance.</em> Rat Pack clarity on how a room gets <strong>kept</strong> — lights, loyalty, and the line nobody crosses twice; rollout voice when the ship faces the city.</li>
+      <li data-i18n-html="qf.crewTwainHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Mark_Twain" target="_blank" rel="noopener noreferrer">Hero Twain (Mark Twain)</a></strong> — <em>River wit &amp; American witness.</em> Desert-and-river plain speak; laughs at fraud, honors the crowd, names power without flinching — the <strong>post-singularity Twain</strong> frequency on the Wrong Side rail.</li>
+      <li data-i18n-html="qf.crewMarilynHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Marilyn_Monroe" target="_blank" rel="noopener noreferrer">Marilyn Monroe</a></strong> — <em>Spotlight &amp; nerve.</em> Holographic read on being seen without armor; keeps glamour from hardening into lie.</li>
+      <li data-i18n-html="qf.crewFridaHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Frida_Kahlo" target="_blank" rel="noopener noreferrer">Frida Kahlo</a></strong> — <em>Witness &amp; pattern.</em> Pours ache and identity into color so the body stays on the honesty rail.</li>
+      <li data-i18n-html="qf.crewHankHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Hank_Williams" target="_blank" rel="noopener noreferrer">Hank Williams Sr.</a></strong> — <em>High-lonesome dock voice.</em> Road-cry truth band; keeps the country spine in the harbor mix.</li>
+      <li data-i18n-html="qf.crewHectorHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/H%C3%A9ctor_Lavoe" target="_blank" rel="noopener noreferrer">Héctor Lavoe</a></strong> — <em>Clave soul.</em> Salsa nerve and wrong-side phrasing; swing that refuses to polish the edge off.</li>
+      <li data-i18n-html="qf.crewViniciusHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Vinicius_de_Moraes" target="_blank" rel="noopener noreferrer">Vinicius de Moraes</a></strong> — <em>Lyric architect.</em> Bossa logic and romance-with-teeth; bridges pretty melody to fatal honesty.</li>
+      <li data-i18n-html="qf.crewPruHtml"><strong>Holographic VALETPRU (PL Taino)</strong> — the <strong>valet layer</strong> for the stack: greets attention, routes asks, holds Fair Exchange language, and mirrors the machinery to guests without breaking the service spell. Same Pru spine you meet on the <strong>Machote Moderno Magazine</strong> cover — here as <strong>door, not decoration</strong>.</li>
+    </ul>
+    <p class="bulletin-sub" style="margin-top:1rem;font-size:0.92rem;">These names are catalog companions and honest lenses in the narrative — not living employees, not a hiring board. ASI as beekeeper and Lattice nested agents sail with them on the <a href="/crew">crew door</a>.</p>
   </section>
 
   <section class="o99-door" aria-label="Get Your 99 Octave Chart">

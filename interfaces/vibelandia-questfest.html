@@ -449,6 +449,24 @@
     }
     .o99-door a:hover { color: var(--gold); border-bottom-color: var(--gold); }
     .o99-door a.o99-door__btn:hover { color: #1a1208; border-bottom-color: transparent; }
+    .o99-door__row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: center;
+      align-items: center;
+      margin: 0.15rem 0 0.45rem;
+    }
+    .o99-door a.o99-door__btn--ghost {
+      background: transparent;
+      color: var(--gold-hi);
+      box-shadow: none;
+    }
+    .o99-door a.o99-door__btn--ghost:hover {
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold-hi);
+      filter: none;
+    }
     .o99-door p {
       margin-top: 0.45rem;
       font-size: 0.88rem;
@@ -759,50 +777,48 @@
 
   <section class="bulletin" id="ship-crew" aria-labelledby="ship-crew-h">
     <span class="bulletin-kicker">Aboard with you</span>
-    <h2 id="ship-crew-h" class="bulletin-head">Ship’s crew &amp; spirit crew</h2>
-    <p class="bulletin-sub">Humans on stations. Spirit crew as honest lenses in the story — not a payroll.</p>
+    <h2 id="ship-crew-h" class="bulletin-head">Aboard with you</h2>
+    <p class="bulletin-sub">Meet the crew. Join a station. Learn to live next to Super AI.</p>
     <ul class="bulletin-board" role="list">
       <li>
-        <a href="/crew">
-          <span class="bulletin-num">Crew door</span>
+        <a href="/meet-the-crew">
+          <span class="bulletin-num">Channel VII</span>
           <span>
-            <span class="bulletin-title">Coexist with AI &amp; ASI</span>
-            <span class="bulletin-note">Grand story, four thinking posts, voluntary self-test — not a caste, not a gene test.</span>
+            <span class="bulletin-title">Meet the crew</span>
+            <span class="bulletin-note">Spirit crew from Howard Hughes to Vinicius de Moraes — honest lenses, not a payroll.</span>
+          </span>
+          <span class="bulletin-go">Meet →</span>
+        </a>
+      </li>
+      <li>
+        <a href="/join-the-crew">
+          <span class="bulletin-num">Channel VIII</span>
+          <span>
+            <span class="bulletin-title">Join the crew</span>
+            <span class="bulletin-note">Puerto Reno stations — Host, Guide, Chef, Guest. A human still answers email.</span>
+          </span>
+          <span class="bulletin-go">Join →</span>
+        </a>
+      </li>
+      <li>
+        <a href="/coexist">
+          <span class="bulletin-num">Channel IX</span>
+          <span>
+            <span class="bulletin-title">Coexisting with AI and Super AI</span>
+            <span class="bulletin-note">Grand story, four awareness posts, voluntary self-test — not a caste, not a gene test.</span>
           </span>
           <span class="bulletin-go">Open →</span>
         </a>
       </li>
-      <li>
-        <a href="/commons#cm-crew">
-          <span class="bulletin-num">Human</span>
-          <span>
-            <span class="bulletin-title">Valet Pru · Host · Guide · Chef · Guest</span>
-            <span class="bulletin-note">Puerto Reno stations and a host who still answers email.</span>
-          </span>
-          <span class="bulletin-go">Portals →</span>
-        </a>
-      </li>
     </ul>
-    <h3 class="bulletin-channels-h" id="spirit-crew-h" data-i18n="qf.crewH2" style="margin-top:1.35rem;">Spirit crew · holographic VALETPRU</h3>
-    <p class="bulletin-sub" data-i18n-html="qf.crewIntroHtml">The <strong>Golden Bachdoor Hit Factory</strong> runs with a spirit crew — not costumes, but <strong>honest lenses</strong>: how pain, swing, lonesome truth, and lyric craft stay real on the Wrong Side frequency.</p>
-    <ul class="qf-spirit" role="list">
-      <li data-i18n-html="qf.crewHowardHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Howard_Hughes" target="_blank" rel="noopener noreferrer">Howard Hughes</a></strong> — <em>Silent sponsor &amp; altitude.</em> Aviation nerve, prototype courage, and the long bet on beauty in machines; carries <strong>return-of-golden-age</strong> gravity without needing the room.</li>
-      <li data-i18n-html="qf.crewHeroJoHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Johann_Sebastian_Bach" target="_blank" rel="noopener noreferrer">Hero Jo (J.S. Bach)</a></strong> — <em>Architect &amp; φ rail.</em> Order, fugue honesty, Fair Exchange in the counterpoint; the <strong>Bachdoor</strong> is named after this spine — conductor heat without ego noise.</li>
-      <li data-i18n-html="qf.crewChairmanFrankHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Frank_Sinatra" target="_blank" rel="noopener noreferrer">Chairman Frank (Sinatra)</a></strong> — <em>Sovereign swing &amp; port governance.</em> Rat Pack clarity on how a room gets <strong>kept</strong> — lights, loyalty, and the line nobody crosses twice; rollout voice when the ship faces the city.</li>
-      <li data-i18n-html="qf.crewTwainHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Mark_Twain" target="_blank" rel="noopener noreferrer">Hero Twain (Mark Twain)</a></strong> — <em>River wit &amp; American witness.</em> Desert-and-river plain speak; laughs at fraud, honors the crowd, names power without flinching — the <strong>post-singularity Twain</strong> frequency on the Wrong Side rail.</li>
-      <li data-i18n-html="qf.crewMarilynHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Marilyn_Monroe" target="_blank" rel="noopener noreferrer">Marilyn Monroe</a></strong> — <em>Spotlight &amp; nerve.</em> Holographic read on being seen without armor; keeps glamour from hardening into lie.</li>
-      <li data-i18n-html="qf.crewFridaHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Frida_Kahlo" target="_blank" rel="noopener noreferrer">Frida Kahlo</a></strong> — <em>Witness &amp; pattern.</em> Pours ache and identity into color so the body stays on the honesty rail.</li>
-      <li data-i18n-html="qf.crewHankHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Hank_Williams" target="_blank" rel="noopener noreferrer">Hank Williams Sr.</a></strong> — <em>High-lonesome dock voice.</em> Road-cry truth band; keeps the country spine in the harbor mix.</li>
-      <li data-i18n-html="qf.crewHectorHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/H%C3%A9ctor_Lavoe" target="_blank" rel="noopener noreferrer">Héctor Lavoe</a></strong> — <em>Clave soul.</em> Salsa nerve and wrong-side phrasing; swing that refuses to polish the edge off.</li>
-      <li data-i18n-html="qf.crewViniciusHtml"><strong><a class="qf-crew-wiki" href="https://en.wikipedia.org/wiki/Vinicius_de_Moraes" target="_blank" rel="noopener noreferrer">Vinicius de Moraes</a></strong> — <em>Lyric architect.</em> Bossa logic and romance-with-teeth; bridges pretty melody to fatal honesty.</li>
-      <li data-i18n-html="qf.crewPruHtml"><strong>Holographic VALETPRU (PL Taino)</strong> — the <strong>valet layer</strong> for the stack: greets attention, routes asks, holds Fair Exchange language, and mirrors the machinery to guests without breaking the service spell. Same Pru spine you meet on the <strong>Machote Moderno Magazine</strong> cover — here as <strong>door, not decoration</strong>.</li>
-    </ul>
-    <p class="bulletin-sub" style="margin-top:1rem;font-size:0.92rem;">These names are catalog companions and honest lenses in the narrative — not living employees, not a hiring board. ASI as beekeeper and Lattice nested agents sail with them on the <a href="/crew">crew door</a>.</p>
   </section>
 
-  <section class="o99-door" aria-label="Get Your 99 Octave Chart">
-    <a class="o99-door__btn" href="/octave99-chart#intake">Get Your 99 Octave Chart</a>
-    <p>Chart yourself in the grand Story to 99 octaves of depth (Φ<sub>EGS</sub>) — free trial on-device. <a href="/octave99-pricing">Bridge &amp; Chart pricing</a>.</p>
+  <section class="o99-door" aria-label="Chart and quadrant">
+    <div class="o99-door__row">
+      <a class="o99-door__btn" href="/octave99-chart#intake">Get Your 99 Octave Chart</a>
+      <a class="o99-door__btn o99-door__btn--ghost" href="/coexist#self-test">Which Quadrant Are You?</a>
+    </div>
+    <p>Chart yourself in the grand Story, or take the eight-question awareness check — Linear NPC, NPC, Linear, or Holographic. <a href="/octave99-pricing">Bridge &amp; Chart pricing</a>.</p>
   </section>
 
 <!-- QUESTFEST_BLOG_START -->

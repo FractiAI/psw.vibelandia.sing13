@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 
 const ROOT = resolve(process.cwd());
 
-describe('QUESTFEST live board date + spirit crew', () => {
+describe('QUESTFEST live board date + aboard channels', () => {
   it('does not let i18n stamp a baked calendar date on the cloud badge', () => {
     const html = readFileSync(resolve(ROOT, 'interfaces/vibelandia-questfest.html'), 'utf8');
     expect(html).toContain('id="qf-cloud-badge"');
@@ -21,8 +21,24 @@ describe('QUESTFEST live board date + spirit crew', () => {
     expect(js).toContain('paintToday');
   });
 
-  it('lists spirit crew from Howard Hughes through Vinicius de Moraes', () => {
+  it('splits Aboard with you into Meet / Join / Coexist channels', () => {
     const html = readFileSync(resolve(ROOT, 'interfaces/vibelandia-questfest.html'), 'utf8');
+    expect(html).toContain('Channel VII');
+    expect(html).toContain('Meet the crew');
+    expect(html).toContain('/meet-the-crew');
+    expect(html).toContain('Channel VIII');
+    expect(html).toContain('Join the crew');
+    expect(html).toContain('/join-the-crew');
+    expect(html).toContain('Channel IX');
+    expect(html).toContain('Coexisting with AI and Super AI');
+    expect(html).toContain('/coexist');
+    expect(html).toContain('Which Quadrant Are You?');
+    expect(html).toContain('Get Your 99 Octave Chart');
+    expect(html).not.toMatch(/<ul class="qf-spirit"/);
+  });
+
+  it('lists spirit crew from Howard Hughes through Vinicius de Moraes on Meet the crew', () => {
+    const html = readFileSync(resolve(ROOT, 'interfaces/meet-the-crew.html'), 'utf8');
     const names = [
       'Howard Hughes',
       'Hero Jo',
@@ -37,8 +53,13 @@ describe('QUESTFEST live board date + spirit crew', () => {
     for (const name of names) {
       expect(html).toContain(name);
     }
+    const join = readFileSync(resolve(ROOT, 'interfaces/join-the-crew.html'), 'utf8');
+    expect(join).toContain('Downtown Citadel Host');
+    expect(join).toContain('/commons/host');
     const coexist = readFileSync(resolve(ROOT, 'interfaces/coexist-ai-asi.html'), 'utf8');
-    expect(coexist).toContain('Howard Hughes');
-    expect(coexist).toContain('Vinicius de Moraes');
+    expect(coexist).toContain('/meet-the-crew');
+    expect(coexist).toContain('/join-the-crew');
+    expect(coexist).toContain('Linear NPC');
+    expect(coexist).toContain('Which Quadrant Are You?');
   });
 });

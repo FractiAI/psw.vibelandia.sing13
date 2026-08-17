@@ -89,12 +89,28 @@
       "destination": "/interfaces/coexist-ai-asi.html"
     },
     {
+      "source": "/meet-the-crew",
+      "destination": "/interfaces/meet-the-crew.html"
+    },
+    {
+      "source": "/meet-the-crew/",
+      "destination": "/interfaces/meet-the-crew.html"
+    },
+    {
+      "source": "/join-the-crew",
+      "destination": "/interfaces/join-the-crew.html"
+    },
+    {
+      "source": "/join-the-crew/",
+      "destination": "/interfaces/join-the-crew.html"
+    },
+    {
       "source": "/crew",
-      "destination": "/interfaces/coexist-ai-asi.html"
+      "destination": "/interfaces/meet-the-crew.html"
     },
     {
       "source": "/crew/",
-      "destination": "/interfaces/coexist-ai-asi.html"
+      "destination": "/interfaces/meet-the-crew.html"
     },
     {
       "source": "/puerto-reno",

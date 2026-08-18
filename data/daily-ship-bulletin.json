@@ -1,20 +1,20 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-08-17",
+  "date": "2026-08-18",
   "dateline": {
-    "ymd": "2026-08-17",
-    "weekday": "Monday",
+    "ymd": "2026-08-18",
+    "weekday": "Tuesday",
     "month": "August",
-    "day": 17,
-    "label": "Monday, August 17",
-    "shortBoard": "Monday board · August 17 · Puerto Reno",
-    "newsLabel": "News of the day · Monday, August 17"
+    "day": 18,
+    "label": "Tuesday, August 18",
+    "shortBoard": "Tuesday board · August 18 · Puerto Reno",
+    "newsLabel": "News of the day · Tuesday, August 18"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Monday board · August 17 · Puerto Reno",
-  "newsLabel": "News of the day · Monday, August 17",
+  "cloudBadge": "Tuesday board · August 18 · Puerto Reno",
+  "newsLabel": "News of the day · Tuesday, August 18",
   "htmlBody": "On the board today: <a href=\"/ship-blog/tbme-egs-hgaios\">The Holographic Goldilocks Paradigm</a>. This morning the library is settling around a clear pair of maps: <a href=\"/ship-blog/tbme-egs-hgaios\">The Holographic Goldilocks Paradigm</a> (four ways of thinking on one ship — an eight-question check to find your post, not a caste or a gene test), with <a href=\"/ship-blog/tbme-egs-apiary\">The Apiary Metaphor</a> and <a href=\"/ship-blog/tbme-equine-asi\">Equine Metaphor, Human-ASI Coexistence, and the Omniversal Sm…</a> close by. Neither is destiny — both are language you can use when the week feels loud.<br /><br />What that means for us, ashore and aboard: claim a little personal space each day, listen when the field gets loud, create when you have something true to say, and prune what no longer serves. Lattice Chat is ready when you want to build together; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
@@ -44,5 +44,5 @@
     "title": "The Holographic Goldilocks Paradigm",
     "href": "/ship-blog/tbme-egs-hgaios"
   },
-  "generatedAt": "2026-08-17T17:05:01.292Z"
+  "generatedAt": "2026-08-18T15:41:05.779Z"
 }

@@ -43,7 +43,8 @@ This is an **operational runbook**, not an empirical paper. It records how to co
 | GitHub repo | Open `FractiAI/psw.vibelandia.sing13` | Canonical SING 13 edge repo |
 | README / workflow target | Read README + `.github/workflows/vercel-deploy.yml` | Vercel team **FractiAI**, project **`psw-vibelandia-sing13`** |
 | Production domain | Browser / `curl` | `https://www.ssvibelandiaquestfest24x365.com` |
-| `/api/catalog-upload` (no secret) | `curl` without `X-Catalog-Secret` | Returns **`unauthorized`** — not `catalog_upload_unconfigured` → Blob token **is** set on this deployment (as of last probe) |
+| `/api/catalog-upload` (no secret) | `curl` without `X-Catalog-Secret` | Prefer **`unauthorized`** (secret set). **`catalog_upload_unconfigured` (503)** means `CATALOG_UPLOAD_SECRET` (or alias) is missing — Listen boots used to amplify that into a `/api/catalog-playlist` 5xx spike; Bridge no longer syncs without an explicit Vite upload secret |
+| `/api/deploy-info` | Browser / `curl` | `catalog.blobTokenConfigured` vs `catalog.catalogUploadConfigured` — both should be `true` for write pipes |
 | Live catalog media host | `GET /api/catalog` → inspect track `src` hosts | `klep96o4e14lvmyd.public.blob.vercel-storage.com` |
 | Deploy probe | `GET /api/deploy-info` | Expect `vercel.matchesExpectedRepo`, `gitOwner`, `catalog.blobSampleHost` |
 | Blob audit | `BLOB_READ_WRITE_TOKEN=<store-token> npm run audit:blob` | Lists / optional orphan prune for that store |
@@ -60,8 +61,9 @@ Re-run probes after any store migration; hosts and auth shapes can change.
 | GitHub repo | `FractiAI/psw.vibelandia.sing13` |
 | README / workflow target | Vercel team **FractiAI**, project **`psw-vibelandia-sing13`** |
 | Production domain | `https://www.ssvibelandiaquestfest24x365.com` |
-| `/api/catalog-upload` (no secret) | Returns **`unauthorized`** — not `catalog_upload_unconfigured` → Blob token **is** set on this deployment |
+| `/api/catalog-upload` (no secret) | Returns **`unauthorized`** when secret is set; **`catalog_upload_unconfigured`** when `CATALOG_UPLOAD_SECRET` is missing (Blob alone is not enough) |
 | Live catalog media host | `klep96o4e14lvmyd.public.blob.vercel-storage.com` |
+| `/api/deploy-info` | Use `catalog.catalogUploadConfigured` — must be `true` before Capitan Bridge playlist sync / upload works |
 
 Blob quota is charged to the **team that owns the Blob store**, not automatically to whichever project is Pro.
 

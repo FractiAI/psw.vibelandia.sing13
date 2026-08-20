@@ -87,6 +87,20 @@ const pendingPlaylistDeletes = new Set<string>();
 let playlistSyncInFlight = false;
 let playlistSyncQueued = false;
 
+function isPermanentPlaylistSyncError(err: unknown): boolean {
+  const code =
+    err && typeof err === 'object' && 'code' in err
+      ? String((err as { code?: string }).code || '')
+      : '';
+  const msg = err instanceof Error ? err.message : String(err || '');
+  return (
+    code === 'catalog_upload_unconfigured' ||
+    code === 'unauthorized' ||
+    code === 'method_not_allowed' ||
+    /catalog_upload_unconfigured|unauthorized/i.test(msg)
+  );
+}
+
 async function pushSharedPlaylists(playlists: PlaylistDef[]): Promise<void> {
   if (!isServerUploadConfigured()) return;
   if (playlistSyncInFlight) {
@@ -111,6 +125,8 @@ async function pushSharedPlaylists(playlists: PlaylistDef[]): Promise<void> {
         break;
       } catch (e) {
         lastErr = e;
+        // 503 unconfigured / 401 wrong secret will not heal on retry — stop multiplying 5xx.
+        if (isPermanentPlaylistSyncError(e)) break;
         await new Promise((r) => window.setTimeout(r, 400 * (attempt + 1)));
       }
     }
@@ -1353,7 +1369,11 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
       playlists,
       activePlaylistId,
     });
-    scheduleSharedPlaylistSync(playlists);
+    // Only push when playlists actually changed. Hydrate/boot persist used to
+    // POST /api/catalog-playlist on every Listen session → 503 spike when upload secret unset.
+    if (!playlistsUnchanged) {
+      scheduleSharedPlaylistSync(playlists);
+    }
   },
 }));
 

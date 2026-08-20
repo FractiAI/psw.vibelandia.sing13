@@ -1,6 +1,5 @@
 import { upload } from '@vercel/blob/client';
 import { buildEmptyCatalog, isMasterPlaylist, isMyLikesPlaylist } from '@/lib/catalogSeed';
-import { expectedCaptainPassword } from '@/lib/captainAuth';
 import { fetchJsonWithTimeout } from '@/lib/fetchWithTimeout';
 import { isIOSDevice } from '@/lib/devicePlayback';
 import {
@@ -39,13 +38,17 @@ export function catalogApiUrl(path: string): string {
   return base ? `${base}${p}` : p;
 }
 
+/**
+ * Secret used for catalog write pipes (upload / playlist sync / track edit).
+ * Requires an explicit Vite env — never the baked Capitan edge default.
+ * Otherwise every Listen boot POSTs /api/catalog-playlist and spikes 503s when
+ * CATALOG_UPLOAD_SECRET is unset on Vercel (server fails closed; client must match).
+ */
 export function catalogUploadSecret(): string {
   const upload = import.meta.env.VITE_CATALOG_UPLOAD_SECRET;
   if (typeof upload === 'string' && upload.trim().length >= 8) return upload.trim();
   const captain = import.meta.env.VITE_CAPTAIN_BYPASS_PASSWORD;
   if (typeof captain === 'string' && captain.trim().length >= 8) return captain.trim();
-  const edgeDefault = expectedCaptainPassword();
-  if (edgeDefault.length >= 8) return edgeDefault;
   return '';
 }
 

@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-08-20",
+  "updated": "2026-08-21",
   "posts": [
+    {
+      "id": "daily-2026-08-21-synthobs-tbme-egs-hgaios-2026-08",
+      "posted": "2026-08-21",
+      "featured": true,
+      "title": "The Holographic Goldilocks Paradigm",
+      "subtitle": "News of the day · Friday, August 21",
+      "summary": "four ways of thinking on one ship — an eight-question check to find your post, not a caste or a gene test",
+      "href": "/ship-blog/tbme-egs-hgaios",
+      "pill": "TODAY",
+      "docRef": "synthobs-tbme-egs-hgaios-2026-08",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-08-20-synthobs-tbme-egs-hgaios-2026-08",
       "posted": "2026-08-20",

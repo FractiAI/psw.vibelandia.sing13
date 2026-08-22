@@ -324,7 +324,7 @@ export function ChatPane({
               </span>
               {!compact ? (
                 <span className="chat-by">
-                  <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
+                  <a className="deck-home-link" href={MAIN_DECK_HREF} title={`Back to ${MAIN_DECK_LABEL} main deck`}>
                     {MAIN_DECK_LABEL}
                   </a>
                   {' · Goldilocks Valet · Deck 2 Core'}
@@ -436,7 +436,7 @@ export function ChatPane({
         {!signedIn ? (
           <div className="auth-stage empty-state">
             <p className="empty-eyebrow">
-              <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
+              <a className="deck-home-link" href={MAIN_DECK_HREF} title={`Back to ${MAIN_DECK_LABEL} main deck`}>
                 {MAIN_DECK_LABEL}
               </a>
               {' · 24×365'}

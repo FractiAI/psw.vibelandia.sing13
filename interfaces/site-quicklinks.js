@@ -1,4 +1,4 @@
-/** Injects top QUESTFEST · Listen quicklinks (in-flow) + footer Bulletin Board.
+/** Injects top SS VIBELANDIA · Listen quicklinks (in-flow) + footer Bulletin Board.
  * Skip pages that already ship their own primary nav (hero / brochure / ark).
  * Canonical doors: / · /listen · /lattice · Concierge — never a separate “Bridge”.
  * Also boots live i18n (language bar + surface/paper translation) when missing.
@@ -115,7 +115,7 @@
     nav.setAttribute('aria-label', 'Site');
     if (onQuestfestHome) {
       nav.innerHTML =
-        '<span class="qv-top-quicklinks__here">QUESTFEST</span>' +
+        '<span class="qv-top-quicklinks__here">SS VIBELANDIA</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/lattice-chat/">Lattice</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
@@ -124,7 +124,7 @@
         '<a href="/voyage/decks">Voyage</a>';
     } else {
       nav.innerHTML =
-        '<a href="/">QUESTFEST</a>' +
+        '<a href="/">SS VIBELANDIA</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/lattice-chat/">Lattice</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
@@ -156,7 +156,7 @@
     nav.setAttribute('aria-label', 'Global quick links');
     nav.innerHTML =
       '<p>SS Vibelandia</p>' +
-      '<a href="/">QUESTFEST</a><span class="sep" aria-hidden="true"> · </span>' +
+      '<a href="/">SS VIBELANDIA</a><span class="sep" aria-hidden="true"> · </span>' +
       '<a href="/listen" data-qv-jukebox>Listen</a><span class="sep" aria-hidden="true"> · </span>' +
       '<a href="/frontiersman-voyage">Voyage</a><span class="sep" aria-hidden="true"> · </span>' +
       '<a href="/get-started">Board</a>';

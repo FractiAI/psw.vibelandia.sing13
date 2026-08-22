@@ -88,6 +88,7 @@
     "sync:voyage-surfaces": "npm run sync:voyage-doors && npm run sync:voyage-directory",
     "sync:player-spine": "node scripts/sync-player-spine.mjs",
     "sync:site-brand": "node scripts/sync-site-brand.mjs",
+    "sync:spirit-crew": "node scripts/sync-spirit-crew.mjs",
     "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-pchpp": "node research/synthobs-pchpp/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-omni-lattice-report-card-q3-2026": "node research/synthobs-omni-lattice-report-card-q3-2026/scripts/run_empirical_pipeline.mjs",

@@ -53,6 +53,22 @@ describe('QUESTFEST live board date + aboard channels', () => {
     for (const name of names) {
       expect(html).toContain(name);
     }
+    expect(html).toContain('qf-spirit-card');
+    const images = [
+      'howard-hughes.png',
+      'js-bach.png',
+      'frank-sinatra.png',
+      'mark-twain.png',
+      'marilyn-monroe.png',
+      'frida-kahlo.jpg',
+      'hank-williams.png',
+      'hector-lavoe.jpg',
+      'vinicius-de-moraes.jpg',
+      'valet-pru-guayabera-panama.jpg',
+    ];
+    for (const image of images) {
+      expect(html).toContain(`/interfaces/assets/questfest-crew/${image}`);
+    }
     const join = readFileSync(resolve(ROOT, 'interfaces/join-the-crew.html'), 'utf8');
     expect(join).toContain('Downtown Citadel Host');
     expect(join).toContain('/commons/host');

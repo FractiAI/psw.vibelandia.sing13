@@ -89,13 +89,12 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(expandSerialRange('ST', 601, 680)).toHaveLength(80);
   });
 
-  it('deck and cabin pages use distinct poster images that exist on disk', () => {
-    const shipOnly = '/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png';
+  it('deck and cabin pages use distinct themed poster SVGs', () => {
     const deckImages = new Set();
     for (const deck of VOYAGE_DECKS) {
       const html = read(`interfaces/voyage/${deck.slug}.html`);
       expect(html).toContain(`src="${deck.image}"`);
-      expect(deck.image).not.toBe(shipOnly);
+      expect(deck.image).toMatch(/^\/interfaces\/assets\/voyage\/deck-.+\.svg$/);
       deckImages.add(deck.image);
       expect(existsSync(new URL(`../../${deck.image.replace(/^\//, '')}`, import.meta.url))).toBe(true);
     }
@@ -105,7 +104,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     for (const cabin of VOYAGE_CABINS) {
       const html = read(`interfaces/voyage/cabin-${cabin.slug}.html`);
       expect(html).toContain(`src="${cabin.image}"`);
-      expect(cabin.image).not.toBe(shipOnly);
+      expect(cabin.image).toMatch(/^\/interfaces\/assets\/voyage\/.+\.svg$/);
       cabinImages.add(cabin.image);
       expect(existsSync(new URL(`../../${cabin.image.replace(/^\//, '')}`, import.meta.url))).toBe(true);
     }
@@ -113,7 +112,15 @@ describe('Frontiersman voyage guest surfaces', () => {
 
     const directory = read('interfaces/voyage/decks.html');
     expect(directory).toContain('voyage-directory-thumb');
-    expect(directory).toContain(shipOnly);
+    expect(directory).toContain('/interfaces/assets/voyage/voyage-map.svg');
+  });
+
+  it('QUESTFEST home ships baked-in top banner', () => {
+    const html = read('interfaces/vibelandia-questfest.html');
+    expect(html).toContain('<!-- SITE_TOP_BANNER_START -->');
+    expect(html).toContain('qv-top-quicklinks');
+    expect(html).toContain('SS VIBELANDIA');
+    expect(html).toMatch(/<body>[\s\S]*qv-top-quicklinks/);
   });
 
   it('shared ribbon advertises the Voyage door', () => {

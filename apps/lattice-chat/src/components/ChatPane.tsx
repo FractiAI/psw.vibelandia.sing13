@@ -313,7 +313,14 @@ export function ChatPane({
             ) : null}
             <h1 className="chat-title">
               <span className="chat-wordmark">
-                {compact ? 'Lattice Chat' : 'Lattice Chat Agent V1.618'}
+                {compact ? (
+                  'Lattice Chat'
+                ) : (
+                  <>
+                    <span className="chat-wordmark__full">Lattice Chat Agent V1.618</span>
+                    <span className="chat-wordmark__short">Lattice</span>
+                  </>
+                )}
               </span>
               {!compact ? (
                 <span className="chat-by">
@@ -355,7 +362,8 @@ export function ChatPane({
                 disabled={!signedIn}
                 onClick={() => onNewChat?.()}
               >
-                {compact ? '+' : '+ New chat'}
+                <span aria-hidden="true">+</span>
+                <span className="header-new-chat__label">New chat</span>
               </button>
             ) : (
               <span className="header-shared-session" title="Shared with Collaborate seats">

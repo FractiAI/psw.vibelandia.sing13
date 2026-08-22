@@ -22,6 +22,15 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.honesty).toMatch(/Guest hospitality/i);
   });
 
+  it('leads News of the day with why-you-care, not a paper list', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-08-22' });
+    expect(payload.htmlBody).toMatch(/Today’s care/i);
+    expect(payload.htmlBody).not.toMatch(/^On the board today:/);
+    expect(payload.htmlBody).not.toMatch(/settling around a clear pair of maps/i);
+    expect(payload.htmlBody).not.toMatch(/and <a [^>]+>[^<]+<\/a> close by/);
+    expect(payload.htmlBody.indexOf('Today’s care')).toBeLessThan(payload.htmlBody.indexOf('If you want a map'));
+  });
+
   it('todayYmd is YYYY-MM-DD', () => {
     expect(todayYmd(new Date('2026-08-16T12:00:00Z'))).toBe('2026-08-16');
   });

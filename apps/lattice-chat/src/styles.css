@@ -248,6 +248,45 @@ body {
   padding: 0 0.25rem;
 }
 
+.rail-ship-info {
+  display: none;
+  margin-top: auto;
+  padding: 0.7rem 0.15rem 0.35rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.22);
+}
+
+.rail-ship-info__kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+.rail-ship-info__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+}
+
+.rail-ship-info__nav a {
+  color: var(--brand-champagne);
+}
+
+.rail-ship-info .ai-act-notice {
+  margin-top: 0.55rem;
+}
+
+.rail-ship-info .signed-in-bar {
+  margin-top: 0.55rem;
+}
+
+.rail-ship-info .chat-build-stamp {
+  margin-top: 0.4rem;
+}
+
 .rail-auth-nudge {
   margin: 0;
   padding: 0.65rem 0.7rem;
@@ -626,9 +665,23 @@ body {
   font-size: 1rem;
 }
 
+.chat-wordmark__short {
+  display: none;
+}
+
+.header-new-chat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
 .header-new-chat:disabled {
   opacity: 0.45;
   cursor: not-allowed;
+}
+
+.header-new-chat__label {
+  letter-spacing: 0.04em;
 }
 
 .header-shared-session {
@@ -794,6 +847,10 @@ body {
 
 .chat-pane--compact .chat-header-row {
   gap: 0.35rem;
+}
+
+.chat-pane--compact .header-new-chat__label {
+  display: none;
 }
 
 .chat-pane--compact .message-scroll {
@@ -1945,6 +2002,7 @@ body {
     z-index: 40;
     max-height: none;
     height: 100dvh;
+    overflow-y: auto;
     transform: translateX(-105%);
     transition: transform 200ms ease;
     border-right: 1px solid rgba(212, 175, 55, 0.28);
@@ -1978,9 +2036,60 @@ body {
   }
 
   .chat-header {
-    padding: calc(0.75rem + env(safe-area-inset-top, 0px)) 1rem 0.55rem;
-    padding-left: max(1rem, env(safe-area-inset-left, 0px));
-    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+    padding: calc(0.45rem + env(safe-area-inset-top, 0px)) 0.75rem 0.4rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.75rem, env(safe-area-inset-right, 0px));
+  }
+
+  .chat-wordmark__full {
+    display: none;
+  }
+
+  .chat-wordmark__short {
+    display: inline;
+  }
+
+  .chat-wordmark {
+    font-size: 1.15rem;
+  }
+
+  .chat-by,
+  .chat-sub,
+  .chat-header > .ai-act-notice,
+  .chat-build-stamp,
+  .chat-header-row .signed-in-bar {
+    display: none;
+  }
+
+  .header-new-chat__label {
+    display: none;
+  }
+
+  .header-new-chat {
+    width: 2.25rem;
+    min-height: 2.25rem;
+    justify-content: center;
+    padding: 0;
+    font-size: 1.15rem;
+  }
+
+  .header-collab-btn {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.65rem;
+  }
+
+  .chat-header-lead {
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .chat-title {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rail-ship-info {
+    display: block;
   }
 
   .message-scroll {

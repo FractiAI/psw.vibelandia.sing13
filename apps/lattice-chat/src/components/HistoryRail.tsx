@@ -1,7 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLatticeStore } from '@/store';
-import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
+import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL, VOYAGE_HREF, VOYAGE_LABEL } from '@/access';
 import { RepoWorkstreamList } from '@/components/RepoWorkstreamList';
+import { SignedInBar } from '@/components/AuthPanel';
+import { KeySettingsPanel } from '@/components/KeySettings';
+import { loadLatticeModels } from '@/api';
 
 export function HistoryRail({
   open,
@@ -10,6 +13,7 @@ export function HistoryRail({
   open?: boolean;
   onClose?: () => void;
 }) {
+  const [keySettingsOpen, setKeySettingsOpen] = useState(false);
   const threads = useLatticeStore((s) => s.threads);
   const activeThreadId = useLatticeStore((s) => s.activeThreadId);
   const userEmail = useLatticeStore((s) => s.userEmail);
@@ -120,6 +124,38 @@ export function HistoryRail({
       </div>
 
       <p className="edge-note">Chats stay on this device — like Cursor history.</p>
+
+      <div className="rail-ship-info">
+        <p className="rail-ship-info__kicker">Menu · Deck 2 Core</p>
+        <nav className="rail-ship-info__nav" aria-label="Ship doors">
+          <a href={MAIN_DECK_HREF}>{MAIN_DECK_LABEL}</a>
+          <a href={VOYAGE_HREF}>{VOYAGE_LABEL}</a>
+          <a href="/lattice/how">How it works</a>
+          <a href="/ai-transparency">AI transparency</a>
+        </nav>
+        <p className="ai-act-notice" role="status">
+          <strong>You are interacting with an AI system.</strong> Replies are machine-generated — not a
+          human. <a href="/ai-transparency">AI transparency</a>
+        </p>
+        {signedIn ? <SignedInBar onOpenKeySettings={() => setKeySettingsOpen(true)} /> : null}
+        <p className="chat-build-stamp">Within Goldilocks · intentions matter · keys stay on this device</p>
+        {keySettingsOpen ? (
+          <div className="key-settings-drawer" role="dialog" aria-label="API key settings">
+            <div className="key-settings-drawer__head">
+              <h2>API keys</h2>
+              <button type="button" onClick={() => setKeySettingsOpen(false)}>
+                Close
+              </button>
+            </div>
+            <KeySettingsPanel
+              onSaved={() => {
+                setKeySettingsOpen(false);
+                void loadLatticeModels();
+              }}
+            />
+          </div>
+        ) : null}
+      </div>
     </aside>
   );
 }

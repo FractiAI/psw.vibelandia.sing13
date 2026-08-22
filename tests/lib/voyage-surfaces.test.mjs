@@ -31,7 +31,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('voyage-deck-strip');
     expect(html).toContain('/frontiersman-voyage');
     expect(html).toMatch(/Not just a cruise/i);
-    expect(html).toMatch(/Holographic Players examine/i);
+    expect(html).toMatch(/superheroes the set flocks to/i);
     expect(html).toContain('Your four doors');
     expect(html).toContain('Purser');
     expect(html).toContain('/voyage/inquire');

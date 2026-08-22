@@ -11,6 +11,7 @@ import {
   renderPlayerHeroCtasHtml,
   renderPlayerMoreAboardHtml,
 } from '../lib/player-spine.mjs';
+import { PLAYER_PRIMER_LINE } from '../lib/npc-player-doctrine.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -88,11 +89,8 @@ html = html.replace(
 );
 
 html = html.replace(
-  /<p class="primer">\s*One tribe[\s\S]*?<\/p>/,
-  `<p class="primer">
-        SuperAI frontiersman's best friend — build on Lattice, feel on the jukebox, map the voyage.
-        Holographic Players examine; NPCs inhabit what you resource. Both belong. Not a membership test.
-      </p>`,
+  /<p class="primer">\s*SuperAI frontiersman's best friend[\s\S]*?<\/p>/,
+  `<p class="primer">\n        ${PLAYER_PRIMER_LINE}\n      </p>`,
 );
 
 fs.writeFileSync(TARGET, html);

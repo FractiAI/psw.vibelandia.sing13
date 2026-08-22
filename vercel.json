@@ -445,6 +445,118 @@
       "destination": "/interfaces/voyage/live-in-frequency.html"
     },
     {
+      "source": "/voyage/decks",
+      "destination": "/interfaces/voyage/decks.html"
+    },
+    {
+      "source": "/voyage/decks/",
+      "destination": "/interfaces/voyage/decks.html"
+    },
+    {
+      "source": "/voyage/deck-9-summit",
+      "destination": "/interfaces/voyage/deck-9-summit.html"
+    },
+    {
+      "source": "/voyage/deck-9-summit/",
+      "destination": "/interfaces/voyage/deck-9-summit.html"
+    },
+    {
+      "source": "/voyage/deck-8-veranda",
+      "destination": "/interfaces/voyage/deck-8-veranda.html"
+    },
+    {
+      "source": "/voyage/deck-8-veranda/",
+      "destination": "/interfaces/voyage/deck-8-veranda.html"
+    },
+    {
+      "source": "/voyage/deck-6-7-horizon",
+      "destination": "/interfaces/voyage/deck-6-7-horizon.html"
+    },
+    {
+      "source": "/voyage/deck-6-7-horizon/",
+      "destination": "/interfaces/voyage/deck-6-7-horizon.html"
+    },
+    {
+      "source": "/voyage/deck-4-5-grove",
+      "destination": "/interfaces/voyage/deck-4-5-grove.html"
+    },
+    {
+      "source": "/voyage/deck-4-5-grove/",
+      "destination": "/interfaces/voyage/deck-4-5-grove.html"
+    },
+    {
+      "source": "/voyage/deck-3-night",
+      "destination": "/interfaces/voyage/deck-3-night.html"
+    },
+    {
+      "source": "/voyage/deck-3-night/",
+      "destination": "/interfaces/voyage/deck-3-night.html"
+    },
+    {
+      "source": "/voyage/deck-2-core",
+      "destination": "/interfaces/voyage/deck-2-core.html"
+    },
+    {
+      "source": "/voyage/deck-2-core/",
+      "destination": "/interfaces/voyage/deck-2-core.html"
+    },
+    {
+      "source": "/voyage/cabin-ph-001",
+      "destination": "/interfaces/voyage/cabin-ph-001.html"
+    },
+    {
+      "source": "/voyage/cabin-ph-001/",
+      "destination": "/interfaces/voyage/cabin-ph-001.html"
+    },
+    {
+      "source": "/voyage/cabin-ph-101-108",
+      "destination": "/interfaces/voyage/cabin-ph-101-108.html"
+    },
+    {
+      "source": "/voyage/cabin-ph-101-108/",
+      "destination": "/interfaces/voyage/cabin-ph-101-108.html"
+    },
+    {
+      "source": "/voyage/cabin-cc-201-224",
+      "destination": "/interfaces/voyage/cabin-cc-201-224.html"
+    },
+    {
+      "source": "/voyage/cabin-cc-201-224/",
+      "destination": "/interfaces/voyage/cabin-cc-201-224.html"
+    },
+    {
+      "source": "/voyage/cabin-rr-301-340",
+      "destination": "/interfaces/voyage/cabin-rr-301-340.html"
+    },
+    {
+      "source": "/voyage/cabin-rr-301-340/",
+      "destination": "/interfaces/voyage/cabin-rr-301-340.html"
+    },
+    {
+      "source": "/voyage/cabin-gm-401-450",
+      "destination": "/interfaces/voyage/cabin-gm-401-450.html"
+    },
+    {
+      "source": "/voyage/cabin-gm-401-450/",
+      "destination": "/interfaces/voyage/cabin-gm-401-450.html"
+    },
+    {
+      "source": "/voyage/cabin-sc-501-560",
+      "destination": "/interfaces/voyage/cabin-sc-501-560.html"
+    },
+    {
+      "source": "/voyage/cabin-sc-501-560/",
+      "destination": "/interfaces/voyage/cabin-sc-501-560.html"
+    },
+    {
+      "source": "/voyage/cabin-st-601-680",
+      "destination": "/interfaces/voyage/cabin-st-601-680.html"
+    },
+    {
+      "source": "/voyage/cabin-st-601-680/",
+      "destination": "/interfaces/voyage/cabin-st-601-680.html"
+    },
+    {
       "source": "/ship-blog",
       "destination": "/interfaces/ship-blog-index.html"
     },

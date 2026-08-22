@@ -1,6 +1,14 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { VOYAGE_DOORS, voyageDoorHref } from '../../lib/voyage-doors.mjs';
+import {
+  VOYAGE_CABINS,
+  VOYAGE_DECKS,
+  expandSerialRange,
+  voyageCabinHref,
+  voyageDeckHref,
+  voyageDirectoryHref,
+} from '../../lib/voyage-directory.mjs';
 
 function read(rel) {
   return readFileSync(new URL(`../../${rel}`, import.meta.url), 'utf8');
@@ -27,6 +35,8 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('Purser');
     expect(html).toContain('/voyage/inquire');
     expect(html).toContain('/voyage/holographic-reality');
+    expect(html).toContain('/voyage/deck-9-summit');
+    expect(html).toContain('/voyage/decks');
     expect(html).not.toContain('PH-001');
   });
 
@@ -40,6 +50,8 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toMatch(/not a genomic or gender membership test/i);
     expect(html).toContain('voyage-flagship');
     expect(html).toContain('/voyage/live-the-vibe');
+    expect(html).toContain('/voyage/cabin-ph-001');
+    expect(html).toContain('voyage-deck-door');
     expect(html).toContain('id="cabins"');
   });
 
@@ -58,6 +70,23 @@ describe('Frontiersman voyage guest surfaces', () => {
       expect(read(`interfaces/voyage/${door.slug}.html`)).toContain(door.title);
       expect(vercel).toContain(`"source": "${href}"`);
     }
+  });
+
+  it('deck and cabin directory pages list serials with rewrites', () => {
+    const vercel = read('vercel.json');
+    expect(read('interfaces/voyage/decks.html')).toContain('Holographic Decks');
+    expect(vercel).toContain(`"source": "${voyageDirectoryHref()}"`);
+    for (const deck of VOYAGE_DECKS) {
+      expect(read(`interfaces/voyage/${deck.slug}.html`)).toContain(deck.label);
+      expect(vercel).toContain(`"source": "${voyageDeckHref(deck.slug)}"`);
+    }
+    for (const cabin of VOYAGE_CABINS) {
+      const html = read(`interfaces/voyage/cabin-${cabin.slug}.html`);
+      expect(html).toContain(cabin.name);
+      expect(html).toContain('Serial register');
+      expect(vercel).toContain(`"source": "${voyageCabinHref(cabin.slug)}"`);
+    }
+    expect(expandSerialRange('ST', 601, 680)).toHaveLength(80);
   });
 
   it('shared ribbon advertises the Voyage door', () => {

@@ -87,6 +87,7 @@
     "sync:voyage-directory": "node scripts/sync-voyage-directory.mjs",
     "sync:voyage-surfaces": "npm run sync:voyage-doors && npm run sync:voyage-directory",
     "sync:player-spine": "node scripts/sync-player-spine.mjs",
+    "sync:npc-player-doctrine": "node scripts/sync-npc-player-doctrine.mjs",
     "sync:site-brand": "node scripts/sync-site-brand.mjs",
     "sync:spirit-crew": "node scripts/sync-spirit-crew.mjs",
     "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs",

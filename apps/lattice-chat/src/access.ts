@@ -3,7 +3,7 @@ export const CREATOR_EMAIL = 'valetpru@gmail.com';
 
 /** QUESTFEST top deck — home for guests leaving Lattice Chat Agent. */
 export const MAIN_DECK_HREF = '/';
-export const MAIN_DECK_LABEL = 'SS Vibelandia';
+export const MAIN_DECK_LABEL = 'SS VIBELANDIA';
 export const VOYAGE_HREF = '/frontiersman-voyage';
 export const VOYAGE_LABEL = 'Frontiersman Voyage';
 

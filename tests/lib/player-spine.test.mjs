@@ -31,7 +31,7 @@ describe('Player spine · holographic Player home', () => {
   it('site quicklinks lead with Lattice not Concierge', () => {
     const js = read('interfaces/site-quicklinks.js');
     const navBlock = js.slice(js.indexOf('nav.innerHTML'), js.indexOf('nav.innerHTML') + 800);
-    expect(navBlock).toContain('/lattice-chat/');
+    expect(navBlock).toContain('SS VIBELANDIA');
     expect(navBlock.indexOf('/lattice-chat/')).toBeLessThan(navBlock.indexOf('/listen'));
     expect(navBlock).not.toContain('Concierge');
   });

@@ -217,8 +217,128 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height: 320px;
-  object-fit: cover;
+  max-height: 420px;
+  object-fit: contain;
+  background: #070b14;
+}
+
+.voyage-map-diagram {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.1rem 1.15rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(12, 22, 40, 0.92), rgba(7, 11, 20, 0.96));
+}
+
+.voyage-map-diagram h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--voyage-gold);
+}
+
+.voyage-map-stack {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0 0 1rem;
+}
+
+.voyage-map-deck {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(212, 175, 55, 0.05);
+  text-decoration: none;
+  color: inherit;
+}
+
+.voyage-map-deck:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.voyage-map-deck__num {
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--voyage-gold);
+}
+
+.voyage-map-deck__label {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.voyage-map-deck__tags {
+  font-size: 0.72rem;
+  color: #a8a29e;
+  line-height: 1.35;
+}
+
+.voyage-map-deck__go {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fef3c7;
+}
+
+.voyage-map-landfalls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.voyage-map-landfalls li a {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #f5e6c8;
+}
+
+.voyage-map-landfalls li a:hover {
+  border-color: var(--voyage-gold);
+  background: rgba(212, 175, 55, 0.14);
+}
+
+.voyage-map-arrival {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.voyage-map-arrival a {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.voyage-map-arrival a:hover {
+  color: #fef3c7;
+  text-decoration: underline;
+}
+
+.voyage-map-arrival li:not(:last-child)::after {
+  content: '→';
+  margin-left: 0.35rem;
+  opacity: 0.45;
 }
 
 .voyage-serial-block {

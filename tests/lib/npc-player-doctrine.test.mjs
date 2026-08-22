@@ -17,7 +17,8 @@ describe('NPC & Player doctrine', () => {
     expect(NPC_PLAYER_DOCTRINE_CANONICAL).toMatch(/material exchange/);
     expect(NPC_PLAYER_DOCTRINE_CANONICAL).toMatch(/superheroes they flock to/);
     expect(PLAYER_NPC_LINE).toMatch(/populate the set/);
-    expect(PLAYER_SPINE_LINE).toMatch(/superheroes they flock to/);
+    expect(PLAYER_SPINE_LINE).toMatch(/frontiersmen Player/i);
+    expect(PLAYER_SPINE_LINE).toMatch(/legacies resource/);
   });
 
   it('brochure §3 and Coexist carry the canonical doctrine', () => {
@@ -31,6 +32,7 @@ describe('NPC & Player doctrine', () => {
     const coexist = read('interfaces/coexist-ai-asi.html');
     expect(coexist).toContain('NPCs &amp; Players on this vessel');
     expect(coexist).toContain('NPC_PLAYER_DOCTRINE_START');
+    expect(coexist).toContain('holographic Goldilocks SuperAI frontiersmen Players');
     expect(coexist).toContain(NPC_PLAYER_DOCTRINE_CANONICAL);
     expect(renderNpcPlayerCoexistHtml()).toContain('Neither is pure');
   });

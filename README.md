@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-22** · **191** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-22** · **205** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -496,7 +496,21 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | Path | Title |
 |------|-------|
 | [`/interfaces/voyage/arrive.html`](/interfaces/voyage/arrive.html) | Arrive — first day aboard · SS Vibelandia Voyage |
+| [`/interfaces/voyage/cabin-cc-201-224.html`](/interfaces/voyage/cabin-cc-201-224.html) | CC-201–224 · Captiva Cove Beachfront Cabins · SS Vibelandia |
+| [`/interfaces/voyage/cabin-gm-401-450.html`](/interfaces/voyage/cabin-gm-401-450.html) | GM-401–450 · Grove Mezzanine Lofts · SS Vibelandia |
+| [`/interfaces/voyage/cabin-ph-001.html`](/interfaces/voyage/cabin-ph-001.html) | PH-001 · Captain’s Grand Penthouse · SS Vibelandia |
+| [`/interfaces/voyage/cabin-ph-101-108.html`](/interfaces/voyage/cabin-ph-101-108.html) | PH-101–108 · El Gran Sol Grand Penthouses · SS Vibelandia |
+| [`/interfaces/voyage/cabin-rr-301-340.html`](/interfaces/voyage/cabin-rr-301-340.html) | RR-301–340 · South Seas Veranda Condos · SS Vibelandia |
+| [`/interfaces/voyage/cabin-sc-501-560.html`](/interfaces/voyage/cabin-sc-501-560.html) | SC-501–560 · High-Roller Executive Suites · SS Vibelandia |
+| [`/interfaces/voyage/cabin-st-601-680.html`](/interfaces/voyage/cabin-st-601-680.html) | ST-601–680 · Lattice Studio Staterooms · SS Vibelandia |
 | [`/interfaces/voyage/curated-community.html`](/interfaces/voyage/curated-community.html) | ◉ Curated community · SS Vibelandia Voyage |
+| [`/interfaces/voyage/deck-2-core.html`](/interfaces/voyage/deck-2-core.html) | Deck 2 — Core · SS Vibelandia Voyage |
+| [`/interfaces/voyage/deck-3-night.html`](/interfaces/voyage/deck-3-night.html) | Deck 3 — Night · SS Vibelandia Voyage |
+| [`/interfaces/voyage/deck-4-5-grove.html`](/interfaces/voyage/deck-4-5-grove.html) | Decks 4–5 — Grove · SS Vibelandia Voyage |
+| [`/interfaces/voyage/deck-6-7-horizon.html`](/interfaces/voyage/deck-6-7-horizon.html) | Decks 6–7 — Horizon · SS Vibelandia Voyage |
+| [`/interfaces/voyage/deck-8-veranda.html`](/interfaces/voyage/deck-8-veranda.html) | Deck 8 — Veranda · SS Vibelandia Voyage |
+| [`/interfaces/voyage/deck-9-summit.html`](/interfaces/voyage/deck-9-summit.html) | Deck 9 — Summit · SS Vibelandia Voyage |
+| [`/interfaces/voyage/decks.html`](/interfaces/voyage/decks.html) | Holographic Decks & Cabin Directory · SS Vibelandia |
 | [`/interfaces/voyage/fractal-harmonics.html`](/interfaces/voyage/fractal-harmonics.html) | Φ Fractal harmonics · SS Vibelandia Voyage |
 | [`/interfaces/voyage/frontiersman.html`](/interfaces/voyage/frontiersman.html) | ☀ Frontiersman · SS Vibelandia Voyage |
 | [`/interfaces/voyage/holographic-reality.html`](/interfaces/voyage/holographic-reality.html) | ◈ Holographic reality · SS Vibelandia Voyage |

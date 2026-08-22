@@ -31,10 +31,11 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('voyage-deck-strip');
     expect(html).toContain('/frontiersman-voyage');
     expect(html).toMatch(/Not just a cruise/i);
-    expect(html).toMatch(/Players who notice the pattern and NPCs/i);
+    expect(html).toMatch(/Holographic Players examine/i);
+    expect(html).toContain('Your four doors');
     expect(html).toContain('Purser');
     expect(html).toContain('/voyage/inquire');
-    expect(html).toContain('/voyage/holographic-reality');
+    expect(html).toContain('/voyage/decks');
     expect(html).toContain('/voyage/deck-9-summit');
     expect(html).toContain('/voyage/decks');
     expect(html).not.toContain('PH-001');

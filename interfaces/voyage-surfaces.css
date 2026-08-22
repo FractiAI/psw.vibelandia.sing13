@@ -327,3 +327,99 @@ body.voyage-flagship .wrap {
   margin: 0 0 0.35rem;
   line-height: 1;
 }
+
+/* Player spine — holographic Player home (QUESTFEST) */
+.btn-player-lead {
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.55);
+  font-size: 1.02em;
+}
+
+.player-spine-line {
+  font-size: 0.92rem;
+  color: var(--voyage-champagne);
+  margin: 0 0 0.85rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.voyage-guest-key--compact .voyage-guest-key__more {
+  text-align: center;
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.voyage-guest-key--compact .voyage-guest-key__more a {
+  color: var(--voyage-gold-hi);
+  text-decoration: none;
+}
+
+.voyage-guest-key--compact .voyage-guest-key__more a:hover {
+  text-decoration: underline;
+}
+
+.voyage-guest-key--compact .voyage-icons {
+  display: none;
+}
+
+.player-more-aboard {
+  margin: 1rem 0 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  background: rgba(7, 11, 20, 0.45);
+}
+
+.player-more-aboard summary {
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--voyage-gold);
+  list-style: none;
+}
+
+.player-more-aboard summary::-webkit-details-marker {
+  display: none;
+}
+
+.player-more-list {
+  list-style: none;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.player-more-list a {
+  display: block;
+  padding: 0.45rem 0.5rem;
+  text-decoration: none;
+  color: var(--voyage-champagne);
+  border-left: 2px solid rgba(212, 175, 55, 0.35);
+  padding-left: 0.65rem;
+}
+
+.player-more-list a:hover {
+  color: var(--voyage-gold-hi);
+}
+
+.player-more-list strong {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--voyage-gold-hi);
+}
+
+.player-more-list span {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+  opacity: 0.9;
+}
+
+#ship-blog .qf-blog-grid .qf-blog-card:nth-child(n + 4) {
+  display: none;
+}

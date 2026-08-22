@@ -74,13 +74,29 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--voyage-gold);
-  padding: 0.25rem 0.45rem;
+  padding: 0;
 }
 
 .voyage-arrival li + li::before {
   content: "→ ";
   color: rgba(212, 175, 55, 0.55);
+}
+
+.voyage-arrival a {
+  display: inline-block;
+  color: var(--voyage-gold);
+  text-decoration: none;
+  padding: 0.25rem 0.45rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.voyage-arrival a:hover {
+  color: var(--voyage-gold-hi);
+  border-color: var(--voyage-gold);
+  background: rgba(212, 175, 55, 0.14);
+  text-decoration: none;
 }
 
 .voyage-icons {
@@ -96,6 +112,18 @@
   }
 }
 
+.voyage-icons .voyage-icon-door {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+}
+
+.voyage-icons .voyage-icon-door:hover figure {
+  border-color: var(--voyage-gold);
+  background: rgba(212, 175, 55, 0.12);
+}
+
 .voyage-icons figure {
   margin: 0;
   padding: 0.55rem 0.4rem;
@@ -103,6 +131,7 @@
   border: 1px solid rgba(212, 175, 55, 0.28);
   border-radius: 8px;
   background: rgba(12, 22, 40, 0.65);
+  height: 100%;
 }
 
 .voyage-icons .glyph {
@@ -177,4 +206,11 @@ body.voyage-flagship {
 
 body.voyage-flagship .wrap {
   max-width: 46rem;
+}
+
+.voyage-door-page .voyage-door-glyph {
+  font-size: 2rem;
+  color: var(--voyage-gold-hi);
+  margin: 0 0 0.35rem;
+  line-height: 1;
 }

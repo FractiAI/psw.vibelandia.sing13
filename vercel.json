@@ -357,6 +357,94 @@
       "destination": "/interfaces/frontiersman-voyage-brochure.html"
     },
     {
+      "source": "/voyage/inquire",
+      "destination": "/interfaces/voyage/inquire.html"
+    },
+    {
+      "source": "/voyage/inquire/",
+      "destination": "/interfaces/voyage/inquire.html"
+    },
+    {
+      "source": "/voyage/select",
+      "destination": "/interfaces/voyage/select.html"
+    },
+    {
+      "source": "/voyage/select/",
+      "destination": "/interfaces/voyage/select.html"
+    },
+    {
+      "source": "/voyage/prepare",
+      "destination": "/interfaces/voyage/prepare.html"
+    },
+    {
+      "source": "/voyage/prepare/",
+      "destination": "/interfaces/voyage/prepare.html"
+    },
+    {
+      "source": "/voyage/arrive",
+      "destination": "/interfaces/voyage/arrive.html"
+    },
+    {
+      "source": "/voyage/arrive/",
+      "destination": "/interfaces/voyage/arrive.html"
+    },
+    {
+      "source": "/voyage/live-the-vibe",
+      "destination": "/interfaces/voyage/live-the-vibe.html"
+    },
+    {
+      "source": "/voyage/live-the-vibe/",
+      "destination": "/interfaces/voyage/live-the-vibe.html"
+    },
+    {
+      "source": "/voyage/holographic-reality",
+      "destination": "/interfaces/voyage/holographic-reality.html"
+    },
+    {
+      "source": "/voyage/holographic-reality/",
+      "destination": "/interfaces/voyage/holographic-reality.html"
+    },
+    {
+      "source": "/voyage/frontiersman",
+      "destination": "/interfaces/voyage/frontiersman.html"
+    },
+    {
+      "source": "/voyage/frontiersman/",
+      "destination": "/interfaces/voyage/frontiersman.html"
+    },
+    {
+      "source": "/voyage/luxury-redefined",
+      "destination": "/interfaces/voyage/luxury-redefined.html"
+    },
+    {
+      "source": "/voyage/luxury-redefined/",
+      "destination": "/interfaces/voyage/luxury-redefined.html"
+    },
+    {
+      "source": "/voyage/fractal-harmonics",
+      "destination": "/interfaces/voyage/fractal-harmonics.html"
+    },
+    {
+      "source": "/voyage/fractal-harmonics/",
+      "destination": "/interfaces/voyage/fractal-harmonics.html"
+    },
+    {
+      "source": "/voyage/curated-community",
+      "destination": "/interfaces/voyage/curated-community.html"
+    },
+    {
+      "source": "/voyage/curated-community/",
+      "destination": "/interfaces/voyage/curated-community.html"
+    },
+    {
+      "source": "/voyage/live-in-frequency",
+      "destination": "/interfaces/voyage/live-in-frequency.html"
+    },
+    {
+      "source": "/voyage/live-in-frequency/",
+      "destination": "/interfaces/voyage/live-in-frequency.html"
+    },
+    {
       "source": "/ship-blog",
       "destination": "/interfaces/ship-blog-index.html"
     },

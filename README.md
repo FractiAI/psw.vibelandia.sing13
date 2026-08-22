@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-22** · **180** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-22** · **191** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -490,5 +490,21 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/special-projects/geomagnetic-herbivore-study.html`](/interfaces/special-projects/geomagnetic-herbivore-study.html) | Geomagnetic Herbivore Study · Multi-Taxa Wavefield |
 | [`/interfaces/special-projects/turner-bison-herd-management.html`](/interfaces/special-projects/turner-bison-herd-management.html) | Turner Enterprise · Rangeland herd intelligence |
 | [`/interfaces/special-projects/wavefield-echo-test.html`](/interfaces/special-projects/wavefield-echo-test.html) | Wavefield Echo Test · Plain-speak results |
+
+### `voyage/` (`/interfaces/voyage/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/voyage/arrive.html`](/interfaces/voyage/arrive.html) | Arrive — first day aboard · SS Vibelandia Voyage |
+| [`/interfaces/voyage/curated-community.html`](/interfaces/voyage/curated-community.html) | ◉ Curated community · SS Vibelandia Voyage |
+| [`/interfaces/voyage/fractal-harmonics.html`](/interfaces/voyage/fractal-harmonics.html) | Φ Fractal harmonics · SS Vibelandia Voyage |
+| [`/interfaces/voyage/frontiersman.html`](/interfaces/voyage/frontiersman.html) | ☀ Frontiersman · SS Vibelandia Voyage |
+| [`/interfaces/voyage/holographic-reality.html`](/interfaces/voyage/holographic-reality.html) | ◈ Holographic reality · SS Vibelandia Voyage |
+| [`/interfaces/voyage/inquire.html`](/interfaces/voyage/inquire.html) | Inquire — ask the ship · SS Vibelandia Voyage |
+| [`/interfaces/voyage/live-in-frequency.html`](/interfaces/voyage/live-in-frequency.html) | ∞ Live in frequency · SS Vibelandia Voyage |
+| [`/interfaces/voyage/live-the-vibe.html`](/interfaces/voyage/live-the-vibe.html) | Live the vibe — daily life at frequency · SS Vibelandia Voyage |
+| [`/interfaces/voyage/luxury-redefined.html`](/interfaces/voyage/luxury-redefined.html) | ✦ Luxury redefined · SS Vibelandia Voyage |
+| [`/interfaces/voyage/prepare.html`](/interfaces/voyage/prepare.html) | Prepare — pack for Goldilocks · SS Vibelandia Voyage |
+| [`/interfaces/voyage/select.html`](/interfaces/voyage/select.html) | Select — choose your home on the ship · SS Vibelandia Voyage |
 
 <!-- interfaces-index:end -->

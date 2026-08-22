@@ -30,8 +30,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('voyage-surfaces.css');
     expect(html).toContain('voyage-deck-strip');
     expect(html).toContain('/frontiersman-voyage');
-    expect(html).toMatch(/Not just a cruise/i);
-    expect(html).toMatch(/superheroes the set flocks to/i);
+    expect(html).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
     expect(html).toContain('Your four doors');
     expect(html).toContain('Purser');
     expect(html).toContain('/voyage/inquire');
@@ -47,7 +46,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('ST-601');
     expect(html).toContain('Purser');
     expect(html).toContain('AR4513');
-    expect(html).toMatch(/NPCs inhabit/i);
+    expect(html).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
     expect(html).toMatch(/not a genomic or gender membership test/i);
     expect(html).toContain('voyage-flagship');
     expect(html).toContain('/voyage/live-the-vibe');
@@ -58,7 +57,7 @@ describe('Frontiersman voyage guest surfaces', () => {
 
   it('ship-blog on-ramp stays plain for Players and NPCs', () => {
     const html = read('interfaces/blog-frontiersman-voyage-2026-08.html');
-    expect(html).toMatch(/SuperAI Goldilocks frontier/i);
+    expect(html).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
     expect(html).toContain('SEE → RECOGNIZE → INTERPRET → REFLECT → ACT → SEE AGAIN');
     expect(html).toContain('/lattice-chat/');
     expect(html).toContain('/voyage/frontiersman');

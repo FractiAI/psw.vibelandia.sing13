@@ -17,6 +17,14 @@ import { ComposerOptions } from '@/components/ComposerOptions';
 import { KeySettingsPanel } from '@/components/KeySettings';
 import { TokenCompareFooter, hasMeasuredTokens } from '@/components/TokenCompare';
 import { hasProviderApiKey, subscribeProviderKeys } from '@/lib/providerKeys';
+import {
+  attachmentsForWire,
+  latticeAttachAccept,
+  LATTICE_ATTACH_MAX_FILES,
+  readLatticeFiles,
+  revokeAttachmentPreviews,
+  type LatticeAttachment,
+} from '@/lib/attachments';
 import { useLatticeStore } from '@/store';
 import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
 import { CollabDmBadge } from '@/components/collaborate/CollabDmNotifier';
@@ -70,6 +78,8 @@ export function ChatPane({
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const ensureSharedCollabThread = useLatticeStore((s) => s.ensureSharedCollabThread);
   const [draft, setDraft] = useState('');
+  const [attachments, setAttachments] = useState<LatticeAttachment[]>([]);
+  const [attachHint, setAttachHint] = useState<string | null>(null);
   const [elapsedSec, setElapsedSec] = useState(0);
   const [checking, setChecking] = useState(false);
   const [keySettingsOpen, setKeySettingsOpen] = useState(false);
@@ -78,6 +88,7 @@ export function ChatPane({
   const scrollRef = useRef<HTMLDivElement>(null);
   const stickToBottomRef = useRef(true);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const resumedRef = useRef(false);
 
   const myCollabPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
@@ -227,11 +238,41 @@ export function ChatPane({
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (!signedIn) return;
+    if (!draft.trim() && !attachments.length) return;
     stickToBottomRef.current = true;
     const text = draft;
+    const wire = attachmentsForWire(attachments);
     setDraft('');
-    await sendLatticeMessage(text);
+    revokeAttachmentPreviews(attachments);
+    setAttachments([]);
+    setAttachHint(null);
+    await sendLatticeMessage(text, wire);
     inputRef.current?.focus();
+  }
+
+  async function onPickFiles(fileList: FileList | null) {
+    if (!fileList?.length) return;
+    const room = LATTICE_ATTACH_MAX_FILES - attachments.length;
+    if (room <= 0) {
+      setAttachHint(`Max ${LATTICE_ATTACH_MAX_FILES} files per send.`);
+      return;
+    }
+    const { attachments: next, errors } = await readLatticeFiles(
+      Array.from(fileList).slice(0, room),
+    );
+    if (errors.length) setAttachHint(errors.join(' · '));
+    else setAttachHint(null);
+    setAttachments((prev) => [...prev, ...next].slice(0, LATTICE_ATTACH_MAX_FILES));
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  }
+
+  function removeAttachment(index: number) {
+    setAttachments((prev) => {
+      const copy = [...prev];
+      const [removed] = copy.splice(index, 1);
+      if (removed?.previewUrl) URL.revokeObjectURL(removed.previewUrl);
+      return copy;
+    });
   }
 
   async function onCheckReply() {
@@ -620,33 +661,85 @@ export function ChatPane({
             onModelChange={setModelId}
           />
         ) : null}
+        {signedIn && hasEdgeKey && attachments.length ? (
+          <ul className="composer-attach-chips" aria-label="Attached files">
+            {attachments.map((a, i) => (
+              <li key={`${a.name}-${i}`} className="composer-attach-chip">
+                {a.previewUrl ? (
+                  <img src={a.previewUrl} alt="" className="composer-attach-thumb" />
+                ) : (
+                  <span className="composer-attach-doc" aria-hidden>
+                    📄
+                  </span>
+                )}
+                <span className="composer-attach-name">{a.name}</span>
+                <button
+                  type="button"
+                  className="composer-attach-remove"
+                  aria-label={`Remove ${a.name}`}
+                  disabled={sending && sendPhase !== 'stuck'}
+                  onClick={() => removeAttachment(i)}
+                >
+                  ×
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {attachHint ? (
+          <p className="composer-attach-hint" role="status">
+            {attachHint}
+          </p>
+        ) : null}
         <label className="sr-only" htmlFor="lattice-composer">
           Message
         </label>
-        <textarea
-          id="lattice-composer"
-          ref={inputRef}
-          rows={3}
-          value={draft}
-          onChange={(e) => setDraft(e.target.value)}
-          onKeyDown={onKeyDown}
-          placeholder={
-            showWorking
-              ? 'Your Valet is working… use Check for reply instead of re-pasting'
-              : !signedIn
-                ? 'Welcome aboard — sign in above to chat…'
-                : !hasEdgeKey
-                  ? 'Bring your key to the bridge above…'
-                  : 'Message your Goldilocks Valet…'
-          }
-          disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
-        />
+        <div className="composer-input-row">
+          <input
+            ref={fileInputRef}
+            type="file"
+            className="sr-only"
+            id="lattice-attach-input"
+            accept={latticeAttachAccept()}
+            multiple
+            disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
+            onChange={(e) => void onPickFiles(e.target.files)}
+          />
+          <button
+            type="button"
+            className="composer-attach-btn"
+            title="Attach images or text docs"
+            aria-label="Attach images or documents"
+            disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
+            onClick={() => fileInputRef.current?.click()}
+          >
+            📎
+          </button>
+          <textarea
+            id="lattice-composer"
+            ref={inputRef}
+            rows={3}
+            value={draft}
+            onChange={(e) => setDraft(e.target.value)}
+            onKeyDown={onKeyDown}
+            placeholder={
+              showWorking
+                ? 'Your Valet is working… use Check for reply instead of re-pasting'
+                : !signedIn
+                  ? 'Welcome aboard — sign in above to chat…'
+                  : !hasEdgeKey
+                    ? 'Bring your key to the bridge above…'
+                    : 'Message your Goldilocks Valet…'
+            }
+            disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
+          />
+        </div>
         <button
           type="submit"
           disabled={
             !signedIn ||
             !hasEdgeKey ||
-            !draft.trim() ||
+            (!draft.trim() && !attachments.length) ||
             (sending && sendPhase !== 'stuck' && draft.trim() !== pending?.prompt)
           }
         >

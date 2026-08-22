@@ -675,19 +675,36 @@ export async function checkPendingLatticeReply(): Promise<boolean> {
   }
 }
 
-export async function sendLatticeMessage(text: string): Promise<void> {
+export async function sendLatticeMessage(
+  text: string,
+  attachments: Array<{
+    name: string;
+    mime: string;
+    kind: 'image' | 'doc';
+    text?: string;
+    dataBase64?: string;
+  }> = [],
+): Promise<void> {
   const store = useLatticeStore.getState();
   const threadId = store.ensureThread();
   const thread = store.threads.find((t) => t.id === threadId);
   if (!thread) return;
 
   const trimmed = text.trim();
-  if (!trimmed) return;
+  const hasAttach = Array.isArray(attachments) && attachments.length > 0;
+  if (!trimmed && !hasAttach) return;
+  const displayContent = hasAttach
+    ? trimmed
+      ? `${trimmed}\n\nAttached: ${attachments.map((a) => a.name).join(', ')}`
+      : `Attached: ${attachments.map((a) => a.name).join(', ')}`
+    : trimmed;
+  const wireMessage = trimmed || (hasAttach ? '(See attached files.)' : '');
 
   // Re-paste / retry of the same waiting prompt → recover, don't duplicate.
   const samePending =
-    store.pending?.prompt === trimmed ||
-    (awaitingAssistant(threadId) && lastUserPrompt(threadId) === trimmed);
+    !hasAttach &&
+    (store.pending?.prompt === wireMessage ||
+      (awaitingAssistant(threadId) && lastUserPrompt(threadId) === wireMessage));
   if (store.sending || samePending) {
     if (samePending || store.sending) {
       await checkPendingLatticeReply();
@@ -704,7 +721,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
     isSharedCollabAgentThread(threadId) ? newClientAgentEventId('ca') : undefined;
   const appendedUserId = store.appendMessage(threadId, {
     role: 'user',
-    content: trimmed,
+    content: displayContent,
     id: userMsgId,
     senderPeerId: myPeerId || undefined,
     senderName,
@@ -716,14 +733,14 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   }
   store.setPending({
     threadId,
-    prompt: trimmed,
+    prompt: wireMessage,
     startedAt: Date.now(),
     agentId: thread.agentId,
   });
 
   const history = buildHistoryWindow([
     ...thread.messages.map((m) => ({ role: m.role, content: m.content })),
-    { role: 'user', content: trimmed },
+    { role: 'user', content: displayContent },
   ]);
 
   const email = store.userEmail.trim();
@@ -756,7 +773,7 @@ export async function sendLatticeMessage(text: string): Promise<void> {
 
   const baseBody: Record<string, unknown> = {
     threadId,
-    message: trimmed,
+    message: wireMessage,
     history,
     agentId: thread.agentId,
     email,
@@ -772,6 +789,9 @@ export async function sendLatticeMessage(text: string): Promise<void> {
   };
   if (store.agentRoster.trim()) {
     baseBody.agentRoster = store.agentRoster;
+  }
+  if (hasAttach) {
+    baseBody.attachments = attachments;
   }
 
   let settled = false;

@@ -1557,6 +1557,8 @@ body {
   grid-template-columns: 1fr auto;
   grid-template-areas:
     'options options'
+    'chips chips'
+    'hint hint'
     'input send';
   gap: 0.4rem 0.55rem;
   align-items: end;
@@ -1569,6 +1571,102 @@ body {
 
 .composer--boarding {
   grid-template-areas: 'input send';
+}
+
+.composer-attach-chips {
+  grid-area: chips;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.composer-attach-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 100%;
+  padding: 0.2rem 0.35rem 0.2rem 0.25rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(6, 5, 4, 0.75);
+  color: var(--brand-text-soft);
+  font: 500 0.72rem/1.2 var(--font-body);
+}
+
+.composer-attach-thumb {
+  width: 1.55rem;
+  height: 1.55rem;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.composer-attach-doc {
+  width: 1.55rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.composer-attach-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 9rem;
+}
+
+.composer-attach-remove {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--brand-muted);
+  font: 700 1rem/1 var(--font-body);
+  cursor: pointer;
+  padding: 0 0.15rem;
+}
+
+.composer-attach-remove:hover:not(:disabled) {
+  color: var(--brand-gold-hi);
+}
+
+.composer-attach-hint {
+  grid-area: hint;
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--brand-champagne);
+}
+
+.composer-input-row {
+  grid-area: input;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem;
+  align-items: end;
+  min-width: 0;
+}
+
+.composer-attach-btn {
+  appearance: none;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(6, 5, 4, 0.75);
+  color: var(--brand-champagne);
+  font-size: 1.05rem;
+  line-height: 1;
+  width: 2.6rem;
+  min-height: 2.6rem;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.composer-attach-btn:hover:not(:disabled) {
+  border-color: rgba(212, 175, 55, 0.55);
+  color: var(--brand-gold-hi);
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.composer-attach-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .composer-options {
@@ -1786,7 +1884,6 @@ body {
 }
 
 .composer textarea {
-  grid-area: input;
   resize: none;
   width: 100%;
   min-height: 3.4rem;

@@ -1153,6 +1153,18 @@
       "destination": "/interfaces/my-whiteboard.html"
     },
     {
+      "source": "/lattice/scraper-telemetry",
+      "destination": "/interfaces/lattice-scraper-telemetry.html"
+    },
+    {
+      "source": "/lattice/scraper-telemetry/",
+      "destination": "/interfaces/lattice-scraper-telemetry.html"
+    },
+    {
+      "source": "/.well-known/lattice-agent.json",
+      "destination": "/api/lattice-canary?wellKnown=1"
+    },
+    {
       "source": "/harmonopoly",
       "destination": "/interfaces/harmonopoly.html"
     },
@@ -1884,6 +1896,15 @@
     },
     {
       "source": "/interfaces/lattice-token-proof.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/interfaces/lattice-scraper-telemetry.html",
       "headers": [
         {
           "key": "Cache-Control",

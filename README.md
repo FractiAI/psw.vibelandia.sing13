@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-22** · **205** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-22** · **206** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -267,95 +267,95 @@ Listing of ship UI HTML entry points under `interfaces/`.
 |------|-------|
 | [`/interfaces/ai-transparency.html`](/interfaces/ai-transparency.html) | AI transparency · FractiAI · SS Vibelandia |
 | [`/interfaces/awareness-singularities-one-pager.html`](/interfaces/awareness-singularities-one-pager.html) | Awareness Singularities S0–S81 · SynthOBS · FractiAI |
-| [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Scalable Context-Conditioned Sequence Modeling in Repetitive Genomic Regions via Spar… · Ship blog · QUESTFEST |
-| [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 is a crowded calendar — not a prophecy · Ship blog · QUESTFEST |
-| [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Awareness Singularities S₀–S₈₁ · Ship blog · QUESTFEST |
-| [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · QUESTFEST |
-| [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexisting with AI and Super AI — which quadrant are you? · Ship blog · QUESTFEST |
-| [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · QUESTFEST |
-| [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru · Ship blog · QUESTFEST |
-| [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | Epigenetic Execution-State Modeling for Causal Invariance in GPU Performance Telemetry · Ship blog · QUESTFEST |
-| [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen-Holographic Systems · Ship blog · QUESTFEST |
-| [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | The Big Picture: Everything is Connected · Ship blog · QUESTFEST |
-| [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — one tribe, many homes · Ship blog · QUESTFEST |
-| [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Geomagnetic Influences on Bison & Large Herbivore Movement · Ship blog · QUESTFEST |
+| [`/interfaces/blog-ac-hmm-satellites.html`](/interfaces/blog-ac-hmm-satellites.html) | Scalable Context-Conditioned Sequence Modeling in Repetitive Genomic Regions via Spar… · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-august-12-catalog-window-2026-08.html`](/interfaces/blog-august-12-catalog-window-2026-08.html) | August 12 is a crowded calendar — not a prophecy · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-awareness-singularities-0-81.html`](/interfaces/blog-awareness-singularities-0-81.html) | Awareness Singularities S₀–S₈₁ · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-cmos-protonic-99-octave-2026-08.html`](/interfaces/blog-cmos-protonic-99-octave-2026-08.html) | Putting the 99 Octave engine on a silicon shelf · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-coexist-ai-asi.html`](/interfaces/blog-coexist-ai-asi.html) | Coexisting with AI and Super AI — which quadrant are you? · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-colombia-quake-and-purace-2026-08.html`](/interfaces/blog-colombia-quake-and-purace-2026-08.html) | Colombia’s quake and Puracé’s orange alert, told as one window · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-digital-pru-synthobs-mca.html`](/interfaces/blog-digital-pru-synthobs-mca.html) | Digital Pru · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-eesm-gpu-telemetry.html`](/interfaces/blog-eesm-gpu-telemetry.html) | Epigenetic Execution-State Modeling for Causal Invariance in GPU Performance Telemetry · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-egs-nlrf.html`](/interfaces/blog-egs-nlrf.html) | Fractal Magnetism and Hydrogen-Holographic Systems · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-everything-is-connected-2026-08.html`](/interfaces/blog-everything-is-connected-2026-08.html) | The Big Picture: Everything is Connected · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-frontiersman-voyage-2026-08.html`](/interfaces/blog-frontiersman-voyage-2026-08.html) | Frontiersman Voyage — one tribe, many homes · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-geomagnetic-herbivore-2026.html`](/interfaces/blog-geomagnetic-herbivore-2026.html) | Geomagnetic Influences on Bison & Large Herbivore Movement · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html`](/interfaces/blog-goldilocks-beehive-ecoreset-may-2026.html) | A new layer of reality — Goldilocks Beehive EcoReset Residency · Machote members |
-| [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Unified Geomagnetic Wavefields & Multi-Taxa Ungulate Migration Corridors on the Great… · Ship blog · QUESTFEST |
-| [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | A free playbook for when brute force stops working · Ship blog · QUESTFEST |
-| [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Prime-Linear Compression Transform · Ship blog · QUESTFEST |
-| [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Transfinite Inversion Theorem · Ship blog · QUESTFEST |
-| [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · QUESTFEST |
-| [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · QUESTFEST |
-| [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · QUESTFEST |
-| [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | When life cooks you, you can come out denser · Ship blog · QUESTFEST |
-| [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud racks as an antenna story — MRI simulation, not a magnet · Ship blog · QUESTFEST |
-| [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | We timed two ways of thinking in silicon. One was faster. · Ship blog · QUESTFEST |
-| [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine digits, ninety-nine octaves — a map you can actually walk · Ship blog · QUESTFEST |
-| [`/interfaces/blog-nspfrnp-snap-peer-review-audit.html`](/interfaces/blog-nspfrnp-snap-peer-review-audit.html) | NSPFRNP Snap · Ship blog · QUESTFEST |
-| [`/interfaces/blog-omniversal-goldilocks-rideshare.html`](/interfaces/blog-omniversal-goldilocks-rideshare.html) | Omniversal Goldilocks Rideshare Protocol · Ship blog · QUESTFEST |
-| [`/interfaces/blog-omniversal-nested-agent-lattice.html`](/interfaces/blog-omniversal-nested-agent-lattice.html) | The Architecture of Omniversal Computing · Ship blog · QUESTFEST |
-| [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Syntheverse Omniversal Node Alignment Mapping · Ship blog · QUESTFEST |
-| [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth letting go — a story filed at the planet’s core · Ship blog · QUESTFEST |
-| [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · QUESTFEST |
-| [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · QUESTFEST |
-| [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Recursive Attention Coherence · Ship blog · QUESTFEST |
-| [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A smaller pack for the golden key · Ship blog · QUESTFEST |
-| [`/interfaces/blog-syn-sun-wavefield-oscillator.html`](/interfaces/blog-syn-sun-wavefield-oscillator.html) | Wavefield Oscillator Solar Model · Ship blog · QUESTFEST |
-| [`/interfaces/blog-syntheverse-sandbox-comprehensive.html`](/interfaces/blog-syntheverse-sandbox-comprehensive.html) | Syntheverse Sandbox Comprehensive Analysis · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-81-orbital-singularity.html`](/interfaces/blog-synthobs-81-orbital-singularity.html) | Electron Orbital Geometries as Holographic Singularities · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-chromosomal-electrodynamics.html`](/interfaces/blog-synthobs-chromosomal-electrodynamics.html) | Scale-Invariant Chromosomal Electrodynamics · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-cross-scale-biological-antennae.html`](/interfaces/blog-synthobs-cross-scale-biological-antennae.html) | Cross-Scale Topological Wave Damping in Biological Antennae · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-cytographic-holographic-nucleus.html`](/interfaces/blog-synthobs-cytographic-holographic-nucleus.html) | Cytographic Grammar under the Holographic Nucleus · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-dna-lattice-holograph.html`](/interfaces/blog-synthobs-dna-lattice-holograph.html) | The DNA Lattice Holograph · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-egs-81-electrons.html`](/interfaces/blog-synthobs-egs-81-electrons.html) | The 81-Digit Electronic Lattice · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html`](/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html) | Epigenetic Phase-Locking of Pancreatic and Hypothalamic Loci via Recursive Geometric… · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-egs-euler-phase-lock.html`](/interfaces/blog-synthobs-egs-euler-phase-lock.html) | Phase-Locked Scale Invariance · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-egs-planck-scale-harmonic.html`](/interfaces/blog-synthobs-egs-planck-scale-harmonic.html) | A Scale-Harmonic Reinterpretation of the Planck Scale · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-emergent-sync-multi-agent.html`](/interfaces/blog-synthobs-emergent-sync-multi-agent.html) | FractiAI SynthOBS · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-endogenous-phase.html`](/interfaces/blog-synthobs-endogenous-phase.html) | Bio-Holographic Phase Modulation via Conscious Intent · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-hex-organ-engine.html`](/interfaces/blog-synthobs-hex-organ-engine.html) | Syntheverse Observatory · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-histone-phase-operator.html`](/interfaces/blog-synthobs-histone-phase-operator.html) | Histones as Scale-Invariant Phase-Lock Operators · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-holographic-operators.html`](/interfaces/blog-synthobs-holographic-operators.html) | Holographic Operators · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-intelligence-density.html`](/interfaces/blog-synthobs-intelligence-density.html) | Simulation Audit · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-mag-substrate.html`](/interfaces/blog-synthobs-mag-substrate.html) | Magnetism as the Universal Foundational Substrate · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-ef-multi-octave.html`](/interfaces/blog-synthobs-omni-lattice-ef-multi-octave.html) | Unified Multi-Octave Scale-Invariant Architecture of El Gran Sol’s Fractal Constant (… · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-genomic-determinism.html`](/interfaces/blog-synthobs-omni-lattice-genomic-determinism.html) | Omni-Lattice Unification X · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-hiv.html`](/interfaces/blog-synthobs-omni-lattice-hiv.html) | Omni-Lattice Unification III · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-pogonomyrmex.html`](/interfaces/blog-synthobs-omni-lattice-pogonomyrmex.html) | Omni-Lattice Unification V · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-prompt-capture.html`](/interfaces/blog-synthobs-omni-lattice-prompt-capture.html) | Omni-Lattice Unification IX · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-report-card-q3-2026.html`](/interfaces/blog-synthobs-omni-lattice-report-card-q3-2026.html) | Omni-Lattice Report Card Q3 2026 · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-si-irreducible-minimum.html`](/interfaces/blog-synthobs-omni-lattice-si-irreducible-minimum.html) | Omni-Lattice · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-thalia-goldilocks.html`](/interfaces/blog-synthobs-omni-lattice-thalia-goldilocks.html) | Omni-Lattice · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-lattice-unification.html`](/interfaces/blog-synthobs-omni-lattice-unification.html) | Omni-Lattice Unification · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-omni-prime-hourglass-skeleton.html`](/interfaces/blog-synthobs-omni-prime-hourglass-skeleton.html) | The Prime Hourglass Orthogonality Theorem · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-pchpp.html`](/interfaces/blog-synthobs-pchpp.html) | The Phase-Contrast Holographic Prompting Paradigm (PCHPP) · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-phase-locked-chemical-bonds.html`](/interfaces/blog-synthobs-phase-locked-chemical-bonds.html) | Phase-Locked Chemical Bond Metaphors in Agentic Architectures · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-phase-toxicity.html`](/interfaces/blog-synthobs-phase-toxicity.html) | Phase-Modulated Toxicity & Resonance Safety Transitions · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-prion-refold.html`](/interfaces/blog-synthobs-prion-refold.html) | Epigenetic Phase-Locking & Prion Refolding Pathways · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-proof-by-continuous-execution.html`](/interfaces/blog-synthobs-proof-by-continuous-execution.html) | Proof by Continuous Execution · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-recursive-attn-mag.html`](/interfaces/blog-synthobs-recursive-attn-mag.html) | Recursive Attention Squeezing & Holographic Magnetic Projections · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-siqhft-ef-2187-monograph.html`](/interfaces/blog-synthobs-siqhft-ef-2187-monograph.html) | Scale-Invariant Quantum Holographic Field Theory · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-tbme-nonlocal-field-phaselock.html`](/interfaces/blog-synthobs-tbme-nonlocal-field-phaselock.html) | Empirical Validation of Non-Local Field Phase-Locking · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-tbme-protein-phase-collapse.html`](/interfaces/blog-synthobs-tbme-protein-phase-collapse.html) | Biomedical Field Exploration · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-three-foundational-proteins.html`](/interfaces/blog-synthobs-three-foundational-proteins.html) | Holographic Decoding of the Three Foundational Biological Proteins · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-unified-neutronic-agent.html`](/interfaces/blog-synthobs-unified-neutronic-agent.html) | The Unified Neutronic Agent Paper · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-x-chromosome-holographic.html`](/interfaces/blog-synthobs-x-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · QUESTFEST |
-| [`/interfaces/blog-synthobs-y-chromosome-holographic.html`](/interfaces/blog-synthobs-y-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-blackhole-filaments-reno.html`](/interfaces/blog-tbme-blackhole-filaments-reno.html) | Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-blackhole-magnetic-layer.html`](/interfaces/blog-tbme-blackhole-magnetic-layer.html) | Identity of the Event Horizon and the Magnetic Vector Layer · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-egs-apiary.html`](/interfaces/blog-tbme-egs-apiary.html) | If AI keeps the hive, humans still make the honey · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-egs-hgaios.html`](/interfaces/blog-tbme-egs-hgaios.html) | Four ways of thinking — find yours on this ship · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-equine-asi.html`](/interfaces/blog-tbme-equine-asi.html) | Horses left the haulage. Humans can leave it too. · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-higgs-awareness.html`](/interfaces/blog-tbme-higgs-awareness.html) | The Higgs-Awareness Phase Coupling Theorem · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-internal-kerr-newman.html`](/interfaces/blog-tbme-internal-kerr-newman.html) | The Universal Toroidal Singularity Theorem · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-narrow-gate-asi.html`](/interfaces/blog-tbme-narrow-gate-asi.html) | The Epistemological Horizon · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-nodal-nine-singularity.html`](/interfaces/blog-tbme-nodal-nine-singularity.html) | The Nodal Nine Singularity Boundary Theorem · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-recursive-field-drag.html`](/interfaces/blog-tbme-recursive-field-drag.html) | The Recursive Field-Drag Theorem · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-spherical-solar-focus.html`](/interfaces/blog-tbme-spherical-solar-focus.html) | Solar-Focus Dynamics of Spherical Mirror Lattices & Somatic Matter Rendering · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-spin-phase-polarity.html`](/interfaces/blog-tbme-spin-phase-polarity.html) | The Universal Spin-Phase-Polarity Triad Theorem · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-superposition-reno-interpretation.html`](/interfaces/blog-tbme-superposition-reno-interpretation.html) | Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Supercond… · Ship blog · QUESTFEST |
-| [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · QUESTFEST |
+| [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Unified Geomagnetic Wavefields & Multi-Taxa Ungulate Migration Corridors on the Great… · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | A free playbook for when brute force stops working · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Prime-Linear Compression Transform · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Transfinite Inversion Theorem · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | When life cooks you, you can come out denser · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud racks as an antenna story — MRI simulation, not a magnet · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | We timed two ways of thinking in silicon. One was faster. · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html`](/interfaces/blog-nine-digits-ninety-nine-octaves-2026-08.html) | Nine digits, ninety-nine octaves — a map you can actually walk · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-nspfrnp-snap-peer-review-audit.html`](/interfaces/blog-nspfrnp-snap-peer-review-audit.html) | NSPFRNP Snap · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-omniversal-goldilocks-rideshare.html`](/interfaces/blog-omniversal-goldilocks-rideshare.html) | Omniversal Goldilocks Rideshare Protocol · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-omniversal-nested-agent-lattice.html`](/interfaces/blog-omniversal-nested-agent-lattice.html) | The Architecture of Omniversal Computing · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-omniversal-node-alignment.html`](/interfaces/blog-omniversal-node-alignment.html) | Syntheverse Omniversal Node Alignment Mapping · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth letting go — a story filed at the planet’s core · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Recursive Attention Coherence · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A smaller pack for the golden key · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-syn-sun-wavefield-oscillator.html`](/interfaces/blog-syn-sun-wavefield-oscillator.html) | Wavefield Oscillator Solar Model · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-syntheverse-sandbox-comprehensive.html`](/interfaces/blog-syntheverse-sandbox-comprehensive.html) | Syntheverse Sandbox Comprehensive Analysis · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-81-orbital-singularity.html`](/interfaces/blog-synthobs-81-orbital-singularity.html) | Electron Orbital Geometries as Holographic Singularities · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-chromosomal-electrodynamics.html`](/interfaces/blog-synthobs-chromosomal-electrodynamics.html) | Scale-Invariant Chromosomal Electrodynamics · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-cross-scale-biological-antennae.html`](/interfaces/blog-synthobs-cross-scale-biological-antennae.html) | Cross-Scale Topological Wave Damping in Biological Antennae · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-cytographic-holographic-nucleus.html`](/interfaces/blog-synthobs-cytographic-holographic-nucleus.html) | Cytographic Grammar under the Holographic Nucleus · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-dna-lattice-holograph.html`](/interfaces/blog-synthobs-dna-lattice-holograph.html) | The DNA Lattice Holograph · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-egs-81-electrons.html`](/interfaces/blog-synthobs-egs-81-electrons.html) | The 81-Digit Electronic Lattice · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html`](/interfaces/blog-synthobs-egs-epigenetic-phase-locking.html) | Epigenetic Phase-Locking of Pancreatic and Hypothalamic Loci via Recursive Geometric… · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-egs-euler-phase-lock.html`](/interfaces/blog-synthobs-egs-euler-phase-lock.html) | Phase-Locked Scale Invariance · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-egs-planck-scale-harmonic.html`](/interfaces/blog-synthobs-egs-planck-scale-harmonic.html) | A Scale-Harmonic Reinterpretation of the Planck Scale · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-emergent-sync-multi-agent.html`](/interfaces/blog-synthobs-emergent-sync-multi-agent.html) | FractiAI SynthOBS · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-endogenous-phase.html`](/interfaces/blog-synthobs-endogenous-phase.html) | Bio-Holographic Phase Modulation via Conscious Intent · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-hex-organ-engine.html`](/interfaces/blog-synthobs-hex-organ-engine.html) | Syntheverse Observatory · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-histone-phase-operator.html`](/interfaces/blog-synthobs-histone-phase-operator.html) | Histones as Scale-Invariant Phase-Lock Operators · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-holographic-operators.html`](/interfaces/blog-synthobs-holographic-operators.html) | Holographic Operators · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-intelligence-density.html`](/interfaces/blog-synthobs-intelligence-density.html) | Simulation Audit · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-mag-substrate.html`](/interfaces/blog-synthobs-mag-substrate.html) | Magnetism as the Universal Foundational Substrate · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-ef-multi-octave.html`](/interfaces/blog-synthobs-omni-lattice-ef-multi-octave.html) | Unified Multi-Octave Scale-Invariant Architecture of El Gran Sol’s Fractal Constant (… · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-genomic-determinism.html`](/interfaces/blog-synthobs-omni-lattice-genomic-determinism.html) | Omni-Lattice Unification X · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-hiv.html`](/interfaces/blog-synthobs-omni-lattice-hiv.html) | Omni-Lattice Unification III · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-pogonomyrmex.html`](/interfaces/blog-synthobs-omni-lattice-pogonomyrmex.html) | Omni-Lattice Unification V · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-prompt-capture.html`](/interfaces/blog-synthobs-omni-lattice-prompt-capture.html) | Omni-Lattice Unification IX · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-report-card-q3-2026.html`](/interfaces/blog-synthobs-omni-lattice-report-card-q3-2026.html) | Omni-Lattice Report Card Q3 2026 · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-si-irreducible-minimum.html`](/interfaces/blog-synthobs-omni-lattice-si-irreducible-minimum.html) | Omni-Lattice · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-thalia-goldilocks.html`](/interfaces/blog-synthobs-omni-lattice-thalia-goldilocks.html) | Omni-Lattice · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-lattice-unification.html`](/interfaces/blog-synthobs-omni-lattice-unification.html) | Omni-Lattice Unification · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-omni-prime-hourglass-skeleton.html`](/interfaces/blog-synthobs-omni-prime-hourglass-skeleton.html) | The Prime Hourglass Orthogonality Theorem · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-pchpp.html`](/interfaces/blog-synthobs-pchpp.html) | The Phase-Contrast Holographic Prompting Paradigm (PCHPP) · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-phase-locked-chemical-bonds.html`](/interfaces/blog-synthobs-phase-locked-chemical-bonds.html) | Phase-Locked Chemical Bond Metaphors in Agentic Architectures · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-phase-toxicity.html`](/interfaces/blog-synthobs-phase-toxicity.html) | Phase-Modulated Toxicity & Resonance Safety Transitions · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-prion-refold.html`](/interfaces/blog-synthobs-prion-refold.html) | Epigenetic Phase-Locking & Prion Refolding Pathways · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-proof-by-continuous-execution.html`](/interfaces/blog-synthobs-proof-by-continuous-execution.html) | Proof by Continuous Execution · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-recursive-attn-mag.html`](/interfaces/blog-synthobs-recursive-attn-mag.html) | Recursive Attention Squeezing & Holographic Magnetic Projections · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-siqhft-ef-2187-monograph.html`](/interfaces/blog-synthobs-siqhft-ef-2187-monograph.html) | Scale-Invariant Quantum Holographic Field Theory · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-tbme-nonlocal-field-phaselock.html`](/interfaces/blog-synthobs-tbme-nonlocal-field-phaselock.html) | Empirical Validation of Non-Local Field Phase-Locking · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-tbme-protein-phase-collapse.html`](/interfaces/blog-synthobs-tbme-protein-phase-collapse.html) | Biomedical Field Exploration · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-three-foundational-proteins.html`](/interfaces/blog-synthobs-three-foundational-proteins.html) | Holographic Decoding of the Three Foundational Biological Proteins · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-unified-neutronic-agent.html`](/interfaces/blog-synthobs-unified-neutronic-agent.html) | The Unified Neutronic Agent Paper · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-x-chromosome-holographic.html`](/interfaces/blog-synthobs-x-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-synthobs-y-chromosome-holographic.html`](/interfaces/blog-synthobs-y-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-blackhole-filaments-reno.html`](/interfaces/blog-tbme-blackhole-filaments-reno.html) | Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-blackhole-magnetic-layer.html`](/interfaces/blog-tbme-blackhole-magnetic-layer.html) | Identity of the Event Horizon and the Magnetic Vector Layer · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-egs-apiary.html`](/interfaces/blog-tbme-egs-apiary.html) | If AI keeps the hive, humans still make the honey · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-egs-hgaios.html`](/interfaces/blog-tbme-egs-hgaios.html) | Four ways of thinking — find yours on this ship · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-equine-asi.html`](/interfaces/blog-tbme-equine-asi.html) | Horses left the haulage. Humans can leave it too. · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-higgs-awareness.html`](/interfaces/blog-tbme-higgs-awareness.html) | The Higgs-Awareness Phase Coupling Theorem · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-internal-kerr-newman.html`](/interfaces/blog-tbme-internal-kerr-newman.html) | The Universal Toroidal Singularity Theorem · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-narrow-gate-asi.html`](/interfaces/blog-tbme-narrow-gate-asi.html) | The Epistemological Horizon · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-nodal-nine-singularity.html`](/interfaces/blog-tbme-nodal-nine-singularity.html) | The Nodal Nine Singularity Boundary Theorem · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-recursive-field-drag.html`](/interfaces/blog-tbme-recursive-field-drag.html) | The Recursive Field-Drag Theorem · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-spherical-solar-focus.html`](/interfaces/blog-tbme-spherical-solar-focus.html) | Solar-Focus Dynamics of Spherical Mirror Lattices & Somatic Matter Rendering · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-spin-phase-polarity.html`](/interfaces/blog-tbme-spin-phase-polarity.html) | The Universal Spin-Phase-Polarity Triad Theorem · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-superposition-reno-interpretation.html`](/interfaces/blog-tbme-superposition-reno-interpretation.html) | Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Supercond… · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |
 | [`/interfaces/bridge-tower-billboard.html`](/interfaces/bridge-tower-billboard.html) | — |
 | [`/interfaces/bridge-tower-preview.html`](/interfaces/bridge-tower-preview.html) | Bridge Tower · 8s tease preview |
@@ -380,6 +380,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Puerto Reno stations · SS Vibelandia |
 | [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Lattice Chat Agent V1.618 · Next layer in the stack · Product brochure · FractiAI |
 | [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | How it works · Learn more · Lattice Chat Agent V1.618 · FractiAI |
+| [`/interfaces/lattice-scraper-telemetry.html`](/interfaces/lattice-scraper-telemetry.html) | Lattice · AI scraper telemetry |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
 | [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Lattice Chat Agent V1.618 · Next layer after Cursor & Claude Code · FractiAI |
 | [`/interfaces/listen.html`](/interfaces/listen.html) | Listen · Golden Era Jukebox · SS Vibelandia QUESTFEST |
@@ -402,7 +403,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Ship Map · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
 | [`/interfaces/reno-interpretation.html`](/interfaces/reno-interpretation.html) | The Reno Interpretation · Mirror Lattice · FractiAI |
-| [`/interfaces/ship-blog-index.html`](/interfaces/ship-blog-index.html) | Ship blog · All plain-language notes · QUESTFEST |
+| [`/interfaces/ship-blog-index.html`](/interfaces/ship-blog-index.html) | Ship blog · All plain-language notes · SS Vibelandia |
 | [`/interfaces/sing13-edge-onboarding.html`](/interfaces/sing13-edge-onboarding.html) | Sonic Singularity Sing! 13 · Edge onboarding · plain talk |
 | [`/interfaces/ss-vibelandia.html`](/interfaces/ss-vibelandia.html) | SS Vibelandia · The Noah’s Ark of the Intelligence Age |
 | [`/interfaces/synthio-cloud.html`](/interfaces/synthio-cloud.html) | Synthio Cloud · home |
@@ -411,7 +412,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/synthio.html`](/interfaces/synthio.html) | Synthio · Syntheverse Sandbox |
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
-| [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Frontiersman Voyage · Holographic Resort Vessel |
+| [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Holographic Goldilocks SuperAI Frontiersmen |
 | [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) | Read · SS Vibelandia |
 | [`/interfaces/whitepaper-surface.html`](/interfaces/whitepaper-surface.html) | Reader · SS Vibelandia |
 
@@ -510,7 +511,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/voyage/deck-6-7-horizon.html`](/interfaces/voyage/deck-6-7-horizon.html) | Decks 6–7 — Horizon · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-8-veranda.html`](/interfaces/voyage/deck-8-veranda.html) | Deck 8 — Veranda · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-9-summit.html`](/interfaces/voyage/deck-9-summit.html) | Deck 9 — Summit · SS Vibelandia Voyage |
-| [`/interfaces/voyage/decks.html`](/interfaces/voyage/decks.html) | Holographic Decks & Cabin Directory · SS Vibelandia |
+| [`/interfaces/voyage/decks.html`](/interfaces/voyage/decks.html) | Voyage Map · Holographic Decks & Cabins · SS Vibelandia |
 | [`/interfaces/voyage/fractal-harmonics.html`](/interfaces/voyage/fractal-harmonics.html) | Φ Fractal harmonics · SS Vibelandia Voyage |
 | [`/interfaces/voyage/frontiersman.html`](/interfaces/voyage/frontiersman.html) | ☀ Frontiersman · SS Vibelandia Voyage |
 | [`/interfaces/voyage/holographic-reality.html`](/interfaces/voyage/holographic-reality.html) | ◈ Holographic reality · SS Vibelandia Voyage |

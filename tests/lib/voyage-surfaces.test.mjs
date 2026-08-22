@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { VOYAGE_DOORS, voyageDoorHref } from '../../lib/voyage-doors.mjs';
 import {
@@ -88,6 +88,33 @@ describe('Frontiersman voyage guest surfaces', () => {
       expect(vercel).toContain(`"source": "${voyageCabinHref(cabin.slug)}"`);
     }
     expect(expandSerialRange('ST', 601, 680)).toHaveLength(80);
+  });
+
+  it('deck and cabin pages use distinct poster images that exist on disk', () => {
+    const shipOnly = '/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png';
+    const deckImages = new Set();
+    for (const deck of VOYAGE_DECKS) {
+      const html = read(`interfaces/voyage/${deck.slug}.html`);
+      expect(html).toContain(`src="${deck.image}"`);
+      expect(deck.image).not.toBe(shipOnly);
+      deckImages.add(deck.image);
+      expect(existsSync(new URL(`../../${deck.image.replace(/^\//, '')}`, import.meta.url))).toBe(true);
+    }
+    expect(deckImages.size).toBe(VOYAGE_DECKS.length);
+
+    const cabinImages = new Set();
+    for (const cabin of VOYAGE_CABINS) {
+      const html = read(`interfaces/voyage/cabin-${cabin.slug}.html`);
+      expect(html).toContain(`src="${cabin.image}"`);
+      expect(cabin.image).not.toBe(shipOnly);
+      cabinImages.add(cabin.image);
+      expect(existsSync(new URL(`../../${cabin.image.replace(/^\//, '')}`, import.meta.url))).toBe(true);
+    }
+    expect(cabinImages.size).toBe(VOYAGE_CABINS.length);
+
+    const directory = read('interfaces/voyage/decks.html');
+    expect(directory).toContain('voyage-directory-thumb');
+    expect(directory).toContain(shipOnly);
   });
 
   it('shared ribbon advertises the Voyage door', () => {

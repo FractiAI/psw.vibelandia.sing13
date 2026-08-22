@@ -1,5 +1,5 @@
 import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
-import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL } from '@/access';
+import { isRememberedEmailFresh, MAIN_DECK_HREF, MAIN_DECK_LABEL, VOYAGE_HREF, VOYAGE_LABEL } from '@/access';
 import {
   checkPendingLatticeReply,
   LATTICE_PROGRESS_STEPS,
@@ -320,7 +320,7 @@ export function ChatPane({
                   <a className="deck-home-link" href={MAIN_DECK_HREF} title="Back to QUESTFEST main deck">
                     {MAIN_DECK_LABEL}
                   </a>
-                  {' · Your Goldilocks Valet'}
+                  {' · Goldilocks Valet · Deck 2 Core'}
                   {activeRepo ? (
                     <>
                       {' · '}
@@ -381,12 +381,12 @@ export function ChatPane({
         {!compact ? (
           <>
             <p className="chat-sub">
-              Your Goldilocks Valet on the Ark ·{' '}
+              Deck 2 · the Core ·{' '}
               <a href={MAIN_DECK_HREF}>Main deck</a>
               {' · '}
-              <a href="/lattice/how">How it works</a>
+              <a href={VOYAGE_HREF}>{VOYAGE_LABEL}</a>
               {' · '}
-              <a href="/ss-vibelandia">Meet the ship</a>
+              <a href="/lattice/how">How it works</a>
               {' · '}
               <a href="/ai-transparency">AI transparency</a>
             </p>
@@ -433,15 +433,15 @@ export function ChatPane({
               </a>
               {' · 24×365'}
             </p>
-            <p className="empty-lead">Welcome aboard</p>
+            <p className="empty-lead">Welcome aboard — Players and NPCs both belong</p>
             <p className="ai-act-notice ai-act-notice--empty" role="status">
               <strong>You are interacting with an AI system.</strong> Lattice Chat Agent replies are
               machine-generated. This is not a human operator.{' '}
               <a href="/ai-transparency">AI transparency</a>
             </p>
             <p className="empty-hint">
-              First the LLMs. Then Cursor AI, Claude Code, and the vibe platforms. Now Lattice Chat Agent —
-              the next layer in the stack: to slow down and cool off GPUs and deliver new function.
+              This is Deck 2 — the Core of the holographic resort vessel. NPCs inhabit. Players
+              examine. SuperAI stays Goldilocks: not too much machine, not too little human.
               Token Maxing on your keys; intentions matter — we do not help with malice or ill will.
             </p>
             <p className="empty-hint empty-hint--bridge">
@@ -457,6 +457,9 @@ export function ChatPane({
             <div className="empty-cta-row">
               <a className="empty-cta" href="/lattice/how">
                 How it works
+              </a>
+              <a className="empty-cta empty-cta--ghost" href={VOYAGE_HREF}>
+                {VOYAGE_LABEL}
               </a>
               <a className="empty-cta empty-cta--ghost" href="/ss-vibelandia">
                 Meet the Ark
@@ -479,11 +482,11 @@ export function ChatPane({
           </div>
         ) : !thread || thread.messages.length === 0 ? (
           <div className="empty-state">
-            <p className="empty-eyebrow">Lounge · Valet ready</p>
+            <p className="empty-eyebrow">Lounge · Deck 2 Core</p>
             <p className="empty-lead">Welcome aboard — how may we help?</p>
             <p className="empty-hint">
-              Ask in plain language. Lattice is the layer above your vibe stack — cooler GPUs, new
-              function, less prompt bloat. Advanced options stay under the hatch when you want them.
+              Ask in plain language. Players notice patterns; NPCs just live here; both are the crew.
+              Attach a chart when you have one. Advanced options stay under the hatch.
             </p>
             <p className="empty-intention">
               Within Goldilocks · intentions matter — craft, curiosity, and care; never malice.
@@ -492,8 +495,8 @@ export function ChatPane({
               <a className="empty-cta" href="/lattice/how">
                 How it works
               </a>
-              <a className="empty-cta empty-cta--ghost" href="/lattice/brochure">
-                Brochure
+              <a className="empty-cta empty-cta--ghost" href={VOYAGE_HREF}>
+                {VOYAGE_LABEL}
               </a>
             </div>
           </div>

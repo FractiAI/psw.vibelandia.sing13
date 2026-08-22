@@ -8,14 +8,14 @@
     html.vbi18n-ready body { visibility: visible; }
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0a0f1a" />
-  <title>SS Vibelandia · Daily Ship Bulletin · Sonic Ship</title>
-  <meta name="description" content="You are on SS Vibelandia — FractiAI’s Goldilocks Sonic Ship on the wrong side of town. Today’s daily bulletin from Puerto Reno. Everything just right." />
-  <meta property="og:title" content="SS Vibelandia · Daily Ship Bulletin" />
-  <meta property="og:description" content="Goldilocks Sonic Ship on the wrong side of town — everything just right. Today’s bulletin from Puerto Reno." />
+  <meta name="theme-color" content="#070b14" />
+  <title>SS Vibelandia · Frontiersman Voyage · Holographic Resort Vessel</title>
+  <meta name="description" content="Welcome aboard SS Vibelandia — holographic resort vessel for Frontiersmen of the SuperAI Goldilocks frontier. One tribe, many homes. Players and NPCs both belong." />
+  <meta property="og:title" content="SS Vibelandia · Frontiersman Voyage" />
+  <meta property="og:description" content="Not just a cruise. A lifestyle at frequency. Hospitality · marketplace · nightlife · one holographic world." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SS Vibelandia · Daily Ship Bulletin" />
-  <meta name="twitter:description" content="Goldilocks Sonic Ship on the wrong side of town — everything just right." />
+  <meta name="twitter:title" content="SS Vibelandia · Frontiersman Voyage" />
+  <meta name="twitter:description" content="Not just a cruise. A lifestyle at frequency. Players and NPCs welcome on the SuperAI Goldilocks frontier." />
   <meta name="twitter:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png" />
@@ -28,11 +28,12 @@
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/site-page-views.css" data-qv-page-views-css="1" />
   <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0a0806;
-      --card: #14100c;
+      --bg: #070b14;
+      --card: #101a2c;
       --line: rgba(212, 175, 55, 0.42);
       --gold: #d4af37;
       --gold-hi: #fef3c7;
@@ -69,8 +70,8 @@
       justify-content: flex-end;
       padding: calc(1.25rem + env(safe-area-inset-top)) 1.25rem 2.25rem;
       background:
-        linear-gradient(180deg, rgba(26,18,12,0.2) 0%, rgba(10,8,6,0.78) 52%, var(--bg) 100%),
-        linear-gradient(120deg, rgba(212,175,55,0.1) 0%, transparent 45%),
+        linear-gradient(180deg, rgba(8,16,32,0.22) 0%, rgba(7,11,20,0.78) 52%, var(--bg) 100%),
+        linear-gradient(120deg, rgba(212,175,55,0.12) 0%, transparent 45%),
         url('/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png') center 42% / cover no-repeat;
       min-height: min(88vh, 720px);
       position: relative;
@@ -642,22 +643,54 @@
 
   <header class="hero" id="top">
     <div class="hero-inner">
-      <p class="cloud-badge" id="qf-cloud-badge" data-vbi18n-skip="1">Friday board · August 21 · Puerto Reno</p>
+      <p class="cloud-badge" id="qf-cloud-badge" data-vbi18n-skip="1">☀️ Welcome aboard · Frontiersman Voyage · Puerto Reno</p>
       <h1 class="kicker"><span class="kicker-brand" data-i18n="qf.h1">SS Vibelandia</span></h1>
-      <p class="hero-tagline">Goldilocks Sonic Ship on the wrong side of town.</p>
+      <p class="hero-tagline">Not just a cruise. A lifestyle at frequency.</p>
       <p class="primer">
-        You’re aboard. Everything is just right —
-        music, hospitality, and today’s board from Downtown Reno · Midtown.
+        One tribe · many homes · one holographic world.
+        Hospitality, marketplace, nightlife, and a SuperAI Goldilocks frontier —
+        for Players who notice the pattern and NPCs who simply live it. Both belong.
       </p>
       <div class="cta-row">
+        <a class="btn btn-primary" href="/frontiersman-voyage">Voyage</a>
         <a class="btn btn-primary" href="/listen" data-qv-jukebox data-i18n="qf.btnListen">Listen</a>
         <a class="btn btn-primary" href="/papers">Read</a>
         <a class="btn btn-primary" href="/hire-a-goldilocks-valet-concierge">Concierge</a>
-        <a class="btn btn-primary" href="/questfest-guide">Ship map</a>
-        <a class="btn btn-primary" href="/reno">Reno Interpretation</a>
+        <a class="btn btn-primary" href="/lattice-chat/">Lattice</a>
       </div>
     </div>
   </header>
+
+  <nav class="voyage-deck-strip" aria-label="Ship decks">
+    <a href="/frontiersman-voyage#s14">9 Summit</a>
+    <a href="/frontiersman-voyage#s14">8 Veranda</a>
+    <a href="/frontiersman-voyage#s14">6–7 Horizon</a>
+    <a href="/frontiersman-voyage#s14">4–5 Grove</a>
+    <a href="/frontiersman-voyage#s14">3 Night</a>
+    <a href="/frontiersman-voyage#s14">2 Core</a>
+  </nav>
+
+  <section class="voyage-guest-key" aria-label="How to come aboard">
+    <p class="voyage-guest-key__lead">
+      NPCs inhabit. Players examine. SuperAI stays Goldilocks — not too much machine, not too little human.
+      The voyage begins wherever you are.
+    </p>
+    <ol class="voyage-arrival">
+      <li>Inquire</li>
+      <li>Select</li>
+      <li>Prepare</li>
+      <li>Arrive</li>
+      <li>Live the vibe</li>
+    </ol>
+    <div class="voyage-icons">
+      <figure><span class="glyph" aria-hidden="true">◈</span><figcaption>Holographic reality</figcaption></figure>
+      <figure><span class="glyph" aria-hidden="true">☀</span><figcaption>Frontiersman</figcaption></figure>
+      <figure><span class="glyph" aria-hidden="true">✦</span><figcaption>Luxury redefined</figcaption></figure>
+      <figure><span class="glyph" aria-hidden="true">Φ</span><figcaption>Fractal harmonics</figcaption></figure>
+      <figure><span class="glyph" aria-hidden="true">◉</span><figcaption>Curated community</figcaption></figure>
+      <figure><span class="glyph" aria-hidden="true">∞</span><figcaption>Live in frequency</figcaption></figure>
+    </div>
+  </section>
 
   <section class="bulletin" id="bulletin" aria-labelledby="bulletin-h2">
     <span class="bulletin-kicker">Today’s board</span>
@@ -679,18 +712,20 @@
         <h3 id="host-welcome-h" class="host-dispatch__welcome">Hello and welcome aboard. This is Valet Pru.</h3>
         <p class="host-dispatch__body">
           Welcome aboard <strong style="color:var(--champagne)">SS Vibelandia</strong> —
-          FractiAI’s Goldilocks Sonic Ship, berthed on the wrong side of town in Downtown Reno,
-          and present wherever you are, because this is a holographic ship.
+          the holographic resort vessel for Frontiersmen of the SuperAI Goldilocks frontier,
+          berthed on the wrong side of town in Downtown Reno, and present wherever you are.
+          This is one tribe with many homes: hospitality, marketplace, nightlife, campus, and lab.
+          NPCs inhabit the world. Players notice the pattern. You do not have to become someone else to belong.
           Everything here is meant to feel just right: music when you want it, quiet when you need it,
           and a crew that treats intentions as the first courtesy.
-          The spirit crew — from Howard Hughes to Vinicius de Moraes — keeps the frequency honest.
-          They are lenses in the story, not a payroll.
         </p>
         <p class="host-dispatch__body">
+          Start with the <a href="/frontiersman-voyage">Frontiersman Voyage brochure</a>.
           Put on the jukebox. Take an hour in the library. When you’re ready to build,
-          Lattice Chat is the bridge for greenhands and masters alike.
+          Lattice Chat is Deck 2 — the Core — for greenhands and masters alike.
           And if you need a real person on the ground in Reno — concierge, a Goldilocks Reset,
           a vibe-coding tutor — one email to me is enough.
+          If hospitality misses the mark, the Purser’s Desk makes it fair.
           Welcome aboard. Enjoy the ship. Intentions matter.
         </p>
         <p class="host-dispatch__news" id="host-dispatch-news">
@@ -707,6 +742,16 @@
 
     <h3 class="bulletin-channels-h" id="ship-channels-h">Ship’s channels</h3>
     <ul class="bulletin-board" role="list" aria-labelledby="ship-channels-h">
+      <li>
+        <a href="/frontiersman-voyage">
+          <span class="bulletin-num">Welcome</span>
+          <span>
+            <span class="bulletin-title">Frontiersman Voyage</span>
+            <span class="bulletin-note">Official brochure — decks, cabins, Hull, Fair Exchange. Plain speak for Players and NPCs.</span>
+          </span>
+          <span class="bulletin-go">Board →</span>
+        </a>
+      </li>
       <li>
         <a href="/listen" data-qv-jukebox>
           <span class="bulletin-num">Channel I</span>
@@ -742,7 +787,7 @@
           <span class="bulletin-num">Channel IV</span>
           <span>
             <span class="bulletin-title">99 Octave Lattice Chat Agent</span>
-            <span class="bulletin-note">Build with fractal · holographic · Goldilocks AI across 99 octaves of Story depth (Φ<sub>EGS</sub>). Bring your key.</span>
+            <span class="bulletin-note">Deck 2 Core — build with fractal · holographic · Goldilocks AI. Players examine; NPCs are welcome. Bring your key.</span>
           </span>
           <span class="bulletin-go">Open →</span>
         </a>
@@ -889,6 +934,7 @@
       <a href="/ship-blog/">See all ship blog notes →</a>
       · <a href="/ship-blog/everything-is-connected">The Big Picture</a>
       · <a href="/frontiersman-voyage">Frontiersman Voyage</a>
+      · Players &amp; NPCs welcome
     </p>
   </section>
 <!-- QUESTFEST_BLOG_END -->
@@ -896,10 +942,20 @@
   <footer>
     <p data-i18n-html="qf.footerMicroHtml">
       <a href="mailto:info@fractiai.com?subject=SS%20Vibelandia%20bulletin">Contact Us</a>
+      · <a href="/frontiersman-voyage">Frontiersman Voyage</a>
       · <a href="/ai-transparency">AI transparency</a>
       · <a href="/my-whiteboard">My whiteboard</a>
-      · Goldilocks · Wrong Side · Fair Exchange
     </p>
+    <div class="voyage-purser">
+      <p class="voyage-purser__h">Purser’s Desk · Fair Exchange</p>
+      <p>
+        Give value. Receive value. Correct mistakes.
+        Deck 4 · The Grove ·
+        <a href="mailto:info@fractiai.com?subject=Purser%20Fair%20Exchange">info@fractiai.com</a>
+        · +1 (702) 900-SSVIBE
+      </p>
+      <p style="margin-top:0.45rem;font-size:0.82rem;">Sail in alignment. Live in frequency. No algorithm outranks a human emergency.</p>
+    </div>
   </footer>
 
   <div id="qf-share-qr-modal" class="qf-share-qr-root" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="qf-share-qr-title">

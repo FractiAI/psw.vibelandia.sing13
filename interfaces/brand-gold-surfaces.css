@@ -1,6 +1,7 @@
 /*
  * SS Vibelandia · sitewide brand gold on dark surfaces
  * No blue, purple, or teal text on black. Ever.
+ * Navy tokens are HULL BACKGROUND only (Frontiersman poster night sky) — ink stays gold/champagne.
  * Load on every HTML surface.
  */
 :root {
@@ -14,6 +15,8 @@
   --brand-link-hover: #fef3c7;
   --brand-walnut: #1a120c;
   --brand-bg: #0a0806;
+  --voyage-navy: #070b14;
+  --voyage-navy-mid: #0c1628;
 }
 
 html {

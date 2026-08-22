@@ -141,7 +141,10 @@ export function CollaborateShell({
   const dmHalf = (
     <div className="collab-dm-band">
       <div className="collab-dm-band__head">
-        <h2>Direct messages</h2>
+        <div>
+          <h2>Direct messages</h2>
+          <p className="collab-dm-band__note">Private Veranda threads — inhabitants and explorers, same Hull.</p>
+        </div>
         <div className="collab-dm-band__seats">
           {peers.map((p) => (
             <button
@@ -168,7 +171,10 @@ export function CollaborateShell({
         <button type="button" className="collab-topbar__back" onClick={onExit} aria-label="Back to full Lattice Chat">
           ‹
         </button>
-        <h1>Lattice Collaborate</h1>
+        <div className="collab-topbar__titles">
+          <h1>Lattice Collaborate</h1>
+          <p className="collab-topbar__deck">Deck 8 Veranda · one tribe · many homes</p>
+        </div>
         <button
           type="button"
           className="collab-topbar__gear"

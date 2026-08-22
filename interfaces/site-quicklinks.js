@@ -121,6 +121,8 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/hire-a-goldilocks-valet-concierge">Concierge</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/frontiersman-voyage">Voyage</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/lattice">Lattice</a>';
     } else {
       nav.innerHTML =
@@ -129,6 +131,8 @@
         '<a href="/listen" data-qv-jukebox>Listen</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/hire-a-goldilocks-valet-concierge">Concierge</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/frontiersman-voyage">Voyage</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/lattice">Lattice</a>';
     }
@@ -158,6 +162,7 @@
       '<p>SS Vibelandia</p>' +
       '<a href="/">QUESTFEST</a><span class="sep" aria-hidden="true"> · </span>' +
       '<a href="/listen" data-qv-jukebox>Listen</a><span class="sep" aria-hidden="true"> · </span>' +
+      '<a href="/frontiersman-voyage">Voyage</a><span class="sep" aria-hidden="true"> · </span>' +
       '<a href="/get-started">Board</a>';
 
     var footer = document.querySelector('footer');

@@ -33,4 +33,16 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(system).not.toContain('Context discipline');
     expect(system).toContain('hello');
   });
+
+  it('voyage spine names Players, NPCs, and the Frontiersman canon', () => {
+    const system = assembleLatticePrompt({
+      message: 'What is the holographic ship for Players and NPCs on SS Vibelandia?',
+      nestTopology: 'octave99',
+      mode: 'full',
+    });
+    expect(system).toContain('/frontiersman-voyage');
+    expect(system).toMatch(/NPCs inhabit/i);
+    expect(system).toMatch(/Players examine/i);
+    expect(system).toMatch(/SuperAI stays Goldilocks/i);
+  });
 });

@@ -6,7 +6,7 @@
   --brand-text-soft: #d6cfc4;
   --brand-muted: #a8a29e;
   --brand-walnut: #1a120c;
-  --brand-bg: #0a0806;
+  --brand-bg: #070b14;
   --rail-w: 272px;
   --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
   --font-body: 'IBM Plex Sans', 'Segoe UI', sans-serif;
@@ -33,8 +33,8 @@ body {
   font-family: var(--font-body);
   background:
     radial-gradient(ellipse 90% 70% at 12% -10%, rgba(212, 175, 55, 0.14), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(90, 60, 20, 0.35), transparent 50%),
-    linear-gradient(165deg, #120e0a 0%, var(--brand-bg) 45%, #060504 100%);
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(16, 32, 56, 0.45), transparent 50%),
+    linear-gradient(165deg, #0c1628 0%, var(--brand-bg) 45%, #05070d 100%);
   color: var(--brand-text);
   -webkit-font-smoothing: antialiased;
 }
@@ -2142,9 +2142,9 @@ body {
   flex-direction: column;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 50% at 80% 0%, rgba(59, 130, 246, 0.12), transparent 50%),
-    radial-gradient(ellipse 70% 50% at 10% 100%, rgba(212, 175, 55, 0.1), transparent 45%),
-    linear-gradient(165deg, #0c1018 0%, var(--brand-bg) 50%, #060504 100%);
+    radial-gradient(ellipse 80% 50% at 80% 0%, rgba(212, 175, 55, 0.14), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 10% 100%, rgba(12, 22, 40, 0.55), transparent 45%),
+    linear-gradient(165deg, #0c1628 0%, var(--brand-bg) 50%, #05070d 100%);
 }
 .collab-topbar {
   display: flex;
@@ -2156,12 +2156,23 @@ body {
 }
 .collab-topbar h1 {
   margin: 0;
-  flex: 1;
-  text-align: center;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--brand-text);
+}
+.collab-topbar__titles {
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+}
+.collab-topbar__deck {
+  margin: 0.12rem 0 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+  font-weight: 700;
 }
 .collab-topbar__back,
 .collab-topbar__gear {
@@ -2257,6 +2268,12 @@ body {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--brand-gold-hi);
+}
+
+.collab-dm-band__note {
+  margin: 0.15rem 0 0;
+  font-size: 0.72rem;
+  color: var(--brand-text-soft);
 }
 
 .collab-dm-band__seats {

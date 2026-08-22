@@ -1,0 +1,180 @@
+/*
+ * SS Vibelandia · Frontiersman voyage chrome
+ * Navy night hull + gold type (poster flag). Gold/champagne TEXT on dark — never blue/purple/teal ink.
+ * Load on guest decks that should feel like the holographic resort vessel.
+ */
+:root {
+  --voyage-navy: #070b14;
+  --voyage-navy-mid: #0c1628;
+  --voyage-navy-card: #101a2c;
+  --voyage-gold: #d4af37;
+  --voyage-gold-hi: #f0d78c;
+  --voyage-champagne: #f5e6c8;
+}
+
+.voyage-deck-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(180deg, #0c1628, #070b14);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.voyage-deck-strip a,
+.voyage-deck-strip span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.65rem;
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--voyage-gold-hi);
+  text-decoration: none;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.voyage-deck-strip a:hover {
+  border-color: var(--voyage-gold);
+  color: #fef3c7;
+  text-decoration: none;
+}
+
+.voyage-guest-key {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1.25rem 1.15rem 0.35rem;
+}
+
+.voyage-guest-key__lead {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.15rem, 2.6vw, 1.45rem);
+  line-height: 1.4;
+  color: var(--voyage-champagne);
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.voyage-arrival {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.voyage-arrival li {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--voyage-gold);
+  padding: 0.25rem 0.45rem;
+}
+
+.voyage-arrival li + li::before {
+  content: "→ ";
+  color: rgba(212, 175, 55, 0.55);
+}
+
+.voyage-icons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+}
+
+@media (min-width: 720px) {
+  .voyage-icons {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.voyage-icons figure {
+  margin: 0;
+  padding: 0.55rem 0.4rem;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 8px;
+  background: rgba(12, 22, 40, 0.65);
+}
+
+.voyage-icons .glyph {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--voyage-gold-hi);
+  margin-bottom: 0.25rem;
+}
+
+.voyage-icons figcaption {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--voyage-champagne);
+  line-height: 1.3;
+}
+
+.voyage-cabin-dir {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.voyage-cabin-dir article {
+  border-left: 3px solid rgba(212, 175, 55, 0.5);
+  padding: 0.5rem 0.75rem;
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.voyage-cabin-dir strong {
+  color: var(--voyage-gold-hi);
+}
+
+.voyage-cabin-dir .sku {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--voyage-gold);
+  font-weight: 800;
+}
+
+.voyage-purser {
+  margin: 1.25rem 0 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(16, 26, 44, 0.9), rgba(7, 11, 20, 0.95));
+  text-align: center;
+}
+
+.voyage-purser h2,
+.voyage-purser .voyage-purser__h {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--voyage-gold);
+  margin: 0 0 0.4rem;
+}
+
+.voyage-purser p {
+  margin: 0;
+  color: var(--voyage-champagne);
+  font-size: 0.92rem;
+}
+
+body.voyage-flagship {
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(212, 175, 55, 0.14), transparent 55%),
+    linear-gradient(165deg, #0c1628, var(--voyage-navy) 55%, #05070d);
+}
+
+body.voyage-flagship .wrap {
+  max-width: 46rem;
+}

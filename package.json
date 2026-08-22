@@ -84,6 +84,7 @@
     "backfill:ship-blog": "node scripts/backfill-ship-blog-posts.mjs",
     "sync:interfaces-index": "node scripts/sync-interfaces-readme-index.mjs",
     "sync:voyage-doors": "node scripts/sync-voyage-doors.mjs",
+    "generate:voyage-posters": "node scripts/generate-voyage-posters.mjs",
     "sync:voyage-directory": "node scripts/sync-voyage-directory.mjs",
     "sync:voyage-surfaces": "npm run sync:voyage-doors && npm run sync:voyage-directory",
     "sync:player-spine": "node scripts/sync-player-spine.mjs",

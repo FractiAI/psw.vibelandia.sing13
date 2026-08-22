@@ -14,6 +14,7 @@ import {
   SITE_META_DESCRIPTION,
   SITE_PAGE_TITLE,
   SITE_PRIMER_LINE,
+  renderSiteTopBannerHtml,
 } from '../lib/site-focus.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -31,6 +32,19 @@ function patchMarkedBlock(html, start, end, block) {
 
 const questfestPath = path.join(ROOT, 'interfaces', 'vibelandia-questfest.html');
 let questfest = fs.readFileSync(questfestPath, 'utf8');
+
+const bannerStart = '<!-- SITE_TOP_BANNER_START -->';
+const bannerEnd = '<!-- SITE_TOP_BANNER_END -->';
+const bannerBlock = renderSiteTopBannerHtml();
+let next = patchMarkedBlock(questfest, bannerStart, bannerEnd, bannerBlock);
+if (next) {
+  questfest = next;
+} else if (!questfest.includes('qv-top-quicklinks')) {
+  questfest = questfest.replace(
+    /<body>\s*\n\s*<a class="skip"/,
+    `<body>\n  ${bannerStart}\n  ${bannerBlock}\n  ${bannerEnd}\n\n  <a class="skip"`,
+  );
+}
 
 questfest = questfest.replace(
   /<title>SS Vibelandia · Frontiersman Voyage · Holographic Resort Vessel<\/title>/,
@@ -53,7 +67,7 @@ const heroStart = '<!-- SITE_FOCUS_HERO_START -->';
 const heroEnd = '<!-- SITE_FOCUS_HERO_END -->';
 const heroBlock = `<p class="hero-tagline">${SITE_HERO_TAGLINE}</p>
       <p class="primer">\n        ${SITE_PRIMER_LINE}\n      </p>`;
-let next = patchMarkedBlock(questfest, heroStart, heroEnd, heroBlock);
+next = patchMarkedBlock(questfest, heroStart, heroEnd, heroBlock);
 if (next) {
   questfest = next;
 } else {

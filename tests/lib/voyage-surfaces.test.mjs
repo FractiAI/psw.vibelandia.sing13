@@ -89,12 +89,12 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(expandSerialRange('ST', 601, 680)).toHaveLength(80);
   });
 
-  it('deck and cabin pages use distinct themed poster SVGs', () => {
+  it('deck and cabin pages use distinct themed AI-generated PNG posters', () => {
     const deckImages = new Set();
     for (const deck of VOYAGE_DECKS) {
       const html = read(`interfaces/voyage/${deck.slug}.html`);
       expect(html).toContain(`src="${deck.image}"`);
-      expect(deck.image).toMatch(/^\/interfaces\/assets\/voyage\/deck-.+\.svg$/);
+      expect(deck.image).toMatch(/^\/interfaces\/assets\/voyage\/deck-.+\.png$/);
       deckImages.add(deck.image);
       expect(existsSync(new URL(`../../${deck.image.replace(/^\//, '')}`, import.meta.url))).toBe(true);
     }
@@ -104,7 +104,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     for (const cabin of VOYAGE_CABINS) {
       const html = read(`interfaces/voyage/cabin-${cabin.slug}.html`);
       expect(html).toContain(`src="${cabin.image}"`);
-      expect(cabin.image).toMatch(/^\/interfaces\/assets\/voyage\/.+\.svg$/);
+      expect(cabin.image).toMatch(/^\/interfaces\/assets\/voyage\/.+\.png$/);
       cabinImages.add(cabin.image);
       expect(existsSync(new URL(`../../${cabin.image.replace(/^\//, '')}`, import.meta.url))).toBe(true);
     }
@@ -112,7 +112,7 @@ describe('Frontiersman voyage guest surfaces', () => {
 
     const directory = read('interfaces/voyage/decks.html');
     expect(directory).toContain('voyage-directory-thumb');
-    expect(directory).toContain('/interfaces/assets/voyage/voyage-map.svg');
+    expect(directory).toContain('/interfaces/assets/voyage/voyage-map.png');
   });
 
   it('QUESTFEST home ships baked-in top banner', () => {

@@ -84,7 +84,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     for (const cabin of VOYAGE_CABINS) {
       const html = read(`interfaces/voyage/cabin-${cabin.slug}.html`);
       expect(html).toContain(cabin.name);
-      expect(html).toContain('Serial register');
+      expect(html).toContain('Cabin numbers');
       expect(vercel).toContain(`"source": "${voyageCabinHref(cabin.slug)}"`);
     }
     expect(expandSerialRange('ST', 601, 680)).toHaveLength(80);

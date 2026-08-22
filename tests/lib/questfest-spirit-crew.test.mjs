@@ -21,20 +21,20 @@ describe('QUESTFEST live board date + aboard channels', () => {
     expect(js).toContain('paintToday');
   });
 
-  it('splits Aboard with you into Meet / Join / Coexist channels', () => {
+  it('tucks Meet / Join / Coexist under More aboard for Player spine', () => {
     const html = readFileSync(resolve(ROOT, 'interfaces/vibelandia-questfest.html'), 'utf8');
-    expect(html).toContain('Channel VII');
+    expect(html).toContain('Your four doors');
+    expect(html).toContain('player-more-aboard');
     expect(html).toContain('Meet the crew');
     expect(html).toContain('/meet-the-crew');
-    expect(html).toContain('Channel VIII');
     expect(html).toContain('Join the crew');
     expect(html).toContain('/join-the-crew');
-    expect(html).toContain('Channel IX');
-    expect(html).toContain('Coexisting with AI and Super AI');
+    expect(html).toContain('Coexist with AI');
     expect(html).toContain('/coexist');
-    expect(html).toContain('Which Quadrant Are You?');
-    expect(html).toContain('Get Your 99 Octave Chart');
+    expect(html).toContain('99 Octave chart');
+    expect(html).toContain('/octave99-chart');
     expect(html).not.toMatch(/<ul class="qf-spirit"/);
+    expect(html).not.toContain('Channel VII');
   });
 
   it('lists spirit crew from Howard Hughes through Vinicius de Moraes on Meet the crew', () => {

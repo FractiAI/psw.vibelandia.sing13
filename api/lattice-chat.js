@@ -53,6 +53,8 @@ let normalizeNestTopology;
 let normalizeLatticeAttachments;
 let foldAttachmentsIntoMessage;
 let buildClaudeUserContent;
+let buildCursorSendMessage;
+let latticeProviderSeesImages;
 
 async function loadLatticePromptLib() {
   if (typeof assembleLatticePrompt === 'function') return;
@@ -70,6 +72,8 @@ async function loadLatticePromptLib() {
   normalizeLatticeAttachments = att.normalizeLatticeAttachments;
   foldAttachmentsIntoMessage = att.foldAttachmentsIntoMessage;
   buildClaudeUserContent = att.buildClaudeUserContent;
+  buildCursorSendMessage = att.buildCursorSendMessage;
+  latticeProviderSeesImages = att.latticeProviderSeesImages;
 }
 
 function normalizeReasoningLens(_raw) {
@@ -2145,7 +2149,10 @@ export default async function handler(req, res) {
     const message =
       attachments.length && typeof foldAttachmentsIntoMessage === 'function'
         ? foldAttachmentsIntoMessage(rawMessage, attachments, {
-            visionCapable: provider === 'claude',
+            visionCapable:
+              typeof latticeProviderSeesImages === 'function'
+                ? latticeProviderSeesImages(provider)
+                : provider === 'claude' || provider === 'cursor',
           })
         : rawMessage;
     const recoverOnly = Boolean(body.recover);
@@ -2680,7 +2687,9 @@ export default async function handler(req, res) {
         ({ run, recovered } = await sendPromptHandlingBusy(
           Agent,
           agent,
-          prompt,
+          typeof buildCursorSendMessage === 'function'
+            ? buildCursorSendMessage(prompt, attachments)
+            : prompt,
           sendOpts,
           apiKey,
         ));
@@ -2711,10 +2720,18 @@ export default async function handler(req, res) {
           ({ run, recovered } = await sendPromptHandlingBusy(
             Agent,
             agent,
-            withGuestHonorGuard(
-              buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
-              guestSession,
-            ),
+            typeof buildCursorSendMessage === 'function'
+              ? buildCursorSendMessage(
+                  withGuestHonorGuard(
+                    buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
+                    guestSession,
+                  ),
+                  attachments,
+                )
+              : withGuestHonorGuard(
+                  buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
+                  guestSession,
+                ),
             sendOpts,
             apiKey,
           ));

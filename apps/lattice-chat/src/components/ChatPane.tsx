@@ -708,7 +708,7 @@ export function ChatPane({
           <button
             type="button"
             className="composer-attach-btn"
-            title="Attach images or text docs"
+            title="Attach images or text docs (Cursor and Claude can see images)"
             aria-label="Attach images or documents"
             disabled={!signedIn || !hasEdgeKey || (sending && sendPhase !== 'stuck')}
             onClick={() => fileInputRef.current?.click()}

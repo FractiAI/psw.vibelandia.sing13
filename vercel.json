@@ -341,6 +341,22 @@
       "destination": "/interfaces/blog-everything-is-connected-2026-08.html"
     },
     {
+      "source": "/ship-blog/frontiersman-voyage",
+      "destination": "/interfaces/blog-frontiersman-voyage-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/frontiersman-voyage/",
+      "destination": "/interfaces/blog-frontiersman-voyage-2026-08.html"
+    },
+    {
+      "source": "/frontiersman-voyage",
+      "destination": "/interfaces/frontiersman-voyage-brochure.html"
+    },
+    {
+      "source": "/frontiersman-voyage/",
+      "destination": "/interfaces/frontiersman-voyage-brochure.html"
+    },
+    {
       "source": "/ship-blog",
       "destination": "/interfaces/ship-blog-index.html"
     },

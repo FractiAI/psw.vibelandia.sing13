@@ -50,6 +50,9 @@ let buildNestDirective;
 let buildPrompt;
 let classifyAsk;
 let normalizeNestTopology;
+let normalizeLatticeAttachments;
+let foldAttachmentsIntoMessage;
+let buildClaudeUserContent;
 
 async function loadLatticePromptLib() {
   if (typeof assembleLatticePrompt === 'function') return;
@@ -63,6 +66,10 @@ async function loadLatticePromptLib() {
   buildPrompt = m.buildPrompt;
   classifyAsk = m.classifyAsk;
   normalizeNestTopology = m.normalizeNestTopology;
+  const att = await import('../lib/lattice-attachments.mjs');
+  normalizeLatticeAttachments = att.normalizeLatticeAttachments;
+  foldAttachmentsIntoMessage = att.foldAttachmentsIntoMessage;
+  buildClaudeUserContent = att.buildClaudeUserContent;
 }
 
 function normalizeReasoningLens(_raw) {
@@ -583,14 +590,32 @@ function wrapProviderAccess(access) {
   };
 }
 
-function buildClaudeMessages(message, history) {
+function buildClaudeMessages(message, history, attachments = []) {
   const prior = Array.isArray(history) ? history.slice(-HISTORY_WINDOW) : [];
   const messages = prior
     .filter((m) => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
     .map((m) => ({ role: m.role, content: String(m.content).trim() }))
     .filter((m) => m.content);
-  if (!messages.length || messages[messages.length - 1].content !== String(message || '').trim()) {
-    messages.push({ role: 'user', content: String(message || '').trim() });
+  const list =
+    typeof normalizeLatticeAttachments === 'function'
+      ? normalizeLatticeAttachments(attachments)
+      : [];
+  const userContent =
+    list.length && typeof buildClaudeUserContent === 'function'
+      ? buildClaudeUserContent(message, list)
+      : String(message || '').trim();
+  const last = messages[messages.length - 1];
+  const sameTextLast =
+    last &&
+    last.role === 'user' &&
+    typeof last.content === 'string' &&
+    typeof userContent === 'string' &&
+    last.content === userContent;
+  if (!messages.length || !sameTextLast) {
+    messages.push({ role: 'user', content: userContent });
+  } else if (Array.isArray(userContent)) {
+    // Replace string duplicate with multimodal content when attachments present.
+    messages[messages.length - 1] = { role: 'user', content: userContent };
   }
   return { prior, messages };
 }
@@ -607,8 +632,9 @@ async function runClaudeTurn({
   reasoningLens,
   stream = false,
   onEvent = null,
+  attachments = [],
 }) {
-  const { prior, messages } = buildClaudeMessages(message, history);
+  const { prior, messages } = buildClaudeMessages(message, history, attachments);
   const system = assembleLatticePrompt({
     message,
     nestTopology,
@@ -2111,10 +2137,24 @@ export default async function handler(req, res) {
       });
     }
 
-    const message = typeof body.message === 'string' ? body.message.trim() : '';
+    const rawMessage = typeof body.message === 'string' ? body.message.trim() : '';
+    const attachments =
+      typeof normalizeLatticeAttachments === 'function'
+        ? normalizeLatticeAttachments(body.attachments)
+        : [];
+    const message =
+      attachments.length && typeof foldAttachmentsIntoMessage === 'function'
+        ? foldAttachmentsIntoMessage(rawMessage, attachments, {
+            visionCapable: provider === 'claude',
+          })
+        : rawMessage;
     const recoverOnly = Boolean(body.recover);
-    if (!message && !recoverOnly) {
+    if (!message && !attachments.length && !recoverOnly) {
       return json(res, 400, { error: 'message is required' });
+    }
+    if (!message && attachments.length && !recoverOnly) {
+      // foldAttachmentsIntoMessage should always produce text when attachments exist
+      return json(res, 400, { error: 'could not read attachments' });
     }
 
     // Guard common typo (cing13) and empty overrides from Vercel env.
@@ -2209,7 +2249,7 @@ export default async function handler(req, res) {
         }
         const out = await runClaudeTurn({
           apiKey,
-          message,
+          message: rawMessage || '(See attached files.)',
           history: body.history,
           modelId,
           agentMode,
@@ -2218,6 +2258,7 @@ export default async function handler(req, res) {
           reasoningLens,
           agentRoster,
           stream,
+          attachments,
           onEvent: stream
             ? (item) => {
                 sseWrite(res, 'transcript', item);

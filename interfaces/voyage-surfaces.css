@@ -162,6 +162,119 @@
   background: rgba(212, 175, 55, 0.06);
 }
 
+.voyage-deck-door,
+.voyage-cabin-door {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 4px;
+}
+
+.voyage-deck-door:hover .deck-row,
+.voyage-cabin-door:hover article {
+  border-color: var(--voyage-gold);
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.voyage-deck-door .deck-row {
+  border-left: 3px solid rgba(212, 175, 55, 0.45);
+  padding: 0.45rem 0.75rem;
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.voyage-directory-hero {
+  margin: 0 0 1.25rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.voyage-directory-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.voyage-serial-block {
+  margin: 1.25rem 0;
+}
+
+.voyage-serial-block h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--voyage-gold);
+  margin: 0 0 0.65rem;
+}
+
+.voyage-serial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.voyage-serial {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 0.35rem 0.25rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 6px;
+  background: rgba(12, 22, 40, 0.65);
+  color: var(--voyage-gold-hi);
+}
+
+.voyage-directory-list {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.voyage-directory-list a {
+  display: block;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 8px;
+  background: rgba(12, 22, 40, 0.65);
+  text-decoration: none;
+  color: var(--voyage-champagne);
+}
+
+.voyage-directory-list a:hover {
+  border-color: var(--voyage-gold);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.voyage-directory-list .sku {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--voyage-gold);
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+}
+
+.voyage-directory-list strong {
+  color: var(--voyage-gold-hi);
+}
+
+.voyage-directory-list span {
+  display: block;
+  font-size: 0.88rem;
+  margin-top: 0.25rem;
+  color: var(--voyage-champagne);
+  opacity: 0.92;
+}
+
 .voyage-cabin-dir strong {
   color: var(--voyage-gold-hi);
 }

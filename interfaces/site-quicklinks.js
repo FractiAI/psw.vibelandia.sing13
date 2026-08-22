@@ -117,24 +117,20 @@
       nav.innerHTML =
         '<span class="qv-top-quicklinks__here">QUESTFEST</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/lattice-chat/">Lattice</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/listen" data-qv-jukebox>Listen</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/hire-a-goldilocks-valet-concierge">Concierge</a>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/frontiersman-voyage">Voyage</a>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/lattice">Lattice</a>';
+        '<a href="/voyage/decks">Voyage</a>';
     } else {
       nav.innerHTML =
         '<a href="/">QUESTFEST</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/lattice-chat/">Lattice</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/listen" data-qv-jukebox>Listen</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/hire-a-goldilocks-valet-concierge">Concierge</a>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/frontiersman-voyage">Voyage</a>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/lattice">Lattice</a>';
+        '<a href="/voyage/decks">Voyage</a>';
     }
     document.body.insertBefore(nav, document.body.firstChild);
   }

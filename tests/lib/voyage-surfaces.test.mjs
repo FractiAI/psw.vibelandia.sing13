@@ -74,7 +74,8 @@ describe('Frontiersman voyage guest surfaces', () => {
 
   it('deck and cabin directory pages list serials with rewrites', () => {
     const vercel = read('vercel.json');
-    expect(read('interfaces/voyage/decks.html')).toContain('Holographic Decks');
+    expect(read('interfaces/voyage/decks.html')).toMatch(/Voyage Map/i);
+    expect(read('interfaces/voyage/decks.html')).toContain('voyage-map-diagram');
     expect(vercel).toContain(`"source": "${voyageDirectoryHref()}"`);
     for (const deck of VOYAGE_DECKS) {
       expect(read(`interfaces/voyage/${deck.slug}.html`)).toContain(deck.label);
@@ -113,6 +114,8 @@ describe('Frontiersman voyage guest surfaces', () => {
     const directory = read('interfaces/voyage/decks.html');
     expect(directory).toContain('voyage-directory-thumb');
     expect(directory).toContain('/interfaces/assets/voyage/voyage-map.png');
+    expect(directory).toContain('Ship map · decks &amp; landfalls');
+    expect(directory).toContain('Puerto Reno');
   });
 
   it('QUESTFEST home ships baked-in top banner', () => {

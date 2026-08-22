@@ -15,7 +15,10 @@ describe('lattice-collaborate-dms', () => {
   it('maps creator and Daniel emails to seats', () => {
     expect(resolveCollabPeerId('valetpru@gmail.com')).toBe('peer_valet_pru');
     expect(resolveCollabPeerId('espressolico@gmail.com')).toBe('peer_valet_pru');
-    expect(resolveCollabPeerId('danielarifriedman@gmail.com')).toBe('peer_daniel');
+    expect(
+      resolveCollabPeerId('danielarifriedman@gmail.com'),
+      'Daniel seat needs a live Lattice guest grant — node scripts/lattice-grant-access.mjs danielarifriedman@gmail.com',
+    ).toBe('peer_daniel');
     expect(resolveCollabPeerId('unknown@example.com')).toBe(null);
   });
 

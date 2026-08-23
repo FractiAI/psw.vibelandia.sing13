@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-table-top-hep-99-octave",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.23",
+  "description": "Table-Top High-Energy Physics via 99 Octave Framework — catalog suite (standalone)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-table-top-hep-99-octave.git"
+  }
+}

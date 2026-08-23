@@ -30,14 +30,18 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured note (H-GAI/OS · 2026-08-17) leads latest-six.
-    expect(posts[0].id).toBe('synthobs-tbme-egs-hgaios-2026-08');
-    expect(posts[0].published).toBe('2026-08-17');
+    // Newest featured notes (Table-Top HEP + Magneto-Harmonic · 2026-08-23) lead latest-six.
+    expect(posts[0].published).toBe('2026-08-23');
+    expect(
+      posts.filter((p) => p.published === '2026-08-23').map((p) => p.id).sort(),
+    ).toEqual([
+      'synthobs-magneto-harmonic-stellar-99-octave-2026-08',
+      'synthobs-table-top-hep-99-octave-2026-08',
+    ]);
+    expect(posts.some((p) => p.id === 'synthobs-tbme-egs-hgaios-2026-08')).toBe(true);
     expect(posts.some((p) => p.id === 'synthobs-tbme-egs-apiary-2026-08')).toBe(true);
     expect(posts.some((p) => p.id === 'goldilocks-players-guide-2026-08')).toBe(true);
     expect(posts.some((p) => p.id.includes('synthio-mri-vs-legacy'))).toBe(true);
-    expect(posts.some((p) => p.id.includes('planetary-core-goldilocks'))).toBe(true);
-    expect(posts.some((p) => p.id.includes('metamorphic-octaves'))).toBe(true);
   });
 });
 

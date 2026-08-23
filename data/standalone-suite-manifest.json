@@ -1,8 +1,24 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-08-13",
+  "updatedAt": "2026-08-23",
   "suites": [
+    {
+      "id": "synthobs-table-top-hep-99-octave",
+      "path": "research/synthobs-table-top-hep-99-octave",
+      "github": "https://github.com/FractiAI/synthobs-table-top-hep-99-octave",
+      "description": "Table-Top High-Energy Physics via 99 Octave Framework — catalog suite",
+      "paperIds": ["synthobs-table-top-hep-99-octave-2026-08"],
+      "extraDocs": []
+    },
+    {
+      "id": "synthobs-magneto-harmonic-stellar-99-octave",
+      "path": "research/synthobs-magneto-harmonic-stellar-99-octave",
+      "github": "https://github.com/FractiAI/synthobs-magneto-harmonic-stellar-99-octave",
+      "description": "Magneto-Harmonic Stellar Physics & Nuclear Interactions — 99 Octave catalog suite",
+      "paperIds": ["synthobs-magneto-harmonic-stellar-99-octave-2026-08"],
+      "extraDocs": []
+    },
     {
       "id": "synthio-mri-vs-legacy-perf",
       "path": "research/synthio-mri-vs-legacy-perf",

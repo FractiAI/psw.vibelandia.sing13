@@ -965,6 +965,22 @@
       "destination": "/interfaces/blog-planetary-core-goldilocks-2026-08.html"
     },
     {
+      "source": "/ship-blog/table-top-hep",
+      "destination": "/interfaces/blog-table-top-hep-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/table-top-hep/",
+      "destination": "/interfaces/blog-table-top-hep-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/magneto-harmonic-stellar",
+      "destination": "/interfaces/blog-magneto-harmonic-stellar-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/magneto-harmonic-stellar/",
+      "destination": "/interfaces/blog-magneto-harmonic-stellar-2026-08.html"
+    },
+    {
       "source": "/ship-blog/goldilocks-players-guide",
       "destination": "/interfaces/blog-goldilocks-players-guide-2026-08.html"
     },

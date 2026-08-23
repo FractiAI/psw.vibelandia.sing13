@@ -7,11 +7,13 @@ import {
 import { normalizeRepoLinksInHtml } from '../../lib/whitepaper-render.mjs';
 
 describe('standalone-suite-manifest', () => {
-  it('lists Synthio, Metamorphic, and Planetary-core standalone suites', () => {
+  it('lists Synthio, Metamorphic, Planetary-core, and HEP/stellar standalone suites', () => {
     const m = loadStandaloneSuiteManifest();
     expect(m.suites.map((s) => s.id).sort()).toEqual([
       'synthio-mri-cloud-antenna',
       'synthio-mri-vs-legacy-perf',
+      'synthobs-magneto-harmonic-stellar-99-octave',
+      'synthobs-table-top-hep-99-octave',
       'synthobs-tbme-metamorphic-octaves',
       'synthobs-tbme-planetary-core-goldilocks',
     ]);

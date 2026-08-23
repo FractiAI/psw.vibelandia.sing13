@@ -53,6 +53,8 @@
     "research:synthobs-cmos-protonic-99-octave-omni-lattice": "node research/synthobs-cmos-protonic-99-octave-omni-lattice/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-metamorphic-octaves": "node research/synthobs-tbme-metamorphic-octaves/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-planetary-core-goldilocks": "node research/synthobs-tbme-planetary-core-goldilocks/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-table-top-hep-99-octave": "node research/synthobs-table-top-hep-99-octave/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-magneto-harmonic-stellar-99-octave": "node research/synthobs-magneto-harmonic-stellar-99-octave/scripts/run_empirical_pipeline.mjs",
     "publish:standalone:metamorphic-octaves": "node scripts/publish-standalone-suite.mjs synthobs-tbme-metamorphic-octaves",
     "publish:standalone:metamorphic-octaves:create": "node scripts/publish-standalone-suite.mjs synthobs-tbme-metamorphic-octaves --create-repo",
     "publish:standalone:planetary-core-goldilocks": "node scripts/publish-standalone-suite.mjs synthobs-tbme-planetary-core-goldilocks",

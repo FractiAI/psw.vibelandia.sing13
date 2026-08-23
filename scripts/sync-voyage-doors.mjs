@@ -20,7 +20,6 @@ const START = '<!-- VOYAGE_GUEST_KEY_START -->';
 const END = '<!-- VOYAGE_GUEST_KEY_END -->';
 
 const PATCH_TARGETS = [
-  'interfaces/vibelandia-questfest.html',
   'interfaces/frontiersman-voyage-brochure.html',
   'interfaces/blog-frontiersman-voyage-2026-08.html',
 ];

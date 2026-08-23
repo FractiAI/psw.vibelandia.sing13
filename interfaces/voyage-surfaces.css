@@ -222,6 +222,122 @@
   background: #070b14;
 }
 
+.voyage-map-prelude {
+  margin: 0 0 1.35rem;
+  padding: 0 0 0.25rem;
+}
+
+.voyage-map-prelude h2 {
+  margin: 0 0 0.65rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--voyage-gold);
+}
+
+.voyage-map-prelude p {
+  margin: 0 0 0.75rem;
+  max-width: 42rem;
+  line-height: 1.55;
+  color: rgba(245, 240, 230, 0.92);
+}
+
+.voyage-map-prelude__lede {
+  font-size: 1.05rem;
+}
+
+.voyage-map-prelude__loop {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.voyage-map-prelude__hint {
+  margin: 0 0 0.65rem !important;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.85) !important;
+}
+
+.voyage-map-choice-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.voyage-map-choice-menu li a {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(7, 11, 20, 0.55));
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.voyage-map-choice-menu li a:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.14), rgba(7, 11, 20, 0.7));
+}
+
+.voyage-map-choice-menu li a strong {
+  color: var(--voyage-gold);
+  font-size: 1.02rem;
+}
+
+.voyage-map-choice-menu li a span:not(.voyage-map-crest__glyph) {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: rgba(245, 240, 230, 0.78);
+}
+
+.voyage-map-choice-menu--crests li a {
+  grid-template-columns: 1.6rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.55rem;
+  align-items: start;
+}
+
+.voyage-map-crest__glyph {
+  grid-row: 1 / span 2;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--voyage-gold);
+}
+
+.voyage-map-choice-menu--crests li a strong {
+  grid-column: 2;
+}
+
+.voyage-map-choice-menu--crests li a span:not(.voyage-map-crest__glyph) {
+  grid-column: 2;
+}
+
+.voyage-map-choice-menu--arrival {
+  counter-reset: voyage-arrival;
+}
+
+.voyage-map-choice-menu--arrival > li {
+  counter-increment: voyage-arrival;
+}
+
+.voyage-map-choice-menu--arrival > li a strong::before {
+  content: counter(voyage-arrival) '. ';
+  opacity: 0.7;
+}
+
+@media (min-width: 720px) {
+  .voyage-map-choice-menu--crests,
+  .voyage-map-choice-menu--do {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .voyage-map-diagram {
   margin: 0 0 1.5rem;
   padding: 1rem 1.1rem 1.15rem;

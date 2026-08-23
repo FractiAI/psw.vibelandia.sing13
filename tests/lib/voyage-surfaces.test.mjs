@@ -74,8 +74,18 @@ describe('Frontiersman voyage guest surfaces', () => {
 
   it('deck and cabin directory pages list serials with rewrites', () => {
     const vercel = read('vercel.json');
-    expect(read('interfaces/voyage/decks.html')).toMatch(/Voyage Map/i);
-    expect(read('interfaces/voyage/decks.html')).toContain('voyage-map-diagram');
+    const directory = read('interfaces/voyage/decks.html');
+    expect(directory).toMatch(/Voyage Map/i);
+    expect(directory).toContain('voyage-map-prelude');
+    expect(directory).toContain('The voyage · grand narrative');
+    expect(directory).toContain('Experiences · menus of things to do');
+    expect(directory).toContain('voyage-map-diagram');
+    const storyIdx = directory.indexOf('voyage-story-h');
+    const homesIdx = directory.indexOf('voyage-homes-h');
+    const deckListIdx = directory.indexOf('voyage-directory-list');
+    expect(storyIdx).toBeGreaterThan(-1);
+    expect(homesIdx).toBeGreaterThan(storyIdx);
+    expect(deckListIdx).toBeGreaterThan(homesIdx);
     expect(vercel).toContain(`"source": "${voyageDirectoryHref()}"`);
     for (const deck of VOYAGE_DECKS) {
       expect(read(`interfaces/voyage/${deck.slug}.html`)).toContain(deck.label);

@@ -30,7 +30,6 @@ const DECK_STRIP_END = '<!-- VOYAGE_DECK_STRIP_END -->';
 
 const PATCH_DECK_DIR = ['interfaces/frontiersman-voyage-brochure.html'];
 const PATCH_DECK_STRIP = [
-  'interfaces/vibelandia-questfest.html',
   'interfaces/blog-frontiersman-voyage-2026-08.html',
 ];
 

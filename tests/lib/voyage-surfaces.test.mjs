@@ -28,14 +28,12 @@ describe('Frontiersman voyage guest surfaces', () => {
   it('QUESTFEST home greets as the holographic resort vessel', () => {
     const html = read('interfaces/vibelandia-questfest.html');
     expect(html).toContain('voyage-surfaces.css');
-    expect(html).toContain('voyage-deck-strip');
+    expect(html).not.toContain('voyage-deck-strip');
     expect(html).toContain('/frontiersman-voyage');
     expect(html).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
     expect(html).toContain('Your four doors');
     expect(html).toContain('Purser');
     expect(html).toContain('/voyage/inquire');
-    expect(html).toContain('/voyage/decks');
-    expect(html).toContain('/voyage/deck-9-summit');
     expect(html).toContain('/voyage/decks');
     expect(html).not.toContain('PH-001');
   });

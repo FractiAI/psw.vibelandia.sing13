@@ -453,6 +453,38 @@
       "destination": "/interfaces/voyage/decks.html"
     },
     {
+      "source": "/jukebox",
+      "destination": "/interfaces/questfest-bridge/#/listen"
+    },
+    {
+      "source": "/jukebox/",
+      "destination": "/interfaces/questfest-bridge/#/listen"
+    },
+    {
+      "source": "/journey",
+      "destination": "/interfaces/voyage/decks.html"
+    },
+    {
+      "source": "/journey/",
+      "destination": "/interfaces/voyage/decks.html"
+    },
+    {
+      "source": "/library",
+      "destination": "/interfaces/library.html"
+    },
+    {
+      "source": "/library/",
+      "destination": "/interfaces/library.html"
+    },
+    {
+      "source": "/creator-studio",
+      "destination": "/interfaces/creator-studio.html"
+    },
+    {
+      "source": "/creator-studio/",
+      "destination": "/interfaces/creator-studio.html"
+    },
+    {
       "source": "/voyage/deck-9-summit",
       "destination": "/interfaces/voyage/deck-9-summit.html"
     },

@@ -23,7 +23,7 @@ describe('QUESTFEST live board date + aboard channels', () => {
 
   it('tucks Meet / Join / Coexist under More aboard for Player spine', () => {
     const html = readFileSync(resolve(ROOT, 'interfaces/vibelandia-questfest.html'), 'utf8');
-    expect(html).toContain('Your four doors');
+    expect(html).toContain('Your cruise line · four doors');
     expect(html).toContain('player-more-aboard');
     expect(html).toContain('Meet the crew');
     expect(html).toContain('/meet-the-crew');

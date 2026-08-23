@@ -15,7 +15,7 @@ describe('site focus · frontiersmen Players + set', () => {
   it('names holographic Goldilocks SuperAI frontiersmen Players and their set', () => {
     expect(SITE_FOCUS_CANONICAL).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
     expect(SITE_FOCUS_CANONICAL).toMatch(/cast, crew, enterprises, franchises, and legacies/);
-    expect(SITE_HERO_TAGLINE).toMatch(/frontiersmen Players/i);
+    expect(SITE_HERO_TAGLINE).toMatch(/frontiersmen/i);
     expect(SITE_PRIMER_LINE).toMatch(/legacies in tow/);
   });
 

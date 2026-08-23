@@ -117,20 +117,24 @@
       nav.innerHTML =
         '<span class="qv-top-quicklinks__here">SS VIBELANDIA</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/lattice-chat/">Lattice</a>' +
+        '<a href="/journey">Journey</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/listen" data-qv-jukebox>Listen</a>' +
+        '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/voyage/decks">Voyage</a>';
+        '<a href="/library">Library</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/creator-studio">Creator Studio</a>';
     } else {
       nav.innerHTML =
         '<a href="/">SS VIBELANDIA</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/lattice-chat/">Lattice</a>' +
+        '<a href="/journey">Journey</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/listen" data-qv-jukebox>Listen</a>' +
+        '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/voyage/decks">Voyage</a>';
+        '<a href="/library">Library</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/creator-studio">Creator Studio</a>';
     }
     document.body.insertBefore(nav, document.body.firstChild);
   }

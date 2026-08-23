@@ -24,7 +24,8 @@ describe('Player spine · holographic Player home', () => {
     expect(html).toContain('Decks · cabins · crests');
     expect(html).not.toContain('id="ship-crew"');
     expect(html).not.toContain('class="o99-door"');
-    expect(html).toMatch(/Three notes worth your Player time/);
+    expect(html).toMatch(/Six newest papers/);
+    expect(html).toContain('id="ship-blog"');
     expect(renderPlayerChannelsHtml()).toContain('Lattice Chat');
   });
 

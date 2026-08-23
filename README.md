@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-22** · **206** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-23** · **208** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -287,6 +287,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as magnets that hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | When life cooks you, you can come out denser · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud racks as an antenna story — MRI simulation, not a magnet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html`](/interfaces/blog-mri-vs-legacy-stopwatch-2026-08.html) | We timed two ways of thinking in silicon. One was faster. · Ship blog · SS Vibelandia |
@@ -341,6 +342,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-synthobs-unified-neutronic-agent.html`](/interfaces/blog-synthobs-unified-neutronic-agent.html) | The Unified Neutronic Agent Paper · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-x-chromosome-holographic.html`](/interfaces/blog-synthobs-x-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-synthobs-y-chromosome-holographic.html`](/interfaces/blog-synthobs-y-chromosome-holographic.html) | Decoded Genomic Script · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-table-top-hep-2026-08.html`](/interfaces/blog-table-top-hep-2026-08.html) | What if the collider fit on a workbench? · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-blackhole-filaments-reno.html`](/interfaces/blog-tbme-blackhole-filaments-reno.html) | Toroidal Micro-Black Hole Dynamics & Filamental Field Radiations · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-blackhole-magnetic-layer.html`](/interfaces/blog-tbme-blackhole-magnetic-layer.html) | Identity of the Event Horizon and the Magnetic Vector Layer · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-egs-apiary.html`](/interfaces/blog-tbme-egs-apiary.html) | If AI keeps the hive, humans still make the honey · Ship blog · SS Vibelandia |
@@ -496,7 +498,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/voyage/arrive.html`](/interfaces/voyage/arrive.html) | Arrive — first day aboard · SS Vibelandia Voyage |
+| [`/interfaces/voyage/arrive.html`](/interfaces/voyage/arrive.html) | Arrive · SS Vibelandia Voyage |
 | [`/interfaces/voyage/cabin-cc-201-224.html`](/interfaces/voyage/cabin-cc-201-224.html) | CC-201–224 · Captiva Cove Beachfront Cabins · SS Vibelandia |
 | [`/interfaces/voyage/cabin-gm-401-450.html`](/interfaces/voyage/cabin-gm-401-450.html) | GM-401–450 · Grove Mezzanine Lofts · SS Vibelandia |
 | [`/interfaces/voyage/cabin-ph-001.html`](/interfaces/voyage/cabin-ph-001.html) | PH-001 · Captain’s Grand Penthouse · SS Vibelandia |
@@ -511,15 +513,15 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/voyage/deck-6-7-horizon.html`](/interfaces/voyage/deck-6-7-horizon.html) | Decks 6–7 — Horizon · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-8-veranda.html`](/interfaces/voyage/deck-8-veranda.html) | Deck 8 — Veranda · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-9-summit.html`](/interfaces/voyage/deck-9-summit.html) | Deck 9 — Summit · SS Vibelandia Voyage |
-| [`/interfaces/voyage/decks.html`](/interfaces/voyage/decks.html) | Voyage Map · Holographic Decks & Cabins · SS Vibelandia |
+| [`/interfaces/voyage/decks.html`](/interfaces/voyage/decks.html) | Voyage Map · Story · Experiences · Homes · SS Vibelandia |
 | [`/interfaces/voyage/fractal-harmonics.html`](/interfaces/voyage/fractal-harmonics.html) | Φ Fractal harmonics · SS Vibelandia Voyage |
 | [`/interfaces/voyage/frontiersman.html`](/interfaces/voyage/frontiersman.html) | ☀ Frontiersman · SS Vibelandia Voyage |
 | [`/interfaces/voyage/holographic-reality.html`](/interfaces/voyage/holographic-reality.html) | ◈ Holographic reality · SS Vibelandia Voyage |
-| [`/interfaces/voyage/inquire.html`](/interfaces/voyage/inquire.html) | Inquire — ask the ship · SS Vibelandia Voyage |
+| [`/interfaces/voyage/inquire.html`](/interfaces/voyage/inquire.html) | Inquire · SS Vibelandia Voyage |
 | [`/interfaces/voyage/live-in-frequency.html`](/interfaces/voyage/live-in-frequency.html) | ∞ Live in frequency · SS Vibelandia Voyage |
-| [`/interfaces/voyage/live-the-vibe.html`](/interfaces/voyage/live-the-vibe.html) | Live the vibe — daily life at frequency · SS Vibelandia Voyage |
+| [`/interfaces/voyage/live-the-vibe.html`](/interfaces/voyage/live-the-vibe.html) | Live the vibe · SS Vibelandia Voyage |
 | [`/interfaces/voyage/luxury-redefined.html`](/interfaces/voyage/luxury-redefined.html) | ✦ Luxury redefined · SS Vibelandia Voyage |
-| [`/interfaces/voyage/prepare.html`](/interfaces/voyage/prepare.html) | Prepare — pack for Goldilocks · SS Vibelandia Voyage |
-| [`/interfaces/voyage/select.html`](/interfaces/voyage/select.html) | Select — choose your home on the ship · SS Vibelandia Voyage |
+| [`/interfaces/voyage/prepare.html`](/interfaces/voyage/prepare.html) | Prepare · SS Vibelandia Voyage |
+| [`/interfaces/voyage/select.html`](/interfaces/voyage/select.html) | Select · SS Vibelandia Voyage |
 
 <!-- interfaces-index:end -->

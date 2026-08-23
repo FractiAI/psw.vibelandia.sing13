@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-magneto-harmonic-stellar-99-octave",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.23",
+  "description": "Magneto-Harmonic Stellar Physics & Nuclear Interactions — 99 Octave catalog suite (standalone)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-magneto-harmonic-stellar-99-octave.git"
+  }
+}

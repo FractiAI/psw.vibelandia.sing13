@@ -51,6 +51,12 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('/voyage/cabin-ph-001');
     expect(html).toContain('voyage-deck-door');
     expect(html).toContain('id="cabins"');
+    expect(html).toContain('id="prospectus"');
+    expect(html).toContain('id="landfalls"');
+    expect(html).toMatch(/Official Prospectus/i);
+    expect(html).toMatch(/Borikén|Puerto Rico/i);
+    expect(html).toContain('3664');
+    expect(html).toContain('3923');
   });
 
   it('ship-blog on-ramp stays plain for Players and NPCs', () => {
@@ -59,6 +65,8 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('SEE → RECOGNIZE → INTERPRET → REFLECT → ACT → SEE AGAIN');
     expect(html).toContain('/lattice-chat/');
     expect(html).toContain('/voyage/frontiersman');
+    expect(html).toMatch(/grand arc/i);
+    expect(html).toContain('/frontiersman-voyage#prospectus');
   });
 
   it('each voyage door has a detail page and vercel rewrite', () => {
@@ -78,6 +86,10 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(directory).toContain('The voyage · grand narrative');
     expect(directory).toContain('Experiences · menus of things to do');
     expect(directory).toContain('voyage-map-diagram');
+    expect(directory).toContain('voyage-arc-1');
+    expect(directory).toMatch(/Official Prospectus/i);
+    expect(directory).toMatch(/Borikén|Puerto Rico/i);
+    expect(directory).toContain('432 Hz');
     const storyIdx = directory.indexOf('voyage-story-h');
     const homesIdx = directory.indexOf('voyage-homes-h');
     const deckListIdx = directory.indexOf('voyage-directory-list');

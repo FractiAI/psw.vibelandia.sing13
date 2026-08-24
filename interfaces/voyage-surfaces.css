@@ -236,6 +236,14 @@
   color: var(--voyage-gold);
 }
 
+.voyage-map-prelude h3 {
+  margin: 1rem 0 0.45rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  font-weight: 600;
+  color: var(--voyage-champagne, #e8d5a3);
+}
+
 .voyage-map-prelude p {
   margin: 0 0 0.75rem;
   max-width: 42rem;
@@ -250,6 +258,14 @@
 .voyage-map-prelude__loop {
   font-size: 0.95rem;
   letter-spacing: 0.02em;
+}
+
+.voyage-map-prelude__soundtrack {
+  font-size: 0.92rem;
+  padding: 0.65rem 0.85rem;
+  border-left: 3px solid rgba(212, 175, 55, 0.45);
+  background: rgba(212, 175, 55, 0.06);
+  max-width: 42rem;
 }
 
 .voyage-map-prelude__hint {

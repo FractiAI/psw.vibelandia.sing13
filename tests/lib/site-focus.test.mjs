@@ -16,7 +16,8 @@ describe('site focus · frontiersmen Players + set', () => {
     expect(SITE_FOCUS_CANONICAL).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
     expect(SITE_FOCUS_CANONICAL).toMatch(/cast, crew, enterprises, franchises, and legacies/);
     expect(SITE_HERO_TAGLINE).toMatch(/frontiersmen/i);
-    expect(SITE_PRIMER_LINE).toMatch(/legacies in tow/);
+    expect(SITE_PRIMER_LINE).toMatch(/Official Prospectus arc/i);
+    expect(SITE_PRIMER_LINE).toMatch(/Lifelong Boy.s Night Out/i);
   });
 
   it('QUESTFEST home and brochure lead with site focus', () => {

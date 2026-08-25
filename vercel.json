@@ -453,6 +453,30 @@
       "destination": "/interfaces/voyage/decks.html"
     },
     {
+      "source": "/omniverse-canvas",
+      "destination": "/interfaces/omniverse-canvas.html"
+    },
+    {
+      "source": "/omniverse-canvas/",
+      "destination": "/interfaces/omniverse-canvas.html"
+    },
+    {
+      "source": "/art",
+      "destination": "/interfaces/omniverse-canvas.html"
+    },
+    {
+      "source": "/art/",
+      "destination": "/interfaces/omniverse-canvas.html"
+    },
+    {
+      "source": "/canvas",
+      "destination": "/interfaces/omniverse-canvas.html"
+    },
+    {
+      "source": "/canvas/",
+      "destination": "/interfaces/omniverse-canvas.html"
+    },
+    {
       "source": "/jukebox",
       "destination": "/interfaces/questfest-bridge/#/listen"
     },

@@ -125,7 +125,7 @@
       nav.innerHTML =
         '<span class="qv-top-quicklinks__here">Canvas</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/questfest">Enter SS Vibelandia</a>' +
+        '<a href="/questfest">SS Vibelandia</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +

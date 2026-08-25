@@ -36,21 +36,25 @@ describe('Player spine · holographic Player home', () => {
   it('site quicklinks board the ship at /questfest and keep Canvas at /', () => {
     const js = read('interfaces/site-quicklinks.js');
     expect(js).toContain('SS VIBELANDIA');
-    expect(js).toContain('Enter SS Vibelandia');
+    expect(js).toContain("href=\"/questfest\">SS Vibelandia</a>");
     expect(js).toContain("href=\"/questfest\"");
     expect(js).toContain("href=\"/\"");
     expect(js.indexOf('href="/journey"')).toBeGreaterThan(-1);
     expect(js.indexOf('href="/jukebox"')).toBeGreaterThan(js.indexOf('href="/journey"'));
   });
 
-  it('moves the night-job welcome onto the Canvas landing, not the ship board', () => {
+  it('keeps the art exhibit as landing; night-job is the welcome; SS Vibelandia is a menu', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
     const ship = read('interfaces/vibelandia-questfest.html');
+    const titleAt = canvas.indexOf('A holographic camp for the whole sky');
     const welcomeAt = canvas.indexOf('id="welcome"');
     const stageAt = canvas.indexOf('id="stage-h"');
+    expect(canvas).toContain('A holographic camp for the whole sky');
+    expect(canvas).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(canvas).toContain('For those of you who know me from my night job');
-    expect(canvas).toContain('Hello and welcome. This is Valet Pru.');
-    expect(welcomeAt).toBeGreaterThan(-1);
+    expect(canvas).toContain('href="/questfest">SS Vibelandia</a>');
+    expect(titleAt).toBeGreaterThan(-1);
+    expect(welcomeAt).toBeGreaterThan(titleAt);
     expect(stageAt).toBeGreaterThan(welcomeAt);
     expect(ship).not.toContain('For those of you who know me from my night job');
     expect(ship).toContain('Know me from the club?');

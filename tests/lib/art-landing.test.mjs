@@ -23,7 +23,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(st.isSymbolicLink()).toBe(true);
     expect(realpathSync(indexPath)).toBe(realpathSync(join(ROOT, 'interfaces/omniverse-canvas.html')));
     const html = read('index.html');
+    expect(html).toContain('A holographic camp for the whole sky');
     expect(html).toContain('For those of you who know me from my night job');
+    expect(html).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(html).not.toContain('url=/interfaces/vibelandia-questfest.html');
     expect(html).not.toContain("location.replace('/interfaces/vibelandia-questfest.html')");
   });

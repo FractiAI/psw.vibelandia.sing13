@@ -38,12 +38,17 @@
     var path = (loc.pathname || '/').replace(/\/index\.html$/i, '').replace(/\.html$/i, '') || '/';
     if (path.length > 1 && path.charAt(path.length - 1) === '/') path = path.slice(0, -1);
     if (path.charAt(0) !== '/') path = '/' + path;
-    // QUESTFEST landing aliases (site root is the deck, not the jukebox)
+    // Art landing aliases (site root is Omniversal Canvas)
     if (
-      path === '/questfest' ||
-      path === '/interfaces/vibelandia-questfest'
+      path === '/omniverse-canvas' ||
+      path === '/art' ||
+      path === '/canvas' ||
+      path === '/interfaces/omniverse-canvas'
     ) {
       path = '/';
+    }
+    if (path === '/interfaces/vibelandia-questfest') {
+      path = '/questfest';
     }
     // Same jukebox surface at /listen and questfest-bridge
     if (

@@ -42,4 +42,18 @@ describe('Player spine · holographic Player home', () => {
     expect(js.indexOf('href="/journey"')).toBeGreaterThan(-1);
     expect(js.indexOf('href="/jukebox"')).toBeGreaterThan(js.indexOf('href="/journey"'));
   });
+
+  it('moves the night-job welcome onto the Canvas landing, not the ship board', () => {
+    const canvas = read('interfaces/omniverse-canvas.html');
+    const ship = read('interfaces/vibelandia-questfest.html');
+    const welcomeAt = canvas.indexOf('id="welcome"');
+    const stageAt = canvas.indexOf('id="stage-h"');
+    expect(canvas).toContain('For those of you who know me from my night job');
+    expect(canvas).toContain('Hello and welcome. This is Valet Pru.');
+    expect(welcomeAt).toBeGreaterThan(-1);
+    expect(stageAt).toBeGreaterThan(welcomeAt);
+    expect(ship).not.toContain('For those of you who know me from my night job');
+    expect(ship).toContain('Know me from the club?');
+    expect(ship).toContain('href="/"');
+  });
 });

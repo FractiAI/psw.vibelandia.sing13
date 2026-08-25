@@ -997,6 +997,22 @@
       "destination": "/interfaces/blog-planetary-core-goldilocks-2026-08.html"
     },
     {
+      "source": "/ship-blog/infinite-octaves-omniversal",
+      "destination": "/interfaces/blog-infinite-octaves-omniversal-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/infinite-octaves-omniversal/",
+      "destination": "/interfaces/blog-infinite-octaves-omniversal-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/official-prospectus",
+      "destination": "/interfaces/blog-official-prospectus-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/official-prospectus/",
+      "destination": "/interfaces/blog-official-prospectus-2026-08.html"
+    },
+    {
       "source": "/ship-blog/table-top-hep",
       "destination": "/interfaces/blog-table-top-hep-2026-08.html"
     },

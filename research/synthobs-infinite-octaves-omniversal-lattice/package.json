@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-infinite-octaves-omniversal-lattice",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.25",
+  "description": "Infinite Octaves Omniversal Lattice Chat Agent — product upgrade catalog suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-infinite-octaves-omniversal-lattice.git"
+  }
+}

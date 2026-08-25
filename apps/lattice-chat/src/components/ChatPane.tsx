@@ -317,7 +317,7 @@ export function ChatPane({
                   'Lattice Chat'
                 ) : (
                   <>
-                    <span className="chat-wordmark__full">Lattice Chat Agent V1.618</span>
+                    <span className="chat-wordmark__full">Infinite Octaves Omniversal Lattice Chat</span>
                     <span className="chat-wordmark__short">Lattice</span>
                   </>
                 )}
@@ -482,7 +482,7 @@ export function ChatPane({
             <p className="empty-eyebrow">Bridge access</p>
             <p className="empty-lead">Bring your key to the bridge</p>
             <p className="empty-hint">
-              <strong>Your key is your password</strong> for 99 Octave Omni-Lattice Chat — paste a
+              <strong>Your key is your password</strong> for Infinite Octaves Omniversal Lattice Chat — paste a
               Cursor, Claude, or Gemini key for this device. It stays with you. No separate
               passwords to manage. We never store it on our server — Fair Exchange, your edge.
             </p>

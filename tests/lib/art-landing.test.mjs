@@ -28,6 +28,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('Think Burning Man minus the fees and minus corporate and minus the costs');
     expect(html).not.toContain('Valet Pru · Omniversal Canvas');
     expect(html).not.toContain('Skip to exhibit');
+    expect(html).not.toContain('qv-top-quicklinks__here">Canvas');
+    expect(html).toContain('Host a walk-in interactive show');
+    expect(html).toContain('Install a lasting room');
     expect(html).toContain('For the new SuperAI Frontiersman');
     expect(html).toContain('Holographic Convergence Core');
     expect(html).toContain('Who you call you');

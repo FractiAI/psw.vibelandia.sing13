@@ -1,6 +1,6 @@
 /** Injects top SS VIBELANDIA · Listen quicklinks (in-flow) + footer Bulletin Board.
  * Skip pages that already ship their own primary nav (hero / brochure / ark).
- * Canonical doors: / · /listen · /lattice · Concierge — never a separate “Bridge”.
+ * Canonical doors: / (Canvas art landing) · /questfest (SS Vibelandia) · /listen · /lattice — never a separate “Bridge”.
  * Also boots live i18n (language bar + surface/paper translation) when missing.
  */
 (function () {
@@ -66,8 +66,16 @@
 
   var path = window.location.pathname || '';
   var onBridge = path.indexOf('questfest-bridge') !== -1;
-  var onQuestfestHome =
+  var onArtLanding =
     path === '/' ||
+    path === '/omniverse-canvas' ||
+    path === '/omniverse-canvas/' ||
+    path === '/art' ||
+    path === '/art/' ||
+    path === '/canvas' ||
+    path === '/canvas/' ||
+    path.endsWith('omniverse-canvas.html');
+  var onQuestfestHome =
     path.endsWith('vibelandia-questfest.html') ||
     path.endsWith('/vibelandia-questfest') ||
     path === '/questfest' ||
@@ -113,13 +121,26 @@
     var nav = document.createElement('nav');
     nav.className = 'qv-top-quicklinks';
     nav.setAttribute('aria-label', 'Site');
-    if (onQuestfestHome) {
+    if (onArtLanding) {
       nav.innerHTML =
-        '<span class="qv-top-quicklinks__here">SS VIBELANDIA</span>' +
+        '<span class="qv-top-quicklinks__here">Canvas</span>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/questfest">Enter SS Vibelandia</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/omniverse-canvas">Canvas</a>' +
+        '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/library">Library</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/creator-studio">Creator Studio</a>';
+    } else if (onQuestfestHome) {
+      nav.innerHTML =
+        '<span class="qv-top-quicklinks__here">SS VIBELANDIA</span>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/">Canvas</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/journey">Journey</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
@@ -128,11 +149,11 @@
         '<a href="/creator-studio">Creator Studio</a>';
     } else {
       nav.innerHTML =
-        '<a href="/">SS VIBELANDIA</a>' +
+        '<a href="/questfest">SS VIBELANDIA</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/omniverse-canvas">Canvas</a>' +
+        '<a href="/">Canvas</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
@@ -148,6 +169,7 @@
     if (
       path.includes('turner-bison-herd-management') ||
       path.includes('bulletin-board') ||
+      onArtLanding ||
       onQuestfestHome ||
       path.includes('ss-vibelandia') ||
       path.includes('noahs-ark') ||
@@ -164,7 +186,8 @@
     nav.setAttribute('aria-label', 'Global quick links');
     nav.innerHTML =
       '<p>SS Vibelandia</p>' +
-      '<a href="/">SS VIBELANDIA</a><span class="sep" aria-hidden="true"> · </span>' +
+      '<a href="/questfest">SS VIBELANDIA</a><span class="sep" aria-hidden="true"> · </span>' +
+      '<a href="/">Canvas</a><span class="sep" aria-hidden="true"> · </span>' +
       '<a href="/listen" data-qv-jukebox>Listen</a><span class="sep" aria-hidden="true"> · </span>' +
       '<a href="/frontiersman-voyage">Voyage</a><span class="sep" aria-hidden="true"> · </span>' +
       '<a href="/get-started">Board</a>';

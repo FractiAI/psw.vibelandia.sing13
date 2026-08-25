@@ -12,9 +12,9 @@ export const LATTICE_ACCESS_EMAIL =
   CREATOR_EMAIL;
 
 export const LATTICE_ACCESS_MAILTO = `mailto:${LATTICE_ACCESS_EMAIL}?subject=${encodeURIComponent(
-  'Lattice Chat Agent V1.618 — free trial',
+  'Infinite Octaves Omniversal Lattice Chat Agent V1.618 — free trial',
 )}&body=${encodeURIComponent(
-  'Hello,\n\nI would like a free trial of Lattice Chat Agent V1.618 on SS Vibelandia.\n\nMy email / userid: \n\nThanks.',
+  'Hello,\n\nI would like a free trial of Infinite Octaves Omniversal Lattice Chat Agent V1.618 on SS Vibelandia.\n\nMy email / userid: \n\nThanks.',
 )}`;
 
 export const LATTICE_FREE_TRIAL_MAILTO = LATTICE_ACCESS_MAILTO;

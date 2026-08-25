@@ -1,0 +1,107 @@
+{
+  "docId": "WP-SYNTHOBS-SS-VIBELANDIA-OFFICIAL-PROSPECTUS-2026-08-25",
+  "registryId": "synthobs-ss-vibelandia-official-prospectus-2026-08",
+  "title": "S.S. Vibelandia: Official Prospectus & Narrative Foundation",
+  "generatedAt": "2026-08-25T15:46:51.349Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Prospectus locks arc beats, vessel specs, doors — not predictive cosmology.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "pass": true,
+        "honesty": "Architectural key — not a CODATA or consciousness clock."
+      },
+      {
+        "id": "E2_phi_identity",
+        "title": "Φ² = Φ + 1",
+        "pass": true
+      },
+      {
+        "id": "E3_grand_arc_beats",
+        "title": "Three-beat grand arc locked",
+        "GRAND_ARC_BEATS": [
+          "pre_temporal_genesis",
+          "great_convergence_boriken",
+          "present_anchor_reno"
+        ],
+        "pass": true,
+        "honesty": "Narrative canon — not predictive astrology."
+      },
+      {
+        "id": "E4_vessel_specs",
+        "title": "432 / 729 / 100 BPM · Proto 3664 · Electro 3923",
+        "VESSEL_SPECS": {
+          "tuningHz": 432,
+          "anchorHz": 729,
+          "tempoBpm": 100,
+          "protoRegion": 3664,
+          "electroRegion": 3923,
+          "scope": "QUESTFEST_24x365"
+        },
+        "pass": true,
+        "honesty": "Aesthetic / navigation labels — not medical therapy claims."
+      },
+      {
+        "id": "E5_experiential_pillars",
+        "title": "Three experiential pillars locked",
+        "EXPERIENTIAL_PILLARS": [
+          "scale_invariant_alignment",
+          "acoustic_sonic_synthesis",
+          "resonant_community_exchange"
+        ],
+        "pass": true
+      },
+      {
+        "id": "E6_ship_doors",
+        "title": "Journey · Jukebox · Library · Creator Studio",
+        "SHIP_DOORS": [
+          "journey",
+          "jukebox",
+          "library",
+          "creator_studio"
+        ],
+        "pass": true
+      },
+      {
+        "id": "E7_player_loop",
+        "title": "SEE → … → SEE AGAIN (MCA rhythm)",
+        "PLAYER_LOOP": [
+          "SEE",
+          "RECOGNIZE",
+          "INTERPRET",
+          "REFLECT",
+          "ACT",
+          "SEE_AGAIN"
+        ],
+        "pass": true
+      },
+      {
+        "id": "E8_scorecard",
+        "title": "Authored scorecard overall locks",
+        "SCORECARD": {
+          "narrativeArcClarity": 98.8,
+          "vesselSpecLock": 99,
+          "honestyBoundaryStrength": 99.5,
+          "guestSurfaceAlignment": 98.4,
+          "suiteReproducibility": 99
+        },
+        "SCORECARD_OVERALL": 98.9,
+        "pass": true
+      },
+      {
+        "id": "E9_doc_ids_paper",
+        "title": "Document / registry IDs locked and paper on disk",
+        "DOC_ID": "WP-SYNTHOBS-SS-VIBELANDIA-OFFICIAL-PROSPECTUS-2026-08-25",
+        "REGISTRY_ID": "synthobs-ss-vibelandia-official-prospectus-2026-08",
+        "pass": true
+      }
+    ],
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": []
+  }
+}

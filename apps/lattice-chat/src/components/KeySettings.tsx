@@ -87,7 +87,7 @@ export function KeySettingsPanel({
     >
       <p className="auth-lead">
         Bring your key — Cursor, Claude, or Gemini. <strong>Your key is your password</strong> for
-        99 Octave Omni-Lattice Chat: it stays with you in this browser, sent only with each turn —
+        Infinite Octaves Omniversal Lattice Chat: it stays with you in this browser, sent only with each turn —
         we do not store it on the server. No separate passwords to manage. OpenRouter is on the
         Omni-Lattice Bridge product, not here. Toggle the active provider under Advanced.
       </p>

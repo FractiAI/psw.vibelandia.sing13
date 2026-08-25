@@ -4,6 +4,22 @@
   "updatedAt": "2026-08-23",
   "suites": [
     {
+      "id": "synthobs-infinite-octaves-omniversal-lattice",
+      "path": "research/synthobs-infinite-octaves-omniversal-lattice",
+      "github": "https://github.com/FractiAI/synthobs-infinite-octaves-omniversal-lattice",
+      "description": "Infinite Octaves Omniversal Lattice Chat Agent — product upgrade catalog suite",
+      "paperIds": ["synthobs-infinite-octaves-omniversal-lattice-2026-08"],
+      "extraDocs": []
+    },
+    {
+      "id": "synthobs-ss-vibelandia-official-prospectus",
+      "path": "research/synthobs-ss-vibelandia-official-prospectus",
+      "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",
+      "description": "SS Vibelandia Official Prospectus & Narrative Foundation — catalog suite",
+      "paperIds": ["synthobs-ss-vibelandia-official-prospectus-2026-08"],
+      "extraDocs": []
+    },
+    {
       "id": "synthobs-table-top-hep-99-octave",
       "path": "research/synthobs-table-top-hep-99-octave",
       "github": "https://github.com/FractiAI/synthobs-table-top-hep-99-octave",

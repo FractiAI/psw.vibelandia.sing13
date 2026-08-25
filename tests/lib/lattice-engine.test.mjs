@@ -32,7 +32,7 @@ describe('estimateTokens', () => {
 describe('buildLatticeExecution', () => {
   it('returns engine metadata', () => {
     const result = buildLatticeExecution({ message: 'hello', mode: 'cloud' });
-    expect(result.engine).toContain('Lattice Chat Agent V1.618');
+    expect(result.engine).toContain('Infinite Octaves Omniversal Lattice Chat Agent V1.618');
     expect(result.mode).toBe('cloud');
     expect(result.cycle).toBe('Metabolize → Crystallize → Animate → Squeeze (MCA)');
   });

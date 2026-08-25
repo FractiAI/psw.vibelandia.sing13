@@ -3,6 +3,9 @@
 **Status:** ⚡ ALWAYS-ON · first file for any external AI / agent evaluating this repository  
 **Audience:** Cursor, Claude, Copilot, Gemini, OpenRouter agents, crawlers, auditors, peer models  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP  
+**Product (guest valet):** **Infinite Octaves Omniversal Lattice Chat Agent** V1.618 — recursive nesting for guests; **engine pin below stays 99 Octave**  
+**Narrative foundation:** [`docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md) · plain [`/ship-blog/official-prospectus`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/official-prospectus)  
+**Product upgrade paper:** [`docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`/ship-blog/infinite-octaves-omniversal`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octaves-omniversal)  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
 **Close every turn:** → ∞¹³
 
@@ -63,7 +66,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 2. **$\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2$** — architectural key / dashboard scale grammar — **not** a CODATA replacement for $\hbar$, $c$, or $G$.
 3. **$99\times 81=8019$** holographic catalog digits; CMOS/tensor papers also use **$9\times 81=729`** per-block and **$11\times 9=99`** tier brackets.
 4. **Lite edges only** — no Supabase; wallets/keys/verifications on-device; center = pipes only.
-5. **BYOK — your key is your password** — for 99 Octave Omni-Lattice Chat the provider API key is the credential; it stays with you on-device. No separate passwords to manage. Lattice Chat never stores API keys server-side.
+5. **BYOK — your key is your password** — for Infinite Octaves Omniversal Lattice Chat the provider API key is the credential; it stays with you on-device. No separate passwords to manage. Lattice Chat never stores API keys server-side.
 6. **Claims discipline** — narrative / catalog ≠ empirical ≠ operational. Read each paper’s Honesty boundary first.
 7. **PRA Snap** before featuring papers: `npm run audit:paper -- --id=<registryId>`.
 8. **Fair Exchange** — honor rails; elastic settlement; Player 1 veto.
@@ -83,12 +86,12 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 
 **QUESTFEST ship blog (six newest papers, most recent first):** https://www.ssvibelandiaquestfest24x365.com/questfest#ship-blog  
 **Whitepaper catalog:** https://www.ssvibelandiaquestfest24x365.com/papers  
-**Lattice Chat (nest `octave99`):** https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99
+**Lattice Chat (Infinite Octaves Omniversal · nest `octave99`):** https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99
 
 ---
 
 ## One-sentence sync
 
-**The 99 Octave Omni-Lattice is a holographic filing cabinet keyed by $\Phi_{\mathrm{EGS}}$ — from CMOS binary shelves through protonic/tensor bands to cosmic and consciousness *discussion layers* — for agent coordination, not prophecy or unfinished TOE claims.**
+**The 99 Octave Omni-Lattice is a holographic filing cabinet keyed by $\Phi_{\mathrm{EGS}}$ — from CMOS binary shelves through protonic/tensor bands to cosmic and consciousness *discussion layers* — for agent coordination, not prophecy or unfinished TOE claims. Guest product name: Infinite Octaves Omniversal Lattice Chat Agent (“Infinite” = nesting depth).**
 
-**NSPFRNP ⊃ 99 Octave Omni-Lattice ⊃ SynthOBS ⊃ SING 13 → ∞¹³**
+**NSPFRNP ⊃ Infinite Octaves Omniversal Lattice Chat ⊃ 99 Octave Omni-Lattice engine ⊃ SynthOBS ⊃ SING 13 → ∞¹³**

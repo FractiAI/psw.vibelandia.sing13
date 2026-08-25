@@ -13,6 +13,16 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(normalizeNestTopology('octave99')).toBe('octave99');
     expect(normalizeNestTopology('99-octave')).toBe('octave99');
     expect(normalizeNestTopology('multi-octave')).toBe('octave99');
+    expect(normalizeNestTopology('infinite')).toBe('octave99');
+    expect(normalizeNestTopology('omniversal')).toBe('octave99');
+    expect(normalizeNestTopology('infinite-octaves')).toBe('octave99');
+  });
+
+  it('builds Infinite Octaves nest directive with prospectus pointer', () => {
+    const directive = buildNestDirective('octave99', '', 'map the grand arc');
+    expect(directive).toMatch(/INFINITE OCTAVES OMNIVERSAL LATTICE/i);
+    expect(directive).toContain('Official Prospectus');
+    expect(directive).toContain('99');
   });
 
   it('builds a direct nest directive with the nest off', () => {
@@ -29,6 +39,7 @@ describe('lattice-prompt plain/direct mode', () => {
     });
     expect(system).toMatch(/Nest: OFF/i);
     expect(system).not.toContain('Lattice Chat Agent V1.618 by FractiAI');
+    expect(system).not.toContain('Infinite Octaves Omniversal Lattice Chat Agent V1.618 by FractiAI');
     expect(system).not.toContain('Lattice Chat V1.618 by FractiAI');
     expect(system).not.toContain('Context discipline');
     expect(system).toContain('hello');
@@ -41,8 +52,10 @@ describe('lattice-prompt plain/direct mode', () => {
       mode: 'full',
     });
     expect(system).toContain('/frontiersman-voyage');
+    expect(system).toContain('official-prospectus');
     expect(system).toMatch(/NPCs inhabit/i);
     expect(system).toMatch(/Players examine/i);
     expect(system).toMatch(/SuperAI stays Goldilocks/i);
+    expect(system).toMatch(/Infinite Octaves Omniversal/i);
   });
 });

@@ -19,7 +19,7 @@ export function CollabDmNotifier({
   useEffect(() => startCollabDmBridge(), []);
 
   useEffect(() => {
-    const base = 'Lattice Chat Agent V1.618';
+    const base = 'Infinite Octaves Omniversal Lattice Chat';
     if (unread > 0) {
       document.title = `(${unread}) Collaborate DM · ${base}`;
     } else {

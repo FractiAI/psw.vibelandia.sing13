@@ -23,12 +23,12 @@ import { useLatticeStore } from '@/store';
 /** Prefills a free-trial / access email to the operator (old school · honor). */
 export function buildRequestMailto(fromEmail = ''): string {
   const who = normalizeEmail(fromEmail) || '(add your email here)';
-  const subject = encodeURIComponent('Lattice Chat Agent V1.618 — free trial');
+  const subject = encodeURIComponent('Infinite Octaves Omniversal Lattice Chat Agent V1.618 — free trial');
   const body = encodeURIComponent(
     [
       'Hello,',
       '',
-      'I would like a free trial of Lattice Chat Agent V1.618 on SS Vibelandia.',
+      'I would like a free trial of Infinite Octaves Omniversal Lattice Chat Agent V1.618 on SS Vibelandia.',
       '',
       `My email / userid: ${who}`,
       '',
@@ -140,7 +140,7 @@ export function AuthPanel({
       <form className="auth-form" onSubmit={(e) => void onSignIn(e)}>
         <p className="auth-lead">
           Enter your email and your provider API key (Cursor, Claude, or Gemini).{' '}
-          <strong>Your key is your password</strong> for 99 Octave Omni-Lattice Chat — it stays
+          <strong>Your key is your password</strong> for Infinite Octaves Omniversal Lattice Chat — it stays
           with you on this device. No separate passwords to manage. We never store the key on the
           server.
         </p>

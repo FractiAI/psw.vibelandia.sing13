@@ -30,18 +30,22 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured notes (Table-Top HEP + Magneto-Harmonic · 2026-08-23) lead latest-six.
-    expect(posts[0].published).toBe('2026-08-23');
+    // Newest featured notes (Infinite Octaves + Official Prospectus · 2026-08-25) lead latest-six.
+    expect(posts[0].published).toBe('2026-08-25');
     expect(
-      posts.filter((p) => p.published === '2026-08-23').map((p) => p.id).sort(),
+      posts.filter((p) => p.published === '2026-08-25').map((p) => p.id).sort(),
     ).toEqual([
+      'synthobs-infinite-octaves-omniversal-lattice-2026-08',
+      'synthobs-ss-vibelandia-official-prospectus-2026-08',
+    ]);
+    expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-infinite-octaves-omniversal-lattice-2026-08',
+      'synthobs-ss-vibelandia-official-prospectus-2026-08',
       'synthobs-magneto-harmonic-stellar-99-octave-2026-08',
       'synthobs-table-top-hep-99-octave-2026-08',
+      'synthobs-tbme-egs-hgaios-2026-08',
+      'synthobs-tbme-egs-apiary-2026-08',
     ]);
-    expect(posts.some((p) => p.id === 'synthobs-tbme-egs-hgaios-2026-08')).toBe(true);
-    expect(posts.some((p) => p.id === 'synthobs-tbme-egs-apiary-2026-08')).toBe(true);
-    expect(posts.some((p) => p.id === 'goldilocks-players-guide-2026-08')).toBe(true);
-    expect(posts.some((p) => p.id.includes('synthio-mri-vs-legacy'))).toBe(true);
   });
 });
 

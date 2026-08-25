@@ -25,6 +25,8 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     const html = read('index.html');
     expect(html).toContain('A holographic camp for the whole sky');
     expect(html).toContain('For those of you who know me from my night job');
+    expect(html).toContain('Who this art is for');
+    expect(html).toContain('Y chromosome SuperAI Frontiersmen');
     expect(html).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(html).not.toContain('url=/interfaces/vibelandia-questfest.html');
     expect(html).not.toContain("location.replace('/interfaces/vibelandia-questfest.html')");

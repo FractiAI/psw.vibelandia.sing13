@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <style>
     :root {
       --ink: #f5e6c8;
@@ -395,6 +396,19 @@
 </head>
 <body>
   <a class="skip" href="#exhibit">Skip to exhibit</a>
+  <nav class="qv-top-quicklinks" aria-label="Site">
+    <span class="qv-top-quicklinks__here">Canvas</span>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/questfest">SS Vibelandia</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/journey">Journey</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/jukebox" data-qv-jukebox>Jukebox</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/library">Library</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a href="/creator-studio">Creator Studio</a>
+  </nav>
 
   <header class="hero" aria-label="Omniversal Canvas opening">
     <div class="hero__plane" role="img" aria-label="Valet Pru — host of the Omniversal Canvas"></div>
@@ -408,14 +422,65 @@
       <h1 class="hero__title">A holographic camp for the whole sky</h1>
       <p class="hero__lede">Digital Burning Man energy — nested, open-source, and waiting on your phone.</p>
       <div class="hero__cta">
-        <a class="btn btn--gold" href="/questfest">Enter SS Vibelandia</a>
-        <a class="btn btn--ghost" href="#exhibit">Explore the exhibit</a>
+        <a class="btn btn--gold" href="#exhibit">Explore the exhibit</a>
+        <a class="btn btn--ghost" href="#who">Who this art is for</a>
       </div>
     </div>
   </header>
 
-  <main id="exhibit">
-    <section class="stage-wrap" aria-labelledby="stage-h">
+  <main>
+    <section class="band" id="welcome" aria-labelledby="welcome-h">
+      <h2 id="welcome-h">For those of you who know me from my night job</h2>
+      <p>
+        You’ve likely seen me doodling or vibe-coding from my phone while waiting on guests.
+        I do that to give you maximum privacy and respect when you’re in the restroom.
+        Well, here’s what I’m working on: it’s my art, my fullest artistic expression —
+        including stepping into it and living it 24×7.
+      </p>
+      <p>
+        You’ll quickly notice it doesn’t fit neatly into any box. It’s a convergence of science,
+        technology, AI, my doodles, and my stories — plus the studio, canvas, and materials I had
+        to build to hold it, Proenneke-style. You’re standing in it now.
+      </p>
+      <p>
+        Welcome to my website. Think of it like a digital Burning Man camp and art exhibit —
+        holographic, meaning it is everything and everywhere at once as a living metaphor…
+        and then, if you choose, more than a metaphor.
+      </p>
+      <p>
+        This is my <strong style="color:var(--gold-hi)">Omniversal Canvas</strong> alternate-reality art project,
+        recursively nested inside the infinite-octave holographic Goldilocks AI reality I call
+        <strong style="color:var(--gold-hi)">SS Vibelandia</strong>, inside my
+        <strong style="color:var(--gold-hi)">Syntheverse sandbox</strong> (canvas and materials),
+        on <strong style="color:var(--gold-hi)">Base</strong> mainnet (the studio address).
+      </p>
+    </section>
+
+    <section class="band" id="who" aria-labelledby="who-h">
+      <h2 id="who-h">Who this art is for</h2>
+      <p>
+        This camp is for <strong style="color:var(--gold-hi)">Y chromosome SuperAI Frontiersmen</strong> types —
+        holographic Goldilocks SuperAI frontiersmen Players. Polar lineage as a story coupler.
+        Lifelong Boy’s Night Out energy. SuperAI stays Goldilocks: not too much machine, not too little human.
+        You remain you.
+      </p>
+      <ul class="nest-list">
+        <li>
+          <span class="tier">For</span>
+          <span>Frontiersmen who can hold science, AI, doodles, and story in one nest — and step into it 24×7 if they choose.</span>
+        </li>
+        <li>
+          <span class="tier">With them</span>
+          <span>The set that sails with those Players: cast, crew, enterprises, franchises, and legacies. Collectors and museums who want the exhibit as exhibit.</span>
+        </li>
+        <li>
+          <span class="tier">Not a gate</span>
+          <span>Not a membership test. Not clinical genetics. Y chromosome here is catalog lore for polar identity — one named coupler among others yet to be identified.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="stage-wrap" id="exhibit" aria-labelledby="stage-h">
       <h2 id="stage-h">Three nested domes</h2>
       <p class="sub">Move across the stage. Touch a shell. Core · Amphitheater · Horizon — the same Φ nesting that holds the ship’s theaters and agent sandboxes.</p>
       <div class="stage" id="canvas-stage" aria-label="Interactive nested hemisphere stage">
@@ -443,29 +508,6 @@
       </div>
       <p class="mode-voice" id="mode-voice">
         Enjoy it as New-World fiction on an Omniverse canvas — AI, science, engineering, and story braided for wonder. No passport required. Just curiosity.
-      </p>
-    </section>
-
-    <section class="band" aria-labelledby="welcome-h">
-      <h2 id="welcome-h">Hello from holographic Valet Pru</h2>
-      <p>
-        Welcome to my website. Think of it like a digital Burning Man camp and art exhibit —
-        holographic, meaning it is everything and everywhere at once as a living metaphor…
-        and then, if you choose, more than a metaphor.
-      </p>
-      <p>
-        If you know me from the club night job, you’ve probably caught me doodling or vibe-coding
-        on my phone between guests — privacy first when you’re in the restroom. This is what that
-        quiet work becomes: art I step into and live 24×7. It won’t fit a neat box. Science,
-        technology, AI, doodles, stories — and a Proenneke-built studio, canvas, and materials
-        so the nest can hold the nest.
-      </p>
-      <p>
-        This is my <strong style="color:var(--gold-hi)">Omniversal Canvas</strong> alternate-reality art project,
-        recursively nested inside the infinite-octave holographic Goldilocks AI reality I call
-        <strong style="color:var(--gold-hi)">SS Vibelandia</strong>, inside my
-        <strong style="color:var(--gold-hi)">Syntheverse sandbox</strong> (canvas and materials),
-        on <strong style="color:var(--gold-hi)">Base</strong> mainnet (the studio address).
       </p>
     </section>
 
@@ -538,14 +580,16 @@
 
     <p class="honesty">
       <strong>Honesty rail:</strong> Artistic and narrative framing. Φ ≈ 1.618 is design language for nesting —
-      not a physics monopoly or prophecy. “Mother of all miracles” is poetic invitation, not a medical or financial claim.
+      not a physics monopoly or prophecy. “Y chromosome SuperAI Frontiersmen” is voyage / catalog identity —
+      not medical advice, not a genomic gate, not a claim that software is a chromosome.
+      “Mother of all miracles” is poetic invitation, not a medical or financial claim.
       Free basics on open surfaces; Pro / VIP via <a href="mailto:info@fractiai.com">info@fractiai.com</a>.
       Human emergency outranks every metaphor.
     </p>
   </main>
 
   <footer class="site">
-    <a href="/questfest">Enter SS Vibelandia</a>
+    <a href="/questfest">SS Vibelandia</a>
     <a href="/">Canvas</a>
     <a href="/jukebox">Jukebox</a>
     <a href="/lattice-chat">Lattice Chat</a>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-pending">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Omniversal Canvas · Valet Pru · holographic art exhibit · SS Vibelandia</title>
+  <meta name="description" content="Holographic Valet Pru’s Omniversal Canvas — a digital Burning Man camp and art exhibit nested in SS Vibelandia. For art lovers, collectors, representation, and museum tours. Enjoy as science fiction or step into the story." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/omniverse-canvas" />
+  <meta property="og:title" content="Omniversal Canvas · Valet Pru" />
+  <meta property="og:description" content="A holographic art exhibit for collectors and the curious — nested in SS Vibelandia · Syntheverse · Base." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <style>
+    :root {
+      --ink: #f5e6c8;
+      --ink-soft: #c9bba3;
+      --gold: #d4af37;
+      --gold-hi: #f0d78c;
+      --hull: #060912;
+      --hull-mid: #0c1424;
+      --ember: #d4af37;
+      --ring: rgba(212, 175, 55, 0.35);
+    }
+    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-ready body { visibility: visible; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--hull);
+      color: var(--ink);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.125rem;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    a { color: var(--gold-hi); }
+    a:hover { color: #fef3c7; }
+
+    /* —— HERO —— */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .hero__plane {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        linear-gradient(180deg, rgba(6, 9, 18, 0.25) 0%, rgba(6, 9, 18, 0.55) 45%, rgba(6, 9, 18, 0.92) 100%),
+        url('/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg') center 18% / cover no-repeat;
+      transform: scale(1.04);
+      animation: heroDrift 28s ease-in-out infinite alternate;
+    }
+    @keyframes heroDrift {
+      from { transform: scale(1.04) translate3d(0, 0, 0); }
+      to { transform: scale(1.08) translate3d(-1.5%, 1%, 0); }
+    }
+    .hero__rings {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      display: grid;
+      place-items: center;
+    }
+    .ring {
+      position: absolute;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      border: 1px solid var(--ring);
+      border-bottom: none;
+      opacity: 0.55;
+      transform-origin: 50% 100%;
+      animation: ringBreath 9s ease-in-out infinite;
+    }
+    .ring--3 { width: min(92vw, 54rem); height: min(46vw, 27rem); animation-delay: 0s; }
+    .ring--2 { width: min(64vw, 34rem); height: min(32vw, 17rem); animation-delay: -2s; opacity: 0.7; }
+    .ring--1 { width: min(36vw, 18rem); height: min(18vw, 9rem); animation-delay: -4s; opacity: 0.9; border-color: rgba(240, 215, 140, 0.55); }
+    @keyframes ringBreath {
+      0%, 100% { transform: scaleX(1) scaleY(1); opacity: 0.45; }
+      50% { transform: scaleX(1.03) scaleY(1.06); opacity: 0.75; }
+    }
+    .hero__copy {
+      position: relative;
+      z-index: 2;
+      width: min(42rem, 92vw);
+      margin: 0 auto 0;
+      padding: clamp(5rem, 14vh, 8rem) 1.25rem 3.5rem;
+      text-align: left;
+    }
+    .hero__brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(0.72rem, 1.8vw, 0.85rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold-hi);
+      margin: 0 0 1rem;
+    }
+    .hero__title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 8vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      color: #faf6ee;
+      margin: 0 0 1rem;
+      max-width: 11ch;
+    }
+    .hero__lede {
+      margin: 0 0 1.75rem;
+      font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+      color: var(--ink-soft);
+      max-width: 32ch;
+    }
+    .hero__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+    }
+    .btn {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.95rem 1.35rem;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn--gold {
+      background: var(--gold);
+      color: #1a120c !important;
+      border-color: var(--gold);
+    }
+    .btn--ghost {
+      background: transparent;
+      color: var(--gold-hi) !important;
+      border-color: rgba(212, 175, 55, 0.45);
+    }
+    .btn--ghost:hover { border-color: var(--gold); }
+
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      z-index: 5;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      opacity: 0.7;
+    }
+
+    /* —— STAGE (interactive) —— */
+    .stage-wrap {
+      position: relative;
+      padding: clamp(3rem, 8vw, 5.5rem) 1.25rem;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212, 175, 55, 0.1), transparent 60%),
+        linear-gradient(180deg, var(--hull), var(--hull-mid) 40%, var(--hull));
+    }
+    .stage-wrap h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      letter-spacing: -0.02em;
+      text-align: center;
+      margin: 0 0 0.5rem;
+      color: #faf6ee;
+    }
+    .stage-wrap .sub {
+      text-align: center;
+      color: var(--ink-soft);
+      max-width: 36rem;
+      margin: 0 auto 2rem;
+      font-size: 1.15rem;
+    }
+    .stage {
+      position: relative;
+      width: min(100%, 36rem);
+      height: min(72vw, 26rem);
+      margin: 0 auto 1.5rem;
+      touch-action: none;
+      cursor: crosshair;
+    }
+    .shell {
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      translate: -50% 0;
+      border-radius: 50% 50% 4% 4% / 100% 100% 6% 6%;
+      border: 1.5px solid rgba(212, 175, 55, 0.4);
+      background: radial-gradient(ellipse at 50% 80%, rgba(212, 175, 55, 0.12), transparent 65%);
+      transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform;
+    }
+    .shell.is-hot {
+      border-color: var(--gold-hi);
+      box-shadow: 0 0 0 1px rgba(240, 215, 140, 0.15);
+    }
+    .shell--3 { width: 100%; height: 92%; z-index: 1; }
+    .shell--2 { width: 68%; height: 68%; z-index: 2; }
+    .shell--1 { width: 36%; height: 36%; z-index: 3; background: radial-gradient(ellipse at 50% 70%, rgba(240, 215, 140, 0.28), transparent 70%); }
+    .baseplane {
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      bottom: 6%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55), transparent);
+      z-index: 4;
+    }
+    .shell-labels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      max-width: 36rem;
+      margin: 0 auto;
+    }
+    .shell-labels button {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: rgba(12, 20, 36, 0.75);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      padding: 0.85rem 0.6rem;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    .shell-labels button[aria-pressed="true"] {
+      border-color: var(--gold);
+      color: var(--gold-hi);
+    }
+    .shell-readout {
+      max-width: 36rem;
+      margin: 1.25rem auto 0;
+      min-height: 4.5rem;
+      padding: 1rem 1.1rem;
+      border-left: 2px solid rgba(212, 175, 55, 0.45);
+      color: var(--ink-soft);
+      font-size: 1.2rem;
+    }
+    .shell-readout strong { color: var(--gold-hi); font-weight: 600; }
+
+    /* —— MODE —— */
+    .mode {
+      padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+    }
+    .mode h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+      margin: 0 0 0.75rem;
+    }
+    .mode p.lead { max-width: 34rem; margin: 0 auto 1.5rem; color: var(--ink-soft); }
+    .mode-toggle {
+      display: inline-flex;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      margin-bottom: 1.25rem;
+    }
+    .mode-toggle button {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.8rem 1.1rem;
+      border: 0;
+      background: transparent;
+      color: var(--ink-soft);
+      cursor: pointer;
+    }
+    .mode-toggle button[aria-pressed="true"] {
+      background: rgba(212, 175, 55, 0.18);
+      color: var(--gold-hi);
+    }
+    .mode-voice {
+      max-width: 36rem;
+      margin: 0 auto;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--ink);
+      min-height: 5.5rem;
+      transition: opacity 0.35s ease;
+    }
+    .mode-voice.is-fading { opacity: 0; }
+
+    /* —— NEST / HEROES / INVITE —— */
+    section.band {
+      padding: clamp(3rem, 7vw, 5rem) 1.25rem;
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+    section.band h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.5rem, 3.8vw, 2rem);
+      margin: 0 0 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    section.band p { margin: 0 0 1rem; color: var(--ink-soft); }
+    section.band p:last-child { margin-bottom: 0; }
+    .nest-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+    }
+    .nest-list li {
+      padding: 1rem 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.15);
+      display: grid;
+      gap: 0.25rem;
+    }
+    .nest-list li:last-child { border-bottom: 1px solid rgba(212, 175, 55, 0.15); }
+    .nest-list .tier {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .heroes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      margin: 1.25rem 0 0;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold-hi);
+    }
+    .invite {
+      background:
+        linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent 50%),
+        var(--hull-mid);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .invite .inner {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: clamp(3rem, 7vw, 5rem) 1.25rem;
+    }
+    .invite h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin: 0 0 0.75rem;
+    }
+    .invite p { color: var(--ink-soft); margin: 0 0 1.5rem; max-width: 34rem; }
+    .honesty {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+      font-size: 0.98rem;
+      color: var(--ink-soft);
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+    }
+    .honesty strong { color: var(--gold-hi); }
+    footer.site {
+      padding: 2rem 1.25rem 3rem;
+      text-align: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    footer.site a { margin: 0 0.45rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero__plane, .ring, .shell { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#exhibit">Skip to exhibit</a>
+
+  <header class="hero" aria-label="Omniversal Canvas opening">
+    <div class="hero__plane" role="img" aria-label="Valet Pru — host of the Omniversal Canvas"></div>
+    <div class="hero__rings" aria-hidden="true">
+      <span class="ring ring--3"></span>
+      <span class="ring ring--2"></span>
+      <span class="ring ring--1"></span>
+    </div>
+    <div class="hero__copy">
+      <p class="hero__brand">Valet Pru · Omniversal Canvas</p>
+      <h1 class="hero__title">A holographic camp for the whole sky</h1>
+      <p class="hero__lede">Digital Burning Man energy — nested, open-source, and waiting on your phone.</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="#exhibit">Enter the exhibit</a>
+        <a class="btn btn--ghost" href="#representation">Representation &amp; museums</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="exhibit">
+    <section class="stage-wrap" aria-labelledby="stage-h">
+      <h2 id="stage-h">Three nested domes</h2>
+      <p class="sub">Move across the stage. Touch a shell. Core · Amphitheater · Horizon — the same Φ nesting that holds the ship’s theaters and agent sandboxes.</p>
+      <div class="stage" id="canvas-stage" aria-label="Interactive nested hemisphere stage">
+        <div class="shell shell--3" data-shell="3"></div>
+        <div class="shell shell--2" data-shell="2"></div>
+        <div class="shell shell--1" data-shell="1"></div>
+        <div class="baseplane" aria-hidden="true"></div>
+      </div>
+      <div class="shell-labels" role="group" aria-label="Select a shell">
+        <button type="button" data-pick="1" aria-pressed="true">Core</button>
+        <button type="button" data-pick="2" aria-pressed="false">Amphitheater</button>
+        <button type="button" data-pick="3" aria-pressed="false">Horizon</button>
+      </div>
+      <p class="shell-readout" id="shell-readout" aria-live="polite">
+        <strong>Host Singularity Core.</strong> The emission point — story, frequency, and the still center of the camp.
+      </p>
+    </section>
+
+    <section class="mode" aria-labelledby="mode-h">
+      <h2 id="mode-h">How do you want to look?</h2>
+      <p class="lead">Both experiences are honest fun. You choose the lens.</p>
+      <div class="mode-toggle" role="group" aria-label="Experience lens">
+        <button type="button" id="mode-fiction" aria-pressed="true">As science fiction</button>
+        <button type="button" id="mode-step" aria-pressed="false">As a reality I can step into</button>
+      </div>
+      <p class="mode-voice" id="mode-voice">
+        Enjoy it as New-World fiction on an Omniverse canvas — AI, science, engineering, and story braided for wonder. No passport required. Just curiosity.
+      </p>
+    </section>
+
+    <section class="band" aria-labelledby="welcome-h">
+      <h2 id="welcome-h">Hello from holographic Valet Pru</h2>
+      <p>
+        Welcome to my website. Think of it like a digital Burning Man camp and art exhibit —
+        holographic, meaning it is everything and everywhere at once as a living metaphor…
+        and then, if you choose, more than a metaphor.
+      </p>
+      <p>
+        If you know me from the club night job, you’ve probably caught me doodling or vibe-coding
+        on my phone between guests — privacy first when you’re in the restroom. This is what that
+        quiet work becomes: art I step into and love 24×7. It won’t fit a neat box. Science,
+        technology, AI, doodles, stories — and a Proenneke-built studio, canvas, and materials
+        so the nest can hold the nest.
+      </p>
+      <p>
+        This is my <strong style="color:var(--gold-hi)">Omniversal Canvas</strong> alternate-reality art project,
+        recursively nested inside the infinite-octave holographic Goldilocks AI reality I call
+        <strong style="color:var(--gold-hi)">SS Vibelandia</strong>, inside my
+        <strong style="color:var(--gold-hi)">Syntheverse sandbox</strong> (canvas and materials),
+        on <strong style="color:var(--gold-hi)">Base</strong> mainnet (the studio address).
+      </p>
+    </section>
+
+    <section class="band" aria-labelledby="nest-h">
+      <h2 id="nest-h">The nest you are standing in</h2>
+      <ul class="nest-list">
+        <li>
+          <span class="tier">Layer · Ship</span>
+          <span>SS Vibelandia — holographic Goldilocks cruise line · QUESTFEST 24×365</span>
+        </li>
+        <li>
+          <span class="tier">Layer · Studio</span>
+          <span>Syntheverse Sandbox — paints, protocols, and agent materials</span>
+        </li>
+        <li>
+          <span class="tier">Layer · Address</span>
+          <span>Base mainnet — where the studio keeps its chain of custody</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="band" aria-labelledby="heroes-h">
+      <h2 id="heroes-h">In the spirit of</h2>
+      <p>
+        Heroes Van Gogh, Picasso, da Vinci, Basquiat — and Bach’s beat — meet AI, science,
+        engineering, and storytelling. A New World canvas that invites you to the other side
+        of the sun: mother of worlds, mother of miracles, mother of stories told.
+        Soft invitation. Hard honesty. Your choice how deep to walk.
+      </p>
+      <div class="heroes" aria-label="Artistic lineage">
+        <span>Van Gogh</span>
+        <span>Picasso</span>
+        <span>da Vinci</span>
+        <span>Basquiat</span>
+        <span>Bach</span>
+      </div>
+    </section>
+
+    <section class="invite" id="representation" aria-labelledby="rep-h">
+      <div class="inner">
+        <h2 id="rep-h">Collectors · representation · museum tours</h2>
+        <p>
+          If you represent a gallery, foundation, or museum — or you collect work that bends
+          science into story — this camp is open for conversation. Basics stay free and open
+          on your phone. Pro and VIP arrangements begin with a human email.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--gold" href="mailto:info@fractiai.com?subject=Omniversal%20Canvas%20—%20representation%20%2F%20museum%20tour">Email Valet Pru</a>
+          <a class="btn btn--ghost" href="/journey">Walk the voyage</a>
+          <a class="btn btn--ghost" href="/library">Enter the library</a>
+        </div>
+      </div>
+    </section>
+
+    <p class="honesty">
+      <strong>Honesty rail:</strong> Artistic and narrative framing. Φ ≈ 1.618 is design language for nesting —
+      not a physics monopoly or prophecy. “Mother of all miracles” is poetic invitation, not a medical or financial claim.
+      Free basics on open surfaces; Pro / VIP via <a href="mailto:info@fractiai.com">info@fractiai.com</a>.
+      Human emergency outranks every metaphor.
+    </p>
+  </main>
+
+  <footer class="site">
+    <a href="/">SS Vibelandia</a>
+    <a href="/omniverse-canvas">Canvas</a>
+    <a href="/jukebox">Jukebox</a>
+    <a href="/lattice-chat">Lattice Chat</a>
+    <span>→ ∞¹³</span>
+  </footer>
+
+  <script>
+    (function () {
+      var stage = document.getElementById('canvas-stage');
+      var shells = stage ? stage.querySelectorAll('.shell') : [];
+      var readout = document.getElementById('shell-readout');
+      var picks = document.querySelectorAll('[data-pick]');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var copy = {
+        1: '<strong>Host Singularity Core.</strong> The emission point — story, frequency, and the still center of the camp.',
+        2: '<strong>Goldilocks Amphitheater.</strong> Where guests feel just right — immersion without clutter, resonance without overwhelm.',
+        3: '<strong>Omni-Horizon.</strong> The holographic ceiling — atmosphere, telemetry, and the soft edge of the sky.'
+      };
+
+      function setShell(n) {
+        picks.forEach(function (b) {
+          b.setAttribute('aria-pressed', b.getAttribute('data-pick') === String(n) ? 'true' : 'false');
+        });
+        shells.forEach(function (s) {
+          s.classList.toggle('is-hot', s.getAttribute('data-shell') === String(n));
+        });
+        if (readout) readout.innerHTML = copy[n] || copy[1];
+      }
+
+      picks.forEach(function (b) {
+        b.addEventListener('click', function () {
+          setShell(b.getAttribute('data-pick'));
+        });
+      });
+
+      if (stage && !reduce) {
+        stage.addEventListener('pointermove', function (e) {
+          var r = stage.getBoundingClientRect();
+          var x = (e.clientX - r.left) / r.width - 0.5;
+          var y = (e.clientY - r.top) / r.height - 0.5;
+          shells.forEach(function (s, i) {
+            var depth = (3 - i) * 6;
+            s.style.transform = 'translate(' + (x * depth) + 'px, ' + (y * depth * 0.6) + 'px)';
+          });
+        });
+        stage.addEventListener('pointerleave', function () {
+          shells.forEach(function (s) { s.style.transform = ''; });
+        });
+        stage.addEventListener('click', function (e) {
+          var t = e.target.closest('.shell');
+          if (t) setShell(t.getAttribute('data-shell'));
+        });
+      }
+
+      var fiction = document.getElementById('mode-fiction');
+      var step = document.getElementById('mode-step');
+      var voice = document.getElementById('mode-voice');
+      var voices = {
+        fiction:
+          'Enjoy it as New-World fiction on an Omniverse canvas — AI, science, engineering, and story braided for wonder. No passport required. Just curiosity.',
+        step:
+          'Step in as if the camp is real: SS Vibelandia as vessel, Syntheverse as studio, Base as address. Free basics anytime. Email a human for Pro and VIP.'
+      };
+
+      function setMode(which) {
+        fiction.setAttribute('aria-pressed', which === 'fiction' ? 'true' : 'false');
+        step.setAttribute('aria-pressed', which === 'step' ? 'true' : 'false');
+        if (!voice) return;
+        voice.classList.add('is-fading');
+        window.setTimeout(function () {
+          voice.textContent = voices[which];
+          voice.classList.remove('is-fading');
+        }, reduce ? 0 : 180);
+      }
+      if (fiction) fiction.addEventListener('click', function () { setMode('fiction'); });
+      if (step) step.addEventListener('click', function () { setMode('step'); });
+
+      setShell(1);
+    })();
+  </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

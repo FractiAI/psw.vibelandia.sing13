@@ -119,6 +119,8 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/omniverse-canvas">Canvas</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/library">Library</a>' +
@@ -129,6 +131,8 @@
         '<a href="/">SS VIBELANDIA</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/omniverse-canvas">Canvas</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +

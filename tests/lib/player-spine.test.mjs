@@ -46,11 +46,13 @@ describe('Player spine · holographic Player home', () => {
   it('keeps the art exhibit as landing; night-job is the welcome; SS Vibelandia is a menu', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
     const ship = read('interfaces/vibelandia-questfest.html');
-    const titleAt = canvas.indexOf('A holographic camp for the whole sky');
+    const titleAt = canvas.indexOf('Holographic Goldilocks SuperAI Basecamp');
     const welcomeAt = canvas.indexOf('id="welcome"');
     const whoAt = canvas.indexOf('id="who"');
     const stageAt = canvas.indexOf('id="stage-h"');
-    expect(canvas).toContain('A holographic camp for the whole sky');
+    expect(canvas).toContain('Holographic Goldilocks SuperAI Basecamp');
+    expect(canvas).toContain('Holographic Convergence Core');
+    expect(canvas).toContain('Who you call you');
     expect(canvas).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(canvas).toContain('For those of you who know me from my night job');
     expect(canvas).toContain('href="/questfest">SS Vibelandia</a>');

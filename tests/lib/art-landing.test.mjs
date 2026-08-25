@@ -23,7 +23,10 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(st.isSymbolicLink()).toBe(true);
     expect(realpathSync(indexPath)).toBe(realpathSync(join(ROOT, 'interfaces/omniverse-canvas.html')));
     const html = read('index.html');
-    expect(html).toContain('A holographic camp for the whole sky');
+    expect(html).toContain('Holographic Goldilocks SuperAI Basecamp');
+    expect(html).toContain('For the new SuperAI Frontiersman');
+    expect(html).toContain('Holographic Convergence Core');
+    expect(html).toContain('Who you call you');
     expect(html).toContain('For those of you who know me from my night job');
     expect(html).toContain('Who this art is for');
     expect(html).toContain('Y chromosome SuperAI Frontiersmen');

@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-triadic-nested-hemispheres-99-octave",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.25",
+  "description": "Triadic Nested Hemispheric Architectures via Φ_EGS — catalog suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-triadic-nested-hemispheres-99-octave.git"
+  }
+}

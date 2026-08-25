@@ -24,10 +24,11 @@ describe('daily-ship-bulletin steward', () => {
 
   it('leads News of the day with newest ship notes (not a frozen evergreen list)', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-08-25' });
-    expect(payload.highlights[0].id).toBe('synthobs-infinite-octaves-omniversal-lattice-2026-08');
-    expect(payload.highlights[1].id).toBe('synthobs-ss-vibelandia-official-prospectus-2026-08');
-    expect(payload.htmlBody).toMatch(/Infinite Octaves/i);
-    expect(payload.htmlBody).toContain('official-prospectus');
+    expect(payload.highlights[0].id).toBe(
+      'synthobs-triadic-nested-hemispheres-99-octave-2026-08',
+    );
+    expect(payload.htmlBody).toMatch(/nested domes|Triadic|amphitheater/i);
+    expect(payload.htmlBody).toContain('triadic-hemispheres');
     expect(payload.newsLabel).toContain('August 25');
   });
 

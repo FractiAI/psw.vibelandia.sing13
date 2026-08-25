@@ -53,6 +53,7 @@
     "research:synthobs-cmos-protonic-99-octave-omni-lattice": "node research/synthobs-cmos-protonic-99-octave-omni-lattice/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-metamorphic-octaves": "node research/synthobs-tbme-metamorphic-octaves/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-tbme-planetary-core-goldilocks": "node research/synthobs-tbme-planetary-core-goldilocks/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-triadic-nested-hemispheres-99-octave": "node research/synthobs-triadic-nested-hemispheres-99-octave/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-infinite-octaves-omniversal-lattice": "node research/synthobs-infinite-octaves-omniversal-lattice/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-ss-vibelandia-official-prospectus": "node research/synthobs-ss-vibelandia-official-prospectus/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-table-top-hep-99-octave": "node research/synthobs-table-top-hep-99-octave/scripts/run_empirical_pipeline.mjs",

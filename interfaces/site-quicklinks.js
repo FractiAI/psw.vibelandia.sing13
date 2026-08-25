@@ -123,8 +123,6 @@
     nav.setAttribute('aria-label', 'Site');
     if (onArtLanding) {
       nav.innerHTML =
-        '<span class="qv-top-quicklinks__here">Canvas</span>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/questfest">SS Vibelandia</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +

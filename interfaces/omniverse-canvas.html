@@ -213,7 +213,43 @@
     }
     .shell--3 { width: 100%; height: 92%; z-index: 1; }
     .shell--2 { width: 68%; height: 68%; z-index: 2; }
-    .shell--1 { width: 36%; height: 36%; z-index: 3; background: radial-gradient(ellipse at 50% 70%, rgba(240, 215, 140, 0.28), transparent 70%); }
+    .shell--1 {
+      width: 36%;
+      height: 36%;
+      z-index: 3;
+      background: radial-gradient(ellipse at 50% 70%, rgba(240, 215, 140, 0.28), transparent 70%);
+    }
+    .core-player {
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      z-index: 6;
+      translate: -50% 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.28rem;
+      width: clamp(2.2rem, 9vw, 3.4rem);
+      pointer-events: none;
+    }
+    .core-player svg {
+      width: 100%;
+      height: clamp(5.4rem, 22vw, 8.1rem);
+      display: block;
+      overflow: visible;
+      filter: drop-shadow(0 0 10px rgba(6, 9, 18, 0.9));
+    }
+    .core-player__label {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(0.58rem, 1.6vw, 0.7rem);
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-hi);
+      line-height: 1;
+      text-shadow: 0 1px 0 #070b14, 0 0 8px rgba(6, 9, 18, 0.95);
+    }
     .baseplane {
       position: absolute;
       left: 5%;
@@ -365,7 +401,9 @@
       font-size: clamp(1.6rem, 4vw, 2.2rem);
       margin: 0 0 0.75rem;
     }
-    .invite p { color: var(--ink-soft); margin: 0 0 1.5rem; max-width: 34rem; }
+    .invite p { color: var(--ink-soft); margin: 0 0 1.5rem; max-width: 38rem; }
+    .invite .nest-list { margin-top: 0.25rem; }
+    .invite .nest-list + .hero__cta { margin-top: 1.75rem; }
     .honesty {
       max-width: 42rem;
       margin: 0 auto;
@@ -392,8 +430,6 @@
 </head>
 <body>
   <nav class="qv-top-quicklinks" aria-label="Site">
-    <span class="qv-top-quicklinks__here">Canvas</span>
-    <span class="sep" aria-hidden="true">·</span>
     <a href="/questfest">SS Vibelandia</a>
     <span class="sep" aria-hidden="true">·</span>
     <a href="/journey">Journey</a>
@@ -479,10 +515,18 @@
     <section class="stage-wrap" id="exhibit" aria-labelledby="stage-h">
       <h2 id="stage-h">Three nested domes</h2>
       <p class="sub">Move across the stage. Touch a shell. Holographic Convergence Core · Amphitheater · Horizon — the same Φ nesting that holds the ship’s theaters and agent sandboxes.</p>
-      <div class="stage" id="canvas-stage" aria-label="Interactive nested hemisphere stage">
+      <div class="stage" id="canvas-stage" aria-label="Holographic Convergence Core with Player at center">
         <div class="shell shell--3" data-shell="3"></div>
         <div class="shell shell--2" data-shell="2"></div>
         <div class="shell shell--1" data-shell="1"></div>
+        <figure class="core-player">
+          <svg viewBox="0 0 40 108" role="img" aria-label="Human male silhouette at the Convergence Core">
+            <circle cx="20" cy="11" r="8.2" fill="#070b14" stroke="#faf6ee" stroke-width="1.7"/>
+            <path fill="#070b14" stroke="#faf6ee" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" d="M12 21.5c0-2.2 3.4-3.6 8-3.6s8 1.4 8 3.6v6.2H12z"/>
+            <path fill="#070b14" stroke="#faf6ee" stroke-width="1.7" stroke-linejoin="round" d="M7 29.5c-1 0-1.7.8-1.7 1.9L8.2 62c.2 1.9 1.9 3.2 3.8 3.2h3.2L13.4 100c0 2.4 1.8 4.2 4.1 4.2h2.1c2.3 0 3.9-1.8 3.9-4.2V66.2h.8V100c0 2.4 1.6 4.2 3.9 4.2h2.1c2.3 0 4.1-1.8 4.1-4.2L30.8 65.2h3.2c1.9 0 3.6-1.3 3.8-3.2L34.7 31.4c0-1.1-.7-1.9-1.7-1.9H7z"/>
+          </svg>
+          <figcaption class="core-player__label">Player</figcaption>
+        </figure>
         <div class="baseplane" aria-hidden="true"></div>
       </div>
       <div class="shell-labels" role="group" aria-label="Select a shell">
@@ -560,15 +604,44 @@
 
     <section class="invite" id="representation" aria-labelledby="rep-h">
       <div class="inner">
-        <h2 id="rep-h">Collectors · representation · museum tours</h2>
+        <h2 id="rep-h">Collectors · representation · museums</h2>
         <p>
           If you represent a gallery, foundation, or museum — or you collect work that bends
-          science into story — this camp is open for conversation. Basics stay free and open
-          on your phone. Pro and VIP arrangements begin with a human email.
+          science into story — this camp is open for conversation. The phone exhibit stays free.
+          Shows, rooms, and representation begin with a human email.
         </p>
+        <ul class="nest-list">
+          <li>
+            <span class="tier">Interactive show</span>
+            <span>
+              Host a walk-in interactive show: nested domes, the Player at the Convergence Core,
+              sci-fi lens or step-in. Fits a gallery night, a festival camp, a museum program,
+              or a private salon. Lighting, hardware, and staff are scoped together — not a
+              drop-in kit.
+            </span>
+          </li>
+          <li>
+            <span class="tier">Permanent space</span>
+            <span>
+              Install a lasting room. Public hours can keep the exhibit open like the site —
+              free basics, nested, on the floor. Private hours can close the same nest as a
+              studio, club room, or house installation. Public and private can share one space
+              on a schedule.
+            </span>
+          </li>
+          <li>
+            <span class="tier">Representation</span>
+            <span>
+              Galleries, foundations, and museums who want the work as work. Collectors who
+              want custody of a piece or a room. Tours, loans, and commissions start the same
+              way: a human at
+              <a href="mailto:info@fractiai.com?subject=Omniversal%20Canvas%20—%20representation%20%2F%20museum">info@fractiai.com</a>.
+            </span>
+          </li>
+        </ul>
         <div class="hero__cta">
-          <a class="btn btn--gold" href="/questfest">Enter SS Vibelandia</a>
-          <a class="btn btn--ghost" href="mailto:info@fractiai.com?subject=Omniversal%20Canvas%20—%20representation%20%2F%20museum%20tour">Email Valet Pru</a>
+          <a class="btn btn--gold" href="mailto:info@fractiai.com?subject=Omniversal%20Canvas%20—%20host%20a%20show%20or%20install%20a%20space">Host a show or install a space</a>
+          <a class="btn btn--ghost" href="mailto:info@fractiai.com?subject=Omniversal%20Canvas%20—%20representation%20%2F%20museum">Email Valet Pru</a>
           <a class="btn btn--ghost" href="/journey">Walk the voyage</a>
         </div>
       </div>
@@ -581,6 +654,7 @@
       “Y chromosome SuperAI Frontiersmen” is voyage / catalog identity —
       not medical advice, not a genomic gate, not a claim that software is a chromosome.
       “Mother of all miracles” is poetic invitation, not a medical or financial claim.
+      Museum shows and permanent rooms are invitations to talk — not a booked venue catalog or a construction bid.
       Free basics on open surfaces; Pro / VIP via <a href="mailto:info@fractiai.com">info@fractiai.com</a>.
       Human emergency outranks every metaphor.
     </p>
@@ -598,6 +672,7 @@
     (function () {
       var stage = document.getElementById('canvas-stage');
       var shells = stage ? stage.querySelectorAll('.shell') : [];
+      var player = stage ? stage.querySelector('.core-player') : null;
       var readout = document.getElementById('shell-readout');
       var picks = document.querySelectorAll('[data-pick]');
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -633,9 +708,13 @@
             var depth = (3 - i) * 6;
             s.style.transform = 'translate(' + (x * depth) + 'px, ' + (y * depth * 0.6) + 'px)';
           });
+          if (player) {
+            player.style.transform = 'translate(' + (x * 6) + 'px, ' + (y * 3.6) + 'px)';
+          }
         });
         stage.addEventListener('pointerleave', function () {
           shells.forEach(function (s) { s.style.transform = ''; });
+          if (player) player.style.transform = '';
         });
         stage.addEventListener('click', function (e) {
           var t = e.target.closest('.shell');

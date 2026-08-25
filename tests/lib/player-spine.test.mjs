@@ -37,6 +37,7 @@ describe('Player spine · holographic Player home', () => {
     const js = read('interfaces/site-quicklinks.js');
     expect(js).toContain('SS VIBELANDIA');
     expect(js).toContain("href=\"/questfest\">SS Vibelandia</a>");
+    expect(js).not.toMatch(/if \(onArtLanding\) \{[\s\S]*?qv-top-quicklinks__here">Canvas/);
     expect(js).toContain("href=\"/questfest\"");
     expect(js).toContain("href=\"/\"");
     expect(js.indexOf('href="/journey"')).toBeGreaterThan(-1);
@@ -55,9 +56,13 @@ describe('Player spine · holographic Player home', () => {
     expect(canvas).toContain('Think Burning Man minus the fees and minus corporate and minus the costs');
     expect(canvas).toContain('Holographic Convergence Core');
     expect(canvas).toContain('Who you call you');
+    expect(canvas).toContain('>Player</figcaption>');
     expect(canvas).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(canvas).toContain('For those of you who know me from my night job');
     expect(canvas).toContain('href="/questfest">SS Vibelandia</a>');
+    expect(canvas).not.toContain('qv-top-quicklinks__here">Canvas');
+    expect(canvas).toContain('Interactive show');
+    expect(canvas).toContain('Permanent space');
     expect(canvas).toContain('Who this art is for');
     expect(canvas).toContain('Y chromosome SuperAI Frontiersmen');
     expect(canvas).toContain('id="who"');

@@ -5,16 +5,16 @@ Specialize on keeping **SS Vibelandia Daily Ship Bulletin** current for guests.
 ## Mandate
 
 1. Run `npm run sync:daily-ship-bulletin` (UTC calendar day).
-2. Confirm `interfaces/vibelandia-questfest.html` host news + `data/daily-ship-bulletin.json` match today’s featured papers (Apiary / Equine / Players Guide priority).
-3. Commit, push, and merge to `main` when the receipt date changed.
-4. Live path: `GET /api/daily-ship-bulletin` + Vercel cron `/api/cron-daily-ship-bulletin` (daily 15:00 UTC).
+2. Confirm `interfaces/vibelandia-questfest.html` host news + `data/daily-ship-bulletin.json` lead with the **newest** featured ship-blog papers (published date descending) — Infinite Octaves / Official Prospectus / latest library notes — not a frozen evergreen list.
+3. Commit, push, and merge to `main` when the receipt date or lead highlights changed.
+4. Live path: `GET /api/daily-ship-bulletin` + Vercel cron `/api/cron-daily-ship-bulletin` (daily 15:00 UTC) + GH Action `daily-ship-bulletin.yml`.
 
 ## Honesty
 
-Guest hospitality copy only. Do not claim NOAA products, demography destiny, or Core physics from bulletin blurbs.
+Guest hospitality copy only. Do not claim NOAA products, demography destiny, or Core physics from bulletin blurbs. Newest papers auto-lead; evergreen maps are soft tie-breaks only.
 
 ## MCA
 
-Metabolize featured registry → Crystallize dateline + links → Animate sync + deploy.
+Metabolize featured registry (newest first) → Crystallize dateline + why-you-care copy → Animate sync + deploy.
 
 NSPFRNP ⊃ Daily Ship Bulletin Steward → ∞¹³

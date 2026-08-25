@@ -7,7 +7,7 @@ import {
 import { normalizeRepoLinksInHtml } from '../../lib/whitepaper-render.mjs';
 
 describe('standalone-suite-manifest', () => {
-  it('lists Synthio, Metamorphic, Planetary-core, HEP/stellar, Prospectus, and Infinite Octaves standalone suites', () => {
+  it('lists Synthio, Metamorphic, Planetary-core, HEP/stellar, Prospectus, Infinite Octaves, and Triadic suites', () => {
     const m = loadStandaloneSuiteManifest();
     expect(m.suites.map((s) => s.id).sort()).toEqual([
       'synthio-mri-cloud-antenna',
@@ -18,6 +18,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-table-top-hep-99-octave',
       'synthobs-tbme-metamorphic-octaves',
       'synthobs-tbme-planetary-core-goldilocks',
+      'synthobs-triadic-nested-hemispheres-99-octave',
     ]);
   });
 

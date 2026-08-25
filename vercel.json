@@ -997,6 +997,14 @@
       "destination": "/interfaces/blog-planetary-core-goldilocks-2026-08.html"
     },
     {
+      "source": "/ship-blog/triadic-hemispheres",
+      "destination": "/interfaces/blog-triadic-hemispheres-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/triadic-hemispheres/",
+      "destination": "/interfaces/blog-triadic-hemispheres-2026-08.html"
+    },
+    {
       "source": "/ship-blog/infinite-octaves-omniversal",
       "destination": "/interfaces/blog-infinite-octaves-omniversal-2026-08.html"
     },

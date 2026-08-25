@@ -4,6 +4,14 @@
   "updatedAt": "2026-08-23",
   "suites": [
     {
+      "id": "synthobs-triadic-nested-hemispheres-99-octave",
+      "path": "research/synthobs-triadic-nested-hemispheres-99-octave",
+      "github": "https://github.com/FractiAI/synthobs-triadic-nested-hemispheres-99-octave",
+      "description": "Triadic Nested Hemispheric Architectures via Φ_EGS — catalog suite",
+      "paperIds": ["synthobs-triadic-nested-hemispheres-99-octave-2026-08"],
+      "extraDocs": []
+    },
+    {
       "id": "synthobs-infinite-octaves-omniversal-lattice",
       "path": "research/synthobs-infinite-octaves-omniversal-lattice",
       "github": "https://github.com/FractiAI/synthobs-infinite-octaves-omniversal-lattice",

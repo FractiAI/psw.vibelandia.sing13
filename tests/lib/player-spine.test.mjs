@@ -15,7 +15,7 @@ describe('Player spine · holographic Player home', () => {
     expect(PLAYER_PRIMARY_DOORS[0].id).toBe('journey');
     expect(PLAYER_PRIMARY_DOORS[0].href).toBe('/journey');
     expect(PLAYER_PRIMARY_DOORS[1].id).toBe('canvas');
-    expect(PLAYER_PRIMARY_DOORS[1].href).toBe('/omniverse-canvas');
+    expect(PLAYER_PRIMARY_DOORS[1].href).toBe('/');
   });
 
   it('QUESTFEST home uses player spine not channel labyrinth', () => {
@@ -24,7 +24,7 @@ describe('Player spine · holographic Player home', () => {
     expect(html).toContain('btn-player-lead');
     expect(html).toContain('player-more-aboard');
     expect(html).toContain('Journey · grand narrative');
-    expect(html).toContain('/omniverse-canvas');
+    expect(html).toContain('href="/"');
     expect(html).not.toContain('id="ship-crew"');
     expect(html).not.toContain('class="o99-door"');
     expect(html).toMatch(/Three notes worth your Player time|Six newest papers/);
@@ -33,11 +33,13 @@ describe('Player spine · holographic Player home', () => {
     expect(renderPlayerChannelsHtml()).toContain('Canvas');
   });
 
-  it('site quicklinks lead with Journey not Concierge', () => {
+  it('site quicklinks board the ship at /questfest and keep Canvas at /', () => {
     const js = read('interfaces/site-quicklinks.js');
-    const navBlock = js.slice(js.indexOf('nav.innerHTML'), js.indexOf('nav.innerHTML') + 800);
-    expect(navBlock).toContain('SS VIBELANDIA');
-    expect(navBlock.indexOf('/journey')).toBeLessThan(navBlock.indexOf('/jukebox'));
-    expect(navBlock).not.toContain('Concierge');
+    expect(js).toContain('SS VIBELANDIA');
+    expect(js).toContain('Enter SS Vibelandia');
+    expect(js).toContain("href=\"/questfest\"");
+    expect(js).toContain("href=\"/\"");
+    expect(js.indexOf('href="/journey"')).toBeGreaterThan(-1);
+    expect(js.indexOf('href="/jukebox"')).toBeGreaterThan(js.indexOf('href="/journey"'));
   });
 });

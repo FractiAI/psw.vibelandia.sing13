@@ -1,7 +1,9 @@
 /**
- * Client: always show the guest’s local calendar date on the QUESTFEST board,
- * then refresh Valet Pru’s news body from /api/daily-ship-bulletin.
+ * Client: always show the guest’s local calendar date on the QUESTFEST board
+ * and Omniversal Canvas landing, then refresh Valet Pru’s news body from
+ * /api/daily-ship-bulletin.
  * Dates are never left to baked HTML or i18n dictionaries.
+ * Newest featured ship-blog papers lead automatically (published descending).
  */
 (function () {
   var MONTHS = [
@@ -44,17 +46,22 @@
     var board = localBoard();
     var badgeEl = document.getElementById('qf-cloud-badge') || document.querySelector('.cloud-badge');
     var labelEl = document.getElementById('host-news-label');
+    var canvasLabel = document.getElementById('canvas-news-label');
     if (badgeEl) badgeEl.textContent = board.shortBoard;
     if (labelEl) labelEl.textContent = board.newsLabel;
+    if (canvasLabel) canvasLabel.textContent = board.newsLabel;
     try {
-      document.title = 'SS Vibelandia · Daily Ship Bulletin · ' + board.titleLabel;
+      if (labelEl || document.getElementById('host-news-body')) {
+        document.title = 'SS Vibelandia · Daily Ship Bulletin · ' + board.titleLabel;
+      }
     } catch (_) {}
     return board;
   }
 
   paintToday();
   var bodyEl = document.getElementById('host-news-body');
-  if (!bodyEl) return;
+  var canvasBody = document.getElementById('canvas-news-body');
+  if (!bodyEl && !canvasBody) return;
 
   fetch('/api/daily-ship-bulletin', { credentials: 'omit' })
     .then(function (r) {
@@ -62,7 +69,10 @@
     })
     .then(function (data) {
       if (!data || !data.ok) return;
-      if (data.htmlBody) bodyEl.innerHTML = data.htmlBody;
+      if (data.htmlBody) {
+        if (bodyEl) bodyEl.innerHTML = data.htmlBody;
+        if (canvasBody) canvasBody.innerHTML = data.htmlBody;
+      }
       paintToday();
     })
     .catch(function () {

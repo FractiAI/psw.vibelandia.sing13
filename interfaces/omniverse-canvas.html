@@ -297,6 +297,45 @@
     }
     .shell-readout strong { color: var(--gold-hi); font-weight: 600; }
 
+    /* —— SHIP NEWS (auto from daily bulletin) —— */
+    .ship-news {
+      padding: clamp(2.25rem, 5vw, 3.5rem) 1.25rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.18);
+      background:
+        linear-gradient(180deg, rgba(12, 20, 36, 0.95) 0%, rgba(6, 9, 18, 0.98) 100%);
+    }
+    .ship-news__inner {
+      max-width: 40rem;
+      margin: 0 auto;
+    }
+    .ship-news__kicker {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.55rem;
+    }
+    .ship-news h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+      margin: 0 0 0.85rem;
+      color: var(--ink);
+    }
+    .ship-news__body {
+      color: var(--ink-soft);
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+      line-height: 1.55;
+      margin: 0 0 1.25rem;
+    }
+    .ship-news__body a { color: var(--gold-hi); }
+    .ship-news__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 0.85rem;
+    }
+
     /* —— MODE —— */
     .mode {
       padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
@@ -491,6 +530,22 @@
         on <strong style="color:var(--gold-hi)">Base</strong> mainnet (the studio address).
       </p>
     </section>
+
+    <!-- CANVAS_SHIP_NEWS_START -->
+    <section class="ship-news" id="ship-news" aria-labelledby="ship-news-h">
+      <div class="ship-news__inner">
+        <p class="ship-news__kicker" id="canvas-news-label">News of the day · Wednesday, August 26</p>
+        <h2 id="ship-news-h">Latest on the ship</h2>
+        <div class="ship-news__body" id="canvas-news-body">
+          Energy and labor risks are real — and they are not the whole ocean. Today’s care is the Invisible Frontier: Gates’s linear world as the water, our Goldilocks ship floating, navigating, and drawing from it. Catalog framing — not a dunk, and not a prophecy.<br /><br />If you want a map for that: <a href="/ship-blog/invisible-frontier">Gates’s warnings, our Goldilocks ship</a>. For the three-dome stage map: <a href="/ship-blog/triadic-hemispheres">Three nested domes — one Goldilocks stage</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.
+        </div>
+        <div class="ship-news__cta">
+          <a class="btn btn--gold" href="/ship-blog/invisible-frontier">Gates’s warnings, our Goldilocks ship</a>
+          <a class="btn btn--ghost" href="/questfest#ship-blog">All latest ship blog</a>
+        </div>
+      </div>
+    </section>
+<!-- CANVAS_SHIP_NEWS_END -->
 
     <section class="band" id="who" aria-labelledby="who-h">
       <h2 id="who-h">Who this art is for</h2>
@@ -710,5 +765,6 @@
   </script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script src="/interfaces/daily-ship-bulletin.js" defer></script>
 </body>
 </html>

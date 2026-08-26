@@ -32,6 +32,16 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 25');
   });
 
+  it('leads News of the day with Invisible Frontier on 2026-08-26', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-08-26' });
+    expect(payload.highlights[0].id).toBe(
+      'synthobs-invisible-frontier-gates-ai-2026-08',
+    );
+    expect(payload.htmlBody).toMatch(/Invisible Frontier|Goldilocks ship|Gates/i);
+    expect(payload.htmlBody).toContain('invisible-frontier');
+    expect(payload.newsLabel).toContain('August 26');
+  });
+
   it('leads News of the day with why-you-care, not a paper list', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-08-22' });
     expect(payload.htmlBody).toMatch(/Today’s care|Today’s news/i);

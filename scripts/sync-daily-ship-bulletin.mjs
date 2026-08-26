@@ -2,8 +2,11 @@
 /**
  * Sync Daily Ship Bulletin into static guest surfaces.
  * - Refreshes host news in vibelandia-questfest.html
+ * - Refreshes Latest on the ship on omniverse-canvas.html (site front door `/`)
  * - Upserts today’s featured post into data/bulletin-board-posts.json
  * - Writes data/daily-ship-bulletin.json receipt
+ *
+ * Newest featured ship-blog papers lead automatically (published descending).
  *
  * Run daily (GH Action / cloud agent steward): npm run sync:daily-ship-bulletin
  * Live guests also load /api/daily-ship-bulletin (no commit required).
@@ -12,21 +15,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDailyShipBulletin, todayYmd } from '../lib/daily-ship-bulletin.mjs';
+import { QUESTFEST_BLOG_POSTS } from '../lib/questfest-blog-posts.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const QF = path.join(ROOT, 'interfaces', 'vibelandia-questfest.html');
+const CANVAS = path.join(ROOT, 'interfaces', 'omniverse-canvas.html');
 const BOARD = path.join(ROOT, 'data', 'bulletin-board-posts.json');
 const RECEIPT = path.join(ROOT, 'data', 'daily-ship-bulletin.json');
-
-function replaceBetween(html, startMarker, endMarker, inner) {
-  const start = html.indexOf(startMarker);
-  const end = html.indexOf(endMarker);
-  if (start < 0 || end < 0 || end <= start) {
-    throw new Error(`Markers not found: ${startMarker} … ${endMarker}`);
-  }
-  return html.slice(0, start + startMarker.length) + inner + html.slice(end);
-}
 
 async function main() {
   const dateArg = process.argv.find((a) => a.startsWith('--date='));
@@ -70,13 +66,49 @@ async function main() {
 
   fs.writeFileSync(QF, html, 'utf8');
 
+  // Omniversal Canvas front door — Latest on the ship (auto from newest featured notes)
+  let canvas = fs.readFileSync(CANVAS, 'utf8');
+  const lead = payload.highlights?.[0];
+  const leadHref = lead?.href || '/questfest#ship-blog';
+  const leadTitle =
+    (lead && QUESTFEST_BLOG_POSTS[lead.id]?.headline) || lead?.title || 'Ship blog';
+  const canvasInner = `
+    <section class="ship-news" id="ship-news" aria-labelledby="ship-news-h">
+      <div class="ship-news__inner">
+        <p class="ship-news__kicker" id="canvas-news-label">${payload.newsLabel}</p>
+        <h2 id="ship-news-h">Latest on the ship</h2>
+        <div class="ship-news__body" id="canvas-news-body">
+          ${payload.htmlBody}
+        </div>
+        <div class="ship-news__cta">
+          <a class="btn btn--gold" href="${leadHref}">${escapeHtml(leadTitle)}</a>
+          <a class="btn btn--ghost" href="/questfest#ship-blog">All latest ship blog</a>
+        </div>
+      </div>
+    </section>
+`;
+  const cStart = '<!-- CANVAS_SHIP_NEWS_START -->';
+  const cEnd = '<!-- CANVAS_SHIP_NEWS_END -->';
+  const c0 = canvas.indexOf(cStart);
+  const c1 = canvas.indexOf(cEnd);
+  if (c0 < 0 || c1 < 0 || c1 <= c0) {
+    throw new Error('CANVAS_SHIP_NEWS markers not found in omniverse-canvas.html');
+  }
+  canvas =
+    canvas.slice(0, c0 + cStart.length) + canvasInner + canvas.slice(c1);
+  if (!canvas.includes('daily-ship-bulletin.js')) {
+    canvas = canvas.replace('</body>', `${scriptTag}</body>`);
+  }
+  fs.writeFileSync(CANVAS, canvas, 'utf8');
+
   // Upsert board post for today’s lead highlight
   const board = JSON.parse(fs.readFileSync(BOARD, 'utf8'));
-  const lead = payload.highlights?.[0];
   if (lead) {
     const id = `daily-${payload.date}-${lead.id}`;
     board.updated = payload.date;
-    board.posts = (board.posts || []).filter((p) => p.id !== id && !String(p.id).startsWith(`daily-${payload.date}-`));
+    board.posts = (board.posts || []).filter(
+      (p) => p.id !== id && !String(p.id).startsWith(`daily-${payload.date}-`),
+    );
     board.posts.unshift({
       id,
       posted: payload.date,
@@ -100,12 +132,21 @@ async function main() {
         date: payload.date,
         newsLabel: payload.newsLabel,
         highlights: (payload.highlights || []).map((h) => h.id),
+        canvas: 'interfaces/omniverse-canvas.html#ship-news',
         receipt: 'data/daily-ship-bulletin.json',
       },
       null,
       2,
     ),
   );
+}
+
+function escapeHtml(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
 
 main().catch((err) => {

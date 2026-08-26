@@ -70,6 +70,11 @@ describe('Player spine · holographic Player home', () => {
     expect(welcomeAt).toBeGreaterThan(titleAt);
     expect(whoAt).toBeGreaterThan(welcomeAt);
     expect(stageAt).toBeGreaterThan(whoAt);
+    expect(canvas).toContain('id="ship-news"');
+    expect(canvas).toContain('CANVAS_SHIP_NEWS_START');
+    expect(canvas).toContain('canvas-news-body');
+    expect(canvas.indexOf('id="ship-news"')).toBeGreaterThan(welcomeAt);
+    expect(canvas.indexOf('id="ship-news"')).toBeLessThan(whoAt);
     expect(ship).not.toContain('For those of you who know me from my night job');
     expect(ship).toContain('Know me from the club?');
     expect(ship).toContain('href="/"');

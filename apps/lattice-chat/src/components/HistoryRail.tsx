@@ -5,6 +5,7 @@ import { RepoWorkstreamList } from '@/components/RepoWorkstreamList';
 import { SignedInBar } from '@/components/AuthPanel';
 import { KeySettingsPanel } from '@/components/KeySettings';
 import { loadLatticeModels } from '@/api';
+import { listSelectableChats } from '@/threadHistory';
 
 export function HistoryRail({
   open,
@@ -23,16 +24,12 @@ export function HistoryRail({
   const renameThread = useLatticeStore((s) => s.renameThread);
   const deleteThread = useLatticeStore((s) => s.deleteThread);
 
-  const sorted = [...threads].sort(
-    (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
-  );
-  const pastChats = sorted.filter((t) => t.messages.length > 0 || t.id === activeThreadId);
+  const pastChats = listSelectableChats(threads, activeThreadId);
 
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
 
   function handleNewChat() {
     newChat();
-    onClose?.();
   }
 
   function handleSelect(id: string) {
@@ -74,9 +71,7 @@ export function HistoryRail({
         New chat
       </button>
 
-      <RepoWorkstreamList onSwitched={() => onClose?.()} />
-
-      <div className="rail-section">
+      <div className="rail-section rail-section--chats">
         <h2 className="rail-section-title">Past chats</h2>
         <ul className="thread-list">
           {!signedIn ? (
@@ -122,6 +117,8 @@ export function HistoryRail({
           )}
         </ul>
       </div>
+
+      <RepoWorkstreamList onSwitched={() => onClose?.()} />
 
       <p className="edge-note">Chats stay on this device — like Cursor history.</p>
 

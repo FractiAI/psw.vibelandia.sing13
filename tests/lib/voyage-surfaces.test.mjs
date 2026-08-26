@@ -47,6 +47,9 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
     expect(html).toMatch(/not a genomic or gender membership test/i);
     expect(html).toContain('voyage-flagship');
+    expect(html).toContain('vb-pub');
+    expect(html).toContain('voyage-brochure-publication.css');
+    expect(html).toContain('vb-pub-hero');
     expect(html).toContain('/voyage/live-the-vibe');
     expect(html).toContain('/voyage/cabin-ph-001');
     expect(html).toContain('voyage-deck-door');
@@ -144,6 +147,13 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('qv-top-quicklinks');
     expect(html).toContain('SS VIBELANDIA');
     expect(html).toMatch(/<body>[\s\S]*qv-top-quicklinks/);
+  });
+
+  it('canvas landing uses publication news rail chrome', () => {
+    const canvas = read('interfaces/omniverse-canvas.html');
+    expect(canvas).toContain('canvas-pub');
+    expect(canvas).toContain('voyage-brochure-publication.css');
+    expect(canvas).toContain('band--ship-news');
   });
 
   it('shared ribbon advertises the Voyage door', () => {

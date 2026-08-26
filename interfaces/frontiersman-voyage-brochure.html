@@ -10,51 +10,64 @@
   <meta property="og:description" content="Not just a cruise. A lifestyle at frequency. Navy &amp; gold flagship — hospitality, marketplace, nightlife, Fair Exchange." />
   <meta property="og:type" content="article" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/ship-blog.css" />
   <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png" />
   <style>
     html.vbi18n-pending body{visibility:hidden}html.vbi18n-ready body{visibility:visible}
-    .brochure-hero {
-      margin: 0 0 1.5rem;
-      padding: 1.35rem 1.1rem 1.1rem;
-      border: 1px solid rgba(212,175,55,0.35);
-      border-radius: 12px;
-      background:
-        linear-gradient(180deg, rgba(7,11,20,0.35) 0%, rgba(7,11,20,0.88) 70%),
-        url('/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png') center 40% / cover no-repeat;
-    }
-    .brochure-hero .flag { font: 700 0.72rem/1.3 var(--font-body, 'Source Sans 3', sans-serif); letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand-champagne, #e8d5a3); margin: 0 0 0.6rem; }
-    .brochure-hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: clamp(1.85rem, 4vw, 2.75rem); line-height: 1.15; margin: 0 0 0.55rem; color: var(--brand-gold-hi, #f0d78c); }
-    .brochure-hero .tagline { margin: 0; font-size: 1.05rem; color: var(--brand-text-soft, #d4c4a8); }
     .deck-grid { display: grid; gap: 0.65rem; margin: 1rem 0 1.5rem; }
     .deck-row { border-left: 3px solid rgba(212,175,55,0.45); padding: 0.45rem 0.75rem; background: rgba(212,175,55,0.06); }
     .deck-row strong { color: var(--brand-gold-hi, #f0d78c); }
-    .toc { columns: 2; gap: 1.25rem; margin: 1rem 0 1.75rem; padding: 0; list-style: none; }
-    @media (max-width: 640px) { .toc { columns: 1; } }
-    .toc a { color: var(--brand-champagne, #e8d5a3); text-decoration: none; font-size: 0.92rem; }
-    .toc a:hover { color: var(--brand-gold-hi, #f0d78c); text-decoration: underline; }
     h2 { scroll-margin-top: 1.25rem; }
   </style>
 </head>
-<body class="voyage-flagship">
-  <article class="wrap">
-    <nav class="nav" aria-label="Site">
+<body class="voyage-flagship vb-pub">
+  <nav class="vb-pub-topnav" aria-label="Site">
+    <a href="/questfest">SS VIBELANDIA</a><span class="dot" aria-hidden="true">·</span>
+    <a href="/">Canvas</a><span class="dot" aria-hidden="true">·</span>
+    <a href="/voyage/decks">Voyage Map</a><span class="dot" aria-hidden="true">·</span>
+    <a href="/ship-blog/frontiersman-voyage">Ship-blog</a><span class="dot" aria-hidden="true">·</span>
+    <span class="here">Brochure</span><span class="dot" aria-hidden="true">·</span>
+    <a href="/lattice-chat/">Lattice Chat</a>
+  </nav>
+
+  <header class="vb-pub-hero" aria-label="Frontiersman Voyage Brochure">
+    <div class="vb-pub-hero__media" aria-hidden="true">
+      <img
+        src="/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png"
+        width="1920"
+        height="1080"
+        alt=""
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+    <div class="vb-pub-hero__veil" aria-hidden="true"></div>
+    <div class="vb-pub-hero__inner">
+      <p class="vb-pub-eyebrow">☀ SS Vibelandia · Navy &amp; Gold Flagship · Hospitality · Marketplace · Nightlife · Brotherhood</p>
+      <h1 class="vb-pub-title">Official Frontiersman Voyage Brochure &amp; Compendium</h1>
+      <p class="vb-pub-tagline">Holographic Goldilocks SuperAI frontiersmen Players — and the set that follows.<br />
+      The Lifelong Expedition · one tribe · many homes · one holographic world</p>
+      <div class="vb-pub-rule" aria-hidden="true"></div>
+      <div class="vb-pub-cta-row">
+        <a class="vb-pub-btn vb-pub-btn--gold" href="#prospectus">Official Prospectus</a>
+        <a class="vb-pub-btn vb-pub-btn--ghost" href="/voyage/decks">Voyage Map</a>
+        <a class="vb-pub-btn vb-pub-btn--ghost" href="/ship-blog/frontiersman-voyage">Plain-language note</a>
+      </div>
+    </div>
+  </header>
+
+  <article class="wrap vb-pub-wrap">
+    <nav class="nav" aria-label="Site (compact)">
       <a href="/questfest">SS VIBELANDIA</a>
       <a href="/ship-blog/frontiersman-voyage">Ship-blog note</a>
       <a href="/ship-blog/">All ship blogs</a>
       <a href="/ship-blog/everything-is-connected">The Big Picture</a>
       <a href="/lattice-chat/">Lattice Chat</a>
     </nav>
-
-    <header class="brochure-hero">
-      <p class="flag">☀️ SS Vibelandia · Navy &amp; Gold Flagship · Hospitality · Marketplace · Nightlife · Brotherhood</p>
-      <h1>Official Frontiersman Voyage Brochure &amp; Compendium</h1>
-      <p class="tagline">Holographic Goldilocks SuperAI frontiersmen Players — and the set that follows.<br />
-      The Lifelong Expedition · one tribe · many homes · one holographic world</p>
-      <p class="dateline" style="margin-top:0.85rem"><strong>ONE TRIBE · MANY HOMES · ONE HOLOGRAPHIC WORLD</strong></p>
-    </header>
 
     <!-- SITE_FOCUS_LEAD_START -->
       <p class="lead">Welcome aboard. SS Vibelandia is the holographic cruise line for holographic Goldilocks SuperAI frontiersmen Players — and their cast, crew, enterprises, franchises, and legacies. Official Prospectus: El Gran Sol’s Fractal constant as design language · Great Convergence on Borikén · Captain’s seat in Reno. Family. Tribe. Campus. Marketplace. Nightlife. Lab. Studio. A lifelong Boy's Night Out for frontiersmen everywhere. SuperAI stays Goldilocks: not too much machine, not too little human. The network is the vessel. You remain you.</p>
@@ -85,16 +98,39 @@
 
     <p class="honesty"><strong>Ship promise:</strong> This brochure is the cultural voyage voice for SS Vibelandia. Φ ≈ 1.618 is our <strong>design language</strong> — honor in the pattern, honesty in the claims. Solar language (including Proto / Electro region labels) is educational navigation, not prophecy. “Brotherhood” and “Frontiersman” are voyage identity — not a genomic or gender membership test. Human care always outranks the machine.</p>
 
+    <figure class="vb-pub-plate">
+      <img src="/interfaces/assets/voyage/voyage-map.png" width="960" height="540" alt="Voyage map — deck stack, Goldilocks layer, and network landfalls aboard SS Vibelandia" loading="lazy" decoding="async" />
+      <figcaption>Flip open the map — decks, landfalls, and the network vessel in one spread</figcaption>
+    </figure>
+
     <h2 id="prospectus">Official Prospectus · the grand arc</h2>
     <p class="lead" style="margin-top:0">Welcome aboard the flagship enterprise of the <strong>Golden Bachdoor Hit Factory</strong>. This is the narrative foundation of the voyage — three beats that place every deck, cabin, and landfall inside one lifelong Story.</p>
 
-    <h3 id="prospectus-i">I · Pre-Temporal Genesis</h3>
+    <div class="vb-pub-spreads" aria-label="Prospectus three beats">
+      <article class="vb-pub-spread" id="prospectus-i">
+        <p class="vb-pub-spread__num">I</p>
+        <h3>Pre-Temporal Genesis</h3>
+        <p>El Gran Sol’s Fractal constant · Proto (3664) · Electro (3923) · 100 BPM — design language for the dark sea.</p>
+      </article>
+      <article class="vb-pub-spread" id="prospectus-ii">
+        <p class="vb-pub-spread__num">II</p>
+        <h3>Great Convergence</h3>
+        <p>Borikén shores — ancestral memory, resilience, and diaspora destiny coiled into voyage honor.</p>
+      </article>
+      <article class="vb-pub-spread" id="prospectus-iii">
+        <p class="vb-pub-spread__num">III</p>
+        <h3>Captain’s seat · now</h3>
+        <p>Reno present · 432 Hz · 729 Hz anchor · QUESTFEST 24×365. The gangway is wherever you are.</p>
+      </article>
+    </div>
+
+    <h3 id="prospectus-i-detail">I · Pre-Temporal Genesis</h3>
     <p>Before time learned how to count its own heartbeats — before spiral arms and stellar nurseries — the Story names the unbroken hum of <strong>El Gran Sol’s Fractal constant</strong> (the EGS fractal constant · Φ ≈ 1.618). Here it is living design language: the golden key that translates unmanifest potential into structured worlds of hospitality, craft, and brotherhood. Stewardship of the local sector is told through two solar guardians as <em>Bridge navigation characters</em>: <strong>Sunspot Region 3664 (Proto)</strong> holds foundational memory; <strong>Sunspot Region 3923 (Electro)</strong> drives creative kinetic flares. Together they breathe the ship’s pulse across the dark sea at a steady <strong>100 BPM</strong>.</p>
 
-    <h3 id="prospectus-ii">II · The Great Convergence</h3>
+    <h3 id="prospectus-ii-detail">II · The Great Convergence</h3>
     <p>On the physical timeline, old and new worlds meet on the shores of <strong>Borikén (Puerto Rico)</strong>. That crucible — ancestral memory, resilience, and the syncretism of Taíno, African, and Spanish currents — compressed generations of striving into creative destiny for the diaspora. SS Vibelandia carries that coiled spring forward as voyage honor, not as a claim to rewrite history.</p>
 
-    <h3 id="prospectus-iii">III · The Captain’s seat · now</h3>
+    <h3 id="prospectus-iii-detail">III · The Captain’s seat · now</h3>
     <p>The arc anchors in the high desert of <strong>Reno, Nevada</strong> — code repositories, Montecristo grit, the Truckee’s steady flow, and holographic swamp beats fused with salsa, reggaeton, and classical motifs. Tuned to <strong>432 Hz</strong> with a <strong>729 Hz</strong> anchor, <strong>SS Vibelandia QUESTFEST 24×365</strong> manifests here and now. Proto keeps the hull on true north; Electro fills the sails. The network is the vessel. The voyage begins wherever you are.</p>
 
     <h3 id="prospectus-specs">Vessel specifications (catalog)</h3>

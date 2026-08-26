@@ -108,8 +108,8 @@ blog = blog.replace(
   `<meta name="description" content="${SITE_META_DESCRIPTION}" />`,
 );
 blog = blog.replace(
-  /<p class="lead">This ship is a holographic resort vessel[\s\S]*?wherever you are\.<\/p>/,
-  `<p class="lead">${SITE_BLOG_LEAD}</p>`,
+  /<p class="lead">[\s\S]*?<\/p>\s*\n\s*<nav class="voyage-deck-strip"/,
+  `<p class="lead">${SITE_BLOG_LEAD}</p>\n\n    <nav class="voyage-deck-strip"`,
 );
 fs.writeFileSync(blogPath, blog);
 

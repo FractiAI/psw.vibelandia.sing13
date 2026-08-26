@@ -11,9 +11,9 @@ const MODES: { id: AgentMode; label: string }[] = [
 const NESTS: { id: NestTopology; label: string; title: string }[] = [
   {
     id: 'octave99',
-    label: '99 Octave',
+    label: 'Infinite Octaves',
     title:
-      'Chart yourself in the grand Story to 99 octaves of depth (Φ_EGS) — fractal · holographic · Goldilocks AI (Digits 0–9 × Octaves 01–99)',
+      'Infinite Octaves Omniversal nest — recursive holographic depth. Practical filing map remains Digits 0–9 × Octaves 01–99 (engine pin, not a hard stop).',
   },
   {
     id: 'single',

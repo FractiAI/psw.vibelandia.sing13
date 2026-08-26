@@ -21,7 +21,7 @@ export const LATTICE_REPOSITORIES_FALLBACK: LatticeRepository[] = [
     label: 'SING 13 · SS VIBELANDIA',
     url: 'https://github.com/FractiAI/psw.vibelandia.sing13',
     startingRef: 'main',
-    blurb: 'Primary Lattice / SS Vibelandia SING 13 edge — 99 Octave home nest.',
+    blurb: 'Primary Lattice / SS Vibelandia SING 13 edge — Infinite Octaves home nest.',
     tags: ['primary', 'lattice', '99-octave'],
     guestSelectable: true,
   },

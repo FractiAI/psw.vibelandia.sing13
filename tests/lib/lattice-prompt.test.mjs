@@ -16,6 +16,7 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(normalizeNestTopology('infinite')).toBe('octave99');
     expect(normalizeNestTopology('omniversal')).toBe('octave99');
     expect(normalizeNestTopology('infinite-octaves')).toBe('octave99');
+    expect(normalizeNestTopology('infinite-octave')).toBe('octave99');
   });
 
   it('builds Infinite Octaves nest directive with prospectus pointer', () => {

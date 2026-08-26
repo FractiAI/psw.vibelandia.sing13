@@ -53,5 +53,6 @@ describe('Lattice Chat · Player 1 New Chat / past sessions', () => {
 
     const auth = read('apps/lattice-chat/src/components/AuthPanel.tsx');
     expect(auth).toContain('Player 1 · creator');
+    expect(auth).toContain('signed-in-seat');
   });
 });

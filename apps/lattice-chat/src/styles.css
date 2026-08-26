@@ -328,6 +328,25 @@ body {
   max-width: 11rem;
 }
 
+.signed-in-seat {
+  flex: 0 0 auto;
+  font: 700 0.65rem/1 var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-gold-hi);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(212, 175, 55, 0.16);
+  padding: 0.28rem 0.45rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.signed-in-seat--guest {
+  color: var(--brand-champagne);
+  border-color: rgba(168, 162, 158, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .signed-in-out {
   appearance: none;
   border: 1px solid rgba(212, 175, 55, 0.35);

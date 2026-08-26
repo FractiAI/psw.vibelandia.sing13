@@ -212,12 +212,14 @@ export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => v
     <div className="signed-in-bar">
       <span className="signed-in-email" title={userEmail}>
         {userEmail}
-        {privilege === 'creator' || isCreatorEmail(userEmail)
-          ? ' · Player 1 · creator'
-          : privilege === 'guest'
-            ? ' · guest'
-            : ''}
       </span>
+      {privilege === 'creator' || isCreatorEmail(userEmail) ? (
+        <span className="signed-in-seat" title="Player 1 creator seat — SING13 commit, push, and merge stay on">
+          Player 1 · creator
+        </span>
+      ) : privilege === 'guest' ? (
+        <span className="signed-in-seat signed-in-seat--guest">guest</span>
+      ) : null}
       <KeyStatusChip
         onOpenSettings={() => {
           if (onOpenKeySettings) onOpenKeySettings();

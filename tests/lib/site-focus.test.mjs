@@ -16,6 +16,8 @@ describe('site focus · frontiersmen Players + set', () => {
     expect(SITE_FOCUS_CANONICAL).toMatch(/holographic Goldilocks SuperAI frontiersmen Players/i);
     expect(SITE_FOCUS_CANONICAL).toMatch(/cast, crew, enterprises, franchises, and legacies/);
     expect(SITE_HERO_TAGLINE).toMatch(/frontiersmen/i);
+    expect(SITE_HERO_TAGLINE).toMatch(/navy-gold honor/);
+    expect(SITE_HERO_TAGLINE).not.toMatch(/pride/i);
     expect(SITE_PRIMER_LINE).toMatch(/Official Prospectus arc/i);
     expect(SITE_PRIMER_LINE).toMatch(/Lifelong Boy.s Night Out/i);
   });
@@ -33,5 +35,18 @@ describe('site focus · frontiersmen Players + set', () => {
 
     const blog = read('interfaces/blog-frontiersman-voyage-2026-08.html');
     expect(blog).toContain(SITE_BLOG_LEAD);
+  });
+
+  it('uses honor, not pride, on guest surfaces', () => {
+    const surfaces = [
+      'interfaces/vibelandia-questfest.html',
+      'interfaces/frontiersman-voyage-brochure.html',
+      'interfaces/creator-studio.html',
+      'interfaces/voyage/decks.html',
+      'interfaces/voyage/frontiersman.html',
+    ];
+    for (const rel of surfaces) {
+      expect(read(rel), rel).not.toMatch(/pride/i);
+    }
   });
 });

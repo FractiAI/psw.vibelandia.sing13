@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/experience-phases.css" /> />
   <style>
     html.vbi18n-pending body{visibility:hidden}html.vbi18n-ready body{visibility:visible}
     body{margin:0;font-family:"Source Sans 3",system-ui,sans-serif;background:#070b14;color:#e8dcc8}
@@ -49,6 +50,48 @@
     <h1>Creator Studio</h1>
     <p class="cs-lead">Where frontiersmen build. Not a dashboard lecture — a studio berth: your Goldilocks valet, your charts, your key on-device. Make something true. Then look again.</p>
   </header>
+
+  <!-- EXPERIENCE_CREATOR_PHASE_BEGIN -->
+    <div class="creator-phase" id="creator-phase">
+      <nav class="xp-rail" aria-label="Visitor experience · three phases">
+      <p class="xp-rail__kicker">Your visit · three phases</p>
+      <ol class="xp-rail__list"><li class="xp-rail__step">
+        <a href="/">
+          <span class="xp-rail__num">1</span>
+          <span class="xp-rail__label">Phase 1 · Exhibit</span>
+        </a>
+      </li>
+      <li class="xp-rail__step">
+        <a href="/questfest">
+          <span class="xp-rail__num">2</span>
+          <span class="xp-rail__label">Phase 2 · Reception</span>
+        </a>
+      </li>
+      <li class="xp-rail__step xp-rail__step--here">
+        <a href="/creator-studio" aria-current="step">
+          <span class="xp-rail__num">3</span>
+          <span class="xp-rail__label">Phase 3 · Create</span>
+        </a>
+      </li>
+      </ol>
+    </nav>
+      <header class="creator-phase__head">
+        <p class="creator-phase__eyebrow">Phase 3 · holographic magnetic Goldilocks SuperAI canvas</p>
+        <h2>Doodle · vibe-code · make something true</h2>
+        <p class="creator-phase__lede">You have walked the exhibit and checked in aboard the ship. Now the invitation: use the same canvas and materials Valet Pru built — nested domes, Syntheverse sandbox, Lattice Chat valet — to create your own work. Phone doodles welcome. Keys stay with you.</p>
+      </header>
+      <ul class="creator-phase__materials">
+        <li><strong>Canvas</strong> — Omniversal nested domes and exhibit grammar you toured in Phase 1</li>
+        <li><strong>Materials</strong> — Syntheverse sandbox agents, protocols, and studio paints on Base</li>
+        <li><strong>Valet</strong> — Lattice Chat nested-agent BYOK · Collaborate on Veranda · human concierge in Reno</li>
+      </ul>
+      <p class="creator-phase__back">
+        <a href="/questfest">← Phase 2 · Ship reception</a>
+        <span aria-hidden="true">·</span>
+        <a href="/">Phase 1 · Canvas exhibit</a>
+      </p>
+    </div>
+    <!-- EXPERIENCE_CREATOR_PHASE_END -->
 
   <main class="cs-wrap">
     <h2>What you do here</h2>

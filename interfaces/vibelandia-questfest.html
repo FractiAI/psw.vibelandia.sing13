@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="/interfaces/site-page-views.css" data-qv-page-views-css="1" />
   <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/experience-phases.css" /> />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -692,6 +693,104 @@
     <p class="voyage-guest-key__more"><a href="/journey">Journey · curated adventures</a> · <a href="/voyage/decks">Voyage Map · decks &amp; cabins</a></p>
   </section>
       <!-- PLAYER_GUEST_KEY_END -->
+
+  <!-- EXPERIENCE_RECEPTION_LOBBY_BEGIN -->
+    <section class="reception-lobby" id="reception-lobby" aria-labelledby="reception-h">
+      <nav class="xp-rail" aria-label="Visitor experience · three phases">
+      <p class="xp-rail__kicker">Your visit · three phases</p>
+      <ol class="xp-rail__list"><li class="xp-rail__step">
+        <a href="/">
+          <span class="xp-rail__num">1</span>
+          <span class="xp-rail__label">Phase 1 · Exhibit</span>
+        </a>
+      </li>
+      <li class="xp-rail__step xp-rail__step--here">
+        <a href="/questfest" aria-current="step">
+          <span class="xp-rail__num">2</span>
+          <span class="xp-rail__label">Phase 2 · Reception</span>
+        </a>
+      </li>
+      <li class="xp-rail__step">
+        <a href="/creator-studio">
+          <span class="xp-rail__num">3</span>
+          <span class="xp-rail__label">Phase 3 · Create</span>
+        </a>
+      </li>
+      </ol>
+    </nav>
+      <header class="reception-lobby__head">
+        <p class="reception-lobby__eyebrow">Phase 2 · SS VIBELANDIA GOLDILOCKS SONIC SHIP</p>
+        <h2 id="reception-h">Reception &amp; check-in lobby</h2>
+        <p class="reception-lobby__lede">Welcome aboard. This is the primer, onboarding, and main menu for visitors and guests. Valet Pru keeps the gangway. Choose how you want to sail — then tour the decks, food and drink, library, shore excursions, and everything else the vessel offers.</p>
+      </header>
+      <div class="reception-mode" aria-labelledby="reception-mode-h">
+        <h3 id="reception-mode-h">How do you want to sail?</h3>
+        <p class="reception-mode__note">Both lenses are honest fun. The difference is what you agree the ship may become.</p>
+        <div class="reception-mode__choices">
+          <a class="reception-mode__choice reception-mode__choice--fiction" href="/science-fiction">
+            <strong>As science fiction</strong>
+            <span>Digital representations — wonder first. Food, drink, and excursions as story and catalog. Watch the vessel like a prestige series.</span>
+          </a>
+          <a class="reception-mode__choice reception-mode__choice--stepin" href="/step-in">
+            <strong>As a reality I can step into</strong>
+            <span>Walk-in mode — hospitality, Grove marketplace, shore excursions, and concierge can actually happen. Human email for Pro and VIP. You remain you.</span>
+          </a>
+        </div>
+      </div>
+      <div class="reception-tour" aria-labelledby="reception-tour-h">
+        <h3 id="reception-tour-h">Tour the ship · menu of offerings</h3>
+        <p class="reception-tour__note">Pick a door. Decks and cabins on the Voyage Map. Adventures on Journeys. When you are ready to make something, Phase 3 waits in Creator Studio.</p>
+        <div class="reception-grid"><a class="reception-card" href="/voyage/decks">
+        <img src="/interfaces/assets/voyage/deck-9-summit.png" alt="" loading="lazy" decoding="async" width="320" height="200" />
+        <span class="reception-card__body">
+          <strong>Voyage Map</strong>
+          <span>Decks, cabins, crests — where you berth aboard the vessel</span>
+        </span>
+      </a>
+        <a class="reception-card" href="/journey">
+        <img src="/interfaces/assets/questfest-crew/puerto-reno-dock.png" alt="" loading="lazy" decoding="async" width="320" height="200" />
+        <span class="reception-card__body">
+          <strong>Shore excursions</strong>
+          <span>Journeys we offer — landfalls, sails, labs, nights ashore</span>
+        </span>
+      </a>
+        <a class="reception-card" href="/voyage/deck-4-5-grove">
+        <img src="/interfaces/assets/voyage/deck-4-5-grove.png" alt="" loading="lazy" decoding="async" width="320" height="200" />
+        <span class="reception-card__body">
+          <strong>Food &amp; drink · Grove</strong>
+          <span>Marketplace, cafés, atrium — Deck 4–5 hospitality heart</span>
+        </span>
+      </a>
+        <a class="reception-card" href="/library">
+        <img src="/interfaces/assets/holographic-ai-os-newscast-frame.png" alt="" loading="lazy" decoding="async" width="320" height="200" />
+        <span class="reception-card__body">
+          <strong>Library</strong>
+          <span>Deep Memory — ship-blog notes and whitepapers when you want the map</span>
+        </span>
+      </a>
+        <a class="reception-card" href="/jukebox">
+        <img src="/interfaces/assets/jukebox-golden-era-1940s.png" alt="" loading="lazy" decoding="async" width="320" height="200" />
+        <span class="reception-card__body">
+          <strong>Jukebox</strong>
+          <span>Listen free — let the music carry the feeling before you argue with it</span>
+        </span>
+      </a>
+        <a class="reception-card" href="/frontiersman-voyage">
+        <img src="/interfaces/assets/capitan-comandante-champion-2026.png" alt="" loading="lazy" decoding="async" width="320" height="200" />
+        <span class="reception-card__body">
+          <strong>Frontiersman brochure</strong>
+          <span>Official Prospectus — genesis, Borikén, Reno present</span>
+        </span>
+      </a>
+        </div>
+        <p class="reception-next">
+          <a class="btn btn-primary" href="/creator-studio">Continue to Phase 3 · Creator Studio →</a>
+          <a class="btn btn-ghost" href="/">← Back to Phase 1 · Canvas exhibit</a>
+        </p>
+      </div>
+      <p class="reception-honesty"><strong>Honesty:</strong> Sci-fi lens = digital catalog and story. Step-in lens = walk-in hospitality framing — not a weather forecast or medical claim. Fair Exchange via the Purser. Human emergency outranks every metaphor.</p>
+    </section>
+    <!-- EXPERIENCE_RECEPTION_LOBBY_END -->
 
   <section class="bulletin" id="bulletin" aria-labelledby="bulletin-h2">
     <span class="bulletin-kicker">Today’s board</span>

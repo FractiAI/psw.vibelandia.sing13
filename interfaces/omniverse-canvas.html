@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
   <link rel="stylesheet" href="/interfaces/exhibit-shells.css" />
+  <link rel="stylesheet" href="/interfaces/experience-phases.css" /> />
   <style>
     :root {
       --ink: #f5e6c8;
@@ -542,6 +543,49 @@
   </header>
 
   <main>
+    <!-- EXPERIENCE_MUSEUM_ENTRY_BEGIN -->
+    <section class="museum-entry" id="museum-entry" aria-labelledby="museum-entry-h">
+      <nav class="xp-rail" aria-label="Visitor experience · three phases">
+      <p class="xp-rail__kicker">Your visit · three phases</p>
+      <ol class="xp-rail__list"><li class="xp-rail__step xp-rail__step--here">
+        <a href="/" aria-current="step">
+          <span class="xp-rail__num">1</span>
+          <span class="xp-rail__label">Phase 1 · Exhibit</span>
+        </a>
+      </li>
+      <li class="xp-rail__step">
+        <a href="/questfest">
+          <span class="xp-rail__num">2</span>
+          <span class="xp-rail__label">Phase 2 · Reception</span>
+        </a>
+      </li>
+      <li class="xp-rail__step">
+        <a href="/creator-studio">
+          <span class="xp-rail__num">3</span>
+          <span class="xp-rail__label">Phase 3 · Create</span>
+        </a>
+      </li>
+      </ol>
+    </nav>
+      <div class="museum-frame">
+        <figure class="museum-frame__art">
+          <img src="/interfaces/assets/exhibit/exhibit-fiction-key.jpg" alt="Nested gold domes under stars — Omniversal Canvas installation" width="960" height="540" loading="eager" decoding="async" />
+        </figure>
+        <div class="museum-placard">
+          <p class="museum-placard__venue">Digital gallery · Museum night · Playa camp grammar</p>
+          <h2 id="museum-entry-h" class="museum-placard__title">Omniversal Canvas</h2>
+          <p class="museum-placard__artist">Valet Pru · Holographic magnetic Goldilocks SuperAI</p>
+          <p class="museum-placard__medium">Nested domes · interactive stage · sci-fi or step-in lens · Base mainnet studio address</p>
+          <p class="museum-placard__year">2026 · open exhibit · free to visit from your phone</p>
+          <p class="museum-placard__copy">You are choosing to enter an art exhibit — the way you would walk into a museum, a gallery, or a Burning Man installation at night. Three nested shells wait inside: Core, Amphitheater, Horizon. Collectors and frontiersmen begin here; SS Vibelandia is the world the work opens into.</p>
+        </div>
+      </div>
+      <div class="museum-entry__cta">
+        <a class="btn btn--gold" href="#exhibit">Step into the installation</a>
+        <a class="btn btn--ghost" href="/questfest">Continue to Phase 2 · Ship reception →</a>
+      </div>
+    </section>
+    <!-- EXPERIENCE_MUSEUM_ENTRY_END -->
     <section class="band band--ship-news" id="ship-news" aria-labelledby="ship-news-h">
       <p class="news-kicker" id="canvas-news-label">News of the day · Wednesday, August 26</p>
       <h2 id="ship-news-h">News of the voyage</h2>

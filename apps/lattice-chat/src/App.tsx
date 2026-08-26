@@ -15,7 +15,18 @@ function readNestFromUrl(): NestTopology | null {
     const raw = params.get('nest') || params.get('nestTopology');
     if (!raw) return null;
     const v = raw.trim().toLowerCase();
-    if (v === 'octave99' || v === '99-octave' || v === '99' || v === 'multi-octave') return 'octave99';
+    if (
+      v === 'octave99' ||
+      v === '99-octave' ||
+      v === '99' ||
+      v === 'multi-octave' ||
+      v === 'infinite' ||
+      v === 'omniversal' ||
+      v === 'infinite-octave' ||
+      v === 'infinite-octaves'
+    ) {
+      return 'octave99';
+    }
     if (v === 'single') return 'single';
     if (v === 'multi') return 'multi';
     if (v === 'goldilocks') return 'goldilocks';

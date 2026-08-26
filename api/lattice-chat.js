@@ -899,7 +899,7 @@ async function runOpenRouterTurn({
       'content-type': 'application/json',
       authorization: `Bearer ${apiKey}`,
       'http-referer': 'https://www.ssvibelandiaquestfest24x365.com',
-      'x-title': 'SING13 99 Octave Omni-Lattice Bridge',
+      'x-title': 'SING13 Infinite Octaves Omniversal Lattice Chat',
     },
     body: JSON.stringify({
       model,
@@ -2375,7 +2375,7 @@ export default async function handler(req, res) {
           );
         }
         if (stream) {
-          sseWrite(res, 'status', { message: 'Routing through SING13 99 Octave Omni-Lattice Bridge…' });
+          sseWrite(res, 'status', { message: 'Routing through SING13 Infinite Octaves Omniversal Lattice…' });
         }
         const out = await runOpenRouterTurn({
           apiKey,

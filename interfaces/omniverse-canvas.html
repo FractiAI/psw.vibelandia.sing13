@@ -266,20 +266,23 @@
       max-width: 36rem;
       margin: 0 auto;
     }
-    .shell-labels button {
+    .shell-labels a {
       font-family: 'Syne', sans-serif;
       font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      text-decoration: none;
+      text-align: center;
+      display: block;
       color: var(--ink);
       background: rgba(12, 20, 36, 0.75);
       border: 1px solid rgba(212, 175, 55, 0.28);
       padding: 0.85rem 0.6rem;
-      cursor: pointer;
       transition: border-color 0.2s ease, color 0.2s ease;
     }
-    .shell-labels button[aria-pressed="true"] {
+    .shell-labels a:hover,
+    .shell-labels a:focus-visible {
       border-color: var(--gold);
       color: var(--gold-hi);
     }
@@ -311,19 +314,20 @@
       border: 1px solid rgba(212, 175, 55, 0.35);
       margin-bottom: 1.25rem;
     }
-    .mode-toggle button {
+    .mode-toggle a {
       font-family: 'Syne', sans-serif;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      text-decoration: none;
       padding: 0.8rem 1.1rem;
       border: 0;
       background: transparent;
       color: var(--ink-soft);
-      cursor: pointer;
     }
-    .mode-toggle button[aria-pressed="true"] {
+    .mode-toggle a:hover,
+    .mode-toggle a:focus-visible {
       background: rgba(212, 175, 55, 0.18);
       color: var(--gold-hi);
     }
@@ -514,7 +518,7 @@
 
     <section class="stage-wrap" id="exhibit" aria-labelledby="stage-h">
       <h2 id="stage-h">Three nested domes</h2>
-      <p class="sub">Move across the stage. Touch a shell. Holographic Convergence Core · Amphitheater · Horizon — the same Φ nesting that holds the ship’s theaters and agent sandboxes.</p>
+      <p class="sub">Open a dome for the full room. Holographic Convergence Core · Amphitheater · Horizon — the same Φ nesting that holds the ship’s theaters and agent sandboxes.</p>
       <div class="stage" id="canvas-stage" aria-label="Holographic Convergence Core with Player at center">
         <div class="shell shell--3" data-shell="3"></div>
         <div class="shell shell--2" data-shell="2"></div>
@@ -529,25 +533,25 @@
         </figure>
         <div class="baseplane" aria-hidden="true"></div>
       </div>
-      <div class="shell-labels" role="group" aria-label="Select a shell">
-        <button type="button" data-pick="1" aria-pressed="true">Convergence Core</button>
-        <button type="button" data-pick="2" aria-pressed="false">Amphitheater</button>
-        <button type="button" data-pick="3" aria-pressed="false">Horizon</button>
+      <div class="shell-labels" role="navigation" aria-label="Open a dome">
+        <a href="/core">Convergence Core</a>
+        <a href="/amphitheater">Amphitheater</a>
+        <a href="/horizon">Horizon</a>
       </div>
-      <p class="shell-readout" id="shell-readout" aria-live="polite">
-        <strong>Holographic Convergence Core.</strong> Who you call you — the still center where story, frequency, and self meet.
+      <p class="shell-readout" id="shell-readout">
+        <strong>Full pages.</strong> Convergence Core · Amphitheater · Horizon each open a dedicated room — not a one-line swap on this stage.
       </p>
     </section>
 
     <section class="mode" aria-labelledby="mode-h">
       <h2 id="mode-h">How do you want to look?</h2>
-      <p class="lead">Both experiences are honest fun. You choose the lens.</p>
-      <div class="mode-toggle" role="group" aria-label="Experience lens">
-        <button type="button" id="mode-fiction" aria-pressed="true">As science fiction</button>
-        <button type="button" id="mode-step" aria-pressed="false">As a reality I can step into</button>
+      <p class="lead">Both experiences are honest fun. Each lens opens its own full page.</p>
+      <div class="mode-toggle" role="navigation" aria-label="Experience lens">
+        <a href="/science-fiction">As science fiction</a>
+        <a href="/step-in">As a reality I can step into</a>
       </div>
       <p class="mode-voice" id="mode-voice">
-        Enjoy it as New-World fiction on an Omniverse canvas — AI, science, engineering, and story braided for wonder. No passport required. Just curiosity.
+        Fiction or step-in — two dedicated rooms with the full description, not a toggle that stays on this landing.
       </p>
     </section>
 
@@ -673,31 +677,8 @@
       var stage = document.getElementById('canvas-stage');
       var shells = stage ? stage.querySelectorAll('.shell') : [];
       var player = stage ? stage.querySelector('.core-player') : null;
-      var readout = document.getElementById('shell-readout');
-      var picks = document.querySelectorAll('[data-pick]');
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      var copy = {
-        1: '<strong>Holographic Convergence Core.</strong> Who you call you — the still center where story, frequency, and self meet.',
-        2: '<strong>Goldilocks Amphitheater.</strong> Where guests feel just right — immersion without clutter, resonance without overwhelm.',
-        3: '<strong>Omni-Horizon.</strong> The holographic ceiling — atmosphere, telemetry, and the soft edge of the sky.'
-      };
-
-      function setShell(n) {
-        picks.forEach(function (b) {
-          b.setAttribute('aria-pressed', b.getAttribute('data-pick') === String(n) ? 'true' : 'false');
-        });
-        shells.forEach(function (s) {
-          s.classList.toggle('is-hot', s.getAttribute('data-shell') === String(n));
-        });
-        if (readout) readout.innerHTML = copy[n] || copy[1];
-      }
-
-      picks.forEach(function (b) {
-        b.addEventListener('click', function () {
-          setShell(b.getAttribute('data-pick'));
-        });
-      });
+      var hrefs = { '1': '/core', '2': '/amphitheater', '3': '/horizon' };
 
       if (stage && !reduce) {
         stage.addEventListener('pointermove', function (e) {
@@ -716,36 +697,15 @@
           shells.forEach(function (s) { s.style.transform = ''; });
           if (player) player.style.transform = '';
         });
+      }
+      if (stage) {
         stage.addEventListener('click', function (e) {
           var t = e.target.closest('.shell');
-          if (t) setShell(t.getAttribute('data-shell'));
+          if (!t) return;
+          var href = hrefs[t.getAttribute('data-shell')];
+          if (href) window.location.href = href;
         });
       }
-
-      var fiction = document.getElementById('mode-fiction');
-      var step = document.getElementById('mode-step');
-      var voice = document.getElementById('mode-voice');
-      var voices = {
-        fiction:
-          'Enjoy it as New-World fiction on an Omniverse canvas — AI, science, engineering, and story braided for wonder. No passport required. Just curiosity.',
-        step:
-          'Step in as if the camp is real: SS Vibelandia as vessel, Syntheverse as studio, Base as address. Free basics anytime. Email a human for Pro and VIP.'
-      };
-
-      function setMode(which) {
-        fiction.setAttribute('aria-pressed', which === 'fiction' ? 'true' : 'false');
-        step.setAttribute('aria-pressed', which === 'step' ? 'true' : 'false');
-        if (!voice) return;
-        voice.classList.add('is-fading');
-        window.setTimeout(function () {
-          voice.textContent = voices[which];
-          voice.classList.remove('is-fading');
-        }, reduce ? 0 : 180);
-      }
-      if (fiction) fiction.addEventListener('click', function () { setMode('fiction'); });
-      if (step) step.addEventListener('click', function () { setMode('step'); });
-
-      setShell(1);
     })();
   </script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>

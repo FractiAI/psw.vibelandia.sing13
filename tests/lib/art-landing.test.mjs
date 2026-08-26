@@ -39,7 +39,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('Install a lasting room');
     expect(html).toContain('For the new SuperAI Frontiersman');
     expect(html).toContain('Holographic Convergence Core');
-    expect(html).toContain('Who you call you');
+    expect(html).toContain('href="/core"');
     expect(html).toContain('core-player');
     expect(html).toContain('>Player</figcaption>');
     expect(html).toContain('For those of you who know me from my night job');
@@ -48,6 +48,11 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(html).not.toContain('url=/interfaces/vibelandia-questfest.html');
     expect(html).not.toContain("location.replace('/interfaces/vibelandia-questfest.html')");
+    expect(html).toContain('href="/core"');
+    expect(html).toContain('href="/amphitheater"');
+    expect(html).toContain('href="/horizon"');
+    expect(html).toContain('href="/science-fiction"');
+    expect(html).toContain('href="/step-in"');
   });
 
   it('visit counters treat Canvas aliases as / and keep /questfest on the ship', () => {

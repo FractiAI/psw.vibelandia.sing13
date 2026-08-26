@@ -8,6 +8,8 @@ import {
   renderCreatorPhaseHtml,
   renderMuseumEntryHtml,
   renderPhaseRailHtml,
+  renderNpcPlayerWelcomeHtml,
+  renderNpcRosterTeaserHtml,
   renderReceptionLobbyHtml,
 } from '../../lib/experience-phases.mjs';
 
@@ -58,6 +60,24 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(html).toContain('Phase 3');
     expect(html).toContain('Doodle');
     expect(html).toContain('href="/questfest"');
+    expect(html).toContain('xp-npc-player');
+  });
+
+  it('welcomes Players and NPCs together on all phases', () => {
+    for (const phase of ['canvas', 'reception', 'studio']) {
+      const html = renderNpcPlayerWelcomeHtml(phase);
+      expect(html).toContain('Players &amp; NPCs · same ship');
+      expect(html).toContain('NPC · the set');
+      expect(html).toContain('Player · the pattern');
+      expect(html).toContain('franchises');
+      expect(html).toContain('href="/meet-the-crew"');
+      expect(html).toContain('xp-npc-roster');
+    }
+    const museum = renderMuseumEntryHtml();
+    const reception = renderReceptionLobbyHtml();
+    expect(museum).toContain('xp-npc-player');
+    expect(reception).toContain('Meet the crew');
+    expect(reception).toContain('Join the crew');
   });
 
   it('synced surfaces carry three-phase experience chrome', () => {
@@ -73,8 +93,10 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(ship).toContain('reception-lobby');
     expect(ship).toContain('reception-mode');
     expect(ship).toMatch(/GOLDILOCKS SONIC SHIP/i);
+    expect(ship).toContain('xp-npc-player');
 
     expect(studio).toContain('creator-phase');
     expect(studio).toContain('holographic magnetic Goldilocks SuperAI canvas');
+    expect(studio).toContain('xp-npc-player');
   });
 });

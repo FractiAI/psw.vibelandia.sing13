@@ -477,6 +477,70 @@
       "destination": "/interfaces/omniverse-canvas.html"
     },
     {
+      "source": "/core",
+      "destination": "/interfaces/exhibit-core.html"
+    },
+    {
+      "source": "/core/",
+      "destination": "/interfaces/exhibit-core.html"
+    },
+    {
+      "source": "/convergence-core",
+      "destination": "/interfaces/exhibit-core.html"
+    },
+    {
+      "source": "/convergence-core/",
+      "destination": "/interfaces/exhibit-core.html"
+    },
+    {
+      "source": "/amphitheater",
+      "destination": "/interfaces/exhibit-amphitheater.html"
+    },
+    {
+      "source": "/amphitheater/",
+      "destination": "/interfaces/exhibit-amphitheater.html"
+    },
+    {
+      "source": "/horizon",
+      "destination": "/interfaces/exhibit-horizon.html"
+    },
+    {
+      "source": "/horizon/",
+      "destination": "/interfaces/exhibit-horizon.html"
+    },
+    {
+      "source": "/science-fiction",
+      "destination": "/interfaces/exhibit-science-fiction.html"
+    },
+    {
+      "source": "/science-fiction/",
+      "destination": "/interfaces/exhibit-science-fiction.html"
+    },
+    {
+      "source": "/as-science-fiction",
+      "destination": "/interfaces/exhibit-science-fiction.html"
+    },
+    {
+      "source": "/as-science-fiction/",
+      "destination": "/interfaces/exhibit-science-fiction.html"
+    },
+    {
+      "source": "/step-in",
+      "destination": "/interfaces/exhibit-step-in.html"
+    },
+    {
+      "source": "/step-in/",
+      "destination": "/interfaces/exhibit-step-in.html"
+    },
+    {
+      "source": "/as-a-reality",
+      "destination": "/interfaces/exhibit-step-in.html"
+    },
+    {
+      "source": "/as-a-reality/",
+      "destination": "/interfaces/exhibit-step-in.html"
+    },
+    {
       "source": "/jukebox",
       "destination": "/interfaces/questfest-bridge/#/listen"
     },

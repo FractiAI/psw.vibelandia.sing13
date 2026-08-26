@@ -1,0 +1,200 @@
+/* Shared series-style exhibit rooms — Core · Amphitheater · Horizon · lenses */
+:root {
+  --ink: #f5e6c8;
+  --ink-soft: #c9bba3;
+  --gold: #d4af37;
+  --gold-hi: #f0d78c;
+  --hull: #060912;
+  --hull-mid: #0c1424;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--hull);
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+a { color: var(--gold-hi); }
+a:hover { color: #fef3c7; }
+.xd-hero {
+  position: relative;
+  min-height: min(72vh, 38rem);
+  display: grid;
+  align-items: end;
+  isolation: isolate;
+  overflow: hidden;
+}
+.xd-hero__art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+.xd-hero__shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(6, 9, 18, 0.15) 0%, rgba(6, 9, 18, 0.55) 45%, rgba(6, 9, 18, 0.96) 100%);
+}
+.xd-hero__copy {
+  position: relative;
+  z-index: 2;
+  width: min(46rem, 92vw);
+  margin: 0 auto;
+  padding: 6rem 1.25rem 2.4rem;
+}
+.xd-kicker {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-hi);
+  margin: 0 0 0.7rem;
+}
+.xd-hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.1rem, 7vw, 3.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: #faf6ee;
+  margin: 0 0 0.8rem;
+  max-width: 16ch;
+}
+.xd-lede {
+  margin: 0 0 1.1rem;
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  color: var(--ink-soft);
+  max-width: 38ch;
+}
+.xd-meta {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 1.4rem;
+}
+.xd-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+.xd-btn {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+}
+.xd-btn--gold {
+  background: var(--gold);
+  color: #1a120c !important;
+  border-color: var(--gold);
+}
+.xd-btn--ghost {
+  background: transparent;
+  color: var(--gold-hi) !important;
+  border-color: rgba(212, 175, 55, 0.45);
+}
+.xd-wrap {
+  width: min(44rem, 92vw);
+  margin: 0 auto;
+  padding: 0 0 3.5rem;
+}
+.xd-wrap h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.35rem, 3.4vw, 1.85rem);
+  margin: 2.4rem 0 0.7rem;
+  color: #faf6ee;
+}
+.xd-wrap p { color: var(--ink-soft); }
+.xd-wrap strong { color: var(--gold-hi); font-weight: 600; }
+.xd-chapters {
+  display: grid;
+  gap: 1rem;
+  margin: 1.4rem 0 0;
+}
+.xd-card {
+  margin: 0;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  background: rgba(12, 20, 36, 0.55);
+}
+.xd-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 0.45rem;
+  color: var(--gold-hi);
+}
+.xd-card p { margin: 0; }
+.xd-stills {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+}
+@media (min-width: 720px) {
+  .xd-stills { grid-template-columns: 1fr 1fr; }
+}
+.xd-stills img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+}
+.xd-stills figcaption {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0.4rem 0 0;
+}
+.xd-rooms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+  margin: 1.5rem 0 0;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.xd-rooms a { text-decoration: none; }
+.xd-rooms a[aria-current="page"] { color: var(--gold); }
+.honesty {
+  margin: 2.5rem auto 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid rgba(212, 175, 55, 0.18);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+footer.site {
+  padding: 1.4rem 1.25rem 2rem;
+  text-align: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+footer.site a { margin: 0 0.45rem; }

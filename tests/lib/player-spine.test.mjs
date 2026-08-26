@@ -55,7 +55,7 @@ describe('Player spine · holographic Player home', () => {
     expect(canvas).toContain('Valet Pru’s Holographic, Digital Art Project');
     expect(canvas).toContain('Think Burning Man minus the fees and minus corporate and minus the costs');
     expect(canvas).toContain('Holographic Convergence Core');
-    expect(canvas).toContain('Who you call you');
+    expect(canvas).toContain('href="/core"');
     expect(canvas).toContain('>Player</figcaption>');
     expect(canvas).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(canvas).toContain('For those of you who know me from my night job');

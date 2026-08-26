@@ -23,7 +23,7 @@ describe('Player spine · holographic Player home', () => {
     expect(html).toContain('Your cruise line · five doors');
     expect(html).toContain('btn-player-lead');
     expect(html).toContain('player-more-aboard');
-    expect(html).toContain('Journey · grand narrative');
+    expect(html).toContain('Journey · curated adventures');
     expect(html).toContain('href="/"');
     expect(html).not.toContain('id="ship-crew"');
     expect(html).not.toContain('class="o99-door"');

@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
+  <link rel="stylesheet" href="/interfaces/exhibit-shells.css" />
   <style>
     :root {
       --ink: #f5e6c8;
@@ -534,6 +535,7 @@
       <p class="hero__lede">For the new SuperAI Frontiersman — an open exhibit, nested and waiting for you whenever you are ready to step in.</p>
       <div class="hero__cta">
         <a class="btn btn--gold" href="#exhibit">Explore the exhibit</a>
+        <a class="btn btn--ghost" href="/journey">Browse adventures</a>
         <a class="btn btn--ghost" href="#who">Who this art is for</a>
       </div>
     </div>
@@ -623,10 +625,58 @@
       </ul>
     </section>
 
-    <section class="stage-wrap" id="exhibit" aria-labelledby="stage-h">
-      <h2 id="stage-h">Three nested domes</h2>
-      <p class="sub">Open a dome for the full room. Holographic Convergence Core · Amphitheater · Horizon — the same Φ nesting that holds the ship’s theaters and agent sandboxes.</p>
-      <div class="stage" id="canvas-stage" aria-label="Holographic Convergence Core with Player at center">
+    <!-- CANVAS_EXHIBIT_SHELLS_BEGIN -->
+    <section class="stage-wrap stage-wrap--rich" id="exhibit" aria-labelledby="stage-h">
+      <h2 id="stage-h">Three nested shells</h2>
+      <p class="sub">This art project is built as a living triadic stage — Convergence Core, Goldilocks Amphitheater, and Omni-Horizon — the same nesting grammar that holds the ship's theaters and agent sandboxes. These are not cabins on the voyage map. They are the domes you stand inside when you step into the work.</p>
+      <div class="shell-cards" role="list">
+      <article class="shell-card">
+        <a class="shell-card__link" href="/core">
+          <img class="shell-card__img" src="/interfaces/assets/exhibit/exhibit-core-key.jpg" alt="Male silhouette at the still center of nested gold domes under a night sky" loading="lazy" decoding="async" width="960" height="540" />
+          <div class="shell-card__body">
+            <h3>Convergence Core</h3>
+            <p class="shell-card__preview">The innermost dome. Who you call you — the still center where story, frequency, and self are allowed to meet without being flattened into a slogan.</p>
+            <p class="shell-card__more">Open the full room →</p>
+          </div>
+        </a>
+        <figure class="shell-card__still">
+          <img src="/interfaces/assets/exhibit/exhibit-step-in-still.jpg" alt="" loading="lazy" decoding="async" />
+          <figcaption>Still · walk-in center</figcaption>
+        </figure>
+        <p class="shell-card__body-text">Stand here when you want the hitch of the whole installation: the Player mark at the gold still-point. This is not a login screen or a genome test. It is exhibit grammar for the person looking — meat, memory, and the part of you that stays you when the rings breathe. Story, frequency, and self nest here the way the three shells nest on the landing. When the house fills in the Amphitheater, this center does not vanish.</p>
+      </article>
+      <article class="shell-card">
+        <a class="shell-card__link" href="/amphitheater">
+          <img class="shell-card__img" src="/interfaces/assets/exhibit/exhibit-amphitheater-key.jpg" alt="Nested gold amphitheater shells with guests under stars" loading="lazy" decoding="async" width="960" height="540" />
+          <div class="shell-card__body">
+            <h3>Goldilocks Amphitheater</h3>
+            <p class="shell-card__preview">The middle dome — where guests feel just right. Hospitality without clutter, resonance without overwhelm, Bach and phone doodles in the same house.</p>
+            <p class="shell-card__more">Open the full room →</p>
+          </div>
+        </a>
+        <figure class="shell-card__still">
+          <img src="/interfaces/assets/exhibit/exhibit-fiction-still.jpg" alt="" loading="lazy" decoding="async" />
+          <figcaption>Still · nested camp at night</figcaption>
+        </figure>
+        <p class="shell-card__body-text">If the Core is who you call you, the Amphitheater is who you sit with. Guests, crew, collectors, friends from the night job — the mix is supposed to feel Goldilocks: not too loud, not too thin. Immersion without clutter means the nested architecture carries the weight; you should not need a protocol map to feel welcomed. Walk-in show, museum night, private salon: the seating is voluntary. Belonging is hospitality first.</p>
+      </article>
+      <article class="shell-card">
+        <a class="shell-card__link" href="/horizon">
+          <img class="shell-card__img" src="/interfaces/assets/exhibit/exhibit-horizon-key.jpg" alt="Three stacked horizons from body to holographic lattice sky" loading="lazy" decoding="async" width="960" height="540" />
+          <div class="shell-card__body">
+            <h3>Omni-Horizon</h3>
+            <p class="shell-card__preview">The outer dome — three surfaces at once: self and body, the room you are in, and the Syntheverse sandbox on Base Mainnet as studio custody.</p>
+            <p class="shell-card__more">Open the full room →</p>
+          </div>
+        </a>
+        <figure class="shell-card__still">
+          <img src="/interfaces/assets/nesting/nest-syntheverse.png" alt="" loading="lazy" decoding="async" />
+          <figcaption>Still · studio nest in the sandbox</figcaption>
+        </figure>
+        <p class="shell-card__body-text">Horizon is the ceiling of the installation, and it refuses to collapse into one sky. Surface one is self and body — the Player you brought. Surface two is the immediate world: street, club, gallery, phone, the stories already running inside that nest. Surface three is the outer Infinite Octaves Omni-Lattice Syntheverse sandbox on Base — studio and paints in the cloud, chain of custody, not prophecy. Keep the three distinct. That discipline is the whole lesson of the room.</p>
+      </article>
+      </div>
+      <div class="stage stage--compact" id="canvas-stage" aria-label="Interactive Convergence Core preview">
         <div class="shell shell--3" data-shell="3"></div>
         <div class="shell shell--2" data-shell="2"></div>
         <div class="shell shell--1" data-shell="1"></div>
@@ -640,15 +690,11 @@
         </figure>
         <div class="baseplane" aria-hidden="true"></div>
       </div>
-      <div class="shell-labels" role="navigation" aria-label="Open a dome">
-        <a href="/core">Convergence Core</a>
-        <a href="/amphitheater">Amphitheater</a>
-        <a href="/horizon">Horizon</a>
-      </div>
       <p class="shell-readout" id="shell-readout">
-        <strong>Full pages.</strong> Convergence Core · Amphitheater · Horizon each open a dedicated room — not a one-line swap on this stage.
+        <strong>Touch a dome above</strong> for the full room — curated key art, chapters, and honesty rails. The interactive stage below is a preview only.
       </p>
     </section>
+    <!-- CANVAS_EXHIBIT_SHELLS_END -->
 
     <section class="mode" aria-labelledby="mode-h">
       <h2 id="mode-h">How do you want to look?</h2>
@@ -662,6 +708,31 @@
       </p>
     </section>
 
+    <!-- CANVAS_JOURNEYS_TEASER_BEGIN -->
+    <section class="canvas-journeys-teaser" id="journeys-teaser" aria-labelledby="journeys-teaser-h">
+      <h2 id="journeys-teaser-h">Adventures we offer</h2>
+      <p class="lead">Journeys are sails, landfalls, labs, and nights ashore — not the rooms where you sleep. The Official Prospectus runs underneath every adventure. When you are ready to claim a deck or cabin, open the Voyage Map.</p>
+      <div class="canvas-journeys-grid">
+        <a class="canvas-journey-mini" href="/journey/boriken-convergence">
+          <img src="/interfaces/assets/capitan-comandante-champion-2026.png" alt="Captain at the helm — Borikén convergence as voyage honor" loading="lazy" decoding="async" width="320" height="200" />
+          <span><strong>Borikén · Great Convergence</strong>Ancestral memory, resilience, and diaspora destiny on the water</span>
+        </a>
+        <a class="canvas-journey-mini" href="/journey/puerto-reno-gangway">
+          <img src="/interfaces/assets/questfest-crew/puerto-reno-dock.png" alt="Puerto Reno dock — neon gangway and present-tense berth" loading="lazy" decoding="async" width="320" height="200" />
+          <span><strong>Puerto Reno · Gangway Night</strong>Downtown Reno berth — wrong side of town, right side of story</span>
+        </a>
+        <a class="canvas-journey-mini" href="/journey/omniversal-canvas-walk">
+          <img src="/interfaces/assets/exhibit/exhibit-fiction-key.jpg" alt="Nested gold domes at night — Omniversal Canvas exhibit key art" loading="lazy" decoding="async" width="320" height="200" />
+          <span><strong>Omniversal Canvas · Exhibit Walk</strong>The holographic magnetic Goldilocks SuperAI art project — front door of the work</span>
+        </a>
+      </div>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="/journey">All journeys</a>
+        <a class="btn btn--ghost" href="/voyage/decks">Voyage Map</a>
+      </div>
+    </section>
+    <!-- CANVAS_JOURNEYS_TEASER_END -->
+
     <section class="invite" id="board-ship" aria-labelledby="board-h">
       <div class="inner">
         <h2 id="board-h">Ready to board the ship?</h2>
@@ -673,6 +744,7 @@
         </p>
         <div class="hero__cta">
           <a class="btn btn--gold" href="/questfest">Enter SS Vibelandia</a>
+          <a class="btn btn--ghost" href="/journey">Browse adventures</a>
           <a class="btn btn--ghost" href="#representation">Representation &amp; museums</a>
         </div>
       </div>

@@ -550,11 +550,83 @@
     },
     {
       "source": "/journey",
-      "destination": "/interfaces/voyage/decks.html"
+      "destination": "/interfaces/journeys.html"
     },
     {
       "source": "/journey/",
-      "destination": "/interfaces/voyage/decks.html"
+      "destination": "/interfaces/journeys.html"
+    },
+    {
+      "source": "/journey/boriken-convergence",
+      "destination": "/interfaces/journey/boriken-convergence.html"
+    },
+    {
+      "source": "/journey/boriken-convergence/",
+      "destination": "/interfaces/journey/boriken-convergence.html"
+    },
+    {
+      "source": "/journey/cartagena-spice-stone",
+      "destination": "/interfaces/journey/cartagena-spice-stone.html"
+    },
+    {
+      "source": "/journey/cartagena-spice-stone/",
+      "destination": "/interfaces/journey/cartagena-spice-stone.html"
+    },
+    {
+      "source": "/journey/truckee-sierra-forage",
+      "destination": "/interfaces/journey/truckee-sierra-forage.html"
+    },
+    {
+      "source": "/journey/truckee-sierra-forage/",
+      "destination": "/interfaces/journey/truckee-sierra-forage.html"
+    },
+    {
+      "source": "/journey/redwood-sanctuary",
+      "destination": "/interfaces/journey/redwood-sanctuary.html"
+    },
+    {
+      "source": "/journey/redwood-sanctuary/",
+      "destination": "/interfaces/journey/redwood-sanctuary.html"
+    },
+    {
+      "source": "/journey/tahoe-catamaran",
+      "destination": "/interfaces/journey/tahoe-catamaran.html"
+    },
+    {
+      "source": "/journey/tahoe-catamaran/",
+      "destination": "/interfaces/journey/tahoe-catamaran.html"
+    },
+    {
+      "source": "/journey/puerto-reno-gangway",
+      "destination": "/interfaces/journey/puerto-reno-gangway.html"
+    },
+    {
+      "source": "/journey/puerto-reno-gangway/",
+      "destination": "/interfaces/journey/puerto-reno-gangway.html"
+    },
+    {
+      "source": "/journey/bachdoor-music-lab",
+      "destination": "/interfaces/journey/bachdoor-music-lab.html"
+    },
+    {
+      "source": "/journey/bachdoor-music-lab/",
+      "destination": "/interfaces/journey/bachdoor-music-lab.html"
+    },
+    {
+      "source": "/journey/bridge-solar-watch",
+      "destination": "/interfaces/journey/bridge-solar-watch.html"
+    },
+    {
+      "source": "/journey/bridge-solar-watch/",
+      "destination": "/interfaces/journey/bridge-solar-watch.html"
+    },
+    {
+      "source": "/journey/omniversal-canvas-walk",
+      "destination": "/interfaces/journey/omniversal-canvas-walk.html"
+    },
+    {
+      "source": "/journey/omniversal-canvas-walk/",
+      "destination": "/interfaces/journey/omniversal-canvas-walk.html"
     },
     {
       "source": "/library",

@@ -1,0 +1,133 @@
+/* Journeys hub + detail · SS Vibelandia adventures */
+.vj-wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+.vj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: 1.75rem;
+}
+.vj-card {
+  border: 1px solid rgba(212, 175, 95, 0.22);
+  border-radius: 0.35rem;
+  overflow: hidden;
+  background: rgba(8, 12, 22, 0.72);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.vj-card:hover,
+.vj-card:focus-within {
+  border-color: rgba(212, 175, 95, 0.55);
+  transform: translateY(-2px);
+}
+.vj-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.vj-card__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #0a0e18;
+}
+.vj-card__body {
+  padding: 1.1rem 1.15rem 0.35rem;
+}
+.vj-card__cat {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-mid, #c9a227);
+  margin: 0 0 0.35rem;
+}
+.vj-card h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+}
+.vj-card__sub {
+  font-size: 0.92rem;
+  color: rgba(250, 246, 238, 0.72);
+  margin: 0 0 0.65rem;
+}
+.vj-card__lede {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(250, 246, 238, 0.82);
+  margin: 0;
+}
+.vj-card__go {
+  display: inline-block;
+  margin: 0.85rem 1.15rem 1.1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-hi, #e8c96a);
+}
+.vj-detail .lead {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: var(--gold-hi, #e8c96a);
+  margin: 0 0 1.25rem;
+}
+.vj-detail p {
+  line-height: 1.65;
+  margin: 0 0 1rem;
+  max-width: 42rem;
+}
+.vj-detail h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  margin: 2rem 0 0.75rem;
+}
+.vj-includes {
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+  max-width: 42rem;
+}
+.vj-includes li {
+  margin-bottom: 0.45rem;
+}
+.vj-more {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 36rem;
+}
+.vj-more a {
+  display: block;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(212, 175, 95, 0.2);
+  border-radius: 0.25rem;
+  color: inherit;
+  text-decoration: none;
+}
+.vj-more a strong {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+}
+.vj-more a span {
+  font-size: 0.85rem;
+  color: rgba(250, 246, 238, 0.7);
+}
+.vj-foot {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: rgba(250, 246, 238, 0.55);
+}
+.vj-foot a {
+  margin: 0 0.5rem;
+  color: var(--gold-mid, #c9a227);
+}

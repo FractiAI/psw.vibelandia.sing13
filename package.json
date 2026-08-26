@@ -97,6 +97,8 @@
     "sync:site-brand": "node scripts/sync-site-brand.mjs",
     "sync:site-focus": "node scripts/sync-site-focus.mjs",
     "sync:exhibit-rooms": "node scripts/sync-exhibit-rooms.mjs",
+    "sync:exhibit-canvas": "node scripts/sync-exhibit-canvas.mjs",
+    "sync:voyage-journeys": "node scripts/sync-voyage-journeys.mjs",
     "sync:spirit-crew": "node scripts/sync-spirit-crew.mjs",
     "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-pchpp": "node research/synthobs-pchpp/scripts/run_empirical_pipeline.mjs",

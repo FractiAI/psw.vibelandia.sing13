@@ -1,0 +1,134 @@
+/* Three nested shells · Omniversal Canvas rich exhibit section */
+.stage-wrap--rich .sub {
+  max-width: 44rem;
+  line-height: 1.6;
+  color: rgba(250, 246, 238, 0.82);
+}
+.shell-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0 2.5rem;
+}
+.shell-card {
+  border: 1px solid rgba(212, 175, 95, 0.2);
+  border-radius: 0.35rem;
+  overflow: hidden;
+  background: rgba(6, 10, 18, 0.65);
+}
+.shell-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.shell-card__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.shell-card__body {
+  padding: 1rem 1.1rem 0.5rem;
+}
+.shell-card h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  margin: 0 0 0.4rem;
+  color: var(--gold-hi, #e8c96a);
+}
+.shell-card__preview {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(250, 246, 238, 0.85);
+}
+.shell-card__more {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-mid, #c9a227);
+  margin: 0.65rem 1.1rem 0.85rem;
+}
+.shell-card__still {
+  margin: 0;
+  border-top: 1px solid rgba(212, 175, 95, 0.12);
+}
+.shell-card__still img {
+  display: block;
+  width: 100%;
+  max-height: 12rem;
+  object-fit: cover;
+}
+.shell-card__still figcaption {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.55);
+}
+.shell-card__body-text {
+  padding: 0.85rem 1.1rem 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+  border-top: 1px solid rgba(212, 175, 95, 0.1);
+  color: rgba(250, 246, 238, 0.78);
+}
+.stage--compact {
+  margin-top: 1.5rem;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.canvas-journeys-teaser {
+  margin: 2.5rem 0;
+  padding: 2rem 1.25rem;
+  border: 1px solid rgba(212, 175, 95, 0.18);
+  border-radius: 0.35rem;
+  background: rgba(6, 10, 18, 0.5);
+}
+.canvas-journeys-teaser h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+.canvas-journeys-teaser .lead {
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+  line-height: 1.55;
+}
+.canvas-journeys-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.canvas-journey-mini {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid rgba(212, 175, 95, 0.15);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.canvas-journey-mini:hover {
+  border-color: rgba(212, 175, 95, 0.45);
+}
+.canvas-journey-mini img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.canvas-journey-mini span {
+  display: block;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.85rem;
+}
+.canvas-journey-mini strong {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  color: var(--gold-hi, #e8c96a);
+}

@@ -37,7 +37,7 @@ describe('QUESTFEST live board date + aboard channels', () => {
     expect(html).not.toContain('Channel VII');
   });
 
-  it('lists spirit crew from Howard Hughes through Vinicius de Moraes on Meet the crew', () => {
+  it('lists spirit crew from Howard Hughes through art heroes on Meet the crew', () => {
     const html = readFileSync(resolve(ROOT, 'interfaces/meet-the-crew.html'), 'utf8');
     const names = [
       'Howard Hughes',
@@ -46,6 +46,10 @@ describe('QUESTFEST live board date + aboard channels', () => {
       'Mark Twain',
       'Marilyn Monroe',
       'Frida Kahlo',
+      'Pablo Picasso',
+      'Leonardo da Vinci',
+      'Vincent van Gogh',
+      'Jean-Michel Basquiat',
       'Hank Williams',
       'Héctor Lavoe',
       'Vinicius de Moraes',
@@ -61,6 +65,10 @@ describe('QUESTFEST live board date + aboard channels', () => {
       'mark-twain.png',
       'marilyn-monroe.png',
       'frida-kahlo.jpg',
+      'pablo-picasso.png',
+      'leonardo-da-vinci.png',
+      'vincent-van-gogh.png',
+      'jean-michel-basquiat.png',
       'hank-williams.png',
       'hector-lavoe.jpg',
       'vinicius-de-moraes.jpg',

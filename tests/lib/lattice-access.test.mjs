@@ -4,6 +4,8 @@ import {
   isValidEmailShape,
   makeGuestGrant,
   CREATOR_EMAIL,
+  DEFAULT_CREATOR_EMAILS,
+  checkLatticeEmailAccess,
 } from '../../lib/lattice-access.mjs';
 
 describe('normalizeEmail', () => {
@@ -80,5 +82,25 @@ describe('makeGuestGrant', () => {
 describe('CREATOR_EMAIL', () => {
   it('is the expected creator email', () => {
     expect(CREATOR_EMAIL).toBe('valetpru@gmail.com');
+  });
+});
+
+describe('Player 1 creator aliases', () => {
+  it('includes valetpru and espressolico', () => {
+    expect(DEFAULT_CREATOR_EMAILS).toEqual(
+      expect.arrayContaining(['valetpru@gmail.com', 'espressolico@gmail.com']),
+    );
+  });
+
+  it('treats espressolico as creator, not guest', () => {
+    const access = checkLatticeEmailAccess('EspressoLico@gmail.com');
+    expect(access.ok).toBe(true);
+    expect(access.privilege).toBe('creator');
+  });
+
+  it('treats valetpru as creator', () => {
+    const access = checkLatticeEmailAccess('valetpru@gmail.com');
+    expect(access.ok).toBe(true);
+    expect(access.privilege).toBe('creator');
   });
 });

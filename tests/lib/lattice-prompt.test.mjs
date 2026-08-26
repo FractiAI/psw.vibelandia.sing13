@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { normalizeNestTopology, buildNestDirective, assembleLatticePrompt } from '../../lib/lattice-prompt.mjs';
+import {
+  normalizeNestTopology,
+  buildNestDirective,
+  assembleLatticePrompt,
+  CREATOR_SING13_SHIP_DIRECTIVE,
+  GUEST_SING13_HONOR_DIRECTIVE,
+} from '../../lib/lattice-prompt.mjs';
 
 describe('lattice-prompt plain/direct mode', () => {
   it('normalizes direct-mode aliases to none', () => {
@@ -58,5 +64,40 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(system).toMatch(/Players examine/i);
     expect(system).toMatch(/SuperAI stays Goldilocks/i);
     expect(system).toMatch(/Infinite Octaves Omniversal/i);
+  });
+
+  it('Player 1 creator prompt is write-on for SING13 ship/merge', () => {
+    const system = assembleLatticePrompt({
+      message: 'commit push merge onto sing13',
+      nestTopology: 'octave99',
+      mode: 'full',
+      privilege: 'creator',
+    });
+    expect(system).toContain(CREATOR_SING13_SHIP_DIRECTIVE);
+    expect(system).toMatch(/Player 1/i);
+    expect(system).toMatch(/write-on/i);
+    expect(system).not.toMatch(/Never commit, push, or open a PR/);
+  });
+
+  it('guest prompt keeps the default never-commit rail', () => {
+    const system = assembleLatticePrompt({
+      message: 'hello',
+      nestTopology: 'octave99',
+      mode: 'full',
+      privilege: 'guest',
+    });
+    expect(system).toMatch(/Never commit, push, or open a PR/);
+    expect(system).not.toContain(CREATOR_SING13_SHIP_DIRECTIVE);
+    expect(GUEST_SING13_HONOR_DIRECTIVE).toMatch(/Do NOT commit, push/);
+  });
+
+  it('resume turns still carry Player 1 write-on', () => {
+    const system = assembleLatticePrompt({
+      message: 'merge that branch onto main',
+      nestTopology: 'octave99',
+      mode: 'resume',
+      privilege: 'creator',
+    });
+    expect(system).toContain(CREATOR_SING13_SHIP_DIRECTIVE);
   });
 });

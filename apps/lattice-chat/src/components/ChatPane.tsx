@@ -27,6 +27,7 @@ import {
 } from '@/lib/attachments';
 import { useLatticeStore } from '@/store';
 import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
+import { listSelectableChats } from '@/threadHistory';
 import { CollabDmBadge } from '@/components/collaborate/CollabDmNotifier';
 import { resolveClientCollabPeerId, peerNameForId } from '@/feed/seatIdentity';
 import { isSharedCollabAgentThread } from '@/feed/syncCollaborateAgent';
@@ -77,6 +78,7 @@ export function ChatPane({
   const hardRefreshEdge = useLatticeStore((s) => s.hardRefreshEdge);
   const ensureThread = useLatticeStore((s) => s.ensureThread);
   const ensureSharedCollabThread = useLatticeStore((s) => s.ensureSharedCollabThread);
+  const selectThread = useLatticeStore((s) => s.selectThread);
   const [draft, setDraft] = useState('');
   const [attachments, setAttachments] = useState<LatticeAttachment[]>([]);
   const [attachHint, setAttachHint] = useState<string | null>(null);
@@ -96,6 +98,7 @@ export function ChatPane({
     sharedCollab || isSharedCollabAgentThread(activeThreadId);
 
   const thread = threads.find((t) => t.id === activeThreadId) ?? null;
+  const pastChats = listSelectableChats(threads, activeThreadId);
   const signedIn = isRememberedEmailFresh(userEmail, emailRememberedAt);
   const activeRepo =
     findRepository(activeRepoId || DEFAULT_REPO_ID, repositories) ||
@@ -355,16 +358,38 @@ export function ChatPane({
               ) : null}
             </h1>
             {!sharedCollab ? (
-              <button
-                type="button"
-                className="header-new-chat"
-                aria-label="New chat"
-                disabled={!signedIn}
-                onClick={() => onNewChat?.()}
-              >
-                <span aria-hidden="true">+</span>
-                <span className="header-new-chat__label">New chat</span>
-              </button>
+              <>
+                {signedIn && pastChats.length > 0 ? (
+                  <label className="header-thread-pick-wrap">
+                    <span className="sr-only">Past chats</span>
+                    <select
+                      className="header-thread-pick"
+                      aria-label="Select a past chat"
+                      value={activeThreadId || ''}
+                      onChange={(e) => {
+                        const id = e.target.value;
+                        if (id) selectThread(id);
+                      }}
+                    >
+                      {pastChats.map((t) => (
+                        <option key={t.id} value={t.id}>
+                          {t.title || 'Untitled'}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                ) : null}
+                <button
+                  type="button"
+                  className="header-new-chat"
+                  aria-label="New chat"
+                  disabled={!signedIn}
+                  onClick={() => onNewChat?.()}
+                >
+                  <span aria-hidden="true">+</span>
+                  <span className="header-new-chat__label">New chat</span>
+                </button>
+              </>
             ) : (
               <span className="header-shared-session" title="Shared with Collaborate seats">
                 Shared session

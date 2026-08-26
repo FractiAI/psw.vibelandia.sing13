@@ -25,16 +25,29 @@ const COLLECT_BUDGET_MS = 180_000;
 
 const DEFAULT_REPO = 'https://github.com/FractiAI/psw.vibelandia.sing13';
 const CREATOR_EMAIL = 'valetpru@gmail.com';
+/** Player 1 aliases — must match lib/lattice-access.mjs DEFAULT_CREATOR_EMAILS. */
+const DEFAULT_CREATOR_EMAILS = Object.freeze(['valetpru@gmail.com', 'espressolico@gmail.com']);
 /**
  * Everyone attaches SING13 for product context + agents.
  * Guest honor rail is prompt-only — do not treat it as a hard git lock.
+ * Player 1 / creator seats get a write-on rail (New Chat must not strip ship rights).
  */
 const SING13_REPO_HOST_RE = /github\.com[/:]FractiAI\/psw\.vibelandia\.sing13(?:\.git)?(?:\/|$|\?|#)/i;
-const GUEST_SING13_HONOR_DIRECTIVE = `## Guest session (SING13 honor rail)
+let GUEST_SING13_HONOR_DIRECTIVE = `## Guest session (SING13 honor rail)
 You are helping a paid Lattice Chat Agent guest on FractiAI/psw.vibelandia.sing13.
 Full agent tools are allowed for exploration, explanation, planning, and local iteration in the cloud VM.
 Do NOT commit, push, force-push, open pull requests, or permanently alter production ship apps unless the guest is explicitly coordinating a creator-approved change.
 Prefer answers, plans, and reversible exploration over durable repo writes.`;
+let CREATOR_SING13_SHIP_DIRECTIVE = `## Player 1 · creator seat (SING13 write-on)
+You are helping Player 1 (creator) on FractiAI/psw.vibelandia.sing13.
+Guest honor rails do not apply to this seat. A New Chat is still Player 1 — do not demote the seat.
+When Player 1 explicitly asks to commit, push, and/or merge onto SING 13 \`main\`, do that work:
+1. Create a feature branch if needed.
+2. Commit with a clear message.
+3. Push to origin.
+4. Open or update the pull request. The \`gh\` CLI is read-only — do not use \`gh pr merge\`.
+5. Land on \`main\` with git: checkout main, pull origin main, merge the branch, push origin main.
+Do not refuse SING 13 ship/merge because of guest rails or a default "never commit" habit.`;
 const MONTH_MS = 30 * 24 * 60 * 60 * 1000;
 const NAIVE_CORPUS_DUMP_TOKENS = 72_000;
 const LATTICE_RAG_POINTER_TOKENS = 1_800;
@@ -55,6 +68,7 @@ let foldAttachmentsIntoMessage;
 let buildClaudeUserContent;
 let buildCursorSendMessage;
 let latticeProviderSeesImages;
+let checkLatticeEmailAccessShared;
 
 async function loadLatticePromptLib() {
   if (typeof assembleLatticePrompt === 'function') return;
@@ -68,12 +82,28 @@ async function loadLatticePromptLib() {
   buildPrompt = m.buildPrompt;
   classifyAsk = m.classifyAsk;
   normalizeNestTopology = m.normalizeNestTopology;
+  if (typeof m.GUEST_SING13_HONOR_DIRECTIVE === 'string') {
+    GUEST_SING13_HONOR_DIRECTIVE = m.GUEST_SING13_HONOR_DIRECTIVE;
+  }
+  if (typeof m.CREATOR_SING13_SHIP_DIRECTIVE === 'string') {
+    CREATOR_SING13_SHIP_DIRECTIVE = m.CREATOR_SING13_SHIP_DIRECTIVE;
+  }
   const att = await import('../lib/lattice-attachments.mjs');
   normalizeLatticeAttachments = att.normalizeLatticeAttachments;
   foldAttachmentsIntoMessage = att.foldAttachmentsIntoMessage;
   buildClaudeUserContent = att.buildClaudeUserContent;
   buildCursorSendMessage = att.buildCursorSendMessage;
   latticeProviderSeesImages = att.latticeProviderSeesImages;
+}
+
+async function loadLatticeAccessLib() {
+  if (typeof checkLatticeEmailAccessShared === 'function') return;
+  try {
+    const m = await import('../lib/lattice-access.mjs');
+    checkLatticeEmailAccessShared = m.checkLatticeEmailAccess;
+  } catch (err) {
+    console.warn('[lattice-chat] lattice-access import failed, using local creator list', err);
+  }
 }
 
 function normalizeReasoningLens(_raw) {
@@ -211,10 +241,21 @@ function loadAccessDoc() {
       /* try next */
     }
   }
-  return { creatorEmail: CREATOR_EMAIL, grants: [] };
+  return { creatorEmail: CREATOR_EMAIL, creatorEmails: [...DEFAULT_CREATOR_EMAILS], grants: [] };
 }
 
-function checkLatticeEmailAccess(rawEmail) {
+function listCreatorEmails(doc) {
+  const fromArray = Array.isArray(doc?.creatorEmails) ? doc.creatorEmails : [];
+  const single = doc?.creatorEmail || CREATOR_EMAIL;
+  const set = new Set(
+    [...DEFAULT_CREATOR_EMAILS, single, ...fromArray]
+      .map((e) => normalizeEmail(e))
+      .filter((e) => e && isValidEmailShape(e)),
+  );
+  return [...set];
+}
+
+function checkLatticeEmailAccessLocal(rawEmail) {
   const email = normalizeEmail(rawEmail);
   if (!email || !isValidEmailShape(email)) {
     return {
@@ -227,8 +268,8 @@ function checkLatticeEmailAccess(rawEmail) {
   }
 
   const doc = loadAccessDoc();
-  const creator = normalizeEmail(doc.creatorEmail || CREATOR_EMAIL) || CREATOR_EMAIL;
-  if (email === creator) {
+  const creators = listCreatorEmails(doc);
+  if (creators.includes(email)) {
     return {
       ok: true,
       reason: 'Permanent access.',
@@ -274,6 +315,13 @@ function checkLatticeEmailAccess(rawEmail) {
     email,
     expiresAt: new Date(expiresAtMs).toISOString(),
   };
+}
+
+function checkLatticeEmailAccess(rawEmail) {
+  if (typeof checkLatticeEmailAccessShared === 'function') {
+    return checkLatticeEmailAccessShared(rawEmail);
+  }
+  return checkLatticeEmailAccessLocal(rawEmail);
 }
 
 function estimateTokens(text) {
@@ -646,6 +694,7 @@ async function runClaudeTurn({
     mode: 'full',
     omitHistory: true,
     omitUserMessage: true,
+    privilege: access?.privilege,
     providerNote: `Provider note: You are running via the Anthropic Messages API (BYOK). The public repo is ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}.`,
   });
 
@@ -883,6 +932,7 @@ async function runOpenRouterTurn({
     mode: 'full',
     omitHistory: true,
     omitUserMessage: true,
+    privilege: access?.privilege,
     providerNote: `Provider note: You are running via OpenRouter (BYOK) on the SING13 Lattice pipe. Repo ${DEFAULT_REPO}. Prefer pointers and corpus-faithful answers. Mode: ${agentMode}. Nest: ${nestTopology || 'octave99'}.`,
   });
   const model = modelId || 'deepseek/deepseek-chat';
@@ -1126,8 +1176,8 @@ async function runGeminiTurn({
   const decoded = decodeGeminiAgentId(agentId);
   const agentName = modelId || 'antigravity-preview-05-2026';
   const prompt = decoded?.interactionId
-    ? assembleResumePrompt(message, nestTopology, agentRoster)
-    : buildPrompt(message, history, nestTopology, agentRoster, reasoningLens);
+    ? assembleResumePrompt(message, nestTopology, agentRoster, process.cwd(), access?.privilege)
+    : buildPrompt(message, history, nestTopology, agentRoster, reasoningLens, access?.privilege);
   const emit = (item) => {
     if (typeof onEvent === 'function' && item) onEvent(item);
   };
@@ -1773,6 +1823,13 @@ function resolveCursorCloudAttach(access, creatorRepoUrl, startingRef) {
   };
 }
 
+function withSeatWriteDirective(prompt, access) {
+  if (access?.privilege === 'creator') {
+    return `${CREATOR_SING13_SHIP_DIRECTIVE}\n\n${prompt}`;
+  }
+  return withGuestHonorGuard(prompt, true);
+}
+
 function withGuestHonorGuard(prompt, guestSession) {
   if (!guestSession) return prompt;
   return `${GUEST_SING13_HONOR_DIRECTIVE}\n\n${prompt}`;
@@ -1920,6 +1977,7 @@ export default async function handler(req, res) {
 
     try {
       await loadLatticePromptLib();
+      await loadLatticeAccessLib();
     } catch (libErr) {
       console.error('[lattice-chat] prompt lib load failed', libErr);
       return json(res, 503, {
@@ -2670,11 +2728,24 @@ export default async function handler(req, res) {
         });
       }
 
-      const prompt = withGuestHonorGuard(
+      const prompt = withSeatWriteDirective(
         resumedOk && message
-          ? assembleResumePrompt(message, nestTopology, agentRoster)
-          : buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
-        guestSession,
+          ? assembleResumePrompt(
+              message,
+              nestTopology,
+              agentRoster,
+              process.cwd(),
+              access?.privilege,
+            )
+          : buildPrompt(
+              message,
+              body.history,
+              nestTopology,
+              agentRoster,
+              reasoningLens,
+              access?.privilege,
+            ),
+        access,
       );
       const sendOpts = {
         model: modelSelection,
@@ -2722,15 +2793,29 @@ export default async function handler(req, res) {
             agent,
             typeof buildCursorSendMessage === 'function'
               ? buildCursorSendMessage(
-                  withGuestHonorGuard(
-                    buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
-                    guestSession,
+                  withSeatWriteDirective(
+                    buildPrompt(
+                      message,
+                      body.history,
+                      nestTopology,
+                      agentRoster,
+                      reasoningLens,
+                      access?.privilege,
+                    ),
+                    access,
                   ),
                   attachments,
                 )
-              : withGuestHonorGuard(
-                  buildPrompt(message, body.history, nestTopology, agentRoster, reasoningLens),
-                  guestSession,
+              : withSeatWriteDirective(
+                  buildPrompt(
+                    message,
+                    body.history,
+                    nestTopology,
+                    agentRoster,
+                    reasoningLens,
+                    access?.privilege,
+                  ),
+                  access,
                 ),
             sendOpts,
             apiKey,

@@ -26,6 +26,7 @@ import {
   type LatticeRepository,
 } from '@/repositories';
 import { COLLAB_SHARED_AGENT_THREAD_ID } from '@/feed/collabSharedThread';
+import { slimThreadsForPersist } from '@/threadHistory';
 
 const STORAGE_KEY = 'lattice-v1618-edge';
 
@@ -504,17 +505,20 @@ export const useLatticeStore = create<LatticeState>()(
     {
       name: STORAGE_KEY,
       partialize: (s) => ({
-        threads: s.threads,
+        threads: slimThreadsForPersist(s.threads),
         activeThreadId: s.activeThreadId,
         userEmail: s.userEmail,
         emailRememberedAt: s.emailRememberedAt,
+        privilege: s.privilege,
         agentMode: s.agentMode,
         modelId: s.modelId,
         provider: s.provider,
         nestTopology: s.nestTopology,
         agentRoster: s.agentRoster,
         activeRepoId: s.activeRepoId,
-        pending: s.pending,
+        pending: s.pending
+          ? { ...s.pending, prompt: String(s.pending.prompt || '').slice(0, 8000) }
+          : null,
       }),
       onRehydrateStorage: () => (state) => {
         if (!state) return;

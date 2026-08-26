@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useState } from 'react';
 import {
   CREATOR_EMAIL,
+  isCreatorEmail,
   isRememberedEmailFresh,
   isValidEmailShape,
   normalizeEmail,
@@ -121,7 +122,7 @@ export function AuthPanel({
       mirrorKeysToSynthio();
       const seat =
         access.privilege === 'creator'
-          ? 'creator seat — SING13 agents'
+          ? 'Player 1 · creator seat — SING13 agents (commit / push / merge on)'
           : 'guest seat — SING13 agents (honor rail)';
       setFlash(`Signed in · ${meta.short} key on this device · ${seat}.`);
       onSignedIn?.();
@@ -211,8 +212,14 @@ export function SignedInBar({ onOpenKeySettings }: { onOpenKeySettings?: () => v
     <div className="signed-in-bar">
       <span className="signed-in-email" title={userEmail}>
         {userEmail}
-        {privilege === 'guest' ? ' · guest' : privilege === 'creator' ? ' · creator' : ''}
       </span>
+      {privilege === 'creator' || isCreatorEmail(userEmail) ? (
+        <span className="signed-in-seat" title="Player 1 creator seat — SING13 commit, push, and merge stay on">
+          Player 1 · creator
+        </span>
+      ) : privilege === 'guest' ? (
+        <span className="signed-in-seat signed-in-seat--guest">guest</span>
+      ) : null}
       <KeyStatusChip
         onOpenSettings={() => {
           if (onOpenKeySettings) onOpenKeySettings();

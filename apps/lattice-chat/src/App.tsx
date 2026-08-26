@@ -112,7 +112,6 @@ export function App() {
         onOpenHistory={openRail}
         onNewChat={() => {
           newChat();
-          closeRail();
         }}
         onOpenCollaborate={() => setMode('collaborate')}
         agentSeedPrompt={agentSeed}

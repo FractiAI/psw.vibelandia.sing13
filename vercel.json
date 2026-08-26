@@ -1085,6 +1085,14 @@
       "destination": "/interfaces/blog-planetary-core-goldilocks-2026-08.html"
     },
     {
+      "source": "/ship-blog/invisible-frontier",
+      "destination": "/interfaces/blog-invisible-frontier-gates-ai-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/invisible-frontier/",
+      "destination": "/interfaces/blog-invisible-frontier-gates-ai-2026-08.html"
+    },
+    {
       "source": "/ship-blog/triadic-hemispheres",
       "destination": "/interfaces/blog-triadic-hemispheres-2026-08.html"
     },

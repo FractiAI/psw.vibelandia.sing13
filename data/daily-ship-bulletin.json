@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Wednesday board · August 26 · Puerto Reno",
   "newsLabel": "News of the day · Wednesday, August 26",
-  "htmlBody": "Stages and sandboxes both need a nest that feels just right. Today’s care is three nested domes under Φ ≈ 1.618 — core, amphitheater, horizon — a filing cartoon for theaters and agent shells, not a venue certificate or FLOP bill.<br /><br />If you want a map for that: <a href=\"/ship-blog/triadic-hemispheres\">Three nested domes — one Goldilocks stage</a>. For the voyage spine in three beats, open: <a href=\"/ship-blog/official-prospectus\">The voyage has a beginning — and a captain’s seat now</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Linear AI warnings are real weather — and incomplete. Today’s care is the Invisible Frontier: a Goldilocks chart beside Gates-style scale anxiety. EGS ≈ 1.618 stays design language; human emergency still outranks algorithms.<br /><br />If you want a map for that: <a href=\"/ship-blog/invisible-frontier\">The Invisible Frontier — Gates’s AI warnings, answered</a>. For the three-dome stage map: <a href=\"/ship-blog/triadic-hemispheres\">Three nested domes — one Goldilocks stage</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-invisible-frontier-gates-ai-2026-08",
+      "title": "The Invisible Frontier",
+      "href": "/ship-blog/invisible-frontier",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
+      "blurb": "Linear AI alarms miss the Goldilocks ship already underway. EGS ≈ 1.618 is design language for holographic care — not a physics proof or a claim that displacement is solved."
+    },
     {
       "id": "synthobs-triadic-nested-hemispheres-99-octave-2026-08",
       "title": "Triadic Nested Hemispheric Architectures",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/official-prospectus",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-ss-vibelandia-official-prospectus-2026-08",
       "blurb": "Official Prospectus in three beats: genesis under Φ ≈ 1.618, Borikén convergence, Reno present. Voyage canon for Journey — design language, not prophecy."
-    },
-    {
-      "id": "synthobs-infinite-octaves-omniversal-lattice-2026-08",
-      "title": "Infinite Octaves Omniversal Lattice Chat Agent",
-      "href": "/ship-blog/infinite-octaves-omniversal",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
-      "blurb": "Lattice Chat upgrades to Infinite Octaves Omniversal — deeper nesting for the grand Story. The 99 map stays the engine filing cabinet; Infinite means care depth, not infinite physics tiers."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-08-25-synthobs-triadic-nested-hemispheres-99-octave-2026-08",
+    "id": "daily-2026-08-26-synthobs-triadic-nested-hemispheres-99-octave-2026-08",
     "title": "Triadic Nested Hemispheric Architectures",
     "href": "/ship-blog/triadic-hemispheres"
   },
-  "generatedAt": "2026-08-26T16:27:13.342Z"
+  "generatedAt": "2026-08-26T19:30:33.222Z"
 }

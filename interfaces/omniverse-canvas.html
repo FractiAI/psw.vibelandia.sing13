@@ -356,6 +356,80 @@
     }
     section.band p { margin: 0 0 1rem; color: var(--ink-soft); }
     section.band p:last-child { margin-bottom: 0; }
+    section.band--ship-news {
+      max-width: 48rem;
+      padding-top: clamp(2.25rem, 5vw, 3.5rem);
+      padding-bottom: clamp(2.25rem, 5vw, 3.5rem);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+      background:
+        linear-gradient(180deg, rgba(212, 175, 55, 0.07), transparent 55%),
+        transparent;
+    }
+    section.band--ship-news .news-kicker {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.5rem;
+    }
+    .ship-news-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.25rem 0 1rem;
+      display: grid;
+      gap: 1.1rem;
+    }
+    .ship-news-list li {
+      padding: 0;
+      border: 0;
+      animation: newsRise 0.7s ease both;
+    }
+    .ship-news-list li:nth-child(2) { animation-delay: 0.08s; }
+    .ship-news-list li:nth-child(3) { animation-delay: 0.16s; }
+    @keyframes newsRise {
+      from { opacity: 0; transform: translateY(0.5rem); }
+      to { opacity: 1; transform: none; }
+    }
+    .ship-news-list a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .ship-news-list a:hover .ship-news-title,
+    .ship-news-list a:focus-visible .ship-news-title {
+      color: var(--gold-hi);
+    }
+    .ship-news-date {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.25rem;
+    }
+    .ship-news-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.02em;
+      transition: color 0.2s ease;
+    }
+    .ship-news-blurb {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+      line-height: 1.45;
+    }
+    .ship-news-more {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
     .nest-list {
       list-style: none;
       padding: 0;
@@ -465,6 +539,38 @@
   </header>
 
   <main>
+    <section class="band band--ship-news" id="ship-news" aria-labelledby="ship-news-h">
+      <p class="news-kicker" id="canvas-news-label">News of the day · Wednesday, August 26</p>
+      <h2 id="ship-news-h">News of the voyage</h2>
+      <p>Newest notes lead automatically — same board Valet Pru keeps on QUESTFEST.</p>
+      <!-- CANVAS_SHIP_NEWS_BEGIN -->
+      <ul class="ship-news-list" id="canvas-news-list">
+        <li>
+          <a href="/ship-blog/invisible-frontier">
+            <p class="ship-news-date">2026-08-26</p>
+            <p class="ship-news-title">The Invisible Frontier</p>
+            <p class="ship-news-blurb">Linear AI alarms miss the Goldilocks ship already underway. EGS ≈ 1.618 is design language for holographic care — not a physics proof or a claim that displacement is solved.</p>
+          </a>
+        </li>
+        <li>
+          <a href="/ship-blog/triadic-hemispheres">
+            <p class="ship-news-date">2026-08-26</p>
+            <p class="ship-news-title">Triadic Nested Hemispheric Architectures</p>
+            <p class="ship-news-blurb">Core, amphitheater, and horizon shells keyed by Φ ≈ 1.618 — a nesting grammar for theaters and agent sandboxes, not a venue certificate or FLOP SLA.</p>
+          </a>
+        </li>
+        <li>
+          <a href="/ship-blog/official-prospectus">
+            <p class="ship-news-date">2026-08-26</p>
+            <p class="ship-news-title">S.S. Vibelandia</p>
+            <p class="ship-news-blurb">Official Prospectus in three beats: genesis under Φ ≈ 1.618, Borikén convergence, Reno present. Voyage canon for Journey — design language, not prophecy.</p>
+          </a>
+        </li>
+      </ul>
+      <!-- CANVAS_SHIP_NEWS_END -->
+      <p><a class="ship-news-more" href="/questfest#ship-blog">Open the full ship board →</a></p>
+    </section>
+
     <section class="band" id="welcome" aria-labelledby="welcome-h">
       <h2 id="welcome-h">For those of you who know me from my night job</h2>
       <p>
@@ -710,5 +816,6 @@
   </script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script src="/interfaces/daily-ship-bulletin.js" defer></script>
 </body>
 </html>

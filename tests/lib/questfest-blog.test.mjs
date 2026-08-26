@@ -30,22 +30,16 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured notes (Triadic + Infinite Octaves + Prospectus · 2026-08-25) lead latest-six.
-    expect(posts[0].published).toBe('2026-08-25');
-    expect(
-      posts.filter((p) => p.published === '2026-08-25').map((p) => p.id).sort(),
-    ).toEqual([
-      'synthobs-infinite-octaves-omniversal-lattice-2026-08',
-      'synthobs-ss-vibelandia-official-prospectus-2026-08',
-      'synthobs-triadic-nested-hemispheres-99-octave-2026-08',
-    ]);
+    // Newest featured note (Invisible Frontier · 2026-08-26) leads latest-six.
+    expect(posts[0].published).toBe('2026-08-26');
+    expect(posts[0].id).toBe('synthobs-invisible-frontier-gates-ai-2026-08');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-invisible-frontier-gates-ai-2026-08',
       'synthobs-infinite-octaves-omniversal-lattice-2026-08',
       'synthobs-ss-vibelandia-official-prospectus-2026-08',
       'synthobs-triadic-nested-hemispheres-99-octave-2026-08',
       'synthobs-magneto-harmonic-stellar-99-octave-2026-08',
       'synthobs-table-top-hep-99-octave-2026-08',
-      'synthobs-tbme-egs-hgaios-2026-08',
     ]);
   });
 });

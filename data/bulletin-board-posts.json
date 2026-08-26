@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-08-25",
+  "updated": "2026-08-26",
   "posts": [
+    {
+      "id": "daily-2026-08-26-synthobs-triadic-nested-hemispheres-99-octave-2026-08",
+      "posted": "2026-08-26",
+      "featured": true,
+      "title": "Triadic Nested Hemispheric Architectures",
+      "subtitle": "News of the day · Wednesday, August 26",
+      "summary": "Core, amphitheater, and horizon shells keyed by Φ ≈ 1.618 — a nesting grammar for theaters and agent sandboxes, not a venue certificate or FLOP SLA.",
+      "href": "/ship-blog/triadic-hemispheres",
+      "pill": "TODAY",
+      "docRef": "synthobs-triadic-nested-hemispheres-99-octave-2026-08",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-08-25-synthobs-triadic-nested-hemispheres-99-octave-2026-08",
       "posted": "2026-08-25",

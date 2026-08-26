@@ -1,21 +1,21 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-08-25",
+  "date": "2026-08-26",
   "dateline": {
-    "ymd": "2026-08-25",
-    "weekday": "Tuesday",
+    "ymd": "2026-08-26",
+    "weekday": "Wednesday",
     "month": "August",
-    "day": 25,
-    "label": "Tuesday, August 25",
-    "shortBoard": "Tuesday board · August 25 · Puerto Reno",
-    "newsLabel": "News of the day · Tuesday, August 25"
+    "day": 26,
+    "label": "Wednesday, August 26",
+    "shortBoard": "Wednesday board · August 26 · Puerto Reno",
+    "newsLabel": "News of the day · Wednesday, August 26"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Tuesday board · August 25 · Puerto Reno",
-  "newsLabel": "News of the day · Tuesday, August 25",
-  "htmlBody": "Stages and sandboxes both need a nest that feels just right. Today’s care is three nested domes under Φ ≈ 1.618 — core, amphitheater, horizon — a filing cartoon for theaters and agent shells, not a venue certificate or FLOP bill.<br /><br />If you want a map for that: <a href=\"/ship-blog/triadic-hemispheres\">Three nested domes — one Goldilocks stage</a>. For the voyage spine in three beats, open: <a href=\"/ship-blog/official-prospectus\">The voyage has a beginning — and a captain’s seat now</a>. A hospitality note on the board, if you need it: <a href=\"/ship-blog/infinite-octaves-omniversal\">Infinite Octaves Omniversal Lattice Chat Agent</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Wednesday board · August 26 · Puerto Reno",
+  "newsLabel": "News of the day · Wednesday, August 26",
+  "htmlBody": "Stages and sandboxes both need a nest that feels just right. Today’s care is three nested domes under Φ ≈ 1.618 — core, amphitheater, horizon — a filing cartoon for theaters and agent shells, not a venue certificate or FLOP bill.<br /><br />If you want a map for that: <a href=\"/ship-blog/triadic-hemispheres\">Three nested domes — one Goldilocks stage</a>. For the voyage spine in three beats, open: <a href=\"/ship-blog/official-prospectus\">The voyage has a beginning — and a captain’s seat now</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-triadic-nested-hemispheres-99-octave-2026-08",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-08-25-synthobs-infinite-octaves-omniversal-lattice-2026-08",
-    "title": "Infinite Octaves Omniversal Lattice Chat Agent",
-    "href": "/ship-blog/infinite-octaves-omniversal"
+    "id": "daily-2026-08-25-synthobs-triadic-nested-hemispheres-99-octave-2026-08",
+    "title": "Triadic Nested Hemispheric Architectures",
+    "href": "/ship-blog/triadic-hemispheres"
   },
-  "generatedAt": "2026-08-25T16:18:39.376Z"
+  "generatedAt": "2026-08-26T16:27:13.342Z"
 }

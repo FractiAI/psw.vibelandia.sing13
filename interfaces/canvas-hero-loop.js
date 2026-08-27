@@ -1,18 +1,35 @@
 /**
  * Omniversal Canvas landing · YouTube hero loop (muted, autoplay, loop)
- * + Movement V soundtrack: Concierto de El Gran Sol · “The Shift”.
+ * + landing soundtrack playlist:
+ *   1) Concierto de El Gran Sol · Movement V · “The Shift”
+ *   2) Goldilocks Parabola
  * Video: https://youtu.be/0hicJ_AZups
- * Track: catalog trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52
  */
 (function () {
   'use strict';
 
   var YOUTUBE_ID = '0hicJ_AZups';
-  var SHIFT_TRACK_ID = 'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52';
-  var SHIFT_SRC =
-    'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
-    'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3';
-  var SHIFT_LABEL = 'Movement V · The Shift';
+
+  var PLAYLIST = [
+    {
+      id: 'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52',
+      label: 'The Shift',
+      short: 'Sound on · The Shift',
+      aria: 'Movement V · The Shift',
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3',
+    },
+    {
+      id: 'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2',
+      label: 'Goldilocks Parabola',
+      short: 'Sound on · Goldilocks Parabola',
+      aria: 'Goldilocks Parabola',
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2-goldilocks-parabola.mp3',
+    },
+  ];
 
   function prefersReducedMotion() {
     try {
@@ -54,33 +71,23 @@
     });
   }
 
-  function pingCatalogPlay() {
+  function pingCatalogPlay(trackId) {
     try {
       fetch('/api/catalog-plays', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ trackId: SHIFT_TRACK_ID }),
+        body: JSON.stringify({ trackId: trackId }),
         keepalive: true,
       }).catch(function () {});
     } catch (_) {}
   }
 
-  function setToggleState(btn, playing) {
-    if (!btn) return;
-    btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
-    btn.classList.toggle('is-playing', playing);
-    btn.classList.toggle('is-muted', !playing);
-    btn.textContent = playing ? 'Sound on · The Shift' : 'Sound off · tap to play';
-    btn.setAttribute(
-      'aria-label',
-      playing
-        ? 'Mute soundtrack: ' + SHIFT_LABEL
-        : 'Play soundtrack: ' + SHIFT_LABEL
-    );
-  }
-
   function bootSoundtrack() {
     if (prefersReducedMotion()) return;
+
+    var index = 0;
+    var logged = {};
+    var btn = document.getElementById('canvas-hero-score');
 
     var audio =
       document.getElementById('canvas-hero-shift') ||
@@ -88,36 +95,53 @@
         var el = document.createElement('audio');
         el.id = 'canvas-hero-shift';
         el.preload = 'auto';
-        el.loop = true;
         el.setAttribute('playsinline', '');
-        el.setAttribute(
-          'aria-label',
-          'Soundtrack: Concierto de El Gran Sol — Movement V, The Shift'
-        );
-        el.src = SHIFT_SRC;
         document.body.appendChild(el);
         return el;
       })();
 
-    if (!audio.getAttribute('src')) audio.src = SHIFT_SRC;
-    audio.loop = true;
+    audio.loop = false;
     audio.preload = 'auto';
 
-    var btn = document.getElementById('canvas-hero-score');
-    var started = false;
-    var playLogged = false;
+    function current() {
+      return PLAYLIST[index];
+    }
+
+    function setToggleState(playing) {
+      if (!btn) return;
+      var track = current();
+      btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+      btn.classList.toggle('is-playing', playing);
+      btn.classList.toggle('is-muted', !playing);
+      btn.textContent = playing ? track.short : 'Sound off · tap to play';
+      btn.setAttribute(
+        'aria-label',
+        playing ? 'Mute soundtrack: ' + track.aria : 'Play soundtrack: ' + track.aria
+      );
+    }
+
+    function loadTrack(i) {
+      index = ((i % PLAYLIST.length) + PLAYLIST.length) % PLAYLIST.length;
+      var track = current();
+      audio.src = track.src;
+      audio.setAttribute(
+        'aria-label',
+        'Soundtrack: ' + track.aria + ' (landing playlist)'
+      );
+      setToggleState(false);
+    }
 
     function markPlaying() {
-      started = true;
-      setToggleState(btn, true);
-      if (!playLogged) {
-        playLogged = true;
-        pingCatalogPlay();
+      var track = current();
+      setToggleState(true);
+      if (!logged[track.id]) {
+        logged[track.id] = true;
+        pingCatalogPlay(track.id);
       }
     }
 
     function markStopped() {
-      setToggleState(btn, false);
+      setToggleState(false);
     }
 
     function tryPlay() {
@@ -145,9 +169,16 @@
       });
     }
 
+    function advance() {
+      loadTrack(index + 1);
+      tryPlay();
+    }
+
+    loadTrack(0);
+
     if (btn) {
       btn.hidden = false;
-      setToggleState(btn, false);
+      setToggleState(false);
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
         if (!audio.paused && !audio.ended) {
@@ -163,12 +194,16 @@
     audio.addEventListener('pause', function () {
       if (!audio.ended) markStopped();
     });
+    audio.addEventListener('ended', advance);
 
     tryPlay().then(function (ok) {
       if (ok === false || audio.paused) {
         window.addEventListener('pointerdown', unlockOnGesture, true);
         window.addEventListener('keydown', unlockOnGesture, true);
-        window.addEventListener('touchstart', unlockOnGesture, { capture: true, passive: true });
+        window.addEventListener('touchstart', unlockOnGesture, {
+          capture: true,
+          passive: true,
+        });
       }
     });
   }

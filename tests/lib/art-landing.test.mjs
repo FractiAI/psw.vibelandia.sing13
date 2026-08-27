@@ -82,7 +82,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain('prefers-reduced-motion');
   });
 
-  it('landing autoplays Concierto Movement V · The Shift with the da Vinci loop', () => {
+  it('landing autoplays The Shift then Goldilocks Parabola with the da Vinci loop', () => {
     const html = read('interfaces/omniverse-canvas.html');
     const js = read('interfaces/canvas-hero-loop.js');
     expect(html).toContain('id="canvas-hero-shift"');
@@ -90,10 +90,16 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain(
       'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3'
     );
-    expect(js).toContain("SHIFT_TRACK_ID = 'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52'");
+    expect(html).toContain(
+      'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2-goldilocks-parabola.mp3'
+    );
+    expect(js).toContain("id: 'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52'");
+    expect(js).toContain("id: 'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2'");
+    expect(js).toContain('Goldilocks Parabola');
     expect(js).toContain('bootSoundtrack');
     expect(js).toContain('audio.play');
     expect(js).toContain('unlockOnGesture');
+    expect(js).toContain("addEventListener('ended', advance)");
     expect(js).toContain('/api/catalog-plays');
   });
 

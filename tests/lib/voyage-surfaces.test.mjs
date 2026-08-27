@@ -22,6 +22,9 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(css).toContain('.voyage-arrival');
     expect(css).toContain('.voyage-purser');
     expect(css).toContain('.voyage-icon-door');
+    expect(css).toContain('.voyage-map-still');
+    expect(css).toContain('.voyage-map-filmstrip');
+    expect(css).toContain('.voyage-directory-hero--story');
     expect(css).not.toMatch(/color:\s*#(0{0,2}[0-9a-f]*blue)/i);
   });
 
@@ -137,8 +140,21 @@ describe('Frontiersman voyage guest surfaces', () => {
     const directory = read('interfaces/voyage/decks.html');
     expect(directory).toContain('voyage-directory-thumb');
     expect(directory).toContain('/interfaces/assets/voyage/voyage-map.png');
+    expect(directory).toContain('/interfaces/assets/voyage/voyage-map-aboard-hero.png');
+    expect(directory).toContain('/interfaces/assets/voyage/voyage-map-come-aboard.png');
+    expect(directory).toContain('voyage-directory-hero--story');
+    expect(directory).toContain('voyage-map-still');
+    expect(directory).toContain('voyage-map-filmstrip');
+    expect(directory).toContain('voyage-map-schematic');
+    expect(directory).toContain('/interfaces/assets/journey/journey-bridge-solar-watch.png');
+    expect(directory).toContain('/interfaces/assets/journey/journey-boriken-convergence.png');
+    expect(directory).toContain('/interfaces/assets/journey/journey-puerto-reno-gangway.png');
     expect(directory).toContain('Ship map · decks &amp; landfalls');
     expect(directory).toContain('Puerto Reno');
+    const storyHeroIdx = directory.indexOf('voyage-map-aboard-hero.png');
+    const schematicIdx = directory.indexOf('voyage-map-schematic');
+    expect(storyHeroIdx).toBeGreaterThan(-1);
+    expect(schematicIdx).toBeGreaterThan(storyHeroIdx);
   });
 
   it('QUESTFEST home ships baked-in top banner', () => {

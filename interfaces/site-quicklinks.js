@@ -131,6 +131,8 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/library">Library</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/doodles">Doodles</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/creator-studio">Creator Studio</a>';
     } else if (onQuestfestHome) {
       nav.innerHTML =
@@ -144,6 +146,8 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/library">Library</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/doodles">Doodles</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/creator-studio">Creator Studio</a>';
     } else {
       nav.innerHTML =
@@ -156,6 +160,8 @@
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/library">Library</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/doodles">Doodles</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/creator-studio">Creator Studio</a>';
     }

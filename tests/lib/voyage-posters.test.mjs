@@ -2,7 +2,9 @@ import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { VOYAGE_CABINS, VOYAGE_DECKS } from '../../lib/voyage-directory.mjs';
 import {
+  VOYAGE_MAP_COME_ABOARD,
   VOYAGE_MAP_POSTER,
+  VOYAGE_MAP_STORY_HERO,
   VOYAGE_POSTER_SLUGS,
   voyagePosterPath,
 } from '../../lib/voyage-posters.mjs';
@@ -12,6 +14,8 @@ describe('voyage poster catalog', () => {
     expect(voyagePosterPath('deck-9-summit')).toBe('/interfaces/assets/voyage/deck-9-summit.png');
     expect(voyagePosterPath('ph-001')).toBe('/interfaces/assets/voyage/ph-001.png');
     expect(VOYAGE_MAP_POSTER).toBe('/interfaces/assets/voyage/voyage-map.png');
+    expect(VOYAGE_MAP_STORY_HERO).toBe('/interfaces/assets/voyage/voyage-map-aboard-hero.png');
+    expect(VOYAGE_MAP_COME_ABOARD).toBe('/interfaces/assets/voyage/voyage-map-come-aboard.png');
   });
 
   it('lists every deck, cabin, and map slug', () => {
@@ -40,5 +44,11 @@ describe('voyage poster catalog', () => {
     expect(existsSync(new URL('../../interfaces/assets/voyage/voyage-map.png', import.meta.url))).toBe(
       true,
     );
+    expect(
+      existsSync(new URL('../../interfaces/assets/voyage/voyage-map-aboard-hero.png', import.meta.url)),
+    ).toBe(true);
+    expect(
+      existsSync(new URL('../../interfaces/assets/voyage/voyage-map-come-aboard.png', import.meta.url)),
+    ).toBe(true);
   });
 });

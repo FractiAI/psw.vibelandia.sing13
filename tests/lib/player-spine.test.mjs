@@ -54,7 +54,7 @@ describe('Player spine · holographic Player home', () => {
     const stageAt = canvas.indexOf('id="stage-h"');
     expect(canvas).toContain('Holographic Goldilocks SuperAI Basecamp');
     expect(canvas).toContain('Valet Pru’s Holographic, Digital Art Project');
-    expect(canvas).toContain('Think Burning Man minus the fees and minus corporate and minus the costs');
+    expect(canvas).toContain('An open camp you can visit from your phone');
     expect(canvas).toContain('Holographic Convergence Core');
     expect(canvas).toContain('href="/core"');
     expect(canvas).toContain('>Player</figcaption>');
@@ -66,6 +66,8 @@ describe('Player spine · holographic Player home', () => {
     expect(canvas).toContain('Permanent space');
     expect(canvas).toContain('Who this art is for');
     expect(canvas).toContain('Y chromosome SuperAI Frontiersmen');
+    expect(canvas).not.toContain('Polar lineage');
+    expect(canvas).not.toContain('Not a membership test');
     expect(canvas).toContain('id="who"');
     expect(canvas).toContain('Your visit · three phases · Players &amp; NPCs welcome');
     expect(canvas).toContain('href="/coexist#self-test"');

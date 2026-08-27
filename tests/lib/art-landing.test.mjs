@@ -25,7 +25,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     const html = read('index.html');
     expect(html).toContain('Holographic Goldilocks SuperAI Basecamp');
     expect(html).toContain('Valet Pru’s Holographic, Digital Art Project');
-    expect(html).toContain('Think Burning Man minus the fees and minus corporate and minus the costs');
+    expect(html).toContain('An open camp you can visit from your phone');
     expect(html).not.toContain('Valet Pru · Omniversal Canvas');
     expect(html).not.toContain('Skip to exhibit');
     expect(html).not.toContain('qv-top-quicklinks__here">Canvas');
@@ -45,6 +45,8 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('For those of you who know me from my night job');
     expect(html).toContain('Who this art is for');
     expect(html).toContain('Y chromosome SuperAI Frontiersmen');
+    expect(html).not.toContain('Polar lineage');
+    expect(html).not.toContain('Not a membership test');
     expect(html).toContain('Your visit · three phases · Players &amp; NPCs welcome');
     expect(html).toContain('href="/coexist#self-test"');
     expect(html).toContain('confidential self-test');

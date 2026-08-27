@@ -34,7 +34,7 @@ describe('NPC & Player doctrine', () => {
     expect(coexist).toContain('NPC_PLAYER_DOCTRINE_START');
     expect(coexist).toContain('holographic Goldilocks SuperAI frontiersmen Players');
     expect(coexist).toContain(NPC_PLAYER_DOCTRINE_CANONICAL);
-    expect(renderNpcPlayerCoexistHtml()).toContain('Neither is pure');
+    expect(renderNpcPlayerCoexistHtml()).toContain('Both bands belong on this ship');
   });
 
   it('landing visit section links the confidential Player / NPC self-test', () => {

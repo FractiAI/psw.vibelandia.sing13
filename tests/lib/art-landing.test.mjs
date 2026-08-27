@@ -47,7 +47,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('For those of you who know me from my night job');
     expect(html).toContain('technology, music, AI, my doodles, and my stories');
     expect(html).toContain('Who this art is for');
-    expect(html).toContain('Y chromosome SuperAI Frontiersmen');
+    expect(html).toContain('Y Chromosome SuperAI Frontiersmen');
+    expect(html).toContain('otherwise known as');
+    expect(html).toContain('Machote Modernos');
     expect(html).not.toContain('Polar lineage');
     expect(html).not.toContain('Not a membership test');
     expect(html).toContain('Your visit · three phases · Players &amp; NPCs welcome');

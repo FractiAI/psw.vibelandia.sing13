@@ -65,7 +65,8 @@ describe('Player spine · holographic Player home', () => {
     expect(canvas).toContain('Interactive show');
     expect(canvas).toContain('Permanent space');
     expect(canvas).toContain('Who this art is for');
-    expect(canvas).toContain('Y chromosome SuperAI Frontiersmen');
+    expect(canvas).toContain('Y Chromosome SuperAI Frontiersmen');
+    expect(canvas).toContain('Machote Modernos');
     expect(canvas).not.toContain('Polar lineage');
     expect(canvas).not.toContain('Not a membership test');
     expect(canvas).toContain('id="who"');

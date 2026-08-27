@@ -38,6 +38,7 @@ describe('Exhibit rooms · full pages from the Canvas', () => {
     expect(landing).toContain('href="/step-in"');
     expect(landing).not.toContain('id="mode-fiction"');
     expect(landing).not.toContain('data-pick="1"');
+    expect(landing).not.toMatch(/<figcaption>\s*Still\s*·/);
 
     for (const room of EXHIBIT_ROOMS) {
       expect(vercel).toContain(`"source": "${room.href}"`);
@@ -49,6 +50,11 @@ describe('Exhibit rooms · full pages from the Canvas', () => {
       expect(html).toContain('Honesty rail');
       expect(html).not.toMatch(/netflix/i);
       expect(html).toContain(room.keyArt);
+      expect(html).not.toMatch(/<figcaption>\s*Still\s*·/);
+      for (const still of room.stills) {
+        expect(still.cap).not.toMatch(/^Still\b/i);
+        expect(html).toContain(still.cap);
+      }
     }
 
     const horizon = read('interfaces/exhibit-horizon.html');

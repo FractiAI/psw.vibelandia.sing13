@@ -4,24 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Join the crew · Puerto Reno stations · SS Vibelandia</title>
-  <meta name="description" content="Join the SS Vibelandia crew — Host, Guide, Chef, or Guest. Human stations at Puerto Reno. A host still answers email." />
+  <meta name="description" content="Join the SS Vibelandia crew. Host, Guide, Chef, or Guest. See yourself in a Puerto Reno station. A host still answers email." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/join-the-crew" />
-  <meta property="og:title" content="Join the crew — Host, Guide, Chef, Guest" />
-  <meta property="og:description" content="Puerto Reno stations. Low cost to stand up. A human still answers email." />
+  <meta property="og:title" content="Join the crew. Host, Guide, Chef, Guest." />
+  <meta property="og:description" content="Puerto Reno stations with a face on each listing. Low cost to stand up. A human still answers email." />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/crew-stations/join-station-host.png" />
   <meta property="og:type" content="article" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/ship-blog.css" />
   <style>
     html.vbi18n-pending body{visibility:hidden}html.vbi18n-ready body{visibility:visible}
-    .join-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin: 1.4rem 0; }
-    .join-card { border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.15rem; background: rgba(12,10,8,0.35); }
-    .join-card h2 { font-size: 1.2rem; margin: 0.2rem 0 0.45rem; }
-    .pill { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--champagne); font-weight: 700; }
+    body.join-crew .wrap { max-width: 72rem; }
+    .join-intro { max-width: 42rem; }
+    .join-grid {
+      display: grid;
+      gap: 1.35rem;
+      grid-template-columns: 1fr;
+      margin: 1.6rem 0 1.8rem;
+    }
+    @media (min-width: 720px) {
+      .join-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .join-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(12,10,8,0.35);
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    a.join-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: inherit;
+    }
+    .join-card__photo {
+      margin: 0;
+      display: block;
+      background: #0a0806;
+    }
+    .join-card__photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center 28%;
+    }
+    .join-card--guest .join-card__photo img { object-position: center 70%; }
+    .join-card__body { padding: 1.05rem 1.15rem 1.2rem; }
+    .pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      font-weight: 700;
+    }
+    .join-card h2 { font-size: 1.35rem; margin: 0.25rem 0 0.4rem; }
+    .join-you {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1.08rem;
+      color: var(--champagne);
+      margin: 0 0 0.55rem;
+      line-height: 1.4;
+    }
+    .join-card p { margin-bottom: 0.7rem; color: var(--soft); }
+    .join-card .btn { margin-top: 0.15rem; }
   </style>
 </head>
-<body>
+<body class="join-crew">
   <article class="wrap">
     <nav class="nav" aria-label="Site">
       <a href="/questfest">SS VIBELANDIA</a>
@@ -29,40 +86,64 @@
       <a href="/coexist">Coexist with AI</a>
       <a href="/commons">Puerto Reno</a>
     </nav>
-    <header>
+    <header class="join-intro">
       <p class="kicker">Join the crew · Channel VIII</p>
-      <h1>Claim a station at Puerto Reno</h1>
-      <p class="dateline"><strong>SS Vibelandia</strong> — Host · Guide · Chef · Guest</p>
+      <h1>See yourself in a station</h1>
+      <p class="dateline"><strong>SS Vibelandia</strong> · Host · Guide · Chef · Guest</p>
     </header>
-    <p class="lead">This is the living crew — people on docks and downtown floors, not the spirit roster. Low cost to stand up. We run on under-utilized resources: empty downtown rooms, idle horses and gear, off-season guides, great cooks without a room.</p>
-    <p class="honesty"><strong>Honesty first:</strong> these portals are recruitment and hospitality, not a hiring ladder tied to the four awareness quadrants. Spirit crew lives on Meet the crew. Coexisting with AI and Super AI is a separate channel. Email still reaches a human at <a href="mailto:info@fractiai.com">info@fractiai.com</a>.</p>
+    <p class="lead join-intro">Four listings, four pictures. Find the face that looks like your day, then claim that Puerto Reno station. This is the living crew: people on docks and downtown floors. Low cost to stand up. We run on under-used rooms, idle horses and gear, off-season guides, and great cooks without a room.</p>
+    <p class="honesty join-intro"><strong>Honesty first:</strong> these portals are recruitment and hospitality. They are not a hiring ladder tied to the four awareness quadrants. Spirit crew lives on Meet the crew. Coexisting with AI and Super AI is a separate channel. Email still reaches a human at <a href="mailto:info@fractiai.com">info@fractiai.com</a>.</p>
     <div class="join-grid">
-      <article class="join-card">
-        <p class="pill">Station · Host</p>
-        <h2>Downtown Citadel Host</h2>
-        <p>Civic developers, building owners, co-op organizers — run the home base: rooms, halls, the lit-up walkable core.</p>
-        <p><a class="btn btn-gold" href="/commons/host">Open the Host portal →</a></p>
-      </article>
-      <article class="join-card">
-        <p class="pill">Station · Guide</p>
-        <h2>Outfitter &amp; Guide Commander</h2>
-        <p>Outfitters, hunters, anglers, wranglers, kinetic-park marshals — command the frontier tracks, both quiet and thunder.</p>
-        <p><a class="btn btn-gold" href="/commons/guide">Open the Guide portal →</a></p>
-      </article>
-      <article class="join-card">
-        <p class="pill">Station · Chef</p>
-        <h2>Sanctuary Gastronomy Director</h2>
-        <p>Chefs and saloon operators — command the social engine: wood fire, daily harvest, aged spirits, the room everyone ends the night in.</p>
-        <p><a class="btn btn-gold" href="/commons/chef">Open the Chef portal →</a></p>
-      </article>
-      <article class="join-card">
-        <p class="pill">Station · Guest</p>
-        <h2>First Travelers</h2>
-        <p>Want the day itself? Flagship runs from Puerto Reno. Tell us your window — the rail arranges the rest.</p>
-        <p><a class="btn btn-gold" href="mailto:info@fractiai.com?subject=THE%20COMMONS%20%E2%80%94%20Guest%20%C2%B7%20sign%20me%20up">Sign up as a guest →</a></p>
-      </article>
+      <a class="join-card" href="/commons/host">
+        <figure class="join-card__photo">
+          <img src="/interfaces/assets/crew-stations/join-station-host.png" alt="A downtown host at a gold-lit lobby desk, looking toward you as evening fills the street outside." width="768" height="512" loading="eager" decoding="async" />
+        </figure>
+        <div class="join-card__body">
+          <p class="pill">Station · Host</p>
+          <h2>Downtown Citadel Host</h2>
+          <p class="join-you">If you keep a downtown floor warm, this is your station.</p>
+          <p>Civic developers, building owners, and co-op organizers run the home base: rooms, halls, and the lit walkable core.</p>
+          <span class="btn btn-gold">Open the Host portal →</span>
+        </div>
+      </a>
+      <a class="join-card" href="/commons/guide">
+        <figure class="join-card__photo">
+          <img src="/interfaces/assets/crew-stations/join-station-guide.png" alt="An outfitter in hat and canvas jacket holding a saddled horse at gold hour in high country." width="768" height="512" loading="lazy" decoding="async" />
+        </figure>
+        <div class="join-card__body">
+          <p class="pill">Station · Guide</p>
+          <h2>Outfitter &amp; Guide Commander</h2>
+          <p class="join-you">If you already know the horses, the river, and the season, this is your station.</p>
+          <p>Outfitters, hunters, anglers, wranglers, and kinetic-park marshals command the frontier tracks, quiet and thunder both.</p>
+          <span class="btn btn-gold">Open the Guide portal →</span>
+        </div>
+      </a>
+      <a class="join-card" href="/commons/chef">
+        <figure class="join-card__photo">
+          <img src="/interfaces/assets/crew-stations/join-station-chef.png" alt="A chef at a wood-fire hearth with copper pot and the day’s harvest on the board." width="768" height="512" loading="lazy" decoding="async" />
+        </figure>
+        <div class="join-card__body">
+          <p class="pill">Station · Chef</p>
+          <h2>Sanctuary Gastronomy Director</h2>
+          <p class="join-you">If the night ends at your fire, this is your station.</p>
+          <p>Chefs and saloon operators command the social engine: wood fire, daily harvest, aged spirits, and the room everyone lands in.</p>
+          <span class="btn btn-gold">Open the Chef portal →</span>
+        </div>
+      </a>
+      <a class="join-card join-card--guest" href="mailto:info@fractiai.com?subject=THE%20COMMONS%20%E2%80%94%20Guest%20%C2%B7%20sign%20me%20up">
+        <figure class="join-card__photo">
+          <img src="/interfaces/assets/crew-stations/join-station-guest.png" alt="A traveler with bags on a night gangway, looking across the water toward a lit downtown." width="768" height="512" loading="lazy" decoding="async" />
+        </figure>
+        <div class="join-card__body">
+          <p class="pill">Station · Guest</p>
+          <h2>First Travelers</h2>
+          <p class="join-you">If you want the day itself, this is you arriving.</p>
+          <p>Flagship runs from Puerto Reno. Tell us your window. The rail arranges the rest.</p>
+          <span class="btn btn-gold">Sign up as a guest →</span>
+        </div>
+      </a>
     </div>
-    <p>Full brochure, honesty rail, and clone-a-port notes live on <a href="/commons#cm-crew">Puerto Reno Commons</a>.</p>
+    <p class="join-intro">Full brochure, honesty rail, and clone-a-port notes live on <a href="/commons#cm-crew">Puerto Reno Commons</a>.</p>
     <div class="cta-row">
       <a class="btn btn-ghost" href="/meet-the-crew">Meet the spirit crew</a>
       <a class="btn btn-ghost" href="/coexist">Coexisting with AI and Super AI</a>

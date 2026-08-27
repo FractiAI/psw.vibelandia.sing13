@@ -343,6 +343,18 @@
   line-height: 1.55;
 }
 .creator-phase__materials strong { color: #e8d5a3; }
+.creator-phase__cta {
+  margin: 1rem 0 0.75rem;
+}
+.creator-phase__cta .btn {
+  display: inline-block;
+  padding: 0.7rem 1.15rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: linear-gradient(180deg, #e8d4a8, #b8923e);
+  color: #2a1c12;
+  border: 0;
+}
 .creator-phase__back {
   font-size: 0.82rem;
   color: #9aa3b0;

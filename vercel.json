@@ -645,6 +645,22 @@
       "destination": "/interfaces/creator-studio.html"
     },
     {
+      "source": "/doodles",
+      "destination": "/interfaces/doodles-gallery.html"
+    },
+    {
+      "source": "/doodles/",
+      "destination": "/interfaces/doodles-gallery.html"
+    },
+    {
+      "source": "/doodles-gallery",
+      "destination": "/interfaces/doodles-gallery.html"
+    },
+    {
+      "source": "/doodles-gallery/",
+      "destination": "/interfaces/doodles-gallery.html"
+    },
+    {
       "source": "/voyage/deck-9-summit",
       "destination": "/interfaces/voyage/deck-9-summit.html"
     },
@@ -1917,6 +1933,10 @@
     },
     "api/catalog-upload.js": {
       "maxDuration": 300
+    },
+    "api/doodles.js": {
+      "maxDuration": 300,
+      "includeFiles": "{lib/**}"
     },
     "api/catalog-track.js": {
       "maxDuration": 60

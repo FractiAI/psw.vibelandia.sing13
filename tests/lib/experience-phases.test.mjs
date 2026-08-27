@@ -70,6 +70,8 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(html).toContain('Doodle');
     expect(html).toContain('href="/questfest"');
     expect(html).toContain('xp-npc-player');
+    expect(html).toContain('href="/doodles"');
+    expect(html).toContain('18+');
   });
 
   it('welcomes Players and NPCs together on all phases', () => {

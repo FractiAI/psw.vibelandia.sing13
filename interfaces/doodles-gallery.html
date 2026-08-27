@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Doodles Gallery · 18+ · Valet Pru for Gusta · SS Vibelandia</title>
+  <meta name="description" content="Doodles Gallery for mature audiences 18+. Valet Pru phone doodles for Gusta. Guests view behind an age gate. Player 1 posts large dumps with elevated limits." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/doodles" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
+  <style>
+    :root {
+      --hull: #060912;
+      --gold: #d4af37;
+      --ink: #f5e6c8;
+      --soft: #c9bda8;
+      --muted: #9aa3b0;
+      --line: rgba(212, 175, 55, 0.28);
+      --danger: #c45c5c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse 70% 50% at 12% 8%, rgba(212, 175, 55, 0.12), transparent 55%),
+        radial-gradient(ellipse 60% 45% at 90% 70%, rgba(80, 50, 20, 0.25), transparent 50%),
+        var(--hull);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+    a { color: #e8d5a3; }
+    .wrap { max-width: 72rem; margin: 0 auto; padding: 1.25rem 1.25rem 3.5rem; }
+    .nav { display: flex; flex-wrap: wrap; gap: 0.35rem 0.75rem; align-items: center; margin-bottom: 1.5rem; }
+    .nav a { text-decoration: none; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; }
+    .nav .here { color: var(--gold); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 800; }
+    .sep { opacity: 0.4; }
+    .kicker { letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.72rem; font-weight: 800; color: #e8d5a3; margin: 0 0 0.45rem; }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.2rem, 7vw, 3.4rem);
+      margin: 0 0 0.4rem;
+      color: #f0d78c;
+      line-height: 1.05;
+    }
+    .lead { max-width: 36rem; font-size: 1.08rem; line-height: 1.55; color: var(--soft); margin: 0 0 1.25rem; }
+    .badge {
+      display: inline-block;
+      margin: 0 0 1rem;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid var(--line);
+      color: #e8d5a3;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hidden { display: none !important; }
+
+    /* Age gate */
+    .gate {
+      position: fixed; inset: 0; z-index: 40;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.25rem;
+      background: rgba(6, 9, 18, 0.92);
+      backdrop-filter: blur(8px);
+    }
+    .gate__card {
+      max-width: 26rem; width: 100%;
+      padding: 1.75rem 1.5rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(165deg, #12182a 0%, #0a0e18 100%);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+    .gate__card h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: #f0d78c;
+      margin: 0 0 0.65rem;
+      font-size: 1.75rem;
+    }
+    .gate__card p { color: var(--soft); line-height: 1.5; margin: 0 0 1rem; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+    .btn {
+      appearance: none; border: 0; cursor: pointer; font: inherit; font-weight: 800;
+      padding: 0.7rem 1.1rem; text-decoration: none; display: inline-block;
+      background: linear-gradient(180deg, #e8d4a8, #b8923e); color: #2a1c12;
+    }
+    .btn--ghost {
+      background: transparent; color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .btn--danger { background: transparent; color: #f0b4b4; border: 1px solid rgba(196, 92, 92, 0.45); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(10, 14, 24, 0.65);
+      overflow: hidden;
+      animation: cardIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .card:nth-child(2) { animation-delay: 0.05s; }
+    .card:nth-child(3) { animation-delay: 0.1s; }
+    .card:nth-child(4) { animation-delay: 0.15s; }
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+    .card img {
+      display: block; width: 100%; aspect-ratio: 1 / 1.15;
+      object-fit: cover; background: #101522;
+      cursor: zoom-in;
+    }
+    .card__body { padding: 0.75rem 0.85rem 1rem; }
+    .card__title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      margin: 0; color: #f0d78c; font-size: 1.15rem;
+    }
+    .card__meta { margin: 0.25rem 0 0; font-size: 0.78rem; color: var(--muted); }
+
+    .empty {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      border: 1px dashed var(--line);
+      color: var(--soft);
+      line-height: 1.5;
+    }
+
+    .desk {
+      margin: 2rem 0 0;
+      padding: 1.25rem 1.15rem 1.5rem;
+      border: 1px solid var(--line);
+      background: rgba(18, 24, 42, 0.55);
+    }
+    .desk h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: #f0d78c;
+      margin: 0 0 0.45rem;
+      font-size: 1.55rem;
+    }
+    .desk p { color: var(--soft); line-height: 1.5; margin: 0 0 0.85rem; }
+    .limits {
+      font-size: 0.88rem;
+      color: #e8d5a3;
+      margin: 0 0 1rem;
+      padding: 0.65rem 0.75rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+    }
+    label { display: block; font-size: 0.82rem; font-weight: 700; color: #e8d5a3; margin: 0.65rem 0 0.3rem; }
+    input[type="password"], input[type="text"] {
+      width: 100%; max-width: 22rem;
+      padding: 0.55rem 0.7rem;
+      border: 1px solid var(--line);
+      background: #0a0e18;
+      color: var(--ink);
+      font: inherit;
+    }
+    input[type="file"] { color: var(--soft); max-width: 100%; }
+    .status { margin: 0.75rem 0 0; font-size: 0.9rem; color: var(--muted); min-height: 1.3em; }
+    .status--ok { color: #a8d4a0; }
+    .status--err { color: #f0b4b4; }
+    .progress {
+      margin-top: 0.75rem;
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+    .progress > span {
+      display: block; height: 100%; width: 0%;
+      background: linear-gradient(90deg, #b8923e, #e8d4a8);
+      transition: width 0.25s ease;
+    }
+    .honesty {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Lightbox */
+    .lb {
+      position: fixed; inset: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+      background: rgba(0,0,0,0.88);
+    }
+    .lb img { max-width: min(96vw, 1100px); max-height: 88vh; object-fit: contain; }
+    .lb button {
+      position: absolute; top: 1rem; right: 1rem;
+      appearance: none; border: 1px solid var(--line);
+      background: #12182a; color: var(--ink);
+      padding: 0.45rem 0.75rem; font: inherit; font-weight: 700; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- 18+ age gate -->
+  <div class="gate" id="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-gate-title">
+    <div class="gate__card">
+      <p class="kicker">Mature audiences</p>
+      <h2 id="age-gate-title">Are you 18 or older?</h2>
+      <p>The Doodles Gallery is for guests 18 years of age and older. Phone doodles by Valet Pru — for Gusta and friends who like them. Enter only if you are of age.</p>
+      <div class="btn-row">
+        <button type="button" class="btn" id="age-yes">I am 18+</button>
+        <a class="btn btn--ghost" href="/">Leave · back to Canvas</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap hidden" id="gallery-root" aria-hidden="true">
+    <nav class="nav" aria-label="Site">
+      <a href="/">Canvas</a><span class="sep" aria-hidden="true">·</span>
+      <a href="/questfest">Ship</a><span class="sep" aria-hidden="true">·</span>
+      <a href="/creator-studio">Creator Studio</a><span class="sep" aria-hidden="true">·</span>
+      <span class="here">Doodles · 18+</span>
+    </nav>
+
+    <p class="kicker">Phase 3 side room · for Gusta</p>
+    <span class="badge">18+ · mature audiences</span>
+    <h1>Doodles Gallery</h1>
+    <p class="lead">
+      Valet Pru’s phone doodles — posted so Gusta and guests who like them can visit.
+      This is part of the holographic magnetic Goldilocks SuperAI art project: human hand first, machine as studio light.
+    </p>
+
+    <div id="gallery-empty" class="empty hidden">
+      The wall is ready. Player 1 can post the first works from the Capitan desk below.
+      (If you sent IMG_2628, IMG_2614, or IMG_2382 in chat, drop them here in a batch — limits are raised for Player 1.)
+    </div>
+    <div class="grid" id="gallery-grid" aria-live="polite"></div>
+
+    <section class="desk" id="player1-desk" aria-labelledby="desk-h">
+      <h2 id="desk-h">Player 1 · Capitan upload desk</h2>
+      <p>
+        Guests view. Only Player 1 posts. Unlock with the same Capitan / catalog upload secret used on the Bridge.
+        <strong>Your seat exceeds the usual ~80&nbsp;MB media rail</strong> so a large doodle dump can land in one pass.
+      </p>
+      <p class="limits" id="limits-copy">
+        Player 1 ceilings: <strong>500&nbsp;MiB per file</strong> · <strong>up to 500 files</strong> per dump · up to 4 concurrent uploads.
+        Guests: view only after the 18+ gate.
+      </p>
+
+      <div id="unlock-pane">
+        <label for="capitan-secret">Capitan / catalog upload secret</label>
+        <input type="password" id="capitan-secret" autocomplete="current-password" placeholder="Upload secret" />
+        <div class="btn-row" style="margin-top:0.75rem">
+          <button type="button" class="btn" id="unlock-btn">Unlock Player 1 desk</button>
+        </div>
+        <p class="status" id="unlock-status"></p>
+      </div>
+
+      <div id="upload-pane" class="hidden">
+        <label for="doodle-files">Select doodles (images · large batch OK)</label>
+        <input type="file" id="doodle-files" accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,.jpg,.jpeg,.png,.webp,.gif,.heic,.heif" multiple />
+        <label for="batch-caption">Optional shared caption</label>
+        <input type="text" id="batch-caption" maxlength="500" placeholder="e.g. Night doodles for Gusta" />
+        <div class="btn-row" style="margin-top:0.85rem">
+          <button type="button" class="btn" id="upload-btn">Post to gallery</button>
+          <button type="button" class="btn btn--ghost" id="lock-btn">Lock desk</button>
+        </div>
+        <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+        <p class="status" id="upload-status"></p>
+      </div>
+    </section>
+
+    <p class="honesty">
+      <strong>Honesty:</strong> 18+ is an honor gate stored on this device (localStorage). Spirit of visit, not ID verification.
+      Uploads use the Capitan catalog secret and Vercel Blob. Fair Exchange inquiries: <a href="mailto:info@fractiai.com">info@fractiai.com</a>.
+      Mature themes welcome; malice is not. Human emergency outranks every metaphor.
+    </p>
+  </div>
+
+  <div class="lb hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Doodle full view">
+    <button type="button" id="lb-close">Close</button>
+    <img id="lb-img" alt="" />
+  </div>
+
+  <script type="module">
+    const AGE_KEY = 'ssv-doodles-18plus-v1';
+    const P1_KEY = 'ssv-doodles-player1-v1';
+    const API = '/api/doodles';
+    const DEFAULT_MAX_BYTES = 500 * 1024 * 1024;
+    const DEFAULT_MAX_BATCH = 500;
+    const DEFAULT_CONCURRENT = 4;
+
+    const gate = document.getElementById('age-gate');
+    const root = document.getElementById('gallery-root');
+    const grid = document.getElementById('gallery-grid');
+    const emptyEl = document.getElementById('gallery-empty');
+    const unlockPane = document.getElementById('unlock-pane');
+    const uploadPane = document.getElementById('upload-pane');
+    const unlockStatus = document.getElementById('unlock-status');
+    const uploadStatus = document.getElementById('upload-status');
+    const progressBar = document.getElementById('progress-bar');
+    const limitsCopy = document.getElementById('limits-copy');
+    const secretInput = document.getElementById('capitan-secret');
+    const fileInput = document.getElementById('doodle-files');
+    const captionInput = document.getElementById('batch-caption');
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+
+    let player1Limits = {
+      maxBytes: DEFAULT_MAX_BYTES,
+      maxBatch: DEFAULT_MAX_BATCH,
+      maxConcurrent: DEFAULT_CONCURRENT,
+    };
+    let uploadSecret = '';
+
+    function openGallery() {
+      gate.classList.add('hidden');
+      root.classList.remove('hidden');
+      root.setAttribute('aria-hidden', 'false');
+      loadGallery();
+      if (sessionStorage.getItem(P1_KEY) === '1' && sessionStorage.getItem(P1_KEY + '-secret')) {
+        uploadSecret = sessionStorage.getItem(P1_KEY + '-secret') || '';
+        showUploadPane();
+        refreshLimits();
+      }
+    }
+
+    function denyGallery() {
+      window.location.href = '/';
+    }
+
+    document.getElementById('age-yes').addEventListener('click', () => {
+      try { localStorage.setItem(AGE_KEY, '1'); } catch (_) {}
+      openGallery();
+    });
+
+    try {
+      if (localStorage.getItem(AGE_KEY) === '1') openGallery();
+    } catch (_) {}
+
+    function formatBytes(n) {
+      if (n >= 1024 * 1024 * 1024) return `${(n / (1024 * 1024 * 1024)).toFixed(1)} GiB`;
+      if (n >= 1024 * 1024) return `${Math.round(n / (1024 * 1024))} MiB`;
+      return `${Math.round(n / 1024)} KiB`;
+    }
+
+    function renderWorks(works) {
+      grid.innerHTML = '';
+      if (!works.length) {
+        emptyEl.classList.remove('hidden');
+        return;
+      }
+      emptyEl.classList.add('hidden');
+      for (const w of works) {
+        const card = document.createElement('article');
+        card.className = 'card';
+        const img = document.createElement('img');
+        img.src = w.src;
+        img.alt = w.title || 'Doodle';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.addEventListener('click', () => {
+          lbImg.src = w.src;
+          lbImg.alt = w.title || 'Doodle';
+          lb.classList.remove('hidden');
+        });
+        const body = document.createElement('div');
+        body.className = 'card__body';
+        const h = document.createElement('h3');
+        h.className = 'card__title';
+        h.textContent = w.title || 'Untitled doodle';
+        const meta = document.createElement('p');
+        meta.className = 'card__meta';
+        const when = w.uploadedAt ? new Date(w.uploadedAt).toLocaleDateString() : '';
+        meta.textContent = [when, w.caption].filter(Boolean).join(' · ');
+        body.append(h, meta);
+        card.append(img, body);
+        grid.append(card);
+      }
+    }
+
+    async function loadGallery() {
+      try {
+        const res = await fetch(API, { cache: 'no-store' });
+        const data = await res.json();
+        renderWorks(data?.manifest?.works || []);
+        if (data?.player1Hint) {
+          limitsCopy.innerHTML =
+            `Player 1 ceilings: <strong>500&nbsp;MiB per file</strong> · <strong>up to 500 files</strong> per dump · exceeds the ~80&nbsp;MB catalog media rail. Guests: view only after the 18+ gate.`;
+        }
+      } catch (e) {
+        emptyEl.classList.remove('hidden');
+        emptyEl.textContent = 'Could not load the gallery wall. Try again in a moment.';
+      }
+    }
+
+    function showUploadPane() {
+      unlockPane.classList.add('hidden');
+      uploadPane.classList.remove('hidden');
+    }
+
+    function hideUploadPane() {
+      uploadPane.classList.add('hidden');
+      unlockPane.classList.remove('hidden');
+      uploadSecret = '';
+      try {
+        sessionStorage.removeItem(P1_KEY);
+        sessionStorage.removeItem(P1_KEY + '-secret');
+      } catch (_) {}
+    }
+
+    async function refreshLimits() {
+      if (!uploadSecret) return;
+      try {
+        const res = await fetch(API, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Catalog-Secret': uploadSecret,
+          },
+          body: JSON.stringify({ action: 'limits' }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'limits_failed');
+        player1Limits = data.limits || player1Limits;
+        limitsCopy.innerHTML =
+          `Player 1 unlocked · <strong>${formatBytes(player1Limits.maxBytes)}</strong> per file · ` +
+          `<strong>${player1Limits.maxBatch}</strong> files per dump · ` +
+          `exceeds catalog media rail (${formatBytes(player1Limits.catalogMediaMaxBytes || 80 * 1024 * 1024)}).`;
+      } catch (e) {
+        unlockStatus.className = 'status status--err';
+        unlockStatus.textContent = 'Secret rejected or upload not configured on this deploy.';
+        hideUploadPane();
+      }
+    }
+
+    document.getElementById('unlock-btn').addEventListener('click', async () => {
+      const secret = String(secretInput.value || '').trim();
+      unlockStatus.className = 'status';
+      unlockStatus.textContent = 'Checking Capitan seat…';
+      if (secret.length < 8) {
+        unlockStatus.className = 'status status--err';
+        unlockStatus.textContent = 'Enter the Capitan / catalog upload secret (8+ characters).';
+        return;
+      }
+      uploadSecret = secret;
+      try {
+        const res = await fetch(API, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Catalog-Secret': uploadSecret,
+          },
+          body: JSON.stringify({ action: 'limits' }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'unauthorized');
+        player1Limits = data.limits || player1Limits;
+        try {
+          sessionStorage.setItem(P1_KEY, '1');
+          sessionStorage.setItem(P1_KEY + '-secret', uploadSecret);
+        } catch (_) {}
+        unlockStatus.className = 'status status--ok';
+        unlockStatus.textContent = data.message || 'Player 1 desk unlocked — large dumps allowed.';
+        showUploadPane();
+        limitsCopy.innerHTML =
+          `Player 1 unlocked · <strong>${formatBytes(player1Limits.maxBytes)}</strong> per file · ` +
+          `<strong>${player1Limits.maxBatch}</strong> files per dump.`;
+      } catch (e) {
+        uploadSecret = '';
+        unlockStatus.className = 'status status--err';
+        unlockStatus.textContent = 'Could not unlock. Check the Capitan secret and Blob config on Vercel.';
+      }
+    });
+
+    document.getElementById('lock-btn').addEventListener('click', () => {
+      hideUploadPane();
+      secretInput.value = '';
+      unlockStatus.className = 'status';
+      unlockStatus.textContent = 'Desk locked.';
+    });
+
+    document.getElementById('lb-close').addEventListener('click', () => {
+      lb.classList.add('hidden');
+      lbImg.removeAttribute('src');
+    });
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) document.getElementById('lb-close').click();
+    });
+
+    function titleFromFilename(name) {
+      return String(name || 'Untitled')
+        .replace(/\.[^.]+$/, '')
+        .replace(/[_-]+/g, ' ')
+        .trim() || 'Untitled doodle';
+    }
+
+    async function uploadOne(file, caption, uploadFn) {
+      const id = `ddl-${crypto.randomUUID()}`;
+      const safeName = String(file.name || 'doodle.jpg').replace(/[^\w.\-()+ ]/g, '_').slice(0, 120);
+      const pathname = `doodles/works/${id}-${safeName}`;
+      const blob = await uploadFn(pathname, file, {
+        access: 'public',
+        handleUploadUrl: API,
+        clientPayload: JSON.stringify({ allowOverwrite: false }),
+        headers: { 'X-Catalog-Secret': uploadSecret },
+      });
+      const reg = await fetch(API, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Catalog-Secret': uploadSecret,
+        },
+        body: JSON.stringify({
+          action: 'register',
+          id,
+          url: blob.url,
+          filename: file.name,
+          title: titleFromFilename(file.name),
+          caption: caption || undefined,
+          contentType: file.type || 'image/jpeg',
+        }),
+      });
+      const data = await reg.json();
+      if (!reg.ok) throw new Error(data.message || data.error || 'register_failed');
+      return data.work;
+    }
+
+    async function mapPool(items, concurrency, worker) {
+      const results = [];
+      let i = 0;
+      async function run() {
+        while (i < items.length) {
+          const idx = i++;
+          results[idx] = await worker(items[idx], idx);
+        }
+      }
+      const runners = Array.from({ length: Math.min(concurrency, items.length) }, () => run());
+      await Promise.all(runners);
+      return results;
+    }
+
+    document.getElementById('upload-btn').addEventListener('click', async () => {
+      const files = Array.from(fileInput.files || []);
+      uploadStatus.className = 'status';
+      if (!files.length) {
+        uploadStatus.className = 'status status--err';
+        uploadStatus.textContent = 'Choose one or more image files first.';
+        return;
+      }
+      if (files.length > player1Limits.maxBatch) {
+        uploadStatus.className = 'status status--err';
+        uploadStatus.textContent = `Too many files — max ${player1Limits.maxBatch} per dump.`;
+        return;
+      }
+      const over = files.filter((f) => f.size > player1Limits.maxBytes);
+      if (over.length) {
+        uploadStatus.className = 'status status--err';
+        uploadStatus.textContent = `${over.length} file(s) over ${formatBytes(player1Limits.maxBytes)}.`;
+        return;
+      }
+
+      uploadStatus.textContent = 'Loading Blob client…';
+      let upload;
+      try {
+        ({ upload } = await import('https://esm.sh/@vercel/blob@0.27.3/client'));
+      } catch (e) {
+        uploadStatus.className = 'status status--err';
+        uploadStatus.textContent = 'Could not load upload client. Check network egress.';
+        return;
+      }
+
+      const caption = String(captionInput.value || '').trim();
+      let done = 0;
+      const total = files.length;
+      progressBar.style.width = '0%';
+      uploadStatus.textContent = `Posting ${total} doodle(s)…`;
+
+      try {
+        await mapPool(files, player1Limits.maxConcurrent || 4, async (file) => {
+          await uploadOne(file, caption, upload);
+          done += 1;
+          progressBar.style.width = `${Math.round((done / total) * 100)}%`;
+          uploadStatus.textContent = `Posted ${done} / ${total}…`;
+        });
+        uploadStatus.className = 'status status--ok';
+        uploadStatus.textContent = `All ${total} doodle(s) posted for Gusta.`;
+        fileInput.value = '';
+        await loadGallery();
+      } catch (e) {
+        uploadStatus.className = 'status status--err';
+        uploadStatus.textContent = `Stopped after ${done}/${total}: ${e.message || e}`;
+        await loadGallery();
+      }
+    });
+  </script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

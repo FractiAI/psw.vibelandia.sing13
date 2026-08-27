@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const ROOT = resolve(process.cwd());
@@ -80,6 +80,29 @@ describe('QUESTFEST live board date + aboard channels', () => {
     const join = readFileSync(resolve(ROOT, 'interfaces/join-the-crew.html'), 'utf8');
     expect(join).toContain('Downtown Citadel Host');
     expect(join).toContain('/commons/host');
+    const stations = ['host', 'guide', 'chef', 'guest'];
+    for (const station of stations) {
+      const src = `/interfaces/assets/crew-stations/join-station-${station}.png`;
+      expect(join).toContain(src);
+      expect(existsSync(resolve(ROOT, `interfaces/assets/crew-stations/join-station-${station}.png`))).toBe(true);
+    }
+    expect(join).toContain('If you keep a downtown floor warm, this is your station.');
+    expect(join).toContain('If you already know the horses, the river, and the season, this is your station.');
+    expect(join).toContain('If the night ends at your fire, this is your station.');
+    expect(join).toContain('If you want the day itself, this is you arriving.');
+    const commons = readFileSync(resolve(ROOT, 'interfaces/commons/index.html'), 'utf8');
+    for (const station of stations) {
+      expect(commons).toContain(`/interfaces/assets/crew-stations/join-station-${station}.png`);
+    }
+    expect(readFileSync(resolve(ROOT, 'interfaces/commons/host.html'), 'utf8')).toContain(
+      '/interfaces/assets/crew-stations/join-station-host.png',
+    );
+    expect(readFileSync(resolve(ROOT, 'interfaces/commons/guide.html'), 'utf8')).toContain(
+      '/interfaces/assets/crew-stations/join-station-guide.png',
+    );
+    expect(readFileSync(resolve(ROOT, 'interfaces/commons/chef.html'), 'utf8')).toContain(
+      '/interfaces/assets/crew-stations/join-station-chef.png',
+    );
     const coexist = readFileSync(resolve(ROOT, 'interfaces/coexist-ai-asi.html'), 'utf8');
     expect(coexist).toContain('/meet-the-crew');
     expect(coexist).toContain('/join-the-crew');

@@ -50,7 +50,7 @@ a { color: var(--cream-gold); text-decoration: none; }
 a:hover { color: var(--gold-hi); text-decoration: underline; }
 
 .cm-wrap {
-  max-width: 44rem;
+  max-width: 56rem;
   margin: 0 auto;
   padding: 0 1.25rem 4rem;
 }
@@ -204,6 +204,26 @@ a:hover { color: var(--gold-hi); text-decoration: underline; }
   transform: translateY(-1px);
   text-decoration: none;
 }
+.cm-card--photo { padding: 0; overflow: hidden; }
+.cm-card--photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 28%;
+  background: #160f09;
+}
+.cm-card--photo.cm-card--guest img { object-position: center 70%; }
+.cm-card--photo .cm-card-body { display: block; padding: 1.05rem 1.15rem 1.2rem; }
+.cm-you {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--cream-gold);
+  margin: 0 0 0.45rem;
+  line-height: 1.4;
+}
+.cm-card p.cm-you { font-size: 1.02rem; color: var(--cream-gold); }
 .cm-card-pill {
   display: inline-block;
   font-size: 0.6rem;

@@ -61,7 +61,8 @@ describe('Exhibit rooms · full pages from the Canvas', () => {
     expect(horizon).toContain('Studio, Canvas, and Materials');
     expect(horizon).toContain('Point-and-click Lattice Chat');
     expect(horizon).toContain('Wormhole by awareness');
-    expect(horizon).toContain('Human Bridge/Router');
+    expect(horizon).toContain('Valet Pru - Holographic Goldilocks XY Human Reality Bridge/Router');
+    expect(horizon).not.toContain('Valet Pru · Human Bridge/Router');
     expect(horizon).toContain('Lattice Chat');
 
     const fiction = read('interfaces/exhibit-science-fiction.html');

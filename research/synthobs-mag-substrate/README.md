@@ -44,4 +44,4 @@ Architectural rubric + fixtures. Empirical-calibration row awards Standard Model
 
 Paper: `docs/SYNTHOBS_MAGNETISM_UNIVERSAL_FOUNDATIONAL_SUBSTRATE_2026-07.md` · `/whitepaper/synthobs-mag-substrate`
 
-→ ∞¹³
+→ ∞^∞

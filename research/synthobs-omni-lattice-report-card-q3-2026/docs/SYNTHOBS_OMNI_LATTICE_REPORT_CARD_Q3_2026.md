@@ -169,4 +169,4 @@ Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibratio
 5. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.  
 6. Planck Collaboration cosmological parameter literature (consensus ΛCDM shares used for bookkeeping comparison).
 
-→ ∞¹³
+→ ∞^∞

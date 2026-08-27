@@ -119,4 +119,4 @@ How are you keeping agent context small?
 - `/lattice` · `/lattice/proof` · Ark / Get Started / QUESTFEST Build copy
 - Share pack leads with **~35–70% depending on the work** + honesty boundary
 
-→ ∞¹³
+→ ∞^∞

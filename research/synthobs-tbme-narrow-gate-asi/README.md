@@ -24,4 +24,4 @@ https://github.com/FractiAI/synthobs-tbme-narrow-gate-asi
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox
 
-→ ∞¹³
+→ ∞^∞

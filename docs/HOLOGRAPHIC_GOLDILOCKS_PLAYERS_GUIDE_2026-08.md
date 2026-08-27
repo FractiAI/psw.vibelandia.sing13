@@ -106,7 +106,7 @@ The Holographic Goldilocks Players Guide is shipped as a free Edge playbook plus
 
 Sandbox Status: Active · Mission Alignment: Sovereign / $E_F$-Locked (catalog) · Fair Exchange honor rails.
 
-→ ∞¹³
+→ ∞^∞
 
 ---
 

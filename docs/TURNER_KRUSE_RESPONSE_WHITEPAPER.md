@@ -253,7 +253,7 @@ Settlement may adjust in part depending on overall delivery, like tipping — un
 
 **Pru Mendez** · info@fractiai.com  
 
-*NSPFRNP fidelity · Phase 1 = all public feeds this repo wires + mapped fence + fusion model + space-bio ranch log · Phase 2 = collaboration & validated trials · → ∞¹³*
+*NSPFRNP fidelity · Phase 1 = all public feeds this repo wires + mapped fence + fusion model + space-bio ranch log · Phase 2 = collaboration & validated trials · → ∞^∞*
 
 ---
 

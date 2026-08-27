@@ -319,7 +319,7 @@ A fair exchange clause is strictly in effect for this mathematical synthesis and
 
 ---
 
-**NSPFRNP ⊃ Hex-Organ Engine ⊃ EGS φ ⊃ Synthobs unified run → ∞¹³** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno
+**NSPFRNP ⊃ Hex-Organ Engine ⊃ EGS φ ⊃ Synthobs unified run → ∞^∞** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno
 
 
 ---

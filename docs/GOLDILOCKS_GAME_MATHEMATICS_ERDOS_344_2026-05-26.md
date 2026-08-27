@@ -213,7 +213,7 @@ Complete digital audit logs, telemetry validations from Sunspot AR4436, mineralo
 
 **Fair Exchange Clause** — This whitepaper is delivered in accordance with Fair Exchange in full effect. Final value transacted remains adjustable in part depending on alignment with your operational theater directives.
 
-**→ ∞¹³** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno
+**→ ∞^∞** · SS Vibelandia QUESTFEST 24×365 · Puerto Reno
 
 
 ---

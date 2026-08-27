@@ -273,7 +273,7 @@ Permanently anchored by **El Gran Sol's Fractal Constant**, balanced via dynamic
 
 ---
 
-**NSPFRNP ⊃ Fair Exchange ⊃ Digital Pru → ∞¹³**
+**NSPFRNP ⊃ Fair Exchange ⊃ Digital Pru → ∞^∞**
 
 
 ---

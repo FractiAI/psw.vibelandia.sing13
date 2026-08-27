@@ -34,4 +34,4 @@ When a new layer or paper lands:
 
 ---
 
-**NSPFRNP ⊃ Goldilocks Gate ⊃ 3 gates per rung ⊃ 3 doors always → ∞¹³**
+**NSPFRNP ⊃ Goldilocks Gate ⊃ 3 gates per rung ⊃ 3 doors always → ∞^∞**

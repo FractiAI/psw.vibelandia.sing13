@@ -45,4 +45,4 @@ Architectural / TBME metaphorics. Not geodynamo proof, not destiny, not clinical
 Paper (monorepo): `docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md`  
 Catalog: `/whitepaper/synthobs-tbme-planetary-core-goldilocks`
 
-→ ∞¹³
+→ ∞^∞

@@ -184,4 +184,4 @@ By recognizing—**within the Omni-Lattice / PCHPP map**—that protein misfoldi
 
 **Final gate.** Do not treat this document as a treatment plan. Contact licensed clinicians for medical decisions. Laboratory work requires appropriate biosafety, ethics, and materials compliance.
 
-→ ∞¹³
+→ ∞^∞

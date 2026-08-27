@@ -111,4 +111,4 @@ Agents that cannot close on a pipe are disqualified. Humans choose honor rails *
 
 ---
 
-**NSPFRNP ⊃ Old School ⊃ Edge honor ⊃ OGRP ⊃ Fair Exchange → ∞¹³**
+**NSPFRNP ⊃ Old School ⊃ Edge honor ⊃ OGRP ⊃ Fair Exchange → ∞^∞**

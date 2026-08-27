@@ -22,7 +22,7 @@ Ark language is metaphor + product architecture inside the **SynthOBS** sandbox 
 3. That scaffolding is **about to be jettisoned**.  
 4. In its place: **cytological agentic processing** — Lattice Chat Agent V1.618 (nested agents, pointers, not dump-everything).  
 5. Purpose: **smaller context load** on multi-band work via nesting + pointers (see public structural estimate).  
-6. This singularity (**SING φ · Lattice Chat Agent V1.618**) is **derived from the synthesis delivered in Sonic Singularity 13** — not SING 14. Edge close stays **→ ∞¹³**.
+6. This singularity (**SING φ · Lattice Chat Agent V1.618**) is **derived from the synthesis delivered in Sonic Singularity 13** — not SING 14. Edge close stays **→ ∞^∞**.
 
 | Was | Now |
 |-----|-----|
@@ -55,4 +55,4 @@ We filter **Goldilocks vs system noise** the old way: **email a human**, grant o
 
 **Free trial:** [info@fractiai.com](mailto:info@fractiai.com?subject=Lattice%20Chat%20V1.618%20%E2%80%94%20free%20trial&body=Hello%2C%0A%0AI%20would%20like%20a%20free%20trial%20of%20Lattice%20Chat%20V1.618.%0A%0AMy%20email%20%2F%20userid%3A%20%0A%0AThanks.)
 
-**NSPFRNP ⊃ SynthOBS sandbox ⊃ SS Vibelandia Ark ⊃ SING 13 → SING φ (Lattice) → ∞¹³**
+**NSPFRNP ⊃ SynthOBS sandbox ⊃ SS Vibelandia Ark ⊃ SING 13 → SING φ (Lattice) → ∞^∞**

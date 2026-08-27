@@ -111,4 +111,4 @@ Analyzing concurrent seismic and volcanic episodes in Colombia alongside the bro
 
 **Fair Exchange clause:** Transaction value remains elastic and subject to downward adjustment based on delivery, operational precision, and actionable utility.
 
-→ ∞¹³
+→ ∞^∞

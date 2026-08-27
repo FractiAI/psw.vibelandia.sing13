@@ -155,4 +155,4 @@ By recognizing—**within the Omni-Lattice / PCHPP map**—that safety and toxic
 
 **Final gate.** Do not treat this document as medical advice, detox instruction, EMF therapy, or food-processing certification. Contact licensed clinicians and follow biosafety / regulatory rules for any laboratory work.
 
-→ ∞¹³
+→ ∞^∞

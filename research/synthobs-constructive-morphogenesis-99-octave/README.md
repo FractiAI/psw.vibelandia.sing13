@@ -10,4 +10,4 @@ Honesty: exploratory metaphor map — not wet-lab plant science.
 
 GitHub: https://github.com/FractiAI/synthobs-constructive-morphogenesis-99-octave
 
-→ ∞¹³
+→ ∞^∞

@@ -35,4 +35,4 @@ npm run research:synthobs-81-orbital-singularity
 
 Paper: `docs/SYNTHOBS_TBME_81_ORBITAL_SINGULARITY_HOLOGRAPHIC_2026-07.md` · `/whitepaper/synthobs-81-orbital-singularity`
 
-→ ∞¹³
+→ ∞^∞

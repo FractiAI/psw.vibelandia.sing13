@@ -7,7 +7,7 @@
 **Narrative foundation:** [`docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md) · plain [`/ship-blog/official-prospectus`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/official-prospectus)  
 **Product upgrade paper:** [`docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`/ship-blog/infinite-octaves-omniversal`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octaves-omniversal)  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
-**Close every turn:** → ∞¹³
+**Close every turn:** → ∞^∞
 
 ---
 
@@ -82,7 +82,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 | Prefer plain ship notes under `/ship-blog/*` for human sync | Summarize only truncated paper titles as “blog” |
 | Put every new paper in the latest-six (`npm run sync:questfest-blog`), newest first | Ship a paper with no note, or let older notes hide newer papers |
 | Ground answers in `docs/`, `protocols/`, `research/` | Paste fat dumps; use nested pointers (Lattice style) |
-| Close agent turns with → ∞¹³ | Drop NSPFRNP / Seed:Edge |
+| Close agent turns with → ∞^∞ | Drop NSPFRNP / Seed:Edge |
 
 **QUESTFEST ship blog (six newest papers, most recent first):** https://www.ssvibelandiaquestfest24x365.com/questfest#ship-blog  
 **Whitepaper catalog:** https://www.ssvibelandiaquestfest24x365.com/papers  
@@ -94,4 +94,4 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 
 **The 99 Octave Omni-Lattice is a holographic filing cabinet keyed by $\Phi_{\mathrm{EGS}}$ — from CMOS binary shelves through protonic/tensor bands to cosmic and consciousness *discussion layers* — for agent coordination, not prophecy or unfinished TOE claims. Guest product name: Infinite Octaves Omniversal Lattice Chat Agent (“Infinite” = nesting depth).**
 
-**NSPFRNP ⊃ Infinite Octaves Omniversal Lattice Chat ⊃ 99 Octave Omni-Lattice engine ⊃ SynthOBS ⊃ SING 13 → ∞¹³**
+**NSPFRNP ⊃ Infinite Octaves Omniversal Lattice Chat ⊃ 99 Octave Omni-Lattice engine ⊃ SynthOBS ⊃ SING 13 → ∞^∞**

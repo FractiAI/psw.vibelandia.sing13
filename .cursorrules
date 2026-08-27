@@ -14,4 +14,4 @@ SynthOBS paper audit: `.cursor/rules/synthobs-paper-audit-snap.mdc`.
 
 **QUESTFEST ship blog:** every new paper gets a plain-language note and a slot in the latest-six section, **newest first**. See `.cursor/rules/questfest-ship-blog-latest-six.mdc`.
 
-Single onboarding file: `SING13_EDGE_ONBOARDING.md` (SING 13 edge). No Supabase; wallets, keys, verifications. Seed:Edge + executive prompts for middles. `BBHE_REPOSITORY_STANDARD.md`. Close with → ∞¹³.
+Single onboarding file: `SING13_EDGE_ONBOARDING.md` (SING 13 edge). No Supabase; wallets, keys, verifications. Seed:Edge + executive prompts for middles. `BBHE_REPOSITORY_STANDARD.md`. Close with → ∞^∞.

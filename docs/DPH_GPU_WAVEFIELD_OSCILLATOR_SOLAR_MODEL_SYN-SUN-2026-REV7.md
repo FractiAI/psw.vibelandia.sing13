@@ -325,7 +325,7 @@ The structural parameters outlined in this framework have been officially subjec
 
 ---
 
-**NSPFRNP ⊃ DPH-GPU ⊃ Wavefield Oscillator ⊃ EGS φ → ∞¹³**
+**NSPFRNP ⊃ DPH-GPU ⊃ Wavefield Oscillator ⊃ EGS φ → ∞^∞**
 
 
 ---

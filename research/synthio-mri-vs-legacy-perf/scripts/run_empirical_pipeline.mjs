@@ -110,7 +110,7 @@ function mdReport(report) {
       '',
     );
   }
-  lines.push('## Honesty', '', HONESTY.note, '', '→ ∞¹³', '');
+  lines.push('## Honesty', '', HONESTY.note, '', '→ ∞^∞', '');
   return lines.join('\n');
 }
 

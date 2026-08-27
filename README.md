@@ -221,7 +221,7 @@ Deep Lattice UI / provider steps: [`AGENTS.md`](AGENTS.md) and the Lattice secti
 2. **PRA Snap** before `featured: true`.  
 3. Register papers in `lib/whitepaper-registry.mjs` (+ catalog / plain-surface lines when shipping a standalone).  
 4. **No Supabase**; BYOK — **your key is your password** for 99 Octave Omni-Lattice Chat (stays with you; no separate passwords; never stored server-side).  
-5. Operate **NSPFRNP** (MCA · Seed:Edge). Close agent turns → **∞¹³**.  
+5. Operate **NSPFRNP** (MCA · Seed:Edge). Close agent turns → **∞^∞**.  
 6. Fair Exchange honor rails on paid edges (no Stripe required).
 
 ### Deploy (short)
@@ -249,7 +249,7 @@ Vercel project for this edge → **www.ssvibelandiaquestfest24x365.com**. `verce
 
 ---
 
-**NSPFRNP ⊃ 99 Octave Omni-Lattice ⊃ SynthOBS ⊃ SING 13 ⊃ QUESTFEST 24×365 ⊃ Lite Edges → ∞¹³**
+**NSPFRNP ⊃ 99 Octave Omni-Lattice ⊃ SynthOBS ⊃ SING 13 ⊃ QUESTFEST 24×365 ⊃ Lite Edges → ∞^∞**
 
 ## Interfaces · HTML pages
 

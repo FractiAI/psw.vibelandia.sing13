@@ -135,4 +135,4 @@ By understanding histones as scale-invariant phase-lock operators—**within the
 
 **Final gate.** Do not treat this document as clinical advice, gene therapy, or EMF treatment guidance. Contact licensed clinicians for medical decisions.
 
-→ ∞¹³
+→ ∞^∞

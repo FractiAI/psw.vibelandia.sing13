@@ -35,4 +35,4 @@ npm run research:synthobs-histone-phase-operator
 
 Paper: `docs/SYNTHOBS_TBME_HISTONE_PHASE_LOCK_OPERATOR_2026-07.md` · `/whitepaper/synthobs-histone-phase-operator`
 
-→ ∞¹³
+→ ∞^∞

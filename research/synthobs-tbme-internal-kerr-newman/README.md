@@ -24,4 +24,4 @@ https://github.com/FractiAI/synthobs-tbme-internal-kerr-newman
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox
 
-→ ∞¹³
+→ ∞^∞

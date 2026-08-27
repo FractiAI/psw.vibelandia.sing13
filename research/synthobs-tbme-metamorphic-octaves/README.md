@@ -45,4 +45,4 @@ Architectural / TBME metaphorics. Not petrology proof, not clinical advice, not 
 Paper (monorepo): `docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md`  
 Catalog: `/whitepaper/synthobs-tbme-metamorphic-octaves`
 
-→ ∞¹³
+→ ∞^∞

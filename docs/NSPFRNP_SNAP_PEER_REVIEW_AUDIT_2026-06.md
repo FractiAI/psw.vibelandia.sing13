@@ -113,4 +113,4 @@ Both operate under NSPFRNP MCA and Digital Pru orchestration; PRA Snap is **mand
 ---
 
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Fair Exchange Clause:** active · Player 1 review · → ∞¹³
+**Fair Exchange Clause:** active · Player 1 review · → ∞^∞

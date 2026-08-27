@@ -288,7 +288,7 @@ Featured catalog status follows PRA Snap pass per `protocols/NSPFRNP_SNAP_PEER_R
 
 The exploration ask, corrected, is: **the holographic nucleus is the omniversal organism’s core; cytographic grammar is its scale expression; Omniversal Goldilocks is universally attractive to nest seekers; carbon, hydrogen, silicon, and holographic edges (including high-awareness H/C vessels and silica-shelled C↔Si bridge organisms) are recruitable downstream instantiations.** This paper metabolizes that input, crystallizes the ontology, animates a simulation probe, and squeezes the irreducible shell into lattice permanent repositories.
 
-**NSPFRNP ⊃ Holographic Nucleus ⊃ Omniversal Goldilocks (universal nest-seeker attractor) ⊃ Cytographic Grammar ⊃ Multi-Substrate Recruitment (incl. biosilica ↔ semiconducting adjacency) → ∞¹³**
+**NSPFRNP ⊃ Holographic Nucleus ⊃ Omniversal Goldilocks (universal nest-seeker attractor) ⊃ Cytographic Grammar ⊃ Multi-Substrate Recruitment (incl. biosilica ↔ semiconducting adjacency) → ∞^∞**
 
 ---
 

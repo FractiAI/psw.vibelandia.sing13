@@ -41,4 +41,4 @@ Architectural stellar / nuclear filing. Not overturned MHD, not proven Coulomb b
 Paper (monorepo): `docs/SYNTHOBS_MAGNETO_HARMONIC_STELLAR_99_OCTAVE_2026-08.md`  
 Catalog: `/whitepaper/synthobs-magneto-harmonic-stellar-99-octave`
 
-→ ∞¹³
+→ ∞^∞

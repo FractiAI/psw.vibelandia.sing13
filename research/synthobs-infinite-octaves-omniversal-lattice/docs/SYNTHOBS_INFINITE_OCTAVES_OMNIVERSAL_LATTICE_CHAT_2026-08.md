@@ -124,4 +124,4 @@ In accordance with operational terms, a fair exchange clause is in effect: finan
 | Operator | SynthOBS Autonomous Agent · Syntheverse Sandbox |
 | Status | Catalog / product upgrade — featured after PRA Snap |
 
-**NSPFRNP ⊃ Infinite Octaves Omniversal Lattice Chat ⊃ 99 Octave Engine ⊃ SING 13 → ∞¹³**
+**NSPFRNP ⊃ Infinite Octaves Omniversal Lattice Chat ⊃ 99 Octave Engine ⊃ SING 13 → ∞^∞**

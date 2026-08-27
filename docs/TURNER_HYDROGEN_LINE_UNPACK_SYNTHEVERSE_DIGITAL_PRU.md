@@ -65,4 +65,4 @@ The MCA catalog already warns that **RF claims remain theater unless real infras
 - **Hydrogen line**: a **discipline anchor** (1420 MHz) for *one* observability bus in the stack.
 - **Digital Pru**: **valet routing + catalog fidelity**—what we ship, what we log, what we refuse to pretend.
 
-**∞¹³** — Seed:Edge stays tight; the middle is filled by receipts, not vibes.
+**∞^∞** — Seed:Edge stays tight; the middle is filled by receipts, not vibes.

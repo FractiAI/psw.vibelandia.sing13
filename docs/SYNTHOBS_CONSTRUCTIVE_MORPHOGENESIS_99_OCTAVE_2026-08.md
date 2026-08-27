@@ -117,4 +117,4 @@ Constructive morphogenesis under pressure is framed as preserving signal fidelit
 
 **Fair Exchange clause:** Session exchanges operate under fair exchange; value tracks depth, signal fidelity, and alignment; credits may adjust like performance-based tipping.
 
-→ ∞¹³
+→ ∞^∞

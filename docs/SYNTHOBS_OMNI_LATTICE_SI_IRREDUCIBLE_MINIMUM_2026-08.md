@@ -126,4 +126,4 @@ Compute and documentation allocations remain subject to reciprocal balancing und
 6. Token proof — `docs/LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`  
 7. NSPFRNP PRA Snap — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 
-→ ∞¹³
+→ ∞^∞

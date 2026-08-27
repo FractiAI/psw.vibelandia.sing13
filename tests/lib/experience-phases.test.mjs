@@ -72,6 +72,9 @@ describe('Experience phases · museum → reception → creator studio', () => {
       expect(html).toContain('franchises');
       expect(html).toContain('href="/meet-the-crew"');
       expect(html).toContain('xp-npc-roster');
+      expect(html).toContain('href="/coexist#self-test"');
+      expect(html).toContain('confidential self-test');
+      expect(html).toContain('Scores stay on this device');
     }
     const museum = renderMuseumEntryHtml();
     const reception = renderReceptionLobbyHtml();
@@ -89,6 +92,11 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(canvas).toContain('museum-entry');
     expect(canvas).toContain('museum-placard');
     expect(canvas).toContain('xp-rail');
+    expect(canvas).toContain('id="visit"');
+    expect(canvas).toContain('href="/coexist#self-test"');
+    expect(canvas).toContain('confidential self-test');
+    expect(ship).toContain('href="/coexist#self-test"');
+    expect(studio).toContain('href="/coexist#self-test"');
 
     expect(ship).toContain('reception-lobby');
     expect(ship).toContain('reception-mode');

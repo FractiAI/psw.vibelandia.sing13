@@ -49,4 +49,4 @@ Architectural rubric + fixtures + clinical non-claim gate. Empirical-calibration
 
 Paper: `docs/SYNTHOBS_PRION_REFOLD_HOLOGRAPHIC_MAGNETIC_PHASE_2026-07.md` · `/whitepaper/synthobs-prion-refold`
 
-→ ∞¹³
+→ ∞^∞

@@ -392,6 +392,36 @@
   height: 100%;
   object-fit: cover;
 }
+.xp-self-test {
+  display: block;
+  margin: 0.85rem 0 0.85rem;
+  padding: 0.95rem 1.05rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.08);
+  color: inherit;
+  text-decoration: none;
+}
+.xp-self-test:hover,
+.xp-self-test:focus-visible {
+  border-color: #f0d78c;
+  background: rgba(212, 175, 55, 0.16);
+  outline: 2px solid rgba(212, 175, 55, 0.65);
+  outline-offset: 2px;
+}
+.xp-self-test strong {
+  display: block;
+  color: #f0d78c;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+.xp-self-test span {
+  display: block;
+  margin-top: 0.4rem;
+  color: rgba(168, 162, 158, 0.95);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
 .xp-npc-player__links {
   display: flex;
   flex-wrap: wrap;

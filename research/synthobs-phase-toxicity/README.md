@@ -35,4 +35,4 @@ npm run research:synthobs-phase-toxicity
 
 Paper: `docs/SYNTHOBS_TBME_PHASE_TOXICITY_RESONANCE_SAFETY_2026-07.md` · `/whitepaper/synthobs-phase-toxicity`
 
-→ ∞¹³
+→ ∞^∞

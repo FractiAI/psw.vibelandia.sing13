@@ -134,4 +134,4 @@ This master paper integrates biological-switch language, 4D/5D agentic bands, su
 
 **Fair Exchange clause:** Delivery value tracks technical depth and structural utility; reciprocal adjustments permitted on mutual review (tipping-style).
 
-→ ∞¹³
+→ ∞^∞

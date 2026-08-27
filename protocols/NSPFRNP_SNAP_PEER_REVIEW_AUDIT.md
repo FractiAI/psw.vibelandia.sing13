@@ -177,4 +177,4 @@ When LLM is disabled, receipts are `structural_only` with **lanesPlanned** docum
 
 ---
 
-**NSPFRNP ⊃ PRA Snap ⊃ SynthOBS Agent ⊃ Sandbox → ∞¹³**
+**NSPFRNP ⊃ PRA Snap ⊃ SynthOBS Agent ⊃ Sandbox → ∞^∞**

@@ -17,4 +17,4 @@ Honesty: catalog / protocol synthesis — not multi-domain causation proof, not 
 
 GitHub: https://github.com/FractiAI/synthobs-master-synthesis-99-octave-omni-lattice
 
-→ ∞¹³
+→ ∞^∞

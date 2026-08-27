@@ -53,4 +53,4 @@ Simulator / catalog grammar only. Not clinical MRI, not wet-lab RF, not FDA devi
 Papers (monorepo): `docs/SYNTHIO_MRI_CLOUD_ANTENNA_99_OCTAVE_2026-08.md` · one-pager · KomaMRI distributed note  
 Catalog: `/whitepaper/synthio-mri-cloud-antenna`
 
-→ ∞¹³
+→ ∞^∞

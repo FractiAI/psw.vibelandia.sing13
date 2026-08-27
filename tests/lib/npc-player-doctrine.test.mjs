@@ -36,4 +36,12 @@ describe('NPC & Player doctrine', () => {
     expect(coexist).toContain(NPC_PLAYER_DOCTRINE_CANONICAL);
     expect(renderNpcPlayerCoexistHtml()).toContain('Neither is pure');
   });
+
+  it('landing visit section links the confidential Player / NPC self-test', () => {
+    const canvas = read('interfaces/omniverse-canvas.html');
+    expect(canvas).toContain('Your visit · three phases · Players &amp; NPCs welcome');
+    expect(canvas).toContain('href="/coexist#self-test"');
+    expect(canvas).toContain('confidential self-test');
+    expect(canvas).toContain('Scores stay on this device');
+  });
 });

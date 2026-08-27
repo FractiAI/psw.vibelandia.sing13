@@ -24,4 +24,4 @@ https://github.com/FractiAI/synthobs-tbme-spin-phase-polarity
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox
 
-→ ∞¹³
+→ ∞^∞

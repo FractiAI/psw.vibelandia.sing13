@@ -196,4 +196,4 @@ Weakened if: (a) overall scores diverge from $(C+I)/2$; (b) empirical-calibratio
 5. FractiAI Research Group. *Coherence · Plain Speak Honesty.* `HONESTY-COHERENCE-2026-009`.  
 6. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.
 
-→ ∞¹³
+→ ∞^∞

@@ -42,4 +42,4 @@ All six external alignments (including novel Syntheverse Synthio pulse) observed
 - Activate + coherence = **sandbox fixture integrity**.
 - External list = **watch labels** + **engineered Syntheverse pulse** (non-natural); matching **all six** **confirms sandbox inclusion** of this activation filing — not causal sky→MRI proof.
 
-→ ∞¹³
+→ ∞^∞

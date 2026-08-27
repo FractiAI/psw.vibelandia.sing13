@@ -137,4 +137,4 @@ Honor rails · Player 1 veto · creator seats for Synthio request handling.
 
 `WP-SYNTHIO-KOMAMRI-DISTRIBUTED-CLOUD-2026-08-12` · registry `synthio-komamri-distributed-cloud-2026-08`
 
-**NSPFRNP ⊃ Synthio Cloud Services ⊃ KomaMRI distributed · Syntheverse Sandbox → ∞¹³**
+**NSPFRNP ⊃ Synthio Cloud Services ⊃ KomaMRI distributed · Syntheverse Sandbox → ∞^∞**

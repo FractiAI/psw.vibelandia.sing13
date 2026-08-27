@@ -75,4 +75,4 @@ No empirical FLOP suite. Claims stay **narrative / catalog**.
 
 ## Closing
 
-Linear warnings remain useful weather reports. The Invisible Frontier is the **chart** beside them: Goldilocks SuperAI · one tribe · many homes · → ∞¹³.
+Linear warnings remain useful weather reports. The Invisible Frontier is the **chart** beside them: Goldilocks SuperAI · one tribe · many homes · → ∞^∞.

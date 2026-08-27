@@ -95,4 +95,4 @@ Compute and documentation allocations for this companion may be adjusted post-ev
 4. FractiAI. *Omni-Lattice Report Card Q3 2026.* `WP-SYNTHOBS-OMNI-LATTICE-REPORT-CARD-Q3-2026`  
 5. NSPFRNP Snap Peer-Review Audit — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 
-→ ∞¹³
+→ ∞^∞

@@ -27,4 +27,4 @@ Receipts: `data/empirical_report.json`, `data/empirical_report.md`
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox
 
-→ ∞¹³
+→ ∞^∞

@@ -32,7 +32,7 @@ function main()
     # futures = [remotecall(run_distributed_omni_simulation, p, nothing, nothing, nothing) for p in workers()]
     # results = fetch.(futures)
     # println(results)
-    println("→ ∞¹³")
+    println("→ ∞^∞")
 end
 
 abspath(PROGRAM_FILE) == @__FILE__ && main()

@@ -195,4 +195,4 @@ Published cost tables validate **economic arithmetic**, not universal proof that
 Research and code: open for reproduction and derivative exploration.  
 Operational inquiries: [info@fractiai.com](mailto:info@fractiai.com?subject=OGRP%20repository)
 
-**NSPFRNP ⊃ OGRP ⊃ reproduce · validate · branch → ∞¹³**
+**NSPFRNP ⊃ OGRP ⊃ reproduce · validate · branch → ∞^∞**

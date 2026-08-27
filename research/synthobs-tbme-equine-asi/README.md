@@ -25,4 +25,4 @@ https://github.com/FractiAI/synthobs-tbme-equine-asi
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox
 
-→ ∞¹³
+→ ∞^∞

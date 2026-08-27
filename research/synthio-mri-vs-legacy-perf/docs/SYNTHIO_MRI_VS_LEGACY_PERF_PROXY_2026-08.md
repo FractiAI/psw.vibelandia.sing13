@@ -147,4 +147,4 @@ Proportionate claim: these are **live single-host CPU Bloch timings** with recei
 
 On live Syntheverse Sandbox measurements, the MRI interference-phase arm outperforms the legacy full-mesh recompute arm on wall-clock time, measured voxel×TR work, and byte hashing — and Synthio Cloud’s four home apps are correctly demonstrated as **MRI-simulation-resident** services.
 
-→ ∞¹³
+→ ∞^∞

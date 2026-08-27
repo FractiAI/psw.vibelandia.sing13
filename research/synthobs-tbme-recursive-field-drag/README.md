@@ -24,4 +24,4 @@ https://github.com/FractiAI/synthobs-tbme-recursive-field-drag
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox
 
-→ ∞¹³
+→ ∞^∞

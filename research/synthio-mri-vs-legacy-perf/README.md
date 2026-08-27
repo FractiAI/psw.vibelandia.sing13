@@ -52,4 +52,4 @@ Live single-host CPU timings (Node Bloch + optional KomaMRI.jl `simulate`) with 
 Paper (monorepo): `docs/SYNTHIO_MRI_VS_LEGACY_PERF_PROXY_2026-08.md`  
 Catalog: `/whitepaper/synthio-mri-vs-legacy-perf`
 
-→ ∞¹³
+→ ∞^∞

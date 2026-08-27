@@ -39,4 +39,4 @@ src/      thin re-export notes
 Whitepaper: `/whitepaper/synthobs-siqhft-ef-2187-monograph`  
 Catalog UI: `/papers`
 
-→ ∞¹³
+→ ∞^∞

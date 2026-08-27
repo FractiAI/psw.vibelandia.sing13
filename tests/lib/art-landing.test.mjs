@@ -53,6 +53,19 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('href="/horizon"');
     expect(html).toContain('href="/science-fiction"');
     expect(html).toContain('href="/step-in"');
+    expect(html).toContain('data-youtube-id="0hicJ_AZups"');
+    expect(html).toContain('canvas-hero-loop.js');
+    expect(html).toContain('class="hero__video"');
+  });
+
+  it('hero loop script embeds the YouTube id with mute + loop playlist', () => {
+    const js = read('interfaces/canvas-hero-loop.js');
+    expect(js).toContain("YOUTUBE_ID = '0hicJ_AZups'");
+    expect(js).toContain('autoplay=1');
+    expect(js).toContain('mute=1');
+    expect(js).toContain('loop=1');
+    expect(js).toContain("playlist=' + YOUTUBE_ID");
+    expect(js).toContain('prefers-reduced-motion');
   });
 
   it('visit counters treat Canvas aliases as / and keep /questfest on the ship', () => {

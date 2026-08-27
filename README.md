@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-26** · **220** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-27** · **230** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -390,6 +390,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
 | [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Puerto Reno stations · SS Vibelandia |
+| [`/interfaces/journeys.html`](/interfaces/journeys.html) | Journeys · Adventures aboard SS Vibelandia |
 | [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Next layer in the stack · Product brochure · FractiAI |
 | [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | How it works · Learn more · Infinite Octaves Omniversal Lattice Chat Agent V1.618 · FractiAI |
 | [`/interfaces/lattice-scraper-telemetry.html`](/interfaces/lattice-scraper-telemetry.html) | Lattice · AI scraper telemetry |
@@ -456,6 +457,20 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/goldilocks-deliveries/partner.html`](/interfaces/goldilocks-deliveries/partner.html) | Menu partner · Valet Pru's Concierge Service · SS Vibelandia |
 | [`/interfaces/goldilocks-deliveries/pay.html`](/interfaces/goldilocks-deliveries/pay.html) | Honor payment · Valet Pru's Concierge Service · SS Vibelandia |
 | [`/interfaces/goldilocks-deliveries/valet.html`](/interfaces/goldilocks-deliveries/valet.html) | Goldilocks Valet Franchise · Puerto Reno · SS Vibelandia QUESTFEST |
+
+### `journey/` (`/interfaces/journey/`)
+
+| Path | Title |
+|------|-------|
+| [`/interfaces/journey/bachdoor-music-lab.html`](/interfaces/journey/bachdoor-music-lab.html) | Golden Bachdoor · Music Lab · Journey · SS Vibelandia |
+| [`/interfaces/journey/boriken-convergence.html`](/interfaces/journey/boriken-convergence.html) | Borikén · Great Convergence · Journey · SS Vibelandia |
+| [`/interfaces/journey/bridge-solar-watch.html`](/interfaces/journey/bridge-solar-watch.html) | Bridge · Proto & Electro Watch · Journey · SS Vibelandia |
+| [`/interfaces/journey/cartagena-spice-stone.html`](/interfaces/journey/cartagena-spice-stone.html) | Cartagena · Spice & Stone · Journey · SS Vibelandia |
+| [`/interfaces/journey/omniversal-canvas-walk.html`](/interfaces/journey/omniversal-canvas-walk.html) | Omniversal Canvas · Exhibit Walk · Journey · SS Vibelandia |
+| [`/interfaces/journey/puerto-reno-gangway.html`](/interfaces/journey/puerto-reno-gangway.html) | Puerto Reno · Gangway Night · Journey · SS Vibelandia |
+| [`/interfaces/journey/redwood-sanctuary.html`](/interfaces/journey/redwood-sanctuary.html) | Redwood Sanctuary · Journey · SS Vibelandia |
+| [`/interfaces/journey/tahoe-catamaran.html`](/interfaces/journey/tahoe-catamaran.html) | Lake Tahoe · Catamaran Gold · Journey · SS Vibelandia |
+| [`/interfaces/journey/truckee-sierra-forage.html`](/interfaces/journey/truckee-sierra-forage.html) | Truckee River & High Sierra Forage · Journey · SS Vibelandia |
 
 ### `lattice-chat/` (`/interfaces/lattice-chat/`)
 

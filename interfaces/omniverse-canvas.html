@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
   <link rel="stylesheet" href="/interfaces/exhibit-shells.css" />
-  <link rel="stylesheet" href="/interfaces/experience-phases.css" /> />
+  <link rel="stylesheet" href="/interfaces/experience-phases.css" />
   <style>
     :root {
       --ink: #f5e6c8;
@@ -60,7 +60,6 @@
       inset: 0;
       z-index: 0;
       background:
-        linear-gradient(180deg, rgba(6, 9, 18, 0.25) 0%, rgba(6, 9, 18, 0.55) 45%, rgba(6, 9, 18, 0.92) 100%),
         url('/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg') center 18% / cover no-repeat;
       transform: scale(1.04);
       animation: heroDrift 28s ease-in-out infinite alternate;
@@ -69,10 +68,41 @@
       from { transform: scale(1.04) translate3d(0, 0, 0); }
       to { transform: scale(1.08) translate3d(-1.5%, 1%, 0); }
     }
-    .hero__rings {
+    /* YouTube loop — full-bleed cover behind copy; still image is fallback */
+    .hero__video {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      background: #060912;
+    }
+    .hero__video-embed {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 56.25vw; /* 16:9 */
+      min-height: 100%;
+      min-width: 177.78vh; /* 16:9 cover */
+      transform: translate(-50%, -50%);
+      border: 0;
+      pointer-events: none;
+    }
+    .hero__video-embed--loading {
+      opacity: 0;
+    }
+    .hero__veil {
       position: absolute;
       inset: 0;
       z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(6, 9, 18, 0.35) 0%, rgba(6, 9, 18, 0.55) 42%, rgba(6, 9, 18, 0.92) 100%);
+    }
+    .hero__rings {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
       pointer-events: none;
       display: grid;
       place-items: center;
@@ -95,7 +125,7 @@
     }
     .hero__copy {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       width: min(42rem, 92vw);
       margin: 0 auto 0;
       padding: clamp(5rem, 14vh, 8rem) 1.25rem 3.5rem;
@@ -506,6 +536,7 @@
     footer.site a { margin: 0 0.45rem; }
     @media (prefers-reduced-motion: reduce) {
       .hero__plane, .ring, .shell { animation: none !important; transition: none !important; }
+      .hero__video { display: none !important; }
     }
   </style>
 </head>
@@ -524,6 +555,17 @@
 
   <header class="hero" aria-label="Holographic Goldilocks SuperAI Basecamp opening">
     <div class="hero__plane" role="img" aria-label="Valet Pru — host of the Holographic Goldilocks SuperAI Basecamp"></div>
+    <div class="hero__video" aria-hidden="true">
+      <iframe
+        class="hero__video-embed hero__video-embed--loading"
+        data-youtube-id="0hicJ_AZups"
+        title="Landing loop video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="hero__veil" aria-hidden="true"></div>
     <div class="hero__rings" aria-hidden="true">
       <span class="ring ring--3"></span>
       <span class="ring ring--2"></span>
@@ -975,6 +1017,7 @@
       }
     })();
   </script>
+  <script src="/interfaces/canvas-hero-loop.js" defer></script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
   <script src="/interfaces/daily-ship-bulletin.js" defer></script>

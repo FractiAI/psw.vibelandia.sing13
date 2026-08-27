@@ -181,6 +181,26 @@ a:hover { color: #fef3c7; }
 }
 .xd-rooms a { text-decoration: none; }
 .xd-rooms a[aria-current="page"] { color: var(--gold); }
+.museum-wrapper-strip {
+  max-width: 52rem;
+  margin: 0 auto 1.25rem;
+  padding: 0.75rem 1rem;
+  border: 3px solid #c9a227;
+  background: rgba(6, 10, 18, 0.72);
+}
+.museum-wrapper-strip p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(245, 230, 200, 0.9);
+}
+.museum-wrapper-strip__kicker {
+  margin: 0 0 0.3rem !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(212, 175, 55, 0.85) !important;
+}
 .honesty {
   margin: 2.5rem auto 0;
   padding: 1rem 0 0;

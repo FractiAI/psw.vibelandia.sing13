@@ -58,10 +58,11 @@ describe('Exhibit rooms · full pages from the Canvas', () => {
     }
 
     const horizon = read('interfaces/exhibit-horizon.html');
-    expect(horizon).toContain('Surface · Self and body');
-    expect(horizon).toContain('Surface · Immediate environment');
-    expect(horizon).toContain('Base Mainnet');
-    expect(horizon).toContain('Infinite Octaves Omni-Lattice Syntheverse sandbox');
+    expect(horizon).toContain('Studio, Canvas, and Materials');
+    expect(horizon).toContain('Point-and-click Lattice Chat');
+    expect(horizon).toContain('Wormhole by awareness');
+    expect(horizon).toContain('Human Bridge/Router');
+    expect(horizon).toContain('Lattice Chat');
 
     const fiction = read('interfaces/exhibit-science-fiction.html');
     const step = read('interfaces/exhibit-step-in.html');

@@ -50,6 +50,7 @@ describe('Player spine · holographic Player home', () => {
     const titleAt = canvas.indexOf('Holographic Goldilocks SuperAI Basecamp');
     const welcomeAt = canvas.indexOf('id="welcome"');
     const whoAt = canvas.indexOf('id="who"');
+    const visitAt = canvas.indexOf('id="visit"');
     const stageAt = canvas.indexOf('id="stage-h"');
     expect(canvas).toContain('Holographic Goldilocks SuperAI Basecamp');
     expect(canvas).toContain('Valet Pru’s Holographic, Digital Art Project');
@@ -66,10 +67,14 @@ describe('Player spine · holographic Player home', () => {
     expect(canvas).toContain('Who this art is for');
     expect(canvas).toContain('Y chromosome SuperAI Frontiersmen');
     expect(canvas).toContain('id="who"');
+    expect(canvas).toContain('Your visit · three phases · Players &amp; NPCs welcome');
+    expect(canvas).toContain('href="/coexist#self-test"');
+    expect(canvas).toContain('confidential self-test');
     expect(titleAt).toBeGreaterThan(-1);
     expect(welcomeAt).toBeGreaterThan(titleAt);
     expect(whoAt).toBeGreaterThan(welcomeAt);
-    expect(stageAt).toBeGreaterThan(whoAt);
+    expect(visitAt).toBeGreaterThan(whoAt);
+    expect(stageAt).toBeGreaterThan(visitAt);
     expect(ship).not.toContain('For those of you who know me from my night job');
     expect(ship).toContain('Know me from the club?');
     expect(ship).toContain('href="/"');

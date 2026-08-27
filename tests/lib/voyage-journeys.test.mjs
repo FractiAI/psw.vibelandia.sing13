@@ -37,6 +37,22 @@ describe('Voyage journeys · adventures hub', () => {
     expect(html).toContain(journeyHref(j.slug));
   });
 
+  it('ships a unique image file for each adventure', () => {
+    const used = new Set();
+    for (const j of VOYAGE_JOURNEYS) {
+      const rel = j.heroImage.replace(/^\//, '');
+      expect(existsSync(join(ROOT, rel)), j.heroImage).toBe(true);
+      expect(used.has(j.heroImage), `duplicate image ${j.heroImage}`).toBe(false);
+      used.add(j.heroImage);
+    }
+    expect(findJourney('boriken-convergence')?.heroImage).toContain('journey-boriken-convergence');
+    expect(findJourney('cartagena-spice-stone')?.heroImage).toContain('journey-cartagena-spice-stone');
+    expect(findJourney('truckee-sierra-forage')?.heroImage).toContain('journey-truckee-sierra-forage');
+    expect(findJourney('redwood-sanctuary')?.heroImage).toContain('journey-redwood-sanctuary');
+    expect(findJourney('tahoe-catamaran')?.heroImage).toContain('journey-tahoe-catamaran');
+    expect(findJourney('omniversal-canvas-walk')?.heroImage).toContain('exhibit-fiction-key');
+  });
+
   it('hub HTML lists all journeys with images', () => {
     const html = renderJourneyHubHtml();
     expect(html).toContain('Journeys we offer');

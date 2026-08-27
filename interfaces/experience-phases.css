@@ -109,11 +109,11 @@
 }
 .museum-placard__title {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(1.65rem, 4vw, 2.2rem);
+  font-size: clamp(1.35rem, 3.4vw, 1.95rem);
   font-weight: 600;
   margin: 0 0 0.35rem;
   color: #f0d78c;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 .museum-placard__artist,
 .museum-placard__medium,

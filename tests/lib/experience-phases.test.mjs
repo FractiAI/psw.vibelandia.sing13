@@ -40,7 +40,8 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(html).toContain('museum-frame');
     expect(html).toContain('museum-placard');
     expect(html).toContain('Omniversal Canvas');
-    expect(html).toContain('Human Bridge/Router');
+    expect(html).toContain('Valet Pru - Holographic Goldilocks XY Human Reality Bridge/Router');
+    expect(html).not.toContain('Valet Pru · Human Bridge/Router');
     expect(html).toContain('SS VIBELANDIA');
     expect(html).toContain('exhibit-sphere-entrance.jpg');
     expect(html).toContain('href="/questfest"');

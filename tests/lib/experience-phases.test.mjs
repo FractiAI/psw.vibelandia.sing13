@@ -40,6 +40,9 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(html).toContain('museum-frame');
     expect(html).toContain('museum-placard');
     expect(html).toContain('Omniversal Canvas');
+    expect(html).toContain('Human Bridge/Router');
+    expect(html).toContain('SS VIBELANDIA');
+    expect(html).toContain('exhibit-sphere-entrance.jpg');
     expect(html).toContain('href="/questfest"');
     expect(html).toContain('Phase 2');
   });
@@ -48,6 +51,12 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(RECEPTION_SHIP_MENU.length).toBeGreaterThanOrEqual(5);
     const html = renderReceptionLobbyHtml();
     expect(html).toContain('Reception &amp; check-in lobby');
+    expect(html).toContain('reception-checkin-lobby.jpg');
+    expect(html).toContain('Deck Plan');
+    expect(html).not.toContain('>Voyage Map<');
+    expect(html).toContain('The Grove Deck');
+    expect(html).toContain('ship-library-deep-memory.jpg');
+    expect(html).toContain('frontiersmen-brochure.jpg');
     expect(html).toContain('href="/science-fiction"');
     expect(html).toContain('href="/step-in"');
     expect(html).toContain('href="/journey"');
@@ -67,6 +76,7 @@ describe('Experience phases · museum → reception → creator studio', () => {
     for (const phase of ['canvas', 'reception', 'studio']) {
       const html = renderNpcPlayerWelcomeHtml(phase);
       expect(html).toContain('Players &amp; NPCs · same ship');
+      expect(html).toContain('players-npcs-same-ship.jpg');
       expect(html).toContain('NPC · the set');
       expect(html).toContain('Player · the pattern');
       expect(html).toContain('franchises');

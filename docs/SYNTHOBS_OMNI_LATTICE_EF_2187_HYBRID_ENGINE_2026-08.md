@@ -93,4 +93,4 @@ Allocations remain subject to reciprocal balancing under Old School / Fair Excha
 9. Runtime kernel — [`lib/ef-kernel.mjs`](../lib/ef-kernel.mjs)  
 10. Matrix registry — [`data/ef-lattice/matrices-27.json`](../data/ef-lattice/matrices-27.json)
 
-→ ∞¹³
+→ ∞^∞

@@ -120,4 +120,4 @@ Press articles, blogs, campaigns, special projects, bulletin board, onboarding, 
 3. **Nav unify** — one quicklinks bar audit; nest ladder CTAs on all Tier-1 surfaces  
 4. **Press article bodies** — optional plain lead paragraphs only; technical PR bodies unchanged  
 
-**NSPFRNP ⊃ MCA → ∞¹³**
+**NSPFRNP ⊃ MCA → ∞^∞**

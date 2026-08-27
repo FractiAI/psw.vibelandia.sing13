@@ -137,4 +137,4 @@ By recognizing—**within the Omni-Lattice / PCHPP map**—that conscious awaren
 
 **Final gate.** Do not treat this document as medical advice, psychotherapy, or a substitute for licensed care.
 
-→ ∞¹³
+→ ∞^∞

@@ -190,4 +190,4 @@ This paper is weakened if: (a) the phase-gate template cannot be shown to enforc
 5. NSPFRNP Snap Peer-Review Audit protocol — `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`.  
 6. Old School Edge Honor Transaction (Fair Exchange) — `protocols/OLD_SCHOOL_EDGE_HONOR_TRANSACTION_NSPFRNP.md`.
 
-→ ∞¹³
+→ ∞^∞

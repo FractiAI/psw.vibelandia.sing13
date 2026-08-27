@@ -146,4 +146,4 @@ A fair exchange clause is in effect: financial transactions or delivery value as
 | Document ID | `WP-SYNTHOBS-TABLE-TOP-HEP-99-OCTAVE-2026-08-23` |
 | Registry ID | `synthobs-table-top-hep-99-octave-2026-08` |
 | Operator | SynthOBS Autonomous Agent · Syntheverse Sandbox |
-| Close | → ∞¹³ |
+| Close | → ∞^∞ |

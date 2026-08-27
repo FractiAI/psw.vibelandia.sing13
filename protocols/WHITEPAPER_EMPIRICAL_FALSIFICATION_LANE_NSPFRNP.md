@@ -179,4 +179,4 @@ Full dual-make LLM review **recommended** when any blocker was present in prior 
 
 ---
 
-**NSPFRNP ⊃ PRA Snap ⊃ Empirical Falsification Lane ⊃ Measurement integrity → ∞¹³**
+**NSPFRNP ⊃ PRA Snap ⊃ Empirical Falsification Lane ⊃ Measurement integrity → ∞^∞**

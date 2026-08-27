@@ -48,6 +48,8 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('Your visit · three phases · Players &amp; NPCs welcome');
     expect(html).toContain('href="/coexist#self-test"');
     expect(html).toContain('confidential self-test');
+    expect(html).toContain('→ ∞^∞');
+    expect(html).not.toContain('→ ∞¹³');
     expect(html).not.toContain('Hello and welcome. This is Valet Pru.');
     expect(html).not.toContain('url=/interfaces/vibelandia-questfest.html');
     expect(html).not.toContain("location.replace('/interfaces/vibelandia-questfest.html')");

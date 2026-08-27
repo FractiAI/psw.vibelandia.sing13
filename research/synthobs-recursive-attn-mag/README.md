@@ -44,4 +44,4 @@ Architectural rubric + three-tier validation protocol fixtures. Empirical-calibr
 
 Paper: `docs/SYNTHOBS_RECURSIVE_ATTENTION_HOLOGRAPHIC_MAGNETIC_PROJECTIONS_2026-07.md` · `/whitepaper/synthobs-recursive-attn-mag`
 
-→ ∞¹³
+→ ∞^∞

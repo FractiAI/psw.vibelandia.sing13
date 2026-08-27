@@ -41,4 +41,4 @@ Architectural HEP footprint grammar. Not multi-TeV benchtop proof, not accelerat
 Paper (monorepo): `docs/SYNTHOBS_TABLE_TOP_HEP_99_OCTAVE_2026-08.md`  
 Catalog: `/whitepaper/synthobs-table-top-hep-99-octave`
 
-→ ∞¹³
+→ ∞^∞

@@ -10,4 +10,4 @@ Honesty: catalog / solar fixtures / horizon labels — not inhabited sunspots or
 
 GitHub: https://github.com/FractiAI/synthobs-99-octave-digits-master
 
-→ ∞¹³
+→ ∞^∞

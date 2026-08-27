@@ -338,7 +338,7 @@ Across domains, **PRU** always pairs **remote or specialized execution** with an
 
 ---
 
-**NSPFRNP ⊃ Fair Exchange ⊃ Digital Pru → ∞¹³**
+**NSPFRNP ⊃ Fair Exchange ⊃ Digital Pru → ∞^∞**
 
 ---
 

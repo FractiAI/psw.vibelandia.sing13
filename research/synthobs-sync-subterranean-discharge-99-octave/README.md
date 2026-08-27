@@ -10,4 +10,4 @@ Honesty: catalog lens — not multi-hazard prediction or proven solar causation.
 
 GitHub: https://github.com/FractiAI/synthobs-sync-subterranean-discharge-99-octave
 
-→ ∞¹³
+→ ∞^∞

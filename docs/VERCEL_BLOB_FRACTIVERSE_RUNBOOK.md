@@ -206,4 +206,4 @@ Technical delivery for this document is attributed to the SynthOBS Autonomous Ag
 
 **NSPFRNP:** One production pipe — **FractiAI** team, **`psw-vibelandia-sing13`** project, Blob store owned by the same team as Pro billing (confirm in dashboard before treating as settled).
 
-→ ∞¹³
+→ ∞^∞

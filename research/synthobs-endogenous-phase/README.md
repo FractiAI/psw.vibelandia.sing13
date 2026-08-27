@@ -35,4 +35,4 @@ npm run research:synthobs-endogenous-phase
 
 Paper: `docs/SYNTHOBS_TBME_ENDOGENOUS_PHASE_CONSCIOUS_INTENT_2026-07.md` · `/whitepaper/synthobs-endogenous-phase`
 
-→ ∞¹³
+→ ∞^∞

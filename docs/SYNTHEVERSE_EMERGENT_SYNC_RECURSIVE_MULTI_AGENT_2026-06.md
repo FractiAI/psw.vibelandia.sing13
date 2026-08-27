@@ -234,4 +234,4 @@ This technical white paper operates strictly under an active fair exchange claus
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.
 
-→ ∞¹³
+→ ∞^∞

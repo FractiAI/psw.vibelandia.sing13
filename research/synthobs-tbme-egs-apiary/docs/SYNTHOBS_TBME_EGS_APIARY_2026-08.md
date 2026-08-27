@@ -211,4 +211,4 @@ This research paper and its companion theoretical disclosures are delivered unde
 **Document ID:** `WP-SYNTHOBS-TBME-EGS-APIARY-2026-08-16`  
 **Core status:** catalog exploration only — not Omni-Lattice Core / Engine  
 
-→ ∞¹³
+→ ∞^∞

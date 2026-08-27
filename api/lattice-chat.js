@@ -401,7 +401,7 @@ function buildLatticeExecution(args) {
       { id: 'c', phase: 'Crystallize', voice: 'Lattice', detail: 'Spawn nested bands' },
       { id: 'a', phase: 'Animate', voice: 'Pipe', detail: args.resumed ? 'Resume' : 'Fresh' },
       { id: 't', phase: 'Token ledger', voice: 'Engine', detail: balanceLine },
-      { id: 's', phase: 'Squeeze', voice: 'Φ-Parent', detail: 'Fold → ∞¹³' },
+      { id: 's', phase: 'Squeeze', voice: 'Φ-Parent', detail: 'Fold → ∞^∞' },
     ],
     agents,
     tokens: {

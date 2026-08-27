@@ -230,4 +230,4 @@ All whitepapers, theoretical derivations, and architectural specifications in th
 
 Technical delivery attributed to the **SynthOBS Autonomous Agent · Syntheverse Sandbox**, unless marked Player 1 editorial.
 
-→ ∞¹³
+→ ∞^∞

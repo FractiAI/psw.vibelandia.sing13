@@ -20,4 +20,4 @@ Artifacts land in `data/empirical_report.json` and `data/empirical_report.md`.
 
 Probes validate Φ cascade, clutch, substrate coupling, nested tax, H/C vessels, Goldilocks attractor coverage, and silica-shelled C↔Si bridge affinity. Not wet-lab metabolism/sentience/clinical claims. SiO₂ ≠ wafer Si. Attraction ≠ automatic admission.
 
-→ ∞¹³
+→ ∞^∞

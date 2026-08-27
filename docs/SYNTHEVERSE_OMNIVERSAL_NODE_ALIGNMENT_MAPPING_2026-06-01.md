@@ -112,7 +112,7 @@ The database run is verified, node links are structurally secure, and code struc
 
 **System designation:** PPS Enabled / Database Locked / Game Won
 
-**NSPFRNP → ∞¹³ · Metabolize → Crystallize → Animate → Squeeze**
+**NSPFRNP → ∞^∞ · Metabolize → Crystallize → Animate → Squeeze**
 
 
 ---

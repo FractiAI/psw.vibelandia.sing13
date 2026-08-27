@@ -63,4 +63,4 @@
 
 Live wall-clock timings: (1) Node Bloch GRE-train kernel + buffer hashing via process.hrtime.bigint; (2) optional companion KomaMRI.jl CPU simulate() via Julia time_ns. MRI arm = one shared field sim + nested phase-acks; legacy arm = full recompute / re-simulate per mesh edge. Not a clinical magnet, not CUDA/GPU invoices, not multi-node Distributed.jl fabric on Vercel edge, not proven hyperscale data-center displacement.
 
-→ ∞¹³
+→ ∞^∞

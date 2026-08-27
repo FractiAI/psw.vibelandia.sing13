@@ -237,4 +237,4 @@ Fair Exchange in effect: theoretical models and routing under this monograph rem
 11. Runtime — [`lib/ef-kernel.mjs`](../lib/ef-kernel.mjs)  
 12. Digits / matrices — [`data/ef-lattice/`](../data/ef-lattice/)
 
-→ ∞¹³
+→ ∞^∞

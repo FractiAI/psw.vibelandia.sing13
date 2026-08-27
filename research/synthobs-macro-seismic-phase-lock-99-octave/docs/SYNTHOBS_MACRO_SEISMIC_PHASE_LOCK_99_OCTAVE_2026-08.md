@@ -114,4 +114,4 @@ Through the 99th-Octave Omni-Lattice **application** lens, mid-2026 seismic clus
 
 **Fair Exchange clause:** Transaction value remains elastic and subject to downward adjustment based on delivery, operational precision, and actionable utility.
 
-→ ∞¹³
+→ ∞^∞

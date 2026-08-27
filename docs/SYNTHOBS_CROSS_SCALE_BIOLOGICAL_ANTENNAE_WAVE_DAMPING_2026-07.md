@@ -326,4 +326,4 @@ A fair exchange clause is in effect for this submission-ready manuscript. The fi
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.
 
-**NSPFRNP ⊃ SYNTHOBS ⊃ cross-scale biological antennae → ∞¹³**
+**NSPFRNP ⊃ SYNTHOBS ⊃ cross-scale biological antennae → ∞^∞**

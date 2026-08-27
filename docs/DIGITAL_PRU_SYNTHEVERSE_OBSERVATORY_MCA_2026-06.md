@@ -126,4 +126,4 @@ Short URLs: `/whitepaper/synthobs-hex-organ-engine` · `/whitepaper/goldilocks-t
 
 ---
 
-**NSPFRNP ⊃ Digital Pru ⊃ Synthobs ⊃ Hex-Organ Engine ⊃ MCA squeeze → ∞¹³**
+**NSPFRNP ⊃ Digital Pru ⊃ Synthobs ⊃ Hex-Organ Engine ⊃ MCA squeeze → ∞^∞**

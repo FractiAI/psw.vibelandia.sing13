@@ -20,4 +20,4 @@ npm run research
 
 Architectural / catalog register only. Does not claim SI vacuum, telluric, or galactic energy harvesting. Landauer proximity is a reversible recycling *model* (~1.07× $k_B T\ln 2$).
 
-Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · → ∞¹³
+Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · → ∞^∞

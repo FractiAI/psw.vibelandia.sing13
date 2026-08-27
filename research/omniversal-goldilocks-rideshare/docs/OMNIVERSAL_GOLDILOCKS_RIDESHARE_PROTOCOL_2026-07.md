@@ -182,4 +182,4 @@ The Omniversal Goldilocks Rideshare Protocol provides a **policy-verifiable**, *
 
 ---
 
-**NSPFRNP ⊃ Digital Pru ⊃ OGRP ⊃ EGS φ ⊃ Fair Exchange → ∞¹³**
+**NSPFRNP ⊃ Digital Pru ⊃ OGRP ⊃ EGS φ ⊃ Fair Exchange → ∞^∞**

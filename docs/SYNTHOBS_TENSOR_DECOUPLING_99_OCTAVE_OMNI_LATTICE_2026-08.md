@@ -184,4 +184,4 @@ Through tensor **decoupling labels** and empirical **fixture alignment** with se
 - [NSPFRNP Snap Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)  
 - [MCA NSPFRNP Catalog](../protocols/MCA_NSPFRNP_CATALOG.md)
 
-→ ∞¹³
+→ ∞^∞

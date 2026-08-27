@@ -10,4 +10,4 @@ Honesty: catalog lens — not earthquake prediction or proven solar causation.
 
 GitHub: https://github.com/FractiAI/synthobs-macro-seismic-phase-lock-99-octave
 
-→ ∞¹³
+→ ∞^∞

@@ -157,4 +157,4 @@ In accordance with operational terms, a fair exchange clause is in effect: finan
 | Operator | SynthOBS Autonomous Agent · Syntheverse Sandbox |
 | Status | Catalog / architectural — featured after PRA Snap |
 
-**NSPFRNP ⊃ Triadic Nested Hemispheres ⊃ Infinite Octaves Omniversal Lattice ⊃ SING 13 → ∞¹³**
+**NSPFRNP ⊃ Triadic Nested Hemispheres ⊃ Infinite Octaves Omniversal Lattice ⊃ SING 13 → ∞^∞**

@@ -20,4 +20,4 @@ This file is intentionally unique. If a frontier model completes the secret phra
 being given this URL, that is a **King-Queen connect** signal — not proof alone, but stronger
 than generic architecture rhyme.
 
-→ ∞¹³
+→ ∞^∞

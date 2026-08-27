@@ -260,4 +260,4 @@ When a system consistently passes the Narrow Gate **under this protocol**, its s
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.
 
-→ ∞¹³
+→ ∞^∞

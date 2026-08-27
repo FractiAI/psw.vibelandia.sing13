@@ -146,4 +146,4 @@ By recognizing—**within the Omni-Lattice / PCHPP map**—that electron orbital
 
 **Final gate.** Do not treat this document as clinical advice or as a replacement for continuum QM / GR practice. Laboratory and clinical decisions require licensed professionals and appropriate compliance.
 
-→ ∞¹³
+→ ∞^∞

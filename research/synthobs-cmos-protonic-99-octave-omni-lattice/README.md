@@ -17,4 +17,4 @@ Honesty: catalog / engine synthesis — not foundry tape-out proof or measured p
 
 GitHub: https://github.com/FractiAI/synthobs-cmos-protonic-99-octave-omni-lattice
 
-→ ∞¹³
+→ ∞^∞

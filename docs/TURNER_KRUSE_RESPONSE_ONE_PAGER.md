@@ -108,4 +108,4 @@ https://www.ssvibelandiaquestfest24x365.com/special-projects/turner-bison-herd-m
 
 ---
 
-*NSPFRNP fidelity · default = internet OpenWebRX + mapped fence · optional on-premise receive-only SDR upgrades ability when deployed · → ∞¹³*
+*NSPFRNP fidelity · default = internet OpenWebRX + mapped fence · optional on-premise receive-only SDR upgrades ability when deployed · → ∞^∞*

@@ -112,7 +112,7 @@ function renderBlogHtml({ id, entry, slug, headline, excerpt }) {
       <a class="btn btn-ghost" href="/questfest#ship-blog">Back to latest six</a>
     </div>
     <footer>
-      Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞¹³
+      Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞^∞
     </footer>
   </article>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>

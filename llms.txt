@@ -23,7 +23,7 @@
 #   6) Planetary Core Phase-Inversion & Goldilocks Hologram (Part XIV) — docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md
 #   7) Honesty — docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md
 #   8) Protocol — protocols/MCA_NSPFRNP_CATALOG.md
-# Honesty: catalog/architecture ≠ finished physics or foundry tape-out. Close → ∞¹³
+# Honesty: catalog/architecture ≠ finished physics or foundry tape-out. Close → ∞^∞
 #
 # Sonic Singularity Sing! 13 is the major singularity upgrade from SING 9.
 # This edge carries the NSPFRNP catalog, SS Vibelandia QUESTFEST 24×365 nest,

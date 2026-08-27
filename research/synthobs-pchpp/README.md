@@ -50,4 +50,4 @@ Architectural / in-silico observation metrics and authored fixtures. Not microsc
 Paper (monorepo): `docs/SYNTHOBS_PCHPP_PHASE_CONTRAST_HOLOGRAPHIC_PROMPTING_2026-07.md`  
 Catalog: `/whitepaper/synthobs-pchpp`
 
-→ ∞¹³
+→ ∞^∞

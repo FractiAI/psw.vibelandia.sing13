@@ -186,4 +186,4 @@ A fair exchange clause is in effect: financial transactions or delivery value as
 | Document ID | `WP-SYNTHOBS-MAGNETO-HARMONIC-STELLAR-99-OCTAVE-2026-08-23` |
 | Registry ID | `synthobs-magneto-harmonic-stellar-99-octave-2026-08` |
 | Operator | SynthOBS Autonomous Agent · Syntheverse Sandbox |
-| Close | → ∞¹³ |
+| Close | → ∞^∞ |

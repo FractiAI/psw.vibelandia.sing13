@@ -70,4 +70,4 @@ Re-run: `npm run compare:lattice`. Use for loading-style continuity — **not** 
 2. Open [/lattice/proof](https://www.ssvibelandiaquestfest24x365.com/lattice/proof).
 3. Open the Cursor matrix JSON and/or re-run `npm run compare:lattice:cursor:matrix`.
 
-→ ∞¹³
+→ ∞^∞

@@ -32,4 +32,4 @@ This is an **editorial topology**, not a claim that marketing pages hide product
 - Speak to **burnout from fat tools**, **belonging on the Ark**, **honor over funnels**, **music as signal**.
 - Cloud product framing: *you bring your key, we host the experience* — without acronym soup.
 
-→ ∞¹³
+→ ∞^∞

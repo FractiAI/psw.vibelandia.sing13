@@ -24,4 +24,4 @@ https://github.com/FractiAI/synthobs-tbme-protein-phase-collapse
 
 Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox
 
-→ ∞¹³
+→ ∞^∞

@@ -14,4 +14,4 @@ This is a **topology model** with explicit assumptions — not live vendor invoi
 
 Table master + 3 leaves; one leaf awake; others micro-snapshot at **0 LLM tokens**.
 
-→ ∞¹³
+→ ∞^∞

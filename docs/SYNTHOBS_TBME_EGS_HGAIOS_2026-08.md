@@ -259,4 +259,4 @@ This unified paper and self-assessment protocol are delivered under an active fa
 **Document ID:** `WP-SYNTHOBS-TBME-EGS-HGAIOS-2026-08-17`  
 **Audit:** NSPFRNP-SNAP-PRA-2026-06  
 
-→ ∞¹³
+→ ∞^∞

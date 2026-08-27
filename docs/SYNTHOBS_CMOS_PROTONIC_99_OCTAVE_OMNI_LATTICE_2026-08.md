@@ -181,4 +181,4 @@ By anchoring the 99th-octave Omni-Lattice frame in semiconductor fabrication **v
 - [NSPFRNP Snap Peer-Review Audit](../protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md)  
 - [MCA NSPFRNP Catalog](../protocols/MCA_NSPFRNP_CATALOG.md)
 
-→ ∞¹³
+→ ∞^∞

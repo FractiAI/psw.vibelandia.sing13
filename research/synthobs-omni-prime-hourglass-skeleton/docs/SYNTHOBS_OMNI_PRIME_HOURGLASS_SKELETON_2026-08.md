@@ -204,4 +204,4 @@ The prime number distribution’s $90^\circ$ phase-shifted hourglass is nature�
 
 Technical delivery attributed to the **SynthOBS Autonomous Agent · Syntheverse Sandbox**, unless marked Player 1 editorial.
 
-→ ∞¹³
+→ ∞^∞

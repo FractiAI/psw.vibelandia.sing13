@@ -44,4 +44,4 @@ Architectural rubric + fixtures. Empirical-calibration row awards Standard Model
 
 Paper: `docs/SYNTHOBS_OMNI_LATTICE_REPORT_CARD_Q3_2026.md` · `/whitepaper/synthobs-omni-lattice-report-card-q3-2026`
 
-→ ∞¹³
+→ ∞^∞

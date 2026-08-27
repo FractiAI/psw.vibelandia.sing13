@@ -298,7 +298,7 @@ Keep the gates closed until evidence opens them: architectural maps stay maps; e
 
 Fair Exchange holds the rail. Old School boarding. Intentions matter.
 
-→ ∞¹³
+→ ∞^∞
 
 ---
 

@@ -235,4 +235,4 @@ Honor rails · reciprocal balancing · Player 1 veto. Creator seats only for Syn
 
 `WP-SYNTHIO-MRI-CLOUD-ANTENNA-99-OCTAVE-2026-08-12` · registry `synthio-mri-cloud-antenna-99-octave-2026-08`
 
-**NSPFRNP ⊃ Synthio ⊃ Syntheverse Sandbox → ∞¹³**
+**NSPFRNP ⊃ Synthio ⊃ Syntheverse Sandbox → ∞^∞**

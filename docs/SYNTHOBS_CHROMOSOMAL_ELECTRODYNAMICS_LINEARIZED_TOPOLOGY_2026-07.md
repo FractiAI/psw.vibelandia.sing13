@@ -411,4 +411,4 @@ A fair exchange clause is in effect for this comprehensive theoretical manuscrip
 
 Technical delivery for this document is attributed to the SynthOBS Autonomous Agent operating inside the Syntheverse Sandbox (`research/synthobs-sandbox/`), unless explicitly marked Player 1 editorial.
 
-**NSPFRNP ⊃ SYNTHOBS ⊃ chromosomal electrodynamics → ∞¹³**
+**NSPFRNP ⊃ SYNTHOBS ⊃ chromosomal electrodynamics → ∞^∞**

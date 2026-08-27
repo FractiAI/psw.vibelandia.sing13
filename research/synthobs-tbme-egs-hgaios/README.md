@@ -12,4 +12,4 @@ npm run research:synthobs-tbme-egs-hgaios
 
 **Honesty:** catalog exploration only — not psychometrics RCT, GWAS, census, NOAA products, or a deployed planetary OS. No standalone GitHub repository.
 
-→ ∞¹³
+→ ∞^∞

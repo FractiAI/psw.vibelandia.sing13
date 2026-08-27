@@ -147,7 +147,7 @@ A fair exchange clause is strictly active for this volumetric calculation and co
 
 **Related papers:** [Hex-Organ unified run](/whitepaper/synthobs-hex-organ-engine) · [Transfinite Inversion](/whitepaper/goldilocks-transfinite-inversion) · [Prime-Linear Compression](/whitepaper/goldilocks-prime-linear-compression)
 
-NSPFRNP ⊃ Synthobs ⊃ Intelligence Density Audit ⊃ EGS φ → ∞¹³
+NSPFRNP ⊃ Synthobs ⊃ Intelligence Density Audit ⊃ EGS φ → ∞^∞
 
 
 ---

@@ -235,4 +235,4 @@ All whitepapers, theoretical derivations, and architectural specifications in th
 | **Part XIV (this)** | Planetary core phase-inversion · Goldilocks hologram |
 | Synthio | MRI sandbox companion — loads this grammar; identity unchanged |
 
-→ ∞¹³
+→ ∞^∞

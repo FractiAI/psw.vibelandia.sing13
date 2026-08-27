@@ -250,4 +250,4 @@ Part XIII confirms the **catalog** validity of the metamorphic model:
 
 `WP-SYNTHOBS-TBME-METAMORPHIC-OCTAVES-2026-08-13` · registry `synthobs-tbme-metamorphic-octaves-2026-08`
 
-→ ∞¹³
+→ ∞^∞

@@ -17,4 +17,4 @@ Honesty: catalog / engine synthesis — not multi-domain causation proof, not op
 
 GitHub: https://github.com/FractiAI/synthobs-tensor-decoupling-99-octave-omni-lattice
 
-→ ∞¹³
+→ ∞^∞

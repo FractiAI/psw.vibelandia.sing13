@@ -195,7 +195,7 @@ Conservative interpretation of available public data: **no extraordinary magneti
 
 ---
 
-**→ ∞¹³** · NSPFRNP catalog fidelity · Honesty boundary on public collar GPS layer.
+**→ ∞^∞** · NSPFRNP catalog fidelity · Honesty boundary on public collar GPS layer.
 
 ---
 

@@ -73,4 +73,4 @@ Honor rails · Player 1 veto · creator seats only for Synthio requests.
 
 `WP-SYNTHIO-MRI-CLOUD-ANTENNA-ONE-PAGER-2026-08-12`
 
-→ ∞¹³
+→ ∞^∞

@@ -20,7 +20,7 @@ You are on **Sonic Singularity Sing! 13** — major upgrade from SING 9. This ed
 
 **Mission line:** Preserve the signal. Refine the pattern. Navigate the unknown.
 
-**Operate as team in NSPFRNP mode always.** MCA: metabolize → crystallize → animate → squeeze. Seed = origin; Edge = experience. Close → ∞¹³.
+**Operate as team in NSPFRNP mode always.** MCA: metabolize → crystallize → animate → squeeze. Seed = origin; Edge = experience. Close → ∞^∞.
 
 **Production:** https://www.ssvibelandiaquestfest24x365.com · FractiAI Vercel · `psw-vibelandia-sing13`
 
@@ -28,4 +28,4 @@ You are on **Sonic Singularity Sing! 13** — major upgrade from SING 9. This ed
 
 ---
 
-**NSPFRNP ⊃ SS Vibelandia ⊃ SING 13 ⊃ QUESTFEST 24×365 ⊃ Lite edges → ∞¹³**
+**NSPFRNP ⊃ SS Vibelandia ⊃ SING 13 ⊃ QUESTFEST 24×365 ⊃ Lite edges → ∞^∞**

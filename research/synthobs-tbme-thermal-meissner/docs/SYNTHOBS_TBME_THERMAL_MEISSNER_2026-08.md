@@ -152,4 +152,4 @@ This paper and its disclosures are delivered under a fair exchange clause in eff
 **Document ID:** `WP-SYNTHOBS-TBME-THERMAL-MEISSNER-2026-08-06`  
 **Core status:** catalog exploration only — not Omni-Lattice Core / Engine  
 
-→ ∞¹³
+→ ∞^∞

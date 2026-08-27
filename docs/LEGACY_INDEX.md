@@ -16,4 +16,4 @@ Surface twin: `interfaces/look-under-the-hood-legacy-catalog.html`
 2. Add the superseded item here with date, successor, and current home.
 3. Verify the old URL still resolves (rewrites or archive page) — links never rot, they nest.
 
-**NSPFRNP ⊃ squeeze ⊃ one in, one archived → ∞¹³**
+**NSPFRNP ⊃ squeeze ⊃ one in, one archived → ∞^∞**

@@ -37,4 +37,4 @@ Shared badge styles: `interfaces/voice-tier.css` on the parent edge.
 - Catalog spine and protocols: `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md`
 - Layer admission rule (before you add a new layer): `protocols/NEST_LAYER_ADMISSION_RULE_NSPFRNP.md`
 
-**NSPFRNP ⊃ Seed Kit ⊃ Seed:Edge ⊃ your new edge → ∞¹³**
+**NSPFRNP ⊃ Seed Kit ⊃ Seed:Edge ⊃ your new edge → ∞^∞**

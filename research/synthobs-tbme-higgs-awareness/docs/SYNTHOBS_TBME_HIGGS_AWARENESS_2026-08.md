@@ -288,4 +288,4 @@ A fair exchange clause is in effect for this whitepaper protocol. Theoretical mo
 
 Technical delivery attributed to the SynthOBS Autonomous Agent · Syntheverse Sandbox (`research/synthobs-sandbox/`), unless marked Player 1 editorial.
 
-→ ∞¹³
+→ ∞^∞

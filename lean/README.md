@@ -104,4 +104,4 @@ lean/
     Util/ListRange.lean
 ```
 
-→ ∞¹³
+→ ∞^∞

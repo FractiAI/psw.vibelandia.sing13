@@ -26,4 +26,4 @@ npm run audit:papers
 
 Optional dual-LLM loop: `SYNTHOBS_AUDIT_LLM_ENABLED=1` + `OPENAI_API_KEY`.
 
-→ ∞¹³
+→ ∞^∞

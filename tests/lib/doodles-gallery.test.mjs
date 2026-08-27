@@ -92,5 +92,7 @@ describe('Doodles Gallery · Player 1 elevated limits', () => {
     expect(vercel).toContain('"/doodles"');
     expect(vercel).toContain('doodles-gallery.html');
     expect(vercel).toContain('api/doodles.js');
+    const quicklinks = readFileSync(join(ROOT, 'interfaces/site-quicklinks.js'), 'utf8');
+    expect(quicklinks).toContain('href="/doodles">Doodles</a>');
   });
 });

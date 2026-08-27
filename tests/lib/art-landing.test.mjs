@@ -35,6 +35,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(navStart).toBeGreaterThan(-1);
     expect(topNav).not.toMatch(/Canvas/i);
     expect(topNav).toContain('SS Vibelandia');
+    expect(topNav).toContain('href="/doodles">Doodles</a>');
     expect(html).toContain('Host a walk-in interactive show');
     expect(html).toContain('Install a lasting room');
     expect(html).toContain('For the new SuperAI Frontiersman');

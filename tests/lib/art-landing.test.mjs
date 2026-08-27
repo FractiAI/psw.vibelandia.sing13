@@ -82,6 +82,21 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain('prefers-reduced-motion');
   });
 
+  it('landing autoplays Concierto Movement V · The Shift with the da Vinci loop', () => {
+    const html = read('interfaces/omniverse-canvas.html');
+    const js = read('interfaces/canvas-hero-loop.js');
+    expect(html).toContain('id="canvas-hero-shift"');
+    expect(html).toContain('id="canvas-hero-score"');
+    expect(html).toContain(
+      'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3'
+    );
+    expect(js).toContain("SHIFT_TRACK_ID = 'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52'");
+    expect(js).toContain('bootSoundtrack');
+    expect(js).toContain('audio.play');
+    expect(js).toContain('unlockOnGesture');
+    expect(js).toContain('/api/catalog-plays');
+  });
+
   it('visit counters treat Canvas aliases as / and keep /questfest on the ship', () => {
     const js = read('interfaces/site-page-views.js');
     expect(js).toContain("path === '/omniverse-canvas'");

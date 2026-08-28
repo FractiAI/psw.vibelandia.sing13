@@ -611,9 +611,18 @@
         class="hero__score"
         id="canvas-hero-score"
         aria-pressed="false"
-        aria-controls="prelude-session"
-        aria-label="Play soundtrack: Concierto prelude — opens a popup session that keeps playing while you browse"
+        aria-controls="canvas-hero-shift"
+        aria-label="Play soundtrack: Concierto prelude on this page"
       >Sound off · tap to play</button>
+      <audio
+        id="canvas-hero-shift"
+        preload="auto"
+        playsinline
+        hidden
+        aria-hidden="true"
+        aria-label="Landing Concierto prelude playlist"
+        src="https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3"
+      ></audio>
     </div>
   </header>
 
@@ -652,7 +661,7 @@
         We are rolling out a new omniversal art form: each key page gets a short loop and its own soundtrack prelude —
         the way old movie houses played music before the feature. Landing leads with the da Vinci stepping-in video and
         <em>Concierto de El Gran Sol: “The Shift”</em> — twelve movements ending with Return 05.
-        Tap <strong>Sound on</strong> — the Concierto starts in the background while you stay on the exhibit and walk links and rooms.
+        Tap <strong>Sound on</strong> to play the Concierto over the da Vinci loop — a movie-prelude on the landing page.
         <a href="/concierto-program">Read the concert program →</a>
         ·
         <a href="/concierto-program">Download program (PDF)</a>

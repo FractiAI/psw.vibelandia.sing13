@@ -47,11 +47,12 @@ describe('Concierto prelude · jukebox playlist', () => {
     expect(store).toMatch(/deletePlaylist[\s\S]{0,200}isConciertoPreludePlaylist/);
   });
 
-  it('bridges landing hero and jukebox playback', () => {
+  it('landing hero uses in-page audio; jukebox keeps optional prelude bridge', () => {
     const hero = read('interfaces/canvas-hero-loop.js');
     const bridge = read('apps/ss-vibelandia-questfest/src/hooks/useJukeboxPreludeBridge.ts');
     const playback = read('apps/ss-vibelandia-questfest/src/components/player/PlaybackRoot.tsx');
-    expect(hero).toContain('qv-jukebox-prelude');
+    expect(hero).toContain('canvas-hero-shift');
+    expect(hero).not.toContain('qv-jukebox-prelude');
     expect(bridge).toContain('JUKEBOX_PRELUDE_CHANNEL');
     expect(playback).toContain('useJukeboxPreludeBridge');
   });

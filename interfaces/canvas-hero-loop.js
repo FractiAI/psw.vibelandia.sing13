@@ -1,48 +1,13 @@
 /**
  * Omniversal Canvas landing · YouTube hero loop (muted, autoplay, loop)
- * + Concierto prelude via dedicated popup session (/prelude-session):
- *   lightweight player boots instantly — music continues while browsing.
+ * + in-page Concierto prelude playlist (stops when you leave the page).
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
   'use strict';
 
   var YOUTUBE_ID = '0hicJ_AZups';
-  var JUKEBOX_NAME = 'qv-jukebox';
-  var PRELUDE_URL = '/prelude-session?autoplay=1';
-  var CHANNEL_NAME = 'qv-jukebox-prelude';
-  var PRELUDE_PLAYLIST_ID = 'pl-concierto-prelude';
-  var PRELUDE_FEATURES =
-    'popup=yes,width=280,height=48,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=no';
-
   var PLAYLIST = window.CANVAS_PRELUDE_PLAYLIST || [];
-
-  function labelForTrackId(trackId) {
-    for (var i = 0; i < PLAYLIST.length; i++) {
-      if (PLAYLIST[i].id === trackId) return PLAYLIST[i];
-    }
-    return null;
-  }
-
-  function labelFromTitle(title) {
-    if (!title) return null;
-    var lower = String(title).toLowerCase();
-    for (var i = 0; i < PLAYLIST.length; i++) {
-      if (String(PLAYLIST[i].label).toLowerCase() === lower) return PLAYLIST[i];
-      if (String(PLAYLIST[i].aria).toLowerCase() === lower) return PLAYLIST[i];
-    }
-    return null;
-  }
-
-  function trackFromRemote(msg) {
-    return (
-      labelForTrackId(msg.trackId) ||
-      labelFromTitle(msg.trackTitle) ||
-      (msg.trackShort && msg.trackAria
-        ? { short: msg.trackShort, aria: msg.trackAria }
-        : null)
-    );
-  }
 
   function prefersReducedMotion() {
     try {
@@ -84,131 +49,141 @@
     });
   }
 
-  function bootSoundtrack() {
-    if (prefersReducedMotion()) return;
-
-    var btn = document.getElementById('canvas-hero-score');
-    var channel = null;
-    var preludeWin = null;
-    var popupBlocked = false;
-    var remotePlaying = false;
-    var remoteTrack = PLAYLIST[0] || { short: 'Sound on · The Shift', aria: 'Movement V · The Shift' };
-    var playRetryTimer = null;
-
+  function pingCatalogPlay(trackId) {
     try {
-      channel = new BroadcastChannel(CHANNEL_NAME);
-    } catch (_) {
-      channel = null;
+      fetch('/api/catalog-plays', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ trackId: trackId }),
+        keepalive: true,
+      }).catch(function () {});
+    } catch (_) {}
+  }
+
+  function bootSoundtrack() {
+    if (prefersReducedMotion() || !PLAYLIST.length) return;
+
+    var index = 0;
+    var logged = {};
+    var btn = document.getElementById('canvas-hero-score');
+
+    var audio =
+      document.getElementById('canvas-hero-shift') ||
+      (function () {
+        var el = document.createElement('audio');
+        el.id = 'canvas-hero-shift';
+        el.preload = 'auto';
+        el.setAttribute('playsinline', '');
+        document.body.appendChild(el);
+        return el;
+      })();
+
+    audio.loop = false;
+    audio.preload = 'auto';
+
+    function current() {
+      return PLAYLIST[index];
     }
 
-    function setToggleState(playing, track) {
+    function setToggleState(playing) {
       if (!btn) return;
-      var t = track || remoteTrack || PLAYLIST[0];
+      var track = current();
       btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
       btn.classList.toggle('is-playing', playing);
       btn.classList.toggle('is-muted', !playing);
-      btn.classList.toggle('is-blocked', popupBlocked && !playing);
-      btn.textContent = playing
-        ? t.short
-        : popupBlocked
-          ? 'Allow popups · then tap to play'
-          : 'Sound off · tap to play';
+      btn.textContent = playing ? track.short : 'Sound off · tap to play';
       btn.setAttribute(
         'aria-label',
-        playing ? 'Mute soundtrack: ' + t.aria : 'Play soundtrack: ' + t.aria
+        playing ? 'Mute soundtrack: ' + track.aria : 'Play soundtrack: ' + track.aria
       );
     }
 
-    function openPreludeSession() {
-      try {
-        preludeWin = window.open(PRELUDE_URL, JUKEBOX_NAME, PRELUDE_FEATURES);
-      } catch (_) {
-        preludeWin = null;
-      }
-      if (!preludeWin) {
-        popupBlocked = true;
-        setToggleState(false, remoteTrack);
-        return null;
-      }
-      popupBlocked = false;
-      try {
-        window.focus();
-      } catch (_) {}
-      return preludeWin;
+    function loadTrack(i) {
+      index = ((i % PLAYLIST.length) + PLAYLIST.length) % PLAYLIST.length;
+      var track = current();
+      audio.src = track.src;
+      audio.setAttribute(
+        'aria-label',
+        'Soundtrack: ' + track.aria + ' (landing playlist)'
+      );
+      setToggleState(false);
     }
 
-    function postToPrelude(type) {
-      if (channel) {
-        channel.postMessage({
-          type: type,
-          playlistId: PRELUDE_PLAYLIST_ID,
-        });
+    function markPlaying() {
+      var track = current();
+      setToggleState(true);
+      if (!logged[track.id]) {
+        logged[track.id] = true;
+        pingCatalogPlay(track.id);
       }
     }
 
-    function schedulePlayRetries() {
-      if (playRetryTimer) return;
-      var attempts = 0;
-      playRetryTimer = window.setInterval(function () {
-        if (remotePlaying || popupBlocked) {
-          window.clearInterval(playRetryTimer);
-          playRetryTimer = null;
-          return;
-        }
-        attempts += 1;
-        postToPrelude('play');
-        if (attempts >= 8) {
-          window.clearInterval(playRetryTimer);
-          playRetryTimer = null;
-        }
-      }, 350);
+    function markStopped() {
+      setToggleState(false);
     }
 
-    function ensurePreludeAndPlay() {
-      openPreludeSession();
-      if (popupBlocked) {
-        return Promise.resolve(false);
+    function tryPlay() {
+      var p = audio.play();
+      if (p && typeof p.then === 'function') {
+        return p
+          .then(function () {
+            markPlaying();
+            return true;
+          })
+          .catch(function () {
+            markStopped();
+            return false;
+          });
       }
-      postToPrelude('play');
-      schedulePlayRetries();
+      markPlaying();
       return Promise.resolve(true);
     }
 
-    function pausePrelude() {
-      postToPrelude('pause');
-      remotePlaying = false;
-      setToggleState(false, remoteTrack);
+    function unlockOnGesture() {
+      tryPlay().then(function () {
+        window.removeEventListener('pointerdown', unlockOnGesture, true);
+        window.removeEventListener('keydown', unlockOnGesture, true);
+        window.removeEventListener('touchstart', unlockOnGesture, true);
+      });
     }
 
-    if (channel) {
-      channel.addEventListener('message', function (ev) {
-        var msg = ev && ev.data;
-        if (!msg || msg.type !== 'state') return;
-        if (msg.playlistId && msg.playlistId !== PRELUDE_PLAYLIST_ID) return;
-        remotePlaying = !!msg.playing;
-        var mapped = trackFromRemote(msg) || remoteTrack;
-        if (mapped) remoteTrack = mapped;
-        setToggleState(remotePlaying, remoteTrack);
-        if (remotePlaying && playRetryTimer) {
-          window.clearInterval(playRetryTimer);
-          playRetryTimer = null;
-        }
-      });
-      channel.postMessage({ type: 'ping' });
+    function advance() {
+      loadTrack(index + 1);
+      tryPlay();
     }
+
+    loadTrack(0);
 
     if (btn) {
       btn.hidden = false;
-      setToggleState(false, PLAYLIST[0] || remoteTrack);
+      setToggleState(false);
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
-        if (remotePlaying) {
-          pausePrelude();
+        if (!audio.paused && !audio.ended) {
+          audio.pause();
+          markStopped();
           return;
         }
-        ensurePreludeAndPlay();
+        tryPlay();
       });
     }
+
+    audio.addEventListener('play', markPlaying);
+    audio.addEventListener('pause', function () {
+      if (!audio.ended) markStopped();
+    });
+    audio.addEventListener('ended', advance);
+
+    tryPlay().then(function (ok) {
+      if (ok === false || audio.paused) {
+        window.addEventListener('pointerdown', unlockOnGesture, true);
+        window.addEventListener('keydown', unlockOnGesture, true);
+        window.addEventListener('touchstart', unlockOnGesture, {
+          capture: true,
+          passive: true,
+        });
+      }
+    });
   }
 
   function boot() {

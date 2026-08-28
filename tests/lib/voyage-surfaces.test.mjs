@@ -80,6 +80,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('>1. What “holographic” means</a>');
     const css = read('interfaces/voyage-brochure-publication.css');
     expect(css).toMatch(/body\.vb-pub \.toc \{[\s\S]*list-style:\s*none/);
+    expect(css).toMatch(/body\.vb-pub \.toc li::marker \{[\s\S]*content:\s*none/);
     expect(read('interfaces/voyage/frontiersman.html')).not.toMatch(/Compendium|compendium/);
     expect(read('interfaces/blog-frontiersman-voyage-2026-08.html')).not.toMatch(/Compendium|compendium/);
     expect(read('interfaces/vibelandia-questfest.html')).not.toMatch(/compendium/i);

@@ -293,6 +293,10 @@ body.vb-pub .toc {
 }
 body.vb-pub .toc li {
   list-style: none;
+  padding-inline-start: 0;
+}
+body.vb-pub .toc li::marker {
+  content: none;
 }
 body.vb-pub .toc a {
   font-family: var(--vb-sans);

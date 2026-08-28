@@ -284,10 +284,19 @@ body.vb-pub .toc {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
   gap: 0.35rem 1rem;
+  margin: 0;
   padding: 1rem;
+  list-style: none;
   border: 1px solid var(--vb-line);
   border-radius: 6px;
   background: rgba(12, 22, 40, 0.55);
+}
+body.vb-pub .toc li {
+  list-style: none;
+  padding-inline-start: 0;
+}
+body.vb-pub .toc li::marker {
+  content: none;
 }
 body.vb-pub .toc a {
   font-family: var(--vb-sans);

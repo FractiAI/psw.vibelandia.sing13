@@ -130,6 +130,10 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(program).toContain('Rebel River · The Truckee Borikén Crossing');
     expect(program).toContain('432 Solar Gavel');
     expect(program).toContain('Finale · Movement XII');
+    expect(program).toContain('journey-truckee-sierra-forage.png');
+    expect(program).toContain('capitan-comandante-champion-2026.png');
+    expect(program).toContain('questfest-2026-frontier-guide-cover.png');
+    expect(program).toContain('hybrid frontier · art deco');
     expect(js).toContain('Movement X · The Shift');
     expect(js).toContain('bootSoundtrack');
     expect(js).toContain('audio.play');

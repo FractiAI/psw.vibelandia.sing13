@@ -174,12 +174,20 @@
       margin: 0;
       border: 2px solid rgba(212, 175, 55, 0.35);
       background: var(--navy);
+      box-shadow: inset 0 0 0 1px rgba(240, 215, 140, 0.14), 4px 4px 0 rgba(0, 0, 0, 0.38);
     }
     .movement__thumb img {
       display: block;
       width: 100%;
       aspect-ratio: 4 / 3;
       object-fit: cover;
+      object-position: center;
+    }
+    .movements__visual-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: -0.35rem 0 1.35rem;
+      max-width: 42rem;
     }
     .movement__num {
       font-size: 0.68rem;
@@ -311,10 +319,11 @@
 
     <section class="movements" aria-labelledby="movements-h">
       <h2 id="movements-h">Movement notes</h2>
+      <p class="movements__visual-note">Illustrations use SS Vibelandia hybrid frontier · art deco stills — Journey sails, Voyage decks, and Exhibit keys — matched to each dramaturgical beat, not generic stock.</p>
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/exhibit/exhibit-step-in-still.jpg" alt="Gold-lit dome doorway — step into the installation" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/exhibit/exhibit-step-in-key.jpg" alt="Hybrid frontier art deco — gold nested domes, step-in key for The Shift" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement I</p>
@@ -327,7 +336,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/experience/players-npcs-same-ship.jpg" alt="Players and NPCs aboard the gold ship" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/voyage/deck-6-7-horizon.png" alt="Horizon deck band — Goldilocks curve between too much machine and too little" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement II</p>
@@ -340,7 +349,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/voyage/ph-101-108.png" alt="El Gran Sol evening deck — grand penthouse band" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/journey/journey-bridge-solar-watch.png" alt="Bridge watch — Proto and Electro on El Gran Sol, genesis Beat I" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement III</p>
@@ -353,7 +362,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/exhibit/exhibit-sphere-entrance.jpg" alt="Gold museum framed sphere entrance" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/exhibit/exhibit-sphere-entrance.jpg" alt="Fifteen-seat exhibit sphere — deepening hinge, art deco museum frame" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement IV</p>
@@ -366,7 +375,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/journey/journey-puerto-reno-gangway.png" alt="Puerto Reno gangway at gold hour" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/journey/journey-tahoe-catamaran.png" alt="Gold-hour catamaran on alpine water — Return 07 widened harmonic field" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement V</p>
@@ -379,7 +388,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/experience/ship-library-deep-memory.jpg" alt="Ship library — deep memory" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/journey/journey-redwood-sanctuary.png" alt="Cathedral redwood sanctuary — organ voicing and deep memory hall" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement VI</p>
@@ -392,7 +401,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/experience/frontiersmen-brochure.jpg" alt="Frontiersman voyage brochure still" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/questfest-2026-frontier-guide-cover.png" alt="Invisible Frontier editorial — frontier guide cover, caution on the trail" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement VII</p>
@@ -405,7 +414,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/voyage/deck-9-summit.png" alt="Summit deck at gold hour" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/voyage/voyage-map-come-aboard.png" alt="Come-aboard gangway at gold hour — Good Morning New Earth dawn transmission" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement VIII</p>
@@ -418,7 +427,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/journey/journey-boriken-convergence.png" alt="Gold-hour Caribbean sail toward Borikén shore" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/journey/journey-boriken-convergence.png" alt="Borikén Great Convergence — gold sail toward shore, hydrogen-line Beat II" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement IX</p>
@@ -431,7 +440,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/journey/journey-puerto-reno-gangway.png" alt="Puerto Reno gangway at gold hour — Truckee toward Reno" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/journey/journey-truckee-sierra-forage.png" alt="Truckee River through High Sierra pine — Rebel River crossing toward Reno" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement X</p>
@@ -444,7 +453,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/journey/journey-bridge-solar-watch.png" alt="El Gran Sol on the horizon — Bridge watch at 432 catalog" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/capitan-comandante-champion-2026.png" alt="Capitán at the Captain’s seat — 432 Solar Gavel, Reno present Beat III" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Movement XI</p>
@@ -457,7 +466,7 @@
 
       <article class="movement">
         <figure class="movement__thumb">
-          <img src="/interfaces/assets/journey/journey-bridge-solar-watch.png" alt="El Gran Sol on the horizon from the navigation bridge" loading="lazy" decoding="async" />
+          <img src="/interfaces/assets/voyage/ph-101-108.png" alt="El Gran Sol penthouse deck at gold hour — Return 05 finale, sun on the deck" loading="lazy" decoding="async" />
         </figure>
         <div>
           <p class="movement__num">Finale · Movement XII</p>

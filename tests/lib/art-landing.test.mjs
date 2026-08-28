@@ -71,6 +71,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('data-youtube-id="0hicJ_AZups"');
     expect(html).toContain('canvas-hero-loop.js');
     expect(html).toContain('class="hero__video"');
+    expect(html).not.toContain('The nest you are standing in');
+    expect(html).not.toContain('id="nest-h"');
+    expect(html).not.toContain('Layer · Address');
   });
 
   it('hero loop script embeds the YouTube id with mute + loop playlist', () => {

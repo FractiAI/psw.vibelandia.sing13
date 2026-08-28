@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Friday board · August 28 · Puerto Reno",
   "newsLabel": "News of the day · Friday, August 28",
-  "htmlBody": "You are not a passive observer in someone else’s feed. Today’s care is the Human Reality Bridge: router, spin navigator, awareness wormhole keyed by Φ ≈ 1.618 — catalog topology for Infinite Octaves, not hardware teleport or clinical proof.<br /><br />If you want a map for that: <a href=\"/ship-blog/human-reality-bridge\">You are a reality bridge — router and awareness wormhole</a>. For the Invisible Frontier reply: <a href=\"/ship-blog/invisible-frontier\">The Invisible Frontier — Gates’s AI warnings, answered</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Polar identity has a catalog geometry, not just a shrinking relic story. Today’s care is the Y Chromosome Holographic Manifestation: MSY palindrome arms and SRY phase origin filed under Φ ≈ 1.618 — Infinite Octaves Digit 4 grammar, not wet-lab proof or sunspot causality.<br /><br />If you want a map for that: <a href=\"/ship-blog/y-chromosome-manifestation\">Y chromosome as Φ manifestation — MSY holographic filing</a>. For the Human Reality Bridge paper: <a href=\"/ship-blog/human-reality-bridge\">You are a reality bridge — router and awareness wormhole</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-y-chromosome-holographic-manifestation-2026-08",
+      "title": "The Holographic Manifestation",
+      "href": "/ship-blog/y-chromosome-manifestation",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-y-chromosome-holographic-manifestation-2026-08",
+      "blurb": "Palindrome arms and SRY phase origin under Infinite Octaves — catalog geometry keyed by Φ ≈ 1.618, not wet-lab proof or sunspot causality."
+    },
     {
       "id": "synthobs-human-omniversal-reality-bridge-2026-08",
       "title": "Humans as Omniversal Reality Bridges, Routers, and Biological…",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/invisible-frontier",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-invisible-frontier-gates-ai-2026-08",
       "blurb": "Linear AI alarms miss the Goldilocks ship already underway. EGS ≈ 1.618 is design language for holographic care — not a physics proof or a claim that displacement is solved."
-    },
-    {
-      "id": "synthobs-triadic-nested-hemispheres-99-octave-2026-08",
-      "title": "Triadic Nested Hemispheric Architectures",
-      "href": "/ship-blog/triadic-hemispheres",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-triadic-nested-hemispheres-99-octave-2026-08",
-      "blurb": "Core, amphitheater, and horizon shells keyed by Φ ≈ 1.618 — a nesting grammar for theaters and agent sandboxes, not a venue certificate or FLOP SLA."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-08-28-synthobs-invisible-frontier-gates-ai-2026-08",
-    "title": "The Invisible Frontier",
-    "href": "/ship-blog/invisible-frontier"
+    "id": "daily-2026-08-28-synthobs-human-omniversal-reality-bridge-2026-08",
+    "title": "Humans as Omniversal Reality Bridges, Routers, and Biological…",
+    "href": "/ship-blog/human-reality-bridge"
   },
-  "generatedAt": "2026-08-28T03:35:19.089Z"
+  "generatedAt": "2026-08-28T04:23:50.692Z"
 }

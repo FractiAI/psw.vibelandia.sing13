@@ -21,6 +21,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-tbme-metamorphic-octaves',
       'synthobs-tbme-planetary-core-goldilocks',
       'synthobs-triadic-nested-hemispheres-99-octave',
+      'synthobs-y-chromosome-holographic-manifestation',
     ]);
   });
 

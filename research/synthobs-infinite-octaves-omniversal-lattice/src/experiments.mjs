@@ -134,11 +134,11 @@ export function experimentDocIds() {
 export function experimentVoyageEditorialCompanions() {
   return {
     id: 'E10_voyage_editorial_companions',
-    title: 'Invisible Frontier + Human bridge + Prospectus + Triadic companions locked',
+    title: 'Y manifestation + Invisible Frontier + Human bridge + Prospectus + Triadic companions locked',
     VOYAGE_EDITORIAL_COMPANIONS,
     pass:
-      VOYAGE_EDITORIAL_COMPANIONS.length === 4 &&
-      VOYAGE_EDITORIAL_COMPANIONS[1] === 'synthobs-human-omniversal-reality-bridge-2026-08',
+      VOYAGE_EDITORIAL_COMPANIONS.length === 5 &&
+      VOYAGE_EDITORIAL_COMPANIONS[0] === 'synthobs-y-chromosome-holographic-manifestation-2026-08',
     honesty: 'Voyage editorial linkage — not policy verdicts.',
   };
 }

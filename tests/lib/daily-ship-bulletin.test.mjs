@@ -32,13 +32,13 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 25');
   });
 
-  it('leads 2026-08-28 with Human Reality Bridge paper', async () => {
+  it('leads 2026-08-28 with Y Chromosome Manifestation paper', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-08-28' });
     expect(payload.highlights[0].id).toBe(
-      'synthobs-human-omniversal-reality-bridge-2026-08',
+      'synthobs-y-chromosome-holographic-manifestation-2026-08',
     );
-    expect(payload.htmlBody).toMatch(/Human Reality Bridge|reality bridge/i);
-    expect(payload.htmlBody).toContain('human-reality-bridge');
+    expect(payload.htmlBody).toMatch(/Y Chromosome|manifestation|MSY/i);
+    expect(payload.htmlBody).toContain('y-chromosome-manifestation');
     expect(payload.newsLabel).toContain('August 28');
   });
 

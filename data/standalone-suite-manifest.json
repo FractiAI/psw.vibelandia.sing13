@@ -4,6 +4,14 @@
   "updatedAt": "2026-08-28",
   "suites": [
     {
+      "id": "synthobs-y-chromosome-holographic-manifestation",
+      "path": "research/synthobs-y-chromosome-holographic-manifestation",
+      "github": "https://github.com/FractiAI/synthobs-y-chromosome-holographic-manifestation",
+      "description": "Y Chromosome Holographic Manifestation — Infinite Octaves Digit 4 suite",
+      "paperIds": ["synthobs-y-chromosome-holographic-manifestation-2026-08"],
+      "extraDocs": []
+    },
+    {
       "id": "synthobs-human-omniversal-reality-bridge",
       "path": "research/synthobs-human-omniversal-reality-bridge",
       "github": "https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge",

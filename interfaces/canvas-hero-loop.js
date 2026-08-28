@@ -7,6 +7,7 @@
  *   4) Concierto de El Gran Sol · Movement X · “The Shift”
  *   5) El Gran Sol’s Return 07 Suite
  *   6) El Gran Sol’s Return (organ)
+ *   7) Warning Danger Ahead
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -68,6 +69,15 @@
       src:
         'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
         'trk-srv-f617b3b3-1924-4c1f-bde5-77c9e66d1b81-el-gran-sol_s-return%28organ%29.mp3',
+    },
+    {
+      id: 'trk-srv-08a30790-4b50-468f-a019-3a7dfcd5e9ee',
+      label: 'Warning Danger Ahead',
+      short: 'Sound on · Warning Danger Ahead',
+      aria: 'Warning Danger Ahead',
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-08a30790-4b50-468f-a019-3a7dfcd5e9ee--warning-danger-ahead-.mp3',
     },
   ];
 

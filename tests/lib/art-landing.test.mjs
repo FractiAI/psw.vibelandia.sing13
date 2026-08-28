@@ -111,6 +111,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain("id: 'trk-srv-368792a6-4113-4351-965b-88eb09759e50'");
     expect(js).toContain("id: 'trk-srv-4e9d6a97-f247-477d-8f3e-02bb8cd9b785'");
     expect(js).toContain("id: 'trk-srv-64e96912-f382-4140-922e-953246c65e91'");
+    expect(js).toContain("id: 'trk-srv-f6ab8509-f622-4b25-bb91-cb83b113b17b'");
     expect(js).toContain("id: 'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3'");
     expect(js).toContain('Goldilocks Parabola');
     expect(js).toContain("El Gran Sol's Return 05 Suite");
@@ -120,13 +121,15 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain('Good Morning New Earth 8.75Hz');
     expect(js).toContain('Net Zero · The Borikén Hydrogen Line');
     expect(js).toContain('Rebel River · The Truckee Borikén Crossing');
+    expect(js).toContain('432 Solar Gavel');
     expect(js).toContain("El Gran Sol's Return 05 · Finale");
     const program = read('interfaces/concierto-el-gran-sol-program.html');
     expect(program).toContain('Concierto de El Gran Sol');
     expect(program).toContain('Download program (PDF)');
     expect(program).toContain('Net Zero · The Borikén Hydrogen Line');
     expect(program).toContain('Rebel River · The Truckee Borikén Crossing');
-    expect(program).toContain('Finale · Movement XI');
+    expect(program).toContain('432 Solar Gavel');
+    expect(program).toContain('Finale · Movement XII');
     expect(js).toContain('Movement X · The Shift');
     expect(js).toContain('bootSoundtrack');
     expect(js).toContain('audio.play');

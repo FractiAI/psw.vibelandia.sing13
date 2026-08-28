@@ -11,7 +11,8 @@
  *   8) Good Morning New Earth 8.75Hz
  *   9) Net Zero · The Borikén Hydrogen Line
  *  10) Rebel River · The Truckee Borikén Crossing
- *  11) El Gran Sol’s Return 05 · Finale
+ *  11) 432 Solar Gavel
+ *  12) El Gran Sol’s Return 05 · Finale
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -109,6 +110,15 @@
       src:
         'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
         'trk-srv-64e96912-f382-4140-922e-953246c65e91-rebel-river_-the-truckee-borike_n-crossing.mp3',
+    },
+    {
+      id: 'trk-srv-f6ab8509-f622-4b25-bb91-cb83b113b17b',
+      label: '432 Solar Gavel',
+      short: 'Sound on · 432 Solar Gavel',
+      aria: '432 Solar Gavel',
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-f6ab8509-f622-4b25-bb91-cb83b113b17b-432%20Solar%20Gavel.mp3',
     },
     {
       id: 'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3',

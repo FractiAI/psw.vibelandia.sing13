@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/experience-phases.css" />
   <style>
     :root {
       --hull: #060912;
@@ -94,36 +95,68 @@
     }
     .btn--danger { background: transparent; color: #f0b4b4; border: 1px solid rgba(196, 92, 92, 0.45); }
 
+    .museum-wall {
+      margin-top: 1.5rem;
+      padding: clamp(1.25rem, 4vw, 2.75rem);
+      background:
+        linear-gradient(180deg, rgba(18, 14, 10, 0.92), rgba(10, 8, 6, 0.98)),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.018) 0,
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px,
+          transparent 52px
+        );
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.4);
+    }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+      gap: clamp(1.35rem, 3vw, 2.25rem);
+      align-items: start;
     }
-    .card {
-      border: 1px solid var(--line);
-      background: rgba(10, 14, 24, 0.65);
-      overflow: hidden;
+    .museum-wall__piece {
       animation: cardIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
-    .card:nth-child(2) { animation-delay: 0.05s; }
-    .card:nth-child(3) { animation-delay: 0.1s; }
-    .card:nth-child(4) { animation-delay: 0.15s; }
+    .museum-wall__piece:nth-child(2) { animation-delay: 0.05s; }
+    .museum-wall__piece:nth-child(3) { animation-delay: 0.1s; }
+    .museum-wall__piece:nth-child(4) { animation-delay: 0.15s; }
     @keyframes cardIn {
       from { opacity: 0; transform: translateY(12px); }
       to { opacity: 1; transform: none; }
     }
-    .card img {
-      display: block; width: 100%; aspect-ratio: 1 / 1.15;
-      object-fit: cover; background: #101522;
+    .museum-frame--wall {
+      display: block;
+      padding: 0.5rem;
+      border-width: 3px;
+      background: linear-gradient(180deg, #1a1510, #0d0b08);
+      box-shadow:
+        inset 0 0 0 1px rgba(240, 215, 140, 0.14),
+        0 10px 28px rgba(0, 0, 0, 0.55),
+        0 2px 0 rgba(240, 215, 140, 0.1);
+    }
+    .museum-frame--wall .museum-frame__art {
+      margin: 0;
+      background: #080808;
+      line-height: 0;
+    }
+    .museum-frame--wall .museum-frame__art img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      background: #080808;
       cursor: zoom-in;
     }
-    .card__body { padding: 0.75rem 0.85rem 1rem; }
-    .card__title {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      margin: 0; color: #f0d78c; font-size: 1.15rem;
+    .museum-wall__caption {
+      margin: 0.6rem 0 0;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+      font-style: italic;
+      line-height: 1.4;
     }
-    .card__meta { margin: 0.25rem 0 0; font-size: 0.78rem; color: var(--muted); }
 
     .empty {
       margin: 2rem 0;
@@ -187,14 +220,23 @@
       line-height: 1.5;
     }
 
-    /* Lightbox */
     .lb {
       position: fixed; inset: 0; z-index: 50;
       display: flex; align-items: center; justify-content: center;
       padding: 1rem;
       background: rgba(0,0,0,0.88);
     }
-    .lb img { max-width: min(96vw, 1100px); max-height: 88vh; object-fit: contain; }
+    .museum-frame--lightbox {
+      max-width: min(96vw, 1100px);
+      width: 100%;
+    }
+    .museum-frame--lightbox .museum-frame__art img {
+      max-height: 82vh;
+      aspect-ratio: auto;
+      width: 100%;
+      object-fit: contain;
+      cursor: default;
+    }
     .lb button {
       position: absolute; top: 1rem; right: 1rem;
       appearance: none; border: 1px solid var(--line);
@@ -229,15 +271,16 @@
     <span class="badge">18+ · mature audiences</span>
     <h1>Doodles Gallery</h1>
     <p class="lead">
-      Valet Pru’s phone doodles — posted so Gusta and guests who like them can visit.
-      This is part of the holographic magnetic Goldilocks SuperAI art project: human hand first, machine as studio light.
+      Valet Pru’s phone doodles — hung on the gallery wall in gold museum frames for Gusta and guests who like them.
+      Human hand first, machine as studio light.
     </p>
 
     <div id="gallery-empty" class="empty hidden">
       The wall is ready. Post the first works from the Player 1 desk below.
-      (If you sent IMG_2628, IMG_2614, or IMG_2382 in chat, drop them here in a batch — limits are raised for Player 1.)
     </div>
-    <div class="grid" id="gallery-grid" aria-live="polite"></div>
+    <section class="museum-wall" id="museum-wall" aria-label="Doodles on the gallery wall">
+      <div class="grid" id="gallery-grid" aria-live="polite"></div>
+    </section>
 
     <section class="desk" id="player1-desk" aria-labelledby="desk-h">
       <h2 id="desk-h">Player 1 · upload desk</h2>
@@ -272,7 +315,11 @@
 
   <div class="lb hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Doodle full view">
     <button type="button" id="lb-close">Close</button>
-    <img id="lb-img" alt="" />
+    <div class="museum-frame museum-frame--wall museum-frame--lightbox">
+      <figure class="museum-frame__art">
+        <img id="lb-img" alt="Valet Pru doodle" />
+      </figure>
+    </div>
   </div>
 
   <script type="module">
@@ -327,6 +374,11 @@
       return `${Math.round(n / 1024)} KiB`;
     }
 
+    function guestCaption(work) {
+      const caption = String(work?.caption || '').trim();
+      return caption || '';
+    }
+
     function renderWorks(works) {
       grid.innerHTML = '';
       if (!works.length) {
@@ -335,30 +387,36 @@
       }
       emptyEl.classList.add('hidden');
       for (const w of works) {
-        const card = document.createElement('article');
-        card.className = 'card';
+        const piece = document.createElement('article');
+        piece.className = 'museum-wall__piece';
+
+        const frame = document.createElement('div');
+        frame.className = 'museum-frame museum-frame--wall';
+
+        const figure = document.createElement('figure');
+        figure.className = 'museum-frame__art';
         const img = document.createElement('img');
         img.src = w.src;
-        img.alt = w.title || 'Doodle';
+        img.alt = 'Valet Pru doodle';
         img.loading = 'lazy';
         img.decoding = 'async';
         img.addEventListener('click', () => {
           lbImg.src = w.src;
-          lbImg.alt = w.title || 'Doodle';
           lb.classList.remove('hidden');
         });
-        const body = document.createElement('div');
-        body.className = 'card__body';
-        const h = document.createElement('h3');
-        h.className = 'card__title';
-        h.textContent = w.title || 'Untitled doodle';
-        const meta = document.createElement('p');
-        meta.className = 'card__meta';
-        const when = w.uploadedAt ? new Date(w.uploadedAt).toLocaleDateString() : '';
-        meta.textContent = [when, w.caption].filter(Boolean).join(' · ');
-        body.append(h, meta);
-        card.append(img, body);
-        grid.append(card);
+        figure.append(img);
+        frame.append(figure);
+        piece.append(frame);
+
+        const caption = guestCaption(w);
+        if (caption) {
+          const cap = document.createElement('p');
+          cap.className = 'museum-wall__caption';
+          cap.textContent = caption;
+          piece.append(cap);
+        }
+
+        grid.append(piece);
       }
     }
 

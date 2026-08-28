@@ -145,4 +145,13 @@ describe('Doodles Gallery · Player 1 elevated limits', () => {
     expect(html).toContain('uploadBlobOnly');
     expect(html).not.toContain("action: 'register'");
   });
+
+  it('gallery wall renders museum gold frames without filename labels', () => {
+    const html = readFileSync(join(ROOT, 'interfaces/doodles-gallery.html'), 'utf8');
+    expect(html).toContain('museum-wall');
+    expect(html).toContain('museum-frame--wall');
+    expect(html).toContain('experience-phases.css');
+    expect(html).not.toContain('card__title');
+    expect(html).toContain("alt = 'Valet Pru doodle'");
+  });
 });

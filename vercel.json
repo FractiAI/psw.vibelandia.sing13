@@ -1205,6 +1205,14 @@
       "destination": "/interfaces/blog-soundtrack-prelude-pages-2026-08.html"
     },
     {
+      "source": "/concierto-program",
+      "destination": "/interfaces/concierto-el-gran-sol-program.html"
+    },
+    {
+      "source": "/concierto-program/",
+      "destination": "/interfaces/concierto-el-gran-sol-program.html"
+    },
+    {
       "source": "/ship-blog/triadic-hemispheres",
       "destination": "/interfaces/blog-triadic-hemispheres-2026-08.html"
     },

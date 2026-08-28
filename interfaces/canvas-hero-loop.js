@@ -9,6 +9,7 @@
  *   6) El Gran Sol’s Return (organ)
  *   7) Warning Danger Ahead
  *   8) Good Morning New Earth 8.75Hz
+ *   9) El Gran Sol’s Return 05 · Finale
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -88,6 +89,15 @@
       src:
         'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
         'trk-srv-368792a6-4113-4351-965b-88eb09759e50-good-morning-new-earth-8.75hz.m4a',
+    },
+    {
+      id: 'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3',
+      label: "El Gran Sol's Return 05 · Finale",
+      short: "Sound on · Return 05 Finale",
+      aria: "El Gran Sol's Return 05 · Finale",
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3-el-gran-sol_s-return-05.mp3',
     },
   ];
 

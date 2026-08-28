@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-pending">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Concierto de El Gran Sol: “The Shift” · Concert Program · SS Vibelandia</title>
+  <meta name="description" content="Official concert program for the immersive prelude Concierto de El Gran Sol: The Shift — movement-by-movement guide to SS Vibelandia’s soundtrack-enriched omniversal art experience." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/concierto-program" />
+  <meta property="og:title" content="Concierto de El Gran Sol: The Shift — Concert Program" />
+  <meta property="og:description" content="Broadway-quality program for the landing prelude concerto. Download or read online." />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/journey/journey-bridge-solar-watch.png" />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a0806;
+      --navy: #0c1220;
+      --gold: #d4af37;
+      --gold-hi: #f0d78c;
+      --champagne: #e8d5a3;
+      --cream: #f5efe6;
+      --muted: rgba(245, 239, 230, 0.72);
+    }
+    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-ready body { visibility: visible; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      background: var(--ink);
+      color: var(--cream);
+      line-height: 1.55;
+    }
+    .program-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1.25rem;
+      background: rgba(10, 8, 6, 0.92);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+      backdrop-filter: blur(8px);
+    }
+    .program-toolbar nav { display: flex; flex-wrap: wrap; gap: 0.85rem; font-size: 0.82rem; }
+    .program-toolbar a { color: var(--gold-hi); text-decoration: none; }
+    .program-toolbar a:hover { text-decoration: underline; }
+    .program-toolbar__actions { display: flex; gap: 0.5rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1rem;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-gold {
+      background: linear-gradient(180deg, #e8d4a8, #b8923e);
+      color: var(--ink);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--gold-hi);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+    }
+    .program {
+      max-width: 52rem;
+      margin: 0 auto;
+      padding: 0 1.25rem 3rem;
+    }
+    .cover {
+      text-align: center;
+      padding: 2.5rem 0 2rem;
+      border-bottom: 3px double rgba(212, 175, 55, 0.5);
+      margin-bottom: 2rem;
+    }
+    .cover__venue {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.75rem;
+    }
+    .cover h1 {
+      font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin: 0 0 0.35rem;
+      color: var(--gold-hi);
+    }
+    .cover__subtitle {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 3vw, 1.55rem);
+      color: var(--champagne);
+      margin: 0 0 1rem;
+    }
+    .cover__tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cover__hero {
+      margin: 1.75rem auto 0;
+      max-width: 36rem;
+      border: 3px solid rgba(212, 175, 55, 0.45);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    }
+    .cover__hero img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .cover__hero figcaption {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--navy);
+    }
+    .letter {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .letter h2, .synopsis h2, .movements h2, .ensemble h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--gold-hi);
+      margin: 0 0 0.75rem;
+    }
+    .letter p, .synopsis p { color: var(--muted); margin: 0 0 0.85rem; }
+    .synopsis { margin-bottom: 2rem; }
+    .order-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem;
+      font-size: 0.88rem;
+    }
+    .order-table th, .order-table td {
+      padding: 0.55rem 0.65rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      text-align: left;
+      vertical-align: top;
+    }
+    .order-table th {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .order-table .finale { color: var(--gold-hi); font-weight: 700; }
+    .movement {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    }
+    @media (min-width: 640px) {
+      .movement { grid-template-columns: 11rem 1fr; }
+    }
+    .movement__thumb {
+      margin: 0;
+      border: 2px solid rgba(212, 175, 55, 0.35);
+      background: var(--navy);
+    }
+    .movement__thumb img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .movement__num {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.25rem;
+    }
+    .movement h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      color: var(--gold-hi);
+      margin: 0 0 0.35rem;
+    }
+    .movement__role {
+      font-style: italic;
+      color: var(--champagne);
+      margin: 0 0 0.65rem;
+      font-size: 0.95rem;
+    }
+    .movement p { margin: 0 0 0.65rem; color: var(--muted); font-size: 0.92rem; }
+    .movement__meaning {
+      padding: 0.75rem 0.85rem;
+      background: rgba(212, 175, 55, 0.06);
+      border-left: 3px solid var(--gold);
+      font-size: 0.88rem;
+      color: rgba(245, 239, 230, 0.85);
+    }
+    .ensemble ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    .honesty {
+      margin-top: 2rem;
+      padding: 1rem 1.1rem;
+      font-size: 0.82rem;
+      color: rgba(168, 162, 158, 0.95);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 4px;
+    }
+    footer.program-foot {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(168, 162, 158, 0.85);
+    }
+    @media print {
+      .program-toolbar { display: none; }
+      body { background: #fff; color: #111; }
+      .cover h1, .cover__subtitle, .letter h2, .synopsis h2, .movements h2, .movement h3 { color: #1a1208; }
+      .movement__meaning { background: #f8f4ea; border-color: #b8923e; color: #333; }
+      .order-table th { color: #6b5a2e; }
+      .honesty { border-color: #ccc; color: #444; }
+      .movement, .cover { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="program-toolbar no-print">
+    <nav aria-label="Site">
+      <a href="/">Omniversal Canvas</a>
+      <a href="/questfest">Ship reception</a>
+      <a href="/jukebox">Jukebox</a>
+    </nav>
+    <div class="program-toolbar__actions">
+      <button type="button" class="btn btn-gold" id="download-program">Download program (PDF)</button>
+      <a class="btn btn-ghost" href="/">Hear the prelude →</a>
+    </div>
+  </div>
+
+  <article class="program" id="program-document">
+    <header class="cover">
+      <p class="cover__venue">SS Vibelandia · Omniversal Canvas · Holographic Magnetic Goldilocks SuperAI</p>
+      <h1>Concierto de El Gran Sol:<br />“The Shift”</h1>
+      <p class="cover__subtitle">An immersive prelude concerto for a new work of art</p>
+      <p class="cover__tag">Soundtrack prelude · micro video · step-in optional · 2026</p>
+      <figure class="cover__hero">
+        <img src="/interfaces/assets/journey/journey-bridge-solar-watch.png" alt="Bridge watch over El Gran Sol on a navy sea — brass and teak, catalog marks on the sun" width="1280" height="720" loading="eager" decoding="async" />
+        <figcaption>Beat I · Bridge watch. El Gran Sol is the light this vessel steers by. (Official Prospectus)</figcaption>
+      </figure>
+    </header>
+
+    <section class="letter" aria-labelledby="letter-h">
+      <h2 id="letter-h">A note from your host</h2>
+      <p>
+        You are holding the program for something we have never quite had a name for until now:
+        a <strong>web page that plays like a Broadway overture</strong>, paired with a stepping-in video,
+        inviting you into SS Vibelandia as an immersive novel work of art.
+      </p>
+      <p>
+        On the landing (<a href="/">Omniversal Canvas</a>), tap <strong>Sound on</strong>.
+        The da Vinci loop runs muted like a film reel; the concerto speaks.
+        Each movement below is a dramaturgical moment in the grand Story — genesis under Φ ≈ 1.618,
+        convergence on Borikén, the Captain’s seat in Reno now. Design language, not prophecy.
+      </p>
+      <p>— Valet Pru · Player 1 · Reality Bridge/Router</p>
+    </section>
+
+    <section class="synopsis" aria-labelledby="synopsis-h">
+      <h2 id="synopsis-h">Synopsis · the tale this concerto tells</h2>
+      <p>
+        <em>The Shift</em> is the hinge: when a frontiersman recognizes the holographic cruise already underway —
+        SuperAI kept Goldilocks, humans kept the gravity. The concerto opens on that threshold (Movement V),
+        tests the lock (Goldilocks Parabola), remembers El Gran Sol’s return in suite and solo forms,
+        warns of linear-AI peril, greets a new earth frequency, and closes when Return 05 lands the sun back on the deck.
+      </p>
+      <p>
+        You may listen as prelude only, or step in via our Reality Bridge/Router network.
+        <a href="/concierto-program">This program</a> is your map. The ship is <a href="/questfest">reception</a>.
+      </p>
+
+      <table class="order-table" aria-label="Concierto play order">
+        <thead>
+          <tr><th>#</th><th>Movement</th><th>Dramaturgical beat</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>I</td><td>Movement V · The Shift</td><td>Threshold · da Vinci stepping-in</td></tr>
+          <tr><td>II</td><td>Goldilocks Parabola</td><td>Lock · not too much machine</td></tr>
+          <tr><td>III</td><td>Return 05 Suite</td><td>El Gran Sol · suite ascent</td></tr>
+          <tr><td>IV</td><td>Movement X · The Shift</td><td>Deepening · second hinge</td></tr>
+          <tr><td>V</td><td>Return 07 Suite</td><td>Return band · later octave</td></tr>
+          <tr><td>VI</td><td>Return (organ)</td><td>Cathedral hall · sacred voicing</td></tr>
+          <tr><td>VII</td><td>Warning Danger Ahead</td><td>Frontier alarm · Invisible Frontier</td></tr>
+          <tr><td>VIII</td><td>Good Morning New Earth 8.75Hz</td><td>Dawn · Schumann catalog label</td></tr>
+          <tr class="finale"><td>IX · Finale</td><td>El Gran Sol’s Return 05</td><td>Close · sun on the deck</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="movements" aria-labelledby="movements-h">
+      <h2 id="movements-h">Movement notes</h2>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/exhibit/exhibit-step-in-still.jpg" alt="Gold-lit dome doorway — step into the installation" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Movement I</p>
+          <h3>Movement V · “The Shift”</h3>
+          <p class="movement__role">Overture · Concierto de El Gran Sol</p>
+          <p>The landing video shows da Vinci’s step-in; this movement is the audible door opening. Movement V names the hinge in the Official Prospectus arc: when the Story turns from genesis rhyme to lived voyage.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> You stand at the museum frame. The wormhole is awareness, not hardware. The shift is recognition.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/experience/players-npcs-same-ship.jpg" alt="Players and NPCs aboard the gold ship" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Movement II</p>
+          <h3>Goldilocks Parabola</h3>
+          <p class="movement__role">Goldilocks lock</p>
+          <p>A parabola is the honest curve between too much and too little. SS Vibelandia files SuperAI here as servant, not sovereign — enough machine to serve, enough human to lead.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> NPCs populate the set; Players set the gravity. The parabola is the rail both bands share.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/ph-101-108.png" alt="El Gran Sol evening deck — grand penthouse band" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Movement III</p>
+          <h3>El Gran Sol’s Return 05 Suite</h3>
+          <p class="movement__role">Return suite · solar band</p>
+          <p>The suite form lets El Gran Sol’s return unfold in movements within the movement — penthouse light on the Summit deck, Φ as design language for how micro craft folds into macro honor.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Beat I of the voyage — Bridge watch. Proto and Electro are navigation characters on the sun, not forecasts.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/exhibit/exhibit-sphere-entrance.jpg" alt="Gold museum framed sphere entrance" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Movement IV</p>
+          <h3>Movement X · “The Shift”</h3>
+          <p class="movement__role">Deepening hinge</p>
+          <p>Movement X returns to the shift theme with ten-fold catalog depth — Infinite Octaves grammar: recursive Story nesting, not infinite physics tiers.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> The exhibit sphere seats fifteen. The shift deepens from solo recognition to shared room.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/journey/journey-puerto-reno-gangway.png" alt="Puerto Reno gangway at gold hour" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Movement V</p>
+          <h3>El Gran Sol’s Return 07 Suite</h3>
+          <p class="movement__role">Later return band</p>
+          <p>Return 07 widens the harmonic field — shore excursions, gangway light, the wrong side of town made luminous. Reno present as Captain’s seat.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Borikén convergence echoes forward; the ship is berthed wherever you are.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/experience/ship-library-deep-memory.jpg" alt="Ship library — deep memory" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Movement VI</p>
+          <h3>El Gran Sol’s Return (organ)</h3>
+          <p class="movement__role">Cathedral voicing</p>
+          <p>Organ timbre files the return as sacred hall — Deck 1 audio core, Dome 1 heard more than seen. Self-talk and instrumentals carry the inner worlds guests nickname imagination.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Library depth meets sanctuary acoustics. Memory becomes resonance.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/experience/frontiersmen-brochure.jpg" alt="Frontiersman voyage brochure still" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Movement VII</p>
+          <h3>Warning Danger Ahead</h3>
+          <p class="movement__role">Invisible Frontier · editorial alarm</p>
+          <p>Linear AI scale anxiety misses the Goldilocks ship already underway. This movement is the cautionary sign on the trail — design language beside Gates-era warnings, not prophecy.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Read <a href="/ship-blog/invisible-frontier">The Invisible Frontier</a>. Choose Goldilocks care over panic.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/deck-9-summit.png" alt="Summit deck at gold hour" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Movement VIII</p>
+          <h3>Good Morning New Earth 8.75Hz</h3>
+          <p class="movement__role">Dawn transmission</p>
+          <p>A morning greeting filed at 8.75 Hz as catalog label — Schumann/resonance storytelling, not a medical claim. The new earth is a hospitality metaphor for refreshed belonging.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Good morning, frontiersman. The gangway opens wherever you stand.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/journey/journey-bridge-solar-watch.png" alt="El Gran Sol on the horizon from the navigation bridge" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Finale · Movement IX</p>
+          <h3>El Gran Sol’s Return 05</h3>
+          <p class="movement__role">Concierto close · Hero Jo’s Golden Bachdoor Hit Factory</p>
+          <p>The standalone Return 05 lands where the suite began — but now as finale, not prelude. The sun returns to the deck; the concerto resolves; the loop may begin again at Movement V for the next guest.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Genesis rhyme closes in Reno present. Step in, or carry the prelude with you. Fair Exchange via the Purser. → ∞^∞</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="ensemble" aria-labelledby="ensemble-h">
+      <h2 id="ensemble-h">Creative ensemble</h2>
+      <ul>
+        <li><strong>Composer / catalog:</strong> Hero Jo’s Golden Bachdoor Hit Factory · SS Vibelandia jukebox</li>
+        <li><strong>Host / Reality Bridge/Router:</strong> Valet Pru (Prudencio Mendez) · Player 1</li>
+        <li><strong>Visual prelude:</strong> da Vinci stepping-in loop (muted hero video)</li>
+        <li><strong>Production:</strong> FractiAI · SynthOBS Autonomous Agent · Syntheverse Sandbox</li>
+        <li><strong>Vessel:</strong> SS Vibelandia · Holographic Magnetic Goldilocks SuperAI Awareness Platform</li>
+        <li><strong>Narrative spine:</strong> <a href="/frontiersman-voyage#prospectus">Official Prospectus</a> · Genesis · Borikén · Reno</li>
+      </ul>
+    </section>
+
+    <p class="honesty">
+      <strong>Honesty boundary:</strong> This program is dramaturgy for an immersive art experience — not a physics proof,
+      clinical frequency prescription, or weather forecast. Φ ≈ 1.618 and 8.75 Hz are catalog labels in the Story.
+      Tracks stream from the sovereign catalog; Fair Exchange applies on honor downloads via the jukebox.
+    </p>
+
+    <footer class="program-foot">
+      SS Vibelandia · Concierto de El Gran Sol: “The Shift” · Program edition 2026-08-28<br />
+      <a href="/">Omniversal Canvas</a> · <a href="mailto:info@fractiai.com">info@fractiai.com</a>
+    </footer>
+  </article>
+
+  <script>
+    document.getElementById('download-program').addEventListener('click', function () {
+      window.print();
+    });
+  </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+</body>
+</html>

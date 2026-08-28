@@ -261,7 +261,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-28** · **234** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-28** · **235** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -375,6 +375,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/bulk-track-upload.html`](/interfaces/bulk-track-upload.html) | Bulk track upload · QUESTFEST |
 | [`/interfaces/bulletin-board.html`](/interfaces/bulletin-board.html) | SS Vibelandia Bulletin Board · QUESTFEST 24×365 |
 | [`/interfaces/coexist-ai-asi.html`](/interfaces/coexist-ai-asi.html) | Coexisting with AI and Super AI · Which Quadrant Are You? · SS Vibelandia |
+| [`/interfaces/concierto-el-gran-sol-program.html`](/interfaces/concierto-el-gran-sol-program.html) | Concierto de El Gran Sol: “The Shift” · Concert Program · SS Vibelandia |
 | [`/interfaces/creator-studio.html`](/interfaces/creator-studio.html) | Creator Studio · Deck 2 Core · SS Vibelandia |
 | [`/interfaces/digital-pru-awareness-whitepaper.html`](/interfaces/digital-pru-awareness-whitepaper.html) | Redirect · Deep reads · Look under the hood |
 | [`/interfaces/doodles-gallery.html`](/interfaces/doodles-gallery.html) | Doodles Gallery · 18+ · Valet Pru · SS Vibelandia |

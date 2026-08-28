@@ -93,6 +93,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('id="canvas-hero-shift"');
     expect(html).toContain('id="canvas-hero-score"');
     expect(html).toContain('id="soundtrack-prelude"');
+    expect(html).toContain('/concierto-program');
     expect(html).toContain('/ship-blog/soundtrack-prelude-pages');
     expect(html).toContain(
       'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3'
@@ -108,12 +109,18 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain("id: 'trk-srv-f617b3b3-1924-4c1f-bde5-77c9e66d1b81'");
     expect(js).toContain("id: 'trk-srv-08a30790-4b50-468f-a019-3a7dfcd5e9ee'");
     expect(js).toContain("id: 'trk-srv-368792a6-4113-4351-965b-88eb09759e50'");
+    expect(js).toContain("id: 'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3'");
     expect(js).toContain('Goldilocks Parabola');
     expect(js).toContain("El Gran Sol's Return 05 Suite");
     expect(js).toContain("El Gran Sol's Return 07 Suite");
     expect(js).toContain("El Gran Sol's Return (organ)");
     expect(js).toContain('Warning Danger Ahead');
     expect(js).toContain('Good Morning New Earth 8.75Hz');
+    expect(js).toContain("El Gran Sol's Return 05 · Finale");
+    const program = read('interfaces/concierto-el-gran-sol-program.html');
+    expect(program).toContain('Concierto de El Gran Sol');
+    expect(program).toContain('Download program (PDF)');
+    expect(program).toContain('Finale · Movement IX');
     expect(js).toContain('Movement X · The Shift');
     expect(js).toContain('bootSoundtrack');
     expect(js).toContain('audio.play');

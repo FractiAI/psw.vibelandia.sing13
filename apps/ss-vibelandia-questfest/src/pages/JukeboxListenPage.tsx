@@ -30,6 +30,7 @@ export function JukeboxListenPage() {
   const getTrack = useCatalogStore((s) => s.getTrack);
   const [searchParams, setSearchParams] = useSearchParams();
   const sharedTrackHandled = useRef(false);
+  const sharedPlaylistHandled = useRef(false);
   const [editingPlaylistId, setEditingPlaylistId] = useState<string | null>(null);
   const [managePlaylistsOpen, setManagePlaylistsOpen] = useState(false);
 
@@ -84,6 +85,39 @@ export function JukeboxListenPage() {
     setSearchParams({}, { replace: true });
     navigate(JUKEBOX_NOW_PLAYING_PATH, { replace: true });
   }, [deviceHydrated, getTrack, navigate, searchParams, setActivePlaylist, setSearchParams, trackCount]);
+
+  useEffect(() => {
+    const playlistId = searchParams.get('playlist');
+    const autoplay = searchParams.get('autoplay') === '1';
+    if (!playlistId || !deviceHydrated || sharedPlaylistHandled.current) return;
+    if (!playlists.some((p) => p.id === playlistId)) return;
+
+    if (!autoplay) {
+      sharedPlaylistHandled.current = true;
+      setActivePlaylist(playlistId);
+      setSearchParams({}, { replace: true });
+      return;
+    }
+
+    const pl = playlists.find((p) => p.id === playlistId);
+    const firstId = pl?.trackIds.find((id) => getTrack(id));
+    if (!firstId) return;
+
+    sharedPlaylistHandled.current = true;
+    setActivePlaylist(playlistId);
+    playTrackById(firstId, getTrack, { playbackPlaylistId: playlistId });
+    setSearchParams({}, { replace: true });
+    navigate(JUKEBOX_NOW_PLAYING_PATH, { replace: true });
+  }, [
+    deviceHydrated,
+    getTrack,
+    navigate,
+    playlists,
+    searchParams,
+    setActivePlaylist,
+    setSearchParams,
+    trackCount,
+  ]);
 
   const playlistId = activePlaylistId || MASTER_PLAYLIST_ID;
 

@@ -28,6 +28,14 @@ export function isMyLikesPlaylist(id: string): boolean {
   return id === MY_LIKES_PLAYLIST_ID;
 }
 
+export function isConciertoPreludePlaylist(id: string): boolean {
+  return id === 'pl-concierto-prelude';
+}
+
+export function isCatalogPinnedPlaylist(id: string): boolean {
+  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id);
+}
+
 export const MASTER_PLAYLIST_DEFAULT_NAME = SONIC_CATALOG_DISPLAY_NAME;
 
 export const MASTER_PLAYLIST_DEFAULT_DESCRIPTION = MASTER_LIBRARY_UI_HINT;

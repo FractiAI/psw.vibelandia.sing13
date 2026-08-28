@@ -1,5 +1,10 @@
 import { upload } from '@vercel/blob/client';
-import { buildEmptyCatalog, isMasterPlaylist, isMyLikesPlaylist } from '@/lib/catalogSeed';
+import {
+  buildEmptyCatalog,
+  isConciertoPreludePlaylist,
+  isMasterPlaylist,
+  isMyLikesPlaylist,
+} from '@/lib/catalogSeed';
 import { fetchJsonWithTimeout } from '@/lib/fetchWithTimeout';
 import { isIOSDevice } from '@/lib/devicePlayback';
 import {
@@ -564,7 +569,12 @@ export async function syncUserPlaylistsToServer(
   if (!secret) return;
 
   const shared = playlists
-    .filter((p) => !isMasterPlaylist(p.id) && !isMyLikesPlaylist(p.id))
+    .filter(
+      (p) =>
+        !isMasterPlaylist(p.id) &&
+        !isMyLikesPlaylist(p.id) &&
+        !isConciertoPreludePlaylist(p.id),
+    )
     .map((p) => ({
       id: p.id,
       name: p.name,

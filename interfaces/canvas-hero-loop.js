@@ -1,20 +1,43 @@
 /**
  * Omniversal Canvas landing · YouTube hero loop (muted, autoplay, loop)
- * + landing soundtrack playlist in a dedicated prelude popup session:
- *   playback survives navigation — browse links and rooms while music continues.
+ * + Concierto prelude via jukebox now-playing session (qv-jukebox):
+ *   opens pl-concierto-prelude in the Sovereign Player — music continues while browsing.
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
   'use strict';
 
   var YOUTUBE_ID = '0hicJ_AZups';
-  var PRELUDE_NAME = 'qv-canvas-prelude';
-  var PRELUDE_URL = '/prelude-session';
-  var CHANNEL_NAME = 'qv-canvas-prelude';
-  var PRELUDE_FEATURES =
-    'popup=yes,width=420,height=320,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=no';
+  var JUKEBOX_NAME = 'qv-jukebox';
+  var CHANNEL_NAME = 'qv-jukebox-prelude';
+  var PRELUDE_PLAYLIST_ID = 'pl-concierto-prelude';
+  var JUKEBOX_FEATURES =
+    'popup=yes,width=420,height=780,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=no';
 
   var PLAYLIST = window.CANVAS_PRELUDE_PLAYLIST || [];
+
+  function jukeboxPreludeUrl(autoplay) {
+    var q = 'playlist=' + encodeURIComponent(PRELUDE_PLAYLIST_ID);
+    if (autoplay) q += '&autoplay=1';
+    return '/interfaces/questfest-bridge/#/listen?' + q;
+  }
+
+  function labelForTrackId(trackId) {
+    for (var i = 0; i < PLAYLIST.length; i++) {
+      if (PLAYLIST[i].id === trackId) return PLAYLIST[i];
+    }
+    return null;
+  }
+
+  function labelFromTitle(title) {
+    if (!title) return null;
+    var lower = String(title).toLowerCase();
+    for (var i = 0; i < PLAYLIST.length; i++) {
+      if (String(PLAYLIST[i].label).toLowerCase() === lower) return PLAYLIST[i];
+      if (String(PLAYLIST[i].aria).toLowerCase() === lower) return PLAYLIST[i];
+    }
+    return null;
+  }
 
   function prefersReducedMotion() {
     try {
@@ -56,27 +79,15 @@
     });
   }
 
-  function pingCatalogPlay(trackId) {
-    try {
-      fetch('/api/catalog-plays', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ trackId: trackId }),
-        keepalive: true,
-      }).catch(function () {});
-    } catch (_) {}
-  }
-
   function bootSoundtrack() {
-    if (prefersReducedMotion() || !PLAYLIST.length) return;
+    if (prefersReducedMotion()) return;
 
     var btn = document.getElementById('canvas-hero-score');
-    var fallbackAudio = document.getElementById('canvas-hero-shift');
     var channel = null;
-    var preludeWin = null;
+    var jukeboxWin = null;
     var useFallback = false;
     var remotePlaying = false;
-    var remoteTrack = PLAYLIST[0];
+    var remoteTrack = PLAYLIST[0] || { short: 'Sound on · The Shift', aria: 'Movement V · The Shift' };
 
     try {
       channel = new BroadcastChannel(CHANNEL_NAME);
@@ -97,37 +108,42 @@
       );
     }
 
-    function openPreludeSession() {
+    function openJukeboxSession(autoplay) {
       if (useFallback) return null;
+      var url = jukeboxPreludeUrl(autoplay !== false);
       try {
-        preludeWin = window.open(PRELUDE_URL, PRELUDE_NAME, PRELUDE_FEATURES);
+        jukeboxWin = window.open(url, JUKEBOX_NAME, JUKEBOX_FEATURES);
       } catch (_) {
-        preludeWin = null;
+        jukeboxWin = null;
       }
-      if (!preludeWin) {
+      if (!jukeboxWin) {
         useFallback = true;
         return null;
       }
       try {
-        preludeWin.focus();
+        jukeboxWin.focus();
       } catch (_) {}
-      return preludeWin;
+      return jukeboxWin;
     }
 
-    function postToPrelude(type) {
+    function postToJukebox(type) {
       if (channel) {
-        channel.postMessage({ type: type });
+        channel.postMessage({
+          type: type,
+          playlistId: PRELUDE_PLAYLIST_ID,
+        });
         return;
       }
-      if (preludeWin && !preludeWin.closed) {
+      if (jukeboxWin && !jukeboxWin.closed) {
         try {
-          preludeWin.focus();
+          jukeboxWin.focus();
         } catch (_) {}
       }
     }
 
     function bootFallbackPlayer() {
-      if (!fallbackAudio) return;
+      var fallbackAudio = document.getElementById('canvas-hero-shift');
+      if (!fallbackAudio || !PLAYLIST.length) return;
 
       var index = 0;
       var logged = {};
@@ -152,7 +168,14 @@
         setToggleState(true, track);
         if (!logged[track.id]) {
           logged[track.id] = true;
-          pingCatalogPlay(track.id);
+          try {
+            fetch('/api/catalog-plays', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ trackId: track.id }),
+              keepalive: true,
+            }).catch(function () {});
+          } catch (_) {}
         }
       }
 
@@ -173,19 +196,6 @@
         return Promise.resolve(true);
       }
 
-      function unlockOnGesture() {
-        tryPlay().then(function () {
-          window.removeEventListener('pointerdown', unlockOnGesture, true);
-          window.removeEventListener('keydown', unlockOnGesture, true);
-          window.removeEventListener('touchstart', unlockOnGesture, true);
-        });
-      }
-
-      function advance() {
-        loadTrack(index + 1);
-        tryPlay();
-      }
-
       loadTrack(0);
 
       fallbackAudio.addEventListener('play', markPlaying);
@@ -195,7 +205,10 @@
           setToggleState(false, current());
         }
       });
-      fallbackAudio.addEventListener('ended', advance);
+      fallbackAudio.addEventListener('ended', function () {
+        loadTrack(index + 1);
+        tryPlay();
+      });
 
       window.__canvasPreludeTryPlay = tryPlay;
       window.__canvasPreludePause = function () {
@@ -203,21 +216,10 @@
         remotePlaying = false;
         setToggleState(false, current());
       };
-
-      tryPlay().then(function (ok) {
-        if (ok === false || fallbackAudio.paused) {
-          window.addEventListener('pointerdown', unlockOnGesture, true);
-          window.addEventListener('keydown', unlockOnGesture, true);
-          window.addEventListener('touchstart', unlockOnGesture, {
-            capture: true,
-            passive: true,
-          });
-        }
-      });
     }
 
-    function ensurePreludeAndPlay() {
-      openPreludeSession();
+    function ensureJukeboxAndPlay() {
+      openJukeboxSession(true);
       if (useFallback) {
         if (!window.__canvasPreludeBooted) {
           bootFallbackPlayer();
@@ -228,16 +230,16 @@
         }
         return Promise.resolve(false);
       }
-      postToPrelude('play');
+      postToJukebox('play');
       return Promise.resolve(true);
     }
 
-    function pausePrelude() {
+    function pauseJukebox() {
       if (useFallback && window.__canvasPreludePause) {
         window.__canvasPreludePause();
         return;
       }
-      postToPrelude('pause');
+      postToJukebox('pause');
       remotePlaying = false;
       setToggleState(false, remoteTrack);
     }
@@ -246,10 +248,13 @@
       channel.addEventListener('message', function (ev) {
         var msg = ev && ev.data;
         if (!msg || msg.type !== 'state') return;
+        if (msg.playlistId && msg.playlistId !== PRELUDE_PLAYLIST_ID) return;
         remotePlaying = !!msg.playing;
-        if (msg.trackShort && msg.trackAria) {
-          remoteTrack = { short: msg.trackShort, aria: msg.trackAria };
-        }
+        var mapped =
+          labelForTrackId(msg.trackId) ||
+          labelFromTitle(msg.trackTitle) ||
+          remoteTrack;
+        if (mapped) remoteTrack = mapped;
         setToggleState(remotePlaying, remoteTrack);
       });
       channel.postMessage({ type: 'ping' });
@@ -257,19 +262,19 @@
 
     if (btn) {
       btn.hidden = false;
-      setToggleState(false, PLAYLIST[0]);
+      setToggleState(false, PLAYLIST[0] || remoteTrack);
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
         if (remotePlaying) {
-          pausePrelude();
+          pauseJukebox();
           return;
         }
-        ensurePreludeAndPlay();
+        ensureJukeboxAndPlay();
       });
     }
 
     function unlockOnGesture() {
-      ensurePreludeAndPlay();
+      ensureJukeboxAndPlay();
       window.removeEventListener('pointerdown', unlockOnGesture, true);
       window.removeEventListener('keydown', unlockOnGesture, true);
       window.removeEventListener('touchstart', unlockOnGesture, true);

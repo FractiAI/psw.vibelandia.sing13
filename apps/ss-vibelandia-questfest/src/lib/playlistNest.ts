@@ -1,5 +1,10 @@
 import type { PlaylistDef, TrackDef } from '@/lib/catalogTypes';
-import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import {
+  isConciertoPreludePlaylist,
+  isMasterPlaylist,
+  isMyLikesPlaylist,
+  MASTER_PLAYLIST_ID,
+} from '@/lib/catalogSeed';
 
 export function normalizeChildPlaylistIds(ids: string[] | undefined): string[] {
   if (!Array.isArray(ids)) return [];
@@ -13,7 +18,11 @@ export function topLevelUserPlaylists(playlists: PlaylistDef[]): PlaylistDef[] {
     for (const id of normalizeChildPlaylistIds(p.childPlaylistIds)) nested.add(id);
   }
   return playlists.filter(
-    (p) => !isMasterPlaylist(p.id) && !isMyLikesPlaylist(p.id) && !nested.has(p.id),
+    (p) =>
+      !isMasterPlaylist(p.id) &&
+      !isMyLikesPlaylist(p.id) &&
+      !isConciertoPreludePlaylist(p.id) &&
+      !nested.has(p.id),
   );
 }
 
@@ -63,7 +72,9 @@ export function canNestPlaylist(
     isMasterPlaylist(parentId) ||
     isMasterPlaylist(childId) ||
     isMyLikesPlaylist(parentId) ||
-    isMyLikesPlaylist(childId)
+    isMyLikesPlaylist(childId) ||
+    isConciertoPreludePlaylist(parentId) ||
+    isConciertoPreludePlaylist(childId)
   ) {
     return false;
   }
@@ -110,7 +121,9 @@ export function nestablePlaylistsForParent(
 ): PlaylistDef[] {
   return playlists.filter((p) => {
     if (p.id === parentId) return false;
-    if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id)) return false;
+    if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id) || isConciertoPreludePlaylist(p.id)) {
+      return false;
+    }
     return canNestPlaylist(parentId, p.id, playlists);
   });
 }
@@ -168,5 +181,5 @@ export function resolvePlaylistTrackIds(
 }
 
 export function isProtectedPlaylist(id: string): boolean {
-  return id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id);
+  return id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id);
 }

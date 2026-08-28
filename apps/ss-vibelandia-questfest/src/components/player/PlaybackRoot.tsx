@@ -3,6 +3,7 @@ import { GlobalAudio } from '@/components/player/GlobalAudio';
 import { PlaybackKeepAlive } from '@/components/player/PlaybackKeepAlive';
 import { PlayerDock } from '@/components/player/PlayerDock';
 import { usePersistentPlayback } from '@/hooks/usePersistentPlayback';
+import { useJukeboxPreludeBridge } from '@/hooks/useJukeboxPreludeBridge';
 import { pauseSimpleAudio } from '@/lib/simplePlayback';
 import { useCatalogStore } from '@/stores/catalogStore';
 import { usePlaybackStore } from '@/stores/playbackStore';
@@ -10,6 +11,7 @@ import { usePlaybackStore } from '@/stores/playbackStore';
 /** App-level playback — one <audio> always mounted; chrome hidden on Upload tab only. */
 export function PlaybackRoot() {
   usePersistentPlayback();
+  useJukeboxPreludeBridge();
   const djMode = useCatalogStore((s) => s.djMode);
   const playlistTab = useCatalogStore((s) => s.playlistTab);
 

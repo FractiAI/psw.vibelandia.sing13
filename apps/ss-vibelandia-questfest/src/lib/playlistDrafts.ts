@@ -1,12 +1,19 @@
 import type { PlaylistDef } from '@/lib/catalogTypes';
-import { isMasterPlaylist, isMyLikesPlaylist, MASTER_PLAYLIST_ID } from '@/lib/catalogSeed';
+import {
+  isConciertoPreludePlaylist,
+  isMasterPlaylist,
+  isMyLikesPlaylist,
+  MASTER_PLAYLIST_ID,
+} from '@/lib/catalogSeed';
 import { normalizeChildPlaylistIds } from '@/lib/playlistNest';
 
 const BLANK_DRAFT_NAME = 'new playlist';
 
 /** Untouched "New playlist" shell — safe to drop on hydrate or when user backs out of editor. */
 export function isBlankDraftPlaylist(p: PlaylistDef): boolean {
-  if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id)) return false;
+  if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id) || isConciertoPreludePlaylist(p.id)) {
+    return false;
+  }
   if (p.name.trim().toLowerCase() !== BLANK_DRAFT_NAME) return false;
   if (p.trackIds.length > 0) return false;
   if (normalizeChildPlaylistIds(p.childPlaylistIds).length > 0) return false;

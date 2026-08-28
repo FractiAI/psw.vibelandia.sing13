@@ -1,0 +1,27 @@
+/** Concierto landing prelude — jukebox playlist id (mirrors lib/concierto-prelude-playlist.mjs). */
+export const CONCIERTO_PRELUDE_PLAYLIST_ID = 'pl-concierto-prelude';
+
+export const CONCIERTO_PRELUDE_TRACK_IDS = [
+  'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52',
+  'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2',
+  'trk-srv-6a76463f-4f6e-4014-8b06-45ebb0b23387',
+  'trk-srv-91b20f70-c30e-49a3-8bef-c00ec4587e64',
+  'trk-srv-7c94d66b-19e8-4208-942d-f885ac400c1f',
+  'trk-srv-f617b3b3-1924-4c1f-bde5-77c9e66d1b81',
+  'trk-srv-08a30790-4b50-468f-a019-3a7dfcd5e9ee',
+  'trk-srv-368792a6-4113-4351-965b-88eb09759e50',
+  'trk-srv-4e9d6a97-f247-477d-8f3e-02bb8cd9b785',
+  'trk-srv-64e96912-f382-4140-922e-953246c65e91',
+  'trk-srv-f6ab8509-f622-4b25-bb91-cb83b113b17b',
+  'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3',
+] as const;
+
+export function isConciertoPreludePlaylist(id: string): boolean {
+  return id === CONCIERTO_PRELUDE_PLAYLIST_ID;
+}
+
+export function jukeboxPreludeListenHref(autoplay = true): string {
+  const q = new URLSearchParams({ playlist: CONCIERTO_PRELUDE_PLAYLIST_ID });
+  if (autoplay) q.set('autoplay', '1');
+  return `/interfaces/questfest-bridge/#/listen?${q.toString()}`;
+}

@@ -2,12 +2,14 @@ import type { PlaylistDef } from '@/lib/catalogTypes';
 import {
   isMasterPlaylist,
   isMyLikesPlaylist,
+  isConciertoPreludePlaylist,
   MASTER_PLAYLIST_ID,
   MY_LIKES_PLAYLIST_ID,
 } from '@/lib/catalogSeed';
+import { CONCIERTO_PRELUDE_PLAYLIST_ID } from '@/lib/conciertoPreludePlaylist';
 
 export function isMenuPinnedPlaylist(id: string): boolean {
-  return isMasterPlaylist(id) || isMyLikesPlaylist(id);
+  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id);
 }
 
 export function manageableMenuPlaylists(playlists: PlaylistDef[]): PlaylistDef[] {
@@ -42,8 +44,10 @@ export function applyPlaylistMenuOrder(
   const pinned: PlaylistDef[] = [];
   const master = playlists.find((p) => p.id === MASTER_PLAYLIST_ID);
   const likes = playlists.find((p) => p.id === MY_LIKES_PLAYLIST_ID);
+  const prelude = playlists.find((p) => p.id === CONCIERTO_PRELUDE_PLAYLIST_ID);
   if (master) pinned.push(master);
   if (likes) pinned.push(likes);
+  if (prelude) pinned.push(prelude);
 
   const manageable = manageableMenuPlaylists(playlists);
   const byId = new Map(manageable.map((p) => [p.id, p]));

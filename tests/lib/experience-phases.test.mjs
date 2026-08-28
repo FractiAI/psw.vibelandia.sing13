@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
@@ -80,6 +80,7 @@ describe('Experience phases · museum → reception → creator studio', () => {
       const html = renderNpcPlayerWelcomeHtml(phase);
       expect(html).toContain('Players &amp; NPCs · same ship');
       expect(html).toContain('players-npcs-same-ship.jpg');
+      expect(html).toContain('Players as superheroes');
       expect(html).toContain('NPC · the set');
       expect(html).toContain('Player · the pattern');
       expect(html).toContain('franchises');
@@ -98,6 +99,12 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(museum).toContain('xp-npc-player');
     expect(reception).toContain('Meet the crew');
     expect(reception).toContain('Join the crew');
+    const still = join(ROOT, 'interfaces/assets/experience/players-npcs-same-ship.jpg');
+    expect(existsSync(still)).toBe(true);
+    const jpeg = readFileSync(still);
+    expect(jpeg[0]).toBe(0xff);
+    expect(jpeg[1]).toBe(0xd8);
+    expect(jpeg.length).toBeGreaterThan(80_000);
   });
 
   it('synced surfaces carry three-phase experience chrome', () => {

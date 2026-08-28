@@ -13,7 +13,7 @@
   var CHANNEL_NAME = 'qv-jukebox-prelude';
   var PRELUDE_PLAYLIST_ID = 'pl-concierto-prelude';
   var PRELUDE_FEATURES =
-    'popup=yes,width=420,height=360,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=no';
+    'popup=yes,width=280,height=48,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=no';
 
   var PLAYLIST = window.CANVAS_PRELUDE_PLAYLIST || [];
 
@@ -132,7 +132,7 @@
       }
       popupBlocked = false;
       try {
-        preludeWin.focus();
+        window.focus();
       } catch (_) {}
       return preludeWin;
     }
@@ -143,11 +143,6 @@
           type: type,
           playlistId: PRELUDE_PLAYLIST_ID,
         });
-      }
-      if (preludeWin && !preludeWin.closed) {
-        try {
-          preludeWin.focus();
-        } catch (_) {}
       }
     }
 

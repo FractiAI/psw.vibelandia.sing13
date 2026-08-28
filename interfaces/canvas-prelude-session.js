@@ -32,6 +32,33 @@
     }
   }
 
+  function returnToLanding() {
+    try {
+      if (window.opener && !window.opener.closed) {
+        try {
+          var openerPath = window.opener.location.pathname || '/';
+          if (openerPath.indexOf('prelude-session') !== -1) {
+            window.opener.location.replace('/');
+          }
+        } catch (_) {
+          /* cross-origin — focus only */
+        }
+        window.opener.focus();
+        return;
+      }
+    } catch (_) {}
+    try {
+      window.blur();
+    } catch (_) {}
+  }
+
+  function tuckPopup() {
+    try {
+      window.resizeTo(280, 48);
+      window.moveTo(8, Math.max(0, (window.screen.availHeight || 600) - 56));
+    } catch (_) {}
+  }
+
   function pingCatalogPlay(trackId) {
     try {
       fetch('/api/catalog-plays', {
@@ -48,7 +75,6 @@
 
     var index = 0;
     var logged = {};
-    var btn = document.getElementById('prelude-toggle');
     var nowEl = document.getElementById('prelude-now');
     var channel = null;
 
@@ -93,20 +119,17 @@
 
     function setUi(playing) {
       var track = current();
-      if (btn) {
-        btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
-        btn.classList.toggle('is-playing', playing);
-        btn.textContent = playing ? track.short : 'Sound off · tap to play';
-        btn.setAttribute(
-          'aria-label',
-          playing ? 'Mute soundtrack: ' + track.aria : 'Play soundtrack: ' + track.aria
-        );
-      }
       if (nowEl) {
-        nowEl.innerHTML = '<strong>' + track.aria + '</strong>';
+        nowEl.textContent = playing
+          ? 'Concierto prelude · ' + track.aria
+          : 'Concierto prelude · paused';
       }
       audio.setAttribute('aria-label', 'Soundtrack: ' + track.aria + ' (prelude session)');
       broadcastState();
+      if (playing) {
+        returnToLanding();
+        tuckPopup();
+      }
     }
 
     function loadTrack(i) {
@@ -154,11 +177,6 @@
       tryPlay();
     }
 
-    function advance() {
-      loadTrack(index + 1);
-      tryPlay();
-    }
-
     function onChannelMessage(ev) {
       var msg = ev && ev.data;
       if (!msg || typeof msg.type !== 'string') return;
@@ -175,11 +193,9 @@
 
     loadTrack(0);
 
-    if (btn) {
-      btn.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        togglePlayback();
-      });
+    function advance() {
+      loadTrack(index + 1);
+      tryPlay();
     }
 
     audio.addEventListener('play', markPlaying);

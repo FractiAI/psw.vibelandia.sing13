@@ -151,6 +151,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(read('interfaces/canvas-prelude-session.html')).toContain('pl-concierto-prelude');
     expect(read('interfaces/canvas-prelude-session.html')).toContain('qv-jukebox');
     expect(read('interfaces/canvas-prelude-session.js')).toContain('qv-jukebox-prelude');
+    expect(read('interfaces/canvas-prelude-session.js')).toContain('returnToLanding');
     expect(read('interfaces/canvas-prelude-playlist.js')).toContain('CANVAS_PRELUDE_PLAYLIST');
     expect(read('media/catalog/catalog.json')).toContain('pl-concierto-prelude');
     expect(read('lib/concierto-prelude-playlist.mjs')).toContain('CONCIERTO_PRELUDE_TRACK_IDS');

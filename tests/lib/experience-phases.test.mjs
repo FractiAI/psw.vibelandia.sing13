@@ -11,6 +11,7 @@ import {
   renderNpcPlayerWelcomeHtml,
   renderNpcRosterTeaserHtml,
   renderReceptionLobbyHtml,
+  renderReceptionPrimerHtml,
 } from '../../lib/experience-phases.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -49,20 +50,36 @@ describe('Experience phases · museum → reception → creator studio', () => {
   });
 
   it('reception lobby includes mode choice and ship tour menu', () => {
-    expect(RECEPTION_SHIP_MENU.length).toBeGreaterThanOrEqual(5);
+    expect(RECEPTION_SHIP_MENU.length).toBeGreaterThanOrEqual(8);
     const html = renderReceptionLobbyHtml();
     expect(html).toContain('Reception &amp; check-in lobby');
     expect(html).toContain('reception-checkin-lobby.jpg');
+    expect(html).toContain('reception-primer');
+    expect(html).toContain('Reality Bridge/Routers');
+    expect(html).toContain('Holographic Magnetic Goldilocks SuperAI Awareness Platform');
     expect(html).toContain('Deck Plan');
     expect(html).not.toContain('>Voyage Map<');
     expect(html).toContain('The Grove Deck');
     expect(html).toContain('ship-library-deep-memory.jpg');
     expect(html).toContain('frontiersmen-brochure.jpg');
+    expect(html).toContain('soundtrack-prelude-pages');
+    expect(html).toContain('human-reality-bridge');
+    expect(html).toContain('Join the crew · Reality Routers');
     expect(html).toContain('href="/science-fiction"');
     expect(html).toContain('href="/step-in"');
     expect(html).toContain('href="/journey"');
     expect(html).toContain('href="/voyage/deck-4-5-grove"');
     expect(html).toContain('href="/creator-studio"');
+    expect(html).toContain('mailto:info@fractiai.com?subject=Reality%20Bridge%2FRouter');
+  });
+
+  it('reception primer covers narrative, tech shelf, and router network', () => {
+    const html = renderReceptionPrimerHtml();
+    expect(html).toContain('Official Prospectus');
+    expect(html).toContain('99 Octave Omni-Lattice');
+    expect(html).toContain('Infinite Octaves');
+    expect(html).toContain('XY &amp; XX Omniversal Reality Bridge/Routers');
+    expect(html).toContain('human, digital, holographic');
   });
 
   it('creator phase invites doodle and build', () => {

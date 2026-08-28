@@ -312,6 +312,79 @@
   line-height: 1.5;
 }
 
+/* Phase 2 · ship primer */
+.reception-primer {
+  margin: 1.5rem 0 1.75rem;
+  padding: 1.25rem 1.15rem 1.35rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 0.35rem;
+  background: rgba(6, 10, 18, 0.55);
+}
+.reception-primer h3,
+.reception-primer h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: #f0d78c;
+  margin: 0 0 0.55rem;
+}
+.reception-primer h3 { font-size: 1.45rem; }
+.reception-primer h4 { font-size: 1.1rem; margin-top: 0.25rem; }
+.reception-primer__lede {
+  line-height: 1.58;
+  color: rgba(245, 230, 200, 0.88);
+  margin: 0 0 1.1rem;
+  max-width: 48rem;
+}
+.reception-primer__grid {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+@media (min-width: 720px) {
+  .reception-primer__grid { grid-template-columns: 1fr 1fr; }
+}
+.reception-primer__card {
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 0.25rem;
+  background: rgba(4, 8, 14, 0.45);
+}
+.reception-primer__card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(245, 230, 200, 0.78);
+}
+.reception-primer__card a { color: #e8c96a; }
+.reception-router {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+.reception-router p {
+  margin: 0 0 0.75rem;
+  line-height: 1.55;
+  color: rgba(245, 230, 200, 0.82);
+  max-width: 48rem;
+}
+.reception-router__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0.85rem 0 0.65rem;
+}
+.reception-router__links {
+  font-size: 0.82rem;
+  margin: 0;
+}
+.reception-router__links a { color: #e8c96a; }
+.reception-primer__honesty {
+  margin: 1rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(168, 162, 158, 0.92);
+  max-width: 44rem;
+}
+
 /* Phase 3 · creator studio header block */
 .creator-phase {
   max-width: 42rem;

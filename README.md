@@ -32,7 +32,7 @@ This README is the **current map** of the monorepo, its **sibling empirical suit
 | **Synthio** | Syntheverse Sandbox agent · MRI / cloud-antenna catalog · **creator-only** · not on the engine pin | [`AGENT_SYNC_SYNTHIO.md`](AGENT_SYNC_SYNTHIO.md) · [/synthio](https://www.ssvibelandiaquestfest24x365.com/synthio) · whiteboard one-pager |
 | **SynthOBS research** | ~50 local empirical suites (`research/synthobs-*/` + siblings); many also publish as standalone GitHub repos | `research/`, `npm run research:*`, [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) |
 | **Whitepaper catalog** | Registered papers + honesty rails + PRA Snap audits | `docs/`, `lib/whitepaper-registry.mjs`, `/papers` |
-| **QUESTFEST 24×365** | SS Vibelandia ship bulletin, plain-language ship blog, nesting ladder | `/questfest`, `interfaces/vibelandia-questfest.html` |
+| **QUESTFEST 24×365** | SS Vibelandia ship reception primer, bulletin, plain-language ship blog | [/questfest](https://www.ssvibelandiaquestfest24x365.com/questfest) · Reality Bridge/Router network · [/join-the-crew](https://www.ssvibelandiaquestfest24x365.com/join-the-crew) |
 | **Lattice Chat Agent V1.618** | Nested-agent BYOK chat · **your key is your password** (stays with you) · token-economics measurement | `/lattice`, `/lattice-chat`, `apps/lattice-chat/`, `api/lattice-chat.js` |
 | **Sovereign Player** | Audio catalog React SPA · Fair Exchange honor downloads | `/listen`, `apps/ss-vibelandia-questfest/` → `interfaces/questfest-bridge/` |
 | **NSPFRNP / BBHE** | Protocol spine · Seed:Edge · repository standard | `protocols/MCA_NSPFRNP_CATALOG.md`, `BBHE_REPOSITORY_STANDARD.md` |
@@ -122,6 +122,9 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 
 | When | Update | Links |
 |------|--------|-------|
+| **2026-08-28** | **Ship reception primer** — full onboarding: grand narrative, 99 Octave tech shelf, NPC/Player roles, XY/XX Reality Bridge/Router network | [/questfest#reception-lobby](https://www.ssvibelandiaquestfest24x365.com/questfest#reception-lobby) · [/join-the-crew](https://www.ssvibelandiaquestfest24x365.com/join-the-crew) · [soundtrack preludes](https://www.ssvibelandiaquestfest24x365.com/ship-blog/soundtrack-prelude-pages) |
+| **2026-08-28** | **Soundtrack preludes** on Omniversal Canvas — concerto playlist over da Vinci stepping-in loop | [/](https://www.ssvibelandiaquestfest24x365.com/) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/soundtrack-prelude-pages) |
+| **2026-08-28** | **Human Reality Bridge/Router** paper + ship note on museum entry grammar | [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/human-reality-bridge) · [paper](docs/SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md) |
 | **2026-08-13** | **Holographic Goldilocks Players Guide** (free) + live surface/paper language selection | [guide](https://www.ssvibelandiaquestfest24x365.com/goldilocks-players-guide) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/goldilocks-players-guide) |
 | **2026-08-13** | **Planetary Core Phase-Inversion & Goldilocks Hologram** (Part XIV) on the 99 Octave engine pin — Lattice Chat + Synthio companion | [paper](docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/planetary-core-goldilocks) |
 | **2026-08-13** | **Metamorphic Octave Invariant** (Part XIII) on the 99 Octave engine pin — Lattice Chat nest `octave99` + Synthio companion grammar | [paper](docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/metamorphic-octaves) |
@@ -234,7 +237,8 @@ Vercel project for this edge → **www.ssvibelandiaquestfest24x365.com**. `verce
 
 | Surface | URL |
 |---------|-----|
-| QUESTFEST home | [/questfest](https://www.ssvibelandiaquestfest24x365.com/questfest) |
+| QUESTFEST home · ship reception | [/questfest](https://www.ssvibelandiaquestfest24x365.com/questfest) · [#reception-lobby](https://www.ssvibelandiaquestfest24x365.com/questfest#reception-lobby) |
+| Join crew · Reality Routers | [/join-the-crew](https://www.ssvibelandiaquestfest24x365.com/join-the-crew) |
 | Ship blog (six notes) | [/questfest#ship-blog](https://www.ssvibelandiaquestfest24x365.com/questfest#ship-blog) |
 | Papers | [/papers](https://www.ssvibelandiaquestfest24x365.com/papers) |
 | Lattice Chat | [/lattice-chat](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) |
@@ -393,7 +397,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
 | [`/interfaces/houdini-mythos-demonstration.html`](/interfaces/houdini-mythos-demonstration.html) | Redirect · Hero Houdini · Mythos demonstration |
 | [`/interfaces/index.html`](/interfaces/index.html) | Interfaces · ship UI directory · SS Vibelandia QUESTFEST |
-| [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Puerto Reno stations · SS Vibelandia |
+| [`/interfaces/join-the-crew.html`](/interfaces/join-the-crew.html) | Join the crew · Reality Bridge/Routers · SS Vibelandia |
 | [`/interfaces/journeys.html`](/interfaces/journeys.html) | Journeys · Adventures aboard SS Vibelandia |
 | [`/interfaces/lattice-brochure.html`](/interfaces/lattice-brochure.html) | Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Next layer in the stack · Product brochure · FractiAI |
 | [`/interfaces/lattice-learn-more.html`](/interfaces/lattice-learn-more.html) | How it works · Learn more · Infinite Octaves Omniversal Lattice Chat Agent V1.618 · FractiAI |

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "77572dcce69577c4",
+  "auditId": "c6feb757e97a729e",
   "paperId": "synthobs-infinite-octaves-omniversal-lattice-2026-08",
   "sourcePath": "docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-08-25T15:49:16.289Z"
+          "invokedAt": "2026-08-28T03:36:03.032Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-08-25T15:49:16.288Z",
-  "completedAt": "2026-08-25T15:49:16.290Z",
+  "startedAt": "2026-08-28T03:36:03.032Z",
+  "completedAt": "2026-08-28T03:36:03.032Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 958,
+      "wordCount": 966,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

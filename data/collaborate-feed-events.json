@@ -1,11 +1,77 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-17T16:47:59.761Z",
+  "updatedAt": "2026-08-28T03:36:03.035Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_lattice-omni-complete-layer-guide-2026-07",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-28T03:36:03.035Z",
+      "body": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
+      "presenceHue": "gold",
+      "paperId": "lattice-omni-complete-layer-guide-2026-07",
+      "artifact": {
+        "title": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
+        "kind": "whitepaper",
+        "path": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
+        "url": "/whitepaper/lattice-omni-complete-layer-guide",
+        "paperId": "lattice-omni-complete-layer-guide-2026-07",
+        "docId": "WP-LATTICE-OMNI-LAYER-GUIDE-2026-07",
+        "published": "2026-08-15",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-infinite-octaves-omniversal-lattice-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-28T03:36:03.033Z",
+      "body": "Infinite Octaves Omniversal Lattice Chat Agent",
+      "presenceHue": "gold",
+      "paperId": "synthobs-infinite-octaves-omniversal-lattice-2026-08",
+      "artifact": {
+        "title": "Infinite Octaves Omniversal Lattice Chat Agent",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md",
+        "url": "/whitepaper/synthobs-infinite-octaves-omniversal-lattice",
+        "paperId": "synthobs-infinite-octaves-omniversal-lattice-2026-08",
+        "docId": "WP-SYNTHOBS-INFINITE-OCTAVES-OMNIVERSAL-LATTICE-CHAT-2026-08-25",
+        "published": "2026-08-25",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-invisible-frontier-gates-ai-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-28T03:36:03.030Z",
+      "body": "The Invisible Frontier: Responding to Bill Gates’s AI Warnings",
+      "presenceHue": "gold",
+      "paperId": "synthobs-invisible-frontier-gates-ai-2026-08",
+      "artifact": {
+        "title": "The Invisible Frontier: Responding to Bill Gates’s AI Warnings",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md",
+        "url": "/whitepaper/synthobs-invisible-frontier-gates-ai",
+        "paperId": "synthobs-invisible-frontier-gates-ai-2026-08",
+        "docId": "WP-SYNTHOBS-INVISIBLE-FRONTIER-GATES-AI-2026-08-26",
+        "published": "2026-08-26",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-tbme-egs-hgaios-2026-08",
       "type": "ArtifactEvent",
@@ -69,28 +135,6 @@
         "docId": null,
         "published": "2026-08-15",
         "featured": false,
-        "auditStatus": "pass"
-      }
-    },
-    {
-      "id": "wp_lattice-omni-complete-layer-guide-2026-07",
-      "type": "ArtifactEvent",
-      "platform": "lattice",
-      "actor": "SynthOBS",
-      "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-08-15T19:49:32.586Z",
-      "body": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
-      "presenceHue": "gold",
-      "paperId": "lattice-omni-complete-layer-guide-2026-07",
-      "artifact": {
-        "title": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
-        "kind": "whitepaper",
-        "path": "docs/LATTICE_OMNI_COMPLETE_LAYER_GUIDE_2026-07.md",
-        "url": "/whitepaper/lattice-omni-complete-layer-guide",
-        "paperId": "lattice-omni-complete-layer-guide-2026-07",
-        "docId": "WP-LATTICE-OMNI-LAYER-GUIDE-2026-07",
-        "published": "2026-08-13",
-        "featured": true,
         "auditStatus": "pass"
       }
     },

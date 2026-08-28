@@ -1,7 +1,7 @@
 {
   "schema": "syntheverse-synthio-pulse-store/v1",
   "sandbox": "Syntheverse Sandbox",
-  "updatedAt": "2026-08-12T21:36:23.671Z",
+  "updatedAt": "2026-08-28T03:59:29.576Z",
   "latest": {
     "schema": "syntheverse-synthio-pulse/v1",
     "pulseKind": "syntheverse_goldilocks_confirmation",
@@ -33,156 +33,21 @@
     "holographicKeyDigits": 8019,
     "cadenceSec": 161,
     "externalTelemetryChannel": "/api/synthio-external-telemetry",
-    "emitSeq": 3,
+    "emitSeq": 7,
     "expectationSlots": {
-      "ephemeris_window": "pending",
-      "space_weather_band": "pending",
-      "ionosphere_f10": "pending",
-      "sandbox_suite_green": "pending",
+      "ephemeris_window": "aligned",
+      "space_weather_band": "aligned",
+      "ionosphere_f10": "aligned",
+      "sandbox_suite_green": "aligned",
       "syntheverse_synthio_pulse": "emit",
-      "no_clinical_rf": "pending"
+      "no_clinical_rf": "aligned"
     },
-    "issuedAt": "2026-08-12T21:36:23.671Z",
-    "signature": "0x9cdb64f0857a0ecc9133a263adfa6c24f924f296b77637753b0bf82dad4873fd",
-    "pulseId": "synthio-Σ-1786570583671-3-9cdb64f0",
-    "fingerprint": "d7b2aaffbf827428d12f796e55a9cda23b3664da7b606f1231bc73d6e519312d"
+    "issuedAt": "2026-08-28T03:59:29.576Z",
+    "signature": "0xf38161242b153bbf2b0ce9bd9e1a077195739487e0bb969e7afcd25875b7caea",
+    "pulseId": "synthio-Σ-1787889569576-7-f3816124",
+    "fingerprint": "f694ab874df92aa94f883abebda29adbfafaa28edbc0cdbcec001182850f1564"
   },
   "history": [
-    {
-      "schema": "syntheverse-synthio-pulse/v1",
-      "pulseKind": "syntheverse_goldilocks_confirmation",
-      "naturalOccurrence": false,
-      "novelty": "Engineered Syntheverse discriminant — published into public external telemetry for observe/compare; not NOAA Kp, not F10.7, not bitcoin-tip Goldilocks pulse/v1.",
-      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
-      "sandbox": "Syntheverse Sandbox",
-      "agent": "Synthio",
-      "agentId": "Synthio.sandbox",
-      "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
-      "activationMode": "point_and_click",
-      "activationState": "ACTIVE_IN_SANDBOX",
-      "amplificationWindow": {
-        "date": "2026-08-12",
-        "newMoon": true,
-        "sixPlanetParade": true,
-        "solarEclipse": true,
-        "planets": [
-          "Jupiter",
-          "Mercury",
-          "Mars",
-          "Uranus",
-          "Saturn",
-          "Neptune"
-        ]
-      },
-      "phiEgs": 1.618033988749895,
-      "phiInv99": 2.0427894922373773e-21,
-      "holographicKeyDigits": 8019,
-      "cadenceSec": 161,
-      "externalTelemetryChannel": "/api/synthio-external-telemetry",
-      "emitSeq": 3,
-      "expectationSlots": {
-        "ephemeris_window": "pending",
-        "space_weather_band": "pending",
-        "ionosphere_f10": "pending",
-        "sandbox_suite_green": "pending",
-        "syntheverse_synthio_pulse": "emit",
-        "no_clinical_rf": "pending"
-      },
-      "issuedAt": "2026-08-12T21:36:23.671Z",
-      "signature": "0x9cdb64f0857a0ecc9133a263adfa6c24f924f296b77637753b0bf82dad4873fd",
-      "pulseId": "synthio-Σ-1786570583671-3-9cdb64f0",
-      "fingerprint": "d7b2aaffbf827428d12f796e55a9cda23b3664da7b606f1231bc73d6e519312d"
-    },
-    {
-      "schema": "syntheverse-synthio-pulse/v1",
-      "pulseKind": "syntheverse_goldilocks_confirmation",
-      "naturalOccurrence": false,
-      "novelty": "Engineered Syntheverse discriminant — published into public external telemetry for observe/compare; not NOAA Kp, not F10.7, not bitcoin-tip Goldilocks pulse/v1.",
-      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
-      "sandbox": "Syntheverse Sandbox",
-      "agent": "Synthio",
-      "agentId": "Synthio.sandbox",
-      "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
-      "activationMode": "point_and_click",
-      "activationState": "ACTIVE_IN_SANDBOX",
-      "amplificationWindow": {
-        "date": "2026-08-12",
-        "newMoon": true,
-        "sixPlanetParade": true,
-        "solarEclipse": true,
-        "planets": [
-          "Jupiter",
-          "Mercury",
-          "Mars",
-          "Uranus",
-          "Saturn",
-          "Neptune"
-        ]
-      },
-      "phiEgs": 1.618033988749895,
-      "phiInv99": 2.0427894922373773e-21,
-      "holographicKeyDigits": 8019,
-      "cadenceSec": 161,
-      "externalTelemetryChannel": "/api/synthio-external-telemetry",
-      "emitSeq": 2,
-      "expectationSlots": {
-        "ephemeris_window": "aligned",
-        "space_weather_band": "aligned",
-        "ionosphere_f10": "aligned",
-        "sandbox_suite_green": "aligned",
-        "syntheverse_synthio_pulse": "emit",
-        "no_clinical_rf": "aligned"
-      },
-      "issuedAt": "2026-08-12T21:36:23.670Z",
-      "signature": "0x89a7a51f6870dc3dcf2dcb2de98823a928b049d7755a11e164ee526e64af6378",
-      "pulseId": "synthio-Σ-1786570583670-2-89a7a51f",
-      "fingerprint": "cd318859c9488d87e8a8c9f41e6d1f6315d8bcc2a44aa15cc951acb3522c64b3"
-    },
-    {
-      "schema": "syntheverse-synthio-pulse/v1",
-      "pulseKind": "syntheverse_goldilocks_confirmation",
-      "naturalOccurrence": false,
-      "novelty": "Engineered Syntheverse discriminant — published into public external telemetry for observe/compare; not NOAA Kp, not F10.7, not bitcoin-tip Goldilocks pulse/v1.",
-      "discriminant": "SYNTHIO_Σ_Φ^-99_PC",
-      "sandbox": "Syntheverse Sandbox",
-      "agent": "Synthio",
-      "agentId": "Synthio.sandbox",
-      "registryId": "synthio-mri-cloud-antenna-99-octave-2026-08",
-      "activationMode": "point_and_click",
-      "activationState": "ACTIVE_IN_SANDBOX",
-      "amplificationWindow": {
-        "date": "2026-08-12",
-        "newMoon": true,
-        "sixPlanetParade": true,
-        "solarEclipse": true,
-        "planets": [
-          "Jupiter",
-          "Mercury",
-          "Mars",
-          "Uranus",
-          "Saturn",
-          "Neptune"
-        ]
-      },
-      "phiEgs": 1.618033988749895,
-      "phiInv99": 2.0427894922373773e-21,
-      "holographicKeyDigits": 8019,
-      "cadenceSec": 161,
-      "externalTelemetryChannel": "/api/synthio-external-telemetry",
-      "emitSeq": 1,
-      "expectationSlots": {
-        "ephemeris_window": "aligned",
-        "space_weather_band": "aligned",
-        "ionosphere_f10": "aligned",
-        "sandbox_suite_green": "aligned",
-        "syntheverse_synthio_pulse": "emit",
-        "no_clinical_rf": "aligned"
-      },
-      "issuedAt": "2026-08-12T21:36:23.667Z",
-      "signature": "0xbd8e6aba9036459cab2013bc8ff0f70d879ed3f49b3036ac982e48e8b5a69b6e",
-      "pulseId": "synthio-Σ-1786570583667-1-bd8e6aba",
-      "fingerprint": "f67b155e5887445644a9bcaa770a9079748a5bfb144a91da50dc464ba4d0d36f"
-    },
     {
       "schema": "syntheverse-synthio-pulse/v1",
       "pulseKind": "syntheverse_goldilocks_confirmation",
@@ -223,10 +88,10 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "aligned"
       },
-      "issuedAt": "2026-08-12T21:36:23.662Z",
-      "signature": "0x13e51b8d8722bce098d4a1d6cd7449e986b93ce9f5907b78943dd16a079b1e15",
-      "pulseId": "synthio-Σ-1786570583662-7-13e51b8d",
-      "fingerprint": "446c51c761e9ba9a082169b59c1525a1860b03b76afdf8b13b47faa7bd3ae850"
+      "issuedAt": "2026-08-28T03:59:29.576Z",
+      "signature": "0xf38161242b153bbf2b0ce9bd9e1a077195739487e0bb969e7afcd25875b7caea",
+      "pulseId": "synthio-Σ-1787889569576-7-f3816124",
+      "fingerprint": "f694ab874df92aa94f883abebda29adbfafaa28edbc0cdbcec001182850f1564"
     },
     {
       "schema": "syntheverse-synthio-pulse/v1",
@@ -268,10 +133,10 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "pending"
       },
-      "issuedAt": "2026-08-12T21:36:23.659Z",
-      "signature": "0xc81561ada3fc9e22c21418d8b2f5a8b48e2527d0126db3c16403820eb67752a2",
-      "pulseId": "synthio-Σ-1786570583659-6-c81561ad",
-      "fingerprint": "ee4729a4c27085d29fa9340147c51039b734b7484fcffd5660f7d367ab167962"
+      "issuedAt": "2026-08-28T03:59:29.574Z",
+      "signature": "0x61b6899db465ff4d13dd80401e09f0cc7518d105f1a41391e9c862167c98cb8e",
+      "pulseId": "synthio-Σ-1787889569574-6-61b6899d",
+      "fingerprint": "c40fbbed40f3721d6638db979f8ff7abd1fd60595cbcae1bf9c72370aac20818"
     },
     {
       "schema": "syntheverse-synthio-pulse/v1",
@@ -313,10 +178,10 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "pending"
       },
-      "issuedAt": "2026-08-12T21:36:23.658Z",
-      "signature": "0xd5cfcc568668556cce600a7cd6daa260c0267db6f0fedbef44836fba701e321b",
-      "pulseId": "synthio-Σ-1786570583658-5-d5cfcc56",
-      "fingerprint": "653ef20d3d888d804f3670a3716d02311af409c4b1f718b986c6400ac471d877"
+      "issuedAt": "2026-08-28T03:59:29.572Z",
+      "signature": "0x22941bad0feb0b5964d37120b71f698c13733170a0132068d1eefed13d361abc",
+      "pulseId": "synthio-Σ-1787889569572-5-22941bad",
+      "fingerprint": "d174903529dd4bba112e9e465073387781c52e009e229d18b3dc7ef17462b2bf"
     },
     {
       "schema": "syntheverse-synthio-pulse/v1",
@@ -358,10 +223,10 @@
         "syntheverse_synthio_pulse": "emit",
         "no_clinical_rf": "pending"
       },
-      "issuedAt": "2026-08-12T21:36:23.657Z",
-      "signature": "0x2cfb3093d61928cdf138ce91307a257818c3107934c296011f8f91f5e232e8c0",
-      "pulseId": "synthio-Σ-1786570583657-4-2cfb3093",
-      "fingerprint": "b2a2f15812b31352a8118b5858c1bf6407584e430dbc506edbcce62ea4339dd6"
+      "issuedAt": "2026-08-28T03:59:29.571Z",
+      "signature": "0xa3ead66c616381dbb9d64a045f1d03354838b82f268a01992740eceef5488652",
+      "pulseId": "synthio-Σ-1787889569571-4-a3ead66c",
+      "fingerprint": "0b7b567cbcd5d86aeafb9c4846936d5c9e25e6c3d6a1430eb544ac4eaa254b78"
     }
   ]
 }

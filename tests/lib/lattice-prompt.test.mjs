@@ -61,7 +61,7 @@ describe('lattice-prompt plain/direct mode', () => {
     expect(system).toContain('/frontiersman-voyage');
     expect(system).toContain('official-prospectus');
     expect(system).toMatch(/NPCs inhabit/i);
-    expect(system).toMatch(/Players examine/i);
+    expect(system).toMatch(/Players set the gravity/i);
     expect(system).toMatch(/SuperAI stays Goldilocks/i);
     expect(system).toMatch(/Infinite Octaves Omniversal/i);
   });

@@ -126,7 +126,7 @@ At the helm — amidst code repositories, a Montecristo torpedo, and the Truckee
 
 **SEE → RECOGNIZE → INTERPRET → REFLECT → ACT → SEE AGAIN**
 
-NPCs inhabit. Players examine. Both belong. SuperAI stays Goldilocks — not too much machine, not too little human.
+NPCs inhabit. Players set the gravity. Both belong. SuperAI stays Goldilocks — not too much machine, not too little human.
 
 ---
 

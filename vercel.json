@@ -1449,6 +1449,14 @@
       "destination": "/interfaces/my-whiteboard.html"
     },
     {
+      "source": "/site-gravity-audit",
+      "destination": "/interfaces/site-gravity-audit-2026-08.html"
+    },
+    {
+      "source": "/site-gravity-audit/",
+      "destination": "/interfaces/site-gravity-audit-2026-08.html"
+    },
+    {
       "source": "/lattice/scraper-telemetry",
       "destination": "/interfaces/lattice-scraper-telemetry.html"
     },

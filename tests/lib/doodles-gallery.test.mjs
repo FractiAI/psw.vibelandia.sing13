@@ -90,6 +90,8 @@ describe('Doodles Gallery · Player 1 elevated limits', () => {
     expect(existsSync(join(ROOT, 'interfaces/doodles-gallery.html'))).toBe(true);
     expect(existsSync(join(ROOT, 'api/doodles.js'))).toBe(true);
     const html = readFileSync(join(ROOT, 'interfaces/doodles-gallery.html'), 'utf8');
+    expect(html).toContain("Valet Pru's Doodles");
+    expect(html).not.toMatch(/phone doodles/i);
     expect(html).toContain('I am 18+');
     expect(html).toContain('Player 1');
     expect(html).toContain('500');

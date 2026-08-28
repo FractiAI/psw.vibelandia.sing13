@@ -62,8 +62,27 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('id="landfalls"');
     expect(html).toMatch(/Official Prospectus/i);
     expect(html).toMatch(/Borikén|Puerto Rico/i);
+    expect(html).toContain('Official Frontiersman Voyage Brochure');
+    expect(html).not.toMatch(/Compendium|compendium/);
+    expect(html).toContain('<ul class="toc">');
+    expect(html).not.toContain('<ol class="toc">');
+    expect(html).toContain('>1. What “holographic” means</a>');
     expect(html).toContain('3664');
     expect(html).toContain('3923');
+  });
+
+  it('brochure Contents uses one numbering set and is titled Brochure', () => {
+    const html = read('interfaces/frontiersman-voyage-brochure.html');
+    expect(html).toContain('<h1 class="vb-pub-title">Official Frontiersman Voyage Brochure</h1>');
+    expect(html).not.toMatch(/Compendium|compendium/);
+    expect(html).toContain('<ul class="toc">');
+    expect(html).not.toContain('<ol class="toc">');
+    expect(html).toContain('>1. What “holographic” means</a>');
+    const css = read('interfaces/voyage-brochure-publication.css');
+    expect(css).toMatch(/body\.vb-pub \.toc \{[\s\S]*list-style:\s*none/);
+    expect(read('interfaces/voyage/frontiersman.html')).not.toMatch(/Compendium|compendium/);
+    expect(read('interfaces/blog-frontiersman-voyage-2026-08.html')).not.toMatch(/Compendium|compendium/);
+    expect(read('interfaces/vibelandia-questfest.html')).not.toMatch(/compendium/i);
   });
 
   it('ship-blog on-ramp stays plain for Players and NPCs', () => {

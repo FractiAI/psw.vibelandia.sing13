@@ -185,8 +185,12 @@ describe('Doodles Gallery · Player 1 elevated limits', () => {
     expect(html).toContain('edit-toggle');
     expect(html).toContain("postManifestAction('reorder'");
     expect(html).toContain("postManifestAction('delete'");
+    expect(html).toContain('museum-wall__delete');
+    expect(html).toContain('bindDragReorder');
+    expect(html).not.toContain('← Earlier');
     const api = readFileSync(join(ROOT, 'api/doodles.js'), 'utf8');
     expect(api).toContain("action === 'reorder'");
     expect(api).toContain("action === 'delete'");
+    expect(api).toContain('v=${Date.now()}');
   });
 });

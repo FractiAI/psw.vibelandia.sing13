@@ -160,32 +160,43 @@
     .museum-wall__piece--editing .museum-frame--wall {
       outline: 2px solid rgba(212, 175, 55, 0.45);
       outline-offset: 3px;
+      position: relative;
     }
-    .museum-wall__tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      justify-content: center;
-      margin-top: 0.55rem;
+    .museum-wall__piece--editing .museum-frame__art img {
+      cursor: grab;
     }
-    .btn--mini {
+    .museum-wall__piece--dragging {
+      opacity: 0.55;
+      z-index: 2;
+    }
+    .museum-wall__piece--drop-target .museum-frame--wall {
+      outline: 2px dashed rgba(212, 175, 55, 0.85);
+      outline-offset: 4px;
+    }
+    .museum-wall__delete {
+      position: absolute;
+      top: 0.35rem;
+      right: 0.35rem;
+      z-index: 3;
       appearance: none;
-      border: 1px solid var(--line);
-      background: rgba(10, 14, 24, 0.85);
-      color: var(--ink);
-      font: inherit;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.35rem 0.55rem;
-      cursor: pointer;
-    }
-    .btn--mini:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-    }
-    .btn--mini--danger {
+      border: 1px solid rgba(196, 92, 92, 0.55);
+      background: rgba(18, 10, 10, 0.88);
       color: #f0b4b4;
-      border-color: rgba(196, 92, 92, 0.45);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+    }
+    .museum-wall__delete:hover {
+      background: rgba(120, 30, 30, 0.92);
+      color: #fff;
+    }
+    .museum-wall__delete svg {
+      display: block;
     }
     .edit-desk {
       margin-top: 1.5rem;
@@ -348,7 +359,7 @@
 
       <div class="edit-desk" id="edit-desk">
         <h3 id="edit-h">Player 1 · arrange wall</h3>
-        <p>Reorder or remove doodles on the gallery wall. Changes save immediately.</p>
+        <p>Drag frames to reorder the wall. Tap the trash icon to remove a doodle. Changes save as you go.</p>
         <div class="btn-row">
           <button type="button" class="btn btn--ghost" id="edit-toggle" aria-pressed="false">
             Edit wall
@@ -402,7 +413,14 @@
     };
     let galleryWorks = [];
     let editMode = false;
-    let editBusy = false;
+    let saveOrderTimer = null;
+    let dragSourceId = null;
+    let pointerDragId = null;
+
+    const TRASH_ICON =
+      '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">' +
+      '<path fill="currentColor" d="M9 3h6a1 1 0 0 1 .96.73L17 6h3a1 1 0 1 1 0 2h-1v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8H4a1 1 0 1 1 0-2h3l1.04-2.27A1 1 0 0 1 9 3zm1 3h4l-.52-1H10.52L10 6zm-2 2v12h8V8H8zm2 2h1v9H10v-9zm3 0h1v9h-1v-9z"/>' +
+      '</svg>';
 
     function openGallery() {
       gate.classList.add('hidden');
@@ -454,50 +472,133 @@
       return data;
     }
 
-    async function saveWallOrder(works) {
+    async function saveWallOrder(works, quiet = false) {
       const data = await postManifestAction('reorder', {
         order: works.map((w) => w.id),
       });
       galleryWorks = data?.manifest?.works || works;
-      renderWorks(galleryWorks);
+      if (!quiet) renderWorks(galleryWorks);
       return data;
     }
 
-    async function moveWork(index, delta) {
-      if (editBusy) return;
-      const next = index + delta;
-      if (next < 0 || next >= galleryWorks.length) return;
-      const reordered = galleryWorks.slice();
-      const [item] = reordered.splice(index, 1);
-      reordered.splice(next, 0, item);
-      editBusy = true;
-      setEditStatus('Saving order…');
-      try {
-        await saveWallOrder(reordered);
-        setEditStatus('Wall order saved.', true);
-      } catch (e) {
-        setEditStatus(e.message || 'Could not save order.', false, true);
-        await loadGallery();
-      } finally {
-        editBusy = false;
-      }
+    function scheduleSaveOrder() {
+      clearTimeout(saveOrderTimer);
+      saveOrderTimer = setTimeout(async () => {
+        setEditStatus('Saving wall order…');
+        try {
+          await saveWallOrder(galleryWorks, true);
+          setEditStatus('Wall order saved.', true);
+        } catch (e) {
+          setEditStatus(e.message || 'Could not save order.', false, true);
+          await loadGallery();
+        }
+      }, 350);
+    }
+
+    function reorderLocal(fromId, toId) {
+      if (!fromId || !toId || fromId === toId) return;
+      const fromIdx = galleryWorks.findIndex((w) => w.id === fromId);
+      const toIdx = galleryWorks.findIndex((w) => w.id === toId);
+      if (fromIdx < 0 || toIdx < 0) return;
+      const next = galleryWorks.slice();
+      const [item] = next.splice(fromIdx, 1);
+      next.splice(toIdx, 0, item);
+      galleryWorks = next;
+      renderWorks(galleryWorks);
+      scheduleSaveOrder();
+    }
+
+    function clearDropTargets() {
+      grid.querySelectorAll('.museum-wall__piece--drop-target').forEach((el) => {
+        el.classList.remove('museum-wall__piece--drop-target');
+      });
+    }
+
+    function bindDragReorder(piece, id) {
+      piece.draggable = true;
+
+      piece.addEventListener('dragstart', (e) => {
+        dragSourceId = id;
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', id);
+        piece.classList.add('museum-wall__piece--dragging');
+      });
+
+      piece.addEventListener('dragend', () => {
+        dragSourceId = null;
+        piece.classList.remove('museum-wall__piece--dragging');
+        clearDropTargets();
+      });
+
+      piece.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        if (dragSourceId && dragSourceId !== id) {
+          clearDropTargets();
+          piece.classList.add('museum-wall__piece--drop-target');
+        }
+      });
+
+      piece.addEventListener('dragleave', () => {
+        piece.classList.remove('museum-wall__piece--drop-target');
+      });
+
+      piece.addEventListener('drop', (e) => {
+        e.preventDefault();
+        const fromId = e.dataTransfer.getData('text/plain') || dragSourceId;
+        reorderLocal(fromId, id);
+        clearDropTargets();
+      });
+
+      piece.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('.museum-wall__delete')) return;
+        pointerDragId = id;
+        piece.setPointerCapture(e.pointerId);
+        piece.classList.add('museum-wall__piece--dragging');
+      });
+
+      piece.addEventListener('pointermove', (e) => {
+        if (pointerDragId !== id) return;
+        const target = document.elementFromPoint(e.clientX, e.clientY)?.closest('.museum-wall__piece');
+        clearDropTargets();
+        if (target && target.dataset.id && target.dataset.id !== id) {
+          target.classList.add('museum-wall__piece--drop-target');
+        }
+      });
+
+      piece.addEventListener('pointerup', (e) => {
+        if (pointerDragId !== id) return;
+        pointerDragId = null;
+        try { piece.releasePointerCapture(e.pointerId); } catch (_) {}
+        piece.classList.remove('museum-wall__piece--dragging');
+        const target = document.elementFromPoint(e.clientX, e.clientY)?.closest('.museum-wall__piece');
+        if (target?.dataset?.id && target.dataset.id !== id) {
+          reorderLocal(id, target.dataset.id);
+        }
+        clearDropTargets();
+      });
+
+      piece.addEventListener('pointercancel', () => {
+        if (pointerDragId === id) pointerDragId = null;
+        piece.classList.remove('museum-wall__piece--dragging');
+        clearDropTargets();
+      });
     }
 
     async function removeWork(id) {
-      if (editBusy) return;
-      if (!window.confirm('Remove this doodle from the gallery wall?')) return;
-      editBusy = true;
+      const prev = galleryWorks.slice();
+      galleryWorks = galleryWorks.filter((w) => w.id !== id);
+      renderWorks(galleryWorks);
       setEditStatus('Removing…');
       try {
         const data = await postManifestAction('delete', { id });
-        galleryWorks = data?.manifest?.works || [];
+        galleryWorks = data?.manifest?.works || galleryWorks;
         renderWorks(galleryWorks);
         setEditStatus('Doodle removed from the wall.', true);
       } catch (e) {
+        galleryWorks = prev;
+        renderWorks(galleryWorks);
         setEditStatus(e.message || 'Could not remove doodle.', false, true);
-        await loadGallery();
-      } finally {
-        editBusy = false;
       }
     }
 
@@ -509,13 +610,28 @@
         return;
       }
       emptyEl.classList.add('hidden');
-      galleryWorks.forEach((w, index) => {
+      galleryWorks.forEach((w) => {
         const piece = document.createElement('article');
         piece.className = 'museum-wall__piece' + (editMode ? ' museum-wall__piece--editing' : '');
         piece.dataset.id = w.id;
 
         const frame = document.createElement('div');
         frame.className = 'museum-frame museum-frame--wall';
+
+        if (editMode) {
+          const del = document.createElement('button');
+          del.type = 'button';
+          del.className = 'museum-wall__delete';
+          del.setAttribute('aria-label', 'Remove doodle');
+          del.innerHTML = TRASH_ICON;
+          del.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (window.confirm('Remove this doodle from the gallery wall?')) {
+              removeWork(w.id);
+            }
+          });
+          frame.append(del);
+        }
 
         const figure = document.createElement('figure');
         figure.className = 'museum-frame__art';
@@ -524,13 +640,12 @@
         img.alt = 'Valet Pru doodle';
         img.loading = 'lazy';
         img.decoding = 'async';
+        img.draggable = false;
         if (!editMode) {
           img.addEventListener('click', () => {
             lbImg.src = w.src;
             lb.classList.remove('hidden');
           });
-        } else {
-          img.style.cursor = 'default';
         }
         figure.append(img);
         frame.append(figure);
@@ -544,34 +659,7 @@
           piece.append(cap);
         }
 
-        if (editMode) {
-          const tools = document.createElement('div');
-          tools.className = 'museum-wall__tools';
-
-          const up = document.createElement('button');
-          up.type = 'button';
-          up.className = 'btn--mini';
-          up.textContent = '← Earlier';
-          up.disabled = index === 0 || editBusy;
-          up.addEventListener('click', () => moveWork(index, -1));
-
-          const down = document.createElement('button');
-          down.type = 'button';
-          down.className = 'btn--mini';
-          down.textContent = 'Later →';
-          down.disabled = index === galleryWorks.length - 1 || editBusy;
-          down.addEventListener('click', () => moveWork(index, 1));
-
-          const del = document.createElement('button');
-          del.type = 'button';
-          del.className = 'btn--mini btn--mini--danger';
-          del.textContent = 'Remove';
-          del.disabled = editBusy;
-          del.addEventListener('click', () => removeWork(w.id));
-
-          tools.append(up, down, del);
-          piece.append(tools);
-        }
+        if (editMode) bindDragReorder(piece, w.id);
 
         grid.append(piece);
       });
@@ -581,13 +669,17 @@
       editMode = !editMode;
       editToggle.setAttribute('aria-pressed', editMode ? 'true' : 'false');
       editToggle.textContent = editMode ? 'Done editing' : 'Edit wall';
-      setEditStatus(editMode ? 'Use ← Earlier / Later → to reorder. Remove takes a doodle off the wall.' : '');
+      setEditStatus(
+        editMode
+          ? 'Press and drag a frame to reorder. Trash icon removes a doodle from the wall.'
+          : '',
+      );
       renderWorks(galleryWorks);
     });
 
     async function loadGallery() {
       try {
-        const res = await fetch(API, { cache: 'no-store' });
+        const res = await fetch(`${API}?v=${Date.now()}`, { cache: 'no-store' });
         const data = await res.json();
         renderWorks(data?.manifest?.works || []);
         if (data?.player1Hint) {

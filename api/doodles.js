@@ -51,7 +51,9 @@ async function loadManifestFromBlob(gallery) {
     const listed = await list({ prefix: DOODLES_MANIFEST_PATH, limit: 5 });
     const hit = (listed.blobs || []).find((b) => b.pathname === DOODLES_MANIFEST_PATH);
     if (!hit?.url) return emptyDoodlesManifest();
-    const res = await fetch(hit.url, { cache: 'no-store' });
+    const res = await fetch(`${hit.url}${hit.url.includes('?') ? '&' : '?'}v=${Date.now()}`, {
+      cache: 'no-store',
+    });
     if (!res.ok) return emptyDoodlesManifest();
     return normalizeDoodlesManifest(await res.json());
   } catch (e) {

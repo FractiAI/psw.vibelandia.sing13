@@ -21,7 +21,8 @@ describe('Player spine · holographic Player home', () => {
   it('QUESTFEST home uses player spine not channel labyrinth', () => {
     const html = read('interfaces/vibelandia-questfest.html');
     expect(html).toContain('Your cruise line · five doors');
-    expect(html).toContain('btn-player-lead');
+    expect(html).toContain('visit-golden-path');
+    expect(html).toContain('Concert program');
     expect(html).toContain('player-more-aboard');
     expect(html).toContain('Journey · curated adventures');
     expect(html).toContain('href="/"');

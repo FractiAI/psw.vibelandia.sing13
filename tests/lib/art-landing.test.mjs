@@ -142,6 +142,8 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain('qv-jukebox');
     expect(js).toContain('pl-concierto-prelude');
     expect(js).toContain('questfest-bridge');
+    expect(html).toContain('visit-golden-path');
+    expect(html).toContain('/concierto-program');
     expect(js).toContain('BroadcastChannel');
     expect(js).toContain('qv-jukebox-prelude');
     expect(js).toContain('unlockOnGesture');

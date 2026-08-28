@@ -10,6 +10,7 @@ import {
   renderPlayerChannelsHtml,
   renderPlayerHeroCtasHtml,
   renderPlayerMoreAboardHtml,
+  renderVisitGoldenPathReceptionHtml,
 } from '../lib/player-spine.mjs';
 import { HOST_WELCOME_PLAYER_NPC, PLAYER_PRIMER_LINE } from '../lib/npc-player-doctrine.mjs';
 
@@ -19,6 +20,7 @@ const TARGET = path.join(ROOT, 'interfaces', 'vibelandia-questfest.html');
 
 const MARKERS = {
   heroCta: ['<!-- PLAYER_HERO_CTA_START -->', '<!-- PLAYER_HERO_CTA_END -->'],
+  goldenPath: ['<!-- VISIT_GOLDEN_PATH_START -->', '<!-- VISIT_GOLDEN_PATH_END -->'],
   guestKey: ['<!-- PLAYER_GUEST_KEY_START -->', '<!-- PLAYER_GUEST_KEY_END -->'],
   channels: ['<!-- PLAYER_CHANNELS_START -->', '<!-- PLAYER_CHANNELS_END -->'],
   moreAboard: ['<!-- PLAYER_MORE_ABOARD_START -->', '<!-- PLAYER_MORE_ABOARD_END -->'],
@@ -37,6 +39,7 @@ function patchBlock(html, [start, end], block) {
 let html = fs.readFileSync(TARGET, 'utf8');
 
 const heroBlock = renderPlayerHeroCtasHtml();
+const goldenPathBlock = renderVisitGoldenPathReceptionHtml();
 const guestBlock = renderCompactGuestKeyHtml();
 const channelsBlock = renderPlayerChannelsHtml();
 const moreBlock = renderPlayerMoreAboardHtml();
@@ -48,6 +51,16 @@ if (next) {
   html = html.replace(
     /<div class="cta-row">[\s\S]*?<\/div>\s*<\/div>\s*<\/header>/,
     `${heroBlock}\n    </div>\n  </header>`,
+  );
+}
+
+next = patchBlock(html, MARKERS.goldenPath, goldenPathBlock);
+if (next) {
+  html = next;
+} else if (!html.includes(MARKERS.goldenPath[0])) {
+  html = html.replace(
+    /<\/header>\s*\n\s*<!-- PLAYER_GUEST_KEY_START -->/,
+    `</header>\n\n  ${MARKERS.goldenPath[0]}\n  ${goldenPathBlock}\n  ${MARKERS.goldenPath[1]}\n\n  <!-- PLAYER_GUEST_KEY_START -->`,
   );
 }
 

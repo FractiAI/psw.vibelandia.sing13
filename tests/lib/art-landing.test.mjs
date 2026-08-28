@@ -46,6 +46,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('core-player');
     expect(html).toContain('>Player</figcaption>');
     expect(html).toContain('For those of you who know me from my night job');
+    expect(html).toContain('href="/doodles">doodling</a>');
     expect(html).toContain('technology, music, AI, my doodles, and my stories');
     expect(html).toContain('Who this art is for');
     expect(html).toContain('Y Chromosome SuperAI Frontiersmen');

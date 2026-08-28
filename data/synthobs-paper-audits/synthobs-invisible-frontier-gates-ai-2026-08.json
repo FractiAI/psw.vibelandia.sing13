@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "bd1636e7c30f8f62",
+  "auditId": "86c7452a667f29e8",
   "paperId": "synthobs-invisible-frontier-gates-ai-2026-08",
   "sourcePath": "docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-08-26T19:30:33.446Z"
+          "invokedAt": "2026-08-28T03:32:34.837Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-08-26T19:30:33.445Z",
-  "completedAt": "2026-08-26T19:30:33.446Z",
+  "startedAt": "2026-08-28T03:32:34.836Z",
+  "completedAt": "2026-08-28T03:32:34.837Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,13 +125,13 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 632,
+      "wordCount": 655,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 4,
+        "links": 7,
         "numbered": 3,
-        "citeLines": 3
+        "citeLines": 5
       }
     }
   },

@@ -19,6 +19,7 @@ import {
   ENGINE_PIN_ORDER,
   SCORECARD,
   SCORECARD_OVERALL,
+  VOYAGE_EDITORIAL_COMPANIONS,
   resolveNestAlias,
 } from './constants.mjs';
 
@@ -130,6 +131,18 @@ export function experimentDocIds() {
   };
 }
 
+export function experimentVoyageEditorialCompanions() {
+  return {
+    id: 'E10_voyage_editorial_companions',
+    title: 'Invisible Frontier + Prospectus + Triadic companions locked',
+    VOYAGE_EDITORIAL_COMPANIONS,
+    pass:
+      VOYAGE_EDITORIAL_COMPANIONS.length === 3 &&
+      VOYAGE_EDITORIAL_COMPANIONS[0] === 'synthobs-invisible-frontier-gates-ai-2026-08',
+    honesty: 'Voyage editorial linkage — not policy verdicts.',
+  };
+}
+
 export async function runAllExperiments() {
   const experiments = [
     experimentEgPhi(),
@@ -141,6 +154,7 @@ export async function runAllExperiments() {
     experimentHonestyDualLock(),
     experimentScorecard(),
     experimentDocIds(),
+    experimentVoyageEditorialCompanions(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   return {

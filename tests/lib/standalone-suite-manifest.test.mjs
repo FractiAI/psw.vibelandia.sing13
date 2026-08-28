@@ -13,6 +13,7 @@ describe('standalone-suite-manifest', () => {
       'synthio-mri-cloud-antenna',
       'synthio-mri-vs-legacy-perf',
       'synthobs-infinite-octaves-omniversal-lattice',
+      'synthobs-invisible-frontier-gates-ai',
       'synthobs-magneto-harmonic-stellar-99-octave',
       'synthobs-ss-vibelandia-official-prospectus',
       'synthobs-table-top-hep-99-octave',

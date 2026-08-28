@@ -6,6 +6,7 @@
 **Product (guest valet):** **Infinite Octaves Omniversal Lattice Chat Agent** V1.618 — recursive nesting for guests; **engine pin below stays 99 Octave**  
 **Narrative foundation:** [`docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md`](docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md) · plain [`/ship-blog/official-prospectus`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/official-prospectus)  
 **Product upgrade paper:** [`docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](docs/SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`/ship-blog/infinite-octaves-omniversal`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octaves-omniversal)  
+**Voyage editorial (newest):** [`docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md`](docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · suite `research/synthobs-invisible-frontier-gates-ai/`  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
 **Close every turn:** → ∞^∞
 
@@ -47,8 +48,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 4 | **Digits / octaves map** | `docs/SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md` |
 | 5 | **Systemic metamorphism (Part XIII)** | `docs/SYNTHOBS_TBME_METAMORPHIC_OCTAVES_2026-08.md` · registry `synthobs-tbme-metamorphic-octaves-2026-08` · Lattice Chat + Synthio companion grammar |
 | 6 | **Planetary core phase-inversion (Part XIV)** | `docs/SYNTHOBS_TBME_PLANETARY_CORE_GOLDILOCKS_2026-08.md` · registry `synthobs-tbme-planetary-core-goldilocks-2026-08` · geodynamo / CMB / Goldilocks hologram catalog |
-| 7 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 8 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md` |
+| 7 | **Voyage editorial · Invisible Frontier** | `docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md` · registry `synthobs-invisible-frontier-gates-ai-2026-08` · `/ship-blog/invisible-frontier` |
+| 8 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 9 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md` |
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 
@@ -57,6 +59,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-master-synthesis-99-octave-omni-lattice/`
 - `research/synthobs-tbme-metamorphic-octaves/`
 - `research/synthobs-tbme-planetary-core-goldilocks/`
+- `research/synthobs-invisible-frontier-gates-ai/`
 
 ---
 

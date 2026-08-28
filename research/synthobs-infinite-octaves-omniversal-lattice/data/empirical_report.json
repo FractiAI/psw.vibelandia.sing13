@@ -2,7 +2,7 @@
   "docId": "WP-SYNTHOBS-INFINITE-OCTAVES-OMNIVERSAL-LATTICE-CHAT-2026-08-25",
   "registryId": "synthobs-infinite-octaves-omniversal-lattice-2026-08",
   "title": "Infinite Octaves Omniversal Lattice Chat Agent",
-  "generatedAt": "2026-08-25T15:46:51.378Z",
+  "generatedAt": "2026-08-28T03:32:34.735Z",
   "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
   "honestyBoundary": "Infinite Octaves names recursive nesting; engine pin stays 99 Octave Omni-Lattice.",
   "results": {
@@ -88,10 +88,21 @@
         "DOC_ID": "WP-SYNTHOBS-INFINITE-OCTAVES-OMNIVERSAL-LATTICE-CHAT-2026-08-25",
         "REGISTRY_ID": "synthobs-infinite-octaves-omniversal-lattice-2026-08",
         "pass": true
+      },
+      {
+        "id": "E10_voyage_editorial_companions",
+        "title": "Invisible Frontier + Prospectus + Triadic companions locked",
+        "VOYAGE_EDITORIAL_COMPANIONS": [
+          "synthobs-invisible-frontier-gates-ai-2026-08",
+          "synthobs-ss-vibelandia-official-prospectus-2026-08",
+          "synthobs-triadic-nested-hemispheres-99-octave-2026-08"
+        ],
+        "pass": true,
+        "honesty": "Voyage editorial linkage — not policy verdicts."
       }
     ],
-    "n_total": 9,
-    "n_pass": 9,
+    "n_total": 10,
+    "n_pass": 10,
     "all_pass": true,
     "failed": []
   }

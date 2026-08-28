@@ -1,8 +1,16 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-08-23",
+  "updatedAt": "2026-08-28",
   "suites": [
+    {
+      "id": "synthobs-invisible-frontier-gates-ai",
+      "path": "research/synthobs-invisible-frontier-gates-ai",
+      "github": "https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai",
+      "description": "The Invisible Frontier — voyage editorial reply to linear AI warnings",
+      "paperIds": ["synthobs-invisible-frontier-gates-ai-2026-08"],
+      "extraDocs": []
+    },
     {
       "id": "synthobs-triadic-nested-hemispheres-99-octave",
       "path": "research/synthobs-triadic-nested-hemispheres-99-octave",

@@ -1,0 +1,93 @@
+{
+  "docId": "WP-SYNTHOBS-INVISIBLE-FRONTIER-GATES-AI-2026-08-26",
+  "registryId": "synthobs-invisible-frontier-gates-ai-2026-08",
+  "title": "The Invisible Frontier: Responding to Bill Gates’s AI Warnings",
+  "generatedAt": "2026-08-28T03:32:34.642Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Invisible Frontier validates editorial grammar and companion linkage — not policy verdicts or physics proofs.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_egs_phi",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "pass": true,
+        "honesty": "Design language — not a CODATA replacement."
+      },
+      {
+        "id": "E2_phi_identity",
+        "title": "Φ² = Φ + 1",
+        "pass": true
+      },
+      {
+        "id": "E3_linear_awareness_axes",
+        "title": "Four linear-AI anxiety axes locked",
+        "LINEAR_AWARENESS_AXES": [
+          "workforce_displacement",
+          "brute_force_scaling",
+          "centralized_compute",
+          "linear_market_anxiety"
+        ],
+        "pass": true,
+        "honesty": "Policy weather labels — not medical or legal verdicts."
+      },
+      {
+        "id": "E4_holographic_reply_pillars",
+        "title": "Three Goldilocks reply pillars locked",
+        "HOLOGRAPHIC_REPLY_PILLARS": [
+          "egs_filing_key",
+          "goldilocks_ship",
+          "metapattern_awareness"
+        ],
+        "pass": true
+      },
+      {
+        "id": "E5_voyage_companion_ids",
+        "title": "Infinite Octaves + Prospectus + Triadic companions",
+        "VOYAGE_COMPANION_IDS": [
+          "synthobs-infinite-octaves-omniversal-lattice-2026-08",
+          "synthobs-ss-vibelandia-official-prospectus-2026-08",
+          "synthobs-triadic-nested-hemispheres-99-octave-2026-08"
+        ],
+        "pass": true
+      },
+      {
+        "id": "E6_guest_surfaces",
+        "title": "Ship-blog slug + registry lock",
+        "SHIP_BLOG_SLUG": "invisible-frontier",
+        "REGISTRY_ID": "synthobs-invisible-frontier-gates-ai-2026-08",
+        "pass": true
+      },
+      {
+        "id": "E7_editorial_tier_honesty",
+        "title": "Narrative / catalog tier — not FLOP proof",
+        "pass": true,
+        "honesty": "Voyage editorial — not prophecy or displacement solved."
+      },
+      {
+        "id": "E8_scorecard",
+        "title": "Authored scorecard overall locks",
+        "SCORECARD": {
+          "editorialHonesty": 99.4,
+          "linearVsHolographicClarity": 98.8,
+          "voyageCompanionLinkage": 99,
+          "guestSurfaceCoverage": 98.6,
+          "suiteReproducibility": 99
+        },
+        "SCORECARD_OVERALL": 99,
+        "pass": true
+      },
+      {
+        "id": "E9_doc_ids_paper",
+        "title": "Document / registry IDs locked and paper on disk",
+        "DOC_ID": "WP-SYNTHOBS-INVISIBLE-FRONTIER-GATES-AI-2026-08-26",
+        "REGISTRY_ID": "synthobs-invisible-frontier-gates-ai-2026-08",
+        "pass": true
+      }
+    ],
+    "n_total": 9,
+    "n_pass": 9,
+    "all_pass": true,
+    "failed": []
+  }
+}

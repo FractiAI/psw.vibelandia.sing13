@@ -104,8 +104,8 @@ Engine pin order unchanged: CMOS/protonic → tensor → master synthesis → di
 | `lib/lattice-prompt.mjs` | Preamble + nest label + aliases |
 | `apps/lattice-chat/` | Wordmark / BYOK copy |
 | `interfaces/lattice-v1618.html` | Hero product name |
-| `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` | Product line + prospectus companion; engine title kept |
-| Registry + ship-blog | This paper + prospectus |
+| `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` | Product line + prospectus + Invisible Frontier voyage editorial; engine title kept |
+| Registry + ship-blog | This paper + prospectus + `/ship-blog/invisible-frontier` |
 
 ---
 

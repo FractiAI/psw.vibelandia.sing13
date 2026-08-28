@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-invisible-frontier-gates-ai",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.26",
+  "description": "The Invisible Frontier — voyage editorial reply to linear AI warnings",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai.git"
+  }
+}

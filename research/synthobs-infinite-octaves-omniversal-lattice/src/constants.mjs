@@ -37,6 +37,12 @@ export const ENGINE_PIN_ORDER = Object.freeze([
   'planetary_core_part_xiv',
 ]);
 
+export const VOYAGE_EDITORIAL_COMPANIONS = Object.freeze([
+  'synthobs-invisible-frontier-gates-ai-2026-08',
+  'synthobs-ss-vibelandia-official-prospectus-2026-08',
+  'synthobs-triadic-nested-hemispheres-99-octave-2026-08',
+]);
+
 export const SCORECARD = Object.freeze({
   productNamingClarity: 99.0,
   enginePinFidelity: 99.2,

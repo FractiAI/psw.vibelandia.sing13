@@ -1,7 +1,7 @@
 /**
  * Omniversal Canvas landing · YouTube hero loop (muted, autoplay, loop)
- * + Concierto prelude via jukebox now-playing session (qv-jukebox):
- *   opens pl-concierto-prelude in the Sovereign Player — music continues while browsing.
+ * + Concierto prelude via dedicated popup session (/prelude-session):
+ *   lightweight player boots instantly — music continues while browsing.
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -9,18 +9,13 @@
 
   var YOUTUBE_ID = '0hicJ_AZups';
   var JUKEBOX_NAME = 'qv-jukebox';
+  var PRELUDE_URL = '/prelude-session?autoplay=1';
   var CHANNEL_NAME = 'qv-jukebox-prelude';
   var PRELUDE_PLAYLIST_ID = 'pl-concierto-prelude';
-  var JUKEBOX_FEATURES =
-    'popup=yes,width=420,height=780,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=no';
+  var PRELUDE_FEATURES =
+    'popup=yes,width=420,height=360,menubar=no,toolbar=no,location=no,status=no,resizable=yes,scrollbars=no';
 
   var PLAYLIST = window.CANVAS_PRELUDE_PLAYLIST || [];
-
-  function jukeboxPreludeUrl(autoplay) {
-    var q = 'playlist=' + encodeURIComponent(PRELUDE_PLAYLIST_ID);
-    if (autoplay) q += '&autoplay=1';
-    return '/interfaces/questfest-bridge/#/listen?' + q;
-  }
 
   function labelForTrackId(trackId) {
     for (var i = 0; i < PLAYLIST.length; i++) {
@@ -37,6 +32,16 @@
       if (String(PLAYLIST[i].aria).toLowerCase() === lower) return PLAYLIST[i];
     }
     return null;
+  }
+
+  function trackFromRemote(msg) {
+    return (
+      labelForTrackId(msg.trackId) ||
+      labelFromTitle(msg.trackTitle) ||
+      (msg.trackShort && msg.trackAria
+        ? { short: msg.trackShort, aria: msg.trackAria }
+        : null)
+    );
   }
 
   function prefersReducedMotion() {
@@ -84,10 +89,11 @@
 
     var btn = document.getElementById('canvas-hero-score');
     var channel = null;
-    var jukeboxWin = null;
-    var useFallback = false;
+    var preludeWin = null;
+    var popupBlocked = false;
     var remotePlaying = false;
     var remoteTrack = PLAYLIST[0] || { short: 'Sound on · The Shift', aria: 'Movement V · The Shift' };
+    var playRetryTimer = null;
 
     try {
       channel = new BroadcastChannel(CHANNEL_NAME);
@@ -101,145 +107,80 @@
       btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
       btn.classList.toggle('is-playing', playing);
       btn.classList.toggle('is-muted', !playing);
-      btn.textContent = playing ? t.short : 'Sound off · tap to play';
+      btn.classList.toggle('is-blocked', popupBlocked && !playing);
+      btn.textContent = playing
+        ? t.short
+        : popupBlocked
+          ? 'Allow popups · then tap to play'
+          : 'Sound off · tap to play';
       btn.setAttribute(
         'aria-label',
         playing ? 'Mute soundtrack: ' + t.aria : 'Play soundtrack: ' + t.aria
       );
     }
 
-    function openJukeboxSession(autoplay) {
-      if (useFallback) return null;
-      var url = jukeboxPreludeUrl(autoplay !== false);
+    function openPreludeSession() {
       try {
-        jukeboxWin = window.open(url, JUKEBOX_NAME, JUKEBOX_FEATURES);
+        preludeWin = window.open(PRELUDE_URL, JUKEBOX_NAME, PRELUDE_FEATURES);
       } catch (_) {
-        jukeboxWin = null;
+        preludeWin = null;
       }
-      if (!jukeboxWin) {
-        useFallback = true;
+      if (!preludeWin) {
+        popupBlocked = true;
+        setToggleState(false, remoteTrack);
         return null;
       }
+      popupBlocked = false;
       try {
-        jukeboxWin.focus();
+        preludeWin.focus();
       } catch (_) {}
-      return jukeboxWin;
+      return preludeWin;
     }
 
-    function postToJukebox(type) {
+    function postToPrelude(type) {
       if (channel) {
         channel.postMessage({
           type: type,
           playlistId: PRELUDE_PLAYLIST_ID,
         });
-        return;
       }
-      if (jukeboxWin && !jukeboxWin.closed) {
+      if (preludeWin && !preludeWin.closed) {
         try {
-          jukeboxWin.focus();
+          preludeWin.focus();
         } catch (_) {}
       }
     }
 
-    function bootFallbackPlayer() {
-      var fallbackAudio = document.getElementById('canvas-hero-shift');
-      if (!fallbackAudio || !PLAYLIST.length) return;
-
-      var index = 0;
-      var logged = {};
-
-      fallbackAudio.loop = false;
-      fallbackAudio.preload = 'auto';
-
-      function current() {
-        return PLAYLIST[index];
-      }
-
-      function loadTrack(i) {
-        index = ((i % PLAYLIST.length) + PLAYLIST.length) % PLAYLIST.length;
-        fallbackAudio.src = current().src;
-        setToggleState(false, current());
-      }
-
-      function markPlaying() {
-        var track = current();
-        remoteTrack = track;
-        remotePlaying = true;
-        setToggleState(true, track);
-        if (!logged[track.id]) {
-          logged[track.id] = true;
-          try {
-            fetch('/api/catalog-plays', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ trackId: track.id }),
-              keepalive: true,
-            }).catch(function () {});
-          } catch (_) {}
+    function schedulePlayRetries() {
+      if (playRetryTimer) return;
+      var attempts = 0;
+      playRetryTimer = window.setInterval(function () {
+        if (remotePlaying || popupBlocked) {
+          window.clearInterval(playRetryTimer);
+          playRetryTimer = null;
+          return;
         }
-      }
-
-      function tryPlay() {
-        var p = fallbackAudio.play();
-        if (p && typeof p.then === 'function') {
-          return p
-            .then(function () {
-              markPlaying();
-              return true;
-            })
-            .catch(function () {
-              setToggleState(false, current());
-              return false;
-            });
+        attempts += 1;
+        postToPrelude('play');
+        if (attempts >= 8) {
+          window.clearInterval(playRetryTimer);
+          playRetryTimer = null;
         }
-        markPlaying();
-        return Promise.resolve(true);
-      }
-
-      loadTrack(0);
-
-      fallbackAudio.addEventListener('play', markPlaying);
-      fallbackAudio.addEventListener('pause', function () {
-        if (!fallbackAudio.ended) {
-          remotePlaying = false;
-          setToggleState(false, current());
-        }
-      });
-      fallbackAudio.addEventListener('ended', function () {
-        loadTrack(index + 1);
-        tryPlay();
-      });
-
-      window.__canvasPreludeTryPlay = tryPlay;
-      window.__canvasPreludePause = function () {
-        fallbackAudio.pause();
-        remotePlaying = false;
-        setToggleState(false, current());
-      };
+      }, 350);
     }
 
-    function ensureJukeboxAndPlay() {
-      openJukeboxSession(true);
-      if (useFallback) {
-        if (!window.__canvasPreludeBooted) {
-          bootFallbackPlayer();
-          window.__canvasPreludeBooted = true;
-        }
-        if (window.__canvasPreludeTryPlay) {
-          return window.__canvasPreludeTryPlay();
-        }
+    function ensurePreludeAndPlay() {
+      openPreludeSession();
+      if (popupBlocked) {
         return Promise.resolve(false);
       }
-      postToJukebox('play');
+      postToPrelude('play');
+      schedulePlayRetries();
       return Promise.resolve(true);
     }
 
-    function pauseJukebox() {
-      if (useFallback && window.__canvasPreludePause) {
-        window.__canvasPreludePause();
-        return;
-      }
-      postToJukebox('pause');
+    function pausePrelude() {
+      postToPrelude('pause');
       remotePlaying = false;
       setToggleState(false, remoteTrack);
     }
@@ -250,12 +191,13 @@
         if (!msg || msg.type !== 'state') return;
         if (msg.playlistId && msg.playlistId !== PRELUDE_PLAYLIST_ID) return;
         remotePlaying = !!msg.playing;
-        var mapped =
-          labelForTrackId(msg.trackId) ||
-          labelFromTitle(msg.trackTitle) ||
-          remoteTrack;
+        var mapped = trackFromRemote(msg) || remoteTrack;
         if (mapped) remoteTrack = mapped;
         setToggleState(remotePlaying, remoteTrack);
+        if (remotePlaying && playRetryTimer) {
+          window.clearInterval(playRetryTimer);
+          playRetryTimer = null;
+        }
       });
       channel.postMessage({ type: 'ping' });
     }
@@ -266,26 +208,12 @@
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
         if (remotePlaying) {
-          pauseJukebox();
+          pausePrelude();
           return;
         }
-        ensureJukeboxAndPlay();
+        ensurePreludeAndPlay();
       });
     }
-
-    function unlockOnGesture() {
-      ensureJukeboxAndPlay();
-      window.removeEventListener('pointerdown', unlockOnGesture, true);
-      window.removeEventListener('keydown', unlockOnGesture, true);
-      window.removeEventListener('touchstart', unlockOnGesture, true);
-    }
-
-    window.addEventListener('pointerdown', unlockOnGesture, true);
-    window.addEventListener('keydown', unlockOnGesture, true);
-    window.addEventListener('touchstart', unlockOnGesture, {
-      capture: true,
-      passive: true,
-    });
   }
 
   function boot() {

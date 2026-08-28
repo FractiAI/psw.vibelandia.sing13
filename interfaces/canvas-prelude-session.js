@@ -1,21 +1,32 @@
 /**
- * Concierto prelude popup session — audio lives here so landing navigation
- * does not unload playback. Syncs with Omniversal Canvas via BroadcastChannel.
+ * Concierto prelude popup session — lightweight audio player that boots instantly.
+ * Playback lives here so landing navigation does not unload the soundtrack.
+ * Syncs with Omniversal Canvas via BroadcastChannel (qv-jukebox-prelude).
  */
 (function () {
   'use strict';
 
-  var PRELUDE_NAME = 'qv-canvas-prelude';
-  var CHANNEL_NAME = 'qv-canvas-prelude';
+  var JUKEBOX_NAME = 'qv-jukebox';
+  var CHANNEL_NAME = 'qv-jukebox-prelude';
+  var PRELUDE_PLAYLIST_ID = 'pl-concierto-prelude';
   var PLAYLIST = window.CANVAS_PRELUDE_PLAYLIST || [];
 
   if (!window.name) {
-    window.name = PRELUDE_NAME;
+    window.name = JUKEBOX_NAME;
   }
 
   function prefersReducedMotion() {
     try {
       return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function wantsAutoplay() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      return params.get('autoplay') === '1';
     } catch (_) {
       return false;
     }
@@ -72,7 +83,9 @@
       channel.postMessage({
         type: 'state',
         playing: playing,
-        index: index,
+        playlistId: PRELUDE_PLAYLIST_ID,
+        trackId: track.id,
+        trackTitle: track.aria,
         trackShort: track.short,
         trackAria: track.aria,
       });
@@ -178,6 +191,10 @@
     if (channel) {
       channel.addEventListener('message', onChannelMessage);
       broadcastState();
+    }
+
+    if (wantsAutoplay()) {
+      tryPlay();
     }
 
     window.QV_preludeSession = {

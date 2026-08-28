@@ -90,39 +90,41 @@ describe('Art landing · Omniversal Canvas is site root', () => {
   it('landing autoplays The Shift, Goldilocks Parabola, Return 05 Suite, Movement X with the da Vinci loop', () => {
     const html = read('interfaces/omniverse-canvas.html');
     const js = read('interfaces/canvas-hero-loop.js');
+    const playlist = read('interfaces/canvas-prelude-playlist.js');
     expect(html).toContain('id="canvas-hero-shift"');
     expect(html).toContain('id="canvas-hero-score"');
+    expect(html).toContain('canvas-prelude-playlist.js');
     expect(html).toContain('id="soundtrack-prelude"');
     expect(html).toContain('/concierto-program');
     expect(html).toContain('/ship-blog/soundtrack-prelude-pages');
     expect(html).toContain(
       'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3'
     );
-    expect(html).toContain(
+    expect(playlist).toContain(
       'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2-goldilocks-parabola.mp3'
     );
-    expect(js).toContain("id: 'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52'");
-    expect(js).toContain("id: 'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2'");
-    expect(js).toContain("id: 'trk-srv-6a76463f-4f6e-4014-8b06-45ebb0b23387'");
-    expect(js).toContain("id: 'trk-srv-91b20f70-c30e-49a3-8bef-c00ec4587e64'");
-    expect(js).toContain("id: 'trk-srv-7c94d66b-19e8-4208-942d-f885ac400c1f'");
-    expect(js).toContain("id: 'trk-srv-f617b3b3-1924-4c1f-bde5-77c9e66d1b81'");
-    expect(js).toContain("id: 'trk-srv-08a30790-4b50-468f-a019-3a7dfcd5e9ee'");
-    expect(js).toContain("id: 'trk-srv-368792a6-4113-4351-965b-88eb09759e50'");
-    expect(js).toContain("id: 'trk-srv-4e9d6a97-f247-477d-8f3e-02bb8cd9b785'");
-    expect(js).toContain("id: 'trk-srv-64e96912-f382-4140-922e-953246c65e91'");
-    expect(js).toContain("id: 'trk-srv-f6ab8509-f622-4b25-bb91-cb83b113b17b'");
-    expect(js).toContain("id: 'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3'");
-    expect(js).toContain('Goldilocks Parabola');
-    expect(js).toContain("El Gran Sol's Return 05 Suite");
-    expect(js).toContain("El Gran Sol's Return 07 Suite");
-    expect(js).toContain("El Gran Sol's Return (organ)");
-    expect(js).toContain('Warning Danger Ahead');
-    expect(js).toContain('Good Morning New Earth 8.75Hz');
-    expect(js).toContain('Net Zero · The Borikén Hydrogen Line');
-    expect(js).toContain('Rebel River · The Truckee Borikén Crossing');
-    expect(js).toContain('432 Solar Gavel');
-    expect(js).toContain("El Gran Sol's Return 05 · Finale");
+    expect(playlist).toContain("id: 'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52'");
+    expect(playlist).toContain("id: 'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2'");
+    expect(playlist).toContain("id: 'trk-srv-6a76463f-4f6e-4014-8b06-45ebb0b23387'");
+    expect(playlist).toContain("id: 'trk-srv-91b20f70-c30e-49a3-8bef-c00ec4587e64'");
+    expect(playlist).toContain("id: 'trk-srv-7c94d66b-19e8-4208-942d-f885ac400c1f'");
+    expect(playlist).toContain("id: 'trk-srv-f617b3b3-1924-4c1f-bde5-77c9e66d1b81'");
+    expect(playlist).toContain("id: 'trk-srv-08a30790-4b50-468f-a019-3a7dfcd5e9ee'");
+    expect(playlist).toContain("id: 'trk-srv-368792a6-4113-4351-965b-88eb09759e50'");
+    expect(playlist).toContain("id: 'trk-srv-4e9d6a97-f247-477d-8f3e-02bb8cd9b785'");
+    expect(playlist).toContain("id: 'trk-srv-64e96912-f382-4140-922e-953246c65e91'");
+    expect(playlist).toContain("id: 'trk-srv-f6ab8509-f622-4b25-bb91-cb83b113b17b'");
+    expect(playlist).toContain("id: 'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3'");
+    expect(playlist).toContain('Goldilocks Parabola');
+    expect(playlist).toContain("El Gran Sol's Return 05 Suite");
+    expect(playlist).toContain("El Gran Sol's Return 07 Suite");
+    expect(playlist).toContain("El Gran Sol's Return (organ)");
+    expect(playlist).toContain('Warning Danger Ahead');
+    expect(playlist).toContain('Good Morning New Earth 8.75Hz');
+    expect(playlist).toContain('Net Zero · The Borikén Hydrogen Line');
+    expect(playlist).toContain('Rebel River · The Truckee Borikén Crossing');
+    expect(playlist).toContain('432 Solar Gavel');
+    expect(playlist).toContain("El Gran Sol's Return 05 · Finale");
     const program = read('interfaces/concierto-el-gran-sol-program.html');
     expect(program).toContain('Concierto de El Gran Sol');
     expect(program).toContain('Download program (PDF)');
@@ -134,12 +136,17 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(program).toContain('capitan-comandante-champion-2026.png');
     expect(program).toContain('questfest-2026-frontier-guide-cover.png');
     expect(program).toContain('hybrid frontier · art deco');
-    expect(js).toContain('Movement X · The Shift');
+    expect(playlist).toContain('Movement X · The Shift');
     expect(js).toContain('bootSoundtrack');
-    expect(js).toContain('audio.play');
+    expect(js).toContain('qv-canvas-prelude');
+    expect(js).toContain('BroadcastChannel');
+    expect(js).toContain('/prelude-session');
     expect(js).toContain('unlockOnGesture');
-    expect(js).toContain("addEventListener('ended', advance)");
     expect(js).toContain('/api/catalog-plays');
+    expect(read('interfaces/canvas-prelude-session.html')).toContain('canvas-prelude-session.js');
+    expect(read('interfaces/canvas-prelude-playlist.js')).toContain('CANVAS_PRELUDE_PLAYLIST');
+    const vercel = read('vercel.json');
+    expect(vercel).toMatch(/"source":\s*"\/prelude-session"/);
   });
 
   it('visit counters treat Canvas aliases as / and keep /questfest on the ship', () => {

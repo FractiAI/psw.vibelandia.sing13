@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concierto Prelude · SS Vibelandia</title>
+  <meta name="description" content="Dedicated prelude session — keep this window open while you browse rooms and links on SS Vibelandia." />
+  <meta name="robots" content="noindex" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --gold: #d4af37;
+      --ink: #0a0c12;
+      --panel: #12151f;
+      --muted: #9aa3b5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(ellipse at top, #1a2030 0%, var(--ink) 70%);
+      color: #eef1f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .panel {
+      width: min(100%, 22rem);
+      background: var(--panel);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 12px;
+      padding: 1.25rem 1.35rem 1.1rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+    .hint {
+      margin: 0 0 1rem;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+    .now {
+      margin: 0 0 0.85rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .now strong { color: #fff; }
+    button {
+      appearance: none;
+      border: 1px solid rgba(212, 175, 55, 0.55);
+      background: rgba(212, 175, 55, 0.12);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      width: 100%;
+    }
+    button.is-playing {
+      background: rgba(212, 175, 55, 0.28);
+      border-color: var(--gold);
+    }
+    button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+    .links {
+      margin-top: 0.95rem;
+      font-size: 0.82rem;
+    }
+    .links a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .links a:hover { text-decoration: underline; }
+    audio { display: none; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Concierto Prelude</h1>
+    <p class="hint">Keep this window open while you browse links and rooms — the landing soundtrack continues here even when you leave the page.</p>
+    <p class="now" id="prelude-now" aria-live="polite"><strong>Movement V · The Shift</strong></p>
+    <button type="button" id="prelude-toggle" aria-pressed="false">Sound off · tap to play</button>
+    <p class="links"><a href="/" target="_blank" rel="noopener">Back to Omniversal Canvas →</a></p>
+  </div>
+  <audio id="prelude-audio" preload="auto" playsinline></audio>
+  <script src="/interfaces/canvas-prelude-playlist.js"></script>
+  <script src="/interfaces/canvas-prelude-session.js" defer></script>
+</body>
+</html>

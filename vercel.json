@@ -1213,6 +1213,14 @@
       "destination": "/interfaces/concierto-el-gran-sol-program.html"
     },
     {
+      "source": "/prelude-session",
+      "destination": "/interfaces/canvas-prelude-session.html"
+    },
+    {
+      "source": "/prelude-session/",
+      "destination": "/interfaces/canvas-prelude-session.html"
+    },
+    {
       "source": "/ship-blog/triadic-hemispheres",
       "destination": "/interfaces/blog-triadic-hemispheres-2026-08.html"
     },

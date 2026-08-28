@@ -611,16 +611,17 @@
         class="hero__score"
         id="canvas-hero-score"
         aria-pressed="false"
-        aria-controls="canvas-hero-shift"
-        aria-label="Play soundtrack: Concierto prelude — The Shift, Goldilocks Parabola, Return 05 &amp; 07 suites, Movement X"
+        aria-controls="prelude-session"
+        aria-label="Play soundtrack: Concierto prelude — opens a session that keeps playing while you browse"
       >Sound off · tap to play</button>
       <audio
         id="canvas-hero-shift"
         preload="auto"
         playsinline
-        aria-label="Soundtrack playlist: Concierto prelude with Return 05 and Return 07 suites"
+        hidden
+        aria-hidden="true"
+        aria-label="Fallback soundtrack element when popup session is blocked"
         src="https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52-movement-v-of-concierto-de-el-gran-sol_-_the-shift_.mp3"
-        data-next-src="https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2-goldilocks-parabola.mp3"
       ></audio>
     </div>
   </header>
@@ -633,6 +634,7 @@
         We are rolling out a new omniversal art form: each key page gets a short loop and its own soundtrack prelude —
         the way old movie houses played music before the feature. Landing leads with the da Vinci stepping-in video and
         <em>Concierto de El Gran Sol: “The Shift”</em> — twelve movements ending with Return 05.
+        Tap <strong>Sound on</strong> to spin the playlist into its own prelude session — then walk links and rooms without losing the music.
         <a href="/concierto-program">Read the concert program →</a>
         ·
         <a href="/concierto-program">Download program (PDF)</a>
@@ -1087,6 +1089,7 @@
       }
     })();
   </script>
+  <script src="/interfaces/canvas-prelude-playlist.js"></script>
   <script src="/interfaces/canvas-hero-loop.js" defer></script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>

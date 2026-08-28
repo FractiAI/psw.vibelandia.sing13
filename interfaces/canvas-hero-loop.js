@@ -4,6 +4,7 @@
  *   1) Concierto de El Gran Sol · Movement V · “The Shift”
  *   2) Goldilocks Parabola
  *   3) El Gran Sol’s Return 05 Suite
+ *   4) Concierto de El Gran Sol · Movement X · “The Shift”
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -38,6 +39,15 @@
       src:
         'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
         'trk-srv-6a76463f-4f6e-4014-8b06-45ebb0b23387-el-gran-sol_s-return-05-suite.mp3',
+    },
+    {
+      id: 'trk-srv-91b20f70-c30e-49a3-8bef-c00ec4587e64',
+      label: 'Movement X · The Shift',
+      short: 'Sound on · Movement X',
+      aria: 'Movement X · The Shift',
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-91b20f70-c30e-49a3-8bef-c00ec4587e64-movement-x-of-concierto-de-el-gran-sol_-_the-shift_.mp3',
     },
   ];
 

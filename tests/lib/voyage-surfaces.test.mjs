@@ -25,6 +25,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(css).toContain('.voyage-map-still');
     expect(css).toContain('.voyage-map-filmstrip');
     expect(css).toContain('.voyage-directory-hero--story');
+    expect(css).toContain('.voyage-captain-reach');
     expect(css).not.toMatch(/color:\s*#(0{0,2}[0-9a-f]*blue)/i);
   });
 
@@ -114,6 +115,42 @@ describe('Frontiersman voyage guest surfaces', () => {
       expect(vercel).toContain(`"source": "${voyageCabinHref(cabin.slug)}"`);
     }
     expect(expandSerialRange('ST', 601, 680)).toHaveLength(80);
+  });
+
+  it('Captain’s Grand Penthouse is 360° with a private elevator to every deck', () => {
+    const penthouse = VOYAGE_CABINS.find((c) => c.slug === 'ph-001');
+    expect(penthouse).toBeTruthy();
+    expect(penthouse.lead).toMatch(/360°/);
+    expect(penthouse.lead).toMatch(/private elevator/i);
+    expect(penthouse.lead).toMatch(/every deck/i);
+    expect(penthouse.lead).not.toMatch(/270°/);
+    expect(penthouse.body.join(' ')).toMatch(/Summit, Veranda, Horizon, Grove, Night, and Core/);
+    expect(penthouse.imageAlt).toMatch(/private elevator to every deck/i);
+
+    const cabinHtml = read('interfaces/voyage/cabin-ph-001.html');
+    expect(cabinHtml).toContain('360° views from Summit');
+    expect(cabinHtml).toContain('private elevator');
+    expect(cabinHtml).toContain('every deck');
+    expect(cabinHtml).toContain('private elevator to every deck');
+    expect(cabinHtml).not.toContain('270°');
+
+    const brochure = read('interfaces/frontiersman-voyage-brochure.html');
+    expect(brochure).toContain('360° views from Summit');
+    expect(brochure).not.toContain('270°');
+
+    const summit = VOYAGE_DECKS.find((d) => d.slug === 'deck-9-summit');
+    expect(summit.body.join(' ')).toMatch(/private elevator to every deck/);
+
+    for (const deck of VOYAGE_DECKS) {
+      const html = read(`interfaces/voyage/${deck.slug}.html`);
+      expect(html).toContain('private elevator');
+      expect(html).toContain('/voyage/cabin-ph-001');
+      expect(html).toContain('self and entertainment');
+    }
+
+    const blog = read('interfaces/blog-frontiersman-voyage-2026-08.html');
+    expect(blog).toMatch(/360° views, private elevator to every deck/);
+    expect(blog).toContain('rooms for self and entertainment to every deck');
   });
 
   it('deck and cabin pages use distinct themed AI-generated PNG posters', () => {

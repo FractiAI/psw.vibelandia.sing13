@@ -659,6 +659,20 @@
   font-weight: 800;
 }
 
+.voyage-captain-reach {
+  margin: 1.1rem 0 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(16, 26, 44, 0.88), rgba(7, 11, 20, 0.94));
+  color: var(--voyage-champagne);
+}
+
+.voyage-captain-reach a {
+  color: var(--voyage-gold-hi);
+  font-weight: 700;
+}
+
 .voyage-purser {
   margin: 1.25rem 0 0;
   padding: 0.9rem 1rem;

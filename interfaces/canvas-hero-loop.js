@@ -6,6 +6,7 @@
  *   3) El Gran Sol’s Return 05 Suite
  *   4) Concierto de El Gran Sol · Movement X · “The Shift”
  *   5) El Gran Sol’s Return 07 Suite
+ *   6) El Gran Sol’s Return (organ)
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -58,6 +59,15 @@
       src:
         'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
         'trk-srv-7c94d66b-19e8-4208-942d-f885ac400c1f-el-gran-sol_s-return--07-suite.mp3',
+    },
+    {
+      id: 'trk-srv-f617b3b3-1924-4c1f-bde5-77c9e66d1b81',
+      label: "El Gran Sol's Return (organ)",
+      short: "Sound on · Return (organ)",
+      aria: "El Gran Sol's Return (organ)",
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-f617b3b3-1924-4c1f-bde5-77c9e66d1b81-el-gran-sol_s-return%28organ%29.mp3',
     },
   ];
 

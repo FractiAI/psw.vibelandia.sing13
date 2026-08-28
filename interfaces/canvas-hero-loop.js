@@ -3,6 +3,7 @@
  * + landing soundtrack playlist:
  *   1) Concierto de El Gran Sol · Movement V · “The Shift”
  *   2) Goldilocks Parabola
+ *   3) El Gran Sol’s Return 05 Suite
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -28,6 +29,15 @@
       src:
         'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
         'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2-goldilocks-parabola.mp3',
+    },
+    {
+      id: 'trk-srv-6a76463f-4f6e-4014-8b06-45ebb0b23387',
+      label: "El Gran Sol's Return 05 Suite",
+      short: "Sound on · Return 05 Suite",
+      aria: "El Gran Sol's Return 05 Suite",
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-6a76463f-4f6e-4014-8b06-45ebb0b23387-el-gran-sol_s-return-05-suite.mp3',
     },
   ];
 

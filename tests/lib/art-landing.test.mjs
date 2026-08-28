@@ -87,7 +87,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain('prefers-reduced-motion');
   });
 
-  it('landing autoplays The Shift then Goldilocks Parabola with the da Vinci loop', () => {
+  it('landing autoplays The Shift, Goldilocks Parabola, then Return 05 Suite with the da Vinci loop', () => {
     const html = read('interfaces/omniverse-canvas.html');
     const js = read('interfaces/canvas-hero-loop.js');
     expect(html).toContain('id="canvas-hero-shift"');
@@ -100,7 +100,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     );
     expect(js).toContain("id: 'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52'");
     expect(js).toContain("id: 'trk-srv-ffd82d55-82de-4700-bc7c-21f5aefc9bc2'");
+    expect(js).toContain("id: 'trk-srv-6a76463f-4f6e-4014-8b06-45ebb0b23387'");
     expect(js).toContain('Goldilocks Parabola');
+    expect(js).toContain("El Gran Sol's Return 05 Suite");
     expect(js).toContain('bootSoundtrack');
     expect(js).toContain('audio.play');
     expect(js).toContain('unlockOnGesture');

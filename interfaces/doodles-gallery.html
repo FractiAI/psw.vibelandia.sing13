@@ -412,7 +412,7 @@
         .trim() || 'Untitled doodle';
     }
 
-    async function uploadOne(file, caption, uploadFn) {
+    async function uploadBlobOnly(file, uploadFn) {
       const id = `ddl-${crypto.randomUUID()}`;
       const safeName = String(file.name || 'doodle.jpg').replace(/[^\w.\-()+ ]/g, '_').slice(0, 120);
       const pathname = `doodles/works/${id}-${safeName}`;
@@ -421,22 +421,34 @@
         handleUploadUrl: API,
         clientPayload: JSON.stringify({ allowOverwrite: false }),
       });
+      return {
+        id,
+        url: blob.url,
+        filename: file.name,
+        title: titleFromFilename(file.name),
+        contentType: file.type || 'image/jpeg',
+      };
+    }
+
+    async function registerBatch(uploaded, caption) {
       const reg = await fetch(API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          action: 'register',
-          id,
-          url: blob.url,
-          filename: file.name,
-          title: titleFromFilename(file.name),
-          caption: caption || undefined,
-          contentType: file.type || 'image/jpeg',
+          action: 'registerBatch',
+          works: uploaded.map((u) => ({
+            id: u.id,
+            url: u.url,
+            filename: u.filename,
+            title: u.title,
+            caption: caption || undefined,
+            contentType: u.contentType,
+          })),
         }),
       });
       const data = await reg.json();
       if (!reg.ok) throw new Error(data.message || data.error || 'register_failed');
-      return data.work;
+      return data;
     }
 
     async function mapPool(items, concurrency, worker) {
@@ -484,25 +496,32 @@
       }
 
       const caption = String(captionInput.value || '').trim();
-      let done = 0;
+      let uploaded = 0;
       const total = files.length;
       progressBar.style.width = '0%';
-      uploadStatus.textContent = `Posting ${total} doodle(s)…`;
+      uploadStatus.textContent = `Uploading ${total} doodle(s)…`;
 
       try {
-        await mapPool(files, player1Limits.maxConcurrent || 4, async (file) => {
-          await uploadOne(file, caption, upload);
-          done += 1;
-          progressBar.style.width = `${Math.round((done / total) * 100)}%`;
-          uploadStatus.textContent = `Posted ${done} / ${total}…`;
+        const blobs = await mapPool(files, player1Limits.maxConcurrent || 4, async (file) => {
+          const row = await uploadBlobOnly(file, upload);
+          uploaded += 1;
+          progressBar.style.width = `${Math.round((uploaded / total) * 50)}%`;
+          uploadStatus.textContent = `Uploaded ${uploaded} / ${total} to storage…`;
+          return row;
         });
+
+        uploadStatus.textContent = `Registering ${total} doodle(s) on the gallery wall…`;
+        progressBar.style.width = '75%';
+        await registerBatch(blobs, caption);
+
+        progressBar.style.width = '100%';
         uploadStatus.className = 'status status--ok';
         uploadStatus.textContent = `All ${total} doodle(s) posted for Gusta.`;
         fileInput.value = '';
         await loadGallery();
       } catch (e) {
         uploadStatus.className = 'status status--err';
-        uploadStatus.textContent = `Stopped after ${done}/${total}: ${e.message || e}`;
+        uploadStatus.textContent = `Stopped after ${uploaded}/${total} upload(s): ${e.message || e}`;
         await loadGallery();
       }
     });

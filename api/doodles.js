@@ -4,7 +4,8 @@
  * GET  — public manifest (works list)
  * POST — Player 1 upload (no client secret; Blob token server-side):
  *   - blob.* client token (Player 1 max 500 MiB / file)
- *   - { action: 'register' } after client upload
+ *   - { action: 'register' } after client upload (single)
+ *   - { action: 'registerBatch', works: [...] } after multi-file client upload
  *   - { action: 'limits' } → Player 1 ceiling receipt
  *   - small inline image ≤4.5 MB (fallback)
  */
@@ -57,18 +58,16 @@ async function loadManifestFromBlob(gallery) {
   }
 }
 
-async function registerWork(res, body, gallery) {
-  const { normalizeDoodleWork, upsertDoodleWork, putDoodlesManifest, titleFromFilename } = gallery;
-  if (!body?.url || !body?.id) {
-    return res.status(400).json({ error: 'invalid_body' });
-  }
+function buildDoodleWorkFromBody(body, gallery) {
+  const { normalizeDoodleWork, titleFromFilename } = gallery;
+  if (!body?.url || !body?.id) return null;
   const id = String(body.id)
     .replace(/[^\w-]/g, '')
     .slice(0, 80);
-  if (!id) return res.status(400).json({ error: 'invalid_id' });
+  if (!id) return null;
 
   const filename = String(body.filename || 'doodle.jpg');
-  const work = normalizeDoodleWork({
+  return normalizeDoodleWork({
     id,
     title: String(body.title || '').trim() || titleFromFilename(filename),
     src: String(body.url),
@@ -78,20 +77,79 @@ async function registerWork(res, body, gallery) {
     uploadedAt: new Date().toISOString(),
     mature: true,
   });
-  if (!work) return res.status(400).json({ error: 'invalid_work' });
+}
 
-  const current = await loadManifestFromBlob(gallery);
-  const next = upsertDoodleWork(current, work);
+async function persistWorksToManifest(gallery, works) {
+  const { putDoodlesManifest, persistDoodleWorks } = gallery;
+  return persistDoodleWorks({
+    loadManifest: () => loadManifestFromBlob(gallery),
+    putManifest: putDoodlesManifest,
+    works,
+  });
+}
+
+async function registerWork(res, body, gallery) {
+  const work = buildDoodleWorkFromBody(body, gallery);
+  if (!work) {
+    return res.status(400).json({ error: body?.url && body?.id ? 'invalid_work' : 'invalid_body' });
+  }
+
   try {
-    await putDoodlesManifest(next);
+    const { manifest, works } = await persistWorksToManifest(gallery, [work]);
+    return res.status(200).json({
+      work: works[0],
+      manifest,
+      limits: gallery.player1UploadLimits(),
+    });
   } catch (e) {
     console.error('[doodles] manifest put', e);
+    const code = e?.message === 'manifest_conflict' ? 'manifest_conflict' : 'manifest_save_failed';
     return res.status(500).json({
-      error: 'manifest_save_failed',
-      message: 'Image may be on storage but the gallery list could not be updated.',
+      error: code,
+      message:
+        code === 'manifest_conflict'
+          ? 'Gallery list busy — retry the batch; images are already on storage.'
+          : 'Image may be on storage but the gallery list could not be updated.',
     });
   }
-  return res.status(200).json({ work, manifest: next, limits: gallery.player1UploadLimits() });
+}
+
+async function registerBatch(res, body, gallery) {
+  const raw = Array.isArray(body?.works) ? body.works : [];
+  if (!raw.length) {
+    return res.status(400).json({ error: 'invalid_body', message: 'works array required' });
+  }
+  if (raw.length > gallery.DOODLE_PLAYER1_MAX_BATCH) {
+    return res.status(400).json({
+      error: 'batch_too_large',
+      message: `Max ${gallery.DOODLE_PLAYER1_MAX_BATCH} works per batch.`,
+    });
+  }
+
+  const works = raw.map((item) => buildDoodleWorkFromBody(item, gallery)).filter(Boolean);
+  if (!works.length) {
+    return res.status(400).json({ error: 'invalid_work' });
+  }
+
+  try {
+    const saved = await persistWorksToManifest(gallery, works);
+    return res.status(200).json({
+      works: saved.works,
+      count: saved.works.length,
+      manifest: saved.manifest,
+      limits: gallery.player1UploadLimits(),
+    });
+  } catch (e) {
+    console.error('[doodles] batch manifest put', e);
+    const code = e?.message === 'manifest_conflict' ? 'manifest_conflict' : 'manifest_save_failed';
+    return res.status(500).json({
+      error: code,
+      message:
+        code === 'manifest_conflict'
+          ? 'Gallery list busy — retry the batch; images are already on storage.'
+          : 'Images may be on storage but the gallery list could not be updated.',
+    });
+  }
 }
 
 async function handleBlobClientToken(req, res, body, gallery) {
@@ -128,8 +186,6 @@ async function handleInlineUpload(req, res, gallery) {
   const {
     doodlePathname,
     normalizeDoodleWork,
-    upsertDoodleWork,
-    putDoodlesManifest,
     titleFromFilename,
     player1UploadLimits,
   } = gallery;
@@ -189,20 +245,21 @@ async function handleInlineUpload(req, res, gallery) {
     mature: true,
   });
 
-  const current = await loadManifestFromBlob(gallery);
-  const next = upsertDoodleWork(current, work);
   try {
-    await putDoodlesManifest(next);
+    const saved = await persistWorksToManifest(gallery, [work]);
+    return res.status(200).json({
+      work: saved.works[0],
+      manifest: saved.manifest,
+      limits: player1UploadLimits(),
+    });
   } catch (e) {
     console.error('[doodles] manifest put after inline', e);
     return res.status(500).json({
-      error: 'manifest_save_failed',
+      error: e?.message === 'manifest_conflict' ? 'manifest_conflict' : 'manifest_save_failed',
       work,
       message: 'Image stored but gallery list could not be updated.',
     });
   }
-
-  return res.status(200).json({ work, manifest: next, limits: player1UploadLimits() });
 }
 
 module.exports = async function handler(req, res) {
@@ -261,6 +318,10 @@ module.exports = async function handler(req, res) {
 
   if (jsonBody?.action === 'register') {
     return registerWork(res, jsonBody, gallery);
+  }
+
+  if (jsonBody?.action === 'registerBatch') {
+    return registerBatch(res, jsonBody, gallery);
   }
 
   if (jsonBody && typeof jsonBody.type === 'string' && jsonBody.type.startsWith('blob.')) {

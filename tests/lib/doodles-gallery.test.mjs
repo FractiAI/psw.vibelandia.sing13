@@ -17,6 +17,8 @@ import {
   titleFromFilename,
   upsertDoodleWork,
   doodlesUploadConfigured,
+  mergeDoodleWorks,
+  persistDoodleWorks,
 } from '../../lib/doodles-gallery.mjs';
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -108,5 +110,39 @@ describe('Doodles Gallery · Player 1 elevated limits', () => {
     expect(doodlesUploadConfigured()).toBe(true);
     if (prev === undefined) delete process.env.BLOB_READ_WRITE_TOKEN;
     else process.env.BLOB_READ_WRITE_TOKEN = prev;
+  });
+
+  it('mergeDoodleWorks adds every work without dropping prior entries', () => {
+    const a = normalizeDoodleWork({ id: 'ddl-a', src: 'https://example.com/a.png', title: 'A' });
+    const b = normalizeDoodleWork({ id: 'ddl-b', src: 'https://example.com/b.png', title: 'B' });
+    const c = normalizeDoodleWork({ id: 'ddl-c', src: 'https://example.com/c.png', title: 'C' });
+    const merged = mergeDoodleWorks(emptyDoodlesManifest(), [a, b, c]);
+    expect(merged.works.map((w) => w.id)).toEqual(['ddl-c', 'ddl-b', 'ddl-a']);
+  });
+
+  it('persistDoodleWorks retries when a concurrent write would have dropped entries', async () => {
+    let manifest = emptyDoodlesManifest();
+    const a = normalizeDoodleWork({ id: 'ddl-a', src: 'https://example.com/a.png', title: 'A' });
+    const b = normalizeDoodleWork({ id: 'ddl-b', src: 'https://example.com/b.png', title: 'B' });
+
+    const loadManifest = async () => normalizeDoodlesManifest(manifest);
+    const putManifest = async (next) => {
+      manifest = normalizeDoodlesManifest(next);
+    };
+
+    const first = persistDoodleWorks({ loadManifest, putManifest, works: [a] });
+    const second = persistDoodleWorks({ loadManifest, putManifest, works: [b] });
+    const [savedA, savedB] = await Promise.all([first, second]);
+
+    expect(savedA.works[0].id).toBe('ddl-a');
+    expect(savedB.works[0].id).toBe('ddl-b');
+    expect(manifest.works.map((w) => w.id).sort()).toEqual(['ddl-a', 'ddl-b']);
+  });
+
+  it('gallery page uses batch register after parallel blob upload', () => {
+    const html = readFileSync(join(ROOT, 'interfaces/doodles-gallery.html'), 'utf8');
+    expect(html).toContain("action: 'registerBatch'");
+    expect(html).toContain('uploadBlobOnly');
+    expect(html).not.toContain("action: 'register'");
   });
 });

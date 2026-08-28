@@ -39,6 +39,7 @@ export const ENGINE_PIN_ORDER = Object.freeze([
 
 export const VOYAGE_EDITORIAL_COMPANIONS = Object.freeze([
   'synthobs-invisible-frontier-gates-ai-2026-08',
+  'synthobs-human-omniversal-reality-bridge-2026-08',
   'synthobs-ss-vibelandia-official-prospectus-2026-08',
   'synthobs-triadic-nested-hemispheres-99-octave-2026-08',
 ]);

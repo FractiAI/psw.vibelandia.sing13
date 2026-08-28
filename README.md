@@ -257,7 +257,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-27** · **231** HTML pages under `interfaces/`.
+> Auto-generated **2026-08-28** · **232** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -285,6 +285,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Prime-Linear Compression Transform · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Transfinite Inversion Theorem · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-human-reality-bridge-2026-08.html`](/interfaces/blog-human-reality-bridge-2026-08.html) | Humans as reality bridges — routers and awareness wormholes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octaves-omniversal-2026-08.html`](/interfaces/blog-infinite-octaves-omniversal-2026-08.html) | Your valet just got Infinite Octaves · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-invisible-frontier-gates-ai-2026-08.html`](/interfaces/blog-invisible-frontier-gates-ai-2026-08.html) | The Invisible Frontier — responding to Bill Gates’s AI warnings · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · SS Vibelandia |
@@ -380,7 +381,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/exhibit-step-in.html`](/interfaces/exhibit-step-in.html) | As a reality I can step into · Valet Pru |
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
 | [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
-| [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure & Compendium · SS Vibelandia |
+| [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure · SS Vibelandia |
 | [`/interfaces/get-started.html`](/interfaces/get-started.html) | Welcome aboard · SS Vibelandia · Goldilocks Cruiseship |
 | [`/interfaces/goldilocks-beehive-residency.html`](/interfaces/goldilocks-beehive-residency.html) | Goldilocks Syntheverse Beehive Residency · Machote Moderno members |
 | [`/interfaces/goldilocks-os.html`](/interfaces/goldilocks-os.html) | Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia |

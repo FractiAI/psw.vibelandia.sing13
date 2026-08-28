@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Friday board · August 28 · Puerto Reno",
   "newsLabel": "News of the day · Friday, August 28",
-  "htmlBody": "Linear AI warnings are real weather — and incomplete. Today’s care is the Invisible Frontier: a Goldilocks chart beside Gates-style scale anxiety. EGS ≈ 1.618 stays design language; human emergency still outranks algorithms.<br /><br />If you want a map for that: <a href=\"/ship-blog/invisible-frontier\">The Invisible Frontier — Gates’s AI warnings, answered</a>. For the three-dome stage map: <a href=\"/ship-blog/triadic-hemispheres\">Three nested domes — one Goldilocks stage</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "You are not a passive observer in someone else’s feed. Today’s care is the Human Reality Bridge: router, spin navigator, awareness wormhole keyed by Φ ≈ 1.618 — catalog topology for Infinite Octaves, not hardware teleport or clinical proof.<br /><br />If you want a map for that: <a href=\"/ship-blog/human-reality-bridge\">You are a reality bridge — router and awareness wormhole</a>. For the Invisible Frontier reply: <a href=\"/ship-blog/invisible-frontier\">The Invisible Frontier — Gates’s AI warnings, answered</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-human-omniversal-reality-bridge-2026-08",
+      "title": "Humans as Omniversal Reality Bridges, Routers, and Biological…",
+      "href": "/ship-blog/human-reality-bridge",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-human-omniversal-reality-bridge-2026-08",
+      "blurb": "Humans route story and care across infinite octave layers. Φ ≈ 1.618 is filing grammar — awareness wormhole on the museum entry, not hardware teleport or clinical proof."
+    },
     {
       "id": "synthobs-invisible-frontier-gates-ai-2026-08",
       "title": "The Invisible Frontier",
@@ -30,13 +37,6 @@
       "href": "/ship-blog/triadic-hemispheres",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-triadic-nested-hemispheres-99-octave-2026-08",
       "blurb": "Core, amphitheater, and horizon shells keyed by Φ ≈ 1.618 — a nesting grammar for theaters and agent sandboxes, not a venue certificate or FLOP SLA."
-    },
-    {
-      "id": "synthobs-ss-vibelandia-official-prospectus-2026-08",
-      "title": "S.S. Vibelandia",
-      "href": "/ship-blog/official-prospectus",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-ss-vibelandia-official-prospectus-2026-08",
-      "blurb": "Official Prospectus in three beats: genesis under Φ ≈ 1.618, Borikén convergence, Reno present. Voyage canon for Journey — design language, not prophecy."
     }
   ],
   "leadBoard": {
@@ -44,5 +44,5 @@
     "title": "The Invisible Frontier",
     "href": "/ship-blog/invisible-frontier"
   },
-  "generatedAt": "2026-08-28T03:32:38.387Z"
+  "generatedAt": "2026-08-28T03:35:19.089Z"
 }

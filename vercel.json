@@ -1181,6 +1181,14 @@
       "destination": "/interfaces/blog-invisible-frontier-gates-ai-2026-08.html"
     },
     {
+      "source": "/ship-blog/human-reality-bridge",
+      "destination": "/interfaces/blog-human-reality-bridge-2026-08.html"
+    },
+    {
+      "source": "/ship-blog/human-reality-bridge/",
+      "destination": "/interfaces/blog-human-reality-bridge-2026-08.html"
+    },
+    {
       "source": "/ship-blog/triadic-hemispheres",
       "destination": "/interfaces/blog-triadic-hemispheres-2026-08.html"
     },

@@ -4,6 +4,14 @@
   "updatedAt": "2026-08-28",
   "suites": [
     {
+      "id": "synthobs-human-omniversal-reality-bridge",
+      "path": "research/synthobs-human-omniversal-reality-bridge",
+      "github": "https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge",
+      "description": "Humans as Omniversal Reality Bridges — catalog topology suite",
+      "paperIds": ["synthobs-human-omniversal-reality-bridge-2026-08"],
+      "extraDocs": []
+    },
+    {
       "id": "synthobs-invisible-frontier-gates-ai",
       "path": "research/synthobs-invisible-frontier-gates-ai",
       "github": "https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai",

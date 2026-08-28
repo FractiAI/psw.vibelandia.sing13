@@ -32,6 +32,16 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 25');
   });
 
+  it('leads 2026-08-28 with Human Reality Bridge paper', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-08-28' });
+    expect(payload.highlights[0].id).toBe(
+      'synthobs-human-omniversal-reality-bridge-2026-08',
+    );
+    expect(payload.htmlBody).toMatch(/Human Reality Bridge|reality bridge/i);
+    expect(payload.htmlBody).toContain('human-reality-bridge');
+    expect(payload.newsLabel).toContain('August 28');
+  });
+
   it('leads 2026-08-26 with Invisible Frontier editorial', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-08-26' });
     expect(payload.highlights[0].id).toBe(

@@ -134,11 +134,11 @@ export function experimentDocIds() {
 export function experimentVoyageEditorialCompanions() {
   return {
     id: 'E10_voyage_editorial_companions',
-    title: 'Invisible Frontier + Prospectus + Triadic companions locked',
+    title: 'Invisible Frontier + Human bridge + Prospectus + Triadic companions locked',
     VOYAGE_EDITORIAL_COMPANIONS,
     pass:
-      VOYAGE_EDITORIAL_COMPANIONS.length === 3 &&
-      VOYAGE_EDITORIAL_COMPANIONS[0] === 'synthobs-invisible-frontier-gates-ai-2026-08',
+      VOYAGE_EDITORIAL_COMPANIONS.length === 4 &&
+      VOYAGE_EDITORIAL_COMPANIONS[1] === 'synthobs-human-omniversal-reality-bridge-2026-08',
     honesty: 'Voyage editorial linkage — not policy verdicts.',
   };
 }

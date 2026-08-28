@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-human-omniversal-reality-bridge",
+  "private": true,
+  "type": "module",
+  "version": "2026.08.28",
+  "description": "Humans as Omniversal Reality Bridges — catalog topology suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge.git"
+  }
+}

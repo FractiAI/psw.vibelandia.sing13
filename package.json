@@ -56,6 +56,7 @@
     "research:synthobs-triadic-nested-hemispheres-99-octave": "node research/synthobs-triadic-nested-hemispheres-99-octave/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-infinite-octaves-omniversal-lattice": "node research/synthobs-infinite-octaves-omniversal-lattice/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-invisible-frontier-gates-ai": "node research/synthobs-invisible-frontier-gates-ai/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-human-omniversal-reality-bridge": "node research/synthobs-human-omniversal-reality-bridge/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-ss-vibelandia-official-prospectus": "node research/synthobs-ss-vibelandia-official-prospectus/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-table-top-hep-99-octave": "node research/synthobs-table-top-hep-99-octave/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-magneto-harmonic-stellar-99-octave": "node research/synthobs-magneto-harmonic-stellar-99-octave/scripts/run_empirical_pipeline.mjs",

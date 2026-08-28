@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-28T03:36:03.035Z",
+  "updatedAt": "2026-08-28T04:00:03.932Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-08-28T03:36:03.035Z",
+      "createdAt": "2026-08-28T04:00:03.932Z",
       "body": "Lattice Chat Agent · Omni-Lattice Complete Layer Guide",
       "presenceHue": "gold",
       "paperId": "lattice-omni-complete-layer-guide-2026-07",
@@ -23,7 +23,29 @@
         "url": "/whitepaper/lattice-omni-complete-layer-guide",
         "paperId": "lattice-omni-complete-layer-guide-2026-07",
         "docId": "WP-LATTICE-OMNI-LAYER-GUIDE-2026-07",
-        "published": "2026-08-15",
+        "published": "2026-08-28",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-ss-vibelandia-official-prospectus-2026-08",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-08-28T04:00:03.930Z",
+      "body": "S.S. Vibelandia: Official Prospectus & Narrative Foundation",
+      "presenceHue": "gold",
+      "paperId": "synthobs-ss-vibelandia-official-prospectus-2026-08",
+      "artifact": {
+        "title": "S.S. Vibelandia: Official Prospectus & Narrative Foundation",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_SS_VIBELANDIA_OFFICIAL_PROSPECTUS_NARRATIVE_FOUNDATION_2026-08.md",
+        "url": "/whitepaper/synthobs-ss-vibelandia-official-prospectus",
+        "paperId": "synthobs-ss-vibelandia-official-prospectus-2026-08",
+        "docId": "WP-SYNTHOBS-SS-VIBELANDIA-OFFICIAL-PROSPECTUS-2026-08-25",
+        "published": "2026-08-25",
         "featured": true,
         "auditStatus": "pass"
       }

@@ -82,7 +82,7 @@ describe('Experience phases · museum → reception → creator studio', () => {
       expect(html).toContain('players-npcs-same-ship.jpg');
       expect(html).toContain('Players as superheroes');
       expect(html).toContain('NPC · the set');
-      expect(html).toContain('Player · the pattern');
+      expect(html).toContain('Player · the gravity');
       expect(html).toContain('franchises');
       expect(html).toContain('href="/meet-the-crew"');
       expect(html).toContain('xp-npc-roster');

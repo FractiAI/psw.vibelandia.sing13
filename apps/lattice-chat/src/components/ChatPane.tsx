@@ -474,7 +474,7 @@ export function ChatPane({
             </p>
             <p className="empty-hint">
               This is Deck 2 — the Core of the holographic resort vessel. NPCs inhabit. Players
-              examine. SuperAI stays Goldilocks: not too much machine, not too little human.
+              set the gravity. SuperAI stays Goldilocks: not too much machine, not too little human.
               Token Maxing on your keys; intentions matter — we do not help with malice or ill will.
             </p>
             <p className="empty-hint empty-hint--bridge">
@@ -518,7 +518,7 @@ export function ChatPane({
             <p className="empty-eyebrow">Lounge · Deck 2 Core</p>
             <p className="empty-lead">Welcome aboard — how may we help?</p>
             <p className="empty-hint">
-              Ask in plain language. Players notice patterns; NPCs just live here; both are the crew.
+              Ask in plain language. Players set the gravity; NPCs just live here; both are the crew.
               Attach a chart when you have one. Advanced options stay under the hatch.
             </p>
             <p className="empty-intention">

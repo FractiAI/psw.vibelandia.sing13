@@ -18,7 +18,7 @@ describe('NPC & Player doctrine', () => {
     expect(NPC_PLAYER_DOCTRINE_CANONICAL).toMatch(/superheroes they flock to/);
     expect(PLAYER_NPC_LINE).toMatch(/populate the set/);
     expect(PLAYER_SPINE_LINE).toMatch(/frontiersmen Player/i);
-    expect(PLAYER_SPINE_LINE).toMatch(/legacies resource/);
+    expect(PLAYER_SPINE_LINE).toMatch(/resource the gravity you set/);
   });
 
   it('brochure §3 and Coexist carry the canonical doctrine', () => {

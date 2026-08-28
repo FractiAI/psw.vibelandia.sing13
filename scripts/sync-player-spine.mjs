@@ -11,7 +11,7 @@ import {
   renderPlayerHeroCtasHtml,
   renderPlayerMoreAboardHtml,
 } from '../lib/player-spine.mjs';
-import { PLAYER_PRIMER_LINE } from '../lib/npc-player-doctrine.mjs';
+import { HOST_WELCOME_PLAYER_NPC, PLAYER_PRIMER_LINE } from '../lib/npc-player-doctrine.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -91,6 +91,11 @@ html = html.replace(
 html = html.replace(
   /<p class="primer">\s*SuperAI frontiersman's best friend[\s\S]*?<\/p>/,
   `<p class="primer">\n        ${PLAYER_PRIMER_LINE}\n      </p>`,
+);
+
+html = html.replace(
+  /NPCs inhabit the world\. Players notice the pattern\. You do not have to become someone else to belong\./,
+  HOST_WELCOME_PLAYER_NPC,
 );
 
 fs.writeFileSync(TARGET, html);

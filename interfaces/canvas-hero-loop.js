@@ -10,7 +10,8 @@
  *   7) Warning Danger Ahead
  *   8) Good Morning New Earth 8.75Hz
  *   9) Net Zero · The Borikén Hydrogen Line
- *  10) El Gran Sol’s Return 05 · Finale
+ *  10) Rebel River · The Truckee Borikén Crossing
+ *  11) El Gran Sol’s Return 05 · Finale
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -99,6 +100,15 @@
       src:
         'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
         'trk-srv-4e9d6a97-f247-477d-8f3e-02bb8cd9b785-net-zero_-the-borike_n-hydrogen-line.mp3',
+    },
+    {
+      id: 'trk-srv-64e96912-f382-4140-922e-953246c65e91',
+      label: 'Rebel River · The Truckee Borikén Crossing',
+      short: 'Sound on · Rebel River',
+      aria: 'Rebel River · The Truckee Borikén Crossing',
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-64e96912-f382-4140-922e-953246c65e91-rebel-river_-the-truckee-borike_n-crossing.mp3',
     },
     {
       id: 'trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3',

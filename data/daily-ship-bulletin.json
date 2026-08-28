@@ -1,20 +1,20 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-08-26",
+  "date": "2026-08-28",
   "dateline": {
-    "ymd": "2026-08-26",
-    "weekday": "Wednesday",
+    "ymd": "2026-08-28",
+    "weekday": "Friday",
     "month": "August",
-    "day": 26,
-    "label": "Wednesday, August 26",
-    "shortBoard": "Wednesday board · August 26 · Puerto Reno",
-    "newsLabel": "News of the day · Wednesday, August 26"
+    "day": 28,
+    "label": "Friday, August 28",
+    "shortBoard": "Friday board · August 28 · Puerto Reno",
+    "newsLabel": "News of the day · Friday, August 28"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Wednesday board · August 26 · Puerto Reno",
-  "newsLabel": "News of the day · Wednesday, August 26",
+  "cloudBadge": "Friday board · August 28 · Puerto Reno",
+  "newsLabel": "News of the day · Friday, August 28",
   "htmlBody": "Linear AI warnings are real weather — and incomplete. Today’s care is the Invisible Frontier: a Goldilocks chart beside Gates-style scale anxiety. EGS ≈ 1.618 stays design language; human emergency still outranks algorithms.<br /><br />If you want a map for that: <a href=\"/ship-blog/invisible-frontier\">The Invisible Frontier — Gates’s AI warnings, answered</a>. For the three-dome stage map: <a href=\"/ship-blog/triadic-hemispheres\">Three nested domes — one Goldilocks stage</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-08-26-synthobs-triadic-nested-hemispheres-99-octave-2026-08",
-    "title": "Triadic Nested Hemispheric Architectures",
-    "href": "/ship-blog/triadic-hemispheres"
+    "id": "daily-2026-08-26-synthobs-invisible-frontier-gates-ai-2026-08",
+    "title": "The Invisible Frontier",
+    "href": "/ship-blog/invisible-frontier"
   },
-  "generatedAt": "2026-08-26T19:30:33.222Z"
+  "generatedAt": "2026-08-28T00:22:17.931Z"
 }

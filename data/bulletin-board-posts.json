@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-08-26",
+  "updated": "2026-08-28",
   "posts": [
+    {
+      "id": "daily-2026-08-28-synthobs-invisible-frontier-gates-ai-2026-08",
+      "posted": "2026-08-28",
+      "featured": true,
+      "title": "The Invisible Frontier",
+      "subtitle": "News of the day · Friday, August 28",
+      "summary": "Linear AI alarms miss the Goldilocks ship already underway. EGS ≈ 1.618 is design language for holographic care — not a physics proof or a claim that displacement is solved.",
+      "href": "/ship-blog/invisible-frontier",
+      "pill": "TODAY",
+      "docRef": "synthobs-invisible-frontier-gates-ai-2026-08",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-08-26-synthobs-invisible-frontier-gates-ai-2026-08",
       "posted": "2026-08-26",

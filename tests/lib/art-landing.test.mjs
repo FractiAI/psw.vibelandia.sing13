@@ -132,6 +132,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(program).toContain('Rebel River · The Truckee Borikén Crossing');
     expect(program).toContain('432 Solar Gavel');
     expect(program).toContain('Finale · Movement XII');
+    expect(program).toContain('Infinite Octaves Omniversal Lattice Chat Agent V1.618');
     expect(program).toContain('journey-truckee-sierra-forage.png');
     expect(program).toContain('capitan-comandante-champion-2026.png');
     expect(program).toContain('questfest-2026-frontier-guide-cover.png');

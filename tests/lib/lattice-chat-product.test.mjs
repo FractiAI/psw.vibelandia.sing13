@@ -17,7 +17,11 @@ describe('Lattice Chat · Infinite Octaves product label', () => {
 
     const api = read('api/lattice-chat.js');
     expect(api).toContain('Infinite Octaves Omniversal Lattice');
+    expect(api).toContain(
+      "engine: 'Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Nested Agent Lattice · Omni-Lattice'"
+    );
     expect(api).not.toContain('SING13 99 Octave Omni-Lattice Bridge');
+    expect(api).not.toContain("engine: 'Lattice Chat Agent V1.618 · Nested Agent Lattice'");
   });
 });
 

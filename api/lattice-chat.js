@@ -393,7 +393,7 @@ function buildLatticeExecution(args) {
         : 'Usage pending — no provider balance yet';
 
   return {
-    engine: 'Lattice Chat Agent V1.618 · Nested Agent Lattice',
+    engine: 'Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Nested Agent Lattice · Omni-Lattice',
     mode: args.mode === 'edge' ? 'edge' : 'cloud',
     cycle: 'Metabolize → Crystallize → Animate → Squeeze (MCA)',
     selfTalk: [

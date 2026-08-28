@@ -2,7 +2,7 @@
  * GET/POST /api/doodles — Doodles Gallery (18+ view · Player 1 elevated upload)
  *
  * GET  — public manifest (works list)
- * POST — Capitan/catalog secret required:
+ * POST — Player 1 upload (no client secret; Blob token server-side):
  *   - blob.* client token (Player 1 max 500 MiB / file)
  *   - { action: 'register' } after client upload
  *   - { action: 'limits' } → Player 1 ceiling receipt
@@ -11,7 +11,7 @@
 const crypto = require('node:crypto');
 const { put, list } = require('@vercel/blob');
 const { handleUpload } = require('@vercel/blob/client');
-const { loadDoodlesGallery, loadCatalogServer } = require('../lib/doodles-api-lib.cjs');
+const { loadDoodlesGallery } = require('../lib/doodles-api-lib.cjs');
 
 const MAX_INLINE_BYTES = 4.5 * 1024 * 1024;
 
@@ -212,10 +212,8 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(204).end();
 
   let gallery;
-  let catalog;
   try {
     gallery = await loadDoodlesGallery();
-    catalog = await loadCatalogServer();
   } catch (e) {
     console.error('[doodles] load module', e);
     return res.status(500).json({ error: 'doodles_module_failed', message: e?.message });
@@ -227,10 +225,10 @@ module.exports = async function handler(req, res) {
       ok: true,
       meta: gallery.DOODLES_GALLERY_META,
       guestLimits: gallery.guestUploadLimits(),
-      /** Public hint only — actual Player 1 ceilings require auth POST action:limits */
+      /** Public hint only — Player 1 ceilings on POST action:limits */
       player1Hint: {
         exceedsCatalogMediaLimit: gallery.player1ExceedsCatalogMediaLimit(),
-        maxBytesLabel: '500 MiB per file when Capitan-unlocked',
+        maxBytesLabel: '500 MiB per file',
         maxBatchLabel: 'up to 500 files per dump',
       },
       manifest,
@@ -242,16 +240,12 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'method_not_allowed' });
   }
 
-  if (!catalog.catalogUploadConfigured()) {
+  if (!gallery.doodlesUploadConfigured()) {
     return res.status(503).json({
       error: 'doodles_upload_unconfigured',
-      message:
-        'Set BLOB_READ_WRITE_TOKEN and CATALOG_UPLOAD_SECRET (same Capitan secret as the Bridge) on Vercel.',
+      message: 'Set BLOB_READ_WRITE_TOKEN on Vercel for Player 1 doodle uploads.',
     });
   }
-
-  const auth = catalog.assertCatalogUploadAuth(req);
-  if (!auth.ok) return res.status(auth.status).json({ error: auth.code });
 
   const jsonBody = readBodyObject(req);
 

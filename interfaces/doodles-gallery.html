@@ -234,15 +234,15 @@
     </p>
 
     <div id="gallery-empty" class="empty hidden">
-      The wall is ready. Player 1 can post the first works from the Capitan desk below.
+      The wall is ready. Post the first works from the Player 1 desk below.
       (If you sent IMG_2628, IMG_2614, or IMG_2382 in chat, drop them here in a batch — limits are raised for Player 1.)
     </div>
     <div class="grid" id="gallery-grid" aria-live="polite"></div>
 
     <section class="desk" id="player1-desk" aria-labelledby="desk-h">
-      <h2 id="desk-h">Player 1 · Capitan upload desk</h2>
+      <h2 id="desk-h">Player 1 · upload desk</h2>
       <p>
-        Guests view. Only Player 1 posts. Unlock with the same Capitan / catalog upload secret used on the Bridge.
+        Guests view after the 18+ gate. Player 1 posts directly — no unlock step.
         <strong>Your seat exceeds the usual ~80&nbsp;MB media rail</strong> so a large doodle dump can land in one pass.
       </p>
       <p class="limits" id="limits-copy">
@@ -250,23 +250,13 @@
         Guests: view only after the 18+ gate.
       </p>
 
-      <div id="unlock-pane">
-        <label for="capitan-secret">Capitan / catalog upload secret</label>
-        <input type="password" id="capitan-secret" autocomplete="current-password" placeholder="Upload secret" />
-        <div class="btn-row" style="margin-top:0.75rem">
-          <button type="button" class="btn" id="unlock-btn">Unlock Player 1 desk</button>
-        </div>
-        <p class="status" id="unlock-status"></p>
-      </div>
-
-      <div id="upload-pane" class="hidden">
+      <div id="upload-pane">
         <label for="doodle-files">Select doodles (images · large batch OK)</label>
         <input type="file" id="doodle-files" accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,.jpg,.jpeg,.png,.webp,.gif,.heic,.heif" multiple />
         <label for="batch-caption">Optional shared caption</label>
         <input type="text" id="batch-caption" maxlength="500" placeholder="e.g. Night doodles for Gusta" />
         <div class="btn-row" style="margin-top:0.85rem">
           <button type="button" class="btn" id="upload-btn">Post to gallery</button>
-          <button type="button" class="btn btn--ghost" id="lock-btn">Lock desk</button>
         </div>
         <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
         <p class="status" id="upload-status"></p>
@@ -275,7 +265,7 @@
 
     <p class="honesty">
       <strong>Honesty:</strong> 18+ is an honor gate stored on this device (localStorage). Spirit of visit, not ID verification.
-      Uploads use the Capitan catalog secret and Vercel Blob. Fair Exchange inquiries: <a href="mailto:info@fractiai.com">info@fractiai.com</a>.
+      Uploads use Vercel Blob on the server. Fair Exchange inquiries: <a href="mailto:info@fractiai.com">info@fractiai.com</a>.
       Mature themes welcome; malice is not. Human emergency outranks every metaphor.
     </p>
   </div>
@@ -287,7 +277,6 @@
 
   <script type="module">
     const AGE_KEY = 'ssv-doodles-18plus-v1';
-    const P1_KEY = 'ssv-doodles-player1-v1';
     const API = '/api/doodles';
     const DEFAULT_MAX_BYTES = 500 * 1024 * 1024;
     const DEFAULT_MAX_BATCH = 500;
@@ -297,13 +286,9 @@
     const root = document.getElementById('gallery-root');
     const grid = document.getElementById('gallery-grid');
     const emptyEl = document.getElementById('gallery-empty');
-    const unlockPane = document.getElementById('unlock-pane');
-    const uploadPane = document.getElementById('upload-pane');
-    const unlockStatus = document.getElementById('unlock-status');
     const uploadStatus = document.getElementById('upload-status');
     const progressBar = document.getElementById('progress-bar');
     const limitsCopy = document.getElementById('limits-copy');
-    const secretInput = document.getElementById('capitan-secret');
     const fileInput = document.getElementById('doodle-files');
     const captionInput = document.getElementById('batch-caption');
     const lb = document.getElementById('lightbox');
@@ -314,18 +299,13 @@
       maxBatch: DEFAULT_MAX_BATCH,
       maxConcurrent: DEFAULT_CONCURRENT,
     };
-    let uploadSecret = '';
 
     function openGallery() {
       gate.classList.add('hidden');
       root.classList.remove('hidden');
       root.setAttribute('aria-hidden', 'false');
       loadGallery();
-      if (sessionStorage.getItem(P1_KEY) === '1' && sessionStorage.getItem(P1_KEY + '-secret')) {
-        uploadSecret = sessionStorage.getItem(P1_KEY + '-secret') || '';
-        showUploadPane();
-        refreshLimits();
-      }
+      refreshLimits();
     }
 
     function denyGallery() {
@@ -397,91 +377,25 @@
       }
     }
 
-    function showUploadPane() {
-      unlockPane.classList.add('hidden');
-      uploadPane.classList.remove('hidden');
-    }
-
-    function hideUploadPane() {
-      uploadPane.classList.add('hidden');
-      unlockPane.classList.remove('hidden');
-      uploadSecret = '';
-      try {
-        sessionStorage.removeItem(P1_KEY);
-        sessionStorage.removeItem(P1_KEY + '-secret');
-      } catch (_) {}
-    }
-
     async function refreshLimits() {
-      if (!uploadSecret) return;
       try {
         const res = await fetch(API, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Catalog-Secret': uploadSecret,
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ action: 'limits' }),
         });
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'limits_failed');
         player1Limits = data.limits || player1Limits;
         limitsCopy.innerHTML =
-          `Player 1 unlocked · <strong>${formatBytes(player1Limits.maxBytes)}</strong> per file · ` +
+          `Player 1 · <strong>${formatBytes(player1Limits.maxBytes)}</strong> per file · ` +
           `<strong>${player1Limits.maxBatch}</strong> files per dump · ` +
           `exceeds catalog media rail (${formatBytes(player1Limits.catalogMediaMaxBytes || 80 * 1024 * 1024)}).`;
-      } catch (e) {
-        unlockStatus.className = 'status status--err';
-        unlockStatus.textContent = 'Secret rejected or upload not configured on this deploy.';
-        hideUploadPane();
+      } catch (_) {
+        limitsCopy.innerHTML =
+          'Upload desk ready when Blob storage is configured on this deploy.';
       }
     }
-
-    document.getElementById('unlock-btn').addEventListener('click', async () => {
-      const secret = String(secretInput.value || '').trim();
-      unlockStatus.className = 'status';
-      unlockStatus.textContent = 'Checking Capitan seat…';
-      if (secret.length < 8) {
-        unlockStatus.className = 'status status--err';
-        unlockStatus.textContent = 'Enter the Capitan / catalog upload secret (8+ characters).';
-        return;
-      }
-      uploadSecret = secret;
-      try {
-        const res = await fetch(API, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Catalog-Secret': uploadSecret,
-          },
-          body: JSON.stringify({ action: 'limits' }),
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error || 'unauthorized');
-        player1Limits = data.limits || player1Limits;
-        try {
-          sessionStorage.setItem(P1_KEY, '1');
-          sessionStorage.setItem(P1_KEY + '-secret', uploadSecret);
-        } catch (_) {}
-        unlockStatus.className = 'status status--ok';
-        unlockStatus.textContent = data.message || 'Player 1 desk unlocked — large dumps allowed.';
-        showUploadPane();
-        limitsCopy.innerHTML =
-          `Player 1 unlocked · <strong>${formatBytes(player1Limits.maxBytes)}</strong> per file · ` +
-          `<strong>${player1Limits.maxBatch}</strong> files per dump.`;
-      } catch (e) {
-        uploadSecret = '';
-        unlockStatus.className = 'status status--err';
-        unlockStatus.textContent = 'Could not unlock. Check the Capitan secret and Blob config on Vercel.';
-      }
-    });
-
-    document.getElementById('lock-btn').addEventListener('click', () => {
-      hideUploadPane();
-      secretInput.value = '';
-      unlockStatus.className = 'status';
-      unlockStatus.textContent = 'Desk locked.';
-    });
 
     document.getElementById('lb-close').addEventListener('click', () => {
       lb.classList.add('hidden');
@@ -506,14 +420,10 @@
         access: 'public',
         handleUploadUrl: API,
         clientPayload: JSON.stringify({ allowOverwrite: false }),
-        headers: { 'X-Catalog-Secret': uploadSecret },
       });
       const reg = await fetch(API, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Catalog-Secret': uploadSecret,
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           action: 'register',
           id,

@@ -16,6 +16,7 @@ import {
   player1UploadLimits,
   titleFromFilename,
   upsertDoodleWork,
+  doodlesUploadConfigured,
 } from '../../lib/doodles-gallery.mjs';
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -88,11 +89,24 @@ describe('Doodles Gallery · Player 1 elevated limits', () => {
     expect(html).toContain('Player 1');
     expect(html).toContain('500');
     expect(html).toContain('age-gate');
+    expect(html).not.toContain('capitan-secret');
+    expect(html).not.toContain('Capitan / catalog upload secret');
+    expect(html).toContain('id="upload-pane"');
     const vercel = readFileSync(join(ROOT, 'vercel.json'), 'utf8');
     expect(vercel).toContain('"/doodles"');
     expect(vercel).toContain('doodles-gallery.html');
     expect(vercel).toContain('api/doodles.js');
     const quicklinks = readFileSync(join(ROOT, 'interfaces/site-quicklinks.js'), 'utf8');
     expect(quicklinks).toContain('href="/doodles">Doodles</a>');
+  });
+
+  it('doodlesUploadConfigured checks Blob token only', () => {
+    const prev = process.env.BLOB_READ_WRITE_TOKEN;
+    delete process.env.BLOB_READ_WRITE_TOKEN;
+    expect(doodlesUploadConfigured()).toBe(false);
+    process.env.BLOB_READ_WRITE_TOKEN = 'test-token';
+    expect(doodlesUploadConfigured()).toBe(true);
+    if (prev === undefined) delete process.env.BLOB_READ_WRITE_TOKEN;
+    else process.env.BLOB_READ_WRITE_TOKEN = prev;
   });
 });

@@ -2,6 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import {
   getCatalogUploadSecret,
   catalogUploadConfigured,
+  isSing13VercelEdge,
   mergeCatalogSnapshots,
   normalizeCatalog,
 } from '../../lib/catalog-server.mjs';
@@ -13,7 +14,14 @@ const ENV_KEYS = [
   'VITE_CAPTAIN_BYPASS_PASSWORD',
   'VITE_CATALOG_UPLOAD_SECRET',
 ];
-const SAVED_KEYS = [...ENV_KEYS, 'VERCEL', 'VERCEL_ENV', 'BLOB_READ_WRITE_TOKEN'];
+const SAVED_KEYS = [
+  ...ENV_KEYS,
+  'VERCEL',
+  'VERCEL_ENV',
+  'BLOB_READ_WRITE_TOKEN',
+  'VERCEL_GIT_REPO_OWNER',
+  'VERCEL_GIT_REPO_SLUG',
+];
 const savedEnv = new Map();
 
 function saveEnv() {
@@ -36,10 +44,21 @@ describe('getCatalogUploadSecret', () => {
   beforeEach(() => saveEnv());
   afterEach(() => restoreEnv());
 
-  it('fails closed on Vercel with no env secret (no hard-coded fallback)', () => {
+  it('fails closed on Vercel with no env secret outside SING 13 edge', () => {
     clearSecretEnv();
     process.env.VERCEL = '1';
+    delete process.env.VERCEL_GIT_REPO_OWNER;
+    delete process.env.VERCEL_GIT_REPO_SLUG;
     expect(getCatalogUploadSecret()).toBeNull();
+  });
+
+  it('uses SING 13 edge default when Blob is on and repo matches', () => {
+    clearSecretEnv();
+    process.env.BLOB_READ_WRITE_TOKEN = 'blob-token';
+    process.env.VERCEL_GIT_REPO_OWNER = 'FractiAI';
+    process.env.VERCEL_GIT_REPO_SLUG = 'psw.vibelandia.sing13';
+    expect(isSing13VercelEdge()).toBe(true);
+    expect(getCatalogUploadSecret()).toBe('valetpru1!');
   });
 
   it('returns the configured secret when set', () => {
@@ -59,11 +78,21 @@ describe('catalogUploadConfigured', () => {
   beforeEach(() => saveEnv());
   afterEach(() => restoreEnv());
 
-  it('is false when only BLOB_READ_WRITE_TOKEN is set (no secret)', () => {
+  it('is false when only BLOB is set on a non-SING-13 Vercel project', () => {
     clearSecretEnv();
     process.env.BLOB_READ_WRITE_TOKEN = 'blob-token';
     process.env.VERCEL = '1';
+    delete process.env.VERCEL_GIT_REPO_OWNER;
+    delete process.env.VERCEL_GIT_REPO_SLUG;
     expect(catalogUploadConfigured()).toBe(false);
+  });
+
+  it('is true on SING 13 edge when Blob is set even without explicit secret env', () => {
+    clearSecretEnv();
+    process.env.BLOB_READ_WRITE_TOKEN = 'blob-token';
+    process.env.VERCEL_GIT_REPO_OWNER = 'FractiAI';
+    process.env.VERCEL_GIT_REPO_SLUG = 'psw.vibelandia.sing13';
+    expect(catalogUploadConfigured()).toBe(true);
   });
 });
 

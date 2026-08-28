@@ -9,6 +9,7 @@ import {
   probeAudioDurationSecWithTimeout,
 } from '@/lib/mediaUploadLimits';
 import { normalizeCoverForUpload } from '@/lib/coverImageFile';
+import { expectedCaptainPassword } from '@/lib/captainAuth';
 import type { CatalogSnapshot, PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 
 const STATIC_CATALOG = '/media/catalog/catalog.json';
@@ -40,15 +41,16 @@ export function catalogApiUrl(path: string): string {
 
 /**
  * Secret used for catalog write pipes (upload / playlist sync / track edit).
- * Requires an explicit Vite env — never the baked Capitan edge default.
- * Otherwise every Listen boot POSTs /api/catalog-playlist and spikes 503s when
- * CATALOG_UPLOAD_SECRET is unset on Vercel (server fails closed; client must match).
+ * Prefers explicit Vite env; falls back to Capitan edge password on SING 13
+ * (matches server sing13 edge default when Blob is configured).
  */
 export function catalogUploadSecret(): string {
   const upload = import.meta.env.VITE_CATALOG_UPLOAD_SECRET;
   if (typeof upload === 'string' && upload.trim().length >= 8) return upload.trim();
   const captain = import.meta.env.VITE_CAPTAIN_BYPASS_PASSWORD;
   if (typeof captain === 'string' && captain.trim().length >= 8) return captain.trim();
+  const edge = expectedCaptainPassword();
+  if (edge.length >= 8) return edge;
   return '';
 }
 

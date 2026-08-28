@@ -6,6 +6,8 @@
  *   - blob.* client token (Player 1 max 500 MiB / file)
  *   - { action: 'register' } after client upload (single)
  *   - { action: 'registerBatch', works: [...] } after multi-file client upload
+ *   - { action: 'reorder', order: [id, ...] } reorder gallery wall
+ *   - { action: 'delete', id } remove one doodle from the wall
  *   - { action: 'limits' } → Player 1 ceiling receipt
  *   - small inline image ≤4.5 MB (fallback)
  */
@@ -110,6 +112,74 @@ async function registerWork(res, body, gallery) {
         code === 'manifest_conflict'
           ? 'Gallery list busy — retry the batch; images are already on storage.'
           : 'Image may be on storage but the gallery list could not be updated.',
+    });
+  }
+}
+
+async function persistManifestMutation(gallery, mutate, verify) {
+  const { putDoodlesManifest, persistManifestChange } = gallery;
+  return persistManifestChange({
+    loadManifest: () => loadManifestFromBlob(gallery),
+    putManifest: putDoodlesManifest,
+    mutate,
+    verify,
+  });
+}
+
+function manifestOrderVerify(loaded, expected) {
+  const a = (loaded?.works || []).map((w) => w.id).join('\0');
+  const b = (expected?.works || []).map((w) => w.id).join('\0');
+  return a === b;
+}
+
+async function reorderWorks(res, body, gallery) {
+  const order = Array.isArray(body?.order) ? body.order : [];
+  if (!order.length) {
+    return res.status(400).json({ error: 'invalid_order', message: 'order array required' });
+  }
+
+  const { reorderDoodleWorks } = gallery;
+  try {
+    const manifest = await persistManifestMutation(
+      gallery,
+      (current) => reorderDoodleWorks(current, order),
+      manifestOrderVerify,
+    );
+    return res.status(200).json({ manifest, limits: gallery.player1UploadLimits() });
+  } catch (e) {
+    console.error('[doodles] reorder', e);
+    const code = e?.message === 'manifest_conflict' ? 'manifest_conflict' : 'manifest_save_failed';
+    return res.status(500).json({
+      error: code,
+      message: 'Could not save the new wall order. Try again.',
+    });
+  }
+}
+
+async function deleteWork(res, body, gallery) {
+  const id = String(body?.id || '')
+    .replace(/[^\w-]/g, '')
+    .slice(0, 80);
+  if (!id) {
+    return res.status(400).json({ error: 'invalid_id' });
+  }
+
+  const { removeDoodleWork } = gallery;
+  try {
+    const manifest = await persistManifestMutation(
+      gallery,
+      (current) => removeDoodleWork(current, id),
+      (loaded, expected) =>
+        loaded.works.length === expected.works.length &&
+        !loaded.works.some((w) => w.id === id),
+    );
+    return res.status(200).json({ id, manifest, limits: gallery.player1UploadLimits() });
+  } catch (e) {
+    console.error('[doodles] delete', e);
+    const code = e?.message === 'manifest_conflict' ? 'manifest_conflict' : 'manifest_save_failed';
+    return res.status(500).json({
+      error: code,
+      message: 'Could not remove that doodle from the wall. Try again.',
     });
   }
 }
@@ -322,6 +392,14 @@ module.exports = async function handler(req, res) {
 
   if (jsonBody?.action === 'registerBatch') {
     return registerBatch(res, jsonBody, gallery);
+  }
+
+  if (jsonBody?.action === 'reorder') {
+    return reorderWorks(res, jsonBody, gallery);
+  }
+
+  if (jsonBody?.action === 'delete') {
+    return deleteWork(res, jsonBody, gallery);
   }
 
   if (jsonBody && typeof jsonBody.type === 'string' && jsonBody.type.startsWith('blob.')) {

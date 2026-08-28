@@ -157,6 +157,47 @@
       font-style: italic;
       line-height: 1.4;
     }
+    .museum-wall__piece--editing .museum-frame--wall {
+      outline: 2px solid rgba(212, 175, 55, 0.45);
+      outline-offset: 3px;
+    }
+    .museum-wall__tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+      margin-top: 0.55rem;
+    }
+    .btn--mini {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(10, 14, 24, 0.85);
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.35rem 0.55rem;
+      cursor: pointer;
+    }
+    .btn--mini:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .btn--mini--danger {
+      color: #f0b4b4;
+      border-color: rgba(196, 92, 92, 0.45);
+    }
+    .edit-desk {
+      margin-top: 1.5rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid var(--line);
+    }
+    .edit-desk h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: #f0d78c;
+      margin: 0 0 0.45rem;
+      font-size: 1.35rem;
+    }
 
     .empty {
       margin: 2rem 0;
@@ -304,6 +345,17 @@
         <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
         <p class="status" id="upload-status"></p>
       </div>
+
+      <div class="edit-desk" id="edit-desk">
+        <h3 id="edit-h">Player 1 · arrange wall</h3>
+        <p>Reorder or remove doodles on the gallery wall. Changes save immediately.</p>
+        <div class="btn-row">
+          <button type="button" class="btn btn--ghost" id="edit-toggle" aria-pressed="false">
+            Edit wall
+          </button>
+        </div>
+        <p class="status" id="edit-status"></p>
+      </div>
     </section>
 
     <p class="honesty">
@@ -340,12 +392,17 @@
     const captionInput = document.getElementById('batch-caption');
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
+    const editToggle = document.getElementById('edit-toggle');
+    const editStatus = document.getElementById('edit-status');
 
     let player1Limits = {
       maxBytes: DEFAULT_MAX_BYTES,
       maxBatch: DEFAULT_MAX_BATCH,
       maxConcurrent: DEFAULT_CONCURRENT,
     };
+    let galleryWorks = [];
+    let editMode = false;
+    let editBusy = false;
 
     function openGallery() {
       gate.classList.add('hidden');
@@ -379,16 +436,83 @@
       return caption || '';
     }
 
+    function setEditStatus(text, ok = false, err = false) {
+      editStatus.className = 'status';
+      if (ok) editStatus.classList.add('status--ok');
+      if (err) editStatus.classList.add('status--err');
+      editStatus.textContent = text || '';
+    }
+
+    async function postManifestAction(action, body) {
+      const res = await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action, ...body }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || data.error || `${action}_failed`);
+      return data;
+    }
+
+    async function saveWallOrder(works) {
+      const data = await postManifestAction('reorder', {
+        order: works.map((w) => w.id),
+      });
+      galleryWorks = data?.manifest?.works || works;
+      renderWorks(galleryWorks);
+      return data;
+    }
+
+    async function moveWork(index, delta) {
+      if (editBusy) return;
+      const next = index + delta;
+      if (next < 0 || next >= galleryWorks.length) return;
+      const reordered = galleryWorks.slice();
+      const [item] = reordered.splice(index, 1);
+      reordered.splice(next, 0, item);
+      editBusy = true;
+      setEditStatus('Saving order…');
+      try {
+        await saveWallOrder(reordered);
+        setEditStatus('Wall order saved.', true);
+      } catch (e) {
+        setEditStatus(e.message || 'Could not save order.', false, true);
+        await loadGallery();
+      } finally {
+        editBusy = false;
+      }
+    }
+
+    async function removeWork(id) {
+      if (editBusy) return;
+      if (!window.confirm('Remove this doodle from the gallery wall?')) return;
+      editBusy = true;
+      setEditStatus('Removing…');
+      try {
+        const data = await postManifestAction('delete', { id });
+        galleryWorks = data?.manifest?.works || [];
+        renderWorks(galleryWorks);
+        setEditStatus('Doodle removed from the wall.', true);
+      } catch (e) {
+        setEditStatus(e.message || 'Could not remove doodle.', false, true);
+        await loadGallery();
+      } finally {
+        editBusy = false;
+      }
+    }
+
     function renderWorks(works) {
+      galleryWorks = Array.isArray(works) ? works : [];
       grid.innerHTML = '';
-      if (!works.length) {
+      if (!galleryWorks.length) {
         emptyEl.classList.remove('hidden');
         return;
       }
       emptyEl.classList.add('hidden');
-      for (const w of works) {
+      galleryWorks.forEach((w, index) => {
         const piece = document.createElement('article');
-        piece.className = 'museum-wall__piece';
+        piece.className = 'museum-wall__piece' + (editMode ? ' museum-wall__piece--editing' : '');
+        piece.dataset.id = w.id;
 
         const frame = document.createElement('div');
         frame.className = 'museum-frame museum-frame--wall';
@@ -400,10 +524,14 @@
         img.alt = 'Valet Pru doodle';
         img.loading = 'lazy';
         img.decoding = 'async';
-        img.addEventListener('click', () => {
-          lbImg.src = w.src;
-          lb.classList.remove('hidden');
-        });
+        if (!editMode) {
+          img.addEventListener('click', () => {
+            lbImg.src = w.src;
+            lb.classList.remove('hidden');
+          });
+        } else {
+          img.style.cursor = 'default';
+        }
         figure.append(img);
         frame.append(figure);
         piece.append(frame);
@@ -416,9 +544,46 @@
           piece.append(cap);
         }
 
+        if (editMode) {
+          const tools = document.createElement('div');
+          tools.className = 'museum-wall__tools';
+
+          const up = document.createElement('button');
+          up.type = 'button';
+          up.className = 'btn--mini';
+          up.textContent = '← Earlier';
+          up.disabled = index === 0 || editBusy;
+          up.addEventListener('click', () => moveWork(index, -1));
+
+          const down = document.createElement('button');
+          down.type = 'button';
+          down.className = 'btn--mini';
+          down.textContent = 'Later →';
+          down.disabled = index === galleryWorks.length - 1 || editBusy;
+          down.addEventListener('click', () => moveWork(index, 1));
+
+          const del = document.createElement('button');
+          del.type = 'button';
+          del.className = 'btn--mini btn--mini--danger';
+          del.textContent = 'Remove';
+          del.disabled = editBusy;
+          del.addEventListener('click', () => removeWork(w.id));
+
+          tools.append(up, down, del);
+          piece.append(tools);
+        }
+
         grid.append(piece);
-      }
+      });
     }
+
+    editToggle.addEventListener('click', () => {
+      editMode = !editMode;
+      editToggle.setAttribute('aria-pressed', editMode ? 'true' : 'false');
+      editToggle.textContent = editMode ? 'Done editing' : 'Edit wall';
+      setEditStatus(editMode ? 'Use ← Earlier / Later → to reorder. Remove takes a doodle off the wall.' : '');
+      renderWorks(galleryWorks);
+    });
 
     async function loadGallery() {
       try {

@@ -19,6 +19,9 @@ import {
   doodlesUploadConfigured,
   mergeDoodleWorks,
   persistDoodleWorks,
+  persistManifestChange,
+  reorderDoodleWorks,
+  removeDoodleWork,
 } from '../../lib/doodles-gallery.mjs';
 import { readFileSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -153,5 +156,37 @@ describe('Doodles Gallery · Player 1 elevated limits', () => {
     expect(html).toContain('experience-phases.css');
     expect(html).not.toContain('card__title');
     expect(html).toContain("alt = 'Valet Pru doodle'");
+  });
+
+  it('reorderDoodleWorks follows the requested wall order', () => {
+    const a = normalizeDoodleWork({ id: 'ddl-a', src: 'https://example.com/a.png' });
+    const b = normalizeDoodleWork({ id: 'ddl-b', src: 'https://example.com/b.png' });
+    const c = normalizeDoodleWork({ id: 'ddl-c', src: 'https://example.com/c.png' });
+    let man = emptyDoodlesManifest();
+    man = upsertDoodleWork(man, a);
+    man = upsertDoodleWork(man, b);
+    man = upsertDoodleWork(man, c);
+    const reordered = reorderDoodleWorks(man, ['ddl-b', 'ddl-c', 'ddl-a']);
+    expect(reordered.works.map((w) => w.id)).toEqual(['ddl-b', 'ddl-c', 'ddl-a']);
+  });
+
+  it('removeDoodleWork drops one id from the manifest', () => {
+    const a = normalizeDoodleWork({ id: 'ddl-a', src: 'https://example.com/a.png' });
+    const b = normalizeDoodleWork({ id: 'ddl-b', src: 'https://example.com/b.png' });
+    let man = emptyDoodlesManifest();
+    man = upsertDoodleWork(man, a);
+    man = upsertDoodleWork(man, b);
+    const next = removeDoodleWork(man, 'ddl-b');
+    expect(next.works.map((w) => w.id)).toEqual(['ddl-a']);
+  });
+
+  it('gallery page exposes Player 1 edit wall controls', () => {
+    const html = readFileSync(join(ROOT, 'interfaces/doodles-gallery.html'), 'utf8');
+    expect(html).toContain('edit-toggle');
+    expect(html).toContain("postManifestAction('reorder'");
+    expect(html).toContain("postManifestAction('delete'");
+    const api = readFileSync(join(ROOT, 'api/doodles.js'), 'utf8');
+    expect(api).toContain("action === 'reorder'");
+    expect(api).toContain("action === 'delete'");
   });
 });

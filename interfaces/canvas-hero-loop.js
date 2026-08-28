@@ -8,6 +8,7 @@
  *   5) El Gran Sol’s Return 07 Suite
  *   6) El Gran Sol’s Return (organ)
  *   7) Warning Danger Ahead
+ *   8) Good Morning New Earth 8.75Hz
  * Video: https://youtu.be/0hicJ_AZups
  */
 (function () {
@@ -78,6 +79,15 @@
       src:
         'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
         'trk-srv-08a30790-4b50-468f-a019-3a7dfcd5e9ee--warning-danger-ahead-.mp3',
+    },
+    {
+      id: 'trk-srv-368792a6-4113-4351-965b-88eb09759e50',
+      label: 'Good Morning New Earth 8.75Hz',
+      short: 'Sound on · Good Morning New Earth',
+      aria: 'Good Morning New Earth 8.75Hz',
+      src:
+        'https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/' +
+        'trk-srv-368792a6-4113-4351-965b-88eb09759e50-good-morning-new-earth-8.75hz.m4a',
     },
   ];
 

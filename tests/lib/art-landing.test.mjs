@@ -107,11 +107,13 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain("id: 'trk-srv-7c94d66b-19e8-4208-942d-f885ac400c1f'");
     expect(js).toContain("id: 'trk-srv-f617b3b3-1924-4c1f-bde5-77c9e66d1b81'");
     expect(js).toContain("id: 'trk-srv-08a30790-4b50-468f-a019-3a7dfcd5e9ee'");
+    expect(js).toContain("id: 'trk-srv-368792a6-4113-4351-965b-88eb09759e50'");
     expect(js).toContain('Goldilocks Parabola');
     expect(js).toContain("El Gran Sol's Return 05 Suite");
     expect(js).toContain("El Gran Sol's Return 07 Suite");
     expect(js).toContain("El Gran Sol's Return (organ)");
     expect(js).toContain('Warning Danger Ahead');
+    expect(js).toContain('Good Morning New Earth 8.75Hz');
     expect(js).toContain('Movement X · The Shift');
     expect(js).toContain('bootSoundtrack');
     expect(js).toContain('audio.play');

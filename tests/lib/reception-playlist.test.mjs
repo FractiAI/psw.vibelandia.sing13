@@ -16,15 +16,22 @@ function read(rel) {
 }
 
 describe('Reception · jukebox playlist', () => {
-  it('begins with Welcome Aboard, The Shift, then Universo Syntheverse', () => {
+  it('opens with Welcome Aboard, The Shift, Universo Syntheverse, then caliente set', () => {
     expect(RECEPTION_PLAYLIST_ID).toBe('pl-reception');
-    expect(RECEPTION_PLAYLIST_TRACK_IDS).toHaveLength(3);
+    expect(RECEPTION_PLAYLIST_TRACK_IDS).toHaveLength(12);
     expect(RECEPTION_PLAYLIST_TRACK_IDS[0]).toBe('trk-srv-4958316a-f7ef-4639-9765-e326d85fd808');
     expect(RECEPTION_PLAYLIST_TRACK_IDS[1]).toBe('trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52');
     expect(RECEPTION_PLAYLIST_TRACK_IDS[2]).toBe('trk-srv-21e83580-3b12-44a0-884a-8679fa1d6a9a');
-    expect(RECEPTION_PLAYLIST.name).toContain('Welcome Aboard');
-    expect(RECEPTION_PLAYLIST.name).toContain('The Shift');
-    expect(RECEPTION_PLAYLIST.name).toContain('Universo Syntheverse');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[3]).toBe('trk-srv-0a4b414c-9ce0-41b2-901b-8e5b11215a09');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[4]).toBe('trk-srv-b2eccf1d-a165-4b4e-8e3a-d4d3ce53b89a');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[5]).toBe('trk-srv-d057c001-ebf8-4cf9-be19-e3d6537842a6');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[6]).toBe('trk-srv-7c29e8cf-b516-4689-882c-e94550b30636');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[7]).toBe('trk-srv-0f63093f-bd81-4a96-bfe6-56b6d9c31ef9');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[8]).toBe('trk-srv-0f971a21-b916-436d-bae5-9fe5c0f8878d');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[9]).toBe('trk-srv-6bb07c9c-6850-4f24-963c-7d9e951e2f9d');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[10]).toBe('trk-srv-b07ee8da-c47a-4508-9218-8cb4df59db59');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[11]).toBe('trk-srv-67a11292-8d55-4ea0-a748-fe915969b6fd');
+    expect(RECEPTION_PLAYLIST.name).toContain('check-in soundtrack');
   });
 
   it('is registered in static catalog and server reserved ids', () => {

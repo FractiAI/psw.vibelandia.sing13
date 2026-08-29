@@ -10,9 +10,33 @@
   color: #d6cfc4;
 }
 
+.qv-top-quicklinks--questfest {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem 0.75rem;
+}
+
+.qv-top-quicklinks__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0;
+  min-width: 0;
+  flex: 1 1 12rem;
+  max-width: 100%;
+}
+
+.qv-top-quicklinks__sound {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
 .qv-top-quicklinks a {
   color: #f5e6c8;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .qv-top-quicklinks a:hover {
@@ -20,13 +44,85 @@
   text-decoration: underline;
 }
 
+.qv-top-quicklinks__share {
+  all: unset;
+  cursor: pointer;
+  color: #f5e6c8;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.qv-top-quicklinks__share:hover {
+  color: #fef3c7;
+  text-decoration: underline;
+}
+
+.qv-top-quicklinks__score {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(212, 175, 55, 0.1);
+  color: #fef3c7;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qv-top-quicklinks__score:hover,
+.qv-top-quicklinks__score.is-playing {
+  border-color: rgba(212, 175, 55, 0.75);
+  background: rgba(212, 175, 55, 0.18);
+}
+
 .qv-top-quicklinks .sep {
-  margin: 0 0.45rem;
+  margin: 0 0.35rem;
   opacity: 0.55;
+  flex-shrink: 0;
 }
 
 .qv-top-quicklinks__here {
   color: #fef3c7;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .qv-top-quicklinks {
+    padding: 0.55rem 0.75rem 0.5rem;
+    font-size: 0.72rem;
+  }
+
+  .qv-top-quicklinks--questfest {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .qv-top-quicklinks__row {
+    gap: 0.2rem 0;
+  }
+
+  .qv-top-quicklinks .sep {
+    margin: 0 0.28rem;
+  }
+
+  .qv-top-quicklinks__sound {
+    width: 100%;
+  }
+
+  .qv-top-quicklinks__score {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
 }
 
 .site-quicklinks {

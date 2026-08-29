@@ -25,20 +25,21 @@ describe('Visit golden path · Canvas → Program → Reception', () => {
     expect(html).toContain('visit-golden-path__step--primary');
   });
 
-  it('marks reception step here on questfest with board anchor', () => {
-    const html = renderVisitGoldenPathHtml('reception', { anchorReception: '#ship-blog' });
-    expect(html).toContain('#ship-blog');
+  it('marks reception step here on questfest with registration anchor', () => {
+    const html = renderVisitGoldenPathHtml('reception', { anchorReception: '#reception-lobby' });
+    expect(html).toContain('#reception-lobby');
+    expect(html).toContain('Registration · check-in');
     expect(html).toContain('visit-golden-path--reception');
     expect(html).toContain('five cruise doors');
   });
 
-  it('hero CTAs favor program and reception over five parallel doors', () => {
+  it('hero CTAs favor program and registration over five parallel doors', () => {
     const canvas = renderVisitGoldenPathHeroCtasHtml('canvas');
     const reception = renderVisitGoldenPathHeroCtasHtml('reception');
     expect(canvas).toContain('/concierto-program');
     expect(canvas).toContain('/questfest');
     expect(reception).toContain('/concierto-program');
-    expect(reception).toContain('#ship-blog');
+    expect(reception).toContain('#reception-lobby');
     expect(reception).not.toContain('href="/journey"');
   });
 

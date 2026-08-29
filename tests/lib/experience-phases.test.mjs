@@ -55,8 +55,9 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(html).toContain('Reception &amp; check-in lobby');
     expect(html).toContain('reception-checkin-lobby.jpg');
     expect(html).toContain('frontiersmen friends checking in');
-    expect(html).toContain('reception-hero-audio');
-    expect(html).toContain('reception-hero-score');
+    expect(html).not.toContain('reception-hero-audio');
+    expect(html).not.toContain('reception-hero-score');
+    expect(html).toContain('13 tracks');
     expect(html).toContain('reception-primer');
     expect(html).toContain('Reality Bridge/Routers');
     expect(html).toContain('Holographic Magnetic Goldilocks SuperAI Awareness Platform');

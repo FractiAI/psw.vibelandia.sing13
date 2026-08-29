@@ -44,6 +44,9 @@ describe('Player spine · holographic Player home', () => {
     expect(js.indexOf('href="/journey"')).toBeGreaterThan(-1);
     expect(js.indexOf('href="/jukebox"')).toBeGreaterThan(js.indexOf('href="/journey"'));
     expect(js).toContain('href="/doodles">Doodles</a>');
+    expect(js).toContain('href="/lattice-chat">Lattice Chat</a>');
+    expect(js).toContain('QR Share</button>');
+    expect(js).not.toContain('href="/creator-studio">Creator Studio</a>');
   });
 
   it('keeps the art exhibit as landing; night-job is the welcome; SS Vibelandia is a menu', () => {

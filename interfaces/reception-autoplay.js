@@ -1,11 +1,13 @@
 /**
- * Phase 2 reception · check-in soundtrack autoplays on /questfest (stops when you leave).
+ * Phase 2 registration · check-in soundtrack autoplays on /questfest#reception-lobby only.
  * Loads pl-reception from GET /api/catalog — same order as the jukebox check-in set.
+ * Sound toggle lives in the top quicklinks bar (#reception-hero-score).
  */
 (function () {
   'use strict';
 
   var PLAYLIST_ID = 'pl-reception';
+  var REGISTRATION_HASH = '#reception-lobby';
 
   function prefersReducedMotion() {
     try {
@@ -13,6 +15,11 @@
     } catch (_) {
       return false;
     }
+  }
+
+  function onRegistrationPage() {
+    var hash = window.location.hash || '';
+    return hash === REGISTRATION_HASH || hash === '#reception-lobby';
   }
 
   function pingCatalogPlay(trackId) {
@@ -57,12 +64,26 @@
       });
   }
 
+  var activeController = null;
+
+  function stopSoundtrack() {
+    if (!activeController) return;
+    activeController.stop();
+    activeController = null;
+  }
+
   function bootSoundtrack(playlist) {
-    if (prefersReducedMotion() || !playlist.length) return;
+    if (prefersReducedMotion() || !playlist.length || !onRegistrationPage()) return;
+
+    if (activeController) {
+      activeController.resume();
+      return;
+    }
 
     var index = 0;
     var logged = {};
     var btn = document.getElementById('reception-hero-score');
+    var soundBar = document.getElementById('reception-sound-bar');
 
     var audio =
       document.getElementById('reception-hero-audio') ||
@@ -73,7 +94,8 @@
         el.setAttribute('playsinline', '');
         el.hidden = true;
         el.setAttribute('aria-hidden', 'true');
-        document.body.appendChild(el);
+        if (soundBar) soundBar.appendChild(el);
+        else document.body.appendChild(el);
         return el;
       })();
 
@@ -149,11 +171,28 @@
       tryPlay();
     }
 
+    function stop() {
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+      if (btn) btn.hidden = true;
+    }
+
+    function resume() {
+      if (btn) btn.hidden = false;
+      if (!audio.src) loadTrack(index);
+      tryPlay();
+    }
+
     loadTrack(0);
 
     if (btn) {
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
+        if (!onRegistrationPage()) {
+          window.location.hash = 'reception-lobby';
+          return;
+        }
         if (!audio.paused && !audio.ended) {
           audio.pause();
           markStopped();
@@ -179,10 +218,23 @@
         });
       }
     });
+
+    activeController = { stop: stop, resume: resume };
+  }
+
+  function syncRegistrationSound() {
+    if (onRegistrationPage()) {
+      fetchReceptionPlaylist().then(bootSoundtrack);
+      return;
+    }
+    stopSoundtrack();
+    var btn = document.getElementById('reception-hero-score');
+    if (btn) btn.hidden = true;
   }
 
   function boot() {
-    fetchReceptionPlaylist().then(bootSoundtrack);
+    syncRegistrationSound();
+    window.addEventListener('hashchange', syncRegistrationSound);
   }
 
   if (document.readyState === 'loading') {

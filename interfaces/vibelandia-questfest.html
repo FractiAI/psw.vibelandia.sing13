@@ -641,20 +641,40 @@
 </head>
 <body>
   <!-- SITE_TOP_BANNER_START -->
-      <nav class="qv-top-quicklinks" aria-label="Site">
-    <span class="qv-top-quicklinks__here">SS VIBELANDIA</span>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/journey">Journey</a>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/">Canvas</a>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/jukebox" data-qv-jukebox>Jukebox</a>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/library">Library</a>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/doodles">Doodles</a>
-    <span class="sep" aria-hidden="true">·</span>
-    <a href="/creator-studio">Creator Studio</a>
+      <nav class="qv-top-quicklinks qv-top-quicklinks--questfest" aria-label="Site">
+    <div class="qv-top-quicklinks__row">
+      <span class="qv-top-quicklinks__here">SS VIBELANDIA</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/journey">Journey</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/">Canvas</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/jukebox" data-qv-jukebox>Jukebox</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/library">Library</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/doodles">Doodles</a>
+      <span class="sep" aria-hidden="true">·</span><a href="/lattice-chat">Lattice Chat</a><span class="sep" aria-hidden="true">·</span><button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>
+    </div>
+    <div class="qv-top-quicklinks__sound" id="reception-sound-bar">
+      <button
+        type="button"
+        class="qv-top-quicklinks__score reception-hero__score"
+        id="reception-hero-score"
+        hidden
+        aria-pressed="false"
+        aria-controls="reception-hero-audio"
+        aria-label="Play reception soundtrack"
+      >Sound off · tap to play</button>
+      <audio
+        id="reception-hero-audio"
+        preload="auto"
+        playsinline
+        hidden
+        aria-hidden="true"
+        aria-label="Reception check-in soundtrack"
+      ></audio>
+    </div>
   </nav>
       <!-- SITE_TOP_BANNER_END -->
 
@@ -673,7 +693,7 @@
       <div class="cta-row cta-row--player">
         <!-- PLAYER_HERO_CTA_START -->
       <a class="btn btn-primary btn-player-lead" href="/concierto-program">Concert program</a>
-        <a class="btn btn-primary" href="#ship-blog">Today’s ship board</a>
+        <a class="btn btn-primary" href="/questfest#reception-lobby">Registration · check-in</a>
         <a class="btn btn-ghost" href="mailto:info@fractiai.com?subject=SS%20Vibelandia%20visit%20%E2%80%94%20email%20Valet%20Pru">Email Valet Pru</a>
       <!-- PLAYER_HERO_CTA_END -->
       </div>
@@ -681,7 +701,7 @@
   </header>
 
   <!-- VISIT_GOLDEN_PATH_START -->
-  <nav class="visit-golden-path visit-golden-path--reception" aria-label="Start here · one path through the art">
+      <nav class="visit-golden-path visit-golden-path--reception" aria-label="Start here · one path through the art">
       <p class="visit-golden-path__kicker">Start here · one path through the art</p>
       <ol class="visit-golden-path__list">
       <li class="visit-golden-path__step">
@@ -705,7 +725,7 @@
       </ol>
     </nav>
     <p class="visit-golden-path__doors-note">When you want depth, scroll to <a href="#ship-channels-h">five cruise doors</a> — Journey, Jukebox, Library, Creator Studio.</p>
-  <!-- VISIT_GOLDEN_PATH_END -->
+      <!-- VISIT_GOLDEN_PATH_END -->
 
   <!-- PLAYER_GUEST_KEY_START -->
       <section class="voyage-guest-key voyage-guest-key--compact" aria-label="How to come aboard">
@@ -753,26 +773,9 @@
           <figcaption>Frontiersmen friends at check-in. Art deco Goldilocks lobby. Valet Pru keeps the desk.</figcaption>
         </figure>
         <p class="reception-lobby__soundtrack">
-          <button
-            type="button"
-            class="btn btn-ghost reception-hero__score"
-            id="reception-hero-score"
-            hidden
-            aria-pressed="false"
-            aria-controls="reception-hero-audio"
-            aria-label="Play reception soundtrack: Welcome Aboard"
-          >Sound off · tap to play</button>
-          <audio
-            id="reception-hero-audio"
-            preload="auto"
-            playsinline
-            hidden
-            aria-hidden="true"
-            aria-label="Reception check-in soundtrack"
-          ></audio>
-          <a class="btn btn-ghost" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reception&autoplay=1">Open check-in set in jukebox · 12 tracks</a>
+          <a class="btn btn-ghost" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reception&autoplay=1">Open check-in set in jukebox · 13 tracks</a>
         </p>
-        <p class="reception-lobby__lede">Welcome aboard. The check-in soundtrack starts here — Welcome Aboard through the full reception set. This lobby is your full primer: the ship, the science shelf, the grand narrative, and your place as NPC, Player, or Reality Bridge/Router. Valet Pru keeps the gangway. Choose how you want to sail, join the router network if you host alternate realities, then tour the offerings.</p>
+        <p class="reception-lobby__lede">Welcome aboard. Registration starts the check-in soundtrack at the top — Capitán&apos;s Welcome through the full reception set. This lobby is your full primer: the ship, the science shelf, the grand narrative, and your place as NPC, Player, or Reality Bridge/Router. Valet Pru keeps the gangway. Choose how you want to sail, join the router network if you host alternate realities, then tour the offerings.</p>
       </header>
       <div class="reception-primer" aria-labelledby="reception-primer-h">
       <h3 id="reception-primer-h">What you are boarding</h3>

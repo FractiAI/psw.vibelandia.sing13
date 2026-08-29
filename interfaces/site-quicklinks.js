@@ -64,6 +64,12 @@
     }, 12000);
   }
 
+  var QUICKLINK_TAIL =
+    '<span class="sep" aria-hidden="true">·</span>' +
+    '<a href="/lattice-chat">Lattice Chat</a>' +
+    '<span class="sep" aria-hidden="true">·</span>' +
+    '<button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>';
+
   var path = window.location.pathname || '';
   var onBridge = path.indexOf('questfest-bridge') !== -1;
   var onArtLanding =
@@ -101,6 +107,48 @@
     );
   }
 
+  function ensureShareQrModal() {
+    if (document.getElementById('qf-share-qr-modal')) return;
+    var root = document.createElement('div');
+    root.id = 'qf-share-qr-modal';
+    root.className = 'qf-share-qr-root';
+    root.hidden = true;
+    root.setAttribute('aria-hidden', 'true');
+    root.setAttribute('role', 'dialog');
+    root.setAttribute('aria-modal', 'true');
+    root.setAttribute('aria-labelledby', 'qf-share-qr-title');
+    root.innerHTML =
+      '<button type="button" class="qf-share-qr-backdrop" data-qr-dismiss aria-label="Close"></button>' +
+      '<div class="qf-share-qr-card">' +
+      '<button type="button" class="qf-share-qr-close" data-qr-dismiss aria-label="Close">×</button>' +
+      '<h2 id="qf-share-qr-title">Share the ship</h2>' +
+      '<p class="qf-share-qr-hint">Scan or copy the link when someone asks for the address.</p>' +
+      '<div class="qf-share-qr-frame">' +
+      '<img id="qf-share-qr-img" src="/interfaces/assets/ssvibelandia-share-qr.png" width="240" height="240" alt="QR code for SS Vibelandia" loading="lazy" decoding="async" />' +
+      '</div>' +
+      '<p class="qf-share-qr-error" id="qf-share-qr-error" hidden></p>' +
+      '<p class="qf-share-qr-url" id="qf-share-qr-url"></p>' +
+      '<button type="button" class="qf-share-qr-copy" id="qf-share-qr-copy">Copy link</button>' +
+      '<p class="qf-share-qr-copy-msg" id="qf-share-qr-copy-msg" hidden>Copied!</p>' +
+      '</div>';
+    document.body.appendChild(root);
+    if (!document.querySelector('script[src*="questfest-share-qr.js"]')) {
+      var qr = document.createElement('script');
+      qr.src = '/interfaces/questfest-share-qr.js';
+      qr.defer = true;
+      document.body.appendChild(qr);
+    }
+  }
+
+  function renderQuestfestSoundBar() {
+    return (
+      '<div class="qv-top-quicklinks__sound" id="reception-sound-bar">' +
+      '<button type="button" class="qv-top-quicklinks__score reception-hero__score" id="reception-hero-score" hidden aria-pressed="false" aria-controls="reception-hero-audio" aria-label="Play reception soundtrack">Sound off · tap to play</button>' +
+      '<audio id="reception-hero-audio" preload="auto" playsinline hidden aria-hidden="true" aria-label="Reception check-in soundtrack"></audio>' +
+      '</div>'
+    );
+  }
+
   function injectTopQuicklinks() {
     if (onBridge) return;
     if (document.querySelector('.qv-top-quicklinks')) return;
@@ -119,10 +167,13 @@
     }
 
     var nav = document.createElement('nav');
-    nav.className = 'qv-top-quicklinks';
+    nav.className = 'qv-top-quicklinks' + (onQuestfestHome ? ' qv-top-quicklinks--questfest' : '');
     nav.setAttribute('aria-label', 'Site');
+    var row = document.createElement('div');
+    row.className = 'qv-top-quicklinks__row';
+
     if (onArtLanding) {
-      nav.innerHTML =
+      row.innerHTML =
         '<a href="/questfest">SS Vibelandia</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
@@ -132,10 +183,9 @@
         '<a href="/library">Library</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/doodles">Doodles</a>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/creator-studio">Creator Studio</a>';
+        QUICKLINK_TAIL;
     } else if (onQuestfestHome) {
-      nav.innerHTML =
+      row.innerHTML =
         '<span class="qv-top-quicklinks__here">SS VIBELANDIA</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/">Canvas</a>' +
@@ -147,10 +197,9 @@
         '<a href="/library">Library</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/doodles">Doodles</a>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/creator-studio">Creator Studio</a>';
+        QUICKLINK_TAIL;
     } else {
-      nav.innerHTML =
+      row.innerHTML =
         '<a href="/questfest">SS VIBELANDIA</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
@@ -162,10 +211,15 @@
         '<a href="/library">Library</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/doodles">Doodles</a>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/creator-studio">Creator Studio</a>';
+        QUICKLINK_TAIL;
+    }
+
+    nav.appendChild(row);
+    if (onQuestfestHome) {
+      nav.insertAdjacentHTML('beforeend', renderQuestfestSoundBar());
     }
     document.body.insertBefore(nav, document.body.firstChild);
+    ensureShareQrModal();
   }
 
   function injectFooterQuicklinks() {
@@ -207,6 +261,7 @@
   function boot() {
     injectTopQuicklinks();
     injectFooterQuicklinks();
+    ensureShareQrModal();
   }
 
   if (document.readyState === 'loading') {

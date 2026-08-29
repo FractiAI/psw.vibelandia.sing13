@@ -1,7 +1,11 @@
 /** Reception check-in soundtrack — jukebox playlist id (mirrors lib/reception-playlist.mjs). */
 export const RECEPTION_PLAYLIST_ID = 'pl-reception';
 
+export const RECEPTION_CAPTAIN_WELCOME_TRACK_ID =
+  'trk-srv-6025557c-f76c-4a55-bd7c-0fc2d5ffcfb4';
+
 export const RECEPTION_PLAYLIST_TRACK_IDS = [
+  RECEPTION_CAPTAIN_WELCOME_TRACK_ID,
   'trk-srv-4958316a-f7ef-4639-9765-e326d85fd808',
   'trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52',
   'trk-srv-21e83580-3b12-44a0-884a-8679fa1d6a9a',

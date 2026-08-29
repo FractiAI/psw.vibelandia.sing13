@@ -85,11 +85,10 @@
   }
 
   function init() {
-    var openBtn = document.getElementById('qf-share-qr-open');
     var modal = document.getElementById('qf-share-qr-modal');
     var img = document.getElementById('qf-share-qr-img');
     var errEl = document.getElementById('qf-share-qr-error');
-    if (!openBtn || !modal) return;
+    if (!modal) return;
 
     if (img) {
       img.addEventListener('error', function () {
@@ -100,8 +99,10 @@
       });
     }
 
-    openBtn.addEventListener('click', function () {
-      openModal(modal, openBtn);
+    document.querySelectorAll('[data-qv-share-qr], #qf-share-qr-open').forEach(function (openBtn) {
+      openBtn.addEventListener('click', function () {
+        openModal(modal, openBtn);
+      });
     });
 
     modal.querySelectorAll('[data-qr-dismiss]').forEach(function (el) {

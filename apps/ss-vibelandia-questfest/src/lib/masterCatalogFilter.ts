@@ -1,5 +1,5 @@
 import type { PlaylistDef, TrackDef } from '@/lib/catalogTypes';
-import { isConciertoPreludePlaylist, isMasterPlaylist, isMyLikesPlaylist } from '@/lib/catalogSeed';
+import { isConciertoPreludePlaylist, isMasterPlaylist, isMyLikesPlaylist, isReceptionPlaylist } from '@/lib/catalogSeed';
 
 const STORAGE_KEY = 'hjghf-master-filter-v1';
 
@@ -95,7 +95,8 @@ export function userPlaylistsForFilter(playlists: PlaylistDef[]): PlaylistDef[] 
       (p) =>
         !isMasterPlaylist(p.id) &&
         !isMyLikesPlaylist(p.id) &&
-        !isConciertoPreludePlaylist(p.id),
+        !isConciertoPreludePlaylist(p.id) &&
+        !isReceptionPlaylist(p.id),
     )
     .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
 }

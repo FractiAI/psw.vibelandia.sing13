@@ -3,6 +3,7 @@ import {
   isConciertoPreludePlaylist,
   isMasterPlaylist,
   isMyLikesPlaylist,
+  isReceptionPlaylist,
   MASTER_PLAYLIST_ID,
 } from '@/lib/catalogSeed';
 
@@ -22,6 +23,7 @@ export function topLevelUserPlaylists(playlists: PlaylistDef[]): PlaylistDef[] {
       !isMasterPlaylist(p.id) &&
       !isMyLikesPlaylist(p.id) &&
       !isConciertoPreludePlaylist(p.id) &&
+      !isReceptionPlaylist(p.id) &&
       !nested.has(p.id),
   );
 }
@@ -74,7 +76,9 @@ export function canNestPlaylist(
     isMyLikesPlaylist(parentId) ||
     isMyLikesPlaylist(childId) ||
     isConciertoPreludePlaylist(parentId) ||
-    isConciertoPreludePlaylist(childId)
+    isConciertoPreludePlaylist(childId) ||
+    isReceptionPlaylist(parentId) ||
+    isReceptionPlaylist(childId)
   ) {
     return false;
   }
@@ -121,7 +125,7 @@ export function nestablePlaylistsForParent(
 ): PlaylistDef[] {
   return playlists.filter((p) => {
     if (p.id === parentId) return false;
-    if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id) || isConciertoPreludePlaylist(p.id)) {
+    if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id) || isConciertoPreludePlaylist(p.id) || isReceptionPlaylist(p.id)) {
       return false;
     }
     return canNestPlaylist(parentId, p.id, playlists);
@@ -181,5 +185,5 @@ export function resolvePlaylistTrackIds(
 }
 
 export function isProtectedPlaylist(id: string): boolean {
-  return id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id);
+  return id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id);
 }

@@ -32,8 +32,12 @@ export function isConciertoPreludePlaylist(id: string): boolean {
   return id === 'pl-concierto-prelude';
 }
 
+export function isReceptionPlaylist(id: string): boolean {
+  return id === 'pl-reception';
+}
+
 export function isCatalogPinnedPlaylist(id: string): boolean {
-  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id);
+  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id);
 }
 
 export const MASTER_PLAYLIST_DEFAULT_NAME = SONIC_CATALOG_DISPLAY_NAME;

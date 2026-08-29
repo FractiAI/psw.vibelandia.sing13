@@ -29,6 +29,15 @@
         "trk-srv-f6ab8509-f622-4b25-bb91-cb83b113b17b",
         "trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3"
       ]
+    },
+    {
+      "id": "pl-reception",
+      "name": "Reception · Welcome Aboard",
+      "kind": "sovereign",
+      "description": "Phase 2 reception soundtrack — begins with Welcome Aboard at check-in. Play from the jukebox while you tour the ship.",
+      "trackIds": [
+        "trk-srv-4958316a-f7ef-4639-9765-e326d85fd808"
+      ]
     }
   ]
 }

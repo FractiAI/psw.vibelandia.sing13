@@ -2,6 +2,7 @@ import { upload } from '@vercel/blob/client';
 import {
   buildEmptyCatalog,
   isConciertoPreludePlaylist,
+  isReceptionPlaylist,
   isMasterPlaylist,
   isMyLikesPlaylist,
 } from '@/lib/catalogSeed';
@@ -573,7 +574,8 @@ export async function syncUserPlaylistsToServer(
       (p) =>
         !isMasterPlaylist(p.id) &&
         !isMyLikesPlaylist(p.id) &&
-        !isConciertoPreludePlaylist(p.id),
+        !isConciertoPreludePlaylist(p.id) &&
+        !isReceptionPlaylist(p.id),
     )
     .map((p) => ({
       id: p.id,

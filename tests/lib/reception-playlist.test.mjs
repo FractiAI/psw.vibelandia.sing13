@@ -16,11 +16,13 @@ function read(rel) {
 }
 
 describe('Reception · jukebox playlist', () => {
-  it('begins with Welcome Aboard', () => {
+  it('begins with Welcome Aboard then The Shift', () => {
     expect(RECEPTION_PLAYLIST_ID).toBe('pl-reception');
-    expect(RECEPTION_PLAYLIST_TRACK_IDS).toHaveLength(1);
+    expect(RECEPTION_PLAYLIST_TRACK_IDS).toHaveLength(2);
     expect(RECEPTION_PLAYLIST_TRACK_IDS[0]).toBe('trk-srv-4958316a-f7ef-4639-9765-e326d85fd808');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[1]).toBe('trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52');
     expect(RECEPTION_PLAYLIST.name).toContain('Welcome Aboard');
+    expect(RECEPTION_PLAYLIST.name).toContain('The Shift');
   });
 
   it('is registered in static catalog and server reserved ids', () => {

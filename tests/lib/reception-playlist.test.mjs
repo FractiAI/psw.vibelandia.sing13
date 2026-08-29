@@ -46,8 +46,21 @@ describe('Reception · jukebox playlist', () => {
     const html = read('lib/experience-phases.mjs');
     expect(html).toContain('receptionListenHref');
     expect(html).toContain('frontiersmen friends checking in');
+    expect(html).toContain('id="reception-hero-audio"');
+    expect(html).toContain('id="reception-hero-score"');
     expect(receptionListenHref()).toContain('playlist=pl-reception');
     expect(receptionListenHref()).toContain('autoplay=1');
+  });
+
+  it('reception page autoplays check-in soundtrack on load', () => {
+    const js = read('interfaces/reception-autoplay.js');
+    const questfest = read('interfaces/vibelandia-questfest.html');
+    expect(js).toContain("PLAYLIST_ID = 'pl-reception'");
+    expect(js).toContain('/api/catalog');
+    expect(js).toContain('reception-hero-audio');
+    expect(js).toContain('prefers-reduced-motion');
+    expect(questfest).toContain('reception-autoplay.js');
+    expect(questfest).toContain('id="reception-hero-audio"');
   });
 
   it('jukebox app pins reception in menu and blocks delete', () => {

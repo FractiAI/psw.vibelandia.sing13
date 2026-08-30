@@ -20,7 +20,7 @@ describe('Sin City · jukebox playlist', () => {
   it('opens with let\'s go holographic tonight', () => {
     expect(SIN_CITY_PLAYLIST_ID).toBe('pl-sin-city');
     expect(SIN_CITY_PLAYLIST_TRACK_IDS[0]).toBe(SIN_CITY_OPENING_TRACK_ID);
-    expect(SIN_CITY_PLAYLIST_TRACK_IDS).toHaveLength(10);
+    expect(SIN_CITY_PLAYLIST_TRACK_IDS).toHaveLength(11);
     expect(SIN_CITY_PLAYLIST.name).toContain('Sin City');
   });
 

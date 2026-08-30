@@ -57,6 +57,8 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('varied old-school frontier outfits');
     expect(html).not.toContain('front-desk-hero-audio');
     expect(html).not.toContain('front-desk-hero-score');
+    expect(html).toContain('Check-in program');
+    expect(html).toContain('href="/front-desk-program"');
     expect(html).toContain('15 tracks');
     expect(html).toContain('/front-desk-program');
     expect(html).toContain('Read the check-in program');
@@ -105,7 +107,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
       const html = renderNpcPlayerWelcomeHtml(phase);
       expect(html).toContain('Players &amp; NPCs · same ship');
       expect(html).toContain('players-npcs-same-ship.jpg');
-      expect(html).toContain('Players as superheroes');
+      expect(html).toContain('Each Player wears their own superhero look');
       expect(html).toContain('NPC · the set');
       expect(html).toContain('Player · the gravity');
       expect(html).toContain('franchises');

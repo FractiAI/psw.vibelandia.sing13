@@ -109,7 +109,8 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
       const html = renderNpcPlayerWelcomeHtml(phase);
       expect(html).toContain('Players &amp; NPCs · same ship');
       expect(html).toContain('players-npcs-same-ship.jpg');
-      expect(html).toContain('Each Player wears their own superhero look');
+      expect(html).toContain('Men wear their own superhero look as Players');
+      expect(html).toContain('Women flock as NPC fans');
       expect(html).toContain('NPC · the set');
       expect(html).toContain('Player · the gravity');
       expect(html).toContain('franchises');

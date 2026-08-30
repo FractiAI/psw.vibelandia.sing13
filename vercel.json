@@ -309,6 +309,22 @@
       "destination": "/interfaces/lattice-chat/index.html"
     },
     {
+      "source": "/lets-chat",
+      "destination": "/interfaces/lets-chat.html"
+    },
+    {
+      "source": "/lets-chat/",
+      "destination": "/interfaces/lets-chat.html"
+    },
+    {
+      "source": "/lets-chat/about",
+      "destination": "/interfaces/lets-chat-intro.html"
+    },
+    {
+      "source": "/lets-chat/about/",
+      "destination": "/interfaces/lets-chat-intro.html"
+    },
+    {
       "source": "/octave99-bridge",
       "destination": "/interfaces/octave99-bridge/index.html"
     },
@@ -2110,6 +2126,10 @@
     "api/lattice-collaborate-feed.js": {
       "maxDuration": 10,
       "includeFiles": "{lib/**,data/lattice-access.json,data/collaborate-feed-events.json,data/synthobs-paper-audits/**}"
+    },
+    "api/lets-chat.js": {
+      "maxDuration": 10,
+      "includeFiles": "{lib/**,data/lattice-access.json}"
     }
   },
   "redirects": [

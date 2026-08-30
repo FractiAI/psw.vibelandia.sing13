@@ -2341,6 +2341,22 @@ body {
   color: var(--brand-gold);
   font-weight: 700;
 }
+.collab-topbar__lets-chat {
+  flex-shrink: 0;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--brand-champagne);
+  padding: 0.35rem 0.55rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 999px;
+}
+.collab-topbar__lets-chat:hover {
+  color: var(--brand-gold-hi);
+  border-color: rgba(212, 175, 55, 0.6);
+}
 .collab-topbar__back,
 .collab-topbar__gear {
   appearance: none;

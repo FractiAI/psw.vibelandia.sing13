@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070b14" />
+  <title>Let's Chat · Guest comms · SS Vibelandia</title>
+  <meta name="description" content="Let's Chat — registered guest-to-guest encrypted chat, voice, and video on SS Vibelandia. No harvesting. Fractal EGS encryption. Goldilocks consent. Predators never welcome." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lets-chat/about" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-hi: #fef3c7;
+      --text: #f5f0e8;
+      --soft: #d6cfc4;
+      --muted: #a8a29e;
+      --bg: #070b14;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #0c1628 0%, var(--bg) 40%, #050810 100%);
+      line-height: 1.65;
+    }
+    .wrap { max-width: 42rem; margin: 0 auto; padding: 1.5rem 1.15rem 3rem; }
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      font-weight: 600;
+      color: var(--gold-hi);
+      margin: 0 0 0.35rem;
+      letter-spacing: 0.02em;
+    }
+    .kicker {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 1rem;
+    }
+    .lead {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--soft);
+      margin: 0 0 1.5rem;
+    }
+    h2 {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 2rem 0 0.65rem;
+    }
+    p { margin: 0 0 1rem; color: var(--soft); }
+    ul { margin: 0 0 1rem; padding-left: 1.2rem; color: var(--soft); }
+    li { margin-bottom: 0.45rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 1.75rem 0 0; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid var(--gold);
+    }
+    .btn-primary { background: var(--gold); color: #0a0f1a; }
+    .btn-ghost { background: transparent; color: var(--gold-hi); }
+    .honesty {
+      margin-top: 2rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 10px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .compare { border-top: 1px solid rgba(212, 175, 55, 0.22); margin-top: 1.5rem; padding-top: 1.25rem; }
+    .compare table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .compare th, .compare td { text-align: left; padding: 0.45rem 0.35rem; border-bottom: 1px solid rgba(212,175,55,0.15); }
+    .compare th { color: var(--gold); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <nav class="qv-top-quicklinks" aria-label="Site">
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--primary">
+      <a href="/questfest">SS Vibelandia</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="qv-top-quicklinks__here">Let's Chat</span>
+    </div>
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--secondary">
+      <a href="/lets-chat">Open Let's Chat</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/lattice-chat/?mode=collaborate">Collaborate</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <p class="kicker">Deck 8 Veranda · registered guests</p>
+    <h1>Let's Chat</h1>
+    <p class="lead">Guest-to-guest encrypted comms on the ship — without becoming a Lattice Chat power user first.</p>
+
+    <p>
+      <strong>Let's Chat</strong> is the Goldilocks comms lounge for registered guests and creators alike.
+      Creators are guests here too. You do not need a provider API key, a repo workspace, or the full Lattice Chat agent stack —
+      only an email the Purser has already seated.
+    </p>
+
+    <h2>Why Let's Chat</h2>
+    <ul>
+      <li><strong>No harvesting</strong> — the center pipe relays encrypted envelopes for seconds, then they expire. No social graph mining. No ad profile.</li>
+      <li><strong>Fractal EGS encryption</strong> — messages derive keys from the EGS frontal constant (Φ ≈ 1.618) on your device. The server sees ciphertext only.</li>
+      <li><strong>Goldilocks environment</strong> — consent-first. Fair Exchange. Do Not Disturb when you need quiet. Predators never welcome.</li>
+      <li><strong>Standalone or Collaborate</strong> — open <code>/lets-chat</code> directly, or hop over from Lattice Collaborate on Deck 8 Veranda.</li>
+    </ul>
+
+    <div class="compare">
+      <h2>Compared to other lanes</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>Let's Chat</th><th>Lattice Chat</th><th>Big platforms</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Who</td><td>Registered guests + creators</td><td>BYOK agent seats</td><td>Anyone</td></tr>
+          <tr><td>Server keeps messages</td><td>No (ephemeral relay)</td><td>Collaborate DMs optional pipe</td><td>Often yes</td></tr>
+          <tr><td>Encryption</td><td>EGS fractal · edge decrypt</td><td>BYOK to provider</td><td>Varies</td></tr>
+          <tr><td>Consent rail</td><td>DND · Fair Exchange</td><td>Goldilocks valet</td><td>Terms of service</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Request a seat</h2>
+    <p>
+      Email <a href="mailto:valetpru@gmail.com?subject=Let's%20Chat%20guest%20seat">valetpru@gmail.com</a>
+      with the address you want seated. One-month guest windows renew on request — same honor rail as Lattice access.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/lets-chat">Open Let's Chat</a>
+      <a class="btn btn-ghost" href="/lattice-chat/?mode=collaborate">Lattice Collaborate</a>
+      <a class="btn btn-ghost" href="/questfest">Ship board</a>
+    </div>
+
+    <p class="honesty">
+      <strong>Honesty boundary:</strong> EGS fractal encryption is catalog-grade AES-GCM on the edge — design language keyed to Φ, not a post-quantum or clinical claim.
+      Voice and video use WebRTC between peers; the relay carries signaling only. Multi-instance deploys may need a shared ephemeral store later — today the pipe is memory-only with TTL.
+    </p>
+  </main>
+
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

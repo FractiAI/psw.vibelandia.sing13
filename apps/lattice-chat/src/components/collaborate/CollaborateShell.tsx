@@ -139,11 +139,14 @@ export function CollaborateShell({
   );
 
   const dmHalf = (
-    <div className="collab-dm-band">
+      <div className="collab-dm-band">
       <div className="collab-dm-band__head">
         <div>
           <h2>Direct messages</h2>
-          <p className="collab-dm-band__note">Private Veranda threads — inhabitants and explorers, same Hull.</p>
+          <p className="collab-dm-band__note">
+            Private Veranda threads — inhabitants and explorers, same Hull.{' '}
+            <a href="/lets-chat">Let&apos;s Chat</a> for standalone guest comms (no BYOK required).
+          </p>
         </div>
         <div className="collab-dm-band__seats">
           {peers.map((p) => (
@@ -175,6 +178,9 @@ export function CollaborateShell({
           <h1>Lattice Collaborate</h1>
           <p className="collab-topbar__deck">Deck 8 Veranda · one tribe · many homes</p>
         </div>
+        <a className="collab-topbar__lets-chat" href="/lets-chat" title="Guest comms without BYOK">
+          Let&apos;s Chat
+        </a>
         <button
           type="button"
           className="collab-topbar__gear"

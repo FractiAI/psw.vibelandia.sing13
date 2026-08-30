@@ -65,6 +65,8 @@
   }
 
   var QUICKLINK_SECONDARY =
+    '<a href="/lets-chat">Let\'s Chat</a>' +
+    '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/lattice-chat">Lattice Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>';

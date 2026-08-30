@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070b14" />
+  <title>Let's Chat · SS Vibelandia</title>
+  <meta name="description" content="Registered guest-to-guest encrypted chat on SS Vibelandia. No harvesting. Consent-first. Do Not Disturb." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/lets-chat" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/lets-chat.css" />
+</head>
+<body>
+  <nav class="qv-top-quicklinks qv-top-quicklinks--questfest" aria-label="Site">
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--primary">
+      <a href="/questfest">SS Vibelandia</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="qv-top-quicklinks__here">Let's Chat</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/lets-chat/about">About</a>
+    </div>
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--secondary">
+      <a href="/lattice-chat/?mode=collaborate">Collaborate</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/lets-chat/about">Why Let's Chat</a>
+    </div>
+  </nav>
+
+  <main class="lc-app" id="lc-app">
+    <section class="lc-gate" id="lc-gate" aria-labelledby="lc-gate-h">
+      <h1 id="lc-gate-h">Let's Chat</h1>
+      <p class="lc-gate__lead">Registered guests only. Enter the email the Purser seated for you.</p>
+      <form id="lc-gate-form" class="lc-gate__form">
+        <label for="lc-email">Email</label>
+        <input id="lc-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+        <button type="submit" class="lc-btn lc-btn--gold">Come aboard</button>
+      </form>
+      <p class="lc-gate__hint">No seat yet? <a href="mailto:valetpru@gmail.com?subject=Let's%20Chat%20guest%20seat">Email the Purser</a> · <a href="/lets-chat/about">Read why Let's Chat</a></p>
+      <p class="lc-gate__err" id="lc-gate-err" hidden></p>
+    </section>
+
+    <section class="lc-room" id="lc-room" hidden aria-label="Let's Chat room">
+      <header class="lc-room__head">
+        <div>
+          <p class="lc-room__kicker">Deck 8 Veranda · encrypted · consent-first</p>
+          <h2 id="lc-me-label">You</h2>
+        </div>
+        <div class="lc-room__tools">
+          <button type="button" class="lc-btn lc-btn--ghost" id="lc-dnd-btn" aria-pressed="false">Do not disturb · off</button>
+          <button type="button" class="lc-btn lc-btn--ghost" id="lc-signout">Sign out</button>
+        </div>
+      </header>
+
+      <div class="lc-layout">
+        <aside class="lc-peers" aria-label="Guest roster">
+          <p class="lc-peers__label">Registered guests</p>
+          <ul id="lc-peer-list" class="lc-peers__list"></ul>
+        </aside>
+
+        <div class="lc-thread" id="lc-thread">
+          <p class="lc-thread__empty" id="lc-thread-empty">Choose a guest to open an encrypted thread.</p>
+          <header class="lc-thread__head" id="lc-thread-head" hidden>
+            <h3 id="lc-thread-name"></h3>
+            <p id="lc-thread-status" class="lc-thread__status"></p>
+            <div class="lc-thread__call">
+              <button type="button" class="lc-btn lc-btn--ghost" id="lc-voice-btn" disabled title="Voice · WebRTC">Voice</button>
+              <button type="button" class="lc-btn lc-btn--ghost" id="lc-video-btn" disabled title="Video · WebRTC">Video</button>
+            </div>
+          </header>
+          <ol class="lc-messages" id="lc-messages" aria-live="polite"></ol>
+          <form class="lc-compose" id="lc-compose" hidden>
+            <label class="visually-hidden" for="lc-input">Message</label>
+            <textarea id="lc-input" rows="2" placeholder="Encrypted message…" maxlength="2000"></textarea>
+            <button type="submit" class="lc-btn lc-btn--gold">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/interfaces/lets-chat-client.js" defer></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

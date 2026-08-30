@@ -229,8 +229,9 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(canvas).toContain('band--ship-news');
   });
 
-  it('shared ribbon advertises Lattice Chat and QR share', () => {
+  it('shared ribbon advertises Let\'s Chat, Lattice Chat, and QR share', () => {
     const js = read('interfaces/site-quicklinks.js');
+    expect(js).toMatch(/href="\/lets-chat"[\s\S]*Chat/);
     expect(js).toContain('href="/lattice-chat">Lattice Chat</a>');
     expect(js).toContain('QR Share</button>');
     expect(js).not.toContain('href="/creator-studio">Creator Studio</a>');

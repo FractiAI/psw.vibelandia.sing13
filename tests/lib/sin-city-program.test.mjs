@@ -21,8 +21,8 @@ describe('Sin City · night program', () => {
     expect(() => assertSinCityProgramTrackOrder()).not.toThrow();
     expect(SIN_CITY_PROGRAM_TRACKS).toHaveLength(SIN_CITY_PLAYLIST_TRACK_IDS.length);
     expect(SIN_CITY_PROGRAM_TRACKS[0].title).toContain('holographic tonight');
-    expect(SIN_CITY_PROGRAM_TRACKS).toHaveLength(3);
-    expect(SIN_CITY_PROGRAM_TRACKS.at(-1)?.title).toBe('tired eyes');
+    expect(SIN_CITY_PROGRAM_TRACKS).toHaveLength(4);
+    expect(SIN_CITY_PROGRAM_TRACKS.at(-1)?.title).toBe('buena mota, mezcal y café');
     expect(SIN_CITY_PROGRAM_TRACKS.at(-1)?.finale).toBe(true);
   });
 

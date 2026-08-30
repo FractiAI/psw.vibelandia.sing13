@@ -67,12 +67,23 @@
             <h3 id="lc-thread-name"></h3>
             <p id="lc-thread-status" class="lc-thread__status"></p>
             <div class="lc-thread__call">
-              <button type="button" class="lc-btn lc-btn--ghost" id="lc-voice-btn" disabled title="Voice · WebRTC">Voice</button>
-              <button type="button" class="lc-btn lc-btn--ghost" id="lc-video-btn" disabled title="Video · WebRTC">Video</button>
+              <button type="button" class="lc-btn lc-btn--ghost" id="lc-voice-btn" title="Voice call">Voice</button>
+              <button type="button" class="lc-btn lc-btn--ghost" id="lc-video-btn" title="Video call">Video</button>
+              <button type="button" class="lc-btn lc-btn--ghost lc-btn--hangup" id="lc-hangup-btn" hidden title="End call">Hang up</button>
             </div>
           </header>
+          <div class="lc-call-panel" id="lc-call-panel" hidden aria-label="Active call">
+            <video id="lc-remote-video" class="lc-call-panel__remote" autoplay playsinline></video>
+            <video id="lc-local-video" class="lc-call-panel__local" autoplay playsinline muted hidden></video>
+            <p class="lc-call-panel__label" id="lc-call-label">Connecting…</p>
+          </div>
           <ol class="lc-messages" id="lc-messages" aria-live="polite"></ol>
           <form class="lc-compose" id="lc-compose" hidden>
+            <label class="lc-file-label">
+              <span class="visually-hidden">Upload photo or file</span>
+              <input type="file" id="lc-file-input" accept="image/*,.pdf,.txt,.md,.json,.zip" hidden />
+              <span class="lc-btn lc-btn--ghost" aria-hidden="true">Attach</span>
+            </label>
             <label class="visually-hidden" for="lc-input">Message</label>
             <textarea id="lc-input" rows="2" placeholder="Encrypted message…" maxlength="2000"></textarea>
             <button type="submit" class="lc-btn lc-btn--gold">Send</button>

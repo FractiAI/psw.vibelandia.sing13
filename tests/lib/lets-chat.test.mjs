@@ -54,6 +54,27 @@ describe('lets-chat-crypto', () => {
 describe('lets-chat-signal', () => {
   beforeEach(() => resetLetsChatSignalForTests());
 
+  it('allows larger ciphertext for photo and file kinds', () => {
+    const photo = sanitizeEnvelope({
+      id: 'lc_photo_1',
+      kind: 'photo',
+      fromPeerId: 'lc_peer_a',
+      toPeerId: 'lc_peer_b',
+      threadId: 'lc_peer_a:lc_peer_b',
+      ciphertext: 'x'.repeat(50_000),
+    });
+    expect(photo).toBeTruthy();
+    const msg = sanitizeEnvelope({
+      id: 'lc_msg_1',
+      kind: 'msg',
+      fromPeerId: 'lc_peer_a',
+      toPeerId: 'lc_peer_b',
+      threadId: 'lc_peer_a:lc_peer_b',
+      ciphertext: 'x'.repeat(20_000),
+    });
+    expect(msg).toBeNull();
+  });
+
   it('relays ciphertext envelopes without persisting beyond memory', () => {
     const env = sanitizeEnvelope({
       id: 'lc_test_1',
@@ -83,6 +104,8 @@ describe('lets-chat surfaces', () => {
     const app = readFileSync(join(root, 'interfaces/lets-chat.html'), 'utf8');
     const intro = readFileSync(join(root, 'interfaces/lets-chat-intro.html'), 'utf8');
     expect(app).toContain('lets-chat-client.js');
+    expect(app).toContain('lc-voice-btn');
+    expect(app).toContain('lc-file-input');
     expect(intro).toContain('No harvesting');
     expect(intro).toContain('Predators never welcome');
   });

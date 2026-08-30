@@ -169,18 +169,89 @@
     return prefix + '_' + (crypto.randomUUID ? crypto.randomUUID() : Date.now());
   }
 
+  function peerInitials(name) {
+    var parts = String(name || '?').trim().split(/\s+/);
+    if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+    return String(name || '?').slice(0, 2).toUpperCase();
+  }
+
+  function formatTime(at) {
+    if (!at) return '';
+    var d = new Date(typeof at === 'number' ? at : Date.parse(at));
+    if (Number.isNaN(d.getTime())) return '';
+    var now = new Date();
+    if (d.toDateString() === now.toDateString()) {
+      return d.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+    }
+    return d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+  }
+
+  function lastMessagePreview(peerId) {
+    var tid = threadId(state.myPeerId, peerId);
+    var msgs = getLocalMessages(tid);
+    if (!msgs.length) return 'Tap to start encrypted chat';
+    var last = msgs[msgs.length - 1];
+    if (last.msgType === 'photo') return '📷 Photo';
+    if (last.msgType === 'file') return '📎 ' + (last.fileName || 'File');
+    var t = String(last.text || '').trim();
+    return (last.mine ? 'You: ' : '') + (t.length > 48 ? t.slice(0, 48) + '…' : t);
+  }
+
+  function setThreadShell(inThread) {
+    var shell = $('lc-shell');
+    if (inThread) shell.classList.add('lc-shell--in-thread');
+    else shell.classList.remove('lc-shell--in-thread');
+  }
+
   function renderPeers() {
     var list = $('lc-peer-list');
+    var empty = $('lc-list-empty');
     list.innerHTML = '';
+    if (!state.peers.length) {
+      empty.hidden = false;
+      return;
+    }
+    empty.hidden = true;
     state.peers.forEach(function (p) {
       var li = document.createElement('li');
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'lc-peer-btn';
-      btn.textContent = p.name;
+      btn.className = 'lc-chat-row';
       btn.dataset.peerId = p.id;
-      if (state.presence[p.id] && state.presence[p.id].dnd) btn.dataset.dnd = 'true';
       if (p.id === state.activePeerId) btn.setAttribute('aria-current', 'true');
+
+      var avatar = document.createElement('span');
+      avatar.className = 'lc-avatar lc-avatar--sm';
+      avatar.textContent = peerInitials(p.name);
+
+      var body = document.createElement('div');
+      body.className = 'lc-chat-row__body';
+
+      var top = document.createElement('div');
+      top.className = 'lc-chat-row__top';
+      var name = document.createElement('span');
+      name.className = 'lc-chat-row__name';
+      name.textContent = p.name;
+      var tid = threadId(state.myPeerId, p.id);
+      var msgs = getLocalMessages(tid);
+      var lastAt = msgs.length ? msgs[msgs.length - 1].at : null;
+      var time = document.createElement('span');
+      time.className = 'lc-chat-row__time';
+      time.textContent = formatTime(lastAt);
+      top.appendChild(name);
+      top.appendChild(time);
+
+      var preview = document.createElement('p');
+      preview.className = 'lc-chat-row__preview';
+      if (state.presence[p.id] && state.presence[p.id].dnd) {
+        preview.classList.add('lc-chat-row__preview--dnd');
+      }
+      preview.textContent = lastMessagePreview(p.id);
+
+      body.appendChild(top);
+      body.appendChild(preview);
+      btn.appendChild(avatar);
+      btn.appendChild(body);
       btn.addEventListener('click', function () { openThread(p.id); });
       li.appendChild(btn);
       list.appendChild(li);
@@ -193,10 +264,6 @@
     getLocalMessages(tid).forEach(function (m) {
       var li = document.createElement('li');
       li.className = 'lc-msg ' + (m.mine ? 'lc-msg--mine' : 'lc-msg--theirs');
-      var meta = document.createElement('span');
-      meta.className = 'lc-msg__meta';
-      meta.textContent = m.mine ? 'You' : m.fromName || 'Guest';
-      li.appendChild(meta);
       if (m.msgType === 'photo' && m.dataUrl) {
         var img = document.createElement('img');
         img.className = 'lc-msg__img';
@@ -211,10 +278,15 @@
         a.textContent = '📎 ' + (m.fileName || 'Download file');
         li.appendChild(a);
       } else {
-        var body = document.createElement('span');
-        body.textContent = m.text || '';
-        li.appendChild(body);
+        var text = document.createElement('span');
+        text.className = 'lc-msg__text';
+        text.textContent = m.text || '';
+        li.appendChild(text);
       }
+      var time = document.createElement('span');
+      time.className = 'lc-msg__time';
+      time.textContent = formatTime(m.at);
+      li.appendChild(time);
       ol.appendChild(li);
     });
     ol.scrollTop = ol.scrollHeight;
@@ -442,24 +514,37 @@
     }
 
     appendLocalMessage(env.threadId, msg);
+    renderPeers();
     if (state.activePeerId && env.threadId === threadId(state.myPeerId, state.activePeerId)) {
       renderMessages(env.threadId);
     }
+  }
+
+  function closeThread() {
+    endCall(false);
+    state.activePeerId = null;
+    setThreadShell(false);
+    $('lc-thread-active').hidden = true;
+    $('lc-thread-empty').hidden = false;
+    renderPeers();
   }
 
   function openThread(peerId) {
     endCall(false);
     state.activePeerId = peerId;
     var peer = state.peers.find(function (p) { return p.id === peerId; });
+    var name = peer ? peer.name : 'Guest';
     $('lc-thread-empty').hidden = true;
-    $('lc-thread-head').hidden = false;
-    $('lc-compose').hidden = false;
-    $('lc-thread-name').textContent = peer ? peer.name : 'Guest';
+    $('lc-thread-active').hidden = false;
+    $('lc-thread-name').textContent = name;
+    $('lc-thread-avatar').textContent = peerInitials(name);
     var pres = state.presence[peerId];
-    $('lc-thread-status').textContent = pres && pres.dnd ? 'Do not disturb' : 'Goldilocks · consent-first';
+    $('lc-thread-status').textContent = pres && pres.dnd ? 'Do not disturb' : 'online · encrypted';
+    setThreadShell(true);
     renderPeers();
     renderMessages(threadId(state.myPeerId, peerId));
     updateCallUi();
+    $('lc-input').focus();
   }
 
   async function refreshRoster() {
@@ -482,7 +567,7 @@
       renderPeers();
       if (state.activePeerId) {
         var pres = state.presence[state.activePeerId];
-        $('lc-thread-status').textContent = pres && pres.dnd ? 'Do not disturb' : 'Goldilocks · consent-first';
+        $('lc-thread-status').textContent = pres && pres.dnd ? 'Do not disturb' : 'online · encrypted';
       }
     }
   }
@@ -511,6 +596,7 @@
     }
     appendLocalMessage(tid, { id: id, msgType: 'text', text: text.trim(), mine: true, fromName: 'You', at: Date.now() });
     renderMessages(tid);
+    renderPeers();
     $('lc-input').value = '';
   }
 
@@ -557,6 +643,7 @@
       at: Date.now(),
     });
     renderMessages(tid);
+    renderPeers();
   }
 
   function startLoops() {
@@ -614,8 +701,10 @@
   function updateDndButton() {
     var btn = $('lc-dnd-btn');
     btn.setAttribute('aria-pressed', state.dnd ? 'true' : 'false');
-    btn.textContent = state.dnd ? 'Do not disturb · on' : 'Do not disturb · off';
+    btn.title = state.dnd ? 'Do not disturb · on' : 'Do not disturb · off';
   }
+
+  $('lc-back-btn').addEventListener('click', closeThread);
 
   $('lc-gate-form').addEventListener('submit', function (ev) {
     ev.preventDefault();

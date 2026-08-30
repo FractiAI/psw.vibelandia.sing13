@@ -104,8 +104,9 @@ describe('lets-chat surfaces', () => {
     const app = readFileSync(join(root, 'interfaces/lets-chat.html'), 'utf8');
     const intro = readFileSync(join(root, 'interfaces/lets-chat-intro.html'), 'utf8');
     expect(app).toContain('lets-chat-client.js');
-    expect(app).toContain('lc-voice-btn');
-    expect(app).toContain('lc-file-input');
+    expect(app).toContain('lc-chat-list');
+    expect(app).toContain('lc-shell');
+    expect(app).toContain('lc-back-btn');
     expect(intro).toContain('No harvesting');
     expect(intro).toContain('Predators never welcome');
   });

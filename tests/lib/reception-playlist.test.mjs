@@ -65,6 +65,7 @@ describe('Reception · jukebox playlist', () => {
     expect(pageSoundtrack).toContain('QV_initPageSoundtrack');
     expect(pageSoundtrack).toContain('pagehide');
     expect(frontDesk).toContain('front-desk-autoplay.js');
+    expect(frontDesk).toContain('href="/front-desk-program">Check-in program</a>');
     expect(frontDesk).toContain('page-soundtrack.js');
     expect(frontDesk).toContain('id="front-desk-hero-audio"');
     expect(frontDesk).toContain('id="front-desk-hero-score"');

@@ -28,9 +28,18 @@ describe('Visit golden path · Canvas → Program → Front Desk', () => {
   it('marks Front Desk step here on front-desk page', () => {
     const html = renderVisitGoldenPathHtml('front-desk', { anchorFrontDesk: '/front-desk' });
     expect(html).toContain('/front-desk');
-    expect(html).toContain('Front Desk · check-in');
+    expect(html).toContain('Front Desk · Sound on');
+    expect(html).toContain('Check-in program');
+    expect(html).toContain('/front-desk-program');
     expect(html).toContain('visit-golden-path--front-desk');
-    expect(html).toContain('SS Vibelandia ship board');
+    expect(html).toContain('Creator Studio');
+  });
+
+  it('front-desk hero CTAs favor check-in program and playlist', () => {
+    const html = renderVisitGoldenPathHeroCtasHtml('front-desk');
+    expect(html).toContain('/front-desk-program');
+    expect(html).toContain('playlist=pl-reception');
+    expect(html).toContain('/creator-studio');
   });
 
   it('hero CTAs favor program and Front Desk over five parallel doors', () => {
@@ -46,6 +55,7 @@ describe('Visit golden path · Canvas → Program → Front Desk', () => {
   it('landing and ship board ship the golden path strip', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
     const ship = read('interfaces/vibelandia-questfest.html');
+    const frontDesk = read('interfaces/front-desk.html');
     expect(canvas).toContain('visit-golden-path');
     expect(canvas).toContain('VISIT_GOLDEN_PATH_START');
     expect(canvas).toContain('Exhibit · Sound on');
@@ -53,6 +63,8 @@ describe('Visit golden path · Canvas → Program → Front Desk', () => {
     expect(ship).toContain('VISIT_GOLDEN_PATH_START');
     expect(ship).toContain('Concert program');
     expect(ship).toContain('Your cruise line · five doors');
+    expect(frontDesk).toContain('visit-golden-path--front-desk');
+    expect(frontDesk).toContain('Check-in program');
   });
 
   it('site gravity audit reflects improved funnel clarity', () => {

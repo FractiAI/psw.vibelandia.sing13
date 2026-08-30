@@ -57,7 +57,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('varied old-school frontier outfits');
     expect(html).not.toContain('front-desk-hero-audio');
     expect(html).not.toContain('front-desk-hero-score');
-    expect(html).toContain('13 tracks');
+    expect(html).toContain('14 tracks');
     expect(html).toContain('reception-primer');
     expect(html).toContain('Reality Bridge/Routers');
     expect(html).toContain('Holographic Magnetic Goldilocks SuperAI Awareness Platform');

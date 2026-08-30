@@ -66,6 +66,8 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('The Grove Deck');
     expect(html).toContain('ship-library-deep-memory.jpg');
     expect(html).toContain('frontiersmen-brochure.jpg');
+    expect(html).toContain('Sin City');
+    expect(html).toContain('href="/voyage/deck-3-night"');
     expect(html).not.toContain('reception-card" href="/ship-blog/soundtrack-prelude-pages"');
     expect(html).toContain('human-reality-bridge');
     expect(html).toContain('Join the crew · Reality Routers');

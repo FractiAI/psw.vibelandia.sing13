@@ -21,8 +21,9 @@ describe('Front Desk · check-in program', () => {
     expect(() => assertFrontDeskProgramTrackOrder()).not.toThrow();
     expect(FRONT_DESK_PROGRAM_TRACKS).toHaveLength(RECEPTION_PLAYLIST_TRACK_IDS.length);
     expect(FRONT_DESK_PROGRAM_TRACKS[0].title).toContain('Capitán');
-    expect(FRONT_DESK_PROGRAM_TRACKS.at(-2)?.title).toBe('zero divided by zero');
-    expect(FRONT_DESK_PROGRAM_TRACKS.at(-1)?.title).toBe('perfect hydrogen crystal');
+    expect(FRONT_DESK_PROGRAM_TRACKS.at(-3)?.title).toBe('zero divided by zero');
+    expect(FRONT_DESK_PROGRAM_TRACKS.at(-2)?.title).toBe('perfect hydrogen crystal');
+    expect(FRONT_DESK_PROGRAM_TRACKS.at(-1)?.title).toBe('hydrogen y line frontier accordion');
     expect(FRONT_DESK_PROGRAM_TRACKS.at(-1)?.finale).toBe(true);
   });
 
@@ -32,6 +33,7 @@ describe('Front Desk · check-in program', () => {
     expect(html).toContain('Download program (PDF)');
     expect(html).toContain('we are the dance that makes the music');
     expect(html).toContain('perfect hydrogen crystal');
+    expect(html).toContain('hydrogen y line frontier accordion');
     expect(html).toContain('Capitán');
     expect(html).toContain('Honesty boundary');
     expect(html).toContain(FRONT_DESK_PROGRAM_ROUTE);

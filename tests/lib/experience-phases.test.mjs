@@ -59,7 +59,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).not.toContain('front-desk-hero-score');
     expect(html).toContain('Check-in program');
     expect(html).toContain('href="/front-desk-program"');
-    expect(html).toContain('16 tracks');
+    expect(html).toContain('17 tracks');
     expect(html).toContain('/front-desk-program');
     expect(html).toContain('Read the check-in program');
     expect(html).toContain('reception-primer');

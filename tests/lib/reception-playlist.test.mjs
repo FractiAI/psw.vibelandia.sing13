@@ -18,7 +18,7 @@ function read(rel) {
 describe('Reception · jukebox playlist', () => {
   it('opens with Capitán\'s Welcome, Welcome Aboard, The Shift, Universo Syntheverse, then caliente set', () => {
     expect(RECEPTION_PLAYLIST_ID).toBe('pl-reception');
-    expect(RECEPTION_PLAYLIST_TRACK_IDS).toHaveLength(16);
+    expect(RECEPTION_PLAYLIST_TRACK_IDS).toHaveLength(17);
     expect(RECEPTION_PLAYLIST_TRACK_IDS[0]).toBe('trk-srv-6025557c-f76c-4a55-bd7c-0fc2d5ffcfb4');
     expect(RECEPTION_PLAYLIST_TRACK_IDS[1]).toBe('trk-srv-4958316a-f7ef-4639-9765-e326d85fd808');
     expect(RECEPTION_PLAYLIST_TRACK_IDS[2]).toBe('trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52');
@@ -35,6 +35,7 @@ describe('Reception · jukebox playlist', () => {
     expect(RECEPTION_PLAYLIST_TRACK_IDS[13]).toBe('trk-srv-75385f59-b548-4908-b882-27895dc6b2b0');
     expect(RECEPTION_PLAYLIST_TRACK_IDS[14]).toBe('trk-srv-480b6197-b842-4d6e-846c-ac9c6e3da544');
     expect(RECEPTION_PLAYLIST_TRACK_IDS[15]).toBe('trk-srv-dce6f8bd-e03e-4fc7-8038-c568eea9952e');
+    expect(RECEPTION_PLAYLIST_TRACK_IDS[16]).toBe('trk-srv-6e7e3dd9-40cc-4c99-8e12-cc5ddf22a260');
     expect(RECEPTION_PLAYLIST.name).toContain('check-in soundtrack');
   });
 

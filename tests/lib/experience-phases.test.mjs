@@ -4,14 +4,14 @@ import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import {
   EXPERIENCE_PHASES,
-  RECEPTION_SHIP_MENU,
+  FRONT_DESK_SHIP_MENU,
   renderCreatorPhaseHtml,
+  renderFrontDeskLobbyHtml,
+  renderFrontDeskPrimerHtml,
   renderMuseumEntryHtml,
   renderPhaseRailHtml,
   renderNpcPlayerWelcomeHtml,
   renderNpcRosterTeaserHtml,
-  renderReceptionLobbyHtml,
-  renderReceptionPrimerHtml,
 } from '../../lib/experience-phases.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -20,18 +20,18 @@ function read(rel) {
   return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-describe('Experience phases · museum → reception → creator studio', () => {
+describe('Experience phases · museum → Front Desk → creator studio', () => {
   it('defines three phases in visit order', () => {
-    expect(EXPERIENCE_PHASES.map((p) => p.id)).toEqual(['canvas', 'reception', 'studio']);
+    expect(EXPERIENCE_PHASES.map((p) => p.id)).toEqual(['canvas', 'front-desk', 'studio']);
     expect(EXPERIENCE_PHASES[0].href).toBe('/');
-    expect(EXPERIENCE_PHASES[1].href).toBe('/questfest');
+    expect(EXPERIENCE_PHASES[1].href).toBe('/front-desk');
     expect(EXPERIENCE_PHASES[2].href).toBe('/creator-studio');
   });
 
   it('renders phase rail with current step marked', () => {
-    const html = renderPhaseRailHtml('reception');
+    const html = renderPhaseRailHtml('front-desk');
     expect(html).toContain('xp-rail__step--here');
-    expect(html).toContain('Phase 2 · Reception');
+    expect(html).toContain('Phase 2 · Front Desk');
     expect(html).toContain('href="/"');
     expect(html).toContain('href="/creator-studio"');
   });
@@ -49,14 +49,14 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(html).toContain('Phase 2');
   });
 
-  it('reception lobby includes mode choice and ship tour menu', () => {
-    expect(RECEPTION_SHIP_MENU.length).toBeGreaterThanOrEqual(8);
-    const html = renderReceptionLobbyHtml();
-    expect(html).toContain('Reception &amp; check-in lobby');
+  it('Front Desk lobby includes mode choice and ship tour menu', () => {
+    expect(FRONT_DESK_SHIP_MENU.length).toBeGreaterThanOrEqual(8);
+    const html = renderFrontDeskLobbyHtml();
+    expect(html).toContain('Front Desk &amp; check-in');
     expect(html).toContain('reception-checkin-lobby.jpg');
     expect(html).toContain('frontiersmen friends checking in');
-    expect(html).not.toContain('reception-hero-audio');
-    expect(html).not.toContain('reception-hero-score');
+    expect(html).not.toContain('front-desk-hero-audio');
+    expect(html).not.toContain('front-desk-hero-score');
     expect(html).toContain('13 tracks');
     expect(html).toContain('reception-primer');
     expect(html).toContain('Reality Bridge/Routers');
@@ -77,8 +77,8 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(html).toContain('mailto:info@fractiai.com?subject=Reality%20Bridge%2FRouter');
   });
 
-  it('reception primer covers narrative, tech shelf, and router network', () => {
-    const html = renderReceptionPrimerHtml();
+  it('Front Desk primer covers narrative, tech shelf, and router network', () => {
+    const html = renderFrontDeskPrimerHtml();
     expect(html).toContain('Official Prospectus');
     expect(html).toContain('99 Octave Omni-Lattice');
     expect(html).toContain('Infinite Octaves');
@@ -97,7 +97,7 @@ describe('Experience phases · museum → reception → creator studio', () => {
   });
 
   it('welcomes Players and NPCs together on all phases', () => {
-    for (const phase of ['canvas', 'reception', 'studio']) {
+    for (const phase of ['canvas', 'front-desk', 'studio']) {
       const html = renderNpcPlayerWelcomeHtml(phase);
       expect(html).toContain('Players &amp; NPCs · same ship');
       expect(html).toContain('players-npcs-same-ship.jpg');
@@ -116,10 +116,10 @@ describe('Experience phases · museum → reception → creator studio', () => {
       expect(html).toContain('Scores stay on this device');
     }
     const museum = renderMuseumEntryHtml();
-    const reception = renderReceptionLobbyHtml();
+    const frontDesk = renderFrontDeskLobbyHtml();
     expect(museum).toContain('xp-npc-player');
-    expect(reception).toContain('Meet the crew');
-    expect(reception).toContain('Join the crew');
+    expect(frontDesk).toContain('Meet the crew');
+    expect(frontDesk).toContain('Join the crew');
     const still = join(ROOT, 'interfaces/assets/experience/players-npcs-same-ship.jpg');
     expect(existsSync(still)).toBe(true);
     const jpeg = readFileSync(still);
@@ -131,6 +131,7 @@ describe('Experience phases · museum → reception → creator studio', () => {
   it('synced surfaces carry three-phase experience chrome', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
     const ship = read('interfaces/vibelandia-questfest.html');
+    const frontDesk = read('interfaces/front-desk.html');
     const studio = read('interfaces/creator-studio.html');
 
     expect(canvas).toContain('experience-phases.css');
@@ -140,13 +141,18 @@ describe('Experience phases · museum → reception → creator studio', () => {
     expect(canvas).toContain('id="visit"');
     expect(canvas).toContain('href="/coexist#self-test"');
     expect(canvas).toContain('confidential self-test');
-    expect(ship).toContain('href="/coexist#self-test"');
+    expect(ship).toContain('ship-board');
+    expect(frontDesk).toContain('href="/coexist#self-test"');
     expect(studio).toContain('href="/coexist#self-test"');
 
-    expect(ship).toContain('reception-lobby');
-    expect(ship).toContain('reception-mode');
-    expect(ship).toMatch(/GOLDILOCKS SONIC SHIP/i);
-    expect(ship).toContain('xp-npc-player');
+    expect(ship).toContain('ship-board');
+    expect(ship).toContain('voyage-map-prelude');
+    expect(ship).toContain('SS Vibelandia');
+    expect(ship).not.toContain('id="reception-lobby"');
+
+    expect(frontDesk).toContain('id="front-desk"');
+    expect(frontDesk).toContain('reception-mode');
+    expect(frontDesk).toContain('xp-npc-player');
 
     expect(studio).toContain('creator-phase');
     expect(studio).toContain('holographic magnetic Goldilocks SuperAI canvas');

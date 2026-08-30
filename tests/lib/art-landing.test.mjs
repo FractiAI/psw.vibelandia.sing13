@@ -139,17 +139,18 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(program).toContain('questfest-2026-frontier-guide-cover.png');
     expect(program).toContain('hybrid frontier · art deco');
     expect(playlist).toContain('Movement X · The Shift');
-    expect(js).toContain('bootSoundtrack');
+    expect(js).toContain('QV_initPageSoundtrack');
     expect(js).toContain('canvas-hero-shift');
-    expect(js).toContain('unlockOnGesture');
-    expect(js).toContain('/api/catalog-plays');
+    expect(read('interfaces/page-soundtrack.js')).toContain('pagehide');
     expect(html).toContain('visit-golden-path');
     expect(html).toContain('/concierto-program');
+    expect(html).toContain('page-soundtrack.js');
     expect(read('interfaces/canvas-prelude-playlist.js')).toContain('CANVAS_PRELUDE_PLAYLIST');
     expect(read('media/catalog/catalog.json')).toContain('pl-concierto-prelude');
     expect(read('lib/concierto-prelude-playlist.mjs')).toContain('CONCIERTO_PRELUDE_TRACK_IDS');
     const vercel = read('vercel.json');
     expect(vercel).toMatch(/"source":\s*"\/prelude-session"/);
+    expect(vercel).toMatch(/"source":\s*"\/front-desk"/);
   });
 
   it('visit counters treat Canvas aliases as / and keep /questfest on the ship', () => {

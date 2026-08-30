@@ -53,19 +53,19 @@ describe('Reception · jukebox playlist', () => {
     expect(receptionListenHref()).toContain('autoplay=1');
   });
 
-  it('reception page autoplays check-in soundtrack on load', () => {
-    const js = read('interfaces/reception-autoplay.js');
-    const questfest = read('interfaces/vibelandia-questfest.html');
-    expect(js).toContain("PLAYLIST_ID = 'pl-reception'");
-    expect(js).toContain('/api/catalog');
-    expect(js).toContain('reception-hero-audio');
-    expect(js).toContain('#reception-lobby');
-    expect(js).toContain('prefers-reduced-motion');
-    expect(questfest).toContain('reception-autoplay.js');
-    expect(questfest).toContain('id="reception-hero-audio"');
-    expect(questfest).toContain('id="reception-hero-score"');
-    expect(questfest).toContain('href="/lattice-chat">Lattice Chat</a>');
-    expect(questfest).toContain('QR Share</button>');
+  it('Front Desk page autoplays check-in soundtrack on load', () => {
+    const js = read('interfaces/front-desk-autoplay.js');
+    const pageSoundtrack = read('interfaces/page-soundtrack.js');
+    const frontDesk = read('interfaces/front-desk.html');
+    expect(js).toContain("playlistId: 'pl-reception'");
+    expect(pageSoundtrack).toContain('QV_initPageSoundtrack');
+    expect(pageSoundtrack).toContain('pagehide');
+    expect(frontDesk).toContain('front-desk-autoplay.js');
+    expect(frontDesk).toContain('page-soundtrack.js');
+    expect(frontDesk).toContain('id="front-desk-hero-audio"');
+    expect(frontDesk).toContain('id="front-desk-hero-score"');
+    expect(frontDesk).toContain('href="/lattice-chat">Lattice Chat</a>');
+    expect(frontDesk).toContain('QR Share</button>');
   });
 
   it('jukebox app pins reception in menu and blocks delete', () => {

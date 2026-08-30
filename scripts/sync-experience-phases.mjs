@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 /**
- * Inject three-phase experience chrome into Canvas, QUESTFEST reception, Creator Studio.
+ * Inject three-phase experience chrome into Canvas, Front Desk, Creator Studio.
+ * SS Vibelandia ship board syncs via sync-ship-board.mjs.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   renderCreatorPhaseHtml,
+  renderFrontDeskLobbyHtml,
   renderMuseumEntryHtml,
-  renderReceptionLobbyHtml,
 } from '../lib/experience-phases.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -22,9 +23,9 @@ const TARGETS = [
     cssAfter: 'exhibit-shells.css',
   },
   {
-    file: path.join(ROOT, 'interfaces', 'vibelandia-questfest.html'),
-    markers: ['<!-- EXPERIENCE_RECEPTION_LOBBY_BEGIN -->', '<!-- EXPERIENCE_RECEPTION_LOBBY_END -->'],
-    render: renderReceptionLobbyHtml,
+    file: path.join(ROOT, 'interfaces', 'front-desk.html'),
+    markers: ['<!-- EXPERIENCE_FRONT_DESK_BEGIN -->', '<!-- EXPERIENCE_FRONT_DESK_END -->'],
+    render: renderFrontDeskLobbyHtml,
     cssAfter: 'voyage-surfaces.css',
   },
   {

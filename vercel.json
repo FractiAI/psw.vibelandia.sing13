@@ -73,6 +73,14 @@
       "destination": "/interfaces/vibelandia-questfest.html"
     },
     {
+      "source": "/front-desk",
+      "destination": "/interfaces/front-desk.html"
+    },
+    {
+      "source": "/front-desk/",
+      "destination": "/interfaces/front-desk.html"
+    },
+    {
       "source": "/commons",
       "destination": "/interfaces/commons/index.html"
     },

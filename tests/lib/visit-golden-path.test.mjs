@@ -14,36 +14,36 @@ function read(rel) {
   return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-describe('Visit golden path · Canvas → Program → Reception', () => {
+describe('Visit golden path · Canvas → Program → Front Desk', () => {
   it('renders three numbered steps with program as primary', () => {
     const html = renderVisitGoldenPathHtml('canvas');
     expect(html).toContain(VISIT_GOLDEN_PATH_KICKER);
     expect(html).toContain('Concert program');
     expect(html).toContain('/concierto-program');
-    expect(html).toContain('/questfest');
+    expect(html).toContain('/front-desk');
     expect(html).toContain('visit-golden-path__step--here');
     expect(html).toContain('visit-golden-path__step--primary');
   });
 
-  it('marks reception step here on questfest with registration anchor', () => {
-    const html = renderVisitGoldenPathHtml('reception', { anchorReception: '#reception-lobby' });
-    expect(html).toContain('#reception-lobby');
-    expect(html).toContain('Registration · check-in');
-    expect(html).toContain('visit-golden-path--reception');
-    expect(html).toContain('five cruise doors');
+  it('marks Front Desk step here on front-desk page', () => {
+    const html = renderVisitGoldenPathHtml('front-desk', { anchorFrontDesk: '/front-desk' });
+    expect(html).toContain('/front-desk');
+    expect(html).toContain('Front Desk · check-in');
+    expect(html).toContain('visit-golden-path--front-desk');
+    expect(html).toContain('SS Vibelandia ship board');
   });
 
-  it('hero CTAs favor program and registration over five parallel doors', () => {
+  it('hero CTAs favor program and Front Desk over five parallel doors', () => {
     const canvas = renderVisitGoldenPathHeroCtasHtml('canvas');
-    const reception = renderVisitGoldenPathHeroCtasHtml('reception');
+    const ship = renderVisitGoldenPathHeroCtasHtml('ship');
     expect(canvas).toContain('/concierto-program');
-    expect(canvas).toContain('/questfest');
-    expect(reception).toContain('/concierto-program');
-    expect(reception).toContain('#reception-lobby');
-    expect(reception).not.toContain('href="/journey"');
+    expect(canvas).toContain('/front-desk');
+    expect(ship).toContain('/concierto-program');
+    expect(ship).toContain('/front-desk');
+    expect(ship).toContain('href="/journey"');
   });
 
-  it('landing and reception ship the golden path strip', () => {
+  it('landing and ship board ship the golden path strip', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
     const ship = read('interfaces/vibelandia-questfest.html');
     expect(canvas).toContain('visit-golden-path');

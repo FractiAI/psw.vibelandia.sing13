@@ -1213,6 +1213,14 @@
       "destination": "/interfaces/blog-soundtrack-prelude-pages-2026-08.html"
     },
     {
+      "source": "/front-desk-program",
+      "destination": "/interfaces/front-desk-check-in-program.html"
+    },
+    {
+      "source": "/front-desk-program/",
+      "destination": "/interfaces/front-desk-check-in-program.html"
+    },
+    {
       "source": "/concierto-program",
       "destination": "/interfaces/concierto-el-gran-sol-program.html"
     },

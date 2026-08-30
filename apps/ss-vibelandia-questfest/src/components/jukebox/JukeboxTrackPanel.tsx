@@ -14,6 +14,7 @@ import { findDuplicateTrackGroups } from '@/lib/findCatalogDuplicateGroups';
 import { trackMatchesSearchQuery } from '@/lib/masterCatalogFilter';
 import { nextSequentialTrackId, nextShuffledTrackId } from '@/lib/playlistShuffle';
 import { PLAIN } from '@/lib/plainSpeak';
+import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlaylistProgramBanner';
 import type { TrackDef } from '@/lib/catalogTypes';
 
 type SortMode = 'playlistOrder' | 'titleAsc' | 'titleDesc';
@@ -257,6 +258,8 @@ export function JukeboxTrackPanel({ playlistId, onOpenNowPlaying, onEditPlaylist
           </button>
         </div>
       </header>
+
+      <JukeboxPlaylistProgramBanner playlistId={playlistId} />
 
       {totalBeforeSearch > 0 ? (
         <form className="jb-search-wrap" onSubmit={handleSearchSubmit}>

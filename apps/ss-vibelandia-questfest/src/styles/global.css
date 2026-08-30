@@ -9098,6 +9098,31 @@ html.qf-jukebox-page .sp-now-add-pl {
   line-height: 1.35;
 }
 
+.jb-program-banner {
+  margin: 0;
+  padding: 0.55rem 0.65rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.14), rgba(12, 18, 32, 0.35));
+  flex-shrink: 0;
+}
+
+.jb-program-banner__note {
+  margin: 0 0 0.45rem;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: rgba(254, 243, 199, 0.9);
+}
+
+.jb-program-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.jb-program-banner__actions .jb-tool-btn {
+  text-decoration: none;
+}
+
 .jb-batch-bar {
   display: flex;
   flex-wrap: wrap;

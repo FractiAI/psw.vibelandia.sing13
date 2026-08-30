@@ -13,6 +13,7 @@ import { playingCoverUrl } from '@/lib/playingCover';
 import { PLAIN } from '@/lib/plainSpeak';
 import { EGS_EXPORT_USD } from '@/lib/paymentRails';
 import { usePlaybackPlaylist } from '@/stores/catalogSelectors';
+import { JukeboxPlaylistProgramBanner } from '@/components/jukebox/JukeboxPlaylistProgramBanner';
 
 export function JukeboxNowPlayingPage() {
   useJukeboxListenSetup('qf-jukebox-now-page');
@@ -24,6 +25,7 @@ export function JukeboxNowPlayingPage() {
   const openExport = useMediaChromeStore((s) => s.openExport);
   const plays = useTrackPlayVisits();
   const pl = usePlaybackPlaylist();
+  const playbackPlaylistId = usePlaybackStore((s) => s.playbackPlaylistId);
 
   const track = currentTrackId ? getTrack(currentTrackId) : undefined;
 
@@ -85,6 +87,8 @@ export function JukeboxNowPlayingPage() {
             {PLAIN.getPass}
           </button>
         </div>
+
+        {playbackPlaylistId ? <JukeboxPlaylistProgramBanner playlistId={playbackPlaylistId} /> : null}
 
         <p className="jb-now__hint">
           Controls stay in the jukebox bar below. Download is ${EGS_EXPORT_USD.toFixed(2)} Fair Exchange on honor

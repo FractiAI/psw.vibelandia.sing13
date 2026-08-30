@@ -64,6 +64,8 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('Read the check-in program');
     expect(html).toContain('visit-golden-path--front-desk');
     expect(html).toContain('hydrogen y line frontier accordion');
+    expect(html).toContain('btn btn-gold');
+    expect(html).toContain('Check-in program</a>');
     expect(html).toContain('reception-primer');
     expect(html).toContain('Reality Bridge/Routers');
     expect(html).toContain('Holographic Magnetic Goldilocks SuperAI Awareness Platform');

@@ -64,8 +64,7 @@
     }, 12000);
   }
 
-  var QUICKLINK_TAIL =
-    '<span class="sep" aria-hidden="true">·</span>' +
+  var QUICKLINK_SECONDARY =
     '<a href="/lattice-chat">Lattice Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>';
@@ -170,7 +169,10 @@
     nav.className = 'qv-top-quicklinks' + (onQuestfestHome ? ' qv-top-quicklinks--questfest' : '');
     nav.setAttribute('aria-label', 'Site');
     var row = document.createElement('div');
-    row.className = 'qv-top-quicklinks__row';
+    row.className = 'qv-top-quicklinks__row qv-top-quicklinks__row--primary';
+    var secondary = document.createElement('div');
+    secondary.className = 'qv-top-quicklinks__row qv-top-quicklinks__row--secondary';
+    secondary.innerHTML = QUICKLINK_SECONDARY;
 
     if (onArtLanding) {
       row.innerHTML =
@@ -182,22 +184,20 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/library">Library</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/doodles">Doodles</a>' +
-        QUICKLINK_TAIL;
+        '<a href="/doodles">Doodles</a>';
     } else if (onQuestfestHome) {
       row.innerHTML =
         '<span class="qv-top-quicklinks__here">SS VIBELANDIA</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/">Canvas</a>' +
-        '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/">Canvas</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/library">Library</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/doodles">Doodles</a>' +
-        QUICKLINK_TAIL;
+        '<a href="/doodles">Doodles</a>';
     } else {
       row.innerHTML =
         '<a href="/questfest">SS VIBELANDIA</a>' +
@@ -210,11 +210,11 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/library">Library</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/doodles">Doodles</a>' +
-        QUICKLINK_TAIL;
+        '<a href="/doodles">Doodles</a>';
     }
 
     nav.appendChild(row);
+    nav.appendChild(secondary);
     if (onQuestfestHome) {
       nav.insertAdjacentHTML('beforeend', renderQuestfestSoundBar());
     }

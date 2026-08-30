@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="/interfaces/site-page-views.css" data-qv-page-views-css="1" />
   <link rel="stylesheet" href="/interfaces/deck-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
-  <link rel="stylesheet" href="/interfaces/experience-phases.css" /> />
+  <link rel="stylesheet" href="/interfaces/experience-phases.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -642,7 +642,7 @@
 <body>
   <!-- SITE_TOP_BANNER_START -->
       <nav class="qv-top-quicklinks qv-top-quicklinks--questfest" aria-label="Site">
-    <div class="qv-top-quicklinks__row">
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--primary">
       <span class="qv-top-quicklinks__here">SS VIBELANDIA</span>
       <span class="sep" aria-hidden="true">·</span>
       <a href="/journey">Journey</a>
@@ -654,9 +654,32 @@
       <a href="/library">Library</a>
       <span class="sep" aria-hidden="true">·</span>
       <a href="/doodles">Doodles</a>
-      <span class="sep" aria-hidden="true">·</span><a href="/lattice-chat">Lattice Chat</a><span class="sep" aria-hidden="true">·</span><button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>
     </div>
-    </nav>
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--secondary">
+      <a href="/lattice-chat">Lattice Chat</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>
+    </div>
+    <div class="qv-top-quicklinks__sound" id="reception-sound-bar">
+      <button
+        type="button"
+        class="qv-top-quicklinks__score reception-hero__score"
+        id="reception-hero-score"
+        hidden
+        aria-pressed="false"
+        aria-controls="reception-hero-audio"
+        aria-label="Play reception soundtrack"
+      >Sound off · tap to play</button>
+      <audio
+        id="reception-hero-audio"
+        preload="auto"
+        playsinline
+        hidden
+        aria-hidden="true"
+        aria-label="Reception check-in soundtrack"
+      ></audio>
+    </div>
+  </nav>
       <!-- SITE_TOP_BANNER_END -->
 
   <a class="skip" href="#bulletin">Skip to today’s bulletin</a>

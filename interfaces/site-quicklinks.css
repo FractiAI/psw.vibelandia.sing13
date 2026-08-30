@@ -2,9 +2,13 @@
 .qv-top-quicklinks {
   margin: 0;
   padding: 0.65rem 1.1rem 0.55rem;
+  padding-top: max(0.65rem, env(safe-area-inset-top, 0px));
+  padding-left: max(1.1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.1rem, env(safe-area-inset-right, 0px));
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  line-height: 1.45;
   background: linear-gradient(180deg, rgba(12, 22, 40, 0.96), rgba(7, 11, 20, 0.92));
   border-bottom: 1px solid rgba(212, 175, 55, 0.28);
   color: #d6cfc4;
@@ -12,20 +16,29 @@
 
 .qv-top-quicklinks--questfest {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.45rem 0.75rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
 }
 
 .qv-top-quicklinks__row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.15rem 0;
   min-width: 0;
-  flex: 1 1 12rem;
+  flex: 1 1 auto;
   max-width: 100%;
+}
+
+.qv-top-quicklinks__row--primary {
+  flex: 1 1 12rem;
+}
+
+.qv-top-quicklinks__row--secondary {
+  font-size: 0.72rem;
+  opacity: 0.94;
 }
 
 .qv-top-quicklinks__sound {
@@ -97,21 +110,28 @@
 
 @media (max-width: 640px) {
   .qv-top-quicklinks {
-    padding: 0.55rem 0.75rem 0.5rem;
-    font-size: 0.72rem;
+    padding: 0.55rem 0.85rem 0.5rem;
+    padding-top: max(0.55rem, env(safe-area-inset-top, 0px));
+    padding-left: max(0.85rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.85rem, env(safe-area-inset-right, 0px));
+    font-size: 0.74rem;
   }
 
   .qv-top-quicklinks--questfest {
-    flex-direction: column;
-    align-items: stretch;
+    gap: 0.3rem;
   }
 
   .qv-top-quicklinks__row {
-    gap: 0.2rem 0;
+    gap: 0.18rem 0;
+    justify-content: center;
+  }
+
+  .qv-top-quicklinks__row--secondary {
+    font-size: 0.7rem;
   }
 
   .qv-top-quicklinks .sep {
-    margin: 0 0.28rem;
+    margin: 0 0.3rem;
   }
 
   .qv-top-quicklinks__sound {

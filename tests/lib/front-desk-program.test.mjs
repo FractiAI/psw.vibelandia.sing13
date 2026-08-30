@@ -39,6 +39,14 @@ describe('Front Desk · check-in program', () => {
     expect(html).toContain(FRONT_DESK_PROGRAM_ROUTE);
   });
 
+  it('track 9 big band juicy juicy uses existing Grove deck art', () => {
+    expect(FRONT_DESK_PROGRAM_TRACKS[8].title).toBe('big band juicy juicy');
+    expect(FRONT_DESK_PROGRAM_TRACKS[8].image).toBe('/interfaces/assets/voyage/deck-4-5-grove.png');
+    const html = renderFrontDeskProgramPageHtml();
+    expect(html).toContain('deck-4-5-grove.png');
+    expect(html).not.toContain('deck-4-grove.png');
+  });
+
   it('is synced to interfaces and vercel route', () => {
     const page = read('interfaces/front-desk-check-in-program.html');
     expect(page).toContain('Front Desk Check-In Program');

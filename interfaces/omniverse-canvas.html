@@ -561,6 +561,36 @@
       .hero__plane, .ring, .shell { animation: none !important; transition: none !important; }
       .hero__video { display: none !important; }
     }
+
+    .canvas-ceo-announcement {
+      margin: 0;
+      padding: 0.85rem 1.15rem;
+      padding-left: max(1.15rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1.15rem, env(safe-area-inset-right, 0px));
+      text-align: center;
+      background: linear-gradient(90deg, rgba(20, 14, 8, 0.98), rgba(12, 22, 40, 0.98));
+      border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--champagne);
+    }
+    .canvas-ceo-announcement__kicker {
+      display: block;
+      margin: 0 0 0.35rem;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .canvas-ceo-announcement a {
+      color: var(--gold-hi);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .canvas-ceo-announcement a:hover { color: #fff; }
   </style>
 </head>
 <body class="canvas-pub">
@@ -584,6 +614,11 @@
       <button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>
     </div>
   </nav>
+
+  <aside class="canvas-ceo-announcement" aria-label="CEO opportunity announcement">
+    <span class="canvas-ceo-announcement__kicker">Announcement</span>
+    Are you a frontier CEO looking for your next big challenge? We are currently looking for a CEO to help take the next layer of AI, Lattice Chat, to market. A tremendous opportunity for the right executives. Interested parties should contact Valet Pru directly at <a href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20CEO%20inquiry">valetpru@gmail.com</a>.
+  </aside>
 
   <header class="hero" aria-label="Holographic Goldilocks SuperAI Basecamp opening">
     <div class="hero__plane" role="img" aria-label="Valet Pru — host of the Holographic Goldilocks SuperAI Basecamp"></div>

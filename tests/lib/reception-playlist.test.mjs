@@ -76,6 +76,6 @@ describe('Reception · jukebox playlist', () => {
     const store = read('apps/ss-vibelandia-questfest/src/stores/catalogStore.ts');
     expect(seed).toContain('isReceptionPlaylist');
     expect(menu).toContain('RECEPTION_PLAYLIST_ID');
-    expect(store).toMatch(/deletePlaylist[\s\S]{0,240}isReceptionPlaylist/);
+    expect(store).toMatch(/deletePlaylist[\s\S]{0,320}isSinCityPlaylist/);
   });
 });

@@ -22,6 +22,7 @@ describe('Front Desk · check-in program', () => {
     expect(FRONT_DESK_PROGRAM_TRACKS).toHaveLength(RECEPTION_PLAYLIST_TRACK_IDS.length);
     expect(FRONT_DESK_PROGRAM_TRACKS[0].title).toContain('Capitán');
     expect(FRONT_DESK_PROGRAM_TRACKS.at(-1)?.title).toBe('zero divided by zero');
+    expect(FRONT_DESK_PROGRAM_TRACKS.at(-1)?.finale).toBe(true);
   });
 
   it('renders Broadway-style program page with download and track notes', () => {

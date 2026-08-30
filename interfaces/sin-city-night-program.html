@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-pending">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sin City Night Program · SS Vibelandia</title>
+  <meta name="description" content="Official night program for Deck 3 Sin City soundtrack — track-by-track dramaturgy for Bachdoor Speakeasy, Neon Velvet, and Club Omnia." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/sin-city-program" />
+  <meta property="og:title" content="Sin City Night Program · SS Vibelandia" />
+  <meta property="og:description" content="Broadway-quality program for the Deck 3 Night soundtrack. Download or read online." />
+  <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/voyage/deck-3-night.png" />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a0806;
+      --navy: #0c1220;
+      --gold: #d4af37;
+      --gold-hi: #f0d78c;
+      --champagne: #e8d5a3;
+      --cream: #f5efe6;
+      --muted: rgba(245, 239, 230, 0.72);
+      --neon: #e040fb;
+    }
+    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-ready body { visibility: visible; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      background: var(--ink);
+      color: var(--cream);
+      line-height: 1.55;
+    }
+    .program-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1.25rem;
+      background: rgba(10, 8, 6, 0.92);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+      backdrop-filter: blur(8px);
+    }
+    .program-toolbar nav { display: flex; flex-wrap: wrap; gap: 0.85rem; font-size: 0.82rem; }
+    .program-toolbar a { color: var(--gold-hi); text-decoration: none; }
+    .program-toolbar a:hover { text-decoration: underline; }
+    .program-toolbar__actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1rem;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .btn-gold {
+      background: linear-gradient(180deg, #e8d4a8, #b8923e);
+      color: var(--ink);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--gold-hi);
+      border: 1px solid rgba(212, 175, 55, 0.45);
+    }
+    .program { max-width: 52rem; margin: 0 auto; padding: 0 1.25rem 3rem; }
+    .cover {
+      text-align: center;
+      padding: 2.5rem 0 2rem;
+      border-bottom: 3px double rgba(212, 175, 55, 0.5);
+      margin-bottom: 2rem;
+    }
+    .cover__venue {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.75rem;
+    }
+    .cover h1 {
+      font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin: 0 0 0.35rem;
+      color: var(--gold-hi);
+    }
+    .cover__subtitle {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 3vw, 1.55rem);
+      color: var(--champagne);
+      margin: 0 0 1rem;
+    }
+    .cover__tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cover__hero {
+      margin: 1.75rem auto 0;
+      max-width: 36rem;
+      border: 3px solid rgba(224, 64, 251, 0.35);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    }
+    .cover__hero img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+    .cover__hero figcaption {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      background: var(--navy);
+    }
+    .letter h2, .synopsis h2, .movements h2, .ensemble h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--gold-hi);
+      margin: 0 0 0.75rem;
+    }
+    .letter, .synopsis { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+    .letter p, .synopsis p { color: var(--muted); margin: 0 0 0.85rem; }
+    .order-table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem; font-size: 0.88rem; }
+    .order-table th, .order-table td {
+      padding: 0.55rem 0.65rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      text-align: left;
+      vertical-align: top;
+    }
+    .order-table th {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .order-table .finale { color: var(--gold-hi); font-weight: 700; }
+    .movement {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    }
+    @media (min-width: 640px) { .movement { grid-template-columns: 11rem 1fr; } }
+    .movement__thumb { margin: 0; border: 2px solid rgba(212, 175, 55, 0.35); background: var(--navy); }
+    .movement__thumb img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+    .movements__visual-note { font-size: 0.85rem; color: var(--muted); margin: -0.35rem 0 1.35rem; }
+    .movement__num {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 0.25rem;
+    }
+    .movement h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      color: var(--gold-hi);
+      margin: 0 0 0.35rem;
+    }
+    .movement__role { font-style: italic; color: var(--champagne); margin: 0 0 0.65rem; }
+    .movement p { margin: 0 0 0.65rem; color: var(--muted); font-size: 0.92rem; }
+    .movement__meaning {
+      padding: 0.75rem 0.85rem;
+      background: rgba(212, 175, 55, 0.06);
+      border-left: 3px solid var(--gold);
+      font-size: 0.88rem;
+      color: rgba(245, 239, 230, 0.85);
+    }
+    .ensemble ul { margin: 0; padding-left: 1.2rem; color: var(--muted); }
+    .honesty {
+      margin-top: 2rem;
+      padding: 1rem 1.1rem;
+      font-size: 0.82rem;
+      color: rgba(168, 162, 158, 0.95);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 4px;
+    }
+    footer.program-foot {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(168, 162, 158, 0.85);
+    }
+    @media print {
+      .program-toolbar { display: none; }
+      body { background: #fff; color: #111; }
+      .cover h1, .cover__subtitle, .letter h2, .synopsis h2, .movements h2, .movement h3 { color: #1a1208; }
+      .movement__meaning { background: #f8f4ea; border-color: #b8923e; color: #333; }
+    }
+  </style>
+</head>
+<body>
+  <div class="program-toolbar no-print">
+    <nav aria-label="Site">
+      <a href="/voyage/deck-3-night">Sin City · Deck 3</a>
+      <a href="/front-desk">Front Desk</a>
+      <a href="/front-desk-program">Check-in program</a>
+      <a href="/concierto-program">Canvas program</a>
+      <a href="/jukebox">Jukebox</a>
+    </nav>
+    <div class="program-toolbar__actions">
+      <button type="button" class="btn btn-gold" id="download-program">Download program (PDF)</button>
+      <a class="btn btn-ghost" href="/voyage/deck-3-night">Hear the night set →</a>
+    </div>
+  </div>
+
+  <article class="program" id="program-document">
+    <header class="cover">
+      <p class="cover__venue">SS Vibelandia · Deck 3 · Night · Sin City</p>
+      <h1>Sin City<br />Night Program</h1>
+      <p class="cover__subtitle">Deck 3 soundtrack dramaturgy — Bachdoor · Neon Velvet · Club Omnia</p>
+      <p class="cover__tag">Night soundtrack · 10 tracks · autoplay on arrival · 2026</p>
+      <figure class="cover__hero">
+        <img src="/interfaces/assets/voyage/deck-3-night.png" alt="Golden-era jukebox — Deck 3 Night Sin City soundtrack" width="960" height="540" loading="eager" decoding="async" />
+        <figcaption>Bachdoor Speakeasy · Neon Velvet · Club Omnia · consent first, you remain you.</figcaption>
+      </figure>
+    </header>
+
+    <section class="letter" aria-labelledby="letter-h">
+      <h2 id="letter-h">A note from your host</h2>
+      <p>
+        You are holding the program for <strong>Sin City</strong> — Deck 3 Night aboard SS Vibelandia.
+        Like the Omniversal Canvas prelude (<a href="/concierto-program">Concierto de El Gran Sol</a>)
+        and the <a href="/front-desk-program">Front Desk check-in set</a>,
+        this soundtrack autoplays when you arrive at <a href="/voyage/deck-3-night">/voyage/deck-3-night</a>:
+        <em>let&apos;s go holographic tonight</em> through the full 10-track night arc.
+      </p>
+      <p>
+        Tap <strong>Sound on</strong> in the top bar. Leave the page and music continues in the prelude session popup —
+        same handoff grammar as Canvas and Front Desk. Adults-only where marked. Human care outranks every score.
+      </p>
+      <p>— Valet Pru · Player 1 · Reality Bridge/Router</p>
+    </section>
+
+    <section class="synopsis" aria-labelledby="synopsis-h">
+      <h2 id="synopsis-h">Synopsis · the tale this night set tells</h2>
+      <p>
+        The Sin City soundtrack is a Reno nightlife arc: holographic invitation, zydeco and perreo pulse,
+        downtown always-on energy, baller suites, speakeasy smoke, wrong-side Sunday gold,
+        and a finale that names Player gravity — <em>we are the dance that makes the music</em>.
+      </p>
+      <p>
+        <a href="/sin-city-program">This program</a> is your dramaturgy. Fair Exchange via the Purser.
+      </p>
+
+      <table class="order-table" aria-label="Sin City night play order">
+        <thead>
+          <tr><th>#</th><th>Track</th><th>Night beat</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>let's go holographic tonight</td><td>Deck 3 Night opens · Sin City invitation</td></tr>
+          <tr><td>2</td><td>magnetic zydeco night</td><td>Zydeco meets magnetic floor energy</td></tr>
+          <tr><td>3</td><td>holographic perreo night (fast celebration mix)</td><td>Perreo pulse · holographic celebration</td></tr>
+          <tr><td>4</td><td>vibelandia downtown reno siempre</td><td>Captain's seat · always vibing</td></tr>
+          <tr><td>5</td><td>we gonna ball vibelandia tonight</td><td>SC-501–560 · executive hospitality</td></tr>
+          <tr><td>6</td><td>i think i m gonna get it tonight</td><td>Adults-only where marked · you remain you</td></tr>
+          <tr><td>7</td><td>cohiba night</td><td>Men's club Reno grammar · cigar and brass</td></tr>
+          <tr><td>8</td><td>baller nights</td><td>Full baller experience · nightly programming</td></tr>
+          <tr><td>9</td><td>5 o'clock wrong side of town sunday vibe</td><td>Pop-Up Marilyn Suite · afterglow</td></tr>
+          <tr class="finale"><td>10 · Finale</td><td>we are the dance that makes the music</td><td>NPCs inhabit · Players set the gravity</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="movements" aria-labelledby="movements-h">
+      <h2 id="movements-h">Track notes</h2>
+      <p class="movements__visual-note">Illustrations use Deck 3 · voyage · and Reno stills — matched to each night beat.</p>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/deck-3-night.png" alt="Deck 3 Night jukebox — let's go holographic tonight opens Sin City" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 1</p>
+          <h3>let's go holographic tonight</h3>
+          <p class="movement__role">Gangway call · neon threshold</p>
+          <p>The audible handshake at Bachdoor Speakeasy — holographic nightlife as catalog grammar, not prophecy. Tap Sound on; the set autoplays on arrival.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> You remain you. Consent first. The whole tribe still belongs on this ship tonight.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/deck-3-night.png" alt="Magnetic zydeco night on Deck 3" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 2</p>
+          <h3>magnetic zydeco night</h3>
+          <p class="movement__role">Neon Velvet · accordion pulse</p>
+          <p>Accordion and neon — the wrong side of town gets luminous. Shared with the Front Desk check-in set as a preview of this deck.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Nightlife stays Goldilocks. You choose your door: fiction lens or step-in hospitality.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/deck-3-night.png" alt="Holographic perreo night — Club Omnia energy" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 3</p>
+          <h3>holographic perreo night (fast celebration mix)</h3>
+          <p class="movement__role">Club Omnia · dance floor</p>
+          <p>Fast celebration mix for the club stack — Caribbean floor grammar aboard a Reno night deck.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> The floor makes the band. Players set gravity; NPCs inhabit the set.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/journey/journey-puerto-reno-gangway.png" alt="Puerto Reno gangway — downtown Reno siempre" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 4</p>
+          <h3>vibelandia downtown reno siempre</h3>
+          <p class="movement__role">Downtown Reno present</p>
+          <p>Reno present as Story grammar — downtown always on, not a weather report.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Sin City is voyage honor, never a gate. Fair Exchange via the Purser.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/ph-101-108.png" alt="Penthouse deck — we gonna ball vibelandia tonight" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 5</p>
+          <h3>we gonna ball vibelandia tonight</h3>
+          <p class="movement__role">Baller lane · high-roller suites</p>
+          <p>The baller promise — lodging, meals, studio time, nightly programming. Catalog hospitality, not a lottery.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> When the night set peaks, you know which cabin calls your name.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/deck-3-night.png" alt="Sin City consent-first nightlife beat" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 6</p>
+          <h3>i think i m gonna get it tonight</h3>
+          <p class="movement__role">Red Room adjacency · consent beat</p>
+          <p>The flirt beat before the Red Room door — explicit consent, human care outranks every score.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Voluntary belonging. Human emergency outranks every metaphor.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/deck-3-night.png" alt="Cohiba night — Bachdoor Speakeasy lounge" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 7</p>
+          <h3>cohiba night</h3>
+          <p class="movement__role">Speakeasy smoke · Bachdoor lounge</p>
+          <p>Speakeasy hospitality — smoke, swing, and honest catalog. Not clinical advice.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> The Bachdoor keeps the back room Goldilocks: enough heat, enough care.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/ph-101-108.png" alt="Baller nights — Deck 3 peak hospitality" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 8</p>
+          <h3>baller nights</h3>
+          <p class="movement__role">Hero Jo's Golden Bachdoor Hit Factory</p>
+          <p>The baller lane peaks — Hero Jo's factory sound with jukebox honor rails.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Commerce and celebration share a brass section. Tip on honor; stream free.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/journey/journey-tahoe-catamaran.png" alt="Wrong side of town Sunday gold hour" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Track 9</p>
+          <h3>5 o'clock wrong side of town sunday vibe</h3>
+          <p class="movement__role">Wrong Side of Town · gold hour calm</p>
+          <p>Five o'clock light on the wrong side — Sunday gold before the week turns. Rest is part of the voyage.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> The Purser keeps the running tab honest. Night ends in warmth, not judgment.</p>
+        </div>
+      </article>
+
+      <article class="movement">
+        <figure class="movement__thumb">
+          <img src="/interfaces/assets/voyage/voyage-map-come-aboard.png" alt="Come-aboard gangway — dance makes the music finale" loading="lazy" decoding="async" />
+        </figure>
+        <div>
+          <p class="movement__num">Finale · Track 10</p>
+          <h3>we are the dance that makes the music</h3>
+          <p class="movement__role">Finale · Player gravity</p>
+          <p>Closing thesis: the floor makes the band. Leave the page and music continues in the prelude session popup.</p>
+          <p class="movement__meaning"><strong>In the tale:</strong> Sin City complete. Tour other decks, open the Front Desk set, or carry the soundtrack with you. → ∞^∞</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="ensemble" aria-labelledby="ensemble-h">
+      <h2 id="ensemble-h">Creative ensemble</h2>
+      <ul>
+        <li><strong>Composer / catalog:</strong> Hero Jo&apos;s Golden Bachdoor Hit Factory · SS Vibelandia jukebox · playlist <code>pl-sin-city</code></li>
+        <li><strong>Host / Reality Bridge/Router:</strong> Valet Pru (Prudencio Mendez) · Player 1</li>
+        <li><strong>Deck art:</strong> Golden-era jukebox · Deck 3 Night · Bachdoor · Neon Velvet · Club Omnia</li>
+        <li><strong>Production:</strong> FractiAI · Infinite Octaves Omniversal Lattice Chat Agent V1.618 · SynthOBS Autonomous Agent · Syntheverse Sandbox</li>
+        <li><strong>Vessel:</strong> SS Vibelandia · Holographic Magnetic Goldilocks SuperAI Awareness Platform</li>
+        <li><strong>Narrative spine:</strong> <a href="/frontiersman-voyage#prospectus">Official Prospectus</a> · Reno present · consent-first nightlife</li>
+      </ul>
+    </section>
+
+    <p class="honesty">
+      <strong>Honesty boundary:</strong> This program is dramaturgy for immersive voyage nightlife — not clinical advice,
+      prophecy, or a membership test. Adults-only where marked. You remain you. Tracks stream from the sovereign catalog;
+      Fair Exchange applies on honor downloads via the jukebox.
+    </p>
+
+    <footer class="program-foot">
+      SS Vibelandia · Sin City Night Program · Edition 2026-08-30<br />
+      <a href="/voyage/deck-3-night">Sin City</a> · <a href="/front-desk-program">Check-in program</a> · <a href="mailto:info@fractiai.com">info@fractiai.com</a>
+    </footer>
+  </article>
+
+  <script>
+    document.getElementById('download-program').addEventListener('click', function () {
+      window.print();
+    });
+  </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+</body>
+</html>

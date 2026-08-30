@@ -104,6 +104,7 @@
     "sync:exhibit-canvas": "node scripts/sync-exhibit-canvas.mjs",
     "sync:experience-phases": "node scripts/sync-experience-phases.mjs",
     "sync:front-desk-program": "node scripts/sync-front-desk-program.mjs",
+    "sync:sin-city-program": "node scripts/sync-sin-city-program.mjs",
     "sync:voyage-journeys": "node scripts/sync-voyage-journeys.mjs",
     "sync:spirit-crew": "node scripts/sync-spirit-crew.mjs",
     "research:synthobs-cytographic-consumption-recruitment": "node research/synthobs-cytographic-consumption-recruitment/scripts/run_empirical_pipeline.mjs",

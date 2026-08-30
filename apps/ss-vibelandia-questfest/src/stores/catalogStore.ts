@@ -10,6 +10,7 @@ import {
   isMyLikesPlaylist,
   isConciertoPreludePlaylist,
   isReceptionPlaylist,
+  isSinCityPlaylist,
   isUserUploadTrack,
 } from '@/lib/catalogSeed';
 import {
@@ -676,7 +677,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   deletePlaylist: (id) => {
-    if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id)) return;
+    if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id) || isSinCityPlaylist(id)) return;
     const { playlists, activePlaylistId, userPlaylistMenuOrder } = get();
     if (playlists.length <= 1) return;
     pendingPlaylistDeletes.add(id);
@@ -691,7 +692,7 @@ export const useCatalogStore = create<CatalogState>((set, get) => ({
   },
 
   duplicatePlaylist: (id) => {
-    if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id)) {
+    if (id === MASTER_PLAYLIST_ID || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id) || isSinCityPlaylist(id)) {
       return '';
     }
     const s = get();

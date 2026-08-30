@@ -1221,6 +1221,14 @@
       "destination": "/interfaces/front-desk-check-in-program.html"
     },
     {
+      "source": "/sin-city-program",
+      "destination": "/interfaces/sin-city-night-program.html"
+    },
+    {
+      "source": "/sin-city-program/",
+      "destination": "/interfaces/sin-city-night-program.html"
+    },
+    {
       "source": "/concierto-program",
       "destination": "/interfaces/concierto-el-gran-sol-program.html"
     },

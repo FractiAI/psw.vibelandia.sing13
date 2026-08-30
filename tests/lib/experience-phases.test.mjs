@@ -57,7 +57,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('varied old-school frontier outfits');
     expect(html).not.toContain('front-desk-hero-audio');
     expect(html).not.toContain('front-desk-hero-score');
-    expect(html).toContain('14 tracks');
+    expect(html).toContain('15 tracks');
     expect(html).toContain('/front-desk-program');
     expect(html).toContain('Read the check-in program');
     expect(html).toContain('reception-primer');

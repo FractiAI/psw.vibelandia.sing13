@@ -19,6 +19,7 @@ export const RECEPTION_PLAYLIST_TRACK_IDS = [
   'trk-srv-b07ee8da-c47a-4508-9218-8cb4df59db59',
   'trk-srv-67a11292-8d55-4ea0-a748-fe915969b6fd',
   'trk-srv-75385f59-b548-4908-b882-27895dc6b2b0',
+  'trk-srv-480b6197-b842-4d6e-846c-ac9c6e3da544',
 ] as const;
 
 export function isReceptionPlaylist(id: string): boolean {

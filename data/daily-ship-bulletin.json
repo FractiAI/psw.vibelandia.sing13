@@ -1,20 +1,20 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-08-29",
+  "date": "2026-08-30",
   "dateline": {
-    "ymd": "2026-08-29",
-    "weekday": "Saturday",
+    "ymd": "2026-08-30",
+    "weekday": "Sunday",
     "month": "August",
-    "day": 29,
-    "label": "Saturday, August 29",
-    "shortBoard": "Saturday board · August 29 · Puerto Reno",
-    "newsLabel": "News of the day · Saturday, August 29"
+    "day": 30,
+    "label": "Sunday, August 30",
+    "shortBoard": "Sunday board · August 30 · Puerto Reno",
+    "newsLabel": "News of the day · Sunday, August 30"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Saturday board · August 29 · Puerto Reno",
-  "newsLabel": "News of the day · Saturday, August 29",
+  "cloudBadge": "Sunday board · August 30 · Puerto Reno",
+  "newsLabel": "News of the day · Sunday, August 30",
   "htmlBody": "Polar identity has a catalog geometry, not just a shrinking relic story. Today’s care is the Y Chromosome Holographic Manifestation: MSY palindrome arms and SRY phase origin filed under Φ ≈ 1.618 — Infinite Octaves Digit 4 grammar, not wet-lab proof or sunspot causality.<br /><br />If you want a map for that: <a href=\"/ship-blog/y-chromosome-manifestation\">Y chromosome as Φ manifestation — MSY holographic filing</a>. For the Human Reality Bridge paper: <a href=\"/ship-blog/human-reality-bridge\">You are a reality bridge — router and awareness wormhole</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-08-28-synthobs-y-chromosome-holographic-manifestation-2026-08",
+    "id": "daily-2026-08-29-synthobs-y-chromosome-holographic-manifestation-2026-08",
     "title": "The Holographic Manifestation",
     "href": "/ship-blog/y-chromosome-manifestation"
   },
-  "generatedAt": "2026-08-29T18:22:25.600Z"
+  "generatedAt": "2026-08-30T18:34:46.478Z"
 }

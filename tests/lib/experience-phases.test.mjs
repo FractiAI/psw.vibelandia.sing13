@@ -52,9 +52,9 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
   it('Front Desk lobby includes mode choice and ship tour menu', () => {
     expect(FRONT_DESK_SHIP_MENU.length).toBeGreaterThanOrEqual(8);
     const html = renderFrontDeskLobbyHtml();
-    expect(html).toContain('Front Desk &amp; check-in');
+    expect(html).toContain('Front Desk · check-in');
     expect(html).toContain('reception-checkin-lobby.jpg');
-    expect(html).toContain('frontiersmen friends checking in');
+    expect(html).toContain('varied old-school frontier outfits');
     expect(html).not.toContain('front-desk-hero-audio');
     expect(html).not.toContain('front-desk-hero-score');
     expect(html).toContain('13 tracks');
@@ -66,7 +66,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('The Grove Deck');
     expect(html).toContain('ship-library-deep-memory.jpg');
     expect(html).toContain('frontiersmen-brochure.jpg');
-    expect(html).toContain('soundtrack-prelude-pages');
+    expect(html).not.toContain('reception-card" href="/ship-blog/soundtrack-prelude-pages"');
     expect(html).toContain('human-reality-bridge');
     expect(html).toContain('Join the crew · Reality Routers');
     expect(html).toContain('href="/science-fiction"');

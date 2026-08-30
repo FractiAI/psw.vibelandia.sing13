@@ -46,7 +46,7 @@ describe('Reception · jukebox playlist', () => {
   it('reception lobby links to jukebox listen with autoplay', () => {
     const html = read('lib/experience-phases.mjs');
     expect(html).toContain('receptionListenHref');
-    expect(html).toContain('frontiersmen friends checking in');
+    expect(html).toContain('varied old-school frontier outfits');
     expect(html).not.toContain('id="reception-hero-audio"');
     expect(html).not.toContain('id="reception-hero-score"');
     expect(receptionListenHref()).toContain('playlist=pl-reception');

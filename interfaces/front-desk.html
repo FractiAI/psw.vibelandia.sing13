@@ -29,19 +29,15 @@
       min-height: 100vh;
     }
     a { color: #f5e6c8; }
-    .front-desk-page { max-width: 48rem; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
-    .front-desk-page__hero {
-      padding: 1.5rem 0 1rem;
-      border-bottom: 1px solid rgba(212,175,55,0.25);
-      margin-bottom: 1.5rem;
+    .front-desk-page { max-width: 56rem; margin: 0 auto; padding: 0 1.25rem 3rem; }
+    .front-desk-page .reception-lobby {
+      max-width: none;
+      margin: 0;
+      padding: 1rem 0 2.5rem;
     }
-    .front-desk-page__hero h1 {
-      font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: clamp(2rem, 8vw, 3.2rem);
-      color: #fef3c7;
-      letter-spacing: 0.04em;
+    .front-desk-page .xp-rail {
+      margin-top: 0;
     }
-    .front-desk-page__hero p { color: #d6cfc4; margin-top: 0.5rem; max-width: 36rem; }
   </style>
 </head>
 <body>
@@ -85,10 +81,6 @@
   </nav>
 
   <main class="front-desk-page">
-    <header class="front-desk-page__hero">
-      <h1>Front Desk · check-in</h1>
-      <p>Primer and onboarding for those boarding SS Vibelandia. The check-in soundtrack starts on arrival. For the ship narrative, crew, and mission, visit the <a href="/questfest">SS Vibelandia ship board</a>.</p>
-    </header>
 
     <!-- EXPERIENCE_FRONT_DESK_BEGIN -->
     <section class="reception-lobby front-desk" id="front-desk" aria-labelledby="front-desk-h">
@@ -114,12 +106,13 @@
       </li>
       </ol>
     </nav>
-      <header class="reception-lobby__head">
+      <header class="reception-lobby__head front-desk__head">
         <p class="reception-lobby__eyebrow">Front Desk · SS VIBELANDIA GOLDILOCKS SONIC SHIP</p>
-        <h2 id="front-desk-h">Front Desk &amp; check-in</h2>
+        <h1 id="front-desk-h">Front Desk · check-in</h1>
+        <p class="front-desk__intro">Primer and onboarding for those boarding SS Vibelandia. The check-in soundtrack starts on arrival. For the ship narrative, crew, and mission, visit the <a href="/questfest">SS Vibelandia ship board</a>.</p>
         <figure class="reception-lobby__art">
-          <img src="/interfaces/assets/experience/reception-checkin-lobby.jpg" alt="Several frontiersmen friends checking in together at the gold and navy Front Desk aboard SS Vibelandia" width="960" height="540" loading="eager" decoding="async" />
-          <figcaption>Frontiersmen friends at check-in. Art deco Goldilocks lobby. Valet Pru keeps the desk.</figcaption>
+          <img src="/interfaces/assets/experience/reception-checkin-lobby.jpg" alt="Male frontiersmen friends in varied old-school frontier outfits checking in at the gold and navy Front Desk — hostesses and dancers in the background" width="960" height="540" loading="eager" decoding="async" />
+          <figcaption>Old-school frontiersmen friends at check-in — each in his own gear. Hostesses and dancers keep the lobby alive. Valet Pru keeps the desk.</figcaption>
         </figure>
         <p class="reception-lobby__soundtrack">
           <a class="btn btn-ghost" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reception&autoplay=1">Open check-in set in jukebox · 13 tracks</a>
@@ -296,13 +289,6 @@
         <span class="reception-card__body">
           <strong>Frontiersman brochure</strong>
           <span>Official Prospectus. Genesis, Borikén, Reno present.</span>
-        </span>
-      </a>
-        <a class="reception-card" href="/ship-blog/soundtrack-prelude-pages">
-        <img src="/interfaces/assets/jukebox-golden-era-1940s.png" alt="" loading="lazy" decoding="async" width="320" height="200" />
-        <span class="reception-card__body">
-          <strong>Soundtrack preludes</strong>
-          <span>Micro video + concerto playlists on key pages. Movie-prelude storytelling.</span>
         </span>
       </a>
         <a class="reception-card" href="/ship-blog/human-reality-bridge">

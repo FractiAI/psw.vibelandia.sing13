@@ -14,6 +14,7 @@ export const SIN_CITY_PLAYLIST_TRACK_IDS = [
   'trk-srv-b033850d-4498-4a1b-9731-7bec1292fc78',
   'trk-srv-4c6cf3c8-266d-46a9-bdb5-709168da455e',
   'trk-srv-2a44cda8-f773-4d57-a8f5-c4af313a50f9',
+  'trk-srv-e3334afe-d75a-44d6-a153-79a0013347f6',
 ];
 
 export function isSinCityPlaylist(id: string): boolean {

@@ -21,9 +21,9 @@ describe('Sin City · night program', () => {
     expect(() => assertSinCityProgramTrackOrder()).not.toThrow();
     expect(SIN_CITY_PROGRAM_TRACKS).toHaveLength(SIN_CITY_PLAYLIST_TRACK_IDS.length);
     expect(SIN_CITY_PROGRAM_TRACKS[0].title).toContain('holographic tonight');
-    expect(SIN_CITY_PROGRAM_TRACKS).toHaveLength(5);
-    expect(SIN_CITY_PROGRAM_TRACKS.at(-2)?.title).toBe('buena mota, mezcal y café');
-    expect(SIN_CITY_PROGRAM_TRACKS.at(-1)?.title).toBe('ando bellaco baby');
+    expect(SIN_CITY_PROGRAM_TRACKS).toHaveLength(6);
+    expect(SIN_CITY_PROGRAM_TRACKS.at(-2)?.title).toBe('ando bellaco baby');
+    expect(SIN_CITY_PROGRAM_TRACKS.at(-1)?.title).toBe('creo q esta noche me la como 2');
     expect(SIN_CITY_PROGRAM_TRACKS.at(-1)?.finale).toBe(true);
   });
 
@@ -34,6 +34,7 @@ describe('Sin City · night program', () => {
     expect(html).toContain('let\'s go holographic tonight');
     expect(html).toContain('Honesty boundary');
     expect(html).toContain('ando bellaco baby');
+    expect(html).toContain('creo q esta noche me la como 2');
     expect(html).toContain(SIN_CITY_PROGRAM_ROUTE);
     expect(html).toContain('/front-desk-program');
   });

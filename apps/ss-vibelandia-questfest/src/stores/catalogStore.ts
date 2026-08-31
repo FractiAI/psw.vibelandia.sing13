@@ -81,6 +81,7 @@ import {
   stripPlaylistFromAllParents,
 } from '@/lib/playlistNest';
 import { resyncShuffleQueueForPlaylist } from '@/lib/shuffleSync';
+import { syncPinnedSovereignPlaylists } from '@/lib/pinnedSovereignPlaylists';
 import { isIOSDevice, retainSingleFileForIOS, retainFileForBulkUpload, BULK_RETAIN_UPFRONT_MAX } from '@/lib/devicePlayback';
 
 type View = 'catalog' | 'dj';
@@ -401,7 +402,7 @@ function syncMasterPlaylistWithTracks(
   playlists: PlaylistDef[],
 ): PlaylistDef[] {
   const idx = playlists.findIndex((p) => p.id === MASTER_PLAYLIST_ID);
-  if (idx === -1) return playlists;
+  if (idx === -1) return syncPinnedSovereignPlaylists(playlists, tracks);
   const master = playlists[idx];
   const valid = new Set(Object.keys(tracks));
   const kept = master.trackIds.filter((id) => valid.has(id));
@@ -417,10 +418,14 @@ function syncMasterPlaylistWithTracks(
   const nextIds = [...kept, ...missing];
   const unchanged =
     nextIds.length === master.trackIds.length && nextIds.every((id, i) => id === master.trackIds[i]);
-  if (unchanged) return playlists;
-  const next = [...playlists];
-  next[idx] = { ...master, trackIds: nextIds };
-  return next;
+  const syncedMaster = unchanged
+    ? playlists
+    : (() => {
+        const next = [...playlists];
+        next[idx] = { ...master, trackIds: nextIds };
+        return next;
+      })();
+  return syncPinnedSovereignPlaylists(syncedMaster, tracks);
 }
 
 function clampDescription(text?: string): string | undefined {

@@ -10,6 +10,12 @@
       "grantedAt": "2026-08-22T03:41:00.694Z",
       "expiresAt": "2026-09-21T03:41:00.694Z",
       "durationDays": 30
+    },
+    {
+      "email": "rantonorsi@mac.com",
+      "grantedAt": "2026-08-31T13:35:00.000Z",
+      "expiresAt": "2026-09-30T13:35:00.000Z",
+      "durationDays": 30
     }
   ],
   "notes": "Old-school Lattice access: no passwords. Creator emails are permanent (Synthio is creator-only). Guests get ~30 days from grantedAt. Tell the team an email to add a grant."

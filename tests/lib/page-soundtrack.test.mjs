@@ -56,6 +56,7 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
       navigateHandler.indexOf('if (isPrimaryShipDoor(url))', programIdx),
     );
     expect(programBlock).not.toContain('handoffIfPlaying');
+    expect(programBlock).toContain('window.location.href = url.href');
     const doorsBlock = js.slice(js.indexOf('var doors = ['), js.indexOf('];', js.indexOf('var doors = [')) + 2);
     expect(doorsBlock).not.toContain("'/concierto-program'");
   });
@@ -68,6 +69,7 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(soundtrack).not.toContain('handoffIfPlaying();\n        return;');
     expect(soundtrack).toContain('canUseSoundPopup');
     expect(jukebox).toContain('!isPrimaryShipDoor(offUrl)');
+    expect(jukebox).toContain('QV_isProgramPageUrl');
     expect(jukebox).toContain('QV_canUseSoundPopup');
   });
 

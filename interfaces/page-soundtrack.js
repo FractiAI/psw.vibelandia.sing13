@@ -506,19 +506,25 @@
       var anchor = t.closest('a[href]');
       if (!anchor) return;
       if (shouldBrowsePaperInPopup(anchor)) return;
-      var forceBrowse = isBrowsePaperLink(anchor);
-      if (!forceBrowse && !isSoundtrackPlaying()) return;
-      if (!leavesSoundtrackPage(anchor)) return;
       var url = resolveUrl(anchor.getAttribute('href'));
       if (!url) return;
       if (isProgramPageUrl(url)) {
+        ev.preventDefault();
+        ev.stopImmediatePropagation();
         var programWin = openBrowsePopup(url.href);
-        if (programWin) {
-          ev.preventDefault();
-          ev.stopImmediatePropagation();
+        if (!programWin) {
+          try {
+            programWin = window.open(url.href, '_blank', 'noopener,noreferrer');
+          } catch (_) {}
+        }
+        if (!programWin) {
+          window.location.href = url.href;
         }
         return;
       }
+      var forceBrowse = isBrowsePaperLink(anchor);
+      if (!forceBrowse && !isSoundtrackPlaying()) return;
+      if (!leavesSoundtrackPage(anchor)) return;
       if (isPrimaryShipDoor(url)) {
         pauseLocalSessionQuiet(session);
         return;

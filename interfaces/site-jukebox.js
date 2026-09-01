@@ -203,6 +203,9 @@
         var anchorOff = t.closest('a[href]');
         if (anchorOff && leavesBridge(anchorOff)) {
           var offUrl = resolveUrl(anchorOff.getAttribute('href'));
+          if (offUrl && window.QV_isProgramPageUrl && window.QV_isProgramPageUrl(offUrl)) {
+            return;
+          }
           if (offUrl && !isPrimaryShipDoor(offUrl)) {
             evt.preventDefault();
             evt.stopImmediatePropagation();

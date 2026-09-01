@@ -512,10 +512,11 @@
       var url = resolveUrl(anchor.getAttribute('href'));
       if (!url) return;
       if (isProgramPageUrl(url)) {
-        ev.preventDefault();
-        ev.stopImmediatePropagation();
-        handoffIfPlaying();
-        openBrowsePopup(url.href);
+        var programWin = openBrowsePopup(url.href);
+        if (programWin) {
+          ev.preventDefault();
+          ev.stopImmediatePropagation();
+        }
         return;
       }
       if (isPrimaryShipDoor(url)) {

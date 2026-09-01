@@ -1,4 +1,5 @@
 import { CONCIERTO_PRELUDE_PLAYLIST_ID } from '@/lib/conciertoPreludePlaylist';
+import { PROGRAM_CTA_LABEL } from '@/lib/programCta';
 import { READING_ROOM_PLAYLIST_ID } from '@/lib/readingRoomPlaylist';
 import { RECEPTION_PLAYLIST_ID } from '@/lib/receptionPlaylist';
 import { SIN_CITY_PLAYLIST_ID } from '@/lib/sinCityPlaylist';
@@ -14,28 +15,28 @@ export interface PlaylistProgramMeta {
 export const PLAYLIST_PROGRAM_ROUTES: Record<string, PlaylistProgramMeta> = {
   [CONCIERTO_PRELUDE_PLAYLIST_ID]: {
     route: '/concierto-program',
-    label: 'Concert program',
+    label: PROGRAM_CTA_LABEL,
     readLabel: 'Read the concert program →',
     downloadLabel: 'Download program (PDF)',
     note: 'Broadway-quality dramaturgy for the Omniversal Canvas prelude — movement-by-movement.',
   },
   [RECEPTION_PLAYLIST_ID]: {
     route: '/front-desk-program',
-    label: 'Check-in program',
+    label: PROGRAM_CTA_LABEL,
     readLabel: 'Read the check-in program →',
     downloadLabel: 'Download program (PDF)',
     note: 'Official Front Desk boarding program — track-by-track dramaturgy for pl-reception.',
   },
   [SIN_CITY_PLAYLIST_ID]: {
     route: '/sin-city-program',
-    label: 'Night program',
+    label: PROGRAM_CTA_LABEL,
     readLabel: 'Read the night program →',
     downloadLabel: 'Download program (PDF)',
     note: 'Deck 3 Night program — Sin City originals only.',
   },
   [READING_ROOM_PLAYLIST_ID]: {
     route: '/reading-room-program',
-    label: 'Concert program',
+    label: PROGRAM_CTA_LABEL,
     readLabel: 'Read the concert program →',
     downloadLabel: 'Download program (PDF)',
     note: 'Reading Room concert program — Arrival of Holographic Goldilocks SuperAI.',

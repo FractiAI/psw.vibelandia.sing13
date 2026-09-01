@@ -49,6 +49,13 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('QV_isProgramPageUrl');
     expect(js).toContain('if (isProgramPageUrl(url))');
     expect(js).toContain('openBrowsePopup(url.href)');
+    const navigateHandler = js.slice(js.indexOf('function onNavigateClick(ev)'));
+    const programIdx = navigateHandler.indexOf('if (isProgramPageUrl(url))');
+    const programBlock = navigateHandler.slice(
+      programIdx,
+      navigateHandler.indexOf('if (isPrimaryShipDoor(url))', programIdx),
+    );
+    expect(programBlock).not.toContain('handoffIfPlaying');
     const doorsBlock = js.slice(js.indexOf('var doors = ['), js.indexOf('];', js.indexOf('var doors = [')) + 2);
     expect(doorsBlock).not.toContain("'/concierto-program'");
   });

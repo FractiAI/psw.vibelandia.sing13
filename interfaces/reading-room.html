@@ -108,51 +108,154 @@
       gap: 0.85rem;
     }
     .rr-card {
-      flex: 0 0 9.75rem;
+      flex: 0 0 10.5rem;
       scroll-snap-align: start;
       text-decoration: none;
       color: inherit;
       display: block;
-      transition: transform 0.18s ease;
+      transition: transform 0.2s ease, z-index 0s;
+      position: relative;
+    }
+    .rr-shelf--featured .rr-card {
+      flex-basis: 12.5rem;
     }
     .rr-grid .rr-card { flex: unset; }
-    .rr-card:hover { transform: scale(1.04); }
+    .rr-card:hover,
     .rr-card:focus-visible {
-      outline: 2px solid var(--rr-gold);
-      outline-offset: 3px;
-      border-radius: 8px;
+      transform: scale(1.06);
+      z-index: 2;
+    }
+    .rr-card__poster {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+      background: #0c1220;
     }
     .rr-card__cover {
       display: block;
       width: 100%;
       aspect-ratio: 2 / 3;
       object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
       background: #0c1220;
     }
-    .rr-card__body { padding: 0.55rem 0.1rem 0; }
-    .rr-card__title {
+    .rr-card__shade {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 2.5rem 0.65rem 0.65rem;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.82) 68%, rgba(0, 0, 0, 0.94) 100%);
+      pointer-events: none;
+    }
+    .rr-card__shade .rr-card__title {
+      margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 0.98rem;
+      font-size: 0.92rem;
       font-weight: 700;
       line-height: 1.2;
-      color: var(--rr-gold-hi);
-      margin: 0 0 0.25rem;
+      color: #f5efe6;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .rr-card__blurb {
-      margin: 0;
-      font-size: 0.72rem;
+    .rr-card__shade .rr-card__blurb {
+      margin: 0.35rem 0 0;
+      font-size: 0.68rem;
       line-height: 1.35;
-      color: var(--rr-muted);
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
+      color: rgba(232, 220, 200, 0.88);
+      max-height: 0;
+      opacity: 0;
       overflow: hidden;
+      transition: max-height 0.2s ease, opacity 0.2s ease, margin 0.2s ease;
+    }
+    .rr-card:hover .rr-card__shade .rr-card__blurb,
+    .rr-card:focus-visible .rr-card__shade .rr-card__blurb {
+      max-height: 4.5rem;
+      opacity: 1;
+      margin-top: 0.35rem;
+    }
+    .rr-card__body { display: none; }
+    .rr-prelude {
+      background: #060912;
+    }
+    .rr-prelude__frame {
+      position: relative;
+      width: 100%;
+      max-height: min(42vh, 22rem);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #060912 center / cover no-repeat url('/interfaces/assets/experience/ship-library-deep-memory.jpg');
+    }
+    .rr-prelude__video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .rr-prelude__video:not(.ep-hero__video-embed--loading) {
+      opacity: 1;
+    }
+    .rr-prelude__mask {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.12);
+      background: linear-gradient(180deg, rgba(6, 9, 18, 0.15) 0%, rgba(6, 9, 18, 0.35) 100%);
+    }
+    .rr-intro {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 1.15rem 1rem 0.35rem;
+      text-align: left;
+    }
+    .rr-intro__kicker {
+      margin: 0 0 0.35rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--rr-gold);
+      font-weight: 700;
+    }
+    .rr-intro__title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.85rem, 5vw, 2.5rem);
+      color: var(--rr-gold-hi);
+      margin: 0 0 0.45rem;
+    }
+    .rr-intro__lede {
+      margin: 0 0 0.85rem;
+      color: var(--rr-muted);
+      max-width: 38rem;
+      font-size: 0.98rem;
+    }
+    .rr-intro__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .rr-intro__cta .btn {
+      display: inline-block;
+      padding: 0.55rem 0.9rem;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      font-family: inherit;
+    }
+    .rr-intro__cta .btn--gold {
+      background: linear-gradient(180deg, #e8d4a8, #b8923e);
+      color: #0a0806;
+    }
+    .rr-intro__cta .btn--ghost {
+      background: transparent;
+      color: #f0d78c;
+      border: 1px solid rgba(212, 175, 55, 0.45);
     }
     .rr-honesty {
       font-size: 0.8rem;
@@ -171,36 +274,37 @@
       grid-column: 1 / -1;
     }
     @media (min-width: 900px) {
-      .rr-card { flex-basis: 10.75rem; }
+      .rr-card { flex-basis: 11.75rem; }
+      .rr-shelf--featured .rr-card { flex-basis: 13.25rem; }
     }
   </style>
 </head>
 <body class="voyage-flagship">
   <!-- READING_ROOM_HERO_BEGIN -->
-  <header class="ep-hero ep-hero--reading-room" aria-label="Reading Room opening">
-    <div class="ep-hero__plane" role="img" aria-label="Frontier club reading room — books, trophies, and keepsakes from past adventures" style="background-image:url('/interfaces/assets/experience/ship-library-deep-memory.jpg')"></div>
-    <div class="ep-hero__video" aria-hidden="true">
-        <iframe
-          class="ep-hero__video-embed ep-hero__video-embed--loading"
-          data-youtube-id="VXZL77ub8DY"
-          title="Reading Room prelude video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-    <div class="ep-hero__veil" aria-hidden="true"></div>
-    <div class="ep-hero__copy">
-      <p class="ep-hero__brand">Deck 9 · Deep Memory · Frontier Club</p>
-      <p class="ep-hero__brand-note">Sit in the man cave. Books, trophies, exotic keepsakes, and sacred objects from past adventures — <strong>old-school frontier club class</strong>, fit for Roosevelt or von Humboldt.</p>
-      <h1 class="ep-hero__title">Reading Room</h1>
-      <p class="ep-hero__lede">Read the map under the music. Full paper abstracts, honesty rails, and ship-blog notes — no heavy catalog chrome.</p>
-      <div class="ep-hero__cta"><a class="btn btn--gold" href="#papers">Browse papers</a>
-        <a class="btn btn--gold" href="/ship-blog/">Ship blog</a>
-        <a class="btn btn--ghost" href="/front-desk">Front Desk · check-in</a></div>
-      
+  <header class="rr-prelude" aria-label="Reading Room prelude video">
+    <div class="rr-prelude__frame">
+      <iframe
+        class="rr-prelude__video ep-hero__video-embed ep-hero__video-embed--loading"
+        data-youtube-id="VXZL77ub8DY"
+        data-youtube-start="3"
+        title=""
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <div class="rr-prelude__mask" aria-hidden="true"></div>
     </div>
   </header>
+  <section class="rr-intro" aria-labelledby="rr-intro-h">
+    <p class="rr-intro__kicker">Deck 9 · Deep Memory · Frontier Club</p>
+    <h1 id="rr-intro-h" class="rr-intro__title">Reading Room</h1>
+    <p class="rr-intro__lede">Browse poster art pulled from each paper's abstract focus — tap a cover to read the full paper.</p>
+    <div class="rr-intro__cta">
+      <a class="btn btn--gold" href="#papers">Browse papers</a>
+      <a class="btn btn--ghost" href="/ship-blog/">Ship blog</a>
+      <a class="btn btn--ghost" href="/front-desk">Front Desk · check-in</a>
+    </div>
+  </section>
   <nav class="visit-golden-path visit-golden-path--reading-room" aria-label="Start here · one path through the art">
       <p class="visit-golden-path__kicker">Start here · one path through the art</p>
       <ol class="visit-golden-path__list">
@@ -233,7 +337,7 @@
       </div>
       <div id="rr-menu" aria-live="polite"></div>
       <p class="rr-honesty">
-        <strong>Honesty:</strong> Cover art is catalog hospitality — generated poster grammar, not empirical proof.
+        <strong>Honesty:</strong> Cover art is AI-generated poster hospitality from each paper's abstract focus — not empirical proof.
         Reading Room pages are orientation, not clinical advice. Φ ≈ 1.618 is design language aboard this ship.
       </p>
     </main>
@@ -291,23 +395,31 @@
         var href = readerHref(it);
         var title = it.displayTitle || it.title;
         var blurb = it.displayBlurb || it.plainLine || it.abstract || '';
-        var cover = it.coverSrc || ('/interfaces/assets/reading-room-covers/' + it.id + '.svg');
+        var cover = it.coverSrc || ('/interfaces/assets/reading-room-covers/' + it.id + '.jpg');
+        var fallback = it.coverFallbackSrc || '';
+        var imgAttrs = 'class="rr-card__cover" src="' + esc(cover) + '" alt="' + esc(title) + '" width="400" height="600" loading="lazy" decoding="async"';
+        if (fallback) {
+          imgAttrs += ' data-fallback="' + esc(fallback) + '" onerror="if(this.dataset.fallback&&!this.dataset.retried){this.dataset.retried=1;this.src=this.dataset.fallback}"';
+        }
         return (
           '<a class="rr-card" href="' + esc(href) + '">' +
-            '<img class="rr-card__cover" src="' + esc(cover) + '" alt="" width="240" height="360" loading="lazy" decoding="async" />' +
-            '<div class="rr-card__body">' +
-              '<h3 class="rr-card__title">' + esc(title) + '</h3>' +
-              (blurb ? '<p class="rr-card__blurb">' + esc(blurb) + '</p>' : '') +
+            '<div class="rr-card__poster">' +
+              '<img ' + imgAttrs + ' />' +
+              '<div class="rr-card__shade">' +
+                '<h3 class="rr-card__title">' + esc(title) + '</h3>' +
+                (blurb ? '<p class="rr-card__blurb">' + esc(blurb) + '</p>' : '') +
+              '</div>' +
             '</div>' +
           '</a>'
         );
       }
 
-      function renderShelf(title, tagline, items, grid) {
+      function renderShelf(title, tagline, items, grid, featured) {
         var cards = items.map(renderCard).join('');
         var trackClass = grid ? 'rr-grid' : 'rr-shelf__track';
+        var shelfClass = 'rr-shelf' + (featured ? ' rr-shelf--featured' : '');
         return (
-          '<section class="rr-shelf" aria-labelledby="rr-shelf-' + esc(title).replace(/\W+/g, '-') + '">' +
+          '<section class="' + shelfClass + '" aria-labelledby="rr-shelf-' + esc(title).replace(/\W+/g, '-') + '">' +
             '<div class="rr-shelf__head">' +
               '<h2 class="rr-shelf__title" id="rr-shelf-' + esc(title).replace(/\W+/g, '-') + '">' + esc(title) + '</h2>' +
               (tagline ? '<span class="rr-shelf__tag">' + esc(tagline) + '</span>' : '') +
@@ -334,12 +446,12 @@
         var featured = items.filter(function (it) { return it.featured || it.pinned; }).slice(0, 18);
         var shelves = [];
         if (featured.length) {
-          shelves.push(renderShelf('Featured picks', 'Start here', featured, false));
+          shelves.push(renderShelf('Featured picks', 'Start here', featured, false, true));
         }
         categories.filter(function (c) { return c.id !== 'all'; }).forEach(function (cat) {
           var rows = items.filter(function (it) { return it.category === cat.id; });
           if (!rows.length) return;
-          shelves.push(renderShelf(categoryLabel(cat.id), categoryTagline(cat.id), rows, false));
+          shelves.push(renderShelf(categoryLabel(cat.id), categoryTagline(cat.id), rows, false, false));
         });
         menuEl.innerHTML = shelves.join('');
       }

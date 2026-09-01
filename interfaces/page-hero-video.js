@@ -12,7 +12,7 @@
     }
   }
 
-  function embedSrc(id, origin) {
+  function embedSrc(id, origin, startSec) {
     var q = [
       'autoplay=1',
       'mute=1',
@@ -27,8 +27,9 @@
       'fs=0',
       'disablekb=1',
     ];
+    if (startSec) q.push('start=' + startSec);
     if (origin) q.push('origin=' + encodeURIComponent(origin));
-    return 'https://www.youtube.com/embed/' + id + '?' + q.join('&');
+    return 'https://www.youtube-nocookie.com/embed/' + id + '?' + q.join('&');
   }
 
   function boot() {
@@ -38,8 +39,10 @@
       if (el.getAttribute('src')) return;
       var id = el.getAttribute('data-youtube-id');
       if (!id) return;
-      el.setAttribute('src', embedSrc(id, origin));
+      var start = el.getAttribute('data-youtube-start');
+      el.setAttribute('src', embedSrc(id, origin, start));
       el.setAttribute('loading', 'eager');
+      el.setAttribute('title', '');
       el.classList.remove('ep-hero__video-embed--loading');
     });
   }

@@ -30,5 +30,6 @@ describe('whitepaper catalog · abstracts', () => {
     expect(typeof pinned.abstract).toBe('string');
     expect(pinned.displayTitle).toBeTruthy();
     expect(pinned.coverSrc).toContain('reading-room-covers');
+    expect(pinned.coverSrc).toMatch(/\.jpg$/);
   });
 });

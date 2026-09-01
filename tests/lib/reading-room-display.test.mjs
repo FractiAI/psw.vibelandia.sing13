@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { attachReadingRoomCardFields, displayBlurbFor, displayTitleFor } from '../../lib/reading-room-display.mjs';
-import { renderReadingRoomCoverSvg } from '../../lib/reading-room-cover-art.mjs';
 
 describe('Reading Room display cards', () => {
   it('shortens browse titles and hooks from plain lines', () => {
@@ -19,27 +18,21 @@ describe('Reading Room display cards', () => {
       id: 'coherence-plain-speak',
       title: 'Coherence Plain Speak',
       category: 'coherence',
+      abstract: 'Honesty rail for what is real versus metaphor on this ship.',
     });
-    expect(card.coverSrc).toBe('/interfaces/assets/reading-room-covers/coherence-plain-speak.svg');
+    expect(card.coverSrc).toBe('/interfaces/assets/reading-room-covers/coherence-plain-speak.jpg');
+    expect(card.coverPrompt).toContain('no text');
+    expect(card.coverFocus).toContain('Honesty');
     expect(card.displayTitle).toBeTruthy();
     expect(card.displayBlurb).toBeTruthy();
   });
 
-  it('renders unique SVG poster art per item', () => {
-    const a = renderReadingRoomCoverSvg({
-      id: 'syn-sun-wavefield-oscillator',
-      displayTitle: 'Solar Wavefield',
-      category: 'dph-gpu',
-      tags: ['solar'],
+  it('builds abstract-derived visual prompts', async () => {
+    const { visualPromptFor, abstractFocusLine } = await import('../../lib/reading-room-cover-prompt.mjs');
+    const focus = abstractFocusLine({
+      abstract: 'CMOS protonic bands as engineering bridge. Not a foundry tape-out.',
     });
-    const b = renderReadingRoomCoverSvg({
-      id: 'synthobs-tbme-metamorphic-octaves-2026-08',
-      displayTitle: 'Metamorphic Octaves',
-      category: 'tbme',
-      tags: ['octave'],
-    });
-    expect(a).toContain('<svg');
-    expect(b).toContain('<svg');
-    expect(a).not.toBe(b);
+    expect(focus).toContain('CMOS');
+    expect(visualPromptFor({ abstract: focus, category: 'dph-gpu' })).toContain('no text');
   });
 });

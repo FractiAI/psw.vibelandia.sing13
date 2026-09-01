@@ -21,8 +21,8 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('shouldBrowsePaperInPopup');
     expect(js).toContain('QV_openPaperBrowse');
     expect(js).toContain('maybeHandoffActiveSession');
-    expect(js).toContain('pointerdown');
-    expect(js).toContain('QV_openBrowse');
+    expect(js).toContain('Popup blocked');
+    expect(js).not.toContain('handleBrowsePaperNavigation(ev);\n    },\n    true\n  );');
   });
 
   it('registers navigation guard before async catalog fetch', () => {
@@ -37,6 +37,7 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
   it('site jukebox keeps soundtrack page when browse popup is blocked', () => {
     const js = read('interfaces/site-jukebox.js');
     expect(js).toContain('QV_isPageSoundtrackPlaying');
+    expect(js).toContain('browseWin');
     expect(js).not.toContain('window.location.href = url');
   });
 

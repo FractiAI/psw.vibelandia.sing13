@@ -252,7 +252,6 @@
 
   /** Active soundtrack session for the current page (one per document). */
   var activeSession = null;
-  var lastPaperBrowseAt = 0;
 
   function maybeHandoffActiveSession() {
     var session = activeSession;
@@ -269,7 +268,13 @@
 
   function openPaperBrowse(url) {
     maybeHandoffActiveSession();
-    return openBrowsePopup(url);
+    var win = openBrowsePopup(url);
+    if (win) return win;
+    try {
+      return window.open(url, '_blank', 'noopener,noreferrer');
+    } catch (_) {
+      return null;
+    }
   }
 
   function handleBrowsePaperNavigation(ev) {
@@ -281,24 +286,15 @@
     var url = resolveUrl(anchor.getAttribute('href'));
     if (!url) return;
 
-    var now = Date.now();
-    if (ev.type === 'click' && now - lastPaperBrowseAt < 400) return;
-    lastPaperBrowseAt = now;
-
-    ev.preventDefault();
-    ev.stopImmediatePropagation();
-    openPaperBrowse(url.href);
+    var win = openPaperBrowse(url.href);
+    if (win) {
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+    }
+    // Popup blocked — allow native target=_blank navigation on the anchor.
   }
 
   document.addEventListener('click', handleBrowsePaperNavigation, true);
-  document.addEventListener(
-    'pointerdown',
-    function (ev) {
-      if (ev.pointerType === 'mouse' && ev.button !== 0) return;
-      handleBrowsePaperNavigation(ev);
-    },
-    true
-  );
 
   window.QV_isPageSoundtrackPlaying = function () {
     if (!activeSession || !activeSession.localActive) return false;

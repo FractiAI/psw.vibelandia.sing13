@@ -11,7 +11,6 @@
   var DEFAULT_SESSION_PATH = '/prelude-session';
   var BROWSE_FEATURES =
     'popup=yes,width=1100,height=900,menubar=no,toolbar=yes,location=yes,status=yes,resizable=yes,scrollbars=yes';
-  var activePageId = null;
   var channel = null;
 
   try {
@@ -151,7 +150,9 @@
         return win;
       }
     } catch (_) {}
-    window.open(url, '_blank', 'noopener,noreferrer');
+    try {
+      return window.open(url, '_blank', 'noopener,noreferrer');
+    } catch (_) {}
     return null;
   }
 
@@ -179,6 +180,15 @@
     );
   }
 
+  /** Active soundtrack session for the current page (one per document). */
+  var activeSession = null;
+
+  window.QV_isPageSoundtrackPlaying = function () {
+    if (!activeSession || !activeSession.localActive) return false;
+    var audio = activeSession.audio;
+    return !!(audio && activeSession.playing && !audio.paused && !audio.ended);
+  };
+
   window.QV_initPageSoundtrack = function (opts) {
     if (!opts || prefersReducedMotion()) return;
 
@@ -187,16 +197,31 @@
       (opts.playlistId || 'static') + ':' + (opts.btnId || opts.audioId || 'default');
     var btn = opts.btnId ? document.getElementById(opts.btnId) : null;
     var label = opts.label || 'Soundtrack';
-    var audioRef = null;
-    var soundtrackPlaying = false;
+
+    var session = {
+      opts: opts,
+      pageId: pageId,
+      btn: btn,
+      label: label,
+      audio: null,
+      playlist: null,
+      index: 0,
+      playing: false,
+      localActive: false,
+      handoffDone: false,
+      logged: {},
+    };
+    activeSession = session;
 
     function isSoundtrackPlaying() {
-      return (
-        soundtrackPlaying &&
-        audioRef &&
-        !audioRef.paused &&
-        !audioRef.ended
-      );
+      return window.QV_isPageSoundtrackPlaying();
+    }
+
+    function handoffIfPlaying() {
+      if (!session.localActive || session.handoffDone || !isSoundtrackPlaying()) return false;
+      session.handoffDone = true;
+      openHandoffPopup(session.opts, session.index);
+      return true;
     }
 
     function onNavigateClick(ev) {
@@ -204,24 +229,35 @@
       if (ev.defaultPrevented || isModifiedClick(ev)) return;
       var t = ev.target;
       if (!t || !t.closest) return;
+
+      var jukeboxHit = t.closest('[data-qv-jukebox], .qv-open-jukebox');
+      if (jukeboxHit) {
+        ev.preventDefault();
+        ev.stopImmediatePropagation();
+        var jukeboxUrl = window.QV_JUKEBOX_URL || '/interfaces/questfest-bridge/#/listen';
+        openBrowsePopup(jukeboxUrl);
+        return;
+      }
+
       var anchor = t.closest('a[href]');
       if (!anchor || !leavesSoundtrackPage(anchor)) return;
       var url = resolveUrl(anchor.getAttribute('href'));
       if (!url) return;
       ev.preventDefault();
-      ev.stopPropagation();
+      ev.stopImmediatePropagation();
       openBrowsePopup(url.href);
     }
 
+    function onPageHide() {
+      handoffIfPlaying();
+    }
+
     document.addEventListener('click', onNavigateClick, true);
+    window.addEventListener('pagehide', onPageHide);
 
     resolvePlaylist(opts).then(function (playlist) {
       if (!playlist.length) return;
-
-      var index = 0;
-      var logged = {};
-      var handoffDone = false;
-      var localActive = true;
+      session.playlist = playlist;
 
       var audio =
         (opts.audioId && document.getElementById(opts.audioId)) ||
@@ -237,16 +273,16 @@
           return el;
         })();
 
-      audioRef = audio;
+      session.audio = audio;
       audio.loop = false;
       audio.preload = 'auto';
 
       function current() {
-        return playlist[index];
+        return playlist[session.index];
       }
 
       function setToggleState(playing) {
-        soundtrackPlaying = playing;
+        session.playing = playing;
         if (!btn) return;
         var track = current();
         btn.hidden = false;
@@ -261,7 +297,7 @@
       }
 
       function loadTrack(i) {
-        index = ((i % playlist.length) + playlist.length) % playlist.length;
+        session.index = ((i % playlist.length) + playlist.length) % playlist.length;
         var track = current();
         audio.src = track.src;
         audio.setAttribute('aria-label', label + ': ' + track.aria);
@@ -272,8 +308,8 @@
         pauseOtherMedia(audio);
         var track = current();
         setToggleState(true);
-        if (!logged[track.id]) {
-          logged[track.id] = true;
+        if (!session.logged[track.id]) {
+          session.logged[track.id] = true;
           pingCatalogPlay(track.id);
         }
         broadcast({
@@ -282,7 +318,7 @@
           playlistId: opts.playlistId || null,
           playing: true,
           trackId: track.id,
-          index: index,
+          index: session.index,
         });
       }
 
@@ -293,7 +329,7 @@
           pageId: pageId,
           playlistId: opts.playlistId || null,
           playing: false,
-          index: index,
+          index: session.index,
         });
       }
 
@@ -317,8 +353,8 @@
       }
 
       function stopLocal() {
-        localActive = false;
-        soundtrackPlaying = false;
+        session.localActive = false;
+        session.playing = false;
         audio.pause();
         audio.removeAttribute('src');
         audio.load();
@@ -334,7 +370,7 @@
       }
 
       function advance() {
-        loadTrack(index + 1);
+        loadTrack(session.index + 1);
         tryPlay();
       }
 
@@ -355,21 +391,13 @@
         }
       }
 
-      function onPageHide() {
-        if (handoffDone || !localActive) return;
-        if (audio.paused || audio.ended) return;
-        handoffDone = true;
-        openHandoffPopup(opts, index);
-      }
-
       if (channel) {
         channel.addEventListener('message', onChannelMessage);
       }
 
       pauseOtherMedia(audio);
       broadcast({ type: 'stop', pageId: pageId, playlistId: opts.playlistId || null });
-      activePageId = pageId;
-      localActive = true;
+      session.localActive = true;
 
       loadTrack(0);
 
@@ -390,8 +418,6 @@
         if (!audio.ended) markStopped();
       });
       audio.addEventListener('ended', advance);
-
-      window.addEventListener('pagehide', onPageHide);
 
       tryPlay().then(function (ok) {
         if (ok === false || audio.paused) {

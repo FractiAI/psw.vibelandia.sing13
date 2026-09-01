@@ -91,6 +91,13 @@
       }
       return win;
     }
+    if (window.QV_isPageSoundtrackPlaying && window.QV_isPageSoundtrackPlaying()) {
+      try {
+        return window.open(url, '_blank', 'noopener,noreferrer');
+      } catch (e3) {
+        return null;
+      }
+    }
     window.location.href = url;
     return null;
   }
@@ -103,6 +110,11 @@
     if (isBridgeSurface()) {
       window.location.hash = '#/listen';
       window.focus();
+      return;
+    }
+    var jukeboxUrl = JUKEBOX_URL;
+    if (window.QV_isPageSoundtrackPlaying && window.QV_isPageSoundtrackPlaying()) {
+      openBrowse(jukeboxUrl);
       return;
     }
     // Always navigate this tab so "Open Jukebox" never looks dead when a
@@ -136,11 +148,30 @@
 
     var listenHit = t.closest('[data-qv-jukebox], .qv-open-jukebox');
     if (listenHit) {
+      if (window.QV_isPageSoundtrackPlaying && window.QV_isPageSoundtrackPlaying()) {
+        evt.preventDefault();
+        evt.stopImmediatePropagation();
+        openBrowse(JUKEBOX_URL);
+        return;
+      }
       focusJukeboxOrGo(evt);
       return;
     }
 
-    if (!isBridgeSurface()) return;
+    if (!isBridgeSurface()) {
+      if (window.QV_isPageSoundtrackPlaying && window.QV_isPageSoundtrackPlaying()) {
+        var anchorOff = t.closest('a[href]');
+        if (anchorOff && leavesBridge(anchorOff)) {
+          var offUrl = resolveUrl(anchorOff.getAttribute('href'));
+          if (offUrl) {
+            evt.preventDefault();
+            evt.stopImmediatePropagation();
+            openBrowse(offUrl.href);
+          }
+        }
+      }
+      return;
+    }
 
     var anchor = t.closest('a[href]');
     if (!anchor || !leavesBridge(anchor)) return;

@@ -15,7 +15,25 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('openBrowsePopup');
     expect(js).toContain('leavesSoundtrackPage');
     expect(js).toContain("document.addEventListener('click', onNavigateClick, true)");
+    expect(js).toContain('stopImmediatePropagation');
+    expect(js).toContain('data-qv-jukebox');
+    expect(js).toContain('QV_isPageSoundtrackPlaying');
     expect(js).toContain('QV_openBrowse');
+  });
+
+  it('registers navigation guard before async catalog fetch', () => {
+    const js = read('interfaces/page-soundtrack.js');
+    const guardIdx = js.indexOf("document.addEventListener('click', onNavigateClick, true)");
+    const fetchIdx = js.indexOf('resolvePlaylist(opts).then');
+    expect(guardIdx).toBeGreaterThan(-1);
+    expect(fetchIdx).toBeGreaterThan(-1);
+    expect(guardIdx).toBeLessThan(fetchIdx);
+  });
+
+  it('site jukebox keeps soundtrack page when browse popup is blocked', () => {
+    const js = read('interfaces/site-jukebox.js');
+    expect(js).toContain('QV_isPageSoundtrackPlaying');
+    expect(js).toContain("window.open(url, '_blank'");
   });
 
   it('pauses other media and broadcasts stop before starting page soundtrack', () => {

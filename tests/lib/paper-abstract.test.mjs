@@ -28,5 +28,7 @@ describe('whitepaper catalog · abstracts', () => {
     expect(pinned).toBeTruthy();
     expect(pinned.abstract).toBeTruthy();
     expect(typeof pinned.abstract).toBe('string');
+    expect(pinned.displayTitle).toBeTruthy();
+    expect(pinned.coverSrc).toContain('reading-room-covers');
   });
 });

@@ -219,7 +219,7 @@ describe('Frontiersman voyage guest surfaces', () => {
     expect(html).toContain('<!-- SITE_TOP_BANNER_START -->');
     expect(html).toContain('qv-top-quicklinks');
     expect(html).toContain('SS VIBELANDIA');
-    expect(html).toMatch(/<body>[\s\S]*qv-top-quicklinks/);
+    expect(html).toMatch(/<body[^>]*>[\s\S]*qv-top-quicklinks/);
   });
 
   it('canvas landing uses publication news rail chrome', () => {

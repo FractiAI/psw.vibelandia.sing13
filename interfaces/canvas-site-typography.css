@@ -1,0 +1,183 @@
+/*
+ * Canvas site typography — shared Syne + Cormorant Garamond shell from Omniversal Canvas.
+ * Load on SS Vibelandia, Reading Room, Front Desk, and other main ship pages.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap');
+
+:root {
+  --canvas-ink: #f5e6c8;
+  --canvas-ink-soft: #c9bba3;
+  --canvas-gold: #d4af37;
+  --canvas-gold-hi: #f0d78c;
+  --canvas-hull: #060912;
+  --canvas-hull-mid: #0c1424;
+  --canvas-ring: rgba(212, 175, 55, 0.35);
+}
+
+body.canvas-site {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--canvas-ink);
+  background: var(--canvas-hull);
+}
+
+body.canvas-site a {
+  color: var(--canvas-gold-hi);
+}
+
+body.canvas-site a:hover {
+  color: #fef3c7;
+}
+
+body.canvas-site h1,
+body.canvas-site h2,
+body.canvas-site h3,
+body.canvas-site h4,
+body.canvas-site .canvas-display {
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+body.canvas-site .btn,
+body.canvas-site .btn-primary,
+body.canvas-site .btn--gold {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+body.canvas-site .btn:hover,
+body.canvas-site .btn-primary:hover,
+body.canvas-site .btn--gold:hover {
+  transform: translateY(-2px);
+}
+
+body.canvas-site .btn-primary,
+body.canvas-site .btn--gold {
+  background: var(--canvas-gold);
+  color: #1a120c !important;
+  border: 1px solid var(--canvas-gold);
+}
+
+body.canvas-site .btn-ghost,
+body.canvas-site .btn--ghost {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--canvas-gold-hi) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+body.canvas-site .btn-ghost:hover,
+body.canvas-site .btn--ghost:hover {
+  border-color: var(--canvas-gold);
+  transform: translateY(-2px);
+}
+
+/* Reading Room — shelf chrome */
+body.canvas-site .rr-shelf__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+body.canvas-site .rr-card__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+body.canvas-site .rr-scene {
+  background:
+    linear-gradient(180deg, rgba(6, 9, 18, 0.72) 0%, rgba(6, 9, 18, 0.94) 100%),
+    url('/interfaces/assets/experience/ship-library-deep-memory.jpg') center top / cover no-repeat fixed;
+}
+
+body.canvas-site .rr-search-wrap {
+  background: linear-gradient(180deg, rgba(6, 9, 18, 0.96) 70%, rgba(6, 9, 18, 0));
+}
+
+/* SS Vibelandia — hero aligned to Canvas landing */
+body.canvas-site .hero {
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  padding: clamp(5rem, 14vh, 8rem) 1.25rem 3.5rem;
+  background:
+    linear-gradient(180deg, rgba(6, 9, 18, 0.35) 0%, rgba(6, 9, 18, 0.55) 42%, rgba(6, 9, 18, 0.92) 100%),
+    url('/interfaces/assets/questfest-hero-ss-vibelandia-cruiseship.png') center 42% / cover no-repeat;
+}
+
+body.canvas-site .hero-inner {
+  max-width: 42rem;
+  width: min(42rem, 92vw);
+}
+
+body.canvas-site .cloud-badge {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(0.72rem, 1.8vw, 0.85rem);
+  letter-spacing: 0.18em;
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: var(--canvas-gold-hi);
+  margin-bottom: 0.45rem;
+}
+
+body.canvas-site .kicker {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: #faf6ee;
+  text-shadow: none;
+}
+
+body.canvas-site .hero-tagline {
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  font-style: normal;
+  color: var(--canvas-ink-soft);
+  max-width: 32ch;
+}
+
+body.canvas-site .primer {
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  color: var(--canvas-ink-soft);
+  max-width: 36ch;
+}
+
+body.canvas-site .bulletin-kicker,
+body.canvas-site .ship-board__eyebrow,
+body.canvas-site .host-dispatch__eyebrow {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+body.canvas-site .bulletin-head,
+body.canvas-site .ship-board__head h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+body.canvas-site .qf-share-qr-card h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}

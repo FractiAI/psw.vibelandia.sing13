@@ -23,7 +23,8 @@
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/interfaces/vibelandia-questfest.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/interfaces/canvas-site-typography.css" />
   <link rel="stylesheet" href="/interfaces/voice-tier.css" />
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/site-page-views.css" data-qv-page-views-css="1" />
@@ -46,11 +47,11 @@
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Source Sans 3', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 1rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      background: var(--canvas-hull, #060912);
+      color: var(--canvas-ink, #f5e6c8);
+      line-height: 1.55;
+      font-size: 1.125rem;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -115,13 +116,13 @@
       to { opacity: 1; transform: translateY(0); }
     }
     .kicker {
-      font-family: 'Bebas Neue', Impact, sans-serif;
-      font-size: clamp(2.6rem, 10vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: 0.04em;
-      color: var(--gold-hi);
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.4rem, 8vw, 4.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+      color: #faf6ee;
       text-shadow: 0 4px 24px rgba(0,0,0,.85);
-      font-weight: 400;
+      font-weight: 800;
       animation: badgeIn 1s ease-out 0.08s both;
     }
     .kicker-brand {
@@ -591,10 +592,10 @@
       color: var(--gold-hi); font-size: 1.5rem; cursor: pointer;
     }
     .qf-share-qr-card h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 0.12em;
+      font-family: 'Syne', sans-serif;
+      letter-spacing: -0.02em;
       color: var(--gold);
-      font-weight: 400;
+      font-weight: 800;
       margin-bottom: 0.35rem;
     }
     .qf-share-qr-hint { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.85rem; }
@@ -639,7 +640,7 @@
     }
   </style>
 </head>
-<body>
+<body class="canvas-site">
   <!-- SITE_TOP_BANNER_START -->
       <nav class="qv-top-quicklinks qv-top-quicklinks--questfest" aria-label="Site">
     <div class="qv-top-quicklinks__row qv-top-quicklinks__row--primary">

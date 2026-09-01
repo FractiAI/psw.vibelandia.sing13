@@ -88,32 +88,39 @@
   color: #f5efe6;
 }
 .ep-hero__brand {
-  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-family: 'Syne', sans-serif;
   font-weight: 800;
   font-size: clamp(0.72rem, 1.8vw, 0.85rem);
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #d4af37;
-  margin: 0 0 0.5rem;
+  color: #f0d78c;
+  margin: 0 0 0.45rem;
+  max-width: 36ch;
+  line-height: 1.35;
 }
 .ep-hero__brand-note {
-  font-size: 0.95rem;
-  color: rgba(245, 239, 230, 0.82);
   margin: 0 0 1rem;
-  line-height: 1.5;
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  font-style: italic;
+  color: #c9bba3;
+  max-width: 34ch;
+  line-height: 1.45;
 }
 .ep-hero__title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.1rem, 7vw, 3.2rem);
-  font-weight: 700;
-  line-height: 1.08;
-  color: #f0d78c;
-  margin: 0 0 0.65rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: #faf6ee;
+  margin: 0 0 1rem;
+  max-width: 12ch;
 }
 .ep-hero__lede {
-  font-size: 1.05rem;
-  color: rgba(245, 239, 230, 0.78);
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.75rem;
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+  color: #c9bba3;
+  max-width: 32ch;
   line-height: 1.55;
 }
 .ep-hero__cta {
@@ -123,40 +130,48 @@
   margin-bottom: 1rem;
 }
 .ep-hero__cta .btn {
-  display: inline-block;
-  padding: 0.6rem 1rem;
+  font-family: 'Syne', sans-serif;
   font-weight: 700;
   font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
-  border: none;
+  padding: 0.95rem 1.35rem;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
-  font-family: inherit;
+}
+.ep-hero__cta .btn:hover {
+  transform: translateY(-2px);
 }
 .ep-hero__cta .btn--gold {
-  background: linear-gradient(180deg, #e8d4a8, #b8923e);
-  color: #0a0806;
+  background: #d4af37;
+  color: #1a120c !important;
+  border-color: #d4af37;
 }
 .ep-hero__cta .btn--ghost {
   background: transparent;
-  color: #f0d78c;
+  color: #f0d78c !important;
   border: 1px solid rgba(212, 175, 55, 0.45);
 }
+.ep-hero__cta .btn--ghost:hover {
+  border-color: #d4af37;
+}
 .ep-hero__score {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.45rem 0.75rem;
-  border-radius: 999px;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  background: rgba(6, 10, 18, 0.55);
-  color: #f0d78c;
-  font: inherit;
-  font-size: 0.78rem;
+  margin-top: 1rem;
+  font-family: 'Syne', sans-serif;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f0d78c;
+  background: rgba(8, 12, 22, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  padding: 0.7rem 1.05rem;
   cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 .ep-hero__score:hover,
 .ep-hero__score:focus-visible {

@@ -78,7 +78,7 @@ describe('Visit golden path · Canvas → Program → Front Desk', () => {
     expect(readingRoom).toContain('visit-golden-path--reading-room');
     expect(readingRoom).toContain('data-youtube-id="VXZL77ub8DY"');
     expect(readingRoom).toContain('rr-prelude');
-    expect(readingRoom).toContain('data-youtube-start="3"');
+    expect(readingRoom).not.toContain('data-youtube-start');
     expect(readingRoom).not.toContain('ep-hero--reading-room');
     expect(readingRoom).toContain('id="papers"');
   });

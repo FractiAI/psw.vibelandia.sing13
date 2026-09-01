@@ -47,8 +47,17 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     const soundtrack = read('interfaces/page-soundtrack.js');
     const jukebox = read('interfaces/site-jukebox.js');
     expect(soundtrack).toContain('if (isPrimaryShipDoor(url))');
-    expect(soundtrack).toContain('handoffIfPlaying();\n        return;');
+    expect(soundtrack).toContain('pauseLocalSessionQuiet(session)');
+    expect(soundtrack).not.toContain('handoffIfPlaying();\n        return;');
+    expect(soundtrack).toContain('canUseSoundPopup');
     expect(jukebox).toContain('!isPrimaryShipDoor(offUrl)');
+    expect(jukebox).toContain('QV_canUseSoundPopup');
+  });
+
+  it('does not open blank prelude windows before navigation URL', () => {
+    const js = read('interfaces/page-soundtrack.js');
+    expect(js).not.toContain("window.open('', POPUP_NAME)");
+    expect(js).toContain('if (!canUseSoundPopup()) return null');
   });
 
   it('pauses other media and broadcasts stop before starting page soundtrack', () => {

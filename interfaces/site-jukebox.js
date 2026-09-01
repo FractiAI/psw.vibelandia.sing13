@@ -103,6 +103,7 @@
   }
 
   function openBrowse(url) {
+    if (window.QV_canUseSoundPopup && !window.QV_canUseSoundPopup()) return null;
     var win = null;
     try {
       win = window.open(url, BROWSE_NAME, BROWSE_FEATURES);

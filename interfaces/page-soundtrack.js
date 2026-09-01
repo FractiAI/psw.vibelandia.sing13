@@ -27,6 +27,31 @@
     }
   }
 
+  /** Desktop popup handoff only — mobile Safari turns popups into blank tabs. */
+  function canUseSoundPopup() {
+    if (window.__QV_FORCE_SOUND_POPUP__ === true) return true;
+    if (window.__QV_FORCE_SOUND_POPUP__ === false) return false;
+    try {
+      if (window.matchMedia('(pointer: coarse)').matches) return false;
+      if (window.matchMedia('(max-width: 900px)').matches) return false;
+    } catch (_) {}
+    return true;
+  }
+
+  window.QV_canUseSoundPopup = canUseSoundPopup;
+
+  function pauseLocalSessionQuiet(session) {
+    if (!session) return;
+    session.handoffDone = true;
+    session.playing = false;
+    session.localActive = false;
+    if (session.audio) {
+      try {
+        session.audio.pause();
+      } catch (_) {}
+    }
+  }
+
   function pingCatalogPlay(trackId) {
     try {
       fetch('/api/catalog-plays', {
@@ -250,6 +275,7 @@
   }
 
   function openBrowsePopup(url) {
+    if (!canUseSoundPopup()) return null;
     if (window.QV_openBrowse) {
       var viaJukebox = window.QV_openBrowse(url);
       if (viaJukebox) return viaJukebox;
@@ -277,6 +303,7 @@
   }
 
   function openHandoffPopup(opts, index) {
+    if (!canUseSoundPopup()) return null;
     var sessionPath = opts.sessionPath || DEFAULT_SESSION_PATH;
     var q = new URLSearchParams();
     if (opts.playlistId) q.set('playlist', opts.playlistId);
@@ -284,20 +311,19 @@
     q.set('index', String(index));
     var url = sessionPath + '?' + q.toString();
     try {
-      var existing = window.open('', POPUP_NAME);
-      if (existing && !existing.closed && existing.location) {
+      var win = window.open(
+        url,
+        POPUP_NAME,
+        'popup,width=280,height=48,menubar=no,toolbar=no,location=no,status=no,resizable=yes'
+      );
+      if (win) {
         try {
-          existing.location.replace(url);
-          existing.focus();
-          return existing;
+          win.focus();
         } catch (_) {}
+        return win;
       }
     } catch (_) {}
-    return window.open(
-      url,
-      POPUP_NAME,
-      'popup,width=280,height=48,menubar=no,toolbar=no,location=no,status=no,resizable=yes'
-    );
+    return null;
   }
 
   /** Active soundtrack session for the current page (one per document). */
@@ -308,6 +334,10 @@
     if (!session || !session.localActive || session.handoffDone) return;
     var audio = session.audio;
     if (!audio || audio.paused || audio.ended) return;
+    if (!canUseSoundPopup()) {
+      pauseLocalSessionQuiet(session);
+      return;
+    }
     session.handoffDone = true;
     openHandoffPopup(session.opts, session.index);
     try {
@@ -317,6 +347,7 @@
   }
 
   function openPaperBrowse(url) {
+    if (!canUseSoundPopup()) return null;
     maybeHandoffActiveSession();
     var win = openBrowsePopup(url);
     if (win) return win;
@@ -382,8 +413,16 @@
 
     function handoffIfPlaying() {
       if (!session.localActive || session.handoffDone || !isSoundtrackPlaying()) return false;
+      if (!canUseSoundPopup()) {
+        pauseLocalSessionQuiet(session);
+        return false;
+      }
       session.handoffDone = true;
       openHandoffPopup(session.opts, session.index);
+      try {
+        session.audio.pause();
+      } catch (_) {}
+      session.playing = false;
       return true;
     }
 
@@ -411,7 +450,7 @@
       var url = resolveUrl(anchor.getAttribute('href'));
       if (!url) return;
       if (isPrimaryShipDoor(url)) {
-        handoffIfPlaying();
+        pauseLocalSessionQuiet(session);
         return;
       }
       ev.preventDefault();
@@ -421,6 +460,7 @@
     }
 
     function onPageHide() {
+      if (session.handoffDone) return;
       handoffIfPlaying();
     }
 

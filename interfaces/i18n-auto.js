@@ -216,7 +216,7 @@
     return 'en';
   }
 
-  var REVEAL_FALLBACK_MS = 3000;
+  var REVEAL_FALLBACK_MS = 500;
   var FETCH_TIMEOUT_MS = 8000;
   var TRANSLATE_TIMEOUT_MS = 10000;
   var revealDone = false;
@@ -744,18 +744,12 @@
             browserLanguages: browserCandidates(),
             liveTranslate: eff !== 'en'
           };
-          if (eff === 'en') {
-            revealDocument();
-          }
-          var done = Promise.resolve();
+          revealDocument();
           if (eff !== 'en') {
-            done = translateRoot(document.body).then(function () {
+            translateRoot(document.body).then(function () {
               watchDynamicContent();
             });
           }
-          return done.then(function () {
-            revealDocument();
-          });
         } catch (err) {
           console.warn('i18n-auto: apply failed', err);
           revealDocument();
@@ -768,6 +762,7 @@
   }
 
   function boot() {
+    revealDocument();
     scheduleRevealFallback();
     var page = BOOT_PAGE_ATTR || '';
     if (!page || page === 'auto') {

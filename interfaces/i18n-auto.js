@@ -216,10 +216,61 @@
     return 'en';
   }
 
-  function fetchJson(url) {
-    return fetch(url, { credentials: 'same-origin' }).then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
+  var REVEAL_FALLBACK_MS = 3000;
+  var FETCH_TIMEOUT_MS = 8000;
+  var TRANSLATE_TIMEOUT_MS = 10000;
+  var revealDone = false;
+
+  function fetchJson(url, timeoutMs) {
+    var limit = timeoutMs || FETCH_TIMEOUT_MS;
+    return new Promise(function (resolve, reject) {
+      var settled = false;
+      var timer = window.setTimeout(function () {
+        if (settled) return;
+        settled = true;
+        reject(new Error('fetch_timeout'));
+      }, limit);
+      fetch(url, { credentials: 'same-origin' })
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timer);
+          resolve(data);
+        })
+        .catch(function (err) {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timer);
+          reject(err);
+        });
+    });
+  }
+
+  function promiseWithTimeout(promise, timeoutMs, fallback) {
+    return new Promise(function (resolve) {
+      var settled = false;
+      var timer = window.setTimeout(function () {
+        if (settled) return;
+        settled = true;
+        resolve(fallback);
+      }, timeoutMs);
+      Promise.resolve(promise)
+        .then(function (value) {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timer);
+          resolve(value);
+        })
+        .catch(function () {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timer);
+          resolve(fallback);
+        });
     });
   }
 
@@ -502,9 +553,13 @@
     state.translating = true;
     setStatusHint('Translating surface…');
 
-    return getBrowserTranslator(state.locale)
+    return promiseWithTimeout(getBrowserTranslator(state.locale), TRANSLATE_TIMEOUT_MS, null)
       .then(function (translator) {
-        return translateBatch(pending, state.locale, translator);
+        return promiseWithTimeout(
+          translateBatch(pending, state.locale, translator),
+          TRANSLATE_TIMEOUT_MS,
+          pending
+        );
       })
       .then(function (translated) {
         for (var i = 0; i < pendingNodes.length; i++) {
@@ -637,8 +692,16 @@
   }
 
   function revealDocument() {
+    if (revealDone) return;
+    revealDone = true;
     document.documentElement.classList.remove('vbi18n-pending');
     document.documentElement.classList.add('vbi18n-ready');
+  }
+
+  function scheduleRevealFallback() {
+    window.setTimeout(function () {
+      revealDocument();
+    }, REVEAL_FALLBACK_MS);
   }
 
   function initFromPage(page) {
@@ -663,32 +726,40 @@
           });
       })
       .then(function (res) {
-        var dict = res.dict;
-        var eff = res.effective;
-        var req = res.requested;
-        state.dict = dict;
-        state.locale = eff;
-        state.requested = req;
-        setDocumentLocale(eff);
-        applyToDom(dict, page);
-        injectLangBar(eff, req, dict, page);
-        window.__VIBELANDIA_I18N__ = {
-          locale: eff,
-          requested: req,
-          page: page,
-          userPicked: userPickedLocale(),
-          browserLanguages: browserCandidates(),
-          liveTranslate: eff !== 'en'
-        };
-        var done = Promise.resolve();
-        if (eff !== 'en') {
-          done = translateRoot(document.body).then(function () {
-            watchDynamicContent();
+        try {
+          var dict = res.dict;
+          var eff = res.effective;
+          var req = res.requested;
+          state.dict = dict;
+          state.locale = eff;
+          state.requested = req;
+          setDocumentLocale(eff);
+          applyToDom(dict, page);
+          injectLangBar(eff, req, dict, page);
+          window.__VIBELANDIA_I18N__ = {
+            locale: eff,
+            requested: req,
+            page: page,
+            userPicked: userPickedLocale(),
+            browserLanguages: browserCandidates(),
+            liveTranslate: eff !== 'en'
+          };
+          if (eff === 'en') {
+            revealDocument();
+          }
+          var done = Promise.resolve();
+          if (eff !== 'en') {
+            done = translateRoot(document.body).then(function () {
+              watchDynamicContent();
+            });
+          }
+          return done.then(function () {
+            revealDocument();
           });
-        }
-        return done.then(function () {
+        } catch (err) {
+          console.warn('i18n-auto: apply failed', err);
           revealDocument();
-        });
+        }
       })
       .catch(function () {
         revealDocument();
@@ -697,6 +768,7 @@
   }
 
   function boot() {
+    scheduleRevealFallback();
     var page = BOOT_PAGE_ATTR || '';
     if (!page || page === 'auto') {
       page = detectPageFromPath() || 'surface';

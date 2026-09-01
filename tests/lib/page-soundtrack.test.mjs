@@ -46,6 +46,8 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain("type: 'stop'");
     expect(js).toContain('pagehide');
     expect(js).toContain('openHandoffPopup');
+    expect(js).toContain('handoffIfPlaying');
+    expect(js).toContain('openBrowsePopup(url.href)');
   });
 });
 

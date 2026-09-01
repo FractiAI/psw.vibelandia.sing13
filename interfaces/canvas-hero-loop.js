@@ -56,6 +56,7 @@
       btnId: 'canvas-hero-score',
       audioId: 'canvas-hero-shift',
       label: 'Concierto prelude',
+      autoplay: true,
     });
   }
 

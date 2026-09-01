@@ -13,6 +13,7 @@
       btnId: 'sin-city-hero-score',
       audioId: 'sin-city-hero-audio',
       label: 'Sin City soundtrack',
+      autoplay: true,
     });
   }
 

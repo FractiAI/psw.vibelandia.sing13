@@ -1,5 +1,5 @@
 /**
- * Front Desk · check-in soundtrack autoplays on /front-desk.
+ * SS Vibelandia board · reception soundtrack autoplays on /questfest.
  * Unified page soundtrack with popup handoff on navigation.
  */
 (function () {
@@ -8,11 +8,11 @@
   function boot() {
     if (!window.QV_initPageSoundtrack) return;
     window.QV_initPageSoundtrack({
-      pageId: 'front-desk',
+      pageId: 'questfest-home',
       playlistId: 'pl-reception',
-      btnId: 'front-desk-hero-score',
-      audioId: 'front-desk-hero-audio',
-      label: 'Front Desk soundtrack',
+      btnId: 'reception-hero-score',
+      audioId: 'reception-hero-audio',
+      label: 'SS Vibelandia soundtrack',
       autoplay: true,
     });
   }

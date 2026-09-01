@@ -386,11 +386,22 @@
   window.QV_initPageSoundtrack = function (opts) {
     if (!opts || prefersReducedMotion()) return;
 
+    var autoplayDesired = opts.autoplay !== false;
+    var userMuted = false;
     var pageId =
       opts.pageId ||
       (opts.playlistId || 'static') + ':' + (opts.btnId || opts.audioId || 'default');
     var btn = opts.btnId ? document.getElementById(opts.btnId) : null;
     var label = opts.label || 'Soundtrack';
+
+    if (btn && autoplayDesired) {
+      btn.hidden = false;
+      btn.textContent = 'Sound on · loading…';
+      btn.setAttribute('aria-pressed', 'true');
+      btn.classList.add('is-playing');
+      btn.classList.remove('is-muted');
+      btn.setAttribute('aria-label', 'Loading ' + label);
+    }
 
     var session = {
       opts: opts,
@@ -497,15 +508,21 @@
         session.playing = playing;
         if (!btn) return;
         var track = current();
+        var showAsOn = playing || (autoplayDesired && !userMuted);
         btn.hidden = false;
-        btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
-        btn.classList.toggle('is-playing', playing);
-        btn.classList.toggle('is-muted', !playing);
-        btn.textContent = playing ? track.short : 'Sound off · tap to play';
-        btn.setAttribute(
-          'aria-label',
-          playing ? 'Mute ' + label + ': ' + track.aria : 'Play ' + label + ': ' + track.aria
-        );
+        btn.setAttribute('aria-pressed', showAsOn ? 'true' : 'false');
+        btn.classList.toggle('is-playing', showAsOn);
+        btn.classList.toggle('is-muted', !showAsOn);
+        if (playing) {
+          btn.textContent = track.short;
+          btn.setAttribute('aria-label', 'Mute ' + label + ': ' + track.aria);
+        } else if (userMuted) {
+          btn.textContent = 'Sound off · tap to play';
+          btn.setAttribute('aria-label', 'Play ' + label + ': ' + track.aria);
+        } else {
+          btn.textContent = track.short || 'Sound on · ' + track.aria;
+          btn.setAttribute('aria-label', 'Mute ' + label + ': ' + track.aria);
+        }
       }
 
       function loadTrack(i) {
@@ -573,11 +590,36 @@
         if (btn) btn.hidden = true;
       }
 
-      function unlockOnGesture() {
-        tryPlay().then(function () {
-          window.removeEventListener('pointerdown', unlockOnGesture, true);
-          window.removeEventListener('keydown', unlockOnGesture, true);
-          window.removeEventListener('touchstart', unlockOnGesture, true);
+      function bindUnlockGestures() {
+        if (unlockBound) return;
+        unlockBound = true;
+        var events = ['pointerdown', 'touchstart', 'keydown', 'scroll', 'click'];
+        function cleanup() {
+          events.forEach(function (ev) {
+            window.removeEventListener(ev, unlockOnce, true);
+          });
+          unlockBound = false;
+        }
+        function unlockOnce() {
+          if (userMuted) {
+            cleanup();
+            return;
+          }
+          tryPlay().then(function (ok) {
+            if (ok !== false && !audio.paused) cleanup();
+          });
+        }
+        events.forEach(function (ev) {
+          window.addEventListener(ev, unlockOnce, { capture: true, passive: true });
+        });
+      }
+
+      function startPlayback() {
+        if (!autoplayDesired || userMuted) return;
+        tryPlay().then(function (ok) {
+          if ((ok === false || audio.paused) && !userMuted) {
+            bindUnlockGestures();
+          }
         });
       }
 
@@ -617,10 +659,12 @@
         btn.addEventListener('click', function (ev) {
           ev.preventDefault();
           if (!audio.paused && !audio.ended) {
+            userMuted = true;
             audio.pause();
             markStopped();
             return;
           }
+          userMuted = false;
           tryPlay();
         });
       }
@@ -631,14 +675,11 @@
       });
       audio.addEventListener('ended', advance);
 
-      tryPlay().then(function (ok) {
-        if (ok === false || audio.paused) {
-          window.addEventListener('pointerdown', unlockOnGesture, true);
-          window.addEventListener('keydown', unlockOnGesture, true);
-          window.addEventListener('touchstart', unlockOnGesture, {
-            capture: true,
-            passive: true,
-          });
+      startPlayback();
+
+      window.addEventListener('pageshow', function () {
+        if (autoplayDesired && !userMuted && audio.paused) {
+          startPlayback();
         }
       });
     });

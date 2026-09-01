@@ -13,6 +13,7 @@
       btnId: 'reading-room-hero-score',
       audioId: 'reading-room-hero-audio',
       label: 'Reading Room concert',
+      autoplay: true,
     });
   }
 

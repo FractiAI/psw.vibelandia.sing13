@@ -105,6 +105,7 @@
     "sync:experience-phases": "node scripts/sync-experience-phases.mjs",
     "sync:front-desk-program": "node scripts/sync-front-desk-program.mjs",
     "sync:reading-room-covers": "node scripts/sync-reading-room-covers.mjs",
+    "sync:reading-room": "node scripts/sync-reading-room.mjs",
     "sync:sin-city-program": "node scripts/sync-sin-city-program.mjs",
     "sync:reading-room-program": "node scripts/sync-reading-room-program.mjs",
     "sync:voyage-journeys": "node scripts/sync-voyage-journeys.mjs",

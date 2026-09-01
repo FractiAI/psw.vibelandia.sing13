@@ -30,4 +30,13 @@ describe('i18n-auto · reveal safety', () => {
     expect(rrI18n).toBeLessThan(rrSound);
     expect(qf).toContain('i18n-auto.js" data-page="questfest" defer');
   });
+
+  it('ships fail-open reveal before i18n on Reading Room and QUESTFEST', () => {
+    const failopen = read('interfaces/vbi18n-failopen.js');
+    expect(failopen).toContain('__vbi18nFailOpenReveal');
+    expect(read('interfaces/reading-room.html')).toContain('vbi18n-failopen.js');
+    expect(read('interfaces/vibelandia-questfest.html')).toContain('vbi18n-failopen.js');
+    expect(read('interfaces/reading-room.html')).toContain('All papers');
+    expect(read('interfaces/reading-room.html')).toContain('loadCatalog');
+  });
 });

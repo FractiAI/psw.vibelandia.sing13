@@ -43,14 +43,25 @@ describe('i18n-auto · reveal safety', () => {
     expect(qf).toContain('i18n-auto.js" data-page="questfest" defer');
   });
 
-  it('ships fail-open reveal before i18n on Reading Room, whitepaper reader, and QUESTFEST', () => {
+  it('ships fail-open reveal before i18n on Reading Room, whitepaper reader, art landing, and QUESTFEST', () => {
     const failopen = read('interfaces/vbi18n-failopen.js');
     expect(failopen).toContain('__vbi18nFailOpenReveal');
     expect(read('interfaces/reading-room.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/whitepaper-surface.html')).toContain('vbi18n-failopen.js');
+    expect(read('interfaces/omniverse-canvas.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/vibelandia-questfest.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/reading-room.html')).toContain('All papers');
     expect(read('interfaces/reading-room.html')).toContain('loadCatalog');
+    expect(read('interfaces/omniverse-canvas.html')).toContain('i18n-auto.js" data-page="surface" defer');
+  });
+
+  it('loads i18n before soundtrack on art landing', () => {
+    const html = read('interfaces/omniverse-canvas.html');
+    const i18n = html.indexOf('i18n-auto.js');
+    const soundtrack = html.indexOf('page-soundtrack.js');
+    expect(i18n).toBeGreaterThan(-1);
+    expect(soundtrack).toBeGreaterThan(-1);
+    expect(i18n).toBeLessThan(soundtrack);
   });
 
   it('reveals experience pages immediately in head before deferred bundles', () => {
@@ -59,6 +70,7 @@ describe('i18n-auto · reveal safety', () => {
       'interfaces/front-desk.html',
       'interfaces/voyage/deck-3-night.html',
       'interfaces/whitepaper-surface.html',
+      'interfaces/omniverse-canvas.html',
     ]) {
       const html = read(rel);
       expect(html).toContain("classList.remove('vbi18n-pending')");

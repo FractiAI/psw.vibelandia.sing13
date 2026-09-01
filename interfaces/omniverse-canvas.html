@@ -10,6 +10,7 @@
   <meta property="og:description" content="For the new SuperAI Frontiersman. A holographic art exhibit nested in SS Vibelandia · Syntheverse · Base." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/questfest-crew/valet-pru-guayabera-panama.jpg" />
+  <script src="/interfaces/vbi18n-failopen.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -592,6 +593,10 @@
     }
     .canvas-ceo-announcement a:hover { color: #fff; }
   </style>
+  <script>
+    document.documentElement.classList.remove('vbi18n-pending');
+    document.documentElement.classList.add('vbi18n-ready');
+  </script>
 </head>
 <body class="canvas-pub">
   <nav class="qv-top-quicklinks" aria-label="Site">
@@ -675,7 +680,6 @@
         We are rolling out a new omniversal art form: each key page gets a short loop and its own soundtrack prelude —
         the way old movie houses played music before the feature. Landing leads with the da Vinci stepping-in video and
         <em>Concierto de El Gran Sol: “The Shift”</em> — twelve movements ending with Return 05.
-        Tap <strong>Sound on</strong> to play the Concierto over the da Vinci loop — a movie-prelude on the landing page.
         <a href="/concierto-program">Concert program →</a>
       </p>
       <p>
@@ -1127,9 +1131,9 @@
     })();
   </script>
   <script src="/interfaces/canvas-prelude-playlist.js"></script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface" defer></script>
   <script src="/interfaces/page-soundtrack.js" defer></script>
   <script src="/interfaces/canvas-hero-loop.js" defer></script>
-  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
   <script src="/interfaces/daily-ship-bulletin.js" defer></script>
 </body>

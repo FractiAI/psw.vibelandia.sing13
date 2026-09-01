@@ -30,4 +30,13 @@ describe('i18n-auto · reveal safety', () => {
     expect(rrI18n).toBeLessThan(rrSound);
     expect(qf).toContain('i18n-auto.js" data-page="questfest" defer');
   });
+
+  it('disables live translation via kill switch', () => {
+    const js = read('interfaces/i18n-auto.js');
+    expect(js).toContain('I18N_LIVE_DISABLED = true');
+    expect(js).toContain('bootDisabledEnglishOnly');
+    expect(js).toContain('liveTranslate: false');
+    const css = read('interfaces/brand-gold-surfaces.css');
+    expect(css).toContain('visibility: visible !important');
+  });
 });

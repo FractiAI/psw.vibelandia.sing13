@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/experience-page-hero.css" />
   <link rel="stylesheet" href="/interfaces/experience-phases.css" />
+  <script src="/interfaces/vbi18n-failopen.js"></script>
   <style>
     html.vbi18n-pending body { visibility: hidden; }
     html.vbi18n-ready body { visibility: visible; }
@@ -222,6 +223,16 @@
       border-radius: 8px;
       grid-column: 1 / -1;
     }
+    .rr-retry {
+      font: inherit;
+      color: var(--rr-gold-hi);
+      background: transparent;
+      border: 1px solid var(--rr-line);
+      border-radius: 999px;
+      padding: 0.35rem 0.85rem;
+      cursor: pointer;
+    }
+    .rr-retry:hover { border-color: rgba(212, 175, 55, 0.55); }
     @media (min-width: 900px) {
       .rr-card { flex-basis: 11.75rem; }
       .rr-shelf--featured .rr-card { flex-basis: 13.25rem; }
@@ -393,7 +404,12 @@
           if (!rows.length) return;
           shelves.push(renderShelf(categoryLabel(cat.id), categoryTagline(cat.id), rows, false, false));
         });
-        menuEl.innerHTML = shelves.join('');
+        if (!shelves.length && items.length) {
+          shelves.push(renderShelf('All papers', 'Ship catalog', items, false, true));
+        }
+        menuEl.innerHTML = shelves.length
+          ? shelves.join('')
+          : '<p class="rr-empty">Poster shelves are empty — try again in a moment.</p>';
       }
 
       var debounce;
@@ -402,17 +418,41 @@
         debounce = setTimeout(renderMenu, 100);
       });
 
-      fetch('/api/whitepaper-catalog')
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (!data.ok) throw new Error('catalog load failed');
-          categories = data.categories || [{ id: 'all', label: 'All papers' }];
-          allItems = data.items || [];
-          renderMenu();
-        })
-        .catch(function () {
-          menuEl.innerHTML = '<p class="rr-empty"><a href="/lattice/learn">Lattice learn-more →</a></p>';
-        });
+      function loadCatalog() {
+        var opts = { credentials: 'same-origin' };
+        var timer;
+        if (typeof AbortController !== 'undefined') {
+          var ctrl = new AbortController();
+          opts.signal = ctrl.signal;
+          timer = window.setTimeout(function () { ctrl.abort(); }, 12000);
+        }
+        return fetch('/api/whitepaper-catalog', opts)
+          .then(function (r) {
+            if (!r.ok) throw new Error('catalog HTTP ' + r.status);
+            return r.json();
+          })
+          .then(function (data) {
+            if (!data.ok) throw new Error('catalog load failed');
+            categories = data.categories || [{ id: 'all', label: 'All papers' }];
+            allItems = data.items || [];
+            renderMenu();
+          })
+          .catch(function () {
+            menuEl.innerHTML =
+              '<p class="rr-empty">Could not load poster shelves. <button type="button" class="rr-retry" id="rr-retry">Try again</button> · <a href="/lattice/learn">Lattice learn-more →</a></p>';
+            var retry = document.getElementById('rr-retry');
+            if (retry) {
+              retry.addEventListener('click', function () {
+                menuEl.innerHTML = '<p class="rr-loading">Loading poster shelves…</p>';
+                loadCatalog();
+              });
+            }
+          })
+          .finally(function () {
+            if (timer) window.clearTimeout(timer);
+          });
+      }
+      loadCatalog();
     })();
   </script>
   <script src="/interfaces/i18n-auto.js" data-page="surface" defer></script>

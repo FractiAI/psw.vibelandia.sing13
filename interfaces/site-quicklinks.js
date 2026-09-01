@@ -95,7 +95,7 @@
     );
   }
 
-  /** Pages that already own an in-flow primary nav — do not stack a second bar. */
+  /** Pages that already own an in-flow primary nav — hide duplicate once standard bar injects. */
   function hasOwnPrimaryNav() {
     return !!(
       document.querySelector('.deck-skin-nav') ||
@@ -104,7 +104,8 @@
       document.querySelector('.hero__nav') ||
       document.querySelector('.brochure-nav') ||
       document.querySelector('.ark-hero__nav') ||
-      document.querySelector('.cm-topnav')
+      document.querySelector('.cm-topnav') ||
+      document.querySelector('.lib-nav')
     );
   }
 
@@ -153,19 +154,6 @@
   function injectTopQuicklinks() {
     if (onBridge) return;
     if (document.querySelector('.qv-top-quicklinks')) return;
-    if (hasOwnPrimaryNav()) {
-      var existing =
-        document.querySelector('.deck-skin-nav') ||
-        document.querySelector('.skin-nav') ||
-        document.querySelector('.jb-nav');
-      if (existing && !hasListenLink(existing)) {
-        existing.insertAdjacentHTML(
-          'beforeend',
-          '<span class="dot" aria-hidden="true">·</span><a href="/listen" data-qv-jukebox>Listen</a>'
-        );
-      }
-      return;
-    }
 
     var nav = document.createElement('nav');
     nav.className = 'qv-top-quicklinks' + (onQuestfestHome ? ' qv-top-quicklinks--questfest' : '');
@@ -184,7 +172,7 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/library">Library</a>' +
+        '<a href="/reading-room">Reading Room</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/doodles">Doodles</a>';
     } else if (onQuestfestHome) {
@@ -197,7 +185,7 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/library">Library</a>' +
+        '<a href="/reading-room">Reading Room</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/doodles">Doodles</a>';
     } else {
@@ -210,7 +198,7 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/library">Library</a>' +
+        '<a href="/reading-room">Reading Room</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/doodles">Doodles</a>';
     }
@@ -221,7 +209,22 @@
       nav.insertAdjacentHTML('beforeend', renderQuestfestSoundBar());
     }
     document.body.insertBefore(nav, document.body.firstChild);
+    document.body.classList.add('qv-has-top-quicklinks');
     ensureShareQrModal();
+
+    if (hasOwnPrimaryNav()) {
+      var existing =
+        document.querySelector('.deck-skin-nav') ||
+        document.querySelector('.skin-nav') ||
+        document.querySelector('.jb-nav') ||
+        document.querySelector('.lib-nav');
+      if (existing && !hasListenLink(existing)) {
+        existing.insertAdjacentHTML(
+          'beforeend',
+          '<span class="dot" aria-hidden="true">·</span><a href="/listen" data-qv-jukebox>Listen</a>'
+        );
+      }
+    }
   }
 
   function injectFooterQuicklinks() {

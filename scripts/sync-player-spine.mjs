@@ -98,7 +98,7 @@ html = html.replace(
   /<span class="bulletin-kicker">Ship blog · plain speak<\/span>\s*<h2 id="qf-blog-h2">Six newest papers<\/h2>\s*<p class="qf-blog-lead">[\s\S]*?<\/p>/,
   `<span class="bulletin-kicker">Deep Memory</span>
     <h2 id="qf-blog-h2">Three notes worth your Player time</h2>
-    <p class="qf-blog-lead">Plain speak when the lab gets loud — start here, then open the library if you want depth. NPCs can skip; Players often don’t.</p>`,
+    <p class="qf-blog-lead">Plain speak when the lab gets loud — start here, then open the Reading Room if you want depth. NPCs can skip; Players often don’t.</p>`,
 );
 
 html = html.replace(

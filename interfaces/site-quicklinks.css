@@ -1,3 +1,15 @@
+/* Hide legacy per-page nav when standard quicklinks inject */
+body.qv-has-top-quicklinks .deck-skin-nav,
+body.qv-has-top-quicklinks .skin-nav,
+body.qv-has-top-quicklinks .jb-nav,
+body.qv-has-top-quicklinks .hero__nav,
+body.qv-has-top-quicklinks .brochure-nav,
+body.qv-has-top-quicklinks .ark-hero__nav,
+body.qv-has-top-quicklinks .cm-topnav,
+body.qv-has-top-quicklinks .lib-nav {
+  display: none !important;
+}
+
 /* In-flow top quicklinks — same idea as deck-skin-nav / jukebox jb-nav (not a floating overlay) */
 .qv-top-quicklinks {
   margin: 0;

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-pending">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Reading Room · Deep Memory · SS Vibelandia</title>
+  <meta name="description" content="Safari club reading room aboard SS Vibelandia — trophies, books, and sacred objects from past adventures. Full paper abstracts, honesty rails, old-school frontiersman class." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/reading-room" />
+  <meta property="og:title" content="Reading Room · SS Vibelandia" />
+  <meta property="og:description" content="Sit in the man cave. Read the map under the music — ship-blog notes and whitepapers with full abstracts." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <style>
+    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-ready body { visibility: visible; }
+    :root {
+      --rr-leather: #2a1810;
+      --rr-wood: #1a120c;
+      --rr-gold: #d4af37;
+      --rr-gold-hi: #f0d78c;
+      --rr-parchment: #e8dcc8;
+      --rr-muted: #b8aa94;
+      --rr-line: rgba(212, 175, 55, 0.32);
+    }
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", system-ui, sans-serif;
+      color: var(--rr-parchment);
+      background: var(--rr-wood);
+      line-height: 1.6;
+    }
+    .rr-scene {
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(18, 10, 6, 0.55) 0%, rgba(18, 10, 6, 0.82) 38%, rgba(12, 8, 5, 0.94) 100%),
+        url('/interfaces/assets/experience/ship-library-deep-memory.jpg') center center / cover no-repeat fixed;
+    }
+    .rr-hero {
+      padding: 1.5rem 1.35rem 2rem;
+      max-width: 48rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .rr-kicker {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--rr-gold);
+      margin: 0 0 0.5rem;
+    }
+    .rr-hero h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.2rem, 7vw, 3.4rem);
+      font-weight: 700;
+      color: var(--rr-gold-hi);
+      margin: 0 0 0.65rem;
+      line-height: 1.08;
+    }
+    .rr-lead {
+      font-size: 1.05rem;
+      color: var(--rr-muted);
+      margin: 0 auto;
+      max-width: 36rem;
+    }
+    .rr-lead em {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      color: var(--rr-parchment);
+    }
+    .rr-panel {
+      max-width: 44rem;
+      margin: 0 auto 2.5rem;
+      padding: 0 1.35rem 3rem;
+    }
+    .rr-search-wrap {
+      margin: 0 0 1.25rem;
+    }
+    .rr-search {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      border: 1px solid var(--rr-line);
+      background: rgba(26, 18, 12, 0.88);
+      color: var(--rr-parchment);
+      font: inherit;
+      font-size: 1rem;
+    }
+    .rr-search::placeholder { color: #8a7a68; }
+    .rr-search:focus {
+      outline: 2px solid rgba(212, 175, 55, 0.5);
+      outline-offset: 1px;
+    }
+    .rr-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .rr-filter {
+      padding: 0.4rem 0.75rem;
+      border-radius: 3px;
+      border: 1px solid var(--rr-line);
+      background: rgba(26, 18, 12, 0.75);
+      color: var(--rr-muted);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .rr-filter:hover { border-color: var(--rr-gold); color: var(--rr-gold-hi); }
+    .rr-filter.is-active {
+      background: linear-gradient(180deg, #e8d4a8, #b8923e);
+      color: #2a1c12;
+      border-color: transparent;
+    }
+    .rr-meta {
+      font-size: 0.85rem;
+      color: var(--rr-muted);
+      margin: 0 0 1.25rem;
+    }
+    .rr-category {
+      margin-bottom: 2rem;
+    }
+    .rr-category h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.45rem;
+      color: var(--rr-gold-hi);
+      margin: 0 0 0.85rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--rr-line);
+    }
+    .rr-entry {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.14);
+    }
+    .rr-entry:last-child { border-bottom: none; }
+    .rr-entry h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0 0 0.45rem;
+      color: var(--rr-gold-hi);
+      line-height: 1.25;
+    }
+    .rr-entry h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .rr-entry h3 a:hover { text-decoration: underline; }
+    .rr-abstract {
+      margin: 0 0 0.55rem;
+      color: #d4c4a8;
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+    .rr-read {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--rr-gold);
+      text-decoration: none;
+    }
+    .rr-read:hover { color: var(--rr-gold-hi); text-decoration: underline; }
+    .rr-doors {
+      display: grid;
+      gap: 0.65rem;
+      margin: 2rem 0 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rr-line);
+    }
+    .rr-door {
+      display: block;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--rr-line);
+      border-radius: 3px;
+      background: rgba(26, 18, 12, 0.72);
+      text-decoration: none;
+      color: inherit;
+    }
+    .rr-door strong {
+      display: block;
+      color: var(--rr-gold-hi);
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    .rr-door span {
+      font-size: 0.88rem;
+      color: var(--rr-muted);
+    }
+    .rr-honesty {
+      font-size: 0.84rem;
+      color: #8a9aaa;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--rr-line);
+    }
+    .rr-empty {
+      padding: 2rem 1rem;
+      text-align: center;
+      color: var(--rr-muted);
+      border: 1px dashed var(--rr-line);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="voyage-flagship">
+  <div class="rr-scene">
+    <header class="rr-hero">
+      <p class="rr-kicker">Deck 9 · Deep Memory · Safari Club</p>
+      <h1>Reading Room</h1>
+      <p class="rr-lead">
+        Sit in the man cave — books, trophies, exotic and rare objects, sacred keepsakes from past adventures.
+        <em>Old-school safari club class</em>, fit for Roosevelt or von Humboldt. Read the map under the music.
+      </p>
+    </header>
+
+    <main class="rr-panel">
+      <div class="rr-search-wrap">
+        <input class="rr-search" id="rr-search" type="search" placeholder="Search papers…" autocomplete="off" aria-label="Search reading room" />
+      </div>
+      <div class="rr-filters" id="rr-filters" role="tablist" aria-label="Filter by category"></div>
+      <p class="rr-meta" id="rr-meta" aria-live="polite">Loading catalog…</p>
+      <div id="rr-menu" aria-live="polite"></div>
+
+      <div class="rr-doors" role="list">
+        <a class="rr-door" href="/ship-blog/" role="listitem">
+          <strong>Ship blog · plain speak</strong>
+          <span>Newest notes first — what just landed and where the honesty line is drawn.</span>
+        </a>
+        <a class="rr-door" href="/ship-blog/frontiersman-voyage" role="listitem">
+          <strong>Frontiersman on-ramp</strong>
+          <span>Start here if you want the voyage voice without the full brochure yet.</span>
+        </a>
+        <a class="rr-door" href="/frontiersman-voyage" role="listitem">
+          <strong>Full voyage brochure</strong>
+          <span>Cultural constitution — one tribe · many homes · holographic layers.</span>
+        </a>
+      </div>
+
+      <p class="rr-honesty">
+        <strong>Honesty:</strong> Reading Room pages are hospitality and catalog orientation — not clinical advice,
+        not a claim that reading a paper changes physical law. Φ ≈ 1.618 is design language aboard this ship.
+      </p>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var categories = [];
+      var allItems = [];
+      var activeCategory = 'all';
+      var searchEl = document.getElementById('rr-search');
+      var filtersEl = document.getElementById('rr-filters');
+      var metaEl = document.getElementById('rr-meta');
+      var menuEl = document.getElementById('rr-menu');
+
+      function categoryLabel(id) {
+        var row = categories.find(function (c) { return c.id === id; });
+        return row ? row.label : id;
+      }
+
+      function renderFilters() {
+        filtersEl.innerHTML = categories.map(function (c) {
+          var active = c.id === activeCategory ? ' is-active' : '';
+          return '<button type="button" class="rr-filter' + active + '" data-cat="' + c.id + '" role="tab">' + c.label + '</button>';
+        }).join('');
+        filtersEl.querySelectorAll('.rr-filter').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            activeCategory = btn.getAttribute('data-cat') || 'all';
+            renderFilters();
+            renderMenu();
+          });
+        });
+      }
+
+      function filteredItems() {
+        var q = (searchEl.value || '').trim().toLowerCase();
+        return allItems.filter(function (it) {
+          if (activeCategory !== 'all' && it.category !== activeCategory) return false;
+          if (!q) return true;
+          var hay = [it.title, it.docId, it.id, it.abstract, it.plainLine].concat(it.tags || []).join(' ').toLowerCase();
+          return hay.indexOf(q) !== -1;
+        });
+      }
+
+      function readerHref(item) {
+        if (item.type === 'whitepaper' || item.type === 'redirect') return item.href;
+        if (item.whitepaperId) {
+          return '/interfaces/whitepaper-surface.html?id=' + encodeURIComponent(item.whitepaperId);
+        }
+        return item.href;
+      }
+
+      function renderMenu() {
+        var items = filteredItems();
+        metaEl.textContent = items.length + ' of ' + allItems.length + ' papers · SynthOBS Autonomous Agent · tap headline to read';
+
+        if (!items.length) {
+          menuEl.innerHTML = '<p class="rr-empty">No matches — try another search or category.</p>';
+          return;
+        }
+
+        var byCat = {};
+        items.forEach(function (it) {
+          var cat = it.category || 'other';
+          if (!byCat[cat]) byCat[cat] = [];
+          byCat[cat].push(it);
+        });
+
+        var catOrder = activeCategory === 'all'
+          ? categories.filter(function (c) { return c.id !== 'all' && byCat[c.id]; }).map(function (c) { return c.id; })
+          : [activeCategory];
+
+        menuEl.innerHTML = catOrder.map(function (catId) {
+          var rows = byCat[catId] || [];
+          if (!rows.length) return '';
+          var entries = rows.map(function (it) {
+            var href = readerHref(it);
+            var abstract = it.abstract || it.plainLine || '';
+            return (
+              '<article class="rr-entry">' +
+                '<h3><a href="' + href + '">' + it.title + '</a></h3>' +
+                (abstract ? '<p class="rr-abstract">' + abstract + '</p>' : '') +
+                '<a class="rr-read" href="' + href + '">Read paper →</a>' +
+              '</article>'
+            );
+          }).join('');
+          return (
+            '<section class="rr-category" aria-labelledby="rr-cat-' + catId + '">' +
+              '<h2 id="rr-cat-' + catId + '">' + categoryLabel(catId) + '</h2>' +
+              entries +
+            '</section>'
+          );
+        }).join('');
+      }
+
+      var debounce;
+      searchEl.addEventListener('input', function () {
+        clearTimeout(debounce);
+        debounce = setTimeout(renderMenu, 120);
+      });
+
+      fetch('/api/whitepaper-catalog')
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data.ok) throw new Error('catalog load failed');
+          categories = data.categories || [{ id: 'all', label: 'All papers' }];
+          allItems = data.items || [];
+          renderFilters();
+          renderMenu();
+        })
+        .catch(function () {
+          metaEl.textContent = 'Could not load catalog. Retry or open a paper from Lattice learn-more.';
+          menuEl.innerHTML = '<p class="rr-empty"><a href="/lattice/learn">Lattice learn-more →</a></p>';
+        });
+    })();
+  </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script src="/interfaces/site-jukebox.js" defer data-qv-jukebox-boot="1"></script>
+</body>
+</html>

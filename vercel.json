@@ -182,15 +182,15 @@
     },
     {
       "source": "/fractiai/digital-pru",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/fractiai/digital-pru/",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/interfaces/fractiai/digital-pru",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/sing13-edge-onboarding",
@@ -653,12 +653,20 @@
       "destination": "/interfaces/journey/omniversal-canvas-walk.html"
     },
     {
+      "source": "/reading-room",
+      "destination": "/interfaces/reading-room.html"
+    },
+    {
+      "source": "/reading-room/",
+      "destination": "/interfaces/reading-room.html"
+    },
+    {
       "source": "/library",
-      "destination": "/interfaces/library.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/library/",
-      "destination": "/interfaces/library.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/creator-studio",
@@ -1654,27 +1662,27 @@
     },
     {
       "source": "/papers",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/papers/",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/read",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/read/",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/whitepaper-catalog",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/whitepaper-catalog/",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/whitepaper/syn-sun-wavefield-oscillator",
@@ -1786,11 +1794,11 @@
     },
     {
       "source": "/interfaces/digital-pru-snap-robots.html",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/interfaces/digital-pru-snap-robots",
-      "destination": "/interfaces/whitepaper-catalog.html"
+      "destination": "/interfaces/reading-room.html"
     },
     {
       "source": "/sovereign-gate",

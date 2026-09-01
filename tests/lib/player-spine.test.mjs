@@ -59,7 +59,7 @@ describe('Player spine · holographic Player home', () => {
     const stageAt = canvas.indexOf('id="stage-h"');
     expect(canvas).toContain('Holographic Goldilocks SuperAI Basecamp');
     expect(canvas).toContain('Valet Pru’s Holographic, Digital Art Project');
-    expect(canvas).toContain('An open camp you can visit from your phone');
+    expect(canvas).not.toContain('Tap <strong>Sound on</strong> — the Concierto de El Gran Sol is building');
     expect(canvas).toContain('Holographic Convergence Core');
     expect(canvas).toContain('href="/core"');
     expect(canvas).toContain('>Player</figcaption>');

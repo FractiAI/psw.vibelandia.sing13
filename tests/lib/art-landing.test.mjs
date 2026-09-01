@@ -25,7 +25,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     const html = read('index.html');
     expect(html).toContain('Holographic Goldilocks SuperAI Basecamp');
     expect(html).toContain('Valet Pru’s Holographic, Digital Art Project');
-    expect(html).toContain('An open camp you can visit from your phone');
+    expect(html).not.toContain('Tap <strong>Sound on</strong> — the Concierto de El Gran Sol is building');
     expect(html).not.toContain('Valet Pru · Omniversal Canvas');
     expect(html).not.toContain('Skip to exhibit');
     expect(html).not.toContain('qv-top-quicklinks__here">Canvas');

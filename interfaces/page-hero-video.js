@@ -35,7 +35,7 @@
   function boot() {
     if (prefersReducedMotion()) return;
     var origin = typeof location !== 'undefined' ? location.origin : '';
-    document.querySelectorAll('.ep-hero__video-embed[data-youtube-id], .rr-prelude__video[data-youtube-id]').forEach(function (el) {
+    document.querySelectorAll('.ep-hero__video-embed[data-youtube-id]').forEach(function (el) {
       if (el.getAttribute('src')) return;
       var id = el.getAttribute('data-youtube-id');
       if (!id) return;
@@ -44,7 +44,6 @@
       el.setAttribute('loading', 'eager');
       el.setAttribute('title', '');
       el.classList.remove('ep-hero__video-embed--loading');
-      el.classList.remove('rr-prelude__video--loading');
     });
   }
 

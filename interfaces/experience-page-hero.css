@@ -11,11 +11,11 @@
   min-height: min(52svh, 28rem);
 }
 .ep-hero--reading-room {
-  min-height: min(48svh, 26rem);
+  min-height: min(100svh, 52rem);
 }
 .ep-hero--reading-room .ep-hero__copy {
-  padding-top: clamp(3rem, 8vh, 4.5rem);
-  padding-bottom: 1.5rem;
+  padding-top: clamp(4.5rem, 12vh, 7rem);
+  padding-bottom: 2.5rem;
 }
 .ep-hero__title--sr {
   position: absolute;

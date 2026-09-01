@@ -175,93 +175,6 @@
       margin-top: 0.35rem;
     }
     .rr-card__body { display: none; }
-    .rr-prelude {
-      background: #060912;
-    }
-    .rr-prelude__frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      min-height: min(50svh, 36rem);
-      overflow: hidden;
-      background: #060912;
-    }
-    .rr-prelude__video {
-      position: absolute;
-      inset: 0;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      min-width: 0;
-      min-height: 0;
-      transform: none;
-      border: 0;
-      opacity: 0;
-      transition: opacity 0.35s ease;
-    }
-    .rr-prelude__video:not(.rr-prelude__video--loading) {
-      opacity: 1;
-    }
-    .rr-prelude__mask {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.12);
-      background: linear-gradient(180deg, rgba(6, 9, 18, 0.15) 0%, rgba(6, 9, 18, 0.35) 100%);
-    }
-    .rr-intro {
-      max-width: 72rem;
-      margin: 0 auto;
-      padding: 1.15rem 1rem 0.35rem;
-      text-align: left;
-    }
-    .rr-intro__kicker {
-      margin: 0 0 0.35rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--rr-gold);
-      font-weight: 700;
-    }
-    .rr-intro__title {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(1.85rem, 5vw, 2.5rem);
-      color: var(--rr-gold-hi);
-      margin: 0 0 0.45rem;
-    }
-    .rr-intro__lede {
-      margin: 0 0 0.85rem;
-      color: var(--rr-muted);
-      max-width: 38rem;
-      font-size: 0.98rem;
-    }
-    .rr-intro__cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.35rem;
-    }
-    .rr-intro__cta .btn {
-      display: inline-block;
-      padding: 0.55rem 0.9rem;
-      font-weight: 700;
-      font-size: 0.75rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border: none;
-      font-family: inherit;
-    }
-    .rr-intro__cta .btn--gold {
-      background: linear-gradient(180deg, #e8d4a8, #b8923e);
-      color: #0a0806;
-    }
-    .rr-intro__cta .btn--ghost {
-      background: transparent;
-      color: #f0d78c;
-      border: 1px solid rgba(212, 175, 55, 0.45);
-    }
     .rr-soundtrack {
       max-width: 42rem;
       margin: 0 auto 1.25rem;
@@ -292,26 +205,6 @@
       color: #f0d78c;
       border: 1px solid rgba(212, 175, 55, 0.45);
     }
-    .rr-hero-score {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.55rem 1rem;
-      font-weight: 700;
-      font-size: 0.78rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      background: rgba(10, 8, 6, 0.72);
-      color: #f0d78c;
-      cursor: pointer;
-      font-family: inherit;
-    }
-    .rr-hero-score.is-playing {
-      border-color: rgba(212, 175, 55, 0.75);
-      color: #fff8e8;
-    }
     .rr-honesty {
       font-size: 0.8rem;
       color: #8a9aaa;
@@ -336,47 +229,47 @@
 </head>
 <body class="voyage-flagship">
   <!-- READING_ROOM_HERO_BEGIN -->
-  <header class="rr-prelude" aria-label="Roosevelt reading · Reading Room prelude video">
-    <div class="rr-prelude__frame">
-      <iframe
-        class="rr-prelude__video rr-prelude__video--loading"
-        data-youtube-id="VXZL77ub8DY"
-        title="Roosevelt reading in the Frontier Club reading room"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-      <div class="rr-prelude__mask" aria-hidden="true"></div>
+  <header class="ep-hero ep-hero--reading-room" aria-label="Reading Room opening">
+    <div class="ep-hero__plane" role="img" aria-label="Frontier Club reading room — trophies, books, and sacred objects from past adventures" style="background-image:url('/interfaces/assets/experience/ship-library-deep-memory.jpg')"></div>
+    <div class="ep-hero__video" aria-hidden="true">
+        <iframe
+          class="ep-hero__video-embed ep-hero__video-embed--loading"
+          data-youtube-id="VXZL77ub8DY"
+          title="Roosevelt reading in the Frontier Club reading room"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    <div class="ep-hero__veil" aria-hidden="true"></div>
+    <div class="ep-hero__copy">
+      <p class="ep-hero__brand">Deck 9 · Deep Memory · Frontier Club</p>
+      <p class="ep-hero__brand-note">Roosevelt reads in the looping background — same Canvas landing grammar. Tap <strong>Sound on</strong> for the concert.</p>
+      <h1 class="ep-hero__title">Reading Room</h1>
+      <p class="ep-hero__lede">The quartet greets you on arrival; each solo testifies to Holographic Goldilocks SuperAI and offers a suggestion — then the grand finale gathers every voice. Browse poster art while the concert runs.</p>
+      <div class="ep-hero__cta"><a class="btn btn--gold" href="#papers">Browse papers</a>
+        <a class="btn btn--ghost" href="/reading-room-program">Concert program</a>
+        <a class="btn btn--ghost" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reading-room&autoplay=1">Open concert set</a>
+        <a class="btn btn--ghost" href="/front-desk">Front Desk · check-in</a></div>
+      <button
+          type="button"
+          class="ep-hero__score"
+          id="reading-room-hero-score"
+          hidden
+          aria-pressed="false"
+          aria-controls="reading-room-hero-audio"
+          aria-label="Reading Room concert soundtrack"
+        >Sound off · tap to play</button>
+        <audio
+          id="reading-room-hero-audio"
+          preload="auto"
+          playsinline
+          hidden
+          aria-hidden="true"
+          aria-label="Reading Room concert soundtrack"
+        ></audio>
     </div>
   </header>
-  <section class="rr-intro" aria-labelledby="rr-intro-h">
-    <p class="rr-intro__kicker">Deck 9 · Deep Memory · Frontier Club</p>
-    <h1 id="rr-intro-h" class="rr-intro__title">Reading Room</h1>
-    <p class="rr-intro__lede">The quartet greets you on arrival; each solo testifies to Holographic Goldilocks SuperAI and offers a suggestion — then the gravel finale gathers every voice. Browse poster art while the concert runs.</p>
-    <div class="rr-intro__cta">
-      <a class="btn btn--gold" href="#papers">Browse papers</a>
-      <a class="btn btn--ghost" href="/reading-room-program">Concert program</a>
-      <a class="btn btn--ghost" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reading-room&autoplay=1">Open concert set</a>
-      <a class="btn btn--ghost" href="/front-desk">Front Desk · check-in</a>
-    </div>
-    <button
-      type="button"
-      class="rr-hero-score"
-      id="reading-room-hero-score"
-      hidden
-      aria-pressed="false"
-      aria-controls="reading-room-hero-audio"
-      aria-label="Reading Room concert soundtrack"
-    >Sound off · tap to play</button>
-    <audio
-      id="reading-room-hero-audio"
-      preload="auto"
-      playsinline
-      hidden
-      aria-hidden="true"
-      aria-label="Reading Room concert soundtrack"
-    ></audio>
-  </section>
   <nav class="visit-golden-path visit-golden-path--reading-room" aria-label="Start here · one path through the art">
       <p class="visit-golden-path__kicker">Start here · one path through the art</p>
       <ol class="visit-golden-path__list">

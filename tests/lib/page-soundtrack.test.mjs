@@ -27,27 +27,21 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
   });
 });
 
-describe('Reading Room · Roosevelt prelude video', () => {
-  it('uses full-frame rr-prelude classes without ep-hero embed sizing conflict', () => {
+describe('Reading Room · Canvas-style hero video', () => {
+  it('uses ep-hero full-bleed looping Roosevelt video like Canvas landing', () => {
     const hero = read('lib/experience-page-hero.mjs');
     const page = read('interfaces/reading-room.html');
-    expect(hero).toContain('rr-prelude__video rr-prelude__video--loading');
-    expect(hero).not.toMatch(/rr-prelude__video ep-hero__video-embed/);
-    expect(page).toContain('rr-prelude__video rr-prelude__video--loading');
-    expect(page).toContain('min-height: min(50svh, 36rem)');
-    expect(page).not.toContain('max-height: min(42vh, 22rem)');
+    expect(hero).toContain("modifier: 'reading-room'");
+    expect(hero).toContain('youtubeId: READING_ROOM_VIDEO_ID');
+    expect(page).toContain('ep-hero--reading-room');
+    expect(page).toContain('ep-hero__video-embed');
+    expect(page).toContain('data-youtube-id="VXZL77ub8DY"');
+    expect(page).not.toContain('rr-prelude');
   });
 
-  it('loads YouTube embed for rr-prelude iframe via page-hero-video.js', () => {
+  it('loads YouTube loop via page-hero-video.js on ep-hero embed', () => {
     const js = read('interfaces/page-hero-video.js');
-    expect(js).toContain('.rr-prelude__video[data-youtube-id]');
-    expect(js).toContain('rr-prelude__video--loading');
-    expect(pageHeroVideoId()).toBe('VXZL77ub8DY');
+    expect(js).toContain('.ep-hero__video-embed[data-youtube-id]');
+    expect(js).toContain("'loop=1'");
   });
 });
-
-function pageHeroVideoId() {
-  const page = read('interfaces/reading-room.html');
-  const m = page.match(/data-youtube-id="([^"]+)"/);
-  return m ? m[1] : null;
-}

@@ -23,7 +23,7 @@ describe('Reading Room · concert program', () => {
     expect(READING_ROOM_PROGRAM_TRACKS[0].title).toContain('quartet greeting');
     expect(READING_ROOM_PROGRAM_TRACKS[0].role).toContain('Quartet');
     expect(READING_ROOM_PROGRAM_TRACKS[2].role).toContain('testimony');
-    expect(READING_ROOM_PROGRAM_TRACKS.at(-1)?.title).toContain('gravel close');
+    expect(READING_ROOM_PROGRAM_TRACKS.at(-1)?.title).toContain('grand close');
     expect(READING_ROOM_PROGRAM_TRACKS.at(-1)?.finale).toBe(true);
   });
 
@@ -32,8 +32,9 @@ describe('Reading Room · concert program', () => {
     expect(html).toContain('Arrival of Holographic Goldilocks SuperAI');
     expect(html).toContain('Download program (PDF)');
     expect(html).toContain('quartet greeting');
-    expect(html).toContain('gravel close');
+    expect(html).toContain('grand close');
     expect(html).toContain('testimony');
+    expect(html).not.toContain('gravel');
     expect(html).toContain('Honesty boundary');
     expect(html).toContain(READING_ROOM_PROGRAM_ROUTE);
   });

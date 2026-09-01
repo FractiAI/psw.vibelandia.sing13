@@ -14,34 +14,35 @@ function read(rel) {
   return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-describe('Visit golden path · Canvas → Program → Front Desk', () => {
+describe('Visit golden path · Canvas → Program → Check In', () => {
   it('renders three numbered steps with program as primary', () => {
     const html = renderVisitGoldenPathHtml('canvas');
     expect(html).toContain(VISIT_GOLDEN_PATH_KICKER);
     expect(html).toContain('Concert program');
     expect(html).toContain('/concierto-program');
     expect(html).toContain('/front-desk');
+    expect(html).toContain('Check In');
     expect(html).toContain('visit-golden-path__step--here');
     expect(html).toContain('visit-golden-path__step--primary');
   });
 
-  it('marks Front Desk step here on front-desk page', () => {
+  it('marks Check In step here on front-desk page', () => {
     const html = renderVisitGoldenPathHtml('front-desk', { anchorFrontDesk: '/front-desk' });
     expect(html).toContain('/front-desk');
-    expect(html).toContain('Front Desk · Sound on');
+    expect(html).toContain('Check In · Sound on');
     expect(html).toContain('Check-in program');
     expect(html).toContain('/front-desk-program');
     expect(html).toContain('visit-golden-path--front-desk');
     expect(html).toContain('Creator Studio');
   });
 
-  it('marks Reading Room step here on reading-room page', () => {
+  it('marks Reading Room as sole step on reading-room page', () => {
     const html = renderVisitGoldenPathHtml('reading-room');
     expect(html).toContain('/reading-room');
-    expect(html).toContain('Browse papers');
-    expect(html).toContain('/reading-room#papers');
+    expect(html).not.toContain('Browse papers');
+    expect(html).not.toContain('/reading-room#papers');
     expect(html).toContain('visit-golden-path--reading-room');
-    expect(html).toContain('/front-desk');
+    expect(html).toContain('Check In');
   });
 
   it('front-desk hero CTAs favor check-in program and playlist', () => {
@@ -51,13 +52,15 @@ describe('Visit golden path · Canvas → Program → Front Desk', () => {
     expect(html).toContain('/creator-studio');
   });
 
-  it('hero CTAs favor program and Front Desk over five parallel doors', () => {
+  it('hero CTAs favor program and Check In over five parallel doors', () => {
     const canvas = renderVisitGoldenPathHeroCtasHtml('canvas');
     const ship = renderVisitGoldenPathHeroCtasHtml('ship');
     expect(canvas).toContain('/concierto-program');
     expect(canvas).toContain('/front-desk');
+    expect(canvas).toContain('Check In');
     expect(ship).toContain('/concierto-program');
     expect(ship).toContain('/front-desk');
+    expect(ship).toContain('Check In');
     expect(ship).toContain('href="/journey"');
   });
 
@@ -81,6 +84,9 @@ describe('Visit golden path · Canvas → Program → Front Desk', () => {
     expect(readingRoom).toContain('ep-hero__video-embed');
     expect(readingRoom).not.toContain('rr-prelude');
     expect(readingRoom).not.toContain('data-youtube-start');
+    expect(readingRoom).not.toContain('Browse papers');
+    expect(readingRoom).not.toContain('Open concert in jukebox');
+    expect(readingRoom).toContain('Concert program');
     expect(readingRoom).toContain('id="papers"');
   });
 

@@ -187,7 +187,7 @@
       row.innerHTML =
         '<a href="/questfest">SS VIBELANDIA</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<span class="qv-top-quicklinks__here">Front Desk</span>' +
+        '<span class="qv-top-quicklinks__here">Check In</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/journey">Journey</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
@@ -210,7 +210,7 @@
         '<span class="sep" aria-hidden="true">·</span>' +
         '<span class="qv-top-quicklinks__here">Reading Room</span>' +
         '<span class="sep" aria-hidden="true">·</span>' +
-        '<a href="/front-desk">Front Desk</a>';
+        '<a href="/front-desk">Check In</a>';
     } else if (onQuestfestHome) {
       row.innerHTML =
         '<span class="qv-top-quicklinks__here">SS VIBELANDIA</span>' +

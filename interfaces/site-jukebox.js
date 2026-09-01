@@ -159,12 +159,15 @@
       if (anchorBrowse) {
         var browseUrl = resolveUrl(anchorBrowse.getAttribute('href'));
         if (browseUrl) {
-          evt.preventDefault();
-          evt.stopImmediatePropagation();
+          var browseWin = null;
           if (window.QV_openPaperBrowse) {
-            window.QV_openPaperBrowse(browseUrl.href);
+            browseWin = window.QV_openPaperBrowse(browseUrl.href);
           } else {
-            openBrowse(browseUrl.href);
+            browseWin = openBrowse(browseUrl.href);
+          }
+          if (browseWin) {
+            evt.preventDefault();
+            evt.stopImmediatePropagation();
           }
           return;
         }

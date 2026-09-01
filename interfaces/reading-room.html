@@ -415,23 +415,10 @@
         });
     })();
   </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface" defer></script>
   <script src="/interfaces/page-hero-video.js" defer></script>
   <script src="/interfaces/page-soundtrack.js" defer></script>
   <script src="/interfaces/reading-room-autoplay.js" defer></script>
-  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
-  <script>
-    (function () {
-      function revealReadingRoom() {
-        document.documentElement.classList.remove('vbi18n-pending');
-        document.documentElement.classList.add('vbi18n-ready');
-      }
-      var i18n = document.querySelector('script[src*="i18n-auto.js"]');
-      if (i18n) i18n.onerror = revealReadingRoom;
-      window.setTimeout(function () {
-        if (!document.documentElement.classList.contains('vbi18n-ready')) revealReadingRoom();
-      }, 12000);
-    })();
-  </script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
   <script src="/interfaces/site-jukebox.js" defer data-qv-jukebox-boot="1"></script>
 </body>

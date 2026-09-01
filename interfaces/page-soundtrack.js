@@ -39,34 +39,59 @@
   }
 
   function fetchPlaylistFromCatalog(playlistId) {
-    return fetch('/api/catalog', { cache: 'no-store' })
-      .then(function (res) {
-        return res.ok ? res.json() : null;
-      })
-      .then(function (cat) {
-        if (!cat || !cat.playlists || !cat.tracks) return [];
-        var pl = cat.playlists.find(function (p) {
-          return p.id === playlistId;
+    return new Promise(function (resolve) {
+      var settled = false;
+      var timer = window.setTimeout(function () {
+        if (settled) return;
+        settled = true;
+        resolve([]);
+      }, 10000);
+      fetch('/api/catalog', { cache: 'no-store' })
+        .then(function (res) {
+          return res.ok ? res.json() : null;
+        })
+        .then(function (cat) {
+          if (settled) return;
+          if (!cat || !cat.playlists || !cat.tracks) {
+            settled = true;
+            window.clearTimeout(timer);
+            resolve([]);
+            return;
+          }
+          var pl = cat.playlists.find(function (p) {
+            return p.id === playlistId;
+          });
+          if (!pl || !pl.trackIds || !pl.trackIds.length) {
+            settled = true;
+            window.clearTimeout(timer);
+            resolve([]);
+            return;
+          }
+          var tracks = pl.trackIds
+            .map(function (id) {
+              var tr = cat.tracks[id];
+              if (!tr || !tr.src) return null;
+              var label = tr.title || tr.name || 'Track';
+              return {
+                id: id,
+                label: label,
+                short: 'Sound on · ' + label,
+                aria: label,
+                src: tr.src,
+              };
+            })
+            .filter(Boolean);
+          settled = true;
+          window.clearTimeout(timer);
+          resolve(tracks);
+        })
+        .catch(function () {
+          if (settled) return;
+          settled = true;
+          window.clearTimeout(timer);
+          resolve([]);
         });
-        if (!pl || !pl.trackIds || !pl.trackIds.length) return [];
-        return pl.trackIds
-          .map(function (id) {
-            var tr = cat.tracks[id];
-            if (!tr || !tr.src) return null;
-            var label = tr.title || tr.name || 'Track';
-            return {
-              id: id,
-              label: label,
-              short: 'Sound on · ' + label,
-              aria: label,
-              src: tr.src,
-            };
-          })
-          .filter(Boolean);
-      })
-      .catch(function () {
-        return [];
-      });
+    });
   }
 
   function resolvePlaylist(opts) {
@@ -341,7 +366,8 @@
       if (!url) return;
       ev.preventDefault();
       ev.stopImmediatePropagation();
-      openPaperBrowse(url.href);
+      handoffIfPlaying();
+      openBrowsePopup(url.href);
     }
 
     function onPageHide() {

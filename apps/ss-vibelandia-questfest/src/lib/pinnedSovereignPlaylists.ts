@@ -1,5 +1,6 @@
 import type { PlaylistDef, TrackDef } from '@/lib/catalogTypes';
 import { CONCIERTO_PRELUDE_PLAYLIST_ID, CONCIERTO_PRELUDE_TRACK_IDS } from '@/lib/conciertoPreludePlaylist';
+import { READING_ROOM_PLAYLIST_ID, READING_ROOM_PLAYLIST_TRACK_IDS } from '@/lib/readingRoomPlaylist';
 import { RECEPTION_PLAYLIST_ID, RECEPTION_PLAYLIST_TRACK_IDS } from '@/lib/receptionPlaylist';
 import { SIN_CITY_PLAYLIST_ID, SIN_CITY_PLAYLIST_TRACK_IDS } from '@/lib/sinCityPlaylist';
 
@@ -7,6 +8,7 @@ const PINNED_TRACK_IDS: Record<string, readonly string[]> = {
   [CONCIERTO_PRELUDE_PLAYLIST_ID]: CONCIERTO_PRELUDE_TRACK_IDS,
   [RECEPTION_PLAYLIST_ID]: RECEPTION_PLAYLIST_TRACK_IDS,
   [SIN_CITY_PLAYLIST_ID]: SIN_CITY_PLAYLIST_TRACK_IDS,
+  [READING_ROOM_PLAYLIST_ID]: READING_ROOM_PLAYLIST_TRACK_IDS,
 };
 
 /** Restore canonical track order for pinned sovereign playlists after server/local merge. */

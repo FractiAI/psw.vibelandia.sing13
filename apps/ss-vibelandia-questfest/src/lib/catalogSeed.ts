@@ -40,8 +40,12 @@ export function isSinCityPlaylist(id: string): boolean {
   return id === 'pl-sin-city';
 }
 
+export function isReadingRoomPlaylist(id: string): boolean {
+  return id === 'pl-reading-room';
+}
+
 export function isCatalogPinnedPlaylist(id: string): boolean {
-  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id) || isSinCityPlaylist(id);
+  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id) || isSinCityPlaylist(id) || isReadingRoomPlaylist(id);
 }
 
 export const MASTER_PLAYLIST_DEFAULT_NAME = SONIC_CATALOG_DISPLAY_NAME;

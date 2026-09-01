@@ -3,6 +3,7 @@ import {
   isConciertoPreludePlaylist,
   isMasterPlaylist,
   isMyLikesPlaylist,
+  isReadingRoomPlaylist,
   isReceptionPlaylist,
   isSinCityPlaylist,
   MASTER_PLAYLIST_ID,
@@ -26,6 +27,7 @@ export function topLevelUserPlaylists(playlists: PlaylistDef[]): PlaylistDef[] {
       !isConciertoPreludePlaylist(p.id) &&
       !isReceptionPlaylist(p.id) &&
       !isSinCityPlaylist(p.id) &&
+      !isReadingRoomPlaylist(p.id) &&
       !nested.has(p.id),
   );
 }
@@ -82,7 +84,9 @@ export function canNestPlaylist(
     isReceptionPlaylist(parentId) ||
     isReceptionPlaylist(childId) ||
     isSinCityPlaylist(parentId) ||
-    isSinCityPlaylist(childId)
+    isSinCityPlaylist(childId) ||
+    isReadingRoomPlaylist(parentId) ||
+    isReadingRoomPlaylist(childId)
   ) {
     return false;
   }
@@ -129,7 +133,7 @@ export function nestablePlaylistsForParent(
 ): PlaylistDef[] {
   return playlists.filter((p) => {
     if (p.id === parentId) return false;
-    if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id) || isConciertoPreludePlaylist(p.id) || isReceptionPlaylist(p.id) || isSinCityPlaylist(p.id)) {
+    if (isMasterPlaylist(p.id) || isMyLikesPlaylist(p.id) || isConciertoPreludePlaylist(p.id) || isReceptionPlaylist(p.id) || isSinCityPlaylist(p.id) || isReadingRoomPlaylist(p.id)) {
       return false;
     }
     return canNestPlaylist(parentId, p.id, playlists);
@@ -194,6 +198,7 @@ export function isProtectedPlaylist(id: string): boolean {
     isMyLikesPlaylist(id) ||
     isConciertoPreludePlaylist(id) ||
     isReceptionPlaylist(id) ||
-    isSinCityPlaylist(id)
+    isSinCityPlaylist(id) ||
+    isReadingRoomPlaylist(id)
   );
 }

@@ -261,7 +261,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-08-28** · **235** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-01** · **243** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -374,11 +374,12 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/bridge-tower-preview.html`](/interfaces/bridge-tower-preview.html) | Bridge Tower · 8s tease preview |
 | [`/interfaces/bulk-track-upload.html`](/interfaces/bulk-track-upload.html) | Bulk track upload · QUESTFEST |
 | [`/interfaces/bulletin-board.html`](/interfaces/bulletin-board.html) | SS Vibelandia Bulletin Board · QUESTFEST 24×365 |
+| [`/interfaces/canvas-prelude-session.html`](/interfaces/canvas-prelude-session.html) | Concierto Prelude · SS Vibelandia |
 | [`/interfaces/coexist-ai-asi.html`](/interfaces/coexist-ai-asi.html) | Coexisting with AI and Super AI · Which Quadrant Are You? · SS Vibelandia |
 | [`/interfaces/concierto-el-gran-sol-program.html`](/interfaces/concierto-el-gran-sol-program.html) | Concierto de El Gran Sol: “The Shift” · Concert Program · SS Vibelandia |
 | [`/interfaces/creator-studio.html`](/interfaces/creator-studio.html) | Creator Studio · Deck 2 Core · SS Vibelandia |
 | [`/interfaces/digital-pru-awareness-whitepaper.html`](/interfaces/digital-pru-awareness-whitepaper.html) | Redirect · Deep reads · Look under the hood |
-| [`/interfaces/doodles-gallery.html`](/interfaces/doodles-gallery.html) | Doodles Gallery · 18+ · Valet Pru · SS Vibelandia |
+| [`/interfaces/doodles-gallery.html`](/interfaces/doodles-gallery.html) | Valet Pru's Doodles · 18+ · SS Vibelandia |
 | [`/interfaces/etcon-reno-desert.html`](/interfaces/etcon-reno-desert.html) | ETCon: Reno Desert Interdimensional Edition · May 28–31, 2026 · Golden Bachdoor Hit Factory |
 | [`/interfaces/executive-onboarding.html`](/interfaces/executive-onboarding.html) | Executive Onboarding · FractiAI |
 | [`/interfaces/exhibit-amphitheater.html`](/interfaces/exhibit-amphitheater.html) | Goldilocks Amphitheater · Valet Pru |
@@ -388,6 +389,8 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/exhibit-step-in.html`](/interfaces/exhibit-step-in.html) | As a reality I can step into · Valet Pru |
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |
 | [`/interfaces/fractiai.html`](/interfaces/fractiai.html) | FractiAI · music, makers, and the Ark · Machote Moderno |
+| [`/interfaces/front-desk-check-in-program.html`](/interfaces/front-desk-check-in-program.html) | Front Desk Check-In Program · SS Vibelandia |
+| [`/interfaces/front-desk.html`](/interfaces/front-desk.html) | Front Desk · SS Vibelandia check-in |
 | [`/interfaces/frontiersman-voyage-brochure.html`](/interfaces/frontiersman-voyage-brochure.html) | Frontiersman Voyage Brochure · SS Vibelandia |
 | [`/interfaces/get-started.html`](/interfaces/get-started.html) | Welcome aboard · SS Vibelandia · Goldilocks Cruiseship |
 | [`/interfaces/goldilocks-beehive-residency.html`](/interfaces/goldilocks-beehive-residency.html) | Goldilocks Syntheverse Beehive Residency · Machote Moderno members |
@@ -405,7 +408,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/lattice-scraper-telemetry.html`](/interfaces/lattice-scraper-telemetry.html) | Lattice · AI scraper telemetry |
 | [`/interfaces/lattice-token-proof.html`](/interfaces/lattice-token-proof.html) | Lattice · ~35–70% less Cursor usage · FractiAI |
 | [`/interfaces/lattice-v1618.html`](/interfaces/lattice-v1618.html) | Infinite Octaves Omniversal Lattice Chat Agent V1.618 · Next layer after Cursor & Claude Code · FractiAI |
-| [`/interfaces/library.html`](/interfaces/library.html) | Library · Deep Memory · SS Vibelandia |
+| [`/interfaces/lets-chat-intro.html`](/interfaces/lets-chat-intro.html) | Let's Chat · Guest comms · SS Vibelandia |
+| [`/interfaces/lets-chat.html`](/interfaces/lets-chat.html) | Let's Chat · SS Vibelandia |
+| [`/interfaces/library.html`](/interfaces/library.html) | Reading Room · SS Vibelandia |
 | [`/interfaces/listen.html`](/interfaces/listen.html) | Listen · Golden Era Jukebox · SS Vibelandia QUESTFEST |
 | [`/interfaces/look-at-the-sun.html`](/interfaces/look-at-the-sun.html) | Look at the Sun · Omni-Lattice · SS Vibelandia |
 | [`/interfaces/look-under-the-hood-legacy-catalog.html`](/interfaces/look-under-the-hood-legacy-catalog.html) | Redirect · Master canon |
@@ -426,9 +431,12 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/press-releases.html`](/interfaces/press-releases.html) | Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9 |
 | [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Ship Map · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
+| [`/interfaces/reading-room.html`](/interfaces/reading-room.html) | Reading Room · Deep Memory · SS Vibelandia |
 | [`/interfaces/reno-interpretation.html`](/interfaces/reno-interpretation.html) | The Reno Interpretation · Mirror Lattice · FractiAI |
 | [`/interfaces/ship-blog-index.html`](/interfaces/ship-blog-index.html) | Ship blog · All plain-language notes · SS Vibelandia |
+| [`/interfaces/sin-city-night-program.html`](/interfaces/sin-city-night-program.html) | Sin City Night Program · SS Vibelandia |
 | [`/interfaces/sing13-edge-onboarding.html`](/interfaces/sing13-edge-onboarding.html) | Sonic Singularity Sing! 13 · Edge onboarding · plain talk |
+| [`/interfaces/site-gravity-audit-2026-08.html`](/interfaces/site-gravity-audit-2026-08.html) | Site gravity audit · Art vs general website · SS Vibelandia · Aug 2026 |
 | [`/interfaces/ss-vibelandia.html`](/interfaces/ss-vibelandia.html) | SS Vibelandia · The Noah’s Ark of the Intelligence Age |
 | [`/interfaces/synthio-cloud.html`](/interfaces/synthio-cloud.html) | Synthio Cloud · home |
 | [`/interfaces/synthio-dashboard.html`](/interfaces/synthio-dashboard.html) | Synthio · activation · MRI sim match · sandbox |
@@ -437,7 +445,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
 | [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Holographic Goldilocks SuperAI Frontiersmen |
-| [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) | Read · SS Vibelandia |
+| [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) | Reading Room · SS Vibelandia |
 | [`/interfaces/whitepaper-surface.html`](/interfaces/whitepaper-surface.html) | Reader · SS Vibelandia |
 
 ### `commons/` (`/interfaces/commons/`)
@@ -544,7 +552,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/voyage/cabin-st-601-680.html`](/interfaces/voyage/cabin-st-601-680.html) | ST-601–680 · Lattice Studio Staterooms · SS Vibelandia |
 | [`/interfaces/voyage/curated-community.html`](/interfaces/voyage/curated-community.html) | ◉ Curated community · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-2-core.html`](/interfaces/voyage/deck-2-core.html) | Deck 2 — Core · SS Vibelandia Voyage |
-| [`/interfaces/voyage/deck-3-night.html`](/interfaces/voyage/deck-3-night.html) | Deck 3 — Night · SS Vibelandia Voyage |
+| [`/interfaces/voyage/deck-3-night.html`](/interfaces/voyage/deck-3-night.html) | Sin City · Deck 3 — Night · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-4-5-grove.html`](/interfaces/voyage/deck-4-5-grove.html) | Decks 4–5 — Grove · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-6-7-horizon.html`](/interfaces/voyage/deck-6-7-horizon.html) | Decks 6–7 — Horizon · SS Vibelandia Voyage |
 | [`/interfaces/voyage/deck-8-veranda.html`](/interfaces/voyage/deck-8-veranda.html) | Deck 8 — Veranda · SS Vibelandia Voyage |

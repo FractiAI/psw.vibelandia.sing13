@@ -4,6 +4,7 @@ import {
   getPlaylistProgramMeta,
 } from '../../lib/playlist-program-routes.mjs';
 import { RECEPTION_PLAYLIST_ID } from '../../lib/reception-playlist.mjs';
+import { READING_ROOM_PLAYLIST_ID } from '../../lib/reading-room-playlist.mjs';
 import { SIN_CITY_PLAYLIST_ID } from '../../lib/sin-city-playlist.mjs';
 
 describe('Playlist program routes · sovereign soundtrack map', () => {
@@ -14,13 +15,14 @@ describe('Playlist program routes · sovereign soundtrack map', () => {
     expect(meta?.label).toBe('Check-in program');
   });
 
-  it('maps pl-sin-city and pl-concierto-prelude', () => {
+  it('maps pl-sin-city, pl-concierto-prelude, and pl-reading-room', () => {
     expect(getPlaylistProgramMeta(SIN_CITY_PLAYLIST_ID)?.route).toBe('/sin-city-program');
     expect(getPlaylistProgramMeta('pl-concierto-prelude')?.route).toBe('/concierto-program');
+    expect(getPlaylistProgramMeta(READING_ROOM_PLAYLIST_ID)?.route).toBe('/reading-room-program');
   });
 
   it('returns null for playlists without programs', () => {
     expect(getPlaylistProgramMeta('pl-main')).toBeNull();
-    expect(Object.keys(PLAYLIST_PROGRAM_ROUTES)).toHaveLength(3);
+    expect(Object.keys(PLAYLIST_PROGRAM_ROUTES)).toHaveLength(4);
   });
 });

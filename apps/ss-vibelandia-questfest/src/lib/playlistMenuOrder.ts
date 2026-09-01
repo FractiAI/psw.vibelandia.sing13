@@ -3,17 +3,19 @@ import {
   isConciertoPreludePlaylist,
   isMasterPlaylist,
   isMyLikesPlaylist,
+  isReadingRoomPlaylist,
   isReceptionPlaylist,
   isSinCityPlaylist,
   MASTER_PLAYLIST_ID,
   MY_LIKES_PLAYLIST_ID,
 } from '@/lib/catalogSeed';
 import { CONCIERTO_PRELUDE_PLAYLIST_ID } from '@/lib/conciertoPreludePlaylist';
+import { READING_ROOM_PLAYLIST_ID } from '@/lib/readingRoomPlaylist';
 import { RECEPTION_PLAYLIST_ID } from '@/lib/receptionPlaylist';
 import { SIN_CITY_PLAYLIST_ID } from '@/lib/sinCityPlaylist';
 
 export function isMenuPinnedPlaylist(id: string): boolean {
-  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id) || isSinCityPlaylist(id);
+  return isMasterPlaylist(id) || isMyLikesPlaylist(id) || isConciertoPreludePlaylist(id) || isReceptionPlaylist(id) || isSinCityPlaylist(id) || isReadingRoomPlaylist(id);
 }
 
 export function manageableMenuPlaylists(playlists: PlaylistDef[]): PlaylistDef[] {
@@ -51,11 +53,13 @@ export function applyPlaylistMenuOrder(
   const prelude = playlists.find((p) => p.id === CONCIERTO_PRELUDE_PLAYLIST_ID);
   const reception = playlists.find((p) => p.id === RECEPTION_PLAYLIST_ID);
   const sinCity = playlists.find((p) => p.id === SIN_CITY_PLAYLIST_ID);
+  const readingRoom = playlists.find((p) => p.id === READING_ROOM_PLAYLIST_ID);
   if (master) pinned.push(master);
   if (likes) pinned.push(likes);
   if (prelude) pinned.push(prelude);
   if (reception) pinned.push(reception);
   if (sinCity) pinned.push(sinCity);
+  if (readingRoom) pinned.push(readingRoom);
 
   const manageable = manageableMenuPlaylists(playlists);
   const byId = new Map(manageable.map((p) => [p.id, p]));

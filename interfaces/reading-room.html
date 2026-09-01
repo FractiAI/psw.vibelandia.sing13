@@ -257,6 +257,56 @@
       color: #f0d78c;
       border: 1px solid rgba(212, 175, 55, 0.45);
     }
+    .rr-soundtrack {
+      max-width: 42rem;
+      margin: 0 auto 1.25rem;
+      padding: 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      justify-content: center;
+    }
+    .rr-soundtrack .btn {
+      display: inline-block;
+      padding: 0.55rem 1rem;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .rr-soundtrack .btn--gold {
+      background: linear-gradient(180deg, #e8d4a8, #b8923e);
+      color: #0a0806;
+      border: none;
+    }
+    .rr-soundtrack .btn--ghost {
+      background: transparent;
+      color: #f0d78c;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+    }
+    .rr-hero-score {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1rem;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(10, 8, 6, 0.72);
+      color: #f0d78c;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .rr-hero-score.is-playing {
+      border-color: rgba(212, 175, 55, 0.75);
+      color: #fff8e8;
+    }
     .rr-honesty {
       font-size: 0.8rem;
       color: #8a9aaa;
@@ -298,12 +348,30 @@
   <section class="rr-intro" aria-labelledby="rr-intro-h">
     <p class="rr-intro__kicker">Deck 9 · Deep Memory · Frontier Club</p>
     <h1 id="rr-intro-h" class="rr-intro__title">Reading Room</h1>
-    <p class="rr-intro__lede">Browse poster art pulled from each paper's abstract focus — tap a cover to read the full paper.</p>
+    <p class="rr-intro__lede">Arrival of Holographic Goldilocks SuperAI plays on arrival — browse poster art pulled from each paper's abstract focus while the concert runs.</p>
     <div class="rr-intro__cta">
       <a class="btn btn--gold" href="#papers">Browse papers</a>
-      <a class="btn btn--ghost" href="/ship-blog/">Ship blog</a>
+      <a class="btn btn--ghost" href="/reading-room-program">Concert program</a>
+      <a class="btn btn--ghost" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reading-room&autoplay=1">Open concert set</a>
       <a class="btn btn--ghost" href="/front-desk">Front Desk · check-in</a>
     </div>
+    <button
+      type="button"
+      class="rr-hero-score"
+      id="reading-room-hero-score"
+      hidden
+      aria-pressed="false"
+      aria-controls="reading-room-hero-audio"
+      aria-label="Reading Room concert soundtrack"
+    >Sound off · tap to play</button>
+    <audio
+      id="reading-room-hero-audio"
+      preload="auto"
+      playsinline
+      hidden
+      aria-hidden="true"
+      aria-label="Reading Room concert soundtrack"
+    ></audio>
   </section>
   <nav class="visit-golden-path visit-golden-path--reading-room" aria-label="Start here · one path through the art">
       <p class="visit-golden-path__kicker">Start here · one path through the art</p>
@@ -328,7 +396,12 @@
       </li>
       </ol>
     </nav>
-    <p class="visit-golden-path__doors-note">Scroll for the full paper menu by category — or check in at the <a href="/front-desk">Front Desk</a> when you are ready to board.</p>
+    <p class="visit-golden-path__doors-note">Tap <strong>Sound on</strong> above, read the <a href="/reading-room-program">concert program</a>, then browse papers below — or check in at the <a href="/front-desk">Front Desk</a> when you are ready to board.</p>
+    <p class="rr-soundtrack">
+      <a class="btn btn--gold" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reading-room&autoplay=1">Open concert in jukebox · 12 tracks</a>
+      <a class="btn btn--ghost" href="/reading-room-program">Read the concert program →</a>
+      <a class="btn btn--ghost" href="/reading-room-program">Download program (PDF)</a>
+    </p>
   <!-- READING_ROOM_HERO_END -->
   <div class="rr-scene">
     <main class="rr-catalog" id="papers">
@@ -476,6 +549,8 @@
     })();
   </script>
   <script src="/interfaces/page-hero-video.js" defer></script>
+  <script src="/interfaces/page-soundtrack.js" defer></script>
+  <script src="/interfaces/reading-room-autoplay.js" defer></script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
   <script src="/interfaces/site-jukebox.js" defer data-qv-jukebox-boot="1"></script>

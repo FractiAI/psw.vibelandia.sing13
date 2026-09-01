@@ -1,4 +1,5 @@
 import { CONCIERTO_PRELUDE_PLAYLIST_ID } from '@/lib/conciertoPreludePlaylist';
+import { READING_ROOM_PLAYLIST_ID } from '@/lib/readingRoomPlaylist';
 import { RECEPTION_PLAYLIST_ID } from '@/lib/receptionPlaylist';
 import { SIN_CITY_PLAYLIST_ID } from '@/lib/sinCityPlaylist';
 
@@ -31,6 +32,13 @@ export const PLAYLIST_PROGRAM_ROUTES: Record<string, PlaylistProgramMeta> = {
     readLabel: 'Read the night program →',
     downloadLabel: 'Download program (PDF)',
     note: 'Deck 3 Night program — Sin City originals only.',
+  },
+  [READING_ROOM_PLAYLIST_ID]: {
+    route: '/reading-room-program',
+    label: 'Concert program',
+    readLabel: 'Read the concert program →',
+    downloadLabel: 'Download program (PDF)',
+    note: 'Reading Room concert program — Arrival of Holographic Goldilocks SuperAI.',
   },
 };
 

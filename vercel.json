@@ -1253,6 +1253,14 @@
       "destination": "/interfaces/sin-city-night-program.html"
     },
     {
+      "source": "/reading-room-program",
+      "destination": "/interfaces/reading-room-concert-program.html"
+    },
+    {
+      "source": "/reading-room-program/",
+      "destination": "/interfaces/reading-room-concert-program.html"
+    },
+    {
       "source": "/concierto-program",
       "destination": "/interfaces/concierto-el-gran-sol-program.html"
     },

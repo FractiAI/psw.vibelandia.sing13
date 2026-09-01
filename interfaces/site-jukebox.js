@@ -91,15 +91,11 @@
       }
       return win;
     }
-    if (window.QV_isPageSoundtrackPlaying && window.QV_isPageSoundtrackPlaying()) {
-      try {
-        return window.open(url, '_blank', 'noopener,noreferrer');
-      } catch (e3) {
-        return null;
-      }
+    try {
+      return window.open(url, '_blank', 'noopener,noreferrer');
+    } catch (e3) {
+      return null;
     }
-    window.location.href = url;
-    return null;
   }
 
   function focusJukeboxOrGo(evt) {

@@ -137,9 +137,30 @@
     return true;
   }
 
+  function isReadingRoomPage() {
+    var path = window.location.pathname || '';
+    return (
+      path === '/reading-room' ||
+      path === '/reading-room/' ||
+      path.slice(-'reading-room.html'.length) === 'reading-room.html'
+    );
+  }
+
+  function isBrowsePaperLink(anchor) {
+    return anchor && anchor.hasAttribute('data-qv-browse');
+  }
+
   function openBrowsePopup(url) {
     if (window.QV_openBrowse) {
-      return window.QV_openBrowse(url);
+      var viaJukebox = window.QV_openBrowse(url);
+      if (viaJukebox) return viaJukebox;
+      try {
+        return window.open(url, BROWSE_NAME, BROWSE_FEATURES);
+      } catch (_) {}
+      try {
+        return window.open(url, '_blank', 'noopener,noreferrer');
+      } catch (_) {}
+      return null;
     }
     try {
       var win = window.open(url, BROWSE_NAME, BROWSE_FEATURES);
@@ -225,13 +246,13 @@
     }
 
     function onNavigateClick(ev) {
-      if (!isSoundtrackPlaying()) return;
       if (ev.defaultPrevented || isModifiedClick(ev)) return;
       var t = ev.target;
       if (!t || !t.closest) return;
 
       var jukeboxHit = t.closest('[data-qv-jukebox], .qv-open-jukebox');
       if (jukeboxHit) {
+        if (!isSoundtrackPlaying()) return;
         ev.preventDefault();
         ev.stopImmediatePropagation();
         var jukeboxUrl = window.QV_JUKEBOX_URL || '/interfaces/questfest-bridge/#/listen';
@@ -240,7 +261,10 @@
       }
 
       var anchor = t.closest('a[href]');
-      if (!anchor || !leavesSoundtrackPage(anchor)) return;
+      if (!anchor) return;
+      var forceBrowse = isBrowsePaperLink(anchor);
+      if (!forceBrowse && !isSoundtrackPlaying()) return;
+      if (!leavesSoundtrackPage(anchor)) return;
       var url = resolveUrl(anchor.getAttribute('href'));
       if (!url) return;
       ev.preventDefault();

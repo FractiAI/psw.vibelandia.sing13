@@ -18,6 +18,8 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('stopImmediatePropagation');
     expect(js).toContain('data-qv-jukebox');
     expect(js).toContain('QV_isPageSoundtrackPlaying');
+    expect(js).toContain('data-qv-browse');
+    expect(js).toContain('isBrowsePaperLink');
     expect(js).toContain('QV_openBrowse');
   });
 
@@ -33,7 +35,7 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
   it('site jukebox keeps soundtrack page when browse popup is blocked', () => {
     const js = read('interfaces/site-jukebox.js');
     expect(js).toContain('QV_isPageSoundtrackPlaying');
-    expect(js).toContain("window.open(url, '_blank'");
+    expect(js).not.toContain('window.location.href = url');
   });
 
   it('pauses other media and broadcasts stop before starting page soundtrack', () => {
@@ -51,6 +53,7 @@ describe('Reading Room · Canvas-style hero video', () => {
     const page = read('interfaces/reading-room.html');
     expect(hero).toContain("modifier: 'reading-room'");
     expect(hero).toContain('youtubeId: READING_ROOM_VIDEO_ID');
+    expect(page).toContain('data-qv-browse="1"');
     expect(page).toContain('ep-hero--reading-room');
     expect(page).toContain('ep-hero__video-embed');
     expect(page).toContain('data-youtube-id="VXZL77ub8DY"');

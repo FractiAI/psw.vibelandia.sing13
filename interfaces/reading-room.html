@@ -340,7 +340,7 @@
           imgAttrs += ' data-fallback="' + esc(fallback) + '" onerror="if(this.dataset.fallback&&!this.dataset.retried){this.dataset.retried=1;this.src=this.dataset.fallback}"';
         }
         return (
-          '<a class="rr-card" href="' + esc(href) + '">' +
+          '<a class="rr-card" href="' + esc(href) + '" data-qv-browse="1" rel="noopener">' +
             '<div class="rr-card__poster">' +
               '<img ' + imgAttrs + ' />' +
               '<div class="rr-card__shade">' +

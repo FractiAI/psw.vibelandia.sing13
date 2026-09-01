@@ -7,6 +7,7 @@ import {
   renderVisitGoldenPathHtml,
   VISIT_GOLDEN_PATH_KICKER,
 } from '../../lib/visit-golden-path.mjs';
+import { PROGRAM_CTA_LABEL } from '../../lib/program-cta.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
@@ -45,6 +46,7 @@ describe('Visit golden path · Canvas → Program → Check In', () => {
   it('front-desk hero CTAs favor check-in program and playlist', () => {
     const html = renderVisitGoldenPathHeroCtasHtml('front-desk');
     expect(html).toContain('/front-desk-program');
+    expect(html).toContain(PROGRAM_CTA_LABEL);
     expect(html).toContain('playlist=pl-reception');
     expect(html).toContain('/creator-studio');
   });
@@ -53,9 +55,11 @@ describe('Visit golden path · Canvas → Program → Check In', () => {
     const canvas = renderVisitGoldenPathHeroCtasHtml('canvas');
     const ship = renderVisitGoldenPathHeroCtasHtml('ship');
     expect(canvas).toContain('/concierto-program');
+    expect(canvas).toContain(PROGRAM_CTA_LABEL);
     expect(canvas).toContain('/front-desk');
     expect(canvas).toContain('Check In');
     expect(ship).toContain('/concierto-program');
+    expect(ship).toContain(PROGRAM_CTA_LABEL);
     expect(ship).toContain('/front-desk');
     expect(ship).toContain('Check In');
     expect(ship).toContain('href="/journey"');
@@ -67,10 +71,10 @@ describe('Visit golden path · Canvas → Program → Check In', () => {
     const frontDesk = read('interfaces/front-desk.html');
     expect(canvas).not.toContain('visit-golden-path');
     expect(canvas).not.toContain('VISIT_GOLDEN_PATH_START');
-    expect(canvas).toContain('Concert program');
+    expect(canvas).toContain(PROGRAM_CTA_LABEL);
     expect(ship).toContain('visit-golden-path');
     expect(ship).toContain('VISIT_GOLDEN_PATH_START');
-    expect(ship).toContain('Concert program');
+    expect(ship).toContain(PROGRAM_CTA_LABEL);
     expect(ship).toContain('Your cruise line · five doors');
     expect(frontDesk).not.toContain('visit-golden-path--front-desk');
     expect(frontDesk).not.toContain('Download program (PDF)');
@@ -86,7 +90,7 @@ describe('Visit golden path · Canvas → Program → Check In', () => {
     expect(readingRoom).toContain('Browse papers');
     expect(readingRoom).not.toContain('Open concert in jukebox');
     expect(readingRoom).not.toContain('Download program (PDF)');
-    expect(readingRoom).toContain('Concert program');
+    expect(readingRoom).toContain(PROGRAM_CTA_LABEL);
     expect(readingRoom).toContain('id="papers"');
   });
 

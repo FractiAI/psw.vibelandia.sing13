@@ -9,6 +9,7 @@ import {
   renderReadingRoomProgramPageHtml,
 } from '../../lib/reading-room-program.mjs';
 import { READING_ROOM_PLAYLIST_TRACK_IDS } from '../../lib/reading-room-playlist.mjs';
+import { PROGRAM_CTA_LABEL } from '../../lib/program-cta.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
 
@@ -49,6 +50,6 @@ describe('Reading Room · concert program', () => {
   it('Reading Room page links to concert program', () => {
     const page = read('interfaces/reading-room.html');
     expect(page).toContain('/reading-room-program');
-    expect(page).toContain('Concert program');
+    expect(page).toContain(PROGRAM_CTA_LABEL);
   });
 });

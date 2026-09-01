@@ -44,8 +44,9 @@ describe('Concert program music promo', () => {
     });
   }
 
-  it('art landing drops Phase 2 reception and exhibit hero CTAs', () => {
+  it('art landing uses concert program CTA copy and drops reception/exhibit hero CTAs', () => {
     const html = read('interfaces/omniverse-canvas.html');
+    expect(html).toContain('Liking the music? See Concert Program');
     expect(html).toContain('/concierto-program');
     expect(html).not.toContain('Phase 2 · Reception');
     expect(html).not.toContain('Explore the exhibit');

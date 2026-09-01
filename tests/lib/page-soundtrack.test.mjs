@@ -43,6 +43,16 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).not.toContain('window.location.href = url');
   });
 
+  it('opens concert program in browse popup so soundtrack keeps playing', () => {
+    const js = read('interfaces/page-soundtrack.js');
+    expect(js).toContain('isProgramPageUrl');
+    expect(js).toContain('QV_isProgramPageUrl');
+    expect(js).toContain('if (isProgramPageUrl(url))');
+    expect(js).toContain('openBrowsePopup(url.href)');
+    const doorsBlock = js.slice(js.indexOf('var doors = ['), js.indexOf('];', js.indexOf('var doors = [')) + 2);
+    expect(doorsBlock).not.toContain("'/concierto-program'");
+  });
+
   it('primary ship doors navigate in-tab even when soundtrack is playing', () => {
     const soundtrack = read('interfaces/page-soundtrack.js');
     const jukebox = read('interfaces/site-jukebox.js');

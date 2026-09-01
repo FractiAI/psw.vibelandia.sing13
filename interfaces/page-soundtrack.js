@@ -205,6 +205,7 @@
   function isPrimaryShipDoor(url) {
     if (!url) return false;
     if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+    if (isProgramPageUrl(url)) return false;
     var path = normalizeDoorPath(url.pathname).toLowerCase();
     if (path === '/') return true;
     var doors = [
@@ -222,7 +223,6 @@
       '/frontiersman-voyage',
       '/lets-chat',
       '/lattice-chat',
-      '/concierto-program',
       '/core',
       '/amphitheater',
       '/horizon',
@@ -244,7 +244,30 @@
     return false;
   }
 
+  /** Concert program pages — browse in popup so soundtrack keeps playing. */
+  function isProgramPageUrl(url) {
+    if (!url) return false;
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+    var path = normalizeDoorPath(url.pathname).toLowerCase();
+    var programs = [
+      '/concierto-program',
+      '/reading-room-program',
+      '/front-desk-program',
+      '/sin-city-program',
+    ];
+    for (var i = 0; i < programs.length; i++) {
+      var route = programs[i];
+      if (path === route || path.indexOf(route + '/') === 0) return true;
+    }
+    if (path.indexOf('concierto-el-gran-sol-program') !== -1) return true;
+    if (path.indexOf('reading-room-concert-program') !== -1) return true;
+    if (path.indexOf('front-desk-check-in-program') !== -1) return true;
+    if (path.indexOf('sin-city-night-program') !== -1) return true;
+    return false;
+  }
+
   window.QV_isPrimaryShipDoor = isPrimaryShipDoor;
+  window.QV_isProgramPageUrl = isProgramPageUrl;
 
   function leavesSoundtrackPage(anchor) {
     var href = anchor.getAttribute('href');
@@ -488,6 +511,13 @@
       if (!leavesSoundtrackPage(anchor)) return;
       var url = resolveUrl(anchor.getAttribute('href'));
       if (!url) return;
+      if (isProgramPageUrl(url)) {
+        ev.preventDefault();
+        ev.stopImmediatePropagation();
+        handoffIfPlaying();
+        openBrowsePopup(url.href);
+        return;
+      }
       if (isPrimaryShipDoor(url)) {
         pauseLocalSessionQuiet(session);
         return;

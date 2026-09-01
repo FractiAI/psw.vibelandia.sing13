@@ -7,7 +7,10 @@
 
   var CHANNEL_NAME = 'qv-page-soundtrack';
   var POPUP_NAME = 'qv-soundtrack-session';
+  var BROWSE_NAME = 'qv-site-browse';
   var DEFAULT_SESSION_PATH = '/prelude-session';
+  var BROWSE_FEATURES =
+    'popup=yes,width=1100,height=900,menubar=no,toolbar=yes,location=yes,status=yes,resizable=yes,scrollbars=yes';
   var activePageId = null;
   var channel = null;
 
@@ -84,6 +87,74 @@
     } catch (_) {}
   }
 
+  function pauseOtherMedia(keepAudio) {
+    try {
+      document.querySelectorAll('audio, video').forEach(function (el) {
+        if (el === keepAudio) return;
+        try {
+          el.pause();
+        } catch (_) {}
+      });
+    } catch (_) {}
+  }
+
+  function isModifiedClick(evt) {
+    return (
+      evt.button !== 0 ||
+      evt.metaKey ||
+      evt.ctrlKey ||
+      evt.shiftKey ||
+      evt.altKey
+    );
+  }
+
+  function resolveUrl(href) {
+    try {
+      return new URL(href, window.location.href);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function leavesSoundtrackPage(anchor) {
+    var href = anchor.getAttribute('href');
+    if (!href || href.charAt(0) === '#') return false;
+    if (/^(mailto:|tel:|javascript:)/i.test(href)) return false;
+    if (anchor.hasAttribute('download')) return false;
+
+    var target = (anchor.getAttribute('target') || '').toLowerCase();
+    if (target && target !== '_self') return false;
+
+    var url = resolveUrl(href);
+    if (!url) return false;
+    if (
+      url.origin === window.location.origin &&
+      url.pathname === window.location.pathname &&
+      url.search === window.location.search &&
+      url.hash !== window.location.hash
+    ) {
+      return false;
+    }
+    return true;
+  }
+
+  function openBrowsePopup(url) {
+    if (window.QV_openBrowse) {
+      return window.QV_openBrowse(url);
+    }
+    try {
+      var win = window.open(url, BROWSE_NAME, BROWSE_FEATURES);
+      if (win) {
+        try {
+          win.focus();
+        } catch (_) {}
+        return win;
+      }
+    } catch (_) {}
+    window.open(url, '_blank', 'noopener,noreferrer');
+    return null;
+  }
+
   function openHandoffPopup(opts, index) {
     var sessionPath = opts.sessionPath || DEFAULT_SESSION_PATH;
     var q = new URLSearchParams();
@@ -116,6 +187,33 @@
       (opts.playlistId || 'static') + ':' + (opts.btnId || opts.audioId || 'default');
     var btn = opts.btnId ? document.getElementById(opts.btnId) : null;
     var label = opts.label || 'Soundtrack';
+    var audioRef = null;
+    var soundtrackPlaying = false;
+
+    function isSoundtrackPlaying() {
+      return (
+        soundtrackPlaying &&
+        audioRef &&
+        !audioRef.paused &&
+        !audioRef.ended
+      );
+    }
+
+    function onNavigateClick(ev) {
+      if (!isSoundtrackPlaying()) return;
+      if (ev.defaultPrevented || isModifiedClick(ev)) return;
+      var t = ev.target;
+      if (!t || !t.closest) return;
+      var anchor = t.closest('a[href]');
+      if (!anchor || !leavesSoundtrackPage(anchor)) return;
+      var url = resolveUrl(anchor.getAttribute('href'));
+      if (!url) return;
+      ev.preventDefault();
+      ev.stopPropagation();
+      openBrowsePopup(url.href);
+    }
+
+    document.addEventListener('click', onNavigateClick, true);
 
     resolvePlaylist(opts).then(function (playlist) {
       if (!playlist.length) return;
@@ -139,6 +237,7 @@
           return el;
         })();
 
+      audioRef = audio;
       audio.loop = false;
       audio.preload = 'auto';
 
@@ -147,6 +246,7 @@
       }
 
       function setToggleState(playing) {
+        soundtrackPlaying = playing;
         if (!btn) return;
         var track = current();
         btn.hidden = false;
@@ -169,6 +269,7 @@
       }
 
       function markPlaying() {
+        pauseOtherMedia(audio);
         var track = current();
         setToggleState(true);
         if (!logged[track.id]) {
@@ -197,6 +298,8 @@
       }
 
       function tryPlay() {
+        pauseOtherMedia(audio);
+        broadcast({ type: 'stop', pageId: pageId, playlistId: opts.playlistId || null });
         var p = audio.play();
         if (p && typeof p.then === 'function') {
           return p
@@ -215,6 +318,7 @@
 
       function stopLocal() {
         localActive = false;
+        soundtrackPlaying = false;
         audio.pause();
         audio.removeAttribute('src');
         audio.load();
@@ -262,6 +366,7 @@
         channel.addEventListener('message', onChannelMessage);
       }
 
+      pauseOtherMedia(audio);
       broadcast({ type: 'stop', pageId: pageId, playlistId: opts.playlistId || null });
       activePageId = pageId;
       localActive = true;

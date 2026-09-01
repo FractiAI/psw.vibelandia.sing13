@@ -52,9 +52,9 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
   it('Front Desk lobby includes mode choice and ship tour menu', () => {
     expect(FRONT_DESK_SHIP_MENU.length).toBeGreaterThanOrEqual(8);
     const html = renderFrontDeskLobbyHtml();
-    expect(html).toContain('Front Desk · check-in');
-    expect(html).toContain('reception-checkin-lobby.jpg');
-    expect(html).toContain('varied old-school frontier outfits');
+    expect(html).toContain('id="front-desk-h"');
+    expect(html).not.toContain('reception-lobby__art');
+    expect(html).not.toContain('visit-golden-path--front-desk');
     expect(html).not.toContain('front-desk-hero-audio');
     expect(html).not.toContain('front-desk-hero-score');
     expect(html).toContain('Check-in program');
@@ -62,7 +62,6 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('17 tracks');
     expect(html).toContain('/front-desk-program');
     expect(html).toContain('Read the check-in program');
-    expect(html).toContain('visit-golden-path--front-desk');
     expect(html).toContain('hydrogen y line frontier accordion');
     expect(html).toContain('btn btn-gold');
     expect(html).toContain('Check-in program</a>');
@@ -164,6 +163,9 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(frontDesk).toContain('id="front-desk"');
     expect(frontDesk).toContain('reception-mode');
     expect(frontDesk).toContain('xp-npc-player');
+    expect(frontDesk).toContain('ep-hero--front-desk');
+    expect(frontDesk).toContain('reception-checkin-lobby.jpg');
+    expect(frontDesk).toContain('visit-golden-path--front-desk');
 
     expect(studio).toContain('creator-phase');
     expect(studio).toContain('holographic magnetic Goldilocks SuperAI canvas');

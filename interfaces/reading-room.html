@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/experience-page-hero.css" />
+  <link rel="stylesheet" href="/interfaces/experience-phases.css" />
   <style>
     html.vbi18n-pending body { visibility: hidden; }
     html.vbi18n-ready body { visibility: visible; }
@@ -33,16 +35,13 @@
       line-height: 1.6;
     }
     .rr-scene {
-      min-height: 100vh;
+      min-height: auto;
       background:
         linear-gradient(180deg, rgba(18, 10, 6, 0.55) 0%, rgba(18, 10, 6, 0.82) 38%, rgba(12, 8, 5, 0.94) 100%),
         url('/interfaces/assets/experience/ship-library-deep-memory.jpg') center center / cover no-repeat fixed;
     }
     .rr-hero {
-      padding: 1.5rem 1.35rem 2rem;
-      max-width: 48rem;
-      margin: 0 auto;
-      text-align: center;
+      display: none;
     }
     .rr-kicker {
       letter-spacing: 0.18em;
@@ -210,17 +209,59 @@
   </style>
 </head>
 <body class="voyage-flagship">
+  <!-- READING_ROOM_HERO_BEGIN -->
+  <header class="ep-hero ep-hero--reading-room" aria-label="Reading Room opening">
+    <div class="ep-hero__plane" role="img" aria-label="Safari club reading room — books, trophies, and keepsakes from past adventures" style="background-image:url('/interfaces/assets/experience/ship-library-deep-memory.jpg')"></div>
+    <div class="ep-hero__video" aria-hidden="true">
+        <iframe
+          class="ep-hero__video-embed ep-hero__video-embed--loading"
+          data-youtube-id="VXZL77ub8DY"
+          title="Reading Room prelude video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    <div class="ep-hero__veil" aria-hidden="true"></div>
+    <div class="ep-hero__copy">
+      <p class="ep-hero__brand">Deck 9 · Deep Memory · Safari Club</p>
+      <p class="ep-hero__brand-note">Sit in the man cave. Books, trophies, exotic keepsakes, and sacred objects from past adventures — <strong>old-school safari club class</strong>, fit for Roosevelt or von Humboldt.</p>
+      <h1 class="ep-hero__title">Reading Room</h1>
+      <p class="ep-hero__lede">Read the map under the music. Full paper abstracts, honesty rails, and ship-blog notes — no heavy catalog chrome.</p>
+      <div class="ep-hero__cta"><a class="btn btn--gold" href="#papers">Browse papers</a>
+        <a class="btn btn--gold" href="/ship-blog/">Ship blog</a>
+        <a class="btn btn--ghost" href="/front-desk">Front Desk · check-in</a></div>
+      
+    </div>
+  </header>
+  <nav class="visit-golden-path visit-golden-path--reading-room" aria-label="Start here · one path through the art">
+      <p class="visit-golden-path__kicker">Start here · one path through the art</p>
+      <ol class="visit-golden-path__list">
+      <li class="visit-golden-path__step visit-golden-path__step--here">
+        <a href="/reading-room" aria-current="step">
+          <span class="visit-golden-path__num">1</span>
+          <span class="visit-golden-path__label">Reading Room</span>
+        </a>
+      </li>
+      <li class="visit-golden-path__step visit-golden-path__step--primary">
+        <a href="/reading-room#papers">
+          <span class="visit-golden-path__num">2</span>
+          <span class="visit-golden-path__label">Browse papers</span>
+        </a>
+      </li>
+      <li class="visit-golden-path__step">
+        <a href="/front-desk">
+          <span class="visit-golden-path__num">3</span>
+          <span class="visit-golden-path__label">Front Desk</span>
+        </a>
+      </li>
+      </ol>
+    </nav>
+    <p class="visit-golden-path__doors-note">Scroll for the full paper menu by category — or check in at the <a href="/front-desk">Front Desk</a> when you are ready to board.</p>
+    <p class="visit-golden-path__doors-note">Scroll for the full paper menu by category — or check in at the <a href="/front-desk">Front Desk</a> when you are ready to board.</p>
+  <!-- READING_ROOM_HERO_END -->
   <div class="rr-scene">
-    <header class="rr-hero">
-      <p class="rr-kicker">Deck 9 · Deep Memory · Safari Club</p>
-      <h1>Reading Room</h1>
-      <p class="rr-lead">
-        Sit in the man cave — books, trophies, exotic and rare objects, sacred keepsakes from past adventures.
-        <em>Old-school safari club class</em>, fit for Roosevelt or von Humboldt. Read the map under the music.
-      </p>
-    </header>
-
-    <main class="rr-panel">
+    <main class="rr-panel" id="papers">
       <div class="rr-search-wrap">
         <input class="rr-search" id="rr-search" type="search" placeholder="Search papers…" autocomplete="off" aria-label="Search reading room" />
       </div>
@@ -361,6 +402,7 @@
         });
     })();
   </script>
+  <script src="/interfaces/page-hero-video.js" defer></script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
   <script src="/interfaces/site-jukebox.js" defer data-qv-jukebox-boot="1"></script>

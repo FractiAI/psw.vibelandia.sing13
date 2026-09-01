@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/voyage-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/experience-phases.css" />
+  <link rel="stylesheet" href="/interfaces/experience-page-hero.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -38,49 +39,72 @@
     .front-desk-page .xp-rail {
       margin-top: 0;
     }
+    .reception-lobby__lede--compact {
+      margin: 0 0 1rem;
+      color: rgba(245, 240, 232, 0.82);
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
   </style>
 </head>
 <body>
-  <nav class="qv-top-quicklinks qv-top-quicklinks--questfest" aria-label="Site">
-    <div class="qv-top-quicklinks__row">
-      <a href="/questfest">SS VIBELANDIA</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <span class="qv-top-quicklinks__here">Front Desk</span>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="/journey">Journey</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="/">Canvas</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="/jukebox" data-qv-jukebox>Jukebox</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="/reading-room">Reading Room</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="/front-desk-program">Check-in program</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <a href="/lattice-chat">Lattice Chat</a>
-      <span class="sep" aria-hidden="true">·</span>
-      <button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>
-    </div>
-    <div class="qv-top-quicklinks__sound" id="front-desk-sound-bar">
+  <!-- FRONT_DESK_HERO_BEGIN -->
+  <header class="ep-hero ep-hero--front-desk" aria-label="Front Desk · check-in opening">
+    <div class="ep-hero__plane" role="img" aria-label="Male frontiersmen friends in varied old-school frontier outfits checking in at the gold and navy Front Desk" style="background-image:url('/interfaces/assets/experience/reception-checkin-lobby.jpg')"></div>
+    
+    <div class="ep-hero__veil" aria-hidden="true"></div>
+    <div class="ep-hero__copy">
+      <p class="ep-hero__brand">Front Desk · SS VIBELANDIA GOLDILOCKS SONIC SHIP</p>
+      <p class="ep-hero__brand-note">Tap <strong>Sound on</strong> — the check-in soundtrack starts on arrival. Primer and onboarding for those boarding the holographic cruise.</p>
+      <h1 class="ep-hero__title">Front Desk · check-in</h1>
+      <p class="ep-hero__lede">Welcome aboard. Valet Pru keeps the gangway. Read the check-in program for track-by-track dramaturgy, then tour the ship below.</p>
+      <div class="ep-hero__cta"><a class="btn btn--gold" href="/front-desk-program">Check-in program</a>
+        <a class="btn btn--gold" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reception&autoplay=1">Open check-in set</a>
+        <a class="btn btn--ghost" href="/questfest">SS Vibelandia ship board</a></div>
       <button
-        type="button"
-        class="qv-top-quicklinks__score reception-hero__score"
-        id="front-desk-hero-score"
-        hidden
-        aria-pressed="false"
-        aria-controls="front-desk-hero-audio"
-        aria-label="Play Front Desk soundtrack"
-      >Sound off · tap to play</button>
-      <audio
-        id="front-desk-hero-audio"
-        preload="auto"
-        playsinline
-        hidden
-        aria-hidden="true"
-        aria-label="Front Desk check-in soundtrack"
-      ></audio>
+          type="button"
+          class="ep-hero__score"
+          id="front-desk-hero-score"
+          hidden
+          aria-pressed="false"
+          aria-controls="front-desk-hero-audio"
+          aria-label="Front Desk check-in soundtrack"
+        >Sound off · tap to play</button>
+        <audio
+          id="front-desk-hero-audio"
+          preload="auto"
+          playsinline
+          hidden
+          aria-hidden="true"
+          aria-label="Front Desk check-in soundtrack"
+        ></audio>
     </div>
-  </nav>
+  </header>
+  <nav class="visit-golden-path visit-golden-path--front-desk" aria-label="Start here · one path through the art">
+      <p class="visit-golden-path__kicker">Start here · one path through the art</p>
+      <ol class="visit-golden-path__list">
+      <li class="visit-golden-path__step visit-golden-path__step--here">
+        <a href="/front-desk" aria-current="step">
+          <span class="visit-golden-path__num">1</span>
+          <span class="visit-golden-path__label">Front Desk · Sound on</span>
+        </a>
+      </li>
+      <li class="visit-golden-path__step visit-golden-path__step--primary">
+        <a href="/front-desk-program">
+          <span class="visit-golden-path__num">2</span>
+          <span class="visit-golden-path__label">Check-in program</span>
+        </a>
+      </li>
+      <li class="visit-golden-path__step">
+        <a href="/creator-studio">
+          <span class="visit-golden-path__num">3</span>
+          <span class="visit-golden-path__label">Creator Studio</span>
+        </a>
+      </li>
+      </ol>
+    </nav>
+    <p class="visit-golden-path__doors-note">Tap <strong>Sound on</strong> above, read the <a href="/front-desk-program">check-in program</a>, then tour the ship below — or continue to <a href="/creator-studio">Creator Studio</a>.</p>
+  <!-- FRONT_DESK_HERO_END -->
 
   <main class="front-desk-page">
 
@@ -108,45 +132,17 @@
       </li>
       </ol>
     </nav>
-      <nav class="visit-golden-path visit-golden-path--front-desk" aria-label="Start here · one path through the art">
-      <p class="visit-golden-path__kicker">Start here · one path through the art</p>
-      <ol class="visit-golden-path__list">
-      <li class="visit-golden-path__step visit-golden-path__step--here">
-        <a href="/front-desk" aria-current="step">
-          <span class="visit-golden-path__num">1</span>
-          <span class="visit-golden-path__label">Front Desk · Sound on</span>
-        </a>
-      </li>
-      <li class="visit-golden-path__step visit-golden-path__step--primary">
-        <a href="/front-desk-program">
-          <span class="visit-golden-path__num">2</span>
-          <span class="visit-golden-path__label">Check-in program</span>
-        </a>
-      </li>
-      <li class="visit-golden-path__step">
-        <a href="/creator-studio">
-          <span class="visit-golden-path__num">3</span>
-          <span class="visit-golden-path__label">Creator Studio</span>
-        </a>
-      </li>
-      </ol>
-    </nav>
-    <p class="visit-golden-path__doors-note">Tap <strong>Sound on</strong> above, read the <a href="/front-desk-program">check-in program</a>, then tour the ship below — or continue to <a href="/creator-studio">Creator Studio</a>.</p>
-      <header class="reception-lobby__head front-desk__head">
-        <p class="reception-lobby__eyebrow">Front Desk · SS VIBELANDIA GOLDILOCKS SONIC SHIP</p>
-        <h1 id="front-desk-h">Front Desk · check-in</h1>
-        <p class="front-desk__intro">Primer and onboarding for those boarding SS Vibelandia. The check-in soundtrack starts on arrival. For the ship narrative, crew, and mission, visit the <a href="/questfest">SS Vibelandia ship board</a>.</p>
-        <figure class="reception-lobby__art">
-          <img src="/interfaces/assets/experience/reception-checkin-lobby.jpg" alt="Male frontiersmen friends in varied old-school frontier outfits checking in at the gold and navy Front Desk — hostesses and dancers in the background" width="960" height="540" loading="eager" decoding="async" />
-          <figcaption>Old-school frontiersmen friends at check-in — each in his own gear. Hostesses and dancers keep the lobby alive. Valet Pru keeps the desk.</figcaption>
-        </figure>
-        <p class="reception-lobby__soundtrack">
-          <a class="btn btn-gold" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reception&autoplay=1">Open check-in set in jukebox · 17 tracks</a>
-          <a class="btn btn-ghost" href="/front-desk-program">Read the check-in program →</a>
-          <a class="btn btn-ghost" href="/front-desk-program">Download program (PDF)</a>
-        </p>
-        <p class="reception-lobby__lede">Welcome aboard. The Front Desk starts the check-in soundtrack on arrival — Capitán&apos;s Welcome through <em>hydrogen y line frontier accordion</em> (17 tracks). Read the <a href="/front-desk-program">check-in program</a> for track-by-track dramaturgy. This is your primer: how to sail, your place as NPC, Player, or Reality Bridge/Router, and the doors into the ship. Valet Pru keeps the gangway. When you want the vessel story, visit the <a href="/questfest">SS Vibelandia ship board</a>.</p>
-      </header>
+      <p class="reception-lobby__lede reception-lobby__lede--compact" id="front-desk-h">
+        Welcome aboard. The Front Desk starts the check-in soundtrack on arrival — Capitán&apos;s Welcome through <em>hydrogen y line frontier accordion</em> (17 tracks).
+        Read the <a href="/front-desk-program">check-in program</a> for track-by-track dramaturgy.
+        This is your primer: how to sail, your place as NPC, Player, or Reality Bridge/Router, and the doors into the ship.
+        For the ship narrative, crew, and mission, visit the <a href="/questfest">SS Vibelandia ship board</a>.
+      </p>
+      <p class="reception-lobby__soundtrack">
+        <a class="btn btn-gold" href="/interfaces/questfest-bridge/#/listen?playlist=pl-reception&autoplay=1">Open check-in set in jukebox · 17 tracks</a>
+        <a class="btn btn-ghost" href="/front-desk-program">Read the check-in program →</a>
+        <a class="btn btn-ghost" href="/front-desk-program">Download program (PDF)</a>
+      </p>
       <div class="reception-primer" aria-labelledby="front-desk-primer-h">
       <h3 id="front-desk-primer-h">What you are boarding</h3>
       <p class="reception-primer__lede">
@@ -302,7 +298,7 @@
         <img src="/interfaces/assets/experience/ship-library-deep-memory.jpg" alt="" loading="lazy" decoding="async" width="320" height="200" />
         <span class="reception-card__body">
           <strong>Reading Room</strong>
-          <span>Deep Memory. Ship-blog notes and whitepapers when you want the map.</span>
+          <span>Safari club man cave. Ship-blog notes and whitepapers with full abstracts when you want the map.</span>
         </span>
       </a>
         <a class="reception-card" href="/jukebox">

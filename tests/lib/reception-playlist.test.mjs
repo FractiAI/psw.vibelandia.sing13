@@ -69,8 +69,11 @@ describe('Reception · jukebox playlist', () => {
     expect(frontDesk).toContain('page-soundtrack.js');
     expect(frontDesk).toContain('id="front-desk-hero-audio"');
     expect(frontDesk).toContain('id="front-desk-hero-score"');
-    expect(frontDesk).toContain('href="/lattice-chat">Lattice Chat</a>');
-    expect(frontDesk).toContain('QR Share</button>');
+    expect(frontDesk).toContain('ep-hero--front-desk');
+    expect(frontDesk).toContain('site-quicklinks.js');
+    const quicklinks = read('interfaces/site-quicklinks.js');
+    expect(quicklinks).toContain("path === '/front-desk'");
+    expect(quicklinks).toContain("href=\"/lattice-chat\"");
   });
 
   it('jukebox app pins reception in menu and blocks delete', () => {

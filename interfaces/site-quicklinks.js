@@ -87,6 +87,14 @@
     path.endsWith('/vibelandia-questfest') ||
     path === '/questfest' ||
     path === '/questfest/';
+  var onFrontDesk =
+    path === '/front-desk' ||
+    path === '/front-desk/' ||
+    path.endsWith('front-desk.html');
+  var onReadingRoom =
+    path === '/reading-room' ||
+    path === '/reading-room/' ||
+    path.endsWith('reading-room.html');
 
   function hasListenLink(root) {
     if (!root) return false;
@@ -175,6 +183,34 @@
         '<a href="/reading-room">Reading Room</a>' +
         '<span class="sep" aria-hidden="true">·</span>' +
         '<a href="/doodles">Doodles</a>';
+    } else if (onFrontDesk) {
+      row.innerHTML =
+        '<a href="/questfest">SS VIBELANDIA</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<span class="qv-top-quicklinks__here">Front Desk</span>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/journey">Journey</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/">Canvas</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/reading-room">Reading Room</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/front-desk-program">Check-in program</a>';
+    } else if (onReadingRoom) {
+      row.innerHTML =
+        '<a href="/questfest">SS VIBELANDIA</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/journey">Journey</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/">Canvas</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/jukebox" data-qv-jukebox>Jukebox</a>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<span class="qv-top-quicklinks__here">Reading Room</span>' +
+        '<span class="sep" aria-hidden="true">·</span>' +
+        '<a href="/front-desk">Front Desk</a>';
     } else if (onQuestfestHome) {
       row.innerHTML =
         '<span class="qv-top-quicklinks__here">SS VIBELANDIA</span>' +

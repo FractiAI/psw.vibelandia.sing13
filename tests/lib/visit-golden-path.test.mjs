@@ -35,6 +35,15 @@ describe('Visit golden path · Canvas → Program → Front Desk', () => {
     expect(html).toContain('Creator Studio');
   });
 
+  it('marks Reading Room step here on reading-room page', () => {
+    const html = renderVisitGoldenPathHtml('reading-room');
+    expect(html).toContain('/reading-room');
+    expect(html).toContain('Browse papers');
+    expect(html).toContain('/reading-room#papers');
+    expect(html).toContain('visit-golden-path--reading-room');
+    expect(html).toContain('/front-desk');
+  });
+
   it('front-desk hero CTAs favor check-in program and playlist', () => {
     const html = renderVisitGoldenPathHeroCtasHtml('front-desk');
     expect(html).toContain('/front-desk-program');
@@ -65,6 +74,11 @@ describe('Visit golden path · Canvas → Program → Front Desk', () => {
     expect(ship).toContain('Your cruise line · five doors');
     expect(frontDesk).toContain('visit-golden-path--front-desk');
     expect(frontDesk).toContain('Check-in program');
+    const readingRoom = read('interfaces/reading-room.html');
+    expect(readingRoom).toContain('visit-golden-path--reading-room');
+    expect(readingRoom).toContain('data-youtube-id="VXZL77ub8DY"');
+    expect(readingRoom).toContain('ep-hero--reading-room');
+    expect(readingRoom).toContain('id="papers"');
   });
 
   it('site gravity audit reflects improved funnel clarity', () => {

@@ -36,13 +36,10 @@ describe('Visit golden path · Canvas → Program → Check In', () => {
     expect(html).toContain('Creator Studio');
   });
 
-  it('marks Reading Room as sole step on reading-room page', () => {
+  it('marks Reading Room prelude without golden path strip', () => {
     const html = renderVisitGoldenPathHtml('reading-room');
     expect(html).toContain('/reading-room');
-    expect(html).not.toContain('Browse papers');
-    expect(html).not.toContain('/reading-room#papers');
     expect(html).toContain('visit-golden-path--reading-room');
-    expect(html).toContain('Check In');
   });
 
   it('front-desk hero CTAs favor check-in program and playlist', () => {
@@ -68,24 +65,27 @@ describe('Visit golden path · Canvas → Program → Check In', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
     const ship = read('interfaces/vibelandia-questfest.html');
     const frontDesk = read('interfaces/front-desk.html');
-    expect(canvas).toContain('visit-golden-path');
-    expect(canvas).toContain('VISIT_GOLDEN_PATH_START');
-    expect(canvas).toContain('Exhibit · Sound on');
+    expect(canvas).not.toContain('visit-golden-path');
+    expect(canvas).not.toContain('VISIT_GOLDEN_PATH_START');
+    expect(canvas).toContain('Concert program');
     expect(ship).toContain('visit-golden-path');
     expect(ship).toContain('VISIT_GOLDEN_PATH_START');
     expect(ship).toContain('Concert program');
     expect(ship).toContain('Your cruise line · five doors');
-    expect(frontDesk).toContain('visit-golden-path--front-desk');
+    expect(frontDesk).not.toContain('visit-golden-path--front-desk');
+    expect(frontDesk).not.toContain('Download program (PDF)');
     expect(frontDesk).toContain('Check-in program');
     const readingRoom = read('interfaces/reading-room.html');
-    expect(readingRoom).toContain('visit-golden-path--reading-room');
+    expect(readingRoom).not.toContain('visit-golden-path');
     expect(readingRoom).toContain('data-youtube-id="VXZL77ub8DY"');
     expect(readingRoom).toContain('ep-hero--reading-room');
     expect(readingRoom).toContain('ep-hero__video-embed');
     expect(readingRoom).not.toContain('rr-prelude');
     expect(readingRoom).not.toContain('data-youtube-start');
+    expect(readingRoom).not.toContain('visit-golden-path');
     expect(readingRoom).not.toContain('Browse papers');
     expect(readingRoom).not.toContain('Open concert in jukebox');
+    expect(readingRoom).not.toContain('Download program (PDF)');
     expect(readingRoom).toContain('Concert program');
     expect(readingRoom).toContain('id="papers"');
   });

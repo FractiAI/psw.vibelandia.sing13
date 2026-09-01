@@ -40,6 +40,7 @@ describe('Sin City · jukebox playlist', () => {
     expect(page).toContain('sin-city-autoplay.js');
     expect(page).toContain('page-soundtrack.js');
     expect(page).toContain('/sin-city-program');
+    expect(page).not.toContain('Download program (PDF)');
     expect(sinCityListenHref()).toContain('playlist=pl-sin-city');
   });
 });

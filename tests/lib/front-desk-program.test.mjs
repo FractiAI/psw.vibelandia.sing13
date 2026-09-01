@@ -57,6 +57,6 @@ describe('Front Desk · check-in program', () => {
   it('Front Desk lobby links to check-in program', () => {
     const phases = read('lib/experience-phases.mjs');
     expect(phases).toContain('/front-desk-program');
-    expect(phases).toContain('Read the check-in program');
+    expect(phases).toContain('check-in program</a> for track-by-track dramaturgy');
   });
 });

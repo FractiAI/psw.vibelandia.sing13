@@ -142,7 +142,7 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(js).toContain('QV_initPageSoundtrack');
     expect(js).toContain('canvas-hero-shift');
     expect(read('interfaces/page-soundtrack.js')).toContain('pagehide');
-    expect(html).toContain('visit-golden-path');
+    expect(html).not.toContain('visit-golden-path');
     expect(html).toContain('/concierto-program');
     expect(html).toContain('page-soundtrack.js');
     expect(read('interfaces/canvas-prelude-playlist.js')).toContain('CANVAS_PRELUDE_PLAYLIST');

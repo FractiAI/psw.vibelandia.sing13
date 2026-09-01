@@ -4,7 +4,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  renderFrontDeskGoldenPathHtml,
   renderFrontDeskHeroHtml,
 } from '../lib/experience-page-hero.mjs';
 
@@ -14,7 +13,7 @@ const START = '<!-- FRONT_DESK_HERO_BEGIN -->';
 const END = '<!-- FRONT_DESK_HERO_END -->';
 
 let html = fs.readFileSync(OUT, 'utf8');
-const block = `${renderFrontDeskHeroHtml()}\n  ${renderFrontDeskGoldenPathHtml()}`;
+const block = renderFrontDeskHeroHtml();
 
 if (!html.includes(START) || !html.includes(END)) {
   throw new Error('Front Desk hero markers missing');

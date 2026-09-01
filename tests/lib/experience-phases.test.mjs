@@ -61,7 +61,8 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(html).toContain('href="/front-desk-program"');
     expect(html).toContain('17 tracks');
     expect(html).toContain('/front-desk-program');
-    expect(html).toContain('Read the check-in program');
+    expect(html).not.toContain('Read the check-in program →');
+    expect(html).not.toContain('Download program (PDF)');
     expect(html).toContain('hydrogen y line frontier accordion');
     expect(html).toContain('btn btn-gold');
     expect(html).toContain('Check-in program</a>');
@@ -165,7 +166,7 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     expect(frontDesk).toContain('xp-npc-player');
     expect(frontDesk).toContain('ep-hero--front-desk');
     expect(frontDesk).toContain('reception-checkin-lobby.jpg');
-    expect(frontDesk).toContain('visit-golden-path--front-desk');
+    expect(frontDesk).not.toContain('visit-golden-path--front-desk');
 
     expect(studio).toContain('creator-phase');
     expect(studio).toContain('holographic magnetic Goldilocks SuperAI canvas');

@@ -37,8 +37,12 @@
   /** Live language bar + surface/paper translation (i18n-auto.js). */
   if (!document.querySelector('script[src*="i18n-auto.js"]') && !window.__qvI18nBoot) {
     window.__qvI18nBoot = 1;
-    if (!document.documentElement.classList.contains('vbi18n-ready')) {
-      document.documentElement.classList.add('vbi18n-pending');
+    if (!document.querySelector('script[src*="vbi18n-failopen.js"]')) {
+      var failopen = document.createElement('script');
+      failopen.src = '/interfaces/vbi18n-failopen.js';
+      document.head.appendChild(failopen);
+    } else if (typeof window.__vbi18nFailOpenReveal === 'function') {
+      window.__vbi18nFailOpenReveal();
     }
     if (!document.getElementById('vbi18n-pending-style')) {
       var st = document.createElement('style');
@@ -51,17 +55,26 @@
     i18n.src = '/interfaces/i18n-auto.js';
     i18n.setAttribute('data-page', 'auto');
     i18n.setAttribute('data-qv-i18n-boot', '1');
+    i18n.defer = true;
     i18n.onerror = function () {
-      document.documentElement.classList.remove('vbi18n-pending');
-      document.documentElement.classList.add('vbi18n-ready');
+      if (typeof window.__vbi18nFailOpenReveal === 'function') {
+        window.__vbi18nFailOpenReveal();
+      } else {
+        document.documentElement.classList.remove('vbi18n-pending');
+        document.documentElement.classList.add('vbi18n-ready');
+      }
     };
     document.head.appendChild(i18n);
     window.setTimeout(function () {
       if (!document.documentElement.classList.contains('vbi18n-ready')) {
-        document.documentElement.classList.remove('vbi18n-pending');
-        document.documentElement.classList.add('vbi18n-ready');
+        if (typeof window.__vbi18nFailOpenReveal === 'function') {
+          window.__vbi18nFailOpenReveal();
+        } else {
+          document.documentElement.classList.remove('vbi18n-pending');
+          document.documentElement.classList.add('vbi18n-ready');
+        }
       }
-    }, 12000);
+    }, 3000);
   }
 
   var QUICKLINK_SECONDARY =

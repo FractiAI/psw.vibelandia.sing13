@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var REVEAL_MS = 2500;
+  var BACKUP_MS = 500;
 
   function reveal() {
     var html = document.documentElement;
@@ -15,7 +15,8 @@
   }
 
   window.__vbi18nFailOpenReveal = reveal;
-  window.setTimeout(reveal, REVEAL_MS);
+  reveal();
+  window.setTimeout(reveal, BACKUP_MS);
 
   if (document.readyState === 'loading') {
     document.addEventListener(

@@ -763,6 +763,9 @@
   }
 
   function boot() {
+    if (typeof window.__vbi18nFailOpenReveal === 'function') {
+      window.__vbi18nFailOpenReveal();
+    }
     revealDocument();
     scheduleRevealFallback();
     var page = BOOT_PAGE_ATTR || '';

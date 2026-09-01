@@ -46,9 +46,12 @@ describe('i18n-auto · reveal safety', () => {
   it('ships fail-open reveal before i18n on Reading Room, whitepaper reader, art landing, and QUESTFEST', () => {
     const failopen = read('interfaces/vbi18n-failopen.js');
     expect(failopen).toContain('__vbi18nFailOpenReveal');
+    expect(failopen).toMatch(/reveal\(\)/);
+    expect(read('interfaces/vibelandia-questfest.html')).toContain("classList.remove('vbi18n-pending')");
     expect(read('interfaces/reading-room.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/whitepaper-surface.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/omniverse-canvas.html')).toContain('vbi18n-failopen.js');
+    expect(read('interfaces/front-desk.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/vibelandia-questfest.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/reading-room.html')).toContain('All papers');
     expect(read('interfaces/reading-room.html')).toContain('loadCatalog');

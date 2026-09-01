@@ -11,6 +11,13 @@ const PINNED_TRACK_IDS: Record<string, readonly string[]> = {
   [READING_ROOM_PLAYLIST_ID]: READING_ROOM_PLAYLIST_TRACK_IDS,
 };
 
+const PINNED_NAMES: Record<string, string> = {
+  [CONCIERTO_PRELUDE_PLAYLIST_ID]: 'Holographic Magnetic Goldilocks Art SS Canvas Landing',
+  [RECEPTION_PLAYLIST_ID]: 'SS Vibelandia Check-In',
+  [SIN_CITY_PLAYLIST_ID]: 'SS Vibelandia Sin City',
+  [READING_ROOM_PLAYLIST_ID]: 'SS Vibelandia Reading Room',
+};
+
 /** Restore canonical track order for pinned sovereign playlists after server/local merge. */
 export function syncPinnedSovereignPlaylists(
   playlists: PlaylistDef[],
@@ -22,26 +29,34 @@ export function syncPinnedSovereignPlaylists(
     const canonical = PINNED_TRACK_IDS[p.id];
     if (!canonical) return p;
     const trackIds = canonical.filter((id) => valid.has(id));
+    const canonicalName = PINNED_NAMES[p.id];
     const same =
-      trackIds.length === p.trackIds.length && trackIds.every((id, i) => id === p.trackIds[i]);
+      trackIds.length === p.trackIds.length &&
+      trackIds.every((id, i) => id === p.trackIds[i]) &&
+      (!canonicalName || p.name === canonicalName);
     if (same) return p;
     changed = true;
-    return { ...p, trackIds };
+    return {
+      ...p,
+      name: canonicalName ?? p.name,
+      kind: 'sovereign' as const,
+      trackIds,
+    };
   });
-
-  if (!changed) return playlists;
 
   for (const [id, canonical] of Object.entries(PINNED_TRACK_IDS)) {
     if (next.some((p) => p.id === id)) continue;
     const trackIds = canonical.filter((tid) => valid.has(tid));
     if (!trackIds.length) continue;
+    changed = true;
     next.push({
       id,
-      name: id,
+      name: PINNED_NAMES[id] ?? id,
       kind: 'sovereign',
       trackIds,
     });
   }
 
+  if (!changed) return playlists;
   return next;
 }

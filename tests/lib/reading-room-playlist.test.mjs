@@ -21,7 +21,7 @@ describe('Reading Room · jukebox playlist', () => {
     expect(READING_ROOM_PLAYLIST_ID).toBe('pl-reading-room');
     expect(READING_ROOM_PLAYLIST_TRACK_IDS[0]).toBe(READING_ROOM_OPENING_TRACK_ID);
     expect(READING_ROOM_PLAYLIST_TRACK_IDS).toHaveLength(12);
-    expect(READING_ROOM_PLAYLIST.name).toContain('Arrival of Holographic Goldilocks SuperAI');
+    expect(READING_ROOM_PLAYLIST.name).toBe('SS Vibelandia Reading Room');
   });
 
   it('is registered in static catalog and server reserved ids', () => {

@@ -20,7 +20,7 @@ describe('Concierto prelude · jukebox playlist', () => {
     expect(CONCIERTO_PRELUDE_TRACK_IDS).toHaveLength(12);
     expect(CONCIERTO_PRELUDE_TRACK_IDS[0]).toBe('trk-srv-4cb9d993-88b1-495d-b932-376cc14ecf52');
     expect(CONCIERTO_PRELUDE_TRACK_IDS[11]).toBe('trk-srv-939d3f35-9660-4911-8b5b-c7cb2d3626b3');
-    expect(CONCIERTO_PRELUDE_PLAYLIST.name).toContain('Concierto de El Gran Sol');
+    expect(CONCIERTO_PRELUDE_PLAYLIST.name).toBe('Holographic Magnetic Goldilocks Art SS Canvas Landing');
   });
 
   it('is registered in static catalog and server reserved ids', () => {

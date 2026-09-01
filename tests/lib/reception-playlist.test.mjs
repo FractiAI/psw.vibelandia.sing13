@@ -36,7 +36,7 @@ describe('Reception · jukebox playlist', () => {
     expect(RECEPTION_PLAYLIST_TRACK_IDS[14]).toBe('trk-srv-480b6197-b842-4d6e-846c-ac9c6e3da544');
     expect(RECEPTION_PLAYLIST_TRACK_IDS[15]).toBe('trk-srv-dce6f8bd-e03e-4fc7-8038-c568eea9952e');
     expect(RECEPTION_PLAYLIST_TRACK_IDS[16]).toBe('trk-srv-6e7e3dd9-40cc-4c99-8e12-cc5ddf22a260');
-    expect(RECEPTION_PLAYLIST.name).toContain('check-in soundtrack');
+    expect(RECEPTION_PLAYLIST.name).toBe('SS Vibelandia Check-In');
   });
 
   it('is registered in static catalog and server reserved ids', () => {

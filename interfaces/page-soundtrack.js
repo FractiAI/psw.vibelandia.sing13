@@ -137,6 +137,26 @@
     return true;
   }
 
+  /** Paper / browse links — open in popup without unloading the soundtrack page. */
+  function shouldBrowsePaperInPopup(anchor) {
+    if (!isBrowsePaperLink(anchor)) return false;
+    var href = anchor.getAttribute('href');
+    if (!href || href.charAt(0) === '#') return false;
+    if (/^(mailto:|tel:|javascript:)/i.test(href)) return false;
+    if (anchor.hasAttribute('download')) return false;
+    var url = resolveUrl(href);
+    if (!url) return false;
+    if (
+      url.origin === window.location.origin &&
+      url.pathname === window.location.pathname &&
+      url.search === window.location.search &&
+      url.hash !== window.location.hash
+    ) {
+      return false;
+    }
+    return true;
+  }
+
   function isReadingRoomPage() {
     var path = window.location.pathname || '';
     return (
@@ -147,7 +167,11 @@
   }
 
   function isBrowsePaperLink(anchor) {
-    return anchor && anchor.hasAttribute('data-qv-browse');
+    return (
+      anchor &&
+      (anchor.hasAttribute('data-qv-browse') ||
+        (anchor.classList && anchor.classList.contains('rr-card')))
+    );
   }
 
   function openBrowsePopup(url) {
@@ -203,6 +227,53 @@
 
   /** Active soundtrack session for the current page (one per document). */
   var activeSession = null;
+  var lastPaperBrowseAt = 0;
+
+  function maybeHandoffActiveSession() {
+    var session = activeSession;
+    if (!session || !session.localActive || session.handoffDone) return;
+    var audio = session.audio;
+    if (!audio || audio.paused || audio.ended) return;
+    session.handoffDone = true;
+    openHandoffPopup(session.opts, session.index);
+    try {
+      audio.pause();
+    } catch (_) {}
+    session.playing = false;
+  }
+
+  function openPaperBrowse(url) {
+    maybeHandoffActiveSession();
+    return openBrowsePopup(url);
+  }
+
+  function handleBrowsePaperNavigation(ev) {
+    if (ev.defaultPrevented || isModifiedClick(ev)) return;
+    var t = ev.target;
+    if (!t || !t.closest) return;
+    var anchor = t.closest('a[href][data-qv-browse], a.rr-card[href]');
+    if (!anchor || !shouldBrowsePaperInPopup(anchor)) return;
+    var url = resolveUrl(anchor.getAttribute('href'));
+    if (!url) return;
+
+    var now = Date.now();
+    if (ev.type === 'click' && now - lastPaperBrowseAt < 400) return;
+    lastPaperBrowseAt = now;
+
+    ev.preventDefault();
+    ev.stopImmediatePropagation();
+    openPaperBrowse(url.href);
+  }
+
+  document.addEventListener('click', handleBrowsePaperNavigation, true);
+  document.addEventListener(
+    'pointerdown',
+    function (ev) {
+      if (ev.pointerType === 'mouse' && ev.button !== 0) return;
+      handleBrowsePaperNavigation(ev);
+    },
+    true
+  );
 
   window.QV_isPageSoundtrackPlaying = function () {
     if (!activeSession || !activeSession.localActive) return false;
@@ -262,6 +333,7 @@
 
       var anchor = t.closest('a[href]');
       if (!anchor) return;
+      if (shouldBrowsePaperInPopup(anchor)) return;
       var forceBrowse = isBrowsePaperLink(anchor);
       if (!forceBrowse && !isSoundtrackPlaying()) return;
       if (!leavesSoundtrackPage(anchor)) return;
@@ -269,7 +341,7 @@
       if (!url) return;
       ev.preventDefault();
       ev.stopImmediatePropagation();
-      openBrowsePopup(url.href);
+      openPaperBrowse(url.href);
     }
 
     function onPageHide() {
@@ -455,4 +527,7 @@
       });
     });
   };
+
+  window.QV_openPaperBrowse = openPaperBrowse;
+  window.QV_handoffPageSoundtrack = maybeHandoffActiveSession;
 })();

@@ -18,8 +18,10 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('stopImmediatePropagation');
     expect(js).toContain('data-qv-jukebox');
     expect(js).toContain('QV_isPageSoundtrackPlaying');
-    expect(js).toContain('data-qv-browse');
-    expect(js).toContain('isBrowsePaperLink');
+    expect(js).toContain('shouldBrowsePaperInPopup');
+    expect(js).toContain('QV_openPaperBrowse');
+    expect(js).toContain('maybeHandoffActiveSession');
+    expect(js).toContain('pointerdown');
     expect(js).toContain('QV_openBrowse');
   });
 
@@ -54,6 +56,7 @@ describe('Reading Room · Canvas-style hero video', () => {
     expect(hero).toContain("modifier: 'reading-room'");
     expect(hero).toContain('youtubeId: READING_ROOM_VIDEO_ID');
     expect(page).toContain('data-qv-browse="1"');
+    expect(page).toContain('target="_blank"');
     expect(page).toContain('ep-hero--reading-room');
     expect(page).toContain('ep-hero__video-embed');
     expect(page).toContain('data-youtube-id="VXZL77ub8DY"');

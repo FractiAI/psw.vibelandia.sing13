@@ -155,6 +155,20 @@
     }
 
     if (!isBridgeSurface()) {
+      var anchorBrowse = t.closest('a[href][data-qv-browse], a.rr-card[href]');
+      if (anchorBrowse) {
+        var browseUrl = resolveUrl(anchorBrowse.getAttribute('href'));
+        if (browseUrl) {
+          evt.preventDefault();
+          evt.stopImmediatePropagation();
+          if (window.QV_openPaperBrowse) {
+            window.QV_openPaperBrowse(browseUrl.href);
+          } else {
+            openBrowse(browseUrl.href);
+          }
+          return;
+        }
+      }
       if (window.QV_isPageSoundtrackPlaying && window.QV_isPageSoundtrackPlaying()) {
         var anchorOff = t.closest('a[href]');
         if (anchorOff && leavesBridge(anchorOff)) {

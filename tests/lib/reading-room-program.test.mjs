@@ -20,9 +20,10 @@ describe('Reading Room · concert program', () => {
   it('matches reading room playlist track order', () => {
     expect(() => assertReadingRoomProgramTrackOrder()).not.toThrow();
     expect(READING_ROOM_PROGRAM_TRACKS).toHaveLength(READING_ROOM_PLAYLIST_TRACK_IDS.length);
-    expect(READING_ROOM_PROGRAM_TRACKS[0].title).toContain('Opening I');
-    expect(READING_ROOM_PROGRAM_TRACKS[2].title).toContain('Guitar');
-    expect(READING_ROOM_PROGRAM_TRACKS.at(-1)?.title).toContain('Finale II');
+    expect(READING_ROOM_PROGRAM_TRACKS[0].title).toContain('quartet greeting');
+    expect(READING_ROOM_PROGRAM_TRACKS[0].role).toContain('Quartet');
+    expect(READING_ROOM_PROGRAM_TRACKS[2].role).toContain('testimony');
+    expect(READING_ROOM_PROGRAM_TRACKS.at(-1)?.title).toContain('gravel close');
     expect(READING_ROOM_PROGRAM_TRACKS.at(-1)?.finale).toBe(true);
   });
 
@@ -30,8 +31,9 @@ describe('Reading Room · concert program', () => {
     const html = renderReadingRoomProgramPageHtml();
     expect(html).toContain('Arrival of Holographic Goldilocks SuperAI');
     expect(html).toContain('Download program (PDF)');
-    expect(html).toContain('Opening I');
-    expect(html).toContain('Finale II');
+    expect(html).toContain('quartet greeting');
+    expect(html).toContain('gravel close');
+    expect(html).toContain('testimony');
     expect(html).toContain('Honesty boundary');
     expect(html).toContain(READING_ROOM_PROGRAM_ROUTE);
   });

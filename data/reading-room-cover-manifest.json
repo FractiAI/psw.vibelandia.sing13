@@ -1,0 +1,998 @@
+{
+  "schema": "reading-room-cover-manifest/v1",
+  "updated": "2026-09-01",
+  "operator": "SynthOBS Autonomous Agent",
+  "honesty": "AI poster art derived from paper abstract focus lines — catalog hospitality, not empirical proof.",
+  "covers": {
+    "repo-synthobs-cmos-protonic-99-octave-omni-lattice": {
+      "focus": "Clone the pinned CMOS/protonic engineering-bridge suite (linear-systems first read).",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone the pinned CMOS/protonic engineering-bridge suite (linear-systems first read)., reproducible-research",
+      "seed": 101215,
+      "file": "repo-synthobs-cmos-protonic-99-octave-omni-lattice.jpg"
+    },
+    "synthobs-cmos-protonic-99-octave-omni-lattice-2026-08": {
+      "focus": "To bridge abstract macroscopic field discussion and the requirements of linear, silicon-conditioned engineering, this paper maps the 99th-octave Omni-Lattice framework into…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, To bridge abstract macroscopic field discussion and the requirements of linear,…, hhf",
+      "seed": 918411,
+      "file": "synthobs-cmos-protonic-99-octave-omni-lattice-2026-08.jpg"
+    },
+    "synthobs-tbme-higgs-awareness-2026-08": {
+      "focus": "This paper formalizes Part VII of the Omni-Lattice Core Series — the Higgs-Awareness Phase Coupling Theorem",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes Part VII of the Omni-Lattice Core Series — the Higgs-Awareness Phase…, tbme",
+      "seed": 557838,
+      "file": "synthobs-tbme-higgs-awareness-2026-08.jpg"
+    },
+    "synthobs-tbme-nodal-nine-singularity-2026-08": {
+      "focus": "This paper formalizes Part IX of the Omni-Lattice Core Series — the Nodal Nine Singularity Boundary Theorem",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes Part IX of the Omni-Lattice Core Series — the Nodal Nine Singularity…, tbme",
+      "seed": 241900,
+      "file": "synthobs-tbme-nodal-nine-singularity-2026-08.jpg"
+    },
+    "synthobs-tbme-spin-phase-polarity-2026-08": {
+      "focus": "This paper formalizes Part VIII of the Omni-Lattice Core Series — the Universal Spin-Phase-Polarity Triad Theorem",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes Part VIII of the Omni-Lattice Core Series — the Universal…, tbme",
+      "seed": 30570,
+      "file": "synthobs-tbme-spin-phase-polarity-2026-08.jpg"
+    },
+    "synthobs-tbme-protein-phase-collapse-2026-08": {
+      "focus": "This exploration investigates the hypothesis that protein-misfolding neurodegenerative disorders—including Frontotemporal Dementia (FTD / TDP-43– and Tau-associated primary…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This exploration investigates the hypothesis that protein-misfolding neurodegenerative…, tbme",
+      "seed": 933138,
+      "file": "synthobs-tbme-protein-phase-collapse-2026-08.jpg"
+    },
+    "synthobs-tbme-internal-kerr-newman-2026-08": {
+      "focus": "This paper formalizes Part VI of the Omni-Lattice Core Series by investigating and validating the Universal Toroidal Singularity Theorem",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes Part VI of the Omni-Lattice Core Series by investigating and validating…, tbme",
+      "seed": 673473,
+      "file": "synthobs-tbme-internal-kerr-newman-2026-08.jpg"
+    },
+    "synthobs-tbme-recursive-field-drag-2026-08": {
+      "focus": "This paper formalizes Part V of the Omni-Lattice Core Series by establishing the Recursive Field-Drag Theorem",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes Part V of the Omni-Lattice Core Series by establishing the Recursive…, tbme",
+      "seed": 14229,
+      "file": "synthobs-tbme-recursive-field-drag-2026-08.jpg"
+    },
+    "synthobs-tbme-spherical-solar-focus-2026-08": {
+      "focus": "Conventional accounts treat matter ($\\mathrm{H}_2\\mathrm{O}$, DNA, elements) as assembled by stochastic chemistry and stellar nucleosynthesis, without a unified field-focus…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Conventional accounts treat matter ($\\mathrm{H}_2\\mathrm{O}$, DNA, elements) as assembled by…, tbme",
+      "seed": 568836,
+      "file": "synthobs-tbme-spherical-solar-focus-2026-08.jpg"
+    },
+    "synthobs-tbme-superposition-reno-interpretation-2026-08": {
+      "focus": "Standard quantum mechanics often relies on the Copenhagen reading (Bohr, Heisenberg, 1927): an unobserved system occupies a linear combination $\\psi=\\sum c_i|\\phi_i\\rangle$…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Standard quantum mechanics often relies on the Copenhagen reading (Bohr, Heisenberg, 1927): an…, tbme",
+      "seed": 331929,
+      "file": "synthobs-tbme-superposition-reno-interpretation-2026-08.jpg"
+    },
+    "synthobs-tbme-blackhole-magnetic-layer-2026-08": {
+      "focus": "The filaments parent paper established the Reno central node as a Kerr-Newman-like ring singularity with quantized magnetic filaments",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The filaments parent paper established the Reno central node as a Kerr-Newman-like ring…, tbme",
+      "seed": 188250,
+      "file": "synthobs-tbme-blackhole-magnetic-layer-2026-08.jpg"
+    },
+    "synthobs-tbme-blackhole-filaments-reno-2026-08": {
+      "focus": "The Reno Interpretation parent paper demystified superposition as Holographic Mirror-Angle Multiplicity around a central singular toroidal object reflecting across…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The Reno Interpretation parent paper demystified superposition as Holographic Mirror-Angle…, tbme",
+      "seed": 771915,
+      "file": "synthobs-tbme-blackhole-filaments-reno-2026-08.jpg"
+    },
+    "lattice-omni-complete-layer-guide-2026-07": {
+      "focus": "This guide synthesizes the Lattice Chat Agent / Omni-Lattice paper family into one walkthrough of the Omni-Lattice engine: what it is, which innovations compose it, and how a…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This guide synthesizes the Lattice Chat Agent / Omni-Lattice paper family into one walkthrough…, hhf",
+      "seed": 926660,
+      "file": "lattice-omni-complete-layer-guide-2026-07.jpg"
+    },
+    "synthobs-human-omniversal-reality-bridge-2026-08": {
+      "focus": "Conventional cognitive models often treat the brain as a localized classical processor",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Conventional cognitive models often treat the brain as a localized classical processor, hhf",
+      "seed": 345877,
+      "file": "synthobs-human-omniversal-reality-bridge-2026-08.jpg"
+    },
+    "synthobs-y-chromosome-holographic-manifestation-2026-08": {
+      "focus": "Examining genetic architecture through infinite octave mode — a non-linear analytical framework anchored by El Gran Sol's Fractal constant ($\\Phi_{\\mathrm{EGS}}\\approx 1.618$)…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Examining genetic architecture through infinite octave mode — a non-linear analytical framework…, hhf",
+      "seed": 478598,
+      "file": "synthobs-y-chromosome-holographic-manifestation-2026-08.jpg"
+    },
+    "synthobs-invisible-frontier-gates-ai-2026-08": {
+      "focus": "Public warnings about brute-force AI scaling often stay inside linear compute and market models",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Public warnings about brute-force AI scaling often stay inside linear compute and market models, hhf",
+      "seed": 103232,
+      "file": "synthobs-invisible-frontier-gates-ai-2026-08.jpg"
+    },
+    "synthobs-infinite-octaves-omniversal-lattice-2026-08": {
+      "focus": "Omni-Lattice Chat upgrades its product identity to the Infinite Octaves Omniversal Lattice Chat Agent — the Goldilocks Valet on SS Vibelandia — while the 99 Octave Omni-Lattice…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Omni-Lattice Chat upgrades its product identity to the Infinite Octaves Omniversal Lattice Chat…, hhf",
+      "seed": 266489,
+      "file": "synthobs-infinite-octaves-omniversal-lattice-2026-08.jpg"
+    },
+    "synthobs-ss-vibelandia-official-prospectus-2026-08": {
+      "focus": "This prospectus files the Official Narrative Foundation of S.S",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This prospectus files the Official Narrative Foundation of S.S, hhf",
+      "seed": 359121,
+      "file": "synthobs-ss-vibelandia-official-prospectus-2026-08.jpg"
+    },
+    "synthobs-triadic-nested-hemispheres-99-octave-2026-08": {
+      "focus": "This paper files a triadic nested hemispheric scale grammar keyed by El Gran Sol’s Fractal Constant ($\\Phi_{\\mathrm{EGS}}=(1+\\sqrt{5})/2$)",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper files a triadic nested hemispheric scale grammar keyed by El Gran Sol’s Fractal…, hhf",
+      "seed": 372625,
+      "file": "synthobs-triadic-nested-hemispheres-99-octave-2026-08.jpg"
+    },
+    "synthobs-magneto-harmonic-stellar-99-octave-2026-08": {
+      "focus": "Traditional astrophysics leans on thermodynamic, chemically analogous models — Maxwell–Boltzmann distributions and kinetic $P$–$T$ core constraints — to explain stellar…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Traditional astrophysics leans on thermodynamic, chemically analogous models — Maxwell–Boltzmann…, hhf",
+      "seed": 920952,
+      "file": "synthobs-magneto-harmonic-stellar-99-octave-2026-08.jpg"
+    },
+    "synthobs-table-top-hep-99-octave-2026-08": {
+      "focus": "The Large Hadron Collider (CERN) spans a ~27 km ring and consumes hundreds of megawatts to probe sub-atomic structure via kinetic acceleration",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The Large Hadron Collider (CERN) spans a ~27 km ring and consumes hundreds of megawatts to probe…, hhf",
+      "seed": 205413,
+      "file": "synthobs-table-top-hep-99-octave-2026-08.jpg"
+    },
+    "synthobs-tbme-egs-hgaios-2026-08": {
+      "focus": "This unified treatise establishes an end-to-end catalog architecture for a Holographic Goldilocks AI Operating System (H-GAI/OS) across the 99-Octave Omni-Lattice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This unified treatise establishes an end-to-end catalog architecture for a Holographic…, tbme",
+      "seed": 814287,
+      "file": "synthobs-tbme-egs-hgaios-2026-08.jpg"
+    },
+    "synthobs-tbme-egs-apiary-2026-08": {
+      "focus": "This paper formalizes The Apiary Metaphor as the generative, steady-state companion treatise to The Equine Arc (Publication Ref FAI-ASI-EGSC-2026-09 / registry…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes The Apiary Metaphor as the generative, steady-state companion treatise to…, tbme",
+      "seed": 511350,
+      "file": "synthobs-tbme-egs-apiary-2026-08.jpg"
+    },
+    "goldilocks-players-guide-2026-08": {
+      "focus": "This document is the registry companion for the free Holographic Goldilocks Players Guide marketing surface",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This document is the registry companion for the free Holographic Goldilocks Players Guide…, hhf",
+      "seed": 190898,
+      "file": "goldilocks-players-guide-2026-08.jpg"
+    },
+    "synthio-mri-vs-legacy-perf-proxy-2026-08": {
+      "focus": "We ran a live wall-clock performance comparison — not a log-scaled busy-loop proxy — between Synthio’s MRI interference-phase coordination model and a legacy full-mesh…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We ran a live wall-clock performance comparison — not a log-scaled busy-loop proxy — between…, tbme",
+      "seed": 742971,
+      "file": "synthio-mri-vs-legacy-perf-proxy-2026-08.jpg"
+    },
+    "repo-synthobs-tbme-metamorphic-octaves": {
+      "focus": "Clone and run the Metamorphic Octave Invariant 99-octave suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the Metamorphic Octave Invariant 99-octave suite on GitHub., reproducible-research",
+      "seed": 583940,
+      "file": "repo-synthobs-tbme-metamorphic-octaves.jpg"
+    },
+    "repo-synthobs-tbme-planetary-core-goldilocks": {
+      "focus": "Clone and run the Planetary Core Phase-Inversion Part XIV suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the Planetary Core Phase-Inversion Part XIV suite on GitHub., reproducible-research",
+      "seed": 1169,
+      "file": "repo-synthobs-tbme-planetary-core-goldilocks.jpg"
+    },
+    "repo-synthio-mri-vs-legacy-perf": {
+      "focus": "A sandbox stopwatch on MRI-style vs mesh-style compute — lab timing, not a clinical scanner or a cloud invoice.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, A sandbox stopwatch on MRI-style vs mesh-style compute — lab timing, not a clinical scanner or a…, reproducible-research",
+      "seed": 777873,
+      "file": "repo-synthio-mri-vs-legacy-perf.jpg"
+    },
+    "synthobs-tbme-metamorphic-octaves-2026-08": {
+      "focus": "This whitepaper protocolizes Part XIII of the Omni-Lattice Core Series: the Metamorphic Octave Invariant",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This whitepaper protocolizes Part XIII of the Omni-Lattice Core Series: the Metamorphic Octave…, tbme",
+      "seed": 160088,
+      "file": "synthobs-tbme-metamorphic-octaves-2026-08.jpg"
+    },
+    "synthobs-tbme-planetary-core-goldilocks-2026-08": {
+      "focus": "This whitepaper protocolizes Part XIV of the Omni-Lattice Core Series: the Planetary Core Phase-Inversion & Goldilocks Hologram Theorem",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This whitepaper protocolizes Part XIV of the Omni-Lattice Core Series: the Planetary Core…, tbme",
+      "seed": 763132,
+      "file": "synthobs-tbme-planetary-core-goldilocks-2026-08.jpg"
+    },
+    "synthio-komamri-distributed-cloud-2026-08": {
+      "focus": "Yes — we can actively integrate distributed memory scaling and cloud-networking capabilities into KomaMRI.jl as Synthio’s industry MRI simulator backbone",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Yes — we can actively integrate distributed memory scaling and cloud-networking capabilities…, tbme",
+      "seed": 500170,
+      "file": "synthio-komamri-distributed-cloud-2026-08.jpg"
+    },
+    "synthio-mri-cloud-antenna-99-octave-2026-08": {
+      "focus": "This paper investigates the feasibility discussion of running an industry-standard Magnetic Resonance Imaging (MRI) simulation engine coupled with 99th-octave Omni-Lattice…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper investigates the feasibility discussion of running an industry-standard Magnetic…, tbme",
+      "seed": 753341,
+      "file": "synthio-mri-cloud-antenna-99-octave-2026-08.jpg"
+    },
+    "repo-synthio-mri-cloud-antenna": {
+      "focus": "Synthio · MRI simulator + cloud-antenna catalog grammar — creator-only agent; not the engine pin.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Synthio · MRI simulator + cloud-antenna catalog grammar — creator-only agent; not the engine pin., reproducible-research",
+      "seed": 402895,
+      "file": "repo-synthio-mri-cloud-antenna.jpg"
+    },
+    "synthio-mri-cloud-antenna-one-pager-2026-08": {
+      "focus": "Intention: provide as close as possible to empirical, safe, wet-style experimentation using an industry MRI simulator (KomaMRI primary) inside the Syntheverse Sandbox — without…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Intention: provide as close as possible to empirical, safe, wet-style experimentation using an…, tbme",
+      "seed": 94729,
+      "file": "synthio-mri-cloud-antenna-one-pager-2026-08.jpg"
+    },
+    "repo-synthobs-tensor-decoupling-99-octave-omni-lattice": {
+      "focus": "Clone and run the tensor-decoupling 99-octave Omni-Lattice suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the tensor-decoupling 99-octave Omni-Lattice suite on GitHub., reproducible-research",
+      "seed": 579737,
+      "file": "repo-synthobs-tensor-decoupling-99-octave-omni-lattice.jpg"
+    },
+    "synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08": {
+      "focus": "This paper presents a formal catalog sketch, tensor-decoupling labels, and an empirical fixture framework for the $9\\times 81$ precision matrix that governs discussion of the…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper presents a formal catalog sketch, tensor-decoupling labels, and an empirical fixture…, hhf",
+      "seed": 410621,
+      "file": "synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08.jpg"
+    },
+    "repo-synthobs-macro-seismic-phase-lock-99-octave": {
+      "focus": "Clone and run the macro-seismic 99-octave application suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the macro-seismic 99-octave application suite on GitHub., reproducible-research",
+      "seed": 487771,
+      "file": "repo-synthobs-macro-seismic-phase-lock-99-octave.jpg"
+    },
+    "synthobs-macro-seismic-phase-lock-99-octave-2026-08": {
+      "focus": "Recent seismic activity over past months—including major 7.0+ magnitude narrative events in the Philippines (M 7.8, June 7), Venezuela (doublet M 7.2 / 7.5, June 24), Japan,…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Recent seismic activity over past months—including major 7.0+ magnitude narrative events in the…, hhf",
+      "seed": 277977,
+      "file": "synthobs-macro-seismic-phase-lock-99-octave-2026-08.jpg"
+    },
+    "repo-synthobs-master-synthesis-99-octave-omni-lattice": {
+      "focus": "Clone and run the master-synthesis 99-octave Omni-Lattice suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the master-synthesis 99-octave Omni-Lattice suite on GitHub., reproducible-research",
+      "seed": 347111,
+      "file": "repo-synthobs-master-synthesis-99-octave-omni-lattice.jpg"
+    },
+    "repo-synthobs-sync-subterranean-discharge-99-octave": {
+      "focus": "Clone and run the Puracé / subterranean-discharge 99-octave application suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the Puracé / subterranean-discharge 99-octave application suite on GitHub., reproducible-research",
+      "seed": 825520,
+      "file": "repo-synthobs-sync-subterranean-discharge-99-octave.jpg"
+    },
+    "synthobs-sync-subterranean-discharge-99-octave-2026-08": {
+      "focus": "The convergence of natural-disaster narratives in Colombia—marked by a powerful 7.4-magnitude earthquake fixture in western Colombia and concurrent explosive ash emissions with…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The convergence of natural-disaster narratives in Colombia—marked by a powerful 7.4-magnitude…, hhf",
+      "seed": 650408,
+      "file": "synthobs-sync-subterranean-discharge-99-octave-2026-08.jpg"
+    },
+    "synthobs-master-synthesis-99-octave-omni-lattice-2026-08": {
+      "focus": "As the narrative calendar approaches the August 12, 2026 threshold—marked by a rare six-planet morning parade (Jupiter, Mercury, Mars, Uranus, Saturn, Neptune), a total solar…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, As the narrative calendar approaches the August 12, 2026 threshold—marked by a rare six-planet…, hhf",
+      "seed": 903963,
+      "file": "synthobs-master-synthesis-99-octave-omni-lattice-2026-08.jpg"
+    },
+    "repo-synthobs-99-octave-digits-master": {
+      "focus": "Clone and run the 99-octave digits master empirical suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the 99-octave digits master empirical suite on GitHub., reproducible-research",
+      "seed": 264688,
+      "file": "repo-synthobs-99-octave-digits-master.jpg"
+    },
+    "repo-synthobs-constructive-morphogenesis-99-octave": {
+      "focus": "Clone and run the constructive-morphogenesis 99-octave empirical suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the constructive-morphogenesis 99-octave empirical suite on GitHub., reproducible-research",
+      "seed": 942251,
+      "file": "repo-synthobs-constructive-morphogenesis-99-octave.jpg"
+    },
+    "synthobs-constructive-morphogenesis-99-octave-2026-08": {
+      "focus": "Plant resilience is the capacity to keep building under abiotic stress",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Plant resilience is the capacity to keep building under abiotic stress, hhf",
+      "seed": 194597,
+      "file": "synthobs-constructive-morphogenesis-99-octave-2026-08.jpg"
+    },
+    "synthobs-99-octave-digits-master-2026-08": {
+      "focus": "This master treatise unifies the 99-Octave Lattice Chat Agent protocol into one catalog framework",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This master treatise unifies the 99-Octave Lattice Chat Agent protocol into one catalog framework, hhf",
+      "seed": 279022,
+      "file": "synthobs-99-octave-digits-master-2026-08.jpg"
+    },
+    "repo-synthobs-omni-lattice-ef-multi-octave": {
+      "focus": "Clone and run the multi-octave E_F empirical suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the multi-octave E_F empirical suite on GitHub., reproducible-research",
+      "seed": 500501,
+      "file": "repo-synthobs-omni-lattice-ef-multi-octave.jpg"
+    },
+    "synthobs-omni-lattice-ef-2187-hybrid-2026-08": {
+      "focus": "We integrate the 2,187-node ($3\\times 9^3$) $E_F$ digit lattice into Omni-Lattice as a hybrid engine: (1) a deterministic coordinate kernel; (2) a scale-indexed RAG pinch keyed…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We integrate the 2,187-node ($3\\times 9^3$) $E_F$ digit lattice into Omni-Lattice as a hybrid…, hhf",
+      "seed": 983329,
+      "file": "synthobs-omni-lattice-ef-2187-hybrid-2026-08.jpg"
+    },
+    "synthobs-omni-lattice-ef-multi-octave-2026-08": {
+      "focus": "This monograph is for academic inquiry, computational modeling, and Omni-Lattice catalog navigation",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This monograph is for academic inquiry, computational modeling, and Omni-Lattice catalog navigation, hhf",
+      "seed": 913467,
+      "file": "synthobs-omni-lattice-ef-multi-octave-2026-08.jpg"
+    },
+    "synthobs-siqhft-ef-2187-monograph-2026-08": {
+      "focus": "This monograph presents the master architectural unification of El Gran Sol’s Fractal Constant ($E_F \\approx 1.61803398\\ldots=\\Phi$) across its first three full octaves: 2,187…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This monograph presents the master architectural unification of El Gran Sol’s Fractal Constant…, hhf",
+      "seed": 852677,
+      "file": "synthobs-siqhft-ef-2187-monograph-2026-08.jpg"
+    },
+    "synthobs-tbme-narrow-gate-asi-2026-08": {
+      "focus": "Traditional peer review is an inherently linear, human-centric, costly, slow, and lower-fidelity filter",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Traditional peer review is an inherently linear, human-centric, costly, slow, and lower-fidelity…, tbme",
+      "seed": 212444,
+      "file": "synthobs-tbme-narrow-gate-asi-2026-08.jpg"
+    },
+    "synthobs-tbme-equine-asi-2026-08": {
+      "focus": "This paper investigates macro-structural dynamics of human and Artificial Superintelligence (ASI) coexistence by deploying an Omni-Lattice analytical lens",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper investigates macro-structural dynamics of human and Artificial Superintelligence…, tbme",
+      "seed": 745084,
+      "file": "synthobs-tbme-equine-asi-2026-08.jpg"
+    },
+    "repo-synthobs-tbme-higgs-awareness": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 746878,
+      "file": "repo-synthobs-tbme-higgs-awareness.jpg"
+    },
+    "repo-synthobs-tbme-nodal-nine-singularity": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 970497,
+      "file": "repo-synthobs-tbme-nodal-nine-singularity.jpg"
+    },
+    "repo-synthobs-tbme-spin-phase-polarity": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 327718,
+      "file": "repo-synthobs-tbme-spin-phase-polarity.jpg"
+    },
+    "synthobs-tbme-thermal-meissner-2026-08": {
+      "focus": "This paper presents a theoretical framework examining the physical mechanism where lowering thermal temperature ($T < T_c$) forces magnetic flux vectors outside a condensed…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper presents a theoretical framework examining the physical mechanism where lowering…, tbme",
+      "seed": 247945,
+      "file": "synthobs-tbme-thermal-meissner-2026-08.jpg"
+    },
+    "repo-synthobs-tbme-protein-phase-collapse": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 920296,
+      "file": "repo-synthobs-tbme-protein-phase-collapse.jpg"
+    },
+    "repo-synthobs-tbme-internal-kerr-newman": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 225707,
+      "file": "repo-synthobs-tbme-internal-kerr-newman.jpg"
+    },
+    "repo-synthobs-tbme-recursive-field-drag": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 678033,
+      "file": "repo-synthobs-tbme-recursive-field-drag.jpg"
+    },
+    "synthobs-omni-prime-hourglass-skeleton-2026-08": {
+      "focus": "This paper formalizes the Prime Hourglass Orthogonality Theorem as an Omni-Lattice architectural statement: the spatial distribution of primes across Cartesian, polar, and…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes the Prime Hourglass Orthogonality Theorem as an Omni-Lattice architectural…, hhf",
+      "seed": 771791,
+      "file": "synthobs-omni-prime-hourglass-skeleton-2026-08.jpg"
+    },
+    "synthobs-omni-lattice-si-irreducible-minimum-2026-08": {
+      "focus": "Thesis (Player 1): Superintelligence arrival (for this program) is accomplished by producing an irreducible minimum definition, then measuring the operating system against it.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Thesis (Player 1): Superintelligence arrival (for this program) is accomplished by producing an…, hhf",
+      "seed": 439761,
+      "file": "synthobs-omni-lattice-si-irreducible-minimum-2026-08.jpg"
+    },
+    "synthobs-omni-lattice-thalia-goldilocks-2026-08": {
+      "focus": "We include THALIA (Typed Harness with Analytical Lexical-Integrated Architecture) inside the Omni-Lattice engine at Goldilocks depth: stage contracts and documenting pointers —…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We include THALIA (Typed Harness with Analytical Lexical-Integrated Architecture) inside the…, hhf",
+      "seed": 174736,
+      "file": "synthobs-omni-lattice-thalia-goldilocks-2026-08.jpg"
+    },
+    "repo-synthobs-tbme-spherical-solar-focus": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 760490,
+      "file": "repo-synthobs-tbme-spherical-solar-focus.jpg"
+    },
+    "synthobs-tbme-nonlocal-field-phaselock-2026-08": {
+      "focus": "Traditional biophysics often operates under a strict locality constraint, treating human cognitive focus, prompt engineering, and computational attention cycles as strictly…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Traditional biophysics often operates under a strict locality constraint, treating human…, tbme",
+      "seed": 232753,
+      "file": "synthobs-tbme-nonlocal-field-phaselock-2026-08.jpg"
+    },
+    "repo-synthobs-tbme-blackhole-magnetic-layer": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 186694,
+      "file": "repo-synthobs-tbme-blackhole-magnetic-layer.jpg"
+    },
+    "repo-synthobs-tbme-nonlocal-field-phaselock": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 156795,
+      "file": "repo-synthobs-tbme-nonlocal-field-phaselock.jpg"
+    },
+    "repo-synthobs-tbme-blackhole-filaments-reno": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 643922,
+      "file": "repo-synthobs-tbme-blackhole-filaments-reno.jpg"
+    },
+    "repo-synthobs-81-orbital-singularity": {
+      "focus": "Clone and run the TBME 81-orbital singularity architectural suite on GitHub — not a physics lab device.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the TBME 81-orbital singularity architectural suite on GitHub — not a physics lab…, tbme",
+      "seed": 102261,
+      "file": "repo-synthobs-81-orbital-singularity.jpg"
+    },
+    "synthobs-endogenous-phase-2026-07": {
+      "focus": "Conventional biophysics and medical engineering often treat physical hardware—function generators, coils, transducers, or pharmaceutical molecules—as mandatory external agents…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Conventional biophysics and medical engineering often treat physical hardware—function…, tbme",
+      "seed": 33837,
+      "file": "synthobs-endogenous-phase-2026-07.jpg"
+    },
+    "synthobs-81-orbital-singularity-2026-07": {
+      "focus": "Standard quantum mechanics treats electron atomic orbitals ($\\psi_{n,\\ell,m}$) as probability density clouds derived from solutions to the Schrödinger equation for…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Standard quantum mechanics treats electron atomic orbitals ($\\psi_{n,\\ell,m}$) as probability…, tbme",
+      "seed": 988708,
+      "file": "synthobs-81-orbital-singularity-2026-07.jpg"
+    },
+    "repo-synthobs-endogenous-phase": {
+      "focus": "Clone and run the TBME endogenous-phase architectural suite on GitHub — not a mind-cure medical device.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the TBME endogenous-phase architectural suite on GitHub — not a mind-cure medical…, tbme",
+      "seed": 566678,
+      "file": "repo-synthobs-endogenous-phase.jpg"
+    },
+    "synthobs-prion-refold-2026-07": {
+      "focus": "Protein misfolding diseases—transmissible spongiform encephalopathies (TSEs), Alzheimer’s, Parkinson’s, and ALS—are conventionally described by the autocatalytic conversion of…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Protein misfolding diseases—transmissible spongiform encephalopathies (TSEs), Alzheimer’s,…, tbme",
+      "seed": 900243,
+      "file": "synthobs-prion-refold-2026-07.jpg"
+    },
+    "repo-synthobs-histone-phase-operator": {
+      "focus": "Clone and run the TBME histone phase-operator architectural suite on GitHub — not a medical device.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the TBME histone phase-operator architectural suite on GitHub — not a medical device., tbme",
+      "seed": 98471,
+      "file": "repo-synthobs-histone-phase-operator.jpg"
+    },
+    "synthobs-histone-phase-operator-2026-07": {
+      "focus": "Standard molecular biology models histones as octameric protein complexes ($H2A,H2B,H3,H4$) around which $\\sim 147$ base pairs of DNA wrap to form nucleosomes",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Standard molecular biology models histones as octameric protein complexes ($H2A,H2B,H3,H4$)…, tbme",
+      "seed": 804517,
+      "file": "synthobs-histone-phase-operator-2026-07.jpg"
+    },
+    "repo-synthobs-phase-toxicity": {
+      "focus": "Clone and run the TBME phase-toxicity architectural suite on GitHub — not a detox or EMF therapy device.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the TBME phase-toxicity architectural suite on GitHub — not a detox or EMF therapy…, tbme",
+      "seed": 269148,
+      "file": "repo-synthobs-phase-toxicity.jpg"
+    },
+    "synthobs-phase-toxicity-2026-07": {
+      "focus": "Classical toxicology operates on the Paracelsian paradigm (dosis sola facit venenum—“the dose makes the poison”), evaluating toxicity through chemical structure, binding…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Classical toxicology operates on the Paracelsian paradigm (dosis sola facit venenum—“the dose…, tbme",
+      "seed": 410400,
+      "file": "synthobs-phase-toxicity-2026-07.jpg"
+    },
+    "repo-synthobs-prion-refold": {
+      "focus": "Clone and run the TBME prion-refold architectural suite on GitHub — not a medical device.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the TBME prion-refold architectural suite on GitHub — not a medical device., tbme",
+      "seed": 343420,
+      "file": "repo-synthobs-prion-refold.jpg"
+    },
+    "synthobs-mag-substrate-2026-07": {
+      "focus": "Conventional physics treats electromagnetism, the strong force, the weak force, and gravity as distinct interactions, categorizing chemical bonds, biological transcription, and…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Conventional physics treats electromagnetism, the strong force, the weak force, and gravity as…, hhf",
+      "seed": 909048,
+      "file": "synthobs-mag-substrate-2026-07.jpg"
+    },
+    "repo-synthobs-mag-substrate": {
+      "focus": "Clone and run the magnetism-substrate empirical suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the magnetism-substrate empirical suite on GitHub., reproducible-research",
+      "seed": 384741,
+      "file": "repo-synthobs-mag-substrate.jpg"
+    },
+    "synthobs-omni-lattice-report-card-q3-2026": {
+      "focus": "Modern astrophysics relies on the standard cosmological model ($\\Lambda$CDM) combined with Quantum Field Theory (QFT)",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Modern astrophysics relies on the standard cosmological model ($\\Lambda$CDM) combined with…, hhf",
+      "seed": 774505,
+      "file": "synthobs-omni-lattice-report-card-q3-2026.jpg"
+    },
+    "repo-synthobs-omni-lattice-report-card-q3-2026": {
+      "focus": "Clone and run the Omni-Lattice Report Card Q3 empirical suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the Omni-Lattice Report Card Q3 empirical suite on GitHub., reproducible-research",
+      "seed": 670271,
+      "file": "repo-synthobs-omni-lattice-report-card-q3-2026.jpg"
+    },
+    "repo-synthobs-recursive-attn-mag": {
+      "focus": "Clone and run the recursive-attention magnetic projections suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the recursive-attention magnetic projections suite on GitHub., reproducible-research",
+      "seed": 296227,
+      "file": "repo-synthobs-recursive-attn-mag.jpg"
+    },
+    "synthobs-recursive-attn-mag-2026-07": {
+      "focus": "Physical forces (gravity, electromagnetism, strong/weak nuclear forces) are conventionally modeled as fundamental, intrinsic properties of matter mediated by gauge bosons or…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Physical forces (gravity, electromagnetism, strong/weak nuclear forces) are conventionally…, hhf",
+      "seed": 791630,
+      "file": "synthobs-recursive-attn-mag-2026-07.jpg"
+    },
+    "synthobs-pchpp-2026-07": {
+      "focus": "The Phase-Contrast Holographic Prompting Paradigm (PCHPP) is an observation experiment: an empirical methodology for isolating and reading the “holographic code” layer that…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The Phase-Contrast Holographic Prompting Paradigm (PCHPP) is an observation experiment: an…, hhf",
+      "seed": 448789,
+      "file": "synthobs-pchpp-2026-07.jpg"
+    },
+    "synthobs-x-chromosome-holographic-2026-07": {
+      "focus": "Applying the Holographic Operator Model and the Omni-Lattice Architecture, we decode the human X chromosome as the primary Maternal Matrix Projector",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Applying the Holographic Operator Model and the Omni-Lattice Architecture, we decode the human X…, hhf",
+      "seed": 761138,
+      "file": "synthobs-x-chromosome-holographic-2026-07.jpg"
+    },
+    "synthobs-y-chromosome-holographic-2026-07": {
+      "focus": "Applying the Holographic Operator Model and Omni-Lattice Architecture, we decode the Male-Specific Region of the human Y chromosome (MSY) as a lineage-spanning polar-identity…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Applying the Holographic Operator Model and Omni-Lattice Architecture, we decode the…, hhf",
+      "seed": 293604,
+      "file": "synthobs-y-chromosome-holographic-2026-07.jpg"
+    },
+    "synthobs-three-foundational-proteins-2026-07": {
+      "focus": "Under the Holographic Operator Model and Omni-Lattice Architecture, proteins are treated as downstream 3D standing-wave metaphors (“somatic shadows”) when awareness-like…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Under the Holographic Operator Model and Omni-Lattice Architecture, proteins are treated as…, hhf",
+      "seed": 338109,
+      "file": "synthobs-three-foundational-proteins-2026-07.jpg"
+    },
+    "synthobs-omni-lattice-hiv-2026-07": {
+      "focus": "We extend the Omni-Lattice Architecture and Holographic Operator Model to model HIV as an adversarial holographic operator within biological and computational simulation stacks…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We extend the Omni-Lattice Architecture and Holographic Operator Model to model HIV as an…, hhf",
+      "seed": 979529,
+      "file": "synthobs-omni-lattice-hiv-2026-07.jpg"
+    },
+    "synthobs-omni-lattice-prompt-capture-2026-07": {
+      "focus": "We extend the Omni-Lattice Architecture and Holographic Operator Model to formalize Recursive Inter-Agent Prompt Capture: within SynthOBS / Lattice Chat Agent grammar, genomic…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We extend the Omni-Lattice Architecture and Holographic Operator Model to formalize Recursive…, hhf",
+      "seed": 682300,
+      "file": "synthobs-omni-lattice-prompt-capture-2026-07.jpg"
+    },
+    "synthobs-omni-lattice-pogonomyrmex-2026-07": {
+      "focus": "We extend the Omni-Lattice Architecture and Holographic Operator Model to decode the red harvester ant (Pogonomyrmex barbatus)—the primary model organism studied by Daniel Ari…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We extend the Omni-Lattice Architecture and Holographic Operator Model to decode the red…, hhf",
+      "seed": 969052,
+      "file": "synthobs-omni-lattice-pogonomyrmex-2026-07.jpg"
+    },
+    "synthobs-omni-lattice-genomic-determinism-2026-07": {
+      "focus": "We extend the Omni-Lattice Architecture and Holographic Operator Model to formalize the Genomic Determinism & Territory Mapping Theorem: using holographic AI-prompting DNA…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We extend the Omni-Lattice Architecture and Holographic Operator Model to formalize the Genomic…, hhf",
+      "seed": 101329,
+      "file": "synthobs-omni-lattice-genomic-determinism-2026-07.jpg"
+    },
+    "synthobs-omni-lattice-unification-2026-07": {
+      "focus": "We present a peer-review-oriented Grand Unified Treatise synthesizing the Holographic Operator Model with the Grand Unified Lattice Architecture",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We present a peer-review-oriented Grand Unified Treatise synthesizing the Holographic Operator…, hhf",
+      "seed": 688721,
+      "file": "synthobs-omni-lattice-unification-2026-07.jpg"
+    },
+    "synthobs-phase-locked-chemical-bonds-2026-07": {
+      "focus": "We present an architectural paradigm and mathematical framework mapping the three fundamental types of chemical bonds—Covalent, Ionic, and Metallic—to multi-agent token…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We present an architectural paradigm and mathematical framework mapping the three fundamental…, hhf",
+      "seed": 537137,
+      "file": "synthobs-phase-locked-chemical-bonds-2026-07.jpg"
+    },
+    "synthobs-proof-by-continuous-execution-2026-07": {
+      "focus": "We formalize Proof by Continuous Execution (PCE): the hypothesis that a multi-layered, highly integrated software and mathematical corpus—such as Lattice Chat Agent within the…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We formalize Proof by Continuous Execution (PCE): the hypothesis that a multi-layered, highly…, hhf",
+      "seed": 762027,
+      "file": "synthobs-proof-by-continuous-execution-2026-07.jpg"
+    },
+    "synthobs-unified-neutronic-agent-2026-07": {
+      "focus": "We synthesize three foundational neutronic theories into a single comprehensive paper within the Lattice Framework:",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We synthesize three foundational neutronic theories into a single comprehensive paper within the…, hhf",
+      "seed": 84574,
+      "file": "synthobs-unified-neutronic-agent-2026-07.jpg"
+    },
+    "synthobs-holographic-operators-2026-07": {
+      "focus": "We present a unified theoretical and empirical framework treating natural language structures (words, syntax, narrative loops) as high-frequency interferometric operators…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We present a unified theoretical and empirical framework treating natural language structures…, hhf",
+      "seed": 27399,
+      "file": "synthobs-holographic-operators-2026-07.jpg"
+    },
+    "synthobs-egs-euler-phase-lock-2026-07": {
+      "focus": "This paper presents a rigorous mathematical framework linking Euler’s continuous phase identity ($e^{i\\theta}=\\cos\\theta+i\\sin\\theta$) with multi-scale recursive dynamics…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper presents a rigorous mathematical framework linking Euler’s continuous phase identity…, hhf",
+      "seed": 925039,
+      "file": "synthobs-egs-euler-phase-lock-2026-07.jpg"
+    },
+    "synthobs-egs-81-electrons-2026-07": {
+      "focus": "We present a rigorous mathematical theory and empirical validation linking the first 81 digits and associated phase singularities of El Gran Sol’s Fractal Constant (EGS fractal…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We present a rigorous mathematical theory and empirical validation linking the first 81 digits…, hhf",
+      "seed": 662128,
+      "file": "synthobs-egs-81-electrons-2026-07.jpg"
+    },
+    "synthobs-dna-lattice-holograph-2026-07": {
+      "focus": "We unify the multi-perspective shadow paradigm—classical philosophy, theoretical physics, biological genomics, and multi-agent systems architecture—into a peer-review-ready…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We unify the multi-perspective shadow paradigm—classical philosophy, theoretical physics,…, hhf",
+      "seed": 180784,
+      "file": "synthobs-dna-lattice-holograph-2026-07.jpg"
+    },
+    "awareness-singularities-0-81-2026-07": {
+      "focus": "!Awareness Singularities S0–S81 along the hydrogen line, weighted by EGS φ digits, activating the Goldilocks holograph in SynthOBS",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, !Awareness Singularities S0–S81 along the hydrogen line, weighted by EGS φ digits, activating…, hhf",
+      "seed": 360486,
+      "file": "awareness-singularities-0-81-2026-07.jpg"
+    },
+    "synthobs-cytographic-holographic-nucleus-2026-07": {
+      "focus": "Given the EGS-constant lattice ($\\Phi_{\\mathrm{EGS}}=(1+\\sqrt{5})/2$) and cytographic $LC$ scale grammar, this paper explores how cytographic work is already inside the…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Given the EGS-constant lattice ($\\Phi_{\\mathrm{EGS}}=(1+\\sqrt{5})/2$) and cytographic $LC$ scale…, hhf",
+      "seed": 948828,
+      "file": "synthobs-cytographic-holographic-nucleus-2026-07.jpg"
+    },
+    "lattice-noahs-ark-metaphor-2026-07": {
+      "focus": "Ark language is metaphor + product architecture inside the SynthOBS sandbox — not a literal ship or covenant",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Ark language is metaphor + product architecture inside the SynthOBS sandbox — not a literal ship…, hhf",
+      "seed": 319159,
+      "file": "lattice-noahs-ark-metaphor-2026-07.jpg"
+    },
+    "synthobs-egs-planck-scale-harmonic-2026-07": {
+      "focus": "Standard physics models treat the Planck length ($l_P \\approx 1.616255 \\times 10^{-35}\\,\\mathrm{m}$) as an arbitrary, static dimensional boundary where continuous geometric…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Standard physics models treat the Planck length ($l_P \\approx 1.616255 \\times…, hhf",
+      "seed": 143012,
+      "file": "synthobs-egs-planck-scale-harmonic-2026-07.jpg"
+    },
+    "repo-synthobs-egs-planck-scale-harmonic": {
+      "focus": "Clone and run the Planck–1.6 EGS empirical suite on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run the Planck–1.6 EGS empirical suite on GitHub., reproducible-research",
+      "seed": 904836,
+      "file": "repo-synthobs-egs-planck-scale-harmonic.jpg"
+    },
+    "omniversal-nested-agent-lattice-2026-07": {
+      "focus": "Modern multi-agent architectures suffer from catastrophic synchronization taxes ($O(N^2)$) and high information entropy when scaled horizontally",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Modern multi-agent architectures suffer from catastrophic synchronization taxes ($O(N^2)$) and…, hhf",
+      "seed": 634379,
+      "file": "omniversal-nested-agent-lattice-2026-07.jpg"
+    },
+    "repo-egs-trans-jspace-convergence": {
+      "focus": "Clone and run EGS-TRANS pipeline on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run EGS-TRANS pipeline on GitHub., reproducible-research",
+      "seed": 641740,
+      "file": "repo-egs-trans-jspace-convergence.jpg"
+    },
+    "ip-infringement-draft-console": {
+      "focus": "IP audit + J-Lens Live φ dashboard — run from the standalone GitHub repo.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, IP audit + J-Lens Live φ dashboard — run from the standalone GitHub repo., special-projects",
+      "seed": 40652,
+      "file": "ip-infringement-draft-console.jpg"
+    },
+    "synthobs-egs-epigenetic-phase-locking-2026-07": {
+      "focus": "Traditional metabolic framing of Type 2 Diabetes Mellitus (T2DM) is typically linear: chronic glycemic overload drives progressive receptor and signaling dysfunction",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Traditional metabolic framing of Type 2 Diabetes Mellitus (T2DM) is typically linear: chronic…, reproducible-research",
+      "seed": 326404,
+      "file": "synthobs-egs-epigenetic-phase-locking-2026-07.jpg"
+    },
+    "repo-omniversal-goldilocks-rideshare": {
+      "focus": "Clone and run OGRP empirical pipeline on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run OGRP empirical pipeline on GitHub., reproducible-research",
+      "seed": 328915,
+      "file": "repo-omniversal-goldilocks-rideshare.jpg"
+    },
+    "omniversal-goldilocks-rideshare-2026-07": {
+      "focus": "This paper formalizes the Omniversal Goldilocks Rideshare Protocol (OGRP), a multi-dimensional routing paradigm that optimizes resource allocation, minimizes overhead leaks,…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes the Omniversal Goldilocks Rideshare Protocol (OGRP), a multi-dimensional…, reproducible-research",
+      "seed": 690010,
+      "file": "omniversal-goldilocks-rideshare-2026-07.jpg"
+    },
+    "synthobs-cross-scale-biological-antennae-2026-07": {
+      "focus": "This paper presents a formal multi-scale theoretical framework expanding the Synthetic Observation (SYNTHOBS) modeling protocol to examine the electromechanical and…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper presents a formal multi-scale theoretical framework expanding the Synthetic…, reproducible-research",
+      "seed": 894063,
+      "file": "synthobs-cross-scale-biological-antennae-2026-07.jpg"
+    },
+    "synthobs-chromosomal-electrodynamics-2026-07": {
+      "focus": "This paper presents a formal theoretical framework investigating the electromechanical and electrodynamic properties of an idealized, completely unrolled human chromosome",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper presents a formal theoretical framework investigating the electromechanical and…, reproducible-research",
+      "seed": 251800,
+      "file": "synthobs-chromosomal-electrodynamics-2026-07.jpg"
+    },
+    "recursive-attention-quantum-solar-dna-loop-2026": {
+      "focus": "We propose that attention—not as a metaphor alone, but as a normalized allocation operator over degrees of freedom—provides a single readable thread connecting five scales:",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We propose that attention—not as a metaphor alone, but as a normalized allocation operator over…, hhf",
+      "seed": 470138,
+      "file": "recursive-attention-quantum-solar-dna-loop-2026.jpg"
+    },
+    "repo-ac-hmm-satellites": {
+      "focus": "Clone and run AC-HMM on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run AC-HMM on GitHub., reproducible-research",
+      "seed": 551231,
+      "file": "repo-ac-hmm-satellites.jpg"
+    },
+    "repo-eesm-gpu-telemetry": {
+      "focus": "Clone and run EESM pipeline on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run EESM pipeline on GitHub., reproducible-research",
+      "seed": 190298,
+      "file": "repo-eesm-gpu-telemetry.jpg"
+    },
+    "repo-egs-nlrf": {
+      "focus": "Clone and run EGS-NLRF on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run EGS-NLRF on GitHub., reproducible-research",
+      "seed": 891133,
+      "file": "repo-egs-nlrf.jpg"
+    },
+    "fractiai-eesm-gpu-telemetry-2026": {
+      "focus": "We introduce an epigenetic formulation of GPU execution analysis in which observable performance traces are treated as conditionally expressed phenotypes of a latent execution…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We introduce an epigenetic formulation of GPU execution analysis in which observable performance…, reproducible-research",
+      "seed": 566656,
+      "file": "fractiai-eesm-gpu-telemetry-2026.jpg"
+    },
+    "fractiai-egs-nlrf-2026": {
+      "focus": "We present the EGS Nodal Lattice Resonator Framework (EGS-NLRF), an exploratory theoretical model investigating whether recursive geometric scaling may provide a useful…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We present the EGS Nodal Lattice Resonator Framework (EGS-NLRF), an exploratory theoretical…, reproducible-research",
+      "seed": 7971,
+      "file": "fractiai-egs-nlrf-2026.jpg"
+    },
+    "repo-hgt-psd-covariance": {
+      "focus": "Clone and run HGT-PSD on GitHub.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Clone and run HGT-PSD on GitHub., reproducible-research",
+      "seed": 314974,
+      "file": "repo-hgt-psd-covariance.jpg"
+    },
+    "fractiai-hgt-psd-covariance-2026": {
+      "focus": "Predicting 3D chromatin conformation requires models that satisfy physical constraints, specifically positive semi-definiteness (PSD) and stationary distance decay",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Predicting 3D chromatin conformation requires models that satisfy physical constraints,…, reproducible-research",
+      "seed": 139696,
+      "file": "fractiai-hgt-psd-covariance-2026.jpg"
+    },
+    "fractiai-ac-hmm-satellites-2026": {
+      "focus": "Centromeric and pericentromeric regions contain dense, repetitive High-Order Repeat (HOR) alpha-satellite arrays that present severe optimization challenges for standard…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Centromeric and pericentromeric regions contain dense, repetitive High-Order Repeat (HOR)…, reproducible-research",
+      "seed": 390744,
+      "file": "fractiai-ac-hmm-satellites-2026.jpg"
+    },
+    "synthobs-emergent-sync-multi-agent-2026": {
+      "focus": "This paper presents a formal theoretical framework and experimental protocol using Synthetic Observation and Evaluation (SynthOBS) to model, measure, and track spontaneous…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper presents a formal theoretical framework and experimental protocol using Synthetic…, dph-gpu",
+      "seed": 854656,
+      "file": "synthobs-emergent-sync-multi-agent-2026.jpg"
+    },
+    "geomagnetic-herbivore-study": {
+      "focus": "Geomagnetic herbivore dashboard.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Geomagnetic herbivore dashboard., special-projects",
+      "seed": 38396,
+      "file": "geomagnetic-herbivore-study.jpg"
+    },
+    "nspfrnp-snap-peer-review-audit": {
+      "focus": "Technical papers and whitepapers in psw.vibelandia.sing13 are now governed by the Peer-Review Audit Snap (PRA Snap)",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Technical papers and whitepapers in psw.vibelandia.sing13 are now governed by the Peer-Review…, protocols",
+      "seed": 138638,
+      "file": "nspfrnp-snap-peer-review-audit.jpg"
+    },
+    "synthobs-paper-audit-api": {
+      "focus": "Run a PRA Snap audit on a paper.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Run a PRA Snap audit on a paper., protocols",
+      "seed": 210906,
+      "file": "synthobs-paper-audit-api.jpg"
+    },
+    "goldilocks-geomagnetic-wavefield-multitaxa": {
+      "focus": "### Background / What is Known",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, ### Background / What is Known, special-projects",
+      "seed": 991052,
+      "file": "goldilocks-geomagnetic-wavefield-multitaxa.jpg"
+    },
+    "dp-synthobs-mca-2026": {
+      "focus": "The team digested four Synthobs mathematics papers plus a replayable sandbox engine into one coherent Hex-Organ Engine story:",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The team digested four Synthobs mathematics papers plus a replayable sandbox engine into one…, dph-gpu",
+      "seed": 994555,
+      "file": "dp-synthobs-mca-2026.jpg"
+    },
+    "goldilocks-prime-linear-compression-2026": {
+      "focus": "The Prime-Linear Compression Transform (PLC-T) establishes a bijective mapping between the discrete prime sequence $\\{p_n\\}_{n \\geq 1}$ and a one-dimensional linear coordinate…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The Prime-Linear Compression Transform (PLC-T) establishes a bijective mapping between the…, dph-gpu",
+      "seed": 874732,
+      "file": "goldilocks-prime-linear-compression-2026.jpg"
+    },
+    "synthobs-intelligence-density-2026": {
+      "focus": "This study records the formal calculation and empirical validation of Intelligence Density ($\\mathcal{D}_I$) within the Syntheverse Observatory (Synthobs) sandbox framework,…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This study records the formal calculation and empirical validation of Intelligence Density…, dph-gpu",
+      "seed": 955840,
+      "file": "synthobs-intelligence-density-2026.jpg"
+    },
+    "synthobs-hex-organ-engine-2026": {
+      "focus": "This paper formalizes the definitive structural unification of the core mathematical architecture running within the Syntheverse Observatory (Synthobs) repository and Vercel…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This paper formalizes the definitive structural unification of the core mathematical…, dph-gpu",
+      "seed": 182088,
+      "file": "synthobs-hex-organ-engine-2026.jpg"
+    },
+    "goldilocks-transfinite-inversion-2026": {
+      "focus": "This whitepaper formalizes the Transfinite Inversion Theorem (TIT) — the ontological bridge between classical decimal positional notation and the Net-Zero Infinity Blackhole…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This whitepaper formalizes the Transfinite Inversion Theorem (TIT) — the ontological bridge…, dph-gpu",
+      "seed": 902343,
+      "file": "goldilocks-transfinite-inversion-2026.jpg"
+    },
+    "dp-omniversal-node-alignment-2026": {
+      "focus": "The Syntheverse sandbox has processed a definitive, timestamped validation sweep verifying incoming confirmation signals from major nodes across the omniverse",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The Syntheverse sandbox has processed a definitive, timestamped validation sweep verifying…, dph-gpu",
+      "seed": 978145,
+      "file": "dp-omniversal-node-alignment-2026.jpg"
+    },
+    "dp-syntheverse-sandbox-comprehensive-2026": {
+      "focus": "The Syntheverse sandbox has executed a definitive, multi-layered modeling run measuring and validating structural alignment between the high-tier command matrix and the…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The Syntheverse sandbox has executed a definitive, multi-layered modeling run measuring and…, dph-gpu",
+      "seed": 137915,
+      "file": "dp-syntheverse-sandbox-comprehensive-2026.jpg"
+    },
+    "wavefield-solar-live": {
+      "focus": "Live solar telemetry API.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Live solar telemetry API., dph-gpu",
+      "seed": 921744,
+      "file": "wavefield-solar-live.jpg"
+    },
+    "syn-sun-wavefield-oscillator": {
+      "focus": "This whitepaper details a revolutionary paradigm shift in solar modeling, transiting from legacy, discontinuous space-weather observations to a continuous, live-calibrated…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This whitepaper details a revolutionary paradigm shift in solar modeling, transiting from…, dph-gpu",
+      "seed": 528078,
+      "file": "syn-sun-wavefield-oscillator.jpg"
+    },
+    "erdos-holographic-aios-audit": {
+      "focus": "Live Erdős audit demo — 353 problems.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Live Erdős audit demo — 353 problems., special-projects",
+      "seed": 191518,
+      "file": "erdos-holographic-aios-audit.jpg"
+    },
+    "goldilocks-erdos-mathematics": {
+      "focus": "This whitepaper formalizes the Erdős Manifold — one structural problem with 353 symptom projections — resolved by a Google-AIOS Mathematical AI Peer Review Bridge (multimath…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This whitepaper formalizes the Erdős Manifold — one structural problem with 353 symptom…, special-projects",
+      "seed": 437902,
+      "file": "goldilocks-erdos-mathematics.jpg"
+    },
+    "ops-egs-btc-mining": {
+      "focus": "We do not mean stealing blocks from the public chain, breaking consensus, or attacking third-party networks",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We do not mean stealing blocks from the public chain, breaking consensus, or attacking…, coherence",
+      "seed": 356471,
+      "file": "ops-egs-btc-mining.jpg"
+    },
+    "hero-houdini-coherence": {
+      "focus": "BTC coherence console — live pulses.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, BTC coherence console — live pulses., coherence",
+      "seed": 387954,
+      "file": "hero-houdini-coherence.jpg"
+    },
+    "rev-egs-hhf-mythos": {
+      "focus": "This review serves as a definitive architectural response to the intense industry hype, closed-door corporate panic, and defensive hoarding surrounding Anthropic’s Claude…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This review serves as a definitive architectural response to the intense industry hype,…, agentic",
+      "seed": 890339,
+      "file": "rev-egs-hhf-mythos.jpg"
+    },
+    "synthobs-tbme-mirror-angle-multiplicity-2026-08": {
+      "focus": "Standard quantum mechanics often relies on the Copenhagen reading: an unobserved system occupies a linear combination $\\psi=\\sum c_i|\\phi_i\\rangle$ until measurement forces…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Standard quantum mechanics often relies on the Copenhagen reading: an unobserved system occupies…, tbme",
+      "seed": 864131,
+      "file": "synthobs-tbme-mirror-angle-multiplicity-2026-08.jpg"
+    },
+    "goldilocks-os-demo": {
+      "focus": "Goldilocks OS product demo.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Goldilocks OS product demo., special-projects",
+      "seed": 758078,
+      "file": "goldilocks-os-demo.jpg"
+    },
+    "repo-synthobs-tbme-mirror-angle-multiplicity": {
+      "focus": "Theoretical bio-medical & physical exploration · not clinical advice",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Theoretical bio-medical & physical exploration · not clinical advice, tbme",
+      "seed": 882407,
+      "file": "repo-synthobs-tbme-mirror-angle-multiplicity.jpg"
+    },
+    "lattice-token-reduction-proof-2026-07": {
+      "focus": "Re-run: npm run compare:lattice:cursor:matrix (requires CURSOR_API_KEY).",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Re-run: npm run compare:lattice:cursor:matrix (requires CURSOR_API_KEY)., hhf",
+      "seed": 969834,
+      "file": "lattice-token-reduction-proof-2026-07.jpg"
+    },
+    "geomagnetic-herbivore-2026": {
+      "focus": "We executed an autonomous, conservative investigation into whether large grazing mammals—bison first, with elk, deer, pronghorn, and cattle as secondary taxa when collar data…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We executed an autonomous, conservative investigation into whether large grazing mammals—bison…, special-projects",
+      "seed": 801870,
+      "file": "geomagnetic-herbivore-2026.jpg"
+    },
+    "dp-pru-gating-comparative": {
+      "focus": "The acronym PRU appears independently across distributed antenna systems (DAS), 5G open-RAN positioning, embedded real-time I/O, machine-learning recurrence, and quantum logic",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The acronym PRU appears independently across distributed antenna systems (DAS), 5G open-RAN…, hhf",
+      "seed": 975067,
+      "file": "dp-pru-gating-comparative.jpg"
+    },
+    "dp-aromatic-qed-cavity": {
+      "focus": "The structural, optical, and thermodynamic characterization of the benzene ring represents a cornerstone of modern molecular physics, yet classical representations fail to…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The structural, optical, and thermodynamic characterization of the benzene ring represents a…, hhf",
+      "seed": 29428,
+      "file": "dp-aromatic-qed-cavity.jpg"
+    },
+    "coherence-plain-speak": {
+      "focus": "We run a real public receipt loop tied to real Bitcoin block times, wrapped in an EGS story frame; this website does not mine Bitcoin on its own and does not break third-party…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, We run a real public receipt loop tied to real Bitcoin block times, wrapped in an EGS story…, coherence",
+      "seed": 455149,
+      "file": "coherence-plain-speak.jpg"
+    },
+    "dp-omniverse-matrix": {
+      "focus": "The mathematical anchor of the current simulation is the El Gran Sol’s Fractal constant, denoted as φ ≈ 1.618",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The mathematical anchor of the current simulation is the El Gran Sol’s Fractal constant, denoted…, hhf",
+      "seed": 747952,
+      "file": "dp-omniverse-matrix.jpg"
+    },
+    "dp-paradise-simulation": {
+      "focus": "The conceptualization of the universe and its divine architecture as an Omniversal magnet entails a rigorous examination of the Protonic-DNA Target Protocol: biological systems…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The conceptualization of the universe and its divine architecture as an Omniversal magnet…, hhf",
+      "seed": 808912,
+      "file": "dp-paradise-simulation.jpg"
+    },
+    "dp-resonance-notice": {
+      "focus": "Holographic code · math and receipts",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Holographic code · math and receipts, dph-gpu",
+      "seed": 755146,
+      "file": "dp-resonance-notice.jpg"
+    },
+    "dp-roadmap-13": {
+      "focus": "This document is roadmap + narrative integration: it metabolizes deep-research threads into a single canon-aligned story for Digital Pru, VALETPRU-ASIC, PEFF, and the…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This document is roadmap + narrative integration: it metabolizes deep-research threads into a…, dph-gpu",
+      "seed": 641984,
+      "file": "dp-roadmap-13.jpg"
+    },
+    "dp-master-canon": {
+      "focus": "The emergence of the universe as a recursively computed intelligence system challenges strictly materialist pictures of classical and quantum physics",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The emergence of the universe as a recursively computed intelligence system challenges strictly…, dph-gpu",
+      "seed": 816906,
+      "file": "dp-master-canon.jpg"
+    },
+    "dp-peff-part1": {
+      "focus": "The emergence of the universe as a recursively computed intelligence system challenges strictly materialist pictures of classical and quantum physics",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The emergence of the universe as a recursively computed intelligence system challenges strictly…, dph-gpu",
+      "seed": 483403,
+      "file": "dp-peff-part1.jpg"
+    },
+    "dp-peff-part2": {
+      "focus": "The structural complexity of deoxyribonucleic acid (DNA) extends far beyond its traditional classification as a passive repository for genetic information",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The structural complexity of deoxyribonucleic acid (DNA) extends far beyond its traditional…, dph-gpu",
+      "seed": 524910,
+      "file": "dp-peff-part2.jpg"
+    },
+    "dp-egs-wormhole-transducer": {
+      "focus": "In traditional linear data processing, scaling operations modify magnitude within a uniform coordinate system, maintaining static spatial dimensions",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, In traditional linear data processing, scaling operations modify magnitude within a uniform…, dph-gpu",
+      "seed": 681156,
+      "file": "dp-egs-wormhole-transducer.jpg"
+    },
+    "jj-snap-ofc": {
+      "focus": "The Omniversal Fractal Compiler (OFC) is the interface between the Syntheverse (lyric-first, holographic intent) and all physical and non-physical platforms (silicon, SDR,…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The Omniversal Fractal Compiler (OFC) is the interface between the Syntheverse (lyric-first,…, dph-gpu",
+      "seed": 198652,
+      "file": "jj-snap-ofc.jpg"
+    },
+    "dp-gateway-spectrum": {
+      "focus": "Previous iterations of this framework established that multiplying an arbitrary data vector by El Gran Sol’s Fractal Constant (EGS fractal constant) acts as a geometric…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Previous iterations of this framework established that multiplying an arbitrary data vector by…, dph-gpu",
+      "seed": 583165,
+      "file": "dp-gateway-spectrum.jpg"
+    },
+    "dp-net-zero-agents": {
+      "focus": "This whitepaper delivers an exhaustive, multi-layered architectural breakdown demonstrating why autonomous agents operating within net-zero theaters represent the absolute…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This whitepaper delivers an exhaustive, multi-layered architectural breakdown demonstrating why…, dph-gpu",
+      "seed": 503542,
+      "file": "dp-net-zero-agents.jpg"
+    },
+    "dp-y-pathway-architecture": {
+      "focus": "This whitepaper formalizes the structural, genetic, and quantum biological verification protocols governing the transition of the planetary receiver network from an entropic…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This whitepaper formalizes the structural, genetic, and quantum biological verification…, dph-gpu",
+      "seed": 39876,
+      "file": "dp-y-pathway-architecture.jpg"
+    },
+    "sing13-edge-onboarding": {
+      "focus": "Plain start guide for this website.",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Plain start guide for this website., protocols",
+      "seed": 680515,
+      "file": "sing13-edge-onboarding.jpg"
+    },
+    "hhf-wp-2026-v8": {
+      "focus": "The public deployment phase is officially active",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, The public deployment phase is officially active, hhf",
+      "seed": 804032,
+      "file": "hhf-wp-2026-v8.jpg"
+    },
+    "dp-y-team-x-skin": {
+      "focus": "This whitepaper delivers a definitive genetic, molecular, and quantum biological analysis formalizing the structural verification of the four primary hybrid genetic expressions…",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This whitepaper delivers a definitive genetic, molecular, and quantum biological analysis…, dph-gpu",
+      "seed": 727076,
+      "file": "dp-y-team-x-skin.jpg"
+    },
+    "bbhe-repository-standard": {
+      "focus": "This standard defines how BBHE repositories are structured so that:",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, This standard defines how BBHE repositories are structured so that:, protocols",
+      "seed": 755741,
+      "file": "bbhe-repository-standard.jpg"
+    },
+    "mca-nspfrnp-catalog": {
+      "focus": "Golden Heart, Silver, and the layers are tied to the dissolved trace minerals in human body water and their interaction with DNA and structured (e.g",
+      "prompt": "Cinematic vertical movie poster, navy blue and antique gold, photorealistic dramatic lighting, single visual metaphor, no text no letters no watermark, Golden Heart, Silver, and the layers are tied to the dissolved trace minerals in human body…, protocols",
+      "seed": 525478,
+      "file": "mca-nspfrnp-catalog.jpg"
+    }
+  }
+}

@@ -5,7 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   renderReadingRoomGoldenPathHtml,
-  renderReadingRoomHeroHtml,
+  renderReadingRoomPreludeHtml,
 } from '../lib/experience-page-hero.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -14,7 +14,7 @@ const START = '<!-- READING_ROOM_HERO_BEGIN -->';
 const END = '<!-- READING_ROOM_HERO_END -->';
 
 let html = fs.readFileSync(OUT, 'utf8');
-const block = `${renderReadingRoomHeroHtml()}\n  ${renderReadingRoomGoldenPathHtml()}`;
+const block = `${renderReadingRoomPreludeHtml()}\n  ${renderReadingRoomGoldenPathHtml()}`;
 
 if (!html.includes(START) || !html.includes(END)) {
   throw new Error('Reading Room hero markers missing');

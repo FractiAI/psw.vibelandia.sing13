@@ -3,6 +3,10 @@
  * Navy night hull + gold type (poster flag). Gold/champagne TEXT on dark — never blue/purple/teal ink.
  * Load on guest decks that should feel like the holographic resort vessel.
  */
+html.vbi18n-pending body,
+html.vbi18n-ready body {
+  visibility: visible !important;
+}
 :root {
   --voyage-navy: #070b14;
   --voyage-navy-mid: #0c1628;

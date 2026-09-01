@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="vbi18n-pending">
 <head>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Concierto de El Gran Sol: “The Shift” · Concert Program · SS Vibelandia</title>
@@ -22,7 +23,7 @@
       --cream: #f5efe6;
       --muted: rgba(245, 239, 230, 0.72);
     }
-    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }
     html.vbi18n-ready body { visibility: visible; }
     * { box-sizing: border-box; }
     body {

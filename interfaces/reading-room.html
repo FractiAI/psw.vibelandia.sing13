@@ -16,9 +16,10 @@
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
   <link rel="stylesheet" href="/interfaces/experience-page-hero.css" />
   <link rel="stylesheet" href="/interfaces/experience-phases.css" />
+  <link rel="preload" href="/interfaces/data/reading-room-catalog.json" as="fetch" crossorigin="anonymous" />
   <script src="/interfaces/vbi18n-failopen.js"></script>
   <style>
-    html.vbi18n-pending body { visibility: hidden; }
+    html.vbi18n-pending body,
     html.vbi18n-ready body { visibility: visible; }
     :root {
       --rr-gold: #d4af37;
@@ -425,37 +426,48 @@
       });
 
       function loadCatalog() {
-        var opts = { credentials: 'same-origin' };
-        var timer;
-        if (typeof AbortController !== 'undefined') {
-          var ctrl = new AbortController();
-          opts.signal = ctrl.signal;
-          timer = window.setTimeout(function () { ctrl.abort(); }, 12000);
+        function applyCatalog(data) {
+          if (!data || !data.ok) throw new Error('catalog load failed');
+          categories = data.categories || [{ id: 'all', label: 'All papers' }];
+          allItems = data.items || [];
+          renderMenu();
         }
-        return fetch('/api/whitepaper-catalog', opts)
+
+        var staticUrl = '/interfaces/data/reading-room-catalog.json';
+        return fetch(staticUrl, { credentials: 'same-origin', cache: 'default' })
           .then(function (r) {
-            if (!r.ok) throw new Error('catalog HTTP ' + r.status);
+            if (!r.ok) throw new Error('static catalog HTTP ' + r.status);
             return r.json();
           })
-          .then(function (data) {
-            if (!data.ok) throw new Error('catalog load failed');
-            categories = data.categories || [{ id: 'all', label: 'All papers' }];
-            allItems = data.items || [];
-            renderMenu();
-          })
+          .then(applyCatalog)
           .catch(function () {
-            menuEl.innerHTML =
-              '<p class="rr-empty">Could not load poster shelves. <button type="button" class="rr-retry" id="rr-retry">Try again</button> · <a href="/lattice/learn">Lattice learn-more →</a></p>';
-            var retry = document.getElementById('rr-retry');
-            if (retry) {
-              retry.addEventListener('click', function () {
-                menuEl.innerHTML = '<p class="rr-loading">Loading poster shelves…</p>';
-                loadCatalog();
-              });
+            var opts = { credentials: 'same-origin' };
+            var timer;
+            if (typeof AbortController !== 'undefined') {
+              var ctrl = new AbortController();
+              opts.signal = ctrl.signal;
+              timer = window.setTimeout(function () { ctrl.abort(); }, 8000);
             }
-          })
-          .finally(function () {
-            if (timer) window.clearTimeout(timer);
+            return fetch('/api/whitepaper-catalog', opts)
+              .then(function (r) {
+                if (!r.ok) throw new Error('catalog HTTP ' + r.status);
+                return r.json();
+              })
+              .then(applyCatalog)
+              .catch(function () {
+                menuEl.innerHTML =
+                  '<p class="rr-empty">Could not load poster shelves. <button type="button" class="rr-retry" id="rr-retry">Try again</button> · <a href="/lattice/learn">Lattice learn-more →</a></p>';
+                var retry = document.getElementById('rr-retry');
+                if (retry) {
+                  retry.addEventListener('click', function () {
+                    menuEl.innerHTML = '<p class="rr-loading">Loading poster shelves…</p>';
+                    loadCatalog();
+                  });
+                }
+              })
+              .finally(function () {
+                if (timer) window.clearTimeout(timer);
+              });
           });
       }
       loadCatalog();

@@ -90,17 +90,25 @@ describe('i18n-auto · reveal safety', () => {
 
   it('boot reveals before dictionary fetch and does not block on live translation', () => {
     const js = read('interfaces/i18n-auto.js');
-    expect(js).toContain('bootDisabledEnglishOnly');
-    expect(js).toMatch(/function bootDisabledEnglishOnly[\s\S]*revealDocument\(\)/);
+    expect(js).toMatch(/if \(I18N_LIVE_DISABLED\)[\s\S]*return;/);
     expect(js).not.toMatch(/return done\.then\(function \(\) \{\s*revealDocument\(\)/);
   });
 
   it('disables live translation via kill switch', () => {
     const js = read('interfaces/i18n-auto.js');
     expect(js).toContain('I18N_LIVE_DISABLED = true');
-    expect(js).toContain('bootDisabledEnglishOnly');
     expect(js).toContain('liveTranslate: false');
+    expect(js).toMatch(/if \(I18N_LIVE_DISABLED\)[\s\S]*return;/);
     const css = read('interfaces/brand-gold-surfaces.css');
     expect(css).toContain('visibility: visible !important');
+    expect(read('interfaces/voyage-surfaces.css')).toContain('visibility: visible !important');
+    expect(read('interfaces/ship-blog.css')).toContain('visibility: visible !important');
+  });
+
+  it('loads Reading Room poster shelves from static catalog first', () => {
+    const html = read('interfaces/reading-room.html');
+    expect(html).toContain('/interfaces/data/reading-room-catalog.json');
+    expect(html).toContain('/api/whitepaper-catalog');
+    expect(read('interfaces/data/reading-room-catalog.json')).toContain('"ok":true');
   });
 });

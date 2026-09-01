@@ -4,6 +4,21 @@
  * Also boots live i18n (language bar + surface/paper translation) when missing.
  */
 (function () {
+  /** Keep in sync with I18N_LIVE_DISABLED in interfaces/i18n-auto.js */
+  var I18N_LIVE_DISABLED = true;
+  if (I18N_LIVE_DISABLED) {
+    window.__VIBELANDIA_I18N_LIVE_DISABLED__ = true;
+    if (!document.getElementById('vbi18n-never-hide')) {
+      var paint = document.createElement('style');
+      paint.id = 'vbi18n-never-hide';
+      paint.textContent =
+        'html.vbi18n-pending body,html.vbi18n-ready body{visibility:visible!important}';
+      (document.head || document.documentElement).appendChild(paint);
+    }
+    document.documentElement.classList.remove('vbi18n-pending');
+    document.documentElement.classList.add('vbi18n-ready');
+  }
+
   if (!window.__qvPageViewsBoot && !document.querySelector('script[data-qv-page-views]')) {
     var pv = document.createElement('script');
     pv.src = '/interfaces/site-page-views.js';
@@ -35,13 +50,7 @@
   }
 
   /** Live language bar + surface/paper translation (i18n-auto.js). */
-  /** Keep in sync with I18N_LIVE_DISABLED in interfaces/i18n-auto.js */
-  var I18N_LIVE_DISABLED = true;
-  if (I18N_LIVE_DISABLED) {
-    window.__VIBELANDIA_I18N_LIVE_DISABLED__ = true;
-    document.documentElement.classList.remove('vbi18n-pending');
-    document.documentElement.classList.add('vbi18n-ready');
-  } else if (!document.querySelector('script[src*="i18n-auto.js"]') && !window.__qvI18nBoot) {
+  if (!I18N_LIVE_DISABLED && !document.querySelector('script[src*="i18n-auto.js"]') && !window.__qvI18nBoot) {
     window.__qvI18nBoot = 1;
     if (!document.querySelector('script[src*="vbi18n-failopen.js"]')) {
       var failopen = document.createElement('script');

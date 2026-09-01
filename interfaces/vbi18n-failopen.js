@@ -5,7 +5,14 @@
 (function () {
   'use strict';
 
-  var BACKUP_MS = 500;
+  function injectNeverHideCss() {
+    if (document.getElementById('vbi18n-never-hide')) return;
+    var st = document.createElement('style');
+    st.id = 'vbi18n-never-hide';
+    st.textContent =
+      'html.vbi18n-pending body,html.vbi18n-ready body{visibility:visible!important}';
+    (document.head || document.documentElement).appendChild(st);
+  }
 
   function reveal() {
     var html = document.documentElement;
@@ -14,18 +21,8 @@
     html.classList.add('vbi18n-ready');
   }
 
+  window.__VIBELANDIA_I18N_LIVE_DISABLED__ = true;
+  injectNeverHideCss();
   window.__vbi18nFailOpenReveal = reveal;
   reveal();
-  window.setTimeout(reveal, BACKUP_MS);
-
-  if (document.readyState === 'loading') {
-    document.addEventListener(
-      'DOMContentLoaded',
-      function () {
-        var tag = document.querySelector('script[src*="i18n-auto.js"]');
-        if (tag) tag.addEventListener('error', reveal);
-      },
-      { once: true }
-    );
-  }
 })();

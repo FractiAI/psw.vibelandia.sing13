@@ -1,4 +1,9 @@
 /* Hide legacy per-page nav when standard quicklinks inject */
+html.vbi18n-pending body,
+html.vbi18n-ready body {
+  visibility: visible !important;
+}
+
 body.qv-has-top-quicklinks .deck-skin-nav,
 body.qv-has-top-quicklinks .skin-nav,
 body.qv-has-top-quicklinks .jb-nav,

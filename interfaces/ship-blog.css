@@ -1,4 +1,8 @@
 /* Shared ship-blog post chrome · SS Vibelandia QUESTFEST */
+html.vbi18n-pending body,
+html.vbi18n-ready body {
+  visibility: visible !important;
+}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --bg: #0a0806;

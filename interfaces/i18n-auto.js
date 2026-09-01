@@ -9,11 +9,40 @@
 
   /** Temporary kill switch — live translation + locale autosense (Player 1 · Sep 2026). */
   var I18N_LIVE_DISABLED = true;
+  var BOOT_SCRIPT = document.currentScript;
+  var BOOT_PAGE_ATTR =
+    (BOOT_SCRIPT && BOOT_SCRIPT.getAttribute('data-page')) || '';
 
   if (I18N_LIVE_DISABLED) {
     window.__VIBELANDIA_I18N_LIVE_DISABLED__ = true;
     document.documentElement.classList.remove('vbi18n-pending');
     document.documentElement.classList.add('vbi18n-ready');
+    var disabledPage = BOOT_PAGE_ATTR || '';
+    if (!disabledPage || disabledPage === 'auto') {
+      disabledPage = (function () {
+        var p = (window.location.pathname || '').toLowerCase();
+        if (p.indexOf('vibelandia-questfest') !== -1 || p === '/' || p === '/questfest' || p === '/questfest/') {
+          return 'questfest';
+        }
+        if (p.indexOf('whitepaper') !== -1 || p.indexOf('/papers') !== -1 || p.indexOf('/read') !== -1) {
+          return 'papers';
+        }
+        return 'surface';
+      })();
+    }
+    window.__VIBELANDIA_I18N__ = {
+      locale: 'en',
+      requested: 'en',
+      page: disabledPage,
+      liveTranslate: false,
+      disabled: true
+    };
+    window.VibelandiaI18n = {
+      getLocale: function () {
+        return 'en';
+      }
+    };
+    return;
   }
 
   var STORAGE_LOCALE = 'vibelandia_locale';
@@ -21,11 +50,6 @@
   var CACHE_PREFIX = 'vbi18n_tx_v1_';
   var I18N_BASE = '/interfaces/i18n/';
   var TRANSLATE_API = '/api/i18n-translate';
-
-  /** Capture data-page before DOMContentLoaded clears currentScript. */
-  var BOOT_SCRIPT = document.currentScript;
-  var BOOT_PAGE_ATTR =
-    (BOOT_SCRIPT && BOOT_SCRIPT.getAttribute('data-page')) || '';
 
   var SHIPPED_LOCALES = {
     en: true,

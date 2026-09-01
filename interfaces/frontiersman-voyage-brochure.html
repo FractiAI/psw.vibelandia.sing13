@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="vbi18n-pending">
 <head>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Frontiersman Voyage Brochure · SS Vibelandia</title>
@@ -17,7 +18,7 @@
   <link rel="stylesheet" href="/interfaces/voyage-brochure-publication.css" />
   <meta property="og:image" content="https://www.ssvibelandiaquestfest24x365.com/interfaces/assets/experience/frontiersmen-brochure.jpg" />
   <style>
-    html.vbi18n-pending body{visibility:hidden}html.vbi18n-ready body{visibility:visible}
+    html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }html.vbi18n-ready body{visibility:visible}
     .deck-grid { display: grid; gap: 0.65rem; margin: 1rem 0 1.5rem; }
     .deck-row { border-left: 3px solid rgba(212,175,55,0.45); padding: 0.45rem 0.75rem; background: rgba(212,175,55,0.06); }
     .deck-row strong { color: var(--brand-gold-hi, #f0d78c); }

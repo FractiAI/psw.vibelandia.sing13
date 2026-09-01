@@ -28,7 +28,7 @@
       'disablekb=1',
     ];
     if (origin) q.push('origin=' + encodeURIComponent(origin));
-    return 'https://www.youtube.com/embed/' + id + '?' + q.join('&');
+    return 'https://www.youtube-nocookie.com/embed/' + id + '?' + q.join('&');
   }
 
   function boot() {

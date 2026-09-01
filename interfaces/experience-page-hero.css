@@ -8,7 +8,33 @@
   overflow: hidden;
 }
 .ep-hero--compact {
-  min-height: min(78svh, 44rem);
+  min-height: min(52svh, 28rem);
+}
+.ep-hero--reading-room {
+  min-height: min(48svh, 26rem);
+}
+.ep-hero--reading-room .ep-hero__copy {
+  padding-top: clamp(3rem, 8vh, 4.5rem);
+  padding-bottom: 1.5rem;
+}
+.ep-hero__title--sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.ep-hero--reading-room .ep-hero__veil {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 9, 18, 0.72) 0%,
+    rgba(6, 9, 18, 0.62) 35%,
+    rgba(6, 9, 18, 0.94) 100%
+  );
 }
 .ep-hero__plane {
   position: absolute;

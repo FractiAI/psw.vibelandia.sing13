@@ -6,21 +6,22 @@
       <stop offset="55%" stop-color="#0f2844"/>
       <stop offset="100%" stop-color="#1a4a6e"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.35"/>
+    <radialGradient id="glow" cx="50%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.42"/>
       <stop offset="100%" stop-color="#050b14" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="fade" x1="0" y1="200" x2="0" y2="360" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.88"/>
-    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="1.2"/></filter>
   </defs>
   <rect width="240" height="360" fill="url(#bg)"/>
-  <ellipse cx="69" cy="107" rx="90" ry="70" fill="url(#glow)"/>
-  <g opacity="0.9"><circle cx="120" cy="95" r="42" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.85"/>
-        <line x1="120" y1="95" x2="178" y2="95" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/><line x1="120" y1="95" x2="161.01219330881975" y2="136.01219330881975" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/><line x1="120" y1="95" x2="120" y2="153" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/><line x1="120" y1="95" x2="78.98780669118025" y2="136.01219330881975" stroke="#d4af37" stroke-width="1.5" opacity="0.5"/></g>
-  <rect x="0" y="200" width="240" height="160" fill="url(#fade)"/>
-  <text x="16" y="292" fill="#d4af37" font-family="Georgia, serif" font-size="11" letter-spacing="2" opacity="0.85">DPH-GPU</text>
-  <text x="16" y="318" fill="#f5efe6" font-family="Georgia, serif" font-size="15" font-weight="700">Solar Wavefield · Live Oscillator</text>
-  <text x="16" y="340" fill="#b8aa94" font-family="system-ui, sans-serif" font-size="9" letter-spacing="1.5">READING ROOM · SS VIBELANDIA</text>
+  <ellipse cx="179" cy="57" rx="100" ry="80" fill="url(#glow)"/>
+  <g opacity="0.88" filter="url(#soft)">
+        <rect x="70" y="80" width="100" height="72" rx="6" fill="none" stroke="#d4af37" stroke-width="2" opacity="0.5"/>
+        <rect x="78" y="88" width="16" height="10" fill="#d4af37" opacity="0.15"/><rect x="100" y="88" width="16" height="10" fill="#d4af37" opacity="0.22999999999999998"/><rect x="122" y="88" width="16" height="10" fill="#d4af37" opacity="0.31"/><rect x="144" y="88" width="16" height="10" fill="#d4af37" opacity="0.39"/><rect x="78" y="104" width="16" height="10" fill="#d4af37" opacity="0.22999999999999998"/><rect x="100" y="104" width="16" height="10" fill="#d4af37" opacity="0.31"/><rect x="122" y="104" width="16" height="10" fill="#d4af37" opacity="0.39"/><rect x="144" y="104" width="16" height="10" fill="#d4af37" opacity="0.47"/><rect x="78" y="120" width="16" height="10" fill="#d4af37" opacity="0.31"/><rect x="100" y="120" width="16" height="10" fill="#d4af37" opacity="0.39"/><rect x="122" y="120" width="16" height="10" fill="#d4af37" opacity="0.47"/><rect x="144" y="120" width="16" height="10" fill="#d4af37" opacity="0.55"/><rect x="78" y="136" width="16" height="10" fill="#d4af37" opacity="0.39"/><rect x="100" y="136" width="16" height="10" fill="#d4af37" opacity="0.47"/><rect x="122" y="136" width="16" height="10" fill="#d4af37" opacity="0.55"/><rect x="144" y="136" width="16" height="10" fill="#d4af37" opacity="0.63"/>
+        <path d="M85 175 Q120 155 155 175" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.4"/></g>
+  <g opacity="0.95">
+        <circle cx="120" cy="105" r="38" fill="#d4af37" opacity="0.22"/>
+        <circle cx="120" cy="105" r="38" fill="none" stroke="#d4af37" stroke-width="2"/>
+        <line x1="120" y1="105" x2="182" y2="105" stroke="#d4af37" stroke-width="1.8" opacity="0.55"/><line x1="120" y1="105" x2="173.69357503463522" y2="136" stroke="#d4af37" stroke-width="1.8" opacity="0.55"/><line x1="120" y1="105" x2="151" y2="158.6935750346352" stroke="#d4af37" stroke-width="1.8" opacity="0.55"/><line x1="120" y1="105" x2="120" y2="167" stroke="#d4af37" stroke-width="1.8" opacity="0.55"/><line x1="120" y1="105" x2="89.00000000000001" y2="158.69357503463522" stroke="#d4af37" stroke-width="1.8" opacity="0.55"/><line x1="120" y1="105" x2="66.3064249653648" y2="136" stroke="#d4af37" stroke-width="1.8" opacity="0.55"/>
+        <path d="M50 210 Q120 175 190 210" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.3"/></g>
+  <rect x="0" y="260" width="240" height="100" fill="url(#bg)" opacity="0.35"/>
 </svg>

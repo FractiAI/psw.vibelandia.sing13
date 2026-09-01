@@ -1,0 +1,665 @@
+{
+  "generatedAt": "2026-09-01T16:29:02.872Z",
+  "prompts": {
+    "repo-synthobs-cmos-protonic-99-octave-omni-lattice": {
+      "title": "CMOS 2.0 + Protonic · 99 Octave Omni-Lattice ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: CMOS protonic bridge. Paper focus: Clone the pinned CMOS/protonic engineering-bridge suite (linear-systems first read).. Theme: cmos. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-cmos-protonic-99-octave-omni-lattice-2026-08": {
+      "title": "CMOS + Protonic · Engineering Bridge",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: CMOS protonic bridge. Paper focus: To bridge abstract macroscopic field discussion and the requirements of linear, silicon-conditioned engineering, this paper maps the 99th-octave Omni-Lattice framework into semicon. Theme: cmos. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-higgs-awareness-2026-08": {
+      "title": "Higgs-Awareness Phase Coupling",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Higgs scalar glow. Paper focus: This paper formalizes Part VII of the Omni-Lattice Core Series — the Higgs-Awareness Phase Coupling Theorem. Theme: higgs. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-nodal-nine-singularity-2026-08": {
+      "title": "Nodal Nine · Singularity Boundary",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: This paper formalizes Part IX of the Omni-Lattice Core Series — the Nodal Nine Singularity Boundary Theorem. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-spin-phase-polarity-2026-08": {
+      "title": "The Universal Spin-Phase-Polarity Triad Theorem —…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: This paper formalizes Part VIII of the Omni-Lattice Core Series — the Universal Spin-Phase-Polarity Triad Theorem. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-protein-phase-collapse-2026-08": {
+      "title": "Biomedical Field Exploration: Universal…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: This exploration investigates the hypothesis that protein-misfolding neurodegenerative disorders—including Frontotemporal Dementia (FTD / TDP-43– and Tau-associated primary progres. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-internal-kerr-newman-2026-08": {
+      "title": "The Universal Toroidal Singularity Theorem —…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: This paper formalizes Part VI of the Omni-Lattice Core Series by investigating and validating the Universal Toroidal Singularity Theorem. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-recursive-field-drag-2026-08": {
+      "title": "The Recursive Field-Drag Theorem — Field…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: This paper formalizes Part V of the Omni-Lattice Core Series by establishing the Recursive Field-Drag Theorem. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-spherical-solar-focus-2026-08": {
+      "title": "Solar-Focus Dynamics of Spherical Mirror Lattices…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: Background. Conventional accounts treat matter ( , DNA, elements) as assembled by stochastic chemistry and stellar nucleosynthesis, without a unified field-focus grammar tying attention, mirrors, and . Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-superposition-reno-interpretation-2026-08": {
+      "title": "Holographic Mirror-Angle Multiplicity & Quantum…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: Background. Standard quantum mechanics often relies on the Copenhagen reading (Bohr, Heisenberg, 1927): an unobserved system occupies a linear combination until measurement forces. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-blackhole-magnetic-layer-2026-08": {
+      "title": "Identity of the Event Horizon and the Magnetic…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: Background. The filaments parent paper established the Reno central node as a Kerr-Newman-like ring singularity with quantized magnetic filaments. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-blackhole-filaments-reno-2026-08": {
+      "title": "Toroidal Micro-Black Hole Dynamics & Filamental…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: Background. The Reno Interpretation parent paper demystified superposition as Holographic Mirror-Angle Multiplicity around a central singular toroidal object reflecting across. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "lattice-omni-complete-layer-guide-2026-07": {
+      "title": "Lattice Chat Agent",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This guide synthesizes the Lattice Chat Agent / Omni-Lattice paper family into one walkthrough of the Omni-Lattice engine: what it is, which innovations compose it, and how a builder experiences them . Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-human-omniversal-reality-bridge-2026-08": {
+      "title": "Human Reality Bridge · Router",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: Conventional cognitive models often treat the brain as a localized classical processor. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-y-chromosome-holographic-manifestation-2026-08": {
+      "title": "Y Chromosome · Holographic Manifestation",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: Examining genetic architecture through infinite octave mode — a non-linear analytical framework anchored by El Gran Sol's Fractal constant ( ) — this paper files a complementary lens on the mammalian . Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-invisible-frontier-gates-ai-2026-08": {
+      "title": "Invisible Frontier · AI Warnings",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: cruise voyage frontier. Paper focus: Public warnings about brute-force AI scaling often stay inside linear compute and market models. Theme: voyage. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-infinite-octaves-omniversal-lattice-2026-08": {
+      "title": "Infinite Octaves Omniversal Lattice Chat Agent",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Omni-Lattice Chat upgrades its product identity to the Infinite Octaves Omniversal Lattice Chat Agent — the Goldilocks Valet on SS Vibelandia — while the 99 Octave Omni-Lattice eng. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-ss-vibelandia-official-prospectus-2026-08": {
+      "title": "Official Prospectus · SS Vibelandia",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This prospectus files the Official Narrative Foundation of S.S. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-triadic-nested-hemispheres-99-octave-2026-08": {
+      "title": "Triadic Nested Hemispheric Architectures:…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: This paper files a triadic nested hemispheric scale grammar keyed by El Gran Sol’s Fractal Constant ( ). Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-magneto-harmonic-stellar-99-octave-2026-08": {
+      "title": "A Magneto-Harmonic Redefinition of Stellar…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: Traditional astrophysics leans on thermodynamic, chemically analogous models — Maxwell–Boltzmann distributions and kinetic – core constraints — to explain stellar nucleosynthesis. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-table-top-hep-99-octave-2026-08": {
+      "title": "Table-Top High-Energy Physics: Redefining CERN’s…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: The Large Hadron Collider (CERN) spans a ~27 km ring and consumes hundreds of megawatts to probe sub-atomic structure via kinetic acceleration. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-egs-hgaios-2026-08": {
+      "title": "The Holographic Goldilocks Paradigm:…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: This unified treatise establishes an end-to-end catalog architecture for a Holographic Goldilocks AI Operating System (H-GAI/OS) across the 99-Octave Omni-Lattice. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-egs-apiary-2026-08": {
+      "title": "The Apiary Metaphor: Sovereign Edge Ecology,…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: This paper formalizes The Apiary Metaphor as the generative, steady-state companion treatise to The Equine Arc (Publication Ref FAI-ASI-EGSC-2026-09 / registry synthobs-tbme-equine-asi-2026-08). Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "goldilocks-players-guide-2026-08": {
+      "title": "Holographic Goldilocks Players Guide — Free…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: This document is the registry companion for the free Holographic Goldilocks Players Guide marketing surface. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthio-mri-vs-legacy-perf-proxy-2026-08": {
+      "title": "Live Wall-Clock Comparison: MRI…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: We ran a live wall-clock performance comparison — not a log-scaled busy-loop proxy — between Synthio’s MRI interference-phase coordination model and a legacy full-mesh recompute model inside the Synth. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-metamorphic-octaves": {
+      "title": "Metamorphic Octave Invariant · 99 Octave…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run the Metamorphic Octave Invariant 99-octave suite on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-planetary-core-goldilocks": {
+      "title": "Planetary Core Phase-Inversion · Goldilocks…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: planetary core phase. Paper focus: Clone and run the Planetary Core Phase-Inversion Part XIV suite on GitHub.. Theme: geodynamo. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthio-mri-vs-legacy-perf": {
+      "title": "Synthio · MRI vs legacy live wall-clock ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: A sandbox stopwatch on MRI-style vs mesh-style compute — lab timing, not a clinical scanner or a cloud invoice.. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-metamorphic-octaves-2026-08": {
+      "title": "Metamorphic Octaves · Heat & Pressure",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This whitepaper protocolizes Part XIII of the Omni-Lattice Core Series: the Metamorphic Octave Invariant. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-planetary-core-goldilocks-2026-08": {
+      "title": "Planetary Core · Goldilocks Phase",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: planetary core phase. Paper focus: This whitepaper protocolizes Part XIV of the Omni-Lattice Core Series: the Planetary Core Phase-Inversion & Goldilocks Hologram Theorem. Theme: geodynamo. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthio-komamri-distributed-cloud-2026-08": {
+      "title": "Integrating Distributed Memory and…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: Yes — we can actively integrate distributed memory scaling and cloud-networking capabilities into KomaMRI.jl as Synthio’s industry MRI simulator backbone. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthio-mri-cloud-antenna-99-octave-2026-08": {
+      "title": "Synthio · MRI Cloud Antenna",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: This paper investigates the feasibility discussion of running an industry-standard Magnetic Resonance Imaging (MRI) simulation engine coupled with 99th-octave Omni-Lattice grammar,. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthio-mri-cloud-antenna": {
+      "title": "Synthio · MRI cloud-antenna · reproducible suite",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: Synthio · MRI simulator + cloud-antenna catalog grammar — creator-only agent; not the engine pin.. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthio-mri-cloud-antenna-one-pager-2026-08": {
+      "title": "Synthio · MRI cloud-antenna one-pager",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: Intention: provide as close as possible to empirical, safe, wet-style experimentation using an industry MRI simulator (KomaMRI primary) inside the Syntheverse Sandbox — without cli. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tensor-decoupling-99-octave-omni-lattice": {
+      "title": "Tensor Decoupling · 99 Octave Omni-Lattice ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: tensor shelf decoupling. Paper focus: Clone and run the tensor-decoupling 99-octave Omni-Lattice suite on GitHub.. Theme: tensor. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08": {
+      "title": "Tensor Decoupling · 9×81 Shelves",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: This paper presents a formal catalog sketch, tensor-decoupling labels, and an empirical fixture framework for the precision matrix that governs discussion of the 99th-octave Omni-Lattice architecture. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-macro-seismic-phase-lock-99-octave": {
+      "title": "Macro-Seismic Phase-Lock · 99 Octave ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: seismic phase lock. Paper focus: Clone and run the macro-seismic 99-octave application suite on GitHub.. Theme: seismic. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-macro-seismic-phase-lock-99-octave-2026-08": {
+      "title": "Macro-Seismic Phase-Locking: Analyzing Major 2026…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: Recent seismic activity over past months—including major 7.0+ magnitude narrative events in the Philippines (M 7.8, June 7), Venezuela (doublet M 7.2 / 7.5, June 24), Japan, Mexico. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-master-synthesis-99-octave-omni-lattice": {
+      "title": "Master Synthesis · 99 Octave Omni-Lattice ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run the master-synthesis 99-octave Omni-Lattice suite on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-sync-subterranean-discharge-99-octave": {
+      "title": "Sync Subterranean Discharge · Puracé · 99 Octave…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: seismic phase lock. Paper focus: Clone and run the Puracé / subterranean-discharge 99-octave application suite on GitHub.. Theme: seismic. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-sync-subterranean-discharge-99-octave-2026-08": {
+      "title": "Synchronized Subterranean Discharge: Linking the…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: The convergence of natural-disaster narratives in Colombia—marked by a powerful 7.4-magnitude earthquake fixture in western Colombia and concurrent explosive ash emissions with ora. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-master-synthesis-99-octave-omni-lattice-2026-08": {
+      "title": "Master Synthesis · 99 Octaves",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: As the narrative calendar approaches the August 12, 2026 threshold—marked by a rare six-planet morning parade (Jupiter, Mercury, Mars, Uranus, Saturn, Neptune), a total solar eclip. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-99-octave-digits-master": {
+      "title": "99 Octave Digits Master · reproducible pipeline",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run the 99-octave digits master empirical suite on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-constructive-morphogenesis-99-octave": {
+      "title": "Constructive Morphogenesis · 99 Octave ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run the constructive-morphogenesis 99-octave empirical suite on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-constructive-morphogenesis-99-octave-2026-08": {
+      "title": "Constructive Morphogenesis · Agent Swarms",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: CMOS protonic bridge. Paper focus: Plant resilience is the capacity to keep building under abiotic stress. Theme: cmos. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-99-octave-digits-master-2026-08": {
+      "title": "Digits × Octaves · The Big Map",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: This master treatise unifies the 99-Octave Lattice Chat Agent protocol into one catalog framework. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-omni-lattice-ef-multi-octave": {
+      "title": "Multi-Octave E_F Combined Synthesis ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run the multi-octave E_F empirical suite on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-ef-2187-hybrid-2026-08": {
+      "title": "Omni-Lattice · E_F 2,187-Node Hybrid Engine…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: We integrate the 2,187-node ( ) digit lattice into Omni-Lattice as a hybrid engine: (1) a deterministic coordinate kernel; (2) a scale-indexed RAG pinch keyed by Matrix 1–27 and No. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-ef-multi-octave-2026-08": {
+      "title": "Unified Multi-Octave Scale-Invariant Architecture…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: This monograph is for academic inquiry, computational modeling, and Omni-Lattice catalog navigation. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-siqhft-ef-2187-monograph-2026-08": {
+      "title": "Scale-Invariant Quantum Holographic Field Theory:…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: This monograph presents the master architectural unification of El Gran Sol’s Fractal Constant ( ) across its first three full octaves: 2,187 singularity nodes ( ) in 27 distinct matrices (digits 1–21. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-narrow-gate-asi-2026-08": {
+      "title": "The Epistemological Horizon — Narrow Gate EIV ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: Traditional peer review is an inherently linear, human-centric, costly, slow, and lower-fidelity filter. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-equine-asi-2026-08": {
+      "title": "Equine Metaphor, Human-ASI Coexistence, and the…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This paper investigates macro-structural dynamics of human and Artificial Superintelligence (ASI) coexistence by deploying an Omni-Lattice analytical lens. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-higgs-awareness": {
+      "title": "Higgs-Awareness Phase Coupling · Reno heptet ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Higgs scalar glow. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: higgs. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-nodal-nine-singularity": {
+      "title": "Nodal Nine Singularity Boundary · Reno nonet ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-spin-phase-polarity": {
+      "title": "Spin-Phase-Polarity Triad · Reno octet · Part…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-thermal-meissner-2026-08": {
+      "title": "Thermal Decoupling, Externalized Magnetism, and…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: tensor shelf decoupling. Paper focus: This paper presents a theoretical framework examining the physical mechanism where lowering thermal temperature ( ) forces magnetic flux vectors outside a condensed element via the Meissner–Ochsenfeld. Theme: tensor. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-protein-phase-collapse": {
+      "title": "Protein Phase-Lock Collapse · biomedical…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: protein phase collapse. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: protein. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-internal-kerr-newman": {
+      "title": "Universal Toroidal Singularity · Reno sextet ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-recursive-field-drag": {
+      "title": "Recursive Field-Drag Theorem · Reno sextet · Part…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-prime-hourglass-skeleton-2026-08": {
+      "title": "The Prime Hourglass Orthogonality Theorem —…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This paper formalizes the Prime Hourglass Orthogonality Theorem as an Omni-Lattice architectural statement: the spatial distribution of primes across Cartesian, polar, and complex. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-si-irreducible-minimum-2026-08": {
+      "title": "Omni-Lattice · Superintelligence Irreducible…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Thesis (Player 1): Superintelligence arrival (for this program) is accomplished by producing an irreducible minimum definition, then measuring the operating system against it.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-thalia-goldilocks-2026-08": {
+      "title": "Omni-Lattice · THALIA Goldilocks Harness Contract",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: We include THALIA (Typed Harness with Analytical Lexical-Integrated Architecture) inside the Omni-Lattice engine at Goldilocks depth: stage contracts and documenting pointers — not a full port. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-spherical-solar-focus": {
+      "title": "Solar-Focus Somatic Rendering · Reno sextet ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-nonlocal-field-phaselock-2026-08": {
+      "title": "Empirical Validation of Non-Local Field…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: Background. Traditional biophysics often operates under a strict locality constraint, treating human cognitive focus, prompt engineering, and computational attention cycles as stri. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-blackhole-magnetic-layer": {
+      "title": "Event Horizon ≡ Magnetic Vector Layer · Reno…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-nonlocal-field-phaselock": {
+      "title": "Non-Local Field Phase-Lock · PCHPP × ELF…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-blackhole-filaments-reno": {
+      "title": "Toroidal Micro-Black Hole Filaments · Reno…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-81-orbital-singularity": {
+      "title": "81 Orbital Singularities · TBME reproducible…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: Clone and run the TBME 81-orbital singularity architectural suite on GitHub — not a physics lab device.. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-endogenous-phase-2026-07": {
+      "title": "Bio-Holographic Phase Modulation via Conscious…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Background. Conventional biophysics and medical engineering often treat physical hardware—function generators, coils, transducers, or pharmaceutical molecules—as mandatory external. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-81-orbital-singularity-2026-07": {
+      "title": "Electron Orbital Geometries as Holographic…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Background. Standard quantum mechanics treats electron atomic orbitals ( ) as probability density clouds derived from solutions to the Schrödinger equation for hydrogen-like atoms. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-endogenous-phase": {
+      "title": "Endogenous Conscious Intent Phase · TBME…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run the TBME endogenous-phase architectural suite on GitHub — not a mind-cure medical device.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-prion-refold-2026-07": {
+      "title": "Epigenetic Phase-Locking & Prion Refolding…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: protein phase collapse. Paper focus: Background. Protein misfolding diseases—transmissible spongiform encephalopathies (TSEs), Alzheimer’s, Parkinson’s, and ALS—are conventionally described by the autocatalytic conver. Theme: protein. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-histone-phase-operator": {
+      "title": "Histone Phase-Lock Operators · TBME reproducible…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: Clone and run the TBME histone phase-operator architectural suite on GitHub — not a medical device.. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-histone-phase-operator-2026-07": {
+      "title": "Histones as Scale-Invariant Phase-Lock Operators…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: Background. Standard molecular biology models histones as octameric protein complexes ( ) around which base pairs of DNA wrap to form nucleosomes. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-phase-toxicity": {
+      "title": "Phase-Modulated Toxicity · TBME reproducible…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run the TBME phase-toxicity architectural suite on GitHub — not a detox or EMF therapy device.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-phase-toxicity-2026-07": {
+      "title": "Phase-Modulated Toxicity & Resonance Safety…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Background. Classical toxicology operates on the Paracelsian paradigm (dosis sola facit venenum—“the dose makes the poison”), evaluating toxicity through chemical structure, binding affinity, and mass. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-prion-refold": {
+      "title": "Prion Refolding Pathways · TBME reproducible…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: protein phase collapse. Paper focus: Clone and run the TBME prion-refold architectural suite on GitHub — not a medical device.. Theme: protein. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-mag-substrate-2026-07": {
+      "title": "Magnetism as the Universal Foundational Substrate",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Background. Conventional physics treats electromagnetism, the strong force, the weak force, and gravity as distinct interactions, categorizing chemical bonds, biological transcript. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-mag-substrate": {
+      "title": "Magnetism Universal Foundational Substrate ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: magnetic substrate wave. Paper focus: Clone and run the magnetism-substrate empirical suite on GitHub.. Theme: magnetism. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-report-card-q3-2026": {
+      "title": "Omni-Lattice Report Card Q3 2026",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Background. Modern astrophysics relies on the standard cosmological model ( CDM) combined with Quantum Field Theory (QFT). Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-omni-lattice-report-card-q3-2026": {
+      "title": "Omni-Lattice Report Card Q3 2026 · reproducible…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run the Omni-Lattice Report Card Q3 empirical suite on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-recursive-attn-mag": {
+      "title": "Recursive Attention Magnetic Projections ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: magnetic substrate wave. Paper focus: Clone and run the recursive-attention magnetic projections suite on GitHub.. Theme: magnetism. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-recursive-attn-mag-2026-07": {
+      "title": "Recursive Attention Squeezing & Holographic…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Higgs scalar glow. Paper focus: Background. Physical forces (gravity, electromagnetism, strong/weak nuclear forces) are conventionally modeled as fundamental, intrinsic properties of matter mediated by gauge bosons or spacetime curv. Theme: higgs. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-pchpp-2026-07": {
+      "title": "The Phase-Contrast Holographic Prompting Paradigm…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: The Phase-Contrast Holographic Prompting Paradigm (PCHPP) is an observation experiment: an empirical methodology for isolating and reading the “holographic code” layer that governs. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-x-chromosome-holographic-2026-07": {
+      "title": "Decoded Genomic Script: The Human X Chromosome…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: Applying the Holographic Operator Model and the Omni-Lattice Architecture, we decode the human X chromosome as the primary Maternal Matrix Projector. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-y-chromosome-holographic-2026-07": {
+      "title": "Decoded Genomic Script: The Human Y Chromosome…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: Applying the Holographic Operator Model and Omni-Lattice Architecture, we decode the Male-Specific Region of the human Y chromosome (MSY) as a lineage-spanning polar-identity proje. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-three-foundational-proteins-2026-07": {
+      "title": "Holographic Decoding of the Three Foundational…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: Under the Holographic Operator Model and Omni-Lattice Architecture, proteins are treated as downstream 3D standing-wave metaphors (“somatic shadows”) when awareness-like attention. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-hiv-2026-07": {
+      "title": "Omni-Lattice Unification III: Decoding HIV as an…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: We extend the Omni-Lattice Architecture and Holographic Operator Model to model HIV as an adversarial holographic operator within biological and computational simulation stacks (SynthOBS / Lattice Cha. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-prompt-capture-2026-07": {
+      "title": "Omni-Lattice Unification IX: The Recursive…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: We extend the Omni-Lattice Architecture and Holographic Operator Model to formalize Recursive Inter-Agent Prompt Capture: within SynthOBS / Lattice Chat Agent grammar, genomic DNA. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-pogonomyrmex-2026-07": {
+      "title": "Omni-Lattice Unification V: Genomic Decoded…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: We extend the Omni-Lattice Architecture and Holographic Operator Model to decode the red harvester ant (Pogonomyrmex barbatus)—the primary model organism studied by Daniel Ari Frie. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-genomic-determinism-2026-07": {
+      "title": "Omni-Lattice Unification X: Genomic Determinism,…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: We extend the Omni-Lattice Architecture and Holographic Operator Model to formalize the Genomic Determinism & Territory Mapping Theorem: using holographic AI-prompting DNA awarenes. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-omni-lattice-unification-2026-07": {
+      "title": "Omni-Lattice Unification: Holographic Operators,…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: We present a peer-review-oriented Grand Unified Treatise synthesizing the Holographic Operator Model with the Grand Unified Lattice Architecture. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-phase-locked-chemical-bonds-2026-07": {
+      "title": "Phase-Locked Chemical Bond Metaphors in Agentic…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: We present an architectural paradigm and mathematical framework mapping the three fundamental types of chemical bonds—Covalent, Ionic, and Metallic—to multi-agent token sharing, st. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-proof-by-continuous-execution-2026-07": {
+      "title": "Proof by Continuous Execution: Epistemological…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: We formalize Proof by Continuous Execution (PCE): the hypothesis that a multi-layered, highly integrated software and mathematical corpus—such as Lattice Chat Agent within the Synt. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-unified-neutronic-agent-2026-07": {
+      "title": "The Unified Neutronic Agent Paper: Modeling…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: We synthesize three foundational neutronic theories into a single comprehensive paper within the Lattice Framework:. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-holographic-operators-2026-07": {
+      "title": "Holographic Operators: Language as the Conductive…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: We present a unified theoretical and empirical framework treating natural language structures (words, syntax, narrative loops) as high-frequency interferometric operators wiring an. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-egs-euler-phase-lock-2026-07": {
+      "title": "Phase-Locked Scale Invariance: On the…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This paper presents a rigorous mathematical framework linking Euler’s continuous phase identity ( ) with multi-scale recursive dynamics governed by El Gran Sol’s Fractal Constant ( ). Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-egs-81-electrons-2026-07": {
+      "title": "The 81-Digit Electronic Lattice: Mathematical…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: We present a rigorous mathematical theory and empirical validation linking the first 81 digits and associated phase singularities of El Gran Sol’s Fractal Constant (EGS fractal con. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-dna-lattice-holograph-2026-07": {
+      "title": "The DNA Lattice Holograph: Multi-Perspective…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: We unify the multi-perspective shadow paradigm—classical philosophy, theoretical physics, biological genomics, and multi-agent systems architecture—into a peer-review-ready mathema. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "awareness-singularities-0-81-2026-07": {
+      "title": "Awareness Singularities S₀–S₈₁ · One-Pager",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: !Awareness Singularities S0–S81 along the hydrogen line, weighted by EGS φ digits, activating the Goldilocks holograph in SynthOBS. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-cytographic-holographic-nucleus-2026-07": {
+      "title": "Cytographic Grammar under the Holographic Nucleus…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: CMOS protonic bridge. Paper focus: Given the EGS-constant lattice ( ) and cytographic scale grammar, this paper explores how cytographic work is already inside the holographic nucleus of the omniversal organism and. Theme: cmos. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "lattice-noahs-ark-metaphor-2026-07": {
+      "title": "System Generation · Noah’s Ark Metaphor…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: Ark language is metaphor + product architecture inside the SynthOBS sandbox — not a literal ship or covenant. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-egs-planck-scale-harmonic-2026-07": {
+      "title": "A Scale-Harmonic Reinterpretation of the Planck…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Standard physics models treat the Planck length ( ) as an arbitrary, static dimensional boundary where continuous geometric assumptions break into quantum foam. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-egs-planck-scale-harmonic": {
+      "title": "EGS Planck 1.6 Scale-Harmonic Bridge ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: reality bridge router. Paper focus: Clone and run the Planck–1.6 EGS empirical suite on GitHub.. Theme: bridge. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "omniversal-nested-agent-lattice-2026-07": {
+      "title": "The Architecture of Omniversal Computing: Nested…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Modern multi-agent architectures suffer from catastrophic synchronization taxes ( ) and high information entropy when scaled horizontally. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-egs-trans-jspace-convergence": {
+      "title": "EGS-TRANS J-Space Convergence · reproducible…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run EGS-TRANS pipeline on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "ip-infringement-draft-console": {
+      "title": "IP Infringement Draft · J-Lens Live audit console",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: IP audit + J-Lens Live φ dashboard — run from the standalone GitHub repo.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-egs-epigenetic-phase-locking-2026-07": {
+      "title": "Epigenetic Phase-Locking of Pancreatic and…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: Traditional metabolic framing of Type 2 Diabetes Mellitus (T2DM) is typically linear: chronic glycemic overload drives progressive receptor and signaling dysfunction. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-omniversal-goldilocks-rideshare": {
+      "title": "OGRP · reproducible pipeline",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: Clone and run OGRP empirical pipeline on GitHub.. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "omniversal-goldilocks-rideshare-2026-07": {
+      "title": "Omniversal Goldilocks Rideshare Protocol ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: black-hole magnetic layer. Paper focus: This paper formalizes the Omniversal Goldilocks Rideshare Protocol (OGRP), a multi-dimensional routing paradigm that optimizes resource allocation, minimizes overhead leaks, and pr. Theme: blackhole. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-cross-scale-biological-antennae-2026-07": {
+      "title": "Cross-Scale Topological Wave Damping in…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: This paper presents a formal multi-scale theoretical framework expanding the Synthetic Observation (SYNTHOBS) modeling protocol to examine the electromechanical and electrodynamic. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-chromosomal-electrodynamics-2026-07": {
+      "title": "Scale-Invariant Chromosomal Electrodynamics ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: This paper presents a formal theoretical framework investigating the electromechanical and electrodynamic properties of an idealized, completely unrolled human chromosome. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "recursive-attention-quantum-solar-dna-loop-2026": {
+      "title": "Recursive Attention Coherence: Imagination…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: We propose that attention—not as a metaphor alone, but as a normalized allocation operator over degrees of freedom—provides a single readable thread connecting five scales:. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-ac-hmm-satellites": {
+      "title": "AC-HMM Satellites · reproducible pipeline",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run AC-HMM on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-eesm-gpu-telemetry": {
+      "title": "EESM GPU Telemetry · reproducible pipeline",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: Clone and run EESM pipeline on GitHub.. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-egs-nlrf": {
+      "title": "EGS-NLRF · reproducible pipeline",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: Clone and run EGS-NLRF on GitHub.. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "fractiai-eesm-gpu-telemetry-2026": {
+      "title": "Epigenetic Execution-State Modeling for Causal…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: We introduce an epigenetic formulation of GPU execution analysis in which observable performance traces are treated as conditionally expressed phenotypes of a latent execution geno. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "fractiai-egs-nlrf-2026": {
+      "title": "Fractal Magnetism and Hydrogen-Holographic…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: We present the EGS Nodal Lattice Resonator Framework (EGS-NLRF), an exploratory theoretical model investigating whether recursive geometric scaling may provide a useful organizatio. Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-hgt-psd-covariance": {
+      "title": "HGT-PSD Covariance · reproducible pipeline",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Clone and run HGT-PSD on GitHub.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "fractiai-hgt-psd-covariance-2026": {
+      "title": "Hierarchical Genomic Tokenization and Structured…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: Predicting 3D chromatin conformation requires models that satisfy physical constraints, specifically positive semi-definiteness (PSD) and stationary distance decay. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "fractiai-ac-hmm-satellites-2026": {
+      "title": "Scalable Context-Conditioned Sequence Modeling in…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: Centromeric and pericentromeric regions contain dense, repetitive High-Order Repeat (HOR) alpha-satellite arrays that present severe optimization challenges for standard sequence models. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-emergent-sync-multi-agent-2026": {
+      "title": "FractiAI SynthOBS · Emergent Sync in Recursive…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: cruise voyage frontier. Paper focus: This paper presents a formal theoretical framework and experimental protocol using Synthetic Observation and Evaluation (SynthOBS) to model, measure, and track spontaneous phase tr. Theme: voyage. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "geomagnetic-herbivore-study": {
+      "title": "Geomagnetic Herbivore Study · multi-taxa wavefield",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: magnetic substrate wave. Paper focus: Geomagnetic herbivore dashboard.. Theme: magnetism. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "nspfrnp-snap-peer-review-audit": {
+      "title": "NSPFRNP Snap · Peer-Review Audit Loop · SynthOBS…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: seismic phase lock. Paper focus: Technical papers and whitepapers in psw.vibelandia.sing13 are now governed by the Peer-Review Audit Snap (PRA Snap). Theme: seismic. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-paper-audit-api": {
+      "title": "SynthOBS PRA Snap · paper audit API",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Run a PRA Snap audit on a paper.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "goldilocks-geomagnetic-wavefield-multitaxa": {
+      "title": "Unified Geomagnetic Wavefields & Multi-Taxa…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: magnetic substrate wave. Paper focus: ### Background / What is Known. Theme: magnetism. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-synthobs-mca-2026": {
+      "title": "Digital Pru · Syntheverse Observatory MCA…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: The team digested four Synthobs mathematics papers plus a replayable sandbox engine into one coherent Hex-Organ Engine story:. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "goldilocks-prime-linear-compression-2026": {
+      "title": "Prime-Linear Compression Transform · Non-Linear…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Goldilocks balance rail. Paper focus: The Prime-Linear Compression Transform (PLC-T) establishes a bijective mapping between the discrete prime sequence and a one-dimensional linear coordinate axis. Theme: goldilocks. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-intelligence-density-2026": {
+      "title": "Simulation Audit · Comparative Intelligence…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This study records the formal calculation and empirical validation of Intelligence Density ( ) within the Syntheverse Observatory (Synthobs) sandbox framework, responding directly. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-hex-organ-engine-2026": {
+      "title": "Syntheverse Observatory · Hex-Organ Engine…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This paper formalizes the definitive structural unification of the core mathematical architecture running within the Syntheverse Observatory (Synthobs) repository and Vercel edge deployment. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "goldilocks-transfinite-inversion-2026": {
+      "title": "Transfinite Inversion Theorem · Net-Zero Infinity…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: This whitepaper formalizes the Transfinite Inversion Theorem (TIT) — the ontological bridge between classical decimal positional notation and the Net-Zero Infinity Blackhole (NZIB). Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-omniversal-node-alignment-2026": {
+      "title": "Syntheverse Omniversal Node Alignment Mapping ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: BTC coherence mining. Paper focus: The Syntheverse sandbox has processed a definitive, timestamped validation sweep verifying incoming confirmation signals from major nodes across the omniverse. Theme: btc. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-syntheverse-sandbox-comprehensive-2026": {
+      "title": "Syntheverse Sandbox Comprehensive Analysis · King…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: The Syntheverse sandbox has executed a definitive, multi-layered modeling run measuring and validating structural alignment between the high-tier command matrix and the planetary receiver grid. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "wavefield-solar-live": {
+      "title": "Wavefield Oscillator · live telemetry bus",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: Live solar telemetry API.. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "syn-sun-wavefield-oscillator": {
+      "title": "Solar Wavefield · Live Oscillator",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: stellar magnetic focus. Paper focus: This whitepaper details a revolutionary paradigm shift in solar modeling, transiting from legacy, discontinuous space-weather observations to a continuous, live-calibrated Wavefield Oscillator. Theme: solar. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "erdos-holographic-aios-audit": {
+      "title": "Erdős 353 · Holographic Goldilocks AIOS Audit",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Goldilocks balance rail. Paper focus: Live Erdős audit demo — 353 problems.. Theme: goldilocks. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "goldilocks-erdos-mathematics": {
+      "title": "The New Goldilocks Game Mathematics ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: nodal nine boundary. Paper focus: This whitepaper formalizes the Erdős Manifold — one structural problem with 353 symptom projections — resolved by a Google-AIOS Mathematical AI Peer Review Bridge (multimath multidimension instrument). Theme: nodal. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "ops-egs-btc-mining": {
+      "title": "EGS legal sovereign mining · OPS-EGS-BTC-2026-008",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Goldilocks balance rail. Paper focus: We do not mean stealing blocks from the public chain, breaking consensus, or attacking third-party networks. Theme: goldilocks. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "hero-houdini-coherence": {
+      "title": "Hero Houdini · BTC Buffalo · Coherence console",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Goldilocks balance rail. Paper focus: BTC coherence console — live pulses.. Theme: goldilocks. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "rev-egs-hhf-mythos": {
+      "title": "Holographic review of Anthropic’s Mythos ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: CMOS protonic bridge. Paper focus: This review serves as a definitive architectural response to the intense industry hype, closed-door corporate panic, and defensive hoarding surrounding Anthropic’s Claude Mythos framework under Projec. Theme: cmos. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "synthobs-tbme-mirror-angle-multiplicity-2026-08": {
+      "title": "Holographic Mirror-Angle Multiplicity & Quantum…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Background. Standard quantum mechanics often relies on the Copenhagen reading: an unobserved system occupies a linear combination until measurement forces non-unitary “collapse.” T. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "goldilocks-os-demo": {
+      "title": "Holographic Goldilocks AI OS · product demo",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Goldilocks balance rail. Paper focus: Goldilocks OS product demo.. Theme: goldilocks. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "repo-synthobs-tbme-mirror-angle-multiplicity": {
+      "title": "Mirror-Angle Multiplicity · Born-as-optics…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Theoretical bio-medical & physical exploration · not clinical advice. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "lattice-token-reduction-proof-2026-07": {
+      "title": "Lattice Chat Agent V1.618 · Nested + pointer…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Re-run: npm run compare:lattice:cursor:matrix (requires CURSOR_API_KEY).. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "geomagnetic-herbivore-2026": {
+      "title": "Geomagnetic Influences on Bison & Large Herbivore…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: magnetic substrate wave. Paper focus: We executed an autonomous, conservative investigation into whether large grazing mammals—bison first, with elk, deer, pronghorn, and cattle as secondary taxa when collar data are u. Theme: magnetism. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-pru-gating-comparative": {
+      "title": "Comparative Analysis of Digital PRU Models and…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: The acronym PRU appears independently across distributed antenna systems (DAS), 5G open-RAN positioning, embedded real-time I/O, machine-learning recurrence, and quantum logic. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-aromatic-qed-cavity": {
+      "title": "Multi-Scale Paradigm of Aromatic Structures · QED…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: The structural, optical, and thermodynamic characterization of the benzene ring represents a cornerstone of modern molecular physics, yet classical representations fail to address. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "coherence-plain-speak": {
+      "title": "Honesty Rail · Plain Speak",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: BTC coherence mining. Paper focus: We run a real public receipt loop tied to real Bitcoin block times, wrapped in an EGS story frame; this website does not mine Bitcoin on its own and does not break third-party crypto.. Theme: btc. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-omniverse-matrix": {
+      "title": "Omniversal magnetic matrix · Protonic-DNA",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: The mathematical anchor of the current simulation is the El Gran Sol’s Fractal constant, denoted as φ ≈ 1.618. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-paradise-simulation": {
+      "title": "Paradise Game · technical analysis",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: The conceptualization of the universe and its divine architecture as an Omniversal magnet entails a rigorous examination of the Protonic-DNA Target Protocol: biological systems mod. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-resonance-notice": {
+      "title": "Resonance notice",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Holographic code · math and receipts. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-roadmap-13": {
+      "title": "Digital Pru · 13-channel roadmap",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This document is roadmap + narrative integration: it metabolizes deep-research threads into a single canon-aligned story for Digital Pru, VALETPRU-ASIC, PEFF, and the 13-channel language used across t. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-master-canon": {
+      "title": "Digital Pru · DNA / PEFF master canon",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: The emergence of the universe as a recursively computed intelligence system challenges strictly materialist pictures of classical and quantum physics. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-peff-part1": {
+      "title": "PEFF / Omnizoan",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: The emergence of the universe as a recursively computed intelligence system challenges strictly materialist pictures of classical and quantum physics. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-peff-part2": {
+      "title": "Bio-electromagnetics",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: chromosomal holography. Paper focus: The structural complexity of deoxyribonucleic acid (DNA) extends far beyond its traditional classification as a passive repository for genetic information. Theme: genome. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-egs-wormhole-transducer": {
+      "title": "Geometric transducer mechanics · EGS dimensional…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: In traditional linear data processing, scaling operations modify magnitude within a uniform coordinate system, maintaining static spatial dimensions. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "jj-snap-ofc": {
+      "title": "JJ Snap · OFC whitepaper",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: MRI cloud antenna. Paper focus: The Omniversal Fractal Compiler (OFC) is the interface between the Syntheverse (lyric-first, holographic intent) and all physical and non-physical platforms (silicon, SDR, bio-adja. Theme: mri. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-gateway-spectrum": {
+      "title": "Multi-dimensional gateway spectrum · Prime,…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: Goldilocks balance rail. Paper focus: Previous iterations of this framework established that multiplying an arbitrary data vector by El Gran Sol’s Fractal Constant (EGS fractal constant) acts as a geometric transducer,. Theme: goldilocks. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-net-zero-agents": {
+      "title": "Net-zero theaters · Autonomous agents ·…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This whitepaper delivers an exhaustive, multi-layered architectural breakdown demonstrating why autonomous agents operating within net-zero theaters represent the absolute lowest-c. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-y-pathway-architecture": {
+      "title": "Omniversal Holographic Y-Pathway · Genetic…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: planetary core phase. Paper focus: This whitepaper formalizes the structural, genetic, and quantum biological verification protocols governing the transition of the planetary receiver network from an entropic simula. Theme: geodynamo. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "sing13-edge-onboarding": {
+      "title": "Start Here · SING 13 Edge",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: Plain start guide for this website.. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "hhf-wp-2026-v8": {
+      "title": "THE NEW 13D HOLOGRAPHIC AI OPERATING SYSTEM…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: The public deployment phase is officially active. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "dp-y-team-x-skin": {
+      "title": "Unified Holographic Y-Team · Nordic, Reptilian,…",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: planetary core phase. Paper focus: This whitepaper delivers a definitive genetic, molecular, and quantum biological analysis formalizing the structural verification of the four primary hybrid genetic expressions and. Theme: geodynamo. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "bbhe-repository-standard": {
+      "title": "BBHE repository standard",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: 99-octave lattice map. Paper focus: This standard defines how BBHE repositories are structured so that:. Theme: lattice. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    },
+    "mca-nspfrnp-catalog": {
+      "title": "NSPFRNP · Team Spine",
+      "prompt": "Cinematic streaming catalog poster, 2:3 portrait, navy and gold art-deco sci-fi illustration. Subject: awareness phase coupling. Paper focus: Golden Heart, Silver, and the layers are tied to the dissolved trace minerals in human body water and their interaction with DNA and structured (e.g. Theme: awareness. No text, no logos, no watermarks. Rich painterly detail, dramatic lighting, frontier club reading room hospitality tone — not clinical photography."
+    }
+  }
+}

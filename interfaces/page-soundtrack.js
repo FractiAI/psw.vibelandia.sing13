@@ -140,6 +140,56 @@
     }
   }
 
+  /** Canonical ship doors — always navigate in-tab (never the browse popup). */
+  function normalizeDoorPath(pathname) {
+    var p = String(pathname || '').replace(/\/+$/, '');
+    return p || '/';
+  }
+
+  function isPrimaryShipDoor(url) {
+    if (!url) return false;
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+    var path = normalizeDoorPath(url.pathname).toLowerCase();
+    if (path === '/') return true;
+    var doors = [
+      '/questfest',
+      '/reading-room',
+      '/front-desk',
+      '/journey',
+      '/jukebox',
+      '/listen',
+      '/doodles',
+      '/art',
+      '/omniverse-canvas',
+      '/canvas',
+      '/sin-city',
+      '/frontiersman-voyage',
+      '/lets-chat',
+      '/lattice-chat',
+      '/concierto-program',
+      '/core',
+      '/amphitheater',
+      '/horizon',
+      '/science-fiction',
+      '/step-in',
+    ];
+    for (var i = 0; i < doors.length; i++) {
+      var door = doors[i];
+      if (path === door || path.indexOf(door + '/') === 0) return true;
+    }
+    if (
+      path.indexOf('/interfaces/omniverse-canvas') !== -1 ||
+      path.indexOf('/interfaces/vibelandia-questfest') !== -1 ||
+      path.indexOf('/interfaces/reading-room') !== -1 ||
+      path.indexOf('/interfaces/front-desk') !== -1
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  window.QV_isPrimaryShipDoor = isPrimaryShipDoor;
+
   function leavesSoundtrackPage(anchor) {
     var href = anchor.getAttribute('href');
     if (!href || href.charAt(0) === '#') return false;
@@ -360,6 +410,10 @@
       if (!leavesSoundtrackPage(anchor)) return;
       var url = resolveUrl(anchor.getAttribute('href'));
       if (!url) return;
+      if (isPrimaryShipDoor(url)) {
+        handoffIfPlaying();
+        return;
+      }
       ev.preventDefault();
       ev.stopImmediatePropagation();
       handoffIfPlaying();

@@ -14,6 +14,7 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     const js = read('interfaces/page-soundtrack.js');
     expect(js).toContain('openBrowsePopup');
     expect(js).toContain('leavesSoundtrackPage');
+    expect(js).toContain('isPrimaryShipDoor');
     expect(js).toContain("document.addEventListener('click', onNavigateClick, true)");
     expect(js).toContain('stopImmediatePropagation');
     expect(js).toContain('data-qv-jukebox');
@@ -37,8 +38,17 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
   it('site jukebox keeps soundtrack page when browse popup is blocked', () => {
     const js = read('interfaces/site-jukebox.js');
     expect(js).toContain('QV_isPageSoundtrackPlaying');
+    expect(js).toContain('isPrimaryShipDoor');
     expect(js).toContain('browseWin');
     expect(js).not.toContain('window.location.href = url');
+  });
+
+  it('primary ship doors navigate in-tab even when soundtrack is playing', () => {
+    const soundtrack = read('interfaces/page-soundtrack.js');
+    const jukebox = read('interfaces/site-jukebox.js');
+    expect(soundtrack).toContain('if (isPrimaryShipDoor(url))');
+    expect(soundtrack).toContain('handoffIfPlaying();\n        return;');
+    expect(jukebox).toContain('!isPrimaryShipDoor(offUrl)');
   });
 
   it('pauses other media and broadcasts stop before starting page soundtrack', () => {

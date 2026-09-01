@@ -42,6 +42,32 @@
     }
   }
 
+  function isPrimaryShipDoor(url) {
+    if (window.QV_isPrimaryShipDoor) return window.QV_isPrimaryShipDoor(url);
+    if (!url) return false;
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+    var path = String(url.pathname || '').replace(/\/+$/, '') || '/';
+    path = path.toLowerCase();
+    if (path === '/') return true;
+    return (
+      path === '/questfest' ||
+      path.indexOf('/questfest/') === 0 ||
+      path === '/reading-room' ||
+      path.indexOf('/reading-room/') === 0 ||
+      path === '/front-desk' ||
+      path.indexOf('/front-desk/') === 0 ||
+      path === '/journey' ||
+      path.indexOf('/journey/') === 0 ||
+      path.indexOf('/interfaces/vibelandia-questfest') !== -1 ||
+      path.indexOf('/interfaces/reading-room') !== -1 ||
+      path.indexOf('/interfaces/front-desk') !== -1 ||
+      path.indexOf('/interfaces/omniverse-canvas') !== -1 ||
+      path === '/art' ||
+      path === '/omniverse-canvas' ||
+      path === '/canvas'
+    );
+  }
+
   function isJukeboxDestination(url) {
     if (!url) return false;
     var path = url.pathname || '';
@@ -176,7 +202,7 @@
         var anchorOff = t.closest('a[href]');
         if (anchorOff && leavesBridge(anchorOff)) {
           var offUrl = resolveUrl(anchorOff.getAttribute('href'));
-          if (offUrl) {
+          if (offUrl && !isPrimaryShipDoor(offUrl)) {
             evt.preventDefault();
             evt.stopImmediatePropagation();
             openBrowse(offUrl.href);

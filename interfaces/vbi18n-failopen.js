@@ -25,4 +25,8 @@
   injectNeverHideCss();
   window.__vbi18nFailOpenReveal = reveal;
   reveal();
+
+  window.addEventListener('pageshow', function () {
+    reveal();
+  });
 })();

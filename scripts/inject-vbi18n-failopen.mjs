@@ -6,7 +6,9 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const IFACE = path.join(ROOT, 'interfaces');
-const TAG = '<script src="/interfaces/vbi18n-failopen.js"></script>';
+const INLINE_REVEAL =
+  '<script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>';
+const TAG = INLINE_REVEAL + '\n  <script src="/interfaces/vbi18n-failopen.js"></script>';
 const VIS_RE =
   /html\.vbi18n-pending body\s*\{\s*visibility:\s*hidden;?\s*\}/g;
 
@@ -33,6 +35,20 @@ for (const file of walk(IFACE)) {
       html = html.replace(/<head([^>]*)>/, '<head$1>\n  ' + TAG);
     }
     changed = true;
+  } else if (!html.includes('classList.remove("vbi18n-pending")')) {
+    html = html.replace(
+      '<script src="/interfaces/vbi18n-failopen.js"></script>',
+      INLINE_REVEAL + '\n  <script src="/interfaces/vbi18n-failopen.js"></script>',
+    );
+    changed = true;
+  }
+
+  if (html.includes('class="vbi18n-pending"')) {
+    const ready = html.replace(/class="vbi18n-pending"/g, 'class="vbi18n-ready"');
+    if (ready !== html) {
+      html = ready;
+      changed = true;
+    }
   }
 
   const next = html.replace(

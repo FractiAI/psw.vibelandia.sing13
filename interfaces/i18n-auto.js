@@ -736,16 +736,17 @@
           setDocumentLocale(eff);
           applyToDom(dict, page);
           injectLangBar(eff, req, dict, page);
+          var skipLiveTranslate = page === 'papers';
           window.__VIBELANDIA_I18N__ = {
             locale: eff,
             requested: req,
             page: page,
             userPicked: userPickedLocale(),
             browserLanguages: browserCandidates(),
-            liveTranslate: eff !== 'en'
+            liveTranslate: eff !== 'en' && !skipLiveTranslate
           };
           revealDocument();
-          if (eff !== 'en') {
+          if (eff !== 'en' && !skipLiveTranslate) {
             translateRoot(document.body).then(function () {
               watchDynamicContent();
             });

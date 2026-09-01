@@ -43,10 +43,11 @@ describe('i18n-auto · reveal safety', () => {
     expect(qf).toContain('i18n-auto.js" data-page="questfest" defer');
   });
 
-  it('ships fail-open reveal before i18n on Reading Room and QUESTFEST', () => {
+  it('ships fail-open reveal before i18n on Reading Room, whitepaper reader, and QUESTFEST', () => {
     const failopen = read('interfaces/vbi18n-failopen.js');
     expect(failopen).toContain('__vbi18nFailOpenReveal');
     expect(read('interfaces/reading-room.html')).toContain('vbi18n-failopen.js');
+    expect(read('interfaces/whitepaper-surface.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/vibelandia-questfest.html')).toContain('vbi18n-failopen.js');
     expect(read('interfaces/reading-room.html')).toContain('All papers');
     expect(read('interfaces/reading-room.html')).toContain('loadCatalog');
@@ -57,11 +58,19 @@ describe('i18n-auto · reveal safety', () => {
       'interfaces/reading-room.html',
       'interfaces/front-desk.html',
       'interfaces/voyage/deck-3-night.html',
+      'interfaces/whitepaper-surface.html',
     ]) {
       const html = read(rel);
       expect(html).toContain("classList.remove('vbi18n-pending')");
       expect(html).toContain("classList.add('vbi18n-ready')");
     }
+  });
+
+  it('does not live-translate canonical whitepaper reader bodies', () => {
+    const js = read('interfaces/i18n-auto.js');
+    expect(js).toContain("page === 'papers'");
+    expect(read('interfaces/whitepaper-surface.html')).toContain('data-vbi18n-skip');
+    expect(read('interfaces/whitepaper-surface.html')).toContain('loadDocument');
   });
 
   it('boot reveals before dictionary fetch and does not block on live translation', () => {

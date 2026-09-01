@@ -12,6 +12,10 @@
     html.vbi18n-pending body { visibility: hidden; }
     html.vbi18n-ready body { visibility: visible; }
   </style>
+  <script>
+    document.documentElement.classList.remove('vbi18n-pending');
+    document.documentElement.classList.add('vbi18n-ready');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -208,7 +212,7 @@
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <main class="wrap" data-vbi18n-skip>
     <nav class="skin-nav" aria-label="Site">
       <a href="/">SS VIBELANDIA</a><span class="dot" aria-hidden="true">·</span>
       <a href="/listen">Listen</a><span class="dot" aria-hidden="true">·</span>
@@ -228,7 +232,7 @@
 
     <section class="card">
       <p class="status" id="status">Loading document…</p>
-      <article id="content" class="content" aria-live="polite"></article>
+      <article id="content" class="content" aria-live="polite" data-vbi18n-skip></article>
     </section>
   </main>
 
@@ -307,45 +311,73 @@
         statusEl.textContent = msg || 'Could not load this document.';
       }
 
-      var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-      var timeout = controller
-        ? window.setTimeout(function () {
-            controller.abort();
-            showError('Document load timed out. Retry or open /api/whitepaper?id=' + encodeURIComponent(id));
-          }, 15000)
-        : null;
+      function revealReader() {
+        if (typeof window.__vbi18nFailOpenReveal === 'function') {
+          window.__vbi18nFailOpenReveal();
+        } else {
+          document.documentElement.classList.remove('vbi18n-pending');
+          document.documentElement.classList.add('vbi18n-ready');
+        }
+      }
 
-      fetch('/api/whitepaper?id=' + encodeURIComponent(id), controller ? { signal: controller.signal } : {})
-        .then(function (r) {
-          return r.json().then(function (data) {
-            if (!r.ok || !data.ok) throw new Error(data.message || data.code || 'load_failed');
-            return data;
-          });
+      function loadDocument(attempt) {
+        var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        var timeout = controller
+          ? window.setTimeout(function () {
+              controller.abort();
+            }, 12000)
+          : null;
+
+        return fetch('/api/whitepaper?id=' + encodeURIComponent(id), {
+          credentials: 'same-origin',
+          signal: controller ? controller.signal : undefined,
         })
-        .then(function (data) {
-          if (timeout) window.clearTimeout(timeout);
-          if (data.redirect) {
-            window.location.replace(data.redirect);
-            return;
-          }
-          titleEl.textContent = data.title || id;
-          document.title = (data.title || id) + ' · SS Vibelandia';
-          statusEl.remove();
-          contentEl.innerHTML = data.html || '';
-          if (toolbarEl) toolbarEl.hidden = false;
-          whenKatexReady(function () {
-            renderLatex(contentEl);
-            if (autoPrint) window.setTimeout(function () { window.print(); }, 500);
+          .then(function (r) {
+            return r.json().then(function (data) {
+              if (!r.ok || !data.ok) throw new Error(data.message || data.code || 'load_failed');
+              return data;
+            });
+          })
+          .then(function (data) {
+            if (timeout) window.clearTimeout(timeout);
+            revealReader();
+            if (data.redirect) {
+              window.location.replace(data.redirect);
+              return;
+            }
+            titleEl.textContent = data.title || id;
+            document.title = (data.title || id) + ' · SS Vibelandia';
+            statusEl.remove();
+            contentEl.innerHTML = data.html || '';
+            if (toolbarEl) toolbarEl.hidden = false;
+            whenKatexReady(function () {
+              renderLatex(contentEl);
+              if (autoPrint) window.setTimeout(function () { window.print(); }, 500);
+            });
+          })
+          .catch(function (err) {
+            if (timeout) window.clearTimeout(timeout);
+            revealReader();
+            if (attempt < 1) {
+              statusEl.textContent = 'Retrying document load…';
+              return window.setTimeout(function () {
+                loadDocument(attempt + 1);
+              }, 400);
+            }
+            showError(
+              err && err.name === 'AbortError'
+                ? 'Timed out loading document.'
+                : 'Could not load this document.'
+            );
           });
-        })
-        .catch(function (err) {
-          if (timeout) window.clearTimeout(timeout);
-          showError(err && err.name === 'AbortError' ? 'Timed out loading document.' : 'Could not load this document.');
-        });
+      }
+
+      revealReader();
+      loadDocument(0);
     })();
   </script>
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
-  <script src="/interfaces/i18n-auto.js" data-page="papers"></script>
+  <script src="/interfaces/i18n-auto.js" data-page="papers" defer></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

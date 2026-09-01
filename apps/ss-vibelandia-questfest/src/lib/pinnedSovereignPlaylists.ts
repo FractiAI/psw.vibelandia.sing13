@@ -21,14 +21,13 @@ const PINNED_NAMES: Record<string, string> = {
 /** Restore canonical track order for pinned sovereign playlists after server/local merge. */
 export function syncPinnedSovereignPlaylists(
   playlists: PlaylistDef[],
-  tracks: Record<string, TrackDef>,
+  _tracks: Record<string, TrackDef>,
 ): PlaylistDef[] {
-  const valid = new Set(Object.keys(tracks));
   let changed = false;
   const next = playlists.map((p) => {
     const canonical = PINNED_TRACK_IDS[p.id];
     if (!canonical) return p;
-    const trackIds = canonical.filter((id) => valid.has(id));
+    const trackIds = [...canonical];
     const canonicalName = PINNED_NAMES[p.id];
     const same =
       trackIds.length === p.trackIds.length &&
@@ -46,14 +45,12 @@ export function syncPinnedSovereignPlaylists(
 
   for (const [id, canonical] of Object.entries(PINNED_TRACK_IDS)) {
     if (next.some((p) => p.id === id)) continue;
-    const trackIds = canonical.filter((tid) => valid.has(tid));
-    if (!trackIds.length) continue;
     changed = true;
     next.push({
       id,
       name: PINNED_NAMES[id] ?? id,
       kind: 'sovereign',
-      trackIds,
+      trackIds: [...canonical],
     });
   }
 

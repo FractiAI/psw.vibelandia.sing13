@@ -8974,6 +8974,11 @@ html.qf-jukebox-page .sp-now-add-pl {
   overflow: hidden;
 }
 
+.jb-stage__tracks .jb-track-panel {
+  flex: 1;
+  min-height: 0;
+}
+
 .jb-track-panel__head {
   display: flex;
   align-items: center;
@@ -9148,11 +9153,12 @@ html.qf-jukebox-page .sp-now-add-pl {
 .jb-track-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 calc(0.5rem + env(safe-area-inset-bottom, 0px));
   flex: 1;
   min-height: 0;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .jb-track-row-wrap {

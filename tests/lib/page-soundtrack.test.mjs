@@ -58,6 +58,9 @@ describe('Reading Room · Canvas-style hero video', () => {
     expect(page).toContain('data-qv-browse="1"');
     expect(page).toContain('target="_blank"');
     expect(page).toContain('ep-hero--reading-room');
+    expect(page).toContain('ep-hero--compact');
+    expect(page).toContain('href="#papers"');
+    expect(page).toContain('Loading poster shelves');
     expect(page).toContain('ep-hero__video-embed');
     expect(page).toContain('data-youtube-id="VXZL77ub8DY"');
     expect(page).not.toContain('rr-prelude');

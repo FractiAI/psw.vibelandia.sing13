@@ -213,7 +213,8 @@
       border-top: 1px solid var(--rr-line);
       max-width: 42rem;
     }
-    .rr-empty {
+    .rr-empty,
+    .rr-loading {
       padding: 2.5rem 1rem;
       text-align: center;
       color: var(--rr-muted);
@@ -229,7 +230,7 @@
 </head>
 <body class="voyage-flagship">
   <!-- READING_ROOM_HERO_BEGIN -->
-  <header class="ep-hero ep-hero--reading-room" aria-label="Reading Room opening">
+  <header class="ep-hero ep-hero--reading-room ep-hero--compact" aria-label="Reading Room opening">
     <div class="ep-hero__plane" role="img" aria-label="Frontier Club reading room — trophies, books, and sacred objects from past adventures" style="background-image:url('/interfaces/assets/experience/ship-library-deep-memory.jpg')"></div>
     <div class="ep-hero__video" aria-hidden="true">
         <iframe
@@ -247,7 +248,8 @@
       
       <h1 class="ep-hero__title">Reading Room</h1>
       <p class="ep-hero__lede">The quartet greets you on arrival; each solo testifies to Holographic Goldilocks SuperAI and offers a suggestion — then the grand finale gathers every voice. Browse poster art while the concert runs.</p>
-      <div class="ep-hero__cta"><a class="btn btn--ghost" href="/reading-room-program">Concert program</a></div>
+      <div class="ep-hero__cta"><a class="btn btn--ghost" href="/reading-room-program">Concert program</a>
+        <a class="btn btn--ghost" href="#papers">Browse papers</a></div>
       <button
           type="button"
           class="ep-hero__score"
@@ -269,11 +271,11 @@
   </header>
   <!-- READING_ROOM_HERO_END -->
   <div class="rr-scene">
-    <main class="rr-catalog" id="papers">
+    <main class="rr-catalog" id="papers" data-vbi18n-skip>
       <div class="rr-search-wrap">
         <input class="rr-search" id="rr-search" type="search" placeholder="Search papers and surfaces…" autocomplete="off" aria-label="Search reading room" />
       </div>
-      <div id="rr-menu" aria-live="polite"></div>
+      <div id="rr-menu" aria-live="polite" data-vbi18n-skip><p class="rr-loading">Loading poster shelves…</p></div>
       <p class="rr-honesty">
         <strong>Honesty:</strong> Cover art is AI-generated poster hospitality from each paper's abstract focus — not empirical proof.
         Reading Room pages are orientation, not clinical advice. Φ ≈ 1.618 is design language aboard this ship.
@@ -417,6 +419,19 @@
   <script src="/interfaces/page-soundtrack.js" defer></script>
   <script src="/interfaces/reading-room-autoplay.js" defer></script>
   <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+  <script>
+    (function () {
+      function revealReadingRoom() {
+        document.documentElement.classList.remove('vbi18n-pending');
+        document.documentElement.classList.add('vbi18n-ready');
+      }
+      var i18n = document.querySelector('script[src*="i18n-auto.js"]');
+      if (i18n) i18n.onerror = revealReadingRoom;
+      window.setTimeout(function () {
+        if (!document.documentElement.classList.contains('vbi18n-ready')) revealReadingRoom();
+      }, 12000);
+    })();
+  </script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
   <script src="/interfaces/site-jukebox.js" defer data-qv-jukebox-boot="1"></script>
 </body>

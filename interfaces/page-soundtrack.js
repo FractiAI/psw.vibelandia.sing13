@@ -40,6 +40,37 @@
 
   window.QV_canUseSoundPopup = canUseSoundPopup;
 
+  if (!document.querySelector('link[href*="page-soundtrack-mute.css"]')) {
+    var muteCss = document.createElement('link');
+    muteCss.rel = 'stylesheet';
+    muteCss.href = '/interfaces/page-soundtrack-mute.css';
+    document.head.appendChild(muteCss);
+  }
+
+  function ensureMuteButtonMarkup(button) {
+    if (!button) return;
+    button.classList.add('qv-sound-mute');
+    if (!button.querySelector('.qv-sound-mute__icon')) {
+      button.innerHTML = '<span class="qv-sound-mute__icon" aria-hidden="true"></span>';
+    }
+  }
+
+  function applyMuteButtonState(button, muted, trackAria) {
+    if (!button) return;
+    ensureMuteButtonMarkup(button);
+    button.hidden = false;
+    button.classList.toggle('is-muted', !!muted);
+    button.classList.toggle('is-playing', !muted);
+    button.setAttribute('aria-pressed', muted ? 'true' : 'false');
+    if (muted) {
+      button.setAttribute('aria-label', 'Unmute soundtrack' + (trackAria ? ': ' + trackAria : ''));
+      button.title = 'Muted · tap to unmute';
+    } else {
+      button.setAttribute('aria-label', 'Mute soundtrack' + (trackAria ? ': ' + trackAria : ''));
+      button.title = trackAria ? 'Playing · ' + trackAria + ' · tap to mute' : 'Sound on · tap to mute';
+    }
+  }
+
   function pauseLocalSessionQuiet(session) {
     if (!session) return;
     session.handoffDone = true;
@@ -395,12 +426,9 @@
     var label = opts.label || 'Soundtrack';
 
     if (btn && autoplayDesired) {
-      btn.hidden = false;
-      btn.textContent = 'Sound on · loading…';
-      btn.setAttribute('aria-pressed', 'true');
-      btn.classList.add('is-playing');
-      btn.classList.remove('is-muted');
+      applyMuteButtonState(btn, false);
       btn.setAttribute('aria-label', 'Loading ' + label);
+      btn.title = 'Loading soundtrack…';
     }
 
     var session = {
@@ -508,21 +536,7 @@
         session.playing = playing;
         if (!btn) return;
         var track = current();
-        var showAsOn = playing || (autoplayDesired && !userMuted);
-        btn.hidden = false;
-        btn.setAttribute('aria-pressed', showAsOn ? 'true' : 'false');
-        btn.classList.toggle('is-playing', showAsOn);
-        btn.classList.toggle('is-muted', !showAsOn);
-        if (playing) {
-          btn.textContent = track.short;
-          btn.setAttribute('aria-label', 'Mute ' + label + ': ' + track.aria);
-        } else if (userMuted) {
-          btn.textContent = 'Sound off · tap to play';
-          btn.setAttribute('aria-label', 'Play ' + label + ': ' + track.aria);
-        } else {
-          btn.textContent = track.short || 'Sound on · ' + track.aria;
-          btn.setAttribute('aria-label', 'Mute ' + label + ': ' + track.aria);
-        }
+        applyMuteButtonState(btn, userMuted, track.aria);
       }
 
       function loadTrack(i) {

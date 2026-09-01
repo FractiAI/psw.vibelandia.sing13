@@ -64,11 +64,13 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     const js = read('interfaces/page-soundtrack.js');
     expect(js).toContain('autoplayDesired = opts.autoplay !== false');
     expect(js).toContain('userMuted');
-    expect(js).toContain('Sound on · loading…');
+    expect(js).toContain('applyMuteButtonState');
+    expect(js).toContain('qv-sound-mute');
     expect(js).toContain('bindUnlockGestures');
+    expect(read('interfaces/page-soundtrack-mute.css')).toContain('.qv-sound-mute.is-muted');
     expect(read('interfaces/questfest-autoplay.js')).toContain("playlistId: 'pl-reception'");
     expect(read('interfaces/vibelandia-questfest.html')).toContain('questfest-autoplay.js');
-    expect(read('interfaces/reading-room.html')).toContain('Sound on · loading…');
+    expect(read('interfaces/reading-room.html')).toContain('qv-sound-mute');
     expect(read('interfaces/reading-room.html')).not.toContain('Sound off · tap to play');
   });
 

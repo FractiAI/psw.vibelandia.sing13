@@ -178,7 +178,7 @@
   border-color: rgba(212, 175, 55, 0.75);
   color: #fef3c7;
 }
-.ep-hero__score.is-playing {
+.ep-hero__score.is-playing:not(.qv-sound-mute) {
   border-color: rgba(212, 175, 55, 0.85);
 }
 .ep-hero__score[hidden] {

@@ -181,7 +181,7 @@
   function renderQuestfestSoundBar() {
     return (
       '<div class="qv-top-quicklinks__sound" id="reception-sound-bar">' +
-      '<button type="button" class="qv-top-quicklinks__score reception-hero__score" id="reception-hero-score" aria-pressed="true" aria-controls="reception-hero-audio" aria-label="SS Vibelandia soundtrack">Sound on · loading…</button>' +
+      '<button type="button" class="qv-top-quicklinks__score reception-hero__score qv-sound-mute" id="reception-hero-score" aria-pressed="false" aria-controls="reception-hero-audio" aria-label="Mute SS Vibelandia soundtrack"><span class="qv-sound-mute__icon" aria-hidden="true"></span></button>' +
       '<audio id="reception-hero-audio" preload="auto" playsinline hidden aria-hidden="true" aria-label="Reception check-in soundtrack"></audio>' +
       '</div>'
     );

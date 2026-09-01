@@ -23,6 +23,12 @@ html {
   color-scheme: dark;
 }
 
+/* Live i18n disabled: never hide the body waiting on translation (Sep 2026). */
+html.vbi18n-pending body,
+html.vbi18n-ready body {
+  visibility: visible !important;
+}
+
 body {
   -webkit-tap-highlight-color: rgba(212, 175, 55, 0.25);
 }

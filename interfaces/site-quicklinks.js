@@ -35,7 +35,13 @@
   }
 
   /** Live language bar + surface/paper translation (i18n-auto.js). */
-  if (!document.querySelector('script[src*="i18n-auto.js"]') && !window.__qvI18nBoot) {
+  /** Keep in sync with I18N_LIVE_DISABLED in interfaces/i18n-auto.js */
+  var I18N_LIVE_DISABLED = true;
+  if (I18N_LIVE_DISABLED) {
+    window.__VIBELANDIA_I18N_LIVE_DISABLED__ = true;
+    document.documentElement.classList.remove('vbi18n-pending');
+    document.documentElement.classList.add('vbi18n-ready');
+  } else if (!document.querySelector('script[src*="i18n-auto.js"]') && !window.__qvI18nBoot) {
     window.__qvI18nBoot = 1;
     if (!document.querySelector('script[src*="vbi18n-failopen.js"]')) {
       var failopen = document.createElement('script');

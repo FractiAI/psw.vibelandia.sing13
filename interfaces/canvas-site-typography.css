@@ -4,6 +4,12 @@
  */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap');
 
+/* Live i18n disabled: never hide the body waiting on translation (Sep 2026). */
+html.vbi18n-pending body,
+html.vbi18n-ready body {
+  visibility: visible !important;
+}
+
 :root {
   --canvas-ink: #f5e6c8;
   --canvas-ink-soft: #c9bba3;

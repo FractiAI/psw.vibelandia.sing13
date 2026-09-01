@@ -7,6 +7,15 @@
 (function () {
   'use strict';
 
+  /** Temporary kill switch — live translation + locale autosense (Player 1 · Sep 2026). */
+  var I18N_LIVE_DISABLED = true;
+
+  if (I18N_LIVE_DISABLED) {
+    window.__VIBELANDIA_I18N_LIVE_DISABLED__ = true;
+    document.documentElement.classList.remove('vbi18n-pending');
+    document.documentElement.classList.add('vbi18n-ready');
+  }
+
   var STORAGE_LOCALE = 'vibelandia_locale';
   var STORAGE_USER_PICKED = 'vibelandia_locale_user';
   var CACHE_PREFIX = 'vbi18n_tx_v1_';
@@ -762,16 +771,36 @@
       });
   }
 
+  function bootDisabledEnglishOnly(page) {
+    revealDocument();
+    state.page = page || 'surface';
+    state.locale = 'en';
+    state.requested = 'en';
+    window.__VIBELANDIA_I18N__ = {
+      locale: 'en',
+      requested: 'en',
+      page: state.page,
+      userPicked: false,
+      browserLanguages: browserCandidates(),
+      liveTranslate: false,
+      disabled: true
+    };
+  }
+
   function boot() {
+    var page = BOOT_PAGE_ATTR || '';
+    if (!page || page === 'auto') {
+      page = detectPageFromPath() || 'surface';
+    }
+    if (I18N_LIVE_DISABLED) {
+      bootDisabledEnglishOnly(page);
+      return;
+    }
     if (typeof window.__vbi18nFailOpenReveal === 'function') {
       window.__vbi18nFailOpenReveal();
     }
     revealDocument();
     scheduleRevealFallback();
-    var page = BOOT_PAGE_ATTR || '';
-    if (!page || page === 'auto') {
-      page = detectPageFromPath() || 'surface';
-    }
     initFromPage(page);
   }
 

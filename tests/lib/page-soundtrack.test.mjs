@@ -49,6 +49,9 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('QV_isProgramPageUrl');
     expect(js).toContain('if (isProgramPageUrl(url))');
     expect(js).toContain('openBrowsePopup(url.href)');
+    expect(js).toContain('openProgramInlineOverlay');
+    expect(js).toContain('QV_openProgramInline');
+    expect(js).toContain('if (!canUseSoundPopup())');
     const navigateHandler = js.slice(js.indexOf('function onNavigateClick(ev)'));
     const programIdx = navigateHandler.indexOf('if (isProgramPageUrl(url))');
     const programBlock = navigateHandler.slice(
@@ -56,6 +59,7 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
       navigateHandler.indexOf('if (isPrimaryShipDoor(url))', programIdx),
     );
     expect(programBlock).not.toContain('handoffIfPlaying');
+    expect(programBlock).toContain('openProgramInlineOverlay(url.href)');
     expect(programBlock).toContain('window.location.href = url.href');
     const doorsBlock = js.slice(js.indexOf('var doors = ['), js.indexOf('];', js.indexOf('var doors = [')) + 2);
     expect(doorsBlock).not.toContain("'/concierto-program'");

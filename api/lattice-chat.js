@@ -2180,6 +2180,28 @@ export default async function handler(req, res) {
       return json(res, 400, { error: 'Invalid JSON body' });
     }
 
+    try {
+      const budgetMod = await import('../lib/lattice-request-budget.mjs');
+      const {
+        estimateJsonBytes,
+        LATTICE_WIRE_BUDGET_BYTES,
+        LATTICE_PAYLOAD_TOO_LARGE_MESSAGE,
+        trimHistoryForWireBudget,
+      } = budgetMod;
+      if (estimateJsonBytes(body) > LATTICE_WIRE_BUDGET_BYTES && Array.isArray(body.history)) {
+        const { history, ...rest } = body;
+        body.history = trimHistoryForWireBudget(history, rest);
+      }
+      if (estimateJsonBytes(body) > LATTICE_WIRE_BUDGET_BYTES) {
+        return json(res, 413, {
+          error: LATTICE_PAYLOAD_TOO_LARGE_MESSAGE,
+          code: 'payload_too_large',
+        });
+      }
+    } catch (budgetErr) {
+      console.warn('[lattice-chat] wire budget check skipped', budgetErr);
+    }
+
     const access = checkLatticeEmailAccess(readEmail(req, body));
     if (!access.ok) {
       return json(res, 401, {

@@ -328,6 +328,64 @@
     );
   }
 
+  /** Mobile / narrow viewports — program in-page so soundtrack is not suspended. */
+  function openProgramInlineOverlay(url) {
+    var existing = document.getElementById('qv-program-overlay');
+    if (existing) {
+      try {
+        existing.remove();
+      } catch (_) {}
+    }
+
+    var root = document.createElement('div');
+    root.id = 'qv-program-overlay';
+    root.setAttribute('role', 'dialog');
+    root.setAttribute('aria-modal', 'true');
+    root.setAttribute('aria-label', 'Concert program');
+    root.style.cssText =
+      'position:fixed;inset:0;z-index:99999;background:rgba(8,12,20,0.92);display:flex;flex-direction:column;';
+
+    var bar = document.createElement('div');
+    bar.style.cssText =
+      'display:flex;align-items:center;gap:0.75rem;padding:0.65rem 1rem;background:#0f1628;color:#f5e6c8;font:600 0.95rem system-ui,sans-serif;border-bottom:1px solid rgba(212,175,55,0.35);';
+    bar.appendChild(document.createTextNode('Concert program · soundtrack keeps playing'));
+
+    var closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.textContent = 'Close';
+    closeBtn.style.cssText =
+      'margin-left:auto;border:1px solid rgba(212,175,55,0.55);background:#1a2438;color:#f5e6c8;border-radius:6px;padding:0.35rem 0.85rem;font:inherit;cursor:pointer;';
+    bar.appendChild(closeBtn);
+
+    var frame = document.createElement('iframe');
+    frame.src = url;
+    frame.title = 'Concert program';
+    frame.style.cssText = 'flex:1;width:100%;border:0;background:#fff;';
+
+    function closeOverlay() {
+      try {
+        root.remove();
+      } catch (_) {}
+      document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeOverlay);
+    root.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') closeOverlay();
+    });
+
+    root.appendChild(bar);
+    root.appendChild(frame);
+    document.body.style.overflow = 'hidden';
+    document.body.appendChild(root);
+    try {
+      closeBtn.focus();
+    } catch (_) {}
+    return true;
+  }
+
+  window.QV_openProgramInline = openProgramInlineOverlay;
+
   function openBrowsePopup(url) {
     if (!canUseSoundPopup()) return null;
     if (window.QV_openBrowse) {
@@ -511,6 +569,10 @@
       if (isProgramPageUrl(url)) {
         ev.preventDefault();
         ev.stopImmediatePropagation();
+        if (!canUseSoundPopup()) {
+          openProgramInlineOverlay(url.href);
+          return;
+        }
         var programWin = openBrowsePopup(url.href);
         if (!programWin) {
           try {

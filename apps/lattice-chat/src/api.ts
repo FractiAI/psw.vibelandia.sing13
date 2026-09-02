@@ -33,6 +33,12 @@ import {
   peerNameForId,
   resolveClientCollabPeerId,
 } from '@/feed/seatIdentity';
+import {
+  LATTICE_PAYLOAD_TOO_LARGE_MESSAGE,
+  LATTICE_WIRE_BUDGET_BYTES,
+  formatWireSize,
+  prepareLatticeWireBody,
+} from '@/lib/requestBudget';
 
 type LatticePrivilege = 'creator' | 'guest' | 'none';
 
@@ -794,6 +800,18 @@ export async function sendLatticeMessage(
     baseBody.attachments = attachments;
   }
 
+  const wirePack = prepareLatticeWireBody(baseBody);
+  if (wirePack.bytes > LATTICE_WIRE_BUDGET_BYTES) {
+    store.setError(
+      `${LATTICE_PAYLOAD_TOO_LARGE_MESSAGE} (about ${formatWireSize(wirePack.bytes)}).`,
+    );
+    store.setSendProgress('idle', null);
+    store.setSending(false);
+    store.clearPending();
+    return;
+  }
+  const wireBody = wirePack.body;
+
   let settled = false;
   let primaryStreamActive = false;
   const startedAt = Date.now();
@@ -896,7 +914,7 @@ export async function sendLatticeMessage(
     store.setSendProgress('sending', latticeProgressHint(0, 'sending'));
     primaryStreamActive = true;
     markActivity();
-    let { res, data } = await postLattice(baseBody, email, {
+    let { res, data } = await postLattice(wireBody, email, {
       signal: primaryAbort.signal,
       onActivity: markActivity,
     });
@@ -918,7 +936,7 @@ export async function sendLatticeMessage(
       }
       if (settled) return;
       ({ res, data } = await postLattice(
-        { ...baseBody, agentId: data.agentId || thread.agentId, recover: true },
+        { ...wireBody, agentId: data.agentId || thread.agentId, recover: true },
         email,
       ));
     }
@@ -939,6 +957,8 @@ export async function sendLatticeMessage(
                   'Cursor cloud timed out. Send again, or switch to Claude / Gemini.'
               : data.code === 'sing13_write_locked'
                 ? 'Could not attach SING13 for this seat. Hard refresh and send again, or switch to Claude / Gemini.'
+              : res.status === 413
+                ? LATTICE_PAYLOAD_TOO_LARGE_MESSAGE
               : res.status === 401
                 ? 'This email is not on the access list yet. Request access, then Sign in after you’re granted.'
               : res.status === 403
@@ -956,7 +976,9 @@ export async function sendLatticeMessage(
       throw new Error(
         data.error ||
           data.detail ||
-          `Request failed (${res.status}${res.statusText ? ` ${res.statusText}` : ''})`,
+          (res.status === 413
+            ? LATTICE_PAYLOAD_TOO_LARGE_MESSAGE
+            : `Request failed (${res.status}${res.statusText ? ` ${res.statusText}` : ''})`),
       );
     }
 

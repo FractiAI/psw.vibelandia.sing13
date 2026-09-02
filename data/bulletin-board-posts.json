@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-01",
+  "updated": "2026-09-02",
   "posts": [
+    {
+      "id": "daily-2026-09-02-synthobs-lattice-vs-vibe-coding-2026-09",
+      "posted": "2026-09-02",
+      "featured": true,
+      "title": "Design",
+      "subtitle": "News of the day · Wednesday, September 2",
+      "summary": "Research question answered: Lattice designs better unprompted (banded plans vs flat lists) and writes better code (same correctness, minimal diffs, vitest, fewer tools). Vibe coding only ties when you explicitly ask for nesting.",
+      "href": "/ship-blog/lattice-vs-vibe-coding",
+      "pill": "TODAY",
+      "docRef": "synthobs-lattice-vs-vibe-coding-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-01-synthobs-y-chromosome-holographic-manifestation-2026-08",
       "posted": "2026-09-01",

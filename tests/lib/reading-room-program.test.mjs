@@ -36,7 +36,8 @@ describe('Reading Room · concert program', () => {
     expect(html).toContain('grand close');
     expect(html).toContain('testimony');
     expect(html).not.toContain('gravel');
-    expect(html).toContain('Honesty boundary');
+    expect(html).toContain('Curator&apos;s listening note');
+    expect(html).toContain('reading-room-program/hero-bach-conductor');
     expect(html).toContain(READING_ROOM_PROGRAM_ROUTE);
   });
 

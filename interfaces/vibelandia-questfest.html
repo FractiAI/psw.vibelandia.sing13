@@ -51,7 +51,7 @@
       --text: #f5f0e8;
       --text-soft: #d6cfc4;
     }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       font-family: 'Cormorant Garamond', Georgia, serif;
       background: var(--canvas-hull, #060912);
@@ -61,6 +61,8 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: clip;
+      max-width: 100%;
     }
     a { color: var(--champagne); text-decoration: none; }
     a:hover { color: var(--gold-hi); text-decoration: underline; }
@@ -101,6 +103,9 @@
       position: relative;
       z-index: 1;
       max-width: 40rem;
+      width: min(40rem, 100%);
+      padding-inline: 0.15rem;
+      box-sizing: border-box;
     }
     .cloud-badge {
       display: inline-block;
@@ -123,23 +128,27 @@
     }
     .kicker {
       font-family: 'Syne', sans-serif;
-      font-size: clamp(2.4rem, 8vw, 4.4rem);
-      line-height: 0.98;
+      font-size: clamp(1.55rem, 8.5vw, 4.4rem);
+      line-height: 1.02;
       letter-spacing: -0.02em;
       color: #faf6ee;
       text-shadow: 0 4px 24px rgba(0,0,0,.85);
       font-weight: 800;
       animation: badgeIn 1s ease-out 0.08s both;
+      max-width: 100%;
     }
     .kicker-brand {
       display: inline-block;
-      white-space: nowrap;
       text-transform: uppercase;
       user-select: text;
       cursor: text;
+      max-width: 100%;
     }
-    @media (max-width: 380px) {
-      .kicker { font-size: clamp(2.2rem, 11vw, 3.2rem); letter-spacing: 0.03em; }
+    @media (min-width: 520px) {
+      .kicker-brand { white-space: nowrap; }
+    }
+    @media (max-width: 519px) {
+      .kicker { font-size: clamp(1.5rem, 9vw, 2.35rem); letter-spacing: 0.03em; }
     }
     .hero-tagline {
       font-family: 'Cormorant Garamond', Georgia, serif;

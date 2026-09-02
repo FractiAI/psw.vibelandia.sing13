@@ -147,11 +147,19 @@ body.canvas-site .cloud-badge {
 body.canvas-site .kicker {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(2.4rem, 8vw, 4.4rem);
-  line-height: 0.98;
+  font-size: clamp(1.55rem, 8.5vw, 4.4rem);
+  line-height: 1.02;
   letter-spacing: -0.02em;
   color: #faf6ee;
   text-shadow: none;
+  max-width: 100%;
+}
+
+@media (max-width: 519px) {
+  body.canvas-site .kicker {
+    font-size: clamp(1.5rem, 9vw, 2.35rem);
+    letter-spacing: 0.03em;
+  }
 }
 
 body.canvas-site .hero-tagline {

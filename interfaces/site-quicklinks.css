@@ -36,6 +36,8 @@ body.qv-has-top-quicklinks .lib-nav {
   flex-direction: column;
   align-items: stretch;
   gap: 0.35rem;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .qv-top-quicklinks__row {
@@ -43,14 +45,14 @@ body.qv-has-top-quicklinks .lib-nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 0.15rem 0;
+  gap: 0.15rem 0.2rem;
   min-width: 0;
   flex: 1 1 auto;
   max-width: 100%;
 }
 
 .qv-top-quicklinks__row--primary {
-  flex: 1 1 12rem;
+  flex: 0 1 auto;
 }
 
 .qv-top-quicklinks__row--secondary {
@@ -138,8 +140,21 @@ body.qv-has-top-quicklinks .lib-nav {
     gap: 0.3rem;
   }
 
+  .qv-top-quicklinks--questfest .qv-top-quicklinks__row--primary {
+    font-size: 0.68rem;
+    gap: 0.12rem 0.18rem;
+    line-height: 1.35;
+  }
+
+  .qv-top-quicklinks--questfest a,
+  .qv-top-quicklinks--questfest .qv-top-quicklinks__here,
+  .qv-top-quicklinks--questfest .qv-top-quicklinks__share {
+    white-space: normal;
+    text-align: center;
+  }
+
   .qv-top-quicklinks__row {
-    gap: 0.18rem 0;
+    gap: 0.18rem 0.18rem;
     justify-content: center;
   }
 
@@ -148,7 +163,7 @@ body.qv-has-top-quicklinks .lib-nav {
   }
 
   .qv-top-quicklinks .sep {
-    margin: 0 0.3rem;
+    margin: 0 0.18rem;
   }
 
   .qv-top-quicklinks__sound {

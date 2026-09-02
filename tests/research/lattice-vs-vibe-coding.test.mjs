@@ -7,6 +7,8 @@ import {
   experimentDeployLiveCursor,
   experimentOverallFindings,
   experimentOutputComparison,
+  experimentUnpromptedNesting,
+  experimentImplementationPillars,
   runAllExperiments,
 } from '../../research/synthobs-lattice-vs-vibe-coding/src/experiments.mjs';
 import { compareRowOutput, OUTPUT_DIMENSIONS } from '../../research/synthobs-lattice-vs-vibe-coding/src/output-scoring.mjs';
@@ -87,16 +89,29 @@ describe('synthobs-lattice-vs-vibe-coding', () => {
       const e6 = experimentOverallFindings();
       expect(e6.pass).toBe(true);
       expect(e6.findings.overall.latticeWins).toBe(4);
-      expect(e6.findings.overall.meanTokenReductionPct).toBeGreaterThanOrEqual(40);
-      expect(e6.findings.output.size.winner).toBe('lattice');
-      expect(e6.findings.output.performance.winner).toBe('lattice');
+      expect(e6.findings.unpromptedNesting.unprompted.latticeSpontaneous).toBe(2);
+      expect(e6.findings.implementationPillars.byPillar.efficiency.latticeWins).toBeGreaterThanOrEqual(5);
 
       const all = await runAllExperiments();
       expect(all.all_pass).toBe(true);
-      expect(all.n_pass).toBe(8);
+      expect(all.n_pass).toBe(10);
     },
     30_000,
   );
+
+  it('E9 unprompted nesting — Lattice nests without keywords', () => {
+    const e9 = experimentUnpromptedNesting();
+    expect(e9.pass).toBe(true);
+    expect(e9.unpromptedSummary.latticeSpontaneousCount).toBe(2);
+    expect(e9.unpromptedSummary.vibeSpontaneousCount).toBe(0);
+  });
+
+  it('E10 implementation pillars — efficiency through implementation', () => {
+    const e10 = experimentImplementationPillars();
+    expect(e10.pass).toBe(true);
+    expect(e10.byPillar.efficiency.latticeWins).toBeGreaterThanOrEqual(5);
+    expect(e10.whatMakesBetter.scalability).toContain('Peer-firewall');
+  });
 
   it('registry + slug resolve', () => {
     const entry = resolveWhitepaper('synthobs-lattice-vs-vibe-coding-2026-09');

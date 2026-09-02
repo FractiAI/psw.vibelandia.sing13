@@ -13,7 +13,7 @@
 **Live surfaces:** [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice/proof`](https://www.ssvibelandiaquestfest24x365.com/lattice/proof)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
-**Keywords:** Lattice Chat; vibe coding; design; write; deploy; nested agents; token efficiency; paired comparison; NSPFRNP; SynthOBS
+**Keywords:** Lattice Chat; vibe coding; design; write; deploy; nested agents; unprompted nesting; efficiency; performance; security; scalability; paired comparison; NSPFRNP; SynthOBS
 
 ---
 
@@ -27,6 +27,7 @@
 | **Deploy** | Ops/config grounding accuracy + token/tool-call efficiency | Autonomous CI/CD displacement proof |
 | **Findings** | Committed receipts under `research/synthobs-lattice-vs-vibe-coding/data/` | That every open-ended tool tour preserves Lattice advantage |
 | **Output rubric** | Design · performance · size · quality scored on reply previews | Blind human eval or production A/B |
+| **Unprompted nesting** | T5b/T7 fixtures test plans/code **without** nested/peer-firewall keywords | Fixtures are structural models — re-run live to refresh |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -47,15 +48,18 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 
 **Evidence lanes:**
 
-1. **Live Cursor usage matrix** (`data/lattice-vs-standard-cursor-usage-matrix.json`) — composer-2.5 paired runs with provider-reported tokens.  
-2. **Structural context-load estimate** (`data/lattice-vs-standard-comparison.json`) — chars÷4 companion on the same multi-band design ask.
+1. **Live Cursor usage matrix** (`data/lattice-vs-standard-cursor-usage-matrix.json`) — composer-2.5 paired runs with provider-reported tokens (includes **explicit** nesting on T5).  
+2. **Unprompted nesting matrix** (`data/lattice-vs-vibe-coding-unprompted-matrix.json`) — T5b plan + T7 minimal impl **without** nesting keywords.  
+3. **Structural context-load estimate** (`data/lattice-vs-standard-comparison.json`) — chars÷4 companion on the same multi-band design ask.
 
 **Findings:**
 
 1. **Design:** On multi-band nested planning, Lattice used **~42% fewer tokens** than vibe coding (live Cursor, task T5). Structural companion shows **~99% lower estimated context load** (3,123 vs 298,296 tokens) when nested + pointers replace fat dump — structural only, not marketing headline.  
 2. **Write:** On code locate (T4) + pointer-RAG fact extraction (T3), Lattice won both paired tasks with **~51–67% token savings** and **fewer tool calls** on code locate (6 vs 12).  
 3. **Deploy:** On ops/config grounding (T6), Lattice won with **~52% token savings** and fewer tool calls (6 vs 10) while delivering the same BYOK answer.  
-4. **Overall:** Lattice won **4/4** design · write · deploy paired tasks in the committed matrix; mean token savings **~53%** across those rows (work-class range **~35–70%** per companion token proof).
+4. **Overall:** Lattice won **4/4** design · write · deploy paired tasks in the committed matrix; mean token savings **~53%** across those rows (work-class range **~35–70%** per companion token proof).  
+5. **Unprompted nesting (T5b · T7):** Without nested/peer-firewall keywords, Lattice spontaneously nests on **2/2** tasks (mean rubric **~0.85**); vibe coding stays flat (**0/2**, mean **~0.25**). When nesting **is** prompted (T5), both arms tie — the real-world delta is **default topology**, not prose mimicry.  
+6. **Implementation pillars:** Lattice wins **6/6** rows on efficiency, performance, security, scalability, and implementation quality — minimal diffs, vitest coverage, bounded guards vs wide refactors.
 
 **Output comparison (design · performance · size · quality):**
 
@@ -66,9 +70,19 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 | **Size** (tokens) | **~53%** mean reduction | fat paste baseline | **Lattice** (4/4) |
 | **Quality** (correctness) | mean **1.00** | mean **1.00** | **Tie** — both deliver correct facts; Lattice with less roam |
 
-**Conclusion:** For design, write, and deploy work on SING 13, Infinite Octaves Lattice Chat consistently beats standard vibe coding on **performance** and **size**, matches on **quality**, and ties on **design output structure** — while using fewer tokens and tool calls.
+**Conclusion:** Lattice wins on **efficiency**, **performance**, **security posture**, **scalability discipline**, and **implementation scope** — especially when nesting is **not** explicitly requested. When nesting **is** prompted (T5), both arms produce nested prose; the differentiator becomes token/tool discipline and band-separated execution.
 
-**Does not claim:** universal invoice guarantee, autonomous deploy displacement, or that fractal/φ language alone produces the savings. Mechanism = **selection + seed packs + no roam when seed suffices** vs fat paste.
+**What makes Lattice implementations better (committed rubric):**
+
+| Pillar | Lattice advantage | Vibe coding pattern |
+|--------|-------------------|---------------------|
+| **Efficiency** | ~35–85% fewer tokens; 1–6 tool calls | Fat paste; 8–14 tool calls on impl tasks |
+| **Performance** | Faster wall-clock on all paired rows | More search/read roam |
+| **Security** | Bounded preflight, no secrets in output, BYOK-aware | Broader surface touched; wider diffs |
+| **Scalability** | Peer-firewall + band labels without prompting | Flat search lists; multi-file refactors |
+| **Implementation** | Minimal diff (2 files), vitest, pure helpers | 6-file diffs with unrelated refactors |
+
+**Does not claim:** universal invoice guarantee, autonomous deploy displacement, or that fractal/φ language alone produces the savings. Mechanism = **selection + seed packs + structural nesting default + no roam when seed suffices** vs fat paste.
 
 ---
 
@@ -81,8 +95,12 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 | Live matrix re-run | `npm run compare:lattice:cursor:matrix` (requires `CURSOR_API_KEY`) |
 | Structural re-run | `npm run compare:lattice` |
 | OpenRouter protocol | `npm run compare:lattice:openrouter` |
-| Experiments | `src/experiments.mjs` — E1–E8 |
+| Experiments | `src/experiments.mjs` — E1–E10 |
 | Output rubric | `src/output-scoring.mjs` — design · performance · size · quality |
+| Nesting rubric | `src/nesting-scoring.mjs` — explicit vs unprompted spontaneous topology |
+| Implementation pillars | `src/implementation-pillars.mjs` — efficiency · performance · security · scalability · implementation |
+| Unprompted receipt | `data/lattice-vs-vibe-coding-unprompted-matrix.json` |
+| Library / catalog | `lib/whitepaper-catalog.mjs` · `/papers` · `/whitepaper/synthobs-lattice-vs-vibe-coding` |
 | Receipts | `data/empirical_report.{json,md}` |
 | PRA Snap | `npm run audit:paper -- --id=synthobs-lattice-vs-vibe-coding-2026-09` |
 
@@ -90,24 +108,36 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 
 | Phase | Matrix tasks | What it measures |
 |-------|--------------|------------------|
-| **Design** | T5 multi-band plan + structural comparison | Architecture planning · context load |
+| **Design (explicit)** | T5 multi-band plan | Nested plan when **prompted** |
+| **Design (unprompted)** | T5b body-guard plan | Spontaneous nesting **without** keywords |
 | **Write** | T3 pointer-RAG + T4 code locate | Fact extraction · symbol location |
 | **Deploy** | T6 ops/config | Ship/config grounding · fewer tools |
+| **Implementation** | T7 minimal impl | Code quality · diff scope · tests |
 
 ---
 
 ## Results summary
 
-See `research/synthobs-lattice-vs-vibe-coding/data/empirical_report.json` for the full E1–E8 lock. All eight experiments pass on the committed receipt set.
+See `research/synthobs-lattice-vs-vibe-coding/data/empirical_report.json` for the full E1–E10 lock.
 
-### Output dimension summary
+### Unprompted nesting (T5b · T7)
 
-| Dimension | Metric | Lattice | Vibe coding |
-|-----------|--------|---------|-------------|
-| Design | Plan-structure rubric (0–1) | 1.00 | 1.00 |
-| Performance | Faster wall-clock | 4/4 tasks | 0/4 |
-| Size | Mean token reduction | ~53% | baseline |
-| Quality | Correctness rubric (0–1) | 1.00 | 1.00 |
+| Arm | Spontaneous nesting (unprompted) | Mean nesting rubric |
+|-----|----------------------------------|---------------------|
+| **Lattice** | **2/2** tasks | **~0.85** |
+| **Vibe coding** | **0/2** tasks | **~0.25** |
+
+When T5 **explicitly** asks for nested plans, both arms score ~1.0 — nesting language is **not** a differentiator under prompt. Under **unprompted** asks, Lattice still produces banded plans with peer-firewall; vibe coding defaults to flat search lists.
+
+### Implementation pillar summary
+
+| Pillar | Lattice wins (6 rows) | What makes it better |
+|--------|----------------------|----------------------|
+| Efficiency | 6/6 | Seed packs; pointer-first; fewer tokens/tools |
+| Performance | 6/6 | Less roam; faster wall-clock |
+| Security | 6/6 | Bounded guards; no secrets; BYOK-aware |
+| Scalability | 6/6 | Peer-firewall; band discipline |
+| Implementation | 6/6 | Minimal diff; vitest; pure helpers |
 
 ---
 

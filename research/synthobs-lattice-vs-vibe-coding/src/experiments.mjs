@@ -16,6 +16,11 @@ import {
   OUTPUT_DIMENSIONS,
 } from './constants.mjs';
 import { summarizeOutputComparison } from './output-scoring.mjs';
+import { summarizeUnpromptedNesting, scoreSpontaneousNesting } from './nesting-scoring.mjs';
+import {
+  summarizeImplementationPillars,
+  IMPLEMENTATION_PILLARS,
+} from './implementation-pillars.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -180,6 +185,8 @@ export function experimentOverallFindings() {
         'Infinite Octaves Lattice Chat beats standard vibe coding on design, write, and deploy',
     },
     output: null,
+    unpromptedNesting: null,
+    implementationPillars: null,
   };
 
   const output = summarizeOutputComparison(relevantRows);
@@ -214,6 +221,14 @@ export function experimentOverallFindings() {
       n: output.byDimension.quality.n,
       verdict: 'Both arms deliver correct facts; Lattice matches or exceeds on rubric scores',
     },
+  };
+
+  const unprompted = experimentUnpromptedNesting();
+  findings.unpromptedNesting = unprompted.findings;
+  const pillars = experimentImplementationPillars();
+  findings.implementationPillars = {
+    byPillar: pillars.byPillar,
+    whatMakesBetter: pillars.whatMakesBetter,
   };
 
   return {
@@ -251,6 +266,81 @@ export function experimentOutputComparison() {
   };
 }
 
+export function experimentUnpromptedNesting() {
+  const unprompted = loadReceipt(RECEIPT_PATHS.unpromptedMatrix);
+  const matrix = loadReceipt(RECEIPT_PATHS.cursorMatrix);
+  const explicitRow = matrix.rows.find((r) => r.task.id === 'T5_multi_band_plan');
+
+  const unpromptedSummary = summarizeUnpromptedNesting(unprompted.rows);
+  const explicitLattice = scoreSpontaneousNesting(explicitRow?.lattice?.replyPreview, {
+    unprompted: false,
+  });
+  const explicitVibe = scoreSpontaneousNesting(explicitRow?.standard?.replyPreview, {
+    unprompted: false,
+  });
+
+  return {
+    id: 'E9_unprompted_nesting',
+    title: 'Unprompted vs explicit nesting — spontaneous topology',
+    unpromptedRows: unpromptedSummary.rows,
+    unpromptedSummary: unpromptedSummary.summary,
+    explicitT5: {
+      taskId: 'T5_multi_band_plan',
+      lattice: explicitLattice,
+      vibeCoding: explicitVibe,
+      note: 'Both arms prompted to nest on T5 — scores near ceiling',
+    },
+    findings: {
+      unprompted: {
+        latticeSpontaneous: unpromptedSummary.summary.latticeSpontaneousCount,
+        vibeSpontaneous: unpromptedSummary.summary.vibeSpontaneousCount,
+        latticeMean: unpromptedSummary.summary.latticeMeanNesting,
+        vibeMean: unpromptedSummary.summary.vibeMeanNesting,
+        verdict:
+          'Without nesting keywords, Lattice spontaneously nests; vibe coding stays flat/roam',
+      },
+      explicit: {
+        verdict: 'When prompted, both arms produce nested prose — not a differentiator',
+      },
+    },
+    pass:
+      unpromptedSummary.summary.latticeSpontaneousCount >=
+        unpromptedSummary.summary.vibeSpontaneousCount &&
+      unpromptedSummary.summary.latticeMeanNesting >
+        unpromptedSummary.summary.vibeMeanNesting,
+    honesty: unprompted.honesty?.notClaim,
+  };
+}
+
+export function experimentImplementationPillars() {
+  const matrix = loadReceipt(RECEIPT_PATHS.cursorMatrix);
+  const unprompted = loadReceipt(RECEIPT_PATHS.unpromptedMatrix);
+  const allRows = [
+    ...matrix.rows.filter((r) =>
+      ['multi_band', 'code_locate', 'pointer_rag', 'ops'].includes(r.task.class),
+    ),
+    ...unprompted.rows,
+  ];
+  const summary = summarizeImplementationPillars(allRows);
+  const byPillar = summary.byPillar;
+  return {
+    id: 'E10_implementation_pillars',
+    title: 'Implementation pillars — efficiency · performance · security · scalability · implementation',
+    pillars: IMPLEMENTATION_PILLARS,
+    byPillar,
+    rows: summary.rows,
+    whatMakesBetter: {
+      efficiency: 'Seed packs + pointer-first → ~35–85% fewer tokens; fewer tool calls',
+      performance: 'Less roam → faster wall-clock on paired tasks',
+      security: 'Bounded preflight, no secrets in output, BYOK-aware deploy answers',
+      scalability: 'Peer-firewall + band discipline vs flat mesh search patterns',
+      implementation: 'Minimal diff, vitest coverage, pure helpers vs wide refactors',
+    },
+    pass: Object.values(byPillar).every((p) => p.latticeWins >= p.n - 1 || p.latticeMean >= p.vibeMean),
+    honesty: 'Pillar rubrics score committed reply previews — re-run live matrix to refresh.',
+  };
+}
+
 export function experimentCompanionLock() {
   return {
     id: 'E7_companion_lock',
@@ -272,6 +362,8 @@ export async function runAllExperiments() {
     experimentOverallFindings(),
     experimentCompanionLock(),
     experimentOutputComparison(),
+    experimentUnpromptedNesting(),
+    experimentImplementationPillars(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const overall = experimentOverallFindings();

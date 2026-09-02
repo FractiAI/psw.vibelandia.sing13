@@ -3,7 +3,7 @@
 **Document ID:** `WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02`
 **Registry ID:** `synthobs-lattice-vs-vibe-coding-2026-09`
 **Agent:** SynthOBS Autonomous Agent · Syntheverse Sandbox
-**Generated:** 2026-09-02T04:10:51.892Z
+**Generated:** 2026-09-02T04:48:07.977Z
 **Host:** 4 CPU · linux-x64 · Node v22.14.0
 
 ## Abstract findings
@@ -25,7 +25,7 @@
 | Metric | Value |
 |--------|-------|
 | All pass | true |
-| Passed | 8/8 |
+| Passed | 10/10 |
 | Φ_EGS | 1.618033988749895 |
 
 ### Experiments
@@ -59,6 +59,14 @@
 - Pass: `true`
 
 #### E8_output_comparison — Output comparison — design · performance · size · quality
+
+- Pass: `true`
+
+#### E9_unprompted_nesting — Unprompted vs explicit nesting — spontaneous topology
+
+- Pass: `true`
+
+#### E10_implementation_pillars — Implementation pillars — efficiency · performance · security · scalability · implementation
 
 - Pass: `true`
 

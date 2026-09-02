@@ -64,6 +64,7 @@ export const HONESTY = {
 export const RECEIPT_PATHS = {
   cursorMatrix: '../../data/lattice-vs-standard-cursor-usage-matrix.json',
   structuralComparison: '../../data/lattice-vs-standard-comparison.json',
+  unpromptedMatrix: '../../data/lattice-vs-vibe-coding-unprompted-matrix.json',
 };
 
 export const COMPANION_IDS = [

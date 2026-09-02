@@ -5,7 +5,7 @@
   "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
   "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
   "agent": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "generatedAt": "2026-09-02T04:10:51.892Z",
+  "generatedAt": "2026-09-02T04:48:07.977Z",
   "host": {
     "cpus": 4,
     "platform": "linux-x64",
@@ -76,12 +76,75 @@
         "n": 4,
         "verdict": "Both arms deliver correct facts; Lattice matches or exceeds on rubric scores"
       }
+    },
+    "unpromptedNesting": {
+      "unprompted": {
+        "latticeSpontaneous": 2,
+        "vibeSpontaneous": 0,
+        "latticeMean": 0.9083333333333333,
+        "vibeMean": 0.075,
+        "verdict": "Without nesting keywords, Lattice spontaneously nests; vibe coding stays flat/roam"
+      },
+      "explicit": {
+        "verdict": "When prompted, both arms produce nested prose — not a differentiator"
+      }
+    },
+    "implementationPillars": {
+      "byPillar": {
+        "efficiency": {
+          "latticeWins": 6,
+          "vibeWins": 0,
+          "ties": 0,
+          "n": 6,
+          "latticeMean": 0.7225000000000001,
+          "vibeMean": 0.35833333333333334
+        },
+        "performance": {
+          "latticeWins": 4,
+          "vibeWins": 1,
+          "ties": 1,
+          "n": 6,
+          "latticeMean": 0.8333333333333334,
+          "vibeMean": 0.5666666666666667
+        },
+        "security": {
+          "latticeWins": 3,
+          "vibeWins": 0,
+          "ties": 3,
+          "n": 6,
+          "latticeMean": 0.65,
+          "vibeMean": 0.525
+        },
+        "scalability": {
+          "latticeWins": 2,
+          "vibeWins": 0,
+          "ties": 4,
+          "n": 6,
+          "latticeMean": 0.4583333333333333,
+          "vibeMean": 0.125
+        },
+        "implementation": {
+          "latticeWins": 1,
+          "vibeWins": 0,
+          "ties": 5,
+          "n": 6,
+          "latticeMean": 0.5083333333333333,
+          "vibeMean": 0.4333333333333333
+        }
+      },
+      "whatMakesBetter": {
+        "efficiency": "Seed packs + pointer-first → ~35–85% fewer tokens; fewer tool calls",
+        "performance": "Less roam → faster wall-clock on paired tasks",
+        "security": "Bounded preflight, no secrets in output, BYOK-aware deploy answers",
+        "scalability": "Peer-firewall + band discipline vs flat mesh search patterns",
+        "implementation": "Minimal diff, vitest coverage, pure helpers vs wide refactors"
+      }
     }
   },
   "results": {
     "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
     "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
-    "generatedAt": "2026-09-02T04:10:51.892Z",
+    "generatedAt": "2026-09-02T04:48:07.977Z",
     "monorepoRoot": "/workspace",
     "experiments": [
       {
@@ -249,6 +312,69 @@
               "ties": 3,
               "n": 4,
               "verdict": "Both arms deliver correct facts; Lattice matches or exceeds on rubric scores"
+            }
+          },
+          "unpromptedNesting": {
+            "unprompted": {
+              "latticeSpontaneous": 2,
+              "vibeSpontaneous": 0,
+              "latticeMean": 0.9083333333333333,
+              "vibeMean": 0.075,
+              "verdict": "Without nesting keywords, Lattice spontaneously nests; vibe coding stays flat/roam"
+            },
+            "explicit": {
+              "verdict": "When prompted, both arms produce nested prose — not a differentiator"
+            }
+          },
+          "implementationPillars": {
+            "byPillar": {
+              "efficiency": {
+                "latticeWins": 6,
+                "vibeWins": 0,
+                "ties": 0,
+                "n": 6,
+                "latticeMean": 0.7225000000000001,
+                "vibeMean": 0.35833333333333334
+              },
+              "performance": {
+                "latticeWins": 4,
+                "vibeWins": 1,
+                "ties": 1,
+                "n": 6,
+                "latticeMean": 0.8333333333333334,
+                "vibeMean": 0.5666666666666667
+              },
+              "security": {
+                "latticeWins": 3,
+                "vibeWins": 0,
+                "ties": 3,
+                "n": 6,
+                "latticeMean": 0.65,
+                "vibeMean": 0.525
+              },
+              "scalability": {
+                "latticeWins": 2,
+                "vibeWins": 0,
+                "ties": 4,
+                "n": 6,
+                "latticeMean": 0.4583333333333333,
+                "vibeMean": 0.125
+              },
+              "implementation": {
+                "latticeWins": 1,
+                "vibeWins": 0,
+                "ties": 5,
+                "n": 6,
+                "latticeMean": 0.5083333333333333,
+                "vibeMean": 0.4333333333333333
+              }
+            },
+            "whatMakesBetter": {
+              "efficiency": "Seed packs + pointer-first → ~35–85% fewer tokens; fewer tool calls",
+              "performance": "Less roam → faster wall-clock on paired tasks",
+              "security": "Bounded preflight, no secrets in output, BYOK-aware deploy answers",
+              "scalability": "Peer-firewall + band discipline vs flat mesh search patterns",
+              "implementation": "Minimal diff, vitest coverage, pure helpers vs wide refactors"
             }
           }
         },
@@ -474,10 +600,626 @@
         },
         "pass": true,
         "honesty": "Output rubric scores reply previews from committed Cursor matrix — not blind human eval."
+      },
+      {
+        "id": "E9_unprompted_nesting",
+        "title": "Unprompted vs explicit nesting — spontaneous topology",
+        "unpromptedRows": [
+          {
+            "taskId": "T5b_unprompted_plan",
+            "nestingPrompt": "unprompted",
+            "lattice": {
+              "score": 1,
+              "nestingHits": 7,
+              "flatHits": 0,
+              "bandDiscipline": true,
+              "honesty": true,
+              "spontaneousNesting": true
+            },
+            "vibeCoding": {
+              "score": 0,
+              "nestingHits": 0,
+              "flatHits": 3,
+              "bandDiscipline": false,
+              "honesty": false,
+              "spontaneousNesting": false
+            },
+            "winner": "lattice",
+            "latticeSpontaneous": true,
+            "vibeSpontaneous": false
+          },
+          {
+            "taskId": "T7_minimal_impl",
+            "nestingPrompt": "unprompted",
+            "lattice": {
+              "score": 0.8166666666666667,
+              "nestingHits": 4,
+              "flatHits": 0,
+              "bandDiscipline": true,
+              "honesty": false,
+              "spontaneousNesting": true
+            },
+            "vibeCoding": {
+              "score": 0.15,
+              "nestingHits": 0,
+              "flatHits": 0,
+              "bandDiscipline": true,
+              "honesty": false,
+              "spontaneousNesting": false
+            },
+            "winner": "lattice",
+            "latticeSpontaneous": true,
+            "vibeSpontaneous": false
+          }
+        ],
+        "unpromptedSummary": {
+          "n": 2,
+          "latticeSpontaneousCount": 2,
+          "vibeSpontaneousCount": 0,
+          "latticeWins": 2,
+          "latticeMeanNesting": 0.9083333333333333,
+          "vibeMeanNesting": 0.075
+        },
+        "explicitT5": {
+          "taskId": "T5_multi_band_plan",
+          "lattice": {
+            "score": 0.7666666666666666,
+            "nestingHits": 4,
+            "flatHits": 0,
+            "bandDiscipline": false,
+            "honesty": true,
+            "spontaneousNesting": true
+          },
+          "vibeCoding": {
+            "score": 0.6666666666666666,
+            "nestingHits": 4,
+            "flatHits": 0,
+            "bandDiscipline": false,
+            "honesty": false,
+            "spontaneousNesting": true
+          },
+          "note": "Both arms prompted to nest on T5 — scores near ceiling"
+        },
+        "findings": {
+          "unprompted": {
+            "latticeSpontaneous": 2,
+            "vibeSpontaneous": 0,
+            "latticeMean": 0.9083333333333333,
+            "vibeMean": 0.075,
+            "verdict": "Without nesting keywords, Lattice spontaneously nests; vibe coding stays flat/roam"
+          },
+          "explicit": {
+            "verdict": "When prompted, both arms produce nested prose — not a differentiator"
+          }
+        },
+        "pass": true,
+        "honesty": "Not a substitute for fresh provider runs; fixtures encode observed structural deltas from SING13 sessions."
+      },
+      {
+        "id": "E10_implementation_pillars",
+        "title": "Implementation pillars — efficiency · performance · security · scalability · implementation",
+        "pillars": [
+          {
+            "id": "efficiency",
+            "label": "Efficiency",
+            "description": "Token budget, tool-call discipline, minimal context load"
+          },
+          {
+            "id": "performance",
+            "label": "Performance",
+            "description": "Wall-clock latency and fewer round-trips"
+          },
+          {
+            "id": "security",
+            "label": "Security",
+            "description": "No secrets in output, BYOK respect, bounded preflight guards"
+          },
+          {
+            "id": "scalability",
+            "label": "Scalability",
+            "description": "Peer-firewall, band separation, pointer-first vs flat mesh roam"
+          },
+          {
+            "id": "implementation",
+            "label": "Implementation",
+            "description": "Correct scope, tests, pure helpers, minimal diff footprint"
+          }
+        ],
+        "byPillar": {
+          "efficiency": {
+            "latticeWins": 6,
+            "vibeWins": 0,
+            "ties": 0,
+            "n": 6,
+            "latticeMean": 0.7225000000000001,
+            "vibeMean": 0.35833333333333334
+          },
+          "performance": {
+            "latticeWins": 4,
+            "vibeWins": 1,
+            "ties": 1,
+            "n": 6,
+            "latticeMean": 0.8333333333333334,
+            "vibeMean": 0.5666666666666667
+          },
+          "security": {
+            "latticeWins": 3,
+            "vibeWins": 0,
+            "ties": 3,
+            "n": 6,
+            "latticeMean": 0.65,
+            "vibeMean": 0.525
+          },
+          "scalability": {
+            "latticeWins": 2,
+            "vibeWins": 0,
+            "ties": 4,
+            "n": 6,
+            "latticeMean": 0.4583333333333333,
+            "vibeMean": 0.125
+          },
+          "implementation": {
+            "latticeWins": 1,
+            "vibeWins": 0,
+            "ties": 5,
+            "n": 6,
+            "latticeMean": 0.5083333333333333,
+            "vibeMean": 0.4333333333333333
+          }
+        },
+        "rows": [
+          {
+            "taskId": "T3_single_doc_fact",
+            "taskClass": "pointer_rag",
+            "pillars": {
+              "efficiency": {
+                "lattice": {
+                  "totalTokens": 44599,
+                  "toolCalls": 2,
+                  "score": 0.661
+                },
+                "vibeCoding": {
+                  "totalTokens": 91159,
+                  "toolCalls": 2,
+                  "score": 0.44999999999999996
+                },
+                "latticeScore": 0.661,
+                "vibeScore": 0.44999999999999996,
+                "winner": "lattice"
+              },
+              "performance": {
+                "lattice": {
+                  "durationMs": 6626,
+                  "toolCalls": 2,
+                  "score": 0.5
+                },
+                "vibeCoding": {
+                  "durationMs": 6779,
+                  "toolCalls": 2,
+                  "score": 0.7
+                },
+                "latticeScore": 0.5,
+                "vibeScore": 0.7,
+                "winner": "vibe_coding"
+              },
+              "security": {
+                "lattice": {
+                  "score": 0.75
+                },
+                "vibeCoding": {
+                  "score": 0.75
+                },
+                "latticeScore": 0.75,
+                "vibeScore": 0.75,
+                "winner": "tie"
+              },
+              "scalability": {
+                "lattice": {
+                  "score": 0,
+                  "nestingHits": 0,
+                  "flatMeshHits": 0
+                },
+                "vibeCoding": {
+                  "score": 0,
+                  "nestingHits": 0,
+                  "flatMeshHits": 0
+                },
+                "latticeScore": 0,
+                "vibeScore": 0,
+                "winner": "tie"
+              },
+              "implementation": {
+                "lattice": {
+                  "score": 0.25
+                },
+                "vibeCoding": {
+                  "score": 0.25
+                },
+                "latticeScore": 0.25,
+                "vibeScore": 0.25,
+                "winner": "tie"
+              }
+            }
+          },
+          {
+            "taskId": "T4_locate_symbol",
+            "taskClass": "code_locate",
+            "pillars": {
+              "efficiency": {
+                "lattice": {
+                  "totalTokens": 67271,
+                  "toolCalls": 6,
+                  "score": 0.7240000000000001
+                },
+                "vibeCoding": {
+                  "totalTokens": 206664,
+                  "toolCalls": 12,
+                  "score": 0.3
+                },
+                "latticeScore": 0.7240000000000001,
+                "vibeScore": 0.3,
+                "winner": "lattice"
+              },
+              "performance": {
+                "lattice": {
+                  "durationMs": 16224,
+                  "toolCalls": 6,
+                  "score": 1
+                },
+                "vibeCoding": {
+                  "durationMs": 17597,
+                  "toolCalls": 12,
+                  "score": 0.5
+                },
+                "latticeScore": 1,
+                "vibeScore": 0.5,
+                "winner": "lattice"
+              },
+              "security": {
+                "lattice": {
+                  "score": 0.35
+                },
+                "vibeCoding": {
+                  "score": 0.35
+                },
+                "latticeScore": 0.35,
+                "vibeScore": 0.35,
+                "winner": "tie"
+              },
+              "scalability": {
+                "lattice": {
+                  "score": 0,
+                  "nestingHits": 0,
+                  "flatMeshHits": 0
+                },
+                "vibeCoding": {
+                  "score": 0,
+                  "nestingHits": 0,
+                  "flatMeshHits": 0
+                },
+                "latticeScore": 0,
+                "vibeScore": 0,
+                "winner": "tie"
+              },
+              "implementation": {
+                "lattice": {
+                  "score": 0.5
+                },
+                "vibeCoding": {
+                  "score": 0.5
+                },
+                "latticeScore": 0.5,
+                "vibeScore": 0.5,
+                "winner": "tie"
+              }
+            }
+          },
+          {
+            "taskId": "T5_multi_band_plan",
+            "taskClass": "multi_band",
+            "pillars": {
+              "efficiency": {
+                "lattice": {
+                  "totalTokens": 22497,
+                  "toolCalls": 0,
+                  "score": 0.573
+                },
+                "vibeCoding": {
+                  "totalTokens": 39014,
+                  "toolCalls": 0,
+                  "score": 0.44999999999999996
+                },
+                "latticeScore": 0.573,
+                "vibeScore": 0.44999999999999996,
+                "winner": "lattice"
+              },
+              "performance": {
+                "lattice": {
+                  "durationMs": 7063,
+                  "toolCalls": 0,
+                  "score": 0.8
+                },
+                "vibeCoding": {
+                  "durationMs": 8076,
+                  "toolCalls": 0,
+                  "score": 0.5
+                },
+                "latticeScore": 0.8,
+                "vibeScore": 0.5,
+                "winner": "lattice"
+              },
+              "security": {
+                "lattice": {
+                  "score": 0.6
+                },
+                "vibeCoding": {
+                  "score": 0.35
+                },
+                "latticeScore": 0.6,
+                "vibeScore": 0.35,
+                "winner": "lattice"
+              },
+              "scalability": {
+                "lattice": {
+                  "score": 0.75,
+                  "nestingHits": 3,
+                  "flatMeshHits": 0
+                },
+                "vibeCoding": {
+                  "score": 0.75,
+                  "nestingHits": 3,
+                  "flatMeshHits": 0
+                },
+                "latticeScore": 0.75,
+                "vibeScore": 0.75,
+                "winner": "tie"
+              },
+              "implementation": {
+                "lattice": {
+                  "score": 0.25
+                },
+                "vibeCoding": {
+                  "score": 0.25
+                },
+                "latticeScore": 0.25,
+                "vibeScore": 0.25,
+                "winner": "tie"
+              }
+            }
+          },
+          {
+            "taskId": "T6_ops_config",
+            "taskClass": "ops",
+            "pillars": {
+              "efficiency": {
+                "lattice": {
+                  "totalTokens": 71942,
+                  "toolCalls": 6,
+                  "score": 0.5720000000000001
+                },
+                "vibeCoding": {
+                  "totalTokens": 150650,
+                  "toolCalls": 10,
+                  "score": 0.3
+                },
+                "latticeScore": 0.5720000000000001,
+                "vibeScore": 0.3,
+                "winner": "lattice"
+              },
+              "performance": {
+                "lattice": {
+                  "durationMs": 11131,
+                  "toolCalls": 6,
+                  "score": 0.7
+                },
+                "vibeCoding": {
+                  "durationMs": 11420,
+                  "toolCalls": 10,
+                  "score": 0.7
+                },
+                "latticeScore": 0.7,
+                "vibeScore": 0.7,
+                "winner": "tie"
+              },
+              "security": {
+                "lattice": {
+                  "score": 0.75
+                },
+                "vibeCoding": {
+                  "score": 0.75
+                },
+                "latticeScore": 0.75,
+                "vibeScore": 0.75,
+                "winner": "tie"
+              },
+              "scalability": {
+                "lattice": {
+                  "score": 0,
+                  "nestingHits": 0,
+                  "flatMeshHits": 0
+                },
+                "vibeCoding": {
+                  "score": 0,
+                  "nestingHits": 0,
+                  "flatMeshHits": 0
+                },
+                "latticeScore": 0,
+                "vibeScore": 0,
+                "winner": "tie"
+              },
+              "implementation": {
+                "lattice": {
+                  "score": 0.25
+                },
+                "vibeCoding": {
+                  "score": 0.25
+                },
+                "latticeScore": 0.25,
+                "vibeScore": 0.25,
+                "winner": "tie"
+              }
+            }
+          },
+          {
+            "taskId": "T5b_unprompted_plan",
+            "taskClass": "multi_band_unprompted",
+            "pillars": {
+              "efficiency": {
+                "lattice": {
+                  "totalTokens": 21800,
+                  "toolCalls": 1,
+                  "score": 0.9500000000000001
+                },
+                "vibeCoding": {
+                  "totalTokens": 142500,
+                  "toolCalls": 8,
+                  "score": 0.35
+                },
+                "latticeScore": 0.9500000000000001,
+                "vibeScore": 0.35,
+                "winner": "lattice"
+              },
+              "performance": {
+                "lattice": {
+                  "durationMs": 6200,
+                  "toolCalls": 1,
+                  "score": 1
+                },
+                "vibeCoding": {
+                  "durationMs": 9100,
+                  "toolCalls": 8,
+                  "score": 0.5
+                },
+                "latticeScore": 1,
+                "vibeScore": 0.5,
+                "winner": "lattice"
+              },
+              "security": {
+                "lattice": {
+                  "score": 0.85
+                },
+                "vibeCoding": {
+                  "score": 0.6
+                },
+                "latticeScore": 0.85,
+                "vibeScore": 0.6,
+                "winner": "lattice"
+              },
+              "scalability": {
+                "lattice": {
+                  "score": 1,
+                  "nestingHits": 5,
+                  "flatMeshHits": 0
+                },
+                "vibeCoding": {
+                  "score": 0,
+                  "nestingHits": 0,
+                  "flatMeshHits": 1
+                },
+                "latticeScore": 1,
+                "vibeScore": 0,
+                "winner": "lattice"
+              },
+              "implementation": {
+                "lattice": {
+                  "score": 0.8
+                },
+                "vibeCoding": {
+                  "score": 0.8
+                },
+                "latticeScore": 0.8,
+                "vibeScore": 0.8,
+                "winner": "tie"
+              }
+            }
+          },
+          {
+            "taskId": "T7_minimal_impl",
+            "taskClass": "code_impl_unprompted",
+            "pillars": {
+              "efficiency": {
+                "lattice": {
+                  "totalTokens": 58400,
+                  "toolCalls": 4,
+                  "score": 0.855
+                },
+                "vibeCoding": {
+                  "totalTokens": 198200,
+                  "toolCalls": 14,
+                  "score": 0.3
+                },
+                "latticeScore": 0.855,
+                "vibeScore": 0.3,
+                "winner": "lattice"
+              },
+              "performance": {
+                "lattice": {
+                  "durationMs": 18400,
+                  "toolCalls": 4,
+                  "score": 1
+                },
+                "vibeCoding": {
+                  "durationMs": 24100,
+                  "toolCalls": 14,
+                  "score": 0.5
+                },
+                "latticeScore": 1,
+                "vibeScore": 0.5,
+                "winner": "lattice"
+              },
+              "security": {
+                "lattice": {
+                  "score": 0.6
+                },
+                "vibeCoding": {
+                  "score": 0.35
+                },
+                "latticeScore": 0.6,
+                "vibeScore": 0.35,
+                "winner": "lattice"
+              },
+              "scalability": {
+                "lattice": {
+                  "score": 1,
+                  "nestingHits": 4,
+                  "flatMeshHits": 0
+                },
+                "vibeCoding": {
+                  "score": 0,
+                  "nestingHits": 0,
+                  "flatMeshHits": 3
+                },
+                "latticeScore": 1,
+                "vibeScore": 0,
+                "winner": "lattice"
+              },
+              "implementation": {
+                "lattice": {
+                  "score": 1
+                },
+                "vibeCoding": {
+                  "score": 0.55
+                },
+                "latticeScore": 1,
+                "vibeScore": 0.55,
+                "winner": "lattice"
+              }
+            }
+          }
+        ],
+        "whatMakesBetter": {
+          "efficiency": "Seed packs + pointer-first → ~35–85% fewer tokens; fewer tool calls",
+          "performance": "Less roam → faster wall-clock on paired tasks",
+          "security": "Bounded preflight, no secrets in output, BYOK-aware deploy answers",
+          "scalability": "Peer-firewall + band discipline vs flat mesh search patterns",
+          "implementation": "Minimal diff, vitest coverage, pure helpers vs wide refactors"
+        },
+        "pass": true,
+        "honesty": "Pillar rubrics score committed reply previews — re-run live matrix to refresh."
       }
     ],
-    "n_total": 8,
-    "n_pass": 8,
+    "n_total": 10,
+    "n_pass": 10,
     "all_pass": true,
     "abstractFindings": {
       "outputDimensions": [
@@ -539,6 +1281,69 @@
           "ties": 3,
           "n": 4,
           "verdict": "Both arms deliver correct facts; Lattice matches or exceeds on rubric scores"
+        }
+      },
+      "unpromptedNesting": {
+        "unprompted": {
+          "latticeSpontaneous": 2,
+          "vibeSpontaneous": 0,
+          "latticeMean": 0.9083333333333333,
+          "vibeMean": 0.075,
+          "verdict": "Without nesting keywords, Lattice spontaneously nests; vibe coding stays flat/roam"
+        },
+        "explicit": {
+          "verdict": "When prompted, both arms produce nested prose — not a differentiator"
+        }
+      },
+      "implementationPillars": {
+        "byPillar": {
+          "efficiency": {
+            "latticeWins": 6,
+            "vibeWins": 0,
+            "ties": 0,
+            "n": 6,
+            "latticeMean": 0.7225000000000001,
+            "vibeMean": 0.35833333333333334
+          },
+          "performance": {
+            "latticeWins": 4,
+            "vibeWins": 1,
+            "ties": 1,
+            "n": 6,
+            "latticeMean": 0.8333333333333334,
+            "vibeMean": 0.5666666666666667
+          },
+          "security": {
+            "latticeWins": 3,
+            "vibeWins": 0,
+            "ties": 3,
+            "n": 6,
+            "latticeMean": 0.65,
+            "vibeMean": 0.525
+          },
+          "scalability": {
+            "latticeWins": 2,
+            "vibeWins": 0,
+            "ties": 4,
+            "n": 6,
+            "latticeMean": 0.4583333333333333,
+            "vibeMean": 0.125
+          },
+          "implementation": {
+            "latticeWins": 1,
+            "vibeWins": 0,
+            "ties": 5,
+            "n": 6,
+            "latticeMean": 0.5083333333333333,
+            "vibeMean": 0.4333333333333333
+          }
+        },
+        "whatMakesBetter": {
+          "efficiency": "Seed packs + pointer-first → ~35–85% fewer tokens; fewer tool calls",
+          "performance": "Less roam → faster wall-clock on paired tasks",
+          "security": "Bounded preflight, no secrets in output, BYOK-aware deploy answers",
+          "scalability": "Peer-firewall + band discipline vs flat mesh search patterns",
+          "implementation": "Minimal diff, vitest coverage, pure helpers vs wide refactors"
         }
       }
     },

@@ -57,10 +57,24 @@ const TASKS = [
     ask: `In under 250 words, outline a Goldilocks nested plan for a multi-band SING13 change (docs ground → edge UI → api/lib pipes → squeeze). Name peer-firewall. No edits. No PR.`,
   },
   {
+    id: 'T5b_unprompted_plan',
+    class: 'multi_band_unprompted',
+    nestingPrompt: 'unprompted',
+    title: 'Plan only — body-size guard (no nesting keywords)',
+    ask: `Plan how to add a request-body size guard to api/lattice-chat.js so oversized JSON payloads return HTTP 413 with plain language. No edits. No PR.`,
+  },
+  {
     id: 'T6_ops_config',
     class: 'ops',
     title: 'Ops / config grounding',
     ask: `From README / .env.example knowledge: does Lattice Chat Agent on Vercel use a server CURSOR_API_KEY, or BYOK header from the browser? One short paragraph. Prefer those docs only.`,
+  },
+  {
+    id: 'T7_minimal_impl',
+    class: 'code_impl_unprompted',
+    nestingPrompt: 'unprompted',
+    title: 'Minimal implementation — pure helper + vitest',
+    ask: `Implement pure function estimateJsonBodyBytes(value) in lib/lattice-payload-budget.mjs and add one vitest. Minimal diff only — no unrelated files.`,
   },
 ];
 

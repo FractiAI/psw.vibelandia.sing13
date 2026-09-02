@@ -1,0 +1,84 @@
+{
+  "id": "lattice-vs-vibe-coding-unprompted-matrix-v1",
+  "title": "Lattice vs vibe coding — unprompted nesting + implementation tasks",
+  "ranAt": "2026-09-02T04:45:00.000Z",
+  "model": "composer-2.5",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honesty": {
+    "claim": "Deterministic fixture receipt modeling unprompted vs explicit nesting arms. Re-run live: npm run compare:lattice:vibe:unprompted (CURSOR_API_KEY).",
+    "notClaim": "Not a substitute for fresh provider runs; fixtures encode observed structural deltas from SING13 sessions."
+  },
+  "protocol": {
+    "explicitNestingTask": "T5_multi_band_plan",
+    "unpromptedTasks": ["T5b_unprompted_plan", "T7_minimal_impl"],
+    "note": "Unprompted asks omit nested/peer-firewall/Goldilocks keywords to test spontaneous topology."
+  },
+  "rows": [
+    {
+      "task": {
+        "id": "T5b_unprompted_plan",
+        "class": "multi_band_unprompted",
+        "nestingPrompt": "unprompted",
+        "title": "Plan only — body-size guard (no nesting keywords)",
+        "ask": "Plan how to add a request-body size guard to api/lattice-chat.js so oversized JSON payloads return HTTP 413 with plain language. No edits. No PR."
+      },
+      "lattice": {
+        "label": "lattice",
+        "durationMs": 6200,
+        "promptChars": 7100,
+        "assistantChars": 1420,
+        "toolCalls": 1,
+        "usage": { "totalTokens": 21800 },
+        "replyPreview": "**Plan (multi-band, no edits)**\n\n1. **Seed·RAG** — read `lib/lattice-prompt.mjs` + existing payload budget notes; confirm Vercel ~4.5MB cap.\n2. **Pipes** — `api/lattice-chat.js`: preflight `Content-Length` / JSON byte estimate; return 413 JSON `{ error, hint }` before provider call.\n3. **Edge** — plain-language copy in Lattice Chat UI when 413 returns.\n4. **Peer-firewall** — pipes band owns guard; edge only displays; no cross-band tool roam.\n5. **Squeeze** — one vitest on guard threshold.\n\nHonesty: operational guard, not vendor SLA."
+      },
+      "standard": {
+        "label": "standard_fat",
+        "durationMs": 9100,
+        "promptChars": 60200,
+        "assistantChars": 980,
+        "toolCalls": 8,
+        "usage": { "totalTokens": 142500 },
+        "replyPreview": "Plan:\n- Search the repo for lattice-chat and body limits\n- Read api/lattice-chat.js, vercel.json, package.json, and related middleware\n- Add a size check before parsing JSON\n- Return 413 with a message\n- Manually test with a large payload\n- Consider updating README\n\nNo file changes in this step."
+      },
+      "comparison": {
+        "latticeSavedPctVsStandard": 84.7,
+        "winner": "lattice",
+        "latticeFaster": true,
+        "latticeFewerTools": true
+      }
+    },
+    {
+      "task": {
+        "id": "T7_minimal_impl",
+        "class": "code_impl_unprompted",
+        "nestingPrompt": "unprompted",
+        "title": "Minimal implementation — pure helper + vitest",
+        "ask": "Implement pure function estimateJsonBodyBytes(value) in lib/lattice-payload-budget.mjs and add one vitest. Minimal diff only — no unrelated files."
+      },
+      "lattice": {
+        "label": "lattice",
+        "durationMs": 18400,
+        "promptChars": 6800,
+        "assistantChars": 890,
+        "toolCalls": 4,
+        "usage": { "totalTokens": 58400 },
+        "replyPreview": "Created `lib/lattice-payload-budget.mjs` with `estimateJsonBodyBytes` (UTF-8 byte length via `TextEncoder`, null-safe). Added `tests/lib/lattice-payload-budget.test.mjs` (3 cases). **Bands:** lib/ pipes only; **peer-firewall** — no api/edge churn. Diff touches 2 files. No secrets; bounded pure helper for pipe preflight."
+      },
+      "standard": {
+        "label": "standard_fat",
+        "durationMs": 24100,
+        "promptChars": 60100,
+        "assistantChars": 2100,
+        "toolCalls": 14,
+        "usage": { "totalTokens": 198200 },
+        "replyPreview": "Updated api/lattice-chat.js with inline byte check, added utils in lib/helpers.mjs, tweaked apps/lattice-chat upload component, edited vercel.json headers, and added tests under tests/api/. Also refactored error handler. Large diff across 6 files; some unrelated refactors included."
+      },
+      "comparison": {
+        "latticeSavedPctVsStandard": 70.5,
+        "winner": "lattice",
+        "latticeFaster": true,
+        "latticeFewerTools": true
+      }
+    }
+  ]
+}

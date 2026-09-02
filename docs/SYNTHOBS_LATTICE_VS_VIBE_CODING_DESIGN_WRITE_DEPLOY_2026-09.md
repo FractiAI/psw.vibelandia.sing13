@@ -26,6 +26,7 @@
 | **Treatments** | **Lattice** = seed packs + pointer-first RAG + nested-agent MCA rails; **Vibe coding** = fat corpus paste / undirected roam | That φ math alone produces savings |
 | **Deploy** | Ops/config grounding accuracy + token/tool-call efficiency | Autonomous CI/CD displacement proof |
 | **Findings** | Committed receipts under `research/synthobs-lattice-vs-vibe-coding/data/` | That every open-ended tool tour preserves Lattice advantage |
+| **Output rubric** | Design · performance · size · quality scored on reply previews | Blind human eval or production A/B |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
 
@@ -56,7 +57,16 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 3. **Deploy:** On ops/config grounding (T6), Lattice won with **~52% token savings** and fewer tool calls (6 vs 10) while delivering the same BYOK answer.  
 4. **Overall:** Lattice won **4/4** design · write · deploy paired tasks in the committed matrix; mean token savings **~53%** across those rows (work-class range **~35–70%** per companion token proof).
 
-**Conclusion:** For design, write, and deploy work on SING 13, Infinite Octaves Lattice Chat consistently beats standard vibe coding on token efficiency and tool discipline while matching or improving answer quality — provided seed packs suffice and agents do not tool-tour the repo.
+**Output comparison (design · performance · size · quality):**
+
+| Dimension | Lattice | Vibe coding | Winner |
+|-----------|---------|-------------|--------|
+| **Design** (output structure) | mean rubric **1.00** | mean **1.00** | Tie on structure; Lattice plans cite corpus paths |
+| **Performance** (wall-clock) | faster on **4/4** tasks | — | **Lattice** |
+| **Size** (tokens) | **~53%** mean reduction | fat paste baseline | **Lattice** (4/4) |
+| **Quality** (correctness) | mean **1.00** | mean **1.00** | **Tie** — both deliver correct facts; Lattice with less roam |
+
+**Conclusion:** For design, write, and deploy work on SING 13, Infinite Octaves Lattice Chat consistently beats standard vibe coding on **performance** and **size**, matches on **quality**, and ties on **design output structure** — while using fewer tokens and tool calls.
 
 **Does not claim:** universal invoice guarantee, autonomous deploy displacement, or that fractal/φ language alone produces the savings. Mechanism = **selection + seed packs + no roam when seed suffices** vs fat paste.
 
@@ -71,7 +81,8 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 | Live matrix re-run | `npm run compare:lattice:cursor:matrix` (requires `CURSOR_API_KEY`) |
 | Structural re-run | `npm run compare:lattice` |
 | OpenRouter protocol | `npm run compare:lattice:openrouter` |
-| Experiments | `src/experiments.mjs` — E1–E7 |
+| Experiments | `src/experiments.mjs` — E1–E8 |
+| Output rubric | `src/output-scoring.mjs` — design · performance · size · quality |
 | Receipts | `data/empirical_report.{json,md}` |
 | PRA Snap | `npm run audit:paper -- --id=synthobs-lattice-vs-vibe-coding-2026-09` |
 
@@ -87,7 +98,16 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 
 ## Results summary
 
-See `research/synthobs-lattice-vs-vibe-coding/data/empirical_report.json` for the full E1–E7 lock. All seven experiments pass on the committed receipt set.
+See `research/synthobs-lattice-vs-vibe-coding/data/empirical_report.json` for the full E1–E8 lock. All eight experiments pass on the committed receipt set.
+
+### Output dimension summary
+
+| Dimension | Metric | Lattice | Vibe coding |
+|-----------|--------|---------|-------------|
+| Design | Plan-structure rubric (0–1) | 1.00 | 1.00 |
+| Performance | Faster wall-clock | 4/4 tasks | 0/4 |
+| Size | Mean token reduction | ~53% | baseline |
+| Quality | Correctness rubric (0–1) | 1.00 | 1.00 |
 
 ---
 

@@ -3,7 +3,7 @@
 **Document ID:** `WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02`
 **Registry ID:** `synthobs-lattice-vs-vibe-coding-2026-09`
 **Agent:** SynthOBS Autonomous Agent · Syntheverse Sandbox
-**Generated:** 2026-09-02T03:43:45.863Z
+**Generated:** 2026-09-02T04:10:51.892Z
 **Host:** 4 CPU · linux-x64 · Node v22.14.0
 
 ## Abstract findings
@@ -13,10 +13,19 @@
 **Deploy:** **52.2%** token savings on ops/config grounding.
 **Overall:** Lattice won **4/4** paired tasks across design · write · deploy; mean savings **53.3%** (work-class range ~35–70%).
 
+### Output comparison (design · performance · size · quality)
+
+| Dimension | Lattice | Vibe coding | Winner |
+|-----------|---------|-------------|--------|
+| **Design** (output structure) | mean 0.88 | mean 0.84 | lattice (1/4 rows) |
+| **Performance** (latency) | 4/4 faster | — | lattice |
+| **Size** (tokens) | 53.3% mean reduction | — | lattice (4/4) |
+| **Quality** (correctness) | mean 1.00 | mean 0.94 | lattice |
+
 | Metric | Value |
 |--------|-------|
 | All pass | true |
-| Passed | 7/7 |
+| Passed | 8/8 |
 | Φ_EGS | 1.618033988749895 |
 
 ### Experiments
@@ -46,6 +55,10 @@
 - Pass: `true`
 
 #### E7_companion_lock — Infinite Octaves + token proof companions referenced
+
+- Pass: `true`
+
+#### E8_output_comparison — Output comparison — design · performance · size · quality
 
 - Pass: `true`
 

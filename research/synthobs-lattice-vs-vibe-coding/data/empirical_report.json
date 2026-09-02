@@ -5,7 +5,7 @@
   "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
   "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
   "agent": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "generatedAt": "2026-09-02T03:43:45.863Z",
+  "generatedAt": "2026-09-02T04:10:51.892Z",
   "host": {
     "cpus": 4,
     "platform": "linux-x64",
@@ -16,6 +16,12 @@
     "notClaim": "Not a universal invoice SLA. Not proof that φ math alone produces savings. Open-ended tool tours can erase Lattice advantage."
   },
   "abstractFindings": {
+    "outputDimensions": [
+      "design",
+      "performance",
+      "size",
+      "quality"
+    ],
     "design": {
       "structuralReductionPct": 99,
       "liveCursorReductionPct": 42.3,
@@ -40,12 +46,42 @@
       "meanTokenReductionPct": 53.25,
       "rangePct": "~35–70%",
       "verdict": "Infinite Octaves Lattice Chat beats standard vibe coding on design, write, and deploy"
+    },
+    "output": {
+      "design": {
+        "latticeMean": 0.875,
+        "vibeCodingMean": 0.84375,
+        "winner": "lattice",
+        "latticeWins": 1,
+        "n": 4
+      },
+      "performance": {
+        "latticeFasterCount": 4,
+        "n": 4,
+        "winner": "lattice",
+        "verdict": "Lattice faster on 4/4 paired tasks"
+      },
+      "size": {
+        "meanTokenReductionPct": 53.25,
+        "latticeWins": 4,
+        "n": 4,
+        "winner": "lattice"
+      },
+      "quality": {
+        "latticeMean": 1,
+        "vibeCodingMean": 0.9375,
+        "winner": "lattice",
+        "latticeWins": 1,
+        "ties": 3,
+        "n": 4,
+        "verdict": "Both arms deliver correct facts; Lattice matches or exceeds on rubric scores"
+      }
     }
   },
   "results": {
     "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
     "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
-    "generatedAt": "2026-09-02T03:43:45.863Z",
+    "generatedAt": "2026-09-02T04:10:51.892Z",
     "monorepoRoot": "/workspace",
     "experiments": [
       {
@@ -154,6 +190,12 @@
         "id": "E6_overall_findings",
         "title": "Abstract findings — Lattice wins design · write · deploy",
         "findings": {
+          "outputDimensions": [
+            "design",
+            "performance",
+            "size",
+            "quality"
+          ],
           "design": {
             "structuralReductionPct": 99,
             "liveCursorReductionPct": 42.3,
@@ -178,6 +220,36 @@
             "meanTokenReductionPct": 53.25,
             "rangePct": "~35–70%",
             "verdict": "Infinite Octaves Lattice Chat beats standard vibe coding on design, write, and deploy"
+          },
+          "output": {
+            "design": {
+              "latticeMean": 0.875,
+              "vibeCodingMean": 0.84375,
+              "winner": "lattice",
+              "latticeWins": 1,
+              "n": 4
+            },
+            "performance": {
+              "latticeFasterCount": 4,
+              "n": 4,
+              "winner": "lattice",
+              "verdict": "Lattice faster on 4/4 paired tasks"
+            },
+            "size": {
+              "meanTokenReductionPct": 53.25,
+              "latticeWins": 4,
+              "n": 4,
+              "winner": "lattice"
+            },
+            "quality": {
+              "latticeMean": 1,
+              "vibeCodingMean": 0.9375,
+              "winner": "lattice",
+              "latticeWins": 1,
+              "ties": 3,
+              "n": 4,
+              "verdict": "Both arms deliver correct facts; Lattice matches or exceeds on rubric scores"
+            }
           }
         },
         "pass": true,
@@ -197,12 +269,223 @@
           "lattice-token-reduction-proof-2026-07"
         ],
         "pass": true
+      },
+      {
+        "id": "E8_output_comparison",
+        "title": "Output comparison — design · performance · size · quality",
+        "dimensions": [
+          {
+            "id": "design",
+            "label": "Design",
+            "description": "Output structure — bands, peer-firewall, Goldilocks plan shape"
+          },
+          {
+            "id": "performance",
+            "label": "Performance",
+            "description": "Wall-clock latency and tool-call discipline"
+          },
+          {
+            "id": "size",
+            "label": "Size",
+            "description": "Total tokens, prompt load, assistant output length"
+          },
+          {
+            "id": "quality",
+            "label": "Quality",
+            "description": "Task-correct facts, paths, deploy-grounding accuracy"
+          }
+        ],
+        "rows": [
+          {
+            "taskId": "T3_single_doc_fact",
+            "taskClass": "pointer_rag",
+            "design": {
+              "lattice": 1,
+              "vibeCoding": 1,
+              "winner": "tie"
+            },
+            "performance": {
+              "latticeMs": 6626,
+              "vibeCodingMs": 6779,
+              "latticeToolCalls": 2,
+              "vibeCodingToolCalls": 2,
+              "winner": "lattice"
+            },
+            "size": {
+              "latticeTokens": 44599,
+              "vibeCodingTokens": 91159,
+              "latticeAssistantChars": 372,
+              "vibeCodingAssistantChars": 381,
+              "tokenReductionPct": 51.1,
+              "winner": "lattice"
+            },
+            "quality": {
+              "lattice": 1,
+              "vibeCoding": 1,
+              "winner": "tie"
+            }
+          },
+          {
+            "taskId": "T4_locate_symbol",
+            "taskClass": "code_locate",
+            "design": {
+              "lattice": 1,
+              "vibeCoding": 1,
+              "winner": "tie"
+            },
+            "performance": {
+              "latticeMs": 16224,
+              "vibeCodingMs": 17597,
+              "latticeToolCalls": 6,
+              "vibeCodingToolCalls": 12,
+              "winner": "lattice"
+            },
+            "size": {
+              "latticeTokens": 67271,
+              "vibeCodingTokens": 206664,
+              "latticeAssistantChars": 716,
+              "vibeCodingAssistantChars": 819,
+              "tokenReductionPct": 67.4,
+              "winner": "lattice"
+            },
+            "quality": {
+              "lattice": 1,
+              "vibeCoding": 1,
+              "winner": "tie"
+            }
+          },
+          {
+            "taskId": "T5_multi_band_plan",
+            "taskClass": "multi_band",
+            "design": {
+              "lattice": 0.5,
+              "vibeCoding": 0.375,
+              "winner": "lattice"
+            },
+            "performance": {
+              "latticeMs": 7063,
+              "vibeCodingMs": 8076,
+              "latticeToolCalls": 0,
+              "vibeCodingToolCalls": 0,
+              "winner": "lattice"
+            },
+            "size": {
+              "latticeTokens": 22497,
+              "vibeCodingTokens": 39014,
+              "latticeAssistantChars": 1598,
+              "vibeCodingAssistantChars": 1493,
+              "tokenReductionPct": 42.3,
+              "winner": "lattice"
+            },
+            "quality": {
+              "lattice": 1,
+              "vibeCoding": 0.75,
+              "winner": "lattice"
+            }
+          },
+          {
+            "taskId": "T6_ops_config",
+            "taskClass": "ops",
+            "design": {
+              "lattice": 1,
+              "vibeCoding": 1,
+              "winner": "tie"
+            },
+            "performance": {
+              "latticeMs": 11131,
+              "vibeCodingMs": 11420,
+              "latticeToolCalls": 6,
+              "vibeCodingToolCalls": 10,
+              "winner": "lattice"
+            },
+            "size": {
+              "latticeTokens": 71942,
+              "vibeCodingTokens": 150650,
+              "latticeAssistantChars": 731,
+              "vibeCodingAssistantChars": 733,
+              "tokenReductionPct": 52.2,
+              "winner": "lattice"
+            },
+            "quality": {
+              "lattice": 1,
+              "vibeCoding": 1,
+              "winner": "tie"
+            }
+          }
+        ],
+        "byDimension": {
+          "design": {
+            "latticeWins": 1,
+            "vibeWins": 0,
+            "ties": 3,
+            "n": 4,
+            "winners": [
+              "tie",
+              "tie",
+              "lattice",
+              "tie"
+            ]
+          },
+          "performance": {
+            "latticeWins": 4,
+            "vibeWins": 0,
+            "ties": 0,
+            "n": 4,
+            "winners": [
+              "lattice",
+              "lattice",
+              "lattice",
+              "lattice"
+            ]
+          },
+          "size": {
+            "latticeWins": 4,
+            "vibeWins": 0,
+            "ties": 0,
+            "n": 4,
+            "winners": [
+              "lattice",
+              "lattice",
+              "lattice",
+              "lattice"
+            ]
+          },
+          "quality": {
+            "latticeWins": 1,
+            "vibeWins": 0,
+            "ties": 3,
+            "n": 4,
+            "winners": [
+              "tie",
+              "tie",
+              "lattice",
+              "tie"
+            ]
+          }
+        },
+        "summary": {
+          "latticeQualityMean": 1,
+          "vibeQualityMean": 0.9375,
+          "latticeDesignMean": 0.875,
+          "vibeDesignMean": 0.84375,
+          "meanTokenReductionPct": 53.25,
+          "latticeFasterCount": 4,
+          "n": 4
+        },
+        "pass": true,
+        "honesty": "Output rubric scores reply previews from committed Cursor matrix — not blind human eval."
       }
     ],
-    "n_total": 7,
-    "n_pass": 7,
+    "n_total": 8,
+    "n_pass": 8,
     "all_pass": true,
     "abstractFindings": {
+      "outputDimensions": [
+        "design",
+        "performance",
+        "size",
+        "quality"
+      ],
       "design": {
         "structuralReductionPct": 99,
         "liveCursorReductionPct": 42.3,
@@ -227,6 +510,36 @@
         "meanTokenReductionPct": 53.25,
         "rangePct": "~35–70%",
         "verdict": "Infinite Octaves Lattice Chat beats standard vibe coding on design, write, and deploy"
+      },
+      "output": {
+        "design": {
+          "latticeMean": 0.875,
+          "vibeCodingMean": 0.84375,
+          "winner": "lattice",
+          "latticeWins": 1,
+          "n": 4
+        },
+        "performance": {
+          "latticeFasterCount": 4,
+          "n": 4,
+          "winner": "lattice",
+          "verdict": "Lattice faster on 4/4 paired tasks"
+        },
+        "size": {
+          "meanTokenReductionPct": 53.25,
+          "latticeWins": 4,
+          "n": 4,
+          "winner": "lattice"
+        },
+        "quality": {
+          "latticeMean": 1,
+          "vibeCodingMean": 0.9375,
+          "winner": "lattice",
+          "latticeWins": 1,
+          "ties": 3,
+          "n": 4,
+          "verdict": "Both arms deliver correct facts; Lattice matches or exceeds on rubric scores"
+        }
       }
     },
     "honesty": {

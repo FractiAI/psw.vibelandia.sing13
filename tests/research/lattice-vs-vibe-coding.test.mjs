@@ -6,8 +6,10 @@ import {
   experimentWriteLiveCursor,
   experimentDeployLiveCursor,
   experimentOverallFindings,
+  experimentOutputComparison,
   runAllExperiments,
 } from '../../research/synthobs-lattice-vs-vibe-coding/src/experiments.mjs';
+import { compareRowOutput, OUTPUT_DIMENSIONS } from '../../research/synthobs-lattice-vs-vibe-coding/src/output-scoring.mjs';
 import {
   resolveWhitepaper,
   WHITEPAPER_PUBLIC_SLUGS,
@@ -46,6 +48,39 @@ describe('synthobs-lattice-vs-vibe-coding', () => {
     expect(e5.winner).toBe('lattice');
   });
 
+  it('E8 output comparison — design · performance · size · quality', () => {
+    expect(OUTPUT_DIMENSIONS).toHaveLength(4);
+    const e8 = experimentOutputComparison();
+    expect(e8.pass).toBe(true);
+    expect(e8.byDimension.size.latticeWins).toBe(4);
+    expect(e8.summary.latticeFasterCount).toBe(4);
+    expect(e8.summary.latticeQualityMean).toBeGreaterThanOrEqual(0.95);
+
+    const row = compareRowOutput({
+      task: { id: 'T3_single_doc_fact', class: 'pointer_rag' },
+      lattice: {
+        replyPreview: '**Document ID:** `WP-SYNTHOBS-EGS-81-ELECTRONS-2026-07` honesty boundary',
+        durationMs: 1000,
+        toolCalls: 2,
+        usage: { totalTokens: 100 },
+        promptChars: 1000,
+        assistantChars: 200,
+      },
+      standard: {
+        replyPreview: '**Document ID:** `WP-SYNTHOBS-EGS-81-ELECTRONS-2026-07` honesty',
+        durationMs: 2000,
+        toolCalls: 2,
+        usage: { totalTokens: 200 },
+        promptChars: 5000,
+        assistantChars: 200,
+      },
+      comparison: { latticeSavedPctVsStandard: 50 },
+    });
+    expect(row.quality.winner).toBe('tie');
+    expect(row.size.winner).toBe('lattice');
+    expect(row.performance.winner).toBe('lattice');
+  });
+
   it(
     'E6 overall findings — Lattice wins design · write · deploy',
     async () => {
@@ -53,10 +88,12 @@ describe('synthobs-lattice-vs-vibe-coding', () => {
       expect(e6.pass).toBe(true);
       expect(e6.findings.overall.latticeWins).toBe(4);
       expect(e6.findings.overall.meanTokenReductionPct).toBeGreaterThanOrEqual(40);
+      expect(e6.findings.output.size.winner).toBe('lattice');
+      expect(e6.findings.output.performance.winner).toBe('lattice');
 
       const all = await runAllExperiments();
       expect(all.all_pass).toBe(true);
-      expect(all.n_pass).toBe(7);
+      expect(all.n_pass).toBe(8);
     },
     30_000,
   );

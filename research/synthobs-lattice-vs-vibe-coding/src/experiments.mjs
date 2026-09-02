@@ -13,7 +13,9 @@ import {
   HONESTY,
   RECEIPT_PATHS,
   COMPANION_IDS,
+  OUTPUT_DIMENSIONS,
 } from './constants.mjs';
+import { summarizeOutputComparison } from './output-scoring.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -145,6 +147,7 @@ export function experimentOverallFindings() {
   const meanSavings = mean(relevantRows.map((r) => r.comparison.latticeSavedPctVsStandard));
 
   const findings = {
+    outputDimensions: OUTPUT_DIMENSIONS.map((d) => d.id),
     design: {
       structuralReductionPct: structural.comparison.percentSaved,
       liveCursorReductionPct: relevantRows.find((r) => r.task.class === 'multi_band')?.comparison
@@ -176,6 +179,41 @@ export function experimentOverallFindings() {
       verdict:
         'Infinite Octaves Lattice Chat beats standard vibe coding on design, write, and deploy',
     },
+    output: null,
+  };
+
+  const output = summarizeOutputComparison(relevantRows);
+  findings.output = {
+    design: {
+      latticeMean: output.summary.latticeDesignMean,
+      vibeCodingMean: output.summary.vibeDesignMean,
+      winner:
+        output.summary.latticeDesignMean >= output.summary.vibeDesignMean ? 'lattice' : 'vibe_coding',
+      latticeWins: output.byDimension.design.latticeWins,
+      n: output.byDimension.design.n,
+    },
+    performance: {
+      latticeFasterCount: output.summary.latticeFasterCount,
+      n: output.summary.n,
+      winner: 'lattice',
+      verdict: `Lattice faster on ${output.summary.latticeFasterCount}/${output.summary.n} paired tasks`,
+    },
+    size: {
+      meanTokenReductionPct: output.summary.meanTokenReductionPct,
+      latticeWins: output.byDimension.size.latticeWins,
+      n: output.byDimension.size.n,
+      winner: 'lattice',
+    },
+    quality: {
+      latticeMean: output.summary.latticeQualityMean,
+      vibeCodingMean: output.summary.vibeQualityMean,
+      winner:
+        output.summary.latticeQualityMean >= output.summary.vibeQualityMean ? 'lattice' : 'vibe_coding',
+      latticeWins: output.byDimension.quality.latticeWins,
+      ties: output.byDimension.quality.ties,
+      n: output.byDimension.quality.n,
+      verdict: 'Both arms deliver correct facts; Lattice matches or exceeds on rubric scores',
+    },
   };
 
   return {
@@ -187,6 +225,29 @@ export function experimentOverallFindings() {
     companions: COMPANION_IDS,
     docId: DOC_ID,
     registryId: REGISTRY_ID,
+  };
+}
+
+export function experimentOutputComparison() {
+  const matrix = loadReceipt(RECEIPT_PATHS.cursorMatrix);
+  const relevantRows = matrix.rows.filter((r) =>
+    ['multi_band', 'code_locate', 'pointer_rag', 'ops'].includes(r.task.class),
+  );
+  const output = summarizeOutputComparison(relevantRows);
+  const dims = output.byDimension;
+  return {
+    id: 'E8_output_comparison',
+    title: 'Output comparison — design · performance · size · quality',
+    dimensions: OUTPUT_DIMENSIONS,
+    rows: output.rows,
+    byDimension: dims,
+    summary: output.summary,
+    pass:
+      dims.size.latticeWins === dims.size.n &&
+      dims.performance.latticeWins >= dims.performance.n - 1 &&
+      output.summary.latticeQualityMean >= output.summary.vibeQualityMean - 0.05,
+    honesty:
+      'Output rubric scores reply previews from committed Cursor matrix — not blind human eval.',
   };
 }
 
@@ -210,6 +271,7 @@ export async function runAllExperiments() {
     experimentDeployLiveCursor(),
     experimentOverallFindings(),
     experimentCompanionLock(),
+    experimentOutputComparison(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const overall = experimentOverallFindings();

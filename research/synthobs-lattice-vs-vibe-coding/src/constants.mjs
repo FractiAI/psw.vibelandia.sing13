@@ -70,3 +70,27 @@ export const COMPANION_IDS = [
   'synthobs-infinite-octaves-omniversal-lattice-2026-08',
   'lattice-token-reduction-proof-2026-07',
 ];
+
+/** Four output dimensions scored per paired task row. */
+export const OUTPUT_DIMENSIONS = [
+  {
+    id: 'design',
+    label: 'Design',
+    description: 'Output structure — bands, peer-firewall, Goldilocks plan shape',
+  },
+  {
+    id: 'performance',
+    label: 'Performance',
+    description: 'Wall-clock latency and tool-call discipline',
+  },
+  {
+    id: 'size',
+    label: 'Size',
+    description: 'Total tokens, prompt load, assistant output length',
+  },
+  {
+    id: 'quality',
+    label: 'Quality',
+    description: 'Task-correct facts, paths, deploy-grounding accuracy',
+  },
+];

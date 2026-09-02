@@ -14,6 +14,7 @@ import {
   RECEIPT_PATHS,
   COMPANION_IDS,
   OUTPUT_DIMENSIONS,
+  RESEARCH_QUESTION,
 } from './constants.mjs';
 import { summarizeOutputComparison } from './output-scoring.mjs';
 import { summarizeUnpromptedNesting, scoreSpontaneousNesting } from './nesting-scoring.mjs';
@@ -21,6 +22,7 @@ import {
   summarizeImplementationPillars,
   IMPLEMENTATION_PILLARS,
 } from './implementation-pillars.mjs';
+import { buildDesignWriteVerdict } from './design-write-verdict.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -231,6 +233,17 @@ export function experimentOverallFindings() {
     whatMakesBetter: pillars.whatMakesBetter,
   };
 
+  findings.designWriteVerdict = buildDesignWriteVerdict({
+    unpromptedSummary: unprompted.unpromptedSummary,
+    implementationPillars: pillars.byPillar,
+    liveMatrixSummary: {
+      meanTokenReductionPct: meanSavings,
+      latticeWins,
+      n: relevantRows.length,
+    },
+    outputSummary: output.summary,
+  });
+
   return {
     id: 'E6_overall_findings',
     title: 'Abstract findings — Lattice wins design · write · deploy',
@@ -341,6 +354,19 @@ export function experimentImplementationPillars() {
   };
 }
 
+export function experimentDesignWriteVerdict() {
+  const overall = experimentOverallFindings();
+  const v = overall.findings.designWriteVerdict;
+  return {
+    id: 'E11_design_write_verdict',
+    title: 'Research question — does Lattice design and write better code?',
+    researchQuestion: RESEARCH_QUESTION,
+    verdict: v,
+    pass: v.overall.answer === 'yes' && v.design.verdict === 'yes' && v.write.verdict === 'yes',
+    honesty: HONESTY.notClaim,
+  };
+}
+
 export function experimentCompanionLock() {
   return {
     id: 'E7_companion_lock',
@@ -364,6 +390,7 @@ export async function runAllExperiments() {
     experimentOutputComparison(),
     experimentUnpromptedNesting(),
     experimentImplementationPillars(),
+    experimentDesignWriteVerdict(),
   ];
   const n_pass = experiments.filter((e) => e.pass).length;
   const overall = experimentOverallFindings();

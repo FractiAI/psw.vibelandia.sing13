@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "7722a9c6e25d5450",
+  "auditId": "76cd8490dc71fcf1",
   "paperId": "synthobs-lattice-vs-vibe-coding-2026-09",
   "sourcePath": "docs/SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-02T04:48:17.839Z"
+          "invokedAt": "2026-09-02T04:54:59.518Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-02T04:48:17.838Z",
-  "completedAt": "2026-09-02T04:48:17.839Z",
+  "startedAt": "2026-09-02T04:54:59.517Z",
+  "completedAt": "2026-09-02T04:54:59.518Z",
   "iterations": 1,
   "overallScore": 0.941,
   "passThreshold": 0.85,
@@ -125,7 +125,7 @@
     "criticalBlockers": [],
     "suggestions": [],
     "meta": {
-      "wordCount": 1282,
+      "wordCount": 1409,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,

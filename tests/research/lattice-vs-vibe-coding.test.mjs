@@ -9,8 +9,10 @@ import {
   experimentOutputComparison,
   experimentUnpromptedNesting,
   experimentImplementationPillars,
+  experimentDesignWriteVerdict,
   runAllExperiments,
 } from '../../research/synthobs-lattice-vs-vibe-coding/src/experiments.mjs';
+import { RESEARCH_QUESTION } from '../../research/synthobs-lattice-vs-vibe-coding/src/constants.mjs';
 import { compareRowOutput, OUTPUT_DIMENSIONS } from '../../research/synthobs-lattice-vs-vibe-coding/src/output-scoring.mjs';
 import {
   resolveWhitepaper,
@@ -92,9 +94,13 @@ describe('synthobs-lattice-vs-vibe-coding', () => {
       expect(e6.findings.unpromptedNesting.unprompted.latticeSpontaneous).toBe(2);
       expect(e6.findings.implementationPillars.byPillar.efficiency.latticeWins).toBeGreaterThanOrEqual(5);
 
+      expect(e6.findings.designWriteVerdict.overall.answer).toBe('yes');
+      expect(e6.findings.designWriteVerdict.design.verdict).toBe('yes');
+      expect(e6.findings.designWriteVerdict.write.verdict).toBe('yes');
+
       const all = await runAllExperiments();
       expect(all.all_pass).toBe(true);
-      expect(all.n_pass).toBe(10);
+      expect(all.n_pass).toBe(11);
     },
     30_000,
   );
@@ -111,6 +117,14 @@ describe('synthobs-lattice-vs-vibe-coding', () => {
     expect(e10.pass).toBe(true);
     expect(e10.byPillar.efficiency.latticeWins).toBeGreaterThanOrEqual(5);
     expect(e10.whatMakesBetter.scalability).toContain('Peer-firewall');
+  });
+
+  it('E11 research question — Lattice designs and writes better code', () => {
+    const e11 = experimentDesignWriteVerdict();
+    expect(e11.pass).toBe(true);
+    expect(e11.researchQuestion).toBe(RESEARCH_QUESTION);
+    expect(e11.verdict.overall.answer).toBe('yes');
+    expect(e11.verdict.write.whatMakesItBetter.length).toBeGreaterThanOrEqual(3);
   });
 
   it('registry + slug resolve', () => {

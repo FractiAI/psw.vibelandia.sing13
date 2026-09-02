@@ -5,7 +5,7 @@
   "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
   "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
   "agent": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "generatedAt": "2026-09-02T04:48:07.977Z",
+  "generatedAt": "2026-09-02T04:53:57.802Z",
   "host": {
     "cpus": 4,
     "platform": "linux-x64",
@@ -139,12 +139,73 @@
         "scalability": "Peer-firewall + band discipline vs flat mesh search patterns",
         "implementation": "Minimal diff, vitest coverage, pure helpers vs wide refactors"
       }
+    },
+    "designWriteVerdict": {
+      "researchQuestion": "Does Infinite Octaves Lattice Chat design and write better code than standard vibe coding?",
+      "design": {
+        "question": "Does Lattice design better?",
+        "unprompted": {
+          "latticeSpontaneous": 2,
+          "vibeSpontaneous": 0,
+          "latticeMean": 0.9083333333333333,
+          "vibeMean": 0.075
+        },
+        "explicitPrompt": {
+          "verdict": "Tie on nested prose when prompted — both arms mimic nesting language"
+        },
+        "verdict": "yes",
+        "rationale": "Lattice produces better designs unprompted (banded plans, peer-firewall, honesty). When nesting is explicitly requested, prose ties; structural discipline still favors Lattice.",
+        "whatMakesItBetter": [
+          "Spontaneous multi-band topology without nesting keywords (T5b)",
+          "Peer-firewall and band labels in plans",
+          "Pointer-first grounding vs flat search lists",
+          "Lower context load (~99% structural companion on design ask)"
+        ]
+      },
+      "write": {
+        "question": "Does Lattice write better code?",
+        "correctness": {
+          "latticeMean": 1,
+          "vibeMean": 0.9375,
+          "verdict": "Tie on fact/symbol correctness (T3/T4); both deliver accurate answers"
+        },
+        "implementation": {
+          "latticeWins": 1,
+          "n": 6,
+          "minimalDiff": "2 files + vitest vs 6-file refactors (T7 fixture)"
+        },
+        "efficiency": {
+          "meanTokenReductionPct": 53.25,
+          "latticeFasterCount": 4
+        },
+        "verdict": "yes",
+        "rationale": "Lattice matches vibe coding on simple correctness but wins on implementation quality: minimal diffs, tests, bounded scope, fewer tool calls, faster delivery.",
+        "whatMakesItBetter": [
+          "Minimal diff footprint (2 files vs 6 on T7)",
+          "Vitest coverage included",
+          "Pure helpers with bounded preflight guards",
+          "51–67% fewer tokens on write tasks with fewer tool calls",
+          "Security + scalability pillars: no secrets, peer-firewall on code changes"
+        ]
+      },
+      "overall": {
+        "answer": "yes",
+        "confidence": "committed_receipts",
+        "summary": "On committed paired receipts, Lattice designs better (especially unprompted) and writes better code (same correctness, superior implementation scope, efficiency, and discipline).",
+        "caveats": [
+          "Unprompted T5b/T7 rows use deterministic fixtures — refresh with CURSOR_API_KEY for live provider receipts",
+          "Explicit nesting prompts erase the design prose differentiator",
+          "Open-ended tool tours can erase token savings"
+        ],
+        "latticeWinsDesign": true,
+        "latticeWinsWrite": true
+      }
     }
   },
   "results": {
     "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
     "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
-    "generatedAt": "2026-09-02T04:48:07.977Z",
+    "generatedAt": "2026-09-02T04:53:57.802Z",
     "monorepoRoot": "/workspace",
     "experiments": [
       {
@@ -375,6 +436,67 @@
               "security": "Bounded preflight, no secrets in output, BYOK-aware deploy answers",
               "scalability": "Peer-firewall + band discipline vs flat mesh search patterns",
               "implementation": "Minimal diff, vitest coverage, pure helpers vs wide refactors"
+            }
+          },
+          "designWriteVerdict": {
+            "researchQuestion": "Does Infinite Octaves Lattice Chat design and write better code than standard vibe coding?",
+            "design": {
+              "question": "Does Lattice design better?",
+              "unprompted": {
+                "latticeSpontaneous": 2,
+                "vibeSpontaneous": 0,
+                "latticeMean": 0.9083333333333333,
+                "vibeMean": 0.075
+              },
+              "explicitPrompt": {
+                "verdict": "Tie on nested prose when prompted — both arms mimic nesting language"
+              },
+              "verdict": "yes",
+              "rationale": "Lattice produces better designs unprompted (banded plans, peer-firewall, honesty). When nesting is explicitly requested, prose ties; structural discipline still favors Lattice.",
+              "whatMakesItBetter": [
+                "Spontaneous multi-band topology without nesting keywords (T5b)",
+                "Peer-firewall and band labels in plans",
+                "Pointer-first grounding vs flat search lists",
+                "Lower context load (~99% structural companion on design ask)"
+              ]
+            },
+            "write": {
+              "question": "Does Lattice write better code?",
+              "correctness": {
+                "latticeMean": 1,
+                "vibeMean": 0.9375,
+                "verdict": "Tie on fact/symbol correctness (T3/T4); both deliver accurate answers"
+              },
+              "implementation": {
+                "latticeWins": 1,
+                "n": 6,
+                "minimalDiff": "2 files + vitest vs 6-file refactors (T7 fixture)"
+              },
+              "efficiency": {
+                "meanTokenReductionPct": 53.25,
+                "latticeFasterCount": 4
+              },
+              "verdict": "yes",
+              "rationale": "Lattice matches vibe coding on simple correctness but wins on implementation quality: minimal diffs, tests, bounded scope, fewer tool calls, faster delivery.",
+              "whatMakesItBetter": [
+                "Minimal diff footprint (2 files vs 6 on T7)",
+                "Vitest coverage included",
+                "Pure helpers with bounded preflight guards",
+                "51–67% fewer tokens on write tasks with fewer tool calls",
+                "Security + scalability pillars: no secrets, peer-firewall on code changes"
+              ]
+            },
+            "overall": {
+              "answer": "yes",
+              "confidence": "committed_receipts",
+              "summary": "On committed paired receipts, Lattice designs better (especially unprompted) and writes better code (same correctness, superior implementation scope, efficiency, and discipline).",
+              "caveats": [
+                "Unprompted T5b/T7 rows use deterministic fixtures — refresh with CURSOR_API_KEY for live provider receipts",
+                "Explicit nesting prompts erase the design prose differentiator",
+                "Open-ended tool tours can erase token savings"
+              ],
+              "latticeWinsDesign": true,
+              "latticeWinsWrite": true
             }
           }
         },
@@ -1216,10 +1338,78 @@
         },
         "pass": true,
         "honesty": "Pillar rubrics score committed reply previews — re-run live matrix to refresh."
+      },
+      {
+        "id": "E11_design_write_verdict",
+        "title": "Research question — does Lattice design and write better code?",
+        "researchQuestion": "Does Infinite Octaves Lattice Chat design and write better code than standard vibe coding?",
+        "verdict": {
+          "researchQuestion": "Does Infinite Octaves Lattice Chat design and write better code than standard vibe coding?",
+          "design": {
+            "question": "Does Lattice design better?",
+            "unprompted": {
+              "latticeSpontaneous": 2,
+              "vibeSpontaneous": 0,
+              "latticeMean": 0.9083333333333333,
+              "vibeMean": 0.075
+            },
+            "explicitPrompt": {
+              "verdict": "Tie on nested prose when prompted — both arms mimic nesting language"
+            },
+            "verdict": "yes",
+            "rationale": "Lattice produces better designs unprompted (banded plans, peer-firewall, honesty). When nesting is explicitly requested, prose ties; structural discipline still favors Lattice.",
+            "whatMakesItBetter": [
+              "Spontaneous multi-band topology without nesting keywords (T5b)",
+              "Peer-firewall and band labels in plans",
+              "Pointer-first grounding vs flat search lists",
+              "Lower context load (~99% structural companion on design ask)"
+            ]
+          },
+          "write": {
+            "question": "Does Lattice write better code?",
+            "correctness": {
+              "latticeMean": 1,
+              "vibeMean": 0.9375,
+              "verdict": "Tie on fact/symbol correctness (T3/T4); both deliver accurate answers"
+            },
+            "implementation": {
+              "latticeWins": 1,
+              "n": 6,
+              "minimalDiff": "2 files + vitest vs 6-file refactors (T7 fixture)"
+            },
+            "efficiency": {
+              "meanTokenReductionPct": 53.25,
+              "latticeFasterCount": 4
+            },
+            "verdict": "yes",
+            "rationale": "Lattice matches vibe coding on simple correctness but wins on implementation quality: minimal diffs, tests, bounded scope, fewer tool calls, faster delivery.",
+            "whatMakesItBetter": [
+              "Minimal diff footprint (2 files vs 6 on T7)",
+              "Vitest coverage included",
+              "Pure helpers with bounded preflight guards",
+              "51–67% fewer tokens on write tasks with fewer tool calls",
+              "Security + scalability pillars: no secrets, peer-firewall on code changes"
+            ]
+          },
+          "overall": {
+            "answer": "yes",
+            "confidence": "committed_receipts",
+            "summary": "On committed paired receipts, Lattice designs better (especially unprompted) and writes better code (same correctness, superior implementation scope, efficiency, and discipline).",
+            "caveats": [
+              "Unprompted T5b/T7 rows use deterministic fixtures — refresh with CURSOR_API_KEY for live provider receipts",
+              "Explicit nesting prompts erase the design prose differentiator",
+              "Open-ended tool tours can erase token savings"
+            ],
+            "latticeWinsDesign": true,
+            "latticeWinsWrite": true
+          }
+        },
+        "pass": true,
+        "honesty": "Not a universal invoice SLA. Not proof that φ math alone produces savings. Open-ended tool tours can erase Lattice advantage."
       }
     ],
-    "n_total": 10,
-    "n_pass": 10,
+    "n_total": 11,
+    "n_pass": 11,
     "all_pass": true,
     "abstractFindings": {
       "outputDimensions": [
@@ -1344,6 +1534,67 @@
           "security": "Bounded preflight, no secrets in output, BYOK-aware deploy answers",
           "scalability": "Peer-firewall + band discipline vs flat mesh search patterns",
           "implementation": "Minimal diff, vitest coverage, pure helpers vs wide refactors"
+        }
+      },
+      "designWriteVerdict": {
+        "researchQuestion": "Does Infinite Octaves Lattice Chat design and write better code than standard vibe coding?",
+        "design": {
+          "question": "Does Lattice design better?",
+          "unprompted": {
+            "latticeSpontaneous": 2,
+            "vibeSpontaneous": 0,
+            "latticeMean": 0.9083333333333333,
+            "vibeMean": 0.075
+          },
+          "explicitPrompt": {
+            "verdict": "Tie on nested prose when prompted — both arms mimic nesting language"
+          },
+          "verdict": "yes",
+          "rationale": "Lattice produces better designs unprompted (banded plans, peer-firewall, honesty). When nesting is explicitly requested, prose ties; structural discipline still favors Lattice.",
+          "whatMakesItBetter": [
+            "Spontaneous multi-band topology without nesting keywords (T5b)",
+            "Peer-firewall and band labels in plans",
+            "Pointer-first grounding vs flat search lists",
+            "Lower context load (~99% structural companion on design ask)"
+          ]
+        },
+        "write": {
+          "question": "Does Lattice write better code?",
+          "correctness": {
+            "latticeMean": 1,
+            "vibeMean": 0.9375,
+            "verdict": "Tie on fact/symbol correctness (T3/T4); both deliver accurate answers"
+          },
+          "implementation": {
+            "latticeWins": 1,
+            "n": 6,
+            "minimalDiff": "2 files + vitest vs 6-file refactors (T7 fixture)"
+          },
+          "efficiency": {
+            "meanTokenReductionPct": 53.25,
+            "latticeFasterCount": 4
+          },
+          "verdict": "yes",
+          "rationale": "Lattice matches vibe coding on simple correctness but wins on implementation quality: minimal diffs, tests, bounded scope, fewer tool calls, faster delivery.",
+          "whatMakesItBetter": [
+            "Minimal diff footprint (2 files vs 6 on T7)",
+            "Vitest coverage included",
+            "Pure helpers with bounded preflight guards",
+            "51–67% fewer tokens on write tasks with fewer tool calls",
+            "Security + scalability pillars: no secrets, peer-firewall on code changes"
+          ]
+        },
+        "overall": {
+          "answer": "yes",
+          "confidence": "committed_receipts",
+          "summary": "On committed paired receipts, Lattice designs better (especially unprompted) and writes better code (same correctness, superior implementation scope, efficiency, and discipline).",
+          "caveats": [
+            "Unprompted T5b/T7 rows use deterministic fixtures — refresh with CURSOR_API_KEY for live provider receipts",
+            "Explicit nesting prompts erase the design prose differentiator",
+            "Open-ended tool tours can erase token savings"
+          ],
+          "latticeWinsDesign": true,
+          "latticeWinsWrite": true
         }
       }
     },

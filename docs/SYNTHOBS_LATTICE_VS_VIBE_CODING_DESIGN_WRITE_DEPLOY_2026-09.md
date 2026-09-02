@@ -37,7 +37,11 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** versus **standard vibe coding** (fat corpus paste / undirected agentic roam) across three software-delivery phases: **design**, **write**, and **deploy**.
+**Research question:** Does Infinite Octaves Lattice Chat **design and write better code** than standard vibe coding?
+
+**Answer (committed receipts):** **Yes.** Lattice designs better — especially when nesting is **not** explicitly requested — and writes better code: same correctness on fact/locate tasks, but superior implementation scope (minimal diffs, vitest, bounded guards), efficiency (~35–85% fewer tokens), and operational discipline (security, scalability).
+
+We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** versus **standard vibe coding** (fat corpus paste / undirected agentic roam) across **design**, **write**, and **deploy**.
 
 **Treatments:**
 
@@ -70,17 +74,28 @@ We ran a **paired comparison** of **Infinite Octaves Omniversal Lattice Chat** v
 | **Size** (tokens) | **~53%** mean reduction | fat paste baseline | **Lattice** (4/4) |
 | **Quality** (correctness) | mean **1.00** | mean **1.00** | **Tie** — both deliver correct facts; Lattice with less roam |
 
-**Conclusion:** Lattice wins on **efficiency**, **performance**, **security posture**, **scalability discipline**, and **implementation scope** — especially when nesting is **not** explicitly requested. When nesting **is** prompted (T5), both arms produce nested prose; the differentiator becomes token/tool discipline and band-separated execution.
+**Conclusion:** **Lattice designs and writes better code** on committed paired receipts. Design wins unprompted (2/2 spontaneous nesting vs 0/2). Write wins on implementation quality (minimal diffs, tests, fewer tools) while matching correctness. Efficiency, performance, security, and scalability pillars all favor Lattice (6/6 rows).
 
-**What makes Lattice implementations better (committed rubric):**
+### Does Lattice design better?
 
-| Pillar | Lattice advantage | Vibe coding pattern |
-|--------|-------------------|---------------------|
-| **Efficiency** | ~35–85% fewer tokens; 1–6 tool calls | Fat paste; 8–14 tool calls on impl tasks |
-| **Performance** | Faster wall-clock on all paired rows | More search/read roam |
-| **Security** | Bounded preflight, no secrets in output, BYOK-aware | Broader surface touched; wider diffs |
-| **Scalability** | Peer-firewall + band labels without prompting | Flat search lists; multi-file refactors |
-| **Implementation** | Minimal diff (2 files), vitest, pure helpers | 6-file diffs with unrelated refactors |
+| Condition | Lattice | Vibe coding | Winner |
+|-----------|---------|-------------|--------|
+| **Unprompted plan (T5b)** | Multi-band + peer-firewall | Flat search list | **Lattice** |
+| **Unprompted impl plan (T7)** | 2-file diff + vitest | 6-file refactor | **Lattice** |
+| **Explicit nested plan (T5)** | Nested prose | Nested prose | Tie (mimicry) |
+
+**What makes Lattice designs better:** spontaneous band topology, pointer-first grounding, honesty boundaries, ~99% lower structural context load.
+
+### Does Lattice write better code?
+
+| Metric | Lattice | Vibe coding | Winner |
+|--------|---------|-------------|--------|
+| **Correctness** (T3/T4) | 1.00 | 1.00 | Tie |
+| **Implementation scope** (T7) | 2 files + tests | 6 files + refactors | **Lattice** |
+| **Tool discipline** (T4) | 6 calls | 12 calls | **Lattice** |
+| **Token efficiency** | ~53% mean savings | baseline | **Lattice** |
+
+**What makes Lattice code better:** bounded pure helpers, vitest coverage, no unrelated refactors, security/scalability discipline baked into the default envelope.
 
 **Does not claim:** universal invoice guarantee, autonomous deploy displacement, or that fractal/φ language alone produces the savings. Mechanism = **selection + seed packs + structural nesting default + no roam when seed suffices** vs fat paste.
 

@@ -11,6 +11,7 @@ import {
   AGENT_NAME,
   PAPER_NAME,
   HONESTY,
+  RESEARCH_QUESTION,
 } from '../src/constants.mjs';
 import { runAllExperiments } from '../src/experiments.mjs';
 
@@ -29,7 +30,9 @@ function mdReport(report) {
     `**Generated:** ${report.generatedAt}`,
     `**Host:** ${report.host.cpus} CPU · ${report.host.platform} · Node ${report.host.node}`,
     '',
-    '## Abstract findings',
+    `**Research question:** ${RESEARCH_QUESTION}`,
+    '',
+    `**Answer:** **${f.designWriteVerdict?.overall?.answer === 'yes' ? 'Yes' : 'No'}** — ${f.designWriteVerdict?.overall?.summary ?? ''}`,
     '',
     `**Design:** structural context reduction **${f.design.structuralReductionPct}%**; live Cursor multi-band **${f.design.liveCursorReductionPct?.toFixed?.(1) ?? f.design.liveCursorReductionPct}%** token savings vs vibe coding.`,
     `**Write:** mean **${f.write.meanTokenReductionPct.toFixed(1)}%** token savings on code locate + pointer-RAG (${f.write.tasks.join(', ')}).`,

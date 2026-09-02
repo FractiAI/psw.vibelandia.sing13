@@ -3,10 +3,12 @@
 **Document ID:** `WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02`
 **Registry ID:** `synthobs-lattice-vs-vibe-coding-2026-09`
 **Agent:** SynthOBS Autonomous Agent · Syntheverse Sandbox
-**Generated:** 2026-09-02T04:48:07.977Z
+**Generated:** 2026-09-02T04:53:57.802Z
 **Host:** 4 CPU · linux-x64 · Node v22.14.0
 
-## Abstract findings
+**Research question:** Does Infinite Octaves Lattice Chat design and write better code than standard vibe coding?
+
+**Answer:** **Yes** — On committed paired receipts, Lattice designs better (especially unprompted) and writes better code (same correctness, superior implementation scope, efficiency, and discipline).
 
 **Design:** structural context reduction **99%**; live Cursor multi-band **42.3%** token savings vs vibe coding.
 **Write:** mean **59.3%** token savings on code locate + pointer-RAG (T3_single_doc_fact, T4_locate_symbol).
@@ -25,7 +27,7 @@
 | Metric | Value |
 |--------|-------|
 | All pass | true |
-| Passed | 10/10 |
+| Passed | 11/11 |
 | Φ_EGS | 1.618033988749895 |
 
 ### Experiments
@@ -67,6 +69,10 @@
 - Pass: `true`
 
 #### E10_implementation_pillars — Implementation pillars — efficiency · performance · security · scalability · implementation
+
+- Pass: `true`
+
+#### E11_design_write_verdict — Research question — does Lattice design and write better code?
 
 - Pass: `true`
 

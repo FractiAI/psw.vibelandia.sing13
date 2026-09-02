@@ -12,6 +12,10 @@ export const STUDY_TITLE = 'Lattice vs Vibe Coding — design · write · deploy
 export const AGENT_NAME = 'SynthOBS Autonomous Agent · Syntheverse Sandbox';
 export const SHIP_BLOG_SLUG = 'lattice-vs-vibe-coding';
 
+/** Primary research question for this study. */
+export const RESEARCH_QUESTION =
+  'Does Infinite Octaves Lattice Chat design and write better code than standard vibe coding?';
+
 /** Three software-delivery phases under test. */
 export const PHASES = [
   {

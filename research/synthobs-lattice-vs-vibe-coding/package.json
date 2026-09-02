@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-lattice-vs-vibe-coding",
+  "private": true,
+  "type": "module",
+  "version": "2026.09.02",
+  "description": "Design · Write · Deploy — Infinite Octaves Lattice Chat vs standard vibe coding",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-lattice-vs-vibe-coding.git"
+  }
+}

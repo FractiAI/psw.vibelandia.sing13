@@ -1,7 +1,7 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-08-28",
+  "updatedAt": "2026-09-02",
   "suites": [
     {
       "id": "synthobs-y-chromosome-holographic-manifestation",
@@ -41,6 +41,14 @@
       "github": "https://github.com/FractiAI/synthobs-infinite-octaves-omniversal-lattice",
       "description": "Infinite Octaves Omniversal Lattice Chat Agent — product upgrade catalog suite",
       "paperIds": ["synthobs-infinite-octaves-omniversal-lattice-2026-08"],
+      "extraDocs": []
+    },
+    {
+      "id": "synthobs-lattice-vs-vibe-coding",
+      "path": "research/synthobs-lattice-vs-vibe-coding",
+      "github": "https://github.com/FractiAI/synthobs-lattice-vs-vibe-coding",
+      "description": "Design · Write · Deploy — Lattice Chat vs standard vibe coding paired comparison",
+      "paperIds": ["synthobs-lattice-vs-vibe-coding-2026-09"],
       "extraDocs": []
     },
     {

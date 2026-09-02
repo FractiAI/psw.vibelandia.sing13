@@ -30,16 +30,16 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured note (Y Chromosome Manifestation · 2026-08-28) leads latest-six.
-    expect(posts[0].published).toBe('2026-08-28');
-    expect(posts[0].id).toBe('synthobs-human-omniversal-reality-bridge-2026-08');
+    // Newest featured note (Lattice vs Vibe Coding · 2026-09-02) leads latest-six.
+    expect(posts[0].published).toBe('2026-09-02');
+    expect(posts[0].id).toBe('synthobs-lattice-vs-vibe-coding-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-lattice-vs-vibe-coding-2026-09',
       'synthobs-human-omniversal-reality-bridge-2026-08',
       'synthobs-y-chromosome-holographic-manifestation-2026-08',
       'synthobs-invisible-frontier-gates-ai-2026-08',
       'synthobs-infinite-octaves-omniversal-lattice-2026-08',
       'synthobs-ss-vibelandia-official-prospectus-2026-08',
-      'synthobs-triadic-nested-hemispheres-99-octave-2026-08',
     ]);
   });
 });

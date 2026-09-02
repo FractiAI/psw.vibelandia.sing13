@@ -1,0 +1,237 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "title": "Lattice vs Vibe Coding — design · write · deploy",
+  "paper": "Design · Write · Deploy: Infinite Octaves Lattice Chat vs Standard Vibe Coding",
+  "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
+  "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
+  "agent": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "generatedAt": "2026-09-02T03:43:45.863Z",
+  "host": {
+    "cpus": 4,
+    "platform": "linux-x64",
+    "node": "v22.14.0"
+  },
+  "honesty": {
+    "note": "Paired comparison using committed monorepo receipts. Cursor matrix = live provider usage. Structural comparison = chars÷4 estimate only — not marketing headline.",
+    "notClaim": "Not a universal invoice SLA. Not proof that φ math alone produces savings. Open-ended tool tours can erase Lattice advantage."
+  },
+  "abstractFindings": {
+    "design": {
+      "structuralReductionPct": 99,
+      "liveCursorReductionPct": 42.3,
+      "verdict": "Lattice wins design with lower context load and paired token savings"
+    },
+    "write": {
+      "tasks": [
+        "T3_single_doc_fact",
+        "T4_locate_symbol"
+      ],
+      "meanTokenReductionPct": 59.25,
+      "verdict": "Lattice wins write with fewer tool calls and ~51–67% token savings"
+    },
+    "deploy": {
+      "task": "T6_ops_config",
+      "tokenReductionPct": 52.2,
+      "verdict": "Lattice wins deploy grounding with fewer tool calls and ~52% token savings"
+    },
+    "overall": {
+      "latticeWins": 4,
+      "n": 4,
+      "meanTokenReductionPct": 53.25,
+      "rangePct": "~35–70%",
+      "verdict": "Infinite Octaves Lattice Chat beats standard vibe coding on design, write, and deploy"
+    }
+  },
+  "results": {
+    "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
+    "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
+    "generatedAt": "2026-09-02T03:43:45.863Z",
+    "monorepoRoot": "/workspace",
+    "experiments": [
+      {
+        "id": "E1_phase_taxonomy",
+        "title": "Design · write · deploy phases locked with treatment arms",
+        "PHASES": [
+          {
+            "id": "design",
+            "label": "Design",
+            "description": "Multi-band architecture · seed-grounded planning · nested-agent topology",
+            "matrixClasses": [
+              "multi_band"
+            ],
+            "comparisonReceipt": "lattice-vs-standard-complex-work-v1"
+          },
+          {
+            "id": "write",
+            "label": "Write",
+            "description": "Code locate · pointer-RAG fact extraction · patch generation",
+            "matrixClasses": [
+              "code_locate",
+              "pointer_rag"
+            ],
+            "comparisonReceipt": "lattice-vs-standard-cursor-usage-matrix-v2-seed"
+          },
+          {
+            "id": "deploy",
+            "label": "Deploy",
+            "description": "Ops/config grounding · patch-apply + test gate · ship readiness",
+            "matrixClasses": [
+              "ops"
+            ],
+            "comparisonReceipt": "lattice-vs-standard-cursor-usage-matrix-v2-seed"
+          }
+        ],
+        "TREATMENTS": {
+          "lattice": {
+            "id": "lattice",
+            "label": "Infinite Octaves Omniversal Lattice Chat",
+            "description": "Seed packs + pointer-first RAG + nested-agent MCA rails + peer-firewall + scale-to-zero"
+          },
+          "vibeCoding": {
+            "id": "vibe_coding",
+            "label": "Standard vibe coding",
+            "description": "Fat corpus paste / undirected agentic roam — typical “dump the repo and hope” workflow",
+            "matrixLabel": "standard_fat"
+          }
+        },
+        "pass": true,
+        "honesty": "Paired comparison using committed monorepo receipts. Cursor matrix = live provider usage. Structural comparison = chars÷4 estimate only — not marketing headline."
+      },
+      {
+        "id": "E2_design_structural_context",
+        "title": "Design phase — nested + pointers vs fat dump (structural chars÷4)",
+        "phase": "design",
+        "latticeTokens": 3123,
+        "vibeCodingTokens": 298296,
+        "tokenReductionPct": 99,
+        "pass": true,
+        "receiptId": "lattice-vs-standard-complex-work-v1",
+        "honesty": "Structural estimate only — companion to live Cursor design row (T5). Not the ~35–70% marketing headline."
+      },
+      {
+        "id": "E3_design_live_cursor",
+        "title": "Design phase — live Cursor tokens on multi-band nested plan",
+        "phase": "design",
+        "taskId": "T5_multi_band_plan",
+        "latticeTokens": 22497,
+        "vibeCodingTokens": 39014,
+        "tokenReductionPct": 42.3,
+        "winner": "lattice",
+        "pass": true,
+        "honesty": "Paired comparison using committed monorepo receipts. Cursor matrix = live provider usage. Structural comparison = chars÷4 estimate only — not marketing headline."
+      },
+      {
+        "id": "E4_write_live_cursor",
+        "title": "Write phase — live Cursor on code locate + pointer-RAG",
+        "phase": "write",
+        "tasks": [
+          "T3_single_doc_fact",
+          "T4_locate_symbol"
+        ],
+        "meanTokenReductionPct": 59.25,
+        "minTokenReductionPct": 51.1,
+        "meanToolCallReductionPct": 25,
+        "latticeWins": 2,
+        "n": 2,
+        "pass": true,
+        "honesty": "Paired comparison using committed monorepo receipts. Cursor matrix = live provider usage. Structural comparison = chars÷4 estimate only — not marketing headline."
+      },
+      {
+        "id": "E5_deploy_live_cursor",
+        "title": "Deploy phase — live Cursor on ops/config grounding",
+        "phase": "deploy",
+        "taskId": "T6_ops_config",
+        "latticeTokens": 71942,
+        "vibeCodingTokens": 150650,
+        "tokenReductionPct": 52.2,
+        "latticeToolCalls": 6,
+        "vibeCodingToolCalls": 10,
+        "winner": "lattice",
+        "pass": true,
+        "honesty": "Paired comparison using committed monorepo receipts. Cursor matrix = live provider usage. Structural comparison = chars÷4 estimate only — not marketing headline."
+      },
+      {
+        "id": "E6_overall_findings",
+        "title": "Abstract findings — Lattice wins design · write · deploy",
+        "findings": {
+          "design": {
+            "structuralReductionPct": 99,
+            "liveCursorReductionPct": 42.3,
+            "verdict": "Lattice wins design with lower context load and paired token savings"
+          },
+          "write": {
+            "tasks": [
+              "T3_single_doc_fact",
+              "T4_locate_symbol"
+            ],
+            "meanTokenReductionPct": 59.25,
+            "verdict": "Lattice wins write with fewer tool calls and ~51–67% token savings"
+          },
+          "deploy": {
+            "task": "T6_ops_config",
+            "tokenReductionPct": 52.2,
+            "verdict": "Lattice wins deploy grounding with fewer tool calls and ~52% token savings"
+          },
+          "overall": {
+            "latticeWins": 4,
+            "n": 4,
+            "meanTokenReductionPct": 53.25,
+            "rangePct": "~35–70%",
+            "verdict": "Infinite Octaves Lattice Chat beats standard vibe coding on design, write, and deploy"
+          }
+        },
+        "pass": true,
+        "honesty": "Not a universal invoice SLA. Not proof that φ math alone produces savings. Open-ended tool tours can erase Lattice advantage.",
+        "companions": [
+          "synthobs-infinite-octaves-omniversal-lattice-2026-08",
+          "lattice-token-reduction-proof-2026-07"
+        ],
+        "docId": "WP-SYNTHOBS-LATTICE-VS-VIBE-CODING-DESIGN-WRITE-DEPLOY-2026-09-02",
+        "registryId": "synthobs-lattice-vs-vibe-coding-2026-09"
+      },
+      {
+        "id": "E7_companion_lock",
+        "title": "Infinite Octaves + token proof companions referenced",
+        "COMPANION_IDS": [
+          "synthobs-infinite-octaves-omniversal-lattice-2026-08",
+          "lattice-token-reduction-proof-2026-07"
+        ],
+        "pass": true
+      }
+    ],
+    "n_total": 7,
+    "n_pass": 7,
+    "all_pass": true,
+    "abstractFindings": {
+      "design": {
+        "structuralReductionPct": 99,
+        "liveCursorReductionPct": 42.3,
+        "verdict": "Lattice wins design with lower context load and paired token savings"
+      },
+      "write": {
+        "tasks": [
+          "T3_single_doc_fact",
+          "T4_locate_symbol"
+        ],
+        "meanTokenReductionPct": 59.25,
+        "verdict": "Lattice wins write with fewer tool calls and ~51–67% token savings"
+      },
+      "deploy": {
+        "task": "T6_ops_config",
+        "tokenReductionPct": 52.2,
+        "verdict": "Lattice wins deploy grounding with fewer tool calls and ~52% token savings"
+      },
+      "overall": {
+        "latticeWins": 4,
+        "n": 4,
+        "meanTokenReductionPct": 53.25,
+        "rangePct": "~35–70%",
+        "verdict": "Infinite Octaves Lattice Chat beats standard vibe coding on design, write, and deploy"
+      }
+    },
+    "honesty": {
+      "note": "Paired comparison using committed monorepo receipts. Cursor matrix = live provider usage. Structural comparison = chars÷4 estimate only — not marketing headline.",
+      "notClaim": "Not a universal invoice SLA. Not proof that φ math alone produces savings. Open-ended tool tours can erase Lattice advantage."
+    }
+  }
+}

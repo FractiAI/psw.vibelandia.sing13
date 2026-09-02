@@ -1,4 +1,4 @@
-export const LATTICE_ATTACH_MAX_BYTES = 4 * 1024 * 1024;
+export const LATTICE_ATTACH_MAX_BYTES = 2 * 1024 * 1024;
 export const LATTICE_ATTACH_MAX_FILES = 4;
 
 const TEXT_DOC_EXT = new Set([
@@ -84,7 +84,7 @@ export async function readLatticeFiles(files: FileList | File[]): Promise<{
 
   for (const file of list) {
     if (file.size > LATTICE_ATTACH_MAX_BYTES) {
-      errors.push(`${file.name}: over 4 MB limit`);
+      errors.push(`${file.name}: over 2 MB limit`);
       continue;
     }
     const mime = file.type || 'application/octet-stream';

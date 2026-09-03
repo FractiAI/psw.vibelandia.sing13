@@ -39,6 +39,10 @@ describe('Sin City · night program', () => {
     expect(html).toContain('fumando puro (lo fi bolero session)');
     expect(html).toContain(SIN_CITY_PROGRAM_ROUTE);
     expect(html).toContain('/front-desk-program');
+    expect(html).toContain('J.S. Bach');
+    expect(html).toContain('Suno AI');
+    expect(html).toContain('featured instrument');
+    expect(html).not.toContain('Hero Jo');
   });
 
   it('is synced to interfaces and vercel route', () => {

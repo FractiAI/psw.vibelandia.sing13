@@ -51,5 +51,5 @@
 
 Fractal template / catalog grammar. Deterministic math fixtures back architectural claims about multi-octave Lattice Chat vs flat vibe/linear chat.
 
-Does not claim wet-lab results. Does not re-prove historical Interlink / PDVSA / Protocol Sistemas facts — those are narrative analogues only.
+Does not claim wet-lab results. Does not re-prove historical Interlink / PDVSA / Protokol Sistemas facts — those are narrative analogues only.
 

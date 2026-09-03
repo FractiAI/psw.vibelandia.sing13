@@ -13,7 +13,7 @@
 **Live surfaces:** [`/lattice-chat`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat) · [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · [`/ship-blog/sna-tcpip-gateway-omni-lattice`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/sna-tcpip-gateway-omni-lattice) · Reading Room `/papers`  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
-**Keywords:** IBM SNA; TCP/IP gateway; Interlink Computer Sciences; PDVSA; Protocol Sistemas; Caracas fractal template; Omni-Lattice Chat; vibe coding; EGS; Φ_EGS; Fair Exchange; NSPFRNP; SynthOBS; case study
+**Keywords:** IBM SNA; TCP/IP gateway; Interlink Computer Sciences; PDVSA; Protokol Sistemas; Caracas fractal template; Omni-Lattice Chat; vibe coding; EGS; Φ_EGS; Fair Exchange; NSPFRNP; SynthOBS; case study
 
 ---
 
@@ -21,7 +21,7 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Narrative / fractal template** | SNA↔TCP/IP gateway era is a useful **self-similar structural analogue** for enclosed systems meeting open planes; Caracas / PDVSA / Protocol Sistemas appear as a **deployment-culture template** (regional high-context integrators ahead of risk-averse incumbents) | That this paper re-audits Interlink’s commercial history, PDVSA’s IT archive, or Protocol Sistemas’ contracts as primary-source historiography |
+| **Narrative / fractal template** | SNA↔TCP/IP gateway era is a useful **self-similar structural analogue** for enclosed systems meeting open planes; Caracas / PDVSA / Protokol Sistemas appear as a **deployment-culture template** (regional high-context integrators ahead of risk-averse incumbents) | That this paper re-audits Interlink’s commercial history, PDVSA’s IT archive, or Protokol Sistemas’ contracts as primary-source historiography |
 | **Product architecture** | Omni-Lattice Chat uses multi-octave / nested-agent / pointer-first rails vs flat vibe-coding windows | That Lattice magically “understands” industrial physics without grounding data |
 | **EGS / Φ_EGS** | Architectural scale key $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2\approx 1.618$ for routing grammar and Goldilocks filing | A CODATA replacement for $\hbar$, $c$, $G$, or SI Higgs parameters |
 | **Empirics (this suite)** | Deterministic math fixtures: octave routing cost vs flat dumps; coherence under domain switching; clutch $\Delta$; companion structural receipt from Lattice vs fat-dump | Production PDVSA telemetry A/B; “zero-loss forever” SLA; autonomous industrial organism proof |
@@ -36,7 +36,7 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-Enterprise leaps often rhyme. The **IBM SNA ↔ TCP/IP gateway** moment — when deterministic mainframe enclosures had to speak to an open packet plane — is treated here as a **repeating fractal threshold**, not a one-off product footnote. **Interlink Computer Sciences** sits in that story as a market vanguard for the bridge layer. The **Caracas fractal template** (PDVSA as industrial first-wave buyer; elite local integrators such as **Protocol Sistemas**) supplies the deployment culture: high-context engineering ships frontier architectures before global incumbents finish their validation loops.
+Enterprise leaps often rhyme. The **IBM SNA ↔ TCP/IP gateway** moment — when deterministic mainframe enclosures had to speak to an open packet plane — is treated here as a **repeating fractal threshold**, not a one-off product footnote. **Interlink Computer Sciences** sits in that story as a market vanguard for the bridge layer. The **Caracas fractal template** (PDVSA as industrial first-wave buyer; elite local integrators such as **Protokol Sistemas**) supplies the deployment culture: high-context engineering ships frontier architectures before global incumbents finish their validation loops.
 
 Today’s rhyme is **flat vibe-coding / linear chat windows** meeting **sprawling multi-domain enterprise + agentic webs**. **Infinite Octaves Omniversal Lattice Chat** (Omni-Lattice Chat) is the proposed gateway layer: multi-octave intent routing under El Gran Sol’s Fractal Constant ($\Phi_{\mathrm{EGS}}$), nested agents, pointer-first RAG, and Fair Exchange honesty.
 
@@ -58,7 +58,7 @@ When Interlink-class **IBM SNA TCP/IP gateways** connected IBM’s heavily struc
 
 ### 1.2 Caracas fractal template
 
-North American enterprises often wait for late validation. Latin American industrial pioneers have repeatedly absorbed first-wave architectures under real operational pressure. In that template, **PDVSA** appears as a global vanguard buyer; **Protocol Sistemas**-class integrators supply elite local solutions mastery. Whether or not any single contract is cited here, the **template** is clear: **regional high-context integrators + industrial urgency → frontier stack ships early**.
+North American enterprises often wait for late validation. Latin American industrial pioneers have repeatedly absorbed first-wave architectures under real operational pressure. In that template, **PDVSA** appears as a global vanguard buyer; **Protokol Sistemas**-class integrators supply elite local solutions mastery. Whether or not any single contract is cited here, the **template** is clear: **regional high-context integrators + industrial urgency → frontier stack ships early**.
 
 That is the fractal PDVSA/Protocol pattern we invite executives to reuse for Omni-Lattice Chat rollouts: local integrator gravity, not only distant platform marketing.
 

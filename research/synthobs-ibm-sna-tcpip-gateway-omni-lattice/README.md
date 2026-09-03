@@ -10,7 +10,7 @@
 
 Deterministic math + empirics that **back architectural claims** about multi-octave Lattice Chat vs flat vibe/linear chat, using the **IBM SNA ↔ TCP/IP gateway** moment as a **repeating fractal template** (Core ↔ Amphitheater ↔ Horizon).
 
-Interlink / PDVSA / Protocol Sistemas appear only as **narrative historical analogues** — not measured in this suite.
+Interlink / PDVSA / Protokol Sistemas appear only as **narrative historical analogues** — not measured in this suite.
 
 ## Run
 

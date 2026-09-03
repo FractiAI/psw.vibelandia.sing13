@@ -1,6 +1,6 @@
 /**
  * IBM SNA TCP-IP Gateway · Omni-Lattice case study — constants.
- * Fractal template empirics; Interlink/PDVSA/Protocol Sistemas are narrative analogues only.
+ * Fractal template empirics; Interlink/PDVSA/Protokol Sistemas are narrative analogues only.
  */
 
 export const PHI_EGS = (1 + Math.sqrt(5)) / 2;
@@ -26,7 +26,7 @@ export const HONESTY = {
   note:
     'Fractal template / catalog grammar. Deterministic math fixtures back architectural claims about multi-octave Lattice Chat vs flat vibe/linear chat.',
   notClaim:
-    'Does not claim wet-lab results. Does not re-prove historical Interlink / PDVSA / Protocol Sistemas facts — those are narrative analogues only.',
+    'Does not claim wet-lab results. Does not re-prove historical Interlink / PDVSA / Protokol Sistemas facts — those are narrative analogues only.',
 };
 
 /**

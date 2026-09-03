@@ -177,7 +177,10 @@ describe('Frontiersman voyage guest surfaces', () => {
     const deckImages = new Set();
     for (const deck of VOYAGE_DECKS) {
       const html = read(`interfaces/voyage/${deck.slug}.html`);
-      expect(html).toContain(`src="${deck.image}"`);
+      // Experience-upgraded decks (Sin City) use full-bleed ep-hero background-image.
+      expect(
+        html.includes(`src="${deck.image}"`) || html.includes(`background-image:url('${deck.image}')`),
+      ).toBe(true);
       expect(deck.image).toMatch(/^\/interfaces\/assets\/voyage\/deck-.+\.png$/);
       deckImages.add(deck.image);
       expect(existsSync(new URL(`../../${deck.image.replace(/^\//, '')}`, import.meta.url))).toBe(true);

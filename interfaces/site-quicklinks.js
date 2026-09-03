@@ -135,6 +135,8 @@
     window.addEventListener('storage', function (e) {
       if (e.key === 'letschat.unread.v1') updateLcBadge();
     });
+    // Periodic refresh to catch counts written by other tabs/windows
+    window.setInterval(updateLcBadge, 10000);
   }
 
   // --- Lattice Chat Collaborate unread badge ---
@@ -185,6 +187,8 @@
     window.addEventListener('storage', function (e) {
       if (e.key === 'lattice-collab.unread.v1') updateCollabBadge();
     });
+    // Periodic refresh to catch counts written by other tabs/windows
+    window.setInterval(function () { updateCollabBadge(); }, 10000);
   }
 
   // --- End Lattice Chat Collaborate unread badge ---

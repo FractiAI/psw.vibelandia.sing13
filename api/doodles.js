@@ -8,6 +8,7 @@
  *   - { action: 'registerBatch', works: [...] } after multi-file client upload
  *   - { action: 'reorder', order: [id, ...] } reorder gallery wall
  *   - { action: 'delete', id } remove one doodle from the wall
+ *   - { action: 'assignShells', assignments: [{ id, shell }] } file into nested shells
  *   - { action: 'limits' } → Player 1 ceiling receipt
  *   - small inline image ≤4.5 MB (fallback)
  */
@@ -71,6 +72,10 @@ function buildDoodleWorkFromBody(body, gallery) {
   if (!id) return null;
 
   const filename = String(body.filename || 'doodle.jpg');
+  const shell =
+    gallery.normalizeDoodleShell?.(body.shell) ||
+    gallery.resolveDoodleShell?.({ filename, title: body.title }) ||
+    undefined;
   return normalizeDoodleWork({
     id,
     title: String(body.title || '').trim() || titleFromFilename(filename),
@@ -80,6 +85,7 @@ function buildDoodleWorkFromBody(body, gallery) {
     filename,
     uploadedAt: new Date().toISOString(),
     mature: true,
+    shell,
   });
 }
 
@@ -101,8 +107,9 @@ async function registerWork(res, body, gallery) {
   try {
     const { manifest, works } = await persistWorksToManifest(gallery, [work]);
     return res.status(200).json({
-      work: works[0],
-      manifest,
+      work: gallery.applyDoodleShells({ works: works }).works[0],
+      manifest: gallery.applyDoodleShells(manifest),
+      shells: gallery.DOODLE_SHELLS,
       limits: gallery.player1UploadLimits(),
     });
   } catch (e) {
@@ -147,7 +154,10 @@ async function reorderWorks(res, body, gallery) {
       (current) => reorderDoodleWorks(current, order),
       manifestOrderVerify,
     );
-    return res.status(200).json({ manifest, limits: gallery.player1UploadLimits() });
+    return res.status(200).json({
+      manifest: gallery.applyDoodleShells(manifest),
+      limits: gallery.player1UploadLimits(),
+    });
   } catch (e) {
     console.error('[doodles] reorder', e);
     const code = e?.message === 'manifest_conflict' ? 'manifest_conflict' : 'manifest_save_failed';
@@ -175,13 +185,52 @@ async function deleteWork(res, body, gallery) {
         loaded.works.length === expected.works.length &&
         !loaded.works.some((w) => w.id === id),
     );
-    return res.status(200).json({ id, manifest, limits: gallery.player1UploadLimits() });
+    return res.status(200).json({
+      id,
+      manifest: gallery.applyDoodleShells(manifest),
+      limits: gallery.player1UploadLimits(),
+    });
   } catch (e) {
     console.error('[doodles] delete', e);
     const code = e?.message === 'manifest_conflict' ? 'manifest_conflict' : 'manifest_save_failed';
     return res.status(500).json({
       error: code,
       message: 'Could not remove that doodle from the wall. Try again.',
+    });
+  }
+}
+
+async function assignShells(res, body, gallery) {
+  const assignments = Array.isArray(body?.assignments) ? body.assignments : [];
+  if (!assignments.length) {
+    return res.status(400).json({
+      error: 'invalid_assignments',
+      message: 'assignments array required: [{ id, shell }]',
+    });
+  }
+
+  const { assignDoodleShells } = gallery;
+  try {
+    const manifest = await persistManifestMutation(
+      gallery,
+      (current) => assignDoodleShells(current, assignments),
+      (loaded, expected) => {
+        const a = (loaded?.works || []).map((w) => `${w.id}:${w.shell || ''}`).join('\0');
+        const b = (expected?.works || []).map((w) => `${w.id}:${w.shell || ''}`).join('\0');
+        return a === b;
+      },
+    );
+    return res.status(200).json({
+      manifest: gallery.applyDoodleShells(manifest),
+      shells: gallery.DOODLE_SHELLS,
+      limits: gallery.player1UploadLimits(),
+    });
+  } catch (e) {
+    console.error('[doodles] assignShells', e);
+    const code = e?.message === 'manifest_conflict' ? 'manifest_conflict' : 'manifest_save_failed';
+    return res.status(500).json({
+      error: code,
+      message: 'Could not save shell filing. Try again.',
     });
   }
 }
@@ -206,9 +255,10 @@ async function registerBatch(res, body, gallery) {
   try {
     const saved = await persistWorksToManifest(gallery, works);
     return res.status(200).json({
-      works: saved.works,
+      works: gallery.applyDoodleShells({ works: saved.works }).works,
       count: saved.works.length,
-      manifest: saved.manifest,
+      manifest: gallery.applyDoodleShells(saved.manifest),
+      shells: gallery.DOODLE_SHELLS,
       limits: gallery.player1UploadLimits(),
     });
   } catch (e) {
@@ -349,10 +399,12 @@ module.exports = async function handler(req, res) {
   }
 
   if (req.method === 'GET') {
-    const manifest = await loadManifestFromBlob(gallery);
+    const raw = await loadManifestFromBlob(gallery);
+    const manifest = gallery.applyDoodleShells(raw);
     return res.status(200).json({
       ok: true,
       meta: gallery.DOODLES_GALLERY_META,
+      shells: gallery.DOODLE_SHELLS,
       guestLimits: gallery.guestUploadLimits(),
       /** Public hint only — Player 1 ceilings on POST action:limits */
       player1Hint: {
@@ -402,6 +454,10 @@ module.exports = async function handler(req, res) {
 
   if (jsonBody?.action === 'delete') {
     return deleteWork(res, jsonBody, gallery);
+  }
+
+  if (jsonBody?.action === 'assignShells') {
+    return assignShells(res, jsonBody, gallery);
   }
 
   if (jsonBody && typeof jsonBody.type === 'string' && jsonBody.type.startsWith('blob.')) {

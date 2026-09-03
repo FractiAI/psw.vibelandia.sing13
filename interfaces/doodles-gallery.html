@@ -110,6 +110,75 @@
       border: 1px solid rgba(212, 175, 55, 0.22);
       box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.4);
     }
+    .shell-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0 0 1.25rem;
+    }
+    .shell-nav__link {
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--line);
+      color: #e8d5a3;
+      background: rgba(212, 175, 55, 0.06);
+    }
+    .shell-nav__link:hover {
+      border-color: rgba(212, 175, 55, 0.55);
+      color: #f0d78c;
+    }
+    .shell-wall {
+      margin-top: 1.75rem;
+    }
+    .shell-wall__head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.45rem 0.85rem;
+      margin: 0 0 0.85rem;
+    }
+    .shell-wall__head h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: #f0d78c;
+      margin: 0;
+      font-size: clamp(1.45rem, 4vw, 1.9rem);
+    }
+    .shell-wall__count {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #e8d5a3;
+      border: 1px solid var(--line);
+      padding: 0.2rem 0.5rem;
+    }
+    .shell-wall__lede {
+      margin: 0 0 1rem;
+      max-width: 40rem;
+      color: var(--soft);
+      line-height: 1.5;
+      font-size: 0.98rem;
+    }
+    .shell-wall__lede a { font-weight: 700; }
+    .museum-wall__shell {
+      appearance: none;
+      position: absolute;
+      left: 0.35rem;
+      bottom: 0.35rem;
+      z-index: 3;
+      max-width: calc(100% - 0.7rem);
+      font: inherit;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.28rem 0.4rem;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(12, 10, 8, 0.92);
+      color: #f0d78c;
+      cursor: pointer;
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
@@ -324,15 +393,21 @@
     <h1>Valet Pru's Doodles</h1>
     <p class="lead">
       Hung on the gallery wall in gold museum frames for guests who like them.
+      Filed into the same <strong>three nested shells</strong> as the Omniversal Canvas —
+      Dome&nbsp;1 Core, Dome&nbsp;2 Amphitheater, Dome&nbsp;3 Horizon.
       Human hand first, machine as studio light.
     </p>
+
+    <nav class="shell-nav" id="shell-nav" aria-label="Nested shell walls">
+      <a class="shell-nav__link" href="#shell-core">Dome 1 · Core</a>
+      <a class="shell-nav__link" href="#shell-amphitheater">Dome 2 · Amphitheater</a>
+      <a class="shell-nav__link" href="#shell-horizon">Dome 3 · Horizon</a>
+    </nav>
 
     <div id="gallery-empty" class="empty hidden">
       The wall is ready. Post the first works from the Player 1 desk below.
     </div>
-    <section class="museum-wall" id="museum-wall" aria-label="Doodles on the gallery wall">
-      <div class="grid" id="gallery-grid" aria-live="polite"></div>
-    </section>
+    <div id="shell-walls" aria-live="polite"></div>
 
     <section class="desk" id="player1-desk" aria-labelledby="desk-h">
       <h2 id="desk-h">Player 1 · upload desk</h2>
@@ -350,6 +425,12 @@
         <input type="file" id="doodle-files" accept="image/jpeg,image/png,image/webp,image/gif,image/heic,image/heif,.jpg,.jpeg,.png,.webp,.gif,.heic,.heif" multiple />
         <label for="batch-caption">Optional shared caption</label>
         <input type="text" id="batch-caption" maxlength="500" placeholder="e.g. Night doodles" />
+        <label for="batch-shell">File into nested shell</label>
+        <select id="batch-shell" style="width:100%;max-width:22rem;padding:0.55rem 0.7rem;border:1px solid var(--line);background:#0a0e18;color:var(--ink);font:inherit">
+          <option value="amphitheater">Dome 2 · Amphitheater (default)</option>
+          <option value="core">Dome 1 · Core</option>
+          <option value="horizon">Dome 3 · Horizon</option>
+        </select>
         <div class="btn-row" style="margin-top:0.85rem">
           <button type="button" class="btn" id="upload-btn">Post to gallery</button>
         </div>
@@ -359,7 +440,7 @@
 
       <div class="edit-desk" id="edit-desk">
         <h3 id="edit-h">Player 1 · arrange wall</h3>
-        <p>Drag frames to reorder the wall. Tap the trash icon to remove a doodle. Changes save as you go.</p>
+        <p>Drag frames to reorder within a shell. Use the shell menu on each frame to move a doodle between Dome&nbsp;1, Dome&nbsp;2, and Dome&nbsp;3. Trash removes it from the wall.</p>
         <div class="btn-row">
           <button type="button" class="btn btn--ghost" id="edit-toggle" aria-pressed="false">
             Edit wall
@@ -371,6 +452,7 @@
 
     <p class="honesty">
       <strong>Honesty:</strong> 18+ is an honor gate stored on this device (localStorage). Spirit of visit, not ID verification.
+      Nested shells match the Omniversal Canvas exhibit (Core · Amphitheater · Horizon) — catalog filing, not an art-market claim.
       Uploads use Vercel Blob on the server. Fair Exchange inquiries: <a href="mailto:info@fractiai.com">info@fractiai.com</a>.
       Mature themes welcome; malice is not. Human emergency outranks every metaphor.
     </p>
@@ -391,16 +473,40 @@
     const DEFAULT_MAX_BYTES = 500 * 1024 * 1024;
     const DEFAULT_MAX_BATCH = 500;
     const DEFAULT_CONCURRENT = 4;
+    const SHELL_FALLBACK = [
+      {
+        id: 'core',
+        label: 'Dome 1 · Core',
+        title: 'Holographic Convergence Core',
+        href: '/core',
+        lede: 'Inner worlds on the wall — imagination filed as holographic reality.',
+      },
+      {
+        id: 'amphitheater',
+        label: 'Dome 2 · Amphitheater',
+        title: 'Goldilocks Amphitheater',
+        href: '/amphitheater',
+        lede: 'The set and daily life now — cast, tables, animals, and rooms you walk through today.',
+      },
+      {
+        id: 'horizon',
+        label: 'Dome 3 · Horizon',
+        title: 'Omni-Horizon',
+        href: '/horizon',
+        lede: 'Studio, canvas, and materials — desks, diagrams, and awareness maps.',
+      },
+    ];
 
     const gate = document.getElementById('age-gate');
     const root = document.getElementById('gallery-root');
-    const grid = document.getElementById('gallery-grid');
+    const shellWalls = document.getElementById('shell-walls');
     const emptyEl = document.getElementById('gallery-empty');
     const uploadStatus = document.getElementById('upload-status');
     const progressBar = document.getElementById('progress-bar');
     const limitsCopy = document.getElementById('limits-copy');
     const fileInput = document.getElementById('doodle-files');
     const captionInput = document.getElementById('batch-caption');
+    const shellInput = document.getElementById('batch-shell');
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
     const editToggle = document.getElementById('edit-toggle');
@@ -412,6 +518,7 @@
       maxConcurrent: DEFAULT_CONCURRENT,
     };
     let galleryWorks = [];
+    let shellMeta = SHELL_FALLBACK.slice();
     let editMode = false;
     let saveOrderTimer = null;
     let dragSourceId = null;
@@ -429,6 +536,19 @@
       loadGallery();
       refreshLimits();
     }
+
+    document.getElementById('shell-nav')?.addEventListener('click', (e) => {
+      const link = e.target.closest('a.shell-nav__link');
+      if (!link) return;
+      const href = link.getAttribute('href') || '';
+      if (!href.startsWith('#shell-')) return;
+      e.preventDefault();
+      const target = document.getElementById(href.slice(1));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', href);
+      }
+    });
 
     function denyGallery() {
       window.location.href = '/';
@@ -495,8 +615,31 @@
       }, 350);
     }
 
+    function shellOf(work) {
+      const id = String(work?.shell || 'amphitheater');
+      return ['core', 'amphitheater', 'horizon'].includes(id) ? id : 'amphitheater';
+    }
+
+    function groupWorks(works) {
+      const buckets = { core: [], amphitheater: [], horizon: [] };
+      for (const w of works || []) {
+        buckets[shellOf(w)].push(w);
+      }
+      return shellMeta.map((meta) => ({
+        ...meta,
+        works: buckets[meta.id] || [],
+      }));
+    }
+
     function reorderLocal(fromId, toId) {
       if (!fromId || !toId || fromId === toId) return;
+      const from = galleryWorks.find((w) => w.id === fromId);
+      const to = galleryWorks.find((w) => w.id === toId);
+      if (!from || !to) return;
+      if (shellOf(from) !== shellOf(to)) {
+        setEditStatus('Drag within the same dome — use the shell menu to move between domes.', false, true);
+        return;
+      }
       const fromIdx = galleryWorks.findIndex((w) => w.id === fromId);
       const toIdx = galleryWorks.findIndex((w) => w.id === toId);
       if (fromIdx < 0 || toIdx < 0) return;
@@ -509,7 +652,7 @@
     }
 
     function clearDropTargets() {
-      grid.querySelectorAll('.museum-wall__piece--drop-target').forEach((el) => {
+      shellWalls.querySelectorAll('.museum-wall__piece--drop-target').forEach((el) => {
         el.classList.remove('museum-wall__piece--drop-target');
       });
     }
@@ -518,6 +661,10 @@
       piece.draggable = true;
 
       piece.addEventListener('dragstart', (e) => {
+        if (e.target.closest('.museum-wall__shell') || e.target.closest('.museum-wall__delete')) {
+          e.preventDefault();
+          return;
+        }
         dragSourceId = id;
         e.dataTransfer.effectAllowed = 'move';
         e.dataTransfer.setData('text/plain', id);
@@ -551,7 +698,7 @@
       });
 
       piece.addEventListener('pointerdown', (e) => {
-        if (e.target.closest('.museum-wall__delete')) return;
+        if (e.target.closest('.museum-wall__delete') || e.target.closest('.museum-wall__shell')) return;
         pointerDragId = id;
         piece.setPointerCapture(e.pointerId);
         piece.classList.add('museum-wall__piece--dragging');
@@ -602,67 +749,151 @@
       }
     }
 
+    async function moveWorkShell(id, shell) {
+      const prev = galleryWorks.slice();
+      galleryWorks = galleryWorks.map((w) => (w.id === id ? { ...w, shell } : w));
+      renderWorks(galleryWorks);
+      setEditStatus('Filing into nested shell…');
+      try {
+        const data = await postManifestAction('assignShells', {
+          assignments: [{ id, shell }],
+        });
+        galleryWorks = data?.manifest?.works || galleryWorks;
+        if (Array.isArray(data?.shells) && data.shells.length) shellMeta = data.shells;
+        renderWorks(galleryWorks);
+        setEditStatus('Shell filing saved.', true);
+      } catch (e) {
+        galleryWorks = prev;
+        renderWorks(galleryWorks);
+        setEditStatus(e.message || 'Could not move doodle between shells.', false, true);
+      }
+    }
+
+    function makePiece(w) {
+      const piece = document.createElement('article');
+      piece.className = 'museum-wall__piece' + (editMode ? ' museum-wall__piece--editing' : '');
+      piece.dataset.id = w.id;
+      piece.dataset.shell = shellOf(w);
+
+      const frame = document.createElement('div');
+      frame.className = 'museum-frame museum-frame--wall';
+      frame.style.position = 'relative';
+
+      if (editMode) {
+        const del = document.createElement('button');
+        del.type = 'button';
+        del.className = 'museum-wall__delete';
+        del.setAttribute('aria-label', 'Remove doodle');
+        del.innerHTML = TRASH_ICON;
+        del.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (window.confirm('Remove this doodle from the gallery wall?')) {
+            removeWork(w.id);
+          }
+        });
+        frame.append(del);
+
+        const shellSelect = document.createElement('select');
+        shellSelect.className = 'museum-wall__shell';
+        shellSelect.setAttribute('aria-label', 'Nested shell');
+        for (const s of shellMeta) {
+          const opt = document.createElement('option');
+          opt.value = s.id;
+          opt.textContent = s.label;
+          if (s.id === shellOf(w)) opt.selected = true;
+          shellSelect.append(opt);
+        }
+        shellSelect.addEventListener('click', (e) => e.stopPropagation());
+        shellSelect.addEventListener('change', (e) => {
+          e.stopPropagation();
+          moveWorkShell(w.id, shellSelect.value);
+        });
+        frame.append(shellSelect);
+      }
+
+      const figure = document.createElement('figure');
+      figure.className = 'museum-frame__art';
+      const img = document.createElement('img');
+      img.src = w.src;
+      img.alt = 'Valet Pru doodle';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.draggable = false;
+      if (!editMode) {
+        img.addEventListener('click', () => {
+          lbImg.src = w.src;
+          lb.classList.remove('hidden');
+        });
+      }
+      figure.append(img);
+      frame.append(figure);
+      piece.append(frame);
+
+      const caption = guestCaption(w);
+      if (caption) {
+        const cap = document.createElement('p');
+        cap.className = 'museum-wall__caption';
+        cap.textContent = caption;
+        piece.append(cap);
+      }
+
+      if (editMode) bindDragReorder(piece, w.id);
+      return piece;
+    }
+
     function renderWorks(works) {
       galleryWorks = Array.isArray(works) ? works : [];
-      grid.innerHTML = '';
+      shellWalls.innerHTML = '';
       if (!galleryWorks.length) {
         emptyEl.classList.remove('hidden');
         return;
       }
       emptyEl.classList.add('hidden');
-      galleryWorks.forEach((w) => {
-        const piece = document.createElement('article');
-        piece.className = 'museum-wall__piece' + (editMode ? ' museum-wall__piece--editing' : '');
-        piece.dataset.id = w.id;
 
-        const frame = document.createElement('div');
-        frame.className = 'museum-frame museum-frame--wall';
+      const groups = groupWorks(galleryWorks);
+      for (const group of groups) {
+        const section = document.createElement('section');
+        section.className = 'shell-wall';
+        section.id = `shell-${group.id}`;
+        section.setAttribute('aria-labelledby', `shell-h-${group.id}`);
 
-        if (editMode) {
-          const del = document.createElement('button');
-          del.type = 'button';
-          del.className = 'museum-wall__delete';
-          del.setAttribute('aria-label', 'Remove doodle');
-          del.innerHTML = TRASH_ICON;
-          del.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (window.confirm('Remove this doodle from the gallery wall?')) {
-              removeWork(w.id);
-            }
-          });
-          frame.append(del);
+        const head = document.createElement('div');
+        head.className = 'shell-wall__head';
+        const h2 = document.createElement('h2');
+        h2.id = `shell-h-${group.id}`;
+        h2.textContent = group.label;
+        const count = document.createElement('span');
+        count.className = 'shell-wall__count';
+        count.textContent = `${group.works.length} work${group.works.length === 1 ? '' : 's'}`;
+        head.append(h2, count);
+
+        const lede = document.createElement('p');
+        lede.className = 'shell-wall__lede';
+        lede.innerHTML = `${group.lede || ''} <a href="${group.href}">Open the room →</a>`;
+
+        const wall = document.createElement('div');
+        wall.className = 'museum-wall';
+        wall.setAttribute('aria-label', `${group.label} doodles`);
+        const grid = document.createElement('div');
+        grid.className = 'grid';
+        grid.dataset.shell = group.id;
+
+        if (!group.works.length) {
+          const empty = document.createElement('p');
+          empty.className = 'empty';
+          empty.style.margin = '0';
+          empty.textContent = 'No doodles filed in this shell yet.';
+          wall.append(empty);
+        } else {
+          for (const w of group.works) {
+            grid.append(makePiece(w));
+          }
+          wall.append(grid);
         }
 
-        const figure = document.createElement('figure');
-        figure.className = 'museum-frame__art';
-        const img = document.createElement('img');
-        img.src = w.src;
-        img.alt = 'Valet Pru doodle';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.draggable = false;
-        if (!editMode) {
-          img.addEventListener('click', () => {
-            lbImg.src = w.src;
-            lb.classList.remove('hidden');
-          });
-        }
-        figure.append(img);
-        frame.append(figure);
-        piece.append(frame);
-
-        const caption = guestCaption(w);
-        if (caption) {
-          const cap = document.createElement('p');
-          cap.className = 'museum-wall__caption';
-          cap.textContent = caption;
-          piece.append(cap);
-        }
-
-        if (editMode) bindDragReorder(piece, w.id);
-
-        grid.append(piece);
-      });
+        section.append(head, lede, wall);
+        shellWalls.append(section);
+      }
     }
 
     editToggle.addEventListener('click', () => {
@@ -671,7 +902,7 @@
       editToggle.textContent = editMode ? 'Done editing' : 'Edit wall';
       setEditStatus(
         editMode
-          ? 'Press and drag a frame to reorder. Trash icon removes a doodle from the wall.'
+          ? 'Drag within a dome to reorder. Shell menu moves between Core · Amphitheater · Horizon. Trash removes.'
           : '',
       );
       renderWorks(galleryWorks);
@@ -681,6 +912,7 @@
       try {
         const res = await fetch(`${API}?v=${Date.now()}`, { cache: 'no-store' });
         const data = await res.json();
+        if (Array.isArray(data?.shells) && data.shells.length) shellMeta = data.shells;
         renderWorks(data?.manifest?.works || []);
         if (data?.player1Hint) {
           limitsCopy.innerHTML =
@@ -745,7 +977,7 @@
       };
     }
 
-    async function registerBatch(uploaded, caption) {
+    async function registerBatch(uploaded, caption, shell) {
       const reg = await fetch(API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -758,6 +990,7 @@
             title: u.title,
             caption: caption || undefined,
             contentType: u.contentType,
+            shell: shell || undefined,
           })),
         }),
       });
@@ -811,6 +1044,7 @@
       }
 
       const caption = String(captionInput.value || '').trim();
+      const shell = String(shellInput?.value || 'amphitheater');
       let uploaded = 0;
       const total = files.length;
       progressBar.style.width = '0%';
@@ -827,7 +1061,7 @@
 
         uploadStatus.textContent = `Registering ${total} doodle(s) on the gallery wall…`;
         progressBar.style.width = '75%';
-        await registerBatch(blobs, caption);
+        await registerBatch(blobs, caption, shell);
 
         progressBar.style.width = '100%';
         uploadStatus.className = 'status status--ok';

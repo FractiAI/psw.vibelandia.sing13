@@ -58,11 +58,7 @@ export function CollabDmNotifier({
     } catch (_) {}
   }, [unread]);
 
-  useEffect(() => {
-    if (!dmToast) return;
-    const id = window.setTimeout(() => clearDmToast(), 6500);
-    return () => window.clearTimeout(id);
-  }, [dmToast, clearDmToast]);
+  // Toast stays until clicked or dismissed — dismissing does NOT mark read.
 
   if (!dmToast) return null;
 
@@ -80,6 +76,7 @@ export function CollabDmNotifier({
         <span className="dm-toast__pill">Direct message</span>
         <strong className="dm-toast__from">{dmToast.peerName}</strong>
         <span className="dm-toast__body">{dmToast.body || 'New message'}</span>
+        <span className="dm-toast__cta">Open in Collaborate chat</span>
       </button>
       <button type="button" className="dm-toast__dismiss" aria-label="Dismiss" onClick={() => clearDmToast()}>
         ×

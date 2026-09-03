@@ -8,6 +8,8 @@ import {
   resolveClientCollabPeerId,
 } from '@/feed/seatIdentity';
 import { COLLAB_SHARED_AGENT_THREAD_ID } from '@/feed/collabSharedThread';
+import { agentSeatMessageToDmEnvelope } from '@/feed/sessionBridge';
+import { useUnifiedFeed } from '@/feed/store';
 import type { AgentMode, ChatMessage, TranscriptItem } from '@/types';
 
 export { COLLAB_SHARED_AGENT_THREAD_ID } from '@/feed/collabSharedThread';
@@ -161,7 +163,26 @@ export async function syncCollaborateAgent(): Promise<{ ingested: number; total:
         .threads.find((t) => t.id === COLLAB_SHARED_AGENT_THREAD_ID)
         ?.messages.find((m) => m.id === msg.id);
       useLatticeStore.getState().upsertMessage(COLLAB_SHARED_AGENT_THREAD_ID, msg);
-      if (!before) ingested += 1;
+      if (!before) {
+        ingested += 1;
+        // Seat messages also land in Collaborate DM unread until that peer thread is viewed.
+        if (
+          msg.role === 'user' &&
+          msg.senderPeerId &&
+          msg.senderPeerId !== myPeerId &&
+          String(msg.content || '').trim()
+        ) {
+          useUnifiedFeed.getState().ingestPayload(
+            agentSeatMessageToDmEnvelope({
+              id: msg.id,
+              content: msg.content,
+              createdAt: msg.createdAt,
+              senderPeerId: msg.senderPeerId,
+              senderName: msg.senderName,
+            }),
+          );
+        }
+      }
     }
 
     const s = useLatticeStore.getState();

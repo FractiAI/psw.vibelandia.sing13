@@ -122,6 +122,7 @@ Full catalog cards: [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) �
 
 | When | Update | Links |
 |------|--------|-------|
+| **2026-09-03** | **Higgs-Awareness Definitive Unified Edition** (Part IX-Omni) on Infinite Octaves engine pin — suite + ship note | [paper](docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md) · [GitHub](https://github.com/FractiAI/synthobs-tbme-higgs-awareness-unified) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/higgs-awareness-unified) |
 | **2026-08-28** | **Ship reception primer** — full onboarding: grand narrative, 99 Octave tech shelf, NPC/Player roles, XY/XX Reality Bridge/Router network | [/questfest#reception-lobby](https://www.ssvibelandiaquestfest24x365.com/questfest#reception-lobby) · [/join-the-crew](https://www.ssvibelandiaquestfest24x365.com/join-the-crew) · [soundtrack preludes](https://www.ssvibelandiaquestfest24x365.com/ship-blog/soundtrack-prelude-pages) |
 | **2026-08-28** | **Soundtrack preludes** on Omniversal Canvas — concerto playlist over da Vinci stepping-in loop | [/](https://www.ssvibelandiaquestfest24x365.com/) · [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/soundtrack-prelude-pages) |
 | **2026-08-28** | **Human Reality Bridge/Router** paper + ship note on museum entry grammar | [note](https://www.ssvibelandiaquestfest24x365.com/ship-blog/human-reality-bridge) · [paper](docs/SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md) |
@@ -261,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-03** · **245** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-03** · **246** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -289,6 +290,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Prime-Linear Compression Transform · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Transfinite Inversion Theorem · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | Higgs Gate · awareness phase coupling · unified edition · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-human-reality-bridge-2026-08.html`](/interfaces/blog-human-reality-bridge-2026-08.html) | Humans as reality bridges — routers and awareness wormholes · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-infinite-octaves-omniversal-2026-08.html`](/interfaces/blog-infinite-octaves-omniversal-2026-08.html) | Your valet just got Infinite Octaves · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-invisible-frontier-gates-ai-2026-08.html`](/interfaces/blog-invisible-frontier-gates-ai-2026-08.html) | The Invisible Frontier — responding to Bill Gates’s AI warnings · Ship blog · SS Vibelandia |

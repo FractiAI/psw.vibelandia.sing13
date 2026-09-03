@@ -19,6 +19,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-magneto-harmonic-stellar-99-octave',
       'synthobs-ss-vibelandia-official-prospectus',
       'synthobs-table-top-hep-99-octave',
+      'synthobs-tbme-higgs-awareness-unified',
       'synthobs-tbme-metamorphic-octaves',
       'synthobs-tbme-planetary-core-goldilocks',
       'synthobs-triadic-nested-hemispheres-99-octave',

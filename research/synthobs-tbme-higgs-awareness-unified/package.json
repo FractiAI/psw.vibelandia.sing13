@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-tbme-higgs-awareness-unified",
+  "private": true,
+  "type": "module",
+  "version": "2026.09.02",
+  "description": "Higgs-Awareness Phase Coupling Theorem — Definitive Unified Edition (Part IX-Omni) catalog suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-tbme-higgs-awareness-unified.git"
+  }
+}

@@ -1,8 +1,16 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-09-02",
+  "updatedAt": "2026-09-03",
   "suites": [
+    {
+      "id": "synthobs-tbme-higgs-awareness-unified",
+      "path": "research/synthobs-tbme-higgs-awareness-unified",
+      "github": "https://github.com/FractiAI/synthobs-tbme-higgs-awareness-unified",
+      "description": "Higgs-Awareness Phase Coupling Theorem — Definitive Unified Edition (Part IX-Omni)",
+      "paperIds": ["synthobs-tbme-higgs-awareness-unified-2026-09"],
+      "extraDocs": []
+    },
     {
       "id": "synthobs-y-chromosome-holographic-manifestation",
       "path": "research/synthobs-y-chromosome-holographic-manifestation",

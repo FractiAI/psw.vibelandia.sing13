@@ -60,6 +60,14 @@
       "extraDocs": []
     },
     {
+      "id": "synthobs-ibm-sna-tcpip-gateway-omni-lattice",
+      "path": "research/synthobs-ibm-sna-tcpip-gateway-omni-lattice",
+      "github": "https://github.com/FractiAI/synthobs-ibm-sna-tcpip-gateway-omni-lattice",
+      "description": "IBM SNA TCP-IP gateway fractal case study — Omni-Lattice Chat deployment template + empirics",
+      "paperIds": ["synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09"],
+      "extraDocs": []
+    },
+    {
       "id": "synthobs-ss-vibelandia-official-prospectus",
       "path": "research/synthobs-ss-vibelandia-official-prospectus",
       "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",

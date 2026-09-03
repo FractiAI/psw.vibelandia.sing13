@@ -3,7 +3,7 @@
 **Document ID:** `WP-SYNTHOBS-IBM-SNA-TCPIP-GATEWAY-OMNI-LATTICE-2026-09-03`
 **Registry ID:** `synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09`
 **Agent:** SynthOBS Autonomous Agent · Syntheverse Sandbox
-**Generated:** 2026-09-03T20:50:38.523Z
+**Generated:** 2026-09-03T20:53:21.413Z
 **Host:** 4 CPU · linux-x64 · Node v22.14.0
 **GitHub:** https://github.com/FractiAI/synthobs-ibm-sna-tcpip-gateway-omni-lattice
 **Ship blog:** /ship-blog/sna-tcpip-gateway-omni-lattice

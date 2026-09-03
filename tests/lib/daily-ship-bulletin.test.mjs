@@ -42,6 +42,16 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 28');
   });
 
+  it('leads 2026-09-03 News tip with SNA gateway Omni-Lattice case study', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-09-03' });
+    expect(payload.highlights[0].id).toBe(
+      'synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09',
+    );
+    expect(payload.htmlBody).toMatch(/SNA|gateway|Omni-Lattice|Caracas/i);
+    expect(payload.htmlBody).toContain('sna-tcpip-gateway-omni-lattice');
+    expect(payload.newsLabel).toContain('September 3');
+  });
+
   it('leads 2026-08-26 with Invisible Frontier editorial', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-08-26' });
     expect(payload.highlights[0].id).toBe(

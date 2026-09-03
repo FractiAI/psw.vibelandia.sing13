@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Thursday board · September 3 · Puerto Reno",
   "newsLabel": "News of the day · Thursday, September 3",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/higgs-awareness-unified\">When the universe slows, mass and “Now” share a gate</a>. Also new on the board: <a href=\"/ship-blog/lattice-vs-vibe-coding\">Does Lattice design and write better code? Yes — on committed receipts</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Enclosed stacks still need a gateway to the open plane. Today’s tip is the IBM SNA ↔ TCP/IP case study: Interlink-class bridges as a fractal rhyme for Omni-Lattice Chat — Caracas / PDVSA / Protocol Sistemas as deployment culture, Φ ≈ 1.618 as routing grammar, not a history rewrite.<br /><br />If you want a map for that: <a href=\"/ship-blog/sna-tcpip-gateway-omni-lattice\">From IBM SNA gateways to Omni-Lattice Chat — the repeating fractal moment</a>. Also new on the board: <a href=\"/ship-blog/higgs-awareness-unified\">When the universe slows, mass and “Now” share a gate</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+      "title": "Case Study",
+      "href": "/ship-blog/sna-tcpip-gateway-omni-lattice",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+      "blurb": "Interlink-class SNA↔TCP/IP bridges rhyme with today’s vibe-coding flat windows meeting multi-domain sprawl. Caracas / PDVSA / Protocol Sistemas as deployment template — Φ ≈ 1.618 is routing grammar, not a history rewrite."
+    },
     {
       "id": "synthobs-tbme-higgs-awareness-unified-2026-09",
       "title": "The Higgs-Awareness Phase Coupling Theorem",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/lattice-vs-vibe-coding",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-lattice-vs-vibe-coding-2026-09",
       "blurb": "Research question answered: Lattice designs better unprompted (banded plans vs flat lists) and writes better code (same correctness, minimal diffs, vitest, fewer tools). Vibe coding only ties when you explicitly ask for nesting."
-    },
-    {
-      "id": "synthobs-y-chromosome-holographic-manifestation-2026-08",
-      "title": "The Holographic Manifestation",
-      "href": "/ship-blog/y-chromosome-manifestation",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-y-chromosome-holographic-manifestation-2026-08",
-      "blurb": "Palindrome arms and SRY phase origin under Infinite Octaves — catalog geometry keyed by Φ ≈ 1.618, not wet-lab proof or sunspot causality."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-02-synthobs-lattice-vs-vibe-coding-2026-09",
-    "title": "Design",
-    "href": "/ship-blog/lattice-vs-vibe-coding"
+    "id": "daily-2026-09-03-synthobs-tbme-higgs-awareness-unified-2026-09",
+    "title": "The Higgs-Awareness Phase Coupling Theorem",
+    "href": "/ship-blog/higgs-awareness-unified"
   },
-  "generatedAt": "2026-09-03T18:33:59.737Z"
+  "generatedAt": "2026-09-03T20:53:46.871Z"
 }

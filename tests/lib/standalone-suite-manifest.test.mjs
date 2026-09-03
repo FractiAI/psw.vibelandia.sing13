@@ -13,6 +13,7 @@ describe('standalone-suite-manifest', () => {
       'synthio-mri-cloud-antenna',
       'synthio-mri-vs-legacy-perf',
       'synthobs-human-omniversal-reality-bridge',
+      'synthobs-ibm-sna-tcpip-gateway-omni-lattice',
       'synthobs-infinite-octaves-omniversal-lattice',
       'synthobs-invisible-frontier-gates-ai',
       'synthobs-lattice-vs-vibe-coding',

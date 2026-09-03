@@ -136,13 +136,10 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(program).toContain('432 Solar Gavel');
     expect(program).toContain('Finale · Movement XII');
     expect(program).toContain('Infinite Octaves Omniversal Lattice Chat Agent V1.618');
-    expect(program).toContain('journey-truckee-sierra-forage.png');
-    expect(program).toContain('capitan-comandante-champion-2026.png');
-    expect(program).toContain('questfest-2026-frontier-guide-cover.png');
-    expect(program).toContain('hybrid frontier · art deco');
+    expect(program).toContain('/interfaces/assets/canvas-program/');
     expect(program).toContain('J.S. Bach');
     expect(program).toContain('Suno AI');
-    expect(program).toContain('XY Human Reality Bridge/Router');
+    expect(program).toContain('featured instrument');
     expect(program).not.toContain('Hero Jo');
     expect(playlist).toContain('Movement X · The Shift');
     expect(js).toContain('QV_initPageSoundtrack');

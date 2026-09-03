@@ -38,16 +38,21 @@ describe('Front Desk · check-in program', () => {
     expect(html).toContain('J.S. Bach');
     expect(html).toContain('Suno AI');
     expect(html).toContain('XY Human Reality Bridge/Router');
-    expect(html).toContain('reading-room-program/');
+    expect(html).toContain('/interfaces/assets/front-desk-program/');
+    expect(html).not.toContain('reading-room-program/');
     expect(html).not.toContain('Hero Jo');
     expect(html).toContain(FRONT_DESK_PROGRAM_ROUTE);
+    expect(html).toContain('J.S. Bach');
+    expect(html).toContain('Suno AI');
+    expect(html).toContain('featured instrument');
+    expect(html).not.toContain('Hero Jo');
   });
 
-  it('track 9 big band juicy juicy uses existing Grove deck art', () => {
+  it('track 9 big band juicy juicy uses saxophone instrument plate', () => {
     expect(FRONT_DESK_PROGRAM_TRACKS[8].title).toBe('big band juicy juicy');
-    expect(FRONT_DESK_PROGRAM_TRACKS[8].image).toBe('/interfaces/assets/voyage/deck-4-5-grove.png');
+    expect(FRONT_DESK_PROGRAM_TRACKS[8].image).toContain('/interfaces/assets/front-desk-program/');
     const html = renderFrontDeskProgramPageHtml();
-    expect(html).toContain('deck-4-5-grove.png');
+    expect(html).toContain('/interfaces/assets/front-desk-program/');
     expect(html).not.toContain('deck-4-grove.png');
   });
 

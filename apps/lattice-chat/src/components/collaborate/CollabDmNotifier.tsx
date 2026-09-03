@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useUnifiedFeed, startCollabDmBridge } from '@/feed/store';
 import { countUnreadDms } from '@/feed/dm';
+import { syncCollaborateDms } from '@/feed/syncCollaborateDms';
 import { applyTabFaviconBadge } from '@/lib/tabFavicon';
 
 /** Floating toast + document title + tab favicon badge when a Collaborate DM is received. */
@@ -17,6 +18,25 @@ export function CollabDmNotifier({
   const unread = countUnreadDms(items, dmLastReadAt);
 
   useEffect(() => startCollabDmBridge(), []);
+
+  // Keep Collaborate DMs flowing while on Lattice Chat (not only inside Collaborate).
+  useEffect(() => {
+    let cancelled = false;
+    const run = () => {
+      if (!cancelled) void syncCollaborateDms();
+    };
+    run();
+    const id = window.setInterval(run, 12_000);
+    const onVis = () => {
+      if (document.visibilityState === 'visible') run();
+    };
+    document.addEventListener('visibilitychange', onVis);
+    return () => {
+      cancelled = true;
+      window.clearInterval(id);
+      document.removeEventListener('visibilitychange', onVis);
+    };
+  }, []);
 
   useEffect(() => {
     const base = 'Infinite Octaves Omniversal Lattice Chat';
@@ -52,7 +72,7 @@ export function CollabDmNotifier({
         type="button"
         className="dm-toast__card"
         onClick={() => {
-          openPeerDm(dmToast.peerId);
+          openPeerDm(dmToast.peerId, { focusMessageId: dmToast.id });
           onOpenCollaborate?.();
           clearDmToast();
         }}

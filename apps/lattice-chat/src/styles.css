@@ -3571,3 +3571,69 @@ body {
   opacity: 0.4;
   cursor: not-allowed;
 }
+
+
+/* Remote shared-session bubbles → jump to Collaborate DM */
+.bubble--collab-jump {
+  cursor: pointer;
+  outline: none;
+}
+.bubble--collab-jump:hover,
+.bubble--collab-jump:focus-visible {
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.55);
+}
+
+/* Unread Collaborate DM cards inside Lattice Chat session */
+.collab-dm-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0.5rem 0 1rem;
+}
+.collab-dm-inline__card {
+  display: grid;
+  gap: 0.2rem;
+  text-align: left;
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.14), rgba(26, 18, 9, 0.08));
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+.collab-dm-inline__card:hover,
+.collab-dm-inline__card:focus-visible {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.35);
+}
+.collab-dm-inline__pill {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #a88620;
+  font-weight: 700;
+}
+.collab-dm-inline__from {
+  font-size: 0.95rem;
+}
+.collab-dm-inline__body {
+  opacity: 0.85;
+  font-size: 0.9rem;
+}
+.collab-dm-inline__cta {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.collab-chat__bubble--focus {
+  box-shadow: 0 0 0 2px #d4af37;
+  animation: collabDmFocusPulse 1.2s ease-out 1;
+}
+@keyframes collabDmFocusPulse {
+  from { box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.65); }
+  to { box-shadow: 0 0 0 2px #d4af37; }
+}

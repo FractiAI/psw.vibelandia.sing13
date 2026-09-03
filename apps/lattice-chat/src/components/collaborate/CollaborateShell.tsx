@@ -228,6 +228,21 @@ function WorkspaceChatPane({
   const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
   const activePeerId = useUnifiedFeed((s) => s.dmActivePeerId);
   const setDmActivePeerId = useUnifiedFeed((s) => s.setDmActivePeerId);
+  const markDmRead = useUnifiedFeed((s) => s.markDmRead);
+  const dmFocusMessageId = useUnifiedFeed((s) => s.dmFocusMessageId);
+  const clearDmFocusMessage = useUnifiedFeed((s) => s.clearDmFocusMessage);
+
+  // Unread clears only while this peer thread is open and the tab is visible.
+  useEffect(() => {
+    if (!activePeerId) return;
+    const markIfVisible = () => {
+      if (document.visibilityState === 'visible') markDmRead(activePeerId);
+    };
+    markIfVisible();
+    document.addEventListener('visibilitychange', markIfVisible);
+    return () => document.removeEventListener('visibilitychange', markIfVisible);
+  }, [activePeerId, markDmRead]);
+
   const [draft, setDraft] = useState('');
   const listRef = useRef<HTMLUListElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -268,6 +283,17 @@ function WorkspaceChatPane({
     const t = window.setTimeout(() => inputRef.current?.focus(), 60);
     return () => window.clearTimeout(t);
   }, [activePeerId, threadItems.length]);
+
+  useEffect(() => {
+    if (!dmFocusMessageId || !listRef.current) return;
+    const safeId = dmFocusMessageId.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    const el = listRef.current.querySelector(`[data-dm-id="${safeId}"]`);
+    if (el && 'scrollIntoView' in el) {
+      (el as HTMLElement).scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+    const t = window.setTimeout(() => clearDmFocusMessage(), 2400);
+    return () => window.clearTimeout(t);
+  }, [dmFocusMessageId, threadItems.length, clearDmFocusMessage]);
 
   const openPeer = (id: string) => {
     setDraft('');
@@ -387,7 +413,10 @@ function WorkspaceChatPane({
             return (
               <li
                 key={m.id}
-                className={`collab-chat__bubble${mine ? ' collab-chat__bubble--mine' : ''}`}
+                data-dm-id={m.id}
+                className={`collab-chat__bubble${mine ? ' collab-chat__bubble--mine' : ''}${
+                  dmFocusMessageId === m.id ? ' collab-chat__bubble--focus' : ''
+                }`}
               >
                 <strong className="collab-chat__sender">{sender}</strong>
                 <span className="collab-chat__body">{m.body}</span>

@@ -30,6 +30,8 @@ import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
 import { listSelectableChats } from '@/threadHistory';
 import { CollabDmBadge } from '@/components/collaborate/CollabDmNotifier';
 import { resolveClientCollabPeerId, peerNameForId } from '@/feed/seatIdentity';
+import { useUnifiedFeed } from '@/feed/store';
+import { isIncomingCollabDm, unreadCountForPeer } from '@/feed/dm';
 import { isSharedCollabAgentThread } from '@/feed/syncCollaborateAgent';
 
 export function ChatPane({
@@ -94,6 +96,31 @@ export function ChatPane({
   const resumedRef = useRef(false);
 
   const myCollabPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
+  const openPeerDm = useUnifiedFeed((s) => s.openPeerDm);
+  const feedItems = useUnifiedFeed((s) => s.items);
+  const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
+  const unreadDmCards = useMemo(() => {
+    const byPeer = new Map<string, { peerId: string; peerName: string; body: string; id: string; createdAt: string }>();
+    for (const item of feedItems) {
+      if (!isIncomingCollabDm(item) || !item.threadPeerId) continue;
+      if (unreadCountForPeer(feedItems, item.threadPeerId, dmLastReadAt) <= 0) continue;
+      const prev = byPeer.get(item.threadPeerId);
+      if (!prev || item.createdAt > prev.createdAt) {
+        byPeer.set(item.threadPeerId, {
+          peerId: item.threadPeerId,
+          peerName: item.actor || 'Seat',
+          body: (item.body || '').slice(0, 160),
+          id: item.id,
+          createdAt: item.createdAt,
+        });
+      }
+    }
+    return Array.from(byPeer.values()).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  }, [feedItems, dmLastReadAt]);
+  const jumpToCollabDm = (peerId: string, focusMessageId?: string) => {
+    openPeerDm(peerId, focusMessageId ? { focusMessageId } : undefined);
+    onOpenCollaborate?.();
+  };
   const onSharedSession =
     sharedCollab || isSharedCollabAgentThread(activeThreadId);
 
@@ -534,19 +561,56 @@ export function ChatPane({
             </div>
           </div>
         ) : (
-          thread.messages.map((m) => {
+          <>
+          {unreadDmCards.length > 0 ? (
+            <div className="collab-dm-inline" aria-label="Unread Collaborate direct messages">
+              {unreadDmCards.map((card) => (
+                <button
+                  key={card.id}
+                  type="button"
+                  className="collab-dm-inline__card"
+                  onClick={() => jumpToCollabDm(card.peerId, card.id)}
+                >
+                  <span className="collab-dm-inline__pill">Collaborate · unread</span>
+                  <strong className="collab-dm-inline__from">{card.peerName}</strong>
+                  <span className="collab-dm-inline__body">{card.body || 'New message'}</span>
+                  <span className="collab-dm-inline__cta">Open chat →</span>
+                </button>
+              ))}
+            </div>
+          ) : null}
+          {thread.messages.map((m) => {
             const userLabel =
               m.role === 'user'
                 ? m.senderPeerId && myCollabPeerId && m.senderPeerId !== myCollabPeerId
                   ? m.senderName || peerNameForId(m.senderPeerId)
                   : 'You'
                 : null;
+            const isRemoteSeat =
+              m.role === 'user' &&
+              Boolean(m.senderPeerId) &&
+              Boolean(myCollabPeerId) &&
+              m.senderPeerId !== myCollabPeerId;
             return (
             <article
               key={m.id}
-              className={`bubble bubble-${m.role}`}
+              className={`bubble bubble-${m.role}${isRemoteSeat ? ' bubble--collab-jump' : ''}`}
               data-role={m.role}
               data-sender={m.senderPeerId || undefined}
+              {...(isRemoteSeat
+                ? {
+                    role: 'link' as const,
+                    tabIndex: 0,
+                    title: `Open Collaborate chat with ${userLabel}`,
+                    onClick: () => jumpToCollabDm(m.senderPeerId!),
+                    onKeyDown: (e: KeyboardEvent) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        jumpToCollabDm(m.senderPeerId!);
+                      }
+                    },
+                  }
+                : {})}
             >
               <span className="bubble-role">
                 {m.role === 'user'
@@ -569,7 +633,8 @@ export function ChatPane({
               ) : null}
             </article>
             );
-          })
+          })}
+          </>
         )}
         {showRemoteWorking ? (
           <article className="bubble bubble-assistant thinking thought-stream-panel">

@@ -149,10 +149,8 @@
 
   function updateCollabBadge(overrideN) {
     var n = overrideN !== undefined ? overrideN : collabUnreadTotal();
-    // Clear badge when user is on the lattice-chat page (they're reading there)
-    if (path === '/lattice-chat' || path === '/lattice-chat/' || path.indexOf('/lattice-chat') === 0) {
-      n = 0;
-    }
+    // Keep badge while Collaborate DMs remain unread — even on /lattice-chat.
+    // Count clears only when the SPA marks the peer thread read.
     var link = document.getElementById('ql-lattice-chat-link');
     if (!link) return;
     var badge = link.querySelector('.ql-lc-badge');

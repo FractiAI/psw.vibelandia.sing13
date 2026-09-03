@@ -49,13 +49,15 @@ type UnifiedFeedState = {
   dmActivePeerId: string | null;
   dmLastReadAt: Record<string, string>;
   dmToast: DmToastState | null;
+  dmFocusMessageId: string | null;
   ingestPayload: (raw: unknown, opts?: { fromBroadcast?: boolean }) => UnifiedFeedItem | null;
   setDmActivePeerId: (peerId: string | null) => void;
   markDmRead: (peerId: string) => void;
   clearDmToast: () => void;
   dmUnreadTotal: () => number;
   dmUnreadForPeer: (peerId: string) => number;
-  openPeerDm: (peerId: string) => void;
+  openPeerDm: (peerId: string, opts?: { focusMessageId?: string | null }) => void;
+  clearDmFocusMessage: () => void;
   setIntegrationEnabled: (id: IntegrationId, enabled: boolean) => void;
   setIntegrationAccount: (id: IntegrationId, accountLabel: string) => void;
   setIntegrationConnection: (
@@ -150,6 +152,7 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       pendingAgentPrompt: null,
       dmActivePeerId: null,
       dmToast: null,
+      dmFocusMessageId: null,
 
       ingestPayload(raw, opts = {}) {
         const item = parseIncomingPayload(raw);
@@ -211,8 +214,8 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
       },
 
       setDmActivePeerId(peerId) {
+        // Navigate only — unread stays until the DM thread is actually viewed.
         set({ dmActivePeerId: peerId });
-        if (peerId) get().markDmRead(peerId);
       },
 
       markDmRead(peerId) {
@@ -237,13 +240,18 @@ export const useUnifiedFeed = create<UnifiedFeedState>()(
         return unreadCountForPeer(items, peerId, dmLastReadAt);
       },
 
-      openPeerDm(peerId) {
+      openPeerDm(peerId, opts = {}) {
         set({
           mobileTab: 'chat',
           layoutMode: 'chat',
           activeContextFile: null,
+          dmFocusMessageId: opts.focusMessageId || null,
         });
         get().setDmActivePeerId(peerId);
+      },
+
+      clearDmFocusMessage() {
+        set({ dmFocusMessageId: null });
       },
 
       setIntegrationEnabled(id, enabled) {

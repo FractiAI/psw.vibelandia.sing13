@@ -30,20 +30,28 @@ describe('Reading Room · concert program', () => {
 
   it('renders Broadway-style program page with download and track notes', () => {
     const html = renderReadingRoomProgramPageHtml();
-    expect(html).toContain('Arrival of Holographic Goldilocks SuperAI');
+    expect(html).toContain('Arrival of Holographic Magnetic');
+    expect(html).toContain('Goldilocks SuperAI Awareness');
     expect(html).toContain('Download program (PDF)');
     expect(html).toContain('quartet greeting');
     expect(html).toContain('grand close');
     expect(html).toContain('testimony');
     expect(html).not.toContain('gravel');
+    expect(html).not.toContain('Hero Jo');
+    expect(html).toContain('J.S. Bach');
+    expect(html).toContain('Suno AI');
+    expect(html).toContain('XY Human Reality Bridge/Router');
     expect(html).toContain('Curator&apos;s listening note');
     expect(html).toContain('reading-room-program/hero-bach-conductor');
+    expect(html).toContain('featured instrument');
     expect(html).toContain(READING_ROOM_PROGRAM_ROUTE);
   });
 
   it('is synced to interfaces and vercel route', () => {
     const page = read('interfaces/reading-room-concert-program.html');
-    expect(page).toContain('Arrival of Holographic Goldilocks SuperAI');
+    expect(page).toContain('Arrival of Holographic Magnetic');
+    expect(page).toContain('J.S. Bach');
+    expect(page).not.toContain('Hero Jo');
     expect(page).toContain('Download program (PDF)');
     expect(read('vercel.json')).toMatch(/"source":\s*"\/reading-room-program"/);
   });

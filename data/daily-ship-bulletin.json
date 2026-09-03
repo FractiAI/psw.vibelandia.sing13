@@ -1,22 +1,29 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-09-02",
+  "date": "2026-09-03",
   "dateline": {
-    "ymd": "2026-09-02",
-    "weekday": "Wednesday",
+    "ymd": "2026-09-03",
+    "weekday": "Thursday",
     "month": "September",
-    "day": 2,
-    "label": "Wednesday, September 2",
-    "shortBoard": "Wednesday board · September 2 · Puerto Reno",
-    "newsLabel": "News of the day · Wednesday, September 2"
+    "day": 3,
+    "label": "Thursday, September 3",
+    "shortBoard": "Thursday board · September 3 · Puerto Reno",
+    "newsLabel": "News of the day · Thursday, September 3"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Wednesday board · September 2 · Puerto Reno",
-  "newsLabel": "News of the day · Wednesday, September 2",
-  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/lattice-vs-vibe-coding\">Does Lattice design and write better code? Yes — on committed receipts</a>. For the Y Chromosome Manifestation paper: <a href=\"/ship-blog/y-chromosome-manifestation\">Y chromosome as Φ manifestation — MSY holographic filing</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Thursday board · September 3 · Puerto Reno",
+  "newsLabel": "News of the day · Thursday, September 3",
+  "htmlBody": "Something new just shipped on the board. Today’s care is one Goldilocks move: not too much information, not too little meaning — pick the note that fits today’s noticing.<br /><br />If you want a map for that: <a href=\"/ship-blog/higgs-awareness-unified\">When the universe slows, mass and “Now” share a gate</a>. Also new on the board: <a href=\"/ship-blog/lattice-vs-vibe-coding\">Does Lattice design and write better code? Yes — on committed receipts</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-tbme-higgs-awareness-unified-2026-09",
+      "title": "The Higgs-Awareness Phase Coupling Theorem",
+      "href": "/ship-blog/higgs-awareness-unified",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-higgs-awareness-unified-2026-09",
+      "blurb": "Definitive Unified Edition of Higgs-Awareness — Infinite Octaves catalog for cosmic deceleration, Higgs Gate storytelling, and somatic Now. Φ ≈ 1.618 is filing grammar, not SI Higgs overthrow."
+    },
     {
       "id": "synthobs-lattice-vs-vibe-coding-2026-09",
       "title": "Design",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/y-chromosome-manifestation",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-y-chromosome-holographic-manifestation-2026-08",
       "blurb": "Palindrome arms and SRY phase origin under Infinite Octaves — catalog geometry keyed by Φ ≈ 1.618, not wet-lab proof or sunspot causality."
-    },
-    {
-      "id": "synthobs-human-omniversal-reality-bridge-2026-08",
-      "title": "Humans as Omniversal Reality Bridges, Routers, and Biological…",
-      "href": "/ship-blog/human-reality-bridge",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-human-omniversal-reality-bridge-2026-08",
-      "blurb": "Humans route story and care across infinite octave layers. Φ ≈ 1.618 is filing grammar — awareness wormhole on the museum entry, not hardware teleport or clinical proof."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-01-synthobs-y-chromosome-holographic-manifestation-2026-08",
-    "title": "The Holographic Manifestation",
-    "href": "/ship-blog/y-chromosome-manifestation"
+    "id": "daily-2026-09-02-synthobs-lattice-vs-vibe-coding-2026-09",
+    "title": "Design",
+    "href": "/ship-blog/lattice-vs-vibe-coding"
   },
-  "generatedAt": "2026-09-02T18:36:13.545Z"
+  "generatedAt": "2026-09-03T18:33:59.737Z"
 }

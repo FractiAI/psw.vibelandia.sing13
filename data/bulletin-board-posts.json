@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-02",
+  "updated": "2026-09-03",
   "posts": [
+    {
+      "id": "daily-2026-09-03-synthobs-tbme-higgs-awareness-unified-2026-09",
+      "posted": "2026-09-03",
+      "featured": true,
+      "title": "The Higgs-Awareness Phase Coupling Theorem",
+      "subtitle": "News of the day · Thursday, September 3",
+      "summary": "Definitive Unified Edition of Higgs-Awareness — Infinite Octaves catalog for cosmic deceleration, Higgs Gate storytelling, and somatic Now. Φ ≈ 1.618 is filing grammar, not SI Higgs overthrow.",
+      "href": "/ship-blog/higgs-awareness-unified",
+      "pill": "TODAY",
+      "docRef": "synthobs-tbme-higgs-awareness-unified-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-02-synthobs-lattice-vs-vibe-coding-2026-09",
       "posted": "2026-09-02",

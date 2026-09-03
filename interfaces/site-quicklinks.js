@@ -181,8 +181,8 @@
   function renderQuestfestSoundBar() {
     return (
       '<div class="qv-top-quicklinks__sound" id="reception-sound-bar">' +
-      '<button type="button" class="qv-top-quicklinks__score reception-hero__score qv-sound-mute" id="reception-hero-score" aria-pressed="false" aria-controls="reception-hero-audio" aria-label="Mute SS Vibelandia soundtrack"><span class="qv-sound-mute__icon" aria-hidden="true"></span></button>' +
-      '<audio id="reception-hero-audio" preload="auto" playsinline hidden aria-hidden="true" aria-label="Reception check-in soundtrack"></audio>' +
+      '<button type="button" class="qv-top-quicklinks__score reception-hero__score qv-sound-mute" id="reception-hero-score" aria-pressed="false" aria-controls="reception-hero-audio" aria-label="Sound on · Mute SS Vibelandia soundtrack"><span class="qv-sound-mute__icon" aria-hidden="true"></span><span class="qv-sound-mute__label">Sound on</span></button>' +
+      '<audio id="reception-hero-audio" preload="auto" playsinline hidden aria-hidden="true" aria-label="Reception check-in soundtrack" src="https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/trk-srv-6025557c-f76c-4a55-bd7c-0fc2d5ffcfb4-Goldilocks%20Holographic%20Cruise%20Ship%20Captain_s%20Welcome.wav"></audio>' +
       '</div>'
     );
   }

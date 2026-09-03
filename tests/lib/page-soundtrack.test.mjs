@@ -65,12 +65,12 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(doorsBlock).not.toContain("'/concierto-program'");
   });
 
-  it('primary ship doors navigate in-tab even when soundtrack is playing', () => {
+  it('primary ship doors navigate in-tab and hand off soundtrack so music keeps playing', () => {
     const soundtrack = read('interfaces/page-soundtrack.js');
     const jukebox = read('interfaces/site-jukebox.js');
     expect(soundtrack).toContain('if (isPrimaryShipDoor(url))');
-    expect(soundtrack).toContain('pauseLocalSessionQuiet(session)');
-    expect(soundtrack).not.toContain('handoffIfPlaying();\n        return;');
+    expect(soundtrack).toContain('Keep music going — handoff during the click gesture');
+    expect(soundtrack).toContain('handoffIfPlaying();\n        return;');
     expect(soundtrack).toContain('canUseSoundPopup');
     expect(jukebox).toContain('!isPrimaryShipDoor(offUrl)');
     expect(jukebox).toContain('QV_isProgramPageUrl');
@@ -83,21 +83,29 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('if (!canUseSoundPopup()) return null');
   });
 
-  it('defaults soundtrack to sound-on with mute toggle', () => {
+  it('defaults soundtrack to sound-on with mute toggle and visible Sound on label', () => {
     const js = read('interfaces/page-soundtrack.js');
     expect(js).toContain('autoplayDesired = opts.autoplay !== false');
     expect(js).toContain('userMuted');
     expect(js).toContain('applyMuteButtonState');
     expect(js).toContain('qv-sound-mute');
+    expect(js).toContain('qv-sound-mute__label');
+    expect(js).toContain("labelEl.textContent = muted ? 'Sound off' : 'Sound on'");
     expect(js).toContain('bindUnlockGestures');
+    expect(js).toContain('QV_PAGE_SOUNDTRACK_PLAYLISTS');
     expect(read('interfaces/page-soundtrack-mute.css')).toContain('.qv-sound-mute.is-muted');
+    expect(read('interfaces/page-soundtrack-mute.css')).toContain('.qv-sound-mute__label');
     expect(read('interfaces/questfest-autoplay.js')).toContain("playlistId: 'pl-reception'");
     expect(read('interfaces/vibelandia-questfest.html')).toContain('questfest-autoplay.js');
+    expect(read('interfaces/vibelandia-questfest.html')).toContain('page-soundtrack-playlists.js');
     expect(read('interfaces/reading-room.html')).toContain('qv-sound-mute');
+    expect(read('interfaces/reading-room.html')).toContain('qv-sound-mute__label">Sound on');
     expect(read('interfaces/reading-room.html')).not.toContain('Sound off · tap to play');
+    expect(read('interfaces/omniverse-canvas.html')).toContain('qv-sound-mute__label">Sound on');
+    expect(read('interfaces/site-quicklinks.js')).toContain('qv-sound-mute__label">Sound on');
   });
 
-  it('pauses other media and broadcasts stop before starting page soundtrack', () => {
+  it('broadcasts stop only after playback actually starts (keeps prior handoff music alive)', () => {
     const js = read('interfaces/page-soundtrack.js');
     expect(js).toContain('pauseOtherMedia');
     expect(js).toContain("type: 'stop'");
@@ -105,6 +113,11 @@ describe('Page soundtrack · popup handoff + prior music stop', () => {
     expect(js).toContain('openHandoffPopup');
     expect(js).toContain('handoffIfPlaying');
     expect(js).toContain('openBrowsePopup(url.href)');
+    const markPlaying = js.slice(js.indexOf('function markPlaying()'), js.indexOf('function markStopped()'));
+    expect(markPlaying).toContain("type: 'stop'");
+    const afterActive = js.slice(js.indexOf('session.localActive = true'));
+    const beforeStart = afterActive.slice(0, afterActive.indexOf('startPlayback()'));
+    expect(beforeStart).not.toContain("type: 'stop'");
   });
 });
 

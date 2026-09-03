@@ -35,10 +35,18 @@ describe('Reading Room · jukebox playlist', () => {
   it('Reading Room page autoplays concert soundtrack', () => {
     const js = read('interfaces/reading-room-autoplay.js');
     const page = read('interfaces/reading-room.html');
+    const playlists = read('interfaces/page-soundtrack-playlists.js');
     expect(js).toContain("playlistId: 'pl-reading-room'");
+    expect(js).toContain("staticPlaylist: (window.QV_PAGE_SOUNDTRACK_PLAYLISTS || {})['pl-reading-room']");
+    expect(js).toContain('autoplay: true');
     expect(page).toContain('reading-room-autoplay.js');
     expect(page).toContain('page-soundtrack.js');
+    expect(page).toContain('page-soundtrack-playlists.js');
     expect(page).toContain('/reading-room-program');
+    expect(page).toContain('qv-sound-mute__label">Sound on');
+    expect(page).toContain('trk-srv-8803278e-1d65-4172-b503-0bf33266b61d-Arrival%20of%20Holographic%20Goldilocks%20SuperAI%20Opening.mp3');
+    expect(playlists).toContain("'pl-reading-room'");
+    expect(playlists).toContain('trk-srv-8803278e-1d65-4172-b503-0bf33266b61d');
     expect(readingRoomListenHref()).toContain('playlist=pl-reading-room');
   });
 });

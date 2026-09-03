@@ -10,6 +10,7 @@
     window.QV_initPageSoundtrack({
       pageId: 'reading-room',
       playlistId: 'pl-reading-room',
+      staticPlaylist: (window.QV_PAGE_SOUNDTRACK_PLAYLISTS || {})['pl-reading-room'] || [],
       btnId: 'reading-room-hero-score',
       audioId: 'reading-room-hero-audio',
       label: 'Reading Room concert',

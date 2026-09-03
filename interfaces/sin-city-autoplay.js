@@ -10,6 +10,7 @@
     window.QV_initPageSoundtrack({
       pageId: 'sin-city',
       playlistId: 'pl-sin-city',
+      staticPlaylist: (window.QV_PAGE_SOUNDTRACK_PLAYLISTS || {})['pl-sin-city'] || [],
       btnId: 'sin-city-hero-score',
       audioId: 'sin-city-hero-audio',
       label: 'Sin City soundtrack',

@@ -30,9 +30,16 @@ on:
       - '.github/workflows/**'
   workflow_dispatch:
 
+# Rapid main/PR pushes were stacking 6+ full SPA builds (~18–22m each).
+# Cancel superseded runs on the same ref so the tip commit wins.
+concurrency:
+  group: test-suite-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -40,6 +47,11 @@ jobs:
         with:
           node-version: '24'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            apps/ss-vibelandia-questfest/package-lock.json
+            apps/executive-ai-onboard/package-lock.json
+            apps/lattice-chat/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -50,12 +62,18 @@ jobs:
   coverage:
     needs: test
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            apps/ss-vibelandia-questfest/package-lock.json
+            apps/executive-ai-onboard/package-lock.json
+            apps/lattice-chat/package-lock.json
       - name: Install dependencies
         run: npm ci
       - name: Run coverage
@@ -64,12 +82,18 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            apps/ss-vibelandia-questfest/package-lock.json
+            apps/executive-ai-onboard/package-lock.json
+            apps/lattice-chat/package-lock.json
       - name: Install dependencies
         run: npm ci
       - name: Build QUESTFEST Bridge

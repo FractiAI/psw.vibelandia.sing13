@@ -116,8 +116,11 @@ describe('lets-chat surfaces', () => {
     expect(app).toContain('id="lc-dnd-btn-thread"');
     expect(app).toContain('lc-dnd-toggle');
     expect(css).toContain('.lc-dnd-toggle');
+    expect(css).toContain('.lc-unread-badge');
     expect(client).toContain('function toggleDnd');
     expect(client).toContain("localStorage.removeItem(STORAGE_DND)");
+    expect(client).toContain('letschat.unread.v1');
+    expect(client).toContain('lc-unread-badge');
     expect(intro).toContain('No harvesting');
     expect(intro).toContain('Predators never welcome');
   });

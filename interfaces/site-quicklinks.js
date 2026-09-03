@@ -92,8 +92,53 @@
     }, 3000);
   }
 
+  function lcUnreadTotal() {
+    try {
+      var raw = localStorage.getItem('letschat.unread.v1');
+      if (!raw) return 0;
+      var map = JSON.parse(raw);
+      return Object.values(map).reduce(function (s, n) { return s + (n || 0); }, 0);
+    } catch (_) { return 0; }
+  }
+
+  function renderLcBadge(n) {
+    return n > 0
+      ? ' <span class="ql-lc-badge" aria-label="' + n + ' unread Let\'s Chat message' + (n !== 1 ? 's' : '') + '">' + (n > 9 ? '9+' : n) + '</span>'
+      : '';
+  }
+
+  function updateLcBadge() {
+    var n = lcUnreadTotal();
+    var link = document.getElementById('ql-lets-chat-link');
+    if (!link) return;
+    var badge = link.querySelector('.ql-lc-badge');
+    if (n > 0) {
+      if (badge) {
+        badge.textContent = n > 9 ? '9+' : String(n);
+        badge.setAttribute('aria-label', n + ' unread Let\'s Chat message' + (n !== 1 ? 's' : ''));
+      } else {
+        link.insertAdjacentHTML('beforeend', renderLcBadge(n));
+      }
+    } else if (badge) {
+      badge.remove();
+    }
+  }
+
+  function initLcBadgeListener() {
+    updateLcBadge();
+    try {
+      if (typeof BroadcastChannel !== 'undefined') {
+        var bc = new BroadcastChannel('letschat-unread-v1');
+        bc.onmessage = function () { updateLcBadge(); };
+      }
+    } catch (_) {}
+    window.addEventListener('storage', function (e) {
+      if (e.key === 'letschat.unread.v1') updateLcBadge();
+    });
+  }
+
   var QUICKLINK_SECONDARY =
-    '<a href="/lets-chat">Let\'s Chat</a>' +
+    '<a href="/lets-chat" id="ql-lets-chat-link">Let\'s Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/lattice-chat">Lattice Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
@@ -331,6 +376,7 @@
     injectTopQuicklinks();
     injectFooterQuicklinks();
     ensureShareQrModal();
+    initLcBadgeListener();
   }
 
   if (document.readyState === 'loading') {

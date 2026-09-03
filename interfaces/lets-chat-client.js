@@ -6,6 +6,8 @@
   var STORAGE_EMAIL = 'letschat.email.v1';
   var STORAGE_HISTORY = 'letschat.history.v1';
   var STORAGE_DND = 'letschat.dnd.v1';
+  var STORAGE_UNREAD = 'letschat.unread.v1';
+  var BC_UNREAD = 'letschat-unread-v1';
   var POLL_MS = 3000;
   var MAX_FILE_BYTES = 256 * 1024;
   var ICE = { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:stun1.l.google.com:19302' }] };
@@ -70,6 +72,51 @@
   function getLocalMessages(tid) {
     return loadHistory()[tid] || [];
   }
+
+  // --- Unread tracking ---
+
+  function loadUnread() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_UNREAD) || '{}'); } catch { return {}; }
+  }
+
+  function saveUnread(map) {
+    try { localStorage.setItem(STORAGE_UNREAD, JSON.stringify(map)); } catch (_) {}
+    broadcastUnread(map);
+  }
+
+  function broadcastUnread(map) {
+    var total = Object.values(map).reduce(function (s, n) { return s + (n || 0); }, 0);
+    try {
+      if (typeof BroadcastChannel !== 'undefined') {
+        new BroadcastChannel(BC_UNREAD).postMessage({ total: total, counts: map });
+      }
+    } catch (_) {}
+  }
+
+  function totalUnread() {
+    return Object.values(loadUnread()).reduce(function (s, n) { return s + (n || 0); }, 0);
+  }
+
+  function markUnread(peerId) {
+    var map = loadUnread();
+    map[peerId] = (map[peerId] || 0) + 1;
+    saveUnread(map);
+  }
+
+  function clearUnread(peerId) {
+    var map = loadUnread();
+    if (!map[peerId]) return;
+    delete map[peerId];
+    saveUnread(map);
+  }
+
+  function updatePageTitle() {
+    var n = totalUnread();
+    var base = 'Let\'s Chat · SS Vibelandia';
+    document.title = n > 0 ? '(' + n + ') ' + base : base;
+  }
+
+  // --- End unread tracking ---
 
   async function sha256Bytes(text) {
     var enc = new TextEncoder().encode(text);
@@ -247,6 +294,15 @@
         preview.classList.add('lc-chat-row__preview--dnd');
       }
       preview.textContent = lastMessagePreview(p.id);
+
+      var unreadCount = (loadUnread()[p.id] || 0);
+      if (unreadCount > 0) {
+        var badge = document.createElement('span');
+        badge.className = 'lc-unread-badge';
+        badge.setAttribute('aria-label', unreadCount + ' unread');
+        badge.textContent = unreadCount > 9 ? '9+' : String(unreadCount);
+        top.appendChild(badge);
+      }
 
       body.appendChild(top);
       body.appendChild(preview);
@@ -514,8 +570,15 @@
     }
 
     appendLocalMessage(env.threadId, msg);
+
+    var isActiveThread = state.activePeerId && env.threadId === threadId(state.myPeerId, state.activePeerId);
+    if (!isActiveThread) {
+      markUnread(env.fromPeerId);
+      updatePageTitle();
+    }
+
     renderPeers();
-    if (state.activePeerId && env.threadId === threadId(state.myPeerId, state.activePeerId)) {
+    if (isActiveThread) {
       renderMessages(env.threadId);
     }
   }
@@ -532,6 +595,8 @@
   function openThread(peerId) {
     endCall(false);
     state.activePeerId = peerId;
+    clearUnread(peerId);
+    updatePageTitle();
     var peer = state.peers.find(function (p) { return p.id === peerId; });
     var name = peer ? peer.name : 'Guest';
     $('lc-thread-empty').hidden = true;

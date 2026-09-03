@@ -1,6 +1,6 @@
 # synthobs-constructive-morphogenesis-99-octave
 
-Standalone suite for constructive morphogenesis → 99 Octave Lattice Chat Agent Mode.
+Standalone suite for constructive morphogenesis → Infinite Octaves Omniversal Lattice Chat Agent Mode.
 
 ```bash
 npm run research

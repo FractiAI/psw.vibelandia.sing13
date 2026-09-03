@@ -1,27 +1,27 @@
 {
   "docId": "WP-SYNTHOBS-CONSTRUCTIVE-MORPHOGENESIS-99-OCTAVE-2026-08-09",
   "registryId": "synthobs-constructive-morphogenesis-99-octave-2026-08",
-  "title": "Constructive Morphogenesis Under Pressure — 99 Octave Lattice Chat Agent Mode",
+  "title": "Constructive Morphogenesis Under Pressure \u2014 Infinite Octaves Omniversal Lattice Chat Agent Mode",
   "generatedAt": "2026-08-10T15:47:25.015Z",
-  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "honestyBoundary": "Constructive morphogenesis suite validates swarm labels, fixtures, and nest id — not AMF sequencing or agronomic advice.",
+  "operator": "SynthOBS Autonomous Agent \u00b7 Syntheverse Sandbox",
+  "honestyBoundary": "Constructive morphogenesis suite validates swarm labels, fixtures, and nest id \u2014 not AMF sequencing or agronomic advice.",
   "results": {
     "experiments": [
       {
         "id": "E1_egs_phi",
-        "title": "Φ_EGS fixture",
+        "title": "\u03a6_EGS fixture",
         "PHI_EGS": 1.618033988749895,
         "pass": true,
-        "honesty": "Architectural bridge — not plant physiology equations."
+        "honesty": "Architectural bridge \u2014 not plant physiology equations."
       },
       {
         "id": "E2_phi_identity",
-        "title": "Φ² = Φ + 1",
+        "title": "\u03a6\u00b2 = \u03a6 + 1",
         "pass": true
       },
       {
         "id": "E3_four_swarms",
-        "title": "Silicon · Carbon · Hydrogen · Holographic Theater",
+        "title": "Silicon \u00b7 Carbon \u00b7 Hydrogen \u00b7 Holographic Theater",
         "SWARMS": [
           "Silicon",
           "Carbon",
@@ -29,7 +29,7 @@
           "HolographicTheater"
         ],
         "pass": true,
-        "honesty": "Metaphoric agent bands — not chemical element agents."
+        "honesty": "Metaphoric agent bands \u2014 not chemical element agents."
       },
       {
         "id": "E4_sunspot_fixtures",
@@ -52,7 +52,7 @@
           }
         ],
         "pass": true,
-        "honesty": "Optional fixture labels — not live NOAA identity."
+        "honesty": "Optional fixture labels \u2014 not live NOAA identity."
       },
       {
         "id": "E5_nest_topology_label",
@@ -66,11 +66,11 @@
         "title": "Context ref nph.71423 retained",
         "CONTEXT_REF": "nph.71423",
         "pass": true,
-        "honesty": "Conversation context citation — not journal endorsement."
+        "honesty": "Conversation context citation \u2014 not journal endorsement."
       },
       {
         "id": "E7_signal_cascade_order",
-        "title": "Stress cascade order H→C→Si→Theater",
+        "title": "Stress cascade order H\u2192C\u2192Si\u2192Theater",
         "order": [
           "Hydrogen",
           "Carbon",

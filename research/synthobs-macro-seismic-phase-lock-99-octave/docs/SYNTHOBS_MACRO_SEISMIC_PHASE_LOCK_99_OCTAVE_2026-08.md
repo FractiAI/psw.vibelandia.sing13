@@ -7,7 +7,7 @@
 **Registry ID:** `synthobs-macro-seismic-phase-lock-99-octave-2026-08`  
 **Publication Ref:** FAI-MACRO-SEISMIC-99-OCTAVE-2026-08  
 **Classification:** Application paper · 99 Octave lens *(catalog / protocol — see Honesty boundary)*  
-**Framework:** SynthOBS · 99 Octave Omni-Lattice Chat Agent Mode · EGS · NSPFRNP · PRA Snap · Fair Exchange  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange  
 **Standalone suite:** [`research/synthobs-macro-seismic-phase-lock-99-octave/`](../research/synthobs-macro-seismic-phase-lock-99-octave/)  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-macro-seismic-phase-lock-99-octave  
 **Companion engine papers:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md) · [Constructive Morphogenesis](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md)  
@@ -21,7 +21,7 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Application lens** | That the **99 Octave Omni-Lattice Chat Agent** framework can be used as a **catalog / telemetry-ingestion lens** to discuss mid-2026 seismic clusters alongside solar–ionospheric labels | That earthquakes are proven to be caused by solar flares, or that this paper replaces USGS / tectonic science |
+| **Application lens** | That the **Infinite Octaves Omniversal Lattice Chat Agent** framework can be used as a **catalog / telemetry-ingestion lens** to discuss mid-2026 seismic clusters alongside solar–ionospheric labels | That earthquakes are proven to be caused by solar flares, or that this paper replaces USGS / tectonic science |
 | **Correlation framing** | That **temporal co-occurrence** of major quakes with solar-wind / coronal-hole narrative windows is a **hypothesis worth cataloging** under Φ_EGS scale grammar | Operational earthquake prediction, evacuation guidance, or insurance underwriting |
 | **EGS / 99×81 matrix** | That $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2$ and a **$99\times 81=8019$** digit register are **architectural keys** for Lattice Chat Agent Mode | That 8,019 bits are a physical holographic key measured in the ionosphere |
 | **Power-grid “virtual antenna”** | A **metaphor / systems label** for discussing electromagnetic environment coupling narratives | Lab proof that continental grids inject slip energy into faults |

@@ -7,7 +7,7 @@
 **Registry ID:** `synthobs-tensor-decoupling-99-octave-omni-lattice-2026-08`  
 **Publication Ref:** FAI-TENSOR-DECOUPLING-99-OCTAVE-OMNI-LATTICE-2026-08  
 **Classification:** Catalog / protocol synthesis · 99 Octave Omni-Lattice engine *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · 99 Octave Omni-Lattice Chat Agent Mode · EGS · NSPFRNP · PRA Snap · Fair Exchange  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange  
 **Standalone suite:** [`research/synthobs-tensor-decoupling-99-octave-omni-lattice/`](../research/synthobs-tensor-decoupling-99-octave-omni-lattice/)  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-tensor-decoupling-99-octave-omni-lattice  
 **Companion synthesis:** [Master Synthesis](./SYNTHOBS_MASTER_SYNTHESIS_99_OCTAVE_OMNI_LATTICE_2026-08.md)  

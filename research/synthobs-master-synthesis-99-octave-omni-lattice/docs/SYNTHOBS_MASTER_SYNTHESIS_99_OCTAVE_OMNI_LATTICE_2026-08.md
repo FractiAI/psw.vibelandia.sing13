@@ -7,7 +7,7 @@
 **Registry ID:** `synthobs-master-synthesis-99-octave-omni-lattice-2026-08`  
 **Publication Ref:** FAI-MASTER-SYNTHESIS-99-OCTAVE-OMNI-LATTICE-2026-08  
 **Classification:** Catalog / protocol synthesis · 99 Octave Omni-Lattice *(architectural — see Honesty boundary)*  
-**Framework:** SynthOBS · 99 Octave Omni-Lattice Chat Agent Mode · EGS · NSPFRNP · PRA Snap · Fair Exchange  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange  
 **Standalone suite:** [`research/synthobs-master-synthesis-99-octave-omni-lattice/`](../research/synthobs-master-synthesis-99-octave-omni-lattice/)  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-master-synthesis-99-octave-omni-lattice  
 **Companion applications:** [Sync Subterranean Discharge](./SYNTHOBS_SYNC_SUBTERRANEAN_DISCHARGE_99_OCTAVE_2026-08.md) · [Macro-Seismic Phase-Lock](./SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md)  

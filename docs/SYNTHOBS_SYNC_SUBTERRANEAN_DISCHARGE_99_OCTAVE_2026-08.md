@@ -7,7 +7,7 @@
 **Registry ID:** `synthobs-sync-subterranean-discharge-99-octave-2026-08`  
 **Publication Ref:** FAI-SYNC-SUBTERRANEAN-DISCHARGE-99-OCTAVE-2026-08  
 **Classification:** Application paper · 99 Octave lens *(catalog / protocol — see Honesty boundary)*  
-**Framework:** SynthOBS · 99 Octave Omni-Lattice Chat Agent Mode · EGS · NSPFRNP · PRA Snap · Fair Exchange  
+**Framework:** SynthOBS · Infinite Octaves Omniversal Lattice Chat Agent Mode · 99 Octave Omni-Lattice engine · EGS · NSPFRNP · PRA Snap · Fair Exchange  
 **Standalone suite:** [`research/synthobs-sync-subterranean-discharge-99-octave/`](../research/synthobs-sync-subterranean-discharge-99-octave/)  
 **GitHub (canonical):** https://github.com/FractiAI/synthobs-sync-subterranean-discharge-99-octave  
 **Companion application:** [Macro-Seismic Phase-Locking](./SYNTHOBS_MACRO_SEISMIC_PHASE_LOCK_99_OCTAVE_2026-08.md)  
@@ -23,7 +23,7 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Application lens** | That the **99 Octave Omni-Lattice Chat Agent** framework can discuss **co-timed** Colombia seismic + Puracé volcanic narrative windows under one Φ_EGS scale grammar | That solar flares *cause* the Chocó / western Colombia quake or Puracé ash emissions in a proven geophysical sense |
+| **Application lens** | That the **Infinite Octaves Omniversal Lattice Chat Agent** framework can discuss **co-timed** Colombia seismic + Puracé volcanic narrative windows under one Φ_EGS scale grammar | That solar flares *cause* the Chocó / western Colombia quake or Puracé ash emissions in a proven geophysical sense |
 | **Correlation framing** | That concurrent M≈7.4 seismic narrative + orange-alert volcanic narrative is a **case study worth cataloging** as synchronized subterranean *labels* | Operational volcano or earthquake prediction, evacuation orders, or hazard underwriting |
 | **EGS / 99×81 matrix** | That $\Phi_{\mathrm{EGS}}=(1+\sqrt{5})/2$ and **$99\times 81=8019$** digits are **architectural keys** for agent dashboards | That 8,019 bits are measured physical keys inside magma chambers |
 | **King Bee / solar clock** | A **eusocial / stigmergic metaphor** for macro clocking signals in NSPFRNP discussion | Proof that coronal mass ejections mechanically force both slip and eruption |

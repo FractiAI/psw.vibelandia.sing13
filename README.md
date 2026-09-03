@@ -33,7 +33,7 @@ This README is the **current map** of the monorepo, its **sibling empirical suit
 | **SynthOBS research** | ~50 local empirical suites (`research/synthobs-*/` + siblings); many also publish as standalone GitHub repos | `research/`, `npm run research:*`, [`lib/whitepaper-catalog.mjs`](lib/whitepaper-catalog.mjs) |
 | **Whitepaper catalog** | Registered papers + honesty rails + PRA Snap audits | `docs/`, `lib/whitepaper-registry.mjs`, `/papers` |
 | **QUESTFEST 24×365** | SS Vibelandia ship reception primer, bulletin, plain-language ship blog | [/questfest](https://www.ssvibelandiaquestfest24x365.com/questfest) · Reality Bridge/Router network · [/join-the-crew](https://www.ssvibelandiaquestfest24x365.com/join-the-crew) |
-| **Lattice Chat Agent V1.618** | Nested-agent BYOK chat · **your key is your password** (stays with you) · token-economics measurement | `/lattice`, `/lattice-chat`, `apps/lattice-chat/`, `api/lattice-chat.js` |
+| **Infinite Octaves Omniversal Lattice Chat Agent V1.618** | Nested-agent BYOK chat · **your key is your password** (stays with you) · token-economics measurement | `/lattice`, `/lattice-chat`, `apps/lattice-chat/`, `api/lattice-chat.js` |
 | **Sovereign Player** | Audio catalog React SPA · Fair Exchange honor downloads | `/listen`, `apps/ss-vibelandia-questfest/` → `interfaces/questfest-bridge/` |
 | **NSPFRNP / BBHE** | Protocol spine · Seed:Edge · repository standard | `protocols/MCA_NSPFRNP_CATALOG.md`, `BBHE_REPOSITORY_STANDARD.md` |
 | **Lite edges** | No Supabase; wallets/keys/verifications on-device; center = pipes only | `AGENTS.md` invariants |
@@ -208,7 +208,7 @@ npm run sync:interfaces-index       # refresh README + /interfaces/ HTML index
 
 ### Lattice Chat validate (optional · BYOK)
 
-**Your key is your password** for 99 Octave Omni-Lattice Chat — it stays with you on-device; no separate passwords to manage.
+**Your key is your password** for Infinite Octaves Omniversal Lattice Chat — it stays with you on-device; no separate passwords to manage.
 
 ```bash
 npm run compare:lattice             # structural chars÷4 receipt
@@ -223,7 +223,7 @@ Deep Lattice UI / provider steps: [`AGENTS.md`](AGENTS.md) and the Lattice secti
 1. **Honesty boundary** on every technical paper; do not upgrade catalog claims to unfinished physics/fab proofs.  
 2. **PRA Snap** before `featured: true`.  
 3. Register papers in `lib/whitepaper-registry.mjs` (+ catalog / plain-surface lines when shipping a standalone).  
-4. **No Supabase**; BYOK — **your key is your password** for 99 Octave Omni-Lattice Chat (stays with you; no separate passwords; never stored server-side).  
+4. **No Supabase**; BYOK — **your key is your password** for Infinite Octaves Omniversal Lattice Chat (stays with you; no separate passwords; never stored server-side).  
 5. Operate **NSPFRNP** (MCA · Seed:Edge). Close agent turns → **∞^∞**.  
 6. Fair Exchange honor rails on paid edges (no Stripe required).
 
@@ -261,7 +261,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-01** · **244** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-03** · **245** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -294,6 +294,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-invisible-frontier-gates-ai-2026-08.html`](/interfaces/blog-invisible-frontier-gates-ai-2026-08.html) | The Invisible Frontier — responding to Bill Gates’s AI warnings · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-komamri-on-a-cluster-2026-08.html`](/interfaces/blog-komamri-on-a-cluster-2026-08.html) | KomaMRI on more than one machine — a plan, not a live Vercel cluster · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-lattice-noahs-ark-metaphor.html`](/interfaces/blog-lattice-noahs-ark-metaphor.html) | System Generation · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-lattice-vs-vibe-coding-2026-09.html`](/interfaces/blog-lattice-vs-vibe-coding-2026-09.html) | Lattice beats vibe coding on design, write, and deploy · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-magneto-harmonic-stellar-2026-08.html`](/interfaces/blog-magneto-harmonic-stellar-2026-08.html) | Stars as magnets that hum · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-metamorphic-octaves-2026-08.html`](/interfaces/blog-metamorphic-octaves-2026-08.html) | When life cooks you, you can come out denser · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-mri-cloud-antenna-2026-08.html`](/interfaces/blog-mri-cloud-antenna-2026-08.html) | Cloud racks as an antenna story — MRI simulation, not a magnet · Ship blog · SS Vibelandia |
@@ -494,7 +495,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 | Path | Title |
 |------|-------|
-| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Lattice Chat Agent · Collaborate · V1.618 |
+| [`/interfaces/lattice-chat/index.html`](/interfaces/lattice-chat/index.html) | Infinite Octaves Omniversal Lattice Chat · Collaborate · V1.618 |
 
 ### `nesting/` (`/interfaces/nesting/`)
 

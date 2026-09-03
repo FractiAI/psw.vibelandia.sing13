@@ -75,7 +75,7 @@ export function BridgeExplainerPage() {
             {BRIDGE_CTA_UPLOAD}
           </Link>
           <a href="/lattice-chat?nest=octave99" className="jb-link-btn">
-            99 Octave Lattice Chat Agent
+            Infinite Octaves Omniversal Lattice Chat
           </a>
           <a href="/octave99-bridge" className="jb-link-btn">
             Omni-Lattice Bridge

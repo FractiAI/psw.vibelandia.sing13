@@ -150,7 +150,7 @@ Counts are maintained by the suite — run `npm test` for the authoritative numb
 ## Key invariants
 
 1. **No Supabase** — lite edges only. State lives on-device (localStorage, BroadcastChannel) or in Vercel Blob.
-2. **BYOK — your key is your password** — For 99 Octave Omni-Lattice / Lattice Chat, the provider API key is the credential. It stays with you on-device; no separate passwords to manage. Keys travel in request headers only — never stored server-side.
+2. **BYOK — your key is your password** — For Infinite Octaves Omniversal Lattice Chat (99 Octave Omni-Lattice engine pin), the provider API key is the credential. It stays with you on-device; no separate passwords to manage. Keys travel in request headers only — never stored server-side.
 3. **Honesty boundaries** — technical/research documents carry an explicit honesty section stating what they do and do not claim; indexes, runbooks, and editorial briefs carry status/scope notes instead.
 4. **Seed:Edge** — all content follows Seed (origin) : Edge (experience) pair structure per BBHE_REPOSITORY_STANDARD.md.
 5. **No framework lock-in** — plain HTML interfaces alongside React SPAs; no Next.js, no Tailwind requirement.

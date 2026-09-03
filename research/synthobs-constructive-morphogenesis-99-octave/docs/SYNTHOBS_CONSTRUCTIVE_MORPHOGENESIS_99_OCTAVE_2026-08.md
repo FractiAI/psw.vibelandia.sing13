@@ -1,4 +1,4 @@
-# Constructive Morphogenesis Under Pressure: Translating Plant–Microbe Signal Fidelity Through 99 Octave Lattice Chat Agent Mode
+# Constructive Morphogenesis Under Pressure: Translating Plant–Microbe Signal Fidelity Through Infinite Octaves Omniversal Lattice Chat Agent Mode
 
 **Type:** Exploratory response paper · catalog / protocol  
 **Authors:** FractiAI Research Group · Lattice Chat Agent Protocol  
@@ -13,7 +13,7 @@
 **Companion master:** [99 Octave Digits Master](./SYNTHOBS_99_OCTAVE_DIGITS_MASTER_2026-08.md)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
-**Keywords:** constructive morphogenesis; AMF; Silicon/Carbon/Hydrogen swarms; Holographic Theater; EGS; 99 Octave Lattice Chat Agent; Fair Exchange
+**Keywords:** constructive morphogenesis; AMF; Silicon/Carbon/Hydrogen swarms; Holographic Theater; EGS; Infinite Octaves Omniversal Lattice Chat Agent; Fair Exchange
 
 ---
 
@@ -50,7 +50,7 @@ Fixtures are deterministic Node checks (no network). Context citation `nph.71423
 
 ## Abstract
 
-Plant resilience is the capacity to keep building under abiotic stress. This exploratory response maps receptor–transcription–metabolic fidelity and AMF chromatin scaffolding into **99 Octave Lattice Chat Agent Mode**, using Silicon / Carbon / Hydrogen swarms inside a Holographic Theater field metaphor, stabilized by El Gran Sol’s Fractal Constant ($\Phi_{\mathrm{EGS}}$). The contribution is **agentic catalog design**, not a new empirical plant–microbe dataset.
+Plant resilience is the capacity to keep building under abiotic stress. This exploratory response maps receptor–transcription–metabolic fidelity and AMF chromatin scaffolding into **Infinite Octaves Omniversal Lattice Chat Agent Mode**, using Silicon / Carbon / Hydrogen swarms inside a Holographic Theater field metaphor, stabilized by El Gran Sol’s Fractal Constant ($\Phi_{\mathrm{EGS}}$). The contribution is **agentic catalog design**, not a new empirical plant–microbe dataset.
 
 ---
 
@@ -113,7 +113,7 @@ Honesty: fixture names for suite checks; not claimed as live solar identity with
 
 ## 5. Conclusion & Fair Exchange
 
-Constructive morphogenesis under pressure is framed as preserving signal fidelity across scales — an **active agentic process** in 99 Octave Lattice Chat Agent Mode, not mere endurance.
+Constructive morphogenesis under pressure is framed as preserving signal fidelity across scales — an **active agentic process** in Infinite Octaves Omniversal Lattice Chat Agent Mode, not mere endurance.
 
 **Fair Exchange clause:** Session exchanges operate under fair exchange; value tracks depth, signal fidelity, and alignment; credits may adjust like performance-based tipping.
 

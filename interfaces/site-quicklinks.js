@@ -137,10 +137,62 @@
     });
   }
 
+  // --- Lattice Chat Collaborate unread badge ---
+
+  function collabUnreadTotal() {
+    try {
+      return Math.max(0, parseInt(localStorage.getItem('lattice-collab.unread.v1') || '0', 10) || 0);
+    } catch (_) { return 0; }
+  }
+
+  function updateCollabBadge(overrideN) {
+    var n = overrideN !== undefined ? overrideN : collabUnreadTotal();
+    // Clear badge when user is on the lattice-chat page (they're reading there)
+    if (path === '/lattice-chat' || path === '/lattice-chat/' || path.indexOf('/lattice-chat') === 0) {
+      n = 0;
+    }
+    var link = document.getElementById('ql-lattice-chat-link');
+    if (!link) return;
+    var badge = link.querySelector('.ql-lc-badge');
+    if (n > 0) {
+      var label = n + ' unread Collaborate message' + (n !== 1 ? 's' : '');
+      if (badge) {
+        badge.textContent = n > 9 ? '9+' : String(n);
+        badge.setAttribute('aria-label', label);
+      } else {
+        var span = document.createElement('span');
+        span.className = 'ql-lc-badge';
+        span.setAttribute('aria-label', label);
+        span.textContent = n > 9 ? '9+' : String(n);
+        link.appendChild(span);
+      }
+    } else if (badge) {
+      badge.remove();
+    }
+  }
+
+  function initCollabBadgeListener() {
+    updateCollabBadge();
+    try {
+      if (typeof BroadcastChannel !== 'undefined') {
+        var bc = new BroadcastChannel('lattice-collab-unread-v1');
+        bc.onmessage = function (ev) {
+          var total = ev && ev.data && typeof ev.data.total === 'number' ? ev.data.total : undefined;
+          updateCollabBadge(total);
+        };
+      }
+    } catch (_) {}
+    window.addEventListener('storage', function (e) {
+      if (e.key === 'lattice-collab.unread.v1') updateCollabBadge();
+    });
+  }
+
+  // --- End Lattice Chat Collaborate unread badge ---
+
   var QUICKLINK_SECONDARY =
     '<a href="/lets-chat" id="ql-lets-chat-link">Let\'s Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
-    '<a href="/lattice-chat">Lattice Chat</a>' +
+    '<a href="/lattice-chat" id="ql-lattice-chat-link">Lattice Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>';
 
@@ -377,6 +429,7 @@
     injectFooterQuicklinks();
     ensureShareQrModal();
     initLcBadgeListener();
+    initCollabBadgeListener();
   }
 
   if (document.readyState === 'loading') {

@@ -26,6 +26,16 @@ export function CollabDmNotifier({
       document.title = base;
     }
     applyTabFaviconBadge(unread);
+
+    // Broadcast unread count to other tabs / the site-quicklinks badge.
+    try {
+      localStorage.setItem('lattice-collab.unread.v1', String(unread));
+    } catch (_) {}
+    try {
+      if (typeof BroadcastChannel !== 'undefined') {
+        new BroadcastChannel('lattice-collab-unread-v1').postMessage({ total: unread });
+      }
+    } catch (_) {}
   }, [unread]);
 
   useEffect(() => {

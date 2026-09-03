@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { countUnreadDms, isIncomingCollabDm, unreadCountForPeer } from '../../apps/lattice-chat/src/feed/dm.ts';
+import {
+  countUnreadDms,
+  isIncomingCollabDm,
+  unreadCountForPeer,
+  latestUnreadDmsByPeer,
+  agentMirrorDmId,
+} from '../../apps/lattice-chat/src/feed/dm.ts';
 
 describe('collaborate DM unread helpers', () => {
   const items = [
@@ -42,5 +48,13 @@ describe('collaborate DM unread helpers', () => {
     expect(countUnreadDms(items, { peer_a: '2026-08-12T10:01:00.000Z' })).toBe(1);
     expect(unreadCountForPeer(items, 'peer_a', {})).toBe(1);
     expect(unreadCountForPeer(items, 'peer_a', { peer_a: '2026-08-12T10:01:30.000Z' })).toBe(0);
+  });
+
+  it('summarizes latest unread per peer for inbox strip', () => {
+    const rows = latestUnreadDmsByPeer(items, {});
+    expect(rows).toHaveLength(2);
+    expect(rows[0].peerId).toBe('peer_b');
+    expect(rows[0].body).toBe('ping');
+    expect(agentMirrorDmId('abc')).toBe('agent_mirror_abc');
   });
 });

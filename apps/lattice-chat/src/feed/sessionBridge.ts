@@ -1,5 +1,5 @@
 /** Format Collaborate DM → Lattice Chat session handoff payloads. */
-import type { UnifiedFeedItem } from '@/feed/types';
+import type { UnifiedFeedItem } from './types';
 
 export type DmThreadLine = Pick<UnifiedFeedItem, 'actor' | 'body' | 'createdAt'>;
 
@@ -24,4 +24,24 @@ export function formatDmThreadForAgent(
   }
   lines.push('--- end DM ---', '', 'Respond with next useful steps for this conversation.');
   return lines.join('\n').slice(0, maxChars);
+}
+
+/** Mirror a shared-agent seat message into the Collaborate DM feed (unread until opened). */
+export function agentSeatMessageToDmEnvelope(msg: {
+  id: string;
+  content: string;
+  createdAt: string;
+  senderPeerId: string;
+  senderName?: string;
+}): Record<string, unknown> {
+  return {
+    id: `agent_mirror_${msg.id}`,
+    type: 'chat',
+    platform: 'lattice',
+    actor: msg.senderName || 'Seat',
+    body: msg.content,
+    threadPeerId: msg.senderPeerId,
+    presenceHue: 'purple',
+    createdAt: msg.createdAt,
+  };
 }

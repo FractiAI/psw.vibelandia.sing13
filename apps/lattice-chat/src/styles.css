@@ -3571,3 +3571,99 @@ body {
   opacity: 0.4;
   cursor: not-allowed;
 }
+
+
+/* Collaborate DM — clickable peer bubbles + sticky inbox (unread until opened) */
+.bubble--collab-peer .bubble-body--collab-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+  background: rgba(212, 175, 55, 0.14);
+  border: 1px solid rgba(212, 175, 55, 0.42);
+  border-radius: 0;
+  padding: 0.75rem 0.95rem;
+  white-space: pre-wrap;
+}
+.bubble--collab-peer .bubble-body--collab-link:hover {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: rgba(212, 175, 55, 0.65);
+}
+.bubble-collab-cta {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-gold, #d4af37);
+}
+.dm-toast__cta {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-gold, #d4af37);
+}
+.collab-dm-inbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0 0 0.85rem;
+}
+.collab-dm-inbox__row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "pill from cta"
+    "body body body";
+  gap: 0.2rem 0.65rem;
+  width: 100%;
+  text-align: left;
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--brand-text);
+  background: rgba(18, 14, 10, 0.72);
+  border: 1px solid rgba(212, 175, 55, 0.38);
+  border-radius: 12px;
+  padding: 0.65rem 0.8rem;
+}
+.collab-dm-inbox__row:hover {
+  border-color: rgba(212, 175, 55, 0.7);
+  background: rgba(26, 18, 12, 0.9);
+}
+.collab-dm-inbox__pill {
+  grid-area: pill;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a1209;
+  background: var(--brand-gold, #d4af37);
+  border-radius: 999px;
+  padding: 0.12rem 0.45rem;
+  align-self: center;
+}
+.collab-dm-inbox__from {
+  grid-area: from;
+  font-size: 0.92rem;
+}
+.collab-dm-inbox__body {
+  grid-area: body;
+  font-size: 0.86rem;
+  color: var(--brand-muted, #b9a88a);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.collab-dm-inbox__cta {
+  grid-area: cta;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-gold, #d4af37);
+  align-self: center;
+}

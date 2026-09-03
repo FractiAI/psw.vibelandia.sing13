@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useUnifiedFeed, startCollabDmBridge } from '@/feed/store';
-import { countUnreadDms } from '@/feed/dm';
+import { countUnreadDms, latestUnreadDmsByPeer } from '@/feed/dm';
 import { applyTabFaviconBadge } from '@/lib/tabFavicon';
 
 /** Floating toast + document title + tab favicon badge when a Collaborate DM is received. */
@@ -38,11 +38,8 @@ export function CollabDmNotifier({
     } catch (_) {}
   }, [unread]);
 
-  useEffect(() => {
-    if (!dmToast) return;
-    const id = window.setTimeout(() => clearDmToast(), 6500);
-    return () => window.clearTimeout(id);
-  }, [dmToast, clearDmToast]);
+  // Toast stays until clicked or dismissed — dismissing does NOT mark read.
+  // Auto-dismiss removed so the click target survives past 6s.
 
   if (!dmToast) return null;
 
@@ -60,8 +57,14 @@ export function CollabDmNotifier({
         <span className="dm-toast__pill">Direct message</span>
         <strong className="dm-toast__from">{dmToast.peerName}</strong>
         <span className="dm-toast__body">{dmToast.body || 'New message'}</span>
+        <span className="dm-toast__cta">Open in Collaborate chat</span>
       </button>
-      <button type="button" className="dm-toast__dismiss" aria-label="Dismiss" onClick={() => clearDmToast()}>
+      <button
+        type="button"
+        className="dm-toast__dismiss"
+        aria-label="Dismiss notification"
+        onClick={() => clearDmToast()}
+      >
         ×
       </button>
     </div>
@@ -78,5 +81,42 @@ export function CollabDmBadge({ className }: { className?: string } = {}) {
     <span className={className || 'collab-dm-badge'} aria-label={`${unread} unread direct messages`}>
       {unread > 9 ? '9+' : unread}
     </span>
+  );
+}
+
+/** Sticky inbox strip in Lattice Chat — click opens Collaborate DM; unread until that thread is opened. */
+export function CollabDmInboxStrip({
+  onOpenCollaborate,
+}: {
+  onOpenCollaborate?: () => void;
+} = {}) {
+  const items = useUnifiedFeed((s) => s.items);
+  const dmLastReadAt = useUnifiedFeed((s) => s.dmLastReadAt);
+  const openPeerDm = useUnifiedFeed((s) => s.openPeerDm);
+  const rows = latestUnreadDmsByPeer(items, dmLastReadAt);
+  if (!rows.length || !onOpenCollaborate) return null;
+
+  return (
+    <div className="collab-dm-inbox" role="region" aria-label="Unread Collaborate messages">
+      {rows.map((row) => (
+        <button
+          key={row.peerId}
+          type="button"
+          className="collab-dm-inbox__row"
+          onClick={() => {
+            openPeerDm(row.peerId);
+            onOpenCollaborate();
+          }}
+        >
+          <span className="collab-dm-inbox__pill">Collaborate</span>
+          <strong className="collab-dm-inbox__from">
+            {row.peerName}
+            <span className="collab-dm-badge collab-dm-badge--inline">{row.count > 9 ? '9+' : row.count}</span>
+          </strong>
+          <span className="collab-dm-inbox__body">{row.body}</span>
+          <span className="collab-dm-inbox__cta">Open chat</span>
+        </button>
+      ))}
+    </div>
   );
 }

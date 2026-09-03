@@ -28,7 +28,8 @@ import {
 import { useLatticeStore } from '@/store';
 import { findRepository, DEFAULT_REPO_ID } from '@/repositories';
 import { listSelectableChats } from '@/threadHistory';
-import { CollabDmBadge } from '@/components/collaborate/CollabDmNotifier';
+import { CollabDmBadge, CollabDmInboxStrip } from '@/components/collaborate/CollabDmNotifier';
+import { useUnifiedFeed } from '@/feed/store';
 import { resolveClientCollabPeerId, peerNameForId } from '@/feed/seatIdentity';
 import { isSharedCollabAgentThread } from '@/feed/syncCollaborateAgent';
 
@@ -94,6 +95,7 @@ export function ChatPane({
   const resumedRef = useRef(false);
 
   const myCollabPeerId = useMemo(() => resolveClientCollabPeerId(userEmail), [userEmail]);
+  const openPeerDm = useUnifiedFeed((s) => s.openPeerDm);
   const onSharedSession =
     sharedCollab || isSharedCollabAgentThread(activeThreadId);
 
@@ -534,17 +536,32 @@ export function ChatPane({
             </div>
           </div>
         ) : (
-          thread.messages.map((m) => {
+          <>
+          {!compact && onOpenCollaborate ? (
+            <CollabDmInboxStrip onOpenCollaborate={onOpenCollaborate} />
+          ) : null}
+          {thread.messages.map((m) => {
+            const fromOtherSeat = Boolean(
+              m.role === 'user' &&
+                m.senderPeerId &&
+                myCollabPeerId &&
+                m.senderPeerId !== myCollabPeerId,
+            );
             const userLabel =
               m.role === 'user'
-                ? m.senderPeerId && myCollabPeerId && m.senderPeerId !== myCollabPeerId
-                  ? m.senderName || peerNameForId(m.senderPeerId)
+                ? fromOtherSeat
+                  ? m.senderName || peerNameForId(m.senderPeerId!)
                   : 'You'
                 : null;
+            const openCollabPeer = () => {
+              if (!fromOtherSeat || !m.senderPeerId || !onOpenCollaborate) return;
+              openPeerDm(m.senderPeerId);
+              onOpenCollaborate();
+            };
             return (
             <article
               key={m.id}
-              className={`bubble bubble-${m.role}`}
+              className={`bubble bubble-${m.role}${fromOtherSeat ? ' bubble--collab-peer' : ''}`}
               data-role={m.role}
               data-sender={m.senderPeerId || undefined}
             >
@@ -561,6 +578,16 @@ export function ChatPane({
                 <div className="bubble-body">
                   <MarkdownBody>{m.content}</MarkdownBody>
                 </div>
+              ) : fromOtherSeat ? (
+                <button
+                  type="button"
+                  className="bubble-body bubble-body--collab-link"
+                  onClick={openCollabPeer}
+                  title="Open this message in Collaborate chat"
+                >
+                  {m.content}
+                  <span className="bubble-collab-cta">Open in Collaborate chat</span>
+                </button>
               ) : (
                 <div className="bubble-body">{m.content}</div>
               )}
@@ -569,7 +596,8 @@ export function ChatPane({
               ) : null}
             </article>
             );
-          })
+          })}
+          </>
         )}
         {showRemoteWorking ? (
           <article className="bubble bubble-assistant thinking thought-stream-panel">

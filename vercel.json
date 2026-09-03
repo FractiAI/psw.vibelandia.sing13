@@ -733,6 +733,14 @@
       "destination": "/interfaces/voyage/deck-3-night.html"
     },
     {
+      "source": "/sin-city",
+      "destination": "/interfaces/voyage/deck-3-night.html"
+    },
+    {
+      "source": "/sin-city/",
+      "destination": "/interfaces/voyage/deck-3-night.html"
+    },
+    {
       "source": "/voyage/deck-2-core",
       "destination": "/interfaces/voyage/deck-2-core.html"
     },

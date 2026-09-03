@@ -237,6 +237,7 @@
       '/omniverse-canvas',
       '/canvas',
       '/sin-city',
+      '/voyage/deck-3-night',
       '/frontiersman-voyage',
       '/lets-chat',
       '/lattice-chat',

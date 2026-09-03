@@ -18,6 +18,7 @@ import {
   voyageDeckHref,
   voyageDirectoryHref,
 } from '../lib/voyage-directory.mjs';
+import { renderSinCityPageHtml } from '../lib/sin-city-page.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -38,7 +39,9 @@ fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(path.join(OUT_DIR, 'decks.html'), renderVoyageDirectoryIndexHtml());
 
 for (const deck of VOYAGE_DECKS) {
-  fs.writeFileSync(path.join(OUT_DIR, `${deck.slug}.html`), renderVoyageDeckPageHtml(deck));
+  const html =
+    deck.slug === 'deck-3-night' ? renderSinCityPageHtml() : renderVoyageDeckPageHtml(deck);
+  fs.writeFileSync(path.join(OUT_DIR, `${deck.slug}.html`), html);
 }
 
 for (const cabin of VOYAGE_CABINS) {

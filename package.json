@@ -109,6 +109,7 @@
     "sync:reading-room": "node scripts/sync-reading-room.mjs",
     "sync:reading-room-catalog": "node scripts/sync-reading-room-catalog.mjs",
     "sync:sin-city-program": "node scripts/sync-sin-city-program.mjs",
+    "sync:sin-city-page": "node scripts/sync-sin-city-page.mjs",
     "sync:reading-room-program": "node scripts/sync-reading-room-program.mjs",
     "sync:reading-room-program-images": "node scripts/sync-reading-room-program-images.mjs",
     "sync:program-bach-images": "node scripts/sync-program-bach-images.mjs",

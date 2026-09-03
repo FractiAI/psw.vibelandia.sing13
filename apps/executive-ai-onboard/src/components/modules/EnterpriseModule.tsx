@@ -6,6 +6,12 @@ import { ModuleTwoPhase } from '../presentation/ModuleTwoPhase';
 import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
 const CASES = [
+  {
+    id: 'sna-gateway',
+    title: 'SNA/TCP-IP → Lattice Chat (featured)',
+    now: 'Flat vibe windows + protocol silos',
+    forward: 'Repeating fractal gateway · multi-octave Omni-Lattice (case study)',
+  },
   { id: 'km', title: 'Knowledge management', now: 'Search + static wikis', forward: 'Living semantic fields (proposed)' },
   { id: 'research', title: 'Research acceleration', now: 'LLM-assisted literature review', forward: 'Multi-scale pattern synthesis (proposed)' },
   { id: 'twins', title: 'Digital twins', now: 'Sensor → model → dashboard', forward: 'Recursive system mirrors (proposed)' },

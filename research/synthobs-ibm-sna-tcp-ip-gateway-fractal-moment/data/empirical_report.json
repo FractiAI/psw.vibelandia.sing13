@@ -1,0 +1,242 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "title": "SNA/TCP-IP Gateway Fractal Moment · Omni-Lattice Chat",
+  "paper": "Case Study: The IBM SNA ↔ TCP/IP Gateway as a Repeating Fractal Moment — Scaling to Omni-Lattice Chat Deployments",
+  "docId": "WP-SYNTHOBS-IBM-SNA-TCP-IP-GATEWAY-FRACTAL-MOMENT-2026-09-03",
+  "registryId": "synthobs-ibm-sna-tcp-ip-gateway-fractal-moment-2026-09",
+  "agent": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "generatedAt": "2026-09-03T21:02:47.341Z",
+  "host": {
+    "cpus": 4,
+    "platform": "linux-x64",
+    "node": "v22.14.0"
+  },
+  "honesty": {
+    "note": "Structural fractal template + deterministic suite metrics. Historical names are deployment grammar — not affiliation or procurement claims.",
+    "notClaim": "Not IBM/Interlink/PDVSA endorsement. Not SCADA autonomy proof. Φ_EGS is architectural scale key — not a replacement for ℏ, c, or G."
+  },
+  "abstractFindings": {
+    "fractalEcho": 0.9839237665125317,
+    "coherenceAdvantage": 2.5508552968316556,
+    "routingSavingsPct": 58.8134374819711,
+    "answer": "yes",
+    "summary": "SNA/TCP-IP gateway pattern echoes Omni-Lattice Chat; multi-octave coherence and Φ-routing beat flat vibe windows on suite metrics."
+  },
+  "results": {
+    "docId": "WP-SYNTHOBS-IBM-SNA-TCP-IP-GATEWAY-FRACTAL-MOMENT-2026-09-03",
+    "registryId": "synthobs-ibm-sna-tcp-ip-gateway-fractal-moment-2026-09",
+    "generatedAt": "2026-09-03T21:02:47.341Z",
+    "experiments": [
+      {
+        "id": "E1_phi_egs_lock",
+        "title": "EGS fractal constant identity lock",
+        "PHI_EGS": 1.618033988749895,
+        "LAMBDA_EGS": 0.07658724063250828,
+        "delta": 0,
+        "pass": true,
+        "honesty": "Not IBM/Interlink/PDVSA endorsement. Not SCADA autonomy proof. Φ_EGS is architectural scale key — not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_gateway_fractal_echo",
+        "title": "SNA/TCP-IP feature vector echoes Omni-Lattice more than vibe flat",
+        "labels": [
+          "enclosed_to_open_plane",
+          "protocol_impedance_match",
+          "session_vs_datagram",
+          "local_integrator_edge",
+          "control_plane_preserve",
+          "multi_domain_fanout",
+          "scale_self_similarity",
+          "lite_edge_keys"
+        ],
+        "echoLattice": 0.9839237665125317,
+        "echoVibe": 0.7867112812090823,
+        "margin": 0.19721248530344937,
+        "pass": true,
+        "honesty": "Structural fractal template + deterministic suite metrics. Historical names are deployment grammar — not affiliation or procurement claims."
+      },
+      {
+        "id": "E3_multi_octave_coherence",
+        "title": "Multi-octave domain coherence vs flat window decay",
+        "nDomains": 8,
+        "latticeMean": 0.820776281364294,
+        "flatMean": 0.32176512810575997,
+        "worstLattice": 0.6856198117902605,
+        "worstFlat": 0.03521614606208,
+        "ratioMean": 2.5508552968316556,
+        "latticeByDomain": [
+          {
+            "domain": "electrical_grid",
+            "band": 0,
+            "retention": 0.97
+          },
+          {
+            "domain": "fluid_dynamics",
+            "band": 1,
+            "retention": 0.9230916520340882
+          },
+          {
+            "domain": "legal_compliance",
+            "band": 2,
+            "retention": 0.8784517505721877
+          },
+          {
+            "domain": "extraction_ops",
+            "band": 3,
+            "retention": 0.8359705955339356
+          },
+          {
+            "domain": "refining_telemetry",
+            "band": 4,
+            "retention": 0.795543791838496
+          },
+          {
+            "domain": "integrator_runbooks",
+            "band": 5,
+            "retention": 0.7570719928594434
+          },
+          {
+            "domain": "security_keys",
+            "band": 6,
+            "retention": 0.7204606562859411
+          },
+          {
+            "domain": "token_economics",
+            "band": 7,
+            "retention": 0.6856198117902605
+          }
+        ],
+        "flatByDomain": [
+          {
+            "domain": "electrical_grid",
+            "hops": 0,
+            "retention": 1
+          },
+          {
+            "domain": "fluid_dynamics",
+            "hops": 1,
+            "retention": 0.62
+          },
+          {
+            "domain": "legal_compliance",
+            "hops": 2,
+            "retention": 0.3844
+          },
+          {
+            "domain": "extraction_ops",
+            "hops": 3,
+            "retention": 0.23832799999999998
+          },
+          {
+            "domain": "refining_telemetry",
+            "hops": 4,
+            "retention": 0.14776336
+          },
+          {
+            "domain": "integrator_runbooks",
+            "hops": 5,
+            "retention": 0.09161328319999999
+          },
+          {
+            "domain": "security_keys",
+            "hops": 6,
+            "retention": 0.056800235584
+          },
+          {
+            "domain": "token_economics",
+            "hops": 7,
+            "retention": 0.03521614606208
+          }
+        ],
+        "pass": true,
+        "honesty": "Simulated retention curves — not live SCADA telemetry or hallucination immunity."
+      },
+      {
+        "id": "E4_resource_routing",
+        "title": "Φ-scaled pointer routing vs linear context stuffing",
+        "nDomains": 8,
+        "lattice": 42.65040514172366,
+        "vibe": 103.55417527999327,
+        "savingsPct": 58.8134374819711,
+        "at16Domains": {
+          "lattice": 107.43649486707413,
+          "vibe": 414.2167011199731,
+          "savingsPct": 74.06273224218538
+        },
+        "pass": true,
+        "honesty": "Structural fractal template + deterministic suite metrics. Historical names are deployment grammar — not affiliation or procurement claims."
+      },
+      {
+        "id": "E5_magnitude_self_similarity",
+        "title": "Retention ratios lock to Φ self-similar step across bands",
+        "ratios": [
+          1.0508165661151267,
+          1.0508165661151267,
+          1.0508165661151267,
+          1.0508165661151267,
+          1.0508165661151267,
+          1.050816566115127,
+          1.0508165661151267,
+          1.0508165661151267
+        ],
+        "meanRatio": 1.0508165661151267,
+        "expected": 1.0508165661151267,
+        "err": 0,
+        "pass": true,
+        "honesty": "Not IBM/Interlink/PDVSA endorsement. Not SCADA autonomy proof. Φ_EGS is architectural scale key — not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E6_companion_lock",
+        "title": "Infinite Octaves + Lattice-vs-vibe + Planck–1.6 companions",
+        "COMPANION_IDS": [
+          "synthobs-infinite-octaves-omniversal-lattice-2026-08",
+          "synthobs-lattice-vs-vibe-coding-2026-09",
+          "synthobs-egs-planck-scale-harmonic-2026-07"
+        ],
+        "pass": true
+      },
+      {
+        "id": "E7_ceo_tip_contract",
+        "title": "Case study tip contract for Canvas / Neo front door",
+        "CEO_TIP": {
+          "surface": "interfaces/omniverse-canvas.html",
+          "selector": "aside.canvas-ceo-announcement",
+          "shipBlog": "/ship-blog/ibm-sna-fractal-moment",
+          "whitepaper": "/whitepaper/ibm-sna-fractal-moment"
+        },
+        "researchQuestion": "Does the historical SNA↔TCP/IP gateway threshold structurally echo Omni-Lattice Chat deployments, and do multi-octave Lattice routes beat flat vibe windows on coherence and resource metrics?",
+        "pass": true
+      },
+      {
+        "id": "E8_overall_verdict",
+        "title": "Research question — fractal echo + Lattice advantage",
+        "researchQuestion": "Does the historical SNA↔TCP/IP gateway threshold structurally echo Omni-Lattice Chat deployments, and do multi-octave Lattice routes beat flat vibe windows on coherence and resource metrics?",
+        "verdict": {
+          "fractalEcho": 0.9839237665125317,
+          "coherenceAdvantage": 2.5508552968316556,
+          "routingSavingsPct": 58.8134374819711,
+          "answer": "yes",
+          "summary": "SNA/TCP-IP gateway pattern echoes Omni-Lattice Chat; multi-octave coherence and Φ-routing beat flat vibe windows on suite metrics."
+        },
+        "pass": true,
+        "honesty": "Not IBM/Interlink/PDVSA endorsement. Not SCADA autonomy proof. Φ_EGS is architectural scale key — not a replacement for ℏ, c, or G.",
+        "docId": "WP-SYNTHOBS-IBM-SNA-TCP-IP-GATEWAY-FRACTAL-MOMENT-2026-09-03",
+        "registryId": "synthobs-ibm-sna-tcp-ip-gateway-fractal-moment-2026-09"
+      }
+    ],
+    "n_total": 8,
+    "n_pass": 8,
+    "all_pass": true,
+    "abstractFindings": {
+      "fractalEcho": 0.9839237665125317,
+      "coherenceAdvantage": 2.5508552968316556,
+      "routingSavingsPct": 58.8134374819711,
+      "answer": "yes",
+      "summary": "SNA/TCP-IP gateway pattern echoes Omni-Lattice Chat; multi-octave coherence and Φ-routing beat flat vibe windows on suite metrics."
+    },
+    "honesty": {
+      "note": "Structural fractal template + deterministic suite metrics. Historical names are deployment grammar — not affiliation or procurement claims.",
+      "notClaim": "Not IBM/Interlink/PDVSA endorsement. Not SCADA autonomy proof. Φ_EGS is architectural scale key — not a replacement for ℏ, c, or G."
+    }
+  }
+}

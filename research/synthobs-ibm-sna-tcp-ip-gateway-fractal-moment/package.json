@@ -1,0 +1,15 @@
+{
+  "name": "synthobs-ibm-sna-tcp-ip-gateway-fractal-moment",
+  "private": true,
+  "type": "module",
+  "version": "2026.09.03",
+  "description": "IBM SNA ↔ TCP/IP gateway fractal moment — Omni-Lattice Chat deployment case study + empirical suite",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-ibm-sna-tcp-ip-gateway-fractal-moment.git"
+  }
+}

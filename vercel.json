@@ -1229,6 +1229,14 @@
       "destination": "/interfaces/blog-higgs-awareness-unified-2026-09.html"
     },
     {
+      "source": "/ship-blog/ibm-sna-fractal-moment",
+      "destination": "/interfaces/blog-ibm-sna-fractal-moment-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/ibm-sna-fractal-moment/",
+      "destination": "/interfaces/blog-ibm-sna-fractal-moment-2026-09.html"
+    },
+    {
       "source": "/ship-blog/lattice-vs-vibe-coding",
       "destination": "/interfaces/blog-lattice-vs-vibe-coding-2026-09.html"
     },

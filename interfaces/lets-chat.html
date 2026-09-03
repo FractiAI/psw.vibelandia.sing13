@@ -45,11 +45,15 @@
             <div class="lc-list-head__top">
               <h2>Chats</h2>
               <div class="lc-list-head__tools">
-                <button type="button" class="lc-icon-btn" id="lc-dnd-btn" aria-pressed="false" title="Do not disturb">🔕</button>
-                <button type="button" class="lc-icon-btn" id="lc-signout" title="Sign out">⎋</button>
+                <button type="button" class="lc-dnd-toggle" id="lc-dnd-btn" aria-pressed="false" aria-label="Do not disturb · off · tap to quiet" title="Do not disturb · off">
+                  <span class="lc-dnd-toggle__icon" aria-hidden="true">🔔</span>
+                  <span class="lc-dnd-toggle__text">Available</span>
+                </button>
+                <button type="button" class="lc-icon-btn" id="lc-signout" title="Sign out" aria-label="Sign out">⎋</button>
               </div>
             </div>
             <p class="lc-list-head__you" id="lc-me-label">You</p>
+            <p class="lc-list-head__dnd" id="lc-dnd-status" hidden>Do not disturb is on</p>
           </header>
           <ul id="lc-peer-list" class="lc-chat-list"></ul>
           <p class="lc-list-empty" id="lc-list-empty" hidden>No other guests seated yet.</p>
@@ -70,9 +74,13 @@
                 <p id="lc-thread-status" class="lc-thread__status"></p>
               </div>
               <div class="lc-thread-head__actions">
+                <button type="button" class="lc-dnd-toggle lc-dnd-toggle--compact" id="lc-dnd-btn-thread" aria-pressed="false" aria-label="Do not disturb · off · tap to quiet" title="Do not disturb · off">
+                  <span class="lc-dnd-toggle__icon" aria-hidden="true">🔔</span>
+                  <span class="lc-dnd-toggle__text">Avail</span>
+                </button>
                 <button type="button" class="lc-icon-btn" id="lc-voice-btn" title="Voice call" aria-label="Voice call">📞</button>
                 <button type="button" class="lc-icon-btn" id="lc-video-btn" title="Video call" aria-label="Video call">📹</button>
-                <button type="button" class="lc-icon-btn lc-icon-btn--danger" id="lc-hangup-btn" hidden title="Hang up">✕</button>
+                <button type="button" class="lc-icon-btn lc-icon-btn--danger" id="lc-hangup-btn" hidden title="Hang up" aria-label="Hang up">✕</button>
               </div>
             </header>
 

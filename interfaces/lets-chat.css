@@ -95,7 +95,7 @@
   font-weight: 600;
   color: #fef3c7;
 }
-.lc-list-head__tools { display: flex; gap: 0.25rem; }
+.lc-list-head__tools { display: flex; align-items: center; gap: 0.35rem; }
 .lc-list-head__you {
   margin: 0.35rem 0 0;
   font-size: 0.72rem;
@@ -103,6 +103,54 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.lc-list-head__dnd {
+  margin: 0.2rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f87171;
+}
+.lc-list-head__dnd[hidden] { display: none !important; }
+
+.lc-dnd-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  margin: 0;
+  padding: 0.28rem 0.55rem 0.28rem 0.4rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 999px;
+  background: rgba(42, 57, 66, 0.85);
+  color: #e9edef;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.lc-dnd-toggle__icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.lc-dnd-toggle__text {
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.lc-dnd-toggle:hover {
+  background: rgba(212, 175, 55, 0.14);
+}
+.lc-dnd-toggle[aria-pressed='true'] {
+  border-color: rgba(248, 113, 113, 0.55);
+  background: rgba(234, 67, 53, 0.22);
+  color: #fecaca;
+}
+.lc-dnd-toggle--compact {
+  padding: 0.28rem 0.45rem;
+}
+.lc-dnd-toggle--compact .lc-dnd-toggle__text {
+  font-size: 0.68rem;
 }
 
 .lc-chat-list {

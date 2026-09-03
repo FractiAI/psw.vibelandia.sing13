@@ -90,9 +90,12 @@ describe('lets-chat-signal', () => {
     expect(inbox[0].ciphertext).toBe('cipher_blob');
   });
 
-  it('tracks ephemeral DND presence', () => {
+  it('tracks ephemeral DND presence and clears when set offline', () => {
     setPresence('lc_peer_a', { dnd: true, label: 'dnd' });
     expect(snapshotPresence().lc_peer_a.dnd).toBe(true);
+    setPresence('lc_peer_a', { dnd: false, label: 'online' });
+    expect(snapshotPresence().lc_peer_a.dnd).toBe(false);
+    expect(snapshotPresence().lc_peer_a.label).toBe('online');
   });
 });
 
@@ -103,10 +106,18 @@ describe('lets-chat surfaces', () => {
     const root = join(process.cwd());
     const app = readFileSync(join(root, 'interfaces/lets-chat.html'), 'utf8');
     const intro = readFileSync(join(root, 'interfaces/lets-chat-intro.html'), 'utf8');
+    const css = readFileSync(join(root, 'interfaces/lets-chat.css'), 'utf8');
+    const client = readFileSync(join(root, 'interfaces/lets-chat-client.js'), 'utf8');
     expect(app).toContain('lets-chat-client.js');
     expect(app).toContain('lc-chat-list');
     expect(app).toContain('lc-shell');
     expect(app).toContain('lc-back-btn');
+    expect(app).toContain('id="lc-dnd-btn"');
+    expect(app).toContain('id="lc-dnd-btn-thread"');
+    expect(app).toContain('lc-dnd-toggle');
+    expect(css).toContain('.lc-dnd-toggle');
+    expect(client).toContain('function toggleDnd');
+    expect(client).toContain("localStorage.removeItem(STORAGE_DND)");
     expect(intro).toContain('No harvesting');
     expect(intro).toContain('Predators never welcome');
   });

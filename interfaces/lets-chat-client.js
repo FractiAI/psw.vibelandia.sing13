@@ -699,9 +699,38 @@
   }
 
   function updateDndButton() {
-    var btn = $('lc-dnd-btn');
-    btn.setAttribute('aria-pressed', state.dnd ? 'true' : 'false');
-    btn.title = state.dnd ? 'Do not disturb · on' : 'Do not disturb · off';
+    var buttons = [$('lc-dnd-btn'), $('lc-dnd-btn-thread')];
+    var label = state.dnd ? 'Do not disturb · on · tap to go available' : 'Do not disturb · off · tap to quiet';
+    var title = state.dnd ? 'Do not disturb · on' : 'Do not disturb · off';
+    var icon = state.dnd ? '🔕' : '🔔';
+    var text = state.dnd ? 'Quiet' : 'Available';
+    var textCompact = state.dnd ? 'Quiet' : 'Avail';
+    buttons.forEach(function (btn) {
+      if (!btn) return;
+      btn.setAttribute('aria-pressed', state.dnd ? 'true' : 'false');
+      btn.setAttribute('aria-label', label);
+      btn.title = title;
+      var iconEl = btn.querySelector('.lc-dnd-toggle__icon');
+      var textEl = btn.querySelector('.lc-dnd-toggle__text');
+      if (iconEl) iconEl.textContent = icon;
+      if (textEl) {
+        textEl.textContent = btn.id === 'lc-dnd-btn-thread' ? textCompact : text;
+      }
+    });
+    var status = $('lc-dnd-status');
+    if (status) {
+      status.hidden = !state.dnd;
+      status.textContent = state.dnd ? 'Do not disturb is on — tap Quiet to turn off' : '';
+    }
+  }
+
+  function toggleDnd() {
+    state.dnd = !state.dnd;
+    if (state.dnd) localStorage.setItem(STORAGE_DND, '1');
+    else localStorage.removeItem(STORAGE_DND);
+    updateDndButton();
+    void pushPresence();
+    if (state.dnd) endCall(true);
   }
 
   $('lc-back-btn').addEventListener('click', closeThread);
@@ -719,12 +748,15 @@
     showGate();
   });
 
-  $('lc-dnd-btn').addEventListener('click', function () {
-    state.dnd = !state.dnd;
-    localStorage.setItem(STORAGE_DND, state.dnd ? '1' : '0');
-    updateDndButton();
-    void pushPresence();
-    if (state.dnd) endCall(true);
+  $('lc-dnd-btn').addEventListener('click', function (ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+    toggleDnd();
+  });
+  $('lc-dnd-btn-thread').addEventListener('click', function (ev) {
+    ev.preventDefault();
+    ev.stopPropagation();
+    toggleDnd();
   });
 
   $('lc-compose').addEventListener('submit', function (ev) {

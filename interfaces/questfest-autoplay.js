@@ -10,6 +10,7 @@
     window.QV_initPageSoundtrack({
       pageId: 'questfest-home',
       playlistId: 'pl-reception',
+      staticPlaylist: (window.QV_PAGE_SOUNDTRACK_PLAYLISTS || {})['pl-reception'] || [],
       btnId: 'reception-hero-score',
       audioId: 'reception-hero-audio',
       label: 'SS Vibelandia soundtrack',

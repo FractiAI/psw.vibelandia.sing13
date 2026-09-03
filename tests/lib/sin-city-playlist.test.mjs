@@ -37,8 +37,11 @@ describe('Sin City · jukebox playlist', () => {
     const js = read('interfaces/sin-city-autoplay.js');
     const page = read('interfaces/voyage/deck-3-night.html');
     expect(js).toContain("playlistId: 'pl-sin-city'");
+    expect(js).toContain("staticPlaylist: (window.QV_PAGE_SOUNDTRACK_PLAYLISTS || {})['pl-sin-city']");
     expect(page).toContain('sin-city-autoplay.js');
     expect(page).toContain('page-soundtrack.js');
+    expect(page).toContain('page-soundtrack-playlists.js');
+    expect(page).toContain('qv-sound-mute__label">Sound on');
     expect(page).toContain('/sin-city-program');
     expect(page).not.toContain('Download program (PDF)');
     expect(sinCityListenHref()).toContain('playlist=pl-sin-city');

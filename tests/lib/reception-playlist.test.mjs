@@ -62,13 +62,16 @@ describe('Reception · jukebox playlist', () => {
     const pageSoundtrack = read('interfaces/page-soundtrack.js');
     const frontDesk = read('interfaces/front-desk.html');
     expect(js).toContain("playlistId: 'pl-reception'");
+    expect(js).toContain("staticPlaylist: (window.QV_PAGE_SOUNDTRACK_PLAYLISTS || {})['pl-reception']");
     expect(pageSoundtrack).toContain('QV_initPageSoundtrack');
     expect(pageSoundtrack).toContain('pagehide');
     expect(frontDesk).toContain('front-desk-autoplay.js');
-    expect(frontDesk).toContain('href="/front-desk-program">Check-in program</a>');
+    expect(frontDesk).toContain('page-soundtrack-playlists.js');
+    expect(frontDesk).toContain('/front-desk-program');
     expect(frontDesk).toContain('page-soundtrack.js');
     expect(frontDesk).toContain('id="front-desk-hero-audio"');
     expect(frontDesk).toContain('id="front-desk-hero-score"');
+    expect(frontDesk).toContain('qv-sound-mute__label">Sound on');
     expect(frontDesk).toContain('ep-hero--front-desk');
     expect(frontDesk).toContain('site-quicklinks.js');
     const quicklinks = read('interfaces/site-quicklinks.js');

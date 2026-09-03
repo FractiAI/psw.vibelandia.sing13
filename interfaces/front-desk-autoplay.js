@@ -10,6 +10,7 @@
     window.QV_initPageSoundtrack({
       pageId: 'front-desk',
       playlistId: 'pl-reception',
+      staticPlaylist: (window.QV_PAGE_SOUNDTRACK_PLAYLISTS || {})['pl-reception'] || [],
       btnId: 'front-desk-hero-score',
       audioId: 'front-desk-hero-audio',
       label: 'Front Desk soundtrack',

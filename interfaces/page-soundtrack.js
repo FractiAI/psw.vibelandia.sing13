@@ -51,7 +51,14 @@
     if (!button) return;
     button.classList.add('qv-sound-mute');
     if (!button.querySelector('.qv-sound-mute__icon')) {
-      button.innerHTML = '<span class="qv-sound-mute__icon" aria-hidden="true"></span>';
+      button.innerHTML =
+        '<span class="qv-sound-mute__icon" aria-hidden="true"></span>' +
+        '<span class="qv-sound-mute__label">Sound on</span>';
+    } else if (!button.querySelector('.qv-sound-mute__label')) {
+      var labelEl = document.createElement('span');
+      labelEl.className = 'qv-sound-mute__label';
+      labelEl.textContent = 'Sound on';
+      button.appendChild(labelEl);
     }
   }
 
@@ -62,12 +69,14 @@
     button.classList.toggle('is-muted', !!muted);
     button.classList.toggle('is-playing', !muted);
     button.setAttribute('aria-pressed', muted ? 'true' : 'false');
+    var labelEl = button.querySelector('.qv-sound-mute__label');
+    if (labelEl) labelEl.textContent = muted ? 'Sound off' : 'Sound on';
     if (muted) {
       button.setAttribute('aria-label', 'Unmute soundtrack' + (trackAria ? ': ' + trackAria : ''));
-      button.title = 'Muted · tap to unmute';
+      button.title = 'Sound off · tap to unmute';
     } else {
       button.setAttribute('aria-label', 'Mute soundtrack' + (trackAria ? ': ' + trackAria : ''));
-      button.title = trackAria ? 'Playing · ' + trackAria + ' · tap to mute' : 'Sound on · tap to mute';
+      button.title = trackAria ? 'Sound on · ' + trackAria + ' · tap to mute' : 'Sound on · tap to mute';
     }
   }
 
@@ -150,10 +159,18 @@
     });
   }
 
-  function resolvePlaylist(opts) {
-    if (opts.staticPlaylist && opts.staticPlaylist.length) {
-      return Promise.resolve(opts.staticPlaylist);
+  function staticPlaylistFor(opts) {
+    if (opts.staticPlaylist && opts.staticPlaylist.length) return opts.staticPlaylist;
+    var map = window.QV_PAGE_SOUNDTRACK_PLAYLISTS;
+    if (opts.playlistId && map && map[opts.playlistId] && map[opts.playlistId].length) {
+      return map[opts.playlistId];
     }
+    return null;
+  }
+
+  function resolvePlaylist(opts) {
+    var baked = staticPlaylistFor(opts);
+    if (baked) return Promise.resolve(baked);
     if (opts.playlistId) {
       return fetchPlaylistFromCatalog(opts.playlistId);
     }
@@ -588,7 +605,8 @@
       if (!forceBrowse && !isSoundtrackPlaying()) return;
       if (!leavesSoundtrackPage(anchor)) return;
       if (isPrimaryShipDoor(url)) {
-        pauseLocalSessionQuiet(session);
+        // Keep music going — handoff during the click gesture, then navigate in-tab.
+        handoffIfPlaying();
         return;
       }
       ev.preventDefault();
@@ -648,6 +666,7 @@
 
       function markPlaying() {
         pauseOtherMedia(audio);
+        broadcast({ type: 'stop', pageId: pageId, playlistId: opts.playlistId || null });
         var track = current();
         setToggleState(true);
         if (!session.logged[track.id]) {
@@ -677,7 +696,6 @@
 
       function tryPlay() {
         pauseOtherMedia(audio);
-        broadcast({ type: 'stop', pageId: pageId, playlistId: opts.playlistId || null });
         var p = audio.play();
         if (p && typeof p.then === 'function') {
           return p
@@ -763,7 +781,6 @@
       }
 
       pauseOtherMedia(audio);
-      broadcast({ type: 'stop', pageId: pageId, playlistId: opts.playlistId || null });
       session.localActive = true;
 
       loadTrack(0);

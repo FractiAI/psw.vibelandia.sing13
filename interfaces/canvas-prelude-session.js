@@ -78,6 +78,10 @@
     if (id === DEFAULT_PLAYLIST_ID && window.CANVAS_PRELUDE_PLAYLIST && window.CANVAS_PRELUDE_PLAYLIST.length) {
       return Promise.resolve(window.CANVAS_PRELUDE_PLAYLIST);
     }
+    var baked = window.QV_PAGE_SOUNDTRACK_PLAYLISTS;
+    if (baked && baked[id] && baked[id].length) {
+      return Promise.resolve(baked[id]);
+    }
     return fetch('/api/catalog', { cache: 'no-store' })
       .then(function (res) {
         return res.ok ? res.json() : null;

@@ -75,7 +75,7 @@ describe('lets-chat-signal', () => {
     expect(msg).toBeNull();
   });
 
-  it('relays ciphertext envelopes without persisting beyond memory', () => {
+  it('relays ciphertext envelopes without persisting beyond memory', async () => {
     const env = sanitizeEnvelope({
       id: 'lc_test_1',
       fromPeerId: 'lc_peer_a',
@@ -84,18 +84,18 @@ describe('lets-chat-signal', () => {
       ciphertext: 'cipher_blob',
     });
     expect(env).toBeTruthy();
-    pushEnvelope(env);
-    const inbox = pullInbox({ toPeerId: 'lc_peer_b', since: 0 });
+    await pushEnvelope(env);
+    const inbox = await pullInbox({ toPeerId: 'lc_peer_b', since: 0 });
     expect(inbox).toHaveLength(1);
     expect(inbox[0].ciphertext).toBe('cipher_blob');
   });
 
-  it('tracks ephemeral DND presence and clears when set offline', () => {
-    setPresence('lc_peer_a', { dnd: true, label: 'dnd' });
-    expect(snapshotPresence().lc_peer_a.dnd).toBe(true);
-    setPresence('lc_peer_a', { dnd: false, label: 'online' });
-    expect(snapshotPresence().lc_peer_a.dnd).toBe(false);
-    expect(snapshotPresence().lc_peer_a.label).toBe('online');
+  it('tracks ephemeral DND presence and clears when set offline', async () => {
+    await setPresence('lc_peer_a', { dnd: true, label: 'dnd' });
+    expect((await snapshotPresence()).lc_peer_a.dnd).toBe(true);
+    await setPresence('lc_peer_a', { dnd: false, label: 'online' });
+    expect((await snapshotPresence()).lc_peer_a.dnd).toBe(false);
+    expect((await snapshotPresence()).lc_peer_a.label).toBe('online');
   });
 });
 

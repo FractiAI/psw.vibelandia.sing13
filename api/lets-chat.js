@@ -97,18 +97,19 @@ export default async function handler(req, res) {
         return;
       }
       if (req.method === 'GET') {
+        const presence = await L.snapshotPresence();
         res.status(200).json({
           ok: true,
           product: L.LETS_CHAT_PRODUCT,
           myPeerId: seat.myPeerId,
-          presence: L.snapshotPresence(),
+          presence,
           honesty:
-            'Ephemeral presence only — TTL ~45s. No durable store. DND blocks incoming call/chat offers on the edge.',
+            'Presence relay — TTL ~45s. Blob-backed when BLOB_READ_WRITE_TOKEN is set. DND blocks incoming call/chat offers on the edge.',
         });
         return;
       }
       if (req.method === 'POST') {
-        L.setPresence(seat.myPeerId, {
+        await L.setPresence(seat.myPeerId, {
           dnd: Boolean(body?.dnd),
           label: typeof body?.label === 'string' ? body.label : '',
         });
@@ -127,14 +128,14 @@ export default async function handler(req, res) {
       }
       if (req.method === 'GET') {
         const since = Number(url.searchParams.get('since') || 0) || 0;
-        const envelopes = L.pullInbox({ toPeerId: seat.myPeerId, since });
+        const envelopes = await L.pullInbox({ toPeerId: seat.myPeerId, since });
         res.status(200).json({
           ok: true,
           product: L.LETS_CHAT_PRODUCT,
           myPeerId: seat.myPeerId,
           envelopes,
           honesty:
-            'Ciphertext relay only — center pipe never holds plaintext. Envelopes expire in ~90s. Edge clients decrypt locally.',
+            'Ciphertext relay only — center pipe never holds plaintext. Blob-backed when BLOB_READ_WRITE_TOKEN is set. Envelopes expire in ~90s. Edge clients decrypt locally.',
         });
         return;
       }
@@ -157,7 +158,7 @@ export default async function handler(req, res) {
           res.status(403).json({ ok: false, error: 'unknown_peer' });
           return;
         }
-        const result = L.pushEnvelope(envelope);
+        const result = await L.pushEnvelope(envelope);
         res.status(200).json({ ok: true, duplicate: Boolean(result.duplicate), id: envelope.id });
         return;
       }

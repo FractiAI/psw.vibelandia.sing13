@@ -37,13 +37,20 @@ describe('Sin City · night program', () => {
     expect(html).toContain('ando bellaco baby');
     expect(html).toContain('creo q esta noche me la como 2');
     expect(html).toContain('fumando puro (lo fi bolero session)');
+    expect(html).toContain('J.S. Bach');
+    expect(html).toContain('Suno AI');
+    expect(html).toContain('XY Human Reality Bridge/Router');
+    expect(html).toContain('reading-room-program/');
+    expect(html).not.toContain('Hero Jo');
     expect(html).toContain(SIN_CITY_PROGRAM_ROUTE);
     expect(html).toContain('/front-desk-program');
   });
 
   it('is synced to interfaces and vercel route', () => {
     const page = read('interfaces/sin-city-night-program.html');
-    expect(page).toContain('Sin City Night Program');
+    expect(page).toContain('J.S. Bach');
+    expect(page).toContain('Suno AI');
+    expect(page).not.toContain('Hero Jo');
     expect(page).toContain('Download program (PDF)');
     expect(read('vercel.json')).toMatch(/"source":\s*"\/sin-city-program"/);
   });

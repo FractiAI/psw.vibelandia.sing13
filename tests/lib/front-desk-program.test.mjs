@@ -35,7 +35,11 @@ describe('Front Desk · check-in program', () => {
     expect(html).toContain('perfect hydrogen crystal');
     expect(html).toContain('hydrogen y line frontier accordion');
     expect(html).toContain('Capitán');
-    expect(html).toContain('Honesty boundary');
+    expect(html).toContain('J.S. Bach');
+    expect(html).toContain('Suno AI');
+    expect(html).toContain('XY Human Reality Bridge/Router');
+    expect(html).toContain('reading-room-program/');
+    expect(html).not.toContain('Hero Jo');
     expect(html).toContain(FRONT_DESK_PROGRAM_ROUTE);
   });
 
@@ -49,7 +53,9 @@ describe('Front Desk · check-in program', () => {
 
   it('is synced to interfaces and vercel route', () => {
     const page = read('interfaces/front-desk-check-in-program.html');
-    expect(page).toContain('Front Desk Check-In Program');
+    expect(page).toContain('J.S. Bach');
+    expect(page).toContain('Suno AI');
+    expect(page).not.toContain('Hero Jo');
     expect(page).toContain('Download program (PDF)');
     expect(read('vercel.json')).toMatch(/"source":\s*"\/front-desk-program"/);
   });

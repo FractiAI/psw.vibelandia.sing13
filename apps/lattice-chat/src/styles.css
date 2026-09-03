@@ -2209,10 +2209,10 @@ body {
   margin-left: 0.35rem;
   padding: 0 0.28rem;
   border-radius: 999px;
-  background: #ef4444;
-  color: #fff;
+  background: var(--brand-gold, #d4af37);
+  color: #1a1209;
   font-size: 0.62rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0;
   text-transform: none;
   vertical-align: middle;
@@ -2276,7 +2276,7 @@ body {
   font-size: 0.62rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #f87171;
+  color: var(--brand-gold-hi, #fef3c7);
   font-weight: 700;
 }
 .dm-toast__from {

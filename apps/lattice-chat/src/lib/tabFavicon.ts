@@ -63,12 +63,12 @@ export function drawLatticeFaviconDataUrl(unread = 0): string | null {
     const cy = SIZE - badgeR - 2;
     ctx.beginPath();
     ctx.arc(cx, cy, badgeR, 0, Math.PI * 2);
-    ctx.fillStyle = '#ef4444';
+    ctx.fillStyle = '#d4af37';
     ctx.fill();
     ctx.lineWidth = 2;
     ctx.strokeStyle = '#0a0806';
     ctx.stroke();
-    ctx.fillStyle = '#ffffff';
+    ctx.fillStyle = '#1a1209';
     ctx.font = `700 ${label.length > 1 ? 16 : 18}px "IBM Plex Sans", "Segoe UI", sans-serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';

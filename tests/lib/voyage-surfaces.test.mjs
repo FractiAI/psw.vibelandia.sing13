@@ -235,8 +235,16 @@ describe('Frontiersman voyage guest surfaces', () => {
   it('shared ribbon advertises Let\'s Chat, Lattice Chat, and QR share', () => {
     const js = read('interfaces/site-quicklinks.js');
     expect(js).toMatch(/href="\/lets-chat"[\s\S]*Chat/);
-    expect(js).toContain('href="/lattice-chat"'); expect(js).toContain('>Lattice Chat</a>');
+    expect(js).toContain('id="ql-lets-chat-link"');
+    expect(js).toContain('id="ql-lattice-chat-link"');
+    expect(js).toContain('ensureQuicklinkBadgeAnchors');
     expect(js).toContain('QR Share</button>');
     expect(js).not.toContain('href="/creator-studio">Creator Studio</a>');
+  });
+
+  it('baked quicklink rows ship badge anchor ids for Canvas and QUESTFEST', () => {
+    expect(read('interfaces/omniverse-canvas.html')).toContain('id="ql-lets-chat-link"');
+    expect(read('interfaces/vibelandia-questfest.html')).toContain('id="ql-lattice-chat-link"');
+    expect(read('lib/site-focus.mjs')).toContain('id="ql-lets-chat-link"');
   });
 });

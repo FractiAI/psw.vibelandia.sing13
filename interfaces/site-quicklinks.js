@@ -193,6 +193,18 @@
 
   // --- End Lattice Chat Collaborate unread badge ---
 
+  /** Baked nav rows ship without badge anchor ids — wire them before listeners run. */
+  function ensureQuicklinkBadgeAnchors() {
+    var nav = document.querySelector('.qv-top-quicklinks');
+    if (!nav) return;
+    nav.querySelectorAll('a[href="/lets-chat"], a[href="/lets-chat/"]').forEach(function (a) {
+      if (!a.id) a.id = 'ql-lets-chat-link';
+    });
+    nav.querySelectorAll('a[href="/lattice-chat"], a[href="/lattice-chat/"]').forEach(function (a) {
+      if (!a.id) a.id = 'ql-lattice-chat-link';
+    });
+  }
+
   var QUICKLINK_SECONDARY =
     '<a href="/lets-chat" id="ql-lets-chat-link">Let\'s Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
@@ -432,6 +444,7 @@
     injectTopQuicklinks();
     injectFooterQuicklinks();
     ensureShareQrModal();
+    ensureQuicklinkBadgeAnchors();
     initLcBadgeListener();
     initCollabBadgeListener();
   }

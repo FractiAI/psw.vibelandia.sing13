@@ -373,8 +373,9 @@ body.qv-has-top-quicklinks .lib-nav {
   color: #d4af37;
 }
 
-/* Let's Chat unread badge on quicklinks nav */
-#ql-lets-chat-link {
+/* Let's Chat / Lattice Chat unread badges on quicklinks nav */
+#ql-lets-chat-link,
+#ql-lattice-chat-link {
   position: relative;
   display: inline-flex;
   align-items: center;

@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, it, expect } from 'vitest';
 import {
   experimentPhaseTaxonomy,
@@ -133,5 +134,13 @@ describe('synthobs-lattice-vs-vibe-coding', () => {
     expect(WHITEPAPER_PUBLIC_SLUGS['synthobs-lattice-vs-vibe-coding-2026-09']).toBe(
       'synthobs-lattice-vs-vibe-coding',
     );
+  });
+
+  it('/lattice landing cites Lattice vs vibe coding (better coding)', () => {
+    const html = readFileSync(new URL('../../interfaces/lattice-v1618.html', import.meta.url), 'utf8');
+    expect(html).toContain('/ship-blog/lattice-vs-vibe-coding');
+    expect(html).toContain('/whitepaper/synthobs-lattice-vs-vibe-coding');
+    expect(html).toContain('id="better-coding"');
+    expect(html.toLowerCase()).toContain('design and write better code');
   });
 });

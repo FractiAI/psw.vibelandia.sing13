@@ -2,6 +2,6 @@
   "schema": "standalone-publish-request/v1",
   "suiteId": "synthobs-pdvsa-gateway-ops-mockup",
   "createRepo": true,
-  "requestedAt": "2026-09-04T16:30:00.000Z",
-  "note": "Republish Lattice-Linear interactive mock + framing sync"
+  "requestedAt": "2026-09-04T21:13:00.000Z",
+  "note": "Republish fleshed EGS Lattice-Linear protocol paper + Infinite Octaves engine inclusion (sync-stack #11)"
 }

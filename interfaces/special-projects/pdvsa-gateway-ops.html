@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#070b14" />
-  <title>PDVSA Gateway Ops Simulator · SS Vibelandia</title>
-  <meta name="description" content="Simulator: today’s fragmented industry management UI versus Omni-Lattice SNA↔TCP/IP gateway executive console. Narrative analogue — not live PDVSA telemetry." />
+  <title>PDVSA Gateway Ops · EGS Lattice-Linear Gateway · SS Vibelandia</title>
+  <meta name="description" content="Simulator: today’s fragmented industry UI versus the EGS Lattice-Linear Gateway console. IBM SNA↔TCP/IP is the historical rhyme — not live PDVSA telemetry." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/pdvsa-gateway-ops" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -169,17 +169,21 @@
     .step-dots {
       display: flex;
       gap: 0.35rem;
+      align-items: center;
     }
+    .step-dots span,
     .step-dots button {
+      font: inherit;
       width: 0.7rem;
       height: 0.7rem;
       padding: 0;
-      border-radius: 50%;
       border: 0;
+      border-radius: 50%;
       background: rgba(212, 175, 55, 0.25);
       cursor: pointer;
       transition: background 0.25s ease, transform 0.25s ease;
     }
+    .step-dots span[aria-current="true"],
     .step-dots button[aria-current="true"] {
       background: var(--gold);
       transform: scale(1.25);
@@ -318,7 +322,19 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 0.4rem;
     }
+    .gw-hint {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .focus-note {
+      margin: 0.45rem 0 0;
+      font-size: 0.82rem;
+      color: var(--gold-hi);
+    }
     .shell {
+      font: inherit;
+      width: 100%;
       padding: 0.5rem 0.45rem;
       text-align: center;
       border: 1px solid rgba(212, 175, 55, 0.3);
@@ -327,8 +343,11 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--muted);
-      transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+      transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.15s ease;
     }
+    .shell:hover { border-color: rgba(212, 175, 55, 0.55); }
+    .shell:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
     .shell strong {
       display: block;
       margin-bottom: 0.15rem;
@@ -348,7 +367,8 @@
       gap: 0.35rem;
       flex-wrap: wrap;
     }
-    .mca span {
+    .mca button {
+      font: inherit;
       flex: 1;
       min-width: 5rem;
       text-align: center;
@@ -359,9 +379,13 @@
       font-weight: 700;
       border: 1px solid rgba(212, 175, 55, 0.2);
       color: var(--muted);
+      background: transparent;
+      cursor: pointer;
       transition: all 0.35s ease;
     }
-    .mca span.is-on {
+    .mca button:hover { border-color: rgba(212, 175, 55, 0.5); }
+    .mca button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .mca button.is-on {
       color: var(--navy);
       background: var(--gold);
       border-color: var(--gold);
@@ -424,16 +448,32 @@
       gap: 0.35rem;
       font-size: 0.72rem;
     }
-    .agents span {
+    .agents button {
+      font: inherit;
       padding: 0.3rem 0.5rem;
       border: 1px solid rgba(212, 175, 55, 0.25);
       color: var(--muted);
+      background: transparent;
+      cursor: pointer;
     }
-    .agents span.is-live {
+    .agents button:hover { border-color: rgba(212, 175, 55, 0.55); }
+    .agents button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .agents button.is-live {
       color: var(--gold-hi);
       border-color: var(--gold);
       animation: pulseGold 1.6s ease infinite;
     }
+    .step-dots button {
+      font: inherit;
+      width: 0.7rem;
+      height: 0.7rem;
+      padding: 0;
+      border-radius: 50%;
+      border: 0;
+      background: rgba(255,255,255,0.25);
+      cursor: pointer;
+    }
+    .step-dots button[aria-current="true"] { background: var(--gold); transform: scale(1.15); }
     @keyframes pulseGold {
       0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
       50% { box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15); }
@@ -571,16 +611,16 @@
     <header class="brand">
       <p class="brand-kicker">SS Vibelandia · Special Project</p>
       <h1 class="brand-title">PDVSA Gateway Ops Simulator</h1>
-      <p class="brand-sub">Today’s fragmented industry management UI versus the Omni-Lattice SNA↔TCP/IP gateway — same incident, two gravities.</p>
+      <p class="brand-sub">Today’s fragmented industry management UI versus the <strong>EGS Lattice-Linear Gateway</strong> — same incident, two gravities. IBM SNA↔TCP/IP is the historical rhyme.</p>
     </header>
 
     <aside class="honesty" role="note">
       <strong>Simulator · narrative analogue.</strong>
-      PDVSA and Protokol Sistemas appear as the Caracas deployment-culture template from the case study — not a live oilfield console, SCADA replacement, or audit of Interlink / PDVSA archives.
-      Φ<sub>EGS</sub> ≈ 1.618 is routing grammar.
-      <a href="/ship-blog/sna-tcpip-gateway-omni-lattice">Case study</a>
+      Product grammar: <strong>EGS Lattice-Linear Gateway</strong> (Φ<sub>EGS</sub> ≈ 1.618 routing). IBM SNA↔TCP/IP / Interlink is the <em>rhyme</em>, not the product name.
+      PDVSA and Protokol Sistemas appear as the Caracas deployment-culture template — not a live oilfield console or archive audit.
+      <a href="/ship-blog/sna-tcpip-gateway-omni-lattice">Rhyme · SNA case study</a>
       ·
-      <a href="/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09">Whitepaper</a>
+      <a href="/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09">Rhyme whitepaper</a>
     </aside>
 
     <div class="controls">
@@ -613,26 +653,27 @@
 
       <section class="pane pane-gateway" aria-labelledby="gateway-h">
         <div class="pane-head">
-          <h2 id="gateway-h">Gateway · Omni-Lattice</h2>
-          <span class="tag">Proposed grammar</span>
+          <h2 id="gateway-h">EGS Lattice-Linear Gateway</h2>
+          <span class="tag">Product grammar</span>
         </div>
         <div class="pane-body" id="gateway-body">
-          <div class="shells" id="shells" aria-label="Three-shell gateway map">
-            <div class="shell" data-shell="core"><strong>SNA Core</strong> Enclosure</div>
-            <div class="shell" data-shell="gw"><strong>Gateway</strong> Nested agents</div>
-            <div class="shell" data-shell="horizon"><strong>TCP/IP Horizon</strong> Edge</div>
+          <p class="gw-hint" id="gw-hint">Click shells · MCA · agents to steer the console. Scenario Prev/Next resets to the scripted beat.</p>
+          <div class="shells" id="shells" role="group" aria-label="Three-shell Lattice-Linear map">
+            <button type="button" class="shell" data-shell="core" aria-pressed="false"><strong>Enclosed Core</strong> Seed · enclosure</button>
+            <button type="button" class="shell" data-shell="gw" aria-pressed="false"><strong>Lattice-Linear Gateway</strong> Nested agents</button>
+            <button type="button" class="shell" data-shell="horizon" aria-pressed="false"><strong>Linear Horizon</strong> Edge plane</button>
           </div>
-          <div class="mca" id="mca" aria-label="MCA cycle">
-            <span data-mca="m">Metabolize</span>
-            <span data-mca="c">Crystallize</span>
-            <span data-mca="a">Animate</span>
+          <div class="mca" id="mca" role="group" aria-label="MCA cycle">
+            <button type="button" data-mca="m" aria-pressed="false">Metabolize</button>
+            <button type="button" data-mca="c" aria-pressed="false">Crystallize</button>
+            <button type="button" data-mca="a" aria-pressed="false">Animate</button>
           </div>
           <div class="brief" id="brief"></div>
-          <div class="agents" id="agents" aria-label="Nested agent seats">
-            <span data-agent="seed">Seed·RAG</span>
-            <span data-agent="ops">Ops</span>
-            <span data-agent="legal">Legal</span>
-            <span data-agent="edge">Edge</span>
+          <div class="agents" id="agents" role="group" aria-label="Nested agent seats">
+            <button type="button" data-agent="seed" aria-pressed="false">Seed·RAG</button>
+            <button type="button" data-agent="ops" aria-pressed="false">Ops</button>
+            <button type="button" data-agent="legal" aria-pressed="false">Legal</button>
+            <button type="button" data-agent="edge" aria-pressed="false">Edge</button>
           </div>
         </div>
       </section>
@@ -670,7 +711,7 @@
           <a class="takeaway-card" href="/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09">
             <h3>Harmony</h3>
             <p>Nested agents under peer-firewall keep electrical, fluid, legal, and ops voices coherent after domain switches — fixture rhyme: high coherence at K=12.</p>
-            <span class="paper-cue">Open · SNA gateway case study · E3</span>
+            <span class="paper-cue">Open · Lattice-Linear rhyme · SNA case study · E3</span>
           </a>
         </li>
         <li data-takeaway="savings">
@@ -684,7 +725,7 @@
           <a class="takeaway-card" href="/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09">
             <h3>Uptime</h3>
             <p>Enclosure stays protected while the Horizon stays open: SNA Core does not dump into every Edge handoff; the gateway mediates continuity.</p>
-            <span class="paper-cue">Open · Three-shell gateway template</span>
+            <span class="paper-cue">Open · Three-shell Lattice-Linear template</span>
           </a>
         </li>
         <li data-takeaway="accuracy">
@@ -712,7 +753,7 @@
           <a class="takeaway-card" href="/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09">
             <h3>New R&amp;D applications</h3>
             <p>Caracas template: industrial urgency + local integrator mastery (Protokol Sistemas pattern) ships frontier stacks early — Lattice Chat as R&amp;D ops lab for agentic multi-domain work.</p>
-            <span class="paper-cue">Open · Caracas fractal template</span>
+            <span class="paper-cue">Open · Caracas template · Lattice-Linear R&amp;D</span>
           </a>
         </li>
       </ul>
@@ -782,7 +823,7 @@
             pointers: ["ERP·plan", "SCADA·overnight", "Legal·LH-220", "Logistics·vessel"],
             cost: 14
           },
-          contrast: "Today: stale board vs live silos. Gateway: one morning brief that stays current as domains open."
+          contrast: "Today: stale board vs live silos. Lattice-Linear Gateway: one morning brief that stays current as domains open."
         },
         {
           id: 1,
@@ -838,7 +879,7 @@
             pointers: ["SCADA·bus-A", "Fluid·pump-B", "Legal·LH-220", "Export·freeze"],
             cost: 11
           },
-          contrast: "Today: triple-session chaos. Gateway: one incident object with nested Ops + Legal seats."
+          contrast: "Today: triple-session chaos. Lattice-Linear Gateway: one incident object with nested Ops + Legal seats."
         },
         {
           id: 2,
@@ -894,7 +935,7 @@
             pointers: ["Decision·hold", "Legal·active", "Logistics·+1h", "Edge·summary"],
             cost: 9
           },
-          contrast: "Today: approve on stale rollups. Gateway: grounded next-action band in one executive pass."
+          contrast: "Today: approve on stale rollups. Lattice-Linear Gateway: grounded next-action band in one executive pass."
         },
         {
           id: 3,
@@ -946,16 +987,21 @@
           agents: ["edge", "legal", "ops"],
           brief: {
             h: "Horizon handoff",
-            p: "Gateway mediates: Edge receives a Fair Exchange summary — vessel delay +1h, hold rationale, resume criteria — while SNA Core stays enclosed. Same job the historical SNA↔TCP/IP gateway performed.",
+            p: "EGS Lattice-Linear Gateway mediates: Edge receives a Fair Exchange summary — vessel delay +1h, hold rationale, resume criteria — while Enclosed Core stays protected. Same job the historical IBM SNA↔TCP/IP gateway rhyme performed.",
             pointers: ["Horizon·summary", "Fair Exchange", "Core·enclosed", "Resume·criteria"],
             cost: 8
           },
-          contrast: "Today: dump or silence. Gateway: safe Horizon summary — enclosure held, partner informed."
+          contrast: "Today: dump or silence. Lattice-Linear Gateway: safe Horizon summary — enclosure held, partner informed."
         }
       ];
 
       let step = 0;
       let siloKey = "ERP";
+      /** Interactive Lattice-Linear overrides (null = follow scenario script). */
+      let shellOverride = null;
+      let mcaOverride = null;
+      let agentOverride = null;
+      let focusAgent = null;
 
       const els = {
         title: document.getElementById("step-title"),
@@ -971,24 +1017,41 @@
         contrast: document.getElementById("contrast"),
         shells: document.getElementById("shells"),
         mca: document.getElementById("mca"),
-        agents: document.getElementById("agents")
+        agents: document.getElementById("agents"),
+        gwHint: document.getElementById("gw-hint")
       };
+
+      function resetGatewayOverrides() {
+        shellOverride = null;
+        mcaOverride = null;
+        agentOverride = null;
+        focusAgent = null;
+      }
+
+      function activeShells() {
+        return shellOverride || STEPS[step].shells;
+      }
+      function activeMca() {
+        return mcaOverride || STEPS[step].mca;
+      }
+      function activeAgents() {
+        return agentOverride || STEPS[step].agents;
+      }
 
       function renderDots() {
         els.dots.innerHTML = STEPS.map((s, i) =>
           `<button type="button" data-step="${i}" aria-label="${s.title}" ${i === step ? 'aria-current="true"' : ""}></button>`
         ).join("");
         els.dots.querySelectorAll("button").forEach((btn) => {
-          btn.addEventListener("click", () => gotoStep(Number(btn.dataset.step)));
+          btn.addEventListener("click", () => {
+            const next = Number(btn.dataset.step);
+            if (Number.isNaN(next) || next === step) return;
+            step = next;
+            resetGatewayOverrides();
+            flashBodies();
+            render();
+          });
         });
-      }
-
-      function gotoStep(n) {
-        const next = Math.max(0, Math.min(STEPS.length - 1, n | 0));
-        if (next === step) return;
-        step = next;
-        flashBodies();
-        render();
       }
 
       function renderSilo() {
@@ -1026,21 +1089,42 @@
 
       function renderGateway() {
         const s = STEPS[step];
+        const shells = activeShells();
+        const mca = activeMca();
+        const agents = activeAgents();
         els.shells.querySelectorAll(".shell").forEach((node) => {
-          node.classList.toggle("is-active", s.shells.includes(node.dataset.shell));
+          const on = shells.includes(node.dataset.shell);
+          node.classList.toggle("is-active", on);
+          node.setAttribute("aria-pressed", on ? "true" : "false");
         });
-        els.mca.querySelectorAll("span").forEach((node) => {
-          node.classList.toggle("is-on", s.mca.includes(node.dataset.mca));
+        els.mca.querySelectorAll("button").forEach((node) => {
+          const on = mca.includes(node.dataset.mca);
+          node.classList.toggle("is-on", on);
+          node.setAttribute("aria-pressed", on ? "true" : "false");
         });
-        els.agents.querySelectorAll("span").forEach((node) => {
-          node.classList.toggle("is-live", s.agents.includes(node.dataset.agent));
+        els.agents.querySelectorAll("button").forEach((node) => {
+          const on = agents.includes(node.dataset.agent);
+          node.classList.toggle("is-live", on);
+          node.setAttribute("aria-pressed", on ? "true" : "false");
         });
         const b = s.brief;
+        const focusNote = focusAgent
+          ? `<p class="focus-note"><strong>Seat focus · ${focusAgent}:</strong> nested under peer-firewall — brief stays pointer-first.</p>`
+          : "";
+        const overrideNote =
+          shellOverride || mcaOverride || agentOverride
+            ? " · steered live"
+            : "";
         els.brief.innerHTML =
-          `<h3>${b.h}</h3><p>${b.p}</p>` +
+          `<h3>${b.h}${overrideNote}</h3><p>${b.p}</p>${focusNote}` +
           `<div class="pointers">${b.pointers.map((p) => `<span>${p}</span>`).join("")}</div>` +
-          `<div class="cost-bar"><div class="meta"><span>Lattice context vs flat dump</span><span>${b.cost}% of fat window</span></div>` +
+          `<div class="cost-bar"><div class="meta"><span>Lattice-Linear context vs flat dump</span><span>${b.cost}% of fat window</span></div>` +
           `<div class="cost-track"><div class="cost-fill" style="width:${b.cost}%"></div></div></div>`;
+        if (els.gwHint) {
+          els.gwHint.textContent = overrideNote
+            ? "Live steer on. Scenario Prev/Next resets to the scripted beat."
+            : "Click shells · MCA · agents to steer the console. Scenario Prev/Next resets to the scripted beat.";
+        }
       }
 
       function render() {
@@ -1057,6 +1141,18 @@
         els.contrast.innerHTML = `<strong>Contrast:</strong> ${s.contrast}`;
       }
 
+      function goStep(next) {
+        const n = Math.max(0, Math.min(STEPS.length - 1, next | 0));
+        if (n === step) return;
+        step = n;
+        resetGatewayOverrides();
+        flashBodies();
+        render();
+      }
+
+      els.prev.onclick = function () { goStep(step - 1); };
+      els.next.onclick = function () { goStep(step + 1); };
+
       function flashBodies() {
         els.todayBody.classList.add("is-switching");
         els.gatewayBody.classList.add("is-switching");
@@ -1065,9 +1161,6 @@
           els.gatewayBody.classList.remove("is-switching");
         }, 220);
       }
-
-      els.prev.onclick = function () { gotoStep(step - 1); };
-      els.next.onclick = function () { gotoStep(step + 1); };
 
       document.querySelectorAll(".view-mode button").forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -1080,11 +1173,60 @@
         });
       });
 
+      /* Lattice-Linear console · live steer */
+      els.shells.querySelectorAll(".shell").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.shell;
+          const cur = new Set(activeShells());
+          if (cur.has(id)) cur.delete(id);
+          else cur.add(id);
+          if (cur.size === 0) cur.add(id);
+          shellOverride = Array.from(cur);
+          els.gatewayBody.classList.add("is-switching");
+          window.setTimeout(() => els.gatewayBody.classList.remove("is-switching"), 160);
+          renderGateway();
+        });
+      });
+      els.mca.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.mca;
+          /* MCA is a progression: clicking a phase lights that phase (and prior). */
+          const order = ["m", "c", "a"];
+          const idx = order.indexOf(id);
+          mcaOverride = order.slice(0, idx + 1);
+          els.gatewayBody.classList.add("is-switching");
+          window.setTimeout(() => els.gatewayBody.classList.remove("is-switching"), 160);
+          renderGateway();
+        });
+      });
+      els.agents.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.agent;
+          const cur = new Set(activeAgents());
+          if (cur.has(id) && focusAgent === id) {
+            cur.delete(id);
+            focusAgent = null;
+          } else {
+            cur.add(id);
+            focusAgent = id;
+          }
+          if (cur.size === 0) {
+            cur.add(id);
+            focusAgent = id;
+          }
+          agentOverride = Array.from(cur);
+          els.gatewayBody.classList.add("is-switching");
+          window.setTimeout(() => els.gatewayBody.classList.remove("is-switching"), 160);
+          renderGateway();
+        });
+      });
+
       window.pdvsaOps = {
-        goto: gotoStep,
-        next: function () { gotoStep(step + 1); },
-        prev: function () { gotoStep(step - 1); },
-        get step() { return step; }
+        goto: goStep,
+        next: function () { goStep(step + 1); },
+        prev: function () { goStep(step - 1); },
+        step: function () { return step; },
+        resetConsole: function () { resetGatewayOverrides(); renderGateway(); }
       };
 
       render();

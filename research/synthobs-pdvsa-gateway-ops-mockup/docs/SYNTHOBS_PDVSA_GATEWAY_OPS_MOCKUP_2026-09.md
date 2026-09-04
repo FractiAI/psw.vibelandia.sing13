@@ -1,11 +1,11 @@
-# PDVSA Gateway Ops Mockup — Today’s Industry UI vs Omni-Lattice Gateway Console
+# PDVSA Gateway Ops Mockup — Today’s Industry UI vs EGS Lattice-Linear Gateway
 
 **Authors:** FractiAI Research Group · SynthOBS Autonomous Agent  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Published:** September 4, 2026  
 **Document ID:** `WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04`  
 **Registry ID:** `synthobs-pdvsa-gateway-ops-mockup-2026-09`  
-**Classification:** Interactive simulator · executive demo · companion to SNA↔TCP/IP gateway case study · paired empirics  
+**Classification:** Interactive simulator · executive demo · EGS Lattice-Linear Gateway · SNA↔TCP/IP historical rhyme · paired empirics  
 **Framework:** Infinite Octaves Omniversal Lattice Chat · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap  
 **Parent / companion papers:** [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) · [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup  
@@ -14,7 +14,7 @@
 **Ship blog:** [`/ship-blog/pdvsa-gateway-ops-mockup`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pdvsa-gateway-ops-mockup)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
-**Keywords:** PDVSA; Protokol Sistemas; SNA↔TCP/IP; Omni-Lattice Chat; executive simulator; industry management UI; Caracas fractal template; Fair Exchange; NSPFRNP; SynthOBS
+**Keywords:** PDVSA; Protokol Sistemas; EGS Lattice-Linear Gateway; SNA↔TCP/IP rhyme; Omni-Lattice Chat; executive simulator; Caracas fractal template; Fair Exchange; NSPFRNP; SynthOBS
 
 ---
 
@@ -36,7 +36,7 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-This ship is the **executive demo** that follows the IBM SNA ↔ TCP/IP gateway case study. Guests and CEOs can **feel** today’s fragmented industry management surface (ERP · SCADA · Legal · Logistics tab-hopping with stale rollups) versus an Omni-Lattice **gateway console** (Core ↔ Amphitheater ↔ Horizon · MCA · nested agents · pointer-first briefs).
+This ship is the **executive demo** for the **EGS Lattice-Linear Gateway** — with the IBM SNA ↔ TCP/IP gateway case study as the **historical rhyme**, not the product name. Guests and CEOs can **feel** today’s fragmented industry management surface (ERP · SCADA · Legal · Logistics tab-hopping with stale rollups) versus a Lattice-Linear **gateway console** (Enclosed Core ↔ Lattice-Linear Gateway ↔ Linear Horizon · MCA · nested agents · pointer-first briefs). Shells, MCA, and agent seats are **clickable** so executives can steer the console live.
 
 At the bottom, **nine executive key takeaways** each link to the full paper (and ship-blog where present) that backs the claim — with math fixtures and empirical receipts from the companion suites. The mock lives at `/special-projects/pdvsa-gateway-ops` and as a **standalone repository** under `research/synthobs-pdvsa-gateway-ops-mockup/`.
 
@@ -46,11 +46,11 @@ At the bottom, **nine executive key takeaways** each link to the full paper (and
 
 | Pane | Story |
 |------|--------|
-| **Today** | Siloed tabs, SNA-style status strip, stale cross-silo handoffs — the enclosure without a safe Horizon summary |
-| **Gateway** | Three shells (Core · Amphitheater · Horizon), MCA lights, nested agent seats, pointer brief + lattice cost bar vs fat dump |
+| **Today** | Siloed tabs, legacy enclosure-style status strip, stale cross-silo handoffs — no safe Horizon summary |
+| **EGS Lattice-Linear Gateway** | Three shells (Enclosed Core · Lattice-Linear Gateway · Linear Horizon), clickable MCA + nested agent seats, pointer brief + lattice cost bar vs fat dump |
 | **Steps** | Morning brief → anomaly → crystallize decision → Edge handoff |
 
-Honesty: labeled **simulator gains** from gateway grammar + companion empirics — not measured oilfield A/B.
+Honesty: labeled **simulator gains** from Lattice-Linear grammar + companion empirics — not measured oilfield A/B. SNA↔TCP/IP remains the rhyme paper.
 
 ---
 

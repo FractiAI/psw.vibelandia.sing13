@@ -1,18 +1,18 @@
 {
   "schema": "synthobs-empirical-report/v1",
-  "title": "PDVSA Gateway Ops Mockup · takeaway→paper empirics",
-  "paper": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs Omni-Lattice Gateway Console",
+  "title": "PDVSA Gateway Ops Mockup · Lattice-Linear takeaway→paper empirics",
+  "paper": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs EGS Lattice-Linear Gateway",
   "docId": "WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04",
   "registryId": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
   "agent": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
-  "generatedAt": "2026-09-04T16:03:16.471Z",
+  "generatedAt": "2026-09-04T16:30:19.275Z",
   "host": {
     "cpus": 4,
     "platform": "linux-x64",
     "node": "v22.14.0"
   },
   "honesty": {
-    "note": "Interactive simulator + deterministic takeaway→paper map. Companion SNA/Lattice empirics back architectural claims — not live PDVSA telemetry.",
+    "note": "Interactive EGS Lattice-Linear Gateway simulator + deterministic takeaway→paper map. IBM SNA↔TCP/IP is the historical rhyme. Companion empirics back architectural claims — not live PDVSA telemetry.",
     "notClaim": "Does not claim production oilfield A/B, SCADA truth, or re-proof of historical PDVSA / Protokol Sistemas contracts."
   },
   "abstractFindings": {
@@ -32,11 +32,11 @@
     "shipBlog": "/ship-blog/pdvsa-gateway-ops-mockup"
   },
   "results": {
-    "study": "PDVSA Gateway Ops Mockup · takeaway→paper empirics",
+    "study": "PDVSA Gateway Ops Mockup · Lattice-Linear takeaway→paper empirics",
     "registryId": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
     "docId": "WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04",
     "honesty": {
-      "note": "Interactive simulator + deterministic takeaway→paper map. Companion SNA/Lattice empirics back architectural claims — not live PDVSA telemetry.",
+      "note": "Interactive EGS Lattice-Linear Gateway simulator + deterministic takeaway→paper map. IBM SNA↔TCP/IP is the historical rhyme. Companion empirics back architectural claims — not live PDVSA telemetry.",
       "notClaim": "Does not claim production oilfield A/B, SCADA truth, or re-proof of historical PDVSA / Protokol Sistemas contracts."
     },
     "n_pass": 6,
@@ -97,14 +97,14 @@
             "registryId": "omniversal-nested-agent-lattice-2026-07",
             "secondaryRegistryId": "synthobs-proof-by-continuous-execution-2026-07",
             "href": "/interfaces/whitepaper-surface.html?id=omniversal-nested-agent-lattice-2026-07",
-            "shipBlog": null
+            "shipBlog": "/ship-blog/omniversal-nested-agent-lattice"
           },
           {
             "id": "exploration",
             "label": "Exploration",
             "registryId": "omniversal-nested-agent-lattice-2026-07",
             "href": "/interfaces/whitepaper-surface.html?id=omniversal-nested-agent-lattice-2026-07",
-            "shipBlog": null
+            "shipBlog": "/ship-blog/omniversal-nested-agent-lattice"
           },
           {
             "id": "rd",

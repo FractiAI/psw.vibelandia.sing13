@@ -55,8 +55,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 8 | **Voyage editorial · Invisible Frontier** | `docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md` · registry `synthobs-invisible-frontier-gates-ai-2026-08` · `/ship-blog/invisible-frontier` |
 | 9 | **Human reality bridge · router / wormhole grammar** | `docs/SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md` · registry `synthobs-human-omniversal-reality-bridge-2026-08` · `/ship-blog/human-reality-bridge` |
 | 10 | **Higgs Gate · awareness phase coupling (Part IX-Omni Definitive Unified)** | `docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md` · registry `synthobs-tbme-higgs-awareness-unified-2026-09` · `/ship-blog/higgs-awareness-unified` |
-| 11 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 12 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md` |
+| 11 | **Enterprise gateway · EGS Lattice-Linear (PDVSA ops mock)** — SNA↔TCP/IP is the rhyme | `docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md` · registry `synthobs-pdvsa-gateway-ops-mockup-2026-09` · live `/special-projects/pdvsa-gateway-ops` · `/ship-blog/pdvsa-gateway-ops-mockup` · rhyme `docs/SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md` |
+| 12 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 13 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md` |
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 
@@ -69,6 +70,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-invisible-frontier-gates-ai/`
 - `research/synthobs-human-omniversal-reality-bridge/`
 - `research/synthobs-tbme-higgs-awareness-unified/`
+- `research/synthobs-pdvsa-gateway-ops-mockup/`
 
 ---
 

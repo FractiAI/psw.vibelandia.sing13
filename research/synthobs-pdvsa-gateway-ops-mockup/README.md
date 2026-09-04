@@ -15,6 +15,7 @@ Standalone nest for the **PDVSA-scale executive simulator** (Today’s siloed in
 - Mock HTML structural links  
 - Bridge to companion SNA gateway empirics  
 - Φ_EGS / Fair Exchange / ship surfaces  
+- **Infinite Octaves engine companion** (AGENT_SYNC sync-stack · Lattice Chat workstream)  
 
 PDVSA / Protokol Sistemas appear only as **narrative historical analogues**.
 

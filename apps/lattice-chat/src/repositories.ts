@@ -175,6 +175,17 @@ export const LATTICE_REPOSITORIES_FALLBACK: LatticeRepository[] = [
     tags: ['99-octave', 'synthobs', 'engine'],
     guestSelectable: true,
   },
+  {
+    id: 'pdvsa-gateway-ops',
+    name: 'synthobs-pdvsa-gateway-ops-mockup',
+    label: 'EGS Lattice-Linear · PDVSA Gateway Ops',
+    url: 'https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup',
+    startingRef: 'main',
+    blurb:
+      'Enterprise gateway companion · multi-domain ops mock · SNA↔TCP/IP rhyme · /special-projects/pdvsa-gateway-ops.',
+    tags: ['99-octave', 'synthobs', 'engine', 'gateway'],
+    guestSelectable: true,
+  },
 ];
 
 export function findRepository(

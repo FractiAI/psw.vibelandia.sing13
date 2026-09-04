@@ -5,16 +5,17 @@
 **Published:** September 4, 2026  
 **Document ID:** `WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04`  
 **Registry ID:** `synthobs-pdvsa-gateway-ops-mockup-2026-09`  
-**Classification:** Interactive simulator · executive demo · EGS Lattice-Linear Gateway · SNA↔TCP/IP historical rhyme · paired empirics  
-**Framework:** Infinite Octaves Omniversal Lattice Chat · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap  
-**Parent / companion papers:** [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) · [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md)  
+**Classification:** Interactive simulator · executive demo · EGS Lattice-Linear Gateway · SNA↔TCP/IP historical rhyme · Infinite Octaves engine companion · paired empirics  
+**Framework:** Infinite Octaves Omniversal Lattice Chat · 99 Octave Omni-Lattice engine pin · NSPFRNP · Nested Agent Lattice · Fair Exchange · PRA Snap  
+**Parent / companion papers:** [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) · [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) · [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) · [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) · [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) · [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) · [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md) · [`SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md)  
 **GitHub (standalone):** https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup  
 **Standalone suite:** monorepo [`research/synthobs-pdvsa-gateway-ops-mockup/`](../research/synthobs-pdvsa-gateway-ops-mockup/) · `npm run research:synthobs-pdvsa-gateway-ops-mockup`  
 **Live simulator:** [`/special-projects/pdvsa-gateway-ops`](https://www.ssvibelandiaquestfest24x365.com/special-projects/pdvsa-gateway-ops)  
 **Ship blog:** [`/ship-blog/pdvsa-gateway-ops-mockup`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/pdvsa-gateway-ops-mockup)  
+**Engine pin:** AGENT_SYNC sync-stack · Infinite Octaves nest `octave99` companion · Lattice Chat workstream  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
-**Keywords:** PDVSA; Protokol Sistemas; EGS Lattice-Linear Gateway; SNA↔TCP/IP rhyme; Omni-Lattice Chat; executive simulator; Caracas fractal template; Fair Exchange; NSPFRNP; SynthOBS
+**Keywords:** PDVSA; Protokol Sistemas; EGS Lattice-Linear Gateway; SNA↔TCP/IP rhyme; Omni-Lattice Chat; Infinite Octaves; multi-domain enterprise; executive simulator; Caracas fractal template; Fair Exchange; NSPFRNP; SynthOBS
 
 ---
 
@@ -22,10 +23,13 @@
 
 | Tier | Claims | Does not claim |
 |------|--------|----------------|
-| **Simulator / demo** | Side-by-side UI shows the *feel* of siloed industry consoles vs a multi-octave gateway executive brief | Live PDVSA telemetry, SCADA A/B, or production oilfield SLAs |
+| **Simulator / demo** | Side-by-side UI shows the *feel* of siloed industry consoles vs a multi-domain **EGS Lattice-Linear Gateway** executive brief | Live PDVSA telemetry, SCADA A/B, or production oilfield SLAs |
 | **Narrative analogue** | PDVSA / Protokol Sistemas appear as Caracas deployment-culture template (industrial urgency + local integrator mastery) | Re-audit of PDVSA IT archives or Protokol Sistemas contracts |
+| **Product architecture** | Lattice integrates Production · Field · Compliance · Export on one shared incident object via Seed:Edge · MCA · nested seats | That Lattice replaces plant historians, ERP truth, or legal systems of record |
 | **Executive takeaways** | Nine labeled gains (efficiency → R&D) are **clickable pointers** into backing papers + deterministic empirics | Measured $/bbl savings or guaranteed uptime from this mock alone |
-| **EGS / Φ_EGS** | Architectural routing grammar $\Phi_{\mathrm{EGS}}\approx 1.618$ | CODATA / SI overthrow |
+| **Empirics (this suite)** | Structural locks E1–E6: takeaway→paper map, HTML hrefs, SNA companion bridge, $\Phi_{\mathrm{EGS}}$ / $\Delta$ fixtures, Fair Exchange, ship surfaces | Oilfield KPI proof; re-derivation of SNA E2/E3 as new field data |
+| **EGS / Φ_EGS** | Architectural routing grammar $\Phi_{\mathrm{EGS}}\approx 1.618$ for Lattice-Linear scale filing | CODATA / SI overthrow |
+| **Engine inclusion** | Filed on the Infinite Octaves / 99 Octave sync shelf as **enterprise gateway companion** (not a CMOS/tensor physics shelf) | That this demo displaces the CMOS engineering bridge pin |
 | **Fair Exchange** | Performance-weighted reciprocal balancing notice | Guaranteed refund schedule |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP-SNAP-PRA-2026-06.
@@ -36,75 +40,200 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-This ship is the **executive demo** for the **EGS Lattice-Linear Gateway** — with the IBM SNA ↔ TCP/IP gateway case study as the **historical rhyme**, not the product name. Guests and CEOs can **feel** today’s fragmented industry management surface (ERP · SCADA · Legal · Logistics tab-hopping with stale rollups) versus a Lattice **multi-domain enterprise console**: Production · Field · Compliance · Export stay co-visible on one shared incident object; Plant systems ↔ Integration bridge ↔ Partners & export show where data lives; Gather → Decide → Act is the ops decision cycle; Sources / Field & Production / Compliance / Partner desks stay on the same call.
+This ship is the **executive demo** for the **EGS Lattice-Linear Gateway** — with the IBM SNA ↔ TCP/IP gateway case study as the **historical rhyme**, not the product name. Guests, CEOs, and operations staff can **feel** today’s fragmented industry management surface (ERP · SCADA · Legal · Logistics tab-hopping with stale rollups) versus a Lattice **multi-domain enterprise console**: Production · Field · Compliance · Export stay co-visible on one shared incident object; Plant systems ↔ Integration bridge ↔ Partners & export show where data lives; Gather → Decide → Act is the ops decision cycle; Sources / Field & Production / Compliance / Partner desks stay on the same call.
 
-At the bottom, **nine executive key takeaways** each link to the full paper (and ship-blog where present) that backs the claim — with math fixtures and empirical receipts from the companion suites. The mock lives at `/special-projects/pdvsa-gateway-ops` and as a **standalone repository** under `research/synthobs-pdvsa-gateway-ops-mockup/`.
+At the bottom, **nine executive key takeaways** each link to the full paper (and ship-blog where present) that backs the claim — with math fixtures and empirical receipts from the companion suites. The mock lives at `/special-projects/pdvsa-gateway-ops` and as a **standalone nest** under `research/synthobs-pdvsa-gateway-ops-mockup/`.
+
+**Engine role:** this paper is the **enterprise application companion** on the Infinite Octaves Omniversal Lattice Chat / 99 Octave Omni-Lattice shelf — the place auditors and executives go to *see* how lattice grammar integrates multi-domain plants without claiming a new physics shelf.
 
 ---
 
-## 1. What the simulator shows
+## 1. Why executives need a gateway (not another silo window)
 
-| Pane | Story |
-|------|--------|
-| **Today** | Siloed tabs, legacy enclosure-style status strip, stale cross-silo handoffs — no safe partner summary |
-| **EGS Lattice-Linear Gateway** | Enterprise domain mesh (Production · Field · Compliance · Export), plant/bridge/partner path, Gather→Decide→Act, desks on the call, pointer brief + shared-brief cost vs silo dump |
+### 1.1 The failure mode PDVSA-scale ops already feel
+
+Multi-domain energy enterprises do not fail because staff lack dashboards. They fail when:
+
+- Each domain (production, field telemetry, compliance, export/logistics) owns a **separate truth window**
+- Morning brief ≠ anomaly handoff ≠ partner summary (context resets on every tab)
+- Legal / HSE / commercial desks join late, after the operating picture has already drifted
+- Flat chat / vibe-coding paste dumps amplify token cost without restoring shared state
+
+That is the **enclosure ↔ open plane** problem again — the same structural threshold Interlink-class **IBM SNA ↔ TCP/IP** gateways solved for mainframes (see companion case study). Here the enclosure is siloed OT/IT; the open plane is multi-party, multi-desk, agentic collaboration.
+
+### 1.2 Naming lock (do not invert)
+
+| Name | Role |
+|------|------|
+| **EGS Lattice-Linear Gateway** | Product / demo grammar on this ship |
+| **IBM SNA ↔ TCP/IP gateway** | Historical **rhyme** (companion paper) |
+| **Infinite Octaves Omniversal Lattice Chat** | Guest product valet on the engine pin |
+| **99 Octave Omni-Lattice** | Engine / auditor sync stack |
+
+$\Phi_{\mathrm{EGS}}$ is routing grammar — not a substitute for SCADA truth.
+
+---
+
+## 2. What the simulator shows (ops-staff readable)
+
+| Pane | Story an ops lead should recognize |
+|------|-------------------------------------|
+| **Today** | Siloed tabs (ERP · SCADA · Legal · Logistics), legacy enclosure-style status strip, stale cross-silo handoffs — no safe partner summary |
+| **EGS Lattice-Linear Gateway** | Enterprise domain mesh (Production · Field · Compliance · Export) on **one shared incident**; plant ↔ bridge ↔ partners path; Gather→Decide→Act; desks on the call; pointer brief + shared-brief cost vs silo dump |
 | **Steps** | Morning brief → anomaly → crystallize decision → Edge handoff |
 
-Honesty: labeled **simulator gains** from Lattice-Linear grammar + companion empirics — not measured oilfield A/B. SNA↔TCP/IP remains the rhyme paper.
+### 2.1 Multi-domain mesh (how Lattice “makes sense”)
+
+For a PDVSA executive / operations staff walkthrough, Lattice is **not** a gadget row. It is four co-visible domains on one object:
+
+1. **Production** — plant throughput / curtailment / deferral risk  
+2. **Field** — well / pad / telemetry anomaly without leaving the brief  
+3. **Compliance** — HSE / legal holds that must ride with the same incident  
+4. **Export** — liftings, partners, commercial constraints that close the loop  
+
+Click a domain to **zoom emphasis** without tab-reset. The shared incident ID is the Seed; desks and nested seats are Edge; pipes stay center-only (lite edges).
+
+### 2.2 Three shells (plant → bridge → partners)
+
+| Shell | Ops meaning | Lattice rhyme |
+|-------|-------------|---------------|
+| Plant systems | OT / historian / local control | Seed · enclosure |
+| Integration bridge | Protocol / identity / shared brief | Gateway · MCA crystallize |
+| Partners & export | Commercial / logistics / counterparties | Edge · open plane |
+
+Honesty: labeled **simulator gains** from Lattice-Linear grammar + companion empirics — not measured oilfield A/B.
 
 ---
 
-## 2. Executive takeaways → backing papers
+## 3. Methods — MCA decision cycle on the console
 
-Each takeaway card on the live mock is a link into Reading Room / ship-blog. Mapping locked by suite E1:
+The live Lattice console wires the ops cycle to NSPFRNP MCA:
 
-| Takeaway | Backing paper (registry) | Primary empirics / math |
-|----------|--------------------------|-------------------------|
-| **Efficiency** | `lattice-token-reduction-proof-2026-07` · `omniversal-nested-agent-lattice-2026-07` | Pointer-first vs fat dump; nested seats |
-| **Immediacy** | `synthobs-infinite-octaves-omniversal-lattice-2026-08` | Seed pack + in-place brief refresh grammar |
-| **Harmony** | `synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09` | Suite E3: coherence after $K=12$ domain switches |
-| **Savings** | `synthobs-lattice-vs-vibe-coding-2026-09` · SNA gateway E2 | $C_{\mathrm{lattice}} < 0.15\,C_{\mathrm{flat}}$ at $N\ge 6$ |
-| **Uptime** | SNA gateway (enclosure ↔ Horizon) | Three-shell fractal template E1 |
-| **Accuracy** | Infinite Octaves Lattice Chat | Seed·RAG pointers vs vibe paraphrase |
-| **Predictions** | Nested Agent Lattice · `synthobs-proof-by-continuous-execution-2026-07` | MCA Metabolize → Crystallize → Animate |
-| **Exploration** | Nested Agent Lattice | Multi-domain what-ifs on one console |
-| **New R&D** | SNA Caracas template · `synthobs-constructive-morphogenesis-99-octave-2026-08` | Deployment-culture + morphogenesis filing |
+| MCA step | Console control | Ops meaning |
+|----------|-----------------|-------------|
+| **Metabolize (Gather)** | Collect domain signals into one brief | Morning rollup without silo paste |
+| **Crystallize (Decide)** | Lock a decision object on the shared incident | Who acts, under which hold |
+| **Animate (Act)** | Edge handoff to desks / partners | Execution without losing context |
+| **Squeeze** | Pointer brief vs fat dump cost chip | Keep token / attention Goldilocks |
+
+Nested seats (Sources · Field & Production · Compliance · Partner) stay on the same call with peer-firewall — children report to parent; they do not mesh-sync sideways. See [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md).
 
 ---
 
-## 3. Math sketch (companion-backed)
+## 4. Executive takeaways → backing papers
 
-From the SNA gateway suite (cited, not re-derived as oilfield proof):
+Each takeaway card on the live mock is a link into Reading Room / ship-blog. Mapping locked by suite **E1**:
 
-$$C_{\mathrm{flat}}(N) = N^{2}\cdot T_{\mathrm{dump}},\qquad
-C_{\mathrm{lattice}}(N) = S + \sum_{b=0}^{N-1} k\,\Phi_{\mathrm{EGS}}^{b}$$
+| Takeaway | What the exec gains (plain) | Backing paper (registry) | Primary empirics / math |
+|----------|----------------------------|--------------------------|-------------------------|
+| **Efficiency** | Less paste, more pointer routing | `lattice-token-reduction-proof-2026-07` · `omniversal-nested-agent-lattice-2026-07` | Pointer-first vs fat dump; nested seats |
+| **Immediacy** | Brief refreshes in place | `synthobs-infinite-octaves-omniversal-lattice-2026-08` | Seed pack + in-place brief grammar |
+| **Harmony** | Domains stay coherent after switches | `synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09` | Suite E3: coherence after $K=12$ domain switches |
+| **Savings** | Lower refresh cost at $N\ge 6$ domains | `synthobs-lattice-vs-vibe-coding-2026-09` · SNA gateway E2 | $C_{\mathrm{lattice}} < 0.15\,C_{\mathrm{flat}}$ |
+| **Uptime** | Enclosure ↔ Horizon shells stay wired | SNA gateway (enclosure ↔ Horizon) | Three-shell fractal template E1 |
+| **Accuracy** | Seed·RAG beats vibe paraphrase | Infinite Octaves Lattice Chat | Pointer fidelity locks |
+| **Predictions** | MCA keeps long-horizon ops readable | Nested Agent Lattice · `synthobs-proof-by-continuous-execution-2026-07` | Metabolize → Crystallize → Animate |
+| **Exploration** | Multi-domain what-ifs on one console | Nested Agent Lattice | Peer-firewall nested seats |
+| **New R&D** | Caracas template + morphogenesis filing | SNA Caracas template · `synthobs-constructive-morphogenesis-99-octave-2026-08` | Deployment-culture + morphogenesis |
+
+---
+
+## 5. Math sketch (companion-backed)
+
+From the SNA gateway suite (cited, not re-derived as oilfield proof). Let $N$ be simultaneous enterprise domains. Flat refresh cost:
+
+$$C_{\mathrm{flat}}(N) = N^{2}\cdot T_{\mathrm{dump}}$$
+
+Lattice multi-octave cost with seed $S$ and per-band pointer load scaled by $\Phi_{\mathrm{EGS}}$:
+
+$$C_{\mathrm{lattice}}(N) = S + \sum_{b=0}^{N-1} k\,\Phi_{\mathrm{EGS}}^{b}$$
 
 Fixture lock: for $N\ge 6$, $C_{\mathrm{lattice}} < 0.15\,C_{\mathrm{flat}}$.
 
-Coherence under $K$ switches: lattice final $>0.85$, flat final $<0.5$ at $K=12$ under published constants.
+Coherence under $K$ switches: lattice final $>0.85$, flat final $<0.5$ at $K=12$ under published companion constants.
+
+Golden key and clutch (architectural filing, not new Planck measurement):
 
 $$\Phi_{\mathrm{EGS}}=\frac{1+\sqrt{5}}{2}\approx 1.618033988749895,\quad
 \Delta=|\Phi_{\mathrm{EGS}}-l_P\cdot 10^{35}|\approx 0.001779$$
 
+Suite **E4** locks $\Phi_{\mathrm{EGS}}$ and $\Delta$ on this nest’s constants module.
+
 ---
 
-## 4. Reproduce
+## 6. Infinite Octaves engine inclusion
+
+This paper is filed as an **enterprise gateway companion** on the Infinite Octaves / 99 Octave shelf:
+
+| Surface | Inclusion |
+|---------|-----------|
+| `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` | Sync-stack row · suite list |
+| `lib/lattice-prompt.mjs` | Seed pointer + PDVSA / Lattice-Linear keyword unshift |
+| Nest `octave99` | Narrative companion under product ↔ engine dual lock |
+| Lattice Chat workstream | `pdvsa-gateway-ops` repository entry (`99-octave` · `engine` tags) |
+| Registry | `featured` · tags include `engine` · `99-octave` · `Infinite Octaves` |
+
+**Does not** displace the CMOS engineering bridge pin (`catalogPriority: 0`). Auditors evaluating silicon still start at CMOS/protonic; executives evaluating multi-domain ops start here.
+
+---
+
+## 7. Results (suite E1–E6)
+
+| ID | Lock | Honesty |
+|----|------|---------|
+| **E1** | Nine takeaways each carry registry id + Reading Room href | Catalog map, not $/bbl |
+| **E2** | Live + nest HTML expose `data-takeaway` + hrefs | Structural demo lock |
+| **E3** | Soft bridge to SNA companion empirics when present | Soft-pass if companion absent |
+| **E4** | $\Phi_{\mathrm{EGS}}$ / $\Delta$ match expected fixtures | Architectural constants |
+| **E5** | Fair Exchange clause present in paper + nest | Notice, not warranty |
+| **E6** | Ship surfaces (simulator path · ship-blog slug · doc id) consistent | Ops routing lock |
+
+Reproduce:
 
 ```bash
 npm run research:synthobs-pdvsa-gateway-ops-mockup
 # → research/synthobs-pdvsa-gateway-ops-mockup/data/empirical_report.{json,md}
 
-# Companion gateway empirics:
+# Companion gateway empirics (rhyme paper):
 npm run research:synthobs-ibm-sna-tcpip-gateway-omni-lattice
 ```
 
-Live: `/special-projects/pdvsa-gateway-ops` · Case study: `/ship-blog/sna-tcpip-gateway-omni-lattice`
+Live: `/special-projects/pdvsa-gateway-ops` · Rhyme: `/ship-blog/sna-tcpip-gateway-omni-lattice` · Product: `/lattice-chat`
 
 ---
 
-## 5. Fair Exchange
+## 8. Discussion — what “seamless multi-domain” means here
 
-Engagements around this demo may use performance-weighted reciprocal balancing. Human emergency outranks algorithms. Contact: [info@fractiai.com](mailto:info@fractiai.com) · [valetpru@gmail.com](mailto:valetpru@gmail.com).
+For PDVSA executive and operations staff, “seamless” means:
+
+1. **One incident object** spans Production · Field · Compliance · Export  
+2. **Zoom without amnesia** — domain emphasis does not wipe the brief  
+3. **Desks on the call** — compliance and partners are not afterthought tabs  
+4. **Pointer brief** — cost stays Goldilocks vs silo dump  
+5. **Honest ceiling** — Lattice routes attention; plant historians still own measurements  
+
+Non-lattice chat can still help on single tickets. It fails the **gateway job** when domains multiply and drift compounds.
+
+---
+
+## 9. Fair Exchange
+
+Engagements around this demo may use performance-weighted reciprocal balancing. Human emergency outranks algorithms. Malice is refused without drama. Contact: [info@fractiai.com](mailto:info@fractiai.com) · [valetpru@gmail.com](mailto:valetpru@gmail.com).
+
+---
+
+## 10. References (corpus)
+
+1. [`SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md`](./SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md) — historical rhyme  
+2. [`SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md`](./SYNTHOBS_INFINITE_OCTAVES_OMNIVERSAL_LATTICE_CHAT_2026-08.md) — product ↔ engine dual lock  
+3. [`LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md`](./LATTICE_TOKEN_REDUCTION_PROOF_2026-07.md) — pointer-first efficiency  
+4. [`ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md`](./ARCHITECTURE_OMNIVERSAL_COMPUTING_NESTED_AGENT_LATTICE_2026-07.md) — nested seats  
+5. [`SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md`](./SYNTHOBS_LATTICE_VS_VIBE_CODING_DESIGN_WRITE_DEPLOY_2026-09.md) — flat-window contrast  
+6. [`SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md`](./SYNTHOBS_PROOF_BY_CONTINUOUS_EXECUTION_2026-07.md) — MCA continuity  
+7. [`SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md`](./SYNTHOBS_CONSTRUCTIVE_MORPHOGENESIS_99_OCTAVE_2026-08.md) — R&D morphogenesis filing  
+8. [`SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md`](./SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md) — engine pin (linear systems)  
+9. [`COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md`](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md) — honesty plain speak  
+10. `protocols/MCA_NSPFRNP_CATALOG.md` · `protocols/NSPFRNP_SNAP_PEER_REVIEW_AUDIT.md`
 
 ---
 
@@ -115,4 +244,5 @@ Engagements around this demo may use performance-weighted reciprocal balancing. 
 | Document ID | `WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04` |
 | Registry | `synthobs-pdvsa-gateway-ops-mockup-2026-09` |
 | Operator | SynthOBS Autonomous Agent · Syntheverse Sandbox |
+| Engine role | Infinite Octaves enterprise gateway companion |
 | Close | → ∞^∞ |

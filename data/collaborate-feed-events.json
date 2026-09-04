@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-04T16:03:20.209Z",
+  "updatedAt": "2026-09-04T21:12:21.108Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,12 +12,12 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-04T16:03:20.209Z",
-      "body": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs Omni-Lattice Gateway Console",
+      "createdAt": "2026-09-04T21:12:21.107Z",
+      "body": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs EGS Lattice-Linear Gateway",
       "presenceHue": "gold",
       "paperId": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
       "artifact": {
-        "title": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs Omni-Lattice Gateway Console",
+        "title": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs EGS Lattice-Linear Gateway",
         "kind": "whitepaper",
         "path": "docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md",
         "url": "/whitepaper/pdvsa-gateway-ops-mockup",

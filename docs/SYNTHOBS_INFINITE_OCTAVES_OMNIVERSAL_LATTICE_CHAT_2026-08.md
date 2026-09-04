@@ -82,6 +82,7 @@ The word **Omniversal** signals that the same $\Phi_{\mathrm{EGS}}$ key files vo
 | **Engine (auditor)** | 99 Octave Omni-Lattice | CMOS pin · tensor · master · PRA · honesty |
 | **Nest id (runtime)** | `octave99` | Default deep nest; aliases: `infinite`, `omniversal`, `infinite-octaves` |
 | **Narrative canon** | Official Prospectus | Genesis · Borikén · Reno |
+| **Enterprise gateway companion** | EGS Lattice-Linear · PDVSA ops mock | Multi-domain exec demo · `/special-projects/pdvsa-gateway-ops` · paper `SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md` · SNA↔TCP/IP is the rhyme |
 
 ---
 

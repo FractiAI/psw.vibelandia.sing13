@@ -316,12 +316,7 @@
     }
     .handoff-queue strong { color: var(--warn); }
 
-    /* Gateway console */
-    .shells {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.4rem;
-    }
+    /* Gateway console · multi-domain enterprise */
     .gw-hint {
       margin: 0;
       font-size: 0.78rem;
@@ -332,6 +327,98 @@
       font-size: 0.82rem;
       color: var(--gold-hi);
     }
+    .domain-mesh {
+      padding: 0.55rem 0.6rem 0.65rem;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      background:
+        linear-gradient(120deg, rgba(212, 175, 55, 0.08), transparent 42%),
+        rgba(8, 14, 26, 0.85);
+    }
+    .mesh-label {
+      margin: 0 0 0.4rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .domain-rail {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+    }
+    .domain-rail button {
+      font: inherit;
+      width: 100%;
+      padding: 0.55rem 0.35rem;
+      text-align: center;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(12, 22, 40, 0.7);
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    }
+    .domain-rail button:hover { border-color: rgba(212, 175, 55, 0.55); color: var(--champagne); }
+    .domain-rail button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .domain-rail button strong {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--champagne);
+      font-weight: 700;
+      margin-bottom: 0.12rem;
+    }
+    .domain-rail button span {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .domain-rail button.is-on {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.14);
+      color: var(--gold-hi);
+      transform: translateY(-1px);
+    }
+    .domain-rail button.is-on strong { color: var(--gold-hi); }
+    .domain-rail button.is-focus {
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.35);
+    }
+    .mesh-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      margin: 0.45rem 0 0.15rem;
+      font-size: 0.72rem;
+      color: var(--gold-hi);
+      letter-spacing: 0.04em;
+    }
+    .mesh-link::before,
+    .mesh-link::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.55), transparent);
+    }
+    .mesh-status {
+      margin: 0.35rem 0 0;
+      font-size: 0.8rem;
+      color: var(--champagne);
+      min-height: 2.4em;
+    }
+    .section-label {
+      margin: 0.15rem 0 0;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .shells {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+    }
     .shell {
       font: inherit;
       width: 100%;
@@ -340,8 +427,7 @@
       border: 1px solid rgba(212, 175, 55, 0.3);
       background: rgba(12, 22, 40, 0.65);
       font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      letter-spacing: 0.02em;
       color: var(--muted);
       cursor: pointer;
       transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.15s ease;
@@ -351,10 +437,9 @@
     .shell strong {
       display: block;
       margin-bottom: 0.15rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
+      font-size: 0.84rem;
+      letter-spacing: 0.02em;
       color: var(--champagne);
-      text-transform: none;
       font-weight: 600;
     }
     .shell.is-active {
@@ -372,16 +457,30 @@
       flex: 1;
       min-width: 5rem;
       text-align: center;
-      padding: 0.4rem 0.35rem;
+      padding: 0.45rem 0.35rem;
       font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-weight: 600;
       border: 1px solid rgba(212, 175, 55, 0.2);
       color: var(--muted);
       background: transparent;
       cursor: pointer;
       transition: all 0.35s ease;
+    }
+    .mca button strong {
+      display: block;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+      color: inherit;
+      margin-bottom: 0.1rem;
+    }
+    .mca button em {
+      font-style: normal;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.75;
     }
     .mca button:hover { border-color: rgba(212, 175, 55, 0.5); }
     .mca button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
@@ -450,7 +549,7 @@
     }
     .agents button {
       font: inherit;
-      padding: 0.3rem 0.5rem;
+      padding: 0.35rem 0.55rem;
       border: 1px solid rgba(212, 175, 55, 0.25);
       color: var(--muted);
       background: transparent;
@@ -594,6 +693,7 @@
     @media (max-width: 900px) {
       .panes { grid-template-columns: 1fr; }
       .shells { grid-template-columns: 1fr; }
+      .domain-rail { grid-template-columns: 1fr 1fr; }
       .controls { flex-direction: column; align-items: stretch; }
       .scenario-bar { justify-content: space-between; }
     }
@@ -611,7 +711,7 @@
     <header class="brand">
       <p class="brand-kicker">SS Vibelandia · Special Project</p>
       <h1 class="brand-title">PDVSA Gateway Ops Simulator</h1>
-      <p class="brand-sub">Today’s fragmented industry management UI versus the <strong>EGS Lattice-Linear Gateway</strong> — same incident, two gravities. IBM SNA↔TCP/IP is the historical rhyme.</p>
+      <p class="brand-sub">Today’s fragmented industry management UI versus the <strong>EGS Lattice-Linear Gateway</strong> — same incident, two gravities. Left: tab-hop silos. Right: Production · Field · Compliance · Export on one shared brief. IBM SNA↔TCP/IP is the historical rhyme.</p>
     </header>
 
     <aside class="honesty" role="note">
@@ -654,26 +754,45 @@
       <section class="pane pane-gateway" aria-labelledby="gateway-h">
         <div class="pane-head">
           <h2 id="gateway-h">EGS Lattice-Linear Gateway</h2>
-          <span class="tag">Product grammar</span>
+          <span class="tag">Multi-domain · one console</span>
         </div>
         <div class="pane-body" id="gateway-body">
-          <p class="gw-hint" id="gw-hint">Click shells · MCA · agents to steer the console. Scenario Prev/Next resets to the scripted beat.</p>
-          <div class="shells" id="shells" role="group" aria-label="Three-shell Lattice-Linear map">
-            <button type="button" class="shell" data-shell="core" aria-pressed="false"><strong>Enclosed Core</strong> Seed · enclosure</button>
-            <button type="button" class="shell" data-shell="gw" aria-pressed="false"><strong>Lattice-Linear Gateway</strong> Nested agents</button>
-            <button type="button" class="shell" data-shell="horizon" aria-pressed="false"><strong>Linear Horizon</strong> Edge plane</button>
+          <p class="gw-hint" id="gw-hint">Click a domain to pull it into the shared brief — the other domains stay lit. No tab reset.</p>
+
+          <div class="domain-mesh" id="domain-mesh">
+            <p class="mesh-label">Enterprise domains · Lattice keeps them together</p>
+            <div class="domain-rail" id="domains" role="group" aria-label="Integrated enterprise domains">
+              <button type="button" data-domain="ERP" aria-pressed="false"><strong>Production</strong><span>ERP</span></button>
+              <button type="button" data-domain="SCADA" aria-pressed="false"><strong>Field</strong><span>SCADA</span></button>
+              <button type="button" data-domain="Legal" aria-pressed="false"><strong>Compliance</strong><span>Legal</span></button>
+              <button type="button" data-domain="Logistics" aria-pressed="false"><strong>Export</strong><span>Logistics</span></button>
+            </div>
+            <p class="mesh-link" aria-hidden="true">joined on one incident object</p>
+            <p class="mesh-status" id="mesh-status" aria-live="polite"></p>
           </div>
-          <div class="mca" id="mca" role="group" aria-label="MCA cycle">
-            <button type="button" data-mca="m" aria-pressed="false">Metabolize</button>
-            <button type="button" data-mca="c" aria-pressed="false">Crystallize</button>
-            <button type="button" data-mca="a" aria-pressed="false">Animate</button>
+
+          <p class="section-label">Where the data lives</p>
+          <div class="shells" id="shells" role="group" aria-label="Plant systems · integration bridge · partners">
+            <button type="button" class="shell" data-shell="core" aria-pressed="false"><strong>Plant systems</strong> Secure internal · ERP / SCADA enclosure</button>
+            <button type="button" class="shell" data-shell="gw" aria-pressed="false"><strong>Integration bridge</strong> Lattice joins domains here</button>
+            <button type="button" class="shell" data-shell="horizon" aria-pressed="false"><strong>Partners &amp; export</strong> Safe summary out · no core dump</button>
           </div>
+
+          <p class="section-label">Ops decision cycle</p>
+          <div class="mca" id="mca" role="group" aria-label="Gather · Decide · Act">
+            <button type="button" data-mca="m" aria-pressed="false"><strong>Gather</strong><em>signals in</em></button>
+            <button type="button" data-mca="c" aria-pressed="false"><strong>Decide</strong><em>one next action</em></button>
+            <button type="button" data-mca="a" aria-pressed="false"><strong>Act</strong><em>execute &amp; notify</em></button>
+          </div>
+
           <div class="brief" id="brief"></div>
-          <div class="agents" id="agents" role="group" aria-label="Nested agent seats">
-            <button type="button" data-agent="seed" aria-pressed="false">Seed·RAG</button>
-            <button type="button" data-agent="ops" aria-pressed="false">Ops</button>
-            <button type="button" data-agent="legal" aria-pressed="false">Legal</button>
-            <button type="button" data-agent="edge" aria-pressed="false">Edge</button>
+
+          <p class="section-label">Desks on this call</p>
+          <div class="agents" id="agents" role="group" aria-label="Desks on the shared brief">
+            <button type="button" data-agent="seed" aria-pressed="false">Sources desk</button>
+            <button type="button" data-agent="ops" aria-pressed="false">Field &amp; Production</button>
+            <button type="button" data-agent="legal" aria-pressed="false">Compliance</button>
+            <button type="button" data-agent="edge" aria-pressed="false">Partner / Export</button>
           </div>
         </div>
       </section>
@@ -814,16 +933,23 @@
             }
           },
           handoff: "Handoffs waiting: Ops→Legal, SCADA→ERP, Logistics→All",
+          domains: ["ERP", "SCADA", "Legal", "Logistics"],
+          domainNotes: {
+            ERP: "Production plan sits on the same brief as field overnight and LH-220 — not a separate PDF.",
+            SCADA: "Overnight historian pointer stays live while you read ERP and Legal.",
+            Legal: "Hold LH-220 is a pointer on the brief, not a mail thread you lose when you leave the tab.",
+            Logistics: "Vessel window stays visible beside production and compliance — one morning picture."
+          },
           shells: ["core"],
           mca: ["m"],
           agents: ["seed", "ops"],
           brief: {
             h: "Executive brief · live",
-            p: "Morning gravity is one thread: production plan, export window, and overnight legal hold sit as pointers — not three PDFs and a fax queue.",
+            p: "One morning picture: production plan, field overnight, legal hold, and vessel window stay together as pointers — not three PDFs and a fax queue.",
             pointers: ["ERP·plan", "SCADA·overnight", "Legal·LH-220", "Logistics·vessel"],
             cost: 14
           },
-          contrast: "Today: stale board vs live silos. Lattice-Linear Gateway: one morning brief that stays current as domains open."
+          contrast: "Today: stale board vs live silos. Lattice: all four enterprise domains stay on one brief."
         },
         {
           id: 1,
@@ -870,16 +996,23 @@
             }
           },
           handoff: "Three domains · three tickets · zero shared object",
+          domains: ["ERP", "SCADA", "Legal", "Logistics"],
+          domainNotes: {
+            ERP: "Production still reads green until Lattice folds the SCADA warn into the same incident object.",
+            SCADA: "Bus A + pump B land on the shared object — Compliance and Export see them without a screenshot email.",
+            Legal: "LH-220 escalates on the same object as field truth — counsel is not waiting on attachments.",
+            Logistics: "Nomination freeze is visible to Ops and Legal immediately — one lane, not three tickets."
+          },
           shells: ["core", "gw"],
           mca: ["m", "c"],
           agents: ["seed", "ops", "legal"],
           brief: {
-            h: "Incident · nested seats",
-            p: "Electrical + fluid + legal hold collapse into one MCA crystallize band. Peer-firewall keeps seats honest; executive sees the shared object, not three inboxes.",
+            h: "Incident · one shared object",
+            p: "Electrical + fluid + legal hold collapse into one Decide band. Field & Production and Compliance stay on the same call; the executive sees one object, not three inboxes.",
             pointers: ["SCADA·bus-A", "Fluid·pump-B", "Legal·LH-220", "Export·freeze"],
             cost: 11
           },
-          contrast: "Today: triple-session chaos. Lattice-Linear Gateway: one incident object with nested Ops + Legal seats."
+          contrast: "Today: triple-session chaos. Lattice: Production · Field · Compliance · Export share one incident object."
         },
         {
           id: 2,
@@ -926,16 +1059,23 @@
             }
           },
           handoff: "90-second ask · multi-hour gather",
+          domains: ["ERP", "SCADA", "Legal", "Logistics"],
+          domainNotes: {
+            ERP: "CFO view rides the same Decide band as Field hold and Compliance red light — no stale 04:12 slide.",
+            SCADA: "Hold pump B 45 min is the grounded Field input inside the 90-second band.",
+            Legal: "LH-220 stays active on the Act band — veto is not a phone call after ERP already went green.",
+            Logistics: "Demurrage clock and +1h nomination delay sit beside the decision — Export is not a separate chase."
+          },
           shells: ["gw"],
           mca: ["m", "c", "a"],
           agents: ["seed", "ops", "legal", "edge"],
           brief: {
             h: "90-second decision band",
-            p: "Animate: hold pump B 45 min · keep LH-220 active · delay nomination 1 window · notify Edge partner with Horizon summary only (no SNA core dump).",
-            pointers: ["Decision·hold", "Legal·active", "Logistics·+1h", "Edge·summary"],
+            p: "Act: hold pump B 45 min · keep LH-220 active · delay nomination 1 hour · notify the export partner with a safe summary only (plant systems stay enclosed).",
+            pointers: ["Decision·hold", "Legal·active", "Logistics·+1h", "Partner·summary"],
             cost: 9
           },
-          contrast: "Today: approve on stale rollups. Lattice-Linear Gateway: grounded next-action band in one executive pass."
+          contrast: "Today: approve on stale rollups. Lattice: one Gather→Decide→Act pass across all four domains."
         },
         {
           id: 3,
@@ -982,18 +1122,38 @@
             }
           },
           handoff: "Core enclosure ↔ open packet plane — classic gateway job",
+          domains: ["ERP", "SCADA", "Legal", "Logistics"],
+          domainNotes: {
+            ERP: "Partner portal gets a Fair Exchange summary — not a dump of plant ERP/SCADA enclosure.",
+            SCADA: "Raw historian stays inside Plant systems; only resume criteria leave on the partner band.",
+            Legal: "Disclosure band is decided once on the bridge — counsel is not writing overnight one-pagers while the partner waits.",
+            Logistics: "Vessel delay +1h and resume criteria reach Export immediately — hospitality with enclosure held."
+          },
           shells: ["core", "gw", "horizon"],
           mca: ["a"],
           agents: ["edge", "legal", "ops"],
           brief: {
-            h: "Horizon handoff",
-            p: "EGS Lattice-Linear Gateway mediates: Edge receives a Fair Exchange summary — vessel delay +1h, hold rationale, resume criteria — while Enclosed Core stays protected. Same job the historical IBM SNA↔TCP/IP gateway rhyme performed.",
-            pointers: ["Horizon·summary", "Fair Exchange", "Core·enclosed", "Resume·criteria"],
+            h: "Safe partner handoff",
+            p: "The integration bridge mediates: Export partner receives vessel delay +1h, hold rationale, and resume criteria — while plant systems stay protected. Same job the historical IBM SNA↔TCP/IP gateway rhyme performed.",
+            pointers: ["Partner·summary", "Fair Exchange", "Plant·enclosed", "Resume·criteria"],
             cost: 8
           },
-          contrast: "Today: dump or silence. Lattice-Linear Gateway: safe Horizon summary — enclosure held, partner informed."
+          contrast: "Today: dump or silence. Lattice: safe partner summary — plant enclosed, export informed."
         }
       ];
+
+      const DOMAIN_LABELS = {
+        ERP: "Production · ERP",
+        SCADA: "Field · SCADA",
+        Legal: "Compliance · Legal",
+        Logistics: "Export · Logistics"
+      };
+      const DESK_LABELS = {
+        seed: "Sources desk",
+        ops: "Field & Production",
+        legal: "Compliance",
+        edge: "Partner / Export"
+      };
 
       let step = 0;
       let siloKey = "ERP";
@@ -1001,7 +1161,9 @@
       let shellOverride = null;
       let mcaOverride = null;
       let agentOverride = null;
+      let domainOverride = null;
       let focusAgent = null;
+      let focusDomain = null;
 
       const els = {
         title: document.getElementById("step-title"),
@@ -1018,6 +1180,8 @@
         shells: document.getElementById("shells"),
         mca: document.getElementById("mca"),
         agents: document.getElementById("agents"),
+        domains: document.getElementById("domains"),
+        meshStatus: document.getElementById("mesh-status"),
         gwHint: document.getElementById("gw-hint")
       };
 
@@ -1025,7 +1189,9 @@
         shellOverride = null;
         mcaOverride = null;
         agentOverride = null;
+        domainOverride = null;
         focusAgent = null;
+        focusDomain = null;
       }
 
       function activeShells() {
@@ -1037,21 +1203,14 @@
       function activeAgents() {
         return agentOverride || STEPS[step].agents;
       }
+      function activeDomains() {
+        return domainOverride || STEPS[step].domains;
+      }
 
       function renderDots() {
         els.dots.innerHTML = STEPS.map((s, i) =>
           `<button type="button" data-step="${i}" aria-label="${s.title}" ${i === step ? 'aria-current="true"' : ""}></button>`
         ).join("");
-        els.dots.querySelectorAll("button").forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const next = Number(btn.dataset.step);
-            if (Number.isNaN(next) || next === step) return;
-            step = next;
-            resetGatewayOverrides();
-            flashBodies();
-            render();
-          });
-        });
       }
 
       function renderSilo() {
@@ -1077,7 +1236,6 @@
         els.tabs.querySelectorAll("button").forEach((btn) => {
           btn.addEventListener("click", () => {
             siloKey = btn.dataset.tab;
-            /* Today pane: switching tabs is the pain — flash context reset */
             els.todayBody.classList.add("is-switching");
             window.setTimeout(() => {
               renderSilo();
@@ -1092,6 +1250,7 @@
         const shells = activeShells();
         const mca = activeMca();
         const agents = activeAgents();
+        const domains = activeDomains();
         els.shells.querySelectorAll(".shell").forEach((node) => {
           const on = shells.includes(node.dataset.shell);
           node.classList.toggle("is-active", on);
@@ -1107,23 +1266,43 @@
           node.classList.toggle("is-live", on);
           node.setAttribute("aria-pressed", on ? "true" : "false");
         });
+        els.domains.querySelectorAll("button").forEach((node) => {
+          const id = node.dataset.domain;
+          const on = domains.includes(id);
+          node.classList.toggle("is-on", on);
+          node.classList.toggle("is-focus", focusDomain === id);
+          node.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        const joined = domains.map((d) => DOMAIN_LABELS[d] || d).join(" · ");
+        const domainFocusNote = focusDomain
+          ? (s.domainNotes && s.domainNotes[focusDomain]) ||
+            `${DOMAIN_LABELS[focusDomain]} stays on the shared object with the other lit domains.`
+          : "";
+        if (els.meshStatus) {
+          els.meshStatus.textContent = focusDomain
+            ? `${DOMAIN_LABELS[focusDomain]} in focus — ${domainFocusNote}`
+            : `Live on this brief: ${joined}. Click any domain to zoom without losing the others.`;
+        }
         const b = s.brief;
-        const focusNote = focusAgent
-          ? `<p class="focus-note"><strong>Seat focus · ${focusAgent}:</strong> nested under peer-firewall — brief stays pointer-first.</p>`
+        const deskFocus = focusAgent
+          ? `<p class="focus-note"><strong>${DESK_LABELS[focusAgent] || focusAgent}:</strong> still on the shared brief — pointers stay grounded across domains.</p>`
+          : "";
+        const domainBrief = focusDomain
+          ? `<p class="focus-note"><strong>${DOMAIN_LABELS[focusDomain]}:</strong> ${domainFocusNote}</p>`
           : "";
         const overrideNote =
-          shellOverride || mcaOverride || agentOverride
+          shellOverride || mcaOverride || agentOverride || domainOverride || focusDomain
             ? " · steered live"
             : "";
         els.brief.innerHTML =
-          `<h3>${b.h}${overrideNote}</h3><p>${b.p}</p>${focusNote}` +
+          `<h3>${b.h}${overrideNote}</h3><p>${b.p}</p>${domainBrief}${deskFocus}` +
           `<div class="pointers">${b.pointers.map((p) => `<span>${p}</span>`).join("")}</div>` +
-          `<div class="cost-bar"><div class="meta"><span>Lattice-Linear context vs flat dump</span><span>${b.cost}% of fat window</span></div>` +
+          `<div class="cost-bar"><div class="meta"><span>Shared-brief cost vs silo dump</span><span>${b.cost}% of fat window</span></div>` +
           `<div class="cost-track"><div class="cost-fill" style="width:${b.cost}%"></div></div></div>`;
         if (els.gwHint) {
           els.gwHint.textContent = overrideNote
             ? "Live steer on. Scenario Prev/Next resets to the scripted beat."
-            : "Click shells · MCA · agents to steer the console. Scenario Prev/Next resets to the scripted beat.";
+            : "Click a domain to pull it into the shared brief — the other domains stay lit. No tab reset.";
         }
       }
 
@@ -1150,9 +1329,6 @@
         render();
       }
 
-      els.prev.onclick = function () { goStep(step - 1); };
-      els.next.onclick = function () { goStep(step + 1); };
-
       function flashBodies() {
         els.todayBody.classList.add("is-switching");
         els.gatewayBody.classList.add("is-switching");
@@ -1161,6 +1337,30 @@
           els.gatewayBody.classList.remove("is-switching");
         }, 220);
       }
+
+      document.querySelector(".scenario-bar").addEventListener(
+        "click",
+        function (ev) {
+          const t = ev.target && ev.target.closest ? ev.target.closest("button") : null;
+          if (!t) return;
+          if (t.id === "btn-next") {
+            ev.preventDefault();
+            goStep(step + 1);
+          } else if (t.id === "btn-prev") {
+            ev.preventDefault();
+            goStep(step - 1);
+          } else if (t.dataset && t.dataset.step != null) {
+            ev.preventDefault();
+            goStep(Number(t.dataset.step));
+          }
+        },
+        true
+      );
+
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "ArrowRight") goStep(step + 1);
+        if (ev.key === "ArrowLeft") goStep(step - 1);
+      });
 
       document.querySelectorAll(".view-mode button").forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -1173,7 +1373,19 @@
         });
       });
 
-      /* Lattice-Linear console · live steer */
+      els.domains.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.dataset.domain;
+          const cur = new Set(activeDomains());
+          cur.add(id);
+          focusDomain = focusDomain === id ? null : id;
+          domainOverride = Array.from(cur);
+          els.gatewayBody.classList.add("is-switching");
+          window.setTimeout(() => els.gatewayBody.classList.remove("is-switching"), 160);
+          renderGateway();
+        });
+      });
+
       els.shells.querySelectorAll(".shell").forEach((btn) => {
         btn.addEventListener("click", () => {
           const id = btn.dataset.shell;
@@ -1190,7 +1402,6 @@
       els.mca.querySelectorAll("button").forEach((btn) => {
         btn.addEventListener("click", () => {
           const id = btn.dataset.mca;
-          /* MCA is a progression: clicking a phase lights that phase (and prior). */
           const order = ["m", "c", "a"];
           const idx = order.indexOf(id);
           mcaOverride = order.slice(0, idx + 1);

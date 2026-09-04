@@ -36,7 +36,7 @@ See [Coherence · plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-This ship is the **executive demo** for the **EGS Lattice-Linear Gateway** — with the IBM SNA ↔ TCP/IP gateway case study as the **historical rhyme**, not the product name. Guests and CEOs can **feel** today’s fragmented industry management surface (ERP · SCADA · Legal · Logistics tab-hopping with stale rollups) versus a Lattice-Linear **gateway console** (Enclosed Core ↔ Lattice-Linear Gateway ↔ Linear Horizon · MCA · nested agents · pointer-first briefs). Shells, MCA, and agent seats are **clickable** so executives can steer the console live.
+This ship is the **executive demo** for the **EGS Lattice-Linear Gateway** — with the IBM SNA ↔ TCP/IP gateway case study as the **historical rhyme**, not the product name. Guests and CEOs can **feel** today’s fragmented industry management surface (ERP · SCADA · Legal · Logistics tab-hopping with stale rollups) versus a Lattice **multi-domain enterprise console**: Production · Field · Compliance · Export stay co-visible on one shared incident object; Plant systems ↔ Integration bridge ↔ Partners & export show where data lives; Gather → Decide → Act is the ops decision cycle; Sources / Field & Production / Compliance / Partner desks stay on the same call.
 
 At the bottom, **nine executive key takeaways** each link to the full paper (and ship-blog where present) that backs the claim — with math fixtures and empirical receipts from the companion suites. The mock lives at `/special-projects/pdvsa-gateway-ops` and as a **standalone repository** under `research/synthobs-pdvsa-gateway-ops-mockup/`.
 
@@ -46,8 +46,8 @@ At the bottom, **nine executive key takeaways** each link to the full paper (and
 
 | Pane | Story |
 |------|--------|
-| **Today** | Siloed tabs, legacy enclosure-style status strip, stale cross-silo handoffs — no safe Horizon summary |
-| **EGS Lattice-Linear Gateway** | Three shells (Enclosed Core · Lattice-Linear Gateway · Linear Horizon), clickable MCA + nested agent seats, pointer brief + lattice cost bar vs fat dump |
+| **Today** | Siloed tabs, legacy enclosure-style status strip, stale cross-silo handoffs — no safe partner summary |
+| **EGS Lattice-Linear Gateway** | Enterprise domain mesh (Production · Field · Compliance · Export), plant/bridge/partner path, Gather→Decide→Act, desks on the call, pointer brief + shared-brief cost vs silo dump |
 | **Steps** | Morning brief → anomaly → crystallize decision → Edge handoff |
 
 Honesty: labeled **simulator gains** from Lattice-Linear grammar + companion empirics — not measured oilfield A/B. SNA↔TCP/IP remains the rhyme paper.

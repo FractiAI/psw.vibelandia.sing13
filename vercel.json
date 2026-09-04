@@ -1229,6 +1229,14 @@
       "destination": "/interfaces/blog-higgs-awareness-unified-2026-09.html"
     },
     {
+      "source": "/ship-blog/pdvsa-gateway-ops-mockup",
+      "destination": "/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/pdvsa-gateway-ops-mockup/",
+      "destination": "/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html"
+    },
+    {
       "source": "/ship-blog/sna-tcpip-gateway-omni-lattice",
       "destination": "/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html"
     },

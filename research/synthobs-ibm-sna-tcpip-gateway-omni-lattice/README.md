@@ -4,6 +4,7 @@
 **Document ID:** `WP-SYNTHOBS-IBM-SNA-TCPIP-GATEWAY-OMNI-LATTICE-2026-09-03`  
 **Registry ID:** `synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09`  
 **Ship blog:** `/ship-blog/sna-tcpip-gateway-omni-lattice`  
+**Ops simulator (companion):** `/special-projects/pdvsa-gateway-ops` · `/ship-blog/pdvsa-gateway-ops-mockup` · standalone `research/synthobs-pdvsa-gateway-ops-mockup/`  
 **Catalog mirror:** [FractiAI/psw.vibelandia.sing13](https://github.com/FractiAI/psw.vibelandia.sing13)
 
 ## Intention

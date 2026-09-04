@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-08-28T04:00:03.932Z",
+  "updatedAt": "2026-09-04T16:03:20.209Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-pdvsa-gateway-ops-mockup-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-04T16:03:20.209Z",
+      "body": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs Omni-Lattice Gateway Console",
+      "presenceHue": "gold",
+      "paperId": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+      "artifact": {
+        "title": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs Omni-Lattice Gateway Console",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md",
+        "url": "/whitepaper/pdvsa-gateway-ops-mockup",
+        "paperId": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+        "docId": "WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04",
+        "published": "2026-09-04",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_lattice-omni-complete-layer-guide-2026-07",
       "type": "ArtifactEvent",

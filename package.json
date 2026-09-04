@@ -68,6 +68,7 @@
     "research:synthio-mri-cloud-antenna": "node research/synthio-mri-cloud-antenna/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-lattice-vs-vibe-coding": "node research/synthobs-lattice-vs-vibe-coding/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-ibm-sna-tcpip-gateway-omni-lattice": "node research/synthobs-ibm-sna-tcpip-gateway-omni-lattice/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-pdvsa-gateway-ops-mockup": "node research/synthobs-pdvsa-gateway-ops-mockup/scripts/run_empirical_pipeline.mjs",
     "research:synthio-mri-vs-legacy-perf": "node research/synthio-mri-vs-legacy-perf/scripts/run_empirical_pipeline.mjs",
     "research:synthio-mri-vs-legacy-perf:komamri": "julia research/synthio-mri-vs-legacy-perf/scripts/bench_komamri_live.jl",
     "publish:standalone:synthio-perf": "node scripts/publish-standalone-suite.mjs synthio-mri-vs-legacy-perf",

@@ -30,16 +30,16 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured notes (2026-09-03) lead; SNA case study then Higgs on that day.
-    expect(posts[0].published).toBe('2026-09-03');
-    expect(posts[0].id).toBe('synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09');
+    // Newest featured note (2026-09-04 PDVSA mockup) leads; then SNA / Higgs on 2026-09-03.
+    expect(posts[0].published).toBe('2026-09-04');
+    expect(posts[0].id).toBe('synthobs-pdvsa-gateway-ops-mockup-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-pdvsa-gateway-ops-mockup-2026-09',
       'synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09',
       'synthobs-tbme-higgs-awareness-unified-2026-09',
       'synthobs-lattice-vs-vibe-coding-2026-09',
       'synthobs-human-omniversal-reality-bridge-2026-08',
       'synthobs-y-chromosome-holographic-manifestation-2026-08',
-      'synthobs-invisible-frontier-gates-ai-2026-08',
     ]);
   });
 });

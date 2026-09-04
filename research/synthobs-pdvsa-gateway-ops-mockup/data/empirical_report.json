@@ -1,0 +1,228 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "title": "PDVSA Gateway Ops Mockup · takeaway→paper empirics",
+  "paper": "PDVSA Gateway Ops Mockup — Today’s Industry UI vs Omni-Lattice Gateway Console",
+  "docId": "WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04",
+  "registryId": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+  "agent": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "generatedAt": "2026-09-04T16:03:16.471Z",
+  "host": {
+    "cpus": 4,
+    "platform": "linux-x64",
+    "node": "v22.14.0"
+  },
+  "honesty": {
+    "note": "Interactive simulator + deterministic takeaway→paper map. Companion SNA/Lattice empirics back architectural claims — not live PDVSA telemetry.",
+    "notClaim": "Does not claim production oilfield A/B, SCADA truth, or re-proof of historical PDVSA / Protokol Sistemas contracts."
+  },
+  "abstractFindings": {
+    "takeawayCount": 9,
+    "mockLinksPass": true,
+    "companionSna": {
+      "present": true,
+      "registryId": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+      "all_pass": true,
+      "softPass": true
+    },
+    "egs": {
+      "PHI_EGS": 1.618033988749895,
+      "CLUTCH_DELTA": 0.0017789887498949053
+    },
+    "liveSimulator": "/special-projects/pdvsa-gateway-ops",
+    "shipBlog": "/ship-blog/pdvsa-gateway-ops-mockup"
+  },
+  "results": {
+    "study": "PDVSA Gateway Ops Mockup · takeaway→paper empirics",
+    "registryId": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+    "docId": "WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04",
+    "honesty": {
+      "note": "Interactive simulator + deterministic takeaway→paper map. Companion SNA/Lattice empirics back architectural claims — not live PDVSA telemetry.",
+      "notClaim": "Does not claim production oilfield A/B, SCADA truth, or re-proof of historical PDVSA / Protokol Sistemas contracts."
+    },
+    "n_pass": 6,
+    "n_total": 6,
+    "all_pass": true,
+    "experiments": [
+      {
+        "id": "E1_takeaway_paper_map",
+        "title": "Nine executive takeaways each point to a backing registry paper",
+        "takeaways": [
+          {
+            "id": "efficiency",
+            "label": "Efficiency",
+            "registryId": "lattice-token-reduction-proof-2026-07",
+            "secondaryRegistryId": "omniversal-nested-agent-lattice-2026-07",
+            "href": "/interfaces/whitepaper-surface.html?id=lattice-token-reduction-proof-2026-07",
+            "shipBlog": null
+          },
+          {
+            "id": "immediacy",
+            "label": "Immediacy",
+            "registryId": "synthobs-infinite-octaves-omniversal-lattice-2026-08",
+            "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+            "shipBlog": "/ship-blog/infinite-octaves-omniversal"
+          },
+          {
+            "id": "harmony",
+            "label": "Harmony",
+            "registryId": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+            "href": "/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+            "shipBlog": "/ship-blog/sna-tcpip-gateway-omni-lattice"
+          },
+          {
+            "id": "savings",
+            "label": "Savings",
+            "registryId": "synthobs-lattice-vs-vibe-coding-2026-09",
+            "secondaryRegistryId": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+            "href": "/interfaces/whitepaper-surface.html?id=synthobs-lattice-vs-vibe-coding-2026-09",
+            "shipBlog": "/ship-blog/lattice-vs-vibe-coding"
+          },
+          {
+            "id": "uptime",
+            "label": "Uptime",
+            "registryId": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+            "href": "/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+            "shipBlog": "/ship-blog/sna-tcpip-gateway-omni-lattice"
+          },
+          {
+            "id": "accuracy",
+            "label": "Accuracy",
+            "registryId": "synthobs-infinite-octaves-omniversal-lattice-2026-08",
+            "href": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octaves-omniversal-lattice-2026-08",
+            "shipBlog": "/ship-blog/infinite-octaves-omniversal"
+          },
+          {
+            "id": "predictions",
+            "label": "Predictions",
+            "registryId": "omniversal-nested-agent-lattice-2026-07",
+            "secondaryRegistryId": "synthobs-proof-by-continuous-execution-2026-07",
+            "href": "/interfaces/whitepaper-surface.html?id=omniversal-nested-agent-lattice-2026-07",
+            "shipBlog": null
+          },
+          {
+            "id": "exploration",
+            "label": "Exploration",
+            "registryId": "omniversal-nested-agent-lattice-2026-07",
+            "href": "/interfaces/whitepaper-surface.html?id=omniversal-nested-agent-lattice-2026-07",
+            "shipBlog": null
+          },
+          {
+            "id": "rd",
+            "label": "New R&D applications",
+            "registryId": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+            "secondaryRegistryId": "synthobs-constructive-morphogenesis-99-octave-2026-08",
+            "href": "/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+            "shipBlog": "/ship-blog/sna-tcpip-gateway-omni-lattice"
+          }
+        ],
+        "pass": true,
+        "honesty": "Catalog pointer map only — not measured oilfield KPI A/B."
+      },
+      {
+        "id": "E2_mock_html_clickable_takeaways",
+        "title": "Live mock HTML carries clickable takeaway → paper hrefs",
+        "livePath": "/special-projects/pdvsa-gateway-ops",
+        "checks": [
+          {
+            "id": "efficiency",
+            "hasId": true,
+            "hasHref": true
+          },
+          {
+            "id": "immediacy",
+            "hasId": true,
+            "hasHref": true
+          },
+          {
+            "id": "harmony",
+            "hasId": true,
+            "hasHref": true
+          },
+          {
+            "id": "savings",
+            "hasId": true,
+            "hasHref": true
+          },
+          {
+            "id": "uptime",
+            "hasId": true,
+            "hasHref": true
+          },
+          {
+            "id": "accuracy",
+            "hasId": true,
+            "hasHref": true
+          },
+          {
+            "id": "predictions",
+            "hasId": true,
+            "hasHref": true
+          },
+          {
+            "id": "exploration",
+            "hasId": true,
+            "hasHref": true
+          },
+          {
+            "id": "rd",
+            "hasId": true,
+            "hasHref": true
+          }
+        ],
+        "pass": true,
+        "honesty": "Structural HTML lock for the demo surface."
+      },
+      {
+        "id": "E3_companion_sna_empirics_bridge",
+        "title": "Bridge to SNA↔TCP/IP gateway companion empirics (soft if missing)",
+        "companion": {
+          "present": true,
+          "registryId": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+          "all_pass": true,
+          "softPass": true
+        },
+        "pass": true,
+        "honesty": "Soft when companion report absent; hard-check registry id when present."
+      },
+      {
+        "id": "E4_egs_golden_key_lock",
+        "title": "Φ_EGS and clutch Δ architectural lock",
+        "PHI_EGS": 1.618033988749895,
+        "CLUTCH_DELTA": 0.0017789887498949053,
+        "pass": true,
+        "honesty": "Architectural filing grammar — not a new Planck measurement."
+      },
+      {
+        "id": "E5_fair_exchange_clause",
+        "title": "Fair Exchange transparency notice present",
+        "pass": true,
+        "honesty": "Notice only — not a legal warranty."
+      },
+      {
+        "id": "E6_ship_surfaces",
+        "title": "Paper + ship-blog + simulator path locked",
+        "DOC_ID": "WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04",
+        "REGISTRY_ID": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+        "SHIP_BLOG_SLUG": "pdvsa-gateway-ops-mockup",
+        "pass": true,
+        "honesty": "Ship packaging lock for QUESTFEST / Reading Room."
+      }
+    ],
+    "abstractFindings": {
+      "takeawayCount": 9,
+      "mockLinksPass": true,
+      "companionSna": {
+        "present": true,
+        "registryId": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+        "all_pass": true,
+        "softPass": true
+      },
+      "egs": {
+        "PHI_EGS": 1.618033988749895,
+        "CLUTCH_DELTA": 0.0017789887498949053
+      },
+      "liveSimulator": "/special-projects/pdvsa-gateway-ops",
+      "shipBlog": "/ship-blog/pdvsa-gateway-ops-mockup"
+    }
+  }
+}

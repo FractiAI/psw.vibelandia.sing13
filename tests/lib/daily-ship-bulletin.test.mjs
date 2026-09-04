@@ -42,6 +42,16 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 28');
   });
 
+  it('leads 2026-09-04 News tip with PDVSA Gateway Ops Mockup', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-09-04' });
+    expect(payload.highlights[0].id).toBe(
+      'synthobs-pdvsa-gateway-ops-mockup-2026-09',
+    );
+    expect(payload.htmlBody).toMatch(/PDVSA|Gateway Ops|simulator|takeaway/i);
+    expect(payload.htmlBody).toContain('pdvsa-gateway-ops');
+    expect(payload.newsLabel).toContain('September 4');
+  });
+
   it('leads 2026-09-03 News tip with SNA gateway Omni-Lattice case study', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-03' });
     expect(payload.highlights[0].id).toBe(

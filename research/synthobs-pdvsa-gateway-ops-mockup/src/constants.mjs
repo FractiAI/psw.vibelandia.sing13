@@ -77,14 +77,14 @@ export const EXECUTIVE_TAKEAWAYS = Object.freeze([
     registryId: 'omniversal-nested-agent-lattice-2026-07',
     secondaryRegistryId: 'synthobs-proof-by-continuous-execution-2026-07',
     href: '/interfaces/whitepaper-surface.html?id=omniversal-nested-agent-lattice-2026-07',
-    shipBlog: null,
+    shipBlog: '/ship-blog/omniversal-nested-agent-lattice',
   },
   {
     id: 'exploration',
     label: 'Exploration',
     registryId: 'omniversal-nested-agent-lattice-2026-07',
     href: '/interfaces/whitepaper-surface.html?id=omniversal-nested-agent-lattice-2026-07',
-    shipBlog: null,
+    shipBlog: '/ship-blog/omniversal-nested-agent-lattice',
   },
   {
     id: 'rd',

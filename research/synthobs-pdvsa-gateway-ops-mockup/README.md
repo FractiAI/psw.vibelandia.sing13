@@ -49,6 +49,16 @@ src/           # constants + experiments E1–E6
 scripts/       # pipeline runner
 ```
 
+## Publish standalone GitHub mirror
+
+```bash
+# After FractiAI/synthobs-pdvsa-gateway-ops-mockup exists (org admin create once):
+npm run publish:standalone:pdvsa-gateway-ops
+
+# Or create + push (needs repo-create token):
+npm run publish:standalone:pdvsa-gateway-ops:create
+```
+
 ## Honesty
 
 Simulator + catalog grammar. No wet-lab. No claim that historical PDVSA/Protokol facts are re-proven here. Companion SNA receipt (E3) is soft if missing.

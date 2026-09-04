@@ -1,7 +1,7 @@
 {
   "schema": "standalone-suite-manifest/v1",
   "owner": "FractiAI",
-  "updatedAt": "2026-09-03",
+  "updatedAt": "2026-09-04",
   "suites": [
     {
       "id": "synthobs-tbme-higgs-awareness-unified",
@@ -66,6 +66,14 @@
       "description": "IBM SNA TCP-IP gateway fractal case study — Omni-Lattice Chat deployment template + empirics",
       "paperIds": ["synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09"],
       "extraDocs": []
+    },
+    {
+      "id": "synthobs-pdvsa-gateway-ops-mockup",
+      "path": "research/synthobs-pdvsa-gateway-ops-mockup",
+      "github": "https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup",
+      "description": "PDVSA Gateway Ops Mockup — Today’s industry UI vs Omni-Lattice gateway console + takeaway→paper empirics",
+      "paperIds": ["synthobs-pdvsa-gateway-ops-mockup-2026-09"],
+      "extraDocs": ["docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md"]
     },
     {
       "id": "synthobs-ss-vibelandia-official-prospectus",

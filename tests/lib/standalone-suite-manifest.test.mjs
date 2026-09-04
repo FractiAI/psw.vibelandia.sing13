@@ -18,6 +18,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-invisible-frontier-gates-ai',
       'synthobs-lattice-vs-vibe-coding',
       'synthobs-magneto-harmonic-stellar-99-octave',
+      'synthobs-pdvsa-gateway-ops-mockup',
       'synthobs-ss-vibelandia-official-prospectus',
       'synthobs-table-top-hep-99-octave',
       'synthobs-tbme-higgs-awareness-unified',

@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-infinite-octave-prime-parity",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave Prime-Parity Framework empirical suite (SynthOBS)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

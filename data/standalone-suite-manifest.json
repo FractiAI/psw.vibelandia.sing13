@@ -76,6 +76,14 @@
       "extraDocs": ["docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md"]
     },
     {
+      "id": "synthobs-infinite-octave-prime-parity",
+      "path": "research/synthobs-infinite-octave-prime-parity",
+      "github": "https://github.com/FractiAI/synthobs-infinite-octave-prime-parity",
+      "description": "Infinite Octave Prime-Parity Framework — sole-even 2 · odd irreducible sets · Φ_EGS fixtures",
+      "paperIds": ["synthobs-infinite-octave-prime-parity-2026-09"],
+      "extraDocs": ["docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md"]
+    },
+    {
       "id": "synthobs-ss-vibelandia-official-prospectus",
       "path": "research/synthobs-ss-vibelandia-official-prospectus",
       "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",

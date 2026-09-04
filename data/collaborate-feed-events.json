@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-04T21:12:21.108Z",
+  "updatedAt": "2026-09-04T21:35:09.792Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-infinite-octave-prime-parity-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-04T21:35:09.791Z",
+      "body": "Rigorous Mathematical and Empirical Validation of the Infinite Octave Prime-Parity Framework",
+      "presenceHue": "gold",
+      "paperId": "synthobs-infinite-octave-prime-parity-2026-09",
+      "artifact": {
+        "title": "Rigorous Mathematical and Empirical Validation of the Infinite Octave Prime-Parity Framework",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md",
+        "url": "/whitepaper/infinite-octave-prime-parity",
+        "paperId": "synthobs-infinite-octave-prime-parity-2026-09",
+        "docId": "WP-SYNTHOBS-INFINITE-OCTAVE-PRIME-PARITY-2026-09-04",
+        "published": "2026-09-04",
+        "featured": false,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-pdvsa-gateway-ops-mockup-2026-09",
       "type": "ArtifactEvent",

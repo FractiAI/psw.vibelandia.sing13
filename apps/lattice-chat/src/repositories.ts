@@ -186,6 +186,17 @@ export const LATTICE_REPOSITORIES_FALLBACK: LatticeRepository[] = [
     tags: ['99-octave', 'synthobs', 'engine', 'gateway'],
     guestSelectable: true,
   },
+  {
+    id: 'infinite-octave-prime-parity',
+    name: 'synthobs-infinite-octave-prime-parity',
+    label: 'Infinite Octaves · Prime-Parity',
+    url: 'https://github.com/FractiAI/synthobs-infinite-octave-prime-parity',
+    startingRef: 'main',
+    blurb:
+      'Sole-even prime 2 · odd irreducible sets · Φ_EGS octave recursion · /ship-blog/infinite-octave-prime-parity.',
+    tags: ['99-octave', 'synthobs', 'engine', 'prime'],
+    guestSelectable: true,
+  },
 ];
 
 export function findRepository(

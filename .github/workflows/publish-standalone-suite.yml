@@ -15,11 +15,17 @@ on:
           - synthobs-pdvsa-gateway-ops-mockup
           - synthobs-ibm-sna-tcpip-gateway-omni-lattice
           - synthobs-lattice-vs-vibe-coding
-        create_repo:
+      create_repo:
         description: 'Create empty FractiAI repo if missing (needs org PAT)'
         required: false
         type: boolean
         default: false
+  # Cloud agents cannot workflow_dispatch (App token). Push this request file on main
+  # so Actions can run with secrets.FRACTIAI_ORG_PAT and create/push the standalone mirror.
+  push:
+    branches: [main]
+    paths:
+      - 'data/standalone-publish-request.json'
 
 jobs:
   publish:
@@ -31,10 +37,28 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Resolve suite request
+        id: req
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "suite_id=${{ inputs.suite_id }}" >> "$GITHUB_OUTPUT"
+            echo "create_repo=${{ inputs.create_repo }}" >> "$GITHUB_OUTPUT"
+          else
+            SUITE=$(node -e "const j=require('./data/standalone-publish-request.json'); process.stdout.write(String(j.suiteId||''))")
+            CREATE=$(node -e "const j=require('./data/standalone-publish-request.json'); process.stdout.write(j.createRepo===true?'true':'false')")
+            if [ -z "$SUITE" ]; then
+              echo "Missing suiteId in data/standalone-publish-request.json" >&2
+              exit 1
+            fi
+            echo "suite_id=$SUITE" >> "$GITHUB_OUTPUT"
+            echo "create_repo=$CREATE" >> "$GITHUB_OUTPUT"
+          fi
+          echo "Resolved suite_id=$(cat "$GITHUB_OUTPUT" | sed -n 's/^suite_id=//p' | tail -1) create_repo=$(cat "$GITHUB_OUTPUT" | sed -n 's/^create_repo=//p' | tail -1)"
+
       - name: Publish suite to FractiAI standalone repo
         env:
           GH_TOKEN: ${{ secrets.FRACTIAI_ORG_PAT || secrets.GITHUB_TOKEN }}
         run: |
           FLAGS=""
-          if [ "${{ inputs.create_repo }}" = "true" ]; then FLAGS="--create-repo"; fi
-          node scripts/publish-standalone-suite.mjs "${{ inputs.suite_id }}" $FLAGS
+          if [ "${{ steps.req.outputs.create_repo }}" = "true" ]; then FLAGS="--create-repo"; fi
+          node scripts/publish-standalone-suite.mjs "${{ steps.req.outputs.suite_id }}" $FLAGS

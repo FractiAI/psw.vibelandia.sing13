@@ -60,6 +60,25 @@ async function copyTree(src, dest, { skip = [] } = {}) {
   }
 }
 
+function assertCreateCapableToken(createRepo) {
+  if (!createRepo) return;
+  const token = githubToken();
+  if (!token) {
+    throw new Error(
+      'create-repo requires GH_TOKEN or GITHUB_TOKEN (classic/fine-grained PAT with FractiAI repo create). ' +
+        'Set secrets.FRACTIAI_ORG_PAT on the repo or export FRACTIAI_ORG_PAT / GH_TOKEN locally.',
+    );
+  }
+  // GitHub App installation tokens (ghs_) cannot createOrganizationRepository.
+  if (token.startsWith('ghs_')) {
+    throw new Error(
+      'create-repo refused: GH_TOKEN is a GitHub App installation token (ghs_). ' +
+        'Use a classic or fine-grained PAT with admin:org/repo create on FractiAI ' +
+        '(repo secret FRACTIAI_ORG_PAT), not secrets.GITHUB_TOKEN.',
+    );
+  }
+}
+
 async function ensureRepoExists(githubUrl, suiteId, createRepo) {
   const publicRemote = publicGitRemote(githubUrl);
   const owner = loadStandaloneSuiteManifest().owner || 'FractiAI';
@@ -72,6 +91,7 @@ async function ensureRepoExists(githubUrl, suiteId, createRepo) {
       `Remote missing: ${publicRemote}\nCreate it first:\n  gh repo create ${owner}/${suiteId} --public`,
     );
   }
+  assertCreateCapableToken(true);
   const create = run(
     'gh',
     ['repo', 'create', `${owner}/${suiteId}`, '--public', '--description', `SynthOBS · ${suiteId} standalone suite`],

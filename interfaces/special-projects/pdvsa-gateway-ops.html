@@ -978,9 +978,6 @@
         els.dots.innerHTML = STEPS.map((s, i) =>
           `<button type="button" data-step="${i}" aria-label="${s.title}" ${i === step ? 'aria-current="true"' : ""}></button>`
         ).join("");
-        els.dots.querySelectorAll("button").forEach((btn) => {
-          btn.addEventListener("click", () => gotoStep(Number(btn.dataset.step)));
-        });
       }
 
       function gotoStep(n) {
@@ -1066,8 +1063,30 @@
         }, 220);
       }
 
-      els.prev.onclick = function () { gotoStep(step - 1); };
-      els.next.onclick = function () { gotoStep(step + 1); };
+      /* Single capture-phase handler for Prev / Next / step dots */
+      document.querySelector(".scenario-bar").addEventListener(
+        "click",
+        function (ev) {
+          const t = ev.target && ev.target.closest ? ev.target.closest("button") : null;
+          if (!t) return;
+          if (t.id === "btn-next") {
+            ev.preventDefault();
+            gotoStep(step + 1);
+          } else if (t.id === "btn-prev") {
+            ev.preventDefault();
+            gotoStep(step - 1);
+          } else if (t.dataset && t.dataset.step != null) {
+            ev.preventDefault();
+            gotoStep(Number(t.dataset.step));
+          }
+        },
+        true
+      );
+
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "ArrowRight") gotoStep(step + 1);
+        if (ev.key === "ArrowLeft") gotoStep(step - 1);
+      });
 
       document.querySelectorAll(".view-mode button").forEach((btn) => {
         btn.addEventListener("click", () => {

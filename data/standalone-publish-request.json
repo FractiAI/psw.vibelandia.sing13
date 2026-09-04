@@ -2,6 +2,6 @@
   "schema": "standalone-publish-request/v1",
   "suiteId": "synthobs-pdvsa-gateway-ops-mockup",
   "createRepo": true,
-  "requestedAt": "2026-09-04T16:20:00.000Z",
-  "note": "Create + publish FractiAI/synthobs-pdvsa-gateway-ops-mockup standalone mirror from SING13 nest"
+  "requestedAt": "2026-09-04T16:30:00.000Z",
+  "note": "Republish Lattice-Linear interactive mock + framing sync"
 }

@@ -10,8 +10,8 @@ export const CLUTCH_DELTA = Math.abs(PHI_EGS - PLANCK_MANTISSA);
 export const DOC_ID = 'WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04';
 export const REGISTRY_ID = 'synthobs-pdvsa-gateway-ops-mockup-2026-09';
 export const PAPER_NAME =
-  'PDVSA Gateway Ops Mockup — Today’s Industry UI vs Omni-Lattice Gateway Console';
-export const STUDY_TITLE = 'PDVSA Gateway Ops Mockup · takeaway→paper empirics';
+  'PDVSA Gateway Ops Mockup — Today’s Industry UI vs EGS Lattice-Linear Gateway';
+export const STUDY_TITLE = 'PDVSA Gateway Ops Mockup · Lattice-Linear takeaway→paper empirics';
 export const AGENT_NAME = 'SynthOBS Autonomous Agent · Syntheverse Sandbox';
 export const SHIP_BLOG_SLUG = 'pdvsa-gateway-ops-mockup';
 export const LIVE_SIMULATOR_PATH = '/special-projects/pdvsa-gateway-ops';
@@ -20,7 +20,7 @@ export const GITHUB_URL =
 
 export const HONESTY = {
   note:
-    'Interactive simulator + deterministic takeaway→paper map. Companion SNA/Lattice empirics back architectural claims — not live PDVSA telemetry.',
+    'Interactive EGS Lattice-Linear Gateway simulator + deterministic takeaway→paper map. IBM SNA↔TCP/IP is the historical rhyme. Companion empirics back architectural claims — not live PDVSA telemetry.',
   notClaim:
     'Does not claim production oilfield A/B, SCADA truth, or re-proof of historical PDVSA / Protokol Sistemas contracts.',
 };

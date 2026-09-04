@@ -9,7 +9,7 @@
 
 ## Intention
 
-Standalone nest for the **PDVSA-scale executive simulator** (Today’s siloed industry UI vs Omni-Lattice SNA↔TCP/IP gateway console) plus deterministic empirics that lock:
+Standalone nest for the **PDVSA-scale executive simulator** (Today’s siloed industry UI vs EGS Lattice-Linear Gateway (SNA↔TCP/IP = historical rhyme)) plus deterministic empirics that lock:
 
 - Nine **executive key takeaways** → clickable backing papers  
 - Mock HTML structural links  

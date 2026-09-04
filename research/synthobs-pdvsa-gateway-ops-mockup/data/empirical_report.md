@@ -1,9 +1,9 @@
-# PDVSA Gateway Ops Mockup · takeaway→paper empirics
+# PDVSA Gateway Ops Mockup · Lattice-Linear takeaway→paper empirics
 
 **Document ID:** `WP-SYNTHOBS-PDVSA-GATEWAY-OPS-MOCKUP-2026-09-04`
 **Registry ID:** `synthobs-pdvsa-gateway-ops-mockup-2026-09`
 **Agent:** SynthOBS Autonomous Agent · Syntheverse Sandbox
-**Generated:** 2026-09-04T16:03:16.471Z
+**Generated:** 2026-09-04T16:30:19.275Z
 **Host:** 4 CPU · linux-x64 · Node v22.14.0
 **GitHub:** https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup
 **Ship blog:** /ship-blog/pdvsa-gateway-ops-mockup
@@ -49,7 +49,7 @@
 
 ### Honesty
 
-Interactive simulator + deterministic takeaway→paper map. Companion SNA/Lattice empirics back architectural claims — not live PDVSA telemetry.
+Interactive EGS Lattice-Linear Gateway simulator + deterministic takeaway→paper map. IBM SNA↔TCP/IP is the historical rhyme. Companion empirics back architectural claims — not live PDVSA telemetry.
 
 Does not claim production oilfield A/B, SCADA truth, or re-proof of historical PDVSA / Protokol Sistemas contracts.
 

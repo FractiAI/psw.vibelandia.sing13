@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070b14" />
+  <title>PDVSA Gateway Ops Simulator · SS Vibelandia</title>
+  <meta name="description" content="Simulator: today’s fragmented industry management UI versus Omni-Lattice SNA↔TCP/IP gateway executive console. Narrative analogue — not live PDVSA telemetry." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/pdvsa-gateway-ops" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: var(--voyage-navy, #070b14);
+      --navy-mid: var(--voyage-navy-mid, #0c1628);
+      --gold: var(--brand-gold, #d4af37);
+      --gold-hi: var(--brand-gold-hi, #fef3c7);
+      --champagne: var(--brand-champagne, #f5e6c8);
+      --text: var(--brand-text, #f5f0e8);
+      --muted: var(--brand-muted, #a8a29e);
+      --terminal: #0a1a0c;
+      --phosphor: #6dff8a;
+      --phosphor-dim: #2a7a3a;
+      --danger: #c45c3a;
+      --warn: #c9a227;
+      --ok: #7cb87c;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+      --font-mono: "IBM Plex Mono", "Consolas", "Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 90% 55% at 50% -10%, rgba(212, 175, 55, 0.12), transparent 55%),
+        linear-gradient(165deg, #05080f 0%, var(--navy) 42%, #0a101c 100%);
+      line-height: 1.45;
+    }
+
+    .wrap {
+      width: min(1280px, 100%);
+      margin: 0 auto;
+      padding: 1.25rem 1.15rem 3.5rem;
+    }
+
+    /* —— Brand / hero —— */
+    .brand {
+      text-align: center;
+      padding: 1.5rem 0 0.75rem;
+    }
+    .brand-kicker {
+      margin: 0 0 0.35rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .brand-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.15rem);
+      font-weight: 700;
+      color: var(--gold-hi);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+    .brand-sub {
+      margin: 0.55rem auto 0;
+      max-width: 38rem;
+      color: var(--champagne);
+      font-size: 1.02rem;
+    }
+
+    .honesty {
+      margin: 1rem auto 1.25rem;
+      max-width: 52rem;
+      padding: 0.7rem 1rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(12, 22, 40, 0.72);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .honesty a { color: var(--gold-hi); }
+    .honesty strong { color: var(--champagne); font-weight: 600; }
+
+    /* —— Controls —— */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.85rem;
+    }
+    .view-mode {
+      display: inline-flex;
+      gap: 0.35rem;
+      padding: 0.2rem;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+    }
+    .view-mode button {
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.75rem;
+      border: 0;
+      cursor: pointer;
+      background: transparent;
+      color: var(--muted);
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+    .view-mode button[aria-pressed="true"] {
+      background: rgba(212, 175, 55, 0.18);
+      color: var(--gold-hi);
+    }
+    .view-mode button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .scenario-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .scenario-bar .label {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+    .scenario-bar .step-title {
+      color: var(--champagne);
+      font-weight: 600;
+      min-width: 12rem;
+    }
+    .scenario-bar button {
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: transparent;
+      color: var(--gold-hi);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .scenario-bar button:hover {
+      background: rgba(212, 175, 55, 0.12);
+      border-color: var(--gold);
+    }
+    .scenario-bar button:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    .step-dots {
+      display: flex;
+      gap: 0.35rem;
+    }
+    .step-dots span {
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.25);
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+    .step-dots span[aria-current="true"] {
+      background: var(--gold);
+      transform: scale(1.25);
+    }
+
+    /* —— Dual panes —— */
+    .panes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      min-height: 28rem;
+    }
+    body.mode-today .panes { grid-template-columns: 1fr; }
+    body.mode-today .pane-gateway { display: none; }
+    body.mode-gateway .panes { grid-template-columns: 1fr; }
+    body.mode-gateway .pane-today { display: none; }
+
+    .pane {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      background: rgba(5, 8, 15, 0.85);
+      overflow: hidden;
+      animation: paneIn 0.45s ease both;
+    }
+    @keyframes paneIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+    .pane-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.65rem 0.85rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      background: rgba(12, 22, 40, 0.9);
+    }
+    .pane-head h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold-hi);
+    }
+    .pane-head .tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .pane-body {
+      flex: 1;
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      transition: opacity 0.3s ease;
+    }
+    .pane-body.is-switching { opacity: 0.45; }
+
+    /* Today: industry sim */
+    .sna-strip {
+      font-family: var(--font-mono);
+      background: var(--terminal);
+      color: var(--phosphor);
+      padding: 0.55rem 0.7rem;
+      font-size: 0.78rem;
+      border: 1px solid var(--phosphor-dim);
+      text-shadow: 0 0 6px rgba(109, 255, 138, 0.35);
+      min-height: 4.2rem;
+      white-space: pre-wrap;
+    }
+    .tab-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+    .tab-row button {
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35rem 0.6rem;
+      border: 1px solid #3a3a3a;
+      background: #1a1a1a;
+      color: #b0b0b0;
+      cursor: pointer;
+    }
+    .tab-row button[aria-selected="true"] {
+      background: #2a2a2a;
+      color: #eee;
+      border-color: #666;
+      box-shadow: inset 0 -2px 0 var(--warn);
+    }
+    .silo-panel {
+      flex: 1;
+      padding: 0.65rem;
+      background: #12141a;
+      border: 1px solid #2a2e38;
+      font-size: 0.86rem;
+      color: #c8c8c8;
+    }
+    .silo-panel h3 {
+      margin: 0 0 0.4rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      font-weight: 600;
+    }
+    .silo-panel ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    .silo-panel li { margin-bottom: 0.25rem; }
+    .stale {
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.5rem;
+      background: rgba(196, 92, 58, 0.15);
+      border-left: 2px solid var(--danger);
+      color: #e8b4a4;
+      font-size: 0.8rem;
+    }
+    .handoff-queue {
+      font-size: 0.78rem;
+      color: #999;
+      border-top: 1px dashed #333;
+      padding-top: 0.45rem;
+    }
+    .handoff-queue strong { color: var(--warn); }
+
+    /* Gateway console */
+    .shells {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.4rem;
+    }
+    .shell {
+      padding: 0.5rem 0.45rem;
+      text-align: center;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: rgba(12, 22, 40, 0.65);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+    .shell strong {
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      color: var(--champagne);
+      text-transform: none;
+      font-weight: 600;
+    }
+    .shell.is-active {
+      border-color: var(--gold);
+      background: rgba(212, 175, 55, 0.12);
+      color: var(--gold-hi);
+    }
+    .mca {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .mca span {
+      flex: 1;
+      min-width: 5rem;
+      text-align: center;
+      padding: 0.4rem 0.35rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      color: var(--muted);
+      transition: all 0.35s ease;
+    }
+    .mca span.is-on {
+      color: var(--navy);
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+    .brief {
+      flex: 1;
+      padding: 0.7rem 0.8rem;
+      background: linear-gradient(145deg, rgba(12, 22, 40, 0.9), rgba(7, 11, 20, 0.95));
+      border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+    .brief h3 {
+      margin: 0 0 0.45rem;
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--gold-hi);
+      font-weight: 600;
+    }
+    .brief p {
+      margin: 0 0 0.5rem;
+      font-size: 0.9rem;
+      color: var(--champagne);
+    }
+    .pointers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin: 0.4rem 0;
+    }
+    .pointers span {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.45rem;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: var(--gold-hi);
+      background: rgba(212, 175, 55, 0.08);
+    }
+    .cost-bar {
+      margin-top: 0.55rem;
+    }
+    .cost-bar .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+    .cost-track {
+      height: 0.45rem;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+    .cost-fill {
+      height: 100%;
+      width: 12%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-hi));
+      transition: width 0.5s ease;
+    }
+    .agents {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+    }
+    .agents span {
+      padding: 0.3rem 0.5rem;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      color: var(--muted);
+    }
+    .agents span.is-live {
+      color: var(--gold-hi);
+      border-color: var(--gold);
+      animation: pulseGold 1.6s ease infinite;
+    }
+    @keyframes pulseGold {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+      50% { box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15); }
+    }
+
+    .contrast {
+      margin: 0.85rem 0 0;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      background: rgba(12, 22, 40, 0.55);
+      font-size: 0.9rem;
+      color: var(--champagne);
+    }
+    .contrast strong { color: var(--gold-hi); }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+    .cta-row a {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 0.55rem 1rem;
+      text-decoration: none;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      color: var(--gold-hi);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .cta-row a.primary {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .cta-row a.primary:hover { background: var(--gold-hi); color: var(--navy); }
+    .cta-row a:hover { background: rgba(212, 175, 55, 0.12); }
+
+    /* —— Executive takeaways —— */
+    .takeaways {
+      margin-top: 2.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.28);
+    }
+    .takeaways h2 {
+      margin: 0 0 0.35rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+      color: var(--gold-hi);
+      font-weight: 600;
+      text-align: center;
+    }
+    .takeaways .lede {
+      margin: 0 auto 1.25rem;
+      max-width: 40rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .takeaway-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 0.65rem;
+    }
+    .takeaway-list li {
+      padding: 0.85rem 0.95rem;
+      border-top: 2px solid rgba(212, 175, 55, 0.55);
+      background: rgba(12, 22, 40, 0.45);
+    }
+    .takeaway-list h3 {
+      margin: 0 0 0.3rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+    .takeaway-list p {
+      margin: 0;
+      font-size: 0.86rem;
+      color: var(--champagne);
+    }
+
+    .foot {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .foot a { color: var(--gold-hi); }
+
+    @media (max-width: 900px) {
+      .panes { grid-template-columns: 1fr; }
+      .shells { grid-template-columns: 1fr; }
+      .controls { flex-direction: column; align-items: stretch; }
+      .scenario-bar { justify-content: space-between; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="mode-split">
+  <div class="wrap">
+    <header class="brand">
+      <p class="brand-kicker">SS Vibelandia · Special Project</p>
+      <h1 class="brand-title">PDVSA Gateway Ops Simulator</h1>
+      <p class="brand-sub">Today’s fragmented industry management UI versus the Omni-Lattice SNA↔TCP/IP gateway — same incident, two gravities.</p>
+    </header>
+
+    <aside class="honesty" role="note">
+      <strong>Simulator · narrative analogue.</strong>
+      PDVSA and Protokol Sistemas appear as the Caracas deployment-culture template from the case study — not a live oilfield console, SCADA replacement, or audit of Interlink / PDVSA archives.
+      Φ<sub>EGS</sub> ≈ 1.618 is routing grammar.
+      <a href="/ship-blog/sna-tcpip-gateway-omni-lattice">Case study</a>
+      ·
+      <a href="/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09">Whitepaper</a>
+    </aside>
+
+    <div class="controls">
+      <div class="view-mode" role="group" aria-label="View mode">
+        <button type="button" data-mode="split" aria-pressed="true">Split</button>
+        <button type="button" data-mode="today" aria-pressed="false">Today only</button>
+        <button type="button" data-mode="gateway" aria-pressed="false">Gateway only</button>
+      </div>
+      <div class="scenario-bar" aria-label="Scenario stepper">
+        <span class="label">Scenario</span>
+        <span class="step-title" id="step-title">1 · Morning brief</span>
+        <div class="step-dots" id="step-dots" aria-hidden="true"></div>
+        <button type="button" id="btn-prev" disabled>Prev</button>
+        <button type="button" id="btn-next">Next</button>
+      </div>
+    </div>
+
+    <div class="panes" id="panes">
+      <section class="pane pane-today" aria-labelledby="today-h">
+        <div class="pane-head">
+          <h2 id="today-h">Today · Industry UI sim</h2>
+          <span class="tag">SNA / ERP silos</span>
+        </div>
+        <div class="pane-body" id="today-body">
+          <div class="sna-strip" id="sna-strip" aria-live="polite"></div>
+          <div class="tab-row" id="silo-tabs" role="tablist" aria-label="Domain silos"></div>
+          <div class="silo-panel" id="silo-panel" role="tabpanel"></div>
+        </div>
+      </section>
+
+      <section class="pane pane-gateway" aria-labelledby="gateway-h">
+        <div class="pane-head">
+          <h2 id="gateway-h">Gateway · Omni-Lattice</h2>
+          <span class="tag">Proposed grammar</span>
+        </div>
+        <div class="pane-body" id="gateway-body">
+          <div class="shells" id="shells" aria-label="Three-shell gateway map">
+            <div class="shell" data-shell="core"><strong>SNA Core</strong> Enclosure</div>
+            <div class="shell" data-shell="gw"><strong>Gateway</strong> Nested agents</div>
+            <div class="shell" data-shell="horizon"><strong>TCP/IP Horizon</strong> Edge</div>
+          </div>
+          <div class="mca" id="mca" aria-label="MCA cycle">
+            <span data-mca="m">Metabolize</span>
+            <span data-mca="c">Crystallize</span>
+            <span data-mca="a">Animate</span>
+          </div>
+          <div class="brief" id="brief"></div>
+          <div class="agents" id="agents" aria-label="Nested agent seats">
+            <span data-agent="seed">Seed·RAG</span>
+            <span data-agent="ops">Ops</span>
+            <span data-agent="legal">Legal</span>
+            <span data-agent="edge">Edge</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <p class="contrast" id="contrast" aria-live="polite"></p>
+
+    <div class="cta-row">
+      <a class="primary" href="/lattice-chat">Open Lattice Chat</a>
+      <a href="/ship-blog/sna-tcpip-gateway-omni-lattice">Read the case study</a>
+      <a href="/questfest">Ship board</a>
+    </div>
+
+    <section class="takeaways" id="executive-takeaways" aria-labelledby="takeaways-h">
+      <h2 id="takeaways-h">Executive key takeaways</h2>
+      <p class="lede">What a PDVSA-scale operator gains when the bridge grammar is the product — labeled simulator gains from the SNA↔TCP/IP gateway case study, not measured oilfield SLAs.</p>
+      <ul class="takeaway-list">
+        <li>
+          <h3>Efficiency</h3>
+          <p>One gravity well replaces silo-hopping. Multi-octave routing keeps N domains in a single executive thread instead of N ticket queues.</p>
+        </li>
+        <li>
+          <h3>Immediacy</h3>
+          <p>Pointer-first briefs refresh in place — no waiting on batch sync between ERP, legal, and field systems for a 90-second decision.</p>
+        </li>
+        <li>
+          <h3>Harmony</h3>
+          <p>Nested agents under peer-firewall keep electrical, fluid, legal, and ops voices coherent after domain switches — fixture rhyme: high coherence at K=12.</p>
+        </li>
+        <li>
+          <h3>Savings</h3>
+          <p>Lattice context cost stays under 15% of flat token dumps at N≥6 in companion empirics — invest in gateway grammar, not only more tokens.</p>
+        </li>
+        <li>
+          <h3>Uptime</h3>
+          <p>Enclosure stays protected while the Horizon stays open: SNA Core does not dump into every Edge handoff; the gateway mediates continuity.</p>
+        </li>
+        <li>
+          <h3>Accuracy</h3>
+          <p>Seed·RAG cites pointers to domain sources instead of vibe-window paraphrase — executives see what is grounded vs what still needs human confirmation.</p>
+        </li>
+        <li>
+          <h3>Predictions</h3>
+          <p>MCA (Metabolize → Crystallize → Animate) turns incident noise into a next-action band — forecasting as operational rehearsal, not prophecy.</p>
+        </li>
+        <li>
+          <h3>Exploration</h3>
+          <p>Cross-domain what-ifs stay on one console: export, compliance, and logistics can be explored without losing the morning brief.</p>
+        </li>
+        <li>
+          <h3>New R&amp;D applications</h3>
+          <p>Caracas template: industrial urgency + local integrator mastery (Protokol Sistemas pattern) ships frontier stacks early — Lattice Chat as R&amp;D ops lab for agentic multi-domain work.</p>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · Fair Exchange
+      · <a href="/papers">Reading Room</a>
+      · → ∞^∞
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const STEPS = [
+        {
+          id: 0,
+          title: "1 · Morning brief",
+          sna: "SYSID=PDVSA.CORE.SNA\nSESS 3270 · LU=OPS.BRF.01\nSTATUS: BATCH ROLLUP PENDING 06:40 UTC\nMSG: Executive board view last refreshed 04:12 — STALE vs silos",
+          tabs: ["ERP", "SCADA", "Legal", "Logistics"],
+          activeTab: 0,
+          silos: {
+            ERP: {
+              h: "ERP · Production rollup",
+              items: [
+                "Orinoco blend target: 98.2% of plan (batch T-1)",
+                "Export nomination: awaiting Logistics confirm",
+                "Variance ticket #4417 open — no Legal link"
+              ],
+              stale: "Executive PDF generated 2h ago. Does not include SCADA anomaly flag raised at 05:58."
+            },
+            SCADA: {
+              h: "SCADA · Field enclosure",
+              items: [
+                "Pump train B vibration ↑ — threshold warn",
+                "Telemetry packet: local historian only",
+                "No write-path to ERP variance ticket"
+              ],
+              stale: "Operator must open a separate console and paste IDs into email."
+            },
+            Legal: {
+              h: "Legal · Compliance desk",
+              items: [
+                "Hold notice LH-220 queued overnight",
+                "Waiting on Ops narrative for export lane",
+                "Counsel thread in mail — not in ERP"
+              ],
+              stale: "Context resets when leaving Legal tab."
+            },
+            Logistics: {
+              h: "Logistics · Export lane",
+              items: [
+                "Vessel window: 14:00–18:00 local",
+                "Nomination blocked pending Legal + Ops",
+                "Fax/email handoff queue: 6 unread"
+              ],
+              stale: "No single operator brief across domains."
+            }
+          },
+          handoff: "Handoffs waiting: Ops→Legal, SCADA→ERP, Logistics→All",
+          shells: ["core"],
+          mca: ["m"],
+          agents: ["seed", "ops"],
+          brief: {
+            h: "Executive brief · live",
+            p: "Morning gravity is one thread: production plan, export window, and overnight legal hold sit as pointers — not three PDFs and a fax queue.",
+            pointers: ["ERP·plan", "SCADA·overnight", "Legal·LH-220", "Logistics·vessel"],
+            cost: 14
+          },
+          contrast: "Today: stale board vs live silos. Gateway: one morning brief that stays current as domains open."
+        },
+        {
+          id: 1,
+          title: "2 · Cross-domain incident",
+          sna: "ALERT · MULTI-DOMAIN\nSCADA WARN + LEGAL HOLD + LOGISTICS BLOCK\nNO UNIFIED INCIDENT OBJECT\nOPERATOR MUST TRIPLE-SESSION",
+          tabs: ["ERP", "SCADA", "Legal", "Logistics"],
+          activeTab: 1,
+          silos: {
+            ERP: {
+              h: "ERP · Incident lag",
+              items: [
+                "No incident ID yet — waiting SCADA ticket",
+                "Production plan still shows green",
+                "Manual journal entry required"
+              ],
+              stale: "ERP will not reflect the SCADA warn until batch close."
+            },
+            SCADA: {
+              h: "SCADA · Electrical + fluid",
+              items: [
+                "Electrical anomaly on bus A",
+                "Fluid logistics pump B correlated",
+                "Export metering uncertain"
+              ],
+              stale: "Screenshots emailed to Legal and Logistics separately."
+            },
+            Legal: {
+              h: "Legal · Hold intensifies",
+              items: [
+                "LH-220 escalated — evidence pack incomplete",
+                "Needs Ops timeline + meter truth",
+                "Clock starts on disclosure window"
+              ],
+              stale: "Counsel cannot see SCADA live; waits on attachments."
+            },
+            Logistics: {
+              h: "Logistics · Lane freeze",
+              items: [
+                "Nomination frozen pending all-clear",
+                "Demurrage risk climbing",
+                "Partner TCP/IP portal has no SNA context"
+              ],
+              stale: "Partner sees silence; core sees noise."
+            }
+          },
+          handoff: "Three domains · three tickets · zero shared object",
+          shells: ["core", "gw"],
+          mca: ["m", "c"],
+          agents: ["seed", "ops", "legal"],
+          brief: {
+            h: "Incident · nested seats",
+            p: "Electrical + fluid + legal hold collapse into one MCA crystallize band. Peer-firewall keeps seats honest; executive sees the shared object, not three inboxes.",
+            pointers: ["SCADA·bus-A", "Fluid·pump-B", "Legal·LH-220", "Export·freeze"],
+            cost: 11
+          },
+          contrast: "Today: triple-session chaos. Gateway: one incident object with nested Ops + Legal seats."
+        },
+        {
+          id: 2,
+          title: "3 · Executive decision",
+          sna: "REQ: 90-SECOND DECISION BRIEF\nAVAILABLE: PARTIAL ROLLUPS + MAIL THREADS\nMISSING: GROUNDED CROSS-DOMAIN TRUTH\nRISK: APPROVE ON STALE DATA",
+          tabs: ["ERP", "SCADA", "Legal", "Logistics"],
+          activeTab: 0,
+          silos: {
+            ERP: {
+              h: "ERP · Approve? (guess)",
+              items: [
+                "CFO view: plan OK if Logistics clears",
+                "No confidence score on SCADA warn",
+                "Board slide still from 04:12"
+              ],
+              stale: "Decision would be made on a partial picture."
+            },
+            SCADA: {
+              h: "SCADA · Operator note",
+              items: [
+                "Recommend hold pump B 45 min",
+                "Bus A stabilizing",
+                "Not synced to Legal pack"
+              ],
+              stale: "Executive never lands on this screen in time."
+            },
+            Legal: {
+              h: "Legal · Red light",
+              items: [
+                "Cannot clear LH-220 without meter chain",
+                "Counsel advises pause export lane",
+                "Waiting Ops narrative"
+              ],
+              stale: "Veto arrives by phone after ERP already nudged green."
+            },
+            Logistics: {
+              h: "Logistics · Clock",
+              items: [
+                "Demurrage threshold in 110 min",
+                "Needs yes/no from Ops+Legal",
+                "Partner pinging portal"
+              ],
+              stale: "Urgency without shared accuracy."
+            }
+          },
+          handoff: "90-second ask · multi-hour gather",
+          shells: ["gw"],
+          mca: ["m", "c", "a"],
+          agents: ["seed", "ops", "legal", "edge"],
+          brief: {
+            h: "90-second decision band",
+            p: "Animate: hold pump B 45 min · keep LH-220 active · delay nomination 1 window · notify Edge partner with Horizon summary only (no SNA core dump).",
+            pointers: ["Decision·hold", "Legal·active", "Logistics·+1h", "Edge·summary"],
+            cost: 9
+          },
+          contrast: "Today: approve on stale rollups. Gateway: grounded next-action band in one executive pass."
+        },
+        {
+          id: 3,
+          title: "4 · Handoff to Edge",
+          sna: "EDGE PARTNER REQUESTS STATUS\nOPTIONS: (A) DUMP CORE  (B) SAY NOTHING\nNO SAFE HORIZON SUMMARY OBJECT\nSECURITY VS HOSPITALITY TENSION",
+          tabs: ["ERP", "SCADA", "Legal", "Logistics"],
+          activeTab: 3,
+          silos: {
+            ERP: {
+              h: "ERP · Export partner",
+              items: [
+                "Partner ID on TCP/IP portal",
+                "Cannot see SNA enclosure safely",
+                "Ops drafts a prose email"
+              ],
+              stale: "Either overshare core or under-inform the Horizon."
+            },
+            SCADA: {
+              h: "SCADA · Redacted?",
+              items: [
+                "Raw historian too detailed",
+                "No approved Edge summary template",
+                "Manual scrub takes hours"
+              ],
+              stale: "Uptime of trust erodes while scrubbing."
+            },
+            Legal: {
+              h: "Legal · Disclosure band",
+              items: [
+                "What may leave the enclosure?",
+                "Counsel writes a one-pager overnight",
+                "Partner already waiting"
+              ],
+              stale: "Immediacy lost to disclosure theater."
+            },
+            Logistics: {
+              h: "Logistics · Partner portal",
+              items: [
+                "Status: pending internal",
+                "No live brief object",
+                "Relationship risk rising"
+              ],
+              stale: "Hospitality without a gateway grammar."
+            }
+          },
+          handoff: "Core enclosure ↔ open packet plane — classic gateway job",
+          shells: ["core", "gw", "horizon"],
+          mca: ["a"],
+          agents: ["edge", "legal", "ops"],
+          brief: {
+            h: "Horizon handoff",
+            p: "Gateway mediates: Edge receives a Fair Exchange summary — vessel delay +1h, hold rationale, resume criteria — while SNA Core stays enclosed. Same job the historical SNA↔TCP/IP gateway performed.",
+            pointers: ["Horizon·summary", "Fair Exchange", "Core·enclosed", "Resume·criteria"],
+            cost: 8
+          },
+          contrast: "Today: dump or silence. Gateway: safe Horizon summary — enclosure held, partner informed."
+        }
+      ];
+
+      let step = 0;
+      let siloKey = "ERP";
+
+      const els = {
+        title: document.getElementById("step-title"),
+        dots: document.getElementById("step-dots"),
+        prev: document.getElementById("btn-prev"),
+        next: document.getElementById("btn-next"),
+        sna: document.getElementById("sna-strip"),
+        tabs: document.getElementById("silo-tabs"),
+        silo: document.getElementById("silo-panel"),
+        todayBody: document.getElementById("today-body"),
+        gatewayBody: document.getElementById("gateway-body"),
+        brief: document.getElementById("brief"),
+        contrast: document.getElementById("contrast"),
+        shells: document.getElementById("shells"),
+        mca: document.getElementById("mca"),
+        agents: document.getElementById("agents")
+      };
+
+      function renderDots() {
+        els.dots.innerHTML = STEPS.map((_, i) =>
+          `<span ${i === step ? 'aria-current="true"' : ""}></span>`
+        ).join("");
+      }
+
+      function renderSilo() {
+        const s = STEPS[step];
+        const data = s.silos[siloKey];
+        els.silo.innerHTML =
+          `<h3>${data.h}</h3><ul>${data.items.map((x) => `<li>${x}</li>`).join("")}</ul>` +
+          `<p class="stale">${data.stale}</p>` +
+          `<p class="handoff-queue"><strong>Queue:</strong> ${s.handoff}</p>`;
+        els.tabs.querySelectorAll("button").forEach((btn) => {
+          btn.setAttribute("aria-selected", btn.dataset.tab === siloKey ? "true" : "false");
+        });
+      }
+
+      function renderTabs() {
+        const s = STEPS[step];
+        els.tabs.innerHTML = s.tabs
+          .map(
+            (t) =>
+              `<button type="button" role="tab" data-tab="${t}" aria-selected="${t === siloKey}">${t}</button>`
+          )
+          .join("");
+        els.tabs.querySelectorAll("button").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            siloKey = btn.dataset.tab;
+            /* Today pane: switching tabs is the pain — flash context reset */
+            els.todayBody.classList.add("is-switching");
+            window.setTimeout(() => {
+              renderSilo();
+              els.todayBody.classList.remove("is-switching");
+            }, 180);
+          });
+        });
+      }
+
+      function renderGateway() {
+        const s = STEPS[step];
+        els.shells.querySelectorAll(".shell").forEach((node) => {
+          node.classList.toggle("is-active", s.shells.includes(node.dataset.shell));
+        });
+        els.mca.querySelectorAll("span").forEach((node) => {
+          node.classList.toggle("is-on", s.mca.includes(node.dataset.mca));
+        });
+        els.agents.querySelectorAll("span").forEach((node) => {
+          node.classList.toggle("is-live", s.agents.includes(node.dataset.agent));
+        });
+        const b = s.brief;
+        els.brief.innerHTML =
+          `<h3>${b.h}</h3><p>${b.p}</p>` +
+          `<div class="pointers">${b.pointers.map((p) => `<span>${p}</span>`).join("")}</div>` +
+          `<div class="cost-bar"><div class="meta"><span>Lattice context vs flat dump</span><span>${b.cost}% of fat window</span></div>` +
+          `<div class="cost-track"><div class="cost-fill" style="width:${b.cost}%"></div></div></div>`;
+      }
+
+      function render() {
+        const s = STEPS[step];
+        els.title.textContent = s.title;
+        els.prev.disabled = step === 0;
+        els.next.disabled = step === STEPS.length - 1;
+        els.sna.textContent = s.sna;
+        siloKey = s.tabs[s.activeTab];
+        renderDots();
+        renderTabs();
+        renderSilo();
+        renderGateway();
+        els.contrast.innerHTML = `<strong>Contrast:</strong> ${s.contrast}`;
+      }
+
+      els.prev.addEventListener("click", () => {
+        if (step > 0) {
+          step -= 1;
+          flashBodies();
+          render();
+        }
+      });
+      els.next.addEventListener("click", () => {
+        if (step < STEPS.length - 1) {
+          step += 1;
+          flashBodies();
+          render();
+        }
+      });
+
+      function flashBodies() {
+        els.todayBody.classList.add("is-switching");
+        els.gatewayBody.classList.add("is-switching");
+        window.setTimeout(() => {
+          els.todayBody.classList.remove("is-switching");
+          els.gatewayBody.classList.remove("is-switching");
+        }, 220);
+      }
+
+      document.querySelectorAll(".view-mode button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const mode = btn.dataset.mode;
+          document.body.classList.remove("mode-split", "mode-today", "mode-gateway");
+          document.body.classList.add("mode-" + mode);
+          document.querySelectorAll(".view-mode button").forEach((b) => {
+            b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+          });
+        });
+      });
+
+      render();
+    })();
+  </script>
+  <script src="/interfaces/site-page-views.js" defer data-qv-page-views="1"></script>
+</body>
+</html>

@@ -1905,6 +1905,14 @@
       "destination": "/interfaces/bulletin-board.html"
     },
     {
+      "source": "/special-projects/pdvsa-gateway-ops",
+      "destination": "/interfaces/special-projects/pdvsa-gateway-ops.html"
+    },
+    {
+      "source": "/special-projects/pdvsa-gateway-ops/",
+      "destination": "/interfaces/special-projects/pdvsa-gateway-ops.html"
+    },
+    {
       "source": "/special-projects/turner-bison-herd-management",
       "destination": "/interfaces/special-projects/turner-bison-herd-management.html"
     },

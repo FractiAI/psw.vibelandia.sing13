@@ -12,7 +12,10 @@ on:
           - synthio-mri-cloud-antenna
           - synthobs-tbme-metamorphic-octaves
           - synthobs-tbme-planetary-core-goldilocks
-      create_repo:
+          - synthobs-pdvsa-gateway-ops-mockup
+          - synthobs-ibm-sna-tcpip-gateway-omni-lattice
+          - synthobs-lattice-vs-vibe-coding
+        create_repo:
         description: 'Create empty FractiAI repo if missing (needs org PAT)'
         required: false
         type: boolean

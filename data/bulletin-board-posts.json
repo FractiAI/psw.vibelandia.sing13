@@ -1,8 +1,21 @@
 {
   "schema": "ss-vibelandia-bulletin-board/v1",
   "boardTitle": "SS Vibelandia Bulletin Board",
-  "updated": "2026-09-03",
+  "updated": "2026-09-04",
   "posts": [
+    {
+      "id": "daily-2026-09-04-synthobs-pdvsa-gateway-ops-mockup-2026-09",
+      "posted": "2026-09-04",
+      "featured": true,
+      "title": "PDVSA Gateway Ops Mockup",
+      "subtitle": "News of the day · Friday, September 4",
+      "summary": "Executive simulator for the EGS Lattice-Linear Gateway (IBM SNA↔TCP/IP is the rhyme). Clickable shells · MCA · agents. Nine takeaways open the papers and math — narrative analogue, not live PDVSA telemetry.",
+      "href": "/ship-blog/pdvsa-gateway-ops-mockup",
+      "pill": "TODAY",
+      "docRef": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
     {
       "id": "daily-2026-09-03-synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
       "posted": "2026-09-03",

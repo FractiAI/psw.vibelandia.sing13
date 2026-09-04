@@ -1,22 +1,29 @@
 {
   "schema": "ss-vibelandia-daily-ship-bulletin/v1",
   "ok": true,
-  "date": "2026-09-03",
+  "date": "2026-09-04",
   "dateline": {
-    "ymd": "2026-09-03",
-    "weekday": "Thursday",
+    "ymd": "2026-09-04",
+    "weekday": "Friday",
     "month": "September",
-    "day": 3,
-    "label": "Thursday, September 3",
-    "shortBoard": "Thursday board · September 3 · Puerto Reno",
-    "newsLabel": "News of the day · Thursday, September 3"
+    "day": 4,
+    "label": "Friday, September 4",
+    "shortBoard": "Friday board · September 4 · Puerto Reno",
+    "newsLabel": "News of the day · Friday, September 4"
   },
   "operator": "Daily Ship Bulletin Steward · SynthOBS · NSPFRNP",
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
-  "cloudBadge": "Thursday board · September 3 · Puerto Reno",
-  "newsLabel": "News of the day · Thursday, September 3",
-  "htmlBody": "Enclosed stacks still need a gateway to the open plane. Today’s tip is the IBM SNA ↔ TCP/IP case study: Interlink-class bridges as a fractal rhyme for Omni-Lattice Chat — Caracas / PDVSA / Protokol Sistemas as deployment culture, Φ ≈ 1.618 as routing grammar, not a history rewrite.<br /><br />If you want a map for that: <a href=\"/ship-blog/sna-tcpip-gateway-omni-lattice\">From IBM SNA gateways to Omni-Lattice Chat — the repeating fractal moment</a>. Also new on the board: <a href=\"/ship-blog/higgs-awareness-unified\">When the universe slows, mass and “Now” share a gate</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "cloudBadge": "Friday board · September 4 · Puerto Reno",
+  "newsLabel": "News of the day · Friday, September 4",
+  "htmlBody": "Feel the gateway before you buy the grammar. Today’s tip is the PDVSA Gateway Ops Mockup: Today’s siloed industry UI versus an Omni-Lattice executive console — nine clickable takeaways into the papers and math (efficiency → R&D). Simulator labels, not live oilfield SLAs.<br /><br />If you want a map for that: <a href=\"/ship-blog/pdvsa-gateway-ops-mockup\">PDVSA Gateway Ops — EGS Lattice-Linear Gateway vs Today’s silos</a>. Also new on the board: <a href=\"/ship-blog/sna-tcpip-gateway-omni-lattice\">From IBM SNA gateways to Omni-Lattice Chat — the repeating fractal moment</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
+      "title": "PDVSA Gateway Ops Mockup",
+      "href": "/ship-blog/pdvsa-gateway-ops-mockup",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-pdvsa-gateway-ops-mockup-2026-09",
+      "blurb": "Executive simulator for the EGS Lattice-Linear Gateway (IBM SNA↔TCP/IP is the rhyme). Clickable shells · MCA · agents. Nine takeaways open the papers and math — narrative analogue, not live PDVSA telemetry."
+    },
     {
       "id": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
       "title": "Case Study",
@@ -30,19 +37,12 @@
       "href": "/ship-blog/higgs-awareness-unified",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-tbme-higgs-awareness-unified-2026-09",
       "blurb": "Definitive Unified Edition of Higgs-Awareness — Infinite Octaves catalog for cosmic deceleration, Higgs Gate storytelling, and somatic Now. Φ ≈ 1.618 is filing grammar, not SI Higgs overthrow."
-    },
-    {
-      "id": "synthobs-lattice-vs-vibe-coding-2026-09",
-      "title": "Design",
-      "href": "/ship-blog/lattice-vs-vibe-coding",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-lattice-vs-vibe-coding-2026-09",
-      "blurb": "Research question answered: Lattice designs better unprompted (banded plans vs flat lists) and writes better code (same correctness, minimal diffs, vitest, fewer tools). Vibe coding only ties when you explicitly ask for nesting."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-03-synthobs-tbme-higgs-awareness-unified-2026-09",
-    "title": "The Higgs-Awareness Phase Coupling Theorem",
-    "href": "/ship-blog/higgs-awareness-unified"
+    "id": "daily-2026-09-03-synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
+    "title": "Case Study",
+    "href": "/ship-blog/sna-tcpip-gateway-omni-lattice"
   },
-  "generatedAt": "2026-09-03T20:53:46.871Z"
+  "generatedAt": "2026-09-04T18:19:35.712Z"
 }

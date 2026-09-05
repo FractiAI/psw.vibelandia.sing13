@@ -7,10 +7,10 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05`  
 **Registry ID:** `synthobs-macro-protein-work-engine-2026-09`  
-**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · engine shelf · standalone)  
+**Date:** September 5, 2026 · **Revised:** 2026-09-05 (protocol · application companion · standalone)  
 **Classification:** Thermodynamic / holographic **catalog architecture** for organismal work *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · 99 Octave Omni-Lattice · EGS · NSPFRNP  
-**Engine shelf:** Sync stack step **#16** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
+**Engine role:** **Application / comparison / demo companion** — applies Infinite Octave grammar; **not** an engine-shelf pin  
 **Standalone suite:** `research/synthobs-macro-protein-work-engine/` · [`FractiAI/synthobs-macro-protein-work-engine`](https://github.com/FractiAI/synthobs-macro-protein-work-engine) · `npm run research:synthobs-macro-protein-work-engine`  
 **Plain note:** [/ship-blog/macro-protein-work-engine](https://www.ssvibelandiaquestfest24x365.com/ship-blog/macro-protein-work-engine)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
@@ -165,7 +165,7 @@ Suite locks replay $\Phi$ identity, $\theta_{\mathrm{bio}}$ band membership for 
 |-------|--------|
 | Document ID | `WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05` |
 | Registry | `synthobs-macro-protein-work-engine-2026-09` |
-| Engine shelf | **#16** |
+| Engine role | Application companion · **not** shelf pin |
 | Suite | `research/synthobs-macro-protein-work-engine/` |
 | Standalone | `FractiAI/synthobs-macro-protein-work-engine` |
 | Ship-blog | `/ship-blog/macro-protein-work-engine` |

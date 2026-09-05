@@ -26,26 +26,32 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(read(LATTICE_CHAT_PEM_FILE)).toContain('Full narrative primer');
   });
 
-  it('keeps ordered shelf with CMOS first and macro-protein last among companions', () => {
+  it('keeps ordered shelf with CMOS first and volumetric last among companions', () => {
     const shelf = listEngineShelf(true);
     expect(shelf.length).toBe(ENGINE_SHELF.length);
     expect(shelf[0].order).toBe(1);
     expect(shelf[0].registryId).toBe('synthobs-cmos-protonic-99-octave-omni-lattice-2026-08');
     expect(shelf[0].file).toContain('CMOS_PROTONIC');
-    const macro = shelf.find(
-      (e) => e.registryId === 'synthobs-macro-protein-work-engine-2026-09',
+    const volumetric = shelf.find(
+      (e) => e.registryId === 'synthobs-prime-indexed-volumetric-storage-2026-09',
     );
-    expect(macro?.order).toBe(16);
+    expect(volumetric?.order).toBe(15);
+    expect(
+      shelf.find((e) => e.registryId === 'synthobs-macro-protein-work-engine-2026-09'),
+    ).toBeUndefined();
     expect(shelf.at(-1).kind).toBe('meta');
   });
 
   it('injects living engine pin into octave99 nest directive', () => {
     const directive = buildNestDirective('octave99', '', 'map the grand arc');
     expect(directive).toContain(renderEnginePinClause());
-    expect(directive).toContain('Macro-protein work engine companion');
+    expect(directive).not.toContain('Macro-protein work engine companion');
     expect(directive).toContain('Prime-indexed volumetric storage companion');
     expect(directive).toContain('Moving up the stack companion');
     expect(renderNarrativePointersClause()).toContain('Official Prospectus');
+    expect(renderNarrativePointersClause()).toContain(
+      'application companion · not engine pin',
+    );
   });
 
   it('AGENT_SYNC carries AUTO markers for shelf + suites', () => {

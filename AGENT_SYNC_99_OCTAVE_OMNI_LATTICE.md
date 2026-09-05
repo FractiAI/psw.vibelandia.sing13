@@ -14,7 +14,7 @@
 **Moving up the stack · next AI layer companion:** [`docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md`](docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [`/ship-blog/moving-up-the-stack`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/moving-up-the-stack) · suite `research/synthobs-moving-up-the-stack-valuation/` · standalone [`FractiAI/synthobs-moving-up-the-stack-valuation`](https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation)  
 **Protein folding · prime-container companion:** [`docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md`](docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md) · [`/ship-blog/protein-folding-prime-container`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/protein-folding-prime-container) · suite `research/synthobs-protein-folding-prime-container/` · standalone [`FractiAI/synthobs-protein-folding-prime-container`](https://github.com/FractiAI/synthobs-protein-folding-prime-container)  
 **Prime-indexed volumetric storage companion:** [`docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md`](docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md) · [`/ship-blog/prime-indexed-volumetric-storage`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-indexed-volumetric-storage) · suite `research/synthobs-prime-indexed-volumetric-storage/` · standalone [`FractiAI/synthobs-prime-indexed-volumetric-storage`](https://github.com/FractiAI/synthobs-prime-indexed-volumetric-storage)  
-**Macro-protein work engine companion:** [`docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md`](docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md) · [`/ship-blog/macro-protein-work-engine`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/macro-protein-work-engine) · suite `research/synthobs-macro-protein-work-engine/` · standalone [`FractiAI/synthobs-macro-protein-work-engine`](https://github.com/FractiAI/synthobs-macro-protein-work-engine)  
+**Macro-protein work engine (application companion · not engine pin):** [`docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md`](docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md) · [`/ship-blog/macro-protein-work-engine`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/macro-protein-work-engine) · suite `research/synthobs-macro-protein-work-engine/` · standalone [`FractiAI/synthobs-macro-protein-work-engine`](https://github.com/FractiAI/synthobs-macro-protein-work-engine)  
 **Invisible Frontier:** [`docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md`](docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · suite `research/synthobs-invisible-frontier-gates-ai/`  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
 **Close every turn:** → ∞^∞
@@ -69,9 +69,8 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 13 | **Moving up the stack · next AI layer companion (cool · harmonize · scale · peer vs new-layer framing)** | `docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md` · `synthobs-moving-up-the-stack-valuation-2026-09` · `/ship-blog/moving-up-the-stack` · suite `research/synthobs-moving-up-the-stack-valuation/` · standalone `FractiAI/synthobs-moving-up-the-stack-valuation` |
 | 14 | **Protein folding · Infinite Octave prime-container companion (odd-prime vaults · Φ_EGS · AlphaFold paradigm contrast)** | `docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md` · `synthobs-protein-folding-prime-container-2026-09` · `/ship-blog/protein-folding-prime-container` · suite `research/synthobs-protein-folding-prime-container/` · standalone `FractiAI/synthobs-protein-folding-prime-container` |
 | 15 | **Prime-indexed volumetric storage companion (binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast)** | `docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md` · `synthobs-prime-indexed-volumetric-storage-2026-09` · `/ship-blog/prime-indexed-volumetric-storage` · suite `research/synthobs-prime-indexed-volumetric-storage/` · standalone `FractiAI/synthobs-prime-indexed-volumetric-storage` |
-| 16 | **Macro-protein work engine companion (organismal θ_bio ∈ [13,17] · Kleiber/WBE framing · Φ_EGS)** | `docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md` · `synthobs-macro-protein-work-engine-2026-09` · `/ship-blog/macro-protein-work-engine` · suite `research/synthobs-macro-protein-work-engine/` · standalone `FractiAI/synthobs-macro-protein-work-engine` |
-| 17 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 18 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
+| 16 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 17 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · · `BBHE_REPOSITORY_STANDARD.md` |
 <!-- AUTO:ENGINE-SYNC-STACK:END -->
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
@@ -91,7 +90,6 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-moving-up-the-stack-valuation/`
 - `research/synthobs-protein-folding-prime-container/`
 - `research/synthobs-prime-indexed-volumetric-storage/`
-- `research/synthobs-macro-protein-work-engine/`
 <!-- AUTO:ENGINE-SYNC-SUITES:END -->
 
 ---

@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05`
 **Registry ID:** `synthobs-macro-protein-work-engine-2026-09`
-**Generated:** 2026-09-05T20:15:43.113Z
+**Generated:** 2026-09-05T20:48:42.790Z
 
 ## Verdict
 
@@ -208,7 +208,7 @@
 ### E9_registry_id — Registry id + engine shelf fixture
 
 - **Pass:** `true`
-- **Interpretation:** Canonical registry id for Infinite Octaves engine pin #16.
+- **Interpretation:** Canonical registry id for macro-protein application companion (not engine pin).
 - **Honesty:** Naming lock.
 
 ```json
@@ -218,7 +218,7 @@
   "REGISTRY_ID": "synthobs-macro-protein-work-engine-2026-09",
   "DOC_ID": "WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05",
   "pass": true,
-  "interpretation": "Canonical registry id for Infinite Octaves engine pin #16.",
+  "interpretation": "Canonical registry id for macro-protein application companion (not engine pin).",
   "honesty": "Naming lock."
 }
 ```

@@ -174,7 +174,7 @@ function experimentRegistryId() {
     REGISTRY_ID,
     DOC_ID,
     pass: REGISTRY_ID === 'synthobs-macro-protein-work-engine-2026-09',
-    interpretation: 'Canonical registry id for Infinite Octaves engine pin #16.',
+    interpretation: 'Canonical registry id for macro-protein application companion (not engine pin).',
     honesty: 'Naming lock.',
   };
 }

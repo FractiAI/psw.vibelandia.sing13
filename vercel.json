@@ -1237,7 +1237,6 @@
       "destination": "/interfaces/blog-infinite-octave-prime-parity-2026-09.html"
     },
     {
-    {
       "source": "/frontier",
       "destination": "/interfaces/what-it-means-to-be-frontier.html"
     },
@@ -1253,6 +1252,7 @@
       "source": "/ship-blog/what-it-means-to-be-frontier/",
       "destination": "/interfaces/blog-what-it-means-to-be-frontier-2026-09.html"
     },
+    {
       "source": "/ship-blog/pdvsa-gateway-ops-mockup",
       "destination": "/interfaces/blog-pdvsa-gateway-ops-mockup-2026-09.html"
     },

@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "2ccd5de5edc6f75c",
+  "auditId": "8f876b62e14d14ed",
   "paperId": "synthobs-moving-up-the-stack-valuation-2026-09",
   "sourcePath": "docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-05T06:03:46.596Z"
+          "invokedAt": "2026-09-05T06:27:24.535Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-05T06:03:46.596Z",
-  "completedAt": "2026-09-05T06:03:46.597Z",
+  "startedAt": "2026-09-05T06:27:24.534Z",
+  "completedAt": "2026-09-05T06:27:24.535Z",
   "iterations": 1,
   "overallScore": 0.847,
   "passThreshold": 0.85,
@@ -128,12 +128,12 @@
       "Document methods, data sources, and reproducibility commands."
     ],
     "meta": {
-      "wordCount": 847,
+      "wordCount": 1316,
       "overclaims": [],
       "refs": {
         "hasRefsSection": true,
         "links": 3,
-        "numbered": 4,
+        "numbered": 8,
         "citeLines": 0
       }
     }

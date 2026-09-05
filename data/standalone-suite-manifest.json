@@ -100,6 +100,14 @@
       "extraDocs": ["docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md"]
     },
     {
+      "id": "synthobs-prime-indexed-volumetric-storage",
+      "path": "research/synthobs-prime-indexed-volumetric-storage",
+      "github": "https://github.com/FractiAI/synthobs-prime-indexed-volumetric-storage",
+      "description": "Prime-Indexed Volumetric Storage — binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast fixtures",
+      "paperIds": ["synthobs-prime-indexed-volumetric-storage-2026-09"],
+      "extraDocs": ["docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md"]
+    },
+    {
       "id": "synthobs-ss-vibelandia-official-prospectus",
       "path": "research/synthobs-ss-vibelandia-official-prospectus",
       "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",

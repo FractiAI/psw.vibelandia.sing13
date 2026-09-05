@@ -12,6 +12,7 @@
 **Prime-parity · Infinite Octaves companion:** [`docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md`](docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md) · [`/ship-blog/infinite-octave-prime-parity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octave-prime-parity) · suite `research/synthobs-infinite-octave-prime-parity/`  
 **Moving up the stack · next AI layer companion:** [`docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md`](docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [`/ship-blog/moving-up-the-stack`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/moving-up-the-stack) · suite `research/synthobs-moving-up-the-stack-valuation/` · standalone [`FractiAI/synthobs-moving-up-the-stack-valuation`](https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation)  
 **Protein folding · prime-container companion:** [`docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md`](docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md) · [`/ship-blog/protein-folding-prime-container`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/protein-folding-prime-container) · suite `research/synthobs-protein-folding-prime-container/` · standalone [`FractiAI/synthobs-protein-folding-prime-container`](https://github.com/FractiAI/synthobs-protein-folding-prime-container)  
+**Prime-indexed volumetric storage companion:** [`docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md`](docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md) · [`/ship-blog/prime-indexed-volumetric-storage`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-indexed-volumetric-storage) · suite `research/synthobs-prime-indexed-volumetric-storage/` · standalone [`FractiAI/synthobs-prime-indexed-volumetric-storage`](https://github.com/FractiAI/synthobs-prime-indexed-volumetric-storage)  
 **Invisible Frontier:** [`docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md`](docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · suite `research/synthobs-invisible-frontier-gates-ai/`  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
 **Close every turn:** → ∞^∞
@@ -62,8 +63,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 12 | **Prime-parity · Infinite Octaves companion** (sole-even $2$ · odd irreducible sets · $\Phi_{\mathrm{EGS}}$) | `docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md` · registry `synthobs-infinite-octave-prime-parity-2026-09` · `/ship-blog/infinite-octave-prime-parity` |
 | 13 | **Moving up the stack · next AI layer companion** (cool · harmonize · scale · peer vs new-layer framing) | `docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md` · registry `synthobs-moving-up-the-stack-valuation-2026-09` · `/ship-blog/moving-up-the-stack` · suite `research/synthobs-moving-up-the-stack-valuation/` · standalone `FractiAI/synthobs-moving-up-the-stack-valuation` |
 | 14 | **Protein folding · Infinite Octave prime-container companion** (odd-prime vaults · Φ_EGS · AlphaFold paradigm contrast) | `docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md` · registry `synthobs-protein-folding-prime-container-2026-09` · `/ship-blog/protein-folding-prime-container` · suite `research/synthobs-protein-folding-prime-container/` · standalone `FractiAI/synthobs-protein-folding-prime-container` |
-| 15 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 16 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md` |
+| 15 | **Prime-indexed volumetric storage companion** (binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast) | `docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md` · registry `synthobs-prime-indexed-volumetric-storage-2026-09` · `/ship-blog/prime-indexed-volumetric-storage` · suite `research/synthobs-prime-indexed-volumetric-storage/` · standalone `FractiAI/synthobs-prime-indexed-volumetric-storage` |
+| 16 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 17 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md` |
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 
@@ -80,6 +82,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-infinite-octave-prime-parity/`
 - `research/synthobs-moving-up-the-stack-valuation/`
 - `research/synthobs-protein-folding-prime-container/`
+- `research/synthobs-prime-indexed-volumetric-storage/`
 
 ---
 

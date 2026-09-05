@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-prime-indexed-volumetric-storage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave prime-indexed volumetric storage catalog suite (SynthOBS)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

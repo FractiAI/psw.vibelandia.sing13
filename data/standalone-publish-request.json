@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
-  "suiteId": "synthobs-protein-folding-prime-container",
+  "suiteId": "synthobs-prime-indexed-volumetric-storage",
   "createRepo": true,
-  "requestedAt": "2026-09-05T08:45:00.000Z",
-  "note": "Publish Protein Folding · Infinite Octave prime-container companion + engine inclusion (sync-stack #14)"
+  "requestedAt": "2026-09-05T09:10:00.000Z",
+  "note": "Publish Prime-indexed volumetric storage companion + Infinite Octaves engine inclusion (sync-stack #15)"
 }

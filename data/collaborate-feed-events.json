@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-05T08:47:42.953Z",
+  "updatedAt": "2026-09-05T09:13:01.754Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-prime-indexed-volumetric-storage-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-05T09:13:01.753Z",
+      "body": "High-Density Data Storage & Memory via Prime-Indexed Volumetric Containers (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-prime-indexed-volumetric-storage-2026-09",
+      "artifact": {
+        "title": "High-Density Data Storage & Memory via Prime-Indexed Volumetric Containers (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md",
+        "url": "/whitepaper/prime-indexed-volumetric-storage",
+        "paperId": "synthobs-prime-indexed-volumetric-storage-2026-09",
+        "docId": "WP-SYNTHOBS-PRIME-INDEXED-VOLUMETRIC-STORAGE-EGS-2026-09-05",
+        "published": "2026-09-05T19:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-protein-folding-prime-container-2026-09",
       "type": "ArtifactEvent",

@@ -1261,6 +1261,14 @@
       "destination": "/interfaces/blog-protein-folding-prime-container-2026-09.html"
     },
     {
+      "source": "/ship-blog/prime-indexed-volumetric-storage",
+      "destination": "/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/prime-indexed-volumetric-storage/",
+      "destination": "/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html"
+    },
+    {
       "source": "/ship-blog/what-it-means-to-be-frontier",
       "destination": "/interfaces/blog-what-it-means-to-be-frontier-2026-09.html"
     },

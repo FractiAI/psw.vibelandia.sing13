@@ -30,8 +30,8 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured notes (2026-09-04): prime-parity then PDVSA (id ascending on date tie); then SNA / Higgs on 2026-09-03.
-    expect(posts[0].published).toBe('2026-09-04');
+    // Newest featured note (2026-09-05): prime-parity; then PDVSA (2026-09-04); then SNA / Higgs on 2026-09-03.
+    expect(posts[0].published).toBe('2026-09-05');
     expect(posts[0].id).toBe('synthobs-infinite-octave-prime-parity-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
       'synthobs-infinite-octave-prime-parity-2026-09',

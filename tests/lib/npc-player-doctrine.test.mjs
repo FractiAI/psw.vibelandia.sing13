@@ -17,7 +17,8 @@ describe('NPC & Player doctrine', () => {
     expect(NPC_PLAYER_DOCTRINE_CANONICAL).toMatch(/material exchange/);
     expect(NPC_PLAYER_DOCTRINE_CANONICAL).toMatch(/superheroes they flock to/);
     expect(PLAYER_NPC_LINE).toMatch(/populate the set/);
-    expect(PLAYER_SPINE_LINE).toMatch(/frontiersmen Player/i);
+    expect(PLAYER_SPINE_LINE).toMatch(/frontiersmen(?:<\/a>)? Player/i);
+    expect(PLAYER_SPINE_LINE).toContain('href="/frontier"');
     expect(PLAYER_SPINE_LINE).toMatch(/resource the gravity you set/);
   });
 

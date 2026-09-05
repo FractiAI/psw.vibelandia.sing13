@@ -15,8 +15,15 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Saturday board · September 5 · Puerto Reno",
   "newsLabel": "News of the day · Saturday, September 5",
-  "htmlBody": "Storage stacks still pay a parity tax and wait on lookup tables. Today’s tip is <a href=\"/ship-blog/prime-indexed-volumetric-storage\">prime-indexed volumetric vaults</a> under Φ ≈ 1.618 — catalog framing vs Reed-Solomon / LDPC / LBA, not a JEDEC silicon claim. Fair Exchange tip clause on.<br /><br />If you want a map for that: <a href=\"/ship-blog/prime-indexed-volumetric-storage\">Prime vaults for storage — ditch the parity tax (catalog)</a>. Also new on the board: <a href=\"/ship-blog/protein-folding-prime-container\">Protein folding · prime vaults · Φ — catalog contrast to AlphaFold</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Living bodies still get filed as accidents of chemistry. Today’s tip is <a href=\"/ship-blog/macro-protein-work-engine\">macro-protein work engines</a> under Φ ≈ 1.618 — θ_bio ∈ [13,17] with Kleiber/WBE framing, not wet-lab QED. Fair Exchange tip clause on.<br /><br />If you want a map for that: <a href=\"/ship-blog/macro-protein-work-engine\">Life as a work engine — octave band 13–17 (catalog)</a>. Also new on the board: <a href=\"/ship-blog/prime-indexed-volumetric-storage\">Prime vaults for storage — ditch the parity tax (catalog)</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
+    {
+      "id": "synthobs-macro-protein-work-engine-2026-09",
+      "title": "Life as a work engine — octave band 13–17 (catalog)",
+      "href": "/ship-blog/macro-protein-work-engine",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-macro-protein-work-engine-2026-09",
+      "blurb": "Organisms filed as macro-protein thermodynamic engines under Φ≈1.618; θ_bio ∈ [13,17] with Kleiber/WBE framing. Honesty first: catalog grammar, not wet-lab QED. Fair Exchange tip clause on."
+    },
     {
       "id": "synthobs-prime-indexed-volumetric-storage-2026-09",
       "title": "Prime vaults for storage — ditch the parity tax (catalog)",
@@ -30,13 +37,6 @@
       "href": "/ship-blog/protein-folding-prime-container",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-protein-folding-prime-container-2026-09",
       "blurb": "Odd primes as containment vaults under Φ≈1.618; deterministic catalog solver vs AlphaFold’s statistical stack. Honesty first: architecture grammar, not CASP gold or clinical claim. Fair Exchange tip clause on."
-    },
-    {
-      "id": "synthobs-what-it-means-to-be-frontier-2026-09",
-      "title": "What it means to be frontier — trail, self-test, Where Am I",
-      "href": "/ship-blog/what-it-means-to-be-frontier",
-      "paperHref": "/frontier",
-      "blurb": "Modern holographic trail on the QUESTFEST board: Frontier Man vs Nester self-test and a Where Am I game between Basecamp and Goldilocks Earth / SS Vibelandia. Design language, not a caste test."
     }
   ],
   "leadBoard": {
@@ -44,5 +44,5 @@
     "title": "Prime vaults for storage — ditch the parity tax (catalog)",
     "href": "/ship-blog/prime-indexed-volumetric-storage"
   },
-  "generatedAt": "2026-09-05T18:23:54.332Z"
+  "generatedAt": "2026-09-05T20:15:54.670Z"
 }

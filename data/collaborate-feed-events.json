@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-05T09:13:01.754Z",
+  "updatedAt": "2026-09-05T20:15:47.075Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-macro-protein-work-engine-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-05T20:15:47.075Z",
+      "body": "The Macro-Protein Work Engine: Autonomous Living Organisms in the Infinite Octave Model (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-macro-protein-work-engine-2026-09",
+      "artifact": {
+        "title": "The Macro-Protein Work Engine: Autonomous Living Organisms in the Infinite Octave Model (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md",
+        "url": "/whitepaper/macro-protein-work-engine",
+        "paperId": "synthobs-macro-protein-work-engine-2026-09",
+        "docId": "WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05",
+        "published": "2026-09-05T20:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-prime-indexed-volumetric-storage-2026-09",
       "type": "ArtifactEvent",

@@ -1285,6 +1285,14 @@
       "destination": "/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html"
     },
     {
+      "source": "/ship-blog/macro-protein-work-engine",
+      "destination": "/interfaces/blog-macro-protein-work-engine-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/macro-protein-work-engine/",
+      "destination": "/interfaces/blog-macro-protein-work-engine-2026-09.html"
+    },
+    {
       "source": "/ship-blog/what-it-means-to-be-frontier",
       "destination": "/interfaces/blog-what-it-means-to-be-frontier-2026-09.html"
     },

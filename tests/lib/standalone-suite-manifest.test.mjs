@@ -18,6 +18,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-infinite-octaves-omniversal-lattice',
       'synthobs-invisible-frontier-gates-ai',
       'synthobs-lattice-vs-vibe-coding',
+      'synthobs-macro-protein-work-engine',
       'synthobs-magneto-harmonic-stellar-99-octave',
       'synthobs-moving-up-the-stack-valuation',
       'synthobs-pdvsa-gateway-ops-mockup',

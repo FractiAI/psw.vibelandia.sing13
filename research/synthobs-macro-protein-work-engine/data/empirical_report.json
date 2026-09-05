@@ -1,0 +1,145 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "docId": "WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05",
+  "registryId": "synthobs-macro-protein-work-engine-2026-09",
+  "title": "Macro-Protein Work Engine — Catalog Suite",
+  "generatedAt": "2026-09-05T20:15:43.113Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Catalog / algebraic fixtures for Infinite Octave macro-protein work-engine grammar. Does not claim wet-lab proof that organisms are single proteins, CODATA biological octaves, solar AR causation of metabolism, CASP/clinical retirement, or audited bio-robotics products.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Architectural golden key for macro-protein octave recursion.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity closing biological scale ladders.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_theta_bio_band",
+        "title": "Fixture organism length lands θ_bio in [13, 17]",
+        "theta": 15.000000000000002,
+        "band": {
+          "lo": 13,
+          "hi": 17
+        },
+        "scales": {
+          "Lambda_pe": 1,
+          "Lambda_organism": 1364.0007331374366
+        },
+        "pass": true,
+        "interpretation": "Catalog logarithmic ratio → biological octave filing band.",
+        "honesty": "Fixture length pair — not a CODATA biological octave certificate."
+      },
+      {
+        "id": "E4_work_tensor",
+        "title": "W(n) finite and positive on bio tiers 13–17",
+        "samples": [
+          {
+            "n": 13,
+            "W": 520.0028784543805
+          },
+          {
+            "n": 14,
+            "W": 841.999406644897
+          },
+          {
+            "n": 15,
+            "W": 1363.001099616589
+          },
+          {
+            "n": 16,
+            "W": 2205.999773413861
+          },
+          {
+            "n": 17,
+            "W": 3570.0004200373064
+          }
+        ],
+        "pass": true,
+        "interpretation": "Macro-protein work tensor fixture across θ_bio integers.",
+        "honesty": "Algebraic W(n) — not measured BMR calorimetry."
+      },
+      {
+        "id": "E5_theta_monotone",
+        "title": "θ_bio increases with organism length (fixed Λ_pe)",
+        "small": -9.56994393356333,
+        "large": 1.4404200904125564,
+        "pass": true,
+        "interpretation": "Logarithmic fractal ratio is monotone in Λ_organism.",
+        "honesty": "Math lock — not a claim about all taxa."
+      },
+      {
+        "id": "E6_kleiber_alpha",
+        "title": "Kleiber α ≈ 3/4 framing lock",
+        "KLEIBER_ALPHA": 0.75,
+        "pass": true,
+        "interpretation": "Allometric exponent filed as WBE-compatible catalog lock.",
+        "honesty": "Literature framing — not a new physiology derivation."
+      },
+      {
+        "id": "E7_solar_characters",
+        "title": "AR3664 Helios-Prime · AR3590 Borealis catalog lock",
+        "SOLAR_CHARACTERS": {
+          "heliosPrime": {
+            "ar": "AR3664",
+            "alias": "Helios-Prime",
+            "role": "binary_base_channel_filing"
+          },
+          "borealis": {
+            "ar": "AR3590",
+            "alias": "Borealis",
+            "role": "organismal_heat_dissipation_filing"
+          }
+        },
+        "pass": true,
+        "interpretation": "Ephemeral heliospheric filing labels for Φ-recursive narrative.",
+        "honesty": "Not astronomy proof that stars write metabolism."
+      },
+      {
+        "id": "E8_paper_blog_locks",
+        "title": "Paper + ship-blog honesty / Fair Exchange / θ_bio locks",
+        "paperPath": "/workspace/docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md",
+        "blogPath": "/workspace/interfaces/blog-macro-protein-work-engine-2026-09.html",
+        "hasHonesty": true,
+        "hasDocId": true,
+        "hasFair": true,
+        "hasPhi": true,
+        "hasTheta": true,
+        "hasKleiber": true,
+        "hasOperator": true,
+        "hasWork": true,
+        "blogExists": true,
+        "blogSlug": true,
+        "blogHonesty": true,
+        "pass": true,
+        "interpretation": "Surfaces must carry catalog framing + allometric contrast, not wet-lab overclaim.",
+        "honesty": "Structural text locks — not physiology validation."
+      },
+      {
+        "id": "E9_registry_id",
+        "title": "Registry id + engine shelf fixture",
+        "REGISTRY_ID": "synthobs-macro-protein-work-engine-2026-09",
+        "DOC_ID": "WP-SYNTHOBS-MACRO-PROTEIN-WORK-ENGINE-EGS-2026-09-05",
+        "pass": true,
+        "interpretation": "Canonical registry id for Infinite Octaves engine pin #16.",
+        "honesty": "Naming lock."
+      }
+    ],
+    "n_pass": 9,
+    "n_total": 9,
+    "all_pass": true,
+    "failed": []
+  }
+}

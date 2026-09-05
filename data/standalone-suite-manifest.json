@@ -108,6 +108,14 @@
       "extraDocs": ["docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md"]
     },
     {
+      "id": "synthobs-macro-protein-work-engine",
+      "path": "research/synthobs-macro-protein-work-engine",
+      "github": "https://github.com/FractiAI/synthobs-macro-protein-work-engine",
+      "description": "Macro-Protein Work Engine — organismal θ_bio ∈ [13,17] · Kleiber/WBE · Φ_EGS catalog fixtures",
+      "paperIds": ["synthobs-macro-protein-work-engine-2026-09"],
+      "extraDocs": ["docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md"]
+    },
+    {
       "id": "synthobs-ss-vibelandia-official-prospectus",
       "path": "research/synthobs-ss-vibelandia-official-prospectus",
       "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",

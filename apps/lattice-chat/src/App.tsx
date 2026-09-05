@@ -3,6 +3,7 @@ import { HistoryRail, HistoryRailOverlay } from '@/components/HistoryRail';
 import { ChatPane } from '@/components/ChatPane';
 import { CollaborateShell } from '@/components/collaborate/CollaborateShell';
 import { CollabDmNotifier } from '@/components/collaborate/CollabDmNotifier';
+import { FrontierCeoBanner } from '@/components/FrontierCeoBanner';
 import { useLatticeStore } from '@/store';
 import { migrateActiveProvider, saveActiveProvider } from '@/lib/providerKeys';
 import type { NestTopology } from '@/types';
@@ -93,6 +94,7 @@ export function App() {
   if (mode === 'collaborate') {
     return (
       <>
+        <FrontierCeoBanner />
         <CollaborateShell
           onExit={() => setMode('chat')}
           onSendToAgent={seedAgentInPlace}
@@ -106,6 +108,7 @@ export function App() {
 
   return (
     <div className={`lattice-shell${railOpen ? ' rail-open' : ''}`}>
+      <FrontierCeoBanner />
       <HistoryRailOverlay open={railOpen} onClose={closeRail} />
       <HistoryRail open={railOpen} onClose={closeRail} />
       <ChatPane

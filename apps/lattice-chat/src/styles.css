@@ -54,6 +54,7 @@ body {
 .lattice-shell {
   display: grid;
   grid-template-columns: var(--rail-w) 1fr;
+  grid-template-rows: auto 1fr;
   height: 100%;
   min-height: 100dvh;
   max-height: 100dvh;
@@ -61,7 +62,18 @@ body {
   overflow: hidden;
 }
 
+.lattice-shell > .frontier-ceo-banner {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.lattice-shell > .history-rail,
+.lattice-shell > .history-rail-overlay {
+  grid-row: 2;
+}
+
 .lattice-shell > .chat-pane {
+  grid-row: 2;
   min-height: 0;
   min-width: 0;
 }
@@ -924,6 +936,41 @@ body {
   padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
   padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
   border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.frontier-ceo-banner {
+  margin: 0;
+  padding: 0.75rem 1.1rem;
+  padding-left: max(1.1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.1rem, env(safe-area-inset-right, 0px));
+  text-align: center;
+  background: linear-gradient(90deg, rgba(20, 14, 8, 0.98), rgba(12, 22, 40, 0.98));
+  border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: #f5e6c8;
+  flex-shrink: 0;
+}
+.frontier-ceo-banner__kicker {
+  display: block;
+  margin: 0 0 0.3rem;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d4af37;
+}
+.frontier-ceo-banner__body {
+  margin: 0;
+}
+.frontier-ceo-banner a {
+  color: #fef3c7;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.frontier-ceo-banner a:hover {
+  color: #fff;
 }
 
 .chat-title {

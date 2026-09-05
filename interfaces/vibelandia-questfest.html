@@ -66,6 +66,35 @@
     }
     a { color: var(--champagne); text-decoration: none; }
     a:hover { color: var(--gold-hi); text-decoration: underline; }
+    .ship-ceo-announcement {
+      margin: 0;
+      padding: 0.85rem 1.15rem;
+      padding-left: max(1.15rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1.15rem, env(safe-area-inset-right, 0px));
+      text-align: center;
+      background: linear-gradient(90deg, rgba(20, 14, 8, 0.98), rgba(12, 22, 40, 0.98));
+      border-bottom: 1px solid rgba(212, 175, 55, 0.45);
+      font-family: Syne, system-ui, sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--champagne);
+    }
+    .ship-ceo-announcement__kicker {
+      display: block;
+      margin: 0 0 0.35rem;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .ship-ceo-announcement a {
+      color: var(--gold-hi);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
+    }
+    .ship-ceo-announcement a:hover { color: #fff; }
     .skip {
       position: absolute; left: -9999px; top: 0;
       background: var(--gold); color: #000; padding: .5rem 1rem; z-index: 100;
@@ -695,6 +724,11 @@
     </div>
   </nav>
       <!-- SITE_TOP_BANNER_END -->
+
+  <aside class="ship-ceo-announcement" aria-label="Looking for Frontier CEO">
+    <span class="ship-ceo-announcement__kicker">Announcement: Looking for Frontier CEO</span>
+    Are you a <a href="/frontier">frontier</a> CEO looking for your next big challenge? We are looking for a CEO to help roll out the next layer of AI — <a href="/lattice">Lattice Chat</a>. A tremendous opportunity for the right executive. Contact Valet Pru at <a href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20Frontier%20CEO%20inquiry">valetpru@gmail.com</a>. Trail map: <a href="/frontier">/frontier</a> · Catalog: <a href="/papers">Reading Room</a>.
+  </aside>
 
   <a class="skip" href="#bulletin">Skip to today’s bulletin</a>
 

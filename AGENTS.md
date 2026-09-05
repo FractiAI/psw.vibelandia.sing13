@@ -29,6 +29,7 @@ SING 13 edge — Sonic Singularity 13. Major upgrade from SING 9. Carries:
 | What | Where |
 |------|-------|
 | **Agent sync (READ FIRST)** | `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` |
+| **Lattice Chat PEM (living)** | `docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md` · `/lattice/engineering` · `npm run sync:lattice-pem` |
 | **📌 Engineering bridge (linear systems)** | `docs/SYNTHOBS_CMOS_PROTONIC_99_OCTAVE_OMNI_LATTICE_2026-08.md` |
 | **Synthio (creator-only)** | `AGENT_SYNC_SYNTHIO.md` · `/synthio` · `/synthio-one-pager` |
 | Single-read onboarding | `SING13_EDGE_ONBOARDING.md` |

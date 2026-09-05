@@ -103,10 +103,12 @@ Engine pin order unchanged: CMOS/protonic → tensor → master synthesis → di
 
 | Surface | Change |
 |---------|--------|
-| `lib/lattice-prompt.mjs` | Preamble + nest label + aliases |
+| `lib/lattice-prompt.mjs` | Preamble + nest label + aliases · living engine pin from shelf |
+| `lib/infinite-octave-engine-shelf.mjs` | Canonical engine order · PEM / AGENT_SYNC / nest pin |
+| `docs/PRODUCT_ENGINEERING_MANUAL_INFINITE_OCTAVES_LATTICE_CHAT_2026-09.md` | Living product engineering manual · `/lattice/engineering` |
 | `apps/lattice-chat/` | Wordmark / BYOK copy |
 | `interfaces/lattice-v1618.html` | Hero product name |
-| `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` | Product line + prospectus + Invisible Frontier voyage editorial; engine title kept |
+| `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` | Product line + AUTO engine shelf; engine title kept |
 | Registry + ship-blog | This paper + prospectus + `/ship-blog/invisible-frontier` + `/ship-blog/human-reality-bridge` |
 
 ---

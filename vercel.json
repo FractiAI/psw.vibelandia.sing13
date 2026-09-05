@@ -233,6 +233,22 @@
       "destination": "/interfaces/lattice-learn-more.html"
     },
     {
+      "source": "/lattice/engineering",
+      "destination": "/interfaces/whitepaper-surface.html?id=lattice-chat-product-engineering-manual-2026-09"
+    },
+    {
+      "source": "/lattice/engineering/",
+      "destination": "/interfaces/whitepaper-surface.html?id=lattice-chat-product-engineering-manual-2026-09"
+    },
+    {
+      "source": "/lattice/pem",
+      "destination": "/interfaces/whitepaper-surface.html?id=lattice-chat-product-engineering-manual-2026-09"
+    },
+    {
+      "source": "/lattice/pem/",
+      "destination": "/interfaces/whitepaper-surface.html?id=lattice-chat-product-engineering-manual-2026-09"
+    },
+    {
       "source": "/lattice/how",
       "destination": "/interfaces/lattice-learn-more.html"
     },

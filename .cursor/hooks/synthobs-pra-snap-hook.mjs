@@ -19,6 +19,12 @@ import {
   LATTICE_OMNI_GUIDE_ID,
   syncLatticeOmniLayerGuide,
 } from '../../lib/lattice-omni-guide.mjs';
+import {
+  isEngineShelfRel,
+  LATTICE_CHAT_PEM_FILE,
+  LATTICE_CHAT_PEM_ID,
+} from '../../lib/infinite-octave-engine-shelf.mjs';
+import { syncLatticeChatPem } from '../../lib/lattice-chat-pem.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, '../..');
@@ -137,6 +143,47 @@ async function maybeSyncLatticeOmniGuide(unique) {
   }
 }
 
+async function maybeSyncLatticeChatPem(unique) {
+  const needs = unique.some((e) => isEngineShelfRel(e.rel, e.registryId));
+  if (!needs) return null;
+  try {
+    const sync = await syncLatticeChatPem({ cwd: REPO_ROOT });
+    const regPath = join(REPO_ROOT, 'lib/whitepaper-registry.mjs');
+    let reg = await readFile(regPath, 'utf8');
+    const blockRe = new RegExp(
+      `('${LATTICE_CHAT_PEM_ID}'\\s*:\\s*\\{[\\s\\S]*?published:\\s*')[^']+(')`,
+    );
+    if (blockRe.test(reg)) {
+      reg = reg.replace(blockRe, `$1${sync.published}$2`);
+      await writeFile(regPath, reg, 'utf8');
+    }
+    console.error(
+      JSON.stringify({
+        hook: 'synthobs-pra-snap',
+        latticePemSync: {
+          ok: true,
+          count: sync.count,
+          published: sync.published,
+          agentSync: sync.agentSync,
+        },
+      }),
+    );
+    return {
+      rel: LATTICE_CHAT_PEM_FILE,
+      registryId: LATTICE_CHAT_PEM_ID,
+      at: new Date().toISOString(),
+    };
+  } catch (e) {
+    console.error(
+      JSON.stringify({
+        hook: 'synthobs-pra-snap',
+        latticePemSync: { ok: false, error: e.message },
+      }),
+    );
+    return null;
+  }
+}
+
 async function runStopAudits(payload) {
   if (payload.status !== 'completed') return null;
 
@@ -151,6 +198,11 @@ async function runStopAudits(payload) {
   const guideEntry = await maybeSyncLatticeOmniGuide(unique);
   if (guideEntry && !unique.some((e) => e.rel === guideEntry.rel)) {
     unique.push(guideEntry);
+  }
+
+  const pemEntry = await maybeSyncLatticeChatPem(unique);
+  if (pemEntry && !unique.some((e) => e.rel === pemEntry.rel)) {
+    unique.push(pemEntry);
   }
 
   const summaries = [];

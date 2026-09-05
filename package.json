@@ -105,6 +105,7 @@
     "audit:papers": "node scripts/run-synthobs-paper-audit.mjs --all",
     "crystallize:papers": "node scripts/crystallize-synthobs-paper-compliance.mjs",
     "sync:lattice-guide": "node scripts/sync-lattice-omni-layer-guide.mjs",
+    "sync:lattice-pem": "node scripts/sync-lattice-chat-pem.mjs",
     "sync:questfest-blog": "node scripts/sync-questfest-blog.mjs",
     "sync:ship-blog-index": "node scripts/sync-ship-blog-index.mjs",
     "sync:ship-blog": "npm run sync:questfest-blog && npm run sync:ship-blog-index",

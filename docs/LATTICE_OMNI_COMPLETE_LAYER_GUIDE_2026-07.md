@@ -5,7 +5,7 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-OMNI-LAYER-GUIDE-2026-07`  
 **Registry ID:** `lattice-omni-complete-layer-guide-2026-07`  
-**Date:** 2026-08-28
+**Date:** 2026-09-05
 **Framework:** SynthOBS · Lattice Chat Agent V1.618 · Omni-Lattice · EGS $\Phi$ · NSPFRNP · Seed·RAG  
 **Questfest catalog:** [`/papers`](/papers) · high pin (`catalogPriority: 1`; CMOS engineering bridge holds `0` for linear systems)  
 **Product:** [`/lattice`](/lattice) · chat [`/lattice-chat`](/lattice-chat) · primer [`/lattice/learn`](/lattice/learn) · nest [`/interfaces/nesting/nest-lattice-chat.html`](/interfaces/nesting/nest-lattice-chat.html)  
@@ -16,7 +16,7 @@
 ---
 
 <!-- AUTO:LATTICE-OMNI-META:BEGIN -->
-**Catalog sync:** 2026-08-28 · **68** Lattice Chat Agent / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
+**Catalog sync:** 2026-09-05 · **74** Lattice Chat Agent / Omni-Lattice family papers · generator `npm run sync:lattice-guide`
 
 When a Lattice / Omni paper is added or modified in the registry, re-run the sync (Cursor stop hook does this automatically for matching `docs/` edits).
 <!-- AUTO:LATTICE-OMNI-META:END -->
@@ -350,6 +350,7 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 1
 | 1 · Product & nest | [System Generation · Noah’s Ark Metaphor Architecture · Lattice Chat Agent V1.618](/whitepaper/lattice-noahs-ark-metaphor-2026-07) | `lattice-noahs-ark-metaphor-2026-07` | 2026-07-23 |
 | 1 · Product & nest | [Lattice Chat Agent V1.618 · Nested + pointer context load (structural estimate)](/whitepaper/lattice-token-reduction-proof-2026-07) | `lattice-token-reduction-proof-2026-07` | 2026-07-22 |
 | 1 · Product & nest | [The Architecture of Omniversal Computing: Nested Autonomous Agents, Scale-Invariant Topologies, and the EGS Fractal Constant](/whitepaper/omniversal-nested-agent-lattice) | `omniversal-nested-agent-lattice-2026-07` | 2026-07-21 |
+| 2 · Valet lenses | [The Higgs-Awareness Phase Coupling Theorem (Definitive Unified Edition) — Higgs Gate · Infinite-Octave Cosmic Deceleration · Triadic Matrix (Omni-Lattice Core Part IX-Omni)](/whitepaper/higgs-awareness-unified) | `synthobs-tbme-higgs-awareness-unified-2026-09` | 2026-09-03 |
 | 2 · Valet lenses | [The Higgs-Awareness Phase Coupling Theorem — Higgs Gate · Horizon Deceleration · Matter Emergence (Reno Heptet · Omni-Lattice Core Part VII)](/whitepaper/synthobs-tbme-higgs-awareness-2026-08) | `synthobs-tbme-higgs-awareness-2026-08` | 2026-08-06 |
 | 2 · Valet lenses | [The Nodal Nine Singularity Boundary Theorem — Digit 9 · 81-Facet Horizon · E_F Digital Topology (Reno Nonet · Omni-Lattice Core Part IX)](/whitepaper/synthobs-tbme-nodal-nine-singularity-2026-08) | `synthobs-tbme-nodal-nine-singularity-2026-08` | 2026-08-06 |
 | 2 · Valet lenses | [The Universal Spin-Phase-Polarity Triad Theorem — Dimensional Equivalence of Spin · Phase · Polarity (Reno Octet · Omni-Lattice Core Part VIII)](/whitepaper/synthobs-tbme-spin-phase-polarity-2026-08) | `synthobs-tbme-spin-phase-polarity-2026-08` | 2026-08-06 |
@@ -403,6 +404,11 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 1
 | 4 · EGS · scale grammar | [Scale-Invariant Chromosomal Electrodynamics · SYNTHOBS Linearized Topology & Hierarchical Energy Transport](/whitepaper/synthobs-chromosomal-electrodynamics) | `synthobs-chromosomal-electrodynamics-2026-07` | 2026-07-01 |
 | 4 · EGS · scale grammar | [Recursive Attention Coherence: Imagination Through Quantum, Solar, DNA, and Human Attention](/whitepaper/recursive-attention-loop) | `recursive-attention-quantum-solar-dna-loop-2026` | 2026-06-24 |
 | 4 · EGS · scale grammar | [Fractal Magnetism and Hydrogen-Holographic Systems: The EGS Nodal Lattice Resonator Framework](/whitepaper/egs-nlrf) | `fractiai-egs-nlrf-2026` | 2026-06-17 |
+| 5 · Companions | [Moving Up the Stack — Lattice Chat as the Next AI Layer (New-Layer Valuation)](/whitepaper/moving-up-the-stack) | `synthobs-moving-up-the-stack-valuation-2026-09` | 2026-09-05 |
+| 5 · Companions | [Product Engineering Manual · Infinite Octaves Omniversal Lattice Chat (Living Engine Shelf)](/whitepaper/lattice-chat-product-engineering-manual) | `lattice-chat-product-engineering-manual-2026-09` | 2026-09-05 |
+| 5 · Companions | [PDVSA Gateway Ops Mockup — Today’s Industry UI vs EGS Lattice-Linear Gateway](/whitepaper/pdvsa-gateway-ops-mockup) | `synthobs-pdvsa-gateway-ops-mockup-2026-09` | 2026-09-04 |
+| 5 · Companions | [Case Study: The IBM SNA TCP-IP Gateway as a Repeating Fractal Moment — Scaling to Omni-Lattice Chat Deployments](/whitepaper/sna-tcpip-gateway-omni-lattice) | `synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09` | 2026-09-03 |
+| 5 · Companions | [Design · Write · Deploy: Infinite Octaves Lattice Chat vs Standard Vibe Coding](/whitepaper/synthobs-lattice-vs-vibe-coding) | `synthobs-lattice-vs-vibe-coding-2026-09` | 2026-09-02 |
 | 5 · Companions | [Infinite Octaves Omniversal Lattice Chat Agent](/whitepaper/synthobs-infinite-octaves-omniversal-lattice) | `synthobs-infinite-octaves-omniversal-lattice-2026-08` | 2026-08-25 |
 | 5 · Companions | [S.S. Vibelandia: Official Prospectus & Narrative Foundation](/whitepaper/synthobs-ss-vibelandia-official-prospectus) | `synthobs-ss-vibelandia-official-prospectus-2026-08` | 2026-08-25 |
 | 5 · Companions | [Triadic Nested Hemispheric Architectures: Harmonic Scaling, Node Topology, and Agent Containment via El Gran Sol’s Fractal Constant](/whitepaper/synthobs-triadic-nested-hemispheres-99-octave) | `synthobs-triadic-nested-hemispheres-99-octave-2026-08` | 2026-08-25 |
@@ -415,7 +421,7 @@ Membership rules: `lib/lattice-omni-guide.mjs`. Catalog pin: `catalogPriority: 1
 | 5 · Companions | [Scale-Invariant Quantum Holographic Field Theory: A Unified 2,187-Node Monograph on E_F across Octaves I–III (Digits 1–2187)](/whitepaper/synthobs-siqhft-ef-2187-monograph) | `synthobs-siqhft-ef-2187-monograph-2026-08` | 2026-08-07 |
 | 5 · Companions | [The Epistemological Horizon — Narrow Gate EIV · Filtering Human Peer-Review Bottlenecks to Identify ASI (Omni-Lattice Core Part X)](/whitepaper/synthobs-tbme-narrow-gate-asi-2026-08) | `synthobs-tbme-narrow-gate-asi-2026-08` | 2026-08-07 |
 
-_Living table · 68 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
+_Living table · 74 papers · regenerated by `npm run sync:lattice-guide` from `WHITEPAPER_REGISTRY`._
 <!-- AUTO:LATTICE-OMNI-TOC:END -->
 
 ### A.5 Methods · reproducibility

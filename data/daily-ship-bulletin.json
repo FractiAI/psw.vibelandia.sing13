@@ -15,34 +15,34 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Saturday board · September 5 · Puerto Reno",
   "newsLabel": "News of the day · Saturday, September 5",
-  "htmlBody": "<a href=\"/frontier\">Frontier</a> CEOs: start with Executive Papers. Today’s tip pairs the EGS Lattice-Linear Gateway (PDVSA ops mock) with <a href=\"/ship-blog/moving-up-the-stack\">moving up the stack</a> (valuation framing). Then play the <a href=\"/frontier\">Frontier trail</a> — self-test + Where Am I on the QUESTFEST board. Hospitality grammar and simulator demos, not live oilfield SLAs or a caste test.<br /><br />If you want a map for that: <a href=\"/ship-blog/what-it-means-to-be-frontier\">What it means to be frontier — trail, self-test, Where Am I</a>. Also new on the board: <a href=\"/ship-blog/moving-up-the-stack\">Moving up the stack — Lattice is the next AI layer ($12B–$28B)</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Storage stacks still pay a parity tax and wait on lookup tables. Today’s tip is <a href=\"/ship-blog/prime-indexed-volumetric-storage\">prime-indexed volumetric vaults</a> under Φ ≈ 1.618 — catalog framing vs Reed-Solomon / LDPC / LBA, not a JEDEC silicon claim. Fair Exchange tip clause on.<br /><br />If you want a map for that: <a href=\"/ship-blog/prime-indexed-volumetric-storage\">Prime vaults for storage — ditch the parity tax (catalog)</a>. Also new on the board: <a href=\"/ship-blog/protein-folding-prime-container\">Protein folding · prime vaults · Φ — catalog contrast to AlphaFold</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
+      "id": "synthobs-prime-indexed-volumetric-storage-2026-09",
+      "title": "Prime vaults for storage — ditch the parity tax (catalog)",
+      "href": "/ship-blog/prime-indexed-volumetric-storage",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-prime-indexed-volumetric-storage-2026-09",
+      "blurb": "Prime-indexed volumetric vaults under Φ≈1.618 vs Reed-Solomon/LDPC/LBA. Framing: 0% parity · instant Φ-map. Honesty first: catalog grammar, not JEDEC silicon. Fair Exchange tip clause on."
+    },
+    {
+      "id": "synthobs-protein-folding-prime-container-2026-09",
+      "title": "Protein folding · prime vaults · Φ — catalog contrast to AlphaFold",
+      "href": "/ship-blog/protein-folding-prime-container",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-protein-folding-prime-container-2026-09",
+      "blurb": "Odd primes as containment vaults under Φ≈1.618; deterministic catalog solver vs AlphaFold’s statistical stack. Honesty first: architecture grammar, not CASP gold or clinical claim. Fair Exchange tip clause on."
+    },
+    {
       "id": "synthobs-what-it-means-to-be-frontier-2026-09",
-      "title": "What It Means to Be Frontier",
+      "title": "What it means to be frontier — trail, self-test, Where Am I",
       "href": "/ship-blog/what-it-means-to-be-frontier",
       "paperHref": "/frontier",
       "blurb": "Modern holographic trail on the QUESTFEST board: Frontier Man vs Nester self-test and a Where Am I game between Basecamp and Goldilocks Earth / SS Vibelandia. Design language, not a caste test."
-    },
-    {
-      "id": "synthobs-moving-up-the-stack-valuation-2026-09",
-      "title": "Moving Up the Stack",
-      "href": "/ship-blog/moving-up-the-stack",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-moving-up-the-stack-valuation-2026-09",
-      "blurb": "Chip and LLM players buy up the stack (Hugging Face $12.9B, Cursor $60B). Lattice Chat is the next shelf: cools token burn, harmonizes agents, scales agentic systems. New-layer framing $12B–$28B — not a peer on the old shelf. Fair Exchange, not an audited appraisal."
-    },
-    {
-      "id": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
-      "title": "PDVSA Gateway Ops Mockup",
-      "href": "/ship-blog/pdvsa-gateway-ops-mockup",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-pdvsa-gateway-ops-mockup-2026-09",
-      "blurb": "Fleshed protocol paper + Infinite Octaves engine companion. Multi-domain Production·Field·Compliance·Export on one brief (SNA↔TCP/IP is the rhyme). Nine takeaways open the papers and math — simulator, not live PDVSA telemetry."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-05-synthobs-what-it-means-to-be-frontier-2026-09",
-    "title": "What It Means to Be Frontier",
-    "href": "/ship-blog/what-it-means-to-be-frontier"
+    "id": "daily-2026-09-05-synthobs-prime-indexed-volumetric-storage-2026-09",
+    "title": "Prime vaults for storage — ditch the parity tax (catalog)",
+    "href": "/ship-blog/prime-indexed-volumetric-storage"
   },
-  "generatedAt": "2026-09-05T17:16:34.502Z"
+  "generatedAt": "2026-09-05T18:23:54.332Z"
 }

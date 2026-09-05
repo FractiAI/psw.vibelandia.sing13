@@ -42,13 +42,16 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 28');
   });
 
-  it('leads 2026-09-05 News tip with Frontier trail + Executive Papers (gateway + up-the-stack)', async () => {
+  it('leads 2026-09-05 with newest three ship notes (ISO timestamps count as same day)', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-05' });
-    expect(payload.highlights[0].id).toBe(
+    expect(payload.highlights.map((h) => h.id)).toEqual([
+      'synthobs-prime-indexed-volumetric-storage-2026-09',
+      'synthobs-protein-folding-prime-container-2026-09',
       'synthobs-what-it-means-to-be-frontier-2026-09',
-    );
-    expect(payload.htmlBody).toMatch(/Executive Papers|Lattice-Linear Gateway|moving up the stack|Frontier trail|Where Am I/i);
-    expect(payload.htmlBody).toContain('what-it-means-to-be-frontier');
+    ]);
+    expect(payload.highlights[0].href).toBe('/ship-blog/prime-indexed-volumetric-storage');
+    expect(payload.htmlBody).toMatch(/prime-indexed volumetric|parity tax|Φ/i);
+    expect(payload.htmlBody).toContain('prime-indexed-volumetric-storage');
     expect(payload.newsLabel).toContain('September 5');
   });
 

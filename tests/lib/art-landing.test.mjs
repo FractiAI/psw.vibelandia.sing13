@@ -51,6 +51,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).not.toContain('Announcement · Executive Papers');
     expect(html).toContain('mailto:valetpru@gmail.com');
     expect(html).toContain('href="/frontier"');
+    expect(html).toContain('href="/ship-blog/what-it-means-to-be-frontier"');
+    expect(html).toContain('href="/ship-blog/pdvsa-gateway-ops-mockup"');
+    expect(html).toContain('href="/ship-blog/lattice-vs-vibe-coding"');
     expect(html).toContain('href="/lattice"');
     expect(html).toContain('href="/core"');
     expect(html).toContain('core-player');

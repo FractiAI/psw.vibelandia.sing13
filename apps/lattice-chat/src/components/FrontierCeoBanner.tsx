@@ -11,7 +11,10 @@ export function FrontierCeoBanner() {
         <a href="mailto:valetpru@gmail.com?subject=Lattice%20Chat%20Frontier%20CEO%20inquiry">
           valetpru@gmail.com
         </a>
-        . Trail map: <a href="/frontier">/frontier</a> · Catalog:{' '}
+        . Start with the three papers:{' '}
+        <a href="/ship-blog/what-it-means-to-be-frontier">Frontier</a> ·{' '}
+        <a href="/ship-blog/pdvsa-gateway-ops-mockup">Gateway</a> ·{' '}
+        <a href="/ship-blog/lattice-vs-vibe-coding">Moving up the stack</a>. Catalog:{' '}
         <a href="/papers">Reading Room</a>.
       </p>
     </aside>

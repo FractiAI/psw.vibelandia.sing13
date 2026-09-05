@@ -15,7 +15,7 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Saturday board · September 5 · Puerto Reno",
   "newsLabel": "News of the day · Saturday, September 5",
-  "htmlBody": "<a href=\"/frontier\">Frontier</a> CEOs: start with Executive Papers. Today’s tip pairs the EGS Lattice-Linear Gateway (PDVSA ops mock) with moving up the stack (Lattice vs vibe-coding receipts). Then play the <a href=\"/frontier\">Frontier trail</a> — self-test + Where Am I on the QUESTFEST board. Hospitality grammar and simulator demos, not live oilfield SLAs or a caste test.<br /><br />If you want a map for that: <a href=\"/ship-blog/what-it-means-to-be-frontier\">What it means to be frontier — trail, self-test, Where Am I</a>. Also new on the board: <a href=\"/ship-blog/pdvsa-gateway-ops-mockup\">PDVSA Gateway Ops — EGS Lattice-Linear Gateway vs Today’s silos</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "<a href=\"/frontier\">Frontier</a> CEOs: start with Executive Papers. Today’s tip pairs the EGS Lattice-Linear Gateway (PDVSA ops mock) with <a href=\"/ship-blog/moving-up-the-stack\">moving up the stack</a> (valuation framing). Then play the <a href=\"/frontier\">Frontier trail</a> — self-test + Where Am I on the QUESTFEST board. Hospitality grammar and simulator demos, not live oilfield SLAs or a caste test.<br /><br />If you want a map for that: <a href=\"/ship-blog/what-it-means-to-be-frontier\">What it means to be frontier — trail, self-test, Where Am I</a>. Also new on the board: <a href=\"/ship-blog/moving-up-the-stack\">Moving up the stack — FractiAI &amp; Lattice Chat at $4.2B–$7.5B</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-what-it-means-to-be-frontier-2026-09",
@@ -25,18 +25,18 @@
       "blurb": "Modern holographic trail on the QUESTFEST board: Frontier Man vs Nester self-test and a Where Am I game between Basecamp and Goldilocks Earth / SS Vibelandia. Design language, not a caste test."
     },
     {
+      "id": "synthobs-moving-up-the-stack-valuation-2026-09",
+      "title": "Moving Up the Stack",
+      "href": "/ship-blog/moving-up-the-stack",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-moving-up-the-stack-valuation-2026-09",
+      "blurb": "Valuation framing vs Hugging Face ($12.9B) and Cursor ($60B) anchors: developer reach, token routing, infrastructure autonomy. Implied baseline $4.2B–$7.5B for FractiAI & Lattice Chat — Fair Exchange, not an audited appraisal."
+    },
+    {
       "id": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
       "title": "PDVSA Gateway Ops Mockup",
       "href": "/ship-blog/pdvsa-gateway-ops-mockup",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-pdvsa-gateway-ops-mockup-2026-09",
       "blurb": "Fleshed protocol paper + Infinite Octaves engine companion. Multi-domain Production·Field·Compliance·Export on one brief (SNA↔TCP/IP is the rhyme). Nine takeaways open the papers and math — simulator, not live PDVSA telemetry."
-    },
-    {
-      "id": "synthobs-infinite-octave-prime-parity-2026-09",
-      "title": "Rigorous Mathematical and Empirical Validation of the Infinit…",
-      "href": "/ship-blog/infinite-octave-prime-parity",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
-      "blurb": "Sole-even prime 2 as binary dyad anchor; odd primes as irreducible minimum sets under Φ ≈ 1.618. Replayable suite + Infinite Octaves engine shelf — catalog math, not QED or NOAA proof."
     }
   ],
   "leadBoard": {
@@ -44,5 +44,5 @@
     "title": "What It Means to Be Frontier",
     "href": "/ship-blog/what-it-means-to-be-frontier"
   },
-  "generatedAt": "2026-09-05T05:03:45.151Z"
+  "generatedAt": "2026-09-05T06:03:46.481Z"
 }

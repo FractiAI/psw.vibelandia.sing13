@@ -15,8 +15,8 @@ const CASES = [
   {
     id: 'up-the-stack',
     title: 'Executive Papers · Moving up the stack',
-    now: 'Flat vibe-coding windows + wide refactors',
-    forward: 'Lattice vs vibe receipts · banded plans · minimal diffs · deploy proofs',
+    now: 'Developer hubs priced on reach + workflow lock-in',
+    forward: 'FractiAI & Lattice Chat valuation framing · $4.2B–$7.5B implied · Fair Exchange',
   },
   {
     id: 'frontier-trail',

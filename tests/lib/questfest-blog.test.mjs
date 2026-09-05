@@ -30,16 +30,16 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured note (2026-09-05): frontier trail; then gateway / prime-parity companions.
+    // Newest featured notes (2026-09-05): moving-up-the-stack valuation, then frontier trail.
     expect(posts[0].published).toBe('2026-09-05');
-    expect(posts[0].id).toBe('synthobs-what-it-means-to-be-frontier-2026-09');
+    expect(posts[0].id).toBe('synthobs-moving-up-the-stack-valuation-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-moving-up-the-stack-valuation-2026-09',
       'synthobs-what-it-means-to-be-frontier-2026-09',
       'synthobs-infinite-octave-prime-parity-2026-09',
       'synthobs-pdvsa-gateway-ops-mockup-2026-09',
       'synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09',
       'synthobs-tbme-higgs-awareness-unified-2026-09',
-      'synthobs-lattice-vs-vibe-coding-2026-09',
     ]);
   });
 });

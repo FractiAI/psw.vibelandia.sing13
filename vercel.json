@@ -1245,6 +1245,14 @@
       "destination": "/interfaces/what-it-means-to-be-frontier.html"
     },
     {
+      "source": "/ship-blog/moving-up-the-stack",
+      "destination": "/interfaces/blog-moving-up-the-stack-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/moving-up-the-stack/",
+      "destination": "/interfaces/blog-moving-up-the-stack-2026-09.html"
+    },
+    {
       "source": "/ship-blog/what-it-means-to-be-frontier",
       "destination": "/interfaces/blog-what-it-means-to-be-frontier-2026-09.html"
     },

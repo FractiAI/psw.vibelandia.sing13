@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-05** · **257** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-05** · **259** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -316,6 +316,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html) | Prime-Indexed Volumetric Storage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-protein-folding-prime-container-2026-09.html`](/interfaces/blog-protein-folding-prime-container-2026-09.html) | Protein Folding · Prime-Container Architecture · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Φ Duality · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Recursive Attention Coherence · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A smaller pack for the golden key · Ship blog · SS Vibelandia |
@@ -378,6 +379,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tbme-superposition-reno-interpretation.html`](/interfaces/blog-tbme-superposition-reno-interpretation.html) | Holographic Mirror-Angle Multiplicity & Quantum Re-Interpretation · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Supercond… · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-topology-of-the-void-2026-09.html`](/interfaces/blog-topology-of-the-void-2026-09.html) | Topology of the Void · Zero as Equilibrium · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three nested domes — one Goldilocks stage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What It Means to Be Frontier · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |

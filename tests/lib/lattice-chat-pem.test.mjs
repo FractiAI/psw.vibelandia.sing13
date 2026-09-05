@@ -26,7 +26,7 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(read(LATTICE_CHAT_PEM_FILE)).toContain('Full narrative primer');
   });
 
-  it('keeps ordered shelf with CMOS first and volumetric last among companions', () => {
+  it('keeps ordered shelf with CMOS first and void/proton companions after volumetric', () => {
     const shelf = listEngineShelf(true);
     expect(shelf.length).toBe(ENGINE_SHELF.length);
     expect(shelf[0].order).toBe(1);
@@ -36,6 +36,14 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
       (e) => e.registryId === 'synthobs-prime-indexed-volumetric-storage-2026-09',
     );
     expect(volumetric?.order).toBe(15);
+    const voidNode = shelf.find(
+      (e) => e.registryId === 'synthobs-topology-of-the-void-2026-09',
+    );
+    expect(voidNode?.order).toBe(17);
+    const proton = shelf.find(
+      (e) => e.registryId === 'synthobs-proton-space-electron-theater-2026-09',
+    );
+    expect(proton?.order).toBe(16);
     expect(
       shelf.find((e) => e.registryId === 'synthobs-macro-protein-work-engine-2026-09'),
     ).toBeUndefined();
@@ -47,6 +55,8 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(directive).toContain(renderEnginePinClause());
     expect(directive).not.toContain('Macro-protein work engine companion');
     expect(directive).toContain('Prime-indexed volumetric storage companion');
+    expect(directive).toContain('Proton Space · Electron Theater duality companion');
+    expect(directive).toContain('Topology of the Void companion');
     expect(directive).toContain('Moving up the stack companion');
     expect(renderNarrativePointersClause()).toContain('Official Prospectus');
     expect(renderNarrativePointersClause()).toContain(

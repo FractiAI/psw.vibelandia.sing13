@@ -1,11 +1,55 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-05T20:53:37.374Z",
+  "updatedAt": "2026-09-05T22:39:20.536Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-topology-of-the-void-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-05T22:39:20.534Z",
+      "body": "Topology of the Void: Re-Reading Zero as Dynamic Equilibrium and Balance Point of the Infinite Octave Model (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-topology-of-the-void-2026-09",
+      "artifact": {
+        "title": "Topology of the Void: Re-Reading Zero as Dynamic Equilibrium and Balance Point of the Infinite Octave Model (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md",
+        "url": "/whitepaper/topology-of-the-void",
+        "paperId": "synthobs-topology-of-the-void-2026-09",
+        "docId": "WP-SYNTHOBS-TOPOLOGY-OF-THE-VOID-ZERO-EQUILIBRIUM-EGS-2026-09-05",
+        "published": "2026-09-05T23:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
+    {
+      "id": "wp_synthobs-proton-space-electron-theater-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-05T22:39:20.433Z",
+      "body": "Topological Duality of Foundational Constants: Mapping 1 (Proton Space) vs 2 (Electron Theater) in the Infinite Octave Model (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-proton-space-electron-theater-2026-09",
+      "artifact": {
+        "title": "Topological Duality of Foundational Constants: Mapping 1 (Proton Space) vs 2 (Electron Theater) in the Infinite Octave Model (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_PROTON_SPACE_ELECTRON_THEATER_DUALITY_EGS_2026-09.md",
+        "url": "/whitepaper/proton-space-electron-theater",
+        "paperId": "synthobs-proton-space-electron-theater-2026-09",
+        "docId": "WP-SYNTHOBS-PROTON-SPACE-ELECTRON-THEATER-DUALITY-EGS-2026-09-05",
+        "published": "2026-09-05T22:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-awareness-vs-brute-force-leverage-2026-09",
       "type": "ArtifactEvent",

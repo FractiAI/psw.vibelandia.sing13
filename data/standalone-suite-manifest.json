@@ -8,7 +8,9 @@
       "path": "research/synthobs-tbme-higgs-awareness-unified",
       "github": "https://github.com/FractiAI/synthobs-tbme-higgs-awareness-unified",
       "description": "Higgs-Awareness Phase Coupling Theorem — Definitive Unified Edition (Part IX-Omni)",
-      "paperIds": ["synthobs-tbme-higgs-awareness-unified-2026-09"],
+      "paperIds": [
+        "synthobs-tbme-higgs-awareness-unified-2026-09"
+      ],
       "extraDocs": []
     },
     {
@@ -16,7 +18,9 @@
       "path": "research/synthobs-y-chromosome-holographic-manifestation",
       "github": "https://github.com/FractiAI/synthobs-y-chromosome-holographic-manifestation",
       "description": "Y Chromosome Holographic Manifestation — Infinite Octaves Digit 4 suite",
-      "paperIds": ["synthobs-y-chromosome-holographic-manifestation-2026-08"],
+      "paperIds": [
+        "synthobs-y-chromosome-holographic-manifestation-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -24,7 +28,9 @@
       "path": "research/synthobs-human-omniversal-reality-bridge",
       "github": "https://github.com/FractiAI/synthobs-human-omniversal-reality-bridge",
       "description": "Humans as Omniversal Reality Bridges — catalog topology suite",
-      "paperIds": ["synthobs-human-omniversal-reality-bridge-2026-08"],
+      "paperIds": [
+        "synthobs-human-omniversal-reality-bridge-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -32,7 +38,9 @@
       "path": "research/synthobs-invisible-frontier-gates-ai",
       "github": "https://github.com/FractiAI/synthobs-invisible-frontier-gates-ai",
       "description": "The Invisible Frontier — voyage editorial reply to linear AI warnings",
-      "paperIds": ["synthobs-invisible-frontier-gates-ai-2026-08"],
+      "paperIds": [
+        "synthobs-invisible-frontier-gates-ai-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -40,7 +48,9 @@
       "path": "research/synthobs-triadic-nested-hemispheres-99-octave",
       "github": "https://github.com/FractiAI/synthobs-triadic-nested-hemispheres-99-octave",
       "description": "Triadic Nested Hemispheric Architectures via Φ_EGS — catalog suite",
-      "paperIds": ["synthobs-triadic-nested-hemispheres-99-octave-2026-08"],
+      "paperIds": [
+        "synthobs-triadic-nested-hemispheres-99-octave-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -48,7 +58,9 @@
       "path": "research/synthobs-infinite-octaves-omniversal-lattice",
       "github": "https://github.com/FractiAI/synthobs-infinite-octaves-omniversal-lattice",
       "description": "Infinite Octaves Omniversal Lattice Chat Agent — product upgrade catalog suite",
-      "paperIds": ["synthobs-infinite-octaves-omniversal-lattice-2026-08"],
+      "paperIds": [
+        "synthobs-infinite-octaves-omniversal-lattice-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -56,7 +68,9 @@
       "path": "research/synthobs-lattice-vs-vibe-coding",
       "github": "https://github.com/FractiAI/synthobs-lattice-vs-vibe-coding",
       "description": "Design · Write · Deploy — Lattice Chat vs standard vibe coding paired comparison",
-      "paperIds": ["synthobs-lattice-vs-vibe-coding-2026-09"],
+      "paperIds": [
+        "synthobs-lattice-vs-vibe-coding-2026-09"
+      ],
       "extraDocs": []
     },
     {
@@ -64,7 +78,9 @@
       "path": "research/synthobs-ibm-sna-tcpip-gateway-omni-lattice",
       "github": "https://github.com/FractiAI/synthobs-ibm-sna-tcpip-gateway-omni-lattice",
       "description": "IBM SNA TCP-IP gateway fractal case study — Omni-Lattice Chat deployment template + empirics",
-      "paperIds": ["synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09"],
+      "paperIds": [
+        "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09"
+      ],
       "extraDocs": []
     },
     {
@@ -72,63 +88,93 @@
       "path": "research/synthobs-pdvsa-gateway-ops-mockup",
       "github": "https://github.com/FractiAI/synthobs-pdvsa-gateway-ops-mockup",
       "description": "PDVSA Gateway Ops Mockup — Today’s industry UI vs Omni-Lattice gateway console + takeaway→paper empirics",
-      "paperIds": ["synthobs-pdvsa-gateway-ops-mockup-2026-09"],
-      "extraDocs": ["docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md"]
+      "paperIds": [
+        "synthobs-pdvsa-gateway-ops-mockup-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md"
+      ]
     },
     {
       "id": "synthobs-infinite-octave-prime-parity",
       "path": "research/synthobs-infinite-octave-prime-parity",
       "github": "https://github.com/FractiAI/synthobs-infinite-octave-prime-parity",
       "description": "Infinite Octave Prime-Parity Framework — sole-even 2 · odd irreducible sets · Φ_EGS fixtures",
-      "paperIds": ["synthobs-infinite-octave-prime-parity-2026-09"],
-      "extraDocs": ["docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md"]
+      "paperIds": [
+        "synthobs-infinite-octave-prime-parity-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md"
+      ]
     },
     {
       "id": "synthobs-moving-up-the-stack-valuation",
       "path": "research/synthobs-moving-up-the-stack-valuation",
       "github": "https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation",
       "description": "Moving Up the Stack — Lattice Chat as next AI layer · cool · harmonize · scale · peer vs new-layer valuation fixtures",
-      "paperIds": ["synthobs-moving-up-the-stack-valuation-2026-09"],
-      "extraDocs": ["docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md"]
+      "paperIds": [
+        "synthobs-moving-up-the-stack-valuation-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md"
+      ]
     },
     {
       "id": "synthobs-protein-folding-prime-container",
       "path": "research/synthobs-protein-folding-prime-container",
       "github": "https://github.com/FractiAI/synthobs-protein-folding-prime-container",
       "description": "Protein Folding · Infinite Octave Prime-Container — odd-prime vaults · Φ_EGS · AlphaFold paradigm-contrast fixtures",
-      "paperIds": ["synthobs-protein-folding-prime-container-2026-09"],
-      "extraDocs": ["docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md"]
+      "paperIds": [
+        "synthobs-protein-folding-prime-container-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md"
+      ]
     },
     {
       "id": "synthobs-prime-indexed-volumetric-storage",
       "path": "research/synthobs-prime-indexed-volumetric-storage",
       "github": "https://github.com/FractiAI/synthobs-prime-indexed-volumetric-storage",
       "description": "Prime-Indexed Volumetric Storage — binary base 2 · odd-prime vaults · Φ_EGS · RS/LDPC/LBA contrast fixtures",
-      "paperIds": ["synthobs-prime-indexed-volumetric-storage-2026-09"],
-      "extraDocs": ["docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md"]
+      "paperIds": [
+        "synthobs-prime-indexed-volumetric-storage-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md"
+      ]
     },
     {
       "id": "synthobs-macro-protein-work-engine",
       "path": "research/synthobs-macro-protein-work-engine",
       "github": "https://github.com/FractiAI/synthobs-macro-protein-work-engine",
       "description": "Macro-Protein Work Engine — organismal θ_bio ∈ [13,17] · Kleiber/WBE · Φ_EGS catalog fixtures",
-      "paperIds": ["synthobs-macro-protein-work-engine-2026-09"],
-      "extraDocs": ["docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md"]
+      "paperIds": [
+        "synthobs-macro-protein-work-engine-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md"
+      ]
     },
     {
       "id": "synthobs-awareness-vs-brute-force-leverage",
       "path": "research/synthobs-awareness-vs-brute-force-leverage",
       "github": "https://github.com/FractiAI/synthobs-awareness-vs-brute-force-leverage",
       "description": "Awareness vs Brute-Force Leverage — Φ_EGS aware engine · AlphaFold-class contrast · insulin/meta-protein fixtures",
-      "paperIds": ["synthobs-awareness-vs-brute-force-leverage-2026-09"],
-      "extraDocs": ["docs/SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md"]
+      "paperIds": [
+        "synthobs-awareness-vs-brute-force-leverage-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md"
+      ]
     },
     {
       "id": "synthobs-ss-vibelandia-official-prospectus",
       "path": "research/synthobs-ss-vibelandia-official-prospectus",
       "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",
       "description": "SS Vibelandia Official Prospectus & Narrative Foundation — catalog suite",
-      "paperIds": ["synthobs-ss-vibelandia-official-prospectus-2026-08"],
+      "paperIds": [
+        "synthobs-ss-vibelandia-official-prospectus-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -136,7 +182,9 @@
       "path": "research/synthobs-table-top-hep-99-octave",
       "github": "https://github.com/FractiAI/synthobs-table-top-hep-99-octave",
       "description": "Table-Top High-Energy Physics via 99 Octave Framework — catalog suite",
-      "paperIds": ["synthobs-table-top-hep-99-octave-2026-08"],
+      "paperIds": [
+        "synthobs-table-top-hep-99-octave-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -144,7 +192,9 @@
       "path": "research/synthobs-magneto-harmonic-stellar-99-octave",
       "github": "https://github.com/FractiAI/synthobs-magneto-harmonic-stellar-99-octave",
       "description": "Magneto-Harmonic Stellar Physics & Nuclear Interactions — 99 Octave catalog suite",
-      "paperIds": ["synthobs-magneto-harmonic-stellar-99-octave-2026-08"],
+      "paperIds": [
+        "synthobs-magneto-harmonic-stellar-99-octave-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -152,7 +202,9 @@
       "path": "research/synthio-mri-vs-legacy-perf",
       "github": "https://github.com/FractiAI/synthio-mri-vs-legacy-perf",
       "description": "Live wall-clock MRI interference-phase vs legacy full-mesh Bloch / KomaMRI.jl suite",
-      "paperIds": ["synthio-mri-vs-legacy-perf-proxy-2026-08"],
+      "paperIds": [
+        "synthio-mri-vs-legacy-perf-proxy-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -176,7 +228,9 @@
       "path": "research/synthobs-tbme-metamorphic-octaves",
       "github": "https://github.com/FractiAI/synthobs-tbme-metamorphic-octaves",
       "description": "Metamorphic Octave Invariant — 99 Octave Omni-Lattice Core Part XIII",
-      "paperIds": ["synthobs-tbme-metamorphic-octaves-2026-08"],
+      "paperIds": [
+        "synthobs-tbme-metamorphic-octaves-2026-08"
+      ],
       "extraDocs": []
     },
     {
@@ -184,8 +238,34 @@
       "path": "research/synthobs-tbme-planetary-core-goldilocks",
       "github": "https://github.com/FractiAI/synthobs-tbme-planetary-core-goldilocks",
       "description": "Planetary Core Phase-Inversion & Goldilocks Hologram — 99 Octave Omni-Lattice Core Part XIV",
-      "paperIds": ["synthobs-tbme-planetary-core-goldilocks-2026-08"],
+      "paperIds": [
+        "synthobs-tbme-planetary-core-goldilocks-2026-08"
+      ],
       "extraDocs": []
+    },
+    {
+      "id": "synthobs-proton-space-electron-theater",
+      "path": "research/synthobs-proton-space-electron-theater",
+      "github": "https://github.com/FractiAI/synthobs-proton-space-electron-theater",
+      "description": "Proton Space · Electron Theater Duality — leading 1 / structural 2 · Φ_EGS catalog fixtures",
+      "paperIds": [
+        "synthobs-proton-space-electron-theater-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_PROTON_SPACE_ELECTRON_THEATER_DUALITY_EGS_2026-09.md"
+      ]
+    },
+    {
+      "id": "synthobs-topology-of-the-void",
+      "path": "research/synthobs-topology-of-the-void",
+      "github": "https://github.com/FractiAI/synthobs-topology-of-the-void",
+      "description": "Topology of the Void — zero as dynamic equilibrium · null-space · Φ_EGS catalog fixtures",
+      "paperIds": [
+        "synthobs-topology-of-the-void-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md"
+      ]
     }
   ]
 }

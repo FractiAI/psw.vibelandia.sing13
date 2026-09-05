@@ -25,11 +25,13 @@ describe('standalone-suite-manifest', () => {
       'synthobs-pdvsa-gateway-ops-mockup',
       'synthobs-prime-indexed-volumetric-storage',
       'synthobs-protein-folding-prime-container',
+      'synthobs-proton-space-electron-theater',
       'synthobs-ss-vibelandia-official-prospectus',
       'synthobs-table-top-hep-99-octave',
       'synthobs-tbme-higgs-awareness-unified',
       'synthobs-tbme-metamorphic-octaves',
       'synthobs-tbme-planetary-core-goldilocks',
+      'synthobs-topology-of-the-void',
       'synthobs-triadic-nested-hemispheres-99-octave',
       'synthobs-y-chromosome-holographic-manifestation',
     ]);

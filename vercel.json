@@ -1293,6 +1293,22 @@
       "destination": "/interfaces/blog-macro-protein-work-engine-2026-09.html"
     },
     {
+    {
+      "source": "/ship-blog/proton-space-electron-theater",
+      "destination": "/interfaces/blog-proton-space-electron-theater-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/proton-space-electron-theater/",
+      "destination": "/interfaces/blog-proton-space-electron-theater-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/topology-of-the-void",
+      "destination": "/interfaces/blog-topology-of-the-void-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/topology-of-the-void/",
+      "destination": "/interfaces/blog-topology-of-the-void-2026-09.html"
+    },
       "source": "/ship-blog/awareness-vs-brute-force",
       "destination": "/interfaces/blog-awareness-vs-brute-force-2026-09.html"
     },

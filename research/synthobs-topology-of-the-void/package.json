@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-topology-of-the-void",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave topology-of-the-void zero-equilibrium catalog suite (SynthOBS engine companion #17)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

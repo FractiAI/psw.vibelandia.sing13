@@ -175,7 +175,13 @@
     "experiment:openrouter": "node scripts/lattice-vs-standard-openrouter-usage.mjs",
     "manuscript:followup": "node scripts/generate-deterministic-lattice-followup.mjs",
     "manuscript:stats": "node scripts/generate-manuscript-stats.mjs",
-    "manuscript:figures": "node scripts/generate-manuscript-figures.mjs"
+    "manuscript:figures": "node scripts/generate-manuscript-figures.mjs",
+    "research:synthobs-proton-space-electron-theater": "node research/synthobs-proton-space-electron-theater/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-topology-of-the-void": "node research/synthobs-topology-of-the-void/scripts/run_empirical_pipeline.mjs",
+    "publish:standalone:proton-space-electron-theater": "node scripts/publish-standalone-suite.mjs synthobs-proton-space-electron-theater",
+    "publish:standalone:proton-space-electron-theater:create": "node scripts/publish-standalone-suite.mjs synthobs-proton-space-electron-theater --create-repo",
+    "publish:standalone:topology-of-the-void": "node scripts/publish-standalone-suite.mjs synthobs-topology-of-the-void",
+    "publish:standalone:topology-of-the-void:create": "node scripts/publish-standalone-suite.mjs synthobs-topology-of-the-void --create-repo"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

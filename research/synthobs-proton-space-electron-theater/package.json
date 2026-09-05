@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-proton-space-electron-theater",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave proton-space / electron-theater duality catalog suite (SynthOBS engine companion #16)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

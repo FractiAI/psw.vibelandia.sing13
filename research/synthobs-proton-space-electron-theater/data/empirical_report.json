@@ -1,0 +1,125 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "docId": "WP-SYNTHOBS-PROTON-SPACE-ELECTRON-THEATER-DUALITY-EGS-2026-09-05",
+  "registryId": "synthobs-proton-space-electron-theater-2026-09",
+  "title": "Proton Space · Electron Theater Duality — Catalog Suite",
+  "generatedAt": "2026-09-05T22:39:19.893Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Catalog / number-theoretic fixtures for Infinite Octave proton-space (1) vs electron-theater (2) duality grammar. Does not claim CODATA/SI derivation from Φ, ħ leading-digit causation, QED dyad proof, NOAA heliophysics causation, or zero-crosstalk quantum memory hardware.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Architectural golden key for 1/2 duality octave recursion.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity closing duality scale ladders.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_leading_one_proton_space",
+        "title": "Leading digit 1 fixtures map to Proton Space filing",
+        "digits": [
+          1,
+          1
+        ],
+        "fixtures": [
+          "PHI_EGS",
+          "hbar_mantissa_talk"
+        ],
+        "pass": true,
+        "interpretation": "Φ and ℏ-mantissa talk share leading-1 Proton Space filing.",
+        "honesty": "Catalog digit filing — not CODATA causation."
+      },
+      {
+        "id": "E4_structural_two_electron_theater",
+        "title": "Structural 2 fixtures map to Electron Theater filing",
+        "binary": 2,
+        "angular": 6.283185307179586,
+        "pass": true,
+        "interpretation": "Sole-even prime 2 + 2π factor as Electron Theater anchors.",
+        "honesty": "Catalog structural filing — not QED orbital proof."
+      },
+      {
+        "id": "E5_psi_core_proton_space",
+        "title": "Ψ_core(1) catalog evaluate is finite",
+        "mag": 1,
+        "phase": 3.8832220774509327,
+        "pass": true,
+        "interpretation": "Proton Space core wave filing under Φ phase.",
+        "honesty": "Algebraic catalog evaluate — not measured spinors."
+      },
+      {
+        "id": "E6_v2_electron_theater",
+        "title": "V₂ Electron Theater partial sum is finite and positive",
+        "N": 24,
+        "sum": 195802.84647702792,
+        "pass": true,
+        "interpretation": "Electron Theater volumetric capacity catalog sum.",
+        "honesty": "Truncated series fixture — not infinite physical volume."
+      },
+      {
+        "id": "E7_solar_characters",
+        "title": "AR3664 Helios-Prime · AR3590 Borealis catalog lock",
+        "SOLAR_CHARACTERS": {
+          "heliosPrime": {
+            "ar": "AR3664",
+            "alias": "Helios-Prime",
+            "role": "binary_base_electron_theater_filing"
+          },
+          "borealis": {
+            "ar": "AR3590",
+            "alias": "Borealis",
+            "role": "odd_prime_constant_boundary_filing"
+          }
+        },
+        "pass": true,
+        "interpretation": "Ephemeral heliospheric filing labels for Φ-recursive narrative.",
+        "honesty": "Not astronomy proof that stars rewrite SI digits."
+      },
+      {
+        "id": "E8_paper_blog_locks",
+        "title": "Paper + ship-blog honesty / Fair Exchange / 1↔2 duality locks",
+        "paperPath": "/workspace/docs/SYNTHOBS_PROTON_SPACE_ELECTRON_THEATER_DUALITY_EGS_2026-09.md",
+        "blogPath": "/workspace/interfaces/blog-proton-space-electron-theater-2026-09.html",
+        "hasHonesty": true,
+        "hasDocId": true,
+        "hasFair": true,
+        "hasPhi": true,
+        "hasProton": true,
+        "hasElectron": true,
+        "hasHbar": true,
+        "hasOperator": true,
+        "blogExists": true,
+        "blogSlug": true,
+        "blogHonesty": true,
+        "pass": true,
+        "interpretation": "Surfaces must carry catalog framing + 1/2 duality, not CODATA overclaim.",
+        "honesty": "Structural text locks — not metrology validation."
+      },
+      {
+        "id": "E9_registry_id",
+        "title": "Registry id + engine shelf fixture",
+        "REGISTRY_ID": "synthobs-proton-space-electron-theater-2026-09",
+        "DOC_ID": "WP-SYNTHOBS-PROTON-SPACE-ELECTRON-THEATER-DUALITY-EGS-2026-09-05",
+        "pass": true,
+        "interpretation": "Canonical registry id for Infinite Octaves engine pin #16.",
+        "honesty": "Naming lock."
+      }
+    ],
+    "n_pass": 9,
+    "n_total": 9,
+    "all_pass": true,
+    "failed": []
+  }
+}

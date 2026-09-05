@@ -41,9 +41,14 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('Host a walk-in interactive show');
     expect(html).toContain('Install a lasting room');
     expect(html).toContain('For the new SuperAI Frontiersman');
-    expect(html).toContain('Holographic Convergence Core');
-    expect(html).toContain('Valet Pru - Holographic Goldilocks XY Human Reality Bridge/Router');
+    expect(html).toContain('Syntheverse');
+    expect(html).toContain('Base Mainer');
+    expect(html).toContain('internet cloud');
+    expect(html).toContain('Host layer');
+    expect(html).toContain('Valet Pru · XY Human Reality Bridge/Router · Player 1');
     expect(html).not.toContain('Valet Pru · Human Bridge/Router');
+    expect(html).toContain('Executive Papers');
+    expect(html).toContain('/ship-blog/infinite-octave-prime-parity');
     expect(html).toContain('href="/core"');
     expect(html).toContain('core-player');
     expect(html).toContain('>Player</figcaption>');

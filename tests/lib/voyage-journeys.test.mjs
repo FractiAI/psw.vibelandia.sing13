@@ -82,7 +82,7 @@ describe('Voyage journeys · adventures hub', () => {
 
   it('canvas landing injects rich shells and journeys teaser', () => {
     const canvas = read('interfaces/omniverse-canvas.html');
-    expect(canvas).toContain('Three nested shells');
+    expect(canvas).toContain('Host layer · horizon · three nested spheres');
     expect(canvas).toContain('shell-card');
     expect(canvas).toContain('exhibit-core-key.jpg');
     expect(canvas).toContain('Adventures we offer');

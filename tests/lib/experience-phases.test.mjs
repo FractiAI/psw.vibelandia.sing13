@@ -40,8 +40,8 @@ describe('Experience phases · museum → Front Desk → creator studio', () => 
     const html = renderMuseumEntryHtml();
     expect(html).toContain('museum-frame');
     expect(html).toContain('museum-placard');
-    expect(html).toContain('Omniversal Canvas');
-    expect(html).toContain('Valet Pru - Holographic Goldilocks XY Human Reality Bridge/Router');
+    expect(html).toContain('Host layer');
+    expect(html).toContain('Valet Pru · XY Human Reality Bridge/Router · Player 1');
     expect(html).not.toContain('Valet Pru · Human Bridge/Router');
     expect(html).toContain('SS VIBELANDIA');
     expect(html).toContain('exhibit-sphere-entrance.jpg');

@@ -42,6 +42,16 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 28');
   });
 
+  it('leads 2026-09-05 News tip with Infinite Octave Prime-Parity (Executive Papers)', async () => {
+    const payload = await buildDailyShipBulletin({ date: '2026-09-05' });
+    expect(payload.highlights[0].id).toBe(
+      'synthobs-infinite-octave-prime-parity-2026-09',
+    );
+    expect(payload.htmlBody).toMatch(/Executive Papers|Prime-Parity|sole-even|irreducible/i);
+    expect(payload.htmlBody).toContain('infinite-octave-prime-parity');
+    expect(payload.newsLabel).toContain('September 5');
+  });
+
   it('leads 2026-09-04 News tip with PDVSA Gateway Ops Mockup', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-04' });
     expect(payload.highlights[0].id).toBe(

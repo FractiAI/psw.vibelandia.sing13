@@ -7,8 +7,14 @@ import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
 const CASES = [
   {
+    id: 'prime-parity',
+    title: 'Executive Papers · Prime-Parity (featured tip)',
+    now: 'Number theory as optional deep math',
+    forward: 'Sole-even 2 · odd irreducible sets · Φ ≈ 1.618 Infinite Octaves grammar',
+  },
+  {
     id: 'sna-gateway',
-    title: 'SNA/TCP-IP → Lattice Chat (featured)',
+    title: 'SNA/TCP-IP → Lattice Chat (rhyme)',
     now: 'Flat vibe windows + protocol silos',
     forward: 'Repeating fractal gateway · multi-octave Omni-Lattice (case study)',
   },

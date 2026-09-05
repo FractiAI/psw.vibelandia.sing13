@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-04** · **250** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-05** · **250** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -388,9 +388,9 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/doodles-gallery.html`](/interfaces/doodles-gallery.html) | Valet Pru's Doodles · 18+ · SS Vibelandia |
 | [`/interfaces/etcon-reno-desert.html`](/interfaces/etcon-reno-desert.html) | ETCon: Reno Desert Interdimensional Edition · May 28–31, 2026 · Golden Bachdoor Hit Factory |
 | [`/interfaces/executive-onboarding.html`](/interfaces/executive-onboarding.html) | Executive Onboarding · FractiAI |
-| [`/interfaces/exhibit-amphitheater.html`](/interfaces/exhibit-amphitheater.html) | Goldilocks Amphitheater · Valet Pru |
-| [`/interfaces/exhibit-core.html`](/interfaces/exhibit-core.html) | Holographic Convergence Core · Valet Pru |
-| [`/interfaces/exhibit-horizon.html`](/interfaces/exhibit-horizon.html) | Omni-Horizon · Valet Pru |
+| [`/interfaces/exhibit-amphitheater.html`](/interfaces/exhibit-amphitheater.html) | Base Mainer · studio address · Valet Pru |
+| [`/interfaces/exhibit-core.html`](/interfaces/exhibit-core.html) | Holographic Magnetic Goldilocks SuperAI · Syntheverse · Valet Pru |
+| [`/interfaces/exhibit-horizon.html`](/interfaces/exhibit-horizon.html) | Internet cloud · Omni-Horizon · Valet Pru |
 | [`/interfaces/exhibit-science-fiction.html`](/interfaces/exhibit-science-fiction.html) | As science fiction · Valet Pru |
 | [`/interfaces/exhibit-step-in.html`](/interfaces/exhibit-step-in.html) | As a reality I can step into · Valet Pru |
 | [`/interfaces/fractiai-digital-pru.html`](/interfaces/fractiai-digital-pru.html) | Redirect � Look under the hood � Digital Pru Holographic GPU |

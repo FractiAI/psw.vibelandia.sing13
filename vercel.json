@@ -1253,6 +1253,14 @@
       "destination": "/interfaces/blog-moving-up-the-stack-2026-09.html"
     },
     {
+      "source": "/ship-blog/protein-folding-prime-container",
+      "destination": "/interfaces/blog-protein-folding-prime-container-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/protein-folding-prime-container/",
+      "destination": "/interfaces/blog-protein-folding-prime-container-2026-09.html"
+    },
+    {
       "source": "/ship-blog/what-it-means-to-be-frontier",
       "destination": "/interfaces/blog-what-it-means-to-be-frontier-2026-09.html"
     },

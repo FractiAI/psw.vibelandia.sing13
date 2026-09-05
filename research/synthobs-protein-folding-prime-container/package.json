@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-protein-folding-prime-container",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave Prime-Container protein folding catalog suite (SynthOBS)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

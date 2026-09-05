@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-05T08:41:36.936Z",
+  "updatedAt": "2026-09-05T08:47:42.953Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-protein-folding-prime-container-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-05T08:47:42.952Z",
+      "body": "Resolving the Protein Folding Grand Challenge: Infinite Octave Prime-Container Architecture (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-protein-folding-prime-container-2026-09",
+      "artifact": {
+        "title": "Resolving the Protein Folding Grand Challenge: Infinite Octave Prime-Container Architecture (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md",
+        "url": "/whitepaper/protein-folding-prime-container",
+        "paperId": "synthobs-protein-folding-prime-container-2026-09",
+        "docId": "WP-SYNTHOBS-PROTEIN-FOLDING-PRIME-CONTAINER-EGS-2026-09-05",
+        "published": "2026-09-05",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-moving-up-the-stack-valuation-2026-09",
       "type": "ArtifactEvent",

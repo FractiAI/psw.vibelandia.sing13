@@ -1,0 +1,14 @@
+{
+  "name": "synthobs-moving-up-the-stack-valuation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Moving Up the Stack — Lattice Chat as the next AI layer (SynthOBS catalog suite)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation.git"
+  },
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

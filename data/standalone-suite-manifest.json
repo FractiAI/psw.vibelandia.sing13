@@ -84,6 +84,14 @@
       "extraDocs": ["docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md"]
     },
     {
+      "id": "synthobs-moving-up-the-stack-valuation",
+      "path": "research/synthobs-moving-up-the-stack-valuation",
+      "github": "https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation",
+      "description": "Moving Up the Stack — Lattice Chat as next AI layer · cool · harmonize · scale · peer vs new-layer valuation fixtures",
+      "paperIds": ["synthobs-moving-up-the-stack-valuation-2026-09"],
+      "extraDocs": ["docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md"]
+    },
+    {
       "id": "synthobs-ss-vibelandia-official-prospectus",
       "path": "research/synthobs-ss-vibelandia-official-prospectus",
       "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",

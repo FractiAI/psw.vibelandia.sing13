@@ -1,7 +1,7 @@
 {
   "schema": "standalone-publish-request/v1",
-  "suiteId": "synthobs-pdvsa-gateway-ops-mockup",
+  "suiteId": "synthobs-moving-up-the-stack-valuation",
   "createRepo": true,
-  "requestedAt": "2026-09-04T21:13:00.000Z",
-  "note": "Republish fleshed EGS Lattice-Linear protocol paper + Infinite Octaves engine inclusion (sync-stack #11)"
+  "requestedAt": "2026-09-05T08:40:00.000Z",
+  "note": "Publish Moving up the stack · next AI layer companion + Infinite Octaves engine inclusion (sync-stack #13)"
 }

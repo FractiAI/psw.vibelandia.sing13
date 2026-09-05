@@ -3,12 +3,10 @@
 **Document ID:** `WP-SYNTHOBS-MOVING-UP-THE-STACK-VALUATION-2026-09-05`  
 **Registry ID:** `synthobs-moving-up-the-stack-valuation-2026-09`  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
-**Published:** 2026-09-05 · **Revised:** 2026-09-05 (new-layer framing · engine shelf · standalone suite)  
-**Classification:** Executive valuation framing · stack-climb narrative · Fair Exchange · Infinite Octaves engine companion  
-**Engine shelf:** Sync stack step **#13** · `AGENT_SYNC_99_OCTAVE_OMNI_LATTICE.md` · Lattice Chat nest `octave99`  
-**Standalone suite:** `research/synthobs-moving-up-the-stack-valuation/` · [`FractiAI/synthobs-moving-up-the-stack-valuation`](https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation) · `npm run research:synthobs-moving-up-the-stack-valuation`  
+**Published:** 2026-09-05 · **Revised:** 2026-09-05 (new-layer framing)  
+**Classification:** Executive valuation framing · stack-climb narrative · Fair Exchange  
 **Ship blog:** `/ship-blog/moving-up-the-stack`  
-**Companions:** Lattice vs vibe receipts (`synthobs-lattice-vs-vibe-coding-2026-09`) · PDVSA Gateway Ops (`synthobs-pdvsa-gateway-ops-mockup-2026-09`) · Frontier trail (`synthobs-what-it-means-to-be-frontier-2026-09`) · Prime-parity (`synthobs-infinite-octave-prime-parity-2026-09`)
+**Companions:** Lattice vs vibe receipts (`synthobs-lattice-vs-vibe-coding-2026-09`) · PDVSA Gateway Ops (`synthobs-pdvsa-gateway-ops-mockup-2026-09`) · Frontier trail (`synthobs-what-it-means-to-be-frontier-2026-09`)
 
 ---
 

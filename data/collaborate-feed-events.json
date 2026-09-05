@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-05T06:03:46.599Z",
+  "updatedAt": "2026-09-05T08:41:36.936Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,12 +12,12 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-05T06:03:46.598Z",
-      "body": "Moving Up the Stack — FractiAI & Lattice Chat Valuation Framing",
+      "createdAt": "2026-09-05T08:41:36.935Z",
+      "body": "Moving Up the Stack — Lattice Chat as the Next AI Layer (New-Layer Valuation)",
       "presenceHue": "gold",
       "paperId": "synthobs-moving-up-the-stack-valuation-2026-09",
       "artifact": {
-        "title": "Moving Up the Stack — FractiAI & Lattice Chat Valuation Framing",
+        "title": "Moving Up the Stack — Lattice Chat as the Next AI Layer (New-Layer Valuation)",
         "kind": "whitepaper",
         "path": "docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md",
         "url": "/whitepaper/moving-up-the-stack",
@@ -25,7 +25,7 @@
         "docId": "WP-SYNTHOBS-MOVING-UP-THE-STACK-VALUATION-2026-09-05",
         "published": "2026-09-05",
         "featured": true,
-        "auditStatus": "soft_pass"
+        "auditStatus": "pass"
       }
     },
     {

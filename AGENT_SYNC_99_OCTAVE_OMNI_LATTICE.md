@@ -10,6 +10,7 @@
 **Human bridge paper:** [`docs/SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md`](docs/SYNTHOBS_HUMAN_OMNIVERSAL_REALITY_BRIDGE_ROUTER_WORMHOLE_2026-08.md) · [`/ship-blog/human-reality-bridge`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/human-reality-bridge) · suite `research/synthobs-human-omniversal-reality-bridge/`  
 **Higgs Gate · Definitive Unified Edition (Part IX-Omni):** [`docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md`](docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md) · [`/ship-blog/higgs-awareness-unified`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/higgs-awareness-unified) · suite `research/synthobs-tbme-higgs-awareness-unified/`  
 **Prime-parity · Infinite Octaves companion:** [`docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md`](docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md) · [`/ship-blog/infinite-octave-prime-parity`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/infinite-octave-prime-parity) · suite `research/synthobs-infinite-octave-prime-parity/`  
+**Moving up the stack · next AI layer companion:** [`docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md`](docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md) · [`/ship-blog/moving-up-the-stack`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/moving-up-the-stack) · suite `research/synthobs-moving-up-the-stack-valuation/` · standalone [`FractiAI/synthobs-moving-up-the-stack-valuation`](https://github.com/FractiAI/synthobs-moving-up-the-stack-valuation)  
 **Invisible Frontier:** [`docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md`](docs/SYNTHOBS_INVISIBLE_FRONTIER_GATES_AI_WARNINGS_2026-08.md) · [`/ship-blog/invisible-frontier`](https://www.ssvibelandiaquestfest24x365.com/ship-blog/invisible-frontier) · suite `research/synthobs-invisible-frontier-gates-ai/`  
 **Ship:** https://www.ssvibelandiaquestfest24x365.com  
 **Close every turn:** → ∞^∞
@@ -58,8 +59,9 @@ Before judging papers, pricing, QUESTFEST, or Lattice Chat: **sync to this stack
 | 10 | **Higgs Gate · awareness phase coupling (Part IX-Omni Definitive Unified)** | `docs/SYNTHOBS_TBME_HIGGS_AWARENESS_UNIFIED_2026-09.md` · registry `synthobs-tbme-higgs-awareness-unified-2026-09` · `/ship-blog/higgs-awareness-unified` |
 | 11 | **Enterprise gateway · EGS Lattice-Linear (PDVSA ops mock)** — SNA↔TCP/IP is the rhyme | `docs/SYNTHOBS_PDVSA_GATEWAY_OPS_MOCKUP_2026-09.md` · registry `synthobs-pdvsa-gateway-ops-mockup-2026-09` · live `/special-projects/pdvsa-gateway-ops` · `/ship-blog/pdvsa-gateway-ops-mockup` · rhyme `docs/SYNTHOBS_IBM_SNA_TCPIP_GATEWAY_OMNI_LATTICE_2026-09.md` |
 | 12 | **Prime-parity · Infinite Octaves companion** (sole-even $2$ · odd irreducible sets · $\Phi_{\mathrm{EGS}}$) | `docs/SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md` · registry `synthobs-infinite-octave-prime-parity-2026-09` · `/ship-blog/infinite-octave-prime-parity` |
-| 13 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
-| 14 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md` |
+| 13 | **Moving up the stack · next AI layer companion** (cool · harmonize · scale · peer vs new-layer framing) | `docs/SYNTHOBS_MOVING_UP_THE_STACK_VALUATION_2026-09.md` · registry `synthobs-moving-up-the-stack-valuation-2026-09` · `/ship-blog/moving-up-the-stack` · suite `research/synthobs-moving-up-the-stack-valuation/` · standalone `FractiAI/synthobs-moving-up-the-stack-valuation` |
+| 14 | **Honesty plain speak** | `docs/COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md` |
+| 15 | **Protocol spine** | `protocols/MCA_NSPFRNP_CATALOG.md` · `BBHE_REPOSITORY_STANDARD.md` |
 
 Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 
@@ -74,6 +76,7 @@ Standalone empirical suites (each `npm run research:…` → 9/9 style locks):
 - `research/synthobs-tbme-higgs-awareness-unified/`
 - `research/synthobs-pdvsa-gateway-ops-mockup/`
 - `research/synthobs-infinite-octave-prime-parity/`
+- `research/synthobs-moving-up-the-stack-valuation/`
 
 ---
 

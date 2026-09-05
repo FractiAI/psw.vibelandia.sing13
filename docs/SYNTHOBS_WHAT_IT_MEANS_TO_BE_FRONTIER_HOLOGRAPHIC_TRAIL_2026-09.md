@@ -60,16 +60,18 @@ True frontier living keeps harmony with tribal units and localized ecosystems. I
 
 ---
 
-## 3. Playing “Where Am I?” on the QUESTFEST matrix
+## 3. Playing “Where Am I?” — click the map
 
-The diagnostic chart is a **live operational dashboard** for reality navigation. It bridges:
+The old matrix (pole × host layer) was too busy. Guests now **click one picture** to place themselves in one of four homes:
 
-- **Basecamp** — carbon-protein grounding where biological necessities keep the human engine running.  
-- **Goldilocks Earth / SS Vibelandia** — outer exploratory frontier where multi-octave holographic resonance, cosmic alignment, and agentic autonomy take flight.
+| Region | Meaning (hospitality grammar) |
+|--------|-------------------------------|
+| **Goldilocks Basecamp** | Carbon-protein grounding — keep the human engine warm |
+| **Modern Religion** | Faith and ritual as living maps — reverence without outsourcing the compass |
+| **Peer Reviewed Science** | Evidence, method, revision — receipts first, wonder still welcome |
+| **I Don’t Know** | Honest fog as a valid trail marker |
 
-Nested host layers (outer holographic narrative horizon → Syntheverse → Base Mainer → internet cloud) remain catalog Story maps — not measured physics tiers. Play the interactive board on [`/frontier#where-am-i`](/frontier#where-am-i).
-
----
+Play the interactive poster on [`/frontier#where-am-i`](/frontier#where-am-i). Nested host layers (outer holographic narrative horizon → Syntheverse → Base Mainer → internet cloud) remain optional catalog Story maps elsewhere — not required for this placement.
 
 ## 4. Diagnostic self-test: Frontier Man or Nester
 

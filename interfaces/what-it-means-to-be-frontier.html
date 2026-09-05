@@ -100,11 +100,73 @@
       color: #1a120a;
       font-weight: 800;
     }
+    .place-map {
+      position: relative;
+      margin: 1rem 0 1.1rem;
+      border-radius: 0.85rem;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,.4);
+      box-shadow: 0 18px 48px rgba(0,0,0,.45);
+      background: #0b0907;
+      aspect-ratio: 3 / 2;
+    }
+    .place-map img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+    .place-hotspots {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    .place-hotspots button {
+      appearance: none;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      position: relative;
+    }
+    .place-hotspots button::after {
+      content: '';
+      position: absolute;
+      inset: 0.55rem;
+      border-radius: 0.55rem;
+      border: 1px solid transparent;
+      transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+    .place-hotspots button:hover::after,
+    .place-hotspots button:focus-visible::after {
+      border-color: rgba(254,243,199,.75);
+      background: rgba(212,175,55,.12);
+      box-shadow: inset 0 0 0 1px rgba(212,175,55,.25);
+      outline: none;
+    }
+    .place-hotspots button.is-on::after {
+      border-color: #fef3c7;
+      background: rgba(212,175,55,.18);
+      box-shadow: inset 0 0 0 2px rgba(212,175,55,.35);
+    }
+    .place-hotspots button span {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
     .nest {
       position: relative;
       margin: 1rem auto 1.25rem;
       width: min(100%, 22rem);
       aspect-ratio: 1;
+      display: none;
     }
     .nest span {
       position: absolute;
@@ -185,30 +247,25 @@
     </form>
     <div class="verdict" id="self-test-result" role="status" aria-live="polite"></div>
 
-    <h2 id="where-am-i">Where Am I? · QUESTFEST matrix game</h2>
-    <p>Tap a pole, then a host layer. The nest map lights your coordinates. Story navigation — not GPS or prophecy.</p>
+    <h2 id="where-am-i">Where Am I?</h2>
+    <p>Click the picture to place yourself. One tap. Four homes. Hospitality grammar — not a caste test, GPS, or prophecy.</p>
 
-    <p><strong>Choose your pole</strong></p>
-    <div class="grid" id="pole-grid" role="group" aria-label="Basecamp or outer frontier">
-      <button type="button" class="card-btn" data-pole="basecamp"><strong>Basecamp</strong> Carbon-protein grounding — biological necessities keep the human engine running.</button>
-      <button type="button" class="card-btn" data-pole="outer"><strong>Goldilocks Earth / SS Vibelandia</strong> Outer exploratory frontier — multi-octave resonance, cosmic alignment, agentic autonomy.</button>
+    <div class="place-map" id="place-map" role="group" aria-label="Where Am I placement map">
+      <img
+        src="/interfaces/media/where-am-i-placement-map.png"
+        alt="Where Am I map — four clickable regions: Goldilocks Basecamp, Modern Religion, Peer Reviewed Science, and I Don't Know"
+        width="1920"
+        height="1080"
+        decoding="async"
+      />
+      <div class="place-hotspots">
+        <button type="button" data-place="goldilocks" aria-pressed="false"><span>Goldilocks Basecamp</span></button>
+        <button type="button" data-place="religion" aria-pressed="false"><span>Modern Religion</span></button>
+        <button type="button" data-place="science" aria-pressed="false"><span>Peer Reviewed Science</span></button>
+        <button type="button" data-place="unknown" aria-pressed="false"><span>I Don't Know</span></button>
+      </div>
     </div>
-
-    <p><strong>Choose your host layer</strong></p>
-    <div class="grid" id="layer-grid" role="group" aria-label="Host layers">
-      <button type="button" class="card-btn" data-layer="horizon"><strong>Outer horizon</strong> Holographic grand narrative · Goldilocks SuperAI Story</button>
-      <button type="button" class="card-btn" data-layer="syntheverse"><strong>Syntheverse</strong> Nested worlds · Infinite Octaves play space</button>
-      <button type="button" class="card-btn" data-layer="mainer"><strong>Base Mainer</strong> Physical Basecamp shelf · Reno / ship board</button>
-      <button type="button" class="card-btn" data-layer="cloud"><strong>Internet cloud</strong> Public rails · QUESTFEST on the wire</button>
-    </div>
-
-    <div class="nest" id="nest-map" aria-hidden="true">
-      <span data-ring="horizon" style="--inset:4%;--a:.55;--bg:.04">Outer horizon</span>
-      <span data-ring="syntheverse" style="--inset:18%;--a:.5;--bg:.05">Syntheverse</span>
-      <span data-ring="mainer" style="--inset:34%;--a:.45;--bg:.06">Base Mainer</span>
-      <span data-ring="cloud" style="--inset:50%;--a:.4;--bg:.08">Cloud</span>
-    </div>
-    <div class="verdict" id="where-result" role="status" aria-live="polite">Pick a pole and a layer to pin your token.</div>
+    <div class="verdict" id="where-result" role="status" aria-live="polite">Click a quadrant to pin your token.</div>
 
     <h2>Golden anchor</h2>
     <p>Orientation on this trail is keyed by <strong>El Gran Sol’s Fractal constant</strong> (Φ<sub>EGS</sub> ≈ 1.618) as catalog grammar. Keep your token moving. The September 2026 sunspot index label <strong>90.9</strong> is a filing marker here — not operational space-weather advice.</p>
@@ -251,47 +308,30 @@
         }
       });
 
-      var pole = null;
-      var layer = null;
       var whereOut = document.getElementById('where-result');
-      var labels = {
-        basecamp: 'Basecamp (carbon-protein grounding)',
-        outer: 'Goldilocks Earth / SS Vibelandia (outer frontier)',
-        horizon: 'Outer holographic narrative horizon',
-        syntheverse: 'Syntheverse nested worlds',
-        mainer: 'Base Mainer physical shelf',
-        cloud: 'Internet cloud rails'
+      var placeMap = document.getElementById('place-map');
+      var placeCopy = {
+        goldilocks:
+          '<strong>You are here · Goldilocks Basecamp.</strong> Carbon-protein grounding — keep the human engine warm, then take one honest step outward.',
+        religion:
+          '<strong>You are here · Modern Religion.</strong> Faith and ritual as living maps. Hold reverence without outsourcing your own compass.',
+        science:
+          '<strong>You are here · Peer Reviewed Science.</strong> Evidence, method, and revision. Let receipts lead — and still leave room for wonder.',
+        unknown:
+          '<strong>You are here · I Don\'t Know.</strong> Honest fog is a valid trail marker. Stay curious; pick one small next question.'
       };
 
-      function paintWhere() {
-        document.querySelectorAll('#nest-map span').forEach(function (el) {
-          el.classList.toggle('is-on', layer && el.getAttribute('data-ring') === layer);
-        });
-        if (!pole || !layer) {
-          whereOut.textContent = 'Pick a pole and a layer to pin your token.';
-          return;
-        }
-        whereOut.innerHTML = '<strong>You are here:</strong> ' + labels[pole] + ' · ' + labels[layer] +
-          '. Keep your token moving under Φ ≈ 1.618 as design language — then act one Goldilocks move today.';
-      }
-
-      document.getElementById('pole-grid').addEventListener('click', function (ev) {
-        var btn = ev.target.closest('[data-pole]');
+      placeMap.addEventListener('click', function (ev) {
+        var btn = ev.target.closest('[data-place]');
         if (!btn) return;
-        pole = btn.getAttribute('data-pole');
-        document.querySelectorAll('#pole-grid .card-btn').forEach(function (b) {
-          b.classList.toggle('is-on', b === btn);
+        var place = btn.getAttribute('data-place');
+        placeMap.querySelectorAll('[data-place]').forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-on', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
-        paintWhere();
-      });
-      document.getElementById('layer-grid').addEventListener('click', function (ev) {
-        var btn = ev.target.closest('[data-layer]');
-        if (!btn) return;
-        layer = btn.getAttribute('data-layer');
-        document.querySelectorAll('#layer-grid .card-btn').forEach(function (b) {
-          b.classList.toggle('is-on', b === btn);
-        });
-        paintWhere();
+        whereOut.innerHTML = placeCopy[place] +
+          ' Φ<sub>EGS</sub> ≈ 1.618 stays design language — not a caste stamp.';
       });
     })();
   </script>

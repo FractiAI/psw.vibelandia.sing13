@@ -30,16 +30,16 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured notes: ISO same-day stamps (macro-protein · volumetric · protein) lead date-only 2026-09-05.
-    expect(posts[0].published).toBe('2026-09-05T20:00:00Z');
-    expect(posts[0].id).toBe('synthobs-macro-protein-work-engine-2026-09');
+    // Newest featured notes: ISO same-day stamps (awareness · macro-protein · volumetric) lead date-only 2026-09-05.
+    expect(posts[0].published).toBe('2026-09-05T21:00:00Z');
+    expect(posts[0].id).toBe('synthobs-awareness-vs-brute-force-leverage-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-awareness-vs-brute-force-leverage-2026-09',
       'synthobs-macro-protein-work-engine-2026-09',
       'synthobs-prime-indexed-volumetric-storage-2026-09',
       'synthobs-protein-folding-prime-container-2026-09',
       'synthobs-moving-up-the-stack-valuation-2026-09',
       'synthobs-what-it-means-to-be-frontier-2026-09',
-      'synthobs-infinite-octave-prime-parity-2026-09',
     ]);
   });
 });

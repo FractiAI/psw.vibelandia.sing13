@@ -45,13 +45,13 @@ describe('daily-ship-bulletin steward', () => {
   it('leads 2026-09-05 with newest three ship notes (ISO timestamps count as same day)', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-05' });
     expect(payload.highlights.map((h) => h.id)).toEqual([
+      'synthobs-awareness-vs-brute-force-leverage-2026-09',
       'synthobs-macro-protein-work-engine-2026-09',
       'synthobs-prime-indexed-volumetric-storage-2026-09',
-      'synthobs-protein-folding-prime-container-2026-09',
     ]);
-    expect(payload.highlights[0].href).toBe('/ship-blog/macro-protein-work-engine');
-    expect(payload.htmlBody).toMatch(/macro-protein|θ_bio|work engine|Φ/i);
-    expect(payload.htmlBody).toContain('macro-protein-work-engine');
+    expect(payload.highlights[0].href).toBe('/ship-blog/awareness-vs-brute-force');
+    expect(payload.htmlBody).toMatch(/awareness|brute-force|Φ|AlphaFold/i);
+    expect(payload.htmlBody).toContain('awareness-vs-brute-force');
     expect(payload.newsLabel).toContain('September 5');
   });
 

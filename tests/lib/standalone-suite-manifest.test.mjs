@@ -12,6 +12,7 @@ describe('standalone-suite-manifest', () => {
     expect(m.suites.map((s) => s.id).sort()).toEqual([
       'synthio-mri-cloud-antenna',
       'synthio-mri-vs-legacy-perf',
+      'synthobs-awareness-vs-brute-force-leverage',
       'synthobs-human-omniversal-reality-bridge',
       'synthobs-ibm-sna-tcpip-gateway-omni-lattice',
       'synthobs-infinite-octave-prime-parity',

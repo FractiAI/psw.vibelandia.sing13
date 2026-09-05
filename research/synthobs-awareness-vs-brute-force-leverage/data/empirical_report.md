@@ -1,0 +1,209 @@
+# Awareness vs Brute-Force Leverage — Catalog Suite
+
+**Document ID:** `WP-SYNTHOBS-AWARENESS-VS-BRUTE-FORCE-LEVERAGE-EGS-2026-09-05`
+**Registry ID:** `synthobs-awareness-vs-brute-force-leverage-2026-09`
+**Generated:** 2026-09-05T20:53:30.489Z
+
+## Verdict
+
+| Metric | Value |
+|--------|-------|
+| All experiments pass | `true` |
+| Passed | 9 / 9 |
+| Φ_EGS | 1.618033988749895 |
+
+## Experiments
+
+### E1_phi_egs — Φ_EGS fixture
+
+- **Pass:** `true`
+- **Interpretation:** Architectural golden key for aware leverage grammar.
+- **Honesty:** Not a replacement for ℏ, c, or G.
+
+```json
+{
+  "id": "E1_phi_egs",
+  "title": "Φ_EGS fixture",
+  "PHI_EGS": 1.618033988749895,
+  "expected": 1.618033988749895,
+  "pass": true,
+  "interpretation": "Architectural golden key for aware leverage grammar.",
+  "honesty": "Not a replacement for ℏ, c, or G."
+}
+```
+
+### E2_phi_squared_identity — Φ² = Φ + 1
+
+- **Pass:** `true`
+- **Interpretation:** Golden-key identity closing aware scale ladders.
+- **Honesty:** Algebra of Φ — replayable fixture.
+
+```json
+{
+  "id": "E2_phi_squared_identity",
+  "title": "Φ² = Φ + 1",
+  "lhs": 2.618033988749895,
+  "rhs": 2.618033988749895,
+  "pass": true,
+  "interpretation": "Golden-key identity closing aware scale ladders.",
+  "honesty": "Algebra of Φ — replayable fixture."
+}
+```
+
+### E3_odd_prime_vaults — Odd-prime vault generator (irreducible containers)
+
+- **Pass:** `true`
+- **Interpretation:** Odd primes as irreducible awareness containers (catalog).
+- **Honesty:** Textbook primality smoke — not wet-lab topology.
+
+```json
+{
+  "id": "E3_odd_prime_vaults",
+  "title": "Odd-prime vault generator (irreducible containers)",
+  "first": 3,
+  "n": 12,
+  "pass": true,
+  "interpretation": "Odd primes as irreducible awareness containers (catalog).",
+  "honesty": "Textbook primality smoke — not wet-lab topology."
+}
+```
+
+### E4_insulin_fixture — Human Insulin fixture (51 nodes) solves deterministically
+
+- **Pass:** `true`
+- **Interpretation:** Molecular-tier aware solve without training loop.
+- **Honesty:** Catalog node count fixture — not CASP gold or clinical insulin structure.
+
+```json
+{
+  "id": "E4_insulin_fixture",
+  "title": "Human Insulin fixture (51 nodes) solves deterministically",
+  "result": {
+    "nodes": 51,
+    "octave": 1,
+    "energy": 0.19776231829567956,
+    "primes": 51
+  },
+  "latencyMs": 0.09736199999999684,
+  "pass": true,
+  "interpretation": "Molecular-tier aware solve without training loop.",
+  "honesty": "Catalog node count fixture — not CASP gold or clinical insulin structure."
+}
+```
+
+### E5_meta_protein_fixture — Macro meta-protein fixture (10k nodes · octave 15) finite solve
+
+- **Pass:** `true`
+- **Interpretation:** Macro organism meta-protein framing resolves algebraically on fixture.
+- **Honesty:** Catalog scale demo — not a claim organisms are single proteins or AlphaFold-impossible.
+
+```json
+{
+  "id": "E5_meta_protein_fixture",
+  "title": "Macro meta-protein fixture (10k nodes · octave 15) finite solve",
+  "result": {
+    "nodes": 10000,
+    "octave": 15,
+    "energy": 166.71339972943048,
+    "primes": 10000
+  },
+  "latencyMs": 6.947808000000002,
+  "pass": true,
+  "interpretation": "Macro organism meta-protein framing resolves algebraically on fixture.",
+  "honesty": "Catalog scale demo — not a claim organisms are single proteins or AlphaFold-impossible."
+}
+```
+
+### E6_training_capex_contrast — Aware $0 training vs $150k–$200k+ brute-force CapEx band (framing)
+
+- **Pass:** `true`
+- **Interpretation:** Economic contrast lock — catalog framing vs industry-talk DL CapEx.
+- **Honesty:** Not audited invoices or TPU receipts.
+
+```json
+{
+  "id": "E6_training_capex_contrast",
+  "title": "Aware $0 training vs $150k–$200k+ brute-force CapEx band (framing)",
+  "AWARE_TRAINING_COST": 0,
+  "TRAINING_CAPEX_BAND": {
+    "lo": 150000,
+    "hi": 200000
+  },
+  "pass": true,
+  "interpretation": "Economic contrast lock — catalog framing vs industry-talk DL CapEx.",
+  "honesty": "Not audited invoices or TPU receipts."
+}
+```
+
+### E7_ecc_overhead_band — ECC/parity overhead band 15–30% framing lock
+
+- **Pass:** `true`
+- **Interpretation:** Storage parity tax contrast for zero-parity aware grammar talk.
+- **Honesty:** Framing band — not JEDEC measured 0% ECC.
+
+```json
+{
+  "id": "E7_ecc_overhead_band",
+  "title": "ECC/parity overhead band 15–30% framing lock",
+  "ECC_OVERHEAD_BAND": {
+    "lo": 0.15,
+    "hi": 0.3
+  },
+  "pass": true,
+  "interpretation": "Storage parity tax contrast for zero-parity aware grammar talk.",
+  "honesty": "Framing band — not JEDEC measured 0% ECC."
+}
+```
+
+### E8_paper_blog_locks — Paper + ship-blog honesty / Fair Exchange / AlphaFold contrast locks
+
+- **Pass:** `true`
+- **Interpretation:** Surfaces must carry catalog framing + DL contrast, not wet-lab overclaim.
+- **Honesty:** Structural text locks — not bake-off validation.
+
+```json
+{
+  "id": "E8_paper_blog_locks",
+  "title": "Paper + ship-blog honesty / Fair Exchange / AlphaFold contrast locks",
+  "paperPath": "/workspace/docs/SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md",
+  "blogPath": "/workspace/interfaces/blog-awareness-vs-brute-force-2026-09.html",
+  "hasHonesty": true,
+  "hasDocId": true,
+  "hasFair": true,
+  "hasPhi": true,
+  "hasAlphaFold": true,
+  "hasInsulin": true,
+  "hasMeta": true,
+  "hasCapex": true,
+  "hasOperator": true,
+  "notEnginePin": true,
+  "blogExists": true,
+  "blogSlug": true,
+  "blogHonesty": true,
+  "pass": true,
+  "interpretation": "Surfaces must carry catalog framing + DL contrast, not wet-lab overclaim.",
+  "honesty": "Structural text locks — not bake-off validation."
+}
+```
+
+### E9_registry_id — Registry id + application-companion fixture
+
+- **Pass:** `true`
+- **Interpretation:** Canonical registry id for awareness-vs-brute application companion (not engine pin).
+- **Honesty:** Naming lock.
+
+```json
+{
+  "id": "E9_registry_id",
+  "title": "Registry id + application-companion fixture",
+  "REGISTRY_ID": "synthobs-awareness-vs-brute-force-leverage-2026-09",
+  "DOC_ID": "WP-SYNTHOBS-AWARENESS-VS-BRUTE-FORCE-LEVERAGE-EGS-2026-09-05",
+  "pass": true,
+  "interpretation": "Canonical registry id for awareness-vs-brute application companion (not engine pin).",
+  "honesty": "Naming lock."
+}
+```
+
+## Honesty boundary
+
+Catalog / algebraic fixtures for awareness-vs-brute-force leverage grammar. Does not claim AlphaFold/CASP retirement, audited $0 CapEx invoices, clinical organism solves, JEDEC 0% ECC silicon, or formal infinite epistemic proofs.

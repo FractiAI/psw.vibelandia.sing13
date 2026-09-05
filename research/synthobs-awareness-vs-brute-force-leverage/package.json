@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-awareness-vs-brute-force-leverage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave awareness-vs-brute-force leverage catalog suite (SynthOBS application companion)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

@@ -116,6 +116,14 @@
       "extraDocs": ["docs/SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md"]
     },
     {
+      "id": "synthobs-awareness-vs-brute-force-leverage",
+      "path": "research/synthobs-awareness-vs-brute-force-leverage",
+      "github": "https://github.com/FractiAI/synthobs-awareness-vs-brute-force-leverage",
+      "description": "Awareness vs Brute-Force Leverage — Φ_EGS aware engine · AlphaFold-class contrast · insulin/meta-protein fixtures",
+      "paperIds": ["synthobs-awareness-vs-brute-force-leverage-2026-09"],
+      "extraDocs": ["docs/SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md"]
+    },
+    {
       "id": "synthobs-ss-vibelandia-official-prospectus",
       "path": "research/synthobs-ss-vibelandia-official-prospectus",
       "github": "https://github.com/FractiAI/synthobs-ss-vibelandia-official-prospectus",

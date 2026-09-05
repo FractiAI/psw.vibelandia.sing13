@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-05T20:15:47.075Z",
+  "updatedAt": "2026-09-05T20:53:37.374Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-awareness-vs-brute-force-leverage-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-05T20:53:37.374Z",
+      "body": "Intelligent Leverage by Awareness vs Brute-Force Blindness: Comparative Analysis & Deterministic Meta-Protein Resolution (Catalog)",
+      "presenceHue": "gold",
+      "paperId": "synthobs-awareness-vs-brute-force-leverage-2026-09",
+      "artifact": {
+        "title": "Intelligent Leverage by Awareness vs Brute-Force Blindness: Comparative Analysis & Deterministic Meta-Protein Resolution (Catalog)",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md",
+        "url": "/whitepaper/awareness-vs-brute-force",
+        "paperId": "synthobs-awareness-vs-brute-force-leverage-2026-09",
+        "docId": "WP-SYNTHOBS-AWARENESS-VS-BRUTE-FORCE-LEVERAGE-EGS-2026-09-05",
+        "published": "2026-09-05T21:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-macro-protein-work-engine-2026-09",
       "type": "ArtifactEvent",

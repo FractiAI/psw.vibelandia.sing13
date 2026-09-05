@@ -7,10 +7,22 @@ import { MODULE_PRESENTATIONS } from '@/content/presentations';
 
 const CASES = [
   {
-    id: 'prime-parity',
-    title: 'Executive Papers · Prime-Parity (featured tip)',
-    now: 'Number theory as optional deep math',
-    forward: 'Sole-even 2 · odd irreducible sets · Φ ≈ 1.618 Infinite Octaves grammar',
+    id: 'gateway',
+    title: 'Executive Papers · EGS Lattice-Linear Gateway',
+    now: 'Siloed industry consoles (ERP · SCADA · Legal · Logistics)',
+    forward: 'PDVSA ops mock · multi-domain brief · SNA↔TCP/IP as historical rhyme',
+  },
+  {
+    id: 'up-the-stack',
+    title: 'Executive Papers · Moving up the stack',
+    now: 'Flat vibe-coding windows + wide refactors',
+    forward: 'Lattice vs vibe receipts · banded plans · minimal diffs · deploy proofs',
+  },
+  {
+    id: 'frontier-trail',
+    title: 'Frontier trail · self-test + Where Am I',
+    now: 'Abstract “frontier” talk without a board',
+    forward: 'QUESTFEST coordinates · Basecamp ↔ Goldilocks · voluntary reflection',
   },
   {
     id: 'sna-gateway',

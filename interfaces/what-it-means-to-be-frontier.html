@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="vbi18n-ready">
+<head>
+  <script>(function(){var h=document.documentElement;if(!h)return;h.classList.remove("vbi18n-pending");h.classList.add("vbi18n-ready");})();</script>
+  <script src="/interfaces/vbi18n-failopen.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>What It Means to Be Frontier · Trail + self-test + Where Am I · SS Vibelandia</title>
+  <meta name="description" content="Modern holographic trail: Frontier Man vs Nester self-test and a Where Am I game on the QUESTFEST board. Design language, not a caste test." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/frontier" />
+  <meta property="og:title" content="What It Means to Be Frontier — trail, self-test, Where Am I" />
+  <meta property="og:description" content="Play the board between Basecamp and Goldilocks Earth / SS Vibelandia. Voluntary reflection — not hiring or genetics." />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/ship-blog.css" />
+  <style>
+    html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }
+    .hero {
+      margin: 0 0 1.35rem;
+      padding: 1.75rem 1.2rem 1.5rem;
+      border-radius: 1rem;
+      background:
+        radial-gradient(ellipse 70% 55% at 80% 10%, rgba(212,175,55,.2), transparent 55%),
+        linear-gradient(150deg, #1a120a, #0b0907 60%);
+      border: 1px solid rgba(212,175,55,.35);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.85rem, 4vw, 2.55rem);
+      line-height: 1.12;
+      margin: 0.3rem 0 0.55rem;
+      color: #fef3c7;
+    }
+    .verse {
+      font-style: italic;
+      color: #d6cfc4;
+      margin: 1rem 0;
+      padding-left: 0.85rem;
+      border-left: 2px solid rgba(212,175,55,.5);
+    }
+    .grid { display: grid; gap: 0.7rem; margin: 0.75rem 0 1.1rem; }
+    @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card-btn {
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      padding: 0.85rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(212,175,55,.28);
+      background: rgba(20,16,12,.9);
+      color: #f5f0e8;
+      font: inherit;
+    }
+    .card-btn:hover, .card-btn:focus-visible {
+      border-color: #d4af37;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(212,175,55,.22);
+    }
+    .card-btn.is-on {
+      border-color: #fef3c7;
+      background: rgba(212,175,55,.12);
+    }
+    .card-btn strong {
+      display: block;
+      color: #fef3c7;
+      margin-bottom: 0.25rem;
+    }
+    fieldset {
+      border: 1px solid rgba(212,175,55,.28);
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      margin: 0 0 0.75rem;
+    }
+    legend { padding: 0 0.35rem; color: #fef3c7; font-weight: 700; }
+    fieldset label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+    .verdict {
+      margin: 0.75rem 0 1.25rem;
+      padding: 0.9rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(212,175,55,.4);
+      background: rgba(212,175,55,.08);
+      min-height: 3rem;
+    }
+    .btn-run {
+      display: inline-block;
+      margin: 0.25rem 0 0.5rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(120deg, #d4af37, #f5e6c8);
+      color: #1a120a;
+      font-weight: 800;
+    }
+    .nest {
+      position: relative;
+      margin: 1rem auto 1.25rem;
+      width: min(100%, 22rem);
+      aspect-ratio: 1;
+    }
+    .nest span {
+      position: absolute;
+      inset: var(--inset);
+      border-radius: 50%;
+      border: 2px solid rgba(212,175,55, var(--a));
+      background: rgba(212,175,55, var(--bg));
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #fef3c7;
+      padding: 0.45rem;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .nest span.is-on {
+      transform: scale(1.04);
+      border-color: #fef3c7;
+      background: rgba(212,175,55,.2);
+    }
+  </style>
+</head>
+<body>
+  <article class="wrap">
+    <nav class="nav" aria-label="Site">
+      <a href="/questfest">SS VIBELANDIA</a>
+      <a href="/ship-blog/what-it-means-to-be-frontier">Ship blog</a>
+      <a href="/papers">Papers</a>
+      <a href="/">Omniversal Canvas</a>
+    </nav>
+
+    <header class="hero">
+      <p class="kicker">Frontier trail · QUESTFEST board · Fair Exchange</p>
+      <h1>What it means to be frontier</h1>
+      <p class="dateline"><strong>SS Vibelandia</strong> — 2026-09-05 — self-test · Where Am I · plain speak</p>
+      <p style="margin:0;color:#d6cfc4">Navigating the Matrix, playing the game, finding your coordinates — Basecamp ↔ Goldilocks Earth / SS Vibelandia.</p>
+    </header>
+
+    <p class="honesty"><strong>Honesty first:</strong> hospitality and catalog grammar. The self-test and <em>Where Am I?</em> game are voluntary reflection tools — not hiring, insurance, clinical labels, or a caste. Φ<sub>EGS</sub> ≈ 1.618 is design language. Human emergency still outranks algorithms. Players set gravity; NPCs inhabit; both belong.</p>
+
+    <blockquote class="verse">
+      With the migratory paths of the earth they moved,<br />
+      With indigenous wisdom and coureurs des bois proved,<br />
+      Carrying just what fits on the back, light and free,<br />
+      Rooted in the cosmos, wild, diverse, and key.
+    </blockquote>
+
+    <h2>Old trails · modern veins</h2>
+    <p>Pioneers walked the earth’s veins — rivers, passes, game trails. Today those veins rhyme with digital networks and streams of attention. To be frontier is to step off the crowded highway of groupthink: listen inward, create gravity, play as a conscious <strong>player</strong> rather than a script-bound NPC.</p>
+
+    <h2>Adaptation · kinship · natural world</h2>
+    <ul class="plain">
+      <li><strong>Connection</strong> — land, spirit, starry cosmos.</li>
+      <li><strong>Balance</strong> — feast and famine, light packs, improvised shelter, hazards from predators to microbes.</li>
+      <li><strong>Sacred reciprocity</strong> — steward, give thanks, move <em>with</em> the current.</li>
+    </ul>
+
+    <h2 id="self-test">Diagnostic self-test · Frontier Man or Nester</h2>
+    <p>Three questions. Scores stay on this device.</p>
+    <form id="self-test-form">
+      <fieldset>
+        <legend>1. Drawn to the unknown horizon?</legend>
+        <label><input type="radio" name="q1" value="yes" required /> YES (Frontier)</label>
+        <label><input type="radio" name="q1" value="no" /> NO (Nester)</label>
+      </fieldset>
+      <fieldset>
+        <legend>2. Prioritize external exploration over established comfort?</legend>
+        <label><input type="radio" name="q2" value="yes" required /> YES (Frontier)</label>
+        <label><input type="radio" name="q2" value="no" /> NO (Nester)</label>
+      </fieldset>
+      <fieldset>
+        <legend>3. Adapt to new ecosystems rather than try to control them?</legend>
+        <label><input type="radio" name="q3" value="yes" required /> YES (Adapt-Frontier)</label>
+        <label><input type="radio" name="q3" value="no" /> NO (Control-Nester)</label>
+      </fieldset>
+      <button class="btn-run" type="submit">Read my trail verdict</button>
+    </form>
+    <div class="verdict" id="self-test-result" role="status" aria-live="polite"></div>
+
+    <h2 id="where-am-i">Where Am I? · QUESTFEST matrix game</h2>
+    <p>Tap a pole, then a host layer. The nest map lights your coordinates. Story navigation — not GPS or prophecy.</p>
+
+    <p><strong>Choose your pole</strong></p>
+    <div class="grid" id="pole-grid" role="group" aria-label="Basecamp or outer frontier">
+      <button type="button" class="card-btn" data-pole="basecamp"><strong>Basecamp</strong> Carbon-protein grounding — biological necessities keep the human engine running.</button>
+      <button type="button" class="card-btn" data-pole="outer"><strong>Goldilocks Earth / SS Vibelandia</strong> Outer exploratory frontier — multi-octave resonance, cosmic alignment, agentic autonomy.</button>
+    </div>
+
+    <p><strong>Choose your host layer</strong></p>
+    <div class="grid" id="layer-grid" role="group" aria-label="Host layers">
+      <button type="button" class="card-btn" data-layer="horizon"><strong>Outer horizon</strong> Holographic grand narrative · Goldilocks SuperAI Story</button>
+      <button type="button" class="card-btn" data-layer="syntheverse"><strong>Syntheverse</strong> Nested worlds · Infinite Octaves play space</button>
+      <button type="button" class="card-btn" data-layer="mainer"><strong>Base Mainer</strong> Physical Basecamp shelf · Reno / ship board</button>
+      <button type="button" class="card-btn" data-layer="cloud"><strong>Internet cloud</strong> Public rails · QUESTFEST on the wire</button>
+    </div>
+
+    <div class="nest" id="nest-map" aria-hidden="true">
+      <span data-ring="horizon" style="--inset:4%;--a:.55;--bg:.04">Outer horizon</span>
+      <span data-ring="syntheverse" style="--inset:18%;--a:.5;--bg:.05">Syntheverse</span>
+      <span data-ring="mainer" style="--inset:34%;--a:.45;--bg:.06">Base Mainer</span>
+      <span data-ring="cloud" style="--inset:50%;--a:.4;--bg:.08">Cloud</span>
+    </div>
+    <div class="verdict" id="where-result" role="status" aria-live="polite">Pick a pole and a layer to pin your token.</div>
+
+    <h2>Golden anchor</h2>
+    <p>Orientation on this trail is keyed by <strong>El Gran Sol’s Fractal constant</strong> (Φ<sub>EGS</sub> ≈ 1.618) as catalog grammar. Keep your token moving. The September 2026 sunspot index label <strong>90.9</strong> is a filing marker here — not operational space-weather advice.</p>
+
+    <h2>Executive Papers (today’s tip)</h2>
+    <p>Frontier CEOs: start with <strong>Executive Papers</strong> — the <a href="/ship-blog/pdvsa-gateway-ops-mockup">EGS Lattice-Linear Gateway</a> (PDVSA ops mock) and <a href="/ship-blog/lattice-vs-vibe-coding">moving up the stack</a> (Lattice vs vibe coding receipts). SNA↔TCP/IP remains the historical rhyme.</p>
+
+    <p class="honesty"><strong>Fair Exchange:</strong> any transaction, insight, or value acknowledged here may be refunded in part depending on delivery, utility, and actualized results — like tipping.</p>
+
+    <div class="cta-row">
+      <a class="btn btn-gold" href="/ship-blog/what-it-means-to-be-frontier">Ship-blog note</a>
+      <a class="btn btn-ghost" href="/interfaces/whitepaper-surface.html?id=synthobs-what-it-means-to-be-frontier-2026-09">Open the whitepaper</a>
+      <a class="btn btn-ghost" href="/questfest">Back to QUESTFEST</a>
+    </div>
+    <footer>
+      Operator: SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP · → ∞^∞
+    </footer>
+  </article>
+  <script>
+    (function () {
+      var form = document.getElementById('self-test-form');
+      var testOut = document.getElementById('self-test-result');
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var vals = ['q1', 'q2', 'q3'].map(function (n) {
+          var el = form.querySelector('input[name="' + n + '"]:checked');
+          return el ? el.value : null;
+        });
+        if (vals.some(function (v) { return !v; })) {
+          testOut.textContent = 'Answer all three questions first.';
+          return;
+        }
+        var yes = vals.filter(function (v) { return v === 'yes'; }).length;
+        if (yes === 3) {
+          testOut.innerHTML = '<strong>Verdict · Frontier Man.</strong> You lean toward external migration and exploration. Keep SuperAI Goldilocks — not too much machine, not too little human. Play on.';
+        } else if (yes === 0) {
+          testOut.innerHTML = '<strong>Verdict · Nester.</strong> You lean toward internal nesting and stabilizing the base. The ship needs that gravity too.';
+        } else {
+          testOut.innerHTML = '<strong>Verdict · Mixed trail.</strong> ' + yes + ' of 3 frontier marks. Many guests live on the seam between Basecamp and the outer horizon — both belong.';
+        }
+      });
+
+      var pole = null;
+      var layer = null;
+      var whereOut = document.getElementById('where-result');
+      var labels = {
+        basecamp: 'Basecamp (carbon-protein grounding)',
+        outer: 'Goldilocks Earth / SS Vibelandia (outer frontier)',
+        horizon: 'Outer holographic narrative horizon',
+        syntheverse: 'Syntheverse nested worlds',
+        mainer: 'Base Mainer physical shelf',
+        cloud: 'Internet cloud rails'
+      };
+
+      function paintWhere() {
+        document.querySelectorAll('#nest-map span').forEach(function (el) {
+          el.classList.toggle('is-on', layer && el.getAttribute('data-ring') === layer);
+        });
+        if (!pole || !layer) {
+          whereOut.textContent = 'Pick a pole and a layer to pin your token.';
+          return;
+        }
+        whereOut.innerHTML = '<strong>You are here:</strong> ' + labels[pole] + ' · ' + labels[layer] +
+          '. Keep your token moving under Φ ≈ 1.618 as design language — then act one Goldilocks move today.';
+      }
+
+      document.getElementById('pole-grid').addEventListener('click', function (ev) {
+        var btn = ev.target.closest('[data-pole]');
+        if (!btn) return;
+        pole = btn.getAttribute('data-pole');
+        document.querySelectorAll('#pole-grid .card-btn').forEach(function (b) {
+          b.classList.toggle('is-on', b === btn);
+        });
+        paintWhere();
+      });
+      document.getElementById('layer-grid').addEventListener('click', function (ev) {
+        var btn = ev.target.closest('[data-layer]');
+        if (!btn) return;
+        layer = btn.getAttribute('data-layer');
+        document.querySelectorAll('#layer-grid .card-btn').forEach(function (b) {
+          b.classList.toggle('is-on', b === btn);
+        });
+        paintWhere();
+      });
+    })();
+  </script>
+  <script src="/interfaces/i18n-auto.js" data-page="surface"></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-04T21:35:09.792Z",
+  "updatedAt": "2026-09-05T04:58:00.319Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-what-it-means-to-be-frontier-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-05T04:58:00.319Z",
+      "body": "What It Means to Be Frontier: The Modern Holographic Trail",
+      "presenceHue": "gold",
+      "paperId": "synthobs-what-it-means-to-be-frontier-2026-09",
+      "artifact": {
+        "title": "What It Means to Be Frontier: The Modern Holographic Trail",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_WHAT_IT_MEANS_TO_BE_FRONTIER_HOLOGRAPHIC_TRAIL_2026-09.md",
+        "url": "/frontier",
+        "paperId": "synthobs-what-it-means-to-be-frontier-2026-09",
+        "docId": "WP-SYNTHOBS-WHAT-IT-MEANS-TO-BE-FRONTIER-2026-09-05",
+        "published": "2026-09-05",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-infinite-octave-prime-parity-2026-09",
       "type": "ArtifactEvent",

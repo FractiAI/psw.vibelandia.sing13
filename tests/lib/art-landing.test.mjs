@@ -48,7 +48,9 @@ describe('Art landing · Omniversal Canvas is site root', () => {
     expect(html).toContain('Valet Pru · XY Human Reality Bridge/Router · Player 1');
     expect(html).not.toContain('Valet Pru · Human Bridge/Router');
     expect(html).toContain('Executive Papers');
-    expect(html).toContain('/ship-blog/infinite-octave-prime-parity');
+    expect(html).toContain('/ship-blog/pdvsa-gateway-ops-mockup');
+    expect(html).toContain('/ship-blog/lattice-vs-vibe-coding');
+    expect(html).toContain('href="/frontier"');
     expect(html).toContain('href="/core"');
     expect(html).toContain('core-player');
     expect(html).toContain('>Player</figcaption>');

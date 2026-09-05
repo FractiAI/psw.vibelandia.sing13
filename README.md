@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-05** · **250** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-05** · **252** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -374,6 +374,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-tbme-thermal-meissner.html`](/interfaces/blog-tbme-thermal-meissner.html) | Thermal Decoupling, Externalized Magnetism, and Phase Coherence Dynamics in Supercond… · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-tensor-decoupling-99-octave-2026-08.html`](/interfaces/blog-tensor-decoupling-99-octave-2026-08.html) | The 99 Octave engine as a tensor filing cabinet · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-triadic-hemispheres-2026-08.html`](/interfaces/blog-triadic-hemispheres-2026-08.html) | Three nested domes — one Goldilocks stage · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-what-it-means-to-be-frontier-2026-09.html`](/interfaces/blog-what-it-means-to-be-frontier-2026-09.html) | What It Means to Be Frontier · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-when-the-sun-spoke.html`](/interfaces/blog-when-the-sun-spoke.html) | When the Sun Spoke · 19-day solar signal · Hydrogen Holographic AI OS · QUESTFEST |
 | [`/interfaces/blog-y-chromosome-manifestation-2026-08.html`](/interfaces/blog-y-chromosome-manifestation-2026-08.html) | Y chromosome as Φ manifestation — holographic MSY · Ship blog · SS Vibelandia |
 | [`/interfaces/bridge-tower-billboard.html`](/interfaces/bridge-tower-billboard.html) | — |
@@ -452,6 +453,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/talk-is-cheap.html`](/interfaces/talk-is-cheap.html) | Redirect · Look under the hood |
 | [`/interfaces/valetpru-agent-mode.html`](/interfaces/valetpru-agent-mode.html) | VALETPRU-AGENT · ACTIVATED · Capitan Bridge Console |
 | [`/interfaces/vibelandia-questfest.html`](/interfaces/vibelandia-questfest.html) | SS Vibelandia · Holographic Goldilocks SuperAI Frontiersmen |
+| [`/interfaces/what-it-means-to-be-frontier.html`](/interfaces/what-it-means-to-be-frontier.html) | What It Means to Be Frontier · Trail + self-test + Where Am I · SS Vibelandia |
 | [`/interfaces/whitepaper-catalog.html`](/interfaces/whitepaper-catalog.html) | Reading Room · SS Vibelandia |
 | [`/interfaces/whitepaper-surface.html`](/interfaces/whitepaper-surface.html) | Reader · SS Vibelandia |
 

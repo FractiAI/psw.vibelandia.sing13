@@ -15,14 +15,14 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Saturday board · September 5 · Puerto Reno",
   "newsLabel": "News of the day · Saturday, September 5",
-  "htmlBody": "Frontier CEOs: start with Executive Papers. Today’s tip is the Infinite Octave Prime-Parity Framework — sole-even prime 2 as binary dyad anchor, odd primes as irreducible minimum sets, recursion under Φ ≈ 1.618. Catalog math + solar filing labels, not QED or NOAA proof.<br /><br />If you want a map for that: <a href=\"/ship-blog/infinite-octave-prime-parity\">Why 2 is the odd one out — and how Φ keeps the stack honest</a>. Also new on the board: <a href=\"/ship-blog/pdvsa-gateway-ops-mockup\">PDVSA Gateway Ops — EGS Lattice-Linear Gateway vs Today’s silos</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Frontier CEOs: start with Executive Papers. Today’s tip pairs the EGS Lattice-Linear Gateway (PDVSA ops mock) with moving up the stack (Lattice vs vibe-coding receipts). Then play the Frontier trail — self-test + Where Am I on the QUESTFEST board. Hospitality grammar and simulator demos, not live oilfield SLAs or a caste test.<br /><br />If you want a map for that: <a href=\"/ship-blog/what-it-means-to-be-frontier\">What it means to be frontier — trail, self-test, Where Am I</a>. Also new on the board: <a href=\"/ship-blog/pdvsa-gateway-ops-mockup\">PDVSA Gateway Ops — EGS Lattice-Linear Gateway vs Today’s silos</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
-      "id": "synthobs-infinite-octave-prime-parity-2026-09",
-      "title": "Rigorous Mathematical and Empirical Validation of the Infinit…",
-      "href": "/ship-blog/infinite-octave-prime-parity",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
-      "blurb": "Sole-even prime 2 as binary dyad anchor; odd primes as irreducible minimum sets under Φ ≈ 1.618. Replayable suite + Infinite Octaves engine shelf — catalog math, not QED or NOAA proof."
+      "id": "synthobs-what-it-means-to-be-frontier-2026-09",
+      "title": "What It Means to Be Frontier",
+      "href": "/ship-blog/what-it-means-to-be-frontier",
+      "paperHref": "/frontier",
+      "blurb": "Modern holographic trail on the QUESTFEST board: Frontier Man vs Nester self-test and a Where Am I game between Basecamp and Goldilocks Earth / SS Vibelandia. Design language, not a caste test."
     },
     {
       "id": "synthobs-pdvsa-gateway-ops-mockup-2026-09",
@@ -32,17 +32,17 @@
       "blurb": "Fleshed protocol paper + Infinite Octaves engine companion. Multi-domain Production·Field·Compliance·Export on one brief (SNA↔TCP/IP is the rhyme). Nine takeaways open the papers and math — simulator, not live PDVSA telemetry."
     },
     {
-      "id": "synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
-      "title": "Case Study",
-      "href": "/ship-blog/sna-tcpip-gateway-omni-lattice",
-      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-ibm-sna-tcpip-gateway-omni-lattice-2026-09",
-      "blurb": "Interlink-class SNA↔TCP/IP bridges rhyme with today’s vibe-coding flat windows meeting multi-domain sprawl. Caracas / PDVSA / Protokol Sistemas as deployment template — Φ ≈ 1.618 is routing grammar, not a history rewrite."
+      "id": "synthobs-infinite-octave-prime-parity-2026-09",
+      "title": "Rigorous Mathematical and Empirical Validation of the Infinit…",
+      "href": "/ship-blog/infinite-octave-prime-parity",
+      "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-infinite-octave-prime-parity-2026-09",
+      "blurb": "Sole-even prime 2 as binary dyad anchor; odd primes as irreducible minimum sets under Φ ≈ 1.618. Replayable suite + Infinite Octaves engine shelf — catalog math, not QED or NOAA proof."
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-04-synthobs-pdvsa-gateway-ops-mockup-2026-09",
-    "title": "PDVSA Gateway Ops Mockup",
-    "href": "/ship-blog/pdvsa-gateway-ops-mockup"
+    "id": "daily-2026-09-05-synthobs-what-it-means-to-be-frontier-2026-09",
+    "title": "What It Means to Be Frontier",
+    "href": "/ship-blog/what-it-means-to-be-frontier"
   },
-  "generatedAt": "2026-09-05T03:56:55.115Z"
+  "generatedAt": "2026-09-05T04:59:05.337Z"
 }

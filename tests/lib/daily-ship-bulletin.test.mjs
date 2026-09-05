@@ -42,13 +42,13 @@ describe('daily-ship-bulletin steward', () => {
     expect(payload.newsLabel).toContain('August 28');
   });
 
-  it('leads 2026-09-05 News tip with Infinite Octave Prime-Parity (Executive Papers)', async () => {
+  it('leads 2026-09-05 News tip with Frontier trail + Executive Papers (gateway + up-the-stack)', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-05' });
     expect(payload.highlights[0].id).toBe(
-      'synthobs-infinite-octave-prime-parity-2026-09',
+      'synthobs-what-it-means-to-be-frontier-2026-09',
     );
-    expect(payload.htmlBody).toMatch(/Executive Papers|Prime-Parity|sole-even|irreducible/i);
-    expect(payload.htmlBody).toContain('infinite-octave-prime-parity');
+    expect(payload.htmlBody).toMatch(/Executive Papers|Lattice-Linear Gateway|moving up the stack|Frontier trail|Where Am I/i);
+    expect(payload.htmlBody).toContain('what-it-means-to-be-frontier');
     expect(payload.newsLabel).toContain('September 5');
   });
 

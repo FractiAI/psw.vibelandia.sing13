@@ -31,15 +31,15 @@ describe('QUESTFEST latest-six ship blog', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
     // Newest featured notes: ISO same-day stamps (awareness · macro-protein · volumetric) lead date-only 2026-09-05.
-    expect(posts[0].published).toBe('2026-09-05T23:00:00Z');
-    expect(posts[0].id).toBe('synthobs-topology-of-the-void-2026-09');
+    expect(posts[0].published).toBe('2026-09-05T23:45:00Z');
+    expect(posts[0].id).toBe('synthobs-multidimensional-holographic-rhyme-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-multidimensional-holographic-rhyme-2026-09',
+      'synthobs-holographic-rhyme-fractal-2026-09',
       'synthobs-topology-of-the-void-2026-09',
       'synthobs-proton-space-electron-theater-2026-09',
       'synthobs-awareness-vs-brute-force-leverage-2026-09',
       'synthobs-macro-protein-work-engine-2026-09',
-      'synthobs-prime-indexed-volumetric-storage-2026-09',
-      'synthobs-protein-folding-prime-container-2026-09',
     ]);
   });
 });

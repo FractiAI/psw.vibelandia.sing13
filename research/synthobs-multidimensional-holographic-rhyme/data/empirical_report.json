@@ -1,0 +1,121 @@
+{
+  "schema": "synthobs-empirical-report/v1",
+  "docId": "WP-SYNTHOBS-MULTIDIMENSIONAL-HOLOGRAPHIC-RHYME-EGS-2026-09-05",
+  "registryId": "synthobs-multidimensional-holographic-rhyme-2026-09",
+  "title": "Multi-Dimensional Holographic Rhyme · xD±yD Cross-Scale Summation — Catalog Suite",
+  "generatedAt": "2026-09-05T22:57:42.452Z",
+  "operator": "SynthOBS Autonomous Agent · Syntheverse Sandbox",
+  "honestyBoundary": "Catalog / algebraic fixtures for Infinite Octave multi-dimensional holographic rhyme (xD±yD cross-scale summation). Does not claim AdS/CFT falsification, measured zero-loss holographic crystals, infinite information-density proofs, NOAA causation, or shipping non-local sensor grids.",
+  "results": {
+    "experiments": [
+      {
+        "id": "E1_phi_egs",
+        "title": "Φ_EGS fixture",
+        "PHI_EGS": 1.618033988749895,
+        "expected": 1.618033988749895,
+        "pass": true,
+        "interpretation": "Architectural golden key for xD±yD holographic recursion.",
+        "honesty": "Not a replacement for ℏ, c, or G."
+      },
+      {
+        "id": "E2_phi_squared_identity",
+        "title": "Φ² = Φ + 1",
+        "lhs": 2.618033988749895,
+        "rhs": 2.618033988749895,
+        "pass": true,
+        "interpretation": "Golden-key identity closing multi-D scale ladders.",
+        "honesty": "Algebra of Φ — replayable fixture."
+      },
+      {
+        "id": "E3_cross_scale_stack",
+        "title": "Cross-scale stack synthesizes finite layers across ±yD",
+        "nLayers": 5,
+        "pass": true,
+        "interpretation": "xD±yD summation engine produces finite encode matrices.",
+        "honesty": "Catalog encode fixture — not holographic crystal hardware."
+      },
+      {
+        "id": "E4_bidirectional_offsets",
+        "title": "Offsets span −yD … 0 … +yD (bidirectional encoding)",
+        "offsets": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "pass": true,
+        "interpretation": "Above-and-below encoding as catalog filing.",
+        "honesty": "Index span lock — not measured non-local sensors."
+      },
+      {
+        "id": "E5_projection_invariant",
+        "title": "Cross-scale projection partial sum is finite and positive",
+        "N": 12,
+        "acc": 1749.7362801832223,
+        "pass": true,
+        "interpretation": "Π-style invariant sketch converges in algebraic fixture.",
+        "honesty": "Truncated series — not AdS/CFT QED."
+      },
+      {
+        "id": "E6_noise_ratio_framing",
+        "title": "Noise-ratio proxy shrinks under prime × Φ product (catalog)",
+        "prod": 6.259659086556455e-15,
+        "pass": true,
+        "interpretation": "𝒩→0 framing via prime-indexed orthogonality talk.",
+        "honesty": "Toy product — not measured crosstalk floors."
+      },
+      {
+        "id": "E7_solar_characters",
+        "title": "AR3664 Helios-Prime · AR3590 Borealis catalog lock",
+        "SOLAR_CHARACTERS": {
+          "heliosPrime": {
+            "ar": "AR3664",
+            "alias": "Helios-Prime",
+            "role": "macro_yD_above_filing"
+          },
+          "borealis": {
+            "ar": "AR3590",
+            "alias": "Borealis",
+            "role": "micro_yD_below_filing"
+          }
+        },
+        "pass": true,
+        "interpretation": "Macro/micro yD filing labels for Φ-recursive narrative.",
+        "honesty": "Not astronomy proof of holography."
+      },
+      {
+        "id": "E8_paper_blog_locks",
+        "title": "Paper + ship-blog honesty / Fair Exchange / xD±yD locks",
+        "paperPath": "/workspace/docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md",
+        "blogPath": "/workspace/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html",
+        "hasHonesty": true,
+        "hasDocId": true,
+        "hasFair": true,
+        "hasPhi": true,
+        "hasXdYd": true,
+        "hasAdsContrast": true,
+        "hasOperator": true,
+        "blogExists": true,
+        "blogSlug": true,
+        "blogHonesty": true,
+        "pass": true,
+        "interpretation": "Surfaces must carry catalog framing + xD±yD, not QG overclaim.",
+        "honesty": "Structural text locks — not physics validation."
+      },
+      {
+        "id": "E9_registry_id",
+        "title": "Registry id + engine shelf fixture",
+        "REGISTRY_ID": "synthobs-multidimensional-holographic-rhyme-2026-09",
+        "DOC_ID": "WP-SYNTHOBS-MULTIDIMENSIONAL-HOLOGRAPHIC-RHYME-EGS-2026-09-05",
+        "pass": true,
+        "interpretation": "Canonical registry id for Infinite Octaves engine pin #19.",
+        "honesty": "Naming lock."
+      }
+    ],
+    "n_pass": 9,
+    "n_total": 9,
+    "all_pass": true,
+    "failed": []
+  }
+}

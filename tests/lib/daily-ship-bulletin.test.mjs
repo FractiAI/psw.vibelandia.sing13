@@ -45,13 +45,13 @@ describe('daily-ship-bulletin steward', () => {
   it('leads 2026-09-05 with newest three ship notes (ISO timestamps count as same day)', async () => {
     const payload = await buildDailyShipBulletin({ date: '2026-09-05' });
     expect(payload.highlights.map((h) => h.id)).toEqual([
+      'synthobs-multidimensional-holographic-rhyme-2026-09',
+      'synthobs-holographic-rhyme-fractal-2026-09',
       'synthobs-topology-of-the-void-2026-09',
-      'synthobs-proton-space-electron-theater-2026-09',
-      'synthobs-awareness-vs-brute-force-leverage-2026-09',
     ]);
-    expect(payload.highlights[0].href).toBe('/ship-blog/topology-of-the-void');
+    expect(payload.highlights[0].href).toBe('/ship-blog/multidimensional-holographic-rhyme');
     expect(payload.htmlBody).toMatch(/awareness|brute-force|Φ|AlphaFold/i);
-    expect(payload.htmlBody).toContain('topology-of-the-void');
+    expect(payload.htmlBody).toContain('multidimensional-holographic-rhyme');
     expect(payload.newsLabel).toContain('September 5');
   });
 

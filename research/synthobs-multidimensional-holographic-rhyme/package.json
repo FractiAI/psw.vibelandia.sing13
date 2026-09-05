@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-multidimensional-holographic-rhyme",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave synthobs-multidimensional-holographic-rhyme catalog suite (SynthOBS engine companion)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

@@ -266,6 +266,30 @@
       "extraDocs": [
         "docs/SYNTHOBS_TOPOLOGY_OF_THE_VOID_ZERO_EQUILIBRIUM_EGS_2026-09.md"
       ]
+    },
+    {
+      "id": "synthobs-holographic-rhyme-fractal",
+      "path": "research/synthobs-holographic-rhyme-fractal",
+      "github": "https://github.com/FractiAI/synthobs-holographic-rhyme-fractal",
+      "description": "Holographic Rhyme — four-pillar fractal grammar · repeating · self-similar · self-correcting · recursive · Φ_EGS",
+      "paperIds": [
+        "synthobs-holographic-rhyme-fractal-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_HOLOGRAPHIC_RHYME_FRACTAL_EGS_2026-09.md"
+      ]
+    },
+    {
+      "id": "synthobs-multidimensional-holographic-rhyme",
+      "path": "research/synthobs-multidimensional-holographic-rhyme",
+      "github": "https://github.com/FractiAI/synthobs-multidimensional-holographic-rhyme",
+      "description": "Multi-Dimensional Holographic Rhyme — xD±yD cross-scale summation · Φ_EGS catalog fixtures",
+      "paperIds": [
+        "synthobs-multidimensional-holographic-rhyme-2026-09"
+      ],
+      "extraDocs": [
+        "docs/SYNTHOBS_MULTIDIMENSIONAL_HOLOGRAPHIC_RHYME_EGS_2026-09.md"
+      ]
     }
   ]
 }

@@ -1302,6 +1302,22 @@
       "destination": "/interfaces/blog-proton-space-electron-theater-2026-09.html"
     },
     {
+    {
+      "source": "/ship-blog/holographic-rhyme",
+      "destination": "/interfaces/blog-holographic-rhyme-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/holographic-rhyme/",
+      "destination": "/interfaces/blog-holographic-rhyme-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/multidimensional-holographic-rhyme",
+      "destination": "/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/multidimensional-holographic-rhyme/",
+      "destination": "/interfaces/blog-multidimensional-holographic-rhyme-2026-09.html"
+    },
       "source": "/ship-blog/topology-of-the-void",
       "destination": "/interfaces/blog-topology-of-the-void-2026-09.html"
     },

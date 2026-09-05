@@ -181,7 +181,13 @@
     "publish:standalone:proton-space-electron-theater": "node scripts/publish-standalone-suite.mjs synthobs-proton-space-electron-theater",
     "publish:standalone:proton-space-electron-theater:create": "node scripts/publish-standalone-suite.mjs synthobs-proton-space-electron-theater --create-repo",
     "publish:standalone:topology-of-the-void": "node scripts/publish-standalone-suite.mjs synthobs-topology-of-the-void",
-    "publish:standalone:topology-of-the-void:create": "node scripts/publish-standalone-suite.mjs synthobs-topology-of-the-void --create-repo"
+    "publish:standalone:topology-of-the-void:create": "node scripts/publish-standalone-suite.mjs synthobs-topology-of-the-void --create-repo",
+    "research:synthobs-holographic-rhyme-fractal": "node research/synthobs-holographic-rhyme-fractal/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-multidimensional-holographic-rhyme": "node research/synthobs-multidimensional-holographic-rhyme/scripts/run_empirical_pipeline.mjs",
+    "publish:standalone:holographic-rhyme": "node scripts/publish-standalone-suite.mjs synthobs-holographic-rhyme-fractal",
+    "publish:standalone:holographic-rhyme:create": "node scripts/publish-standalone-suite.mjs synthobs-holographic-rhyme-fractal --create-repo",
+    "publish:standalone:multidimensional-holographic-rhyme": "node scripts/publish-standalone-suite.mjs synthobs-multidimensional-holographic-rhyme",
+    "publish:standalone:multidimensional-holographic-rhyme:create": "node scripts/publish-standalone-suite.mjs synthobs-multidimensional-holographic-rhyme --create-repo"
   },
   "dependencies": {
     "@cursor/sdk": "^1.0.24",

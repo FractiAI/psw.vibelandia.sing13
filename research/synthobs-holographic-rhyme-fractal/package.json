@@ -1,0 +1,10 @@
+{
+  "name": "synthobs-holographic-rhyme-fractal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Infinite Octave synthobs-holographic-rhyme-fractal catalog suite (SynthOBS engine companion)",
+  "scripts": {
+    "research": "node scripts/run_empirical_pipeline.mjs"
+  }
+}

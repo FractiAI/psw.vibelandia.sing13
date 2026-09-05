@@ -40,6 +40,14 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
       (e) => e.registryId === 'synthobs-topology-of-the-void-2026-09',
     );
     expect(voidNode?.order).toBe(17);
+    const holo = shelf.find(
+      (e) => e.registryId === 'synthobs-holographic-rhyme-fractal-2026-09',
+    );
+    expect(holo?.order).toBe(18);
+    const multi = shelf.find(
+      (e) => e.registryId === 'synthobs-multidimensional-holographic-rhyme-2026-09',
+    );
+    expect(multi?.order).toBe(19);
     const proton = shelf.find(
       (e) => e.registryId === 'synthobs-proton-space-electron-theater-2026-09',
     );
@@ -57,6 +65,8 @@ describe('Infinite Octave engine shelf · Lattice Chat PEM', () => {
     expect(directive).toContain('Prime-indexed volumetric storage companion');
     expect(directive).toContain('Proton Space · Electron Theater duality companion');
     expect(directive).toContain('Topology of the Void companion');
+    expect(directive).toContain('Holographic rhyme companion');
+    expect(directive).toContain('Multi-dimensional holographic rhyme companion');
     expect(directive).toContain('Moving up the stack companion');
     expect(renderNarrativePointersClause()).toContain('Official Prospectus');
     expect(renderNarrativePointersClause()).toContain(

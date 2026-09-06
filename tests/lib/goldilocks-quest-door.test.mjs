@@ -12,7 +12,7 @@ function read(rel) {
   return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-describe('Goldilocks Quest · next-gen door rollout', () => {
+describe('Goldilocks Quest · full-gen door rollout', () => {
   it('ships door HTML, client, CSS, API, and special-projects alias', () => {
     expect(existsSync(join(ROOT, 'interfaces/goldilocks-quest.html'))).toBe(true);
     expect(existsSync(join(ROOT, 'interfaces/goldilocks-quest-client.js'))).toBe(true);
@@ -23,14 +23,19 @@ describe('Goldilocks Quest · next-gen door rollout', () => {
     expect(html).toContain('goldilocks-quest-client.js');
     expect(html).toContain('gq-gate-form');
     expect(html).toContain('id="gq-canvas"');
-    expect(html).toContain('Next-Gen');
+    expect(html).toContain('Full Gen');
+    expect(html).toContain('full-gen-v3');
     expect(html).toContain('gq-presence');
     expect(html).toContain('gq-cinematic');
     const client = read('interfaces/goldilocks-quest-client.js');
     expect(client).toContain("action: 'presence'");
     expect(client).toContain('pulsePresence');
+    expect(client).toContain('full-gen-v3');
+    expect(client).toContain('stream=1');
+    expect(client).toContain('scarlet-mercy');
+    expect(client).toContain('goldilocks.quest.email.v3');
     const api = read('api/goldilocks-quest.js');
-    expect(api).toContain('next-gen-v2');
+    expect(api).toContain('full-gen');
     expect(api).toContain('presenceCount');
     expect(api).toContain('equip-goggles');
   });

@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-PRIME-VAULT-ALPHAFOLD-RACE-EGS-2026-09-06`
 **Registry ID:** `synthobs-prime-vault-alphafold-race-2026-09`
-**Generated:** 2026-09-06T08:13:26.203Z
+**Generated:** 2026-09-06T08:14:02.916Z
 
 ## Verdict
 
@@ -87,7 +87,7 @@
       "octave": 1,
       "primes": 76,
       "energy": 0.19776231829567956,
-      "latencyMs": 0.18818800000000024,
+      "latencyMs": 0.13304899999999975,
       "live": true
     },
     "colabfold": {
@@ -144,7 +144,7 @@
       "octave": 2,
       "primes": 264,
       "energy": 0.3199861526963848,
-      "latencyMs": 0.7834059999999994,
+      "latencyMs": 0.7412519999999994,
       "live": true
     },
     "colabfold": {
@@ -201,7 +201,7 @@
       "octave": 3,
       "primes": 89,
       "energy": 0.5177484709920639,
-      "latencyMs": 0.06852800000000059,
+      "latencyMs": 0.06584299999999743,
       "live": true
     },
     "colabfold": {

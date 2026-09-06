@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a1628" />
+  <title>Prime-Vault Race · SS Vibelandia</title>
+  <meta name="description" content="Guest door: race Infinite Octave prime vaults against measured ColabFold on three protein tiers. Same email seat as Let's Chat and Lattice Chat." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/special-projects/prime-vault-alphafold-race" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/prime-vault-race.css" />
+</head>
+<body class="pvr-body">
+  <nav class="qv-top-quicklinks pvr-site-nav" aria-label="Site">
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--primary">
+      <a href="/questfest">SS Vibelandia</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="qv-top-quicklinks__here">Prime-Vault Race · special project</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/ship-blog/prime-vault-alphafold-race">Results blog</a>
+    </div>
+  </nav>
+
+  <main class="pvr-app" id="pvr-app">
+    <section class="pvr-gate" id="pvr-gate" aria-labelledby="pvr-gate-h">
+      <p class="pvr-brand">SS Vibelandia · Deck 2 Core</p>
+      <h1 id="pvr-gate-h">Prime-Vault Race</h1>
+      <p class="pvr-gate__lead">Race Infinite Octave prime vaults against measured ColabFold on three tiers. Registered guests only — same email as Let’s Chat and Lattice Chat.</p>
+      <form id="pvr-gate-form" class="pvr-gate__form">
+        <label for="pvr-email">Email</label>
+        <input id="pvr-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+        <button type="submit" class="pvr-btn">Come aboard · race</button>
+      </form>
+      <p class="pvr-gate__hint">No seat yet? <a href="mailto:valetpru@gmail.com?subject=Prime-Vault%20Race%20guest%20seat">Email the Purser</a> · same grant as Lattice / Let’s Chat</p>
+      <p class="pvr-gate__err" id="pvr-gate-err" hidden></p>
+    </section>
+
+    <section class="pvr-arena" id="pvr-arena" hidden aria-label="Race arena">
+      <header class="pvr-arena__head">
+        <div>
+          <p class="pvr-brand">Prime-Vault Race · live door</p>
+          <h2>Three tiers · one scoreboard</h2>
+          <p class="pvr-you" id="pvr-me-label">You</p>
+        </div>
+        <button type="button" class="pvr-btn pvr-btn--ghost" id="pvr-signout">Sign out</button>
+      </header>
+
+      <p class="pvr-honesty" id="pvr-honesty">
+        Honesty first: vaults run live closed-form Φ folds here. ColabFold times/pLDDT are from the measured host receipt (CPU · single_sequence · 1 model). Latency ≠ GDT-TS / CASP medals. Fair Exchange on.
+      </p>
+
+      <div class="pvr-tiers" id="pvr-tiers" role="list"></div>
+
+      <div class="pvr-track" id="pvr-track" hidden aria-live="polite">
+        <h3 id="pvr-track-title">Racing…</h3>
+        <div class="pvr-lane">
+          <span class="pvr-lane__label">Prime-Vault</span>
+          <div class="pvr-lane__bar"><i id="pvr-bar-vault"></i></div>
+          <span class="pvr-lane__time" id="pvr-time-vault">—</span>
+        </div>
+        <div class="pvr-lane">
+          <span class="pvr-lane__label">ColabFold</span>
+          <div class="pvr-lane__bar"><i id="pvr-bar-cf"></i></div>
+          <span class="pvr-lane__time" id="pvr-time-cf">—</span>
+        </div>
+        <p class="pvr-result" id="pvr-result"></p>
+      </div>
+
+      <p class="pvr-foot">
+        <a href="/ship-blog/prime-vault-alphafold-race">Ship-blog scoreboard</a>
+        · <a href="/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-alphafold-race-2026-09">Full race report</a>
+        · <a href="/lets-chat">Let’s Chat</a>
+        · <a href="/lattice-chat/">Lattice Chat</a>
+      </p>
+    </section>
+  </main>
+
+  <script src="/interfaces/prime-vault-race-client.js" defer></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

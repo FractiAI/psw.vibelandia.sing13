@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-06** · **263** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-06** · **267** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -318,6 +318,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html) | Prime-Indexed Volumetric Storage · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-vault-alphafold-race-2026-09.html`](/interfaces/blog-prime-vault-alphafold-race-2026-09.html) | Prime-Vault vs ColabFold — race results · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-prime-vault-race-door-2026-09.html`](/interfaces/blog-prime-vault-race-door-2026-09.html) | Prime-Vault Race door is open · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-protein-folding-prime-container-2026-09.html`](/interfaces/blog-protein-folding-prime-container-2026-09.html) | Protein Folding · Prime-Container Architecture · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Φ Duality · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · SS Vibelandia |
@@ -447,6 +448,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html`](/interfaces/press-release-syntheverse-king-bee-node-alignment-june-2026.html) | FOR IMMEDIATE RELEASE — Universal Checkmate Royal Flush · King Bee stratification |
 | [`/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html`](/interfaces/press-release-synthobs-chipless-datacenterless-june-2026.html) | FOR IMMEDIATE RELEASE — Chipless, Datacenterless AI · SynthOBS RSI validation |
 | [`/interfaces/press-releases.html`](/interfaces/press-releases.html) | Press releases · Hero Jo’s Golden Bachdoor Hit Factory · Vibelandia SING 9 |
+| [`/interfaces/prime-vault-race.html`](/interfaces/prime-vault-race.html) | Prime-Vault Race · SS Vibelandia |
 | [`/interfaces/questfest-2026-frontier-guide.html`](/interfaces/questfest-2026-frontier-guide.html) | Ship Map · SS VIBELANDIA QUESTFEST 24×365 |
 | [`/interfaces/questfest-schedule-item.html`](/interfaces/questfest-schedule-item.html) | QUESTFEST Schedule · SS Vibelandia |
 | [`/interfaces/reading-room-concert-program.html`](/interfaces/reading-room-concert-program.html) | Reading Room Concert Program · SS Vibelandia |
@@ -504,6 +506,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/journey/bridge-solar-watch.html`](/interfaces/journey/bridge-solar-watch.html) | Bridge · Proto & Electro Watch · Journey · SS Vibelandia |
 | [`/interfaces/journey/cartagena-spice-stone.html`](/interfaces/journey/cartagena-spice-stone.html) | Cartagena · Spice & Stone · Journey · SS Vibelandia |
 | [`/interfaces/journey/omniversal-canvas-walk.html`](/interfaces/journey/omniversal-canvas-walk.html) | Omniversal Canvas · Exhibit Walk · Journey · SS Vibelandia |
+| [`/interfaces/journey/prime-vault-race.html`](/interfaces/journey/prime-vault-race.html) | Prime-Vault Race · ColabFold Arena · Journey · SS Vibelandia |
 | [`/interfaces/journey/puerto-reno-gangway.html`](/interfaces/journey/puerto-reno-gangway.html) | Puerto Reno · Gangway Night · Journey · SS Vibelandia |
 | [`/interfaces/journey/redwood-sanctuary.html`](/interfaces/journey/redwood-sanctuary.html) | Redwood Sanctuary · Journey · SS Vibelandia |
 | [`/interfaces/journey/tahoe-catamaran.html`](/interfaces/journey/tahoe-catamaran.html) | Lake Tahoe · Catamaran Gold · Journey · SS Vibelandia |
@@ -556,6 +559,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/special-projects/erdos-holographic-aios-audit.html`](/interfaces/special-projects/erdos-holographic-aios-audit.html) | Erdős 353 · Holographic Goldilocks AIOS Audit · Syntheverse |
 | [`/interfaces/special-projects/geomagnetic-herbivore-study.html`](/interfaces/special-projects/geomagnetic-herbivore-study.html) | Geomagnetic Herbivore Study · Multi-Taxa Wavefield |
 | [`/interfaces/special-projects/pdvsa-gateway-ops.html`](/interfaces/special-projects/pdvsa-gateway-ops.html) | PDVSA Gateway Ops · EGS Lattice-Linear Gateway · SS Vibelandia |
+| [`/interfaces/special-projects/prime-vault-alphafold-race.html`](/interfaces/special-projects/prime-vault-alphafold-race.html) | Prime-Vault Race · SS Vibelandia |
 | [`/interfaces/special-projects/turner-bison-herd-management.html`](/interfaces/special-projects/turner-bison-herd-management.html) | Turner Enterprise · Rangeland herd intelligence |
 | [`/interfaces/special-projects/wavefield-echo-test.html`](/interfaces/special-projects/wavefield-echo-test.html) | Wavefield Echo Test · Plain-speak results |
 

@@ -208,6 +208,8 @@
     '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/lattice-chat" id="ql-lattice-chat-link">Lattice Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
+    '<a href="/prime-vault-race" id="ql-prime-vault-race-link">Prime-Vault Race</a>' +
+    '<span class="sep" aria-hidden="true">·</span>' +
     '<button type="button" class="qv-top-quicklinks__share" id="qf-share-qr-open" data-qv-share-qr>QR Share</button>';
 
   var path = window.location.pathname || '';

@@ -18,8 +18,8 @@ function read(rel) {
 }
 
 describe('Voyage journeys · adventures hub', () => {
-  it('defines nine curated adventures distinct from exhibit shells', () => {
-    expect(VOYAGE_JOURNEYS.length).toBe(9);
+  it('defines ten curated adventures distinct from exhibit shells', () => {
+    expect(VOYAGE_JOURNEYS.length).toBe(10);
     expect(VOYAGE_JOURNEY_INTRO).toContain('adventures we offer');
     expect(VOYAGE_JOURNEY_INTRO).not.toContain('deck SKUs');
     for (const j of VOYAGE_JOURNEYS) {

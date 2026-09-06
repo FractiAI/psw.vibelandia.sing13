@@ -589,6 +589,14 @@
       "destination": "/interfaces/questfest-bridge/#/listen"
     },
     {
+      "source": "/reading-room",
+      "destination": "/interfaces/reading-room.html"
+    },
+    {
+      "source": "/reading-room/",
+      "destination": "/interfaces/reading-room.html"
+    },
+    {
       "source": "/journey",
       "destination": "/interfaces/journeys.html"
     },
@@ -669,12 +677,12 @@
       "destination": "/interfaces/journey/omniversal-canvas-walk.html"
     },
     {
-      "source": "/reading-room",
-      "destination": "/interfaces/reading-room.html"
+      "source": "/journey/prime-vault-race",
+      "destination": "/interfaces/journey/prime-vault-race.html"
     },
     {
-      "source": "/reading-room/",
-      "destination": "/interfaces/reading-room.html"
+      "source": "/journey/prime-vault-race/",
+      "destination": "/interfaces/journey/prime-vault-race.html"
     },
     {
       "source": "/library",
@@ -1309,6 +1317,14 @@
       "destination": "/interfaces/blog-prime-vault-alphafold-race-2026-09.html"
     },
     {
+      "source": "/ship-blog/prime-vault-race-door",
+      "destination": "/interfaces/blog-prime-vault-race-door-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/prime-vault-race-door/",
+      "destination": "/interfaces/blog-prime-vault-race-door-2026-09.html"
+    },
+    {
       "source": "/ship-blog/sing-muse-omniversal-lattice",
       "destination": "/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html"
     },
@@ -1701,6 +1717,22 @@
       "destination": "/interfaces/harmonopoly.html"
     },
     {
+      "source": "/prime-vault-race",
+      "destination": "/interfaces/prime-vault-race.html"
+    },
+    {
+      "source": "/prime-vault-race/",
+      "destination": "/interfaces/prime-vault-race.html"
+    },
+    {
+      "source": "/race",
+      "destination": "/interfaces/prime-vault-race.html"
+    },
+    {
+      "source": "/race/",
+      "destination": "/interfaces/prime-vault-race.html"
+    },
+    {
       "source": "/harmonopoly-guide",
       "destination": "/interfaces/harmonopoly-guide.html"
     },
@@ -2049,6 +2081,14 @@
       "destination": "/interfaces/special-projects/pdvsa-gateway-ops.html"
     },
     {
+      "source": "/special-projects/prime-vault-alphafold-race",
+      "destination": "/interfaces/special-projects/prime-vault-alphafold-race.html"
+    },
+    {
+      "source": "/special-projects/prime-vault-alphafold-race/",
+      "destination": "/interfaces/special-projects/prime-vault-alphafold-race.html"
+    },
+    {
       "source": "/special-projects/turner-bison-herd-management",
       "destination": "/interfaces/special-projects/turner-bison-herd-management.html"
     },
@@ -2322,6 +2362,10 @@
     "api/lets-chat.js": {
       "maxDuration": 10,
       "includeFiles": "{lib/**,data/lattice-access.json}"
+    },
+    "api/prime-vault-race.js": {
+      "maxDuration": 30,
+      "includeFiles": "{lib/**,data/lattice-access.json,research/synthobs-prime-vault-alphafold-race/data/race_results.json}"
     }
   },
   "redirects": [

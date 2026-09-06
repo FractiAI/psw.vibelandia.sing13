@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-06T08:13:29.982Z",
+  "updatedAt": "2026-09-06T19:40:58.202Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-prime-vault-race-door-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-06T19:40:58.201Z",
+      "body": "Prime-Vault Race Door · Guest Rollout Announcement",
+      "presenceHue": "gold",
+      "paperId": "synthobs-prime-vault-race-door-2026-09",
+      "artifact": {
+        "title": "Prime-Vault Race Door · Guest Rollout Announcement",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_PRIME_VAULT_RACE_DOOR_GUEST_ANNOUNCEMENT_2026-09.md",
+        "url": "/whitepaper/prime-vault-race-door",
+        "paperId": "synthobs-prime-vault-race-door-2026-09",
+        "docId": "WP-SYNTHOBS-PRIME-VAULT-RACE-DOOR-2026-09-06",
+        "published": "2026-09-06T22:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-prime-vault-alphafold-race-2026-09",
       "type": "ArtifactEvent",

@@ -4,17 +4,30 @@
   "updated": "2026-09-06",
   "posts": [
     {
-      "id": "daily-2026-09-06-synthobs-prime-vault-alphafold-race-2026-09",
+      "id": "daily-2026-09-06-synthobs-prime-vault-race-door-2026-09",
       "posted": "2026-09-06",
       "featured": true,
-      "title": "Prime vaults vs ColabFold — the race results",
+      "title": "Prime-Vault Race door is open",
       "subtitle": "News of the day · Sunday, September 6",
-      "summary": "Measured on this host: ubiquitin 0.051 ms vs 24.7 s · IL-2 0.049 ms vs 154 s · orphan 0.014 ms vs 28.8 s (ColabFold 1.6.2 CPU · pLDDT ~48/41/31). Honesty first: latency race ≠ GDT-TS; not CASP medals. Fair Exchange tip clause on.",
-      "href": "/ship-blog/prime-vault-alphafold-race",
+      "summary": "Guest door live: race Φ prime vaults vs measured ColabFold on three tiers. Same email seat as Let’s Chat and Lattice Chat. Play at /prime-vault-race. Honesty first: latency ≠ CASP. Fair Exchange tip clause on.",
+      "href": "/ship-blog/prime-vault-race-door",
       "pill": "TODAY",
-      "docRef": "synthobs-prime-vault-alphafold-race-2026-09",
+      "docRef": "synthobs-prime-vault-race-door-2026-09",
       "contact": "info@fractiai.com",
       "steward": "daily-ship-bulletin"
+    },
+    {
+      "id": "announce-2026-09-06-prime-vault-race-door",
+      "posted": "2026-09-06",
+      "featured": true,
+      "title": "Prime-Vault Race door is open",
+      "subtitle": "Guest announcement · Sunday, September 6",
+      "summary": "Race Φ prime vaults vs measured ColabFold on three tiers. Same email seat as Let’s Chat and Lattice Chat. Play at /prime-vault-race. Honesty first: latency ≠ CASP. Fair Exchange tip clause on.",
+      "href": "/prime-vault-race",
+      "pill": "NEW",
+      "docRef": "synthobs-prime-vault-race-door-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "player-1-rollout"
     },
     {
       "id": "daily-2026-09-05-synthobs-awareness-vs-brute-force-leverage-2026-09",

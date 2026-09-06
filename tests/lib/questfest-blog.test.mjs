@@ -31,15 +31,15 @@ describe('QUESTFEST latest-six ship blog', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
     // Newest featured notes: Prime-Vault Race door announcement leads; then race results + Sing Muse + holographic companions.
-    expect(posts[0].published).toBe('2026-09-06T22:00:00Z');
-    expect(posts[0].id).toBe('synthobs-prime-vault-race-door-2026-09');
+    expect(posts[0].published).toBe('2026-09-06T23:30:00Z');
+    expect(posts[0].id).toBe('synthobs-goldilocks-quest-door-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-goldilocks-quest-door-2026-09',
       'synthobs-prime-vault-race-door-2026-09',
       'synthobs-prime-vault-alphafold-race-2026-09',
       'synthobs-sing-muse-omniversal-lattice-2026-09',
       'synthobs-multidimensional-holographic-rhyme-2026-09',
       'synthobs-holographic-rhyme-fractal-2026-09',
-      'synthobs-topology-of-the-void-2026-09',
     ]);
   });
 });

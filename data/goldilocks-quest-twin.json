@@ -1,0 +1,39 @@
+{
+  "schema": "goldilocks-quest-twin/v1",
+  "phi": 1.618033988749895,
+  "players": {
+    "valetpru@gmail.com": {
+      "email": "valetpru@gmail.com",
+      "status": "player",
+      "grace": 26,
+      "score": 200,
+      "tierMax": 3,
+      "trapsResisted": 1,
+      "demonsSurvived": 0,
+      "unselfishOffers": 1,
+      "gogglesUnlocked": true,
+      "gogglesEquipped": false,
+      "revelationSeen": false,
+      "updatedAt": "2026-09-06T20:22:47.979Z"
+    }
+  },
+  "leaderboard": [
+    {
+      "email": "v••u@gmail.com",
+      "status": "player",
+      "score": 200,
+      "grace": 26,
+      "tierMax": 3,
+      "goggles": true
+    }
+  ],
+  "bulletin": [
+    {
+      "at": "2026-09-06T20:22:47.978Z",
+      "headline": "AI Twin online · Goldilocks Quest door open",
+      "body": "NPCs cannot see the Goggles. Climb with grace. Timing Demons scale with Φ≈1.618."
+    }
+  ],
+  "demonEvents": 0,
+  "updatedAt": "2026-09-06T20:22:47.979Z"
+}

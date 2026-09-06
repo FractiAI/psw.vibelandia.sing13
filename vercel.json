@@ -685,6 +685,14 @@
       "destination": "/interfaces/journey/prime-vault-race.html"
     },
     {
+      "source": "/journey/goldilocks-quest",
+      "destination": "/interfaces/journey/goldilocks-quest.html"
+    },
+    {
+      "source": "/journey/goldilocks-quest/",
+      "destination": "/interfaces/journey/goldilocks-quest.html"
+    },
+    {
       "source": "/library",
       "destination": "/interfaces/reading-room.html"
     },
@@ -1717,6 +1725,38 @@
       "destination": "/interfaces/harmonopoly.html"
     },
     {
+      "source": "/goldilocks-quest",
+      "destination": "/interfaces/goldilocks-quest.html"
+    },
+    {
+      "source": "/goldilocks-quest/",
+      "destination": "/interfaces/goldilocks-quest.html"
+    },
+    {
+      "source": "/quest",
+      "destination": "/interfaces/goldilocks-quest.html"
+    },
+    {
+      "source": "/quest/",
+      "destination": "/interfaces/goldilocks-quest.html"
+    },
+    {
+      "source": "/special-projects/goldilocks-quest",
+      "destination": "/interfaces/special-projects/goldilocks-quest.html"
+    },
+    {
+      "source": "/special-projects/goldilocks-quest/",
+      "destination": "/interfaces/special-projects/goldilocks-quest.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-quest",
+      "destination": "/interfaces/blog-goldilocks-quest-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/goldilocks-quest/",
+      "destination": "/interfaces/blog-goldilocks-quest-2026-09.html"
+    },
+    {
       "source": "/prime-vault-race",
       "destination": "/interfaces/prime-vault-race.html"
     },
@@ -2366,6 +2406,10 @@
     "api/prime-vault-race.js": {
       "maxDuration": 30,
       "includeFiles": "{lib/**,data/lattice-access.json,research/synthobs-prime-vault-alphafold-race/data/race_results.json}"
+    },
+    "api/goldilocks-quest.js": {
+      "maxDuration": 30,
+      "includeFiles": "{lib/**,data/lattice-access.json,data/goldilocks-quest-twin.json}"
     }
   },
   "redirects": [

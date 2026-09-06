@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-06T19:40:58.202Z",
+  "updatedAt": "2026-09-06T20:24:37.617Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-goldilocks-quest-door-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-06T20:24:37.616Z",
+      "body": "Goldilocks Quest Door · Guest Rollout Announcement",
+      "presenceHue": "gold",
+      "paperId": "synthobs-goldilocks-quest-door-2026-09",
+      "artifact": {
+        "title": "Goldilocks Quest Door · Guest Rollout Announcement",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_GOLDILOCKS_QUEST_DOOR_ANNOUNCEMENT_2026-09.md",
+        "url": "/whitepaper/goldilocks-quest",
+        "paperId": "synthobs-goldilocks-quest-door-2026-09",
+        "docId": "WP-SYNTHOBS-GOLDILOCKS-QUEST-DOOR-2026-09-06",
+        "published": "2026-09-06T23:30:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-prime-vault-race-door-2026-09",
       "type": "ArtifactEvent",

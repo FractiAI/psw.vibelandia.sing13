@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0612" />
+  <title>Goldilocks Quest · SS Vibelandia</title>
+  <meta name="description" content="Climb five tiers of the Goldilocks Quest — Donkey Kong grit meets Oregon Trail grace. Same email seat as Let's Chat and Lattice Chat. Restricted Goggles for verified Players only." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/goldilocks-quest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/goldilocks-quest.css" />
+</head>
+<body class="gq-body">
+  <nav class="qv-top-quicklinks gq-site-nav" aria-label="Site">
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--primary">
+      <a href="/questfest">SS Vibelandia</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="qv-top-quicklinks__here">Goldilocks Quest</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/ship-blog/goldilocks-quest">Blog</a>
+    </div>
+  </nav>
+
+  <main class="gq-app" id="gq-app">
+    <section class="gq-gate" id="gq-gate" aria-labelledby="gq-gate-h">
+      <p class="gq-brand">SS Vibelandia · Deck 3 Night · Restricted Goggles Edition</p>
+      <h1 id="gq-gate-h">Goldilocks Quest</h1>
+      <p class="gq-lead">Five-tier climb. Timing Demons. Grace over greed. Enter as an NPC — earn Player Status from Player 1’s AI Twin. Same email as Let’s Chat and Lattice Chat.</p>
+      <form id="gq-gate-form" class="gq-form">
+        <label for="gq-email">Email</label>
+        <input id="gq-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+        <button type="submit" class="gq-btn">Come aboard · play</button>
+      </form>
+      <p class="gq-hint">No seat yet? <a href="mailto:valetpru@gmail.com?subject=Goldilocks%20Quest%20guest%20seat">Email the Purser</a></p>
+      <p class="gq-err" id="gq-gate-err" hidden></p>
+      <p class="gq-honesty">Honesty: arcade companion · Φ≈1.618 rhythm scalar · Twin state is ephemeral on this edge · not a prophecy engine. Fair Exchange on.</p>
+    </section>
+
+    <section class="gq-play" id="gq-play" hidden>
+      <header class="gq-hud">
+        <div>
+          <p class="gq-brand">Goldilocks Quest</p>
+          <p class="gq-you" id="gq-you">—</p>
+        </div>
+        <div class="gq-stats" aria-live="polite">
+          <span>Tier <strong id="gq-tier">1</strong></span>
+          <span>×<strong id="gq-mult">1</strong></span>
+          <span>Score <strong id="gq-score">0</strong></span>
+          <span>Grace <strong id="gq-grace">0</strong></span>
+          <span id="gq-status-pill" class="gq-pill">NPC</span>
+        </div>
+        <button type="button" class="gq-btn gq-btn--ghost" id="gq-signout">Sign out</button>
+      </header>
+
+      <div class="gq-play-grid">
+        <div class="gq-stage-wrap">
+          <canvas id="gq-canvas" width="360" height="640" aria-label="Goldilocks Quest playfield"></canvas>
+          <div class="gq-touch" aria-label="Touch controls">
+            <button type="button" id="gq-left" aria-label="Left">◀</button>
+            <button type="button" id="gq-jump" aria-label="Jump">▲</button>
+            <button type="button" id="gq-right" aria-label="Right">▶</button>
+            <button type="button" id="gq-act" aria-label="Act / Grace">Grace</button>
+          </div>
+        </div>
+
+        <aside class="gq-side">
+          <div class="gq-panel">
+            <h2>AI Twin Bulletin</h2>
+            <ul id="gq-bulletin" class="gq-list"></ul>
+          </div>
+          <div class="gq-panel">
+            <h2>Grace Leaderboard</h2>
+            <ol id="gq-board" class="gq-list gq-list--ol"></ol>
+          </div>
+          <div class="gq-actions">
+            <button type="button" class="gq-btn" id="gq-equip" disabled>Equip Goggles</button>
+            <button type="button" class="gq-btn gq-btn--ghost" id="gq-dispatch">Ask Twin for daily dispatch</button>
+          </div>
+          <p class="gq-msg" id="gq-msg" role="status"></p>
+          <p class="gq-keys">Keys: ← → · Space jump · G grace offer · E equip (when unlocked)</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="/interfaces/goldilocks-quest-client.js" defer></script>
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+</body>
+</html>

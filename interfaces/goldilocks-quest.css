@@ -1,0 +1,231 @@
+/* Goldilocks Quest · retro night arcade */
+:root {
+  --gq-bg: #0b0612;
+  --gq-ink: #f5e6c8;
+  --gq-muted: #a89b8c;
+  --gq-gold: #d4af37;
+  --gq-neon: #ff3d81;
+  --gq-cyan: #5eead4;
+  --gq-line: rgba(212, 175, 55, 0.28);
+}
+
+.gq-body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--gq-ink);
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  background:
+    radial-gradient(ellipse 80% 45% at 20% 0%, rgba(255, 61, 129, 0.18), transparent 55%),
+    radial-gradient(ellipse 70% 40% at 90% 90%, rgba(94, 234, 212, 0.1), transparent 50%),
+    linear-gradient(165deg, #08040e 0%, #12081a 50%, #0b0612 100%);
+}
+
+.gq-app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem 2.5rem;
+}
+
+.gq-brand {
+  margin: 0 0 0.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gq-gold);
+}
+
+.gq-gate h1 {
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(1.05rem, 4vw, 1.45rem);
+  line-height: 1.45;
+  color: var(--gq-gold);
+  margin: 0 0 0.85rem;
+}
+
+.gq-lead,
+.gq-honesty,
+.gq-hint,
+.gq-keys,
+.gq-msg {
+  color: var(--gq-muted);
+  line-height: 1.5;
+}
+
+.gq-honesty {
+  border-left: 3px solid var(--gq-gold);
+  padding-left: 0.75rem;
+  font-size: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.gq-form {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1.1rem 0;
+  max-width: 22rem;
+}
+
+.gq-form label {
+  font-size: 0.85rem;
+  color: var(--gq-gold);
+}
+
+.gq-form input {
+  font: inherit;
+  padding: 0.8rem 0.95rem;
+  border-radius: 8px;
+  border: 1px solid var(--gq-line);
+  background: rgba(8, 6, 14, 0.9);
+  color: var(--gq-ink);
+}
+
+.gq-btn {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.8rem 1.1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  color: #1a1008;
+}
+
+.gq-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.gq-btn--ghost {
+  background: transparent;
+  color: var(--gq-ink);
+  border: 1px solid var(--gq-line);
+}
+
+.gq-err {
+  color: #fca5a5;
+}
+
+.gq-hint a {
+  color: var(--gq-cyan);
+}
+
+.gq-hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.gq-you {
+  margin: 0;
+  color: var(--gq-cyan);
+  font-size: 0.9rem;
+}
+
+.gq-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+}
+
+.gq-pill {
+  background: rgba(255, 61, 129, 0.2);
+  border: 1px solid var(--gq-neon);
+  color: #fecdd3;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.gq-pill--player {
+  background: rgba(94, 234, 212, 0.15);
+  border-color: var(--gq-cyan);
+  color: var(--gq-cyan);
+}
+
+.gq-play-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.gq-stage-wrap {
+  background: #050308;
+  border: 1px solid var(--gq-line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(255, 61, 129, 0.12);
+}
+
+#gq-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.gq-touch {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.35rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.gq-touch button {
+  font: inherit;
+  font-weight: 700;
+  padding: 0.7rem 0.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--gq-line);
+  background: rgba(30, 16, 40, 0.9);
+  color: var(--gq-ink);
+}
+
+.gq-panel {
+  border: 1px solid var(--gq-line);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  background: rgba(12, 8, 18, 0.75);
+  margin-bottom: 0.75rem;
+}
+
+.gq-panel h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--gq-gold);
+}
+
+.gq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.82rem;
+  color: var(--gq-muted);
+}
+
+.gq-list li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gq-list--ol {
+  list-style: decimal;
+  padding-left: 1.2rem;
+}
+
+.gq-actions {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 820px) {
+  .gq-play-grid {
+    grid-template-columns: 1fr;
+  }
+}

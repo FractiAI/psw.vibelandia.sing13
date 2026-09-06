@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 const ORIGIN = 'https://www.ssvibelandiaquestfest24x365.com';
-const SECRET = process.env.CATALOG_UPLOAD_SECRET || 'valetpru1!';
+const SECRET = process.env.CATALOG_UPLOAD_SECRET;
+if (!SECRET) {
+  console.error('CATALOG_UPLOAD_SECRET is required (env-only credentials; no fallback).');
+  process.exit(1);
+}
 const id = 'trk-srv-c5f6a10a-cd5c-4fb1-9e58-0a0aa9c505dd';
 const mp3 = `https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/${id}.mp3`;
 const cover = `https://klep96o4e14lvmyd.public.blob.vercel-storage.com/catalog/covers/${id}.jpg`;

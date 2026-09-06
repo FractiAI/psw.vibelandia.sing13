@@ -4,7 +4,11 @@
  */
 const ORIGIN =
   process.env.CATALOG_ORIGIN || 'https://www.ssvibelandiaquestfest24x365.com';
-const SECRET = process.env.CATALOG_UPLOAD_SECRET || 'valetpru1!';
+const SECRET = process.env.CATALOG_UPLOAD_SECRET;
+if (!SECRET) {
+  console.error('CATALOG_UPLOAD_SECRET is required (env-only credentials; no fallback).');
+  process.exit(1);
+}
 
 async function main() {
   console.log('Origin:', ORIGIN);

@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $img = Join-Path $root 'interfaces\assets\holographic-ai-os-newscast-frame.png'
 $out = Join-Path $root 'interfaces\assets\bridge-tower-holographic-ai-os-tease.mp4'
-$filter = Join-Path $root 'scripts\bridge-tower-tease-filter.txt'
+$filter = Join-Path $root 'interfaces\assets\bridge-tower-tease-filter.txt'
 $fontDir = Join-Path $root 'interfaces\assets\fonts'
 
 if (-not (Test-Path $img)) { Write-Error "Missing source image: $img" }

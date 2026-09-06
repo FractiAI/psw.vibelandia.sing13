@@ -2285,6 +2285,10 @@
     {
       "path": "/api/cron-daily-ship-bulletin",
       "schedule": "0 15 * * *"
+    },
+    {
+      "path": "/api/cron-goldilocks-quest-dispatch",
+      "schedule": "0 16 * * *"
     }
   ],
   "functions": {
@@ -2410,6 +2414,10 @@
     "api/goldilocks-quest.js": {
       "maxDuration": 30,
       "includeFiles": "{lib/**,data/lattice-access.json,data/goldilocks-quest-twin.json}"
+    },
+    "api/cron-goldilocks-quest-dispatch.js": {
+      "maxDuration": 30,
+      "includeFiles": "{lib/**,data/goldilocks-quest-twin.json}"
     }
   },
   "redirects": [

@@ -289,7 +289,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html`](/interfaces/blog-goldilocks-geomagnetic-wavefield-multitaxa.html) | Unified Geomagnetic Wavefields & Multi-Taxa Ungulate Migration Corridors on the Great… · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-players-guide-2026-08.html`](/interfaces/blog-goldilocks-players-guide-2026-08.html) | A free playbook for when brute force stops working · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-prime-linear-compression.html`](/interfaces/blog-goldilocks-prime-linear-compression.html) | Prime-Linear Compression Transform · Ship blog · SS Vibelandia |
-| [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest door is open · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-goldilocks-quest-2026-09.html`](/interfaces/blog-goldilocks-quest-2026-09.html) | Goldilocks Quest Full Gen is live · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-goldilocks-transfinite-inversion.html`](/interfaces/blog-goldilocks-transfinite-inversion.html) | Transfinite Inversion Theorem · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-hgt-psd-covariance.html`](/interfaces/blog-hgt-psd-covariance.html) | Hierarchical Genomic Tokenization and Structured PSD Covariance Operators · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-higgs-awareness-unified-2026-09.html`](/interfaces/blog-higgs-awareness-unified-2026-09.html) | Higgs Gate · awareness phase coupling · unified edition · Ship blog · SS Vibelandia |
@@ -416,7 +416,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/goldilocks-beehive-residency.html`](/interfaces/goldilocks-beehive-residency.html) | Goldilocks Syntheverse Beehive Residency · Machote Moderno members |
 | [`/interfaces/goldilocks-os.html`](/interfaces/goldilocks-os.html) | Holographic Panama Canal · 13D Goldilocks AI OS Trials · SS Vibelandia |
 | [`/interfaces/goldilocks-players-guide.html`](/interfaces/goldilocks-players-guide.html) | Holographic Goldilocks Players Guide · Free · SS Vibelandia QUESTFEST |
-| [`/interfaces/goldilocks-quest.html`](/interfaces/goldilocks-quest.html) | Goldilocks Quest · SS Vibelandia |
+| [`/interfaces/goldilocks-quest.html`](/interfaces/goldilocks-quest.html) | Goldilocks Quest · Full Gen · SS Vibelandia |
 | [`/interfaces/harmonopoly-guide.html`](/interfaces/harmonopoly-guide.html) | Harmonopoly · Game, tech & math guide |
 | [`/interfaces/harmonopoly.html`](/interfaces/harmonopoly.html) | Harmonopoly · Goldilocks Rush |
 | [`/interfaces/hero-houdini-mythos-demonstration.html`](/interfaces/hero-houdini-mythos-demonstration.html) | BTC Buffalo · Hero Houdini · BTC Goldilocks Mine · SS Vibelandia |
@@ -561,7 +561,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 |------|-------|
 | [`/interfaces/special-projects/erdos-holographic-aios-audit.html`](/interfaces/special-projects/erdos-holographic-aios-audit.html) | Erdős 353 · Holographic Goldilocks AIOS Audit · Syntheverse |
 | [`/interfaces/special-projects/geomagnetic-herbivore-study.html`](/interfaces/special-projects/geomagnetic-herbivore-study.html) | Geomagnetic Herbivore Study · Multi-Taxa Wavefield |
-| [`/interfaces/special-projects/goldilocks-quest.html`](/interfaces/special-projects/goldilocks-quest.html) | Goldilocks Quest · SS Vibelandia |
+| [`/interfaces/special-projects/goldilocks-quest.html`](/interfaces/special-projects/goldilocks-quest.html) | Goldilocks Quest · Full Gen · SS Vibelandia |
 | [`/interfaces/special-projects/pdvsa-gateway-ops.html`](/interfaces/special-projects/pdvsa-gateway-ops.html) | PDVSA Gateway Ops · EGS Lattice-Linear Gateway · SS Vibelandia |
 | [`/interfaces/special-projects/prime-vault-alphafold-race.html`](/interfaces/special-projects/prime-vault-alphafold-race.html) | Prime-Vault Race · SS Vibelandia |
 | [`/interfaces/special-projects/turner-bison-herd-management.html`](/interfaces/special-projects/turner-bison-herd-management.html) | Turner Enterprise · Rangeland herd intelligence |

@@ -1,20 +1,20 @@
 {
-  "schema": "goldilocks-quest-twin/v1",
+  "schema": "goldilocks-quest-twin/v3",
   "phi": 1.618033988749895,
   "players": {
     "valetpru@gmail.com": {
       "email": "valetpru@gmail.com",
       "status": "player",
-      "grace": 29,
-      "score": 400,
+      "grace": 31,
+      "score": 600,
       "tierMax": 3,
-      "trapsResisted": 2,
-      "demonsSurvived": 1,
-      "unselfishOffers": 2,
+      "trapsResisted": 3,
+      "demonsSurvived": 2,
+      "unselfishOffers": 3,
       "gogglesUnlocked": true,
       "gogglesEquipped": false,
       "revelationSeen": false,
-      "updatedAt": "2026-09-06T20:51:32.192Z",
+      "updatedAt": "2026-09-06T21:39:17.278Z",
       "gogglesToken": "8014f9f0908d2638"
     }
   },
@@ -22,28 +22,36 @@
     {
       "email": "v••u@gmail.com",
       "status": "player",
-      "score": 400,
-      "grace": 29,
+      "score": 600,
+      "grace": 31,
       "tierMax": 3,
-      "goggles": true
+      "goggles": true,
+      "graceRank": 730
     }
   ],
   "bulletin": [
+    {
+      "at": "2026-09-06T21:39:59.211Z",
+      "headline": "Full Gen Twin v3 shipped",
+      "body": "SSE live relay · chronological Timing Demons · Restricted Goggles · grace leaderboard. Fair Exchange on."
+    },
     {
       "at": "2026-09-06T20:22:47.978Z",
       "headline": "AI Twin online · Goldilocks Quest door open",
       "body": "NPCs cannot see the Goggles. Climb with grace. Timing Demons scale with Φ≈1.618."
     }
   ],
-  "demonEvents": 1,
-  "updatedAt": "2026-09-06T20:51:32.192Z",
+  "demonEvents": 2,
+  "updatedAt": "2026-09-06T21:39:59.211Z",
   "presence": {
     "valetpru@gmail.com": {
-      "at": "2026-09-06T20:51:32.192Z",
-      "tier": 4,
-      "x": 0.6,
+      "at": "2026-09-06T21:39:17.278Z",
+      "tier": 3,
+      "x": 0.5,
       "status": "player",
       "goggles": false
     }
-  }
+  },
+  "revelations": 0,
+  "generation": "full-gen-v3"
 }

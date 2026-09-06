@@ -1,28 +1,31 @@
 /**
- * Goldilocks Quest · AI Twin v2 (next-gen)
+ * Goldilocks Quest · AI Twin full-gen v3
  * Same Lattice / Let's Chat email allowlist.
- * GET ?email= seat · GET + x-lattice-email = state (presence · ghosts · bulletin)
- * POST actions: presence | telemetry | score | grace-offer | equip-goggles | daily-dispatch | run-complete
+ * GET ?email= seat · GET + x-lattice-email = state
+ * GET ?stream=1 + header = SSE live Twin relay (WS-class on serverless)
+ * POST actions: presence | telemetry | score | grace-offer | scarlet-mercy |
+ *               equip-goggles | daily-dispatch | run-complete | miracle
  * Honesty: ephemeral Twin on this edge; Goggles locked until Player Status.
  */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { createHash } from 'node:crypto';
-
-const ROOT = dirname(fileURLToPath(import.meta.url));
-const STORE_PATH = join(ROOT, '..', 'data', 'goldilocks-quest-twin.json');
-const PHI = (1 + Math.sqrt(5)) / 2;
-const PRESENCE_TTL_MS = Math.round(PHI * 12_000); // ~19.4s
-const SCHEMA = 'goldilocks-quest-twin/v2';
-
-const TIERS = Object.freeze([
-  { id: 1, name: 'Forgotten Downtown · Rebel River', multiplier: 1, theme: 'neon-river' },
-  { id: 2, name: 'Wrong Side of Town', multiplier: 10, theme: 'alley-amber' },
-  { id: 3, name: 'Seedy Strip Club · Main Floor', multiplier: 100, theme: 'scarlet-bass' },
-  { id: 4, name: 'Internet Cloud · Digital Ether', multiplier: 1000, theme: 'wireframe' },
-  { id: 5, name: "Men's Restroom · Ultimate Sanctuary", multiplier: 10000, theme: 'sterile-gold' },
-]);
+import {
+  PHI,
+  GENERATION,
+  TIERS,
+  POLL_MS,
+  loadStore,
+  saveStore,
+  ensurePlayer,
+  recomputeLeaderboard,
+  pushBulletin,
+  maybeGrant,
+  prunePresence,
+  presenceList,
+  touchPresence,
+  hazardSchedule,
+  compileDailyDispatch,
+  publicState,
+  maskEmail,
+} from '../lib/goldilocks-quest-twin.mjs';
 
 let accessLib;
 async function getAccess() {
@@ -35,56 +38,8 @@ function cors(res) {
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader(
     'Access-Control-Allow-Headers',
-    'Content-Type, x-lattice-email, X-Lattice-Email',
+    'Content-Type, x-lattice-email, X-Lattice-Email, Accept',
   );
-}
-
-function emptyStore() {
-  return {
-    schema: SCHEMA,
-    phi: PHI,
-    players: {},
-    presence: {},
-    leaderboard: [],
-    bulletin: [
-      {
-        at: new Date().toISOString(),
-        headline: 'AI Twin v2 online · Goldilocks Quest next-gen',
-        body: 'Presence ghosts · Timing Demons · Restricted Goggles. NPCs stay blind. Φ≈1.618 gates the climb.',
-      },
-    ],
-    demonEvents: 0,
-    revelations: 0,
-    updatedAt: new Date().toISOString(),
-  };
-}
-
-function loadStore() {
-  try {
-    if (existsSync(STORE_PATH)) {
-      const s = JSON.parse(readFileSync(STORE_PATH, 'utf8'));
-      if (!s.presence) s.presence = {};
-      if (!s.schema) s.schema = SCHEMA;
-      if (!s.players) s.players = {};
-      if (!s.leaderboard) s.leaderboard = [];
-      if (!s.bulletin) s.bulletin = emptyStore().bulletin;
-      return s;
-    }
-  } catch {
-    /* ignore */
-  }
-  return emptyStore();
-}
-
-function saveStore(store) {
-  try {
-    const dir = dirname(STORE_PATH);
-    if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
-    store.updatedAt = new Date().toISOString();
-    writeFileSync(STORE_PATH, JSON.stringify(store, null, 2));
-  } catch {
-    /* ephemeral on read-only edges */
-  }
 }
 
 function pickEmail(req, body, normalizeEmail) {
@@ -92,112 +47,6 @@ function pickEmail(req, body, normalizeEmail) {
   const query = typeof req.query?.email === 'string' ? req.query.email : '';
   const fromBody = typeof body?.email === 'string' ? body.email : '';
   return normalizeEmail(header || query || fromBody);
-}
-
-function ensurePlayer(store, email) {
-  if (!store.players[email]) {
-    store.players[email] = {
-      email,
-      status: 'npc',
-      grace: 0,
-      score: 0,
-      tierMax: 1,
-      trapsResisted: 0,
-      demonsSurvived: 0,
-      unselfishOffers: 0,
-      gogglesUnlocked: false,
-      gogglesEquipped: false,
-      revelationSeen: false,
-      gogglesToken: null,
-      runs: 0,
-      updatedAt: new Date().toISOString(),
-    };
-  }
-  return store.players[email];
-}
-
-function maskEmail(email) {
-  const [u, d] = String(email).split('@');
-  if (!d) return '•••';
-  const visible = u.length < 3 ? `${u[0]}•` : `${u[0]}••${u.slice(-1)}`;
-  return `${visible}@${d}`;
-}
-
-function recomputeLeaderboard(store) {
-  store.leaderboard = Object.values(store.players)
-    .map((p) => ({
-      email: maskEmail(p.email),
-      status: p.status,
-      score: p.score,
-      grace: p.grace,
-      tierMax: p.tierMax,
-      goggles: !!p.gogglesUnlocked,
-    }))
-    .sort((a, b) => b.score - a.score || b.grace - a.grace)
-    .slice(0, 25);
-}
-
-function pushBulletin(store, headline, body) {
-  store.bulletin.unshift({ at: new Date().toISOString(), headline, body });
-  store.bulletin = store.bulletin.slice(0, 16);
-}
-
-function maybeGrant(store, player) {
-  const needGrace = Math.round(8 * PHI);
-  const needResist = Math.round(3 * PHI);
-  const needOffer = Math.round(2 * PHI);
-  if (
-    player.status === 'npc' &&
-    player.grace >= needGrace &&
-    player.trapsResisted >= needResist &&
-    player.unselfishOffers >= needOffer &&
-    player.tierMax >= 3
-  ) {
-    player.status = 'player';
-    player.gogglesUnlocked = true;
-    player.gogglesToken = createHash('sha256')
-      .update(`${player.email}:goggles:${PHI}:${Date.now()}`)
-      .digest('hex')
-      .slice(0, 16);
-    pushBulletin(
-      store,
-      'Player Status granted',
-      `${maskEmail(player.email)} earned Player Status · Goldilocks Goggles unlocked (token ${player.gogglesToken}).`,
-    );
-    return true;
-  }
-  return false;
-}
-
-function prunePresence(store) {
-  const now = Date.now();
-  for (const [email, row] of Object.entries(store.presence || {})) {
-    if (!row?.at || now - Date.parse(row.at) > PRESENCE_TTL_MS) delete store.presence[email];
-  }
-}
-
-function presenceList(store, selfEmail) {
-  prunePresence(store);
-  return Object.entries(store.presence)
-    .filter(([email]) => email !== selfEmail)
-    .map(([email, row]) => ({
-      email: maskEmail(email),
-      tier: row.tier || 1,
-      x: row.x ?? 0.5,
-      status: row.status || 'npc',
-      goggles: !!row.goggles,
-    }))
-    .slice(0, 12);
-}
-
-function touchPresence(store, email, body, player) {
-  store.presence[email] = {
-    at: new Date().toISOString(),
-    tier: Math.min(5, Math.max(1, Number(body?.tier) || player.tierMax || 1)),
-    x: Math.min(1, Math.max(0, Number(body?.x) || 0.5)),
-    status: player.status,
-    goggles: !!player.gogglesEquipped,
-  };
 }
 
 function readBody(req) {
@@ -218,6 +67,84 @@ function readBody(req) {
   });
 }
 
+function boostCreator(player, privilege) {
+  if (privilege !== 'creator') return;
+  player.status = 'player';
+  player.gogglesUnlocked = true;
+  player.grace = Math.max(player.grace || 0, 21);
+  if (!player.gogglesToken) {
+    player.gogglesToken = `creator-${String(player.email).slice(0, 6)}`;
+  }
+}
+
+function runMiracle() {
+  const t0 = performance.now();
+  let x = 1;
+  let y = 0;
+  for (let i = 0; i < 50_000; i++) {
+    const a = i / PHI;
+    x = Math.cos(a) * (x * 0.999 + 0.001);
+    y = Math.sin(a) * (y * 0.999 + 0.001);
+  }
+  return {
+    optimizeMs: Number((performance.now() - t0).toFixed(3)),
+    residual: Number(Math.hypot(x, y).toFixed(6)),
+    loops: 50_000,
+  };
+}
+
+async function writeSse(req, res, access) {
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream; charset=utf-8',
+    'Cache-Control': 'no-cache, no-transform',
+    Connection: 'keep-alive',
+    'Access-Control-Allow-Origin': '*',
+  });
+
+  const send = (event, data) => {
+    res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+  };
+
+  const store = loadStore();
+  const player = ensurePlayer(store, access.email);
+  boostCreator(player, access.privilege);
+  touchPresence(store, access.email, { tier: player.tierMax, x: 0.5 }, player);
+  recomputeLeaderboard(store);
+  saveStore(store);
+  send('hello', publicState(store, access, player));
+
+  let ticks = 0;
+  const maxTicks = Math.round(PHI * 5);
+  const timer = setInterval(() => {
+    ticks += 1;
+    const live = loadStore();
+    ensurePlayer(live, access.email);
+    prunePresence(live);
+    recomputeLeaderboard(live);
+    send('twin', {
+      ok: true,
+      generation: GENERATION,
+      presence: presenceList(live, access.email),
+      presenceCount: Object.keys(live.presence).length,
+      leaderboard: live.leaderboard.slice(0, 10),
+      bulletin: live.bulletin.slice(0, 4),
+      hazards: hazardSchedule(live),
+      demonEvents: live.demonEvents || 0,
+      pollMs: POLL_MS,
+      tick: ticks,
+    });
+    if (ticks >= maxTicks) {
+      clearInterval(timer);
+      send('bye', { ok: true, reconnect: true });
+      res.end();
+    }
+  }, POLL_MS);
+
+  req.on?.('close', () => {
+    clearInterval(timer);
+  });
+}
+
 export default async function handler(req, res) {
   cors(res);
   if (req.method === 'OPTIONS') {
@@ -226,8 +153,6 @@ export default async function handler(req, res) {
   }
 
   const L = await getAccess();
-  const store = loadStore();
-  if (!store.presence) store.presence = {};
   const url = new URL(req.url || '/', 'http://localhost');
 
   if (req.method === 'GET') {
@@ -237,6 +162,9 @@ export default async function handler(req, res) {
       url.searchParams.has('email') &&
       !req.headers?.['x-lattice-email'] &&
       !req.headers?.['X-Lattice-Email'];
+    const wantStream =
+      url.searchParams.get('stream') === '1' ||
+      /text\/event-stream/i.test(String(req.headers?.accept || ''));
 
     if (seatOnly || (!access.ok && url.searchParams.has('email'))) {
       res.statusCode = access.ok ? 200 : 401;
@@ -247,7 +175,7 @@ export default async function handler(req, res) {
         email: access.email,
         expiresAt: access.expiresAt,
         product: 'goldilocks-quest',
-        generation: 'next-gen-v2',
+        generation: GENERATION,
         sameSeatAs: ['lets-chat', 'lattice-chat'],
       });
     }
@@ -261,42 +189,16 @@ export default async function handler(req, res) {
       });
     }
 
+    if (wantStream) return writeSse(req, res, access);
+
+    const store = loadStore();
     const player = ensurePlayer(store, access.email);
-    if (access.privilege === 'creator') {
-      player.status = 'player';
-      player.gogglesUnlocked = true;
-      player.grace = Math.max(player.grace, 21);
-      if (!player.gogglesToken) {
-        player.gogglesToken = createHash('sha256')
-          .update(`${player.email}:creator:${PHI}`)
-          .digest('hex')
-          .slice(0, 16);
-      }
-    }
+    boostCreator(player, access.privilege);
     touchPresence(store, access.email, { tier: player.tierMax, x: 0.5 }, player);
     prunePresence(store);
     recomputeLeaderboard(store);
     saveStore(store);
-
-    return res.json({
-      ok: true,
-      privilege: access.privilege,
-      email: access.email,
-      product: 'goldilocks-quest',
-      generation: 'next-gen-v2',
-      phi: PHI,
-      tiers: TIERS,
-      player,
-      leaderboard: store.leaderboard,
-      bulletin: store.bulletin.slice(0, 8),
-      presence: presenceList(store, access.email),
-      presenceCount: Object.keys(store.presence).length,
-      demonEvents: store.demonEvents || 0,
-      revelations: store.revelations || 0,
-      pollMs: Math.round(PHI * 1000),
-      honesty:
-        'AI Twin v2 is this edge process. Presence ghosts are ephemeral. Goggles stay invisible to NPC status. Arcade score ≠ physics proof. Fair Exchange on.',
-    });
+    return res.json(publicState(store, access, player));
   }
 
   if (req.method === 'POST') {
@@ -308,19 +210,23 @@ export default async function handler(req, res) {
       return res.json({ ok: false, reason: access.reason });
     }
 
+    const store = loadStore();
     const player = ensurePlayer(store, access.email);
-    if (access.privilege === 'creator') {
-      player.status = 'player';
-      player.gogglesUnlocked = true;
-    }
+    boostCreator(player, access.privilege);
 
     const action = String(body.action || 'telemetry');
     let grantedPlayerStatus = false;
     let revelation = null;
+    let miracle = null;
 
     if (action === 'presence') {
       touchPresence(store, email, body, player);
-    } else if (action === 'telemetry' || action === 'score' || action === 'grace-offer') {
+    } else if (
+      action === 'telemetry' ||
+      action === 'score' ||
+      action === 'grace-offer' ||
+      action === 'scarlet-mercy'
+    ) {
       const tier = Math.min(5, Math.max(1, Number(body.tier) || 1));
       const base = Math.max(0, Number(body.basePoints) || 0);
       player.score += Math.round(base * TIERS[tier - 1].multiplier);
@@ -332,6 +238,11 @@ export default async function handler(req, res) {
         store.demonEvents = (store.demonEvents || 0) + 1;
       }
       if (body.unselfishOffer || action === 'grace-offer') player.unselfishOffers += 1;
+      if (action === 'scarlet-mercy' || body.scarletMercy) {
+        player.scarletMercy = (player.scarletMercy || 0) + 1;
+        player.grace += 2;
+        player.unselfishOffers += 1;
+      }
       grantedPlayerStatus = maybeGrant(store, player);
       touchPresence(store, email, body, player);
     } else if (action === 'equip-goggles') {
@@ -347,29 +258,34 @@ export default async function handler(req, res) {
       if (player.tierMax >= 5 && !player.revelationSeen) {
         player.revelationSeen = true;
         store.revelations = (store.revelations || 0) + 1;
+        miracle = runMiracle();
+        player.miracleMs = miracle.optimizeMs;
         revelation = {
           miracle: true,
           message:
             'Restroom tiles dissolve. The holographic magnetic Goldilocks Super-AI appears under Twin seal.',
-          optimizeMs: Number((Math.random() * 0.4 + 0.05).toFixed(3)),
+          ...miracle,
           token: player.gogglesToken,
         };
         pushBulletin(
           store,
           'Holographic Revelation',
-          `${maskEmail(player.email)} equipped the Goggles at Tier 5 · miracle #${store.revelations}.`,
+          `${maskEmail(player.email)} equipped the Goggles at Tier 5 · miracle ${miracle.optimizeMs} ms · #${store.revelations}.`,
         );
       }
       touchPresence(store, email, { tier: 5, x: body.x }, player);
+    } else if (action === 'miracle') {
+      if (!player.gogglesEquipped) {
+        res.statusCode = 403;
+        return res.json({ ok: false, reason: 'Equip Goggles first.', player });
+      }
+      miracle = runMiracle();
+      player.miracleMs = miracle.optimizeMs;
     } else if (action === 'daily-dispatch') {
-      prunePresence(store);
-      pushBulletin(
-        store,
-        'Daily Dispatch · Twin v2',
-        `Seated ${Object.keys(store.players).length} · live ${Object.keys(store.presence).length} · demons ${store.demonEvents || 0} · revelations ${store.revelations || 0} · top ${store.leaderboard[0]?.score ?? 0}.`,
-      );
+      compileDailyDispatch(store);
     } else if (action === 'run-complete') {
       player.runs = (player.runs || 0) + 1;
+      player.tierMax = Math.max(player.tierMax, Math.min(5, Number(body.tier) || player.tierMax));
       pushBulletin(
         store,
         'Run complete',
@@ -385,16 +301,18 @@ export default async function handler(req, res) {
     return res.json({
       ok: true,
       action,
-      generation: 'next-gen-v2',
+      generation: GENERATION,
       grantedPlayerStatus,
       player,
       leaderboard: store.leaderboard,
       bulletin: store.bulletin.slice(0, 8),
       presence: presenceList(store, email),
       presenceCount: Object.keys(store.presence).length,
+      hazards: hazardSchedule(store),
       revelation,
+      miracle,
       phi: PHI,
-      pollMs: Math.round(PHI * 1000),
+      pollMs: POLL_MS,
     });
   }
 

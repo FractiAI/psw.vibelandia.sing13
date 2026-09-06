@@ -18,11 +18,11 @@
   var TIER_H = 520;
   var POLL_MS = Math.round(PHI * 1000);
   var TIERS = [
-    { id: 1, name: 'Forgotten Downtown · Rebel River', mult: 1, color: '#152238' },
-    { id: 2, name: 'Wrong Side of Town', mult: 10, color: '#2a1520' },
-    { id: 3, name: 'Seedy Strip · Main Floor', mult: 100, color: '#3a1020' },
-    { id: 4, name: 'Internet Cloud · Digital Ether', mult: 1000, color: '#0e2430' },
-    { id: 5, name: "Men's Restroom · Ultimate Sanctuary", mult: 10000, color: '#181820' }
+    { id: 1, name: 'Forgotten Downtown · Rebel River', mult: 1, color: '#1c3a5c' },
+    { id: 2, name: 'Wrong Side of Town', mult: 10, color: '#4a2030' },
+    { id: 3, name: 'Seedy Strip · Main Floor', mult: 100, color: '#5c1830' },
+    { id: 4, name: 'Internet Cloud · Digital Ether', mult: 1000, color: '#163d4d' },
+    { id: 5, name: "Men's Restroom · Ultimate Sanctuary", mult: 10000, color: '#2a2a38' }
   ];
 
   var state = {
@@ -420,6 +420,7 @@
   }
 
   function currentTier() {
+    if (!state.hero) return 1;
     return Math.min(5, Math.max(1, Math.floor((-state.hero.y + TIER_H) / TIER_H) + 1));
   }
 
@@ -843,8 +844,12 @@
 
     for (i = 0; i < state.platforms.length; i++) {
       var p = state.platforms[i];
-      ctx.fillStyle = p.climb ? 'rgba(94,234,212,0.35)' : p.zenith ? '#fbbf24' : '#8b5a2b';
-      ctx.fillRect(p.x, p.y, p.w, p.h);
+      ctx.fillStyle = p.climb ? 'rgba(94,234,212,0.55)' : p.zenith ? '#fbbf24' : '#c4a06a';
+      ctx.fillRect(p.x, p.y, p.w, Math.max(p.h, 12));
+      if (!p.climb) {
+        ctx.fillStyle = 'rgba(255, 236, 180, 0.35)';
+        ctx.fillRect(p.x, p.y, p.w, 3);
+      }
     }
     for (i = 0; i < state.hazards.length; i++) {
       var hz = state.hazards[i];
@@ -905,11 +910,23 @@
     }
 
     var h = state.hero;
-    ctx.fillStyle = h.invuln > 0 ? '#fde68a' : '#f5e6c8';
-    ctx.fillRect(h.x, h.y, h.w, h.h);
+    // Bright climber + nameplate so Full Gen is obvious on mobile screenshots
+    ctx.fillStyle = 'rgba(0,0,0,0.45)';
+    ctx.fillRect(h.x - 10, h.y - 16, 40, 12);
+    ctx.fillStyle = '#fbbf24';
+    ctx.font = '9px monospace';
+    ctx.fillText('YOU', h.x - 2, h.y - 7);
+    ctx.strokeStyle = '#d4af37';
+    ctx.lineWidth = 2;
+    ctx.fillStyle = h.invuln > 0 ? '#fde68a' : '#ffe8b0';
+    ctx.fillRect(h.x - 2, h.y - 2, h.w + 4, h.h + 4);
+    ctx.strokeRect(h.x - 2, h.y - 2, h.w + 4, h.h + 4);
+    ctx.fillStyle = '#1a1020';
+    ctx.fillRect(h.x + 3, h.y + 5, 3, 3);
+    ctx.fillRect(h.x + 10, h.y + 5, 3, 3);
     if (vision) {
       ctx.fillStyle = '#5eead4';
-      ctx.fillRect(h.x + 2, h.y + 4, 12, 5);
+      ctx.fillRect(h.x + 1, h.y + 3, 14, 6);
     }
 
     for (i = 0; i < state.particles.length; i++) {
@@ -963,14 +980,20 @@
   var lastTs = 0;
   function loop(ts) {
     if (!state.running) return;
-    var dt = Math.min(2, (ts - lastTs) / 16.67 || 1);
-    lastTs = ts;
-    stepPhysics(dt);
-    draw();
+    try {
+      var dt = Math.min(2, (ts - lastTs) / 16.67 || 1);
+      lastTs = ts;
+      stepPhysics(dt);
+      draw();
+    } catch (err) {
+      console.error('[goldilocks-quest] loop', err);
+      setMsg('Twin loop hitch — tap Jump to resume. ' + (err && err.message ? err.message : ''));
+    }
     requestAnimationFrame(loop);
   }
 
   function offerGrace() {
+    if (!state.running || !state.hero) return;
     if (tryScarletMercy()) return;
     beep('grace');
     void postTelemetry({
@@ -1029,10 +1052,15 @@
   }
 
   window.addEventListener('keydown', function (e) {
+    var tag = (e.target && e.target.tagName) || '';
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) {
+      return;
+    }
     state.keys[e.key] = true;
     if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].indexOf(e.key) >= 0) {
       e.preventDefault();
     }
+    if (!state.running || !state.hero) return;
     if (e.key === 'g' || e.key === 'G') offerGrace();
     if ((e.key === 'e' || e.key === 'E') && state.player && state.player.gogglesUnlocked) {
       void postTelemetry({ action: 'equip-goggles', force: true }).then(function (data) {

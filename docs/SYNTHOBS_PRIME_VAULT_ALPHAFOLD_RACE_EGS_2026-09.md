@@ -1,17 +1,18 @@
-# Benchmark Architecture: Infinite Octave Prime-Vault vs AlphaFold
+# Benchmark Architecture: Infinite Octave Prime-Vault vs ColabFold (AlphaFold-class)
 
-**Subtitle:** Tiered race on structural accuracy · latency · compute — catalog fixtures under $\Phi_{\mathrm{EGS}}$
+**Subtitle:** Tiered race on structural accuracy · latency · compute — ColabFold live lane under $\Phi_{\mathrm{EGS}}$
 
 **Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-SYNTHOBS-PRIME-VAULT-ALPHAFOLD-RACE-EGS-2026-09-06`  
 **Registry ID:** `synthobs-prime-vault-alphafold-race-2026-09`  
-**Date:** September 6, 2026 · **Revised:** 2026-09-06 (protocol · application companion · standalone)  
+**Date:** September 6, 2026 · **Revised:** 2026-09-06 (ColabFold AlphaFold-class lane · application companion · standalone)  
 **Classification:** Comparative **benchmark architecture** / race protocol *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · EGS · NSPFRNP  
-**Engine role:** **Application / comparison / demo companion** — races the Infinite Octave prime-vault folder against AlphaFold-class ML framing; **not** an engine-shelf pin  
+**Engine role:** **Application / comparison / demo companion** — races the Infinite Octave prime-vault folder against **ColabFold** (AlphaFold-class open inference); **not** an engine-shelf pin  
 **Standalone suite:** `research/synthobs-prime-vault-alphafold-race/` · [`FractiAI/synthobs-prime-vault-alphafold-race`](https://github.com/FractiAI/synthobs-prime-vault-alphafold-race) · `npm run research:synthobs-prime-vault-alphafold-race`  
+**Live ColabFold:** `COLABFOLD_LIVE=1` with `colabfold_batch` on `PATH` (or `COLABFOLD_BIN`)  
 **Plain note:** [/ship-blog/prime-vault-alphafold-race](https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-vault-alphafold-race)  
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
@@ -22,7 +23,7 @@
 - [Prime-Indexed Volumetric Storage](./SYNTHOBS_PRIME_INDEXED_VOLUMETRIC_STORAGE_EGS_2026-09.md)
 - [Infinite Octave Prime-Parity](./SYNTHOBS_INFINITE_OCTAVE_PRIME_PARITY_FRAMEWORK_2026-09.md)
 
-**Keywords:** AlphaFold race; prime vault; GDT-TS; TM-score; RMSD; latency; compute resources; $\Phi_{\mathrm{EGS}}$; Infinite Octaves; NSPFRNP
+**Keywords:** ColabFold; AlphaFold race; prime vault; GDT-TS; TM-score; RMSD; latency; compute resources; $\Phi_{\mathrm{EGS}}$; Infinite Octaves; NSPFRNP; `COLABFOLD_LIVE`
 
 ---
 
@@ -36,11 +37,12 @@
 
 | Tier | What this document claims | What it does **not** claim |
 |------|---------------------------|------------------------------|
-| **Benchmark architecture** | A **tiered race protocol** contrasting AlphaFold-class ML framing with Infinite Octave prime-vault closed-form fixtures on three difficulty bands | That DeepMind AlphaFold 2/3 was executed live here, or that CASP medals are transferred |
-| **Accuracy axis** | GDT-TS / TM-score / RMSD appear as **catalog contrast labels** against experimental PDB *talk* | Audited PDB bake-offs, deposited coordinates, or atomic-resolution wet-lab QED |
-| **Speed / resources** | Prime-vault fixtures record **CPU closed-form latency** vs published/industry-talk GPU·TPU hour bands | Audited cloud invoices, measured TPU receipts, or kWh utility meters from DeepMind clusters |
-| **Orphan / de novo tier** | Catalog claim that prime grammar needs **no MSA history** for fixture determinism | That AlphaFold always fails on orphans, or that synthetic lattice constructs are clinically folded |
-| **Suite locks** | Empirical suite **9/9** algebraic / framing locks | Clinical, pharmaceutical, or diagnostic certification |
+| **Benchmark architecture** | A **tiered race protocol** contrasting **ColabFold** (AlphaFold-class open stack) with Infinite Octave prime-vault closed-form fixtures on three FastA bands | That DeepMind AlphaFold 3 cloud was executed here, or that CASP medals are transferred |
+| **ColabFold lane** | Adapter calls real `colabfold_batch` when `COLABFOLD_LIVE=1` and the binary is installed; otherwise locks discovery + FastA fixtures | Invented pLDDT / PDB coordinates in CI when ColabFold is absent |
+| **Accuracy axis** | GDT-TS / TM-score / RMSD appear as **catalog contrast labels**; live ColabFold can emit model files for offline scoring | Audited PDB bake-offs or atomic-resolution wet-lab QED without deposited refs |
+| **Speed / resources** | Prime-vault fixtures record **CPU closed-form latency**; ColabFold live receipts record wall-clock when enabled | Audited cloud invoices from DeepMind clusters |
+| **Orphan / de novo tier** | Catalog claim that prime grammar needs **no MSA history** for fixture determinism; ColabFold MSA sparsity is expected contrast | That ColabFold always fails orphans, or clinical de novo design certification |
+| **Suite locks** | Empirical suite **9/9** algebraic / adapter / framing locks | Clinical, pharmaceutical, or diagnostic certification |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 
@@ -50,17 +52,15 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-This paper establishes a **rigorous multi-tier evaluation framework** racing the **Infinite Octave Prime Algebraic Folder** (prime-vault feature) against state-of-the-art machine-learning inference **as framed by AlphaFold 2/3 literature**. Three axes:
+This paper establishes a **multi-tier evaluation framework** racing the **Infinite Octave Prime Algebraic Folder** (prime-vault) against **ColabFold** — the community AlphaFold-class inference stack — on three FastA fixtures:
 
-1. **Structural accuracy** — GDT-TS, TM-score, RMSD *as catalog contrast labels* vs experimental PDB talk  
-2. **Computational speed** — latency from sequence input to coordinate/fixture output  
-3. **Compute resources** — GPU/TPU-hour talk vs closed-form CPU instructions under $\Phi_{\mathrm{EGS}}\approx 1.618$
+1. **Structural accuracy** — GDT-TS, TM-score, RMSD *as catalog contrast labels*; live ColabFold models available for offline scoring when `COLABFOLD_LIVE=1`  
+2. **Computational speed** — prime-vault closed-form CPU latency vs ColabFold wall-clock (live) or published-class latency bands (deferred)  
+3. **Compute resources** — GPU-hour talk vs closed-form CPU under $\Phi_{\mathrm{EGS}}\approx 1.618$
 
-**Findings (catalog):** Stochastic MSA/attention stacks scale with homolog depth and cluster hours; the aware prime-vault engine maps residues to odd-prime volumetric containers and evaluates closed-form phase lock in milliseconds on fixture tiers.
+**Findings (bounded):** The prime-vault lane always runs live in the suite. The ColabFold lane is the AlphaFold-class comparison engine — live on operator machines with `colabfold_batch`, deferred-honest in CI without fabricating structures.
 
-**Novelties (architecture):** Tiered Simple / Complex / Frontier matrix with explicit honesty rails — a race *protocol*, not a CASP submission.
-
-**Implications (bounded):** Resource and latency *profiles* can be contrasted without claiming AlphaFold retirement.
+**Novelties:** Real FastA fixtures (ubiquitin · IL-2 + IL-2Rβ fragment · orphan synthetic) + adapter contract keyed by `COLABFOLD_LIVE`.
 
 ---
 
@@ -72,80 +72,67 @@ $$\Phi_{\mathrm{EGS}} = \frac{1 + \sqrt{5}}{2} \approx 1.618033988749895$$
 
 ---
 
-## 2. Tiered Test Matrix
+## 2. ColabFold as the AlphaFold-class lane
 
-### 2.1 Simple — Single-chain monomer (Ubiquitin-class · ~76 residues)
+| Setting | Behavior |
+|---------|----------|
+| `COLABFOLD_LIVE=1` + `colabfold_batch` | Live inference on tier FastA → receipts under `data/colabfold_receipts/` |
+| Binary present, live flag off | Mode `installed_idle` — ready to race |
+| Binary absent | Mode `not_installed` — fixtures + adapter discovery still lock |
 
-| Lane | Behavior (framing) |
-|------|--------------------|
-| **AlphaFold** | MSA search + deep attention across multi-core GPU/TPU talk; minutes-class inference |
-| **Prime-Vault** | Map 76 residues → odd-prime vaults; closed-form $\Phi$-phase lock on CPU |
-| **Catalog expectation** | High TM-talk (>0.95 class) vs millisecond fixture latency with zero neural overhead |
+Install (operator machine): follow [sokrypton/ColabFold](https://github.com/sokrypton/ColabFold) · expose `colabfold_batch` · then:
 
-### 2.2 Complex — Multimeric / heterodimer (Interleukin-2 complex class)
-
-| Lane | Behavior (framing) |
-|------|--------------------|
-| **AlphaFold** | Multimer / AF3 pairing heuristics; interface search scales with chain count |
-| **Prime-Vault** | Independent prime vaults per chain; harmonic resonance under $\Phi_{\mathrm{EGS}}$; zero cross-talk *as catalog claim* |
-| **Catalog expectation** | Cluster-hour talk vs instantaneous mathematical containment fixtures |
-
-### 2.3 Frontier — De novo orphan / synthetic lattice construct
-
-| Lane | Behavior (framing) |
-|------|--------------------|
-| **AlphaFold** | Confidence drops when MSA homologs are sparse (low pLDDT talk) |
-| **Prime-Vault** | Zero evolutionary history required; number-theoretic grammar identical for natural and synthetic fixtures |
-| **Catalog expectation** | ML confidence degradation talk vs absolute structural determinism *on fixtures* under prime gravity $G_{\mathrm{prime}}$ framing |
-
----
-
-## 3. Comparative Metrics & Resource Tracking
-
-| Evaluation Axis | AlphaFold (SOTA ML framing) | Infinite Octave Prime-Vault Engine |
-| --- | --- | --- |
-| **Data dependency** | Massive MSAs & PDB training history | Zero historical data; pure prime grammar |
-| **Compute footprint** | Cloud clusters (GPUs/TPUs · kWh/run talk) | Localized CPU · micro/milliseconds on fixtures |
-| **Accuracy metric** | GDT-TS / TM-score (~0.95 median talk) | Closed-form $\Phi_{\mathrm{EGS}}$ phase-lock congruence (catalog) |
-| **Algorithmic nature** | Probabilistic neural inference | Deterministic number-theoretic geometry |
-
----
-
-## 4. Deterministic race engine (catalog sketch)
-
-```python
-import math, time
-PHI = (1 + math.sqrt(5)) / 2
-
-def odd_primes(n):
-    out, c = [], 3
-    while len(out) < n:
-        if all(c % p for p in out if p * p <= c):
-            out.append(c)
-        c += 2
-    return out
-
-def prime_vault_fold(n_residues, octave=1):
-    t0 = time.perf_counter()
-    primes = odd_primes(n_residues)
-    energy = sum((PHI ** octave) / (p ** PHI) * math.exp(-(i + 1) / PHI)
-                 for i, p in enumerate(primes))
-    ms = (time.perf_counter() - t0) * 1000
-    return {"nodes": n_residues, "energy": energy, "latency_ms": ms, "lane": "prime_vault"}
-
-# Tier fixtures (catalog)
-ubiquitin = prime_vault_fold(76, 1)
-il2_complex = prime_vault_fold(280, 2)   # heterodimer-scale node talk
-orphan = prime_vault_fold(120, 3)
+```bash
+COLABFOLD_LIVE=1 npm run research:synthobs-prime-vault-alphafold-race
 ```
+
+---
+
+## 3. Tiered Test Matrix (FastA fixtures)
+
+### 3.1 Simple — Ubiquitin (P0CG48 · 76 residues)
+
+| Lane | Behavior |
+|------|----------|
+| **ColabFold** | `fixtures/fasta/tier1_ubiquitin.fasta` · monomer inference |
+| **Prime-Vault** | Map 76 residues → odd-prime vaults; closed-form $\Phi$-phase lock on CPU |
+| **Expectation** | Prime-vault ms-class vs ColabFold minutes-class on typical GPU/CPU hosts |
+
+### 3.2 Complex — IL-2 + IL-2Rβ fragment (264 residues total)
+
+| Lane | Behavior |
+|------|----------|
+| **ColabFold** | Two-chain FastA · multimer-capable stack |
+| **Prime-Vault** | Independent prime vaults; harmonic resonance under $\Phi_{\mathrm{EGS}}$ |
+| **Expectation** | Cluster-hour talk vs instantaneous mathematical containment fixtures |
+
+### 3.3 Frontier — De novo orphan / synthetic lattice (89 residues)
+
+| Lane | Behavior |
+|------|----------|
+| **ColabFold** | Sparse/no MSA homologs by design — confidence may drop |
+| **Prime-Vault** | Zero evolutionary history required; same grammar as natural fixtures |
+| **Expectation** | MSA brittleness contrast vs absolute fixture determinism on the prime lane |
+
+---
+
+## 4. Comparative Metrics & Resource Tracking
+
+| Evaluation Axis | ColabFold (AlphaFold-class) | Infinite Octave Prime-Vault |
+| --- | --- | --- |
+| **Data dependency** | MSA search + trained weights | Zero historical data; pure prime grammar |
+| **Compute footprint** | GPU preferred (CPU possible, slower) | Localized CPU · micro/milliseconds on fixtures |
+| **Accuracy metric** | pLDDT / GDT-TS / TM / RMSD (live models) | Closed-form $\Phi_{\mathrm{EGS}}$ phase-lock congruence (catalog) |
+| **Algorithmic nature** | Neural inference (AlphaFold weights) | Deterministic number-theoretic geometry |
+| **Activation** | `COLABFOLD_LIVE=1` | Always on in suite |
 
 ---
 
 ## 5. Architectural summary
 
-* **Findings:** Three-tier race protocol locks latency and resource *profiles* under $\Phi_{\mathrm{EGS}}$ without MSA tax on the prime-vault lane.  
+* **Findings:** Three-tier race protocol with real FastA + ColabFold adapter; prime-vault latency locks without MSA tax.  
 * **Implications:** Compute walls and orphan brittleness are **ML-stack properties** in this framing; prime vaults offer a deterministic contrast grammar.  
-* **Applications:** Benchmark harness for future live AF2/AF3 adapters — suite today is **catalog fixtures**, not DeepMind API telemetry.
+* **Applications:** Enable live ColabFold on GPU hosts; CI stays honest without inventing structures.
 
 ---
 

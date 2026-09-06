@@ -1,6 +1,6 @@
 /**
- * Prime-Vault vs AlphaFold Race — catalog suite.
- * Replayable algebraic / framing locks — not live DeepMind bake-offs.
+ * Prime-Vault vs ColabFold (AlphaFold-class) Race — suite locks.
+ * Prime-vault always live; ColabFold live when COLABFOLD_LIVE=1 + binary.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,6 +17,11 @@ import {
   TIER_FRONTIER,
   ACCURACY_LABELS,
 } from './constants.mjs';
+import {
+  discoverColabfold,
+  raceTier,
+  RACE_FASTA,
+} from './colabfold-adapter.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PKG_ROOT = path.resolve(__dirname, '..');
@@ -47,7 +52,8 @@ export function primeVaultFold(residues, octave = 1) {
   let energy = 0;
   for (let i = 0; i < primes.length; i++) {
     const pk = primes[i];
-    energy += (PHI_EGS ** octave) / pk ** PHI_EGS * Math.exp(-(i + 1) / PHI_EGS);
+    energy +=
+      (PHI_EGS ** octave) / pk ** PHI_EGS * Math.exp(-(i + 1) / PHI_EGS);
   }
   const latencyMs = performance.now() - t0;
   return {
@@ -57,6 +63,7 @@ export function primeVaultFold(residues, octave = 1) {
     primes: primes.length,
     energy,
     latencyMs,
+    live: true,
   };
 }
 
@@ -103,86 +110,99 @@ function experimentOddPrimeVaults() {
 }
 
 function experimentSimpleTier() {
-  const pv = primeVaultFold(TIER_SIMPLE.residues, TIER_SIMPLE.octave);
+  const race = raceTier(TIER_SIMPLE, primeVaultFold);
+  const pv = race.primeVault;
   const pass =
     pv.residues === 76 &&
     pv.primes === 76 &&
     Number.isFinite(pv.energy) &&
     pv.energy > 0 &&
     pv.latencyMs < 500 &&
-    pv.latencyMs < TIER_SIMPLE.afLatencyBandMin;
+    pv.latencyMs < TIER_SIMPLE.colabfoldLatencyBandMinMs &&
+    fs.existsSync(RACE_FASTA.simple_ubiquitin);
   return {
     id: 'E4_tier_simple_ubiquitin',
-    title: 'Tier 1 Simple — Ubiquitin-class prime-vault beats AF latency band (catalog)',
-    primeVault: pv,
-    alphaFoldLatencyBandMinMs: TIER_SIMPLE.afLatencyBandMin,
+    title:
+      'Tier 1 Simple — Ubiquitin FastA · prime-vault live vs ColabFold lane',
+    race,
     pass,
     interpretation:
-      'Monomer fixture: closed-form CPU ms vs minutes-class AF inference talk.',
-    honesty: 'Not a live AlphaFold2 run or deposited 1UBQ bake-off.',
+      'Monomer FastA present; prime-vault live ms vs ColabFold lane (live or deferred).',
+    honesty:
+      'ColabFold runs only when COLABFOLD_LIVE=1 + colabfold_batch; else adapter defers honestly.',
   };
 }
 
 function experimentComplexTier() {
-  const pv = primeVaultFold(TIER_COMPLEX.residues, TIER_COMPLEX.octave);
+  const race = raceTier(TIER_COMPLEX, primeVaultFold);
+  const pv = race.primeVault;
   const pass =
-    pv.residues === 280 &&
+    pv.residues === 264 &&
     pv.octave === 2 &&
     Number.isFinite(pv.energy) &&
     pv.energy > 0 &&
     pv.latencyMs < 2_000 &&
-    pv.latencyMs < TIER_COMPLEX.afLatencyBandMin;
+    pv.latencyMs < TIER_COMPLEX.colabfoldLatencyBandMinMs &&
+    fs.existsSync(RACE_FASTA.complex_il2);
   return {
     id: 'E5_tier_complex_il2',
-    title: 'Tier 2 Complex — IL-2-class heterodimer vault race (catalog)',
-    primeVault: pv,
-    alphaFoldLatencyBandMinMs: TIER_COMPLEX.afLatencyBandMin,
-    afGpuHoursTalk: TIER_COMPLEX.afGpuHoursTalk,
+    title:
+      'Tier 2 Complex — IL-2 multimer FastA · prime-vault live vs ColabFold lane',
+    race,
     pass,
     interpretation:
-      'Multimer-scale node talk: independent vaults vs AF-Multimer cluster-hour framing.',
-    honesty: 'Catalog node count — not IL-2 crystal refinement or AF3 API telemetry.',
+      'Two-chain FastA fixture; vault vs ColabFold-multimer-capable lane.',
+    honesty:
+      'Not an IL-2 crystal bake-off; ColabFold live only when binary + COLABFOLD_LIVE=1.',
   };
 }
 
 function experimentFrontierTier() {
-  const pv = primeVaultFold(TIER_FRONTIER.residues, TIER_FRONTIER.octave);
+  const race = raceTier(TIER_FRONTIER, primeVaultFold);
+  const pv = race.primeVault;
   const pass =
-    pv.residues === 120 &&
+    pv.residues === 89 &&
     pv.octave === 3 &&
     Number.isFinite(pv.energy) &&
     pv.energy > 0 &&
     pv.latencyMs < 1_000 &&
-    TIER_FRONTIER.afConfidenceDrop === true;
+    TIER_FRONTIER.colabfoldMsaSparse === true &&
+    fs.existsSync(RACE_FASTA.frontier_orphan);
   return {
     id: 'E6_tier_frontier_orphan',
-    title: 'Tier 3 Frontier — orphan/synthetic lattice retains deterministic vault (catalog)',
-    primeVault: pv,
-    afConfidenceDropTalk: TIER_FRONTIER.afConfidenceDrop,
+    title:
+      'Tier 3 Frontier — orphan synthetic FastA · prime-vault live vs ColabFold lane',
+    race,
     pass,
     interpretation:
-      'No MSA history required on prime lane; AF orphan brittleness is framing contrast.',
-    honesty: 'Not a claim AF always fails orphans; not clinical de novo design QED.',
+      'No MSA history required on prime lane; ColabFold MSA sparsity is expected contrast.',
+    honesty:
+      'Not a claim ColabFold always fails orphans; not clinical de novo design QED.',
   };
 }
 
-function experimentMetricsTable() {
+function experimentColabfoldAdapter() {
+  const discovery = discoverColabfold();
   const pass =
-    ACCURACY_LABELS.gdtTsTalk === 0.95 &&
-    ACCURACY_LABELS.tmScoreTalk === 0.95 &&
-    ACCURACY_LABELS.rmsdTalkAngstrom === 1.5 &&
-    TIER_SIMPLE.afGpuHoursTalk === 0.05 &&
-    TIER_COMPLEX.afGpuHoursTalk === 2;
+    discovery.engine === 'colabfold' &&
+    discovery.fixturesOk === true &&
+    typeof discovery.honesty === 'string' &&
+    discovery.honesty.includes('COLABFOLD_LIVE') &&
+    Object.keys(RACE_FASTA).length === 3;
   return {
-    id: 'E7_metrics_resource_table',
-    title: 'GDT/TM/RMSD talk labels + AF GPU-hour framing bands locked',
-    ACCURACY_LABELS,
-    simpleGpu: TIER_SIMPLE.afGpuHoursTalk,
-    complexGpu: TIER_COMPLEX.afGpuHoursTalk,
+    id: 'E7_colabfold_adapter',
+    title: 'ColabFold adapter discovery + FastA fixtures (AlphaFold-class lane)',
+    discovery: {
+      engine: discovery.engine,
+      installed: discovery.installed,
+      liveRequested: discovery.liveRequested,
+      liveEligible: discovery.liveEligible,
+      fixturesOk: discovery.fixturesOk,
+    },
     pass,
     interpretation:
-      'Comparative metrics table fixtures for accuracy · speed · resource axes.',
-    honesty: 'Talk labels — not audited CASP scores or cloud invoices.',
+      'Adapter is the AlphaFold-class race lane — ColabFold binary optional; fixtures mandatory.',
+    honesty: discovery.honesty,
   };
 }
 
@@ -202,27 +222,31 @@ function experimentPaperAndBlogLocks() {
     hasFair: /Fair Exchange/i.test(paper),
     hasPhi: /Φ|PHI_EGS|1\.618|EGS Fractal/i.test(paper),
     hasAlphaFold: /AlphaFold/i.test(paper),
+    hasColabFold: /ColabFold/i.test(paper),
     hasPrimeVault: /prime.?vault|Prime-Vault/i.test(paper),
     hasUbiquitin: /Ubiquitin|76/i.test(paper),
-    hasIl2: /Interleukin|heterodimer|280/i.test(paper),
+    hasIl2: /Interleukin|IL-2|heterodimer|264/i.test(paper),
     hasOrphan: /orphan|de novo|Frontier/i.test(paper),
     hasMetrics: /GDT-TS|TM-score|RMSD/i.test(paper),
+    hasLiveFlag: /COLABFOLD_LIVE/i.test(paper),
     hasOperator: /SynthOBS/i.test(paper),
     notEnginePin:
       /not.*engine-shelf pin|application companion|not an engine/i.test(paper),
     blogExists: Boolean(blog),
     blogSlug: blog.includes(SHIP_BLOG_SLUG) || blog.includes('prime-vault'),
+    blogColabFold: /ColabFold/i.test(blog),
     blogHonesty: /Honesty/i.test(blog),
   };
   const pass = Boolean(paper) && Object.values(checks).every(Boolean);
   return {
     id: 'E8_paper_blog_locks',
-    title: 'Paper + ship-blog honesty / Fair Exchange / race locks',
+    title: 'Paper + ship-blog honesty / Fair Exchange / ColabFold race locks',
     paperPath: fs.existsSync(paperPath) ? paperPath : localPaper,
     blogPath: MONOREPO_BLOG,
     ...checks,
     pass,
-    interpretation: 'Surfaces must carry race framing + honesty, not CASP overclaim.',
+    interpretation:
+      'Surfaces must name ColabFold as the AF-class lane + honesty, not CASP overclaim.',
     honesty: 'Structural text locks — not bake-off validation.',
   };
 }
@@ -235,7 +259,7 @@ function experimentRegistryId() {
     DOC_ID,
     pass: REGISTRY_ID === 'synthobs-prime-vault-alphafold-race-2026-09',
     interpretation:
-      'Canonical registry id for prime-vault vs AlphaFold race (not engine pin).',
+      'Canonical registry id for prime-vault vs ColabFold race (not engine pin).',
     honesty: 'Naming lock.',
   };
 }
@@ -248,7 +272,7 @@ export async function runAllExperiments() {
     experimentSimpleTier(),
     experimentComplexTier(),
     experimentFrontierTier(),
-    experimentMetricsTable(),
+    experimentColabfoldAdapter(),
     experimentPaperAndBlogLocks(),
     experimentRegistryId(),
   ];

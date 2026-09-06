@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "de1efdeccbabe6b8",
+  "auditId": "62ed0f3c5764746b",
   "paperId": "synthobs-prime-vault-alphafold-race-2026-09",
   "sourcePath": "docs/SYNTHOBS_PRIME_VAULT_ALPHAFOLD_RACE_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,14 +43,14 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-06T06:05:10.555Z"
+          "invokedAt": "2026-09-06T07:40:07.574Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-06T06:05:10.554Z",
-  "completedAt": "2026-09-06T06:05:10.555Z",
+  "startedAt": "2026-09-06T07:40:07.573Z",
+  "completedAt": "2026-09-06T07:40:07.575Z",
   "iterations": 1,
   "overallScore": 0.882,
   "passThreshold": 0.85,
@@ -127,13 +127,13 @@
       "Document methods, data sources, and reproducibility commands."
     ],
     "meta": {
-      "wordCount": 1123,
+      "wordCount": 1099,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 8,
+        "links": 9,
         "numbered": 3,
-        "citeLines": 2
+        "citeLines": 3
       }
     }
   },

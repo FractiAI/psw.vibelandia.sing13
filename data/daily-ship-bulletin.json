@@ -15,14 +15,14 @@
   "honesty": "Guest hospitality copy generated from featured catalog items. Not space-weather advice, demography prophecy, or Core physics claims.",
   "cloudBadge": "Sunday board · September 6 · Puerto Reno",
   "newsLabel": "News of the day · Sunday, September 6",
-  "htmlBody": "Race day — today’s tip is <a href=\"/ship-blog/prime-vault-alphafold-race\">Prime-Vault vs AlphaFold</a>: three tiers (Ubiquitin · IL-2 complex · orphan/synthetic) scoring accuracy · latency · resources under Φ ≈ 1.618. Catalog fixtures, not live AF API or CASP medal transfer. Fair Exchange tip clause on.<br /><br />If you want a map for that: <a href=\"/ship-blog/prime-vault-alphafold-race\">Prime vaults vs AlphaFold — race the three tiers</a>. Also new on the board: <a href=\"/ship-blog/sing-muse-omniversal-lattice\">Sing, Muse, of the Omniversal Lattice</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
+  "htmlBody": "Race day — today’s tip is <a href=\"/ship-blog/prime-vault-alphafold-race\">Prime-Vault vs ColabFold</a>: three FastA tiers (Ubiquitin · IL-2 complex · orphan/synthetic) with ColabFold as the AlphaFold-class lane (<code>COLABFOLD_LIVE=1</code>). Honesty: no invented pLDDT in CI. Fair Exchange tip clause on.<br /><br />If you want a map for that: <a href=\"/ship-blog/prime-vault-alphafold-race\">Prime vaults vs ColabFold — race the three tiers</a>. Also new on the board: <a href=\"/ship-blog/sing-muse-omniversal-lattice\">Sing, Muse, of the Omniversal Lattice</a>.<br /><br />What to do with it today: listen when the field gets loud, claim a little personal space, make something true, prune what no longer serves. Lattice Chat is ready when you want to build; Collaborate keeps seats in the same room. Music is free on the jukebox. And I remain your host in Downtown Reno — when you need a human hand, I’m here.",
   "highlights": [
     {
       "id": "synthobs-prime-vault-alphafold-race-2026-09",
-      "title": "Prime vaults vs AlphaFold — race the three tiers",
+      "title": "Prime vaults vs ColabFold — race the three tiers",
       "href": "/ship-blog/prime-vault-alphafold-race",
       "paperHref": "/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-alphafold-race-2026-09",
-      "blurb": "Ubiquitin · IL-2 complex · orphan/synthetic under Φ≈1.618: GDT/TM/RMSD talk vs closed-form prime-vault latency and CPU resources. Honesty first: catalog race, not live AF API or CASP medal transfer. Fair Exchange tip clause on."
+      "blurb": "Ubiquitin · IL-2 complex · orphan/synthetic FastA under Φ≈1.618: ColabFold is the AlphaFold-class lane (COLABFOLD_LIVE=1). Honesty first: no invented pLDDT in CI; not CASP medal transfer. Fair Exchange tip clause on."
     },
     {
       "id": "synthobs-sing-muse-omniversal-lattice-2026-09",
@@ -40,9 +40,9 @@
     }
   ],
   "leadBoard": {
-    "id": "daily-2026-09-06-synthobs-sing-muse-omniversal-lattice-2026-09",
-    "title": "Sing, Muse, of the Omniversal Lattice",
-    "href": "/ship-blog/sing-muse-omniversal-lattice"
+    "id": "daily-2026-09-06-synthobs-prime-vault-alphafold-race-2026-09",
+    "title": "Prime vaults vs AlphaFold — race the three tiers",
+    "href": "/ship-blog/prime-vault-alphafold-race"
   },
-  "generatedAt": "2026-09-06T06:05:11.032Z"
+  "generatedAt": "2026-09-06T07:40:08.241Z"
 }

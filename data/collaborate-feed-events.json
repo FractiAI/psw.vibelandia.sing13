@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-06T06:05:10.559Z",
+  "updatedAt": "2026-09-06T07:40:07.584Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,12 +12,12 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-06T06:05:10.557Z",
-      "body": "Benchmark Architecture: Infinite Octave Prime-Vault vs AlphaFold — Tiered Race on Accuracy · Latency · Resources (Catalog)",
+      "createdAt": "2026-09-06T07:40:07.579Z",
+      "body": "Benchmark Architecture: Infinite Octave Prime-Vault vs ColabFold (AlphaFold-class) — Tiered Race on Accuracy · Latency · Resources",
       "presenceHue": "gold",
       "paperId": "synthobs-prime-vault-alphafold-race-2026-09",
       "artifact": {
-        "title": "Benchmark Architecture: Infinite Octave Prime-Vault vs AlphaFold — Tiered Race on Accuracy · Latency · Resources (Catalog)",
+        "title": "Benchmark Architecture: Infinite Octave Prime-Vault vs ColabFold (AlphaFold-class) — Tiered Race on Accuracy · Latency · Resources",
         "kind": "whitepaper",
         "path": "docs/SYNTHOBS_PRIME_VAULT_ALPHAFOLD_RACE_EGS_2026-09.md",
         "url": "/whitepaper/prime-vault-alphafold-race",

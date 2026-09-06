@@ -1,8 +1,8 @@
-# Prime-Vault vs AlphaFold Race — Catalog Benchmark Suite
+# Prime-Vault vs ColabFold (AlphaFold-class) Race — Live-Capable Benchmark Suite
 
 **Document ID:** `WP-SYNTHOBS-PRIME-VAULT-ALPHAFOLD-RACE-EGS-2026-09-06`
 **Registry ID:** `synthobs-prime-vault-alphafold-race-2026-09`
-**Generated:** 2026-09-06T06:05:11.853Z
+**Generated:** 2026-09-06T07:40:08.921Z
 
 ## Verdict
 
@@ -68,115 +68,210 @@
 }
 ```
 
-### E4_tier_simple_ubiquitin — Tier 1 Simple — Ubiquitin-class prime-vault beats AF latency band (catalog)
+### E4_tier_simple_ubiquitin — Tier 1 Simple — Ubiquitin FastA · prime-vault live vs ColabFold lane
 
 - **Pass:** `true`
-- **Interpretation:** Monomer fixture: closed-form CPU ms vs minutes-class AF inference talk.
-- **Honesty:** Not a live AlphaFold2 run or deposited 1UBQ bake-off.
+- **Interpretation:** Monomer FastA present; prime-vault live ms vs ColabFold lane (live or deferred).
+- **Honesty:** ColabFold runs only when COLABFOLD_LIVE=1 + colabfold_batch; else adapter defers honestly.
 
 ```json
 {
   "id": "E4_tier_simple_ubiquitin",
-  "title": "Tier 1 Simple — Ubiquitin-class prime-vault beats AF latency band (catalog)",
-  "primeVault": {
-    "lane": "prime_vault",
-    "residues": 76,
-    "octave": 1,
-    "primes": 76,
-    "energy": 0.19776231829567956,
-    "latencyMs": 0.07226500000000158
+  "title": "Tier 1 Simple — Ubiquitin FastA · prime-vault live vs ColabFold lane",
+  "race": {
+    "tierId": "simple_ubiquitin",
+    "tierName": "Ubiquitin-class monomer (P0CG48)",
+    "primeVault": {
+      "lane": "prime_vault",
+      "residues": 76,
+      "octave": 1,
+      "primes": 76,
+      "energy": 0.19776231829567956,
+      "latencyMs": 0.1296040000000005,
+      "live": true
+    },
+    "colabfold": {
+      "tierId": "simple_ubiquitin",
+      "lane": "colabfold",
+      "mode": "not_installed",
+      "fastaPath": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier1_ubiquitin.fasta",
+      "live": false,
+      "latencyMs": null,
+      "plddtMean": null,
+      "exitCode": null,
+      "outDir": null,
+      "note": "Install ColabFold (colabfold_batch) then set COLABFOLD_LIVE=1",
+      "discovery": {
+        "engine": "colabfold",
+        "bin": null,
+        "installed": false,
+        "liveRequested": false,
+        "liveEligible": false,
+        "fixturesOk": true,
+        "fixtures": {
+          "simple_ubiquitin": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier1_ubiquitin.fasta",
+          "complex_il2": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier2_il2_complex.fasta",
+          "frontier_orphan": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier3_orphan_synthetic.fasta"
+        },
+        "honesty": "ColabFold is the AlphaFold-class comparison lane. Live inference only when COLABFOLD_LIVE=1 and colabfold_batch is installed. Default CI validates adapter contract + FastA fixtures — it does not invent pLDDT or PDB coordinates."
+      }
+    },
+    "latencyAdvantageMs": null,
+    "comparisonMode": "not_installed"
   },
-  "alphaFoldLatencyBandMinMs": 60000,
   "pass": true,
-  "interpretation": "Monomer fixture: closed-form CPU ms vs minutes-class AF inference talk.",
-  "honesty": "Not a live AlphaFold2 run or deposited 1UBQ bake-off."
+  "interpretation": "Monomer FastA present; prime-vault live ms vs ColabFold lane (live or deferred).",
+  "honesty": "ColabFold runs only when COLABFOLD_LIVE=1 + colabfold_batch; else adapter defers honestly."
 }
 ```
 
-### E5_tier_complex_il2 — Tier 2 Complex — IL-2-class heterodimer vault race (catalog)
+### E5_tier_complex_il2 — Tier 2 Complex — IL-2 multimer FastA · prime-vault live vs ColabFold lane
 
 - **Pass:** `true`
-- **Interpretation:** Multimer-scale node talk: independent vaults vs AF-Multimer cluster-hour framing.
-- **Honesty:** Catalog node count — not IL-2 crystal refinement or AF3 API telemetry.
+- **Interpretation:** Two-chain FastA fixture; vault vs ColabFold-multimer-capable lane.
+- **Honesty:** Not an IL-2 crystal bake-off; ColabFold live only when binary + COLABFOLD_LIVE=1.
 
 ```json
 {
   "id": "E5_tier_complex_il2",
-  "title": "Tier 2 Complex — IL-2-class heterodimer vault race (catalog)",
-  "primeVault": {
-    "lane": "prime_vault",
-    "residues": 280,
-    "octave": 2,
-    "primes": 280,
-    "energy": 0.3199861526963848,
-    "latencyMs": 0.24619300000000166
+  "title": "Tier 2 Complex — IL-2 multimer FastA · prime-vault live vs ColabFold lane",
+  "race": {
+    "tierId": "complex_il2",
+    "tierName": "Interleukin-2 + IL-2Rβ fragment complex",
+    "primeVault": {
+      "lane": "prime_vault",
+      "residues": 264,
+      "octave": 2,
+      "primes": 264,
+      "energy": 0.3199861526963848,
+      "latencyMs": 0.7983429999999991,
+      "live": true
+    },
+    "colabfold": {
+      "tierId": "complex_il2",
+      "lane": "colabfold",
+      "mode": "not_installed",
+      "fastaPath": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier2_il2_complex.fasta",
+      "live": false,
+      "latencyMs": null,
+      "plddtMean": null,
+      "exitCode": null,
+      "outDir": null,
+      "note": "Install ColabFold (colabfold_batch) then set COLABFOLD_LIVE=1",
+      "discovery": {
+        "engine": "colabfold",
+        "bin": null,
+        "installed": false,
+        "liveRequested": false,
+        "liveEligible": false,
+        "fixturesOk": true,
+        "fixtures": {
+          "simple_ubiquitin": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier1_ubiquitin.fasta",
+          "complex_il2": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier2_il2_complex.fasta",
+          "frontier_orphan": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier3_orphan_synthetic.fasta"
+        },
+        "honesty": "ColabFold is the AlphaFold-class comparison lane. Live inference only when COLABFOLD_LIVE=1 and colabfold_batch is installed. Default CI validates adapter contract + FastA fixtures — it does not invent pLDDT or PDB coordinates."
+      }
+    },
+    "latencyAdvantageMs": null,
+    "comparisonMode": "not_installed"
   },
-  "alphaFoldLatencyBandMinMs": 600000,
-  "afGpuHoursTalk": 2,
   "pass": true,
-  "interpretation": "Multimer-scale node talk: independent vaults vs AF-Multimer cluster-hour framing.",
-  "honesty": "Catalog node count — not IL-2 crystal refinement or AF3 API telemetry."
+  "interpretation": "Two-chain FastA fixture; vault vs ColabFold-multimer-capable lane.",
+  "honesty": "Not an IL-2 crystal bake-off; ColabFold live only when binary + COLABFOLD_LIVE=1."
 }
 ```
 
-### E6_tier_frontier_orphan — Tier 3 Frontier — orphan/synthetic lattice retains deterministic vault (catalog)
+### E6_tier_frontier_orphan — Tier 3 Frontier — orphan synthetic FastA · prime-vault live vs ColabFold lane
 
 - **Pass:** `true`
-- **Interpretation:** No MSA history required on prime lane; AF orphan brittleness is framing contrast.
-- **Honesty:** Not a claim AF always fails orphans; not clinical de novo design QED.
+- **Interpretation:** No MSA history required on prime lane; ColabFold MSA sparsity is expected contrast.
+- **Honesty:** Not a claim ColabFold always fails orphans; not clinical de novo design QED.
 
 ```json
 {
   "id": "E6_tier_frontier_orphan",
-  "title": "Tier 3 Frontier — orphan/synthetic lattice retains deterministic vault (catalog)",
-  "primeVault": {
-    "lane": "prime_vault",
-    "residues": 120,
-    "octave": 3,
-    "primes": 120,
-    "energy": 0.5177484709920639,
-    "latencyMs": 0.46069200000000166
+  "title": "Tier 3 Frontier — orphan synthetic FastA · prime-vault live vs ColabFold lane",
+  "race": {
+    "tierId": "frontier_orphan",
+    "tierName": "De novo orphan / synthetic lattice",
+    "primeVault": {
+      "lane": "prime_vault",
+      "residues": 89,
+      "octave": 3,
+      "primes": 89,
+      "energy": 0.5177484709920639,
+      "latencyMs": 0.06215700000000268,
+      "live": true
+    },
+    "colabfold": {
+      "tierId": "frontier_orphan",
+      "lane": "colabfold",
+      "mode": "not_installed",
+      "fastaPath": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier3_orphan_synthetic.fasta",
+      "live": false,
+      "latencyMs": null,
+      "plddtMean": null,
+      "exitCode": null,
+      "outDir": null,
+      "note": "Install ColabFold (colabfold_batch) then set COLABFOLD_LIVE=1",
+      "discovery": {
+        "engine": "colabfold",
+        "bin": null,
+        "installed": false,
+        "liveRequested": false,
+        "liveEligible": false,
+        "fixturesOk": true,
+        "fixtures": {
+          "simple_ubiquitin": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier1_ubiquitin.fasta",
+          "complex_il2": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier2_il2_complex.fasta",
+          "frontier_orphan": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier3_orphan_synthetic.fasta"
+        },
+        "honesty": "ColabFold is the AlphaFold-class comparison lane. Live inference only when COLABFOLD_LIVE=1 and colabfold_batch is installed. Default CI validates adapter contract + FastA fixtures — it does not invent pLDDT or PDB coordinates."
+      }
+    },
+    "latencyAdvantageMs": null,
+    "comparisonMode": "not_installed"
   },
-  "afConfidenceDropTalk": true,
   "pass": true,
-  "interpretation": "No MSA history required on prime lane; AF orphan brittleness is framing contrast.",
-  "honesty": "Not a claim AF always fails orphans; not clinical de novo design QED."
+  "interpretation": "No MSA history required on prime lane; ColabFold MSA sparsity is expected contrast.",
+  "honesty": "Not a claim ColabFold always fails orphans; not clinical de novo design QED."
 }
 ```
 
-### E7_metrics_resource_table — GDT/TM/RMSD talk labels + AF GPU-hour framing bands locked
+### E7_colabfold_adapter — ColabFold adapter discovery + FastA fixtures (AlphaFold-class lane)
 
 - **Pass:** `true`
-- **Interpretation:** Comparative metrics table fixtures for accuracy · speed · resource axes.
-- **Honesty:** Talk labels — not audited CASP scores or cloud invoices.
+- **Interpretation:** Adapter is the AlphaFold-class race lane — ColabFold binary optional; fixtures mandatory.
+- **Honesty:** ColabFold is the AlphaFold-class comparison lane. Live inference only when COLABFOLD_LIVE=1 and colabfold_batch is installed. Default CI validates adapter contract + FastA fixtures — it does not invent pLDDT or PDB coordinates.
 
 ```json
 {
-  "id": "E7_metrics_resource_table",
-  "title": "GDT/TM/RMSD talk labels + AF GPU-hour framing bands locked",
-  "ACCURACY_LABELS": {
-    "gdtTsTalk": 0.95,
-    "tmScoreTalk": 0.95,
-    "rmsdTalkAngstrom": 1.5
+  "id": "E7_colabfold_adapter",
+  "title": "ColabFold adapter discovery + FastA fixtures (AlphaFold-class lane)",
+  "discovery": {
+    "engine": "colabfold",
+    "installed": false,
+    "liveRequested": false,
+    "liveEligible": false,
+    "fixturesOk": true
   },
-  "simpleGpu": 0.05,
-  "complexGpu": 2,
   "pass": true,
-  "interpretation": "Comparative metrics table fixtures for accuracy · speed · resource axes.",
-  "honesty": "Talk labels — not audited CASP scores or cloud invoices."
+  "interpretation": "Adapter is the AlphaFold-class race lane — ColabFold binary optional; fixtures mandatory.",
+  "honesty": "ColabFold is the AlphaFold-class comparison lane. Live inference only when COLABFOLD_LIVE=1 and colabfold_batch is installed. Default CI validates adapter contract + FastA fixtures — it does not invent pLDDT or PDB coordinates."
 }
 ```
 
-### E8_paper_blog_locks — Paper + ship-blog honesty / Fair Exchange / race locks
+### E8_paper_blog_locks — Paper + ship-blog honesty / Fair Exchange / ColabFold race locks
 
 - **Pass:** `true`
-- **Interpretation:** Surfaces must carry race framing + honesty, not CASP overclaim.
+- **Interpretation:** Surfaces must name ColabFold as the AF-class lane + honesty, not CASP overclaim.
 - **Honesty:** Structural text locks — not bake-off validation.
 
 ```json
 {
   "id": "E8_paper_blog_locks",
-  "title": "Paper + ship-blog honesty / Fair Exchange / race locks",
+  "title": "Paper + ship-blog honesty / Fair Exchange / ColabFold race locks",
   "paperPath": "/workspace/docs/SYNTHOBS_PRIME_VAULT_ALPHAFOLD_RACE_EGS_2026-09.md",
   "blogPath": "/workspace/interfaces/blog-prime-vault-alphafold-race-2026-09.html",
   "hasHonesty": true,
@@ -184,18 +279,21 @@
   "hasFair": true,
   "hasPhi": true,
   "hasAlphaFold": true,
+  "hasColabFold": true,
   "hasPrimeVault": true,
   "hasUbiquitin": true,
   "hasIl2": true,
   "hasOrphan": true,
   "hasMetrics": true,
+  "hasLiveFlag": true,
   "hasOperator": true,
   "notEnginePin": true,
   "blogExists": true,
   "blogSlug": true,
+  "blogColabFold": true,
   "blogHonesty": true,
   "pass": true,
-  "interpretation": "Surfaces must carry race framing + honesty, not CASP overclaim.",
+  "interpretation": "Surfaces must name ColabFold as the AF-class lane + honesty, not CASP overclaim.",
   "honesty": "Structural text locks — not bake-off validation."
 }
 ```
@@ -203,7 +301,7 @@
 ### E9_registry_id — Registry id + application-companion fixture
 
 - **Pass:** `true`
-- **Interpretation:** Canonical registry id for prime-vault vs AlphaFold race (not engine pin).
+- **Interpretation:** Canonical registry id for prime-vault vs ColabFold race (not engine pin).
 - **Honesty:** Naming lock.
 
 ```json
@@ -213,11 +311,11 @@
   "REGISTRY_ID": "synthobs-prime-vault-alphafold-race-2026-09",
   "DOC_ID": "WP-SYNTHOBS-PRIME-VAULT-ALPHAFOLD-RACE-EGS-2026-09-06",
   "pass": true,
-  "interpretation": "Canonical registry id for prime-vault vs AlphaFold race (not engine pin).",
+  "interpretation": "Canonical registry id for prime-vault vs ColabFold race (not engine pin).",
   "honesty": "Naming lock."
 }
 ```
 
 ## Honesty boundary
 
-Catalog / algebraic race fixtures for Infinite Octave prime-vault vs AlphaFold-class framing. Does not claim live AF2/AF3 API runs, CASP medal transfer, audited GPU invoices, deposited PDB coordinates, or clinical folding QED.
+Prime-vault lane always runs live (closed-form CPU). ColabFold is the AlphaFold-class comparison lane: live when COLABFOLD_LIVE=1 and colabfold_batch is installed; otherwise the suite locks adapter discovery + FastA fixtures and does not invent pLDDT/PDB. Not CASP medal transfer, audited GPU invoices, or clinical folding QED.

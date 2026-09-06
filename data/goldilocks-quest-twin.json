@@ -5,24 +5,25 @@
     "valetpru@gmail.com": {
       "email": "valetpru@gmail.com",
       "status": "player",
-      "grace": 26,
-      "score": 200,
+      "grace": 29,
+      "score": 400,
       "tierMax": 3,
-      "trapsResisted": 1,
-      "demonsSurvived": 0,
-      "unselfishOffers": 1,
+      "trapsResisted": 2,
+      "demonsSurvived": 1,
+      "unselfishOffers": 2,
       "gogglesUnlocked": true,
       "gogglesEquipped": false,
       "revelationSeen": false,
-      "updatedAt": "2026-09-06T20:22:47.979Z"
+      "updatedAt": "2026-09-06T20:51:32.192Z",
+      "gogglesToken": "8014f9f0908d2638"
     }
   },
   "leaderboard": [
     {
       "email": "v••u@gmail.com",
       "status": "player",
-      "score": 200,
-      "grace": 26,
+      "score": 400,
+      "grace": 29,
       "tierMax": 3,
       "goggles": true
     }
@@ -34,6 +35,15 @@
       "body": "NPCs cannot see the Goggles. Climb with grace. Timing Demons scale with Φ≈1.618."
     }
   ],
-  "demonEvents": 0,
-  "updatedAt": "2026-09-06T20:22:47.979Z"
+  "demonEvents": 1,
+  "updatedAt": "2026-09-06T20:51:32.192Z",
+  "presence": {
+    "valetpru@gmail.com": {
+      "at": "2026-09-06T20:51:32.192Z",
+      "tier": 4,
+      "x": 0.6,
+      "status": "player",
+      "goggles": false
+    }
+  }
 }

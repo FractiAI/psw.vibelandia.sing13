@@ -30,8 +30,8 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured notes: Prime-Vault Race door announcement leads; then race results + Sing Muse + holographic companions.
-    expect(posts[0].published).toBe('2026-09-06T23:30:00Z');
+    // Newest featured notes: Goldilocks Quest next-gen Twin v2 leads; then Prime-Vault Race door + race results + Sing Muse + holographic companions.
+    expect(posts[0].published).toBe('2026-09-06T23:55:00Z');
     expect(posts[0].id).toBe('synthobs-goldilocks-quest-door-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
       'synthobs-goldilocks-quest-door-2026-09',

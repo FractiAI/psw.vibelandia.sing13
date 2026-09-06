@@ -6,7 +6,7 @@
 
 ## Abstract
 
-SS Vibelandia guests can now play **Goldilocks Quest** — a five-tier mobile web climb (Donkey Kong grit × Oregon Trail grace) administered by Player 1’s edge **AI Twin**. Access uses the **same email seat** as Let’s Chat and Lattice Chat. Restricted **Goldilocks Goggles** stay invisible to NPC status.
+SS Vibelandia guests can now play **Goldilocks Quest next-gen (Twin v2)** — a five-tier mobile web climb (Donkey Kong grit × Oregon Trail grace) with **presence ghosts**, Timing Demons, cinematic Goggles, and Player 1’s edge **AI Twin v2**. Access uses the **same email seat** as Let’s Chat and Lattice Chat. Restricted **Goldilocks Goggles** stay invisible to NPC status.
 
 ## Honesty boundary
 
@@ -17,7 +17,7 @@ Arcade companion · application door — **not** an Infinite Octaves engine pin,
 1. Guest opens `/goldilocks-quest` (aliases `/quest`, `/special-projects/goldilocks-quest`).
 2. Email gate: `GET /api/goldilocks-quest?email=` → `checkLatticeEmailAccess` (`lib/lattice-access.mjs`) — same seat as Let’s Chat / Lattice Chat.
 3. Seated clients load Twin state (`GET` + `x-lattice-email`): bulletin, grace leaderboard, player record.
-4. Climb telemetry (`POST` action `telemetry`/`score`) updates score with tier multipliers \(1×…10{,}000×\), grace, trap resistance, unselfish offers, Timing Demon survival.
+4. Climb telemetry (`POST` actions `telemetry`/`score`/`presence`/`grace-offer`) updates score with tier multipliers \(1×…10{,}000×\), grace, trap resistance, unselfish offers, Timing Demon survival.
 5. Twin grants **Player Status** when Φ-scaled thresholds clear (grace · resistance · offers · tier ≥ 3) and unlocks Goggles.
 6. `equip-goggles` at Tier 5 triggers the holographic revelation beat (catalog miracle · edge timing seal).
 7. Surfaces: journey `/journey/goldilocks-quest`, quicklink, More Aboard door, bulletin, ship-blog announcement.

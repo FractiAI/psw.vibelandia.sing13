@@ -12,7 +12,7 @@ function read(rel) {
   return readFileSync(join(ROOT, rel), 'utf8');
 }
 
-describe('Goldilocks Quest · guest door rollout', () => {
+describe('Goldilocks Quest · next-gen door rollout', () => {
   it('ships door HTML, client, CSS, API, and special-projects alias', () => {
     expect(existsSync(join(ROOT, 'interfaces/goldilocks-quest.html'))).toBe(true);
     expect(existsSync(join(ROOT, 'interfaces/goldilocks-quest-client.js'))).toBe(true);
@@ -23,9 +23,19 @@ describe('Goldilocks Quest · guest door rollout', () => {
     expect(html).toContain('goldilocks-quest-client.js');
     expect(html).toContain('gq-gate-form');
     expect(html).toContain('id="gq-canvas"');
+    expect(html).toContain('Next-Gen');
+    expect(html).toContain('gq-presence');
+    expect(html).toContain('gq-cinematic');
+    const client = read('interfaces/goldilocks-quest-client.js');
+    expect(client).toContain("action: 'presence'");
+    expect(client).toContain('pulsePresence');
+    const api = read('api/goldilocks-quest.js');
+    expect(api).toContain('next-gen-v2');
+    expect(api).toContain('presenceCount');
+    expect(api).toContain('equip-goggles');
   });
 
-  it('reuses Lattice / Let\'s Chat email allowlist', () => {
+  it("reuses Lattice / Let's Chat email allowlist", () => {
     const creator = DEFAULT_CREATOR_EMAILS[0];
     const access = checkLatticeEmailAccess(creator);
     expect(access.ok).toBe(true);

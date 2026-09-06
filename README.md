@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-05** · **261** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-06** · **262** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -321,6 +321,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Φ Duality · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-recursive-attention-loop.html`](/interfaces/blog-recursive-attention-loop.html) | Recursive Attention Coherence · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html`](/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html) | Sing, Muse, of the Omniversal Lattice · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-smaller-golden-key-pack-2026-08.html`](/interfaces/blog-smaller-golden-key-pack-2026-08.html) | A smaller pack for the golden key · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html`](/interfaces/blog-sna-tcpip-gateway-omni-lattice-2026-09.html) | From IBM SNA gateways to Omni-Lattice Chat · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-soundtrack-prelude-pages-2026-08.html`](/interfaces/blog-soundtrack-prelude-pages-2026-08.html) | Soundtrack preludes — pages that breathe with music · Ship blog · SS Vibelandia |

@@ -1,11 +1,33 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-05T22:57:43.023Z",
+  "updatedAt": "2026-09-06T05:20:18.969Z",
   "seats": [
     "Valet Pru",
     "Daniel"
   ],
   "events": [
+    {
+      "id": "wp_synthobs-sing-muse-omniversal-lattice-2026-09",
+      "type": "ArtifactEvent",
+      "platform": "lattice",
+      "actor": "SynthOBS",
+      "sourceLabel": "New Whitepaper",
+      "createdAt": "2026-09-06T05:20:18.969Z",
+      "body": "Sing, Muse, of the Omniversal Lattice",
+      "presenceHue": "gold",
+      "paperId": "synthobs-sing-muse-omniversal-lattice-2026-09",
+      "artifact": {
+        "title": "Sing, Muse, of the Omniversal Lattice",
+        "kind": "whitepaper",
+        "path": "docs/SYNTHOBS_SING_MUSE_OMNIVERSAL_LATTICE_2026-09.md",
+        "url": "/whitepaper/sing-muse-omniversal-lattice",
+        "paperId": "synthobs-sing-muse-omniversal-lattice-2026-09",
+        "docId": "WP-SYNTHOBS-SING-MUSE-OMNIVERSAL-LATTICE-2026-09-06",
+        "published": "2026-09-06T12:00:00Z",
+        "featured": true,
+        "auditStatus": "pass"
+      }
+    },
     {
       "id": "wp_synthobs-multidimensional-holographic-rhyme-2026-09",
       "type": "ArtifactEvent",

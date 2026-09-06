@@ -16,11 +16,12 @@ const RECEIPT_DIR = path.join(PKG_ROOT, 'data', 'colabfold_receipts');
 
 export const COLABFOLD_LIVE = process.env.COLABFOLD_LIVE === '1';
 
-/** Canonical FastA fixtures for the three race tiers. */
+/** Canonical FastA fixtures for the race tiers (1–4). */
 export const RACE_FASTA = Object.freeze({
   simple_ubiquitin: path.join(FIXTURES, 'tier1_ubiquitin.fasta'),
   complex_il2: path.join(FIXTURES, 'tier2_il2_complex.fasta'),
   frontier_orphan: path.join(FIXTURES, 'tier3_orphan_synthetic.fasta'),
+  unmodeled_nova: path.join(FIXTURES, 'tier4_unmodeled_nova.fasta'),
 });
 
 export function resolveColabfoldBin() {

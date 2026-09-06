@@ -54,6 +54,23 @@ export const TIER_FRONTIER = Object.freeze({
   colabfoldMsaSparse: true,
 });
 
+/**
+ * Tier 4 — Unmodeled Nova Φ-cryptic · 112 aa.
+ * No PDB deposit · no MSA homologs by design · not previously AF-modeled.
+ * ColabFold lane: fixtures/fasta/tier4_unmodeled_nova.fasta
+ */
+export const TIER_UNMODELED = Object.freeze({
+  id: 'unmodeled_nova',
+  name: 'Unmodeled Nova Φ-cryptic (no prior model)',
+  residues: 112,
+  octave: 4,
+  fastaKey: 'unmodeled_nova',
+  colabfoldLatencyBandMinMs: 400_000,
+  colabfoldGpuHoursTalk: 1.5,
+  colabfoldMsaSparse: true,
+  neverModeled: true,
+});
+
 /** Catalog accuracy contrast labels (not deposited PDB bake-off scores). */
 export const ACCURACY_LABELS = Object.freeze({
   gdtTsTalk: 0.95,

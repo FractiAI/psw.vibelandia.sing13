@@ -7,8 +7,8 @@
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-LATTICE-CHAT-PEM-2026-09`  
 **Registry ID:** `lattice-chat-product-engineering-manual-2026-09`  
-**Date:** 2026-09-05
-**Published:** 2026-09-05
+**Date:** 2026-09-06
+**Published:** 2026-09-06
 **Framework:** SynthOBS · NSPFRNP · MCA · Seed:Edge · Fair Exchange · BYOK · PRA Snap  
 **Live chat:** [`/lattice-chat?nest=octave99`](https://www.ssvibelandiaquestfest24x365.com/lattice-chat?nest=octave99)  
 **Product hero:** [`/lattice`](https://www.ssvibelandiaquestfest24x365.com/lattice) · primer [`/lattice/learn`](https://www.ssvibelandiaquestfest24x365.com/lattice/learn) · this manual [`/lattice/engineering`](https://www.ssvibelandiaquestfest24x365.com/lattice/engineering)  
@@ -21,7 +21,7 @@
 ---
 
 <!-- AUTO:LATTICE-PEM-META:BEGIN -->
-**Engine shelf sync:** 2026-09-05 · **21** ordered steps (**19** registry papers) · generator `npm run sync:lattice-pem`
+**Engine shelf sync:** 2026-09-06 · **21** ordered steps (**19** registry papers) · generator `npm run sync:lattice-pem`
 
 When a paper is **added to the Infinite Octaves / 99 Octave engine pin**, append it to `ENGINE_SHELF` in `lib/infinite-octave-engine-shelf.mjs`, then re-run the sync (Cursor PRA stop hook does this automatically for matching engine / PEM / AGENT_SYNC edits).
 <!-- AUTO:LATTICE-PEM-META:END -->

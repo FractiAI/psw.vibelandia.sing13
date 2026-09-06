@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Prime Vault Chat · SS Vibelandia</title>
+  <meta name="description" content="Free guest demo: ChatGPT-style chat powered by the closed-form Φ Prime Vault engine — $0 training, edge-ready. Same email seat as Let's Chat and Lattice Chat." />
+  <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/prime-vault-chat" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
+  <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/prime-vault-chat.css" />
+</head>
+<body class="pvc-body">
+  <nav class="qv-top-quicklinks pvc-site-nav" aria-label="Site">
+    <div class="qv-top-quicklinks__row qv-top-quicklinks__row--primary">
+      <a href="/questfest">SS Vibelandia</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="qv-top-quicklinks__here">Prime Vault Chat</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="/prime-vault-race">Miracle 1 · Race</a>
+    </div>
+  </nav>
+
+  <main class="pvc-shell" id="pvc-app">
+    <section class="pvc-gate" id="pvc-gate" aria-labelledby="pvc-gate-h">
+      <p class="pvc-brand">SS Vibelandia · Miracle 2</p>
+      <h1 id="pvc-gate-h">Prime Vault Chat</h1>
+      <p class="pvc-gate__lead">
+        ChatGPT-shaped door. Under the hood: a closed-form Φ ≈ 1.618 prime-vault engine —
+        <strong>$0 training</strong>, no GPU cluster, algebraic replies you can feel.
+        Same email seat as Let’s Chat and Lattice Chat.
+      </p>
+      <form id="pvc-gate-form" class="pvc-gate__form">
+        <label for="pvc-email">Email</label>
+        <input id="pvc-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+        <button type="submit" class="pvc-btn">Come aboard · chat free</button>
+      </form>
+      <p class="pvc-gate__hint">No seat yet? <a href="mailto:valetpru@gmail.com?subject=Prime%20Vault%20Chat%20guest%20seat">Email the Purser</a> · same grant as Lattice / Let’s Chat</p>
+      <p class="pvc-gate__err" id="pvc-gate-err" hidden></p>
+    </section>
+
+    <section class="pvc-chat" id="pvc-chat" hidden aria-label="Prime Vault Chat">
+      <header class="pvc-chat__head">
+        <div>
+          <p class="pvc-brand">Prime Vault Chat · edge engine</p>
+          <h2>Ask the lattice</h2>
+          <p class="pvc-you" id="pvc-me-label">You</p>
+        </div>
+        <div class="pvc-chat__actions">
+          <button type="button" class="pvc-btn pvc-btn--ghost" id="pvc-new">New chat</button>
+          <button type="button" class="pvc-btn pvc-btn--ghost" id="pvc-signout">Sign out</button>
+        </div>
+      </header>
+
+      <p class="pvc-honesty">
+        Honesty: algebraic prime-vault resonance — not a trained LLM for open-world factual QA.
+        Miracle 1 is the <a href="/prime-vault-race">Race</a>; this is Miracle 2. Fair Exchange on.
+      </p>
+
+      <div class="pvc-thread" id="pvc-thread" role="log" aria-live="polite"></div>
+
+      <form class="pvc-composer" id="pvc-composer">
+        <label class="visually-hidden" for="pvc-input">Message</label>
+        <textarea id="pvc-input" rows="1" placeholder="Message Prime Vault…" maxlength="4000" required></textarea>
+        <button type="submit" class="pvc-btn" id="pvc-send">Send</button>
+      </form>
+      <p class="pvc-meta" id="pvc-meta">Φ ≈ 1.618 · octave 7 · $0 training</p>
+    </section>
+  </main>
+
+  <script src="/interfaces/site-quicklinks.js" defer></script>
+  <script src="/interfaces/prime-vault-chat-client.js" defer></script>
+</body>
+</html>

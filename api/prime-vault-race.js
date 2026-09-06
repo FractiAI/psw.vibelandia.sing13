@@ -33,6 +33,7 @@ const TIERS = Object.freeze({
   simple_ubiquitin: { id: 'simple_ubiquitin', residues: 76, octave: 1, label: 'Ubiquitin (76 aa)' },
   complex_il2: { id: 'complex_il2', residues: 264, octave: 2, label: 'IL-2 + IL-2Rβ (264 aa)' },
   frontier_orphan: { id: 'frontier_orphan', residues: 89, octave: 3, label: 'Orphan synthetic (89 aa)' },
+  unmodeled_nova: { id: 'unmodeled_nova', residues: 112, octave: 4, label: 'Unmodeled Nova Φ-cryptic (112 aa)' },
 });
 
 function cors(res) {
@@ -156,7 +157,7 @@ export default async function handler(req, res) {
     product: 'prime-vault-race',
     door: '/prime-vault-race',
     honesty:
-      'Prime-vault = live closed-form Φ fold on this edge. ColabFold = measured receipt (CPU · single_sequence · 1 model). Latency race ≠ GDT-TS / CASP. Same email seat as Let\'s Chat and Lattice Chat.',
+      'Prime-vault = live closed-form Φ fold on this edge. ColabFold = measured receipt on tiers 1–3 (CPU · single_sequence · 1 model); tier 4 Unmodeled Nova may defer ColabFold. Latency race ≠ GDT-TS / CASP. Same email seat as Let\'s Chat and Lattice Chat.',
     fairExchange: true,
     phiEgs: PHI_EGS,
     receipt: results,

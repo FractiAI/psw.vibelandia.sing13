@@ -208,6 +208,8 @@
     '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/lattice-chat" id="ql-lattice-chat-link">Lattice Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
+    '<a href="/prime-vault-chat" id="ql-prime-vault-chat-link">Prime Vault Chat</a>' +
+    '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/prime-vault-race" id="ql-prime-vault-race-link">Prime-Vault Race</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/goldilocks-quest" id="ql-goldilocks-quest-link">Goldilocks Quest</a>' +

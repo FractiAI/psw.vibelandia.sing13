@@ -15,6 +15,7 @@ import {
   TIER_SIMPLE,
   TIER_COMPLEX,
   TIER_FRONTIER,
+  TIER_UNMODELED,
 } from './constants.mjs';
 import {
   discoverColabfold,
@@ -180,28 +181,56 @@ function experimentFrontierTier() {
   };
 }
 
+function experimentUnmodeledTier() {
+  const race = raceTier(TIER_UNMODELED, primeVaultFold);
+  const pv = race.primeVault;
+  const pass =
+    pv.residues === 112 &&
+    pv.octave === 4 &&
+    TIER_UNMODELED.neverModeled === true &&
+    Number.isFinite(pv.energy) &&
+    pv.energy > 0 &&
+    pv.latencyMs < 1_000 &&
+    fs.existsSync(RACE_FASTA.unmodeled_nova);
+  return {
+    id: 'E6b_tier_unmodeled_nova',
+    title:
+      'Tier 4 Unmodeled Nova — never-modeled FastA · prime-vault live decipher vs ColabFold lane',
+    race,
+    pass,
+    interpretation:
+      'Deciphering a protein with no prior AF/PDB model: vault lane closes Φ-energy live; ColabFold may be deferred until COLABFOLD_LIVE=1.',
+    honesty:
+      'Not a claim the sequence is biologically expressed; catalog/demo race element for unmodeled deciphering.',
+  };
+}
+
 function loadRaceResults() {
   const racePath = path.join(PKG_ROOT, 'data', 'race_results.json');
   if (!fs.existsSync(racePath)) return { path: racePath, ok: false, data: null };
   try {
     const data = JSON.parse(fs.readFileSync(racePath, 'utf8'));
-    const tierKeys = ['simple_ubiquitin', 'complex_il2', 'frontier_orphan'];
+    const measuredKeys = ['simple_ubiquitin', 'complex_il2', 'frontier_orphan'];
     const liveAll =
       data?.schema === 'synthobs-prime-vault-colabfold-race-results/v1' &&
-      tierKeys.every((k) => data?.tiers?.[k]?.colabfold?.live === true);
-    const hasWall = tierKeys.every(
+      measuredKeys.every((k) => data?.tiers?.[k]?.colabfold?.live === true);
+    const hasWall = measuredKeys.every(
       (k) => Number(data?.tiers?.[k]?.colabfold?.wallMs) > 0,
     );
-    const hasPlddt = tierKeys.every(
+    const hasPlddt = measuredKeys.every(
       (k) => Number(data?.tiers?.[k]?.colabfold?.plddtMean) > 0,
     );
+    const hasUnmodeled =
+      data?.tiers?.unmodeled_nova?.primeVault?.residues === 112 &&
+      Number(data?.tiers?.unmodeled_nova?.primeVault?.latencyMs_median) > 0;
     return {
       path: racePath,
-      ok: Boolean(liveAll && hasWall && hasPlddt),
+      ok: Boolean(liveAll && hasWall && hasPlddt && hasUnmodeled),
       data,
       liveAll,
       hasWall,
       hasPlddt,
+      hasUnmodeled,
     };
   } catch {
     return { path: racePath, ok: false, data: null };
@@ -222,13 +251,13 @@ function experimentColabfoldAdapter() {
     discovery.fixturesOk === true &&
     typeof discovery.honesty === 'string' &&
     discovery.honesty.includes('COLABFOLD_LIVE') &&
-    Object.keys(RACE_FASTA).length === 3 &&
+    Object.keys(RACE_FASTA).length === 4 &&
     race.ok === true &&
     receiptDirsOk === true;
   return {
     id: 'E7_colabfold_adapter',
     title:
-      'ColabFold adapter + measured race_results.json (live wall + pLDDT on all tiers)',
+      'ColabFold adapter + measured race_results.json (live wall + pLDDT on tiers 1–3; vault live on tier 4 unmodeled)',
     discovery: {
       engine: discovery.engine,
       installed: discovery.installed,
@@ -242,11 +271,12 @@ function experimentColabfoldAdapter() {
       liveAll: race.liveAll ?? false,
       hasWall: race.hasWall ?? false,
       hasPlddt: race.hasPlddt ?? false,
+      hasUnmodeled: race.hasUnmodeled ?? false,
     },
     receiptDirsOk,
     pass,
     interpretation:
-      'Adapter + committed race receipt prove the three-tier ColabFold lane was run live.',
+      'Adapter + committed race receipt prove tiers 1–3 ColabFold live; tier 4 Unmodeled Nova is vault-live decipher (ColabFold may defer).',
     honesty: discovery.honesty,
   };
 }
@@ -272,6 +302,7 @@ function experimentPaperAndBlogLocks() {
     hasUbiquitin: /Ubiquitin|76/i.test(paper),
     hasIl2: /Interleukin|IL-2|heterodimer|264/i.test(paper),
     hasOrphan: /orphan|de novo|Frontier/i.test(paper),
+    hasUnmodeled: /Unmodeled Nova|never.?model|tier 4|112/i.test(paper),
     hasMetrics: /GDT-TS|TM-score|RMSD|pLDDT/i.test(paper),
     hasLiveFlag: /COLABFOLD_LIVE/i.test(paper),
     hasRaceResults: /race_results\.json/i.test(paper),
@@ -286,6 +317,7 @@ function experimentPaperAndBlogLocks() {
     blogHonesty: /Honesty/i.test(blog),
     blogScoreboard: /Scoreboard|0\.051|24\.7 s|154 s|pLDDT/i.test(blog),
     blogRaceResults: /race_results/i.test(blog),
+    blogUnmodeled: /Unmodeled Nova|never.?model|tier 4|112/i.test(blog),
   };
   const pass = Boolean(paper) && Object.values(checks).every(Boolean);
   return {
@@ -323,6 +355,7 @@ export async function runAllExperiments() {
     experimentSimpleTier(),
     experimentComplexTier(),
     experimentFrontierTier(),
+    experimentUnmodeledTier(),
     experimentColabfoldAdapter(),
     experimentPaperAndBlogLocks(),
     experimentRegistryId(),

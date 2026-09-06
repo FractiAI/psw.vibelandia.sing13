@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-09-06T23:28:47.158Z",
+  "experiments": [
+    {
+      "id": "E1_phi_egs",
+      "pass": true,
+      "PHI_EGS": 1.618033988749895
+    },
+    {
+      "id": "E2_semantic_primes",
+      "pass": true,
+      "n": 11
+    },
+    {
+      "id": "E3_deterministic_reply",
+      "pass": true,
+      "latencyMs": 0.36066600000000193
+    },
+    {
+      "id": "E4_intent_resonance",
+      "pass": true,
+      "top": "El Gran Sol"
+    },
+    {
+      "id": "E5_zero_training_cost",
+      "pass": true
+    },
+    {
+      "id": "E6_surfaces",
+      "pass": true,
+      "paperHonesty": true,
+      "paperDocId": true,
+      "paperPhi": true,
+      "paperFair": true,
+      "paperZero": true,
+      "paperOperator": true,
+      "blogExists": true,
+      "blogSlug": true,
+      "blogDoor": true,
+      "blogHonesty": true,
+      "doorChatUi": true,
+      "apiSeat": true
+    },
+    {
+      "id": "E7_registry",
+      "pass": true,
+      "REGISTRY_ID": "synthobs-prime-vault-chat-2026-09"
+    }
+  ],
+  "n_pass": 7,
+  "n_total": 7,
+  "all_pass": true,
+  "failed": []
+}

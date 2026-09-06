@@ -30,16 +30,16 @@ describe('QUESTFEST latest-six ship blog', () => {
   it('does not let older notes outrank newer papers', () => {
     const posts = listRecentPaperBlogPosts(6);
     expect(posts[0].published >= posts[posts.length - 1].published).toBe(true);
-    // Newest featured notes: Goldilocks Quest next-gen Twin v2 leads; then Prime-Vault Race door + race results + Sing Muse + holographic companions.
-    expect(posts[0].published).toBe('2026-09-06T23:55:00Z');
-    expect(posts[0].id).toBe('synthobs-goldilocks-quest-door-2026-09');
+    // Newest featured notes: Prime Vault Chat leads; then Goldilocks Quest; race door + race results + Sing Muse + holographic rhyme.
+    expect(posts[0].published).toBe('2026-09-06T23:59:00Z');
+    expect(posts[0].id).toBe('synthobs-prime-vault-chat-2026-09');
     expect(posts.map((p) => p.id)).toEqual([
+      'synthobs-prime-vault-chat-2026-09',
       'synthobs-goldilocks-quest-door-2026-09',
       'synthobs-prime-vault-race-door-2026-09',
       'synthobs-prime-vault-alphafold-race-2026-09',
       'synthobs-sing-muse-omniversal-lattice-2026-09',
       'synthobs-multidimensional-holographic-rhyme-2026-09',
-      'synthobs-holographic-rhyme-fractal-2026-09',
     ]);
   });
 });

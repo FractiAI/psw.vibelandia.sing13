@@ -26,6 +26,11 @@
       title: 'Tier 3 · Orphan synthetic',
       blurb: 'De novo lattice · 89 residues. No evolutionary MSA required for the vault lane.',
     },
+    {
+      id: 'unmodeled_nova',
+      title: 'Tier 4 · Unmodeled Nova',
+      blurb: 'Never-modeled Φ-cryptic · 112 residues. Decipher a protein with no prior AF/PDB model — vault live; ColabFold may defer.',
+    },
   ];
 
   function $(id) {
@@ -97,7 +102,12 @@
     root.innerHTML = TIERS.map(function (t) {
       var r = tierReceipt(t.id);
       var pv = r && r.primeVault ? fmtMs(r.primeVault.latencyMs_median) : 'live';
-      var cf = r && r.colabfold && r.colabfold.live ? fmtMs(r.colabfold.wallMs) : 'receipt';
+      var cf =
+        r && r.colabfold && r.colabfold.live
+          ? fmtMs(r.colabfold.wallMs)
+          : r && r.colabfold && r.colabfold.live === false
+            ? 'deferred'
+            : 'receipt';
       var plddt =
         r && r.colabfold && r.colabfold.plddtMean != null
           ? ' · pLDDT ~' + r.colabfold.plddtMean.toFixed(1)
@@ -235,11 +245,15 @@
           : '';
       var conf =
         plddt != null ? ' · ColabFold pLDDT ~' + Number(plddt).toFixed(1) : '';
+      var cfLabel =
+        cfMs != null
+          ? fmtMs(cfMs)
+          : 'deferred (no prior model · set COLABFOLD_LIVE=1 to measure)';
       $('pvr-result').textContent =
         'Vault ' +
         fmtMs(vaultMs) +
         ' vs ColabFold ' +
-        fmtMs(cfMs) +
+        cfLabel +
         speed +
         conf +
         '. Latency race — not a CASP medal.';

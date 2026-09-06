@@ -685,6 +685,14 @@
       "destination": "/interfaces/journey/prime-vault-race.html"
     },
     {
+      "source": "/journey/prime-vault-chat",
+      "destination": "/interfaces/journey/prime-vault-chat.html"
+    },
+    {
+      "source": "/journey/prime-vault-chat/",
+      "destination": "/interfaces/journey/prime-vault-chat.html"
+    },
+    {
       "source": "/journey/goldilocks-quest",
       "destination": "/interfaces/journey/goldilocks-quest.html"
     },
@@ -1757,6 +1765,38 @@
       "destination": "/interfaces/blog-goldilocks-quest-2026-09.html"
     },
     {
+      "source": "/prime-vault-chat",
+      "destination": "/interfaces/prime-vault-chat.html"
+    },
+    {
+      "source": "/prime-vault-chat/",
+      "destination": "/interfaces/prime-vault-chat.html"
+    },
+    {
+      "source": "/pvc",
+      "destination": "/interfaces/prime-vault-chat.html"
+    },
+    {
+      "source": "/pvc/",
+      "destination": "/interfaces/prime-vault-chat.html"
+    },
+    {
+      "source": "/special-projects/prime-vault-chat",
+      "destination": "/interfaces/special-projects/prime-vault-chat.html"
+    },
+    {
+      "source": "/special-projects/prime-vault-chat/",
+      "destination": "/interfaces/special-projects/prime-vault-chat.html"
+    },
+    {
+      "source": "/ship-blog/prime-vault-chat",
+      "destination": "/interfaces/blog-prime-vault-chat-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/prime-vault-chat/",
+      "destination": "/interfaces/blog-prime-vault-chat-2026-09.html"
+    },
+    {
       "source": "/prime-vault-race",
       "destination": "/interfaces/prime-vault-race.html"
     },
@@ -2410,6 +2450,10 @@
     "api/prime-vault-race.js": {
       "maxDuration": 30,
       "includeFiles": "{lib/**,data/lattice-access.json,research/synthobs-prime-vault-alphafold-race/data/race_results.json}"
+    },
+    "api/prime-vault-chat.js": {
+      "maxDuration": 10,
+      "includeFiles": "{lib/**,data/lattice-access.json}"
     },
     "api/goldilocks-quest.js": {
       "maxDuration": 30,

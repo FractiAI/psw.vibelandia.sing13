@@ -1,13 +1,13 @@
 # Race Report: Infinite Octave Prime-Vault vs ColabFold (AlphaFold-class)
 
-**Subtitle:** Measured three-tier race — setup · run · results under $\Phi_{\mathrm{EGS}}$
+**Subtitle:** Measured four-tier race — setup · run · results under $\Phi_{\mathrm{EGS}}$ (tiers 1–3 ColabFold live · tier 4 Unmodeled Nova vault-live decipher)
 
 **Authors:** FractiAI Research Group · Nevada Holographic AI Valley Engine  
 **Operator:** SynthOBS Autonomous Agent · Syntheverse Sandbox  
 **Contact:** info@fractiai.com  
 **Document ID:** `WP-SYNTHOBS-PRIME-VAULT-ALPHAFOLD-RACE-EGS-2026-09-06`  
 **Registry ID:** `synthobs-prime-vault-alphafold-race-2026-09`  
-**Date:** September 6, 2026 · **Revised:** 2026-09-06 (live ColabFold race results · application companion)  
+**Date:** September 6, 2026 · **Revised:** 2026-09-06 (tier 4 Unmodeled Nova · application companion)  
 **Classification:** Comparative **benchmark race report** *(see Honesty boundary)*  
 **Framework:** SynthOBS · Infinite Octaves Omniversal Lattice · EGS · NSPFRNP  
 **Engine role:** **Application / comparison / demo companion** — not an engine-shelf pin  
@@ -17,11 +17,12 @@
 **Audit protocol:** NSPFRNP-SNAP-PRA-2026-06
 
 **Companions:**
+- [Prime Vault Chat](./SYNTHOBS_PRIME_VAULT_CHAT_EGS_2026-09.md) — Miracle 2 conversational demo
 - [Protein Folding Prime-Container](./SYNTHOBS_PROTEIN_FOLDING_PRIME_CONTAINER_EGS_2026-09.md)
 - [Awareness vs Brute-Force Leverage](./SYNTHOBS_AWARENESS_VS_BRUTE_FORCE_LEVERAGE_EGS_2026-09.md)
 - [Macro-Protein Work Engine](./SYNTHOBS_MACRO_PROTEIN_WORK_ENGINE_EGS_2026-09.md)
 
-**Keywords:** ColabFold; AlphaFold-class race; prime vault; measured latency; pLDDT; $\Phi_{\mathrm{EGS}}$; Infinite Octaves; NSPFRNP
+**Keywords:** ColabFold; AlphaFold-class race; prime vault; measured latency; pLDDT; Unmodeled Nova; $\Phi_{\mathrm{EGS}}$; Infinite Octaves; NSPFRNP
 
 ---
 
@@ -35,11 +36,12 @@
 
 | Tier | What this document claims | What it does **not** claim |
 |------|---------------------------|------------------------------|
-| **Measured race** | On this host we **installed ColabFold 1.6.2**, ran `colabfold_batch` live on three FastA fixtures, and timed Infinite Octave prime-vault closed-form folds | That DeepMind AlphaFold 3 cloud ran here, or that CASP medals are transferred |
-| **Latency contrast** | Wall-clock ColabFold (CPU, single_sequence, 1 model, 1 recycle) vs median prime-vault CPU µs–ms | That the two lanes solve the same objective function; prime-vault emits Φ-energy fixtures, ColabFold emits neural coordinates / pLDDT |
-| **Accuracy axis** | ColabFold **pLDDT means** are reported from live score/PDB outputs | That prime-vault Φ-energy is a drop-in GDT-TS / TM-score substitute for PDB bake-offs |
+| **Measured race** | On this host we **installed ColabFold 1.6.2**, ran `colabfold_batch` live on **three** FastA fixtures (tiers 1–3), and timed Infinite Octave prime-vault closed-form folds | That DeepMind AlphaFold 3 cloud ran here, or that CASP medals are transferred |
+| **Tier 4 Unmodeled Nova** | A **never-modeled** Φ-cryptic FastA (112 aa · no PDB deposit · no MSA homologs by design) is deciphered live on the prime-vault lane; ColabFold is **deferred** until `COLABFOLD_LIVE=1` rerun | That the sequence is biologically expressed or clinically meaningful |
+| **Latency contrast** | Wall-clock ColabFold (CPU, single_sequence, 1 model, 1 recycle) vs median prime-vault CPU µs–ms on tiers 1–3 | That the two lanes solve the same objective function; prime-vault emits Φ-energy fixtures, ColabFold emits neural coordinates / pLDDT |
+| **Accuracy axis** | ColabFold **pLDDT means** are reported from live score/PDB outputs (tiers 1–3) | That prime-vault Φ-energy is a drop-in GDT-TS / TM-score substitute for PDB bake-offs |
 | **Hardware** | **CPU-only** host (no GPU detected) | GPU-hour invoices or TPU receipts |
-| **Suite locks** | Empirical suite **9/9** including race-receipt lock | Clinical / pharmaceutical / diagnostic certification |
+| **Suite locks** | Empirical suite including race-receipt lock + tier 4 vault lock | Clinical / pharmaceutical / diagnostic certification |
 
 **Operator line:** SynthOBS Autonomous Agent · Syntheverse Sandbox · NSPFRNP.
 
@@ -49,14 +51,14 @@ See [Coherence plain speak](./COHERENCE_PLAIN_SPEAK_HONESTY_2026-05-18.md).
 
 ## Abstract
 
-We set up, ran, and report a **three-tier race** between:
+We set up, ran, and report a **four-tier race** between:
 
 1. **Infinite Octave Prime-Vault** — closed-form $\Phi_{\mathrm{EGS}}$ prime-indexed fold energy on CPU  
-2. **ColabFold 1.6.2** — AlphaFold-class open inference (`colabfold_batch`, CPU, `single_sequence`, 1 model, 1 recycle)
+2. **ColabFold 1.6.2** — AlphaFold-class open inference (`colabfold_batch`, CPU, `single_sequence`, 1 model, 1 recycle) on tiers 1–3
 
-**Tiers:** ubiquitin (76 aa) · IL-2 + IL-2Rβ fragment (264 aa) · orphan synthetic (89 aa).
+**Tiers:** ubiquitin (76 aa) · IL-2 + IL-2Rβ fragment (264 aa) · orphan synthetic (89 aa) · **Unmodeled Nova Φ-cryptic (112 aa · never previously modeled)**.
 
-**Headline results (this host, 2026-09-06):** prime-vault median latency stayed **sub-millisecond** on all tiers; ColabFold wall-clock was **~25 s / ~154 s / ~29 s** with mean pLDDT **~48.4 / ~40.5 / ~31.2**. Full receipt: `data/race_results.json`.
+**Headline results (this host, 2026-09-06):** prime-vault median latency stayed **sub-millisecond** on all tiers; ColabFold wall-clock was **~25 s / ~154 s / ~29 s** with mean pLDDT **~48.4 / ~40.5 / ~31.2** on tiers 1–3. Tier 4 vault median **~0.029 ms**; ColabFold deferred. Full receipt: `data/race_results.json`.
 
 ---
 
@@ -72,7 +74,7 @@ We set up, ran, and report a **three-tier race** between:
 | Models / recycles | `1` / `1` |
 | Model types | `alphafold2_ptm` (tiers 1 & 3); `alphafold2_multimer_v3` (tier 2) |
 | Φ_EGS | $(1+\sqrt{5})/2 \approx 1.618033988749895$ |
-| FastA | `fixtures/fasta/tier{1,2,3}_*.fasta` |
+| FastA | `fixtures/fasta/tier{1,2,3,4}_*.fasta` |
 | Reproduce | `COLABFOLD_LIVE=1 npm run research:synthobs-prime-vault-alphafold-race` then `node scripts/run_race_report.mjs` |
 
 ---
@@ -107,23 +109,25 @@ Wall-clock includes model load + inference on CPU. pLDDT mean taken from ColabFo
 
 ---
 
-## 3. Results (measured 2026-09-06T08:10Z)
+## 3. Results (measured 2026-09-06T08:10Z · tier 4 vault revised same day)
 
 | Tier | Residues | Prime-Vault median (ms) | ColabFold wall (ms) | Speedup (CF/PV) | ColabFold mean pLDDT |
 |------|----------|-------------------------|---------------------|-----------------|----------------------|
 | **1 · Ubiquitin** | 76 | **0.051** | **24 738** | ~4.9×10⁵ | **48.4** |
 | **2 · IL-2 + IL-2Rβ** | 264 | **0.049** | **154 375** | ~3.1×10⁶ | **40.5** |
 | **3 · Orphan synthetic** | 89 | **0.014** | **28 793** | ~2.1×10⁶ | **31.2** |
+| **4 · Unmodeled Nova** | 112 | **0.029** | *deferred* | — | — |
 
-**Prime-Vault Φ-energy fixtures:** tier1 $E\approx 0.198$ · tier2 $E\approx 0.320$ · tier3 $E\approx 0.518$.
+**Prime-Vault Φ-energy fixtures:** tier1 $E\approx 0.198$ · tier2 $E\approx 0.320$ · tier3 $E\approx 0.518$ · tier4 $E\approx 0.838$.
 
-**Artifacts:** PDBs + score JSON under `data/colabfold_receipts/{simple_ubiquitin,complex_il2,frontier_orphan}/` · aggregate `data/race_results.json`.
+**Artifacts:** PDBs + score JSON under `data/colabfold_receipts/{simple_ubiquitin,complex_il2,frontier_orphan}/` · aggregate `data/race_results.json` · tier 4 FastA `fixtures/fasta/tier4_unmodeled_nova.fasta`.
 
 ### 3.1 Reading the table (bounded)
 
-- **Latency:** On this CPU host, prime-vault finished **five to six orders of magnitude** faster than ColabFold under the stated flags. That is a **resource/latency** race outcome, not a claim that Φ-energy equals experimental GDT-TS.  
+- **Latency:** On this CPU host, prime-vault finished **five to six orders of magnitude** faster than ColabFold under the stated flags on tiers 1–3. That is a **resource/latency** race outcome, not a claim that Φ-energy equals experimental GDT-TS.  
 - **pLDDT:** Orphan synthetic lands lowest (~31), consistent with MSA-free neural uncertainty; ubiquitin highest among the three (~48) under `single_sequence`.  
 - **Complex tier:** two-chain FastA; ColabFold 1.6.2 emitted **per-chain** models in this run (wall-clock is the measured job time for that FastA).
+- **Tier 4 Unmodeled Nova:** deciphering a protein **not as of yet modeled** — vault closes Φ-energy live; ColabFold intentionally deferred until a live rerun so we do not invent pLDDT.
 
 ---
 
@@ -144,7 +148,7 @@ COLABFOLD_LIVE=1 npm run research:synthobs-prime-vault-alphafold-race
 node research/synthobs-prime-vault-alphafold-race/scripts/run_race_report.mjs
 ```
 
-Suite lock **9/9** requires `data/race_results.json` with `colabfold.live === true` on all three tiers after a measured run.
+Suite locks require `data/race_results.json` with `colabfold.live === true` on tiers 1–3 after a measured run, plus tier 4 vault-live Unmodeled Nova.
 
 ---
 

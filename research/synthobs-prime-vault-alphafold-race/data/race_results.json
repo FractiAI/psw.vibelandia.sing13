@@ -85,11 +85,35 @@
         "modelType": "alphafold2_ptm"
       },
       "speedupPrimeOverColabfold": 2111542.9744795975
+    },
+    "unmodeled_nova": {
+      "name": "Unmodeled Nova Φ-cryptic (no prior model)",
+      "residues": 112,
+      "primeVault": {
+        "residues": 112,
+        "octave": 4,
+        "energy": 0.8377346236884492,
+        "latencyMs_median": 0.028555000000000774,
+        "latencyMs_min": 0.0239389999999986,
+        "latencyMs_max": 3.0742580000000004,
+        "samples": 21
+      },
+      "colabfold": {
+        "live": false,
+        "wallMs": null,
+        "plddtMean": null,
+        "rc": null,
+        "pdbs": [],
+        "modelType": null,
+        "note": "Tier 4 Unmodeled Nova — no prior AF/PDB model by design. ColabFold deferred until COLABFOLD_LIVE=1 rerun; prime-vault decipher lane is live."
+      },
+      "speedupPrimeOverColabfold": null
     }
   },
   "honestyNotes": [
     "IL-2 complex FastA produced per-chain ColabFold models (two PDBs); wall time is full batch wall for that FastA.",
-    "CPU-only, single_sequence, 1 model, 1 recycle \u2014 not GPU MSA-full AF3 / CASP.",
-    "Prime-vault \u03a6-energy is not experimental GDT/TM; latency race contrasts different objectives."
+    "CPU-only, single_sequence, 1 model, 1 recycle — not GPU MSA-full AF3 / CASP.",
+    "Prime-vault Φ-energy is not experimental GDT/TM; latency race contrasts different objectives.",
+    "Tier 4 Unmodeled Nova is a never-modeled decipher element: vault live; ColabFold not yet measured on this host."
   ]
 }

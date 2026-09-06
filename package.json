@@ -76,6 +76,7 @@
     "research:synthobs-macro-protein-work-engine": "node research/synthobs-macro-protein-work-engine/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-awareness-vs-brute-force-leverage": "node research/synthobs-awareness-vs-brute-force-leverage/scripts/run_empirical_pipeline.mjs",
     "research:synthobs-prime-vault-alphafold-race": "node research/synthobs-prime-vault-alphafold-race/scripts/run_empirical_pipeline.mjs",
+    "research:synthobs-prime-vault-chat": "node research/synthobs-prime-vault-chat/scripts/run_empirical_pipeline.mjs",
     "publish:standalone:infinite-octave-prime-parity": "node scripts/publish-standalone-suite.mjs synthobs-infinite-octave-prime-parity",
     "publish:standalone:infinite-octave-prime-parity:create": "node scripts/publish-standalone-suite.mjs synthobs-infinite-octave-prime-parity --create-repo",
     "publish:standalone:moving-up-the-stack": "node scripts/publish-standalone-suite.mjs synthobs-moving-up-the-stack-valuation",

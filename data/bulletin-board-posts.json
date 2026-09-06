@@ -4,6 +4,32 @@
   "updated": "2026-09-06",
   "posts": [
     {
+      "id": "daily-2026-09-06-synthobs-prime-vault-chat-2026-09",
+      "posted": "2026-09-06",
+      "featured": true,
+      "title": "Prime Vault Chat — Miracle 2 is open",
+      "subtitle": "News of the day · Sunday, September 6",
+      "summary": "Free ChatGPT-shaped Φ chat for guests · $0 training · same email seat as Let’s Chat and Lattice Chat. Play at /prime-vault-chat. Honesty first: algebraic vault ≠ trained LLM QA. Fair Exchange tip clause on.",
+      "href": "/ship-blog/prime-vault-chat",
+      "pill": "TODAY",
+      "docRef": "synthobs-prime-vault-chat-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "daily-ship-bulletin"
+    },
+    {
+      "id": "announce-2026-09-06-prime-vault-chat",
+      "posted": "2026-09-06",
+      "featured": true,
+      "title": "Prime Vault Chat — Miracle 2 is open",
+      "subtitle": "Guest announcement · Sunday, September 6",
+      "summary": "Talk to the closed-form prime-vault engine. ChatGPT-shaped UI. Same email as Let’s Chat / Lattice Chat. Race door also adds Unmodeled Nova tier. Play at /prime-vault-chat.",
+      "href": "/prime-vault-chat",
+      "pill": "NEW",
+      "docRef": "synthobs-prime-vault-chat-2026-09",
+      "contact": "info@fractiai.com",
+      "steward": "player-1-rollout"
+    },
+    {
       "id": "daily-2026-09-06-synthobs-goldilocks-quest-door-2026-09",
       "posted": "2026-09-06",
       "featured": true,

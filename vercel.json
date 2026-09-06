@@ -1765,6 +1765,46 @@
       "destination": "/interfaces/blog-goldilocks-quest-2026-09.html"
     },
     {
+      "source": "/demonstrations",
+      "destination": "/interfaces/prime-vault-demos.html"
+    },
+    {
+      "source": "/demonstrations/",
+      "destination": "/interfaces/prime-vault-demos.html"
+    },
+    {
+      "source": "/demos",
+      "destination": "/interfaces/prime-vault-demos.html"
+    },
+    {
+      "source": "/demos/",
+      "destination": "/interfaces/prime-vault-demos.html"
+    },
+    {
+      "source": "/prime-vault-demos",
+      "destination": "/interfaces/prime-vault-demos.html"
+    },
+    {
+      "source": "/prime-vault-demos/",
+      "destination": "/interfaces/prime-vault-demos.html"
+    },
+    {
+      "source": "/special-projects/prime-vault-demos",
+      "destination": "/interfaces/special-projects/prime-vault-demos.html"
+    },
+    {
+      "source": "/special-projects/prime-vault-demos/",
+      "destination": "/interfaces/special-projects/prime-vault-demos.html"
+    },
+    {
+      "source": "/ship-blog/prime-vault-demos",
+      "destination": "/interfaces/blog-prime-vault-demos-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/prime-vault-demos/",
+      "destination": "/interfaces/blog-prime-vault-demos-2026-09.html"
+    },
+    {
       "source": "/prime-vault-chat",
       "destination": "/interfaces/prime-vault-chat.html"
     },

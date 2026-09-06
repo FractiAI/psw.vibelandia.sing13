@@ -15,7 +15,6 @@ import {
   TIER_SIMPLE,
   TIER_COMPLEX,
   TIER_FRONTIER,
-  ACCURACY_LABELS,
 } from './constants.mjs';
 import {
   discoverColabfold,
@@ -181,17 +180,55 @@ function experimentFrontierTier() {
   };
 }
 
+function loadRaceResults() {
+  const racePath = path.join(PKG_ROOT, 'data', 'race_results.json');
+  if (!fs.existsSync(racePath)) return { path: racePath, ok: false, data: null };
+  try {
+    const data = JSON.parse(fs.readFileSync(racePath, 'utf8'));
+    const tierKeys = ['simple_ubiquitin', 'complex_il2', 'frontier_orphan'];
+    const liveAll =
+      data?.schema === 'synthobs-prime-vault-colabfold-race-results/v1' &&
+      tierKeys.every((k) => data?.tiers?.[k]?.colabfold?.live === true);
+    const hasWall = tierKeys.every(
+      (k) => Number(data?.tiers?.[k]?.colabfold?.wallMs) > 0,
+    );
+    const hasPlddt = tierKeys.every(
+      (k) => Number(data?.tiers?.[k]?.colabfold?.plddtMean) > 0,
+    );
+    return {
+      path: racePath,
+      ok: Boolean(liveAll && hasWall && hasPlddt),
+      data,
+      liveAll,
+      hasWall,
+      hasPlddt,
+    };
+  } catch {
+    return { path: racePath, ok: false, data: null };
+  }
+}
+
 function experimentColabfoldAdapter() {
   const discovery = discoverColabfold();
+  const race = loadRaceResults();
+  const receiptDirsOk = ['simple_ubiquitin', 'complex_il2', 'frontier_orphan'].every(
+    (k) =>
+      fs.existsSync(
+        path.join(PKG_ROOT, 'data', 'colabfold_receipts', k, 'summary.json'),
+      ),
+  );
   const pass =
     discovery.engine === 'colabfold' &&
     discovery.fixturesOk === true &&
     typeof discovery.honesty === 'string' &&
     discovery.honesty.includes('COLABFOLD_LIVE') &&
-    Object.keys(RACE_FASTA).length === 3;
+    Object.keys(RACE_FASTA).length === 3 &&
+    race.ok === true &&
+    receiptDirsOk === true;
   return {
     id: 'E7_colabfold_adapter',
-    title: 'ColabFold adapter discovery + FastA fixtures (AlphaFold-class lane)',
+    title:
+      'ColabFold adapter + measured race_results.json (live wall + pLDDT on all tiers)',
     discovery: {
       engine: discovery.engine,
       installed: discovery.installed,
@@ -199,9 +236,17 @@ function experimentColabfoldAdapter() {
       liveEligible: discovery.liveEligible,
       fixturesOk: discovery.fixturesOk,
     },
+    raceReceipt: {
+      path: race.path,
+      ok: race.ok,
+      liveAll: race.liveAll ?? false,
+      hasWall: race.hasWall ?? false,
+      hasPlddt: race.hasPlddt ?? false,
+    },
+    receiptDirsOk,
     pass,
     interpretation:
-      'Adapter is the AlphaFold-class race lane — ColabFold binary optional; fixtures mandatory.',
+      'Adapter + committed race receipt prove the three-tier ColabFold lane was run live.',
     honesty: discovery.honesty,
   };
 }
@@ -227,8 +272,11 @@ function experimentPaperAndBlogLocks() {
     hasUbiquitin: /Ubiquitin|76/i.test(paper),
     hasIl2: /Interleukin|IL-2|heterodimer|264/i.test(paper),
     hasOrphan: /orphan|de novo|Frontier/i.test(paper),
-    hasMetrics: /GDT-TS|TM-score|RMSD/i.test(paper),
+    hasMetrics: /GDT-TS|TM-score|RMSD|pLDDT/i.test(paper),
     hasLiveFlag: /COLABFOLD_LIVE/i.test(paper),
+    hasRaceResults: /race_results\.json/i.test(paper),
+    hasMeasuredResults: /Measured|Results \(measured|wall/i.test(paper),
+    hasPlddtReport: /pLDDT/i.test(paper),
     hasOperator: /SynthOBS/i.test(paper),
     notEnginePin:
       /not.*engine-shelf pin|application companion|not an engine/i.test(paper),
@@ -236,17 +284,20 @@ function experimentPaperAndBlogLocks() {
     blogSlug: blog.includes(SHIP_BLOG_SLUG) || blog.includes('prime-vault'),
     blogColabFold: /ColabFold/i.test(blog),
     blogHonesty: /Honesty/i.test(blog),
+    blogScoreboard: /Scoreboard|0\.051|24\.7 s|154 s|pLDDT/i.test(blog),
+    blogRaceResults: /race_results/i.test(blog),
   };
   const pass = Boolean(paper) && Object.values(checks).every(Boolean);
   return {
     id: 'E8_paper_blog_locks',
-    title: 'Paper + ship-blog honesty / Fair Exchange / ColabFold race locks',
+    title:
+      'Paper reports measured race + blog summarizes scoreboard (ColabFold / pLDDT)',
     paperPath: fs.existsSync(paperPath) ? paperPath : localPaper,
     blogPath: MONOREPO_BLOG,
     ...checks,
     pass,
     interpretation:
-      'Surfaces must name ColabFold as the AF-class lane + honesty, not CASP overclaim.',
+      'Paper must set up · run · report; blog must summarize the measured scoreboard.',
     honesty: 'Structural text locks — not bake-off validation.',
   };
 }

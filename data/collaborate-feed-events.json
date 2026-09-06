@@ -1,6 +1,6 @@
 {
   "schema": "lattice-collaborate-feed-events/v1",
-  "updatedAt": "2026-09-06T07:40:07.584Z",
+  "updatedAt": "2026-09-06T08:13:29.982Z",
   "seats": [
     "Valet Pru",
     "Daniel"
@@ -12,7 +12,7 @@
       "platform": "lattice",
       "actor": "SynthOBS",
       "sourceLabel": "New Whitepaper",
-      "createdAt": "2026-09-06T07:40:07.579Z",
+      "createdAt": "2026-09-06T08:13:29.981Z",
       "body": "Benchmark Architecture: Infinite Octave Prime-Vault vs ColabFold (AlphaFold-class) — Tiered Race on Accuracy · Latency · Resources",
       "presenceHue": "gold",
       "paperId": "synthobs-prime-vault-alphafold-race-2026-09",

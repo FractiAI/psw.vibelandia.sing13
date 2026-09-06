@@ -1,0 +1,24 @@
+{
+  "tier": "frontier_orphan",
+  "rc": 0,
+  "wall_ms": 28793,
+  "plddt_mean": 31.201076779026216,
+  "pdbs": [
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design__unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb"
+  ],
+  "files": [
+    "cite.bibtex",
+    "config.json",
+    "log.txt",
+    "run.log",
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design_.a3m",
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design_.done.txt",
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design__coverage.png",
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design__pae.png",
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design__plddt.png",
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design__predicted_aligned_error_v1.json",
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design__scores_rank_001_alphafold2_ptm_model_1_seed_000.json",
+    "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design__unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb",
+    "wall_ms.txt"
+  ]
+}

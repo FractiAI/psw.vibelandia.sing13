@@ -1,7 +1,7 @@
 {
   "schema": "synthobs-paper-audit/v1",
   "snapId": "NSPFRNP-SNAP-PRA-2026-06",
-  "auditId": "62ed0f3c5764746b",
+  "auditId": "a438b872c5ec9b79",
   "paperId": "synthobs-prime-vault-alphafold-race-2026-09",
   "sourcePath": "docs/SYNTHOBS_PRIME_VAULT_ALPHAFOLD_RACE_EGS_2026-09.md",
   "operator": "SynthOBS Autonomous Agent",
@@ -43,16 +43,16 @@
         "iteration": 1,
         "structural": {
           "engine": "structural-rubric/v1",
-          "invokedAt": "2026-09-06T07:40:07.574Z"
+          "invokedAt": "2026-09-06T08:13:29.979Z"
         }
       }
     ],
     "note": "Structural rubric only. Full dual-make trail requires SYNTHOBS_AUDIT_LLM_ENABLED=1, OPENAI_API_KEY, and ANTHROPIC_API_KEY."
   },
-  "startedAt": "2026-09-06T07:40:07.573Z",
-  "completedAt": "2026-09-06T07:40:07.575Z",
+  "startedAt": "2026-09-06T08:13:29.978Z",
+  "completedAt": "2026-09-06T08:13:29.979Z",
   "iterations": 1,
-  "overallScore": 0.882,
+  "overallScore": 0.941,
   "passThreshold": 0.85,
   "convergence": {
     "status": "pass",
@@ -95,11 +95,11 @@
   "history": [
     {
       "iteration": 1,
-      "overallScore": 0.882,
+      "overallScore": 0.941,
       "criticalBlockers": [],
       "scores": {
         "honestyBoundary": 1,
-        "methodsRepro": 0.6,
+        "methodsRepro": 1,
         "claimsProportionate": 1,
         "structure": 0.95,
         "references": 0.7,
@@ -113,7 +113,7 @@
     "mode": "structural",
     "scores": {
       "honestyBoundary": 1,
-      "methodsRepro": 0.6,
+      "methodsRepro": 1,
       "claimsProportionate": 1,
       "structure": 0.95,
       "references": 0.7,
@@ -121,19 +121,17 @@
       "synthobsAttribution": 1,
       "technicalPrecision": 0.85
     },
-    "overallScore": 0.882,
+    "overallScore": 0.941,
     "criticalBlockers": [],
-    "suggestions": [
-      "Document methods, data sources, and reproducibility commands."
-    ],
+    "suggestions": [],
     "meta": {
-      "wordCount": 1099,
+      "wordCount": 1021,
       "overclaims": [],
       "refs": {
         "hasRefsSection": false,
-        "links": 9,
-        "numbered": 3,
-        "citeLines": 3
+        "links": 6,
+        "numbered": 2,
+        "citeLines": 2
       }
     }
   },

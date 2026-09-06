@@ -1,0 +1,33 @@
+{
+  "tier": "complex_il2",
+  "rc": 0,
+  "wall_ms": 154375,
+  "plddt_mean": 40.52449029699707,
+  "pdbs": [
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A_unrelaxed_rank_001_alphafold2_multimer_v3_model_1_seed_000.pdb",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B_unrelaxed_rank_001_alphafold2_multimer_v3_model_1_seed_000.pdb"
+  ],
+  "files": [
+    "cite.bibtex",
+    "config.json",
+    "log.txt",
+    "run.log",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B.a3m",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B.done.txt",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B_coverage.png",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B_pae.png",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B_plddt.png",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B_predicted_aligned_error_v1.json",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B_scores_rank_001_alphafold2_multimer_v3_model_1_seed_000.json",
+    "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B_unrelaxed_rank_001_alphafold2_multimer_v3_model_1_seed_000.pdb",
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A.a3m",
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A.done.txt",
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A_coverage.png",
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A_pae.png",
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A_plddt.png",
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A_predicted_aligned_error_v1.json",
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A_scores_rank_001_alphafold2_multimer_v3_model_1_seed_000.json",
+    "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A_unrelaxed_rank_001_alphafold2_multimer_v3_model_1_seed_000.pdb",
+    "wall_ms.txt"
+  ]
+}

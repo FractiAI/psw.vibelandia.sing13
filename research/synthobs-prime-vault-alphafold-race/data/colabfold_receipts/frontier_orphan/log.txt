@@ -1,0 +1,10 @@
+2026-09-06 08:07:19,897 Running colabfold 1.6.2
+2026-09-06 08:07:19,904 WARNING: no GPU detected, will be using CPU
+2026-09-06 08:07:20,019 Found 2 citations for tools or databases
+2026-09-06 08:07:20,019 Query 1/1: synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design_ (length 89)
+2026-09-06 08:07:37,987 alphafold2_ptm_model_1_seed_000 recycle=0 pLDDT=30 pTM=0.19
+2026-09-06 08:07:47,412 alphafold2_ptm_model_1_seed_000 recycle=1 pLDDT=31.1 pTM=0.181 tol=5.56
+2026-09-06 08:07:47,413 alphafold2_ptm_model_1_seed_000 took 24.0s (1 recycles)
+2026-09-06 08:07:47,417 reranking models by 'plddt' metric
+2026-09-06 08:07:47,417 rank_001_alphafold2_ptm_model_1_seed_000 pLDDT=31.1 pTM=0.181
+2026-09-06 08:07:47,604 Done

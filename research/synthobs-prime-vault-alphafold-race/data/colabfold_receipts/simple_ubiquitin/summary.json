@@ -1,0 +1,24 @@
+{
+  "tier": "simple_ubiquitin",
+  "rc": 0,
+  "wall_ms": 24738,
+  "plddt_mean": 48.39770535948857,
+  "pdbs": [
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb"
+  ],
+  "files": [
+    "cite.bibtex",
+    "config.json",
+    "log.txt",
+    "run.log",
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1.a3m",
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1.done.txt",
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1_coverage.png",
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1_pae.png",
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1_plddt.png",
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1_predicted_aligned_error_v1.json",
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1_scores_rank_001_alphafold2_ptm_model_1_seed_000.json",
+    "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb",
+    "wall_ms.txt"
+  ]
+}

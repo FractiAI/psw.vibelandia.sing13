@@ -2,7 +2,7 @@
 
 **Document ID:** `WP-SYNTHOBS-PRIME-VAULT-ALPHAFOLD-RACE-EGS-2026-09-06`
 **Registry ID:** `synthobs-prime-vault-alphafold-race-2026-09`
-**Generated:** 2026-09-06T07:40:08.921Z
+**Generated:** 2026-09-06T08:13:26.203Z
 
 ## Verdict
 
@@ -87,24 +87,24 @@
       "octave": 1,
       "primes": 76,
       "energy": 0.19776231829567956,
-      "latencyMs": 0.1296040000000005,
+      "latencyMs": 0.18818800000000024,
       "live": true
     },
     "colabfold": {
       "tierId": "simple_ubiquitin",
       "lane": "colabfold",
-      "mode": "not_installed",
+      "mode": "installed_idle",
       "fastaPath": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier1_ubiquitin.fasta",
       "live": false,
       "latencyMs": null,
       "plddtMean": null,
       "exitCode": null,
       "outDir": null,
-      "note": "Install ColabFold (colabfold_batch) then set COLABFOLD_LIVE=1",
+      "note": "colabfold_batch found — set COLABFOLD_LIVE=1 to race live",
       "discovery": {
         "engine": "colabfold",
-        "bin": null,
-        "installed": false,
+        "bin": "/home/ubuntu/.local/bin/colabfold_batch",
+        "installed": true,
         "liveRequested": false,
         "liveEligible": false,
         "fixturesOk": true,
@@ -117,7 +117,7 @@
       }
     },
     "latencyAdvantageMs": null,
-    "comparisonMode": "not_installed"
+    "comparisonMode": "installed_idle"
   },
   "pass": true,
   "interpretation": "Monomer FastA present; prime-vault live ms vs ColabFold lane (live or deferred).",
@@ -144,24 +144,24 @@
       "octave": 2,
       "primes": 264,
       "energy": 0.3199861526963848,
-      "latencyMs": 0.7983429999999991,
+      "latencyMs": 0.7834059999999994,
       "live": true
     },
     "colabfold": {
       "tierId": "complex_il2",
       "lane": "colabfold",
-      "mode": "not_installed",
+      "mode": "installed_idle",
       "fastaPath": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier2_il2_complex.fasta",
       "live": false,
       "latencyMs": null,
       "plddtMean": null,
       "exitCode": null,
       "outDir": null,
-      "note": "Install ColabFold (colabfold_batch) then set COLABFOLD_LIVE=1",
+      "note": "colabfold_batch found — set COLABFOLD_LIVE=1 to race live",
       "discovery": {
         "engine": "colabfold",
-        "bin": null,
-        "installed": false,
+        "bin": "/home/ubuntu/.local/bin/colabfold_batch",
+        "installed": true,
         "liveRequested": false,
         "liveEligible": false,
         "fixturesOk": true,
@@ -174,7 +174,7 @@
       }
     },
     "latencyAdvantageMs": null,
-    "comparisonMode": "not_installed"
+    "comparisonMode": "installed_idle"
   },
   "pass": true,
   "interpretation": "Two-chain FastA fixture; vault vs ColabFold-multimer-capable lane.",
@@ -201,24 +201,24 @@
       "octave": 3,
       "primes": 89,
       "energy": 0.5177484709920639,
-      "latencyMs": 0.06215700000000268,
+      "latencyMs": 0.06852800000000059,
       "live": true
     },
     "colabfold": {
       "tierId": "frontier_orphan",
       "lane": "colabfold",
-      "mode": "not_installed",
+      "mode": "installed_idle",
       "fastaPath": "/workspace/research/synthobs-prime-vault-alphafold-race/fixtures/fasta/tier3_orphan_synthetic.fasta",
       "live": false,
       "latencyMs": null,
       "plddtMean": null,
       "exitCode": null,
       "outDir": null,
-      "note": "Install ColabFold (colabfold_batch) then set COLABFOLD_LIVE=1",
+      "note": "colabfold_batch found — set COLABFOLD_LIVE=1 to race live",
       "discovery": {
         "engine": "colabfold",
-        "bin": null,
-        "installed": false,
+        "bin": "/home/ubuntu/.local/bin/colabfold_batch",
+        "installed": true,
         "liveRequested": false,
         "liveEligible": false,
         "fixturesOk": true,
@@ -231,7 +231,7 @@
       }
     },
     "latencyAdvantageMs": null,
-    "comparisonMode": "not_installed"
+    "comparisonMode": "installed_idle"
   },
   "pass": true,
   "interpretation": "No MSA history required on prime lane; ColabFold MSA sparsity is expected contrast.",
@@ -239,39 +239,47 @@
 }
 ```
 
-### E7_colabfold_adapter — ColabFold adapter discovery + FastA fixtures (AlphaFold-class lane)
+### E7_colabfold_adapter — ColabFold adapter + measured race_results.json (live wall + pLDDT on all tiers)
 
 - **Pass:** `true`
-- **Interpretation:** Adapter is the AlphaFold-class race lane — ColabFold binary optional; fixtures mandatory.
+- **Interpretation:** Adapter + committed race receipt prove the three-tier ColabFold lane was run live.
 - **Honesty:** ColabFold is the AlphaFold-class comparison lane. Live inference only when COLABFOLD_LIVE=1 and colabfold_batch is installed. Default CI validates adapter contract + FastA fixtures — it does not invent pLDDT or PDB coordinates.
 
 ```json
 {
   "id": "E7_colabfold_adapter",
-  "title": "ColabFold adapter discovery + FastA fixtures (AlphaFold-class lane)",
+  "title": "ColabFold adapter + measured race_results.json (live wall + pLDDT on all tiers)",
   "discovery": {
     "engine": "colabfold",
-    "installed": false,
+    "installed": true,
     "liveRequested": false,
     "liveEligible": false,
     "fixturesOk": true
   },
+  "raceReceipt": {
+    "path": "/workspace/research/synthobs-prime-vault-alphafold-race/data/race_results.json",
+    "ok": true,
+    "liveAll": true,
+    "hasWall": true,
+    "hasPlddt": true
+  },
+  "receiptDirsOk": true,
   "pass": true,
-  "interpretation": "Adapter is the AlphaFold-class race lane — ColabFold binary optional; fixtures mandatory.",
+  "interpretation": "Adapter + committed race receipt prove the three-tier ColabFold lane was run live.",
   "honesty": "ColabFold is the AlphaFold-class comparison lane. Live inference only when COLABFOLD_LIVE=1 and colabfold_batch is installed. Default CI validates adapter contract + FastA fixtures — it does not invent pLDDT or PDB coordinates."
 }
 ```
 
-### E8_paper_blog_locks — Paper + ship-blog honesty / Fair Exchange / ColabFold race locks
+### E8_paper_blog_locks — Paper reports measured race + blog summarizes scoreboard (ColabFold / pLDDT)
 
 - **Pass:** `true`
-- **Interpretation:** Surfaces must name ColabFold as the AF-class lane + honesty, not CASP overclaim.
+- **Interpretation:** Paper must set up · run · report; blog must summarize the measured scoreboard.
 - **Honesty:** Structural text locks — not bake-off validation.
 
 ```json
 {
   "id": "E8_paper_blog_locks",
-  "title": "Paper + ship-blog honesty / Fair Exchange / ColabFold race locks",
+  "title": "Paper reports measured race + blog summarizes scoreboard (ColabFold / pLDDT)",
   "paperPath": "/workspace/docs/SYNTHOBS_PRIME_VAULT_ALPHAFOLD_RACE_EGS_2026-09.md",
   "blogPath": "/workspace/interfaces/blog-prime-vault-alphafold-race-2026-09.html",
   "hasHonesty": true,
@@ -286,14 +294,19 @@
   "hasOrphan": true,
   "hasMetrics": true,
   "hasLiveFlag": true,
+  "hasRaceResults": true,
+  "hasMeasuredResults": true,
+  "hasPlddtReport": true,
   "hasOperator": true,
   "notEnginePin": true,
   "blogExists": true,
   "blogSlug": true,
   "blogColabFold": true,
   "blogHonesty": true,
+  "blogScoreboard": true,
+  "blogRaceResults": true,
   "pass": true,
-  "interpretation": "Surfaces must name ColabFold as the AF-class lane + honesty, not CASP overclaim.",
+  "interpretation": "Paper must set up · run · report; blog must summarize the measured scoreboard.",
   "honesty": "Structural text locks — not bake-off validation."
 }
 ```

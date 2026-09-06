@@ -25,8 +25,16 @@ export const RACE_FASTA = Object.freeze({
 
 export function resolveColabfoldBin() {
   if (process.env.COLABFOLD_BIN) return process.env.COLABFOLD_BIN;
-  const which = spawnSync('which', ['colabfold_batch'], { encoding: 'utf8' });
+  const which = spawnSync('which', ['colabfold_batch'], {
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      PATH: `${process.env.HOME || ''}/.local/bin:${process.env.PATH || ''}`,
+    },
+  });
   if (which.status === 0 && which.stdout.trim()) return which.stdout.trim();
+  const homeBin = path.join(process.env.HOME || '', '.local', 'bin', 'colabfold_batch');
+  if (fs.existsSync(homeBin)) return homeBin;
   return null;
 }
 

@@ -5,17 +5,23 @@
   <script src="/interfaces/vbi18n-failopen.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Prime-Vault vs ColabFold Race · Ship blog · SS Vibelandia</title>
-  <meta name="description" content="Tiered race: Infinite Octave prime vaults vs ColabFold (AlphaFold-class) — accuracy · latency · resources. Live lane via COLABFOLD_LIVE=1." />
+  <title>Prime-Vault vs ColabFold — race results · Ship blog · SS Vibelandia</title>
+  <meta name="description" content="Measured race: Infinite Octave prime vaults vs live ColabFold 1.6.2 on ubiquitin, IL-2 complex, and orphan synthetic. Latency + pLDDT summary." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/ship-blog/prime-vault-alphafold-race" />
-  <meta property="og:title" content="Prime-Vault vs ColabFold — the three-tier race" />
-  <meta property="og:description" content="Ubiquitin · IL-2 complex · orphan/synthetic FastA. ColabFold is the AlphaFold-class lane. Honesty rails on." />
+  <meta property="og:title" content="Prime-Vault vs ColabFold — measured three-tier race" />
+  <meta property="og:description" content="Ubiquitin 0.05 ms vs 25 s · IL-2 0.05 ms vs 154 s · orphan 0.014 ms vs 29 s. Live ColabFold on CPU. Honesty rails on." />
   <meta property="og:type" content="article" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/ship-blog.css" />
-  <style>html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }</style>
+  <style>
+    html.vbi18n-pending body, html.vbi18n-ready body { visibility: visible; }
+    table.race { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.95rem; }
+    table.race th, table.race td { border: 1px solid rgba(212,175,55,0.35); padding: 0.55rem 0.65rem; text-align: left; }
+    table.race th { background: rgba(212,175,55,0.12); color: #f5e6c8; }
+    table.race td { color: #e8e0d0; }
+  </style>
 </head>
 <body>
   <article class="wrap">
@@ -27,38 +33,68 @@
     </nav>
     <header>
       <p class="kicker">Ship blog · Infinite Octaves · September 2026</p>
-      <h1>Prime vaults vs ColabFold — race the three tiers</h1>
-      <p class="dateline"><strong>SS Vibelandia</strong> — 2026-09-06 — Benchmark · Fair Exchange</p>
+      <h1>Prime vaults vs ColabFold — the race results</h1>
+      <p class="dateline"><strong>SS Vibelandia</strong> — 2026-09-06 — Measured benchmark · Fair Exchange</p>
     </header>
 
-    <p class="lead">A clean race protocol: <strong>structural accuracy</strong> (GDT-TS · TM · RMSD talk), <strong>speed</strong>, and <strong>compute</strong> — Infinite Octave <strong>prime vaults</strong> under <strong>Φ ≈ 1.618</strong> against <strong>ColabFold</strong> (the AlphaFold-class open stack).</p>
+    <p class="lead">We <strong>set up</strong> ColabFold 1.6.2, <strong>ran</strong> three FastA tiers on CPU, and <strong>timed</strong> Infinite Octave prime vaults under <strong>Φ ≈ 1.618</strong>. Here is the scoreboard.</p>
 
-    <p class="honesty"><strong>Honesty first:</strong> application / comparison / demo companion — <strong>not</strong> an engine-shelf pin. Prime-vault always runs live. ColabFold runs live when <code>COLABFOLD_LIVE=1</code> and <code>colabfold_batch</code> is installed; CI does not invent pLDDT. Not CASP medal transfer, not audited GPU invoices. Fair Exchange clause applies.</p>
+    <p class="honesty"><strong>Honesty first:</strong> application companion — not an engine pin. ColabFold = live <code>colabfold_batch</code> (CPU · single_sequence · 1 model · 1 recycle). Prime-vault = closed-form Φ-energy (not GDT-TS). Not CASP medals, not DeepMind cloud, not GPU invoices. Fair Exchange on.</p>
 
-    <h2>What landed</h2>
+    <h2>Scoreboard (this host)</h2>
+    <table class="race">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Residues</th>
+          <th>Prime-Vault</th>
+          <th>ColabFold</th>
+          <th>pLDDT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 · Ubiquitin</td>
+          <td>76</td>
+          <td><strong>0.051 ms</strong></td>
+          <td><strong>24.7 s</strong></td>
+          <td>48.4</td>
+        </tr>
+        <tr>
+          <td>2 · IL-2 + IL-2Rβ</td>
+          <td>264</td>
+          <td><strong>0.049 ms</strong></td>
+          <td><strong>154 s</strong></td>
+          <td>40.5</td>
+        </tr>
+        <tr>
+          <td>3 · Orphan synthetic</td>
+          <td>89</td>
+          <td><strong>0.014 ms</strong></td>
+          <td><strong>28.8 s</strong></td>
+          <td>31.2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Prime-vault stayed <strong>sub-millisecond</strong> on every tier. ColabFold paid neural wall-clock (and a one-time ~3.5 GB weight download). Orphan confidence landed lowest — as expected under MSA-free neural inference.</p>
+
+    <h2>What this means</h2>
     <ul class="plain">
-      <li><strong>Tier 1 Simple</strong> — Ubiquitin FastA (76 aa) · prime-vault ms vs ColabFold lane.</li>
-      <li><strong>Tier 2 Complex</strong> — IL-2 + IL-2Rβ fragment FastA (264 aa) · multimer-capable ColabFold lane.</li>
-      <li><strong>Tier 3 Frontier</strong> — orphan/synthetic FastA · no MSA tax on the prime lane.</li>
-      <li><strong>ColabFold adapter</strong> + <strong>9/9 suite locks</strong> under <code>research/synthobs-prime-vault-alphafold-race/</code>.</li>
+      <li><strong>Different clocks:</strong> ColabFold predicts coordinates + confidence; prime vaults evaluate Φ-indexed energy fixtures.</li>
+      <li><strong>Latency race:</strong> on this CPU box, vaults finished ~10⁵–10⁶× faster under the stated flags.</li>
+      <li><strong>Receipts:</strong> PDBs + <code>data/race_results.json</code> in the suite.</li>
     </ul>
 
     <h2>Try it yourself</h2>
     <ul class="plain">
-      <li>Suite (adapter + prime-vault): <code>npm run research:synthobs-prime-vault-alphafold-race</code></li>
-      <li>Live ColabFold race: install <code>colabfold_batch</code>, then <code>COLABFOLD_LIVE=1 npm run research:synthobs-prime-vault-alphafold-race</code></li>
-      <li>Companions: <a href="/ship-blog/protein-folding-prime-container">Protein prime-container</a> · <a href="/ship-blog/awareness-vs-brute-force">Awareness vs brute-force</a></li>
-    </ul>
-
-    <h2>Also on the board</h2>
-    <ul class="plain">
-      <li><a href="https://github.com/FractiAI/synthobs-prime-vault-alphafold-race">Standalone suite</a> · protocol application companion (not engine pin).</li>
-      <li><a href="/ship-blog/macro-protein-work-engine">Macro-protein</a> — organismal band this race scales toward.</li>
-      <li><a href="/ship-blog/sing-muse-omniversal-lattice">Sing, Muse</a> — voyage epic on the same board.</li>
+      <li>Suite: <code>npm run research:synthobs-prime-vault-alphafold-race</code></li>
+      <li>Live race: install ColabFold, then <code>COLABFOLD_LIVE=1</code> + <code>node research/synthobs-prime-vault-alphafold-race/scripts/run_race_report.mjs</code></li>
+      <li>Full methods + table: <a href="/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-alphafold-race-2026-09">whitepaper</a></li>
     </ul>
 
     <div class="cta-row">
-      <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-alphafold-race-2026-09">Open the whitepaper</a>
+      <a class="btn btn-gold" href="/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-alphafold-race-2026-09">Open the race report</a>
       <a class="btn btn-ghost" href="https://github.com/FractiAI/synthobs-prime-vault-alphafold-race">Standalone GitHub</a>
       <a class="btn btn-ghost" href="/questfest#ship-blog">Back to ship blog</a>
     </div>

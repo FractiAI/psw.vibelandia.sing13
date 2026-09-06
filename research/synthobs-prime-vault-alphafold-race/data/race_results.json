@@ -1,0 +1,95 @@
+{
+  "schema": "synthobs-prime-vault-colabfold-race-results/v1",
+  "generatedAt": "2026-09-06T08:10:39.307Z",
+  "host": {
+    "cpuOnly": true,
+    "gpu": false,
+    "colabfoldVersion": "1.6.2",
+    "jax": "0.5.3",
+    "msaMode": "single_sequence",
+    "numModels": 1,
+    "numRecycle": 1
+  },
+  "phiEgs": 1.618033988749895,
+  "honesty": "Measured race on this host. Prime-vault = closed-form CPU. ColabFold = live colabfold_batch 1.6.2 on CPU, single_sequence MSA, 1 model, 1 recycle. pLDDT from ColabFold score/PDB B-factors. Not CASP medals, not DeepMind cloud, not GPU timings.",
+  "tiers": {
+    "simple_ubiquitin": {
+      "name": "Ubiquitin-class monomer (P0CG48)",
+      "residues": 76,
+      "primeVault": {
+        "residues": 76,
+        "octave": 1,
+        "energy": 0.19776231829567956,
+        "latencyMs_median": 0.050815000000000055,
+        "latencyMs_min": 0.04775899999999922,
+        "latencyMs_max": 0.6786059999999985,
+        "samples": 21
+      },
+      "colabfold": {
+        "live": true,
+        "wallMs": 24738,
+        "plddtMean": 48.39770535948857,
+        "rc": 0,
+        "pdbs": [
+          "sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1_unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb"
+        ],
+        "modelType": "alphafold2_ptm"
+      },
+      "speedupPrimeOverColabfold": 486824.7564695459
+    },
+    "complex_il2": {
+      "name": "Interleukin-2 + IL-2R\u03b2 fragment complex",
+      "residues": 264,
+      "primeVault": {
+        "residues": 264,
+        "octave": 2,
+        "energy": 0.3199861526963848,
+        "latencyMs_median": 0.04920100000000005,
+        "latencyMs_min": 0.03440299999999752,
+        "latencyMs_max": 0.2554540000000003,
+        "samples": 21
+      },
+      "colabfold": {
+        "live": true,
+        "wallMs": 154375,
+        "plddtMean": 40.52449029699707,
+        "rc": 0,
+        "pdbs": [
+          "sp_P60568_IL2_HUMAN_Interleukin-2___race_tier_2_chain_A_unrelaxed_rank_001_alphafold2_multimer_v3_model_1_seed_000.pdb",
+          "sp_P14784_IL2RB_HUMAN_Interleukin-2_receptor_beta_fragment___race_tier_2_chain_B_unrelaxed_rank_001_alphafold2_multimer_v3_model_1_seed_000.pdb"
+        ],
+        "modelType": "alphafold2_multimer_v3"
+      },
+      "speedupPrimeOverColabfold": 3137639.4788723774
+    },
+    "frontier_orphan": {
+      "name": "De novo orphan / synthetic lattice",
+      "residues": 89,
+      "primeVault": {
+        "residues": 89,
+        "octave": 3,
+        "energy": 0.5177484709920639,
+        "latencyMs_median": 0.013635999999998205,
+        "latencyMs_min": 0.01340900000000289,
+        "latencyMs_max": 0.014296999999999116,
+        "samples": 21
+      },
+      "colabfold": {
+        "live": true,
+        "wallMs": 28793,
+        "plddtMean": 31.201076779026216,
+        "rc": 0,
+        "pdbs": [
+          "synth_ORPHAN_LATTICE_001_De_novo_orphan_synthetic_lattice___race_tier_3__no_MSA_homologs_by_design__unrelaxed_rank_001_alphafold2_ptm_model_1_seed_000.pdb"
+        ],
+        "modelType": "alphafold2_ptm"
+      },
+      "speedupPrimeOverColabfold": 2111542.9744795975
+    }
+  },
+  "honestyNotes": [
+    "IL-2 complex FastA produced per-chain ColabFold models (two PDBs); wall time is full batch wall for that FastA.",
+    "CPU-only, single_sequence, 1 model, 1 recycle \u2014 not GPU MSA-full AF3 / CASP.",
+    "Prime-vault \u03a6-energy is not experimental GDT/TM; latency race contrasts different objectives."
+  ]
+}

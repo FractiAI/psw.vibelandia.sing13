@@ -1,0 +1,12 @@
+2026-09-06 08:06:55,065 Running colabfold 1.6.2
+2026-09-06 08:06:55,072 WARNING: no GPU detected, will be using CPU
+2026-09-06 08:06:55,189 Found 2 citations for tools or databases
+2026-09-06 08:06:55,189 Query 1/1: sp_P0CG48_UBIQ_HUMAN_Ubiquitin__76_aa____race_tier_1 (length 76)
+2026-09-06 08:06:55,413 Failed to extract font properties from /usr/share/fonts/truetype/noto/NotoColorEmoji.ttf: Non-scalable fonts are not supported
+2026-09-06 08:06:55,470 generated new fontManager
+2026-09-06 08:07:11,322 alphafold2_ptm_model_1_seed_000 recycle=0 pLDDT=47.8 pTM=0.371
+2026-09-06 08:07:18,405 alphafold2_ptm_model_1_seed_000 recycle=1 pLDDT=48.4 pTM=0.396 tol=1.75
+2026-09-06 08:07:18,406 alphafold2_ptm_model_1_seed_000 took 19.3s (1 recycles)
+2026-09-06 08:07:18,411 reranking models by 'plddt' metric
+2026-09-06 08:07:18,411 rank_001_alphafold2_ptm_model_1_seed_000 pLDDT=48.4 pTM=0.396
+2026-09-06 08:07:18,635 Done

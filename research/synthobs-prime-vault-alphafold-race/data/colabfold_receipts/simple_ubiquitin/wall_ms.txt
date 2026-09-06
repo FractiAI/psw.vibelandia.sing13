@@ -1,0 +1,1 @@
+TIER=simple_ubiquitin RC=0 WALL_MS=24738

@@ -26,6 +26,7 @@ describe('standalone-suite-manifest', () => {
       'synthobs-multidimensional-holographic-rhyme',
       'synthobs-pdvsa-gateway-ops-mockup',
       'synthobs-prime-indexed-volumetric-storage',
+      'synthobs-prime-vault-alphafold-race',
       'synthobs-protein-folding-prime-container',
       'synthobs-proton-space-electron-theater',
       'synthobs-ss-vibelandia-official-prospectus',

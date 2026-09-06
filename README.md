@@ -262,7 +262,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 
 <!-- interfaces-index:start -->
 
-> Auto-generated **2026-09-06** · **262** HTML pages under `interfaces/`.
+> Auto-generated **2026-09-06** · **263** HTML pages under `interfaces/`.
 > Regenerate: `npm run sync:interfaces-index` (also runs from the Cursor interfaces-index hook when interfaces HTML changes).
 > Skips `assets/`, `partials/`, and `node_modules/`. Live page: [`/interfaces/`](/interfaces/).
 
@@ -317,6 +317,7 @@ Listing of ship UI HTML entry points under `interfaces/`.
 | [`/interfaces/blog-planetary-core-goldilocks-2026-08.html`](/interfaces/blog-planetary-core-goldilocks-2026-08.html) | Old Earth letting go — a story filed at the planet’s core · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-plants-keep-building-under-stress-2026-08.html`](/interfaces/blog-plants-keep-building-under-stress-2026-08.html) | How plants keep building when the pressure is on · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html`](/interfaces/blog-prime-indexed-volumetric-storage-2026-09.html) | Prime-Indexed Volumetric Storage · Ship blog · SS Vibelandia |
+| [`/interfaces/blog-prime-vault-alphafold-race-2026-09.html`](/interfaces/blog-prime-vault-alphafold-race-2026-09.html) | Prime-Vault vs AlphaFold Race · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-protein-folding-prime-container-2026-09.html`](/interfaces/blog-protein-folding-prime-container-2026-09.html) | Protein Folding · Prime-Container Architecture · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-proton-space-electron-theater-2026-09.html`](/interfaces/blog-proton-space-electron-theater-2026-09.html) | Proton Space · Electron Theater · Φ Duality · Ship blog · SS Vibelandia |
 | [`/interfaces/blog-quakes-and-solar-weather-2026-08.html`](/interfaces/blog-quakes-and-solar-weather-2026-08.html) | Quakes and solar weather on the same bulletin · Ship blog · SS Vibelandia |

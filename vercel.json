@@ -1301,6 +1301,14 @@
       "destination": "/interfaces/blog-proton-space-electron-theater-2026-09.html"
     },
     {
+      "source": "/ship-blog/prime-vault-alphafold-race",
+      "destination": "/interfaces/blog-prime-vault-alphafold-race-2026-09.html"
+    },
+    {
+      "source": "/ship-blog/prime-vault-alphafold-race/",
+      "destination": "/interfaces/blog-prime-vault-alphafold-race-2026-09.html"
+    },
+    {
       "source": "/ship-blog/sing-muse-omniversal-lattice",
       "destination": "/interfaces/blog-sing-muse-omniversal-lattice-2026-09.html"
     },

@@ -210,9 +210,9 @@
     '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/demonstrations" id="ql-demonstrations-link">Demonstrations</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
-    '<a href="/prime-vault-chat" id="ql-prime-vault-chat-link">Prime Vault Chat</a>' +
+    '<a href="/demonstrations#chat" id="ql-prime-vault-chat-link">Prime Vault Chat</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
-    '<a href="/prime-vault-race" id="ql-prime-vault-race-link">Prime-Vault Race</a>' +
+    '<a href="/demonstrations#race" id="ql-prime-vault-race-link">Prime-Vault Race</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +
     '<a href="/goldilocks-quest" id="ql-goldilocks-quest-link">Goldilocks Quest</a>' +
     '<span class="sep" aria-hidden="true">·</span>' +

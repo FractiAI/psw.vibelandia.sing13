@@ -1806,27 +1806,27 @@
     },
     {
       "source": "/prime-vault-chat",
-      "destination": "/interfaces/prime-vault-chat.html"
+      "destination": "/interfaces/prime-vault-demos.html"
     },
     {
       "source": "/prime-vault-chat/",
-      "destination": "/interfaces/prime-vault-chat.html"
+      "destination": "/interfaces/prime-vault-demos.html"
     },
     {
       "source": "/pvc",
-      "destination": "/interfaces/prime-vault-chat.html"
+      "destination": "/interfaces/prime-vault-demos.html"
     },
     {
       "source": "/pvc/",
-      "destination": "/interfaces/prime-vault-chat.html"
+      "destination": "/interfaces/prime-vault-demos.html"
     },
     {
       "source": "/special-projects/prime-vault-chat",
-      "destination": "/interfaces/special-projects/prime-vault-chat.html"
+      "destination": "/interfaces/special-projects/prime-vault-demos.html"
     },
     {
       "source": "/special-projects/prime-vault-chat/",
-      "destination": "/interfaces/special-projects/prime-vault-chat.html"
+      "destination": "/interfaces/special-projects/prime-vault-demos.html"
     },
     {
       "source": "/ship-blog/prime-vault-chat",
@@ -1838,19 +1838,19 @@
     },
     {
       "source": "/prime-vault-race",
-      "destination": "/interfaces/prime-vault-race.html"
+      "destination": "/interfaces/prime-vault-demos.html"
     },
     {
       "source": "/prime-vault-race/",
-      "destination": "/interfaces/prime-vault-race.html"
+      "destination": "/interfaces/prime-vault-demos.html"
     },
     {
       "source": "/race",
-      "destination": "/interfaces/prime-vault-race.html"
+      "destination": "/interfaces/prime-vault-demos.html"
     },
     {
       "source": "/race/",
-      "destination": "/interfaces/prime-vault-race.html"
+      "destination": "/interfaces/prime-vault-demos.html"
     },
     {
       "source": "/harmonopoly-guide",

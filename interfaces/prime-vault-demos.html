@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0a1628" />
   <title>Demonstrations · Prime Vault · SS Vibelandia</title>
-  <meta name="description" content="Prime Vault demonstrations aboard SS Vibelandia: Miracle 1 Race (vs ColabFold · Unmodeled Nova) and Miracle 2 Chat (Φ closed-form · $0 training). Same email seat as Let's Chat and Lattice Chat." />
+  <meta name="description" content="Direct Prime Vault demonstrations: live Φ Chat agent + measured Race scoreboard on one page. Walk-on with any email. No prior stop." />
   <link rel="canonical" href="https://www.ssvibelandiaquestfest24x365.com/demonstrations" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/interfaces/brand-gold-surfaces.css" />
   <link rel="stylesheet" href="/interfaces/site-quicklinks.css" />
+  <link rel="stylesheet" href="/interfaces/prime-vault-chat.css" />
   <link rel="stylesheet" href="/interfaces/prime-vault-demos.css" />
 </head>
 <body class="pvd-body">
@@ -21,82 +22,144 @@
       <span class="sep" aria-hidden="true">·</span>
       <span class="qv-top-quicklinks__here">Demonstrations</span>
       <span class="sep" aria-hidden="true">·</span>
-      <a href="/ship-blog/prime-vault-demos">Ship blog</a>
+      <a href="#chat">Live chat</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="#race">Race results</a>
     </div>
   </nav>
 
-  <main class="pvd-app">
+  <main class="pvd-app pvd-app--direct">
     <header class="pvd-hero" aria-labelledby="pvd-h">
-      <p class="pvd-brand">SS Vibelandia · Deck 2 Core</p>
+      <p class="pvd-brand">SS Vibelandia · Deck 2 Core · direct door</p>
       <h1 id="pvd-h">Demonstrations</h1>
       <p class="pvd-lead">
-        The living demonstration is <strong>Prime Vault Chat</strong> —
-        guests walk on with an email and talk to the real Φ agent.
-        Miracle 1 is the published race scoreboard beside it.
+        One page. No prior stop. Talk to the <strong>live Prime Vault Chat agent</strong> here,
+        and read the <strong>measured Race scoreboard</strong> on the same deck.
       </p>
       <p class="pvd-honesty">
         Honesty first: application companions, not engine pins.
-        Latency race ≠ CASP. Algebraic chat ≠ trained LLM open-world QA.
+        Live algebraic chat ≠ trained LLM open-world QA. Latency race ≠ CASP.
         Fair Exchange on.
+      </p>
+      <p class="pvd-jump">
+        <a class="pvd-btn" href="#chat">Chat live now</a>
+        <a class="pvd-btn pvd-btn--ghost" href="#race">See race results</a>
       </p>
     </header>
 
-    <section class="pvd-grid" aria-label="Prime Vault demonstrations">
-      <article class="pvd-demo">
-        <p class="pvd-demo__kicker">Miracle 1</p>
-        <h2>Prime-Vault Race</h2>
-        <p>
-          Closed-form Φ vaults vs measured ColabFold on four tiers —
-          including <strong>Unmodeled Nova</strong>, a never-modeled protein decipher.
-          Description and published results only — no live play controls.
-        </p>
-        <ul>
-          <li>Ubiquitin · IL-2 complex · orphan · Unmodeled Nova</li>
-          <li>Measured vault timing · ColabFold receipt</li>
-          <li>Scoreboard page · honesty rails on</li>
-        </ul>
-        <div class="pvd-demo__cta">
-          <a class="pvd-btn" href="/prime-vault-race">View race results</a>
-          <a class="pvd-btn pvd-btn--ghost" href="/ship-blog/prime-vault-alphafold-race">Ship-blog scoreboard</a>
-        </div>
-      </article>
+    <section class="pvd-panel pvc-shell" id="chat" aria-labelledby="pvc-gate-h">
+      <p class="pvd-demo__kicker">Miracle 2 · live agent</p>
+      <div id="pvc-app">
+        <section class="pvc-gate" id="pvc-gate" aria-labelledby="pvc-gate-h">
+          <p class="pvc-brand">Prime Vault Chat · on Demonstrations</p>
+          <h2 id="pvc-gate-h">Chat with the live agent</h2>
+          <p class="pvc-gate__lead">
+            Enter any email to walk on. Lattice / Let’s Chat seats keep elevated privilege.
+            Real closed-form Φ ≈ 1.618 replies — <strong>$0 training</strong> — not a stub.
+          </p>
+          <form id="pvc-gate-form" class="pvc-gate__form">
+            <label for="pvc-email">Email</label>
+            <input id="pvc-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+            <button type="submit" class="pvc-btn">Come aboard · chat live</button>
+          </form>
+          <p class="pvc-gate__hint">Walk-on welcome · <a href="mailto:valetpru@gmail.com?subject=Prime%20Vault%20Chat%20guest%20seat">Email the Purser</a> for Lattice grants</p>
+          <p class="pvc-gate__err" id="pvc-gate-err" hidden></p>
+        </section>
 
-      <article class="pvd-demo pvd-demo--chat">
-        <p class="pvd-demo__kicker">Miracle 2 · live agent</p>
-        <h2>Prime Vault Chat</h2>
-        <p>
-          ChatGPT-shaped thread powered by the <strong>live</strong> closed-form Φ ≈ 1.618 prime-vault engine —
-          <strong>$0 training</strong>, real algebraic replies in milliseconds — not a stub.
-        </p>
-        <ul>
-          <li>Walk-on with any email · Lattice seats still honored</li>
-          <li>Conversational vault resonance · intent-aware</li>
-          <li>Edge clock · reproducible · Fair Exchange on</li>
-        </ul>
-        <div class="pvd-demo__cta">
-          <a class="pvd-btn" href="/prime-vault-chat">Chat with the live agent</a>
-          <a class="pvd-btn pvd-btn--ghost" href="/ship-blog/prime-vault-chat">Announcement</a>
-        </div>
-      </article>
+        <section class="pvc-chat" id="pvc-chat" hidden aria-label="Prime Vault Chat">
+          <header class="pvc-chat__head">
+            <div>
+              <p class="pvc-brand">Prime Vault Chat · live agent</p>
+              <h2>Ask the lattice</h2>
+              <p class="pvc-you" id="pvc-me-label">You</p>
+            </div>
+            <div class="pvc-chat__actions">
+              <button type="button" class="pvc-btn pvc-btn--ghost" id="pvc-new">New chat</button>
+              <button type="button" class="pvc-btn pvc-btn--ghost" id="pvc-signout">Sign out</button>
+            </div>
+          </header>
+          <p class="pvc-honesty">
+            Live closed-form Prime Vault agent on this Demonstrations door.
+            Not a trained LLM for open-world factual QA. Fair Exchange on.
+          </p>
+          <div class="pvc-thread" id="pvc-thread" role="log" aria-live="polite"></div>
+          <form class="pvc-composer" id="pvc-composer">
+            <label class="visually-hidden" for="pvc-input">Message</label>
+            <textarea id="pvc-input" rows="1" placeholder="Message Prime Vault…" maxlength="4000" required></textarea>
+            <button type="submit" class="pvc-btn" id="pvc-send">Send</button>
+          </form>
+          <p class="pvc-meta" id="pvc-meta">Live agent · Φ ≈ 1.618 · octave 7 · $0 training</p>
+        </section>
+      </div>
     </section>
 
-    <section class="pvd-seat" aria-labelledby="pvd-seat-h">
-      <h2 id="pvd-seat-h">Chat walk-on · race is results</h2>
-      <p>
-        For <strong>Prime Vault Chat</strong>, enter any email and talk to the live agent.
-        Lattice / Let’s Chat Purser seats keep elevated privilege.
-        The race door shows published scoreboard only.
+    <section class="pvd-panel" id="race" aria-labelledby="pvd-race-h">
+      <p class="pvd-demo__kicker">Miracle 1 · results</p>
+      <h2 id="pvd-race-h">Prime-Vault Race · scoreboard</h2>
+      <p class="pvd-panel__lead">
+        Closed-form Φ vaults vs measured ColabFold (CPU · single_sequence · 1 model · 1 recycle).
+        Description and published results — no live play controls.
+      </p>
+      <div class="pvd-table-wrap">
+        <table class="pvd-scoreboard" aria-label="Prime-Vault vs ColabFold race results">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Residues</th>
+              <th>Prime-Vault</th>
+              <th>ColabFold</th>
+              <th>pLDDT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1 · Ubiquitin</td>
+              <td>76</td>
+              <td><strong>0.051 ms</strong></td>
+              <td><strong>24.7 s</strong></td>
+              <td>48.4</td>
+            </tr>
+            <tr>
+              <td>2 · IL-2 + IL-2Rβ</td>
+              <td>264</td>
+              <td><strong>0.049 ms</strong></td>
+              <td><strong>154 s</strong></td>
+              <td>40.5</td>
+            </tr>
+            <tr>
+              <td>3 · Orphan synthetic</td>
+              <td>89</td>
+              <td><strong>0.014 ms</strong></td>
+              <td><strong>28.8 s</strong></td>
+              <td>31.2</td>
+            </tr>
+            <tr>
+              <td>4 · Unmodeled Nova</td>
+              <td>112</td>
+              <td><strong>0.029 ms</strong></td>
+              <td><em>deferred</em></td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pvd-panel__lead">
+        Tier 4 Unmodeled Nova has no prior AF/PDB model — vault decipher live; ColabFold deferred until <code>COLABFOLD_LIVE=1</code>.
+        Full report: <a href="/ship-blog/prime-vault-alphafold-race">ship-blog scoreboard</a>
+        · <a href="/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-alphafold-race-2026-09">whitepaper</a>.
       </p>
     </section>
 
     <p class="pvd-foot">
       <a href="/questfest">Ship board</a>
+      · <a href="/ship-blog/prime-vault-demos">Announcement</a>
       · <a href="/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-chat-2026-09">Chat paper</a>
       · <a href="/interfaces/whitepaper-surface.html?id=synthobs-prime-vault-alphafold-race-2026-09">Race paper</a>
       · SynthOBS · NSPFRNP → ∞^∞
     </p>
   </main>
 
+  <script src="/interfaces/prime-vault-chat-client.js" defer></script>
   <script src="/interfaces/site-quicklinks.js" defer></script>
 </body>
 </html>

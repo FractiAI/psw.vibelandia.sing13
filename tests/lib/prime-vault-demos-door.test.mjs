@@ -17,10 +17,14 @@ describe('Prime Vault Demonstrations · hub door', () => {
     expect(existsSync(join(ROOT, 'interfaces/special-projects/prime-vault-demos.html'))).toBe(true);
     expect(existsSync(join(ROOT, 'interfaces/blog-prime-vault-demos-2026-09.html'))).toBe(true);
     const html = read('interfaces/prime-vault-demos.html');
-    expect(html).toContain('/prime-vault-race');
-    expect(html).toContain('/prime-vault-chat');
+    expect(html).toContain('id="chat"');
+    expect(html).toContain('id="race"');
     expect(html).toContain('Miracle 1');
     expect(html).toContain('Miracle 2');
+    expect(html).toContain('pvc-thread');
+    expect(html).toContain('prime-vault-chat-client.js');
+    expect(html).toContain('No prior stop');
+    expect(html).toContain('0.051 ms');
   });
 
   it('wires vercel, quicklink, More Aboard door, bulletin, and registry blog', () => {

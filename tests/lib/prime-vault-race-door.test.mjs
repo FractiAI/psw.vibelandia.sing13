@@ -48,11 +48,11 @@ describe('Prime-Vault Race · guest door rollout', () => {
     expect(vercel).toContain('api/prime-vault-race.js');
 
     const ql = read('interfaces/site-quicklinks.js');
-    expect(ql).toContain('href="/prime-vault-race"');
+    expect(ql).toContain('href="/demonstrations#race"');
     expect(ql).toContain('id="ql-prime-vault-race-link"');
 
-    expect(PLAYER_MORE_DOORS.some((d) => d.href === '/prime-vault-race')).toBe(true);
-    expect(findJourney('prime-vault-race')?.cta?.href).toBe('/prime-vault-race');
+    expect(PLAYER_MORE_DOORS.some((d) => d.href === '/demonstrations#race')).toBe(true);
+    expect(findJourney('prime-vault-race')?.cta?.href).toBe('/demonstrations#race');
 
     expect(existsSync(join(ROOT, 'interfaces/blog-prime-vault-race-door-2026-09.html'))).toBe(true);
     expect(read('lib/questfest-blog-posts.mjs')).toContain('prime-vault-race-door');

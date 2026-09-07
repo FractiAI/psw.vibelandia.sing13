@@ -132,6 +132,90 @@
   border: 1px solid var(--pvd-line);
 }
 
+.pvd-app--direct { max-width: 44rem; }
+
+.pvd-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 1.75rem;
+  animation: pvd-rise 0.75s ease-out 0.14s both;
+}
+
+.pvd-panel {
+  border: 1px solid var(--pvd-line);
+  border-radius: 0.85rem;
+  padding: 1.15rem 1.2rem 1.35rem;
+  background: rgba(10, 22, 40, 0.72);
+  margin-bottom: 1.25rem;
+  scroll-margin-top: 1.25rem;
+  animation: pvd-rise 0.75s ease-out 0.18s both;
+}
+
+.pvd-panel h2 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--pvd-gold-hi);
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+}
+
+.pvd-panel__lead {
+  color: var(--pvd-muted);
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+
+.pvd-panel__lead a { color: var(--pvd-teal); }
+
+.pvd-panel .pvc-shell,
+.pvd-panel .pvc-gate,
+.pvd-panel .pvc-chat {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  min-height: 0;
+}
+
+.pvd-panel .pvc-gate h2,
+.pvd-panel .pvc-chat__head h2 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+}
+
+.pvd-table-wrap {
+  overflow-x: auto;
+  margin: 0.5rem 0 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--pvd-line);
+}
+
+.pvd-scoreboard {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.pvd-scoreboard th,
+.pvd-scoreboard td {
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--pvd-line);
+}
+
+.pvd-scoreboard th {
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--pvd-gold-hi);
+  font-weight: 700;
+}
+
+.pvd-scoreboard td { color: var(--pvd-ink); }
+.pvd-scoreboard tr:last-child td { border-bottom: none; }
+.pvd-scoreboard strong { color: var(--pvd-teal); }
+.pvd-scoreboard em { color: var(--pvd-muted); font-style: italic; }
+
 .pvd-seat {
   margin-top: 1.75rem;
   padding-top: 1.25rem;
